@@ -71,15 +71,16 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 // CreateDBInstanceRequest is the request struct for api CreateDBInstance
 type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
+	NetworkType           string           `position:"Query" name:"NetworkType"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	DBNodeClass           string           `position:"Query" name:"DBNodeClass"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	Period                string           `position:"Query" name:"Period"`
-	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
+	IsReadDBInstance      requests.Boolean `position:"Query" name:"IsReadDBInstance"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	AutoRenew             requests.Boolean `position:"Query" name:"AutoRenew"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	PrimaryDBInstanceName string           `position:"Query" name:"PrimaryDBInstanceName"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
 	DBNodeCount           requests.Integer `position:"Query" name:"DBNodeCount"`
 	UsedTime              requests.Integer `position:"Query" name:"UsedTime"`
@@ -90,11 +91,9 @@ type CreateDBInstanceRequest struct {
 // CreateDBInstanceResponse is the response struct for api CreateDBInstance
 type CreateDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DBInstanceName   string `json:"DBInstanceName" xml:"DBInstanceName"`
-	OrderId          string `json:"OrderId" xml:"OrderId"`
-	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
-	Port             int    `json:"Port" xml:"Port"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
+	OrderId        string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateDBInstanceRequest creates a request to invoke CreateDBInstance API

@@ -17,15 +17,15 @@ package polardbx
 
 // TaskProgressInfo is a nested struct in polardbx response
 type TaskProgressInfo struct {
-	DBName             string `json:"DBName" xml:"DBName"`
-	BeginTime          string `json:"BeginTime" xml:"BeginTime"`
-	ProgressInfo       string `json:"ProgressInfo" xml:"ProgressInfo"`
-	FinishTime         string `json:"FinishTime" xml:"FinishTime"`
-	TaskAction         string `json:"TaskAction" xml:"TaskAction"`
-	TaskId             string `json:"TaskId" xml:"TaskId"`
-	Progress           string `json:"Progress" xml:"Progress"`
-	ExpectedFinishTime string `json:"ExpectedFinishTime" xml:"ExpectedFinishTime"`
-	Status             string `json:"Status" xml:"Status"`
-	TaskErrorCode      string `json:"TaskErrorCode" xml:"TaskErrorCode"`
-	TaskErrorMessage   string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
+	DBName           string `json:"DBName" xml:"DBName"`
+	BeginTime        string `json:"BeginTime" xml:"BeginTime"`
+	ProgressInfo     string `json:"ProgressInfo" xml:"ProgressInfo"`
+	FinishTime       string `json:"FinishTime" xml:"FinishTime"`
+	TaskAction       string `json:"TaskAction" xml:"TaskAction"`
+	TaskId           string `json:"TaskId" xml:"TaskId"`
+	Progress         string `json:"Progress" xml:"Progress"`
+	Status           string `json:"Status" xml:"Status"`
+	TaskErrorCode    string `json:"TaskErrorCode" xml:"TaskErrorCode"`
+	TaskErrorMessage string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
+	ScaleOutToken    string `json:"ScaleOutToken" xml:"ScaleOutToken"`
 }

@@ -80,6 +80,7 @@ type ModifyDBInstanceClassRequest struct {
 type ModifyDBInstanceClassResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateModifyDBInstanceClassRequest creates a request to invoke ModifyDBInstanceClass API

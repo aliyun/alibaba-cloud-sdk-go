@@ -17,9 +17,9 @@ package polardbx
 
 // ConnAddr is a nested struct in polardbx response
 type ConnAddr struct {
-	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
-	Port             string `json:"Port" xml:"Port"`
-	Type             string `json:"Type" xml:"Type"`
 	VPCId            string `json:"VPCId" xml:"VPCId"`
+	Port             string `json:"Port" xml:"Port"`
 	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
+	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	Type             string `json:"Type" xml:"Type"`
 }

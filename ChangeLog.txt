@@ -1,3 +1,8 @@
+2020-12-03 Version: v1.61.736
+- Generated 2020-02-02 for `polardbx`.
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
 2020-12-03 Version: v1.61.735
 - Generated 2018-01-20 for `Iot`.
 - Support data retrieval of Ota module.
