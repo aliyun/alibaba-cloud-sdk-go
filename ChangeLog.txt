@@ -1,3 +1,7 @@
+2020-12-03 Version: v1.61.743
+- Generated 2017-11-15 for `scdn`.
+- Update DescribeScdnDomainCertificateInfo.
+
 2020-12-03 Version: v1.61.742
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update DescribeDomainMax95BpsData.
