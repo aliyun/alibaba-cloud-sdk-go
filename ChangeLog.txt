@@ -1,3 +1,7 @@
+2020-12-03 Version: v1.61.734
+- Generated 2020-03-20 for `imageprocess`.
+- Update DetectLungNodule.
+
 2020-12-02 Version: v1.61.733
 - Generated 2018-06-12 for `VoiceNavigator`.
 - Update version.

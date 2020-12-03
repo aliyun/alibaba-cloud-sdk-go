@@ -18,6 +18,7 @@ package imageprocess
 // Serie is a nested struct in imageprocess response
 type Serie struct {
 	SeriesInstanceUid string    `json:"SeriesInstanceUid" xml:"SeriesInstanceUid"`
+	Report            string    `json:"Report" xml:"Report"`
 	Origin            []float64 `json:"Origin" xml:"Origin"`
 	Spacing           []float64 `json:"Spacing" xml:"Spacing"`
 	Elements          []Element `json:"Elements" xml:"Elements"`

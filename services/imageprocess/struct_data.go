@@ -41,8 +41,8 @@ type Data struct {
 	SimilarQuestion   []string               `json:"SimilarQuestion" xml:"SimilarQuestion"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	Discs             []Disc                 `json:"Discs" xml:"Discs"`
-	Series            []Serie                `json:"Series" xml:"Series"`
 	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
+	Series            []Serie                `json:"Series" xml:"Series"`
 	KLDetections      []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
 	KeyPoints         []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
 }

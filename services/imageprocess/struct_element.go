@@ -29,4 +29,6 @@ type Element struct {
 	ImageY         float64 `json:"ImageY" xml:"ImageY"`
 	ImageZ         float64 `json:"ImageZ" xml:"ImageZ"`
 	SOPInstanceUID string  `json:"SOPInstanceUID" xml:"SOPInstanceUID"`
+	Volume         float64 `json:"Volume" xml:"Volume"`
+	MeanValue      float64 `json:"MeanValue" xml:"MeanValue"`
 }
