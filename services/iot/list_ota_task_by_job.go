@@ -75,6 +75,7 @@ type ListOTATaskByJobRequest struct {
 	TaskStatus    string           `position:"Query" name:"TaskStatus"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	DeviceNames   *[]string        `position:"Query" name:"DeviceNames"  type:"Repeated"`
 	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 	ApiProduct    string           `position:"Body" name:"ApiProduct"`
 	ApiRevision   string           `position:"Body" name:"ApiRevision"`

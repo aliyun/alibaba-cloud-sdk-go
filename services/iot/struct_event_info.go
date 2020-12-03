@@ -17,9 +17,9 @@ package iot
 
 // EventInfo is a nested struct in iot response
 type EventInfo struct {
-	Time       string `json:"Time" xml:"Time"`
-	Identifier string `json:"Identifier" xml:"Identifier"`
 	Name       string `json:"Name" xml:"Name"`
+	Time       string `json:"Time" xml:"Time"`
 	EventType  string `json:"EventType" xml:"EventType"`
+	Identifier string `json:"Identifier" xml:"Identifier"`
 	OutputData string `json:"OutputData" xml:"OutputData"`
 }

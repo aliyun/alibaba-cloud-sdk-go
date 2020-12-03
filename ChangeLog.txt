@@ -1,3 +1,10 @@
+2020-12-03 Version: v1.61.735
+- Generated 2018-01-20 for `Iot`.
+- Support data retrieval of Ota module.
+- Added script management API,including CreateThingScript,UpdateThingScript,GetThingScript.
+- Update OTA API, including DeleteOTAModule,UpdateOTAModule,ListOTATaskByJob.
+- Add OTA API, ListOTAModuleVersionsByDevice.
+
 2020-12-03 Version: v1.61.734
 - Generated 2020-03-20 for `imageprocess`.
 - Update DetectLungNodule.

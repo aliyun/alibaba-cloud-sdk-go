@@ -17,6 +17,6 @@ package iot
 
 // PropertyInfo is a nested struct in iot response
 type PropertyInfo struct {
+	Time  string `json:"Time" xml:"Time"`
 	Value string `json:"Value" xml:"Value"`
-	Time  int64  `json:"Time" xml:"Time"`
 }

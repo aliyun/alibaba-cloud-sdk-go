@@ -17,9 +17,9 @@ package iot
 
 // ServiceInfo is a nested struct in iot response
 type ServiceInfo struct {
+	Name       string `json:"Name" xml:"Name"`
 	Time       string `json:"Time" xml:"Time"`
 	Identifier string `json:"Identifier" xml:"Identifier"`
-	Name       string `json:"Name" xml:"Name"`
-	InputData  string `json:"InputData" xml:"InputData"`
 	OutputData string `json:"OutputData" xml:"OutputData"`
+	InputData  string `json:"InputData" xml:"InputData"`
 }

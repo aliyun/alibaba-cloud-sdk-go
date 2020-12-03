@@ -71,12 +71,14 @@ func (client *Client) QueryAppDeviceListWithCallback(request *QueryAppDeviceList
 // QueryAppDeviceListRequest is the request struct for api QueryAppDeviceList
 type QueryAppDeviceListRequest struct {
 	*requests.RpcRequest
-	CurrentPage     requests.Integer             `position:"Query" name:"CurrentPage"`
 	TagList         *[]QueryAppDeviceListTagList `position:"Query" name:"TagList"  type:"Repeated"`
 	ProductKeyList  *[]string                    `position:"Query" name:"ProductKeyList"  type:"Repeated"`
-	CategoryKeyList *[]string                    `position:"Query" name:"CategoryKeyList"  type:"Repeated"`
 	IotInstanceId   string                       `position:"Query" name:"IotInstanceId"`
 	PageSize        requests.Integer             `position:"Query" name:"PageSize"`
+	CurrentPage     requests.Integer             `position:"Query" name:"CurrentPage"`
+	CategoryKeyList *[]string                    `position:"Query" name:"CategoryKeyList"  type:"Repeated"`
+	ApiProduct      string                       `position:"Body" name:"ApiProduct"`
+	ApiRevision     string                       `position:"Body" name:"ApiRevision"`
 	AppKey          string                       `position:"Query" name:"AppKey"`
 }
 

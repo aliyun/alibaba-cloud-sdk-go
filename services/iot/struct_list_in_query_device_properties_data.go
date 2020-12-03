@@ -17,5 +17,5 @@ package iot
 
 // ListInQueryDevicePropertiesData is a nested struct in iot response
 type ListInQueryDevicePropertiesData struct {
-	PropertyInfo []PropertyInfo `json:"PropertyInfo" xml:"PropertyInfo"`
+	PropertyInfo []PropertyInfoInQueryDevicePropertiesData `json:"PropertyInfo" xml:"PropertyInfo"`
 }

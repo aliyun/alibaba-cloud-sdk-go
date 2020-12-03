@@ -27,4 +27,5 @@ type SimpleDeviceSearchInfo struct {
 	GmtModified string                  `json:"GmtModified" xml:"GmtModified"`
 	Groups      []SimpleDeviceGroupInfo `json:"Groups" xml:"Groups"`
 	Tags        []TagInfo               `json:"Tags" xml:"Tags"`
+	OTAModules  []OTAModuleInfo         `json:"OTAModules" xml:"OTAModules"`
 }

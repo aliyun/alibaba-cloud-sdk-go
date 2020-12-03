@@ -71,12 +71,11 @@ func (client *Client) QueryThingModelExtendConfigPublishedWithCallback(request *
 // QueryThingModelExtendConfigPublishedRequest is the request struct for api QueryThingModelExtendConfigPublished
 type QueryThingModelExtendConfigPublishedRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
-	ProductKey      string `position:"Query" name:"ProductKey"`
-	ApiProduct      string `position:"Body" name:"ApiProduct"`
-	ApiRevision     string `position:"Body" name:"ApiRevision"`
-	ModelVersion    string `position:"Query" name:"ModelVersion"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	ModelVersion  string `position:"Query" name:"ModelVersion"`
 }
 
 // QueryThingModelExtendConfigPublishedResponse is the response struct for api QueryThingModelExtendConfigPublished
