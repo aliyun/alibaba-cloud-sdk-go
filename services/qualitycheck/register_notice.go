@@ -21,7 +21,6 @@ import (
 )
 
 // RegisterNotice invokes the qualitycheck.RegisterNotice API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/registernotice.html
 func (client *Client) RegisterNotice(request *RegisterNoticeRequest) (response *RegisterNoticeResponse, err error) {
 	response = CreateRegisterNoticeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegisterNotice(request *RegisterNoticeRequest) (response *
 }
 
 // RegisterNoticeWithChan invokes the qualitycheck.RegisterNotice API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/registernotice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterNoticeWithChan(request *RegisterNoticeRequest) (<-chan *RegisterNoticeResponse, <-chan error) {
 	responseChan := make(chan *RegisterNoticeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegisterNoticeWithChan(request *RegisterNoticeRequest) (<-
 }
 
 // RegisterNoticeWithCallback invokes the qualitycheck.RegisterNotice API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/registernotice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterNoticeWithCallback(request *RegisterNoticeRequest, callback func(response *RegisterNoticeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateRegisterNoticeRequest() (request *RegisterNoticeRequest) {
 	request = &RegisterNoticeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "RegisterNotice", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "RegisterNotice", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

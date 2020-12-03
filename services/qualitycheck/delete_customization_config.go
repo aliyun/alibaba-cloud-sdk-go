@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCustomizationConfig invokes the qualitycheck.DeleteCustomizationConfig API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletecustomizationconfig.html
 func (client *Client) DeleteCustomizationConfig(request *DeleteCustomizationConfigRequest) (response *DeleteCustomizationConfigResponse, err error) {
 	response = CreateDeleteCustomizationConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCustomizationConfig(request *DeleteCustomizationConf
 }
 
 // DeleteCustomizationConfigWithChan invokes the qualitycheck.DeleteCustomizationConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletecustomizationconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCustomizationConfigWithChan(request *DeleteCustomizationConfigRequest) (<-chan *DeleteCustomizationConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteCustomizationConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCustomizationConfigWithChan(request *DeleteCustomiza
 }
 
 // DeleteCustomizationConfigWithCallback invokes the qualitycheck.DeleteCustomizationConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletecustomizationconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCustomizationConfigWithCallback(request *DeleteCustomizationConfigRequest, callback func(response *DeleteCustomizationConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteCustomizationConfigRequest() (request *DeleteCustomizationConfi
 	request = &DeleteCustomizationConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteCustomizationConfig", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteCustomizationConfig", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

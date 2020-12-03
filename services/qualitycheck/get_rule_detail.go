@@ -21,7 +21,6 @@ import (
 )
 
 // GetRuleDetail invokes the qualitycheck.GetRuleDetail API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getruledetail.html
 func (client *Client) GetRuleDetail(request *GetRuleDetailRequest) (response *GetRuleDetailResponse, err error) {
 	response = CreateGetRuleDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRuleDetail(request *GetRuleDetailRequest) (response *Ge
 }
 
 // GetRuleDetailWithChan invokes the qualitycheck.GetRuleDetail API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getruledetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRuleDetailWithChan(request *GetRuleDetailRequest) (<-chan *GetRuleDetailResponse, <-chan error) {
 	responseChan := make(chan *GetRuleDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRuleDetailWithChan(request *GetRuleDetailRequest) (<-ch
 }
 
 // GetRuleDetailWithCallback invokes the qualitycheck.GetRuleDetail API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getruledetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRuleDetailWithCallback(request *GetRuleDetailRequest, callback func(response *GetRuleDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetRuleDetailRequest() (request *GetRuleDetailRequest) {
 	request = &GetRuleDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetRuleDetail", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetRuleDetail", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

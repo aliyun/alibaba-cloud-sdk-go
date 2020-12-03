@@ -17,15 +17,18 @@ package qualitycheck
 
 // HitRuleReviewInfo is a nested struct in qualitycheck response
 type HitRuleReviewInfo struct {
-	Comments             string                                      `json:"Comments" xml:"Comments"`
-	AutoReview           int                                         `json:"AutoReview" xml:"AutoReview"`
-	RuleName             string                                      `json:"RuleName" xml:"RuleName"`
-	RuleType             int                                         `json:"RuleType" xml:"RuleType"`
-	ScoreSubId           int64                                       `json:"ScoreSubId" xml:"ScoreSubId"`
-	ScoreId              int64                                       `json:"ScoreId" xml:"ScoreId"`
-	Rid                  int64                                       `json:"Rid" xml:"Rid"`
-	TotalNumber          int                                         `json:"TotalNumber" xml:"TotalNumber"`
-	RuleScoreType        int                                         `json:"RuleScoreType" xml:"RuleScoreType"`
-	ReviewInfo           ReviewInfo                                  `json:"ReviewInfo" xml:"ReviewInfo"`
-	ConditionHitInfoList ConditionHitInfoListInGetNextResultToReview `json:"ConditionHitInfoList" xml:"ConditionHitInfoList"`
+	AutoReview           int                                  `json:"AutoReview" xml:"AutoReview"`
+	RuleName             string                               `json:"RuleName" xml:"RuleName"`
+	Complainable         bool                                 `json:"Complainable" xml:"Complainable"`
+	RuleType             int                                  `json:"RuleType" xml:"RuleType"`
+	ScoreSubId           int64                                `json:"ScoreSubId" xml:"ScoreSubId"`
+	ScoreSubName         string                               `json:"ScoreSubName" xml:"ScoreSubName"`
+	ScoreId              int64                                `json:"ScoreId" xml:"ScoreId"`
+	Rid                  int64                                `json:"Rid" xml:"Rid"`
+	ScoreNum             int                                  `json:"ScoreNum" xml:"ScoreNum"`
+	TotalNumber          int                                  `json:"TotalNumber" xml:"TotalNumber"`
+	RuleScoreType        int                                  `json:"RuleScoreType" xml:"RuleScoreType"`
+	ReviewInfo           ReviewInfo                           `json:"ReviewInfo" xml:"ReviewInfo"`
+	ComplainHistories    ComplainHistoriesInGetResultToReview `json:"ComplainHistories" xml:"ComplainHistories"`
+	ConditionHitInfoList ConditionHitInfoList                 `json:"ConditionHitInfoList" xml:"ConditionHitInfoList"`
 }

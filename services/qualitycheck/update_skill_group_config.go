@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSkillGroupConfig invokes the qualitycheck.UpdateSkillGroupConfig API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateskillgroupconfig.html
 func (client *Client) UpdateSkillGroupConfig(request *UpdateSkillGroupConfigRequest) (response *UpdateSkillGroupConfigResponse, err error) {
 	response = CreateUpdateSkillGroupConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSkillGroupConfig(request *UpdateSkillGroupConfigRequ
 }
 
 // UpdateSkillGroupConfigWithChan invokes the qualitycheck.UpdateSkillGroupConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateskillgroupconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSkillGroupConfigWithChan(request *UpdateSkillGroupConfigRequest) (<-chan *UpdateSkillGroupConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateSkillGroupConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSkillGroupConfigWithChan(request *UpdateSkillGroupCo
 }
 
 // UpdateSkillGroupConfigWithCallback invokes the qualitycheck.UpdateSkillGroupConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateskillgroupconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSkillGroupConfigWithCallback(request *UpdateSkillGroupConfigRequest, callback func(response *UpdateSkillGroupConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateUpdateSkillGroupConfigRequest() (request *UpdateSkillGroupConfigReque
 	request = &UpdateSkillGroupConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateSkillGroupConfig", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateSkillGroupConfig", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

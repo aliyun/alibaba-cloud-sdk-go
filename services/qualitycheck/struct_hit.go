@@ -17,7 +17,7 @@ package qualitycheck
 
 // Hit is a nested struct in qualitycheck response
 type Hit struct {
-	Cid      CidInGetResult      `json:"Cid" xml:"Cid"`
-	Phrase   PhraseInGetResult   `json:"Phrase" xml:"Phrase"`
+	Cid      []string            `json:"Cid" xml:"Cid"`
+	Phrase   Phrase              `json:"Phrase" xml:"Phrase"`
 	KeyWords KeyWordsInGetResult `json:"KeyWords" xml:"KeyWords"`
 }

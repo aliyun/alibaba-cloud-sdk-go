@@ -18,8 +18,7 @@ package qualitycheck
 // CheckRange is a nested struct in qualitycheck response
 type CheckRange struct {
 	Role     string `json:"Role" xml:"Role"`
-	RoleId   int    `json:"RoleId" xml:"RoleId"`
 	Absolute bool   `json:"Absolute" xml:"Absolute"`
-	Range    Range  `json:"Range" xml:"Range"`
 	Anchor   Anchor `json:"Anchor" xml:"Anchor"`
+	Range    Range  `json:"Range" xml:"Range"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // GetNextResultToVerify invokes the qualitycheck.GetNextResultToVerify API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getnextresulttoverify.html
 func (client *Client) GetNextResultToVerify(request *GetNextResultToVerifyRequest) (response *GetNextResultToVerifyResponse, err error) {
 	response = CreateGetNextResultToVerifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetNextResultToVerify(request *GetNextResultToVerifyReques
 }
 
 // GetNextResultToVerifyWithChan invokes the qualitycheck.GetNextResultToVerify API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getnextresulttoverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNextResultToVerifyWithChan(request *GetNextResultToVerifyRequest) (<-chan *GetNextResultToVerifyResponse, <-chan error) {
 	responseChan := make(chan *GetNextResultToVerifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetNextResultToVerifyWithChan(request *GetNextResultToVeri
 }
 
 // GetNextResultToVerifyWithCallback invokes the qualitycheck.GetNextResultToVerify API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getnextresulttoverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNextResultToVerifyWithCallback(request *GetNextResultToVerifyRequest, callback func(response *GetNextResultToVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetNextResultToVerifyRequest() (request *GetNextResultToVerifyRequest
 	request = &GetNextResultToVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetNextResultToVerify", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetNextResultToVerify", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAsrVocab invokes the qualitycheck.CreateAsrVocab API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/createasrvocab.html
 func (client *Client) CreateAsrVocab(request *CreateAsrVocabRequest) (response *CreateAsrVocabResponse, err error) {
 	response = CreateCreateAsrVocabResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAsrVocab(request *CreateAsrVocabRequest) (response *
 }
 
 // CreateAsrVocabWithChan invokes the qualitycheck.CreateAsrVocab API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/createasrvocab.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAsrVocabWithChan(request *CreateAsrVocabRequest) (<-chan *CreateAsrVocabResponse, <-chan error) {
 	responseChan := make(chan *CreateAsrVocabResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAsrVocabWithChan(request *CreateAsrVocabRequest) (<-
 }
 
 // CreateAsrVocabWithCallback invokes the qualitycheck.CreateAsrVocab API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/createasrvocab.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAsrVocabWithCallback(request *CreateAsrVocabRequest, callback func(response *CreateAsrVocabResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateCreateAsrVocabRequest() (request *CreateAsrVocabRequest) {
 	request = &CreateAsrVocabRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateAsrVocab", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateAsrVocab", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

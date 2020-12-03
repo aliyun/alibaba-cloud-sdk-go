@@ -21,7 +21,6 @@ import (
 )
 
 // OpenService invokes the qualitycheck.OpenService API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/openservice.html
 func (client *Client) OpenService(request *OpenServiceRequest) (response *OpenServiceResponse, err error) {
 	response = CreateOpenServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OpenService(request *OpenServiceRequest) (response *OpenSe
 }
 
 // OpenServiceWithChan invokes the qualitycheck.OpenService API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/openservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenServiceWithChan(request *OpenServiceRequest) (<-chan *OpenServiceResponse, <-chan error) {
 	responseChan := make(chan *OpenServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OpenServiceWithChan(request *OpenServiceRequest) (<-chan *
 }
 
 // OpenServiceWithCallback invokes the qualitycheck.OpenService API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/openservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenServiceWithCallback(request *OpenServiceRequest, callback func(response *OpenServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateOpenServiceRequest() (request *OpenServiceRequest) {
 	request = &OpenServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "OpenService", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "OpenService", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

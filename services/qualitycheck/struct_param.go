@@ -17,16 +17,30 @@ package qualitycheck
 
 // Param is a nested struct in qualitycheck response
 type Param struct {
-	Regex         string                      `json:"Regex" xml:"Regex"`
-	Target        int                         `json:"Target" xml:"Target"`
-	InSentence    bool                        `json:"InSentence" xml:"InSentence"`
-	DifferentRole bool                        `json:"DifferentRole" xml:"DifferentRole"`
-	Interval      int                         `json:"Interval" xml:"Interval"`
-	FromEnd       bool                        `json:"FromEnd" xml:"FromEnd"`
-	TargetRole    string                      `json:"TargetRole" xml:"TargetRole"`
-	Threshold     float64                     `json:"Threshold" xml:"Threshold"`
-	Phrase        string                      `json:"Phrase" xml:"Phrase"`
-	OperKeyWords  OperKeyWordsInGetRuleDetail `json:"OperKeyWords" xml:"OperKeyWords"`
-	References    ReferencesInGetRuleDetail   `json:"References" xml:"References"`
-	Keywords      KeywordsInConfigDataSet     `json:"Keywords" xml:"Keywords"`
+	Regex                 string             `json:"Regex" xml:"Regex"`
+	Phrase                string             `json:"Phrase" xml:"Phrase"`
+	Interval              int                `json:"Interval" xml:"Interval"`
+	Threshold             float64            `json:"Threshold" xml:"Threshold"`
+	InSentence            bool               `json:"InSentence" xml:"InSentence"`
+	Target                int                `json:"Target" xml:"Target"`
+	FromEnd               bool               `json:"FromEnd" xml:"FromEnd"`
+	DifferentRole         bool               `json:"DifferentRole" xml:"DifferentRole"`
+	TargetRole            string             `json:"TargetRole" xml:"TargetRole"`
+	Score                 int                `json:"Score" xml:"Score"`
+	ContextChatMatch      bool               `json:"ContextChatMatch" xml:"ContextChatMatch"`
+	KeywordMatchSize      int                `json:"KeywordMatchSize" xml:"KeywordMatchSize"`
+	Average               bool               `json:"Average" xml:"Average"`
+	VelocityInMint        int                `json:"VelocityInMint" xml:"VelocityInMint"`
+	MinWordSize           int                `json:"MinWordSize" xml:"MinWordSize"`
+	KeywordExtension      bool               `json:"KeywordExtension" xml:"KeywordExtension"`
+	HitTime               int                `json:"HitTime" xml:"HitTime"`
+	From                  int                `json:"From" xml:"From"`
+	BeginType             string             `json:"BeginType" xml:"BeginType"`
+	CompareOperator       string             `json:"CompareOperator" xml:"CompareOperator"`
+	CheckType             int                `json:"CheckType" xml:"CheckType"`
+	MaxEmotionChangeValue int                `json:"MaxEmotionChangeValue" xml:"MaxEmotionChangeValue"`
+	OperKeyWords          OperKeyWords       `json:"OperKeyWords" xml:"OperKeyWords"`
+	References            References         `json:"References" xml:"References"`
+	SimilarlySentences    SimilarlySentences `json:"SimilarlySentences" xml:"SimilarlySentences"`
+	Excludes              Excludes           `json:"Excludes" xml:"Excludes"`
 }

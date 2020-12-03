@@ -21,7 +21,6 @@ import (
 )
 
 // HandleComplaint invokes the qualitycheck.HandleComplaint API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/handlecomplaint.html
 func (client *Client) HandleComplaint(request *HandleComplaintRequest) (response *HandleComplaintResponse, err error) {
 	response = CreateHandleComplaintResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) HandleComplaint(request *HandleComplaintRequest) (response
 }
 
 // HandleComplaintWithChan invokes the qualitycheck.HandleComplaint API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/handlecomplaint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HandleComplaintWithChan(request *HandleComplaintRequest) (<-chan *HandleComplaintResponse, <-chan error) {
 	responseChan := make(chan *HandleComplaintResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) HandleComplaintWithChan(request *HandleComplaintRequest) (
 }
 
 // HandleComplaintWithCallback invokes the qualitycheck.HandleComplaint API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/handlecomplaint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HandleComplaintWithCallback(request *HandleComplaintRequest, callback func(response *HandleComplaintResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateHandleComplaintRequest() (request *HandleComplaintRequest) {
 	request = &HandleComplaintRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "HandleComplaint", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "HandleComplaint", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

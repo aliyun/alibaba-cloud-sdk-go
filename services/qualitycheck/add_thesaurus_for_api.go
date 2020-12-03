@@ -21,7 +21,6 @@ import (
 )
 
 // AddThesaurusForApi invokes the qualitycheck.AddThesaurusForApi API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/addthesaurusforapi.html
 func (client *Client) AddThesaurusForApi(request *AddThesaurusForApiRequest) (response *AddThesaurusForApiResponse, err error) {
 	response = CreateAddThesaurusForApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddThesaurusForApi(request *AddThesaurusForApiRequest) (re
 }
 
 // AddThesaurusForApiWithChan invokes the qualitycheck.AddThesaurusForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/addthesaurusforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddThesaurusForApiWithChan(request *AddThesaurusForApiRequest) (<-chan *AddThesaurusForApiResponse, <-chan error) {
 	responseChan := make(chan *AddThesaurusForApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddThesaurusForApiWithChan(request *AddThesaurusForApiRequ
 }
 
 // AddThesaurusForApiWithCallback invokes the qualitycheck.AddThesaurusForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/addthesaurusforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddThesaurusForApiWithCallback(request *AddThesaurusForApiRequest, callback func(response *AddThesaurusForApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateAddThesaurusForApiRequest() (request *AddThesaurusForApiRequest) {
 	request = &AddThesaurusForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AddThesaurusForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AddThesaurusForApi", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

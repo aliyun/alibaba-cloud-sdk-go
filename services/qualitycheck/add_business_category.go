@@ -21,7 +21,6 @@ import (
 )
 
 // AddBusinessCategory invokes the qualitycheck.AddBusinessCategory API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/addbusinesscategory.html
 func (client *Client) AddBusinessCategory(request *AddBusinessCategoryRequest) (response *AddBusinessCategoryResponse, err error) {
 	response = CreateAddBusinessCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddBusinessCategory(request *AddBusinessCategoryRequest) (
 }
 
 // AddBusinessCategoryWithChan invokes the qualitycheck.AddBusinessCategory API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/addbusinesscategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBusinessCategoryWithChan(request *AddBusinessCategoryRequest) (<-chan *AddBusinessCategoryResponse, <-chan error) {
 	responseChan := make(chan *AddBusinessCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddBusinessCategoryWithChan(request *AddBusinessCategoryRe
 }
 
 // AddBusinessCategoryWithCallback invokes the qualitycheck.AddBusinessCategory API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/addbusinesscategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBusinessCategoryWithCallback(request *AddBusinessCategoryRequest, callback func(response *AddBusinessCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateAddBusinessCategoryRequest() (request *AddBusinessCategoryRequest) {
 	request = &AddBusinessCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AddBusinessCategory", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AddBusinessCategory", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

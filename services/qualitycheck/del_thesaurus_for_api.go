@@ -21,7 +21,6 @@ import (
 )
 
 // DelThesaurusForApi invokes the qualitycheck.DelThesaurusForApi API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/delthesaurusforapi.html
 func (client *Client) DelThesaurusForApi(request *DelThesaurusForApiRequest) (response *DelThesaurusForApiResponse, err error) {
 	response = CreateDelThesaurusForApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DelThesaurusForApi(request *DelThesaurusForApiRequest) (re
 }
 
 // DelThesaurusForApiWithChan invokes the qualitycheck.DelThesaurusForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/delthesaurusforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DelThesaurusForApiWithChan(request *DelThesaurusForApiRequest) (<-chan *DelThesaurusForApiResponse, <-chan error) {
 	responseChan := make(chan *DelThesaurusForApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DelThesaurusForApiWithChan(request *DelThesaurusForApiRequ
 }
 
 // DelThesaurusForApiWithCallback invokes the qualitycheck.DelThesaurusForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/delthesaurusforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DelThesaurusForApiWithCallback(request *DelThesaurusForApiRequest, callback func(response *DelThesaurusForApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDelThesaurusForApiRequest() (request *DelThesaurusForApiRequest) {
 	request = &DelThesaurusForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DelThesaurusForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DelThesaurusForApi", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

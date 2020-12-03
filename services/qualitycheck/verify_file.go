@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyFile invokes the qualitycheck.VerifyFile API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/verifyfile.html
 func (client *Client) VerifyFile(request *VerifyFileRequest) (response *VerifyFileResponse, err error) {
 	response = CreateVerifyFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyFile(request *VerifyFileRequest) (response *VerifyFi
 }
 
 // VerifyFileWithChan invokes the qualitycheck.VerifyFile API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/verifyfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyFileWithChan(request *VerifyFileRequest) (<-chan *VerifyFileResponse, <-chan error) {
 	responseChan := make(chan *VerifyFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyFileWithChan(request *VerifyFileRequest) (<-chan *Ve
 }
 
 // VerifyFileWithCallback invokes the qualitycheck.VerifyFile API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/verifyfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyFileWithCallback(request *VerifyFileRequest, callback func(response *VerifyFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateVerifyFileRequest() (request *VerifyFileRequest) {
 	request = &VerifyFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "VerifyFile", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "VerifyFile", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

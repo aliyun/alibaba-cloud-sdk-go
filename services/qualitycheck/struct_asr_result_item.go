@@ -17,11 +17,11 @@ package qualitycheck
 
 // AsrResultItem is a nested struct in qualitycheck response
 type AsrResultItem struct {
-	Role            string `json:"Role" xml:"Role"`
-	Words           string `json:"Words" xml:"Words"`
-	Begin           int64  `json:"Begin" xml:"Begin"`
 	End             int64  `json:"End" xml:"End"`
-	EmotionValue    int    `json:"EmotionValue" xml:"EmotionValue"`
-	SilenceDuration int    `json:"SilenceDuration" xml:"SilenceDuration"`
+	Words           string `json:"Words" xml:"Words"`
+	Role            string `json:"Role" xml:"Role"`
 	SpeechRate      int    `json:"SpeechRate" xml:"SpeechRate"`
+	SilenceDuration int    `json:"SilenceDuration" xml:"SilenceDuration"`
+	Begin           int64  `json:"Begin" xml:"Begin"`
+	EmotionValue    int    `json:"EmotionValue" xml:"EmotionValue"`
 }

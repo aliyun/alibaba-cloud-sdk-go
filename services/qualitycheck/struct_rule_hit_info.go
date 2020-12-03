@@ -17,8 +17,9 @@ package qualitycheck
 
 // RuleHitInfo is a nested struct in qualitycheck response
 type RuleHitInfo struct {
-	HitStatus     int                 `json:"HitStatus" xml:"HitStatus"`
 	Rid           string              `json:"Rid" xml:"Rid"`
+	RuleName      string              `json:"RuleName" xml:"RuleName"`
+	Tid           string              `json:"Tid" xml:"Tid"`
 	Hit           HitInUploadDataSync `json:"Hit" xml:"Hit"`
 	ConditionInfo ConditionInfo       `json:"ConditionInfo" xml:"ConditionInfo"`
 }

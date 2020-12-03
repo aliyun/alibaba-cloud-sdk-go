@@ -21,7 +21,6 @@ import (
 )
 
 // EditThesaurusForApi invokes the qualitycheck.EditThesaurusForApi API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/editthesaurusforapi.html
 func (client *Client) EditThesaurusForApi(request *EditThesaurusForApiRequest) (response *EditThesaurusForApiResponse, err error) {
 	response = CreateEditThesaurusForApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EditThesaurusForApi(request *EditThesaurusForApiRequest) (
 }
 
 // EditThesaurusForApiWithChan invokes the qualitycheck.EditThesaurusForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/editthesaurusforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditThesaurusForApiWithChan(request *EditThesaurusForApiRequest) (<-chan *EditThesaurusForApiResponse, <-chan error) {
 	responseChan := make(chan *EditThesaurusForApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EditThesaurusForApiWithChan(request *EditThesaurusForApiRe
 }
 
 // EditThesaurusForApiWithCallback invokes the qualitycheck.EditThesaurusForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/editthesaurusforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditThesaurusForApiWithCallback(request *EditThesaurusForApiRequest, callback func(response *EditThesaurusForApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateEditThesaurusForApiRequest() (request *EditThesaurusForApiRequest) {
 	request = &EditThesaurusForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "EditThesaurusForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "EditThesaurusForApi", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

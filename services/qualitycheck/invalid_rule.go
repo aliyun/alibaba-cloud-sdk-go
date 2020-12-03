@@ -21,7 +21,6 @@ import (
 )
 
 // InvalidRule invokes the qualitycheck.InvalidRule API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/invalidrule.html
 func (client *Client) InvalidRule(request *InvalidRuleRequest) (response *InvalidRuleResponse, err error) {
 	response = CreateInvalidRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InvalidRule(request *InvalidRuleRequest) (response *Invali
 }
 
 // InvalidRuleWithChan invokes the qualitycheck.InvalidRule API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/invalidrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvalidRuleWithChan(request *InvalidRuleRequest) (<-chan *InvalidRuleResponse, <-chan error) {
 	responseChan := make(chan *InvalidRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InvalidRuleWithChan(request *InvalidRuleRequest) (<-chan *
 }
 
 // InvalidRuleWithCallback invokes the qualitycheck.InvalidRule API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/invalidrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvalidRuleWithCallback(request *InvalidRuleRequest, callback func(response *InvalidRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateInvalidRuleRequest() (request *InvalidRuleRequest) {
 	request = &InvalidRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "InvalidRule", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "InvalidRule", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

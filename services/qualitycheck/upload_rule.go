@@ -21,7 +21,6 @@ import (
 )
 
 // UploadRule invokes the qualitycheck.UploadRule API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploadrule.html
 func (client *Client) UploadRule(request *UploadRuleRequest) (response *UploadRuleResponse, err error) {
 	response = CreateUploadRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadRule(request *UploadRuleRequest) (response *UploadRu
 }
 
 // UploadRuleWithChan invokes the qualitycheck.UploadRule API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploadrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadRuleWithChan(request *UploadRuleRequest) (<-chan *UploadRuleResponse, <-chan error) {
 	responseChan := make(chan *UploadRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadRuleWithChan(request *UploadRuleRequest) (<-chan *Up
 }
 
 // UploadRuleWithCallback invokes the qualitycheck.UploadRule API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploadrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadRuleWithCallback(request *UploadRuleRequest, callback func(response *UploadRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateUploadRuleRequest() (request *UploadRuleRequest) {
 	request = &UploadRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadRule", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadRule", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -18,25 +18,26 @@ package qualitycheck
 // ResultInfo is a nested struct in qualitycheck response
 type ResultInfo struct {
 	Comments        string                `json:"Comments" xml:"Comments"`
-	Status          int                   `json:"Status" xml:"Status"`
+	CreateTimeLong  string                `json:"CreateTimeLong" xml:"CreateTimeLong"`
 	RuleName        string                `json:"RuleName" xml:"RuleName"`
-	HitId           string                `json:"HitId" xml:"HitId"`
 	ErrorMessage    string                `json:"ErrorMessage" xml:"ErrorMessage"`
 	ReviewStatus    int                   `json:"ReviewStatus" xml:"ReviewStatus"`
 	CreateTime      string                `json:"CreateTime" xml:"CreateTime"`
-	AsrMsg          string                `json:"AsrMsg" xml:"AsrMsg"`
 	ReviewResult    int                   `json:"ReviewResult" xml:"ReviewResult"`
-	Tid             string                `json:"Tid" xml:"Tid"`
 	Resolver        string                `json:"Resolver" xml:"Resolver"`
+	ReviewTime      string                `json:"ReviewTime" xml:"ReviewTime"`
 	TaskId          string                `json:"TaskId" xml:"TaskId"`
 	Rid             int64                 `json:"Rid" xml:"Rid"`
+	Status          int                   `json:"Status" xml:"Status"`
+	ReviewTimeLong  string                `json:"ReviewTimeLong" xml:"ReviewTimeLong"`
 	TaskName        string                `json:"TaskName" xml:"TaskName"`
 	Reviewer        string                `json:"Reviewer" xml:"Reviewer"`
 	Score           int                   `json:"Score" xml:"Score"`
 	HandScoreIdList HandScoreIdList       `json:"HandScoreIdList" xml:"HandScoreIdList"`
-	Agent           Agent                 `json:"Agent" xml:"Agent"`
 	Recording       Recording             `json:"Recording" xml:"Recording"`
+	Agent           Agent                 `json:"Agent" xml:"Agent"`
+	AsrResult       []AsrResultItem       `json:"AsrResult" xml:"AsrResult"`
+	HitResult       []HitResultItem       `json:"HitResult" xml:"HitResult"`
 	Rules           RulesInUploadDataSync `json:"Rules" xml:"Rules"`
-	AsrResult       AsrResultInGetResult  `json:"AsrResult" xml:"AsrResult"`
-	HitResult       HitResult             `json:"HitResult" xml:"HitResult"`
+	HitScore        HitScore              `json:"HitScore" xml:"HitScore"`
 }

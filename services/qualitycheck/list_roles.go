@@ -21,7 +21,6 @@ import (
 )
 
 // ListRoles invokes the qualitycheck.ListRoles API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listroles.html
 func (client *Client) ListRoles(request *ListRolesRequest) (response *ListRolesResponse, err error) {
 	response = CreateListRolesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRoles(request *ListRolesRequest) (response *ListRolesR
 }
 
 // ListRolesWithChan invokes the qualitycheck.ListRoles API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listroles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *ListRolesResponse, <-chan error) {
 	responseChan := make(chan *ListRolesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *List
 }
 
 // ListRolesWithCallback invokes the qualitycheck.ListRoles API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listroles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRolesWithCallback(request *ListRolesRequest, callback func(response *ListRolesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateListRolesRequest() (request *ListRolesRequest) {
 	request = &ListRolesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListRoles", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListRoles", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

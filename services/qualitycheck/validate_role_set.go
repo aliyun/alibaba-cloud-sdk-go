@@ -21,7 +21,6 @@ import (
 )
 
 // ValidateRoleSet invokes the qualitycheck.ValidateRoleSet API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/validateroleset.html
 func (client *Client) ValidateRoleSet(request *ValidateRoleSetRequest) (response *ValidateRoleSetResponse, err error) {
 	response = CreateValidateRoleSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ValidateRoleSet(request *ValidateRoleSetRequest) (response
 }
 
 // ValidateRoleSetWithChan invokes the qualitycheck.ValidateRoleSet API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/validateroleset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateRoleSetWithChan(request *ValidateRoleSetRequest) (<-chan *ValidateRoleSetResponse, <-chan error) {
 	responseChan := make(chan *ValidateRoleSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ValidateRoleSetWithChan(request *ValidateRoleSetRequest) (
 }
 
 // ValidateRoleSetWithCallback invokes the qualitycheck.ValidateRoleSet API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/validateroleset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateRoleSetWithCallback(request *ValidateRoleSetRequest, callback func(response *ValidateRoleSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateValidateRoleSetRequest() (request *ValidateRoleSetRequest) {
 	request = &ValidateRoleSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ValidateRoleSet", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ValidateRoleSet", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

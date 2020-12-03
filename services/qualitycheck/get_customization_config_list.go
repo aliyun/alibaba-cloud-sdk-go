@@ -21,7 +21,6 @@ import (
 )
 
 // GetCustomizationConfigList invokes the qualitycheck.GetCustomizationConfigList API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getcustomizationconfiglist.html
 func (client *Client) GetCustomizationConfigList(request *GetCustomizationConfigListRequest) (response *GetCustomizationConfigListResponse, err error) {
 	response = CreateGetCustomizationConfigListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCustomizationConfigList(request *GetCustomizationConfig
 }
 
 // GetCustomizationConfigListWithChan invokes the qualitycheck.GetCustomizationConfigList API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getcustomizationconfiglist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCustomizationConfigListWithChan(request *GetCustomizationConfigListRequest) (<-chan *GetCustomizationConfigListResponse, <-chan error) {
 	responseChan := make(chan *GetCustomizationConfigListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCustomizationConfigListWithChan(request *GetCustomizati
 }
 
 // GetCustomizationConfigListWithCallback invokes the qualitycheck.GetCustomizationConfigList API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getcustomizationconfiglist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCustomizationConfigListWithCallback(request *GetCustomizationConfigListRequest, callback func(response *GetCustomizationConfigListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetCustomizationConfigListRequest() (request *GetCustomizationConfigL
 	request = &GetCustomizationConfigListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetCustomizationConfigList", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetCustomizationConfigList", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // GetThesaurusBySynonymForApi invokes the qualitycheck.GetThesaurusBySynonymForApi API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getthesaurusbysynonymforapi.html
 func (client *Client) GetThesaurusBySynonymForApi(request *GetThesaurusBySynonymForApiRequest) (response *GetThesaurusBySynonymForApiResponse, err error) {
 	response = CreateGetThesaurusBySynonymForApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetThesaurusBySynonymForApi(request *GetThesaurusBySynonym
 }
 
 // GetThesaurusBySynonymForApiWithChan invokes the qualitycheck.GetThesaurusBySynonymForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getthesaurusbysynonymforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetThesaurusBySynonymForApiWithChan(request *GetThesaurusBySynonymForApiRequest) (<-chan *GetThesaurusBySynonymForApiResponse, <-chan error) {
 	responseChan := make(chan *GetThesaurusBySynonymForApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetThesaurusBySynonymForApiWithChan(request *GetThesaurusB
 }
 
 // GetThesaurusBySynonymForApiWithCallback invokes the qualitycheck.GetThesaurusBySynonymForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getthesaurusbysynonymforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetThesaurusBySynonymForApiWithCallback(request *GetThesaurusBySynonymForApiRequest, callback func(response *GetThesaurusBySynonymForApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetThesaurusBySynonymForApiRequest() (request *GetThesaurusBySynonymF
 	request = &GetThesaurusBySynonymForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetThesaurusBySynonymForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetThesaurusBySynonymForApi", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

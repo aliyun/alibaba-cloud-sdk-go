@@ -17,9 +17,10 @@ package qualitycheck
 
 // HitKeyWord is a nested struct in qualitycheck response
 type HitKeyWord struct {
+	To   int    `json:"To" xml:"To"`
 	Val  string `json:"Val" xml:"Val"`
 	Pid  int    `json:"Pid" xml:"Pid"`
+	Cid  int    `json:"Cid" xml:"Cid"`
 	From int    `json:"From" xml:"From"`
-	To   int    `json:"To" xml:"To"`
 	Tid  string `json:"Tid" xml:"Tid"`
 }

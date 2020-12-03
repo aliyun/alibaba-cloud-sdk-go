@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePrecisionTask invokes the qualitycheck.DeletePrecisionTask API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deleteprecisiontask.html
 func (client *Client) DeletePrecisionTask(request *DeletePrecisionTaskRequest) (response *DeletePrecisionTaskResponse, err error) {
 	response = CreateDeletePrecisionTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePrecisionTask(request *DeletePrecisionTaskRequest) (
 }
 
 // DeletePrecisionTaskWithChan invokes the qualitycheck.DeletePrecisionTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deleteprecisiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePrecisionTaskWithChan(request *DeletePrecisionTaskRequest) (<-chan *DeletePrecisionTaskResponse, <-chan error) {
 	responseChan := make(chan *DeletePrecisionTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePrecisionTaskWithChan(request *DeletePrecisionTaskRe
 }
 
 // DeletePrecisionTaskWithCallback invokes the qualitycheck.DeletePrecisionTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deleteprecisiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePrecisionTaskWithCallback(request *DeletePrecisionTaskRequest, callback func(response *DeletePrecisionTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDeletePrecisionTaskRequest() (request *DeletePrecisionTaskRequest) {
 	request = &DeletePrecisionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeletePrecisionTask", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeletePrecisionTask", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitPrecisionTask invokes the qualitycheck.SubmitPrecisionTask API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitprecisiontask.html
 func (client *Client) SubmitPrecisionTask(request *SubmitPrecisionTaskRequest) (response *SubmitPrecisionTaskResponse, err error) {
 	response = CreateSubmitPrecisionTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitPrecisionTask(request *SubmitPrecisionTaskRequest) (
 }
 
 // SubmitPrecisionTaskWithChan invokes the qualitycheck.SubmitPrecisionTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitprecisiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPrecisionTaskWithChan(request *SubmitPrecisionTaskRequest) (<-chan *SubmitPrecisionTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitPrecisionTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitPrecisionTaskWithChan(request *SubmitPrecisionTaskRe
 }
 
 // SubmitPrecisionTaskWithCallback invokes the qualitycheck.SubmitPrecisionTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitprecisiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPrecisionTaskWithCallback(request *SubmitPrecisionTaskRequest, callback func(response *SubmitPrecisionTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateSubmitPrecisionTaskRequest() (request *SubmitPrecisionTaskRequest) {
 	request = &SubmitPrecisionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitPrecisionTask", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitPrecisionTask", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

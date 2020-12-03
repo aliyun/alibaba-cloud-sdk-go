@@ -21,7 +21,6 @@ import (
 )
 
 // GetPrecisionTask invokes the qualitycheck.GetPrecisionTask API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getprecisiontask.html
 func (client *Client) GetPrecisionTask(request *GetPrecisionTaskRequest) (response *GetPrecisionTaskResponse, err error) {
 	response = CreateGetPrecisionTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPrecisionTask(request *GetPrecisionTaskRequest) (respon
 }
 
 // GetPrecisionTaskWithChan invokes the qualitycheck.GetPrecisionTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getprecisiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPrecisionTaskWithChan(request *GetPrecisionTaskRequest) (<-chan *GetPrecisionTaskResponse, <-chan error) {
 	responseChan := make(chan *GetPrecisionTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPrecisionTaskWithChan(request *GetPrecisionTaskRequest)
 }
 
 // GetPrecisionTaskWithCallback invokes the qualitycheck.GetPrecisionTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getprecisiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPrecisionTaskWithCallback(request *GetPrecisionTaskRequest, callback func(response *GetPrecisionTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetPrecisionTaskRequest() (request *GetPrecisionTaskRequest) {
 	request = &GetPrecisionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetPrecisionTask", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetPrecisionTask", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

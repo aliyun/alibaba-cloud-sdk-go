@@ -17,9 +17,10 @@ package qualitycheck
 
 // Precision is a nested struct in qualitycheck response
 type Precision struct {
-	Status    int     `json:"Status" xml:"Status"`
-	TaskId    string  `json:"TaskId" xml:"TaskId"`
-	ModelName string  `json:"ModelName" xml:"ModelName"`
-	Precision float64 `json:"Precision" xml:"Precision"`
-	ModelId   int64   `json:"ModelId" xml:"ModelId"`
+	Status     int     `json:"Status" xml:"Status"`
+	TaskId     string  `json:"TaskId" xml:"TaskId"`
+	ModelName  string  `json:"ModelName" xml:"ModelName"`
+	CreateTime string  `json:"CreateTime" xml:"CreateTime"`
+	Precision  float64 `json:"Precision" xml:"Precision"`
+	ModelId    int64   `json:"ModelId" xml:"ModelId"`
 }

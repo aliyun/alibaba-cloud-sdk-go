@@ -17,19 +17,24 @@ package qualitycheck
 
 // SkillGroupConfig is a nested struct in qualitycheck response
 type SkillGroupConfig struct {
-	Id             int64                          `json:"Id" xml:"Id"`
-	InstanceId     string                         `json:"InstanceId" xml:"InstanceId"`
-	ModelId        int64                          `json:"ModelId" xml:"ModelId"`
-	ModelName      string                         `json:"ModelName" xml:"ModelName"`
-	Name           string                         `json:"Name" xml:"Name"`
-	Rid            string                         `json:"Rid" xml:"Rid"`
-	SkillGroupId   string                         `json:"SkillGroupId" xml:"SkillGroupId"`
-	SkillGroupName string                         `json:"SkillGroupName" xml:"SkillGroupName"`
-	Status         int                            `json:"Status" xml:"Status"`
-	Type           int                            `json:"Type" xml:"Type"`
-	VocabId        int64                          `json:"VocabId" xml:"VocabId"`
-	VocabName      string                         `json:"VocabName" xml:"VocabName"`
-	CreateTime     string                         `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime     string                         `json:"UpdateTime" xml:"UpdateTime"`
-	RuleList       RuleListInListSkillGroupConfig `json:"RuleList" xml:"RuleList"`
+	Id                     int64                             `json:"Id" xml:"Id"`
+	InstanceId             string                            `json:"InstanceId" xml:"InstanceId"`
+	ModelId                int64                             `json:"ModelId" xml:"ModelId"`
+	ModelName              string                            `json:"ModelName" xml:"ModelName"`
+	Name                   string                            `json:"Name" xml:"Name"`
+	Rid                    string                            `json:"Rid" xml:"Rid"`
+	SkillGroupId           string                            `json:"SkillGroupId" xml:"SkillGroupId"`
+	SkillGroupName         string                            `json:"SkillGroupName" xml:"SkillGroupName"`
+	Status                 int                               `json:"Status" xml:"Status"`
+	Type                   int                               `json:"Type" xml:"Type"`
+	VocabId                int64                             `json:"VocabId" xml:"VocabId"`
+	VocabName              string                            `json:"VocabName" xml:"VocabName"`
+	CreateTime             string                            `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime             string                            `json:"UpdateTime" xml:"UpdateTime"`
+	QualityCheckType       int                               `json:"QualityCheckType" xml:"QualityCheckType"`
+	AllContentQualityCheck int                               `json:"AllContentQualityCheck" xml:"AllContentQualityCheck"`
+	AllRids                string                            `json:"AllRids" xml:"AllRids"`
+	SkillGroupFrom         int                               `json:"SkillGroupFrom" xml:"SkillGroupFrom"`
+	RuleList               RuleListInListSkillGroupConfig    `json:"RuleList" xml:"RuleList"`
+	AllRuleList            AllRuleListInListSkillGroupConfig `json:"AllRuleList" xml:"AllRuleList"`
 }

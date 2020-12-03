@@ -17,7 +17,7 @@ package qualitycheck
 
 // ScorePo is a nested struct in qualitycheck response
 type ScorePo struct {
-	ScoreId    int64                             `json:"ScoreId" xml:"ScoreId"`
-	ScoreName  string                            `json:"ScoreName" xml:"ScoreName"`
-	ScoreInfos ScoreInfosInGetNextResultToReview `json:"ScoreInfos" xml:"ScoreInfos"`
+	ScoreId    int64                         `json:"ScoreId" xml:"ScoreId"`
+	ScoreName  string                        `json:"ScoreName" xml:"ScoreName"`
+	ScoreInfos ScoreInfosInGetResultToReview `json:"ScoreInfos" xml:"ScoreInfos"`
 }

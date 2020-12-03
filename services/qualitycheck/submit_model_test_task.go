@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitModelTestTask invokes the qualitycheck.SubmitModelTestTask API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitmodeltesttask.html
 func (client *Client) SubmitModelTestTask(request *SubmitModelTestTaskRequest) (response *SubmitModelTestTaskResponse, err error) {
 	response = CreateSubmitModelTestTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitModelTestTask(request *SubmitModelTestTaskRequest) (
 }
 
 // SubmitModelTestTaskWithChan invokes the qualitycheck.SubmitModelTestTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitmodeltesttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitModelTestTaskWithChan(request *SubmitModelTestTaskRequest) (<-chan *SubmitModelTestTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitModelTestTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitModelTestTaskWithChan(request *SubmitModelTestTaskRe
 }
 
 // SubmitModelTestTaskWithCallback invokes the qualitycheck.SubmitModelTestTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitmodeltesttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitModelTestTaskWithCallback(request *SubmitModelTestTaskRequest, callback func(response *SubmitModelTestTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateSubmitModelTestTaskRequest() (request *SubmitModelTestTaskRequest) {
 	request = &SubmitModelTestTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitModelTestTask", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitModelTestTask", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

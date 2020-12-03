@@ -21,7 +21,6 @@ import (
 )
 
 // GetHitResult invokes the qualitycheck.GetHitResult API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/gethitresult.html
 func (client *Client) GetHitResult(request *GetHitResultRequest) (response *GetHitResultResponse, err error) {
 	response = CreateGetHitResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetHitResult(request *GetHitResultRequest) (response *GetH
 }
 
 // GetHitResultWithChan invokes the qualitycheck.GetHitResult API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/gethitresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetHitResultWithChan(request *GetHitResultRequest) (<-chan *GetHitResultResponse, <-chan error) {
 	responseChan := make(chan *GetHitResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetHitResultWithChan(request *GetHitResultRequest) (<-chan
 }
 
 // GetHitResultWithCallback invokes the qualitycheck.GetHitResult API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/gethitresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetHitResultWithCallback(request *GetHitResultRequest, callback func(response *GetHitResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateGetHitResultRequest() (request *GetHitResultRequest) {
 	request = &GetHitResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetHitResult", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetHitResult", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DelRuleCategory invokes the qualitycheck.DelRuleCategory API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/delrulecategory.html
 func (client *Client) DelRuleCategory(request *DelRuleCategoryRequest) (response *DelRuleCategoryResponse, err error) {
 	response = CreateDelRuleCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DelRuleCategory(request *DelRuleCategoryRequest) (response
 }
 
 // DelRuleCategoryWithChan invokes the qualitycheck.DelRuleCategory API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/delrulecategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DelRuleCategoryWithChan(request *DelRuleCategoryRequest) (<-chan *DelRuleCategoryResponse, <-chan error) {
 	responseChan := make(chan *DelRuleCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DelRuleCategoryWithChan(request *DelRuleCategoryRequest) (
 }
 
 // DelRuleCategoryWithCallback invokes the qualitycheck.DelRuleCategory API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/delrulecategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DelRuleCategoryWithCallback(request *DelRuleCategoryRequest, callback func(response *DelRuleCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDelRuleCategoryRequest() (request *DelRuleCategoryRequest) {
 	request = &DelRuleCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DelRuleCategory", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DelRuleCategory", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

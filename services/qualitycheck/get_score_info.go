@@ -21,7 +21,6 @@ import (
 )
 
 // GetScoreInfo invokes the qualitycheck.GetScoreInfo API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getscoreinfo.html
 func (client *Client) GetScoreInfo(request *GetScoreInfoRequest) (response *GetScoreInfoResponse, err error) {
 	response = CreateGetScoreInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetScoreInfo(request *GetScoreInfoRequest) (response *GetS
 }
 
 // GetScoreInfoWithChan invokes the qualitycheck.GetScoreInfo API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getscoreinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetScoreInfoWithChan(request *GetScoreInfoRequest) (<-chan *GetScoreInfoResponse, <-chan error) {
 	responseChan := make(chan *GetScoreInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetScoreInfoWithChan(request *GetScoreInfoRequest) (<-chan
 }
 
 // GetScoreInfoWithCallback invokes the qualitycheck.GetScoreInfo API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getscoreinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetScoreInfoWithCallback(request *GetScoreInfoRequest, callback func(response *GetScoreInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetScoreInfoRequest() (request *GetScoreInfoRequest) {
 	request = &GetScoreInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetScoreInfo", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetScoreInfo", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

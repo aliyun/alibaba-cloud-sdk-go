@@ -17,6 +17,6 @@ package qualitycheck
 
 // Range is a nested struct in qualitycheck response
 type Range struct {
-	To   int `json:"To" xml:"To"`
 	From int `json:"From" xml:"From"`
+	To   int `json:"To" xml:"To"`
 }

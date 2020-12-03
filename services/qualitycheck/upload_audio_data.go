@@ -21,7 +21,6 @@ import (
 )
 
 // UploadAudioData invokes the qualitycheck.UploadAudioData API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploadaudiodata.html
 func (client *Client) UploadAudioData(request *UploadAudioDataRequest) (response *UploadAudioDataResponse, err error) {
 	response = CreateUploadAudioDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadAudioData(request *UploadAudioDataRequest) (response
 }
 
 // UploadAudioDataWithChan invokes the qualitycheck.UploadAudioData API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploadaudiodata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadAudioDataWithChan(request *UploadAudioDataRequest) (<-chan *UploadAudioDataResponse, <-chan error) {
 	responseChan := make(chan *UploadAudioDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadAudioDataWithChan(request *UploadAudioDataRequest) (
 }
 
 // UploadAudioDataWithCallback invokes the qualitycheck.UploadAudioData API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploadaudiodata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadAudioDataWithCallback(request *UploadAudioDataRequest, callback func(response *UploadAudioDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateUploadAudioDataRequest() (request *UploadAudioDataRequest) {
 	request = &UploadAudioDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadAudioData", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadAudioData", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

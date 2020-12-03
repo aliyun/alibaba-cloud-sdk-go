@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitComplaint invokes the qualitycheck.SubmitComplaint API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitcomplaint.html
 func (client *Client) SubmitComplaint(request *SubmitComplaintRequest) (response *SubmitComplaintResponse, err error) {
 	response = CreateSubmitComplaintResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitComplaint(request *SubmitComplaintRequest) (response
 }
 
 // SubmitComplaintWithChan invokes the qualitycheck.SubmitComplaint API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitcomplaint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitComplaintWithChan(request *SubmitComplaintRequest) (<-chan *SubmitComplaintResponse, <-chan error) {
 	responseChan := make(chan *SubmitComplaintResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitComplaintWithChan(request *SubmitComplaintRequest) (
 }
 
 // SubmitComplaintWithCallback invokes the qualitycheck.SubmitComplaint API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/submitcomplaint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitComplaintWithCallback(request *SubmitComplaintRequest, callback func(response *SubmitComplaintResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateSubmitComplaintRequest() (request *SubmitComplaintRequest) {
 	request = &SubmitComplaintRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitComplaint", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitComplaint", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

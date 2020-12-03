@@ -21,7 +21,6 @@ import (
 )
 
 // InsertScoreForApi invokes the qualitycheck.InsertScoreForApi API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/insertscoreforapi.html
 func (client *Client) InsertScoreForApi(request *InsertScoreForApiRequest) (response *InsertScoreForApiResponse, err error) {
 	response = CreateInsertScoreForApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertScoreForApi(request *InsertScoreForApiRequest) (resp
 }
 
 // InsertScoreForApiWithChan invokes the qualitycheck.InsertScoreForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/insertscoreforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertScoreForApiWithChan(request *InsertScoreForApiRequest) (<-chan *InsertScoreForApiResponse, <-chan error) {
 	responseChan := make(chan *InsertScoreForApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertScoreForApiWithChan(request *InsertScoreForApiReques
 }
 
 // InsertScoreForApiWithCallback invokes the qualitycheck.InsertScoreForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/insertscoreforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertScoreForApiWithCallback(request *InsertScoreForApiRequest, callback func(response *InsertScoreForApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateInsertScoreForApiRequest() (request *InsertScoreForApiRequest) {
 	request = &InsertScoreForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "InsertScoreForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "InsertScoreForApi", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

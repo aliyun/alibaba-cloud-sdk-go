@@ -21,7 +21,6 @@ import (
 )
 
 // GetRecognizeResult invokes the qualitycheck.GetRecognizeResult API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getrecognizeresult.html
 func (client *Client) GetRecognizeResult(request *GetRecognizeResultRequest) (response *GetRecognizeResultResponse, err error) {
 	response = CreateGetRecognizeResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRecognizeResult(request *GetRecognizeResultRequest) (re
 }
 
 // GetRecognizeResultWithChan invokes the qualitycheck.GetRecognizeResult API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getrecognizeresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRecognizeResultWithChan(request *GetRecognizeResultRequest) (<-chan *GetRecognizeResultResponse, <-chan error) {
 	responseChan := make(chan *GetRecognizeResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRecognizeResultWithChan(request *GetRecognizeResultRequ
 }
 
 // GetRecognizeResultWithCallback invokes the qualitycheck.GetRecognizeResult API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getrecognizeresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRecognizeResultWithCallback(request *GetRecognizeResultRequest, callback func(response *GetRecognizeResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetRecognizeResultRequest() (request *GetRecognizeResultRequest) {
 	request = &GetRecognizeResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetRecognizeResult", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetRecognizeResult", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

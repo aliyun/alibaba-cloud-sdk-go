@@ -21,7 +21,6 @@ import (
 )
 
 // GetSkillGroupConfig invokes the qualitycheck.GetSkillGroupConfig API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getskillgroupconfig.html
 func (client *Client) GetSkillGroupConfig(request *GetSkillGroupConfigRequest) (response *GetSkillGroupConfigResponse, err error) {
 	response = CreateGetSkillGroupConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSkillGroupConfig(request *GetSkillGroupConfigRequest) (
 }
 
 // GetSkillGroupConfigWithChan invokes the qualitycheck.GetSkillGroupConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getskillgroupconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSkillGroupConfigWithChan(request *GetSkillGroupConfigRequest) (<-chan *GetSkillGroupConfigResponse, <-chan error) {
 	responseChan := make(chan *GetSkillGroupConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSkillGroupConfigWithChan(request *GetSkillGroupConfigRe
 }
 
 // GetSkillGroupConfigWithCallback invokes the qualitycheck.GetSkillGroupConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getskillgroupconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSkillGroupConfigWithCallback(request *GetSkillGroupConfigRequest, callback func(response *GetSkillGroupConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetSkillGroupConfigRequest() (request *GetSkillGroupConfigRequest) {
 	request = &GetSkillGroupConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetSkillGroupConfig", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetSkillGroupConfig", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

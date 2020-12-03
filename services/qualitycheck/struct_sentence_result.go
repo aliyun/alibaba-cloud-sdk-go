@@ -17,15 +17,11 @@ package qualitycheck
 
 // SentenceResult is a nested struct in qualitycheck response
 type SentenceResult struct {
-	BeginTime        int64  `json:"BeginTime" xml:"BeginTime"`
-	Text             string `json:"Text" xml:"Text"`
-	AgentId          string `json:"AgentId" xml:"AgentId"`
-	ChannelId        int    `json:"ChannelId" xml:"ChannelId"`
-	SpeechRate       int    `json:"SpeechRate" xml:"SpeechRate"`
-	SpeakerId        string `json:"SpeakerId" xml:"SpeakerId"`
-	ChannelKey       string `json:"ChannelKey" xml:"ChannelKey"`
-	EndTime          int64  `json:"EndTime" xml:"EndTime"`
-	IdentificationId int    `json:"IdentificationId" xml:"IdentificationId"`
-	SilenceDuration  int    `json:"SilenceDuration" xml:"SilenceDuration"`
-	EmotionValue     int    `json:"EmotionValue" xml:"EmotionValue"`
+	BeginTime       int64  `json:"BeginTime" xml:"BeginTime"`
+	ChannelId       int    `json:"ChannelId" xml:"ChannelId"`
+	EndTime         int64  `json:"EndTime" xml:"EndTime"`
+	Text            string `json:"Text" xml:"Text"`
+	EmotionValue    int    `json:"EmotionValue" xml:"EmotionValue"`
+	SilenceDuration int    `json:"SilenceDuration" xml:"SilenceDuration"`
+	SpeechRate      int    `json:"SpeechRate" xml:"SpeechRate"`
 }

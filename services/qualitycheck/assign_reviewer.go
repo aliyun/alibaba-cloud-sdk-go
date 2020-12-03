@@ -21,7 +21,6 @@ import (
 )
 
 // AssignReviewer invokes the qualitycheck.AssignReviewer API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/assignreviewer.html
 func (client *Client) AssignReviewer(request *AssignReviewerRequest) (response *AssignReviewerResponse, err error) {
 	response = CreateAssignReviewerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssignReviewer(request *AssignReviewerRequest) (response *
 }
 
 // AssignReviewerWithChan invokes the qualitycheck.AssignReviewer API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/assignreviewer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignReviewerWithChan(request *AssignReviewerRequest) (<-chan *AssignReviewerResponse, <-chan error) {
 	responseChan := make(chan *AssignReviewerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssignReviewerWithChan(request *AssignReviewerRequest) (<-
 }
 
 // AssignReviewerWithCallback invokes the qualitycheck.AssignReviewer API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/assignreviewer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignReviewerWithCallback(request *AssignReviewerRequest, callback func(response *AssignReviewerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateAssignReviewerRequest() (request *AssignReviewerRequest) {
 	request = &AssignReviewerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AssignReviewer", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AssignReviewer", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

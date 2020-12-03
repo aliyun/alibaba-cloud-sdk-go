@@ -17,13 +17,11 @@ package qualitycheck
 
 // Phrase is a nested struct in qualitycheck response
 type Phrase struct {
-	End          int64  `json:"End" xml:"End"`
-	Words        string `json:"Words" xml:"Words"`
-	HourMinSec   string `json:"HourMinSec" xml:"HourMinSec"`
-	Identity     string `json:"Identity" xml:"Identity"`
-	Role         string `json:"Role" xml:"Role"`
-	Pid          int    `json:"Pid" xml:"Pid"`
-	BeginTime    string `json:"BeginTime" xml:"BeginTime"`
-	EmotionValue int    `json:"EmotionValue" xml:"EmotionValue"`
-	Begin        int64  `json:"Begin" xml:"Begin"`
+	Words           string `json:"Words" xml:"Words"`
+	Role            string `json:"Role" xml:"Role"`
+	SpeechRate      int    `json:"SpeechRate" xml:"SpeechRate"`
+	End             int    `json:"End" xml:"End"`
+	SilenceDuration int    `json:"SilenceDuration" xml:"SilenceDuration"`
+	Begin           int64  `json:"Begin" xml:"Begin"`
+	EmotionValue    int    `json:"EmotionValue" xml:"EmotionValue"`
 }

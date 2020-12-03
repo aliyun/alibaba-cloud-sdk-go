@@ -21,7 +21,6 @@ import (
 )
 
 // ListWarningConfig invokes the qualitycheck.ListWarningConfig API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listwarningconfig.html
 func (client *Client) ListWarningConfig(request *ListWarningConfigRequest) (response *ListWarningConfigResponse, err error) {
 	response = CreateListWarningConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListWarningConfig(request *ListWarningConfigRequest) (resp
 }
 
 // ListWarningConfigWithChan invokes the qualitycheck.ListWarningConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listwarningconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListWarningConfigWithChan(request *ListWarningConfigRequest) (<-chan *ListWarningConfigResponse, <-chan error) {
 	responseChan := make(chan *ListWarningConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListWarningConfigWithChan(request *ListWarningConfigReques
 }
 
 // ListWarningConfigWithCallback invokes the qualitycheck.ListWarningConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listwarningconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListWarningConfigWithCallback(request *ListWarningConfigRequest, callback func(response *ListWarningConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateListWarningConfigRequest() (request *ListWarningConfigRequest) {
 	request = &ListWarningConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListWarningConfig", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListWarningConfig", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

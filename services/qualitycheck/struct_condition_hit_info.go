@@ -17,9 +17,9 @@ package qualitycheck
 
 // ConditionHitInfo is a nested struct in qualitycheck response
 type ConditionHitInfo struct {
-	Cid         CidInTestRule                   `json:"Cid" xml:"Cid"`
-	HitCids     HitCids                         `json:"HitCids" xml:"HitCids"`
-	Phrase      Phrase                          `json:"Phrase" xml:"Phrase"`
-	HitKeyWords HitKeyWords                     `json:"HitKeyWords" xml:"HitKeyWords"`
-	KeyWords    KeyWordsInGetNextResultToReview `json:"KeyWords" xml:"KeyWords"`
+	Cid         CidInGetResultToReview      `json:"Cid" xml:"Cid"`
+	HitCids     HitCids                     `json:"HitCids" xml:"HitCids"`
+	Phrase      PhraseInUploadDataSync      `json:"Phrase" xml:"Phrase"`
+	HitKeyWords HitKeyWordsInUploadDataSync `json:"HitKeyWords" xml:"HitKeyWords"`
+	KeyWords    KeyWordsInGetResultToReview `json:"KeyWords" xml:"KeyWords"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateWarningConfig invokes the qualitycheck.UpdateWarningConfig API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updatewarningconfig.html
 func (client *Client) UpdateWarningConfig(request *UpdateWarningConfigRequest) (response *UpdateWarningConfigResponse, err error) {
 	response = CreateUpdateWarningConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateWarningConfig(request *UpdateWarningConfigRequest) (
 }
 
 // UpdateWarningConfigWithChan invokes the qualitycheck.UpdateWarningConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updatewarningconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWarningConfigWithChan(request *UpdateWarningConfigRequest) (<-chan *UpdateWarningConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateWarningConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateWarningConfigWithChan(request *UpdateWarningConfigRe
 }
 
 // UpdateWarningConfigWithCallback invokes the qualitycheck.UpdateWarningConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updatewarningconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWarningConfigWithCallback(request *UpdateWarningConfigRequest, callback func(response *UpdateWarningConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateUpdateWarningConfigRequest() (request *UpdateWarningConfigRequest) {
 	request = &UpdateWarningConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateWarningConfig", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateWarningConfig", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

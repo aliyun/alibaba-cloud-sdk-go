@@ -21,7 +21,6 @@ import (
 )
 
 // CloseService invokes the qualitycheck.CloseService API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/closeservice.html
 func (client *Client) CloseService(request *CloseServiceRequest) (response *CloseServiceResponse, err error) {
 	response = CreateCloseServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloseService(request *CloseServiceRequest) (response *Clos
 }
 
 // CloseServiceWithChan invokes the qualitycheck.CloseService API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/closeservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseServiceWithChan(request *CloseServiceRequest) (<-chan *CloseServiceResponse, <-chan error) {
 	responseChan := make(chan *CloseServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloseServiceWithChan(request *CloseServiceRequest) (<-chan
 }
 
 // CloseServiceWithCallback invokes the qualitycheck.CloseService API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/closeservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseServiceWithCallback(request *CloseServiceRequest, callback func(response *CloseServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateCloseServiceRequest() (request *CloseServiceRequest) {
 	request = &CloseServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CloseService", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CloseService", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

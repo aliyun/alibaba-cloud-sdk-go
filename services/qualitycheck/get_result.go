@@ -21,7 +21,6 @@ import (
 )
 
 // GetResult invokes the qualitycheck.GetResult API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getresult.html
 func (client *Client) GetResult(request *GetResultRequest) (response *GetResultResponse, err error) {
 	response = CreateGetResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetResult(request *GetResultRequest) (response *GetResultR
 }
 
 // GetResultWithChan invokes the qualitycheck.GetResult API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResultWithChan(request *GetResultRequest) (<-chan *GetResultResponse, <-chan error) {
 	responseChan := make(chan *GetResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetResultWithChan(request *GetResultRequest) (<-chan *GetR
 }
 
 // GetResultWithCallback invokes the qualitycheck.GetResult API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResultWithCallback(request *GetResultRequest, callback func(response *GetResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,14 +78,15 @@ type GetResultRequest struct {
 // GetResultResponse is the response struct for api GetResult
 type GetResultResponse struct {
 	*responses.BaseResponse
-	RequestId  string          `json:"RequestId" xml:"RequestId"`
-	Success    bool            `json:"Success" xml:"Success"`
-	Code       string          `json:"Code" xml:"Code"`
-	Message    string          `json:"Message" xml:"Message"`
-	Count      int             `json:"Count" xml:"Count"`
-	PageSize   int             `json:"PageSize" xml:"PageSize"`
-	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
-	Data       DataInGetResult `json:"Data" xml:"Data"`
+	RequestId     string          `json:"RequestId" xml:"RequestId"`
+	Success       bool            `json:"Success" xml:"Success"`
+	Code          string          `json:"Code" xml:"Code"`
+	Message       string          `json:"Message" xml:"Message"`
+	Count         int             `json:"Count" xml:"Count"`
+	PageSize      int             `json:"PageSize" xml:"PageSize"`
+	PageNumber    int             `json:"PageNumber" xml:"PageNumber"`
+	ResultCountId string          `json:"ResultCountId" xml:"ResultCountId"`
+	Data          DataInGetResult `json:"Data" xml:"Data"`
 }
 
 // CreateGetResultRequest creates a request to invoke GetResult API
@@ -98,7 +94,8 @@ func CreateGetResultRequest() (request *GetResultRequest) {
 	request = &GetResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetResult", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetResult", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

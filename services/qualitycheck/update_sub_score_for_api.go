@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSubScoreForApi invokes the qualitycheck.UpdateSubScoreForApi API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updatesubscoreforapi.html
 func (client *Client) UpdateSubScoreForApi(request *UpdateSubScoreForApiRequest) (response *UpdateSubScoreForApiResponse, err error) {
 	response = CreateUpdateSubScoreForApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSubScoreForApi(request *UpdateSubScoreForApiRequest)
 }
 
 // UpdateSubScoreForApiWithChan invokes the qualitycheck.UpdateSubScoreForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updatesubscoreforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSubScoreForApiWithChan(request *UpdateSubScoreForApiRequest) (<-chan *UpdateSubScoreForApiResponse, <-chan error) {
 	responseChan := make(chan *UpdateSubScoreForApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSubScoreForApiWithChan(request *UpdateSubScoreForApi
 }
 
 // UpdateSubScoreForApiWithCallback invokes the qualitycheck.UpdateSubScoreForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updatesubscoreforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSubScoreForApiWithCallback(request *UpdateSubScoreForApiRequest, callback func(response *UpdateSubScoreForApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateUpdateSubScoreForApiRequest() (request *UpdateSubScoreForApiRequest) 
 	request = &UpdateSubScoreForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateSubScoreForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateSubScoreForApi", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAsrVocab invokes the qualitycheck.DeleteAsrVocab API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deleteasrvocab.html
 func (client *Client) DeleteAsrVocab(request *DeleteAsrVocabRequest) (response *DeleteAsrVocabResponse, err error) {
 	response = CreateDeleteAsrVocabResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAsrVocab(request *DeleteAsrVocabRequest) (response *
 }
 
 // DeleteAsrVocabWithChan invokes the qualitycheck.DeleteAsrVocab API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deleteasrvocab.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAsrVocabWithChan(request *DeleteAsrVocabRequest) (<-chan *DeleteAsrVocabResponse, <-chan error) {
 	responseChan := make(chan *DeleteAsrVocabResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAsrVocabWithChan(request *DeleteAsrVocabRequest) (<-
 }
 
 // DeleteAsrVocabWithCallback invokes the qualitycheck.DeleteAsrVocab API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deleteasrvocab.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAsrVocabWithCallback(request *DeleteAsrVocabRequest, callback func(response *DeleteAsrVocabResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteAsrVocabRequest() (request *DeleteAsrVocabRequest) {
 	request = &DeleteAsrVocabRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteAsrVocab", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteAsrVocab", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

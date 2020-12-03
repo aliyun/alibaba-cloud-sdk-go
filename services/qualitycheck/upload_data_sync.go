@@ -21,7 +21,6 @@ import (
 )
 
 // UploadDataSync invokes the qualitycheck.UploadDataSync API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploaddatasync.html
 func (client *Client) UploadDataSync(request *UploadDataSyncRequest) (response *UploadDataSyncResponse, err error) {
 	response = CreateUploadDataSyncResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadDataSync(request *UploadDataSyncRequest) (response *
 }
 
 // UploadDataSyncWithChan invokes the qualitycheck.UploadDataSync API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploaddatasync.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadDataSyncWithChan(request *UploadDataSyncRequest) (<-chan *UploadDataSyncResponse, <-chan error) {
 	responseChan := make(chan *UploadDataSyncResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadDataSyncWithChan(request *UploadDataSyncRequest) (<-
 }
 
 // UploadDataSyncWithCallback invokes the qualitycheck.UploadDataSync API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploaddatasync.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadDataSyncWithCallback(request *UploadDataSyncRequest, callback func(response *UploadDataSyncResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,7 +82,6 @@ type UploadDataSyncResponse struct {
 	Success   bool                 `json:"Success" xml:"Success"`
 	Code      string               `json:"Code" xml:"Code"`
 	Message   string               `json:"Message" xml:"Message"`
-	Count     int                  `json:"Count" xml:"Count"`
 	Data      DataInUploadDataSync `json:"Data" xml:"Data"`
 }
 
@@ -96,7 +90,8 @@ func CreateUploadDataSyncRequest() (request *UploadDataSyncRequest) {
 	request = &UploadDataSyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadDataSync", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadDataSync", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

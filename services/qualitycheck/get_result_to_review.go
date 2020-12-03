@@ -21,7 +21,6 @@ import (
 )
 
 // GetResultToReview invokes the qualitycheck.GetResultToReview API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getresulttoreview.html
 func (client *Client) GetResultToReview(request *GetResultToReviewRequest) (response *GetResultToReviewResponse, err error) {
 	response = CreateGetResultToReviewResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetResultToReview(request *GetResultToReviewRequest) (resp
 }
 
 // GetResultToReviewWithChan invokes the qualitycheck.GetResultToReview API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getresulttoreview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResultToReviewWithChan(request *GetResultToReviewRequest) (<-chan *GetResultToReviewResponse, <-chan error) {
 	responseChan := make(chan *GetResultToReviewResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetResultToReviewWithChan(request *GetResultToReviewReques
 }
 
 // GetResultToReviewWithCallback invokes the qualitycheck.GetResultToReview API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getresulttoreview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResultToReviewWithCallback(request *GetResultToReviewRequest, callback func(response *GetResultToReviewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetResultToReviewRequest() (request *GetResultToReviewRequest) {
 	request = &GetResultToReviewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetResultToReview", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetResultToReview", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

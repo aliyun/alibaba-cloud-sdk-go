@@ -25,4 +25,7 @@ type DataSet struct {
 	SetFolderName string `json:"SetFolderName" xml:"SetFolderName"`
 	ChannelType   int    `json:"ChannelType" xml:"ChannelType"`
 	CreateType    int    `json:"CreateType" xml:"CreateType"`
+	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime    string `json:"UpdateTime" xml:"UpdateTime"`
+	SetNumber     int    `json:"SetNumber" xml:"SetNumber"`
 }

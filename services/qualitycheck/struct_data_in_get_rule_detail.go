@@ -17,6 +17,6 @@ package qualitycheck
 
 // DataInGetRuleDetail is a nested struct in qualitycheck response
 type DataInGetRuleDetail struct {
-	Conditions ConditionsInGetRuleDetail `json:"Conditions" xml:"Conditions"`
-	Rules      RulesInGetRuleDetail      `json:"Rules" xml:"Rules"`
+	Conditions Conditions           `json:"Conditions" xml:"Conditions"`
+	Rules      RulesInGetRuleDetail `json:"Rules" xml:"Rules"`
 }

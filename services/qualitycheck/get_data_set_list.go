@@ -21,7 +21,6 @@ import (
 )
 
 // GetDataSetList invokes the qualitycheck.GetDataSetList API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getdatasetlist.html
 func (client *Client) GetDataSetList(request *GetDataSetListRequest) (response *GetDataSetListResponse, err error) {
 	response = CreateGetDataSetListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDataSetList(request *GetDataSetListRequest) (response *
 }
 
 // GetDataSetListWithChan invokes the qualitycheck.GetDataSetList API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getdatasetlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDataSetListWithChan(request *GetDataSetListRequest) (<-chan *GetDataSetListResponse, <-chan error) {
 	responseChan := make(chan *GetDataSetListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDataSetListWithChan(request *GetDataSetListRequest) (<-
 }
 
 // GetDataSetListWithCallback invokes the qualitycheck.GetDataSetList API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getdatasetlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDataSetListWithCallback(request *GetDataSetListRequest, callback func(response *GetDataSetListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateGetDataSetListRequest() (request *GetDataSetListRequest) {
 	request = &GetDataSetListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetDataSetList", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetDataSetList", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

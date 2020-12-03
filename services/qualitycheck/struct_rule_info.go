@@ -17,26 +17,26 @@ package qualitycheck
 
 // RuleInfo is a nested struct in qualitycheck response
 type RuleInfo struct {
-	Name                     string                    `json:"Name" xml:"Name"`
-	Comments                 string                    `json:"Comments" xml:"Comments"`
-	Status                   int                       `json:"Status" xml:"Status"`
-	AutoReview               int                       `json:"AutoReview" xml:"AutoReview"`
-	CreateEmpid              string                    `json:"CreateEmpid" xml:"CreateEmpid"`
-	CreateTime               string                    `json:"CreateTime" xml:"CreateTime"`
-	LastUpdateTime           string                    `json:"LastUpdateTime" xml:"LastUpdateTime"`
-	Rid                      string                    `json:"Rid" xml:"Rid"`
-	IsOnline                 int                       `json:"IsOnline" xml:"IsOnline"`
-	ScoreSubName             string                    `json:"ScoreSubName" xml:"ScoreSubName"`
-	StartTime                string                    `json:"StartTime" xml:"StartTime"`
-	ScoreName                string                    `json:"ScoreName" xml:"ScoreName"`
-	EndTime                  string                    `json:"EndTime" xml:"EndTime"`
-	RuleLambda               string                    `json:"RuleLambda" xml:"RuleLambda"`
-	Weight                   string                    `json:"Weight" xml:"Weight"`
-	LastUpdateEmpid          string                    `json:"LastUpdateEmpid" xml:"LastUpdateEmpid"`
-	RuleScoreType            int                       `json:"RuleScoreType" xml:"RuleScoreType"`
-	Type                     int                       `json:"Type" xml:"Type"`
-	IsDelete                 int                       `json:"IsDelete" xml:"IsDelete"`
-	BusinessCategoryNameList BusinessCategoryNameList  `json:"BusinessCategoryNameList" xml:"BusinessCategoryNameList"`
-	Conditions               ConditionsInConfigDataSet `json:"Conditions" xml:"Conditions"`
-	Rules                    RulesInConfigDataSet      `json:"Rules" xml:"Rules"`
+	Rid                      string                            `json:"Rid" xml:"Rid"`
+	RuleLambda               string                            `json:"RuleLambda" xml:"RuleLambda"`
+	Name                     string                            `json:"Name" xml:"Name"`
+	Type                     int                               `json:"Type" xml:"Type"`
+	Status                   int                               `json:"Status" xml:"Status"`
+	IsDelete                 int                               `json:"IsDelete" xml:"IsDelete"`
+	StartTime                string                            `json:"StartTime" xml:"StartTime"`
+	EndTime                  string                            `json:"EndTime" xml:"EndTime"`
+	Weight                   string                            `json:"Weight" xml:"Weight"`
+	IsOnline                 int                               `json:"IsOnline" xml:"IsOnline"`
+	CreateEmpid              string                            `json:"CreateEmpid" xml:"CreateEmpid"`
+	CreateTime               string                            `json:"CreateTime" xml:"CreateTime"`
+	LastUpdateTime           string                            `json:"LastUpdateTime" xml:"LastUpdateTime"`
+	LastUpdateEmpid          string                            `json:"LastUpdateEmpid" xml:"LastUpdateEmpid"`
+	Comments                 string                            `json:"Comments" xml:"Comments"`
+	AutoReview               int                               `json:"AutoReview" xml:"AutoReview"`
+	RuleScoreType            int                               `json:"RuleScoreType" xml:"RuleScoreType"`
+	ScoreName                string                            `json:"ScoreName" xml:"ScoreName"`
+	ScoreSubName             string                            `json:"ScoreSubName" xml:"ScoreSubName"`
+	ScoreId                  int                               `json:"ScoreId" xml:"ScoreId"`
+	ScoreSubId               int                               `json:"ScoreSubId" xml:"ScoreSubId"`
+	BusinessCategoryNameList BusinessCategoryNameListInGetRule `json:"BusinessCategoryNameList" xml:"BusinessCategoryNameList"`
 }

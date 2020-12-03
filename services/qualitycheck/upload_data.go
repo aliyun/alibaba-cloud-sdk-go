@@ -21,7 +21,6 @@ import (
 )
 
 // UploadData invokes the qualitycheck.UploadData API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploaddata.html
 func (client *Client) UploadData(request *UploadDataRequest) (response *UploadDataResponse, err error) {
 	response = CreateUploadDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadData(request *UploadDataRequest) (response *UploadDa
 }
 
 // UploadDataWithChan invokes the qualitycheck.UploadData API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploaddata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadDataWithChan(request *UploadDataRequest) (<-chan *UploadDataResponse, <-chan error) {
 	responseChan := make(chan *UploadDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadDataWithChan(request *UploadDataRequest) (<-chan *Up
 }
 
 // UploadDataWithCallback invokes the qualitycheck.UploadData API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/uploaddata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadDataWithCallback(request *UploadDataRequest, callback func(response *UploadDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateUploadDataRequest() (request *UploadDataRequest) {
 	request = &UploadDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadData", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadData", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

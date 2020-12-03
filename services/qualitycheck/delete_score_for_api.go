@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScoreForApi invokes the qualitycheck.DeleteScoreForApi API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletescoreforapi.html
 func (client *Client) DeleteScoreForApi(request *DeleteScoreForApiRequest) (response *DeleteScoreForApiResponse, err error) {
 	response = CreateDeleteScoreForApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScoreForApi(request *DeleteScoreForApiRequest) (resp
 }
 
 // DeleteScoreForApiWithChan invokes the qualitycheck.DeleteScoreForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletescoreforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScoreForApiWithChan(request *DeleteScoreForApiRequest) (<-chan *DeleteScoreForApiResponse, <-chan error) {
 	responseChan := make(chan *DeleteScoreForApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScoreForApiWithChan(request *DeleteScoreForApiReques
 }
 
 // DeleteScoreForApiWithCallback invokes the qualitycheck.DeleteScoreForApi API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletescoreforapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScoreForApiWithCallback(request *DeleteScoreForApiRequest, callback func(response *DeleteScoreForApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDeleteScoreForApiRequest() (request *DeleteScoreForApiRequest) {
 	request = &DeleteScoreForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteScoreForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteScoreForApi", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

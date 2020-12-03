@@ -21,7 +21,6 @@ import (
 )
 
 // VerifySentence invokes the qualitycheck.VerifySentence API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/verifysentence.html
 func (client *Client) VerifySentence(request *VerifySentenceRequest) (response *VerifySentenceResponse, err error) {
 	response = CreateVerifySentenceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifySentence(request *VerifySentenceRequest) (response *
 }
 
 // VerifySentenceWithChan invokes the qualitycheck.VerifySentence API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/verifysentence.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifySentenceWithChan(request *VerifySentenceRequest) (<-chan *VerifySentenceResponse, <-chan error) {
 	responseChan := make(chan *VerifySentenceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifySentenceWithChan(request *VerifySentenceRequest) (<-
 }
 
 // VerifySentenceWithCallback invokes the qualitycheck.VerifySentence API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/verifysentence.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifySentenceWithCallback(request *VerifySentenceRequest, callback func(response *VerifySentenceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateVerifySentenceRequest() (request *VerifySentenceRequest) {
 	request = &VerifySentenceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "VerifySentence", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "VerifySentence", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

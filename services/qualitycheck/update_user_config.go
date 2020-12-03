@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateUserConfig invokes the qualitycheck.UpdateUserConfig API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateuserconfig.html
 func (client *Client) UpdateUserConfig(request *UpdateUserConfigRequest) (response *UpdateUserConfigResponse, err error) {
 	response = CreateUpdateUserConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateUserConfig(request *UpdateUserConfigRequest) (respon
 }
 
 // UpdateUserConfigWithChan invokes the qualitycheck.UpdateUserConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateuserconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserConfigWithChan(request *UpdateUserConfigRequest) (<-chan *UpdateUserConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateUserConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateUserConfigWithChan(request *UpdateUserConfigRequest)
 }
 
 // UpdateUserConfigWithCallback invokes the qualitycheck.UpdateUserConfig API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateuserconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserConfigWithCallback(request *UpdateUserConfigRequest, callback func(response *UpdateUserConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateUpdateUserConfigRequest() (request *UpdateUserConfigRequest) {
 	request = &UpdateUserConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateUserConfig", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateUserConfig", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

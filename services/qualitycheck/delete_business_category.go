@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBusinessCategory invokes the qualitycheck.DeleteBusinessCategory API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletebusinesscategory.html
 func (client *Client) DeleteBusinessCategory(request *DeleteBusinessCategoryRequest) (response *DeleteBusinessCategoryResponse, err error) {
 	response = CreateDeleteBusinessCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBusinessCategory(request *DeleteBusinessCategoryRequ
 }
 
 // DeleteBusinessCategoryWithChan invokes the qualitycheck.DeleteBusinessCategory API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletebusinesscategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBusinessCategoryWithChan(request *DeleteBusinessCategoryRequest) (<-chan *DeleteBusinessCategoryResponse, <-chan error) {
 	responseChan := make(chan *DeleteBusinessCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBusinessCategoryWithChan(request *DeleteBusinessCate
 }
 
 // DeleteBusinessCategoryWithCallback invokes the qualitycheck.DeleteBusinessCategory API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletebusinesscategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBusinessCategoryWithCallback(request *DeleteBusinessCategoryRequest, callback func(response *DeleteBusinessCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteBusinessCategoryRequest() (request *DeleteBusinessCategoryReque
 	request = &DeleteBusinessCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteBusinessCategory", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteBusinessCategory", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateRuleForAnt invokes the qualitycheck.UpdateRuleForAnt API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateruleforant.html
 func (client *Client) UpdateRuleForAnt(request *UpdateRuleForAntRequest) (response *UpdateRuleForAntResponse, err error) {
 	response = CreateUpdateRuleForAntResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateRuleForAnt(request *UpdateRuleForAntRequest) (respon
 }
 
 // UpdateRuleForAntWithChan invokes the qualitycheck.UpdateRuleForAnt API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateruleforant.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRuleForAntWithChan(request *UpdateRuleForAntRequest) (<-chan *UpdateRuleForAntResponse, <-chan error) {
 	responseChan := make(chan *UpdateRuleForAntResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateRuleForAntWithChan(request *UpdateRuleForAntRequest)
 }
 
 // UpdateRuleForAntWithCallback invokes the qualitycheck.UpdateRuleForAnt API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/updateruleforant.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRuleForAntWithCallback(request *UpdateRuleForAntRequest, callback func(response *UpdateRuleForAntResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateUpdateRuleForAntRequest() (request *UpdateRuleForAntRequest) {
 	request = &UpdateRuleForAntRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateRuleForAnt", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateRuleForAnt", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

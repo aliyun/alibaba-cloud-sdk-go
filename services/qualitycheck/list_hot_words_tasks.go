@@ -21,7 +21,6 @@ import (
 )
 
 // ListHotWordsTasks invokes the qualitycheck.ListHotWordsTasks API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listhotwordstasks.html
 func (client *Client) ListHotWordsTasks(request *ListHotWordsTasksRequest) (response *ListHotWordsTasksResponse, err error) {
 	response = CreateListHotWordsTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListHotWordsTasks(request *ListHotWordsTasksRequest) (resp
 }
 
 // ListHotWordsTasksWithChan invokes the qualitycheck.ListHotWordsTasks API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listhotwordstasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListHotWordsTasksWithChan(request *ListHotWordsTasksRequest) (<-chan *ListHotWordsTasksResponse, <-chan error) {
 	responseChan := make(chan *ListHotWordsTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListHotWordsTasksWithChan(request *ListHotWordsTasksReques
 }
 
 // ListHotWordsTasksWithCallback invokes the qualitycheck.ListHotWordsTasks API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/listhotwordstasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListHotWordsTasksWithCallback(request *ListHotWordsTasksRequest, callback func(response *ListHotWordsTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateListHotWordsTasksRequest() (request *ListHotWordsTasksRequest) {
 	request = &ListHotWordsTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListHotWordsTasks", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListHotWordsTasks", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

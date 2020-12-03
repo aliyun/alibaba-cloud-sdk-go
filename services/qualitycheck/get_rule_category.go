@@ -21,7 +21,6 @@ import (
 )
 
 // GetRuleCategory invokes the qualitycheck.GetRuleCategory API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getrulecategory.html
 func (client *Client) GetRuleCategory(request *GetRuleCategoryRequest) (response *GetRuleCategoryResponse, err error) {
 	response = CreateGetRuleCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRuleCategory(request *GetRuleCategoryRequest) (response
 }
 
 // GetRuleCategoryWithChan invokes the qualitycheck.GetRuleCategory API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getrulecategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRuleCategoryWithChan(request *GetRuleCategoryRequest) (<-chan *GetRuleCategoryResponse, <-chan error) {
 	responseChan := make(chan *GetRuleCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRuleCategoryWithChan(request *GetRuleCategoryRequest) (
 }
 
 // GetRuleCategoryWithCallback invokes the qualitycheck.GetRuleCategory API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getrulecategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRuleCategoryWithCallback(request *GetRuleCategoryRequest, callback func(response *GetRuleCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetRuleCategoryRequest() (request *GetRuleCategoryRequest) {
 	request = &GetRuleCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetRuleCategory", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetRuleCategory", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

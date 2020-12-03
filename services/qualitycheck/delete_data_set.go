@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDataSet invokes the qualitycheck.DeleteDataSet API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletedataset.html
 func (client *Client) DeleteDataSet(request *DeleteDataSetRequest) (response *DeleteDataSetResponse, err error) {
 	response = CreateDeleteDataSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDataSet(request *DeleteDataSetRequest) (response *De
 }
 
 // DeleteDataSetWithChan invokes the qualitycheck.DeleteDataSet API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletedataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDataSetWithChan(request *DeleteDataSetRequest) (<-chan *DeleteDataSetResponse, <-chan error) {
 	responseChan := make(chan *DeleteDataSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDataSetWithChan(request *DeleteDataSetRequest) (<-ch
 }
 
 // DeleteDataSetWithCallback invokes the qualitycheck.DeleteDataSet API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/deletedataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDataSetWithCallback(request *DeleteDataSetRequest, callback func(response *DeleteDataSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDeleteDataSetRequest() (request *DeleteDataSetRequest) {
 	request = &DeleteDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteDataSet", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteDataSet", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

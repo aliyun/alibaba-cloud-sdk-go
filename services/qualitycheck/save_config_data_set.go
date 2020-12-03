@@ -21,7 +21,6 @@ import (
 )
 
 // SaveConfigDataSet invokes the qualitycheck.SaveConfigDataSet API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/saveconfigdataset.html
 func (client *Client) SaveConfigDataSet(request *SaveConfigDataSetRequest) (response *SaveConfigDataSetResponse, err error) {
 	response = CreateSaveConfigDataSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveConfigDataSet(request *SaveConfigDataSetRequest) (resp
 }
 
 // SaveConfigDataSetWithChan invokes the qualitycheck.SaveConfigDataSet API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/saveconfigdataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveConfigDataSetWithChan(request *SaveConfigDataSetRequest) (<-chan *SaveConfigDataSetResponse, <-chan error) {
 	responseChan := make(chan *SaveConfigDataSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveConfigDataSetWithChan(request *SaveConfigDataSetReques
 }
 
 // SaveConfigDataSetWithCallback invokes the qualitycheck.SaveConfigDataSet API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/saveconfigdataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveConfigDataSetWithCallback(request *SaveConfigDataSetRequest, callback func(response *SaveConfigDataSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateSaveConfigDataSetRequest() (request *SaveConfigDataSetRequest) {
 	request = &SaveConfigDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SaveConfigDataSet", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SaveConfigDataSet", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

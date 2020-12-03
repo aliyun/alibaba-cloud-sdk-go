@@ -21,7 +21,6 @@ import (
 )
 
 // RestartAsrTask invokes the qualitycheck.RestartAsrTask API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/restartasrtask.html
 func (client *Client) RestartAsrTask(request *RestartAsrTaskRequest) (response *RestartAsrTaskResponse, err error) {
 	response = CreateRestartAsrTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartAsrTask(request *RestartAsrTaskRequest) (response *
 }
 
 // RestartAsrTaskWithChan invokes the qualitycheck.RestartAsrTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/restartasrtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartAsrTaskWithChan(request *RestartAsrTaskRequest) (<-chan *RestartAsrTaskResponse, <-chan error) {
 	responseChan := make(chan *RestartAsrTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartAsrTaskWithChan(request *RestartAsrTaskRequest) (<-
 }
 
 // RestartAsrTaskWithCallback invokes the qualitycheck.RestartAsrTask API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/restartasrtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartAsrTaskWithCallback(request *RestartAsrTaskRequest, callback func(response *RestartAsrTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateRestartAsrTaskRequest() (request *RestartAsrTaskRequest) {
 	request = &RestartAsrTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "RestartAsrTask", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "RestartAsrTask", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -19,8 +19,6 @@ package qualitycheck
 type RuleBasicInfo struct {
 	Name               string             `json:"Name" xml:"Name"`
 	Rid                string             `json:"Rid" xml:"Rid"`
-	Lambda             string             `json:"Lambda" xml:"Lambda"`
-	ExternalProperty   int                `json:"ExternalProperty" xml:"ExternalProperty"`
 	RuleLambda         string             `json:"RuleLambda" xml:"RuleLambda"`
 	Triggers           Triggers           `json:"Triggers" xml:"Triggers"`
 	BusinessCategories BusinessCategories `json:"BusinessCategories" xml:"BusinessCategories"`

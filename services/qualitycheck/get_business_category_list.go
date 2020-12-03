@@ -21,7 +21,6 @@ import (
 )
 
 // GetBusinessCategoryList invokes the qualitycheck.GetBusinessCategoryList API synchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getbusinesscategorylist.html
 func (client *Client) GetBusinessCategoryList(request *GetBusinessCategoryListRequest) (response *GetBusinessCategoryListResponse, err error) {
 	response = CreateGetBusinessCategoryListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetBusinessCategoryList(request *GetBusinessCategoryListRe
 }
 
 // GetBusinessCategoryListWithChan invokes the qualitycheck.GetBusinessCategoryList API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getbusinesscategorylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBusinessCategoryListWithChan(request *GetBusinessCategoryListRequest) (<-chan *GetBusinessCategoryListResponse, <-chan error) {
 	responseChan := make(chan *GetBusinessCategoryListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetBusinessCategoryListWithChan(request *GetBusinessCatego
 }
 
 // GetBusinessCategoryListWithCallback invokes the qualitycheck.GetBusinessCategoryList API asynchronously
-// api document: https://help.aliyun.com/api/qualitycheck/getbusinesscategorylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBusinessCategoryListWithCallback(request *GetBusinessCategoryListRequest, callback func(response *GetBusinessCategoryListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetBusinessCategoryListRequest() (request *GetBusinessCategoryListReq
 	request = &GetBusinessCategoryListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetBusinessCategoryList", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetBusinessCategoryList", "Qualitycheck", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
