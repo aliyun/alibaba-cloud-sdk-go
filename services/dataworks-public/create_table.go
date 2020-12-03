@@ -84,6 +84,7 @@ type CreateTableRequest struct {
 	EnvType           requests.Integer      `position:"Body" name:"EnvType"`
 	HasPart           requests.Integer      `position:"Query" name:"HasPart"`
 	Location          string                `position:"Query" name:"Location"`
+	Comment           string                `position:"Query" name:"Comment"`
 	TableName         string                `position:"Query" name:"TableName"`
 	AppGuid           string                `position:"Query" name:"AppGuid"`
 	ProjectId         requests.Integer      `position:"Query" name:"ProjectId"`

@@ -17,9 +17,20 @@ package dataworks_public
 
 // InstancesItem is a nested struct in dataworks_public response
 type InstancesItem struct {
-	NodeId     int64  `json:"NodeId" xml:"NodeId"`
-	NodeName   string `json:"NodeName" xml:"NodeName"`
-	ProjectId  int64  `json:"ProjectId" xml:"ProjectId"`
-	Status     string `json:"Status" xml:"Status"`
-	InstanceId int64  `json:"InstanceId" xml:"InstanceId"`
+	ModifyTime        int64  `json:"ModifyTime" xml:"ModifyTime"`
+	ParamValues       string `json:"ParamValues" xml:"ParamValues"`
+	DagId             int64  `json:"DagId" xml:"DagId"`
+	DagType           string `json:"DagType" xml:"DagType"`
+	FinishTime        int64  `json:"FinishTime" xml:"FinishTime"`
+	BeginRunningTime  int64  `json:"BeginRunningTime" xml:"BeginRunningTime"`
+	CycTime           int64  `json:"CycTime" xml:"CycTime"`
+	BeginWaitResTime  int64  `json:"BeginWaitResTime" xml:"BeginWaitResTime"`
+	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	InstanceId        int64  `json:"InstanceId" xml:"InstanceId"`
+	BizDate           int64  `json:"BizDate" xml:"BizDate"`
+	NodeName          string `json:"NodeName" xml:"NodeName"`
+	NodeId            int64  `json:"NodeId" xml:"NodeId"`
+	BeginWaitTimeTime int64  `json:"BeginWaitTimeTime" xml:"BeginWaitTimeTime"`
+	ProjectId         int64  `json:"ProjectId" xml:"ProjectId"`
+	Status            string `json:"Status" xml:"Status"`
 }

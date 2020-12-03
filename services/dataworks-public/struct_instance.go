@@ -32,4 +32,13 @@ type Instance struct {
 	BeginRunningTime  int64  `json:"BeginRunningTime" xml:"BeginRunningTime"`
 	ParamValues       string `json:"ParamValues" xml:"ParamValues"`
 	FinishTime        int64  `json:"FinishTime" xml:"FinishTime"`
+	Priority          int    `json:"Priority" xml:"Priority"`
+	BaselineId        int64  `json:"BaselineId" xml:"BaselineId"`
+	Repeatability     bool   `json:"Repeatability" xml:"Repeatability"`
+	RepeatInterval    int64  `json:"RepeatInterval" xml:"RepeatInterval"`
+	Connection        string `json:"Connection" xml:"Connection"`
+	DqcType           int    `json:"DqcType" xml:"DqcType"`
+	DqcDescription    string `json:"DqcDescription" xml:"DqcDescription"`
+	ErrorMessage      string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RelatedFlowId     int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
 }

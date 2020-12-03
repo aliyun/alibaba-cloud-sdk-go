@@ -74,6 +74,7 @@ type ListInstancesRequest struct {
 	ProjectEnv  string           `position:"Body" name:"ProjectEnv"`
 	Owner       string           `position:"Body" name:"Owner"`
 	BizName     string           `position:"Body" name:"BizName"`
+	DagId       requests.Integer `position:"Body" name:"DagId"`
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	NodeName    string           `position:"Body" name:"NodeName"`
 	ProgramType string           `position:"Body" name:"ProgramType"`

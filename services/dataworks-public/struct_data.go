@@ -30,12 +30,12 @@ type Data struct {
 	Content             string                `json:"Content" xml:"Content"`
 	EnvType             int                   `json:"EnvType" xml:"EnvType"`
 	ProjectName         string                `json:"ProjectName" xml:"ProjectName"`
-	SchedulerType       string                `json:"SchedulerType" xml:"SchedulerType"`
 	Creator             string                `json:"Creator" xml:"Creator"`
 	FileName            string                `json:"FileName" xml:"FileName"`
 	Type                string                `json:"Type" xml:"Type"`
 	TotalCount          int64                 `json:"TotalCount" xml:"TotalCount"`
 	FinishTime          int64                 `json:"FinishTime" xml:"FinishTime"`
+	Connection          string                `json:"Connection" xml:"Connection"`
 	Id                  int64                 `json:"Id" xml:"Id"`
 	RuleType            int                   `json:"RuleType" xml:"RuleType"`
 	TableName           string                `json:"TableName" xml:"TableName"`
@@ -46,20 +46,22 @@ type Data struct {
 	ExpHour             int                   `json:"ExpHour" xml:"ExpHour"`
 	Status              string                `json:"Status" xml:"Status"`
 	RemindUnit          string                `json:"RemindUnit" xml:"RemindUnit"`
-	Repeatability       string                `json:"Repeatability" xml:"Repeatability"`
 	Name                string                `json:"Name" xml:"Name"`
 	InGroupId           int                   `json:"InGroupId" xml:"InGroupId"`
-	ApplicationId       int64                 `json:"ApplicationId" xml:"ApplicationId"`
 	ModifyTime          int64                 `json:"ModifyTime" xml:"ModifyTime"`
+	ApplicationId       int64                 `json:"ApplicationId" xml:"ApplicationId"`
 	FilePropertyContent string                `json:"FilePropertyContent" xml:"FilePropertyContent"`
 	ExpTime             int64                 `json:"ExpTime" xml:"ExpTime"`
 	TemplateId          int                   `json:"TemplateId" xml:"TemplateId"`
+	Repeatability       bool                  `json:"Repeatability" xml:"Repeatability"`
 	TenantId            int64                 `json:"TenantId" xml:"TenantId"`
 	Detail              string                `json:"Detail" xml:"Detail"`
 	PageSize            int                   `json:"PageSize" xml:"PageSize"`
 	DataSize            int64                 `json:"DataSize" xml:"DataSize"`
 	Comment             string                `json:"Comment" xml:"Comment"`
+	RepeatInterval      int64                 `json:"RepeatInterval" xml:"RepeatInterval"`
 	Founder             string                `json:"Founder" xml:"Founder"`
+	CreateUser          string                `json:"CreateUser" xml:"CreateUser"`
 	EndCast             int64                 `json:"EndCast" xml:"EndCast"`
 	LastAccessTime      int64                 `json:"LastAccessTime" xml:"LastAccessTime"`
 	BaselineName        string                `json:"BaselineName" xml:"BaselineName"`
@@ -77,6 +79,7 @@ type Data struct {
 	BeginWaitTimeTime   int64                 `json:"BeginWaitTimeTime" xml:"BeginWaitTimeTime"`
 	OwnerId             string                `json:"OwnerId" xml:"OwnerId"`
 	UseFlag             bool                  `json:"UseFlag" xml:"UseFlag"`
+	DqcDescription      string                `json:"DqcDescription" xml:"DqcDescription"`
 	CheckerName         string                `json:"CheckerName" xml:"CheckerName"`
 	RemindType          string                `json:"RemindType" xml:"RemindType"`
 	UseType             string                `json:"UseType" xml:"UseType"`
@@ -91,8 +94,10 @@ type Data struct {
 	Operator            string                `json:"Operator" xml:"Operator"`
 	HasNext             bool                  `json:"HasNext" xml:"HasNext"`
 	SlaMinu             int                   `json:"SlaMinu" xml:"SlaMinu"`
+	StartTime           int64                 `json:"StartTime" xml:"StartTime"`
 	NodeName            string                `json:"NodeName" xml:"NodeName"`
 	ProjectNameCn       string                `json:"ProjectNameCn" xml:"ProjectNameCn"`
+	Gmtdate             int64                 `json:"Gmtdate" xml:"Gmtdate"`
 	FileContent         string                `json:"FileContent" xml:"FileContent"`
 	LifeCycle           int                   `json:"LifeCycle" xml:"LifeCycle"`
 	HourExpDetail       string                `json:"HourExpDetail" xml:"HourExpDetail"`
@@ -102,7 +107,6 @@ type Data struct {
 	Version             int64                 `json:"Version" xml:"Version"`
 	TopicId             int64                 `json:"TopicId" xml:"TopicId"`
 	ApplicationName     string                `json:"ApplicationName" xml:"ApplicationName"`
-	ProgramType         string                `json:"ProgramType" xml:"ProgramType"`
 	OwnerName           string                `json:"OwnerName" xml:"OwnerName"`
 	BaselineId          int64                 `json:"BaselineId" xml:"BaselineId"`
 	IsCurrentProd       bool                  `json:"IsCurrentProd" xml:"IsCurrentProd"`
@@ -117,12 +121,12 @@ type Data struct {
 	FolderPath          string                `json:"FolderPath" xml:"FolderPath"`
 	NodeContent         string                `json:"NodeContent" xml:"NodeContent"`
 	ChangeType          string                `json:"ChangeType" xml:"ChangeType"`
-	ResGroupName        string                `json:"ResGroupName" xml:"ResGroupName"`
 	ParamValues         string                `json:"ParamValues" xml:"ParamValues"`
 	MethodName          string                `json:"MethodName" xml:"MethodName"`
 	TemplateName        string                `json:"TemplateName" xml:"TemplateName"`
 	MaxAlertTimes       int                   `json:"MaxAlertTimes" xml:"MaxAlertTimes"`
 	RuleName            string                `json:"RuleName" xml:"RuleName"`
+	ErrorMessage        string                `json:"ErrorMessage" xml:"ErrorMessage"`
 	BeginWaitResTime    int64                 `json:"BeginWaitResTime" xml:"BeginWaitResTime"`
 	CreateTime          int64                 `json:"CreateTime" xml:"CreateTime"`
 	IsVisible           int                   `json:"IsVisible" xml:"IsVisible"`
@@ -132,16 +136,16 @@ type Data struct {
 	NextTaskId          string                `json:"NextTaskId" xml:"NextTaskId"`
 	SlaTime             int64                 `json:"SlaTime" xml:"SlaTime"`
 	PageNumber          int                   `json:"PageNumber" xml:"PageNumber"`
+	DqcType             int                   `json:"DqcType" xml:"DqcType"`
 	RemindId            int64                 `json:"RemindId" xml:"RemindId"`
 	TableGuid           string                `json:"TableGuid" xml:"TableGuid"`
-	Description         string                `json:"Description" xml:"Description"`
 	ExpectValue         string                `json:"ExpectValue" xml:"ExpectValue"`
 	ExpMinu             int                   `json:"ExpMinu" xml:"ExpMinu"`
 	OnDuty              string                `json:"OnDuty" xml:"OnDuty"`
 	DndEnd              string                `json:"DndEnd" xml:"DndEnd"`
 	DagId               int64                 `json:"DagId" xml:"DagId"`
-	CronExpress         string                `json:"CronExpress" xml:"CronExpress"`
 	AlertUnit           string                `json:"AlertUnit" xml:"AlertUnit"`
+	RelatedFlowId       int64                 `json:"RelatedFlowId" xml:"RelatedFlowId"`
 	LastDdlTime         int64                 `json:"LastDdlTime" xml:"LastDdlTime"`
 	ModifiedTime        int64                 `json:"ModifiedTime" xml:"ModifiedTime"`
 	Useflag             bool                  `json:"Useflag" xml:"Useflag"`
