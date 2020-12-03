@@ -1,3 +1,7 @@
+2020-12-03 Version: v1.61.739
+- Generated 2017-11-15 for `scdn`.
+- Update DescribeScdnDomainCertificateInfo.
+
 2020-12-03 Version: v1.61.738
 - Generated 2020-05-18 for `dataworks-public`.
 
