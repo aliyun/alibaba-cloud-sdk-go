@@ -76,8 +76,10 @@ type UpdateOssStockStatusRequest struct {
 	StartDate                string           `position:"Query" name:"StartDate"`
 	SourceIp                 string           `position:"Query" name:"SourceIp"`
 	VideoAutoFreezeSceneList string           `position:"Query" name:"VideoAutoFreezeSceneList"`
+	AudioMaxSize             requests.Integer `position:"Query" name:"AudioMaxSize"`
 	Lang                     string           `position:"Query" name:"Lang"`
 	ImageAutoFreeze          string           `position:"Query" name:"ImageAutoFreeze"`
+	AudioAutoFreezeSceneList string           `position:"Query" name:"AudioAutoFreezeSceneList"`
 	VideoMaxSize             requests.Integer `position:"Query" name:"VideoMaxSize"`
 	AutoFreezeType           string           `position:"Query" name:"AutoFreezeType"`
 	EndDate                  string           `position:"Query" name:"EndDate"`

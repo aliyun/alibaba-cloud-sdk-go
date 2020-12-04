@@ -71,19 +71,23 @@ func (client *Client) UpdateOssIncrementCheckSettingWithCallback(request *Update
 // UpdateOssIncrementCheckSettingRequest is the request struct for api UpdateOssIncrementCheckSetting
 type UpdateOssIncrementCheckSettingRequest struct {
 	*requests.RpcRequest
-	VideoSceneList           string           `position:"Query" name:"VideoSceneList"`
-	ImageSceneList           string           `position:"Query" name:"ImageSceneList"`
-	VideoFrameInterval       requests.Integer `position:"Query" name:"VideoFrameInterval"`
-	SourceIp                 string           `position:"Query" name:"SourceIp"`
-	CallbackId               string           `position:"Query" name:"CallbackId"`
-	ImageScanLimit           string           `position:"Query" name:"ImageScanLimit"`
-	VideoAutoFreezeSceneList string           `position:"Query" name:"VideoAutoFreezeSceneList"`
-	Lang                     string           `position:"Query" name:"Lang"`
-	ImageAutoFreeze          string           `position:"Query" name:"ImageAutoFreeze"`
-	VideoMaxSize             requests.Integer `position:"Query" name:"VideoMaxSize"`
-	AutoFreezeType           string           `position:"Query" name:"AutoFreezeType"`
-	BucketConfigList         string           `position:"Query" name:"BucketConfigList"`
-	VideoMaxFrames           requests.Integer `position:"Query" name:"VideoMaxFrames"`
+	VideoSceneList            string           `position:"Query" name:"VideoSceneList"`
+	ImageSceneList            string           `position:"Query" name:"ImageSceneList"`
+	AudioSceneList            string           `position:"Query" name:"AudioSceneList"`
+	VideoFrameInterval        requests.Integer `position:"Query" name:"VideoFrameInterval"`
+	AudioAutoFreezeOpened     requests.Boolean `position:"Query" name:"AudioAutoFreezeOpened"`
+	SourceIp                  string           `position:"Query" name:"SourceIp"`
+	CallbackId                string           `position:"Query" name:"CallbackId"`
+	ImageScanLimit            string           `position:"Query" name:"ImageScanLimit"`
+	VideoAutoFreezeSceneList  string           `position:"Query" name:"VideoAutoFreezeSceneList"`
+	AudioMaxSize              requests.Integer `position:"Query" name:"AudioMaxSize"`
+	Lang                      string           `position:"Query" name:"Lang"`
+	ImageAutoFreeze           string           `position:"Query" name:"ImageAutoFreeze"`
+	AudioAntispamFreezeConfig string           `position:"Query" name:"AudioAntispamFreezeConfig"`
+	VideoMaxSize              requests.Integer `position:"Query" name:"VideoMaxSize"`
+	AutoFreezeType            string           `position:"Query" name:"AutoFreezeType"`
+	BucketConfigList          string           `position:"Query" name:"BucketConfigList"`
+	VideoMaxFrames            requests.Integer `position:"Query" name:"VideoMaxFrames"`
 }
 
 // UpdateOssIncrementCheckSettingResponse is the response struct for api UpdateOssIncrementCheckSetting

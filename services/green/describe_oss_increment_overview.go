@@ -87,6 +87,7 @@ type DescribeOssIncrementOverviewResponse struct {
 	AdUnhandleCount            int    `json:"AdUnhandleCount" xml:"AdUnhandleCount"`
 	LiveUnhandleCount          int    `json:"LiveUnhandleCount" xml:"LiveUnhandleCount"`
 	VoiceAntispamUnhandleCount int    `json:"VoiceAntispamUnhandleCount" xml:"VoiceAntispamUnhandleCount"`
+	AudioCount                 int    `json:"AudioCount" xml:"AudioCount"`
 }
 
 // CreateDescribeOssIncrementOverviewRequest creates a request to invoke DescribeOssIncrementOverview API

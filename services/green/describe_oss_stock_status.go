@@ -71,25 +71,33 @@ func (client *Client) DescribeOssStockStatusWithCallback(request *DescribeOssSto
 // DescribeOssStockStatusRequest is the request struct for api DescribeOssStockStatus
 type DescribeOssStockStatusRequest struct {
 	*requests.RpcRequest
-	SourceIp string `position:"Query" name:"SourceIp"`
-	Lang     string `position:"Query" name:"Lang"`
+	StockTaskId requests.Integer `position:"Query" name:"StockTaskId"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Lang        string           `position:"Query" name:"Lang"`
 }
 
 // DescribeOssStockStatusResponse is the response struct for api DescribeOssStockStatus
 type DescribeOssStockStatusResponse struct {
 	*responses.BaseResponse
-	RequestId           string   `json:"RequestId" xml:"RequestId"`
-	StockStatus         int      `json:"StockStatus" xml:"StockStatus"`
-	FinishedTime        string   `json:"FinishedTime" xml:"FinishedTime"`
-	ImageTotalCount     int      `json:"ImageTotalCount" xml:"ImageTotalCount"`
-	ImagePornCount      int      `json:"ImagePornCount" xml:"ImagePornCount"`
-	ImageTerrorismCount int      `json:"ImageTerrorismCount" xml:"ImageTerrorismCount"`
-	VideoTotalCount     int      `json:"VideoTotalCount" xml:"VideoTotalCount"`
-	VideoPornCount      int      `json:"VideoPornCount" xml:"VideoPornCount"`
-	VideoTerrorismCount int      `json:"VideoTerrorismCount" xml:"VideoTerrorismCount"`
-	SceneList           []string `json:"SceneList" xml:"SceneList"`
-	ResouceTypeList     []string `json:"ResouceTypeList" xml:"ResouceTypeList"`
-	BucketList          []Bucket `json:"BucketList" xml:"BucketList"`
+	RequestId               string   `json:"RequestId" xml:"RequestId"`
+	StockStatus             int      `json:"StockStatus" xml:"StockStatus"`
+	FinishedTime            string   `json:"FinishedTime" xml:"FinishedTime"`
+	ImageTotalCount         int      `json:"ImageTotalCount" xml:"ImageTotalCount"`
+	ImagePornCount          int      `json:"ImagePornCount" xml:"ImagePornCount"`
+	ImageTerrorismCount     int      `json:"ImageTerrorismCount" xml:"ImageTerrorismCount"`
+	ImageAdCount            int      `json:"ImageAdCount" xml:"ImageAdCount"`
+	ImageLiveCount          int      `json:"ImageLiveCount" xml:"ImageLiveCount"`
+	VideoTotalCount         int      `json:"VideoTotalCount" xml:"VideoTotalCount"`
+	VideoPornCount          int      `json:"VideoPornCount" xml:"VideoPornCount"`
+	VideoTerrorismCount     int      `json:"VideoTerrorismCount" xml:"VideoTerrorismCount"`
+	VideoAdCount            int      `json:"VideoAdCount" xml:"VideoAdCount"`
+	VideoLiveCount          int      `json:"VideoLiveCount" xml:"VideoLiveCount"`
+	VideoVoiceAntispamCount int      `json:"VideoVoiceAntispamCount" xml:"VideoVoiceAntispamCount"`
+	AudioTotalCount         int      `json:"AudioTotalCount" xml:"AudioTotalCount"`
+	AudioAntispamCount      int      `json:"AudioAntispamCount" xml:"AudioAntispamCount"`
+	SceneList               []string `json:"SceneList" xml:"SceneList"`
+	ResouceTypeList         []string `json:"ResouceTypeList" xml:"ResouceTypeList"`
+	BucketList              []Bucket `json:"BucketList" xml:"BucketList"`
 }
 
 // CreateDescribeOssStockStatusRequest creates a request to invoke DescribeOssStockStatus API

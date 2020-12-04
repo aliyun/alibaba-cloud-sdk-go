@@ -1,3 +1,7 @@
+2020-12-04 Version: v1.61.749
+- Generated 2016-12-22, 2017-08-23, 2018-05-09 for `Green`.
+- Support manual scan interface.
+
 2020-12-04 Version: v1.61.748
 - Generated 2014-05-26 for `Ecs`.
 - ReportInstancesStatus OpenAPI supports IssueCategory parameter.

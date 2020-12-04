@@ -78,20 +78,24 @@ type DescribeOssIncrementCheckSettingRequest struct {
 // DescribeOssIncrementCheckSettingResponse is the response struct for api DescribeOssIncrementCheckSetting
 type DescribeOssIncrementCheckSettingResponse struct {
 	*responses.BaseResponse
-	RequestId                string          `json:"RequestId" xml:"RequestId"`
-	ImageEnableLimit         bool            `json:"ImageEnableLimit" xml:"ImageEnableLimit"`
-	ImageScanLimit           int64           `json:"ImageScanLimit" xml:"ImageScanLimit"`
-	VideoFrameInterval       int             `json:"VideoFrameInterval" xml:"VideoFrameInterval"`
-	VideoMaxFrames           int             `json:"VideoMaxFrames" xml:"VideoMaxFrames"`
-	VideoMaxSize             int             `json:"VideoMaxSize" xml:"VideoMaxSize"`
-	AutoFreezeType           string          `json:"AutoFreezeType" xml:"AutoFreezeType"`
-	CallbackId               string          `json:"CallbackId" xml:"CallbackId"`
-	CallbackName             string          `json:"CallbackName" xml:"CallbackName"`
-	ImageSceneList           []string        `json:"ImageSceneList" xml:"ImageSceneList"`
-	VideoSceneList           []string        `json:"VideoSceneList" xml:"VideoSceneList"`
-	VideoAutoFreezeSceneList []string        `json:"VideoAutoFreezeSceneList" xml:"VideoAutoFreezeSceneList"`
-	ImageAutoFreeze          ImageAutoFreeze `json:"ImageAutoFreeze" xml:"ImageAutoFreeze"`
-	BucketConfigList         []BucketConfig  `json:"BucketConfigList" xml:"BucketConfigList"`
+	RequestId                 string                    `json:"RequestId" xml:"RequestId"`
+	ImageEnableLimit          bool                      `json:"ImageEnableLimit" xml:"ImageEnableLimit"`
+	ImageScanLimit            int64                     `json:"ImageScanLimit" xml:"ImageScanLimit"`
+	VideoFrameInterval        int                       `json:"VideoFrameInterval" xml:"VideoFrameInterval"`
+	VideoMaxFrames            int                       `json:"VideoMaxFrames" xml:"VideoMaxFrames"`
+	VideoMaxSize              int                       `json:"VideoMaxSize" xml:"VideoMaxSize"`
+	AutoFreezeType            string                    `json:"AutoFreezeType" xml:"AutoFreezeType"`
+	CallbackId                string                    `json:"CallbackId" xml:"CallbackId"`
+	CallbackName              string                    `json:"CallbackName" xml:"CallbackName"`
+	AudioMaxSize              int                       `json:"AudioMaxSize" xml:"AudioMaxSize"`
+	AudioAutoFreezeOpened     bool                      `json:"AudioAutoFreezeOpened" xml:"AudioAutoFreezeOpened"`
+	ImageSceneList            []string                  `json:"ImageSceneList" xml:"ImageSceneList"`
+	VideoSceneList            []string                  `json:"VideoSceneList" xml:"VideoSceneList"`
+	VideoAutoFreezeSceneList  []string                  `json:"VideoAutoFreezeSceneList" xml:"VideoAutoFreezeSceneList"`
+	AudioSceneList            []string                  `json:"AudioSceneList" xml:"AudioSceneList"`
+	ImageAutoFreeze           ImageAutoFreeze           `json:"ImageAutoFreeze" xml:"ImageAutoFreeze"`
+	AudioAntispamFreezeConfig AudioAntispamFreezeConfig `json:"AudioAntispamFreezeConfig" xml:"AudioAntispamFreezeConfig"`
+	BucketConfigList          []BucketConfig            `json:"BucketConfigList" xml:"BucketConfigList"`
 }
 
 // CreateDescribeOssIncrementCheckSettingRequest creates a request to invoke DescribeOssIncrementCheckSetting API
