@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForUpdatingContactInfoByNewContact invokes the domain.SaveBatchTaskForUpdatingContactInfoByNewContact API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdatingcontactinfobynewcontact.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfoByNewContact(request *SaveBatchTaskForUpdatingContactInfoByNewContactRequest) (response *SaveBatchTaskForUpdatingContactInfoByNewContactResponse, err error) {
 	response = CreateSaveBatchTaskForUpdatingContactInfoByNewContactResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoByNewContact(request *S
 }
 
 // SaveBatchTaskForUpdatingContactInfoByNewContactWithChan invokes the domain.SaveBatchTaskForUpdatingContactInfoByNewContact API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdatingcontactinfobynewcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfoByNewContactWithChan(request *SaveBatchTaskForUpdatingContactInfoByNewContactRequest) (<-chan *SaveBatchTaskForUpdatingContactInfoByNewContactResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForUpdatingContactInfoByNewContactResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoByNewContactWithChan(re
 }
 
 // SaveBatchTaskForUpdatingContactInfoByNewContactWithCallback invokes the domain.SaveBatchTaskForUpdatingContactInfoByNewContact API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdatingcontactinfobynewcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfoByNewContactWithCallback(request *SaveBatchTaskForUpdatingContactInfoByNewContactRequest, callback func(response *SaveBatchTaskForUpdatingContactInfoByNewContactResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -112,7 +107,7 @@ func CreateSaveBatchTaskForUpdatingContactInfoByNewContactRequest() (request *Sa
 	request = &SaveBatchTaskForUpdatingContactInfoByNewContactRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact", "", "")
 	request.Method = requests.POST
 	return
 }

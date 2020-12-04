@@ -21,7 +21,6 @@ import (
 )
 
 // SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential invokes the domain.SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential API synchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomainrealnameverificationbyidentitycredential.html
 func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential(request *SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest) (response *SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponse, err error) {
 	response = CreateSaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByIdentityC
 }
 
 // SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialWithChan invokes the domain.SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomainrealnameverificationbyidentitycredential.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialWithChan(request *SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest) (<-chan *SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponse, <-chan error) {
 	responseChan := make(chan *SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByIdentityC
 }
 
 // SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialWithCallback invokes the domain.SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomainrealnameverificationbyidentitycredential.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialWithCallback(request *SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest, callback func(response *SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateSaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRe
 	request = &SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential", "", "")
 	request.Method = requests.POST
 	return
 }

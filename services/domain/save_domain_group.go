@@ -21,7 +21,6 @@ import (
 )
 
 // SaveDomainGroup invokes the domain.SaveDomainGroup API synchronously
-// api document: https://help.aliyun.com/api/domain/savedomaingroup.html
 func (client *Client) SaveDomainGroup(request *SaveDomainGroupRequest) (response *SaveDomainGroupResponse, err error) {
 	response = CreateSaveDomainGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveDomainGroup(request *SaveDomainGroupRequest) (response
 }
 
 // SaveDomainGroupWithChan invokes the domain.SaveDomainGroup API asynchronously
-// api document: https://help.aliyun.com/api/domain/savedomaingroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveDomainGroupWithChan(request *SaveDomainGroupRequest) (<-chan *SaveDomainGroupResponse, <-chan error) {
 	responseChan := make(chan *SaveDomainGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveDomainGroupWithChan(request *SaveDomainGroupRequest) (
 }
 
 // SaveDomainGroupWithCallback invokes the domain.SaveDomainGroup API asynchronously
-// api document: https://help.aliyun.com/api/domain/savedomaingroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveDomainGroupWithCallback(request *SaveDomainGroupRequest, callback func(response *SaveDomainGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateSaveDomainGroupRequest() (request *SaveDomainGroupRequest) {
 	request = &SaveDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveDomainGroup", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveDomainGroup", "", "")
 	request.Method = requests.POST
 	return
 }

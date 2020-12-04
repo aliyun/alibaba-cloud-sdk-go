@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForTransferProhibitionLock invokes the domain.SaveSingleTaskForTransferProhibitionLock API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfortransferprohibitionlock.html
 func (client *Client) SaveSingleTaskForTransferProhibitionLock(request *SaveSingleTaskForTransferProhibitionLockRequest) (response *SaveSingleTaskForTransferProhibitionLockResponse, err error) {
 	response = CreateSaveSingleTaskForTransferProhibitionLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForTransferProhibitionLock(request *SaveSing
 }
 
 // SaveSingleTaskForTransferProhibitionLockWithChan invokes the domain.SaveSingleTaskForTransferProhibitionLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfortransferprohibitionlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForTransferProhibitionLockWithChan(request *SaveSingleTaskForTransferProhibitionLockRequest) (<-chan *SaveSingleTaskForTransferProhibitionLockResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForTransferProhibitionLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForTransferProhibitionLockWithChan(request *
 }
 
 // SaveSingleTaskForTransferProhibitionLockWithCallback invokes the domain.SaveSingleTaskForTransferProhibitionLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfortransferprohibitionlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForTransferProhibitionLockWithCallback(request *SaveSingleTaskForTransferProhibitionLockRequest, callback func(response *SaveSingleTaskForTransferProhibitionLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveSingleTaskForTransferProhibitionLockRequest() (request *SaveSingl
 	request = &SaveSingleTaskForTransferProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForTransferProhibitionLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForTransferProhibitionLock", "", "")
 	request.Method = requests.POST
 	return
 }

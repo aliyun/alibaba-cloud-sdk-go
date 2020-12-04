@@ -21,7 +21,6 @@ import (
 )
 
 // QueryBidRecords invokes the domain.QueryBidRecords API synchronously
-// api document: https://help.aliyun.com/api/domain/querybidrecords.html
 func (client *Client) QueryBidRecords(request *QueryBidRecordsRequest) (response *QueryBidRecordsResponse, err error) {
 	response = CreateQueryBidRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryBidRecords(request *QueryBidRecordsRequest) (response
 }
 
 // QueryBidRecordsWithChan invokes the domain.QueryBidRecords API asynchronously
-// api document: https://help.aliyun.com/api/domain/querybidrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBidRecordsWithChan(request *QueryBidRecordsRequest) (<-chan *QueryBidRecordsResponse, <-chan error) {
 	responseChan := make(chan *QueryBidRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryBidRecordsWithChan(request *QueryBidRecordsRequest) (
 }
 
 // QueryBidRecordsWithCallback invokes the domain.QueryBidRecords API asynchronously
-// api document: https://help.aliyun.com/api/domain/querybidrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBidRecordsWithCallback(request *QueryBidRecordsRequest, callback func(response *QueryBidRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateQueryBidRecordsRequest() (request *QueryBidRecordsRequest) {
 	request = &QueryBidRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBidRecords", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBidRecords", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryBrokerDemand invokes the domain.QueryBrokerDemand API synchronously
-// api document: https://help.aliyun.com/api/domain/querybrokerdemand.html
 func (client *Client) QueryBrokerDemand(request *QueryBrokerDemandRequest) (response *QueryBrokerDemandResponse, err error) {
 	response = CreateQueryBrokerDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryBrokerDemand(request *QueryBrokerDemandRequest) (resp
 }
 
 // QueryBrokerDemandWithChan invokes the domain.QueryBrokerDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/querybrokerdemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBrokerDemandWithChan(request *QueryBrokerDemandRequest) (<-chan *QueryBrokerDemandResponse, <-chan error) {
 	responseChan := make(chan *QueryBrokerDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryBrokerDemandWithChan(request *QueryBrokerDemandReques
 }
 
 // QueryBrokerDemandWithCallback invokes the domain.QueryBrokerDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/querybrokerdemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBrokerDemandWithCallback(request *QueryBrokerDemandRequest, callback func(response *QueryBrokerDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateQueryBrokerDemandRequest() (request *QueryBrokerDemandRequest) {
 	request = &QueryBrokerDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBrokerDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBrokerDemand", "", "")
 	request.Method = requests.POST
 	return
 }

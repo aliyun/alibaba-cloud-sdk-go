@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForCancelingTransferIn invokes the domain.SaveSingleTaskForCancelingTransferIn API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcancelingtransferin.html
 func (client *Client) SaveSingleTaskForCancelingTransferIn(request *SaveSingleTaskForCancelingTransferInRequest) (response *SaveSingleTaskForCancelingTransferInResponse, err error) {
 	response = CreateSaveSingleTaskForCancelingTransferInResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForCancelingTransferIn(request *SaveSingleTa
 }
 
 // SaveSingleTaskForCancelingTransferInWithChan invokes the domain.SaveSingleTaskForCancelingTransferIn API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcancelingtransferin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCancelingTransferInWithChan(request *SaveSingleTaskForCancelingTransferInRequest) (<-chan *SaveSingleTaskForCancelingTransferInResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForCancelingTransferInResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForCancelingTransferInWithChan(request *Save
 }
 
 // SaveSingleTaskForCancelingTransferInWithCallback invokes the domain.SaveSingleTaskForCancelingTransferIn API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcancelingtransferin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCancelingTransferInWithCallback(request *SaveSingleTaskForCancelingTransferInRequest, callback func(response *SaveSingleTaskForCancelingTransferInResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveSingleTaskForCancelingTransferInRequest() (request *SaveSingleTas
 	request = &SaveSingleTaskForCancelingTransferInRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCancelingTransferIn", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCancelingTransferIn", "", "")
 	request.Method = requests.POST
 	return
 }

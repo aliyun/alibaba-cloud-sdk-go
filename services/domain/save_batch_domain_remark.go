@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchDomainRemark invokes the domain.SaveBatchDomainRemark API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchdomainremark.html
 func (client *Client) SaveBatchDomainRemark(request *SaveBatchDomainRemarkRequest) (response *SaveBatchDomainRemarkResponse, err error) {
 	response = CreateSaveBatchDomainRemarkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchDomainRemark(request *SaveBatchDomainRemarkReques
 }
 
 // SaveBatchDomainRemarkWithChan invokes the domain.SaveBatchDomainRemark API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchdomainremark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchDomainRemarkWithChan(request *SaveBatchDomainRemarkRequest) (<-chan *SaveBatchDomainRemarkResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchDomainRemarkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchDomainRemarkWithChan(request *SaveBatchDomainRema
 }
 
 // SaveBatchDomainRemarkWithCallback invokes the domain.SaveBatchDomainRemark API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchdomainremark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchDomainRemarkWithCallback(request *SaveBatchDomainRemarkRequest, callback func(response *SaveBatchDomainRemarkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveBatchDomainRemarkRequest() (request *SaveBatchDomainRemarkRequest
 	request = &SaveBatchDomainRemarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchDomainRemark", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchDomainRemark", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForCreatingOrderRenew invokes the domain.SaveBatchTaskForCreatingOrderRenew API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderrenew.html
 func (client *Client) SaveBatchTaskForCreatingOrderRenew(request *SaveBatchTaskForCreatingOrderRenewRequest) (response *SaveBatchTaskForCreatingOrderRenewResponse, err error) {
 	response = CreateSaveBatchTaskForCreatingOrderRenewResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForCreatingOrderRenew(request *SaveBatchTaskF
 }
 
 // SaveBatchTaskForCreatingOrderRenewWithChan invokes the domain.SaveBatchTaskForCreatingOrderRenew API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderrenew.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderRenewWithChan(request *SaveBatchTaskForCreatingOrderRenewRequest) (<-chan *SaveBatchTaskForCreatingOrderRenewResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForCreatingOrderRenewResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForCreatingOrderRenewWithChan(request *SaveBa
 }
 
 // SaveBatchTaskForCreatingOrderRenewWithCallback invokes the domain.SaveBatchTaskForCreatingOrderRenew API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderrenew.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderRenewWithCallback(request *SaveBatchTaskForCreatingOrderRenewRequest, callback func(response *SaveBatchTaskForCreatingOrderRenewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateSaveBatchTaskForCreatingOrderRenewRequest() (request *SaveBatchTaskFo
 	request = &SaveBatchTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew", "", "")
 	request.Method = requests.POST
 	return
 }

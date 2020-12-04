@@ -21,7 +21,6 @@ import (
 )
 
 // CheckProcessingServerLockApply invokes the domain.CheckProcessingServerLockApply API synchronously
-// api document: https://help.aliyun.com/api/domain/checkprocessingserverlockapply.html
 func (client *Client) CheckProcessingServerLockApply(request *CheckProcessingServerLockApplyRequest) (response *CheckProcessingServerLockApplyResponse, err error) {
 	response = CreateCheckProcessingServerLockApplyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckProcessingServerLockApply(request *CheckProcessingSer
 }
 
 // CheckProcessingServerLockApplyWithChan invokes the domain.CheckProcessingServerLockApply API asynchronously
-// api document: https://help.aliyun.com/api/domain/checkprocessingserverlockapply.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckProcessingServerLockApplyWithChan(request *CheckProcessingServerLockApplyRequest) (<-chan *CheckProcessingServerLockApplyResponse, <-chan error) {
 	responseChan := make(chan *CheckProcessingServerLockApplyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckProcessingServerLockApplyWithChan(request *CheckProce
 }
 
 // CheckProcessingServerLockApplyWithCallback invokes the domain.CheckProcessingServerLockApply API asynchronously
-// api document: https://help.aliyun.com/api/domain/checkprocessingserverlockapply.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckProcessingServerLockApplyWithCallback(request *CheckProcessingServerLockApplyRequest, callback func(response *CheckProcessingServerLockApplyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateCheckProcessingServerLockApplyRequest() (request *CheckProcessingServ
 	request = &CheckProcessingServerLockApplyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckProcessingServerLockApply", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckProcessingServerLockApply", "", "")
 	request.Method = requests.POST
 	return
 }

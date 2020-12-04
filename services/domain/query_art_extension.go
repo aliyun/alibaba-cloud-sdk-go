@@ -21,7 +21,6 @@ import (
 )
 
 // QueryArtExtension invokes the domain.QueryArtExtension API synchronously
-// api document: https://help.aliyun.com/api/domain/queryartextension.html
 func (client *Client) QueryArtExtension(request *QueryArtExtensionRequest) (response *QueryArtExtensionResponse, err error) {
 	response = CreateQueryArtExtensionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryArtExtension(request *QueryArtExtensionRequest) (resp
 }
 
 // QueryArtExtensionWithChan invokes the domain.QueryArtExtension API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryartextension.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryArtExtensionWithChan(request *QueryArtExtensionRequest) (<-chan *QueryArtExtensionResponse, <-chan error) {
 	responseChan := make(chan *QueryArtExtensionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryArtExtensionWithChan(request *QueryArtExtensionReques
 }
 
 // QueryArtExtensionWithCallback invokes the domain.QueryArtExtension API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryartextension.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryArtExtensionWithCallback(request *QueryArtExtensionRequest, callback func(response *QueryArtExtensionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateQueryArtExtensionRequest() (request *QueryArtExtensionRequest) {
 	request = &QueryArtExtensionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryArtExtension", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryArtExtension", "", "")
 	request.Method = requests.POST
 	return
 }

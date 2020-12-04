@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForModifyingDnsHost invokes the domain.SaveSingleTaskForModifyingDnsHost API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskformodifyingdnshost.html
 func (client *Client) SaveSingleTaskForModifyingDnsHost(request *SaveSingleTaskForModifyingDnsHostRequest) (response *SaveSingleTaskForModifyingDnsHostResponse, err error) {
 	response = CreateSaveSingleTaskForModifyingDnsHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForModifyingDnsHost(request *SaveSingleTaskF
 }
 
 // SaveSingleTaskForModifyingDnsHostWithChan invokes the domain.SaveSingleTaskForModifyingDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskformodifyingdnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForModifyingDnsHostWithChan(request *SaveSingleTaskForModifyingDnsHostRequest) (<-chan *SaveSingleTaskForModifyingDnsHostResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForModifyingDnsHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForModifyingDnsHostWithChan(request *SaveSin
 }
 
 // SaveSingleTaskForModifyingDnsHostWithCallback invokes the domain.SaveSingleTaskForModifyingDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskformodifyingdnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForModifyingDnsHostWithCallback(request *SaveSingleTaskForModifyingDnsHostRequest, callback func(response *SaveSingleTaskForModifyingDnsHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateSaveSingleTaskForModifyingDnsHostRequest() (request *SaveSingleTaskFo
 	request = &SaveSingleTaskForModifyingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForModifyingDnsHost", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForModifyingDnsHost", "", "")
 	request.Method = requests.POST
 	return
 }

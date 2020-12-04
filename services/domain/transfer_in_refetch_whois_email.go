@@ -21,7 +21,6 @@ import (
 )
 
 // TransferInRefetchWhoisEmail invokes the domain.TransferInRefetchWhoisEmail API synchronously
-// api document: https://help.aliyun.com/api/domain/transferinrefetchwhoisemail.html
 func (client *Client) TransferInRefetchWhoisEmail(request *TransferInRefetchWhoisEmailRequest) (response *TransferInRefetchWhoisEmailResponse, err error) {
 	response = CreateTransferInRefetchWhoisEmailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TransferInRefetchWhoisEmail(request *TransferInRefetchWhoi
 }
 
 // TransferInRefetchWhoisEmailWithChan invokes the domain.TransferInRefetchWhoisEmail API asynchronously
-// api document: https://help.aliyun.com/api/domain/transferinrefetchwhoisemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferInRefetchWhoisEmailWithChan(request *TransferInRefetchWhoisEmailRequest) (<-chan *TransferInRefetchWhoisEmailResponse, <-chan error) {
 	responseChan := make(chan *TransferInRefetchWhoisEmailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TransferInRefetchWhoisEmailWithChan(request *TransferInRef
 }
 
 // TransferInRefetchWhoisEmailWithCallback invokes the domain.TransferInRefetchWhoisEmail API asynchronously
-// api document: https://help.aliyun.com/api/domain/transferinrefetchwhoisemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferInRefetchWhoisEmailWithCallback(request *TransferInRefetchWhoisEmailRequest, callback func(response *TransferInRefetchWhoisEmailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateTransferInRefetchWhoisEmailRequest() (request *TransferInRefetchWhois
 	request = &TransferInRefetchWhoisEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInRefetchWhoisEmail", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInRefetchWhoisEmail", "", "")
 	request.Method = requests.POST
 	return
 }

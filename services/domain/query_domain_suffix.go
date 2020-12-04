@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDomainSuffix invokes the domain.QueryDomainSuffix API synchronously
-// api document: https://help.aliyun.com/api/domain/querydomainsuffix.html
 func (client *Client) QueryDomainSuffix(request *QueryDomainSuffixRequest) (response *QueryDomainSuffixResponse, err error) {
 	response = CreateQueryDomainSuffixResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDomainSuffix(request *QueryDomainSuffixRequest) (resp
 }
 
 // QueryDomainSuffixWithChan invokes the domain.QueryDomainSuffix API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomainsuffix.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainSuffixWithChan(request *QueryDomainSuffixRequest) (<-chan *QueryDomainSuffixResponse, <-chan error) {
 	responseChan := make(chan *QueryDomainSuffixResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDomainSuffixWithChan(request *QueryDomainSuffixReques
 }
 
 // QueryDomainSuffixWithCallback invokes the domain.QueryDomainSuffix API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomainsuffix.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainSuffixWithCallback(request *QueryDomainSuffixRequest, callback func(response *QueryDomainSuffixResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateQueryDomainSuffixRequest() (request *QueryDomainSuffixRequest) {
 	request = &QueryDomainSuffixRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainSuffix", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainSuffix", "", "")
 	request.Method = requests.POST
 	return
 }

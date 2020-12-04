@@ -21,7 +21,6 @@ import (
 )
 
 // CheckDomain invokes the domain.CheckDomain API synchronously
-// api document: https://help.aliyun.com/api/domain/checkdomain.html
 func (client *Client) CheckDomain(request *CheckDomainRequest) (response *CheckDomainResponse, err error) {
 	response = CreateCheckDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckDomain(request *CheckDomainRequest) (response *CheckD
 }
 
 // CheckDomainWithChan invokes the domain.CheckDomain API asynchronously
-// api document: https://help.aliyun.com/api/domain/checkdomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainWithChan(request *CheckDomainRequest) (<-chan *CheckDomainResponse, <-chan error) {
 	responseChan := make(chan *CheckDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckDomainWithChan(request *CheckDomainRequest) (<-chan *
 }
 
 // CheckDomainWithCallback invokes the domain.CheckDomain API asynchronously
-// api document: https://help.aliyun.com/api/domain/checkdomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainWithCallback(request *CheckDomainRequest, callback func(response *CheckDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateCheckDomainRequest() (request *CheckDomainRequest) {
 	request = &CheckDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckDomain", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckDomain", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CancelOperationAudit invokes the domain.CancelOperationAudit API synchronously
-// api document: https://help.aliyun.com/api/domain/canceloperationaudit.html
 func (client *Client) CancelOperationAudit(request *CancelOperationAuditRequest) (response *CancelOperationAuditResponse, err error) {
 	response = CreateCancelOperationAuditResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelOperationAudit(request *CancelOperationAuditRequest)
 }
 
 // CancelOperationAuditWithChan invokes the domain.CancelOperationAudit API asynchronously
-// api document: https://help.aliyun.com/api/domain/canceloperationaudit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelOperationAuditWithChan(request *CancelOperationAuditRequest) (<-chan *CancelOperationAuditResponse, <-chan error) {
 	responseChan := make(chan *CancelOperationAuditResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelOperationAuditWithChan(request *CancelOperationAudit
 }
 
 // CancelOperationAuditWithCallback invokes the domain.CancelOperationAudit API asynchronously
-// api document: https://help.aliyun.com/api/domain/canceloperationaudit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelOperationAuditWithCallback(request *CancelOperationAuditRequest, callback func(response *CancelOperationAuditResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateCancelOperationAuditRequest() (request *CancelOperationAuditRequest) 
 	request = &CancelOperationAuditRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CancelOperationAudit", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CancelOperationAudit", "", "")
 	request.Method = requests.POST
 	return
 }

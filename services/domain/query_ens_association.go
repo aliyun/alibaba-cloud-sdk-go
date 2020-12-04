@@ -21,7 +21,6 @@ import (
 )
 
 // QueryEnsAssociation invokes the domain.QueryEnsAssociation API synchronously
-// api document: https://help.aliyun.com/api/domain/queryensassociation.html
 func (client *Client) QueryEnsAssociation(request *QueryEnsAssociationRequest) (response *QueryEnsAssociationResponse, err error) {
 	response = CreateQueryEnsAssociationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryEnsAssociation(request *QueryEnsAssociationRequest) (
 }
 
 // QueryEnsAssociationWithChan invokes the domain.QueryEnsAssociation API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryensassociation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEnsAssociationWithChan(request *QueryEnsAssociationRequest) (<-chan *QueryEnsAssociationResponse, <-chan error) {
 	responseChan := make(chan *QueryEnsAssociationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryEnsAssociationWithChan(request *QueryEnsAssociationRe
 }
 
 // QueryEnsAssociationWithCallback invokes the domain.QueryEnsAssociation API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryensassociation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEnsAssociationWithCallback(request *QueryEnsAssociationRequest, callback func(response *QueryEnsAssociationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryEnsAssociationRequest() (request *QueryEnsAssociationRequest) {
 	request = &QueryEnsAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryEnsAssociation", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryEnsAssociation", "", "")
 	request.Method = requests.POST
 	return
 }

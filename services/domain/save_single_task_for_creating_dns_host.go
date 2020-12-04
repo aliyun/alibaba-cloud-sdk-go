@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForCreatingDnsHost invokes the domain.SaveSingleTaskForCreatingDnsHost API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingdnshost.html
 func (client *Client) SaveSingleTaskForCreatingDnsHost(request *SaveSingleTaskForCreatingDnsHostRequest) (response *SaveSingleTaskForCreatingDnsHostResponse, err error) {
 	response = CreateSaveSingleTaskForCreatingDnsHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForCreatingDnsHost(request *SaveSingleTaskFo
 }
 
 // SaveSingleTaskForCreatingDnsHostWithChan invokes the domain.SaveSingleTaskForCreatingDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingdnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingDnsHostWithChan(request *SaveSingleTaskForCreatingDnsHostRequest) (<-chan *SaveSingleTaskForCreatingDnsHostResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForCreatingDnsHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForCreatingDnsHostWithChan(request *SaveSing
 }
 
 // SaveSingleTaskForCreatingDnsHostWithCallback invokes the domain.SaveSingleTaskForCreatingDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingdnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingDnsHostWithCallback(request *SaveSingleTaskForCreatingDnsHostRequest, callback func(response *SaveSingleTaskForCreatingDnsHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateSaveSingleTaskForCreatingDnsHostRequest() (request *SaveSingleTaskFor
 	request = &SaveSingleTaskForCreatingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost", "", "")
 	request.Method = requests.POST
 	return
 }

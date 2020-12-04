@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForCreatingOrderRedeem invokes the domain.SaveBatchTaskForCreatingOrderRedeem API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderredeem.html
 func (client *Client) SaveBatchTaskForCreatingOrderRedeem(request *SaveBatchTaskForCreatingOrderRedeemRequest) (response *SaveBatchTaskForCreatingOrderRedeemResponse, err error) {
 	response = CreateSaveBatchTaskForCreatingOrderRedeemResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForCreatingOrderRedeem(request *SaveBatchTask
 }
 
 // SaveBatchTaskForCreatingOrderRedeemWithChan invokes the domain.SaveBatchTaskForCreatingOrderRedeem API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderredeem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithChan(request *SaveBatchTaskForCreatingOrderRedeemRequest) (<-chan *SaveBatchTaskForCreatingOrderRedeemResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForCreatingOrderRedeemResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithChan(request *SaveB
 }
 
 // SaveBatchTaskForCreatingOrderRedeemWithCallback invokes the domain.SaveBatchTaskForCreatingOrderRedeem API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderredeem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithCallback(request *SaveBatchTaskForCreatingOrderRedeemRequest, callback func(response *SaveBatchTaskForCreatingOrderRedeemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,7 @@ func CreateSaveBatchTaskForCreatingOrderRedeemRequest() (request *SaveBatchTaskF
 	request = &SaveBatchTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRedeem", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRedeem", "", "")
 	request.Method = requests.POST
 	return
 }

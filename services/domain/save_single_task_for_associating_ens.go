@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForAssociatingEns invokes the domain.SaveSingleTaskForAssociatingEns API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforassociatingens.html
 func (client *Client) SaveSingleTaskForAssociatingEns(request *SaveSingleTaskForAssociatingEnsRequest) (response *SaveSingleTaskForAssociatingEnsResponse, err error) {
 	response = CreateSaveSingleTaskForAssociatingEnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForAssociatingEns(request *SaveSingleTaskFor
 }
 
 // SaveSingleTaskForAssociatingEnsWithChan invokes the domain.SaveSingleTaskForAssociatingEns API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforassociatingens.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForAssociatingEnsWithChan(request *SaveSingleTaskForAssociatingEnsRequest) (<-chan *SaveSingleTaskForAssociatingEnsResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForAssociatingEnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForAssociatingEnsWithChan(request *SaveSingl
 }
 
 // SaveSingleTaskForAssociatingEnsWithCallback invokes the domain.SaveSingleTaskForAssociatingEns API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforassociatingens.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForAssociatingEnsWithCallback(request *SaveSingleTaskForAssociatingEnsRequest, callback func(response *SaveSingleTaskForAssociatingEnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveSingleTaskForAssociatingEnsRequest() (request *SaveSingleTaskForA
 	request = &SaveSingleTaskForAssociatingEnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // RequestPayDemand invokes the domain.RequestPayDemand API synchronously
-// api document: https://help.aliyun.com/api/domain/requestpaydemand.html
 func (client *Client) RequestPayDemand(request *RequestPayDemandRequest) (response *RequestPayDemandResponse, err error) {
 	response = CreateRequestPayDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RequestPayDemand(request *RequestPayDemandRequest) (respon
 }
 
 // RequestPayDemandWithChan invokes the domain.RequestPayDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/requestpaydemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestPayDemandWithChan(request *RequestPayDemandRequest) (<-chan *RequestPayDemandResponse, <-chan error) {
 	responseChan := make(chan *RequestPayDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RequestPayDemandWithChan(request *RequestPayDemandRequest)
 }
 
 // RequestPayDemandWithCallback invokes the domain.RequestPayDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/requestpaydemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestPayDemandWithCallback(request *RequestPayDemandRequest, callback func(response *RequestPayDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateRequestPayDemandRequest() (request *RequestPayDemandRequest) {
 	request = &RequestPayDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "RequestPayDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "RequestPayDemand", "", "")
 	request.Method = requests.POST
 	return
 }

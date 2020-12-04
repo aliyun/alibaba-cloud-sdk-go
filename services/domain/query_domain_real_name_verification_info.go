@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDomainRealNameVerificationInfo invokes the domain.QueryDomainRealNameVerificationInfo API synchronously
-// api document: https://help.aliyun.com/api/domain/querydomainrealnameverificationinfo.html
 func (client *Client) QueryDomainRealNameVerificationInfo(request *QueryDomainRealNameVerificationInfoRequest) (response *QueryDomainRealNameVerificationInfoResponse, err error) {
 	response = CreateQueryDomainRealNameVerificationInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDomainRealNameVerificationInfo(request *QueryDomainRe
 }
 
 // QueryDomainRealNameVerificationInfoWithChan invokes the domain.QueryDomainRealNameVerificationInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomainrealnameverificationinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainRealNameVerificationInfoWithChan(request *QueryDomainRealNameVerificationInfoRequest) (<-chan *QueryDomainRealNameVerificationInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryDomainRealNameVerificationInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDomainRealNameVerificationInfoWithChan(request *Query
 }
 
 // QueryDomainRealNameVerificationInfoWithCallback invokes the domain.QueryDomainRealNameVerificationInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomainrealnameverificationinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainRealNameVerificationInfoWithCallback(request *QueryDomainRealNameVerificationInfoRequest, callback func(response *QueryDomainRealNameVerificationInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateQueryDomainRealNameVerificationInfoRequest() (request *QueryDomainRea
 	request = &QueryDomainRealNameVerificationInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainRealNameVerificationInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainRealNameVerificationInfo", "", "")
 	request.Method = requests.POST
 	return
 }

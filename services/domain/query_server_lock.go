@@ -21,7 +21,6 @@ import (
 )
 
 // QueryServerLock invokes the domain.QueryServerLock API synchronously
-// api document: https://help.aliyun.com/api/domain/queryserverlock.html
 func (client *Client) QueryServerLock(request *QueryServerLockRequest) (response *QueryServerLockResponse, err error) {
 	response = CreateQueryServerLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryServerLock(request *QueryServerLockRequest) (response
 }
 
 // QueryServerLockWithChan invokes the domain.QueryServerLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryserverlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryServerLockWithChan(request *QueryServerLockRequest) (<-chan *QueryServerLockResponse, <-chan error) {
 	responseChan := make(chan *QueryServerLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryServerLockWithChan(request *QueryServerLockRequest) (
 }
 
 // QueryServerLockWithCallback invokes the domain.QueryServerLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryserverlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryServerLockWithCallback(request *QueryServerLockRequest, callback func(response *QueryServerLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateQueryServerLockRequest() (request *QueryServerLockRequest) {
 	request = &QueryServerLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryServerLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryServerLock", "", "")
 	request.Method = requests.POST
 	return
 }

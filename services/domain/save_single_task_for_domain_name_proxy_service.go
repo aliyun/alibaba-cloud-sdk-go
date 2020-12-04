@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForDomainNameProxyService invokes the domain.SaveSingleTaskForDomainNameProxyService API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordomainnameproxyservice.html
 func (client *Client) SaveSingleTaskForDomainNameProxyService(request *SaveSingleTaskForDomainNameProxyServiceRequest) (response *SaveSingleTaskForDomainNameProxyServiceResponse, err error) {
 	response = CreateSaveSingleTaskForDomainNameProxyServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForDomainNameProxyService(request *SaveSingl
 }
 
 // SaveSingleTaskForDomainNameProxyServiceWithChan invokes the domain.SaveSingleTaskForDomainNameProxyService API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordomainnameproxyservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDomainNameProxyServiceWithChan(request *SaveSingleTaskForDomainNameProxyServiceRequest) (<-chan *SaveSingleTaskForDomainNameProxyServiceResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForDomainNameProxyServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForDomainNameProxyServiceWithChan(request *S
 }
 
 // SaveSingleTaskForDomainNameProxyServiceWithCallback invokes the domain.SaveSingleTaskForDomainNameProxyService API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordomainnameproxyservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDomainNameProxyServiceWithCallback(request *SaveSingleTaskForDomainNameProxyServiceRequest, callback func(response *SaveSingleTaskForDomainNameProxyServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveSingleTaskForDomainNameProxyServiceRequest() (request *SaveSingle
 	request = &SaveSingleTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDomainNameProxyService", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDomainNameProxyService", "", "")
 	request.Method = requests.POST
 	return
 }

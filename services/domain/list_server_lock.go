@@ -21,7 +21,6 @@ import (
 )
 
 // ListServerLock invokes the domain.ListServerLock API synchronously
-// api document: https://help.aliyun.com/api/domain/listserverlock.html
 func (client *Client) ListServerLock(request *ListServerLockRequest) (response *ListServerLockResponse, err error) {
 	response = CreateListServerLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListServerLock(request *ListServerLockRequest) (response *
 }
 
 // ListServerLockWithChan invokes the domain.ListServerLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/listserverlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListServerLockWithChan(request *ListServerLockRequest) (<-chan *ListServerLockResponse, <-chan error) {
 	responseChan := make(chan *ListServerLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListServerLockWithChan(request *ListServerLockRequest) (<-
 }
 
 // ListServerLockWithCallback invokes the domain.ListServerLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/listserverlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListServerLockWithCallback(request *ListServerLockRequest, callback func(response *ListServerLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -107,7 +102,7 @@ func CreateListServerLockRequest() (request *ListServerLockRequest) {
 	request = &ListServerLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ListServerLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ListServerLock", "", "")
 	request.Method = requests.POST
 	return
 }

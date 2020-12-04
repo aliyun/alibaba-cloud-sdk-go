@@ -21,7 +21,6 @@ import (
 )
 
 // TransferInReenterTransferAuthorizationCode invokes the domain.TransferInReenterTransferAuthorizationCode API synchronously
-// api document: https://help.aliyun.com/api/domain/transferinreentertransferauthorizationcode.html
 func (client *Client) TransferInReenterTransferAuthorizationCode(request *TransferInReenterTransferAuthorizationCodeRequest) (response *TransferInReenterTransferAuthorizationCodeResponse, err error) {
 	response = CreateTransferInReenterTransferAuthorizationCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TransferInReenterTransferAuthorizationCode(request *Transf
 }
 
 // TransferInReenterTransferAuthorizationCodeWithChan invokes the domain.TransferInReenterTransferAuthorizationCode API asynchronously
-// api document: https://help.aliyun.com/api/domain/transferinreentertransferauthorizationcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferInReenterTransferAuthorizationCodeWithChan(request *TransferInReenterTransferAuthorizationCodeRequest) (<-chan *TransferInReenterTransferAuthorizationCodeResponse, <-chan error) {
 	responseChan := make(chan *TransferInReenterTransferAuthorizationCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TransferInReenterTransferAuthorizationCodeWithChan(request
 }
 
 // TransferInReenterTransferAuthorizationCodeWithCallback invokes the domain.TransferInReenterTransferAuthorizationCode API asynchronously
-// api document: https://help.aliyun.com/api/domain/transferinreentertransferauthorizationcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferInReenterTransferAuthorizationCodeWithCallback(request *TransferInReenterTransferAuthorizationCodeRequest, callback func(response *TransferInReenterTransferAuthorizationCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateTransferInReenterTransferAuthorizationCodeRequest() (request *Transfe
 	request = &TransferInReenterTransferAuthorizationCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode", "", "")
 	request.Method = requests.POST
 	return
 }

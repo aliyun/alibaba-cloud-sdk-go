@@ -21,7 +21,6 @@ import (
 )
 
 // TransferInCheckMailToken invokes the domain.TransferInCheckMailToken API synchronously
-// api document: https://help.aliyun.com/api/domain/transferincheckmailtoken.html
 func (client *Client) TransferInCheckMailToken(request *TransferInCheckMailTokenRequest) (response *TransferInCheckMailTokenResponse, err error) {
 	response = CreateTransferInCheckMailTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TransferInCheckMailToken(request *TransferInCheckMailToken
 }
 
 // TransferInCheckMailTokenWithChan invokes the domain.TransferInCheckMailToken API asynchronously
-// api document: https://help.aliyun.com/api/domain/transferincheckmailtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferInCheckMailTokenWithChan(request *TransferInCheckMailTokenRequest) (<-chan *TransferInCheckMailTokenResponse, <-chan error) {
 	responseChan := make(chan *TransferInCheckMailTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TransferInCheckMailTokenWithChan(request *TransferInCheckM
 }
 
 // TransferInCheckMailTokenWithCallback invokes the domain.TransferInCheckMailToken API asynchronously
-// api document: https://help.aliyun.com/api/domain/transferincheckmailtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferInCheckMailTokenWithCallback(request *TransferInCheckMailTokenRequest, callback func(response *TransferInCheckMailTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateTransferInCheckMailTokenRequest() (request *TransferInCheckMailTokenR
 	request = &TransferInCheckMailTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInCheckMailToken", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInCheckMailToken", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForCreatingOrderRedeem invokes the domain.SaveSingleTaskForCreatingOrderRedeem API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderredeem.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeem(request *SaveSingleTaskForCreatingOrderRedeemRequest) (response *SaveSingleTaskForCreatingOrderRedeemResponse, err error) {
 	response = CreateSaveSingleTaskForCreatingOrderRedeemResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForCreatingOrderRedeem(request *SaveSingleTa
 }
 
 // SaveSingleTaskForCreatingOrderRedeemWithChan invokes the domain.SaveSingleTaskForCreatingOrderRedeem API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderredeem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithChan(request *SaveSingleTaskForCreatingOrderRedeemRequest) (<-chan *SaveSingleTaskForCreatingOrderRedeemResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForCreatingOrderRedeemResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithChan(request *Save
 }
 
 // SaveSingleTaskForCreatingOrderRedeemWithCallback invokes the domain.SaveSingleTaskForCreatingOrderRedeem API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderredeem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithCallback(request *SaveSingleTaskForCreatingOrderRedeemRequest, callback func(response *SaveSingleTaskForCreatingOrderRedeemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateSaveSingleTaskForCreatingOrderRedeemRequest() (request *SaveSingleTas
 	request = &SaveSingleTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem", "", "")
 	request.Method = requests.POST
 	return
 }

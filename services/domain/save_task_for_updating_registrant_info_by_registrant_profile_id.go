@@ -21,7 +21,6 @@ import (
 )
 
 // SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID invokes the domain.SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID API synchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforupdatingregistrantinfobyregistrantprofileid.html
 func (client *Client) SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID(request *SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest) (response *SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse, err error) {
 	response = CreateSaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID(req
 }
 
 // SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDWithChan invokes the domain.SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforupdatingregistrantinfobyregistrantprofileid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDWithChan(request *SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest) (<-chan *SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse, <-chan error) {
 	responseChan := make(chan *SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDWith
 }
 
 // SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDWithCallback invokes the domain.SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforupdatingregistrantinfobyregistrantprofileid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDWithCallback(request *SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest, callback func(response *SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateSaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() (requ
 	request = &SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "", "")
 	request.Method = requests.POST
 	return
 }

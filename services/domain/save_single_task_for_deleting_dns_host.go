@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForDeletingDnsHost invokes the domain.SaveSingleTaskForDeletingDnsHost API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordeletingdnshost.html
 func (client *Client) SaveSingleTaskForDeletingDnsHost(request *SaveSingleTaskForDeletingDnsHostRequest) (response *SaveSingleTaskForDeletingDnsHostResponse, err error) {
 	response = CreateSaveSingleTaskForDeletingDnsHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForDeletingDnsHost(request *SaveSingleTaskFo
 }
 
 // SaveSingleTaskForDeletingDnsHostWithChan invokes the domain.SaveSingleTaskForDeletingDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordeletingdnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDeletingDnsHostWithChan(request *SaveSingleTaskForDeletingDnsHostRequest) (<-chan *SaveSingleTaskForDeletingDnsHostResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForDeletingDnsHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForDeletingDnsHostWithChan(request *SaveSing
 }
 
 // SaveSingleTaskForDeletingDnsHostWithCallback invokes the domain.SaveSingleTaskForDeletingDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordeletingdnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDeletingDnsHostWithCallback(request *SaveSingleTaskForDeletingDnsHostRequest, callback func(response *SaveSingleTaskForDeletingDnsHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveSingleTaskForDeletingDnsHostRequest() (request *SaveSingleTaskFor
 	request = &SaveSingleTaskForDeletingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDeletingDnsHost", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDeletingDnsHost", "", "")
 	request.Method = requests.POST
 	return
 }

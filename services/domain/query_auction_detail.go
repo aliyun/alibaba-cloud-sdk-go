@@ -21,7 +21,6 @@ import (
 )
 
 // QueryAuctionDetail invokes the domain.QueryAuctionDetail API synchronously
-// api document: https://help.aliyun.com/api/domain/queryauctiondetail.html
 func (client *Client) QueryAuctionDetail(request *QueryAuctionDetailRequest) (response *QueryAuctionDetailResponse, err error) {
 	response = CreateQueryAuctionDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryAuctionDetail(request *QueryAuctionDetailRequest) (re
 }
 
 // QueryAuctionDetailWithChan invokes the domain.QueryAuctionDetail API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryauctiondetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAuctionDetailWithChan(request *QueryAuctionDetailRequest) (<-chan *QueryAuctionDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryAuctionDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryAuctionDetailWithChan(request *QueryAuctionDetailRequ
 }
 
 // QueryAuctionDetailWithCallback invokes the domain.QueryAuctionDetail API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryauctiondetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAuctionDetailWithCallback(request *QueryAuctionDetailRequest, callback func(response *QueryAuctionDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -112,7 +107,7 @@ func CreateQueryAuctionDetailRequest() (request *QueryAuctionDetailRequest) {
 	request = &QueryAuctionDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryAuctionDetail", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryAuctionDetail", "", "")
 	request.Method = requests.POST
 	return
 }

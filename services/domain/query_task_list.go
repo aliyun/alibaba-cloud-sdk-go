@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTaskList invokes the domain.QueryTaskList API synchronously
-// api document: https://help.aliyun.com/api/domain/querytasklist.html
 func (client *Client) QueryTaskList(request *QueryTaskListRequest) (response *QueryTaskListResponse, err error) {
 	response = CreateQueryTaskListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTaskList(request *QueryTaskListRequest) (response *Qu
 }
 
 // QueryTaskListWithChan invokes the domain.QueryTaskList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytasklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskListWithChan(request *QueryTaskListRequest) (<-chan *QueryTaskListResponse, <-chan error) {
 	responseChan := make(chan *QueryTaskListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTaskListWithChan(request *QueryTaskListRequest) (<-ch
 }
 
 // QueryTaskListWithCallback invokes the domain.QueryTaskList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytasklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskListWithCallback(request *QueryTaskListRequest, callback func(response *QueryTaskListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {
 	request = &QueryTaskListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskList", "", "")
 	request.Method = requests.POST
 	return
 }

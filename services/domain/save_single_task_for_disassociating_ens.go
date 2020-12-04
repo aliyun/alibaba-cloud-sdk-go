@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForDisassociatingEns invokes the domain.SaveSingleTaskForDisassociatingEns API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordisassociatingens.html
 func (client *Client) SaveSingleTaskForDisassociatingEns(request *SaveSingleTaskForDisassociatingEnsRequest) (response *SaveSingleTaskForDisassociatingEnsResponse, err error) {
 	response = CreateSaveSingleTaskForDisassociatingEnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForDisassociatingEns(request *SaveSingleTask
 }
 
 // SaveSingleTaskForDisassociatingEnsWithChan invokes the domain.SaveSingleTaskForDisassociatingEns API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordisassociatingens.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDisassociatingEnsWithChan(request *SaveSingleTaskForDisassociatingEnsRequest) (<-chan *SaveSingleTaskForDisassociatingEnsResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForDisassociatingEnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForDisassociatingEnsWithChan(request *SaveSi
 }
 
 // SaveSingleTaskForDisassociatingEnsWithCallback invokes the domain.SaveSingleTaskForDisassociatingEns API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordisassociatingens.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDisassociatingEnsWithCallback(request *SaveSingleTaskForDisassociatingEnsRequest, callback func(response *SaveSingleTaskForDisassociatingEnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveSingleTaskForDisassociatingEnsRequest() (request *SaveSingleTaskF
 	request = &SaveSingleTaskForDisassociatingEnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDisassociatingEns", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDisassociatingEns", "", "")
 	request.Method = requests.POST
 	return
 }

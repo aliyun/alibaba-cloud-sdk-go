@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForDomainNameProxyService invokes the domain.SaveBatchTaskForDomainNameProxyService API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskfordomainnameproxyservice.html
 func (client *Client) SaveBatchTaskForDomainNameProxyService(request *SaveBatchTaskForDomainNameProxyServiceRequest) (response *SaveBatchTaskForDomainNameProxyServiceResponse, err error) {
 	response = CreateSaveBatchTaskForDomainNameProxyServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForDomainNameProxyService(request *SaveBatchT
 }
 
 // SaveBatchTaskForDomainNameProxyServiceWithChan invokes the domain.SaveBatchTaskForDomainNameProxyService API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskfordomainnameproxyservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithChan(request *SaveBatchTaskForDomainNameProxyServiceRequest) (<-chan *SaveBatchTaskForDomainNameProxyServiceResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForDomainNameProxyServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithChan(request *Sa
 }
 
 // SaveBatchTaskForDomainNameProxyServiceWithCallback invokes the domain.SaveBatchTaskForDomainNameProxyService API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskfordomainnameproxyservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithCallback(request *SaveBatchTaskForDomainNameProxyServiceRequest, callback func(response *SaveBatchTaskForDomainNameProxyServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveBatchTaskForDomainNameProxyServiceRequest() (request *SaveBatchTa
 	request = &SaveBatchTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService", "", "")
 	request.Method = requests.POST
 	return
 }

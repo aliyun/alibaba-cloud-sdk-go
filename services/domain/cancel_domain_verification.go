@@ -21,7 +21,6 @@ import (
 )
 
 // CancelDomainVerification invokes the domain.CancelDomainVerification API synchronously
-// api document: https://help.aliyun.com/api/domain/canceldomainverification.html
 func (client *Client) CancelDomainVerification(request *CancelDomainVerificationRequest) (response *CancelDomainVerificationResponse, err error) {
 	response = CreateCancelDomainVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelDomainVerification(request *CancelDomainVerification
 }
 
 // CancelDomainVerificationWithChan invokes the domain.CancelDomainVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/canceldomainverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelDomainVerificationWithChan(request *CancelDomainVerificationRequest) (<-chan *CancelDomainVerificationResponse, <-chan error) {
 	responseChan := make(chan *CancelDomainVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelDomainVerificationWithChan(request *CancelDomainVeri
 }
 
 // CancelDomainVerificationWithCallback invokes the domain.CancelDomainVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/canceldomainverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelDomainVerificationWithCallback(request *CancelDomainVerificationRequest, callback func(response *CancelDomainVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateCancelDomainVerificationRequest() (request *CancelDomainVerificationR
 	request = &CancelDomainVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CancelDomainVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CancelDomainVerification", "", "")
 	request.Method = requests.POST
 	return
 }

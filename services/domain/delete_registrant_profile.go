@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRegistrantProfile invokes the domain.DeleteRegistrantProfile API synchronously
-// api document: https://help.aliyun.com/api/domain/deleteregistrantprofile.html
 func (client *Client) DeleteRegistrantProfile(request *DeleteRegistrantProfileRequest) (response *DeleteRegistrantProfileResponse, err error) {
 	response = CreateDeleteRegistrantProfileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRegistrantProfile(request *DeleteRegistrantProfileRe
 }
 
 // DeleteRegistrantProfileWithChan invokes the domain.DeleteRegistrantProfile API asynchronously
-// api document: https://help.aliyun.com/api/domain/deleteregistrantprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRegistrantProfileWithChan(request *DeleteRegistrantProfileRequest) (<-chan *DeleteRegistrantProfileResponse, <-chan error) {
 	responseChan := make(chan *DeleteRegistrantProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRegistrantProfileWithChan(request *DeleteRegistrantP
 }
 
 // DeleteRegistrantProfileWithCallback invokes the domain.DeleteRegistrantProfile API asynchronously
-// api document: https://help.aliyun.com/api/domain/deleteregistrantprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRegistrantProfileWithCallback(request *DeleteRegistrantProfileRequest, callback func(response *DeleteRegistrantProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteRegistrantProfileRequest() (request *DeleteRegistrantProfileReq
 	request = &DeleteRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteRegistrantProfile", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteRegistrantProfile", "", "")
 	request.Method = requests.POST
 	return
 }

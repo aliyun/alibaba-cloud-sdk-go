@@ -21,7 +21,6 @@ import (
 )
 
 // QueryFailReasonForRegistrantProfileRealNameVerification invokes the domain.QueryFailReasonForRegistrantProfileRealNameVerification API synchronously
-// api document: https://help.aliyun.com/api/domain/queryfailreasonforregistrantprofilerealnameverification.html
 func (client *Client) QueryFailReasonForRegistrantProfileRealNameVerification(request *QueryFailReasonForRegistrantProfileRealNameVerificationRequest) (response *QueryFailReasonForRegistrantProfileRealNameVerificationResponse, err error) {
 	response = CreateQueryFailReasonForRegistrantProfileRealNameVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryFailReasonForRegistrantProfileRealNameVerification(re
 }
 
 // QueryFailReasonForRegistrantProfileRealNameVerificationWithChan invokes the domain.QueryFailReasonForRegistrantProfileRealNameVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryfailreasonforregistrantprofilerealnameverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFailReasonForRegistrantProfileRealNameVerificationWithChan(request *QueryFailReasonForRegistrantProfileRealNameVerificationRequest) (<-chan *QueryFailReasonForRegistrantProfileRealNameVerificationResponse, <-chan error) {
 	responseChan := make(chan *QueryFailReasonForRegistrantProfileRealNameVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryFailReasonForRegistrantProfileRealNameVerificationWit
 }
 
 // QueryFailReasonForRegistrantProfileRealNameVerificationWithCallback invokes the domain.QueryFailReasonForRegistrantProfileRealNameVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryfailreasonforregistrantprofilerealnameverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFailReasonForRegistrantProfileRealNameVerificationWithCallback(request *QueryFailReasonForRegistrantProfileRealNameVerificationRequest, callback func(response *QueryFailReasonForRegistrantProfileRealNameVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryFailReasonForRegistrantProfileRealNameVerificationRequest() (req
 	request = &QueryFailReasonForRegistrantProfileRealNameVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification", "", "")
 	request.Method = requests.POST
 	return
 }

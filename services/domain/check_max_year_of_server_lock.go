@@ -21,7 +21,6 @@ import (
 )
 
 // CheckMaxYearOfServerLock invokes the domain.CheckMaxYearOfServerLock API synchronously
-// api document: https://help.aliyun.com/api/domain/checkmaxyearofserverlock.html
 func (client *Client) CheckMaxYearOfServerLock(request *CheckMaxYearOfServerLockRequest) (response *CheckMaxYearOfServerLockResponse, err error) {
 	response = CreateCheckMaxYearOfServerLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckMaxYearOfServerLock(request *CheckMaxYearOfServerLock
 }
 
 // CheckMaxYearOfServerLockWithChan invokes the domain.CheckMaxYearOfServerLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/checkmaxyearofserverlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckMaxYearOfServerLockWithChan(request *CheckMaxYearOfServerLockRequest) (<-chan *CheckMaxYearOfServerLockResponse, <-chan error) {
 	responseChan := make(chan *CheckMaxYearOfServerLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckMaxYearOfServerLockWithChan(request *CheckMaxYearOfSe
 }
 
 // CheckMaxYearOfServerLockWithCallback invokes the domain.CheckMaxYearOfServerLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/checkmaxyearofserverlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckMaxYearOfServerLockWithCallback(request *CheckMaxYearOfServerLockRequest, callback func(response *CheckMaxYearOfServerLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateCheckMaxYearOfServerLockRequest() (request *CheckMaxYearOfServerLockR
 	request = &CheckMaxYearOfServerLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckMaxYearOfServerLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckMaxYearOfServerLock", "", "")
 	request.Method = requests.POST
 	return
 }

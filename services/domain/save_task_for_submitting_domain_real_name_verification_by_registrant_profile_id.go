@@ -21,7 +21,6 @@ import (
 )
 
 // SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID invokes the domain.SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID API synchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomainrealnameverificationbyregistrantprofileid.html
 func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID(request *SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest) (response *SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResponse, err error) {
 	response = CreateSaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByRegistran
 }
 
 // SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDWithChan invokes the domain.SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomainrealnameverificationbyregistrantprofileid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDWithChan(request *SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest) (<-chan *SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResponse, <-chan error) {
 	responseChan := make(chan *SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByRegistran
 }
 
 // SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDWithCallback invokes the domain.SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomainrealnameverificationbyregistrantprofileid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDWithCallback(request *SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest, callback func(response *SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateSaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDR
 	request = &SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID", "", "")
 	request.Method = requests.POST
 	return
 }

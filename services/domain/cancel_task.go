@@ -21,7 +21,6 @@ import (
 )
 
 // CancelTask invokes the domain.CancelTask API synchronously
-// api document: https://help.aliyun.com/api/domain/canceltask.html
 func (client *Client) CancelTask(request *CancelTaskRequest) (response *CancelTaskResponse, err error) {
 	response = CreateCancelTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelTask(request *CancelTaskRequest) (response *CancelTa
 }
 
 // CancelTaskWithChan invokes the domain.CancelTask API asynchronously
-// api document: https://help.aliyun.com/api/domain/canceltask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *CancelTaskResponse, <-chan error) {
 	responseChan := make(chan *CancelTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *Ca
 }
 
 // CancelTaskWithCallback invokes the domain.CancelTask API asynchronously
-// api document: https://help.aliyun.com/api/domain/canceltask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callback func(response *CancelTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateCancelTaskRequest() (request *CancelTaskRequest) {
 	request = &CancelTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CancelTask", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CancelTask", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForSynchronizingDnsHost invokes the domain.SaveSingleTaskForSynchronizingDnsHost API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsynchronizingdnshost.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHost(request *SaveSingleTaskForSynchronizingDnsHostRequest) (response *SaveSingleTaskForSynchronizingDnsHostResponse, err error) {
 	response = CreateSaveSingleTaskForSynchronizingDnsHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForSynchronizingDnsHost(request *SaveSingleT
 }
 
 // SaveSingleTaskForSynchronizingDnsHostWithChan invokes the domain.SaveSingleTaskForSynchronizingDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsynchronizingdnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithChan(request *SaveSingleTaskForSynchronizingDnsHostRequest) (<-chan *SaveSingleTaskForSynchronizingDnsHostResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForSynchronizingDnsHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithChan(request *Sav
 }
 
 // SaveSingleTaskForSynchronizingDnsHostWithCallback invokes the domain.SaveSingleTaskForSynchronizingDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsynchronizingdnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithCallback(request *SaveSingleTaskForSynchronizingDnsHostRequest, callback func(response *SaveSingleTaskForSynchronizingDnsHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveSingleTaskForSynchronizingDnsHostRequest() (request *SaveSingleTa
 	request = &SaveSingleTaskForSynchronizingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSynchronizingDnsHost", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSynchronizingDnsHost", "", "")
 	request.Method = requests.POST
 	return
 }

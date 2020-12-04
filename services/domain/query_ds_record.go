@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDSRecord invokes the domain.QueryDSRecord API synchronously
-// api document: https://help.aliyun.com/api/domain/querydsrecord.html
 func (client *Client) QueryDSRecord(request *QueryDSRecordRequest) (response *QueryDSRecordResponse, err error) {
 	response = CreateQueryDSRecordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDSRecord(request *QueryDSRecordRequest) (response *Qu
 }
 
 // QueryDSRecordWithChan invokes the domain.QueryDSRecord API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydsrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDSRecordWithChan(request *QueryDSRecordRequest) (<-chan *QueryDSRecordResponse, <-chan error) {
 	responseChan := make(chan *QueryDSRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDSRecordWithChan(request *QueryDSRecordRequest) (<-ch
 }
 
 // QueryDSRecordWithCallback invokes the domain.QueryDSRecord API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydsrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDSRecordWithCallback(request *QueryDSRecordRequest, callback func(response *QueryDSRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryDSRecordRequest() (request *QueryDSRecordRequest) {
 	request = &QueryDSRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDSRecord", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDSRecord", "", "")
 	request.Method = requests.POST
 	return
 }

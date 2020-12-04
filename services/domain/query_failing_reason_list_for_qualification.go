@@ -21,7 +21,6 @@ import (
 )
 
 // QueryFailingReasonListForQualification invokes the domain.QueryFailingReasonListForQualification API synchronously
-// api document: https://help.aliyun.com/api/domain/queryfailingreasonlistforqualification.html
 func (client *Client) QueryFailingReasonListForQualification(request *QueryFailingReasonListForQualificationRequest) (response *QueryFailingReasonListForQualificationResponse, err error) {
 	response = CreateQueryFailingReasonListForQualificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryFailingReasonListForQualification(request *QueryFaili
 }
 
 // QueryFailingReasonListForQualificationWithChan invokes the domain.QueryFailingReasonListForQualification API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryfailingreasonlistforqualification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFailingReasonListForQualificationWithChan(request *QueryFailingReasonListForQualificationRequest) (<-chan *QueryFailingReasonListForQualificationResponse, <-chan error) {
 	responseChan := make(chan *QueryFailingReasonListForQualificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryFailingReasonListForQualificationWithChan(request *Qu
 }
 
 // QueryFailingReasonListForQualificationWithCallback invokes the domain.QueryFailingReasonListForQualification API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryfailingreasonlistforqualification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFailingReasonListForQualificationWithCallback(request *QueryFailingReasonListForQualificationRequest, callback func(response *QueryFailingReasonListForQualificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateQueryFailingReasonListForQualificationRequest() (request *QueryFailin
 	request = &QueryFailingReasonListForQualificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailingReasonListForQualification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailingReasonListForQualification", "", "")
 	request.Method = requests.POST
 	return
 }

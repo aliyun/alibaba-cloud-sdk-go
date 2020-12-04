@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDomainToDomainGroup invokes the domain.UpdateDomainToDomainGroup API synchronously
-// api document: https://help.aliyun.com/api/domain/updatedomaintodomaingroup.html
 func (client *Client) UpdateDomainToDomainGroup(request *UpdateDomainToDomainGroupRequest) (response *UpdateDomainToDomainGroupResponse, err error) {
 	response = CreateUpdateDomainToDomainGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDomainToDomainGroup(request *UpdateDomainToDomainGro
 }
 
 // UpdateDomainToDomainGroupWithChan invokes the domain.UpdateDomainToDomainGroup API asynchronously
-// api document: https://help.aliyun.com/api/domain/updatedomaintodomaingroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainToDomainGroupWithChan(request *UpdateDomainToDomainGroupRequest) (<-chan *UpdateDomainToDomainGroupResponse, <-chan error) {
 	responseChan := make(chan *UpdateDomainToDomainGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDomainToDomainGroupWithChan(request *UpdateDomainToD
 }
 
 // UpdateDomainToDomainGroupWithCallback invokes the domain.UpdateDomainToDomainGroup API asynchronously
-// api document: https://help.aliyun.com/api/domain/updatedomaintodomaingroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainToDomainGroupWithCallback(request *UpdateDomainToDomainGroupRequest, callback func(response *UpdateDomainToDomainGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateUpdateDomainToDomainGroupRequest() (request *UpdateDomainToDomainGrou
 	request = &UpdateDomainToDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "UpdateDomainToDomainGroup", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "UpdateDomainToDomainGroup", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryBrokerDemandRecord invokes the domain.QueryBrokerDemandRecord API synchronously
-// api document: https://help.aliyun.com/api/domain/querybrokerdemandrecord.html
 func (client *Client) QueryBrokerDemandRecord(request *QueryBrokerDemandRecordRequest) (response *QueryBrokerDemandRecordResponse, err error) {
 	response = CreateQueryBrokerDemandRecordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryBrokerDemandRecord(request *QueryBrokerDemandRecordRe
 }
 
 // QueryBrokerDemandRecordWithChan invokes the domain.QueryBrokerDemandRecord API asynchronously
-// api document: https://help.aliyun.com/api/domain/querybrokerdemandrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBrokerDemandRecordWithChan(request *QueryBrokerDemandRecordRequest) (<-chan *QueryBrokerDemandRecordResponse, <-chan error) {
 	responseChan := make(chan *QueryBrokerDemandRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryBrokerDemandRecordWithChan(request *QueryBrokerDemand
 }
 
 // QueryBrokerDemandRecordWithCallback invokes the domain.QueryBrokerDemandRecord API asynchronously
-// api document: https://help.aliyun.com/api/domain/querybrokerdemandrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBrokerDemandRecordWithCallback(request *QueryBrokerDemandRecordRequest, callback func(response *QueryBrokerDemandRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateQueryBrokerDemandRecordRequest() (request *QueryBrokerDemandRecordReq
 	request = &QueryBrokerDemandRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBrokerDemandRecord", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBrokerDemandRecord", "", "")
 	request.Method = requests.POST
 	return
 }

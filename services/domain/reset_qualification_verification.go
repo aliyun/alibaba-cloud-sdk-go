@@ -21,7 +21,6 @@ import (
 )
 
 // ResetQualificationVerification invokes the domain.ResetQualificationVerification API synchronously
-// api document: https://help.aliyun.com/api/domain/resetqualificationverification.html
 func (client *Client) ResetQualificationVerification(request *ResetQualificationVerificationRequest) (response *ResetQualificationVerificationResponse, err error) {
 	response = CreateResetQualificationVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetQualificationVerification(request *ResetQualification
 }
 
 // ResetQualificationVerificationWithChan invokes the domain.ResetQualificationVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/resetqualificationverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetQualificationVerificationWithChan(request *ResetQualificationVerificationRequest) (<-chan *ResetQualificationVerificationResponse, <-chan error) {
 	responseChan := make(chan *ResetQualificationVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetQualificationVerificationWithChan(request *ResetQuali
 }
 
 // ResetQualificationVerificationWithCallback invokes the domain.ResetQualificationVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/resetqualificationverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetQualificationVerificationWithCallback(request *ResetQualificationVerificationRequest, callback func(response *ResetQualificationVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateResetQualificationVerificationRequest() (request *ResetQualificationV
 	request = &ResetQualificationVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ResetQualificationVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ResetQualificationVerification", "", "")
 	request.Method = requests.POST
 	return
 }

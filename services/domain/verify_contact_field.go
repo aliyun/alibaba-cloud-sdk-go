@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyContactField invokes the domain.VerifyContactField API synchronously
-// api document: https://help.aliyun.com/api/domain/verifycontactfield.html
 func (client *Client) VerifyContactField(request *VerifyContactFieldRequest) (response *VerifyContactFieldResponse, err error) {
 	response = CreateVerifyContactFieldResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyContactField(request *VerifyContactFieldRequest) (re
 }
 
 // VerifyContactFieldWithChan invokes the domain.VerifyContactField API asynchronously
-// api document: https://help.aliyun.com/api/domain/verifycontactfield.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyContactFieldWithChan(request *VerifyContactFieldRequest) (<-chan *VerifyContactFieldResponse, <-chan error) {
 	responseChan := make(chan *VerifyContactFieldResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyContactFieldWithChan(request *VerifyContactFieldRequ
 }
 
 // VerifyContactFieldWithCallback invokes the domain.VerifyContactField API asynchronously
-// api document: https://help.aliyun.com/api/domain/verifycontactfield.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyContactFieldWithCallback(request *VerifyContactFieldRequest, callback func(response *VerifyContactFieldResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -109,7 +104,7 @@ func CreateVerifyContactFieldRequest() (request *VerifyContactFieldRequest) {
 	request = &VerifyContactFieldRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyContactField", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyContactField", "", "")
 	request.Method = requests.POST
 	return
 }

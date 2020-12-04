@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDomainAdminDivision invokes the domain.QueryDomainAdminDivision API synchronously
-// api document: https://help.aliyun.com/api/domain/querydomainadmindivision.html
 func (client *Client) QueryDomainAdminDivision(request *QueryDomainAdminDivisionRequest) (response *QueryDomainAdminDivisionResponse, err error) {
 	response = CreateQueryDomainAdminDivisionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDomainAdminDivision(request *QueryDomainAdminDivision
 }
 
 // QueryDomainAdminDivisionWithChan invokes the domain.QueryDomainAdminDivision API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomainadmindivision.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainAdminDivisionWithChan(request *QueryDomainAdminDivisionRequest) (<-chan *QueryDomainAdminDivisionResponse, <-chan error) {
 	responseChan := make(chan *QueryDomainAdminDivisionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDomainAdminDivisionWithChan(request *QueryDomainAdmin
 }
 
 // QueryDomainAdminDivisionWithCallback invokes the domain.QueryDomainAdminDivision API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomainadmindivision.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainAdminDivisionWithCallback(request *QueryDomainAdminDivisionRequest, callback func(response *QueryDomainAdminDivisionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateQueryDomainAdminDivisionRequest() (request *QueryDomainAdminDivisionR
 	request = &QueryDomainAdminDivisionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainAdminDivision", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainAdminDivision", "", "")
 	request.Method = requests.POST
 	return
 }

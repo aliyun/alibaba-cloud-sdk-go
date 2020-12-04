@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForUpdatingContactInfo invokes the domain.SaveSingleTaskForUpdatingContactInfo API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforupdatingcontactinfo.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfo(request *SaveSingleTaskForUpdatingContactInfoRequest) (response *SaveSingleTaskForUpdatingContactInfoResponse, err error) {
 	response = CreateSaveSingleTaskForUpdatingContactInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfo(request *SaveSingleTa
 }
 
 // SaveSingleTaskForUpdatingContactInfoWithChan invokes the domain.SaveSingleTaskForUpdatingContactInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforupdatingcontactinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfoWithChan(request *SaveSingleTaskForUpdatingContactInfoRequest) (<-chan *SaveSingleTaskForUpdatingContactInfoResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForUpdatingContactInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfoWithChan(request *Save
 }
 
 // SaveSingleTaskForUpdatingContactInfoWithCallback invokes the domain.SaveSingleTaskForUpdatingContactInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforupdatingcontactinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfoWithCallback(request *SaveSingleTaskForUpdatingContactInfoRequest, callback func(response *SaveSingleTaskForUpdatingContactInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateSaveSingleTaskForUpdatingContactInfoRequest() (request *SaveSingleTas
 	request = &SaveSingleTaskForUpdatingContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForUpdatingContactInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForUpdatingContactInfo", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryOperationAuditInfoList invokes the domain.QueryOperationAuditInfoList API synchronously
-// api document: https://help.aliyun.com/api/domain/queryoperationauditinfolist.html
 func (client *Client) QueryOperationAuditInfoList(request *QueryOperationAuditInfoListRequest) (response *QueryOperationAuditInfoListResponse, err error) {
 	response = CreateQueryOperationAuditInfoListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryOperationAuditInfoList(request *QueryOperationAuditIn
 }
 
 // QueryOperationAuditInfoListWithChan invokes the domain.QueryOperationAuditInfoList API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryoperationauditinfolist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryOperationAuditInfoListWithChan(request *QueryOperationAuditInfoListRequest) (<-chan *QueryOperationAuditInfoListResponse, <-chan error) {
 	responseChan := make(chan *QueryOperationAuditInfoListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryOperationAuditInfoListWithChan(request *QueryOperatio
 }
 
 // QueryOperationAuditInfoListWithCallback invokes the domain.QueryOperationAuditInfoList API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryoperationauditinfolist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryOperationAuditInfoListWithCallback(request *QueryOperationAuditInfoListRequest, callback func(response *QueryOperationAuditInfoListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateQueryOperationAuditInfoListRequest() (request *QueryOperationAuditInf
 	request = &QueryOperationAuditInfoListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryOperationAuditInfoList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryOperationAuditInfoList", "", "")
 	request.Method = requests.POST
 	return
 }

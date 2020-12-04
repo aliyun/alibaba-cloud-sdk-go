@@ -21,7 +21,6 @@ import (
 )
 
 // FailDemand invokes the domain.FailDemand API synchronously
-// api document: https://help.aliyun.com/api/domain/faildemand.html
 func (client *Client) FailDemand(request *FailDemandRequest) (response *FailDemandResponse, err error) {
 	response = CreateFailDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FailDemand(request *FailDemandRequest) (response *FailDema
 }
 
 // FailDemandWithChan invokes the domain.FailDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/faildemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FailDemandWithChan(request *FailDemandRequest) (<-chan *FailDemandResponse, <-chan error) {
 	responseChan := make(chan *FailDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FailDemandWithChan(request *FailDemandRequest) (<-chan *Fa
 }
 
 // FailDemandWithCallback invokes the domain.FailDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/faildemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FailDemandWithCallback(request *FailDemandRequest, callback func(response *FailDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateFailDemandRequest() (request *FailDemandRequest) {
 	request = &FailDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "FailDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "FailDemand", "", "")
 	request.Method = requests.POST
 	return
 }

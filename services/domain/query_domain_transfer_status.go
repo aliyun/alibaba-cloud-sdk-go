@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDomainTransferStatus invokes the domain.QueryDomainTransferStatus API synchronously
-// api document: https://help.aliyun.com/api/domain/querydomaintransferstatus.html
 func (client *Client) QueryDomainTransferStatus(request *QueryDomainTransferStatusRequest) (response *QueryDomainTransferStatusResponse, err error) {
 	response = CreateQueryDomainTransferStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDomainTransferStatus(request *QueryDomainTransferStat
 }
 
 // QueryDomainTransferStatusWithChan invokes the domain.QueryDomainTransferStatus API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomaintransferstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainTransferStatusWithChan(request *QueryDomainTransferStatusRequest) (<-chan *QueryDomainTransferStatusResponse, <-chan error) {
 	responseChan := make(chan *QueryDomainTransferStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDomainTransferStatusWithChan(request *QueryDomainTran
 }
 
 // QueryDomainTransferStatusWithCallback invokes the domain.QueryDomainTransferStatus API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomaintransferstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainTransferStatusWithCallback(request *QueryDomainTransferStatusRequest, callback func(response *QueryDomainTransferStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateQueryDomainTransferStatusRequest() (request *QueryDomainTransferStatu
 	request = &QueryDomainTransferStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryDomainTransferStatus", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryDomainTransferStatus", "", "")
 	request.Method = requests.POST
 	return
 }

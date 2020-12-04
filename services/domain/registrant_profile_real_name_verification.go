@@ -21,7 +21,6 @@ import (
 )
 
 // RegistrantProfileRealNameVerification invokes the domain.RegistrantProfileRealNameVerification API synchronously
-// api document: https://help.aliyun.com/api/domain/registrantprofilerealnameverification.html
 func (client *Client) RegistrantProfileRealNameVerification(request *RegistrantProfileRealNameVerificationRequest) (response *RegistrantProfileRealNameVerificationResponse, err error) {
 	response = CreateRegistrantProfileRealNameVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegistrantProfileRealNameVerification(request *RegistrantP
 }
 
 // RegistrantProfileRealNameVerificationWithChan invokes the domain.RegistrantProfileRealNameVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/registrantprofilerealnameverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegistrantProfileRealNameVerificationWithChan(request *RegistrantProfileRealNameVerificationRequest) (<-chan *RegistrantProfileRealNameVerificationResponse, <-chan error) {
 	responseChan := make(chan *RegistrantProfileRealNameVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegistrantProfileRealNameVerificationWithChan(request *Reg
 }
 
 // RegistrantProfileRealNameVerificationWithCallback invokes the domain.RegistrantProfileRealNameVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/registrantprofilerealnameverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegistrantProfileRealNameVerificationWithCallback(request *RegistrantProfileRealNameVerificationRequest, callback func(response *RegistrantProfileRealNameVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateRegistrantProfileRealNameVerificationRequest() (request *RegistrantPr
 	request = &RegistrantProfileRealNameVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "RegistrantProfileRealNameVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "RegistrantProfileRealNameVerification", "", "")
 	request.Method = requests.POST
 	return
 }

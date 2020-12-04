@@ -21,7 +21,6 @@ import (
 )
 
 // ChangeAuction invokes the domain.ChangeAuction API synchronously
-// api document: https://help.aliyun.com/api/domain/changeauction.html
 func (client *Client) ChangeAuction(request *ChangeAuctionRequest) (response *ChangeAuctionResponse, err error) {
 	response = CreateChangeAuctionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ChangeAuction(request *ChangeAuctionRequest) (response *Ch
 }
 
 // ChangeAuctionWithChan invokes the domain.ChangeAuction API asynchronously
-// api document: https://help.aliyun.com/api/domain/changeauction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeAuctionWithChan(request *ChangeAuctionRequest) (<-chan *ChangeAuctionResponse, <-chan error) {
 	responseChan := make(chan *ChangeAuctionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ChangeAuctionWithChan(request *ChangeAuctionRequest) (<-ch
 }
 
 // ChangeAuctionWithCallback invokes the domain.ChangeAuction API asynchronously
-// api document: https://help.aliyun.com/api/domain/changeauction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeAuctionWithCallback(request *ChangeAuctionRequest, callback func(response *ChangeAuctionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -111,7 +106,7 @@ func CreateChangeAuctionRequest() (request *ChangeAuctionRequest) {
 	request = &ChangeAuctionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "ChangeAuction", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "ChangeAuction", "", "")
 	request.Method = requests.POST
 	return
 }

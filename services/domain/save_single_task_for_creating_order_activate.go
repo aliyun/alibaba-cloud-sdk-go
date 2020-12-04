@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForCreatingOrderActivate invokes the domain.SaveSingleTaskForCreatingOrderActivate API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderactivate.html
 func (client *Client) SaveSingleTaskForCreatingOrderActivate(request *SaveSingleTaskForCreatingOrderActivateRequest) (response *SaveSingleTaskForCreatingOrderActivateResponse, err error) {
 	response = CreateSaveSingleTaskForCreatingOrderActivateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForCreatingOrderActivate(request *SaveSingle
 }
 
 // SaveSingleTaskForCreatingOrderActivateWithChan invokes the domain.SaveSingleTaskForCreatingOrderActivate API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderactivate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderActivateWithChan(request *SaveSingleTaskForCreatingOrderActivateRequest) (<-chan *SaveSingleTaskForCreatingOrderActivateResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForCreatingOrderActivateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForCreatingOrderActivateWithChan(request *Sa
 }
 
 // SaveSingleTaskForCreatingOrderActivateWithCallback invokes the domain.SaveSingleTaskForCreatingOrderActivate API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderactivate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderActivateWithCallback(request *SaveSingleTaskForCreatingOrderActivateRequest, callback func(response *SaveSingleTaskForCreatingOrderActivateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -122,7 +117,7 @@ func CreateSaveSingleTaskForCreatingOrderActivateRequest() (request *SaveSingleT
 	request = &SaveSingleTaskForCreatingOrderActivateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderActivate", "", "")
 	request.Method = requests.POST
 	return
 }

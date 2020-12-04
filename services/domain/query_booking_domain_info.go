@@ -21,7 +21,6 @@ import (
 )
 
 // QueryBookingDomainInfo invokes the domain.QueryBookingDomainInfo API synchronously
-// api document: https://help.aliyun.com/api/domain/querybookingdomaininfo.html
 func (client *Client) QueryBookingDomainInfo(request *QueryBookingDomainInfoRequest) (response *QueryBookingDomainInfoResponse, err error) {
 	response = CreateQueryBookingDomainInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryBookingDomainInfo(request *QueryBookingDomainInfoRequ
 }
 
 // QueryBookingDomainInfoWithChan invokes the domain.QueryBookingDomainInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/querybookingdomaininfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBookingDomainInfoWithChan(request *QueryBookingDomainInfoRequest) (<-chan *QueryBookingDomainInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryBookingDomainInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryBookingDomainInfoWithChan(request *QueryBookingDomain
 }
 
 // QueryBookingDomainInfoWithCallback invokes the domain.QueryBookingDomainInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/querybookingdomaininfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBookingDomainInfoWithCallback(request *QueryBookingDomainInfoRequest, callback func(response *QueryBookingDomainInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateQueryBookingDomainInfoRequest() (request *QueryBookingDomainInfoReque
 	request = &QueryBookingDomainInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBookingDomainInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBookingDomainInfo", "", "")
 	request.Method = requests.POST
 	return
 }

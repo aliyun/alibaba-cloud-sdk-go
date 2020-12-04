@@ -21,7 +21,6 @@ import (
 )
 
 // CheckDomainSunriseClaim invokes the domain.CheckDomainSunriseClaim API synchronously
-// api document: https://help.aliyun.com/api/domain/checkdomainsunriseclaim.html
 func (client *Client) CheckDomainSunriseClaim(request *CheckDomainSunriseClaimRequest) (response *CheckDomainSunriseClaimResponse, err error) {
 	response = CreateCheckDomainSunriseClaimResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckDomainSunriseClaim(request *CheckDomainSunriseClaimRe
 }
 
 // CheckDomainSunriseClaimWithChan invokes the domain.CheckDomainSunriseClaim API asynchronously
-// api document: https://help.aliyun.com/api/domain/checkdomainsunriseclaim.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainSunriseClaimWithChan(request *CheckDomainSunriseClaimRequest) (<-chan *CheckDomainSunriseClaimResponse, <-chan error) {
 	responseChan := make(chan *CheckDomainSunriseClaimResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckDomainSunriseClaimWithChan(request *CheckDomainSunris
 }
 
 // CheckDomainSunriseClaimWithCallback invokes the domain.CheckDomainSunriseClaim API asynchronously
-// api document: https://help.aliyun.com/api/domain/checkdomainsunriseclaim.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainSunriseClaimWithCallback(request *CheckDomainSunriseClaimRequest, callback func(response *CheckDomainSunriseClaimResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateCheckDomainSunriseClaimRequest() (request *CheckDomainSunriseClaimReq
 	request = &CheckDomainSunriseClaimRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckDomainSunriseClaim", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckDomainSunriseClaim", "", "")
 	request.Method = requests.POST
 	return
 }

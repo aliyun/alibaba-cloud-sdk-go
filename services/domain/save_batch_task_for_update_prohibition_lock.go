@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForUpdateProhibitionLock invokes the domain.SaveBatchTaskForUpdateProhibitionLock API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdateprohibitionlock.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLock(request *SaveBatchTaskForUpdateProhibitionLockRequest) (response *SaveBatchTaskForUpdateProhibitionLockResponse, err error) {
 	response = CreateSaveBatchTaskForUpdateProhibitionLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLock(request *SaveBatchTa
 }
 
 // SaveBatchTaskForUpdateProhibitionLockWithChan invokes the domain.SaveBatchTaskForUpdateProhibitionLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdateprohibitionlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithChan(request *SaveBatchTaskForUpdateProhibitionLockRequest) (<-chan *SaveBatchTaskForUpdateProhibitionLockResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForUpdateProhibitionLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithChan(request *Sav
 }
 
 // SaveBatchTaskForUpdateProhibitionLockWithCallback invokes the domain.SaveBatchTaskForUpdateProhibitionLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdateprohibitionlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithCallback(request *SaveBatchTaskForUpdateProhibitionLockRequest, callback func(response *SaveBatchTaskForUpdateProhibitionLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveBatchTaskForUpdateProhibitionLockRequest() (request *SaveBatchTas
 	request = &SaveBatchTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdateProhibitionLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdateProhibitionLock", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTaskDetailList invokes the domain.QueryTaskDetailList API synchronously
-// api document: https://help.aliyun.com/api/domain/querytaskdetaillist.html
 func (client *Client) QueryTaskDetailList(request *QueryTaskDetailListRequest) (response *QueryTaskDetailListResponse, err error) {
 	response = CreateQueryTaskDetailListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTaskDetailList(request *QueryTaskDetailListRequest) (
 }
 
 // QueryTaskDetailListWithChan invokes the domain.QueryTaskDetailList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytaskdetaillist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailListWithChan(request *QueryTaskDetailListRequest) (<-chan *QueryTaskDetailListResponse, <-chan error) {
 	responseChan := make(chan *QueryTaskDetailListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTaskDetailListWithChan(request *QueryTaskDetailListRe
 }
 
 // QueryTaskDetailListWithCallback invokes the domain.QueryTaskDetailList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytaskdetaillist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailListWithCallback(request *QueryTaskDetailListRequest, callback func(response *QueryTaskDetailListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateQueryTaskDetailListRequest() (request *QueryTaskDetailListRequest) {
 	request = &QueryTaskDetailListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskDetailList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskDetailList", "", "")
 	request.Method = requests.POST
 	return
 }

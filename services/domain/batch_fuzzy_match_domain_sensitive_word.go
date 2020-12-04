@@ -21,7 +21,6 @@ import (
 )
 
 // BatchFuzzyMatchDomainSensitiveWord invokes the domain.BatchFuzzyMatchDomainSensitiveWord API synchronously
-// api document: https://help.aliyun.com/api/domain/batchfuzzymatchdomainsensitiveword.html
 func (client *Client) BatchFuzzyMatchDomainSensitiveWord(request *BatchFuzzyMatchDomainSensitiveWordRequest) (response *BatchFuzzyMatchDomainSensitiveWordResponse, err error) {
 	response = CreateBatchFuzzyMatchDomainSensitiveWordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchFuzzyMatchDomainSensitiveWord(request *BatchFuzzyMatc
 }
 
 // BatchFuzzyMatchDomainSensitiveWordWithChan invokes the domain.BatchFuzzyMatchDomainSensitiveWord API asynchronously
-// api document: https://help.aliyun.com/api/domain/batchfuzzymatchdomainsensitiveword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchFuzzyMatchDomainSensitiveWordWithChan(request *BatchFuzzyMatchDomainSensitiveWordRequest) (<-chan *BatchFuzzyMatchDomainSensitiveWordResponse, <-chan error) {
 	responseChan := make(chan *BatchFuzzyMatchDomainSensitiveWordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchFuzzyMatchDomainSensitiveWordWithChan(request *BatchF
 }
 
 // BatchFuzzyMatchDomainSensitiveWordWithCallback invokes the domain.BatchFuzzyMatchDomainSensitiveWord API asynchronously
-// api document: https://help.aliyun.com/api/domain/batchfuzzymatchdomainsensitiveword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchFuzzyMatchDomainSensitiveWordWithCallback(request *BatchFuzzyMatchDomainSensitiveWordRequest, callback func(response *BatchFuzzyMatchDomainSensitiveWordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateBatchFuzzyMatchDomainSensitiveWordRequest() (request *BatchFuzzyMatch
 	request = &BatchFuzzyMatchDomainSensitiveWordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord", "", "")
 	request.Method = requests.POST
 	return
 }

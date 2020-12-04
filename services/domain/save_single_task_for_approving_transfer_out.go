@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForApprovingTransferOut invokes the domain.SaveSingleTaskForApprovingTransferOut API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforapprovingtransferout.html
 func (client *Client) SaveSingleTaskForApprovingTransferOut(request *SaveSingleTaskForApprovingTransferOutRequest) (response *SaveSingleTaskForApprovingTransferOutResponse, err error) {
 	response = CreateSaveSingleTaskForApprovingTransferOutResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForApprovingTransferOut(request *SaveSingleT
 }
 
 // SaveSingleTaskForApprovingTransferOutWithChan invokes the domain.SaveSingleTaskForApprovingTransferOut API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforapprovingtransferout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForApprovingTransferOutWithChan(request *SaveSingleTaskForApprovingTransferOutRequest) (<-chan *SaveSingleTaskForApprovingTransferOutResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForApprovingTransferOutResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForApprovingTransferOutWithChan(request *Sav
 }
 
 // SaveSingleTaskForApprovingTransferOutWithCallback invokes the domain.SaveSingleTaskForApprovingTransferOut API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforapprovingtransferout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForApprovingTransferOutWithCallback(request *SaveSingleTaskForApprovingTransferOutRequest, callback func(response *SaveSingleTaskForApprovingTransferOutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveSingleTaskForApprovingTransferOutRequest() (request *SaveSingleTa
 	request = &SaveSingleTaskForApprovingTransferOutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForApprovingTransferOut", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForApprovingTransferOut", "", "")
 	request.Method = requests.POST
 	return
 }

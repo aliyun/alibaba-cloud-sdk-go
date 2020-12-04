@@ -21,7 +21,6 @@ import (
 )
 
 // SaveTaskForUpdatingRegistrantInfoByIdentityCredential invokes the domain.SaveTaskForUpdatingRegistrantInfoByIdentityCredential API synchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforupdatingregistrantinfobyidentitycredential.html
 func (client *Client) SaveTaskForUpdatingRegistrantInfoByIdentityCredential(request *SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest) (response *SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse, err error) {
 	response = CreateSaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveTaskForUpdatingRegistrantInfoByIdentityCredential(requ
 }
 
 // SaveTaskForUpdatingRegistrantInfoByIdentityCredentialWithChan invokes the domain.SaveTaskForUpdatingRegistrantInfoByIdentityCredential API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforupdatingregistrantinfobyidentitycredential.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForUpdatingRegistrantInfoByIdentityCredentialWithChan(request *SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest) (<-chan *SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse, <-chan error) {
 	responseChan := make(chan *SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveTaskForUpdatingRegistrantInfoByIdentityCredentialWithC
 }
 
 // SaveTaskForUpdatingRegistrantInfoByIdentityCredentialWithCallback invokes the domain.SaveTaskForUpdatingRegistrantInfoByIdentityCredential API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforupdatingregistrantinfobyidentitycredential.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForUpdatingRegistrantInfoByIdentityCredentialWithCallback(request *SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest, callback func(response *SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -114,7 +109,7 @@ func CreateSaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest() (reque
 	request = &SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential", "", "")
 	request.Method = requests.POST
 	return
 }

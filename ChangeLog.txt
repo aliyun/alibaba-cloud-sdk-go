@@ -1,3 +1,7 @@
+2020-12-04 Version: v1.61.750
+- Generated 2018-02-08, 2018-01-29 for `Domain`.
+- Supported broker demand.
+
 2020-12-04 Version: v1.61.749
 - Generated 2016-12-22, 2017-08-23, 2018-05-09 for `Green`.
 - Support manual scan interface.

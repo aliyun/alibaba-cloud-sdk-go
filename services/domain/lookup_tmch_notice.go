@@ -21,7 +21,6 @@ import (
 )
 
 // LookupTmchNotice invokes the domain.LookupTmchNotice API synchronously
-// api document: https://help.aliyun.com/api/domain/lookuptmchnotice.html
 func (client *Client) LookupTmchNotice(request *LookupTmchNoticeRequest) (response *LookupTmchNoticeResponse, err error) {
 	response = CreateLookupTmchNoticeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) LookupTmchNotice(request *LookupTmchNoticeRequest) (respon
 }
 
 // LookupTmchNoticeWithChan invokes the domain.LookupTmchNotice API asynchronously
-// api document: https://help.aliyun.com/api/domain/lookuptmchnotice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LookupTmchNoticeWithChan(request *LookupTmchNoticeRequest) (<-chan *LookupTmchNoticeResponse, <-chan error) {
 	responseChan := make(chan *LookupTmchNoticeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) LookupTmchNoticeWithChan(request *LookupTmchNoticeRequest)
 }
 
 // LookupTmchNoticeWithCallback invokes the domain.LookupTmchNotice API asynchronously
-// api document: https://help.aliyun.com/api/domain/lookuptmchnotice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LookupTmchNoticeWithCallback(request *LookupTmchNoticeRequest, callback func(response *LookupTmchNoticeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateLookupTmchNoticeRequest() (request *LookupTmchNoticeRequest) {
 	request = &LookupTmchNoticeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "LookupTmchNotice", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "LookupTmchNotice", "", "")
 	request.Method = requests.POST
 	return
 }

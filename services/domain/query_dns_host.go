@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDnsHost invokes the domain.QueryDnsHost API synchronously
-// api document: https://help.aliyun.com/api/domain/querydnshost.html
 func (client *Client) QueryDnsHost(request *QueryDnsHostRequest) (response *QueryDnsHostResponse, err error) {
 	response = CreateQueryDnsHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDnsHost(request *QueryDnsHostRequest) (response *Quer
 }
 
 // QueryDnsHostWithChan invokes the domain.QueryDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDnsHostWithChan(request *QueryDnsHostRequest) (<-chan *QueryDnsHostResponse, <-chan error) {
 	responseChan := make(chan *QueryDnsHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDnsHostWithChan(request *QueryDnsHostRequest) (<-chan
 }
 
 // QueryDnsHostWithCallback invokes the domain.QueryDnsHost API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydnshost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDnsHostWithCallback(request *QueryDnsHostRequest, callback func(response *QueryDnsHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {
 	request = &QueryDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDnsHost", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDnsHost", "", "")
 	request.Method = requests.POST
 	return
 }

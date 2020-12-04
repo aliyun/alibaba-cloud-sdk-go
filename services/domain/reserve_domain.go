@@ -21,7 +21,6 @@ import (
 )
 
 // ReserveDomain invokes the domain.ReserveDomain API synchronously
-// api document: https://help.aliyun.com/api/domain/reservedomain.html
 func (client *Client) ReserveDomain(request *ReserveDomainRequest) (response *ReserveDomainResponse, err error) {
 	response = CreateReserveDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReserveDomain(request *ReserveDomainRequest) (response *Re
 }
 
 // ReserveDomainWithChan invokes the domain.ReserveDomain API asynchronously
-// api document: https://help.aliyun.com/api/domain/reservedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReserveDomainWithChan(request *ReserveDomainRequest) (<-chan *ReserveDomainResponse, <-chan error) {
 	responseChan := make(chan *ReserveDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReserveDomainWithChan(request *ReserveDomainRequest) (<-ch
 }
 
 // ReserveDomainWithCallback invokes the domain.ReserveDomain API asynchronously
-// api document: https://help.aliyun.com/api/domain/reservedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReserveDomainWithCallback(request *ReserveDomainRequest, callback func(response *ReserveDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateReserveDomainRequest() (request *ReserveDomainRequest) {
 	request = &ReserveDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "ReserveDomain", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "ReserveDomain", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // GetQualificationUploadPolicy invokes the domain.GetQualificationUploadPolicy API synchronously
-// api document: https://help.aliyun.com/api/domain/getqualificationuploadpolicy.html
 func (client *Client) GetQualificationUploadPolicy(request *GetQualificationUploadPolicyRequest) (response *GetQualificationUploadPolicyResponse, err error) {
 	response = CreateGetQualificationUploadPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetQualificationUploadPolicy(request *GetQualificationUplo
 }
 
 // GetQualificationUploadPolicyWithChan invokes the domain.GetQualificationUploadPolicy API asynchronously
-// api document: https://help.aliyun.com/api/domain/getqualificationuploadpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQualificationUploadPolicyWithChan(request *GetQualificationUploadPolicyRequest) (<-chan *GetQualificationUploadPolicyResponse, <-chan error) {
 	responseChan := make(chan *GetQualificationUploadPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetQualificationUploadPolicyWithChan(request *GetQualifica
 }
 
 // GetQualificationUploadPolicyWithCallback invokes the domain.GetQualificationUploadPolicy API asynchronously
-// api document: https://help.aliyun.com/api/domain/getqualificationuploadpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQualificationUploadPolicyWithCallback(request *GetQualificationUploadPolicyRequest, callback func(response *GetQualificationUploadPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateGetQualificationUploadPolicyRequest() (request *GetQualificationUploa
 	request = &GetQualificationUploadPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "GetQualificationUploadPolicy", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "GetQualificationUploadPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

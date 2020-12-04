@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyEmail invokes the domain.VerifyEmail API synchronously
-// api document: https://help.aliyun.com/api/domain/verifyemail.html
 func (client *Client) VerifyEmail(request *VerifyEmailRequest) (response *VerifyEmailResponse, err error) {
 	response = CreateVerifyEmailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyEmail(request *VerifyEmailRequest) (response *Verify
 }
 
 // VerifyEmailWithChan invokes the domain.VerifyEmail API asynchronously
-// api document: https://help.aliyun.com/api/domain/verifyemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyEmailWithChan(request *VerifyEmailRequest) (<-chan *VerifyEmailResponse, <-chan error) {
 	responseChan := make(chan *VerifyEmailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyEmailWithChan(request *VerifyEmailRequest) (<-chan *
 }
 
 // VerifyEmailWithCallback invokes the domain.VerifyEmail API asynchronously
-// api document: https://help.aliyun.com/api/domain/verifyemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyEmailWithCallback(request *VerifyEmailRequest, callback func(response *VerifyEmailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateVerifyEmailRequest() (request *VerifyEmailRequest) {
 	request = &VerifyEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyEmail", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyEmail", "", "")
 	request.Method = requests.POST
 	return
 }

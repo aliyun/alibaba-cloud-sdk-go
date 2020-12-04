@@ -21,7 +21,6 @@ import (
 )
 
 // QueryChangeLogList invokes the domain.QueryChangeLogList API synchronously
-// api document: https://help.aliyun.com/api/domain/querychangeloglist.html
 func (client *Client) QueryChangeLogList(request *QueryChangeLogListRequest) (response *QueryChangeLogListResponse, err error) {
 	response = CreateQueryChangeLogListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryChangeLogList(request *QueryChangeLogListRequest) (re
 }
 
 // QueryChangeLogListWithChan invokes the domain.QueryChangeLogList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querychangeloglist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryChangeLogListWithChan(request *QueryChangeLogListRequest) (<-chan *QueryChangeLogListResponse, <-chan error) {
 	responseChan := make(chan *QueryChangeLogListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryChangeLogListWithChan(request *QueryChangeLogListRequ
 }
 
 // QueryChangeLogListWithCallback invokes the domain.QueryChangeLogList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querychangeloglist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryChangeLogListWithCallback(request *QueryChangeLogListRequest, callback func(response *QueryChangeLogListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {
 	request = &QueryChangeLogListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryChangeLogList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryChangeLogList", "", "")
 	request.Method = requests.POST
 	return
 }

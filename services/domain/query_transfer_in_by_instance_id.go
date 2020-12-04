@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTransferInByInstanceId invokes the domain.QueryTransferInByInstanceId API synchronously
-// api document: https://help.aliyun.com/api/domain/querytransferinbyinstanceid.html
 func (client *Client) QueryTransferInByInstanceId(request *QueryTransferInByInstanceIdRequest) (response *QueryTransferInByInstanceIdResponse, err error) {
 	response = CreateQueryTransferInByInstanceIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTransferInByInstanceId(request *QueryTransferInByInst
 }
 
 // QueryTransferInByInstanceIdWithChan invokes the domain.QueryTransferInByInstanceId API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytransferinbyinstanceid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTransferInByInstanceIdWithChan(request *QueryTransferInByInstanceIdRequest) (<-chan *QueryTransferInByInstanceIdResponse, <-chan error) {
 	responseChan := make(chan *QueryTransferInByInstanceIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTransferInByInstanceIdWithChan(request *QueryTransfer
 }
 
 // QueryTransferInByInstanceIdWithCallback invokes the domain.QueryTransferInByInstanceId API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytransferinbyinstanceid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTransferInByInstanceIdWithCallback(request *QueryTransferInByInstanceIdRequest, callback func(response *QueryTransferInByInstanceIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -113,7 +108,7 @@ func CreateQueryTransferInByInstanceIdRequest() (request *QueryTransferInByInsta
 	request = &QueryTransferInByInstanceIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInByInstanceId", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInByInstanceId", "", "")
 	request.Method = requests.POST
 	return
 }

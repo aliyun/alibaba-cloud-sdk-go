@@ -21,7 +21,6 @@ import (
 )
 
 // BidDomain invokes the domain.BidDomain API synchronously
-// api document: https://help.aliyun.com/api/domain/biddomain.html
 func (client *Client) BidDomain(request *BidDomainRequest) (response *BidDomainResponse, err error) {
 	response = CreateBidDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BidDomain(request *BidDomainRequest) (response *BidDomainR
 }
 
 // BidDomainWithChan invokes the domain.BidDomain API asynchronously
-// api document: https://help.aliyun.com/api/domain/biddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BidDomainWithChan(request *BidDomainRequest) (<-chan *BidDomainResponse, <-chan error) {
 	responseChan := make(chan *BidDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BidDomainWithChan(request *BidDomainRequest) (<-chan *BidD
 }
 
 // BidDomainWithCallback invokes the domain.BidDomain API asynchronously
-// api document: https://help.aliyun.com/api/domain/biddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BidDomainWithCallback(request *BidDomainRequest, callback func(response *BidDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateBidDomainRequest() (request *BidDomainRequest) {
 	request = &BidDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "BidDomain", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "BidDomain", "", "")
 	request.Method = requests.POST
 	return
 }

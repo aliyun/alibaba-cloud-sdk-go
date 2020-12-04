@@ -21,7 +21,6 @@ import (
 )
 
 // FuzzyMatchDomainSensitiveWord invokes the domain.FuzzyMatchDomainSensitiveWord API synchronously
-// api document: https://help.aliyun.com/api/domain/fuzzymatchdomainsensitiveword.html
 func (client *Client) FuzzyMatchDomainSensitiveWord(request *FuzzyMatchDomainSensitiveWordRequest) (response *FuzzyMatchDomainSensitiveWordResponse, err error) {
 	response = CreateFuzzyMatchDomainSensitiveWordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FuzzyMatchDomainSensitiveWord(request *FuzzyMatchDomainSen
 }
 
 // FuzzyMatchDomainSensitiveWordWithChan invokes the domain.FuzzyMatchDomainSensitiveWord API asynchronously
-// api document: https://help.aliyun.com/api/domain/fuzzymatchdomainsensitiveword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FuzzyMatchDomainSensitiveWordWithChan(request *FuzzyMatchDomainSensitiveWordRequest) (<-chan *FuzzyMatchDomainSensitiveWordResponse, <-chan error) {
 	responseChan := make(chan *FuzzyMatchDomainSensitiveWordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FuzzyMatchDomainSensitiveWordWithChan(request *FuzzyMatchD
 }
 
 // FuzzyMatchDomainSensitiveWordWithCallback invokes the domain.FuzzyMatchDomainSensitiveWord API asynchronously
-// api document: https://help.aliyun.com/api/domain/fuzzymatchdomainsensitiveword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FuzzyMatchDomainSensitiveWordWithCallback(request *FuzzyMatchDomainSensitiveWordRequest, callback func(response *FuzzyMatchDomainSensitiveWordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateFuzzyMatchDomainSensitiveWordRequest() (request *FuzzyMatchDomainSens
 	request = &FuzzyMatchDomainSensitiveWordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "FuzzyMatchDomainSensitiveWord", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "FuzzyMatchDomainSensitiveWord", "", "")
 	request.Method = requests.POST
 	return
 }

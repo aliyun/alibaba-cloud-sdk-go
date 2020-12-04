@@ -21,7 +21,6 @@ import (
 )
 
 // RecordDemand invokes the domain.RecordDemand API synchronously
-// api document: https://help.aliyun.com/api/domain/recorddemand.html
 func (client *Client) RecordDemand(request *RecordDemandRequest) (response *RecordDemandResponse, err error) {
 	response = CreateRecordDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecordDemand(request *RecordDemandRequest) (response *Reco
 }
 
 // RecordDemandWithChan invokes the domain.RecordDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/recorddemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecordDemandWithChan(request *RecordDemandRequest) (<-chan *RecordDemandResponse, <-chan error) {
 	responseChan := make(chan *RecordDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecordDemandWithChan(request *RecordDemandRequest) (<-chan
 }
 
 // RecordDemandWithCallback invokes the domain.RecordDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/recorddemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecordDemandWithCallback(request *RecordDemandRequest, callback func(response *RecordDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateRecordDemandRequest() (request *RecordDemandRequest) {
 	request = &RecordDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "RecordDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "RecordDemand", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // TransferInResendMailToken invokes the domain.TransferInResendMailToken API synchronously
-// api document: https://help.aliyun.com/api/domain/transferinresendmailtoken.html
 func (client *Client) TransferInResendMailToken(request *TransferInResendMailTokenRequest) (response *TransferInResendMailTokenResponse, err error) {
 	response = CreateTransferInResendMailTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TransferInResendMailToken(request *TransferInResendMailTok
 }
 
 // TransferInResendMailTokenWithChan invokes the domain.TransferInResendMailToken API asynchronously
-// api document: https://help.aliyun.com/api/domain/transferinresendmailtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferInResendMailTokenWithChan(request *TransferInResendMailTokenRequest) (<-chan *TransferInResendMailTokenResponse, <-chan error) {
 	responseChan := make(chan *TransferInResendMailTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TransferInResendMailTokenWithChan(request *TransferInResen
 }
 
 // TransferInResendMailTokenWithCallback invokes the domain.TransferInResendMailToken API asynchronously
-// api document: https://help.aliyun.com/api/domain/transferinresendmailtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferInResendMailTokenWithCallback(request *TransferInResendMailTokenRequest, callback func(response *TransferInResendMailTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateTransferInResendMailTokenRequest() (request *TransferInResendMailToke
 	request = &TransferInResendMailTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInResendMailToken", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInResendMailToken", "", "")
 	request.Method = requests.POST
 	return
 }

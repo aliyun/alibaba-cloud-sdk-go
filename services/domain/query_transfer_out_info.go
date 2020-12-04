@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTransferOutInfo invokes the domain.QueryTransferOutInfo API synchronously
-// api document: https://help.aliyun.com/api/domain/querytransferoutinfo.html
 func (client *Client) QueryTransferOutInfo(request *QueryTransferOutInfoRequest) (response *QueryTransferOutInfoResponse, err error) {
 	response = CreateQueryTransferOutInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTransferOutInfo(request *QueryTransferOutInfoRequest)
 }
 
 // QueryTransferOutInfoWithChan invokes the domain.QueryTransferOutInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytransferoutinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTransferOutInfoWithChan(request *QueryTransferOutInfoRequest) (<-chan *QueryTransferOutInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryTransferOutInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTransferOutInfoWithChan(request *QueryTransferOutInfo
 }
 
 // QueryTransferOutInfoWithCallback invokes the domain.QueryTransferOutInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytransferoutinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTransferOutInfoWithCallback(request *QueryTransferOutInfoRequest, callback func(response *QueryTransferOutInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateQueryTransferOutInfoRequest() (request *QueryTransferOutInfoRequest) 
 	request = &QueryTransferOutInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferOutInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferOutInfo", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEmailVerification invokes the domain.DeleteEmailVerification API synchronously
-// api document: https://help.aliyun.com/api/domain/deleteemailverification.html
 func (client *Client) DeleteEmailVerification(request *DeleteEmailVerificationRequest) (response *DeleteEmailVerificationResponse, err error) {
 	response = CreateDeleteEmailVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEmailVerification(request *DeleteEmailVerificationRe
 }
 
 // DeleteEmailVerificationWithChan invokes the domain.DeleteEmailVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/deleteemailverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEmailVerificationWithChan(request *DeleteEmailVerificationRequest) (<-chan *DeleteEmailVerificationResponse, <-chan error) {
 	responseChan := make(chan *DeleteEmailVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEmailVerificationWithChan(request *DeleteEmailVerifi
 }
 
 // DeleteEmailVerificationWithCallback invokes the domain.DeleteEmailVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/deleteemailverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEmailVerificationWithCallback(request *DeleteEmailVerificationRequest, callback func(response *DeleteEmailVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteEmailVerificationRequest() (request *DeleteEmailVerificationReq
 	request = &DeleteEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteEmailVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteEmailVerification", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryContactInfo invokes the domain.QueryContactInfo API synchronously
-// api document: https://help.aliyun.com/api/domain/querycontactinfo.html
 func (client *Client) QueryContactInfo(request *QueryContactInfoRequest) (response *QueryContactInfoResponse, err error) {
 	response = CreateQueryContactInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryContactInfo(request *QueryContactInfoRequest) (respon
 }
 
 // QueryContactInfoWithChan invokes the domain.QueryContactInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/querycontactinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryContactInfoWithChan(request *QueryContactInfoRequest) (<-chan *QueryContactInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryContactInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryContactInfoWithChan(request *QueryContactInfoRequest)
 }
 
 // QueryContactInfoWithCallback invokes the domain.QueryContactInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/querycontactinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryContactInfoWithCallback(request *QueryContactInfoRequest, callback func(response *QueryContactInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -110,7 +105,7 @@ func CreateQueryContactInfoRequest() (request *QueryContactInfoRequest) {
 	request = &QueryContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryContactInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryContactInfo", "", "")
 	request.Method = requests.POST
 	return
 }

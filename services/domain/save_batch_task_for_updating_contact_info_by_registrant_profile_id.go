@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId invokes the domain.SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdatingcontactinfobyregistrantprofileid.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId(request *SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest) (response *SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResponse, err error) {
 	response = CreateSaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId(r
 }
 
 // SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdWithChan invokes the domain.SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdatingcontactinfobyregistrantprofileid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdWithChan(request *SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest) (<-chan *SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdWi
 }
 
 // SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdWithCallback invokes the domain.SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforupdatingcontactinfobyregistrantprofileid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdWithCallback(request *SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest, callback func(response *SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateSaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest() (re
 	request = &SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId", "", "")
 	request.Method = requests.POST
 	return
 }

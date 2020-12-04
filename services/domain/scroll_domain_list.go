@@ -21,7 +21,6 @@ import (
 )
 
 // ScrollDomainList invokes the domain.ScrollDomainList API synchronously
-// api document: https://help.aliyun.com/api/domain/scrolldomainlist.html
 func (client *Client) ScrollDomainList(request *ScrollDomainListRequest) (response *ScrollDomainListResponse, err error) {
 	response = CreateScrollDomainListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScrollDomainList(request *ScrollDomainListRequest) (respon
 }
 
 // ScrollDomainListWithChan invokes the domain.ScrollDomainList API asynchronously
-// api document: https://help.aliyun.com/api/domain/scrolldomainlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScrollDomainListWithChan(request *ScrollDomainListRequest) (<-chan *ScrollDomainListResponse, <-chan error) {
 	responseChan := make(chan *ScrollDomainListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScrollDomainListWithChan(request *ScrollDomainListRequest)
 }
 
 // ScrollDomainListWithCallback invokes the domain.ScrollDomainList API asynchronously
-// api document: https://help.aliyun.com/api/domain/scrolldomainlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScrollDomainListWithCallback(request *ScrollDomainListRequest, callback func(response *ScrollDomainListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -115,7 +110,7 @@ func CreateScrollDomainListRequest() (request *ScrollDomainListRequest) {
 	request = &ScrollDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ScrollDomainList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ScrollDomainList", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CancelQualificationVerification invokes the domain.CancelQualificationVerification API synchronously
-// api document: https://help.aliyun.com/api/domain/cancelqualificationverification.html
 func (client *Client) CancelQualificationVerification(request *CancelQualificationVerificationRequest) (response *CancelQualificationVerificationResponse, err error) {
 	response = CreateCancelQualificationVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelQualificationVerification(request *CancelQualificati
 }
 
 // CancelQualificationVerificationWithChan invokes the domain.CancelQualificationVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/cancelqualificationverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelQualificationVerificationWithChan(request *CancelQualificationVerificationRequest) (<-chan *CancelQualificationVerificationResponse, <-chan error) {
 	responseChan := make(chan *CancelQualificationVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelQualificationVerificationWithChan(request *CancelQua
 }
 
 // CancelQualificationVerificationWithCallback invokes the domain.CancelQualificationVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/cancelqualificationverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelQualificationVerificationWithCallback(request *CancelQualificationVerificationRequest, callback func(response *CancelQualificationVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateCancelQualificationVerificationRequest() (request *CancelQualificatio
 	request = &CancelQualificationVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CancelQualificationVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CancelQualificationVerification", "", "")
 	request.Method = requests.POST
 	return
 }

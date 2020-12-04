@@ -31,4 +31,5 @@ type Demand struct {
 	BargainSellerPrice  float64 `json:"BargainSellerPrice" xml:"BargainSellerPrice"`
 	BargainSellerMobile string  `json:"BargainSellerMobile" xml:"BargainSellerMobile"`
 	ServicePayPrice     float64 `json:"ServicePayPrice" xml:"ServicePayPrice"`
+	OrderType           int     `json:"OrderType" xml:"OrderType"`
 }

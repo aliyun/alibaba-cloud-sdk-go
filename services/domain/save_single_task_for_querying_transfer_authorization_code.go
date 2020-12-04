@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForQueryingTransferAuthorizationCode invokes the domain.SaveSingleTaskForQueryingTransferAuthorizationCode API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforqueryingtransferauthorizationcode.html
 func (client *Client) SaveSingleTaskForQueryingTransferAuthorizationCode(request *SaveSingleTaskForQueryingTransferAuthorizationCodeRequest) (response *SaveSingleTaskForQueryingTransferAuthorizationCodeResponse, err error) {
 	response = CreateSaveSingleTaskForQueryingTransferAuthorizationCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForQueryingTransferAuthorizationCode(request
 }
 
 // SaveSingleTaskForQueryingTransferAuthorizationCodeWithChan invokes the domain.SaveSingleTaskForQueryingTransferAuthorizationCode API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforqueryingtransferauthorizationcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForQueryingTransferAuthorizationCodeWithChan(request *SaveSingleTaskForQueryingTransferAuthorizationCodeRequest) (<-chan *SaveSingleTaskForQueryingTransferAuthorizationCodeResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForQueryingTransferAuthorizationCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForQueryingTransferAuthorizationCodeWithChan
 }
 
 // SaveSingleTaskForQueryingTransferAuthorizationCodeWithCallback invokes the domain.SaveSingleTaskForQueryingTransferAuthorizationCode API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforqueryingtransferauthorizationcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForQueryingTransferAuthorizationCodeWithCallback(request *SaveSingleTaskForQueryingTransferAuthorizationCodeRequest, callback func(response *SaveSingleTaskForQueryingTransferAuthorizationCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveSingleTaskForQueryingTransferAuthorizationCodeRequest() (request 
 	request = &SaveSingleTaskForQueryingTransferAuthorizationCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForQueryingTransferAuthorizationCode", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForQueryingTransferAuthorizationCode", "", "")
 	request.Method = requests.POST
 	return
 }

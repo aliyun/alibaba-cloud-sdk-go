@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForDeletingDSRecord invokes the domain.SaveSingleTaskForDeletingDSRecord API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordeletingdsrecord.html
 func (client *Client) SaveSingleTaskForDeletingDSRecord(request *SaveSingleTaskForDeletingDSRecordRequest) (response *SaveSingleTaskForDeletingDSRecordResponse, err error) {
 	response = CreateSaveSingleTaskForDeletingDSRecordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForDeletingDSRecord(request *SaveSingleTaskF
 }
 
 // SaveSingleTaskForDeletingDSRecordWithChan invokes the domain.SaveSingleTaskForDeletingDSRecord API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordeletingdsrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDeletingDSRecordWithChan(request *SaveSingleTaskForDeletingDSRecordRequest) (<-chan *SaveSingleTaskForDeletingDSRecordResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForDeletingDSRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForDeletingDSRecordWithChan(request *SaveSin
 }
 
 // SaveSingleTaskForDeletingDSRecordWithCallback invokes the domain.SaveSingleTaskForDeletingDSRecord API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskfordeletingdsrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDeletingDSRecordWithCallback(request *SaveSingleTaskForDeletingDSRecordRequest, callback func(response *SaveSingleTaskForDeletingDSRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveSingleTaskForDeletingDSRecordRequest() (request *SaveSingleTaskFo
 	request = &SaveSingleTaskForDeletingDSRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDeletingDSRecord", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDeletingDSRecord", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryRegistrantProfileRealNameVerificationInfo invokes the domain.QueryRegistrantProfileRealNameVerificationInfo API synchronously
-// api document: https://help.aliyun.com/api/domain/queryregistrantprofilerealnameverificationinfo.html
 func (client *Client) QueryRegistrantProfileRealNameVerificationInfo(request *QueryRegistrantProfileRealNameVerificationInfoRequest) (response *QueryRegistrantProfileRealNameVerificationInfoResponse, err error) {
 	response = CreateQueryRegistrantProfileRealNameVerificationInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryRegistrantProfileRealNameVerificationInfo(request *Qu
 }
 
 // QueryRegistrantProfileRealNameVerificationInfoWithChan invokes the domain.QueryRegistrantProfileRealNameVerificationInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryregistrantprofilerealnameverificationinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRegistrantProfileRealNameVerificationInfoWithChan(request *QueryRegistrantProfileRealNameVerificationInfoRequest) (<-chan *QueryRegistrantProfileRealNameVerificationInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryRegistrantProfileRealNameVerificationInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryRegistrantProfileRealNameVerificationInfoWithChan(req
 }
 
 // QueryRegistrantProfileRealNameVerificationInfoWithCallback invokes the domain.QueryRegistrantProfileRealNameVerificationInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryregistrantprofilerealnameverificationinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRegistrantProfileRealNameVerificationInfoWithCallback(request *QueryRegistrantProfileRealNameVerificationInfoRequest, callback func(response *QueryRegistrantProfileRealNameVerificationInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateQueryRegistrantProfileRealNameVerificationInfoRequest() (request *Que
 	request = &QueryRegistrantProfileRealNameVerificationInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo", "", "")
 	request.Method = requests.POST
 	return
 }

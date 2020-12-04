@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForUpdateProhibitionLock invokes the domain.SaveSingleTaskForUpdateProhibitionLock API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforupdateprohibitionlock.html
 func (client *Client) SaveSingleTaskForUpdateProhibitionLock(request *SaveSingleTaskForUpdateProhibitionLockRequest) (response *SaveSingleTaskForUpdateProhibitionLockResponse, err error) {
 	response = CreateSaveSingleTaskForUpdateProhibitionLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForUpdateProhibitionLock(request *SaveSingle
 }
 
 // SaveSingleTaskForUpdateProhibitionLockWithChan invokes the domain.SaveSingleTaskForUpdateProhibitionLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforupdateprohibitionlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithChan(request *SaveSingleTaskForUpdateProhibitionLockRequest) (<-chan *SaveSingleTaskForUpdateProhibitionLockResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForUpdateProhibitionLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithChan(request *Sa
 }
 
 // SaveSingleTaskForUpdateProhibitionLockWithCallback invokes the domain.SaveSingleTaskForUpdateProhibitionLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforupdateprohibitionlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithCallback(request *SaveSingleTaskForUpdateProhibitionLockRequest, callback func(response *SaveSingleTaskForUpdateProhibitionLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveSingleTaskForUpdateProhibitionLockRequest() (request *SaveSingleT
 	request = &SaveSingleTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForUpdateProhibitionLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForUpdateProhibitionLock", "", "")
 	request.Method = requests.POST
 	return
 }

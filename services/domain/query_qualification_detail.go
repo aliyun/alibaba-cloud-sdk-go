@@ -21,7 +21,6 @@ import (
 )
 
 // QueryQualificationDetail invokes the domain.QueryQualificationDetail API synchronously
-// api document: https://help.aliyun.com/api/domain/queryqualificationdetail.html
 func (client *Client) QueryQualificationDetail(request *QueryQualificationDetailRequest) (response *QueryQualificationDetailResponse, err error) {
 	response = CreateQueryQualificationDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryQualificationDetail(request *QueryQualificationDetail
 }
 
 // QueryQualificationDetailWithChan invokes the domain.QueryQualificationDetail API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryqualificationdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryQualificationDetailWithChan(request *QueryQualificationDetailRequest) (<-chan *QueryQualificationDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryQualificationDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryQualificationDetailWithChan(request *QueryQualificati
 }
 
 // QueryQualificationDetailWithCallback invokes the domain.QueryQualificationDetail API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryqualificationdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryQualificationDetailWithCallback(request *QueryQualificationDetailRequest, callback func(response *QueryQualificationDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateQueryQualificationDetailRequest() (request *QueryQualificationDetailR
 	request = &QueryQualificationDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryQualificationDetail", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryQualificationDetail", "", "")
 	request.Method = requests.POST
 	return
 }

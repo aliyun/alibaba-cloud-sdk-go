@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTransferInList invokes the domain.QueryTransferInList API synchronously
-// api document: https://help.aliyun.com/api/domain/querytransferinlist.html
 func (client *Client) QueryTransferInList(request *QueryTransferInListRequest) (response *QueryTransferInListResponse, err error) {
 	response = CreateQueryTransferInListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTransferInList(request *QueryTransferInListRequest) (
 }
 
 // QueryTransferInListWithChan invokes the domain.QueryTransferInList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytransferinlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTransferInListWithChan(request *QueryTransferInListRequest) (<-chan *QueryTransferInListResponse, <-chan error) {
 	responseChan := make(chan *QueryTransferInListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTransferInListWithChan(request *QueryTransferInListRe
 }
 
 // QueryTransferInListWithCallback invokes the domain.QueryTransferInList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytransferinlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTransferInListWithCallback(request *QueryTransferInListRequest, callback func(response *QueryTransferInListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateQueryTransferInListRequest() (request *QueryTransferInListRequest) {
 	request = &QueryTransferInListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInList", "", "")
 	request.Method = requests.POST
 	return
 }

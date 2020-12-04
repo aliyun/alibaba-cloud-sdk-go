@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDomainGroupList invokes the domain.QueryDomainGroupList API synchronously
-// api document: https://help.aliyun.com/api/domain/querydomaingrouplist.html
 func (client *Client) QueryDomainGroupList(request *QueryDomainGroupListRequest) (response *QueryDomainGroupListResponse, err error) {
 	response = CreateQueryDomainGroupListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDomainGroupList(request *QueryDomainGroupListRequest)
 }
 
 // QueryDomainGroupListWithChan invokes the domain.QueryDomainGroupList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomaingrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainGroupListWithChan(request *QueryDomainGroupListRequest) (<-chan *QueryDomainGroupListResponse, <-chan error) {
 	responseChan := make(chan *QueryDomainGroupListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDomainGroupListWithChan(request *QueryDomainGroupList
 }
 
 // QueryDomainGroupListWithCallback invokes the domain.QueryDomainGroupList API asynchronously
-// api document: https://help.aliyun.com/api/domain/querydomaingrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainGroupListWithCallback(request *QueryDomainGroupListRequest, callback func(response *QueryDomainGroupListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateQueryDomainGroupListRequest() (request *QueryDomainGroupListRequest) 
 	request = &QueryDomainGroupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainGroupList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainGroupList", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTaskInfoHistory invokes the domain.QueryTaskInfoHistory API synchronously
-// api document: https://help.aliyun.com/api/domain/querytaskinfohistory.html
 func (client *Client) QueryTaskInfoHistory(request *QueryTaskInfoHistoryRequest) (response *QueryTaskInfoHistoryResponse, err error) {
 	response = CreateQueryTaskInfoHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTaskInfoHistory(request *QueryTaskInfoHistoryRequest)
 }
 
 // QueryTaskInfoHistoryWithChan invokes the domain.QueryTaskInfoHistory API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytaskinfohistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskInfoHistoryWithChan(request *QueryTaskInfoHistoryRequest) (<-chan *QueryTaskInfoHistoryResponse, <-chan error) {
 	responseChan := make(chan *QueryTaskInfoHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTaskInfoHistoryWithChan(request *QueryTaskInfoHistory
 }
 
 // QueryTaskInfoHistoryWithCallback invokes the domain.QueryTaskInfoHistory API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytaskinfohistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskInfoHistoryWithCallback(request *QueryTaskInfoHistoryRequest, callback func(response *QueryTaskInfoHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateQueryTaskInfoHistoryRequest() (request *QueryTaskInfoHistoryRequest) 
 	request = &QueryTaskInfoHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskInfoHistory", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskInfoHistory", "", "")
 	request.Method = requests.POST
 	return
 }

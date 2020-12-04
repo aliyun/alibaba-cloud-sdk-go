@@ -21,7 +21,6 @@ import (
 )
 
 // FinishDemand invokes the domain.FinishDemand API synchronously
-// api document: https://help.aliyun.com/api/domain/finishdemand.html
 func (client *Client) FinishDemand(request *FinishDemandRequest) (response *FinishDemandResponse, err error) {
 	response = CreateFinishDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FinishDemand(request *FinishDemandRequest) (response *Fini
 }
 
 // FinishDemandWithChan invokes the domain.FinishDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/finishdemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FinishDemandWithChan(request *FinishDemandRequest) (<-chan *FinishDemandResponse, <-chan error) {
 	responseChan := make(chan *FinishDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FinishDemandWithChan(request *FinishDemandRequest) (<-chan
 }
 
 // FinishDemandWithCallback invokes the domain.FinishDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/finishdemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FinishDemandWithCallback(request *FinishDemandRequest, callback func(response *FinishDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateFinishDemandRequest() (request *FinishDemandRequest) {
 	request = &FinishDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "FinishDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "FinishDemand", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitOperationAuditInfo invokes the domain.SubmitOperationAuditInfo API synchronously
-// api document: https://help.aliyun.com/api/domain/submitoperationauditinfo.html
 func (client *Client) SubmitOperationAuditInfo(request *SubmitOperationAuditInfoRequest) (response *SubmitOperationAuditInfoResponse, err error) {
 	response = CreateSubmitOperationAuditInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitOperationAuditInfo(request *SubmitOperationAuditInfo
 }
 
 // SubmitOperationAuditInfoWithChan invokes the domain.SubmitOperationAuditInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/submitoperationauditinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitOperationAuditInfoWithChan(request *SubmitOperationAuditInfoRequest) (<-chan *SubmitOperationAuditInfoResponse, <-chan error) {
 	responseChan := make(chan *SubmitOperationAuditInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitOperationAuditInfoWithChan(request *SubmitOperationA
 }
 
 // SubmitOperationAuditInfoWithCallback invokes the domain.SubmitOperationAuditInfo API asynchronously
-// api document: https://help.aliyun.com/api/domain/submitoperationauditinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitOperationAuditInfoWithCallback(request *SubmitOperationAuditInfoRequest, callback func(response *SubmitOperationAuditInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateSubmitOperationAuditInfoRequest() (request *SubmitOperationAuditInfoR
 	request = &SubmitOperationAuditInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitOperationAuditInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitOperationAuditInfo", "", "")
 	request.Method = requests.POST
 	return
 }

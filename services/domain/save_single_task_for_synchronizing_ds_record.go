@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForSynchronizingDSRecord invokes the domain.SaveSingleTaskForSynchronizingDSRecord API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsynchronizingdsrecord.html
 func (client *Client) SaveSingleTaskForSynchronizingDSRecord(request *SaveSingleTaskForSynchronizingDSRecordRequest) (response *SaveSingleTaskForSynchronizingDSRecordResponse, err error) {
 	response = CreateSaveSingleTaskForSynchronizingDSRecordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForSynchronizingDSRecord(request *SaveSingle
 }
 
 // SaveSingleTaskForSynchronizingDSRecordWithChan invokes the domain.SaveSingleTaskForSynchronizingDSRecord API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsynchronizingdsrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSynchronizingDSRecordWithChan(request *SaveSingleTaskForSynchronizingDSRecordRequest) (<-chan *SaveSingleTaskForSynchronizingDSRecordResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForSynchronizingDSRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForSynchronizingDSRecordWithChan(request *Sa
 }
 
 // SaveSingleTaskForSynchronizingDSRecordWithCallback invokes the domain.SaveSingleTaskForSynchronizingDSRecord API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsynchronizingdsrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSynchronizingDSRecordWithCallback(request *SaveSingleTaskForSynchronizingDSRecordRequest, callback func(response *SaveSingleTaskForSynchronizingDSRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveSingleTaskForSynchronizingDSRecordRequest() (request *SaveSingleT
 	request = &SaveSingleTaskForSynchronizingDSRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSynchronizingDSRecord", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSynchronizingDSRecord", "", "")
 	request.Method = requests.POST
 	return
 }

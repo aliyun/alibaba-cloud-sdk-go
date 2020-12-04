@@ -21,7 +21,6 @@ import (
 )
 
 // SaveTaskForSubmittingDomainDelete invokes the domain.SaveTaskForSubmittingDomainDelete API synchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomaindelete.html
 func (client *Client) SaveTaskForSubmittingDomainDelete(request *SaveTaskForSubmittingDomainDeleteRequest) (response *SaveTaskForSubmittingDomainDeleteResponse, err error) {
 	response = CreateSaveTaskForSubmittingDomainDeleteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveTaskForSubmittingDomainDelete(request *SaveTaskForSubm
 }
 
 // SaveTaskForSubmittingDomainDeleteWithChan invokes the domain.SaveTaskForSubmittingDomainDelete API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomaindelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForSubmittingDomainDeleteWithChan(request *SaveTaskForSubmittingDomainDeleteRequest) (<-chan *SaveTaskForSubmittingDomainDeleteResponse, <-chan error) {
 	responseChan := make(chan *SaveTaskForSubmittingDomainDeleteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveTaskForSubmittingDomainDeleteWithChan(request *SaveTas
 }
 
 // SaveTaskForSubmittingDomainDeleteWithCallback invokes the domain.SaveTaskForSubmittingDomainDelete API asynchronously
-// api document: https://help.aliyun.com/api/domain/savetaskforsubmittingdomaindelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveTaskForSubmittingDomainDeleteWithCallback(request *SaveTaskForSubmittingDomainDeleteRequest, callback func(response *SaveTaskForSubmittingDomainDeleteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveTaskForSubmittingDomainDeleteRequest() (request *SaveTaskForSubmi
 	request = &SaveTaskForSubmittingDomainDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete", "", "")
 	request.Method = requests.POST
 	return
 }

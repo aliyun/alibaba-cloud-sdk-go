@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitOperationCredentials invokes the domain.SubmitOperationCredentials API synchronously
-// api document: https://help.aliyun.com/api/domain/submitoperationcredentials.html
 func (client *Client) SubmitOperationCredentials(request *SubmitOperationCredentialsRequest) (response *SubmitOperationCredentialsResponse, err error) {
 	response = CreateSubmitOperationCredentialsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitOperationCredentials(request *SubmitOperationCredent
 }
 
 // SubmitOperationCredentialsWithChan invokes the domain.SubmitOperationCredentials API asynchronously
-// api document: https://help.aliyun.com/api/domain/submitoperationcredentials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitOperationCredentialsWithChan(request *SubmitOperationCredentialsRequest) (<-chan *SubmitOperationCredentialsResponse, <-chan error) {
 	responseChan := make(chan *SubmitOperationCredentialsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitOperationCredentialsWithChan(request *SubmitOperatio
 }
 
 // SubmitOperationCredentialsWithCallback invokes the domain.SubmitOperationCredentials API asynchronously
-// api document: https://help.aliyun.com/api/domain/submitoperationcredentials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitOperationCredentialsWithCallback(request *SubmitOperationCredentialsRequest, callback func(response *SubmitOperationCredentialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSubmitOperationCredentialsRequest() (request *SubmitOperationCredenti
 	request = &SubmitOperationCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitOperationCredentials", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitOperationCredentials", "", "")
 	request.Method = requests.POST
 	return
 }

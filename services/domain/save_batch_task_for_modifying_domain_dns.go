@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForModifyingDomainDns invokes the domain.SaveBatchTaskForModifyingDomainDns API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskformodifyingdomaindns.html
 func (client *Client) SaveBatchTaskForModifyingDomainDns(request *SaveBatchTaskForModifyingDomainDnsRequest) (response *SaveBatchTaskForModifyingDomainDnsResponse, err error) {
 	response = CreateSaveBatchTaskForModifyingDomainDnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForModifyingDomainDns(request *SaveBatchTaskF
 }
 
 // SaveBatchTaskForModifyingDomainDnsWithChan invokes the domain.SaveBatchTaskForModifyingDomainDns API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskformodifyingdomaindns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForModifyingDomainDnsWithChan(request *SaveBatchTaskForModifyingDomainDnsRequest) (<-chan *SaveBatchTaskForModifyingDomainDnsResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForModifyingDomainDnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForModifyingDomainDnsWithChan(request *SaveBa
 }
 
 // SaveBatchTaskForModifyingDomainDnsWithCallback invokes the domain.SaveBatchTaskForModifyingDomainDns API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskformodifyingdomaindns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForModifyingDomainDnsWithCallback(request *SaveBatchTaskForModifyingDomainDnsRequest, callback func(response *SaveBatchTaskForModifyingDomainDnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateSaveBatchTaskForModifyingDomainDnsRequest() (request *SaveBatchTaskFo
 	request = &SaveBatchTaskForModifyingDomainDnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns", "", "")
 	request.Method = requests.POST
 	return
 }

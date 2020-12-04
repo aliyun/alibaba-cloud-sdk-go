@@ -21,7 +21,6 @@ import (
 )
 
 // PollTaskResult invokes the domain.PollTaskResult API synchronously
-// api document: https://help.aliyun.com/api/domain/polltaskresult.html
 func (client *Client) PollTaskResult(request *PollTaskResultRequest) (response *PollTaskResultResponse, err error) {
 	response = CreatePollTaskResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PollTaskResult(request *PollTaskResultRequest) (response *
 }
 
 // PollTaskResultWithChan invokes the domain.PollTaskResult API asynchronously
-// api document: https://help.aliyun.com/api/domain/polltaskresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PollTaskResultWithChan(request *PollTaskResultRequest) (<-chan *PollTaskResultResponse, <-chan error) {
 	responseChan := make(chan *PollTaskResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PollTaskResultWithChan(request *PollTaskResultRequest) (<-
 }
 
 // PollTaskResultWithCallback invokes the domain.PollTaskResult API asynchronously
-// api document: https://help.aliyun.com/api/domain/polltaskresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PollTaskResultWithCallback(request *PollTaskResultRequest, callback func(response *PollTaskResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreatePollTaskResultRequest() (request *PollTaskResultRequest) {
 	request = &PollTaskResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "PollTaskResult", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "PollTaskResult", "", "")
 	request.Method = requests.POST
 	return
 }

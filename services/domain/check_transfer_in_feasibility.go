@@ -21,7 +21,6 @@ import (
 )
 
 // CheckTransferInFeasibility invokes the domain.CheckTransferInFeasibility API synchronously
-// api document: https://help.aliyun.com/api/domain/checktransferinfeasibility.html
 func (client *Client) CheckTransferInFeasibility(request *CheckTransferInFeasibilityRequest) (response *CheckTransferInFeasibilityResponse, err error) {
 	response = CreateCheckTransferInFeasibilityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckTransferInFeasibility(request *CheckTransferInFeasibi
 }
 
 // CheckTransferInFeasibilityWithChan invokes the domain.CheckTransferInFeasibility API asynchronously
-// api document: https://help.aliyun.com/api/domain/checktransferinfeasibility.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckTransferInFeasibilityWithChan(request *CheckTransferInFeasibilityRequest) (<-chan *CheckTransferInFeasibilityResponse, <-chan error) {
 	responseChan := make(chan *CheckTransferInFeasibilityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckTransferInFeasibilityWithChan(request *CheckTransferI
 }
 
 // CheckTransferInFeasibilityWithCallback invokes the domain.CheckTransferInFeasibility API asynchronously
-// api document: https://help.aliyun.com/api/domain/checktransferinfeasibility.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckTransferInFeasibilityWithCallback(request *CheckTransferInFeasibilityRequest, callback func(response *CheckTransferInFeasibilityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateCheckTransferInFeasibilityRequest() (request *CheckTransferInFeasibil
 	request = &CheckTransferInFeasibilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckTransferInFeasibility", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckTransferInFeasibility", "", "")
 	request.Method = requests.POST
 	return
 }

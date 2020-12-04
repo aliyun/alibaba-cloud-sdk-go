@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForCreatingOrderActivate invokes the domain.SaveBatchTaskForCreatingOrderActivate API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderactivate.html
 func (client *Client) SaveBatchTaskForCreatingOrderActivate(request *SaveBatchTaskForCreatingOrderActivateRequest) (response *SaveBatchTaskForCreatingOrderActivateResponse, err error) {
 	response = CreateSaveBatchTaskForCreatingOrderActivateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivate(request *SaveBatchTa
 }
 
 // SaveBatchTaskForCreatingOrderActivateWithChan invokes the domain.SaveBatchTaskForCreatingOrderActivate API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderactivate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderActivateWithChan(request *SaveBatchTaskForCreatingOrderActivateRequest) (<-chan *SaveBatchTaskForCreatingOrderActivateResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForCreatingOrderActivateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithChan(request *Sav
 }
 
 // SaveBatchTaskForCreatingOrderActivateWithCallback invokes the domain.SaveBatchTaskForCreatingOrderActivate API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskforcreatingorderactivate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderActivateWithCallback(request *SaveBatchTaskForCreatingOrderActivateRequest, callback func(response *SaveBatchTaskForCreatingOrderActivateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -127,7 +122,7 @@ func CreateSaveBatchTaskForCreatingOrderActivateRequest() (request *SaveBatchTas
 	request = &SaveBatchTaskForCreatingOrderActivateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate", "", "")
 	request.Method = requests.POST
 	return
 }

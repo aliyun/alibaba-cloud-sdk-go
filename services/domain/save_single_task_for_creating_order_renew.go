@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForCreatingOrderRenew invokes the domain.SaveSingleTaskForCreatingOrderRenew API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderrenew.html
 func (client *Client) SaveSingleTaskForCreatingOrderRenew(request *SaveSingleTaskForCreatingOrderRenewRequest) (response *SaveSingleTaskForCreatingOrderRenewResponse, err error) {
 	response = CreateSaveSingleTaskForCreatingOrderRenewResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForCreatingOrderRenew(request *SaveSingleTas
 }
 
 // SaveSingleTaskForCreatingOrderRenewWithChan invokes the domain.SaveSingleTaskForCreatingOrderRenew API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderrenew.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRenewWithChan(request *SaveSingleTaskForCreatingOrderRenewRequest) (<-chan *SaveSingleTaskForCreatingOrderRenewResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForCreatingOrderRenewResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForCreatingOrderRenewWithChan(request *SaveS
 }
 
 // SaveSingleTaskForCreatingOrderRenewWithCallback invokes the domain.SaveSingleTaskForCreatingOrderRenew API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcreatingorderrenew.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRenewWithCallback(request *SaveSingleTaskForCreatingOrderRenewRequest, callback func(response *SaveSingleTaskForCreatingOrderRenewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateSaveSingleTaskForCreatingOrderRenewRequest() (request *SaveSingleTask
 	request = &SaveSingleTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew", "", "")
 	request.Method = requests.POST
 	return
 }

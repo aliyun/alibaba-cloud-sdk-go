@@ -21,7 +21,6 @@ import (
 )
 
 // QueryEmailVerification invokes the domain.QueryEmailVerification API synchronously
-// api document: https://help.aliyun.com/api/domain/queryemailverification.html
 func (client *Client) QueryEmailVerification(request *QueryEmailVerificationRequest) (response *QueryEmailVerificationResponse, err error) {
 	response = CreateQueryEmailVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryEmailVerification(request *QueryEmailVerificationRequ
 }
 
 // QueryEmailVerificationWithChan invokes the domain.QueryEmailVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryemailverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEmailVerificationWithChan(request *QueryEmailVerificationRequest) (<-chan *QueryEmailVerificationResponse, <-chan error) {
 	responseChan := make(chan *QueryEmailVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryEmailVerificationWithChan(request *QueryEmailVerifica
 }
 
 // QueryEmailVerificationWithCallback invokes the domain.QueryEmailVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryemailverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEmailVerificationWithCallback(request *QueryEmailVerificationRequest, callback func(response *QueryEmailVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateQueryEmailVerificationRequest() (request *QueryEmailVerificationReque
 	request = &QueryEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryEmailVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryEmailVerification", "", "")
 	request.Method = requests.POST
 	return
 }

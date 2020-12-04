@@ -21,7 +21,6 @@ import (
 )
 
 // GetOperationOssUploadPolicy invokes the domain.GetOperationOssUploadPolicy API synchronously
-// api document: https://help.aliyun.com/api/domain/getoperationossuploadpolicy.html
 func (client *Client) GetOperationOssUploadPolicy(request *GetOperationOssUploadPolicyRequest) (response *GetOperationOssUploadPolicyResponse, err error) {
 	response = CreateGetOperationOssUploadPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetOperationOssUploadPolicy(request *GetOperationOssUpload
 }
 
 // GetOperationOssUploadPolicyWithChan invokes the domain.GetOperationOssUploadPolicy API asynchronously
-// api document: https://help.aliyun.com/api/domain/getoperationossuploadpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOperationOssUploadPolicyWithChan(request *GetOperationOssUploadPolicyRequest) (<-chan *GetOperationOssUploadPolicyResponse, <-chan error) {
 	responseChan := make(chan *GetOperationOssUploadPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetOperationOssUploadPolicyWithChan(request *GetOperationO
 }
 
 // GetOperationOssUploadPolicyWithCallback invokes the domain.GetOperationOssUploadPolicy API asynchronously
-// api document: https://help.aliyun.com/api/domain/getoperationossuploadpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOperationOssUploadPolicyWithCallback(request *GetOperationOssUploadPolicyRequest, callback func(response *GetOperationOssUploadPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateGetOperationOssUploadPolicyRequest() (request *GetOperationOssUploadP
 	request = &GetOperationOssUploadPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "GetOperationOssUploadPolicy", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "GetOperationOssUploadPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

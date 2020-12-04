@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForCancelingTransferOut invokes the domain.SaveSingleTaskForCancelingTransferOut API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcancelingtransferout.html
 func (client *Client) SaveSingleTaskForCancelingTransferOut(request *SaveSingleTaskForCancelingTransferOutRequest) (response *SaveSingleTaskForCancelingTransferOutResponse, err error) {
 	response = CreateSaveSingleTaskForCancelingTransferOutResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForCancelingTransferOut(request *SaveSingleT
 }
 
 // SaveSingleTaskForCancelingTransferOutWithChan invokes the domain.SaveSingleTaskForCancelingTransferOut API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcancelingtransferout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCancelingTransferOutWithChan(request *SaveSingleTaskForCancelingTransferOutRequest) (<-chan *SaveSingleTaskForCancelingTransferOutResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForCancelingTransferOutResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForCancelingTransferOutWithChan(request *Sav
 }
 
 // SaveSingleTaskForCancelingTransferOutWithCallback invokes the domain.SaveSingleTaskForCancelingTransferOut API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforcancelingtransferout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCancelingTransferOutWithCallback(request *SaveSingleTaskForCancelingTransferOutRequest, callback func(response *SaveSingleTaskForCancelingTransferOutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateSaveSingleTaskForCancelingTransferOutRequest() (request *SaveSingleTa
 	request = &SaveSingleTaskForCancelingTransferOutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCancelingTransferOut", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCancelingTransferOut", "", "")
 	request.Method = requests.POST
 	return
 }

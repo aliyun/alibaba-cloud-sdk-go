@@ -21,7 +21,6 @@ import (
 )
 
 // SaveRegistrantProfile invokes the domain.SaveRegistrantProfile API synchronously
-// api document: https://help.aliyun.com/api/domain/saveregistrantprofile.html
 func (client *Client) SaveRegistrantProfile(request *SaveRegistrantProfileRequest) (response *SaveRegistrantProfileResponse, err error) {
 	response = CreateSaveRegistrantProfileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveRegistrantProfile(request *SaveRegistrantProfileReques
 }
 
 // SaveRegistrantProfileWithChan invokes the domain.SaveRegistrantProfile API asynchronously
-// api document: https://help.aliyun.com/api/domain/saveregistrantprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfileRequest) (<-chan *SaveRegistrantProfileResponse, <-chan error) {
 	responseChan := make(chan *SaveRegistrantProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfi
 }
 
 // SaveRegistrantProfileWithCallback invokes the domain.SaveRegistrantProfile API asynchronously
-// api document: https://help.aliyun.com/api/domain/saveregistrantprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantProfileRequest, callback func(response *SaveRegistrantProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -112,7 +107,7 @@ func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest
 	request = &SaveRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveRegistrantProfile", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveRegistrantProfile", "", "")
 	request.Method = requests.POST
 	return
 }

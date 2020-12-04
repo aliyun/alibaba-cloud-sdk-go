@@ -21,7 +21,6 @@ import (
 )
 
 // SaveBatchTaskForTransferProhibitionLock invokes the domain.SaveBatchTaskForTransferProhibitionLock API synchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskfortransferprohibitionlock.html
 func (client *Client) SaveBatchTaskForTransferProhibitionLock(request *SaveBatchTaskForTransferProhibitionLockRequest) (response *SaveBatchTaskForTransferProhibitionLockResponse, err error) {
 	response = CreateSaveBatchTaskForTransferProhibitionLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveBatchTaskForTransferProhibitionLock(request *SaveBatch
 }
 
 // SaveBatchTaskForTransferProhibitionLockWithChan invokes the domain.SaveBatchTaskForTransferProhibitionLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskfortransferprohibitionlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForTransferProhibitionLockWithChan(request *SaveBatchTaskForTransferProhibitionLockRequest) (<-chan *SaveBatchTaskForTransferProhibitionLockResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForTransferProhibitionLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveBatchTaskForTransferProhibitionLockWithChan(request *S
 }
 
 // SaveBatchTaskForTransferProhibitionLockWithCallback invokes the domain.SaveBatchTaskForTransferProhibitionLock API asynchronously
-// api document: https://help.aliyun.com/api/domain/savebatchtaskfortransferprohibitionlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForTransferProhibitionLockWithCallback(request *SaveBatchTaskForTransferProhibitionLockRequest, callback func(response *SaveBatchTaskForTransferProhibitionLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSaveBatchTaskForTransferProhibitionLockRequest() (request *SaveBatchT
 	request = &SaveBatchTaskForTransferProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock", "", "")
 	request.Method = requests.POST
 	return
 }

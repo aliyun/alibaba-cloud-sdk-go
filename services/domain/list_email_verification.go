@@ -21,7 +21,6 @@ import (
 )
 
 // ListEmailVerification invokes the domain.ListEmailVerification API synchronously
-// api document: https://help.aliyun.com/api/domain/listemailverification.html
 func (client *Client) ListEmailVerification(request *ListEmailVerificationRequest) (response *ListEmailVerificationResponse, err error) {
 	response = CreateListEmailVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEmailVerification(request *ListEmailVerificationReques
 }
 
 // ListEmailVerificationWithChan invokes the domain.ListEmailVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/listemailverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmailVerificationWithChan(request *ListEmailVerificationRequest) (<-chan *ListEmailVerificationResponse, <-chan error) {
 	responseChan := make(chan *ListEmailVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEmailVerificationWithChan(request *ListEmailVerificati
 }
 
 // ListEmailVerificationWithCallback invokes the domain.ListEmailVerification API asynchronously
-// api document: https://help.aliyun.com/api/domain/listemailverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmailVerificationWithCallback(request *ListEmailVerificationRequest, callback func(response *ListEmailVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest
 	request = &ListEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ListEmailVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ListEmailVerification", "", "")
 	request.Method = requests.POST
 	return
 }

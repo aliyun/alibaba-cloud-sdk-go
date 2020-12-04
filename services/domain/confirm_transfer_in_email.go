@@ -21,7 +21,6 @@ import (
 )
 
 // ConfirmTransferInEmail invokes the domain.ConfirmTransferInEmail API synchronously
-// api document: https://help.aliyun.com/api/domain/confirmtransferinemail.html
 func (client *Client) ConfirmTransferInEmail(request *ConfirmTransferInEmailRequest) (response *ConfirmTransferInEmailResponse, err error) {
 	response = CreateConfirmTransferInEmailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConfirmTransferInEmail(request *ConfirmTransferInEmailRequ
 }
 
 // ConfirmTransferInEmailWithChan invokes the domain.ConfirmTransferInEmail API asynchronously
-// api document: https://help.aliyun.com/api/domain/confirmtransferinemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfirmTransferInEmailWithChan(request *ConfirmTransferInEmailRequest) (<-chan *ConfirmTransferInEmailResponse, <-chan error) {
 	responseChan := make(chan *ConfirmTransferInEmailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConfirmTransferInEmailWithChan(request *ConfirmTransferInE
 }
 
 // ConfirmTransferInEmailWithCallback invokes the domain.ConfirmTransferInEmail API asynchronously
-// api document: https://help.aliyun.com/api/domain/confirmtransferinemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfirmTransferInEmailWithCallback(request *ConfirmTransferInEmailRequest, callback func(response *ConfirmTransferInEmailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateConfirmTransferInEmailRequest() (request *ConfirmTransferInEmailReque
 	request = &ConfirmTransferInEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ConfirmTransferInEmail", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ConfirmTransferInEmail", "", "")
 	request.Method = requests.POST
 	return
 }

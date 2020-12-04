@@ -21,7 +21,6 @@ import (
 )
 
 // QueryAdvancedDomainList invokes the domain.QueryAdvancedDomainList API synchronously
-// api document: https://help.aliyun.com/api/domain/queryadvanceddomainlist.html
 func (client *Client) QueryAdvancedDomainList(request *QueryAdvancedDomainListRequest) (response *QueryAdvancedDomainListResponse, err error) {
 	response = CreateQueryAdvancedDomainListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryAdvancedDomainList(request *QueryAdvancedDomainListRe
 }
 
 // QueryAdvancedDomainListWithChan invokes the domain.QueryAdvancedDomainList API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryadvanceddomainlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAdvancedDomainListWithChan(request *QueryAdvancedDomainListRequest) (<-chan *QueryAdvancedDomainListResponse, <-chan error) {
 	responseChan := make(chan *QueryAdvancedDomainListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryAdvancedDomainListWithChan(request *QueryAdvancedDoma
 }
 
 // QueryAdvancedDomainListWithCallback invokes the domain.QueryAdvancedDomainList API asynchronously
-// api document: https://help.aliyun.com/api/domain/queryadvanceddomainlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAdvancedDomainListWithCallback(request *QueryAdvancedDomainListRequest, callback func(response *QueryAdvancedDomainListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -122,7 +117,7 @@ func CreateQueryAdvancedDomainListRequest() (request *QueryAdvancedDomainListReq
 	request = &QueryAdvancedDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryAdvancedDomainList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryAdvancedDomainList", "", "")
 	request.Method = requests.POST
 	return
 }

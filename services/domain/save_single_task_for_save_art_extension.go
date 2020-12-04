@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSingleTaskForSaveArtExtension invokes the domain.SaveSingleTaskForSaveArtExtension API synchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsaveartextension.html
 func (client *Client) SaveSingleTaskForSaveArtExtension(request *SaveSingleTaskForSaveArtExtensionRequest) (response *SaveSingleTaskForSaveArtExtensionResponse, err error) {
 	response = CreateSaveSingleTaskForSaveArtExtensionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSingleTaskForSaveArtExtension(request *SaveSingleTaskF
 }
 
 // SaveSingleTaskForSaveArtExtensionWithChan invokes the domain.SaveSingleTaskForSaveArtExtension API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsaveartextension.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSaveArtExtensionWithChan(request *SaveSingleTaskForSaveArtExtensionRequest) (<-chan *SaveSingleTaskForSaveArtExtensionResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForSaveArtExtensionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSingleTaskForSaveArtExtensionWithChan(request *SaveSin
 }
 
 // SaveSingleTaskForSaveArtExtensionWithCallback invokes the domain.SaveSingleTaskForSaveArtExtension API asynchronously
-// api document: https://help.aliyun.com/api/domain/savesingletaskforsaveartextension.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSaveArtExtensionWithCallback(request *SaveSingleTaskForSaveArtExtensionRequest, callback func(response *SaveSingleTaskForSaveArtExtensionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateSaveSingleTaskForSaveArtExtensionRequest() (request *SaveSingleTaskFo
 	request = &SaveSingleTaskForSaveArtExtensionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "", "")
 	request.Method = requests.POST
 	return
 }

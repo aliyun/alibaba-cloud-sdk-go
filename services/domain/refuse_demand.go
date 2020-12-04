@@ -21,7 +21,6 @@ import (
 )
 
 // RefuseDemand invokes the domain.RefuseDemand API synchronously
-// api document: https://help.aliyun.com/api/domain/refusedemand.html
 func (client *Client) RefuseDemand(request *RefuseDemandRequest) (response *RefuseDemandResponse, err error) {
 	response = CreateRefuseDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefuseDemand(request *RefuseDemandRequest) (response *Refu
 }
 
 // RefuseDemandWithChan invokes the domain.RefuseDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/refusedemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefuseDemandWithChan(request *RefuseDemandRequest) (<-chan *RefuseDemandResponse, <-chan error) {
 	responseChan := make(chan *RefuseDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefuseDemandWithChan(request *RefuseDemandRequest) (<-chan
 }
 
 // RefuseDemandWithCallback invokes the domain.RefuseDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/refusedemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefuseDemandWithCallback(request *RefuseDemandRequest, callback func(response *RefuseDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateRefuseDemandRequest() (request *RefuseDemandRequest) {
 	request = &RefuseDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "RefuseDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "RefuseDemand", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // AcceptDemand invokes the domain.AcceptDemand API synchronously
-// api document: https://help.aliyun.com/api/domain/acceptdemand.html
 func (client *Client) AcceptDemand(request *AcceptDemandRequest) (response *AcceptDemandResponse, err error) {
 	response = CreateAcceptDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AcceptDemand(request *AcceptDemandRequest) (response *Acce
 }
 
 // AcceptDemandWithChan invokes the domain.AcceptDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/acceptdemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AcceptDemandWithChan(request *AcceptDemandRequest) (<-chan *AcceptDemandResponse, <-chan error) {
 	responseChan := make(chan *AcceptDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AcceptDemandWithChan(request *AcceptDemandRequest) (<-chan
 }
 
 // AcceptDemandWithCallback invokes the domain.AcceptDemand API asynchronously
-// api document: https://help.aliyun.com/api/domain/acceptdemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AcceptDemandWithCallback(request *AcceptDemandRequest, callback func(response *AcceptDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +79,7 @@ type AcceptDemandRequest struct {
 type AcceptDemandResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	BindUrl   string `json:"BindUrl" xml:"BindUrl"`
 }
 
 // CreateAcceptDemandRequest creates a request to invoke AcceptDemand API
@@ -91,7 +87,7 @@ func CreateAcceptDemandRequest() (request *AcceptDemandRequest) {
 	request = &AcceptDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "AcceptDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "AcceptDemand", "", "")
 	request.Method = requests.POST
 	return
 }

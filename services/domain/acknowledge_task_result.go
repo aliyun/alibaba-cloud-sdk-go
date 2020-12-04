@@ -21,7 +21,6 @@ import (
 )
 
 // AcknowledgeTaskResult invokes the domain.AcknowledgeTaskResult API synchronously
-// api document: https://help.aliyun.com/api/domain/acknowledgetaskresult.html
 func (client *Client) AcknowledgeTaskResult(request *AcknowledgeTaskResultRequest) (response *AcknowledgeTaskResultResponse, err error) {
 	response = CreateAcknowledgeTaskResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AcknowledgeTaskResult(request *AcknowledgeTaskResultReques
 }
 
 // AcknowledgeTaskResultWithChan invokes the domain.AcknowledgeTaskResult API asynchronously
-// api document: https://help.aliyun.com/api/domain/acknowledgetaskresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AcknowledgeTaskResultWithChan(request *AcknowledgeTaskResultRequest) (<-chan *AcknowledgeTaskResultResponse, <-chan error) {
 	responseChan := make(chan *AcknowledgeTaskResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AcknowledgeTaskResultWithChan(request *AcknowledgeTaskResu
 }
 
 // AcknowledgeTaskResultWithCallback invokes the domain.AcknowledgeTaskResult API asynchronously
-// api document: https://help.aliyun.com/api/domain/acknowledgetaskresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AcknowledgeTaskResultWithCallback(request *AcknowledgeTaskResultRequest, callback func(response *AcknowledgeTaskResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateAcknowledgeTaskResultRequest() (request *AcknowledgeTaskResultRequest
 	request = &AcknowledgeTaskResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "AcknowledgeTaskResult", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "AcknowledgeTaskResult", "", "")
 	request.Method = requests.POST
 	return
 }

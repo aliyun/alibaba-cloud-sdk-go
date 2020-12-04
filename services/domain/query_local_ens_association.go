@@ -21,7 +21,6 @@ import (
 )
 
 // QueryLocalEnsAssociation invokes the domain.QueryLocalEnsAssociation API synchronously
-// api document: https://help.aliyun.com/api/domain/querylocalensassociation.html
 func (client *Client) QueryLocalEnsAssociation(request *QueryLocalEnsAssociationRequest) (response *QueryLocalEnsAssociationResponse, err error) {
 	response = CreateQueryLocalEnsAssociationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryLocalEnsAssociation(request *QueryLocalEnsAssociation
 }
 
 // QueryLocalEnsAssociationWithChan invokes the domain.QueryLocalEnsAssociation API asynchronously
-// api document: https://help.aliyun.com/api/domain/querylocalensassociation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryLocalEnsAssociationWithChan(request *QueryLocalEnsAssociationRequest) (<-chan *QueryLocalEnsAssociationResponse, <-chan error) {
 	responseChan := make(chan *QueryLocalEnsAssociationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryLocalEnsAssociationWithChan(request *QueryLocalEnsAss
 }
 
 // QueryLocalEnsAssociationWithCallback invokes the domain.QueryLocalEnsAssociation API asynchronously
-// api document: https://help.aliyun.com/api/domain/querylocalensassociation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryLocalEnsAssociationWithCallback(request *QueryLocalEnsAssociationRequest, callback func(response *QueryLocalEnsAssociationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryLocalEnsAssociationRequest() (request *QueryLocalEnsAssociationR
 	request = &QueryLocalEnsAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryLocalEnsAssociation", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryLocalEnsAssociation", "", "")
 	request.Method = requests.POST
 	return
 }

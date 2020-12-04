@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTaskDetailHistory invokes the domain.QueryTaskDetailHistory API synchronously
-// api document: https://help.aliyun.com/api/domain/querytaskdetailhistory.html
 func (client *Client) QueryTaskDetailHistory(request *QueryTaskDetailHistoryRequest) (response *QueryTaskDetailHistoryResponse, err error) {
 	response = CreateQueryTaskDetailHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTaskDetailHistory(request *QueryTaskDetailHistoryRequ
 }
 
 // QueryTaskDetailHistoryWithChan invokes the domain.QueryTaskDetailHistory API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytaskdetailhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailHistoryWithChan(request *QueryTaskDetailHistoryRequest) (<-chan *QueryTaskDetailHistoryResponse, <-chan error) {
 	responseChan := make(chan *QueryTaskDetailHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTaskDetailHistoryWithChan(request *QueryTaskDetailHis
 }
 
 // QueryTaskDetailHistoryWithCallback invokes the domain.QueryTaskDetailHistory API asynchronously
-// api document: https://help.aliyun.com/api/domain/querytaskdetailhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailHistoryWithCallback(request *QueryTaskDetailHistoryRequest, callback func(response *QueryTaskDetailHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateQueryTaskDetailHistoryRequest() (request *QueryTaskDetailHistoryReque
 	request = &QueryTaskDetailHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskDetailHistory", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskDetailHistory", "", "")
 	request.Method = requests.POST
 	return
 }
