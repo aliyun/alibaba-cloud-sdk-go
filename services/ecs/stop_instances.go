@@ -94,7 +94,7 @@ func CreateStopInstancesRequest() (request *StopInstancesRequest) {
 	request = &StopInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInstances", "", "")
 	request.Method = requests.POST
 	return
 }

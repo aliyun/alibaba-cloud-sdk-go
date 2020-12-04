@@ -75,6 +75,7 @@ type ReportInstancesStatusRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Description          string           `position:"Query" name:"Description"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	IssueCategory        string           `position:"Query" name:"IssueCategory"`
 	DiskId               *[]string        `position:"Query" name:"DiskId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -95,7 +96,7 @@ func CreateReportInstancesStatusRequest() (request *ReportInstancesStatusRequest
 	request = &ReportInstancesStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReportInstancesStatus", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReportInstancesStatus", "", "")
 	request.Method = requests.POST
 	return
 }

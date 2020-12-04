@@ -93,7 +93,7 @@ func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {
 	request = &DetachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachKeyPair", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachKeyPair", "", "")
 	request.Method = requests.POST
 	return
 }

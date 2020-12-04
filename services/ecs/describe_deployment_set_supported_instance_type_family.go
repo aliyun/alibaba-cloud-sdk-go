@@ -89,7 +89,7 @@ func CreateDescribeDeploymentSetSupportedInstanceTypeFamilyRequest() (request *D
 	request = &DescribeDeploymentSetSupportedInstanceTypeFamilyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSetSupportedInstanceTypeFamily", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSetSupportedInstanceTypeFamily", "", "")
 	request.Method = requests.POST
 	return
 }

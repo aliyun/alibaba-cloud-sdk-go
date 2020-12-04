@@ -89,7 +89,7 @@ func CreateDeleteDiskRequest() (request *DeleteDiskRequest) {
 	request = &DeleteDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDisk", "", "")
 	request.Method = requests.POST
 	return
 }

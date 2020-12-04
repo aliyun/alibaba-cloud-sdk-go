@@ -1,3 +1,7 @@
+2020-12-04 Version: v1.61.748
+- Generated 2014-05-26 for `Ecs`.
+- ReportInstancesStatus OpenAPI supports IssueCategory parameter.
+
 2020-12-03 Version: v1.61.747
 - Generated 2018-01-15 for `dcdn`.
 - Update ModifyDcdnService.

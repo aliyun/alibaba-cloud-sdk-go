@@ -92,7 +92,7 @@ func CreateCreateHpcClusterRequest() (request *CreateHpcClusterRequest) {
 	request = &CreateHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateHpcCluster", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateHpcCluster", "", "")
 	request.Method = requests.POST
 	return
 }

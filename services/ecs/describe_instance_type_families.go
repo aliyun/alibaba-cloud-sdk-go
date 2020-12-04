@@ -90,7 +90,7 @@ func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeF
 	request = &DescribeInstanceTypeFamiliesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "", "")
 	request.Method = requests.POST
 	return
 }

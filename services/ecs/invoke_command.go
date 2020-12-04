@@ -80,6 +80,7 @@ type InvokeCommandRequest struct {
 	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
 	InstanceId           *[]string              `position:"Query" name:"InstanceId"  type:"Repeated"`
 	Parameters           map[string]interface{} `position:"Query" name:"Parameters"`
+	Username             string                 `position:"Query" name:"Username"`
 }
 
 // InvokeCommandResponse is the response struct for api InvokeCommand
@@ -94,7 +95,7 @@ func CreateInvokeCommandRequest() (request *InvokeCommandRequest) {
 	request = &InvokeCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "InvokeCommand", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "InvokeCommand", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateCancelCopyImageRequest() (request *CancelCopyImageRequest) {
 	request = &CancelCopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelCopyImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelCopyImage", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDeleteVSwitchRequest() (request *DeleteVSwitchRequest) {
 	request = &DeleteVSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVSwitch", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVSwitch", "", "")
 	request.Method = requests.POST
 	return
 }

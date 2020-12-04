@@ -88,6 +88,7 @@ type RunCommandRequest struct {
 	Name                 string                 `position:"Query" name:"Name"`
 	Parameters           map[string]interface{} `position:"Query" name:"Parameters"`
 	EnableParameter      requests.Boolean       `position:"Query" name:"EnableParameter"`
+	Username             string                 `position:"Query" name:"Username"`
 }
 
 // RunCommandResponse is the response struct for api RunCommand
@@ -103,7 +104,7 @@ func CreateRunCommandRequest() (request *RunCommandRequest) {
 	request = &RunCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RunCommand", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RunCommand", "", "")
 	request.Method = requests.POST
 	return
 }

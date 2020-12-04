@@ -96,7 +96,7 @@ func CreateCreateCommandRequest() (request *CreateCommandRequest) {
 	request = &CreateCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateCommand", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateCommand", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -31,4 +31,5 @@ type InvocationResult struct {
 	ExitCode           int64  `json:"ExitCode" xml:"ExitCode"`
 	ErrorCode          string `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorInfo          string `json:"ErrorInfo" xml:"ErrorInfo"`
+	Username           string `json:"Username" xml:"Username"`
 }

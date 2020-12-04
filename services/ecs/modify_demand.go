@@ -100,7 +100,7 @@ func CreateModifyDemandRequest() (request *ModifyDemandRequest) {
 	request = &ModifyDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDemand", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDemand", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateCancelSimulatedSystemEventsRequest() (request *CancelSimulatedSystemE
 	request = &CancelSimulatedSystemEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelSimulatedSystemEvents", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelSimulatedSystemEvents", "", "")
 	request.Method = requests.POST
 	return
 }

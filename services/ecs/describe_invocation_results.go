@@ -97,7 +97,7 @@ func CreateDescribeInvocationResultsRequest() (request *DescribeInvocationResult
 	request = &DescribeInvocationResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInvocationResults", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInvocationResults", "", "")
 	request.Method = requests.POST
 	return
 }

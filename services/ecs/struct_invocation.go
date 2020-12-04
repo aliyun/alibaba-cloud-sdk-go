@@ -32,6 +32,7 @@ type Invocation struct {
 	TargetDir         string                               `json:"TargetDir" xml:"TargetDir"`
 	FileMode          string                               `json:"FileMode" xml:"FileMode"`
 	TotalCount        int64                                `json:"TotalCount" xml:"TotalCount"`
+	Username          string                               `json:"Username" xml:"Username"`
 	ContentType       string                               `json:"ContentType" xml:"ContentType"`
 	CreationTime      string                               `json:"CreationTime" xml:"CreationTime"`
 	CommandName       string                               `json:"CommandName" xml:"CommandName"`

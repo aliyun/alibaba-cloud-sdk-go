@@ -99,7 +99,7 @@ func CreateDescribeStorageCapacityUnitsRequest() (request *DescribeStorageCapaci
 	request = &DescribeStorageCapacityUnitsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeStorageCapacityUnits", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeStorageCapacityUnits", "", "")
 	request.Method = requests.POST
 	return
 }
