@@ -1,3 +1,7 @@
+2020-12-07 Version: v1.61.751
+- Generated 2020-01-01 for `Dts`.
+- Remove DescribeSubscriptionObjectModifyStatus.
+
 2020-12-04 Version: v1.61.750
 - Generated 2018-02-08, 2018-01-29 for `Domain`.
 - Supported broker demand.
