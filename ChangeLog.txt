@@ -1,3 +1,7 @@
+2020-12-07 Version: v1.61.752
+- Generated 2019-08-08 for `ARMS`.
+- Add Listdashboard Api.
+
 2020-12-07 Version: v1.61.751
 - Generated 2020-01-01 for `Dts`.
 - Remove DescribeSubscriptionObjectModifyStatus.
