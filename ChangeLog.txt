@@ -1,3 +1,7 @@
+2020-12-09 Version: v1.61.753
+- Generated 2019-12-30 for `imageseg`.
+- Update SegmentCommodity.
+
 2020-12-07 Version: v1.61.752
 - Generated 2019-08-08 for `ARMS`.
 - Add Listdashboard Api.
