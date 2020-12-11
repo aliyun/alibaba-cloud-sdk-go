@@ -77,8 +77,8 @@ type DescribeLogstashRequest struct {
 // DescribeLogstashResponse is the response struct for api DescribeLogstash
 type DescribeLogstashResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Result    ResultInDescribeLogstash `json:"Result" xml:"Result"`
 }
 
 // CreateDescribeLogstashRequest creates a request to invoke DescribeLogstash API

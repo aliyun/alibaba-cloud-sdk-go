@@ -83,8 +83,9 @@ type ListLogstashRequest struct {
 // ListLogstashResponse is the response struct for api ListLogstash
 type ListLogstashResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Result    []Instance `json:"Result" xml:"Result"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Headers   Headers                  `json:"Headers" xml:"Headers"`
+	Result    []InstanceInListLogstash `json:"Result" xml:"Result"`
 }
 
 // CreateListLogstashRequest creates a request to invoke ListLogstash API

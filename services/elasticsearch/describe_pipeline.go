@@ -78,8 +78,8 @@ type DescribePipelineRequest struct {
 // DescribePipelineResponse is the response struct for api DescribePipeline
 type DescribePipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Result    ResultInDescribePipeline `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateDescribePipelineRequest creates a request to invoke DescribePipeline API

@@ -79,8 +79,8 @@ type UpdateInstanceRequest struct {
 // UpdateInstanceResponse is the response struct for api UpdateInstance
 type UpdateInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Result    ResultInUpdateInstance `json:"Result" xml:"Result"`
 }
 
 // CreateUpdateInstanceRequest creates a request to invoke UpdateInstance API

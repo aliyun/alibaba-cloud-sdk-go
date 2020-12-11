@@ -17,5 +17,5 @@ package elasticsearch
 
 // ResultInListLogstash is a nested struct in elasticsearch response
 type ResultInListLogstash struct {
-	Instance []Instance `json:"Instance" xml:"Instance"`
+	Instance []InstanceInListLogstash `json:"Instance" xml:"Instance"`
 }

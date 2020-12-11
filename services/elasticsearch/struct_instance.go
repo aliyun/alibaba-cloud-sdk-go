@@ -24,11 +24,11 @@ type Instance struct {
 	Status                       string                       `json:"status" xml:"status"`
 	Description                  string                       `json:"description" xml:"description"`
 	AdvancedDedicateMaster       bool                         `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
-	Version                      string                       `json:"version" xml:"version"`
 	EsVersion                    string                       `json:"esVersion" xml:"esVersion"`
 	PaymentType                  string                       `json:"paymentType" xml:"paymentType"`
 	ResourceGroupId              string                       `json:"resourceGroupId" xml:"resourceGroupId"`
 	CreatedAt                    string                       `json:"createdAt" xml:"createdAt"`
+	ExtendConfigs                []map[string]interface{}     `json:"extendConfigs" xml:"extendConfigs"`
 	NetworkConfig                NetworkConfig                `json:"networkConfig" xml:"networkConfig"`
 	MasterConfiguration          MasterConfiguration          `json:"masterConfiguration" xml:"masterConfiguration"`
 	ElasticDataNodeConfiguration ElasticDataNodeConfiguration `json:"elasticDataNodeConfiguration" xml:"elasticDataNodeConfiguration"`

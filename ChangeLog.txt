@@ -1,3 +1,7 @@
+2020-12-11 Version: v1.61.754
+- Generated 2017-06-13 for `elasticsearch`.
+- Add Emon route-API support.
+
 2020-12-09 Version: v1.61.753
 - Generated 2019-12-30 for `imageseg`.
 - Update SegmentCommodity.

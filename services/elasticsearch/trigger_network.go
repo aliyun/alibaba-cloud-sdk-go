@@ -71,8 +71,11 @@ func (client *Client) TriggerNetworkWithCallback(request *TriggerNetworkRequest,
 // TriggerNetworkRequest is the request struct for api TriggerNetwork
 type TriggerNetworkRequest struct {
 	*requests.RoaRequest
+	ActionType  string `position:"Body" name:"actionType"`
 	InstanceId  string `position:"Path" name:"InstanceId"`
+	NodeType    string `position:"Body" name:"nodeType"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	NetworkType string `position:"Body" name:"networkType"`
 }
 
 // TriggerNetworkResponse is the response struct for api TriggerNetwork

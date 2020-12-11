@@ -74,6 +74,8 @@ type UpgradeEngineVersionRequest struct {
 	InstanceId  string           `position:"Path" name:"InstanceId"`
 	DryRun      requests.Boolean `position:"Query" name:"dryRun"`
 	ClientToken string           `position:"Query" name:"clientToken"`
+	Type        string           `position:"Body" name:"type"`
+	Version     string           `position:"Body" name:"version"`
 }
 
 // UpgradeEngineVersionResponse is the response struct for api UpgradeEngineVersion
