@@ -49,6 +49,7 @@ type Task struct {
 	Created               string                           `json:"Created" xml:"Created"`
 	Parent                string                           `json:"Parent" xml:"Parent"`
 	ExecutorId            string                           `json:"ExecutorId" xml:"ExecutorId"`
+	TaskUniqueId          string                           `json:"TaskUniqueId" xml:"TaskUniqueId"`
 	CreatorId             string                           `json:"CreatorId" xml:"CreatorId"`
 	SprintId              string                           `json:"SprintId" xml:"SprintId"`
 	Priority              int                              `json:"Priority" xml:"Priority"`

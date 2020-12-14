@@ -81,6 +81,6 @@ type Object struct {
 	PackageDownloadUrls   []string `json:"PackageDownloadUrls" xml:"PackageDownloadUrls"`
 	DockerImages          []string `json:"DockerImages" xml:"DockerImages"`
 	PlanToDo              PlanToDo `json:"PlanToDo" xml:"PlanToDo"`
-	Result                []Task   `json:"Result" xml:"Result"`
 	Groups                []Group  `json:"Groups" xml:"Groups"`
+	Result                []Task   `json:"Result" xml:"Result"`
 }
