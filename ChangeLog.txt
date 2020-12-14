@@ -1,3 +1,7 @@
+2020-12-14 Version: v1.61.758
+- Generated 2020-03-03 for `devops-rdc`.
+- Add update task api.
+
 2020-12-14 Version: v1.61.757
 - Generated 2020-03-03 for `devops-rdc`.
 - Add update task api.
