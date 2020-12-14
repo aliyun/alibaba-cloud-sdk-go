@@ -1,3 +1,7 @@
+2020-12-14 Version: v1.61.755
+- Generated 2020-03-03 for `devops-rdc`.
+- Add update task api.
+
 2020-12-11 Version: v1.61.754
 - Generated 2017-06-13 for `elasticsearch`.
 - Add Emon route-API support.
