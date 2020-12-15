@@ -89,7 +89,7 @@ func CreateInsertRoleRequest() (request *InsertRoleRequest) {
 	request = &InsertRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertRole", "/pop/v5/account/create_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertRole", "/pop/v5/account/create_role", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

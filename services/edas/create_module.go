@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UnbindSlb invokes the edas.UnbindSlb API synchronously
-func (client *Client) UnbindSlb(request *UnbindSlbRequest) (response *UnbindSlbResponse, err error) {
-	response = CreateUnbindSlbResponse()
+// CreateModule invokes the edas.CreateModule API synchronously
+func (client *Client) CreateModule(request *CreateModuleRequest) (response *CreateModuleResponse, err error) {
+	response = CreateCreateModuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UnbindSlbWithChan invokes the edas.UnbindSlb API asynchronously
-func (client *Client) UnbindSlbWithChan(request *UnbindSlbRequest) (<-chan *UnbindSlbResponse, <-chan error) {
-	responseChan := make(chan *UnbindSlbResponse, 1)
+// CreateModuleWithChan invokes the edas.CreateModule API asynchronously
+func (client *Client) CreateModuleWithChan(request *CreateModuleRequest) (<-chan *CreateModuleResponse, <-chan error) {
+	responseChan := make(chan *CreateModuleResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UnbindSlb(request)
+		response, err := client.CreateModule(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UnbindSlbWithChan(request *UnbindSlbRequest) (<-chan *Unbi
 	return responseChan, errChan
 }
 
-// UnbindSlbWithCallback invokes the edas.UnbindSlb API asynchronously
-func (client *Client) UnbindSlbWithCallback(request *UnbindSlbRequest, callback func(response *UnbindSlbResponse, err error)) <-chan int {
+// CreateModuleWithCallback invokes the edas.CreateModule API asynchronously
+func (client *Client) CreateModuleWithCallback(request *CreateModuleRequest, callback func(response *CreateModuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UnbindSlbResponse
+		var response *CreateModuleResponse
 		var err error
 		defer close(result)
-		response, err = client.UnbindSlb(request)
+		response, err = client.CreateModule(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,36 @@ func (client *Client) UnbindSlbWithCallback(request *UnbindSlbRequest, callback 
 	return result
 }
 
-// UnbindSlbRequest is the request struct for api UnbindSlb
-type UnbindSlbRequest struct {
+// CreateModuleRequest is the request struct for api CreateModule
+type CreateModuleRequest struct {
 	*requests.RoaRequest
-	SlbId string `position:"Query" name:"SlbId"`
-	AppId string `position:"Query" name:"AppId"`
-	Type  string `position:"Query" name:"Type"`
+	Values     string `position:"Body" name:"Values"`
+	ModuleName string `position:"Query" name:"ModuleName"`
+	ClusterId  string `position:"Query" name:"ClusterId"`
 }
 
-// UnbindSlbResponse is the response struct for api UnbindSlb
-type UnbindSlbResponse struct {
+// CreateModuleResponse is the response struct for api CreateModule
+type CreateModuleResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
-	Data      string `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    string `json:"Result" xml:"Result"`
 }
 
-// CreateUnbindSlbRequest creates a request to invoke UnbindSlb API
-func CreateUnbindSlbRequest() (request *UnbindSlbRequest) {
-	request = &UnbindSlbRequest{
+// CreateCreateModuleRequest creates a request to invoke CreateModule API
+func CreateCreateModuleRequest() (request *CreateModuleRequest) {
+	request = &CreateModuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UnbindSlb", "/pop/app/unbind_slb_json", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "CreateModule", "/pop/v5/oam/feature/module_actions", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateUnbindSlbResponse creates a response to parse from UnbindSlb response
-func CreateUnbindSlbResponse() (response *UnbindSlbResponse) {
-	response = &UnbindSlbResponse{
+// CreateCreateModuleResponse creates a response to parse from CreateModule response
+func CreateCreateModuleResponse() (response *CreateModuleResponse) {
+	response = &CreateModuleResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
