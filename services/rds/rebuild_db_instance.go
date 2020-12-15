@@ -21,7 +21,6 @@ import (
 )
 
 // RebuildDBInstance invokes the rds.RebuildDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/rebuilddbinstance.html
 func (client *Client) RebuildDBInstance(request *RebuildDBInstanceRequest) (response *RebuildDBInstanceResponse, err error) {
 	response = CreateRebuildDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RebuildDBInstance(request *RebuildDBInstanceRequest) (resp
 }
 
 // RebuildDBInstanceWithChan invokes the rds.RebuildDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/rebuilddbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebuildDBInstanceWithChan(request *RebuildDBInstanceRequest) (<-chan *RebuildDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *RebuildDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RebuildDBInstanceWithChan(request *RebuildDBInstanceReques
 }
 
 // RebuildDBInstanceWithCallback invokes the rds.RebuildDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/rebuilddbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebuildDBInstanceWithCallback(request *RebuildDBInstanceRequest, callback func(response *RebuildDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) RebuildDBInstanceWithCallback(request *RebuildDBInstanceRe
 type RebuildDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RebuildNodeType      string           `position:"Query" name:"RebuildNodeType"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

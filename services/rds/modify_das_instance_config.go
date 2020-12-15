@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDasInstanceConfig invokes the rds.ModifyDasInstanceConfig API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydasinstanceconfig.html
 func (client *Client) ModifyDasInstanceConfig(request *ModifyDasInstanceConfigRequest) (response *ModifyDasInstanceConfigResponse, err error) {
 	response = CreateModifyDasInstanceConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDasInstanceConfig(request *ModifyDasInstanceConfigRe
 }
 
 // ModifyDasInstanceConfigWithChan invokes the rds.ModifyDasInstanceConfig API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydasinstanceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDasInstanceConfigWithChan(request *ModifyDasInstanceConfigRequest) (<-chan *ModifyDasInstanceConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyDasInstanceConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDasInstanceConfigWithChan(request *ModifyDasInstance
 }
 
 // ModifyDasInstanceConfigWithCallback invokes the rds.ModifyDasInstanceConfig API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydasinstanceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDasInstanceConfigWithCallback(request *ModifyDasInstanceConfigRequest, callback func(response *ModifyDasInstanceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

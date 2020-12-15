@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMigrateTaskById invokes the rds.DescribeMigrateTaskById API synchronously
-// api document: https://help.aliyun.com/api/rds/describemigratetaskbyid.html
 func (client *Client) DescribeMigrateTaskById(request *DescribeMigrateTaskByIdRequest) (response *DescribeMigrateTaskByIdResponse, err error) {
 	response = CreateDescribeMigrateTaskByIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMigrateTaskById(request *DescribeMigrateTaskByIdRe
 }
 
 // DescribeMigrateTaskByIdWithChan invokes the rds.DescribeMigrateTaskById API asynchronously
-// api document: https://help.aliyun.com/api/rds/describemigratetaskbyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTaskByIdWithChan(request *DescribeMigrateTaskByIdRequest) (<-chan *DescribeMigrateTaskByIdResponse, <-chan error) {
 	responseChan := make(chan *DescribeMigrateTaskByIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMigrateTaskByIdWithChan(request *DescribeMigrateTa
 }
 
 // DescribeMigrateTaskByIdWithCallback invokes the rds.DescribeMigrateTaskById API asynchronously
-// api document: https://help.aliyun.com/api/rds/describemigratetaskbyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTaskByIdWithCallback(request *DescribeMigrateTaskByIdRequest, callback func(response *DescribeMigrateTaskByIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

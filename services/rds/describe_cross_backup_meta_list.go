@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCrossBackupMetaList invokes the rds.DescribeCrossBackupMetaList API synchronously
-// api document: https://help.aliyun.com/api/rds/describecrossbackupmetalist.html
 func (client *Client) DescribeCrossBackupMetaList(request *DescribeCrossBackupMetaListRequest) (response *DescribeCrossBackupMetaListResponse, err error) {
 	response = CreateDescribeCrossBackupMetaListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCrossBackupMetaList(request *DescribeCrossBackupMe
 }
 
 // DescribeCrossBackupMetaListWithChan invokes the rds.DescribeCrossBackupMetaList API asynchronously
-// api document: https://help.aliyun.com/api/rds/describecrossbackupmetalist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCrossBackupMetaListWithChan(request *DescribeCrossBackupMetaListRequest) (<-chan *DescribeCrossBackupMetaListResponse, <-chan error) {
 	responseChan := make(chan *DescribeCrossBackupMetaListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCrossBackupMetaListWithChan(request *DescribeCross
 }
 
 // DescribeCrossBackupMetaListWithCallback invokes the rds.DescribeCrossBackupMetaList API asynchronously
-// api document: https://help.aliyun.com/api/rds/describecrossbackupmetalist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCrossBackupMetaListWithCallback(request *DescribeCrossBackupMetaListRequest, callback func(response *DescribeCrossBackupMetaListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

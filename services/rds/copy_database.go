@@ -21,7 +21,6 @@ import (
 )
 
 // CopyDatabase invokes the rds.CopyDatabase API synchronously
-// api document: https://help.aliyun.com/api/rds/copydatabase.html
 func (client *Client) CopyDatabase(request *CopyDatabaseRequest) (response *CopyDatabaseResponse, err error) {
 	response = CreateCopyDatabaseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CopyDatabase(request *CopyDatabaseRequest) (response *Copy
 }
 
 // CopyDatabaseWithChan invokes the rds.CopyDatabase API asynchronously
-// api document: https://help.aliyun.com/api/rds/copydatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyDatabaseWithChan(request *CopyDatabaseRequest) (<-chan *CopyDatabaseResponse, <-chan error) {
 	responseChan := make(chan *CopyDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CopyDatabaseWithChan(request *CopyDatabaseRequest) (<-chan
 }
 
 // CopyDatabaseWithCallback invokes the rds.CopyDatabase API asynchronously
-// api document: https://help.aliyun.com/api/rds/copydatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyDatabaseWithCallback(request *CopyDatabaseRequest, callback func(response *CopyDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseInstanceConnection invokes the rds.ReleaseInstanceConnection API synchronously
-// api document: https://help.aliyun.com/api/rds/releaseinstanceconnection.html
 func (client *Client) ReleaseInstanceConnection(request *ReleaseInstanceConnectionRequest) (response *ReleaseInstanceConnectionResponse, err error) {
 	response = CreateReleaseInstanceConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseInstanceConnection(request *ReleaseInstanceConnecti
 }
 
 // ReleaseInstanceConnectionWithChan invokes the rds.ReleaseInstanceConnection API asynchronously
-// api document: https://help.aliyun.com/api/rds/releaseinstanceconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceConnectionWithChan(request *ReleaseInstanceConnectionRequest) (<-chan *ReleaseInstanceConnectionResponse, <-chan error) {
 	responseChan := make(chan *ReleaseInstanceConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseInstanceConnectionWithChan(request *ReleaseInstance
 }
 
 // ReleaseInstanceConnectionWithCallback invokes the rds.ReleaseInstanceConnection API asynchronously
-// api document: https://help.aliyun.com/api/rds/releaseinstanceconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceConnectionWithCallback(request *ReleaseInstanceConnectionRequest, callback func(response *ReleaseInstanceConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

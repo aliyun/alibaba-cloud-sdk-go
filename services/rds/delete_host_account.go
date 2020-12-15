@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteHostAccount invokes the rds.DeleteHostAccount API synchronously
-// api document: https://help.aliyun.com/api/rds/deletehostaccount.html
 func (client *Client) DeleteHostAccount(request *DeleteHostAccountRequest) (response *DeleteHostAccountResponse, err error) {
 	response = CreateDeleteHostAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteHostAccount(request *DeleteHostAccountRequest) (resp
 }
 
 // DeleteHostAccountWithChan invokes the rds.DeleteHostAccount API asynchronously
-// api document: https://help.aliyun.com/api/rds/deletehostaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHostAccountWithChan(request *DeleteHostAccountRequest) (<-chan *DeleteHostAccountResponse, <-chan error) {
 	responseChan := make(chan *DeleteHostAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteHostAccountWithChan(request *DeleteHostAccountReques
 }
 
 // DeleteHostAccountWithCallback invokes the rds.DeleteHostAccount API asynchronously
-// api document: https://help.aliyun.com/api/rds/deletehostaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHostAccountWithCallback(request *DeleteHostAccountRequest, callback func(response *DeleteHostAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

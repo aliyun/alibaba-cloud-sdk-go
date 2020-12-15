@@ -21,7 +21,6 @@ import (
 )
 
 // ResetHostAccountPassword invokes the rds.ResetHostAccountPassword API synchronously
-// api document: https://help.aliyun.com/api/rds/resethostaccountpassword.html
 func (client *Client) ResetHostAccountPassword(request *ResetHostAccountPasswordRequest) (response *ResetHostAccountPasswordResponse, err error) {
 	response = CreateResetHostAccountPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetHostAccountPassword(request *ResetHostAccountPassword
 }
 
 // ResetHostAccountPasswordWithChan invokes the rds.ResetHostAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/rds/resethostaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetHostAccountPasswordWithChan(request *ResetHostAccountPasswordRequest) (<-chan *ResetHostAccountPasswordResponse, <-chan error) {
 	responseChan := make(chan *ResetHostAccountPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetHostAccountPasswordWithChan(request *ResetHostAccount
 }
 
 // ResetHostAccountPasswordWithCallback invokes the rds.ResetHostAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/rds/resethostaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetHostAccountPasswordWithCallback(request *ResetHostAccountPasswordRequest, callback func(response *ResetHostAccountPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

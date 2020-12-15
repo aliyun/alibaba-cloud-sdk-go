@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSQLCollectorRetention invokes the rds.DescribeSQLCollectorRetention API synchronously
-// api document: https://help.aliyun.com/api/rds/describesqlcollectorretention.html
 func (client *Client) DescribeSQLCollectorRetention(request *DescribeSQLCollectorRetentionRequest) (response *DescribeSQLCollectorRetentionResponse, err error) {
 	response = CreateDescribeSQLCollectorRetentionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSQLCollectorRetention(request *DescribeSQLCollecto
 }
 
 // DescribeSQLCollectorRetentionWithChan invokes the rds.DescribeSQLCollectorRetention API asynchronously
-// api document: https://help.aliyun.com/api/rds/describesqlcollectorretention.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLCollectorRetentionWithChan(request *DescribeSQLCollectorRetentionRequest) (<-chan *DescribeSQLCollectorRetentionResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLCollectorRetentionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSQLCollectorRetentionWithChan(request *DescribeSQL
 }
 
 // DescribeSQLCollectorRetentionWithCallback invokes the rds.DescribeSQLCollectorRetention API asynchronously
-// api document: https://help.aliyun.com/api/rds/describesqlcollectorretention.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLCollectorRetentionWithCallback(request *DescribeSQLCollectorRetentionRequest, callback func(response *DescribeSQLCollectorRetentionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

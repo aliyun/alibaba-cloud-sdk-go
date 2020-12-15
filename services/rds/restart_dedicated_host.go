@@ -21,7 +21,6 @@ import (
 )
 
 // RestartDedicatedHost invokes the rds.RestartDedicatedHost API synchronously
-// api document: https://help.aliyun.com/api/rds/restartdedicatedhost.html
 func (client *Client) RestartDedicatedHost(request *RestartDedicatedHostRequest) (response *RestartDedicatedHostResponse, err error) {
 	response = CreateRestartDedicatedHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartDedicatedHost(request *RestartDedicatedHostRequest)
 }
 
 // RestartDedicatedHostWithChan invokes the rds.RestartDedicatedHost API asynchronously
-// api document: https://help.aliyun.com/api/rds/restartdedicatedhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDedicatedHostWithChan(request *RestartDedicatedHostRequest) (<-chan *RestartDedicatedHostResponse, <-chan error) {
 	responseChan := make(chan *RestartDedicatedHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartDedicatedHostWithChan(request *RestartDedicatedHost
 }
 
 // RestartDedicatedHostWithCallback invokes the rds.RestartDedicatedHost API asynchronously
-// api document: https://help.aliyun.com/api/rds/restartdedicatedhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDedicatedHostWithCallback(request *RestartDedicatedHostRequest, callback func(response *RestartDedicatedHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

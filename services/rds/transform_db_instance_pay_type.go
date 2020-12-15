@@ -21,7 +21,6 @@ import (
 )
 
 // TransformDBInstancePayType invokes the rds.TransformDBInstancePayType API synchronously
-// api document: https://help.aliyun.com/api/rds/transformdbinstancepaytype.html
 func (client *Client) TransformDBInstancePayType(request *TransformDBInstancePayTypeRequest) (response *TransformDBInstancePayTypeResponse, err error) {
 	response = CreateTransformDBInstancePayTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TransformDBInstancePayType(request *TransformDBInstancePay
 }
 
 // TransformDBInstancePayTypeWithChan invokes the rds.TransformDBInstancePayType API asynchronously
-// api document: https://help.aliyun.com/api/rds/transformdbinstancepaytype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransformDBInstancePayTypeWithChan(request *TransformDBInstancePayTypeRequest) (<-chan *TransformDBInstancePayTypeResponse, <-chan error) {
 	responseChan := make(chan *TransformDBInstancePayTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TransformDBInstancePayTypeWithChan(request *TransformDBIns
 }
 
 // TransformDBInstancePayTypeWithCallback invokes the rds.TransformDBInstancePayType API asynchronously
-// api document: https://help.aliyun.com/api/rds/transformdbinstancepaytype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransformDBInstancePayTypeWithCallback(request *TransformDBInstancePayTypeRequest, callback func(response *TransformDBInstancePayTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

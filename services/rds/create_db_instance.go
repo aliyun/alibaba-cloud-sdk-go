@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDBInstance invokes the rds.CreateDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstance.html
 func (client *Client) CreateDBInstance(request *CreateDBInstanceRequest) (response *CreateDBInstanceResponse, err error) {
 	response = CreateCreateDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDBInstance(request *CreateDBInstanceRequest) (respon
 }
 
 // CreateDBInstanceWithChan invokes the rds.CreateDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest) (<-chan *CreateDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest)
 }
 
 // CreateDBInstanceWithCallback invokes the rds.CreateDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequest, callback func(response *CreateDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

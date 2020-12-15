@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyParameterGroup invokes the rds.ModifyParameterGroup API synchronously
-// api document: https://help.aliyun.com/api/rds/modifyparametergroup.html
 func (client *Client) ModifyParameterGroup(request *ModifyParameterGroupRequest) (response *ModifyParameterGroupResponse, err error) {
 	response = CreateModifyParameterGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyParameterGroup(request *ModifyParameterGroupRequest)
 }
 
 // ModifyParameterGroupWithChan invokes the rds.ModifyParameterGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifyparametergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParameterGroupWithChan(request *ModifyParameterGroupRequest) (<-chan *ModifyParameterGroupResponse, <-chan error) {
 	responseChan := make(chan *ModifyParameterGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyParameterGroupWithChan(request *ModifyParameterGroup
 }
 
 // ModifyParameterGroupWithCallback invokes the rds.ModifyParameterGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifyparametergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParameterGroupWithCallback(request *ModifyParameterGroupRequest, callback func(response *ModifyParameterGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

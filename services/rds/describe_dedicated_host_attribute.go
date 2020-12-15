@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDedicatedHostAttribute invokes the rds.DescribeDedicatedHostAttribute API synchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostattribute.html
 func (client *Client) DescribeDedicatedHostAttribute(request *DescribeDedicatedHostAttributeRequest) (response *DescribeDedicatedHostAttributeResponse, err error) {
 	response = CreateDescribeDedicatedHostAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDedicatedHostAttribute(request *DescribeDedicatedH
 }
 
 // DescribeDedicatedHostAttributeWithChan invokes the rds.DescribeDedicatedHostAttribute API asynchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostAttributeWithChan(request *DescribeDedicatedHostAttributeRequest) (<-chan *DescribeDedicatedHostAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeDedicatedHostAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDedicatedHostAttributeWithChan(request *DescribeDe
 }
 
 // DescribeDedicatedHostAttributeWithCallback invokes the rds.DescribeDedicatedHostAttribute API asynchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostAttributeWithCallback(request *DescribeDedicatedHostAttributeRequest, callback func(response *DescribeDedicatedHostAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

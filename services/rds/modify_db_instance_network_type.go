@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceNetworkType invokes the rds.ModifyDBInstanceNetworkType API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancenetworktype.html
 func (client *Client) ModifyDBInstanceNetworkType(request *ModifyDBInstanceNetworkTypeRequest) (response *ModifyDBInstanceNetworkTypeResponse, err error) {
 	response = CreateModifyDBInstanceNetworkTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceNetworkType(request *ModifyDBInstanceNetwo
 }
 
 // ModifyDBInstanceNetworkTypeWithChan invokes the rds.ModifyDBInstanceNetworkType API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancenetworktype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceNetworkTypeWithChan(request *ModifyDBInstanceNetworkTypeRequest) (<-chan *ModifyDBInstanceNetworkTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceNetworkTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithChan(request *ModifyDBInsta
 }
 
 // ModifyDBInstanceNetworkTypeWithCallback invokes the rds.ModifyDBInstanceNetworkType API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancenetworktype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceNetworkTypeWithCallback(request *ModifyDBInstanceNetworkTypeRequest, callback func(response *ModifyDBInstanceNetworkTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

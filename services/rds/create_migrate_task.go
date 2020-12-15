@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMigrateTask invokes the rds.CreateMigrateTask API synchronously
-// api document: https://help.aliyun.com/api/rds/createmigratetask.html
 func (client *Client) CreateMigrateTask(request *CreateMigrateTaskRequest) (response *CreateMigrateTaskResponse, err error) {
 	response = CreateCreateMigrateTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMigrateTask(request *CreateMigrateTaskRequest) (resp
 }
 
 // CreateMigrateTaskWithChan invokes the rds.CreateMigrateTask API asynchronously
-// api document: https://help.aliyun.com/api/rds/createmigratetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMigrateTaskWithChan(request *CreateMigrateTaskRequest) (<-chan *CreateMigrateTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateMigrateTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMigrateTaskWithChan(request *CreateMigrateTaskReques
 }
 
 // CreateMigrateTaskWithCallback invokes the rds.CreateMigrateTask API asynchronously
-// api document: https://help.aliyun.com/api/rds/createmigratetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMigrateTaskWithCallback(request *CreateMigrateTaskRequest, callback func(response *CreateMigrateTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

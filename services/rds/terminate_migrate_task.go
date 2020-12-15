@@ -21,7 +21,6 @@ import (
 )
 
 // TerminateMigrateTask invokes the rds.TerminateMigrateTask API synchronously
-// api document: https://help.aliyun.com/api/rds/terminatemigratetask.html
 func (client *Client) TerminateMigrateTask(request *TerminateMigrateTaskRequest) (response *TerminateMigrateTaskResponse, err error) {
 	response = CreateTerminateMigrateTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TerminateMigrateTask(request *TerminateMigrateTaskRequest)
 }
 
 // TerminateMigrateTaskWithChan invokes the rds.TerminateMigrateTask API asynchronously
-// api document: https://help.aliyun.com/api/rds/terminatemigratetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminateMigrateTaskWithChan(request *TerminateMigrateTaskRequest) (<-chan *TerminateMigrateTaskResponse, <-chan error) {
 	responseChan := make(chan *TerminateMigrateTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TerminateMigrateTaskWithChan(request *TerminateMigrateTask
 }
 
 // TerminateMigrateTaskWithCallback invokes the rds.TerminateMigrateTask API asynchronously
-// api document: https://help.aliyun.com/api/rds/terminatemigratetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminateMigrateTaskWithCallback(request *TerminateMigrateTaskRequest, callback func(response *TerminateMigrateTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

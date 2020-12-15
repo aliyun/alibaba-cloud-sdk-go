@@ -21,7 +21,6 @@ import (
 )
 
 // MigrateDBInstance invokes the rds.MigrateDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/migratedbinstance.html
 func (client *Client) MigrateDBInstance(request *MigrateDBInstanceRequest) (response *MigrateDBInstanceResponse, err error) {
 	response = CreateMigrateDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MigrateDBInstance(request *MigrateDBInstanceRequest) (resp
 }
 
 // MigrateDBInstanceWithChan invokes the rds.MigrateDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/migratedbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateDBInstanceWithChan(request *MigrateDBInstanceRequest) (<-chan *MigrateDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *MigrateDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MigrateDBInstanceWithChan(request *MigrateDBInstanceReques
 }
 
 // MigrateDBInstanceWithCallback invokes the rds.MigrateDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/migratedbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateDBInstanceWithCallback(request *MigrateDBInstanceRequest, callback func(response *MigrateDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,12 +78,14 @@ type MigrateDBInstanceRequest struct {
 	ZoneIdSlave2                   string           `position:"Query" name:"ZoneIdSlave2"`
 	EngineVersion                  string           `position:"Query" name:"EngineVersion"`
 	Storage                        requests.Integer `position:"Query" name:"Storage"`
+	ZoneIdForFollower              string           `position:"Query" name:"ZoneIdForFollower"`
 	EffectiveTime                  string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceTransType            requests.Integer `position:"Query" name:"DBInstanceTransType"`
 	TargetDedicatedHostIdForMaster string           `position:"Query" name:"TargetDedicatedHostIdForMaster"`
 	DBInstanceId                   string           `position:"Query" name:"DBInstanceId"`
 	DedicatedHostGroupId           string           `position:"Query" name:"DedicatedHostGroupId"`
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
+	ZoneIdForLog                   string           `position:"Query" name:"ZoneIdForLog"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
 	TargetDBInstanceClass          string           `position:"Query" name:"TargetDBInstanceClass"`
 	VSwitchId                      string           `position:"Query" name:"VSwitchId"`

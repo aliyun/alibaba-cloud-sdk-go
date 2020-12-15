@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceTDE invokes the rds.DescribeDBInstanceTDE API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
 func (client *Client) DescribeDBInstanceTDE(request *DescribeDBInstanceTDERequest) (response *DescribeDBInstanceTDEResponse, err error) {
 	response = CreateDescribeDBInstanceTDEResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceTDE(request *DescribeDBInstanceTDEReques
 }
 
 // DescribeDBInstanceTDEWithChan invokes the rds.DescribeDBInstanceTDE API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceTDEWithChan(request *DescribeDBInstanceTDERequest) (<-chan *DescribeDBInstanceTDEResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceTDEResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceTDEWithChan(request *DescribeDBInstanceT
 }
 
 // DescribeDBInstanceTDEWithCallback invokes the rds.DescribeDBInstanceTDE API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceTDEWithCallback(request *DescribeDBInstanceTDERequest, callback func(response *DescribeDBInstanceTDEResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

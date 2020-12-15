@@ -21,7 +21,6 @@ import (
 )
 
 // CheckDBNameAvailable invokes the rds.CheckDBNameAvailable API synchronously
-// api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
 func (client *Client) CheckDBNameAvailable(request *CheckDBNameAvailableRequest) (response *CheckDBNameAvailableResponse, err error) {
 	response = CreateCheckDBNameAvailableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckDBNameAvailable(request *CheckDBNameAvailableRequest)
 }
 
 // CheckDBNameAvailableWithChan invokes the rds.CheckDBNameAvailable API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDBNameAvailableWithChan(request *CheckDBNameAvailableRequest) (<-chan *CheckDBNameAvailableResponse, <-chan error) {
 	responseChan := make(chan *CheckDBNameAvailableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckDBNameAvailableWithChan(request *CheckDBNameAvailable
 }
 
 // CheckDBNameAvailableWithCallback invokes the rds.CheckDBNameAvailable API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDBNameAvailableWithCallback(request *CheckDBNameAvailableRequest, callback func(response *CheckDBNameAvailableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

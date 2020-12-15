@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDasInstanceConfig invokes the rds.DescribeDasInstanceConfig API synchronously
-// api document: https://help.aliyun.com/api/rds/describedasinstanceconfig.html
 func (client *Client) DescribeDasInstanceConfig(request *DescribeDasInstanceConfigRequest) (response *DescribeDasInstanceConfigResponse, err error) {
 	response = CreateDescribeDasInstanceConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDasInstanceConfig(request *DescribeDasInstanceConf
 }
 
 // DescribeDasInstanceConfigWithChan invokes the rds.DescribeDasInstanceConfig API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedasinstanceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDasInstanceConfigWithChan(request *DescribeDasInstanceConfigRequest) (<-chan *DescribeDasInstanceConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeDasInstanceConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDasInstanceConfigWithChan(request *DescribeDasInst
 }
 
 // DescribeDasInstanceConfigWithCallback invokes the rds.DescribeDasInstanceConfig API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedasinstanceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDasInstanceConfigWithCallback(request *DescribeDasInstanceConfigRequest, callback func(response *DescribeDasInstanceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

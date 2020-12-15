@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDTCSecurityIpHostsForSQLServer invokes the rds.ModifyDTCSecurityIpHostsForSQLServer API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydtcsecurityiphostsforsqlserver.html
 func (client *Client) ModifyDTCSecurityIpHostsForSQLServer(request *ModifyDTCSecurityIpHostsForSQLServerRequest) (response *ModifyDTCSecurityIpHostsForSQLServerResponse, err error) {
 	response = CreateModifyDTCSecurityIpHostsForSQLServerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDTCSecurityIpHostsForSQLServer(request *ModifyDTCSec
 }
 
 // ModifyDTCSecurityIpHostsForSQLServerWithChan invokes the rds.ModifyDTCSecurityIpHostsForSQLServer API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydtcsecurityiphostsforsqlserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDTCSecurityIpHostsForSQLServerWithChan(request *ModifyDTCSecurityIpHostsForSQLServerRequest) (<-chan *ModifyDTCSecurityIpHostsForSQLServerResponse, <-chan error) {
 	responseChan := make(chan *ModifyDTCSecurityIpHostsForSQLServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDTCSecurityIpHostsForSQLServerWithChan(request *Modi
 }
 
 // ModifyDTCSecurityIpHostsForSQLServerWithCallback invokes the rds.ModifyDTCSecurityIpHostsForSQLServer API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydtcsecurityiphostsforsqlserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDTCSecurityIpHostsForSQLServerWithCallback(request *ModifyDTCSecurityIpHostsForSQLServerRequest, callback func(response *ModifyDTCSecurityIpHostsForSQLServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

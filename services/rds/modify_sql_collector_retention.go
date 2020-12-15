@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySQLCollectorRetention invokes the rds.ModifySQLCollectorRetention API synchronously
-// api document: https://help.aliyun.com/api/rds/modifysqlcollectorretention.html
 func (client *Client) ModifySQLCollectorRetention(request *ModifySQLCollectorRetentionRequest) (response *ModifySQLCollectorRetentionResponse, err error) {
 	response = CreateModifySQLCollectorRetentionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySQLCollectorRetention(request *ModifySQLCollectorRet
 }
 
 // ModifySQLCollectorRetentionWithChan invokes the rds.ModifySQLCollectorRetention API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifysqlcollectorretention.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySQLCollectorRetentionWithChan(request *ModifySQLCollectorRetentionRequest) (<-chan *ModifySQLCollectorRetentionResponse, <-chan error) {
 	responseChan := make(chan *ModifySQLCollectorRetentionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySQLCollectorRetentionWithChan(request *ModifySQLColl
 }
 
 // ModifySQLCollectorRetentionWithCallback invokes the rds.ModifySQLCollectorRetention API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifysqlcollectorretention.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySQLCollectorRetentionWithCallback(request *ModifySQLCollectorRetentionRequest, callback func(response *ModifySQLCollectorRetentionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

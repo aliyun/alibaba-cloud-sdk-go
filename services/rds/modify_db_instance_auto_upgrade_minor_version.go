@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceAutoUpgradeMinorVersion invokes the rds.ModifyDBInstanceAutoUpgradeMinorVersion API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstanceautoupgrademinorversion.html
 func (client *Client) ModifyDBInstanceAutoUpgradeMinorVersion(request *ModifyDBInstanceAutoUpgradeMinorVersionRequest) (response *ModifyDBInstanceAutoUpgradeMinorVersionResponse, err error) {
 	response = CreateModifyDBInstanceAutoUpgradeMinorVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceAutoUpgradeMinorVersion(request *ModifyDBI
 }
 
 // ModifyDBInstanceAutoUpgradeMinorVersionWithChan invokes the rds.ModifyDBInstanceAutoUpgradeMinorVersion API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstanceautoupgrademinorversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceAutoUpgradeMinorVersionWithChan(request *ModifyDBInstanceAutoUpgradeMinorVersionRequest) (<-chan *ModifyDBInstanceAutoUpgradeMinorVersionResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceAutoUpgradeMinorVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceAutoUpgradeMinorVersionWithChan(request *M
 }
 
 // ModifyDBInstanceAutoUpgradeMinorVersionWithCallback invokes the rds.ModifyDBInstanceAutoUpgradeMinorVersion API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstanceautoupgrademinorversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceAutoUpgradeMinorVersionWithCallback(request *ModifyDBInstanceAutoUpgradeMinorVersionRequest, callback func(response *ModifyDBInstanceAutoUpgradeMinorVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

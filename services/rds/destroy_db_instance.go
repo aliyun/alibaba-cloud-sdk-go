@@ -21,7 +21,6 @@ import (
 )
 
 // DestroyDBInstance invokes the rds.DestroyDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/destroydbinstance.html
 func (client *Client) DestroyDBInstance(request *DestroyDBInstanceRequest) (response *DestroyDBInstanceResponse, err error) {
 	response = CreateDestroyDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DestroyDBInstance(request *DestroyDBInstanceRequest) (resp
 }
 
 // DestroyDBInstanceWithChan invokes the rds.DestroyDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/destroydbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DestroyDBInstanceWithChan(request *DestroyDBInstanceRequest) (<-chan *DestroyDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *DestroyDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DestroyDBInstanceWithChan(request *DestroyDBInstanceReques
 }
 
 // DestroyDBInstanceWithCallback invokes the rds.DestroyDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/destroydbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DestroyDBInstanceWithCallback(request *DestroyDBInstanceRequest, callback func(response *DestroyDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

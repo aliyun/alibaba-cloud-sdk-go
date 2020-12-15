@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBProxyEndpoint invokes the rds.ModifyDBProxyEndpoint API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydbproxyendpoint.html
 func (client *Client) ModifyDBProxyEndpoint(request *ModifyDBProxyEndpointRequest) (response *ModifyDBProxyEndpointResponse, err error) {
 	response = CreateModifyDBProxyEndpointResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBProxyEndpoint(request *ModifyDBProxyEndpointReques
 }
 
 // ModifyDBProxyEndpointWithChan invokes the rds.ModifyDBProxyEndpoint API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbproxyendpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBProxyEndpointWithChan(request *ModifyDBProxyEndpointRequest) (<-chan *ModifyDBProxyEndpointResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBProxyEndpointResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBProxyEndpointWithChan(request *ModifyDBProxyEndpoi
 }
 
 // ModifyDBProxyEndpointWithCallback invokes the rds.ModifyDBProxyEndpoint API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbproxyendpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBProxyEndpointWithCallback(request *ModifyDBProxyEndpointRequest, callback func(response *ModifyDBProxyEndpointResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

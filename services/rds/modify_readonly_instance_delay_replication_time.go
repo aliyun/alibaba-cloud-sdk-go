@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyReadonlyInstanceDelayReplicationTime invokes the rds.ModifyReadonlyInstanceDelayReplicationTime API synchronously
-// api document: https://help.aliyun.com/api/rds/modifyreadonlyinstancedelayreplicationtime.html
 func (client *Client) ModifyReadonlyInstanceDelayReplicationTime(request *ModifyReadonlyInstanceDelayReplicationTimeRequest) (response *ModifyReadonlyInstanceDelayReplicationTimeResponse, err error) {
 	response = CreateModifyReadonlyInstanceDelayReplicationTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyReadonlyInstanceDelayReplicationTime(request *Modify
 }
 
 // ModifyReadonlyInstanceDelayReplicationTimeWithChan invokes the rds.ModifyReadonlyInstanceDelayReplicationTime API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifyreadonlyinstancedelayreplicationtime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReadonlyInstanceDelayReplicationTimeWithChan(request *ModifyReadonlyInstanceDelayReplicationTimeRequest) (<-chan *ModifyReadonlyInstanceDelayReplicationTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyReadonlyInstanceDelayReplicationTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyReadonlyInstanceDelayReplicationTimeWithChan(request
 }
 
 // ModifyReadonlyInstanceDelayReplicationTimeWithCallback invokes the rds.ModifyReadonlyInstanceDelayReplicationTime API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifyreadonlyinstancedelayreplicationtime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReadonlyInstanceDelayReplicationTimeWithCallback(request *ModifyReadonlyInstanceDelayReplicationTimeRequest, callback func(response *ModifyReadonlyInstanceDelayReplicationTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

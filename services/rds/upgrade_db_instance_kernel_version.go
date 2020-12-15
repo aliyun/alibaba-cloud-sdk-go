@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeDBInstanceKernelVersion invokes the rds.UpgradeDBInstanceKernelVersion API synchronously
-// api document: https://help.aliyun.com/api/rds/upgradedbinstancekernelversion.html
 func (client *Client) UpgradeDBInstanceKernelVersion(request *UpgradeDBInstanceKernelVersionRequest) (response *UpgradeDBInstanceKernelVersionResponse, err error) {
 	response = CreateUpgradeDBInstanceKernelVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeDBInstanceKernelVersion(request *UpgradeDBInstanceK
 }
 
 // UpgradeDBInstanceKernelVersionWithChan invokes the rds.UpgradeDBInstanceKernelVersion API asynchronously
-// api document: https://help.aliyun.com/api/rds/upgradedbinstancekernelversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceKernelVersionWithChan(request *UpgradeDBInstanceKernelVersionRequest) (<-chan *UpgradeDBInstanceKernelVersionResponse, <-chan error) {
 	responseChan := make(chan *UpgradeDBInstanceKernelVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeDBInstanceKernelVersionWithChan(request *UpgradeDBI
 }
 
 // UpgradeDBInstanceKernelVersionWithCallback invokes the rds.UpgradeDBInstanceKernelVersion API asynchronously
-// api document: https://help.aliyun.com/api/rds/upgradedbinstancekernelversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceKernelVersionWithCallback(request *UpgradeDBInstanceKernelVersionRequest, callback func(response *UpgradeDBInstanceKernelVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,11 +72,12 @@ func (client *Client) UpgradeDBInstanceKernelVersionWithCallback(request *Upgrad
 type UpgradeDBInstanceKernelVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	UpgradeTime          string           `position:"Query" name:"UpgradeTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	SwitchTime           string           `position:"Query" name:"SwitchTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TargetMinorVersion   string           `position:"Query" name:"TargetMinorVersion"`
+	UpgradeTime          string           `position:"Query" name:"UpgradeTime"`
 }
 
 // UpgradeDBInstanceKernelVersionResponse is the response struct for api UpgradeDBInstanceKernelVersion

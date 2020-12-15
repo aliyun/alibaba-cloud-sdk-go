@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEvents invokes the rds.DescribeEvents API synchronously
-// api document: https://help.aliyun.com/api/rds/describeevents.html
 func (client *Client) DescribeEvents(request *DescribeEventsRequest) (response *DescribeEventsResponse, err error) {
 	response = CreateDescribeEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEvents(request *DescribeEventsRequest) (response *
 }
 
 // DescribeEventsWithChan invokes the rds.DescribeEvents API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventsWithChan(request *DescribeEventsRequest) (<-chan *DescribeEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEventsWithChan(request *DescribeEventsRequest) (<-
 }
 
 // DescribeEventsWithCallback invokes the rds.DescribeEvents API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventsWithCallback(request *DescribeEventsRequest, callback func(response *DescribeEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

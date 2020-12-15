@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOnlineDatabaseTask invokes the rds.CreateOnlineDatabaseTask API synchronously
-// api document: https://help.aliyun.com/api/rds/createonlinedatabasetask.html
 func (client *Client) CreateOnlineDatabaseTask(request *CreateOnlineDatabaseTaskRequest) (response *CreateOnlineDatabaseTaskResponse, err error) {
 	response = CreateCreateOnlineDatabaseTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOnlineDatabaseTask(request *CreateOnlineDatabaseTask
 }
 
 // CreateOnlineDatabaseTaskWithChan invokes the rds.CreateOnlineDatabaseTask API asynchronously
-// api document: https://help.aliyun.com/api/rds/createonlinedatabasetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOnlineDatabaseTaskWithChan(request *CreateOnlineDatabaseTaskRequest) (<-chan *CreateOnlineDatabaseTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateOnlineDatabaseTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOnlineDatabaseTaskWithChan(request *CreateOnlineData
 }
 
 // CreateOnlineDatabaseTaskWithCallback invokes the rds.CreateOnlineDatabaseTask API asynchronously
-// api document: https://help.aliyun.com/api/rds/createonlinedatabasetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOnlineDatabaseTaskWithCallback(request *CreateOnlineDatabaseTaskRequest, callback func(response *CreateOnlineDatabaseTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

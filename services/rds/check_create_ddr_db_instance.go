@@ -21,7 +21,6 @@ import (
 )
 
 // CheckCreateDdrDBInstance invokes the rds.CheckCreateDdrDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/checkcreateddrdbinstance.html
 func (client *Client) CheckCreateDdrDBInstance(request *CheckCreateDdrDBInstanceRequest) (response *CheckCreateDdrDBInstanceResponse, err error) {
 	response = CreateCheckCreateDdrDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckCreateDdrDBInstance(request *CheckCreateDdrDBInstance
 }
 
 // CheckCreateDdrDBInstanceWithChan invokes the rds.CheckCreateDdrDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkcreateddrdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckCreateDdrDBInstanceWithChan(request *CheckCreateDdrDBInstanceRequest) (<-chan *CheckCreateDdrDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *CheckCreateDdrDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckCreateDdrDBInstanceWithChan(request *CheckCreateDdrDB
 }
 
 // CheckCreateDdrDBInstanceWithCallback invokes the rds.CheckCreateDdrDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkcreateddrdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckCreateDdrDBInstanceWithCallback(request *CheckCreateDdrDBInstanceRequest, callback func(response *CheckCreateDdrDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

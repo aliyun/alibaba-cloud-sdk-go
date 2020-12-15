@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDedicatedHostGroupAttribute invokes the rds.ModifyDedicatedHostGroupAttribute API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydedicatedhostgroupattribute.html
 func (client *Client) ModifyDedicatedHostGroupAttribute(request *ModifyDedicatedHostGroupAttributeRequest) (response *ModifyDedicatedHostGroupAttributeResponse, err error) {
 	response = CreateModifyDedicatedHostGroupAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDedicatedHostGroupAttribute(request *ModifyDedicated
 }
 
 // ModifyDedicatedHostGroupAttributeWithChan invokes the rds.ModifyDedicatedHostGroupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydedicatedhostgroupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedHostGroupAttributeWithChan(request *ModifyDedicatedHostGroupAttributeRequest) (<-chan *ModifyDedicatedHostGroupAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDedicatedHostGroupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDedicatedHostGroupAttributeWithChan(request *ModifyD
 }
 
 // ModifyDedicatedHostGroupAttributeWithCallback invokes the rds.ModifyDedicatedHostGroupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydedicatedhostgroupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedHostGroupAttributeWithCallback(request *ModifyDedicatedHostGroupAttributeRequest, callback func(response *ModifyDedicatedHostGroupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

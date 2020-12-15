@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMigrateTasksForSQLServer invokes the rds.DescribeMigrateTasksForSQLServer API synchronously
-// api document: https://help.aliyun.com/api/rds/describemigratetasksforsqlserver.html
 func (client *Client) DescribeMigrateTasksForSQLServer(request *DescribeMigrateTasksForSQLServerRequest) (response *DescribeMigrateTasksForSQLServerResponse, err error) {
 	response = CreateDescribeMigrateTasksForSQLServerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMigrateTasksForSQLServer(request *DescribeMigrateT
 }
 
 // DescribeMigrateTasksForSQLServerWithChan invokes the rds.DescribeMigrateTasksForSQLServer API asynchronously
-// api document: https://help.aliyun.com/api/rds/describemigratetasksforsqlserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTasksForSQLServerWithChan(request *DescribeMigrateTasksForSQLServerRequest) (<-chan *DescribeMigrateTasksForSQLServerResponse, <-chan error) {
 	responseChan := make(chan *DescribeMigrateTasksForSQLServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMigrateTasksForSQLServerWithChan(request *Describe
 }
 
 // DescribeMigrateTasksForSQLServerWithCallback invokes the rds.DescribeMigrateTasksForSQLServer API asynchronously
-// api document: https://help.aliyun.com/api/rds/describemigratetasksforsqlserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTasksForSQLServerWithCallback(request *DescribeMigrateTasksForSQLServerRequest, callback func(response *DescribeMigrateTasksForSQLServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

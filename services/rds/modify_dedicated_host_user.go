@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDedicatedHostUser invokes the rds.ModifyDedicatedHostUser API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydedicatedhostuser.html
 func (client *Client) ModifyDedicatedHostUser(request *ModifyDedicatedHostUserRequest) (response *ModifyDedicatedHostUserResponse, err error) {
 	response = CreateModifyDedicatedHostUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDedicatedHostUser(request *ModifyDedicatedHostUserRe
 }
 
 // ModifyDedicatedHostUserWithChan invokes the rds.ModifyDedicatedHostUser API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydedicatedhostuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedHostUserWithChan(request *ModifyDedicatedHostUserRequest) (<-chan *ModifyDedicatedHostUserResponse, <-chan error) {
 	responseChan := make(chan *ModifyDedicatedHostUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDedicatedHostUserWithChan(request *ModifyDedicatedHo
 }
 
 // ModifyDedicatedHostUserWithCallback invokes the rds.ModifyDedicatedHostUser API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydedicatedhostuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedHostUserWithCallback(request *ModifyDedicatedHostUserRequest, callback func(response *ModifyDedicatedHostUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

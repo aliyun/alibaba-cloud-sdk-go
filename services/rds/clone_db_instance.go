@@ -21,7 +21,6 @@ import (
 )
 
 // CloneDBInstance invokes the rds.CloneDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/clonedbinstance.html
 func (client *Client) CloneDBInstance(request *CloneDBInstanceRequest) (response *CloneDBInstanceResponse, err error) {
 	response = CreateCloneDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloneDBInstance(request *CloneDBInstanceRequest) (response
 }
 
 // CloneDBInstanceWithChan invokes the rds.CloneDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/clonedbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloneDBInstanceWithChan(request *CloneDBInstanceRequest) (<-chan *CloneDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *CloneDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloneDBInstanceWithChan(request *CloneDBInstanceRequest) (
 }
 
 // CloneDBInstanceWithCallback invokes the rds.CloneDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/clonedbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloneDBInstanceWithCallback(request *CloneDBInstanceRequest, callback func(response *CloneDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

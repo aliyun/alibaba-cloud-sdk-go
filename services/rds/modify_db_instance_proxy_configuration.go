@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceProxyConfiguration invokes the rds.ModifyDBInstanceProxyConfiguration API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstanceproxyconfiguration.html
 func (client *Client) ModifyDBInstanceProxyConfiguration(request *ModifyDBInstanceProxyConfigurationRequest) (response *ModifyDBInstanceProxyConfigurationResponse, err error) {
 	response = CreateModifyDBInstanceProxyConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceProxyConfiguration(request *ModifyDBInstan
 }
 
 // ModifyDBInstanceProxyConfigurationWithChan invokes the rds.ModifyDBInstanceProxyConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstanceproxyconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceProxyConfigurationWithChan(request *ModifyDBInstanceProxyConfigurationRequest) (<-chan *ModifyDBInstanceProxyConfigurationResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceProxyConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceProxyConfigurationWithChan(request *Modify
 }
 
 // ModifyDBInstanceProxyConfigurationWithCallback invokes the rds.ModifyDBInstanceProxyConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstanceproxyconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceProxyConfigurationWithCallback(request *ModifyDBInstanceProxyConfigurationRequest, callback func(response *ModifyDBInstanceProxyConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

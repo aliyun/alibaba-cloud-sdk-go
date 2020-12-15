@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssDownloads invokes the rds.DescribeOssDownloads API synchronously
-// api document: https://help.aliyun.com/api/rds/describeossdownloads.html
 func (client *Client) DescribeOssDownloads(request *DescribeOssDownloadsRequest) (response *DescribeOssDownloadsResponse, err error) {
 	response = CreateDescribeOssDownloadsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssDownloads(request *DescribeOssDownloadsRequest)
 }
 
 // DescribeOssDownloadsWithChan invokes the rds.DescribeOssDownloads API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeossdownloads.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsWithChan(request *DescribeOssDownloadsRequest) (<-chan *DescribeOssDownloadsResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssDownloadsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssDownloadsWithChan(request *DescribeOssDownloads
 }
 
 // DescribeOssDownloadsWithCallback invokes the rds.DescribeOssDownloads API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeossdownloads.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsWithCallback(request *DescribeOssDownloadsRequest, callback func(response *DescribeOssDownloadsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

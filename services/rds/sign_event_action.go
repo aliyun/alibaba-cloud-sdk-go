@@ -21,7 +21,6 @@ import (
 )
 
 // SignEventAction invokes the rds.SignEventAction API synchronously
-// api document: https://help.aliyun.com/api/rds/signeventaction.html
 func (client *Client) SignEventAction(request *SignEventActionRequest) (response *SignEventActionResponse, err error) {
 	response = CreateSignEventActionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SignEventAction(request *SignEventActionRequest) (response
 }
 
 // SignEventActionWithChan invokes the rds.SignEventAction API asynchronously
-// api document: https://help.aliyun.com/api/rds/signeventaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SignEventActionWithChan(request *SignEventActionRequest) (<-chan *SignEventActionResponse, <-chan error) {
 	responseChan := make(chan *SignEventActionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SignEventActionWithChan(request *SignEventActionRequest) (
 }
 
 // SignEventActionWithCallback invokes the rds.SignEventAction API asynchronously
-// api document: https://help.aliyun.com/api/rds/signeventaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SignEventActionWithCallback(request *SignEventActionRequest, callback func(response *SignEventActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

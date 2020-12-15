@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeReadDBInstanceDelay invokes the rds.DescribeReadDBInstanceDelay API synchronously
-// api document: https://help.aliyun.com/api/rds/describereaddbinstancedelay.html
 func (client *Client) DescribeReadDBInstanceDelay(request *DescribeReadDBInstanceDelayRequest) (response *DescribeReadDBInstanceDelayResponse, err error) {
 	response = CreateDescribeReadDBInstanceDelayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeReadDBInstanceDelay(request *DescribeReadDBInstanc
 }
 
 // DescribeReadDBInstanceDelayWithChan invokes the rds.DescribeReadDBInstanceDelay API asynchronously
-// api document: https://help.aliyun.com/api/rds/describereaddbinstancedelay.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReadDBInstanceDelayWithChan(request *DescribeReadDBInstanceDelayRequest) (<-chan *DescribeReadDBInstanceDelayResponse, <-chan error) {
 	responseChan := make(chan *DescribeReadDBInstanceDelayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeReadDBInstanceDelayWithChan(request *DescribeReadD
 }
 
 // DescribeReadDBInstanceDelayWithCallback invokes the rds.DescribeReadDBInstanceDelay API asynchronously
-// api document: https://help.aliyun.com/api/rds/describereaddbinstancedelay.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReadDBInstanceDelayWithCallback(request *DescribeReadDBInstanceDelayRequest, callback func(response *DescribeReadDBInstanceDelayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

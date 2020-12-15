@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstancePayType invokes the rds.ModifyDBInstancePayType API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancepaytype.html
 func (client *Client) ModifyDBInstancePayType(request *ModifyDBInstancePayTypeRequest) (response *ModifyDBInstancePayTypeResponse, err error) {
 	response = CreateModifyDBInstancePayTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstancePayType(request *ModifyDBInstancePayTypeRe
 }
 
 // ModifyDBInstancePayTypeWithChan invokes the rds.ModifyDBInstancePayType API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancepaytype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstancePayTypeWithChan(request *ModifyDBInstancePayTypeRequest) (<-chan *ModifyDBInstancePayTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstancePayTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstancePayTypeWithChan(request *ModifyDBInstanceP
 }
 
 // ModifyDBInstancePayTypeWithCallback invokes the rds.ModifyDBInstancePayType API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancepaytype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstancePayTypeWithCallback(request *ModifyDBInstancePayTypeRequest, callback func(response *ModifyDBInstancePayTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

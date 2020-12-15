@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAvailableDedicatedHostZones invokes the rds.DescribeAvailableDedicatedHostZones API synchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablededicatedhostzones.html
 func (client *Client) DescribeAvailableDedicatedHostZones(request *DescribeAvailableDedicatedHostZonesRequest) (response *DescribeAvailableDedicatedHostZonesResponse, err error) {
 	response = CreateDescribeAvailableDedicatedHostZonesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAvailableDedicatedHostZones(request *DescribeAvail
 }
 
 // DescribeAvailableDedicatedHostZonesWithChan invokes the rds.DescribeAvailableDedicatedHostZones API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablededicatedhostzones.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableDedicatedHostZonesWithChan(request *DescribeAvailableDedicatedHostZonesRequest) (<-chan *DescribeAvailableDedicatedHostZonesResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableDedicatedHostZonesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAvailableDedicatedHostZonesWithChan(request *Descr
 }
 
 // DescribeAvailableDedicatedHostZonesWithCallback invokes the rds.DescribeAvailableDedicatedHostZones API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablededicatedhostzones.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableDedicatedHostZonesWithCallback(request *DescribeAvailableDedicatedHostZonesRequest, callback func(response *DescribeAvailableDedicatedHostZonesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

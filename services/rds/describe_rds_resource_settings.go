@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRdsResourceSettings invokes the rds.DescribeRdsResourceSettings API synchronously
-// api document: https://help.aliyun.com/api/rds/describerdsresourcesettings.html
 func (client *Client) DescribeRdsResourceSettings(request *DescribeRdsResourceSettingsRequest) (response *DescribeRdsResourceSettingsResponse, err error) {
 	response = CreateDescribeRdsResourceSettingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRdsResourceSettings(request *DescribeRdsResourceSe
 }
 
 // DescribeRdsResourceSettingsWithChan invokes the rds.DescribeRdsResourceSettings API asynchronously
-// api document: https://help.aliyun.com/api/rds/describerdsresourcesettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsResourceSettingsWithChan(request *DescribeRdsResourceSettingsRequest) (<-chan *DescribeRdsResourceSettingsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRdsResourceSettingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRdsResourceSettingsWithChan(request *DescribeRdsRe
 }
 
 // DescribeRdsResourceSettingsWithCallback invokes the rds.DescribeRdsResourceSettings API asynchronously
-// api document: https://help.aliyun.com/api/rds/describerdsresourcesettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsResourceSettingsWithCallback(request *DescribeRdsResourceSettingsRequest, callback func(response *DescribeRdsResourceSettingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

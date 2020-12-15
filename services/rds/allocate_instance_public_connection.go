@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateInstancePublicConnection invokes the rds.AllocateInstancePublicConnection API synchronously
-// api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
 func (client *Client) AllocateInstancePublicConnection(request *AllocateInstancePublicConnectionRequest) (response *AllocateInstancePublicConnectionResponse, err error) {
 	response = CreateAllocateInstancePublicConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateInstancePublicConnection(request *AllocateInstance
 }
 
 // AllocateInstancePublicConnectionWithChan invokes the rds.AllocateInstancePublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePublicConnectionWithChan(request *AllocateInstancePublicConnectionRequest) (<-chan *AllocateInstancePublicConnectionResponse, <-chan error) {
 	responseChan := make(chan *AllocateInstancePublicConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateInstancePublicConnectionWithChan(request *Allocate
 }
 
 // AllocateInstancePublicConnectionWithCallback invokes the rds.AllocateInstancePublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePublicConnectionWithCallback(request *AllocateInstancePublicConnectionRequest, callback func(response *AllocateInstancePublicConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SwitchDBInstanceVpc invokes the rds.SwitchDBInstanceVpc API synchronously
-// api document: https://help.aliyun.com/api/rds/switchdbinstancevpc.html
 func (client *Client) SwitchDBInstanceVpc(request *SwitchDBInstanceVpcRequest) (response *SwitchDBInstanceVpcResponse, err error) {
 	response = CreateSwitchDBInstanceVpcResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwitchDBInstanceVpc(request *SwitchDBInstanceVpcRequest) (
 }
 
 // SwitchDBInstanceVpcWithChan invokes the rds.SwitchDBInstanceVpc API asynchronously
-// api document: https://help.aliyun.com/api/rds/switchdbinstancevpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceVpcWithChan(request *SwitchDBInstanceVpcRequest) (<-chan *SwitchDBInstanceVpcResponse, <-chan error) {
 	responseChan := make(chan *SwitchDBInstanceVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwitchDBInstanceVpcWithChan(request *SwitchDBInstanceVpcRe
 }
 
 // SwitchDBInstanceVpcWithCallback invokes the rds.SwitchDBInstanceVpc API asynchronously
-// api document: https://help.aliyun.com/api/rds/switchdbinstancevpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceVpcWithCallback(request *SwitchDBInstanceVpcRequest, callback func(response *SwitchDBInstanceVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

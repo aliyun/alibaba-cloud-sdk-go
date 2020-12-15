@@ -21,7 +21,6 @@ import (
 )
 
 // EvaluateDedicatedHostInstanceResource invokes the rds.EvaluateDedicatedHostInstanceResource API synchronously
-// api document: https://help.aliyun.com/api/rds/evaluatededicatedhostinstanceresource.html
 func (client *Client) EvaluateDedicatedHostInstanceResource(request *EvaluateDedicatedHostInstanceResourceRequest) (response *EvaluateDedicatedHostInstanceResourceResponse, err error) {
 	response = CreateEvaluateDedicatedHostInstanceResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EvaluateDedicatedHostInstanceResource(request *EvaluateDed
 }
 
 // EvaluateDedicatedHostInstanceResourceWithChan invokes the rds.EvaluateDedicatedHostInstanceResource API asynchronously
-// api document: https://help.aliyun.com/api/rds/evaluatededicatedhostinstanceresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EvaluateDedicatedHostInstanceResourceWithChan(request *EvaluateDedicatedHostInstanceResourceRequest) (<-chan *EvaluateDedicatedHostInstanceResourceResponse, <-chan error) {
 	responseChan := make(chan *EvaluateDedicatedHostInstanceResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EvaluateDedicatedHostInstanceResourceWithChan(request *Eva
 }
 
 // EvaluateDedicatedHostInstanceResourceWithCallback invokes the rds.EvaluateDedicatedHostInstanceResource API asynchronously
-// api document: https://help.aliyun.com/api/rds/evaluatededicatedhostinstanceresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EvaluateDedicatedHostInstanceResourceWithCallback(request *EvaluateDedicatedHostInstanceResourceRequest, callback func(response *EvaluateDedicatedHostInstanceResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

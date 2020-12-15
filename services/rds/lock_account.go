@@ -21,7 +21,6 @@ import (
 )
 
 // LockAccount invokes the rds.LockAccount API synchronously
-// api document: https://help.aliyun.com/api/rds/lockaccount.html
 func (client *Client) LockAccount(request *LockAccountRequest) (response *LockAccountResponse, err error) {
 	response = CreateLockAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) LockAccount(request *LockAccountRequest) (response *LockAc
 }
 
 // LockAccountWithChan invokes the rds.LockAccount API asynchronously
-// api document: https://help.aliyun.com/api/rds/lockaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LockAccountWithChan(request *LockAccountRequest) (<-chan *LockAccountResponse, <-chan error) {
 	responseChan := make(chan *LockAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) LockAccountWithChan(request *LockAccountRequest) (<-chan *
 }
 
 // LockAccountWithCallback invokes the rds.LockAccount API asynchronously
-// api document: https://help.aliyun.com/api/rds/lockaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LockAccountWithCallback(request *LockAccountRequest, callback func(response *LockAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

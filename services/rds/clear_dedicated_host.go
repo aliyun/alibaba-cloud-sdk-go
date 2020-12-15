@@ -21,7 +21,6 @@ import (
 )
 
 // ClearDedicatedHost invokes the rds.ClearDedicatedHost API synchronously
-// api document: https://help.aliyun.com/api/rds/cleardedicatedhost.html
 func (client *Client) ClearDedicatedHost(request *ClearDedicatedHostRequest) (response *ClearDedicatedHostResponse, err error) {
 	response = CreateClearDedicatedHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ClearDedicatedHost(request *ClearDedicatedHostRequest) (re
 }
 
 // ClearDedicatedHostWithChan invokes the rds.ClearDedicatedHost API asynchronously
-// api document: https://help.aliyun.com/api/rds/cleardedicatedhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearDedicatedHostWithChan(request *ClearDedicatedHostRequest) (<-chan *ClearDedicatedHostResponse, <-chan error) {
 	responseChan := make(chan *ClearDedicatedHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ClearDedicatedHostWithChan(request *ClearDedicatedHostRequ
 }
 
 // ClearDedicatedHostWithCallback invokes the rds.ClearDedicatedHost API asynchronously
-// api document: https://help.aliyun.com/api/rds/cleardedicatedhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearDedicatedHostWithCallback(request *ClearDedicatedHostRequest, callback func(response *ClearDedicatedHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

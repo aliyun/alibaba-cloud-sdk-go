@@ -21,7 +21,6 @@ import (
 )
 
 // PurgeDBInstanceLog invokes the rds.PurgeDBInstanceLog API synchronously
-// api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
 func (client *Client) PurgeDBInstanceLog(request *PurgeDBInstanceLogRequest) (response *PurgeDBInstanceLogResponse, err error) {
 	response = CreatePurgeDBInstanceLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PurgeDBInstanceLog(request *PurgeDBInstanceLogRequest) (re
 }
 
 // PurgeDBInstanceLogWithChan invokes the rds.PurgeDBInstanceLog API asynchronously
-// api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PurgeDBInstanceLogWithChan(request *PurgeDBInstanceLogRequest) (<-chan *PurgeDBInstanceLogResponse, <-chan error) {
 	responseChan := make(chan *PurgeDBInstanceLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PurgeDBInstanceLogWithChan(request *PurgeDBInstanceLogRequ
 }
 
 // PurgeDBInstanceLogWithCallback invokes the rds.PurgeDBInstanceLog API asynchronously
-// api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PurgeDBInstanceLogWithCallback(request *PurgeDBInstanceLogRequest, callback func(response *PurgeDBInstanceLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

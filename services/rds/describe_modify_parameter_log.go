@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeModifyParameterLog invokes the rds.DescribeModifyParameterLog API synchronously
-// api document: https://help.aliyun.com/api/rds/describemodifyparameterlog.html
 func (client *Client) DescribeModifyParameterLog(request *DescribeModifyParameterLogRequest) (response *DescribeModifyParameterLogResponse, err error) {
 	response = CreateDescribeModifyParameterLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeModifyParameterLog(request *DescribeModifyParamete
 }
 
 // DescribeModifyParameterLogWithChan invokes the rds.DescribeModifyParameterLog API asynchronously
-// api document: https://help.aliyun.com/api/rds/describemodifyparameterlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeModifyParameterLogWithChan(request *DescribeModifyParameterLogRequest) (<-chan *DescribeModifyParameterLogResponse, <-chan error) {
 	responseChan := make(chan *DescribeModifyParameterLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeModifyParameterLogWithChan(request *DescribeModify
 }
 
 // DescribeModifyParameterLogWithCallback invokes the rds.DescribeModifyParameterLog API asynchronously
-// api document: https://help.aliyun.com/api/rds/describemodifyparameterlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeModifyParameterLogWithCallback(request *DescribeModifyParameterLogRequest, callback func(response *DescribeModifyParameterLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

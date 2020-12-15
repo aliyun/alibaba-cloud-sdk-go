@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBProxyEndpoint invokes the rds.DescribeDBProxyEndpoint API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbproxyendpoint.html
 func (client *Client) DescribeDBProxyEndpoint(request *DescribeDBProxyEndpointRequest) (response *DescribeDBProxyEndpointResponse, err error) {
 	response = CreateDescribeDBProxyEndpointResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBProxyEndpoint(request *DescribeDBProxyEndpointRe
 }
 
 // DescribeDBProxyEndpointWithChan invokes the rds.DescribeDBProxyEndpoint API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbproxyendpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBProxyEndpointWithChan(request *DescribeDBProxyEndpointRequest) (<-chan *DescribeDBProxyEndpointResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBProxyEndpointResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBProxyEndpointWithChan(request *DescribeDBProxyEn
 }
 
 // DescribeDBProxyEndpointWithCallback invokes the rds.DescribeDBProxyEndpoint API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbproxyendpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBProxyEndpointWithCallback(request *DescribeDBProxyEndpointRequest, callback func(response *DescribeDBProxyEndpointResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

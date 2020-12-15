@@ -17,6 +17,6 @@ package rds
 
 // ErrorLog is a nested struct in rds response
 type ErrorLog struct {
-	ErrorInfo  string `json:"ErrorInfo" xml:"ErrorInfo"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
+	ErrorInfo  string `json:"ErrorInfo" xml:"ErrorInfo"`
 }

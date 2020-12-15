@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAvailableClasses invokes the rds.DescribeAvailableClasses API synchronously
-// api document: https://help.aliyun.com/api/rds/describeavailableclasses.html
 func (client *Client) DescribeAvailableClasses(request *DescribeAvailableClassesRequest) (response *DescribeAvailableClassesResponse, err error) {
 	response = CreateDescribeAvailableClassesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAvailableClasses(request *DescribeAvailableClasses
 }
 
 // DescribeAvailableClassesWithChan invokes the rds.DescribeAvailableClasses API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeavailableclasses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableClassesWithChan(request *DescribeAvailableClassesRequest) (<-chan *DescribeAvailableClassesResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableClassesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAvailableClassesWithChan(request *DescribeAvailabl
 }
 
 // DescribeAvailableClassesWithCallback invokes the rds.DescribeAvailableClasses API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeavailableclasses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableClassesWithCallback(request *DescribeAvailableClassesRequest, callback func(response *DescribeAvailableClassesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,8 +78,10 @@ type DescribeAvailableClassesRequest struct {
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	InstanceChargeType    string           `position:"Query" name:"InstanceChargeType"`
+	DispenseMode          string           `position:"Query" name:"DispenseMode"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	CommodityCode         string           `position:"Query" name:"CommodityCode"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	EvaluateResource      requests.Boolean `position:"Query" name:"EvaluateResource"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`

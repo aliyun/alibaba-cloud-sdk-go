@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSlowLogRecords invokes the rds.DescribeSlowLogRecords API synchronously
-// api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
 func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequest) (response *DescribeSlowLogRecordsResponse, err error) {
 	response = CreateDescribeSlowLogRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequ
 }
 
 // DescribeSlowLogRecordsWithChan invokes the rds.DescribeSlowLogRecords API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRecordsRequest) (<-chan *DescribeSlowLogRecordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlowLogRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRec
 }
 
 // DescribeSlowLogRecordsWithCallback invokes the rds.DescribeSlowLogRecords API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLogRecordsRequest, callback func(response *DescribeSlowLogRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,13 +87,21 @@ type DescribeSlowLogRecordsRequest struct {
 // DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                        `json:"RequestId" xml:"RequestId"`
-	DBInstanceId     string                        `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine           string                        `json:"Engine" xml:"Engine"`
-	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
+	RequestId             string                        `json:"RequestId" xml:"RequestId"`
+	DBInstanceId          string                        `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine                string                        `json:"Engine" xml:"Engine"`
+	TotalRecordCount      int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber            int                           `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount       int                           `json:"PageRecordCount" xml:"PageRecordCount"`
+	SQLHash               string                        `json:"SQLHash" xml:"SQLHash"`
+	CPUTime               int64                         `json:"CPUTime" xml:"CPUTime"`
+	LogicalIORead         int64                         `json:"LogicalIORead" xml:"LogicalIORead"`
+	PhysicalIORead        int64                         `json:"PhysicalIORead" xml:"PhysicalIORead"`
+	WritesIOCount         int64                         `json:"WritesIOCount" xml:"WritesIOCount"`
+	RowsAffectedCount     int64                         `json:"RowsAffectedCount" xml:"RowsAffectedCount"`
+	LastRowsAffectedCount int64                         `json:"LastRowsAffectedCount" xml:"LastRowsAffectedCount"`
+	UserName              string                        `json:"UserName" xml:"UserName"`
+	Items                 ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeSlowLogRecordsRequest creates a request to invoke DescribeSlowLogRecords API

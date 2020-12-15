@@ -21,7 +21,6 @@ import (
 )
 
 // StartDBInstance invokes the rds.StartDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/startdbinstance.html
 func (client *Client) StartDBInstance(request *StartDBInstanceRequest) (response *StartDBInstanceResponse, err error) {
 	response = CreateStartDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartDBInstance(request *StartDBInstanceRequest) (response
 }
 
 // StartDBInstanceWithChan invokes the rds.StartDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/startdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartDBInstanceWithChan(request *StartDBInstanceRequest) (<-chan *StartDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *StartDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartDBInstanceWithChan(request *StartDBInstanceRequest) (
 }
 
 // StartDBInstanceWithCallback invokes the rds.StartDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/startdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartDBInstanceWithCallback(request *StartDBInstanceRequest, callback func(response *StartDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

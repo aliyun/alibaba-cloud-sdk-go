@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSQLLogReportList invokes the rds.DescribeSQLLogReportList API synchronously
-// api document: https://help.aliyun.com/api/rds/describesqllogreportlist.html
 func (client *Client) DescribeSQLLogReportList(request *DescribeSQLLogReportListRequest) (response *DescribeSQLLogReportListResponse, err error) {
 	response = CreateDescribeSQLLogReportListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSQLLogReportList(request *DescribeSQLLogReportList
 }
 
 // DescribeSQLLogReportListWithChan invokes the rds.DescribeSQLLogReportList API asynchronously
-// api document: https://help.aliyun.com/api/rds/describesqllogreportlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLLogReportListWithChan(request *DescribeSQLLogReportListRequest) (<-chan *DescribeSQLLogReportListResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLLogReportListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSQLLogReportListWithChan(request *DescribeSQLLogRe
 }
 
 // DescribeSQLLogReportListWithCallback invokes the rds.DescribeSQLLogReportList API asynchronously
-// api document: https://help.aliyun.com/api/rds/describesqllogreportlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLLogReportListWithCallback(request *DescribeSQLLogReportListRequest, callback func(response *DescribeSQLLogReportListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

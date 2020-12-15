@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSQLReports invokes the rds.DescribeSQLReports API synchronously
-// api document: https://help.aliyun.com/api/rds/describesqlreports.html
 func (client *Client) DescribeSQLReports(request *DescribeSQLReportsRequest) (response *DescribeSQLReportsResponse, err error) {
 	response = CreateDescribeSQLReportsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSQLReports(request *DescribeSQLReportsRequest) (re
 }
 
 // DescribeSQLReportsWithChan invokes the rds.DescribeSQLReports API asynchronously
-// api document: https://help.aliyun.com/api/rds/describesqlreports.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLReportsWithChan(request *DescribeSQLReportsRequest) (<-chan *DescribeSQLReportsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLReportsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSQLReportsWithChan(request *DescribeSQLReportsRequ
 }
 
 // DescribeSQLReportsWithCallback invokes the rds.DescribeSQLReports API asynchronously
-// api document: https://help.aliyun.com/api/rds/describesqlreports.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLReportsWithCallback(request *DescribeSQLReportsRequest, callback func(response *DescribeSQLReportsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

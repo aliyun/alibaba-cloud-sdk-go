@@ -21,7 +21,6 @@ import (
 )
 
 // DescibeImportsFromDatabase invokes the rds.DescibeImportsFromDatabase API synchronously
-// api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
 func (client *Client) DescibeImportsFromDatabase(request *DescibeImportsFromDatabaseRequest) (response *DescibeImportsFromDatabaseResponse, err error) {
 	response = CreateDescibeImportsFromDatabaseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescibeImportsFromDatabase(request *DescibeImportsFromData
 }
 
 // DescibeImportsFromDatabaseWithChan invokes the rds.DescibeImportsFromDatabase API asynchronously
-// api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescibeImportsFromDatabaseWithChan(request *DescibeImportsFromDatabaseRequest) (<-chan *DescibeImportsFromDatabaseResponse, <-chan error) {
 	responseChan := make(chan *DescibeImportsFromDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescibeImportsFromDatabaseWithChan(request *DescibeImports
 }
 
 // DescibeImportsFromDatabaseWithCallback invokes the rds.DescibeImportsFromDatabase API asynchronously
-// api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescibeImportsFromDatabaseWithCallback(request *DescibeImportsFromDatabaseRequest, callback func(response *DescibeImportsFromDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DropDedicatedHostUser invokes the rds.DropDedicatedHostUser API synchronously
-// api document: https://help.aliyun.com/api/rds/dropdedicatedhostuser.html
 func (client *Client) DropDedicatedHostUser(request *DropDedicatedHostUserRequest) (response *DropDedicatedHostUserResponse, err error) {
 	response = CreateDropDedicatedHostUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DropDedicatedHostUser(request *DropDedicatedHostUserReques
 }
 
 // DropDedicatedHostUserWithChan invokes the rds.DropDedicatedHostUser API asynchronously
-// api document: https://help.aliyun.com/api/rds/dropdedicatedhostuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DropDedicatedHostUserWithChan(request *DropDedicatedHostUserRequest) (<-chan *DropDedicatedHostUserResponse, <-chan error) {
 	responseChan := make(chan *DropDedicatedHostUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DropDedicatedHostUserWithChan(request *DropDedicatedHostUs
 }
 
 // DropDedicatedHostUserWithCallback invokes the rds.DropDedicatedHostUser API asynchronously
-// api document: https://help.aliyun.com/api/rds/dropdedicatedhostuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DropDedicatedHostUserWithCallback(request *DropDedicatedHostUserRequest, callback func(response *DropDedicatedHostUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCollationTimeZone invokes the rds.ModifyCollationTimeZone API synchronously
-// api document: https://help.aliyun.com/api/rds/modifycollationtimezone.html
 func (client *Client) ModifyCollationTimeZone(request *ModifyCollationTimeZoneRequest) (response *ModifyCollationTimeZoneResponse, err error) {
 	response = CreateModifyCollationTimeZoneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCollationTimeZone(request *ModifyCollationTimeZoneRe
 }
 
 // ModifyCollationTimeZoneWithChan invokes the rds.ModifyCollationTimeZone API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifycollationtimezone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCollationTimeZoneWithChan(request *ModifyCollationTimeZoneRequest) (<-chan *ModifyCollationTimeZoneResponse, <-chan error) {
 	responseChan := make(chan *ModifyCollationTimeZoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCollationTimeZoneWithChan(request *ModifyCollationTi
 }
 
 // ModifyCollationTimeZoneWithCallback invokes the rds.ModifyCollationTimeZone API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifycollationtimezone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCollationTimeZoneWithCallback(request *ModifyCollationTimeZoneRequest, callback func(response *ModifyCollationTimeZoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

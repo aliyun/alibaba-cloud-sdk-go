@@ -21,7 +21,6 @@ import (
 )
 
 // CreateHostAccount invokes the rds.CreateHostAccount API synchronously
-// api document: https://help.aliyun.com/api/rds/createhostaccount.html
 func (client *Client) CreateHostAccount(request *CreateHostAccountRequest) (response *CreateHostAccountResponse, err error) {
 	response = CreateCreateHostAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateHostAccount(request *CreateHostAccountRequest) (resp
 }
 
 // CreateHostAccountWithChan invokes the rds.CreateHostAccount API asynchronously
-// api document: https://help.aliyun.com/api/rds/createhostaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHostAccountWithChan(request *CreateHostAccountRequest) (<-chan *CreateHostAccountResponse, <-chan error) {
 	responseChan := make(chan *CreateHostAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateHostAccountWithChan(request *CreateHostAccountReques
 }
 
 // CreateHostAccountWithCallback invokes the rds.CreateHostAccount API asynchronously
-// api document: https://help.aliyun.com/api/rds/createhostaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHostAccountWithCallback(request *CreateHostAccountRequest, callback func(response *CreateHostAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstancesForClone invokes the rds.DescribeDBInstancesForClone API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesforclone.html
 func (client *Client) DescribeDBInstancesForClone(request *DescribeDBInstancesForCloneRequest) (response *DescribeDBInstancesForCloneResponse, err error) {
 	response = CreateDescribeDBInstancesForCloneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstancesForClone(request *DescribeDBInstancesFo
 }
 
 // DescribeDBInstancesForCloneWithChan invokes the rds.DescribeDBInstancesForClone API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesforclone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesForCloneWithChan(request *DescribeDBInstancesForCloneRequest) (<-chan *DescribeDBInstancesForCloneResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancesForCloneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstancesForCloneWithChan(request *DescribeDBIns
 }
 
 // DescribeDBInstancesForCloneWithCallback invokes the rds.DescribeDBInstancesForClone API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesforclone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesForCloneWithCallback(request *DescribeDBInstancesForCloneRequest, callback func(response *DescribeDBInstancesForCloneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDiagnosticReportList invokes the rds.DescribeDiagnosticReportList API synchronously
-// api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
 func (client *Client) DescribeDiagnosticReportList(request *DescribeDiagnosticReportListRequest) (response *DescribeDiagnosticReportListResponse, err error) {
 	response = CreateDescribeDiagnosticReportListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDiagnosticReportList(request *DescribeDiagnosticRe
 }
 
 // DescribeDiagnosticReportListWithChan invokes the rds.DescribeDiagnosticReportList API asynchronously
-// api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiagnosticReportListWithChan(request *DescribeDiagnosticReportListRequest) (<-chan *DescribeDiagnosticReportListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDiagnosticReportListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDiagnosticReportListWithChan(request *DescribeDiag
 }
 
 // DescribeDiagnosticReportListWithCallback invokes the rds.DescribeDiagnosticReportList API asynchronously
-// api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiagnosticReportListWithCallback(request *DescribeDiagnosticReportListRequest, callback func(response *DescribeDiagnosticReportListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

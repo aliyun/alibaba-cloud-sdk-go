@@ -21,7 +21,6 @@ import (
 )
 
 // CloneParameterGroup invokes the rds.CloneParameterGroup API synchronously
-// api document: https://help.aliyun.com/api/rds/cloneparametergroup.html
 func (client *Client) CloneParameterGroup(request *CloneParameterGroupRequest) (response *CloneParameterGroupResponse, err error) {
 	response = CreateCloneParameterGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloneParameterGroup(request *CloneParameterGroupRequest) (
 }
 
 // CloneParameterGroupWithChan invokes the rds.CloneParameterGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/cloneparametergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloneParameterGroupWithChan(request *CloneParameterGroupRequest) (<-chan *CloneParameterGroupResponse, <-chan error) {
 	responseChan := make(chan *CloneParameterGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloneParameterGroupWithChan(request *CloneParameterGroupRe
 }
 
 // CloneParameterGroupWithCallback invokes the rds.CloneParameterGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/cloneparametergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloneParameterGroupWithCallback(request *CloneParameterGroupRequest, callback func(response *CloneParameterGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

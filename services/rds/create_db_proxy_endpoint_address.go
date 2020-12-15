@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDBProxyEndpointAddress invokes the rds.CreateDBProxyEndpointAddress API synchronously
-// api document: https://help.aliyun.com/api/rds/createdbproxyendpointaddress.html
 func (client *Client) CreateDBProxyEndpointAddress(request *CreateDBProxyEndpointAddressRequest) (response *CreateDBProxyEndpointAddressResponse, err error) {
 	response = CreateCreateDBProxyEndpointAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDBProxyEndpointAddress(request *CreateDBProxyEndpoin
 }
 
 // CreateDBProxyEndpointAddressWithChan invokes the rds.CreateDBProxyEndpointAddress API asynchronously
-// api document: https://help.aliyun.com/api/rds/createdbproxyendpointaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBProxyEndpointAddressWithChan(request *CreateDBProxyEndpointAddressRequest) (<-chan *CreateDBProxyEndpointAddressResponse, <-chan error) {
 	responseChan := make(chan *CreateDBProxyEndpointAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDBProxyEndpointAddressWithChan(request *CreateDBProx
 }
 
 // CreateDBProxyEndpointAddressWithCallback invokes the rds.CreateDBProxyEndpointAddress API asynchronously
-// api document: https://help.aliyun.com/api/rds/createdbproxyendpointaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBProxyEndpointAddressWithCallback(request *CreateDBProxyEndpointAddressRequest, callback func(response *CreateDBProxyEndpointAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

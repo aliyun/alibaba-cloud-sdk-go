@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstances invokes the rds.DescribeDBInstances API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstances.html
 func (client *Client) DescribeDBInstances(request *DescribeDBInstancesRequest) (response *DescribeDBInstancesResponse, err error) {
 	response = CreateDescribeDBInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstances(request *DescribeDBInstancesRequest) (
 }
 
 // DescribeDBInstancesWithChan invokes the rds.DescribeDBInstances API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesWithChan(request *DescribeDBInstancesRequest) (<-chan *DescribeDBInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstancesWithChan(request *DescribeDBInstancesRe
 }
 
 // DescribeDBInstancesWithCallback invokes the rds.DescribeDBInstances API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstancesRequest, callback func(response *DescribeDBInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type DescribeDBInstancesRequest struct {
 	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	NeedVpcName          requests.Boolean `position:"Query" name:"NeedVpcName"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.value"`

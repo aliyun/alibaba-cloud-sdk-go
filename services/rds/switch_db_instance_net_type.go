@@ -21,7 +21,6 @@ import (
 )
 
 // SwitchDBInstanceNetType invokes the rds.SwitchDBInstanceNetType API synchronously
-// api document: https://help.aliyun.com/api/rds/switchdbinstancenettype.html
 func (client *Client) SwitchDBInstanceNetType(request *SwitchDBInstanceNetTypeRequest) (response *SwitchDBInstanceNetTypeResponse, err error) {
 	response = CreateSwitchDBInstanceNetTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwitchDBInstanceNetType(request *SwitchDBInstanceNetTypeRe
 }
 
 // SwitchDBInstanceNetTypeWithChan invokes the rds.SwitchDBInstanceNetType API asynchronously
-// api document: https://help.aliyun.com/api/rds/switchdbinstancenettype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceNetTypeWithChan(request *SwitchDBInstanceNetTypeRequest) (<-chan *SwitchDBInstanceNetTypeResponse, <-chan error) {
 	responseChan := make(chan *SwitchDBInstanceNetTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwitchDBInstanceNetTypeWithChan(request *SwitchDBInstanceN
 }
 
 // SwitchDBInstanceNetTypeWithCallback invokes the rds.SwitchDBInstanceNetType API asynchronously
-// api document: https://help.aliyun.com/api/rds/switchdbinstancenettype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceNetTypeWithCallback(request *SwitchDBInstanceNetTypeRequest, callback func(response *SwitchDBInstanceNetTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

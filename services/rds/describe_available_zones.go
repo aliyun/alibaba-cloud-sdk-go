@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAvailableZones invokes the rds.DescribeAvailableZones API synchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablezones.html
 func (client *Client) DescribeAvailableZones(request *DescribeAvailableZonesRequest) (response *DescribeAvailableZonesResponse, err error) {
 	response = CreateDescribeAvailableZonesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAvailableZones(request *DescribeAvailableZonesRequ
 }
 
 // DescribeAvailableZonesWithChan invokes the rds.DescribeAvailableZones API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablezones.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableZonesWithChan(request *DescribeAvailableZonesRequest) (<-chan *DescribeAvailableZonesResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableZonesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAvailableZonesWithChan(request *DescribeAvailableZ
 }
 
 // DescribeAvailableZonesWithCallback invokes the rds.DescribeAvailableZones API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablezones.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableZonesWithCallback(request *DescribeAvailableZonesRequest, callback func(response *DescribeAvailableZonesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,7 +75,9 @@ type DescribeAvailableZonesRequest struct {
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	Engine               string           `position:"Query" name:"Engine"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	DispenseMode         string           `position:"Query" name:"DispenseMode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CommodityCode        string           `position:"Query" name:"CommodityCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	EvaluateResource     requests.Boolean `position:"Query" name:"EvaluateResource"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`

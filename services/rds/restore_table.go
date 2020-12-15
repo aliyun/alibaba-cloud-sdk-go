@@ -21,7 +21,6 @@ import (
 )
 
 // RestoreTable invokes the rds.RestoreTable API synchronously
-// api document: https://help.aliyun.com/api/rds/restoretable.html
 func (client *Client) RestoreTable(request *RestoreTableRequest) (response *RestoreTableResponse, err error) {
 	response = CreateRestoreTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestoreTable(request *RestoreTableRequest) (response *Rest
 }
 
 // RestoreTableWithChan invokes the rds.RestoreTable API asynchronously
-// api document: https://help.aliyun.com/api/rds/restoretable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreTableWithChan(request *RestoreTableRequest) (<-chan *RestoreTableResponse, <-chan error) {
 	responseChan := make(chan *RestoreTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestoreTableWithChan(request *RestoreTableRequest) (<-chan
 }
 
 // RestoreTableWithCallback invokes the rds.RestoreTable API asynchronously
-// api document: https://help.aliyun.com/api/rds/restoretable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreTableWithCallback(request *RestoreTableRequest, callback func(response *RestoreTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

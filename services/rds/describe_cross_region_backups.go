@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCrossRegionBackups invokes the rds.DescribeCrossRegionBackups API synchronously
-// api document: https://help.aliyun.com/api/rds/describecrossregionbackups.html
 func (client *Client) DescribeCrossRegionBackups(request *DescribeCrossRegionBackupsRequest) (response *DescribeCrossRegionBackupsResponse, err error) {
 	response = CreateDescribeCrossRegionBackupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCrossRegionBackups(request *DescribeCrossRegionBac
 }
 
 // DescribeCrossRegionBackupsWithChan invokes the rds.DescribeCrossRegionBackups API asynchronously
-// api document: https://help.aliyun.com/api/rds/describecrossregionbackups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCrossRegionBackupsWithChan(request *DescribeCrossRegionBackupsRequest) (<-chan *DescribeCrossRegionBackupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCrossRegionBackupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCrossRegionBackupsWithChan(request *DescribeCrossR
 }
 
 // DescribeCrossRegionBackupsWithCallback invokes the rds.DescribeCrossRegionBackups API asynchronously
-// api document: https://help.aliyun.com/api/rds/describecrossregionbackups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCrossRegionBackupsWithCallback(request *DescribeCrossRegionBackupsRequest, callback func(response *DescribeCrossRegionBackupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

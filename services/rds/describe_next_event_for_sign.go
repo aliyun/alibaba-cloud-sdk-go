@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNextEventForSign invokes the rds.DescribeNextEventForSign API synchronously
-// api document: https://help.aliyun.com/api/rds/describenexteventforsign.html
 func (client *Client) DescribeNextEventForSign(request *DescribeNextEventForSignRequest) (response *DescribeNextEventForSignResponse, err error) {
 	response = CreateDescribeNextEventForSignResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNextEventForSign(request *DescribeNextEventForSign
 }
 
 // DescribeNextEventForSignWithChan invokes the rds.DescribeNextEventForSign API asynchronously
-// api document: https://help.aliyun.com/api/rds/describenexteventforsign.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNextEventForSignWithChan(request *DescribeNextEventForSignRequest) (<-chan *DescribeNextEventForSignResponse, <-chan error) {
 	responseChan := make(chan *DescribeNextEventForSignResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNextEventForSignWithChan(request *DescribeNextEven
 }
 
 // DescribeNextEventForSignWithCallback invokes the rds.DescribeNextEventForSign API asynchronously
-// api document: https://help.aliyun.com/api/rds/describenexteventforsign.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNextEventForSignWithCallback(request *DescribeNextEventForSignRequest, callback func(response *DescribeNextEventForSignResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

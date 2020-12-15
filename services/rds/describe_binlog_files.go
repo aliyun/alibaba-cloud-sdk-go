@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBinlogFiles invokes the rds.DescribeBinlogFiles API synchronously
-// api document: https://help.aliyun.com/api/rds/describebinlogfiles.html
 func (client *Client) DescribeBinlogFiles(request *DescribeBinlogFilesRequest) (response *DescribeBinlogFilesResponse, err error) {
 	response = CreateDescribeBinlogFilesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBinlogFiles(request *DescribeBinlogFilesRequest) (
 }
 
 // DescribeBinlogFilesWithChan invokes the rds.DescribeBinlogFiles API asynchronously
-// api document: https://help.aliyun.com/api/rds/describebinlogfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBinlogFilesWithChan(request *DescribeBinlogFilesRequest) (<-chan *DescribeBinlogFilesResponse, <-chan error) {
 	responseChan := make(chan *DescribeBinlogFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBinlogFilesWithChan(request *DescribeBinlogFilesRe
 }
 
 // DescribeBinlogFilesWithCallback invokes the rds.DescribeBinlogFiles API asynchronously
-// api document: https://help.aliyun.com/api/rds/describebinlogfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBinlogFilesWithCallback(request *DescribeBinlogFilesRequest, callback func(response *DescribeBinlogFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

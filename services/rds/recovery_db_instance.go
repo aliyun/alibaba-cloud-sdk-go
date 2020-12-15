@@ -21,7 +21,6 @@ import (
 )
 
 // RecoveryDBInstance invokes the rds.RecoveryDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/recoverydbinstance.html
 func (client *Client) RecoveryDBInstance(request *RecoveryDBInstanceRequest) (response *RecoveryDBInstanceResponse, err error) {
 	response = CreateRecoveryDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecoveryDBInstance(request *RecoveryDBInstanceRequest) (re
 }
 
 // RecoveryDBInstanceWithChan invokes the rds.RecoveryDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/recoverydbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoveryDBInstanceWithChan(request *RecoveryDBInstanceRequest) (<-chan *RecoveryDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *RecoveryDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecoveryDBInstanceWithChan(request *RecoveryDBInstanceRequ
 }
 
 // RecoveryDBInstanceWithCallback invokes the rds.RecoveryDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/recoverydbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoveryDBInstanceWithCallback(request *RecoveryDBInstanceRequest, callback func(response *RecoveryDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDedicatedHostGroups invokes the rds.DescribeDedicatedHostGroups API synchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostgroups.html
 func (client *Client) DescribeDedicatedHostGroups(request *DescribeDedicatedHostGroupsRequest) (response *DescribeDedicatedHostGroupsResponse, err error) {
 	response = CreateDescribeDedicatedHostGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDedicatedHostGroups(request *DescribeDedicatedHost
 }
 
 // DescribeDedicatedHostGroupsWithChan invokes the rds.DescribeDedicatedHostGroups API asynchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostGroupsWithChan(request *DescribeDedicatedHostGroupsRequest) (<-chan *DescribeDedicatedHostGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDedicatedHostGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDedicatedHostGroupsWithChan(request *DescribeDedic
 }
 
 // DescribeDedicatedHostGroupsWithCallback invokes the rds.DescribeDedicatedHostGroups API asynchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostGroupsWithCallback(request *DescribeDedicatedHostGroupsRequest, callback func(response *DescribeDedicatedHostGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

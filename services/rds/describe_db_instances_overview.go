@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstancesOverview invokes the rds.DescribeDBInstancesOverview API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesoverview.html
 func (client *Client) DescribeDBInstancesOverview(request *DescribeDBInstancesOverviewRequest) (response *DescribeDBInstancesOverviewResponse, err error) {
 	response = CreateDescribeDBInstancesOverviewResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstancesOverview(request *DescribeDBInstancesOv
 }
 
 // DescribeDBInstancesOverviewWithChan invokes the rds.DescribeDBInstancesOverview API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesoverview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesOverviewWithChan(request *DescribeDBInstancesOverviewRequest) (<-chan *DescribeDBInstancesOverviewResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancesOverviewResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstancesOverviewWithChan(request *DescribeDBIns
 }
 
 // DescribeDBInstancesOverviewWithCallback invokes the rds.DescribeDBInstancesOverview API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesoverview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesOverviewWithCallback(request *DescribeDBInstancesOverviewRequest, callback func(response *DescribeDBInstancesOverviewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeDBInstancesOverviewRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Expired              string           `position:"Query" name:"Expired"`
 	Engine               string           `position:"Query" name:"Engine"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`

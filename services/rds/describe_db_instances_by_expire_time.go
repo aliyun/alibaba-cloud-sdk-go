@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstancesByExpireTime invokes the rds.DescribeDBInstancesByExpireTime API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesbyexpiretime.html
 func (client *Client) DescribeDBInstancesByExpireTime(request *DescribeDBInstancesByExpireTimeRequest) (response *DescribeDBInstancesByExpireTimeResponse, err error) {
 	response = CreateDescribeDBInstancesByExpireTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstancesByExpireTime(request *DescribeDBInstanc
 }
 
 // DescribeDBInstancesByExpireTimeWithChan invokes the rds.DescribeDBInstancesByExpireTime API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesbyexpiretime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesByExpireTimeWithChan(request *DescribeDBInstancesByExpireTimeRequest) (<-chan *DescribeDBInstancesByExpireTimeResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancesByExpireTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstancesByExpireTimeWithChan(request *DescribeD
 }
 
 // DescribeDBInstancesByExpireTimeWithCallback invokes the rds.DescribeDBInstancesByExpireTime API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesbyexpiretime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesByExpireTimeWithCallback(request *DescribeDBInstancesByExpireTimeRequest, callback func(response *DescribeDBInstancesByExpireTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CalculateDBInstanceWeight invokes the rds.CalculateDBInstanceWeight API synchronously
-// api document: https://help.aliyun.com/api/rds/calculatedbinstanceweight.html
 func (client *Client) CalculateDBInstanceWeight(request *CalculateDBInstanceWeightRequest) (response *CalculateDBInstanceWeightResponse, err error) {
 	response = CreateCalculateDBInstanceWeightResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CalculateDBInstanceWeight(request *CalculateDBInstanceWeig
 }
 
 // CalculateDBInstanceWeightWithChan invokes the rds.CalculateDBInstanceWeight API asynchronously
-// api document: https://help.aliyun.com/api/rds/calculatedbinstanceweight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CalculateDBInstanceWeightWithChan(request *CalculateDBInstanceWeightRequest) (<-chan *CalculateDBInstanceWeightResponse, <-chan error) {
 	responseChan := make(chan *CalculateDBInstanceWeightResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CalculateDBInstanceWeightWithChan(request *CalculateDBInst
 }
 
 // CalculateDBInstanceWeightWithCallback invokes the rds.CalculateDBInstanceWeight API asynchronously
-// api document: https://help.aliyun.com/api/rds/calculatedbinstanceweight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CalculateDBInstanceWeightWithCallback(request *CalculateDBInstanceWeightRequest, callback func(response *CalculateDBInstanceWeightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

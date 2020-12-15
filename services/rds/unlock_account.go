@@ -21,7 +21,6 @@ import (
 )
 
 // UnlockAccount invokes the rds.UnlockAccount API synchronously
-// api document: https://help.aliyun.com/api/rds/unlockaccount.html
 func (client *Client) UnlockAccount(request *UnlockAccountRequest) (response *UnlockAccountResponse, err error) {
 	response = CreateUnlockAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnlockAccount(request *UnlockAccountRequest) (response *Un
 }
 
 // UnlockAccountWithChan invokes the rds.UnlockAccount API asynchronously
-// api document: https://help.aliyun.com/api/rds/unlockaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnlockAccountWithChan(request *UnlockAccountRequest) (<-chan *UnlockAccountResponse, <-chan error) {
 	responseChan := make(chan *UnlockAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnlockAccountWithChan(request *UnlockAccountRequest) (<-ch
 }
 
 // UnlockAccountWithCallback invokes the rds.UnlockAccount API asynchronously
-// api document: https://help.aliyun.com/api/rds/unlockaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnlockAccountWithCallback(request *UnlockAccountRequest, callback func(response *UnlockAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

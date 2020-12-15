@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseReadWriteSplittingConnection invokes the rds.ReleaseReadWriteSplittingConnection API synchronously
-// api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
 func (client *Client) ReleaseReadWriteSplittingConnection(request *ReleaseReadWriteSplittingConnectionRequest) (response *ReleaseReadWriteSplittingConnectionResponse, err error) {
 	response = CreateReleaseReadWriteSplittingConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseReadWriteSplittingConnection(request *ReleaseReadWr
 }
 
 // ReleaseReadWriteSplittingConnectionWithChan invokes the rds.ReleaseReadWriteSplittingConnection API asynchronously
-// api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseReadWriteSplittingConnectionWithChan(request *ReleaseReadWriteSplittingConnectionRequest) (<-chan *ReleaseReadWriteSplittingConnectionResponse, <-chan error) {
 	responseChan := make(chan *ReleaseReadWriteSplittingConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseReadWriteSplittingConnectionWithChan(request *Relea
 }
 
 // ReleaseReadWriteSplittingConnectionWithCallback invokes the rds.ReleaseReadWriteSplittingConnection API asynchronously
-// api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseReadWriteSplittingConnectionWithCallback(request *ReleaseReadWriteSplittingConnectionRequest, callback func(response *ReleaseReadWriteSplittingConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

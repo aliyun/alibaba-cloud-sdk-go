@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAvailableCrossRegion invokes the rds.DescribeAvailableCrossRegion API synchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablecrossregion.html
 func (client *Client) DescribeAvailableCrossRegion(request *DescribeAvailableCrossRegionRequest) (response *DescribeAvailableCrossRegionResponse, err error) {
 	response = CreateDescribeAvailableCrossRegionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAvailableCrossRegion(request *DescribeAvailableCro
 }
 
 // DescribeAvailableCrossRegionWithChan invokes the rds.DescribeAvailableCrossRegion API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablecrossregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableCrossRegionWithChan(request *DescribeAvailableCrossRegionRequest) (<-chan *DescribeAvailableCrossRegionResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableCrossRegionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAvailableCrossRegionWithChan(request *DescribeAvai
 }
 
 // DescribeAvailableCrossRegionWithCallback invokes the rds.DescribeAvailableCrossRegion API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeavailablecrossregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableCrossRegionWithCallback(request *DescribeAvailableCrossRegionRequest, callback func(response *DescribeAvailableCrossRegionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

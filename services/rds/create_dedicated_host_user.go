@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDedicatedHostUser invokes the rds.CreateDedicatedHostUser API synchronously
-// api document: https://help.aliyun.com/api/rds/creatededicatedhostuser.html
 func (client *Client) CreateDedicatedHostUser(request *CreateDedicatedHostUserRequest) (response *CreateDedicatedHostUserResponse, err error) {
 	response = CreateCreateDedicatedHostUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDedicatedHostUser(request *CreateDedicatedHostUserRe
 }
 
 // CreateDedicatedHostUserWithChan invokes the rds.CreateDedicatedHostUser API asynchronously
-// api document: https://help.aliyun.com/api/rds/creatededicatedhostuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDedicatedHostUserWithChan(request *CreateDedicatedHostUserRequest) (<-chan *CreateDedicatedHostUserResponse, <-chan error) {
 	responseChan := make(chan *CreateDedicatedHostUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDedicatedHostUserWithChan(request *CreateDedicatedHo
 }
 
 // CreateDedicatedHostUserWithCallback invokes the rds.CreateDedicatedHostUser API asynchronously
-// api document: https://help.aliyun.com/api/rds/creatededicatedhostuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDedicatedHostUserWithCallback(request *CreateDedicatedHostUserRequest, callback func(response *CreateDedicatedHostUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

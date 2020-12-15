@@ -17,13 +17,22 @@ package rds
 
 // SQLSlowRecord is a nested struct in rds response
 type SQLSlowRecord struct {
-	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
-	DBName             string `json:"DBName" xml:"DBName"`
-	SQLText            string `json:"SQLText" xml:"SQLText"`
-	QueryTimes         int64  `json:"QueryTimes" xml:"QueryTimes"`
-	LockTimes          int64  `json:"LockTimes" xml:"LockTimes"`
-	ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
-	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
-	QueryTimeMS        int64  `json:"QueryTimeMS" xml:"QueryTimeMS"`
+	HostAddress           string `json:"HostAddress" xml:"HostAddress"`
+	DBName                string `json:"DBName" xml:"DBName"`
+	SQLText               string `json:"SQLText" xml:"SQLText"`
+	QueryTimes            int64  `json:"QueryTimes" xml:"QueryTimes"`
+	LockTimes             int64  `json:"LockTimes" xml:"LockTimes"`
+	ParseRowCounts        int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
+	ReturnRowCounts       int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	ExecutionStartTime    string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
+	QueryTimeMS           int64  `json:"QueryTimeMS" xml:"QueryTimeMS"`
+	CpuTime               int64  `json:"CpuTime" xml:"CpuTime"`
+	LogicalIORead         int64  `json:"LogicalIORead" xml:"LogicalIORead"`
+	PhysicalIORead        int64  `json:"PhysicalIORead" xml:"PhysicalIORead"`
+	WriteIOCount          int64  `json:"WriteIOCount" xml:"WriteIOCount"`
+	RowsAffectedCount     int64  `json:"RowsAffectedCount" xml:"RowsAffectedCount"`
+	LastRowsAffectedCount int64  `json:"LastRowsAffectedCount" xml:"LastRowsAffectedCount"`
+	UserName              string `json:"UserName" xml:"UserName"`
+	ApplicationName       string `json:"ApplicationName" xml:"ApplicationName"`
+	ClientHostName        string `json:"ClientHostName" xml:"ClientHostName"`
 }

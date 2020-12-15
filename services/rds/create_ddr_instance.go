@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDdrInstance invokes the rds.CreateDdrInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/createddrinstance.html
 func (client *Client) CreateDdrInstance(request *CreateDdrInstanceRequest) (response *CreateDdrInstanceResponse, err error) {
 	response = CreateCreateDdrInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDdrInstance(request *CreateDdrInstanceRequest) (resp
 }
 
 // CreateDdrInstanceWithChan invokes the rds.CreateDdrInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/createddrinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDdrInstanceWithChan(request *CreateDdrInstanceRequest) (<-chan *CreateDdrInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateDdrInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDdrInstanceWithChan(request *CreateDdrInstanceReques
 }
 
 // CreateDdrInstanceWithCallback invokes the rds.CreateDdrInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/createddrinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDdrInstanceWithCallback(request *CreateDdrInstanceRequest, callback func(response *CreateDdrInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeErrorLogs invokes the rds.DescribeErrorLogs API synchronously
-// api document: https://help.aliyun.com/api/rds/describeerrorlogs.html
 func (client *Client) DescribeErrorLogs(request *DescribeErrorLogsRequest) (response *DescribeErrorLogsResponse, err error) {
 	response = CreateDescribeErrorLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeErrorLogs(request *DescribeErrorLogsRequest) (resp
 }
 
 // DescribeErrorLogsWithChan invokes the rds.DescribeErrorLogs API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeerrorlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeErrorLogsWithChan(request *DescribeErrorLogsRequest) (<-chan *DescribeErrorLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeErrorLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeErrorLogsWithChan(request *DescribeErrorLogsReques
 }
 
 // DescribeErrorLogsWithCallback invokes the rds.DescribeErrorLogs API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeerrorlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeErrorLogsWithCallback(request *DescribeErrorLogsRequest, callback func(response *DescribeErrorLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,10 +85,10 @@ type DescribeErrorLogsRequest struct {
 // DescribeErrorLogsResponse is the response struct for api DescribeErrorLogs
 type DescribeErrorLogsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                   `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                      `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                      `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                      `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                   `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int                      `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeErrorLogs `json:"Items" xml:"Items"`
 }
 

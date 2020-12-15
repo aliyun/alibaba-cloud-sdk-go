@@ -21,7 +21,6 @@ import (
 )
 
 // CheckRecoveryConditions invokes the rds.CheckRecoveryConditions API synchronously
-// api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
 func (client *Client) CheckRecoveryConditions(request *CheckRecoveryConditionsRequest) (response *CheckRecoveryConditionsResponse, err error) {
 	response = CreateCheckRecoveryConditionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckRecoveryConditions(request *CheckRecoveryConditionsRe
 }
 
 // CheckRecoveryConditionsWithChan invokes the rds.CheckRecoveryConditions API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckRecoveryConditionsWithChan(request *CheckRecoveryConditionsRequest) (<-chan *CheckRecoveryConditionsResponse, <-chan error) {
 	responseChan := make(chan *CheckRecoveryConditionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckRecoveryConditionsWithChan(request *CheckRecoveryCond
 }
 
 // CheckRecoveryConditionsWithCallback invokes the rds.CheckRecoveryConditions API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckRecoveryConditionsWithCallback(request *CheckRecoveryConditionsRequest, callback func(response *CheckRecoveryConditionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

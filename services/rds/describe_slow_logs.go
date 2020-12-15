@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSlowLogs invokes the rds.DescribeSlowLogs API synchronously
-// api document: https://help.aliyun.com/api/rds/describeslowlogs.html
 func (client *Client) DescribeSlowLogs(request *DescribeSlowLogsRequest) (response *DescribeSlowLogsResponse, err error) {
 	response = CreateDescribeSlowLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSlowLogs(request *DescribeSlowLogsRequest) (respon
 }
 
 // DescribeSlowLogsWithChan invokes the rds.DescribeSlowLogs API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeslowlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogsWithChan(request *DescribeSlowLogsRequest) (<-chan *DescribeSlowLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlowLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSlowLogsWithChan(request *DescribeSlowLogsRequest)
 }
 
 // DescribeSlowLogsWithCallback invokes the rds.DescribeSlowLogs API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeslowlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogsWithCallback(request *DescribeSlowLogsRequest, callback func(response *DescribeSlowLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ResetAccountForPG invokes the rds.ResetAccountForPG API synchronously
-// api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
 func (client *Client) ResetAccountForPG(request *ResetAccountForPGRequest) (response *ResetAccountForPGResponse, err error) {
 	response = CreateResetAccountForPGResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetAccountForPG(request *ResetAccountForPGRequest) (resp
 }
 
 // ResetAccountForPGWithChan invokes the rds.ResetAccountForPG API asynchronously
-// api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountForPGWithChan(request *ResetAccountForPGRequest) (<-chan *ResetAccountForPGResponse, <-chan error) {
 	responseChan := make(chan *ResetAccountForPGResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetAccountForPGWithChan(request *ResetAccountForPGReques
 }
 
 // ResetAccountForPGWithCallback invokes the rds.ResetAccountForPG API asynchronously
-// api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountForPGWithCallback(request *ResetAccountForPGRequest, callback func(response *ResetAccountForPGResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

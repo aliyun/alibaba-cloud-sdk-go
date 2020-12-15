@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeActionEventPolicy invokes the rds.DescribeActionEventPolicy API synchronously
-// api document: https://help.aliyun.com/api/rds/describeactioneventpolicy.html
 func (client *Client) DescribeActionEventPolicy(request *DescribeActionEventPolicyRequest) (response *DescribeActionEventPolicyResponse, err error) {
 	response = CreateDescribeActionEventPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeActionEventPolicy(request *DescribeActionEventPoli
 }
 
 // DescribeActionEventPolicyWithChan invokes the rds.DescribeActionEventPolicy API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeactioneventpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeActionEventPolicyWithChan(request *DescribeActionEventPolicyRequest) (<-chan *DescribeActionEventPolicyResponse, <-chan error) {
 	responseChan := make(chan *DescribeActionEventPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeActionEventPolicyWithChan(request *DescribeActionE
 }
 
 // DescribeActionEventPolicyWithCallback invokes the rds.DescribeActionEventPolicy API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeactioneventpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeActionEventPolicyWithCallback(request *DescribeActionEventPolicyRequest, callback func(response *DescribeActionEventPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

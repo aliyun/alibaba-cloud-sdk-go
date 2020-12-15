@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceKeywords invokes the rds.DescribeInstanceKeywords API synchronously
-// api document: https://help.aliyun.com/api/rds/describeinstancekeywords.html
 func (client *Client) DescribeInstanceKeywords(request *DescribeInstanceKeywordsRequest) (response *DescribeInstanceKeywordsResponse, err error) {
 	response = CreateDescribeInstanceKeywordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceKeywords(request *DescribeInstanceKeywords
 }
 
 // DescribeInstanceKeywordsWithChan invokes the rds.DescribeInstanceKeywords API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeinstancekeywords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceKeywordsWithChan(request *DescribeInstanceKeywordsRequest) (<-chan *DescribeInstanceKeywordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceKeywordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceKeywordsWithChan(request *DescribeInstance
 }
 
 // DescribeInstanceKeywordsWithCallback invokes the rds.DescribeInstanceKeywords API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeinstancekeywords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceKeywordsWithCallback(request *DescribeInstanceKeywordsRequest, callback func(response *DescribeInstanceKeywordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

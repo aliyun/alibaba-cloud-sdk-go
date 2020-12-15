@@ -21,7 +21,6 @@ import (
 )
 
 // ReplaceDedicatedHost invokes the rds.ReplaceDedicatedHost API synchronously
-// api document: https://help.aliyun.com/api/rds/replacededicatedhost.html
 func (client *Client) ReplaceDedicatedHost(request *ReplaceDedicatedHostRequest) (response *ReplaceDedicatedHostResponse, err error) {
 	response = CreateReplaceDedicatedHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReplaceDedicatedHost(request *ReplaceDedicatedHostRequest)
 }
 
 // ReplaceDedicatedHostWithChan invokes the rds.ReplaceDedicatedHost API asynchronously
-// api document: https://help.aliyun.com/api/rds/replacededicatedhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceDedicatedHostWithChan(request *ReplaceDedicatedHostRequest) (<-chan *ReplaceDedicatedHostResponse, <-chan error) {
 	responseChan := make(chan *ReplaceDedicatedHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReplaceDedicatedHostWithChan(request *ReplaceDedicatedHost
 }
 
 // ReplaceDedicatedHostWithCallback invokes the rds.ReplaceDedicatedHost API asynchronously
-// api document: https://help.aliyun.com/api/rds/replacededicatedhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceDedicatedHostWithCallback(request *ReplaceDedicatedHostRequest, callback func(response *ReplaceDedicatedHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

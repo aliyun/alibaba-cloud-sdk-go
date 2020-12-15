@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHASwitchConfig invokes the rds.DescribeHASwitchConfig API synchronously
-// api document: https://help.aliyun.com/api/rds/describehaswitchconfig.html
 func (client *Client) DescribeHASwitchConfig(request *DescribeHASwitchConfigRequest) (response *DescribeHASwitchConfigResponse, err error) {
 	response = CreateDescribeHASwitchConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHASwitchConfig(request *DescribeHASwitchConfigRequ
 }
 
 // DescribeHASwitchConfigWithChan invokes the rds.DescribeHASwitchConfig API asynchronously
-// api document: https://help.aliyun.com/api/rds/describehaswitchconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHASwitchConfigWithChan(request *DescribeHASwitchConfigRequest) (<-chan *DescribeHASwitchConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeHASwitchConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHASwitchConfigWithChan(request *DescribeHASwitchCo
 }
 
 // DescribeHASwitchConfigWithCallback invokes the rds.DescribeHASwitchConfig API asynchronously
-// api document: https://help.aliyun.com/api/rds/describehaswitchconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHASwitchConfigWithCallback(request *DescribeHASwitchConfigRequest, callback func(response *DescribeHASwitchConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

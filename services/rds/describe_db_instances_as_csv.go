@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstancesAsCsv invokes the rds.DescribeDBInstancesAsCsv API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
 func (client *Client) DescribeDBInstancesAsCsv(request *DescribeDBInstancesAsCsvRequest) (response *DescribeDBInstancesAsCsvResponse, err error) {
 	response = CreateDescribeDBInstancesAsCsvResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstancesAsCsv(request *DescribeDBInstancesAsCsv
 }
 
 // DescribeDBInstancesAsCsvWithChan invokes the rds.DescribeDBInstancesAsCsv API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesAsCsvWithChan(request *DescribeDBInstancesAsCsvRequest) (<-chan *DescribeDBInstancesAsCsvResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancesAsCsvResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstancesAsCsvWithChan(request *DescribeDBInstan
 }
 
 // DescribeDBInstancesAsCsvWithCallback invokes the rds.DescribeDBInstancesAsCsv API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesAsCsvWithCallback(request *DescribeDBInstancesAsCsvRequest, callback func(response *DescribeDBInstancesAsCsvResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

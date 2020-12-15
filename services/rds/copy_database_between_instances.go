@@ -21,7 +21,6 @@ import (
 )
 
 // CopyDatabaseBetweenInstances invokes the rds.CopyDatabaseBetweenInstances API synchronously
-// api document: https://help.aliyun.com/api/rds/copydatabasebetweeninstances.html
 func (client *Client) CopyDatabaseBetweenInstances(request *CopyDatabaseBetweenInstancesRequest) (response *CopyDatabaseBetweenInstancesResponse, err error) {
 	response = CreateCopyDatabaseBetweenInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CopyDatabaseBetweenInstances(request *CopyDatabaseBetweenI
 }
 
 // CopyDatabaseBetweenInstancesWithChan invokes the rds.CopyDatabaseBetweenInstances API asynchronously
-// api document: https://help.aliyun.com/api/rds/copydatabasebetweeninstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyDatabaseBetweenInstancesWithChan(request *CopyDatabaseBetweenInstancesRequest) (<-chan *CopyDatabaseBetweenInstancesResponse, <-chan error) {
 	responseChan := make(chan *CopyDatabaseBetweenInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CopyDatabaseBetweenInstancesWithChan(request *CopyDatabase
 }
 
 // CopyDatabaseBetweenInstancesWithCallback invokes the rds.CopyDatabaseBetweenInstances API asynchronously
-// api document: https://help.aliyun.com/api/rds/copydatabasebetweeninstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyDatabaseBetweenInstancesWithCallback(request *CopyDatabaseBetweenInstancesRequest, callback func(response *CopyDatabaseBetweenInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

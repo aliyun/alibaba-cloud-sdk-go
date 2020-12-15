@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDBProxyEndpointAddress invokes the rds.DeleteDBProxyEndpointAddress API synchronously
-// api document: https://help.aliyun.com/api/rds/deletedbproxyendpointaddress.html
 func (client *Client) DeleteDBProxyEndpointAddress(request *DeleteDBProxyEndpointAddressRequest) (response *DeleteDBProxyEndpointAddressResponse, err error) {
 	response = CreateDeleteDBProxyEndpointAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDBProxyEndpointAddress(request *DeleteDBProxyEndpoin
 }
 
 // DeleteDBProxyEndpointAddressWithChan invokes the rds.DeleteDBProxyEndpointAddress API asynchronously
-// api document: https://help.aliyun.com/api/rds/deletedbproxyendpointaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBProxyEndpointAddressWithChan(request *DeleteDBProxyEndpointAddressRequest) (<-chan *DeleteDBProxyEndpointAddressResponse, <-chan error) {
 	responseChan := make(chan *DeleteDBProxyEndpointAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDBProxyEndpointAddressWithChan(request *DeleteDBProx
 }
 
 // DeleteDBProxyEndpointAddressWithCallback invokes the rds.DeleteDBProxyEndpointAddress API asynchronously
-// api document: https://help.aliyun.com/api/rds/deletedbproxyendpointaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBProxyEndpointAddressWithCallback(request *DeleteDBProxyEndpointAddressRequest, callback func(response *DeleteDBProxyEndpointAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

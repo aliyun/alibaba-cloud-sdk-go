@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDedicatedHostImageCategories invokes the rds.DescribeDedicatedHostImageCategories API synchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostimagecategories.html
 func (client *Client) DescribeDedicatedHostImageCategories(request *DescribeDedicatedHostImageCategoriesRequest) (response *DescribeDedicatedHostImageCategoriesResponse, err error) {
 	response = CreateDescribeDedicatedHostImageCategoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDedicatedHostImageCategories(request *DescribeDedi
 }
 
 // DescribeDedicatedHostImageCategoriesWithChan invokes the rds.DescribeDedicatedHostImageCategories API asynchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostimagecategories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostImageCategoriesWithChan(request *DescribeDedicatedHostImageCategoriesRequest) (<-chan *DescribeDedicatedHostImageCategoriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDedicatedHostImageCategoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDedicatedHostImageCategoriesWithChan(request *Desc
 }
 
 // DescribeDedicatedHostImageCategoriesWithCallback invokes the rds.DescribeDedicatedHostImageCategories API asynchronously
-// api document: https://help.aliyun.com/api/rds/describededicatedhostimagecategories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostImageCategoriesWithCallback(request *DescribeDedicatedHostImageCategoriesRequest, callback func(response *DescribeDedicatedHostImageCategoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

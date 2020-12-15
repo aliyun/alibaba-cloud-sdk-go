@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveTagsFromResource invokes the rds.RemoveTagsFromResource API synchronously
-// api document: https://help.aliyun.com/api/rds/removetagsfromresource.html
 func (client *Client) RemoveTagsFromResource(request *RemoveTagsFromResourceRequest) (response *RemoveTagsFromResourceResponse, err error) {
 	response = CreateRemoveTagsFromResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveTagsFromResource(request *RemoveTagsFromResourceRequ
 }
 
 // RemoveTagsFromResourceWithChan invokes the rds.RemoveTagsFromResource API asynchronously
-// api document: https://help.aliyun.com/api/rds/removetagsfromresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTagsFromResourceWithChan(request *RemoveTagsFromResourceRequest) (<-chan *RemoveTagsFromResourceResponse, <-chan error) {
 	responseChan := make(chan *RemoveTagsFromResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveTagsFromResourceWithChan(request *RemoveTagsFromReso
 }
 
 // RemoveTagsFromResourceWithCallback invokes the rds.RemoveTagsFromResource API asynchronously
-// api document: https://help.aliyun.com/api/rds/removetagsfromresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTagsFromResourceWithCallback(request *RemoveTagsFromResourceRequest, callback func(response *RemoveTagsFromResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -24,6 +24,7 @@ type Backup struct {
 	IsAvail                   int    `json:"IsAvail" xml:"IsAvail"`
 	BackupDBNames             string `json:"BackupDBNames" xml:"BackupDBNames"`
 	StorageClass              string `json:"StorageClass" xml:"StorageClass"`
+	Encryption                string `json:"Encryption" xml:"Encryption"`
 	BackupSize                int64  `json:"BackupSize" xml:"BackupSize"`
 	BackupStartTime           string `json:"BackupStartTime" xml:"BackupStartTime"`
 	ConsistentTime            int64  `json:"ConsistentTime" xml:"ConsistentTime"`

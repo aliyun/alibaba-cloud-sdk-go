@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDedicatedHostGroup invokes the rds.DeleteDedicatedHostGroup API synchronously
-// api document: https://help.aliyun.com/api/rds/deletededicatedhostgroup.html
 func (client *Client) DeleteDedicatedHostGroup(request *DeleteDedicatedHostGroupRequest) (response *DeleteDedicatedHostGroupResponse, err error) {
 	response = CreateDeleteDedicatedHostGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDedicatedHostGroup(request *DeleteDedicatedHostGroup
 }
 
 // DeleteDedicatedHostGroupWithChan invokes the rds.DeleteDedicatedHostGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/deletededicatedhostgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDedicatedHostGroupWithChan(request *DeleteDedicatedHostGroupRequest) (<-chan *DeleteDedicatedHostGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteDedicatedHostGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDedicatedHostGroupWithChan(request *DeleteDedicatedH
 }
 
 // DeleteDedicatedHostGroupWithCallback invokes the rds.DeleteDedicatedHostGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/deletededicatedhostgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDedicatedHostGroupWithCallback(request *DeleteDedicatedHostGroupRequest, callback func(response *DeleteDedicatedHostGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

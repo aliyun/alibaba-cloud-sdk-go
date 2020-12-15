@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLogBackupFiles invokes the rds.DescribeLogBackupFiles API synchronously
-// api document: https://help.aliyun.com/api/rds/describelogbackupfiles.html
 func (client *Client) DescribeLogBackupFiles(request *DescribeLogBackupFilesRequest) (response *DescribeLogBackupFilesResponse, err error) {
 	response = CreateDescribeLogBackupFilesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLogBackupFiles(request *DescribeLogBackupFilesRequ
 }
 
 // DescribeLogBackupFilesWithChan invokes the rds.DescribeLogBackupFiles API asynchronously
-// api document: https://help.aliyun.com/api/rds/describelogbackupfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogBackupFilesWithChan(request *DescribeLogBackupFilesRequest) (<-chan *DescribeLogBackupFilesResponse, <-chan error) {
 	responseChan := make(chan *DescribeLogBackupFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLogBackupFilesWithChan(request *DescribeLogBackupF
 }
 
 // DescribeLogBackupFilesWithCallback invokes the rds.DescribeLogBackupFiles API asynchronously
-// api document: https://help.aliyun.com/api/rds/describelogbackupfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogBackupFilesWithCallback(request *DescribeLogBackupFilesRequest, callback func(response *DescribeLogBackupFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

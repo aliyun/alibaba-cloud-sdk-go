@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBackupFile invokes the rds.DeleteBackupFile API synchronously
-// api document: https://help.aliyun.com/api/rds/deletebackupfile.html
 func (client *Client) DeleteBackupFile(request *DeleteBackupFileRequest) (response *DeleteBackupFileResponse, err error) {
 	response = CreateDeleteBackupFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBackupFile(request *DeleteBackupFileRequest) (respon
 }
 
 // DeleteBackupFileWithChan invokes the rds.DeleteBackupFile API asynchronously
-// api document: https://help.aliyun.com/api/rds/deletebackupfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBackupFileWithChan(request *DeleteBackupFileRequest) (<-chan *DeleteBackupFileResponse, <-chan error) {
 	responseChan := make(chan *DeleteBackupFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBackupFileWithChan(request *DeleteBackupFileRequest)
 }
 
 // DeleteBackupFileWithCallback invokes the rds.DeleteBackupFile API asynchronously
-// api document: https://help.aliyun.com/api/rds/deletebackupfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBackupFileWithCallback(request *DeleteBackupFileRequest, callback func(response *DeleteBackupFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

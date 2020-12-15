@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceIpHostname invokes the rds.DescribeDBInstanceIpHostname API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstanceiphostname.html
 func (client *Client) DescribeDBInstanceIpHostname(request *DescribeDBInstanceIpHostnameRequest) (response *DescribeDBInstanceIpHostnameResponse, err error) {
 	response = CreateDescribeDBInstanceIpHostnameResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceIpHostname(request *DescribeDBInstanceIp
 }
 
 // DescribeDBInstanceIpHostnameWithChan invokes the rds.DescribeDBInstanceIpHostname API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstanceiphostname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceIpHostnameWithChan(request *DescribeDBInstanceIpHostnameRequest) (<-chan *DescribeDBInstanceIpHostnameResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceIpHostnameResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceIpHostnameWithChan(request *DescribeDBIn
 }
 
 // DescribeDBInstanceIpHostnameWithCallback invokes the rds.DescribeDBInstanceIpHostname API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstanceiphostname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceIpHostnameWithCallback(request *DescribeDBInstanceIpHostnameRequest, callback func(response *DescribeDBInstanceIpHostnameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateReadOnlyDBInstance invokes the rds.CreateReadOnlyDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/createreadonlydbinstance.html
 func (client *Client) CreateReadOnlyDBInstance(request *CreateReadOnlyDBInstanceRequest) (response *CreateReadOnlyDBInstanceResponse, err error) {
 	response = CreateCreateReadOnlyDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateReadOnlyDBInstance(request *CreateReadOnlyDBInstance
 }
 
 // CreateReadOnlyDBInstanceWithChan invokes the rds.CreateReadOnlyDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/createreadonlydbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateReadOnlyDBInstanceWithChan(request *CreateReadOnlyDBInstanceRequest) (<-chan *CreateReadOnlyDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateReadOnlyDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateReadOnlyDBInstanceWithChan(request *CreateReadOnlyDB
 }
 
 // CreateReadOnlyDBInstanceWithCallback invokes the rds.CreateReadOnlyDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/createreadonlydbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateReadOnlyDBInstanceWithCallback(request *CreateReadOnlyDBInstanceRequest, callback func(response *CreateReadOnlyDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceCrossBackupPolicy invokes the rds.ModifyInstanceCrossBackupPolicy API synchronously
-// api document: https://help.aliyun.com/api/rds/modifyinstancecrossbackuppolicy.html
 func (client *Client) ModifyInstanceCrossBackupPolicy(request *ModifyInstanceCrossBackupPolicyRequest) (response *ModifyInstanceCrossBackupPolicyResponse, err error) {
 	response = CreateModifyInstanceCrossBackupPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceCrossBackupPolicy(request *ModifyInstanceCro
 }
 
 // ModifyInstanceCrossBackupPolicyWithChan invokes the rds.ModifyInstanceCrossBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifyinstancecrossbackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceCrossBackupPolicyWithChan(request *ModifyInstanceCrossBackupPolicyRequest) (<-chan *ModifyInstanceCrossBackupPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceCrossBackupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceCrossBackupPolicyWithChan(request *ModifyIns
 }
 
 // ModifyInstanceCrossBackupPolicyWithCallback invokes the rds.ModifyInstanceCrossBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifyinstancecrossbackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceCrossBackupPolicyWithCallback(request *ModifyInstanceCrossBackupPolicyRequest, callback func(response *ModifyInstanceCrossBackupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

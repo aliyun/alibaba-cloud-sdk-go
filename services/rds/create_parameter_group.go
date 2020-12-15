@@ -21,7 +21,6 @@ import (
 )
 
 // CreateParameterGroup invokes the rds.CreateParameterGroup API synchronously
-// api document: https://help.aliyun.com/api/rds/createparametergroup.html
 func (client *Client) CreateParameterGroup(request *CreateParameterGroupRequest) (response *CreateParameterGroupResponse, err error) {
 	response = CreateCreateParameterGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateParameterGroup(request *CreateParameterGroupRequest)
 }
 
 // CreateParameterGroupWithChan invokes the rds.CreateParameterGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/createparametergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateParameterGroupWithChan(request *CreateParameterGroupRequest) (<-chan *CreateParameterGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateParameterGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateParameterGroupWithChan(request *CreateParameterGroup
 }
 
 // CreateParameterGroupWithCallback invokes the rds.CreateParameterGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/createparametergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateParameterGroupWithCallback(request *CreateParameterGroupRequest, callback func(response *CreateParameterGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

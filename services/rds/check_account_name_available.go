@@ -21,7 +21,6 @@ import (
 )
 
 // CheckAccountNameAvailable invokes the rds.CheckAccountNameAvailable API synchronously
-// api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
 func (client *Client) CheckAccountNameAvailable(request *CheckAccountNameAvailableRequest) (response *CheckAccountNameAvailableResponse, err error) {
 	response = CreateCheckAccountNameAvailableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckAccountNameAvailable(request *CheckAccountNameAvailab
 }
 
 // CheckAccountNameAvailableWithChan invokes the rds.CheckAccountNameAvailable API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAccountNameAvailableWithChan(request *CheckAccountNameAvailableRequest) (<-chan *CheckAccountNameAvailableResponse, <-chan error) {
 	responseChan := make(chan *CheckAccountNameAvailableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckAccountNameAvailableWithChan(request *CheckAccountNam
 }
 
 // CheckAccountNameAvailableWithCallback invokes the rds.CheckAccountNameAvailable API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAccountNameAvailableWithCallback(request *CheckAccountNameAvailableRequest, callback func(response *CheckAccountNameAvailableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

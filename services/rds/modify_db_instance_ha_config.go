@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceHAConfig invokes the rds.ModifyDBInstanceHAConfig API synchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancehaconfig.html
 func (client *Client) ModifyDBInstanceHAConfig(request *ModifyDBInstanceHAConfigRequest) (response *ModifyDBInstanceHAConfigResponse, err error) {
 	response = CreateModifyDBInstanceHAConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceHAConfig(request *ModifyDBInstanceHAConfig
 }
 
 // ModifyDBInstanceHAConfigWithChan invokes the rds.ModifyDBInstanceHAConfig API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancehaconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceHAConfigWithChan(request *ModifyDBInstanceHAConfigRequest) (<-chan *ModifyDBInstanceHAConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceHAConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceHAConfigWithChan(request *ModifyDBInstance
 }
 
 // ModifyDBInstanceHAConfigWithCallback invokes the rds.ModifyDBInstanceHAConfig API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifydbinstancehaconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceHAConfigWithCallback(request *ModifyDBInstanceHAConfigRequest, callback func(response *ModifyDBInstanceHAConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

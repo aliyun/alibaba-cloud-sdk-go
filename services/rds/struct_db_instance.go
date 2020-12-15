@@ -23,6 +23,7 @@ type DBInstance struct {
 	GuardDBInstanceId            string                                     `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
 	DBInstanceDescription        string                                     `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 	Engine                       string                                     `json:"Engine" xml:"Engine"`
+	VpcName                      string                                     `json:"VpcName" xml:"VpcName"`
 	CreateTime                   string                                     `json:"CreateTime" xml:"CreateTime"`
 	DBInstanceNetType            string                                     `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
 	DBInstanceClass              string                                     `json:"DBInstanceClass" xml:"DBInstanceClass"`
@@ -42,6 +43,7 @@ type DBInstance struct {
 	DedicatedHostZoneIdForMaster string                                     `json:"DedicatedHostZoneIdForMaster" xml:"DedicatedHostZoneIdForMaster"`
 	DedicatedHostGroupId         string                                     `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
 	DedicatedHostIdForLog        string                                     `json:"DedicatedHostIdForLog" xml:"DedicatedHostIdForLog"`
+	DedicatedHostGroupName       string                                     `json:"DedicatedHostGroupName" xml:"DedicatedHostGroupName"`
 	EngineVersion                string                                     `json:"EngineVersion" xml:"EngineVersion"`
 	PayType                      string                                     `json:"PayType" xml:"PayType"`
 	VSwitchId                    string                                     `json:"VSwitchId" xml:"VSwitchId"`

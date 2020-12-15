@@ -21,7 +21,6 @@ import (
 )
 
 // RestoreDdrTable invokes the rds.RestoreDdrTable API synchronously
-// api document: https://help.aliyun.com/api/rds/restoreddrtable.html
 func (client *Client) RestoreDdrTable(request *RestoreDdrTableRequest) (response *RestoreDdrTableResponse, err error) {
 	response = CreateRestoreDdrTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestoreDdrTable(request *RestoreDdrTableRequest) (response
 }
 
 // RestoreDdrTableWithChan invokes the rds.RestoreDdrTable API asynchronously
-// api document: https://help.aliyun.com/api/rds/restoreddrtable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreDdrTableWithChan(request *RestoreDdrTableRequest) (<-chan *RestoreDdrTableResponse, <-chan error) {
 	responseChan := make(chan *RestoreDdrTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestoreDdrTableWithChan(request *RestoreDdrTableRequest) (
 }
 
 // RestoreDdrTableWithCallback invokes the rds.RestoreDdrTable API asynchronously
-// api document: https://help.aliyun.com/api/rds/restoreddrtable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreDdrTableWithCallback(request *RestoreDdrTableRequest, callback func(response *RestoreDdrTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

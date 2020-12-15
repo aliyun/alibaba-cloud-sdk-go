@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCharacterSetName invokes the rds.DescribeCharacterSetName API synchronously
-// api document: https://help.aliyun.com/api/rds/describecharactersetname.html
 func (client *Client) DescribeCharacterSetName(request *DescribeCharacterSetNameRequest) (response *DescribeCharacterSetNameResponse, err error) {
 	response = CreateDescribeCharacterSetNameResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCharacterSetName(request *DescribeCharacterSetName
 }
 
 // DescribeCharacterSetNameWithChan invokes the rds.DescribeCharacterSetName API asynchronously
-// api document: https://help.aliyun.com/api/rds/describecharactersetname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacterSetNameRequest) (<-chan *DescribeCharacterSetNameResponse, <-chan error) {
 	responseChan := make(chan *DescribeCharacterSetNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacte
 }
 
 // DescribeCharacterSetNameWithCallback invokes the rds.DescribeCharacterSetName API asynchronously
-// api document: https://help.aliyun.com/api/rds/describecharactersetname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCharacterSetNameWithCallback(request *DescribeCharacterSetNameRequest, callback func(response *DescribeCharacterSetNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

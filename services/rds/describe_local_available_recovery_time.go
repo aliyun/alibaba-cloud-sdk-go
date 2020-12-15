@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLocalAvailableRecoveryTime invokes the rds.DescribeLocalAvailableRecoveryTime API synchronously
-// api document: https://help.aliyun.com/api/rds/describelocalavailablerecoverytime.html
 func (client *Client) DescribeLocalAvailableRecoveryTime(request *DescribeLocalAvailableRecoveryTimeRequest) (response *DescribeLocalAvailableRecoveryTimeResponse, err error) {
 	response = CreateDescribeLocalAvailableRecoveryTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLocalAvailableRecoveryTime(request *DescribeLocalA
 }
 
 // DescribeLocalAvailableRecoveryTimeWithChan invokes the rds.DescribeLocalAvailableRecoveryTime API asynchronously
-// api document: https://help.aliyun.com/api/rds/describelocalavailablerecoverytime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLocalAvailableRecoveryTimeWithChan(request *DescribeLocalAvailableRecoveryTimeRequest) (<-chan *DescribeLocalAvailableRecoveryTimeResponse, <-chan error) {
 	responseChan := make(chan *DescribeLocalAvailableRecoveryTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLocalAvailableRecoveryTimeWithChan(request *Descri
 }
 
 // DescribeLocalAvailableRecoveryTimeWithCallback invokes the rds.DescribeLocalAvailableRecoveryTime API asynchronously
-// api document: https://help.aliyun.com/api/rds/describelocalavailablerecoverytime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLocalAvailableRecoveryTimeWithCallback(request *DescribeLocalAvailableRecoveryTimeRequest, callback func(response *DescribeLocalAvailableRecoveryTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

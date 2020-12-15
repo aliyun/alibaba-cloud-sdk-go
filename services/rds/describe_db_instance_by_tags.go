@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceByTags invokes the rds.DescribeDBInstanceByTags API synchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
 func (client *Client) DescribeDBInstanceByTags(request *DescribeDBInstanceByTagsRequest) (response *DescribeDBInstanceByTagsResponse, err error) {
 	response = CreateDescribeDBInstanceByTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceByTags(request *DescribeDBInstanceByTags
 }
 
 // DescribeDBInstanceByTagsWithChan invokes the rds.DescribeDBInstanceByTags API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceByTagsWithChan(request *DescribeDBInstanceByTagsRequest) (<-chan *DescribeDBInstanceByTagsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceByTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceByTagsWithChan(request *DescribeDBInstan
 }
 
 // DescribeDBInstanceByTagsWithCallback invokes the rds.DescribeDBInstanceByTags API asynchronously
-// api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceByTagsWithCallback(request *DescribeDBInstanceByTagsRequest, callback func(response *DescribeDBInstanceByTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

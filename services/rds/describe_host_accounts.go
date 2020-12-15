@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHostAccounts invokes the rds.DescribeHostAccounts API synchronously
-// api document: https://help.aliyun.com/api/rds/describehostaccounts.html
 func (client *Client) DescribeHostAccounts(request *DescribeHostAccountsRequest) (response *DescribeHostAccountsResponse, err error) {
 	response = CreateDescribeHostAccountsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHostAccounts(request *DescribeHostAccountsRequest)
 }
 
 // DescribeHostAccountsWithChan invokes the rds.DescribeHostAccounts API asynchronously
-// api document: https://help.aliyun.com/api/rds/describehostaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHostAccountsWithChan(request *DescribeHostAccountsRequest) (<-chan *DescribeHostAccountsResponse, <-chan error) {
 	responseChan := make(chan *DescribeHostAccountsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHostAccountsWithChan(request *DescribeHostAccounts
 }
 
 // DescribeHostAccountsWithCallback invokes the rds.DescribeHostAccounts API asynchronously
-// api document: https://help.aliyun.com/api/rds/describehostaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHostAccountsWithCallback(request *DescribeHostAccountsRequest, callback func(response *DescribeHostAccountsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

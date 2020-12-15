@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeParameterGroups invokes the rds.DescribeParameterGroups API synchronously
-// api document: https://help.aliyun.com/api/rds/describeparametergroups.html
 func (client *Client) DescribeParameterGroups(request *DescribeParameterGroupsRequest) (response *DescribeParameterGroupsResponse, err error) {
 	response = CreateDescribeParameterGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeParameterGroups(request *DescribeParameterGroupsRe
 }
 
 // DescribeParameterGroupsWithChan invokes the rds.DescribeParameterGroups API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeparametergroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterGroupsWithChan(request *DescribeParameterGroupsRequest) (<-chan *DescribeParameterGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeParameterGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeParameterGroupsWithChan(request *DescribeParameter
 }
 
 // DescribeParameterGroupsWithCallback invokes the rds.DescribeParameterGroups API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeparametergroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterGroupsWithCallback(request *DescribeParameterGroupsRequest, callback func(response *DescribeParameterGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

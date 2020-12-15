@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteParameterGroup invokes the rds.DeleteParameterGroup API synchronously
-// api document: https://help.aliyun.com/api/rds/deleteparametergroup.html
 func (client *Client) DeleteParameterGroup(request *DeleteParameterGroupRequest) (response *DeleteParameterGroupResponse, err error) {
 	response = CreateDeleteParameterGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteParameterGroup(request *DeleteParameterGroupRequest)
 }
 
 // DeleteParameterGroupWithChan invokes the rds.DeleteParameterGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/deleteparametergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteParameterGroupWithChan(request *DeleteParameterGroupRequest) (<-chan *DeleteParameterGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteParameterGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteParameterGroupWithChan(request *DeleteParameterGroup
 }
 
 // DeleteParameterGroupWithCallback invokes the rds.DeleteParameterGroup API asynchronously
-// api document: https://help.aliyun.com/api/rds/deleteparametergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteParameterGroupWithCallback(request *DeleteParameterGroupRequest, callback func(response *DeleteParameterGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

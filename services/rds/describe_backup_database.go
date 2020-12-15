@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupDatabase invokes the rds.DescribeBackupDatabase API synchronously
-// api document: https://help.aliyun.com/api/rds/describebackupdatabase.html
 func (client *Client) DescribeBackupDatabase(request *DescribeBackupDatabaseRequest) (response *DescribeBackupDatabaseResponse, err error) {
 	response = CreateDescribeBackupDatabaseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupDatabase(request *DescribeBackupDatabaseRequ
 }
 
 // DescribeBackupDatabaseWithChan invokes the rds.DescribeBackupDatabase API asynchronously
-// api document: https://help.aliyun.com/api/rds/describebackupdatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupDatabaseWithChan(request *DescribeBackupDatabaseRequest) (<-chan *DescribeBackupDatabaseResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupDatabaseWithChan(request *DescribeBackupData
 }
 
 // DescribeBackupDatabaseWithCallback invokes the rds.DescribeBackupDatabase API asynchronously
-// api document: https://help.aliyun.com/api/rds/describebackupdatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupDatabaseWithCallback(request *DescribeBackupDatabaseRequest, callback func(response *DescribeBackupDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

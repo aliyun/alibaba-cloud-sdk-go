@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCrossRegionLogBackupFiles invokes the rds.DescribeCrossRegionLogBackupFiles API synchronously
-// api document: https://help.aliyun.com/api/rds/describecrossregionlogbackupfiles.html
 func (client *Client) DescribeCrossRegionLogBackupFiles(request *DescribeCrossRegionLogBackupFilesRequest) (response *DescribeCrossRegionLogBackupFilesResponse, err error) {
 	response = CreateDescribeCrossRegionLogBackupFilesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCrossRegionLogBackupFiles(request *DescribeCrossRe
 }
 
 // DescribeCrossRegionLogBackupFilesWithChan invokes the rds.DescribeCrossRegionLogBackupFiles API asynchronously
-// api document: https://help.aliyun.com/api/rds/describecrossregionlogbackupfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCrossRegionLogBackupFilesWithChan(request *DescribeCrossRegionLogBackupFilesRequest) (<-chan *DescribeCrossRegionLogBackupFilesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCrossRegionLogBackupFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCrossRegionLogBackupFilesWithChan(request *Describ
 }
 
 // DescribeCrossRegionLogBackupFilesWithCallback invokes the rds.DescribeCrossRegionLogBackupFiles API asynchronously
-// api document: https://help.aliyun.com/api/rds/describecrossregionlogbackupfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCrossRegionLogBackupFilesWithCallback(request *DescribeCrossRegionLogBackupFilesRequest, callback func(response *DescribeCrossRegionLogBackupFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

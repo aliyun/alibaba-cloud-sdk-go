@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyActionEventVerifyPolicy invokes the rds.ModifyActionEventVerifyPolicy API synchronously
-// api document: https://help.aliyun.com/api/rds/modifyactioneventverifypolicy.html
 func (client *Client) ModifyActionEventVerifyPolicy(request *ModifyActionEventVerifyPolicyRequest) (response *ModifyActionEventVerifyPolicyResponse, err error) {
 	response = CreateModifyActionEventVerifyPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyActionEventVerifyPolicy(request *ModifyActionEventVe
 }
 
 // ModifyActionEventVerifyPolicyWithChan invokes the rds.ModifyActionEventVerifyPolicy API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifyactioneventverifypolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyActionEventVerifyPolicyWithChan(request *ModifyActionEventVerifyPolicyRequest) (<-chan *ModifyActionEventVerifyPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifyActionEventVerifyPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyActionEventVerifyPolicyWithChan(request *ModifyActio
 }
 
 // ModifyActionEventVerifyPolicyWithCallback invokes the rds.ModifyActionEventVerifyPolicy API asynchronously
-// api document: https://help.aliyun.com/api/rds/modifyactioneventverifypolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyActionEventVerifyPolicyWithCallback(request *ModifyActionEventVerifyPolicyRequest, callback func(response *ModifyActionEventVerifyPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

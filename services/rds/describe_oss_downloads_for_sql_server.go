@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssDownloadsForSQLServer invokes the rds.DescribeOssDownloadsForSQLServer API synchronously
-// api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
 func (client *Client) DescribeOssDownloadsForSQLServer(request *DescribeOssDownloadsForSQLServerRequest) (response *DescribeOssDownloadsForSQLServerResponse, err error) {
 	response = CreateDescribeOssDownloadsForSQLServerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssDownloadsForSQLServer(request *DescribeOssDownl
 }
 
 // DescribeOssDownloadsForSQLServerWithChan invokes the rds.DescribeOssDownloadsForSQLServer API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsForSQLServerWithChan(request *DescribeOssDownloadsForSQLServerRequest) (<-chan *DescribeOssDownloadsForSQLServerResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssDownloadsForSQLServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssDownloadsForSQLServerWithChan(request *Describe
 }
 
 // DescribeOssDownloadsForSQLServerWithCallback invokes the rds.DescribeOssDownloadsForSQLServer API asynchronously
-// api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsForSQLServerWithCallback(request *DescribeOssDownloadsForSQLServerRequest, callback func(response *DescribeOssDownloadsForSQLServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
