@@ -1,3 +1,7 @@
+2020-12-15 Version: v1.61.765
+- Generated 2017-08-01 for `Edas`.
+
+
 2020-12-15 Version: v1.61.764
 - Generated 2017-08-01 for `Edas`.
 - Fix GetK8sApplication json unmarshal error.
