@@ -17,7 +17,18 @@ package devops_rdc
 
 // Group is a nested struct in devops_rdc response
 type Group struct {
-	Name   string  `json:"Name" xml:"Name"`
-	Status string  `json:"Status" xml:"Status"`
-	Stages []Stage `json:"Stages" xml:"Stages"`
+	Name         string  `json:"Name" xml:"Name"`
+	ModifyTime   int64   `json:"ModifyTime" xml:"ModifyTime"`
+	Id           int     `json:"Id" xml:"Id"`
+	ResultStatus string  `json:"ResultStatus" xml:"ResultStatus"`
+	FlowInstId   int     `json:"FlowInstId" xml:"FlowInstId"`
+	IdExtent     int     `json:"IdExtent" xml:"IdExtent"`
+	CreateTime   int64   `json:"CreateTime" xml:"CreateTime"`
+	EndTime      int64   `json:"EndTime" xml:"EndTime"`
+	StartTime    int64   `json:"StartTime" xml:"StartTime"`
+	Modifier     string  `json:"Modifier" xml:"Modifier"`
+	Creator      string  `json:"Creator" xml:"Creator"`
+	Status       string  `json:"Status" xml:"Status"`
+	DeleteStatus string  `json:"DeleteStatus" xml:"DeleteStatus"`
+	Stages       []Stage `json:"Stages" xml:"Stages"`
 }

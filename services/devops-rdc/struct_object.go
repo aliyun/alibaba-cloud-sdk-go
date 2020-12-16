@@ -48,6 +48,7 @@ type Object struct {
 	Status                string   `json:"Status" xml:"Status"`
 	TaskType              string   `json:"TaskType" xml:"TaskType"`
 	Py                    string   `json:"Py" xml:"Py"`
+	More                  bool     `json:"More" xml:"More"`
 	Pinyin                string   `json:"Pinyin" xml:"Pinyin"`
 	TotalSize             int      `json:"TotalSize" xml:"TotalSize"`
 	ModifierId            string   `json:"ModifierId" xml:"ModifierId"`
@@ -74,6 +75,8 @@ type Object struct {
 	AncestorIds           string   `json:"AncestorIds" xml:"AncestorIds"`
 	SourceId              string   `json:"SourceId" xml:"SourceId"`
 	NextTaskUniqueId      int      `json:"NextTaskUniqueId" xml:"NextTaskUniqueId"`
+	Logs                  string   `json:"Logs" xml:"Logs"`
+	Last                  int      `json:"Last" xml:"Last"`
 	ScenarioFieldConfigId string   `json:"ScenarioFieldConfigId" xml:"ScenarioFieldConfigId"`
 	Sources               string   `json:"Sources" xml:"Sources"`
 	DueDate               string   `json:"DueDate" xml:"DueDate"`

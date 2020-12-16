@@ -1,3 +1,8 @@
+2020-12-16 Version: v1.61.767
+- Generated 2020-03-03 for `devops-rdc`.
+- Support show pipeline history.
+- Support show log details.
+
 2020-12-16 Version: v1.61.766
 - Generated 2019-03-07, 2020-06-18, 2018-09-16, 2020-11-12 for `Cloudauth`.
 - Add Face Attributes.
