@@ -1,3 +1,7 @@
+2020-12-16 Version: v1.61.768
+- Generated 2019-09-10 for `waf-openapi`.
+
+
 2020-12-16 Version: v1.61.767
 - Generated 2020-03-03 for `devops-rdc`.
 - Support show pipeline history.
