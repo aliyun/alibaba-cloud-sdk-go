@@ -1,3 +1,7 @@
+2020-12-16 Version: v1.61.766
+- Generated 2019-03-07, 2020-06-18, 2018-09-16, 2020-11-12 for `Cloudauth`.
+- Add Face Attributes.
+
 2020-12-15 Version: v1.61.765
 - Generated 2017-08-01 for `Edas`.
 
