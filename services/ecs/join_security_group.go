@@ -91,7 +91,7 @@ func CreateJoinSecurityGroupRequest() (request *JoinSecurityGroupRequest) {
 	request = &JoinSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "JoinSecurityGroup", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "JoinSecurityGroup", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

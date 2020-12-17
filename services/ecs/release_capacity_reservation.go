@@ -90,7 +90,7 @@ func CreateReleaseCapacityReservationRequest() (request *ReleaseCapacityReservat
 	request = &ReleaseCapacityReservationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseCapacityReservation", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseCapacityReservation", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -110,7 +110,7 @@ func CreateDescribeDemandsRequest() (request *DescribeDemandsRequest) {
 	request = &DescribeDemandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDemands", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDemands", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
 	request = &CreateDeploymentSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDeploymentSet", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

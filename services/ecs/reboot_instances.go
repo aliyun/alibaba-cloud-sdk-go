@@ -93,7 +93,7 @@ func CreateRebootInstancesRequest() (request *RebootInstancesRequest) {
 	request = &RebootInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RebootInstances", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RebootInstances", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

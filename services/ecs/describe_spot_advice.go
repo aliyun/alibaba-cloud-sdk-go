@@ -71,16 +71,21 @@ func (client *Client) DescribeSpotAdviceWithCallback(request *DescribeSpotAdvice
 // DescribeSpotAdviceRequest is the request struct for api DescribeSpotAdvice
 type DescribeSpotAdviceRequest struct {
 	*requests.RpcRequest
+	GpuSpec              string           `position:"Query" name:"GpuSpec"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Memory               requests.Float   `position:"Query" name:"Memory"`
+	InstanceTypes        *[]string        `position:"Query" name:"InstanceTypes"  type:"Repeated"`
 	IoOptimized          string           `position:"Query" name:"IoOptimized"`
 	MinCores             requests.Integer `position:"Query" name:"MinCores"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
 	Cores                requests.Integer `position:"Query" name:"Cores"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceFamilyLevel  string           `position:"Query" name:"InstanceFamilyLevel"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	GpuAmount            requests.Integer `position:"Query" name:"GpuAmount"`
 	MinMemory            requests.Float   `position:"Query" name:"MinMemory"`
 }
 
@@ -97,7 +102,7 @@ func CreateDescribeSpotAdviceRequest() (request *DescribeSpotAdviceRequest) {
 	request = &DescribeSpotAdviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotAdvice", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotAdvice", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

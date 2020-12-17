@@ -207,7 +207,7 @@ func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 	request = &RunInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -99,7 +99,7 @@ func CreateDescribeImageSupportInstanceTypesRequest() (request *DescribeImageSup
 	request = &DescribeImageSupportInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

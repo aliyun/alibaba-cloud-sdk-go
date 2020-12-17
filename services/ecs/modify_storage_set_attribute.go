@@ -92,7 +92,7 @@ func CreateModifyStorageSetAttributeRequest() (request *ModifyStorageSetAttribut
 	request = &ModifyStorageSetAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyStorageSetAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyStorageSetAttribute", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

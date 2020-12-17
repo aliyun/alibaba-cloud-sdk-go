@@ -93,7 +93,7 @@ func CreateReInitDiskRequest() (request *ReInitDiskRequest) {
 	request = &ReInitDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitDisk", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitDisk", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

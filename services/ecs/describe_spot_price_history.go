@@ -100,7 +100,7 @@ func CreateDescribeSpotPriceHistoryRequest() (request *DescribeSpotPriceHistoryR
 	request = &DescribeSpotPriceHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }
