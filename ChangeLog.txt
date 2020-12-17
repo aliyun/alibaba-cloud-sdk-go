@@ -1,3 +1,7 @@
+2020-12-17 Version: v1.61.771
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update DeleteCdnDomain.
+
 2020-12-17 Version: v1.61.770
 - Generated 2020-01-11 for `servicemesh`.
 
