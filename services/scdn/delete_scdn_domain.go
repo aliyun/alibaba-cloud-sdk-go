@@ -71,11 +71,10 @@ func (client *Client) DeleteScdnDomainWithCallback(request *DeleteScdnDomainRequ
 // DeleteScdnDomainRequest is the request struct for api DeleteScdnDomain
 type DeleteScdnDomainRequest struct {
 	*requests.RpcRequest
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
-	DomainName      string           `position:"Query" name:"DomainName"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DeleteScdnDomainResponse is the response struct for api DeleteScdnDomain
