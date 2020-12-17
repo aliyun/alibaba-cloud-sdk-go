@@ -19,6 +19,7 @@ package dcdn
 type PageData struct {
 	Cname           string                              `json:"Cname" xml:"Cname"`
 	Sandbox         string                              `json:"Sandbox" xml:"Sandbox"`
+	CdnType         string                              `json:"CdnType" xml:"CdnType"`
 	DomainStatus    string                              `json:"DomainStatus" xml:"DomainStatus"`
 	ResourceGroupId string                              `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DomainName      string                              `json:"DomainName" xml:"DomainName"`
@@ -26,5 +27,6 @@ type PageData struct {
 	SSLProtocol     string                              `json:"SSLProtocol" xml:"SSLProtocol"`
 	GmtCreated      string                              `json:"GmtCreated" xml:"GmtCreated"`
 	Description     string                              `json:"Description" xml:"Description"`
+	SslProtocol     string                              `json:"SslProtocol" xml:"SslProtocol"`
 	Sources         SourcesInDescribeDcdnIpaUserDomains `json:"Sources" xml:"Sources"`
 }
