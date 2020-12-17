@@ -1,3 +1,7 @@
+2020-12-17 Version: v1.61.775
+- Generated 2019-12-30 for `imageseg`.
+- Update SegmentFood.
+
 2020-12-17 Version: v1.61.774
 - Generated 2017-11-15 for `scdn`.
 - Update DeleteScdnDomain.
