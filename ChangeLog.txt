@@ -1,3 +1,7 @@
+2020-12-17 Version: v1.61.769
+- Generated 2019-01-15 for `Qualitycheck`.
+- Update api.
+
 2020-12-16 Version: v1.61.768
 - Generated 2019-09-10 for `waf-openapi`.
 

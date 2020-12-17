@@ -67,7 +67,6 @@ type Data struct {
 	DataSetName            string                           `json:"DataSetName" xml:"DataSetName"`
 	Deleted                bool                             `json:"Deleted" xml:"Deleted"`
 	DataSetId              int64                            `json:"DataSetId" xml:"DataSetId"`
-	ManualScoreInfoList    ManualScoreInfoList              `json:"ManualScoreInfoList" xml:"ManualScoreInfoList"`
 	RuleList               RuleListInGetSkillGroupConfig    `json:"RuleList" xml:"RuleList"`
 	AllRuleList            AllRuleListInGetSkillGroupConfig `json:"AllRuleList" xml:"AllRuleList"`
 	Dialogues              DialoguesInGetRecognizeResult    `json:"Dialogues" xml:"Dialogues"`
@@ -76,5 +75,6 @@ type Data struct {
 	Precisions             PrecisionsInGetPrecisionTask     `json:"Precisions" xml:"Precisions"`
 	Words                  Words                            `json:"Words" xml:"Words"`
 	Rules                  RulesInGetRule                   `json:"Rules" xml:"Rules"`
+	ManualScoreInfoList    ManualScoreInfoList              `json:"ManualScoreInfoList" xml:"ManualScoreInfoList"`
 	HandScoreInfoList      HandScoreInfoList                `json:"HandScoreInfoList" xml:"HandScoreInfoList"`
 }
