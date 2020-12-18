@@ -1,3 +1,9 @@
+2020-12-18 Version: v1.61.777
+- Generated 2019-08-08 for `ARMS`.
+- Add ListScenario Api.
+- Add ApplyScenario Api.
+- Add DeleteScenario Api.
+
 2020-12-18 Version: v1.61.776
 - Generated 2020-05-18 for `dataworks-public`.
 
