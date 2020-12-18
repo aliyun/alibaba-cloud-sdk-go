@@ -66,14 +66,17 @@ type Result struct {
 	CreatedAt                string             `json:"CreatedAt" xml:"CreatedAt"`
 	NamespaceId              int64              `json:"NamespaceId" xml:"NamespaceId"`
 	Description              string             `json:"Description" xml:"Description"`
+	ExternalUserId           string             `json:"ExternalUserId" xml:"ExternalUserId"`
 	ParentId                 int64              `json:"ParentId" xml:"ParentId"`
 	ProtectedBranch          bool               `json:"ProtectedBranch" xml:"ProtectedBranch"`
 	NameWithNamespace        string             `json:"NameWithNamespace" xml:"NameWithNamespace"`
 	ImportFromSubversion     bool               `json:"ImportFromSubversion" xml:"ImportFromSubversion"`
 	NoteEvents               bool               `json:"NoteEvents" xml:"NoteEvents"`
+	Username                 string             `json:"Username" xml:"Username"`
 	TagPushEvents            bool               `json:"TagPushEvents" xml:"TagPushEvents"`
 	LastActivityAt           string             `json:"LastActivityAt" xml:"LastActivityAt"`
 	DefaultBranch            string             `json:"DefaultBranch" xml:"DefaultBranch"`
+	SecretToken              string             `json:"SecretToken" xml:"SecretToken"`
 	MergeType                string             `json:"MergeType" xml:"MergeType"`
 	Url                      string             `json:"Url" xml:"Url"`
 	State                    string             `json:"State" xml:"State"`

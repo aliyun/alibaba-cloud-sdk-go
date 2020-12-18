@@ -1,3 +1,8 @@
+2020-12-18 Version: v1.61.782
+- Generated 2020-04-14 for `codeup`.
+- Support ListRepositories, ListOrganizations, GetUserInfo, ListRepositoryWebhook, DeleteRepositoryWebhook api.
+- AddWebhook api support SecretToken.
+
 2020-12-18 Version: v1.61.781
 - Generated 2016-01-20 for `Kms`.
 
