@@ -76,7 +76,6 @@ type ReEncryptRequest struct {
 	SourceKeyVersionId           string `position:"Query" name:"SourceKeyVersionId"`
 	DestinationKeyId             string `position:"Query" name:"DestinationKeyId"`
 	SourceKeyId                  string `position:"Query" name:"SourceKeyId"`
-	Recipient                    string `position:"Query" name:"Recipient"`
 	SourceEncryptionContext      string `position:"Query" name:"SourceEncryptionContext"`
 	CiphertextBlob               string `position:"Query" name:"CiphertextBlob"`
 }

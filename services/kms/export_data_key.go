@@ -72,7 +72,6 @@ func (client *Client) ExportDataKeyWithCallback(request *ExportDataKeyRequest, c
 type ExportDataKeyRequest struct {
 	*requests.RpcRequest
 	EncryptionContext string `position:"Query" name:"EncryptionContext"`
-	Recipient         string `position:"Query" name:"Recipient"`
 	WrappingAlgorithm string `position:"Query" name:"WrappingAlgorithm"`
 	CiphertextBlob    string `position:"Query" name:"CiphertextBlob"`
 	PublicKeyBlob     string `position:"Query" name:"PublicKeyBlob"`

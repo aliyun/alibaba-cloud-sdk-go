@@ -1,7 +1,3 @@
-2020-12-18 Version: v1.61.781
-- Generated 2016-01-20 for `Kms`.
-
-
 2020-12-18 Version: v1.61.780
 - Generated 2016-01-20 for `Kms`.
 - Release Full Managed Credentials for Aliyun RDS.
