@@ -21,5 +21,6 @@ type Secret struct {
 	PlannedDeleteTime string            `json:"PlannedDeleteTime" xml:"PlannedDeleteTime"`
 	SecretName        string            `json:"SecretName" xml:"SecretName"`
 	UpdateTime        string            `json:"UpdateTime" xml:"UpdateTime"`
+	SecretType        string            `json:"SecretType" xml:"SecretType"`
 	Tags              TagsInListSecrets `json:"Tags" xml:"Tags"`
 }

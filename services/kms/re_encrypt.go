@@ -94,7 +94,7 @@ func CreateReEncryptRequest() (request *ReEncryptRequest) {
 	request = &ReEncryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ReEncrypt", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ReEncrypt", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

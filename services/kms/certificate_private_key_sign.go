@@ -90,7 +90,7 @@ func CreateCertificatePrivateKeySignRequest() (request *CertificatePrivateKeySig
 	request = &CertificatePrivateKeySignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "CertificatePrivateKeySign", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "CertificatePrivateKeySign", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

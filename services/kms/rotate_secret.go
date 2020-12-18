@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RestoreSecret invokes the kms.RestoreSecret API synchronously
-func (client *Client) RestoreSecret(request *RestoreSecretRequest) (response *RestoreSecretResponse, err error) {
-	response = CreateRestoreSecretResponse()
+// RotateSecret invokes the kms.RotateSecret API synchronously
+func (client *Client) RotateSecret(request *RotateSecretRequest) (response *RotateSecretResponse, err error) {
+	response = CreateRotateSecretResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RestoreSecretWithChan invokes the kms.RestoreSecret API asynchronously
-func (client *Client) RestoreSecretWithChan(request *RestoreSecretRequest) (<-chan *RestoreSecretResponse, <-chan error) {
-	responseChan := make(chan *RestoreSecretResponse, 1)
+// RotateSecretWithChan invokes the kms.RotateSecret API asynchronously
+func (client *Client) RotateSecretWithChan(request *RotateSecretRequest) (<-chan *RotateSecretResponse, <-chan error) {
+	responseChan := make(chan *RotateSecretResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RestoreSecret(request)
+		response, err := client.RotateSecret(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RestoreSecretWithChan(request *RestoreSecretRequest) (<-ch
 	return responseChan, errChan
 }
 
-// RestoreSecretWithCallback invokes the kms.RestoreSecret API asynchronously
-func (client *Client) RestoreSecretWithCallback(request *RestoreSecretRequest, callback func(response *RestoreSecretResponse, err error)) <-chan int {
+// RotateSecretWithCallback invokes the kms.RotateSecret API asynchronously
+func (client *Client) RotateSecretWithCallback(request *RotateSecretRequest, callback func(response *RotateSecretResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RestoreSecretResponse
+		var response *RotateSecretResponse
 		var err error
 		defer close(result)
-		response, err = client.RestoreSecret(request)
+		response, err = client.RotateSecret(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,35 @@ func (client *Client) RestoreSecretWithCallback(request *RestoreSecretRequest, c
 	return result
 }
 
-// RestoreSecretRequest is the request struct for api RestoreSecret
-type RestoreSecretRequest struct {
+// RotateSecretRequest is the request struct for api RotateSecret
+type RotateSecretRequest struct {
 	*requests.RpcRequest
+	VersionId  string `position:"Query" name:"VersionId"`
 	SecretName string `position:"Query" name:"SecretName"`
 }
 
-// RestoreSecretResponse is the response struct for api RestoreSecret
-type RestoreSecretResponse struct {
+// RotateSecretResponse is the response struct for api RotateSecret
+type RotateSecretResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Arn        string `json:"Arn" xml:"Arn"`
+	VersionId  string `json:"VersionId" xml:"VersionId"`
 	SecretName string `json:"SecretName" xml:"SecretName"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRestoreSecretRequest creates a request to invoke RestoreSecret API
-func CreateRestoreSecretRequest() (request *RestoreSecretRequest) {
-	request = &RestoreSecretRequest{
+// CreateRotateSecretRequest creates a request to invoke RotateSecret API
+func CreateRotateSecretRequest() (request *RotateSecretRequest) {
+	request = &RotateSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "RestoreSecret", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "RotateSecret", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRestoreSecretResponse creates a response to parse from RestoreSecret response
-func CreateRestoreSecretResponse() (response *RestoreSecretResponse) {
-	response = &RestoreSecretResponse{
+// CreateRotateSecretResponse creates a response to parse from RotateSecret response
+func CreateRotateSecretResponse() (response *RotateSecretResponse) {
+	response = &RotateSecretResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

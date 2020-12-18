@@ -1,3 +1,7 @@
+2020-12-18 Version: v1.61.780
+- Generated 2016-01-20 for `Kms`.
+- Release Full Managed Credentials for Aliyun RDS.
+
 2020-12-18 Version: v1.61.779
 - Generated 2019-08-08 for `ARMS`.
 - Add GetAgentDownloadUrl api.

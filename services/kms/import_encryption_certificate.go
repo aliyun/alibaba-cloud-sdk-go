@@ -93,7 +93,7 @@ func CreateImportEncryptionCertificateRequest() (request *ImportEncryptionCertif
 	request = &ImportEncryptionCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ImportEncryptionCertificate", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ImportEncryptionCertificate", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateCertificatePublicKeyEncryptRequest() (request *CertificatePublicKeyEn
 	request = &CertificatePublicKeyEncryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "CertificatePublicKeyEncrypt", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "CertificatePublicKeyEncrypt", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

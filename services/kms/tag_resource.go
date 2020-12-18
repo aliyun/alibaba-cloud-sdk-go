@@ -88,7 +88,7 @@ func CreateTagResourceRequest() (request *TagResourceRequest) {
 	request = &TagResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "TagResource", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "TagResource", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateUntagResourceRequest() (request *UntagResourceRequest) {
 	request = &UntagResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UntagResource", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

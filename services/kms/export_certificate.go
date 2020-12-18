@@ -92,7 +92,7 @@ func CreateExportCertificateRequest() (request *ExportCertificateRequest) {
 	request = &ExportCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ExportCertificate", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ExportCertificate", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

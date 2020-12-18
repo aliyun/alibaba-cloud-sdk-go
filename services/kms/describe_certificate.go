@@ -102,7 +102,7 @@ func CreateDescribeCertificateRequest() (request *DescribeCertificateRequest) {
 	request = &DescribeCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeCertificate", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeCertificate", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

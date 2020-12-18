@@ -85,7 +85,7 @@ func CreateDeleteCertificateRequest() (request *DeleteCertificateRequest) {
 	request = &DeleteCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DeleteCertificate", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DeleteCertificate", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,21 +71,28 @@ func (client *Client) GetSecretValueWithCallback(request *GetSecretValueRequest,
 // GetSecretValueRequest is the request struct for api GetSecretValue
 type GetSecretValueRequest struct {
 	*requests.RpcRequest
-	VersionId    string `position:"Query" name:"VersionId"`
-	VersionStage string `position:"Query" name:"VersionStage"`
-	SecretName   string `position:"Query" name:"SecretName"`
+	VersionId           string           `position:"Query" name:"VersionId"`
+	VersionStage        string           `position:"Query" name:"VersionStage"`
+	SecretName          string           `position:"Query" name:"SecretName"`
+	FetchExtendedConfig requests.Boolean `position:"Query" name:"FetchExtendedConfig"`
 }
 
 // GetSecretValueResponse is the response struct for api GetSecretValue
 type GetSecretValueResponse struct {
 	*responses.BaseResponse
-	RequestId      string                        `json:"RequestId" xml:"RequestId"`
-	SecretName     string                        `json:"SecretName" xml:"SecretName"`
-	VersionId      string                        `json:"VersionId" xml:"VersionId"`
-	CreateTime     string                        `json:"CreateTime" xml:"CreateTime"`
-	SecretData     string                        `json:"SecretData" xml:"SecretData"`
-	SecretDataType string                        `json:"SecretDataType" xml:"SecretDataType"`
-	VersionStages  VersionStagesInGetSecretValue `json:"VersionStages" xml:"VersionStages"`
+	RequestId         string                        `json:"RequestId" xml:"RequestId"`
+	SecretName        string                        `json:"SecretName" xml:"SecretName"`
+	VersionId         string                        `json:"VersionId" xml:"VersionId"`
+	CreateTime        string                        `json:"CreateTime" xml:"CreateTime"`
+	SecretData        string                        `json:"SecretData" xml:"SecretData"`
+	SecretDataType    string                        `json:"SecretDataType" xml:"SecretDataType"`
+	AutomaticRotation string                        `json:"AutomaticRotation" xml:"AutomaticRotation"`
+	RotationInterval  string                        `json:"RotationInterval" xml:"RotationInterval"`
+	NextRotationDate  string                        `json:"NextRotationDate" xml:"NextRotationDate"`
+	ExtendedConfig    string                        `json:"ExtendedConfig" xml:"ExtendedConfig"`
+	LastRotationDate  string                        `json:"LastRotationDate" xml:"LastRotationDate"`
+	SecretType        string                        `json:"SecretType" xml:"SecretType"`
+	VersionStages     VersionStagesInGetSecretValue `json:"VersionStages" xml:"VersionStages"`
 }
 
 // CreateGetSecretValueRequest creates a request to invoke GetSecretValue API
@@ -93,7 +100,7 @@ func CreateGetSecretValueRequest() (request *GetSecretValueRequest) {
 	request = &GetSecretValueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GetSecretValue", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GetSecretValue", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

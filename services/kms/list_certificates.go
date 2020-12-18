@@ -93,7 +93,7 @@ func CreateListCertificatesRequest() (request *ListCertificatesRequest) {
 	request = &ListCertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ListCertificates", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListCertificates", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

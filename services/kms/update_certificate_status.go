@@ -86,7 +86,7 @@ func CreateUpdateCertificateStatusRequest() (request *UpdateCertificateStatusReq
 	request = &UpdateCertificateStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateCertificateStatus", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateCertificateStatus", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,22 +71,31 @@ func (client *Client) CreateSecretWithCallback(request *CreateSecretRequest, cal
 // CreateSecretRequest is the request struct for api CreateSecret
 type CreateSecretRequest struct {
 	*requests.RpcRequest
-	VersionId       string `position:"Query" name:"VersionId"`
-	SecretData      string `position:"Query" name:"SecretData"`
-	Description     string `position:"Query" name:"Description"`
-	SecretName      string `position:"Query" name:"SecretName"`
-	EncryptionKeyId string `position:"Query" name:"EncryptionKeyId"`
-	SecretDataType  string `position:"Query" name:"SecretDataType"`
-	Tags            string `position:"Query" name:"Tags"`
+	SecretType              string           `position:"Query" name:"SecretType"`
+	VersionId               string           `position:"Query" name:"VersionId"`
+	SecretData              string           `position:"Query" name:"SecretData"`
+	Description             string           `position:"Query" name:"Description"`
+	RotationInterval        string           `position:"Query" name:"RotationInterval"`
+	SecretName              string           `position:"Query" name:"SecretName"`
+	EnableAutomaticRotation requests.Boolean `position:"Query" name:"EnableAutomaticRotation"`
+	EncryptionKeyId         string           `position:"Query" name:"EncryptionKeyId"`
+	SecretDataType          string           `position:"Query" name:"SecretDataType"`
+	Tags                    string           `position:"Query" name:"Tags"`
+	ExtendedConfig          string           `position:"Query" name:"ExtendedConfig"`
 }
 
 // CreateSecretResponse is the response struct for api CreateSecret
 type CreateSecretResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Arn        string `json:"Arn" xml:"Arn"`
-	VersionId  string `json:"VersionId" xml:"VersionId"`
-	SecretName string `json:"SecretName" xml:"SecretName"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	Arn               string `json:"Arn" xml:"Arn"`
+	VersionId         string `json:"VersionId" xml:"VersionId"`
+	SecretName        string `json:"SecretName" xml:"SecretName"`
+	SecretType        string `json:"SecretType" xml:"SecretType"`
+	AutomaticRotation string `json:"AutomaticRotation" xml:"AutomaticRotation"`
+	RotationInterval  string `json:"RotationInterval" xml:"RotationInterval"`
+	NextRotationDate  string `json:"NextRotationDate" xml:"NextRotationDate"`
+	ExtendedConfig    string `json:"ExtendedConfig" xml:"ExtendedConfig"`
 }
 
 // CreateCreateSecretRequest creates a request to invoke CreateSecret API
@@ -94,7 +103,7 @@ func CreateCreateSecretRequest() (request *CreateSecretRequest) {
 	request = &CreateSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "CreateSecret", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "CreateSecret", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }
