@@ -1,3 +1,7 @@
+2020-12-18 Version: v1.61.778
+- Generated 2019-09-30 for `imagerecog`.
+- Release EvaluateCertificateQuality.
+
 2020-12-18 Version: v1.61.777
 - Generated 2019-08-08 for `ARMS`.
 - Add ListScenario Api.
