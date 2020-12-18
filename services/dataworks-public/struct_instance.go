@@ -17,9 +17,9 @@ package dataworks_public
 
 // Instance is a nested struct in dataworks_public response
 type Instance struct {
-	NodeId            int    `json:"NodeId" xml:"NodeId"`
+	NodeId            int64  `json:"NodeId" xml:"NodeId"`
 	InstanceId        int64  `json:"InstanceId" xml:"InstanceId"`
-	DagId             int    `json:"DagId" xml:"DagId"`
+	DagId             int64  `json:"DagId" xml:"DagId"`
 	DagType           string `json:"DagType" xml:"DagType"`
 	Status            string `json:"Status" xml:"Status"`
 	Bizdate           int64  `json:"Bizdate" xml:"Bizdate"`

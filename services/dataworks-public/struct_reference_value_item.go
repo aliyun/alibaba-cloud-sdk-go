@@ -17,9 +17,9 @@ package dataworks_public
 
 // ReferenceValueItem is a nested struct in dataworks_public response
 type ReferenceValueItem struct {
-	BizDate           int64   `json:"BizDate" xml:"BizDate"`
 	Value             float64 `json:"Value" xml:"Value"`
 	SingleCheckResult int     `json:"SingleCheckResult" xml:"SingleCheckResult"`
 	DiscreteProperty  string  `json:"DiscreteProperty" xml:"DiscreteProperty"`
 	Threshold         float64 `json:"Threshold" xml:"Threshold"`
+	BizDate           string  `json:"BizDate" xml:"BizDate"`
 }

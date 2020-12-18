@@ -1,3 +1,7 @@
+2020-12-18 Version: v1.61.776
+- Generated 2020-05-18 for `dataworks-public`.
+
+
 2020-12-17 Version: v1.61.775
 - Generated 2019-12-30 for `imageseg`.
 - Update SegmentFood.

@@ -17,5 +17,5 @@ package dataworks_public
 
 // ReferenceValueInListQualityResultsByRule is a nested struct in dataworks_public response
 type ReferenceValueInListQualityResultsByRule struct {
-	ReferenceValueItem []ReferenceValueItem `json:"ReferenceValue" xml:"ReferenceValue"`
+	ReferenceValueItem []ReferenceValueItemInListQualityResultsByRule `json:"ReferenceValue" xml:"ReferenceValue"`
 }

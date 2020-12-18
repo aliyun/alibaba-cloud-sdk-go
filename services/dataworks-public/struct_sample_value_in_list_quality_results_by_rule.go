@@ -17,5 +17,5 @@ package dataworks_public
 
 // SampleValueInListQualityResultsByRule is a nested struct in dataworks_public response
 type SampleValueInListQualityResultsByRule struct {
-	SampleValueItem []SampleValueItem `json:"SampleValue" xml:"SampleValue"`
+	SampleValueItem []SampleValueItemInListQualityResultsByRule `json:"SampleValue" xml:"SampleValue"`
 }
