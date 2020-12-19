@@ -73,7 +73,6 @@ type AsymmetricSignRequest struct {
 	*requests.RpcRequest
 	KeyVersionId string `position:"Query" name:"KeyVersionId"`
 	Digest       string `position:"Query" name:"Digest"`
-	Recipient    string `position:"Query" name:"Recipient"`
 	KeyId        string `position:"Query" name:"KeyId"`
 	Algorithm    string `position:"Query" name:"Algorithm"`
 }

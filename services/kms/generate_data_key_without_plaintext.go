@@ -72,7 +72,6 @@ func (client *Client) GenerateDataKeyWithoutPlaintextWithCallback(request *Gener
 type GenerateDataKeyWithoutPlaintextRequest struct {
 	*requests.RpcRequest
 	EncryptionContext string           `position:"Query" name:"EncryptionContext"`
-	Recipient         string           `position:"Query" name:"Recipient"`
 	KeyId             string           `position:"Query" name:"KeyId"`
 	KeySpec           string           `position:"Query" name:"KeySpec"`
 	NumberOfBytes     requests.Integer `position:"Query" name:"NumberOfBytes"`
