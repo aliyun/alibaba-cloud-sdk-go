@@ -125,9 +125,16 @@ type CreateAutoProvisioningGroupRequest struct {
 
 // CreateAutoProvisioningGroupLaunchConfiguration.DataDisk is a repeated param struct in CreateAutoProvisioningGroupRequest
 type CreateAutoProvisioningGroupLaunchConfigurationDataDisk struct {
-	Size             string `name:"Size"`
-	Category         string `name:"Category"`
-	PerformanceLevel string `name:"PerformanceLevel"`
+	Size               string `name:"Size"`
+	Category           string `name:"Category"`
+	PerformanceLevel   string `name:"PerformanceLevel"`
+	Device             string `name:"Device"`
+	SnapshotId         string `name:"SnapshotId"`
+	DeleteWithInstance string `name:"DeleteWithInstance"`
+	Encrypted          string `name:"Encrypted"`
+	KmsKeyId           string `name:"KmsKeyId"`
+	DiskName           string `name:"DiskName"`
+	Description        string `name:"Description"`
 }
 
 // CreateAutoProvisioningGroupSystemDiskConfig is a repeated param struct in CreateAutoProvisioningGroupRequest

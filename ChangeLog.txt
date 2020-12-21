@@ -1,3 +1,7 @@
+2020-12-21 Version: v1.61.785
+- Generated 2014-05-26 for `Ecs`.
+- Support Device of LaunchConfiguration_DataDisk.
+
 2020-12-21 Version: v1.61.784
 - Generated 2017-08-01 for `polardb`.
 - Support DescribeDatabases for page query.
