@@ -74,7 +74,9 @@ type CreateDBLinkRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceDBName         string           `position:"Query" name:"SourceDBName"`
 	TargetDBName         string           `position:"Query" name:"TargetDBName"`
+	TargetIp             string           `position:"Query" name:"TargetIp"`
 	DBLinkName           string           `position:"Query" name:"DBLinkName"`
+	TargetPort           string           `position:"Query" name:"TargetPort"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TargetDBInstanceName string           `position:"Query" name:"TargetDBInstanceName"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
@@ -82,6 +84,7 @@ type CreateDBLinkRequest struct {
 	TargetDBPasswd       string           `position:"Query" name:"TargetDBPasswd"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TargetDBAccount      string           `position:"Query" name:"TargetDBAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
 // CreateDBLinkResponse is the response struct for api CreateDBLink

@@ -72,7 +72,9 @@ func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequ
 type DescribeAccountsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	AccountName          string           `position:"Query" name:"AccountName"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -82,8 +84,10 @@ type DescribeAccountsRequest struct {
 // DescribeAccountsResponse is the response struct for api DescribeAccounts
 type DescribeAccountsResponse struct {
 	*responses.BaseResponse
-	RequestId string      `json:"RequestId" xml:"RequestId"`
-	Accounts  []DBAccount `json:"Accounts" xml:"Accounts"`
+	RequestId       string      `json:"RequestId" xml:"RequestId"`
+	PageNumber      int         `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount int         `json:"PageRecordCount" xml:"PageRecordCount"`
+	Accounts        []DBAccount `json:"Accounts" xml:"Accounts"`
 }
 
 // CreateDescribeAccountsRequest creates a request to invoke DescribeAccounts API

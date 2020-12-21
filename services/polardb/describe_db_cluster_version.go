@@ -81,14 +81,13 @@ type DescribeDBClusterVersionRequest struct {
 // DescribeDBClusterVersionResponse is the response struct for api DescribeDBClusterVersion
 type DescribeDBClusterVersionResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	DBClusterId           string `json:"DBClusterId" xml:"DBClusterId"`
-	DBVersion             string `json:"DBVersion" xml:"DBVersion"`
-	DBMinorVersion        string `json:"DBMinorVersion" xml:"DBMinorVersion"`
-	DBRevisionVersion     string `json:"DBRevisionVersion" xml:"DBRevisionVersion"`
-	DBVersionStatus       string `json:"DBVersionStatus" xml:"DBVersionStatus"`
-	IsLatestVersion       string `json:"IsLatestVersion" xml:"IsLatestVersion"`
-	LatestRevisionVersion string `json:"LatestRevisionVersion" xml:"LatestRevisionVersion"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	DBClusterId       string `json:"DBClusterId" xml:"DBClusterId"`
+	DBVersion         string `json:"DBVersion" xml:"DBVersion"`
+	DBMinorVersion    string `json:"DBMinorVersion" xml:"DBMinorVersion"`
+	DBVersionStatus   string `json:"DBVersionStatus" xml:"DBVersionStatus"`
+	IsLatestVersion   string `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	DBRevisionVersion string `json:"DBRevisionVersion" xml:"DBRevisionVersion"`
 }
 
 // CreateDescribeDBClusterVersionRequest creates a request to invoke DescribeDBClusterVersion API

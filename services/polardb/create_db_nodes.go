@@ -73,6 +73,7 @@ type CreateDBNodesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string                 `position:"Query" name:"ClientToken"`
+	EndpointBindList     string                 `position:"Query" name:"EndpointBindList"`
 	ResourceOwnerAccount string                 `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string                 `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string                 `position:"Query" name:"OwnerAccount"`

@@ -93,8 +93,7 @@ type DescribeTasksResponse struct {
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	DBInstanceName   string `json:"DBInstanceName" xml:"DBInstanceName"`
-	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+	DBClusterId      string `json:"DBClusterId" xml:"DBClusterId"`
 	Tasks            Tasks  `json:"Tasks" xml:"Tasks"`
 }
 
