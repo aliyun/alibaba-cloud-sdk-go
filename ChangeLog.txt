@@ -1,3 +1,7 @@
+2020-12-22 Version: v1.61.791
+- Generated 2014-05-15 for `Slb`.
+- Support SLB latest OpenAPIs.
+
 2020-12-22 Version: v1.61.790
 - Generated 2020-03-20 for `videoenhan`.
 - Release InterpolateVideoFrame ToneSdrVideo ConvertHdrVideo.
