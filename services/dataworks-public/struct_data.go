@@ -165,6 +165,7 @@ type Data struct {
 	Influences          []InfluencesItem      `json:"Influences" xml:"Influences"`
 	Baselines           []BaselinesItem       `json:"Baselines" xml:"Baselines"`
 	ThemeList           []ThemeListItem       `json:"ThemeList" xml:"ThemeList"`
+	RuleChecks          []RuleChecksItem      `json:"RuleChecks" xml:"RuleChecks"`
 	TableEntityList     []TableEntityListItem `json:"TableEntityList" xml:"TableEntityList"`
 	Rules               []RulesItem           `json:"Rules" xml:"Rules"`
 	ColumnList          []ColumnListItem      `json:"ColumnList" xml:"ColumnList"`
