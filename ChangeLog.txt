@@ -1,3 +1,7 @@
+2020-12-22 Version: v1.61.789
+- Generated 2019-12-30 for `facebody`.
+- Release InterpolateVideoFrame.
+
 2020-12-22 Version: v1.61.788
 - Generated 2020-03-20 for `imageprocess`.
 - Release DetectRibFracture.
