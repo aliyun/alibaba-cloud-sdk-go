@@ -71,7 +71,8 @@ func (client *Client) SegmentAnimalWithCallback(request *SegmentAnimalRequest, c
 // SegmentAnimalRequest is the request struct for api SegmentAnimal
 type SegmentAnimalRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	ReturnForm string `position:"Query" name:"ReturnForm"`
+	ImageURL   string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentAnimalResponse is the response struct for api SegmentAnimal
