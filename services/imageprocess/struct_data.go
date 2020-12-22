@@ -37,10 +37,17 @@ type Data struct {
 	Answer            string                 `json:"Answer" xml:"Answer"`
 	Results           map[string]interface{} `json:"Results" xml:"Results"`
 	OrgName           string                 `json:"OrgName" xml:"OrgName"`
+	ResultURL         string                 `json:"ResultURL" xml:"ResultURL"`
 	ResultUrl         string                 `json:"ResultUrl" xml:"ResultUrl"`
+	Spacing           []float64              `json:"Spacing" xml:"Spacing"`
 	SimilarQuestion   []string               `json:"SimilarQuestion" xml:"SimilarQuestion"`
+	Origin            []float64              `json:"Origin" xml:"Origin"`
+	LungNodule        LungNodule             `json:"LungNodule" xml:"LungNodule"`
+	CACS              CACS                   `json:"CACS" xml:"CACS"`
+	Covid             Covid                  `json:"Covid" xml:"Covid"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	Discs             []Disc                 `json:"Discs" xml:"Discs"`
+	Detections        []DetectionsItem       `json:"Detections" xml:"Detections"`
 	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
 	Series            []Serie                `json:"Series" xml:"Series"`
 	KLDetections      []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
