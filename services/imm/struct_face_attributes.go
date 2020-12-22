@@ -21,9 +21,7 @@ type FaceAttributes struct {
 	MaskConfidence    float64      `json:"MaskConfidence" xml:"MaskConfidence"`
 	Mask              string       `json:"Mask" xml:"Mask"`
 	GlassesConfidence float64      `json:"GlassesConfidence" xml:"GlassesConfidence"`
-	RaceConfidence    float64      `json:"RaceConfidence" xml:"RaceConfidence"`
 	Beard             string       `json:"Beard" xml:"Beard"`
-	Race              string       `json:"Race" xml:"Race"`
 	BeardConfidence   float64      `json:"BeardConfidence" xml:"BeardConfidence"`
 	FaceBoundary      FaceBoundary `json:"FaceBoundary" xml:"FaceBoundary"`
 	HeadPose          HeadPose     `json:"HeadPose" xml:"HeadPose"`

@@ -61,9 +61,9 @@ type ImagesItem struct {
 	ImageQualityModifyTime       string                   `json:"ImageQualityModifyTime" xml:"ImageQualityModifyTime"`
 	ImageQuality                 ImageQuality             `json:"ImageQuality" xml:"ImageQuality"`
 	Address                      Address                  `json:"Address" xml:"Address"`
-	OCR                          []OCRItem                `json:"OCR" xml:"OCR"`
-	Faces                        []FacesItem              `json:"Faces" xml:"Faces"`
 	Celebrity                    []CelebrityItem          `json:"Celebrity" xml:"Celebrity"`
 	Tags                         []TagsItem               `json:"Tags" xml:"Tags"`
+	Faces                        []FacesItem              `json:"Faces" xml:"Faces"`
 	CroppingSuggestion           []CroppingSuggestionItem `json:"CroppingSuggestion" xml:"CroppingSuggestion"`
+	OCR                          []OCRItem                `json:"OCR" xml:"OCR"`
 }
