@@ -105,9 +105,6 @@ type GetImageResponse struct {
 	FacesFailReason              string                   `json:"FacesFailReason" xml:"FacesFailReason"`
 	TagsFailReason               string                   `json:"TagsFailReason" xml:"TagsFailReason"`
 	TagsModifyTime               string                   `json:"TagsModifyTime" xml:"TagsModifyTime"`
-	CelebrityStatus              string                   `json:"CelebrityStatus" xml:"CelebrityStatus"`
-	CelebrityModifyTime          string                   `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
-	CelebrityFailReason          string                   `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
 	TagsStatus                   string                   `json:"TagsStatus" xml:"TagsStatus"`
 	RemarksC                     string                   `json:"RemarksC" xml:"RemarksC"`
 	RemarksD                     string                   `json:"RemarksD" xml:"RemarksD"`
@@ -129,7 +126,6 @@ type GetImageResponse struct {
 	Faces                        []FacesItemInGetImage    `json:"Faces" xml:"Faces"`
 	OCR                          []OCRItem                `json:"OCR" xml:"OCR"`
 	Tags                         []TagsItem               `json:"Tags" xml:"Tags"`
-	Celebrity                    []CelebrityItem          `json:"Celebrity" xml:"Celebrity"`
 }
 
 // CreateGetImageRequest creates a request to invoke GetImage API

@@ -17,10 +17,7 @@ package imm
 
 // CelebrityItem is a nested struct in imm response
 type CelebrityItem struct {
-	CelebrityConfidence  float64           `json:"CelebrityConfidence" xml:"CelebrityConfidence"`
-	CelebrityName        string            `json:"CelebrityName" xml:"CelebrityName"`
-	CelebrityLibraryName string            `json:"CelebrityLibraryName" xml:"CelebrityLibraryName"`
-	CelebrityNum         int               `json:"CelebrityNum" xml:"CelebrityNum"`
-	CelebrityGender      string            `json:"CelebrityGender" xml:"CelebrityGender"`
-	CelebrityBoundary    CelebrityBoundary `json:"CelebrityBoundary" xml:"CelebrityBoundary"`
+	CelebrityName        string `json:"CelebrityName" xml:"CelebrityName"`
+	CelebrityNum         int    `json:"CelebrityNum" xml:"CelebrityNum"`
+	CelebrityLibraryName string `json:"CelebrityLibraryName" xml:"CelebrityLibraryName"`
 }
