@@ -44,7 +44,9 @@ type Datas struct {
 	LiveAddress                  string `json:"LiveAddress" xml:"LiveAddress"`
 	MotorValue                   string `json:"MotorValue" xml:"MotorValue"`
 	Type                         string `json:"Type" xml:"Type"`
+	Message                      string `json:"Message" xml:"Message"`
 	TargetImageStoragePath       string `json:"TargetImageStoragePath" xml:"TargetImageStoragePath"`
+	Code                         string `json:"Code" xml:"Code"`
 	FlowNumber                   string `json:"FlowNumber" xml:"FlowNumber"`
 	NearPoi                      string `json:"NearPoi" xml:"NearPoi"`
 	Destination                  string `json:"Destination" xml:"Destination"`
@@ -54,6 +56,7 @@ type Datas struct {
 	PoiName                      string `json:"PoiName" xml:"PoiName"`
 	Value                        string `json:"Value" xml:"Value"`
 	Gender                       string `json:"Gender" xml:"Gender"`
+	Success                      bool   `json:"Success" xml:"Success"`
 	VehicleClass                 string `json:"VehicleClass" xml:"VehicleClass"`
 	OldValue                     string `json:"OldValue" xml:"OldValue"`
 	TargetDataSourceId           string `json:"TargetDataSourceId" xml:"TargetDataSourceId"`
@@ -79,6 +82,7 @@ type Datas struct {
 	PersonType                   string `json:"PersonType" xml:"PersonType"`
 	VehicleColor                 string `json:"VehicleColor" xml:"VehicleColor"`
 	FaceTargetImage              string `json:"FaceTargetImage" xml:"FaceTargetImage"`
+	DeviceId                     string `json:"DeviceId" xml:"DeviceId"`
 	Origin                       string `json:"Origin" xml:"Origin"`
 	Distance                     string `json:"Distance" xml:"Distance"`
 	TagValue                     string `json:"TagValue" xml:"TagValue"`
