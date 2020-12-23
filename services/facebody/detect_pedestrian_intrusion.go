@@ -71,9 +71,9 @@ func (client *Client) DetectPedestrianIntrusionWithCallback(request *DetectPedes
 // DetectPedestrianIntrusionRequest is the request struct for api DetectPedestrianIntrusion
 type DetectPedestrianIntrusionRequest struct {
 	*requests.RpcRequest
-	RegionType string `position:"Body" name:"RegionType"`
-	ImageURL   string `position:"Body" name:"ImageURL"`
-	Region     string `position:"Body" name:"Region"`
+	DetectRegion string `position:"Body" name:"DetectRegion"`
+	RegionType   string `position:"Body" name:"RegionType"`
+	ImageURL     string `position:"Body" name:"ImageURL"`
 }
 
 // DetectPedestrianIntrusionResponse is the response struct for api DetectPedestrianIntrusion

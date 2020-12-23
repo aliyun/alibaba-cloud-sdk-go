@@ -1,3 +1,7 @@
+2020-12-23 Version: v1.61.796
+- Generated 2019-12-30 for `facebody`.
+- Release DetectPedestrianIntrusion.
+
 2020-12-23 Version: v1.61.795
 - Generated 2020-06-15 for `hitsdb`.
 - Create Lindorm Open api.
