@@ -1,3 +1,7 @@
+2020-12-23 Version: v1.61.795
+- Generated 2020-06-15 for `hitsdb`.
+- Create Lindorm Open api.
+
 2020-12-23 Version: v1.61.794
 - Generated 2017-06-01 for `hitsdb`.
 - Create TSDB Open api.
