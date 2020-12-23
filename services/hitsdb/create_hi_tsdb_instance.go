@@ -72,7 +72,6 @@ func (client *Client) CreateHiTSDBInstanceWithCallback(request *CreateHiTSDBInst
 type CreateHiTSDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ConnectionString     string           `position:"Query" name:"ConnectionString"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	InstanceClass        string           `position:"Query" name:"InstanceClass"`
 	Duration             string           `position:"Query" name:"Duration"`

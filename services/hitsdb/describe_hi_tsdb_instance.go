@@ -110,6 +110,10 @@ type DescribeHiTSDBInstanceResponse struct {
 	Series                 int          `json:"Series" xml:"Series"`
 	RDSStatus              string       `json:"RDSStatus" xml:"RDSStatus"`
 	DiskCategory           string       `json:"DiskCategory" xml:"DiskCategory"`
+	Status                 string       `json:"Status" xml:"Status"`
+	PaymentType            string       `json:"PaymentType" xml:"PaymentType"`
+	CreateTime             int64        `json:"CreateTime" xml:"CreateTime"`
+	ExpiredTime            int64        `json:"ExpiredTime" xml:"ExpiredTime"`
 	SecurityIpList         []SecurityIp `json:"SecurityIpList" xml:"SecurityIpList"`
 }
 

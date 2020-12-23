@@ -1,3 +1,7 @@
+2020-12-23 Version: v1.61.794
+- Generated 2017-06-01 for `hitsdb`.
+- Create TSDB Open api.
+
 2020-12-22 Version: v1.61.793
 - Generated 2017-09-06 for `imm`.
 - Minor chagnes.

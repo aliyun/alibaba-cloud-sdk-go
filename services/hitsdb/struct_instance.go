@@ -38,4 +38,8 @@ type Instance struct {
 	MaxSeriesPerDatabase string `json:"MaxSeriesPerDatabase" xml:"MaxSeriesPerDatabase"`
 	VpcId                string `json:"VpcId" xml:"VpcId"`
 	VswitchId            string `json:"VswitchId" xml:"VswitchId"`
+	Status               string `json:"Status" xml:"Status"`
+	PaymentType          string `json:"PaymentType" xml:"PaymentType"`
+	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
+	ExpiredTime          int64  `json:"ExpiredTime" xml:"ExpiredTime"`
 }
