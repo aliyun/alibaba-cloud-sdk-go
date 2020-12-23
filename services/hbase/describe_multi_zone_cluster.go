@@ -122,6 +122,7 @@ type DescribeMultiZoneClusterResponse struct {
 	ArbiterZoneId           string                         `json:"ArbiterZoneId" xml:"ArbiterZoneId"`
 	ArbiterVSwitchIds       string                         `json:"ArbiterVSwitchIds" xml:"ArbiterVSwitchIds"`
 	VpcId                   string                         `json:"VpcId" xml:"VpcId"`
+	ResourceGroupId         string                         `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	MultiZoneInstanceModels MultiZoneInstanceModels        `json:"MultiZoneInstanceModels" xml:"MultiZoneInstanceModels"`
 	Tags                    TagsInDescribeMultiZoneCluster `json:"Tags" xml:"Tags"`
 }

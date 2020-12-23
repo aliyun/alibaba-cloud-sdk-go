@@ -71,11 +71,12 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	ClusterName string                  `position:"Query" name:"ClusterName"`
-	PageNumber  requests.Integer        `position:"Query" name:"PageNumber"`
-	PageSize    requests.Integer        `position:"Query" name:"PageSize"`
-	Tag         *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	DbType      string                  `position:"Query" name:"DbType"`
+	ClusterName     string                  `position:"Query" name:"ClusterName"`
+	PageNumber      requests.Integer        `position:"Query" name:"PageNumber"`
+	ResourceGroupId string                  `position:"Query" name:"ResourceGroupId"`
+	PageSize        requests.Integer        `position:"Query" name:"PageSize"`
+	Tag             *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DbType          string                  `position:"Query" name:"DbType"`
 }
 
 // DescribeInstancesTag is a repeated param struct in DescribeInstancesRequest

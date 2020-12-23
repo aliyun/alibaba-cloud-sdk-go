@@ -74,6 +74,7 @@ type CreateClusterRequest struct {
 	ClusterName        string           `position:"Query" name:"ClusterName"`
 	ClientToken        string           `position:"Query" name:"ClientToken"`
 	EngineVersion      string           `position:"Query" name:"EngineVersion"`
+	ResourceGroupId    string           `position:"Query" name:"ResourceGroupId"`
 	Engine             string           `position:"Query" name:"Engine"`
 	AutoRenewPeriod    requests.Integer `position:"Query" name:"AutoRenewPeriod"`
 	Period             requests.Integer `position:"Query" name:"Period"`

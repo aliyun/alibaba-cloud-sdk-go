@@ -75,6 +75,7 @@ type CreateMultiZoneClusterRequest struct {
 	ClusterName          string           `position:"Query" name:"ClusterName"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	LogDiskType          string           `position:"Query" name:"LogDiskType"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PrimaryVSwitchId     string           `position:"Query" name:"PrimaryVSwitchId"`
 	LogInstanceType      string           `position:"Query" name:"LogInstanceType"`
 	AutoRenewPeriod      requests.Integer `position:"Query" name:"AutoRenewPeriod"`

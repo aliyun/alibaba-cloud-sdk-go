@@ -120,6 +120,7 @@ type DescribeInstanceResponse struct {
 	AutoRenewal          bool                   `json:"AutoRenewal" xml:"AutoRenewal"`
 	Duration             int                    `json:"Duration" xml:"Duration"`
 	ColdStorageSize      int                    `json:"ColdStorageSize" xml:"ColdStorageSize"`
+	ResourceGroupId      string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Tags                 TagsInDescribeInstance `json:"Tags" xml:"Tags"`
 }
 

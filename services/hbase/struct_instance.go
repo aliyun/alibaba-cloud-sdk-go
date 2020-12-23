@@ -28,6 +28,8 @@ type Instance struct {
 	DeleteTime           string                  `json:"DeleteTime" xml:"DeleteTime"`
 	RegionId             string                  `json:"RegionId" xml:"RegionId"`
 	CreatedTime          string                  `json:"CreatedTime" xml:"CreatedTime"`
+	ResourceGroupId      string                  `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	IsDefault            bool                    `json:"IsDefault" xml:"IsDefault"`
 	Duration             int                     `json:"Duration" xml:"Duration"`
 	InstanceId           string                  `json:"InstanceId" xml:"InstanceId"`
 	CreatedTimeUTC       string                  `json:"CreatedTimeUTC" xml:"CreatedTimeUTC"`
