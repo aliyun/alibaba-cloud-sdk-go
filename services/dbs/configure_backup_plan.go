@@ -85,10 +85,12 @@ type ConfigureBackupPlanRequest struct {
 	EnableBackupLog                   requests.Boolean `position:"Query" name:"EnableBackupLog"`
 	BackupStorageType                 string           `position:"Query" name:"BackupStorageType"`
 	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
+	BackupLogIntervalSeconds          requests.Integer `position:"Query" name:"BackupLogIntervalSeconds"`
 	CrossAliyunId                     string           `position:"Query" name:"CrossAliyunId"`
 	AutoStartBackup                   requests.Boolean `position:"Query" name:"AutoStartBackup"`
 	SourceEndpointPassword            string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupObjects                     string           `position:"Query" name:"BackupObjects"`
+	BackupRateLimit                   requests.Integer `position:"Query" name:"BackupRateLimit"`
 	OwnerId                           string           `position:"Query" name:"OwnerId"`
 	SourceEndpointPort                requests.Integer `position:"Query" name:"SourceEndpointPort"`
 	BackupRetentionPeriod             requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
