@@ -21,6 +21,7 @@ import (
 )
 
 // FaceFilter invokes the facebody.FaceFilter API synchronously
+// api document: https://help.aliyun.com/api/facebody/facefilter.html
 func (client *Client) FaceFilter(request *FaceFilterRequest) (response *FaceFilterResponse, err error) {
 	response = CreateFaceFilterResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) FaceFilter(request *FaceFilterRequest) (response *FaceFilt
 }
 
 // FaceFilterWithChan invokes the facebody.FaceFilter API asynchronously
+// api document: https://help.aliyun.com/api/facebody/facefilter.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FaceFilterWithChan(request *FaceFilterRequest) (<-chan *FaceFilterResponse, <-chan error) {
 	responseChan := make(chan *FaceFilterResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) FaceFilterWithChan(request *FaceFilterRequest) (<-chan *Fa
 }
 
 // FaceFilterWithCallback invokes the facebody.FaceFilter API asynchronously
+// api document: https://help.aliyun.com/api/facebody/facefilter.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FaceFilterWithCallback(request *FaceFilterRequest, callback func(response *FaceFilterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,8 +93,7 @@ func CreateFaceFilterRequest() (request *FaceFilterRequest) {
 	request = &FaceFilterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "FaceFilter", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "FaceFilter", "", "")
 	return
 }
 

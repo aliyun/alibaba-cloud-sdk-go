@@ -21,6 +21,7 @@ import (
 )
 
 // DetectBodyCount invokes the facebody.DetectBodyCount API synchronously
+// api document: https://help.aliyun.com/api/facebody/detectbodycount.html
 func (client *Client) DetectBodyCount(request *DetectBodyCountRequest) (response *DetectBodyCountResponse, err error) {
 	response = CreateDetectBodyCountResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) DetectBodyCount(request *DetectBodyCountRequest) (response
 }
 
 // DetectBodyCountWithChan invokes the facebody.DetectBodyCount API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectbodycount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectBodyCountWithChan(request *DetectBodyCountRequest) (<-chan *DetectBodyCountResponse, <-chan error) {
 	responseChan := make(chan *DetectBodyCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) DetectBodyCountWithChan(request *DetectBodyCountRequest) (
 }
 
 // DetectBodyCountWithCallback invokes the facebody.DetectBodyCount API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectbodycount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectBodyCountWithCallback(request *DetectBodyCountRequest, callback func(response *DetectBodyCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,8 +91,7 @@ func CreateDetectBodyCountRequest() (request *DetectBodyCountRequest) {
 	request = &DetectBodyCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectBodyCount", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectBodyCount", "", "")
 	return
 }
 

@@ -21,6 +21,7 @@ import (
 )
 
 // DetectFace invokes the facebody.DetectFace API synchronously
+// api document: https://help.aliyun.com/api/facebody/detectface.html
 func (client *Client) DetectFace(request *DetectFaceRequest) (response *DetectFaceResponse, err error) {
 	response = CreateDetectFaceResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) DetectFace(request *DetectFaceRequest) (response *DetectFa
 }
 
 // DetectFaceWithChan invokes the facebody.DetectFace API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectFaceWithChan(request *DetectFaceRequest) (<-chan *DetectFaceResponse, <-chan error) {
 	responseChan := make(chan *DetectFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) DetectFaceWithChan(request *DetectFaceRequest) (<-chan *De
 }
 
 // DetectFaceWithCallback invokes the facebody.DetectFace API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectFaceWithCallback(request *DetectFaceRequest, callback func(response *DetectFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,8 +92,7 @@ func CreateDetectFaceRequest() (request *DetectFaceRequest) {
 	request = &DetectFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectFace", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectFace", "", "")
 	return
 }
 

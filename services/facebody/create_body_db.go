@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// EnhanceFace invokes the facebody.EnhanceFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/enhanceface.html
-func (client *Client) EnhanceFace(request *EnhanceFaceRequest) (response *EnhanceFaceResponse, err error) {
-	response = CreateEnhanceFaceResponse()
+// CreateBodyDb invokes the facebody.CreateBodyDb API synchronously
+// api document: https://help.aliyun.com/api/facebody/createbodydb.html
+func (client *Client) CreateBodyDb(request *CreateBodyDbRequest) (response *CreateBodyDbResponse, err error) {
+	response = CreateCreateBodyDbResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// EnhanceFaceWithChan invokes the facebody.EnhanceFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/enhanceface.html
+// CreateBodyDbWithChan invokes the facebody.CreateBodyDb API asynchronously
+// api document: https://help.aliyun.com/api/facebody/createbodydb.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) EnhanceFaceWithChan(request *EnhanceFaceRequest) (<-chan *EnhanceFaceResponse, <-chan error) {
-	responseChan := make(chan *EnhanceFaceResponse, 1)
+func (client *Client) CreateBodyDbWithChan(request *CreateBodyDbRequest) (<-chan *CreateBodyDbResponse, <-chan error) {
+	responseChan := make(chan *CreateBodyDbResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.EnhanceFace(request)
+		response, err := client.CreateBodyDb(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) EnhanceFaceWithChan(request *EnhanceFaceRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// EnhanceFaceWithCallback invokes the facebody.EnhanceFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/enhanceface.html
+// CreateBodyDbWithCallback invokes the facebody.CreateBodyDb API asynchronously
+// api document: https://help.aliyun.com/api/facebody/createbodydb.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) EnhanceFaceWithCallback(request *EnhanceFaceRequest, callback func(response *EnhanceFaceResponse, err error)) <-chan int {
+func (client *Client) CreateBodyDbWithCallback(request *CreateBodyDbRequest, callback func(response *CreateBodyDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *EnhanceFaceResponse
+		var response *CreateBodyDbResponse
 		var err error
 		defer close(result)
-		response, err = client.EnhanceFace(request)
+		response, err = client.CreateBodyDb(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,33 @@ func (client *Client) EnhanceFaceWithCallback(request *EnhanceFaceRequest, callb
 	return result
 }
 
-// EnhanceFaceRequest is the request struct for api EnhanceFace
-type EnhanceFaceRequest struct {
+// CreateBodyDbRequest is the request struct for api CreateBodyDb
+type CreateBodyDbRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	Name string `position:"Body" name:"Name"`
 }
 
-// EnhanceFaceResponse is the response struct for api EnhanceFace
-type EnhanceFaceResponse struct {
+// CreateBodyDbResponse is the response struct for api CreateBodyDb
+type CreateBodyDbResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateEnhanceFaceRequest creates a request to invoke EnhanceFace API
-func CreateEnhanceFaceRequest() (request *EnhanceFaceRequest) {
-	request = &EnhanceFaceRequest{
+// CreateCreateBodyDbRequest creates a request to invoke CreateBodyDb API
+func CreateCreateBodyDbRequest() (request *CreateBodyDbRequest) {
+	request = &CreateBodyDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "EnhanceFace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "CreateBodyDb", "", "")
 	return
 }
 
-// CreateEnhanceFaceResponse creates a response to parse from EnhanceFace response
-func CreateEnhanceFaceResponse() (response *EnhanceFaceResponse) {
-	response = &EnhanceFaceResponse{
+// CreateCreateBodyDbResponse creates a response to parse from CreateBodyDb response
+func CreateCreateBodyDbResponse() (response *CreateBodyDbResponse) {
+	response = &CreateBodyDbResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

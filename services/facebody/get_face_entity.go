@@ -21,6 +21,7 @@ import (
 )
 
 // GetFaceEntity invokes the facebody.GetFaceEntity API synchronously
+// api document: https://help.aliyun.com/api/facebody/getfaceentity.html
 func (client *Client) GetFaceEntity(request *GetFaceEntityRequest) (response *GetFaceEntityResponse, err error) {
 	response = CreateGetFaceEntityResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) GetFaceEntity(request *GetFaceEntityRequest) (response *Ge
 }
 
 // GetFaceEntityWithChan invokes the facebody.GetFaceEntity API asynchronously
+// api document: https://help.aliyun.com/api/facebody/getfaceentity.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFaceEntityWithChan(request *GetFaceEntityRequest) (<-chan *GetFaceEntityResponse, <-chan error) {
 	responseChan := make(chan *GetFaceEntityResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) GetFaceEntityWithChan(request *GetFaceEntityRequest) (<-ch
 }
 
 // GetFaceEntityWithCallback invokes the facebody.GetFaceEntity API asynchronously
+// api document: https://help.aliyun.com/api/facebody/getfaceentity.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFaceEntityWithCallback(request *GetFaceEntityRequest, callback func(response *GetFaceEntityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,8 +92,7 @@ func CreateGetFaceEntityRequest() (request *GetFaceEntityRequest) {
 	request = &GetFaceEntityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "GetFaceEntity", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "GetFaceEntity", "", "")
 	return
 }
 

@@ -17,16 +17,16 @@ package facebody
 
 // AttributesItem is a nested struct in facebody response
 type AttributesItem struct {
-	Age         Age         `json:"Age" xml:"Age"`
 	Backpack    Backpack    `json:"Backpack" xml:"Backpack"`
-	Gender      Gender      `json:"Gender" xml:"Gender"`
+	LowerWear   LowerWear   `json:"LowerWear" xml:"LowerWear"`
+	ShoulderBag ShoulderBag `json:"ShoulderBag" xml:"ShoulderBag"`
+	Orient      Orient      `json:"Orient" xml:"Orient"`
+	LowerColor  LowerColor  `json:"LowerColor" xml:"LowerColor"`
 	Glasses     Glasses     `json:"Glasses" xml:"Glasses"`
+	UpperColor  UpperColor  `json:"UpperColor" xml:"UpperColor"`
 	Handbag     Handbag     `json:"Handbag" xml:"Handbag"`
 	Hat         Hat         `json:"Hat" xml:"Hat"`
-	LowerColor  LowerColor  `json:"LowerColor" xml:"LowerColor"`
-	LowerWear   LowerWear   `json:"LowerWear" xml:"LowerWear"`
-	Orient      Orient      `json:"Orient" xml:"Orient"`
-	ShoulderBag ShoulderBag `json:"ShoulderBag" xml:"ShoulderBag"`
-	UpperColor  UpperColor  `json:"UpperColor" xml:"UpperColor"`
+	Gender      Gender      `json:"Gender" xml:"Gender"`
 	UpperWear   UpperWear   `json:"UpperWear" xml:"UpperWear"`
+	Age         Age         `json:"Age" xml:"Age"`
 }

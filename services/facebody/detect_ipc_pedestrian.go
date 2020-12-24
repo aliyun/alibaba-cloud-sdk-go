@@ -21,6 +21,7 @@ import (
 )
 
 // DetectIPCPedestrian invokes the facebody.DetectIPCPedestrian API synchronously
+// api document: https://help.aliyun.com/api/facebody/detectipcpedestrian.html
 func (client *Client) DetectIPCPedestrian(request *DetectIPCPedestrianRequest) (response *DetectIPCPedestrianResponse, err error) {
 	response = CreateDetectIPCPedestrianResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) DetectIPCPedestrian(request *DetectIPCPedestrianRequest) (
 }
 
 // DetectIPCPedestrianWithChan invokes the facebody.DetectIPCPedestrian API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectipcpedestrian.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectIPCPedestrianWithChan(request *DetectIPCPedestrianRequest) (<-chan *DetectIPCPedestrianResponse, <-chan error) {
 	responseChan := make(chan *DetectIPCPedestrianResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) DetectIPCPedestrianWithChan(request *DetectIPCPedestrianRe
 }
 
 // DetectIPCPedestrianWithCallback invokes the facebody.DetectIPCPedestrian API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectipcpedestrian.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectIPCPedestrianWithCallback(request *DetectIPCPedestrianRequest, callback func(response *DetectIPCPedestrianResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -71,11 +76,11 @@ func (client *Client) DetectIPCPedestrianWithCallback(request *DetectIPCPedestri
 // DetectIPCPedestrianRequest is the request struct for api DetectIPCPedestrian
 type DetectIPCPedestrianRequest struct {
 	*requests.RpcRequest
+	ContinueOnError requests.Boolean              `position:"Body" name:"ContinueOnError"`
+	Height          requests.Integer              `position:"Body" name:"Height"`
 	ImageData       string                        `position:"Body" name:"ImageData"`
 	URLList         *[]DetectIPCPedestrianURLList `position:"Body" name:"URLList"  type:"Repeated"`
-	ContinueOnError requests.Boolean              `position:"Body" name:"ContinueOnError"`
 	Width           requests.Integer              `position:"Body" name:"Width"`
-	Height          requests.Integer              `position:"Body" name:"Height"`
 }
 
 // DetectIPCPedestrianURLList is a repeated param struct in DetectIPCPedestrianRequest
@@ -96,8 +101,7 @@ func CreateDetectIPCPedestrianRequest() (request *DetectIPCPedestrianRequest) {
 	request = &DetectIPCPedestrianRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectIPCPedestrian", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectIPCPedestrian", "", "")
 	return
 }
 

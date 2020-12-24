@@ -21,6 +21,7 @@ import (
 )
 
 // DetectPedestrianIntrusion invokes the facebody.DetectPedestrianIntrusion API synchronously
+// api document: https://help.aliyun.com/api/facebody/detectpedestrianintrusion.html
 func (client *Client) DetectPedestrianIntrusion(request *DetectPedestrianIntrusionRequest) (response *DetectPedestrianIntrusionResponse, err error) {
 	response = CreateDetectPedestrianIntrusionResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) DetectPedestrianIntrusion(request *DetectPedestrianIntrusi
 }
 
 // DetectPedestrianIntrusionWithChan invokes the facebody.DetectPedestrianIntrusion API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectpedestrianintrusion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectPedestrianIntrusionWithChan(request *DetectPedestrianIntrusionRequest) (<-chan *DetectPedestrianIntrusionResponse, <-chan error) {
 	responseChan := make(chan *DetectPedestrianIntrusionResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) DetectPedestrianIntrusionWithChan(request *DetectPedestria
 }
 
 // DetectPedestrianIntrusionWithCallback invokes the facebody.DetectPedestrianIntrusion API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectpedestrianintrusion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectPedestrianIntrusionWithCallback(request *DetectPedestrianIntrusionRequest, callback func(response *DetectPedestrianIntrusionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,8 +95,7 @@ func CreateDetectPedestrianIntrusionRequest() (request *DetectPedestrianIntrusio
 	request = &DetectPedestrianIntrusionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectPedestrianIntrusion", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectPedestrianIntrusion", "", "")
 	return
 }
 

@@ -21,6 +21,7 @@ import (
 )
 
 // VerifyFaceMask invokes the facebody.VerifyFaceMask API synchronously
+// api document: https://help.aliyun.com/api/facebody/verifyfacemask.html
 func (client *Client) VerifyFaceMask(request *VerifyFaceMaskRequest) (response *VerifyFaceMaskResponse, err error) {
 	response = CreateVerifyFaceMaskResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) VerifyFaceMask(request *VerifyFaceMaskRequest) (response *
 }
 
 // VerifyFaceMaskWithChan invokes the facebody.VerifyFaceMask API asynchronously
+// api document: https://help.aliyun.com/api/facebody/verifyfacemask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyFaceMaskWithChan(request *VerifyFaceMaskRequest) (<-chan *VerifyFaceMaskResponse, <-chan error) {
 	responseChan := make(chan *VerifyFaceMaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) VerifyFaceMaskWithChan(request *VerifyFaceMaskRequest) (<-
 }
 
 // VerifyFaceMaskWithCallback invokes the facebody.VerifyFaceMask API asynchronously
+// api document: https://help.aliyun.com/api/facebody/verifyfacemask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyFaceMaskWithCallback(request *VerifyFaceMaskRequest, callback func(response *VerifyFaceMaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,8 +92,7 @@ func CreateVerifyFaceMaskRequest() (request *VerifyFaceMaskRequest) {
 	request = &VerifyFaceMaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "VerifyFaceMask", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "VerifyFaceMask", "", "")
 	return
 }
 

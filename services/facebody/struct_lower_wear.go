@@ -17,6 +17,6 @@ package facebody
 
 // LowerWear is a nested struct in facebody response
 type LowerWear struct {
-	Name  string  `json:"Name" xml:"Name"`
 	Score float64 `json:"Score" xml:"Score"`
+	Name  string  `json:"Name" xml:"Name"`
 }

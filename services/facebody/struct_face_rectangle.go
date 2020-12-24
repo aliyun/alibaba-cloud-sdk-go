@@ -17,8 +17,8 @@ package facebody
 
 // FaceRectangle is a nested struct in facebody response
 type FaceRectangle struct {
-	Height int `json:"Height" xml:"Height"`
 	Left   int `json:"Left" xml:"Left"`
 	Top    int `json:"Top" xml:"Top"`
+	Height int `json:"Height" xml:"Height"`
 	Width  int `json:"Width" xml:"Width"`
 }

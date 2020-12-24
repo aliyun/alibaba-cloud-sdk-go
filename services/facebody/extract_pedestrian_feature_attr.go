@@ -21,6 +21,7 @@ import (
 )
 
 // ExtractPedestrianFeatureAttr invokes the facebody.ExtractPedestrianFeatureAttr API synchronously
+// api document: https://help.aliyun.com/api/facebody/extractpedestrianfeatureattr.html
 func (client *Client) ExtractPedestrianFeatureAttr(request *ExtractPedestrianFeatureAttrRequest) (response *ExtractPedestrianFeatureAttrResponse, err error) {
 	response = CreateExtractPedestrianFeatureAttrResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) ExtractPedestrianFeatureAttr(request *ExtractPedestrianFea
 }
 
 // ExtractPedestrianFeatureAttrWithChan invokes the facebody.ExtractPedestrianFeatureAttr API asynchronously
+// api document: https://help.aliyun.com/api/facebody/extractpedestrianfeatureattr.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExtractPedestrianFeatureAttrWithChan(request *ExtractPedestrianFeatureAttrRequest) (<-chan *ExtractPedestrianFeatureAttrResponse, <-chan error) {
 	responseChan := make(chan *ExtractPedestrianFeatureAttrResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) ExtractPedestrianFeatureAttrWithChan(request *ExtractPedes
 }
 
 // ExtractPedestrianFeatureAttrWithCallback invokes the facebody.ExtractPedestrianFeatureAttr API asynchronously
+// api document: https://help.aliyun.com/api/facebody/extractpedestrianfeatureattr.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExtractPedestrianFeatureAttrWithCallback(request *ExtractPedestrianFeatureAttrRequest, callback func(response *ExtractPedestrianFeatureAttrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,8 +92,7 @@ func CreateExtractPedestrianFeatureAttrRequest() (request *ExtractPedestrianFeat
 	request = &ExtractPedestrianFeatureAttrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "ExtractPedestrianFeatureAttr", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "ExtractPedestrianFeatureAttr", "", "")
 	return
 }
 

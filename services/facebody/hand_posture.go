@@ -21,6 +21,7 @@ import (
 )
 
 // HandPosture invokes the facebody.HandPosture API synchronously
+// api document: https://help.aliyun.com/api/facebody/handposture.html
 func (client *Client) HandPosture(request *HandPostureRequest) (response *HandPostureResponse, err error) {
 	response = CreateHandPostureResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) HandPosture(request *HandPostureRequest) (response *HandPo
 }
 
 // HandPostureWithChan invokes the facebody.HandPosture API asynchronously
+// api document: https://help.aliyun.com/api/facebody/handposture.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HandPostureWithChan(request *HandPostureRequest) (<-chan *HandPostureResponse, <-chan error) {
 	responseChan := make(chan *HandPostureResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) HandPostureWithChan(request *HandPostureRequest) (<-chan *
 }
 
 // HandPostureWithCallback invokes the facebody.HandPosture API asynchronously
+// api document: https://help.aliyun.com/api/facebody/handposture.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HandPostureWithCallback(request *HandPostureRequest, callback func(response *HandPostureResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,8 +91,7 @@ func CreateHandPostureRequest() (request *HandPostureRequest) {
 	request = &HandPostureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "HandPosture", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "HandPosture", "", "")
 	return
 }
 

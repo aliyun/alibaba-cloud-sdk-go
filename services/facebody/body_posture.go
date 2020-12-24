@@ -21,6 +21,7 @@ import (
 )
 
 // BodyPosture invokes the facebody.BodyPosture API synchronously
+// api document: https://help.aliyun.com/api/facebody/bodyposture.html
 func (client *Client) BodyPosture(request *BodyPostureRequest) (response *BodyPostureResponse, err error) {
 	response = CreateBodyPostureResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) BodyPosture(request *BodyPostureRequest) (response *BodyPo
 }
 
 // BodyPostureWithChan invokes the facebody.BodyPosture API asynchronously
+// api document: https://help.aliyun.com/api/facebody/bodyposture.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BodyPostureWithChan(request *BodyPostureRequest) (<-chan *BodyPostureResponse, <-chan error) {
 	responseChan := make(chan *BodyPostureResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) BodyPostureWithChan(request *BodyPostureRequest) (<-chan *
 }
 
 // BodyPostureWithCallback invokes the facebody.BodyPosture API asynchronously
+// api document: https://help.aliyun.com/api/facebody/bodyposture.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BodyPostureWithCallback(request *BodyPostureRequest, callback func(response *BodyPostureResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,8 +91,7 @@ func CreateBodyPostureRequest() (request *BodyPostureRequest) {
 	request = &BodyPostureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "BodyPosture", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "BodyPosture", "", "")
 	return
 }
 

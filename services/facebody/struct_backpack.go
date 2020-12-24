@@ -17,6 +17,6 @@ package facebody
 
 // Backpack is a nested struct in facebody response
 type Backpack struct {
-	Name  string  `json:"Name" xml:"Name"`
 	Score float64 `json:"Score" xml:"Score"`
+	Name  string  `json:"Name" xml:"Name"`
 }

@@ -21,6 +21,7 @@ import (
 )
 
 // CountCrowd invokes the facebody.CountCrowd API synchronously
+// api document: https://help.aliyun.com/api/facebody/countcrowd.html
 func (client *Client) CountCrowd(request *CountCrowdRequest) (response *CountCrowdResponse, err error) {
 	response = CreateCountCrowdResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) CountCrowd(request *CountCrowdRequest) (response *CountCro
 }
 
 // CountCrowdWithChan invokes the facebody.CountCrowd API asynchronously
+// api document: https://help.aliyun.com/api/facebody/countcrowd.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CountCrowdWithChan(request *CountCrowdRequest) (<-chan *CountCrowdResponse, <-chan error) {
 	responseChan := make(chan *CountCrowdResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) CountCrowdWithChan(request *CountCrowdRequest) (<-chan *Co
 }
 
 // CountCrowdWithCallback invokes the facebody.CountCrowd API asynchronously
+// api document: https://help.aliyun.com/api/facebody/countcrowd.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CountCrowdWithCallback(request *CountCrowdRequest, callback func(response *CountCrowdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,8 +92,7 @@ func CreateCountCrowdRequest() (request *CountCrowdRequest) {
 	request = &CountCrowdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "CountCrowd", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "CountCrowd", "", "")
 	return
 }
 

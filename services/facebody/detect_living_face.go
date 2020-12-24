@@ -21,6 +21,7 @@ import (
 )
 
 // DetectLivingFace invokes the facebody.DetectLivingFace API synchronously
+// api document: https://help.aliyun.com/api/facebody/detectlivingface.html
 func (client *Client) DetectLivingFace(request *DetectLivingFaceRequest) (response *DetectLivingFaceResponse, err error) {
 	response = CreateDetectLivingFaceResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) DetectLivingFace(request *DetectLivingFaceRequest) (respon
 }
 
 // DetectLivingFaceWithChan invokes the facebody.DetectLivingFace API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectlivingface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectLivingFaceWithChan(request *DetectLivingFaceRequest) (<-chan *DetectLivingFaceResponse, <-chan error) {
 	responseChan := make(chan *DetectLivingFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) DetectLivingFaceWithChan(request *DetectLivingFaceRequest)
 }
 
 // DetectLivingFaceWithCallback invokes the facebody.DetectLivingFace API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectlivingface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectLivingFaceWithCallback(request *DetectLivingFaceRequest, callback func(response *DetectLivingFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,8 +96,7 @@ func CreateDetectLivingFaceRequest() (request *DetectLivingFaceRequest) {
 	request = &DetectLivingFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectLivingFace", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectLivingFace", "", "")
 	return
 }
 

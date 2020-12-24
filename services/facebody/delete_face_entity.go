@@ -21,6 +21,7 @@ import (
 )
 
 // DeleteFaceEntity invokes the facebody.DeleteFaceEntity API synchronously
+// api document: https://help.aliyun.com/api/facebody/deletefaceentity.html
 func (client *Client) DeleteFaceEntity(request *DeleteFaceEntityRequest) (response *DeleteFaceEntityResponse, err error) {
 	response = CreateDeleteFaceEntityResponse()
 	err = client.DoAction(request, response)
@@ -28,6 +29,8 @@ func (client *Client) DeleteFaceEntity(request *DeleteFaceEntityRequest) (respon
 }
 
 // DeleteFaceEntityWithChan invokes the facebody.DeleteFaceEntity API asynchronously
+// api document: https://help.aliyun.com/api/facebody/deletefaceentity.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFaceEntityWithChan(request *DeleteFaceEntityRequest) (<-chan *DeleteFaceEntityResponse, <-chan error) {
 	responseChan := make(chan *DeleteFaceEntityResponse, 1)
 	errChan := make(chan error, 1)
@@ -50,6 +53,8 @@ func (client *Client) DeleteFaceEntityWithChan(request *DeleteFaceEntityRequest)
 }
 
 // DeleteFaceEntityWithCallback invokes the facebody.DeleteFaceEntity API asynchronously
+// api document: https://help.aliyun.com/api/facebody/deletefaceentity.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFaceEntityWithCallback(request *DeleteFaceEntityRequest, callback func(response *DeleteFaceEntityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,8 +91,7 @@ func CreateDeleteFaceEntityRequest() (request *DeleteFaceEntityRequest) {
 	request = &DeleteFaceEntityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceEntity", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceEntity", "", "")
 	return
 }
 
