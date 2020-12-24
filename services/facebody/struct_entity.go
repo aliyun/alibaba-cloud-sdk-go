@@ -17,10 +17,10 @@ package facebody
 
 // Entity is a nested struct in facebody response
 type Entity struct {
-	EntityId  string `json:"EntityId" xml:"EntityId"`
-	CreatedAt int64  `json:"CreatedAt" xml:"CreatedAt"`
-	Labels    string `json:"Labels" xml:"Labels"`
 	DbName    string `json:"DbName" xml:"DbName"`
-	UpdatedAt int64  `json:"UpdatedAt" xml:"UpdatedAt"`
+	EntityId  string `json:"EntityId" xml:"EntityId"`
 	FaceCount int    `json:"FaceCount" xml:"FaceCount"`
+	Labels    string `json:"Labels" xml:"Labels"`
+	CreatedAt int64  `json:"CreatedAt" xml:"CreatedAt"`
+	UpdatedAt int64  `json:"UpdatedAt" xml:"UpdatedAt"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBodyDb invokes the facebody.DeleteBodyDb API synchronously
-// api document: https://help.aliyun.com/api/facebody/deletebodydb.html
 func (client *Client) DeleteBodyDb(request *DeleteBodyDbRequest) (response *DeleteBodyDbResponse, err error) {
 	response = CreateDeleteBodyDbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBodyDb(request *DeleteBodyDbRequest) (response *Dele
 }
 
 // DeleteBodyDbWithChan invokes the facebody.DeleteBodyDb API asynchronously
-// api document: https://help.aliyun.com/api/facebody/deletebodydb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBodyDbWithChan(request *DeleteBodyDbRequest) (<-chan *DeleteBodyDbResponse, <-chan error) {
 	responseChan := make(chan *DeleteBodyDbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBodyDbWithChan(request *DeleteBodyDbRequest) (<-chan
 }
 
 // DeleteBodyDbWithCallback invokes the facebody.DeleteBodyDb API asynchronously
-// api document: https://help.aliyun.com/api/facebody/deletebodydb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBodyDbWithCallback(request *DeleteBodyDbRequest, callback func(response *DeleteBodyDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDeleteBodyDbRequest() (request *DeleteBodyDbRequest) {
 	request = &DeleteBodyDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteBodyDb", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteBodyDb", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

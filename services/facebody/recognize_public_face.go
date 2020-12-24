@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizePublicFace invokes the facebody.RecognizePublicFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/recognizepublicface.html
 func (client *Client) RecognizePublicFace(request *RecognizePublicFaceRequest) (response *RecognizePublicFaceResponse, err error) {
 	response = CreateRecognizePublicFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizePublicFace(request *RecognizePublicFaceRequest) (
 }
 
 // RecognizePublicFaceWithChan invokes the facebody.RecognizePublicFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/recognizepublicface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizePublicFaceWithChan(request *RecognizePublicFaceRequest) (<-chan *RecognizePublicFaceResponse, <-chan error) {
 	responseChan := make(chan *RecognizePublicFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizePublicFaceWithChan(request *RecognizePublicFaceRe
 }
 
 // RecognizePublicFaceWithCallback invokes the facebody.RecognizePublicFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/recognizepublicface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizePublicFaceWithCallback(request *RecognizePublicFaceRequest, callback func(response *RecognizePublicFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateRecognizePublicFaceRequest() (request *RecognizePublicFaceRequest) {
 	request = &RecognizePublicFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizePublicFace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizePublicFace", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

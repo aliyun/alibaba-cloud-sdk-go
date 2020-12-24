@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddBodyTrace invokes the facebody.AddBodyTrace API synchronously
-func (client *Client) AddBodyTrace(request *AddBodyTraceRequest) (response *AddBodyTraceResponse, err error) {
-	response = CreateAddBodyTraceResponse()
+// ListBodyPerson invokes the facebody.ListBodyPerson API synchronously
+func (client *Client) ListBodyPerson(request *ListBodyPersonRequest) (response *ListBodyPersonResponse, err error) {
+	response = CreateListBodyPersonResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddBodyTraceWithChan invokes the facebody.AddBodyTrace API asynchronously
-func (client *Client) AddBodyTraceWithChan(request *AddBodyTraceRequest) (<-chan *AddBodyTraceResponse, <-chan error) {
-	responseChan := make(chan *AddBodyTraceResponse, 1)
+// ListBodyPersonWithChan invokes the facebody.ListBodyPerson API asynchronously
+func (client *Client) ListBodyPersonWithChan(request *ListBodyPersonRequest) (<-chan *ListBodyPersonResponse, <-chan error) {
+	responseChan := make(chan *ListBodyPersonResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddBodyTrace(request)
+		response, err := client.ListBodyPerson(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddBodyTraceWithChan(request *AddBodyTraceRequest) (<-chan
 	return responseChan, errChan
 }
 
-// AddBodyTraceWithCallback invokes the facebody.AddBodyTrace API asynchronously
-func (client *Client) AddBodyTraceWithCallback(request *AddBodyTraceRequest, callback func(response *AddBodyTraceResponse, err error)) <-chan int {
+// ListBodyPersonWithCallback invokes the facebody.ListBodyPerson API asynchronously
+func (client *Client) ListBodyPersonWithCallback(request *ListBodyPersonRequest, callback func(response *ListBodyPersonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddBodyTraceResponse
+		var response *ListBodyPersonResponse
 		var err error
 		defer close(result)
-		response, err = client.AddBodyTrace(request)
+		response, err = client.ListBodyPerson(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,17 +68,16 @@ func (client *Client) AddBodyTraceWithCallback(request *AddBodyTraceRequest, cal
 	return result
 }
 
-// AddBodyTraceRequest is the request struct for api AddBodyTrace
-type AddBodyTraceRequest struct {
+// ListBodyPersonRequest is the request struct for api ListBodyPerson
+type ListBodyPersonRequest struct {
 	*requests.RpcRequest
-	ExtraData string           `position:"Body" name:"ExtraData"`
-	PersonId  requests.Integer `position:"Body" name:"PersonId"`
-	Images    string           `position:"Body" name:"Images"`
-	DbId      requests.Integer `position:"Body" name:"DbId"`
+	Limit  requests.Integer `position:"Query" name:"Limit"`
+	Offset requests.Integer `position:"Query" name:"Offset"`
+	DbId   requests.Integer `position:"Query" name:"DbId"`
 }
 
-// AddBodyTraceResponse is the response struct for api AddBodyTrace
-type AddBodyTraceResponse struct {
+// ListBodyPersonResponse is the response struct for api ListBodyPerson
+type ListBodyPersonResponse struct {
 	*responses.BaseResponse
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -86,19 +85,19 @@ type AddBodyTraceResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateAddBodyTraceRequest creates a request to invoke AddBodyTrace API
-func CreateAddBodyTraceRequest() (request *AddBodyTraceRequest) {
-	request = &AddBodyTraceRequest{
+// CreateListBodyPersonRequest creates a request to invoke ListBodyPerson API
+func CreateListBodyPersonRequest() (request *ListBodyPersonRequest) {
+	request = &ListBodyPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "AddBodyTrace", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "ListBodyPerson", "facebody", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateAddBodyTraceResponse creates a response to parse from AddBodyTrace response
-func CreateAddBodyTraceResponse() (response *AddBodyTraceResponse) {
-	response = &AddBodyTraceResponse{
+// CreateListBodyPersonResponse creates a response to parse from ListBodyPerson response
+func CreateListBodyPersonResponse() (response *ListBodyPersonResponse) {
+	response = &ListBodyPersonResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -35,8 +35,8 @@ type Element struct {
 	ObjType         string        `json:"ObjType" xml:"ObjType"`
 	Type            string        `json:"Type" xml:"Type"`
 	ObjTypeScore    float64       `json:"ObjTypeScore" xml:"ObjTypeScore"`
-	UpperTypeScore  float64       `json:"UpperTypeScore" xml:"UpperTypeScore"`
 	Feature         string        `json:"Feature" xml:"Feature"`
+	UpperTypeScore  float64       `json:"UpperTypeScore" xml:"UpperTypeScore"`
 	UpperColor      string        `json:"UpperColor" xml:"UpperColor"`
 	LowerTypeScore  float64       `json:"LowerTypeScore" xml:"LowerTypeScore"`
 	Gender          string        `json:"Gender" xml:"Gender"`

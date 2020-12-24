@@ -21,7 +21,6 @@ import (
 )
 
 // DetectChefCap invokes the facebody.DetectChefCap API synchronously
-// api document: https://help.aliyun.com/api/facebody/detectchefcap.html
 func (client *Client) DetectChefCap(request *DetectChefCapRequest) (response *DetectChefCapResponse, err error) {
 	response = CreateDetectChefCapResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectChefCap(request *DetectChefCapRequest) (response *De
 }
 
 // DetectChefCapWithChan invokes the facebody.DetectChefCap API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectchefcap.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectChefCapWithChan(request *DetectChefCapRequest) (<-chan *DetectChefCapResponse, <-chan error) {
 	responseChan := make(chan *DetectChefCapResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectChefCapWithChan(request *DetectChefCapRequest) (<-ch
 }
 
 // DetectChefCapWithCallback invokes the facebody.DetectChefCap API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectchefcap.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectChefCapWithCallback(request *DetectChefCapRequest, callback func(response *DetectChefCapResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateDetectChefCapRequest() (request *DetectChefCapRequest) {
 	request = &DetectChefCapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectChefCap", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectChefCap", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

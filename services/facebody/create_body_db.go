@@ -21,7 +21,6 @@ import (
 )
 
 // CreateBodyDb invokes the facebody.CreateBodyDb API synchronously
-// api document: https://help.aliyun.com/api/facebody/createbodydb.html
 func (client *Client) CreateBodyDb(request *CreateBodyDbRequest) (response *CreateBodyDbResponse, err error) {
 	response = CreateCreateBodyDbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateBodyDb(request *CreateBodyDbRequest) (response *Crea
 }
 
 // CreateBodyDbWithChan invokes the facebody.CreateBodyDb API asynchronously
-// api document: https://help.aliyun.com/api/facebody/createbodydb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBodyDbWithChan(request *CreateBodyDbRequest) (<-chan *CreateBodyDbResponse, <-chan error) {
 	responseChan := make(chan *CreateBodyDbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateBodyDbWithChan(request *CreateBodyDbRequest) (<-chan
 }
 
 // CreateBodyDbWithCallback invokes the facebody.CreateBodyDb API asynchronously
-// api document: https://help.aliyun.com/api/facebody/createbodydb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBodyDbWithCallback(request *CreateBodyDbRequest, callback func(response *CreateBodyDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateCreateBodyDbRequest() (request *CreateBodyDbRequest) {
 	request = &CreateBodyDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "CreateBodyDb", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "CreateBodyDb", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

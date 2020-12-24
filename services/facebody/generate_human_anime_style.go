@@ -21,7 +21,6 @@ import (
 )
 
 // GenerateHumanAnimeStyle invokes the facebody.GenerateHumanAnimeStyle API synchronously
-// api document: https://help.aliyun.com/api/facebody/generatehumananimestyle.html
 func (client *Client) GenerateHumanAnimeStyle(request *GenerateHumanAnimeStyleRequest) (response *GenerateHumanAnimeStyleResponse, err error) {
 	response = CreateGenerateHumanAnimeStyleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GenerateHumanAnimeStyle(request *GenerateHumanAnimeStyleRe
 }
 
 // GenerateHumanAnimeStyleWithChan invokes the facebody.GenerateHumanAnimeStyle API asynchronously
-// api document: https://help.aliyun.com/api/facebody/generatehumananimestyle.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateHumanAnimeStyleWithChan(request *GenerateHumanAnimeStyleRequest) (<-chan *GenerateHumanAnimeStyleResponse, <-chan error) {
 	responseChan := make(chan *GenerateHumanAnimeStyleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GenerateHumanAnimeStyleWithChan(request *GenerateHumanAnim
 }
 
 // GenerateHumanAnimeStyleWithCallback invokes the facebody.GenerateHumanAnimeStyle API asynchronously
-// api document: https://help.aliyun.com/api/facebody/generatehumananimestyle.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateHumanAnimeStyleWithCallback(request *GenerateHumanAnimeStyleRequest, callback func(response *GenerateHumanAnimeStyleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateGenerateHumanAnimeStyleRequest() (request *GenerateHumanAnimeStyleReq
 	request = &GenerateHumanAnimeStyleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "GenerateHumanAnimeStyle", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "GenerateHumanAnimeStyle", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

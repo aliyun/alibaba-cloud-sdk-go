@@ -21,7 +21,6 @@ import (
 )
 
 // CreateBodyPerson invokes the facebody.CreateBodyPerson API synchronously
-// api document: https://help.aliyun.com/api/facebody/createbodyperson.html
 func (client *Client) CreateBodyPerson(request *CreateBodyPersonRequest) (response *CreateBodyPersonResponse, err error) {
 	response = CreateCreateBodyPersonResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateBodyPerson(request *CreateBodyPersonRequest) (respon
 }
 
 // CreateBodyPersonWithChan invokes the facebody.CreateBodyPerson API asynchronously
-// api document: https://help.aliyun.com/api/facebody/createbodyperson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBodyPersonWithChan(request *CreateBodyPersonRequest) (<-chan *CreateBodyPersonResponse, <-chan error) {
 	responseChan := make(chan *CreateBodyPersonResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateBodyPersonWithChan(request *CreateBodyPersonRequest)
 }
 
 // CreateBodyPersonWithCallback invokes the facebody.CreateBodyPerson API asynchronously
-// api document: https://help.aliyun.com/api/facebody/createbodyperson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBodyPersonWithCallback(request *CreateBodyPersonRequest, callback func(response *CreateBodyPersonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateCreateBodyPersonRequest() (request *CreateBodyPersonRequest) {
 	request = &CreateBodyPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "CreateBodyPerson", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "CreateBodyPerson", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SearchBodyTrace invokes the facebody.SearchBodyTrace API synchronously
-// api document: https://help.aliyun.com/api/facebody/searchbodytrace.html
 func (client *Client) SearchBodyTrace(request *SearchBodyTraceRequest) (response *SearchBodyTraceResponse, err error) {
 	response = CreateSearchBodyTraceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchBodyTrace(request *SearchBodyTraceRequest) (response
 }
 
 // SearchBodyTraceWithChan invokes the facebody.SearchBodyTrace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/searchbodytrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchBodyTraceWithChan(request *SearchBodyTraceRequest) (<-chan *SearchBodyTraceResponse, <-chan error) {
 	responseChan := make(chan *SearchBodyTraceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchBodyTraceWithChan(request *SearchBodyTraceRequest) (
 }
 
 // SearchBodyTraceWithCallback invokes the facebody.SearchBodyTrace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/searchbodytrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchBodyTraceWithCallback(request *SearchBodyTraceRequest, callback func(response *SearchBodyTraceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateSearchBodyTraceRequest() (request *SearchBodyTraceRequest) {
 	request = &SearchBodyTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "SearchBodyTrace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "SearchBodyTrace", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,6 +17,6 @@ package facebody
 
 // Hat is a nested struct in facebody response
 type Hat struct {
-	Score float64 `json:"Score" xml:"Score"`
 	Name  string  `json:"Name" xml:"Name"`
+	Score float64 `json:"Score" xml:"Score"`
 }

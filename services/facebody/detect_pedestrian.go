@@ -21,7 +21,6 @@ import (
 )
 
 // DetectPedestrian invokes the facebody.DetectPedestrian API synchronously
-// api document: https://help.aliyun.com/api/facebody/detectpedestrian.html
 func (client *Client) DetectPedestrian(request *DetectPedestrianRequest) (response *DetectPedestrianResponse, err error) {
 	response = CreateDetectPedestrianResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectPedestrian(request *DetectPedestrianRequest) (respon
 }
 
 // DetectPedestrianWithChan invokes the facebody.DetectPedestrian API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectpedestrian.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectPedestrianWithChan(request *DetectPedestrianRequest) (<-chan *DetectPedestrianResponse, <-chan error) {
 	responseChan := make(chan *DetectPedestrianResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectPedestrianWithChan(request *DetectPedestrianRequest)
 }
 
 // DetectPedestrianWithCallback invokes the facebody.DetectPedestrian API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectpedestrian.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectPedestrianWithCallback(request *DetectPedestrianRequest, callback func(response *DetectPedestrianResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateDetectPedestrianRequest() (request *DetectPedestrianRequest) {
 	request = &DetectPedestrianRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectPedestrian", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectPedestrian", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

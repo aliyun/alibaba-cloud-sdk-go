@@ -21,7 +21,6 @@ import (
 )
 
 // AddFace invokes the facebody.AddFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/addface.html
 func (client *Client) AddFace(request *AddFaceRequest) (response *AddFaceResponse, err error) {
 	response = CreateAddFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddFace(request *AddFaceRequest) (response *AddFaceRespons
 }
 
 // AddFaceWithChan invokes the facebody.AddFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/addface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddFaceWithChan(request *AddFaceRequest) (<-chan *AddFaceResponse, <-chan error) {
 	responseChan := make(chan *AddFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddFaceWithChan(request *AddFaceRequest) (<-chan *AddFaceR
 }
 
 // AddFaceWithCallback invokes the facebody.AddFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/addface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddFaceWithCallback(request *AddFaceRequest, callback func(response *AddFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,9 +72,9 @@ func (client *Client) AddFaceWithCallback(request *AddFaceRequest, callback func
 type AddFaceRequest struct {
 	*requests.RpcRequest
 	EntityId  string `position:"Body" name:"EntityId"`
-	ExtraData string `position:"Body" name:"ExtraData"`
 	DbName    string `position:"Body" name:"DbName"`
 	ImageUrl  string `position:"Body" name:"ImageUrl"`
+	ExtraData string `position:"Body" name:"ExtraData"`
 }
 
 // AddFaceResponse is the response struct for api AddFace
@@ -94,7 +89,8 @@ func CreateAddFaceRequest() (request *AddFaceRequest) {
 	request = &AddFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "AddFace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "AddFace", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

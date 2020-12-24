@@ -17,6 +17,6 @@ package facebody
 
 // Gender is a nested struct in facebody response
 type Gender struct {
-	Score float64 `json:"Score" xml:"Score"`
 	Name  string  `json:"Name" xml:"Name"`
+	Score float64 `json:"Score" xml:"Score"`
 }

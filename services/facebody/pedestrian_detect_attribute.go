@@ -21,7 +21,6 @@ import (
 )
 
 // PedestrianDetectAttribute invokes the facebody.PedestrianDetectAttribute API synchronously
-// api document: https://help.aliyun.com/api/facebody/pedestriandetectattribute.html
 func (client *Client) PedestrianDetectAttribute(request *PedestrianDetectAttributeRequest) (response *PedestrianDetectAttributeResponse, err error) {
 	response = CreatePedestrianDetectAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PedestrianDetectAttribute(request *PedestrianDetectAttribu
 }
 
 // PedestrianDetectAttributeWithChan invokes the facebody.PedestrianDetectAttribute API asynchronously
-// api document: https://help.aliyun.com/api/facebody/pedestriandetectattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PedestrianDetectAttributeWithChan(request *PedestrianDetectAttributeRequest) (<-chan *PedestrianDetectAttributeResponse, <-chan error) {
 	responseChan := make(chan *PedestrianDetectAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PedestrianDetectAttributeWithChan(request *PedestrianDetec
 }
 
 // PedestrianDetectAttributeWithCallback invokes the facebody.PedestrianDetectAttribute API asynchronously
-// api document: https://help.aliyun.com/api/facebody/pedestriandetectattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PedestrianDetectAttributeWithCallback(request *PedestrianDetectAttributeRequest, callback func(response *PedestrianDetectAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreatePedestrianDetectAttributeRequest() (request *PedestrianDetectAttribut
 	request = &PedestrianDetectAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "PedestrianDetectAttribute", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "PedestrianDetectAttribute", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

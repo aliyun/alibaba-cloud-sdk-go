@@ -51,8 +51,8 @@ type Data struct {
 	FaceId               string                                    `json:"FaceId" xml:"FaceId"`
 	UpperType            string                                    `json:"UpperType" xml:"UpperType"`
 	LandmarkCount        int                                       `json:"LandmarkCount" xml:"LandmarkCount"`
-	UpperTypeScore       float64                                   `json:"UpperTypeScore" xml:"UpperTypeScore"`
 	Feature              string                                    `json:"Feature" xml:"Feature"`
+	UpperTypeScore       float64                                   `json:"UpperTypeScore" xml:"UpperTypeScore"`
 	UpperColor           string                                    `json:"UpperColor" xml:"UpperColor"`
 	LowerTypeScore       float64                                   `json:"LowerTypeScore" xml:"LowerTypeScore"`
 	PersonNumber         int                                       `json:"PersonNumber" xml:"PersonNumber"`
@@ -81,15 +81,16 @@ type Data struct {
 	Expressions          []int                                     `json:"Expressions" xml:"Expressions"`
 	MetaObject           MetaObject                                `json:"MetaObject" xml:"MetaObject"`
 	Qualities            Qualities                                 `json:"Qualities" xml:"Qualities"`
-	Faces                []Face                                    `json:"Faces" xml:"Faces"`
+	PersonList           []Person                                  `json:"PersonList" xml:"PersonList"`
 	ImageInfoList        []ImageInfoListItem                       `json:"ImageInfoList" xml:"ImageInfoList"`
+	Outputs              []Output                                  `json:"Outputs" xml:"Outputs"`
+	Faces                []Face                                    `json:"Faces" xml:"Faces"`
 	Elements             []ElementsItemInDetectPedestrianIntrusion `json:"Elements" xml:"Elements"`
 	MatchList            []Trace                                   `json:"MatchList" xml:"MatchList"`
+	Attributes           []AttributesItem                          `json:"Attributes" xml:"Attributes"`
 	DbList               []DbListItem                              `json:"DbList" xml:"DbList"`
 	TraceList            []Trace                                   `json:"TraceList" xml:"TraceList"`
-	Outputs              []Output                                  `json:"Outputs" xml:"Outputs"`
-	Entities             []Entity                                  `json:"Entities" xml:"Entities"`
-	Attributes           []AttributesItem                          `json:"Attributes" xml:"Attributes"`
-	FaceRecognizeResults []FaceRecognizeResult                     `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`
 	Boxes                []BoxesItem                               `json:"Boxes" xml:"Boxes"`
+	Entities             []Entity                                  `json:"Entities" xml:"Entities"`
+	FaceRecognizeResults []FaceRecognizeResult                     `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`
 }

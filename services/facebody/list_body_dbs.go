@@ -21,7 +21,6 @@ import (
 )
 
 // ListBodyDbs invokes the facebody.ListBodyDbs API synchronously
-// api document: https://help.aliyun.com/api/facebody/listbodydbs.html
 func (client *Client) ListBodyDbs(request *ListBodyDbsRequest) (response *ListBodyDbsResponse, err error) {
 	response = CreateListBodyDbsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListBodyDbs(request *ListBodyDbsRequest) (response *ListBo
 }
 
 // ListBodyDbsWithChan invokes the facebody.ListBodyDbs API asynchronously
-// api document: https://help.aliyun.com/api/facebody/listbodydbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBodyDbsWithChan(request *ListBodyDbsRequest) (<-chan *ListBodyDbsResponse, <-chan error) {
 	responseChan := make(chan *ListBodyDbsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListBodyDbsWithChan(request *ListBodyDbsRequest) (<-chan *
 }
 
 // ListBodyDbsWithCallback invokes the facebody.ListBodyDbs API asynchronously
-// api document: https://help.aliyun.com/api/facebody/listbodydbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBodyDbsWithCallback(request *ListBodyDbsRequest, callback func(response *ListBodyDbsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateListBodyDbsRequest() (request *ListBodyDbsRequest) {
 	request = &ListBodyDbsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "ListBodyDbs", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "ListBodyDbs", "facebody", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

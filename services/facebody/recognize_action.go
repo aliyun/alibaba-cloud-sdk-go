@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeAction invokes the facebody.RecognizeAction API synchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeaction.html
 func (client *Client) RecognizeAction(request *RecognizeActionRequest) (response *RecognizeActionResponse, err error) {
 	response = CreateRecognizeActionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeAction(request *RecognizeActionRequest) (response
 }
 
 // RecognizeActionWithChan invokes the facebody.RecognizeAction API asynchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeActionWithChan(request *RecognizeActionRequest) (<-chan *RecognizeActionResponse, <-chan error) {
 	responseChan := make(chan *RecognizeActionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeActionWithChan(request *RecognizeActionRequest) (
 }
 
 // RecognizeActionWithCallback invokes the facebody.RecognizeAction API asynchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeActionWithCallback(request *RecognizeActionRequest, callback func(response *RecognizeActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) RecognizeActionWithCallback(request *RecognizeActionReques
 // RecognizeActionRequest is the request struct for api RecognizeAction
 type RecognizeActionRequest struct {
 	*requests.RpcRequest
-	Type     requests.Integer          `position:"Body" name:"Type"`
 	URLList  *[]RecognizeActionURLList `position:"Body" name:"URLList"  type:"Repeated"`
+	Type     requests.Integer          `position:"Body" name:"Type"`
 	VideoUrl string                    `position:"Body" name:"VideoUrl"`
 }
 
@@ -98,7 +93,8 @@ func CreateRecognizeActionRequest() (request *RecognizeActionRequest) {
 	request = &RecognizeActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizeAction", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizeAction", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

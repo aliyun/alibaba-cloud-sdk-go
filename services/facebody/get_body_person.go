@@ -21,7 +21,6 @@ import (
 )
 
 // GetBodyPerson invokes the facebody.GetBodyPerson API synchronously
-// api document: https://help.aliyun.com/api/facebody/getbodyperson.html
 func (client *Client) GetBodyPerson(request *GetBodyPersonRequest) (response *GetBodyPersonResponse, err error) {
 	response = CreateGetBodyPersonResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetBodyPerson(request *GetBodyPersonRequest) (response *Ge
 }
 
 // GetBodyPersonWithChan invokes the facebody.GetBodyPerson API asynchronously
-// api document: https://help.aliyun.com/api/facebody/getbodyperson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBodyPersonWithChan(request *GetBodyPersonRequest) (<-chan *GetBodyPersonResponse, <-chan error) {
 	responseChan := make(chan *GetBodyPersonResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetBodyPersonWithChan(request *GetBodyPersonRequest) (<-ch
 }
 
 // GetBodyPersonWithCallback invokes the facebody.GetBodyPerson API asynchronously
-// api document: https://help.aliyun.com/api/facebody/getbodyperson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBodyPersonWithCallback(request *GetBodyPersonRequest, callback func(response *GetBodyPersonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateGetBodyPersonRequest() (request *GetBodyPersonRequest) {
 	request = &GetBodyPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "GetBodyPerson", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "GetBodyPerson", "facebody", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

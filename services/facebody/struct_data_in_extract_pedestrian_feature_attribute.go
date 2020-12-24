@@ -17,23 +17,23 @@ package facebody
 
 // DataInExtractPedestrianFeatureAttribute is a nested struct in facebody response
 type DataInExtractPedestrianFeatureAttribute struct {
-	Hair            string    `json:"Hair" xml:"Hair"`
+	ObjType         string    `json:"ObjType" xml:"ObjType"`
+	ObjTypeScore    float64   `json:"ObjTypeScore" xml:"ObjTypeScore"`
+	Feature         string    `json:"Feature" xml:"Feature"`
+	QualityScore    float64   `json:"QualityScore" xml:"QualityScore"`
+	UpperColor      string    `json:"UpperColor" xml:"UpperColor"`
+	UpperColorScore float64   `json:"UpperColorScore" xml:"UpperColorScore"`
 	UpperType       string    `json:"UpperType" xml:"UpperType"`
 	UpperTypeScore  float64   `json:"UpperTypeScore" xml:"UpperTypeScore"`
 	LowerColor      string    `json:"LowerColor" xml:"LowerColor"`
-	QualityScore    float64   `json:"QualityScore" xml:"QualityScore"`
-	Gender          string    `json:"Gender" xml:"Gender"`
-	Feature         string    `json:"Feature" xml:"Feature"`
-	UpperColorScore float64   `json:"UpperColorScore" xml:"UpperColorScore"`
-	GenderScore     float64   `json:"GenderScore" xml:"GenderScore"`
 	LowerColorScore float64   `json:"LowerColorScore" xml:"LowerColorScore"`
-	ObjType         string    `json:"ObjType" xml:"ObjType"`
-	LowerTypeScore  float64   `json:"LowerTypeScore" xml:"LowerTypeScore"`
-	HairScore       float64   `json:"HairScore" xml:"HairScore"`
-	UpperColor      string    `json:"UpperColor" xml:"UpperColor"`
 	LowerType       string    `json:"LowerType" xml:"LowerType"`
-	AgeScore        float64   `json:"AgeScore" xml:"AgeScore"`
-	ObjTypeScore    float64   `json:"ObjTypeScore" xml:"ObjTypeScore"`
+	LowerTypeScore  float64   `json:"LowerTypeScore" xml:"LowerTypeScore"`
+	Gender          string    `json:"Gender" xml:"Gender"`
+	GenderScore     float64   `json:"GenderScore" xml:"GenderScore"`
+	Hair            string    `json:"Hair" xml:"Hair"`
+	HairScore       float64   `json:"HairScore" xml:"HairScore"`
 	Age             string    `json:"Age" xml:"Age"`
+	AgeScore        float64   `json:"AgeScore" xml:"AgeScore"`
 	Elements        []Element `json:"Elements" xml:"Elements"`
 }
