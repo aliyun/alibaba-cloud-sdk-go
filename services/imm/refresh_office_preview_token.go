@@ -91,7 +91,7 @@ func CreateRefreshOfficePreviewTokenRequest() (request *RefreshOfficePreviewToke
 	request = &RefreshOfficePreviewTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficePreviewToken", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficePreviewToken", "", "")
 	request.Method = requests.POST
 	return
 }

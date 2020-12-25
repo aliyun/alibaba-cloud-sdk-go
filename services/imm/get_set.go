@@ -94,7 +94,7 @@ func CreateGetSetRequest() (request *GetSetRequest) {
 	request = &GetSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetSet", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetSet", "", "")
 	request.Method = requests.POST
 	return
 }

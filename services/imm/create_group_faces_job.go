@@ -91,7 +91,7 @@ func CreateCreateGroupFacesJobRequest() (request *CreateGroupFacesJobRequest) {
 	request = &CreateGroupFacesJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateGroupFacesJob", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateGroupFacesJob", "", "")
 	request.Method = requests.POST
 	return
 }

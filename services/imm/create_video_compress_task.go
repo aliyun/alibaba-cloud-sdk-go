@@ -93,7 +93,7 @@ func CreateCreateVideoCompressTaskRequest() (request *CreateVideoCompressTaskReq
 	request = &CreateVideoCompressTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoCompressTask", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoCompressTask", "", "")
 	request.Method = requests.POST
 	return
 }

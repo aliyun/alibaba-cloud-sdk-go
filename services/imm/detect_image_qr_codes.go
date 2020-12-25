@@ -88,7 +88,7 @@ func CreateDetectImageQRCodesRequest() (request *DetectImageQRCodesRequest) {
 	request = &DetectImageQRCodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageQRCodes", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageQRCodes", "", "")
 	request.Method = requests.POST
 	return
 }

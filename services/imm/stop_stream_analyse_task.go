@@ -87,7 +87,7 @@ func CreateStopStreamAnalyseTaskRequest() (request *StopStreamAnalyseTaskRequest
 	request = &StopStreamAnalyseTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "StopStreamAnalyseTask", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "StopStreamAnalyseTask", "", "")
 	request.Method = requests.POST
 	return
 }

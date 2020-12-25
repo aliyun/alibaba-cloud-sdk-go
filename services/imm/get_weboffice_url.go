@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetOfficeEditURL invokes the imm.GetOfficeEditURL API synchronously
-func (client *Client) GetOfficeEditURL(request *GetOfficeEditURLRequest) (response *GetOfficeEditURLResponse, err error) {
-	response = CreateGetOfficeEditURLResponse()
+// GetWebofficeURL invokes the imm.GetWebofficeURL API synchronously
+func (client *Client) GetWebofficeURL(request *GetWebofficeURLRequest) (response *GetWebofficeURLResponse, err error) {
+	response = CreateGetWebofficeURLResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetOfficeEditURLWithChan invokes the imm.GetOfficeEditURL API asynchronously
-func (client *Client) GetOfficeEditURLWithChan(request *GetOfficeEditURLRequest) (<-chan *GetOfficeEditURLResponse, <-chan error) {
-	responseChan := make(chan *GetOfficeEditURLResponse, 1)
+// GetWebofficeURLWithChan invokes the imm.GetWebofficeURL API asynchronously
+func (client *Client) GetWebofficeURLWithChan(request *GetWebofficeURLRequest) (<-chan *GetWebofficeURLResponse, <-chan error) {
+	responseChan := make(chan *GetWebofficeURLResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetOfficeEditURL(request)
+		response, err := client.GetWebofficeURL(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetOfficeEditURLWithChan(request *GetOfficeEditURLRequest)
 	return responseChan, errChan
 }
 
-// GetOfficeEditURLWithCallback invokes the imm.GetOfficeEditURL API asynchronously
-func (client *Client) GetOfficeEditURLWithCallback(request *GetOfficeEditURLRequest, callback func(response *GetOfficeEditURLResponse, err error)) <-chan int {
+// GetWebofficeURLWithCallback invokes the imm.GetWebofficeURL API asynchronously
+func (client *Client) GetWebofficeURLWithCallback(request *GetWebofficeURLRequest, callback func(response *GetWebofficeURLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetOfficeEditURLResponse
+		var response *GetWebofficeURLResponse
 		var err error
 		defer close(result)
-		response, err = client.GetOfficeEditURL(request)
+		response, err = client.GetWebofficeURL(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,45 +68,43 @@ func (client *Client) GetOfficeEditURLWithCallback(request *GetOfficeEditURLRequ
 	return result
 }
 
-// GetOfficeEditURLRequest is the request struct for api GetOfficeEditURL
-type GetOfficeEditURLRequest struct {
+// GetWebofficeURLRequest is the request struct for api GetWebofficeURL
+type GetWebofficeURLRequest struct {
 	*requests.RpcRequest
 	SrcType         string `position:"Query" name:"SrcType"`
 	Project         string `position:"Query" name:"Project"`
-	UserID          string `position:"Query" name:"UserID"`
+	File            string `position:"Query" name:"File"`
 	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
 	FileID          string `position:"Query" name:"FileID"`
 	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
-	FileName        string `position:"Query" name:"FileName"`
-	SrcUri          string `position:"Query" name:"SrcUri"`
-	TgtUri          string `position:"Query" name:"TgtUri"`
-	UserName        string `position:"Query" name:"UserName"`
+	Permission      string `position:"Query" name:"Permission"`
+	User            string `position:"Query" name:"User"`
 }
 
-// GetOfficeEditURLResponse is the response struct for api GetOfficeEditURL
-type GetOfficeEditURLResponse struct {
+// GetWebofficeURLResponse is the response struct for api GetWebofficeURL
+type GetWebofficeURLResponse struct {
 	*responses.BaseResponse
 	RequestId               string `json:"RequestId" xml:"RequestId"`
-	EditURL                 string `json:"EditURL" xml:"EditURL"`
+	WebofficeURL            string `json:"WebofficeURL" xml:"WebofficeURL"`
 	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
 	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
 	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
 }
 
-// CreateGetOfficeEditURLRequest creates a request to invoke GetOfficeEditURL API
-func CreateGetOfficeEditURLRequest() (request *GetOfficeEditURLRequest) {
-	request = &GetOfficeEditURLRequest{
+// CreateGetWebofficeURLRequest creates a request to invoke GetWebofficeURL API
+func CreateGetWebofficeURLRequest() (request *GetWebofficeURLRequest) {
+	request = &GetWebofficeURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeEditURL", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetWebofficeURL", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetOfficeEditURLResponse creates a response to parse from GetOfficeEditURL response
-func CreateGetOfficeEditURLResponse() (response *GetOfficeEditURLResponse) {
-	response = &GetOfficeEditURLResponse{
+// CreateGetWebofficeURLResponse creates a response to parse from GetWebofficeURL response
+func CreateGetWebofficeURLResponse() (response *GetWebofficeURLResponse) {
+	response = &GetWebofficeURLResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

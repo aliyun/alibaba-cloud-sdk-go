@@ -87,7 +87,7 @@ func CreateDeleteImageJobRequest() (request *DeleteImageJobRequest) {
 	request = &DeleteImageJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteImageJob", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteImageJob", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateGetImageQualityRequest() (request *GetImageQualityRequest) {
 	request = &GetImageQualityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImageQuality", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImageQuality", "", "")
 	request.Method = requests.POST
 	return
 }

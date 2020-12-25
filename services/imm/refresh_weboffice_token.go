@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RefreshOfficeEditToken invokes the imm.RefreshOfficeEditToken API synchronously
-func (client *Client) RefreshOfficeEditToken(request *RefreshOfficeEditTokenRequest) (response *RefreshOfficeEditTokenResponse, err error) {
-	response = CreateRefreshOfficeEditTokenResponse()
+// RefreshWebofficeToken invokes the imm.RefreshWebofficeToken API synchronously
+func (client *Client) RefreshWebofficeToken(request *RefreshWebofficeTokenRequest) (response *RefreshWebofficeTokenResponse, err error) {
+	response = CreateRefreshWebofficeTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RefreshOfficeEditTokenWithChan invokes the imm.RefreshOfficeEditToken API asynchronously
-func (client *Client) RefreshOfficeEditTokenWithChan(request *RefreshOfficeEditTokenRequest) (<-chan *RefreshOfficeEditTokenResponse, <-chan error) {
-	responseChan := make(chan *RefreshOfficeEditTokenResponse, 1)
+// RefreshWebofficeTokenWithChan invokes the imm.RefreshWebofficeToken API asynchronously
+func (client *Client) RefreshWebofficeTokenWithChan(request *RefreshWebofficeTokenRequest) (<-chan *RefreshWebofficeTokenResponse, <-chan error) {
+	responseChan := make(chan *RefreshWebofficeTokenResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RefreshOfficeEditToken(request)
+		response, err := client.RefreshWebofficeToken(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RefreshOfficeEditTokenWithChan(request *RefreshOfficeEditT
 	return responseChan, errChan
 }
 
-// RefreshOfficeEditTokenWithCallback invokes the imm.RefreshOfficeEditToken API asynchronously
-func (client *Client) RefreshOfficeEditTokenWithCallback(request *RefreshOfficeEditTokenRequest, callback func(response *RefreshOfficeEditTokenResponse, err error)) <-chan int {
+// RefreshWebofficeTokenWithCallback invokes the imm.RefreshWebofficeToken API asynchronously
+func (client *Client) RefreshWebofficeTokenWithCallback(request *RefreshWebofficeTokenRequest, callback func(response *RefreshWebofficeTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RefreshOfficeEditTokenResponse
+		var response *RefreshWebofficeTokenResponse
 		var err error
 		defer close(result)
-		response, err = client.RefreshOfficeEditToken(request)
+		response, err = client.RefreshWebofficeToken(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,16 @@ func (client *Client) RefreshOfficeEditTokenWithCallback(request *RefreshOfficeE
 	return result
 }
 
-// RefreshOfficeEditTokenRequest is the request struct for api RefreshOfficeEditToken
-type RefreshOfficeEditTokenRequest struct {
+// RefreshWebofficeTokenRequest is the request struct for api RefreshWebofficeToken
+type RefreshWebofficeTokenRequest struct {
 	*requests.RpcRequest
 	Project      string `position:"Query" name:"Project"`
 	AccessToken  string `position:"Query" name:"AccessToken"`
 	RefreshToken string `position:"Query" name:"RefreshToken"`
 }
 
-// RefreshOfficeEditTokenResponse is the response struct for api RefreshOfficeEditToken
-type RefreshOfficeEditTokenResponse struct {
+// RefreshWebofficeTokenResponse is the response struct for api RefreshWebofficeToken
+type RefreshWebofficeTokenResponse struct {
 	*responses.BaseResponse
 	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
 	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
@@ -86,19 +86,19 @@ type RefreshOfficeEditTokenResponse struct {
 	RequestId               string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRefreshOfficeEditTokenRequest creates a request to invoke RefreshOfficeEditToken API
-func CreateRefreshOfficeEditTokenRequest() (request *RefreshOfficeEditTokenRequest) {
-	request = &RefreshOfficeEditTokenRequest{
+// CreateRefreshWebofficeTokenRequest creates a request to invoke RefreshWebofficeToken API
+func CreateRefreshWebofficeTokenRequest() (request *RefreshWebofficeTokenRequest) {
+	request = &RefreshWebofficeTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficeEditToken", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "RefreshWebofficeToken", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRefreshOfficeEditTokenResponse creates a response to parse from RefreshOfficeEditToken response
-func CreateRefreshOfficeEditTokenResponse() (response *RefreshOfficeEditTokenResponse) {
-	response = &RefreshOfficeEditTokenResponse{
+// CreateRefreshWebofficeTokenResponse creates a response to parse from RefreshWebofficeToken response
+func CreateRefreshWebofficeTokenResponse() (response *RefreshWebofficeTokenResponse) {
+	response = &RefreshWebofficeTokenResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

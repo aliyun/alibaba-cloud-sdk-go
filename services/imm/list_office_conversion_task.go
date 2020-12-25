@@ -89,7 +89,7 @@ func CreateListOfficeConversionTaskRequest() (request *ListOfficeConversionTaskR
 	request = &ListOfficeConversionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListOfficeConversionTask", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListOfficeConversionTask", "", "")
 	request.Method = requests.POST
 	return
 }

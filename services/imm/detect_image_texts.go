@@ -88,7 +88,7 @@ func CreateDetectImageTextsRequest() (request *DetectImageTextsRequest) {
 	request = &DetectImageTextsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageTexts", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageTexts", "", "")
 	request.Method = requests.POST
 	return
 }
