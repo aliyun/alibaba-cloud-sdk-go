@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlow invokes the emr.DescribeFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflow.html
 func (client *Client) DescribeFlow(request *DescribeFlowRequest) (response *DescribeFlowResponse, err error) {
 	response = CreateDescribeFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlow(request *DescribeFlowRequest) (response *Desc
 }
 
 // DescribeFlowWithChan invokes the emr.DescribeFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowWithChan(request *DescribeFlowRequest) (<-chan *DescribeFlowResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowWithChan(request *DescribeFlowRequest) (<-chan
 }
 
 // DescribeFlowWithCallback invokes the emr.DescribeFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowWithCallback(request *DescribeFlowRequest, callback func(response *DescribeFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,9 @@ type DescribeFlowResponse struct {
 	CreateCluster           bool           `json:"CreateCluster" xml:"CreateCluster"`
 	ClusterId               string         `json:"ClusterId" xml:"ClusterId"`
 	HostName                string         `json:"HostName" xml:"HostName"`
+	Namespace               string         `json:"Namespace" xml:"Namespace"`
+	LogArchiveLocation      string         `json:"LogArchiveLocation" xml:"LogArchiveLocation"`
+	Lifecycle               string         `json:"Lifecycle" xml:"Lifecycle"`
 	Graph                   string         `json:"Graph" xml:"Graph"`
 	CategoryId              string         `json:"CategoryId" xml:"CategoryId"`
 	AlertConf               string         `json:"AlertConf" xml:"AlertConf"`
@@ -114,6 +112,7 @@ func CreateDescribeFlowRequest() (request *DescribeFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

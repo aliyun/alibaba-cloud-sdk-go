@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFlowProjectUser invokes the emr.DeleteFlowProjectUser API synchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowprojectuser.html
 func (client *Client) DeleteFlowProjectUser(request *DeleteFlowProjectUserRequest) (response *DeleteFlowProjectUserResponse, err error) {
 	response = CreateDeleteFlowProjectUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFlowProjectUser(request *DeleteFlowProjectUserReques
 }
 
 // DeleteFlowProjectUserWithChan invokes the emr.DeleteFlowProjectUser API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowprojectuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowProjectUserWithChan(request *DeleteFlowProjectUserRequest) (<-chan *DeleteFlowProjectUserResponse, <-chan error) {
 	responseChan := make(chan *DeleteFlowProjectUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFlowProjectUserWithChan(request *DeleteFlowProjectUs
 }
 
 // DeleteFlowProjectUserWithCallback invokes the emr.DeleteFlowProjectUser API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowprojectuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowProjectUserWithCallback(request *DeleteFlowProjectUserRequest, callback func(response *DeleteFlowProjectUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDeleteFlowProjectUserRequest() (request *DeleteFlowProjectUserRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteFlowProjectUser", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

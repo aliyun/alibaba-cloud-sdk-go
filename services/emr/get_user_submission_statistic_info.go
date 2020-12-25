@@ -21,7 +21,6 @@ import (
 )
 
 // GetUserSubmissionStatisticInfo invokes the emr.GetUserSubmissionStatisticInfo API synchronously
-// api document: https://help.aliyun.com/api/emr/getusersubmissionstatisticinfo.html
 func (client *Client) GetUserSubmissionStatisticInfo(request *GetUserSubmissionStatisticInfoRequest) (response *GetUserSubmissionStatisticInfoResponse, err error) {
 	response = CreateGetUserSubmissionStatisticInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUserSubmissionStatisticInfo(request *GetUserSubmissionS
 }
 
 // GetUserSubmissionStatisticInfoWithChan invokes the emr.GetUserSubmissionStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getusersubmissionstatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserSubmissionStatisticInfoWithChan(request *GetUserSubmissionStatisticInfoRequest) (<-chan *GetUserSubmissionStatisticInfoResponse, <-chan error) {
 	responseChan := make(chan *GetUserSubmissionStatisticInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUserSubmissionStatisticInfoWithChan(request *GetUserSub
 }
 
 // GetUserSubmissionStatisticInfoWithCallback invokes the emr.GetUserSubmissionStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getusersubmissionstatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserSubmissionStatisticInfoWithCallback(request *GetUserSubmissionStatisticInfoRequest, callback func(response *GetUserSubmissionStatisticInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetUserSubmissionStatisticInfoRequest() (request *GetUserSubmissionSt
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "GetUserSubmissionStatisticInfo", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

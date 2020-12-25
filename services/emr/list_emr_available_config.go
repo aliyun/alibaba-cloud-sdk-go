@@ -21,7 +21,6 @@ import (
 )
 
 // ListEmrAvailableConfig invokes the emr.ListEmrAvailableConfig API synchronously
-// api document: https://help.aliyun.com/api/emr/listemravailableconfig.html
 func (client *Client) ListEmrAvailableConfig(request *ListEmrAvailableConfigRequest) (response *ListEmrAvailableConfigResponse, err error) {
 	response = CreateListEmrAvailableConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEmrAvailableConfig(request *ListEmrAvailableConfigRequ
 }
 
 // ListEmrAvailableConfigWithChan invokes the emr.ListEmrAvailableConfig API asynchronously
-// api document: https://help.aliyun.com/api/emr/listemravailableconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmrAvailableConfigWithChan(request *ListEmrAvailableConfigRequest) (<-chan *ListEmrAvailableConfigResponse, <-chan error) {
 	responseChan := make(chan *ListEmrAvailableConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEmrAvailableConfigWithChan(request *ListEmrAvailableCo
 }
 
 // ListEmrAvailableConfigWithCallback invokes the emr.ListEmrAvailableConfig API asynchronously
-// api document: https://help.aliyun.com/api/emr/listemravailableconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmrAvailableConfigWithCallback(request *ListEmrAvailableConfigRequest, callback func(response *ListEmrAvailableConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) ListEmrAvailableConfigWithCallback(request *ListEmrAvailab
 type ListEmrAvailableConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // ListEmrAvailableConfigResponse is the response struct for api ListEmrAvailableConfig
@@ -85,7 +81,7 @@ type ListEmrAvailableConfigResponse struct {
 	RequestId          string                                     `json:"RequestId" xml:"RequestId"`
 	KeyPairNameList    KeyPairNameList                            `json:"KeyPairNameList" xml:"KeyPairNameList"`
 	EmrMainVersionList EmrMainVersionListInListEmrAvailableConfig `json:"EmrMainVersionList" xml:"EmrMainVersionList"`
-	SecurityGroupList  SecurityGroupList                          `json:"SecurityGroupList" xml:"SecurityGroupList"`
+	SecurityGroupList  SecurityGroupListInListEmrAvailableConfig  `json:"SecurityGroupList" xml:"SecurityGroupList"`
 	VpcInfoList        VpcInfoList                                `json:"VpcInfoList" xml:"VpcInfoList"`
 }
 
@@ -95,6 +91,7 @@ func CreateListEmrAvailableConfigRequest() (request *ListEmrAvailableConfigReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListEmrAvailableConfig", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

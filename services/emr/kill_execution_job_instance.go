@@ -21,7 +21,6 @@ import (
 )
 
 // KillExecutionJobInstance invokes the emr.KillExecutionJobInstance API synchronously
-// api document: https://help.aliyun.com/api/emr/killexecutionjobinstance.html
 func (client *Client) KillExecutionJobInstance(request *KillExecutionJobInstanceRequest) (response *KillExecutionJobInstanceResponse, err error) {
 	response = CreateKillExecutionJobInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) KillExecutionJobInstance(request *KillExecutionJobInstance
 }
 
 // KillExecutionJobInstanceWithChan invokes the emr.KillExecutionJobInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/killexecutionjobinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KillExecutionJobInstanceWithChan(request *KillExecutionJobInstanceRequest) (<-chan *KillExecutionJobInstanceResponse, <-chan error) {
 	responseChan := make(chan *KillExecutionJobInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) KillExecutionJobInstanceWithChan(request *KillExecutionJob
 }
 
 // KillExecutionJobInstanceWithCallback invokes the emr.KillExecutionJobInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/killexecutionjobinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KillExecutionJobInstanceWithCallback(request *KillExecutionJobInstanceRequest, callback func(response *KillExecutionJobInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateKillExecutionJobInstanceRequest() (request *KillExecutionJobInstanceR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "KillExecutionJobInstance", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

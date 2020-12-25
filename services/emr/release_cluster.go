@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseCluster invokes the emr.ReleaseCluster API synchronously
-// api document: https://help.aliyun.com/api/emr/releasecluster.html
 func (client *Client) ReleaseCluster(request *ReleaseClusterRequest) (response *ReleaseClusterResponse, err error) {
 	response = CreateReleaseClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseCluster(request *ReleaseClusterRequest) (response *
 }
 
 // ReleaseClusterWithChan invokes the emr.ReleaseCluster API asynchronously
-// api document: https://help.aliyun.com/api/emr/releasecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseClusterWithChan(request *ReleaseClusterRequest) (<-chan *ReleaseClusterResponse, <-chan error) {
 	responseChan := make(chan *ReleaseClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseClusterWithChan(request *ReleaseClusterRequest) (<-
 }
 
 // ReleaseClusterWithCallback invokes the emr.ReleaseCluster API asynchronously
-// api document: https://help.aliyun.com/api/emr/releasecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseClusterWithCallback(request *ReleaseClusterRequest, callback func(response *ReleaseClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateReleaseClusterRequest() (request *ReleaseClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ReleaseCluster", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

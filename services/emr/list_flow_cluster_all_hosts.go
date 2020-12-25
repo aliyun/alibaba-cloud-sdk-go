@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowClusterAllHosts invokes the emr.ListFlowClusterAllHosts API synchronously
-// api document: https://help.aliyun.com/api/emr/listflowclusterallhosts.html
 func (client *Client) ListFlowClusterAllHosts(request *ListFlowClusterAllHostsRequest) (response *ListFlowClusterAllHostsResponse, err error) {
 	response = CreateListFlowClusterAllHostsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowClusterAllHosts(request *ListFlowClusterAllHostsRe
 }
 
 // ListFlowClusterAllHostsWithChan invokes the emr.ListFlowClusterAllHosts API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowclusterallhosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowClusterAllHostsWithChan(request *ListFlowClusterAllHostsRequest) (<-chan *ListFlowClusterAllHostsResponse, <-chan error) {
 	responseChan := make(chan *ListFlowClusterAllHostsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowClusterAllHostsWithChan(request *ListFlowClusterAl
 }
 
 // ListFlowClusterAllHostsWithCallback invokes the emr.ListFlowClusterAllHosts API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowclusterallhosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowClusterAllHostsWithCallback(request *ListFlowClusterAllHostsRequest, callback func(response *ListFlowClusterAllHostsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) ListFlowClusterAllHostsWithCallback(request *ListFlowClust
 // ListFlowClusterAllHostsRequest is the request struct for api ListFlowClusterAllHosts
 type ListFlowClusterAllHostsRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
-	ProjectId string `position:"Query" name:"ProjectId"`
+	ClusterId       string `position:"Query" name:"ClusterId"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	ProjectId       string `position:"Query" name:"ProjectId"`
 }
 
 // ListFlowClusterAllHostsResponse is the response struct for api ListFlowClusterAllHosts
@@ -93,6 +89,7 @@ func CreateListFlowClusterAllHostsRequest() (request *ListFlowClusterAllHostsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowClusterAllHosts", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

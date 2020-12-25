@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitFlow invokes the emr.SubmitFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/submitflow.html
 func (client *Client) SubmitFlow(request *SubmitFlowRequest) (response *SubmitFlowResponse, err error) {
 	response = CreateSubmitFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitFlow(request *SubmitFlowRequest) (response *SubmitFl
 }
 
 // SubmitFlowWithChan invokes the emr.SubmitFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/submitflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFlowWithChan(request *SubmitFlowRequest) (<-chan *SubmitFlowResponse, <-chan error) {
 	responseChan := make(chan *SubmitFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitFlowWithChan(request *SubmitFlowRequest) (<-chan *Su
 }
 
 // SubmitFlowWithCallback invokes the emr.SubmitFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/submitflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFlowWithCallback(request *SubmitFlowRequest, callback func(response *SubmitFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSubmitFlowRequest() (request *SubmitFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "SubmitFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

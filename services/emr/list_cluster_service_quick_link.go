@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterServiceQuickLink invokes the emr.ListClusterServiceQuickLink API synchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservicequicklink.html
 func (client *Client) ListClusterServiceQuickLink(request *ListClusterServiceQuickLinkRequest) (response *ListClusterServiceQuickLinkResponse, err error) {
 	response = CreateListClusterServiceQuickLinkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterServiceQuickLink(request *ListClusterServiceQui
 }
 
 // ListClusterServiceQuickLinkWithChan invokes the emr.ListClusterServiceQuickLink API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservicequicklink.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterServiceQuickLinkWithChan(request *ListClusterServiceQuickLinkRequest) (<-chan *ListClusterServiceQuickLinkResponse, <-chan error) {
 	responseChan := make(chan *ListClusterServiceQuickLinkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterServiceQuickLinkWithChan(request *ListClusterSe
 }
 
 // ListClusterServiceQuickLinkWithCallback invokes the emr.ListClusterServiceQuickLink API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservicequicklink.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterServiceQuickLinkWithCallback(request *ListClusterServiceQuickLinkRequest, callback func(response *ListClusterServiceQuickLinkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) ListClusterServiceQuickLinkWithCallback(request *ListClust
 type ListClusterServiceQuickLinkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DirectType      requests.Boolean `position:"Query" name:"DirectType"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	ServiceName     string           `position:"Query" name:"ServiceName"`
 }
@@ -94,6 +90,7 @@ func CreateListClusterServiceQuickLinkRequest() (request *ListClusterServiceQuic
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusterServiceQuickLink", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

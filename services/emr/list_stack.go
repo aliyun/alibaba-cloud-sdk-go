@@ -21,7 +21,6 @@ import (
 )
 
 // ListStack invokes the emr.ListStack API synchronously
-// api document: https://help.aliyun.com/api/emr/liststack.html
 func (client *Client) ListStack(request *ListStackRequest) (response *ListStackResponse, err error) {
 	response = CreateListStackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListStack(request *ListStackRequest) (response *ListStackR
 }
 
 // ListStackWithChan invokes the emr.ListStack API asynchronously
-// api document: https://help.aliyun.com/api/emr/liststack.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListStackWithChan(request *ListStackRequest) (<-chan *ListStackResponse, <-chan error) {
 	responseChan := make(chan *ListStackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListStackWithChan(request *ListStackRequest) (<-chan *List
 }
 
 // ListStackWithCallback invokes the emr.ListStack API asynchronously
-// api document: https://help.aliyun.com/api/emr/liststack.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListStackWithCallback(request *ListStackRequest, callback func(response *ListStackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateListStackRequest() (request *ListStackRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListStack", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

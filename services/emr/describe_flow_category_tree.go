@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowCategoryTree invokes the emr.DescribeFlowCategoryTree API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflowcategorytree.html
 func (client *Client) DescribeFlowCategoryTree(request *DescribeFlowCategoryTreeRequest) (response *DescribeFlowCategoryTreeResponse, err error) {
 	response = CreateDescribeFlowCategoryTreeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowCategoryTree(request *DescribeFlowCategoryTree
 }
 
 // DescribeFlowCategoryTreeWithChan invokes the emr.DescribeFlowCategoryTree API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowcategorytree.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowCategoryTreeWithChan(request *DescribeFlowCategoryTreeRequest) (<-chan *DescribeFlowCategoryTreeResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowCategoryTreeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowCategoryTreeWithChan(request *DescribeFlowCate
 }
 
 // DescribeFlowCategoryTreeWithCallback invokes the emr.DescribeFlowCategoryTree API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowcategorytree.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowCategoryTreeWithCallback(request *DescribeFlowCategoryTreeRequest, callback func(response *DescribeFlowCategoryTreeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDescribeFlowCategoryTreeRequest() (request *DescribeFlowCategoryTreeR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowCategoryTree", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

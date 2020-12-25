@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFlowJob invokes the emr.DeleteFlowJob API synchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowjob.html
 func (client *Client) DeleteFlowJob(request *DeleteFlowJobRequest) (response *DeleteFlowJobResponse, err error) {
 	response = CreateDeleteFlowJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFlowJob(request *DeleteFlowJobRequest) (response *De
 }
 
 // DeleteFlowJobWithChan invokes the emr.DeleteFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowJobWithChan(request *DeleteFlowJobRequest) (<-chan *DeleteFlowJobResponse, <-chan error) {
 	responseChan := make(chan *DeleteFlowJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFlowJobWithChan(request *DeleteFlowJobRequest) (<-ch
 }
 
 // DeleteFlowJobWithCallback invokes the emr.DeleteFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowJobWithCallback(request *DeleteFlowJobRequest, callback func(response *DeleteFlowJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDeleteFlowJobRequest() (request *DeleteFlowJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteFlowJob", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobRunningTimeStatisticInfo invokes the emr.GetJobRunningTimeStatisticInfo API synchronously
-// api document: https://help.aliyun.com/api/emr/getjobrunningtimestatisticinfo.html
 func (client *Client) GetJobRunningTimeStatisticInfo(request *GetJobRunningTimeStatisticInfoRequest) (response *GetJobRunningTimeStatisticInfoResponse, err error) {
 	response = CreateGetJobRunningTimeStatisticInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobRunningTimeStatisticInfo(request *GetJobRunningTimeS
 }
 
 // GetJobRunningTimeStatisticInfoWithChan invokes the emr.GetJobRunningTimeStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getjobrunningtimestatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobRunningTimeStatisticInfoWithChan(request *GetJobRunningTimeStatisticInfoRequest) (<-chan *GetJobRunningTimeStatisticInfoResponse, <-chan error) {
 	responseChan := make(chan *GetJobRunningTimeStatisticInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobRunningTimeStatisticInfoWithChan(request *GetJobRunn
 }
 
 // GetJobRunningTimeStatisticInfoWithCallback invokes the emr.GetJobRunningTimeStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getjobrunningtimestatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobRunningTimeStatisticInfoWithCallback(request *GetJobRunningTimeStatisticInfoRequest, callback func(response *GetJobRunningTimeStatisticInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateGetJobRunningTimeStatisticInfoRequest() (request *GetJobRunningTimeSt
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "GetJobRunningTimeStatisticInfo", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

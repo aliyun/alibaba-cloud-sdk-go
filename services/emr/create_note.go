@@ -21,7 +21,6 @@ import (
 )
 
 // CreateNote invokes the emr.CreateNote API synchronously
-// api document: https://help.aliyun.com/api/emr/createnote.html
 func (client *Client) CreateNote(request *CreateNoteRequest) (response *CreateNoteResponse, err error) {
 	response = CreateCreateNoteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateNote(request *CreateNoteRequest) (response *CreateNo
 }
 
 // CreateNoteWithChan invokes the emr.CreateNote API asynchronously
-// api document: https://help.aliyun.com/api/emr/createnote.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNoteWithChan(request *CreateNoteRequest) (<-chan *CreateNoteResponse, <-chan error) {
 	responseChan := make(chan *CreateNoteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateNoteWithChan(request *CreateNoteRequest) (<-chan *Cr
 }
 
 // CreateNoteWithCallback invokes the emr.CreateNote API asynchronously
-// api document: https://help.aliyun.com/api/emr/createnote.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNoteWithCallback(request *CreateNoteRequest, callback func(response *CreateNoteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type CreateNoteRequest struct {
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	Type            string           `position:"Query" name:"Type"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Name            string           `position:"Query" name:"Name"`
 }
 
@@ -96,6 +92,7 @@ func CreateCreateNoteRequest() (request *CreateNoteRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateNote", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowEntitySnapshot invokes the emr.DescribeFlowEntitySnapshot API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflowentitysnapshot.html
 func (client *Client) DescribeFlowEntitySnapshot(request *DescribeFlowEntitySnapshotRequest) (response *DescribeFlowEntitySnapshotResponse, err error) {
 	response = CreateDescribeFlowEntitySnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowEntitySnapshot(request *DescribeFlowEntitySnap
 }
 
 // DescribeFlowEntitySnapshotWithChan invokes the emr.DescribeFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowEntitySnapshotWithChan(request *DescribeFlowEntitySnapshotRequest) (<-chan *DescribeFlowEntitySnapshotResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowEntitySnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowEntitySnapshotWithChan(request *DescribeFlowEn
 }
 
 // DescribeFlowEntitySnapshotWithCallback invokes the emr.DescribeFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowEntitySnapshotWithCallback(request *DescribeFlowEntitySnapshotRequest, callback func(response *DescribeFlowEntitySnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -113,6 +108,7 @@ func CreateDescribeFlowEntitySnapshotRequest() (request *DescribeFlowEntitySnaps
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowEntitySnapshot", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

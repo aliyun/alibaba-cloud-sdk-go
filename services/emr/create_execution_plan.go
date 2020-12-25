@@ -21,7 +21,6 @@ import (
 )
 
 // CreateExecutionPlan invokes the emr.CreateExecutionPlan API synchronously
-// api document: https://help.aliyun.com/api/emr/createexecutionplan.html
 func (client *Client) CreateExecutionPlan(request *CreateExecutionPlanRequest) (response *CreateExecutionPlanResponse, err error) {
 	response = CreateCreateExecutionPlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateExecutionPlan(request *CreateExecutionPlanRequest) (
 }
 
 // CreateExecutionPlanWithChan invokes the emr.CreateExecutionPlan API asynchronously
-// api document: https://help.aliyun.com/api/emr/createexecutionplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateExecutionPlanWithChan(request *CreateExecutionPlanRequest) (<-chan *CreateExecutionPlanResponse, <-chan error) {
 	responseChan := make(chan *CreateExecutionPlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateExecutionPlanWithChan(request *CreateExecutionPlanRe
 }
 
 // CreateExecutionPlanWithCallback invokes the emr.CreateExecutionPlan API asynchronously
-// api document: https://help.aliyun.com/api/emr/createexecutionplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateExecutionPlanWithCallback(request *CreateExecutionPlanRequest, callback func(response *CreateExecutionPlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -116,9 +111,12 @@ type CreateExecutionPlanRequest struct {
 
 // CreateExecutionPlanBootstrapAction is a repeated param struct in CreateExecutionPlanRequest
 type CreateExecutionPlanBootstrapAction struct {
-	Path string `name:"Path"`
-	Arg  string `name:"Arg"`
-	Name string `name:"Name"`
+	Path                  string `name:"Path"`
+	ExecutionTarget       string `name:"ExecutionTarget"`
+	ExecutionMoment       string `name:"ExecutionMoment"`
+	Arg                   string `name:"Arg"`
+	Name                  string `name:"Name"`
+	ExecutionFailStrategy string `name:"ExecutionFailStrategy"`
 }
 
 // CreateExecutionPlanEcsOrder is a repeated param struct in CreateExecutionPlanRequest
@@ -155,6 +153,7 @@ func CreateCreateExecutionPlanRequest() (request *CreateExecutionPlanRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateExecutionPlan", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

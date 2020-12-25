@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterBasicInfo invokes the emr.DescribeClusterBasicInfo API synchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterbasicinfo.html
 func (client *Client) DescribeClusterBasicInfo(request *DescribeClusterBasicInfoRequest) (response *DescribeClusterBasicInfoResponse, err error) {
 	response = CreateDescribeClusterBasicInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterBasicInfo(request *DescribeClusterBasicInfo
 }
 
 // DescribeClusterBasicInfoWithChan invokes the emr.DescribeClusterBasicInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterbasicinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterBasicInfoWithChan(request *DescribeClusterBasicInfoRequest) (<-chan *DescribeClusterBasicInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterBasicInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterBasicInfoWithChan(request *DescribeClusterB
 }
 
 // DescribeClusterBasicInfoWithCallback invokes the emr.DescribeClusterBasicInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterbasicinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterBasicInfoWithCallback(request *DescribeClusterBasicInfoRequest, callback func(response *DescribeClusterBasicInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeClusterBasicInfoRequest() (request *DescribeClusterBasicInfoR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeClusterBasicInfo", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

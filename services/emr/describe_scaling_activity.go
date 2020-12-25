@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScalingActivity invokes the emr.DescribeScalingActivity API synchronously
-// api document: https://help.aliyun.com/api/emr/describescalingactivity.html
 func (client *Client) DescribeScalingActivity(request *DescribeScalingActivityRequest) (response *DescribeScalingActivityResponse, err error) {
 	response = CreateDescribeScalingActivityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScalingActivity(request *DescribeScalingActivityRe
 }
 
 // DescribeScalingActivityWithChan invokes the emr.DescribeScalingActivity API asynchronously
-// api document: https://help.aliyun.com/api/emr/describescalingactivity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivityWithChan(request *DescribeScalingActivityRequest) (<-chan *DescribeScalingActivityResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingActivityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScalingActivityWithChan(request *DescribeScalingAc
 }
 
 // DescribeScalingActivityWithCallback invokes the emr.DescribeScalingActivity API asynchronously
-// api document: https://help.aliyun.com/api/emr/describescalingactivity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivityWithCallback(request *DescribeScalingActivityRequest, callback func(response *DescribeScalingActivityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,6 +100,7 @@ func CreateDescribeScalingActivityRequest() (request *DescribeScalingActivityReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeScalingActivity", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusters invokes the emr.ListClusters API synchronously
-// api document: https://help.aliyun.com/api/emr/listclusters.html
 func (client *Client) ListClusters(request *ListClustersRequest) (response *ListClustersResponse, err error) {
 	response = CreateListClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusters(request *ListClustersRequest) (response *List
 }
 
 // ListClustersWithChan invokes the emr.ListClusters API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan *ListClustersResponse, <-chan error) {
 	responseChan := make(chan *ListClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan
 }
 
 // ListClustersWithCallback invokes the emr.ListClusters API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersWithCallback(request *ListClustersRequest, callback func(response *ListClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,26 @@ func (client *Client) ListClustersWithCallback(request *ListClustersRequest, cal
 // ListClustersRequest is the request struct for api ListClusters
 type ListClustersRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	StatusList      *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
-	IsDesc          requests.Boolean `position:"Query" name:"IsDesc"`
-	DepositType     string           `position:"Query" name:"DepositType"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	MachineType     string           `position:"Query" name:"MachineType"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CreateType      string           `position:"Query" name:"CreateType"`
-	DefaultStatus   requests.Boolean `position:"Query" name:"DefaultStatus"`
-	Name            string           `position:"Query" name:"Name"`
-	ClusterTypeList *[]string        `position:"Query" name:"ClusterTypeList"  type:"Repeated"`
+	ResourceOwnerId requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	StatusList      *[]string          `position:"Query" name:"StatusList"  type:"Repeated"`
+	IsDesc          requests.Boolean   `position:"Query" name:"IsDesc"`
+	DepositType     string             `position:"Query" name:"DepositType"`
+	PageNumber      requests.Integer   `position:"Query" name:"PageNumber"`
+	MachineType     string             `position:"Query" name:"MachineType"`
+	ResourceGroupId string             `position:"Query" name:"ResourceGroupId"`
+	PageSize        requests.Integer   `position:"Query" name:"PageSize"`
+	Tag             *[]ListClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	CreateType      string             `position:"Query" name:"CreateType"`
+	ExpiredTagList  *[]string          `position:"Query" name:"ExpiredTagList"  type:"Repeated"`
+	DefaultStatus   requests.Boolean   `position:"Query" name:"DefaultStatus"`
+	Name            string             `position:"Query" name:"Name"`
+	ClusterTypeList *[]string          `position:"Query" name:"ClusterTypeList"  type:"Repeated"`
+}
+
+// ListClustersTag is a repeated param struct in ListClustersRequest
+type ListClustersTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListClustersResponse is the response struct for api ListClusters
@@ -105,6 +109,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusters", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

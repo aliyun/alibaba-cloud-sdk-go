@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterHostComponent invokes the emr.ListClusterHostComponent API synchronously
-// api document: https://help.aliyun.com/api/emr/listclusterhostcomponent.html
 func (client *Client) ListClusterHostComponent(request *ListClusterHostComponentRequest) (response *ListClusterHostComponentResponse, err error) {
 	response = CreateListClusterHostComponentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterHostComponent(request *ListClusterHostComponent
 }
 
 // ListClusterHostComponentWithChan invokes the emr.ListClusterHostComponent API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterhostcomponent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterHostComponentWithChan(request *ListClusterHostComponentRequest) (<-chan *ListClusterHostComponentResponse, <-chan error) {
 	responseChan := make(chan *ListClusterHostComponentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterHostComponentWithChan(request *ListClusterHostC
 }
 
 // ListClusterHostComponentWithCallback invokes the emr.ListClusterHostComponent API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterhostcomponent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterHostComponentWithCallback(request *ListClusterHostComponentRequest, callback func(response *ListClusterHostComponentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,11 +86,11 @@ type ListClusterHostComponentRequest struct {
 // ListClusterHostComponentResponse is the response struct for api ListClusterHostComponent
 type ListClusterHostComponentResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int           `json:"PageSize" xml:"PageSize"`
-	Total         int           `json:"Total" xml:"Total"`
-	ComponentList ComponentList `json:"ComponentList" xml:"ComponentList"`
+	RequestId     string                                  `json:"RequestId" xml:"RequestId"`
+	PageNumber    int                                     `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int                                     `json:"PageSize" xml:"PageSize"`
+	Total         int                                     `json:"Total" xml:"Total"`
+	ComponentList ComponentListInListClusterHostComponent `json:"ComponentList" xml:"ComponentList"`
 }
 
 // CreateListClusterHostComponentRequest creates a request to invoke ListClusterHostComponent API
@@ -104,6 +99,7 @@ func CreateListClusterHostComponentRequest() (request *ListClusterHostComponentR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusterHostComponent", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

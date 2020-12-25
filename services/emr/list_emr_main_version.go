@@ -21,7 +21,6 @@ import (
 )
 
 // ListEmrMainVersion invokes the emr.ListEmrMainVersion API synchronously
-// api document: https://help.aliyun.com/api/emr/listemrmainversion.html
 func (client *Client) ListEmrMainVersion(request *ListEmrMainVersionRequest) (response *ListEmrMainVersionResponse, err error) {
 	response = CreateListEmrMainVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEmrMainVersion(request *ListEmrMainVersionRequest) (re
 }
 
 // ListEmrMainVersionWithChan invokes the emr.ListEmrMainVersion API asynchronously
-// api document: https://help.aliyun.com/api/emr/listemrmainversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmrMainVersionWithChan(request *ListEmrMainVersionRequest) (<-chan *ListEmrMainVersionResponse, <-chan error) {
 	responseChan := make(chan *ListEmrMainVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEmrMainVersionWithChan(request *ListEmrMainVersionRequ
 }
 
 // ListEmrMainVersionWithCallback invokes the emr.ListEmrMainVersion API asynchronously
-// api document: https://help.aliyun.com/api/emr/listemrmainversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmrMainVersionWithCallback(request *ListEmrMainVersionRequest, callback func(response *ListEmrMainVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateListEmrMainVersionRequest() (request *ListEmrMainVersionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListEmrMainVersion", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

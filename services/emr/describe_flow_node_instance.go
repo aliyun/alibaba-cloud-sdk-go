@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowNodeInstance invokes the emr.DescribeFlowNodeInstance API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflownodeinstance.html
 func (client *Client) DescribeFlowNodeInstance(request *DescribeFlowNodeInstanceRequest) (response *DescribeFlowNodeInstanceResponse, err error) {
 	response = CreateDescribeFlowNodeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowNodeInstance(request *DescribeFlowNodeInstance
 }
 
 // DescribeFlowNodeInstanceWithChan invokes the emr.DescribeFlowNodeInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflownodeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowNodeInstanceWithChan(request *DescribeFlowNodeInstanceRequest) (<-chan *DescribeFlowNodeInstanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowNodeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowNodeInstanceWithChan(request *DescribeFlowNode
 }
 
 // DescribeFlowNodeInstanceWithCallback invokes the emr.DescribeFlowNodeInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflownodeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowNodeInstanceWithCallback(request *DescribeFlowNodeInstanceRequest, callback func(response *DescribeFlowNodeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ type DescribeFlowNodeInstanceResponse struct {
 	FailAct          string `json:"FailAct" xml:"FailAct"`
 	MaxRetry         string `json:"MaxRetry" xml:"MaxRetry"`
 	RetryInterval    string `json:"RetryInterval" xml:"RetryInterval"`
+	RetryPolicy      string `json:"RetryPolicy" xml:"RetryPolicy"`
 	NodeName         string `json:"NodeName" xml:"NodeName"`
 	FlowId           string `json:"FlowId" xml:"FlowId"`
 	FlowInstanceId   string `json:"FlowInstanceId" xml:"FlowInstanceId"`
@@ -127,6 +123,7 @@ func CreateDescribeFlowNodeInstanceRequest() (request *DescribeFlowNodeInstanceR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowNodeInstance", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

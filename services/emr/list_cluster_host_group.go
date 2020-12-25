@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterHostGroup invokes the emr.ListClusterHostGroup API synchronously
-// api document: https://help.aliyun.com/api/emr/listclusterhostgroup.html
 func (client *Client) ListClusterHostGroup(request *ListClusterHostGroupRequest) (response *ListClusterHostGroupResponse, err error) {
 	response = CreateListClusterHostGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterHostGroup(request *ListClusterHostGroupRequest)
 }
 
 // ListClusterHostGroupWithChan invokes the emr.ListClusterHostGroup API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterhostgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterHostGroupWithChan(request *ListClusterHostGroupRequest) (<-chan *ListClusterHostGroupResponse, <-chan error) {
 	responseChan := make(chan *ListClusterHostGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterHostGroupWithChan(request *ListClusterHostGroup
 }
 
 // ListClusterHostGroupWithCallback invokes the emr.ListClusterHostGroup API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterhostgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterHostGroupWithCallback(request *ListClusterHostGroupRequest, callback func(response *ListClusterHostGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateListClusterHostGroupRequest() (request *ListClusterHostGroupRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusterHostGroup", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

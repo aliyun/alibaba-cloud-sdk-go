@@ -21,7 +21,6 @@ import (
 )
 
 // RefreshClusterResourcePool invokes the emr.RefreshClusterResourcePool API synchronously
-// api document: https://help.aliyun.com/api/emr/refreshclusterresourcepool.html
 func (client *Client) RefreshClusterResourcePool(request *RefreshClusterResourcePoolRequest) (response *RefreshClusterResourcePoolResponse, err error) {
 	response = CreateRefreshClusterResourcePoolResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefreshClusterResourcePool(request *RefreshClusterResource
 }
 
 // RefreshClusterResourcePoolWithChan invokes the emr.RefreshClusterResourcePool API asynchronously
-// api document: https://help.aliyun.com/api/emr/refreshclusterresourcepool.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshClusterResourcePoolWithChan(request *RefreshClusterResourcePoolRequest) (<-chan *RefreshClusterResourcePoolResponse, <-chan error) {
 	responseChan := make(chan *RefreshClusterResourcePoolResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefreshClusterResourcePoolWithChan(request *RefreshCluster
 }
 
 // RefreshClusterResourcePoolWithCallback invokes the emr.RefreshClusterResourcePool API asynchronously
-// api document: https://help.aliyun.com/api/emr/refreshclusterresourcepool.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshClusterResourcePoolWithCallback(request *RefreshClusterResourcePoolRequest, callback func(response *RefreshClusterResourcePoolResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateRefreshClusterResourcePoolRequest() (request *RefreshClusterResourceP
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "RefreshClusterResourcePool", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

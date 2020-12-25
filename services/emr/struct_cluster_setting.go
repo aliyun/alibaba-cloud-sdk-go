@@ -21,6 +21,7 @@ type ClusterSetting struct {
 	GmtModified  int64                                    `json:"GmtModified" xml:"GmtModified"`
 	ProjectId    string                                   `json:"ProjectId" xml:"ProjectId"`
 	ClusterId    string                                   `json:"ClusterId" xml:"ClusterId"`
+	K8sClusterId string                                   `json:"K8sClusterId" xml:"K8sClusterId"`
 	ClusterName  string                                   `json:"ClusterName" xml:"ClusterName"`
 	DefaultUser  string                                   `json:"DefaultUser" xml:"DefaultUser"`
 	DefaultQueue string                                   `json:"DefaultQueue" xml:"DefaultQueue"`

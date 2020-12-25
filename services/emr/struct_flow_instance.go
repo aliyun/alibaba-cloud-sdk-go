@@ -26,6 +26,7 @@ type FlowInstance struct {
 	Status        string `json:"Status" xml:"Status"`
 	ClusterId     string `json:"ClusterId" xml:"ClusterId"`
 	Owner         string `json:"Owner" xml:"Owner"`
+	ScheduleTime  int64  `json:"ScheduleTime" xml:"ScheduleTime"`
 	StartTime     int64  `json:"StartTime" xml:"StartTime"`
 	EndTime       int64  `json:"EndTime" xml:"EndTime"`
 	Duration      int64  `json:"Duration" xml:"Duration"`

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteExecutionPlan invokes the emr.DeleteExecutionPlan API synchronously
-// api document: https://help.aliyun.com/api/emr/deleteexecutionplan.html
 func (client *Client) DeleteExecutionPlan(request *DeleteExecutionPlanRequest) (response *DeleteExecutionPlanResponse, err error) {
 	response = CreateDeleteExecutionPlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteExecutionPlan(request *DeleteExecutionPlanRequest) (
 }
 
 // DeleteExecutionPlanWithChan invokes the emr.DeleteExecutionPlan API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteexecutionplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteExecutionPlanWithChan(request *DeleteExecutionPlanRequest) (<-chan *DeleteExecutionPlanResponse, <-chan error) {
 	responseChan := make(chan *DeleteExecutionPlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteExecutionPlanWithChan(request *DeleteExecutionPlanRe
 }
 
 // DeleteExecutionPlanWithCallback invokes the emr.DeleteExecutionPlan API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteexecutionplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteExecutionPlanWithCallback(request *DeleteExecutionPlanRequest, callback func(response *DeleteExecutionPlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateDeleteExecutionPlanRequest() (request *DeleteExecutionPlanRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteExecutionPlan", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

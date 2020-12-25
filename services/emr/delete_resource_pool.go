@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteResourcePool invokes the emr.DeleteResourcePool API synchronously
-// api document: https://help.aliyun.com/api/emr/deleteresourcepool.html
 func (client *Client) DeleteResourcePool(request *DeleteResourcePoolRequest) (response *DeleteResourcePoolResponse, err error) {
 	response = CreateDeleteResourcePoolResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteResourcePool(request *DeleteResourcePoolRequest) (re
 }
 
 // DeleteResourcePoolWithChan invokes the emr.DeleteResourcePool API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteresourcepool.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteResourcePoolWithChan(request *DeleteResourcePoolRequest) (<-chan *DeleteResourcePoolResponse, <-chan error) {
 	responseChan := make(chan *DeleteResourcePoolResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteResourcePoolWithChan(request *DeleteResourcePoolRequ
 }
 
 // DeleteResourcePoolWithCallback invokes the emr.DeleteResourcePool API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteresourcepool.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteResourcePoolWithCallback(request *DeleteResourcePoolRequest, callback func(response *DeleteResourcePoolResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDeleteResourcePoolRequest() (request *DeleteResourcePoolRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteResourcePool", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

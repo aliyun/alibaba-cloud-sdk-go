@@ -21,7 +21,6 @@ import (
 )
 
 // RerunFlow invokes the emr.RerunFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/rerunflow.html
 func (client *Client) RerunFlow(request *RerunFlowRequest) (response *RerunFlowResponse, err error) {
 	response = CreateRerunFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RerunFlow(request *RerunFlowRequest) (response *RerunFlowR
 }
 
 // RerunFlowWithChan invokes the emr.RerunFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/rerunflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RerunFlowWithChan(request *RerunFlowRequest) (<-chan *RerunFlowResponse, <-chan error) {
 	responseChan := make(chan *RerunFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RerunFlowWithChan(request *RerunFlowRequest) (<-chan *Reru
 }
 
 // RerunFlowWithCallback invokes the emr.RerunFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/rerunflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RerunFlowWithCallback(request *RerunFlowRequest, callback func(response *RerunFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateRerunFlowRequest() (request *RerunFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "RerunFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

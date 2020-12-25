@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSecurityGroupAttribute invokes the emr.DescribeSecurityGroupAttribute API synchronously
-// api document: https://help.aliyun.com/api/emr/describesecuritygroupattribute.html
 func (client *Client) DescribeSecurityGroupAttribute(request *DescribeSecurityGroupAttributeRequest) (response *DescribeSecurityGroupAttributeResponse, err error) {
 	response = CreateDescribeSecurityGroupAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSecurityGroupAttribute(request *DescribeSecurityGr
 }
 
 // DescribeSecurityGroupAttributeWithChan invokes the emr.DescribeSecurityGroupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/emr/describesecuritygroupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupAttributeWithChan(request *DescribeSecurityGroupAttributeRequest) (<-chan *DescribeSecurityGroupAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityGroupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSecurityGroupAttributeWithChan(request *DescribeSe
 }
 
 // DescribeSecurityGroupAttributeWithCallback invokes the emr.DescribeSecurityGroupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/emr/describesecuritygroupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupAttributeWithCallback(request *DescribeSecurityGroupAttributeRequest, callback func(response *DescribeSecurityGroupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeSecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // DescribeSecurityGroupAttributeResponse is the response struct for api DescribeSecurityGroupAttribute
@@ -94,6 +90,7 @@ func CreateDescribeSecurityGroupAttributeRequest() (request *DescribeSecurityGro
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeSecurityGroupAttribute", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

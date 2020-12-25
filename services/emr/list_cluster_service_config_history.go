@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterServiceConfigHistory invokes the emr.ListClusterServiceConfigHistory API synchronously
-// api document: https://help.aliyun.com/api/emr/listclusterserviceconfighistory.html
 func (client *Client) ListClusterServiceConfigHistory(request *ListClusterServiceConfigHistoryRequest) (response *ListClusterServiceConfigHistoryResponse, err error) {
 	response = CreateListClusterServiceConfigHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterServiceConfigHistory(request *ListClusterServic
 }
 
 // ListClusterServiceConfigHistoryWithChan invokes the emr.ListClusterServiceConfigHistory API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterserviceconfighistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterServiceConfigHistoryWithChan(request *ListClusterServiceConfigHistoryRequest) (<-chan *ListClusterServiceConfigHistoryResponse, <-chan error) {
 	responseChan := make(chan *ListClusterServiceConfigHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterServiceConfigHistoryWithChan(request *ListClust
 }
 
 // ListClusterServiceConfigHistoryWithCallback invokes the emr.ListClusterServiceConfigHistory API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterserviceconfighistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterServiceConfigHistoryWithCallback(request *ListClusterServiceConfigHistoryRequest, callback func(response *ListClusterServiceConfigHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,11 +72,17 @@ func (client *Client) ListClusterServiceConfigHistoryWithCallback(request *ListC
 type ListClusterServiceConfigHistoryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClusterId       string           `position:"Query" name:"ClusterId"`
+	HostInstanceId  string           `position:"Query" name:"HostInstanceId"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	ConfigVersion   string           `position:"Query" name:"ConfigVersion"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	ServiceName     string           `position:"Query" name:"ServiceName"`
+	Author          string           `position:"Query" name:"Author"`
+	ClusterId       string           `position:"Query" name:"ClusterId"`
+	ConfigFileName  string           `position:"Query" name:"ConfigFileName"`
+	ConfigItemKey   string           `position:"Query" name:"ConfigItemKey"`
+	HostGroupId     string           `position:"Query" name:"HostGroupId"`
+	Comment         string           `position:"Query" name:"Comment"`
 }
 
 // ListClusterServiceConfigHistoryResponse is the response struct for api ListClusterServiceConfigHistory
@@ -100,6 +101,7 @@ func CreateListClusterServiceConfigHistoryRequest() (request *ListClusterService
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusterServiceConfigHistory", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

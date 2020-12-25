@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowClusterAll invokes the emr.ListFlowClusterAll API synchronously
-// api document: https://help.aliyun.com/api/emr/listflowclusterall.html
 func (client *Client) ListFlowClusterAll(request *ListFlowClusterAllRequest) (response *ListFlowClusterAllResponse, err error) {
 	response = CreateListFlowClusterAllResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowClusterAll(request *ListFlowClusterAllRequest) (re
 }
 
 // ListFlowClusterAllWithChan invokes the emr.ListFlowClusterAll API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowclusterall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowClusterAllWithChan(request *ListFlowClusterAllRequest) (<-chan *ListFlowClusterAllResponse, <-chan error) {
 	responseChan := make(chan *ListFlowClusterAllResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowClusterAllWithChan(request *ListFlowClusterAllRequ
 }
 
 // ListFlowClusterAllWithCallback invokes the emr.ListFlowClusterAll API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowclusterall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowClusterAllWithCallback(request *ListFlowClusterAllRequest, callback func(response *ListFlowClusterAllResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,8 @@ func (client *Client) ListFlowClusterAllWithCallback(request *ListFlowClusterAll
 // ListFlowClusterAllRequest is the request struct for api ListFlowClusterAll
 type ListFlowClusterAllRequest struct {
 	*requests.RpcRequest
+	ProductType     string `position:"Query" name:"ProductType"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 }
 
 // ListFlowClusterAllResponse is the response struct for api ListFlowClusterAll
@@ -94,6 +91,7 @@ func CreateListFlowClusterAllRequest() (request *ListFlowClusterAllRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowClusterAll", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

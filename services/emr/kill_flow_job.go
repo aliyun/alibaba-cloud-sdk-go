@@ -21,7 +21,6 @@ import (
 )
 
 // KillFlowJob invokes the emr.KillFlowJob API synchronously
-// api document: https://help.aliyun.com/api/emr/killflowjob.html
 func (client *Client) KillFlowJob(request *KillFlowJobRequest) (response *KillFlowJobResponse, err error) {
 	response = CreateKillFlowJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) KillFlowJob(request *KillFlowJobRequest) (response *KillFl
 }
 
 // KillFlowJobWithChan invokes the emr.KillFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/killflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KillFlowJobWithChan(request *KillFlowJobRequest) (<-chan *KillFlowJobResponse, <-chan error) {
 	responseChan := make(chan *KillFlowJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) KillFlowJobWithChan(request *KillFlowJobRequest) (<-chan *
 }
 
 // KillFlowJobWithCallback invokes the emr.KillFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/killflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KillFlowJobWithCallback(request *KillFlowJobRequest, callback func(response *KillFlowJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateKillFlowJobRequest() (request *KillFlowJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "KillFlowJob", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

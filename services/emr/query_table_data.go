@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTableData invokes the emr.QueryTableData API synchronously
-// api document: https://help.aliyun.com/api/emr/querytabledata.html
 func (client *Client) QueryTableData(request *QueryTableDataRequest) (response *QueryTableDataResponse, err error) {
 	response = CreateQueryTableDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTableData(request *QueryTableDataRequest) (response *
 }
 
 // QueryTableDataWithChan invokes the emr.QueryTableData API asynchronously
-// api document: https://help.aliyun.com/api/emr/querytabledata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTableDataWithChan(request *QueryTableDataRequest) (<-chan *QueryTableDataResponse, <-chan error) {
 	responseChan := make(chan *QueryTableDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTableDataWithChan(request *QueryTableDataRequest) (<-
 }
 
 // QueryTableDataWithCallback invokes the emr.QueryTableData API asynchronously
-// api document: https://help.aliyun.com/api/emr/querytabledata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTableDataWithCallback(request *QueryTableDataRequest, callback func(response *QueryTableDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateQueryTableDataRequest() (request *QueryTableDataRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "QueryTableData", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

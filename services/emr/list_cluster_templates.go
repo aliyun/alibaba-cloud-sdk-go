@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterTemplates invokes the emr.ListClusterTemplates API synchronously
-// api document: https://help.aliyun.com/api/emr/listclustertemplates.html
 func (client *Client) ListClusterTemplates(request *ListClusterTemplatesRequest) (response *ListClusterTemplatesResponse, err error) {
 	response = CreateListClusterTemplatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterTemplates(request *ListClusterTemplatesRequest)
 }
 
 // ListClusterTemplatesWithChan invokes the emr.ListClusterTemplates API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclustertemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterTemplatesWithChan(request *ListClusterTemplatesRequest) (<-chan *ListClusterTemplatesResponse, <-chan error) {
 	responseChan := make(chan *ListClusterTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterTemplatesWithChan(request *ListClusterTemplates
 }
 
 // ListClusterTemplatesWithCallback invokes the emr.ListClusterTemplates API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclustertemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterTemplatesWithCallback(request *ListClusterTemplatesRequest, callback func(response *ListClusterTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,8 @@ type ListClusterTemplatesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ProductType     string           `position:"Query" name:"ProductType"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	BizId           string           `position:"Query" name:"BizId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
@@ -98,6 +95,7 @@ func CreateListClusterTemplatesRequest() (request *ListClusterTemplatesRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusterTemplates", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

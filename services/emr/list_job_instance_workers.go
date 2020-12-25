@@ -21,7 +21,6 @@ import (
 )
 
 // ListJobInstanceWorkers invokes the emr.ListJobInstanceWorkers API synchronously
-// api document: https://help.aliyun.com/api/emr/listjobinstanceworkers.html
 func (client *Client) ListJobInstanceWorkers(request *ListJobInstanceWorkersRequest) (response *ListJobInstanceWorkersResponse, err error) {
 	response = CreateListJobInstanceWorkersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListJobInstanceWorkers(request *ListJobInstanceWorkersRequ
 }
 
 // ListJobInstanceWorkersWithChan invokes the emr.ListJobInstanceWorkers API asynchronously
-// api document: https://help.aliyun.com/api/emr/listjobinstanceworkers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobInstanceWorkersWithChan(request *ListJobInstanceWorkersRequest) (<-chan *ListJobInstanceWorkersResponse, <-chan error) {
 	responseChan := make(chan *ListJobInstanceWorkersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListJobInstanceWorkersWithChan(request *ListJobInstanceWor
 }
 
 // ListJobInstanceWorkersWithCallback invokes the emr.ListJobInstanceWorkers API asynchronously
-// api document: https://help.aliyun.com/api/emr/listjobinstanceworkers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobInstanceWorkersWithCallback(request *ListJobInstanceWorkersRequest, callback func(response *ListJobInstanceWorkersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateListJobInstanceWorkersRequest() (request *ListJobInstanceWorkersReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListJobInstanceWorkers", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

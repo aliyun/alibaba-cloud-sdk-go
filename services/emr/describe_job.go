@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeJob invokes the emr.DescribeJob API synchronously
-// api document: https://help.aliyun.com/api/emr/describejob.html
 func (client *Client) DescribeJob(request *DescribeJobRequest) (response *DescribeJobResponse, err error) {
 	response = CreateDescribeJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeJob(request *DescribeJobRequest) (response *Descri
 }
 
 // DescribeJobWithChan invokes the emr.DescribeJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/describejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeJobWithChan(request *DescribeJobRequest) (<-chan *DescribeJobResponse, <-chan error) {
 	responseChan := make(chan *DescribeJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeJobWithChan(request *DescribeJobRequest) (<-chan *
 }
 
 // DescribeJobWithCallback invokes the emr.DescribeJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/describejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeJobWithCallback(request *DescribeJobRequest, callback func(response *DescribeJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DescribeJobWithCallback(request *DescribeJobRequest, callb
 type DescribeJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Id              string           `position:"Query" name:"Id"`
 }
 
@@ -99,6 +95,7 @@ func CreateDescribeJobRequest() (request *DescribeJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeJob", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

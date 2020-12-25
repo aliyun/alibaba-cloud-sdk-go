@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyClusterTemplate invokes the emr.ModifyClusterTemplate API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyclustertemplate.html
 func (client *Client) ModifyClusterTemplate(request *ModifyClusterTemplateRequest) (response *ModifyClusterTemplateResponse, err error) {
 	response = CreateModifyClusterTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyClusterTemplate(request *ModifyClusterTemplateReques
 }
 
 // ModifyClusterTemplateWithChan invokes the emr.ModifyClusterTemplate API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyclustertemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterTemplateWithChan(request *ModifyClusterTemplateRequest) (<-chan *ModifyClusterTemplateResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClusterTemplateWithChan(request *ModifyClusterTempla
 }
 
 // ModifyClusterTemplateWithCallback invokes the emr.ModifyClusterTemplate API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyclustertemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterTemplateWithCallback(request *ModifyClusterTemplateRequest, callback func(response *ModifyClusterTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,9 +80,11 @@ type ModifyClusterTemplateRequest struct {
 	MetaStoreType          string                                  `position:"Query" name:"MetaStoreType"`
 	SecurityGroupName      string                                  `position:"Query" name:"SecurityGroupName"`
 	MachineType            string                                  `position:"Query" name:"MachineType"`
+	ResourceGroupId        string                                  `position:"Query" name:"ResourceGroupId"`
 	BootstrapAction        *[]ModifyClusterTemplateBootstrapAction `position:"Query" name:"BootstrapAction"  type:"Repeated"`
 	MetaStoreConf          string                                  `position:"Query" name:"MetaStoreConf"`
 	EmrVer                 string                                  `position:"Query" name:"EmrVer"`
+	Tag                    *[]ModifyClusterTemplateTag             `position:"Query" name:"Tag"  type:"Repeated"`
 	IsOpenPublicIp         requests.Boolean                        `position:"Query" name:"IsOpenPublicIp"`
 	Period                 requests.Integer                        `position:"Query" name:"Period"`
 	InstanceGeneration     string                                  `position:"Query" name:"InstanceGeneration"`
@@ -116,9 +113,18 @@ type ModifyClusterTemplateRequest struct {
 
 // ModifyClusterTemplateBootstrapAction is a repeated param struct in ModifyClusterTemplateRequest
 type ModifyClusterTemplateBootstrapAction struct {
-	Path string `name:"Path"`
-	Arg  string `name:"Arg"`
-	Name string `name:"Name"`
+	Path                  string `name:"Path"`
+	ExecutionTarget       string `name:"ExecutionTarget"`
+	ExecutionMoment       string `name:"ExecutionMoment"`
+	Arg                   string `name:"Arg"`
+	Name                  string `name:"Name"`
+	ExecutionFailStrategy string `name:"ExecutionFailStrategy"`
+}
+
+// ModifyClusterTemplateTag is a repeated param struct in ModifyClusterTemplateRequest
+type ModifyClusterTemplateTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ModifyClusterTemplateHostGroup is a repeated param struct in ModifyClusterTemplateRequest
@@ -166,6 +172,7 @@ func CreateModifyClusterTemplateRequest() (request *ModifyClusterTemplateRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyClusterTemplate", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

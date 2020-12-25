@@ -21,7 +21,6 @@ import (
 )
 
 // GetFlowEntityRelationGraph invokes the emr.GetFlowEntityRelationGraph API synchronously
-// api document: https://help.aliyun.com/api/emr/getflowentityrelationgraph.html
 func (client *Client) GetFlowEntityRelationGraph(request *GetFlowEntityRelationGraphRequest) (response *GetFlowEntityRelationGraphResponse, err error) {
 	response = CreateGetFlowEntityRelationGraphResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetFlowEntityRelationGraph(request *GetFlowEntityRelationG
 }
 
 // GetFlowEntityRelationGraphWithChan invokes the emr.GetFlowEntityRelationGraph API asynchronously
-// api document: https://help.aliyun.com/api/emr/getflowentityrelationgraph.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFlowEntityRelationGraphWithChan(request *GetFlowEntityRelationGraphRequest) (<-chan *GetFlowEntityRelationGraphResponse, <-chan error) {
 	responseChan := make(chan *GetFlowEntityRelationGraphResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetFlowEntityRelationGraphWithChan(request *GetFlowEntityR
 }
 
 // GetFlowEntityRelationGraphWithCallback invokes the emr.GetFlowEntityRelationGraph API asynchronously
-// api document: https://help.aliyun.com/api/emr/getflowentityrelationgraph.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFlowEntityRelationGraphWithCallback(request *GetFlowEntityRelationGraphRequest, callback func(response *GetFlowEntityRelationGraphResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +99,7 @@ func CreateGetFlowEntityRelationGraphRequest() (request *GetFlowEntityRelationGr
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "GetFlowEntityRelationGraph", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

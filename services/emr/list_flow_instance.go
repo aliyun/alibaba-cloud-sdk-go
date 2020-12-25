@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowInstance invokes the emr.ListFlowInstance API synchronously
-// api document: https://help.aliyun.com/api/emr/listflowinstance.html
 func (client *Client) ListFlowInstance(request *ListFlowInstanceRequest) (response *ListFlowInstanceResponse, err error) {
 	response = CreateListFlowInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowInstance(request *ListFlowInstanceRequest) (respon
 }
 
 // ListFlowInstanceWithChan invokes the emr.ListFlowInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowInstanceWithChan(request *ListFlowInstanceRequest) (<-chan *ListFlowInstanceResponse, <-chan error) {
 	responseChan := make(chan *ListFlowInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowInstanceWithChan(request *ListFlowInstanceRequest)
 }
 
 // ListFlowInstanceWithCallback invokes the emr.ListFlowInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowInstanceWithCallback(request *ListFlowInstanceRequest, callback func(response *ListFlowInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,18 +71,19 @@ func (client *Client) ListFlowInstanceWithCallback(request *ListFlowInstanceRequ
 // ListFlowInstanceRequest is the request struct for api ListFlowInstance
 type ListFlowInstanceRequest struct {
 	*requests.RpcRequest
-	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	Id         string           `position:"Query" name:"Id"`
-	ProjectId  string           `position:"Query" name:"ProjectId"`
-	Owner      string           `position:"Query" name:"Owner"`
-	TimeRange  string           `position:"Query" name:"TimeRange"`
-	OrderBy    string           `position:"Query" name:"OrderBy"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	FlowName   string           `position:"Query" name:"FlowName"`
-	FlowId     string           `position:"Query" name:"FlowId"`
-	OrderType  string           `position:"Query" name:"OrderType"`
+	StatusList     *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
+	NodeInstanceId string           `position:"Query" name:"NodeInstanceId"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	Id             string           `position:"Query" name:"Id"`
+	ProjectId      string           `position:"Query" name:"ProjectId"`
+	Owner          string           `position:"Query" name:"Owner"`
+	TimeRange      string           `position:"Query" name:"TimeRange"`
+	OrderBy        string           `position:"Query" name:"OrderBy"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	FlowName       string           `position:"Query" name:"FlowName"`
+	FlowId         string           `position:"Query" name:"FlowId"`
+	OrderType      string           `position:"Query" name:"OrderType"`
 }
 
 // ListFlowInstanceResponse is the response struct for api ListFlowInstance
@@ -106,6 +102,7 @@ func CreateListFlowInstanceRequest() (request *ListFlowInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowInstance", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

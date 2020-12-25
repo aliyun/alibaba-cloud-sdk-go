@@ -21,7 +21,6 @@ import (
 )
 
 // GetHdfsCapacityStatisticInfo invokes the emr.GetHdfsCapacityStatisticInfo API synchronously
-// api document: https://help.aliyun.com/api/emr/gethdfscapacitystatisticinfo.html
 func (client *Client) GetHdfsCapacityStatisticInfo(request *GetHdfsCapacityStatisticInfoRequest) (response *GetHdfsCapacityStatisticInfoResponse, err error) {
 	response = CreateGetHdfsCapacityStatisticInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetHdfsCapacityStatisticInfo(request *GetHdfsCapacityStati
 }
 
 // GetHdfsCapacityStatisticInfoWithChan invokes the emr.GetHdfsCapacityStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/gethdfscapacitystatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetHdfsCapacityStatisticInfoWithChan(request *GetHdfsCapacityStatisticInfoRequest) (<-chan *GetHdfsCapacityStatisticInfoResponse, <-chan error) {
 	responseChan := make(chan *GetHdfsCapacityStatisticInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetHdfsCapacityStatisticInfoWithChan(request *GetHdfsCapac
 }
 
 // GetHdfsCapacityStatisticInfoWithCallback invokes the emr.GetHdfsCapacityStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/gethdfscapacitystatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetHdfsCapacityStatisticInfoWithCallback(request *GetHdfsCapacityStatisticInfoRequest, callback func(response *GetHdfsCapacityStatisticInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateGetHdfsCapacityStatisticInfoRequest() (request *GetHdfsCapacityStatis
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "GetHdfsCapacityStatisticInfo", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

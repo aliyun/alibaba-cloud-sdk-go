@@ -21,7 +21,6 @@ import (
 )
 
 // SuspendFlow invokes the emr.SuspendFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/suspendflow.html
 func (client *Client) SuspendFlow(request *SuspendFlowRequest) (response *SuspendFlowResponse, err error) {
 	response = CreateSuspendFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SuspendFlow(request *SuspendFlowRequest) (response *Suspen
 }
 
 // SuspendFlowWithChan invokes the emr.SuspendFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/suspendflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SuspendFlowWithChan(request *SuspendFlowRequest) (<-chan *SuspendFlowResponse, <-chan error) {
 	responseChan := make(chan *SuspendFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SuspendFlowWithChan(request *SuspendFlowRequest) (<-chan *
 }
 
 // SuspendFlowWithCallback invokes the emr.SuspendFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/suspendflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SuspendFlowWithCallback(request *SuspendFlowRequest, callback func(response *SuspendFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateSuspendFlowRequest() (request *SuspendFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "SuspendFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

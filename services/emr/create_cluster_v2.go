@@ -21,7 +21,6 @@ import (
 )
 
 // CreateClusterV2 invokes the emr.CreateClusterV2 API synchronously
-// api document: https://help.aliyun.com/api/emr/createclusterv2.html
 func (client *Client) CreateClusterV2(request *CreateClusterV2Request) (response *CreateClusterV2Response, err error) {
 	response = CreateCreateClusterV2Response()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateClusterV2(request *CreateClusterV2Request) (response
 }
 
 // CreateClusterV2WithChan invokes the emr.CreateClusterV2 API asynchronously
-// api document: https://help.aliyun.com/api/emr/createclusterv2.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterV2WithChan(request *CreateClusterV2Request) (<-chan *CreateClusterV2Response, <-chan error) {
 	responseChan := make(chan *CreateClusterV2Response, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateClusterV2WithChan(request *CreateClusterV2Request) (
 }
 
 // CreateClusterV2WithCallback invokes the emr.CreateClusterV2 API asynchronously
-// api document: https://help.aliyun.com/api/emr/createclusterv2.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterV2WithCallback(request *CreateClusterV2Request, callback func(response *CreateClusterV2Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +81,7 @@ type CreateClusterV2Request struct {
 	MetaStoreType          string                              `position:"Query" name:"MetaStoreType"`
 	SecurityGroupName      string                              `position:"Query" name:"SecurityGroupName"`
 	MachineType            string                              `position:"Query" name:"MachineType"`
+	ResourceGroupId        string                              `position:"Query" name:"ResourceGroupId"`
 	HostComponentInfo      *[]CreateClusterV2HostComponentInfo `position:"Query" name:"HostComponentInfo"  type:"Repeated"`
 	ClickHouseConf         string                              `position:"Query" name:"ClickHouseConf"`
 	BootstrapAction        *[]CreateClusterV2BootstrapAction   `position:"Query" name:"BootstrapAction"  type:"Repeated"`
@@ -98,6 +94,7 @@ type CreateClusterV2Request struct {
 	InstanceGeneration     string                              `position:"Query" name:"InstanceGeneration"`
 	VSwitchId              string                              `position:"Query" name:"VSwitchId"`
 	ClusterType            string                              `position:"Query" name:"ClusterType"`
+	ExtraAttributes        string                              `position:"Query" name:"ExtraAttributes"`
 	AutoRenew              requests.Boolean                    `position:"Query" name:"AutoRenew"`
 	OptionSoftWareList     *[]string                           `position:"Query" name:"OptionSoftWareList"  type:"Repeated"`
 	NetType                string                              `position:"Query" name:"NetType"`
@@ -115,6 +112,7 @@ type CreateClusterV2Request struct {
 	WhiteListType          string                              `position:"Query" name:"WhiteListType"`
 	RelatedClusterId       string                              `position:"Query" name:"RelatedClusterId"`
 	VpcId                  string                              `position:"Query" name:"VpcId"`
+	PromotionInfo          *[]CreateClusterV2PromotionInfo     `position:"Query" name:"PromotionInfo"  type:"Repeated"`
 	HostGroup              *[]CreateClusterV2HostGroup         `position:"Query" name:"HostGroup"  type:"Repeated"`
 	ChargeType             string                              `position:"Query" name:"ChargeType"`
 	ServiceInfo            *[]CreateClusterV2ServiceInfo       `position:"Query" name:"ServiceInfo"  type:"Repeated"`
@@ -131,9 +129,12 @@ type CreateClusterV2HostComponentInfo struct {
 
 // CreateClusterV2BootstrapAction is a repeated param struct in CreateClusterV2Request
 type CreateClusterV2BootstrapAction struct {
-	Path string `name:"Path"`
-	Arg  string `name:"Arg"`
-	Name string `name:"Name"`
+	Path                  string `name:"Path"`
+	ExecutionTarget       string `name:"ExecutionTarget"`
+	ExecutionMoment       string `name:"ExecutionMoment"`
+	Arg                   string `name:"Arg"`
+	Name                  string `name:"Name"`
+	ExecutionFailStrategy string `name:"ExecutionFailStrategy"`
 }
 
 // CreateClusterV2Tag is a repeated param struct in CreateClusterV2Request
@@ -147,6 +148,13 @@ type CreateClusterV2UserInfo struct {
 	Password string `name:"Password"`
 	UserId   string `name:"UserId"`
 	UserName string `name:"UserName"`
+}
+
+// CreateClusterV2PromotionInfo is a repeated param struct in CreateClusterV2Request
+type CreateClusterV2PromotionInfo struct {
+	PromotionOptionCode string `name:"PromotionOptionCode"`
+	ProductCode         string `name:"ProductCode"`
+	PromotionOptionNo   string `name:"PromotionOptionNo"`
 }
 
 // CreateClusterV2HostGroup is a repeated param struct in CreateClusterV2Request
@@ -203,6 +211,7 @@ func CreateCreateClusterV2Request() (request *CreateClusterV2Request) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateClusterV2", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

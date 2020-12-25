@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDataSource invokes the emr.CreateDataSource API synchronously
-// api document: https://help.aliyun.com/api/emr/createdatasource.html
 func (client *Client) CreateDataSource(request *CreateDataSourceRequest) (response *CreateDataSourceResponse, err error) {
 	response = CreateCreateDataSourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDataSource(request *CreateDataSourceRequest) (respon
 }
 
 // CreateDataSourceWithChan invokes the emr.CreateDataSource API asynchronously
-// api document: https://help.aliyun.com/api/emr/createdatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDataSourceWithChan(request *CreateDataSourceRequest) (<-chan *CreateDataSourceResponse, <-chan error) {
 	responseChan := make(chan *CreateDataSourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDataSourceWithChan(request *CreateDataSourceRequest)
 }
 
 // CreateDataSourceWithCallback invokes the emr.CreateDataSource API asynchronously
-// api document: https://help.aliyun.com/api/emr/createdatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDataSourceWithCallback(request *CreateDataSourceRequest, callback func(response *CreateDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type CreateDataSourceRequest struct {
 	Description     string           `position:"Query" name:"Description"`
 	Conf            string           `position:"Query" name:"Conf"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Name            string           `position:"Query" name:"Name"`
 	SourceType      string           `position:"Query" name:"SourceType"`
 }
@@ -98,6 +94,7 @@ func CreateCreateDataSourceRequest() (request *CreateDataSourceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateDataSource", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

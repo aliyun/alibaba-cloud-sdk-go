@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowCluster invokes the emr.ListFlowCluster API synchronously
-// api document: https://help.aliyun.com/api/emr/listflowcluster.html
 func (client *Client) ListFlowCluster(request *ListFlowClusterRequest) (response *ListFlowClusterResponse, err error) {
 	response = CreateListFlowClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowCluster(request *ListFlowClusterRequest) (response
 }
 
 // ListFlowClusterWithChan invokes the emr.ListFlowCluster API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowClusterWithChan(request *ListFlowClusterRequest) (<-chan *ListFlowClusterResponse, <-chan error) {
 	responseChan := make(chan *ListFlowClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowClusterWithChan(request *ListFlowClusterRequest) (
 }
 
 // ListFlowClusterWithCallback invokes the emr.ListFlowCluster API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowClusterWithCallback(request *ListFlowClusterRequest, callback func(response *ListFlowClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,10 @@ func (client *Client) ListFlowClusterWithCallback(request *ListFlowClusterReques
 // ListFlowClusterRequest is the request struct for api ListFlowCluster
 type ListFlowClusterRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	ProjectId  string           `position:"Query" name:"ProjectId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	ProjectId       string           `position:"Query" name:"ProjectId"`
 }
 
 // ListFlowClusterResponse is the response struct for api ListFlowCluster
@@ -97,6 +93,7 @@ func CreateListFlowClusterRequest() (request *ListFlowClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowCluster", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

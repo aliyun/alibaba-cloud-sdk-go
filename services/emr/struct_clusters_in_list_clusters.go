@@ -17,5 +17,5 @@ package emr
 
 // ClustersInListClusters is a nested struct in emr response
 type ClustersInListClusters struct {
-	ClusterInfo []ClusterInfo `json:"ClusterInfo" xml:"ClusterInfo"`
+	ClusterInfo []ClusterInfoInListClusters `json:"ClusterInfo" xml:"ClusterInfo"`
 }

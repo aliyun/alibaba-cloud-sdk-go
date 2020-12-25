@@ -21,7 +21,6 @@ import (
 )
 
 // StartFlow invokes the emr.StartFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/startflow.html
 func (client *Client) StartFlow(request *StartFlowRequest) (response *StartFlowResponse, err error) {
 	response = CreateStartFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartFlow(request *StartFlowRequest) (response *StartFlowR
 }
 
 // StartFlowWithChan invokes the emr.StartFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/startflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartFlowWithChan(request *StartFlowRequest) (<-chan *StartFlowResponse, <-chan error) {
 	responseChan := make(chan *StartFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartFlowWithChan(request *StartFlowRequest) (<-chan *Star
 }
 
 // StartFlowWithCallback invokes the emr.StartFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/startflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartFlowWithCallback(request *StartFlowRequest, callback func(response *StartFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateStartFlowRequest() (request *StartFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "StartFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

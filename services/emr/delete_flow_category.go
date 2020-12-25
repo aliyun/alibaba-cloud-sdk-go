@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFlowCategory invokes the emr.DeleteFlowCategory API synchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowcategory.html
 func (client *Client) DeleteFlowCategory(request *DeleteFlowCategoryRequest) (response *DeleteFlowCategoryResponse, err error) {
 	response = CreateDeleteFlowCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFlowCategory(request *DeleteFlowCategoryRequest) (re
 }
 
 // DeleteFlowCategoryWithChan invokes the emr.DeleteFlowCategory API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowCategoryWithChan(request *DeleteFlowCategoryRequest) (<-chan *DeleteFlowCategoryResponse, <-chan error) {
 	responseChan := make(chan *DeleteFlowCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFlowCategoryWithChan(request *DeleteFlowCategoryRequ
 }
 
 // DeleteFlowCategoryWithCallback invokes the emr.DeleteFlowCategory API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteflowcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowCategoryWithCallback(request *DeleteFlowCategoryRequest, callback func(response *DeleteFlowCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDeleteFlowCategoryRequest() (request *DeleteFlowCategoryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteFlowCategory", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

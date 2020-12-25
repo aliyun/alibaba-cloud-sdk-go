@@ -17,21 +17,27 @@ package emr
 
 // Component is a nested struct in emr response
 type Component struct {
-	ServiceName          string `json:"ServiceName" xml:"ServiceName"`
-	ServiceDisplayName   string `json:"ServiceDisplayName" xml:"ServiceDisplayName"`
-	ComponentName        string `json:"ComponentName" xml:"ComponentName"`
-	ComponentDisplayName string `json:"ComponentDisplayName" xml:"ComponentDisplayName"`
-	Status               string `json:"Status" xml:"Status"`
-	NeedRestart          bool   `json:"NeedRestart" xml:"NeedRestart"`
-	HostId               string `json:"HostId" xml:"HostId"`
-	ServerStatus         string `json:"ServerStatus" xml:"ServerStatus"`
-	HostName             string `json:"HostName" xml:"HostName"`
-	PublicIp             string `json:"PublicIp" xml:"PublicIp"`
-	PrivateIp            string `json:"PrivateIp" xml:"PrivateIp"`
-	Role                 string `json:"Role" xml:"Role"`
-	InstanceType         string `json:"InstanceType" xml:"InstanceType"`
-	Cpu                  int    `json:"Cpu" xml:"Cpu"`
-	Memory               int    `json:"Memory" xml:"Memory"`
 	HostInstanceId       string `json:"HostInstanceId" xml:"HostInstanceId"`
+	HostId               string `json:"HostId" xml:"HostId"`
+	PublicIp             string `json:"PublicIp" xml:"PublicIp"`
+	NeedRestart          bool   `json:"NeedRestart" xml:"NeedRestart"`
+	Memory               int    `json:"Memory" xml:"Memory"`
+	ComponentName        string `json:"ComponentName" xml:"ComponentName"`
+	InstanceType         string `json:"InstanceType" xml:"InstanceType"`
+	WorkloadType         string `json:"WorkloadType" xml:"WorkloadType"`
+	ComponentDisplayName string `json:"ComponentDisplayName" xml:"ComponentDisplayName"`
 	SerialNumber         string `json:"SerialNumber" xml:"SerialNumber"`
+	CommissionStatus     string `json:"CommissionStatus" xml:"CommissionStatus"`
+	PodName              string `json:"PodName" xml:"PodName"`
+	ServerStatus         string `json:"ServerStatus" xml:"ServerStatus"`
+	Role                 string `json:"Role" xml:"Role"`
+	PrivateIp            string `json:"PrivateIp" xml:"PrivateIp"`
+	Namespace            string `json:"Namespace" xml:"Namespace"`
+	ServiceDisplayName   string `json:"ServiceDisplayName" xml:"ServiceDisplayName"`
+	WorkloadName         string `json:"WorkloadName" xml:"WorkloadName"`
+	HostName             string `json:"HostName" xml:"HostName"`
+	DesiredCount         int    `json:"DesiredCount" xml:"DesiredCount"`
+	Status               string `json:"Status" xml:"Status"`
+	Cpu                  int    `json:"Cpu" xml:"Cpu"`
+	ServiceName          string `json:"ServiceName" xml:"ServiceName"`
 }

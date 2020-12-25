@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowJob invokes the emr.DescribeFlowJob API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflowjob.html
 func (client *Client) DescribeFlowJob(request *DescribeFlowJobRequest) (response *DescribeFlowJobResponse, err error) {
 	response = CreateDescribeFlowJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowJob(request *DescribeFlowJobRequest) (response
 }
 
 // DescribeFlowJobWithChan invokes the emr.DescribeFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowJobWithChan(request *DescribeFlowJobRequest) (<-chan *DescribeFlowJobResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowJobWithChan(request *DescribeFlowJobRequest) (
 }
 
 // DescribeFlowJobWithCallback invokes the emr.DescribeFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowJobWithCallback(request *DescribeFlowJobRequest, callback func(response *DescribeFlowJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ type DescribeFlowJobResponse struct {
 	FailAct           string                        `json:"FailAct" xml:"FailAct"`
 	MaxRetry          int                           `json:"MaxRetry" xml:"MaxRetry"`
 	RetryInterval     int64                         `json:"RetryInterval" xml:"RetryInterval"`
+	RetryPolicy       string                        `json:"RetryPolicy" xml:"RetryPolicy"`
 	Params            string                        `json:"Params" xml:"Params"`
 	ParamConf         string                        `json:"ParamConf" xml:"ParamConf"`
 	CustomVariables   string                        `json:"CustomVariables" xml:"CustomVariables"`
@@ -115,6 +111,7 @@ func CreateDescribeFlowJobRequest() (request *DescribeFlowJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowJob", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

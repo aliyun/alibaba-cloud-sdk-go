@@ -21,7 +21,6 @@ import (
 )
 
 // SearchLog invokes the emr.SearchLog API synchronously
-// api document: https://help.aliyun.com/api/emr/searchlog.html
 func (client *Client) SearchLog(request *SearchLogRequest) (response *SearchLogResponse, err error) {
 	response = CreateSearchLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchLog(request *SearchLogRequest) (response *SearchLogR
 }
 
 // SearchLogWithChan invokes the emr.SearchLog API asynchronously
-// api document: https://help.aliyun.com/api/emr/searchlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchLogWithChan(request *SearchLogRequest) (<-chan *SearchLogResponse, <-chan error) {
 	responseChan := make(chan *SearchLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchLogWithChan(request *SearchLogRequest) (<-chan *Sear
 }
 
 // SearchLogWithCallback invokes the emr.SearchLog API asynchronously
-// api document: https://help.aliyun.com/api/emr/searchlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchLogWithCallback(request *SearchLogRequest, callback func(response *SearchLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateSearchLogRequest() (request *SearchLogRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "SearchLog", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

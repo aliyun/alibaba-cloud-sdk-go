@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMetaTablePreviewTask invokes the emr.CreateMetaTablePreviewTask API synchronously
-// api document: https://help.aliyun.com/api/emr/createmetatablepreviewtask.html
 func (client *Client) CreateMetaTablePreviewTask(request *CreateMetaTablePreviewTaskRequest) (response *CreateMetaTablePreviewTaskResponse, err error) {
 	response = CreateCreateMetaTablePreviewTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMetaTablePreviewTask(request *CreateMetaTablePreview
 }
 
 // CreateMetaTablePreviewTaskWithChan invokes the emr.CreateMetaTablePreviewTask API asynchronously
-// api document: https://help.aliyun.com/api/emr/createmetatablepreviewtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMetaTablePreviewTaskWithChan(request *CreateMetaTablePreviewTaskRequest) (<-chan *CreateMetaTablePreviewTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateMetaTablePreviewTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMetaTablePreviewTaskWithChan(request *CreateMetaTabl
 }
 
 // CreateMetaTablePreviewTaskWithCallback invokes the emr.CreateMetaTablePreviewTask API asynchronously
-// api document: https://help.aliyun.com/api/emr/createmetatablepreviewtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMetaTablePreviewTaskWithCallback(request *CreateMetaTablePreviewTaskRequest, callback func(response *CreateMetaTablePreviewTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type CreateMetaTablePreviewTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Password        string           `position:"Query" name:"Password"`
 	TableId         string           `position:"Query" name:"TableId"`
 	DatabaseId      string           `position:"Query" name:"DatabaseId"`
@@ -97,6 +93,7 @@ func CreateCreateMetaTablePreviewTaskRequest() (request *CreateMetaTablePreviewT
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateMetaTablePreviewTask", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

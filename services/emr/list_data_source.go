@@ -21,7 +21,6 @@ import (
 )
 
 // ListDataSource invokes the emr.ListDataSource API synchronously
-// api document: https://help.aliyun.com/api/emr/listdatasource.html
 func (client *Client) ListDataSource(request *ListDataSourceRequest) (response *ListDataSourceResponse, err error) {
 	response = CreateListDataSourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDataSource(request *ListDataSourceRequest) (response *
 }
 
 // ListDataSourceWithChan invokes the emr.ListDataSource API asynchronously
-// api document: https://help.aliyun.com/api/emr/listdatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDataSourceWithChan(request *ListDataSourceRequest) (<-chan *ListDataSourceResponse, <-chan error) {
 	responseChan := make(chan *ListDataSourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDataSourceWithChan(request *ListDataSourceRequest) (<-
 }
 
 // ListDataSourceWithCallback invokes the emr.ListDataSource API asynchronously
-// api document: https://help.aliyun.com/api/emr/listdatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDataSourceWithCallback(request *ListDataSourceRequest, callback func(response *ListDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type ListDataSourceRequest struct {
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CreateFrom      string           `position:"Query" name:"CreateFrom"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	Name            string           `position:"Query" name:"Name"`
 	SourceType      string           `position:"Query" name:"SourceType"`
@@ -102,6 +98,7 @@ func CreateListDataSourceRequest() (request *ListDataSourceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListDataSource", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryEntity invokes the emr.QueryEntity API synchronously
-// api document: https://help.aliyun.com/api/emr/queryentity.html
 func (client *Client) QueryEntity(request *QueryEntityRequest) (response *QueryEntityResponse, err error) {
 	response = CreateQueryEntityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryEntity(request *QueryEntityRequest) (response *QueryE
 }
 
 // QueryEntityWithChan invokes the emr.QueryEntity API asynchronously
-// api document: https://help.aliyun.com/api/emr/queryentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEntityWithChan(request *QueryEntityRequest) (<-chan *QueryEntityResponse, <-chan error) {
 	responseChan := make(chan *QueryEntityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryEntityWithChan(request *QueryEntityRequest) (<-chan *
 }
 
 // QueryEntityWithCallback invokes the emr.QueryEntity API asynchronously
-// api document: https://help.aliyun.com/api/emr/queryentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEntityWithCallback(request *QueryEntityRequest, callback func(response *QueryEntityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateQueryEntityRequest() (request *QueryEntityRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "QueryEntity", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

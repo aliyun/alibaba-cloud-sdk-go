@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScalingRule invokes the emr.DescribeScalingRule API synchronously
-// api document: https://help.aliyun.com/api/emr/describescalingrule.html
 func (client *Client) DescribeScalingRule(request *DescribeScalingRuleRequest) (response *DescribeScalingRuleResponse, err error) {
 	response = CreateDescribeScalingRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScalingRule(request *DescribeScalingRuleRequest) (
 }
 
 // DescribeScalingRuleWithChan invokes the emr.DescribeScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/emr/describescalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingRuleWithChan(request *DescribeScalingRuleRequest) (<-chan *DescribeScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScalingRuleWithChan(request *DescribeScalingRuleRe
 }
 
 // DescribeScalingRuleWithCallback invokes the emr.DescribeScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/emr/describescalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingRuleWithCallback(request *DescribeScalingRuleRequest, callback func(response *DescribeScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,8 @@ type DescribeScalingRuleResponse struct {
 	AdjustmentValue   int               `json:"AdjustmentValue" xml:"AdjustmentValue"`
 	Cooldown          int               `json:"Cooldown" xml:"Cooldown"`
 	Status            string            `json:"Status" xml:"Status"`
+	WithGrace         bool              `json:"WithGrace" xml:"WithGrace"`
+	TimeoutWithGrace  int64             `json:"TimeoutWithGrace" xml:"TimeoutWithGrace"`
 	SchedulerTrigger  SchedulerTrigger  `json:"SchedulerTrigger" xml:"SchedulerTrigger"`
 	CloudWatchTrigger CloudWatchTrigger `json:"CloudWatchTrigger" xml:"CloudWatchTrigger"`
 }
@@ -105,6 +102,7 @@ func CreateDescribeScalingRuleRequest() (request *DescribeScalingRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeScalingRule", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

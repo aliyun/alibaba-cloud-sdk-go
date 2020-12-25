@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFlowEditLock invokes the emr.DeleteFlowEditLock API synchronously
-// api document: https://help.aliyun.com/api/emr/deletefloweditlock.html
 func (client *Client) DeleteFlowEditLock(request *DeleteFlowEditLockRequest) (response *DeleteFlowEditLockResponse, err error) {
 	response = CreateDeleteFlowEditLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFlowEditLock(request *DeleteFlowEditLockRequest) (re
 }
 
 // DeleteFlowEditLockWithChan invokes the emr.DeleteFlowEditLock API asynchronously
-// api document: https://help.aliyun.com/api/emr/deletefloweditlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowEditLockWithChan(request *DeleteFlowEditLockRequest) (<-chan *DeleteFlowEditLockResponse, <-chan error) {
 	responseChan := make(chan *DeleteFlowEditLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFlowEditLockWithChan(request *DeleteFlowEditLockRequ
 }
 
 // DeleteFlowEditLockWithCallback invokes the emr.DeleteFlowEditLock API asynchronously
-// api document: https://help.aliyun.com/api/emr/deletefloweditlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowEditLockWithCallback(request *DeleteFlowEditLockRequest, callback func(response *DeleteFlowEditLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDeleteFlowEditLockRequest() (request *DeleteFlowEditLockRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteFlowEditLock", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

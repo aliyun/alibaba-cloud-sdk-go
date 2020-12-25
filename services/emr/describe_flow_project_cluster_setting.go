@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowProjectClusterSetting invokes the emr.DescribeFlowProjectClusterSetting API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflowprojectclustersetting.html
 func (client *Client) DescribeFlowProjectClusterSetting(request *DescribeFlowProjectClusterSettingRequest) (response *DescribeFlowProjectClusterSettingResponse, err error) {
 	response = CreateDescribeFlowProjectClusterSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowProjectClusterSetting(request *DescribeFlowPro
 }
 
 // DescribeFlowProjectClusterSettingWithChan invokes the emr.DescribeFlowProjectClusterSetting API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowprojectclustersetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowProjectClusterSettingWithChan(request *DescribeFlowProjectClusterSettingRequest) (<-chan *DescribeFlowProjectClusterSettingResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowProjectClusterSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowProjectClusterSettingWithChan(request *Describ
 }
 
 // DescribeFlowProjectClusterSettingWithCallback invokes the emr.DescribeFlowProjectClusterSetting API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowprojectclustersetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowProjectClusterSettingWithCallback(request *DescribeFlowProjectClusterSettingRequest, callback func(response *DescribeFlowProjectClusterSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +83,7 @@ type DescribeFlowProjectClusterSettingResponse struct {
 	GmtModified  int64                                        `json:"GmtModified" xml:"GmtModified"`
 	ProjectId    string                                       `json:"ProjectId" xml:"ProjectId"`
 	ClusterId    string                                       `json:"ClusterId" xml:"ClusterId"`
+	K8sClusterId string                                       `json:"K8sClusterId" xml:"K8sClusterId"`
 	DefaultUser  string                                       `json:"DefaultUser" xml:"DefaultUser"`
 	DefaultQueue string                                       `json:"DefaultQueue" xml:"DefaultQueue"`
 	UserList     UserListInDescribeFlowProjectClusterSetting  `json:"UserList" xml:"UserList"`
@@ -101,6 +97,7 @@ func CreateDescribeFlowProjectClusterSettingRequest() (request *DescribeFlowProj
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowProjectClusterSetting", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

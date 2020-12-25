@@ -28,6 +28,6 @@ type Config struct {
 	ServiceName      string                                        `json:"ServiceName" xml:"ServiceName"`
 	FileName         string                                        `json:"FileName" xml:"FileName"`
 	Encrypt          string                                        `json:"Encrypt" xml:"Encrypt"`
-	PropertyInfoList PropertyInfoList                              `json:"PropertyInfoList" xml:"PropertyInfoList"`
 	ConfigValueList  ConfigValueListInDescribeClusterServiceConfig `json:"ConfigValueList" xml:"ConfigValueList"`
+	PropertyInfoList PropertyInfoList                              `json:"PropertyInfoList" xml:"PropertyInfoList"`
 }

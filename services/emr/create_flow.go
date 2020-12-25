@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFlow invokes the emr.CreateFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/createflow.html
 func (client *Client) CreateFlow(request *CreateFlowRequest) (response *CreateFlowResponse, err error) {
 	response = CreateCreateFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFlow(request *CreateFlowRequest) (response *CreateFl
 }
 
 // CreateFlowWithChan invokes the emr.CreateFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowWithChan(request *CreateFlowRequest) (<-chan *CreateFlowResponse, <-chan error) {
 	responseChan := make(chan *CreateFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFlowWithChan(request *CreateFlowRequest) (<-chan *Cr
 }
 
 // CreateFlowWithCallback invokes the emr.CreateFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowWithCallback(request *CreateFlowRequest, callback func(response *CreateFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,17 +74,20 @@ type CreateFlowRequest struct {
 	CronExpr                string           `position:"Query" name:"CronExpr"`
 	Description             string           `position:"Query" name:"Description"`
 	AlertUserGroupBizId     string           `position:"Query" name:"AlertUserGroupBizId"`
+	Lifecycle               string           `position:"Query" name:"Lifecycle"`
 	HostName                string           `position:"Query" name:"HostName"`
 	CreateCluster           requests.Boolean `position:"Query" name:"CreateCluster"`
 	EndSchedule             requests.Integer `position:"Query" name:"EndSchedule"`
 	AlertConf               string           `position:"Query" name:"AlertConf"`
 	ProjectId               string           `position:"Query" name:"ProjectId"`
 	ParentFlowList          string           `position:"Query" name:"ParentFlowList"`
+	LogArchiveLocation      string           `position:"Query" name:"LogArchiveLocation"`
 	AlertDingDingGroupBizId string           `position:"Query" name:"AlertDingDingGroupBizId"`
 	StartSchedule           requests.Integer `position:"Query" name:"StartSchedule"`
 	ClusterId               string           `position:"Query" name:"ClusterId"`
 	Application             string           `position:"Query" name:"Application"`
 	Name                    string           `position:"Query" name:"Name"`
+	Namespace               string           `position:"Query" name:"Namespace"`
 	ParentCategory          string           `position:"Query" name:"ParentCategory"`
 }
 
@@ -106,6 +104,7 @@ func CreateCreateFlowRequest() (request *CreateFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

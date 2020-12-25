@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateTag invokes the emr.UpdateTag API synchronously
-// api document: https://help.aliyun.com/api/emr/updatetag.html
 func (client *Client) UpdateTag(request *UpdateTagRequest) (response *UpdateTagResponse, err error) {
 	response = CreateUpdateTagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateTag(request *UpdateTagRequest) (response *UpdateTagR
 }
 
 // UpdateTagWithChan invokes the emr.UpdateTag API asynchronously
-// api document: https://help.aliyun.com/api/emr/updatetag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTagWithChan(request *UpdateTagRequest) (<-chan *UpdateTagResponse, <-chan error) {
 	responseChan := make(chan *UpdateTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateTagWithChan(request *UpdateTagRequest) (<-chan *Upda
 }
 
 // UpdateTagWithCallback invokes the emr.UpdateTag API asynchronously
-// api document: https://help.aliyun.com/api/emr/updatetag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTagWithCallback(request *UpdateTagRequest, callback func(response *UpdateTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateUpdateTagRequest() (request *UpdateTagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "UpdateTag", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

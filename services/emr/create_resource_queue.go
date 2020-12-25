@@ -21,7 +21,6 @@ import (
 )
 
 // CreateResourceQueue invokes the emr.CreateResourceQueue API synchronously
-// api document: https://help.aliyun.com/api/emr/createresourcequeue.html
 func (client *Client) CreateResourceQueue(request *CreateResourceQueueRequest) (response *CreateResourceQueueResponse, err error) {
 	response = CreateCreateResourceQueueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateResourceQueue(request *CreateResourceQueueRequest) (
 }
 
 // CreateResourceQueueWithChan invokes the emr.CreateResourceQueue API asynchronously
-// api document: https://help.aliyun.com/api/emr/createresourcequeue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateResourceQueueWithChan(request *CreateResourceQueueRequest) (<-chan *CreateResourceQueueResponse, <-chan error) {
 	responseChan := make(chan *CreateResourceQueueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateResourceQueueWithChan(request *CreateResourceQueueRe
 }
 
 // CreateResourceQueueWithCallback invokes the emr.CreateResourceQueue API asynchronously
-// api document: https://help.aliyun.com/api/emr/createresourcequeue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateResourceQueueWithCallback(request *CreateResourceQueueRequest, callback func(response *CreateResourceQueueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -106,6 +101,7 @@ func CreateCreateResourceQueueRequest() (request *CreateResourceQueueRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateResourceQueue", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterOperationHostTaskLog invokes the emr.DescribeClusterOperationHostTaskLog API synchronously
-// api document: https://help.aliyun.com/api/emr/describeclusteroperationhosttasklog.html
 func (client *Client) DescribeClusterOperationHostTaskLog(request *DescribeClusterOperationHostTaskLogRequest) (response *DescribeClusterOperationHostTaskLogResponse, err error) {
 	response = CreateDescribeClusterOperationHostTaskLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterOperationHostTaskLog(request *DescribeClust
 }
 
 // DescribeClusterOperationHostTaskLogWithChan invokes the emr.DescribeClusterOperationHostTaskLog API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusteroperationhosttasklog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterOperationHostTaskLogWithChan(request *DescribeClusterOperationHostTaskLogRequest) (<-chan *DescribeClusterOperationHostTaskLogResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterOperationHostTaskLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterOperationHostTaskLogWithChan(request *Descr
 }
 
 // DescribeClusterOperationHostTaskLogWithCallback invokes the emr.DescribeClusterOperationHostTaskLog API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusteroperationhosttasklog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterOperationHostTaskLogWithCallback(request *DescribeClusterOperationHostTaskLogRequest, callback func(response *DescribeClusterOperationHostTaskLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDescribeClusterOperationHostTaskLogRequest() (request *DescribeCluste
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeClusterOperationHostTaskLog", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

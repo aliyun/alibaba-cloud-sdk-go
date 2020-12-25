@@ -21,7 +21,6 @@ import (
 )
 
 // CreateResourcePool invokes the emr.CreateResourcePool API synchronously
-// api document: https://help.aliyun.com/api/emr/createresourcepool.html
 func (client *Client) CreateResourcePool(request *CreateResourcePoolRequest) (response *CreateResourcePoolResponse, err error) {
 	response = CreateCreateResourcePoolResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateResourcePool(request *CreateResourcePoolRequest) (re
 }
 
 // CreateResourcePoolWithChan invokes the emr.CreateResourcePool API asynchronously
-// api document: https://help.aliyun.com/api/emr/createresourcepool.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateResourcePoolWithChan(request *CreateResourcePoolRequest) (<-chan *CreateResourcePoolResponse, <-chan error) {
 	responseChan := make(chan *CreateResourcePoolResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateResourcePoolWithChan(request *CreateResourcePoolRequ
 }
 
 // CreateResourcePoolWithCallback invokes the emr.CreateResourcePool API asynchronously
-// api document: https://help.aliyun.com/api/emr/createresourcepool.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateResourcePoolWithCallback(request *CreateResourcePoolRequest, callback func(response *CreateResourcePoolResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -108,6 +103,7 @@ func CreateCreateResourcePoolRequest() (request *CreateResourcePoolRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateResourcePool", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

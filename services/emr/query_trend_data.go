@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTrendData invokes the emr.QueryTrendData API synchronously
-// api document: https://help.aliyun.com/api/emr/querytrenddata.html
 func (client *Client) QueryTrendData(request *QueryTrendDataRequest) (response *QueryTrendDataResponse, err error) {
 	response = CreateQueryTrendDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTrendData(request *QueryTrendDataRequest) (response *
 }
 
 // QueryTrendDataWithChan invokes the emr.QueryTrendData API asynchronously
-// api document: https://help.aliyun.com/api/emr/querytrenddata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTrendDataWithChan(request *QueryTrendDataRequest) (<-chan *QueryTrendDataResponse, <-chan error) {
 	responseChan := make(chan *QueryTrendDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTrendDataWithChan(request *QueryTrendDataRequest) (<-
 }
 
 // QueryTrendDataWithCallback invokes the emr.QueryTrendData API asynchronously
-// api document: https://help.aliyun.com/api/emr/querytrenddata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTrendDataWithCallback(request *QueryTrendDataRequest, callback func(response *QueryTrendDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateQueryTrendDataRequest() (request *QueryTrendDataRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "QueryTrendData", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

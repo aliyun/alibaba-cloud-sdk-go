@@ -53,6 +53,7 @@ type TemplateInfo struct {
 	LogEnable              bool                                         `json:"LogEnable" xml:"LogEnable"`
 	MasterPwd              string                                       `json:"MasterPwd" xml:"MasterPwd"`
 	SoftwareInfoList       SoftwareInfoListInDescribeClusterTemplate    `json:"SoftwareInfoList" xml:"SoftwareInfoList"`
+	Tags                   TagsInDescribeClusterTemplate                `json:"Tags" xml:"Tags"`
 	HostGroupList          HostGroupListInDescribeClusterTemplate       `json:"HostGroupList" xml:"HostGroupList"`
 	BootstrapActionList    BootstrapActionListInDescribeClusterTemplate `json:"BootstrapActionList" xml:"BootstrapActionList"`
 	ConfigList             ConfigListInDescribeClusterTemplate          `json:"ConfigList" xml:"ConfigList"`

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataSource invokes the emr.DescribeDataSource API synchronously
-// api document: https://help.aliyun.com/api/emr/describedatasource.html
 func (client *Client) DescribeDataSource(request *DescribeDataSourceRequest) (response *DescribeDataSourceResponse, err error) {
 	response = CreateDescribeDataSourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataSource(request *DescribeDataSourceRequest) (re
 }
 
 // DescribeDataSourceWithChan invokes the emr.DescribeDataSource API asynchronously
-// api document: https://help.aliyun.com/api/emr/describedatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataSourceWithChan(request *DescribeDataSourceRequest) (<-chan *DescribeDataSourceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataSourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataSourceWithChan(request *DescribeDataSourceRequ
 }
 
 // DescribeDataSourceWithCallback invokes the emr.DescribeDataSource API asynchronously
-// api document: https://help.aliyun.com/api/emr/describedatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataSourceWithCallback(request *DescribeDataSourceRequest, callback func(response *DescribeDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DescribeDataSourceWithCallback(request *DescribeDataSource
 type DescribeDataSourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Id              string           `position:"Query" name:"Id"`
 }
 
@@ -105,6 +101,7 @@ func CreateDescribeDataSourceRequest() (request *DescribeDataSourceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeDataSource", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

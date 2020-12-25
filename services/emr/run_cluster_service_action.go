@@ -21,7 +21,6 @@ import (
 )
 
 // RunClusterServiceAction invokes the emr.RunClusterServiceAction API synchronously
-// api document: https://help.aliyun.com/api/emr/runclusterserviceaction.html
 func (client *Client) RunClusterServiceAction(request *RunClusterServiceActionRequest) (response *RunClusterServiceActionResponse, err error) {
 	response = CreateRunClusterServiceActionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RunClusterServiceAction(request *RunClusterServiceActionRe
 }
 
 // RunClusterServiceActionWithChan invokes the emr.RunClusterServiceAction API asynchronously
-// api document: https://help.aliyun.com/api/emr/runclusterserviceaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunClusterServiceActionWithChan(request *RunClusterServiceActionRequest) (<-chan *RunClusterServiceActionResponse, <-chan error) {
 	responseChan := make(chan *RunClusterServiceActionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RunClusterServiceActionWithChan(request *RunClusterService
 }
 
 // RunClusterServiceActionWithCallback invokes the emr.RunClusterServiceAction API asynchronously
-// api document: https://help.aliyun.com/api/emr/runclusterserviceaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunClusterServiceActionWithCallback(request *RunClusterServiceActionRequest, callback func(response *RunClusterServiceActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -107,6 +102,7 @@ func CreateRunClusterServiceActionRequest() (request *RunClusterServiceActionReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "RunClusterServiceAction", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

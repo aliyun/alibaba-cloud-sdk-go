@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterServiceConfig invokes the emr.DescribeClusterServiceConfig API synchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterserviceconfig.html
 func (client *Client) DescribeClusterServiceConfig(request *DescribeClusterServiceConfigRequest) (response *DescribeClusterServiceConfigResponse, err error) {
 	response = CreateDescribeClusterServiceConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterServiceConfig(request *DescribeClusterServi
 }
 
 // DescribeClusterServiceConfigWithChan invokes the emr.DescribeClusterServiceConfig API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterserviceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterServiceConfigWithChan(request *DescribeClusterServiceConfigRequest) (<-chan *DescribeClusterServiceConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterServiceConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterServiceConfigWithChan(request *DescribeClus
 }
 
 // DescribeClusterServiceConfigWithCallback invokes the emr.DescribeClusterServiceConfig API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterserviceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterServiceConfigWithCallback(request *DescribeClusterServiceConfigRequest, callback func(response *DescribeClusterServiceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDescribeClusterServiceConfigRequest() (request *DescribeClusterServic
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeClusterServiceConfig", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

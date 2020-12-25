@@ -21,7 +21,6 @@ import (
 )
 
 // RestoreFlowEntitySnapshot invokes the emr.RestoreFlowEntitySnapshot API synchronously
-// api document: https://help.aliyun.com/api/emr/restoreflowentitysnapshot.html
 func (client *Client) RestoreFlowEntitySnapshot(request *RestoreFlowEntitySnapshotRequest) (response *RestoreFlowEntitySnapshotResponse, err error) {
 	response = CreateRestoreFlowEntitySnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestoreFlowEntitySnapshot(request *RestoreFlowEntitySnapsh
 }
 
 // RestoreFlowEntitySnapshotWithChan invokes the emr.RestoreFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/restoreflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreFlowEntitySnapshotWithChan(request *RestoreFlowEntitySnapshotRequest) (<-chan *RestoreFlowEntitySnapshotResponse, <-chan error) {
 	responseChan := make(chan *RestoreFlowEntitySnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestoreFlowEntitySnapshotWithChan(request *RestoreFlowEnti
 }
 
 // RestoreFlowEntitySnapshotWithCallback invokes the emr.RestoreFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/restoreflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreFlowEntitySnapshotWithCallback(request *RestoreFlowEntitySnapshotRequest, callback func(response *RestoreFlowEntitySnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateRestoreFlowEntitySnapshotRequest() (request *RestoreFlowEntitySnapsho
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "RestoreFlowEntitySnapshot", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

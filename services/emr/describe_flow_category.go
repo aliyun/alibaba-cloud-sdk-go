@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowCategory invokes the emr.DescribeFlowCategory API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflowcategory.html
 func (client *Client) DescribeFlowCategory(request *DescribeFlowCategoryRequest) (response *DescribeFlowCategoryResponse, err error) {
 	response = CreateDescribeFlowCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowCategory(request *DescribeFlowCategoryRequest)
 }
 
 // DescribeFlowCategoryWithChan invokes the emr.DescribeFlowCategory API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowCategoryWithChan(request *DescribeFlowCategoryRequest) (<-chan *DescribeFlowCategoryResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowCategoryWithChan(request *DescribeFlowCategory
 }
 
 // DescribeFlowCategoryWithCallback invokes the emr.DescribeFlowCategory API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowCategoryWithCallback(request *DescribeFlowCategoryRequest, callback func(response *DescribeFlowCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateDescribeFlowCategoryRequest() (request *DescribeFlowCategoryRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowCategory", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

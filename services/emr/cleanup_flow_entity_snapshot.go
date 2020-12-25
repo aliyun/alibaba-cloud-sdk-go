@@ -21,7 +21,6 @@ import (
 )
 
 // CleanupFlowEntitySnapshot invokes the emr.CleanupFlowEntitySnapshot API synchronously
-// api document: https://help.aliyun.com/api/emr/cleanupflowentitysnapshot.html
 func (client *Client) CleanupFlowEntitySnapshot(request *CleanupFlowEntitySnapshotRequest) (response *CleanupFlowEntitySnapshotResponse, err error) {
 	response = CreateCleanupFlowEntitySnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CleanupFlowEntitySnapshot(request *CleanupFlowEntitySnapsh
 }
 
 // CleanupFlowEntitySnapshotWithChan invokes the emr.CleanupFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/cleanupflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CleanupFlowEntitySnapshotWithChan(request *CleanupFlowEntitySnapshotRequest) (<-chan *CleanupFlowEntitySnapshotResponse, <-chan error) {
 	responseChan := make(chan *CleanupFlowEntitySnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CleanupFlowEntitySnapshotWithChan(request *CleanupFlowEnti
 }
 
 // CleanupFlowEntitySnapshotWithCallback invokes the emr.CleanupFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/cleanupflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CleanupFlowEntitySnapshotWithCallback(request *CleanupFlowEntitySnapshotRequest, callback func(response *CleanupFlowEntitySnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateCleanupFlowEntitySnapshotRequest() (request *CleanupFlowEntitySnapsho
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CleanupFlowEntitySnapshot", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

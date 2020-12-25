@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowNodeSqlResult invokes the emr.ListFlowNodeSqlResult API synchronously
-// api document: https://help.aliyun.com/api/emr/listflownodesqlresult.html
 func (client *Client) ListFlowNodeSqlResult(request *ListFlowNodeSqlResultRequest) (response *ListFlowNodeSqlResultResponse, err error) {
 	response = CreateListFlowNodeSqlResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowNodeSqlResult(request *ListFlowNodeSqlResultReques
 }
 
 // ListFlowNodeSqlResultWithChan invokes the emr.ListFlowNodeSqlResult API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflownodesqlresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowNodeSqlResultWithChan(request *ListFlowNodeSqlResultRequest) (<-chan *ListFlowNodeSqlResultResponse, <-chan error) {
 	responseChan := make(chan *ListFlowNodeSqlResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowNodeSqlResultWithChan(request *ListFlowNodeSqlResu
 }
 
 // ListFlowNodeSqlResultWithCallback invokes the emr.ListFlowNodeSqlResult API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflownodesqlresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowNodeSqlResultWithCallback(request *ListFlowNodeSqlResultRequest, callback func(response *ListFlowNodeSqlResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateListFlowNodeSqlResultRequest() (request *ListFlowNodeSqlResultRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowNodeSqlResult", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

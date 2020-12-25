@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFlowProjectClusterSetting invokes the emr.CreateFlowProjectClusterSetting API synchronously
-// api document: https://help.aliyun.com/api/emr/createflowprojectclustersetting.html
 func (client *Client) CreateFlowProjectClusterSetting(request *CreateFlowProjectClusterSettingRequest) (response *CreateFlowProjectClusterSettingResponse, err error) {
 	response = CreateCreateFlowProjectClusterSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFlowProjectClusterSetting(request *CreateFlowProject
 }
 
 // CreateFlowProjectClusterSettingWithChan invokes the emr.CreateFlowProjectClusterSetting API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflowprojectclustersetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowProjectClusterSettingWithChan(request *CreateFlowProjectClusterSettingRequest) (<-chan *CreateFlowProjectClusterSettingResponse, <-chan error) {
 	responseChan := make(chan *CreateFlowProjectClusterSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFlowProjectClusterSettingWithChan(request *CreateFlo
 }
 
 // CreateFlowProjectClusterSettingWithCallback invokes the emr.CreateFlowProjectClusterSetting API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflowprojectclustersetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowProjectClusterSettingWithCallback(request *CreateFlowProjectClusterSettingRequest, callback func(response *CreateFlowProjectClusterSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateCreateFlowProjectClusterSettingRequest() (request *CreateFlowProjectC
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateFlowProjectClusterSetting", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

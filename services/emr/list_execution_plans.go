@@ -21,7 +21,6 @@ import (
 )
 
 // ListExecutionPlans invokes the emr.ListExecutionPlans API synchronously
-// api document: https://help.aliyun.com/api/emr/listexecutionplans.html
 func (client *Client) ListExecutionPlans(request *ListExecutionPlansRequest) (response *ListExecutionPlansResponse, err error) {
 	response = CreateListExecutionPlansResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListExecutionPlans(request *ListExecutionPlansRequest) (re
 }
 
 // ListExecutionPlansWithChan invokes the emr.ListExecutionPlans API asynchronously
-// api document: https://help.aliyun.com/api/emr/listexecutionplans.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExecutionPlansWithChan(request *ListExecutionPlansRequest) (<-chan *ListExecutionPlansResponse, <-chan error) {
 	responseChan := make(chan *ListExecutionPlansResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListExecutionPlansWithChan(request *ListExecutionPlansRequ
 }
 
 // ListExecutionPlansWithCallback invokes the emr.ListExecutionPlans API asynchronously
-// api document: https://help.aliyun.com/api/emr/listexecutionplans.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExecutionPlansWithCallback(request *ListExecutionPlansRequest, callback func(response *ListExecutionPlansResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +99,7 @@ func CreateListExecutionPlansRequest() (request *ListExecutionPlansRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListExecutionPlans", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

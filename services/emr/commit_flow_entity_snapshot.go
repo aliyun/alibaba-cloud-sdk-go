@@ -21,7 +21,6 @@ import (
 )
 
 // CommitFlowEntitySnapshot invokes the emr.CommitFlowEntitySnapshot API synchronously
-// api document: https://help.aliyun.com/api/emr/commitflowentitysnapshot.html
 func (client *Client) CommitFlowEntitySnapshot(request *CommitFlowEntitySnapshotRequest) (response *CommitFlowEntitySnapshotResponse, err error) {
 	response = CreateCommitFlowEntitySnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CommitFlowEntitySnapshot(request *CommitFlowEntitySnapshot
 }
 
 // CommitFlowEntitySnapshotWithChan invokes the emr.CommitFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/commitflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CommitFlowEntitySnapshotWithChan(request *CommitFlowEntitySnapshotRequest) (<-chan *CommitFlowEntitySnapshotResponse, <-chan error) {
 	responseChan := make(chan *CommitFlowEntitySnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CommitFlowEntitySnapshotWithChan(request *CommitFlowEntity
 }
 
 // CommitFlowEntitySnapshotWithCallback invokes the emr.CommitFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/commitflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CommitFlowEntitySnapshotWithCallback(request *CommitFlowEntitySnapshotRequest, callback func(response *CommitFlowEntitySnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateCommitFlowEntitySnapshotRequest() (request *CommitFlowEntitySnapshotR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CommitFlowEntitySnapshot", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

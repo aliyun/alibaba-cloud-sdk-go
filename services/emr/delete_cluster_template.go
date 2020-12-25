@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteClusterTemplate invokes the emr.DeleteClusterTemplate API synchronously
-// api document: https://help.aliyun.com/api/emr/deleteclustertemplate.html
 func (client *Client) DeleteClusterTemplate(request *DeleteClusterTemplateRequest) (response *DeleteClusterTemplateResponse, err error) {
 	response = CreateDeleteClusterTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteClusterTemplate(request *DeleteClusterTemplateReques
 }
 
 // DeleteClusterTemplateWithChan invokes the emr.DeleteClusterTemplate API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteclustertemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterTemplateWithChan(request *DeleteClusterTemplateRequest) (<-chan *DeleteClusterTemplateResponse, <-chan error) {
 	responseChan := make(chan *DeleteClusterTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteClusterTemplateWithChan(request *DeleteClusterTempla
 }
 
 // DeleteClusterTemplateWithCallback invokes the emr.DeleteClusterTemplate API asynchronously
-// api document: https://help.aliyun.com/api/emr/deleteclustertemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterTemplateWithCallback(request *DeleteClusterTemplateRequest, callback func(response *DeleteClusterTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DeleteClusterTemplateWithCallback(request *DeleteClusterTe
 type DeleteClusterTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	BizId           string           `position:"Query" name:"BizId"`
 }
 
@@ -92,6 +88,7 @@ func CreateDeleteClusterTemplateRequest() (request *DeleteClusterTemplateRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteClusterTemplate", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

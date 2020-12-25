@@ -21,7 +21,6 @@ import (
 )
 
 // GetQueueSubmissionStatisticInfo invokes the emr.GetQueueSubmissionStatisticInfo API synchronously
-// api document: https://help.aliyun.com/api/emr/getqueuesubmissionstatisticinfo.html
 func (client *Client) GetQueueSubmissionStatisticInfo(request *GetQueueSubmissionStatisticInfoRequest) (response *GetQueueSubmissionStatisticInfoResponse, err error) {
 	response = CreateGetQueueSubmissionStatisticInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetQueueSubmissionStatisticInfo(request *GetQueueSubmissio
 }
 
 // GetQueueSubmissionStatisticInfoWithChan invokes the emr.GetQueueSubmissionStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getqueuesubmissionstatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQueueSubmissionStatisticInfoWithChan(request *GetQueueSubmissionStatisticInfoRequest) (<-chan *GetQueueSubmissionStatisticInfoResponse, <-chan error) {
 	responseChan := make(chan *GetQueueSubmissionStatisticInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetQueueSubmissionStatisticInfoWithChan(request *GetQueueS
 }
 
 // GetQueueSubmissionStatisticInfoWithCallback invokes the emr.GetQueueSubmissionStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getqueuesubmissionstatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQueueSubmissionStatisticInfoWithCallback(request *GetQueueSubmissionStatisticInfoRequest, callback func(response *GetQueueSubmissionStatisticInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetQueueSubmissionStatisticInfoRequest() (request *GetQueueSubmission
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "GetQueueSubmissionStatisticInfo", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

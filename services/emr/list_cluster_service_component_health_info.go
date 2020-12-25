@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterServiceComponentHealthInfo invokes the emr.ListClusterServiceComponentHealthInfo API synchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservicecomponenthealthinfo.html
 func (client *Client) ListClusterServiceComponentHealthInfo(request *ListClusterServiceComponentHealthInfoRequest) (response *ListClusterServiceComponentHealthInfoResponse, err error) {
 	response = CreateListClusterServiceComponentHealthInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterServiceComponentHealthInfo(request *ListCluster
 }
 
 // ListClusterServiceComponentHealthInfoWithChan invokes the emr.ListClusterServiceComponentHealthInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservicecomponenthealthinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterServiceComponentHealthInfoWithChan(request *ListClusterServiceComponentHealthInfoRequest) (<-chan *ListClusterServiceComponentHealthInfoResponse, <-chan error) {
 	responseChan := make(chan *ListClusterServiceComponentHealthInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterServiceComponentHealthInfoWithChan(request *Lis
 }
 
 // ListClusterServiceComponentHealthInfoWithCallback invokes the emr.ListClusterServiceComponentHealthInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservicecomponenthealthinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterServiceComponentHealthInfoWithCallback(request *ListClusterServiceComponentHealthInfoRequest, callback func(response *ListClusterServiceComponentHealthInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateListClusterServiceComponentHealthInfoRequest() (request *ListClusterS
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

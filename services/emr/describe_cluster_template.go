@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterTemplate invokes the emr.DescribeClusterTemplate API synchronously
-// api document: https://help.aliyun.com/api/emr/describeclustertemplate.html
 func (client *Client) DescribeClusterTemplate(request *DescribeClusterTemplateRequest) (response *DescribeClusterTemplateResponse, err error) {
 	response = CreateDescribeClusterTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterTemplate(request *DescribeClusterTemplateRe
 }
 
 // DescribeClusterTemplateWithChan invokes the emr.DescribeClusterTemplate API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclustertemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterTemplateWithChan(request *DescribeClusterTemplateRequest) (<-chan *DescribeClusterTemplateResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterTemplateWithChan(request *DescribeClusterTe
 }
 
 // DescribeClusterTemplateWithCallback invokes the emr.DescribeClusterTemplate API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclustertemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterTemplateWithCallback(request *DescribeClusterTemplateRequest, callback func(response *DescribeClusterTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DescribeClusterTemplateWithCallback(request *DescribeClust
 type DescribeClusterTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	BizId           string           `position:"Query" name:"BizId"`
 }
 
@@ -93,6 +89,7 @@ func CreateDescribeClusterTemplateRequest() (request *DescribeClusterTemplateReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeClusterTemplate", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

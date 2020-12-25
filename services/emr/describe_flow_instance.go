@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowInstance invokes the emr.DescribeFlowInstance API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflowinstance.html
 func (client *Client) DescribeFlowInstance(request *DescribeFlowInstanceRequest) (response *DescribeFlowInstanceResponse, err error) {
 	response = CreateDescribeFlowInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowInstance(request *DescribeFlowInstanceRequest)
 }
 
 // DescribeFlowInstanceWithChan invokes the emr.DescribeFlowInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowInstanceWithChan(request *DescribeFlowInstanceRequest) (<-chan *DescribeFlowInstanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowInstanceWithChan(request *DescribeFlowInstance
 }
 
 // DescribeFlowInstanceWithCallback invokes the emr.DescribeFlowInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowInstanceWithCallback(request *DescribeFlowInstanceRequest, callback func(response *DescribeFlowInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,9 @@ type DescribeFlowInstanceResponse struct {
 	ProjectId          string                             `json:"ProjectId" xml:"ProjectId"`
 	Status             string                             `json:"Status" xml:"Status"`
 	ClusterId          string                             `json:"ClusterId" xml:"ClusterId"`
+	Namespace          string                             `json:"Namespace" xml:"Namespace"`
+	LogArchiveLocation string                             `json:"LogArchiveLocation" xml:"LogArchiveLocation"`
+	Lifecycle          string                             `json:"Lifecycle" xml:"Lifecycle"`
 	StartTime          int64                              `json:"StartTime" xml:"StartTime"`
 	EndTime            int64                              `json:"EndTime" xml:"EndTime"`
 	Duration           int64                              `json:"Duration" xml:"Duration"`
@@ -109,6 +107,7 @@ func CreateDescribeFlowInstanceRequest() (request *DescribeFlowInstanceRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowInstance", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // UntagResources invokes the emr.UntagResources API synchronously
-// api document: https://help.aliyun.com/api/emr/untagresources.html
 func (client *Client) UntagResources(request *UntagResourcesRequest) (response *UntagResourcesResponse, err error) {
 	response = CreateUntagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UntagResources(request *UntagResourcesRequest) (response *
 }
 
 // UntagResourcesWithChan invokes the emr.UntagResources API asynchronously
-// api document: https://help.aliyun.com/api/emr/untagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UntagResourcesWithChan(request *UntagResourcesRequest) (<-chan *UntagResourcesResponse, <-chan error) {
 	responseChan := make(chan *UntagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UntagResourcesWithChan(request *UntagResourcesRequest) (<-
 }
 
 // UntagResourcesWithCallback invokes the emr.UntagResources API asynchronously
-// api document: https://help.aliyun.com/api/emr/untagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest, callback func(response *UntagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "UntagResources", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

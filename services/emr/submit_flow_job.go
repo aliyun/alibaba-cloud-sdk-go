@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitFlowJob invokes the emr.SubmitFlowJob API synchronously
-// api document: https://help.aliyun.com/api/emr/submitflowjob.html
 func (client *Client) SubmitFlowJob(request *SubmitFlowJobRequest) (response *SubmitFlowJobResponse, err error) {
 	response = CreateSubmitFlowJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitFlowJob(request *SubmitFlowJobRequest) (response *Su
 }
 
 // SubmitFlowJobWithChan invokes the emr.SubmitFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/submitflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFlowJobWithChan(request *SubmitFlowJobRequest) (<-chan *SubmitFlowJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitFlowJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitFlowJobWithChan(request *SubmitFlowJobRequest) (<-ch
 }
 
 // SubmitFlowJobWithCallback invokes the emr.SubmitFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/submitflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFlowJobWithCallback(request *SubmitFlowJobRequest, callback func(response *SubmitFlowJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,13 @@ func (client *Client) SubmitFlowJobWithCallback(request *SubmitFlowJobRequest, c
 // SubmitFlowJobRequest is the request struct for api SubmitFlowJob
 type SubmitFlowJobRequest struct {
 	*requests.RpcRequest
-	Conf      string `position:"Query" name:"Conf"`
-	ClusterId string `position:"Query" name:"ClusterId"`
-	JobId     string `position:"Query" name:"JobId"`
-	HostName  string `position:"Query" name:"HostName"`
-	ProjectId string `position:"Query" name:"ProjectId"`
+	Conf          string `position:"Query" name:"Conf"`
+	ClusterId     string `position:"Query" name:"ClusterId"`
+	JobId         string `position:"Query" name:"JobId"`
+	HostName      string `position:"Query" name:"HostName"`
+	Namespace     string `position:"Query" name:"Namespace"`
+	JobInstanceId string `position:"Query" name:"JobInstanceId"`
+	ProjectId     string `position:"Query" name:"ProjectId"`
 }
 
 // SubmitFlowJobResponse is the response struct for api SubmitFlowJob
@@ -96,6 +93,7 @@ func CreateSubmitFlowJobRequest() (request *SubmitFlowJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "SubmitFlowJob", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

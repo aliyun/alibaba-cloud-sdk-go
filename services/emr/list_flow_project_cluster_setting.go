@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowProjectClusterSetting invokes the emr.ListFlowProjectClusterSetting API synchronously
-// api document: https://help.aliyun.com/api/emr/listflowprojectclustersetting.html
 func (client *Client) ListFlowProjectClusterSetting(request *ListFlowProjectClusterSettingRequest) (response *ListFlowProjectClusterSettingResponse, err error) {
 	response = CreateListFlowProjectClusterSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowProjectClusterSetting(request *ListFlowProjectClus
 }
 
 // ListFlowProjectClusterSettingWithChan invokes the emr.ListFlowProjectClusterSetting API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowprojectclustersetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowProjectClusterSettingWithChan(request *ListFlowProjectClusterSettingRequest) (<-chan *ListFlowProjectClusterSettingResponse, <-chan error) {
 	responseChan := make(chan *ListFlowProjectClusterSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowProjectClusterSettingWithChan(request *ListFlowPro
 }
 
 // ListFlowProjectClusterSettingWithCallback invokes the emr.ListFlowProjectClusterSetting API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowprojectclustersetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowProjectClusterSettingWithCallback(request *ListFlowProjectClusterSettingRequest, callback func(response *ListFlowProjectClusterSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateListFlowProjectClusterSettingRequest() (request *ListFlowProjectClust
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowProjectClusterSetting", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

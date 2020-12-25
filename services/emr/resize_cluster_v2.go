@@ -21,7 +21,6 @@ import (
 )
 
 // ResizeClusterV2 invokes the emr.ResizeClusterV2 API synchronously
-// api document: https://help.aliyun.com/api/emr/resizeclusterv2.html
 func (client *Client) ResizeClusterV2(request *ResizeClusterV2Request) (response *ResizeClusterV2Response, err error) {
 	response = CreateResizeClusterV2Response()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResizeClusterV2(request *ResizeClusterV2Request) (response
 }
 
 // ResizeClusterV2WithChan invokes the emr.ResizeClusterV2 API asynchronously
-// api document: https://help.aliyun.com/api/emr/resizeclusterv2.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeClusterV2WithChan(request *ResizeClusterV2Request) (<-chan *ResizeClusterV2Response, <-chan error) {
 	responseChan := make(chan *ResizeClusterV2Response, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResizeClusterV2WithChan(request *ResizeClusterV2Request) (
 }
 
 // ResizeClusterV2WithCallback invokes the emr.ResizeClusterV2 API asynchronously
-// api document: https://help.aliyun.com/api/emr/resizeclusterv2.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeClusterV2WithCallback(request *ResizeClusterV2Request, callback func(response *ResizeClusterV2Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +77,7 @@ type ResizeClusterV2Request struct {
 	VswitchId         string                              `position:"Query" name:"VswitchId"`
 	HostComponentInfo *[]ResizeClusterV2HostComponentInfo `position:"Query" name:"HostComponentInfo"  type:"Repeated"`
 	HostGroup         *[]ResizeClusterV2HostGroup         `position:"Query" name:"HostGroup"  type:"Repeated"`
+	PromotionInfo     *[]ResizeClusterV2PromotionInfo     `position:"Query" name:"PromotionInfo"  type:"Repeated"`
 }
 
 // ResizeClusterV2HostComponentInfo is a repeated param struct in ResizeClusterV2Request
@@ -114,6 +110,13 @@ type ResizeClusterV2HostGroup struct {
 	HostGroupType   string `name:"HostGroupType"`
 }
 
+// ResizeClusterV2PromotionInfo is a repeated param struct in ResizeClusterV2Request
+type ResizeClusterV2PromotionInfo struct {
+	PromotionOptionCode string `name:"PromotionOptionCode"`
+	ProductCode         string `name:"ProductCode"`
+	PromotionOptionNo   string `name:"PromotionOptionNo"`
+}
+
 // ResizeClusterV2Response is the response struct for api ResizeClusterV2
 type ResizeClusterV2Response struct {
 	*responses.BaseResponse
@@ -127,6 +130,7 @@ func CreateResizeClusterV2Request() (request *ResizeClusterV2Request) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ResizeClusterV2", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

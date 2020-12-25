@@ -21,7 +21,6 @@ import (
 )
 
 // CreateClusterWithTemplate invokes the emr.CreateClusterWithTemplate API synchronously
-// api document: https://help.aliyun.com/api/emr/createclusterwithtemplate.html
 func (client *Client) CreateClusterWithTemplate(request *CreateClusterWithTemplateRequest) (response *CreateClusterWithTemplateResponse, err error) {
 	response = CreateCreateClusterWithTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateClusterWithTemplate(request *CreateClusterWithTempla
 }
 
 // CreateClusterWithTemplateWithChan invokes the emr.CreateClusterWithTemplate API asynchronously
-// api document: https://help.aliyun.com/api/emr/createclusterwithtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithTemplateWithChan(request *CreateClusterWithTemplateRequest) (<-chan *CreateClusterWithTemplateResponse, <-chan error) {
 	responseChan := make(chan *CreateClusterWithTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateClusterWithTemplateWithChan(request *CreateClusterWi
 }
 
 // CreateClusterWithTemplateWithCallback invokes the emr.CreateClusterWithTemplate API asynchronously
-// api document: https://help.aliyun.com/api/emr/createclusterwithtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithTemplateWithCallback(request *CreateClusterWithTemplateRequest, callback func(response *CreateClusterWithTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type CreateClusterWithTemplateRequest struct {
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	UniqueTag       string           `position:"Query" name:"UniqueTag"`
 	ClusterName     string           `position:"Query" name:"ClusterName"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	TemplateBizId   string           `position:"Query" name:"TemplateBizId"`
 }
 
@@ -98,6 +94,7 @@ func CreateCreateClusterWithTemplateRequest() (request *CreateClusterWithTemplat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateClusterWithTemplate", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ListBackups invokes the emr.ListBackups API synchronously
-// api document: https://help.aliyun.com/api/emr/listbackups.html
 func (client *Client) ListBackups(request *ListBackupsRequest) (response *ListBackupsResponse, err error) {
 	response = CreateListBackupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListBackups(request *ListBackupsRequest) (response *ListBa
 }
 
 // ListBackupsWithChan invokes the emr.ListBackups API asynchronously
-// api document: https://help.aliyun.com/api/emr/listbackups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBackupsWithChan(request *ListBackupsRequest) (<-chan *ListBackupsResponse, <-chan error) {
 	responseChan := make(chan *ListBackupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListBackupsWithChan(request *ListBackupsRequest) (<-chan *
 }
 
 // ListBackupsWithCallback invokes the emr.ListBackups API asynchronously
-// api document: https://help.aliyun.com/api/emr/listbackups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBackupsWithCallback(request *ListBackupsRequest, callback func(response *ListBackupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -109,6 +104,7 @@ func CreateListBackupsRequest() (request *ListBackupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListBackups", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

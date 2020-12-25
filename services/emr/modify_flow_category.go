@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyFlowCategory invokes the emr.ModifyFlowCategory API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowcategory.html
 func (client *Client) ModifyFlowCategory(request *ModifyFlowCategoryRequest) (response *ModifyFlowCategoryResponse, err error) {
 	response = CreateModifyFlowCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyFlowCategory(request *ModifyFlowCategoryRequest) (re
 }
 
 // ModifyFlowCategoryWithChan invokes the emr.ModifyFlowCategory API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowCategoryWithChan(request *ModifyFlowCategoryRequest) (<-chan *ModifyFlowCategoryResponse, <-chan error) {
 	responseChan := make(chan *ModifyFlowCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyFlowCategoryWithChan(request *ModifyFlowCategoryRequ
 }
 
 // ModifyFlowCategoryWithCallback invokes the emr.ModifyFlowCategory API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowCategoryWithCallback(request *ModifyFlowCategoryRequest, callback func(response *ModifyFlowCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateModifyFlowCategoryRequest() (request *ModifyFlowCategoryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyFlowCategory", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

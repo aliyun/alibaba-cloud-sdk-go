@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowProject invokes the emr.DescribeFlowProject API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflowproject.html
 func (client *Client) DescribeFlowProject(request *DescribeFlowProjectRequest) (response *DescribeFlowProjectResponse, err error) {
 	response = CreateDescribeFlowProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowProject(request *DescribeFlowProjectRequest) (
 }
 
 // DescribeFlowProjectWithChan invokes the emr.DescribeFlowProject API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowProjectWithChan(request *DescribeFlowProjectRequest) (<-chan *DescribeFlowProjectResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowProjectWithChan(request *DescribeFlowProjectRe
 }
 
 // DescribeFlowProjectWithCallback invokes the emr.DescribeFlowProject API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflowproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowProjectWithCallback(request *DescribeFlowProjectRequest, callback func(response *DescribeFlowProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDescribeFlowProjectRequest() (request *DescribeFlowProjectRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowProject", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

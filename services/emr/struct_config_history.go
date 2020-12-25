@@ -27,4 +27,8 @@ type ConfigHistory struct {
 	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
 	Author         string `json:"Author" xml:"Author"`
 	Comment        string `json:"Comment" xml:"Comment"`
+	HostGroupId    string `json:"HostGroupId" xml:"HostGroupId"`
+	HostGroupName  string `json:"HostGroupName" xml:"HostGroupName"`
+	HostInstanceId string `json:"HostInstanceId" xml:"HostInstanceId"`
+	HostName       string `json:"HostName" xml:"HostName"`
 }

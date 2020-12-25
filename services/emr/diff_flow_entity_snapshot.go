@@ -21,7 +21,6 @@ import (
 )
 
 // DiffFlowEntitySnapshot invokes the emr.DiffFlowEntitySnapshot API synchronously
-// api document: https://help.aliyun.com/api/emr/diffflowentitysnapshot.html
 func (client *Client) DiffFlowEntitySnapshot(request *DiffFlowEntitySnapshotRequest) (response *DiffFlowEntitySnapshotResponse, err error) {
 	response = CreateDiffFlowEntitySnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DiffFlowEntitySnapshot(request *DiffFlowEntitySnapshotRequ
 }
 
 // DiffFlowEntitySnapshotWithChan invokes the emr.DiffFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/diffflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DiffFlowEntitySnapshotWithChan(request *DiffFlowEntitySnapshotRequest) (<-chan *DiffFlowEntitySnapshotResponse, <-chan error) {
 	responseChan := make(chan *DiffFlowEntitySnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DiffFlowEntitySnapshotWithChan(request *DiffFlowEntitySnap
 }
 
 // DiffFlowEntitySnapshotWithCallback invokes the emr.DiffFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/diffflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DiffFlowEntitySnapshotWithCallback(request *DiffFlowEntitySnapshotRequest, callback func(response *DiffFlowEntitySnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDiffFlowEntitySnapshotRequest() (request *DiffFlowEntitySnapshotReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DiffFlowEntitySnapshot", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyResourcePoolSchedulerType invokes the emr.ModifyResourcePoolSchedulerType API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyresourcepoolschedulertype.html
 func (client *Client) ModifyResourcePoolSchedulerType(request *ModifyResourcePoolSchedulerTypeRequest) (response *ModifyResourcePoolSchedulerTypeResponse, err error) {
 	response = CreateModifyResourcePoolSchedulerTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyResourcePoolSchedulerType(request *ModifyResourcePoo
 }
 
 // ModifyResourcePoolSchedulerTypeWithChan invokes the emr.ModifyResourcePoolSchedulerType API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyresourcepoolschedulertype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyResourcePoolSchedulerTypeWithChan(request *ModifyResourcePoolSchedulerTypeRequest) (<-chan *ModifyResourcePoolSchedulerTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyResourcePoolSchedulerTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyResourcePoolSchedulerTypeWithChan(request *ModifyRes
 }
 
 // ModifyResourcePoolSchedulerTypeWithCallback invokes the emr.ModifyResourcePoolSchedulerType API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyresourcepoolschedulertype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyResourcePoolSchedulerTypeWithCallback(request *ModifyResourcePoolSchedulerTypeRequest, callback func(response *ModifyResourcePoolSchedulerTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateModifyResourcePoolSchedulerTypeRequest() (request *ModifyResourcePool
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyResourcePoolSchedulerType", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

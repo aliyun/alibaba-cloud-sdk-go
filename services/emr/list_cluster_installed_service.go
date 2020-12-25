@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterInstalledService invokes the emr.ListClusterInstalledService API synchronously
-// api document: https://help.aliyun.com/api/emr/listclusterinstalledservice.html
 func (client *Client) ListClusterInstalledService(request *ListClusterInstalledServiceRequest) (response *ListClusterInstalledServiceResponse, err error) {
 	response = CreateListClusterInstalledServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterInstalledService(request *ListClusterInstalledS
 }
 
 // ListClusterInstalledServiceWithChan invokes the emr.ListClusterInstalledService API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterinstalledservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterInstalledServiceWithChan(request *ListClusterInstalledServiceRequest) (<-chan *ListClusterInstalledServiceResponse, <-chan error) {
 	responseChan := make(chan *ListClusterInstalledServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterInstalledServiceWithChan(request *ListClusterIn
 }
 
 // ListClusterInstalledServiceWithCallback invokes the emr.ListClusterInstalledService API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterinstalledservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterInstalledServiceWithCallback(request *ListClusterInstalledServiceRequest, callback func(response *ListClusterInstalledServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateListClusterInstalledServiceRequest() (request *ListClusterInstalledSe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusterInstalledService", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

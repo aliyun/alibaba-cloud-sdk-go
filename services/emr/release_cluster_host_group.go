@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseClusterHostGroup invokes the emr.ReleaseClusterHostGroup API synchronously
-// api document: https://help.aliyun.com/api/emr/releaseclusterhostgroup.html
 func (client *Client) ReleaseClusterHostGroup(request *ReleaseClusterHostGroupRequest) (response *ReleaseClusterHostGroupResponse, err error) {
 	response = CreateReleaseClusterHostGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseClusterHostGroup(request *ReleaseClusterHostGroupRe
 }
 
 // ReleaseClusterHostGroupWithChan invokes the emr.ReleaseClusterHostGroup API asynchronously
-// api document: https://help.aliyun.com/api/emr/releaseclusterhostgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseClusterHostGroupWithChan(request *ReleaseClusterHostGroupRequest) (<-chan *ReleaseClusterHostGroupResponse, <-chan error) {
 	responseChan := make(chan *ReleaseClusterHostGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseClusterHostGroupWithChan(request *ReleaseClusterHos
 }
 
 // ReleaseClusterHostGroupWithCallback invokes the emr.ReleaseClusterHostGroup API asynchronously
-// api document: https://help.aliyun.com/api/emr/releaseclusterhostgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseClusterHostGroupWithCallback(request *ReleaseClusterHostGroupRequest, callback func(response *ReleaseClusterHostGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateReleaseClusterHostGroupRequest() (request *ReleaseClusterHostGroupReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ReleaseClusterHostGroup", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

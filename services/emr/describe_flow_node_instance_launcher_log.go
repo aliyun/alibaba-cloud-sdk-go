@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowNodeInstanceLauncherLog invokes the emr.DescribeFlowNodeInstanceLauncherLog API synchronously
-// api document: https://help.aliyun.com/api/emr/describeflownodeinstancelauncherlog.html
 func (client *Client) DescribeFlowNodeInstanceLauncherLog(request *DescribeFlowNodeInstanceLauncherLogRequest) (response *DescribeFlowNodeInstanceLauncherLogResponse, err error) {
 	response = CreateDescribeFlowNodeInstanceLauncherLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowNodeInstanceLauncherLog(request *DescribeFlowN
 }
 
 // DescribeFlowNodeInstanceLauncherLogWithChan invokes the emr.DescribeFlowNodeInstanceLauncherLog API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflownodeinstancelauncherlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowNodeInstanceLauncherLogWithChan(request *DescribeFlowNodeInstanceLauncherLogRequest) (<-chan *DescribeFlowNodeInstanceLauncherLogResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowNodeInstanceLauncherLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowNodeInstanceLauncherLogWithChan(request *Descr
 }
 
 // DescribeFlowNodeInstanceLauncherLogWithCallback invokes the emr.DescribeFlowNodeInstanceLauncherLog API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeflownodeinstancelauncherlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowNodeInstanceLauncherLogWithCallback(request *DescribeFlowNodeInstanceLauncherLogRequest, callback func(response *DescribeFlowNodeInstanceLauncherLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateDescribeFlowNodeInstanceLauncherLogRequest() (request *DescribeFlowNo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeFlowNodeInstanceLauncherLog", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DumpMetaDataSourceForOuter invokes the emr.DumpMetaDataSourceForOuter API synchronously
-// api document: https://help.aliyun.com/api/emr/dumpmetadatasourceforouter.html
 func (client *Client) DumpMetaDataSourceForOuter(request *DumpMetaDataSourceForOuterRequest) (response *DumpMetaDataSourceForOuterResponse, err error) {
 	response = CreateDumpMetaDataSourceForOuterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DumpMetaDataSourceForOuter(request *DumpMetaDataSourceForO
 }
 
 // DumpMetaDataSourceForOuterWithChan invokes the emr.DumpMetaDataSourceForOuter API asynchronously
-// api document: https://help.aliyun.com/api/emr/dumpmetadatasourceforouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DumpMetaDataSourceForOuterWithChan(request *DumpMetaDataSourceForOuterRequest) (<-chan *DumpMetaDataSourceForOuterResponse, <-chan error) {
 	responseChan := make(chan *DumpMetaDataSourceForOuterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DumpMetaDataSourceForOuterWithChan(request *DumpMetaDataSo
 }
 
 // DumpMetaDataSourceForOuterWithCallback invokes the emr.DumpMetaDataSourceForOuter API asynchronously
-// api document: https://help.aliyun.com/api/emr/dumpmetadatasourceforouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DumpMetaDataSourceForOuterWithCallback(request *DumpMetaDataSourceForOuterRequest, callback func(response *DumpMetaDataSourceForOuterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateDumpMetaDataSourceForOuterRequest() (request *DumpMetaDataSourceForOu
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DumpMetaDataSourceForOuter", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

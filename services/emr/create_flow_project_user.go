@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFlowProjectUser invokes the emr.CreateFlowProjectUser API synchronously
-// api document: https://help.aliyun.com/api/emr/createflowprojectuser.html
 func (client *Client) CreateFlowProjectUser(request *CreateFlowProjectUserRequest) (response *CreateFlowProjectUserResponse, err error) {
 	response = CreateCreateFlowProjectUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFlowProjectUser(request *CreateFlowProjectUserReques
 }
 
 // CreateFlowProjectUserWithChan invokes the emr.CreateFlowProjectUser API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflowprojectuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowProjectUserWithChan(request *CreateFlowProjectUserRequest) (<-chan *CreateFlowProjectUserResponse, <-chan error) {
 	responseChan := make(chan *CreateFlowProjectUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFlowProjectUserWithChan(request *CreateFlowProjectUs
 }
 
 // CreateFlowProjectUserWithCallback invokes the emr.CreateFlowProjectUser API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflowprojectuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowProjectUserWithCallback(request *CreateFlowProjectUserRequest, callback func(response *CreateFlowProjectUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateCreateFlowProjectUserRequest() (request *CreateFlowProjectUserRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateFlowProjectUser", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

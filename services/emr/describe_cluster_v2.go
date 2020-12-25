@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterV2 invokes the emr.DescribeClusterV2 API synchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterv2.html
 func (client *Client) DescribeClusterV2(request *DescribeClusterV2Request) (response *DescribeClusterV2Response, err error) {
 	response = CreateDescribeClusterV2Response()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterV2(request *DescribeClusterV2Request) (resp
 }
 
 // DescribeClusterV2WithChan invokes the emr.DescribeClusterV2 API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterv2.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterV2WithChan(request *DescribeClusterV2Request) (<-chan *DescribeClusterV2Response, <-chan error) {
 	responseChan := make(chan *DescribeClusterV2Response, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterV2WithChan(request *DescribeClusterV2Reques
 }
 
 // DescribeClusterV2WithCallback invokes the emr.DescribeClusterV2 API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterv2.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterV2WithCallback(request *DescribeClusterV2Request, callback func(response *DescribeClusterV2Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeClusterV2Request() (request *DescribeClusterV2Request) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeClusterV2", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

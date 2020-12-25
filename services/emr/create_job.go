@@ -21,7 +21,6 @@ import (
 )
 
 // CreateJob invokes the emr.CreateJob API synchronously
-// api document: https://help.aliyun.com/api/emr/createjob.html
 func (client *Client) CreateJob(request *CreateJobRequest) (response *CreateJobResponse, err error) {
 	response = CreateCreateJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateJob(request *CreateJobRequest) (response *CreateJobR
 }
 
 // CreateJobWithChan invokes the emr.CreateJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/createjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobWithChan(request *CreateJobRequest) (<-chan *CreateJobResponse, <-chan error) {
 	responseChan := make(chan *CreateJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateJobWithChan(request *CreateJobRequest) (<-chan *Crea
 }
 
 // CreateJobWithCallback invokes the emr.CreateJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/createjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobWithCallback(request *CreateJobRequest, callback func(response *CreateJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type CreateJobRequest struct {
 	FailAct         string           `position:"Query" name:"FailAct"`
 	RunParameter    string           `position:"Query" name:"RunParameter"`
 	RetryInterval   requests.Integer `position:"Query" name:"RetryInterval"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Name            string           `position:"Query" name:"Name"`
 	MaxRetry        requests.Integer `position:"Query" name:"MaxRetry"`
 }
@@ -98,6 +94,7 @@ func CreateCreateJobRequest() (request *CreateJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateJob", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

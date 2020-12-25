@@ -37,11 +37,14 @@ type ClusterInfo struct {
 	Type                            string                                           `json:"Type" xml:"Type"`
 	ClusterId                       string                                           `json:"ClusterId" xml:"ClusterId"`
 	InitCustomHiveMetaDB            bool                                             `json:"InitCustomHiveMetaDB" xml:"InitCustomHiveMetaDB"`
+	K8sClusterId                    string                                           `json:"K8sClusterId" xml:"K8sClusterId"`
 	DepositType                     string                                           `json:"DepositType" xml:"DepositType"`
 	UseLocalMetaDb                  bool                                             `json:"UseLocalMetaDb" xml:"UseLocalMetaDb"`
+	AutoScalingWithGraceAllowed     bool                                             `json:"AutoScalingWithGraceAllowed" xml:"AutoScalingWithGraceAllowed"`
 	OrderList                       string                                           `json:"OrderList" xml:"OrderList"`
 	CreateResource                  string                                           `json:"CreateResource" xml:"CreateResource"`
 	UseCustomHiveMetaDB             bool                                             `json:"UseCustomHiveMetaDB" xml:"UseCustomHiveMetaDB"`
+	OperationId                     string                                           `json:"OperationId" xml:"OperationId"`
 	ResizeDiskEnable                bool                                             `json:"ResizeDiskEnable" xml:"ResizeDiskEnable"`
 	StopTime                        int64                                            `json:"StopTime" xml:"StopTime"`
 	ZoneId                          string                                           `json:"ZoneId" xml:"ZoneId"`
@@ -56,12 +59,14 @@ type ClusterInfo struct {
 	MachineType                     string                                           `json:"MachineType" xml:"MachineType"`
 	ShowSoftwareInterface           bool                                             `json:"ShowSoftwareInterface" xml:"ShowSoftwareInterface"`
 	CreateTime                      int64                                            `json:"CreateTime" xml:"CreateTime"`
+	ExtraInfo                       string                                           `json:"ExtraInfo" xml:"ExtraInfo"`
 	RelateClusterId                 string                                           `json:"RelateClusterId" xml:"RelateClusterId"`
 	GatewayClusterIds               string                                           `json:"GatewayClusterIds" xml:"GatewayClusterIds"`
 	RegionId                        string                                           `json:"RegionId" xml:"RegionId"`
 	CoreNodeTotal                   int                                              `json:"CoreNodeTotal" xml:"CoreNodeTotal"`
 	IoOptimized                     bool                                             `json:"IoOptimized" xml:"IoOptimized"`
 	CoreNodeInService               int                                              `json:"CoreNodeInService" xml:"CoreNodeInService"`
+	AutoScalingVersion              string                                           `json:"AutoScalingVersion" xml:"AutoScalingVersion"`
 	UserId                          string                                           `json:"UserId" xml:"UserId"`
 	EmrVer                          string                                           `json:"EmrVer" xml:"EmrVer"`
 	AutoScalingAllowed              bool                                             `json:"AutoScalingAllowed" xml:"AutoScalingAllowed"`

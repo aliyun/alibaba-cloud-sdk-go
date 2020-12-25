@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowNodeInstance invokes the emr.ListFlowNodeInstance API synchronously
-// api document: https://help.aliyun.com/api/emr/listflownodeinstance.html
 func (client *Client) ListFlowNodeInstance(request *ListFlowNodeInstanceRequest) (response *ListFlowNodeInstanceResponse, err error) {
 	response = CreateListFlowNodeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowNodeInstance(request *ListFlowNodeInstanceRequest)
 }
 
 // ListFlowNodeInstanceWithChan invokes the emr.ListFlowNodeInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflownodeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowNodeInstanceWithChan(request *ListFlowNodeInstanceRequest) (<-chan *ListFlowNodeInstanceResponse, <-chan error) {
 	responseChan := make(chan *ListFlowNodeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowNodeInstanceWithChan(request *ListFlowNodeInstance
 }
 
 // ListFlowNodeInstanceWithCallback invokes the emr.ListFlowNodeInstance API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflownodeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowNodeInstanceWithCallback(request *ListFlowNodeInstanceRequest, callback func(response *ListFlowNodeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,13 +71,14 @@ func (client *Client) ListFlowNodeInstanceWithCallback(request *ListFlowNodeInst
 // ListFlowNodeInstanceRequest is the request struct for api ListFlowNodeInstance
 type ListFlowNodeInstanceRequest struct {
 	*requests.RpcRequest
-	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
-	OrderBy    string           `position:"Query" name:"OrderBy"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	ProjectId  string           `position:"Query" name:"ProjectId"`
-	OrderType  string           `position:"Query" name:"OrderType"`
+	StatusList      *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
+	OrderBy         string           `position:"Query" name:"OrderBy"`
+	StartTime       requests.Integer `position:"Query" name:"StartTime"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	ProjectId       string           `position:"Query" name:"ProjectId"`
+	OrderType       string           `position:"Query" name:"OrderType"`
 }
 
 // ListFlowNodeInstanceResponse is the response struct for api ListFlowNodeInstance
@@ -101,6 +97,7 @@ func CreateListFlowNodeInstanceRequest() (request *ListFlowNodeInstanceRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowNodeInstance", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

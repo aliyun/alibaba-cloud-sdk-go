@@ -21,7 +21,6 @@ import (
 )
 
 // CloneFlow invokes the emr.CloneFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/cloneflow.html
 func (client *Client) CloneFlow(request *CloneFlowRequest) (response *CloneFlowResponse, err error) {
 	response = CreateCloneFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloneFlow(request *CloneFlowRequest) (response *CloneFlowR
 }
 
 // CloneFlowWithChan invokes the emr.CloneFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/cloneflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloneFlowWithChan(request *CloneFlowRequest) (<-chan *CloneFlowResponse, <-chan error) {
 	responseChan := make(chan *CloneFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloneFlowWithChan(request *CloneFlowRequest) (<-chan *Clon
 }
 
 // CloneFlowWithCallback invokes the emr.CloneFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/cloneflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloneFlowWithCallback(request *CloneFlowRequest, callback func(response *CloneFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateCloneFlowRequest() (request *CloneFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CloneFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

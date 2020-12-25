@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeFlow invokes the emr.ResumeFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/resumeflow.html
 func (client *Client) ResumeFlow(request *ResumeFlowRequest) (response *ResumeFlowResponse, err error) {
 	response = CreateResumeFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeFlow(request *ResumeFlowRequest) (response *ResumeFl
 }
 
 // ResumeFlowWithChan invokes the emr.ResumeFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/resumeflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeFlowWithChan(request *ResumeFlowRequest) (<-chan *ResumeFlowResponse, <-chan error) {
 	responseChan := make(chan *ResumeFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeFlowWithChan(request *ResumeFlowRequest) (<-chan *Re
 }
 
 // ResumeFlowWithCallback invokes the emr.ResumeFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/resumeflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeFlowWithCallback(request *ResumeFlowRequest, callback func(response *ResumeFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateResumeFlowRequest() (request *ResumeFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ResumeFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNote invokes the emr.DeleteNote API synchronously
-// api document: https://help.aliyun.com/api/emr/deletenote.html
 func (client *Client) DeleteNote(request *DeleteNoteRequest) (response *DeleteNoteResponse, err error) {
 	response = CreateDeleteNoteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNote(request *DeleteNoteRequest) (response *DeleteNo
 }
 
 // DeleteNoteWithChan invokes the emr.DeleteNote API asynchronously
-// api document: https://help.aliyun.com/api/emr/deletenote.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNoteWithChan(request *DeleteNoteRequest) (<-chan *DeleteNoteResponse, <-chan error) {
 	responseChan := make(chan *DeleteNoteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNoteWithChan(request *DeleteNoteRequest) (<-chan *De
 }
 
 // DeleteNoteWithCallback invokes the emr.DeleteNote API asynchronously
-// api document: https://help.aliyun.com/api/emr/deletenote.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNoteWithCallback(request *DeleteNoteRequest, callback func(response *DeleteNoteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DeleteNoteWithCallback(request *DeleteNoteRequest, callbac
 type DeleteNoteRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Id              string           `position:"Query" name:"Id"`
 }
 
@@ -92,6 +88,7 @@ func CreateDeleteNoteRequest() (request *DeleteNoteRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteNote", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

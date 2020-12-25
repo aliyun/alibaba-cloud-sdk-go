@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTag invokes the emr.DeleteTag API synchronously
-// api document: https://help.aliyun.com/api/emr/deletetag.html
 func (client *Client) DeleteTag(request *DeleteTagRequest) (response *DeleteTagResponse, err error) {
 	response = CreateDeleteTagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTag(request *DeleteTagRequest) (response *DeleteTagR
 }
 
 // DeleteTagWithChan invokes the emr.DeleteTag API asynchronously
-// api document: https://help.aliyun.com/api/emr/deletetag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagWithChan(request *DeleteTagRequest) (<-chan *DeleteTagResponse, <-chan error) {
 	responseChan := make(chan *DeleteTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTagWithChan(request *DeleteTagRequest) (<-chan *Dele
 }
 
 // DeleteTagWithCallback invokes the emr.DeleteTag API asynchronously
-// api document: https://help.aliyun.com/api/emr/deletetag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagWithCallback(request *DeleteTagRequest, callback func(response *DeleteTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDeleteTagRequest() (request *DeleteTagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteTag", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

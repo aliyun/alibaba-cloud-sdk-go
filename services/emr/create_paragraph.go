@@ -21,7 +21,6 @@ import (
 )
 
 // CreateParagraph invokes the emr.CreateParagraph API synchronously
-// api document: https://help.aliyun.com/api/emr/createparagraph.html
 func (client *Client) CreateParagraph(request *CreateParagraphRequest) (response *CreateParagraphResponse, err error) {
 	response = CreateCreateParagraphResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateParagraph(request *CreateParagraphRequest) (response
 }
 
 // CreateParagraphWithChan invokes the emr.CreateParagraph API asynchronously
-// api document: https://help.aliyun.com/api/emr/createparagraph.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateParagraphWithChan(request *CreateParagraphRequest) (<-chan *CreateParagraphResponse, <-chan error) {
 	responseChan := make(chan *CreateParagraphResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateParagraphWithChan(request *CreateParagraphRequest) (
 }
 
 // CreateParagraphWithCallback invokes the emr.CreateParagraph API asynchronously
-// api document: https://help.aliyun.com/api/emr/createparagraph.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateParagraphWithCallback(request *CreateParagraphRequest, callback func(response *CreateParagraphResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateCreateParagraphRequest() (request *CreateParagraphRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateParagraph", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

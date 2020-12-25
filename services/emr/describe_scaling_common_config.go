@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScalingCommonConfig invokes the emr.DescribeScalingCommonConfig API synchronously
-// api document: https://help.aliyun.com/api/emr/describescalingcommonconfig.html
 func (client *Client) DescribeScalingCommonConfig(request *DescribeScalingCommonConfigRequest) (response *DescribeScalingCommonConfigResponse, err error) {
 	response = CreateDescribeScalingCommonConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScalingCommonConfig(request *DescribeScalingCommon
 }
 
 // DescribeScalingCommonConfigWithChan invokes the emr.DescribeScalingCommonConfig API asynchronously
-// api document: https://help.aliyun.com/api/emr/describescalingcommonconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingCommonConfigWithChan(request *DescribeScalingCommonConfigRequest) (<-chan *DescribeScalingCommonConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingCommonConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScalingCommonConfigWithChan(request *DescribeScali
 }
 
 // DescribeScalingCommonConfigWithCallback invokes the emr.DescribeScalingCommonConfig API asynchronously
-// api document: https://help.aliyun.com/api/emr/describescalingcommonconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingCommonConfigWithCallback(request *DescribeScalingCommonConfigRequest, callback func(response *DescribeScalingCommonConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,13 +72,23 @@ func (client *Client) DescribeScalingCommonConfigWithCallback(request *DescribeS
 type DescribeScalingCommonConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // DescribeScalingCommonConfigResponse is the response struct for api DescribeScalingCommonConfig
 type DescribeScalingCommonConfigResponse struct {
 	*responses.BaseResponse
-	RequestId                    string `json:"RequestId" xml:"RequestId"`
-	AutoScalingRuleMinDelayLimit int    `json:"AutoScalingRuleMinDelayLimit" xml:"AutoScalingRuleMinDelayLimit"`
+	RequestId                                  string `json:"RequestId" xml:"RequestId"`
+	AutoScalingHookHeartbeatDefaultTime        int    `json:"AutoScalingHookHeartbeatDefaultTime" xml:"AutoScalingHookHeartbeatDefaultTime"`
+	AutoScalingCoolDownTime                    int    `json:"AutoScalingCoolDownTime" xml:"AutoScalingCoolDownTime"`
+	AutoScalingMNSScalingThreadSleepTime       int64  `json:"AutoScalingMNSScalingThreadSleepTime" xml:"AutoScalingMNSScalingThreadSleepTime"`
+	AutoScalingGroupMinSizeLimit               int    `json:"AutoScalingGroupMinSizeLimit" xml:"AutoScalingGroupMinSizeLimit"`
+	AutoScalingGroupMaxSizeLimit               int    `json:"AutoScalingGroupMaxSizeLimit" xml:"AutoScalingGroupMaxSizeLimit"`
+	AutoScalingRuleMinDelayLimit               int    `json:"AutoScalingRuleMinDelayLimit" xml:"AutoScalingRuleMinDelayLimit"`
+	AutoScalingRuleAlarmDelayLimit             int    `json:"AutoScalingRuleAlarmDelayLimit" xml:"AutoScalingRuleAlarmDelayLimit"`
+	AutoScalingRuleAlarmSilentTime             int    `json:"AutoScalingRuleAlarmSilentTime" xml:"AutoScalingRuleAlarmSilentTime"`
+	AutoScalingConfigSystemDiskSize            int    `json:"AutoScalingConfigSystemDiskSize" xml:"AutoScalingConfigSystemDiskSize"`
+	AutoScalingConfigDecommissionQueryInterval int64  `json:"AutoScalingConfigDecommissionQueryInterval" xml:"AutoScalingConfigDecommissionQueryInterval"`
 }
 
 // CreateDescribeScalingCommonConfigRequest creates a request to invoke DescribeScalingCommonConfig API
@@ -92,6 +97,7 @@ func CreateDescribeScalingCommonConfigRequest() (request *DescribeScalingCommonC
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeScalingCommonConfig", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

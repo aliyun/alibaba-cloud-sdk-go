@@ -21,7 +21,6 @@ import (
 )
 
 // QueryAlarmHistory invokes the emr.QueryAlarmHistory API synchronously
-// api document: https://help.aliyun.com/api/emr/queryalarmhistory.html
 func (client *Client) QueryAlarmHistory(request *QueryAlarmHistoryRequest) (response *QueryAlarmHistoryResponse, err error) {
 	response = CreateQueryAlarmHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryAlarmHistory(request *QueryAlarmHistoryRequest) (resp
 }
 
 // QueryAlarmHistoryWithChan invokes the emr.QueryAlarmHistory API asynchronously
-// api document: https://help.aliyun.com/api/emr/queryalarmhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAlarmHistoryWithChan(request *QueryAlarmHistoryRequest) (<-chan *QueryAlarmHistoryResponse, <-chan error) {
 	responseChan := make(chan *QueryAlarmHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryAlarmHistoryWithChan(request *QueryAlarmHistoryReques
 }
 
 // QueryAlarmHistoryWithCallback invokes the emr.QueryAlarmHistory API asynchronously
-// api document: https://help.aliyun.com/api/emr/queryalarmhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAlarmHistoryWithCallback(request *QueryAlarmHistoryRequest, callback func(response *QueryAlarmHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateQueryAlarmHistoryRequest() (request *QueryAlarmHistoryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "QueryAlarmHistory", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

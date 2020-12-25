@@ -21,7 +21,6 @@ import (
 )
 
 // GetQueueOutputStatisticInfo invokes the emr.GetQueueOutputStatisticInfo API synchronously
-// api document: https://help.aliyun.com/api/emr/getqueueoutputstatisticinfo.html
 func (client *Client) GetQueueOutputStatisticInfo(request *GetQueueOutputStatisticInfoRequest) (response *GetQueueOutputStatisticInfoResponse, err error) {
 	response = CreateGetQueueOutputStatisticInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetQueueOutputStatisticInfo(request *GetQueueOutputStatist
 }
 
 // GetQueueOutputStatisticInfoWithChan invokes the emr.GetQueueOutputStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getqueueoutputstatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQueueOutputStatisticInfoWithChan(request *GetQueueOutputStatisticInfoRequest) (<-chan *GetQueueOutputStatisticInfoResponse, <-chan error) {
 	responseChan := make(chan *GetQueueOutputStatisticInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetQueueOutputStatisticInfoWithChan(request *GetQueueOutpu
 }
 
 // GetQueueOutputStatisticInfoWithCallback invokes the emr.GetQueueOutputStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getqueueoutputstatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQueueOutputStatisticInfoWithCallback(request *GetQueueOutputStatisticInfoRequest, callback func(response *GetQueueOutputStatisticInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateGetQueueOutputStatisticInfoRequest() (request *GetQueueOutputStatisti
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "GetQueueOutputStatisticInfo", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

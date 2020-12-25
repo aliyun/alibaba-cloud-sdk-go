@@ -21,7 +21,6 @@ import (
 )
 
 // RestoreBackup invokes the emr.RestoreBackup API synchronously
-// api document: https://help.aliyun.com/api/emr/restorebackup.html
 func (client *Client) RestoreBackup(request *RestoreBackupRequest) (response *RestoreBackupResponse, err error) {
 	response = CreateRestoreBackupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestoreBackup(request *RestoreBackupRequest) (response *Re
 }
 
 // RestoreBackupWithChan invokes the emr.RestoreBackup API asynchronously
-// api document: https://help.aliyun.com/api/emr/restorebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreBackupWithChan(request *RestoreBackupRequest) (<-chan *RestoreBackupResponse, <-chan error) {
 	responseChan := make(chan *RestoreBackupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestoreBackupWithChan(request *RestoreBackupRequest) (<-ch
 }
 
 // RestoreBackupWithCallback invokes the emr.RestoreBackup API asynchronously
-// api document: https://help.aliyun.com/api/emr/restorebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreBackupWithCallback(request *RestoreBackupRequest, callback func(response *RestoreBackupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -109,6 +104,7 @@ func CreateRestoreBackupRequest() (request *RestoreBackupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "RestoreBackup", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

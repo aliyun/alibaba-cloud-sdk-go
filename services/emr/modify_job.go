@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyJob invokes the emr.ModifyJob API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyjob.html
 func (client *Client) ModifyJob(request *ModifyJobRequest) (response *ModifyJobResponse, err error) {
 	response = CreateModifyJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyJob(request *ModifyJobRequest) (response *ModifyJobR
 }
 
 // ModifyJobWithChan invokes the emr.ModifyJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyJobWithChan(request *ModifyJobRequest) (<-chan *ModifyJobResponse, <-chan error) {
 	responseChan := make(chan *ModifyJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyJobWithChan(request *ModifyJobRequest) (<-chan *Modi
 }
 
 // ModifyJobWithCallback invokes the emr.ModifyJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyJobWithCallback(request *ModifyJobRequest, callback func(response *ModifyJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type ModifyJobRequest struct {
 	FailAct         string           `position:"Query" name:"FailAct"`
 	RunParameter    string           `position:"Query" name:"RunParameter"`
 	RetryInterval   requests.Integer `position:"Query" name:"RetryInterval"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Name            string           `position:"Query" name:"Name"`
 	Id              string           `position:"Query" name:"Id"`
 	MaxRetry        requests.Integer `position:"Query" name:"MaxRetry"`
@@ -98,6 +94,7 @@ func CreateModifyJobRequest() (request *ModifyJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyJob", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

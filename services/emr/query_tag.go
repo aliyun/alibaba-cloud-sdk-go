@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTag invokes the emr.QueryTag API synchronously
-// api document: https://help.aliyun.com/api/emr/querytag.html
 func (client *Client) QueryTag(request *QueryTagRequest) (response *QueryTagResponse, err error) {
 	response = CreateQueryTagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTag(request *QueryTagRequest) (response *QueryTagResp
 }
 
 // QueryTagWithChan invokes the emr.QueryTag API asynchronously
-// api document: https://help.aliyun.com/api/emr/querytag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagWithChan(request *QueryTagRequest) (<-chan *QueryTagResponse, <-chan error) {
 	responseChan := make(chan *QueryTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTagWithChan(request *QueryTagRequest) (<-chan *QueryT
 }
 
 // QueryTagWithCallback invokes the emr.QueryTag API asynchronously
-// api document: https://help.aliyun.com/api/emr/querytag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagWithCallback(request *QueryTagRequest, callback func(response *QueryTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateQueryTagRequest() (request *QueryTagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "QueryTag", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

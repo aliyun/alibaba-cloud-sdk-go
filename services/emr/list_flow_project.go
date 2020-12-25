@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowProject invokes the emr.ListFlowProject API synchronously
-// api document: https://help.aliyun.com/api/emr/listflowproject.html
 func (client *Client) ListFlowProject(request *ListFlowProjectRequest) (response *ListFlowProjectResponse, err error) {
 	response = CreateListFlowProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowProject(request *ListFlowProjectRequest) (response
 }
 
 // ListFlowProjectWithChan invokes the emr.ListFlowProject API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowProjectWithChan(request *ListFlowProjectRequest) (<-chan *ListFlowProjectResponse, <-chan error) {
 	responseChan := make(chan *ListFlowProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowProjectWithChan(request *ListFlowProjectRequest) (
 }
 
 // ListFlowProjectWithCallback invokes the emr.ListFlowProject API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowProjectWithCallback(request *ListFlowProjectRequest, callback func(response *ListFlowProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,12 @@ func (client *Client) ListFlowProjectWithCallback(request *ListFlowProjectReques
 // ListFlowProjectRequest is the request struct for api ListFlowProject
 type ListFlowProjectRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	Name       string           `position:"Query" name:"Name"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	ProjectId  string           `position:"Query" name:"ProjectId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ProductType     string           `position:"Query" name:"ProductType"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	Name            string           `position:"Query" name:"Name"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	ProjectId       string           `position:"Query" name:"ProjectId"`
 }
 
 // ListFlowProjectResponse is the response struct for api ListFlowProject
@@ -98,6 +95,7 @@ func CreateListFlowProjectRequest() (request *ListFlowProjectRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowProject", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFlowForWeb invokes the emr.CreateFlowForWeb API synchronously
-// api document: https://help.aliyun.com/api/emr/createflowforweb.html
 func (client *Client) CreateFlowForWeb(request *CreateFlowForWebRequest) (response *CreateFlowForWebResponse, err error) {
 	response = CreateCreateFlowForWebResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFlowForWeb(request *CreateFlowForWebRequest) (respon
 }
 
 // CreateFlowForWebWithChan invokes the emr.CreateFlowForWeb API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflowforweb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowForWebWithChan(request *CreateFlowForWebRequest) (<-chan *CreateFlowForWebResponse, <-chan error) {
 	responseChan := make(chan *CreateFlowForWebResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFlowForWebWithChan(request *CreateFlowForWebRequest)
 }
 
 // CreateFlowForWebWithCallback invokes the emr.CreateFlowForWeb API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflowforweb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowForWebWithCallback(request *CreateFlowForWebRequest, callback func(response *CreateFlowForWebResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,17 +74,20 @@ type CreateFlowForWebRequest struct {
 	CronExpr                string           `position:"Query" name:"CronExpr"`
 	Description             string           `position:"Query" name:"Description"`
 	AlertUserGroupBizId     string           `position:"Query" name:"AlertUserGroupBizId"`
+	Lifecycle               string           `position:"Query" name:"Lifecycle"`
 	HostName                string           `position:"Query" name:"HostName"`
 	CreateCluster           requests.Boolean `position:"Query" name:"CreateCluster"`
 	EndSchedule             requests.Integer `position:"Query" name:"EndSchedule"`
 	AlertConf               string           `position:"Query" name:"AlertConf"`
 	ProjectId               string           `position:"Query" name:"ProjectId"`
 	ParentFlowList          string           `position:"Query" name:"ParentFlowList"`
+	LogArchiveLocation      string           `position:"Query" name:"LogArchiveLocation"`
 	AlertDingDingGroupBizId string           `position:"Query" name:"AlertDingDingGroupBizId"`
 	StartSchedule           requests.Integer `position:"Query" name:"StartSchedule"`
 	ClusterId               string           `position:"Query" name:"ClusterId"`
 	Graph                   string           `position:"Query" name:"Graph"`
 	Name                    string           `position:"Query" name:"Name"`
+	Namespace               string           `position:"Query" name:"Namespace"`
 	ParentCategory          string           `position:"Query" name:"ParentCategory"`
 }
 
@@ -106,6 +104,7 @@ func CreateCreateFlowForWebRequest() (request *CreateFlowForWebRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateFlowForWeb", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

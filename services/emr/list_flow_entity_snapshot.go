@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowEntitySnapshot invokes the emr.ListFlowEntitySnapshot API synchronously
-// api document: https://help.aliyun.com/api/emr/listflowentitysnapshot.html
 func (client *Client) ListFlowEntitySnapshot(request *ListFlowEntitySnapshotRequest) (response *ListFlowEntitySnapshotResponse, err error) {
 	response = CreateListFlowEntitySnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowEntitySnapshot(request *ListFlowEntitySnapshotRequ
 }
 
 // ListFlowEntitySnapshotWithChan invokes the emr.ListFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowEntitySnapshotWithChan(request *ListFlowEntitySnapshotRequest) (<-chan *ListFlowEntitySnapshotResponse, <-chan error) {
 	responseChan := make(chan *ListFlowEntitySnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowEntitySnapshotWithChan(request *ListFlowEntitySnap
 }
 
 // ListFlowEntitySnapshotWithCallback invokes the emr.ListFlowEntitySnapshot API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowentitysnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowEntitySnapshotWithCallback(request *ListFlowEntitySnapshotRequest, callback func(response *ListFlowEntitySnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -107,6 +102,7 @@ func CreateListFlowEntitySnapshotRequest() (request *ListFlowEntitySnapshotReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowEntitySnapshot", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

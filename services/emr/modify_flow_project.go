@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyFlowProject invokes the emr.ModifyFlowProject API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowproject.html
 func (client *Client) ModifyFlowProject(request *ModifyFlowProjectRequest) (response *ModifyFlowProjectResponse, err error) {
 	response = CreateModifyFlowProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyFlowProject(request *ModifyFlowProjectRequest) (resp
 }
 
 // ModifyFlowProjectWithChan invokes the emr.ModifyFlowProject API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowProjectWithChan(request *ModifyFlowProjectRequest) (<-chan *ModifyFlowProjectResponse, <-chan error) {
 	responseChan := make(chan *ModifyFlowProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyFlowProjectWithChan(request *ModifyFlowProjectReques
 }
 
 // ModifyFlowProjectWithCallback invokes the emr.ModifyFlowProject API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowProjectWithCallback(request *ModifyFlowProjectRequest, callback func(response *ModifyFlowProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyFlowProjectRequest() (request *ModifyFlowProjectRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyFlowProject", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

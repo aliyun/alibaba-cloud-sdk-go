@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyClusterHostGroup invokes the emr.ModifyClusterHostGroup API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyclusterhostgroup.html
 func (client *Client) ModifyClusterHostGroup(request *ModifyClusterHostGroupRequest) (response *ModifyClusterHostGroupResponse, err error) {
 	response = CreateModifyClusterHostGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyClusterHostGroup(request *ModifyClusterHostGroupRequ
 }
 
 // ModifyClusterHostGroupWithChan invokes the emr.ModifyClusterHostGroup API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyclusterhostgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterHostGroupWithChan(request *ModifyClusterHostGroupRequest) (<-chan *ModifyClusterHostGroupResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterHostGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClusterHostGroupWithChan(request *ModifyClusterHostG
 }
 
 // ModifyClusterHostGroupWithCallback invokes the emr.ModifyClusterHostGroup API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyclusterhostgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterHostGroupWithCallback(request *ModifyClusterHostGroupRequest, callback func(response *ModifyClusterHostGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateModifyClusterHostGroupRequest() (request *ModifyClusterHostGroupReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyClusterHostGroup", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

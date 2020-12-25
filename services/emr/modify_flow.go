@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyFlow invokes the emr.ModifyFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyflow.html
 func (client *Client) ModifyFlow(request *ModifyFlowRequest) (response *ModifyFlowResponse, err error) {
 	response = CreateModifyFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyFlow(request *ModifyFlowRequest) (response *ModifyFl
 }
 
 // ModifyFlowWithChan invokes the emr.ModifyFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowWithChan(request *ModifyFlowRequest) (<-chan *ModifyFlowResponse, <-chan error) {
 	responseChan := make(chan *ModifyFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyFlowWithChan(request *ModifyFlowRequest) (<-chan *Mo
 }
 
 // ModifyFlowWithCallback invokes the emr.ModifyFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowWithCallback(request *ModifyFlowRequest, callback func(response *ModifyFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +75,7 @@ type ModifyFlowRequest struct {
 	Periodic                requests.Boolean `position:"Query" name:"Periodic"`
 	Description             string           `position:"Query" name:"Description"`
 	AlertUserGroupBizId     string           `position:"Query" name:"AlertUserGroupBizId"`
+	Lifecycle               string           `position:"Query" name:"Lifecycle"`
 	HostName                string           `position:"Query" name:"HostName"`
 	CreateCluster           requests.Boolean `position:"Query" name:"CreateCluster"`
 	EndSchedule             requests.Integer `position:"Query" name:"EndSchedule"`
@@ -87,11 +83,13 @@ type ModifyFlowRequest struct {
 	AlertConf               string           `position:"Query" name:"AlertConf"`
 	ProjectId               string           `position:"Query" name:"ProjectId"`
 	ParentFlowList          string           `position:"Query" name:"ParentFlowList"`
+	LogArchiveLocation      string           `position:"Query" name:"LogArchiveLocation"`
 	AlertDingDingGroupBizId string           `position:"Query" name:"AlertDingDingGroupBizId"`
 	StartSchedule           requests.Integer `position:"Query" name:"StartSchedule"`
 	ClusterId               string           `position:"Query" name:"ClusterId"`
 	Application             string           `position:"Query" name:"Application"`
 	Name                    string           `position:"Query" name:"Name"`
+	Namespace               string           `position:"Query" name:"Namespace"`
 	Status                  string           `position:"Query" name:"Status"`
 	ParentCategory          string           `position:"Query" name:"ParentCategory"`
 }
@@ -109,6 +107,7 @@ func CreateModifyFlowRequest() (request *ModifyFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

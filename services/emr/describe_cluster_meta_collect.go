@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterMetaCollect invokes the emr.DescribeClusterMetaCollect API synchronously
-// api document: https://help.aliyun.com/api/emr/describeclustermetacollect.html
 func (client *Client) DescribeClusterMetaCollect(request *DescribeClusterMetaCollectRequest) (response *DescribeClusterMetaCollectResponse, err error) {
 	response = CreateDescribeClusterMetaCollectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterMetaCollect(request *DescribeClusterMetaCol
 }
 
 // DescribeClusterMetaCollectWithChan invokes the emr.DescribeClusterMetaCollect API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclustermetacollect.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterMetaCollectWithChan(request *DescribeClusterMetaCollectRequest) (<-chan *DescribeClusterMetaCollectResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterMetaCollectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterMetaCollectWithChan(request *DescribeCluste
 }
 
 // DescribeClusterMetaCollectWithCallback invokes the emr.DescribeClusterMetaCollect API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclustermetacollect.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterMetaCollectWithCallback(request *DescribeClusterMetaCollectRequest, callback func(response *DescribeClusterMetaCollectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeClusterMetaCollectRequest() (request *DescribeClusterMetaColl
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeClusterMetaCollect", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

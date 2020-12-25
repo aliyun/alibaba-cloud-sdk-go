@@ -21,7 +21,6 @@ import (
 )
 
 // ListApmApplication invokes the emr.ListApmApplication API synchronously
-// api document: https://help.aliyun.com/api/emr/listapmapplication.html
 func (client *Client) ListApmApplication(request *ListApmApplicationRequest) (response *ListApmApplicationResponse, err error) {
 	response = CreateListApmApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListApmApplication(request *ListApmApplicationRequest) (re
 }
 
 // ListApmApplicationWithChan invokes the emr.ListApmApplication API asynchronously
-// api document: https://help.aliyun.com/api/emr/listapmapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListApmApplicationWithChan(request *ListApmApplicationRequest) (<-chan *ListApmApplicationResponse, <-chan error) {
 	responseChan := make(chan *ListApmApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListApmApplicationWithChan(request *ListApmApplicationRequ
 }
 
 // ListApmApplicationWithCallback invokes the emr.ListApmApplication API asynchronously
-// api document: https://help.aliyun.com/api/emr/listapmapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListApmApplicationWithCallback(request *ListApmApplicationRequest, callback func(response *ListApmApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -111,6 +106,7 @@ func CreateListApmApplicationRequest() (request *ListApmApplicationRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListApmApplication", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

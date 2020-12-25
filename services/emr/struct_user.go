@@ -24,6 +24,7 @@ type User struct {
 	UserId         string `json:"UserId" xml:"UserId"`
 	GmtModified    int64  `json:"GmtModified" xml:"GmtModified"`
 	ProjectId      string `json:"ProjectId" xml:"ProjectId"`
+	K8sStatus      string `json:"K8sStatus" xml:"K8sStatus"`
 	UserName       string `json:"UserName" xml:"UserName"`
 	GroupName      string `json:"GroupName" xml:"GroupName"`
 	KerberosStatus string `json:"KerberosStatus" xml:"KerberosStatus"`

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFlowProject invokes the emr.CreateFlowProject API synchronously
-// api document: https://help.aliyun.com/api/emr/createflowproject.html
 func (client *Client) CreateFlowProject(request *CreateFlowProjectRequest) (response *CreateFlowProjectResponse, err error) {
 	response = CreateCreateFlowProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFlowProject(request *CreateFlowProjectRequest) (resp
 }
 
 // CreateFlowProjectWithChan invokes the emr.CreateFlowProject API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflowproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowProjectWithChan(request *CreateFlowProjectRequest) (<-chan *CreateFlowProjectResponse, <-chan error) {
 	responseChan := make(chan *CreateFlowProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFlowProjectWithChan(request *CreateFlowProjectReques
 }
 
 // CreateFlowProjectWithCallback invokes the emr.CreateFlowProject API asynchronously
-// api document: https://help.aliyun.com/api/emr/createflowproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowProjectWithCallback(request *CreateFlowProjectRequest, callback func(response *CreateFlowProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,10 @@ func (client *Client) CreateFlowProjectWithCallback(request *CreateFlowProjectRe
 // CreateFlowProjectRequest is the request struct for api CreateFlowProject
 type CreateFlowProjectRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Query" name:"Description"`
-	Name        string `position:"Query" name:"Name"`
+	Description     string `position:"Query" name:"Description"`
+	ProductType     string `position:"Query" name:"ProductType"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Name            string `position:"Query" name:"Name"`
 }
 
 // CreateFlowProjectResponse is the response struct for api CreateFlowProject
@@ -93,6 +90,7 @@ func CreateCreateFlowProjectRequest() (request *CreateFlowProjectRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateFlowProject", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

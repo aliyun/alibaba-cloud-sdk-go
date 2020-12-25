@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyFlowJob invokes the emr.ModifyFlowJob API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowjob.html
 func (client *Client) ModifyFlowJob(request *ModifyFlowJobRequest) (response *ModifyFlowJobResponse, err error) {
 	response = CreateModifyFlowJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyFlowJob(request *ModifyFlowJobRequest) (response *Mo
 }
 
 // ModifyFlowJobWithChan invokes the emr.ModifyFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowJobWithChan(request *ModifyFlowJobRequest) (<-chan *ModifyFlowJobResponse, <-chan error) {
 	responseChan := make(chan *ModifyFlowJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyFlowJobWithChan(request *ModifyFlowJobRequest) (<-ch
 }
 
 // ModifyFlowJobWithCallback invokes the emr.ModifyFlowJob API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowJobWithCallback(request *ModifyFlowJobRequest, callback func(response *ModifyFlowJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) ModifyFlowJobWithCallback(request *ModifyFlowJobRequest, c
 // ModifyFlowJobRequest is the request struct for api ModifyFlowJob
 type ModifyFlowJobRequest struct {
 	*requests.RpcRequest
+	RetryPolicy       string                       `position:"Query" name:"RetryPolicy"`
 	RunConf           string                       `position:"Query" name:"RunConf"`
 	Description       string                       `position:"Query" name:"Description"`
 	ParamConf         string                       `position:"Query" name:"ParamConf"`
@@ -115,6 +111,7 @@ func CreateModifyFlowJobRequest() (request *ModifyFlowJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyFlowJob", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

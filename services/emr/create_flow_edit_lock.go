@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFlowEditLock invokes the emr.CreateFlowEditLock API synchronously
-// api document: https://help.aliyun.com/api/emr/createfloweditlock.html
 func (client *Client) CreateFlowEditLock(request *CreateFlowEditLockRequest) (response *CreateFlowEditLockResponse, err error) {
 	response = CreateCreateFlowEditLockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFlowEditLock(request *CreateFlowEditLockRequest) (re
 }
 
 // CreateFlowEditLockWithChan invokes the emr.CreateFlowEditLock API asynchronously
-// api document: https://help.aliyun.com/api/emr/createfloweditlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowEditLockWithChan(request *CreateFlowEditLockRequest) (<-chan *CreateFlowEditLockResponse, <-chan error) {
 	responseChan := make(chan *CreateFlowEditLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFlowEditLockWithChan(request *CreateFlowEditLockRequ
 }
 
 // CreateFlowEditLockWithCallback invokes the emr.CreateFlowEditLock API asynchronously
-// api document: https://help.aliyun.com/api/emr/createfloweditlock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowEditLockWithCallback(request *CreateFlowEditLockRequest, callback func(response *CreateFlowEditLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateCreateFlowEditLockRequest() (request *CreateFlowEditLockRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateFlowEditLock", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

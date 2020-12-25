@@ -21,7 +21,6 @@ import (
 )
 
 // ListEmrAvailableResource invokes the emr.ListEmrAvailableResource API synchronously
-// api document: https://help.aliyun.com/api/emr/listemravailableresource.html
 func (client *Client) ListEmrAvailableResource(request *ListEmrAvailableResourceRequest) (response *ListEmrAvailableResourceResponse, err error) {
 	response = CreateListEmrAvailableResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEmrAvailableResource(request *ListEmrAvailableResource
 }
 
 // ListEmrAvailableResourceWithChan invokes the emr.ListEmrAvailableResource API asynchronously
-// api document: https://help.aliyun.com/api/emr/listemravailableresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmrAvailableResourceWithChan(request *ListEmrAvailableResourceRequest) (<-chan *ListEmrAvailableResourceResponse, <-chan error) {
 	responseChan := make(chan *ListEmrAvailableResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEmrAvailableResourceWithChan(request *ListEmrAvailable
 }
 
 // ListEmrAvailableResourceWithCallback invokes the emr.ListEmrAvailableResource API asynchronously
-// api document: https://help.aliyun.com/api/emr/listemravailableresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmrAvailableResourceWithCallback(request *ListEmrAvailableResourceRequest, callback func(response *ListEmrAvailableResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type ListEmrAvailableResourceRequest struct {
 	ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DepositType         string           `position:"Query" name:"DepositType"`
 	SystemDiskType      string           `position:"Query" name:"SystemDiskType"`
+	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
 	InstanceType        string           `position:"Query" name:"InstanceType"`
 	InstanceChargeType  string           `position:"Query" name:"InstanceChargeType"`
 	ClusterId           string           `position:"Query" name:"ClusterId"`
@@ -104,6 +100,7 @@ func CreateListEmrAvailableResourceRequest() (request *ListEmrAvailableResourceR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListEmrAvailableResource", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

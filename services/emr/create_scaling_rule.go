@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScalingRule invokes the emr.CreateScalingRule API synchronously
-// api document: https://help.aliyun.com/api/emr/createscalingrule.html
 func (client *Client) CreateScalingRule(request *CreateScalingRuleRequest) (response *CreateScalingRuleResponse, err error) {
 	response = CreateCreateScalingRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScalingRule(request *CreateScalingRuleRequest) (resp
 }
 
 // CreateScalingRuleWithChan invokes the emr.CreateScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/emr/createscalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingRuleWithChan(request *CreateScalingRuleRequest) (<-chan *CreateScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateScalingRuleWithChan(request *CreateScalingRuleReques
 }
 
 // CreateScalingRuleWithCallback invokes the emr.CreateScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/emr/createscalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingRuleWithCallback(request *CreateScalingRuleRequest, callback func(response *CreateScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,8 +75,10 @@ type CreateScalingRuleRequest struct {
 	RuleName             string                                `position:"Query" name:"RuleName"`
 	RecurrenceEndTime    string                                `position:"Query" name:"RecurrenceEndTime"`
 	CloudWatchTrigger    *[]CreateScalingRuleCloudWatchTrigger `position:"Query" name:"CloudWatchTrigger"  type:"Repeated"`
+	TimeoutWithGrace     requests.Integer                      `position:"Query" name:"TimeoutWithGrace"`
 	Cooldown             requests.Integer                      `position:"Query" name:"Cooldown"`
 	LaunchTime           string                                `position:"Query" name:"LaunchTime"`
+	WithGrace            requests.Boolean                      `position:"Query" name:"WithGrace"`
 	RuleCategory         string                                `position:"Query" name:"RuleCategory"`
 	AdjustmentValue      requests.Integer                      `position:"Query" name:"AdjustmentValue"`
 	AdjustmentType       string                                `position:"Query" name:"AdjustmentType"`
@@ -125,6 +122,7 @@ func CreateCreateScalingRuleRequest() (request *CreateScalingRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "CreateScalingRule", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

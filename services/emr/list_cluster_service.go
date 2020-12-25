@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterService invokes the emr.ListClusterService API synchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservice.html
 func (client *Client) ListClusterService(request *ListClusterServiceRequest) (response *ListClusterServiceResponse, err error) {
 	response = CreateListClusterServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterService(request *ListClusterServiceRequest) (re
 }
 
 // ListClusterServiceWithChan invokes the emr.ListClusterService API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterServiceWithChan(request *ListClusterServiceRequest) (<-chan *ListClusterServiceResponse, <-chan error) {
 	responseChan := make(chan *ListClusterServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterServiceWithChan(request *ListClusterServiceRequ
 }
 
 // ListClusterServiceWithCallback invokes the emr.ListClusterService API asynchronously
-// api document: https://help.aliyun.com/api/emr/listclusterservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterServiceWithCallback(request *ListClusterServiceRequest, callback func(response *ListClusterServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateListClusterServiceRequest() (request *ListClusterServiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListClusterService", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

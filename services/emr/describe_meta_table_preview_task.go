@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMetaTablePreviewTask invokes the emr.DescribeMetaTablePreviewTask API synchronously
-// api document: https://help.aliyun.com/api/emr/describemetatablepreviewtask.html
 func (client *Client) DescribeMetaTablePreviewTask(request *DescribeMetaTablePreviewTaskRequest) (response *DescribeMetaTablePreviewTaskResponse, err error) {
 	response = CreateDescribeMetaTablePreviewTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMetaTablePreviewTask(request *DescribeMetaTablePre
 }
 
 // DescribeMetaTablePreviewTaskWithChan invokes the emr.DescribeMetaTablePreviewTask API asynchronously
-// api document: https://help.aliyun.com/api/emr/describemetatablepreviewtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetaTablePreviewTaskWithChan(request *DescribeMetaTablePreviewTaskRequest) (<-chan *DescribeMetaTablePreviewTaskResponse, <-chan error) {
 	responseChan := make(chan *DescribeMetaTablePreviewTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMetaTablePreviewTaskWithChan(request *DescribeMeta
 }
 
 // DescribeMetaTablePreviewTaskWithCallback invokes the emr.DescribeMetaTablePreviewTask API asynchronously
-// api document: https://help.aliyun.com/api/emr/describemetatablepreviewtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetaTablePreviewTaskWithCallback(request *DescribeMetaTablePreviewTaskRequest, callback func(response *DescribeMetaTablePreviewTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DescribeMetaTablePreviewTaskWithCallback(request *Describe
 type DescribeMetaTablePreviewTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	TaskId          string           `position:"Query" name:"TaskId"`
 }
 
@@ -99,6 +95,7 @@ func CreateDescribeMetaTablePreviewTaskRequest() (request *DescribeMetaTablePrev
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeMetaTablePreviewTask", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

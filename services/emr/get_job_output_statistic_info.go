@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobOutputStatisticInfo invokes the emr.GetJobOutputStatisticInfo API synchronously
-// api document: https://help.aliyun.com/api/emr/getjoboutputstatisticinfo.html
 func (client *Client) GetJobOutputStatisticInfo(request *GetJobOutputStatisticInfoRequest) (response *GetJobOutputStatisticInfoResponse, err error) {
 	response = CreateGetJobOutputStatisticInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobOutputStatisticInfo(request *GetJobOutputStatisticIn
 }
 
 // GetJobOutputStatisticInfoWithChan invokes the emr.GetJobOutputStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getjoboutputstatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobOutputStatisticInfoWithChan(request *GetJobOutputStatisticInfoRequest) (<-chan *GetJobOutputStatisticInfoResponse, <-chan error) {
 	responseChan := make(chan *GetJobOutputStatisticInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobOutputStatisticInfoWithChan(request *GetJobOutputSta
 }
 
 // GetJobOutputStatisticInfoWithCallback invokes the emr.GetJobOutputStatisticInfo API asynchronously
-// api document: https://help.aliyun.com/api/emr/getjoboutputstatisticinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobOutputStatisticInfoWithCallback(request *GetJobOutputStatisticInfoRequest, callback func(response *GetJobOutputStatisticInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateGetJobOutputStatisticInfoRequest() (request *GetJobOutputStatisticInf
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "GetJobOutputStatisticInfo", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

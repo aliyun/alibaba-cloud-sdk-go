@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScalingRule invokes the emr.DeleteScalingRule API synchronously
-// api document: https://help.aliyun.com/api/emr/deletescalingrule.html
 func (client *Client) DeleteScalingRule(request *DeleteScalingRuleRequest) (response *DeleteScalingRuleResponse, err error) {
 	response = CreateDeleteScalingRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScalingRule(request *DeleteScalingRuleRequest) (resp
 }
 
 // DeleteScalingRuleWithChan invokes the emr.DeleteScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/emr/deletescalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingRuleWithChan(request *DeleteScalingRuleRequest) (<-chan *DeleteScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScalingRuleWithChan(request *DeleteScalingRuleReques
 }
 
 // DeleteScalingRuleWithCallback invokes the emr.DeleteScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/emr/deletescalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingRuleWithCallback(request *DeleteScalingRuleRequest, callback func(response *DeleteScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDeleteScalingRuleRequest() (request *DeleteScalingRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DeleteScalingRule", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

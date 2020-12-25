@@ -21,7 +21,6 @@ import (
 )
 
 // ListNotes invokes the emr.ListNotes API synchronously
-// api document: https://help.aliyun.com/api/emr/listnotes.html
 func (client *Client) ListNotes(request *ListNotesRequest) (response *ListNotesResponse, err error) {
 	response = CreateListNotesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListNotes(request *ListNotesRequest) (response *ListNotesR
 }
 
 // ListNotesWithChan invokes the emr.ListNotes API asynchronously
-// api document: https://help.aliyun.com/api/emr/listnotes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNotesWithChan(request *ListNotesRequest) (<-chan *ListNotesResponse, <-chan error) {
 	responseChan := make(chan *ListNotesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListNotesWithChan(request *ListNotesRequest) (<-chan *List
 }
 
 // ListNotesWithCallback invokes the emr.ListNotes API asynchronously
-// api document: https://help.aliyun.com/api/emr/listnotes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNotesWithCallback(request *ListNotesRequest, callback func(response *ListNotesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) ListNotesWithCallback(request *ListNotesRequest, callback 
 type ListNotesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // ListNotesResponse is the response struct for api ListNotes
@@ -92,6 +88,7 @@ func CreateListNotesRequest() (request *ListNotesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListNotes", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

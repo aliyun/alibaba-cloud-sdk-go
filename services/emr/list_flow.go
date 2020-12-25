@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlow invokes the emr.ListFlow API synchronously
-// api document: https://help.aliyun.com/api/emr/listflow.html
 func (client *Client) ListFlow(request *ListFlowRequest) (response *ListFlowResponse, err error) {
 	response = CreateListFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlow(request *ListFlowRequest) (response *ListFlowResp
 }
 
 // ListFlowWithChan invokes the emr.ListFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowWithChan(request *ListFlowRequest) (<-chan *ListFlowResponse, <-chan error) {
 	responseChan := make(chan *ListFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowWithChan(request *ListFlowRequest) (<-chan *ListFl
 }
 
 // ListFlowWithCallback invokes the emr.ListFlow API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowWithCallback(request *ListFlowRequest, callback func(response *ListFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateListFlowRequest() (request *ListFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlow", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

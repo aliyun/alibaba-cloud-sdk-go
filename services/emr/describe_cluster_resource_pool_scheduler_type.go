@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterResourcePoolSchedulerType invokes the emr.DescribeClusterResourcePoolSchedulerType API synchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterresourcepoolschedulertype.html
 func (client *Client) DescribeClusterResourcePoolSchedulerType(request *DescribeClusterResourcePoolSchedulerTypeRequest) (response *DescribeClusterResourcePoolSchedulerTypeResponse, err error) {
 	response = CreateDescribeClusterResourcePoolSchedulerTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterResourcePoolSchedulerType(request *Describe
 }
 
 // DescribeClusterResourcePoolSchedulerTypeWithChan invokes the emr.DescribeClusterResourcePoolSchedulerType API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterresourcepoolschedulertype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterResourcePoolSchedulerTypeWithChan(request *DescribeClusterResourcePoolSchedulerTypeRequest) (<-chan *DescribeClusterResourcePoolSchedulerTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterResourcePoolSchedulerTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterResourcePoolSchedulerTypeWithChan(request *
 }
 
 // DescribeClusterResourcePoolSchedulerTypeWithCallback invokes the emr.DescribeClusterResourcePoolSchedulerType API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterresourcepoolschedulertype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterResourcePoolSchedulerTypeWithCallback(request *DescribeClusterResourcePoolSchedulerTypeRequest, callback func(response *DescribeClusterResourcePoolSchedulerTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeClusterResourcePoolSchedulerTypeRequest() (request *DescribeC
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeClusterResourcePoolSchedulerType", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

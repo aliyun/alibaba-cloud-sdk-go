@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyClusterMetaCollect invokes the emr.ModifyClusterMetaCollect API synchronously
-// api document: https://help.aliyun.com/api/emr/modifyclustermetacollect.html
 func (client *Client) ModifyClusterMetaCollect(request *ModifyClusterMetaCollectRequest) (response *ModifyClusterMetaCollectResponse, err error) {
 	response = CreateModifyClusterMetaCollectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyClusterMetaCollect(request *ModifyClusterMetaCollect
 }
 
 // ModifyClusterMetaCollectWithChan invokes the emr.ModifyClusterMetaCollect API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyclustermetacollect.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterMetaCollectWithChan(request *ModifyClusterMetaCollectRequest) (<-chan *ModifyClusterMetaCollectResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterMetaCollectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClusterMetaCollectWithChan(request *ModifyClusterMet
 }
 
 // ModifyClusterMetaCollectWithCallback invokes the emr.ModifyClusterMetaCollect API asynchronously
-// api document: https://help.aliyun.com/api/emr/modifyclustermetacollect.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterMetaCollectWithCallback(request *ModifyClusterMetaCollectRequest, callback func(response *ModifyClusterMetaCollectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateModifyClusterMetaCollectRequest() (request *ModifyClusterMetaCollectR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ModifyClusterMetaCollect", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

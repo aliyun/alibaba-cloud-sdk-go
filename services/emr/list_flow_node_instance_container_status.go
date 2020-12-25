@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowNodeInstanceContainerStatus invokes the emr.ListFlowNodeInstanceContainerStatus API synchronously
-// api document: https://help.aliyun.com/api/emr/listflownodeinstancecontainerstatus.html
 func (client *Client) ListFlowNodeInstanceContainerStatus(request *ListFlowNodeInstanceContainerStatusRequest) (response *ListFlowNodeInstanceContainerStatusResponse, err error) {
 	response = CreateListFlowNodeInstanceContainerStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowNodeInstanceContainerStatus(request *ListFlowNodeI
 }
 
 // ListFlowNodeInstanceContainerStatusWithChan invokes the emr.ListFlowNodeInstanceContainerStatus API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflownodeinstancecontainerstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowNodeInstanceContainerStatusWithChan(request *ListFlowNodeInstanceContainerStatusRequest) (<-chan *ListFlowNodeInstanceContainerStatusResponse, <-chan error) {
 	responseChan := make(chan *ListFlowNodeInstanceContainerStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowNodeInstanceContainerStatusWithChan(request *ListF
 }
 
 // ListFlowNodeInstanceContainerStatusWithCallback invokes the emr.ListFlowNodeInstanceContainerStatus API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflownodeinstancecontainerstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowNodeInstanceContainerStatusWithCallback(request *ListFlowNodeInstanceContainerStatusRequest, callback func(response *ListFlowNodeInstanceContainerStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateListFlowNodeInstanceContainerStatusRequest() (request *ListFlowNodeIn
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

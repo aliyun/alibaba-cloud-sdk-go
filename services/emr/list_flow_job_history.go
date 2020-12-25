@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowJobHistory invokes the emr.ListFlowJobHistory API synchronously
-// api document: https://help.aliyun.com/api/emr/listflowjobhistory.html
 func (client *Client) ListFlowJobHistory(request *ListFlowJobHistoryRequest) (response *ListFlowJobHistoryResponse, err error) {
 	response = CreateListFlowJobHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowJobHistory(request *ListFlowJobHistoryRequest) (re
 }
 
 // ListFlowJobHistoryWithChan invokes the emr.ListFlowJobHistory API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowjobhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowJobHistoryWithChan(request *ListFlowJobHistoryRequest) (<-chan *ListFlowJobHistoryResponse, <-chan error) {
 	responseChan := make(chan *ListFlowJobHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowJobHistoryWithChan(request *ListFlowJobHistoryRequ
 }
 
 // ListFlowJobHistoryWithCallback invokes the emr.ListFlowJobHistory API asynchronously
-// api document: https://help.aliyun.com/api/emr/listflowjobhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowJobHistoryWithCallback(request *ListFlowJobHistoryRequest, callback func(response *ListFlowJobHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateListFlowJobHistoryRequest() (request *ListFlowJobHistoryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "ListFlowJobHistory", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -25,5 +25,6 @@ type HealthInfo struct {
 	NormalNum             int              `json:"NormalNum" xml:"NormalNum"`
 	TotalNum              int              `json:"TotalNum" xml:"TotalNum"`
 	AgentHeartBeatLostNum int              `json:"AgentHeartBeatLostNum" xml:"AgentHeartBeatLostNum"`
+	CreatedTime           int64            `json:"CreatedTime" xml:"CreatedTime"`
 	HealthDetailList      HealthDetailList `json:"HealthDetailList" xml:"HealthDetailList"`
 }

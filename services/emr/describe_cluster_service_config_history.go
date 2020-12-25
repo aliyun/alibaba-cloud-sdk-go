@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterServiceConfigHistory invokes the emr.DescribeClusterServiceConfigHistory API synchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterserviceconfighistory.html
 func (client *Client) DescribeClusterServiceConfigHistory(request *DescribeClusterServiceConfigHistoryRequest) (response *DescribeClusterServiceConfigHistoryResponse, err error) {
 	response = CreateDescribeClusterServiceConfigHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterServiceConfigHistory(request *DescribeClust
 }
 
 // DescribeClusterServiceConfigHistoryWithChan invokes the emr.DescribeClusterServiceConfigHistory API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterserviceconfighistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterServiceConfigHistoryWithChan(request *DescribeClusterServiceConfigHistoryRequest) (<-chan *DescribeClusterServiceConfigHistoryResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterServiceConfigHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterServiceConfigHistoryWithChan(request *Descr
 }
 
 // DescribeClusterServiceConfigHistoryWithCallback invokes the emr.DescribeClusterServiceConfigHistory API asynchronously
-// api document: https://help.aliyun.com/api/emr/describeclusterserviceconfighistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterServiceConfigHistoryWithCallback(request *DescribeClusterServiceConfigHistoryRequest, callback func(response *DescribeClusterServiceConfigHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeClusterServiceConfigHistoryRequest() (request *DescribeCluste
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Emr", "2016-04-08", "DescribeClusterServiceConfigHistory", "emr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
