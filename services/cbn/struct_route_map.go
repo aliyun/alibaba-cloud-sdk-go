@@ -34,6 +34,7 @@ type RouteMap struct {
 	SourceInstanceIdsReverseMatch      bool                          `json:"SourceInstanceIdsReverseMatch" xml:"SourceInstanceIdsReverseMatch"`
 	DestinationInstanceIdsReverseMatch bool                          `json:"DestinationInstanceIdsReverseMatch" xml:"DestinationInstanceIdsReverseMatch"`
 	GatewayZoneId                      string                        `json:"GatewayZoneId" xml:"GatewayZoneId"`
+	MatchAddressType                   string                        `json:"MatchAddressType" xml:"MatchAddressType"`
 	SourceInstanceIds                  SourceInstanceIds             `json:"SourceInstanceIds" xml:"SourceInstanceIds"`
 	DestinationInstanceIds             DestinationInstanceIds        `json:"DestinationInstanceIds" xml:"DestinationInstanceIds"`
 	SourceRouteTableIds                SourceRouteTableIds           `json:"SourceRouteTableIds" xml:"SourceRouteTableIds"`

@@ -92,6 +92,7 @@ type CreateCenRouteMapRequest struct {
 	CommunityOperateMode               string           `position:"Query" name:"CommunityOperateMode"`
 	OperateCommunitySet                *[]string        `position:"Query" name:"OperateCommunitySet"  type:"Repeated"`
 	RouteTypes                         *[]string        `position:"Query" name:"RouteTypes"  type:"Repeated"`
+	MatchAddressType                   string           `position:"Query" name:"MatchAddressType"`
 	CidrMatchMode                      string           `position:"Query" name:"CidrMatchMode"`
 	CenId                              string           `position:"Query" name:"CenId"`
 	Description                        string           `position:"Query" name:"Description"`
