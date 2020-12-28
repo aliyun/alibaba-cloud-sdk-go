@@ -72,6 +72,8 @@ func (client *Client) ListMetaDBWithCallback(request *ListMetaDBRequest, callbac
 type ListMetaDBRequest struct {
 	*requests.RpcRequest
 	DataSourceType string           `position:"Query" name:"DataSourceType"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	ProjectId      requests.Integer `position:"Query" name:"ProjectId"`
 }
 

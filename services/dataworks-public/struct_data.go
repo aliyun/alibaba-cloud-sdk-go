@@ -162,13 +162,13 @@ type Data struct {
 	BlockInstance       BlockInstance         `json:"BlockInstance" xml:"BlockInstance"`
 	LastInstance        LastInstance          `json:"LastInstance" xml:"LastInstance"`
 	DataEntityList      []DataEntityListItem  `json:"DataEntityList" xml:"DataEntityList"`
+	ColumnList          []ColumnListItem      `json:"ColumnList" xml:"ColumnList"`
 	Influences          []InfluencesItem      `json:"Influences" xml:"Influences"`
 	Baselines           []BaselinesItem       `json:"Baselines" xml:"Baselines"`
 	ThemeList           []ThemeListItem       `json:"ThemeList" xml:"ThemeList"`
 	RuleChecks          []RuleChecksItem      `json:"RuleChecks" xml:"RuleChecks"`
 	TableEntityList     []TableEntityListItem `json:"TableEntityList" xml:"TableEntityList"`
 	Rules               []RulesItem           `json:"Rules" xml:"Rules"`
-	ColumnList          []ColumnListItem      `json:"ColumnList" xml:"ColumnList"`
 	Robots              []RobotsItem          `json:"Robots" xml:"Robots"`
 	BizProcesses        []BizProcessesItem    `json:"BizProcesses" xml:"BizProcesses"`
 	Projects            []ProjectsItem        `json:"Projects" xml:"Projects"`
