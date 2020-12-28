@@ -21,7 +21,6 @@ import (
 )
 
 // RunPreTrainService invokes the nlp_automl.RunPreTrainService API synchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runpretrainservice.html
 func (client *Client) RunPreTrainService(request *RunPreTrainServiceRequest) (response *RunPreTrainServiceResponse, err error) {
 	response = CreateRunPreTrainServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RunPreTrainService(request *RunPreTrainServiceRequest) (re
 }
 
 // RunPreTrainServiceWithChan invokes the nlp_automl.RunPreTrainService API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runpretrainservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunPreTrainServiceWithChan(request *RunPreTrainServiceRequest) (<-chan *RunPreTrainServiceResponse, <-chan error) {
 	responseChan := make(chan *RunPreTrainServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RunPreTrainServiceWithChan(request *RunPreTrainServiceRequ
 }
 
 // RunPreTrainServiceWithCallback invokes the nlp_automl.RunPreTrainService API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runpretrainservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunPreTrainServiceWithCallback(request *RunPreTrainServiceRequest, callback func(response *RunPreTrainServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) RunPreTrainServiceWithCallback(request *RunPreTrainService
 // RunPreTrainServiceRequest is the request struct for api RunPreTrainService
 type RunPreTrainServiceRequest struct {
 	*requests.RpcRequest
+	Product        string `position:"Body" name:"Product"`
 	PredictContent string `position:"Body" name:"PredictContent"`
 	ServiceVersion string `position:"Body" name:"ServiceVersion"`
 	ServiceName    string `position:"Body" name:"ServiceName"`
@@ -94,6 +90,7 @@ func CreateRunPreTrainServiceRequest() (request *RunPreTrainServiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("nlp-automl", "2019-11-11", "RunPreTrainService", "nlpautoml", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

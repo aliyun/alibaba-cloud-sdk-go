@@ -21,7 +21,6 @@ import (
 )
 
 // GetAsyncPredict invokes the nlp_automl.GetAsyncPredict API synchronously
-// api document: https://help.aliyun.com/api/nlp-automl/getasyncpredict.html
 func (client *Client) GetAsyncPredict(request *GetAsyncPredictRequest) (response *GetAsyncPredictResponse, err error) {
 	response = CreateGetAsyncPredictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAsyncPredict(request *GetAsyncPredictRequest) (response
 }
 
 // GetAsyncPredictWithChan invokes the nlp_automl.GetAsyncPredict API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/getasyncpredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAsyncPredictWithChan(request *GetAsyncPredictRequest) (<-chan *GetAsyncPredictResponse, <-chan error) {
 	responseChan := make(chan *GetAsyncPredictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAsyncPredictWithChan(request *GetAsyncPredictRequest) (
 }
 
 // GetAsyncPredictWithCallback invokes the nlp_automl.GetAsyncPredict API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/getasyncpredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAsyncPredictWithCallback(request *GetAsyncPredictRequest, callback func(response *GetAsyncPredictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) GetAsyncPredictWithCallback(request *GetAsyncPredictReques
 // GetAsyncPredictRequest is the request struct for api GetAsyncPredict
 type GetAsyncPredictRequest struct {
 	*requests.RpcRequest
+	Product        string           `position:"Query" name:"Product"`
 	AsyncPredictId requests.Integer `position:"Query" name:"AsyncPredictId"`
 }
 
@@ -94,6 +90,7 @@ func CreateGetAsyncPredictRequest() (request *GetAsyncPredictRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("nlp-automl", "2019-11-11", "GetAsyncPredict", "nlpautoml", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

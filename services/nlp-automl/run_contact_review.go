@@ -21,7 +21,6 @@ import (
 )
 
 // RunContactReview invokes the nlp_automl.RunContactReview API synchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runcontactreview.html
 func (client *Client) RunContactReview(request *RunContactReviewRequest) (response *RunContactReviewResponse, err error) {
 	response = CreateRunContactReviewResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RunContactReview(request *RunContactReviewRequest) (respon
 }
 
 // RunContactReviewWithChan invokes the nlp_automl.RunContactReview API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runcontactreview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunContactReviewWithChan(request *RunContactReviewRequest) (<-chan *RunContactReviewResponse, <-chan error) {
 	responseChan := make(chan *RunContactReviewResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RunContactReviewWithChan(request *RunContactReviewRequest)
 }
 
 // RunContactReviewWithCallback invokes the nlp_automl.RunContactReview API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runcontactreview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunContactReviewWithCallback(request *RunContactReviewRequest, callback func(response *RunContactReviewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) RunContactReviewWithCallback(request *RunContactReviewRequ
 // RunContactReviewRequest is the request struct for api RunContactReview
 type RunContactReviewRequest struct {
 	*requests.RpcRequest
+	Product      string `position:"Body" name:"Product"`
 	ContactScene string `position:"Body" name:"ContactScene"`
 	ContactPath  string `position:"Body" name:"ContactPath"`
 }
@@ -94,6 +90,7 @@ func CreateRunContactReviewRequest() (request *RunContactReviewRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

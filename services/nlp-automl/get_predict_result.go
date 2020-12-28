@@ -21,7 +21,6 @@ import (
 )
 
 // GetPredictResult invokes the nlp_automl.GetPredictResult API synchronously
-// api document: https://help.aliyun.com/api/nlp-automl/getpredictresult.html
 func (client *Client) GetPredictResult(request *GetPredictResultRequest) (response *GetPredictResultResponse, err error) {
 	response = CreateGetPredictResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPredictResult(request *GetPredictResultRequest) (respon
 }
 
 // GetPredictResultWithChan invokes the nlp_automl.GetPredictResult API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/getpredictresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPredictResultWithChan(request *GetPredictResultRequest) (<-chan *GetPredictResultResponse, <-chan error) {
 	responseChan := make(chan *GetPredictResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPredictResultWithChan(request *GetPredictResultRequest)
 }
 
 // GetPredictResultWithCallback invokes the nlp_automl.GetPredictResult API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/getpredictresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPredictResultWithCallback(request *GetPredictResultRequest, callback func(response *GetPredictResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) GetPredictResultWithCallback(request *GetPredictResultRequ
 type GetPredictResultRequest struct {
 	*requests.RpcRequest
 	TopK         requests.Integer `position:"Body" name:"TopK"`
+	Product      string           `position:"Body" name:"Product"`
 	ModelId      requests.Integer `position:"Body" name:"ModelId"`
 	DetailTag    string           `position:"Body" name:"DetailTag"`
 	Content      string           `position:"Body" name:"Content"`
@@ -96,6 +92,7 @@ func CreateGetPredictResultRequest() (request *GetPredictResultRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("nlp-automl", "2019-11-11", "GetPredictResult", "nlpautoml", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

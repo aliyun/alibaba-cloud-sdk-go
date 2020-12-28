@@ -21,7 +21,6 @@ import (
 )
 
 // RunSmartCallService invokes the nlp_automl.RunSmartCallService API synchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runsmartcallservice.html
 func (client *Client) RunSmartCallService(request *RunSmartCallServiceRequest) (response *RunSmartCallServiceResponse, err error) {
 	response = CreateRunSmartCallServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RunSmartCallService(request *RunSmartCallServiceRequest) (
 }
 
 // RunSmartCallServiceWithChan invokes the nlp_automl.RunSmartCallService API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runsmartcallservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunSmartCallServiceWithChan(request *RunSmartCallServiceRequest) (<-chan *RunSmartCallServiceResponse, <-chan error) {
 	responseChan := make(chan *RunSmartCallServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RunSmartCallServiceWithChan(request *RunSmartCallServiceRe
 }
 
 // RunSmartCallServiceWithCallback invokes the nlp_automl.RunSmartCallService API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/runsmartcallservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunSmartCallServiceWithCallback(request *RunSmartCallServiceRequest, callback func(response *RunSmartCallServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) RunSmartCallServiceWithCallback(request *RunSmartCallServi
 // RunSmartCallServiceRequest is the request struct for api RunSmartCallService
 type RunSmartCallServiceRequest struct {
 	*requests.RpcRequest
+	Product      string           `position:"Body" name:"Product"`
 	SessionId    string           `position:"Body" name:"SessionId"`
 	RobotId      requests.Integer `position:"Body" name:"RobotId"`
 	ParamContent string           `position:"Body" name:"ParamContent"`
@@ -97,6 +93,7 @@ func CreateRunSmartCallServiceRequest() (request *RunSmartCallServiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("nlp-automl", "2019-11-11", "RunSmartCallService", "nlpautoml", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAsyncPredict invokes the nlp_automl.CreateAsyncPredict API synchronously
-// api document: https://help.aliyun.com/api/nlp-automl/createasyncpredict.html
 func (client *Client) CreateAsyncPredict(request *CreateAsyncPredictRequest) (response *CreateAsyncPredictResponse, err error) {
 	response = CreateCreateAsyncPredictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAsyncPredict(request *CreateAsyncPredictRequest) (re
 }
 
 // CreateAsyncPredictWithChan invokes the nlp_automl.CreateAsyncPredict API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/createasyncpredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAsyncPredictWithChan(request *CreateAsyncPredictRequest) (<-chan *CreateAsyncPredictResponse, <-chan error) {
 	responseChan := make(chan *CreateAsyncPredictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAsyncPredictWithChan(request *CreateAsyncPredictRequ
 }
 
 // CreateAsyncPredictWithCallback invokes the nlp_automl.CreateAsyncPredict API asynchronously
-// api document: https://help.aliyun.com/api/nlp-automl/createasyncpredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAsyncPredictWithCallback(request *CreateAsyncPredictRequest, callback func(response *CreateAsyncPredictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,8 +74,10 @@ type CreateAsyncPredictRequest struct {
 	TopK         requests.Integer `position:"Body" name:"TopK"`
 	FileType     string           `position:"Body" name:"FileType"`
 	DetailTag    string           `position:"Body" name:"DetailTag"`
+	FetchContent string           `position:"Body" name:"FetchContent"`
 	Content      string           `position:"Body" name:"Content"`
 	FileContent  string           `position:"Body" name:"FileContent"`
+	Product      string           `position:"Body" name:"Product"`
 	ModelId      requests.Integer `position:"Body" name:"ModelId"`
 	FileUrl      string           `position:"Body" name:"FileUrl"`
 	ModelVersion string           `position:"Body" name:"ModelVersion"`
@@ -99,6 +96,7 @@ func CreateCreateAsyncPredictRequest() (request *CreateAsyncPredictRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("nlp-automl", "2019-11-11", "CreateAsyncPredict", "nlpautoml", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
