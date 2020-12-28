@@ -19,6 +19,9 @@ package facebody
 type Data struct {
 	Confidence           float64                                   `json:"Confidence" xml:"Confidence"`
 	Age                  string                                    `json:"Age" xml:"Age"`
+	VerificationToken    string                                    `json:"VerificationToken" xml:"VerificationToken"`
+	Pass                 bool                                      `json:"Pass" xml:"Pass"`
+	MaterialMatch        string                                    `json:"MaterialMatch" xml:"MaterialMatch"`
 	HairScore            float64                                   `json:"HairScore" xml:"HairScore"`
 	TotalCount           int                                       `json:"TotalCount" xml:"TotalCount"`
 	ImageURL             string                                    `json:"ImageURL" xml:"ImageURL"`
@@ -47,6 +50,7 @@ type Data struct {
 	AgeScore             float64                                   `json:"AgeScore" xml:"AgeScore"`
 	LowerColor           string                                    `json:"LowerColor" xml:"LowerColor"`
 	LowerColorScore      float64                                   `json:"LowerColorScore" xml:"LowerColorScore"`
+	IdentityInfo         string                                    `json:"IdentityInfo" xml:"IdentityInfo"`
 	QualityScore         float64                                   `json:"QualityScore" xml:"QualityScore"`
 	FaceId               string                                    `json:"FaceId" xml:"FaceId"`
 	UpperType            string                                    `json:"UpperType" xml:"UpperType"`

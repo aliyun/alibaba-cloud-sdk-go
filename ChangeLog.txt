@@ -1,3 +1,7 @@
+2020-12-28 Version: v1.61.809
+- Generated 2019-12-30 for `facebody`.
+- Release GenRealPersonVerificationToken GetRealPersonVerificationResult.
+
 2020-12-28 Version: v1.61.808
 - Generated 2017-12-14 for `BssOpenApi`.
 - Add CommodityCode For QueryOrderAPI.
