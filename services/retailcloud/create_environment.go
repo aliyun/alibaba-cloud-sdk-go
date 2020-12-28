@@ -21,7 +21,6 @@ import (
 )
 
 // CreateEnvironment invokes the retailcloud.CreateEnvironment API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createenvironment.html
 func (client *Client) CreateEnvironment(request *CreateEnvironmentRequest) (response *CreateEnvironmentResponse, err error) {
 	response = CreateCreateEnvironmentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateEnvironment(request *CreateEnvironmentRequest) (resp
 }
 
 // CreateEnvironmentWithChan invokes the retailcloud.CreateEnvironment API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createenvironment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEnvironmentWithChan(request *CreateEnvironmentRequest) (<-chan *CreateEnvironmentResponse, <-chan error) {
 	responseChan := make(chan *CreateEnvironmentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateEnvironmentWithChan(request *CreateEnvironmentReques
 }
 
 // CreateEnvironmentWithCallback invokes the retailcloud.CreateEnvironment API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createenvironment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEnvironmentWithCallback(request *CreateEnvironmentRequest, callback func(response *CreateEnvironmentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateCreateEnvironmentRequest() (request *CreateEnvironmentRequest) {
 	request = &CreateEnvironmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateEnvironment", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateEnvironment", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

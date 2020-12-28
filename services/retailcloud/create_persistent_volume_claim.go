@@ -21,7 +21,6 @@ import (
 )
 
 // CreatePersistentVolumeClaim invokes the retailcloud.CreatePersistentVolumeClaim API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createpersistentvolumeclaim.html
 func (client *Client) CreatePersistentVolumeClaim(request *CreatePersistentVolumeClaimRequest) (response *CreatePersistentVolumeClaimResponse, err error) {
 	response = CreateCreatePersistentVolumeClaimResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreatePersistentVolumeClaim(request *CreatePersistentVolum
 }
 
 // CreatePersistentVolumeClaimWithChan invokes the retailcloud.CreatePersistentVolumeClaim API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createpersistentvolumeclaim.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePersistentVolumeClaimWithChan(request *CreatePersistentVolumeClaimRequest) (<-chan *CreatePersistentVolumeClaimResponse, <-chan error) {
 	responseChan := make(chan *CreatePersistentVolumeClaimResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreatePersistentVolumeClaimWithChan(request *CreatePersist
 }
 
 // CreatePersistentVolumeClaimWithCallback invokes the retailcloud.CreatePersistentVolumeClaim API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createpersistentvolumeclaim.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePersistentVolumeClaimWithCallback(request *CreatePersistentVolumeClaimRequest, callback func(response *CreatePersistentVolumeClaimResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateCreatePersistentVolumeClaimRequest() (request *CreatePersistentVolume
 	request = &CreatePersistentVolumeClaimRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreatePersistentVolumeClaim", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreatePersistentVolumeClaim", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

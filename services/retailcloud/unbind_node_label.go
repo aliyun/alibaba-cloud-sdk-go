@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindNodeLabel invokes the retailcloud.UnbindNodeLabel API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/unbindnodelabel.html
 func (client *Client) UnbindNodeLabel(request *UnbindNodeLabelRequest) (response *UnbindNodeLabelResponse, err error) {
 	response = CreateUnbindNodeLabelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindNodeLabel(request *UnbindNodeLabelRequest) (response
 }
 
 // UnbindNodeLabelWithChan invokes the retailcloud.UnbindNodeLabel API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/unbindnodelabel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindNodeLabelWithChan(request *UnbindNodeLabelRequest) (<-chan *UnbindNodeLabelResponse, <-chan error) {
 	responseChan := make(chan *UnbindNodeLabelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindNodeLabelWithChan(request *UnbindNodeLabelRequest) (
 }
 
 // UnbindNodeLabelWithCallback invokes the retailcloud.UnbindNodeLabel API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/unbindnodelabel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindNodeLabelWithCallback(request *UnbindNodeLabelRequest, callback func(response *UnbindNodeLabelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateUnbindNodeLabelRequest() (request *UnbindNodeLabelRequest) {
 	request = &UnbindNodeLabelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UnbindNodeLabel", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UnbindNodeLabel", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDatabases invokes the retailcloud.DescribeDatabases API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describedatabases.html
 func (client *Client) DescribeDatabases(request *DescribeDatabasesRequest) (response *DescribeDatabasesResponse, err error) {
 	response = CreateDescribeDatabasesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDatabases(request *DescribeDatabasesRequest) (resp
 }
 
 // DescribeDatabasesWithChan invokes the retailcloud.DescribeDatabases API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describedatabases.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDatabasesWithChan(request *DescribeDatabasesRequest) (<-chan *DescribeDatabasesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDatabasesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDatabasesWithChan(request *DescribeDatabasesReques
 }
 
 // DescribeDatabasesWithCallback invokes the retailcloud.DescribeDatabases API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describedatabases.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDatabasesWithCallback(request *DescribeDatabasesRequest, callback func(response *DescribeDatabasesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	request = &DescribeDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeDatabases", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeDatabases", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

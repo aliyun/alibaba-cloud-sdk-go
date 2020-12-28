@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateEnvironment invokes the retailcloud.UpdateEnvironment API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/updateenvironment.html
 func (client *Client) UpdateEnvironment(request *UpdateEnvironmentRequest) (response *UpdateEnvironmentResponse, err error) {
 	response = CreateUpdateEnvironmentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateEnvironment(request *UpdateEnvironmentRequest) (resp
 }
 
 // UpdateEnvironmentWithChan invokes the retailcloud.UpdateEnvironment API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/updateenvironment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateEnvironmentWithChan(request *UpdateEnvironmentRequest) (<-chan *UpdateEnvironmentResponse, <-chan error) {
 	responseChan := make(chan *UpdateEnvironmentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateEnvironmentWithChan(request *UpdateEnvironmentReques
 }
 
 // UpdateEnvironmentWithCallback invokes the retailcloud.UpdateEnvironment API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/updateenvironment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateEnvironmentWithCallback(request *UpdateEnvironmentRequest, callback func(response *UpdateEnvironmentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateUpdateEnvironmentRequest() (request *UpdateEnvironmentRequest) {
 	request = &UpdateEnvironmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateEnvironment", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateEnvironment", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

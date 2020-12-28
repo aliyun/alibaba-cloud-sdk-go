@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyService invokes the retailcloud.ModifyService API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/modifyservice.html
 func (client *Client) ModifyService(request *ModifyServiceRequest) (response *ModifyServiceResponse, err error) {
 	response = CreateModifyServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyService(request *ModifyServiceRequest) (response *Mo
 }
 
 // ModifyServiceWithChan invokes the retailcloud.ModifyService API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/modifyservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyServiceWithChan(request *ModifyServiceRequest) (<-chan *ModifyServiceResponse, <-chan error) {
 	responseChan := make(chan *ModifyServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyServiceWithChan(request *ModifyServiceRequest) (<-ch
 }
 
 // ModifyServiceWithCallback invokes the retailcloud.ModifyService API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/modifyservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyServiceWithCallback(request *ModifyServiceRequest, callback func(response *ModifyServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateModifyServiceRequest() (request *ModifyServiceRequest) {
 	request = &ModifyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ModifyService", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ModifyService", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

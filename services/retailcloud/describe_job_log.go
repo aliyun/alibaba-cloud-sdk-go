@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeJobLog invokes the retailcloud.DescribeJobLog API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describejoblog.html
 func (client *Client) DescribeJobLog(request *DescribeJobLogRequest) (response *DescribeJobLogResponse, err error) {
 	response = CreateDescribeJobLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeJobLog(request *DescribeJobLogRequest) (response *
 }
 
 // DescribeJobLogWithChan invokes the retailcloud.DescribeJobLog API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describejoblog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeJobLogWithChan(request *DescribeJobLogRequest) (<-chan *DescribeJobLogResponse, <-chan error) {
 	responseChan := make(chan *DescribeJobLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeJobLogWithChan(request *DescribeJobLogRequest) (<-
 }
 
 // DescribeJobLogWithCallback invokes the retailcloud.DescribeJobLog API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describejoblog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeJobLogWithCallback(request *DescribeJobLogRequest, callback func(response *DescribeJobLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribeJobLogRequest() (request *DescribeJobLogRequest) {
 	request = &DescribeJobLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeJobLog", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeJobLog", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

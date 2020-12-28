@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePersistentVolumeClaim invokes the retailcloud.DeletePersistentVolumeClaim API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletepersistentvolumeclaim.html
 func (client *Client) DeletePersistentVolumeClaim(request *DeletePersistentVolumeClaimRequest) (response *DeletePersistentVolumeClaimResponse, err error) {
 	response = CreateDeletePersistentVolumeClaimResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePersistentVolumeClaim(request *DeletePersistentVolum
 }
 
 // DeletePersistentVolumeClaimWithChan invokes the retailcloud.DeletePersistentVolumeClaim API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletepersistentvolumeclaim.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePersistentVolumeClaimWithChan(request *DeletePersistentVolumeClaimRequest) (<-chan *DeletePersistentVolumeClaimResponse, <-chan error) {
 	responseChan := make(chan *DeletePersistentVolumeClaimResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePersistentVolumeClaimWithChan(request *DeletePersist
 }
 
 // DeletePersistentVolumeClaimWithCallback invokes the retailcloud.DeletePersistentVolumeClaim API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletepersistentvolumeclaim.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePersistentVolumeClaimWithCallback(request *DeletePersistentVolumeClaimRequest, callback func(response *DeletePersistentVolumeClaimResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDeletePersistentVolumeClaimRequest() (request *DeletePersistentVolume
 	request = &DeletePersistentVolumeClaimRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeletePersistentVolumeClaim", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeletePersistentVolumeClaim", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

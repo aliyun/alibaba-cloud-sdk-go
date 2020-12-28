@@ -21,7 +21,6 @@ import (
 )
 
 // CreatePersistentVolume invokes the retailcloud.CreatePersistentVolume API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createpersistentvolume.html
 func (client *Client) CreatePersistentVolume(request *CreatePersistentVolumeRequest) (response *CreatePersistentVolumeResponse, err error) {
 	response = CreateCreatePersistentVolumeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreatePersistentVolume(request *CreatePersistentVolumeRequ
 }
 
 // CreatePersistentVolumeWithChan invokes the retailcloud.CreatePersistentVolume API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createpersistentvolume.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePersistentVolumeWithChan(request *CreatePersistentVolumeRequest) (<-chan *CreatePersistentVolumeResponse, <-chan error) {
 	responseChan := make(chan *CreatePersistentVolumeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreatePersistentVolumeWithChan(request *CreatePersistentVo
 }
 
 // CreatePersistentVolumeWithCallback invokes the retailcloud.CreatePersistentVolume API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createpersistentvolume.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePersistentVolumeWithCallback(request *CreatePersistentVolumeRequest, callback func(response *CreatePersistentVolumeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateCreatePersistentVolumeRequest() (request *CreatePersistentVolumeReque
 	request = &CreatePersistentVolumeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreatePersistentVolume", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreatePersistentVolume", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCluster invokes the retailcloud.CreateCluster API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createcluster.html
 func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
 	response = CreateCreateClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCluster(request *CreateClusterRequest) (response *Cr
 }
 
 // CreateClusterWithChan invokes the retailcloud.CreateCluster API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-ch
 }
 
 // CreateClusterWithCallback invokes the retailcloud.CreateCluster API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -112,7 +107,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateCluster", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateCluster", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

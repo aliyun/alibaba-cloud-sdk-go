@@ -21,7 +21,6 @@ import (
 )
 
 // ScaleApp invokes the retailcloud.ScaleApp API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/scaleapp.html
 func (client *Client) ScaleApp(request *ScaleAppRequest) (response *ScaleAppResponse, err error) {
 	response = CreateScaleAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScaleApp(request *ScaleAppRequest) (response *ScaleAppResp
 }
 
 // ScaleAppWithChan invokes the retailcloud.ScaleApp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/scaleapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleAppWithChan(request *ScaleAppRequest) (<-chan *ScaleAppResponse, <-chan error) {
 	responseChan := make(chan *ScaleAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScaleAppWithChan(request *ScaleAppRequest) (<-chan *ScaleA
 }
 
 // ScaleAppWithCallback invokes the retailcloud.ScaleApp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/scaleapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleAppWithCallback(request *ScaleAppRequest, callback func(response *ScaleAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateScaleAppRequest() (request *ScaleAppRequest) {
 	request = &ScaleAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ScaleApp", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ScaleApp", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

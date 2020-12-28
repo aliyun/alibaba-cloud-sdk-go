@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAppResourceAlloc invokes the retailcloud.CreateAppResourceAlloc API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createappresourcealloc.html
 func (client *Client) CreateAppResourceAlloc(request *CreateAppResourceAllocRequest) (response *CreateAppResourceAllocResponse, err error) {
 	response = CreateCreateAppResourceAllocResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAppResourceAlloc(request *CreateAppResourceAllocRequ
 }
 
 // CreateAppResourceAllocWithChan invokes the retailcloud.CreateAppResourceAlloc API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createappresourcealloc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppResourceAllocWithChan(request *CreateAppResourceAllocRequest) (<-chan *CreateAppResourceAllocResponse, <-chan error) {
 	responseChan := make(chan *CreateAppResourceAllocResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAppResourceAllocWithChan(request *CreateAppResourceA
 }
 
 // CreateAppResourceAllocWithCallback invokes the retailcloud.CreateAppResourceAlloc API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createappresourcealloc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppResourceAllocWithCallback(request *CreateAppResourceAllocRequest, callback func(response *CreateAppResourceAllocResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateCreateAppResourceAllocRequest() (request *CreateAppResourceAllocReque
 	request = &CreateAppResourceAllocRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateAppResourceAlloc", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateAppResourceAlloc", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

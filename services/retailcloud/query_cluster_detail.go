@@ -21,7 +21,6 @@ import (
 )
 
 // QueryClusterDetail invokes the retailcloud.QueryClusterDetail API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/queryclusterdetail.html
 func (client *Client) QueryClusterDetail(request *QueryClusterDetailRequest) (response *QueryClusterDetailResponse, err error) {
 	response = CreateQueryClusterDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryClusterDetail(request *QueryClusterDetailRequest) (re
 }
 
 // QueryClusterDetailWithChan invokes the retailcloud.QueryClusterDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/queryclusterdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryClusterDetailWithChan(request *QueryClusterDetailRequest) (<-chan *QueryClusterDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryClusterDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryClusterDetailWithChan(request *QueryClusterDetailRequ
 }
 
 // QueryClusterDetailWithCallback invokes the retailcloud.QueryClusterDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/queryclusterdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryClusterDetailWithCallback(request *QueryClusterDetailRequest, callback func(response *QueryClusterDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateQueryClusterDetailRequest() (request *QueryClusterDetailRequest) {
 	request = &QueryClusterDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "QueryClusterDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "QueryClusterDetail", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppDetail invokes the retailcloud.DescribeAppDetail API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappdetail.html
 func (client *Client) DescribeAppDetail(request *DescribeAppDetailRequest) (response *DescribeAppDetailResponse, err error) {
 	response = CreateDescribeAppDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppDetail(request *DescribeAppDetailRequest) (resp
 }
 
 // DescribeAppDetailWithChan invokes the retailcloud.DescribeAppDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppDetailWithChan(request *DescribeAppDetailRequest) (<-chan *DescribeAppDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppDetailWithChan(request *DescribeAppDetailReques
 }
 
 // DescribeAppDetailWithCallback invokes the retailcloud.DescribeAppDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppDetailWithCallback(request *DescribeAppDetailRequest, callback func(response *DescribeAppDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeAppDetailRequest() (request *DescribeAppDetailRequest) {
 	request = &DescribeAppDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeAppDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeAppDetail", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

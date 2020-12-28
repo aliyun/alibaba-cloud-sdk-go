@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppResourceAlloc invokes the retailcloud.DescribeAppResourceAlloc API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappresourcealloc.html
 func (client *Client) DescribeAppResourceAlloc(request *DescribeAppResourceAllocRequest) (response *DescribeAppResourceAllocResponse, err error) {
 	response = CreateDescribeAppResourceAllocResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppResourceAlloc(request *DescribeAppResourceAlloc
 }
 
 // DescribeAppResourceAllocWithChan invokes the retailcloud.DescribeAppResourceAlloc API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappresourcealloc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppResourceAllocWithChan(request *DescribeAppResourceAllocRequest) (<-chan *DescribeAppResourceAllocResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppResourceAllocResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppResourceAllocWithChan(request *DescribeAppResou
 }
 
 // DescribeAppResourceAllocWithCallback invokes the retailcloud.DescribeAppResourceAlloc API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappresourcealloc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppResourceAllocWithCallback(request *DescribeAppResourceAllocRequest, callback func(response *DescribeAppResourceAllocResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeAppResourceAllocRequest() (request *DescribeAppResourceAllocR
 	request = &DescribeAppResourceAllocRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeAppResourceAlloc", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeAppResourceAlloc", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

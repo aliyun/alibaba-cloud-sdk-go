@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDeployConfig invokes the retailcloud.UpdateDeployConfig API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/updatedeployconfig.html
 func (client *Client) UpdateDeployConfig(request *UpdateDeployConfigRequest) (response *UpdateDeployConfigResponse, err error) {
 	response = CreateUpdateDeployConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDeployConfig(request *UpdateDeployConfigRequest) (re
 }
 
 // UpdateDeployConfigWithChan invokes the retailcloud.UpdateDeployConfig API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/updatedeployconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeployConfigWithChan(request *UpdateDeployConfigRequest) (<-chan *UpdateDeployConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateDeployConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDeployConfigWithChan(request *UpdateDeployConfigRequ
 }
 
 // UpdateDeployConfigWithCallback invokes the retailcloud.UpdateDeployConfig API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/updatedeployconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeployConfigWithCallback(request *UpdateDeployConfigRequest, callback func(response *UpdateDeployConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateUpdateDeployConfigRequest() (request *UpdateDeployConfigRequest) {
 	request = &UpdateDeployConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateDeployConfig", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateDeployConfig", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

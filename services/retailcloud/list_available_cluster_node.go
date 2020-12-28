@@ -21,7 +21,6 @@ import (
 )
 
 // ListAvailableClusterNode invokes the retailcloud.ListAvailableClusterNode API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listavailableclusternode.html
 func (client *Client) ListAvailableClusterNode(request *ListAvailableClusterNodeRequest) (response *ListAvailableClusterNodeResponse, err error) {
 	response = CreateListAvailableClusterNodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAvailableClusterNode(request *ListAvailableClusterNode
 }
 
 // ListAvailableClusterNodeWithChan invokes the retailcloud.ListAvailableClusterNode API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listavailableclusternode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAvailableClusterNodeWithChan(request *ListAvailableClusterNodeRequest) (<-chan *ListAvailableClusterNodeResponse, <-chan error) {
 	responseChan := make(chan *ListAvailableClusterNodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAvailableClusterNodeWithChan(request *ListAvailableClu
 }
 
 // ListAvailableClusterNodeWithCallback invokes the retailcloud.ListAvailableClusterNode API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listavailableclusternode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAvailableClusterNodeWithCallback(request *ListAvailableClusterNodeRequest, callback func(response *ListAvailableClusterNodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateListAvailableClusterNodeRequest() (request *ListAvailableClusterNodeR
 	request = &ListAvailableClusterNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAvailableClusterNode", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAvailableClusterNode", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

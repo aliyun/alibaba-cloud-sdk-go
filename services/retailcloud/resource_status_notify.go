@@ -21,7 +21,6 @@ import (
 )
 
 // ResourceStatusNotify invokes the retailcloud.ResourceStatusNotify API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/resourcestatusnotify.html
 func (client *Client) ResourceStatusNotify(request *ResourceStatusNotifyRequest) (response *ResourceStatusNotifyResponse, err error) {
 	response = CreateResourceStatusNotifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResourceStatusNotify(request *ResourceStatusNotifyRequest)
 }
 
 // ResourceStatusNotifyWithChan invokes the retailcloud.ResourceStatusNotify API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/resourcestatusnotify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResourceStatusNotifyWithChan(request *ResourceStatusNotifyRequest) (<-chan *ResourceStatusNotifyResponse, <-chan error) {
 	responseChan := make(chan *ResourceStatusNotifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResourceStatusNotifyWithChan(request *ResourceStatusNotify
 }
 
 // ResourceStatusNotifyWithCallback invokes the retailcloud.ResourceStatusNotify API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/resourcestatusnotify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResourceStatusNotifyWithCallback(request *ResourceStatusNotifyRequest, callback func(response *ResourceStatusNotifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,7 +84,7 @@ func CreateResourceStatusNotifyRequest() (request *ResourceStatusNotifyRequest) 
 	request = &ResourceStatusNotifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ResourceStatusNotify", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ResourceStatusNotify", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

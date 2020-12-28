@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNodeLabel invokes the retailcloud.DeleteNodeLabel API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletenodelabel.html
 func (client *Client) DeleteNodeLabel(request *DeleteNodeLabelRequest) (response *DeleteNodeLabelResponse, err error) {
 	response = CreateDeleteNodeLabelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNodeLabel(request *DeleteNodeLabelRequest) (response
 }
 
 // DeleteNodeLabelWithChan invokes the retailcloud.DeleteNodeLabel API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletenodelabel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNodeLabelWithChan(request *DeleteNodeLabelRequest) (<-chan *DeleteNodeLabelResponse, <-chan error) {
 	responseChan := make(chan *DeleteNodeLabelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNodeLabelWithChan(request *DeleteNodeLabelRequest) (
 }
 
 // DeleteNodeLabelWithCallback invokes the retailcloud.DeleteNodeLabel API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletenodelabel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNodeLabelWithCallback(request *DeleteNodeLabelRequest, callback func(response *DeleteNodeLabelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateDeleteNodeLabelRequest() (request *DeleteNodeLabelRequest) {
 	request = &DeleteNodeLabelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteNodeLabel", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteNodeLabel", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

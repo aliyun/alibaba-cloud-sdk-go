@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDeployOrderDetail invokes the retailcloud.DescribeDeployOrderDetail API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describedeployorderdetail.html
 func (client *Client) DescribeDeployOrderDetail(request *DescribeDeployOrderDetailRequest) (response *DescribeDeployOrderDetailResponse, err error) {
 	response = CreateDescribeDeployOrderDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDeployOrderDetail(request *DescribeDeployOrderDeta
 }
 
 // DescribeDeployOrderDetailWithChan invokes the retailcloud.DescribeDeployOrderDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describedeployorderdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeployOrderDetailWithChan(request *DescribeDeployOrderDetailRequest) (<-chan *DescribeDeployOrderDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeployOrderDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDeployOrderDetailWithChan(request *DescribeDeployO
 }
 
 // DescribeDeployOrderDetailWithCallback invokes the retailcloud.DescribeDeployOrderDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describedeployorderdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeployOrderDetailWithCallback(request *DescribeDeployOrderDetailRequest, callback func(response *DescribeDeployOrderDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeDeployOrderDetailRequest() (request *DescribeDeployOrderDetai
 	request = &DescribeDeployOrderDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeDeployOrderDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeDeployOrderDetail", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

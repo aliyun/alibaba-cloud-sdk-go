@@ -21,7 +21,6 @@ import (
 )
 
 // GrantDbToAccount invokes the retailcloud.GrantDbToAccount API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/grantdbtoaccount.html
 func (client *Client) GrantDbToAccount(request *GrantDbToAccountRequest) (response *GrantDbToAccountResponse, err error) {
 	response = CreateGrantDbToAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GrantDbToAccount(request *GrantDbToAccountRequest) (respon
 }
 
 // GrantDbToAccountWithChan invokes the retailcloud.GrantDbToAccount API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/grantdbtoaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantDbToAccountWithChan(request *GrantDbToAccountRequest) (<-chan *GrantDbToAccountResponse, <-chan error) {
 	responseChan := make(chan *GrantDbToAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GrantDbToAccountWithChan(request *GrantDbToAccountRequest)
 }
 
 // GrantDbToAccountWithCallback invokes the retailcloud.GrantDbToAccount API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/grantdbtoaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantDbToAccountWithCallback(request *GrantDbToAccountRequest, callback func(response *GrantDbToAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateGrantDbToAccountRequest() (request *GrantDbToAccountRequest) {
 	request = &GrantDbToAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "GrantDbToAccount", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "GrantDbToAccount", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

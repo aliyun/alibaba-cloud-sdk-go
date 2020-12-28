@@ -21,7 +21,6 @@ import (
 )
 
 // BatchAddServers invokes the retailcloud.BatchAddServers API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/batchaddservers.html
 func (client *Client) BatchAddServers(request *BatchAddServersRequest) (response *BatchAddServersResponse, err error) {
 	response = CreateBatchAddServersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchAddServers(request *BatchAddServersRequest) (response
 }
 
 // BatchAddServersWithChan invokes the retailcloud.BatchAddServers API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/batchaddservers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAddServersWithChan(request *BatchAddServersRequest) (<-chan *BatchAddServersResponse, <-chan error) {
 	responseChan := make(chan *BatchAddServersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchAddServersWithChan(request *BatchAddServersRequest) (
 }
 
 // BatchAddServersWithCallback invokes the retailcloud.BatchAddServers API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/batchaddservers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAddServersWithCallback(request *BatchAddServersRequest, callback func(response *BatchAddServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateBatchAddServersRequest() (request *BatchAddServersRequest) {
 	request = &BatchAddServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "BatchAddServers", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "BatchAddServers", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

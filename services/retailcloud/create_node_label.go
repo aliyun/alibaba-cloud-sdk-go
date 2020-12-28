@@ -21,7 +21,6 @@ import (
 )
 
 // CreateNodeLabel invokes the retailcloud.CreateNodeLabel API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createnodelabel.html
 func (client *Client) CreateNodeLabel(request *CreateNodeLabelRequest) (response *CreateNodeLabelResponse, err error) {
 	response = CreateCreateNodeLabelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateNodeLabel(request *CreateNodeLabelRequest) (response
 }
 
 // CreateNodeLabelWithChan invokes the retailcloud.CreateNodeLabel API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createnodelabel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNodeLabelWithChan(request *CreateNodeLabelRequest) (<-chan *CreateNodeLabelResponse, <-chan error) {
 	responseChan := make(chan *CreateNodeLabelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateNodeLabelWithChan(request *CreateNodeLabelRequest) (
 }
 
 // CreateNodeLabelWithCallback invokes the retailcloud.CreateNodeLabel API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createnodelabel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNodeLabelWithCallback(request *CreateNodeLabelRequest, callback func(response *CreateNodeLabelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateCreateNodeLabelRequest() (request *CreateNodeLabelRequest) {
 	request = &CreateNodeLabelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateNodeLabel", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateNodeLabel", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListNodeLabelBindings invokes the retailcloud.ListNodeLabelBindings API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listnodelabelbindings.html
 func (client *Client) ListNodeLabelBindings(request *ListNodeLabelBindingsRequest) (response *ListNodeLabelBindingsResponse, err error) {
 	response = CreateListNodeLabelBindingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListNodeLabelBindings(request *ListNodeLabelBindingsReques
 }
 
 // ListNodeLabelBindingsWithChan invokes the retailcloud.ListNodeLabelBindings API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listnodelabelbindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodeLabelBindingsWithChan(request *ListNodeLabelBindingsRequest) (<-chan *ListNodeLabelBindingsResponse, <-chan error) {
 	responseChan := make(chan *ListNodeLabelBindingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListNodeLabelBindingsWithChan(request *ListNodeLabelBindin
 }
 
 // ListNodeLabelBindingsWithCallback invokes the retailcloud.ListNodeLabelBindings API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listnodelabelbindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodeLabelBindingsWithCallback(request *ListNodeLabelBindingsRequest, callback func(response *ListNodeLabelBindingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateListNodeLabelBindingsRequest() (request *ListNodeLabelBindingsRequest
 	request = &ListNodeLabelBindingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListNodeLabelBindings", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListNodeLabelBindings", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

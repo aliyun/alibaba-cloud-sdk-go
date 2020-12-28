@@ -21,7 +21,6 @@ import (
 )
 
 // ListDeployOrders invokes the retailcloud.ListDeployOrders API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listdeployorders.html
 func (client *Client) ListDeployOrders(request *ListDeployOrdersRequest) (response *ListDeployOrdersResponse, err error) {
 	response = CreateListDeployOrdersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDeployOrders(request *ListDeployOrdersRequest) (respon
 }
 
 // ListDeployOrdersWithChan invokes the retailcloud.ListDeployOrders API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listdeployorders.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDeployOrdersWithChan(request *ListDeployOrdersRequest) (<-chan *ListDeployOrdersResponse, <-chan error) {
 	responseChan := make(chan *ListDeployOrdersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDeployOrdersWithChan(request *ListDeployOrdersRequest)
 }
 
 // ListDeployOrdersWithCallback invokes the retailcloud.ListDeployOrders API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listdeployorders.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDeployOrdersWithCallback(request *ListDeployOrdersRequest, callback func(response *ListDeployOrdersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -115,7 +110,7 @@ func CreateListDeployOrdersRequest() (request *ListDeployOrdersRequest) {
 	request = &ListDeployOrdersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListDeployOrders", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListDeployOrders", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

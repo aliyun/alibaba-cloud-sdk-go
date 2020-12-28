@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSlbAP invokes the retailcloud.DeleteSlbAP API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteslbap.html
 func (client *Client) DeleteSlbAP(request *DeleteSlbAPRequest) (response *DeleteSlbAPResponse, err error) {
 	response = CreateDeleteSlbAPResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSlbAP(request *DeleteSlbAPRequest) (response *Delete
 }
 
 // DeleteSlbAPWithChan invokes the retailcloud.DeleteSlbAP API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteslbap.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSlbAPWithChan(request *DeleteSlbAPRequest) (<-chan *DeleteSlbAPResponse, <-chan error) {
 	responseChan := make(chan *DeleteSlbAPResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSlbAPWithChan(request *DeleteSlbAPRequest) (<-chan *
 }
 
 // DeleteSlbAPWithCallback invokes the retailcloud.DeleteSlbAP API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteslbap.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSlbAPWithCallback(request *DeleteSlbAPRequest, callback func(response *DeleteSlbAPResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteSlbAPRequest() (request *DeleteSlbAPRequest) {
 	request = &DeleteSlbAPRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteSlbAP", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteSlbAP", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

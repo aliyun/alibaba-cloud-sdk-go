@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePodLog invokes the retailcloud.DescribePodLog API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describepodlog.html
 func (client *Client) DescribePodLog(request *DescribePodLogRequest) (response *DescribePodLogResponse, err error) {
 	response = CreateDescribePodLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePodLog(request *DescribePodLogRequest) (response *
 }
 
 // DescribePodLogWithChan invokes the retailcloud.DescribePodLog API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describepodlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePodLogWithChan(request *DescribePodLogRequest) (<-chan *DescribePodLogResponse, <-chan error) {
 	responseChan := make(chan *DescribePodLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePodLogWithChan(request *DescribePodLogRequest) (<-
 }
 
 // DescribePodLogWithCallback invokes the retailcloud.DescribePodLog API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describepodlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePodLogWithCallback(request *DescribePodLogRequest, callback func(response *DescribePodLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribePodLogRequest() (request *DescribePodLogRequest) {
 	request = &DescribePodLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribePodLog", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribePodLog", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

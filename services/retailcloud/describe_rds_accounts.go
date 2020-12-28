@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRdsAccounts invokes the retailcloud.DescribeRdsAccounts API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describerdsaccounts.html
 func (client *Client) DescribeRdsAccounts(request *DescribeRdsAccountsRequest) (response *DescribeRdsAccountsResponse, err error) {
 	response = CreateDescribeRdsAccountsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRdsAccounts(request *DescribeRdsAccountsRequest) (
 }
 
 // DescribeRdsAccountsWithChan invokes the retailcloud.DescribeRdsAccounts API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describerdsaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsAccountsWithChan(request *DescribeRdsAccountsRequest) (<-chan *DescribeRdsAccountsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRdsAccountsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRdsAccountsWithChan(request *DescribeRdsAccountsRe
 }
 
 // DescribeRdsAccountsWithCallback invokes the retailcloud.DescribeRdsAccounts API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describerdsaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsAccountsWithCallback(request *DescribeRdsAccountsRequest, callback func(response *DescribeRdsAccountsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeRdsAccountsRequest() (request *DescribeRdsAccountsRequest) {
 	request = &DescribeRdsAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeRdsAccounts", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeRdsAccounts", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

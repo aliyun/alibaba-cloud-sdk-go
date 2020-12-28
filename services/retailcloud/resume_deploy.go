@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeDeploy invokes the retailcloud.ResumeDeploy API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/resumedeploy.html
 func (client *Client) ResumeDeploy(request *ResumeDeployRequest) (response *ResumeDeployResponse, err error) {
 	response = CreateResumeDeployResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeDeploy(request *ResumeDeployRequest) (response *Resu
 }
 
 // ResumeDeployWithChan invokes the retailcloud.ResumeDeploy API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/resumedeploy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeDeployWithChan(request *ResumeDeployRequest) (<-chan *ResumeDeployResponse, <-chan error) {
 	responseChan := make(chan *ResumeDeployResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeDeployWithChan(request *ResumeDeployRequest) (<-chan
 }
 
 // ResumeDeployWithCallback invokes the retailcloud.ResumeDeploy API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/resumedeploy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeDeployWithCallback(request *ResumeDeployRequest, callback func(response *ResumeDeployResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateResumeDeployRequest() (request *ResumeDeployRequest) {
 	request = &ResumeDeployRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ResumeDeploy", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ResumeDeploy", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

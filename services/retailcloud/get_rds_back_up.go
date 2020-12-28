@@ -21,7 +21,6 @@ import (
 )
 
 // GetRdsBackUp invokes the retailcloud.GetRdsBackUp API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/getrdsbackup.html
 func (client *Client) GetRdsBackUp(request *GetRdsBackUpRequest) (response *GetRdsBackUpResponse, err error) {
 	response = CreateGetRdsBackUpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRdsBackUp(request *GetRdsBackUpRequest) (response *GetR
 }
 
 // GetRdsBackUpWithChan invokes the retailcloud.GetRdsBackUp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/getrdsbackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRdsBackUpWithChan(request *GetRdsBackUpRequest) (<-chan *GetRdsBackUpResponse, <-chan error) {
 	responseChan := make(chan *GetRdsBackUpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRdsBackUpWithChan(request *GetRdsBackUpRequest) (<-chan
 }
 
 // GetRdsBackUpWithCallback invokes the retailcloud.GetRdsBackUp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/getrdsbackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRdsBackUpWithCallback(request *GetRdsBackUpRequest, callback func(response *GetRdsBackUpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateGetRdsBackUpRequest() (request *GetRdsBackUpRequest) {
 	request = &GetRdsBackUpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "GetRdsBackUp", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "GetRdsBackUp", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

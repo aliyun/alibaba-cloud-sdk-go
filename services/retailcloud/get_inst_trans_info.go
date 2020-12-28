@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstTransInfo invokes the retailcloud.GetInstTransInfo API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/getinsttransinfo.html
 func (client *Client) GetInstTransInfo(request *GetInstTransInfoRequest) (response *GetInstTransInfoResponse, err error) {
 	response = CreateGetInstTransInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstTransInfo(request *GetInstTransInfoRequest) (respon
 }
 
 // GetInstTransInfoWithChan invokes the retailcloud.GetInstTransInfo API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/getinsttransinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstTransInfoWithChan(request *GetInstTransInfoRequest) (<-chan *GetInstTransInfoResponse, <-chan error) {
 	responseChan := make(chan *GetInstTransInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstTransInfoWithChan(request *GetInstTransInfoRequest)
 }
 
 // GetInstTransInfoWithCallback invokes the retailcloud.GetInstTransInfo API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/getinsttransinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstTransInfoWithCallback(request *GetInstTransInfoRequest, callback func(response *GetInstTransInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateGetInstTransInfoRequest() (request *GetInstTransInfoRequest) {
 	request = &GetInstTransInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "GetInstTransInfo", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "GetInstTransInfo", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

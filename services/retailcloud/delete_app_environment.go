@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAppEnvironment invokes the retailcloud.DeleteAppEnvironment API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteappenvironment.html
 func (client *Client) DeleteAppEnvironment(request *DeleteAppEnvironmentRequest) (response *DeleteAppEnvironmentResponse, err error) {
 	response = CreateDeleteAppEnvironmentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAppEnvironment(request *DeleteAppEnvironmentRequest)
 }
 
 // DeleteAppEnvironmentWithChan invokes the retailcloud.DeleteAppEnvironment API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteappenvironment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAppEnvironmentWithChan(request *DeleteAppEnvironmentRequest) (<-chan *DeleteAppEnvironmentResponse, <-chan error) {
 	responseChan := make(chan *DeleteAppEnvironmentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAppEnvironmentWithChan(request *DeleteAppEnvironment
 }
 
 // DeleteAppEnvironmentWithCallback invokes the retailcloud.DeleteAppEnvironment API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteappenvironment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAppEnvironmentWithCallback(request *DeleteAppEnvironmentRequest, callback func(response *DeleteAppEnvironmentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDeleteAppEnvironmentRequest() (request *DeleteAppEnvironmentRequest) 
 	request = &DeleteAppEnvironmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteAppEnvironment", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteAppEnvironment", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

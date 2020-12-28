@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDb invokes the retailcloud.CreateDb API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createdb.html
 func (client *Client) CreateDb(request *CreateDbRequest) (response *CreateDbResponse, err error) {
 	response = CreateCreateDbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDb(request *CreateDbRequest) (response *CreateDbResp
 }
 
 // CreateDbWithChan invokes the retailcloud.CreateDb API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createdb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDbWithChan(request *CreateDbRequest) (<-chan *CreateDbResponse, <-chan error) {
 	responseChan := make(chan *CreateDbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDbWithChan(request *CreateDbRequest) (<-chan *Create
 }
 
 // CreateDbWithCallback invokes the retailcloud.CreateDb API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createdb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDbWithCallback(request *CreateDbRequest, callback func(response *CreateDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateCreateDbRequest() (request *CreateDbRequest) {
 	request = &CreateDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDb", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDb", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

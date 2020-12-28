@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSlbAPDetail invokes the retailcloud.DescribeSlbAPDetail API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeslbapdetail.html
 func (client *Client) DescribeSlbAPDetail(request *DescribeSlbAPDetailRequest) (response *DescribeSlbAPDetailResponse, err error) {
 	response = CreateDescribeSlbAPDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSlbAPDetail(request *DescribeSlbAPDetailRequest) (
 }
 
 // DescribeSlbAPDetailWithChan invokes the retailcloud.DescribeSlbAPDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeslbapdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlbAPDetailWithChan(request *DescribeSlbAPDetailRequest) (<-chan *DescribeSlbAPDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlbAPDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSlbAPDetailWithChan(request *DescribeSlbAPDetailRe
 }
 
 // DescribeSlbAPDetailWithCallback invokes the retailcloud.DescribeSlbAPDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeslbapdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlbAPDetailWithCallback(request *DescribeSlbAPDetailRequest, callback func(response *DescribeSlbAPDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeSlbAPDetailRequest() (request *DescribeSlbAPDetailRequest) {
 	request = &DescribeSlbAPDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeSlbAPDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeSlbAPDetail", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

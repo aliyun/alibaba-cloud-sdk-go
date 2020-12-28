@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppEnvironmentDetail invokes the retailcloud.DescribeAppEnvironmentDetail API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappenvironmentdetail.html
 func (client *Client) DescribeAppEnvironmentDetail(request *DescribeAppEnvironmentDetailRequest) (response *DescribeAppEnvironmentDetailResponse, err error) {
 	response = CreateDescribeAppEnvironmentDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppEnvironmentDetail(request *DescribeAppEnvironme
 }
 
 // DescribeAppEnvironmentDetailWithChan invokes the retailcloud.DescribeAppEnvironmentDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappenvironmentdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppEnvironmentDetailWithChan(request *DescribeAppEnvironmentDetailRequest) (<-chan *DescribeAppEnvironmentDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppEnvironmentDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppEnvironmentDetailWithChan(request *DescribeAppE
 }
 
 // DescribeAppEnvironmentDetailWithCallback invokes the retailcloud.DescribeAppEnvironmentDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeappenvironmentdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppEnvironmentDetailWithCallback(request *DescribeAppEnvironmentDetailRequest, callback func(response *DescribeAppEnvironmentDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeAppEnvironmentDetailRequest() (request *DescribeAppEnvironmen
 	request = &DescribeAppEnvironmentDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeAppEnvironmentDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeAppEnvironmentDetail", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

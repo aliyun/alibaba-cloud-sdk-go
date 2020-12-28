@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDeployConfig invokes the retailcloud.DeleteDeployConfig API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletedeployconfig.html
 func (client *Client) DeleteDeployConfig(request *DeleteDeployConfigRequest) (response *DeleteDeployConfigResponse, err error) {
 	response = CreateDeleteDeployConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDeployConfig(request *DeleteDeployConfigRequest) (re
 }
 
 // DeleteDeployConfigWithChan invokes the retailcloud.DeleteDeployConfig API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletedeployconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeployConfigWithChan(request *DeleteDeployConfigRequest) (<-chan *DeleteDeployConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteDeployConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDeployConfigWithChan(request *DeleteDeployConfigRequ
 }
 
 // DeleteDeployConfigWithCallback invokes the retailcloud.DeleteDeployConfig API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletedeployconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeployConfigWithCallback(request *DeleteDeployConfigRequest, callback func(response *DeleteDeployConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteDeployConfigRequest() (request *DeleteDeployConfigRequest) {
 	request = &DeleteDeployConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteDeployConfig", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteDeployConfig", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

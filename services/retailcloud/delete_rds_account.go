@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRdsAccount invokes the retailcloud.DeleteRdsAccount API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleterdsaccount.html
 func (client *Client) DeleteRdsAccount(request *DeleteRdsAccountRequest) (response *DeleteRdsAccountResponse, err error) {
 	response = CreateDeleteRdsAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRdsAccount(request *DeleteRdsAccountRequest) (respon
 }
 
 // DeleteRdsAccountWithChan invokes the retailcloud.DeleteRdsAccount API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleterdsaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRdsAccountWithChan(request *DeleteRdsAccountRequest) (<-chan *DeleteRdsAccountResponse, <-chan error) {
 	responseChan := make(chan *DeleteRdsAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRdsAccountWithChan(request *DeleteRdsAccountRequest)
 }
 
 // DeleteRdsAccountWithCallback invokes the retailcloud.DeleteRdsAccount API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleterdsaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRdsAccountWithCallback(request *DeleteRdsAccountRequest, callback func(response *DeleteRdsAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteRdsAccountRequest() (request *DeleteRdsAccountRequest) {
 	request = &DeleteRdsAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteRdsAccount", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteRdsAccount", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

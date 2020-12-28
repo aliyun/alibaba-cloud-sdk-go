@@ -21,7 +21,6 @@ import (
 )
 
 // ListPersistentVolumeClaim invokes the retailcloud.ListPersistentVolumeClaim API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listpersistentvolumeclaim.html
 func (client *Client) ListPersistentVolumeClaim(request *ListPersistentVolumeClaimRequest) (response *ListPersistentVolumeClaimResponse, err error) {
 	response = CreateListPersistentVolumeClaimResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPersistentVolumeClaim(request *ListPersistentVolumeCla
 }
 
 // ListPersistentVolumeClaimWithChan invokes the retailcloud.ListPersistentVolumeClaim API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listpersistentvolumeclaim.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPersistentVolumeClaimWithChan(request *ListPersistentVolumeClaimRequest) (<-chan *ListPersistentVolumeClaimResponse, <-chan error) {
 	responseChan := make(chan *ListPersistentVolumeClaimResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPersistentVolumeClaimWithChan(request *ListPersistentV
 }
 
 // ListPersistentVolumeClaimWithCallback invokes the retailcloud.ListPersistentVolumeClaim API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listpersistentvolumeclaim.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPersistentVolumeClaimWithCallback(request *ListPersistentVolumeClaimRequest, callback func(response *ListPersistentVolumeClaimResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateListPersistentVolumeClaimRequest() (request *ListPersistentVolumeClai
 	request = &ListPersistentVolumeClaimRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListPersistentVolumeClaim", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListPersistentVolumeClaim", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

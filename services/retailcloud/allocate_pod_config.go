@@ -21,7 +21,6 @@ import (
 )
 
 // AllocatePodConfig invokes the retailcloud.AllocatePodConfig API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/allocatepodconfig.html
 func (client *Client) AllocatePodConfig(request *AllocatePodConfigRequest) (response *AllocatePodConfigResponse, err error) {
 	response = CreateAllocatePodConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocatePodConfig(request *AllocatePodConfigRequest) (resp
 }
 
 // AllocatePodConfigWithChan invokes the retailcloud.AllocatePodConfig API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/allocatepodconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePodConfigWithChan(request *AllocatePodConfigRequest) (<-chan *AllocatePodConfigResponse, <-chan error) {
 	responseChan := make(chan *AllocatePodConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocatePodConfigWithChan(request *AllocatePodConfigReques
 }
 
 // AllocatePodConfigWithCallback invokes the retailcloud.AllocatePodConfig API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/allocatepodconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePodConfigWithCallback(request *AllocatePodConfigRequest, callback func(response *AllocatePodConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateAllocatePodConfigRequest() (request *AllocatePodConfigRequest) {
 	request = &AllocatePodConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "AllocatePodConfig", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "AllocatePodConfig", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

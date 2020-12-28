@@ -21,7 +21,6 @@ import (
 )
 
 // ListAppResourceAllocs invokes the retailcloud.ListAppResourceAllocs API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappresourceallocs.html
 func (client *Client) ListAppResourceAllocs(request *ListAppResourceAllocsRequest) (response *ListAppResourceAllocsResponse, err error) {
 	response = CreateListAppResourceAllocsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAppResourceAllocs(request *ListAppResourceAllocsReques
 }
 
 // ListAppResourceAllocsWithChan invokes the retailcloud.ListAppResourceAllocs API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappresourceallocs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppResourceAllocsWithChan(request *ListAppResourceAllocsRequest) (<-chan *ListAppResourceAllocsResponse, <-chan error) {
 	responseChan := make(chan *ListAppResourceAllocsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppResourceAllocsWithChan(request *ListAppResourceAllo
 }
 
 // ListAppResourceAllocsWithCallback invokes the retailcloud.ListAppResourceAllocs API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappresourceallocs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppResourceAllocsWithCallback(request *ListAppResourceAllocsRequest, callback func(response *ListAppResourceAllocsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateListAppResourceAllocsRequest() (request *ListAppResourceAllocsRequest
 	request = &ListAppResourceAllocsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppResourceAllocs", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppResourceAllocs", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

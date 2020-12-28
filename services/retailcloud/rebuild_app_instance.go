@@ -21,7 +21,6 @@ import (
 )
 
 // RebuildAppInstance invokes the retailcloud.RebuildAppInstance API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/rebuildappinstance.html
 func (client *Client) RebuildAppInstance(request *RebuildAppInstanceRequest) (response *RebuildAppInstanceResponse, err error) {
 	response = CreateRebuildAppInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RebuildAppInstance(request *RebuildAppInstanceRequest) (re
 }
 
 // RebuildAppInstanceWithChan invokes the retailcloud.RebuildAppInstance API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/rebuildappinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebuildAppInstanceWithChan(request *RebuildAppInstanceRequest) (<-chan *RebuildAppInstanceResponse, <-chan error) {
 	responseChan := make(chan *RebuildAppInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RebuildAppInstanceWithChan(request *RebuildAppInstanceRequ
 }
 
 // RebuildAppInstanceWithCallback invokes the retailcloud.RebuildAppInstance API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/rebuildappinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebuildAppInstanceWithCallback(request *RebuildAppInstanceRequest, callback func(response *RebuildAppInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateRebuildAppInstanceRequest() (request *RebuildAppInstanceRequest) {
 	request = &RebuildAppInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "RebuildAppInstance", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "RebuildAppInstance", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateApp invokes the retailcloud.UpdateApp API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/updateapp.html
 func (client *Client) UpdateApp(request *UpdateAppRequest) (response *UpdateAppResponse, err error) {
 	response = CreateUpdateAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateApp(request *UpdateAppRequest) (response *UpdateAppR
 }
 
 // UpdateAppWithChan invokes the retailcloud.UpdateApp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/updateapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAppWithChan(request *UpdateAppRequest) (<-chan *UpdateAppResponse, <-chan error) {
 	responseChan := make(chan *UpdateAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAppWithChan(request *UpdateAppRequest) (<-chan *Upda
 }
 
 // UpdateAppWithCallback invokes the retailcloud.UpdateApp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/updateapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAppWithCallback(request *UpdateAppRequest, callback func(response *UpdateAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -107,7 +102,7 @@ func CreateUpdateAppRequest() (request *UpdateAppRequest) {
 	request = &UpdateAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateApp", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateApp", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

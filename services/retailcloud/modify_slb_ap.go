@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySlbAP invokes the retailcloud.ModifySlbAP API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/modifyslbap.html
 func (client *Client) ModifySlbAP(request *ModifySlbAPRequest) (response *ModifySlbAPResponse, err error) {
 	response = CreateModifySlbAPResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySlbAP(request *ModifySlbAPRequest) (response *Modify
 }
 
 // ModifySlbAPWithChan invokes the retailcloud.ModifySlbAP API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/modifyslbap.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySlbAPWithChan(request *ModifySlbAPRequest) (<-chan *ModifySlbAPResponse, <-chan error) {
 	responseChan := make(chan *ModifySlbAPResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySlbAPWithChan(request *ModifySlbAPRequest) (<-chan *
 }
 
 // ModifySlbAPWithCallback invokes the retailcloud.ModifySlbAP API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/modifyslbap.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySlbAPWithCallback(request *ModifySlbAPRequest, callback func(response *ModifySlbAPResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateModifySlbAPRequest() (request *ModifySlbAPRequest) {
 	request = &ModifySlbAPRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ModifySlbAP", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ModifySlbAP", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

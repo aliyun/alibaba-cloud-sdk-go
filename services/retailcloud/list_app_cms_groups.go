@@ -21,7 +21,6 @@ import (
 )
 
 // ListAppCmsGroups invokes the retailcloud.ListAppCmsGroups API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappcmsgroups.html
 func (client *Client) ListAppCmsGroups(request *ListAppCmsGroupsRequest) (response *ListAppCmsGroupsResponse, err error) {
 	response = CreateListAppCmsGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAppCmsGroups(request *ListAppCmsGroupsRequest) (respon
 }
 
 // ListAppCmsGroupsWithChan invokes the retailcloud.ListAppCmsGroups API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappcmsgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppCmsGroupsWithChan(request *ListAppCmsGroupsRequest) (<-chan *ListAppCmsGroupsResponse, <-chan error) {
 	responseChan := make(chan *ListAppCmsGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppCmsGroupsWithChan(request *ListAppCmsGroupsRequest)
 }
 
 // ListAppCmsGroupsWithCallback invokes the retailcloud.ListAppCmsGroups API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappcmsgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppCmsGroupsWithCallback(request *ListAppCmsGroupsRequest, callback func(response *ListAppCmsGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateListAppCmsGroupsRequest() (request *ListAppCmsGroupsRequest) {
 	request = &ListAppCmsGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppCmsGroups", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppCmsGroups", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

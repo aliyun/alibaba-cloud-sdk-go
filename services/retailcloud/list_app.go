@@ -21,7 +21,6 @@ import (
 )
 
 // ListApp invokes the retailcloud.ListApp API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listapp.html
 func (client *Client) ListApp(request *ListAppRequest) (response *ListAppResponse, err error) {
 	response = CreateListAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListApp(request *ListAppRequest) (response *ListAppRespons
 }
 
 // ListAppWithChan invokes the retailcloud.ListApp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppWithChan(request *ListAppRequest) (<-chan *ListAppResponse, <-chan error) {
 	responseChan := make(chan *ListAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppWithChan(request *ListAppRequest) (<-chan *ListAppR
 }
 
 // ListAppWithCallback invokes the retailcloud.ListApp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppWithCallback(request *ListAppRequest, callback func(response *ListAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateListAppRequest() (request *ListAppRequest) {
 	request = &ListAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListApp", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListApp", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

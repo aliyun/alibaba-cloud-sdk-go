@@ -21,7 +21,6 @@ import (
 )
 
 // ListAppEnvironment invokes the retailcloud.ListAppEnvironment API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappenvironment.html
 func (client *Client) ListAppEnvironment(request *ListAppEnvironmentRequest) (response *ListAppEnvironmentResponse, err error) {
 	response = CreateListAppEnvironmentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAppEnvironment(request *ListAppEnvironmentRequest) (re
 }
 
 // ListAppEnvironmentWithChan invokes the retailcloud.ListAppEnvironment API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappenvironment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppEnvironmentWithChan(request *ListAppEnvironmentRequest) (<-chan *ListAppEnvironmentResponse, <-chan error) {
 	responseChan := make(chan *ListAppEnvironmentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppEnvironmentWithChan(request *ListAppEnvironmentRequ
 }
 
 // ListAppEnvironmentWithCallback invokes the retailcloud.ListAppEnvironment API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listappenvironment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppEnvironmentWithCallback(request *ListAppEnvironmentRequest, callback func(response *ListAppEnvironmentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateListAppEnvironmentRequest() (request *ListAppEnvironmentRequest) {
 	request = &ListAppEnvironmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppEnvironment", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppEnvironment", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

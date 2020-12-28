@@ -21,7 +21,6 @@ import (
 )
 
 // CloseDeployOrder invokes the retailcloud.CloseDeployOrder API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/closedeployorder.html
 func (client *Client) CloseDeployOrder(request *CloseDeployOrderRequest) (response *CloseDeployOrderResponse, err error) {
 	response = CreateCloseDeployOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloseDeployOrder(request *CloseDeployOrderRequest) (respon
 }
 
 // CloseDeployOrderWithChan invokes the retailcloud.CloseDeployOrder API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/closedeployorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseDeployOrderWithChan(request *CloseDeployOrderRequest) (<-chan *CloseDeployOrderResponse, <-chan error) {
 	responseChan := make(chan *CloseDeployOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloseDeployOrderWithChan(request *CloseDeployOrderRequest)
 }
 
 // CloseDeployOrderWithCallback invokes the retailcloud.CloseDeployOrder API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/closedeployorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseDeployOrderWithCallback(request *CloseDeployOrderRequest, callback func(response *CloseDeployOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateCloseDeployOrderRequest() (request *CloseDeployOrderRequest) {
 	request = &CloseDeployOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CloseDeployOrder", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CloseDeployOrder", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

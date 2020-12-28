@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDeployConfig invokes the retailcloud.CreateDeployConfig API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createdeployconfig.html
 func (client *Client) CreateDeployConfig(request *CreateDeployConfigRequest) (response *CreateDeployConfigResponse, err error) {
 	response = CreateCreateDeployConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDeployConfig(request *CreateDeployConfigRequest) (re
 }
 
 // CreateDeployConfigWithChan invokes the retailcloud.CreateDeployConfig API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createdeployconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDeployConfigWithChan(request *CreateDeployConfigRequest) (<-chan *CreateDeployConfigResponse, <-chan error) {
 	responseChan := make(chan *CreateDeployConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDeployConfigWithChan(request *CreateDeployConfigRequ
 }
 
 // CreateDeployConfigWithCallback invokes the retailcloud.CreateDeployConfig API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createdeployconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDeployConfigWithCallback(request *CreateDeployConfigRequest, callback func(response *CreateDeployConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateCreateDeployConfigRequest() (request *CreateDeployConfigRequest) {
 	request = &CreateDeployConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDeployConfig", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDeployConfig", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

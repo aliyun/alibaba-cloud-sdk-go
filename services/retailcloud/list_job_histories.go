@@ -21,7 +21,6 @@ import (
 )
 
 // ListJobHistories invokes the retailcloud.ListJobHistories API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/listjobhistories.html
 func (client *Client) ListJobHistories(request *ListJobHistoriesRequest) (response *ListJobHistoriesResponse, err error) {
 	response = CreateListJobHistoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListJobHistories(request *ListJobHistoriesRequest) (respon
 }
 
 // ListJobHistoriesWithChan invokes the retailcloud.ListJobHistories API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listjobhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobHistoriesWithChan(request *ListJobHistoriesRequest) (<-chan *ListJobHistoriesResponse, <-chan error) {
 	responseChan := make(chan *ListJobHistoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListJobHistoriesWithChan(request *ListJobHistoriesRequest)
 }
 
 // ListJobHistoriesWithCallback invokes the retailcloud.ListJobHistories API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/listjobhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobHistoriesWithCallback(request *ListJobHistoriesRequest, callback func(response *ListJobHistoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateListJobHistoriesRequest() (request *ListJobHistoriesRequest) {
 	request = &ListJobHistoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListJobHistories", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListJobHistories", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateService invokes the retailcloud.CreateService API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/createservice.html
 func (client *Client) CreateService(request *CreateServiceRequest) (response *CreateServiceResponse, err error) {
 	response = CreateCreateServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateService(request *CreateServiceRequest) (response *Cr
 }
 
 // CreateServiceWithChan invokes the retailcloud.CreateService API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateServiceWithChan(request *CreateServiceRequest) (<-chan *CreateServiceResponse, <-chan error) {
 	responseChan := make(chan *CreateServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateServiceWithChan(request *CreateServiceRequest) (<-ch
 }
 
 // CreateServiceWithCallback invokes the retailcloud.CreateService API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/createservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateServiceWithCallback(request *CreateServiceRequest, callback func(response *CreateServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -108,7 +103,7 @@ func CreateCreateServiceRequest() (request *CreateServiceRequest) {
 	request = &CreateServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateService", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateService", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

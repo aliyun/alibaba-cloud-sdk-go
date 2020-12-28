@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeServiceDetail invokes the retailcloud.DescribeServiceDetail API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeservicedetail.html
 func (client *Client) DescribeServiceDetail(request *DescribeServiceDetailRequest) (response *DescribeServiceDetailResponse, err error) {
 	response = CreateDescribeServiceDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeServiceDetail(request *DescribeServiceDetailReques
 }
 
 // DescribeServiceDetailWithChan invokes the retailcloud.DescribeServiceDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeservicedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServiceDetailWithChan(request *DescribeServiceDetailRequest) (<-chan *DescribeServiceDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeServiceDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeServiceDetailWithChan(request *DescribeServiceDeta
 }
 
 // DescribeServiceDetailWithCallback invokes the retailcloud.DescribeServiceDetail API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/describeservicedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServiceDetailWithCallback(request *DescribeServiceDetailRequest, callback func(response *DescribeServiceDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeServiceDetailRequest() (request *DescribeServiceDetailRequest
 	request = &DescribeServiceDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeServiceDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeServiceDetail", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

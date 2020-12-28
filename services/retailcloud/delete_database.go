@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDatabase invokes the retailcloud.DeleteDatabase API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletedatabase.html
 func (client *Client) DeleteDatabase(request *DeleteDatabaseRequest) (response *DeleteDatabaseResponse, err error) {
 	response = CreateDeleteDatabaseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDatabase(request *DeleteDatabaseRequest) (response *
 }
 
 // DeleteDatabaseWithChan invokes the retailcloud.DeleteDatabase API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletedatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDatabaseWithChan(request *DeleteDatabaseRequest) (<-chan *DeleteDatabaseResponse, <-chan error) {
 	responseChan := make(chan *DeleteDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDatabaseWithChan(request *DeleteDatabaseRequest) (<-
 }
 
 // DeleteDatabaseWithCallback invokes the retailcloud.DeleteDatabase API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deletedatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDatabaseWithCallback(request *DeleteDatabaseRequest, callback func(response *DeleteDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteDatabaseRequest() (request *DeleteDatabaseRequest) {
 	request = &DeleteDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteDatabase", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteDatabase", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

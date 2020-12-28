@@ -21,7 +21,6 @@ import (
 )
 
 // DeployApp invokes the retailcloud.DeployApp API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deployapp.html
 func (client *Client) DeployApp(request *DeployAppRequest) (response *DeployAppResponse, err error) {
 	response = CreateDeployAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeployApp(request *DeployAppRequest) (response *DeployAppR
 }
 
 // DeployAppWithChan invokes the retailcloud.DeployApp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deployapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeployAppWithChan(request *DeployAppRequest) (<-chan *DeployAppResponse, <-chan error) {
 	responseChan := make(chan *DeployAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeployAppWithChan(request *DeployAppRequest) (<-chan *Depl
 }
 
 // DeployAppWithCallback invokes the retailcloud.DeployApp API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deployapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeployAppWithCallback(request *DeployAppRequest, callback func(response *DeployAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateDeployAppRequest() (request *DeployAppRequest) {
 	request = &DeployAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeployApp", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeployApp", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

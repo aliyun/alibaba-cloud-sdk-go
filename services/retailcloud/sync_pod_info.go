@@ -21,7 +21,6 @@ import (
 )
 
 // SyncPodInfo invokes the retailcloud.SyncPodInfo API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/syncpodinfo.html
 func (client *Client) SyncPodInfo(request *SyncPodInfoRequest) (response *SyncPodInfoResponse, err error) {
 	response = CreateSyncPodInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SyncPodInfo(request *SyncPodInfoRequest) (response *SyncPo
 }
 
 // SyncPodInfoWithChan invokes the retailcloud.SyncPodInfo API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/syncpodinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncPodInfoWithChan(request *SyncPodInfoRequest) (<-chan *SyncPodInfoResponse, <-chan error) {
 	responseChan := make(chan *SyncPodInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SyncPodInfoWithChan(request *SyncPodInfoRequest) (<-chan *
 }
 
 // SyncPodInfoWithCallback invokes the retailcloud.SyncPodInfo API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/syncpodinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncPodInfoWithCallback(request *SyncPodInfoRequest, callback func(response *SyncPodInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateSyncPodInfoRequest() (request *SyncPodInfoRequest) {
 	request = &SyncPodInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "SyncPodInfo", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "SyncPodInfo", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

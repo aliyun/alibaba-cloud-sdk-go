@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteService invokes the retailcloud.DeleteService API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteservice.html
 func (client *Client) DeleteService(request *DeleteServiceRequest) (response *DeleteServiceResponse, err error) {
 	response = CreateDeleteServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteService(request *DeleteServiceRequest) (response *De
 }
 
 // DeleteServiceWithChan invokes the retailcloud.DeleteService API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteServiceWithChan(request *DeleteServiceRequest) (<-chan *DeleteServiceResponse, <-chan error) {
 	responseChan := make(chan *DeleteServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteServiceWithChan(request *DeleteServiceRequest) (<-ch
 }
 
 // DeleteServiceWithCallback invokes the retailcloud.DeleteService API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteServiceWithCallback(request *DeleteServiceRequest, callback func(response *DeleteServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteServiceRequest() (request *DeleteServiceRequest) {
 	request = &DeleteServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteService", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteService", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAppResourceAlloc invokes the retailcloud.DeleteAppResourceAlloc API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteappresourcealloc.html
 func (client *Client) DeleteAppResourceAlloc(request *DeleteAppResourceAllocRequest) (response *DeleteAppResourceAllocResponse, err error) {
 	response = CreateDeleteAppResourceAllocResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAppResourceAlloc(request *DeleteAppResourceAllocRequ
 }
 
 // DeleteAppResourceAllocWithChan invokes the retailcloud.DeleteAppResourceAlloc API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteappresourcealloc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAppResourceAllocWithChan(request *DeleteAppResourceAllocRequest) (<-chan *DeleteAppResourceAllocResponse, <-chan error) {
 	responseChan := make(chan *DeleteAppResourceAllocResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAppResourceAllocWithChan(request *DeleteAppResourceA
 }
 
 // DeleteAppResourceAllocWithCallback invokes the retailcloud.DeleteAppResourceAlloc API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/deleteappresourcealloc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAppResourceAllocWithCallback(request *DeleteAppResourceAllocRequest, callback func(response *DeleteAppResourceAllocResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteAppResourceAllocRequest() (request *DeleteAppResourceAllocReque
 	request = &DeleteAppResourceAllocRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteAppResourceAlloc", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteAppResourceAlloc", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

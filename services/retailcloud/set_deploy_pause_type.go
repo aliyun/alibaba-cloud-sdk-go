@@ -21,7 +21,6 @@ import (
 )
 
 // SetDeployPauseType invokes the retailcloud.SetDeployPauseType API synchronously
-// api document: https://help.aliyun.com/api/retailcloud/setdeploypausetype.html
 func (client *Client) SetDeployPauseType(request *SetDeployPauseTypeRequest) (response *SetDeployPauseTypeResponse, err error) {
 	response = CreateSetDeployPauseTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDeployPauseType(request *SetDeployPauseTypeRequest) (re
 }
 
 // SetDeployPauseTypeWithChan invokes the retailcloud.SetDeployPauseType API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/setdeploypausetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDeployPauseTypeWithChan(request *SetDeployPauseTypeRequest) (<-chan *SetDeployPauseTypeResponse, <-chan error) {
 	responseChan := make(chan *SetDeployPauseTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDeployPauseTypeWithChan(request *SetDeployPauseTypeRequ
 }
 
 // SetDeployPauseTypeWithCallback invokes the retailcloud.SetDeployPauseType API asynchronously
-// api document: https://help.aliyun.com/api/retailcloud/setdeploypausetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDeployPauseTypeWithCallback(request *SetDeployPauseTypeRequest, callback func(response *SetDeployPauseTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSetDeployPauseTypeRequest() (request *SetDeployPauseTypeRequest) {
 	request = &SetDeployPauseTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "SetDeployPauseType", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "SetDeployPauseType", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }
