@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePricingModule invokes the bssopenapi.DescribePricingModule API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/describepricingmodule.html
 func (client *Client) DescribePricingModule(request *DescribePricingModuleRequest) (response *DescribePricingModuleResponse, err error) {
 	response = CreateDescribePricingModuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePricingModule(request *DescribePricingModuleReques
 }
 
 // DescribePricingModuleWithChan invokes the bssopenapi.DescribePricingModule API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/describepricingmodule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePricingModuleWithChan(request *DescribePricingModuleRequest) (<-chan *DescribePricingModuleResponse, <-chan error) {
 	responseChan := make(chan *DescribePricingModuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePricingModuleWithChan(request *DescribePricingModu
 }
 
 // DescribePricingModuleWithCallback invokes the bssopenapi.DescribePricingModule API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/describepricingmodule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePricingModuleWithCallback(request *DescribePricingModuleRequest, callback func(response *DescribePricingModuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

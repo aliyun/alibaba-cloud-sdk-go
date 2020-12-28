@@ -21,7 +21,6 @@ import (
 )
 
 // SetResellerUserStatus invokes the bssopenapi.SetResellerUserStatus API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/setreselleruserstatus.html
 func (client *Client) SetResellerUserStatus(request *SetResellerUserStatusRequest) (response *SetResellerUserStatusResponse, err error) {
 	response = CreateSetResellerUserStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetResellerUserStatus(request *SetResellerUserStatusReques
 }
 
 // SetResellerUserStatusWithChan invokes the bssopenapi.SetResellerUserStatus API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/setreselleruserstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetResellerUserStatusWithChan(request *SetResellerUserStatusRequest) (<-chan *SetResellerUserStatusResponse, <-chan error) {
 	responseChan := make(chan *SetResellerUserStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetResellerUserStatusWithChan(request *SetResellerUserStat
 }
 
 // SetResellerUserStatusWithCallback invokes the bssopenapi.SetResellerUserStatus API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/setreselleruserstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetResellerUserStatusWithCallback(request *SetResellerUserStatusRequest, callback func(response *SetResellerUserStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

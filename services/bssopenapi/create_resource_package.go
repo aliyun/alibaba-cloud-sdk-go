@@ -21,7 +21,6 @@ import (
 )
 
 // CreateResourcePackage invokes the bssopenapi.CreateResourcePackage API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createresourcepackage.html
 func (client *Client) CreateResourcePackage(request *CreateResourcePackageRequest) (response *CreateResourcePackageResponse, err error) {
 	response = CreateCreateResourcePackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateResourcePackage(request *CreateResourcePackageReques
 }
 
 // CreateResourcePackageWithChan invokes the bssopenapi.CreateResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createresourcepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateResourcePackageWithChan(request *CreateResourcePackageRequest) (<-chan *CreateResourcePackageResponse, <-chan error) {
 	responseChan := make(chan *CreateResourcePackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateResourcePackageWithChan(request *CreateResourcePacka
 }
 
 // CreateResourcePackageWithCallback invokes the bssopenapi.CreateResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createresourcepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateResourcePackageWithCallback(request *CreateResourcePackageRequest, callback func(response *CreateResourcePackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

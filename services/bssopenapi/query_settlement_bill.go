@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySettlementBill invokes the bssopenapi.QuerySettlementBill API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querysettlementbill.html
 func (client *Client) QuerySettlementBill(request *QuerySettlementBillRequest) (response *QuerySettlementBillResponse, err error) {
 	response = CreateQuerySettlementBillResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySettlementBill(request *QuerySettlementBillRequest) (
 }
 
 // QuerySettlementBillWithChan invokes the bssopenapi.QuerySettlementBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querysettlementbill.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySettlementBillWithChan(request *QuerySettlementBillRequest) (<-chan *QuerySettlementBillResponse, <-chan error) {
 	responseChan := make(chan *QuerySettlementBillResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySettlementBillWithChan(request *QuerySettlementBillRe
 }
 
 // QuerySettlementBillWithCallback invokes the bssopenapi.QuerySettlementBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querysettlementbill.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySettlementBillWithCallback(request *QuerySettlementBillRequest, callback func(response *QuerySettlementBillResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

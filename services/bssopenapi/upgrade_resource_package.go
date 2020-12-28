@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeResourcePackage invokes the bssopenapi.UpgradeResourcePackage API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/upgraderesourcepackage.html
 func (client *Client) UpgradeResourcePackage(request *UpgradeResourcePackageRequest) (response *UpgradeResourcePackageResponse, err error) {
 	response = CreateUpgradeResourcePackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeResourcePackage(request *UpgradeResourcePackageRequ
 }
 
 // UpgradeResourcePackageWithChan invokes the bssopenapi.UpgradeResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/upgraderesourcepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeResourcePackageWithChan(request *UpgradeResourcePackageRequest) (<-chan *UpgradeResourcePackageResponse, <-chan error) {
 	responseChan := make(chan *UpgradeResourcePackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeResourcePackageWithChan(request *UpgradeResourcePac
 }
 
 // UpgradeResourcePackageWithCallback invokes the bssopenapi.UpgradeResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/upgraderesourcepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeResourcePackageWithCallback(request *UpgradeResourcePackageRequest, callback func(response *UpgradeResourcePackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

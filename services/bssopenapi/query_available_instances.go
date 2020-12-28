@@ -21,7 +21,6 @@ import (
 )
 
 // QueryAvailableInstances invokes the bssopenapi.QueryAvailableInstances API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryavailableinstances.html
 func (client *Client) QueryAvailableInstances(request *QueryAvailableInstancesRequest) (response *QueryAvailableInstancesResponse, err error) {
 	response = CreateQueryAvailableInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryAvailableInstances(request *QueryAvailableInstancesRe
 }
 
 // QueryAvailableInstancesWithChan invokes the bssopenapi.QueryAvailableInstances API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryavailableinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAvailableInstancesWithChan(request *QueryAvailableInstancesRequest) (<-chan *QueryAvailableInstancesResponse, <-chan error) {
 	responseChan := make(chan *QueryAvailableInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryAvailableInstancesWithChan(request *QueryAvailableIns
 }
 
 // QueryAvailableInstancesWithCallback invokes the bssopenapi.QueryAvailableInstances API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryavailableinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAvailableInstancesWithCallback(request *QueryAvailableInstancesRequest, callback func(response *QueryAvailableInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

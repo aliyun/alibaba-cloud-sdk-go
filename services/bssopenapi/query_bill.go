@@ -21,7 +21,6 @@ import (
 )
 
 // QueryBill invokes the bssopenapi.QueryBill API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querybill.html
 func (client *Client) QueryBill(request *QueryBillRequest) (response *QueryBillResponse, err error) {
 	response = CreateQueryBillResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryBill(request *QueryBillRequest) (response *QueryBillR
 }
 
 // QueryBillWithChan invokes the bssopenapi.QueryBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querybill.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBillWithChan(request *QueryBillRequest) (<-chan *QueryBillResponse, <-chan error) {
 	responseChan := make(chan *QueryBillResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryBillWithChan(request *QueryBillRequest) (<-chan *Quer
 }
 
 // QueryBillWithCallback invokes the bssopenapi.QueryBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querybill.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBillWithCallback(request *QueryBillRequest, callback func(response *QueryBillResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

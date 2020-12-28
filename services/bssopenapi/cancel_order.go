@@ -21,7 +21,6 @@ import (
 )
 
 // CancelOrder invokes the bssopenapi.CancelOrder API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/cancelorder.html
 func (client *Client) CancelOrder(request *CancelOrderRequest) (response *CancelOrderResponse, err error) {
 	response = CreateCancelOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelOrder(request *CancelOrderRequest) (response *Cancel
 }
 
 // CancelOrderWithChan invokes the bssopenapi.CancelOrder API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/cancelorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelOrderWithChan(request *CancelOrderRequest) (<-chan *CancelOrderResponse, <-chan error) {
 	responseChan := make(chan *CancelOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelOrderWithChan(request *CancelOrderRequest) (<-chan *
 }
 
 // CancelOrderWithCallback invokes the bssopenapi.CancelOrder API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/cancelorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelOrderWithCallback(request *CancelOrderRequest, callback func(response *CancelOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

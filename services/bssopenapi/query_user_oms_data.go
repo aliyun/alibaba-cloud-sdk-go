@@ -21,7 +21,6 @@ import (
 )
 
 // QueryUserOmsData invokes the bssopenapi.QueryUserOmsData API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryuseromsdata.html
 func (client *Client) QueryUserOmsData(request *QueryUserOmsDataRequest) (response *QueryUserOmsDataResponse, err error) {
 	response = CreateQueryUserOmsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryUserOmsData(request *QueryUserOmsDataRequest) (respon
 }
 
 // QueryUserOmsDataWithChan invokes the bssopenapi.QueryUserOmsData API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryuseromsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryUserOmsDataWithChan(request *QueryUserOmsDataRequest) (<-chan *QueryUserOmsDataResponse, <-chan error) {
 	responseChan := make(chan *QueryUserOmsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryUserOmsDataWithChan(request *QueryUserOmsDataRequest)
 }
 
 // QueryUserOmsDataWithCallback invokes the bssopenapi.QueryUserOmsData API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryuseromsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryUserOmsDataWithCallback(request *QueryUserOmsDataRequest, callback func(response *QueryUserOmsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

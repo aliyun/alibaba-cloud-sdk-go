@@ -23,14 +23,15 @@ type Order struct {
 	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
 	PaymentStatus     string `json:"PaymentStatus" xml:"PaymentStatus"`
 	Operator          string `json:"Operator" xml:"Operator"`
-	SubOrderId        string `json:"SubOrderId" xml:"SubOrderId"`
 	AfterTaxAmount    string `json:"AfterTaxAmount" xml:"AfterTaxAmount"`
-	OrderId           string `json:"OrderId" xml:"OrderId"`
+	SubOrderId        string `json:"SubOrderId" xml:"SubOrderId"`
 	OriginalConfig    string `json:"OriginalConfig" xml:"OriginalConfig"`
+	OrderId           string `json:"OrderId" xml:"OrderId"`
 	PretaxGrossAmount string `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
-	SubscriptionType  string `json:"SubscriptionType" xml:"SubscriptionType"`
 	Tax               string `json:"Tax" xml:"Tax"`
+	SubscriptionType  string `json:"SubscriptionType" xml:"SubscriptionType"`
 	UsageStartTime    string `json:"UsageStartTime" xml:"UsageStartTime"`
+	CommodityCode     string `json:"CommodityCode" xml:"CommodityCode"`
 	PretaxAmount      string `json:"PretaxAmount" xml:"PretaxAmount"`
 	PaymentCurrency   string `json:"PaymentCurrency" xml:"PaymentCurrency"`
 	OrderSubType      string `json:"OrderSubType" xml:"OrderSubType"`

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCostUnit invokes the bssopenapi.ModifyCostUnit API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/modifycostunit.html
 func (client *Client) ModifyCostUnit(request *ModifyCostUnitRequest) (response *ModifyCostUnitResponse, err error) {
 	response = CreateModifyCostUnitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCostUnit(request *ModifyCostUnitRequest) (response *
 }
 
 // ModifyCostUnitWithChan invokes the bssopenapi.ModifyCostUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/modifycostunit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCostUnitWithChan(request *ModifyCostUnitRequest) (<-chan *ModifyCostUnitResponse, <-chan error) {
 	responseChan := make(chan *ModifyCostUnitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCostUnitWithChan(request *ModifyCostUnitRequest) (<-
 }
 
 // ModifyCostUnitWithCallback invokes the bssopenapi.ModifyCostUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/modifycostunit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCostUnitWithCallback(request *ModifyCostUnitRequest, callback func(response *ModifyCostUnitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,9 +85,9 @@ type ModifyCostUnitUnitEntityList struct {
 type ModifyCostUnitResponse struct {
 	*responses.BaseResponse
 	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Success   bool       `json:"Success" xml:"Success"`
-	Code      string     `json:"Code" xml:"Code"`
 	Message   string     `json:"Message" xml:"Message"`
+	Code      string     `json:"Code" xml:"Code"`
+	Success   bool       `json:"Success" xml:"Success"`
 	Data      []DataItem `json:"Data" xml:"Data"`
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // GetCustomerAccountInfo invokes the bssopenapi.GetCustomerAccountInfo API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getcustomeraccountinfo.html
 func (client *Client) GetCustomerAccountInfo(request *GetCustomerAccountInfoRequest) (response *GetCustomerAccountInfoResponse, err error) {
 	response = CreateGetCustomerAccountInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCustomerAccountInfo(request *GetCustomerAccountInfoRequ
 }
 
 // GetCustomerAccountInfoWithChan invokes the bssopenapi.GetCustomerAccountInfo API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getcustomeraccountinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCustomerAccountInfoWithChan(request *GetCustomerAccountInfoRequest) (<-chan *GetCustomerAccountInfoResponse, <-chan error) {
 	responseChan := make(chan *GetCustomerAccountInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCustomerAccountInfoWithChan(request *GetCustomerAccount
 }
 
 // GetCustomerAccountInfoWithCallback invokes the bssopenapi.GetCustomerAccountInfo API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getcustomeraccountinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCustomerAccountInfoWithCallback(request *GetCustomerAccountInfoRequest, callback func(response *GetCustomerAccountInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

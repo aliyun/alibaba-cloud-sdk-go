@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateCostUnitResource invokes the bssopenapi.AllocateCostUnitResource API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/allocatecostunitresource.html
 func (client *Client) AllocateCostUnitResource(request *AllocateCostUnitResourceRequest) (response *AllocateCostUnitResourceResponse, err error) {
 	response = CreateAllocateCostUnitResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateCostUnitResource(request *AllocateCostUnitResource
 }
 
 // AllocateCostUnitResourceWithChan invokes the bssopenapi.AllocateCostUnitResource API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/allocatecostunitresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateCostUnitResourceWithChan(request *AllocateCostUnitResourceRequest) (<-chan *AllocateCostUnitResourceResponse, <-chan error) {
 	responseChan := make(chan *AllocateCostUnitResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateCostUnitResourceWithChan(request *AllocateCostUnit
 }
 
 // AllocateCostUnitResourceWithCallback invokes the bssopenapi.AllocateCostUnitResource API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/allocatecostunitresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateCostUnitResourceWithCallback(request *AllocateCostUnitResourceRequest, callback func(response *AllocateCostUnitResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,17 +82,17 @@ type AllocateCostUnitResourceRequest struct {
 type AllocateCostUnitResourceResourceInstanceList struct {
 	ResourceId     string `name:"ResourceId"`
 	CommodityCode  string `name:"CommodityCode"`
-	ResourceUserId string `name:"ResourceUserId"`
 	ApportionCode  string `name:"ApportionCode"`
+	ResourceUserId string `name:"ResourceUserId"`
 }
 
 // AllocateCostUnitResourceResponse is the response struct for api AllocateCostUnitResource
 type AllocateCostUnitResourceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

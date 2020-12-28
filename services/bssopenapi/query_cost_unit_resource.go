@@ -21,7 +21,6 @@ import (
 )
 
 // QueryCostUnitResource invokes the bssopenapi.QueryCostUnitResource API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunitresource.html
 func (client *Client) QueryCostUnitResource(request *QueryCostUnitResourceRequest) (response *QueryCostUnitResourceResponse, err error) {
 	response = CreateQueryCostUnitResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryCostUnitResource(request *QueryCostUnitResourceReques
 }
 
 // QueryCostUnitResourceWithChan invokes the bssopenapi.QueryCostUnitResource API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunitresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCostUnitResourceWithChan(request *QueryCostUnitResourceRequest) (<-chan *QueryCostUnitResourceResponse, <-chan error) {
 	responseChan := make(chan *QueryCostUnitResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryCostUnitResourceWithChan(request *QueryCostUnitResour
 }
 
 // QueryCostUnitResourceWithCallback invokes the bssopenapi.QueryCostUnitResource API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunitresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCostUnitResourceWithCallback(request *QueryCostUnitResourceRequest, callback func(response *QueryCostUnitResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type QueryCostUnitResourceRequest struct {
 type QueryCostUnitResourceResponse struct {
 	*responses.BaseResponse
 	RequestId string                      `json:"RequestId" xml:"RequestId"`
-	Success   bool                        `json:"Success" xml:"Success"`
-	Code      string                      `json:"Code" xml:"Code"`
 	Message   string                      `json:"Message" xml:"Message"`
+	Code      string                      `json:"Code" xml:"Code"`
+	Success   bool                        `json:"Success" xml:"Success"`
 	Data      DataInQueryCostUnitResource `json:"Data" xml:"Data"`
 }
 

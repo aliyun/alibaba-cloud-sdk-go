@@ -21,7 +21,6 @@ import (
 )
 
 // QueryEvaluateList invokes the bssopenapi.QueryEvaluateList API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryevaluatelist.html
 func (client *Client) QueryEvaluateList(request *QueryEvaluateListRequest) (response *QueryEvaluateListResponse, err error) {
 	response = CreateQueryEvaluateListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryEvaluateList(request *QueryEvaluateListRequest) (resp
 }
 
 // QueryEvaluateListWithChan invokes the bssopenapi.QueryEvaluateList API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryevaluatelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEvaluateListWithChan(request *QueryEvaluateListRequest) (<-chan *QueryEvaluateListResponse, <-chan error) {
 	responseChan := make(chan *QueryEvaluateListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryEvaluateListWithChan(request *QueryEvaluateListReques
 }
 
 // QueryEvaluateListWithCallback invokes the bssopenapi.QueryEvaluateList API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryevaluatelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEvaluateListWithCallback(request *QueryEvaluateListRequest, callback func(response *QueryEvaluateListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

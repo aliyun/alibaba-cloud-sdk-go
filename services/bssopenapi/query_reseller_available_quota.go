@@ -21,7 +21,6 @@ import (
 )
 
 // QueryResellerAvailableQuota invokes the bssopenapi.QueryResellerAvailableQuota API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryreselleravailablequota.html
 func (client *Client) QueryResellerAvailableQuota(request *QueryResellerAvailableQuotaRequest) (response *QueryResellerAvailableQuotaResponse, err error) {
 	response = CreateQueryResellerAvailableQuotaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryResellerAvailableQuota(request *QueryResellerAvailabl
 }
 
 // QueryResellerAvailableQuotaWithChan invokes the bssopenapi.QueryResellerAvailableQuota API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryreselleravailablequota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryResellerAvailableQuotaWithChan(request *QueryResellerAvailableQuotaRequest) (<-chan *QueryResellerAvailableQuotaResponse, <-chan error) {
 	responseChan := make(chan *QueryResellerAvailableQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryResellerAvailableQuotaWithChan(request *QueryReseller
 }
 
 // QueryResellerAvailableQuotaWithCallback invokes the bssopenapi.QueryResellerAvailableQuota API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryreselleravailablequota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryResellerAvailableQuotaWithCallback(request *QueryResellerAvailableQuotaRequest, callback func(response *QueryResellerAvailableQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -17,9 +17,9 @@ package bssopenapi
 
 // DataInQueryCostUnitResource is a nested struct in bssopenapi response
 type DataInQueryCostUnitResource struct {
-	PageNum                 int                    `json:"PageNum" xml:"PageNum"`
-	PageSize                int                    `json:"PageSize" xml:"PageSize"`
 	TotalCount              int                    `json:"TotalCount" xml:"TotalCount"`
+	PageSize                int                    `json:"PageSize" xml:"PageSize"`
+	PageNum                 int                    `json:"PageNum" xml:"PageNum"`
 	CostUnit                CostUnit               `json:"CostUnit" xml:"CostUnit"`
 	CostUnitStatisInfo      CostUnitStatisInfo     `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
 	ResourceInstanceDtoList []ResourceInstanceList `json:"ResourceInstanceDtoList" xml:"ResourceInstanceDtoList"`

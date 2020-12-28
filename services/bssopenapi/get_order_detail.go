@@ -21,7 +21,6 @@ import (
 )
 
 // GetOrderDetail invokes the bssopenapi.GetOrderDetail API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getorderdetail.html
 func (client *Client) GetOrderDetail(request *GetOrderDetailRequest) (response *GetOrderDetailResponse, err error) {
 	response = CreateGetOrderDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetOrderDetail(request *GetOrderDetailRequest) (response *
 }
 
 // GetOrderDetailWithChan invokes the bssopenapi.GetOrderDetail API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getorderdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOrderDetailWithChan(request *GetOrderDetailRequest) (<-chan *GetOrderDetailResponse, <-chan error) {
 	responseChan := make(chan *GetOrderDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetOrderDetailWithChan(request *GetOrderDetailRequest) (<-
 }
 
 // GetOrderDetailWithCallback invokes the bssopenapi.GetOrderDetail API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getorderdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOrderDetailWithCallback(request *GetOrderDetailRequest, callback func(response *GetOrderDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,9 +79,9 @@ type GetOrderDetailRequest struct {
 type GetOrderDetailResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

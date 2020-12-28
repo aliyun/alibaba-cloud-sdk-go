@@ -21,7 +21,6 @@ import (
 )
 
 // GetCustomerList invokes the bssopenapi.GetCustomerList API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getcustomerlist.html
 func (client *Client) GetCustomerList(request *GetCustomerListRequest) (response *GetCustomerListResponse, err error) {
 	response = CreateGetCustomerListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCustomerList(request *GetCustomerListRequest) (response
 }
 
 // GetCustomerListWithChan invokes the bssopenapi.GetCustomerList API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getcustomerlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCustomerListWithChan(request *GetCustomerListRequest) (<-chan *GetCustomerListResponse, <-chan error) {
 	responseChan := make(chan *GetCustomerListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCustomerListWithChan(request *GetCustomerListRequest) (
 }
 
 // GetCustomerListWithCallback invokes the bssopenapi.GetCustomerList API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getcustomerlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCustomerListWithCallback(request *GetCustomerListRequest, callback func(response *GetCustomerListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

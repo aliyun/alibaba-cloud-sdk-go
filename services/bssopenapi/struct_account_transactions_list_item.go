@@ -17,17 +17,17 @@ package bssopenapi
 
 // AccountTransactionsListItem is a nested struct in bssopenapi response
 type AccountTransactionsListItem struct {
-	TransactionNumber    string `json:"TransactionNumber" xml:"TransactionNumber"`
-	TransactionTime      string `json:"TransactionTime" xml:"TransactionTime"`
-	TransactionFlow      string `json:"TransactionFlow" xml:"TransactionFlow"`
-	TransactionType      string `json:"TransactionType" xml:"TransactionType"`
-	TransactionChannel   string `json:"TransactionChannel" xml:"TransactionChannel"`
-	TransactionChannelSN string `json:"TransactionChannelSN" xml:"TransactionChannelSN"`
-	FundType             string `json:"FundType" xml:"FundType"`
-	RecordID             string `json:"RecordID" xml:"RecordID"`
-	Remarks              string `json:"Remarks" xml:"Remarks"`
-	BillingCycle         string `json:"BillingCycle" xml:"BillingCycle"`
-	Amount               string `json:"Amount" xml:"Amount"`
 	Balance              string `json:"Balance" xml:"Balance"`
 	TransactionAccount   string `json:"TransactionAccount" xml:"TransactionAccount"`
+	TransactionTime      string `json:"TransactionTime" xml:"TransactionTime"`
+	TransactionChannel   string `json:"TransactionChannel" xml:"TransactionChannel"`
+	FundType             string `json:"FundType" xml:"FundType"`
+	Amount               string `json:"Amount" xml:"Amount"`
+	TransactionType      string `json:"TransactionType" xml:"TransactionType"`
+	TransactionNumber    string `json:"TransactionNumber" xml:"TransactionNumber"`
+	RecordID             string `json:"RecordID" xml:"RecordID"`
+	TransactionFlow      string `json:"TransactionFlow" xml:"TransactionFlow"`
+	TransactionChannelSN string `json:"TransactionChannelSN" xml:"TransactionChannelSN"`
+	Remarks              string `json:"Remarks" xml:"Remarks"`
+	BillingCycle         string `json:"BillingCycle" xml:"BillingCycle"`
 }

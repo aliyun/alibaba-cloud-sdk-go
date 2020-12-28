@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCostUnit invokes the bssopenapi.CreateCostUnit API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createcostunit.html
 func (client *Client) CreateCostUnit(request *CreateCostUnitRequest) (response *CreateCostUnitResponse, err error) {
 	response = CreateCreateCostUnitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCostUnit(request *CreateCostUnitRequest) (response *
 }
 
 // CreateCostUnitWithChan invokes the bssopenapi.CreateCostUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createcostunit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCostUnitWithChan(request *CreateCostUnitRequest) (<-chan *CreateCostUnitResponse, <-chan error) {
 	responseChan := make(chan *CreateCostUnitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCostUnitWithChan(request *CreateCostUnitRequest) (<-
 }
 
 // CreateCostUnitWithCallback invokes the bssopenapi.CreateCostUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createcostunit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCostUnitWithCallback(request *CreateCostUnitRequest, callback func(response *CreateCostUnitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,9 +85,9 @@ type CreateCostUnitUnitEntityList struct {
 type CreateCostUnitResponse struct {
 	*responses.BaseResponse
 	RequestId string               `json:"RequestId" xml:"RequestId"`
-	Success   bool                 `json:"Success" xml:"Success"`
-	Code      string               `json:"Code" xml:"Code"`
 	Message   string               `json:"Message" xml:"Message"`
+	Code      string               `json:"Code" xml:"Code"`
+	Success   bool                 `json:"Success" xml:"Success"`
 	Data      DataInCreateCostUnit `json:"Data" xml:"Data"`
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMonthlyInstanceConsumption invokes the bssopenapi.QueryMonthlyInstanceConsumption API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querymonthlyinstanceconsumption.html
 func (client *Client) QueryMonthlyInstanceConsumption(request *QueryMonthlyInstanceConsumptionRequest) (response *QueryMonthlyInstanceConsumptionResponse, err error) {
 	response = CreateQueryMonthlyInstanceConsumptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMonthlyInstanceConsumption(request *QueryMonthlyInsta
 }
 
 // QueryMonthlyInstanceConsumptionWithChan invokes the bssopenapi.QueryMonthlyInstanceConsumption API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querymonthlyinstanceconsumption.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMonthlyInstanceConsumptionWithChan(request *QueryMonthlyInstanceConsumptionRequest) (<-chan *QueryMonthlyInstanceConsumptionResponse, <-chan error) {
 	responseChan := make(chan *QueryMonthlyInstanceConsumptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMonthlyInstanceConsumptionWithChan(request *QueryMont
 }
 
 // QueryMonthlyInstanceConsumptionWithCallback invokes the bssopenapi.QueryMonthlyInstanceConsumption API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querymonthlyinstanceconsumption.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMonthlyInstanceConsumptionWithCallback(request *QueryMonthlyInstanceConsumptionRequest, callback func(response *QueryMonthlyInstanceConsumptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

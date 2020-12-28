@@ -17,11 +17,11 @@ package bssopenapi
 
 // CostUnitStatisInfo is a nested struct in bssopenapi response
 type CostUnitStatisInfo struct {
-	ResourceCount           int64 `json:"ResourceCount" xml:"ResourceCount"`
-	ResourceGroupCount      int64 `json:"ResourceGroupCount" xml:"ResourceGroupCount"`
 	SubUnitCount            int64 `json:"SubUnitCount" xml:"SubUnitCount"`
-	UserCount               int64 `json:"UserCount" xml:"UserCount"`
-	TotalResourceCount      int64 `json:"TotalResourceCount" xml:"TotalResourceCount"`
-	TotalUserCount          int64 `json:"TotalUserCount" xml:"TotalUserCount"`
 	TotalResourceGroupCount int64 `json:"TotalResourceGroupCount" xml:"TotalResourceGroupCount"`
+	TotalResourceCount      int64 `json:"TotalResourceCount" xml:"TotalResourceCount"`
+	UserCount               int64 `json:"UserCount" xml:"UserCount"`
+	ResourceCount           int64 `json:"ResourceCount" xml:"ResourceCount"`
+	TotalUserCount          int64 `json:"TotalUserCount" xml:"TotalUserCount"`
+	ResourceGroupCount      int64 `json:"ResourceGroupCount" xml:"ResourceGroupCount"`
 }

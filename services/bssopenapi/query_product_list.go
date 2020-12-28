@@ -21,7 +21,6 @@ import (
 )
 
 // QueryProductList invokes the bssopenapi.QueryProductList API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryproductlist.html
 func (client *Client) QueryProductList(request *QueryProductListRequest) (response *QueryProductListResponse, err error) {
 	response = CreateQueryProductListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryProductList(request *QueryProductListRequest) (respon
 }
 
 // QueryProductListWithChan invokes the bssopenapi.QueryProductList API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryproductlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryProductListWithChan(request *QueryProductListRequest) (<-chan *QueryProductListResponse, <-chan error) {
 	responseChan := make(chan *QueryProductListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryProductListWithChan(request *QueryProductListRequest)
 }
 
 // QueryProductListWithCallback invokes the bssopenapi.QueryProductList API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryproductlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryProductListWithCallback(request *QueryProductListRequest, callback func(response *QueryProductListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

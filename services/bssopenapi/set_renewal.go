@@ -21,7 +21,6 @@ import (
 )
 
 // SetRenewal invokes the bssopenapi.SetRenewal API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/setrenewal.html
 func (client *Client) SetRenewal(request *SetRenewalRequest) (response *SetRenewalResponse, err error) {
 	response = CreateSetRenewalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetRenewal(request *SetRenewalRequest) (response *SetRenew
 }
 
 // SetRenewalWithChan invokes the bssopenapi.SetRenewal API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/setrenewal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRenewalWithChan(request *SetRenewalRequest) (<-chan *SetRenewalResponse, <-chan error) {
 	responseChan := make(chan *SetRenewalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetRenewalWithChan(request *SetRenewalRequest) (<-chan *Se
 }
 
 // SetRenewalWithCallback invokes the bssopenapi.SetRenewal API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/setrenewal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRenewalWithCallback(request *SetRenewalRequest, callback func(response *SetRenewalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

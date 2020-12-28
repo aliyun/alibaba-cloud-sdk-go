@@ -21,7 +21,6 @@ import (
 )
 
 // QueryResourcePackageInstances invokes the bssopenapi.QueryResourcePackageInstances API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryresourcepackageinstances.html
 func (client *Client) QueryResourcePackageInstances(request *QueryResourcePackageInstancesRequest) (response *QueryResourcePackageInstancesResponse, err error) {
 	response = CreateQueryResourcePackageInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryResourcePackageInstances(request *QueryResourcePackag
 }
 
 // QueryResourcePackageInstancesWithChan invokes the bssopenapi.QueryResourcePackageInstances API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryresourcepackageinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryResourcePackageInstancesWithChan(request *QueryResourcePackageInstancesRequest) (<-chan *QueryResourcePackageInstancesResponse, <-chan error) {
 	responseChan := make(chan *QueryResourcePackageInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryResourcePackageInstancesWithChan(request *QueryResour
 }
 
 // QueryResourcePackageInstancesWithCallback invokes the bssopenapi.QueryResourcePackageInstances API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryresourcepackageinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryResourcePackageInstancesWithCallback(request *QueryResourcePackageInstancesRequest, callback func(response *QueryResourcePackageInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

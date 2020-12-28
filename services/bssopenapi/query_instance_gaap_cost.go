@@ -21,7 +21,6 @@ import (
 )
 
 // QueryInstanceGaapCost invokes the bssopenapi.QueryInstanceGaapCost API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinstancegaapcost.html
 func (client *Client) QueryInstanceGaapCost(request *QueryInstanceGaapCostRequest) (response *QueryInstanceGaapCostResponse, err error) {
 	response = CreateQueryInstanceGaapCostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryInstanceGaapCost(request *QueryInstanceGaapCostReques
 }
 
 // QueryInstanceGaapCostWithChan invokes the bssopenapi.QueryInstanceGaapCost API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinstancegaapcost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryInstanceGaapCostWithChan(request *QueryInstanceGaapCostRequest) (<-chan *QueryInstanceGaapCostResponse, <-chan error) {
 	responseChan := make(chan *QueryInstanceGaapCostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryInstanceGaapCostWithChan(request *QueryInstanceGaapCo
 }
 
 // QueryInstanceGaapCostWithCallback invokes the bssopenapi.QueryInstanceGaapCost API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinstancegaapcost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryInstanceGaapCostWithCallback(request *QueryInstanceGaapCostRequest, callback func(response *QueryInstanceGaapCostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

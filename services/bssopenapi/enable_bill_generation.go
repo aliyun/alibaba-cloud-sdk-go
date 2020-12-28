@@ -21,7 +21,6 @@ import (
 )
 
 // EnableBillGeneration invokes the bssopenapi.EnableBillGeneration API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/enablebillgeneration.html
 func (client *Client) EnableBillGeneration(request *EnableBillGenerationRequest) (response *EnableBillGenerationResponse, err error) {
 	response = CreateEnableBillGenerationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableBillGeneration(request *EnableBillGenerationRequest)
 }
 
 // EnableBillGenerationWithChan invokes the bssopenapi.EnableBillGeneration API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/enablebillgeneration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableBillGenerationWithChan(request *EnableBillGenerationRequest) (<-chan *EnableBillGenerationResponse, <-chan error) {
 	responseChan := make(chan *EnableBillGenerationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableBillGenerationWithChan(request *EnableBillGeneration
 }
 
 // EnableBillGenerationWithCallback invokes the bssopenapi.EnableBillGeneration API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/enablebillgeneration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableBillGenerationWithCallback(request *EnableBillGenerationRequest, callback func(response *EnableBillGenerationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

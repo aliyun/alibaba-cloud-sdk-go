@@ -21,7 +21,6 @@ import (
 )
 
 // GetResourcePackagePrice invokes the bssopenapi.GetResourcePackagePrice API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getresourcepackageprice.html
 func (client *Client) GetResourcePackagePrice(request *GetResourcePackagePriceRequest) (response *GetResourcePackagePriceResponse, err error) {
 	response = CreateGetResourcePackagePriceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetResourcePackagePrice(request *GetResourcePackagePriceRe
 }
 
 // GetResourcePackagePriceWithChan invokes the bssopenapi.GetResourcePackagePrice API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getresourcepackageprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResourcePackagePriceWithChan(request *GetResourcePackagePriceRequest) (<-chan *GetResourcePackagePriceResponse, <-chan error) {
 	responseChan := make(chan *GetResourcePackagePriceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetResourcePackagePriceWithChan(request *GetResourcePackag
 }
 
 // GetResourcePackagePriceWithCallback invokes the bssopenapi.GetResourcePackagePrice API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getresourcepackageprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResourcePackagePriceWithCallback(request *GetResourcePackagePriceRequest, callback func(response *GetResourcePackagePriceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

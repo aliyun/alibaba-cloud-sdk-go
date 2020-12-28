@@ -17,7 +17,7 @@ package bssopenapi
 
 // DataItem is a nested struct in bssopenapi response
 type DataItem struct {
-	OwnerUid  int64 `json:"OwnerUid" xml:"OwnerUid"`
-	UnitId    int64 `json:"UnitId" xml:"UnitId"`
 	IsSuccess bool  `json:"IsSuccess" xml:"IsSuccess"`
+	UnitId    int64 `json:"UnitId" xml:"UnitId"`
+	OwnerUid  int64 `json:"OwnerUid" xml:"OwnerUid"`
 }

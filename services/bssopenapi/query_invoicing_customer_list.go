@@ -21,7 +21,6 @@ import (
 )
 
 // QueryInvoicingCustomerList invokes the bssopenapi.QueryInvoicingCustomerList API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinvoicingcustomerlist.html
 func (client *Client) QueryInvoicingCustomerList(request *QueryInvoicingCustomerListRequest) (response *QueryInvoicingCustomerListResponse, err error) {
 	response = CreateQueryInvoicingCustomerListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryInvoicingCustomerList(request *QueryInvoicingCustomer
 }
 
 // QueryInvoicingCustomerListWithChan invokes the bssopenapi.QueryInvoicingCustomerList API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinvoicingcustomerlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryInvoicingCustomerListWithChan(request *QueryInvoicingCustomerListRequest) (<-chan *QueryInvoicingCustomerListResponse, <-chan error) {
 	responseChan := make(chan *QueryInvoicingCustomerListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryInvoicingCustomerListWithChan(request *QueryInvoicing
 }
 
 // QueryInvoicingCustomerListWithCallback invokes the bssopenapi.QueryInvoicingCustomerList API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinvoicingcustomerlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryInvoicingCustomerListWithCallback(request *QueryInvoicingCustomerListRequest, callback func(response *QueryInvoicingCustomerListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryRedeem invokes the bssopenapi.QueryRedeem API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryredeem.html
 func (client *Client) QueryRedeem(request *QueryRedeemRequest) (response *QueryRedeemResponse, err error) {
 	response = CreateQueryRedeemResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryRedeem(request *QueryRedeemRequest) (response *QueryR
 }
 
 // QueryRedeemWithChan invokes the bssopenapi.QueryRedeem API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryredeem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRedeemWithChan(request *QueryRedeemRequest) (<-chan *QueryRedeemResponse, <-chan error) {
 	responseChan := make(chan *QueryRedeemResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryRedeemWithChan(request *QueryRedeemRequest) (<-chan *
 }
 
 // QueryRedeemWithCallback invokes the bssopenapi.QueryRedeem API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryredeem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRedeemWithCallback(request *QueryRedeemRequest, callback func(response *QueryRedeemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

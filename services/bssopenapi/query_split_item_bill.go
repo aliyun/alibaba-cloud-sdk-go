@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySplitItemBill invokes the bssopenapi.QuerySplitItemBill API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querysplititembill.html
 func (client *Client) QuerySplitItemBill(request *QuerySplitItemBillRequest) (response *QuerySplitItemBillResponse, err error) {
 	response = CreateQuerySplitItemBillResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySplitItemBill(request *QuerySplitItemBillRequest) (re
 }
 
 // QuerySplitItemBillWithChan invokes the bssopenapi.QuerySplitItemBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querysplititembill.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySplitItemBillWithChan(request *QuerySplitItemBillRequest) (<-chan *QuerySplitItemBillResponse, <-chan error) {
 	responseChan := make(chan *QuerySplitItemBillResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySplitItemBillWithChan(request *QuerySplitItemBillRequ
 }
 
 // QuerySplitItemBillWithCallback invokes the bssopenapi.QuerySplitItemBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querysplititembill.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySplitItemBillWithCallback(request *QuerySplitItemBillRequest, callback func(response *QuerySplitItemBillResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

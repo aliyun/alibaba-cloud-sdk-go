@@ -21,7 +21,6 @@ import (
 )
 
 // ApplyInvoice invokes the bssopenapi.ApplyInvoice API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/applyinvoice.html
 func (client *Client) ApplyInvoice(request *ApplyInvoiceRequest) (response *ApplyInvoiceResponse, err error) {
 	response = CreateApplyInvoiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ApplyInvoice(request *ApplyInvoiceRequest) (response *Appl
 }
 
 // ApplyInvoiceWithChan invokes the bssopenapi.ApplyInvoice API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/applyinvoice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyInvoiceWithChan(request *ApplyInvoiceRequest) (<-chan *ApplyInvoiceResponse, <-chan error) {
 	responseChan := make(chan *ApplyInvoiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ApplyInvoiceWithChan(request *ApplyInvoiceRequest) (<-chan
 }
 
 // ApplyInvoiceWithCallback invokes the bssopenapi.ApplyInvoice API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/applyinvoice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyInvoiceWithCallback(request *ApplyInvoiceRequest, callback func(response *ApplyInvoiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

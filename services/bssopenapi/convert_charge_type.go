@@ -21,7 +21,6 @@ import (
 )
 
 // ConvertChargeType invokes the bssopenapi.ConvertChargeType API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/convertchargetype.html
 func (client *Client) ConvertChargeType(request *ConvertChargeTypeRequest) (response *ConvertChargeTypeResponse, err error) {
 	response = CreateConvertChargeTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConvertChargeType(request *ConvertChargeTypeRequest) (resp
 }
 
 // ConvertChargeTypeWithChan invokes the bssopenapi.ConvertChargeType API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/convertchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertChargeTypeWithChan(request *ConvertChargeTypeRequest) (<-chan *ConvertChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *ConvertChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConvertChargeTypeWithChan(request *ConvertChargeTypeReques
 }
 
 // ConvertChargeTypeWithCallback invokes the bssopenapi.ConvertChargeType API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/convertchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertChargeTypeWithCallback(request *ConvertChargeTypeRequest, callback func(response *ConvertChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

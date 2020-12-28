@@ -21,7 +21,6 @@ import (
 )
 
 // QueryRIUtilizationDetail invokes the bssopenapi.QueryRIUtilizationDetail API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryriutilizationdetail.html
 func (client *Client) QueryRIUtilizationDetail(request *QueryRIUtilizationDetailRequest) (response *QueryRIUtilizationDetailResponse, err error) {
 	response = CreateQueryRIUtilizationDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryRIUtilizationDetail(request *QueryRIUtilizationDetail
 }
 
 // QueryRIUtilizationDetailWithChan invokes the bssopenapi.QueryRIUtilizationDetail API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryriutilizationdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRIUtilizationDetailWithChan(request *QueryRIUtilizationDetailRequest) (<-chan *QueryRIUtilizationDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryRIUtilizationDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryRIUtilizationDetailWithChan(request *QueryRIUtilizati
 }
 
 // QueryRIUtilizationDetailWithCallback invokes the bssopenapi.QueryRIUtilizationDetail API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryriutilizationdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRIUtilizationDetailWithCallback(request *QueryRIUtilizationDetailRequest, callback func(response *QueryRIUtilizationDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeResourcePackageProduct invokes the bssopenapi.DescribeResourcePackageProduct API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/describeresourcepackageproduct.html
 func (client *Client) DescribeResourcePackageProduct(request *DescribeResourcePackageProductRequest) (response *DescribeResourcePackageProductResponse, err error) {
 	response = CreateDescribeResourcePackageProductResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeResourcePackageProduct(request *DescribeResourcePa
 }
 
 // DescribeResourcePackageProductWithChan invokes the bssopenapi.DescribeResourcePackageProduct API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/describeresourcepackageproduct.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourcePackageProductWithChan(request *DescribeResourcePackageProductRequest) (<-chan *DescribeResourcePackageProductResponse, <-chan error) {
 	responseChan := make(chan *DescribeResourcePackageProductResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeResourcePackageProductWithChan(request *DescribeRe
 }
 
 // DescribeResourcePackageProductWithCallback invokes the bssopenapi.DescribeResourcePackageProduct API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/describeresourcepackageproduct.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourcePackageProductWithCallback(request *DescribeResourcePackageProductRequest, callback func(response *DescribeResourcePackageProductResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

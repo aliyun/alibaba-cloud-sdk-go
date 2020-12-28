@@ -21,7 +21,6 @@ import (
 )
 
 // QueryCostUnit invokes the bssopenapi.QueryCostUnit API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunit.html
 func (client *Client) QueryCostUnit(request *QueryCostUnitRequest) (response *QueryCostUnitResponse, err error) {
 	response = CreateQueryCostUnitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryCostUnit(request *QueryCostUnitRequest) (response *Qu
 }
 
 // QueryCostUnitWithChan invokes the bssopenapi.QueryCostUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCostUnitWithChan(request *QueryCostUnitRequest) (<-chan *QueryCostUnitResponse, <-chan error) {
 	responseChan := make(chan *QueryCostUnitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryCostUnitWithChan(request *QueryCostUnitRequest) (<-ch
 }
 
 // QueryCostUnitWithCallback invokes the bssopenapi.QueryCostUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCostUnitWithCallback(request *QueryCostUnitRequest, callback func(response *QueryCostUnitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type QueryCostUnitRequest struct {
 type QueryCostUnitResponse struct {
 	*responses.BaseResponse
 	RequestId string              `json:"RequestId" xml:"RequestId"`
-	Success   bool                `json:"Success" xml:"Success"`
-	Code      string              `json:"Code" xml:"Code"`
 	Message   string              `json:"Message" xml:"Message"`
+	Code      string              `json:"Code" xml:"Code"`
+	Success   bool                `json:"Success" xml:"Success"`
 	Data      DataInQueryCostUnit `json:"Data" xml:"Data"`
 }
 

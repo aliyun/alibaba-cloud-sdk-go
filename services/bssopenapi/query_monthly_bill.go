@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMonthlyBill invokes the bssopenapi.QueryMonthlyBill API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querymonthlybill.html
 func (client *Client) QueryMonthlyBill(request *QueryMonthlyBillRequest) (response *QueryMonthlyBillResponse, err error) {
 	response = CreateQueryMonthlyBillResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMonthlyBill(request *QueryMonthlyBillRequest) (respon
 }
 
 // QueryMonthlyBillWithChan invokes the bssopenapi.QueryMonthlyBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querymonthlybill.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMonthlyBillWithChan(request *QueryMonthlyBillRequest) (<-chan *QueryMonthlyBillResponse, <-chan error) {
 	responseChan := make(chan *QueryMonthlyBillResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMonthlyBillWithChan(request *QueryMonthlyBillRequest)
 }
 
 // QueryMonthlyBillWithCallback invokes the bssopenapi.QueryMonthlyBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querymonthlybill.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMonthlyBillWithCallback(request *QueryMonthlyBillRequest, callback func(response *QueryMonthlyBillResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

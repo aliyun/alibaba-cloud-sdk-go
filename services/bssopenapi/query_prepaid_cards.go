@@ -21,7 +21,6 @@ import (
 )
 
 // QueryPrepaidCards invokes the bssopenapi.QueryPrepaidCards API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryprepaidcards.html
 func (client *Client) QueryPrepaidCards(request *QueryPrepaidCardsRequest) (response *QueryPrepaidCardsResponse, err error) {
 	response = CreateQueryPrepaidCardsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryPrepaidCards(request *QueryPrepaidCardsRequest) (resp
 }
 
 // QueryPrepaidCardsWithChan invokes the bssopenapi.QueryPrepaidCards API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryprepaidcards.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPrepaidCardsWithChan(request *QueryPrepaidCardsRequest) (<-chan *QueryPrepaidCardsResponse, <-chan error) {
 	responseChan := make(chan *QueryPrepaidCardsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryPrepaidCardsWithChan(request *QueryPrepaidCardsReques
 }
 
 // QueryPrepaidCardsWithCallback invokes the bssopenapi.QueryPrepaidCards API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryprepaidcards.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPrepaidCardsWithCallback(request *QueryPrepaidCardsRequest, callback func(response *QueryPrepaidCardsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

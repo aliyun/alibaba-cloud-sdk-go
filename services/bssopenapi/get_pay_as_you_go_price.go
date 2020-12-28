@@ -21,7 +21,6 @@ import (
 )
 
 // GetPayAsYouGoPrice invokes the bssopenapi.GetPayAsYouGoPrice API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getpayasyougoprice.html
 func (client *Client) GetPayAsYouGoPrice(request *GetPayAsYouGoPriceRequest) (response *GetPayAsYouGoPriceResponse, err error) {
 	response = CreateGetPayAsYouGoPriceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPayAsYouGoPrice(request *GetPayAsYouGoPriceRequest) (re
 }
 
 // GetPayAsYouGoPriceWithChan invokes the bssopenapi.GetPayAsYouGoPrice API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getpayasyougoprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPayAsYouGoPriceWithChan(request *GetPayAsYouGoPriceRequest) (<-chan *GetPayAsYouGoPriceResponse, <-chan error) {
 	responseChan := make(chan *GetPayAsYouGoPriceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPayAsYouGoPriceWithChan(request *GetPayAsYouGoPriceRequ
 }
 
 // GetPayAsYouGoPriceWithCallback invokes the bssopenapi.GetPayAsYouGoPrice API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/getpayasyougoprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPayAsYouGoPriceWithCallback(request *GetPayAsYouGoPriceRequest, callback func(response *GetPayAsYouGoPriceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

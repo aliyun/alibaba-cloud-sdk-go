@@ -21,7 +21,6 @@ import (
 )
 
 // SubscribeBillToOSS invokes the bssopenapi.SubscribeBillToOSS API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/subscribebilltooss.html
 func (client *Client) SubscribeBillToOSS(request *SubscribeBillToOSSRequest) (response *SubscribeBillToOSSResponse, err error) {
 	response = CreateSubscribeBillToOSSResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubscribeBillToOSS(request *SubscribeBillToOSSRequest) (re
 }
 
 // SubscribeBillToOSSWithChan invokes the bssopenapi.SubscribeBillToOSS API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/subscribebilltooss.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubscribeBillToOSSWithChan(request *SubscribeBillToOSSRequest) (<-chan *SubscribeBillToOSSResponse, <-chan error) {
 	responseChan := make(chan *SubscribeBillToOSSResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubscribeBillToOSSWithChan(request *SubscribeBillToOSSRequ
 }
 
 // SubscribeBillToOSSWithCallback invokes the bssopenapi.SubscribeBillToOSS API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/subscribebilltooss.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubscribeBillToOSSWithCallback(request *SubscribeBillToOSSRequest, callback func(response *SubscribeBillToOSSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
