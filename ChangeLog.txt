@@ -1,3 +1,7 @@
+2020-12-29 Version: v1.61.814
+- Generated 2014-05-26 for `Ecs`.
+- Supported SystemDiskPerformanceLevel, SystemDiskDeleteWithInstance, DataDiskPerformanceLevel, NetworkInterfaceSecurityGroupIds, SecurityGroupIds, PrivateIpAddress for CreateLaunchTemplate, CreateLaunchTemplateVersion, DescribeLaunchTemplateVersion.
+
 2020-12-29 Version: v1.61.813
 - Generated 2018-04-12 for `EHPC`.
 - ListNodesNoPaging return with instance type.

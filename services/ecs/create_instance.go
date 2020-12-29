@@ -173,6 +173,7 @@ type CreateInstanceResponse struct {
 	RequestId  string  `json:"RequestId" xml:"RequestId"`
 	InstanceId string  `json:"InstanceId" xml:"InstanceId"`
 	TradePrice float64 `json:"TradePrice" xml:"TradePrice"`
+	OrderId    string  `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API

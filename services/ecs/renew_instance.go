@@ -85,6 +85,7 @@ type RenewInstanceRequest struct {
 type RenewInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateRenewInstanceRequest creates a request to invoke RenewInstance API

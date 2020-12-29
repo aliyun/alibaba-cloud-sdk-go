@@ -72,6 +72,7 @@ func (client *Client) AttachInstanceRamRoleWithCallback(request *AttachInstanceR
 type AttachInstanceRamRoleRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Policy               string           `position:"Query" name:"Policy"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	RamRoleName          string           `position:"Query" name:"RamRoleName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
