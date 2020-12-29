@@ -21,7 +21,6 @@ import (
 )
 
 // ListAvailableFileSystemTypes invokes the ehpc.ListAvailableFileSystemTypes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listavailablefilesystemtypes.html
 func (client *Client) ListAvailableFileSystemTypes(request *ListAvailableFileSystemTypesRequest) (response *ListAvailableFileSystemTypesResponse, err error) {
 	response = CreateListAvailableFileSystemTypesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAvailableFileSystemTypes(request *ListAvailableFileSys
 }
 
 // ListAvailableFileSystemTypesWithChan invokes the ehpc.ListAvailableFileSystemTypes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listavailablefilesystemtypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAvailableFileSystemTypesWithChan(request *ListAvailableFileSystemTypesRequest) (<-chan *ListAvailableFileSystemTypesResponse, <-chan error) {
 	responseChan := make(chan *ListAvailableFileSystemTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAvailableFileSystemTypesWithChan(request *ListAvailabl
 }
 
 // ListAvailableFileSystemTypesWithCallback invokes the ehpc.ListAvailableFileSystemTypes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listavailablefilesystemtypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAvailableFileSystemTypesWithCallback(request *ListAvailableFileSystemTypesRequest, callback func(response *ListAvailableFileSystemTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

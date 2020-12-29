@@ -21,7 +21,6 @@ import (
 )
 
 // CreateJobFile invokes the ehpc.CreateJobFile API synchronously
-// api document: https://help.aliyun.com/api/ehpc/createjobfile.html
 func (client *Client) CreateJobFile(request *CreateJobFileRequest) (response *CreateJobFileResponse, err error) {
 	response = CreateCreateJobFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateJobFile(request *CreateJobFileRequest) (response *Cr
 }
 
 // CreateJobFileWithChan invokes the ehpc.CreateJobFile API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/createjobfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobFileWithChan(request *CreateJobFileRequest) (<-chan *CreateJobFileResponse, <-chan error) {
 	responseChan := make(chan *CreateJobFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateJobFileWithChan(request *CreateJobFileRequest) (<-ch
 }
 
 // CreateJobFileWithCallback invokes the ehpc.CreateJobFile API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/createjobfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobFileWithCallback(request *CreateJobFileRequest, callback func(response *CreateJobFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

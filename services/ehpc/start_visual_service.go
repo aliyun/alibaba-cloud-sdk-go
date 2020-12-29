@@ -21,7 +21,6 @@ import (
 )
 
 // StartVisualService invokes the ehpc.StartVisualService API synchronously
-// api document: https://help.aliyun.com/api/ehpc/startvisualservice.html
 func (client *Client) StartVisualService(request *StartVisualServiceRequest) (response *StartVisualServiceResponse, err error) {
 	response = CreateStartVisualServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartVisualService(request *StartVisualServiceRequest) (re
 }
 
 // StartVisualServiceWithChan invokes the ehpc.StartVisualService API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/startvisualservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartVisualServiceWithChan(request *StartVisualServiceRequest) (<-chan *StartVisualServiceResponse, <-chan error) {
 	responseChan := make(chan *StartVisualServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartVisualServiceWithChan(request *StartVisualServiceRequ
 }
 
 // StartVisualServiceWithCallback invokes the ehpc.StartVisualService API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/startvisualservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartVisualServiceWithCallback(request *StartVisualServiceRequest, callback func(response *StartVisualServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

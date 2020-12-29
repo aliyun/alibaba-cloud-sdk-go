@@ -21,7 +21,6 @@ import (
 )
 
 // ListSoftwares invokes the ehpc.ListSoftwares API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listsoftwares.html
 func (client *Client) ListSoftwares(request *ListSoftwaresRequest) (response *ListSoftwaresResponse, err error) {
 	response = CreateListSoftwaresResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSoftwares(request *ListSoftwaresRequest) (response *Li
 }
 
 // ListSoftwaresWithChan invokes the ehpc.ListSoftwares API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listsoftwares.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSoftwaresWithChan(request *ListSoftwaresRequest) (<-chan *ListSoftwaresResponse, <-chan error) {
 	responseChan := make(chan *ListSoftwaresResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSoftwaresWithChan(request *ListSoftwaresRequest) (<-ch
 }
 
 // ListSoftwaresWithCallback invokes the ehpc.ListSoftwares API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listsoftwares.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSoftwaresWithCallback(request *ListSoftwaresRequest, callback func(response *ListSoftwaresResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

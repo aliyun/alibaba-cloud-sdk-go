@@ -1,3 +1,7 @@
+2020-12-29 Version: v1.61.813
+- Generated 2018-04-12 for `EHPC`.
+- ListNodesNoPaging return with instance type.
+
 2020-12-28 Version: v1.61.812
 - Generated 2020-07-28 for `CloudGameAPI`.
 - Add API OutAccountBindStatus.

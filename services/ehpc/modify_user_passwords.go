@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyUserPasswords invokes the ehpc.ModifyUserPasswords API synchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
 func (client *Client) ModifyUserPasswords(request *ModifyUserPasswordsRequest) (response *ModifyUserPasswordsResponse, err error) {
 	response = CreateModifyUserPasswordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyUserPasswords(request *ModifyUserPasswordsRequest) (
 }
 
 // ModifyUserPasswordsWithChan invokes the ehpc.ModifyUserPasswords API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserPasswordsWithChan(request *ModifyUserPasswordsRequest) (<-chan *ModifyUserPasswordsResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserPasswordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyUserPasswordsWithChan(request *ModifyUserPasswordsRe
 }
 
 // ModifyUserPasswordsWithCallback invokes the ehpc.ModifyUserPasswords API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserPasswordsWithCallback(request *ModifyUserPasswordsRequest, callback func(response *ModifyUserPasswordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // StopVisualService invokes the ehpc.StopVisualService API synchronously
-// api document: https://help.aliyun.com/api/ehpc/stopvisualservice.html
 func (client *Client) StopVisualService(request *StopVisualServiceRequest) (response *StopVisualServiceResponse, err error) {
 	response = CreateStopVisualServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopVisualService(request *StopVisualServiceRequest) (resp
 }
 
 // StopVisualServiceWithChan invokes the ehpc.StopVisualService API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopvisualservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopVisualServiceWithChan(request *StopVisualServiceRequest) (<-chan *StopVisualServiceResponse, <-chan error) {
 	responseChan := make(chan *StopVisualServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopVisualServiceWithChan(request *StopVisualServiceReques
 }
 
 // StopVisualServiceWithCallback invokes the ehpc.StopVisualService API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopvisualservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopVisualServiceWithCallback(request *StopVisualServiceRequest, callback func(response *StopVisualServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

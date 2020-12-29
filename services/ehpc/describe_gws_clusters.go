@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGWSClusters invokes the ehpc.DescribeGWSClusters API synchronously
-// api document: https://help.aliyun.com/api/ehpc/describegwsclusters.html
 func (client *Client) DescribeGWSClusters(request *DescribeGWSClustersRequest) (response *DescribeGWSClustersResponse, err error) {
 	response = CreateDescribeGWSClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGWSClusters(request *DescribeGWSClustersRequest) (
 }
 
 // DescribeGWSClustersWithChan invokes the ehpc.DescribeGWSClusters API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describegwsclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGWSClustersWithChan(request *DescribeGWSClustersRequest) (<-chan *DescribeGWSClustersResponse, <-chan error) {
 	responseChan := make(chan *DescribeGWSClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGWSClustersWithChan(request *DescribeGWSClustersRe
 }
 
 // DescribeGWSClustersWithCallback invokes the ehpc.DescribeGWSClusters API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describegwsclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGWSClustersWithCallback(request *DescribeGWSClustersRequest, callback func(response *DescribeGWSClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

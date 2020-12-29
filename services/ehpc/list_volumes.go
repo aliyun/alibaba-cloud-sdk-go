@@ -21,7 +21,6 @@ import (
 )
 
 // ListVolumes invokes the ehpc.ListVolumes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listvolumes.html
 func (client *Client) ListVolumes(request *ListVolumesRequest) (response *ListVolumesResponse, err error) {
 	response = CreateListVolumesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListVolumes(request *ListVolumesRequest) (response *ListVo
 }
 
 // ListVolumesWithChan invokes the ehpc.ListVolumes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listvolumes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVolumesWithChan(request *ListVolumesRequest) (<-chan *ListVolumesResponse, <-chan error) {
 	responseChan := make(chan *ListVolumesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListVolumesWithChan(request *ListVolumesRequest) (<-chan *
 }
 
 // ListVolumesWithCallback invokes the ehpc.ListVolumes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listvolumes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVolumesWithCallback(request *ListVolumesRequest, callback func(response *ListVolumesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

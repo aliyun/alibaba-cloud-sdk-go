@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNodes invokes the ehpc.DeleteNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/deletenodes.html
 func (client *Client) DeleteNodes(request *DeleteNodesRequest) (response *DeleteNodesResponse, err error) {
 	response = CreateDeleteNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNodes(request *DeleteNodesRequest) (response *Delete
 }
 
 // DeleteNodesWithChan invokes the ehpc.DeleteNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletenodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNodesWithChan(request *DeleteNodesRequest) (<-chan *DeleteNodesResponse, <-chan error) {
 	responseChan := make(chan *DeleteNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNodesWithChan(request *DeleteNodesRequest) (<-chan *
 }
 
 // DeleteNodesWithCallback invokes the ehpc.DeleteNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletenodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNodesWithCallback(request *DeleteNodesRequest, callback func(response *DeleteNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

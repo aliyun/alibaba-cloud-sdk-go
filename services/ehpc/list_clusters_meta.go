@@ -21,7 +21,6 @@ import (
 )
 
 // ListClustersMeta invokes the ehpc.ListClustersMeta API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listclustersmeta.html
 func (client *Client) ListClustersMeta(request *ListClustersMetaRequest) (response *ListClustersMetaResponse, err error) {
 	response = CreateListClustersMetaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClustersMeta(request *ListClustersMetaRequest) (respon
 }
 
 // ListClustersMetaWithChan invokes the ehpc.ListClustersMeta API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listclustersmeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersMetaWithChan(request *ListClustersMetaRequest) (<-chan *ListClustersMetaResponse, <-chan error) {
 	responseChan := make(chan *ListClustersMetaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClustersMetaWithChan(request *ListClustersMetaRequest)
 }
 
 // ListClustersMetaWithCallback invokes the ehpc.ListClustersMeta API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listclustersmeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersMetaWithCallback(request *ListClustersMetaRequest, callback func(response *ListClustersMetaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

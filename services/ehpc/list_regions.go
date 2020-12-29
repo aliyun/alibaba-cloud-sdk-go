@@ -21,7 +21,6 @@ import (
 )
 
 // ListRegions invokes the ehpc.ListRegions API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listregions.html
 func (client *Client) ListRegions(request *ListRegionsRequest) (response *ListRegionsResponse, err error) {
 	response = CreateListRegionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRegions(request *ListRegionsRequest) (response *ListRe
 }
 
 // ListRegionsWithChan invokes the ehpc.ListRegions API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegionsWithChan(request *ListRegionsRequest) (<-chan *ListRegionsResponse, <-chan error) {
 	responseChan := make(chan *ListRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRegionsWithChan(request *ListRegionsRequest) (<-chan *
 }
 
 // ListRegionsWithCallback invokes the ehpc.ListRegions API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegionsWithCallback(request *ListRegionsRequest, callback func(response *ListRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

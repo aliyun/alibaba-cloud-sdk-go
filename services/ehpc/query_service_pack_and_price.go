@@ -21,7 +21,6 @@ import (
 )
 
 // QueryServicePackAndPrice invokes the ehpc.QueryServicePackAndPrice API synchronously
-// api document: https://help.aliyun.com/api/ehpc/queryservicepackandprice.html
 func (client *Client) QueryServicePackAndPrice(request *QueryServicePackAndPriceRequest) (response *QueryServicePackAndPriceResponse, err error) {
 	response = CreateQueryServicePackAndPriceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryServicePackAndPrice(request *QueryServicePackAndPrice
 }
 
 // QueryServicePackAndPriceWithChan invokes the ehpc.QueryServicePackAndPrice API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/queryservicepackandprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryServicePackAndPriceWithChan(request *QueryServicePackAndPriceRequest) (<-chan *QueryServicePackAndPriceResponse, <-chan error) {
 	responseChan := make(chan *QueryServicePackAndPriceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryServicePackAndPriceWithChan(request *QueryServicePack
 }
 
 // QueryServicePackAndPriceWithCallback invokes the ehpc.QueryServicePackAndPrice API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/queryservicepackandprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryServicePackAndPriceWithCallback(request *QueryServicePackAndPriceRequest, callback func(response *QueryServicePackAndPriceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

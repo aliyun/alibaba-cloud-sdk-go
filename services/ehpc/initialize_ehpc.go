@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StopCluster invokes the ehpc.StopCluster API synchronously
-func (client *Client) StopCluster(request *StopClusterRequest) (response *StopClusterResponse, err error) {
-	response = CreateStopClusterResponse()
+// InitializeEHPC invokes the ehpc.InitializeEHPC API synchronously
+func (client *Client) InitializeEHPC(request *InitializeEHPCRequest) (response *InitializeEHPCResponse, err error) {
+	response = CreateInitializeEHPCResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StopClusterWithChan invokes the ehpc.StopCluster API asynchronously
-func (client *Client) StopClusterWithChan(request *StopClusterRequest) (<-chan *StopClusterResponse, <-chan error) {
-	responseChan := make(chan *StopClusterResponse, 1)
+// InitializeEHPCWithChan invokes the ehpc.InitializeEHPC API asynchronously
+func (client *Client) InitializeEHPCWithChan(request *InitializeEHPCRequest) (<-chan *InitializeEHPCResponse, <-chan error) {
+	responseChan := make(chan *InitializeEHPCResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StopCluster(request)
+		response, err := client.InitializeEHPC(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) StopClusterWithChan(request *StopClusterRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// StopClusterWithCallback invokes the ehpc.StopCluster API asynchronously
-func (client *Client) StopClusterWithCallback(request *StopClusterRequest, callback func(response *StopClusterResponse, err error)) <-chan int {
+// InitializeEHPCWithCallback invokes the ehpc.InitializeEHPC API asynchronously
+func (client *Client) InitializeEHPCWithCallback(request *InitializeEHPCRequest, callback func(response *InitializeEHPCResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StopClusterResponse
+		var response *InitializeEHPCResponse
 		var err error
 		defer close(result)
-		response, err = client.StopCluster(request)
+		response, err = client.InitializeEHPC(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,30 @@ func (client *Client) StopClusterWithCallback(request *StopClusterRequest, callb
 	return result
 }
 
-// StopClusterRequest is the request struct for api StopCluster
-type StopClusterRequest struct {
+// InitializeEHPCRequest is the request struct for api InitializeEHPC
+type InitializeEHPCRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
-// StopClusterResponse is the response struct for api StopCluster
-type StopClusterResponse struct {
+// InitializeEHPCResponse is the response struct for api InitializeEHPC
+type InitializeEHPCResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateStopClusterRequest creates a request to invoke StopCluster API
-func CreateStopClusterRequest() (request *StopClusterRequest) {
-	request = &StopClusterRequest{
+// CreateInitializeEHPCRequest creates a request to invoke InitializeEHPC API
+func CreateInitializeEHPCRequest() (request *InitializeEHPCRequest) {
+	request = &InitializeEHPCRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "StopCluster", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "InitializeEHPC", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateStopClusterResponse creates a response to parse from StopCluster response
-func CreateStopClusterResponse() (response *StopClusterResponse) {
-	response = &StopClusterResponse{
+// CreateInitializeEHPCResponse creates a response to parse from InitializeEHPC response
+func CreateInitializeEHPCResponse() (response *InitializeEHPCResponse) {
+	response = &InitializeEHPCResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // GetWorkbenchToken invokes the ehpc.GetWorkbenchToken API synchronously
-// api document: https://help.aliyun.com/api/ehpc/getworkbenchtoken.html
 func (client *Client) GetWorkbenchToken(request *GetWorkbenchTokenRequest) (response *GetWorkbenchTokenResponse, err error) {
 	response = CreateGetWorkbenchTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetWorkbenchToken(request *GetWorkbenchTokenRequest) (resp
 }
 
 // GetWorkbenchTokenWithChan invokes the ehpc.GetWorkbenchToken API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getworkbenchtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetWorkbenchTokenWithChan(request *GetWorkbenchTokenRequest) (<-chan *GetWorkbenchTokenResponse, <-chan error) {
 	responseChan := make(chan *GetWorkbenchTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetWorkbenchTokenWithChan(request *GetWorkbenchTokenReques
 }
 
 // GetWorkbenchTokenWithCallback invokes the ehpc.GetWorkbenchToken API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getworkbenchtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetWorkbenchTokenWithCallback(request *GetWorkbenchTokenRequest, callback func(response *GetWorkbenchTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

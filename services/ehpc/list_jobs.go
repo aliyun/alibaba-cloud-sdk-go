@@ -21,7 +21,6 @@ import (
 )
 
 // ListJobs invokes the ehpc.ListJobs API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listjobs.html
 func (client *Client) ListJobs(request *ListJobsRequest) (response *ListJobsResponse, err error) {
 	response = CreateListJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListJobs(request *ListJobsRequest) (response *ListJobsResp
 }
 
 // ListJobsWithChan invokes the ehpc.ListJobs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobsWithChan(request *ListJobsRequest) (<-chan *ListJobsResponse, <-chan error) {
 	responseChan := make(chan *ListJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListJobsWithChan(request *ListJobsRequest) (<-chan *ListJo
 }
 
 // ListJobsWithCallback invokes the ehpc.ListJobs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobsWithCallback(request *ListJobsRequest, callback func(response *ListJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

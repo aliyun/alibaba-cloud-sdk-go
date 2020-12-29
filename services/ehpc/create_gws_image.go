@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGWSImage invokes the ehpc.CreateGWSImage API synchronously
-// api document: https://help.aliyun.com/api/ehpc/creategwsimage.html
 func (client *Client) CreateGWSImage(request *CreateGWSImageRequest) (response *CreateGWSImageResponse, err error) {
 	response = CreateCreateGWSImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGWSImage(request *CreateGWSImageRequest) (response *
 }
 
 // CreateGWSImageWithChan invokes the ehpc.CreateGWSImage API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/creategwsimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGWSImageWithChan(request *CreateGWSImageRequest) (<-chan *CreateGWSImageResponse, <-chan error) {
 	responseChan := make(chan *CreateGWSImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGWSImageWithChan(request *CreateGWSImageRequest) (<-
 }
 
 // CreateGWSImageWithCallback invokes the ehpc.CreateGWSImage API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/creategwsimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGWSImageWithCallback(request *CreateGWSImageRequest, callback func(response *CreateGWSImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

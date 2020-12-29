@@ -21,7 +21,6 @@ import (
 )
 
 // AddNodes invokes the ehpc.AddNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/addnodes.html
 func (client *Client) AddNodes(request *AddNodesRequest) (response *AddNodesResponse, err error) {
 	response = CreateAddNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddNodes(request *AddNodesRequest) (response *AddNodesResp
 }
 
 // AddNodesWithChan invokes the ehpc.AddNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddNodesWithChan(request *AddNodesRequest) (<-chan *AddNodesResponse, <-chan error) {
 	responseChan := make(chan *AddNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddNodesWithChan(request *AddNodesRequest) (<-chan *AddNod
 }
 
 // AddNodesWithCallback invokes the ehpc.AddNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback func(response *AddNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback fu
 type AddNodesRequest struct {
 	*requests.RpcRequest
 	ImageId                 string           `position:"Query" name:"ImageId"`
+	SystemDiskLevel         string           `position:"Query" name:"SystemDiskLevel"`
 	ClientToken             string           `position:"Query" name:"ClientToken"`
 	AllocatePublicAddress   requests.Boolean `position:"Query" name:"AllocatePublicAddress"`
 	InternetMaxBandWidthOut requests.Integer `position:"Query" name:"InternetMaxBandWidthOut"`

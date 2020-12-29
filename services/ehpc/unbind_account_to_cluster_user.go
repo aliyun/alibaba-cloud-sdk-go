@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindAccountToClusterUser invokes the ehpc.UnbindAccountToClusterUser API synchronously
-// api document: https://help.aliyun.com/api/ehpc/unbindaccounttoclusteruser.html
 func (client *Client) UnbindAccountToClusterUser(request *UnbindAccountToClusterUserRequest) (response *UnbindAccountToClusterUserResponse, err error) {
 	response = CreateUnbindAccountToClusterUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindAccountToClusterUser(request *UnbindAccountToCluster
 }
 
 // UnbindAccountToClusterUserWithChan invokes the ehpc.UnbindAccountToClusterUser API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/unbindaccounttoclusteruser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindAccountToClusterUserWithChan(request *UnbindAccountToClusterUserRequest) (<-chan *UnbindAccountToClusterUserResponse, <-chan error) {
 	responseChan := make(chan *UnbindAccountToClusterUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindAccountToClusterUserWithChan(request *UnbindAccountT
 }
 
 // UnbindAccountToClusterUserWithCallback invokes the ehpc.UnbindAccountToClusterUser API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/unbindaccounttoclusteruser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindAccountToClusterUserWithCallback(request *UnbindAccountToClusterUserRequest, callback func(response *UnbindAccountToClusterUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

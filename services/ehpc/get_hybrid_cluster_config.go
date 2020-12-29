@@ -21,7 +21,6 @@ import (
 )
 
 // GetHybridClusterConfig invokes the ehpc.GetHybridClusterConfig API synchronously
-// api document: https://help.aliyun.com/api/ehpc/gethybridclusterconfig.html
 func (client *Client) GetHybridClusterConfig(request *GetHybridClusterConfigRequest) (response *GetHybridClusterConfigResponse, err error) {
 	response = CreateGetHybridClusterConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetHybridClusterConfig(request *GetHybridClusterConfigRequ
 }
 
 // GetHybridClusterConfigWithChan invokes the ehpc.GetHybridClusterConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/gethybridclusterconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetHybridClusterConfigWithChan(request *GetHybridClusterConfigRequest) (<-chan *GetHybridClusterConfigResponse, <-chan error) {
 	responseChan := make(chan *GetHybridClusterConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetHybridClusterConfigWithChan(request *GetHybridClusterCo
 }
 
 // GetHybridClusterConfigWithCallback invokes the ehpc.GetHybridClusterConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/gethybridclusterconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetHybridClusterConfigWithCallback(request *GetHybridClusterConfigRequest, callback func(response *GetHybridClusterConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

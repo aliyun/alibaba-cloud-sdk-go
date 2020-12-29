@@ -21,7 +21,6 @@ import (
 )
 
 // AddUsers invokes the ehpc.AddUsers API synchronously
-// api document: https://help.aliyun.com/api/ehpc/addusers.html
 func (client *Client) AddUsers(request *AddUsersRequest) (response *AddUsersResponse, err error) {
 	response = CreateAddUsersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddUsers(request *AddUsersRequest) (response *AddUsersResp
 }
 
 // AddUsersWithChan invokes the ehpc.AddUsers API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUsersWithChan(request *AddUsersRequest) (<-chan *AddUsersResponse, <-chan error) {
 	responseChan := make(chan *AddUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddUsersWithChan(request *AddUsersRequest) (<-chan *AddUse
 }
 
 // AddUsersWithCallback invokes the ehpc.AddUsers API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUsersWithCallback(request *AddUsersRequest, callback func(response *AddUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // StartNodes invokes the ehpc.StartNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/startnodes.html
 func (client *Client) StartNodes(request *StartNodesRequest) (response *StartNodesResponse, err error) {
 	response = CreateStartNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartNodes(request *StartNodesRequest) (response *StartNod
 }
 
 // StartNodesWithChan invokes the ehpc.StartNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/startnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartNodesWithChan(request *StartNodesRequest) (<-chan *StartNodesResponse, <-chan error) {
 	responseChan := make(chan *StartNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartNodesWithChan(request *StartNodesRequest) (<-chan *St
 }
 
 // StartNodesWithCallback invokes the ehpc.StartNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/startnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartNodesWithCallback(request *StartNodesRequest, callback func(response *StartNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

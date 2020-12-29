@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteUsers invokes the ehpc.DeleteUsers API synchronously
-// api document: https://help.aliyun.com/api/ehpc/deleteusers.html
 func (client *Client) DeleteUsers(request *DeleteUsersRequest) (response *DeleteUsersResponse, err error) {
 	response = CreateDeleteUsersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteUsers(request *DeleteUsersRequest) (response *Delete
 }
 
 // DeleteUsersWithChan invokes the ehpc.DeleteUsers API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deleteusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUsersWithChan(request *DeleteUsersRequest) (<-chan *DeleteUsersResponse, <-chan error) {
 	responseChan := make(chan *DeleteUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteUsersWithChan(request *DeleteUsersRequest) (<-chan *
 }
 
 // DeleteUsersWithCallback invokes the ehpc.DeleteUsers API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deleteusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUsersWithCallback(request *DeleteUsersRequest, callback func(response *DeleteUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

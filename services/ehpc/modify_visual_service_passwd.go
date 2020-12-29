@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyVisualServicePasswd invokes the ehpc.ModifyVisualServicePasswd API synchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyvisualservicepasswd.html
 func (client *Client) ModifyVisualServicePasswd(request *ModifyVisualServicePasswdRequest) (response *ModifyVisualServicePasswdResponse, err error) {
 	response = CreateModifyVisualServicePasswdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyVisualServicePasswd(request *ModifyVisualServicePass
 }
 
 // ModifyVisualServicePasswdWithChan invokes the ehpc.ModifyVisualServicePasswd API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyvisualservicepasswd.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVisualServicePasswdWithChan(request *ModifyVisualServicePasswdRequest) (<-chan *ModifyVisualServicePasswdResponse, <-chan error) {
 	responseChan := make(chan *ModifyVisualServicePasswdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyVisualServicePasswdWithChan(request *ModifyVisualSer
 }
 
 // ModifyVisualServicePasswdWithCallback invokes the ehpc.ModifyVisualServicePasswd API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyvisualservicepasswd.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVisualServicePasswdWithCallback(request *ModifyVisualServicePasswdRequest, callback func(response *ModifyVisualServicePasswdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

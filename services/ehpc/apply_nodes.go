@@ -21,7 +21,6 @@ import (
 )
 
 // ApplyNodes invokes the ehpc.ApplyNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/applynodes.html
 func (client *Client) ApplyNodes(request *ApplyNodesRequest) (response *ApplyNodesResponse, err error) {
 	response = CreateApplyNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ApplyNodes(request *ApplyNodesRequest) (response *ApplyNod
 }
 
 // ApplyNodesWithChan invokes the ehpc.ApplyNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/applynodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyNodesWithChan(request *ApplyNodesRequest) (<-chan *ApplyNodesResponse, <-chan error) {
 	responseChan := make(chan *ApplyNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ApplyNodesWithChan(request *ApplyNodesRequest) (<-chan *Ap
 }
 
 // ApplyNodesWithCallback invokes the ehpc.ApplyNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/applynodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyNodesWithCallback(request *ApplyNodesRequest, callback func(response *ApplyNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type ApplyNodesRequest struct {
 	*requests.RpcRequest
 	ImageId                       string                         `position:"Query" name:"ImageId"`
 	Memory                        requests.Integer               `position:"Query" name:"Memory"`
+	SystemDiskLevel               string                         `position:"Query" name:"SystemDiskLevel"`
 	AllocatePublicAddress         requests.Boolean               `position:"Query" name:"AllocatePublicAddress"`
 	InternetMaxBandWidthOut       requests.Integer               `position:"Query" name:"InternetMaxBandWidthOut"`
 	ResourceAmountType            string                         `position:"Query" name:"ResourceAmountType"`

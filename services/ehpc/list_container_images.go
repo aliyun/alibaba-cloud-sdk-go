@@ -21,7 +21,6 @@ import (
 )
 
 // ListContainerImages invokes the ehpc.ListContainerImages API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listcontainerimages.html
 func (client *Client) ListContainerImages(request *ListContainerImagesRequest) (response *ListContainerImagesResponse, err error) {
 	response = CreateListContainerImagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListContainerImages(request *ListContainerImagesRequest) (
 }
 
 // ListContainerImagesWithChan invokes the ehpc.ListContainerImages API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcontainerimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListContainerImagesWithChan(request *ListContainerImagesRequest) (<-chan *ListContainerImagesResponse, <-chan error) {
 	responseChan := make(chan *ListContainerImagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListContainerImagesWithChan(request *ListContainerImagesRe
 }
 
 // ListContainerImagesWithCallback invokes the ehpc.ListContainerImages API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcontainerimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListContainerImagesWithCallback(request *ListContainerImagesRequest, callback func(response *ListContainerImagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

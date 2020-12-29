@@ -21,7 +21,6 @@ import (
 )
 
 // BindAccountToClusterUser invokes the ehpc.BindAccountToClusterUser API synchronously
-// api document: https://help.aliyun.com/api/ehpc/bindaccounttoclusteruser.html
 func (client *Client) BindAccountToClusterUser(request *BindAccountToClusterUserRequest) (response *BindAccountToClusterUserResponse, err error) {
 	response = CreateBindAccountToClusterUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindAccountToClusterUser(request *BindAccountToClusterUser
 }
 
 // BindAccountToClusterUserWithChan invokes the ehpc.BindAccountToClusterUser API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/bindaccounttoclusteruser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAccountToClusterUserWithChan(request *BindAccountToClusterUserRequest) (<-chan *BindAccountToClusterUserResponse, <-chan error) {
 	responseChan := make(chan *BindAccountToClusterUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindAccountToClusterUserWithChan(request *BindAccountToClu
 }
 
 // BindAccountToClusterUserWithCallback invokes the ehpc.BindAccountToClusterUser API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/bindaccounttoclusteruser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAccountToClusterUserWithCallback(request *BindAccountToClusterUserRequest, callback func(response *BindAccountToClusterUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

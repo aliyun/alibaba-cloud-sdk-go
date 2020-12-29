@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeImage invokes the ehpc.DescribeImage API synchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimage.html
 func (client *Client) DescribeImage(request *DescribeImageRequest) (response *DescribeImageResponse, err error) {
 	response = CreateDescribeImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeImage(request *DescribeImageRequest) (response *De
 }
 
 // DescribeImageWithChan invokes the ehpc.DescribeImage API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageWithChan(request *DescribeImageRequest) (<-chan *DescribeImageResponse, <-chan error) {
 	responseChan := make(chan *DescribeImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeImageWithChan(request *DescribeImageRequest) (<-ch
 }
 
 // DescribeImageWithCallback invokes the ehpc.DescribeImage API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageWithCallback(request *DescribeImageRequest, callback func(response *DescribeImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

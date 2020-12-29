@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterLogs invokes the ehpc.ListClusterLogs API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
 func (client *Client) ListClusterLogs(request *ListClusterLogsRequest) (response *ListClusterLogsResponse, err error) {
 	response = CreateListClusterLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterLogs(request *ListClusterLogsRequest) (response
 }
 
 // ListClusterLogsWithChan invokes the ehpc.ListClusterLogs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterLogsWithChan(request *ListClusterLogsRequest) (<-chan *ListClusterLogsResponse, <-chan error) {
 	responseChan := make(chan *ListClusterLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterLogsWithChan(request *ListClusterLogsRequest) (
 }
 
 // ListClusterLogsWithCallback invokes the ehpc.ListClusterLogs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterLogsWithCallback(request *ListClusterLogsRequest, callback func(response *ListClusterLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,12 +79,12 @@ type ListClusterLogsRequest struct {
 // ListClusterLogsResponse is the response struct for api ListClusterLogs
 type ListClusterLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	ClusterId  string `json:"ClusterId" xml:"ClusterId"`
-	Logs       Logs   `json:"Logs" xml:"Logs"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	TotalCount int                   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                   `json:"PageSize" xml:"PageSize"`
+	ClusterId  string                `json:"ClusterId" xml:"ClusterId"`
+	Logs       LogsInListClusterLogs `json:"Logs" xml:"Logs"`
 }
 
 // CreateListClusterLogsRequest creates a request to invoke ListClusterLogs API

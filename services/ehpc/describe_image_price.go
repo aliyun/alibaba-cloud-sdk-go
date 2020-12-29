@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeImagePrice invokes the ehpc.DescribeImagePrice API synchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimageprice.html
 func (client *Client) DescribeImagePrice(request *DescribeImagePriceRequest) (response *DescribeImagePriceResponse, err error) {
 	response = CreateDescribeImagePriceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeImagePrice(request *DescribeImagePriceRequest) (re
 }
 
 // DescribeImagePriceWithChan invokes the ehpc.DescribeImagePrice API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimageprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImagePriceWithChan(request *DescribeImagePriceRequest) (<-chan *DescribeImagePriceResponse, <-chan error) {
 	responseChan := make(chan *DescribeImagePriceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeImagePriceWithChan(request *DescribeImagePriceRequ
 }
 
 // DescribeImagePriceWithCallback invokes the ehpc.DescribeImagePrice API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimageprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImagePriceWithCallback(request *DescribeImagePriceRequest, callback func(response *DescribeImagePriceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

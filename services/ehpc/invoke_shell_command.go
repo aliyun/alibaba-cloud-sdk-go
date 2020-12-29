@@ -21,7 +21,6 @@ import (
 )
 
 // InvokeShellCommand invokes the ehpc.InvokeShellCommand API synchronously
-// api document: https://help.aliyun.com/api/ehpc/invokeshellcommand.html
 func (client *Client) InvokeShellCommand(request *InvokeShellCommandRequest) (response *InvokeShellCommandResponse, err error) {
 	response = CreateInvokeShellCommandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InvokeShellCommand(request *InvokeShellCommandRequest) (re
 }
 
 // InvokeShellCommandWithChan invokes the ehpc.InvokeShellCommand API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/invokeshellcommand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeShellCommandWithChan(request *InvokeShellCommandRequest) (<-chan *InvokeShellCommandResponse, <-chan error) {
 	responseChan := make(chan *InvokeShellCommandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InvokeShellCommandWithChan(request *InvokeShellCommandRequ
 }
 
 // InvokeShellCommandWithCallback invokes the ehpc.InvokeShellCommand API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/invokeshellcommand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeShellCommandWithCallback(request *InvokeShellCommandRequest, callback func(response *InvokeShellCommandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

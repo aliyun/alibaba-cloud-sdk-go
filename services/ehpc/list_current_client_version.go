@@ -21,7 +21,6 @@ import (
 )
 
 // ListCurrentClientVersion invokes the ehpc.ListCurrentClientVersion API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
 func (client *Client) ListCurrentClientVersion(request *ListCurrentClientVersionRequest) (response *ListCurrentClientVersionResponse, err error) {
 	response = CreateListCurrentClientVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCurrentClientVersion(request *ListCurrentClientVersion
 }
 
 // ListCurrentClientVersionWithChan invokes the ehpc.ListCurrentClientVersion API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCurrentClientVersionWithChan(request *ListCurrentClientVersionRequest) (<-chan *ListCurrentClientVersionResponse, <-chan error) {
 	responseChan := make(chan *ListCurrentClientVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCurrentClientVersionWithChan(request *ListCurrentClien
 }
 
 // ListCurrentClientVersionWithCallback invokes the ehpc.ListCurrentClientVersion API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCurrentClientVersionWithCallback(request *ListCurrentClientVersionRequest, callback func(response *ListCurrentClientVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

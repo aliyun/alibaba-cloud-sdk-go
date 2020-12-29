@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyUserGroups invokes the ehpc.ModifyUserGroups API synchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
 func (client *Client) ModifyUserGroups(request *ModifyUserGroupsRequest) (response *ModifyUserGroupsResponse, err error) {
 	response = CreateModifyUserGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyUserGroups(request *ModifyUserGroupsRequest) (respon
 }
 
 // ModifyUserGroupsWithChan invokes the ehpc.ModifyUserGroups API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserGroupsWithChan(request *ModifyUserGroupsRequest) (<-chan *ModifyUserGroupsResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyUserGroupsWithChan(request *ModifyUserGroupsRequest)
 }
 
 // ModifyUserGroupsWithCallback invokes the ehpc.ModifyUserGroups API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserGroupsWithCallback(request *ModifyUserGroupsRequest, callback func(response *ModifyUserGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SetGWSInstanceUser invokes the ehpc.SetGWSInstanceUser API synchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsinstanceuser.html
 func (client *Client) SetGWSInstanceUser(request *SetGWSInstanceUserRequest) (response *SetGWSInstanceUserResponse, err error) {
 	response = CreateSetGWSInstanceUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetGWSInstanceUser(request *SetGWSInstanceUserRequest) (re
 }
 
 // SetGWSInstanceUserWithChan invokes the ehpc.SetGWSInstanceUser API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsinstanceuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetGWSInstanceUserWithChan(request *SetGWSInstanceUserRequest) (<-chan *SetGWSInstanceUserResponse, <-chan error) {
 	responseChan := make(chan *SetGWSInstanceUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetGWSInstanceUserWithChan(request *SetGWSInstanceUserRequ
 }
 
 // SetGWSInstanceUserWithCallback invokes the ehpc.SetGWSInstanceUser API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsinstanceuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetGWSInstanceUserWithCallback(request *SetGWSInstanceUserRequest, callback func(response *SetGWSInstanceUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

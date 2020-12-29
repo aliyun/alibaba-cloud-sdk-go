@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeImageGatewayConfig invokes the ehpc.DescribeImageGatewayConfig API synchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimagegatewayconfig.html
 func (client *Client) DescribeImageGatewayConfig(request *DescribeImageGatewayConfigRequest) (response *DescribeImageGatewayConfigResponse, err error) {
 	response = CreateDescribeImageGatewayConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeImageGatewayConfig(request *DescribeImageGatewayCo
 }
 
 // DescribeImageGatewayConfigWithChan invokes the ehpc.DescribeImageGatewayConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimagegatewayconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageGatewayConfigWithChan(request *DescribeImageGatewayConfigRequest) (<-chan *DescribeImageGatewayConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeImageGatewayConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeImageGatewayConfigWithChan(request *DescribeImageG
 }
 
 // DescribeImageGatewayConfigWithCallback invokes the ehpc.DescribeImageGatewayConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describeimagegatewayconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageGatewayConfigWithCallback(request *DescribeImageGatewayConfigRequest, callback func(response *DescribeImageGatewayConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

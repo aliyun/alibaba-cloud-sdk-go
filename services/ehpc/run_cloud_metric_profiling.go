@@ -21,7 +21,6 @@ import (
 )
 
 // RunCloudMetricProfiling invokes the ehpc.RunCloudMetricProfiling API synchronously
-// api document: https://help.aliyun.com/api/ehpc/runcloudmetricprofiling.html
 func (client *Client) RunCloudMetricProfiling(request *RunCloudMetricProfilingRequest) (response *RunCloudMetricProfilingResponse, err error) {
 	response = CreateRunCloudMetricProfilingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RunCloudMetricProfiling(request *RunCloudMetricProfilingRe
 }
 
 // RunCloudMetricProfilingWithChan invokes the ehpc.RunCloudMetricProfiling API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/runcloudmetricprofiling.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunCloudMetricProfilingWithChan(request *RunCloudMetricProfilingRequest) (<-chan *RunCloudMetricProfilingResponse, <-chan error) {
 	responseChan := make(chan *RunCloudMetricProfilingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RunCloudMetricProfilingWithChan(request *RunCloudMetricPro
 }
 
 // RunCloudMetricProfilingWithCallback invokes the ehpc.RunCloudMetricProfiling API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/runcloudmetricprofiling.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunCloudMetricProfilingWithCallback(request *RunCloudMetricProfilingRequest, callback func(response *RunCloudMetricProfilingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

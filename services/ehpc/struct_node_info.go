@@ -20,24 +20,25 @@ type NodeInfo struct {
 	LockReason      string           `json:"LockReason" xml:"LockReason"`
 	Expired         bool             `json:"Expired" xml:"Expired"`
 	HtEnabled       bool             `json:"HtEnabled" xml:"HtEnabled"`
-	ExpiredTime     string           `json:"ExpiredTime" xml:"ExpiredTime"`
 	IpAddress       string           `json:"IpAddress" xml:"IpAddress"`
 	ImageId         string           `json:"ImageId" xml:"ImageId"`
+	ImageOwnerAlias string           `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	PublicIpAddress string           `json:"PublicIpAddress" xml:"PublicIpAddress"`
+	InstanceType    string           `json:"InstanceType" xml:"InstanceType"`
+	RegionId        string           `json:"RegionId" xml:"RegionId"`
+	Id              string           `json:"Id" xml:"Id"`
+	AddTime         string           `json:"AddTime" xml:"AddTime"`
+	VpcId           string           `json:"VpcId" xml:"VpcId"`
+	ExpiredTime     string           `json:"ExpiredTime" xml:"ExpiredTime"`
 	VSwitchId       string           `json:"VSwitchId" xml:"VSwitchId"`
 	Version         string           `json:"Version" xml:"Version"`
-	ImageOwnerAlias string           `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	CreateMode      string           `json:"CreateMode" xml:"CreateMode"`
-	PublicIpAddress string           `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	Location        string           `json:"Location" xml:"Location"`
-	RegionId        string           `json:"RegionId" xml:"RegionId"`
 	ZoneId          string           `json:"ZoneId" xml:"ZoneId"`
 	CreatedByEhpc   bool             `json:"CreatedByEhpc" xml:"CreatedByEhpc"`
-	Id              string           `json:"Id" xml:"Id"`
 	HostName        string           `json:"HostName" xml:"HostName"`
 	Status          string           `json:"Status" xml:"Status"`
-	AddTime         string           `json:"AddTime" xml:"AddTime"`
 	SpotStrategy    string           `json:"SpotStrategy" xml:"SpotStrategy"`
-	VpcId           string           `json:"VpcId" xml:"VpcId"`
 	Roles           RolesInListNodes `json:"Roles" xml:"Roles"`
 	TotalResources  TotalResources   `json:"TotalResources" xml:"TotalResources"`
 	UsedResources   UsedResources    `json:"UsedResources" xml:"UsedResources"`

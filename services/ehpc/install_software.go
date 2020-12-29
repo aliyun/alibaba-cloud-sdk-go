@@ -21,7 +21,6 @@ import (
 )
 
 // InstallSoftware invokes the ehpc.InstallSoftware API synchronously
-// api document: https://help.aliyun.com/api/ehpc/installsoftware.html
 func (client *Client) InstallSoftware(request *InstallSoftwareRequest) (response *InstallSoftwareResponse, err error) {
 	response = CreateInstallSoftwareResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InstallSoftware(request *InstallSoftwareRequest) (response
 }
 
 // InstallSoftwareWithChan invokes the ehpc.InstallSoftware API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/installsoftware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallSoftwareWithChan(request *InstallSoftwareRequest) (<-chan *InstallSoftwareResponse, <-chan error) {
 	responseChan := make(chan *InstallSoftwareResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InstallSoftwareWithChan(request *InstallSoftwareRequest) (
 }
 
 // InstallSoftwareWithCallback invokes the ehpc.InstallSoftware API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/installsoftware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallSoftwareWithCallback(request *InstallSoftwareRequest, callback func(response *InstallSoftwareResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

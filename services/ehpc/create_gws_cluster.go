@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGWSCluster invokes the ehpc.CreateGWSCluster API synchronously
-// api document: https://help.aliyun.com/api/ehpc/creategwscluster.html
 func (client *Client) CreateGWSCluster(request *CreateGWSClusterRequest) (response *CreateGWSClusterResponse, err error) {
 	response = CreateCreateGWSClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGWSCluster(request *CreateGWSClusterRequest) (respon
 }
 
 // CreateGWSClusterWithChan invokes the ehpc.CreateGWSCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/creategwscluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGWSClusterWithChan(request *CreateGWSClusterRequest) (<-chan *CreateGWSClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateGWSClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGWSClusterWithChan(request *CreateGWSClusterRequest)
 }
 
 // CreateGWSClusterWithCallback invokes the ehpc.CreateGWSCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/creategwscluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGWSClusterWithCallback(request *CreateGWSClusterRequest, callback func(response *CreateGWSClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

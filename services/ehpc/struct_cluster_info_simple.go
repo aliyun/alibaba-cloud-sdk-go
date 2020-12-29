@@ -35,6 +35,7 @@ type ClusterInfoSimple struct {
 	DeployMode            string         `json:"DeployMode" xml:"DeployMode"`
 	Description           string         `json:"Description" xml:"Description"`
 	InstanceChargeType    string         `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	ClientVersion         string         `json:"ClientVersion" xml:"ClientVersion"`
 	ComputeSpotPriceLimit float64        `json:"ComputeSpotPriceLimit" xml:"ComputeSpotPriceLimit"`
 	Count                 int            `json:"Count" xml:"Count"`
 	VSwitchId             string         `json:"VSwitchId" xml:"VSwitchId"`

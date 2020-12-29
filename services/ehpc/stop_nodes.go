@@ -21,7 +21,6 @@ import (
 )
 
 // StopNodes invokes the ehpc.StopNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/stopnodes.html
 func (client *Client) StopNodes(request *StopNodesRequest) (response *StopNodesResponse, err error) {
 	response = CreateStopNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopNodes(request *StopNodesRequest) (response *StopNodesR
 }
 
 // StopNodesWithChan invokes the ehpc.StopNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopNodesWithChan(request *StopNodesRequest) (<-chan *StopNodesResponse, <-chan error) {
 	responseChan := make(chan *StopNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopNodesWithChan(request *StopNodesRequest) (<-chan *Stop
 }
 
 // StopNodesWithCallback invokes the ehpc.StopNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopNodesWithCallback(request *StopNodesRequest, callback func(response *StopNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

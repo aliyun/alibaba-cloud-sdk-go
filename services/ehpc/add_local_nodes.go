@@ -21,7 +21,6 @@ import (
 )
 
 // AddLocalNodes invokes the ehpc.AddLocalNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/addlocalnodes.html
 func (client *Client) AddLocalNodes(request *AddLocalNodesRequest) (response *AddLocalNodesResponse, err error) {
 	response = CreateAddLocalNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLocalNodes(request *AddLocalNodesRequest) (response *Ad
 }
 
 // AddLocalNodesWithChan invokes the ehpc.AddLocalNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addlocalnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLocalNodesWithChan(request *AddLocalNodesRequest) (<-chan *AddLocalNodesResponse, <-chan error) {
 	responseChan := make(chan *AddLocalNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLocalNodesWithChan(request *AddLocalNodesRequest) (<-ch
 }
 
 // AddLocalNodesWithCallback invokes the ehpc.AddLocalNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addlocalnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLocalNodesWithCallback(request *AddLocalNodesRequest, callback func(response *AddLocalNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

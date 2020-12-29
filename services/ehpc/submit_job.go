@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitJob invokes the ehpc.SubmitJob API synchronously
-// api document: https://help.aliyun.com/api/ehpc/submitjob.html
 func (client *Client) SubmitJob(request *SubmitJobRequest) (response *SubmitJobResponse, err error) {
 	response = CreateSubmitJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitJob(request *SubmitJobRequest) (response *SubmitJobR
 }
 
 // SubmitJobWithChan invokes the ehpc.SubmitJob API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/submitjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitJobWithChan(request *SubmitJobRequest) (<-chan *SubmitJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitJobWithChan(request *SubmitJobRequest) (<-chan *Subm
 }
 
 // SubmitJobWithCallback invokes the ehpc.SubmitJob API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/submitjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitJobWithCallback(request *SubmitJobRequest, callback func(response *SubmitJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,18 +73,24 @@ type SubmitJobRequest struct {
 	*requests.RpcRequest
 	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
 	RunasUserPassword  string           `position:"Query" name:"RunasUserPassword"`
+	ClockTime          string           `position:"Query" name:"ClockTime"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
 	JobQueue           string           `position:"Query" name:"JobQueue"`
 	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
 	UnzipCmd           string           `position:"Query" name:"UnzipCmd"`
 	PackagePath        string           `position:"Query" name:"PackagePath"`
+	Mem                string           `position:"Query" name:"Mem"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
 	Variables          string           `position:"Query" name:"Variables"`
 	PostCmdLine        string           `position:"Query" name:"PostCmdLine"`
 	RunasUser          string           `position:"Query" name:"RunasUser"`
 	ClusterId          string           `position:"Query" name:"ClusterId"`
 	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
+	Thread             requests.Integer `position:"Query" name:"Thread"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
+	Gpu                requests.Integer `position:"Query" name:"Gpu"`
+	Node               requests.Integer `position:"Query" name:"Node"`
+	Task               requests.Integer `position:"Query" name:"Task"`
 	InputFileUrl       string           `position:"Query" name:"InputFileUrl"`
 	Name               string           `position:"Query" name:"Name"`
 	ContainerId        string           `position:"Query" name:"ContainerId"`

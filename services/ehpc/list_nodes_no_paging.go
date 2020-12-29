@@ -21,7 +21,6 @@ import (
 )
 
 // ListNodesNoPaging invokes the ehpc.ListNodesNoPaging API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
 func (client *Client) ListNodesNoPaging(request *ListNodesNoPagingRequest) (response *ListNodesNoPagingResponse, err error) {
 	response = CreateListNodesNoPagingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListNodesNoPaging(request *ListNodesNoPagingRequest) (resp
 }
 
 // ListNodesNoPagingWithChan invokes the ehpc.ListNodesNoPaging API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesNoPagingWithChan(request *ListNodesNoPagingRequest) (<-chan *ListNodesNoPagingResponse, <-chan error) {
 	responseChan := make(chan *ListNodesNoPagingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListNodesNoPagingWithChan(request *ListNodesNoPagingReques
 }
 
 // ListNodesNoPagingWithCallback invokes the ehpc.ListNodesNoPaging API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesNoPagingWithCallback(request *ListNodesNoPagingRequest, callback func(response *ListNodesNoPagingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

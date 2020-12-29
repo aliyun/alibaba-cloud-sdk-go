@@ -21,7 +21,6 @@ import (
 )
 
 // ListCustomImages invokes the ehpc.ListCustomImages API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
 func (client *Client) ListCustomImages(request *ListCustomImagesRequest) (response *ListCustomImagesResponse, err error) {
 	response = CreateListCustomImagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCustomImages(request *ListCustomImagesRequest) (respon
 }
 
 // ListCustomImagesWithChan invokes the ehpc.ListCustomImages API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCustomImagesWithChan(request *ListCustomImagesRequest) (<-chan *ListCustomImagesResponse, <-chan error) {
 	responseChan := make(chan *ListCustomImagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCustomImagesWithChan(request *ListCustomImagesRequest)
 }
 
 // ListCustomImagesWithCallback invokes the ehpc.ListCustomImages API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequest, callback func(response *ListCustomImagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

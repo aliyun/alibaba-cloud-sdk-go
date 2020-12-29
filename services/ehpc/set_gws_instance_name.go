@@ -21,7 +21,6 @@ import (
 )
 
 // SetGWSInstanceName invokes the ehpc.SetGWSInstanceName API synchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsinstancename.html
 func (client *Client) SetGWSInstanceName(request *SetGWSInstanceNameRequest) (response *SetGWSInstanceNameResponse, err error) {
 	response = CreateSetGWSInstanceNameResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetGWSInstanceName(request *SetGWSInstanceNameRequest) (re
 }
 
 // SetGWSInstanceNameWithChan invokes the ehpc.SetGWSInstanceName API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsinstancename.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetGWSInstanceNameWithChan(request *SetGWSInstanceNameRequest) (<-chan *SetGWSInstanceNameResponse, <-chan error) {
 	responseChan := make(chan *SetGWSInstanceNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetGWSInstanceNameWithChan(request *SetGWSInstanceNameRequ
 }
 
 // SetGWSInstanceNameWithCallback invokes the ehpc.SetGWSInstanceName API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsinstancename.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetGWSInstanceNameWithCallback(request *SetGWSInstanceNameRequest, callback func(response *SetGWSInstanceNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

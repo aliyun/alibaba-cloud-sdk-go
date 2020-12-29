@@ -21,7 +21,6 @@ import (
 )
 
 // ListPreferredEcsTypes invokes the ehpc.ListPreferredEcsTypes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
 func (client *Client) ListPreferredEcsTypes(request *ListPreferredEcsTypesRequest) (response *ListPreferredEcsTypesResponse, err error) {
 	response = CreateListPreferredEcsTypesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPreferredEcsTypes(request *ListPreferredEcsTypesReques
 }
 
 // ListPreferredEcsTypesWithChan invokes the ehpc.ListPreferredEcsTypes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPreferredEcsTypesWithChan(request *ListPreferredEcsTypesRequest) (<-chan *ListPreferredEcsTypesResponse, <-chan error) {
 	responseChan := make(chan *ListPreferredEcsTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPreferredEcsTypesWithChan(request *ListPreferredEcsTyp
 }
 
 // ListPreferredEcsTypesWithCallback invokes the ehpc.ListPreferredEcsTypes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPreferredEcsTypesWithCallback(request *ListPreferredEcsTypesRequest, callback func(response *ListPreferredEcsTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // MountNFS invokes the ehpc.MountNFS API synchronously
-// api document: https://help.aliyun.com/api/ehpc/mountnfs.html
 func (client *Client) MountNFS(request *MountNFSRequest) (response *MountNFSResponse, err error) {
 	response = CreateMountNFSResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MountNFS(request *MountNFSRequest) (response *MountNFSResp
 }
 
 // MountNFSWithChan invokes the ehpc.MountNFS API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/mountnfs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MountNFSWithChan(request *MountNFSRequest) (<-chan *MountNFSResponse, <-chan error) {
 	responseChan := make(chan *MountNFSResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MountNFSWithChan(request *MountNFSRequest) (<-chan *MountN
 }
 
 // MountNFSWithCallback invokes the ehpc.MountNFS API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/mountnfs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MountNFSWithCallback(request *MountNFSRequest, callback func(response *MountNFSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

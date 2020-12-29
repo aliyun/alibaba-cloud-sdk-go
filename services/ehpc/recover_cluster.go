@@ -21,7 +21,6 @@ import (
 )
 
 // RecoverCluster invokes the ehpc.RecoverCluster API synchronously
-// api document: https://help.aliyun.com/api/ehpc/recovercluster.html
 func (client *Client) RecoverCluster(request *RecoverClusterRequest) (response *RecoverClusterResponse, err error) {
 	response = CreateRecoverClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecoverCluster(request *RecoverClusterRequest) (response *
 }
 
 // RecoverClusterWithChan invokes the ehpc.RecoverCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/recovercluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoverClusterWithChan(request *RecoverClusterRequest) (<-chan *RecoverClusterResponse, <-chan error) {
 	responseChan := make(chan *RecoverClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecoverClusterWithChan(request *RecoverClusterRequest) (<-
 }
 
 // RecoverClusterWithCallback invokes the ehpc.RecoverCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/recovercluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoverClusterWithCallback(request *RecoverClusterRequest, callback func(response *RecoverClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

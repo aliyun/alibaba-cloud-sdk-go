@@ -21,7 +21,6 @@ import (
 )
 
 // SetGWSClusterPolicy invokes the ehpc.SetGWSClusterPolicy API synchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsclusterpolicy.html
 func (client *Client) SetGWSClusterPolicy(request *SetGWSClusterPolicyRequest) (response *SetGWSClusterPolicyResponse, err error) {
 	response = CreateSetGWSClusterPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetGWSClusterPolicy(request *SetGWSClusterPolicyRequest) (
 }
 
 // SetGWSClusterPolicyWithChan invokes the ehpc.SetGWSClusterPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsclusterpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetGWSClusterPolicyWithChan(request *SetGWSClusterPolicyRequest) (<-chan *SetGWSClusterPolicyResponse, <-chan error) {
 	responseChan := make(chan *SetGWSClusterPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetGWSClusterPolicyWithChan(request *SetGWSClusterPolicyRe
 }
 
 // SetGWSClusterPolicyWithCallback invokes the ehpc.SetGWSClusterPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/setgwsclusterpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetGWSClusterPolicyWithCallback(request *SetGWSClusterPolicyRequest, callback func(response *SetGWSClusterPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

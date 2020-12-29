@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteContainerApps invokes the ehpc.DeleteContainerApps API synchronously
-// api document: https://help.aliyun.com/api/ehpc/deletecontainerapps.html
 func (client *Client) DeleteContainerApps(request *DeleteContainerAppsRequest) (response *DeleteContainerAppsResponse, err error) {
 	response = CreateDeleteContainerAppsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteContainerApps(request *DeleteContainerAppsRequest) (
 }
 
 // DeleteContainerAppsWithChan invokes the ehpc.DeleteContainerApps API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletecontainerapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteContainerAppsWithChan(request *DeleteContainerAppsRequest) (<-chan *DeleteContainerAppsResponse, <-chan error) {
 	responseChan := make(chan *DeleteContainerAppsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteContainerAppsWithChan(request *DeleteContainerAppsRe
 }
 
 // DeleteContainerAppsWithCallback invokes the ehpc.DeleteContainerApps API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletecontainerapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteContainerAppsWithCallback(request *DeleteContainerAppsRequest, callback func(response *DeleteContainerAppsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

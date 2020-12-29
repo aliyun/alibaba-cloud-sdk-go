@@ -21,7 +21,6 @@ import (
 )
 
 // CreateHybridCluster invokes the ehpc.CreateHybridCluster API synchronously
-// api document: https://help.aliyun.com/api/ehpc/createhybridcluster.html
 func (client *Client) CreateHybridCluster(request *CreateHybridClusterRequest) (response *CreateHybridClusterResponse, err error) {
 	response = CreateCreateHybridClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateHybridCluster(request *CreateHybridClusterRequest) (
 }
 
 // CreateHybridClusterWithChan invokes the ehpc.CreateHybridCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/createhybridcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHybridClusterWithChan(request *CreateHybridClusterRequest) (<-chan *CreateHybridClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateHybridClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateHybridClusterWithChan(request *CreateHybridClusterRe
 }
 
 // CreateHybridClusterWithCallback invokes the ehpc.CreateHybridCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/createhybridcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHybridClusterWithCallback(request *CreateHybridClusterRequest, callback func(response *CreateHybridClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

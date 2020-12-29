@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyContainerAppAttributes invokes the ehpc.ModifyContainerAppAttributes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/modifycontainerappattributes.html
 func (client *Client) ModifyContainerAppAttributes(request *ModifyContainerAppAttributesRequest) (response *ModifyContainerAppAttributesResponse, err error) {
 	response = CreateModifyContainerAppAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyContainerAppAttributes(request *ModifyContainerAppAt
 }
 
 // ModifyContainerAppAttributesWithChan invokes the ehpc.ModifyContainerAppAttributes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/modifycontainerappattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyContainerAppAttributesWithChan(request *ModifyContainerAppAttributesRequest) (<-chan *ModifyContainerAppAttributesResponse, <-chan error) {
 	responseChan := make(chan *ModifyContainerAppAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyContainerAppAttributesWithChan(request *ModifyContai
 }
 
 // ModifyContainerAppAttributesWithCallback invokes the ehpc.ModifyContainerAppAttributes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/modifycontainerappattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyContainerAppAttributesWithCallback(request *ModifyContainerAppAttributesRequest, callback func(response *ModifyContainerAppAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

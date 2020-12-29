@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteGWSCluster invokes the ehpc.DeleteGWSCluster API synchronously
-// api document: https://help.aliyun.com/api/ehpc/deletegwscluster.html
 func (client *Client) DeleteGWSCluster(request *DeleteGWSClusterRequest) (response *DeleteGWSClusterResponse, err error) {
 	response = CreateDeleteGWSClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteGWSCluster(request *DeleteGWSClusterRequest) (respon
 }
 
 // DeleteGWSClusterWithChan invokes the ehpc.DeleteGWSCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletegwscluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGWSClusterWithChan(request *DeleteGWSClusterRequest) (<-chan *DeleteGWSClusterResponse, <-chan error) {
 	responseChan := make(chan *DeleteGWSClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteGWSClusterWithChan(request *DeleteGWSClusterRequest)
 }
 
 // DeleteGWSClusterWithCallback invokes the ehpc.DeleteGWSCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletegwscluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGWSClusterWithCallback(request *DeleteGWSClusterRequest, callback func(response *DeleteGWSClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetIfEcsTypeSupportHtConfig invokes the ehpc.GetIfEcsTypeSupportHtConfig API synchronously
-// api document: https://help.aliyun.com/api/ehpc/getifecstypesupporthtconfig.html
 func (client *Client) GetIfEcsTypeSupportHtConfig(request *GetIfEcsTypeSupportHtConfigRequest) (response *GetIfEcsTypeSupportHtConfigResponse, err error) {
 	response = CreateGetIfEcsTypeSupportHtConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetIfEcsTypeSupportHtConfig(request *GetIfEcsTypeSupportHt
 }
 
 // GetIfEcsTypeSupportHtConfigWithChan invokes the ehpc.GetIfEcsTypeSupportHtConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getifecstypesupporthtconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIfEcsTypeSupportHtConfigWithChan(request *GetIfEcsTypeSupportHtConfigRequest) (<-chan *GetIfEcsTypeSupportHtConfigResponse, <-chan error) {
 	responseChan := make(chan *GetIfEcsTypeSupportHtConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetIfEcsTypeSupportHtConfigWithChan(request *GetIfEcsTypeS
 }
 
 // GetIfEcsTypeSupportHtConfigWithCallback invokes the ehpc.GetIfEcsTypeSupportHtConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getifecstypesupporthtconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIfEcsTypeSupportHtConfigWithCallback(request *GetIfEcsTypeSupportHtConfigRequest, callback func(response *GetIfEcsTypeSupportHtConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

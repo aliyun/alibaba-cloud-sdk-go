@@ -21,7 +21,6 @@ import (
 )
 
 // ListCloudMetricProfilings invokes the ehpc.ListCloudMetricProfilings API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listcloudmetricprofilings.html
 func (client *Client) ListCloudMetricProfilings(request *ListCloudMetricProfilingsRequest) (response *ListCloudMetricProfilingsResponse, err error) {
 	response = CreateListCloudMetricProfilingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCloudMetricProfilings(request *ListCloudMetricProfilin
 }
 
 // ListCloudMetricProfilingsWithChan invokes the ehpc.ListCloudMetricProfilings API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcloudmetricprofilings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCloudMetricProfilingsWithChan(request *ListCloudMetricProfilingsRequest) (<-chan *ListCloudMetricProfilingsResponse, <-chan error) {
 	responseChan := make(chan *ListCloudMetricProfilingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCloudMetricProfilingsWithChan(request *ListCloudMetric
 }
 
 // ListCloudMetricProfilingsWithCallback invokes the ehpc.ListCloudMetricProfilings API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcloudmetricprofilings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCloudMetricProfilingsWithCallback(request *ListCloudMetricProfilingsRequest, callback func(response *ListCloudMetricProfilingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

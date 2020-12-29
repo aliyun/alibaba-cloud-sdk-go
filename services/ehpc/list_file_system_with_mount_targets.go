@@ -21,7 +21,6 @@ import (
 )
 
 // ListFileSystemWithMountTargets invokes the ehpc.ListFileSystemWithMountTargets API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listfilesystemwithmounttargets.html
 func (client *Client) ListFileSystemWithMountTargets(request *ListFileSystemWithMountTargetsRequest) (response *ListFileSystemWithMountTargetsResponse, err error) {
 	response = CreateListFileSystemWithMountTargetsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFileSystemWithMountTargets(request *ListFileSystemWith
 }
 
 // ListFileSystemWithMountTargetsWithChan invokes the ehpc.ListFileSystemWithMountTargets API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listfilesystemwithmounttargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFileSystemWithMountTargetsWithChan(request *ListFileSystemWithMountTargetsRequest) (<-chan *ListFileSystemWithMountTargetsResponse, <-chan error) {
 	responseChan := make(chan *ListFileSystemWithMountTargetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFileSystemWithMountTargetsWithChan(request *ListFileSy
 }
 
 // ListFileSystemWithMountTargetsWithCallback invokes the ehpc.ListFileSystemWithMountTargets API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listfilesystemwithmounttargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFileSystemWithMountTargetsWithCallback(request *ListFileSystemWithMountTargetsRequest, callback func(response *ListFileSystemWithMountTargetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

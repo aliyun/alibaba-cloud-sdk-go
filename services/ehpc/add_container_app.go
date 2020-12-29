@@ -21,7 +21,6 @@ import (
 )
 
 // AddContainerApp invokes the ehpc.AddContainerApp API synchronously
-// api document: https://help.aliyun.com/api/ehpc/addcontainerapp.html
 func (client *Client) AddContainerApp(request *AddContainerAppRequest) (response *AddContainerAppResponse, err error) {
 	response = CreateAddContainerAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddContainerApp(request *AddContainerAppRequest) (response
 }
 
 // AddContainerAppWithChan invokes the ehpc.AddContainerApp API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addcontainerapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddContainerAppWithChan(request *AddContainerAppRequest) (<-chan *AddContainerAppResponse, <-chan error) {
 	responseChan := make(chan *AddContainerAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddContainerAppWithChan(request *AddContainerAppRequest) (
 }
 
 // AddContainerAppWithCallback invokes the ehpc.AddContainerApp API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addcontainerapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddContainerAppWithCallback(request *AddContainerAppRequest, callback func(response *AddContainerAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

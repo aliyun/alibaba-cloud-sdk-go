@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNFSClientStatus invokes the ehpc.DescribeNFSClientStatus API synchronously
-// api document: https://help.aliyun.com/api/ehpc/describenfsclientstatus.html
 func (client *Client) DescribeNFSClientStatus(request *DescribeNFSClientStatusRequest) (response *DescribeNFSClientStatusResponse, err error) {
 	response = CreateDescribeNFSClientStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNFSClientStatus(request *DescribeNFSClientStatusRe
 }
 
 // DescribeNFSClientStatusWithChan invokes the ehpc.DescribeNFSClientStatus API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describenfsclientstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNFSClientStatusWithChan(request *DescribeNFSClientStatusRequest) (<-chan *DescribeNFSClientStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeNFSClientStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNFSClientStatusWithChan(request *DescribeNFSClient
 }
 
 // DescribeNFSClientStatusWithCallback invokes the ehpc.DescribeNFSClientStatus API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describenfsclientstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNFSClientStatusWithCallback(request *DescribeNFSClientStatusRequest, callback func(response *DescribeNFSClientStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

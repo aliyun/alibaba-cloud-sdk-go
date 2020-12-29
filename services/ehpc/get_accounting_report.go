@@ -21,7 +21,6 @@ import (
 )
 
 // GetAccountingReport invokes the ehpc.GetAccountingReport API synchronously
-// api document: https://help.aliyun.com/api/ehpc/getaccountingreport.html
 func (client *Client) GetAccountingReport(request *GetAccountingReportRequest) (response *GetAccountingReportResponse, err error) {
 	response = CreateGetAccountingReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAccountingReport(request *GetAccountingReportRequest) (
 }
 
 // GetAccountingReportWithChan invokes the ehpc.GetAccountingReport API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getaccountingreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountingReportWithChan(request *GetAccountingReportRequest) (<-chan *GetAccountingReportResponse, <-chan error) {
 	responseChan := make(chan *GetAccountingReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAccountingReportWithChan(request *GetAccountingReportRe
 }
 
 // GetAccountingReportWithCallback invokes the ehpc.GetAccountingReport API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getaccountingreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountingReportWithCallback(request *GetAccountingReportRequest, callback func(response *GetAccountingReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGWSImages invokes the ehpc.DescribeGWSImages API synchronously
-// api document: https://help.aliyun.com/api/ehpc/describegwsimages.html
 func (client *Client) DescribeGWSImages(request *DescribeGWSImagesRequest) (response *DescribeGWSImagesResponse, err error) {
 	response = CreateDescribeGWSImagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGWSImages(request *DescribeGWSImagesRequest) (resp
 }
 
 // DescribeGWSImagesWithChan invokes the ehpc.DescribeGWSImages API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describegwsimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGWSImagesWithChan(request *DescribeGWSImagesRequest) (<-chan *DescribeGWSImagesResponse, <-chan error) {
 	responseChan := make(chan *DescribeGWSImagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGWSImagesWithChan(request *DescribeGWSImagesReques
 }
 
 // DescribeGWSImagesWithCallback invokes the ehpc.DescribeGWSImages API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/describegwsimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGWSImagesWithCallback(request *DescribeGWSImagesRequest, callback func(response *DescribeGWSImagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

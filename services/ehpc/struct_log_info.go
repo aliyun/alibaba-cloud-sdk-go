@@ -17,8 +17,8 @@ package ehpc
 
 // LogInfo is a nested struct in ehpc response
 type LogInfo struct {
+	Message    string `json:"Message" xml:"Message"`
 	Operation  string `json:"Operation" xml:"Operation"`
 	Level      string `json:"Level" xml:"Level"`
-	Message    string `json:"Message" xml:"Message"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 }

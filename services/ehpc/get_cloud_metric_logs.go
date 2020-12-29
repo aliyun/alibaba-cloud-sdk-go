@@ -21,7 +21,6 @@ import (
 )
 
 // GetCloudMetricLogs invokes the ehpc.GetCloudMetricLogs API synchronously
-// api document: https://help.aliyun.com/api/ehpc/getcloudmetriclogs.html
 func (client *Client) GetCloudMetricLogs(request *GetCloudMetricLogsRequest) (response *GetCloudMetricLogsResponse, err error) {
 	response = CreateGetCloudMetricLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCloudMetricLogs(request *GetCloudMetricLogsRequest) (re
 }
 
 // GetCloudMetricLogsWithChan invokes the ehpc.GetCloudMetricLogs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getcloudmetriclogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCloudMetricLogsWithChan(request *GetCloudMetricLogsRequest) (<-chan *GetCloudMetricLogsResponse, <-chan error) {
 	responseChan := make(chan *GetCloudMetricLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCloudMetricLogsWithChan(request *GetCloudMetricLogsRequ
 }
 
 // GetCloudMetricLogsWithCallback invokes the ehpc.GetCloudMetricLogs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getcloudmetriclogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCloudMetricLogsWithCallback(request *GetCloudMetricLogsRequest, callback func(response *GetCloudMetricLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

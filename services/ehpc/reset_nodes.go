@@ -21,7 +21,6 @@ import (
 )
 
 // ResetNodes invokes the ehpc.ResetNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
 func (client *Client) ResetNodes(request *ResetNodesRequest) (response *ResetNodesResponse, err error) {
 	response = CreateResetNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetNodes(request *ResetNodesRequest) (response *ResetNod
 }
 
 // ResetNodesWithChan invokes the ehpc.ResetNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetNodesWithChan(request *ResetNodesRequest) (<-chan *ResetNodesResponse, <-chan error) {
 	responseChan := make(chan *ResetNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetNodesWithChan(request *ResetNodesRequest) (<-chan *Re
 }
 
 // ResetNodesWithCallback invokes the ehpc.ResetNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetNodesWithCallback(request *ResetNodesRequest, callback func(response *ResetNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateJobTemplate invokes the ehpc.CreateJobTemplate API synchronously
-// api document: https://help.aliyun.com/api/ehpc/createjobtemplate.html
 func (client *Client) CreateJobTemplate(request *CreateJobTemplateRequest) (response *CreateJobTemplateResponse, err error) {
 	response = CreateCreateJobTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateJobTemplate(request *CreateJobTemplateRequest) (resp
 }
 
 // CreateJobTemplateWithChan invokes the ehpc.CreateJobTemplate API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/createjobtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobTemplateWithChan(request *CreateJobTemplateRequest) (<-chan *CreateJobTemplateResponse, <-chan error) {
 	responseChan := make(chan *CreateJobTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateJobTemplateWithChan(request *CreateJobTemplateReques
 }
 
 // CreateJobTemplateWithCallback invokes the ehpc.CreateJobTemplate API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/createjobtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobTemplateWithCallback(request *CreateJobTemplateRequest, callback func(response *CreateJobTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

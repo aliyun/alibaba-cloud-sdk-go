@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateQueueConfig invokes the ehpc.UpdateQueueConfig API synchronously
-// api document: https://help.aliyun.com/api/ehpc/updatequeueconfig.html
 func (client *Client) UpdateQueueConfig(request *UpdateQueueConfigRequest) (response *UpdateQueueConfigResponse, err error) {
 	response = CreateUpdateQueueConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateQueueConfig(request *UpdateQueueConfigRequest) (resp
 }
 
 // UpdateQueueConfigWithChan invokes the ehpc.UpdateQueueConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/updatequeueconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateQueueConfigWithChan(request *UpdateQueueConfigRequest) (<-chan *UpdateQueueConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateQueueConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateQueueConfigWithChan(request *UpdateQueueConfigReques
 }
 
 // UpdateQueueConfigWithCallback invokes the ehpc.UpdateQueueConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/updatequeueconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateQueueConfigWithCallback(request *UpdateQueueConfigRequest, callback func(response *UpdateQueueConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

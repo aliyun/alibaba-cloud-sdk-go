@@ -21,7 +21,6 @@ import (
 )
 
 // GetAutoScaleConfig invokes the ehpc.GetAutoScaleConfig API synchronously
-// api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
 func (client *Client) GetAutoScaleConfig(request *GetAutoScaleConfigRequest) (response *GetAutoScaleConfigResponse, err error) {
 	response = CreateGetAutoScaleConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAutoScaleConfig(request *GetAutoScaleConfigRequest) (re
 }
 
 // GetAutoScaleConfigWithChan invokes the ehpc.GetAutoScaleConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAutoScaleConfigWithChan(request *GetAutoScaleConfigRequest) (<-chan *GetAutoScaleConfigResponse, <-chan error) {
 	responseChan := make(chan *GetAutoScaleConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAutoScaleConfigWithChan(request *GetAutoScaleConfigRequ
 }
 
 // GetAutoScaleConfigWithCallback invokes the ehpc.GetAutoScaleConfig API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAutoScaleConfigWithCallback(request *GetAutoScaleConfigRequest, callback func(response *GetAutoScaleConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

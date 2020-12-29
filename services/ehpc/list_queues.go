@@ -21,7 +21,6 @@ import (
 )
 
 // ListQueues invokes the ehpc.ListQueues API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listqueues.html
 func (client *Client) ListQueues(request *ListQueuesRequest) (response *ListQueuesResponse, err error) {
 	response = CreateListQueuesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListQueues(request *ListQueuesRequest) (response *ListQueu
 }
 
 // ListQueuesWithChan invokes the ehpc.ListQueues API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listqueues.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueuesWithChan(request *ListQueuesRequest) (<-chan *ListQueuesResponse, <-chan error) {
 	responseChan := make(chan *ListQueuesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListQueuesWithChan(request *ListQueuesRequest) (<-chan *Li
 }
 
 // ListQueuesWithCallback invokes the ehpc.ListQueues API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listqueues.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueuesWithCallback(request *ListQueuesRequest, callback func(response *ListQueuesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

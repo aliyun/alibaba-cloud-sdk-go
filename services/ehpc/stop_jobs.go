@@ -21,7 +21,6 @@ import (
 )
 
 // StopJobs invokes the ehpc.StopJobs API synchronously
-// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
 func (client *Client) StopJobs(request *StopJobsRequest) (response *StopJobsResponse, err error) {
 	response = CreateStopJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopJobs(request *StopJobsRequest) (response *StopJobsResp
 }
 
 // StopJobsWithChan invokes the ehpc.StopJobs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopJobsWithChan(request *StopJobsRequest) (<-chan *StopJobsResponse, <-chan error) {
 	responseChan := make(chan *StopJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopJobsWithChan(request *StopJobsRequest) (<-chan *StopJo
 }
 
 // StopJobsWithCallback invokes the ehpc.StopJobs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopJobsWithCallback(request *StopJobsRequest, callback func(response *StopJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

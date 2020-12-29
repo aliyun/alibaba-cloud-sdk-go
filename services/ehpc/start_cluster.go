@@ -21,7 +21,6 @@ import (
 )
 
 // StartCluster invokes the ehpc.StartCluster API synchronously
-// api document: https://help.aliyun.com/api/ehpc/startcluster.html
 func (client *Client) StartCluster(request *StartClusterRequest) (response *StartClusterResponse, err error) {
 	response = CreateStartClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartCluster(request *StartClusterRequest) (response *Star
 }
 
 // StartClusterWithChan invokes the ehpc.StartCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/startcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartClusterWithChan(request *StartClusterRequest) (<-chan *StartClusterResponse, <-chan error) {
 	responseChan := make(chan *StartClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartClusterWithChan(request *StartClusterRequest) (<-chan
 }
 
 // StartClusterWithCallback invokes the ehpc.StartCluster API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/startcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartClusterWithCallback(request *StartClusterRequest, callback func(response *StartClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

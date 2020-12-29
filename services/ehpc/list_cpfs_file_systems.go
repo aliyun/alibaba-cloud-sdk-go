@@ -21,7 +21,6 @@ import (
 )
 
 // ListCpfsFileSystems invokes the ehpc.ListCpfsFileSystems API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listcpfsfilesystems.html
 func (client *Client) ListCpfsFileSystems(request *ListCpfsFileSystemsRequest) (response *ListCpfsFileSystemsResponse, err error) {
 	response = CreateListCpfsFileSystemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCpfsFileSystems(request *ListCpfsFileSystemsRequest) (
 }
 
 // ListCpfsFileSystemsWithChan invokes the ehpc.ListCpfsFileSystems API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcpfsfilesystems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCpfsFileSystemsWithChan(request *ListCpfsFileSystemsRequest) (<-chan *ListCpfsFileSystemsResponse, <-chan error) {
 	responseChan := make(chan *ListCpfsFileSystemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCpfsFileSystemsWithChan(request *ListCpfsFileSystemsRe
 }
 
 // ListCpfsFileSystemsWithCallback invokes the ehpc.ListCpfsFileSystems API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcpfsfilesystems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCpfsFileSystemsWithCallback(request *ListCpfsFileSystemsRequest, callback func(response *ListCpfsFileSystemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

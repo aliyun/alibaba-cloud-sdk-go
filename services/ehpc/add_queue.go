@@ -21,7 +21,6 @@ import (
 )
 
 // AddQueue invokes the ehpc.AddQueue API synchronously
-// api document: https://help.aliyun.com/api/ehpc/addqueue.html
 func (client *Client) AddQueue(request *AddQueueRequest) (response *AddQueueResponse, err error) {
 	response = CreateAddQueueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddQueue(request *AddQueueRequest) (response *AddQueueResp
 }
 
 // AddQueueWithChan invokes the ehpc.AddQueue API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddQueueWithChan(request *AddQueueRequest) (<-chan *AddQueueResponse, <-chan error) {
 	responseChan := make(chan *AddQueueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddQueueWithChan(request *AddQueueRequest) (<-chan *AddQue
 }
 
 // AddQueueWithCallback invokes the ehpc.AddQueue API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/addqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddQueueWithCallback(request *AddQueueRequest, callback func(response *AddQueueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

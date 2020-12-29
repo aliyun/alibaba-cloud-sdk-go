@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteJobs invokes the ehpc.DeleteJobs API synchronously
-// api document: https://help.aliyun.com/api/ehpc/deletejobs.html
 func (client *Client) DeleteJobs(request *DeleteJobsRequest) (response *DeleteJobsResponse, err error) {
 	response = CreateDeleteJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteJobs(request *DeleteJobsRequest) (response *DeleteJo
 }
 
 // DeleteJobsWithChan invokes the ehpc.DeleteJobs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletejobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobsWithChan(request *DeleteJobsRequest) (<-chan *DeleteJobsResponse, <-chan error) {
 	responseChan := make(chan *DeleteJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteJobsWithChan(request *DeleteJobsRequest) (<-chan *De
 }
 
 // DeleteJobsWithCallback invokes the ehpc.DeleteJobs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletejobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobsWithCallback(request *DeleteJobsRequest, callback func(response *DeleteJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

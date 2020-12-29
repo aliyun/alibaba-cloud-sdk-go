@@ -21,7 +21,6 @@ import (
 )
 
 // ListCommands invokes the ehpc.ListCommands API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listcommands.html
 func (client *Client) ListCommands(request *ListCommandsRequest) (response *ListCommandsResponse, err error) {
 	response = CreateListCommandsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCommands(request *ListCommandsRequest) (response *List
 }
 
 // ListCommandsWithChan invokes the ehpc.ListCommands API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcommands.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCommandsWithChan(request *ListCommandsRequest) (<-chan *ListCommandsResponse, <-chan error) {
 	responseChan := make(chan *ListCommandsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCommandsWithChan(request *ListCommandsRequest) (<-chan
 }
 
 // ListCommandsWithCallback invokes the ehpc.ListCommands API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listcommands.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCommandsWithCallback(request *ListCommandsRequest, callback func(response *ListCommandsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateClusterVolumes invokes the ehpc.UpdateClusterVolumes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/updateclustervolumes.html
 func (client *Client) UpdateClusterVolumes(request *UpdateClusterVolumesRequest) (response *UpdateClusterVolumesResponse, err error) {
 	response = CreateUpdateClusterVolumesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateClusterVolumes(request *UpdateClusterVolumesRequest)
 }
 
 // UpdateClusterVolumesWithChan invokes the ehpc.UpdateClusterVolumes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/updateclustervolumes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateClusterVolumesWithChan(request *UpdateClusterVolumesRequest) (<-chan *UpdateClusterVolumesResponse, <-chan error) {
 	responseChan := make(chan *UpdateClusterVolumesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateClusterVolumesWithChan(request *UpdateClusterVolumes
 }
 
 // UpdateClusterVolumesWithCallback invokes the ehpc.UpdateClusterVolumes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/updateclustervolumes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateClusterVolumesWithCallback(request *UpdateClusterVolumesRequest, callback func(response *UpdateClusterVolumesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

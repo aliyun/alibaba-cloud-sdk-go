@@ -21,7 +21,6 @@ import (
 )
 
 // GetVisualServiceStatus invokes the ehpc.GetVisualServiceStatus API synchronously
-// api document: https://help.aliyun.com/api/ehpc/getvisualservicestatus.html
 func (client *Client) GetVisualServiceStatus(request *GetVisualServiceStatusRequest) (response *GetVisualServiceStatusResponse, err error) {
 	response = CreateGetVisualServiceStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetVisualServiceStatus(request *GetVisualServiceStatusRequ
 }
 
 // GetVisualServiceStatusWithChan invokes the ehpc.GetVisualServiceStatus API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getvisualservicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVisualServiceStatusWithChan(request *GetVisualServiceStatusRequest) (<-chan *GetVisualServiceStatusResponse, <-chan error) {
 	responseChan := make(chan *GetVisualServiceStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetVisualServiceStatusWithChan(request *GetVisualServiceSt
 }
 
 // GetVisualServiceStatusWithCallback invokes the ehpc.GetVisualServiceStatus API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getvisualservicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVisualServiceStatusWithCallback(request *GetVisualServiceStatusRequest, callback func(response *GetVisualServiceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

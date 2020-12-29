@@ -21,7 +21,6 @@ import (
 )
 
 // ListInvocationResults invokes the ehpc.ListInvocationResults API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listinvocationresults.html
 func (client *Client) ListInvocationResults(request *ListInvocationResultsRequest) (response *ListInvocationResultsResponse, err error) {
 	response = CreateListInvocationResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListInvocationResults(request *ListInvocationResultsReques
 }
 
 // ListInvocationResultsWithChan invokes the ehpc.ListInvocationResults API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listinvocationresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInvocationResultsWithChan(request *ListInvocationResultsRequest) (<-chan *ListInvocationResultsResponse, <-chan error) {
 	responseChan := make(chan *ListInvocationResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListInvocationResultsWithChan(request *ListInvocationResul
 }
 
 // ListInvocationResultsWithCallback invokes the ehpc.ListInvocationResults API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listinvocationresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInvocationResultsWithCallback(request *ListInvocationResultsRequest, callback func(response *ListInvocationResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

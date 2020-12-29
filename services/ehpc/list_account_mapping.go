@@ -21,7 +21,6 @@ import (
 )
 
 // ListAccountMapping invokes the ehpc.ListAccountMapping API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listaccountmapping.html
 func (client *Client) ListAccountMapping(request *ListAccountMappingRequest) (response *ListAccountMappingResponse, err error) {
 	response = CreateListAccountMappingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAccountMapping(request *ListAccountMappingRequest) (re
 }
 
 // ListAccountMappingWithChan invokes the ehpc.ListAccountMapping API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listaccountmapping.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccountMappingWithChan(request *ListAccountMappingRequest) (<-chan *ListAccountMappingResponse, <-chan error) {
 	responseChan := make(chan *ListAccountMappingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAccountMappingWithChan(request *ListAccountMappingRequ
 }
 
 // ListAccountMappingWithCallback invokes the ehpc.ListAccountMapping API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listaccountmapping.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccountMappingWithCallback(request *ListAccountMappingRequest, callback func(response *ListAccountMappingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

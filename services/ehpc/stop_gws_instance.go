@@ -21,7 +21,6 @@ import (
 )
 
 // StopGWSInstance invokes the ehpc.StopGWSInstance API synchronously
-// api document: https://help.aliyun.com/api/ehpc/stopgwsinstance.html
 func (client *Client) StopGWSInstance(request *StopGWSInstanceRequest) (response *StopGWSInstanceResponse, err error) {
 	response = CreateStopGWSInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopGWSInstance(request *StopGWSInstanceRequest) (response
 }
 
 // StopGWSInstanceWithChan invokes the ehpc.StopGWSInstance API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopgwsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopGWSInstanceWithChan(request *StopGWSInstanceRequest) (<-chan *StopGWSInstanceResponse, <-chan error) {
 	responseChan := make(chan *StopGWSInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopGWSInstanceWithChan(request *StopGWSInstanceRequest) (
 }
 
 // StopGWSInstanceWithCallback invokes the ehpc.StopGWSInstance API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopgwsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopGWSInstanceWithCallback(request *StopGWSInstanceRequest, callback func(response *StopGWSInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

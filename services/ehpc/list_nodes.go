@@ -21,7 +21,6 @@ import (
 )
 
 // ListNodes invokes the ehpc.ListNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listnodes.html
 func (client *Client) ListNodes(request *ListNodesRequest) (response *ListNodesResponse, err error) {
 	response = CreateListNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListNodes(request *ListNodesRequest) (response *ListNodesR
 }
 
 // ListNodesWithChan invokes the ehpc.ListNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesWithChan(request *ListNodesRequest) (<-chan *ListNodesResponse, <-chan error) {
 	responseChan := make(chan *ListNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListNodesWithChan(request *ListNodesRequest) (<-chan *List
 }
 
 // ListNodesWithCallback invokes the ehpc.ListNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback func(response *ListNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,15 @@ func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback 
 // ListNodesRequest is the request struct for api ListNodes
 type ListNodesRequest struct {
 	*requests.RpcRequest
-	Role       string           `position:"Query" name:"Role"`
-	ClusterId  string           `position:"Query" name:"ClusterId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	Sequence   string           `position:"Query" name:"Sequence"`
-	HostName   string           `position:"Query" name:"HostName"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Role             string           `position:"Query" name:"Role"`
+	ClusterId        string           `position:"Query" name:"ClusterId"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	Filter           string           `position:"Query" name:"Filter"`
+	PrivateIpAddress string           `position:"Query" name:"PrivateIpAddress"`
+	Sequence         string           `position:"Query" name:"Sequence"`
+	HostName         string           `position:"Query" name:"HostName"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	SortBy           string           `position:"Query" name:"SortBy"`
 }
 
 // ListNodesResponse is the response struct for api ListNodes

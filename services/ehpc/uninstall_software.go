@@ -21,7 +21,6 @@ import (
 )
 
 // UninstallSoftware invokes the ehpc.UninstallSoftware API synchronously
-// api document: https://help.aliyun.com/api/ehpc/uninstallsoftware.html
 func (client *Client) UninstallSoftware(request *UninstallSoftwareRequest) (response *UninstallSoftwareResponse, err error) {
 	response = CreateUninstallSoftwareResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UninstallSoftware(request *UninstallSoftwareRequest) (resp
 }
 
 // UninstallSoftwareWithChan invokes the ehpc.UninstallSoftware API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/uninstallsoftware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UninstallSoftwareWithChan(request *UninstallSoftwareRequest) (<-chan *UninstallSoftwareResponse, <-chan error) {
 	responseChan := make(chan *UninstallSoftwareResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UninstallSoftwareWithChan(request *UninstallSoftwareReques
 }
 
 // UninstallSoftwareWithCallback invokes the ehpc.UninstallSoftware API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/uninstallsoftware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UninstallSoftwareWithCallback(request *UninstallSoftwareRequest, callback func(response *UninstallSoftwareResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

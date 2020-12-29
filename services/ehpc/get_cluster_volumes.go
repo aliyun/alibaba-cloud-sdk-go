@@ -21,7 +21,6 @@ import (
 )
 
 // GetClusterVolumes invokes the ehpc.GetClusterVolumes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/getclustervolumes.html
 func (client *Client) GetClusterVolumes(request *GetClusterVolumesRequest) (response *GetClusterVolumesResponse, err error) {
 	response = CreateGetClusterVolumesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetClusterVolumes(request *GetClusterVolumesRequest) (resp
 }
 
 // GetClusterVolumesWithChan invokes the ehpc.GetClusterVolumes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getclustervolumes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterVolumesWithChan(request *GetClusterVolumesRequest) (<-chan *GetClusterVolumesResponse, <-chan error) {
 	responseChan := make(chan *GetClusterVolumesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetClusterVolumesWithChan(request *GetClusterVolumesReques
 }
 
 // GetClusterVolumesWithCallback invokes the ehpc.GetClusterVolumes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getclustervolumes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterVolumesWithCallback(request *GetClusterVolumesRequest, callback func(response *GetClusterVolumesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

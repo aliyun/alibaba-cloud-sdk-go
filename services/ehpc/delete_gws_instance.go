@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteGWSInstance invokes the ehpc.DeleteGWSInstance API synchronously
-// api document: https://help.aliyun.com/api/ehpc/deletegwsinstance.html
 func (client *Client) DeleteGWSInstance(request *DeleteGWSInstanceRequest) (response *DeleteGWSInstanceResponse, err error) {
 	response = CreateDeleteGWSInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteGWSInstance(request *DeleteGWSInstanceRequest) (resp
 }
 
 // DeleteGWSInstanceWithChan invokes the ehpc.DeleteGWSInstance API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletegwsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGWSInstanceWithChan(request *DeleteGWSInstanceRequest) (<-chan *DeleteGWSInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteGWSInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteGWSInstanceWithChan(request *DeleteGWSInstanceReques
 }
 
 // DeleteGWSInstanceWithCallback invokes the ehpc.DeleteGWSInstance API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/deletegwsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGWSInstanceWithCallback(request *DeleteGWSInstanceRequest, callback func(response *DeleteGWSInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

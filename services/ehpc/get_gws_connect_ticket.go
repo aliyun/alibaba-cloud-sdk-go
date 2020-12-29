@@ -21,7 +21,6 @@ import (
 )
 
 // GetGWSConnectTicket invokes the ehpc.GetGWSConnectTicket API synchronously
-// api document: https://help.aliyun.com/api/ehpc/getgwsconnectticket.html
 func (client *Client) GetGWSConnectTicket(request *GetGWSConnectTicketRequest) (response *GetGWSConnectTicketResponse, err error) {
 	response = CreateGetGWSConnectTicketResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetGWSConnectTicket(request *GetGWSConnectTicketRequest) (
 }
 
 // GetGWSConnectTicketWithChan invokes the ehpc.GetGWSConnectTicket API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getgwsconnectticket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGWSConnectTicketWithChan(request *GetGWSConnectTicketRequest) (<-chan *GetGWSConnectTicketResponse, <-chan error) {
 	responseChan := make(chan *GetGWSConnectTicketResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetGWSConnectTicketWithChan(request *GetGWSConnectTicketRe
 }
 
 // GetGWSConnectTicketWithCallback invokes the ehpc.GetGWSConnectTicket API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/getgwsconnectticket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGWSConnectTicketWithCallback(request *GetGWSConnectTicketRequest, callback func(response *GetGWSConnectTicketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
