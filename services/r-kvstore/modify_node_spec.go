@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddShardingNode invokes the r_kvstore.AddShardingNode API synchronously
-func (client *Client) AddShardingNode(request *AddShardingNodeRequest) (response *AddShardingNodeResponse, err error) {
-	response = CreateAddShardingNodeResponse()
+// ModifyNodeSpec invokes the r_kvstore.ModifyNodeSpec API synchronously
+func (client *Client) ModifyNodeSpec(request *ModifyNodeSpecRequest) (response *ModifyNodeSpecResponse, err error) {
+	response = CreateModifyNodeSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddShardingNodeWithChan invokes the r_kvstore.AddShardingNode API asynchronously
-func (client *Client) AddShardingNodeWithChan(request *AddShardingNodeRequest) (<-chan *AddShardingNodeResponse, <-chan error) {
-	responseChan := make(chan *AddShardingNodeResponse, 1)
+// ModifyNodeSpecWithChan invokes the r_kvstore.ModifyNodeSpec API asynchronously
+func (client *Client) ModifyNodeSpecWithChan(request *ModifyNodeSpecRequest) (<-chan *ModifyNodeSpecResponse, <-chan error) {
+	responseChan := make(chan *ModifyNodeSpecResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddShardingNode(request)
+		response, err := client.ModifyNodeSpec(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddShardingNodeWithChan(request *AddShardingNodeRequest) (
 	return responseChan, errChan
 }
 
-// AddShardingNodeWithCallback invokes the r_kvstore.AddShardingNode API asynchronously
-func (client *Client) AddShardingNodeWithCallback(request *AddShardingNodeRequest, callback func(response *AddShardingNodeResponse, err error)) <-chan int {
+// ModifyNodeSpecWithCallback invokes the r_kvstore.ModifyNodeSpec API asynchronously
+func (client *Client) ModifyNodeSpecWithCallback(request *ModifyNodeSpecRequest, callback func(response *ModifyNodeSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddShardingNodeResponse
+		var response *ModifyNodeSpecResponse
 		var err error
 		defer close(result)
-		response, err = client.AddShardingNode(request)
+		response, err = client.ModifyNodeSpec(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,44 +68,44 @@ func (client *Client) AddShardingNodeWithCallback(request *AddShardingNodeReques
 	return result
 }
 
-// AddShardingNodeRequest is the request struct for api AddShardingNode
-type AddShardingNodeRequest struct {
+// ModifyNodeSpecRequest is the request struct for api ModifyNodeSpec
+type ModifyNodeSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
+	InstanceClass        string           `position:"Query" name:"InstanceClass"`
+	SwitchTimeMode       string           `position:"Query" name:"SwitchTimeMode"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ShardCount           requests.Integer `position:"Query" name:"ShardCount"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ShardClass           string           `position:"Query" name:"ShardClass"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
-// AddShardingNodeResponse is the response struct for api AddShardingNode
-type AddShardingNodeResponse struct {
+// ModifyNodeSpecResponse is the response struct for api ModifyNodeSpec
+type ModifyNodeSpecResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	OrderId   int64    `json:"OrderId" xml:"OrderId"`
-	NodeId    string   `json:"NodeId" xml:"NodeId"`
-	NodeIds   []string `json:"NodeIds" xml:"NodeIds"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// CreateAddShardingNodeRequest creates a request to invoke AddShardingNode API
-func CreateAddShardingNodeRequest() (request *AddShardingNodeRequest) {
-	request = &AddShardingNodeRequest{
+// CreateModifyNodeSpecRequest creates a request to invoke ModifyNodeSpec API
+func CreateModifyNodeSpecRequest() (request *ModifyNodeSpecRequest) {
+	request = &ModifyNodeSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "AddShardingNode", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyNodeSpec", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddShardingNodeResponse creates a response to parse from AddShardingNode response
-func CreateAddShardingNodeResponse() (response *AddShardingNodeResponse) {
-	response = &AddShardingNodeResponse{
+// CreateModifyNodeSpecResponse creates a response to parse from ModifyNodeSpec response
+func CreateModifyNodeSpecResponse() (response *ModifyNodeSpecResponse) {
+	response = &ModifyNodeSpecResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

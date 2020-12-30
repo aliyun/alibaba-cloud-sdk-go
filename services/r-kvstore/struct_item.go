@@ -17,9 +17,15 @@ package r_kvstore
 
 // Item is a nested struct in r_kvstore response
 type Item struct {
-	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Id           int    `json:"Id" xml:"Id"`
 	RegionId     string `json:"RegionId" xml:"RegionId"`
+	Role         string `json:"Role" xml:"Role"`
+	ZoneId       string `json:"ZoneId" xml:"ZoneId"`
 	Duration     int    `json:"Duration" xml:"Duration"`
+	Ip           string `json:"Ip" xml:"Ip"`
+	HostName     string `json:"HostName" xml:"HostName"`
+	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
 	Status       string `json:"Status" xml:"Status"`
 	AutoRenew    string `json:"AutoRenew" xml:"AutoRenew"`
+	Ports        []int  `json:"Ports" xml:"Ports"`
 }

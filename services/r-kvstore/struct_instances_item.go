@@ -36,5 +36,6 @@ type InstancesItem struct {
 	StorageType       string          `json:"StorageType" xml:"StorageType"`
 	ConnectionDomain  string          `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	CreateTime        string          `json:"CreateTime" xml:"CreateTime"`
+	ShardCount        int             `json:"ShardCount" xml:"ShardCount"`
 	InstanceNodeList  []InstanceNodes `json:"InstanceNodeList" xml:"InstanceNodeList"`
 }

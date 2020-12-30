@@ -72,7 +72,11 @@ func (client *Client) DescribeClusterMemberInfoWithCallback(request *DescribeClu
 type DescribeClusterMemberInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	NeedReplica          string           `position:"Query" name:"NeedReplica"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	FilterService        string           `position:"Query" name:"FilterService"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +87,9 @@ type DescribeClusterMemberInfoRequest struct {
 type DescribeClusterMemberInfoResponse struct {
 	*responses.BaseResponse
 	RequestId       string     `json:"RequestId" xml:"RequestId"`
+	PageNumber      int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize        int        `json:"PageSize" xml:"PageSize"`
+	TotalCount      int        `json:"TotalCount" xml:"TotalCount"`
 	ClusterChildren []Children `json:"ClusterChildren" xml:"ClusterChildren"`
 }
 

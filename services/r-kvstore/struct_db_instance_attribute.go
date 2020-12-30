@@ -57,5 +57,8 @@ type DBInstanceAttribute struct {
 	InstanceReleaseProtection bool                            `json:"InstanceReleaseProtection" xml:"InstanceReleaseProtection"`
 	ResourceGroupId           string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ShardCount                int                             `json:"ShardCount" xml:"ShardCount"`
+	Storage                   string                          `json:"Storage" xml:"Storage"`
+	StorageType               string                          `json:"StorageType" xml:"StorageType"`
+	GlobalInstanceId          string                          `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
 	Tags                      TagsInDescribeInstanceAttribute `json:"Tags" xml:"Tags"`
 }

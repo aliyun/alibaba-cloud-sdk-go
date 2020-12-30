@@ -73,6 +73,7 @@ type DescribeHistoryMonitorValuesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	ReplicatorJobId      string           `position:"Query" name:"ReplicatorJobId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	IntervalForHistory   string           `position:"Query" name:"IntervalForHistory"`
 	NodeId               string           `position:"Query" name:"NodeId"`

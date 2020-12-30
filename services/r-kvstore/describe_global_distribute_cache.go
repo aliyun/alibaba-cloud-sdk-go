@@ -78,6 +78,7 @@ type DescribeGlobalDistributeCacheRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SubInstanceId        string           `position:"Query" name:"SubInstanceId"`
 	GlobalInstanceId     string           `position:"Query" name:"GlobalInstanceId"`
 }
 

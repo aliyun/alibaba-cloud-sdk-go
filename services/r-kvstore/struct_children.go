@@ -23,15 +23,12 @@ type Children struct {
 	ReplicaSize         int    `json:"ReplicaSize" xml:"ReplicaSize"`
 	Modifier            int    `json:"Modifier" xml:"Modifier"`
 	ServiceVersion      string `json:"ServiceVersion" xml:"ServiceVersion"`
-	ConnType            string `json:"ConnType" xml:"ConnType"`
 	DiskSizeMB          int    `json:"DiskSizeMB" xml:"DiskSizeMB"`
-	InsType             string `json:"InsType" xml:"InsType"`
 	Nickname            string `json:"Nickname" xml:"Nickname"`
 	PrimaryInsName      string `json:"PrimaryInsName" xml:"PrimaryInsName"`
 	ClassCode           string `json:"ClassCode" xml:"ClassCode"`
 	Creator             int    `json:"Creator" xml:"Creator"`
 	ResourceGroupName   string `json:"ResourceGroupName" xml:"ResourceGroupName"`
-	LockMode            string `json:"LockMode" xml:"LockMode"`
 	Health              string `json:"Health" xml:"Health"`
 	BinlogRetentionDays int    `json:"BinlogRetentionDays" xml:"BinlogRetentionDays"`
 	UserId              string `json:"UserId" xml:"UserId"`
@@ -40,4 +37,5 @@ type Children struct {
 	Capacity            int64  `json:"Capacity" xml:"Capacity"`
 	BandWidth           int64  `json:"BandWidth" xml:"BandWidth"`
 	Connections         int64  `json:"Connections" xml:"Connections"`
+	Items               []Item `json:"Items" xml:"Items"`
 }
