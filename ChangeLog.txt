@@ -1,3 +1,8 @@
+2020-12-30 Version: v1.61.815
+- Generated 2019-09-16 for `alikafka`.
+- Support new interface UpgradeInstanceVersion, UpdateInstanceConfig.
+- StartInstance interface support new params.
+
 2020-12-29 Version: v1.61.814
 - Generated 2014-05-26 for `Ecs`.
 - Supported SystemDiskPerformanceLevel, SystemDiskDeleteWithInstance, DataDiskPerformanceLevel, NetworkInterfaceSecurityGroupIds, SecurityGroupIds, PrivateIpAddress for CreateLaunchTemplate, CreateLaunchTemplateVersion, DescribeLaunchTemplateVersion.

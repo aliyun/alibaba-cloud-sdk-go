@@ -81,7 +81,9 @@ type StartInstanceRequest struct {
 	VpcId                string           `position:"Query" name:"VpcId"`
 	CrossZone            requests.Boolean `position:"Query" name:"CrossZone"`
 	Name                 string           `position:"Query" name:"Name"`
+	ServiceVersion       string           `position:"Query" name:"ServiceVersion"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Config               string           `position:"Query" name:"Config"`
 	Username             string           `position:"Query" name:"Username"`
 }
 
