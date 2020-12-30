@@ -91,7 +91,7 @@ func CreateUpdateEnvironmentRequest() (request *UpdateEnvironmentRequest) {
 	request = &UpdateEnvironmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateEnvironment", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateEnvironment", "", "")
 	request.Method = requests.POST
 	return
 }

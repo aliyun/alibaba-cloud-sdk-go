@@ -90,7 +90,7 @@ func CreateRebuildAppInstanceRequest() (request *RebuildAppInstanceRequest) {
 	request = &RebuildAppInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "RebuildAppInstance", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "RebuildAppInstance", "", "")
 	request.Method = requests.POST
 	return
 }

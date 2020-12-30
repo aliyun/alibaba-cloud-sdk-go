@@ -99,7 +99,7 @@ func CreateModifyServiceRequest() (request *ModifyServiceRequest) {
 	request = &ModifyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ModifyService", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ModifyService", "", "")
 	request.Method = requests.POST
 	return
 }

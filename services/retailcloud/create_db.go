@@ -90,7 +90,7 @@ func CreateCreateDbRequest() (request *CreateDbRequest) {
 	request = &CreateDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDb", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDb", "", "")
 	request.Method = requests.POST
 	return
 }

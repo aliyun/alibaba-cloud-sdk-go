@@ -98,7 +98,7 @@ func CreateListSlbAPsRequest() (request *ListSlbAPsRequest) {
 	request = &ListSlbAPsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListSlbAPs", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListSlbAPs", "", "")
 	request.Method = requests.POST
 	return
 }
