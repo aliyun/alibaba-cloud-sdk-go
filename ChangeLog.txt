@@ -1,3 +1,7 @@
+2020-12-30 Version: v1.61.817
+- Generated 2019-09-16 for `alikafka`.
+- GetInstanceList interface support new result params.
+
 2020-12-30 Version: v1.61.816
 - Generated 2018-03-13 for `retailcloud`.
 - Support directly specify image version deploy.
