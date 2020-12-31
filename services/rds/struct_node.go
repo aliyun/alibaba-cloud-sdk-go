@@ -17,8 +17,8 @@ package rds
 
 // Node is a nested struct in rds response
 type Node struct {
-	Role                 string `json:"Role" xml:"Role"`
-	DedicatedHostId      string `json:"DedicatedHostId" xml:"DedicatedHostId"`
-	ZoneId               string `json:"ZoneId" xml:"ZoneId"`
 	DedicatedHostGroupId string `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
+	DedicatedHostId      string `json:"DedicatedHostId" xml:"DedicatedHostId"`
+	Role                 string `json:"Role" xml:"Role"`
+	ZoneId               string `json:"ZoneId" xml:"ZoneId"`
 }

@@ -72,6 +72,7 @@ func (client *Client) DescribeDBInstancePerformanceWithCallback(request *Describ
 type DescribeDBInstancePerformanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RoleId                  string           `position:"Query" name:"RoleId"`
 	StartTime               string           `position:"Query" name:"StartTime"`
 	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
 	Key                     string           `position:"Query" name:"Key"`

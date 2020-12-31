@@ -17,7 +17,7 @@ package rds
 
 // Connection is a nested struct in rds response
 type Connection struct {
-	NetType          string `json:"NetType" xml:"NetType"`
 	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	NetType          string `json:"NetType" xml:"NetType"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
 }
