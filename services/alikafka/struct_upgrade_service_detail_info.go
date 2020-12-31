@@ -17,5 +17,5 @@ package alikafka
 
 // UpgradeServiceDetailInfo is a nested struct in alikafka response
 type UpgradeServiceDetailInfo struct {
-	UpgradeServiceDetailInfoVO []UpgradeServiceDetailInfoVO `json:"UpgradeServiceDetailInfoVO" xml:"UpgradeServiceDetailInfoVO"`
+	Current2OpenSourceVersion string `json:"Current2OpenSourceVersion" xml:"Current2OpenSourceVersion"`
 }
