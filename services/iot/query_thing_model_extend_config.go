@@ -71,12 +71,15 @@ func (client *Client) QueryThingModelExtendConfigWithCallback(request *QueryThin
 // QueryThingModelExtendConfigRequest is the request struct for api QueryThingModelExtendConfig
 type QueryThingModelExtendConfigRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
-	ProductKey      string `position:"Query" name:"ProductKey"`
-	ApiProduct      string `position:"Body" name:"ApiProduct"`
-	ApiRevision     string `position:"Body" name:"ApiRevision"`
-	ModelVersion    string `position:"Query" name:"ModelVersion"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	ResourceGroupId   string `position:"Query" name:"ResourceGroupId"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
+	ModelVersion      string `position:"Query" name:"ModelVersion"`
+	FunctionBlockId   string `position:"Query" name:"FunctionBlockId"`
 }
 
 // QueryThingModelExtendConfigResponse is the response struct for api QueryThingModelExtendConfig

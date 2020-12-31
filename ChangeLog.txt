@@ -1,3 +1,7 @@
+2020-12-31 Version: v1.61.821
+- Generated 2018-01-20 for `Iot`.
+- Add support for thing model function block features, including thing model APIs like CreateThingModel,UpdateThingModel,SetDeviceProperty,InvokeThingService etc.
+
 2020-12-31 Version: v1.61.820
 - Generated 2014-08-15 for `Rds`.
 - Update Open API.

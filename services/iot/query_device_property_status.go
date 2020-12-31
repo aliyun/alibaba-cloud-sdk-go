@@ -71,12 +71,15 @@ func (client *Client) QueryDevicePropertyStatusWithCallback(request *QueryDevice
 // QueryDevicePropertyStatusRequest is the request struct for api QueryDevicePropertyStatus
 type QueryDevicePropertyStatusRequest struct {
 	*requests.RpcRequest
-	IotId         string `position:"Query" name:"IotId"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
-	DeviceName    string `position:"Query" name:"DeviceName"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotId             string `position:"Query" name:"IotId"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
+	DeviceName        string `position:"Query" name:"DeviceName"`
+	FunctionBlockId   string `position:"Query" name:"FunctionBlockId"`
 }
 
 // QueryDevicePropertyStatusResponse is the response struct for api QueryDevicePropertyStatus

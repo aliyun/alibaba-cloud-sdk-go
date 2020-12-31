@@ -71,7 +71,9 @@ func (client *Client) CopyThingModelWithCallback(request *CopyThingModelRequest,
 // CopyThingModelRequest is the request struct for api CopyThingModel
 type CopyThingModelRequest struct {
 	*requests.RpcRequest
+	RealTenantId       string `position:"Query" name:"RealTenantId"`
 	TargetProductKey   string `position:"Query" name:"TargetProductKey"`
+	RealTripartiteKey  string `position:"Query" name:"RealTripartiteKey"`
 	ResourceGroupId    string `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId      string `position:"Query" name:"IotInstanceId"`
 	SourceModelVersion string `position:"Query" name:"SourceModelVersion"`

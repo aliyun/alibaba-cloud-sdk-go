@@ -72,11 +72,14 @@ func (client *Client) CreateProductWithCallback(request *CreateProductRequest, c
 type CreateProductRequest struct {
 	*requests.RpcRequest
 	NodeType            requests.Integer `position:"Query" name:"NodeType"`
+	RealTenantId        string           `position:"Query" name:"RealTenantId"`
 	Description         string           `position:"Query" name:"Description"`
 	CategoryKey         string           `position:"Query" name:"CategoryKey"`
 	JoinPermissionId    string           `position:"Query" name:"JoinPermissionId"`
 	AuthType            string           `position:"Query" name:"AuthType"`
+	RealTripartiteKey   string           `position:"Query" name:"RealTripartiteKey"`
 	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
+	ValidateType        requests.Integer `position:"Query" name:"ValidateType"`
 	IotInstanceId       string           `position:"Query" name:"IotInstanceId"`
 	ProductName         string           `position:"Query" name:"ProductName"`
 	AliyunCommodityCode string           `position:"Query" name:"AliyunCommodityCode"`

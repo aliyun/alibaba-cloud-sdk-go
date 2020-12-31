@@ -71,13 +71,15 @@ func (client *Client) PublishThingModelWithCallback(request *PublishThingModelRe
 // PublishThingModelRequest is the request struct for api PublishThingModel
 type PublishThingModelRequest struct {
 	*requests.RpcRequest
-	Description     string `position:"Query" name:"Description"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
-	ProductKey      string `position:"Query" name:"ProductKey"`
-	ApiProduct      string `position:"Body" name:"ApiProduct"`
-	ApiRevision     string `position:"Body" name:"ApiRevision"`
-	ModelVersion    string `position:"Query" name:"ModelVersion"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	Description       string `position:"Query" name:"Description"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	ResourceGroupId   string `position:"Query" name:"ResourceGroupId"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
+	ModelVersion      string `position:"Query" name:"ModelVersion"`
 }
 
 // PublishThingModelResponse is the response struct for api PublishThingModel

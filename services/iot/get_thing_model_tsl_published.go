@@ -71,13 +71,16 @@ func (client *Client) GetThingModelTslPublishedWithCallback(request *GetThingMod
 // GetThingModelTslPublishedRequest is the request struct for api GetThingModelTslPublished
 type GetThingModelTslPublishedRequest struct {
 	*requests.RpcRequest
-	Simple          requests.Boolean `position:"Query" name:"Simple"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	IotInstanceId   string           `position:"Query" name:"IotInstanceId"`
-	ProductKey      string           `position:"Query" name:"ProductKey"`
-	ApiProduct      string           `position:"Body" name:"ApiProduct"`
-	ApiRevision     string           `position:"Body" name:"ApiRevision"`
-	ModelVersion    string           `position:"Query" name:"ModelVersion"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	Simple            requests.Boolean `position:"Query" name:"Simple"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	ResourceGroupId   string           `position:"Query" name:"ResourceGroupId"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	ProductKey        string           `position:"Query" name:"ProductKey"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	ModelVersion      string           `position:"Query" name:"ModelVersion"`
+	FunctionBlockId   string           `position:"Query" name:"FunctionBlockId"`
 }
 
 // GetThingModelTslPublishedResponse is the response struct for api GetThingModelTslPublished
