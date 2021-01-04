@@ -74,6 +74,7 @@ type DescribeRecordStatisticsSummaryRequest struct {
 	Threshold    requests.Integer `position:"Query" name:"Threshold"`
 	StartDate    string           `position:"Query" name:"StartDate"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	DomainType   string           `position:"Query" name:"DomainType"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Lang         string           `position:"Query" name:"Lang"`
 	Keyword      string           `position:"Query" name:"Keyword"`

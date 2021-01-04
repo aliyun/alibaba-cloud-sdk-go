@@ -1,3 +1,7 @@
+2021-01-04 Version: v1.61.822
+- Generated 2015-01-09 for `Alidns`.
+- Supported API for GTM.
+
 2020-12-31 Version: v1.61.821
 - Generated 2018-01-20 for `Iot`.
 - Add support for thing model function block features, including thing model APIs like CreateThingModel,UpdateThingModel,SetDeviceProperty,InvokeThingService etc.

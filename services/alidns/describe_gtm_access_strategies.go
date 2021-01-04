@@ -81,12 +81,12 @@ type DescribeGtmAccessStrategiesRequest struct {
 // DescribeGtmAccessStrategiesResponse is the response struct for api DescribeGtmAccessStrategies
 type DescribeGtmAccessStrategiesResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	TotalItems int        `json:"TotalItems" xml:"TotalItems"`
-	TotalPages int        `json:"TotalPages" xml:"TotalPages"`
-	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int        `json:"PageSize" xml:"PageSize"`
-	Strategies Strategies `json:"Strategies" xml:"Strategies"`
+	RequestId  string                                  `json:"RequestId" xml:"RequestId"`
+	TotalItems int                                     `json:"TotalItems" xml:"TotalItems"`
+	TotalPages int                                     `json:"TotalPages" xml:"TotalPages"`
+	PageNumber int                                     `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                                     `json:"PageSize" xml:"PageSize"`
+	Strategies StrategiesInDescribeGtmAccessStrategies `json:"Strategies" xml:"Strategies"`
 }
 
 // CreateDescribeGtmAccessStrategiesRequest creates a request to invoke DescribeGtmAccessStrategies API

@@ -17,13 +17,13 @@ package alidns
 
 // Log is a nested struct in alidns response
 type Log struct {
-	OperTime      string `json:"OperTime" xml:"OperTime"`
-	OperAction    string `json:"OperAction" xml:"OperAction"`
-	EntityType    string `json:"EntityType" xml:"EntityType"`
+	OperTimestamp int64  `json:"OperTimestamp" xml:"OperTimestamp"`
 	EntityId      string `json:"EntityId" xml:"EntityId"`
+	OperTime      string `json:"OperTime" xml:"OperTime"`
+	EntityType    string `json:"EntityType" xml:"EntityType"`
+	Content       string `json:"Content" xml:"Content"`
+	Id            int64  `json:"Id" xml:"Id"`
+	OperAction    string `json:"OperAction" xml:"OperAction"`
 	EntityName    string `json:"EntityName" xml:"EntityName"`
 	OperIp        string `json:"OperIp" xml:"OperIp"`
-	OperTimestamp int64  `json:"OperTimestamp" xml:"OperTimestamp"`
-	Id            int64  `json:"Id" xml:"Id"`
-	Content       string `json:"Content" xml:"Content"`
 }

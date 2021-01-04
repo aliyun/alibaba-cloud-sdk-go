@@ -72,6 +72,7 @@ func (client *Client) DescribeDnsProductInstancesWithCallback(request *DescribeD
 type DescribeDnsProductInstancesRequest struct {
 	*requests.RpcRequest
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	DomainType   string           `position:"Query" name:"DomainType"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Lang         string           `position:"Query" name:"Lang"`
@@ -85,6 +86,7 @@ type DescribeDnsProductInstancesResponse struct {
 	TotalCount  int64       `json:"TotalCount" xml:"TotalCount"`
 	PageNumber  int64       `json:"PageNumber" xml:"PageNumber"`
 	PageSize    int64       `json:"PageSize" xml:"PageSize"`
+	DomainType  string      `json:"DomainType" xml:"DomainType"`
 	DnsProducts DnsProducts `json:"DnsProducts" xml:"DnsProducts"`
 }
 

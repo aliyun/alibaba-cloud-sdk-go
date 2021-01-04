@@ -84,12 +84,12 @@ type DescribeGtmLogsRequest struct {
 // DescribeGtmLogsResponse is the response struct for api DescribeGtmLogs
 type DescribeGtmLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalItems int    `json:"TotalItems" xml:"TotalItems"`
-	TotalPages int    `json:"TotalPages" xml:"TotalPages"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	Logs       Logs   `json:"Logs" xml:"Logs"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	TotalItems int                   `json:"TotalItems" xml:"TotalItems"`
+	TotalPages int                   `json:"TotalPages" xml:"TotalPages"`
+	PageSize   int                   `json:"PageSize" xml:"PageSize"`
+	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
+	Logs       LogsInDescribeGtmLogs `json:"Logs" xml:"Logs"`
 }
 
 // CreateDescribeGtmLogsRequest creates a request to invoke DescribeGtmLogs API

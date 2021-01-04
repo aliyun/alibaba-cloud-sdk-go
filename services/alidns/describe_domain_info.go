@@ -99,6 +99,7 @@ type DescribeDomainInfoResponse struct {
 	InClean            bool                            `json:"InClean" xml:"InClean"`
 	SlaveDns           bool                            `json:"SlaveDns" xml:"SlaveDns"`
 	ResourceGroupId    string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreateTime         string                          `json:"CreateTime" xml:"CreateTime"`
 	DnsServers         DnsServersInDescribeDomainInfo  `json:"DnsServers" xml:"DnsServers"`
 	AvailableTtls      AvailableTtls                   `json:"AvailableTtls" xml:"AvailableTtls"`
 	RecordLines        RecordLinesInDescribeDomainInfo `json:"RecordLines" xml:"RecordLines"`

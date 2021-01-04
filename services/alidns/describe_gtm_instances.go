@@ -83,12 +83,12 @@ type DescribeGtmInstancesRequest struct {
 // DescribeGtmInstancesResponse is the response struct for api DescribeGtmInstances
 type DescribeGtmInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	TotalItems   int          `json:"TotalItems" xml:"TotalItems"`
-	TotalPages   int          `json:"TotalPages" xml:"TotalPages"`
-	GtmInstances GtmInstances `json:"GtmInstances" xml:"GtmInstances"`
+	RequestId    string                             `json:"RequestId" xml:"RequestId"`
+	PageNumber   int                                `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                                `json:"PageSize" xml:"PageSize"`
+	TotalItems   int                                `json:"TotalItems" xml:"TotalItems"`
+	TotalPages   int                                `json:"TotalPages" xml:"TotalPages"`
+	GtmInstances GtmInstancesInDescribeGtmInstances `json:"GtmInstances" xml:"GtmInstances"`
 }
 
 // CreateDescribeGtmInstancesRequest creates a request to invoke DescribeGtmInstances API

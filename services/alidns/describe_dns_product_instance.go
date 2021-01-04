@@ -112,6 +112,7 @@ type DescribeDnsProductInstanceResponse struct {
 	BindDomainUsedCount   int64                                  `json:"BindDomainUsedCount" xml:"BindDomainUsedCount"`
 	DnsSecurity           string                                 `json:"DnsSecurity" xml:"DnsSecurity"`
 	PaymentType           string                                 `json:"PaymentType" xml:"PaymentType"`
+	DomainType            string                                 `json:"DomainType" xml:"DomainType"`
 	DnsServers            DnsServersInDescribeDnsProductInstance `json:"DnsServers" xml:"DnsServers"`
 }
 

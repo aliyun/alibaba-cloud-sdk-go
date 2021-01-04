@@ -74,6 +74,7 @@ type DescribeDomainStatisticsRequest struct {
 	DomainName   string `position:"Query" name:"DomainName"`
 	StartDate    string `position:"Query" name:"StartDate"`
 	EndDate      string `position:"Query" name:"EndDate"`
+	DomainType   string `position:"Query" name:"DomainType"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 }

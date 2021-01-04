@@ -72,6 +72,7 @@ func (client *Client) DescribeDomainNsWithCallback(request *DescribeDomainNsRequ
 type DescribeDomainNsRequest struct {
 	*requests.RpcRequest
 	DomainName   string `position:"Query" name:"DomainName"`
+	DomainType   string `position:"Query" name:"DomainType"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 }
