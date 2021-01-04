@@ -1,3 +1,7 @@
+2021-01-04 Version: v1.61.824
+- Generated 2014-08-28 for `Ess`.
+- DescribeScalingInstances return spot info.
+
 2021-01-04 Version: v1.61.823
 - Generated 2014-05-26 for `Ecs`.
 

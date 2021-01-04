@@ -71,53 +71,56 @@ func (client *Client) ModifyScalingConfigurationWithCallback(request *ModifyScal
 // ModifyScalingConfigurationRequest is the request struct for api ModifyScalingConfiguration
 type ModifyScalingConfigurationRequest struct {
 	*requests.RpcRequest
-	HpcClusterId                    string                                      `position:"Query" name:"HpcClusterId"`
-	KeyPairName                     string                                      `position:"Query" name:"KeyPairName"`
-	SpotPriceLimit                  *[]ModifyScalingConfigurationSpotPriceLimit `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
-	ResourceGroupId                 string                                      `position:"Query" name:"ResourceGroupId"`
-	PrivatePoolOptionsMatchCriteria string                                      `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
-	HostName                        string                                      `position:"Query" name:"HostName"`
-	InstanceDescription             string                                      `position:"Query" name:"InstanceDescription"`
-	SystemDiskAutoSnapshotPolicyId  string                                      `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
-	PrivatePoolOptionsId            string                                      `position:"Query" name:"PrivatePoolOptions.Id"`
-	Ipv6AddressCount                requests.Integer                            `position:"Query" name:"Ipv6AddressCount"`
-	Cpu                             requests.Integer                            `position:"Query" name:"Cpu"`
-	OwnerId                         requests.Integer                            `position:"Query" name:"OwnerId"`
-	ScalingConfigurationName        string                                      `position:"Query" name:"ScalingConfigurationName"`
-	Tags                            string                                      `position:"Query" name:"Tags"`
-	ScalingConfigurationId          string                                      `position:"Query" name:"ScalingConfigurationId"`
-	SpotStrategy                    string                                      `position:"Query" name:"SpotStrategy"`
-	InstanceName                    string                                      `position:"Query" name:"InstanceName"`
-	InternetChargeType              string                                      `position:"Query" name:"InternetChargeType"`
-	ZoneId                          string                                      `position:"Query" name:"ZoneId"`
-	Affinity                        string                                      `position:"Query" name:"Affinity"`
-	ImageId                         string                                      `position:"Query" name:"ImageId"`
-	Memory                          requests.Integer                            `position:"Query" name:"Memory"`
-	IoOptimized                     string                                      `position:"Query" name:"IoOptimized"`
-	InstanceTypes                   *[]string                                   `position:"Query" name:"InstanceTypes"  type:"Repeated"`
-	InternetMaxBandwidthOut         requests.Integer                            `position:"Query" name:"InternetMaxBandwidthOut"`
-	SecurityGroupId                 string                                      `position:"Query" name:"SecurityGroupId"`
-	SystemDiskCategory              string                                      `position:"Query" name:"SystemDisk.Category"`
-	SystemDiskPerformanceLevel      string                                      `position:"Query" name:"SystemDisk.PerformanceLevel"`
-	UserData                        string                                      `position:"Query" name:"UserData"`
-	PasswordInherit                 requests.Boolean                            `position:"Query" name:"PasswordInherit"`
-	ImageName                       string                                      `position:"Query" name:"ImageName"`
-	Override                        requests.Boolean                            `position:"Query" name:"Override"`
-	SchedulerOptions                map[string]interface{}                      `position:"Query" name:"SchedulerOptions"`
-	DeploymentSetId                 string                                      `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerAccount            string                                      `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                    string                                      `position:"Query" name:"OwnerAccount"`
-	Tenancy                         string                                      `position:"Query" name:"Tenancy"`
-	SystemDiskDiskName              string                                      `position:"Query" name:"SystemDisk.DiskName"`
-	RamRoleName                     string                                      `position:"Query" name:"RamRoleName"`
-	DedicatedHostId                 string                                      `position:"Query" name:"DedicatedHostId"`
-	CreditSpecification             string                                      `position:"Query" name:"CreditSpecification"`
-	SecurityGroupIds                *[]string                                   `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
-	DataDisk                        *[]ModifyScalingConfigurationDataDisk       `position:"Query" name:"DataDisk"  type:"Repeated"`
-	LoadBalancerWeight              requests.Integer                            `position:"Query" name:"LoadBalancerWeight"`
-	SystemDiskSize                  requests.Integer                            `position:"Query" name:"SystemDisk.Size"`
-	ImageFamily                     string                                      `position:"Query" name:"ImageFamily"`
-	SystemDiskDescription           string                                      `position:"Query" name:"SystemDisk.Description"`
+	HpcClusterId                    string                                            `position:"Query" name:"HpcClusterId"`
+	KeyPairName                     string                                            `position:"Query" name:"KeyPairName"`
+	SpotPriceLimit                  *[]ModifyScalingConfigurationSpotPriceLimit       `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
+	ResourceGroupId                 string                                            `position:"Query" name:"ResourceGroupId"`
+	PrivatePoolOptionsMatchCriteria string                                            `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
+	HostName                        string                                            `position:"Query" name:"HostName"`
+	InstanceDescription             string                                            `position:"Query" name:"InstanceDescription"`
+	SystemDiskAutoSnapshotPolicyId  string                                            `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
+	PrivatePoolOptionsId            string                                            `position:"Query" name:"PrivatePoolOptions.Id"`
+	Ipv6AddressCount                requests.Integer                                  `position:"Query" name:"Ipv6AddressCount"`
+	Cpu                             requests.Integer                                  `position:"Query" name:"Cpu"`
+	OwnerId                         requests.Integer                                  `position:"Query" name:"OwnerId"`
+	ScalingConfigurationName        string                                            `position:"Query" name:"ScalingConfigurationName"`
+	Tags                            string                                            `position:"Query" name:"Tags"`
+	ScalingConfigurationId          string                                            `position:"Query" name:"ScalingConfigurationId"`
+	SpotStrategy                    string                                            `position:"Query" name:"SpotStrategy"`
+	InstanceName                    string                                            `position:"Query" name:"InstanceName"`
+	InternetChargeType              string                                            `position:"Query" name:"InternetChargeType"`
+	ZoneId                          string                                            `position:"Query" name:"ZoneId"`
+	Affinity                        string                                            `position:"Query" name:"Affinity"`
+	ImageId                         string                                            `position:"Query" name:"ImageId"`
+	Memory                          requests.Integer                                  `position:"Query" name:"Memory"`
+	SpotInterruptionBehavior        string                                            `position:"Query" name:"SpotInterruptionBehavior"`
+	IoOptimized                     string                                            `position:"Query" name:"IoOptimized"`
+	InstanceTypes                   *[]string                                         `position:"Query" name:"InstanceTypes"  type:"Repeated"`
+	InternetMaxBandwidthOut         requests.Integer                                  `position:"Query" name:"InternetMaxBandwidthOut"`
+	SecurityGroupId                 string                                            `position:"Query" name:"SecurityGroupId"`
+	SystemDiskCategory              string                                            `position:"Query" name:"SystemDisk.Category"`
+	SystemDiskPerformanceLevel      string                                            `position:"Query" name:"SystemDisk.PerformanceLevel"`
+	UserData                        string                                            `position:"Query" name:"UserData"`
+	PasswordInherit                 requests.Boolean                                  `position:"Query" name:"PasswordInherit"`
+	ImageName                       string                                            `position:"Query" name:"ImageName"`
+	Override                        requests.Boolean                                  `position:"Query" name:"Override"`
+	SchedulerOptions                map[string]interface{}                            `position:"Query" name:"SchedulerOptions"`
+	DeploymentSetId                 string                                            `position:"Query" name:"DeploymentSetId"`
+	ResourceOwnerAccount            string                                            `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                    string                                            `position:"Query" name:"OwnerAccount"`
+	Tenancy                         string                                            `position:"Query" name:"Tenancy"`
+	SystemDiskDiskName              string                                            `position:"Query" name:"SystemDisk.DiskName"`
+	RamRoleName                     string                                            `position:"Query" name:"RamRoleName"`
+	DedicatedHostId                 string                                            `position:"Query" name:"DedicatedHostId"`
+	CreditSpecification             string                                            `position:"Query" name:"CreditSpecification"`
+	SecurityGroupIds                *[]string                                         `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
+	SpotDuration                    requests.Integer                                  `position:"Query" name:"SpotDuration"`
+	DataDisk                        *[]ModifyScalingConfigurationDataDisk             `position:"Query" name:"DataDisk"  type:"Repeated"`
+	InstanceTypeOverride            *[]ModifyScalingConfigurationInstanceTypeOverride `position:"Query" name:"InstanceTypeOverride"  type:"Repeated"`
+	LoadBalancerWeight              requests.Integer                                  `position:"Query" name:"LoadBalancerWeight"`
+	SystemDiskSize                  requests.Integer                                  `position:"Query" name:"SystemDisk.Size"`
+	ImageFamily                     string                                            `position:"Query" name:"ImageFamily"`
+	SystemDiskDescription           string                                            `position:"Query" name:"SystemDisk.Description"`
 }
 
 // ModifyScalingConfigurationSpotPriceLimit is a repeated param struct in ModifyScalingConfigurationRequest
@@ -139,6 +142,12 @@ type ModifyScalingConfigurationDataDisk struct {
 	KMSKeyId             string `name:"KMSKeyId"`
 	Device               string `name:"Device"`
 	DeleteWithInstance   string `name:"DeleteWithInstance"`
+}
+
+// ModifyScalingConfigurationInstanceTypeOverride is a repeated param struct in ModifyScalingConfigurationRequest
+type ModifyScalingConfigurationInstanceTypeOverride struct {
+	WeightedCapacity string `name:"WeightedCapacity"`
+	InstanceType     string `name:"InstanceType"`
 }
 
 // ModifyScalingConfigurationResponse is the response struct for api ModifyScalingConfiguration

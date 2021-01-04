@@ -71,43 +71,50 @@ func (client *Client) CreateScalingGroupWithCallback(request *CreateScalingGroup
 // CreateScalingGroupRequest is the request struct for api CreateScalingGroup
 type CreateScalingGroupRequest struct {
 	*requests.RpcRequest
-	VSwitchIds                          *[]string                          `position:"Query" name:"VSwitchIds"  type:"Repeated"`
-	SpotInstanceRemedy                  requests.Boolean                   `position:"Query" name:"SpotInstanceRemedy"`
-	ScaleOutAmountCheck                 requests.Boolean                   `position:"Query" name:"ScaleOutAmountCheck"`
-	Tag                                 *[]CreateScalingGroupTag           `position:"Query" name:"Tag"  type:"Repeated"`
-	DefaultCooldown                     requests.Integer                   `position:"Query" name:"DefaultCooldown"`
-	MultiAZPolicy                       string                             `position:"Query" name:"MultiAZPolicy"`
-	DBInstanceIds                       string                             `position:"Query" name:"DBInstanceIds"`
-	LaunchTemplateId                    string                             `position:"Query" name:"LaunchTemplateId"`
-	DesiredCapacity                     requests.Integer                   `position:"Query" name:"DesiredCapacity"`
-	CompensateWithOnDemand              requests.Boolean                   `position:"Query" name:"CompensateWithOnDemand"`
-	MinSize                             requests.Integer                   `position:"Query" name:"MinSize"`
-	OwnerId                             requests.Integer                   `position:"Query" name:"OwnerId"`
-	VSwitchId                           string                             `position:"Query" name:"VSwitchId"`
-	InstanceId                          string                             `position:"Query" name:"InstanceId"`
-	MaxSize                             requests.Integer                   `position:"Query" name:"MaxSize"`
-	LifecycleHook                       *[]CreateScalingGroupLifecycleHook `position:"Query" name:"LifecycleHook"  type:"Repeated"`
-	LoadBalancerIds                     string                             `position:"Query" name:"LoadBalancerIds"`
-	ClientToken                         string                             `position:"Query" name:"ClientToken"`
-	OnDemandBaseCapacity                requests.Integer                   `position:"Query" name:"OnDemandBaseCapacity"`
-	OnDemandPercentageAboveBaseCapacity requests.Integer                   `position:"Query" name:"OnDemandPercentageAboveBaseCapacity"`
-	RemovalPolicy1                      string                             `position:"Query" name:"RemovalPolicy.1"`
-	RemovalPolicy2                      string                             `position:"Query" name:"RemovalPolicy.2"`
-	HealthCheckType                     string                             `position:"Query" name:"HealthCheckType"`
-	ResourceOwnerAccount                string                             `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupName                    string                             `position:"Query" name:"ScalingGroupName"`
-	OwnerAccount                        string                             `position:"Query" name:"OwnerAccount"`
-	SpotInstancePools                   requests.Integer                   `position:"Query" name:"SpotInstancePools"`
-	GroupDeletionProtection             requests.Boolean                   `position:"Query" name:"GroupDeletionProtection"`
-	LaunchTemplateVersion               string                             `position:"Query" name:"LaunchTemplateVersion"`
-	ScalingPolicy                       string                             `position:"Query" name:"ScalingPolicy"`
-	VServerGroup                        *[]CreateScalingGroupVServerGroup  `position:"Query" name:"VServerGroup"  type:"Repeated"`
+	VSwitchIds                          *[]string                                   `position:"Query" name:"VSwitchIds"  type:"Repeated"`
+	SpotInstanceRemedy                  requests.Boolean                            `position:"Query" name:"SpotInstanceRemedy"`
+	ScaleOutAmountCheck                 requests.Boolean                            `position:"Query" name:"ScaleOutAmountCheck"`
+	Tag                                 *[]CreateScalingGroupTag                    `position:"Query" name:"Tag"  type:"Repeated"`
+	DefaultCooldown                     requests.Integer                            `position:"Query" name:"DefaultCooldown"`
+	MultiAZPolicy                       string                                      `position:"Query" name:"MultiAZPolicy"`
+	DBInstanceIds                       string                                      `position:"Query" name:"DBInstanceIds"`
+	LaunchTemplateId                    string                                      `position:"Query" name:"LaunchTemplateId"`
+	DesiredCapacity                     requests.Integer                            `position:"Query" name:"DesiredCapacity"`
+	LaunchTemplateOverride              *[]CreateScalingGroupLaunchTemplateOverride `position:"Query" name:"LaunchTemplateOverride"  type:"Repeated"`
+	CompensateWithOnDemand              requests.Boolean                            `position:"Query" name:"CompensateWithOnDemand"`
+	MinSize                             requests.Integer                            `position:"Query" name:"MinSize"`
+	OwnerId                             requests.Integer                            `position:"Query" name:"OwnerId"`
+	VSwitchId                           string                                      `position:"Query" name:"VSwitchId"`
+	InstanceId                          string                                      `position:"Query" name:"InstanceId"`
+	MaxSize                             requests.Integer                            `position:"Query" name:"MaxSize"`
+	LifecycleHook                       *[]CreateScalingGroupLifecycleHook          `position:"Query" name:"LifecycleHook"  type:"Repeated"`
+	LoadBalancerIds                     string                                      `position:"Query" name:"LoadBalancerIds"`
+	ClientToken                         string                                      `position:"Query" name:"ClientToken"`
+	OnDemandBaseCapacity                requests.Integer                            `position:"Query" name:"OnDemandBaseCapacity"`
+	OnDemandPercentageAboveBaseCapacity requests.Integer                            `position:"Query" name:"OnDemandPercentageAboveBaseCapacity"`
+	RemovalPolicy1                      string                                      `position:"Query" name:"RemovalPolicy.1"`
+	RemovalPolicy2                      string                                      `position:"Query" name:"RemovalPolicy.2"`
+	HealthCheckType                     string                                      `position:"Query" name:"HealthCheckType"`
+	ResourceOwnerAccount                string                                      `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingGroupName                    string                                      `position:"Query" name:"ScalingGroupName"`
+	OwnerAccount                        string                                      `position:"Query" name:"OwnerAccount"`
+	SpotInstancePools                   requests.Integer                            `position:"Query" name:"SpotInstancePools"`
+	GroupDeletionProtection             requests.Boolean                            `position:"Query" name:"GroupDeletionProtection"`
+	LaunchTemplateVersion               string                                      `position:"Query" name:"LaunchTemplateVersion"`
+	ScalingPolicy                       string                                      `position:"Query" name:"ScalingPolicy"`
+	VServerGroup                        *[]CreateScalingGroupVServerGroup           `position:"Query" name:"VServerGroup"  type:"Repeated"`
 }
 
 // CreateScalingGroupTag is a repeated param struct in CreateScalingGroupRequest
 type CreateScalingGroupTag struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
+}
+
+// CreateScalingGroupLaunchTemplateOverride is a repeated param struct in CreateScalingGroupRequest
+type CreateScalingGroupLaunchTemplateOverride struct {
+	WeightedCapacity string `name:"WeightedCapacity"`
+	InstanceType     string `name:"InstanceType"`
 }
 
 // CreateScalingGroupLifecycleHook is a repeated param struct in CreateScalingGroupRequest

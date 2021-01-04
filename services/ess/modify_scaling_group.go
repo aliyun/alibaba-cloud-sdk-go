@@ -71,30 +71,37 @@ func (client *Client) ModifyScalingGroupWithCallback(request *ModifyScalingGroup
 // ModifyScalingGroupRequest is the request struct for api ModifyScalingGroup
 type ModifyScalingGroupRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ScalingGroupId                      string           `position:"Query" name:"ScalingGroupId"`
-	VSwitchIds                          *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
-	ActiveScalingConfigurationId        string           `position:"Query" name:"ActiveScalingConfigurationId"`
-	OnDemandBaseCapacity                requests.Integer `position:"Query" name:"OnDemandBaseCapacity"`
-	OnDemandPercentageAboveBaseCapacity requests.Integer `position:"Query" name:"OnDemandPercentageAboveBaseCapacity"`
-	SpotInstanceRemedy                  requests.Boolean `position:"Query" name:"SpotInstanceRemedy"`
-	ScaleOutAmountCheck                 requests.Boolean `position:"Query" name:"ScaleOutAmountCheck"`
-	DefaultCooldown                     requests.Integer `position:"Query" name:"DefaultCooldown"`
-	RemovalPolicy1                      string           `position:"Query" name:"RemovalPolicy.1"`
-	RemovalPolicy2                      string           `position:"Query" name:"RemovalPolicy.2"`
-	HealthCheckType                     string           `position:"Query" name:"HealthCheckType"`
-	LaunchTemplateId                    string           `position:"Query" name:"LaunchTemplateId"`
-	DesiredCapacity                     requests.Integer `position:"Query" name:"DesiredCapacity"`
-	ResourceOwnerAccount                string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupName                    string           `position:"Query" name:"ScalingGroupName"`
-	OwnerAccount                        string           `position:"Query" name:"OwnerAccount"`
-	CompensateWithOnDemand              requests.Boolean `position:"Query" name:"CompensateWithOnDemand"`
-	SpotInstancePools                   requests.Integer `position:"Query" name:"SpotInstancePools"`
-	MinSize                             requests.Integer `position:"Query" name:"MinSize"`
-	GroupDeletionProtection             requests.Boolean `position:"Query" name:"GroupDeletionProtection"`
-	OwnerId                             requests.Integer `position:"Query" name:"OwnerId"`
-	LaunchTemplateVersion               string           `position:"Query" name:"LaunchTemplateVersion"`
-	MaxSize                             requests.Integer `position:"Query" name:"MaxSize"`
+	ResourceOwnerId                     requests.Integer                            `position:"Query" name:"ResourceOwnerId"`
+	ScalingGroupId                      string                                      `position:"Query" name:"ScalingGroupId"`
+	VSwitchIds                          *[]string                                   `position:"Query" name:"VSwitchIds"  type:"Repeated"`
+	ActiveScalingConfigurationId        string                                      `position:"Query" name:"ActiveScalingConfigurationId"`
+	OnDemandBaseCapacity                requests.Integer                            `position:"Query" name:"OnDemandBaseCapacity"`
+	OnDemandPercentageAboveBaseCapacity requests.Integer                            `position:"Query" name:"OnDemandPercentageAboveBaseCapacity"`
+	SpotInstanceRemedy                  requests.Boolean                            `position:"Query" name:"SpotInstanceRemedy"`
+	ScaleOutAmountCheck                 requests.Boolean                            `position:"Query" name:"ScaleOutAmountCheck"`
+	DefaultCooldown                     requests.Integer                            `position:"Query" name:"DefaultCooldown"`
+	RemovalPolicy1                      string                                      `position:"Query" name:"RemovalPolicy.1"`
+	RemovalPolicy2                      string                                      `position:"Query" name:"RemovalPolicy.2"`
+	HealthCheckType                     string                                      `position:"Query" name:"HealthCheckType"`
+	LaunchTemplateId                    string                                      `position:"Query" name:"LaunchTemplateId"`
+	DesiredCapacity                     requests.Integer                            `position:"Query" name:"DesiredCapacity"`
+	ResourceOwnerAccount                string                                      `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingGroupName                    string                                      `position:"Query" name:"ScalingGroupName"`
+	LaunchTemplateOverride              *[]ModifyScalingGroupLaunchTemplateOverride `position:"Query" name:"LaunchTemplateOverride"  type:"Repeated"`
+	OwnerAccount                        string                                      `position:"Query" name:"OwnerAccount"`
+	CompensateWithOnDemand              requests.Boolean                            `position:"Query" name:"CompensateWithOnDemand"`
+	SpotInstancePools                   requests.Integer                            `position:"Query" name:"SpotInstancePools"`
+	MinSize                             requests.Integer                            `position:"Query" name:"MinSize"`
+	GroupDeletionProtection             requests.Boolean                            `position:"Query" name:"GroupDeletionProtection"`
+	OwnerId                             requests.Integer                            `position:"Query" name:"OwnerId"`
+	LaunchTemplateVersion               string                                      `position:"Query" name:"LaunchTemplateVersion"`
+	MaxSize                             requests.Integer                            `position:"Query" name:"MaxSize"`
+}
+
+// ModifyScalingGroupLaunchTemplateOverride is a repeated param struct in ModifyScalingGroupRequest
+type ModifyScalingGroupLaunchTemplateOverride struct {
+	WeightedCapacity string `name:"WeightedCapacity"`
+	InstanceType     string `name:"InstanceType"`
 }
 
 // ModifyScalingGroupResponse is the response struct for api ModifyScalingGroup

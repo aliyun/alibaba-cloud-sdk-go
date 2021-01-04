@@ -29,5 +29,7 @@ type ScalingInstance struct {
 	LaunchTemplateVersion  string `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
 	WarmupState            string `json:"WarmupState" xml:"WarmupState"`
 	Entrusted              bool   `json:"Entrusted" xml:"Entrusted"`
+	WeightedCapacity       int    `json:"WeightedCapacity" xml:"WeightedCapacity"`
 	CreatedTime            string `json:"CreatedTime" xml:"CreatedTime"`
+	SpotStrategy           string `json:"SpotStrategy" xml:"SpotStrategy"`
 }

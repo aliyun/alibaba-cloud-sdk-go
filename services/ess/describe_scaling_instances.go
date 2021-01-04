@@ -108,6 +108,7 @@ type DescribeScalingInstancesRequest struct {
 type DescribeScalingInstancesResponse struct {
 	*responses.BaseResponse
 	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
+	TotalSpotCount   int              `json:"TotalSpotCount" xml:"TotalSpotCount"`
 	PageNumber       int              `json:"PageNumber" xml:"PageNumber"`
 	PageSize         int              `json:"PageSize" xml:"PageSize"`
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
