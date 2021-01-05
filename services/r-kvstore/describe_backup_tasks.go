@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteDedicatedInstance invokes the r_kvstore.DeleteDedicatedInstance API synchronously
-func (client *Client) DeleteDedicatedInstance(request *DeleteDedicatedInstanceRequest) (response *DeleteDedicatedInstanceResponse, err error) {
-	response = CreateDeleteDedicatedInstanceResponse()
+// DescribeBackupTasks invokes the r_kvstore.DescribeBackupTasks API synchronously
+func (client *Client) DescribeBackupTasks(request *DescribeBackupTasksRequest) (response *DescribeBackupTasksResponse, err error) {
+	response = CreateDescribeBackupTasksResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteDedicatedInstanceWithChan invokes the r_kvstore.DeleteDedicatedInstance API asynchronously
-func (client *Client) DeleteDedicatedInstanceWithChan(request *DeleteDedicatedInstanceRequest) (<-chan *DeleteDedicatedInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteDedicatedInstanceResponse, 1)
+// DescribeBackupTasksWithChan invokes the r_kvstore.DescribeBackupTasks API asynchronously
+func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRequest) (<-chan *DescribeBackupTasksResponse, <-chan error) {
+	responseChan := make(chan *DescribeBackupTasksResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteDedicatedInstance(request)
+		response, err := client.DescribeBackupTasks(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteDedicatedInstanceWithChan(request *DeleteDedicatedIn
 	return responseChan, errChan
 }
 
-// DeleteDedicatedInstanceWithCallback invokes the r_kvstore.DeleteDedicatedInstance API asynchronously
-func (client *Client) DeleteDedicatedInstanceWithCallback(request *DeleteDedicatedInstanceRequest, callback func(response *DeleteDedicatedInstanceResponse, err error)) <-chan int {
+// DescribeBackupTasksWithCallback invokes the r_kvstore.DescribeBackupTasks API asynchronously
+func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTasksRequest, callback func(response *DescribeBackupTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteDedicatedInstanceResponse
+		var response *DescribeBackupTasksResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteDedicatedInstance(request)
+		response, err = client.DescribeBackupTasks(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,40 @@ func (client *Client) DeleteDedicatedInstanceWithCallback(request *DeleteDedicat
 	return result
 }
 
-// DeleteDedicatedInstanceRequest is the request struct for api DeleteDedicatedInstance
-type DeleteDedicatedInstanceRequest struct {
+// DescribeBackupTasksRequest is the request struct for api DescribeBackupTasks
+type DescribeBackupTasksRequest struct {
 	*requests.RpcRequest
+	BackupJobId          string           `position:"Query" name:"BackupJobId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ClusterId            string           `position:"Query" name:"ClusterId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
+	JobMode              string           `position:"Query" name:"JobMode"`
 }
 
-// DeleteDedicatedInstanceResponse is the response struct for api DeleteDedicatedInstance
-type DeleteDedicatedInstanceResponse struct {
+// DescribeBackupTasksResponse is the response struct for api DescribeBackupTasks
+type DescribeBackupTasksResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	InstanceId string      `json:"InstanceId" xml:"InstanceId"`
+	BackupJobs []BackupJob `json:"BackupJobs" xml:"BackupJobs"`
 }
 
-// CreateDeleteDedicatedInstanceRequest creates a request to invoke DeleteDedicatedInstance API
-func CreateDeleteDedicatedInstanceRequest() (request *DeleteDedicatedInstanceRequest) {
-	request = &DeleteDedicatedInstanceRequest{
+// CreateDescribeBackupTasksRequest creates a request to invoke DescribeBackupTasks API
+func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {
+	request = &DescribeBackupTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteDedicatedInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeBackupTasks", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteDedicatedInstanceResponse creates a response to parse from DeleteDedicatedInstance response
-func CreateDeleteDedicatedInstanceResponse() (response *DeleteDedicatedInstanceResponse) {
-	response = &DeleteDedicatedInstanceResponse{
+// CreateDescribeBackupTasksResponse creates a response to parse from DescribeBackupTasks response
+func CreateDescribeBackupTasksResponse() (response *DescribeBackupTasksResponse) {
+	response = &DescribeBackupTasksResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

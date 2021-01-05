@@ -72,6 +72,7 @@ func (client *Client) AddShardingNodeWithCallback(request *AddShardingNodeReques
 type AddShardingNodeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ShardCount           requests.Integer `position:"Query" name:"ShardCount"`

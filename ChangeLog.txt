@@ -1,3 +1,7 @@
+2021-01-05 Version: v1.61.825
+- Generated 2015-01-01 for `R-kvstore`.
+- Add DescribeBackupTasks API.
+
 2021-01-04 Version: v1.61.824
 - Generated 2014-08-28 for `Ess`.
 - DescribeScalingInstances return spot info.

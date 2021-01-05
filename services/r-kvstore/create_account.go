@@ -72,6 +72,7 @@ func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, c
 type CreateAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	AccountType          string           `position:"Query" name:"AccountType"`
 	AccountDescription   string           `position:"Query" name:"AccountDescription"`
 	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
