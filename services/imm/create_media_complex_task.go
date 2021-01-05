@@ -90,7 +90,7 @@ func CreateCreateMediaComplexTaskRequest() (request *CreateMediaComplexTaskReque
 	request = &CreateMediaComplexTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateMediaComplexTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateMediaComplexTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

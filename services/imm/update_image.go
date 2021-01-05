@@ -108,7 +108,7 @@ func CreateUpdateImageRequest() (request *UpdateImageRequest) {
 	request = &UpdateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateImage", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateImage", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

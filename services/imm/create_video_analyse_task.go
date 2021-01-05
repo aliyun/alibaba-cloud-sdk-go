@@ -96,7 +96,7 @@ func CreateCreateVideoAnalyseTaskRequest() (request *CreateVideoAnalyseTaskReque
 	request = &CreateVideoAnalyseTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoAnalyseTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoAnalyseTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

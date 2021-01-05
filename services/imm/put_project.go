@@ -98,7 +98,7 @@ func CreatePutProjectRequest() (request *PutProjectRequest) {
 	request = &PutProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

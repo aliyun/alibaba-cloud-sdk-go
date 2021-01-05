@@ -1,3 +1,7 @@
+2021-01-05 Version: v1.61.826
+- Generated 2017-09-06 for `imm`.
+- Remove legacy APIs.
+
 2021-01-05 Version: v1.61.825
 - Generated 2015-01-01 for `R-kvstore`.
 - Add DescribeBackupTasks API.

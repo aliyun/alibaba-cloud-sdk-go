@@ -89,7 +89,7 @@ func CreateGetImageCroppingSuggestionsRequest() (request *GetImageCroppingSugges
 	request = &GetImageCroppingSuggestionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImageCroppingSuggestions", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImageCroppingSuggestions", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

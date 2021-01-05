@@ -91,7 +91,7 @@ func CreateRefreshWebofficeTokenRequest() (request *RefreshWebofficeTokenRequest
 	request = &RefreshWebofficeTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "RefreshWebofficeToken", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "RefreshWebofficeToken", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

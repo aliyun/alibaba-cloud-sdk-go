@@ -93,7 +93,7 @@ func CreateDecodeBlindWatermarkRequest() (request *DecodeBlindWatermarkRequest) 
 	request = &DecodeBlindWatermarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DecodeBlindWatermark", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DecodeBlindWatermark", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateCreateGrabFrameTaskRequest() (request *CreateGrabFrameTaskRequest) {
 	request = &CreateGrabFrameTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateGrabFrameTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateGrabFrameTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateGetWebofficeURLRequest() (request *GetWebofficeURLRequest) {
 	request = &GetWebofficeURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetWebofficeURL", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetWebofficeURL", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }
