@@ -1,3 +1,7 @@
+2021-01-06 Version: v1.61.827
+- Generated 2020-11-01 for `CDRS`.
+- Add API.
+
 2021-01-05 Version: v1.61.826
 - Generated 2017-09-06 for `imm`.
 - Remove legacy APIs.

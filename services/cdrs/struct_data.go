@@ -17,6 +17,12 @@ package cdrs
 
 // Data is a nested struct in cdrs response
 type Data struct {
+	TotalPage    int                `json:"TotalPage" xml:"TotalPage"`
+	TaskId       string             `json:"TaskId" xml:"TaskId"`
+	PageNo       int                `json:"PageNo" xml:"PageNo"`
+	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
+	PageSize     int                `json:"PageSize" xml:"PageSize"`
+	Records      []Record           `json:"Records" xml:"Records"`
 	BodyList     []BodyListItem     `json:"BodyList" xml:"BodyList"`
 	NonMotorList []NonMotorListItem `json:"NonMotorList" xml:"NonMotorList"`
 	FaceList     []FaceListItem     `json:"FaceList" xml:"FaceList"`
