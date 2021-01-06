@@ -72,6 +72,7 @@ func (client *Client) DetectLungNoduleWithCallback(request *DetectLungNoduleRequ
 type DetectLungNoduleRequest struct {
 	*requests.RpcRequest
 	DataFormat string                     `position:"Body" name:"DataFormat"`
+	Threshold  requests.Float             `position:"Body" name:"Threshold"`
 	URLList    *[]DetectLungNoduleURLList `position:"Body" name:"URLList"  type:"Repeated"`
 	OrgId      string                     `position:"Body" name:"OrgId"`
 	Async      requests.Boolean           `position:"Body" name:"Async"`
