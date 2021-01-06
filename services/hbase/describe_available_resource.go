@@ -71,8 +71,12 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 // DescribeAvailableResourceRequest is the request struct for api DescribeAvailableResource
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
-	ZoneId     string `position:"Query" name:"ZoneId"`
-	ChargeType string `position:"Query" name:"ChargeType"`
+	EngineVersion    string `position:"Query" name:"EngineVersion"`
+	Engine           string `position:"Query" name:"Engine"`
+	DiskType         string `position:"Query" name:"DiskType"`
+	CoreInstanceType string `position:"Query" name:"CoreInstanceType"`
+	ZoneId           string `position:"Query" name:"ZoneId"`
+	ChargeType       string `position:"Query" name:"ChargeType"`
 }
 
 // DescribeAvailableResourceResponse is the response struct for api DescribeAvailableResource

@@ -1,3 +1,7 @@
+2021-01-06 Version: v1.61.830
+- Generated 2019-01-01 for `HBase`.
+- DescribeAvailableResource.
+
 2021-01-06 Version: v1.61.829
 - Generated 2020-07-01 for `CCC`.
 - Initial release.
