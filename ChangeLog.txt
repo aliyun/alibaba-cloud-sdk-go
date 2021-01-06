@@ -1,3 +1,7 @@
+2021-01-06 Version: v1.61.829
+- Generated 2020-07-01 for `CCC`.
+- Initial release.
+
 2021-01-06 Version: v1.61.828
 - Generated 2020-03-20 for `imageprocess`.
 - Update DetectLungNodule.

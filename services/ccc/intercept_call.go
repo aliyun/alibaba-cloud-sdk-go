@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTurnCredentials invokes the ccc.GetTurnCredentials API synchronously
-func (client *Client) GetTurnCredentials(request *GetTurnCredentialsRequest) (response *GetTurnCredentialsResponse, err error) {
-	response = CreateGetTurnCredentialsResponse()
+// InterceptCall invokes the ccc.InterceptCall API synchronously
+func (client *Client) InterceptCall(request *InterceptCallRequest) (response *InterceptCallResponse, err error) {
+	response = CreateInterceptCallResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTurnCredentialsWithChan invokes the ccc.GetTurnCredentials API asynchronously
-func (client *Client) GetTurnCredentialsWithChan(request *GetTurnCredentialsRequest) (<-chan *GetTurnCredentialsResponse, <-chan error) {
-	responseChan := make(chan *GetTurnCredentialsResponse, 1)
+// InterceptCallWithChan invokes the ccc.InterceptCall API asynchronously
+func (client *Client) InterceptCallWithChan(request *InterceptCallRequest) (<-chan *InterceptCallResponse, <-chan error) {
+	responseChan := make(chan *InterceptCallResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTurnCredentials(request)
+		response, err := client.InterceptCall(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTurnCredentialsWithChan(request *GetTurnCredentialsRequ
 	return responseChan, errChan
 }
 
-// GetTurnCredentialsWithCallback invokes the ccc.GetTurnCredentials API asynchronously
-func (client *Client) GetTurnCredentialsWithCallback(request *GetTurnCredentialsRequest, callback func(response *GetTurnCredentialsResponse, err error)) <-chan int {
+// InterceptCallWithCallback invokes the ccc.InterceptCall API asynchronously
+func (client *Client) InterceptCallWithCallback(request *InterceptCallRequest, callback func(response *InterceptCallResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTurnCredentialsResponse
+		var response *InterceptCallResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTurnCredentials(request)
+		response, err = client.InterceptCall(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,15 +68,19 @@ func (client *Client) GetTurnCredentialsWithCallback(request *GetTurnCredentials
 	return result
 }
 
-// GetTurnCredentialsRequest is the request struct for api GetTurnCredentials
-type GetTurnCredentialsRequest struct {
+// InterceptCallRequest is the request struct for api InterceptCall
+type InterceptCallRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	InterceptedUserId string           `position:"Query" name:"InterceptedUserId"`
+	UserId            string           `position:"Query" name:"UserId"`
+	DeviceId          string           `position:"Query" name:"DeviceId"`
+	JobId             string           `position:"Query" name:"JobId"`
+	TimeoutSeconds    requests.Integer `position:"Query" name:"TimeoutSeconds"`
+	InstanceId        string           `position:"Query" name:"InstanceId"`
 }
 
-// GetTurnCredentialsResponse is the response struct for api GetTurnCredentials
-type GetTurnCredentialsResponse struct {
+// InterceptCallResponse is the response struct for api InterceptCall
+type InterceptCallResponse struct {
 	*responses.BaseResponse
 	Code           string   `json:"Code" xml:"Code"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
@@ -86,19 +90,19 @@ type GetTurnCredentialsResponse struct {
 	Data           Data     `json:"Data" xml:"Data"`
 }
 
-// CreateGetTurnCredentialsRequest creates a request to invoke GetTurnCredentials API
-func CreateGetTurnCredentialsRequest() (request *GetTurnCredentialsRequest) {
-	request = &GetTurnCredentialsRequest{
+// CreateInterceptCallRequest creates a request to invoke InterceptCall API
+func CreateInterceptCallRequest() (request *InterceptCallRequest) {
+	request = &InterceptCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnCredentials", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "InterceptCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTurnCredentialsResponse creates a response to parse from GetTurnCredentials response
-func CreateGetTurnCredentialsResponse() (response *GetTurnCredentialsResponse) {
-	response = &GetTurnCredentialsResponse{
+// CreateInterceptCallResponse creates a response to parse from InterceptCall response
+func CreateInterceptCallResponse() (response *InterceptCallResponse) {
+	response = &InterceptCallResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTurnServerList invokes the ccc.GetTurnServerList API synchronously
-func (client *Client) GetTurnServerList(request *GetTurnServerListRequest) (response *GetTurnServerListResponse, err error) {
-	response = CreateGetTurnServerListResponse()
+// MuteCall invokes the ccc.MuteCall API synchronously
+func (client *Client) MuteCall(request *MuteCallRequest) (response *MuteCallResponse, err error) {
+	response = CreateMuteCallResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTurnServerListWithChan invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListRequest) (<-chan *GetTurnServerListResponse, <-chan error) {
-	responseChan := make(chan *GetTurnServerListResponse, 1)
+// MuteCallWithChan invokes the ccc.MuteCall API asynchronously
+func (client *Client) MuteCallWithChan(request *MuteCallRequest) (<-chan *MuteCallResponse, <-chan error) {
+	responseChan := make(chan *MuteCallResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTurnServerList(request)
+		response, err := client.MuteCall(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListReques
 	return responseChan, errChan
 }
 
-// GetTurnServerListWithCallback invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRequest, callback func(response *GetTurnServerListResponse, err error)) <-chan int {
+// MuteCallWithCallback invokes the ccc.MuteCall API asynchronously
+func (client *Client) MuteCallWithCallback(request *MuteCallRequest, callback func(response *MuteCallResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTurnServerListResponse
+		var response *MuteCallResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTurnServerList(request)
+		response, err = client.MuteCall(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,40 @@ func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRe
 	return result
 }
 
-// GetTurnServerListRequest is the request struct for api GetTurnServerList
-type GetTurnServerListRequest struct {
+// MuteCallRequest is the request struct for api MuteCall
+type MuteCallRequest struct {
 	*requests.RpcRequest
+	UserId     string `position:"Query" name:"UserId"`
+	DeviceId   string `position:"Query" name:"DeviceId"`
+	JobId      string `position:"Query" name:"JobId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	ChannelId  string `position:"Query" name:"ChannelId"`
 }
 
-// GetTurnServerListResponse is the response struct for api GetTurnServerList
-type GetTurnServerListResponse struct {
+// MuteCallResponse is the response struct for api MuteCall
+type MuteCallResponse struct {
 	*responses.BaseResponse
 	Code           string   `json:"Code" xml:"Code"`
-	Data           string   `json:"Data" xml:"Data"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Params         []string `json:"Params" xml:"Params"`
+	Data           Data     `json:"Data" xml:"Data"`
 }
 
-// CreateGetTurnServerListRequest creates a request to invoke GetTurnServerList API
-func CreateGetTurnServerListRequest() (request *GetTurnServerListRequest) {
-	request = &GetTurnServerListRequest{
+// CreateMuteCallRequest creates a request to invoke MuteCall API
+func CreateMuteCallRequest() (request *MuteCallRequest) {
+	request = &MuteCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "MuteCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTurnServerListResponse creates a response to parse from GetTurnServerList response
-func CreateGetTurnServerListResponse() (response *GetTurnServerListResponse) {
-	response = &GetTurnServerListResponse{
+// CreateMuteCallResponse creates a response to parse from MuteCall response
+func CreateMuteCallResponse() (response *MuteCallResponse) {
+	response = &MuteCallResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

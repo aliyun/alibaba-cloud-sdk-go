@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTurnServerList invokes the ccc.GetTurnServerList API synchronously
-func (client *Client) GetTurnServerList(request *GetTurnServerListRequest) (response *GetTurnServerListResponse, err error) {
-	response = CreateGetTurnServerListResponse()
+// SignInGroup invokes the ccc.SignInGroup API synchronously
+func (client *Client) SignInGroup(request *SignInGroupRequest) (response *SignInGroupResponse, err error) {
+	response = CreateSignInGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTurnServerListWithChan invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListRequest) (<-chan *GetTurnServerListResponse, <-chan error) {
-	responseChan := make(chan *GetTurnServerListResponse, 1)
+// SignInGroupWithChan invokes the ccc.SignInGroup API asynchronously
+func (client *Client) SignInGroupWithChan(request *SignInGroupRequest) (<-chan *SignInGroupResponse, <-chan error) {
+	responseChan := make(chan *SignInGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTurnServerList(request)
+		response, err := client.SignInGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListReques
 	return responseChan, errChan
 }
 
-// GetTurnServerListWithCallback invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRequest, callback func(response *GetTurnServerListResponse, err error)) <-chan int {
+// SignInGroupWithCallback invokes the ccc.SignInGroup API asynchronously
+func (client *Client) SignInGroupWithCallback(request *SignInGroupRequest, callback func(response *SignInGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTurnServerListResponse
+		var response *SignInGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTurnServerList(request)
+		response, err = client.SignInGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,39 @@ func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRe
 	return result
 }
 
-// GetTurnServerListRequest is the request struct for api GetTurnServerList
-type GetTurnServerListRequest struct {
+// SignInGroupRequest is the request struct for api SignInGroup
+type SignInGroupRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
+	SignedSkillGroupIdList string `position:"Query" name:"SignedSkillGroupIdList"`
+	UserId                 string `position:"Query" name:"UserId"`
+	DeviceId               string `position:"Query" name:"DeviceId"`
+	InstanceId             string `position:"Query" name:"InstanceId"`
 }
 
-// GetTurnServerListResponse is the response struct for api GetTurnServerList
-type GetTurnServerListResponse struct {
+// SignInGroupResponse is the response struct for api SignInGroup
+type SignInGroupResponse struct {
 	*responses.BaseResponse
 	Code           string   `json:"Code" xml:"Code"`
-	Data           string   `json:"Data" xml:"Data"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Params         []string `json:"Params" xml:"Params"`
+	Data           Data     `json:"Data" xml:"Data"`
 }
 
-// CreateGetTurnServerListRequest creates a request to invoke GetTurnServerList API
-func CreateGetTurnServerListRequest() (request *GetTurnServerListRequest) {
-	request = &GetTurnServerListRequest{
+// CreateSignInGroupRequest creates a request to invoke SignInGroup API
+func CreateSignInGroupRequest() (request *SignInGroupRequest) {
+	request = &SignInGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "SignInGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTurnServerListResponse creates a response to parse from GetTurnServerList response
-func CreateGetTurnServerListResponse() (response *GetTurnServerListResponse) {
-	response = &GetTurnServerListResponse{
+// CreateSignInGroupResponse creates a response to parse from SignInGroup response
+func CreateSignInGroupResponse() (response *SignInGroupResponse) {
+	response = &SignInGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

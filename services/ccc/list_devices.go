@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTurnServerList invokes the ccc.GetTurnServerList API synchronously
-func (client *Client) GetTurnServerList(request *GetTurnServerListRequest) (response *GetTurnServerListResponse, err error) {
-	response = CreateGetTurnServerListResponse()
+// ListDevices invokes the ccc.ListDevices API synchronously
+func (client *Client) ListDevices(request *ListDevicesRequest) (response *ListDevicesResponse, err error) {
+	response = CreateListDevicesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTurnServerListWithChan invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListRequest) (<-chan *GetTurnServerListResponse, <-chan error) {
-	responseChan := make(chan *GetTurnServerListResponse, 1)
+// ListDevicesWithChan invokes the ccc.ListDevices API asynchronously
+func (client *Client) ListDevicesWithChan(request *ListDevicesRequest) (<-chan *ListDevicesResponse, <-chan error) {
+	responseChan := make(chan *ListDevicesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTurnServerList(request)
+		response, err := client.ListDevices(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListReques
 	return responseChan, errChan
 }
 
-// GetTurnServerListWithCallback invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRequest, callback func(response *GetTurnServerListResponse, err error)) <-chan int {
+// ListDevicesWithCallback invokes the ccc.ListDevices API asynchronously
+func (client *Client) ListDevicesWithCallback(request *ListDevicesRequest, callback func(response *ListDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTurnServerListResponse
+		var response *ListDevicesResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTurnServerList(request)
+		response, err = client.ListDevices(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,37 @@ func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRe
 	return result
 }
 
-// GetTurnServerListRequest is the request struct for api GetTurnServerList
-type GetTurnServerListRequest struct {
+// ListDevicesRequest is the request struct for api ListDevices
+type ListDevicesRequest struct {
 	*requests.RpcRequest
+	UserId     string `position:"Query" name:"UserId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// GetTurnServerListResponse is the response struct for api GetTurnServerList
-type GetTurnServerListResponse struct {
+// ListDevicesResponse is the response struct for api ListDevices
+type ListDevicesResponse struct {
 	*responses.BaseResponse
 	Code           string   `json:"Code" xml:"Code"`
-	Data           string   `json:"Data" xml:"Data"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Params         []string `json:"Params" xml:"Params"`
+	Data           []Device `json:"Data" xml:"Data"`
 }
 
-// CreateGetTurnServerListRequest creates a request to invoke GetTurnServerList API
-func CreateGetTurnServerListRequest() (request *GetTurnServerListRequest) {
-	request = &GetTurnServerListRequest{
+// CreateListDevicesRequest creates a request to invoke ListDevices API
+func CreateListDevicesRequest() (request *ListDevicesRequest) {
+	request = &ListDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListDevices", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTurnServerListResponse creates a response to parse from GetTurnServerList response
-func CreateGetTurnServerListResponse() (response *GetTurnServerListResponse) {
-	response = &GetTurnServerListResponse{
+// CreateListDevicesResponse creates a response to parse from ListDevices response
+func CreateListDevicesResponse() (response *ListDevicesResponse) {
+	response = &ListDevicesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

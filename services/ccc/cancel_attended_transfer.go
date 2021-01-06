@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTurnCredentials invokes the ccc.GetTurnCredentials API synchronously
-func (client *Client) GetTurnCredentials(request *GetTurnCredentialsRequest) (response *GetTurnCredentialsResponse, err error) {
-	response = CreateGetTurnCredentialsResponse()
+// CancelAttendedTransfer invokes the ccc.CancelAttendedTransfer API synchronously
+func (client *Client) CancelAttendedTransfer(request *CancelAttendedTransferRequest) (response *CancelAttendedTransferResponse, err error) {
+	response = CreateCancelAttendedTransferResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTurnCredentialsWithChan invokes the ccc.GetTurnCredentials API asynchronously
-func (client *Client) GetTurnCredentialsWithChan(request *GetTurnCredentialsRequest) (<-chan *GetTurnCredentialsResponse, <-chan error) {
-	responseChan := make(chan *GetTurnCredentialsResponse, 1)
+// CancelAttendedTransferWithChan invokes the ccc.CancelAttendedTransfer API asynchronously
+func (client *Client) CancelAttendedTransferWithChan(request *CancelAttendedTransferRequest) (<-chan *CancelAttendedTransferResponse, <-chan error) {
+	responseChan := make(chan *CancelAttendedTransferResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTurnCredentials(request)
+		response, err := client.CancelAttendedTransfer(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTurnCredentialsWithChan(request *GetTurnCredentialsRequ
 	return responseChan, errChan
 }
 
-// GetTurnCredentialsWithCallback invokes the ccc.GetTurnCredentials API asynchronously
-func (client *Client) GetTurnCredentialsWithCallback(request *GetTurnCredentialsRequest, callback func(response *GetTurnCredentialsResponse, err error)) <-chan int {
+// CancelAttendedTransferWithCallback invokes the ccc.CancelAttendedTransfer API asynchronously
+func (client *Client) CancelAttendedTransferWithCallback(request *CancelAttendedTransferRequest, callback func(response *CancelAttendedTransferResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTurnCredentialsResponse
+		var response *CancelAttendedTransferResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTurnCredentials(request)
+		response, err = client.CancelAttendedTransfer(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,15 +68,17 @@ func (client *Client) GetTurnCredentialsWithCallback(request *GetTurnCredentials
 	return result
 }
 
-// GetTurnCredentialsRequest is the request struct for api GetTurnCredentials
-type GetTurnCredentialsRequest struct {
+// CancelAttendedTransferRequest is the request struct for api CancelAttendedTransfer
+type CancelAttendedTransferRequest struct {
 	*requests.RpcRequest
 	UserId     string `position:"Query" name:"UserId"`
+	DeviceId   string `position:"Query" name:"DeviceId"`
+	JobId      string `position:"Query" name:"JobId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// GetTurnCredentialsResponse is the response struct for api GetTurnCredentials
-type GetTurnCredentialsResponse struct {
+// CancelAttendedTransferResponse is the response struct for api CancelAttendedTransfer
+type CancelAttendedTransferResponse struct {
 	*responses.BaseResponse
 	Code           string   `json:"Code" xml:"Code"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
@@ -86,19 +88,19 @@ type GetTurnCredentialsResponse struct {
 	Data           Data     `json:"Data" xml:"Data"`
 }
 
-// CreateGetTurnCredentialsRequest creates a request to invoke GetTurnCredentials API
-func CreateGetTurnCredentialsRequest() (request *GetTurnCredentialsRequest) {
-	request = &GetTurnCredentialsRequest{
+// CreateCancelAttendedTransferRequest creates a request to invoke CancelAttendedTransfer API
+func CreateCancelAttendedTransferRequest() (request *CancelAttendedTransferRequest) {
+	request = &CancelAttendedTransferRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnCredentials", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CancelAttendedTransfer", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTurnCredentialsResponse creates a response to parse from GetTurnCredentials response
-func CreateGetTurnCredentialsResponse() (response *GetTurnCredentialsResponse) {
-	response = &GetTurnCredentialsResponse{
+// CreateCancelAttendedTransferResponse creates a response to parse from CancelAttendedTransfer response
+func CreateCancelAttendedTransferResponse() (response *CancelAttendedTransferResponse) {
+	response = &CancelAttendedTransferResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

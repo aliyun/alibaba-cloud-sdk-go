@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTurnServerList invokes the ccc.GetTurnServerList API synchronously
-func (client *Client) GetTurnServerList(request *GetTurnServerListRequest) (response *GetTurnServerListResponse, err error) {
-	response = CreateGetTurnServerListResponse()
+// MonitorCall invokes the ccc.MonitorCall API synchronously
+func (client *Client) MonitorCall(request *MonitorCallRequest) (response *MonitorCallResponse, err error) {
+	response = CreateMonitorCallResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTurnServerListWithChan invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListRequest) (<-chan *GetTurnServerListResponse, <-chan error) {
-	responseChan := make(chan *GetTurnServerListResponse, 1)
+// MonitorCallWithChan invokes the ccc.MonitorCall API asynchronously
+func (client *Client) MonitorCallWithChan(request *MonitorCallRequest) (<-chan *MonitorCallResponse, <-chan error) {
+	responseChan := make(chan *MonitorCallResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTurnServerList(request)
+		response, err := client.MonitorCall(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListReques
 	return responseChan, errChan
 }
 
-// GetTurnServerListWithCallback invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRequest, callback func(response *GetTurnServerListResponse, err error)) <-chan int {
+// MonitorCallWithCallback invokes the ccc.MonitorCall API asynchronously
+func (client *Client) MonitorCallWithCallback(request *MonitorCallRequest, callback func(response *MonitorCallResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTurnServerListResponse
+		var response *MonitorCallResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTurnServerList(request)
+		response, err = client.MonitorCall(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,40 @@ func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRe
 	return result
 }
 
-// GetTurnServerListRequest is the request struct for api GetTurnServerList
-type GetTurnServerListRequest struct {
+// MonitorCallRequest is the request struct for api MonitorCall
+type MonitorCallRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
+	UserId          string           `position:"Query" name:"UserId"`
+	DeviceId        string           `position:"Query" name:"DeviceId"`
+	TimeoutSeconds  requests.Integer `position:"Query" name:"TimeoutSeconds"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	MonitoredUserId string           `position:"Query" name:"MonitoredUserId"`
 }
 
-// GetTurnServerListResponse is the response struct for api GetTurnServerList
-type GetTurnServerListResponse struct {
+// MonitorCallResponse is the response struct for api MonitorCall
+type MonitorCallResponse struct {
 	*responses.BaseResponse
 	Code           string   `json:"Code" xml:"Code"`
-	Data           string   `json:"Data" xml:"Data"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Params         []string `json:"Params" xml:"Params"`
+	Data           Data     `json:"Data" xml:"Data"`
 }
 
-// CreateGetTurnServerListRequest creates a request to invoke GetTurnServerList API
-func CreateGetTurnServerListRequest() (request *GetTurnServerListRequest) {
-	request = &GetTurnServerListRequest{
+// CreateMonitorCallRequest creates a request to invoke MonitorCall API
+func CreateMonitorCallRequest() (request *MonitorCallRequest) {
+	request = &MonitorCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "MonitorCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTurnServerListResponse creates a response to parse from GetTurnServerList response
-func CreateGetTurnServerListResponse() (response *GetTurnServerListResponse) {
-	response = &GetTurnServerListResponse{
+// CreateMonitorCallResponse creates a response to parse from MonitorCall response
+func CreateMonitorCallResponse() (response *MonitorCallResponse) {
+	response = &MonitorCallResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
