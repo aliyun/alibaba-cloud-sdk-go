@@ -75,7 +75,6 @@ type DescribeWafSourceIpSegmentRequest struct {
 	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	Lang            string `position:"Query" name:"Lang"`
-	Region          string `position:"Query" name:"Region"`
 }
 
 // DescribeWafSourceIpSegmentResponse is the response struct for api DescribeWafSourceIpSegment
