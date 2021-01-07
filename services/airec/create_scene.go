@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScene invokes the airec.CreateScene API synchronously
-// api document: https://help.aliyun.com/api/airec/createscene.html
 func (client *Client) CreateScene(request *CreateSceneRequest) (response *CreateSceneResponse, err error) {
 	response = CreateCreateSceneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScene(request *CreateSceneRequest) (response *Create
 }
 
 // CreateSceneWithChan invokes the airec.CreateScene API asynchronously
-// api document: https://help.aliyun.com/api/airec/createscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSceneWithChan(request *CreateSceneRequest) (<-chan *CreateSceneResponse, <-chan error) {
 	responseChan := make(chan *CreateSceneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSceneWithChan(request *CreateSceneRequest) (<-chan *
 }
 
 // CreateSceneWithCallback invokes the airec.CreateScene API asynchronously
-// api document: https://help.aliyun.com/api/airec/createscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSceneWithCallback(request *CreateSceneRequest, callback func(response *CreateSceneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,17 @@ func (client *Client) CreateSceneWithCallback(request *CreateSceneRequest, callb
 // CreateSceneRequest is the request struct for api CreateScene
 type CreateSceneRequest struct {
 	*requests.RoaRequest
-	InstanceId string           `position:"Path" name:"InstanceId"`
-	DryRun     requests.Boolean `position:"Query" name:"DryRun"`
+	InstanceId string           `position:"Path" name:"instanceId"`
+	DryRun     requests.Boolean `position:"Query" name:"dryRun"`
 }
 
 // CreateSceneResponse is the response struct for api CreateScene
 type CreateSceneResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
-	Result    ResultInCreateScene `json:"Result" xml:"Result"`
+	RequestId string              `json:"requestId" xml:"requestId"`
+	Code      string              `json:"code" xml:"code"`
+	Message   string              `json:"message" xml:"message"`
+	Result    ResultInCreateScene `json:"result" xml:"result"`
 }
 
 // CreateCreateSceneRequest creates a request to invoke CreateScene API
@@ -92,7 +89,7 @@ func CreateCreateSceneRequest() (request *CreateSceneRequest) {
 	request = &CreateSceneRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "CreateScene", "/openapi/instances/[InstanceId]/scenes", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "CreateScene", "/v2/openapi/instances/[instanceId]/scenes", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

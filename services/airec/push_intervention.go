@@ -21,7 +21,6 @@ import (
 )
 
 // PushIntervention invokes the airec.PushIntervention API synchronously
-// api document: https://help.aliyun.com/api/airec/pushintervention.html
 func (client *Client) PushIntervention(request *PushInterventionRequest) (response *PushInterventionResponse, err error) {
 	response = CreatePushInterventionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushIntervention(request *PushInterventionRequest) (respon
 }
 
 // PushInterventionWithChan invokes the airec.PushIntervention API asynchronously
-// api document: https://help.aliyun.com/api/airec/pushintervention.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushInterventionWithChan(request *PushInterventionRequest) (<-chan *PushInterventionResponse, <-chan error) {
 	responseChan := make(chan *PushInterventionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushInterventionWithChan(request *PushInterventionRequest)
 }
 
 // PushInterventionWithCallback invokes the airec.PushIntervention API asynchronously
-// api document: https://help.aliyun.com/api/airec/pushintervention.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushInterventionWithCallback(request *PushInterventionRequest, callback func(response *PushInterventionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) PushInterventionWithCallback(request *PushInterventionRequ
 // PushInterventionRequest is the request struct for api PushIntervention
 type PushInterventionRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // PushInterventionResponse is the response struct for api PushIntervention
 type PushInterventionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    bool   `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    bool   `json:"result" xml:"result"`
 }
 
 // CreatePushInterventionRequest creates a request to invoke PushIntervention API
@@ -93,7 +88,7 @@ func CreatePushInterventionRequest() (request *PushInterventionRequest) {
 	request = &PushInterventionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "PushIntervention", "/openapi/instances/[InstanceId]/actions/intervene", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "PushIntervention", "/v2/openapi/instances/[instanceId]/actions/intervene", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

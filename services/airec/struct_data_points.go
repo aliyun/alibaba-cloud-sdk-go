@@ -17,5 +17,7 @@ package airec
 
 // DataPoints is a nested struct in airec response
 type DataPoints struct {
-	DataPointsItem []DataPointsItem `json:"DataPoints" xml:"DataPoints"`
+	StartTime int64   `json:"startTime" xml:"startTime"`
+	Val       float64 `json:"val" xml:"val"`
+	EndTime   int64   `json:"endTime" xml:"endTime"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // Recommend invokes the airec.Recommend API synchronously
-// api document: https://help.aliyun.com/api/airec/recommend.html
 func (client *Client) Recommend(request *RecommendRequest) (response *RecommendResponse, err error) {
 	response = CreateRecommendResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) Recommend(request *RecommendRequest) (response *RecommendR
 }
 
 // RecommendWithChan invokes the airec.Recommend API asynchronously
-// api document: https://help.aliyun.com/api/airec/recommend.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecommendWithChan(request *RecommendRequest) (<-chan *RecommendResponse, <-chan error) {
 	responseChan := make(chan *RecommendResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecommendWithChan(request *RecommendRequest) (<-chan *Reco
 }
 
 // RecommendWithCallback invokes the airec.Recommend API asynchronously
-// api document: https://help.aliyun.com/api/airec/recommend.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecommendWithCallback(request *RecommendRequest, callback func(response *RecommendResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,22 +71,27 @@ func (client *Client) RecommendWithCallback(request *RecommendRequest, callback 
 // RecommendRequest is the request struct for api Recommend
 type RecommendRequest struct {
 	*requests.RoaRequest
-	ReturnCount requests.Integer `position:"Query" name:"ReturnCount"`
-	InstanceId  string           `position:"Path" name:"InstanceId"`
-	Ip          string           `position:"Query" name:"Ip"`
-	SceneId     string           `position:"Query" name:"SceneId"`
-	Imei        string           `position:"Query" name:"Imei"`
-	UserId      string           `position:"Query" name:"UserId"`
-	Items       string           `position:"Query" name:"Items"`
+	ReturnCount  requests.Integer `position:"Query" name:"returnCount"`
+	ServiceType  string           `position:"Query" name:"serviceType"`
+	InstanceId   string           `position:"Path" name:"instanceId"`
+	Debug        string           `position:"Query" name:"debug"`
+	Ip           string           `position:"Query" name:"ip"`
+	LogLevel     string           `position:"Query" name:"logLevel"`
+	SceneId      string           `position:"Query" name:"sceneId"`
+	Imei         string           `position:"Query" name:"imei"`
+	ExperimentId string           `position:"Query" name:"experimentId"`
+	UserId       string           `position:"Query" name:"userId"`
+	Items        string           `position:"Query" name:"items"`
+	UserInfo     string           `position:"Query" name:"userInfo"`
 }
 
 // RecommendResponse is the response struct for api Recommend
 type RecommendResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      string       `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	Code      string       `json:"code" xml:"code"`
+	Message   string       `json:"message" xml:"message"`
+	RequestId string       `json:"requestId" xml:"requestId"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateRecommendRequest creates a request to invoke Recommend API
@@ -99,7 +99,7 @@ func CreateRecommendRequest() (request *RecommendRequest) {
 	request = &RecommendRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "Recommend", "/openapi/instances/[InstanceId]/actions/recommend", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "Recommend", "/v2/openapi/instances/[instanceId]/actions/recommend", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // PushDocument invokes the airec.PushDocument API synchronously
-// api document: https://help.aliyun.com/api/airec/pushdocument.html
 func (client *Client) PushDocument(request *PushDocumentRequest) (response *PushDocumentResponse, err error) {
 	response = CreatePushDocumentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushDocument(request *PushDocumentRequest) (response *Push
 }
 
 // PushDocumentWithChan invokes the airec.PushDocument API asynchronously
-// api document: https://help.aliyun.com/api/airec/pushdocument.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushDocumentWithChan(request *PushDocumentRequest) (<-chan *PushDocumentResponse, <-chan error) {
 	responseChan := make(chan *PushDocumentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushDocumentWithChan(request *PushDocumentRequest) (<-chan
 }
 
 // PushDocumentWithCallback invokes the airec.PushDocument API asynchronously
-// api document: https://help.aliyun.com/api/airec/pushdocument.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushDocumentWithCallback(request *PushDocumentRequest, callback func(response *PushDocumentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) PushDocumentWithCallback(request *PushDocumentRequest, cal
 // PushDocumentRequest is the request struct for api PushDocument
 type PushDocumentRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	TableName  string `position:"Path" name:"TableName"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	TableName  string `position:"Path" name:"tableName"`
 }
 
 // PushDocumentResponse is the response struct for api PushDocument
 type PushDocumentResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    bool   `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    bool   `json:"result" xml:"result"`
 }
 
 // CreatePushDocumentRequest creates a request to invoke PushDocument API
@@ -94,7 +89,7 @@ func CreatePushDocumentRequest() (request *PushDocumentRequest) {
 	request = &PushDocumentRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "PushDocument", "/openapi/instances/[InstanceId]/tables/[TableName]/actions/bulk", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "PushDocument", "/v2/openapi/instances/[instanceId]/tables/[tableName]/actions/bulk", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

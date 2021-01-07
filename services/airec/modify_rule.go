@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRule invokes the airec.ModifyRule API synchronously
-// api document: https://help.aliyun.com/api/airec/modifyrule.html
 func (client *Client) ModifyRule(request *ModifyRuleRequest) (response *ModifyRuleResponse, err error) {
 	response = CreateModifyRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRule(request *ModifyRuleRequest) (response *ModifyRu
 }
 
 // ModifyRuleWithChan invokes the airec.ModifyRule API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifyrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRuleWithChan(request *ModifyRuleRequest) (<-chan *ModifyRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRuleWithChan(request *ModifyRuleRequest) (<-chan *Mo
 }
 
 // ModifyRuleWithCallback invokes the airec.ModifyRule API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifyrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRuleWithCallback(request *ModifyRuleRequest, callback func(response *ModifyRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,17 @@ func (client *Client) ModifyRuleWithCallback(request *ModifyRuleRequest, callbac
 // ModifyRuleRequest is the request struct for api ModifyRule
 type ModifyRuleRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	RuleId     string `position:"Path" name:"RuleId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	RuleId     string `position:"Path" name:"ruleId"`
 }
 
 // ModifyRuleResponse is the response struct for api ModifyRule
 type ModifyRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string             `json:"RequestId" xml:"RequestId"`
-	Result    ResultInModifyRule `json:"Result" xml:"Result"`
+	RequestId string             `json:"requestId" xml:"requestId"`
+	Code      string             `json:"code" xml:"code"`
+	Message   string             `json:"message" xml:"message"`
+	Result    ResultInModifyRule `json:"result" xml:"result"`
 }
 
 // CreateModifyRuleRequest creates a request to invoke ModifyRule API
@@ -92,7 +89,7 @@ func CreateModifyRuleRequest() (request *ModifyRuleRequest) {
 	request = &ModifyRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ModifyRule", "/openapi/instances/[InstanceId]/rules/[RuleId]", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ModifyRule", "/v2/openapi/instances/[instanceId]/rules/[ruleId]", "airec", "openAPI")
 	request.Method = requests.PUT
 	return
 }

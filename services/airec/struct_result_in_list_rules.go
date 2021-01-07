@@ -17,5 +17,8 @@ package airec
 
 // ResultInListRules is a nested struct in airec response
 type ResultInListRules struct {
-	ResultItem []ResultItemInListRules `json:"Result" xml:"Result"`
+	GmtCreate   string `json:"gmtCreate" xml:"gmtCreate"`
+	GmtModified string `json:"gmtModified" xml:"gmtModified"`
+	RuleId      string `json:"ruleId" xml:"ruleId"`
+	Status      string `json:"status" xml:"status"`
 }

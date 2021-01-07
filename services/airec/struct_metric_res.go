@@ -17,6 +17,6 @@ package airec
 
 // MetricRes is a nested struct in airec response
 type MetricRes struct {
-	Total  map[string]interface{} `json:"Total" xml:"Total"`
-	Detail map[string]interface{} `json:"Detail" xml:"Detail"`
+	Detail map[string]interface{} `json:"detail" xml:"detail"`
+	Total  map[string]interface{} `json:"total" xml:"total"`
 }

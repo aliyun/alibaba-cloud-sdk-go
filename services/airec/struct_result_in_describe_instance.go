@@ -17,18 +17,18 @@ package airec
 
 // ResultInDescribeInstance is a nested struct in airec response
 type ResultInDescribeInstance struct {
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	Name           string `json:"Name" xml:"Name"`
-	Type           string `json:"Type" xml:"Type"`
-	ExpiredTime    string `json:"ExpiredTime" xml:"ExpiredTime"`
-	GmtCreate      string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified    string `json:"GmtModified" xml:"GmtModified"`
-	Status         string `json:"Status" xml:"Status"`
-	Industry       string `json:"Industry" xml:"Industry"`
-	Scene          string `json:"Scene" xml:"Scene"`
-	DataSetVersion string `json:"DataSetVersion" xml:"DataSetVersion"`
-	CommodityCode  string `json:"CommodityCode" xml:"CommodityCode"`
-	LockMode       string `json:"LockMode" xml:"LockMode"`
+	ChargeType     string `json:"chargeType" xml:"chargeType"`
+	CommodityCode  string `json:"commodityCode" xml:"commodityCode"`
+	DataSetVersion string `json:"dataSetVersion" xml:"dataSetVersion"`
+	ExpiredTime    string `json:"expiredTime" xml:"expiredTime"`
+	GmtCreate      string `json:"gmtCreate" xml:"gmtCreate"`
+	GmtModified    string `json:"gmtModified" xml:"gmtModified"`
+	Industry       string `json:"industry" xml:"industry"`
+	InstanceId     string `json:"instanceId" xml:"instanceId"`
+	LockMode       string `json:"lockMode" xml:"lockMode"`
+	Name           string `json:"name" xml:"name"`
+	RegionId       string `json:"regionId" xml:"regionId"`
+	Scene          string `json:"scene" xml:"scene"`
+	Status         string `json:"status" xml:"status"`
+	Type           string `json:"type" xml:"type"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRule invokes the airec.DescribeRule API synchronously
-// api document: https://help.aliyun.com/api/airec/describerule.html
 func (client *Client) DescribeRule(request *DescribeRuleRequest) (response *DescribeRuleResponse, err error) {
 	response = CreateDescribeRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRule(request *DescribeRuleRequest) (response *Desc
 }
 
 // DescribeRuleWithChan invokes the airec.DescribeRule API asynchronously
-// api document: https://help.aliyun.com/api/airec/describerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRuleWithChan(request *DescribeRuleRequest) (<-chan *DescribeRuleResponse, <-chan error) {
 	responseChan := make(chan *DescribeRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRuleWithChan(request *DescribeRuleRequest) (<-chan
 }
 
 // DescribeRuleWithCallback invokes the airec.DescribeRule API asynchronously
-// api document: https://help.aliyun.com/api/airec/describerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRuleWithCallback(request *DescribeRuleRequest, callback func(response *DescribeRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,19 @@ func (client *Client) DescribeRuleWithCallback(request *DescribeRuleRequest, cal
 // DescribeRuleRequest is the request struct for api DescribeRule
 type DescribeRuleRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	RuleType   string `position:"Query" name:"RuleType"`
-	SceneId    string `position:"Query" name:"SceneId"`
-	RuleId     string `position:"Path" name:"RuleId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	RuleType   string `position:"Query" name:"ruleType"`
+	SceneId    string `position:"Query" name:"sceneId"`
+	RuleId     string `position:"Path" name:"ruleId"`
 }
 
 // DescribeRuleResponse is the response struct for api DescribeRule
 type DescribeRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string               `json:"RequestId" xml:"RequestId"`
-	Result    ResultInDescribeRule `json:"Result" xml:"Result"`
+	RequestId string               `json:"requestId" xml:"requestId"`
+	Code      string               `json:"code" xml:"code"`
+	Message   string               `json:"message" xml:"message"`
+	Result    ResultInDescribeRule `json:"result" xml:"result"`
 }
 
 // CreateDescribeRuleRequest creates a request to invoke DescribeRule API
@@ -94,7 +91,7 @@ func CreateDescribeRuleRequest() (request *DescribeRuleRequest) {
 	request = &DescribeRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DescribeRule", "/openapi/instances/[InstanceId]/rules/[RuleId]", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DescribeRule", "/v2/openapi/instances/[instanceId]/rules/[ruleId]", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

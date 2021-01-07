@@ -17,5 +17,5 @@ package airec
 
 // DetailInListDashboardMetrics is a nested struct in airec response
 type DetailInListDashboardMetrics struct {
-	DetailItem []DetailItem `json:"Detail" xml:"Detail"`
+	DetailItem []DetailItem `json:"detail" xml:"detail"`
 }

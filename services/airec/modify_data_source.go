@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDataSource invokes the airec.ModifyDataSource API synchronously
-// api document: https://help.aliyun.com/api/airec/modifydatasource.html
 func (client *Client) ModifyDataSource(request *ModifyDataSourceRequest) (response *ModifyDataSourceResponse, err error) {
 	response = CreateModifyDataSourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDataSource(request *ModifyDataSourceRequest) (respon
 }
 
 // ModifyDataSourceWithChan invokes the airec.ModifyDataSource API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifydatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDataSourceWithChan(request *ModifyDataSourceRequest) (<-chan *ModifyDataSourceResponse, <-chan error) {
 	responseChan := make(chan *ModifyDataSourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDataSourceWithChan(request *ModifyDataSourceRequest)
 }
 
 // ModifyDataSourceWithCallback invokes the airec.ModifyDataSource API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifydatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDataSourceWithCallback(request *ModifyDataSourceRequest, callback func(response *ModifyDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) ModifyDataSourceWithCallback(request *ModifyDataSourceRequ
 // ModifyDataSourceRequest is the request struct for api ModifyDataSource
 type ModifyDataSourceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	TableName  string `position:"Path" name:"TableName"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	TableName  string `position:"Path" name:"tableName"`
 }
 
 // ModifyDataSourceResponse is the response struct for api ModifyDataSource
 type ModifyDataSourceResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Code      string                   `json:"Code" xml:"Code"`
-	Message   string                   `json:"Message" xml:"Message"`
-	Result    ResultInModifyDataSource `json:"Result" xml:"Result"`
+	Code      string                   `json:"code" xml:"code"`
+	Message   string                   `json:"message" xml:"message"`
+	RequestId string                   `json:"requestId" xml:"requestId"`
+	Result    ResultInModifyDataSource `json:"result" xml:"result"`
 }
 
 // CreateModifyDataSourceRequest creates a request to invoke ModifyDataSource API
@@ -94,7 +89,7 @@ func CreateModifyDataSourceRequest() (request *ModifyDataSourceRequest) {
 	request = &ModifyDataSourceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ModifyDataSource", "/openapi/instances/[InstanceId]/dataSources/[TableName]", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ModifyDataSource", "/v2/openapi/instances/[instanceId]/dataSources/[tableName]", "airec", "openAPI")
 	request.Method = requests.PUT
 	return
 }

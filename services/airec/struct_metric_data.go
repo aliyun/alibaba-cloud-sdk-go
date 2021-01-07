@@ -17,5 +17,7 @@ package airec
 
 // MetricData is a nested struct in airec response
 type MetricData struct {
-	MetricDataItem []MetricDataItem `json:"MetricData" xml:"MetricData"`
+	SceneId   string                 `json:"sceneId" xml:"sceneId"`
+	MetricRes map[string]interface{} `json:"metricRes" xml:"metricRes"`
+	TraceId   string                 `json:"traceId" xml:"traceId"`
 }

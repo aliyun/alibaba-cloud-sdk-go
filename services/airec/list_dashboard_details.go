@@ -21,7 +21,6 @@ import (
 )
 
 // ListDashboardDetails invokes the airec.ListDashboardDetails API synchronously
-// api document: https://help.aliyun.com/api/airec/listdashboarddetails.html
 func (client *Client) ListDashboardDetails(request *ListDashboardDetailsRequest) (response *ListDashboardDetailsResponse, err error) {
 	response = CreateListDashboardDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDashboardDetails(request *ListDashboardDetailsRequest)
 }
 
 // ListDashboardDetailsWithChan invokes the airec.ListDashboardDetails API asynchronously
-// api document: https://help.aliyun.com/api/airec/listdashboarddetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDashboardDetailsWithChan(request *ListDashboardDetailsRequest) (<-chan *ListDashboardDetailsResponse, <-chan error) {
 	responseChan := make(chan *ListDashboardDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDashboardDetailsWithChan(request *ListDashboardDetails
 }
 
 // ListDashboardDetailsWithCallback invokes the airec.ListDashboardDetails API asynchronously
-// api document: https://help.aliyun.com/api/airec/listdashboarddetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDashboardDetailsWithCallback(request *ListDashboardDetailsRequest, callback func(response *ListDashboardDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,19 +71,22 @@ func (client *Client) ListDashboardDetailsWithCallback(request *ListDashboardDet
 // ListDashboardDetailsRequest is the request struct for api ListDashboardDetails
 type ListDashboardDetailsRequest struct {
 	*requests.RoaRequest
-	MetricType string           `position:"Query" name:"MetricType"`
-	InstanceId string           `position:"Path" name:"InstanceId"`
-	TraceIds   string           `position:"Query" name:"TraceIds"`
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
-	SceneIds   string           `position:"Query" name:"SceneIds"`
+	MetricType    string           `position:"Query" name:"metricType"`
+	InstanceId    string           `position:"Path" name:"instanceId"`
+	ExperimentIds string           `position:"Query" name:"experimentIds"`
+	TraceIds      string           `position:"Query" name:"traceIds"`
+	EndTime       requests.Integer `position:"Query" name:"endTime"`
+	StartTime     requests.Integer `position:"Query" name:"startTime"`
+	SceneIds      string           `position:"Query" name:"sceneIds"`
 }
 
 // ListDashboardDetailsResponse is the response struct for api ListDashboardDetails
 type ListDashboardDetailsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string       `json:"requestId" xml:"requestId"`
+	Code      string       `json:"code" xml:"code"`
+	Message   string       `json:"message" xml:"message"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateListDashboardDetailsRequest creates a request to invoke ListDashboardDetails API
@@ -96,7 +94,7 @@ func CreateListDashboardDetailsRequest() (request *ListDashboardDetailsRequest) 
 	request = &ListDashboardDetailsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListDashboardDetails", "/openapi/instances/[InstanceId]/dashboard/details", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListDashboardDetails", "/v2/openapi/instances/[instanceId]/dashboard/details", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

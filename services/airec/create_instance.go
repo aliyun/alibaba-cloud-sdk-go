@@ -21,7 +21,6 @@ import (
 )
 
 // CreateInstance invokes the airec.CreateInstance API synchronously
-// api document: https://help.aliyun.com/api/airec/createinstance.html
 func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *CreateInstanceResponse, err error) {
 	response = CreateCreateInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *
 }
 
 // CreateInstanceWithChan invokes the airec.CreateInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/createinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-chan *CreateInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-
 }
 
 // CreateInstanceWithCallback invokes the airec.CreateInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/createinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,10 +76,10 @@ type CreateInstanceRequest struct {
 // CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API
@@ -92,7 +87,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "CreateInstance", "/openapi/instances", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "CreateInstance", "/v2/openapi/instances", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

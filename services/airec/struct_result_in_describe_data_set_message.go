@@ -17,5 +17,5 @@ package airec
 
 // ResultInDescribeDataSetMessage is a nested struct in airec response
 type ResultInDescribeDataSetMessage struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }

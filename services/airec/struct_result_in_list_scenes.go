@@ -17,5 +17,8 @@ package airec
 
 // ResultInListScenes is a nested struct in airec response
 type ResultInListScenes struct {
-	ResultItem []ResultItemInListScenes `json:"Result" xml:"Result"`
+	GmtCreate   string `json:"gmtCreate" xml:"gmtCreate"`
+	GmtModified string `json:"gmtModified" xml:"gmtModified"`
+	SceneId     string `json:"sceneId" xml:"sceneId"`
+	Status      string `json:"status" xml:"status"`
 }

@@ -17,5 +17,5 @@ package airec
 
 // ResultInListDashboardMetricsFlows is a nested struct in airec response
 type ResultInListDashboardMetricsFlows struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }

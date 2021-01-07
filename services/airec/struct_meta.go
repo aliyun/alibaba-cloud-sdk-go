@@ -17,12 +17,23 @@ package airec
 
 // Meta is a nested struct in airec response
 type Meta struct {
-	Path        string `json:"Path" xml:"Path"`
-	Partition   string `json:"Partition" xml:"Partition"`
-	Timestamp   int64  `json:"Timestamp" xml:"Timestamp"`
-	ProjectName string `json:"ProjectName" xml:"ProjectName"`
-	BucketName  string `json:"BucketName" xml:"BucketName"`
-	TableName   string `json:"TableName" xml:"TableName"`
-	AccessKeyId string `json:"AccessKeyId" xml:"AccessKeyId"`
-	Type        string `json:"Type" xml:"Type"`
+	ExtInfo       map[string]interface{} `json:"extInfo" xml:"extInfo"`
+	Type          string                 `json:"type" xml:"type"`
+	Timestamp     int64                  `json:"timestamp" xml:"timestamp"`
+	BucketName    string                 `json:"bucketName" xml:"bucketName"`
+	AccessKeyId   string                 `json:"accessKeyId" xml:"accessKeyId"`
+	TableName     string                 `json:"tableName" xml:"tableName"`
+	CronEnabled   bool                   `json:"cronEnabled" xml:"cronEnabled"`
+	GmtModified   string                 `json:"gmtModified" xml:"gmtModified"`
+	Status        string                 `json:"status" xml:"status"`
+	Category      string                 `json:"category" xml:"category"`
+	AlgorithmName string                 `json:"algorithmName" xml:"algorithmName"`
+	Description   string                 `json:"description" xml:"description"`
+	GmtCreate     string                 `json:"gmtCreate" xml:"gmtCreate"`
+	Partition     string                 `json:"partition" xml:"partition"`
+	MetaType      string                 `json:"metaType" xml:"metaType"`
+	Cron          string                 `json:"cron" xml:"cron"`
+	ProjectName   string                 `json:"projectName" xml:"projectName"`
+	Path          string                 `json:"path" xml:"path"`
+	Threshold     Threshold              `json:"threshold" xml:"threshold"`
 }

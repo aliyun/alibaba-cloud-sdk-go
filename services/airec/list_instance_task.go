@@ -21,7 +21,6 @@ import (
 )
 
 // ListInstanceTask invokes the airec.ListInstanceTask API synchronously
-// api document: https://help.aliyun.com/api/airec/listinstancetask.html
 func (client *Client) ListInstanceTask(request *ListInstanceTaskRequest) (response *ListInstanceTaskResponse, err error) {
 	response = CreateListInstanceTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListInstanceTask(request *ListInstanceTaskRequest) (respon
 }
 
 // ListInstanceTaskWithChan invokes the airec.ListInstanceTask API asynchronously
-// api document: https://help.aliyun.com/api/airec/listinstancetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInstanceTaskWithChan(request *ListInstanceTaskRequest) (<-chan *ListInstanceTaskResponse, <-chan error) {
 	responseChan := make(chan *ListInstanceTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListInstanceTaskWithChan(request *ListInstanceTaskRequest)
 }
 
 // ListInstanceTaskWithCallback invokes the airec.ListInstanceTask API asynchronously
-// api document: https://help.aliyun.com/api/airec/listinstancetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInstanceTaskWithCallback(request *ListInstanceTaskRequest, callback func(response *ListInstanceTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) ListInstanceTaskWithCallback(request *ListInstanceTaskRequ
 // ListInstanceTaskRequest is the request struct for api ListInstanceTask
 type ListInstanceTaskRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // ListInstanceTaskResponse is the response struct for api ListInstanceTask
 type ListInstanceTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      string       `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	Code      string       `json:"code" xml:"code"`
+	Message   string       `json:"message" xml:"message"`
+	RequestId string       `json:"requestId" xml:"requestId"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateListInstanceTaskRequest creates a request to invoke ListInstanceTask API
@@ -93,7 +88,7 @@ func CreateListInstanceTaskRequest() (request *ListInstanceTaskRequest) {
 	request = &ListInstanceTaskRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListInstanceTask", "/openapi/instances/[InstanceId]/tasks", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListInstanceTask", "/v2/openapi/instances/[instanceId]/tasks", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

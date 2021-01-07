@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRegions invokes the airec.DescribeRegions API synchronously
-// api document: https://help.aliyun.com/api/airec/describeregions.html
 func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
 	response = CreateDescribeRegionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response
 }
 
 // DescribeRegionsWithChan invokes the airec.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/airec/describeregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 }
 
 // DescribeRegionsWithCallback invokes the airec.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/airec/describeregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 // DescribeRegionsRequest is the request struct for api DescribeRegions
 type DescribeRegionsRequest struct {
 	*requests.RoaRequest
-	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	AcceptLanguage string `position:"Query" name:"acceptLanguage"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    []Item `json:"Result" xml:"Result"`
+	Code      string       `json:"code" xml:"code"`
+	Message   string       `json:"message" xml:"message"`
+	RequestId string       `json:"requestId" xml:"requestId"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
@@ -93,7 +88,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DescribeRegions", "/openapi/configurations/regions", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DescribeRegions", "/v2/openapi/configurations/regions", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

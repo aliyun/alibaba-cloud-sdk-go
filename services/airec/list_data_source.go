@@ -21,7 +21,6 @@ import (
 )
 
 // ListDataSource invokes the airec.ListDataSource API synchronously
-// api document: https://help.aliyun.com/api/airec/listdatasource.html
 func (client *Client) ListDataSource(request *ListDataSourceRequest) (response *ListDataSourceResponse, err error) {
 	response = CreateListDataSourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDataSource(request *ListDataSourceRequest) (response *
 }
 
 // ListDataSourceWithChan invokes the airec.ListDataSource API asynchronously
-// api document: https://help.aliyun.com/api/airec/listdatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDataSourceWithChan(request *ListDataSourceRequest) (<-chan *ListDataSourceResponse, <-chan error) {
 	responseChan := make(chan *ListDataSourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDataSourceWithChan(request *ListDataSourceRequest) (<-
 }
 
 // ListDataSourceWithCallback invokes the airec.ListDataSource API asynchronously
-// api document: https://help.aliyun.com/api/airec/listdatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDataSourceWithCallback(request *ListDataSourceRequest, callback func(response *ListDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) ListDataSourceWithCallback(request *ListDataSourceRequest,
 // ListDataSourceRequest is the request struct for api ListDataSource
 type ListDataSourceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // ListDataSourceResponse is the response struct for api ListDataSource
 type ListDataSourceResponse struct {
 	*responses.BaseResponse
-	RequestId string                       `json:"RequestId" xml:"RequestId"`
-	Code      string                       `json:"Code" xml:"Code"`
-	Message   string                       `json:"Message" xml:"Message"`
-	Result    []ResultItemInListDataSource `json:"Result" xml:"Result"`
+	Code      string                   `json:"code" xml:"code"`
+	Message   string                   `json:"message" xml:"message"`
+	RequestId string                   `json:"requestId" xml:"requestId"`
+	Result    []ResultInListDataSource `json:"result" xml:"result"`
 }
 
 // CreateListDataSourceRequest creates a request to invoke ListDataSource API
@@ -93,7 +88,7 @@ func CreateListDataSourceRequest() (request *ListDataSourceRequest) {
 	request = &ListDataSourceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListDataSource", "/openapi/instances/[InstanceId]/dataSources", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListDataSource", "/v2/openapi/instances/[instanceId]/dataSources", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

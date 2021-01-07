@@ -21,7 +21,6 @@ import (
 )
 
 // RunInstance invokes the airec.RunInstance API synchronously
-// api document: https://help.aliyun.com/api/airec/runinstance.html
 func (client *Client) RunInstance(request *RunInstanceRequest) (response *RunInstanceResponse, err error) {
 	response = CreateRunInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RunInstance(request *RunInstanceRequest) (response *RunIns
 }
 
 // RunInstanceWithChan invokes the airec.RunInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/runinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunInstanceWithChan(request *RunInstanceRequest) (<-chan *RunInstanceResponse, <-chan error) {
 	responseChan := make(chan *RunInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RunInstanceWithChan(request *RunInstanceRequest) (<-chan *
 }
 
 // RunInstanceWithCallback invokes the airec.RunInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/runinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunInstanceWithCallback(request *RunInstanceRequest, callback func(response *RunInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) RunInstanceWithCallback(request *RunInstanceRequest, callb
 // RunInstanceRequest is the request struct for api RunInstance
 type RunInstanceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // RunInstanceResponse is the response struct for api RunInstance
 type RunInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    bool   `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    bool   `json:"result" xml:"result"`
 }
 
 // CreateRunInstanceRequest creates a request to invoke RunInstance API
@@ -93,7 +88,7 @@ func CreateRunInstanceRequest() (request *RunInstanceRequest) {
 	request = &RunInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "RunInstance", "/openapi/instances/[InstanceId]/actions/import", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "RunInstance", "/v2/openapi/instances/[instanceId]/actions/import", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

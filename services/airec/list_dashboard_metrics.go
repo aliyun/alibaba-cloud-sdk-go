@@ -21,7 +21,6 @@ import (
 )
 
 // ListDashboardMetrics invokes the airec.ListDashboardMetrics API synchronously
-// api document: https://help.aliyun.com/api/airec/listdashboardmetrics.html
 func (client *Client) ListDashboardMetrics(request *ListDashboardMetricsRequest) (response *ListDashboardMetricsResponse, err error) {
 	response = CreateListDashboardMetricsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDashboardMetrics(request *ListDashboardMetricsRequest)
 }
 
 // ListDashboardMetricsWithChan invokes the airec.ListDashboardMetrics API asynchronously
-// api document: https://help.aliyun.com/api/airec/listdashboardmetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDashboardMetricsWithChan(request *ListDashboardMetricsRequest) (<-chan *ListDashboardMetricsResponse, <-chan error) {
 	responseChan := make(chan *ListDashboardMetricsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDashboardMetricsWithChan(request *ListDashboardMetrics
 }
 
 // ListDashboardMetricsWithCallback invokes the airec.ListDashboardMetrics API asynchronously
-// api document: https://help.aliyun.com/api/airec/listdashboardmetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDashboardMetricsWithCallback(request *ListDashboardMetricsRequest, callback func(response *ListDashboardMetricsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,19 @@ func (client *Client) ListDashboardMetricsWithCallback(request *ListDashboardMet
 // ListDashboardMetricsRequest is the request struct for api ListDashboardMetrics
 type ListDashboardMetricsRequest struct {
 	*requests.RoaRequest
-	MetricType string           `position:"Query" name:"MetricType"`
-	InstanceId string           `position:"Path" name:"InstanceId"`
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
+	MetricType string           `position:"Query" name:"metricType"`
+	InstanceId string           `position:"Path" name:"instanceId"`
+	EndTime    requests.Integer `position:"Query" name:"endTime"`
+	StartTime  requests.Integer `position:"Query" name:"startTime"`
 }
 
 // ListDashboardMetricsResponse is the response struct for api ListDashboardMetrics
 type ListDashboardMetricsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string       `json:"requestId" xml:"requestId"`
+	Code      string       `json:"code" xml:"code"`
+	Message   string       `json:"message" xml:"message"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateListDashboardMetricsRequest creates a request to invoke ListDashboardMetrics API
@@ -94,7 +91,7 @@ func CreateListDashboardMetricsRequest() (request *ListDashboardMetricsRequest) 
 	request = &ListDashboardMetricsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListDashboardMetrics", "/openapi/instances/[InstanceId]/dashboard/metrics", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListDashboardMetrics", "/v2/openapi/instances/[instanceId]/dashboard/metrics", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

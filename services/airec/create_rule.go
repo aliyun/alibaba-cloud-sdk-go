@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRule invokes the airec.CreateRule API synchronously
-// api document: https://help.aliyun.com/api/airec/createrule.html
 func (client *Client) CreateRule(request *CreateRuleRequest) (response *CreateRuleResponse, err error) {
 	response = CreateCreateRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRule(request *CreateRuleRequest) (response *CreateRu
 }
 
 // CreateRuleWithChan invokes the airec.CreateRule API asynchronously
-// api document: https://help.aliyun.com/api/airec/createrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRuleWithChan(request *CreateRuleRequest) (<-chan *CreateRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRuleWithChan(request *CreateRuleRequest) (<-chan *Cr
 }
 
 // CreateRuleWithCallback invokes the airec.CreateRule API asynchronously
-// api document: https://help.aliyun.com/api/airec/createrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRuleWithCallback(request *CreateRuleRequest, callback func(response *CreateRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,16 @@ func (client *Client) CreateRuleWithCallback(request *CreateRuleRequest, callbac
 // CreateRuleRequest is the request struct for api CreateRule
 type CreateRuleRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // CreateRuleResponse is the response struct for api CreateRule
 type CreateRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string             `json:"RequestId" xml:"RequestId"`
-	Result    ResultInCreateRule `json:"Result" xml:"Result"`
+	RequestId string             `json:"requestId" xml:"requestId"`
+	Code      string             `json:"code" xml:"code"`
+	Message   string             `json:"message" xml:"message"`
+	Result    ResultInCreateRule `json:"result" xml:"result"`
 }
 
 // CreateCreateRuleRequest creates a request to invoke CreateRule API
@@ -91,7 +88,7 @@ func CreateCreateRuleRequest() (request *CreateRuleRequest) {
 	request = &CreateRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "CreateRule", "/openapi/instances/[InstanceId]/rules", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "CreateRule", "/v2/openapi/instances/[instanceId]/rules", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

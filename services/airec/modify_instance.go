@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstance invokes the airec.ModifyInstance API synchronously
-// api document: https://help.aliyun.com/api/airec/modifyinstance.html
 func (client *Client) ModifyInstance(request *ModifyInstanceRequest) (response *ModifyInstanceResponse, err error) {
 	response = CreateModifyInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstance(request *ModifyInstanceRequest) (response *
 }
 
 // ModifyInstanceWithChan invokes the airec.ModifyInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifyinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceWithChan(request *ModifyInstanceRequest) (<-chan *ModifyInstanceResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceWithChan(request *ModifyInstanceRequest) (<-
 }
 
 // ModifyInstanceWithCallback invokes the airec.ModifyInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifyinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceWithCallback(request *ModifyInstanceRequest, callback func(response *ModifyInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) ModifyInstanceWithCallback(request *ModifyInstanceRequest,
 // ModifyInstanceRequest is the request struct for api ModifyInstance
 type ModifyInstanceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // ModifyInstanceResponse is the response struct for api ModifyInstance
 type ModifyInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
-	Code      string                 `json:"Code" xml:"Code"`
-	Message   string                 `json:"Message" xml:"Message"`
-	Result    ResultInModifyInstance `json:"Result" xml:"Result"`
+	Code      string                 `json:"code" xml:"code"`
+	Message   string                 `json:"message" xml:"message"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
+	Result    ResultInModifyInstance `json:"result" xml:"result"`
 }
 
 // CreateModifyInstanceRequest creates a request to invoke ModifyInstance API
@@ -93,7 +88,7 @@ func CreateModifyInstanceRequest() (request *ModifyInstanceRequest) {
 	request = &ModifyInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ModifyInstance", "/openapi/instances/[InstanceId]", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ModifyInstance", "/v2/openapi/instances/[instanceId]", "airec", "openAPI")
 	request.Method = requests.PUT
 	return
 }

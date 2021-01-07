@@ -17,8 +17,8 @@ package airec
 
 // ResultInModifyDataSource is a nested struct in airec response
 type ResultInModifyDataSource struct {
-	TableName   string `json:"TableName" xml:"TableName"`
-	GmtCreate   string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified string `json:"GmtModified" xml:"GmtModified"`
-	Meta        Meta   `json:"Meta" xml:"Meta"`
+	GmtCreate   string `json:"gmtCreate" xml:"gmtCreate"`
+	GmtModified string `json:"gmtModified" xml:"gmtModified"`
+	TableName   string `json:"tableName" xml:"tableName"`
+	Meta        Meta   `json:"meta" xml:"meta"`
 }

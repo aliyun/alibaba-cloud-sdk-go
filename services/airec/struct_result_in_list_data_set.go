@@ -17,5 +17,5 @@ package airec
 
 // ResultInListDataSet is a nested struct in airec response
 type ResultInListDataSet struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	Result []Result `json:"Result" xml:"Result"`
 }

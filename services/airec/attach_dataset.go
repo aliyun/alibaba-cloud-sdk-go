@@ -21,7 +21,6 @@ import (
 )
 
 // AttachDataset invokes the airec.AttachDataset API synchronously
-// api document: https://help.aliyun.com/api/airec/attachdataset.html
 func (client *Client) AttachDataset(request *AttachDatasetRequest) (response *AttachDatasetResponse, err error) {
 	response = CreateAttachDatasetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachDataset(request *AttachDatasetRequest) (response *At
 }
 
 // AttachDatasetWithChan invokes the airec.AttachDataset API asynchronously
-// api document: https://help.aliyun.com/api/airec/attachdataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDatasetWithChan(request *AttachDatasetRequest) (<-chan *AttachDatasetResponse, <-chan error) {
 	responseChan := make(chan *AttachDatasetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachDatasetWithChan(request *AttachDatasetRequest) (<-ch
 }
 
 // AttachDatasetWithCallback invokes the airec.AttachDataset API asynchronously
-// api document: https://help.aliyun.com/api/airec/attachdataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDatasetWithCallback(request *AttachDatasetRequest, callback func(response *AttachDatasetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) AttachDatasetWithCallback(request *AttachDatasetRequest, c
 // AttachDatasetRequest is the request struct for api AttachDataset
 type AttachDatasetRequest struct {
 	*requests.RoaRequest
-	VersionId  string `position:"Path" name:"VersionId"`
-	InstanceId string `position:"Path" name:"InstanceId"`
+	VersionId  string `position:"Path" name:"versionId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // AttachDatasetResponse is the response struct for api AttachDataset
 type AttachDatasetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateAttachDatasetRequest creates a request to invoke AttachDataset API
@@ -94,7 +89,7 @@ func CreateAttachDatasetRequest() (request *AttachDatasetRequest) {
 	request = &AttachDatasetRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "AttachDataset", "/openapi/instances/[InstanceId]/dataSets/[VersionId]/actions/current", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "AttachDataset", "/v2/openapi/instances/[instanceId]/dataSets/[versionId]/actions/current", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

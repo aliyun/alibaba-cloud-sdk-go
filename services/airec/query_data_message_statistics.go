@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDataMessageStatistics invokes the airec.QueryDataMessageStatistics API synchronously
-// api document: https://help.aliyun.com/api/airec/querydatamessagestatistics.html
 func (client *Client) QueryDataMessageStatistics(request *QueryDataMessageStatisticsRequest) (response *QueryDataMessageStatisticsResponse, err error) {
 	response = CreateQueryDataMessageStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDataMessageStatistics(request *QueryDataMessageStatis
 }
 
 // QueryDataMessageStatisticsWithChan invokes the airec.QueryDataMessageStatistics API asynchronously
-// api document: https://help.aliyun.com/api/airec/querydatamessagestatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDataMessageStatisticsWithChan(request *QueryDataMessageStatisticsRequest) (<-chan *QueryDataMessageStatisticsResponse, <-chan error) {
 	responseChan := make(chan *QueryDataMessageStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDataMessageStatisticsWithChan(request *QueryDataMessa
 }
 
 // QueryDataMessageStatisticsWithCallback invokes the airec.QueryDataMessageStatistics API asynchronously
-// api document: https://help.aliyun.com/api/airec/querydatamessagestatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDataMessageStatisticsWithCallback(request *QueryDataMessageStatisticsRequest, callback func(response *QueryDataMessageStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,27 +71,28 @@ func (client *Client) QueryDataMessageStatisticsWithCallback(request *QueryDataM
 // QueryDataMessageStatisticsRequest is the request struct for api QueryDataMessageStatistics
 type QueryDataMessageStatisticsRequest struct {
 	*requests.RoaRequest
-	TraceId    string           `position:"Query" name:"TraceId"`
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
-	UserType   string           `position:"Query" name:"UserType"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
-	UserId     string           `position:"Query" name:"UserId"`
-	ItemId     string           `position:"Query" name:"ItemId"`
-	InstanceId string           `position:"Path" name:"InstanceId"`
-	ItemType   string           `position:"Query" name:"ItemType"`
-	CmdType    string           `position:"Query" name:"CmdType"`
-	SceneId    string           `position:"Query" name:"SceneId"`
-	BhvType    string           `position:"Query" name:"BhvType"`
-	Table      string           `position:"Path" name:"Table"`
+	TraceId       string           `position:"Query" name:"traceId"`
+	MessageSource string           `position:"Query" name:"messageSource"`
+	EndTime       requests.Integer `position:"Query" name:"endTime"`
+	UserType      string           `position:"Query" name:"userType"`
+	StartTime     requests.Integer `position:"Query" name:"startTime"`
+	UserId        string           `position:"Query" name:"userId"`
+	ItemId        string           `position:"Query" name:"itemId"`
+	InstanceId    string           `position:"Path" name:"instanceId"`
+	ItemType      string           `position:"Query" name:"itemType"`
+	CmdType       string           `position:"Query" name:"cmdType"`
+	SceneId       string           `position:"Query" name:"sceneId"`
+	BhvType       string           `position:"Query" name:"bhvType"`
+	Table         string           `position:"Path" name:"table"`
 }
 
 // QueryDataMessageStatisticsResponse is the response struct for api QueryDataMessageStatistics
 type QueryDataMessageStatisticsResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
-	Code      string                 `json:"Code" xml:"Code"`
-	Message   string                 `json:"Message" xml:"Message"`
-	Result    map[string]interface{} `json:"Result" xml:"Result"`
+	Code      string                 `json:"code" xml:"code"`
+	Message   string                 `json:"message" xml:"message"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
+	Result    map[string]interface{} `json:"result" xml:"result"`
 }
 
 // CreateQueryDataMessageStatisticsRequest creates a request to invoke QueryDataMessageStatistics API
@@ -104,7 +100,7 @@ func CreateQueryDataMessageStatisticsRequest() (request *QueryDataMessageStatist
 	request = &QueryDataMessageStatisticsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "QueryDataMessageStatistics", "/openapi/instances/[InstanceId]/tables/[Table]/data-message-statistics", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "QueryDataMessageStatistics", "/v2/openapi/instances/[instanceId]/tables/[table]/data-message-statistics", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

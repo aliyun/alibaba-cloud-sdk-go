@@ -17,5 +17,5 @@ package airec
 
 // DetailInListSceneItems is a nested struct in airec response
 type DetailInListSceneItems struct {
-	DetailItem []DetailItem `json:"Detail" xml:"Detail"`
+	Detail []Detail `json:"Detail" xml:"Detail"`
 }

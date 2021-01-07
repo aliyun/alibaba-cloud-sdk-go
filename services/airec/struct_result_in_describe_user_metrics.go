@@ -17,5 +17,5 @@ package airec
 
 // ResultInDescribeUserMetrics is a nested struct in airec response
 type ResultInDescribeUserMetrics struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	Result []Result `json:"Result" xml:"Result"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DowngradeInstance invokes the airec.DowngradeInstance API synchronously
-// api document: https://help.aliyun.com/api/airec/downgradeinstance.html
 func (client *Client) DowngradeInstance(request *DowngradeInstanceRequest) (response *DowngradeInstanceResponse, err error) {
 	response = CreateDowngradeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DowngradeInstance(request *DowngradeInstanceRequest) (resp
 }
 
 // DowngradeInstanceWithChan invokes the airec.DowngradeInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/downgradeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DowngradeInstanceWithChan(request *DowngradeInstanceRequest) (<-chan *DowngradeInstanceResponse, <-chan error) {
 	responseChan := make(chan *DowngradeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DowngradeInstanceWithChan(request *DowngradeInstanceReques
 }
 
 // DowngradeInstanceWithCallback invokes the airec.DowngradeInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/downgradeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DowngradeInstanceWithCallback(request *DowngradeInstanceRequest, callback func(response *DowngradeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) DowngradeInstanceWithCallback(request *DowngradeInstanceRe
 // DowngradeInstanceRequest is the request struct for api DowngradeInstance
 type DowngradeInstanceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // DowngradeInstanceResponse is the response struct for api DowngradeInstance
 type DowngradeInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateDowngradeInstanceRequest creates a request to invoke DowngradeInstance API
@@ -93,7 +88,7 @@ func CreateDowngradeInstanceRequest() (request *DowngradeInstanceRequest) {
 	request = &DowngradeInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DowngradeInstance", "/openapi/instances/[InstanceId]/actions/downgrade", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DowngradeInstance", "/v2/openapi/instances/[instanceId]/actions/downgrade", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

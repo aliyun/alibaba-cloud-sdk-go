@@ -21,7 +21,6 @@ import (
 )
 
 // ListRules invokes the airec.ListRules API synchronously
-// api document: https://help.aliyun.com/api/airec/listrules.html
 func (client *Client) ListRules(request *ListRulesRequest) (response *ListRulesResponse, err error) {
 	response = CreateListRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRules(request *ListRulesRequest) (response *ListRulesR
 }
 
 // ListRulesWithChan invokes the airec.ListRules API asynchronously
-// api document: https://help.aliyun.com/api/airec/listrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRulesWithChan(request *ListRulesRequest) (<-chan *ListRulesResponse, <-chan error) {
 	responseChan := make(chan *ListRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRulesWithChan(request *ListRulesRequest) (<-chan *List
 }
 
 // ListRulesWithCallback invokes the airec.ListRules API asynchronously
-// api document: https://help.aliyun.com/api/airec/listrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRulesWithCallback(request *ListRulesRequest, callback func(response *ListRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,21 +71,23 @@ func (client *Client) ListRulesWithCallback(request *ListRulesRequest, callback 
 // ListRulesRequest is the request struct for api ListRules
 type ListRulesRequest struct {
 	*requests.RoaRequest
-	InstanceId string           `position:"Path" name:"InstanceId"`
-	Size       requests.Integer `position:"Query" name:"Size"`
-	RuleType   string           `position:"Query" name:"RuleType"`
-	SceneId    string           `position:"Query" name:"SceneId"`
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
-	Page       requests.Integer `position:"Query" name:"Page"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
-	Status     string           `position:"Query" name:"Status"`
+	InstanceId string           `position:"Path" name:"instanceId"`
+	Size       requests.Integer `position:"Query" name:"size"`
+	RuleType   string           `position:"Query" name:"ruleType"`
+	SceneId    string           `position:"Query" name:"sceneId"`
+	EndTime    requests.Integer `position:"Query" name:"endTime"`
+	Page       requests.Integer `position:"Query" name:"page"`
+	StartTime  requests.Integer `position:"Query" name:"startTime"`
+	Status     string           `position:"Query" name:"status"`
 }
 
 // ListRulesResponse is the response struct for api ListRules
 type ListRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string                  `json:"RequestId" xml:"RequestId"`
-	Result    []ResultItemInListRules `json:"Result" xml:"Result"`
+	RequestId string              `json:"requestId" xml:"requestId"`
+	Code      string              `json:"code" xml:"code"`
+	Message   string              `json:"message" xml:"message"`
+	Result    []ResultInListRules `json:"result" xml:"result"`
 }
 
 // CreateListRulesRequest creates a request to invoke ListRules API
@@ -98,7 +95,7 @@ func CreateListRulesRequest() (request *ListRulesRequest) {
 	request = &ListRulesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListRules", "/openapi/instances/[InstanceId]/rules", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListRules", "/v2/openapi/instances/[instanceId]/rules", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

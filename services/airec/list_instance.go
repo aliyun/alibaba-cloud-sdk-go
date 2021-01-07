@@ -21,7 +21,6 @@ import (
 )
 
 // ListInstance invokes the airec.ListInstance API synchronously
-// api document: https://help.aliyun.com/api/airec/listinstance.html
 func (client *Client) ListInstance(request *ListInstanceRequest) (response *ListInstanceResponse, err error) {
 	response = CreateListInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListInstance(request *ListInstanceRequest) (response *List
 }
 
 // ListInstanceWithChan invokes the airec.ListInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/listinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInstanceWithChan(request *ListInstanceRequest) (<-chan *ListInstanceResponse, <-chan error) {
 	responseChan := make(chan *ListInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListInstanceWithChan(request *ListInstanceRequest) (<-chan
 }
 
 // ListInstanceWithCallback invokes the airec.ListInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/listinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInstanceWithCallback(request *ListInstanceRequest, callback func(response *ListInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,20 +71,21 @@ func (client *Client) ListInstanceWithCallback(request *ListInstanceRequest, cal
 // ListInstanceRequest is the request struct for api ListInstance
 type ListInstanceRequest struct {
 	*requests.RoaRequest
+	InstanceId  string           `position:"Query" name:"instanceId"`
 	Size        requests.Integer `position:"Query" name:"size"`
-	Name        string           `position:"Query" name:"Name"`
-	ExpiredTime string           `position:"Query" name:"ExpiredTime"`
+	Name        string           `position:"Query" name:"name"`
+	ExpiredTime string           `position:"Query" name:"expiredTime"`
 	Page        requests.Integer `position:"Query" name:"page"`
-	Status      string           `position:"Query" name:"Status"`
+	Status      string           `position:"Query" name:"status"`
 }
 
 // ListInstanceResponse is the response struct for api ListInstance
 type ListInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Code      string                     `json:"Code" xml:"Code"`
-	Message   string                     `json:"Message" xml:"Message"`
-	Result    []ResultItemInListInstance `json:"Result" xml:"Result"`
+	Code      string                 `json:"code" xml:"code"`
+	Message   string                 `json:"message" xml:"message"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
+	Result    []ResultInListInstance `json:"result" xml:"result"`
 }
 
 // CreateListInstanceRequest creates a request to invoke ListInstance API
@@ -97,7 +93,7 @@ func CreateListInstanceRequest() (request *ListInstanceRequest) {
 	request = &ListInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListInstance", "/openapi/instances", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListInstance", "/v2/openapi/instances", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

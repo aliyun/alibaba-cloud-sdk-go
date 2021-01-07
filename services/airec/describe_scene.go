@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScene invokes the airec.DescribeScene API synchronously
-// api document: https://help.aliyun.com/api/airec/describescene.html
 func (client *Client) DescribeScene(request *DescribeSceneRequest) (response *DescribeSceneResponse, err error) {
 	response = CreateDescribeSceneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScene(request *DescribeSceneRequest) (response *De
 }
 
 // DescribeSceneWithChan invokes the airec.DescribeScene API asynchronously
-// api document: https://help.aliyun.com/api/airec/describescene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSceneWithChan(request *DescribeSceneRequest) (<-chan *DescribeSceneResponse, <-chan error) {
 	responseChan := make(chan *DescribeSceneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSceneWithChan(request *DescribeSceneRequest) (<-ch
 }
 
 // DescribeSceneWithCallback invokes the airec.DescribeScene API asynchronously
-// api document: https://help.aliyun.com/api/airec/describescene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSceneWithCallback(request *DescribeSceneRequest, callback func(response *DescribeSceneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,17 @@ func (client *Client) DescribeSceneWithCallback(request *DescribeSceneRequest, c
 // DescribeSceneRequest is the request struct for api DescribeScene
 type DescribeSceneRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	SceneId    string `position:"Path" name:"SceneId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	SceneId    string `position:"Path" name:"sceneId"`
 }
 
 // DescribeSceneResponse is the response struct for api DescribeScene
 type DescribeSceneResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Result    ResultInDescribeScene `json:"Result" xml:"Result"`
+	RequestId string                `json:"requestId" xml:"requestId"`
+	Code      string                `json:"code" xml:"code"`
+	Message   string                `json:"message" xml:"message"`
+	Result    ResultInDescribeScene `json:"result" xml:"result"`
 }
 
 // CreateDescribeSceneRequest creates a request to invoke DescribeScene API
@@ -92,7 +89,7 @@ func CreateDescribeSceneRequest() (request *DescribeSceneRequest) {
 	request = &DescribeSceneRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DescribeScene", "/openapi/instances/[InstanceId]/scenes/[SceneId]", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DescribeScene", "/v2/openapi/instances/[instanceId]/scenes/[sceneId]", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

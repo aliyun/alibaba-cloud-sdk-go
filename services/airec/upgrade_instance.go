@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeInstance invokes the airec.UpgradeInstance API synchronously
-// api document: https://help.aliyun.com/api/airec/upgradeinstance.html
 func (client *Client) UpgradeInstance(request *UpgradeInstanceRequest) (response *UpgradeInstanceResponse, err error) {
 	response = CreateUpgradeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeInstance(request *UpgradeInstanceRequest) (response
 }
 
 // UpgradeInstanceWithChan invokes the airec.UpgradeInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/upgradeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeInstanceWithChan(request *UpgradeInstanceRequest) (<-chan *UpgradeInstanceResponse, <-chan error) {
 	responseChan := make(chan *UpgradeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeInstanceWithChan(request *UpgradeInstanceRequest) (
 }
 
 // UpgradeInstanceWithCallback invokes the airec.UpgradeInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/upgradeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeInstanceWithCallback(request *UpgradeInstanceRequest, callback func(response *UpgradeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) UpgradeInstanceWithCallback(request *UpgradeInstanceReques
 // UpgradeInstanceRequest is the request struct for api UpgradeInstance
 type UpgradeInstanceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // UpgradeInstanceResponse is the response struct for api UpgradeInstance
 type UpgradeInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateUpgradeInstanceRequest creates a request to invoke UpgradeInstance API
@@ -93,7 +88,7 @@ func CreateUpgradeInstanceRequest() (request *UpgradeInstanceRequest) {
 	request = &UpgradeInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "UpgradeInstance", "/openapi/instances/[InstanceId]/actions/upgrade", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "UpgradeInstance", "/v2/openapi/instances/[instanceId]/actions/upgrade", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

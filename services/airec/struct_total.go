@@ -17,9 +17,10 @@ package airec
 
 // Total is a nested struct in airec response
 type Total struct {
-	InstanceRecommendItem int64 `json:"InstanceRecommendItem" xml:"InstanceRecommendItem"`
-	SceneRecommendItem    int64 `json:"SceneRecommendItem" xml:"SceneRecommendItem"`
-	WeightItem            int64 `json:"WeightItem" xml:"WeightItem"`
-	SceneWeightItem       int64 `json:"SceneWeightItem" xml:"SceneWeightItem"`
-	TotalCount            int64 `json:"TotalCount" xml:"TotalCount"`
+	QueryCount            int64 `json:"queryCount" xml:"queryCount"`
+	TotalCount            int64 `json:"totalCount" xml:"totalCount"`
+	SceneRecommendItem    int64 `json:"sceneRecommendItem" xml:"sceneRecommendItem"`
+	InstanceRecommendItem int64 `json:"instanceRecommendItem" xml:"instanceRecommendItem"`
+	SceneWeightItem       int64 `json:"sceneWeightItem" xml:"sceneWeightItem"`
+	WeightItem            int64 `json:"weightItem" xml:"weightItem"`
 }

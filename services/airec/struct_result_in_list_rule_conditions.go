@@ -17,5 +17,5 @@ package airec
 
 // ResultInListRuleConditions is a nested struct in airec response
 type ResultInListRuleConditions struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }

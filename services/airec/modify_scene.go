@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyScene invokes the airec.ModifyScene API synchronously
-// api document: https://help.aliyun.com/api/airec/modifyscene.html
 func (client *Client) ModifyScene(request *ModifySceneRequest) (response *ModifySceneResponse, err error) {
 	response = CreateModifySceneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyScene(request *ModifySceneRequest) (response *Modify
 }
 
 // ModifySceneWithChan invokes the airec.ModifyScene API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifyscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySceneWithChan(request *ModifySceneRequest) (<-chan *ModifySceneResponse, <-chan error) {
 	responseChan := make(chan *ModifySceneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySceneWithChan(request *ModifySceneRequest) (<-chan *
 }
 
 // ModifySceneWithCallback invokes the airec.ModifyScene API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifyscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySceneWithCallback(request *ModifySceneRequest, callback func(response *ModifySceneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,17 @@ func (client *Client) ModifySceneWithCallback(request *ModifySceneRequest, callb
 // ModifySceneRequest is the request struct for api ModifyScene
 type ModifySceneRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	SceneId    string `position:"Path" name:"SceneId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	SceneId    string `position:"Path" name:"sceneId"`
 }
 
 // ModifySceneResponse is the response struct for api ModifyScene
 type ModifySceneResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
-	Result    ResultInModifyScene `json:"Result" xml:"Result"`
+	RequestId string              `json:"requestId" xml:"requestId"`
+	Code      string              `json:"code" xml:"code"`
+	Message   string              `json:"message" xml:"message"`
+	Result    ResultInModifyScene `json:"result" xml:"result"`
 }
 
 // CreateModifySceneRequest creates a request to invoke ModifyScene API
@@ -92,7 +89,7 @@ func CreateModifySceneRequest() (request *ModifySceneRequest) {
 	request = &ModifySceneRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ModifyScene", "/openapi/instances/[InstanceId]/scenes/[SceneId]", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ModifyScene", "/v2/openapi/instances/[instanceId]/scenes/[sceneId]", "airec", "openAPI")
 	request.Method = requests.PUT
 	return
 }

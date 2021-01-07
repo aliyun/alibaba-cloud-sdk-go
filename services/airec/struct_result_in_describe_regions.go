@@ -17,5 +17,5 @@ package airec
 
 // ResultInDescribeRegions is a nested struct in airec response
 type ResultInDescribeRegions struct {
-	Item []Item `json:"Item" xml:"Item"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }

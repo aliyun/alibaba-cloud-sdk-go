@@ -17,5 +17,5 @@ package airec
 
 // ResultInListDashboardDetails is a nested struct in airec response
 type ResultInListDashboardDetails struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }

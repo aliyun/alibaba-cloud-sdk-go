@@ -17,5 +17,17 @@ package airec
 
 // ResultInListInstance is a nested struct in airec response
 type ResultInListInstance struct {
-	ResultItem []ResultItemInListInstance `json:"Result" xml:"Result"`
+	ChargeType     string `json:"chargeType" xml:"chargeType"`
+	CommodityCode  string `json:"commodityCode" xml:"commodityCode"`
+	DataSetVersion string `json:"dataSetVersion" xml:"dataSetVersion"`
+	ExpiredTime    string `json:"expiredTime" xml:"expiredTime"`
+	GmtCreate      string `json:"gmtCreate" xml:"gmtCreate"`
+	GmtModified    string `json:"gmtModified" xml:"gmtModified"`
+	Industry       string `json:"industry" xml:"industry"`
+	InstanceId     string `json:"instanceId" xml:"instanceId"`
+	LockMode       string `json:"lockMode" xml:"lockMode"`
+	Name           string `json:"name" xml:"name"`
+	RegionId       string `json:"regionId" xml:"regionId"`
+	Status         string `json:"status" xml:"status"`
+	Type           string `json:"type" xml:"type"`
 }

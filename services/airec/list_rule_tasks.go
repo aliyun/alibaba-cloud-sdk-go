@@ -21,7 +21,6 @@ import (
 )
 
 // ListRuleTasks invokes the airec.ListRuleTasks API synchronously
-// api document: https://help.aliyun.com/api/airec/listruletasks.html
 func (client *Client) ListRuleTasks(request *ListRuleTasksRequest) (response *ListRuleTasksResponse, err error) {
 	response = CreateListRuleTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRuleTasks(request *ListRuleTasksRequest) (response *Li
 }
 
 // ListRuleTasksWithChan invokes the airec.ListRuleTasks API asynchronously
-// api document: https://help.aliyun.com/api/airec/listruletasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRuleTasksWithChan(request *ListRuleTasksRequest) (<-chan *ListRuleTasksResponse, <-chan error) {
 	responseChan := make(chan *ListRuleTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRuleTasksWithChan(request *ListRuleTasksRequest) (<-ch
 }
 
 // ListRuleTasksWithCallback invokes the airec.ListRuleTasks API asynchronously
-// api document: https://help.aliyun.com/api/airec/listruletasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRuleTasksWithCallback(request *ListRuleTasksRequest, callback func(response *ListRuleTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,17 @@ func (client *Client) ListRuleTasksWithCallback(request *ListRuleTasksRequest, c
 // ListRuleTasksRequest is the request struct for api ListRuleTasks
 type ListRuleTasksRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	SceneId    string `position:"Query" name:"SceneId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	SceneId    string `position:"Query" name:"sceneId"`
 }
 
 // ListRuleTasksResponse is the response struct for api ListRuleTasks
 type ListRuleTasksResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateListRuleTasksRequest creates a request to invoke ListRuleTasks API
@@ -92,7 +89,7 @@ func CreateListRuleTasksRequest() (request *ListRuleTasksRequest) {
 	request = &ListRuleTasksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListRuleTasks", "/openapi/instances/[InstanceId]/rule-tasks", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListRuleTasks", "/v2/openapi/instances/[instanceId]/rule-tasks", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

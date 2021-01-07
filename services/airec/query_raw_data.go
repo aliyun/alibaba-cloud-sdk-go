@@ -21,7 +21,6 @@ import (
 )
 
 // QueryRawData invokes the airec.QueryRawData API synchronously
-// api document: https://help.aliyun.com/api/airec/queryrawdata.html
 func (client *Client) QueryRawData(request *QueryRawDataRequest) (response *QueryRawDataResponse, err error) {
 	response = CreateQueryRawDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryRawData(request *QueryRawDataRequest) (response *Quer
 }
 
 // QueryRawDataWithChan invokes the airec.QueryRawData API asynchronously
-// api document: https://help.aliyun.com/api/airec/queryrawdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRawDataWithChan(request *QueryRawDataRequest) (<-chan *QueryRawDataResponse, <-chan error) {
 	responseChan := make(chan *QueryRawDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryRawDataWithChan(request *QueryRawDataRequest) (<-chan
 }
 
 // QueryRawDataWithCallback invokes the airec.QueryRawData API asynchronously
-// api document: https://help.aliyun.com/api/airec/queryrawdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRawDataWithCallback(request *QueryRawDataRequest, callback func(response *QueryRawDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,21 +71,21 @@ func (client *Client) QueryRawDataWithCallback(request *QueryRawDataRequest, cal
 // QueryRawDataRequest is the request struct for api QueryRawData
 type QueryRawDataRequest struct {
 	*requests.RoaRequest
-	ItemId     string `position:"Query" name:"ItemId"`
-	InstanceId string `position:"Path" name:"InstanceId"`
-	ItemType   string `position:"Query" name:"ItemType"`
-	UserType   string `position:"Query" name:"UserType"`
-	UserId     string `position:"Query" name:"UserId"`
-	Table      string `position:"Path" name:"Table"`
+	ItemId     string `position:"Query" name:"itemId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	ItemType   string `position:"Query" name:"itemType"`
+	UserType   string `position:"Query" name:"userType"`
+	UserId     string `position:"Query" name:"userId"`
+	Table      string `position:"Path" name:"table"`
 }
 
 // QueryRawDataResponse is the response struct for api QueryRawData
 type QueryRawDataResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
-	Code      string                 `json:"Code" xml:"Code"`
+	Code      string                 `json:"code" xml:"code"`
 	Message   string                 `json:"Message" xml:"Message"`
-	Result    map[string]interface{} `json:"Result" xml:"Result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
+	Result    map[string]interface{} `json:"result" xml:"result"`
 }
 
 // CreateQueryRawDataRequest creates a request to invoke QueryRawData API
@@ -98,7 +93,7 @@ func CreateQueryRawDataRequest() (request *QueryRawDataRequest) {
 	request = &QueryRawDataRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "QueryRawData", "/openapi/instances/[InstanceId]/tables/[Table]/raw-data", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "QueryRawData", "/v2/openapi/instances/[instanceId]/tables/[table]/raw-data", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

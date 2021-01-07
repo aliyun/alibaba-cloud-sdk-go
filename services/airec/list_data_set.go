@@ -21,7 +21,6 @@ import (
 )
 
 // ListDataSet invokes the airec.ListDataSet API synchronously
-// api document: https://help.aliyun.com/api/airec/listdataset.html
 func (client *Client) ListDataSet(request *ListDataSetRequest) (response *ListDataSetResponse, err error) {
 	response = CreateListDataSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDataSet(request *ListDataSetRequest) (response *ListDa
 }
 
 // ListDataSetWithChan invokes the airec.ListDataSet API asynchronously
-// api document: https://help.aliyun.com/api/airec/listdataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDataSetWithChan(request *ListDataSetRequest) (<-chan *ListDataSetResponse, <-chan error) {
 	responseChan := make(chan *ListDataSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDataSetWithChan(request *ListDataSetRequest) (<-chan *
 }
 
 // ListDataSetWithCallback invokes the airec.ListDataSet API asynchronously
-// api document: https://help.aliyun.com/api/airec/listdataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDataSetWithCallback(request *ListDataSetRequest, callback func(response *ListDataSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) ListDataSetWithCallback(request *ListDataSetRequest, callb
 // ListDataSetRequest is the request struct for api ListDataSet
 type ListDataSetRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // ListDataSetResponse is the response struct for api ListDataSet
 type ListDataSetResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      string       `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	Code      string   `json:"code" xml:"code"`
+	Message   string   `json:"message" xml:"message"`
+	RequestId string   `json:"requestId" xml:"requestId"`
+	Result    []Result `json:"result" xml:"result"`
 }
 
 // CreateListDataSetRequest creates a request to invoke ListDataSet API
@@ -93,7 +88,7 @@ func CreateListDataSetRequest() (request *ListDataSetRequest) {
 	request = &ListDataSetRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListDataSet", "/openapi/instances/[InstanceId]/dataSets", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListDataSet", "/v2/openapi/instances/[instanceId]/dataSets", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

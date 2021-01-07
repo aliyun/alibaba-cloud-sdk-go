@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserMetrics invokes the airec.DescribeUserMetrics API synchronously
-// api document: https://help.aliyun.com/api/airec/describeusermetrics.html
 func (client *Client) DescribeUserMetrics(request *DescribeUserMetricsRequest) (response *DescribeUserMetricsResponse, err error) {
 	response = CreateDescribeUserMetricsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserMetrics(request *DescribeUserMetricsRequest) (
 }
 
 // DescribeUserMetricsWithChan invokes the airec.DescribeUserMetrics API asynchronously
-// api document: https://help.aliyun.com/api/airec/describeusermetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserMetricsWithChan(request *DescribeUserMetricsRequest) (<-chan *DescribeUserMetricsResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserMetricsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserMetricsWithChan(request *DescribeUserMetricsRe
 }
 
 // DescribeUserMetricsWithCallback invokes the airec.DescribeUserMetrics API asynchronously
-// api document: https://help.aliyun.com/api/airec/describeusermetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserMetricsWithCallback(request *DescribeUserMetricsRequest, callback func(response *DescribeUserMetricsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,19 +71,19 @@ func (client *Client) DescribeUserMetricsWithCallback(request *DescribeUserMetri
 // DescribeUserMetricsRequest is the request struct for api DescribeUserMetrics
 type DescribeUserMetricsRequest struct {
 	*requests.RoaRequest
-	MetricType string           `position:"Query" name:"MetricType"`
-	InstanceId string           `position:"Path" name:"InstanceId"`
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
+	MetricType string           `position:"Query" name:"metricType"`
+	InstanceId string           `position:"Path" name:"instanceId"`
+	EndTime    requests.Integer `position:"Query" name:"endTime"`
+	StartTime  requests.Integer `position:"Query" name:"startTime"`
 }
 
 // DescribeUserMetricsResponse is the response struct for api DescribeUserMetrics
 type DescribeUserMetricsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      string       `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	Code      string   `json:"code" xml:"code"`
+	Message   string   `json:"message" xml:"message"`
+	RequestId string   `json:"requestId" xml:"requestId"`
+	Result    []Result `json:"result" xml:"result"`
 }
 
 // CreateDescribeUserMetricsRequest creates a request to invoke DescribeUserMetrics API
@@ -96,7 +91,7 @@ func CreateDescribeUserMetricsRequest() (request *DescribeUserMetricsRequest) {
 	request = &DescribeUserMetricsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DescribeUserMetrics", "/openapi/instances/[InstanceId]/metrics", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DescribeUserMetrics", "/v2/openapi/instances/[instanceId]/metrics", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListRuleConditions invokes the airec.ListRuleConditions API synchronously
-// api document: https://help.aliyun.com/api/airec/listruleconditions.html
 func (client *Client) ListRuleConditions(request *ListRuleConditionsRequest) (response *ListRuleConditionsResponse, err error) {
 	response = CreateListRuleConditionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRuleConditions(request *ListRuleConditionsRequest) (re
 }
 
 // ListRuleConditionsWithChan invokes the airec.ListRuleConditions API asynchronously
-// api document: https://help.aliyun.com/api/airec/listruleconditions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRuleConditionsWithChan(request *ListRuleConditionsRequest) (<-chan *ListRuleConditionsResponse, <-chan error) {
 	responseChan := make(chan *ListRuleConditionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRuleConditionsWithChan(request *ListRuleConditionsRequ
 }
 
 // ListRuleConditionsWithCallback invokes the airec.ListRuleConditions API asynchronously
-// api document: https://help.aliyun.com/api/airec/listruleconditions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRuleConditionsWithCallback(request *ListRuleConditionsRequest, callback func(response *ListRuleConditionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,16 @@ func (client *Client) ListRuleConditionsWithCallback(request *ListRuleConditions
 // ListRuleConditionsRequest is the request struct for api ListRuleConditions
 type ListRuleConditionsRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // ListRuleConditionsResponse is the response struct for api ListRuleConditions
 type ListRuleConditionsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string       `json:"requestId" xml:"requestId"`
+	Code      string       `json:"code" xml:"code"`
+	Message   string       `json:"message" xml:"message"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateListRuleConditionsRequest creates a request to invoke ListRuleConditions API
@@ -91,7 +88,7 @@ func CreateListRuleConditionsRequest() (request *ListRuleConditionsRequest) {
 	request = &ListRuleConditionsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListRuleConditions", "/openapi/instances/[InstanceId]/rule-conditions", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListRuleConditions", "/v2/openapi/instances/[instanceId]/rule-conditions", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

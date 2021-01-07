@@ -21,7 +21,6 @@ import (
 )
 
 // ValidateInstance invokes the airec.ValidateInstance API synchronously
-// api document: https://help.aliyun.com/api/airec/validateinstance.html
 func (client *Client) ValidateInstance(request *ValidateInstanceRequest) (response *ValidateInstanceResponse, err error) {
 	response = CreateValidateInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ValidateInstance(request *ValidateInstanceRequest) (respon
 }
 
 // ValidateInstanceWithChan invokes the airec.ValidateInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/validateinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateInstanceWithChan(request *ValidateInstanceRequest) (<-chan *ValidateInstanceResponse, <-chan error) {
 	responseChan := make(chan *ValidateInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ValidateInstanceWithChan(request *ValidateInstanceRequest)
 }
 
 // ValidateInstanceWithCallback invokes the airec.ValidateInstance API asynchronously
-// api document: https://help.aliyun.com/api/airec/validateinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateInstanceWithCallback(request *ValidateInstanceRequest, callback func(response *ValidateInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,16 @@ func (client *Client) ValidateInstanceWithCallback(request *ValidateInstanceRequ
 // ValidateInstanceRequest is the request struct for api ValidateInstance
 type ValidateInstanceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // ValidateInstanceResponse is the response struct for api ValidateInstance
 type ValidateInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    bool   `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    bool   `json:"result" xml:"result"`
 }
 
 // CreateValidateInstanceRequest creates a request to invoke ValidateInstance API
@@ -93,7 +88,7 @@ func CreateValidateInstanceRequest() (request *ValidateInstanceRequest) {
 	request = &ValidateInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ValidateInstance", "/openapi/instances/[InstanceId]/actions/validate", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ValidateInstance", "/v2/openapi/instances/[instanceId]/actions/validate", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

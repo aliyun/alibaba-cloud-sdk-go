@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScene invokes the airec.DeleteScene API synchronously
-// api document: https://help.aliyun.com/api/airec/deletescene.html
 func (client *Client) DeleteScene(request *DeleteSceneRequest) (response *DeleteSceneResponse, err error) {
 	response = CreateDeleteSceneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScene(request *DeleteSceneRequest) (response *Delete
 }
 
 // DeleteSceneWithChan invokes the airec.DeleteScene API asynchronously
-// api document: https://help.aliyun.com/api/airec/deletescene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSceneWithChan(request *DeleteSceneRequest) (<-chan *DeleteSceneResponse, <-chan error) {
 	responseChan := make(chan *DeleteSceneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSceneWithChan(request *DeleteSceneRequest) (<-chan *
 }
 
 // DeleteSceneWithCallback invokes the airec.DeleteScene API asynchronously
-// api document: https://help.aliyun.com/api/airec/deletescene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSceneWithCallback(request *DeleteSceneRequest, callback func(response *DeleteSceneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,17 @@ func (client *Client) DeleteSceneWithCallback(request *DeleteSceneRequest, callb
 // DeleteSceneRequest is the request struct for api DeleteScene
 type DeleteSceneRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	SceneId    string `position:"Path" name:"SceneId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	SceneId    string `position:"Path" name:"sceneId"`
 }
 
 // DeleteSceneResponse is the response struct for api DeleteScene
 type DeleteSceneResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateDeleteSceneRequest creates a request to invoke DeleteScene API
@@ -92,7 +89,7 @@ func CreateDeleteSceneRequest() (request *DeleteSceneRequest) {
 	request = &DeleteSceneRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DeleteScene", "/openapi/instances/[InstanceId]/scenes/[SceneId]", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DeleteScene", "/v2/openapi/instances/[instanceId]/scenes/[sceneId]", "airec", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

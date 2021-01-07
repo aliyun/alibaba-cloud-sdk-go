@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataSetMessage invokes the airec.DescribeDataSetMessage API synchronously
-// api document: https://help.aliyun.com/api/airec/describedatasetmessage.html
 func (client *Client) DescribeDataSetMessage(request *DescribeDataSetMessageRequest) (response *DescribeDataSetMessageResponse, err error) {
 	response = CreateDescribeDataSetMessageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataSetMessage(request *DescribeDataSetMessageRequ
 }
 
 // DescribeDataSetMessageWithChan invokes the airec.DescribeDataSetMessage API asynchronously
-// api document: https://help.aliyun.com/api/airec/describedatasetmessage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataSetMessageWithChan(request *DescribeDataSetMessageRequest) (<-chan *DescribeDataSetMessageResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataSetMessageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataSetMessageWithChan(request *DescribeDataSetMes
 }
 
 // DescribeDataSetMessageWithCallback invokes the airec.DescribeDataSetMessage API asynchronously
-// api document: https://help.aliyun.com/api/airec/describedatasetmessage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataSetMessageWithCallback(request *DescribeDataSetMessageRequest, callback func(response *DescribeDataSetMessageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) DescribeDataSetMessageWithCallback(request *DescribeDataSe
 // DescribeDataSetMessageRequest is the request struct for api DescribeDataSetMessage
 type DescribeDataSetMessageRequest struct {
 	*requests.RoaRequest
-	VersionId  string `position:"Path" name:"VersionId"`
-	InstanceId string `position:"Path" name:"InstanceId"`
+	VersionId  string `position:"Path" name:"versionId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // DescribeDataSetMessageResponse is the response struct for api DescribeDataSetMessage
 type DescribeDataSetMessageResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      string       `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	Code      string       `json:"code" xml:"code"`
+	Message   string       `json:"message" xml:"message"`
+	RequestId string       `json:"requestId" xml:"requestId"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateDescribeDataSetMessageRequest creates a request to invoke DescribeDataSetMessage API
@@ -94,7 +89,7 @@ func CreateDescribeDataSetMessageRequest() (request *DescribeDataSetMessageReque
 	request = &DescribeDataSetMessageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DescribeDataSetMessage", "/openapi/instances/[InstanceId]/dataSets/[VersionId]/messages", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DescribeDataSetMessage", "/v2/openapi/instances/[instanceId]/dataSets/[versionId]/messages", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

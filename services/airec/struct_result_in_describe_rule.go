@@ -17,8 +17,8 @@ package airec
 
 // ResultInDescribeRule is a nested struct in airec response
 type ResultInDescribeRule struct {
-	RuleId      string `json:"RuleId" xml:"RuleId"`
-	GmtCreate   string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified string `json:"GmtModified" xml:"GmtModified"`
-	Status      string `json:"Status" xml:"Status"`
+	GmtCreate   string `json:"gmtCreate" xml:"gmtCreate"`
+	GmtModified string `json:"gmtModified" xml:"gmtModified"`
+	RuleId      string `json:"ruleId" xml:"ruleId"`
+	Status      string `json:"status" xml:"status"`
 }

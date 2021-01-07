@@ -21,7 +21,6 @@ import (
 )
 
 // StopDataSet invokes the airec.StopDataSet API synchronously
-// api document: https://help.aliyun.com/api/airec/stopdataset.html
 func (client *Client) StopDataSet(request *StopDataSetRequest) (response *StopDataSetResponse, err error) {
 	response = CreateStopDataSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopDataSet(request *StopDataSetRequest) (response *StopDa
 }
 
 // StopDataSetWithChan invokes the airec.StopDataSet API asynchronously
-// api document: https://help.aliyun.com/api/airec/stopdataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopDataSetWithChan(request *StopDataSetRequest) (<-chan *StopDataSetResponse, <-chan error) {
 	responseChan := make(chan *StopDataSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopDataSetWithChan(request *StopDataSetRequest) (<-chan *
 }
 
 // StopDataSetWithCallback invokes the airec.StopDataSet API asynchronously
-// api document: https://help.aliyun.com/api/airec/stopdataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopDataSetWithCallback(request *StopDataSetRequest, callback func(response *StopDataSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) StopDataSetWithCallback(request *StopDataSetRequest, callb
 // StopDataSetRequest is the request struct for api StopDataSet
 type StopDataSetRequest struct {
 	*requests.RoaRequest
-	VersionId  string `position:"Path" name:"VersionId"`
-	InstanceId string `position:"Path" name:"InstanceId"`
+	VersionId  string `position:"Path" name:"versionId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // StopDataSetResponse is the response struct for api StopDataSet
 type StopDataSetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateStopDataSetRequest creates a request to invoke StopDataSet API
@@ -94,7 +89,7 @@ func CreateStopDataSetRequest() (request *StopDataSetRequest) {
 	request = &StopDataSetRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "StopDataSet", "/openapi/instances/[InstanceId]/dataSets/[VersionId]/actions/stop", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "StopDataSet", "/v2/openapi/instances/[instanceId]/dataSets/[versionId]/actions/stop", "airec", "openAPI")
 	request.Method = requests.POST
 	return
 }

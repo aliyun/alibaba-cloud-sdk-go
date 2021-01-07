@@ -21,7 +21,6 @@ import (
 )
 
 // ListSceneItems invokes the airec.ListSceneItems API synchronously
-// api document: https://help.aliyun.com/api/airec/listsceneitems.html
 func (client *Client) ListSceneItems(request *ListSceneItemsRequest) (response *ListSceneItemsResponse, err error) {
 	response = CreateListSceneItemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSceneItems(request *ListSceneItemsRequest) (response *
 }
 
 // ListSceneItemsWithChan invokes the airec.ListSceneItems API asynchronously
-// api document: https://help.aliyun.com/api/airec/listsceneitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSceneItemsWithChan(request *ListSceneItemsRequest) (<-chan *ListSceneItemsResponse, <-chan error) {
 	responseChan := make(chan *ListSceneItemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSceneItemsWithChan(request *ListSceneItemsRequest) (<-
 }
 
 // ListSceneItemsWithCallback invokes the airec.ListSceneItems API asynchronously
-// api document: https://help.aliyun.com/api/airec/listsceneitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSceneItemsWithCallback(request *ListSceneItemsRequest, callback func(response *ListSceneItemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,21 +71,23 @@ func (client *Client) ListSceneItemsWithCallback(request *ListSceneItemsRequest,
 // ListSceneItemsRequest is the request struct for api ListSceneItems
 type ListSceneItemsRequest struct {
 	*requests.RoaRequest
-	SelectionRuleId string           `position:"Query" name:"SelectionRuleId"`
-	InstanceId      string           `position:"Path" name:"InstanceId"`
-	Size            requests.Integer `position:"Query" name:"Size"`
-	QueryCount      requests.Integer `position:"Query" name:"QueryCount"`
-	SceneId         string           `position:"Path" name:"SceneId"`
-	OperationRuleId string           `position:"Query" name:"OperationRuleId"`
-	PreviewType     string           `position:"Query" name:"PreviewType"`
-	Page            requests.Integer `position:"Query" name:"Page"`
+	SelectionRuleId string           `position:"Query" name:"selectionRuleId"`
+	InstanceId      string           `position:"Path" name:"instanceId"`
+	Size            requests.Integer `position:"Query" name:"size"`
+	QueryCount      requests.Integer `position:"Query" name:"queryCount"`
+	SceneId         string           `position:"Path" name:"sceneId"`
+	OperationRuleId string           `position:"Query" name:"operationRuleId"`
+	PreviewType     string           `position:"Query" name:"previewType"`
+	Page            requests.Integer `position:"Query" name:"page"`
 }
 
 // ListSceneItemsResponse is the response struct for api ListSceneItems
 type ListSceneItemsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
+	Code      string                 `json:"code" xml:"code"`
+	Message   string                 `json:"message" xml:"message"`
+	Result    ResultInListSceneItems `json:"result" xml:"result"`
 }
 
 // CreateListSceneItemsRequest creates a request to invoke ListSceneItems API
@@ -98,7 +95,7 @@ func CreateListSceneItemsRequest() (request *ListSceneItemsRequest) {
 	request = &ListSceneItemsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListSceneItems", "/openapi/instances/[InstanceId]/scenes/[SceneId]/items", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListSceneItems", "/v2/openapi/instances/[instanceId]/scenes/[sceneId]/items", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

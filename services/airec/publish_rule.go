@@ -21,7 +21,6 @@ import (
 )
 
 // PublishRule invokes the airec.PublishRule API synchronously
-// api document: https://help.aliyun.com/api/airec/publishrule.html
 func (client *Client) PublishRule(request *PublishRuleRequest) (response *PublishRuleResponse, err error) {
 	response = CreatePublishRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishRule(request *PublishRuleRequest) (response *Publis
 }
 
 // PublishRuleWithChan invokes the airec.PublishRule API asynchronously
-// api document: https://help.aliyun.com/api/airec/publishrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishRuleWithChan(request *PublishRuleRequest) (<-chan *PublishRuleResponse, <-chan error) {
 	responseChan := make(chan *PublishRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishRuleWithChan(request *PublishRuleRequest) (<-chan *
 }
 
 // PublishRuleWithCallback invokes the airec.PublishRule API asynchronously
-// api document: https://help.aliyun.com/api/airec/publishrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishRuleWithCallback(request *PublishRuleRequest, callback func(response *PublishRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,19 @@ func (client *Client) PublishRuleWithCallback(request *PublishRuleRequest, callb
 // PublishRuleRequest is the request struct for api PublishRule
 type PublishRuleRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	RuleType   string `position:"Query" name:"RuleType"`
-	SceneId    string `position:"Query" name:"SceneId"`
-	RuleId     string `position:"Path" name:"RuleId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	RuleType   string `position:"Query" name:"ruleType"`
+	SceneId    string `position:"Query" name:"sceneId"`
+	RuleId     string `position:"Path" name:"ruleId"`
 }
 
 // PublishRuleResponse is the response struct for api PublishRule
 type PublishRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreatePublishRuleRequest creates a request to invoke PublishRule API
@@ -94,7 +91,7 @@ func CreatePublishRuleRequest() (request *PublishRuleRequest) {
 	request = &PublishRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "PublishRule", "/openapi/instances/[InstanceId]/rules/[RuleId]/actions/publish", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "PublishRule", "/v2/openapi/instances/[instanceId]/rules/[ruleId]/actions/publish", "airec", "openAPI")
 	request.Method = requests.PUT
 	return
 }

@@ -17,8 +17,8 @@ package airec
 
 // ResultInModifyScene is a nested struct in airec response
 type ResultInModifyScene struct {
-	SceneId     string `json:"SceneId" xml:"SceneId"`
-	GmtCreate   string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified string `json:"GmtModified" xml:"GmtModified"`
-	Status      string `json:"Status" xml:"Status"`
+	GmtCreate   string `json:"gmtCreate" xml:"gmtCreate"`
+	GmtModified string `json:"gmtModified" xml:"gmtModified"`
+	SceneId     string `json:"sceneId" xml:"sceneId"`
+	Status      string `json:"status" xml:"status"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSceneThroughput invokes the airec.DescribeSceneThroughput API synchronously
-// api document: https://help.aliyun.com/api/airec/describescenethroughput.html
 func (client *Client) DescribeSceneThroughput(request *DescribeSceneThroughputRequest) (response *DescribeSceneThroughputResponse, err error) {
 	response = CreateDescribeSceneThroughputResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSceneThroughput(request *DescribeSceneThroughputRe
 }
 
 // DescribeSceneThroughputWithChan invokes the airec.DescribeSceneThroughput API asynchronously
-// api document: https://help.aliyun.com/api/airec/describescenethroughput.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSceneThroughputWithChan(request *DescribeSceneThroughputRequest) (<-chan *DescribeSceneThroughputResponse, <-chan error) {
 	responseChan := make(chan *DescribeSceneThroughputResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSceneThroughputWithChan(request *DescribeSceneThro
 }
 
 // DescribeSceneThroughputWithCallback invokes the airec.DescribeSceneThroughput API asynchronously
-// api document: https://help.aliyun.com/api/airec/describescenethroughput.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSceneThroughputWithCallback(request *DescribeSceneThroughputRequest, callback func(response *DescribeSceneThroughputResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,17 @@ func (client *Client) DescribeSceneThroughputWithCallback(request *DescribeScene
 // DescribeSceneThroughputRequest is the request struct for api DescribeSceneThroughput
 type DescribeSceneThroughputRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	SceneId    string `position:"Path" name:"SceneId"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	SceneId    string `position:"Path" name:"sceneId"`
 }
 
 // DescribeSceneThroughputResponse is the response struct for api DescribeSceneThroughput
 type DescribeSceneThroughputResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateDescribeSceneThroughputRequest creates a request to invoke DescribeSceneThroughput API
@@ -92,7 +89,7 @@ func CreateDescribeSceneThroughputRequest() (request *DescribeSceneThroughputReq
 	request = &DescribeSceneThroughputRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DescribeSceneThroughput", "/openapi/instances/[InstanceId]/scenes/[SceneId]/throughput", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DescribeSceneThroughput", "/v2/openapi/instances/[instanceId]/scenes/[sceneId]/throughput", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

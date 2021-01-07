@@ -21,7 +21,6 @@ import (
 )
 
 // ListScenes invokes the airec.ListScenes API synchronously
-// api document: https://help.aliyun.com/api/airec/listscenes.html
 func (client *Client) ListScenes(request *ListScenesRequest) (response *ListScenesResponse, err error) {
 	response = CreateListScenesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListScenes(request *ListScenesRequest) (response *ListScen
 }
 
 // ListScenesWithChan invokes the airec.ListScenes API asynchronously
-// api document: https://help.aliyun.com/api/airec/listscenes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScenesWithChan(request *ListScenesRequest) (<-chan *ListScenesResponse, <-chan error) {
 	responseChan := make(chan *ListScenesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListScenesWithChan(request *ListScenesRequest) (<-chan *Li
 }
 
 // ListScenesWithCallback invokes the airec.ListScenes API asynchronously
-// api document: https://help.aliyun.com/api/airec/listscenes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScenesWithCallback(request *ListScenesRequest, callback func(response *ListScenesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,20 @@ func (client *Client) ListScenesWithCallback(request *ListScenesRequest, callbac
 // ListScenesRequest is the request struct for api ListScenes
 type ListScenesRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	Status     string `position:"Query" name:"Status"`
+	InstanceId string           `position:"Path" name:"instanceId"`
+	Size       requests.Integer `position:"Query" name:"size"`
+	SceneId    string           `position:"Query" name:"sceneId"`
+	Page       requests.Integer `position:"Query" name:"page"`
+	Status     string           `position:"Query" name:"status"`
 }
 
 // ListScenesResponse is the response struct for api ListScenes
 type ListScenesResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Result    []ResultItemInListScenes `json:"Result" xml:"Result"`
+	RequestId string               `json:"requestId" xml:"requestId"`
+	Code      string               `json:"code" xml:"code"`
+	Message   string               `json:"message" xml:"message"`
+	Result    []ResultInListScenes `json:"result" xml:"result"`
 }
 
 // CreateListScenesRequest creates a request to invoke ListScenes API
@@ -92,7 +92,7 @@ func CreateListScenesRequest() (request *ListScenesRequest) {
 	request = &ListScenesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ListScenes", "/openapi/instances/[InstanceId]/scenes", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "ListScenes", "/v2/openapi/instances/[instanceId]/scenes", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }

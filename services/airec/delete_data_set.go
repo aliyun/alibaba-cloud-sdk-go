@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDataSet invokes the airec.DeleteDataSet API synchronously
-// api document: https://help.aliyun.com/api/airec/deletedataset.html
 func (client *Client) DeleteDataSet(request *DeleteDataSetRequest) (response *DeleteDataSetResponse, err error) {
 	response = CreateDeleteDataSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDataSet(request *DeleteDataSetRequest) (response *De
 }
 
 // DeleteDataSetWithChan invokes the airec.DeleteDataSet API asynchronously
-// api document: https://help.aliyun.com/api/airec/deletedataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDataSetWithChan(request *DeleteDataSetRequest) (<-chan *DeleteDataSetResponse, <-chan error) {
 	responseChan := make(chan *DeleteDataSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDataSetWithChan(request *DeleteDataSetRequest) (<-ch
 }
 
 // DeleteDataSetWithCallback invokes the airec.DeleteDataSet API asynchronously
-// api document: https://help.aliyun.com/api/airec/deletedataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDataSetWithCallback(request *DeleteDataSetRequest, callback func(response *DeleteDataSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) DeleteDataSetWithCallback(request *DeleteDataSetRequest, c
 // DeleteDataSetRequest is the request struct for api DeleteDataSet
 type DeleteDataSetRequest struct {
 	*requests.RoaRequest
-	VersionId  string `position:"Path" name:"VersionId"`
-	InstanceId string `position:"Path" name:"InstanceId"`
+	VersionId  string `position:"Path" name:"versionId"`
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
 // DeleteDataSetResponse is the response struct for api DeleteDataSet
 type DeleteDataSetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateDeleteDataSetRequest creates a request to invoke DeleteDataSet API
@@ -94,7 +89,7 @@ func CreateDeleteDataSetRequest() (request *DeleteDataSetRequest) {
 	request = &DeleteDataSetRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DeleteDataSet", "/openapi/instances/[InstanceId]/dataSets/[VersionId]", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2020-11-26", "DeleteDataSet", "/v2/openapi/instances/[instanceId]/dataSets/[versionId]", "airec", "openAPI")
 	request.Method = requests.DELETE
 	return
 }
