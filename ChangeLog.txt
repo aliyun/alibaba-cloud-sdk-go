@@ -1,3 +1,10 @@
+2021-01-07 Version: v1.61.833
+- Generated 2019-03-06 for `Dbs`.
+- Add CreateAndStartBackupPlan.
+- Add DescribeDLAService.
+- Add CreateDLAService.
+- Add CloseDLAService.
+
 2021-01-07 Version: v1.61.832
 - Generated 2019-09-10 for `waf-openapi`.
 
