@@ -1,3 +1,8 @@
+2021-01-08 Version: v1.61.836
+- Generated 2019-01-01 for `Cms`.
+- Add API related to resource quota of source monitoring.
+- Add a new version of alert log API.
+
 2021-01-08 Version: v1.61.835
 - Generated 2020-07-01 for `CCC`.
 - Add new API for configuration and report, generate SDK again.

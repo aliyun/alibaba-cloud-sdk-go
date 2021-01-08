@@ -17,5 +17,5 @@ package cms
 
 // ResourcesInDescribeMonitorGroups is a nested struct in cms response
 type ResourcesInDescribeMonitorGroups struct {
-	Resource []ResourceInDescribeMonitorGroups `json:"Resource" xml:"Resource"`
+	Resource []Resource `json:"Resource" xml:"Resource"`
 }

@@ -86,6 +86,7 @@ type ModifyHostAvailabilityRequest struct {
 	AlertConfigEndTime                 requests.Integer                                   `position:"Query" name:"AlertConfig.EndTime"`
 	TaskOptionHttpURI                  string                                             `position:"Query" name:"TaskOption.HttpURI"`
 	TaskScope                          string                                             `position:"Query" name:"TaskScope"`
+	TaskOptionHttpPostContent          string                                             `position:"Query" name:"TaskOption.HttpPostContent"`
 	AlertConfigStartTime               requests.Integer                                   `position:"Query" name:"AlertConfig.StartTime"`
 	AlertConfigWebHook                 string                                             `position:"Query" name:"AlertConfig.WebHook"`
 }

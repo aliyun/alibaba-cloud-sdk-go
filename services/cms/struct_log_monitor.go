@@ -17,7 +17,10 @@ package cms
 
 // LogMonitor is a nested struct in cms response
 type LogMonitor struct {
+	QuotaPackage        int                 `json:"QuotaPackage" xml:"QuotaPackage"`
 	SlsRegionId         string              `json:"SlsRegionId" xml:"SlsRegionId"`
+	QuotaUsed           int                 `json:"QuotaUsed" xml:"QuotaUsed"`
+	QuotaLimit          int                 `json:"QuotaLimit" xml:"QuotaLimit"`
 	MetricExpress       string              `json:"MetricExpress" xml:"MetricExpress"`
 	GmtCreate           int64               `json:"GmtCreate" xml:"GmtCreate"`
 	SlsProject          string              `json:"SlsProject" xml:"SlsProject"`
