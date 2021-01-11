@@ -71,24 +71,31 @@ func (client *Client) DescribeSubscriptionInstancesWithCallback(request *Describ
 // DescribeSubscriptionInstancesRequest is the request struct for api DescribeSubscriptionInstances
 type DescribeSubscriptionInstancesRequest struct {
 	*requests.RpcRequest
-	ClientToken              string           `position:"Query" name:"ClientToken"`
-	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId                  string           `position:"Query" name:"OwnerId"`
-	AccountId                string           `position:"Query" name:"AccountId"`
-	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
-	SubscriptionInstanceName string           `position:"Query" name:"SubscriptionInstanceName"`
+	ClientToken              string                              `position:"Query" name:"ClientToken"`
+	PageNum                  requests.Integer                    `position:"Query" name:"PageNum"`
+	OwnerId                  string                              `position:"Query" name:"OwnerId"`
+	AccountId                string                              `position:"Query" name:"AccountId"`
+	PageSize                 requests.Integer                    `position:"Query" name:"PageSize"`
+	SubscriptionInstanceName string                              `position:"Query" name:"SubscriptionInstanceName"`
+	Tag                      *[]DescribeSubscriptionInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// DescribeSubscriptionInstancesTag is a repeated param struct in DescribeSubscriptionInstancesRequest
+type DescribeSubscriptionInstancesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeSubscriptionInstancesResponse is the response struct for api DescribeSubscriptionInstances
 type DescribeSubscriptionInstancesResponse struct {
 	*responses.BaseResponse
+	ErrCode               string                `json:"ErrCode" xml:"ErrCode"`
+	ErrMessage            string                `json:"ErrMessage" xml:"ErrMessage"`
 	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount       int                   `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId             string                `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount      int64                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	ErrCode               string                `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage            string                `json:"ErrMessage" xml:"ErrMessage"`
 	Success               string                `json:"Success" xml:"Success"`
+	TotalRecordCount      int64                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	SubscriptionInstances SubscriptionInstances `json:"SubscriptionInstances" xml:"SubscriptionInstances"`
 }
 

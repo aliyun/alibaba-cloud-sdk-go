@@ -71,23 +71,30 @@ func (client *Client) DescribeMigrationJobsWithCallback(request *DescribeMigrati
 // DescribeMigrationJobsRequest is the request struct for api DescribeMigrationJobs
 type DescribeMigrationJobsRequest struct {
 	*requests.RpcRequest
-	PageNum          requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId          string           `position:"Query" name:"OwnerId"`
-	AccountId        string           `position:"Query" name:"AccountId"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	MigrationJobName string           `position:"Query" name:"MigrationJobName"`
+	PageNum          requests.Integer            `position:"Query" name:"PageNum"`
+	OwnerId          string                      `position:"Query" name:"OwnerId"`
+	AccountId        string                      `position:"Query" name:"AccountId"`
+	PageSize         requests.Integer            `position:"Query" name:"PageSize"`
+	MigrationJobName string                      `position:"Query" name:"MigrationJobName"`
+	Tag              *[]DescribeMigrationJobsTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// DescribeMigrationJobsTag is a repeated param struct in DescribeMigrationJobsRequest
+type DescribeMigrationJobsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeMigrationJobsResponse is the response struct for api DescribeMigrationJobs
 type DescribeMigrationJobsResponse struct {
 	*responses.BaseResponse
+	ErrCode          string        `json:"ErrCode" xml:"ErrCode"`
+	ErrMessage       string        `json:"ErrMessage" xml:"ErrMessage"`
 	PageNumber       int           `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int           `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId        string        `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int64         `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	ErrCode          string        `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage       string        `json:"ErrMessage" xml:"ErrMessage"`
 	Success          string        `json:"Success" xml:"Success"`
+	TotalRecordCount int64         `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	MigrationJobs    MigrationJobs `json:"MigrationJobs" xml:"MigrationJobs"`
 }
 

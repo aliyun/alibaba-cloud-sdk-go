@@ -31,4 +31,5 @@ type SubscriptionInstance struct {
 	SubscriptionDataType     SubscriptionDataType                              `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
 	SubscriptionHost         SubscriptionHost                                  `json:"SubscriptionHost" xml:"SubscriptionHost"`
 	SubscriptionObject       SubscriptionObjectInDescribeSubscriptionInstances `json:"SubscriptionObject" xml:"SubscriptionObject"`
+	Tags                     TagsInDescribeSubscriptionInstances               `json:"Tags" xml:"Tags"`
 }
