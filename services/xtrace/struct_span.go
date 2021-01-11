@@ -26,6 +26,8 @@ type Span struct {
 	RpcId         string                 `json:"RpcId" xml:"RpcId"`
 	ResultCode    string                 `json:"ResultCode" xml:"ResultCode"`
 	HaveStack     bool                   `json:"HaveStack" xml:"HaveStack"`
+	SpanId        string                 `json:"SpanId" xml:"SpanId"`
+	ParentSpanId  string                 `json:"ParentSpanId" xml:"ParentSpanId"`
 	TagEntryList  TagEntryListInGetTrace `json:"TagEntryList" xml:"TagEntryList"`
 	LogEventList  LogEventList           `json:"LogEventList" xml:"LogEventList"`
 }

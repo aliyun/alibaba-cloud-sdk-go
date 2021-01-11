@@ -71,8 +71,9 @@ func (client *Client) GetTokenWithCallback(request *GetTokenRequest, callback fu
 // GetTokenRequest is the request struct for api GetToken
 type GetTokenRequest struct {
 	*requests.RpcRequest
-	AppType     string `position:"Query" name:"AppType"`
-	ProxyUserId string `position:"Query" name:"ProxyUserId"`
+	AppType     string           `position:"Query" name:"AppType"`
+	ProxyUserId string           `position:"Query" name:"ProxyUserId"`
+	IsForce     requests.Boolean `position:"Query" name:"IsForce"`
 }
 
 // GetTokenResponse is the response struct for api GetToken
