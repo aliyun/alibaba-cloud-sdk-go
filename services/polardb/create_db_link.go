@@ -73,6 +73,7 @@ type CreateDBLinkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceDBName         string           `position:"Query" name:"SourceDBName"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	TargetDBName         string           `position:"Query" name:"TargetDBName"`
 	TargetIp             string           `position:"Query" name:"TargetIp"`
 	DBLinkName           string           `position:"Query" name:"DBLinkName"`

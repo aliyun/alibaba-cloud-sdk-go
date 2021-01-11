@@ -74,10 +74,12 @@ type CreateDBNodesRequest struct {
 	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string                 `position:"Query" name:"ClientToken"`
 	EndpointBindList     string                 `position:"Query" name:"EndpointBindList"`
+	PlannedEndTime       string                 `position:"Query" name:"PlannedEndTime"`
 	ResourceOwnerAccount string                 `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string                 `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string                 `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
+	PlannedStartTime     string                 `position:"Query" name:"PlannedStartTime"`
 	DBNode               *[]CreateDBNodesDBNode `position:"Query" name:"DBNode"  type:"Repeated"`
 }
 

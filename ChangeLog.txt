@@ -1,3 +1,9 @@
+2021-01-11 Version: v1.61.838
+- Generated 2017-08-01 for `polardb`.
+- Support DescribeScheduleTasks.
+- Support CancelScheduleTasks.
+- Upgrade UpgradeDBClusterMinorVersion.
+
 2021-01-11 Version: v1.61.837
 - Generated 2020-01-01 for `Dts`.
 - Add DescribeConnectionStatus and DescribeDTSIP, remove UpgradeTwoWay.

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateAccount invokes the polardb.CreateAccount API synchronously
-func (client *Client) CreateAccount(request *CreateAccountRequest) (response *CreateAccountResponse, err error) {
-	response = CreateCreateAccountResponse()
+// CheckAccountName invokes the polardb.CheckAccountName API synchronously
+func (client *Client) CheckAccountName(request *CheckAccountNameRequest) (response *CheckAccountNameResponse, err error) {
+	response = CreateCheckAccountNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateAccountWithChan invokes the polardb.CreateAccount API asynchronously
-func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-chan *CreateAccountResponse, <-chan error) {
-	responseChan := make(chan *CreateAccountResponse, 1)
+// CheckAccountNameWithChan invokes the polardb.CheckAccountName API asynchronously
+func (client *Client) CheckAccountNameWithChan(request *CheckAccountNameRequest) (<-chan *CheckAccountNameResponse, <-chan error) {
+	responseChan := make(chan *CheckAccountNameResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateAccount(request)
+		response, err := client.CheckAccountName(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
-// CreateAccountWithCallback invokes the polardb.CreateAccount API asynchronously
-func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, callback func(response *CreateAccountResponse, err error)) <-chan int {
+// CheckAccountNameWithCallback invokes the polardb.CheckAccountName API asynchronously
+func (client *Client) CheckAccountNameWithCallback(request *CheckAccountNameRequest, callback func(response *CheckAccountNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateAccountResponse
+		var response *CheckAccountNameResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateAccount(request)
+		response, err = client.CheckAccountName(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,42 +68,36 @@ func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, c
 	return result
 }
 
-// CreateAccountRequest is the request struct for api CreateAccount
-type CreateAccountRequest struct {
+// CheckAccountNameRequest is the request struct for api CheckAccountName
+type CheckAccountNameRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	AccountType          string           `position:"Query" name:"AccountType"`
-	AccountDescription   string           `position:"Query" name:"AccountDescription"`
-	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AccountPassword      string           `position:"Query" name:"AccountPassword"`
-	DBName               string           `position:"Query" name:"DBName"`
 }
 
-// CreateAccountResponse is the response struct for api CreateAccount
-type CreateAccountResponse struct {
+// CheckAccountNameResponse is the response struct for api CheckAccountName
+type CheckAccountNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateCreateAccountRequest creates a request to invoke CreateAccount API
-func CreateCreateAccountRequest() (request *CreateAccountRequest) {
-	request = &CreateAccountRequest{
+// CreateCheckAccountNameRequest creates a request to invoke CheckAccountName API
+func CreateCheckAccountNameRequest() (request *CheckAccountNameRequest) {
+	request = &CheckAccountNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CreateAccount", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CheckAccountName", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateAccountResponse creates a response to parse from CreateAccount response
-func CreateCreateAccountResponse() (response *CreateAccountResponse) {
-	response = &CreateAccountResponse{
+// CreateCheckAccountNameResponse creates a response to parse from CheckAccountName response
+func CreateCheckAccountNameResponse() (response *CheckAccountNameResponse) {
+	response = &CheckAccountNameResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

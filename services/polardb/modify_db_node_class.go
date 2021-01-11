@@ -73,11 +73,13 @@ type ModifyDBNodeClassRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
 	DBNodeTargetClass    string           `position:"Query" name:"DBNodeTargetClass"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
 	ModifyType           string           `position:"Query" name:"ModifyType"`
 }
 
