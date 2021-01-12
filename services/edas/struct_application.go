@@ -18,12 +18,32 @@ package edas
 // Application is a nested struct in edas response
 type Application struct {
 	Name                 string `json:"Name" xml:"Name"`
-	AppId                string `json:"AppId" xml:"AppId"`
-	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
+	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
+	Dockerize            bool   `json:"Dockerize" xml:"Dockerize"`
+	SlbInfo              string `json:"SlbInfo" xml:"SlbInfo"`
 	RegionId             string `json:"RegionId" xml:"RegionId"`
-	BuildPackageId       int64  `json:"BuildPackageId" xml:"BuildPackageId"`
-	ResourceGroupId      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	SlbPort              int    `json:"SlbPort" xml:"SlbPort"`
+	UserId               string `json:"UserId" xml:"UserId"`
 	ApplicationType      string `json:"ApplicationType" xml:"ApplicationType"`
-	ClusterType          int    `json:"ClusterType" xml:"ClusterType"`
+	Description          string `json:"Description" xml:"Description"`
+	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
+	Port                 int    `json:"Port" xml:"Port"`
+	ClusterType          string `json:"ClusterType" xml:"ClusterType"`
+	ExtSlbIp             string `json:"ExtSlbIp" xml:"ExtSlbIp"`
+	BuildPackageId       int64  `json:"BuildPackageId" xml:"BuildPackageId"`
+	Email                string `json:"Email" xml:"Email"`
+	Memory               int    `json:"Memory" xml:"Memory"`
+	NameSpace            string `json:"NameSpace" xml:"NameSpace"`
+	ExtSlbId             string `json:"ExtSlbId" xml:"ExtSlbId"`
+	Owner                string `json:"Owner" xml:"Owner"`
+	ExtSlbName           string `json:"ExtSlbName" xml:"ExtSlbName"`
+	SlbName              string `json:"SlbName" xml:"SlbName"`
+	AppId                string `json:"AppId" xml:"AppId"`
+	InstanceCount        int    `json:"InstanceCount" xml:"InstanceCount"`
+	HealthCheckUrl       string `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
+	SlbId                string `json:"SlbId" xml:"SlbId"`
+	Cpu                  int    `json:"Cpu" xml:"Cpu"`
+	AppName              string `json:"AppName" xml:"AppName"`
 	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
+	SlbIp                string `json:"SlbIp" xml:"SlbIp"`
 }

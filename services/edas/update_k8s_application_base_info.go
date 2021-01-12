@@ -73,7 +73,9 @@ type UpdateK8sApplicationBaseInfoRequest struct {
 	*requests.RoaRequest
 	Owner       string `position:"Query" name:"Owner"`
 	AppId       string `position:"Query" name:"AppId"`
+	PhoneNumber string `position:"Query" name:"PhoneNumber"`
 	Description string `position:"Query" name:"Description"`
+	Email       string `position:"Query" name:"Email"`
 }
 
 // UpdateK8sApplicationBaseInfoResponse is the response struct for api UpdateK8sApplicationBaseInfo
@@ -90,7 +92,7 @@ func CreateUpdateK8sApplicationBaseInfoRequest() (request *UpdateK8sApplicationB
 	request = &UpdateK8sApplicationBaseInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationBaseInfo", "/pop/v5/oam/update_app_basic_info", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationBaseInfo", "/pop/v5/oam/update_app_basic_info", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

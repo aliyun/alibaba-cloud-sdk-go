@@ -77,10 +77,11 @@ type GetApplicationRequest struct {
 // GetApplicationResponse is the response struct for api GetApplication
 type GetApplicationResponse struct {
 	*responses.BaseResponse
-	Code       int        `json:"Code" xml:"Code"`
-	Message    string     `json:"Message" xml:"Message"`
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Applcation Applcation `json:"Applcation" xml:"Applcation"`
+	Code        int         `json:"Code" xml:"Code"`
+	Message     string      `json:"Message" xml:"Message"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	Applcation  Applcation  `json:"Applcation" xml:"Applcation"`
+	Application Application `json:"Application" xml:"Application"`
 }
 
 // CreateGetApplicationRequest creates a request to invoke GetApplication API
@@ -88,7 +89,7 @@ func CreateGetApplicationRequest() (request *GetApplicationRequest) {
 	request = &GetApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetApplication", "/pop/v5/app/app_info", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetApplication", "/pop/v5/app/app_info", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

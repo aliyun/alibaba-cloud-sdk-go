@@ -96,7 +96,7 @@ func CreateUpdateFlowControlRequest() (request *UpdateFlowControlRequest) {
 	request = &UpdateFlowControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateFlowControl", "/pop/v5/flowControl", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateFlowControl", "/pop/v5/flowControl", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

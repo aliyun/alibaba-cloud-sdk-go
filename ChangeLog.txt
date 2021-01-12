@@ -1,3 +1,10 @@
+2021-01-12 Version: v1.61.844
+- Generated 2017-08-01 for `Edas`.
+- Modify API InsertApplication.
+- Modify API SynchronizeResource.
+- New API UpdateHookConfiguration.
+- New API ListApplicationEcc.
+
 2021-01-11 Version: v1.61.843
 - Generated 2016-04-08 for `Emr`.
 

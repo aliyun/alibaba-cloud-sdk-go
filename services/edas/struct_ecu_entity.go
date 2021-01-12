@@ -24,6 +24,7 @@ type EcuEntity struct {
 	Mem           int    `json:"Mem" xml:"Mem"`
 	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
 	EcuId         string `json:"EcuId" xml:"EcuId"`
+	AppId         string `json:"AppId" xml:"AppId"`
 	RegionId      string `json:"RegionId" xml:"RegionId"`
 	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
 	AvailableCpu  int    `json:"AvailableCpu" xml:"AvailableCpu"`

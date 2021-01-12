@@ -79,10 +79,10 @@ type ListChildrenStacksRequest struct {
 // ListChildrenStacksResponse is the response struct for api ListChildrenStacks
 type ListChildrenStacksResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Code      int                      `json:"Code" xml:"Code"`
+	Message   string                   `json:"Message" xml:"Message"`
+	Data      DataInListChildrenStacks `json:"Data" xml:"Data"`
 }
 
 // CreateListChildrenStacksRequest creates a request to invoke ListChildrenStacks API
@@ -90,7 +90,7 @@ func CreateListChildrenStacksRequest() (request *ListChildrenStacksRequest) {
 	request = &ListChildrenStacksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListChildrenStacks", "/pop/v5/s2i/list_children_stack", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListChildrenStacks", "/pop/v5/s2i/list_children_stack", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -71,7 +71,8 @@ func (client *Client) SynchronizeResourceWithCallback(request *SynchronizeResour
 // SynchronizeResourceRequest is the request struct for api SynchronizeResource
 type SynchronizeResourceRequest struct {
 	*requests.RoaRequest
-	Type string `position:"Query" name:"Type"`
+	Type        string `position:"Query" name:"Type"`
+	ResourceIds string `position:"Query" name:"ResourceIds"`
 }
 
 // SynchronizeResourceResponse is the response struct for api SynchronizeResource
@@ -89,7 +90,7 @@ func CreateSynchronizeResourceRequest() (request *SynchronizeResourceRequest) {
 	request = &SynchronizeResourceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "SynchronizeResource", "/pop/v5/resource/pop_sync_resource", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "SynchronizeResource", "/pop/v5/resource/pop_sync_resource", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

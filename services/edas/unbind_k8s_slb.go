@@ -71,6 +71,7 @@ func (client *Client) UnbindK8sSlbWithCallback(request *UnbindK8sSlbRequest, cal
 // UnbindK8sSlbRequest is the request struct for api UnbindK8sSlb
 type UnbindK8sSlbRequest struct {
 	*requests.RoaRequest
+	SlbName   string `position:"Query" name:"SlbName"`
 	AppId     string `position:"Query" name:"AppId"`
 	ClusterId string `position:"Query" name:"ClusterId"`
 	Type      string `position:"Query" name:"Type"`
@@ -90,7 +91,7 @@ func CreateUnbindK8sSlbRequest() (request *UnbindK8sSlbRequest) {
 	request = &UnbindK8sSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UnbindK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UnbindK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

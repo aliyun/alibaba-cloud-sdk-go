@@ -87,7 +87,7 @@ func CreateListResourceGroupRequest() (request *ListResourceGroupRequest) {
 	request = &ListResourceGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListResourceGroup", "/pop/v5/resource/reg_group_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListResourceGroup", "/pop/v5/resource/reg_group_list", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }
