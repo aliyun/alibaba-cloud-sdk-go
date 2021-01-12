@@ -28,6 +28,7 @@ type Data struct {
 	PageNumber             int          `json:"PageNumber" xml:"PageNumber"`
 	BreakCode              string       `json:"BreakCode" xml:"BreakCode"`
 	Extension              string       `json:"Extension" xml:"Extension"`
+	FileName               string       `json:"FileName" xml:"FileName"`
 	JobId                  string       `json:"JobId" xml:"JobId"`
 	Heartbeat              int64        `json:"Heartbeat" xml:"Heartbeat"`
 	City                   string       `json:"City" xml:"City"`
@@ -37,6 +38,7 @@ type Data struct {
 	Province               string       `json:"Province" xml:"Province"`
 	WorkMode               string       `json:"WorkMode" xml:"WorkMode"`
 	Signature              string       `json:"Signature" xml:"Signature"`
+	FileUrl                string       `json:"FileUrl" xml:"FileUrl"`
 	Mobile                 string       `json:"Mobile" xml:"Mobile"`
 	OutboundScenario       bool         `json:"OutboundScenario" xml:"OutboundScenario"`
 	UserName               string       `json:"UserName" xml:"UserName"`

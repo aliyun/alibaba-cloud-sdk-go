@@ -1,3 +1,7 @@
+2021-01-12 Version: v1.61.846
+- Generated 2020-07-01 for `CCC`.
+- Add new API for recording.
+
 2021-01-12 Version: v1.61.845
 - Generated 2019-12-30 for `facebody`.
 - Update ExtractPedestrianFeatureAttr.
