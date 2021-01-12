@@ -1,3 +1,7 @@
+2021-01-12 Version: v1.61.845
+- Generated 2019-12-30 for `facebody`.
+- Update ExtractPedestrianFeatureAttr.
+
 2021-01-12 Version: v1.61.844
 - Generated 2017-08-01 for `Edas`.
 - Modify API InsertApplication.

@@ -71,8 +71,9 @@ func (client *Client) ExtractPedestrianFeatureAttrWithCallback(request *ExtractP
 // ExtractPedestrianFeatureAttrRequest is the request struct for api ExtractPedestrianFeatureAttr
 type ExtractPedestrianFeatureAttrRequest struct {
 	*requests.RpcRequest
-	Mode     string `position:"Body" name:"Mode"`
-	ImageURL string `position:"Body" name:"ImageURL"`
+	Mode           string `position:"Body" name:"Mode"`
+	ImageURL       string `position:"Body" name:"ImageURL"`
+	ServiceVersion string `position:"Body" name:"ServiceVersion"`
 }
 
 // ExtractPedestrianFeatureAttrResponse is the response struct for api ExtractPedestrianFeatureAttr

@@ -55,8 +55,8 @@ type Data struct {
 	FaceId               string                                    `json:"FaceId" xml:"FaceId"`
 	UpperType            string                                    `json:"UpperType" xml:"UpperType"`
 	LandmarkCount        int                                       `json:"LandmarkCount" xml:"LandmarkCount"`
-	Feature              string                                    `json:"Feature" xml:"Feature"`
 	UpperTypeScore       float64                                   `json:"UpperTypeScore" xml:"UpperTypeScore"`
+	Feature              string                                    `json:"Feature" xml:"Feature"`
 	UpperColor           string                                    `json:"UpperColor" xml:"UpperColor"`
 	LowerTypeScore       float64                                   `json:"LowerTypeScore" xml:"LowerTypeScore"`
 	PersonNumber         int                                       `json:"PersonNumber" xml:"PersonNumber"`
