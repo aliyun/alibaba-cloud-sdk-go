@@ -1,3 +1,8 @@
+2021-01-13 Version: v1.61.848
+- Generated 2015-01-01 for `R-kvstore`.
+- Add SwitchInstanceHA API.
+- ModifyInstanceSpec add SourceBiz param.
+
 2021-01-13 Version: v1.61.847
 - Generated 2018-01-20 for `Iot`.
 - Add support for IoT jobs, including job management and query APIs like CreateJob, UpdateJob, QueryJob, CancelJob, ListTask, QueryTask, QueryJobStatistics etc.
