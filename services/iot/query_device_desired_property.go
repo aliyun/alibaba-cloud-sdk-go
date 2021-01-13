@@ -71,14 +71,16 @@ func (client *Client) QueryDeviceDesiredPropertyWithCallback(request *QueryDevic
 // QueryDeviceDesiredPropertyRequest is the request struct for api QueryDeviceDesiredProperty
 type QueryDeviceDesiredPropertyRequest struct {
 	*requests.RpcRequest
-	IotId           string    `position:"Query" name:"IotId"`
-	IotInstanceId   string    `position:"Query" name:"IotInstanceId"`
-	Identifier      *[]string `position:"Query" name:"Identifier"  type:"Repeated"`
-	ProductKey      string    `position:"Query" name:"ProductKey"`
-	ApiProduct      string    `position:"Body" name:"ApiProduct"`
-	ApiRevision     string    `position:"Body" name:"ApiRevision"`
-	DeviceName      string    `position:"Query" name:"DeviceName"`
-	FunctionBlockId string    `position:"Query" name:"FunctionBlockId"`
+	RealTenantId      string    `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string    `position:"Query" name:"RealTripartiteKey"`
+	IotId             string    `position:"Query" name:"IotId"`
+	IotInstanceId     string    `position:"Query" name:"IotInstanceId"`
+	Identifier        *[]string `position:"Query" name:"Identifier"  type:"Repeated"`
+	ProductKey        string    `position:"Query" name:"ProductKey"`
+	ApiProduct        string    `position:"Body" name:"ApiProduct"`
+	ApiRevision       string    `position:"Body" name:"ApiRevision"`
+	DeviceName        string    `position:"Query" name:"DeviceName"`
+	FunctionBlockId   string    `position:"Query" name:"FunctionBlockId"`
 }
 
 // QueryDeviceDesiredPropertyResponse is the response struct for api QueryDeviceDesiredProperty

@@ -71,6 +71,8 @@ func (client *Client) BatchUpdateDeviceNicknameWithCallback(request *BatchUpdate
 // BatchUpdateDeviceNicknameRequest is the request struct for api BatchUpdateDeviceNickname
 type BatchUpdateDeviceNicknameRequest struct {
 	*requests.RpcRequest
+	RealTenantId       string                                         `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey  string                                         `position:"Query" name:"RealTripartiteKey"`
 	IotInstanceId      string                                         `position:"Query" name:"IotInstanceId"`
 	DeviceNicknameInfo *[]BatchUpdateDeviceNicknameDeviceNicknameInfo `position:"Query" name:"DeviceNicknameInfo"  type:"Repeated"`
 	ApiProduct         string                                         `position:"Body" name:"ApiProduct"`

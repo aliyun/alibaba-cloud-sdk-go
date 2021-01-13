@@ -71,10 +71,13 @@ func (client *Client) QueryDeviceStatisticsWithCallback(request *QueryDeviceStat
 // QueryDeviceStatisticsRequest is the request struct for api QueryDeviceStatistics
 type QueryDeviceStatisticsRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	GroupId           string `position:"Query" name:"GroupId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryDeviceStatisticsResponse is the response struct for api QueryDeviceStatistics

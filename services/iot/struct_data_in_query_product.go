@@ -34,4 +34,5 @@ type DataInQueryProduct struct {
 	Owner               bool   `json:"Owner" xml:"Owner"`
 	NetType             int    `json:"NetType" xml:"NetType"`
 	AuthType            string `json:"AuthType" xml:"AuthType"`
+	ValidateType        int    `json:"ValidateType" xml:"ValidateType"`
 }

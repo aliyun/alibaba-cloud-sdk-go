@@ -71,11 +71,13 @@ func (client *Client) BatchQueryDeviceDetailWithCallback(request *BatchQueryDevi
 // BatchQueryDeviceDetailRequest is the request struct for api BatchQueryDeviceDetail
 type BatchQueryDeviceDetailRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
-	ApiProduct    string    `position:"Body" name:"ApiProduct"`
-	ApiRevision   string    `position:"Body" name:"ApiRevision"`
-	DeviceName    *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
+	RealTenantId      string    `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string    `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string    `position:"Query" name:"IotInstanceId"`
+	ProductKey        string    `position:"Query" name:"ProductKey"`
+	ApiProduct        string    `position:"Body" name:"ApiProduct"`
+	ApiRevision       string    `position:"Body" name:"ApiRevision"`
+	DeviceName        *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
 }
 
 // BatchQueryDeviceDetailResponse is the response struct for api BatchQueryDeviceDetail

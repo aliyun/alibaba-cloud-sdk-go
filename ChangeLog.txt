@@ -1,3 +1,7 @@
+2021-01-13 Version: v1.61.847
+- Generated 2018-01-20 for `Iot`.
+- Add support for IoT jobs, including job management and query APIs like CreateJob, UpdateJob, QueryJob, CancelJob, ListTask, QueryTask, QueryJobStatistics etc.
+
 2021-01-12 Version: v1.61.846
 - Generated 2020-07-01 for `CCC`.
 - Add new API for recording.

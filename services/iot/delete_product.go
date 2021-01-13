@@ -71,10 +71,12 @@ func (client *Client) DeleteProductWithCallback(request *DeleteProductRequest, c
 // DeleteProductRequest is the request struct for api DeleteProduct
 type DeleteProductRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // DeleteProductResponse is the response struct for api DeleteProduct

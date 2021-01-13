@@ -71,17 +71,19 @@ func (client *Client) QueryDevicePropertiesDataWithCallback(request *QueryDevice
 // QueryDevicePropertiesDataRequest is the request struct for api QueryDevicePropertiesData
 type QueryDevicePropertiesDataRequest struct {
 	*requests.RpcRequest
-	StartTime     requests.Integer `position:"Query" name:"StartTime"`
-	IotId         string           `position:"Query" name:"IotId"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Identifier    *[]string        `position:"Query" name:"Identifier"  type:"Repeated"`
-	EndTime       requests.Integer `position:"Query" name:"EndTime"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
-	Asc           requests.Integer `position:"Query" name:"Asc"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	DeviceName    string           `position:"Query" name:"DeviceName"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	StartTime         requests.Integer `position:"Query" name:"StartTime"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	IotId             string           `position:"Query" name:"IotId"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	Identifier        *[]string        `position:"Query" name:"Identifier"  type:"Repeated"`
+	EndTime           requests.Integer `position:"Query" name:"EndTime"`
+	ProductKey        string           `position:"Query" name:"ProductKey"`
+	Asc               requests.Integer `position:"Query" name:"Asc"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	DeviceName        string           `position:"Query" name:"DeviceName"`
 }
 
 // QueryDevicePropertiesDataResponse is the response struct for api QueryDevicePropertiesData

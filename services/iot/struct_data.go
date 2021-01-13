@@ -38,6 +38,7 @@ type Data struct {
 	OssAddress                string                    `json:"OssAddress" xml:"OssAddress"`
 	FirmwareId                string                    `json:"FirmwareId" xml:"FirmwareId"`
 	AliyunCommodityCode       string                    `json:"AliyunCommodityCode" xml:"AliyunCommodityCode"`
+	OssAccessKeyId            string                    `json:"OssAccessKeyId" xml:"OssAccessKeyId"`
 	ApplyId                   int64                     `json:"ApplyId" xml:"ApplyId"`
 	Host                      string                    `json:"Host" xml:"Host"`
 	DeviceName                string                    `json:"DeviceName" xml:"DeviceName"`

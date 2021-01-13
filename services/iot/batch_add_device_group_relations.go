@@ -71,11 +71,13 @@ func (client *Client) BatchAddDeviceGroupRelationsWithCallback(request *BatchAdd
 // BatchAddDeviceGroupRelationsRequest is the request struct for api BatchAddDeviceGroupRelations
 type BatchAddDeviceGroupRelationsRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string                                `position:"Query" name:"IotInstanceId"`
-	GroupId       string                                `position:"Query" name:"GroupId"`
-	ApiProduct    string                                `position:"Body" name:"ApiProduct"`
-	ApiRevision   string                                `position:"Body" name:"ApiRevision"`
-	Device        *[]BatchAddDeviceGroupRelationsDevice `position:"Query" name:"Device"  type:"Repeated"`
+	RealTenantId      string                                `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string                                `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string                                `position:"Query" name:"IotInstanceId"`
+	GroupId           string                                `position:"Query" name:"GroupId"`
+	ApiProduct        string                                `position:"Body" name:"ApiProduct"`
+	ApiRevision       string                                `position:"Body" name:"ApiRevision"`
+	Device            *[]BatchAddDeviceGroupRelationsDevice `position:"Query" name:"Device"  type:"Repeated"`
 }
 
 // BatchAddDeviceGroupRelationsDevice is a repeated param struct in BatchAddDeviceGroupRelationsRequest

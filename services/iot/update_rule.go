@@ -80,6 +80,7 @@ type UpdateRuleRequest struct {
 	ProductKey    string           `position:"Query" name:"ProductKey"`
 	ApiProduct    string           `position:"Body" name:"ApiProduct"`
 	Name          string           `position:"Query" name:"Name"`
+	Topic         string           `position:"Query" name:"Topic"`
 	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 	RuleId        requests.Integer `position:"Query" name:"RuleId"`
 }
