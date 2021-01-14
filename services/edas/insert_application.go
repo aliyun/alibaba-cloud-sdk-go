@@ -76,7 +76,7 @@ type InsertApplicationRequest struct {
 	MinHeapSize     requests.Integer `position:"Query" name:"MinHeapSize"`
 	BuildPackId     requests.Integer `position:"Query" name:"BuildPackId"`
 	ComponentIds    string           `position:"Query" name:"ComponentIds"`
-	HealthCheckURL  string           `position:"Query" name:"HealthCheckURL"`
+	HealthCheckUrl  string           `position:"Query" name:"HealthCheckUrl"`
 	ReservedPortStr string           `position:"Query" name:"ReservedPortStr"`
 	JvmOptions      string           `position:"Query" name:"JvmOptions"`
 	Description     string           `position:"Query" name:"Description"`
@@ -84,10 +84,12 @@ type InsertApplicationRequest struct {
 	MaxPermSize     requests.Integer `position:"Query" name:"MaxPermSize"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	MaxHeapSize     requests.Integer `position:"Query" name:"MaxHeapSize"`
+	EnablePortCheck requests.Boolean `position:"Query" name:"EnablePortCheck"`
 	ApplicationName string           `position:"Query" name:"ApplicationName"`
 	Jdk             string           `position:"Query" name:"Jdk"`
 	Mem             requests.Integer `position:"Query" name:"Mem"`
 	LogicalRegionId string           `position:"Query" name:"LogicalRegionId"`
+	EnableUrlCheck  requests.Boolean `position:"Query" name:"EnableUrlCheck"`
 	PackageType     string           `position:"Query" name:"PackageType"`
 	Hooks           string           `position:"Query" name:"Hooks"`
 }
