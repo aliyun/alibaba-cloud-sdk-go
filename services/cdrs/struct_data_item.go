@@ -21,13 +21,17 @@ type DataItem struct {
 	TagMetrics       string `json:"TagMetrics" xml:"TagMetrics"`
 	EndTargetImage   string `json:"EndTargetImage" xml:"EndTargetImage"`
 	DateId           string `json:"DateId" xml:"DateId"`
+	Coordinates      string `json:"Coordinates" xml:"Coordinates"`
 	UserGroupId      string `json:"UserGroupId" xml:"UserGroupId"`
 	PersonId         string `json:"PersonId" xml:"PersonId"`
 	Date             string `json:"Date" xml:"Date"`
+	Times            string `json:"Times" xml:"Times"`
+	IntervalTime     string `json:"IntervalTime" xml:"IntervalTime"`
 	DeviceGroupId    string `json:"DeviceGroupId" xml:"DeviceGroupId"`
 	TagCode          string `json:"TagCode" xml:"TagCode"`
 	StartTime        string `json:"StartTime" xml:"StartTime"`
 	EndSourceImage   string `json:"EndSourceImage" xml:"EndSourceImage"`
+	TagMetric        string `json:"TagMetric" xml:"TagMetric"`
 	CorpId           string `json:"CorpId" xml:"CorpId"`
 	StartTargetImage string `json:"StartTargetImage" xml:"StartTargetImage"`
 	DeviceId         string `json:"DeviceId" xml:"DeviceId"`

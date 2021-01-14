@@ -1,3 +1,7 @@
+2021-01-14 Version: v1.61.852
+- Generated 2020-11-01 for `CDRS`.
+- Update function.
+
 2021-01-14 Version: v1.61.851
 - Generated 2018-11-01 for `dms-enterprise`.
 - Fixed ListUsers, GetUser, EnableUser, RegisterUser, DisableUser, DeleteUser API parameter of uid data type error, from number into string.

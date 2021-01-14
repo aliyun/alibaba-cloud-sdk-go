@@ -71,12 +71,13 @@ func (client *Client) CreateProjectWithCallback(request *CreateProjectRequest, c
 // CreateProjectRequest is the request struct for api CreateProject
 type CreateProjectRequest struct {
 	*requests.RpcRequest
-	ClientToken string `position:"Body" name:"ClientToken"`
-	Icon        string `position:"Body" name:"Icon"`
-	Description string `position:"Body" name:"Description"`
-	AppName     string `position:"Body" name:"AppName"`
-	NameSpace   string `position:"Body" name:"NameSpace"`
-	Name        string `position:"Body" name:"Name"`
+	ClientToken        string `position:"Body" name:"ClientToken"`
+	Icon               string `position:"Body" name:"Icon"`
+	Description        string `position:"Body" name:"Description"`
+	AppName            string `position:"Body" name:"AppName"`
+	NameSpace          string `position:"Body" name:"NameSpace"`
+	Name               string `position:"Body" name:"Name"`
+	AggregateSceneCode string `position:"Body" name:"AggregateSceneCode"`
 }
 
 // CreateProjectResponse is the response struct for api CreateProject

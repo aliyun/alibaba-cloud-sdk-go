@@ -72,6 +72,7 @@ func (client *Client) ListPersonResultWithCallback(request *ListPersonResultRequ
 type ListPersonResultRequest struct {
 	*requests.RpcRequest
 	Profession string           `position:"Body" name:"Profession"`
+	Schema     string           `position:"Body" name:"Schema"`
 	CorpId     string           `position:"Body" name:"CorpId"`
 	Gender     string           `position:"Body" name:"Gender"`
 	EndTime    string           `position:"Body" name:"EndTime"`

@@ -79,7 +79,6 @@ type AddCdrsMonitorRequest struct {
 	NotifierUrl          string           `position:"Body" name:"NotifierUrl"`
 	NotifierType         string           `position:"Body" name:"NotifierType"`
 	BatchIndicator       requests.Integer `position:"Body" name:"BatchIndicator"`
-	BizId                string           `position:"Body" name:"BizId"`
 	NotifierTimeOut      requests.Integer `position:"Body" name:"NotifierTimeOut"`
 	AlgorithmVendor      string           `position:"Body" name:"AlgorithmVendor"`
 }

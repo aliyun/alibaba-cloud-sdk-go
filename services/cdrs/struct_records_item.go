@@ -17,14 +17,26 @@ package cdrs
 
 // RecordsItem is a nested struct in cdrs response
 type RecordsItem struct {
-	RightBottomY  string `json:"RightBottomY" xml:"RightBottomY"`
-	RightBottomX  string `json:"RightBottomX" xml:"RightBottomX"`
-	LeftUpY       string `json:"LeftUpY" xml:"LeftUpY"`
-	LeftUpX       string `json:"LeftUpX" xml:"LeftUpX"`
-	GbId          string `json:"GbId" xml:"GbId"`
-	Score         string `json:"Score" xml:"Score"`
-	PicUrl        string `json:"PicUrl" xml:"PicUrl"`
-	ShotTime      string `json:"ShotTime" xml:"ShotTime"`
-	MonitorPicUrl string `json:"MonitorPicUrl" xml:"MonitorPicUrl"`
-	TargetPicUrl  string `json:"TargetPicUrl" xml:"TargetPicUrl"`
+	Name               string     `json:"Name" xml:"Name"`
+	LeftUpX            string     `json:"LeftUpX" xml:"LeftUpX"`
+	RightBottomY       string     `json:"RightBottomY" xml:"RightBottomY"`
+	LeftUpY            string     `json:"LeftUpY" xml:"LeftUpY"`
+	Icon               string     `json:"Icon" xml:"Icon"`
+	Score              string     `json:"Score" xml:"Score"`
+	ModifiedTime       string     `json:"ModifiedTime" xml:"ModifiedTime"`
+	ShotTime           string     `json:"ShotTime" xml:"ShotTime"`
+	GbId               string     `json:"GbId" xml:"GbId"`
+	TaskId             string     `json:"TaskId" xml:"TaskId"`
+	CreatedTime        string     `json:"CreatedTime" xml:"CreatedTime"`
+	TargetPicUrl       string     `json:"TargetPicUrl" xml:"TargetPicUrl"`
+	CorpId             string     `json:"CorpId" xml:"CorpId"`
+	UserId             string     `json:"UserId" xml:"UserId"`
+	DeviceId           string     `json:"DeviceId" xml:"DeviceId"`
+	AggregateSceneCode string     `json:"AggregateSceneCode" xml:"AggregateSceneCode"`
+	PicUrl             string     `json:"PicUrl" xml:"PicUrl"`
+	Description        string     `json:"Description" xml:"Description"`
+	RightBottomX       string     `json:"RightBottomX" xml:"RightBottomX"`
+	MonitorPicUrl      string     `json:"MonitorPicUrl" xml:"MonitorPicUrl"`
+	Type               string     `json:"Type" xml:"Type"`
+	ExtendInfo         ExtendInfo `json:"ExtendInfo" xml:"ExtendInfo"`
 }

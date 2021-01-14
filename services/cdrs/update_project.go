@@ -71,12 +71,13 @@ func (client *Client) UpdateProjectWithCallback(request *UpdateProjectRequest, c
 // UpdateProjectRequest is the request struct for api UpdateProject
 type UpdateProjectRequest struct {
 	*requests.RpcRequest
-	CorpId      string `position:"Body" name:"CorpId"`
-	Icon        string `position:"Body" name:"Icon"`
-	Description string `position:"Body" name:"Description"`
-	AppName     string `position:"Body" name:"AppName"`
-	NameSpace   string `position:"Body" name:"NameSpace"`
-	Name        string `position:"Body" name:"Name"`
+	CorpId             string `position:"Body" name:"CorpId"`
+	Icon               string `position:"Body" name:"Icon"`
+	Description        string `position:"Body" name:"Description"`
+	AppName            string `position:"Body" name:"AppName"`
+	NameSpace          string `position:"Body" name:"NameSpace"`
+	Name               string `position:"Body" name:"Name"`
+	AggregateSceneCode string `position:"Body" name:"AggregateSceneCode"`
 }
 
 // UpdateProjectResponse is the response struct for api UpdateProject
