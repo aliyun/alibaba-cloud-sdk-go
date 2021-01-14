@@ -1,3 +1,9 @@
+2021-01-14 Version: v1.61.851
+- Generated 2018-11-01 for `dms-enterprise`.
+- Fixed ListUsers, GetUser, EnableUser, RegisterUser, DisableUser, DeleteUser API parameter of uid data type error, from number into string.
+- Supported ListInstances, GetInstance API to return Owner information.
+- Supported SetOwners API to set INSTANCE owner.
+
 2021-01-14 Version: v1.61.850
 - Generated 2017-08-01 for `Edas`.
 - Modify API InsertApplication.

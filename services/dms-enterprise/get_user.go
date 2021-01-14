@@ -71,9 +71,9 @@ func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func
 // GetUserRequest is the request struct for api GetUser
 type GetUserRequest struct {
 	*requests.RpcRequest
-	Uid    requests.Integer `position:"Query" name:"Uid"`
 	UserId string           `position:"Query" name:"UserId"`
 	Tid    requests.Integer `position:"Query" name:"Tid"`
+	Uid    string           `position:"Query" name:"Uid"`
 }
 
 // GetUserResponse is the response struct for api GetUser

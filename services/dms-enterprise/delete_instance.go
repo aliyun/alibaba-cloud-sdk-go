@@ -71,10 +71,10 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 // DeleteInstanceRequest is the request struct for api DeleteInstance
 type DeleteInstanceRequest struct {
 	*requests.RpcRequest
-	Port requests.Integer `position:"Query" name:"Port"`
-	Host string           `position:"Query" name:"Host"`
 	Tid  requests.Integer `position:"Query" name:"Tid"`
 	Sid  string           `position:"Query" name:"Sid"`
+	Port requests.Integer `position:"Query" name:"Port"`
+	Host string           `position:"Query" name:"Host"`
 }
 
 // DeleteInstanceResponse is the response struct for api DeleteInstance

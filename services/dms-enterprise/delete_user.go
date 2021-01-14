@@ -71,7 +71,7 @@ func (client *Client) DeleteUserWithCallback(request *DeleteUserRequest, callbac
 // DeleteUserRequest is the request struct for api DeleteUser
 type DeleteUserRequest struct {
 	*requests.RpcRequest
-	Uid requests.Integer `position:"Query" name:"Uid"`
+	Uid string           `position:"Query" name:"Uid"`
 	Tid requests.Integer `position:"Query" name:"Tid"`
 }
 

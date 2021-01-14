@@ -17,7 +17,7 @@ package dms_enterprise
 
 // User is a nested struct in dms_enterprise response
 type User struct {
-	Uid             int64                 `json:"Uid" xml:"Uid"`
+	Uid             string                `json:"Uid" xml:"Uid"`
 	CurResultCount  int64                 `json:"CurResultCount" xml:"CurResultCount"`
 	MaxExecuteCount int64                 `json:"MaxExecuteCount" xml:"MaxExecuteCount"`
 	LastLoginTime   string                `json:"LastLoginTime" xml:"LastLoginTime"`

@@ -17,26 +17,28 @@ package dms_enterprise
 
 // Instance is a nested struct in dms_enterprise response
 type Instance struct {
-	DataLinkName     string `json:"DataLinkName" xml:"DataLinkName"`
-	Port             int    `json:"Port" xml:"Port"`
-	DatabasePassword string `json:"DatabasePassword" xml:"DatabasePassword"`
-	DbaNickName      string `json:"DbaNickName" xml:"DbaNickName"`
-	DdlOnline        int    `json:"DdlOnline" xml:"DdlOnline"`
-	Sid              string `json:"Sid" xml:"Sid"`
-	InstanceType     string `json:"InstanceType" xml:"InstanceType"`
-	QueryTimeout     int    `json:"QueryTimeout" xml:"QueryTimeout"`
-	DbaId            string `json:"DbaId" xml:"DbaId"`
-	EcsInstanceId    string `json:"EcsInstanceId" xml:"EcsInstanceId"`
-	InstanceSource   string `json:"InstanceSource" xml:"InstanceSource"`
-	Host             string `json:"Host" xml:"Host"`
-	SafeRuleId       string `json:"SafeRuleId" xml:"SafeRuleId"`
-	State            string `json:"State" xml:"State"`
-	EnvType          string `json:"EnvType" xml:"EnvType"`
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	UseDsql          int    `json:"UseDsql" xml:"UseDsql"`
-	InstanceAlias    string `json:"InstanceAlias" xml:"InstanceAlias"`
-	ExportTimeout    int    `json:"ExportTimeout" xml:"ExportTimeout"`
-	VpcId            string `json:"VpcId" xml:"VpcId"`
-	DatabaseUser     string `json:"DatabaseUser" xml:"DatabaseUser"`
-	EcsRegion        string `json:"EcsRegion" xml:"EcsRegion"`
+	DataLinkName     string                     `json:"DataLinkName" xml:"DataLinkName"`
+	Port             int                        `json:"Port" xml:"Port"`
+	DatabasePassword string                     `json:"DatabasePassword" xml:"DatabasePassword"`
+	DbaNickName      string                     `json:"DbaNickName" xml:"DbaNickName"`
+	DdlOnline        int                        `json:"DdlOnline" xml:"DdlOnline"`
+	Sid              string                     `json:"Sid" xml:"Sid"`
+	InstanceType     string                     `json:"InstanceType" xml:"InstanceType"`
+	QueryTimeout     int                        `json:"QueryTimeout" xml:"QueryTimeout"`
+	DbaId            string                     `json:"DbaId" xml:"DbaId"`
+	EcsInstanceId    string                     `json:"EcsInstanceId" xml:"EcsInstanceId"`
+	InstanceSource   string                     `json:"InstanceSource" xml:"InstanceSource"`
+	Host             string                     `json:"Host" xml:"Host"`
+	SafeRuleId       string                     `json:"SafeRuleId" xml:"SafeRuleId"`
+	State            string                     `json:"State" xml:"State"`
+	EnvType          string                     `json:"EnvType" xml:"EnvType"`
+	InstanceId       string                     `json:"InstanceId" xml:"InstanceId"`
+	UseDsql          int                        `json:"UseDsql" xml:"UseDsql"`
+	InstanceAlias    string                     `json:"InstanceAlias" xml:"InstanceAlias"`
+	ExportTimeout    int                        `json:"ExportTimeout" xml:"ExportTimeout"`
+	VpcId            string                     `json:"VpcId" xml:"VpcId"`
+	DatabaseUser     string                     `json:"DatabaseUser" xml:"DatabaseUser"`
+	EcsRegion        string                     `json:"EcsRegion" xml:"EcsRegion"`
+	OwnerIdList      OwnerIdListInGetInstance   `json:"OwnerIdList" xml:"OwnerIdList"`
+	OwnerNameList    OwnerNameListInGetInstance `json:"OwnerNameList" xml:"OwnerNameList"`
 }

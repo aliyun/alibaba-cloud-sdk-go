@@ -71,12 +71,12 @@ func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback 
 // ListUsersRequest is the request struct for api ListUsers
 type ListUsersRequest struct {
 	*requests.RpcRequest
-	UserState  string           `position:"Query" name:"UserState"`
 	Role       string           `position:"Query" name:"Role"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	SearchKey  string           `position:"Query" name:"SearchKey"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	UserState  string           `position:"Query" name:"UserState"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListUsersResponse is the response struct for api ListUsers

@@ -72,10 +72,10 @@ func (client *Client) RegisterUserWithCallback(request *RegisterUserRequest, cal
 type RegisterUserRequest struct {
 	*requests.RpcRequest
 	RoleNames string           `position:"Query" name:"RoleNames"`
-	Uid       requests.Integer `position:"Query" name:"Uid"`
 	UserNick  string           `position:"Query" name:"UserNick"`
 	Mobile    string           `position:"Query" name:"Mobile"`
 	Tid       requests.Integer `position:"Query" name:"Tid"`
+	Uid       string           `position:"Query" name:"Uid"`
 }
 
 // RegisterUserResponse is the response struct for api RegisterUser

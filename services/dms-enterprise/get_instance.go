@@ -71,10 +71,10 @@ func (client *Client) GetInstanceWithCallback(request *GetInstanceRequest, callb
 // GetInstanceRequest is the request struct for api GetInstance
 type GetInstanceRequest struct {
 	*requests.RpcRequest
-	Port requests.Integer `position:"Query" name:"Port"`
-	Host string           `position:"Query" name:"Host"`
 	Tid  requests.Integer `position:"Query" name:"Tid"`
 	Sid  string           `position:"Query" name:"Sid"`
+	Port requests.Integer `position:"Query" name:"Port"`
+	Host string           `position:"Query" name:"Host"`
 }
 
 // GetInstanceResponse is the response struct for api GetInstance
