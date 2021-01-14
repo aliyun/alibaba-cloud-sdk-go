@@ -92,7 +92,9 @@ type ModifyDBInstanceSpecRequest struct {
 // ModifyDBInstanceSpecResponse is the response struct for api ModifyDBInstanceSpec
 type ModifyDBInstanceSpecResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId      int64  `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateModifyDBInstanceSpecRequest creates a request to invoke ModifyDBInstanceSpec API
