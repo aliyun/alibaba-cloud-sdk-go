@@ -1,3 +1,7 @@
+2021-01-14 Version: v1.61.849
+- Generated 2020-06-15 for `hitsdb`.
+- Create Lindorm Open api.
+
 2021-01-13 Version: v1.61.848
 - Generated 2015-01-01 for `R-kvstore`.
 - Add SwitchInstanceHA API.
