@@ -34,6 +34,8 @@ type Item struct {
 	OutstandingAmount           float64 `json:"OutstandingAmount" xml:"OutstandingAmount"`
 	DeductedByResourcePackage   string  `json:"DeductedByResourcePackage" xml:"DeductedByResourcePackage"`
 	PipCode                     string  `json:"PipCode" xml:"PipCode"`
+	SplitProductDetail          string  `json:"SplitProductDetail" xml:"SplitProductDetail"`
+	SplitAccountID              string  `json:"SplitAccountID" xml:"SplitAccountID"`
 	ProductCode                 string  `json:"ProductCode" xml:"ProductCode"`
 	ListPrice                   string  `json:"ListPrice" xml:"ListPrice"`
 	Quantity                    string  `json:"Quantity" xml:"Quantity"`
@@ -61,8 +63,10 @@ type Item struct {
 	LinkedCustomerOrderID       string  `json:"LinkedCustomerOrderID" xml:"LinkedCustomerOrderID"`
 	CostUnit                    string  `json:"CostUnit" xml:"CostUnit"`
 	AfterTaxAmount              float64 `json:"AfterTaxAmount" xml:"AfterTaxAmount"`
+	SplitBillingCycle           string  `json:"SplitBillingCycle" xml:"SplitBillingCycle"`
 	SubOrderId                  string  `json:"SubOrderId" xml:"SubOrderId"`
 	ResourceGroup               string  `json:"ResourceGroup" xml:"ResourceGroup"`
+	SplitAccountName            string  `json:"SplitAccountName" xml:"SplitAccountName"`
 	SubscribeTime               string  `json:"SubscribeTime" xml:"SubscribeTime"`
 	BillingType                 string  `json:"BillingType" xml:"BillingType"`
 	InstanceSpec                string  `json:"InstanceSpec" xml:"InstanceSpec"`
@@ -79,6 +83,7 @@ type Item struct {
 	DiscountAmount              float64 `json:"DiscountAmount" xml:"DiscountAmount"`
 	BillID                      string  `json:"BillID" xml:"BillID"`
 	ListPriceUnit               string  `json:"ListPriceUnit" xml:"ListPriceUnit"`
+	SplitCommodityCode          string  `json:"SplitCommodityCode" xml:"SplitCommodityCode"`
 	PaymentCurrency             string  `json:"PaymentCurrency" xml:"PaymentCurrency"`
 	UsageUnit                   string  `json:"UsageUnit" xml:"UsageUnit"`
 	SplitItemID                 string  `json:"SplitItemID" xml:"SplitItemID"`

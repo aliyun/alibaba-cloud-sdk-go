@@ -66,8 +66,8 @@ type Data struct {
 	ModuleList                  ModuleList                                              `json:"ModuleList" xml:"ModuleList"`
 	InstanceList                []Instance                                              `json:"InstanceList" xml:"InstanceList"`
 	Modules                     Modules                                                 `json:"Modules" xml:"Modules"`
+	Items                       ItemsInQueryAccountBill                                 `json:"Items" xml:"Items"`
 	ResourcePackages            ResourcePackages                                        `json:"ResourcePackages" xml:"ResourcePackages"`
-	Items                       ItemsInQueryBillOverview                                `json:"Items" xml:"Items"`
 	ProductList                 ProductList                                             `json:"ProductList" xml:"ProductList"`
 	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice                       `json:"ModuleDetails" xml:"ModuleDetails"`
 	PromotionDetails            PromotionDetailsInGetPayAsYouGoPrice                    `json:"PromotionDetails" xml:"PromotionDetails"`

@@ -76,7 +76,9 @@ type QueryAccountBillRequest struct {
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	OwnerID          requests.Integer `position:"Query" name:"OwnerID"`
 	BillOwnerId      requests.Integer `position:"Query" name:"BillOwnerId"`
+	BillingDate      string           `position:"Query" name:"BillingDate"`
 	IsGroupByProduct requests.Boolean `position:"Query" name:"IsGroupByProduct"`
+	Granularity      string           `position:"Query" name:"Granularity"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 
