@@ -1,3 +1,7 @@
+2021-01-14 Version: v1.61.855
+- Generated 2020-11-01 for `CDRS`.
+- Add function.
+
 2021-01-14 Version: v1.61.854
 - Generated 2017-12-14 for `BssOpenApi`.
 - Add BillingDate support in QueryAccontBill.
