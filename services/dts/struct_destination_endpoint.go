@@ -17,16 +17,13 @@ package dts
 
 // DestinationEndpoint is a nested struct in dts response
 type DestinationEndpoint struct {
-	Region          string `json:"Region" xml:"Region"`
-	SslSolutionEnum string `json:"SslSolutionEnum" xml:"SslSolutionEnum"`
-	Port            string `json:"Port" xml:"Port"`
-	Ip              string `json:"Ip" xml:"Ip"`
-	IP              string `json:"IP" xml:"IP"`
-	OracleSID       string `json:"OracleSID" xml:"OracleSID"`
-	InstanceType    string `json:"InstanceType" xml:"InstanceType"`
-	EngineName      string `json:"EngineName" xml:"EngineName"`
-	InstanceID      string `json:"InstanceID" xml:"InstanceID"`
-	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-	UserName        string `json:"UserName" xml:"UserName"`
-	DatabaseName    string `json:"DatabaseName" xml:"DatabaseName"`
+	EngineName   string `json:"EngineName" xml:"EngineName"`
+	Port         string `json:"Port" xml:"Port"`
+	IP           string `json:"IP" xml:"IP"`
+	InstanceID   string `json:"InstanceID" xml:"InstanceID"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	OracleSID    string `json:"OracleSID" xml:"OracleSID"`
+	UserName     string `json:"UserName" xml:"UserName"`
+	InstanceType string `json:"InstanceType" xml:"InstanceType"`
+	DatabaseName string `json:"DatabaseName" xml:"DatabaseName"`
 }

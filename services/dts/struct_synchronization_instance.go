@@ -17,25 +17,25 @@ package dts
 
 // SynchronizationInstance is a nested struct in dts response
 type SynchronizationInstance struct {
-	CreateTime                    string                                      `json:"CreateTime" xml:"CreateTime"`
-	DataInitialization            string                                      `json:"DataInitialization" xml:"DataInitialization"`
-	Delay                         string                                      `json:"Delay" xml:"Delay"`
-	ErrorMessage                  string                                      `json:"ErrorMessage" xml:"ErrorMessage"`
-	ExpireTime                    string                                      `json:"ExpireTime" xml:"ExpireTime"`
-	PayType                       string                                      `json:"PayType" xml:"PayType"`
-	Status                        string                                      `json:"Status" xml:"Status"`
-	StructureInitialization       string                                      `json:"StructureInitialization" xml:"StructureInitialization"`
-	SynchronizationDirection      string                                      `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
-	SynchronizationJobClass       string                                      `json:"SynchronizationJobClass" xml:"SynchronizationJobClass"`
-	SynchronizationJobId          string                                      `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
-	SynchronizationJobName        string                                      `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
-	DataInitializationStatus      DataInitializationStatus                    `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
-	DataSynchronizationStatus     DataSynchronizationStatus                   `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
-	DestinationEndpoint           DestinationEndpoint                         `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
-	Performance                   Performance                                 `json:"Performance" xml:"Performance"`
-	PrecheckStatus                PrecheckStatusInDescribeSynchronizationJobs `json:"PrecheckStatus" xml:"PrecheckStatus"`
-	SourceEndpoint                SourceEndpoint                              `json:"SourceEndpoint" xml:"SourceEndpoint"`
-	StructureInitializationStatus StructureInitializationStatus               `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
-	Tags                          []Tag                                       `json:"Tags" xml:"Tags"`
-	SynchronizationObjects        []SynchronizationObject                     `json:"SynchronizationObjects" xml:"SynchronizationObjects"`
+	CreateTime                    string                        `json:"CreateTime" xml:"CreateTime"`
+	DataInitialization            string                        `json:"DataInitialization" xml:"DataInitialization"`
+	Delay                         string                        `json:"Delay" xml:"Delay"`
+	ErrorMessage                  string                        `json:"ErrorMessage" xml:"ErrorMessage"`
+	ExpireTime                    string                        `json:"ExpireTime" xml:"ExpireTime"`
+	PayType                       string                        `json:"PayType" xml:"PayType"`
+	Status                        string                        `json:"Status" xml:"Status"`
+	StructureInitialization       string                        `json:"StructureInitialization" xml:"StructureInitialization"`
+	SynchronizationDirection      string                        `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
+	SynchronizationJobClass       string                        `json:"SynchronizationJobClass" xml:"SynchronizationJobClass"`
+	SynchronizationJobId          string                        `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
+	SynchronizationJobName        string                        `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
+	DataInitializationStatus      DataInitializationStatus      `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
+	DataSynchronizationStatus     DataSynchronizationStatus     `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
+	DestinationEndpoint           DestinationEndpoint           `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
+	Performance                   Performance                   `json:"Performance" xml:"Performance"`
+	PrecheckStatus                PrecheckStatus                `json:"PrecheckStatus" xml:"PrecheckStatus"`
+	SourceEndpoint                SourceEndpoint                `json:"SourceEndpoint" xml:"SourceEndpoint"`
+	StructureInitializationStatus StructureInitializationStatus `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
+	Tags                          []Tag                         `json:"Tags" xml:"Tags"`
+	SynchronizationObjects        []SynchronizationObject       `json:"SynchronizationObjects" xml:"SynchronizationObjects"`
 }

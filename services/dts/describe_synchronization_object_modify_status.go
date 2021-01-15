@@ -80,16 +80,16 @@ type DescribeSynchronizationObjectModifyStatusRequest struct {
 // DescribeSynchronizationObjectModifyStatusResponse is the response struct for api DescribeSynchronizationObjectModifyStatus
 type DescribeSynchronizationObjectModifyStatusResponse struct {
 	*responses.BaseResponse
-	ErrCode                       string                                                    `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                    string                                                    `json:"ErrMessage" xml:"ErrMessage"`
-	ErrorMessage                  string                                                    `json:"ErrorMessage" xml:"ErrorMessage"`
-	RequestId                     string                                                    `json:"RequestId" xml:"RequestId"`
-	Status                        string                                                    `json:"Status" xml:"Status"`
-	Success                       string                                                    `json:"Success" xml:"Success"`
-	DataInitializationStatus      DataInitializationStatus                                  `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
-	DataSynchronizationStatus     DataSynchronizationStatus                                 `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
-	PrecheckStatus                PrecheckStatusInDescribeSynchronizationObjectModifyStatus `json:"PrecheckStatus" xml:"PrecheckStatus"`
-	StructureInitializationStatus StructureInitializationStatus                             `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
+	ErrCode                       string                        `json:"ErrCode" xml:"ErrCode"`
+	ErrMessage                    string                        `json:"ErrMessage" xml:"ErrMessage"`
+	ErrorMessage                  string                        `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId                     string                        `json:"RequestId" xml:"RequestId"`
+	Status                        string                        `json:"Status" xml:"Status"`
+	Success                       string                        `json:"Success" xml:"Success"`
+	DataInitializationStatus      DataInitializationStatus      `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
+	DataSynchronizationStatus     DataSynchronizationStatus     `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
+	PrecheckStatus                PrecheckStatus                `json:"PrecheckStatus" xml:"PrecheckStatus"`
+	StructureInitializationStatus StructureInitializationStatus `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
 }
 
 // CreateDescribeSynchronizationObjectModifyStatusRequest creates a request to invoke DescribeSynchronizationObjectModifyStatus API
