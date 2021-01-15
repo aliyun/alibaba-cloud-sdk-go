@@ -20,6 +20,7 @@ type DataItem struct {
 	TagMetrics       string `json:"TagMetrics" xml:"TagMetrics"`
 	Coordinates      string `json:"Coordinates" xml:"Coordinates"`
 	Date             string `json:"Date" xml:"Date"`
+	SourceUrl        string `json:"SourceUrl" xml:"SourceUrl"`
 	Frequency        string `json:"Frequency" xml:"Frequency"`
 	IntervalTime     string `json:"IntervalTime" xml:"IntervalTime"`
 	DeviceGroupId    string `json:"DeviceGroupId" xml:"DeviceGroupId"`
@@ -32,6 +33,7 @@ type DataItem struct {
 	DateTime         string `json:"DateTime" xml:"DateTime"`
 	GroupId          string `json:"GroupId" xml:"GroupId"`
 	PoiId            string `json:"PoiId" xml:"PoiId"`
+	TargetUrl        string `json:"TargetUrl" xml:"TargetUrl"`
 	PassHour         string `json:"PassHour" xml:"PassHour"`
 	StartSourceImage string `json:"StartSourceImage" xml:"StartSourceImage"`
 	EndTargetImage   string `json:"EndTargetImage" xml:"EndTargetImage"`
