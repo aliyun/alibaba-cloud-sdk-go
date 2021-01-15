@@ -1,3 +1,7 @@
+2021-01-15 Version: v1.61.861
+- Generated 2019-08-08 for `xtrace`.
+- Add result value spanId for GetTrace api.
+
 2021-01-15 Version: v1.61.860
 - Generated 2020-11-01 for `CDRS`.
 - Update Function.
