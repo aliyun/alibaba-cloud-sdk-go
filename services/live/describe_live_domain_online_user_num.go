@@ -79,10 +79,10 @@ type DescribeLiveDomainOnlineUserNumRequest struct {
 // DescribeLiveDomainOnlineUserNumResponse is the response struct for api DescribeLiveDomainOnlineUserNum
 type DescribeLiveDomainOnlineUserNumResponse struct {
 	*responses.BaseResponse
-	RequestId      string                                          `json:"RequestId" xml:"RequestId"`
-	StreamCount    int                                             `json:"StreamCount" xml:"StreamCount"`
-	UserCount      int                                             `json:"UserCount" xml:"UserCount"`
-	OnlineUserInfo OnlineUserInfoInDescribeLiveDomainOnlineUserNum `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	StreamCount    int            `json:"StreamCount" xml:"StreamCount"`
+	UserCount      int            `json:"UserCount" xml:"UserCount"`
+	OnlineUserInfo OnlineUserInfo `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 // CreateDescribeLiveDomainOnlineUserNumRequest creates a request to invoke DescribeLiveDomainOnlineUserNum API

@@ -71,15 +71,16 @@ func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamT
 // AddLiveStreamTranscodeRequest is the request struct for api AddLiveStreamTranscode
 type AddLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
-	Template     string           `position:"Query" name:"Template"`
-	Lazy         string           `position:"Query" name:"Lazy"`
-	Mix          string           `position:"Query" name:"Mix"`
-	App          string           `position:"Query" name:"App"`
-	Watermark    string           `position:"Query" name:"Watermark"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
-	Domain       string           `position:"Query" name:"Domain"`
-	WaterPattern string           `position:"Query" name:"WaterPattern"`
-	OnlyAudio    string           `position:"Query" name:"OnlyAudio"`
+	Template          string           `position:"Query" name:"Template"`
+	Lazy              string           `position:"Query" name:"Lazy"`
+	Mix               string           `position:"Query" name:"Mix"`
+	App               string           `position:"Query" name:"App"`
+	EncryptParameters string           `position:"Query" name:"EncryptParameters"`
+	Watermark         string           `position:"Query" name:"Watermark"`
+	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
+	Domain            string           `position:"Query" name:"Domain"`
+	WaterPattern      string           `position:"Query" name:"WaterPattern"`
+	OnlyAudio         string           `position:"Query" name:"OnlyAudio"`
 }
 
 // AddLiveStreamTranscodeResponse is the response struct for api AddLiveStreamTranscode

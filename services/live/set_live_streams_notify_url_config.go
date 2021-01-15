@@ -74,6 +74,7 @@ type SetLiveStreamsNotifyUrlConfigRequest struct {
 	AuthKey    string           `position:"Query" name:"AuthKey"`
 	AuthType   string           `position:"Query" name:"AuthType"`
 	NotifyUrl  string           `position:"Query" name:"NotifyUrl"`
+	NotifyType string           `position:"Query" name:"NotifyType"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
