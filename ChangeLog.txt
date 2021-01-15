@@ -1,3 +1,8 @@
+2021-01-15 Version: v1.61.858
+- Generated 2017-12-25 for `OpenSearch`.
+- Add API CreateSortScriptValidation.
+- Add parameter resourceGroupId to API ListAppGroups.
+
 2021-01-15 Version: v1.61.857
 - Generated 2020-01-01 for `Dts`.
 - Remove drcGuidRouteApi, ModifyDtsJobPassword API.

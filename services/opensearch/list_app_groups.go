@@ -71,12 +71,13 @@ func (client *Client) ListAppGroupsWithCallback(request *ListAppGroupsRequest, c
 // ListAppGroupsRequest is the request struct for api ListAppGroups
 type ListAppGroupsRequest struct {
 	*requests.RoaRequest
-	InstanceId string           `position:"Query" name:"instanceId"`
-	PageSize   requests.Integer `position:"Query" name:"pageSize"`
-	Name       string           `position:"Query" name:"name"`
-	SortBy     requests.Integer `position:"Query" name:"sortBy"`
-	Type       string           `position:"Query" name:"type"`
-	PageNumber requests.Integer `position:"Query" name:"pageNumber"`
+	ResourceGroupId string           `position:"Query" name:"resourceGroupId"`
+	InstanceId      string           `position:"Query" name:"instanceId"`
+	PageSize        requests.Integer `position:"Query" name:"pageSize"`
+	Name            string           `position:"Query" name:"name"`
+	SortBy          requests.Integer `position:"Query" name:"sortBy"`
+	Type            string           `position:"Query" name:"type"`
+	PageNumber      requests.Integer `position:"Query" name:"pageNumber"`
 }
 
 // ListAppGroupsResponse is the response struct for api ListAppGroups
