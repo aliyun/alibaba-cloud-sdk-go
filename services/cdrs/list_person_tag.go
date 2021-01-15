@@ -71,6 +71,7 @@ func (client *Client) ListPersonTagWithCallback(request *ListPersonTagRequest, c
 // ListPersonTagRequest is the request struct for api ListPersonTag
 type ListPersonTagRequest struct {
 	*requests.RpcRequest
+	Schema     string           `position:"Body" name:"Schema"`
 	CorpId     string           `position:"Body" name:"CorpId"`
 	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
 	TagCode    string           `position:"Body" name:"TagCode"`

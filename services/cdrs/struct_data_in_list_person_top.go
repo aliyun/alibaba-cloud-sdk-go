@@ -17,5 +17,5 @@ package cdrs
 
 // DataInListPersonTop is a nested struct in cdrs response
 type DataInListPersonTop struct {
-	Datas []Datas `json:"Datas" xml:"Datas"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

@@ -71,6 +71,7 @@ func (client *Client) ListPersonDetailsWithCallback(request *ListPersonDetailsRe
 // ListPersonDetailsRequest is the request struct for api ListPersonDetails
 type ListPersonDetailsRequest struct {
 	*requests.RpcRequest
+	Schema     string           `position:"Body" name:"Schema"`
 	CorpId     string           `position:"Body" name:"CorpId"`
 	EndTime    string           `position:"Body" name:"EndTime"`
 	StartTime  string           `position:"Body" name:"StartTime"`

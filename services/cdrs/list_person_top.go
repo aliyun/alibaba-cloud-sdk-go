@@ -71,22 +71,25 @@ func (client *Client) ListPersonTopWithCallback(request *ListPersonTopRequest, c
 // ListPersonTopRequest is the request struct for api ListPersonTop
 type ListPersonTopRequest struct {
 	*requests.RpcRequest
-	CorpId    string `position:"Body" name:"CorpId"`
-	EndTime   string `position:"Body" name:"EndTime"`
-	StartTime string `position:"Body" name:"StartTime"`
-	PersonId  string `position:"Body" name:"PersonId"`
+	Schema     string `position:"Body" name:"Schema"`
+	CorpId     string `position:"Body" name:"CorpId"`
+	EndTime    string `position:"Body" name:"EndTime"`
+	StartTime  string `position:"Body" name:"StartTime"`
+	PageNumber string `position:"Body" name:"PageNumber"`
+	PageSize   string `position:"Body" name:"PageSize"`
+	PersonId   string `position:"Body" name:"PersonId"`
 }
 
 // ListPersonTopResponse is the response struct for api ListPersonTop
 type ListPersonTopResponse struct {
 	*responses.BaseResponse
-	Code       string  `json:"Code" xml:"Code"`
-	Message    string  `json:"Message" xml:"Message"`
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	PageNumber int64   `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64   `json:"PageSize" xml:"PageSize"`
-	TotalCount int64   `json:"TotalCount" xml:"TotalCount"`
-	Data       []Datas `json:"Data" xml:"Data"`
+	Code       string     `json:"Code" xml:"Code"`
+	Message    string     `json:"Message" xml:"Message"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	PageNumber int64      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64      `json:"PageSize" xml:"PageSize"`
+	TotalCount int64      `json:"TotalCount" xml:"TotalCount"`
+	Data       []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateListPersonTopRequest creates a request to invoke ListPersonTop API

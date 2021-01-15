@@ -71,6 +71,7 @@ func (client *Client) ListPersonTrackWithCallback(request *ListPersonTrackReques
 // ListPersonTrackRequest is the request struct for api ListPersonTrack
 type ListPersonTrackRequest struct {
 	*requests.RpcRequest
+	Schema     string           `position:"Body" name:"Schema"`
 	CorpId     string           `position:"Body" name:"CorpId"`
 	EndTime    string           `position:"Body" name:"EndTime"`
 	StartTime  string           `position:"Body" name:"StartTime"`
