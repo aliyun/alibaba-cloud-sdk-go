@@ -1,3 +1,7 @@
+2021-01-18 Version: v1.61.862
+- Generated 2017-12-14 for `BssOpenApi`.
+- Add logistics for createinstance.
+
 2021-01-15 Version: v1.61.861
 - Generated 2019-08-08 for `xtrace`.
 - Add result value spanId for GetTrace api.

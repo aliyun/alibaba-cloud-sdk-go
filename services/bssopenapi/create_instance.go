@@ -75,6 +75,7 @@ type CreateInstanceRequest struct {
 	Period           requests.Integer           `position:"Query" name:"Period"`
 	ClientToken      string                     `position:"Query" name:"ClientToken"`
 	SubscriptionType string                     `position:"Query" name:"SubscriptionType"`
+	Logistics        string                     `position:"Query" name:"Logistics"`
 	OwnerId          requests.Integer           `position:"Query" name:"OwnerId"`
 	ProductType      string                     `position:"Query" name:"ProductType"`
 	RenewPeriod      requests.Integer           `position:"Query" name:"RenewPeriod"`
