@@ -71,7 +71,8 @@ func (client *Client) GetUserInfoWithCallback(request *GetUserInfoRequest, callb
 // GetUserInfoRequest is the request struct for api GetUserInfo
 type GetUserInfoRequest struct {
 	*requests.RoaRequest
-	AccessToken string `position:"Query" name:"AccessToken"`
+	OrganizationId string `position:"Query" name:"OrganizationId"`
+	AccessToken    string `position:"Query" name:"AccessToken"`
 }
 
 // GetUserInfoResponse is the response struct for api GetUserInfo

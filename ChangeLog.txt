@@ -1,3 +1,12 @@
+2021-01-18 Version: v1.61.863
+- Generated 2020-04-14 for `codeup`.
+- Add ListMergeRequests api.
+- Add protected branch api, CreateRepositoryProtectedBranch and DeleteRepositoryProtectedBranch.
+- Add repository deploy key api, EnableRepositoryDeployKey and CreateRepositoryDeployKey.
+- Add UpdateRepository api.
+- Update GetUserInfo, support use OrganizationId param to get user organization name.
+
+
 2021-01-18 Version: v1.61.862
 - Generated 2017-12-14 for `BssOpenApi`.
 - Add logistics for createinstance.
