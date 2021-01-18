@@ -1,3 +1,7 @@
+2021-01-18 Version: v1.61.866
+- Generated 2019-03-27 for `dg`.
+
+
 2021-01-18 Version: v1.61.865
 - Generated 2018-01-20 for `Iot`.
 - Add a set of API to support device distribution management, including CreateProductDistributeJob, CreateDeviceDistributeJob, QueryDeviceDistributeJob, ListDeviceDistributeJob, QueryDeviceDistributeDetail, DeleteDeviceDistributeJob, ListDistributedDevice, ListDistributedProduct etc.
