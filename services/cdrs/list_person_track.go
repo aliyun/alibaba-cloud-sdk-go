@@ -71,13 +71,15 @@ func (client *Client) ListPersonTrackWithCallback(request *ListPersonTrackReques
 // ListPersonTrackRequest is the request struct for api ListPersonTrack
 type ListPersonTrackRequest struct {
 	*requests.RpcRequest
-	Schema     string           `position:"Body" name:"Schema"`
-	CorpId     string           `position:"Body" name:"CorpId"`
-	EndTime    string           `position:"Body" name:"EndTime"`
-	StartTime  string           `position:"Body" name:"StartTime"`
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
-	PersonId   string           `position:"Body" name:"PersonId"`
+	Schema             string           `position:"Body" name:"Schema"`
+	CorpId             string           `position:"Body" name:"CorpId"`
+	AggregateDimension string           `position:"Body" name:"AggregateDimension"`
+	ImageSourceType    string           `position:"Body" name:"ImageSourceType"`
+	EndTime            string           `position:"Body" name:"EndTime"`
+	StartTime          string           `position:"Body" name:"StartTime"`
+	PageNumber         requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize           requests.Integer `position:"Body" name:"PageSize"`
+	PersonId           string           `position:"Body" name:"PersonId"`
 }
 
 // ListPersonTrackResponse is the response struct for api ListPersonTrack
