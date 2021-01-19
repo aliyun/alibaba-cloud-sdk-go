@@ -86,7 +86,7 @@ func CreateDetachDbfsRequest() (request *DetachDbfsRequest) {
 	request = &DetachDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "DetachDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "DetachDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

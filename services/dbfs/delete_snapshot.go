@@ -71,9 +71,8 @@ func (client *Client) DeleteSnapshotWithCallback(request *DeleteSnapshotRequest,
 // DeleteSnapshotRequest is the request struct for api DeleteSnapshot
 type DeleteSnapshotRequest struct {
 	*requests.RpcRequest
-	SnapshotId  string           `position:"Query" name:"SnapshotId"`
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	Force       requests.Boolean `position:"Query" name:"Force"`
+	SnapshotId string           `position:"Query" name:"SnapshotId"`
+	Force      requests.Boolean `position:"Query" name:"Force"`
 }
 
 // DeleteSnapshotResponse is the response struct for api DeleteSnapshot
@@ -87,7 +86,7 @@ func CreateDeleteSnapshotRequest() (request *DeleteSnapshotRequest) {
 	request = &DeleteSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "DeleteSnapshot", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "DeleteSnapshot", "", "")
 	request.Method = requests.POST
 	return
 }

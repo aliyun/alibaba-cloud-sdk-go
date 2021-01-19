@@ -71,9 +71,8 @@ func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callbac
 // ResizeDbfsRequest is the request struct for api ResizeDbfs
 type ResizeDbfsRequest struct {
 	*requests.RpcRequest
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	NewSizeG    requests.Integer `position:"Query" name:"NewSizeG"`
-	FsId        string           `position:"Query" name:"FsId"`
+	NewSizeG requests.Integer `position:"Query" name:"NewSizeG"`
+	FsId     string           `position:"Query" name:"FsId"`
 }
 
 // ResizeDbfsResponse is the response struct for api ResizeDbfs
@@ -87,7 +86,7 @@ func CreateResizeDbfsRequest() (request *ResizeDbfsRequest) {
 	request = &ResizeDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ResizeDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ResizeDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -72,7 +72,6 @@ func (client *Client) ListDbfsWithCallback(request *ListDbfsRequest, callback fu
 type ListDbfsRequest struct {
 	*requests.RpcRequest
 	SortType    string           `position:"Query" name:"SortType"`
-	ClientToken string           `position:"Query" name:"ClientToken"`
 	FilterValue string           `position:"Query" name:"FilterValue"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	Tags        string           `position:"Query" name:"Tags"`
@@ -96,7 +95,7 @@ func CreateListDbfsRequest() (request *ListDbfsRequest) {
 	request = &ListDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

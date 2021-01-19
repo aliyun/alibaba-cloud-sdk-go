@@ -86,7 +86,7 @@ func CreateUpdateTaskRequest() (request *UpdateTaskRequest) {
 	request = &UpdateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "UpdateTask", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "UpdateTask", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -77,8 +77,10 @@ type GetDbfsRequest struct {
 // GetDbfsResponse is the response struct for api GetDbfs
 type GetDbfsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	DBFSInfo  DBFSInfo `json:"DBFSInfo" xml:"DBFSInfo"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	KMSKeyId   string   `json:"KMSKeyId" xml:"KMSKeyId"`
+	Encryption bool     `json:"Encryption" xml:"Encryption"`
+	DBFSInfo   DBFSInfo `json:"DBFSInfo" xml:"DBFSInfo"`
 }
 
 // CreateGetDbfsRequest creates a request to invoke GetDbfs API
@@ -86,7 +88,7 @@ func CreateGetDbfsRequest() (request *GetDbfsRequest) {
 	request = &GetDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "GetDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "GetDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -71,9 +71,8 @@ func (client *Client) ResetDbfsWithCallback(request *ResetDbfsRequest, callback 
 // ResetDbfsRequest is the request struct for api ResetDbfs
 type ResetDbfsRequest struct {
 	*requests.RpcRequest
-	SnapshotId  string `position:"Query" name:"SnapshotId"`
-	ClientToken string `position:"Query" name:"ClientToken"`
-	FsId        string `position:"Query" name:"FsId"`
+	SnapshotId string `position:"Query" name:"SnapshotId"`
+	FsId       string `position:"Query" name:"FsId"`
 }
 
 // ResetDbfsResponse is the response struct for api ResetDbfs
@@ -87,7 +86,7 @@ func CreateResetDbfsRequest() (request *ResetDbfsRequest) {
 	request = &ResetDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ResetDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ResetDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

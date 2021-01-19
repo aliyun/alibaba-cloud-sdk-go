@@ -76,11 +76,13 @@ type CreateDbfsRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	FsName               string           `position:"Query" name:"FsName"`
 	RaidStripeUnitNumber requests.Integer `position:"Query" name:"RaidStripeUnitNumber"`
+	Encryption           requests.Boolean `position:"Query" name:"Encryption"`
 	PerformanceLevel     string           `position:"Query" name:"PerformanceLevel"`
 	EnableRaid           requests.Boolean `position:"Query" name:"EnableRaid"`
 	DeleteSnapshot       requests.Boolean `position:"Query" name:"DeleteSnapshot"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	Category             string           `position:"Query" name:"Category"`
+	KMSKeyId             string           `position:"Query" name:"KMSKeyId"`
 }
 
 // CreateDbfsResponse is the response struct for api CreateDbfs
@@ -95,7 +97,7 @@ func CreateCreateDbfsRequest() (request *CreateDbfsRequest) {
 	request = &CreateDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "CreateDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "CreateDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

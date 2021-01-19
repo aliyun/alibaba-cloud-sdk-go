@@ -94,7 +94,7 @@ func CreateListTaskRequest() (request *ListTaskRequest) {
 	request = &ListTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListTask", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListTask", "", "")
 	request.Method = requests.POST
 	return
 }

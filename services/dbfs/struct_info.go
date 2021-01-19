@@ -28,6 +28,8 @@ type Info struct {
 	FsId             string              `json:"FsId" xml:"FsId"`
 	SizeG            int                 `json:"SizeG" xml:"SizeG"`
 	CreatedTime      string              `json:"CreatedTime" xml:"CreatedTime"`
+	KMSKeyId         string              `json:"KMSKeyId" xml:"KMSKeyId"`
+	Encryption       bool                `json:"Encryption" xml:"Encryption"`
 	Tags             []TagListInListDbfs `json:"Tags" xml:"Tags"`
 	EcsList          []EcsListItem       `json:"EcsList" xml:"EcsList"`
 }
