@@ -1,3 +1,7 @@
+2021-01-20 Version: v1.61.870
+- Generated 2019-06-11 for `emas-appmonitor`.
+- Add metrics data API.
+
 2021-01-20 Version: v1.61.869
 - Generated 2020-11-01 for `CDRS`.
 
