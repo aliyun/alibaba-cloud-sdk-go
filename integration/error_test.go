@@ -39,8 +39,7 @@ func Test_DescribeRegionsWithUnreachableError(t *testing.T) {
 	assert.Nil(t, err)
 	response, err := client.ProcessCommonRequest(request)
 	assert.Equal(t, 0, response.GetHttpStatus())
-	realerr := err.(errors.Error)
-	assert.True(t, strings.Contains(realerr.OriginError().Error(), "www.aliyun-hangzhou.com"))
+	assert.True(t, strings.Contains(err.Error(), "www.aliyun-hangzhou.com"))
 }
 
 func Test_DescribeRegionsWithTimeout(t *testing.T) {

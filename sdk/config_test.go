@@ -11,7 +11,7 @@ import (
 func Test_Config(t *testing.T) {
 	config := NewConfig()
 	assert.NotNil(t, config, "NewConfig failed")
-	assert.Equal(t, true, config.AutoRetry, "Default AutoRetry should be true")
+	assert.Equal(t, false, config.AutoRetry, "Default AutoRetry should be true")
 	assert.Equal(t, 3, config.MaxRetryTime, "Default MaxRetryTime should be 3")
 	assert.Equal(t, "", config.UserAgent, "Default UserAgent should be empty")
 	assert.Equal(t, false, config.Debug, "Default AutoRetry should be false")
