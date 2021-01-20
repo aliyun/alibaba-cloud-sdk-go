@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SendSms invokes the dysmsapi.SendSms API synchronously
-func (client *Client) SendSms(request *SendSmsRequest) (response *SendSmsResponse, err error) {
-	response = CreateSendSmsResponse()
+// DeleteShortUrl invokes the dysmsapi.DeleteShortUrl API synchronously
+func (client *Client) DeleteShortUrl(request *DeleteShortUrlRequest) (response *DeleteShortUrlResponse, err error) {
+	response = CreateDeleteShortUrlResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SendSmsWithChan invokes the dysmsapi.SendSms API asynchronously
-func (client *Client) SendSmsWithChan(request *SendSmsRequest) (<-chan *SendSmsResponse, <-chan error) {
-	responseChan := make(chan *SendSmsResponse, 1)
+// DeleteShortUrlWithChan invokes the dysmsapi.DeleteShortUrl API asynchronously
+func (client *Client) DeleteShortUrlWithChan(request *DeleteShortUrlRequest) (<-chan *DeleteShortUrlResponse, <-chan error) {
+	responseChan := make(chan *DeleteShortUrlResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SendSms(request)
+		response, err := client.DeleteShortUrl(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SendSmsWithChan(request *SendSmsRequest) (<-chan *SendSmsR
 	return responseChan, errChan
 }
 
-// SendSmsWithCallback invokes the dysmsapi.SendSms API asynchronously
-func (client *Client) SendSmsWithCallback(request *SendSmsRequest, callback func(response *SendSmsResponse, err error)) <-chan int {
+// DeleteShortUrlWithCallback invokes the dysmsapi.DeleteShortUrl API asynchronously
+func (client *Client) DeleteShortUrlWithCallback(request *DeleteShortUrlRequest, callback func(response *DeleteShortUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SendSmsResponse
+		var response *DeleteShortUrlResponse
 		var err error
 		defer close(result)
-		response, err = client.SendSms(request)
+		response, err = client.DeleteShortUrl(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,42 +68,37 @@ func (client *Client) SendSmsWithCallback(request *SendSmsRequest, callback func
 	return result
 }
 
-// SendSmsRequest is the request struct for api SendSms
-type SendSmsRequest struct {
+// DeleteShortUrlRequest is the request struct for api DeleteShortUrl
+type DeleteShortUrlRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SmsUpExtendCode      string           `position:"Query" name:"SmsUpExtendCode"`
-	SignName             string           `position:"Query" name:"SignName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PhoneNumbers         string           `position:"Query" name:"PhoneNumbers"`
+	ProdCode             string           `position:"Body" name:"ProdCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OutId                string           `position:"Query" name:"OutId"`
-	TemplateCode         string           `position:"Query" name:"TemplateCode"`
-	TemplateParam        string           `position:"Query" name:"TemplateParam"`
+	SourceUrl            string           `position:"Body" name:"SourceUrl"`
 }
 
-// SendSmsResponse is the response struct for api SendSms
-type SendSmsResponse struct {
+// DeleteShortUrlResponse is the response struct for api DeleteShortUrl
+type DeleteShortUrlResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	BizId     string `json:"BizId" xml:"BizId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateSendSmsRequest creates a request to invoke SendSms API
-func CreateSendSmsRequest() (request *SendSmsRequest) {
-	request = &SendSmsRequest{
+// CreateDeleteShortUrlRequest creates a request to invoke DeleteShortUrl API
+func CreateDeleteShortUrlRequest() (request *DeleteShortUrlRequest) {
+	request = &DeleteShortUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "SendSms", "", "")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "DeleteShortUrl", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSendSmsResponse creates a response to parse from SendSms response
-func CreateSendSmsResponse() (response *SendSmsResponse) {
-	response = &SendSmsResponse{
+// CreateDeleteShortUrlResponse creates a response to parse from DeleteShortUrl response
+func CreateDeleteShortUrlResponse() (response *DeleteShortUrlResponse) {
+	response = &DeleteShortUrlResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -1,3 +1,7 @@
+2021-01-20 Version: v1.61.871
+- Generated 2017-05-25 for `Dysmsapi`.
+- Supported post request for golang SDK.
+
 2021-01-20 Version: v1.61.870
 - Generated 2019-06-11 for `emas-appmonitor`.
 - Add metrics data API.
