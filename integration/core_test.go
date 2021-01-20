@@ -207,7 +207,7 @@ func Test_DescribeClusterDetailWithCommonRequestWithTimeout(t *testing.T) {
 	request.ConnectTimeout = 1 * time.Second
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
+	assert.Contains(t, err.Error(), "Client.Timeout exceeded")
 }
 
 func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
