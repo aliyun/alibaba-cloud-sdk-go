@@ -77,7 +77,7 @@ type GetVpcEndpointAttributeRequest struct {
 // GetVpcEndpointAttributeResponse is the response struct for api GetVpcEndpointAttribute
 type GetVpcEndpointAttributeResponse struct {
 	*responses.BaseResponse
-	Bandwidth              string `json:"Bandwidth" xml:"Bandwidth"`
+	Bandwidth              int    `json:"Bandwidth" xml:"Bandwidth"`
 	ConnectionStatus       string `json:"ConnectionStatus" xml:"ConnectionStatus"`
 	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
 	EndpointBusinessStatus string `json:"EndpointBusinessStatus" xml:"EndpointBusinessStatus"`
@@ -92,6 +92,7 @@ type GetVpcEndpointAttributeResponse struct {
 	VpcId                  string `json:"VpcId" xml:"VpcId"`
 	RegionId               string `json:"RegionId" xml:"RegionId"`
 	Payer                  string `json:"Payer" xml:"Payer"`
+	ResourceOwner          bool   `json:"ResourceOwner" xml:"ResourceOwner"`
 }
 
 // CreateGetVpcEndpointAttributeRequest creates a request to invoke GetVpcEndpointAttribute API

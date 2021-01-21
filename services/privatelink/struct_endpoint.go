@@ -30,4 +30,5 @@ type Endpoint struct {
 	VpcId                  string `json:"VpcId" xml:"VpcId"`
 	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
 	RegionId               string `json:"RegionId" xml:"RegionId"`
+	ResourceOwner          bool   `json:"ResourceOwner" xml:"ResourceOwner"`
 }

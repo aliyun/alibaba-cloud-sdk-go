@@ -1,3 +1,7 @@
+2021-01-21 Version: v1.61.875
+- Generated 2020-04-15 for `Privatelink`.
+- Modify some field types.
+
 2021-01-21 Version: v1.61.874
 - Generated 2019-09-10 for `waf-openapi`.
 

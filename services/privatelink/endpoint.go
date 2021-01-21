@@ -9,9 +9,7 @@ var EndpointType = "regional"
 // GetEndpointMap Get Endpoint Data Map
 func GetEndpointMap() map[string]string {
 	if EndpointMap == nil {
-		EndpointMap = map[string]string{
-			"cn-hangzhou": "privatelink-center.cn-hangzhou.aliyuncs.com",
-		}
+		EndpointMap = map[string]string{}
 	}
 	return EndpointMap
 }

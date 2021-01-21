@@ -17,8 +17,8 @@ package privatelink
 
 // Service is a nested struct in privatelink response
 type Service struct {
-	MaxBandwidth          string   `json:"MaxBandwidth" xml:"MaxBandwidth"`
-	ConnectBandwidth      string   `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
+	ConnectBandwidth      int      `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
+	MaxBandwidth          int      `json:"MaxBandwidth" xml:"MaxBandwidth"`
 	ServiceDomain         string   `json:"ServiceDomain" xml:"ServiceDomain"`
 	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
 	AutoAcceptEnabled     bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
@@ -26,7 +26,7 @@ type Service struct {
 	ServiceStatus         string   `json:"ServiceStatus" xml:"ServiceStatus"`
 	ServiceId             string   `json:"ServiceId" xml:"ServiceId"`
 	RegionId              string   `json:"RegionId" xml:"RegionId"`
-	MinBandwidth          string   `json:"MinBandwidth" xml:"MinBandwidth"`
+	MinBandwidth          int      `json:"MinBandwidth" xml:"MinBandwidth"`
 	ServiceDescription    string   `json:"ServiceDescription" xml:"ServiceDescription"`
 	ServiceBusinessStatus string   `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
 	ServiceName           string   `json:"ServiceName" xml:"ServiceName"`

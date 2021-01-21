@@ -24,5 +24,6 @@ type Connection struct {
 	EndpointVpcId    string `json:"EndpointVpcId" xml:"EndpointVpcId"`
 	Bandwidth        int    `json:"Bandwidth" xml:"Bandwidth"`
 	ModifiedTime     string `json:"ModifiedTime" xml:"ModifiedTime"`
+	ResourceOwner    bool   `json:"ResourceOwner" xml:"ResourceOwner"`
 	Zones            []Zone `json:"Zones" xml:"Zones"`
 }
