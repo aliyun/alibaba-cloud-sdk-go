@@ -77,11 +77,11 @@ type ListUserOrganizationRequest struct {
 // ListUserOrganizationResponse is the response struct for api ListUserOrganization
 type ListUserOrganizationResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Object       string `json:"Object" xml:"Object"`
+	RequestId    string         `json:"RequestId" xml:"RequestId"`
+	Success      bool           `json:"Success" xml:"Success"`
+	ErrorCode    string         `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string         `json:"ErrorMessage" xml:"ErrorMessage"`
+	Object       []Organization `json:"Object" xml:"Object"`
 }
 
 // CreateListUserOrganizationRequest creates a request to invoke ListUserOrganization API
