@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ResizeDisk invokes the ecs.ResizeDisk API synchronously
-func (client *Client) ResizeDisk(request *ResizeDiskRequest) (response *ResizeDiskResponse, err error) {
-	response = CreateResizeDiskResponse()
+// DeleteActivation invokes the ecs.DeleteActivation API synchronously
+func (client *Client) DeleteActivation(request *DeleteActivationRequest) (response *DeleteActivationResponse, err error) {
+	response = CreateDeleteActivationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ResizeDiskWithChan invokes the ecs.ResizeDisk API asynchronously
-func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *ResizeDiskResponse, <-chan error) {
-	responseChan := make(chan *ResizeDiskResponse, 1)
+// DeleteActivationWithChan invokes the ecs.DeleteActivation API asynchronously
+func (client *Client) DeleteActivationWithChan(request *DeleteActivationRequest) (<-chan *DeleteActivationResponse, <-chan error) {
+	responseChan := make(chan *DeleteActivationResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResizeDisk(request)
+		response, err := client.DeleteActivation(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// ResizeDiskWithCallback invokes the ecs.ResizeDisk API asynchronously
-func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callback func(response *ResizeDiskResponse, err error)) <-chan int {
+// DeleteActivationWithCallback invokes the ecs.DeleteActivation API asynchronously
+func (client *Client) DeleteActivationWithCallback(request *DeleteActivationRequest, callback func(response *DeleteActivationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResizeDiskResponse
+		var response *DeleteActivationResponse
 		var err error
 		defer close(result)
-		response, err = client.ResizeDisk(request)
+		response, err = client.DeleteActivation(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,36 @@ func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callbac
 	return result
 }
 
-// ResizeDiskRequest is the request struct for api ResizeDisk
-type ResizeDiskRequest struct {
+// DeleteActivationRequest is the request struct for api DeleteActivation
+type DeleteActivationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Type                 string           `position:"Query" name:"Type"`
-	DiskId               string           `position:"Query" name:"DiskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NewSize              requests.Integer `position:"Query" name:"NewSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ActivationId         string           `position:"Query" name:"ActivationId"`
 }
 
-// ResizeDiskResponse is the response struct for api ResizeDisk
-type ResizeDiskResponse struct {
+// DeleteActivationResponse is the response struct for api DeleteActivation
+type DeleteActivationResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Activation Activation `json:"Activation" xml:"Activation"`
 }
 
-// CreateResizeDiskRequest creates a request to invoke ResizeDisk API
-func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
-	request = &ResizeDiskRequest{
+// CreateDeleteActivationRequest creates a request to invoke DeleteActivation API
+func CreateDeleteActivationRequest() (request *DeleteActivationRequest) {
+	request = &DeleteActivationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteActivation", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateResizeDiskResponse creates a response to parse from ResizeDisk response
-func CreateResizeDiskResponse() (response *ResizeDiskResponse) {
-	response = &ResizeDiskResponse{
+// CreateDeleteActivationResponse creates a response to parse from DeleteActivation response
+func CreateDeleteActivationResponse() (response *DeleteActivationResponse) {
+	response = &DeleteActivationResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

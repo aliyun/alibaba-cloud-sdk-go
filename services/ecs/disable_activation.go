@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ResizeDisk invokes the ecs.ResizeDisk API synchronously
-func (client *Client) ResizeDisk(request *ResizeDiskRequest) (response *ResizeDiskResponse, err error) {
-	response = CreateResizeDiskResponse()
+// DisableActivation invokes the ecs.DisableActivation API synchronously
+func (client *Client) DisableActivation(request *DisableActivationRequest) (response *DisableActivationResponse, err error) {
+	response = CreateDisableActivationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ResizeDiskWithChan invokes the ecs.ResizeDisk API asynchronously
-func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *ResizeDiskResponse, <-chan error) {
-	responseChan := make(chan *ResizeDiskResponse, 1)
+// DisableActivationWithChan invokes the ecs.DisableActivation API asynchronously
+func (client *Client) DisableActivationWithChan(request *DisableActivationRequest) (<-chan *DisableActivationResponse, <-chan error) {
+	responseChan := make(chan *DisableActivationResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResizeDisk(request)
+		response, err := client.DisableActivation(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// ResizeDiskWithCallback invokes the ecs.ResizeDisk API asynchronously
-func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callback func(response *ResizeDiskResponse, err error)) <-chan int {
+// DisableActivationWithCallback invokes the ecs.DisableActivation API asynchronously
+func (client *Client) DisableActivationWithCallback(request *DisableActivationRequest, callback func(response *DisableActivationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResizeDiskResponse
+		var response *DisableActivationResponse
 		var err error
 		defer close(result)
-		response, err = client.ResizeDisk(request)
+		response, err = client.DisableActivation(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,36 @@ func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callbac
 	return result
 }
 
-// ResizeDiskRequest is the request struct for api ResizeDisk
-type ResizeDiskRequest struct {
+// DisableActivationRequest is the request struct for api DisableActivation
+type DisableActivationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Type                 string           `position:"Query" name:"Type"`
-	DiskId               string           `position:"Query" name:"DiskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NewSize              requests.Integer `position:"Query" name:"NewSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ActivationId         string           `position:"Query" name:"ActivationId"`
 }
 
-// ResizeDiskResponse is the response struct for api ResizeDisk
-type ResizeDiskResponse struct {
+// DisableActivationResponse is the response struct for api DisableActivation
+type DisableActivationResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Activation Activation `json:"Activation" xml:"Activation"`
 }
 
-// CreateResizeDiskRequest creates a request to invoke ResizeDisk API
-func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
-	request = &ResizeDiskRequest{
+// CreateDisableActivationRequest creates a request to invoke DisableActivation API
+func CreateDisableActivationRequest() (request *DisableActivationRequest) {
+	request = &DisableActivationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DisableActivation", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateResizeDiskResponse creates a response to parse from ResizeDisk response
-func CreateResizeDiskResponse() (response *ResizeDiskResponse) {
-	response = &ResizeDiskResponse{
+// CreateDisableActivationResponse creates a response to parse from DisableActivation response
+func CreateDisableActivationResponse() (response *DisableActivationResponse) {
+	response = &DisableActivationResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

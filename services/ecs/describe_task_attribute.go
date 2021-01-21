@@ -80,19 +80,19 @@ type DescribeTaskAttributeRequest struct {
 // DescribeTaskAttributeResponse is the response struct for api DescribeTaskAttribute
 type DescribeTaskAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	TaskId               string               `json:"TaskId" xml:"TaskId"`
-	RegionId             string               `json:"RegionId" xml:"RegionId"`
-	TaskAction           string               `json:"TaskAction" xml:"TaskAction"`
-	TaskStatus           string               `json:"TaskStatus" xml:"TaskStatus"`
-	TaskProcess          string               `json:"TaskProcess" xml:"TaskProcess"`
-	SupportCancel        string               `json:"SupportCancel" xml:"SupportCancel"`
-	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
-	SuccessCount         int                  `json:"SuccessCount" xml:"SuccessCount"`
-	FailedCount          int                  `json:"FailedCount" xml:"FailedCount"`
-	CreationTime         string               `json:"CreationTime" xml:"CreationTime"`
-	FinishedTime         string               `json:"FinishedTime" xml:"FinishedTime"`
-	OperationProgressSet OperationProgressSet `json:"OperationProgressSet" xml:"OperationProgressSet"`
+	RequestId            string                                      `json:"RequestId" xml:"RequestId"`
+	TaskId               string                                      `json:"TaskId" xml:"TaskId"`
+	RegionId             string                                      `json:"RegionId" xml:"RegionId"`
+	TaskAction           string                                      `json:"TaskAction" xml:"TaskAction"`
+	TaskStatus           string                                      `json:"TaskStatus" xml:"TaskStatus"`
+	TaskProcess          string                                      `json:"TaskProcess" xml:"TaskProcess"`
+	SupportCancel        string                                      `json:"SupportCancel" xml:"SupportCancel"`
+	TotalCount           int                                         `json:"TotalCount" xml:"TotalCount"`
+	SuccessCount         int                                         `json:"SuccessCount" xml:"SuccessCount"`
+	FailedCount          int                                         `json:"FailedCount" xml:"FailedCount"`
+	CreationTime         string                                      `json:"CreationTime" xml:"CreationTime"`
+	FinishedTime         string                                      `json:"FinishedTime" xml:"FinishedTime"`
+	OperationProgressSet OperationProgressSetInDescribeTaskAttribute `json:"OperationProgressSet" xml:"OperationProgressSet"`
 }
 
 // CreateDescribeTaskAttributeRequest creates a request to invoke DescribeTaskAttribute API

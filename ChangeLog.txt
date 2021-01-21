@@ -1,3 +1,7 @@
+2021-01-21 Version: v1.61.872
+- Generated 2014-05-26 for `Ecs`.
+- Supported RunInstances specifiy Dedicated Host Cluster Id.
+
 2021-01-20 Version: v1.61.871
 - Generated 2017-05-25 for `Dysmsapi`.
 - Supported post request for golang SDK.

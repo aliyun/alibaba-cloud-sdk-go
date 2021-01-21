@@ -113,6 +113,7 @@ type CreateDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	DiskId    string `json:"DiskId" xml:"DiskId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateDiskRequest creates a request to invoke CreateDisk API

@@ -92,6 +92,7 @@ type CreateAutoProvisioningGroupRequest struct {
 	LaunchConfigurationHostName                    string                                                    `position:"Query" name:"LaunchConfiguration.HostName"`
 	MaxSpotPrice                                   requests.Float                                            `position:"Query" name:"MaxSpotPrice"`
 	LaunchConfigurationPasswordInherit             requests.Boolean                                          `position:"Query" name:"LaunchConfiguration.PasswordInherit"`
+	ClientToken                                    string                                                    `position:"Query" name:"ClientToken"`
 	LaunchConfigurationSecurityGroupId             string                                                    `position:"Query" name:"LaunchConfiguration.SecurityGroupId"`
 	Description                                    string                                                    `position:"Query" name:"Description"`
 	TerminateInstancesWithExpiration               requests.Boolean                                          `position:"Query" name:"TerminateInstancesWithExpiration"`
@@ -165,8 +166,9 @@ type CreateAutoProvisioningGroupLaunchConfigurationTag struct {
 // CreateAutoProvisioningGroupResponse is the response struct for api CreateAutoProvisioningGroup
 type CreateAutoProvisioningGroupResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	AutoProvisioningGroupId string `json:"AutoProvisioningGroupId" xml:"AutoProvisioningGroupId"`
+	RequestId               string        `json:"RequestId" xml:"RequestId"`
+	AutoProvisioningGroupId string        `json:"AutoProvisioningGroupId" xml:"AutoProvisioningGroupId"`
+	LaunchResults           LaunchResults `json:"LaunchResults" xml:"LaunchResults"`
 }
 
 // CreateCreateAutoProvisioningGroupRequest creates a request to invoke CreateAutoProvisioningGroup API

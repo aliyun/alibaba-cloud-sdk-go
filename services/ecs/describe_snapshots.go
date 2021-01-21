@@ -109,12 +109,12 @@ type DescribeSnapshotsTag struct {
 // DescribeSnapshotsResponse is the response struct for api DescribeSnapshots
 type DescribeSnapshotsResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int       `json:"PageSize" xml:"PageSize"`
-	NextToken  string    `json:"NextToken" xml:"NextToken"`
-	Snapshots  Snapshots `json:"Snapshots" xml:"Snapshots"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	NextToken  string                       `json:"NextToken" xml:"NextToken"`
+	Snapshots  SnapshotsInDescribeSnapshots `json:"Snapshots" xml:"Snapshots"`
 }
 
 // CreateDescribeSnapshotsRequest creates a request to invoke DescribeSnapshots API

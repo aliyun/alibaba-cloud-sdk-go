@@ -17,16 +17,21 @@ package ecs
 
 // Instance is a nested struct in ecs response
 type Instance struct {
+	Hostname                        string                               `json:"Hostname" xml:"Hostname"`
 	ImageId                         string                               `json:"ImageId" xml:"ImageId"`
 	InstanceType                    string                               `json:"InstanceType" xml:"InstanceType"`
 	AutoReleaseTime                 string                               `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	LastInvokedTime                 string                               `json:"LastInvokedTime" xml:"LastInvokedTime"`
 	OsType                          string                               `json:"OsType" xml:"OsType"`
 	DeviceAvailable                 bool                                 `json:"DeviceAvailable" xml:"DeviceAvailable"`
 	InstanceNetworkType             string                               `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	RegistrationTime                string                               `json:"RegistrationTime" xml:"RegistrationTime"`
 	LocalStorageAmount              int                                  `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
 	NetworkType                     string                               `json:"NetworkType" xml:"NetworkType"`
+	IntranetIp                      string                               `json:"IntranetIp" xml:"IntranetIp"`
 	IsSpot                          bool                                 `json:"IsSpot" xml:"IsSpot"`
 	InstanceChargeType              string                               `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	MachineId                       string                               `json:"MachineId" xml:"MachineId"`
 	PrivatePoolOptionsId            string                               `json:"PrivatePoolOptionsId" xml:"PrivatePoolOptionsId"`
 	ClusterId                       string                               `json:"ClusterId" xml:"ClusterId"`
 	InstanceName                    string                               `json:"InstanceName" xml:"InstanceName"`
@@ -34,6 +39,8 @@ type Instance struct {
 	DeploymentSetGroupNo            int                                  `json:"DeploymentSetGroupNo" xml:"DeploymentSetGroupNo"`
 	CreditSpecification             string                               `json:"CreditSpecification" xml:"CreditSpecification"`
 	GPUAmount                       int                                  `json:"GPUAmount" xml:"GPUAmount"`
+	Connected                       bool                                 `json:"Connected" xml:"Connected"`
+	InvocationCount                 int64                                `json:"InvocationCount" xml:"InvocationCount"`
 	StartTime                       string                               `json:"StartTime" xml:"StartTime"`
 	ZoneId                          string                               `json:"ZoneId" xml:"ZoneId"`
 	InternetChargeType              string                               `json:"InternetChargeType" xml:"InternetChargeType"`
@@ -43,6 +50,7 @@ type Instance struct {
 	CPU                             int                                  `json:"CPU" xml:"CPU"`
 	Cpu                             int                                  `json:"Cpu" xml:"Cpu"`
 	ISP                             string                               `json:"ISP" xml:"ISP"`
+	OsVersion                       string                               `json:"OsVersion" xml:"OsVersion"`
 	SpotPriceLimit                  float64                              `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	OSName                          string                               `json:"OSName" xml:"OSName"`
 	OSNameEn                        string                               `json:"OSNameEn" xml:"OSNameEn"`
@@ -51,6 +59,7 @@ type Instance struct {
 	IoOptimized                     bool                                 `json:"IoOptimized" xml:"IoOptimized"`
 	InternetMaxBandwidthOut         int                                  `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
 	ResourceGroupId                 string                               `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ActivationId                    string                               `json:"ActivationId" xml:"ActivationId"`
 	InstanceTypeFamily              string                               `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 	InstanceId                      string                               `json:"InstanceId" xml:"InstanceId"`
 	DeploymentSetId                 string                               `json:"DeploymentSetId" xml:"DeploymentSetId"`
@@ -60,8 +69,10 @@ type Instance struct {
 	SaleCycle                       string                               `json:"SaleCycle" xml:"SaleCycle"`
 	ExpiredTime                     string                               `json:"ExpiredTime" xml:"ExpiredTime"`
 	OSType                          string                               `json:"OSType" xml:"OSType"`
+	InternetIp                      string                               `json:"InternetIp" xml:"InternetIp"`
 	Memory                          int                                  `json:"Memory" xml:"Memory"`
 	CreationTime                    string                               `json:"CreationTime" xml:"CreationTime"`
+	AgentVersion                    string                               `json:"AgentVersion" xml:"AgentVersion"`
 	KeyPairName                     string                               `json:"KeyPairName" xml:"KeyPairName"`
 	HpcClusterId                    string                               `json:"HpcClusterId" xml:"HpcClusterId"`
 	LocalStorageCapacity            int64                                `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`

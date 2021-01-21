@@ -94,6 +94,7 @@ type DescribeInstancesRequest struct {
 	InstanceIds             string                  `position:"Query" name:"InstanceIds"`
 	InternetChargeType      string                  `position:"Query" name:"InternetChargeType"`
 	ZoneId                  string                  `position:"Query" name:"ZoneId"`
+	MaxResults              requests.Integer        `position:"Query" name:"MaxResults"`
 	InstanceNetworkType     string                  `position:"Query" name:"InstanceNetworkType"`
 	Status                  string                  `position:"Query" name:"Status"`
 	ImageId                 string                  `position:"Query" name:"ImageId"`
@@ -102,6 +103,7 @@ type DescribeInstancesRequest struct {
 	SecurityGroupId         string                  `position:"Query" name:"SecurityGroupId"`
 	Filter4Key              string                  `position:"Query" name:"Filter.4.Key"`
 	PageNumber              requests.Integer        `position:"Query" name:"PageNumber"`
+	NextToken               string                  `position:"Query" name:"NextToken"`
 	RdmaIpAddresses         string                  `position:"Query" name:"RdmaIpAddresses"`
 	HttpEndpoint            string                  `position:"Query" name:"HttpEndpoint"`
 	PageSize                requests.Integer        `position:"Query" name:"PageSize"`
@@ -131,6 +133,7 @@ type DescribeInstancesResponse struct {
 	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	NextToken  string                       `json:"NextToken" xml:"NextToken"`
 	Instances  InstancesInDescribeInstances `json:"Instances" xml:"Instances"`
 }
 

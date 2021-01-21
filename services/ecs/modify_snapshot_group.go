@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyDiskSpec invokes the ecs.ModifyDiskSpec API synchronously
-func (client *Client) ModifyDiskSpec(request *ModifyDiskSpecRequest) (response *ModifyDiskSpecResponse, err error) {
-	response = CreateModifyDiskSpecResponse()
+// ModifySnapshotGroup invokes the ecs.ModifySnapshotGroup API synchronously
+func (client *Client) ModifySnapshotGroup(request *ModifySnapshotGroupRequest) (response *ModifySnapshotGroupResponse, err error) {
+	response = CreateModifySnapshotGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyDiskSpecWithChan invokes the ecs.ModifyDiskSpec API asynchronously
-func (client *Client) ModifyDiskSpecWithChan(request *ModifyDiskSpecRequest) (<-chan *ModifyDiskSpecResponse, <-chan error) {
-	responseChan := make(chan *ModifyDiskSpecResponse, 1)
+// ModifySnapshotGroupWithChan invokes the ecs.ModifySnapshotGroup API asynchronously
+func (client *Client) ModifySnapshotGroupWithChan(request *ModifySnapshotGroupRequest) (<-chan *ModifySnapshotGroupResponse, <-chan error) {
+	responseChan := make(chan *ModifySnapshotGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyDiskSpec(request)
+		response, err := client.ModifySnapshotGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ModifyDiskSpecWithChan(request *ModifyDiskSpecRequest) (<-
 	return responseChan, errChan
 }
 
-// ModifyDiskSpecWithCallback invokes the ecs.ModifyDiskSpec API asynchronously
-func (client *Client) ModifyDiskSpecWithCallback(request *ModifyDiskSpecRequest, callback func(response *ModifyDiskSpecResponse, err error)) <-chan int {
+// ModifySnapshotGroupWithCallback invokes the ecs.ModifySnapshotGroup API asynchronously
+func (client *Client) ModifySnapshotGroupWithCallback(request *ModifySnapshotGroupRequest, callback func(response *ModifySnapshotGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyDiskSpecResponse
+		var response *ModifySnapshotGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyDiskSpec(request)
+		response, err = client.ModifySnapshotGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,40 +68,37 @@ func (client *Client) ModifyDiskSpecWithCallback(request *ModifyDiskSpecRequest,
 	return result
 }
 
-// ModifyDiskSpecRequest is the request struct for api ModifyDiskSpec
-type ModifyDiskSpecRequest struct {
+// ModifySnapshotGroupRequest is the request struct for api ModifySnapshotGroup
+type ModifySnapshotGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DiskCategory         string           `position:"Query" name:"DiskCategory"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	Description          string           `position:"Query" name:"Description"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PerformanceLevel     string           `position:"Query" name:"PerformanceLevel"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SnapshotGroupId      string           `position:"Query" name:"SnapshotGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
-// ModifyDiskSpecResponse is the response struct for api ModifyDiskSpec
-type ModifyDiskSpecResponse struct {
+// ModifySnapshotGroupResponse is the response struct for api ModifySnapshotGroup
+type ModifySnapshotGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	TaskId    string `json:"TaskId" xml:"TaskId"`
-	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// CreateModifyDiskSpecRequest creates a request to invoke ModifyDiskSpec API
-func CreateModifyDiskSpecRequest() (request *ModifyDiskSpecRequest) {
-	request = &ModifyDiskSpecRequest{
+// CreateModifySnapshotGroupRequest creates a request to invoke ModifySnapshotGroup API
+func CreateModifySnapshotGroupRequest() (request *ModifySnapshotGroupRequest) {
+	request = &ModifySnapshotGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotGroup", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateModifyDiskSpecResponse creates a response to parse from ModifyDiskSpec response
-func CreateModifyDiskSpecResponse() (response *ModifyDiskSpecResponse) {
-	response = &ModifyDiskSpecResponse{
+// CreateModifySnapshotGroupResponse creates a response to parse from ModifySnapshotGroup response
+func CreateModifySnapshotGroupResponse() (response *ModifySnapshotGroupResponse) {
+	response = &ModifySnapshotGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
