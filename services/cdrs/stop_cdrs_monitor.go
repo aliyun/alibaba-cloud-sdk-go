@@ -72,6 +72,7 @@ func (client *Client) StopCdrsMonitorWithCallback(request *StopCdrsMonitorReques
 type StopCdrsMonitorRequest struct {
 	*requests.RpcRequest
 	CorpId          string `position:"Body" name:"CorpId"`
+	BizId           string `position:"Body" name:"BizId"`
 	AlgorithmVendor string `position:"Body" name:"AlgorithmVendor"`
 	TaskId          string `position:"Body" name:"TaskId"`
 }

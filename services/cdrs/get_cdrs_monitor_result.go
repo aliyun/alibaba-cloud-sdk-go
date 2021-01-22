@@ -74,6 +74,7 @@ type GetCdrsMonitorResultRequest struct {
 	CorpId          string           `position:"Body" name:"CorpId"`
 	EndTime         requests.Integer `position:"Body" name:"EndTime"`
 	StartTime       requests.Integer `position:"Body" name:"StartTime"`
+	BizId           string           `position:"Body" name:"BizId"`
 	AlgorithmVendor string           `position:"Body" name:"AlgorithmVendor"`
 	MinRecordId     string           `position:"Body" name:"MinRecordId"`
 	TaskId          string           `position:"Body" name:"TaskId"`

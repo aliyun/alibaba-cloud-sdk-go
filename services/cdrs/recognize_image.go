@@ -71,10 +71,12 @@ func (client *Client) RecognizeImageWithCallback(request *RecognizeImageRequest,
 // RecognizeImageRequest is the request struct for api RecognizeImage
 type RecognizeImageRequest struct {
 	*requests.RpcRequest
-	CorpId       string `position:"Body" name:"CorpId"`
-	Vendor       string `position:"Body" name:"Vendor"`
-	ImageUrl     string `position:"Body" name:"ImageUrl"`
-	ImageContent string `position:"Body" name:"ImageContent"`
+	RequireCropImage requests.Boolean `position:"Body" name:"RequireCropImage"`
+	CorpId           string           `position:"Body" name:"CorpId"`
+	RecognizeType    string           `position:"Body" name:"RecognizeType"`
+	Vendor           string           `position:"Body" name:"Vendor"`
+	ImageUrl         string           `position:"Body" name:"ImageUrl"`
+	ImageContent     string           `position:"Body" name:"ImageContent"`
 }
 
 // RecognizeImageResponse is the response struct for api RecognizeImage

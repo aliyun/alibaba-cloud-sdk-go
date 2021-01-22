@@ -17,14 +17,18 @@ package cdrs
 
 // NonMotorListItem is a nested struct in cdrs response
 type NonMotorListItem struct {
-	DeviceID       string `json:"DeviceID" xml:"DeviceID"`
-	ObjectType     string `json:"ObjectType" xml:"ObjectType"`
-	LeftTopX       int    `json:"LeftTopX" xml:"LeftTopX"`
-	LeftTopY       int    `json:"LeftTopY" xml:"LeftTopY"`
-	RightBottomX   int    `json:"RightBottomX" xml:"RightBottomX"`
-	RightBottomY   int    `json:"RightBottomY" xml:"RightBottomY"`
-	Score          int    `json:"Score" xml:"Score"`
-	ShotTime       string `json:"ShotTime" xml:"ShotTime"`
-	SourceImageUrl string `json:"SourceImageUrl" xml:"SourceImageUrl"`
-	TargetImageUrl string `json:"TargetImageUrl" xml:"TargetImageUrl"`
+	RightBottomY    int     `json:"RightBottomY" xml:"RightBottomY"`
+	DeviceLatitude  float64 `json:"DeviceLatitude" xml:"DeviceLatitude"`
+	Score           float64 `json:"Score" xml:"Score"`
+	PersonId        string  `json:"PersonId" xml:"PersonId"`
+	SourceImageUrl  string  `json:"SourceImageUrl" xml:"SourceImageUrl"`
+	DeviceName      string  `json:"DeviceName" xml:"DeviceName"`
+	DeviceLongitude float64 `json:"DeviceLongitude" xml:"DeviceLongitude"`
+	ShotTime        string  `json:"ShotTime" xml:"ShotTime"`
+	DeviceID        string  `json:"DeviceID" xml:"DeviceID"`
+	ObjectType      string  `json:"ObjectType" xml:"ObjectType"`
+	RightBottomX    int     `json:"RightBottomX" xml:"RightBottomX"`
+	LeftTopY        int     `json:"LeftTopY" xml:"LeftTopY"`
+	TargetImageUrl  string  `json:"TargetImageUrl" xml:"TargetImageUrl"`
+	LeftTopX        int     `json:"LeftTopX" xml:"LeftTopX"`
 }

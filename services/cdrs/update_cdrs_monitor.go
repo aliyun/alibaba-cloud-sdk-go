@@ -88,6 +88,7 @@ type UpdateCdrsMonitorRequest struct {
 	DeviceList           string           `position:"Body" name:"DeviceList"`
 	NotifierUrl          string           `position:"Body" name:"NotifierUrl"`
 	NotifierType         string           `position:"Body" name:"NotifierType"`
+	BizId                string           `position:"Body" name:"BizId"`
 	AlgorithmVendor      string           `position:"Body" name:"AlgorithmVendor"`
 }
 

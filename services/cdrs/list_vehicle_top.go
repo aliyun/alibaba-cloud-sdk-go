@@ -75,6 +75,8 @@ type ListVehicleTopRequest struct {
 	CorpId    string `position:"Body" name:"CorpId"`
 	EndTime   string `position:"Body" name:"EndTime"`
 	StartTime string `position:"Body" name:"StartTime"`
+	PageNum   string `position:"Body" name:"PageNum"`
+	PageSize  string `position:"Body" name:"PageSize"`
 }
 
 // ListVehicleTopResponse is the response struct for api ListVehicleTop

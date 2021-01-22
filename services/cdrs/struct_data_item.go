@@ -17,32 +17,22 @@ package cdrs
 
 // DataItem is a nested struct in cdrs response
 type DataItem struct {
-	TagMetrics       string `json:"TagMetrics" xml:"TagMetrics"`
-	Coordinates      string `json:"Coordinates" xml:"Coordinates"`
-	Date             string `json:"Date" xml:"Date"`
-	SourceUrl        string `json:"SourceUrl" xml:"SourceUrl"`
-	Frequency        string `json:"Frequency" xml:"Frequency"`
-	IntervalTime     string `json:"IntervalTime" xml:"IntervalTime"`
-	DeviceGroupId    string `json:"DeviceGroupId" xml:"DeviceGroupId"`
-	EndSourceImage   string `json:"EndSourceImage" xml:"EndSourceImage"`
-	CorpId           string `json:"CorpId" xml:"CorpId"`
-	StartTargetImage string `json:"StartTargetImage" xml:"StartTargetImage"`
-	DeviceId         string `json:"DeviceId" xml:"DeviceId"`
-	LastTime         string `json:"LastTime" xml:"LastTime"`
-	TagValue         string `json:"TagValue" xml:"TagValue"`
-	DateTime         string `json:"DateTime" xml:"DateTime"`
-	GroupId          string `json:"GroupId" xml:"GroupId"`
-	PoiId            string `json:"PoiId" xml:"PoiId"`
-	TargetUrl        string `json:"TargetUrl" xml:"TargetUrl"`
-	PassHour         string `json:"PassHour" xml:"PassHour"`
-	StartSourceImage string `json:"StartSourceImage" xml:"StartSourceImage"`
-	EndTargetImage   string `json:"EndTargetImage" xml:"EndTargetImage"`
-	DateId           string `json:"DateId" xml:"DateId"`
-	UserGroupId      string `json:"UserGroupId" xml:"UserGroupId"`
-	PersonId         string `json:"PersonId" xml:"PersonId"`
-	Times            string `json:"Times" xml:"Times"`
-	PoiName          string `json:"PoiName" xml:"PoiName"`
-	TagCode          string `json:"TagCode" xml:"TagCode"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	TagMetric        string `json:"TagMetric" xml:"TagMetric"`
+	TagMetrics    string `json:"TagMetrics" xml:"TagMetrics"`
+	DateId        string `json:"DateId" xml:"DateId"`
+	Coordinates   string `json:"Coordinates" xml:"Coordinates"`
+	UserGroupId   string `json:"UserGroupId" xml:"UserGroupId"`
+	PersonId      string `json:"PersonId" xml:"PersonId"`
+	Times         string `json:"Times" xml:"Times"`
+	PoiName       string `json:"PoiName" xml:"PoiName"`
+	Frequency     string `json:"Frequency" xml:"Frequency"`
+	IntervalTime  string `json:"IntervalTime" xml:"IntervalTime"`
+	DeviceGroupId string `json:"DeviceGroupId" xml:"DeviceGroupId"`
+	TagCode       string `json:"TagCode" xml:"TagCode"`
+	TagMetric     string `json:"TagMetric" xml:"TagMetric"`
+	CorpId        string `json:"CorpId" xml:"CorpId"`
+	DeviceId      string `json:"DeviceId" xml:"DeviceId"`
+	TagValue      string `json:"TagValue" xml:"TagValue"`
+	DateTime      string `json:"DateTime" xml:"DateTime"`
+	PoiId         string `json:"PoiId" xml:"PoiId"`
+	PassHour      string `json:"PassHour" xml:"PassHour"`
 }

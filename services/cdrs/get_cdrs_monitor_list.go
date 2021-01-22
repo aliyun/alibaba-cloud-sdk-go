@@ -74,6 +74,7 @@ type GetCdrsMonitorListRequest struct {
 	CorpId   string           `position:"Body" name:"CorpId"`
 	PageNo   requests.Integer `position:"Body" name:"PageNo"`
 	PageSize requests.Integer `position:"Body" name:"PageSize"`
+	BizId    string           `position:"Body" name:"BizId"`
 }
 
 // GetCdrsMonitorListResponse is the response struct for api GetCdrsMonitorList

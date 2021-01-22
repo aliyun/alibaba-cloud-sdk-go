@@ -18,16 +18,22 @@ package cdrs
 // FaceListItem is a nested struct in cdrs response
 type FaceListItem struct {
 	RightBottomY        int     `json:"RightBottomY" xml:"RightBottomY"`
+	DeviceLatitude      float64 `json:"DeviceLatitude" xml:"DeviceLatitude"`
 	Score               float64 `json:"Score" xml:"Score"`
 	FaceQuality         float64 `json:"FaceQuality" xml:"FaceQuality"`
+	PersonId            string  `json:"PersonId" xml:"PersonId"`
 	FaceKeyPointQuality float64 `json:"FaceKeyPointQuality" xml:"FaceKeyPointQuality"`
 	Feature             string  `json:"Feature" xml:"Feature"`
 	SourceImageUrl      string  `json:"SourceImageUrl" xml:"SourceImageUrl"`
+	DeviceName          string  `json:"DeviceName" xml:"DeviceName"`
+	DeviceLongitude     float64 `json:"DeviceLongitude" xml:"DeviceLongitude"`
 	ShotTime            string  `json:"ShotTime" xml:"ShotTime"`
 	DeviceID            string  `json:"DeviceID" xml:"DeviceID"`
 	ObjectType          string  `json:"ObjectType" xml:"ObjectType"`
 	RightBottomX        int     `json:"RightBottomX" xml:"RightBottomX"`
+	TargetImageContent  string  `json:"TargetImageContent" xml:"TargetImageContent"`
 	LeftTopY            int     `json:"LeftTopY" xml:"LeftTopY"`
+	CropAlgorithmCode   string  `json:"CropAlgorithmCode" xml:"CropAlgorithmCode"`
 	TargetImageUrl      string  `json:"TargetImageUrl" xml:"TargetImageUrl"`
 	LeftTopX            int     `json:"LeftTopX" xml:"LeftTopX"`
 }

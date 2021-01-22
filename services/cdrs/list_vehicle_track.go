@@ -71,10 +71,12 @@ func (client *Client) ListVehicleTrackWithCallback(request *ListVehicleTrackRequ
 // ListVehicleTrackRequest is the request struct for api ListVehicleTrack
 type ListVehicleTrackRequest struct {
 	*requests.RpcRequest
-	PlateId   string `position:"Body" name:"PlateId"`
-	CorpId    string `position:"Body" name:"CorpId"`
-	EndTime   string `position:"Body" name:"EndTime"`
-	StartTime string `position:"Body" name:"StartTime"`
+	PlateId    string           `position:"Body" name:"PlateId"`
+	CorpId     string           `position:"Body" name:"CorpId"`
+	EndTime    string           `position:"Body" name:"EndTime"`
+	StartTime  string           `position:"Body" name:"StartTime"`
+	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Body" name:"PageSize"`
 }
 
 // ListVehicleTrackResponse is the response struct for api ListVehicleTrack
