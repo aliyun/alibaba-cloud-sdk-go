@@ -17,5 +17,5 @@ package cs
 
 // Items is a nested struct in cs response
 type Items struct {
-	ItemsItem []ItemsItem `json:"items" xml:"items"`
+	Item []Item `json:"item" xml:"item"`
 }

@@ -80,7 +80,6 @@ type GetKubernetesTriggerRequest struct {
 // GetKubernetesTriggerResponse is the response struct for api GetKubernetesTrigger
 type GetKubernetesTriggerResponse struct {
 	*responses.BaseResponse
-	Triggers []TriggersItem `json:"triggers" xml:"triggers"`
 }
 
 // CreateGetKubernetesTriggerRequest creates a request to invoke GetKubernetesTrigger API

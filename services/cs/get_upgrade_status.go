@@ -77,10 +77,11 @@ type GetUpgradeStatusRequest struct {
 // GetUpgradeStatusResponse is the response struct for api GetUpgradeStatus
 type GetUpgradeStatusResponse struct {
 	*responses.BaseResponse
-	ErrorMessage     string `json:"error_message" xml:"error_message"`
-	PrecheckReportId string `json:"precheck_report_id" xml:"precheck_report_id"`
-	UpgradeStep      string `json:"upgrade_step" xml:"upgrade_step"`
-	Status           string `json:"status" xml:"status"`
+	ErrorMessage     string       `json:"error_message" xml:"error_message"`
+	PrecheckReportId string       `json:"precheck_report_id" xml:"precheck_report_id"`
+	UpgradeStep      string       `json:"upgrade_step" xml:"upgrade_step"`
+	Status           string       `json:"status" xml:"status"`
+	UpgradeTask      Upgrade_task `json:"upgrade_task" xml:"upgrade_task"`
 }
 
 // CreateGetUpgradeStatusRequest creates a request to invoke GetUpgradeStatus API

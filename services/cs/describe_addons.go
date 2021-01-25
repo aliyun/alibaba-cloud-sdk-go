@@ -78,8 +78,8 @@ type DescribeAddonsRequest struct {
 // DescribeAddonsResponse is the response struct for api DescribeAddons
 type DescribeAddonsResponse struct {
 	*responses.BaseResponse
-	StandardComponents StandardComponents    `json:"StandardComponents" xml:"StandardComponents"`
-	ComponentGroups    []ComponentGroupsItem `json:"ComponentGroups" xml:"ComponentGroups"`
+	StandardComponents map[string]interface{} `json:"StandardComponents" xml:"StandardComponents"`
+	ComponentGroups    []ComponentGroup       `json:"ComponentGroups" xml:"ComponentGroups"`
 }
 
 // CreateDescribeAddonsRequest creates a request to invoke DescribeAddons API

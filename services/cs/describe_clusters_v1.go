@@ -71,17 +71,15 @@ func (client *Client) DescribeClustersV1WithCallback(request *DescribeClustersV1
 // DescribeClustersV1Request is the request struct for api DescribeClustersV1
 type DescribeClustersV1Request struct {
 	*requests.RoaRequest
-	ClusterType string           `position:"Query" name:"ClusterType"`
 	PageNumber  requests.Integer `position:"Query" name:"page_number"`
-	Name        string           `position:"Query" name:"Name"`
+	Name        string           `position:"Query" name:"name"`
+	ClusterType string           `position:"Query" name:"cluster_type"`
 	PageSize    requests.Integer `position:"Query" name:"page_size"`
 }
 
 // DescribeClustersV1Response is the response struct for api DescribeClustersV1
 type DescribeClustersV1Response struct {
 	*responses.BaseResponse
-	PageInfo Page_info `json:"page_info" xml:"page_info"`
-	Clusters Clusters  `json:"clusters" xml:"clusters"`
 }
 
 // CreateDescribeClustersV1Request creates a request to invoke DescribeClustersV1 API

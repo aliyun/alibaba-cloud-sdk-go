@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateCluster invokes the cs.CreateCluster API synchronously
-func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
-	response = CreateCreateClusterResponse()
+// OpenAckService invokes the cs.OpenAckService API synchronously
+func (client *Client) OpenAckService(request *OpenAckServiceRequest) (response *OpenAckServiceResponse, err error) {
+	response = CreateOpenAckServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateClusterWithChan invokes the cs.CreateCluster API asynchronously
-func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
-	responseChan := make(chan *CreateClusterResponse, 1)
+// OpenAckServiceWithChan invokes the cs.OpenAckService API asynchronously
+func (client *Client) OpenAckServiceWithChan(request *OpenAckServiceRequest) (<-chan *OpenAckServiceResponse, <-chan error) {
+	responseChan := make(chan *OpenAckServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateCluster(request)
+		response, err := client.OpenAckService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-ch
 	return responseChan, errChan
 }
 
-// CreateClusterWithCallback invokes the cs.CreateCluster API asynchronously
-func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
+// OpenAckServiceWithCallback invokes the cs.OpenAckService API asynchronously
+func (client *Client) OpenAckServiceWithCallback(request *OpenAckServiceRequest, callback func(response *OpenAckServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateClusterResponse
+		var response *OpenAckServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateCluster(request)
+		response, err = client.OpenAckService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,32 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 	return result
 }
 
-// CreateClusterRequest is the request struct for api CreateCluster
-type CreateClusterRequest struct {
+// OpenAckServiceRequest is the request struct for api OpenAckService
+type OpenAckServiceRequest struct {
 	*requests.RoaRequest
+	Type string `position:"Query" name:"type"`
 }
 
-// CreateClusterResponse is the response struct for api CreateCluster
-type CreateClusterResponse struct {
+// OpenAckServiceResponse is the response struct for api OpenAckService
+type OpenAckServiceResponse struct {
 	*responses.BaseResponse
-	ClusterId string `json:"cluster_id" xml:"cluster_id"`
-	TaskId    string `json:"task_id" xml:"task_id"`
+	OrderId   string `json:"order_id" xml:"order_id"`
 	RequestId string `json:"request_id" xml:"request_id"`
 }
 
-// CreateCreateClusterRequest creates a request to invoke CreateCluster API
-func CreateCreateClusterRequest() (request *CreateClusterRequest) {
-	request = &CreateClusterRequest{
+// CreateOpenAckServiceRequest creates a request to invoke OpenAckService API
+func CreateOpenAckServiceRequest() (request *OpenAckServiceRequest) {
+	request = &OpenAckServiceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CreateCluster", "/clusters", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "OpenAckService", "/service/open", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateClusterResponse creates a response to parse from CreateCluster response
-func CreateCreateClusterResponse() (response *CreateClusterResponse) {
-	response = &CreateClusterResponse{
+// CreateOpenAckServiceResponse creates a response to parse from OpenAckService response
+func CreateOpenAckServiceResponse() (response *OpenAckServiceResponse) {
+	response = &OpenAckServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

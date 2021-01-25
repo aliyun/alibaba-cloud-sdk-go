@@ -71,10 +71,7 @@ func (client *Client) UpgradeClusterWithCallback(request *UpgradeClusterRequest,
 // UpgradeClusterRequest is the request struct for api UpgradeCluster
 type UpgradeClusterRequest struct {
 	*requests.RoaRequest
-	ComponentName string `position:"Body" name:"component_name"`
-	ClusterId     string `position:"Path" name:"ClusterId"`
-	Version       string `position:"Body" name:"version"`
-	NextVersion   string `position:"Body" name:"next_version"`
+	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
 // UpgradeClusterResponse is the response struct for api UpgradeCluster

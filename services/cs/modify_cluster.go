@@ -71,13 +71,7 @@ func (client *Client) ModifyClusterWithCallback(request *ModifyClusterRequest, c
 // ModifyClusterRequest is the request struct for api ModifyCluster
 type ModifyClusterRequest struct {
 	*requests.RoaRequest
-	ApiServerEip           requests.Boolean `position:"Body" name:"api_server_eip"`
-	ResourceGroupId        string           `position:"Body" name:"resource_group_id"`
-	IngressDomainRebinding string           `position:"Body" name:"ingress_domain_rebinding"`
-	DeletionProtection     requests.Boolean `position:"Body" name:"deletion_protection"`
-	IngressLoadbalancerId  string           `position:"Body" name:"ingress_loadbalancer_id"`
-	ClusterId              string           `position:"Path" name:"ClusterId"`
-	ApiServerEipId         string           `position:"Body" name:"api_server_eip_id"`
+	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
 // ModifyClusterResponse is the response struct for api ModifyCluster

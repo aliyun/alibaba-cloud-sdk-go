@@ -71,16 +71,7 @@ func (client *Client) AttachInstancesWithCallback(request *AttachInstancesReques
 // AttachInstancesRequest is the request struct for api AttachInstances
 type AttachInstancesRequest struct {
 	*requests.RoaRequest
-	Password         string           `position:"Body" name:"password"`
-	KeepInstanceName requests.Boolean `position:"Body" name:"keep_instance_name"`
-	KeyPair          string           `position:"Body" name:"key_pair"`
-	CpuPolicy        string           `position:"Body" name:"cpu_policy"`
-	IsEdgeWorker     requests.Boolean `position:"Body" name:"is_edge_worker"`
-	ClusterId        string           `position:"Path" name:"ClusterId"`
-	UserData         string           `position:"Body" name:"user_data"`
-	ImageId          string           `position:"Body" name:"image_id"`
-	FormatDisk       requests.Boolean `position:"Body" name:"format_disk"`
-	NodepoolId       string           `position:"Body" name:"nodepool_id"`
+	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
 // AttachInstancesResponse is the response struct for api AttachInstances

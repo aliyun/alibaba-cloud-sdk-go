@@ -77,28 +77,6 @@ type DescribeClusterDetailRequest struct {
 // DescribeClusterDetailResponse is the response struct for api DescribeClusterDetail
 type DescribeClusterDetailResponse struct {
 	*responses.BaseResponse
-	ResourceGroupId        string     `json:"resource_group_id" xml:"resource_group_id"`
-	VpcId                  string     `json:"vpc_id" xml:"vpc_id"`
-	DeletionProtection     bool       `json:"deletion_protection" xml:"deletion_protection"`
-	Created                string     `json:"created" xml:"created"`
-	NetworkMode            string     `json:"network_mode" xml:"network_mode"`
-	RegionId               string     `json:"region_id" xml:"region_id"`
-	SecurityGroupId        string     `json:"security_group_id" xml:"security_group_id"`
-	CurrentVersion         string     `json:"current_version" xml:"current_version"`
-	ClusterType            string     `json:"cluster_type" xml:"cluster_type"`
-	DockerVersion          string     `json:"docker_version" xml:"docker_version"`
-	VswitchCidr            string     `json:"vswitch_cidr" xml:"vswitch_cidr"`
-	ZoneId                 string     `json:"zone_id" xml:"zone_id"`
-	ClusterId              string     `json:"cluster_id" xml:"cluster_id"`
-	Size                   int        `json:"size" xml:"size"`
-	ExternalLoadbalancerId string     `json:"external_loadbalancer_id" xml:"external_loadbalancer_id"`
-	VswitchId              string     `json:"vswitch_id" xml:"vswitch_id"`
-	Name                   string     `json:"name" xml:"name"`
-	MetaData               string     `json:"meta_data" xml:"meta_data"`
-	State                  string     `json:"state" xml:"state"`
-	Updated                string     `json:"updated" xml:"updated"`
-	InstanceType           string     `json:"instance_type" xml:"instance_type"`
-	Tags                   []TagsItem `json:"tags" xml:"tags"`
 }
 
 // CreateDescribeClusterDetailRequest creates a request to invoke DescribeClusterDetail API

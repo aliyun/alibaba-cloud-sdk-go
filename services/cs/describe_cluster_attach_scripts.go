@@ -72,7 +72,6 @@ func (client *Client) DescribeClusterAttachScriptsWithCallback(request *Describe
 type DescribeClusterAttachScriptsRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
-	Arch      string `position:"Body" name:"arch"`
 }
 
 // DescribeClusterAttachScriptsResponse is the response struct for api DescribeClusterAttachScripts

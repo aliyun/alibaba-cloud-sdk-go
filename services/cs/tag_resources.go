@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CancelWorkflow invokes the cs.CancelWorkflow API synchronously
-func (client *Client) CancelWorkflow(request *CancelWorkflowRequest) (response *CancelWorkflowResponse, err error) {
-	response = CreateCancelWorkflowResponse()
+// TagResources invokes the cs.TagResources API synchronously
+func (client *Client) TagResources(request *TagResourcesRequest) (response *TagResourcesResponse, err error) {
+	response = CreateTagResourcesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CancelWorkflowWithChan invokes the cs.CancelWorkflow API asynchronously
-func (client *Client) CancelWorkflowWithChan(request *CancelWorkflowRequest) (<-chan *CancelWorkflowResponse, <-chan error) {
-	responseChan := make(chan *CancelWorkflowResponse, 1)
+// TagResourcesWithChan invokes the cs.TagResources API asynchronously
+func (client *Client) TagResourcesWithChan(request *TagResourcesRequest) (<-chan *TagResourcesResponse, <-chan error) {
+	responseChan := make(chan *TagResourcesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CancelWorkflow(request)
+		response, err := client.TagResources(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CancelWorkflowWithChan(request *CancelWorkflowRequest) (<-
 	return responseChan, errChan
 }
 
-// CancelWorkflowWithCallback invokes the cs.CancelWorkflow API asynchronously
-func (client *Client) CancelWorkflowWithCallback(request *CancelWorkflowRequest, callback func(response *CancelWorkflowResponse, err error)) <-chan int {
+// TagResourcesWithCallback invokes the cs.TagResources API asynchronously
+func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, callback func(response *TagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CancelWorkflowResponse
+		var response *TagResourcesResponse
 		var err error
 		defer close(result)
-		response, err = client.CancelWorkflow(request)
+		response, err = client.TagResources(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,30 +68,29 @@ func (client *Client) CancelWorkflowWithCallback(request *CancelWorkflowRequest,
 	return result
 }
 
-// CancelWorkflowRequest is the request struct for api CancelWorkflow
-type CancelWorkflowRequest struct {
+// TagResourcesRequest is the request struct for api TagResources
+type TagResourcesRequest struct {
 	*requests.RoaRequest
-	WorkflowName string `position:"Path" name:"workflowName"`
 }
 
-// CancelWorkflowResponse is the response struct for api CancelWorkflow
-type CancelWorkflowResponse struct {
+// TagResourcesResponse is the response struct for api TagResources
+type TagResourcesResponse struct {
 	*responses.BaseResponse
 }
 
-// CreateCancelWorkflowRequest creates a request to invoke CancelWorkflow API
-func CreateCancelWorkflowRequest() (request *CancelWorkflowRequest) {
-	request = &CancelWorkflowRequest{
+// CreateTagResourcesRequest creates a request to invoke TagResources API
+func CreateTagResourcesRequest() (request *TagResourcesRequest) {
+	request = &TagResourcesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CancelWorkflow", "/gs/workflow/[workflowName]", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "TagResources", "/tags", "", "")
 	request.Method = requests.PUT
 	return
 }
 
-// CreateCancelWorkflowResponse creates a response to parse from CancelWorkflow response
-func CreateCancelWorkflowResponse() (response *CancelWorkflowResponse) {
-	response = &CancelWorkflowResponse{
+// CreateTagResourcesResponse creates a response to parse from TagResources response
+func CreateTagResourcesResponse() (response *TagResourcesResponse) {
+	response = &TagResourcesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

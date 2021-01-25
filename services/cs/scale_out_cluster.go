@@ -71,23 +71,7 @@ func (client *Client) ScaleOutClusterWithCallback(request *ScaleOutClusterReques
 // ScaleOutClusterRequest is the request struct for api ScaleOutCluster
 type ScaleOutClusterRequest struct {
 	*requests.RoaRequest
-	WorkerDataDisk           requests.Boolean `position:"Body" name:"worker_data_disk"`
-	KeyPair                  string           `position:"Body" name:"key_pair"`
-	Count                    requests.Integer `position:"Body" name:"count"`
-	WorkerSystemDiskCategory string           `position:"Body" name:"worker_system_disk_category"`
-	CloudMonitorFlags        requests.Boolean `position:"Body" name:"cloud_monitor_flags"`
-	ClusterId                string           `position:"Path" name:"ClusterId"`
-	UserData                 string           `position:"Body" name:"user_data"`
-	WorkerPeriodUnit         string           `position:"Body" name:"worker_period_unit"`
-	WorkerAutoRenew          requests.Boolean `position:"Body" name:"worker_auto_renew"`
-	WorkerAutoRenewPeriod    requests.Integer `position:"Body" name:"worker_auto_renew_period"`
-	WorkerPeriod             requests.Integer `position:"Body" name:"worker_period"`
-	LoginPassword            string           `position:"Body" name:"login_password"`
-	WorkerSystemDiskSize     requests.Integer `position:"Body" name:"worker_system_disk_size"`
-	CpuPolicy                string           `position:"Body" name:"cpu_policy"`
-	DisableRollback          requests.Boolean `position:"Body" name:"disable_rollback"`
-	ImageId                  string           `position:"Body" name:"image_id"`
-	WorkerInstanceChargeType string           `position:"Body" name:"worker_instance_charge_type"`
+	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
 // ScaleOutClusterResponse is the response struct for api ScaleOutCluster

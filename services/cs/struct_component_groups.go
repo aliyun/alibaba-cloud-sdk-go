@@ -17,5 +17,5 @@ package cs
 
 // ComponentGroups is a nested struct in cs response
 type ComponentGroups struct {
-	ComponentGroupsItem []ComponentGroupsItem `json:"ComponentGroups" xml:"ComponentGroups"`
+	ComponentGroup []ComponentGroup `json:"ComponentGroup" xml:"ComponentGroup"`
 }

@@ -71,7 +71,8 @@ func (client *Client) DescribeExternalAgentWithCallback(request *DescribeExterna
 // DescribeExternalAgentRequest is the request struct for api DescribeExternalAgent
 type DescribeExternalAgentRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Path" name:"ClusterId"`
+	PrivateIpAddress string `position:"Query" name:"PrivateIpAddress"`
+	ClusterId        string `position:"Path" name:"ClusterId"`
 }
 
 // DescribeExternalAgentResponse is the response struct for api DescribeExternalAgent

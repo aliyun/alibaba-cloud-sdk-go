@@ -77,12 +77,6 @@ type DescribeClusterLogsRequest struct {
 // DescribeClusterLogsResponse is the response struct for api DescribeClusterLogs
 type DescribeClusterLogsResponse struct {
 	*responses.BaseResponse
-	ClusterId  string `json:"cluster_id" xml:"cluster_id"`
-	ClusterLog string `json:"cluster_log" xml:"cluster_log"`
-	Created    string `json:"created" xml:"created"`
-	LogLevel   string `json:"log_level" xml:"log_level"`
-	ID         string `json:"ID" xml:"ID"`
-	Updated    string `json:"updated" xml:"updated"`
 }
 
 // CreateDescribeClusterLogsRequest creates a request to invoke DescribeClusterLogs API

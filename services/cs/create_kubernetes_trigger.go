@@ -71,9 +71,6 @@ func (client *Client) CreateKubernetesTriggerWithCallback(request *CreateKuberne
 // CreateKubernetesTriggerRequest is the request struct for api CreateKubernetesTrigger
 type CreateKubernetesTriggerRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Body" name:"ClusterId"`
-	Type      string `position:"Body" name:"Type"`
-	ProjectId string `position:"Body" name:"ProjectId"`
 }
 
 // CreateKubernetesTriggerResponse is the response struct for api CreateKubernetesTrigger
@@ -83,6 +80,7 @@ type CreateKubernetesTriggerResponse struct {
 	ProjectId string `json:"project_id" xml:"project_id"`
 	Action    string `json:"action" xml:"action"`
 	Id        string `json:"id" xml:"id"`
+	Type      string `json:"type" xml:"type"`
 }
 
 // CreateCreateKubernetesTriggerRequest creates a request to invoke CreateKubernetesTrigger API

@@ -71,12 +71,7 @@ func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest,
 // UpdateTemplateRequest is the request struct for api UpdateTemplate
 type UpdateTemplateRequest struct {
 	*requests.RoaRequest
-	Template     string `position:"Body" name:"template"`
-	Name         string `position:"Body" name:"name"`
-	Description  string `position:"Body" name:"description"`
-	TemplateType string `position:"Body" name:"template_type"`
-	TemplateId   string `position:"Path" name:"TemplateId"`
-	Tags         string `position:"Body" name:"tags"`
+	TemplateId string `position:"Path" name:"TemplateId"`
 }
 
 // UpdateTemplateResponse is the response struct for api UpdateTemplate

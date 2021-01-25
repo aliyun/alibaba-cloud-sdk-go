@@ -71,14 +71,16 @@ func (client *Client) DescribeTemplatesWithCallback(request *DescribeTemplatesRe
 // DescribeTemplatesRequest is the request struct for api DescribeTemplates
 type DescribeTemplatesRequest struct {
 	*requests.RoaRequest
-	TemplateType string `position:"Query" name:"template_type"`
+	PageNum      requests.Integer `position:"Query" name:"page_num"`
+	TemplateType string           `position:"Query" name:"template_type"`
+	PageSize     requests.Integer `position:"Query" name:"page_size"`
 }
 
 // DescribeTemplatesResponse is the response struct for api DescribeTemplates
 type DescribeTemplatesResponse struct {
 	*responses.BaseResponse
-	PageInfo  PageInfoInDescribeTemplates `json:"page_info" xml:"page_info"`
-	Templates Templates                   `json:"templates" xml:"templates"`
+	PageInfo  Page_info `json:"page_info" xml:"page_info"`
+	Templates Templates `json:"templates" xml:"templates"`
 }
 
 // CreateDescribeTemplatesRequest creates a request to invoke DescribeTemplates API

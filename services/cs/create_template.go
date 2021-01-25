@@ -71,10 +71,6 @@ func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest,
 // CreateTemplateRequest is the request struct for api CreateTemplate
 type CreateTemplateRequest struct {
 	*requests.RoaRequest
-	Template     string `position:"Body" name:"template"`
-	Name         string `position:"Body" name:"name"`
-	TemplateType string `position:"Body" name:"template_type"`
-	Tags         string `position:"Body" name:"tags"`
 }
 
 // CreateTemplateResponse is the response struct for api CreateTemplate

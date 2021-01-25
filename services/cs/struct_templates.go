@@ -17,5 +17,5 @@ package cs
 
 // Templates is a nested struct in cs response
 type Templates struct {
-	TemplatesItem []TemplatesItem `json:"templates" xml:"templates"`
+	Template []Template `json:"template" xml:"template"`
 }

@@ -77,7 +77,6 @@ type DescribeClusterAddonsVersionRequest struct {
 // DescribeClusterAddonsVersionResponse is the response struct for api DescribeClusterAddonsVersion
 type DescribeClusterAddonsVersionResponse struct {
 	*responses.BaseResponse
-	AddonsName map[string]interface{} `json:"AddonsName" xml:"AddonsName"`
 }
 
 // CreateDescribeClusterAddonsVersionRequest creates a request to invoke DescribeClusterAddonsVersion API

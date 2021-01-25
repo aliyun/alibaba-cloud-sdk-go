@@ -71,15 +71,15 @@ func (client *Client) ListTagResourcesWithCallback(request *ListTagResourcesRequ
 // ListTagResourcesRequest is the request struct for api ListTagResources
 type ListTagResourcesRequest struct {
 	*requests.RoaRequest
-	ResourceType string `position:"Query" name:"resource_type"`
-	NextToken    string `position:"Query" name:"next_token"`
-	ResourceIds  string `position:"Query" name:"resource_ids"`
-	Tags         string `position:"Query" name:"tags"`
+	NextToken string `position:"Query" name:"next_token"`
 }
 
 // ListTagResourcesResponse is the response struct for api ListTagResources
 type ListTagResourcesResponse struct {
 	*responses.BaseResponse
+	NextToken    string        `json:"next_token" xml:"next_token"`
+	RequestId    string        `json:"request_id" xml:"request_id"`
+	TagResources Tag_resources `json:"tag_resources" xml:"tag_resources"`
 }
 
 // CreateListTagResourcesRequest creates a request to invoke ListTagResources API

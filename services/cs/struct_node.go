@@ -23,6 +23,7 @@ type Node struct {
 	InstanceName       string   `json:"instance_name" xml:"instance_name"`
 	IsAliyunNode       bool     `json:"is_aliyun_node" xml:"is_aliyun_node"`
 	NodeName           string   `json:"node_name" xml:"node_name"`
+	SpotStrategy       string   `json:"spot_strategy" xml:"spot_strategy"`
 	ExpiredTime        string   `json:"expired_time" xml:"expired_time"`
 	Source             string   `json:"source" xml:"source"`
 	InstanceTypeFamily string   `json:"instance_type_family" xml:"instance_type_family"`
