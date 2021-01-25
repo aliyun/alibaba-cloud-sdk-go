@@ -77,7 +77,11 @@ type ModifyDBProxyEndpointRequest struct {
 	ReadOnlyInstanceWeight           string           `position:"Query" name:"ReadOnlyInstanceWeight"`
 	ReadOnlyInstanceMaxDelayTime     string           `position:"Query" name:"ReadOnlyInstanceMaxDelayTime"`
 	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
+	DbEndpointAliases                string           `position:"Query" name:"DbEndpointAliases"`
+	DbEndpointOperator               string           `position:"Query" name:"DbEndpointOperator"`
+	DbEndpointType                   string           `position:"Query" name:"DbEndpointType"`
 	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
+	DbEndpointReadWriteMode          string           `position:"Query" name:"DbEndpointReadWriteMode"`
 	DBProxyEndpointId                string           `position:"Query" name:"DBProxyEndpointId"`
 	ReadOnlyInstanceDistributionType string           `position:"Query" name:"ReadOnlyInstanceDistributionType"`
 }

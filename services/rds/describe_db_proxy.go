@@ -89,6 +89,7 @@ type DescribeDBProxyResponse struct {
 	DBProxyInstanceLatestMinorVersion  string                    `json:"DBProxyInstanceLatestMinorVersion" xml:"DBProxyInstanceLatestMinorVersion"`
 	DBProxyInstanceName                string                    `json:"DBProxyInstanceName" xml:"DBProxyInstanceName"`
 	DBProxyConnectStringItems          DBProxyConnectStringItems `json:"DBProxyConnectStringItems" xml:"DBProxyConnectStringItems"`
+	DbProxyEndpointItems               DbProxyEndpointItems      `json:"DbProxyEndpointItems" xml:"DbProxyEndpointItems"`
 }
 
 // CreateDescribeDBProxyRequest creates a request to invoke DescribeDBProxy API

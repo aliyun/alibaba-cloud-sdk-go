@@ -82,15 +82,18 @@ type DescribeDBProxyEndpointRequest struct {
 // DescribeDBProxyEndpointResponse is the response struct for api DescribeDBProxyEndpoint
 type DescribeDBProxyEndpointResponse struct {
 	*responses.BaseResponse
-	RequestId                        string `json:"RequestId" xml:"RequestId"`
-	DBProxyEndpointId                string `json:"DBProxyEndpointId" xml:"DBProxyEndpointId"`
-	DBProxyConnectString             string `json:"DBProxyConnectString" xml:"DBProxyConnectString"`
-	DBProxyConnectStringPort         string `json:"DBProxyConnectStringPort" xml:"DBProxyConnectStringPort"`
-	DBProxyConnectStringNetType      string `json:"DBProxyConnectStringNetType" xml:"DBProxyConnectStringNetType"`
-	DBProxyFeatures                  string `json:"DBProxyFeatures" xml:"DBProxyFeatures"`
-	ReadOnlyInstanceMaxDelayTime     string `json:"ReadOnlyInstanceMaxDelayTime" xml:"ReadOnlyInstanceMaxDelayTime"`
-	ReadOnlyInstanceDistributionType string `json:"ReadOnlyInstanceDistributionType" xml:"ReadOnlyInstanceDistributionType"`
-	ReadOnlyInstanceWeight           string `json:"ReadOnlyInstanceWeight" xml:"ReadOnlyInstanceWeight"`
+	RequestId                        string               `json:"RequestId" xml:"RequestId"`
+	DBProxyEndpointId                string               `json:"DBProxyEndpointId" xml:"DBProxyEndpointId"`
+	DBProxyConnectString             string               `json:"DBProxyConnectString" xml:"DBProxyConnectString"`
+	DBProxyConnectStringPort         string               `json:"DBProxyConnectStringPort" xml:"DBProxyConnectStringPort"`
+	DBProxyConnectStringNetType      string               `json:"DBProxyConnectStringNetType" xml:"DBProxyConnectStringNetType"`
+	DBProxyFeatures                  string               `json:"DBProxyFeatures" xml:"DBProxyFeatures"`
+	ReadOnlyInstanceMaxDelayTime     string               `json:"ReadOnlyInstanceMaxDelayTime" xml:"ReadOnlyInstanceMaxDelayTime"`
+	ReadOnlyInstanceDistributionType string               `json:"ReadOnlyInstanceDistributionType" xml:"ReadOnlyInstanceDistributionType"`
+	ReadOnlyInstanceWeight           string               `json:"ReadOnlyInstanceWeight" xml:"ReadOnlyInstanceWeight"`
+	DbProxyEndpointAliases           string               `json:"DbProxyEndpointAliases" xml:"DbProxyEndpointAliases"`
+	DbProxyEndpointReadWriteMode     string               `json:"DbProxyEndpointReadWriteMode" xml:"DbProxyEndpointReadWriteMode"`
+	EndpointConnectItems             EndpointConnectItems `json:"EndpointConnectItems" xml:"EndpointConnectItems"`
 }
 
 // CreateDescribeDBProxyEndpointRequest creates a request to invoke DescribeDBProxyEndpoint API
