@@ -79,6 +79,7 @@ type DescribeDedicatedHostsRequest struct {
 	PageSize             requests.Integer             `position:"Query" name:"PageSize"`
 	DedicatedHostType    string                       `position:"Query" name:"DedicatedHostType"`
 	Tag                  *[]DescribeDedicatedHostsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	NeedHostDetail       string                       `position:"Query" name:"NeedHostDetail"`
 	DedicatedHostName    string                       `position:"Query" name:"DedicatedHostName"`
 	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`

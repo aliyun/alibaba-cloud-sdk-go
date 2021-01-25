@@ -17,9 +17,10 @@ package ecs
 
 // DedicatedHostClusterCapacity is a nested struct in ecs response
 type DedicatedHostClusterCapacity struct {
-	TotalVcpus             int                    `json:"TotalVcpus" xml:"TotalVcpus"`
-	AvailableVcpus         int                    `json:"AvailableVcpus" xml:"AvailableVcpus"`
-	TotalMemory            int                    `json:"TotalMemory" xml:"TotalMemory"`
-	AvailableMemory        int                    `json:"AvailableMemory" xml:"AvailableMemory"`
-	LocalStorageCapacities LocalStorageCapacities `json:"LocalStorageCapacities" xml:"LocalStorageCapacities"`
+	TotalVcpus             int                                                   `json:"TotalVcpus" xml:"TotalVcpus"`
+	AvailableVcpus         int                                                   `json:"AvailableVcpus" xml:"AvailableVcpus"`
+	TotalMemory            int                                                   `json:"TotalMemory" xml:"TotalMemory"`
+	AvailableMemory        int                                                   `json:"AvailableMemory" xml:"AvailableMemory"`
+	LocalStorageCapacities LocalStorageCapacities                                `json:"LocalStorageCapacities" xml:"LocalStorageCapacities"`
+	AvailableInstanceTypes AvailableInstanceTypesInDescribeDedicatedHostClusters `json:"AvailableInstanceTypes" xml:"AvailableInstanceTypes"`
 }

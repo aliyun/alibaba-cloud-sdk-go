@@ -108,6 +108,7 @@ type CreateLaunchTemplateRequest struct {
 	InstanceChargeType           string                                  `position:"Query" name:"InstanceChargeType"`
 	EnableVmOsConfig             requests.Boolean                        `position:"Query" name:"EnableVmOsConfig"`
 	NetworkInterface             *[]CreateLaunchTemplateNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
+	DeploymentSetId              string                                  `position:"Query" name:"DeploymentSetId"`
 	ResourceOwnerAccount         string                                  `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                 string                                  `position:"Query" name:"OwnerAccount"`
 	SystemDiskDiskName           string                                  `position:"Query" name:"SystemDisk.DiskName"`

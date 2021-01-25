@@ -44,6 +44,7 @@ type DedicatedHost struct {
 	SupportedInstanceTypesList          SupportedInstanceTypesListInDescribeDedicatedHosts    `json:"SupportedInstanceTypesList" xml:"SupportedInstanceTypesList"`
 	Capacity                            Capacity                                              `json:"Capacity" xml:"Capacity"`
 	NetworkAttributes                   NetworkAttributes                                     `json:"NetworkAttributes" xml:"NetworkAttributes"`
+	HostDetailInfo                      HostDetailInfo                                        `json:"HostDetailInfo" xml:"HostDetailInfo"`
 	Instances                           InstancesInDescribeDedicatedHosts                     `json:"Instances" xml:"Instances"`
 	OperationLocks                      OperationLocksInDescribeDedicatedHosts                `json:"OperationLocks" xml:"OperationLocks"`
 	Tags                                TagsInDescribeDedicatedHosts                          `json:"Tags" xml:"Tags"`

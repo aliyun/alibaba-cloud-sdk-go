@@ -53,6 +53,7 @@ type LaunchTemplateData struct {
 	ResourceGroupId              string                                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	SecurityEnhancementStrategy  string                                            `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
 	PrivateIpAddress             string                                            `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	DeploymentSetId              string                                            `json:"DeploymentSetId" xml:"DeploymentSetId"`
 	SecurityGroupIds             SecurityGroupIdsInDescribeLaunchTemplateVersions  `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	DataDisks                    DataDisks                                         `json:"DataDisks" xml:"DataDisks"`
 	NetworkInterfaces            NetworkInterfacesInDescribeLaunchTemplateVersions `json:"NetworkInterfaces" xml:"NetworkInterfaces"`
