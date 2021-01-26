@@ -72,22 +72,23 @@ func (client *Client) DescribeScheduleTasksWithCallback(request *DescribeSchedul
 type DescribeScheduleTasksRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TaskAction           string           `position:"Query" name:"TaskAction"`
 	Status               string           `position:"Query" name:"Status"`
 }
 
 // DescribeScheduleTasksResponse is the response struct for api DescribeScheduleTasks
 type DescribeScheduleTasksResponse struct {
 	*responses.BaseResponse
-	Code           string  `json:"Code" xml:"Code"`
-	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string  `json:"Message" xml:"Message"`
-	RequestId      string  `json:"RequestId" xml:"RequestId"`
-	Success        bool    `json:"Success" xml:"Success"`
-	Data           []Items `json:"Data" xml:"Data"`
+	Message string `json:"Message" xml:"Message"`
+	Code    string `json:"Code" xml:"Code"`
+	Success bool   `json:"Success" xml:"Success"`
+	Data    Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeScheduleTasksRequest creates a request to invoke DescribeScheduleTasks API

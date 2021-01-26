@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpgradeDBClusterMinorVersion invokes the polardb.UpgradeDBClusterMinorVersion API synchronously
-func (client *Client) UpgradeDBClusterMinorVersion(request *UpgradeDBClusterMinorVersionRequest) (response *UpgradeDBClusterMinorVersionResponse, err error) {
-	response = CreateUpgradeDBClusterMinorVersionResponse()
+// UpgradeDBClusterVersion invokes the polardb.UpgradeDBClusterVersion API synchronously
+func (client *Client) UpgradeDBClusterVersion(request *UpgradeDBClusterVersionRequest) (response *UpgradeDBClusterVersionResponse, err error) {
+	response = CreateUpgradeDBClusterVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpgradeDBClusterMinorVersionWithChan invokes the polardb.UpgradeDBClusterMinorVersion API asynchronously
-func (client *Client) UpgradeDBClusterMinorVersionWithChan(request *UpgradeDBClusterMinorVersionRequest) (<-chan *UpgradeDBClusterMinorVersionResponse, <-chan error) {
-	responseChan := make(chan *UpgradeDBClusterMinorVersionResponse, 1)
+// UpgradeDBClusterVersionWithChan invokes the polardb.UpgradeDBClusterVersion API asynchronously
+func (client *Client) UpgradeDBClusterVersionWithChan(request *UpgradeDBClusterVersionRequest) (<-chan *UpgradeDBClusterVersionResponse, <-chan error) {
+	responseChan := make(chan *UpgradeDBClusterVersionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpgradeDBClusterMinorVersion(request)
+		response, err := client.UpgradeDBClusterVersion(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpgradeDBClusterMinorVersionWithChan(request *UpgradeDBClu
 	return responseChan, errChan
 }
 
-// UpgradeDBClusterMinorVersionWithCallback invokes the polardb.UpgradeDBClusterMinorVersion API asynchronously
-func (client *Client) UpgradeDBClusterMinorVersionWithCallback(request *UpgradeDBClusterMinorVersionRequest, callback func(response *UpgradeDBClusterMinorVersionResponse, err error)) <-chan int {
+// UpgradeDBClusterVersionWithCallback invokes the polardb.UpgradeDBClusterVersion API asynchronously
+func (client *Client) UpgradeDBClusterVersionWithCallback(request *UpgradeDBClusterVersionRequest, callback func(response *UpgradeDBClusterVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpgradeDBClusterMinorVersionResponse
+		var response *UpgradeDBClusterVersionResponse
 		var err error
 		defer close(result)
-		response, err = client.UpgradeDBClusterMinorVersion(request)
+		response, err = client.UpgradeDBClusterVersion(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) UpgradeDBClusterMinorVersionWithCallback(request *UpgradeD
 	return result
 }
 
-// UpgradeDBClusterMinorVersionRequest is the request struct for api UpgradeDBClusterMinorVersion
-type UpgradeDBClusterMinorVersionRequest struct {
+// UpgradeDBClusterVersionRequest is the request struct for api UpgradeDBClusterVersion
+type UpgradeDBClusterVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
@@ -81,25 +81,25 @@ type UpgradeDBClusterMinorVersionRequest struct {
 	FromTimeService      requests.Boolean `position:"Query" name:"FromTimeService"`
 }
 
-// UpgradeDBClusterMinorVersionResponse is the response struct for api UpgradeDBClusterMinorVersion
-type UpgradeDBClusterMinorVersionResponse struct {
+// UpgradeDBClusterVersionResponse is the response struct for api UpgradeDBClusterVersion
+type UpgradeDBClusterVersionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateUpgradeDBClusterMinorVersionRequest creates a request to invoke UpgradeDBClusterMinorVersion API
-func CreateUpgradeDBClusterMinorVersionRequest() (request *UpgradeDBClusterMinorVersionRequest) {
-	request = &UpgradeDBClusterMinorVersionRequest{
+// CreateUpgradeDBClusterVersionRequest creates a request to invoke UpgradeDBClusterVersion API
+func CreateUpgradeDBClusterVersionRequest() (request *UpgradeDBClusterVersionRequest) {
+	request = &UpgradeDBClusterVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "UpgradeDBClusterMinorVersion", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "UpgradeDBClusterVersion", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateUpgradeDBClusterMinorVersionResponse creates a response to parse from UpgradeDBClusterMinorVersion response
-func CreateUpgradeDBClusterMinorVersionResponse() (response *UpgradeDBClusterMinorVersionResponse) {
-	response = &UpgradeDBClusterMinorVersionResponse{
+// CreateUpgradeDBClusterVersionResponse creates a response to parse from UpgradeDBClusterVersion response
+func CreateUpgradeDBClusterVersionResponse() (response *UpgradeDBClusterVersionResponse) {
+	response = &UpgradeDBClusterVersionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

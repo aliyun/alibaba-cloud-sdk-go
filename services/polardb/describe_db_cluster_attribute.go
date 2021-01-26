@@ -107,6 +107,7 @@ type DescribeDBClusterAttributeResponse struct {
 	ResourceGroupId           string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DataLevel1BackupChainSize int64    `json:"DataLevel1BackupChainSize" xml:"DataLevel1BackupChainSize"`
 	Category                  string   `json:"Category" xml:"Category"`
+	DBVersionStatus           string   `json:"DBVersionStatus" xml:"DBVersionStatus"`
 	Tags                      []Tag    `json:"Tags" xml:"Tags"`
 	DBNodes                   []DBNode `json:"DBNodes" xml:"DBNodes"`
 }

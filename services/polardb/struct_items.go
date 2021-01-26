@@ -17,24 +17,6 @@ package polardb
 
 // Items is a nested struct in polardb response
 type Items struct {
-	Region           string `json:"Region" xml:"Region"`
-	Count            int    `json:"Count" xml:"Count"`
-	Action           string `json:"Action" xml:"Action"`
-	PlannedTime      int64  `json:"PlannedTime" xml:"PlannedTime"`
-	Mutex            string `json:"Mutex" xml:"Mutex"`
-	PlannedStartTime int64  `json:"PlannedStartTime" xml:"PlannedStartTime"`
-	DBClusterId      string `json:"DBClusterId" xml:"DBClusterId"`
-	ProductCode      string `json:"ProductCode" xml:"ProductCode"`
-	OrderId          string `json:"OrderId" xml:"OrderId"`
-	GmtCreate        int64  `json:"GmtCreate" xml:"GmtCreate"`
-	TaskId           string `json:"TaskId" xml:"TaskId"`
-	Args             string `json:"Args" xml:"Args"`
-	PlannedEndTime   int64  `json:"PlannedEndTime" xml:"PlannedEndTime"`
-	RetryTime        int    `json:"RetryTime" xml:"RetryTime"`
-	GmtModified      int64  `json:"GmtModified" xml:"GmtModified"`
-	MaxRetryTime     int    `json:"MaxRetryTime" xml:"MaxRetryTime"`
-	TaskType         string `json:"TaskType" xml:"TaskType"`
-	Status           string `json:"Status" xml:"Status"`
-	Response         string `json:"Response" xml:"Response"`
-	Type             int    `json:"Type" xml:"Type"`
+	Count    int    `json:"Count" xml:"Count"`
+	TaskType string `json:"TaskType" xml:"TaskType"`
 }

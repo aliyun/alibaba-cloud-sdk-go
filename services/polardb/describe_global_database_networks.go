@@ -74,6 +74,7 @@ type DescribeGlobalDatabaseNetworksRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -81,10 +82,10 @@ type DescribeGlobalDatabaseNetworksRequest struct {
 // DescribeGlobalDatabaseNetworksResponse is the response struct for api DescribeGlobalDatabaseNetworks
 type DescribeGlobalDatabaseNetworksResponse struct {
 	*responses.BaseResponse
-	RequestId        string                  `json:"RequestId" xml:"RequestId"`
-	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
 	TotalRecordCount int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                  `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
 	Items            []GlobalDatabaseNetwork `json:"Items" xml:"Items"`
 }
 
