@@ -51,6 +51,7 @@ type ScalingGroup struct {
 	DesiredCapacity                     int                     `json:"DesiredCapacity" xml:"DesiredCapacity"`
 	GroupDeletionProtection             bool                    `json:"GroupDeletionProtection" xml:"GroupDeletionProtection"`
 	ScaleOutAmountCheck                 bool                    `json:"ScaleOutAmountCheck" xml:"ScaleOutAmountCheck"`
+	CurrentHostName                     string                  `json:"CurrentHostName" xml:"CurrentHostName"`
 	VSwitchIds                          VSwitchIds              `json:"VSwitchIds" xml:"VSwitchIds"`
 	RemovalPolicies                     RemovalPolicies         `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                       DBInstanceIds           `json:"DBInstanceIds" xml:"DBInstanceIds"`

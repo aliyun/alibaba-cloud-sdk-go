@@ -1,3 +1,7 @@
+2021-01-26 Version: v1.61.880
+- Generated 2014-08-28 for `Ess`.
+- DescribeScalingInstances return spot info.
+
 2021-01-25 Version: v1.61.879
 - Generated 2015-12-15 for `CS`.
 - AMP Version Upgrade.
