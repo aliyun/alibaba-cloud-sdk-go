@@ -1,3 +1,7 @@
+2021-01-27 Version: v1.61.883
+- Generated 2018-10-12 for `alimt`.
+- Add New BatchTranslate API.
+
 2021-01-27 Version: v1.61.882
 - Generated 2020-06-18, 2020-11-12, 2019-03-07, 2018-09-16 for `Cloudauth`.
 - DetectFaceAttributes Add Score.
