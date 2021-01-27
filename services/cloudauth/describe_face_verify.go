@@ -71,8 +71,9 @@ func (client *Client) DescribeFaceVerifyWithCallback(request *DescribeFaceVerify
 // DescribeFaceVerifyRequest is the request struct for api DescribeFaceVerify
 type DescribeFaceVerifyRequest struct {
 	*requests.RpcRequest
-	SceneId   requests.Integer `position:"Query" name:"SceneId"`
-	CertifyId string           `position:"Query" name:"CertifyId"`
+	CertifyId         string           `position:"Query" name:"CertifyId"`
+	PictureReturnType string           `position:"Query" name:"PictureReturnType"`
+	SceneId           requests.Integer `position:"Query" name:"SceneId"`
 }
 
 // DescribeFaceVerifyResponse is the response struct for api DescribeFaceVerify

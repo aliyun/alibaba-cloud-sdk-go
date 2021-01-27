@@ -74,6 +74,7 @@ type VerifyDeviceRequest struct {
 	ExtInfo     string `position:"Body" name:"ExtInfo"`
 	CertifyData string `position:"Query" name:"CertifyData"`
 	AppVersion  string `position:"Query" name:"AppVersion"`
+	DeviceToken string `position:"Body" name:"DeviceToken"`
 	CertifyId   string `position:"Query" name:"CertifyId"`
 }
 

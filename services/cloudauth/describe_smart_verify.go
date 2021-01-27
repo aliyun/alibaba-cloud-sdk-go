@@ -71,8 +71,9 @@ func (client *Client) DescribeSmartVerifyWithCallback(request *DescribeSmartVeri
 // DescribeSmartVerifyRequest is the request struct for api DescribeSmartVerify
 type DescribeSmartVerifyRequest struct {
 	*requests.RpcRequest
-	SceneId   requests.Integer `position:"Body" name:"SceneId"`
-	CertifyId string           `position:"Body" name:"CertifyId"`
+	CertifyId         string           `position:"Body" name:"CertifyId"`
+	PictureReturnType string           `position:"Body" name:"PictureReturnType"`
+	SceneId           requests.Integer `position:"Body" name:"SceneId"`
 }
 
 // DescribeSmartVerifyResponse is the response struct for api DescribeSmartVerify
