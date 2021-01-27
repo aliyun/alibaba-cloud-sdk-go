@@ -1,3 +1,7 @@
+2021-01-27 Version: v1.61.884
+- Generated 2018-10-12 for `alimt`.
+- Add New BatchTranslate API.
+
 2021-01-27 Version: v1.61.883
 - Generated 2018-10-12 for `alimt`.
 - Add New BatchTranslate API.
