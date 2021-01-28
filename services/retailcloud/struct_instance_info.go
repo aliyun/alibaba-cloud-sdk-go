@@ -17,8 +17,8 @@ package retailcloud
 
 // InstanceInfo is a nested struct in retailcloud response
 type InstanceInfo struct {
-	AllocatePodCount     int      `json:"AllocatePodCount" xml:"AllocatePodCount"`
-	AppCount             int      `json:"AppCount" xml:"AppCount"`
-	AllocatedPodInfoList []string `json:"AllocatedPodInfoList" xml:"AllocatedPodInfoList"`
-	AvailablePodInfoList []string `json:"AvailablePodInfoList" xml:"AvailablePodInfoList"`
+	AppCount             int                        `json:"AppCount" xml:"AppCount"`
+	AllocatePodCount     int                        `json:"AllocatePodCount" xml:"AllocatePodCount"`
+	AvailablePodInfoList []AvailablePodInstanceInfo `json:"AvailablePodInfoList" xml:"AvailablePodInfoList"`
+	AllocatedPodInfoList []AllocatedPodInstanceInfo `json:"AllocatedPodInfoList" xml:"AllocatedPodInfoList"`
 }

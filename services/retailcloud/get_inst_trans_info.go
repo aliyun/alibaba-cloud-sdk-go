@@ -92,7 +92,7 @@ func CreateGetInstTransInfoRequest() (request *GetInstTransInfoRequest) {
 	request = &GetInstTransInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "GetInstTransInfo", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "GetInstTransInfo", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

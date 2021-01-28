@@ -91,7 +91,7 @@ func CreateBindNodeLabelRequest() (request *BindNodeLabelRequest) {
 	request = &BindNodeLabelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "BindNodeLabel", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "BindNodeLabel", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteCluster invokes the retailcloud.DeleteCluster API synchronously
-func (client *Client) DeleteCluster(request *DeleteClusterRequest) (response *DeleteClusterResponse, err error) {
-	response = CreateDeleteClusterResponse()
+// DescribeClusterDetail invokes the retailcloud.DescribeClusterDetail API synchronously
+func (client *Client) DescribeClusterDetail(request *DescribeClusterDetailRequest) (response *DescribeClusterDetailResponse, err error) {
+	response = CreateDescribeClusterDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteClusterWithChan invokes the retailcloud.DeleteCluster API asynchronously
-func (client *Client) DeleteClusterWithChan(request *DeleteClusterRequest) (<-chan *DeleteClusterResponse, <-chan error) {
-	responseChan := make(chan *DeleteClusterResponse, 1)
+// DescribeClusterDetailWithChan invokes the retailcloud.DescribeClusterDetail API asynchronously
+func (client *Client) DescribeClusterDetailWithChan(request *DescribeClusterDetailRequest) (<-chan *DescribeClusterDetailResponse, <-chan error) {
+	responseChan := make(chan *DescribeClusterDetailResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteCluster(request)
+		response, err := client.DescribeClusterDetail(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteClusterWithChan(request *DeleteClusterRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteClusterWithCallback invokes the retailcloud.DeleteCluster API asynchronously
-func (client *Client) DeleteClusterWithCallback(request *DeleteClusterRequest, callback func(response *DeleteClusterResponse, err error)) <-chan int {
+// DescribeClusterDetailWithCallback invokes the retailcloud.DescribeClusterDetail API asynchronously
+func (client *Client) DescribeClusterDetailWithCallback(request *DescribeClusterDetailRequest, callback func(response *DescribeClusterDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteClusterResponse
+		var response *DescribeClusterDetailResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteCluster(request)
+		response, err = client.DescribeClusterDetail(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,14 +68,14 @@ func (client *Client) DeleteClusterWithCallback(request *DeleteClusterRequest, c
 	return result
 }
 
-// DeleteClusterRequest is the request struct for api DeleteCluster
-type DeleteClusterRequest struct {
+// DescribeClusterDetailRequest is the request struct for api DescribeClusterDetail
+type DescribeClusterDetailRequest struct {
 	*requests.RpcRequest
 	ClusterInstanceId string `position:"Query" name:"ClusterInstanceId"`
 }
 
-// DeleteClusterResponse is the response struct for api DeleteCluster
-type DeleteClusterResponse struct {
+// DescribeClusterDetailResponse is the response struct for api DescribeClusterDetail
+type DescribeClusterDetailResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	ErrMsg    string `json:"ErrMsg" xml:"ErrMsg"`
@@ -84,19 +84,19 @@ type DeleteClusterResponse struct {
 	Result    Result `json:"Result" xml:"Result"`
 }
 
-// CreateDeleteClusterRequest creates a request to invoke DeleteCluster API
-func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
-	request = &DeleteClusterRequest{
+// CreateDescribeClusterDetailRequest creates a request to invoke DescribeClusterDetail API
+func CreateDescribeClusterDetailRequest() (request *DescribeClusterDetailRequest) {
+	request = &DescribeClusterDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteCluster", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeClusterDetail", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteClusterResponse creates a response to parse from DeleteCluster response
-func CreateDeleteClusterResponse() (response *DeleteClusterResponse) {
-	response = &DeleteClusterResponse{
+// CreateDescribeClusterDetailResponse creates a response to parse from DescribeClusterDetail response
+func CreateDescribeClusterDetailResponse() (response *DescribeClusterDetailResponse) {
+	response = &DescribeClusterDetailResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

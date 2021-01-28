@@ -89,7 +89,7 @@ func CreateDescribeAppEnvironmentDetailRequest() (request *DescribeAppEnvironmen
 	request = &DescribeAppEnvironmentDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeAppEnvironmentDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeAppEnvironmentDetail", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

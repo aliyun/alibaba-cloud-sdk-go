@@ -97,7 +97,7 @@ func CreateCreateDeployConfigRequest() (request *CreateDeployConfigRequest) {
 	request = &CreateDeployConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDeployConfig", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDeployConfig", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

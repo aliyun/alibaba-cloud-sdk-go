@@ -88,7 +88,7 @@ func CreateCloseDeployOrderRequest() (request *CloseDeployOrderRequest) {
 	request = &CloseDeployOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CloseDeployOrder", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CloseDeployOrder", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

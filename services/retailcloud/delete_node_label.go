@@ -91,7 +91,7 @@ func CreateDeleteNodeLabelRequest() (request *DeleteNodeLabelRequest) {
 	request = &DeleteNodeLabelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteNodeLabel", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteNodeLabel", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

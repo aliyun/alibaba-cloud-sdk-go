@@ -96,7 +96,7 @@ func CreateListNodeLabelBindingsRequest() (request *ListNodeLabelBindingsRequest
 	request = &ListNodeLabelBindingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListNodeLabelBindings", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListNodeLabelBindings", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

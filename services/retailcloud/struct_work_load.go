@@ -18,20 +18,20 @@ package retailcloud
 // WorkLoad is a nested struct in retailcloud response
 type WorkLoad struct {
 	AllNodeCount        int    `json:"AllNodeCount" xml:"AllNodeCount"`
-	AllocateAllPodCount int    `json:"AllocateAllPodCount" xml:"AllocateAllPodCount"`
-	AllocateAppPodCount int    `json:"AllocateAppPodCount" xml:"AllocateAppPodCount"`
-	CpuCapacityTotal    string `json:"CpuCapacityTotal" xml:"CpuCapacityTotal"`
-	CpuLevel            string `json:"CpuLevel" xml:"CpuLevel"`
-	CpuRequest          string `json:"CpuRequest" xml:"CpuRequest"`
-	CpuRequestPercent   string `json:"CpuRequestPercent" xml:"CpuRequestPercent"`
-	CpuTotal            string `json:"CpuTotal" xml:"CpuTotal"`
 	CpuUse              string `json:"CpuUse" xml:"CpuUse"`
 	CpuUsePercent       string `json:"CpuUsePercent" xml:"CpuUsePercent"`
+	MemRequestPercent   string `json:"MemRequestPercent" xml:"MemRequestPercent"`
+	MemUsePercent       string `json:"MemUsePercent" xml:"MemUsePercent"`
+	AllocateAllPodCount int    `json:"AllocateAllPodCount" xml:"AllocateAllPodCount"`
+	MemTotal            string `json:"MemTotal" xml:"MemTotal"`
+	CpuLevel            string `json:"CpuLevel" xml:"CpuLevel"`
+	CpuCapacityTotal    string `json:"CpuCapacityTotal" xml:"CpuCapacityTotal"`
+	MemUse              string `json:"MemUse" xml:"MemUse"`
 	MemCapacityTotal    string `json:"MemCapacityTotal" xml:"MemCapacityTotal"`
 	MemLevel            string `json:"MemLevel" xml:"MemLevel"`
+	CpuRequest          string `json:"CpuRequest" xml:"CpuRequest"`
+	CpuTotal            string `json:"CpuTotal" xml:"CpuTotal"`
+	CpuRequestPercent   string `json:"CpuRequestPercent" xml:"CpuRequestPercent"`
+	AllocateAppPodCount int    `json:"AllocateAppPodCount" xml:"AllocateAppPodCount"`
 	MemRequest          string `json:"MemRequest" xml:"MemRequest"`
-	MemRequestPercent   string `json:"MemRequestPercent" xml:"MemRequestPercent"`
-	MemTotal            string `json:"MemTotal" xml:"MemTotal"`
-	MemUse              string `json:"MemUse" xml:"MemUse"`
-	MemUsePercent       string `json:"MemUsePercent" xml:"MemUsePercent"`
 }

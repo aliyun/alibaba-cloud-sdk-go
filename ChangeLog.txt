@@ -1,3 +1,7 @@
+2021-01-28 Version: v1.61.885
+- Generated 2018-03-13 for `retailcloud`.
+
+
 2021-01-27 Version: v1.61.884
 - Generated 2018-10-12 for `alimt`.
 - Add New BatchTranslate API.

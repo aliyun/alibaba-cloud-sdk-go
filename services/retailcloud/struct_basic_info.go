@@ -19,18 +19,18 @@ package retailcloud
 type BasicInfo struct {
 	BusinessCode            string   `json:"BusinessCode" xml:"BusinessCode"`
 	ClusterId               int64    `json:"ClusterId" xml:"ClusterId"`
-	ClusterInstanceId       string   `json:"ClusterInstanceId" xml:"ClusterInstanceId"`
-	ClusterName             string   `json:"ClusterName" xml:"ClusterName"`
-	EnvType                 string   `json:"EnvType" xml:"EnvType"`
+	InstallLogInProcess     bool     `json:"InstallLogInProcess" xml:"InstallLogInProcess"`
+	MainUserId              string   `json:"MainUserId" xml:"MainUserId"`
+	RegionName              string   `json:"RegionName" xml:"RegionName"`
 	HasInstallArmsPilot     bool     `json:"HasInstallArmsPilot" xml:"HasInstallArmsPilot"`
 	HasInstallLogController bool     `json:"HasInstallLogController" xml:"HasInstallLogController"`
 	InstallArmsInProcess    bool     `json:"InstallArmsInProcess" xml:"InstallArmsInProcess"`
-	InstallLogInProcess     bool     `json:"InstallLogInProcess" xml:"InstallLogInProcess"`
-	MainUserId              string   `json:"MainUserId" xml:"MainUserId"`
 	RegionId                string   `json:"RegionId" xml:"RegionId"`
-	RegionName              string   `json:"RegionName" xml:"RegionName"`
+	EnvType                 string   `json:"EnvType" xml:"EnvType"`
 	UserNick                string   `json:"UserNick" xml:"UserNick"`
+	ClusterName             string   `json:"ClusterName" xml:"ClusterName"`
+	ClusterInstanceId       string   `json:"ClusterInstanceId" xml:"ClusterInstanceId"`
 	VpcId                   string   `json:"VpcId" xml:"VpcId"`
-	EcsIds                  []string `json:"EcsIds" xml:"EcsIds"`
 	Vswitchs                []string `json:"Vswitchs" xml:"Vswitchs"`
+	EcsIds                  []string `json:"EcsIds" xml:"EcsIds"`
 }

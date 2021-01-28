@@ -93,7 +93,7 @@ func CreateListAvailableClusterNodeRequest() (request *ListAvailableClusterNodeR
 	request = &ListAvailableClusterNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAvailableClusterNode", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAvailableClusterNode", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

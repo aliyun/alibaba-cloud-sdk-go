@@ -103,7 +103,7 @@ func CreateSubmitInfoRequest() (request *SubmitInfoRequest) {
 	request = &SubmitInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "SubmitInfo", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "SubmitInfo", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

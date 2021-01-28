@@ -77,11 +77,11 @@ type QueryClusterDetailRequest struct {
 // QueryClusterDetailResponse is the response struct for api QueryClusterDetail
 type QueryClusterDetailResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	ErrMsg    string `json:"ErrMsg" xml:"ErrMsg"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	Code      int                        `json:"Code" xml:"Code"`
+	ErrMsg    string                     `json:"ErrMsg" xml:"ErrMsg"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Success   bool                       `json:"Success" xml:"Success"`
+	Result    ResultInQueryClusterDetail `json:"Result" xml:"Result"`
 }
 
 // CreateQueryClusterDetailRequest creates a request to invoke QueryClusterDetail API
@@ -89,7 +89,7 @@ func CreateQueryClusterDetailRequest() (request *QueryClusterDetailRequest) {
 	request = &QueryClusterDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "QueryClusterDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "QueryClusterDetail", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }
