@@ -22,6 +22,7 @@ type Data struct {
 	TaskId       string             `json:"TaskId" xml:"TaskId"`
 	PageNo       int                `json:"PageNo" xml:"PageNo"`
 	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
 	BodyList     []BodyListItem     `json:"BodyList" xml:"BodyList"`
 	MotorList    []MotorListItem    `json:"MotorList" xml:"MotorList"`
 	NonMotorList []NonMotorListItem `json:"NonMotorList" xml:"NonMotorList"`

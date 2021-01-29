@@ -1,3 +1,7 @@
+2021-01-29 Version: v1.61.888
+- Generated 2020-11-01 for `CDRS`.
+- Update Monitor Api.
+
 2021-01-29 Version: v1.61.887
 - Generated 2014-08-15 for `Rds`.
 - Update Open API.

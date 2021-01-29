@@ -71,18 +71,19 @@ func (client *Client) SearchAggregateObjectWithCallback(request *SearchAggregate
 // SearchAggregateObjectRequest is the request struct for api SearchAggregateObject
 type SearchAggregateObjectRequest struct {
 	*requests.RpcRequest
-	ShotTimeEnd   string           `position:"Body" name:"ShotTimeEnd"`
-	CorpId        string           `position:"Body" name:"CorpId"`
-	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
-	Feature       string           `position:"Body" name:"Feature"`
-	Vendor        string           `position:"Body" name:"Vendor"`
-	PageSize      requests.Integer `position:"Body" name:"PageSize"`
-	ImageContent  string           `position:"Body" name:"ImageContent"`
-	ObjectType    string           `position:"Body" name:"ObjectType"`
-	DeviceList    string           `position:"Body" name:"DeviceList"`
-	ImageUrl      string           `position:"Body" name:"ImageUrl"`
-	Attributes    string           `position:"Body" name:"Attributes"`
-	ShotTimeStart string           `position:"Body" name:"ShotTimeStart"`
+	ShotTimeEnd       string           `position:"Body" name:"ShotTimeEnd"`
+	CorpId            string           `position:"Body" name:"CorpId"`
+	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
+	Feature           string           `position:"Body" name:"Feature"`
+	Vendor            string           `position:"Body" name:"Vendor"`
+	RequireTotalCount requests.Boolean `position:"Body" name:"RequireTotalCount"`
+	PageSize          requests.Integer `position:"Body" name:"PageSize"`
+	ImageContent      string           `position:"Body" name:"ImageContent"`
+	ObjectType        string           `position:"Body" name:"ObjectType"`
+	DeviceList        string           `position:"Body" name:"DeviceList"`
+	ImageUrl          string           `position:"Body" name:"ImageUrl"`
+	Attributes        string           `position:"Body" name:"Attributes"`
+	ShotTimeStart     string           `position:"Body" name:"ShotTimeStart"`
 }
 
 // SearchAggregateObjectResponse is the response struct for api SearchAggregateObject

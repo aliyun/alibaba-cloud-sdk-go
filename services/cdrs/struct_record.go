@@ -17,19 +17,19 @@ package cdrs
 
 // Record is a nested struct in cdrs response
 type Record struct {
-	TaskId          string `json:"TaskId" xml:"TaskId"`
-	Status          string `json:"Status" xml:"Status"`
-	MonitorType     string `json:"MonitorType" xml:"MonitorType"`
 	RuleName        string `json:"RuleName" xml:"RuleName"`
-	AlgorithmVendor string `json:"AlgorithmVendor" xml:"AlgorithmVendor"`
-	CreateDate      string `json:"CreateDate" xml:"CreateDate"`
 	ModifiedDate    string `json:"ModifiedDate" xml:"ModifiedDate"`
-	DeviceList      string `json:"DeviceList" xml:"DeviceList"`
 	Attributes      string `json:"Attributes" xml:"Attributes"`
-	RuleExpression  string `json:"RuleExpression" xml:"RuleExpression"`
-	NotifierType    string `json:"NotifierType" xml:"NotifierType"`
 	NotifierExtra   string `json:"NotifierExtra" xml:"NotifierExtra"`
-	Description     string `json:"Description" xml:"Description"`
+	MonitorType     string `json:"MonitorType" xml:"MonitorType"`
+	AlgorithmVendor string `json:"AlgorithmVendor" xml:"AlgorithmVendor"`
+	DeviceList      string `json:"DeviceList" xml:"DeviceList"`
+	CreateDate      string `json:"CreateDate" xml:"CreateDate"`
+	NotifierType    string `json:"NotifierType" xml:"NotifierType"`
+	TaskId          string `json:"TaskId" xml:"TaskId"`
 	Expression      string `json:"Expression" xml:"Expression"`
+	Status          string `json:"Status" xml:"Status"`
+	RuleExpression  string `json:"RuleExpression" xml:"RuleExpression"`
+	Description     string `json:"Description" xml:"Description"`
 	ImageMatch      string `json:"ImageMatch" xml:"ImageMatch"`
 }
