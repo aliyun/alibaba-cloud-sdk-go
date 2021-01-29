@@ -90,7 +90,7 @@ func CreateRunTriggerNodeRequest() (request *RunTriggerNodeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dataworks-public", "2020-05-18", "RunTriggerNode", "", "")
-	request.Method = requests.PUT
+	request.Method = requests.POST
 	return
 }
 
