@@ -79,6 +79,7 @@ type CreateServerlessClusterRequest struct {
 	Engine               string           `position:"Query" name:"Engine"`
 	AutoRenewPeriod      requests.Integer `position:"Query" name:"AutoRenewPeriod"`
 	Period               requests.Integer `position:"Query" name:"Period"`
+	DiskType             string           `position:"Query" name:"DiskType"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
 	ServerlessCapability requests.Integer `position:"Query" name:"ServerlessCapability"`

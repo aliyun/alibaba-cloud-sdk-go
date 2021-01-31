@@ -1,3 +1,7 @@
+2021-01-31 Version: v1.61.890
+- Generated 2019-01-01 for `HBase`.
+- ConvertInstance.
+
 2021-01-30 Version: v1.61.889
 - Generated 2020-01-01 for `Dts`.
 - Update rate limit.

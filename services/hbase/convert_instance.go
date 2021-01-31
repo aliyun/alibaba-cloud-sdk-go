@@ -71,9 +71,10 @@ func (client *Client) ConvertInstanceWithCallback(request *ConvertInstanceReques
 // ConvertInstanceRequest is the request struct for api ConvertInstance
 type ConvertInstanceRequest struct {
 	*requests.RpcRequest
-	ClusterId    string           `position:"Query" name:"ClusterId"`
 	Duration     requests.Integer `position:"Query" name:"Duration"`
+	ClusterId    string           `position:"Query" name:"ClusterId"`
 	PricingCycle string           `position:"Query" name:"PricingCycle"`
+	PayType      string           `position:"Query" name:"PayType"`
 }
 
 // ConvertInstanceResponse is the response struct for api ConvertInstance
