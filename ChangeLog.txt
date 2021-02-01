@@ -1,3 +1,7 @@
+2021-02-01 Version: v1.61.892
+- Generated 2020-03-20 for `videoseg`.
+- Release SegmentGreenScreenVideo.
+
 2021-02-01 Version: v1.61.891
 - Generated 2019-12-30 for `objectdet`.
 - Release DetectVehicleIllegalParking DetectVehicleICongestion.

@@ -21,6 +21,7 @@ type Data struct {
 	Result       string `json:"Result" xml:"Result"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Status       string `json:"Status" xml:"Status"`
+	VideoURL     string `json:"VideoURL" xml:"VideoURL"`
 	VideoUrl     string `json:"VideoUrl" xml:"VideoUrl"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
 }
