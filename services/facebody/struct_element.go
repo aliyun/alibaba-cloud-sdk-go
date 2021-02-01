@@ -17,34 +17,6 @@ package facebody
 
 // Element is a nested struct in facebody response
 type Element struct {
-	FaceConfidence  float64       `json:"FaceConfidence" xml:"FaceConfidence"`
-	LiveConfidence  float64       `json:"LiveConfidence" xml:"LiveConfidence"`
-	Score           float64       `json:"Score" xml:"Score"`
-	Hair            string        `json:"Hair" xml:"Hair"`
-	Age             string        `json:"Age" xml:"Age"`
-	AgeScore        float64       `json:"AgeScore" xml:"AgeScore"`
-	LowerColor      string        `json:"LowerColor" xml:"LowerColor"`
-	TaskId          string        `json:"TaskId" xml:"TaskId"`
-	LowerColorScore float64       `json:"LowerColorScore" xml:"LowerColorScore"`
-	HairScore       float64       `json:"HairScore" xml:"HairScore"`
-	QualityScore    float64       `json:"QualityScore" xml:"QualityScore"`
-	ImageURL        string        `json:"ImageURL" xml:"ImageURL"`
-	Expression      string        `json:"Expression" xml:"Expression"`
-	UpperType       string        `json:"UpperType" xml:"UpperType"`
-	FaceProbability float64       `json:"FaceProbability" xml:"FaceProbability"`
-	ObjType         string        `json:"ObjType" xml:"ObjType"`
-	Type            string        `json:"Type" xml:"Type"`
-	ObjTypeScore    float64       `json:"ObjTypeScore" xml:"ObjTypeScore"`
-	Feature         string        `json:"Feature" xml:"Feature"`
-	UpperTypeScore  float64       `json:"UpperTypeScore" xml:"UpperTypeScore"`
-	UpperColor      string        `json:"UpperColor" xml:"UpperColor"`
-	LowerTypeScore  float64       `json:"LowerTypeScore" xml:"LowerTypeScore"`
-	Gender          string        `json:"Gender" xml:"Gender"`
-	GenderScore     float64       `json:"GenderScore" xml:"GenderScore"`
-	LowerType       string        `json:"LowerType" xml:"LowerType"`
-	UpperColorScore float64       `json:"UpperColorScore" xml:"UpperColorScore"`
-	Boxes           []int         `json:"Boxes" xml:"Boxes"`
-	Rect            []int         `json:"Rect" xml:"Rect"`
-	FaceRectangle   FaceRectangle `json:"FaceRectangle" xml:"FaceRectangle"`
-	Results         []Result      `json:"Results" xml:"Results"`
+	Score float64 `json:"Score" xml:"Score"`
+	Boxes []int64 `json:"Boxes" xml:"Boxes"`
 }
