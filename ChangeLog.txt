@@ -1,3 +1,7 @@
+2021-02-01 Version: v1.61.897
+- Generated 2019-12-30, 2020-09-10 for `facebody`.
+- Release GenerateHumanSketchStyle MergeImageFace AddFaceImageTemplate QueryFaceImageTemplate DeleteFaceImageTemplate.
+
 2021-02-01 Version: v1.61.896
 - Generated 2020-03-03 for `devops-rdc`.
 - Add.
