@@ -1,3 +1,7 @@
+2021-02-01 Version: v1.61.891
+- Generated 2019-12-30 for `objectdet`.
+- Release DetectVehicleIllegalParking DetectVehicleICongestion.
+
 2021-01-31 Version: v1.61.890
 - Generated 2019-01-01 for `HBase`.
 - ConvertInstance.
