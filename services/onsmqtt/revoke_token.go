@@ -21,7 +21,6 @@ import (
 )
 
 // RevokeToken invokes the onsmqtt.RevokeToken API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/revoketoken.html
 func (client *Client) RevokeToken(request *RevokeTokenRequest) (response *RevokeTokenResponse, err error) {
 	response = CreateRevokeTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RevokeToken(request *RevokeTokenRequest) (response *Revoke
 }
 
 // RevokeTokenWithChan invokes the onsmqtt.RevokeToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/revoketoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeTokenWithChan(request *RevokeTokenRequest) (<-chan *RevokeTokenResponse, <-chan error) {
 	responseChan := make(chan *RevokeTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RevokeTokenWithChan(request *RevokeTokenRequest) (<-chan *
 }
 
 // RevokeTokenWithCallback invokes the onsmqtt.RevokeToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/revoketoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeTokenWithCallback(request *RevokeTokenRequest, callback func(response *RevokeTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

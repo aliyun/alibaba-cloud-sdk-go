@@ -21,7 +21,6 @@ import (
 )
 
 // ListGroupId invokes the onsmqtt.ListGroupId API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/listgroupid.html
 func (client *Client) ListGroupId(request *ListGroupIdRequest) (response *ListGroupIdResponse, err error) {
 	response = CreateListGroupIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListGroupId(request *ListGroupIdRequest) (response *ListGr
 }
 
 // ListGroupIdWithChan invokes the onsmqtt.ListGroupId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/listgroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupIdWithChan(request *ListGroupIdRequest) (<-chan *ListGroupIdResponse, <-chan error) {
 	responseChan := make(chan *ListGroupIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListGroupIdWithChan(request *ListGroupIdRequest) (<-chan *
 }
 
 // ListGroupIdWithCallback invokes the onsmqtt.ListGroupId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/listgroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupIdWithCallback(request *ListGroupIdRequest, callback func(response *ListGroupIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

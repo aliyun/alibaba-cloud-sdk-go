@@ -21,7 +21,6 @@ import (
 )
 
 // ApplyToken invokes the onsmqtt.ApplyToken API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/applytoken.html
 func (client *Client) ApplyToken(request *ApplyTokenRequest) (response *ApplyTokenResponse, err error) {
 	response = CreateApplyTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ApplyToken(request *ApplyTokenRequest) (response *ApplyTok
 }
 
 // ApplyTokenWithChan invokes the onsmqtt.ApplyToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/applytoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyTokenWithChan(request *ApplyTokenRequest) (<-chan *ApplyTokenResponse, <-chan error) {
 	responseChan := make(chan *ApplyTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ApplyTokenWithChan(request *ApplyTokenRequest) (<-chan *Ap
 }
 
 // ApplyTokenWithCallback invokes the onsmqtt.ApplyToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/applytoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyTokenWithCallback(request *ApplyTokenRequest, callback func(response *ApplyTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

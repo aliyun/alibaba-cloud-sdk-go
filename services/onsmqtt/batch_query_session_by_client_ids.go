@@ -21,7 +21,6 @@ import (
 )
 
 // BatchQuerySessionByClientIds invokes the onsmqtt.BatchQuerySessionByClientIds API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/batchquerysessionbyclientids.html
 func (client *Client) BatchQuerySessionByClientIds(request *BatchQuerySessionByClientIdsRequest) (response *BatchQuerySessionByClientIdsResponse, err error) {
 	response = CreateBatchQuerySessionByClientIdsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchQuerySessionByClientIds(request *BatchQuerySessionByC
 }
 
 // BatchQuerySessionByClientIdsWithChan invokes the onsmqtt.BatchQuerySessionByClientIds API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/batchquerysessionbyclientids.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchQuerySessionByClientIdsWithChan(request *BatchQuerySessionByClientIdsRequest) (<-chan *BatchQuerySessionByClientIdsResponse, <-chan error) {
 	responseChan := make(chan *BatchQuerySessionByClientIdsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchQuerySessionByClientIdsWithChan(request *BatchQuerySe
 }
 
 // BatchQuerySessionByClientIdsWithCallback invokes the onsmqtt.BatchQuerySessionByClientIds API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/batchquerysessionbyclientids.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchQuerySessionByClientIdsWithCallback(request *BatchQuerySessionByClientIdsRequest, callback func(response *BatchQuerySessionByClientIdsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

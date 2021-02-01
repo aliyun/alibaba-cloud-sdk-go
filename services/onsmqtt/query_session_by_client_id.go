@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySessionByClientId invokes the onsmqtt.QuerySessionByClientId API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querysessionbyclientid.html
 func (client *Client) QuerySessionByClientId(request *QuerySessionByClientIdRequest) (response *QuerySessionByClientIdResponse, err error) {
 	response = CreateQuerySessionByClientIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySessionByClientId(request *QuerySessionByClientIdRequ
 }
 
 // QuerySessionByClientIdWithChan invokes the onsmqtt.QuerySessionByClientId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querysessionbyclientid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySessionByClientIdWithChan(request *QuerySessionByClientIdRequest) (<-chan *QuerySessionByClientIdResponse, <-chan error) {
 	responseChan := make(chan *QuerySessionByClientIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySessionByClientIdWithChan(request *QuerySessionByClie
 }
 
 // QuerySessionByClientIdWithCallback invokes the onsmqtt.QuerySessionByClientId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querysessionbyclientid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySessionByClientIdWithCallback(request *QuerySessionByClientIdRequest, callback func(response *QuerySessionByClientIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

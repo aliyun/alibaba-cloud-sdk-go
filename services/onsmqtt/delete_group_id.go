@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteGroupId invokes the onsmqtt.DeleteGroupId API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
 func (client *Client) DeleteGroupId(request *DeleteGroupIdRequest) (response *DeleteGroupIdResponse, err error) {
 	response = CreateDeleteGroupIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteGroupId(request *DeleteGroupIdRequest) (response *De
 }
 
 // DeleteGroupIdWithChan invokes the onsmqtt.DeleteGroupId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupIdWithChan(request *DeleteGroupIdRequest) (<-chan *DeleteGroupIdResponse, <-chan error) {
 	responseChan := make(chan *DeleteGroupIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteGroupIdWithChan(request *DeleteGroupIdRequest) (<-ch
 }
 
 // DeleteGroupIdWithCallback invokes the onsmqtt.DeleteGroupId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupIdWithCallback(request *DeleteGroupIdRequest, callback func(response *DeleteGroupIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

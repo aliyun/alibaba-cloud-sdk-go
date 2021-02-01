@@ -21,7 +21,6 @@ import (
 )
 
 // QueryToken invokes the onsmqtt.QueryToken API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querytoken.html
 func (client *Client) QueryToken(request *QueryTokenRequest) (response *QueryTokenResponse, err error) {
 	response = CreateQueryTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryToken(request *QueryTokenRequest) (response *QueryTok
 }
 
 // QueryTokenWithChan invokes the onsmqtt.QueryToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querytoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTokenWithChan(request *QueryTokenRequest) (<-chan *QueryTokenResponse, <-chan error) {
 	responseChan := make(chan *QueryTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTokenWithChan(request *QueryTokenRequest) (<-chan *Qu
 }
 
 // QueryTokenWithCallback invokes the onsmqtt.QueryToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querytoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTokenWithCallback(request *QueryTokenRequest, callback func(response *QueryTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

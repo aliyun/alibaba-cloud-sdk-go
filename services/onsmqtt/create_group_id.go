@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGroupId invokes the onsmqtt.CreateGroupId API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/creategroupid.html
 func (client *Client) CreateGroupId(request *CreateGroupIdRequest) (response *CreateGroupIdResponse, err error) {
 	response = CreateCreateGroupIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGroupId(request *CreateGroupIdRequest) (response *Cr
 }
 
 // CreateGroupIdWithChan invokes the onsmqtt.CreateGroupId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/creategroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupIdWithChan(request *CreateGroupIdRequest) (<-chan *CreateGroupIdResponse, <-chan error) {
 	responseChan := make(chan *CreateGroupIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGroupIdWithChan(request *CreateGroupIdRequest) (<-ch
 }
 
 // CreateGroupIdWithCallback invokes the onsmqtt.CreateGroupId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/creategroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupIdWithCallback(request *CreateGroupIdRequest, callback func(response *CreateGroupIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
