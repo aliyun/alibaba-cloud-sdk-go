@@ -1,3 +1,7 @@
+2021-02-01 Version: v1.61.894
+- Generated 2019-09-30 for `imagerecog`.
+- Release RecognizeFood.
+
 2021-02-01 Version: v1.61.893
 - Generated 2020-03-20 for `videorecog`.
 - Release UnderstandVideoContent.
