@@ -93,8 +93,8 @@ type DescribePriceResponse struct {
 	TraceId     string                   `json:"TraceId" xml:"TraceId"`
 	OrderParams string                   `json:"OrderParams" xml:"OrderParams"`
 	Order       Order                    `json:"Order" xml:"Order"`
-	Rules       RulesInDescribePrice     `json:"Rules" xml:"Rules"`
 	SubOrders   SubOrdersInDescribePrice `json:"SubOrders" xml:"SubOrders"`
+	Rules       RulesInDescribePrice     `json:"Rules" xml:"Rules"`
 }
 
 // CreateDescribePriceRequest creates a request to invoke DescribePrice API

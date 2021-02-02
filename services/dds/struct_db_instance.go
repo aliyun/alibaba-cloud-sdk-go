@@ -18,16 +18,16 @@ package dds
 // DBInstance is a nested struct in dds response
 type DBInstance struct {
 	ReplicaSetName              string                                   `json:"ReplicaSetName" xml:"ReplicaSetName"`
-	DBInstanceDescription       string                                   `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 	Engine                      string                                   `json:"Engine" xml:"Engine"`
+	DBInstanceDescription       string                                   `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 	ChargeType                  string                                   `json:"ChargeType" xml:"ChargeType"`
 	ReadonlyReplicas            string                                   `json:"ReadonlyReplicas" xml:"ReadonlyReplicas"`
 	DBInstanceClass             string                                   `json:"DBInstanceClass" xml:"DBInstanceClass"`
 	VpcAuthMode                 string                                   `json:"VpcAuthMode" xml:"VpcAuthMode"`
 	DestroyTime                 string                                   `json:"DestroyTime" xml:"DestroyTime"`
-	RegionId                    string                                   `json:"RegionId" xml:"RegionId"`
 	LastDowngradeTime           string                                   `json:"LastDowngradeTime" xml:"LastDowngradeTime"`
 	MaxConnections              int                                      `json:"MaxConnections" xml:"MaxConnections"`
+	RegionId                    string                                   `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId             string                                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DBInstanceType              string                                   `json:"DBInstanceType" xml:"DBInstanceType"`
 	MaintainEndTime             string                                   `json:"MaintainEndTime" xml:"MaintainEndTime"`
@@ -35,8 +35,8 @@ type DBInstance struct {
 	DBInstanceId                string                                   `json:"DBInstanceId" xml:"DBInstanceId"`
 	NetworkType                 string                                   `json:"NetworkType" xml:"NetworkType"`
 	ReplicationFactor           string                                   `json:"ReplicationFactor" xml:"ReplicationFactor"`
-	MaxIOPS                     int                                      `json:"MaxIOPS" xml:"MaxIOPS"`
 	DBInstanceReleaseProtection bool                                     `json:"DBInstanceReleaseProtection" xml:"DBInstanceReleaseProtection"`
+	MaxIOPS                     int                                      `json:"MaxIOPS" xml:"MaxIOPS"`
 	ReplacateId                 string                                   `json:"ReplacateId" xml:"ReplacateId"`
 	EngineVersion               string                                   `json:"EngineVersion" xml:"EngineVersion"`
 	VPCId                       string                                   `json:"VPCId" xml:"VPCId"`
@@ -49,12 +49,12 @@ type DBInstance struct {
 	DBInstanceStatus            string                                   `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
 	CurrentKernelVersion        string                                   `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 	ZoneId                      string                                   `json:"ZoneId" xml:"ZoneId"`
-	KindCode                    string                                   `json:"KindCode" xml:"KindCode"`
 	ProtocolType                string                                   `json:"ProtocolType" xml:"ProtocolType"`
+	KindCode                    string                                   `json:"KindCode" xml:"KindCode"`
 	LockMode                    string                                   `json:"LockMode" xml:"LockMode"`
-	MongosList                  MongosListInDescribeDBInstances          `json:"MongosList" xml:"MongosList"`
+	ShardList                   ShardListInDescribeDBInstances           `json:"ShardList" xml:"ShardList"`
 	ReplicaSets                 ReplicaSetsInDescribeDBInstanceAttribute `json:"ReplicaSets" xml:"ReplicaSets"`
-	ShardList                   ShardListInDescribeDBInstanceAttribute   `json:"ShardList" xml:"ShardList"`
+	MongosList                  MongosListInDescribeDBInstances          `json:"MongosList" xml:"MongosList"`
 	Tags                        TagsInDescribeDBInstanceAttribute        `json:"Tags" xml:"Tags"`
 	ConfigserverList            ConfigserverList                         `json:"ConfigserverList" xml:"ConfigserverList"`
 }

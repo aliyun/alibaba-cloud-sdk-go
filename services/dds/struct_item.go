@@ -17,9 +17,9 @@ package dds
 
 // Item is a nested struct in dds response
 type Item struct {
-	DbInstanceId   string `json:"DbInstanceId" xml:"DbInstanceId"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	Duration       string `json:"Duration" xml:"Duration"`
 	AutoRenew      string `json:"AutoRenew" xml:"AutoRenew"`
 	DBInstanceType string `json:"DBInstanceType" xml:"DBInstanceType"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
+	DbInstanceId   string `json:"DbInstanceId" xml:"DbInstanceId"`
 }

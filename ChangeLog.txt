@@ -1,3 +1,7 @@
+2021-02-02 Version: v1.61.899
+- Generated 2015-12-01 for `Dds`.
+- CreateShardingDBInstance add ReadOnlyReplicas in ReplicaSet.
+
 2021-02-01 Version: v1.61.898
 - Generated 2020-04-20 for `OnsMqtt`.
 - Support device credential for mqtt.

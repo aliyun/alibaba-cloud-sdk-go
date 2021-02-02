@@ -74,6 +74,7 @@ type CreateNodeRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NodeType             string           `position:"Query" name:"NodeType"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ReadonlyReplicas     requests.Integer `position:"Query" name:"ReadonlyReplicas"`
 	NodeClass            string           `position:"Query" name:"NodeClass"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
@@ -89,8 +90,8 @@ type CreateNodeRequest struct {
 type CreateNodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   string `json:"OrderId" xml:"OrderId"`
 	NodeId    string `json:"NodeId" xml:"NodeId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateNodeRequest creates a request to invoke CreateNode API

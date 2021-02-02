@@ -72,9 +72,9 @@ func (client *Client) DescribeInstanceAutoRenewalAttributeWithCallback(request *
 type DescribeInstanceAutoRenewalAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	PageSize             string           `position:"Query" name:"PageSize"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -85,10 +85,10 @@ type DescribeInstanceAutoRenewalAttributeRequest struct {
 // DescribeInstanceAutoRenewalAttributeResponse is the response struct for api DescribeInstanceAutoRenewalAttribute
 type DescribeInstanceAutoRenewalAttributeResponse struct {
 	*responses.BaseResponse
+	ItemsNumbers    int                                         `json:"ItemsNumbers" xml:"ItemsNumbers"`
+	PageRecordCount int                                         `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId       string                                      `json:"RequestId" xml:"RequestId"`
 	PageNumber      int                                         `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount int                                         `json:"PageRecordCount" xml:"PageRecordCount"`
-	ItemsNumbers    int                                         `json:"ItemsNumbers" xml:"ItemsNumbers"`
 	Items           ItemsInDescribeInstanceAutoRenewalAttribute `json:"Items" xml:"Items"`
 }
 

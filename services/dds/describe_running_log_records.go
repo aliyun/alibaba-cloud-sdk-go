@@ -72,6 +72,7 @@ func (client *Client) DescribeRunningLogRecordsWithCallback(request *DescribeRun
 type DescribeRunningLogRecordsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RoleId               string           `position:"Query" name:"RoleId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
@@ -91,11 +92,11 @@ type DescribeRunningLogRecordsRequest struct {
 // DescribeRunningLogRecordsResponse is the response struct for api DescribeRunningLogRecords
 type DescribeRunningLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                           `json:"RequestId" xml:"RequestId"`
-	Engine           string                           `json:"Engine" xml:"Engine"`
 	TotalRecordCount int                              `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                              `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                              `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                           `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                              `json:"PageNumber" xml:"PageNumber"`
+	Engine           string                           `json:"Engine" xml:"Engine"`
 	Items            ItemsInDescribeRunningLogRecords `json:"Items" xml:"Items"`
 }
 

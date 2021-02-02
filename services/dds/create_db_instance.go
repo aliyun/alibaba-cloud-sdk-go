@@ -108,8 +108,8 @@ type CreateDBInstanceRequest struct {
 type CreateDBInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	OrderId      string `json:"OrderId" xml:"OrderId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId      string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateDBInstanceRequest creates a request to invoke CreateDBInstance API

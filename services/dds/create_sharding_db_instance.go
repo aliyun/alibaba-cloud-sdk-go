@@ -87,9 +87,9 @@ type CreateShardingDBInstanceRequest struct {
 	OwnerAccount          string                                  `position:"Query" name:"OwnerAccount"`
 	ConfigServer          *[]CreateShardingDBInstanceConfigServer `position:"Query" name:"ConfigServer"  type:"Repeated"`
 	OwnerId               requests.Integer                        `position:"Query" name:"OwnerId"`
-	Mongos                *[]CreateShardingDBInstanceMongos       `position:"Query" name:"Mongos"  type:"Repeated"`
 	SecurityIPList        string                                  `position:"Query" name:"SecurityIPList"`
 	VSwitchId             string                                  `position:"Query" name:"VSwitchId"`
+	Mongos                *[]CreateShardingDBInstanceMongos       `position:"Query" name:"Mongos"  type:"Repeated"`
 	AccountPassword       string                                  `position:"Query" name:"AccountPassword"`
 	AutoRenew             string                                  `position:"Query" name:"AutoRenew"`
 	VpcId                 string                                  `position:"Query" name:"VpcId"`
@@ -100,8 +100,9 @@ type CreateShardingDBInstanceRequest struct {
 
 // CreateShardingDBInstanceReplicaSet is a repeated param struct in CreateShardingDBInstanceRequest
 type CreateShardingDBInstanceReplicaSet struct {
-	Storage string `name:"Storage"`
-	Class   string `name:"Class"`
+	ReadonlyReplicas string `name:"ReadonlyReplicas"`
+	Storage          string `name:"Storage"`
+	Class            string `name:"Class"`
 }
 
 // CreateShardingDBInstanceConfigServer is a repeated param struct in CreateShardingDBInstanceRequest
@@ -118,9 +119,9 @@ type CreateShardingDBInstanceMongos struct {
 // CreateShardingDBInstanceResponse is the response struct for api CreateShardingDBInstance
 type CreateShardingDBInstanceResponse struct {
 	*responses.BaseResponse
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
 	OrderId      string `json:"OrderId" xml:"OrderId"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateShardingDBInstanceRequest creates a request to invoke CreateShardingDBInstance API

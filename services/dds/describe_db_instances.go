@@ -107,10 +107,10 @@ type DescribeDBInstancesTag struct {
 // DescribeDBInstancesResponse is the response struct for api DescribeDBInstances
 type DescribeDBInstancesResponse struct {
 	*responses.BaseResponse
+	TotalCount  int                              `json:"TotalCount" xml:"TotalCount"`
+	PageSize    int                              `json:"PageSize" xml:"PageSize"`
 	RequestId   string                           `json:"RequestId" xml:"RequestId"`
 	PageNumber  int                              `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int                              `json:"PageSize" xml:"PageSize"`
-	TotalCount  int                              `json:"TotalCount" xml:"TotalCount"`
 	DBInstances DBInstancesInDescribeDBInstances `json:"DBInstances" xml:"DBInstances"`
 }
 
