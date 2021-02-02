@@ -1,3 +1,7 @@
+2021-02-02 Version: v1.61.902
+- Generated 2021-01-15 for `Subscription`.
+- Support for Subscription SDK.
+
 2021-02-02 Version: v1.61.901
 - Generated 2021-01-15 for `Subscription`.
 - Support for Subscription SDK.
