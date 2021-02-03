@@ -1,3 +1,7 @@
+2021-02-03 Version: v1.61.904
+- Generated 2015-01-01 for `R-kvstore`.
+- Add ModifyAuditLogConfig API.
+
 2021-02-03 Version: v1.61.903
 - Generated 2014-05-15 for `Slb`.
 - Support connection drain.
