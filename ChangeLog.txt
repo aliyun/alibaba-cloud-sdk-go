@@ -1,3 +1,7 @@
+2021-02-03 Version: v1.61.905
+- Generated 2019-06-24 for `eais`.
+- After normalizing the API group name, regenerate the SDK.
+
 2021-02-03 Version: v1.61.904
 - Generated 2015-01-01 for `R-kvstore`.
 - Add ModifyAuditLogConfig API.
