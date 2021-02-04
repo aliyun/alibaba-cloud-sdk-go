@@ -89,7 +89,7 @@ func CreateSendFeedbackRequest() (request *SendFeedbackRequest) {
 	request = &SendFeedbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("safconsole", "2021-01-12", "SendFeedback", "safconsole", "openAPI")
+	request.InitWithApiInfo("safconsole", "2021-01-12", "SendFeedback", "saf", "openAPI")
 	request.Method = requests.POST
 	return
 }

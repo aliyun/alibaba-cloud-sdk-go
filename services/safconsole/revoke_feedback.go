@@ -88,7 +88,7 @@ func CreateRevokeFeedbackRequest() (request *RevokeFeedbackRequest) {
 	request = &RevokeFeedbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("safconsole", "2021-01-12", "RevokeFeedback", "safconsole", "openAPI")
+	request.InitWithApiInfo("safconsole", "2021-01-12", "RevokeFeedback", "saf", "openAPI")
 	request.Method = requests.POST
 	return
 }
