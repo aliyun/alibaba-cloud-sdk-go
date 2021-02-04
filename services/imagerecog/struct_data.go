@@ -17,11 +17,16 @@ package imagerecog
 
 // Data is a nested struct in imagerecog response
 type Data struct {
-	Sensitive         bool            `json:"Sensitive" xml:"Sensitive"`
+	JobId             string          `json:"JobId" xml:"JobId"`
+	Result            string          `json:"Result" xml:"Result"`
+	ErrorMessage      string          `json:"ErrorMessage" xml:"ErrorMessage"`
 	Threshold         float64         `json:"Threshold" xml:"Threshold"`
+	Sensitive         bool            `json:"Sensitive" xml:"Sensitive"`
+	Status            string          `json:"Status" xml:"Status"`
+	ErrorCode         string          `json:"ErrorCode" xml:"ErrorCode"`
 	Styles            []string        `json:"Styles" xml:"Styles"`
-	Elements          []Element       `json:"Elements" xml:"Elements"`
 	Tags              []Tag           `json:"Tags" xml:"Tags"`
+	Elements          []Element       `json:"Elements" xml:"Elements"`
 	TopFives          []TopFivesItem  `json:"TopFives" xml:"TopFives"`
 	ColorTemplateList []ColorTemplate `json:"ColorTemplateList" xml:"ColorTemplateList"`
 }

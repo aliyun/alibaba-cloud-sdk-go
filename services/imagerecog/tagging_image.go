@@ -72,6 +72,7 @@ func (client *Client) TaggingImageWithCallback(request *TaggingImageRequest, cal
 type TaggingImageRequest struct {
 	*requests.RpcRequest
 	ImageType requests.Integer `position:"Body" name:"ImageType"`
+	Async     requests.Boolean `position:"Body" name:"Async"`
 	ImageURL  string           `position:"Body" name:"ImageURL"`
 }
 
