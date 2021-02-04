@@ -1,3 +1,7 @@
+2021-02-04 Version: v1.61.907
+- Generated 2021-01-12 for `safconsole`.
+- Supported console.
+
 2021-02-04 Version: v1.61.906
 - Generated 2019-09-30 for `imagerecog`.
 - Update TaggingImage.
