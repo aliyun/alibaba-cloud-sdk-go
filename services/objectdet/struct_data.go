@@ -18,10 +18,10 @@ package objectdet
 // Data is a nested struct in objectdet response
 type Data struct {
 	Threshold               float64                       `json:"Threshold" xml:"Threshold"`
+	Height                  int64                         `json:"Height" xml:"Height"`
 	FrameNo                 string                        `json:"FrameNo" xml:"FrameNo"`
 	TaskId                  string                        `json:"TaskId" xml:"TaskId"`
-	Width                   int                           `json:"Width" xml:"Width"`
-	Height                  int                           `json:"Height" xml:"Height"`
+	Width                   int64                         `json:"Width" xml:"Width"`
 	OriginShapes            []int                         `json:"OriginShapes" xml:"OriginShapes"`
 	Location                Location                      `json:"Location" xml:"Location"`
 	Elements                []Element                     `json:"Elements" xml:"Elements"`
@@ -29,6 +29,5 @@ type Data struct {
 	RepairParts             []RepairItems                 `json:"RepairParts" xml:"RepairParts"`
 	RegionIntersectMatched  []RegionIntersectMatchedItem  `json:"RegionIntersectMatched" xml:"RegionIntersectMatched"`
 	RegionIntersects        []RegionIntersectsItem        `json:"RegionIntersects" xml:"RegionIntersects"`
-	DetectObjectInfoList    []DetectObjectInfo            `json:"DetectObjectInfoList" xml:"DetectObjectInfoList"`
 	RegionIntersectFeatures []RegionIntersectFeaturesItem `json:"RegionIntersectFeatures" xml:"RegionIntersectFeatures"`
 }

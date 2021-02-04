@@ -78,8 +78,8 @@ type DetectVehicleRequest struct {
 // DetectVehicleResponse is the response struct for api DetectVehicle
 type DetectVehicleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Data      DataInDetectVehicle `json:"Data" xml:"Data"`
 }
 
 // CreateDetectVehicleRequest creates a request to invoke DetectVehicle API

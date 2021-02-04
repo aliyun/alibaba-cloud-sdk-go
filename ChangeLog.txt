@@ -1,3 +1,7 @@
+2021-02-04 Version: v1.61.910
+- Generated 2019-12-30 for `objectdet`.
+- Update DetectVehicleIllegalParking DetectVehicleICongestion.
+
 2021-02-04 Version: v1.61.909
 - Generated 2019-12-26 for `OutboundBot`.
 - Supported scheduler for outbound call.

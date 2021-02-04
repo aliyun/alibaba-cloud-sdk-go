@@ -77,8 +77,8 @@ type DetectObjectRequest struct {
 // DetectObjectResponse is the response struct for api DetectObject
 type DetectObjectResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string             `json:"RequestId" xml:"RequestId"`
+	Data      DataInDetectObject `json:"Data" xml:"Data"`
 }
 
 // CreateDetectObjectRequest creates a request to invoke DetectObject API
