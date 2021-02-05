@@ -78,8 +78,8 @@ type GetFaceEntityRequest struct {
 // GetFaceEntityResponse is the response struct for api GetFaceEntity
 type GetFaceEntityResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetFaceEntity   `json:"Data" xml:"Data"`
 }
 
 // CreateGetFaceEntityRequest creates a request to invoke GetFaceEntity API
