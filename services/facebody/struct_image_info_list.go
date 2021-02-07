@@ -17,5 +17,5 @@ package facebody
 
 // ImageInfoList is a nested struct in facebody response
 type ImageInfoList struct {
-	Elements []Element `json:"Elements" xml:"Elements"`
+	ImageInfoListItem []ImageInfoListItem `json:"ImageInfoList" xml:"ImageInfoList"`
 }
