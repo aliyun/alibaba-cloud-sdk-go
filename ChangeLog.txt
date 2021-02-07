@@ -1,3 +1,7 @@
+2021-02-07 Version: v1.61.916
+- Generated 2019-06-01 for `oos`.
+- Support patch manager apis.
+
 2021-02-07 Version: v1.61.915
 - Generated 2020-04-14 for `codeup`.
 - Support some MergeRequest API.
