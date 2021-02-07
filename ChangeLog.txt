@@ -1,3 +1,7 @@
+2021-02-07 Version: v1.61.915
+- Generated 2020-04-14 for `codeup`.
+- Support some MergeRequest API.
+
 2021-02-07 Version: v1.61.914
 - Generated 2019-12-30 for `facebody`.
 - Update GetFaceEntity.

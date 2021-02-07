@@ -19,6 +19,8 @@ package codeup
 type AssigneeListItem struct {
 	Name         string `json:"Name" xml:"Name"`
 	ExternUserId string `json:"ExternUserId" xml:"ExternUserId"`
+	Email        string `json:"Email" xml:"Email"`
 	Id           string `json:"Id" xml:"Id"`
+	Status       string `json:"Status" xml:"Status"`
 	AvatarUrl    string `json:"AvatarUrl" xml:"AvatarUrl"`
 }

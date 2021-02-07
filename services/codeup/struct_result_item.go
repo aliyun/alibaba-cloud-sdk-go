@@ -18,6 +18,7 @@ package codeup
 // ResultItem is a nested struct in codeup response
 type ResultItem struct {
 	SourceBranch          string             `json:"SourceBranch" xml:"SourceBranch"`
+	OutDated              bool               `json:"OutDated" xml:"OutDated"`
 	EnableSslVerification bool               `json:"EnableSslVerification" xml:"EnableSslVerification"`
 	AvatarUrl             string             `json:"AvatarUrl" xml:"AvatarUrl"`
 	BranchName            string             `json:"BranchName" xml:"BranchName"`
@@ -28,14 +29,19 @@ type ResultItem struct {
 	PushEvents            bool               `json:"PushEvents" xml:"PushEvents"`
 	TargetBranch          string             `json:"TargetBranch" xml:"TargetBranch"`
 	AcceptedRevision      string             `json:"AcceptedRevision" xml:"AcceptedRevision"`
+	RangeContext          string             `json:"RangeContext" xml:"RangeContext"`
 	OrganizationId        string             `json:"OrganizationId" xml:"OrganizationId"`
 	Path                  string             `json:"Path" xml:"Path"`
 	Email                 string             `json:"Email" xml:"Email"`
+	Side                  string             `json:"Side" xml:"Side"`
 	AccessLevel           int                `json:"AccessLevel" xml:"AccessLevel"`
 	PathWithNamespace     string             `json:"PathWithNamespace" xml:"PathWithNamespace"`
 	Id                    int64              `json:"Id" xml:"Id"`
 	LastTestResult        string             `json:"LastTestResult" xml:"LastTestResult"`
+	Note                  string             `json:"Note" xml:"Note"`
+	IsSupportMerge        bool               `json:"IsSupportMerge" xml:"IsSupportMerge"`
 	Archive               bool               `json:"Archive" xml:"Archive"`
+	Line                  int64              `json:"Line" xml:"Line"`
 	CreatorId             int64              `json:"CreatorId" xml:"CreatorId"`
 	Name                  string             `json:"Name" xml:"Name"`
 	ExternUserId          string             `json:"ExternUserId" xml:"ExternUserId"`
@@ -43,6 +49,7 @@ type ResultItem struct {
 	Title                 string             `json:"Title" xml:"Title"`
 	UpdatedAt             string             `json:"UpdatedAt" xml:"UpdatedAt"`
 	VisibilityLevel       int                `json:"VisibilityLevel" xml:"VisibilityLevel"`
+	ParentNoteId          int64              `json:"ParentNoteId" xml:"ParentNoteId"`
 	AheadCommitCount      int                `json:"AheadCommitCount" xml:"AheadCommitCount"`
 	CreatedAt             string             `json:"CreatedAt" xml:"CreatedAt"`
 	NamespaceId           int64              `json:"NamespaceId" xml:"NamespaceId"`
@@ -50,12 +57,15 @@ type ResultItem struct {
 	NameWithNamespace     string             `json:"NameWithNamespace" xml:"NameWithNamespace"`
 	SshCloneUrl           string             `json:"SshCloneUrl" xml:"SshCloneUrl"`
 	ProtectedBranch       bool               `json:"ProtectedBranch" xml:"ProtectedBranch"`
+	Username              string             `json:"Username" xml:"Username"`
 	NoteEvents            bool               `json:"NoteEvents" xml:"NoteEvents"`
 	TagPushEvents         bool               `json:"TagPushEvents" xml:"TagPushEvents"`
 	LastActivityAt        string             `json:"LastActivityAt" xml:"LastActivityAt"`
+	IsDraft               bool               `json:"IsDraft" xml:"IsDraft"`
 	OrganizationName      string             `json:"OrganizationName" xml:"OrganizationName"`
 	MergeType             string             `json:"MergeType" xml:"MergeType"`
 	SecretToken           string             `json:"SecretToken" xml:"SecretToken"`
+	Closed                int                `json:"Closed" xml:"Closed"`
 	Url                   string             `json:"Url" xml:"Url"`
 	State                 string             `json:"State" xml:"State"`
 	BehindCommitCount     int                `json:"BehindCommitCount" xml:"BehindCommitCount"`
@@ -64,7 +74,7 @@ type ResultItem struct {
 	MergeStatus           string             `json:"MergeStatus" xml:"MergeStatus"`
 	ImportStatus          string             `json:"ImportStatus" xml:"ImportStatus"`
 	ApproveCheckResult    ApproveCheckResult `json:"ApproveCheckResult" xml:"ApproveCheckResult"`
-	CommitInfo            CommitInfo         `json:"CommitInfo" xml:"CommitInfo"`
 	Author                Author             `json:"Author" xml:"Author"`
+	CommitInfo            CommitInfo         `json:"CommitInfo" xml:"CommitInfo"`
 	AssigneeList          []AssigneeListItem `json:"AssigneeList" xml:"AssigneeList"`
 }

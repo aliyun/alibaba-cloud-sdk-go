@@ -20,88 +20,100 @@ type Result struct {
 	VisibilityLevel          string              `json:"VisibilityLevel" xml:"VisibilityLevel"`
 	SourceBranch             string              `json:"SourceBranch" xml:"SourceBranch"`
 	Branch                   string              `json:"Branch" xml:"Branch"`
-	EnableSslVerification    bool                `json:"EnableSslVerification" xml:"EnableSslVerification"`
-	AvatarUrl                string              `json:"AvatarUrl" xml:"AvatarUrl"`
-	BranchName               string              `json:"BranchName" xml:"BranchName"`
-	WebUrl                   string              `json:"WebUrl" xml:"WebUrl"`
+	OutDated                 bool                `json:"OutDated" xml:"OutDated"`
 	MergedRevision           string              `json:"MergedRevision" xml:"MergedRevision"`
-	MergeRequestsEvents      bool                `json:"MergeRequestsEvents" xml:"MergeRequestsEvents"`
-	TagName                  string              `json:"TagName" xml:"TagName"`
+	WebUrl                   string              `json:"WebUrl" xml:"WebUrl"`
 	Content                  string              `json:"Content" xml:"Content"`
-	PushEvents               bool                `json:"PushEvents" xml:"PushEvents"`
 	MergeError               string              `json:"MergeError" xml:"MergeError"`
 	TargetBranch             string              `json:"TargetBranch" xml:"TargetBranch"`
 	IssuesEnableStatus       bool                `json:"IssuesEnableStatus" xml:"IssuesEnableStatus"`
-	AcceptedRevision         string              `json:"AcceptedRevision" xml:"AcceptedRevision"`
 	OrganizationId           string              `json:"OrganizationId" xml:"OrganizationId"`
 	Type                     string              `json:"Type" xml:"Type"`
-	Path                     string              `json:"Path" xml:"Path"`
 	Message                  string              `json:"Message" xml:"Message"`
 	Email                    string              `json:"Email" xml:"Email"`
 	AccessLevel              int                 `json:"AccessLevel" xml:"AccessLevel"`
-	PathWithNamespace        string              `json:"PathWithNamespace" xml:"PathWithNamespace"`
 	Id                       int64               `json:"Id" xml:"Id"`
 	Result                   bool                `json:"Result" xml:"Result"`
+	Note                     string              `json:"Note" xml:"Note"`
+	FingerPrint              string              `json:"FingerPrint" xml:"FingerPrint"`
+	IsSupportMerge           bool                `json:"IsSupportMerge" xml:"IsSupportMerge"`
+	Archive                  bool                `json:"Archive" xml:"Archive"`
+	Line                     int64               `json:"Line" xml:"Line"`
+	ApproveStatus            string              `json:"ApproveStatus" xml:"ApproveStatus"`
+	CreatorId                int64               `json:"CreatorId" xml:"CreatorId"`
+	WikiEnableStatus         bool                `json:"WikiEnableStatus" xml:"WikiEnableStatus"`
+	Name                     string              `json:"Name" xml:"Name"`
+	ExternUserId             string              `json:"ExternUserId" xml:"ExternUserId"`
+	Title                    string              `json:"Title" xml:"Title"`
+	DemoProjectStatus        bool                `json:"DemoProjectStatus" xml:"DemoProjectStatus"`
+	IsEnableSmartCodeReview  bool                `json:"IsEnableSmartCodeReview" xml:"IsEnableSmartCodeReview"`
+	Key                      string              `json:"Key" xml:"Key"`
+	SourceType               string              `json:"SourceType" xml:"SourceType"`
+	CreatedAt                string              `json:"CreatedAt" xml:"CreatedAt"`
+	NamespaceId              int64               `json:"NamespaceId" xml:"NamespaceId"`
+	ExternalUserId           string              `json:"ExternalUserId" xml:"ExternalUserId"`
+	Username                 string              `json:"Username" xml:"Username"`
+	TagPushEvents            bool                `json:"TagPushEvents" xml:"TagPushEvents"`
+	IsDraft                  bool                `json:"IsDraft" xml:"IsDraft"`
+	LastActivityAt           string              `json:"LastActivityAt" xml:"LastActivityAt"`
+	DefaultBranch            string              `json:"DefaultBranch" xml:"DefaultBranch"`
+	MergeType                string              `json:"MergeType" xml:"MergeType"`
+	State                    string              `json:"State" xml:"State"`
+	MergeRequestEnableStatus bool                `json:"MergeRequestEnableStatus" xml:"MergeRequestEnableStatus"`
+	MergeStatus              string              `json:"MergeStatus" xml:"MergeStatus"`
+	EnableSslVerification    bool                `json:"EnableSslVerification" xml:"EnableSslVerification"`
+	AvatarUrl                string              `json:"AvatarUrl" xml:"AvatarUrl"`
+	BranchName               string              `json:"BranchName" xml:"BranchName"`
+	MergeRequestsEvents      bool                `json:"MergeRequestsEvents" xml:"MergeRequestsEvents"`
+	TagName                  string              `json:"TagName" xml:"TagName"`
+	PushEvents               bool                `json:"PushEvents" xml:"PushEvents"`
+	AcceptedRevision         string              `json:"AcceptedRevision" xml:"AcceptedRevision"`
+	RangeContext             string              `json:"RangeContext" xml:"RangeContext"`
+	Path                     string              `json:"Path" xml:"Path"`
+	Side                     string              `json:"Side" xml:"Side"`
+	PathWithNamespace        string              `json:"PathWithNamespace" xml:"PathWithNamespace"`
 	LastTestResult           string              `json:"LastTestResult" xml:"LastTestResult"`
 	Public                   bool                `json:"Public" xml:"Public"`
-	FingerPrint              string              `json:"FingerPrint" xml:"FingerPrint"`
-	Archive                  bool                `json:"Archive" xml:"Archive"`
 	NotificationLevel        int                 `json:"NotificationLevel" xml:"NotificationLevel"`
 	TotalLines               int                 `json:"TotalLines" xml:"TotalLines"`
 	UserId                   int64               `json:"UserId" xml:"UserId"`
-	CreatorId                int64               `json:"CreatorId" xml:"CreatorId"`
-	WikiEnableStatus         bool                `json:"WikiEnableStatus" xml:"WikiEnableStatus"`
 	ImportUrl                string              `json:"ImportUrl" xml:"ImportUrl"`
-	Name                     string              `json:"Name" xml:"Name"`
-	ExternUserId             string              `json:"ExternUserId" xml:"ExternUserId"`
 	UserRole                 string              `json:"UserRole" xml:"UserRole"`
-	Title                    string              `json:"Title" xml:"Title"`
-	DemoProjectStatus        bool                `json:"DemoProjectStatus" xml:"DemoProjectStatus"`
-	IssuesEvents             bool                `json:"IssuesEvents" xml:"IssuesEvents"`
 	UpdatedAt                string              `json:"UpdatedAt" xml:"UpdatedAt"`
+	IssuesEvents             bool                `json:"IssuesEvents" xml:"IssuesEvents"`
 	SnippetsEnableStatus     bool                `json:"SnippetsEnableStatus" xml:"SnippetsEnableStatus"`
 	OwnerId                  int64               `json:"OwnerId" xml:"OwnerId"`
 	BuildEvents              bool                `json:"BuildEvents" xml:"BuildEvents"`
-	Key                      string              `json:"Key" xml:"Key"`
 	SourceId                 int64               `json:"SourceId" xml:"SourceId"`
-	SourceType               string              `json:"SourceType" xml:"SourceType"`
+	ParentNoteId             int64               `json:"ParentNoteId" xml:"ParentNoteId"`
 	AheadCommitCount         int                 `json:"AheadCommitCount" xml:"AheadCommitCount"`
-	CreatedAt                string              `json:"CreatedAt" xml:"CreatedAt"`
-	NamespaceId              int64               `json:"NamespaceId" xml:"NamespaceId"`
 	Description              string              `json:"Description" xml:"Description"`
-	ExternalUserId           string              `json:"ExternalUserId" xml:"ExternalUserId"`
 	ParentId                 int64               `json:"ParentId" xml:"ParentId"`
-	ProtectedBranch          bool                `json:"ProtectedBranch" xml:"ProtectedBranch"`
 	NameWithNamespace        string              `json:"NameWithNamespace" xml:"NameWithNamespace"`
+	ProtectedBranch          bool                `json:"ProtectedBranch" xml:"ProtectedBranch"`
 	ImportFromSubversion     bool                `json:"ImportFromSubversion" xml:"ImportFromSubversion"`
 	NoteEvents               bool                `json:"NoteEvents" xml:"NoteEvents"`
-	Username                 string              `json:"Username" xml:"Username"`
-	TagPushEvents            bool                `json:"TagPushEvents" xml:"TagPushEvents"`
-	LastActivityAt           string              `json:"LastActivityAt" xml:"LastActivityAt"`
-	DefaultBranch            string              `json:"DefaultBranch" xml:"DefaultBranch"`
 	SecretToken              string              `json:"SecretToken" xml:"SecretToken"`
-	MergeType                string              `json:"MergeType" xml:"MergeType"`
+	Closed                   int                 `json:"Closed" xml:"Closed"`
 	Url                      string              `json:"Url" xml:"Url"`
-	State                    string              `json:"State" xml:"State"`
 	SshUrlToRepo             string              `json:"SshUrlToRepo" xml:"SshUrlToRepo"`
-	MergeRequestEnableStatus bool                `json:"MergeRequestEnableStatus" xml:"MergeRequestEnableStatus"`
 	BehindCommitCount        int                 `json:"BehindCommitCount" xml:"BehindCommitCount"`
 	HttpUrlToRepo            string              `json:"HttpUrlToRepo" xml:"HttpUrlToRepo"`
 	BuildsEnableStatus       bool                `json:"BuildsEnableStatus" xml:"BuildsEnableStatus"`
 	ProjectId                int64               `json:"ProjectId" xml:"ProjectId"`
-	MergeStatus              string              `json:"MergeStatus" xml:"MergeStatus"`
 	FilePath                 string              `json:"FilePath" xml:"FilePath"`
 	ImportStatus             string              `json:"ImportStatus" xml:"ImportStatus"`
 	AllowMergeRoles          []int               `json:"AllowMergeRoles" xml:"AllowMergeRoles"`
+	MergeTypes               []string            `json:"MergeTypes" xml:"MergeTypes"`
 	TagList                  []string            `json:"TagList" xml:"TagList"`
 	AllowPushRoles           []int               `json:"AllowPushRoles" xml:"AllowPushRoles"`
 	Permissions              Permissions         `json:"Permissions" xml:"Permissions"`
 	MergeRequestSetting      MergeRequestSetting `json:"MergeRequestSetting" xml:"MergeRequestSetting"`
-	Author                   Author              `json:"Author" xml:"Author"`
 	Namespace                Namespace           `json:"Namespace" xml:"Namespace"`
 	TestSetting              TestSetting         `json:"TestSetting" xml:"TestSetting"`
 	Release                  Release             `json:"Release" xml:"Release"`
-	CommitInfo               CommitInfo          `json:"CommitInfo" xml:"CommitInfo"`
 	ApproveCheckResult       ApproveCheckResult  `json:"ApproveCheckResult" xml:"ApproveCheckResult"`
+	Author                   Author              `json:"Author" xml:"Author"`
+	CommitInfo               CommitInfo          `json:"CommitInfo" xml:"CommitInfo"`
 	AssigneeList             []AssigneeListItem  `json:"AssigneeList" xml:"AssigneeList"`
 }
