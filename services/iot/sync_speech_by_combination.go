@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SpeechByCombination invokes the iot.SpeechByCombination API synchronously
-func (client *Client) SpeechByCombination(request *SpeechByCombinationRequest) (response *SpeechByCombinationResponse, err error) {
-	response = CreateSpeechByCombinationResponse()
+// SyncSpeechByCombination invokes the iot.SyncSpeechByCombination API synchronously
+func (client *Client) SyncSpeechByCombination(request *SyncSpeechByCombinationRequest) (response *SyncSpeechByCombinationResponse, err error) {
+	response = CreateSyncSpeechByCombinationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SpeechByCombinationWithChan invokes the iot.SpeechByCombination API asynchronously
-func (client *Client) SpeechByCombinationWithChan(request *SpeechByCombinationRequest) (<-chan *SpeechByCombinationResponse, <-chan error) {
-	responseChan := make(chan *SpeechByCombinationResponse, 1)
+// SyncSpeechByCombinationWithChan invokes the iot.SyncSpeechByCombination API asynchronously
+func (client *Client) SyncSpeechByCombinationWithChan(request *SyncSpeechByCombinationRequest) (<-chan *SyncSpeechByCombinationResponse, <-chan error) {
+	responseChan := make(chan *SyncSpeechByCombinationResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SpeechByCombination(request)
+		response, err := client.SyncSpeechByCombination(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SpeechByCombinationWithChan(request *SpeechByCombinationRe
 	return responseChan, errChan
 }
 
-// SpeechByCombinationWithCallback invokes the iot.SpeechByCombination API asynchronously
-func (client *Client) SpeechByCombinationWithCallback(request *SpeechByCombinationRequest, callback func(response *SpeechByCombinationResponse, err error)) <-chan int {
+// SyncSpeechByCombinationWithCallback invokes the iot.SyncSpeechByCombination API asynchronously
+func (client *Client) SyncSpeechByCombinationWithCallback(request *SyncSpeechByCombinationRequest, callback func(response *SyncSpeechByCombinationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SpeechByCombinationResponse
+		var response *SyncSpeechByCombinationResponse
 		var err error
 		defer close(result)
-		response, err = client.SpeechByCombination(request)
+		response, err = client.SyncSpeechByCombination(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) SpeechByCombinationWithCallback(request *SpeechByCombinati
 	return result
 }
 
-// SpeechByCombinationRequest is the request struct for api SpeechByCombination
-type SpeechByCombinationRequest struct {
+// SyncSpeechByCombinationRequest is the request struct for api SyncSpeechByCombination
+type SyncSpeechByCombinationRequest struct {
 	*requests.RpcRequest
 	IotId           string    `position:"Body" name:"IotId"`
 	CombinationList *[]string `position:"Body" name:"CombinationList"  type:"Repeated"`
@@ -80,28 +80,29 @@ type SpeechByCombinationRequest struct {
 	DeviceName      string    `position:"Body" name:"DeviceName"`
 }
 
-// SpeechByCombinationResponse is the response struct for api SpeechByCombination
-type SpeechByCombinationResponse struct {
+// SyncSpeechByCombinationResponse is the response struct for api SyncSpeechByCombination
+type SyncSpeechByCombinationResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         Data   `json:"Data" xml:"Data"`
 }
 
-// CreateSpeechByCombinationRequest creates a request to invoke SpeechByCombination API
-func CreateSpeechByCombinationRequest() (request *SpeechByCombinationRequest) {
-	request = &SpeechByCombinationRequest{
+// CreateSyncSpeechByCombinationRequest creates a request to invoke SyncSpeechByCombination API
+func CreateSyncSpeechByCombinationRequest() (request *SyncSpeechByCombinationRequest) {
+	request = &SyncSpeechByCombinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SpeechByCombination", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SyncSpeechByCombination", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSpeechByCombinationResponse creates a response to parse from SpeechByCombination response
-func CreateSpeechByCombinationResponse() (response *SpeechByCombinationResponse) {
-	response = &SpeechByCombinationResponse{
+// CreateSyncSpeechByCombinationResponse creates a response to parse from SyncSpeechByCombination response
+func CreateSyncSpeechByCombinationResponse() (response *SyncSpeechByCombinationResponse) {
+	response = &SyncSpeechByCombinationResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

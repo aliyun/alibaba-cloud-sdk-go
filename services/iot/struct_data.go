@@ -48,6 +48,7 @@ type Data struct {
 	Name                      string                    `json:"Name" xml:"Name"`
 	GmtCreateTimestamp        int64                     `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
 	DownloadUrl               string                    `json:"DownloadUrl" xml:"DownloadUrl"`
+	RetryCount                int                       `json:"RetryCount" xml:"RetryCount"`
 	PageSize                  int                       `json:"PageSize" xml:"PageSize"`
 	Key                       string                    `json:"Key" xml:"Key"`
 	GmtCreate                 string                    `json:"GmtCreate" xml:"GmtCreate"`
@@ -77,6 +78,7 @@ type Data struct {
 	DriverVersion             string                    `json:"DriverVersion" xml:"DriverVersion"`
 	GmtCompletedTimestamp     int64                     `json:"GmtCompletedTimestamp" xml:"GmtCompletedTimestamp"`
 	PageNo                    int                       `json:"PageNo" xml:"PageNo"`
+	Id                        string                    `json:"Id" xml:"Id"`
 	DriverConfig              string                    `json:"DriverConfig" xml:"DriverConfig"`
 	RoleArn                   string                    `json:"RoleArn" xml:"RoleArn"`
 	Tags                      string                    `json:"Tags" xml:"Tags"`
@@ -118,5 +120,4 @@ type Data struct {
 	TaskList                  []Task                    `json:"TaskList" xml:"TaskList"`
 	ModelVersions             []ModelVersion            `json:"ModelVersions" xml:"ModelVersions"`
 	List                      ListInGetThingTopo        `json:"List" xml:"List"`
-	DynamicRegClientIds       []DynamicRegClientId      `json:"DynamicRegClientIds" xml:"DynamicRegClientIds"`
 }

@@ -1,3 +1,10 @@
+2021-02-07 Version: v1.61.917
+- Generated 2018-01-20 for `Iot`.
+- Add IoT Studio BatchBindDevicesIntoProject API.
+- Add IoT Studio BatchBindProductsIntoProject API.
+- Add IoT Studio BatchUnbindProjectDevices API.
+- Add IoT Studio BatchUnbindProjectProducts API.
+
 2021-02-07 Version: v1.61.916
 - Generated 2019-06-01 for `oos`.
 - Support patch manager apis.

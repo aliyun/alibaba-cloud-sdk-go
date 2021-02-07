@@ -71,11 +71,13 @@ func (client *Client) BatchRegisterDeviceWithApplyIdWithCallback(request *BatchR
 // BatchRegisterDeviceWithApplyIdRequest is the request struct for api BatchRegisterDeviceWithApplyId
 type BatchRegisterDeviceWithApplyIdRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
-	ApplyId       requests.Integer `position:"Query" name:"ApplyId"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	ProductKey        string           `position:"Query" name:"ProductKey"`
+	ApplyId           requests.Integer `position:"Query" name:"ApplyId"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
 }
 
 // BatchRegisterDeviceWithApplyIdResponse is the response struct for api BatchRegisterDeviceWithApplyId
