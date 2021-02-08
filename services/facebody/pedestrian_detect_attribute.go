@@ -77,8 +77,8 @@ type PedestrianDetectAttributeRequest struct {
 // PedestrianDetectAttributeResponse is the response struct for api PedestrianDetectAttribute
 type PedestrianDetectAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                          `json:"RequestId" xml:"RequestId"`
+	Data      DataInPedestrianDetectAttribute `json:"Data" xml:"Data"`
 }
 
 // CreatePedestrianDetectAttributeRequest creates a request to invoke PedestrianDetectAttribute API

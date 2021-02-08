@@ -95,7 +95,5 @@ type Data struct {
 	DbList               []DbListItem                              `json:"DbList" xml:"DbList"`
 	TraceList            []Trace                                   `json:"TraceList" xml:"TraceList"`
 	Entities             []Entity                                  `json:"Entities" xml:"Entities"`
-	Attributes           []AttributesItem                          `json:"Attributes" xml:"Attributes"`
 	FaceRecognizeResults []FaceRecognizeResult                     `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`
-	Boxes                []BoxesItem                               `json:"Boxes" xml:"Boxes"`
 }

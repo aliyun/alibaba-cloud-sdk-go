@@ -1,3 +1,7 @@
+2021-02-08 Version: v1.61.918
+- Generated 2019-12-30 for `facebody`.
+- Update PedestrianDetectAttribute.
+
 2021-02-07 Version: v1.61.917
 - Generated 2018-01-20 for `Iot`.
 - Add IoT Studio BatchBindDevicesIntoProject API.
