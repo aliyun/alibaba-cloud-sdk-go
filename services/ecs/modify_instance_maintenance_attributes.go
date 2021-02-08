@@ -78,6 +78,7 @@ type ModifyInstanceMaintenanceAttributesRequest struct {
 	OwnerAccount         string                                                  `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer                                        `position:"Query" name:"OwnerId"`
 	InstanceId           *[]string                                               `position:"Query" name:"InstanceId"  type:"Repeated"`
+	NotifyOnMaintenance  requests.Boolean                                        `position:"Query" name:"NotifyOnMaintenance"`
 }
 
 // ModifyInstanceMaintenanceAttributesMaintenanceWindow is a repeated param struct in ModifyInstanceMaintenanceAttributesRequest

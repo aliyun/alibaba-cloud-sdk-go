@@ -1,3 +1,7 @@
+2021-02-08 Version: v1.61.919
+- Generated 2014-05-26 for `Ecs`.
+- Add username for RunCommand and InvokeCommand.
+
 2021-02-08 Version: v1.61.918
 - Generated 2019-12-30 for `facebody`.
 - Update PedestrianDetectAttribute.
