@@ -87,11 +87,11 @@ type BatchUnbindProjectDevicesDevices struct {
 // BatchUnbindProjectDevicesResponse is the response struct for api BatchUnbindProjectDevices
 type BatchUnbindProjectDevicesResponse struct {
 	*responses.BaseResponse
-	RequestId    string                 `json:"RequestId" xml:"RequestId"`
-	Success      bool                   `json:"Success" xml:"Success"`
-	Code         string                 `json:"Code" xml:"Code"`
-	ErrorMessage string                 `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         map[string]interface{} `json:"Data" xml:"Data"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Success      bool   `json:"Success" xml:"Success"`
+	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         bool   `json:"Data" xml:"Data"`
 }
 
 // CreateBatchUnbindProjectDevicesRequest creates a request to invoke BatchUnbindProjectDevices API

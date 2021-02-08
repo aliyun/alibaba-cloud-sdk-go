@@ -71,11 +71,13 @@ func (client *Client) QuerySubscribeRelationWithCallback(request *QuerySubscribe
 // QuerySubscribeRelationRequest is the request struct for api QuerySubscribeRelation
 type QuerySubscribeRelationRequest struct {
 	*requests.RpcRequest
-	Type          string `position:"Query" name:"Type"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	Type              string `position:"Query" name:"Type"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // QuerySubscribeRelationResponse is the response struct for api QuerySubscribeRelation

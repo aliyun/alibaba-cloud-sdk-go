@@ -1,3 +1,10 @@
+2021-02-08 Version: v1.61.920
+- Generated 2018-01-20 for `Iot`.
+- Fix IoT Studio BatchBindDevicesIntoProject API return datatype.
+- Fix IoT Studio BatchBindProductsIntoProject API return datatype.
+- Fix IoT Studio BatchUnbindProjectDevices API return datatype.
+- Fix IoT Studio BatchUnbindProjectProducts API return datatype.
+
 2021-02-08 Version: v1.61.919
 - Generated 2014-05-26 for `Ecs`.
 - Add username for RunCommand and InvokeCommand.

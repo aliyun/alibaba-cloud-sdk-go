@@ -81,11 +81,11 @@ type BatchBindProductsIntoProjectRequest struct {
 // BatchBindProductsIntoProjectResponse is the response struct for api BatchBindProductsIntoProject
 type BatchBindProductsIntoProjectResponse struct {
 	*responses.BaseResponse
-	RequestId    string                 `json:"RequestId" xml:"RequestId"`
-	Success      bool                   `json:"Success" xml:"Success"`
-	Code         string                 `json:"Code" xml:"Code"`
-	ErrorMessage string                 `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         map[string]interface{} `json:"Data" xml:"Data"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Success      bool   `json:"Success" xml:"Success"`
+	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         bool   `json:"Data" xml:"Data"`
 }
 
 // CreateBatchBindProductsIntoProjectRequest creates a request to invoke BatchBindProductsIntoProject API

@@ -71,13 +71,15 @@ func (client *Client) QueryConsumerGroupListWithCallback(request *QueryConsumerG
 // QueryConsumerGroupListRequest is the request struct for api QueryConsumerGroupList
 type QueryConsumerGroupListRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Fuzzy         requests.Boolean `position:"Query" name:"Fuzzy"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	GroupName     string           `position:"Query" name:"GroupName"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	Fuzzy             requests.Boolean `position:"Query" name:"Fuzzy"`
+	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
+	GroupName         string           `position:"Query" name:"GroupName"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
 }
 
 // QueryConsumerGroupListResponse is the response struct for api QueryConsumerGroupList
