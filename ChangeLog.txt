@@ -1,3 +1,7 @@
+2021-02-19 Version: v1.61.940
+- Generated 2020-01-16 for `DAS`.
+- Supported CacheAnalysis For Redis.
+
 2021-02-19 Version: v1.61.939
 - Generated 2016-04-28 for `Vpc`.
 - NAT CONVERT2 SUPPORT.
