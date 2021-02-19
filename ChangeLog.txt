@@ -1,3 +1,7 @@
+2021-02-19 Version: v1.61.935
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support execute database script via open api.
+
 2021-02-19 Version: v1.61.934
 - Generated 2019-01-01 for `HBase`.
 - Add 2019 openapi.
