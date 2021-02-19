@@ -1,3 +1,8 @@
+2021-02-19 Version: v1.61.932
+- Generated 2017-08-01 for `polardb`.
+- Support ModifyDBClusterPrimaryZone.
+- Support DescribeGlobalDatabaseNetworks.
+
 2021-02-19 Version: v1.61.931
 - Generated 2020-04-15 for `Privatelink`.
 - Add type of payment for endpoint service.
