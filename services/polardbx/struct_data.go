@@ -17,24 +17,13 @@ package polardbx
 
 // Data is a nested struct in polardbx response
 type Data struct {
-	SLSProject         string                `json:"SLSProject" xml:"SLSProject"`
 	OrderId            int64                 `json:"OrderId" xml:"OrderId"`
 	Engine             string                `json:"Engine" xml:"Engine"`
 	EngineVersion      string                `json:"EngineVersion" xml:"EngineVersion"`
-	DbInstanceName     string                `json:"DbInstanceName" xml:"DbInstanceName"`
-	ConfigValue        string                `json:"ConfigValue" xml:"ConfigValue"`
-	ConfigName         string                `json:"ConfigName" xml:"ConfigName"`
 	DBInstanceName     string                `json:"DBInstanceName" xml:"DBInstanceName"`
-	SLSLogStore        string                `json:"SLSLogStore" xml:"SLSLogStore"`
-	IsEnabled          bool                  `json:"IsEnabled" xml:"IsEnabled"`
-	Authenticated      string                `json:"Authenticated" xml:"Authenticated"`
-	ParameterCount     int                   `json:"ParameterCount" xml:"ParameterCount"`
 	DrdsInstanceIdList []string              `json:"DrdsInstanceIdList" xml:"DrdsInstanceIdList"`
-	CharacterSet       []string              `json:"CharacterSet" xml:"CharacterSet"`
-	GroupItems         []GroupItem           `json:"GroupItems" xml:"GroupItems"`
-	Fields             []Field               `json:"Fields" xml:"Fields"`
-	Parameters         []TemplateRecord      `json:"Parameters" xml:"Parameters"`
 	ConfigParameters   []DBInstanceParameter `json:"ConfigParameters" xml:"ConfigParameters"`
+	GroupItems         []GroupItem           `json:"GroupItems" xml:"GroupItems"`
 	Tables             []Table               `json:"Tables" xml:"Tables"`
 	PerformanceItems   []PerformanceItem     `json:"PerformanceItems" xml:"PerformanceItems"`
 	RunningParameters  []DBInstanceParameter `json:"RunningParameters" xml:"RunningParameters"`

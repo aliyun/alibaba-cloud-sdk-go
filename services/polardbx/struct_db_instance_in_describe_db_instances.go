@@ -38,6 +38,7 @@ type DBInstanceInDescribeDBInstances struct {
 	StorageUsed     int            `json:"StorageUsed" xml:"StorageUsed"`
 	CommodityCode   string         `json:"CommodityCode" xml:"CommodityCode"`
 	Type            string         `json:"Type" xml:"Type"`
+	MinorVersion    string         `json:"MinorVersion" xml:"MinorVersion"`
 	ReadDBInstances []string       `json:"ReadDBInstances" xml:"ReadDBInstances"`
 	Nodes           []PolarDBXNode `json:"Nodes" xml:"Nodes"`
 }

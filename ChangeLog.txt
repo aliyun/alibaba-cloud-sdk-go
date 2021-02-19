@@ -1,3 +1,8 @@
+2021-02-19 Version: v1.61.924
+- Generated 2020-02-02 for `polardbx`.
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
 2021-02-19 Version: v1.61.923
 - Generated 2020-09-28, 2018-06-19 for `openanalytics-open`.
 - Supported Open Api.

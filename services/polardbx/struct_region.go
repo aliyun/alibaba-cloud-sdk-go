@@ -19,5 +19,6 @@ package polardbx
 type Region struct {
 	RegionId        string `json:"RegionId" xml:"RegionId"`
 	SupportPolarx20 bool   `json:"SupportPolarx20" xml:"SupportPolarx20"`
+	SupportPolarx10 bool   `json:"SupportPolarx10" xml:"SupportPolarx10"`
 	Zones           Zones  `json:"Zones" xml:"Zones"`
 }

@@ -17,10 +17,21 @@ package polardbx
 
 // Account is a nested struct in polardbx response
 type Account struct {
-	AccountType        string `json:"AccountType" xml:"AccountType"`
-	AccountName        string `json:"AccountName" xml:"AccountName"`
-	AccountDescription string `json:"AccountDescription" xml:"AccountDescription"`
-	DBName             string `json:"DBName" xml:"DBName"`
-	DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
-	AccountPrivilege   string `json:"AccountPrivilege" xml:"AccountPrivilege"`
+	BackupPeriod               string `json:"BackupPeriod" xml:"BackupPeriod"`
+	AccountType                string `json:"AccountType" xml:"AccountType"`
+	BackupSetRetention         int    `json:"BackupSetRetention" xml:"BackupSetRetention"`
+	LogLocalRetentionSpace     int    `json:"LogLocalRetentionSpace" xml:"LogLocalRetentionSpace"`
+	AccountDescription         string `json:"AccountDescription" xml:"AccountDescription"`
+	DBInstanceName             string `json:"DBInstanceName" xml:"DBInstanceName"`
+	AccountPrivilege           string `json:"AccountPrivilege" xml:"AccountPrivilege"`
+	BackupType                 string `json:"BackupType" xml:"BackupType"`
+	BackupPlanBegin            string `json:"BackupPlanBegin" xml:"BackupPlanBegin"`
+	LocalLogRetention          int    `json:"LocalLogRetention" xml:"LocalLogRetention"`
+	IsEnabled                  int    `json:"IsEnabled" xml:"IsEnabled"`
+	AccountName                string `json:"AccountName" xml:"AccountName"`
+	BackupWay                  string `json:"BackupWay" xml:"BackupWay"`
+	DBName                     string `json:"DBName" xml:"DBName"`
+	RemoveLogRetention         int    `json:"RemoveLogRetention" xml:"RemoveLogRetention"`
+	BackupSetId                int64  `json:"BackupSetId" xml:"BackupSetId"`
+	ForceCleanOnHighSpaceUsage int    `json:"ForceCleanOnHighSpaceUsage" xml:"ForceCleanOnHighSpaceUsage"`
 }
