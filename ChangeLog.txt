@@ -1,3 +1,7 @@
+2021-02-19 Version: v1.61.923
+- Generated 2020-09-28, 2018-06-19 for `openanalytics-open`.
+- Supported Open Api.
+
 2021-02-19 Version: v1.61.922
 - Generated 2018-01-01 for `pvtz`.
 - Update new version.

@@ -18,12 +18,14 @@ package openanalytics_open
 // Data is a nested struct in openanalytics_open response
 type Data struct {
 	JobId                string `json:"JobId" xml:"JobId"`
+	Message              string `json:"Message" xml:"Message"`
 	UpdateTime           string `json:"UpdateTime" xml:"UpdateTime"`
 	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
 	Detail               string `json:"Detail" xml:"Detail"`
 	CreateTimeValue      string `json:"CreateTimeValue" xml:"CreateTimeValue"`
 	UpdateTimeValue      string `json:"UpdateTimeValue" xml:"UpdateTimeValue"`
 	SubmitTime           string `json:"SubmitTime" xml:"SubmitTime"`
+	Legal                string `json:"Legal" xml:"Legal"`
 	ExecutorInstances    string `json:"ExecutorInstances" xml:"ExecutorInstances"`
 	SparkUI              string `json:"SparkUI" xml:"SparkUI"`
 	Status               string `json:"Status" xml:"Status"`
