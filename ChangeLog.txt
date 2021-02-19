@@ -1,3 +1,7 @@
+2021-02-19 Version: v1.61.928
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update domain API.
+
 2021-02-19 Version: v1.61.927
 - Generated 2016-12-22, 2017-08-23, 2018-05-09 for `Green`.
 - Supported webpage scan.
