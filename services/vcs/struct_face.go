@@ -17,13 +17,15 @@ package vcs
 
 // Face is a nested struct in vcs response
 type Face struct {
-	Feature          string `json:"Feature" xml:"Feature"`
-	FileName         string `json:"FileName" xml:"FileName"`
-	ImageBaseSixFour string `json:"ImageBaseSixFour" xml:"ImageBaseSixFour"`
-	LeftTopX         string `json:"LeftTopX" xml:"LeftTopX"`
-	LeftTopY         string `json:"LeftTopY" xml:"LeftTopY"`
-	LocalFeature     string `json:"LocalFeature" xml:"LocalFeature"`
-	RespiratorColor  string `json:"RespiratorColor" xml:"RespiratorColor"`
-	RightBottomX     string `json:"RightBottomX" xml:"RightBottomX"`
-	RightBottomY     string `json:"RightBottomY" xml:"RightBottomY"`
+	Feature          string  `json:"Feature" xml:"Feature"`
+	FileName         string  `json:"FileName" xml:"FileName"`
+	ImageBaseSixFour string  `json:"ImageBaseSixFour" xml:"ImageBaseSixFour"`
+	LeftTopX         string  `json:"LeftTopX" xml:"LeftTopX"`
+	LeftTopY         string  `json:"LeftTopY" xml:"LeftTopY"`
+	LocalFeature     string  `json:"LocalFeature" xml:"LocalFeature"`
+	RespiratorColor  string  `json:"RespiratorColor" xml:"RespiratorColor"`
+	RightBottomX     string  `json:"RightBottomX" xml:"RightBottomX"`
+	RightBottomY     string  `json:"RightBottomY" xml:"RightBottomY"`
+	Quality          float64 `json:"Quality" xml:"Quality"`
+	KeyPointQuality  float64 `json:"KeyPointQuality" xml:"KeyPointQuality"`
 }

@@ -71,8 +71,8 @@ func (client *Client) ListSubscribeDeviceWithCallback(request *ListSubscribeDevi
 // ListSubscribeDeviceRequest is the request struct for api ListSubscribeDevice
 type ListSubscribeDeviceRequest struct {
 	*requests.RpcRequest
-	PageSize requests.Integer `position:"Query" name:"PageSize"`
 	PageNum  requests.Integer `position:"Query" name:"PageNum"`
+	PageSize requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListSubscribeDeviceResponse is the response struct for api ListSubscribeDevice

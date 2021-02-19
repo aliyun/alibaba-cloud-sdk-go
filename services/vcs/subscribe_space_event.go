@@ -71,8 +71,8 @@ func (client *Client) SubscribeSpaceEventWithCallback(request *SubscribeSpaceEve
 // SubscribeSpaceEventRequest is the request struct for api SubscribeSpaceEvent
 type SubscribeSpaceEventRequest struct {
 	*requests.RpcRequest
-	SpaceId    string `position:"Query" name:"SpaceId"`
 	PushConfig string `position:"Query" name:"PushConfig"`
+	SpaceId    string `position:"Query" name:"SpaceId"`
 }
 
 // SubscribeSpaceEventResponse is the response struct for api SubscribeSpaceEvent
