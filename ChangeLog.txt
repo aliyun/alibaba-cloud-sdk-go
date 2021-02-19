@@ -1,3 +1,7 @@
+2021-02-19 Version: v1.61.933
+- Generated 2020-01-16 for `DAS`.
+- Supported GetEventOverview for Events.
+
 2021-02-19 Version: v1.61.932
 - Generated 2017-08-01 for `polardb`.
 - Support ModifyDBClusterPrimaryZone.
