@@ -1,3 +1,7 @@
+2021-02-19 Version: v1.61.943
+- Generated 2015-01-01 for `R-kvstore`.
+- Update HasRenewChangeOrder type to Boolean in DescribeInstances.
+
 2021-02-19 Version: v1.61.942
 - Generated 2020-03-03 for `devops-rdc`.
 - Add update task api.
