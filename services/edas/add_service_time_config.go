@@ -100,7 +100,7 @@ func CreateAddServiceTimeConfigRequest() (request *AddServiceTimeConfigRequest) 
 	request = &AddServiceTimeConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "AddServiceTimeConfig", "/pop/sp/api/timeout/add", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "AddServiceTimeConfig", "/pop/sp/api/timeout/add", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

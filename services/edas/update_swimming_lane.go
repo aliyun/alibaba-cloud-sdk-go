@@ -92,7 +92,7 @@ func CreateUpdateSwimmingLaneRequest() (request *UpdateSwimmingLaneRequest) {
 	request = &UpdateSwimmingLaneRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateSwimmingLane", "/pop/v5/trafficmgnt/swimming_lanes", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateSwimmingLane", "/pop/v5/trafficmgnt/swimming_lanes", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

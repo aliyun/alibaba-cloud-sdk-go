@@ -1,3 +1,8 @@
+2021-02-19 Version: v1.61.944
+- Generated 2017-08-01 for `Edas`.
+- Fixed bugs for ListComponents.
+- Supported more search condition for ListApplication.
+
 2021-02-19 Version: v1.61.943
 - Generated 2015-01-01 for `R-kvstore`.
 - Update HasRenewChangeOrder type to Boolean in DescribeInstances.

@@ -94,7 +94,7 @@ func CreateListScaleOutEcuRequest() (request *ListScaleOutEcuRequest) {
 	request = &ListScaleOutEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListScaleOutEcu", "/pop/v5/resource/scale_out_ecu_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListScaleOutEcu", "/pop/v5/resource/scale_out_ecu_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }
