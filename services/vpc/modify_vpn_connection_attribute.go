@@ -85,6 +85,7 @@ type ModifyVpnConnectionAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	EnableDpd            requests.Boolean `position:"Query" name:"EnableDpd"`
+	RemoteCaCertificate  string           `position:"Query" name:"RemoteCaCertificate"`
 	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 	Name                 string           `position:"Query" name:"Name"`
 	EnableNatTraversal   requests.Boolean `position:"Query" name:"EnableNatTraversal"`

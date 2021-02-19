@@ -73,6 +73,7 @@ type UnassociateHaVipRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 	HaVipId              string           `position:"Query" name:"HaVipId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

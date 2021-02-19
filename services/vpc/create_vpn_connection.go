@@ -87,6 +87,7 @@ type CreateVpnConnectionRequest struct {
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	EnableDpd            requests.Boolean `position:"Query" name:"EnableDpd"`
+	RemoteCaCertificate  string           `position:"Query" name:"RemoteCaCertificate"`
 	Name                 string           `position:"Query" name:"Name"`
 	EnableNatTraversal   requests.Boolean `position:"Query" name:"EnableNatTraversal"`
 }

@@ -75,6 +75,7 @@ type ModifySslVpnServerRequest struct {
 	ClientToken           string           `position:"Query" name:"ClientToken"`
 	SslVpnServerId        string           `position:"Query" name:"SslVpnServerId"`
 	LocalSubnet           string           `position:"Query" name:"LocalSubnet"`
+	IDaaSRegionId         string           `position:"Query" name:"IDaaSRegionId"`
 	EnableMultiFactorAuth requests.Boolean `position:"Query" name:"EnableMultiFactorAuth"`
 	IDaaSInstanceId       string           `position:"Query" name:"IDaaSInstanceId"`
 	Cipher                string           `position:"Query" name:"Cipher"`

@@ -17,19 +17,20 @@ package vpc
 
 // VpnConnection is a nested struct in vpc response
 type VpnConnection struct {
-	VpnConnectionId    string         `json:"VpnConnectionId" xml:"VpnConnectionId"`
-	CustomerGatewayId  string         `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	VpnGatewayId       string         `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	Name               string         `json:"Name" xml:"Name"`
-	LocalSubnet        string         `json:"LocalSubnet" xml:"LocalSubnet"`
-	RemoteSubnet       string         `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime         int64          `json:"CreateTime" xml:"CreateTime"`
-	EffectImmediately  bool           `json:"EffectImmediately" xml:"EffectImmediately"`
-	Status             string         `json:"Status" xml:"Status"`
-	EnableDpd          bool           `json:"EnableDpd" xml:"EnableDpd"`
-	EnableNatTraversal bool           `json:"EnableNatTraversal" xml:"EnableNatTraversal"`
-	IkeConfig          IkeConfig      `json:"IkeConfig" xml:"IkeConfig"`
-	IpsecConfig        IpsecConfig    `json:"IpsecConfig" xml:"IpsecConfig"`
-	VcoHealthCheck     VcoHealthCheck `json:"VcoHealthCheck" xml:"VcoHealthCheck"`
-	VpnBgpConfig       VpnBgpConfig   `json:"VpnBgpConfig" xml:"VpnBgpConfig"`
+	VpnConnectionId     string         `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	CustomerGatewayId   string         `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	VpnGatewayId        string         `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	Name                string         `json:"Name" xml:"Name"`
+	LocalSubnet         string         `json:"LocalSubnet" xml:"LocalSubnet"`
+	RemoteSubnet        string         `json:"RemoteSubnet" xml:"RemoteSubnet"`
+	CreateTime          int64          `json:"CreateTime" xml:"CreateTime"`
+	EffectImmediately   bool           `json:"EffectImmediately" xml:"EffectImmediately"`
+	Status              string         `json:"Status" xml:"Status"`
+	EnableDpd           bool           `json:"EnableDpd" xml:"EnableDpd"`
+	EnableNatTraversal  bool           `json:"EnableNatTraversal" xml:"EnableNatTraversal"`
+	RemoteCaCertificate string         `json:"RemoteCaCertificate" xml:"RemoteCaCertificate"`
+	IkeConfig           IkeConfig      `json:"IkeConfig" xml:"IkeConfig"`
+	IpsecConfig         IpsecConfig    `json:"IpsecConfig" xml:"IpsecConfig"`
+	VcoHealthCheck      VcoHealthCheck `json:"VcoHealthCheck" xml:"VcoHealthCheck"`
+	VpnBgpConfig        VpnBgpConfig   `json:"VpnBgpConfig" xml:"VpnBgpConfig"`
 }

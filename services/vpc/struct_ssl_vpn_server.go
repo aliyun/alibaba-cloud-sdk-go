@@ -33,4 +33,5 @@ type SslVpnServer struct {
 	InternetIp            string `json:"InternetIp" xml:"InternetIp"`
 	EnableMultiFactorAuth bool   `json:"EnableMultiFactorAuth" xml:"EnableMultiFactorAuth"`
 	IDaaSInstanceId       string `json:"IDaaSInstanceId" xml:"IDaaSInstanceId"`
+	IDaaSRegionId         string `json:"IDaaSRegionId" xml:"IDaaSRegionId"`
 }

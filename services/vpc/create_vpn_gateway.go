@@ -72,6 +72,7 @@ func (client *Client) CreateVpnGatewayWithCallback(request *CreateVpnGatewayRequ
 type CreateVpnGatewayRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	EnableIpsec          requests.Boolean `position:"Query" name:"EnableIpsec"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	Period               requests.Integer `position:"Query" name:"Period"`
@@ -80,6 +81,7 @@ type CreateVpnGatewayRequest struct {
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VpnType              string           `position:"Query" name:"VpnType"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	EnableSsl            requests.Boolean `position:"Query" name:"EnableSsl"`
 	SslConnections       requests.Integer `position:"Query" name:"SslConnections"`

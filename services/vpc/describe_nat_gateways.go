@@ -86,6 +86,7 @@ type DescribeNatGatewaysRequest struct {
 	OwnerId              requests.Integer          `position:"Query" name:"OwnerId"`
 	VpcId                string                    `position:"Query" name:"VpcId"`
 	Name                 string                    `position:"Query" name:"Name"`
+	Status               string                    `position:"Query" name:"Status"`
 }
 
 // DescribeNatGatewaysTag is a repeated param struct in DescribeNatGatewaysRequest

@@ -101,6 +101,7 @@ type DescribeVpnGatewayResponse struct {
 	Tag               string                   `json:"Tag" xml:"Tag"`
 	EnableBgp         bool                     `json:"EnableBgp" xml:"EnableBgp"`
 	AutoPropagate     bool                     `json:"AutoPropagate" xml:"AutoPropagate"`
+	VpnType           string                   `json:"VpnType" xml:"VpnType"`
 	ReservationData   ReservationData          `json:"ReservationData" xml:"ReservationData"`
 	Tags              TagsInDescribeVpnGateway `json:"Tags" xml:"Tags"`
 }
