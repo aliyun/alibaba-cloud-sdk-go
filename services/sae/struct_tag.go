@@ -17,6 +17,6 @@ package sae
 
 // Tag is a nested struct in sae response
 type Tag struct {
-	Key   string `json:"Key" xml:"Key"`
 	Value string `json:"Value" xml:"Value"`
+	Key   string `json:"Key" xml:"Key"`
 }

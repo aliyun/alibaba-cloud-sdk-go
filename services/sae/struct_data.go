@@ -59,8 +59,8 @@ type Data struct {
 	TenantId                      string                   `json:"TenantId" xml:"TenantId"`
 	NamespaceName                 string                   `json:"NamespaceName" xml:"NamespaceName"`
 	Memory                        int                      `json:"Memory" xml:"Memory"`
-	VSwitchId                     string                   `json:"VSwitchId" xml:"VSwitchId"`
 	PhpArmsConfigLocation         string                   `json:"PhpArmsConfigLocation" xml:"PhpArmsConfigLocation"`
+	VSwitchId                     string                   `json:"VSwitchId" xml:"VSwitchId"`
 	PostStart                     string                   `json:"PostStart" xml:"PostStart"`
 	RepoNamespace                 string                   `json:"RepoNamespace" xml:"RepoNamespace"`
 	Liveness                      string                   `json:"Liveness" xml:"Liveness"`
@@ -89,14 +89,15 @@ type Data struct {
 	CurrentStatus                 string                   `json:"CurrentStatus" xml:"CurrentStatus"`
 	BatchCount                    int                      `json:"BatchCount" xml:"BatchCount"`
 	AppId                         string                   `json:"AppId" xml:"AppId"`
+	AcrAssumeRoleArn              string                   `json:"AcrAssumeRoleArn" xml:"AcrAssumeRoleArn"`
 	Cpu                           int                      `json:"Cpu" xml:"Cpu"`
 	BatchType                     string                   `json:"BatchType" xml:"BatchType"`
 	TerminationGracePeriodSeconds int                      `json:"TerminationGracePeriodSeconds" xml:"TerminationGracePeriodSeconds"`
 	WebContainer                  string                   `json:"WebContainer" xml:"WebContainer"`
 	ErrorMessage                  string                   `json:"ErrorMessage" xml:"ErrorMessage"`
 	RepoOriginType                string                   `json:"RepoOriginType" xml:"RepoOriginType"`
-	CommandArgs                   string                   `json:"CommandArgs" xml:"CommandArgs"`
 	MinReadyInstances             int                      `json:"MinReadyInstances" xml:"MinReadyInstances"`
+	CommandArgs                   string                   `json:"CommandArgs" xml:"CommandArgs"`
 	AppDescription                string                   `json:"AppDescription" xml:"AppDescription"`
 	RegionId                      string                   `json:"RegionId" xml:"RegionId"`
 	PipelineId                    string                   `json:"PipelineId" xml:"PipelineId"`
@@ -116,20 +117,20 @@ type Data struct {
 	DefaultRule                   DefaultRule              `json:"DefaultRule" xml:"DefaultRule"`
 	RealTimeRes                   RealTimeRes              `json:"RealTimeRes" xml:"RealTimeRes"`
 	Summary                       Summary                  `json:"Summary" xml:"Summary"`
+	MountDesc                     []MountDescItem          `json:"MountDesc" xml:"MountDesc"`
 	Intranet                      []IntranetItem           `json:"Intranet" xml:"Intranet"`
 	Namespaces                    []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	Internet                      []InternetItem           `json:"Internet" xml:"Internet"`
 	Instances                     []Instance               `json:"Instances" xml:"Instances"`
 	Rules                         []Rule                   `json:"Rules" xml:"Rules"`
-	MountDesc                     []MountDescItem          `json:"MountDesc" xml:"MountDesc"`
 	ChangeOrderList               []ChangeOrder            `json:"ChangeOrderList" xml:"ChangeOrderList"`
 	LogConfigs                    []LogConfig              `json:"LogConfigs" xml:"LogConfigs"`
 	ConfigMaps                    []ConfigMap              `json:"ConfigMaps" xml:"ConfigMaps"`
+	ConfigMapMountDesc            []ConfigMapMountDescItem `json:"ConfigMapMountDesc" xml:"ConfigMapMountDesc"`
 	Tags                          []Tag                    `json:"Tags" xml:"Tags"`
 	Pipelines                     []Pipeline               `json:"Pipelines" xml:"Pipelines"`
 	AppEventEntity                []AppEventEntityItem     `json:"AppEventEntity" xml:"AppEventEntity"`
 	Applications                  []Application            `json:"Applications" xml:"Applications"`
 	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
 	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
-	ConfigMapMountDesc            []ConfigMapMountDescItem `json:"ConfigMapMountDesc" xml:"ConfigMapMountDesc"`
 }

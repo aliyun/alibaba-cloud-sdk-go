@@ -17,8 +17,8 @@ package sae
 
 // ConfigMapMountDescItem is a nested struct in sae response
 type ConfigMapMountDescItem struct {
+	MountPath     string `json:"MountPath" xml:"MountPath"`
 	ConfigMapId   int64  `json:"ConfigMapId" xml:"ConfigMapId"`
 	ConfigMapName string `json:"ConfigMapName" xml:"ConfigMapName"`
 	Key           string `json:"Key" xml:"Key"`
-	MountPath     string `json:"MountPath" xml:"MountPath"`
 }

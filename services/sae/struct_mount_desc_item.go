@@ -17,6 +17,6 @@ package sae
 
 // MountDescItem is a nested struct in sae response
 type MountDescItem struct {
-	NasPath   string `json:"NasPath" xml:"NasPath"`
 	MountPath string `json:"MountPath" xml:"MountPath"`
+	NasPath   string `json:"NasPath" xml:"NasPath"`
 }

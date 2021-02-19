@@ -71,15 +71,16 @@ func (client *Client) DeployApplicationWithCallback(request *DeployApplicationRe
 // DeployApplicationRequest is the request struct for api DeployApplication
 type DeployApplicationRequest struct {
 	*requests.RoaRequest
-	NasId                            string           `position:"Path" name:"NasId"`
+	NasId                            string           `position:"Query" name:"NasId"`
 	WebContainer                     string           `position:"Query" name:"WebContainer"`
 	JarStartArgs                     string           `position:"Query" name:"JarStartArgs"`
 	EnableAhas                       string           `position:"Query" name:"EnableAhas"`
 	SlsConfigs                       string           `position:"Query" name:"SlsConfigs"`
 	CommandArgs                      string           `position:"Query" name:"CommandArgs"`
+	AcrAssumeRoleArn                 string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                        string           `position:"Query" name:"Readiness"`
 	Timezone                         string           `position:"Query" name:"Timezone"`
-	MountHost                        string           `position:"Path" name:"MountHost"`
+	MountHost                        string           `position:"Query" name:"MountHost"`
 	BatchWaitTime                    requests.Integer `position:"Query" name:"BatchWaitTime"`
 	Liveness                         string           `position:"Query" name:"Liveness"`
 	Envs                             string           `position:"Query" name:"Envs"`
@@ -97,7 +98,7 @@ type DeployApplicationRequest struct {
 	PreStop                          string           `position:"Query" name:"PreStop"`
 	Command                          string           `position:"Query" name:"Command"`
 	UpdateStrategy                   string           `position:"Query" name:"UpdateStrategy"`
-	MountDesc                        string           `position:"Path" name:"MountDesc"`
+	MountDesc                        string           `position:"Query" name:"MountDesc"`
 	Jdk                              string           `position:"Query" name:"Jdk"`
 	MinReadyInstances                requests.Integer `position:"Query" name:"MinReadyInstances"`
 	ChangeOrderDesc                  string           `position:"Query" name:"ChangeOrderDesc"`
@@ -111,11 +112,11 @@ type DeployApplicationRequest struct {
 // DeployApplicationResponse is the response struct for api DeployApplication
 type DeployApplicationResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	TraceId   string `json:"TraceId" xml:"TraceId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TraceId   string `json:"TraceId" xml:"TraceId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }

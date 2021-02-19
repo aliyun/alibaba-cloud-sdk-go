@@ -77,6 +77,7 @@ type CreateApplicationRequest struct {
 	Memory                        requests.Integer `position:"Query" name:"Memory"`
 	SlsConfigs                    string           `position:"Query" name:"SlsConfigs"`
 	CommandArgs                   string           `position:"Query" name:"CommandArgs"`
+	AcrAssumeRoleArn              string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                     string           `position:"Query" name:"Readiness"`
 	Timezone                      string           `position:"Query" name:"Timezone"`
 	MountHost                     string           `position:"Query" name:"MountHost"`
@@ -116,11 +117,11 @@ type CreateApplicationRequest struct {
 // CreateApplicationResponse is the response struct for api CreateApplication
 type CreateApplicationResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
