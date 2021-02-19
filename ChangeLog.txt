@@ -1,3 +1,7 @@
+2021-02-19 Version: v1.61.925
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update cert API.
+
 2021-02-19 Version: v1.61.924
 - Generated 2020-02-02 for `polardbx`.
 - Supported all language sdk.
