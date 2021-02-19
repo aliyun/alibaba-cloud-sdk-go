@@ -1,3 +1,7 @@
+2021-02-19 Version: v1.61.942
+- Generated 2020-03-03 for `devops-rdc`.
+- Add update task api.
+
 2021-02-19 Version: v1.61.941
 - Generated 2019-12-26 for `OutboundBot`.
 - Update version.
