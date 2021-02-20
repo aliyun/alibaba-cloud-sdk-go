@@ -82,6 +82,7 @@ type QueryMetricByPageRequest struct {
 	Measures                 *[]string                   `position:"Query" name:"Measures"  type:"Repeated"`
 	IntervalInSec            requests.Integer            `position:"Query" name:"IntervalInSec"`
 	Metric                   string                      `position:"Query" name:"Metric"`
+	CustomFilters            *[]string                   `position:"Query" name:"CustomFilters"  type:"Repeated"`
 	PageSize                 requests.Integer            `position:"Query" name:"PageSize"`
 	Dimensions               *[]string                   `position:"Query" name:"Dimensions"  type:"Repeated"`
 	Order                    string                      `position:"Query" name:"Order"`

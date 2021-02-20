@@ -1,3 +1,9 @@
+2021-02-20 Version: v1.61.947
+- Generated 2019-08-08 for `ARMS`.
+- Add CheckServiceStatus.
+- Add OpenXtraceDefaultSLR.
+- Add OpenArmsDefaultSLR.
+
 2021-02-19 Version: v1.61.946
 - Generated 2019-03-01 for `LinkWAN`.
 
