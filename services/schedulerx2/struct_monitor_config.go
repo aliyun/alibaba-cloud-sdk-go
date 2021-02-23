@@ -17,9 +17,9 @@ package schedulerx2
 
 // MonitorConfig is a nested struct in schedulerx2 response
 type MonitorConfig struct {
-	TimeoutEnable     bool   `json:"TimeoutEnable" xml:"TimeoutEnable"`
 	Timeout           int64  `json:"Timeout" xml:"Timeout"`
-	TimeoutKillEnable bool   `json:"TimeoutKillEnable" xml:"TimeoutKillEnable"`
 	FailEnable        bool   `json:"FailEnable" xml:"FailEnable"`
+	TimeoutEnable     bool   `json:"TimeoutEnable" xml:"TimeoutEnable"`
 	SendChannel       string `json:"SendChannel" xml:"SendChannel"`
+	TimeoutKillEnable bool   `json:"TimeoutKillEnable" xml:"TimeoutKillEnable"`
 }

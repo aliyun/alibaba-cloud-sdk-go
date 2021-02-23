@@ -18,7 +18,7 @@ package schedulerx2
 // TimeConfig is a nested struct in schedulerx2 response
 type TimeConfig struct {
 	TimeType       int    `json:"TimeType" xml:"TimeType"`
-	TimeExpression string `json:"TimeExpression" xml:"TimeExpression"`
-	Calendar       string `json:"Calendar" xml:"Calendar"`
 	DataOffset     int    `json:"DataOffset" xml:"DataOffset"`
+	Calendar       string `json:"Calendar" xml:"Calendar"`
+	TimeExpression string `json:"TimeExpression" xml:"TimeExpression"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobInfo invokes the schedulerx2.GetJobInfo API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/getjobinfo.html
 func (client *Client) GetJobInfo(request *GetJobInfoRequest) (response *GetJobInfoResponse, err error) {
 	response = CreateGetJobInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobInfo(request *GetJobInfoRequest) (response *GetJobIn
 }
 
 // GetJobInfoWithChan invokes the schedulerx2.GetJobInfo API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/getjobinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobInfoWithChan(request *GetJobInfoRequest) (<-chan *GetJobInfoResponse, <-chan error) {
 	responseChan := make(chan *GetJobInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobInfoWithChan(request *GetJobInfoRequest) (<-chan *Ge
 }
 
 // GetJobInfoWithCallback invokes the schedulerx2.GetJobInfo API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/getjobinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobInfoWithCallback(request *GetJobInfoRequest, callback func(response *GetJobInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateGetJobInfoRequest() (request *GetJobInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetJobInfo", "", "")
+	request.Method = requests.GET
 	return
 }
 

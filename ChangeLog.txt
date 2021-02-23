@@ -1,3 +1,9 @@
+2021-02-23 Version: v1.61.948
+- Generated 2019-04-30 for `schedulerx2`.
+- Supported List Namespaces.
+- Supported List Groups.
+- Supported List Jobs.
+
 2021-02-20 Version: v1.61.947
 - Generated 2019-08-08 for `ARMS`.
 - Add CheckServiceStatus.

@@ -21,7 +21,6 @@ import (
 )
 
 // ExecuteJob invokes the schedulerx2.ExecuteJob API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/executejob.html
 func (client *Client) ExecuteJob(request *ExecuteJobRequest) (response *ExecuteJobResponse, err error) {
 	response = CreateExecuteJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecuteJob(request *ExecuteJobRequest) (response *ExecuteJ
 }
 
 // ExecuteJobWithChan invokes the schedulerx2.ExecuteJob API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/executejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteJobWithChan(request *ExecuteJobRequest) (<-chan *ExecuteJobResponse, <-chan error) {
 	responseChan := make(chan *ExecuteJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecuteJobWithChan(request *ExecuteJobRequest) (<-chan *Ex
 }
 
 // ExecuteJobWithCallback invokes the schedulerx2.ExecuteJob API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/executejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteJobWithCallback(request *ExecuteJobRequest, callback func(response *ExecuteJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateExecuteJobRequest() (request *ExecuteJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ExecuteJob", "", "")
+	request.Method = requests.GET
 	return
 }
 

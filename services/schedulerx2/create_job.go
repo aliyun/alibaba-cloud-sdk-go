@@ -21,7 +21,6 @@ import (
 )
 
 // CreateJob invokes the schedulerx2.CreateJob API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/createjob.html
 func (client *Client) CreateJob(request *CreateJobRequest) (response *CreateJobResponse, err error) {
 	response = CreateCreateJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateJob(request *CreateJobRequest) (response *CreateJobR
 }
 
 // CreateJobWithChan invokes the schedulerx2.CreateJob API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/createjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobWithChan(request *CreateJobRequest) (<-chan *CreateJobResponse, <-chan error) {
 	responseChan := make(chan *CreateJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateJobWithChan(request *CreateJobRequest) (<-chan *Crea
 }
 
 // CreateJobWithCallback invokes the schedulerx2.CreateJob API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/createjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobWithCallback(request *CreateJobRequest, callback func(response *CreateJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -130,6 +125,7 @@ func CreateCreateJobRequest() (request *CreateJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateJob", "", "")
+	request.Method = requests.POST
 	return
 }
 

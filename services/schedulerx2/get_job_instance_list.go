@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobInstanceList invokes the schedulerx2.GetJobInstanceList API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/getjobinstancelist.html
 func (client *Client) GetJobInstanceList(request *GetJobInstanceListRequest) (response *GetJobInstanceListResponse, err error) {
 	response = CreateGetJobInstanceListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobInstanceList(request *GetJobInstanceListRequest) (re
 }
 
 // GetJobInstanceListWithChan invokes the schedulerx2.GetJobInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/getjobinstancelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobInstanceListWithChan(request *GetJobInstanceListRequest) (<-chan *GetJobInstanceListResponse, <-chan error) {
 	responseChan := make(chan *GetJobInstanceListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobInstanceListWithChan(request *GetJobInstanceListRequ
 }
 
 // GetJobInstanceListWithCallback invokes the schedulerx2.GetJobInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/getjobinstancelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobInstanceListWithCallback(request *GetJobInstanceListRequest, callback func(response *GetJobInstanceListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateGetJobInstanceListRequest() (request *GetJobInstanceListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetJobInstanceList", "", "")
+	request.Method = requests.GET
 	return
 }
 

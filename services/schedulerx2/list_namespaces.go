@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteJob invokes the schedulerx2.DeleteJob API synchronously
-func (client *Client) DeleteJob(request *DeleteJobRequest) (response *DeleteJobResponse, err error) {
-	response = CreateDeleteJobResponse()
+// ListNamespaces invokes the schedulerx2.ListNamespaces API synchronously
+func (client *Client) ListNamespaces(request *ListNamespacesRequest) (response *ListNamespacesResponse, err error) {
+	response = CreateListNamespacesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteJobWithChan invokes the schedulerx2.DeleteJob API asynchronously
-func (client *Client) DeleteJobWithChan(request *DeleteJobRequest) (<-chan *DeleteJobResponse, <-chan error) {
-	responseChan := make(chan *DeleteJobResponse, 1)
+// ListNamespacesWithChan invokes the schedulerx2.ListNamespaces API asynchronously
+func (client *Client) ListNamespacesWithChan(request *ListNamespacesRequest) (<-chan *ListNamespacesResponse, <-chan error) {
+	responseChan := make(chan *ListNamespacesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteJob(request)
+		response, err := client.ListNamespaces(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteJobWithChan(request *DeleteJobRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
-// DeleteJobWithCallback invokes the schedulerx2.DeleteJob API asynchronously
-func (client *Client) DeleteJobWithCallback(request *DeleteJobRequest, callback func(response *DeleteJobResponse, err error)) <-chan int {
+// ListNamespacesWithCallback invokes the schedulerx2.ListNamespaces API asynchronously
+func (client *Client) ListNamespacesWithCallback(request *ListNamespacesRequest, callback func(response *ListNamespacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteJobResponse
+		var response *ListNamespacesResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteJob(request)
+		response, err = client.ListNamespaces(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,34 @@ func (client *Client) DeleteJobWithCallback(request *DeleteJobRequest, callback 
 	return result
 }
 
-// DeleteJobRequest is the request struct for api DeleteJob
-type DeleteJobRequest struct {
+// ListNamespacesRequest is the request struct for api ListNamespaces
+type ListNamespacesRequest struct {
 	*requests.RpcRequest
-	NamespaceSource string           `position:"Query" name:"NamespaceSource"`
-	GroupId         string           `position:"Query" name:"GroupId"`
-	JobId           requests.Integer `position:"Query" name:"JobId"`
-	Namespace       string           `position:"Query" name:"Namespace"`
 }
 
-// DeleteJobResponse is the response struct for api DeleteJob
-type DeleteJobResponse struct {
+// ListNamespacesResponse is the response struct for api ListNamespaces
+type ListNamespacesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateDeleteJobRequest creates a request to invoke DeleteJob API
-func CreateDeleteJobRequest() (request *DeleteJobRequest) {
-	request = &DeleteJobRequest{
+// CreateListNamespacesRequest creates a request to invoke ListNamespaces API
+func CreateListNamespacesRequest() (request *ListNamespacesRequest) {
+	request = &ListNamespacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DeleteJob", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ListNamespaces", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateDeleteJobResponse creates a response to parse from DeleteJob response
-func CreateDeleteJobResponse() (response *DeleteJobResponse) {
-	response = &DeleteJobResponse{
+// CreateListNamespacesResponse creates a response to parse from ListNamespaces response
+func CreateListNamespacesResponse() (response *ListNamespacesResponse) {
+	response = &ListNamespacesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

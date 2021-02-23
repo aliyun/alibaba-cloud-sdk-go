@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RevokePermission invokes the schedulerx2.RevokePermission API synchronously
-func (client *Client) RevokePermission(request *RevokePermissionRequest) (response *RevokePermissionResponse, err error) {
-	response = CreateRevokePermissionResponse()
+// ListJobs invokes the schedulerx2.ListJobs API synchronously
+func (client *Client) ListJobs(request *ListJobsRequest) (response *ListJobsResponse, err error) {
+	response = CreateListJobsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RevokePermissionWithChan invokes the schedulerx2.RevokePermission API asynchronously
-func (client *Client) RevokePermissionWithChan(request *RevokePermissionRequest) (<-chan *RevokePermissionResponse, <-chan error) {
-	responseChan := make(chan *RevokePermissionResponse, 1)
+// ListJobsWithChan invokes the schedulerx2.ListJobs API asynchronously
+func (client *Client) ListJobsWithChan(request *ListJobsRequest) (<-chan *ListJobsResponse, <-chan error) {
+	responseChan := make(chan *ListJobsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RevokePermission(request)
+		response, err := client.ListJobs(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RevokePermissionWithChan(request *RevokePermissionRequest)
 	return responseChan, errChan
 }
 
-// RevokePermissionWithCallback invokes the schedulerx2.RevokePermission API asynchronously
-func (client *Client) RevokePermissionWithCallback(request *RevokePermissionRequest, callback func(response *RevokePermissionResponse, err error)) <-chan int {
+// ListJobsWithCallback invokes the schedulerx2.ListJobs API asynchronously
+func (client *Client) ListJobsWithCallback(request *ListJobsRequest, callback func(response *ListJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RevokePermissionResponse
+		var response *ListJobsResponse
 		var err error
 		defer close(result)
-		response, err = client.RevokePermission(request)
+		response, err = client.ListJobs(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,39 @@ func (client *Client) RevokePermissionWithCallback(request *RevokePermissionRequ
 	return result
 }
 
-// RevokePermissionRequest is the request struct for api RevokePermission
-type RevokePermissionRequest struct {
+// ListJobsRequest is the request struct for api ListJobs
+type ListJobsRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string `position:"Query" name:"NamespaceSource"`
 	GroupId         string `position:"Query" name:"GroupId"`
 	Namespace       string `position:"Query" name:"Namespace"`
-	UserId          string `position:"Query" name:"UserId"`
+	JobName         string `position:"Query" name:"JobName"`
+	Status          string `position:"Query" name:"Status"`
 }
 
-// RevokePermissionResponse is the response struct for api RevokePermission
-type RevokePermissionResponse struct {
+// ListJobsResponse is the response struct for api ListJobs
+type ListJobsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateRevokePermissionRequest creates a request to invoke RevokePermission API
-func CreateRevokePermissionRequest() (request *RevokePermissionRequest) {
-	request = &RevokePermissionRequest{
+// CreateListJobsRequest creates a request to invoke ListJobs API
+func CreateListJobsRequest() (request *ListJobsRequest) {
+	request = &ListJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "RevokePermission", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ListJobs", "", "")
+	request.Method = requests.GET
 	return
 }
 
-// CreateRevokePermissionResponse creates a response to parse from RevokePermission response
-func CreateRevokePermissionResponse() (response *RevokePermissionResponse) {
-	response = &RevokePermissionResponse{
+// CreateListJobsResponse creates a response to parse from ListJobs response
+func CreateListJobsResponse() (response *ListJobsResponse) {
+	response = &ListJobsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

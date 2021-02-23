@@ -21,7 +21,6 @@ import (
 )
 
 // GrantPermission invokes the schedulerx2.GrantPermission API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/grantpermission.html
 func (client *Client) GrantPermission(request *GrantPermissionRequest) (response *GrantPermissionResponse, err error) {
 	response = CreateGrantPermissionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GrantPermission(request *GrantPermissionRequest) (response
 }
 
 // GrantPermissionWithChan invokes the schedulerx2.GrantPermission API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/grantpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantPermissionWithChan(request *GrantPermissionRequest) (<-chan *GrantPermissionResponse, <-chan error) {
 	responseChan := make(chan *GrantPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GrantPermissionWithChan(request *GrantPermissionRequest) (
 }
 
 // GrantPermissionWithCallback invokes the schedulerx2.GrantPermission API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/grantpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantPermissionWithCallback(request *GrantPermissionRequest, callback func(response *GrantPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateGrantPermissionRequest() (request *GrantPermissionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GrantPermission", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DisableWorkflow invokes the schedulerx2.DisableWorkflow API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/disableworkflow.html
 func (client *Client) DisableWorkflow(request *DisableWorkflowRequest) (response *DisableWorkflowResponse, err error) {
 	response = CreateDisableWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableWorkflow(request *DisableWorkflowRequest) (response
 }
 
 // DisableWorkflowWithChan invokes the schedulerx2.DisableWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/disableworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableWorkflowWithChan(request *DisableWorkflowRequest) (<-chan *DisableWorkflowResponse, <-chan error) {
 	responseChan := make(chan *DisableWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableWorkflowWithChan(request *DisableWorkflowRequest) (
 }
 
 // DisableWorkflowWithCallback invokes the schedulerx2.DisableWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/disableworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableWorkflowWithCallback(request *DisableWorkflowRequest, callback func(response *DisableWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDisableWorkflowRequest() (request *DisableWorkflowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DisableWorkflow", "", "")
+	request.Method = requests.GET
 	return
 }
 

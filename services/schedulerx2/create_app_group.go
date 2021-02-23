@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAppGroup invokes the schedulerx2.CreateAppGroup API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/createappgroup.html
 func (client *Client) CreateAppGroup(request *CreateAppGroupRequest) (response *CreateAppGroupResponse, err error) {
 	response = CreateCreateAppGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAppGroup(request *CreateAppGroupRequest) (response *
 }
 
 // CreateAppGroupWithChan invokes the schedulerx2.CreateAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/createappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppGroupWithChan(request *CreateAppGroupRequest) (<-chan *CreateAppGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateAppGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAppGroupWithChan(request *CreateAppGroupRequest) (<-
 }
 
 // CreateAppGroupWithCallback invokes the schedulerx2.CreateAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/createappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppGroupWithCallback(request *CreateAppGroupRequest, callback func(response *CreateAppGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateCreateAppGroupRequest() (request *CreateAppGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateAppGroup", "", "")
+	request.Method = requests.GET
 	return
 }
 

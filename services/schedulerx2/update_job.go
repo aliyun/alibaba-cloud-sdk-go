@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateJob invokes the schedulerx2.UpdateJob API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/updatejob.html
 func (client *Client) UpdateJob(request *UpdateJobRequest) (response *UpdateJobResponse, err error) {
 	response = CreateUpdateJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateJob(request *UpdateJobRequest) (response *UpdateJobR
 }
 
 // UpdateJobWithChan invokes the schedulerx2.UpdateJob API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/updatejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateJobWithChan(request *UpdateJobRequest) (<-chan *UpdateJobResponse, <-chan error) {
 	responseChan := make(chan *UpdateJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateJobWithChan(request *UpdateJobRequest) (<-chan *Upda
 }
 
 // UpdateJobWithCallback invokes the schedulerx2.UpdateJob API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/updatejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateJobWithCallback(request *UpdateJobRequest, callback func(response *UpdateJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -129,6 +124,7 @@ func CreateUpdateJobRequest() (request *UpdateJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "UpdateJob", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // EnableWorkflow invokes the schedulerx2.EnableWorkflow API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/enableworkflow.html
 func (client *Client) EnableWorkflow(request *EnableWorkflowRequest) (response *EnableWorkflowResponse, err error) {
 	response = CreateEnableWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableWorkflow(request *EnableWorkflowRequest) (response *
 }
 
 // EnableWorkflowWithChan invokes the schedulerx2.EnableWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/enableworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableWorkflowWithChan(request *EnableWorkflowRequest) (<-chan *EnableWorkflowResponse, <-chan error) {
 	responseChan := make(chan *EnableWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableWorkflowWithChan(request *EnableWorkflowRequest) (<-
 }
 
 // EnableWorkflowWithCallback invokes the schedulerx2.EnableWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/enableworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableWorkflowWithCallback(request *EnableWorkflowRequest, callback func(response *EnableWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateEnableWorkflowRequest() (request *EnableWorkflowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "EnableWorkflow", "", "")
+	request.Method = requests.GET
 	return
 }
 

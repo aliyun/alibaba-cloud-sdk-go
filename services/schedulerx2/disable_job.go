@@ -21,7 +21,6 @@ import (
 )
 
 // DisableJob invokes the schedulerx2.DisableJob API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/disablejob.html
 func (client *Client) DisableJob(request *DisableJobRequest) (response *DisableJobResponse, err error) {
 	response = CreateDisableJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableJob(request *DisableJobRequest) (response *DisableJ
 }
 
 // DisableJobWithChan invokes the schedulerx2.DisableJob API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/disablejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableJobWithChan(request *DisableJobRequest) (<-chan *DisableJobResponse, <-chan error) {
 	responseChan := make(chan *DisableJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableJobWithChan(request *DisableJobRequest) (<-chan *Di
 }
 
 // DisableJobWithCallback invokes the schedulerx2.DisableJob API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/disablejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableJobWithCallback(request *DisableJobRequest, callback func(response *DisableJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDisableJobRequest() (request *DisableJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DisableJob", "", "")
+	request.Method = requests.GET
 	return
 }
 

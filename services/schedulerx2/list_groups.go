@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RevokePermission invokes the schedulerx2.RevokePermission API synchronously
-func (client *Client) RevokePermission(request *RevokePermissionRequest) (response *RevokePermissionResponse, err error) {
-	response = CreateRevokePermissionResponse()
+// ListGroups invokes the schedulerx2.ListGroups API synchronously
+func (client *Client) ListGroups(request *ListGroupsRequest) (response *ListGroupsResponse, err error) {
+	response = CreateListGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RevokePermissionWithChan invokes the schedulerx2.RevokePermission API asynchronously
-func (client *Client) RevokePermissionWithChan(request *RevokePermissionRequest) (<-chan *RevokePermissionResponse, <-chan error) {
-	responseChan := make(chan *RevokePermissionResponse, 1)
+// ListGroupsWithChan invokes the schedulerx2.ListGroups API asynchronously
+func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *ListGroupsResponse, <-chan error) {
+	responseChan := make(chan *ListGroupsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RevokePermission(request)
+		response, err := client.ListGroups(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RevokePermissionWithChan(request *RevokePermissionRequest)
 	return responseChan, errChan
 }
 
-// RevokePermissionWithCallback invokes the schedulerx2.RevokePermission API asynchronously
-func (client *Client) RevokePermissionWithCallback(request *RevokePermissionRequest, callback func(response *RevokePermissionResponse, err error)) <-chan int {
+// ListGroupsWithCallback invokes the schedulerx2.ListGroups API asynchronously
+func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callback func(response *ListGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RevokePermissionResponse
+		var response *ListGroupsResponse
 		var err error
 		defer close(result)
-		response, err = client.RevokePermission(request)
+		response, err = client.ListGroups(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,36 @@ func (client *Client) RevokePermissionWithCallback(request *RevokePermissionRequ
 	return result
 }
 
-// RevokePermissionRequest is the request struct for api RevokePermission
-type RevokePermissionRequest struct {
+// ListGroupsRequest is the request struct for api ListGroups
+type ListGroupsRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string `position:"Query" name:"NamespaceSource"`
-	GroupId         string `position:"Query" name:"GroupId"`
 	Namespace       string `position:"Query" name:"Namespace"`
-	UserId          string `position:"Query" name:"UserId"`
 }
 
-// RevokePermissionResponse is the response struct for api RevokePermission
-type RevokePermissionResponse struct {
+// ListGroupsResponse is the response struct for api ListGroups
+type ListGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateRevokePermissionRequest creates a request to invoke RevokePermission API
-func CreateRevokePermissionRequest() (request *RevokePermissionRequest) {
-	request = &RevokePermissionRequest{
+// CreateListGroupsRequest creates a request to invoke ListGroups API
+func CreateListGroupsRequest() (request *ListGroupsRequest) {
+	request = &ListGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "RevokePermission", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ListGroups", "", "")
+	request.Method = requests.GET
 	return
 }
 
-// CreateRevokePermissionResponse creates a response to parse from RevokePermission response
-func CreateRevokePermissionResponse() (response *RevokePermissionResponse) {
-	response = &RevokePermissionResponse{
+// CreateListGroupsResponse creates a response to parse from ListGroups response
+func CreateListGroupsResponse() (response *ListGroupsResponse) {
+	response = &ListGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

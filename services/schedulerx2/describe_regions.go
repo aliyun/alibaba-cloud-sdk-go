@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRegions invokes the schedulerx2.DescribeRegions API synchronously
-// api document: https://help.aliyun.com/api/schedulerx2/describeregions.html
 func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
 	response = CreateDescribeRegionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response
 }
 
 // DescribeRegionsWithChan invokes the schedulerx2.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/describeregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 }
 
 // DescribeRegionsWithCallback invokes the schedulerx2.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/schedulerx2/describeregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DescribeRegions", "", "")
+	request.Method = requests.POST
 	return
 }
 

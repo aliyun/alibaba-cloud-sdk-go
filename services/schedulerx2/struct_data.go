@@ -23,5 +23,8 @@ type Data struct {
 	AppGroupId         int64                    `json:"AppGroupId" xml:"AppGroupId"`
 	JobConfigInfo      JobConfigInfo            `json:"JobConfigInfo" xml:"JobConfigInfo"`
 	JobInstanceDetail  JobInstanceDetail        `json:"JobInstanceDetail" xml:"JobInstanceDetail"`
+	Jobs               []Job                    `json:"Jobs" xml:"Jobs"`
+	AppGroups          []AppGroup               `json:"AppGroups" xml:"AppGroups"`
+	Namespaces         []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	JobInstanceDetails []JobInstanceDetailsItem `json:"JobInstanceDetails" xml:"JobInstanceDetails"`
 }
