@@ -168,9 +168,9 @@ type Data struct {
 	ThemeList           []ThemeListItem       `json:"ThemeList" xml:"ThemeList"`
 	TableEntityList     []TableEntityListItem `json:"TableEntityList" xml:"TableEntityList"`
 	Rules               []RulesItem           `json:"Rules" xml:"Rules"`
+	Nodes               []NodesItem           `json:"Nodes" xml:"Nodes"`
 	Robots              []RobotsItem          `json:"Robots" xml:"Robots"`
 	BizProcesses        []BizProcessesItem    `json:"BizProcesses" xml:"BizProcesses"`
 	Projects            []ProjectsItem        `json:"Projects" xml:"Projects"`
-	Nodes               []NodesItem           `json:"Nodes" xml:"Nodes"`
 	RuleChecks          []RuleChecksItem      `json:"RuleChecks" xml:"RuleChecks"`
 }
