@@ -1,3 +1,8 @@
+2021-02-26 Version: v1.61.954
+- Generated 2020-01-01 for `Dts`.
+- Add TaskId for DescribeMigrationJobStatus, DescribeSubscriptionInstanceStatus, DescribeSynchronizationJobStatus.
+- Add API CreateDtsInstance, ConfigureDtsJob, StartDtsJob.
+
 2021-02-26 Version: v1.61.953
 - Generated 2019-08-08 for `ARMS`.
 - Add ListServerlessTopNApps.
