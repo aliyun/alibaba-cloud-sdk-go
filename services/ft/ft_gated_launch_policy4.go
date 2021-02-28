@@ -21,7 +21,6 @@ import (
 )
 
 // FtGatedLaunchPolicy4 invokes the ft.FtGatedLaunchPolicy4 API synchronously
-// api document: https://help.aliyun.com/api/ft/ftgatedlaunchpolicy4.html
 func (client *Client) FtGatedLaunchPolicy4(request *FtGatedLaunchPolicy4Request) (response *FtGatedLaunchPolicy4Response, err error) {
 	response = CreateFtGatedLaunchPolicy4Response()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtGatedLaunchPolicy4(request *FtGatedLaunchPolicy4Request)
 }
 
 // FtGatedLaunchPolicy4WithChan invokes the ft.FtGatedLaunchPolicy4 API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftgatedlaunchpolicy4.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtGatedLaunchPolicy4WithChan(request *FtGatedLaunchPolicy4Request) (<-chan *FtGatedLaunchPolicy4Response, <-chan error) {
 	responseChan := make(chan *FtGatedLaunchPolicy4Response, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtGatedLaunchPolicy4WithChan(request *FtGatedLaunchPolicy4
 }
 
 // FtGatedLaunchPolicy4WithCallback invokes the ft.FtGatedLaunchPolicy4 API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftgatedlaunchpolicy4.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtGatedLaunchPolicy4WithCallback(request *FtGatedLaunchPolicy4Request, callback func(response *FtGatedLaunchPolicy4Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateFtGatedLaunchPolicy4Request() (request *FtGatedLaunchPolicy4Request) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtGatedLaunchPolicy4", "", "")
+	request.Method = requests.POST
 	return
 }
 

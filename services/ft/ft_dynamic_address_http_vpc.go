@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// TestHttpApi invokes the ft.TestHttpApi API synchronously
-func (client *Client) TestHttpApi(request *TestHttpApiRequest) (response *TestHttpApiResponse, err error) {
-	response = CreateTestHttpApiResponse()
+// FtDynamicAddressHttpVpc invokes the ft.FtDynamicAddressHttpVpc API synchronously
+func (client *Client) FtDynamicAddressHttpVpc(request *FtDynamicAddressHttpVpcRequest) (response *FtDynamicAddressHttpVpcResponse, err error) {
+	response = CreateFtDynamicAddressHttpVpcResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TestHttpApiWithChan invokes the ft.TestHttpApi API asynchronously
-func (client *Client) TestHttpApiWithChan(request *TestHttpApiRequest) (<-chan *TestHttpApiResponse, <-chan error) {
-	responseChan := make(chan *TestHttpApiResponse, 1)
+// FtDynamicAddressHttpVpcWithChan invokes the ft.FtDynamicAddressHttpVpc API asynchronously
+func (client *Client) FtDynamicAddressHttpVpcWithChan(request *FtDynamicAddressHttpVpcRequest) (<-chan *FtDynamicAddressHttpVpcResponse, <-chan error) {
+	responseChan := make(chan *FtDynamicAddressHttpVpcResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.TestHttpApi(request)
+		response, err := client.FtDynamicAddressHttpVpc(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) TestHttpApiWithChan(request *TestHttpApiRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// TestHttpApiWithCallback invokes the ft.TestHttpApi API asynchronously
-func (client *Client) TestHttpApiWithCallback(request *TestHttpApiRequest, callback func(response *TestHttpApiResponse, err error)) <-chan int {
+// FtDynamicAddressHttpVpcWithCallback invokes the ft.FtDynamicAddressHttpVpc API asynchronously
+func (client *Client) FtDynamicAddressHttpVpcWithCallback(request *FtDynamicAddressHttpVpcRequest, callback func(response *FtDynamicAddressHttpVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TestHttpApiResponse
+		var response *FtDynamicAddressHttpVpcResponse
 		var err error
 		defer close(result)
-		response, err = client.TestHttpApi(request)
+		response, err = client.FtDynamicAddressHttpVpc(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,36 @@ func (client *Client) TestHttpApiWithCallback(request *TestHttpApiRequest, callb
 	return result
 }
 
-// TestHttpApiRequest is the request struct for api TestHttpApi
-type TestHttpApiRequest struct {
+// FtDynamicAddressHttpVpcRequest is the request struct for api FtDynamicAddressHttpVpc
+type FtDynamicAddressHttpVpcRequest struct {
 	*requests.RpcRequest
+	P1           string           `position:"Query" name:"P1"`
 	StringValue  string           `position:"Query" name:"StringValue"`
 	OtherParam   string           `position:"Query" name:"OtherParam"`
 	BooleanParam requests.Boolean `position:"Query" name:"BooleanParam"`
 	DefaultValue string           `position:"Query" name:"DefaultValue"`
 }
 
-// TestHttpApiResponse is the response struct for api TestHttpApi
-type TestHttpApiResponse struct {
+// FtDynamicAddressHttpVpcResponse is the response struct for api FtDynamicAddressHttpVpc
+type FtDynamicAddressHttpVpcResponse struct {
 	*responses.BaseResponse
 	Params         string `json:"Params" xml:"Params"`
 	ServiceRpcSign string `json:"ServiceRpcSign" xml:"ServiceRpcSign"`
 }
 
-// CreateTestHttpApiRequest creates a request to invoke TestHttpApi API
-func CreateTestHttpApiRequest() (request *TestHttpApiRequest) {
-	request = &TestHttpApiRequest{
+// CreateFtDynamicAddressHttpVpcRequest creates a request to invoke FtDynamicAddressHttpVpc API
+func CreateFtDynamicAddressHttpVpcRequest() (request *FtDynamicAddressHttpVpcRequest) {
+	request = &FtDynamicAddressHttpVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ft", "2018-07-13", "TestHttpApi", "", "")
+	request.InitWithApiInfo("Ft", "2018-07-13", "FtDynamicAddressHttpVpc", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateTestHttpApiResponse creates a response to parse from TestHttpApi response
-func CreateTestHttpApiResponse() (response *TestHttpApiResponse) {
-	response = &TestHttpApiResponse{
+// CreateFtDynamicAddressHttpVpcResponse creates a response to parse from FtDynamicAddressHttpVpc response
+func CreateFtDynamicAddressHttpVpcResponse() (response *FtDynamicAddressHttpVpcResponse) {
+	response = &FtDynamicAddressHttpVpcResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

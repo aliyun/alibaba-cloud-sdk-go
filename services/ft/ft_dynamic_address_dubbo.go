@@ -21,7 +21,6 @@ import (
 )
 
 // FtDynamicAddressDubbo invokes the ft.FtDynamicAddressDubbo API synchronously
-// api document: https://help.aliyun.com/api/ft/ftdynamicaddressdubbo.html
 func (client *Client) FtDynamicAddressDubbo(request *FtDynamicAddressDubboRequest) (response *FtDynamicAddressDubboResponse, err error) {
 	response = CreateFtDynamicAddressDubboResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtDynamicAddressDubbo(request *FtDynamicAddressDubboReques
 }
 
 // FtDynamicAddressDubboWithChan invokes the ft.FtDynamicAddressDubbo API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftdynamicaddressdubbo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtDynamicAddressDubboWithChan(request *FtDynamicAddressDubboRequest) (<-chan *FtDynamicAddressDubboResponse, <-chan error) {
 	responseChan := make(chan *FtDynamicAddressDubboResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtDynamicAddressDubboWithChan(request *FtDynamicAddressDub
 }
 
 // FtDynamicAddressDubboWithCallback invokes the ft.FtDynamicAddressDubbo API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftdynamicaddressdubbo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtDynamicAddressDubboWithCallback(request *FtDynamicAddressDubboRequest, callback func(response *FtDynamicAddressDubboResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateFtDynamicAddressDubboRequest() (request *FtDynamicAddressDubboRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtDynamicAddressDubbo", "", "")
+	request.Method = requests.POST
 	return
 }
 

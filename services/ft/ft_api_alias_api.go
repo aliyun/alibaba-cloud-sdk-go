@@ -21,7 +21,6 @@ import (
 )
 
 // FTApiAliasApi invokes the ft.FTApiAliasApi API synchronously
-// api document: https://help.aliyun.com/api/ft/ftapialiasapi.html
 func (client *Client) FTApiAliasApi(request *FTApiAliasApiRequest) (response *FTApiAliasApiResponse, err error) {
 	response = CreateFTApiAliasApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FTApiAliasApi(request *FTApiAliasApiRequest) (response *FT
 }
 
 // FTApiAliasApiWithChan invokes the ft.FTApiAliasApi API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftapialiasapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FTApiAliasApiWithChan(request *FTApiAliasApiRequest) (<-chan *FTApiAliasApiResponse, <-chan error) {
 	responseChan := make(chan *FTApiAliasApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FTApiAliasApiWithChan(request *FTApiAliasApiRequest) (<-ch
 }
 
 // FTApiAliasApiWithCallback invokes the ft.FTApiAliasApi API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftapialiasapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FTApiAliasApiWithCallback(request *FTApiAliasApiRequest, callback func(response *FTApiAliasApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateFTApiAliasApiRequest() (request *FTApiAliasApiRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FTApiAliasApi", "", "")
+	request.Method = requests.POST
 	return
 }
 

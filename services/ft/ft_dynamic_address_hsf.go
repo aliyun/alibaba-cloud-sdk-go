@@ -21,7 +21,6 @@ import (
 )
 
 // FtDynamicAddressHsf invokes the ft.FtDynamicAddressHsf API synchronously
-// api document: https://help.aliyun.com/api/ft/ftdynamicaddresshsf.html
 func (client *Client) FtDynamicAddressHsf(request *FtDynamicAddressHsfRequest) (response *FtDynamicAddressHsfResponse, err error) {
 	response = CreateFtDynamicAddressHsfResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtDynamicAddressHsf(request *FtDynamicAddressHsfRequest) (
 }
 
 // FtDynamicAddressHsfWithChan invokes the ft.FtDynamicAddressHsf API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftdynamicaddresshsf.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtDynamicAddressHsfWithChan(request *FtDynamicAddressHsfRequest) (<-chan *FtDynamicAddressHsfResponse, <-chan error) {
 	responseChan := make(chan *FtDynamicAddressHsfResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtDynamicAddressHsfWithChan(request *FtDynamicAddressHsfRe
 }
 
 // FtDynamicAddressHsfWithCallback invokes the ft.FtDynamicAddressHsf API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftdynamicaddresshsf.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtDynamicAddressHsfWithCallback(request *FtDynamicAddressHsfRequest, callback func(response *FtDynamicAddressHsfResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +85,7 @@ func CreateFtDynamicAddressHsfRequest() (request *FtDynamicAddressHsfRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtDynamicAddressHsf", "", "")
+	request.Method = requests.POST
 	return
 }
 

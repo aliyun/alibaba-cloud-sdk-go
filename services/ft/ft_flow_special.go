@@ -21,7 +21,6 @@ import (
 )
 
 // FtFlowSpecial invokes the ft.FtFlowSpecial API synchronously
-// api document: https://help.aliyun.com/api/ft/ftflowspecial.html
 func (client *Client) FtFlowSpecial(request *FtFlowSpecialRequest) (response *FtFlowSpecialResponse, err error) {
 	response = CreateFtFlowSpecialResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtFlowSpecial(request *FtFlowSpecialRequest) (response *Ft
 }
 
 // FtFlowSpecialWithChan invokes the ft.FtFlowSpecial API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftflowspecial.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtFlowSpecialWithChan(request *FtFlowSpecialRequest) (<-chan *FtFlowSpecialResponse, <-chan error) {
 	responseChan := make(chan *FtFlowSpecialResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtFlowSpecialWithChan(request *FtFlowSpecialRequest) (<-ch
 }
 
 // FtFlowSpecialWithCallback invokes the ft.FtFlowSpecial API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftflowspecial.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtFlowSpecialWithCallback(request *FtFlowSpecialRequest, callback func(response *FtFlowSpecialResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateFtFlowSpecialRequest() (request *FtFlowSpecialRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtFlowSpecial", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // FtEagleEye invokes the ft.FtEagleEye API synchronously
-// api document: https://help.aliyun.com/api/ft/fteagleeye.html
 func (client *Client) FtEagleEye(request *FtEagleEyeRequest) (response *FtEagleEyeResponse, err error) {
 	response = CreateFtEagleEyeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtEagleEye(request *FtEagleEyeRequest) (response *FtEagleE
 }
 
 // FtEagleEyeWithChan invokes the ft.FtEagleEye API asynchronously
-// api document: https://help.aliyun.com/api/ft/fteagleeye.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtEagleEyeWithChan(request *FtEagleEyeRequest) (<-chan *FtEagleEyeResponse, <-chan error) {
 	responseChan := make(chan *FtEagleEyeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtEagleEyeWithChan(request *FtEagleEyeRequest) (<-chan *Ft
 }
 
 // FtEagleEyeWithCallback invokes the ft.FtEagleEye API asynchronously
-// api document: https://help.aliyun.com/api/ft/fteagleeye.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtEagleEyeWithCallback(request *FtEagleEyeRequest, callback func(response *FtEagleEyeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateFtEagleEyeRequest() (request *FtEagleEyeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtEagleEye", "", "")
+	request.Method = requests.POST
 	return
 }
 

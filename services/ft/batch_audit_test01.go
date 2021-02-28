@@ -21,7 +21,6 @@ import (
 )
 
 // BatchAuditTest01 invokes the ft.BatchAuditTest01 API synchronously
-// api document: https://help.aliyun.com/api/ft/batchaudittest01.html
 func (client *Client) BatchAuditTest01(request *BatchAuditTest01Request) (response *BatchAuditTest01Response, err error) {
 	response = CreateBatchAuditTest01Response()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchAuditTest01(request *BatchAuditTest01Request) (respon
 }
 
 // BatchAuditTest01WithChan invokes the ft.BatchAuditTest01 API asynchronously
-// api document: https://help.aliyun.com/api/ft/batchaudittest01.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAuditTest01WithChan(request *BatchAuditTest01Request) (<-chan *BatchAuditTest01Response, <-chan error) {
 	responseChan := make(chan *BatchAuditTest01Response, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchAuditTest01WithChan(request *BatchAuditTest01Request)
 }
 
 // BatchAuditTest01WithCallback invokes the ft.BatchAuditTest01 API asynchronously
-// api document: https://help.aliyun.com/api/ft/batchaudittest01.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAuditTest01WithCallback(request *BatchAuditTest01Request, callback func(response *BatchAuditTest01Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateBatchAuditTest01Request() (request *BatchAuditTest01Request) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "BatchAuditTest01", "", "")
+	request.Method = requests.POST
 	return
 }
 

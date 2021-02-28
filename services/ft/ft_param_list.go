@@ -21,7 +21,6 @@ import (
 )
 
 // FtParamList invokes the ft.FtParamList API synchronously
-// api document: https://help.aliyun.com/api/ft/ftparamlist.html
 func (client *Client) FtParamList(request *FtParamListRequest) (response *FtParamListResponse, err error) {
 	response = CreateFtParamListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtParamList(request *FtParamListRequest) (response *FtPara
 }
 
 // FtParamListWithChan invokes the ft.FtParamList API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftparamlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtParamListWithChan(request *FtParamListRequest) (<-chan *FtParamListResponse, <-chan error) {
 	responseChan := make(chan *FtParamListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtParamListWithChan(request *FtParamListRequest) (<-chan *
 }
 
 // FtParamListWithCallback invokes the ft.FtParamList API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftparamlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtParamListWithCallback(request *FtParamListRequest, callback func(response *FtParamListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateFtParamListRequest() (request *FtParamListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtParamList", "", "")
+	request.Method = requests.POST
 	return
 }
 

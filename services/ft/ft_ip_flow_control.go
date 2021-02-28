@@ -21,7 +21,6 @@ import (
 )
 
 // FtIpFlowControl invokes the ft.FtIpFlowControl API synchronously
-// api document: https://help.aliyun.com/api/ft/ftipflowcontrol.html
 func (client *Client) FtIpFlowControl(request *FtIpFlowControlRequest) (response *FtIpFlowControlResponse, err error) {
 	response = CreateFtIpFlowControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FtIpFlowControl(request *FtIpFlowControlRequest) (response
 }
 
 // FtIpFlowControlWithChan invokes the ft.FtIpFlowControl API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftipflowcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtIpFlowControlWithChan(request *FtIpFlowControlRequest) (<-chan *FtIpFlowControlResponse, <-chan error) {
 	responseChan := make(chan *FtIpFlowControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FtIpFlowControlWithChan(request *FtIpFlowControlRequest) (
 }
 
 // FtIpFlowControlWithCallback invokes the ft.FtIpFlowControl API asynchronously
-// api document: https://help.aliyun.com/api/ft/ftipflowcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FtIpFlowControlWithCallback(request *FtIpFlowControlRequest, callback func(response *FtIpFlowControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateFtIpFlowControlRequest() (request *FtIpFlowControlRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ft", "2018-07-13", "FtIpFlowControl", "", "")
+	request.Method = requests.POST
 	return
 }
 
