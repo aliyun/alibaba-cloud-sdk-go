@@ -71,8 +71,10 @@ func (client *Client) ListServerlessTopNAppsWithCallback(request *ListServerless
 // ListServerlessTopNAppsRequest is the request struct for api ListServerlessTopNApps
 type ListServerlessTopNAppsRequest struct {
 	*requests.RpcRequest
-	Limit   requests.Integer `position:"Query" name:"Limit"`
-	OrderBy string           `position:"Query" name:"OrderBy"`
+	Limit     requests.Integer `position:"Query" name:"Limit"`
+	OrderBy   string           `position:"Query" name:"OrderBy"`
+	EndTime   requests.Integer `position:"Query" name:"EndTime"`
+	StartTime requests.Integer `position:"Query" name:"StartTime"`
 }
 
 // ListServerlessTopNAppsResponse is the response struct for api ListServerlessTopNApps
