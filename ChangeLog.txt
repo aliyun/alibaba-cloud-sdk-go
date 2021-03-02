@@ -1,3 +1,8 @@
+2021-03-02 Version: v1.61.961
+- Generated 2020-01-16 for `DAS`.
+- Support Redis CacheAnalysis using backupset.
+- Support Instance Inspection API.
+
 2021-03-02 Version: v1.61.960
 - Generated 2015-01-09 for `Alidns`.
 - Supported API for dnsCache.

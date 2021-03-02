@@ -71,8 +71,9 @@ func (client *Client) CreateCacheAnalysisJobWithCallback(request *CreateCacheAna
 // CreateCacheAnalysisJobRequest is the request struct for api CreateCacheAnalysisJob
 type CreateCacheAnalysisJobRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
-	NodeId     string `position:"Query" name:"NodeId"`
+	BackupSetId string `position:"Query" name:"BackupSetId"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	NodeId      string `position:"Query" name:"NodeId"`
 }
 
 // CreateCacheAnalysisJobResponse is the response struct for api CreateCacheAnalysisJob
