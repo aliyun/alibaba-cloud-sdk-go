@@ -71,6 +71,7 @@ func (client *Client) DescribeDNSSLBSubDomainsWithCallback(request *DescribeDNSS
 // DescribeDNSSLBSubDomainsRequest is the request struct for api DescribeDNSSLBSubDomains
 type DescribeDNSSLBSubDomainsRequest struct {
 	*requests.RpcRequest
+	Rr           string           `position:"Query" name:"Rr"`
 	DomainName   string           `position:"Query" name:"DomainName"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`

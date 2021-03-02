@@ -80,9 +80,9 @@ type DescribeDnsGtmMonitorAvailableConfigResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
 	Ipv4IspCityNodes       Ipv4IspCityNodes       `json:"Ipv4IspCityNodes" xml:"Ipv4IspCityNodes"`
-	Ipv6IspCityNodes       Ipv6IspCityNodes       `json:"Ipv6IspCityNodes" xml:"Ipv6IspCityNodes"`
 	DomainIpv4IspCityNodes DomainIpv4IspCityNodes `json:"DomainIpv4IspCityNodes" xml:"DomainIpv4IspCityNodes"`
 	DomainIpv6IspCityNodes DomainIpv6IspCityNodes `json:"DomainIpv6IspCityNodes" xml:"DomainIpv6IspCityNodes"`
+	Ipv6IspCityNodes       Ipv6IspCityNodes       `json:"Ipv6IspCityNodes" xml:"Ipv6IspCityNodes"`
 }
 
 // CreateDescribeDnsGtmMonitorAvailableConfigRequest creates a request to invoke DescribeDnsGtmMonitorAvailableConfig API

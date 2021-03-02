@@ -71,6 +71,7 @@ func (client *Client) SetDNSSLBStatusWithCallback(request *SetDNSSLBStatusReques
 // SetDNSSLBStatusRequest is the request struct for api SetDNSSLBStatus
 type SetDNSSLBStatusRequest struct {
 	*requests.RpcRequest
+	Line         string           `position:"Query" name:"Line"`
 	DomainName   string           `position:"Query" name:"DomainName"`
 	Type         string           `position:"Query" name:"Type"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`

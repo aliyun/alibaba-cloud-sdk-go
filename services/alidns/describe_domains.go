@@ -96,11 +96,11 @@ type DescribeDomainsTag struct {
 // DescribeDomainsResponse is the response struct for api DescribeDomains
 type DescribeDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	TotalCount int64   `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int64   `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64   `json:"PageSize" xml:"PageSize"`
-	Domains    Domains `json:"Domains" xml:"Domains"`
+	RequestId  string                   `json:"RequestId" xml:"RequestId"`
+	TotalCount int64                    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int64                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64                    `json:"PageSize" xml:"PageSize"`
+	Domains    DomainsInDescribeDomains `json:"Domains" xml:"Domains"`
 }
 
 // CreateDescribeDomainsRequest creates a request to invoke DescribeDomains API
