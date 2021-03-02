@@ -77,6 +77,7 @@ type UpdateFaceGroupRequest struct {
 	RemarksB         string `position:"Query" name:"RemarksB"`
 	RemarksA         string `position:"Query" name:"RemarksA"`
 	GroupName        string `position:"Query" name:"GroupName"`
+	ResetItems       string `position:"Query" name:"ResetItems"`
 	RemarksArrayA    string `position:"Query" name:"RemarksArrayA"`
 	RemarksArrayB    string `position:"Query" name:"RemarksArrayB"`
 	RemarksD         string `position:"Query" name:"RemarksD"`

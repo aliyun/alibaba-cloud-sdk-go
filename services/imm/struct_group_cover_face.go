@@ -19,5 +19,6 @@ package imm
 type GroupCoverFace struct {
 	FaceId       string       `json:"FaceId" xml:"FaceId"`
 	ImageUri     string       `json:"ImageUri" xml:"ImageUri"`
+	ExternalId   string       `json:"ExternalId" xml:"ExternalId"`
 	FaceBoundary FaceBoundary `json:"FaceBoundary" xml:"FaceBoundary"`
 }

@@ -1,3 +1,8 @@
+2021-03-02 Version: v1.61.959
+- Generated 2017-09-06 for `imm`.
+- Support GroupCoverFace ExternalId for ListFaceGroups.
+- Support ResetItems for UpdateFaceGroup.
+
 2021-03-02 Version: v1.61.958
 - Generated 2014-08-28 for `Ess`.
 - Optimise input params.
