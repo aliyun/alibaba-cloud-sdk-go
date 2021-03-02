@@ -72,44 +72,17 @@ func (client *Client) DescribeScalingRulesWithCallback(request *DescribeScalingR
 type DescribeScalingRulesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ScalingRuleId10      string           `position:"Query" name:"ScalingRuleId.10"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ScalingRuleAri1      string           `position:"Query" name:"ScalingRuleAri.1"`
-	ScalingRuleAri2      string           `position:"Query" name:"ScalingRuleAri.2"`
-	ScalingRuleAri3      string           `position:"Query" name:"ScalingRuleAri.3"`
-	ScalingRuleAri4      string           `position:"Query" name:"ScalingRuleAri.4"`
-	ScalingRuleAri5      string           `position:"Query" name:"ScalingRuleAri.5"`
-	ScalingRuleAri6      string           `position:"Query" name:"ScalingRuleAri.6"`
-	ScalingRuleAri7      string           `position:"Query" name:"ScalingRuleAri.7"`
-	ScalingRuleAri8      string           `position:"Query" name:"ScalingRuleAri.8"`
-	ShowAlarmRules       requests.Boolean `position:"Query" name:"ShowAlarmRules"`
-	ScalingRuleName1     string           `position:"Query" name:"ScalingRuleName.1"`
-	ScalingRuleName2     string           `position:"Query" name:"ScalingRuleName.2"`
-	ScalingRuleName3     string           `position:"Query" name:"ScalingRuleName.3"`
-	ScalingRuleName4     string           `position:"Query" name:"ScalingRuleName.4"`
-	ScalingRuleName5     string           `position:"Query" name:"ScalingRuleName.5"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	ScalingRuleName6     string           `position:"Query" name:"ScalingRuleName.6"`
-	ScalingRuleName7     string           `position:"Query" name:"ScalingRuleName.7"`
-	ScalingRuleName8     string           `position:"Query" name:"ScalingRuleName.8"`
-	ScalingRuleAri9      string           `position:"Query" name:"ScalingRuleAri.9"`
-	ScalingRuleName9     string           `position:"Query" name:"ScalingRuleName.9"`
+	ScalingRuleId        *[]string        `position:"Query" name:"ScalingRuleId"  type:"Repeated"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ScalingRuleName      *[]string        `position:"Query" name:"ScalingRuleName"  type:"Repeated"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ScalingRuleType      string           `position:"Query" name:"ScalingRuleType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ScalingRuleName10    string           `position:"Query" name:"ScalingRuleName.10"`
-	ScalingRuleId8       string           `position:"Query" name:"ScalingRuleId.8"`
-	ScalingRuleId9       string           `position:"Query" name:"ScalingRuleId.9"`
-	ScalingRuleAri10     string           `position:"Query" name:"ScalingRuleAri.10"`
-	ScalingRuleId4       string           `position:"Query" name:"ScalingRuleId.4"`
-	ScalingRuleId5       string           `position:"Query" name:"ScalingRuleId.5"`
-	ScalingRuleId6       string           `position:"Query" name:"ScalingRuleId.6"`
-	ScalingRuleId7       string           `position:"Query" name:"ScalingRuleId.7"`
-	ScalingRuleId1       string           `position:"Query" name:"ScalingRuleId.1"`
-	ScalingRuleId2       string           `position:"Query" name:"ScalingRuleId.2"`
-	ScalingRuleId3       string           `position:"Query" name:"ScalingRuleId.3"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingRuleAri       *[]string        `position:"Query" name:"ScalingRuleAri"  type:"Repeated"`
+	ShowAlarmRules       requests.Boolean `position:"Query" name:"ShowAlarmRules"`
 }
 
 // DescribeScalingRulesResponse is the response struct for api DescribeScalingRules
