@@ -1,3 +1,7 @@
+2021-03-02 Version: v1.61.962
+- Generated 2015-01-09 for `Alidns`.
+- Update default endpoints.
+
 2021-03-02 Version: v1.61.961
 - Generated 2020-01-16 for `DAS`.
 - Support Redis CacheAnalysis using backupset.
