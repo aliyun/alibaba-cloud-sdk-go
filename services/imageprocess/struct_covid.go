@@ -18,8 +18,8 @@ package imageprocess
 // Covid is a nested struct in imageprocess response
 type Covid struct {
 	NewProbability    string `json:"NewProbability" xml:"NewProbability"`
-	NormalProbability string `json:"NormalProbability" xml:"NormalProbability"`
 	OtherProbability  string `json:"OtherProbability" xml:"OtherProbability"`
-	LesionRatio       string `json:"LesionRatio" xml:"LesionRatio"`
+	NormalProbability string `json:"NormalProbability" xml:"NormalProbability"`
 	Mask              string `json:"Mask" xml:"Mask"`
+	LesionRatio       string `json:"LesionRatio" xml:"LesionRatio"`
 }

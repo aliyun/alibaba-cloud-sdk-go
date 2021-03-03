@@ -42,9 +42,10 @@ type Data struct {
 	Spacing           []float64              `json:"Spacing" xml:"Spacing"`
 	SimilarQuestion   []string               `json:"SimilarQuestion" xml:"SimilarQuestion"`
 	Origin            []float64              `json:"Origin" xml:"Origin"`
-	LungNodule        LungNodule             `json:"LungNodule" xml:"LungNodule"`
 	CACS              CACS                   `json:"CACS" xml:"CACS"`
+	DetectRibFracture DetectRibFracture      `json:"DetectRibFracture" xml:"DetectRibFracture"`
 	Covid             Covid                  `json:"Covid" xml:"Covid"`
+	LungNodule        LungNodule             `json:"LungNodule" xml:"LungNodule"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	Discs             []Disc                 `json:"Discs" xml:"Discs"`
 	Detections        []DetectionsItem       `json:"Detections" xml:"Detections"`
