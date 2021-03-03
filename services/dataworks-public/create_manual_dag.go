@@ -71,19 +71,21 @@ func (client *Client) CreateManualDagWithCallback(request *CreateManualDagReques
 // CreateManualDagRequest is the request struct for api CreateManualDag
 type CreateManualDagRequest struct {
 	*requests.RpcRequest
-	ProjectEnv     string `position:"Body" name:"ProjectEnv"`
-	ProjectName    string `position:"Body" name:"ProjectName"`
-	BizDate        string `position:"Body" name:"BizDate"`
-	FlowName       string `position:"Body" name:"FlowName"`
-	DagParameters  string `position:"Body" name:"DagParameters"`
-	NodeParameters string `position:"Body" name:"NodeParameters"`
+	ProjectName string `position:"Query" name:"ProjectName"`
+	Bizdate     string `position:"Query" name:"Bizdate"`
+	FlowName    string `position:"Query" name:"FlowName"`
+	DagPara     string `position:"Query" name:"DagPara"`
+	NodePara    string `position:"Query" name:"NodePara"`
 }
 
 // CreateManualDagResponse is the response struct for api CreateManualDag
 type CreateManualDagResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	DagId     int64  `json:"DagId" xml:"DagId"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	ReturnCode          string `json:"ReturnCode" xml:"ReturnCode"`
+	ReturnErrorSolution string `json:"ReturnErrorSolution" xml:"ReturnErrorSolution"`
+	ReturnMessage       string `json:"ReturnMessage" xml:"ReturnMessage"`
+	ReturnValue         int64  `json:"ReturnValue" xml:"ReturnValue"`
 }
 
 // CreateCreateManualDagRequest creates a request to invoke CreateManualDag API
@@ -91,7 +93,7 @@ func CreateCreateManualDagRequest() (request *CreateManualDagRequest) {
 	request = &CreateManualDagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dataworks-public", "2020-05-18", "CreateManualDag", "", "")
+	request.InitWithApiInfo("dataworks-public", "2018-06-01", "CreateManualDag", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateDeleteFileRequest() (request *DeleteFileRequest) {
 	request = &DeleteFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dataworks-public", "2020-05-18", "DeleteFile", "", "")
+	request.InitWithApiInfo("dataworks-public", "2018-06-01", "DeleteFile", "", "")
 	request.Method = requests.POST
 	return
 }
