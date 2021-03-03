@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ApproveOrder invokes the dms_enterprise.ApproveOrder API synchronously
-func (client *Client) ApproveOrder(request *ApproveOrderRequest) (response *ApproveOrderResponse, err error) {
-	response = CreateApproveOrderResponse()
+// ExecuteStructSync invokes the dms_enterprise.ExecuteStructSync API synchronously
+func (client *Client) ExecuteStructSync(request *ExecuteStructSyncRequest) (response *ExecuteStructSyncResponse, err error) {
+	response = CreateExecuteStructSyncResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ApproveOrderWithChan invokes the dms_enterprise.ApproveOrder API asynchronously
-func (client *Client) ApproveOrderWithChan(request *ApproveOrderRequest) (<-chan *ApproveOrderResponse, <-chan error) {
-	responseChan := make(chan *ApproveOrderResponse, 1)
+// ExecuteStructSyncWithChan invokes the dms_enterprise.ExecuteStructSync API asynchronously
+func (client *Client) ExecuteStructSyncWithChan(request *ExecuteStructSyncRequest) (<-chan *ExecuteStructSyncResponse, <-chan error) {
+	responseChan := make(chan *ExecuteStructSyncResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ApproveOrder(request)
+		response, err := client.ExecuteStructSync(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ApproveOrderWithChan(request *ApproveOrderRequest) (<-chan
 	return responseChan, errChan
 }
 
-// ApproveOrderWithCallback invokes the dms_enterprise.ApproveOrder API asynchronously
-func (client *Client) ApproveOrderWithCallback(request *ApproveOrderRequest, callback func(response *ApproveOrderResponse, err error)) <-chan int {
+// ExecuteStructSyncWithCallback invokes the dms_enterprise.ExecuteStructSync API asynchronously
+func (client *Client) ExecuteStructSyncWithCallback(request *ExecuteStructSyncRequest, callback func(response *ExecuteStructSyncResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ApproveOrderResponse
+		var response *ExecuteStructSyncResponse
 		var err error
 		defer close(result)
-		response, err = client.ApproveOrder(request)
+		response, err = client.ExecuteStructSync(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,17 +68,15 @@ func (client *Client) ApproveOrderWithCallback(request *ApproveOrderRequest, cal
 	return result
 }
 
-// ApproveOrderRequest is the request struct for api ApproveOrder
-type ApproveOrderRequest struct {
+// ExecuteStructSyncRequest is the request struct for api ExecuteStructSync
+type ExecuteStructSyncRequest struct {
 	*requests.RpcRequest
-	Tid                requests.Integer `position:"Query" name:"Tid"`
-	WorkflowInstanceId requests.Integer `position:"Query" name:"WorkflowInstanceId"`
-	ApprovalType       string           `position:"Query" name:"ApprovalType"`
-	Comment            string           `position:"Query" name:"Comment"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
+	Tid     requests.Integer `position:"Query" name:"Tid"`
 }
 
-// ApproveOrderResponse is the response struct for api ApproveOrder
-type ApproveOrderResponse struct {
+// ExecuteStructSyncResponse is the response struct for api ExecuteStructSync
+type ExecuteStructSyncResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
@@ -86,19 +84,19 @@ type ApproveOrderResponse struct {
 	Success      bool   `json:"Success" xml:"Success"`
 }
 
-// CreateApproveOrderRequest creates a request to invoke ApproveOrder API
-func CreateApproveOrderRequest() (request *ApproveOrderRequest) {
-	request = &ApproveOrderRequest{
+// CreateExecuteStructSyncRequest creates a request to invoke ExecuteStructSync API
+func CreateExecuteStructSyncRequest() (request *ExecuteStructSyncRequest) {
+	request = &ExecuteStructSyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ApproveOrder", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteStructSync", "dmsenterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateApproveOrderResponse creates a response to parse from ApproveOrder response
-func CreateApproveOrderResponse() (response *ApproveOrderResponse) {
-	response = &ApproveOrderResponse{
+// CreateExecuteStructSyncResponse creates a response to parse from ExecuteStructSync response
+func CreateExecuteStructSyncResponse() (response *ExecuteStructSyncResponse) {
+	response = &ExecuteStructSyncResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

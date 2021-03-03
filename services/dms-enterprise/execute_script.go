@@ -71,19 +71,19 @@ func (client *Client) ExecuteScriptWithCallback(request *ExecuteScriptRequest, c
 // ExecuteScriptRequest is the request struct for api ExecuteScript
 type ExecuteScriptRequest struct {
 	*requests.RpcRequest
-	DbId   requests.Integer `position:"Query" name:"DbId"`
-	Logic  requests.Boolean `position:"Query" name:"Logic"`
 	Script string           `position:"Query" name:"Script"`
 	Tid    requests.Integer `position:"Query" name:"Tid"`
+	DbId   requests.Integer `position:"Query" name:"DbId"`
+	Logic  requests.Boolean `position:"Query" name:"Logic"`
 }
 
 // ExecuteScriptResponse is the response struct for api ExecuteScript
 type ExecuteScriptResponse struct {
 	*responses.BaseResponse
 	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	Success      bool     `json:"Success" xml:"Success"`
-	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool     `json:"Success" xml:"Success"`
 	Results      []Result `json:"Results" xml:"Results"`
 }
 

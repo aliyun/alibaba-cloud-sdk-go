@@ -81,11 +81,11 @@ type CreateOrderRequest struct {
 // CreateOrderResponse is the response struct for api CreateOrder
 type CreateOrderResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	Success           bool              `json:"Success" xml:"Success"`
-	ErrorMessage      string            `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode         string            `json:"ErrorCode" xml:"ErrorCode"`
-	CreateOrderResult CreateOrderResult `json:"CreateOrderResult" xml:"CreateOrderResult"`
+	RequestId         string                         `json:"RequestId" xml:"RequestId"`
+	Success           bool                           `json:"Success" xml:"Success"`
+	ErrorMessage      string                         `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode         string                         `json:"ErrorCode" xml:"ErrorCode"`
+	CreateOrderResult CreateOrderResultInCreateOrder `json:"CreateOrderResult" xml:"CreateOrderResult"`
 }
 
 // CreateCreateOrderRequest creates a request to invoke CreateOrder API

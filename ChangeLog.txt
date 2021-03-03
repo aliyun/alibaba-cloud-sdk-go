@@ -1,3 +1,11 @@
+2021-03-03 Version: v1.61.968
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support TableStructSync Order API.
+- Support Upload File API.
+- Support GetOwnerApplyOrderDetail, GetPermApplyOrderDetail API.
+- Support ListDBTaskSQLJob, ListDBTaskSQLJobDetail API.
+- Support GetDataCorrectSQLFile API.
+
 2021-03-03 Version: v1.61.967
 - Generated 2018-01-15 for `dcdn`.
 - Add Api.
