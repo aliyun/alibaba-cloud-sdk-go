@@ -29,9 +29,11 @@ type Data struct {
 	FaceProbability      float64                                   `json:"FaceProbability" xml:"FaceProbability"`
 	ObjType              string                                    `json:"ObjType" xml:"ObjType"`
 	MaskRef              int                                       `json:"MaskRef" xml:"MaskRef"`
+	QualityScoreA        float64                                   `json:"QualityScoreA" xml:"QualityScoreA"`
 	ObjTypeScore         float64                                   `json:"ObjTypeScore" xml:"ObjTypeScore"`
 	Token                string                                    `json:"Token" xml:"Token"`
 	HotMap               string                                    `json:"HotMap" xml:"HotMap"`
+	QualityScoreB        float64                                   `json:"QualityScoreB" xml:"QualityScoreB"`
 	Id                   int64                                     `json:"Id" xml:"Id"`
 	DbName               string                                    `json:"DbName" xml:"DbName"`
 	InstanceId           int64                                     `json:"InstanceId" xml:"InstanceId"`
@@ -47,6 +49,7 @@ type Data struct {
 	Name                 string                                    `json:"Name" xml:"Name"`
 	ImageWidth           int64                                     `json:"ImageWidth" xml:"ImageWidth"`
 	Hair                 string                                    `json:"Hair" xml:"Hair"`
+	MessageTips          string                                    `json:"MessageTips" xml:"MessageTips"`
 	DenseFeatureLength   int                                       `json:"DenseFeatureLength" xml:"DenseFeatureLength"`
 	AgeScore             float64                                   `json:"AgeScore" xml:"AgeScore"`
 	LowerColor           string                                    `json:"LowerColor" xml:"LowerColor"`

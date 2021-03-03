@@ -72,9 +72,9 @@ func (client *Client) AddFaceWithCallback(request *AddFaceRequest, callback func
 type AddFaceRequest struct {
 	*requests.RpcRequest
 	EntityId  string `position:"Body" name:"EntityId"`
+	ExtraData string `position:"Body" name:"ExtraData"`
 	DbName    string `position:"Body" name:"DbName"`
 	ImageUrl  string `position:"Body" name:"ImageUrl"`
-	ExtraData string `position:"Body" name:"ExtraData"`
 }
 
 // AddFaceResponse is the response struct for api AddFace

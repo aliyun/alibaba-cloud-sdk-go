@@ -71,10 +71,10 @@ func (client *Client) FaceBeautyWithCallback(request *FaceBeautyRequest, callbac
 // FaceBeautyRequest is the request struct for api FaceBeauty
 type FaceBeautyRequest struct {
 	*requests.RpcRequest
-	Sharp    requests.Float `position:"Body" name:"Sharp"`
 	White    requests.Float `position:"Body" name:"White"`
-	ImageURL string         `position:"Body" name:"ImageURL"`
 	Smooth   requests.Float `position:"Body" name:"Smooth"`
+	Sharp    requests.Float `position:"Body" name:"Sharp"`
+	ImageURL string         `position:"Body" name:"ImageURL"`
 }
 
 // FaceBeautyResponse is the response struct for api FaceBeauty

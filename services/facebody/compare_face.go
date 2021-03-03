@@ -71,15 +71,17 @@ func (client *Client) CompareFaceWithCallback(request *CompareFaceRequest, callb
 // CompareFaceRequest is the request struct for api CompareFace
 type CompareFaceRequest struct {
 	*requests.RpcRequest
-	ImageURLB string           `position:"Body" name:"ImageURLB"`
-	ImageURLA string           `position:"Body" name:"ImageURLA"`
-	ImageType requests.Integer `position:"Body" name:"ImageType"`
+	QualityScoreThreshold requests.Float   `position:"Body" name:"QualityScoreThreshold"`
+	ImageURLB             string           `position:"Body" name:"ImageURLB"`
+	ImageURLA             string           `position:"Body" name:"ImageURLA"`
+	ImageType             requests.Integer `position:"Body" name:"ImageType"`
 }
 
 // CompareFaceResponse is the response struct for api CompareFace
 type CompareFaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
