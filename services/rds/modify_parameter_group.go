@@ -83,7 +83,8 @@ type ModifyParameterGroupRequest struct {
 // ModifyParameterGroupResponse is the response struct for api ModifyParameterGroup
 type ModifyParameterGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	ParameterGroupId string `json:"ParameterGroupId" xml:"ParameterGroupId"`
 }
 
 // CreateModifyParameterGroupRequest creates a request to invoke ModifyParameterGroup API

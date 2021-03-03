@@ -80,7 +80,8 @@ type DeleteParameterGroupRequest struct {
 // DeleteParameterGroupResponse is the response struct for api DeleteParameterGroup
 type DeleteParameterGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	ParameterGroupId string `json:"ParameterGroupId" xml:"ParameterGroupId"`
 }
 
 // CreateDeleteParameterGroupRequest creates a request to invoke DeleteParameterGroup API

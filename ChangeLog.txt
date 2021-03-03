@@ -1,3 +1,7 @@
+2021-03-03 Version: v1.61.969
+- Generated 2014-08-15 for `Rds`.
+- Update Open API.
+
 2021-03-03 Version: v1.61.968
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support TableStructSync Order API.
