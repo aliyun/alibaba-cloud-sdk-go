@@ -1,3 +1,7 @@
+2021-03-03 Version: v1.61.966
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Delete API.
+
 2021-03-03 Version: v1.61.965
 - Generated 2018-06-01 for `dataworks-public`.
 
