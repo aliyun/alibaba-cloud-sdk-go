@@ -17,16 +17,18 @@ package dcdn
 
 // Region is a nested struct in dcdn response
 type Region struct {
-	OssId         int    `json:"OssId" xml:"OssId"`
+	IsOverseas    string `json:"IsOverseas" xml:"IsOverseas"`
+	DlaTableName  string `json:"DlaTableName" xml:"DlaTableName"`
 	OssBucketName string `json:"OssBucketName" xml:"OssBucketName"`
+	RegionName    string `json:"RegionName" xml:"RegionName"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
+	NameEn        string `json:"NameEn" xml:"NameEn"`
 	OssPathPrefix string `json:"OssPathPrefix" xml:"OssPathPrefix"`
 	DlaVcName     string `json:"DlaVcName" xml:"DlaVcName"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	RegionName    string `json:"RegionName" xml:"RegionName"`
-	IsOverseas    string `json:"IsOverseas" xml:"IsOverseas"`
-	OssEndpoint   string `json:"OssEndpoint" xml:"OssEndpoint"`
-	AreaId        string `json:"AreaId" xml:"AreaId"`
 	AreaName      string `json:"AreaName" xml:"AreaName"`
 	DlaDbName     string `json:"DlaDbName" xml:"DlaDbName"`
-	DlaTableName  string `json:"DlaTableName" xml:"DlaTableName"`
+	OssEndpoint   string `json:"OssEndpoint" xml:"OssEndpoint"`
+	NameZh        string `json:"NameZh" xml:"NameZh"`
+	OssId         int    `json:"OssId" xml:"OssId"`
+	AreaId        string `json:"AreaId" xml:"AreaId"`
 }

@@ -1,3 +1,7 @@
+2021-03-03 Version: v1.61.967
+- Generated 2018-01-15 for `dcdn`.
+- Add Api.
+
 2021-03-03 Version: v1.61.966
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Delete API.
