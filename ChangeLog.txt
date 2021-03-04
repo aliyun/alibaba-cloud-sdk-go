@@ -1,3 +1,7 @@
+2021-03-04 Version: v1.61.973
+- Generated 2019-12-30 for `facebody`.
+- Release RecognizeHandGesture.
+
 2021-03-04 Version: v1.61.972
 - Generated 2019-12-30 for `ocr`.
 - Update Ocr.
