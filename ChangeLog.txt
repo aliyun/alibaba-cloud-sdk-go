@@ -1,3 +1,7 @@
+2021-03-04 Version: v1.61.972
+- Generated 2019-12-30 for `ocr`.
+- Update Ocr.
+
 2021-03-03 Version: v1.61.971
 - Generated 2020-04-14 for `codeup`.
 - Add GetRepositoryTagV2 and DeleteRepositoryTagV2 API.
