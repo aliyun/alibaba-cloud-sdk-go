@@ -82,6 +82,7 @@ type ModifyBackupPolicyRequest struct {
 	OwnerId                                requests.Integer `position:"Query" name:"OwnerId"`
 	PreferredBackupTime                    string           `position:"Query" name:"PreferredBackupTime"`
 	BackupRetentionPeriod                  string           `position:"Query" name:"BackupRetentionPeriod"`
+	BackupFrequency                        string           `position:"Query" name:"BackupFrequency"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy

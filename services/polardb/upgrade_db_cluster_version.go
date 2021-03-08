@@ -72,6 +72,7 @@ func (client *Client) UpgradeDBClusterVersionWithCallback(request *UpgradeDBClus
 type UpgradeDBClusterVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UpgradeType          string           `position:"Query" name:"UpgradeType"`
 	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`

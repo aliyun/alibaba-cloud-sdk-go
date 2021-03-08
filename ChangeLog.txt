@@ -1,3 +1,7 @@
+2021-03-08 Version: v1.61.975
+- Generated 2017-08-01 for `polardb`.
+- Support Mysql Parameter Group API.
+
 2021-03-08 Version: v1.61.974
 - Generated 2020-05-18 for `dataworks-public`.
 
