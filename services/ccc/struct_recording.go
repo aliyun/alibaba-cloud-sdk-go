@@ -17,6 +17,19 @@ package ccc
 
 // Recording is a nested struct in ccc response
 type Recording struct {
-	FileName string `json:"FileName" xml:"FileName"`
-	FileUrl  string `json:"FileUrl" xml:"FileUrl"`
+	ContactId          string `json:"ContactId" xml:"ContactId"`
+	FileDescription    string `json:"FileDescription" xml:"FileDescription"`
+	QualityCheckTid    string `json:"QualityCheckTid" xml:"QualityCheckTid"`
+	CalledNumber       string `json:"CalledNumber" xml:"CalledNumber"`
+	ContactType        string `json:"ContactType" xml:"ContactType"`
+	StartTime          int64  `json:"StartTime" xml:"StartTime"`
+	CallingNumber      string `json:"CallingNumber" xml:"CallingNumber"`
+	AgentName          string `json:"AgentName" xml:"AgentName"`
+	AgentId            string `json:"AgentId" xml:"AgentId"`
+	Duration           int    `json:"Duration" xml:"Duration"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	Channel            string `json:"Channel" xml:"Channel"`
+	QualityCheckTaskId string `json:"QualityCheckTaskId" xml:"QualityCheckTaskId"`
+	FileName           string `json:"FileName" xml:"FileName"`
+	FilePath           string `json:"FilePath" xml:"FilePath"`
 }

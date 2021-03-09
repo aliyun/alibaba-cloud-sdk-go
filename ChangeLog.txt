@@ -1,3 +1,7 @@
+2021-03-09 Version: v1.61.976
+- Generated 2017-07-05 for `CCC`.
+- Export new API for predictive dialer.
+
 2021-03-08 Version: v1.61.975
 - Generated 2017-08-01 for `polardb`.
 - Support Mysql Parameter Group API.

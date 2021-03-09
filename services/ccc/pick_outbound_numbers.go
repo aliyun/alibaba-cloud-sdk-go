@@ -71,20 +71,21 @@ func (client *Client) PickOutboundNumbersWithCallback(request *PickOutboundNumbe
 // PickOutboundNumbersRequest is the request struct for api PickOutboundNumbers
 type PickOutboundNumbersRequest struct {
 	*requests.RpcRequest
-	Count            requests.Integer `position:"Query" name:"Count"`
-	InstanceId       string           `position:"Query" name:"InstanceId"`
-	SkillGroupIdList string           `position:"Query" name:"SkillGroupIdList"`
-	CalledNumber     string           `position:"Query" name:"CalledNumber"`
+	Count           requests.Integer `position:"Query" name:"Count"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	CandidateNumber *[]string        `position:"Query" name:"CandidateNumber"  type:"Repeated"`
+	CalleeNumber    string           `position:"Query" name:"CalleeNumber"`
 }
 
 // PickOutboundNumbersResponse is the response struct for api PickOutboundNumbers
 type PickOutboundNumbersResponse struct {
 	*responses.BaseResponse
-	Code           string       `json:"Code" xml:"Code"`
-	HttpStatusCode int          `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string       `json:"Message" xml:"Message"`
-	RequestId      string       `json:"RequestId" xml:"RequestId"`
-	Data           []NumberPair `json:"Data" xml:"Data"`
+	RequestId       string                               `json:"RequestId" xml:"RequestId"`
+	Success         bool                                 `json:"Success" xml:"Success"`
+	Code            string                               `json:"Code" xml:"Code"`
+	Message         string                               `json:"Message" xml:"Message"`
+	HttpStatusCode  int                                  `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	DialNumberPairs DialNumberPairsInPickOutboundNumbers `json:"DialNumberPairs" xml:"DialNumberPairs"`
 }
 
 // CreatePickOutboundNumbersRequest creates a request to invoke PickOutboundNumbers API
@@ -92,7 +93,7 @@ func CreatePickOutboundNumbersRequest() (request *PickOutboundNumbersRequest) {
 	request = &PickOutboundNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "PickOutboundNumbers", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "PickOutboundNumbers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
