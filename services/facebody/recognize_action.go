@@ -71,14 +71,16 @@ func (client *Client) RecognizeActionWithCallback(request *RecognizeActionReques
 // RecognizeActionRequest is the request struct for api RecognizeAction
 type RecognizeActionRequest struct {
 	*requests.RpcRequest
-	URLList  *[]RecognizeActionURLList `position:"Body" name:"URLList"  type:"Repeated"`
-	Type     requests.Integer          `position:"Body" name:"Type"`
-	VideoUrl string                    `position:"Body" name:"VideoUrl"`
+	Type      requests.Integer          `position:"Body" name:"Type"`
+	VideoData string                    `position:"Body" name:"VideoData"`
+	URLList   *[]RecognizeActionURLList `position:"Body" name:"URLList"  type:"Repeated"`
+	VideoUrl  string                    `position:"Body" name:"VideoUrl"`
 }
 
 // RecognizeActionURLList is a repeated param struct in RecognizeActionRequest
 type RecognizeActionURLList struct {
-	URL string `name:"URL"`
+	ImageData string `name:"imageData"`
+	URL       string `name:"URL"`
 }
 
 // RecognizeActionResponse is the response struct for api RecognizeAction

@@ -71,9 +71,11 @@ func (client *Client) SwapFacialFeaturesWithCallback(request *SwapFacialFeatures
 // SwapFacialFeaturesRequest is the request struct for api SwapFacialFeatures
 type SwapFacialFeaturesRequest struct {
 	*requests.RpcRequest
-	TargetImageURL string `position:"Body" name:"TargetImageURL"`
-	SourceImageURL string `position:"Body" name:"SourceImageURL"`
-	EditPart       string `position:"Body" name:"EditPart"`
+	TargetImageURL  string `position:"Body" name:"TargetImageURL"`
+	SourceImageData string `position:"Body" name:"SourceImageData"`
+	SourceImageURL  string `position:"Body" name:"SourceImageURL"`
+	TargetImageData string `position:"Body" name:"TargetImageData"`
+	EditPart        string `position:"Body" name:"EditPart"`
 }
 
 // SwapFacialFeaturesResponse is the response struct for api SwapFacialFeatures

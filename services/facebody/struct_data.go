@@ -90,9 +90,9 @@ type Data struct {
 	MetaObject           MetaObject                                `json:"MetaObject" xml:"MetaObject"`
 	Qualities            Qualities                                 `json:"Qualities" xml:"Qualities"`
 	PersonList           []Person                                  `json:"PersonList" xml:"PersonList"`
-	ImageInfoList        []ImageInfoListItem                       `json:"ImageInfoList" xml:"ImageInfoList"`
 	Outputs              []Output                                  `json:"Outputs" xml:"Outputs"`
 	Faces                []Face                                    `json:"Faces" xml:"Faces"`
+	ImageInfoList        []ImageInfoListItem                       `json:"ImageInfoList" xml:"ImageInfoList"`
 	Elements             []ElementsItemInDetectPedestrianIntrusion `json:"Elements" xml:"Elements"`
 	MatchList            []Trace                                   `json:"MatchList" xml:"MatchList"`
 	DbList               []DbListItem                              `json:"DbList" xml:"DbList"`

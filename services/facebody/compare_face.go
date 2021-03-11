@@ -71,6 +71,8 @@ func (client *Client) CompareFaceWithCallback(request *CompareFaceRequest, callb
 // CompareFaceRequest is the request struct for api CompareFace
 type CompareFaceRequest struct {
 	*requests.RpcRequest
+	ImageDataA            string           `position:"Body" name:"ImageDataA"`
+	ImageDataB            string           `position:"Body" name:"ImageDataB"`
 	QualityScoreThreshold requests.Float   `position:"Body" name:"QualityScoreThreshold"`
 	ImageURLB             string           `position:"Body" name:"ImageURLB"`
 	ImageURLA             string           `position:"Body" name:"ImageURLA"`
