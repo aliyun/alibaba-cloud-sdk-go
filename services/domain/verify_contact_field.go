@@ -104,7 +104,7 @@ func CreateVerifyContactFieldRequest() (request *VerifyContactFieldRequest) {
 	request = &VerifyContactFieldRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyContactField", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyContactField", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

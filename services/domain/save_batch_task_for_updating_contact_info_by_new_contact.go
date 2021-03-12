@@ -107,7 +107,7 @@ func CreateSaveBatchTaskForUpdatingContactInfoByNewContactRequest() (request *Sa
 	request = &SaveBatchTaskForUpdatingContactInfoByNewContactRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

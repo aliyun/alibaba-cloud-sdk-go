@@ -92,7 +92,7 @@ func CreateQueryBrokerDemandRecordRequest() (request *QueryBrokerDemandRecordReq
 	request = &QueryBrokerDemandRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBrokerDemandRecord", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBrokerDemandRecord", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

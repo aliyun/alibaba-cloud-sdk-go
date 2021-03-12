@@ -95,7 +95,7 @@ func CreateQueryDomainRealNameVerificationInfoRequest() (request *QueryDomainRea
 	request = &QueryDomainRealNameVerificationInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainRealNameVerificationInfo", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainRealNameVerificationInfo", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

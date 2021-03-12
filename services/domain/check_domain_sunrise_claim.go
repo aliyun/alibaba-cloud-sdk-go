@@ -89,7 +89,7 @@ func CreateCheckDomainSunriseClaimRequest() (request *CheckDomainSunriseClaimReq
 	request = &CheckDomainSunriseClaimRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckDomainSunriseClaim", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckDomainSunriseClaim", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateQueryQualificationDetailRequest() (request *QueryQualificationDetailR
 	request = &QueryQualificationDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryQualificationDetail", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryQualificationDetail", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

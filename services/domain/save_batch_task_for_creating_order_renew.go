@@ -99,7 +99,7 @@ func CreateSaveBatchTaskForCreatingOrderRenewRequest() (request *SaveBatchTaskFo
 	request = &SaveBatchTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

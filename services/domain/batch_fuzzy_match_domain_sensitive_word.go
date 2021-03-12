@@ -88,7 +88,7 @@ func CreateBatchFuzzyMatchDomainSensitiveWordRequest() (request *BatchFuzzyMatch
 	request = &BatchFuzzyMatchDomainSensitiveWordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

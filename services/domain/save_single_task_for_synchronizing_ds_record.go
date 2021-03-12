@@ -88,7 +88,7 @@ func CreateSaveSingleTaskForSynchronizingDSRecordRequest() (request *SaveSingleT
 	request = &SaveSingleTaskForSynchronizingDSRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSynchronizingDSRecord", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSynchronizingDSRecord", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

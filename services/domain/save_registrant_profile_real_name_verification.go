@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SaveRegistrantProfile invokes the domain.SaveRegistrantProfile API synchronously
-func (client *Client) SaveRegistrantProfile(request *SaveRegistrantProfileRequest) (response *SaveRegistrantProfileResponse, err error) {
-	response = CreateSaveRegistrantProfileResponse()
+// SaveRegistrantProfileRealNameVerification invokes the domain.SaveRegistrantProfileRealNameVerification API synchronously
+func (client *Client) SaveRegistrantProfileRealNameVerification(request *SaveRegistrantProfileRealNameVerificationRequest) (response *SaveRegistrantProfileRealNameVerificationResponse, err error) {
+	response = CreateSaveRegistrantProfileRealNameVerificationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SaveRegistrantProfileWithChan invokes the domain.SaveRegistrantProfile API asynchronously
-func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfileRequest) (<-chan *SaveRegistrantProfileResponse, <-chan error) {
-	responseChan := make(chan *SaveRegistrantProfileResponse, 1)
+// SaveRegistrantProfileRealNameVerificationWithChan invokes the domain.SaveRegistrantProfileRealNameVerification API asynchronously
+func (client *Client) SaveRegistrantProfileRealNameVerificationWithChan(request *SaveRegistrantProfileRealNameVerificationRequest) (<-chan *SaveRegistrantProfileRealNameVerificationResponse, <-chan error) {
+	responseChan := make(chan *SaveRegistrantProfileRealNameVerificationResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SaveRegistrantProfile(request)
+		response, err := client.SaveRegistrantProfileRealNameVerification(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfi
 	return responseChan, errChan
 }
 
-// SaveRegistrantProfileWithCallback invokes the domain.SaveRegistrantProfile API asynchronously
-func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantProfileRequest, callback func(response *SaveRegistrantProfileResponse, err error)) <-chan int {
+// SaveRegistrantProfileRealNameVerificationWithCallback invokes the domain.SaveRegistrantProfileRealNameVerification API asynchronously
+func (client *Client) SaveRegistrantProfileRealNameVerificationWithCallback(request *SaveRegistrantProfileRealNameVerificationRequest, callback func(response *SaveRegistrantProfileRealNameVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SaveRegistrantProfileResponse
+		var response *SaveRegistrantProfileRealNameVerificationResponse
 		var err error
 		defer close(result)
-		response, err = client.SaveRegistrantProfile(request)
+		response, err = client.SaveRegistrantProfileRealNameVerification(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,12 +68,14 @@ func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantP
 	return result
 }
 
-// SaveRegistrantProfileRequest is the request struct for api SaveRegistrantProfile
-type SaveRegistrantProfileRequest struct {
+// SaveRegistrantProfileRealNameVerificationRequest is the request struct for api SaveRegistrantProfileRealNameVerification
+type SaveRegistrantProfileRealNameVerificationRequest struct {
 	*requests.RpcRequest
 	Country                  string           `position:"Query" name:"Country"`
+	IdentityCredentialType   string           `position:"Query" name:"IdentityCredentialType"`
 	City                     string           `position:"Query" name:"City"`
 	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	IdentityCredential       string           `position:"Query" name:"IdentityCredential"`
 	ZhCity                   string           `position:"Query" name:"ZhCity"`
 	TelExt                   string           `position:"Query" name:"TelExt"`
 	Province                 string           `position:"Query" name:"Province"`
@@ -88,33 +90,33 @@ type SaveRegistrantProfileRequest struct {
 	RegistrantType           string           `position:"Query" name:"RegistrantType"`
 	RegistrantProfileType    string           `position:"Query" name:"RegistrantProfileType"`
 	Telephone                string           `position:"Query" name:"Telephone"`
-	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
 	ZhProvince               string           `position:"Query" name:"ZhProvince"`
 	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
 	UserClientIp             string           `position:"Query" name:"UserClientIp"`
+	IdentityCredentialNo     string           `position:"Query" name:"IdentityCredentialNo"`
 	RegistrantName           string           `position:"Query" name:"RegistrantName"`
 }
 
-// SaveRegistrantProfileResponse is the response struct for api SaveRegistrantProfile
-type SaveRegistrantProfileResponse struct {
+// SaveRegistrantProfileRealNameVerificationResponse is the response struct for api SaveRegistrantProfileRealNameVerification
+type SaveRegistrantProfileRealNameVerificationResponse struct {
 	*responses.BaseResponse
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	RegistrantProfileId int64  `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
 }
 
-// CreateSaveRegistrantProfileRequest creates a request to invoke SaveRegistrantProfile API
-func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest) {
-	request = &SaveRegistrantProfileRequest{
+// CreateSaveRegistrantProfileRealNameVerificationRequest creates a request to invoke SaveRegistrantProfileRealNameVerification API
+func CreateSaveRegistrantProfileRealNameVerificationRequest() (request *SaveRegistrantProfileRealNameVerificationRequest) {
+	request = &SaveRegistrantProfileRealNameVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveRegistrantProfile", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveRegistrantProfileRealNameVerification", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSaveRegistrantProfileResponse creates a response to parse from SaveRegistrantProfile response
-func CreateSaveRegistrantProfileResponse() (response *SaveRegistrantProfileResponse) {
-	response = &SaveRegistrantProfileResponse{
+// CreateSaveRegistrantProfileRealNameVerificationResponse creates a response to parse from SaveRegistrantProfileRealNameVerification response
+func CreateSaveRegistrantProfileRealNameVerificationResponse() (response *SaveRegistrantProfileRealNameVerificationResponse) {
+	response = &SaveRegistrantProfileRealNameVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

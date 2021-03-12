@@ -90,7 +90,7 @@ func CreateSaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() (requ
 	request = &SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

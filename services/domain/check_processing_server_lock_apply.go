@@ -89,7 +89,7 @@ func CreateCheckProcessingServerLockApplyRequest() (request *CheckProcessingServ
 	request = &CheckProcessingServerLockApplyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckProcessingServerLockApply", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckProcessingServerLockApply", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

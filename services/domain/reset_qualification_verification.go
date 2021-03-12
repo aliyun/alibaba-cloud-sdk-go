@@ -87,7 +87,7 @@ func CreateResetQualificationVerificationRequest() (request *ResetQualificationV
 	request = &ResetQualificationVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ResetQualificationVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ResetQualificationVerification", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

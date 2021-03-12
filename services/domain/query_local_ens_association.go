@@ -88,7 +88,7 @@ func CreateQueryLocalEnsAssociationRequest() (request *QueryLocalEnsAssociationR
 	request = &QueryLocalEnsAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryLocalEnsAssociation", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryLocalEnsAssociation", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

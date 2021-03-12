@@ -109,7 +109,7 @@ func CreateSaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest() (reque
 	request = &SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

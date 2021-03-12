@@ -88,7 +88,7 @@ func CreateBidDomainRequest() (request *BidDomainRequest) {
 	request = &BidDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "BidDomain", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "BidDomain", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

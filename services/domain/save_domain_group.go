@@ -95,7 +95,7 @@ func CreateSaveDomainGroupRequest() (request *SaveDomainGroupRequest) {
 	request = &SaveDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveDomainGroup", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveDomainGroup", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

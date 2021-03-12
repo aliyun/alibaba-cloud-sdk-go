@@ -92,7 +92,7 @@ func CreateCheckTransferInFeasibilityRequest() (request *CheckTransferInFeasibil
 	request = &CheckTransferInFeasibilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckTransferInFeasibility", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckTransferInFeasibility", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

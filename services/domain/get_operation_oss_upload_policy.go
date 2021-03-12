@@ -92,7 +92,7 @@ func CreateGetOperationOssUploadPolicyRequest() (request *GetOperationOssUploadP
 	request = &GetOperationOssUploadPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "GetOperationOssUploadPolicy", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "GetOperationOssUploadPolicy", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -96,7 +96,7 @@ func CreateQueryTaskInfoHistoryRequest() (request *QueryTaskInfoHistoryRequest) 
 	request = &QueryTaskInfoHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskInfoHistory", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskInfoHistory", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

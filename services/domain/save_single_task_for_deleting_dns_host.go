@@ -89,7 +89,7 @@ func CreateSaveSingleTaskForDeletingDnsHostRequest() (request *SaveSingleTaskFor
 	request = &SaveSingleTaskForDeletingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDeletingDnsHost", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDeletingDnsHost", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

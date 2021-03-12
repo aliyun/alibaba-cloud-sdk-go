@@ -87,7 +87,7 @@ func CreateTransferInResendMailTokenRequest() (request *TransferInResendMailToke
 	request = &TransferInResendMailTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInResendMailToken", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInResendMailToken", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

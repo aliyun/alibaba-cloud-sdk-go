@@ -99,7 +99,7 @@ func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest
 	request = &ListEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ListEmailVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ListEmailVerification", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateCancelOperationAuditRequest() (request *CancelOperationAuditRequest) 
 	request = &CancelOperationAuditRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CancelOperationAudit", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CancelOperationAudit", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

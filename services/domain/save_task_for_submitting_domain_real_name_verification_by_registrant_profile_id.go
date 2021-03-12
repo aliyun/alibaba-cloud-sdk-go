@@ -90,7 +90,7 @@ func CreateSaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDR
 	request = &SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }
