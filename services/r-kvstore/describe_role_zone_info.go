@@ -72,6 +72,7 @@ func (client *Client) DescribeRoleZoneInfoWithCallback(request *DescribeRoleZone
 type DescribeRoleZoneInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Role                 string           `position:"Query" name:"Role"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`

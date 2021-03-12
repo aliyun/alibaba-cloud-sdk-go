@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateInstance invokes the r_kvstore.CreateInstance API synchronously
-func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *CreateInstanceResponse, err error) {
-	response = CreateCreateInstanceResponse()
+// CreateTairInstance invokes the r_kvstore.CreateTairInstance API synchronously
+func (client *Client) CreateTairInstance(request *CreateTairInstanceRequest) (response *CreateTairInstanceResponse, err error) {
+	response = CreateCreateTairInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateInstanceWithChan invokes the r_kvstore.CreateInstance API asynchronously
-func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-chan *CreateInstanceResponse, <-chan error) {
-	responseChan := make(chan *CreateInstanceResponse, 1)
+// CreateTairInstanceWithChan invokes the r_kvstore.CreateTairInstance API asynchronously
+func (client *Client) CreateTairInstanceWithChan(request *CreateTairInstanceRequest) (<-chan *CreateTairInstanceResponse, <-chan error) {
+	responseChan := make(chan *CreateTairInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateInstance(request)
+		response, err := client.CreateTairInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// CreateInstanceWithCallback invokes the r_kvstore.CreateInstance API asynchronously
-func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) <-chan int {
+// CreateTairInstanceWithCallback invokes the r_kvstore.CreateTairInstance API asynchronously
+func (client *Client) CreateTairInstanceWithCallback(request *CreateTairInstanceRequest, callback func(response *CreateTairInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateInstanceResponse
+		var response *CreateTairInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateInstance(request)
+		response, err = client.CreateTairInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,85 +68,73 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 	return result
 }
 
-// CreateInstanceRequest is the request struct for api CreateInstance
-type CreateInstanceRequest struct {
+// CreateTairInstanceRequest is the request struct for api CreateTairInstance
+type CreateTairInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecondaryZoneId      string           `position:"Query" name:"SecondaryZoneId"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	StorageType          string           `position:"Query" name:"StorageType"`
+	ResourceGroupId      requests.Integer `position:"Query" name:"ResourceGroupId"`
 	Password             string           `position:"Query" name:"Password"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	ShardCount           requests.Integer `position:"Query" name:"ShardCount"`
 	AutoRenewPeriod      string           `position:"Query" name:"AutoRenewPeriod"`
-	Period               string           `position:"Query" name:"Period"`
+	Period               requests.Integer `position:"Query" name:"Period"`
 	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ShardType            string           `position:"Query" name:"ShardType"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
 	InstanceName         string           `position:"Query" name:"InstanceName"`
 	AutoRenew            string           `position:"Query" name:"AutoRenew"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	NodeType             string           `position:"Query" name:"NodeType"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	AutoUseCoupon        string           `position:"Query" name:"AutoUseCoupon"`
+	Storage              requests.Integer `position:"Query" name:"Storage"`
 	InstanceClass        string           `position:"Query" name:"InstanceClass"`
-	Capacity             requests.Integer `position:"Query" name:"Capacity"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
-	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	GlobalInstance       requests.Boolean `position:"Query" name:"GlobalInstance"`
-	Token                string           `position:"Query" name:"Token"`
-	GlobalInstanceId     string           `position:"Query" name:"GlobalInstanceId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
-	Config               string           `position:"Query" name:"Config"`
 }
 
-// CreateInstanceResponse is the response struct for api CreateInstance
-type CreateInstanceResponse struct {
+// CreateTairInstanceResponse is the response struct for api CreateTairInstance
+type CreateTairInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
 	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
 	InstanceName     string `json:"InstanceName" xml:"InstanceName"`
 	ConnectionDomain string `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	Port             int    `json:"Port" xml:"Port"`
-	UserName         string `json:"UserName" xml:"UserName"`
 	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
-	Capacity         int64  `json:"Capacity" xml:"Capacity"`
 	QPS              int64  `json:"QPS" xml:"QPS"`
 	Bandwidth        int64  `json:"Bandwidth" xml:"Bandwidth"`
 	Connections      int64  `json:"Connections" xml:"Connections"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
 	Config           string `json:"Config" xml:"Config"`
 	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	NodeType         string `json:"NodeType" xml:"NodeType"`
-	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
-	VpcId            string `json:"VpcId" xml:"VpcId"`
-	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
-	PrivateIpAddr    string `json:"PrivateIpAddr" xml:"PrivateIpAddr"`
+	TaskId           string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateCreateInstanceRequest creates a request to invoke CreateInstance API
-func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
-	request = &CreateInstanceRequest{
+// CreateCreateTairInstanceRequest creates a request to invoke CreateTairInstance API
+func CreateCreateTairInstanceRequest() (request *CreateTairInstanceRequest) {
+	request = &CreateTairInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateTairInstance", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateInstanceResponse creates a response to parse from CreateInstance response
-func CreateCreateInstanceResponse() (response *CreateInstanceResponse) {
-	response = &CreateInstanceResponse{
+// CreateCreateTairInstanceResponse creates a response to parse from CreateTairInstance response
+func CreateCreateTairInstanceResponse() (response *CreateTairInstanceResponse) {
+	response = &CreateTairInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

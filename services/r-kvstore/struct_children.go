@@ -37,5 +37,6 @@ type Children struct {
 	Capacity            int64  `json:"Capacity" xml:"Capacity"`
 	BandWidth           int64  `json:"BandWidth" xml:"BandWidth"`
 	Connections         int64  `json:"Connections" xml:"Connections"`
+	CurrentBandWidth    int64  `json:"CurrentBandWidth" xml:"CurrentBandWidth"`
 	Items               []Item `json:"Items" xml:"Items"`
 }

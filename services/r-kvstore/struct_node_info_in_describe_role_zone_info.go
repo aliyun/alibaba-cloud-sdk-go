@@ -17,18 +17,21 @@ package r_kvstore
 
 // NodeInfoInDescribeRoleZoneInfo is a nested struct in r_kvstore response
 type NodeInfoInDescribeRoleZoneInfo struct {
-	NodeId              string  `json:"NodeId" xml:"NodeId"`
-	NodeType            string  `json:"NodeType" xml:"NodeType"`
-	Role                string  `json:"Role" xml:"Role"`
-	ZoneId              string  `json:"ZoneId" xml:"ZoneId"`
-	CPUUsage            string  `json:"CPUUsage" xml:"CPUUsage"`
-	Connection          float64 `json:"Connection" xml:"Connection"`
-	AvgRt               float64 `json:"AvgRt" xml:"AvgRt"`
-	IntranetIn          float64 `json:"IntranetIn" xml:"IntranetIn"`
-	IntranetOut         float64 `json:"IntranetOut" xml:"IntranetOut"`
-	CustinsId           string  `json:"CustinsId" xml:"CustinsId"`
-	InsType             int     `json:"InsType" xml:"InsType"`
-	InsName             string  `json:"InsName" xml:"InsName"`
-	IsLatestVersion     int     `json:"IsLatestVersion" xml:"IsLatestVersion"`
-	CurrentMinorVersion string  `json:"CurrentMinorVersion" xml:"CurrentMinorVersion"`
+	NodeId                 string  `json:"NodeId" xml:"NodeId"`
+	NodeType               string  `json:"NodeType" xml:"NodeType"`
+	Role                   string  `json:"Role" xml:"Role"`
+	ZoneId                 string  `json:"ZoneId" xml:"ZoneId"`
+	CPUUsage               string  `json:"CPUUsage" xml:"CPUUsage"`
+	Connection             float64 `json:"Connection" xml:"Connection"`
+	AvgRt                  float64 `json:"AvgRt" xml:"AvgRt"`
+	IntranetIn             float64 `json:"IntranetIn" xml:"IntranetIn"`
+	IntranetOut            float64 `json:"IntranetOut" xml:"IntranetOut"`
+	CustinsId              string  `json:"CustinsId" xml:"CustinsId"`
+	InsType                int     `json:"InsType" xml:"InsType"`
+	InsName                string  `json:"InsName" xml:"InsName"`
+	IsLatestVersion        int     `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	CurrentMinorVersion    string  `json:"CurrentMinorVersion" xml:"CurrentMinorVersion"`
+	CurrentBandWidth       int64   `json:"CurrentBandWidth" xml:"CurrentBandWidth"`
+	DefaultBandWidth       int64   `json:"DefaultBandWidth" xml:"DefaultBandWidth"`
+	IsOpenBandWidthService bool    `json:"IsOpenBandWidthService" xml:"IsOpenBandWidthService"`
 }
