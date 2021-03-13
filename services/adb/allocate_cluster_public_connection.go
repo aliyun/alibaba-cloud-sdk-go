@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateClusterPublicConnection invokes the adb.AllocateClusterPublicConnection API synchronously
-// api document: https://help.aliyun.com/api/adb/allocateclusterpublicconnection.html
 func (client *Client) AllocateClusterPublicConnection(request *AllocateClusterPublicConnectionRequest) (response *AllocateClusterPublicConnectionResponse, err error) {
 	response = CreateAllocateClusterPublicConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateClusterPublicConnection(request *AllocateClusterPu
 }
 
 // AllocateClusterPublicConnectionWithChan invokes the adb.AllocateClusterPublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/adb/allocateclusterpublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateClusterPublicConnectionWithChan(request *AllocateClusterPublicConnectionRequest) (<-chan *AllocateClusterPublicConnectionResponse, <-chan error) {
 	responseChan := make(chan *AllocateClusterPublicConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateClusterPublicConnectionWithChan(request *AllocateC
 }
 
 // AllocateClusterPublicConnectionWithCallback invokes the adb.AllocateClusterPublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/adb/allocateclusterpublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateClusterPublicConnectionWithCallback(request *AllocateClusterPublicConnectionRequest, callback func(response *AllocateClusterPublicConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

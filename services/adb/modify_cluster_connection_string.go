@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyClusterConnectionString invokes the adb.ModifyClusterConnectionString API synchronously
-// api document: https://help.aliyun.com/api/adb/modifyclusterconnectionstring.html
 func (client *Client) ModifyClusterConnectionString(request *ModifyClusterConnectionStringRequest) (response *ModifyClusterConnectionStringResponse, err error) {
 	response = CreateModifyClusterConnectionStringResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyClusterConnectionString(request *ModifyClusterConnec
 }
 
 // ModifyClusterConnectionStringWithChan invokes the adb.ModifyClusterConnectionString API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifyclusterconnectionstring.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterConnectionStringWithChan(request *ModifyClusterConnectionStringRequest) (<-chan *ModifyClusterConnectionStringResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterConnectionStringResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClusterConnectionStringWithChan(request *ModifyClust
 }
 
 // ModifyClusterConnectionStringWithCallback invokes the adb.ModifyClusterConnectionString API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifyclusterconnectionstring.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterConnectionStringWithCallback(request *ModifyClusterConnectionStringRequest, callback func(response *ModifyClusterConnectionStringResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

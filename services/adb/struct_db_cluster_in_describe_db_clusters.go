@@ -50,5 +50,6 @@ type DBClusterInDescribeDBClusters struct {
 	StorageResource      string                   `json:"StorageResource" xml:"StorageResource"`
 	Mode                 string                   `json:"Mode" xml:"Mode"`
 	ResourceGroupId      string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ElasticIOResource    int                      `json:"ElasticIOResource" xml:"ElasticIOResource"`
 	Tags                 TagsInDescribeDBClusters `json:"Tags" xml:"Tags"`
 }

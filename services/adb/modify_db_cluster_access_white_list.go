@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBClusterAccessWhiteList invokes the adb.ModifyDBClusterAccessWhiteList API synchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclusteraccesswhitelist.html
 func (client *Client) ModifyDBClusterAccessWhiteList(request *ModifyDBClusterAccessWhiteListRequest) (response *ModifyDBClusterAccessWhiteListResponse, err error) {
 	response = CreateModifyDBClusterAccessWhiteListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBClusterAccessWhiteList(request *ModifyDBClusterAcc
 }
 
 // ModifyDBClusterAccessWhiteListWithChan invokes the adb.ModifyDBClusterAccessWhiteList API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclusteraccesswhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterAccessWhiteListWithChan(request *ModifyDBClusterAccessWhiteListRequest) (<-chan *ModifyDBClusterAccessWhiteListResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBClusterAccessWhiteListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBClusterAccessWhiteListWithChan(request *ModifyDBCl
 }
 
 // ModifyDBClusterAccessWhiteListWithCallback invokes the adb.ModifyDBClusterAccessWhiteList API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclusteraccesswhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterAccessWhiteListWithCallback(request *ModifyDBClusterAccessWhiteListRequest, callback func(response *ModifyDBClusterAccessWhiteListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

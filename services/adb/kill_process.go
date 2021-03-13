@@ -21,7 +21,6 @@ import (
 )
 
 // KillProcess invokes the adb.KillProcess API synchronously
-// api document: https://help.aliyun.com/api/adb/killprocess.html
 func (client *Client) KillProcess(request *KillProcessRequest) (response *KillProcessResponse, err error) {
 	response = CreateKillProcessResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) KillProcess(request *KillProcessRequest) (response *KillPr
 }
 
 // KillProcessWithChan invokes the adb.KillProcess API asynchronously
-// api document: https://help.aliyun.com/api/adb/killprocess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KillProcessWithChan(request *KillProcessRequest) (<-chan *KillProcessResponse, <-chan error) {
 	responseChan := make(chan *KillProcessResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) KillProcessWithChan(request *KillProcessRequest) (<-chan *
 }
 
 // KillProcessWithCallback invokes the adb.KillProcess API asynchronously
-// api document: https://help.aliyun.com/api/adb/killprocess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KillProcessWithCallback(request *KillProcessRequest, callback func(response *KillProcessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

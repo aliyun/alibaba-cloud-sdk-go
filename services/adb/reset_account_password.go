@@ -21,7 +21,6 @@ import (
 )
 
 // ResetAccountPassword invokes the adb.ResetAccountPassword API synchronously
-// api document: https://help.aliyun.com/api/adb/resetaccountpassword.html
 func (client *Client) ResetAccountPassword(request *ResetAccountPasswordRequest) (response *ResetAccountPasswordResponse, err error) {
 	response = CreateResetAccountPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetAccountPassword(request *ResetAccountPasswordRequest)
 }
 
 // ResetAccountPasswordWithChan invokes the adb.ResetAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/adb/resetaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPasswordRequest) (<-chan *ResetAccountPasswordResponse, <-chan error) {
 	responseChan := make(chan *ResetAccountPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPassword
 }
 
 // ResetAccountPasswordWithCallback invokes the adb.ResetAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/adb/resetaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPasswordRequest, callback func(response *ResetAccountPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

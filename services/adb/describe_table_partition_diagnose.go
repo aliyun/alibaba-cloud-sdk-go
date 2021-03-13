@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTablePartitionDiagnose invokes the adb.DescribeTablePartitionDiagnose API synchronously
-// api document: https://help.aliyun.com/api/adb/describetablepartitiondiagnose.html
 func (client *Client) DescribeTablePartitionDiagnose(request *DescribeTablePartitionDiagnoseRequest) (response *DescribeTablePartitionDiagnoseResponse, err error) {
 	response = CreateDescribeTablePartitionDiagnoseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTablePartitionDiagnose(request *DescribeTableParti
 }
 
 // DescribeTablePartitionDiagnoseWithChan invokes the adb.DescribeTablePartitionDiagnose API asynchronously
-// api document: https://help.aliyun.com/api/adb/describetablepartitiondiagnose.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTablePartitionDiagnoseWithChan(request *DescribeTablePartitionDiagnoseRequest) (<-chan *DescribeTablePartitionDiagnoseResponse, <-chan error) {
 	responseChan := make(chan *DescribeTablePartitionDiagnoseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTablePartitionDiagnoseWithChan(request *DescribeTa
 }
 
 // DescribeTablePartitionDiagnoseWithCallback invokes the adb.DescribeTablePartitionDiagnose API asynchronously
-// api document: https://help.aliyun.com/api/adb/describetablepartitiondiagnose.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTablePartitionDiagnoseWithCallback(request *DescribeTablePartitionDiagnoseRequest, callback func(response *DescribeTablePartitionDiagnoseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,13 +83,13 @@ type DescribeTablePartitionDiagnoseRequest struct {
 // DescribeTablePartitionDiagnoseResponse is the response struct for api DescribeTablePartitionDiagnose
 type DescribeTablePartitionDiagnoseResponse struct {
 	*responses.BaseResponse
-	RequestId                     string                   `json:"RequestId" xml:"RequestId"`
-	PageNumber                    int                      `json:"PageNumber" xml:"PageNumber"`
 	TotalCount                    int                      `json:"TotalCount" xml:"TotalCount"`
 	PageSize                      int                      `json:"PageSize" xml:"PageSize"`
-	DBClusterId                   int                      `json:"DBClusterId" xml:"DBClusterId"`
-	SuggestMinRecordsPerPartition int64                    `json:"SuggestMinRecordsPerPartition" xml:"SuggestMinRecordsPerPartition"`
+	RequestId                     string                   `json:"RequestId" xml:"RequestId"`
+	PageNumber                    int                      `json:"PageNumber" xml:"PageNumber"`
+	DBClusterId                   string                   `json:"DBClusterId" xml:"DBClusterId"`
 	SuggestMaxRecordsPerPartition int64                    `json:"SuggestMaxRecordsPerPartition" xml:"SuggestMaxRecordsPerPartition"`
+	SuggestMinRecordsPerPartition int64                    `json:"SuggestMinRecordsPerPartition" xml:"SuggestMinRecordsPerPartition"`
 	Items                         []TablePartitionDiagnose `json:"Items" xml:"Items"`
 }
 

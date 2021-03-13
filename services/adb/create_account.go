@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAccount invokes the adb.CreateAccount API synchronously
-// api document: https://help.aliyun.com/api/adb/createaccount.html
 func (client *Client) CreateAccount(request *CreateAccountRequest) (response *CreateAccountResponse, err error) {
 	response = CreateCreateAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAccount(request *CreateAccountRequest) (response *Cr
 }
 
 // CreateAccountWithChan invokes the adb.CreateAccount API asynchronously
-// api document: https://help.aliyun.com/api/adb/createaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-chan *CreateAccountResponse, <-chan error) {
 	responseChan := make(chan *CreateAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-ch
 }
 
 // CreateAccountWithCallback invokes the adb.CreateAccount API asynchronously
-// api document: https://help.aliyun.com/api/adb/createaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, callback func(response *CreateAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

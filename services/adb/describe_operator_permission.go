@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOperatorPermission invokes the adb.DescribeOperatorPermission API synchronously
-// api document: https://help.aliyun.com/api/adb/describeoperatorpermission.html
 func (client *Client) DescribeOperatorPermission(request *DescribeOperatorPermissionRequest) (response *DescribeOperatorPermissionResponse, err error) {
 	response = CreateDescribeOperatorPermissionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOperatorPermission(request *DescribeOperatorPermis
 }
 
 // DescribeOperatorPermissionWithChan invokes the adb.DescribeOperatorPermission API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeoperatorpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOperatorPermissionWithChan(request *DescribeOperatorPermissionRequest) (<-chan *DescribeOperatorPermissionResponse, <-chan error) {
 	responseChan := make(chan *DescribeOperatorPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOperatorPermissionWithChan(request *DescribeOperat
 }
 
 // DescribeOperatorPermissionWithCallback invokes the adb.DescribeOperatorPermission API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeoperatorpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOperatorPermissionWithCallback(request *DescribeOperatorPermissionRequest, callback func(response *DescribeOperatorPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -17,8 +17,8 @@ package adb
 
 // TablePartitionDiagnose is a nested struct in adb response
 type TablePartitionDiagnose struct {
-	SchemaName      string `json:"SchemaName" xml:"SchemaName"`
 	TableName       string `json:"TableName" xml:"TableName"`
 	PartitionNumber int    `json:"PartitionNumber" xml:"PartitionNumber"`
 	PartitionDetail string `json:"PartitionDetail" xml:"PartitionDetail"`
+	SchemaName      string `json:"SchemaName" xml:"SchemaName"`
 }

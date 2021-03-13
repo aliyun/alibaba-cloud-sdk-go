@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBClusterMaintainTime invokes the adb.ModifyDBClusterMaintainTime API synchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclustermaintaintime.html
 func (client *Client) ModifyDBClusterMaintainTime(request *ModifyDBClusterMaintainTimeRequest) (response *ModifyDBClusterMaintainTimeResponse, err error) {
 	response = CreateModifyDBClusterMaintainTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBClusterMaintainTime(request *ModifyDBClusterMainta
 }
 
 // ModifyDBClusterMaintainTimeWithChan invokes the adb.ModifyDBClusterMaintainTime API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclustermaintaintime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterMaintainTimeWithChan(request *ModifyDBClusterMaintainTimeRequest) (<-chan *ModifyDBClusterMaintainTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBClusterMaintainTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBClusterMaintainTimeWithChan(request *ModifyDBClust
 }
 
 // ModifyDBClusterMaintainTimeWithCallback invokes the adb.ModifyDBClusterMaintainTime API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclustermaintaintime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterMaintainTimeWithCallback(request *ModifyDBClusterMaintainTimeRequest, callback func(response *ModifyDBClusterMaintainTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAllDataSource invokes the adb.DescribeAllDataSource API synchronously
-// api document: https://help.aliyun.com/api/adb/describealldatasource.html
 func (client *Client) DescribeAllDataSource(request *DescribeAllDataSourceRequest) (response *DescribeAllDataSourceResponse, err error) {
 	response = CreateDescribeAllDataSourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAllDataSource(request *DescribeAllDataSourceReques
 }
 
 // DescribeAllDataSourceWithChan invokes the adb.DescribeAllDataSource API asynchronously
-// api document: https://help.aliyun.com/api/adb/describealldatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAllDataSourceWithChan(request *DescribeAllDataSourceRequest) (<-chan *DescribeAllDataSourceResponse, <-chan error) {
 	responseChan := make(chan *DescribeAllDataSourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAllDataSourceWithChan(request *DescribeAllDataSour
 }
 
 // DescribeAllDataSourceWithCallback invokes the adb.DescribeAllDataSource API asynchronously
-// api document: https://help.aliyun.com/api/adb/describealldatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAllDataSourceWithCallback(request *DescribeAllDataSourceRequest, callback func(response *DescribeAllDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

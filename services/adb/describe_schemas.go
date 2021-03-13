@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSchemas invokes the adb.DescribeSchemas API synchronously
-// api document: https://help.aliyun.com/api/adb/describeschemas.html
 func (client *Client) DescribeSchemas(request *DescribeSchemasRequest) (response *DescribeSchemasResponse, err error) {
 	response = CreateDescribeSchemasResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSchemas(request *DescribeSchemasRequest) (response
 }
 
 // DescribeSchemasWithChan invokes the adb.DescribeSchemas API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeschemas.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSchemasWithChan(request *DescribeSchemasRequest) (<-chan *DescribeSchemasResponse, <-chan error) {
 	responseChan := make(chan *DescribeSchemasResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSchemasWithChan(request *DescribeSchemasRequest) (
 }
 
 // DescribeSchemasWithCallback invokes the adb.DescribeSchemas API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeschemas.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSchemasWithCallback(request *DescribeSchemasRequest, callback func(response *DescribeSchemasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

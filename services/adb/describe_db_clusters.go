@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBClusters invokes the adb.DescribeDBClusters API synchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusters.html
 func (client *Client) DescribeDBClusters(request *DescribeDBClustersRequest) (response *DescribeDBClustersResponse, err error) {
 	response = CreateDescribeDBClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBClusters(request *DescribeDBClustersRequest) (re
 }
 
 // DescribeDBClustersWithChan invokes the adb.DescribeDBClusters API asynchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClustersWithChan(request *DescribeDBClustersRequest) (<-chan *DescribeDBClustersResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBClustersWithChan(request *DescribeDBClustersRequ
 }
 
 // DescribeDBClustersWithCallback invokes the adb.DescribeDBClusters API asynchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClustersWithCallback(request *DescribeDBClustersRequest, callback func(response *DescribeDBClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

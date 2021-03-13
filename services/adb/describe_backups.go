@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackups invokes the adb.DescribeBackups API synchronously
-// api document: https://help.aliyun.com/api/adb/describebackups.html
 func (client *Client) DescribeBackups(request *DescribeBackupsRequest) (response *DescribeBackupsResponse, err error) {
 	response = CreateDescribeBackupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackups(request *DescribeBackupsRequest) (response
 }
 
 // DescribeBackupsWithChan invokes the adb.DescribeBackups API asynchronously
-// api document: https://help.aliyun.com/api/adb/describebackups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupsWithChan(request *DescribeBackupsRequest) (<-chan *DescribeBackupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupsWithChan(request *DescribeBackupsRequest) (
 }
 
 // DescribeBackupsWithCallback invokes the adb.DescribeBackups API asynchronously
-// api document: https://help.aliyun.com/api/adb/describebackups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsRequest, callback func(response *DescribeBackupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

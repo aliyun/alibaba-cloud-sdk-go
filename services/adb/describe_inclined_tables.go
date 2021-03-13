@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInclinedTables invokes the adb.DescribeInclinedTables API synchronously
-// api document: https://help.aliyun.com/api/adb/describeinclinedtables.html
 func (client *Client) DescribeInclinedTables(request *DescribeInclinedTablesRequest) (response *DescribeInclinedTablesResponse, err error) {
 	response = CreateDescribeInclinedTablesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInclinedTables(request *DescribeInclinedTablesRequ
 }
 
 // DescribeInclinedTablesWithChan invokes the adb.DescribeInclinedTables API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeinclinedtables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInclinedTablesWithChan(request *DescribeInclinedTablesRequest) (<-chan *DescribeInclinedTablesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInclinedTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInclinedTablesWithChan(request *DescribeInclinedTa
 }
 
 // DescribeInclinedTablesWithCallback invokes the adb.DescribeInclinedTables API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeinclinedtables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInclinedTablesWithCallback(request *DescribeInclinedTablesRequest, callback func(response *DescribeInclinedTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAutoRenewAttribute invokes the adb.ModifyAutoRenewAttribute API synchronously
-// api document: https://help.aliyun.com/api/adb/modifyautorenewattribute.html
 func (client *Client) ModifyAutoRenewAttribute(request *ModifyAutoRenewAttributeRequest) (response *ModifyAutoRenewAttributeResponse, err error) {
 	response = CreateModifyAutoRenewAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAutoRenewAttribute(request *ModifyAutoRenewAttribute
 }
 
 // ModifyAutoRenewAttributeWithChan invokes the adb.ModifyAutoRenewAttribute API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifyautorenewattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAutoRenewAttributeWithChan(request *ModifyAutoRenewAttributeRequest) (<-chan *ModifyAutoRenewAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyAutoRenewAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAutoRenewAttributeWithChan(request *ModifyAutoRenewA
 }
 
 // ModifyAutoRenewAttributeWithCallback invokes the adb.ModifyAutoRenewAttribute API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifyautorenewattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAutoRenewAttributeWithCallback(request *ModifyAutoRenewAttributeRequest, callback func(response *ModifyAutoRenewAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

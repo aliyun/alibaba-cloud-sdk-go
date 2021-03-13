@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDBCluster invokes the adb.CreateDBCluster API synchronously
-// api document: https://help.aliyun.com/api/adb/createdbcluster.html
 func (client *Client) CreateDBCluster(request *CreateDBClusterRequest) (response *CreateDBClusterResponse, err error) {
 	response = CreateCreateDBClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDBCluster(request *CreateDBClusterRequest) (response
 }
 
 // CreateDBClusterWithChan invokes the adb.CreateDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/adb/createdbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBClusterWithChan(request *CreateDBClusterRequest) (<-chan *CreateDBClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateDBClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDBClusterWithChan(request *CreateDBClusterRequest) (
 }
 
 // CreateDBClusterWithCallback invokes the adb.CreateDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/adb/createdbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBClusterWithCallback(request *CreateDBClusterRequest, callback func(response *CreateDBClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,27 +73,31 @@ type CreateDBClusterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	StorageType          string           `position:"Query" name:"StorageType"`
 	Mode                 string           `position:"Query" name:"Mode"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	Period               string           `position:"Query" name:"Period"`
+	BackupSetID          string           `position:"Query" name:"BackupSetID"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBNodeGroupCount     string           `position:"Query" name:"DBNodeGroupCount"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ComputeResource      string           `position:"Query" name:"ComputeResource"`
+	SourceDBInstanceName string           `position:"Query" name:"SourceDBInstanceName"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	StorageResource      string           `position:"Query" name:"StorageResource"`
 	DBClusterCategory    string           `position:"Query" name:"DBClusterCategory"`
 	DBClusterNetworkType string           `position:"Query" name:"DBClusterNetworkType"`
-	Period               string           `position:"Query" name:"Period"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBClusterVersion     string           `position:"Query" name:"DBClusterVersion"`
 	DBClusterClass       string           `position:"Query" name:"DBClusterClass"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBNodeGroupCount     string           `position:"Query" name:"DBNodeGroupCount"`
 	UsedTime             string           `position:"Query" name:"UsedTime"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	RestoreType          string           `position:"Query" name:"RestoreType"`
 	DBNodeStorage        string           `position:"Query" name:"DBNodeStorage"`
 	ExecutorCount        string           `position:"Query" name:"ExecutorCount"`
 	VPCId                string           `position:"Query" name:"VPCId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	ComputeResource      string           `position:"Query" name:"ComputeResource"`
 	PayType              string           `position:"Query" name:"PayType"`
 }
 

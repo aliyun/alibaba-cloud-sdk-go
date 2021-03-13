@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAccount invokes the adb.DeleteAccount API synchronously
-// api document: https://help.aliyun.com/api/adb/deleteaccount.html
 func (client *Client) DeleteAccount(request *DeleteAccountRequest) (response *DeleteAccountResponse, err error) {
 	response = CreateDeleteAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAccount(request *DeleteAccountRequest) (response *De
 }
 
 // DeleteAccountWithChan invokes the adb.DeleteAccount API asynchronously
-// api document: https://help.aliyun.com/api/adb/deleteaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-chan *DeleteAccountResponse, <-chan error) {
 	responseChan := make(chan *DeleteAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-ch
 }
 
 // DeleteAccountWithCallback invokes the adb.DeleteAccount API asynchronously
-// api document: https://help.aliyun.com/api/adb/deleteaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, callback func(response *DeleteAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -29,6 +29,7 @@ type DBCluster struct {
 	ResourceGroupId      string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DtsJobId             string                           `json:"DtsJobId" xml:"DtsJobId"`
 	ExpireTime           string                           `json:"ExpireTime" xml:"ExpireTime"`
+	EnableSpark          bool                             `json:"EnableSpark" xml:"EnableSpark"`
 	CommodityCode        string                           `json:"CommodityCode" xml:"CommodityCode"`
 	Expired              string                           `json:"Expired" xml:"Expired"`
 	DBVersion            string                           `json:"DBVersion" xml:"DBVersion"`
@@ -38,11 +39,13 @@ type DBCluster struct {
 	MaintainTime         string                           `json:"MaintainTime" xml:"MaintainTime"`
 	VPCId                string                           `json:"VPCId" xml:"VPCId"`
 	ExecutorCount        string                           `json:"ExecutorCount" xml:"ExecutorCount"`
+	EngineVersion        string                           `json:"EngineVersion" xml:"EngineVersion"`
 	PayType              string                           `json:"PayType" xml:"PayType"`
 	VSwitchId            string                           `json:"VSwitchId" xml:"VSwitchId"`
 	DiskType             string                           `json:"DiskType" xml:"DiskType"`
 	DBNodeCount          int64                            `json:"DBNodeCount" xml:"DBNodeCount"`
 	CreationTime         string                           `json:"CreationTime" xml:"CreationTime"`
+	UserENIStatus        bool                             `json:"UserENIStatus" xml:"UserENIStatus"`
 	DBClusterId          string                           `json:"DBClusterId" xml:"DBClusterId"`
 	DBClusterStatus      string                           `json:"DBClusterStatus" xml:"DBClusterStatus"`
 	ComputeResource      string                           `json:"ComputeResource" xml:"ComputeResource"`
@@ -50,6 +53,8 @@ type DBCluster struct {
 	RdsInstanceId        string                           `json:"RdsInstanceId" xml:"RdsInstanceId"`
 	DBClusterDescription string                           `json:"DBClusterDescription" xml:"DBClusterDescription"`
 	ConnectionString     string                           `json:"ConnectionString" xml:"ConnectionString"`
+	EnableAirflow        bool                             `json:"EnableAirflow" xml:"EnableAirflow"`
 	LockMode             string                           `json:"LockMode" xml:"LockMode"`
+	ElasticIOResource    int                              `json:"ElasticIOResource" xml:"ElasticIOResource"`
 	Tags                 TagsInDescribeDBClusterAttribute `json:"Tags" xml:"Tags"`
 }

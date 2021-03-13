@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTaskInfo invokes the adb.DescribeTaskInfo API synchronously
-// api document: https://help.aliyun.com/api/adb/describetaskinfo.html
 func (client *Client) DescribeTaskInfo(request *DescribeTaskInfoRequest) (response *DescribeTaskInfoResponse, err error) {
 	response = CreateDescribeTaskInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTaskInfo(request *DescribeTaskInfoRequest) (respon
 }
 
 // DescribeTaskInfoWithChan invokes the adb.DescribeTaskInfo API asynchronously
-// api document: https://help.aliyun.com/api/adb/describetaskinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTaskInfoWithChan(request *DescribeTaskInfoRequest) (<-chan *DescribeTaskInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeTaskInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTaskInfoWithChan(request *DescribeTaskInfoRequest)
 }
 
 // DescribeTaskInfoWithCallback invokes the adb.DescribeTaskInfo API asynchronously
-// api document: https://help.aliyun.com/api/adb/describetaskinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTaskInfoWithCallback(request *DescribeTaskInfoRequest, callback func(response *DescribeTaskInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

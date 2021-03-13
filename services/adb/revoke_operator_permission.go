@@ -21,7 +21,6 @@ import (
 )
 
 // RevokeOperatorPermission invokes the adb.RevokeOperatorPermission API synchronously
-// api document: https://help.aliyun.com/api/adb/revokeoperatorpermission.html
 func (client *Client) RevokeOperatorPermission(request *RevokeOperatorPermissionRequest) (response *RevokeOperatorPermissionResponse, err error) {
 	response = CreateRevokeOperatorPermissionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RevokeOperatorPermission(request *RevokeOperatorPermission
 }
 
 // RevokeOperatorPermissionWithChan invokes the adb.RevokeOperatorPermission API asynchronously
-// api document: https://help.aliyun.com/api/adb/revokeoperatorpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeOperatorPermissionWithChan(request *RevokeOperatorPermissionRequest) (<-chan *RevokeOperatorPermissionResponse, <-chan error) {
 	responseChan := make(chan *RevokeOperatorPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RevokeOperatorPermissionWithChan(request *RevokeOperatorPe
 }
 
 // RevokeOperatorPermissionWithCallback invokes the adb.RevokeOperatorPermission API asynchronously
-// api document: https://help.aliyun.com/api/adb/revokeoperatorpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeOperatorPermissionWithCallback(request *RevokeOperatorPermissionRequest, callback func(response *RevokeOperatorPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

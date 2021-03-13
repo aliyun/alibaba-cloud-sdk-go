@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAuditLogConfig invokes the adb.ModifyAuditLogConfig API synchronously
-// api document: https://help.aliyun.com/api/adb/modifyauditlogconfig.html
 func (client *Client) ModifyAuditLogConfig(request *ModifyAuditLogConfigRequest) (response *ModifyAuditLogConfigResponse, err error) {
 	response = CreateModifyAuditLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAuditLogConfig(request *ModifyAuditLogConfigRequest)
 }
 
 // ModifyAuditLogConfigWithChan invokes the adb.ModifyAuditLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifyauditlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAuditLogConfigWithChan(request *ModifyAuditLogConfigRequest) (<-chan *ModifyAuditLogConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyAuditLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAuditLogConfigWithChan(request *ModifyAuditLogConfig
 }
 
 // ModifyAuditLogConfigWithCallback invokes the adb.ModifyAuditLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifyauditlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAuditLogConfigWithCallback(request *ModifyAuditLogConfigRequest, callback func(response *ModifyAuditLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

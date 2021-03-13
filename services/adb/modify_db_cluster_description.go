@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBClusterDescription invokes the adb.ModifyDBClusterDescription API synchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclusterdescription.html
 func (client *Client) ModifyDBClusterDescription(request *ModifyDBClusterDescriptionRequest) (response *ModifyDBClusterDescriptionResponse, err error) {
 	response = CreateModifyDBClusterDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBClusterDescription(request *ModifyDBClusterDescrip
 }
 
 // ModifyDBClusterDescriptionWithChan invokes the adb.ModifyDBClusterDescription API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclusterdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterDescriptionWithChan(request *ModifyDBClusterDescriptionRequest) (<-chan *ModifyDBClusterDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBClusterDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBClusterDescriptionWithChan(request *ModifyDBCluste
 }
 
 // ModifyDBClusterDescriptionWithCallback invokes the adb.ModifyDBClusterDescription API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifydbclusterdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterDescriptionWithCallback(request *ModifyDBClusterDescriptionRequest, callback func(response *ModifyDBClusterDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

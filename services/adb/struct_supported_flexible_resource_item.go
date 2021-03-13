@@ -17,7 +17,8 @@ package adb
 
 // SupportedFlexibleResourceItem is a nested struct in adb response
 type SupportedFlexibleResourceItem struct {
-	StorageType              string   `json:"StorageType" xml:"StorageType"`
-	SupportedStorageResource []string `json:"SupportedStorageResource" xml:"SupportedStorageResource"`
-	SupportedComputeResource []string `json:"SupportedComputeResource" xml:"SupportedComputeResource"`
+	StorageType                string                     `json:"StorageType" xml:"StorageType"`
+	SupportedStorageResource   []string                   `json:"SupportedStorageResource" xml:"SupportedStorageResource"`
+	SupportedComputeResource   []string                   `json:"SupportedComputeResource" xml:"SupportedComputeResource"`
+	SupportedElasticIOResource SupportedElasticIOResource `json:"SupportedElasticIOResource" xml:"SupportedElasticIOResource"`
 }

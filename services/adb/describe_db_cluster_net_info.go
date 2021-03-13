@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBClusterNetInfo invokes the adb.DescribeDBClusterNetInfo API synchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusternetinfo.html
 func (client *Client) DescribeDBClusterNetInfo(request *DescribeDBClusterNetInfoRequest) (response *DescribeDBClusterNetInfoResponse, err error) {
 	response = CreateDescribeDBClusterNetInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBClusterNetInfo(request *DescribeDBClusterNetInfo
 }
 
 // DescribeDBClusterNetInfoWithChan invokes the adb.DescribeDBClusterNetInfo API asynchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusternetinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterNetInfoWithChan(request *DescribeDBClusterNetInfoRequest) (<-chan *DescribeDBClusterNetInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBClusterNetInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBClusterNetInfoWithChan(request *DescribeDBCluste
 }
 
 // DescribeDBClusterNetInfoWithCallback invokes the adb.DescribeDBClusterNetInfo API asynchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusternetinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterNetInfoWithCallback(request *DescribeDBClusterNetInfoRequest, callback func(response *DescribeDBClusterNetInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

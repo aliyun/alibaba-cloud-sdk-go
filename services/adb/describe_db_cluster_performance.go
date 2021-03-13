@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBClusterPerformance invokes the adb.DescribeDBClusterPerformance API synchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusterperformance.html
 func (client *Client) DescribeDBClusterPerformance(request *DescribeDBClusterPerformanceRequest) (response *DescribeDBClusterPerformanceResponse, err error) {
 	response = CreateDescribeDBClusterPerformanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBClusterPerformance(request *DescribeDBClusterPer
 }
 
 // DescribeDBClusterPerformanceWithChan invokes the adb.DescribeDBClusterPerformance API asynchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusterperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterPerformanceWithChan(request *DescribeDBClusterPerformanceRequest) (<-chan *DescribeDBClusterPerformanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBClusterPerformanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBClusterPerformanceWithChan(request *DescribeDBCl
 }
 
 // DescribeDBClusterPerformanceWithCallback invokes the adb.DescribeDBClusterPerformance API asynchronously
-// api document: https://help.aliyun.com/api/adb/describedbclusterperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterPerformanceWithCallback(request *DescribeDBClusterPerformanceRequest, callback func(response *DescribeDBClusterPerformanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

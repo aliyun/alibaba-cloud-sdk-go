@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeColumns invokes the adb.DescribeColumns API synchronously
-// api document: https://help.aliyun.com/api/adb/describecolumns.html
 func (client *Client) DescribeColumns(request *DescribeColumnsRequest) (response *DescribeColumnsResponse, err error) {
 	response = CreateDescribeColumnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeColumns(request *DescribeColumnsRequest) (response
 }
 
 // DescribeColumnsWithChan invokes the adb.DescribeColumns API asynchronously
-// api document: https://help.aliyun.com/api/adb/describecolumns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeColumnsWithChan(request *DescribeColumnsRequest) (<-chan *DescribeColumnsResponse, <-chan error) {
 	responseChan := make(chan *DescribeColumnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeColumnsWithChan(request *DescribeColumnsRequest) (
 }
 
 // DescribeColumnsWithCallback invokes the adb.DescribeColumns API asynchronously
-// api document: https://help.aliyun.com/api/adb/describecolumns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeColumnsWithCallback(request *DescribeColumnsRequest, callback func(response *DescribeColumnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

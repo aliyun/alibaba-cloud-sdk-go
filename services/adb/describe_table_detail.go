@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTableDetail invokes the adb.DescribeTableDetail API synchronously
-// api document: https://help.aliyun.com/api/adb/describetabledetail.html
 func (client *Client) DescribeTableDetail(request *DescribeTableDetailRequest) (response *DescribeTableDetailResponse, err error) {
 	response = CreateDescribeTableDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTableDetail(request *DescribeTableDetailRequest) (
 }
 
 // DescribeTableDetailWithChan invokes the adb.DescribeTableDetail API asynchronously
-// api document: https://help.aliyun.com/api/adb/describetabledetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTableDetailWithChan(request *DescribeTableDetailRequest) (<-chan *DescribeTableDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeTableDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTableDetailWithChan(request *DescribeTableDetailRe
 }
 
 // DescribeTableDetailWithCallback invokes the adb.DescribeTableDetail API asynchronously
-// api document: https://help.aliyun.com/api/adb/describetabledetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTableDetailWithCallback(request *DescribeTableDetailRequest, callback func(response *DescribeTableDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

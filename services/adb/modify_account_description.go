@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAccountDescription invokes the adb.ModifyAccountDescription API synchronously
-// api document: https://help.aliyun.com/api/adb/modifyaccountdescription.html
 func (client *Client) ModifyAccountDescription(request *ModifyAccountDescriptionRequest) (response *ModifyAccountDescriptionResponse, err error) {
 	response = CreateModifyAccountDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAccountDescription(request *ModifyAccountDescription
 }
 
 // ModifyAccountDescriptionWithChan invokes the adb.ModifyAccountDescription API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifyaccountdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDescriptionRequest) (<-chan *ModifyAccountDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyAccountDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDes
 }
 
 // ModifyAccountDescriptionWithCallback invokes the adb.ModifyAccountDescription API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifyaccountdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccountDescriptionRequest, callback func(response *ModifyAccountDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

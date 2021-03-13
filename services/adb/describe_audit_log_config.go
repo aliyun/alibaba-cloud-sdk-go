@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAuditLogConfig invokes the adb.DescribeAuditLogConfig API synchronously
-// api document: https://help.aliyun.com/api/adb/describeauditlogconfig.html
 func (client *Client) DescribeAuditLogConfig(request *DescribeAuditLogConfigRequest) (response *DescribeAuditLogConfigResponse, err error) {
 	response = CreateDescribeAuditLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAuditLogConfig(request *DescribeAuditLogConfigRequ
 }
 
 // DescribeAuditLogConfigWithChan invokes the adb.DescribeAuditLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeauditlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditLogConfigWithChan(request *DescribeAuditLogConfigRequest) (<-chan *DescribeAuditLogConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeAuditLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAuditLogConfigWithChan(request *DescribeAuditLogCo
 }
 
 // DescribeAuditLogConfigWithCallback invokes the adb.DescribeAuditLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeauditlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditLogConfigWithCallback(request *DescribeAuditLogConfigRequest, callback func(response *DescribeAuditLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

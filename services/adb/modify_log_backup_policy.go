@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyLogBackupPolicy invokes the adb.ModifyLogBackupPolicy API synchronously
-// api document: https://help.aliyun.com/api/adb/modifylogbackuppolicy.html
 func (client *Client) ModifyLogBackupPolicy(request *ModifyLogBackupPolicyRequest) (response *ModifyLogBackupPolicyResponse, err error) {
 	response = CreateModifyLogBackupPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyLogBackupPolicy(request *ModifyLogBackupPolicyReques
 }
 
 // ModifyLogBackupPolicyWithChan invokes the adb.ModifyLogBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifylogbackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLogBackupPolicyWithChan(request *ModifyLogBackupPolicyRequest) (<-chan *ModifyLogBackupPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifyLogBackupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyLogBackupPolicyWithChan(request *ModifyLogBackupPoli
 }
 
 // ModifyLogBackupPolicyWithCallback invokes the adb.ModifyLogBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifylogbackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLogBackupPolicyWithCallback(request *ModifyLogBackupPolicyRequest, callback func(response *ModifyLogBackupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

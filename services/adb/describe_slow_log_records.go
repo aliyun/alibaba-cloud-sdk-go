@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSlowLogRecords invokes the adb.DescribeSlowLogRecords API synchronously
-// api document: https://help.aliyun.com/api/adb/describeslowlogrecords.html
 func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequest) (response *DescribeSlowLogRecordsResponse, err error) {
 	response = CreateDescribeSlowLogRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequ
 }
 
 // DescribeSlowLogRecordsWithChan invokes the adb.DescribeSlowLogRecords API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeslowlogrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRecordsRequest) (<-chan *DescribeSlowLogRecordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlowLogRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRec
 }
 
 // DescribeSlowLogRecordsWithCallback invokes the adb.DescribeSlowLogRecords API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeslowlogrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLogRecordsRequest, callback func(response *DescribeSlowLogRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,24 +72,28 @@ func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLo
 type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Range                string           `position:"Query" name:"Range"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	State                string           `position:"Query" name:"State"`
+	Order                string           `position:"Query" name:"Order"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBName               string           `position:"Query" name:"DBName"`
+	ProcessID            string           `position:"Query" name:"ProcessID"`
 }
 
 // DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId   string                        `json:"RequestId" xml:"RequestId"`
 	TotalCount  string                        `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  string                        `json:"PageNumber" xml:"PageNumber"`
+	RequestId   string                        `json:"RequestId" xml:"RequestId"`
 	PageSize    string                        `json:"PageSize" xml:"PageSize"`
+	PageNumber  string                        `json:"PageNumber" xml:"PageNumber"`
 	DBClusterId string                        `json:"DBClusterId" xml:"DBClusterId"`
 	Items       ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }

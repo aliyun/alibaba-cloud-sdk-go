@@ -21,7 +21,6 @@ import (
 )
 
 // GrantOperatorPermission invokes the adb.GrantOperatorPermission API synchronously
-// api document: https://help.aliyun.com/api/adb/grantoperatorpermission.html
 func (client *Client) GrantOperatorPermission(request *GrantOperatorPermissionRequest) (response *GrantOperatorPermissionResponse, err error) {
 	response = CreateGrantOperatorPermissionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GrantOperatorPermission(request *GrantOperatorPermissionRe
 }
 
 // GrantOperatorPermissionWithChan invokes the adb.GrantOperatorPermission API asynchronously
-// api document: https://help.aliyun.com/api/adb/grantoperatorpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantOperatorPermissionWithChan(request *GrantOperatorPermissionRequest) (<-chan *GrantOperatorPermissionResponse, <-chan error) {
 	responseChan := make(chan *GrantOperatorPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GrantOperatorPermissionWithChan(request *GrantOperatorPerm
 }
 
 // GrantOperatorPermissionWithCallback invokes the adb.GrantOperatorPermission API asynchronously
-// api document: https://help.aliyun.com/api/adb/grantoperatorpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantOperatorPermissionWithCallback(request *GrantOperatorPermissionRequest, callback func(response *GrantOperatorPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

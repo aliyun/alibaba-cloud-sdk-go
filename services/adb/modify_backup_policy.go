@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBackupPolicy invokes the adb.ModifyBackupPolicy API synchronously
-// api document: https://help.aliyun.com/api/adb/modifybackuppolicy.html
 func (client *Client) ModifyBackupPolicy(request *ModifyBackupPolicyRequest) (response *ModifyBackupPolicyResponse, err error) {
 	response = CreateModifyBackupPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBackupPolicy(request *ModifyBackupPolicyRequest) (re
 }
 
 // ModifyBackupPolicyWithChan invokes the adb.ModifyBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifybackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupPolicyWithChan(request *ModifyBackupPolicyRequest) (<-chan *ModifyBackupPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifyBackupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBackupPolicyWithChan(request *ModifyBackupPolicyRequ
 }
 
 // ModifyBackupPolicyWithCallback invokes the adb.ModifyBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/adb/modifybackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicyRequest, callback func(response *ModifyBackupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,16 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 // ModifyBackupPolicyRequest is the request struct for api ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PreferredBackupPeriod string           `position:"Query" name:"PreferredBackupPeriod"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId           string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	PreferredBackupTime   string           `position:"Query" name:"PreferredBackupTime"`
-	BackupRetentionPeriod string           `position:"Query" name:"BackupRetentionPeriod"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EnableBackupLog          string           `position:"Query" name:"EnableBackupLog"`
+	PreferredBackupPeriod    string           `position:"Query" name:"PreferredBackupPeriod"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId              string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	PreferredBackupTime      string           `position:"Query" name:"PreferredBackupTime"`
+	BackupRetentionPeriod    string           `position:"Query" name:"BackupRetentionPeriod"`
+	LogBackupRetentionPeriod requests.Integer `position:"Query" name:"LogBackupRetentionPeriod"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy

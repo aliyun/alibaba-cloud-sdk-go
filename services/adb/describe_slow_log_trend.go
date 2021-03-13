@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSlowLogTrend invokes the adb.DescribeSlowLogTrend API synchronously
-// api document: https://help.aliyun.com/api/adb/describeslowlogtrend.html
 func (client *Client) DescribeSlowLogTrend(request *DescribeSlowLogTrendRequest) (response *DescribeSlowLogTrendResponse, err error) {
 	response = CreateDescribeSlowLogTrendResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSlowLogTrend(request *DescribeSlowLogTrendRequest)
 }
 
 // DescribeSlowLogTrendWithChan invokes the adb.DescribeSlowLogTrend API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeslowlogtrend.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogTrendWithChan(request *DescribeSlowLogTrendRequest) (<-chan *DescribeSlowLogTrendResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlowLogTrendResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSlowLogTrendWithChan(request *DescribeSlowLogTrend
 }
 
 // DescribeSlowLogTrendWithCallback invokes the adb.DescribeSlowLogTrend API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeslowlogtrend.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogTrendWithCallback(request *DescribeSlowLogTrendRequest, callback func(response *DescribeSlowLogTrendResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
