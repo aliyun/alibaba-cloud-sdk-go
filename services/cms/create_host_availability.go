@@ -72,6 +72,7 @@ func (client *Client) CreateHostAvailabilityWithCallback(request *CreateHostAvai
 type CreateHostAvailabilityRequest struct {
 	*requests.RpcRequest
 	TaskOptionHttpMethod               string                                             `position:"Query" name:"TaskOption.HttpMethod"`
+	TaskOptionHttpHeader               string                                             `position:"Query" name:"TaskOption.HttpHeader"`
 	AlertConfigEscalationList          *[]CreateHostAvailabilityAlertConfigEscalationList `position:"Query" name:"AlertConfigEscalationList"  type:"Repeated"`
 	TaskName                           string                                             `position:"Query" name:"TaskName"`
 	AlertConfigSilenceTime             requests.Integer                                   `position:"Query" name:"AlertConfig.SilenceTime"`

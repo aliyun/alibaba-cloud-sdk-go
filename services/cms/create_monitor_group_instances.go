@@ -72,7 +72,7 @@ func (client *Client) CreateMonitorGroupInstancesWithCallback(request *CreateMon
 type CreateMonitorGroupInstancesRequest struct {
 	*requests.RpcRequest
 	Instances *[]CreateMonitorGroupInstancesInstances `position:"Query" name:"Instances"  type:"Repeated"`
-	GroupId   requests.Integer                        `position:"Query" name:"GroupId"`
+	GroupId   string                                  `position:"Query" name:"GroupId"`
 }
 
 // CreateMonitorGroupInstancesInstances is a repeated param struct in CreateMonitorGroupInstancesRequest

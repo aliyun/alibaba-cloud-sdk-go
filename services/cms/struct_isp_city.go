@@ -33,4 +33,6 @@ type IspCity struct {
 	Isp            string `json:"Isp" xml:"Isp"`
 	RegionEn       string `json:"Region.en" xml:"Region.en"`
 	IPV6ProbeCount string `json:"IPV6ProbeCount" xml:"IPV6ProbeCount"`
+	APIProbeCount  string `json:"APIProbeCount" xml:"APIProbeCount"`
+	IPPool         IPPool `json:"IPPool" xml:"IPPool"`
 }

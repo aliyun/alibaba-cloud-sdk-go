@@ -17,5 +17,5 @@ package cms
 
 // DataInDescribeSystemEventMetaList is a nested struct in cms response
 type DataInDescribeSystemEventMetaList struct {
-	Resource []Resource `json:"Resource" xml:"Resource"`
+	Resource []ResourceInDescribeSystemEventMetaList `json:"Resource" xml:"Resource"`
 }

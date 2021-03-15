@@ -17,18 +17,22 @@ package cms
 
 // ResourceInDescribeAlertingMetricRuleResources is a nested struct in cms response
 type ResourceInDescribeAlertingMetricRuleResources struct {
-	RuleId         string `json:"RuleId" xml:"RuleId"`
-	RuleName       string `json:"RuleName" xml:"RuleName"`
-	GroupId        string `json:"GroupId" xml:"GroupId"`
-	Resource       string `json:"Resource" xml:"Resource"`
-	MetricName     string `json:"MetricName" xml:"MetricName"`
-	Namespace      string `json:"Namespace" xml:"Namespace"`
-	Enable         string `json:"Enable" xml:"Enable"`
-	LastAlertTime  string `json:"LastAlertTime" xml:"LastAlertTime"`
-	LastModifyTime string `json:"LastModifyTime" xml:"LastModifyTime"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
-	MetricValues   string `json:"MetricValues" xml:"MetricValues"`
-	RetryTimes     string `json:"RetryTimes" xml:"RetryTimes"`
-	Statistics     string `json:"Statistics" xml:"Statistics"`
-	Threshold      string `json:"Threshold" xml:"Threshold"`
+	RuleId          string                                          `json:"RuleId" xml:"RuleId"`
+	RuleName        string                                          `json:"RuleName" xml:"RuleName"`
+	GroupId         string                                          `json:"GroupId" xml:"GroupId"`
+	Resource        string                                          `json:"Resource" xml:"Resource"`
+	MetricName      string                                          `json:"MetricName" xml:"MetricName"`
+	Namespace       string                                          `json:"Namespace" xml:"Namespace"`
+	Enable          string                                          `json:"Enable" xml:"Enable"`
+	LastAlertTime   string                                          `json:"LastAlertTime" xml:"LastAlertTime"`
+	LastModifyTime  string                                          `json:"LastModifyTime" xml:"LastModifyTime"`
+	Dimensions      string                                          `json:"Dimensions" xml:"Dimensions"`
+	StartTime       string                                          `json:"StartTime" xml:"StartTime"`
+	MetricValues    string                                          `json:"MetricValues" xml:"MetricValues"`
+	RetryTimes      string                                          `json:"RetryTimes" xml:"RetryTimes"`
+	Statistics      string                                          `json:"Statistics" xml:"Statistics"`
+	Threshold       string                                          `json:"Threshold" xml:"Threshold"`
+	ProductCategory string                                          `json:"ProductCategory" xml:"ProductCategory"`
+	Level           int                                             `json:"Level" xml:"Level"`
+	Escalation      EscalationInDescribeAlertingMetricRuleResources `json:"Escalation" xml:"Escalation"`
 }

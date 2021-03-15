@@ -21,43 +21,43 @@ type Resource struct {
 	Name                 string                                      `json:"Name" xml:"Name"`
 	Category             string                                      `json:"Category" xml:"Category"`
 	Unit                 string                                      `json:"Unit" xml:"Unit"`
-	NameDesc             string                                      `json:"NameDesc" xml:"NameDesc"`
 	Desc                 string                                      `json:"Desc" xml:"Desc"`
 	BindUrl              string                                      `json:"BindUrl" xml:"BindUrl"`
 	Dimensions           string                                      `json:"Dimensions" xml:"Dimensions"`
 	GroupName            string                                      `json:"GroupName" xml:"GroupName"`
+	ComparisonOperator   string                                      `json:"ComparisonOperator" xml:"ComparisonOperator"`
 	ServiceId            string                                      `json:"ServiceId" xml:"ServiceId"`
 	RestVersion          string                                      `json:"RestVersion" xml:"RestVersion"`
 	RegionId             string                                      `json:"RegionId" xml:"RegionId"`
+	Tag                  string                                      `json:"Tag" xml:"Tag"`
 	InstanceId           string                                      `json:"InstanceId" xml:"InstanceId"`
 	DynamicTagRuleId     string                                      `json:"DynamicTagRuleId" xml:"DynamicTagRuleId"`
+	Expression           string                                      `json:"Expression" xml:"Expression"`
 	NetworkType          string                                      `json:"NetworkType" xml:"NetworkType"`
 	Description          string                                      `json:"Description" xml:"Description"`
 	Periods              string                                      `json:"Periods" xml:"Periods"`
 	Type                 string                                      `json:"Type" xml:"Type"`
-	Product              string                                      `json:"Product" xml:"Product"`
+	Times                int                                         `json:"Times" xml:"Times"`
+	Level                int                                         `json:"Level" xml:"Level"`
 	InstanceName         string                                      `json:"InstanceName" xml:"InstanceName"`
-	Level                string                                      `json:"Level" xml:"Level"`
 	Dimension            string                                      `json:"Dimension" xml:"Dimension"`
+	PreCondition         string                                      `json:"PreCondition" xml:"PreCondition"`
 	Id                   int64                                       `json:"Id" xml:"Id"`
+	Threshold            string                                      `json:"Threshold" xml:"Threshold"`
 	GroupFounderTagValue string                                      `json:"GroupFounderTagValue" xml:"GroupFounderTagValue"`
 	GmtCreate            int64                                       `json:"GmtCreate" xml:"GmtCreate"`
-	NameDescEn           string                                      `json:"NameDesc.En" xml:"NameDesc.En"`
-	EventType            string                                      `json:"EventType" xml:"EventType"`
 	Namespace            string                                      `json:"Namespace" xml:"Namespace"`
 	GroupId              int64                                       `json:"GroupId" xml:"GroupId"`
 	GmtModified          int64                                       `json:"GmtModified" xml:"GmtModified"`
 	GroupFounderTagKey   string                                      `json:"GroupFounderTagKey" xml:"GroupFounderTagKey"`
 	MetricName           string                                      `json:"MetricName" xml:"MetricName"`
-	StatusDesc           string                                      `json:"StatusDesc" xml:"StatusDesc"`
 	Labels               string                                      `json:"Labels" xml:"Labels"`
-	Status               string                                      `json:"Status" xml:"Status"`
 	Statistics           string                                      `json:"Statistics" xml:"Statistics"`
 	TemplateIds          TemplateIds                                 `json:"TemplateIds" xml:"TemplateIds"`
 	Vpc                  Vpc                                         `json:"Vpc" xml:"Vpc"`
 	Region               Region                                      `json:"Region" xml:"Region"`
+	AlertResults         []Result                                    `json:"AlertResults" xml:"AlertResults"`
 	Tags                 TagsInDescribeMonitorGroupInstanceAttribute `json:"Tags" xml:"Tags"`
 	ContactGroups        ContactGroupsInDescribeMonitorGroups        `json:"ContactGroups" xml:"ContactGroups"`
-	AlertResults         []Result                                    `json:"AlertResults" xml:"AlertResults"`
 	AlertTemplates       AlertTemplates                              `json:"AlertTemplates" xml:"AlertTemplates"`
 }
