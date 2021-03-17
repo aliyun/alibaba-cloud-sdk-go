@@ -74,14 +74,17 @@ type EnableAdditionalBandwidthRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	SourceBiz            string           `position:"Query" name:"SourceBiz"`
 	NodeId               string           `position:"Query" name:"NodeId"`
 	OrderTimeLength      string           `position:"Query" name:"OrderTimeLength"`
+	Product              string           `position:"Query" name:"Product"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Category             string           `position:"Query" name:"Category"`
 }
 
 // EnableAdditionalBandwidthResponse is the response struct for api EnableAdditionalBandwidth
