@@ -1,3 +1,7 @@
+2021-03-17 Version: v1.61.983
+- Generated 2019-01-01 for `Cms`.
+- Add group alarm rule resource extension parameter.
+
 2021-03-17 Version: v1.61.982
 - Generated 2019-09-30 for `imageenhan`.
 - Update MakeSuperResolutionImage.
