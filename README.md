@@ -27,7 +27,7 @@ This document introduces how to obtain and call [Alibaba Cloud SDK for Go][SDK].
 [Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
 
 ## Online Demo
-[API Explorer][open-api] provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API.
+[Alibaba Cloud OpenAPI Developer Portal][open-api-portal] provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API.
 
 
 ## Requirements
@@ -132,7 +132,7 @@ Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making
 
 ## References
 * [Alibaba Cloud Regions & Endpoints][endpoints]
-* [OpenAPI Explorer][open-api]
+* [Alibaba Cloud OpenAPI Developer Portal][open-api-portal]
 * [Go][go]
 * [Latest Release][latest-release]
 
@@ -142,7 +142,7 @@ Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making
 
 [SDK]: https://github.com/aliyun/alibaba-cloud-sdk-go
 [issue]: https://github.com/aliyun/alibaba-cloud-sdk-go/issues/new
-[open-api]: https://api.aliyun.com/#/
+[open-api-portal]: https://next.api.aliyun.com/
 [latest-release]: https://github.com/aliyun/alibaba-cloud-sdk-go/releases
 [go]: https://golang.org/dl/
 [endpoints]: https://developer.aliyun.com/endpoints
