@@ -75,6 +75,7 @@ type Result struct {
 	LastTestResult           string              `json:"LastTestResult" xml:"LastTestResult"`
 	Public                   bool                `json:"Public" xml:"Public"`
 	NotificationLevel        int                 `json:"NotificationLevel" xml:"NotificationLevel"`
+	Enable                   bool                `json:"Enable" xml:"Enable"`
 	TotalLines               int                 `json:"TotalLines" xml:"TotalLines"`
 	UserId                   int64               `json:"UserId" xml:"UserId"`
 	ImportUrl                string              `json:"ImportUrl" xml:"ImportUrl"`
