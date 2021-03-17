@@ -71,7 +71,9 @@ func (client *Client) MakeSuperResolutionImageWithCallback(request *MakeSuperRes
 // MakeSuperResolutionImageRequest is the request struct for api MakeSuperResolutionImage
 type MakeSuperResolutionImageRequest struct {
 	*requests.RpcRequest
-	Url string `position:"Body" name:"Url"`
+	UpscaleFactor requests.Integer `position:"Body" name:"UpscaleFactor"`
+	Mode          string           `position:"Body" name:"Mode"`
+	Url           string           `position:"Body" name:"Url"`
 }
 
 // MakeSuperResolutionImageResponse is the response struct for api MakeSuperResolutionImage
