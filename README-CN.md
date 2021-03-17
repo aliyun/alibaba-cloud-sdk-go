@@ -21,10 +21,10 @@
 这里向您介绍如何获取 [Alibaba Cloud SDK for Go][SDK] 并开始调用。
 
 ## 使用诊断
-[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) 提供 OpenAPI 使用诊断服务，通过 `RequestID` 或 `报错信息` ，帮助开发者快速定位，为开发者提供解决方案。
+[Troubleshoot](https://next.api.aliyun.com/troubleshoot?source=github_sdk) 提供 OpenAPI 使用诊断服务，通过 `RequestID` 或 `报错信息` ，帮助开发者快速定位，为开发者提供解决方案。
 
 ## 在线示例
-[API Explorer][open-api] 提供在线调用阿里云产品，并动态生成 SDK 代码和快速检索接口等能力，能显著降低使用云 API 的难度。
+[阿里云 OpenAPI 开发者门户][open-api-portal] 提供在线调用阿里云产品，并动态生成 SDK 代码和快速检索接口等能力，能显著降低使用云 API 的难度。
 
 
 ## 环境要求
@@ -128,7 +128,7 @@ func main() {
 
 ## 相关
 * [阿里云服务 Regions & Endpoints][endpoints]
-* [OpenAPI Explorer][open-api]
+* [阿里云 OpenAPI 开发者门户][open-api-portal]
 * [Go][go]
 * [最新发行版本][latest-release]
 
@@ -139,7 +139,7 @@ func main() {
 [SDK]: https://github.com/aliyun/alibaba-cloud-sdk-go
 [apache]: http://www.apache.org/licenses/LICENSE-2.0
 [issue]: https://github.com/aliyun/alibaba-cloud-sdk-go/issues/new
-[open-api]: https://api.aliyun.com/
+[open-api-portal]: https://next.api.aliyun.com/
 [latest-release]: https://github.com/aliyun/alibaba-cloud-sdk-go/releases
 [go]: https://golang.org/dl/
 [endpoints]: https://developer.aliyun.com/endpoints
