@@ -1,3 +1,8 @@
+2021-03-18 Version: v1.61.986
+- Generated 2019-08-08 for `ARMS`.
+- Edit GetTrace api.
+- Edit GetMultipleTrace api.
+
 2021-03-17 Version: v1.61.985
 - Generated 2020-04-14 for `codeup`.
 - Add organizaition security center API.
