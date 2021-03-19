@@ -90,7 +90,7 @@ func CreateListInstancePatchesRequest() (request *ListInstancePatchesRequest) {
 	request = &ListInstancePatchesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListInstancePatches", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListInstancePatches", "", "")
 	request.Method = requests.POST
 	return
 }

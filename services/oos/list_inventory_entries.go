@@ -103,7 +103,7 @@ func CreateListInventoryEntriesRequest() (request *ListInventoryEntriesRequest) 
 	request = &ListInventoryEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListInventoryEntries", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListInventoryEntries", "", "")
 	request.Method = requests.POST
 	return
 }

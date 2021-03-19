@@ -85,8 +85,8 @@ type UpdateStateConfigurationRequest struct {
 // UpdateStateConfigurationResponse is the response struct for api UpdateStateConfiguration
 type UpdateStateConfigurationResponse struct {
 	*responses.BaseResponse
-	RequestId          string                                             `json:"RequestId" xml:"RequestId"`
-	StateConfiguration []StateConfigurationItemInUpdateStateConfiguration `json:"StateConfiguration" xml:"StateConfiguration"`
+	RequestId          string                   `json:"RequestId" xml:"RequestId"`
+	StateConfiguration []StateConfigurationItem `json:"StateConfiguration" xml:"StateConfiguration"`
 }
 
 // CreateUpdateStateConfigurationRequest creates a request to invoke UpdateStateConfiguration API
@@ -94,7 +94,7 @@ func CreateUpdateStateConfigurationRequest() (request *UpdateStateConfigurationR
 	request = &UpdateStateConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "UpdateStateConfiguration", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdateStateConfiguration", "", "")
 	request.Method = requests.POST
 	return
 }

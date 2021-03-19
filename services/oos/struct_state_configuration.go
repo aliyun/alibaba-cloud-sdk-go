@@ -18,15 +18,14 @@ package oos
 // StateConfiguration is a nested struct in oos response
 type StateConfiguration struct {
 	TemplateId           string                 `json:"TemplateId" xml:"TemplateId"`
+	TemplateVersion      string                 `json:"TemplateVersion" xml:"TemplateVersion"`
+	Parameters           map[string]interface{} `json:"Parameters" xml:"Parameters"`
 	ConfigureMode        string                 `json:"ConfigureMode" xml:"ConfigureMode"`
 	TemplateName         string                 `json:"TemplateName" xml:"TemplateName"`
-	UpdateTime           string                 `json:"UpdateTime" xml:"UpdateTime"`
 	CreateTime           string                 `json:"CreateTime" xml:"CreateTime"`
 	ScheduleType         string                 `json:"ScheduleType" xml:"ScheduleType"`
 	StateConfigurationId string                 `json:"StateConfigurationId" xml:"StateConfigurationId"`
 	Targets              string                 `json:"Targets" xml:"Targets"`
-	TemplateVersion      string                 `json:"TemplateVersion" xml:"TemplateVersion"`
-	Parameters           string                 `json:"Parameters" xml:"Parameters"`
 	ScheduleExpression   string                 `json:"ScheduleExpression" xml:"ScheduleExpression"`
 	Description          string                 `json:"Description" xml:"Description"`
 	Tags                 map[string]interface{} `json:"Tags" xml:"Tags"`

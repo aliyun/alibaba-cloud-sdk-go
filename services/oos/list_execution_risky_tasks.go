@@ -86,7 +86,7 @@ func CreateListExecutionRiskyTasksRequest() (request *ListExecutionRiskyTasksReq
 	request = &ListExecutionRiskyTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListExecutionRiskyTasks", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListExecutionRiskyTasks", "", "")
 	request.Method = requests.POST
 	return
 }

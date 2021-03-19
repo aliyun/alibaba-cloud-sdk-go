@@ -87,7 +87,7 @@ func CreateUpdateExecutionRequest() (request *UpdateExecutionRequest) {
 	request = &UpdateExecutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "UpdateExecution", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdateExecution", "", "")
 	request.Method = requests.POST
 	return
 }

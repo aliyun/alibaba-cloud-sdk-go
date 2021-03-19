@@ -73,18 +73,19 @@ type CreateSecretParameterRequest struct {
 	*requests.RpcRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
 	Description string `position:"Query" name:"Description"`
-	KeyId       string `position:"Query" name:"KeyId"`
 	Type        string `position:"Query" name:"Type"`
 	Constraints string `position:"Query" name:"Constraints"`
-	Name        string `position:"Query" name:"Name"`
 	Value       string `position:"Query" name:"Value"`
+	KeyId       string `position:"Query" name:"KeyId"`
+	Tags        string `position:"Query" name:"Tags"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // CreateSecretParameterResponse is the response struct for api CreateSecretParameter
 type CreateSecretParameterResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Parameter Parameter `json:"Parameter" xml:"Parameter"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	Parameter ParameterInCreateSecretParameter `json:"Parameter" xml:"Parameter"`
 }
 
 // CreateCreateSecretParameterRequest creates a request to invoke CreateSecretParameter API
@@ -92,7 +93,7 @@ func CreateCreateSecretParameterRequest() (request *CreateSecretParameterRequest
 	request = &CreateSecretParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "CreateSecretParameter", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "CreateSecretParameter", "", "")
 	request.Method = requests.POST
 	return
 }

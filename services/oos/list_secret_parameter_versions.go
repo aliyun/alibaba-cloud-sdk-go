@@ -99,7 +99,7 @@ func CreateListSecretParameterVersionsRequest() (request *ListSecretParameterVer
 	request = &ListSecretParameterVersionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListSecretParameterVersions", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListSecretParameterVersions", "", "")
 	request.Method = requests.POST
 	return
 }

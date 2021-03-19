@@ -72,6 +72,7 @@ func (client *Client) ListSecretParametersWithCallback(request *ListSecretParame
 type ListSecretParametersRequest struct {
 	*requests.RpcRequest
 	Recursive  requests.Boolean `position:"Query" name:"Recursive"`
+	Tags       string           `position:"Query" name:"Tags"`
 	Path       string           `position:"Query" name:"Path"`
 	NextToken  string           `position:"Query" name:"NextToken"`
 	Name       string           `position:"Query" name:"Name"`
@@ -94,7 +95,7 @@ func CreateListSecretParametersRequest() (request *ListSecretParametersRequest) 
 	request = &ListSecretParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListSecretParameters", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListSecretParameters", "", "")
 	request.Method = requests.POST
 	return
 }

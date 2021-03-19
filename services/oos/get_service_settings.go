@@ -85,7 +85,7 @@ func CreateGetServiceSettingsRequest() (request *GetServiceSettingsRequest) {
 	request = &GetServiceSettingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetServiceSettings", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetServiceSettings", "", "")
 	request.Method = requests.POST
 	return
 }

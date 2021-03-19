@@ -90,7 +90,7 @@ func CreateGetInventorySchemaRequest() (request *GetInventorySchemaRequest) {
 	request = &GetInventorySchemaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetInventorySchema", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetInventorySchema", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateListResourceExecutionStatusRequest() (request *ListResourceExecutionS
 	request = &ListResourceExecutionStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListResourceExecutionStatus", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListResourceExecutionStatus", "", "")
 	request.Method = requests.POST
 	return
 }

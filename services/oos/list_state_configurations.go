@@ -82,8 +82,8 @@ type ListStateConfigurationsRequest struct {
 // ListStateConfigurationsResponse is the response struct for api ListStateConfigurations
 type ListStateConfigurationsResponse struct {
 	*responses.BaseResponse
-	RequestId           string               `json:"RequestId" xml:"RequestId"`
-	StateConfigurations []StateConfiguration `json:"StateConfigurations" xml:"StateConfigurations"`
+	RequestId           string                                        `json:"RequestId" xml:"RequestId"`
+	StateConfigurations []StateConfigurationInListStateConfigurations `json:"StateConfigurations" xml:"StateConfigurations"`
 }
 
 // CreateListStateConfigurationsRequest creates a request to invoke ListStateConfigurations API
@@ -91,7 +91,7 @@ func CreateListStateConfigurationsRequest() (request *ListStateConfigurationsReq
 	request = &ListStateConfigurationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListStateConfigurations", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListStateConfigurations", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -1,3 +1,7 @@
+2021-03-19 Version: v1.61.990
+- Generated 2019-06-01 for `oos`.
+- StateConfiguration in CreateStateConfigurationResponse changes from list to single object.
+
 2021-03-19 Version: v1.61.989
 - Generated 2019-02-14 for `Ons`.
 - Modify the helpUrl parameter of OnsTopicList and OnsGroupList API to be invisible.

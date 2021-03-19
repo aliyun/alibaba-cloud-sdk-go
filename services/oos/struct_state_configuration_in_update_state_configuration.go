@@ -17,5 +17,5 @@ package oos
 
 // StateConfigurationInUpdateStateConfiguration is a nested struct in oos response
 type StateConfigurationInUpdateStateConfiguration struct {
-	StateConfigurationItem []StateConfigurationItemInUpdateStateConfiguration `json:"StateConfiguration" xml:"StateConfiguration"`
+	StateConfigurationItem []StateConfigurationItem `json:"StateConfiguration" xml:"StateConfiguration"`
 }

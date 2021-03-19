@@ -92,7 +92,7 @@ func CreateListPatchBaselinesRequest() (request *ListPatchBaselinesRequest) {
 	request = &ListPatchBaselinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListPatchBaselines", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListPatchBaselines", "", "")
 	request.Method = requests.POST
 	return
 }

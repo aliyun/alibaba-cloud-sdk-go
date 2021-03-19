@@ -92,7 +92,7 @@ func CreateUpdateInstanceInformationRequest() (request *UpdateInstanceInformatio
 	request = &UpdateInstanceInformationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "UpdateInstanceInformation", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdateInstanceInformation", "", "")
 	request.Method = requests.POST
 	return
 }

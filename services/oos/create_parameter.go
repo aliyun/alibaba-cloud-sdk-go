@@ -75,6 +75,7 @@ type CreateParameterRequest struct {
 	Description string `position:"Query" name:"Description"`
 	Type        string `position:"Query" name:"Type"`
 	Constraints string `position:"Query" name:"Constraints"`
+	Tags        string `position:"Query" name:"Tags"`
 	Name        string `position:"Query" name:"Name"`
 	Value       string `position:"Query" name:"Value"`
 }
@@ -91,7 +92,7 @@ func CreateCreateParameterRequest() (request *CreateParameterRequest) {
 	request = &CreateParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "CreateParameter", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "CreateParameter", "", "")
 	request.Method = requests.POST
 	return
 }

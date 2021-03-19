@@ -17,16 +17,17 @@ package oos
 
 // StateConfigurationItem is a nested struct in oos response
 type StateConfigurationItem struct {
-	TemplateId           string                 `json:"TemplateId" xml:"TemplateId"`
-	TemplateVersion      string                 `json:"TemplateVersion" xml:"TemplateVersion"`
-	Parameters           map[string]interface{} `json:"Parameters" xml:"Parameters"`
-	ConfigureMode        string                 `json:"ConfigureMode" xml:"ConfigureMode"`
-	TemplateName         string                 `json:"TemplateName" xml:"TemplateName"`
 	CreateTime           string                 `json:"CreateTime" xml:"CreateTime"`
-	ScheduleType         string                 `json:"ScheduleType" xml:"ScheduleType"`
-	StateConfigurationId string                 `json:"StateConfigurationId" xml:"StateConfigurationId"`
-	Targets              string                 `json:"Targets" xml:"Targets"`
-	ScheduleExpression   string                 `json:"ScheduleExpression" xml:"ScheduleExpression"`
 	Description          string                 `json:"Description" xml:"Description"`
+	StateConfigurationId string                 `json:"StateConfigurationId" xml:"StateConfigurationId"`
+	TemplateId           string                 `json:"TemplateId" xml:"TemplateId"`
+	TemplateName         string                 `json:"TemplateName" xml:"TemplateName"`
+	TemplateVersion      string                 `json:"TemplateVersion" xml:"TemplateVersion"`
+	Parameters           string                 `json:"Parameters" xml:"Parameters"`
+	ConfigureMode        string                 `json:"ConfigureMode" xml:"ConfigureMode"`
+	ScheduleType         string                 `json:"ScheduleType" xml:"ScheduleType"`
+	ScheduleExpression   string                 `json:"ScheduleExpression" xml:"ScheduleExpression"`
+	Targets              string                 `json:"Targets" xml:"Targets"`
+	UpdateTime           string                 `json:"UpdateTime" xml:"UpdateTime"`
 	Tags                 map[string]interface{} `json:"Tags" xml:"Tags"`
 }

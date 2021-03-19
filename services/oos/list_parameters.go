@@ -75,9 +75,10 @@ type ListParametersRequest struct {
 	Recursive  requests.Boolean `position:"Query" name:"Recursive"`
 	Path       string           `position:"Query" name:"Path"`
 	NextToken  string           `position:"Query" name:"NextToken"`
+	SortOrder  string           `position:"Query" name:"SortOrder"`
+	Tags       string           `position:"Query" name:"Tags"`
 	Name       string           `position:"Query" name:"Name"`
 	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
-	SortOrder  string           `position:"Query" name:"SortOrder"`
 	SortField  string           `position:"Query" name:"SortField"`
 }
 
@@ -96,7 +97,7 @@ func CreateListParametersRequest() (request *ListParametersRequest) {
 	request = &ListParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListParameters", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListParameters", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -101,7 +101,7 @@ func CreateListTemplatesRequest() (request *ListTemplatesRequest) {
 	request = &ListTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListTemplates", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTemplates", "", "")
 	request.Method = requests.POST
 	return
 }

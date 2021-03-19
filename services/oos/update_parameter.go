@@ -72,6 +72,7 @@ func (client *Client) UpdateParameterWithCallback(request *UpdateParameterReques
 type UpdateParameterRequest struct {
 	*requests.RpcRequest
 	Description string `position:"Query" name:"Description"`
+	Tags        string `position:"Query" name:"Tags"`
 	Name        string `position:"Query" name:"Name"`
 	Value       string `position:"Query" name:"Value"`
 }
@@ -79,8 +80,8 @@ type UpdateParameterRequest struct {
 // UpdateParameterResponse is the response struct for api UpdateParameter
 type UpdateParameterResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Parameter Parameter `json:"Parameter" xml:"Parameter"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Parameter ParameterInUpdateParameter `json:"Parameter" xml:"Parameter"`
 }
 
 // CreateUpdateParameterRequest creates a request to invoke UpdateParameter API
@@ -88,7 +89,7 @@ func CreateUpdateParameterRequest() (request *UpdateParameterRequest) {
 	request = &UpdateParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "UpdateParameter", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdateParameter", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateDeleteSecretParameterRequest() (request *DeleteSecretParameterRequest
 	request = &DeleteSecretParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "DeleteSecretParameter", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "DeleteSecretParameter", "", "")
 	request.Method = requests.POST
 	return
 }
