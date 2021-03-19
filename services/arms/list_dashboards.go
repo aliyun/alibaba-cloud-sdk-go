@@ -71,9 +71,11 @@ func (client *Client) ListDashboardsWithCallback(request *ListDashboardsRequest,
 // ListDashboardsRequest is the request struct for api ListDashboards
 type ListDashboardsRequest struct {
 	*requests.RpcRequest
-	ClusterType string `position:"Query" name:"ClusterType"`
-	ClusterId   string `position:"Query" name:"ClusterId"`
-	Title       string `position:"Query" name:"Title"`
+	Product        string           `position:"Query" name:"Product"`
+	RecreateSwitch requests.Boolean `position:"Query" name:"RecreateSwitch"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	Title          string           `position:"Query" name:"Title"`
+	ClusterType    string           `position:"Query" name:"ClusterType"`
 }
 
 // ListDashboardsResponse is the response struct for api ListDashboards

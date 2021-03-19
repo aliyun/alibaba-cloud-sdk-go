@@ -71,8 +71,10 @@ func (client *Client) OpenVClusterWithCallback(request *OpenVClusterRequest, cal
 // OpenVClusterRequest is the request struct for api OpenVCluster
 type OpenVClusterRequest struct {
 	*requests.RpcRequest
-	ClusterType string           `position:"Query" name:"ClusterType"`
-	Length      requests.Integer `position:"Query" name:"Length"`
+	ClusterType    string           `position:"Query" name:"ClusterType"`
+	Product        string           `position:"Query" name:"Product"`
+	RecreateSwitch requests.Boolean `position:"Query" name:"RecreateSwitch"`
+	Length         requests.Integer `position:"Query" name:"Length"`
 }
 
 // OpenVClusterResponse is the response struct for api OpenVCluster
