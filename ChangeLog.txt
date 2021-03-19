@@ -1,3 +1,7 @@
+2021-03-19 Version: v1.61.987
+- Generated 2017-07-05 for `CCC`.
+- Export new API for predictive dialer.
+
 2021-03-18 Version: v1.61.986
 - Generated 2019-08-08 for `ARMS`.
 - Edit GetTrace api.
