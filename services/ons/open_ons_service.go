@@ -85,7 +85,7 @@ func CreateOpenOnsServiceRequest() (request *OpenOnsServiceRequest) {
 	request = &OpenOnsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OpenOnsService", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OpenOnsService", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

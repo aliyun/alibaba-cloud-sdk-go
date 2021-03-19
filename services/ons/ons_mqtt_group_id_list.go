@@ -87,7 +87,7 @@ func CreateOnsMqttGroupIdListRequest() (request *OnsMqttGroupIdListRequest) {
 	request = &OnsMqttGroupIdListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttGroupIdList", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttGroupIdList", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

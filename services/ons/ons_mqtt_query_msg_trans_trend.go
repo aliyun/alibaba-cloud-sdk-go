@@ -95,7 +95,7 @@ func CreateOnsMqttQueryMsgTransTrendRequest() (request *OnsMqttQueryMsgTransTren
 	request = &OnsMqttQueryMsgTransTrendRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryMsgTransTrend", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryMsgTransTrend", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

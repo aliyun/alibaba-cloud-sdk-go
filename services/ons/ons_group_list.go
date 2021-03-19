@@ -96,7 +96,7 @@ func CreateOnsGroupListRequest() (request *OnsGroupListRequest) {
 	request = &OnsGroupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupList", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupList", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateOnsDLQMessageGetByIdRequest() (request *OnsDLQMessageGetByIdRequest) 
 	request = &OnsDLQMessageGetByIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsDLQMessageGetById", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsDLQMessageGetById", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

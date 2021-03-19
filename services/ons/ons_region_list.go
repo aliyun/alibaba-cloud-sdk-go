@@ -86,7 +86,7 @@ func CreateOnsRegionListRequest() (request *OnsRegionListRequest) {
 	request = &OnsRegionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsRegionList", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsRegionList", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

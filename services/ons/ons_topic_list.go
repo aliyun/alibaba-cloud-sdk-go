@@ -95,7 +95,7 @@ func CreateOnsTopicListRequest() (request *OnsTopicListRequest) {
 	request = &OnsTopicListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicList", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicList", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

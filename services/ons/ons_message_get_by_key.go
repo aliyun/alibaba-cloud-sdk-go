@@ -89,7 +89,7 @@ func CreateOnsMessageGetByKeyRequest() (request *OnsMessageGetByKeyRequest) {
 	request = &OnsMessageGetByKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageGetByKey", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageGetByKey", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateOnsGroupDeleteRequest() (request *OnsGroupDeleteRequest) {
 	request = &OnsGroupDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupDelete", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupDelete", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

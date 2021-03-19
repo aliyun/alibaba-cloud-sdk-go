@@ -90,7 +90,7 @@ func CreateOnsConsumerStatusRequest() (request *OnsConsumerStatusRequest) {
 	request = &OnsConsumerStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerStatus", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerStatus", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

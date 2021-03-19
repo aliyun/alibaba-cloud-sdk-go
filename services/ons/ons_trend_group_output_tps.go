@@ -93,7 +93,7 @@ func CreateOnsTrendGroupOutputTpsRequest() (request *OnsTrendGroupOutputTpsReque
 	request = &OnsTrendGroupOutputTpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTrendGroupOutputTps", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTrendGroupOutputTps", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

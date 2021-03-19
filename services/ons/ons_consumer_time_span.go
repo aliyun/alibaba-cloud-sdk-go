@@ -89,7 +89,7 @@ func CreateOnsConsumerTimeSpanRequest() (request *OnsConsumerTimeSpanRequest) {
 	request = &OnsConsumerTimeSpanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerTimeSpan", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerTimeSpan", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

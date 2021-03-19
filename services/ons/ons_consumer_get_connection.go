@@ -88,7 +88,7 @@ func CreateOnsConsumerGetConnectionRequest() (request *OnsConsumerGetConnectionR
 	request = &OnsConsumerGetConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerGetConnection", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerGetConnection", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

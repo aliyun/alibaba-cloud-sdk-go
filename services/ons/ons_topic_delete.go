@@ -87,7 +87,7 @@ func CreateOnsTopicDeleteRequest() (request *OnsTopicDeleteRequest) {
 	request = &OnsTopicDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicDelete", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicDelete", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateOnsMqttGroupIdDeleteRequest() (request *OnsMqttGroupIdDeleteRequest) 
 	request = &OnsMqttGroupIdDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttGroupIdDelete", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttGroupIdDelete", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

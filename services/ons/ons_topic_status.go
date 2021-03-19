@@ -88,7 +88,7 @@ func CreateOnsTopicStatusRequest() (request *OnsTopicStatusRequest) {
 	request = &OnsTopicStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicStatus", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicStatus", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

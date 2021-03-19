@@ -91,7 +91,7 @@ func CreateOnsMessageSendRequest() (request *OnsMessageSendRequest) {
 	request = &OnsMessageSendRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageSend", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageSend", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }

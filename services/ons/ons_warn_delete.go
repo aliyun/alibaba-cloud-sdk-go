@@ -88,7 +88,7 @@ func CreateOnsWarnDeleteRequest() (request *OnsWarnDeleteRequest) {
 	request = &OnsWarnDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsWarnDelete", "", "")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsWarnDelete", "ons", "openAPI")
 	request.Method = requests.POST
 	return
 }
