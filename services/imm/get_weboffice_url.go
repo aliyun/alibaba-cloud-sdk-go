@@ -71,25 +71,27 @@ func (client *Client) GetWebofficeURLWithCallback(request *GetWebofficeURLReques
 // GetWebofficeURLRequest is the request struct for api GetWebofficeURL
 type GetWebofficeURLRequest struct {
 	*requests.RpcRequest
-	SrcType         string `position:"Query" name:"SrcType"`
-	Project         string `position:"Query" name:"Project"`
-	File            string `position:"Query" name:"File"`
-	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
-	FileID          string `position:"Query" name:"FileID"`
-	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
-	Permission      string `position:"Query" name:"Permission"`
-	User            string `position:"Query" name:"User"`
+	SrcType         string           `position:"Query" name:"SrcType"`
+	Project         string           `position:"Query" name:"Project"`
+	File            string           `position:"Query" name:"File"`
+	Hidecmb         requests.Boolean `position:"Query" name:"Hidecmb"`
+	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
+	FileID          string           `position:"Query" name:"FileID"`
+	Watermark       string           `position:"Query" name:"Watermark"`
+	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
+	Permission      string           `position:"Query" name:"Permission"`
+	User            string           `position:"Query" name:"User"`
 }
 
 // GetWebofficeURLResponse is the response struct for api GetWebofficeURL
 type GetWebofficeURLResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	WebofficeURL            string `json:"WebofficeURL" xml:"WebofficeURL"`
-	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
 	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
-	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
 	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
+	WebofficeURL            string `json:"WebofficeURL" xml:"WebofficeURL"`
+	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 }
 
 // CreateGetWebofficeURLRequest creates a request to invoke GetWebofficeURL API

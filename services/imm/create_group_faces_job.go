@@ -80,10 +80,10 @@ type CreateGroupFacesJobRequest struct {
 // CreateGroupFacesJobResponse is the response struct for api CreateGroupFacesJob
 type CreateGroupFacesJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	JobId     string `json:"JobId" xml:"JobId"`
-	SetId     string `json:"SetId" xml:"SetId"`
 	JobType   string `json:"JobType" xml:"JobType"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	SetId     string `json:"SetId" xml:"SetId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 // CreateCreateGroupFacesJobRequest creates a request to invoke CreateGroupFacesJob API

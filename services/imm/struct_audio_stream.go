@@ -17,20 +17,20 @@ package imm
 
 // AudioStream is a nested struct in imm response
 type AudioStream struct {
-	Index          int    `json:"Index" xml:"Index"`
-	CodecName      string `json:"CodecName" xml:"CodecName"`
-	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
-	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
 	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
-	SampleFormat   string `json:"SampleFormat" xml:"SampleFormat"`
-	SampleRate     string `json:"SampleRate" xml:"SampleRate"`
-	Channels       int    `json:"Channels" xml:"Channels"`
+	Frames         string `json:"Frames" xml:"Frames"`
+	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
 	ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
-	TimeBase       string `json:"TimeBase" xml:"TimeBase"`
 	StartTime      string `json:"StartTime" xml:"StartTime"`
 	Duration       string `json:"Duration" xml:"Duration"`
+	Index          int    `json:"Index" xml:"Index"`
+	CodecName      string `json:"CodecName" xml:"CodecName"`
 	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-	Frames         string `json:"Frames" xml:"Frames"`
+	SampleFormat   string `json:"SampleFormat" xml:"SampleFormat"`
+	Channels       int    `json:"Channels" xml:"Channels"`
+	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
+	SampleRate     string `json:"SampleRate" xml:"SampleRate"`
 	Language       string `json:"Language" xml:"Language"`
+	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
+	TimeBase       string `json:"TimeBase" xml:"TimeBase"`
 }

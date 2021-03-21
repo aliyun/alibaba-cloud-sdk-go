@@ -78,8 +78,8 @@ type GetMediaMetaRequest struct {
 // GetMediaMetaResponse is the response struct for api GetMediaMeta
 type GetMediaMetaResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
 	MediaUri  string    `json:"MediaUri" xml:"MediaUri"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	MediaMeta MediaMeta `json:"MediaMeta" xml:"MediaMeta"`
 }
 

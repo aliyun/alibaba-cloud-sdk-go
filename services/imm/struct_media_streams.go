@@ -18,6 +18,6 @@ package imm
 // MediaStreams is a nested struct in imm response
 type MediaStreams struct {
 	VideoStreams    []VideoStream    `json:"VideoStreams" xml:"VideoStreams"`
-	AudioStreams    []AudioStream    `json:"AudioStreams" xml:"AudioStreams"`
 	SubtitleStreams []SubtitleStream `json:"SubtitleStreams" xml:"SubtitleStreams"`
+	AudioStreams    []AudioStream    `json:"AudioStreams" xml:"AudioStreams"`
 }

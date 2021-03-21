@@ -17,27 +17,27 @@ package imm
 
 // VideoStream is a nested struct in imm response
 type VideoStream struct {
-	Index              int    `json:"Index" xml:"Index"`
-	Language           string `json:"Language" xml:"Language"`
-	CodecName          string `json:"CodecName" xml:"CodecName"`
-	CodecLongName      string `json:"CodecLongName" xml:"CodecLongName"`
-	Profile            string `json:"Profile" xml:"Profile"`
-	CodecTimeBase      string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-	CodecTagString     string `json:"CodecTagString" xml:"CodecTagString"`
 	CodecTag           string `json:"CodecTag" xml:"CodecTag"`
-	Width              int    `json:"Width" xml:"Width"`
-	Height             int    `json:"Height" xml:"Height"`
-	HasBFrames         int    `json:"HasBFrames" xml:"HasBFrames"`
+	Frames             string `json:"Frames" xml:"Frames"`
+	CodecTimeBase      string `json:"CodecTimeBase" xml:"CodecTimeBase"`
+	Rotate             string `json:"Rotate" xml:"Rotate"`
 	SampleAspectRatio  string `json:"SampleAspectRatio" xml:"SampleAspectRatio"`
-	DisplayAspectRatio string `json:"DisplayAspectRatio" xml:"DisplayAspectRatio"`
-	PixelFormat        string `json:"PixelFormat" xml:"PixelFormat"`
-	Level              int    `json:"Level" xml:"Level"`
-	FrameRrate         string `json:"FrameRrate" xml:"FrameRrate"`
-	AverageFrameRate   string `json:"AverageFrameRate" xml:"AverageFrameRate"`
-	TimeBase           string `json:"TimeBase" xml:"TimeBase"`
 	StartTime          string `json:"StartTime" xml:"StartTime"`
 	Duration           string `json:"Duration" xml:"Duration"`
+	Index              int    `json:"Index" xml:"Index"`
+	CodecName          string `json:"CodecName" xml:"CodecName"`
 	Bitrate            string `json:"Bitrate" xml:"Bitrate"`
-	Frames             string `json:"Frames" xml:"Frames"`
-	Rotate             string `json:"Rotate" xml:"Rotate"`
+	Profile            string `json:"Profile" xml:"Profile"`
+	DisplayAspectRatio string `json:"DisplayAspectRatio" xml:"DisplayAspectRatio"`
+	HasBFrames         int    `json:"HasBFrames" xml:"HasBFrames"`
+	CodecTagString     string `json:"CodecTagString" xml:"CodecTagString"`
+	AverageFrameRate   string `json:"AverageFrameRate" xml:"AverageFrameRate"`
+	Language           string `json:"Language" xml:"Language"`
+	CodecLongName      string `json:"CodecLongName" xml:"CodecLongName"`
+	PixelFormat        string `json:"PixelFormat" xml:"PixelFormat"`
+	Level              int    `json:"Level" xml:"Level"`
+	Height             int    `json:"Height" xml:"Height"`
+	FrameRrate         string `json:"FrameRrate" xml:"FrameRrate"`
+	Width              int    `json:"Width" xml:"Width"`
+	TimeBase           string `json:"TimeBase" xml:"TimeBase"`
 }

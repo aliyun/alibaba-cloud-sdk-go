@@ -80,8 +80,8 @@ type DeleteImageRequest struct {
 type DeleteImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	SetId     string `json:"SetId" xml:"SetId"`
 	ImageUri  string `json:"ImageUri" xml:"ImageUri"`
+	SetId     string `json:"SetId" xml:"SetId"`
 }
 
 // CreateDeleteImageRequest creates a request to invoke DeleteImage API

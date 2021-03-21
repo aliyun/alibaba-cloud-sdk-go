@@ -17,12 +17,12 @@ package imm
 
 // Tag is a nested struct in imm response
 type Tag struct {
-	Language     string `json:"Language" xml:"Language"`
-	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	Album        string `json:"Album" xml:"Album"`
-	AlbumArtist  string `json:"AlbumArtist" xml:"AlbumArtist"`
 	Artist       string `json:"Artist" xml:"Artist"`
 	Composer     string `json:"Composer" xml:"Composer"`
-	Title        string `json:"Title" xml:"Title"`
 	Performer    string `json:"Performer" xml:"Performer"`
+	Language     string `json:"Language" xml:"Language"`
+	CreationTime string `json:"CreationTime" xml:"CreationTime"`
+	Title        string `json:"Title" xml:"Title"`
+	Album        string `json:"Album" xml:"Album"`
+	AlbumArtist  string `json:"AlbumArtist" xml:"AlbumArtist"`
 }

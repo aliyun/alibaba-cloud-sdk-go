@@ -92,22 +92,22 @@ type IndexVideoRequest struct {
 // IndexVideoResponse is the response struct for api IndexVideo
 type IndexVideoResponse struct {
 	*responses.BaseResponse
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	SetId      string  `json:"SetId" xml:"SetId"`
-	VideoUri   string  `json:"VideoUri" xml:"VideoUri"`
-	RemarksA   string  `json:"RemarksA" xml:"RemarksA"`
-	RemarksB   string  `json:"RemarksB" xml:"RemarksB"`
-	CreateTime string  `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime string  `json:"ModifyTime" xml:"ModifyTime"`
-	Interval   float64 `json:"Interval" xml:"Interval"`
-	GrabType   string  `json:"GrabType" xml:"GrabType"`
-	StartTime  string  `json:"StartTime" xml:"StartTime"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
 	EndTime    string  `json:"EndTime" xml:"EndTime"`
 	SaveType   bool    `json:"SaveType" xml:"SaveType"`
-	TgtUri     string  `json:"TgtUri" xml:"TgtUri"`
-	RemarksC   string  `json:"RemarksC" xml:"RemarksC"`
-	RemarksD   string  `json:"RemarksD" xml:"RemarksD"`
 	ExternalId string  `json:"ExternalId" xml:"ExternalId"`
+	CreateTime string  `json:"CreateTime" xml:"CreateTime"`
+	StartTime  string  `json:"StartTime" xml:"StartTime"`
+	VideoUri   string  `json:"VideoUri" xml:"VideoUri"`
+	GrabType   string  `json:"GrabType" xml:"GrabType"`
+	RemarksA   string  `json:"RemarksA" xml:"RemarksA"`
+	RemarksB   string  `json:"RemarksB" xml:"RemarksB"`
+	RemarksC   string  `json:"RemarksC" xml:"RemarksC"`
+	TgtUri     string  `json:"TgtUri" xml:"TgtUri"`
+	RemarksD   string  `json:"RemarksD" xml:"RemarksD"`
+	SetId      string  `json:"SetId" xml:"SetId"`
+	Interval   float64 `json:"Interval" xml:"Interval"`
 }
 
 // CreateIndexVideoRequest creates a request to invoke IndexVideo API

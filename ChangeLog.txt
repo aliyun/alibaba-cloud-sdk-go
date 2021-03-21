@@ -1,3 +1,8 @@
+2021-03-21 Version: v1.61.992
+- Generated 2017-09-06 for `imm`.
+- Support watermark.
+- Support pdf preview.
+
 2021-03-19 Version: v1.61.991
 - Generated 2019-08-08 for `ARMS`.
 - Mod OpenVCluster add parameters, support cloud product assess.
