@@ -1,3 +1,7 @@
+2021-03-22 Version: v1.61.995
+- Generated 2017-09-12 for `Cbn`.
+- Support some new region.
+
 2021-03-22 Version: v1.61.994
 - Generated 2019-06-24 for `eais`.
 - CreateEai api adds SecurityGroupId, VSwitchId parameters.

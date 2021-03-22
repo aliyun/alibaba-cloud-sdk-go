@@ -73,6 +73,8 @@ type CreateCenChildInstanceRouteEntryToCenRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CenId                 string           `position:"Query" name:"CenId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	NextHopGatewayZoneId  string           `position:"Query" name:"NextHopGatewayZoneId"`
 	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
 	RouteTableId          string           `position:"Query" name:"RouteTableId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
