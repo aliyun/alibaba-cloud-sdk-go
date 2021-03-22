@@ -71,9 +71,10 @@ func (client *Client) UpdateInstanceWithCallback(request *UpdateInstanceRequest,
 // UpdateInstanceRequest is the request struct for api UpdateInstance
 type UpdateInstanceRequest struct {
 	*requests.RoaRequest
-	IgnoreStatus requests.Boolean `position:"Query" name:"ignoreStatus"`
-	InstanceId   string           `position:"Path" name:"InstanceId"`
-	ClientToken  string           `position:"Query" name:"clientToken"`
+	IgnoreStatus    requests.Boolean `position:"Query" name:"ignoreStatus"`
+	InstanceId      string           `position:"Path" name:"InstanceId"`
+	ClientToken     string           `position:"Query" name:"clientToken"`
+	OrderActionType string           `position:"Query" name:"orderActionType"`
 }
 
 // UpdateInstanceResponse is the response struct for api UpdateInstance

@@ -73,6 +73,7 @@ type DeleteLogstashRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	DeleteType  string `position:"Query" name:"deleteType"`
 }
 
 // DeleteLogstashResponse is the response struct for api DeleteLogstash

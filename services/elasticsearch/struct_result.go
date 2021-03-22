@@ -56,6 +56,7 @@ type Result struct {
 	KibanaPort                int                            `json:"kibanaPort" xml:"kibanaPort"`
 	Health                    string                         `json:"health" xml:"health"`
 	UserName                  string                         `json:"userName" xml:"userName"`
+	ClusterType               string                         `json:"clusterType" xml:"clusterType"`
 	ResId                     string                         `json:"resId" xml:"resId"`
 	PublicDomain              string                         `json:"publicDomain" xml:"publicDomain"`
 	KibanaDomain              string                         `json:"kibanaDomain" xml:"kibanaDomain"`
@@ -67,6 +68,7 @@ type Result struct {
 	Integrity                 float64                        `json:"integrity" xml:"integrity"`
 	EnablePublic              bool                           `json:"enablePublic" xml:"enablePublic"`
 	EsVersion                 string                         `json:"esVersion" xml:"esVersion"`
+	ClusterId                 string                         `json:"clusterId" xml:"clusterId"`
 	FileSize                  int64                          `json:"fileSize" xml:"fileSize"`
 	Config                    string                         `json:"config" xml:"config"`
 	Value                     int64                          `json:"value" xml:"value"`
@@ -77,6 +79,7 @@ type Result struct {
 	QueueMaxBytes             int                            `json:"queueMaxBytes" xml:"queueMaxBytes"`
 	Status                    string                         `json:"status" xml:"status"`
 	BatchDelay                int                            `json:"batchDelay" xml:"batchDelay"`
+	Version                   string                         `json:"version" xml:"version"`
 	CreateTime                int64                          `json:"createTime" xml:"createTime"`
 	MasterSpec                []string                       `json:"masterSpec" xml:"masterSpec"`
 	CollectorPaths            []string                       `json:"collectorPaths" xml:"collectorPaths"`

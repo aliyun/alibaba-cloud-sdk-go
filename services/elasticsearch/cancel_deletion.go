@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the elasticsearch.DeleteInstance API synchronously
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// CancelDeletion invokes the elasticsearch.CancelDeletion API synchronously
+func (client *Client) CancelDeletion(request *CancelDeletionRequest) (response *CancelDeletionResponse, err error) {
+	response = CreateCancelDeletionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the elasticsearch.DeleteInstance API asynchronously
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+// CancelDeletionWithChan invokes the elasticsearch.CancelDeletion API asynchronously
+func (client *Client) CancelDeletionWithChan(request *CancelDeletionRequest) (<-chan *CancelDeletionResponse, <-chan error) {
+	responseChan := make(chan *CancelDeletionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.CancelDeletion(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the elasticsearch.DeleteInstance API asynchronously
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+// CancelDeletionWithCallback invokes the elasticsearch.CancelDeletion API asynchronously
+func (client *Client) CancelDeletionWithCallback(request *CancelDeletionRequest, callback func(response *CancelDeletionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *CancelDeletionResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.CancelDeletion(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// CancelDeletionRequest is the request struct for api CancelDeletion
+type CancelDeletionRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
-	DeleteType  string `position:"Query" name:"deleteType"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// CancelDeletionResponse is the response struct for api CancelDeletion
+type CancelDeletionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    bool   `json:"Result" xml:"Result"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateCancelDeletionRequest creates a request to invoke CancelDeletion API
+func CreateCancelDeletionRequest() (request *CancelDeletionRequest) {
+	request = &CancelDeletionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("elasticsearch", "2017-06-13", "DeleteInstance", "/openapi/instances/[InstanceId]", "elasticsearch", "openAPI")
-	request.Method = requests.DELETE
+	request.InitWithApiInfo("elasticsearch", "2017-06-13", "CancelDeletion", "/openapi/instances/[InstanceId]/actions/cancel-deletion", "elasticsearch", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateCancelDeletionResponse creates a response to parse from CancelDeletion response
+func CreateCancelDeletionResponse() (response *CancelDeletionResponse) {
+	response = &CancelDeletionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

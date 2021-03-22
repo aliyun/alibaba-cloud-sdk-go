@@ -74,6 +74,7 @@ type ListCollectorsRequest struct {
 	InstanceId string           `position:"Query" name:"instanceId"`
 	Size       requests.Integer `position:"Query" name:"size"`
 	Name       string           `position:"Query" name:"name"`
+	SourceType string           `position:"Query" name:"sourceType"`
 	Page       requests.Integer `position:"Query" name:"page"`
 	ResId      string           `position:"Query" name:"resId"`
 }
