@@ -1,3 +1,7 @@
+2021-03-22 Version: v1.61.994
+- Generated 2019-06-24 for `eais`.
+- CreateEai api adds SecurityGroupId, VSwitchId parameters.
+
 2021-03-22 Version: v1.61.993
 - Generated 2017-06-13 for `elasticsearch`.
 - Add OneConsole support.
