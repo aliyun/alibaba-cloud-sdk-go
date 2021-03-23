@@ -74,7 +74,7 @@ type ModifyBackupPolicyRequest struct {
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	LocalLogRetentionHours        string           `position:"Query" name:"LocalLogRetentionHours"`
 	LogBackupFrequency            string           `position:"Query" name:"LogBackupFrequency"`
-	ArchiveBackupKeepCount        string           `position:"Query" name:"ArchiveBackupKeepCount"`
+	ArchiveBackupKeepCount        requests.Integer `position:"Query" name:"ArchiveBackupKeepCount"`
 	BackupLog                     string           `position:"Query" name:"BackupLog"`
 	BackupInterval                string           `position:"Query" name:"BackupInterval"`
 	DuplicationContent            string           `position:"Query" name:"DuplicationContent"`
@@ -94,6 +94,7 @@ type ModifyBackupPolicyRequest struct {
 	Duplication                   string           `position:"Query" name:"Duplication"`
 	PreferredBackupTime           string           `position:"Query" name:"PreferredBackupTime"`
 	BackupRetentionPeriod         string           `position:"Query" name:"BackupRetentionPeriod"`
+	BackupMethod                  string           `position:"Query" name:"BackupMethod"`
 	DuplicationLocation           string           `position:"Query" name:"DuplicationLocation"`
 	ArchiveBackupRetentionPeriod  string           `position:"Query" name:"ArchiveBackupRetentionPeriod"`
 	Category                      string           `position:"Query" name:"Category"`

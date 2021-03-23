@@ -83,7 +83,9 @@ type AllocateInstancePublicConnectionRequest struct {
 // AllocateInstancePublicConnectionResponse is the response struct for api AllocateInstancePublicConnection
 type AllocateInstancePublicConnectionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	DbInstanceName   string `json:"DbInstanceName" xml:"DbInstanceName"`
 }
 
 // CreateAllocateInstancePublicConnectionRequest creates a request to invoke AllocateInstancePublicConnection API

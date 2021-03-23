@@ -87,6 +87,8 @@ type DescribeAccountsResponse struct {
 	RequestId                             string                     `json:"RequestId" xml:"RequestId"`
 	SystemAdminAccountStatus              string                     `json:"SystemAdminAccountStatus" xml:"SystemAdminAccountStatus"`
 	SystemAdminAccountFirstActivationTime string                     `json:"SystemAdminAccountFirstActivationTime" xml:"SystemAdminAccountFirstActivationTime"`
+	PageNumber                            int                        `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount                      int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Accounts                              AccountsInDescribeAccounts `json:"Accounts" xml:"Accounts"`
 }
 

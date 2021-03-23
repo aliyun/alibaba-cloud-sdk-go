@@ -89,8 +89,9 @@ type ModifyDBInstanceNetworkTypeRequest struct {
 // ModifyDBInstanceNetworkTypeResponse is the response struct for api ModifyDBInstanceNetworkType
 type ModifyDBInstanceNetworkTypeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TaskId           string `json:"TaskId" xml:"TaskId"`
+	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
 }
 
 // CreateModifyDBInstanceNetworkTypeRequest creates a request to invoke ModifyDBInstanceNetworkType API

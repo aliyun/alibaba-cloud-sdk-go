@@ -107,6 +107,8 @@ type DescribeBackupPolicyResponse struct {
 	Category                      string              `json:"Category" xml:"Category"`
 	SupportReleasedKeep           int                 `json:"SupportReleasedKeep" xml:"SupportReleasedKeep"`
 	BackupInterval                string              `json:"BackupInterval" xml:"BackupInterval"`
+	SupportVolumeShadowCopy       int                 `json:"SupportVolumeShadowCopy" xml:"SupportVolumeShadowCopy"`
+	BackupMethod                  string              `json:"BackupMethod" xml:"BackupMethod"`
 	DuplicationLocation           DuplicationLocation `json:"DuplicationLocation" xml:"DuplicationLocation"`
 }
 
