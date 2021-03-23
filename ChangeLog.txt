@@ -1,3 +1,7 @@
+2021-03-23 Version: v1.61.996
+- Generated 2017-09-12 for `Cbn`.
+- Cbn endpoints are automatically routed using central mode.
+
 2021-03-22 Version: v1.61.995
 - Generated 2017-09-12 for `Cbn`.
 - Support some new region.
