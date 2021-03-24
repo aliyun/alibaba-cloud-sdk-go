@@ -102,7 +102,7 @@ func CreateListNacosConfigsRequest() (request *ListNacosConfigsRequest) {
 	request = &ListNacosConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosConfigs", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosConfigs", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

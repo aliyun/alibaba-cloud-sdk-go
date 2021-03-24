@@ -91,7 +91,7 @@ func CreateQueryZnodeDetailRequest() (request *QueryZnodeDetailRequest) {
 	request = &QueryZnodeDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryZnodeDetail", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryZnodeDetail", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

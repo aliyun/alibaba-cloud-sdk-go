@@ -91,7 +91,7 @@ func CreateGetOverviewRequest() (request *GetOverviewRequest) {
 	request = &GetOverviewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetOverview", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetOverview", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

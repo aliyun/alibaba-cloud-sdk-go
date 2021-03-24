@@ -91,7 +91,7 @@ func CreateUpdateZnodeRequest() (request *UpdateZnodeRequest) {
 	request = &UpdateZnodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateZnode", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateZnode", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }
