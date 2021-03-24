@@ -71,6 +71,7 @@ func (client *Client) ListRecentCallDetailRecordsWithCallback(request *ListRecen
 // ListRecentCallDetailRecordsRequest is the request struct for api ListRecentCallDetailRecords
 type ListRecentCallDetailRecordsRequest struct {
 	*requests.RpcRequest
+	Criteria   string           `position:"Query" name:"Criteria"`
 	EndTime    requests.Integer `position:"Query" name:"EndTime"`
 	StartTime  requests.Integer `position:"Body" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`

@@ -32,7 +32,7 @@ type Inbound struct {
 	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
 	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
 	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
-	ServiceLevel20               int64   `json:"ServiceLevel20" xml:"ServiceLevel20"`
+	ServiceLevel20               float64 `json:"ServiceLevel20" xml:"ServiceLevel20"`
 	TotalHoldTime                int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
 	TotalRingTime                int64   `json:"TotalRingTime" xml:"TotalRingTime"`
 	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
