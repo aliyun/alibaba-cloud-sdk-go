@@ -21,7 +21,6 @@ import (
 )
 
 // ListAlarmHistories invokes the mse.ListAlarmHistories API synchronously
-// api document: https://help.aliyun.com/api/mse/listalarmhistories.html
 func (client *Client) ListAlarmHistories(request *ListAlarmHistoriesRequest) (response *ListAlarmHistoriesResponse, err error) {
 	response = CreateListAlarmHistoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAlarmHistories(request *ListAlarmHistoriesRequest) (re
 }
 
 // ListAlarmHistoriesWithChan invokes the mse.ListAlarmHistories API asynchronously
-// api document: https://help.aliyun.com/api/mse/listalarmhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmHistoriesWithChan(request *ListAlarmHistoriesRequest) (<-chan *ListAlarmHistoriesResponse, <-chan error) {
 	responseChan := make(chan *ListAlarmHistoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAlarmHistoriesWithChan(request *ListAlarmHistoriesRequ
 }
 
 // ListAlarmHistoriesWithCallback invokes the mse.ListAlarmHistories API asynchronously
-// api document: https://help.aliyun.com/api/mse/listalarmhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmHistoriesWithCallback(request *ListAlarmHistoriesRequest, callback func(response *ListAlarmHistoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateListAlarmHistoriesRequest() (request *ListAlarmHistoriesRequest) {
 	request = &ListAlarmHistoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmHistories", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmHistories", "", "")
 	request.Method = requests.GET
 	return
 }

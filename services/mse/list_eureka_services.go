@@ -21,7 +21,6 @@ import (
 )
 
 // ListEurekaServices invokes the mse.ListEurekaServices API synchronously
-// api document: https://help.aliyun.com/api/mse/listeurekaservices.html
 func (client *Client) ListEurekaServices(request *ListEurekaServicesRequest) (response *ListEurekaServicesResponse, err error) {
 	response = CreateListEurekaServicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEurekaServices(request *ListEurekaServicesRequest) (re
 }
 
 // ListEurekaServicesWithChan invokes the mse.ListEurekaServices API asynchronously
-// api document: https://help.aliyun.com/api/mse/listeurekaservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEurekaServicesWithChan(request *ListEurekaServicesRequest) (<-chan *ListEurekaServicesResponse, <-chan error) {
 	responseChan := make(chan *ListEurekaServicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEurekaServicesWithChan(request *ListEurekaServicesRequ
 }
 
 // ListEurekaServicesWithCallback invokes the mse.ListEurekaServices API asynchronously
-// api document: https://help.aliyun.com/api/mse/listeurekaservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEurekaServicesWithCallback(request *ListEurekaServicesRequest, callback func(response *ListEurekaServicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateListEurekaServicesRequest() (request *ListEurekaServicesRequest) {
 	request = &ListEurekaServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListEurekaServices", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListEurekaServices", "", "")
 	request.Method = requests.GET
 	return
 }

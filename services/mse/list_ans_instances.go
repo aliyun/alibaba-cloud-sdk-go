@@ -21,7 +21,6 @@ import (
 )
 
 // ListAnsInstances invokes the mse.ListAnsInstances API synchronously
-// api document: https://help.aliyun.com/api/mse/listansinstances.html
 func (client *Client) ListAnsInstances(request *ListAnsInstancesRequest) (response *ListAnsInstancesResponse, err error) {
 	response = CreateListAnsInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAnsInstances(request *ListAnsInstancesRequest) (respon
 }
 
 // ListAnsInstancesWithChan invokes the mse.ListAnsInstances API asynchronously
-// api document: https://help.aliyun.com/api/mse/listansinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAnsInstancesWithChan(request *ListAnsInstancesRequest) (<-chan *ListAnsInstancesResponse, <-chan error) {
 	responseChan := make(chan *ListAnsInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAnsInstancesWithChan(request *ListAnsInstancesRequest)
 }
 
 // ListAnsInstancesWithCallback invokes the mse.ListAnsInstances API asynchronously
-// api document: https://help.aliyun.com/api/mse/listansinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAnsInstancesWithCallback(request *ListAnsInstancesRequest, callback func(response *ListAnsInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,7 +100,7 @@ func CreateListAnsInstancesRequest() (request *ListAnsInstancesRequest) {
 	request = &ListAnsInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsInstances", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsInstances", "", "")
 	request.Method = requests.GET
 	return
 }

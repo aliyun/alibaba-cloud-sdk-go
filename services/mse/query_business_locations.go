@@ -21,7 +21,6 @@ import (
 )
 
 // QueryBusinessLocations invokes the mse.QueryBusinessLocations API synchronously
-// api document: https://help.aliyun.com/api/mse/querybusinesslocations.html
 func (client *Client) QueryBusinessLocations(request *QueryBusinessLocationsRequest) (response *QueryBusinessLocationsResponse, err error) {
 	response = CreateQueryBusinessLocationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryBusinessLocations(request *QueryBusinessLocationsRequ
 }
 
 // QueryBusinessLocationsWithChan invokes the mse.QueryBusinessLocations API asynchronously
-// api document: https://help.aliyun.com/api/mse/querybusinesslocations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBusinessLocationsWithChan(request *QueryBusinessLocationsRequest) (<-chan *QueryBusinessLocationsResponse, <-chan error) {
 	responseChan := make(chan *QueryBusinessLocationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryBusinessLocationsWithChan(request *QueryBusinessLocat
 }
 
 // QueryBusinessLocationsWithCallback invokes the mse.QueryBusinessLocations API asynchronously
-// api document: https://help.aliyun.com/api/mse/querybusinesslocations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBusinessLocationsWithCallback(request *QueryBusinessLocationsRequest, callback func(response *QueryBusinessLocationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryBusinessLocationsRequest() (request *QueryBusinessLocationsReque
 	request = &QueryBusinessLocationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryBusinessLocations", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryBusinessLocations", "", "")
 	request.Method = requests.GET
 	return
 }

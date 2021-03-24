@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAlarmRule invokes the mse.DeleteAlarmRule API synchronously
-// api document: https://help.aliyun.com/api/mse/deletealarmrule.html
 func (client *Client) DeleteAlarmRule(request *DeleteAlarmRuleRequest) (response *DeleteAlarmRuleResponse, err error) {
 	response = CreateDeleteAlarmRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAlarmRule(request *DeleteAlarmRuleRequest) (response
 }
 
 // DeleteAlarmRuleWithChan invokes the mse.DeleteAlarmRule API asynchronously
-// api document: https://help.aliyun.com/api/mse/deletealarmrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlarmRuleWithChan(request *DeleteAlarmRuleRequest) (<-chan *DeleteAlarmRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteAlarmRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAlarmRuleWithChan(request *DeleteAlarmRuleRequest) (
 }
 
 // DeleteAlarmRuleWithCallback invokes the mse.DeleteAlarmRule API asynchronously
-// api document: https://help.aliyun.com/api/mse/deletealarmrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlarmRuleWithCallback(request *DeleteAlarmRuleRequest, callback func(response *DeleteAlarmRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDeleteAlarmRuleRequest() (request *DeleteAlarmRuleRequest) {
 	request = &DeleteAlarmRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAlarmRule", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAlarmRule", "", "")
 	request.Method = requests.POST
 	return
 }

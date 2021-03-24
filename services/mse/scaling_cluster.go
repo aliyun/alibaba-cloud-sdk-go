@@ -21,7 +21,6 @@ import (
 )
 
 // ScalingCluster invokes the mse.ScalingCluster API synchronously
-// api document: https://help.aliyun.com/api/mse/scalingcluster.html
 func (client *Client) ScalingCluster(request *ScalingClusterRequest) (response *ScalingClusterResponse, err error) {
 	response = CreateScalingClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScalingCluster(request *ScalingClusterRequest) (response *
 }
 
 // ScalingClusterWithChan invokes the mse.ScalingCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/scalingcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScalingClusterWithChan(request *ScalingClusterRequest) (<-chan *ScalingClusterResponse, <-chan error) {
 	responseChan := make(chan *ScalingClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScalingClusterWithChan(request *ScalingClusterRequest) (<-
 }
 
 // ScalingClusterWithCallback invokes the mse.ScalingCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/scalingcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScalingClusterWithCallback(request *ScalingClusterRequest, callback func(response *ScalingClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateScalingClusterRequest() (request *ScalingClusterRequest) {
 	request = &ScalingClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ScalingCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ScalingCluster", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryZnodeDetail invokes the mse.QueryZnodeDetail API synchronously
-// api document: https://help.aliyun.com/api/mse/queryznodedetail.html
 func (client *Client) QueryZnodeDetail(request *QueryZnodeDetailRequest) (response *QueryZnodeDetailResponse, err error) {
 	response = CreateQueryZnodeDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryZnodeDetail(request *QueryZnodeDetailRequest) (respon
 }
 
 // QueryZnodeDetailWithChan invokes the mse.QueryZnodeDetail API asynchronously
-// api document: https://help.aliyun.com/api/mse/queryznodedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryZnodeDetailWithChan(request *QueryZnodeDetailRequest) (<-chan *QueryZnodeDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryZnodeDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryZnodeDetailWithChan(request *QueryZnodeDetailRequest)
 }
 
 // QueryZnodeDetailWithCallback invokes the mse.QueryZnodeDetail API asynchronously
-// api document: https://help.aliyun.com/api/mse/queryznodedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryZnodeDetailWithCallback(request *QueryZnodeDetailRequest, callback func(response *QueryZnodeDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateQueryZnodeDetailRequest() (request *QueryZnodeDetailRequest) {
 	request = &QueryZnodeDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryZnodeDetail", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryZnodeDetail", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNacosConfigs invokes the mse.DeleteNacosConfigs API synchronously
-// api document: https://help.aliyun.com/api/mse/deletenacosconfigs.html
 func (client *Client) DeleteNacosConfigs(request *DeleteNacosConfigsRequest) (response *DeleteNacosConfigsResponse, err error) {
 	response = CreateDeleteNacosConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNacosConfigs(request *DeleteNacosConfigsRequest) (re
 }
 
 // DeleteNacosConfigsWithChan invokes the mse.DeleteNacosConfigs API asynchronously
-// api document: https://help.aliyun.com/api/mse/deletenacosconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNacosConfigsWithChan(request *DeleteNacosConfigsRequest) (<-chan *DeleteNacosConfigsResponse, <-chan error) {
 	responseChan := make(chan *DeleteNacosConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNacosConfigsWithChan(request *DeleteNacosConfigsRequ
 }
 
 // DeleteNacosConfigsWithCallback invokes the mse.DeleteNacosConfigs API asynchronously
-// api document: https://help.aliyun.com/api/mse/deletenacosconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNacosConfigsWithCallback(request *DeleteNacosConfigsRequest, callback func(response *DeleteNacosConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +84,7 @@ type DeleteNacosConfigsResponse struct {
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	Code      int    `json:"Code" xml:"Code"`
 }
 
 // CreateDeleteNacosConfigsRequest creates a request to invoke DeleteNacosConfigs API
@@ -96,7 +92,7 @@ func CreateDeleteNacosConfigsRequest() (request *DeleteNacosConfigsRequest) {
 	request = &DeleteNacosConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosConfigs", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosConfigs", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeCluster invokes the mse.UpgradeCluster API synchronously
-// api document: https://help.aliyun.com/api/mse/upgradecluster.html
 func (client *Client) UpgradeCluster(request *UpgradeClusterRequest) (response *UpgradeClusterResponse, err error) {
 	response = CreateUpgradeClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeCluster(request *UpgradeClusterRequest) (response *
 }
 
 // UpgradeClusterWithChan invokes the mse.UpgradeCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/upgradecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClusterWithChan(request *UpgradeClusterRequest) (<-chan *UpgradeClusterResponse, <-chan error) {
 	responseChan := make(chan *UpgradeClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeClusterWithChan(request *UpgradeClusterRequest) (<-
 }
 
 // UpgradeClusterWithCallback invokes the mse.UpgradeCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/upgradecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClusterWithCallback(request *UpgradeClusterRequest, callback func(response *UpgradeClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateUpgradeClusterRequest() (request *UpgradeClusterRequest) {
 	request = &UpgradeClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpgradeCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpgradeCluster", "", "")
 	request.Method = requests.POST
 	return
 }

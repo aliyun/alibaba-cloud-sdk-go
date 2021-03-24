@@ -21,7 +21,6 @@ import (
 )
 
 // GetEngineNamepace invokes the mse.GetEngineNamepace API synchronously
-// api document: https://help.aliyun.com/api/mse/getenginenamepace.html
 func (client *Client) GetEngineNamepace(request *GetEngineNamepaceRequest) (response *GetEngineNamepaceResponse, err error) {
 	response = CreateGetEngineNamepaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetEngineNamepace(request *GetEngineNamepaceRequest) (resp
 }
 
 // GetEngineNamepaceWithChan invokes the mse.GetEngineNamepace API asynchronously
-// api document: https://help.aliyun.com/api/mse/getenginenamepace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEngineNamepaceWithChan(request *GetEngineNamepaceRequest) (<-chan *GetEngineNamepaceResponse, <-chan error) {
 	responseChan := make(chan *GetEngineNamepaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetEngineNamepaceWithChan(request *GetEngineNamepaceReques
 }
 
 // GetEngineNamepaceWithCallback invokes the mse.GetEngineNamepace API asynchronously
-// api document: https://help.aliyun.com/api/mse/getenginenamepace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEngineNamepaceWithCallback(request *GetEngineNamepaceRequest, callback func(response *GetEngineNamepaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateGetEngineNamepaceRequest() (request *GetEngineNamepaceRequest) {
 	request = &GetEngineNamepaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetEngineNamepace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetEngineNamepace", "", "")
 	request.Method = requests.POST
 	return
 }

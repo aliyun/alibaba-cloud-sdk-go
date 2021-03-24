@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCluster invokes the mse.CreateCluster API synchronously
-// api document: https://help.aliyun.com/api/mse/createcluster.html
 func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
 	response = CreateCreateClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCluster(request *CreateClusterRequest) (response *Cr
 }
 
 // CreateClusterWithChan invokes the mse.CreateCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/createcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-ch
 }
 
 // CreateClusterWithCallback invokes the mse.CreateCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/createcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,7 +75,10 @@ type CreateClusterRequest struct {
 	PubSlbSpecification     string           `position:"Query" name:"PubSlbSpecification"`
 	PrivateSlbSpecification string           `position:"Query" name:"PrivateSlbSpecification"`
 	InstanceCount           requests.Integer `position:"Query" name:"InstanceCount"`
+	RequestPars             string           `position:"Query" name:"RequestPars"`
+	ConnectionType          string           `position:"Query" name:"ConnectionType"`
 	ClusterVersion          string           `position:"Query" name:"ClusterVersion"`
+	DiskCapacity            requests.Integer `position:"Query" name:"DiskCapacity"`
 	DiskType                string           `position:"Query" name:"DiskType"`
 	VSwitchId               string           `position:"Query" name:"VSwitchId"`
 	ClusterType             string           `position:"Query" name:"ClusterType"`
@@ -106,7 +104,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateCluster", "", "")
 	request.Method = requests.POST
 	return
 }

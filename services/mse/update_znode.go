@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateZnode invokes the mse.UpdateZnode API synchronously
-// api document: https://help.aliyun.com/api/mse/updateznode.html
 func (client *Client) UpdateZnode(request *UpdateZnodeRequest) (response *UpdateZnodeResponse, err error) {
 	response = CreateUpdateZnodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateZnode(request *UpdateZnodeRequest) (response *Update
 }
 
 // UpdateZnodeWithChan invokes the mse.UpdateZnode API asynchronously
-// api document: https://help.aliyun.com/api/mse/updateznode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateZnodeWithChan(request *UpdateZnodeRequest) (<-chan *UpdateZnodeResponse, <-chan error) {
 	responseChan := make(chan *UpdateZnodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateZnodeWithChan(request *UpdateZnodeRequest) (<-chan *
 }
 
 // UpdateZnodeWithCallback invokes the mse.UpdateZnode API asynchronously
-// api document: https://help.aliyun.com/api/mse/updateznode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateZnodeWithCallback(request *UpdateZnodeRequest, callback func(response *UpdateZnodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateUpdateZnodeRequest() (request *UpdateZnodeRequest) {
 	request = &UpdateZnodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateZnode", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateZnode", "", "")
 	request.Method = requests.POST
 	return
 }

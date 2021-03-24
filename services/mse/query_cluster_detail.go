@@ -21,7 +21,6 @@ import (
 )
 
 // QueryClusterDetail invokes the mse.QueryClusterDetail API synchronously
-// api document: https://help.aliyun.com/api/mse/queryclusterdetail.html
 func (client *Client) QueryClusterDetail(request *QueryClusterDetailRequest) (response *QueryClusterDetailResponse, err error) {
 	response = CreateQueryClusterDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryClusterDetail(request *QueryClusterDetailRequest) (re
 }
 
 // QueryClusterDetailWithChan invokes the mse.QueryClusterDetail API asynchronously
-// api document: https://help.aliyun.com/api/mse/queryclusterdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryClusterDetailWithChan(request *QueryClusterDetailRequest) (<-chan *QueryClusterDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryClusterDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryClusterDetailWithChan(request *QueryClusterDetailRequ
 }
 
 // QueryClusterDetailWithCallback invokes the mse.QueryClusterDetail API asynchronously
-// api document: https://help.aliyun.com/api/mse/queryclusterdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryClusterDetailWithCallback(request *QueryClusterDetailRequest, callback func(response *QueryClusterDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateQueryClusterDetailRequest() (request *QueryClusterDetailRequest) {
 	request = &QueryClusterDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterDetail", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterDetail", "", "")
 	request.Method = requests.POST
 	return
 }

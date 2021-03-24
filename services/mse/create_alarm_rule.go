@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAlarmRule invokes the mse.CreateAlarmRule API synchronously
-// api document: https://help.aliyun.com/api/mse/createalarmrule.html
 func (client *Client) CreateAlarmRule(request *CreateAlarmRuleRequest) (response *CreateAlarmRuleResponse, err error) {
 	response = CreateCreateAlarmRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAlarmRule(request *CreateAlarmRuleRequest) (response
 }
 
 // CreateAlarmRuleWithChan invokes the mse.CreateAlarmRule API asynchronously
-// api document: https://help.aliyun.com/api/mse/createalarmrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlarmRuleWithChan(request *CreateAlarmRuleRequest) (<-chan *CreateAlarmRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateAlarmRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAlarmRuleWithChan(request *CreateAlarmRuleRequest) (
 }
 
 // CreateAlarmRuleWithCallback invokes the mse.CreateAlarmRule API asynchronously
-// api document: https://help.aliyun.com/api/mse/createalarmrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlarmRuleWithCallback(request *CreateAlarmRuleRequest, callback func(response *CreateAlarmRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateCreateAlarmRuleRequest() (request *CreateAlarmRuleRequest) {
 	request = &CreateAlarmRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateAlarmRule", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateAlarmRule", "", "")
 	request.Method = requests.POST
 	return
 }

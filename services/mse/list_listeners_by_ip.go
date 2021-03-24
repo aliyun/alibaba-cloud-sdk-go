@@ -21,7 +21,6 @@ import (
 )
 
 // ListListenersByIp invokes the mse.ListListenersByIp API synchronously
-// api document: https://help.aliyun.com/api/mse/listlistenersbyip.html
 func (client *Client) ListListenersByIp(request *ListListenersByIpRequest) (response *ListListenersByIpResponse, err error) {
 	response = CreateListListenersByIpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListListenersByIp(request *ListListenersByIpRequest) (resp
 }
 
 // ListListenersByIpWithChan invokes the mse.ListListenersByIp API asynchronously
-// api document: https://help.aliyun.com/api/mse/listlistenersbyip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListListenersByIpWithChan(request *ListListenersByIpRequest) (<-chan *ListListenersByIpResponse, <-chan error) {
 	responseChan := make(chan *ListListenersByIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListListenersByIpWithChan(request *ListListenersByIpReques
 }
 
 // ListListenersByIpWithCallback invokes the mse.ListListenersByIp API asynchronously
-// api document: https://help.aliyun.com/api/mse/listlistenersbyip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListListenersByIpWithCallback(request *ListListenersByIpRequest, callback func(response *ListListenersByIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateListListenersByIpRequest() (request *ListListenersByIpRequest) {
 	request = &ListListenersByIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByIp", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByIp", "", "")
 	request.Method = requests.POST
 	return
 }

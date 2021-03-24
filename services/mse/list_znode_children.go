@@ -21,7 +21,6 @@ import (
 )
 
 // ListZnodeChildren invokes the mse.ListZnodeChildren API synchronously
-// api document: https://help.aliyun.com/api/mse/listznodechildren.html
 func (client *Client) ListZnodeChildren(request *ListZnodeChildrenRequest) (response *ListZnodeChildrenResponse, err error) {
 	response = CreateListZnodeChildrenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListZnodeChildren(request *ListZnodeChildrenRequest) (resp
 }
 
 // ListZnodeChildrenWithChan invokes the mse.ListZnodeChildren API asynchronously
-// api document: https://help.aliyun.com/api/mse/listznodechildren.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListZnodeChildrenWithChan(request *ListZnodeChildrenRequest) (<-chan *ListZnodeChildrenResponse, <-chan error) {
 	responseChan := make(chan *ListZnodeChildrenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListZnodeChildrenWithChan(request *ListZnodeChildrenReques
 }
 
 // ListZnodeChildrenWithCallback invokes the mse.ListZnodeChildren API asynchronously
-// api document: https://help.aliyun.com/api/mse/listznodechildren.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListZnodeChildrenWithCallback(request *ListZnodeChildrenRequest, callback func(response *ListZnodeChildrenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateListZnodeChildrenRequest() (request *ListZnodeChildrenRequest) {
 	request = &ListZnodeChildrenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListZnodeChildren", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListZnodeChildren", "", "")
 	request.Method = requests.GET
 	return
 }

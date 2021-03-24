@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateConfig invokes the mse.UpdateConfig API synchronously
-// api document: https://help.aliyun.com/api/mse/updateconfig.html
 func (client *Client) UpdateConfig(request *UpdateConfigRequest) (response *UpdateConfigResponse, err error) {
 	response = CreateUpdateConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateConfig(request *UpdateConfigRequest) (response *Upda
 }
 
 // UpdateConfigWithChan invokes the mse.UpdateConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/updateconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateConfigWithChan(request *UpdateConfigRequest) (<-chan *UpdateConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateConfigWithChan(request *UpdateConfigRequest) (<-chan
 }
 
 // UpdateConfigWithCallback invokes the mse.UpdateConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/updateconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateConfigWithCallback(request *UpdateConfigRequest, callback func(response *UpdateConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,19 +71,22 @@ func (client *Client) UpdateConfigWithCallback(request *UpdateConfigRequest, cal
 // UpdateConfigRequest is the request struct for api UpdateConfig
 type UpdateConfigRequest struct {
 	*requests.RpcRequest
-	OpenSuperAcl             string `position:"Body" name:"OpenSuperAcl"`
-	PassWord                 string `position:"Query" name:"PassWord"`
-	MaxClientCnxns           string `position:"Query" name:"MaxClientCnxns"`
-	RequestPars              string `position:"Query" name:"RequestPars"`
-	JuteMaxbuffer            string `position:"Query" name:"JuteMaxbuffer"`
-	ConfigType               string `position:"Query" name:"ConfigType"`
-	AutopurgeSnapRetainCount string `position:"Query" name:"AutopurgeSnapRetainCount"`
-	TickTime                 string `position:"Query" name:"TickTime"`
-	ClusterId                string `position:"Query" name:"ClusterId"`
-	SyncLimit                string `position:"Query" name:"SyncLimit"`
-	AutopurgePurgeInterval   string `position:"Query" name:"AutopurgePurgeInterval"`
-	InitLimit                string `position:"Query" name:"InitLimit"`
-	UserName                 string `position:"Query" name:"UserName"`
+	OpenSuperAcl             string           `position:"Body" name:"OpenSuperAcl"`
+	ConfigAuthEnabled        requests.Boolean `position:"Query" name:"ConfigAuthEnabled"`
+	PassWord                 string           `position:"Query" name:"PassWord"`
+	MaxClientCnxns           string           `position:"Query" name:"MaxClientCnxns"`
+	RequestPars              string           `position:"Query" name:"RequestPars"`
+	JuteMaxbuffer            string           `position:"Query" name:"JuteMaxbuffer"`
+	ConfigType               string           `position:"Query" name:"ConfigType"`
+	AutopurgeSnapRetainCount string           `position:"Query" name:"AutopurgeSnapRetainCount"`
+	MCPEnabled               requests.Boolean `position:"Query" name:"MCPEnabled"`
+	TickTime                 string           `position:"Query" name:"TickTime"`
+	ClusterId                string           `position:"Query" name:"ClusterId"`
+	SyncLimit                string           `position:"Query" name:"SyncLimit"`
+	InstanceId               string           `position:"Query" name:"InstanceId"`
+	AutopurgePurgeInterval   string           `position:"Query" name:"AutopurgePurgeInterval"`
+	InitLimit                string           `position:"Query" name:"InitLimit"`
+	UserName                 string           `position:"Query" name:"UserName"`
 }
 
 // UpdateConfigResponse is the response struct for api UpdateConfig
@@ -105,7 +103,7 @@ func CreateUpdateConfigRequest() (request *UpdateConfigRequest) {
 	request = &UpdateConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateConfig", "", "")
 	request.Method = requests.POST
 	return
 }

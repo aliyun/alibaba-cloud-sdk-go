@@ -21,7 +21,6 @@ import (
 )
 
 // QueryClusterSpecification invokes the mse.QueryClusterSpecification API synchronously
-// api document: https://help.aliyun.com/api/mse/queryclusterspecification.html
 func (client *Client) QueryClusterSpecification(request *QueryClusterSpecificationRequest) (response *QueryClusterSpecificationResponse, err error) {
 	response = CreateQueryClusterSpecificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryClusterSpecification(request *QueryClusterSpecificati
 }
 
 // QueryClusterSpecificationWithChan invokes the mse.QueryClusterSpecification API asynchronously
-// api document: https://help.aliyun.com/api/mse/queryclusterspecification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryClusterSpecificationWithChan(request *QueryClusterSpecificationRequest) (<-chan *QueryClusterSpecificationResponse, <-chan error) {
 	responseChan := make(chan *QueryClusterSpecificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryClusterSpecificationWithChan(request *QueryClusterSpe
 }
 
 // QueryClusterSpecificationWithCallback invokes the mse.QueryClusterSpecification API asynchronously
-// api document: https://help.aliyun.com/api/mse/queryclusterspecification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryClusterSpecificationWithCallback(request *QueryClusterSpecificationRequest, callback func(response *QueryClusterSpecificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,11 +76,13 @@ type QueryClusterSpecificationRequest struct {
 // QueryClusterSpecificationResponse is the response struct for api QueryClusterSpecification
 type QueryClusterSpecificationResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Success   bool                       `json:"Success" xml:"Success"`
-	Message   string                     `json:"Message" xml:"Message"`
-	ErrorCode string                     `json:"ErrorCode" xml:"ErrorCode"`
-	Data      []ClusterSpecificationData `json:"Data" xml:"Data"`
+	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	Success        bool       `json:"Success" xml:"Success"`
+	Message        string     `json:"Message" xml:"Message"`
+	ErrorCode      string     `json:"ErrorCode" xml:"ErrorCode"`
+	Code           int        `json:"Code" xml:"Code"`
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateQueryClusterSpecificationRequest creates a request to invoke QueryClusterSpecification API
@@ -93,7 +90,7 @@ func CreateQueryClusterSpecificationRequest() (request *QueryClusterSpecificatio
 	request = &QueryClusterSpecificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterSpecification", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterSpecification", "", "")
 	request.Method = requests.POST
 	return
 }

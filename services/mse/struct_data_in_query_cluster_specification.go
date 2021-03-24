@@ -17,5 +17,5 @@ package mse
 
 // DataInQueryClusterSpecification is a nested struct in mse response
 type DataInQueryClusterSpecification struct {
-	ClusterSpecificationData []ClusterSpecificationData `json:"ClusterSpecificationData" xml:"ClusterSpecificationData"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListAlarmItems invokes the mse.ListAlarmItems API synchronously
-// api document: https://help.aliyun.com/api/mse/listalarmitems.html
 func (client *Client) ListAlarmItems(request *ListAlarmItemsRequest) (response *ListAlarmItemsResponse, err error) {
 	response = CreateListAlarmItemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAlarmItems(request *ListAlarmItemsRequest) (response *
 }
 
 // ListAlarmItemsWithChan invokes the mse.ListAlarmItems API asynchronously
-// api document: https://help.aliyun.com/api/mse/listalarmitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmItemsWithChan(request *ListAlarmItemsRequest) (<-chan *ListAlarmItemsResponse, <-chan error) {
 	responseChan := make(chan *ListAlarmItemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAlarmItemsWithChan(request *ListAlarmItemsRequest) (<-
 }
 
 // ListAlarmItemsWithCallback invokes the mse.ListAlarmItems API asynchronously
-// api document: https://help.aliyun.com/api/mse/listalarmitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmItemsWithCallback(request *ListAlarmItemsRequest, callback func(response *ListAlarmItemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateListAlarmItemsRequest() (request *ListAlarmItemsRequest) {
 	request = &ListAlarmItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmItems", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmItems", "", "")
 	request.Method = requests.GET
 	return
 }

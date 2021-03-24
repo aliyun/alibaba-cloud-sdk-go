@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEngineNamespace invokes the mse.DeleteEngineNamespace API synchronously
-// api document: https://help.aliyun.com/api/mse/deleteenginenamespace.html
 func (client *Client) DeleteEngineNamespace(request *DeleteEngineNamespaceRequest) (response *DeleteEngineNamespaceResponse, err error) {
 	response = CreateDeleteEngineNamespaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEngineNamespace(request *DeleteEngineNamespaceReques
 }
 
 // DeleteEngineNamespaceWithChan invokes the mse.DeleteEngineNamespace API asynchronously
-// api document: https://help.aliyun.com/api/mse/deleteenginenamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEngineNamespaceWithChan(request *DeleteEngineNamespaceRequest) (<-chan *DeleteEngineNamespaceResponse, <-chan error) {
 	responseChan := make(chan *DeleteEngineNamespaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEngineNamespaceWithChan(request *DeleteEngineNamespa
 }
 
 // DeleteEngineNamespaceWithCallback invokes the mse.DeleteEngineNamespace API asynchronously
-// api document: https://help.aliyun.com/api/mse/deleteenginenamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEngineNamespaceWithCallback(request *DeleteEngineNamespaceRequest, callback func(response *DeleteEngineNamespaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateDeleteEngineNamespaceRequest() (request *DeleteEngineNamespaceRequest
 	request = &DeleteEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteEngineNamespace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteEngineNamespace", "", "")
 	request.Method = requests.POST
 	return
 }

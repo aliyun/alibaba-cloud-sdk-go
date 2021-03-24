@@ -21,7 +21,6 @@ import (
 )
 
 // ListAnsServiceClusters invokes the mse.ListAnsServiceClusters API synchronously
-// api document: https://help.aliyun.com/api/mse/listansserviceclusters.html
 func (client *Client) ListAnsServiceClusters(request *ListAnsServiceClustersRequest) (response *ListAnsServiceClustersResponse, err error) {
 	response = CreateListAnsServiceClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAnsServiceClusters(request *ListAnsServiceClustersRequ
 }
 
 // ListAnsServiceClustersWithChan invokes the mse.ListAnsServiceClusters API asynchronously
-// api document: https://help.aliyun.com/api/mse/listansserviceclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAnsServiceClustersWithChan(request *ListAnsServiceClustersRequest) (<-chan *ListAnsServiceClustersResponse, <-chan error) {
 	responseChan := make(chan *ListAnsServiceClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAnsServiceClustersWithChan(request *ListAnsServiceClus
 }
 
 // ListAnsServiceClustersWithCallback invokes the mse.ListAnsServiceClusters API asynchronously
-// api document: https://help.aliyun.com/api/mse/listansserviceclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAnsServiceClustersWithCallback(request *ListAnsServiceClustersRequest, callback func(response *ListAnsServiceClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateListAnsServiceClustersRequest() (request *ListAnsServiceClustersReque
 	request = &ListAnsServiceClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServiceClusters", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServiceClusters", "", "")
 	request.Method = requests.GET
 	return
 }

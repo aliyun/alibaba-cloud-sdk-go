@@ -21,7 +21,6 @@ import (
 )
 
 // QueryConfig invokes the mse.QueryConfig API synchronously
-// api document: https://help.aliyun.com/api/mse/queryconfig.html
 func (client *Client) QueryConfig(request *QueryConfigRequest) (response *QueryConfigResponse, err error) {
 	response = CreateQueryConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryConfig(request *QueryConfigRequest) (response *QueryC
 }
 
 // QueryConfigWithChan invokes the mse.QueryConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/queryconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConfigWithChan(request *QueryConfigRequest) (<-chan *QueryConfigResponse, <-chan error) {
 	responseChan := make(chan *QueryConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryConfigWithChan(request *QueryConfigRequest) (<-chan *
 }
 
 // QueryConfigWithCallback invokes the mse.QueryConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/queryconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConfigWithCallback(request *QueryConfigRequest, callback func(response *QueryConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type QueryConfigRequest struct {
 	*requests.RpcRequest
 	ConfigType  string `position:"Query" name:"ConfigType"`
 	ClusterId   string `position:"Query" name:"ClusterId"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
 	RequestPars string `position:"Query" name:"RequestPars"`
 }
 
@@ -96,7 +92,7 @@ func CreateQueryConfigRequest() (request *QueryConfigRequest) {
 	request = &QueryConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryConfig", "", "")
 	request.Method = requests.GET
 	return
 }

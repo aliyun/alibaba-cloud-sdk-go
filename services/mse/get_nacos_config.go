@@ -21,7 +21,6 @@ import (
 )
 
 // GetNacosConfig invokes the mse.GetNacosConfig API synchronously
-// api document: https://help.aliyun.com/api/mse/getnacosconfig.html
 func (client *Client) GetNacosConfig(request *GetNacosConfigRequest) (response *GetNacosConfigResponse, err error) {
 	response = CreateGetNacosConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetNacosConfig(request *GetNacosConfigRequest) (response *
 }
 
 // GetNacosConfigWithChan invokes the mse.GetNacosConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/getnacosconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNacosConfigWithChan(request *GetNacosConfigRequest) (<-chan *GetNacosConfigResponse, <-chan error) {
 	responseChan := make(chan *GetNacosConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetNacosConfigWithChan(request *GetNacosConfigRequest) (<-
 }
 
 // GetNacosConfigWithCallback invokes the mse.GetNacosConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/getnacosconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNacosConfigWithCallback(request *GetNacosConfigRequest, callback func(response *GetNacosConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateGetNacosConfigRequest() (request *GetNacosConfigRequest) {
 	request = &GetNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetNacosConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetNacosConfig", "", "")
 	request.Method = requests.POST
 	return
 }

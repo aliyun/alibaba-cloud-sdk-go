@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusters invokes the mse.ListClusters API synchronously
-// api document: https://help.aliyun.com/api/mse/listclusters.html
 func (client *Client) ListClusters(request *ListClustersRequest) (response *ListClustersResponse, err error) {
 	response = CreateListClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusters(request *ListClustersRequest) (response *List
 }
 
 // ListClustersWithChan invokes the mse.ListClusters API asynchronously
-// api document: https://help.aliyun.com/api/mse/listclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan *ListClustersResponse, <-chan error) {
 	responseChan := make(chan *ListClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan
 }
 
 // ListClustersWithCallback invokes the mse.ListClusters API asynchronously
-// api document: https://help.aliyun.com/api/mse/listclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersWithCallback(request *ListClustersRequest, callback func(response *ListClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "", "")
 	request.Method = requests.GET
 	return
 }

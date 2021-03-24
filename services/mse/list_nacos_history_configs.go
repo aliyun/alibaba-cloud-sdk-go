@@ -21,7 +21,6 @@ import (
 )
 
 // ListNacosHistoryConfigs invokes the mse.ListNacosHistoryConfigs API synchronously
-// api document: https://help.aliyun.com/api/mse/listnacoshistoryconfigs.html
 func (client *Client) ListNacosHistoryConfigs(request *ListNacosHistoryConfigsRequest) (response *ListNacosHistoryConfigsResponse, err error) {
 	response = CreateListNacosHistoryConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListNacosHistoryConfigs(request *ListNacosHistoryConfigsRe
 }
 
 // ListNacosHistoryConfigsWithChan invokes the mse.ListNacosHistoryConfigs API asynchronously
-// api document: https://help.aliyun.com/api/mse/listnacoshistoryconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNacosHistoryConfigsWithChan(request *ListNacosHistoryConfigsRequest) (<-chan *ListNacosHistoryConfigsResponse, <-chan error) {
 	responseChan := make(chan *ListNacosHistoryConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListNacosHistoryConfigsWithChan(request *ListNacosHistoryC
 }
 
 // ListNacosHistoryConfigsWithCallback invokes the mse.ListNacosHistoryConfigs API asynchronously
-// api document: https://help.aliyun.com/api/mse/listnacoshistoryconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNacosHistoryConfigsWithCallback(request *ListNacosHistoryConfigsRequest, callback func(response *ListNacosHistoryConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateListNacosHistoryConfigsRequest() (request *ListNacosHistoryConfigsReq
 	request = &ListNacosHistoryConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosHistoryConfigs", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosHistoryConfigs", "", "")
 	request.Method = requests.POST
 	return
 }

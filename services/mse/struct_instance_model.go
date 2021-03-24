@@ -17,15 +17,10 @@ package mse
 
 // InstanceModel is a nested struct in mse response
 type InstanceModel struct {
-	InstanceType    string `json:"InstanceType" xml:"InstanceType"`
-	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
 	Ip              string `json:"Ip" xml:"Ip"`
-	Vip             string `json:"Vip" xml:"Vip"`
 	HealthStatus    string `json:"HealthStatus" xml:"HealthStatus"`
-	ClusterId       string `json:"ClusterId" xml:"ClusterId"`
 	Role            string `json:"Role" xml:"Role"`
 	PodName         string `json:"PodName" xml:"PodName"`
 	InternetIp      string `json:"InternetIp" xml:"InternetIp"`
 	SingleTunnelVip string `json:"SingleTunnelVip" xml:"SingleTunnelVip"`
-	ZkClientPort    string `json:"ZkClientPort" xml:"ZkClientPort"`
 }

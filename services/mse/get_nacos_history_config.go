@@ -21,7 +21,6 @@ import (
 )
 
 // GetNacosHistoryConfig invokes the mse.GetNacosHistoryConfig API synchronously
-// api document: https://help.aliyun.com/api/mse/getnacoshistoryconfig.html
 func (client *Client) GetNacosHistoryConfig(request *GetNacosHistoryConfigRequest) (response *GetNacosHistoryConfigResponse, err error) {
 	response = CreateGetNacosHistoryConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetNacosHistoryConfig(request *GetNacosHistoryConfigReques
 }
 
 // GetNacosHistoryConfigWithChan invokes the mse.GetNacosHistoryConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/getnacoshistoryconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNacosHistoryConfigWithChan(request *GetNacosHistoryConfigRequest) (<-chan *GetNacosHistoryConfigResponse, <-chan error) {
 	responseChan := make(chan *GetNacosHistoryConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetNacosHistoryConfigWithChan(request *GetNacosHistoryConf
 }
 
 // GetNacosHistoryConfigWithCallback invokes the mse.GetNacosHistoryConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/getnacoshistoryconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNacosHistoryConfigWithCallback(request *GetNacosHistoryConfigRequest, callback func(response *GetNacosHistoryConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateGetNacosHistoryConfigRequest() (request *GetNacosHistoryConfigRequest
 	request = &GetNacosHistoryConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetNacosHistoryConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetNacosHistoryConfig", "", "")
 	request.Method = requests.POST
 	return
 }

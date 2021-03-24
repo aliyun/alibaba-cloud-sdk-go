@@ -21,7 +21,6 @@ import (
 )
 
 // ListAnsServices invokes the mse.ListAnsServices API synchronously
-// api document: https://help.aliyun.com/api/mse/listansservices.html
 func (client *Client) ListAnsServices(request *ListAnsServicesRequest) (response *ListAnsServicesResponse, err error) {
 	response = CreateListAnsServicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAnsServices(request *ListAnsServicesRequest) (response
 }
 
 // ListAnsServicesWithChan invokes the mse.ListAnsServices API asynchronously
-// api document: https://help.aliyun.com/api/mse/listansservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAnsServicesWithChan(request *ListAnsServicesRequest) (<-chan *ListAnsServicesResponse, <-chan error) {
 	responseChan := make(chan *ListAnsServicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAnsServicesWithChan(request *ListAnsServicesRequest) (
 }
 
 // ListAnsServicesWithCallback invokes the mse.ListAnsServices API asynchronously
-// api document: https://help.aliyun.com/api/mse/listansservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAnsServicesWithCallback(request *ListAnsServicesRequest, callback func(response *ListAnsServicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +75,8 @@ type ListAnsServicesRequest struct {
 	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	GroupName   string           `position:"Query" name:"GroupName"`
 	HasIpCount  string           `position:"Query" name:"HasIpCount"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	NamespaceId string           `position:"Query" name:"NamespaceId"`
 	RequestPars string           `position:"Query" name:"RequestPars"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	ServiceName string           `position:"Query" name:"ServiceName"`
@@ -104,7 +101,7 @@ func CreateListAnsServicesRequest() (request *ListAnsServicesRequest) {
 	request = &ListAnsServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServices", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServices", "", "")
 	request.Method = requests.GET
 	return
 }

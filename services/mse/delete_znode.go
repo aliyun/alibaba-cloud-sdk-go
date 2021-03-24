@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteZnode invokes the mse.DeleteZnode API synchronously
-// api document: https://help.aliyun.com/api/mse/deleteznode.html
 func (client *Client) DeleteZnode(request *DeleteZnodeRequest) (response *DeleteZnodeResponse, err error) {
 	response = CreateDeleteZnodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteZnode(request *DeleteZnodeRequest) (response *Delete
 }
 
 // DeleteZnodeWithChan invokes the mse.DeleteZnode API asynchronously
-// api document: https://help.aliyun.com/api/mse/deleteznode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteZnodeWithChan(request *DeleteZnodeRequest) (<-chan *DeleteZnodeResponse, <-chan error) {
 	responseChan := make(chan *DeleteZnodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteZnodeWithChan(request *DeleteZnodeRequest) (<-chan *
 }
 
 // DeleteZnodeWithCallback invokes the mse.DeleteZnode API asynchronously
-// api document: https://help.aliyun.com/api/mse/deleteznode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteZnodeWithCallback(request *DeleteZnodeRequest, callback func(response *DeleteZnodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateDeleteZnodeRequest() (request *DeleteZnodeRequest) {
 	request = &DeleteZnodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteZnode", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteZnode", "", "")
 	request.Method = requests.POST
 	return
 }

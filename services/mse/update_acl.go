@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAcl invokes the mse.UpdateAcl API synchronously
-// api document: https://help.aliyun.com/api/mse/updateacl.html
 func (client *Client) UpdateAcl(request *UpdateAclRequest) (response *UpdateAclResponse, err error) {
 	response = CreateUpdateAclResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAcl(request *UpdateAclRequest) (response *UpdateAclR
 }
 
 // UpdateAclWithChan invokes the mse.UpdateAcl API asynchronously
-// api document: https://help.aliyun.com/api/mse/updateacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAclWithChan(request *UpdateAclRequest) (<-chan *UpdateAclResponse, <-chan error) {
 	responseChan := make(chan *UpdateAclResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAclWithChan(request *UpdateAclRequest) (<-chan *Upda
 }
 
 // UpdateAclWithCallback invokes the mse.UpdateAcl API asynchronously
-// api document: https://help.aliyun.com/api/mse/updateacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAclWithCallback(request *UpdateAclRequest, callback func(response *UpdateAclResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateUpdateAclRequest() (request *UpdateAclRequest) {
 	request = &UpdateAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateAcl", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateAcl", "", "")
 	request.Method = requests.POST
 	return
 }

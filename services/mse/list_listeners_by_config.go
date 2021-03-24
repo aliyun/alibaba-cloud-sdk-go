@@ -21,7 +21,6 @@ import (
 )
 
 // ListListenersByConfig invokes the mse.ListListenersByConfig API synchronously
-// api document: https://help.aliyun.com/api/mse/listlistenersbyconfig.html
 func (client *Client) ListListenersByConfig(request *ListListenersByConfigRequest) (response *ListListenersByConfigResponse, err error) {
 	response = CreateListListenersByConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListListenersByConfig(request *ListListenersByConfigReques
 }
 
 // ListListenersByConfigWithChan invokes the mse.ListListenersByConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/listlistenersbyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListListenersByConfigWithChan(request *ListListenersByConfigRequest) (<-chan *ListListenersByConfigResponse, <-chan error) {
 	responseChan := make(chan *ListListenersByConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListListenersByConfigWithChan(request *ListListenersByConf
 }
 
 // ListListenersByConfigWithCallback invokes the mse.ListListenersByConfig API asynchronously
-// api document: https://help.aliyun.com/api/mse/listlistenersbyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListListenersByConfigWithCallback(request *ListListenersByConfigRequest, callback func(response *ListListenersByConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateListListenersByConfigRequest() (request *ListListenersByConfigRequest
 	request = &ListListenersByConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByConfig", "", "")
 	request.Method = requests.POST
 	return
 }

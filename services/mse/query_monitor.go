@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMonitor invokes the mse.QueryMonitor API synchronously
-// api document: https://help.aliyun.com/api/mse/querymonitor.html
 func (client *Client) QueryMonitor(request *QueryMonitorRequest) (response *QueryMonitorResponse, err error) {
 	response = CreateQueryMonitorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMonitor(request *QueryMonitorRequest) (response *Quer
 }
 
 // QueryMonitorWithChan invokes the mse.QueryMonitor API asynchronously
-// api document: https://help.aliyun.com/api/mse/querymonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMonitorWithChan(request *QueryMonitorRequest) (<-chan *QueryMonitorResponse, <-chan error) {
 	responseChan := make(chan *QueryMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMonitorWithChan(request *QueryMonitorRequest) (<-chan
 }
 
 // QueryMonitorWithCallback invokes the mse.QueryMonitor API asynchronously
-// api document: https://help.aliyun.com/api/mse/querymonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMonitorWithCallback(request *QueryMonitorRequest, callback func(response *QueryMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,13 @@ func (client *Client) QueryMonitorWithCallback(request *QueryMonitorRequest, cal
 // QueryMonitorRequest is the request struct for api QueryMonitor
 type QueryMonitorRequest struct {
 	*requests.RpcRequest
-	MonitorType string `position:"Query" name:"MonitorType"`
-	EndTime     string `position:"Query" name:"EndTime"`
-	ClusterId   string `position:"Query" name:"ClusterId"`
-	StartTime   string `position:"Query" name:"StartTime"`
-	RequestPars string `position:"Query" name:"RequestPars"`
-	Step        string `position:"Query" name:"Step"`
+	MonitorType string           `position:"Query" name:"MonitorType"`
+	EndTime     requests.Integer `position:"Query" name:"EndTime"`
+	ClusterId   string           `position:"Query" name:"ClusterId"`
+	StartTime   requests.Integer `position:"Query" name:"StartTime"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	RequestPars string           `position:"Query" name:"RequestPars"`
+	Step        requests.Integer `position:"Query" name:"Step"`
 }
 
 // QueryMonitorResponse is the response struct for api QueryMonitor
@@ -99,7 +95,7 @@ func CreateQueryMonitorRequest() (request *QueryMonitorRequest) {
 	request = &QueryMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryMonitor", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryMonitor", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // RestartCluster invokes the mse.RestartCluster API synchronously
-// api document: https://help.aliyun.com/api/mse/restartcluster.html
 func (client *Client) RestartCluster(request *RestartClusterRequest) (response *RestartClusterResponse, err error) {
 	response = CreateRestartClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartCluster(request *RestartClusterRequest) (response *
 }
 
 // RestartClusterWithChan invokes the mse.RestartCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/restartcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartClusterWithChan(request *RestartClusterRequest) (<-chan *RestartClusterResponse, <-chan error) {
 	responseChan := make(chan *RestartClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartClusterWithChan(request *RestartClusterRequest) (<-
 }
 
 // RestartClusterWithCallback invokes the mse.RestartCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/restartcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartClusterWithCallback(request *RestartClusterRequest, callback func(response *RestartClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateRestartClusterRequest() (request *RestartClusterRequest) {
 	request = &RestartClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "RestartCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "RestartCluster", "", "")
 	request.Method = requests.POST
 	return
 }

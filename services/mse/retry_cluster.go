@@ -21,7 +21,6 @@ import (
 )
 
 // RetryCluster invokes the mse.RetryCluster API synchronously
-// api document: https://help.aliyun.com/api/mse/retrycluster.html
 func (client *Client) RetryCluster(request *RetryClusterRequest) (response *RetryClusterResponse, err error) {
 	response = CreateRetryClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RetryCluster(request *RetryClusterRequest) (response *Retr
 }
 
 // RetryClusterWithChan invokes the mse.RetryCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/retrycluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RetryClusterWithChan(request *RetryClusterRequest) (<-chan *RetryClusterResponse, <-chan error) {
 	responseChan := make(chan *RetryClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RetryClusterWithChan(request *RetryClusterRequest) (<-chan
 }
 
 // RetryClusterWithCallback invokes the mse.RetryCluster API asynchronously
-// api document: https://help.aliyun.com/api/mse/retrycluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RetryClusterWithCallback(request *RetryClusterRequest, callback func(response *RetryClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateRetryClusterRequest() (request *RetryClusterRequest) {
 	request = &RetryClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "RetryCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "RetryCluster", "", "")
 	request.Method = requests.POST
 	return
 }

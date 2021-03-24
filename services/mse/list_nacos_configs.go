@@ -21,7 +21,6 @@ import (
 )
 
 // ListNacosConfigs invokes the mse.ListNacosConfigs API synchronously
-// api document: https://help.aliyun.com/api/mse/listnacosconfigs.html
 func (client *Client) ListNacosConfigs(request *ListNacosConfigsRequest) (response *ListNacosConfigsResponse, err error) {
 	response = CreateListNacosConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListNacosConfigs(request *ListNacosConfigsRequest) (respon
 }
 
 // ListNacosConfigsWithChan invokes the mse.ListNacosConfigs API asynchronously
-// api document: https://help.aliyun.com/api/mse/listnacosconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNacosConfigsWithChan(request *ListNacosConfigsRequest) (<-chan *ListNacosConfigsResponse, <-chan error) {
 	responseChan := make(chan *ListNacosConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListNacosConfigsWithChan(request *ListNacosConfigsRequest)
 }
 
 // ListNacosConfigsWithCallback invokes the mse.ListNacosConfigs API asynchronously
-// api document: https://help.aliyun.com/api/mse/listnacosconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNacosConfigsWithCallback(request *ListNacosConfigsRequest, callback func(response *ListNacosConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ type ListNacosConfigsResponse struct {
 	PageSize       int                       `json:"PageSize" xml:"PageSize"`
 	TotalCount     int                       `json:"TotalCount" xml:"TotalCount"`
 	HttpCode       string                    `json:"HttpCode" xml:"HttpCode"`
+	Code           int                       `json:"Code" xml:"Code"`
 	Configurations []NacosConfigForListModel `json:"Configurations" xml:"Configurations"`
 }
 
@@ -106,7 +102,7 @@ func CreateListNacosConfigsRequest() (request *ListNacosConfigsRequest) {
 	request = &ListNacosConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosConfigs", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosConfigs", "", "")
 	request.Method = requests.POST
 	return
 }

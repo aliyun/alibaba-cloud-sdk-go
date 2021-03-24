@@ -21,7 +21,6 @@ import (
 )
 
 // CreateEngineNamespace invokes the mse.CreateEngineNamespace API synchronously
-// api document: https://help.aliyun.com/api/mse/createenginenamespace.html
 func (client *Client) CreateEngineNamespace(request *CreateEngineNamespaceRequest) (response *CreateEngineNamespaceResponse, err error) {
 	response = CreateCreateEngineNamespaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateEngineNamespace(request *CreateEngineNamespaceReques
 }
 
 // CreateEngineNamespaceWithChan invokes the mse.CreateEngineNamespace API asynchronously
-// api document: https://help.aliyun.com/api/mse/createenginenamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEngineNamespaceWithChan(request *CreateEngineNamespaceRequest) (<-chan *CreateEngineNamespaceResponse, <-chan error) {
 	responseChan := make(chan *CreateEngineNamespaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateEngineNamespaceWithChan(request *CreateEngineNamespa
 }
 
 // CreateEngineNamespaceWithCallback invokes the mse.CreateEngineNamespace API asynchronously
-// api document: https://help.aliyun.com/api/mse/createenginenamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEngineNamespaceWithCallback(request *CreateEngineNamespaceRequest, callback func(response *CreateEngineNamespaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateCreateEngineNamespaceRequest() (request *CreateEngineNamespaceRequest
 	request = &CreateEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateEngineNamespace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateEngineNamespace", "", "")
 	request.Method = requests.POST
 	return
 }

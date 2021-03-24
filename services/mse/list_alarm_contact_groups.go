@@ -21,7 +21,6 @@ import (
 )
 
 // ListAlarmContactGroups invokes the mse.ListAlarmContactGroups API synchronously
-// api document: https://help.aliyun.com/api/mse/listalarmcontactgroups.html
 func (client *Client) ListAlarmContactGroups(request *ListAlarmContactGroupsRequest) (response *ListAlarmContactGroupsResponse, err error) {
 	response = CreateListAlarmContactGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAlarmContactGroups(request *ListAlarmContactGroupsRequ
 }
 
 // ListAlarmContactGroupsWithChan invokes the mse.ListAlarmContactGroups API asynchronously
-// api document: https://help.aliyun.com/api/mse/listalarmcontactgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmContactGroupsWithChan(request *ListAlarmContactGroupsRequest) (<-chan *ListAlarmContactGroupsResponse, <-chan error) {
 	responseChan := make(chan *ListAlarmContactGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAlarmContactGroupsWithChan(request *ListAlarmContactGr
 }
 
 // ListAlarmContactGroupsWithCallback invokes the mse.ListAlarmContactGroups API asynchronously
-// api document: https://help.aliyun.com/api/mse/listalarmcontactgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmContactGroupsWithCallback(request *ListAlarmContactGroupsRequest, callback func(response *ListAlarmContactGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateListAlarmContactGroupsRequest() (request *ListAlarmContactGroupsReque
 	request = &ListAlarmContactGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmContactGroups", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmContactGroups", "", "")
 	request.Method = requests.GET
 	return
 }
