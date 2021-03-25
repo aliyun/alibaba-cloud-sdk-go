@@ -20,7 +20,7 @@ type Outbound struct {
 	AnswerRate                   float64 `json:"AnswerRate" xml:"AnswerRate"`
 	AverageDialingTime           float64 `json:"AverageDialingTime" xml:"AverageDialingTime"`
 	AverageTalkTime              float64 `json:"AverageTalkTime" xml:"AverageTalkTime"`
-	AverageWorkTime              int64   `json:"AverageWorkTime" xml:"AverageWorkTime"`
+	AverageWorkTime              float64 `json:"AverageWorkTime" xml:"AverageWorkTime"`
 	CallsAnswered                int64   `json:"CallsAnswered" xml:"CallsAnswered"`
 	CallsDialed                  int64   `json:"CallsDialed" xml:"CallsDialed"`
 	MaxDialingTime               int64   `json:"MaxDialingTime" xml:"MaxDialingTime"`

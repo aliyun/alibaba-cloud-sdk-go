@@ -1,3 +1,7 @@
+2021-03-25 Version: v1.61.1001
+- Generated 2020-07-01 for `CCC`.
+- Change indicator date type of ListHistoriticalAgentReport.
+
 2021-03-24 Version: v1.61.1000
 - Generated 2020-07-01 for `CCC`.
 - Export new API.
