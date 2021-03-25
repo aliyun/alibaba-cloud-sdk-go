@@ -77,13 +77,13 @@ type DescribeConfigMapRequest struct {
 // DescribeConfigMapResponse is the response struct for api DescribeConfigMap
 type DescribeConfigMapResponse struct {
 	*responses.BaseResponse
-	RequestId string                  `json:"RequestId" xml:"RequestId"`
-	Code      string                  `json:"Code" xml:"Code"`
-	Message   string                  `json:"Message" xml:"Message"`
-	ErrorCode string                  `json:"ErrorCode" xml:"ErrorCode"`
-	TraceId   string                  `json:"TraceId" xml:"TraceId"`
-	Success   bool                    `json:"Success" xml:"Success"`
-	Data      DataInDescribeConfigMap `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	TraceId   string `json:"TraceId" xml:"TraceId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeConfigMapRequest creates a request to invoke DescribeConfigMap API

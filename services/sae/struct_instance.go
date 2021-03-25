@@ -17,11 +17,14 @@ package sae
 
 // Instance is a nested struct in sae response
 type Instance struct {
-	GroupId                   string `json:"GroupId" xml:"GroupId"`
-	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
-	InstanceContainerStatus   string `json:"InstanceContainerStatus" xml:"InstanceContainerStatus"`
 	InstanceContainerIp       string `json:"InstanceContainerIp" xml:"InstanceContainerIp"`
-	CreateTimeStamp           int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	InstanceHealthStatus      string `json:"InstanceHealthStatus" xml:"InstanceHealthStatus"`
+	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
 	VSwitchId                 string `json:"VSwitchId" xml:"VSwitchId"`
+	ImageUrl                  string `json:"ImageUrl" xml:"ImageUrl"`
 	InstanceContainerRestarts int64  `json:"InstanceContainerRestarts" xml:"InstanceContainerRestarts"`
+	PackageVersion            string `json:"PackageVersion" xml:"PackageVersion"`
+	InstanceContainerStatus   string `json:"InstanceContainerStatus" xml:"InstanceContainerStatus"`
+	CreateTimeStamp           int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	GroupId                   string `json:"GroupId" xml:"GroupId"`
 }

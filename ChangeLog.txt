@@ -1,3 +1,7 @@
+2021-03-25 Version: v1.61.1003
+- Generated 2019-05-06 for `sae`.
+- Release autoscaling apis for timer features.
+
 2021-03-25 Version: v1.61.1002
 - Generated 2019-05-31 for `mse`.
 

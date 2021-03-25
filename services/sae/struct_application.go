@@ -17,14 +17,15 @@ package sae
 
 // Application is a nested struct in sae response
 type Application struct {
-	AppDeletingStatus bool       `json:"AppDeletingStatus" xml:"AppDeletingStatus"`
-	AppId             string     `json:"AppId" xml:"AppId"`
-	AppName           string     `json:"AppName" xml:"AppName"`
-	RegionId          string     `json:"RegionId" xml:"RegionId"`
-	RunningInstances  int        `json:"RunningInstances" xml:"RunningInstances"`
 	Instances         int        `json:"Instances" xml:"Instances"`
+	ScaleRuleEnabled  bool       `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
+	AppDescription    string     `json:"AppDescription" xml:"AppDescription"`
+	AppId             string     `json:"AppId" xml:"AppId"`
+	RunningInstances  int        `json:"RunningInstances" xml:"RunningInstances"`
+	RegionId          string     `json:"RegionId" xml:"RegionId"`
 	NamespaceId       string     `json:"NamespaceId" xml:"NamespaceId"`
 	ScaleRuleType     string     `json:"ScaleRuleType" xml:"ScaleRuleType"`
-	ScaleRuleEnabled  bool       `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
+	AppDeletingStatus bool       `json:"AppDeletingStatus" xml:"AppDeletingStatus"`
+	AppName           string     `json:"AppName" xml:"AppName"`
 	Tags              []TagsItem `json:"Tags" xml:"Tags"`
 }

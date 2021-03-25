@@ -77,12 +77,12 @@ type ListPublishedServicesRequest struct {
 // ListPublishedServicesResponse is the response struct for api ListPublishedServices
 type ListPublishedServicesResponse struct {
 	*responses.BaseResponse
-	Code      string                            `json:"Code" xml:"Code"`
 	Message   string                            `json:"Message" xml:"Message"`
 	RequestId string                            `json:"RequestId" xml:"RequestId"`
-	Success   bool                              `json:"Success" xml:"Success"`
-	ErrorCode string                            `json:"ErrorCode" xml:"ErrorCode"`
 	TraceId   string                            `json:"TraceId" xml:"TraceId"`
+	ErrorCode string                            `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string                            `json:"Code" xml:"Code"`
+	Success   bool                              `json:"Success" xml:"Success"`
 	Data      []DataItemInListPublishedServices `json:"Data" xml:"Data"`
 }
 

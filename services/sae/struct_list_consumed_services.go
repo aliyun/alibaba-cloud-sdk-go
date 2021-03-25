@@ -17,11 +17,11 @@ package sae
 
 // ListConsumedServices is a nested struct in sae response
 type ListConsumedServices struct {
-	AppId    string   `json:"AppId" xml:"AppId"`
 	Group2Ip string   `json:"Group2Ip" xml:"Group2Ip"`
-	Name     string   `json:"Name" xml:"Name"`
 	Type     string   `json:"Type" xml:"Type"`
+	AppId    string   `json:"AppId" xml:"AppId"`
 	Version  string   `json:"Version" xml:"Version"`
+	Name     string   `json:"Name" xml:"Name"`
 	Groups   []string `json:"Groups" xml:"Groups"`
 	Ips      []string `json:"Ips" xml:"Ips"`
 }

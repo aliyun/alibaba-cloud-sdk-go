@@ -77,13 +77,13 @@ type DescribeApplicationStatusRequest struct {
 // DescribeApplicationStatusResponse is the response struct for api DescribeApplicationStatus
 type DescribeApplicationStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	TraceId   string `json:"TraceId" xml:"TraceId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                          `json:"RequestId" xml:"RequestId"`
+	Code      string                          `json:"Code" xml:"Code"`
+	Message   string                          `json:"Message" xml:"Message"`
+	TraceId   string                          `json:"TraceId" xml:"TraceId"`
+	Success   bool                            `json:"Success" xml:"Success"`
+	ErrorCode string                          `json:"ErrorCode" xml:"ErrorCode"`
+	Data      DataInDescribeApplicationStatus `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeApplicationStatusRequest creates a request to invoke DescribeApplicationStatus API

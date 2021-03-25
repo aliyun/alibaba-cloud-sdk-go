@@ -17,20 +17,20 @@ package sae
 
 // Data is a nested struct in sae response
 type Data struct {
+	LastDisableTime               int64                    `json:"LastDisableTime" xml:"LastDisableTime"`
 	VpcName                       string                   `json:"VpcName" xml:"VpcName"`
 	TomcatConfig                  string                   `json:"TomcatConfig" xml:"TomcatConfig"`
 	Logo                          string                   `json:"Logo" xml:"Logo"`
 	VSwitchName                   string                   `json:"VSwitchName" xml:"VSwitchName"`
-	RunningInstances              int                      `json:"RunningInstances" xml:"RunningInstances"`
-	CoType                        string                   `json:"CoType" xml:"CoType"`
-	CoTypeCode                    string                   `json:"CoTypeCode" xml:"CoTypeCode"`
 	LastChangeOrderId             string                   `json:"LastChangeOrderId" xml:"LastChangeOrderId"`
 	EdasContainerVersion          string                   `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
 	SlsConfigs                    string                   `json:"SlsConfigs" xml:"SlsConfigs"`
 	NasId                         string                   `json:"NasId" xml:"NasId"`
 	PreStop                       string                   `json:"PreStop" xml:"PreStop"`
 	ListenerPort                  int                      `json:"ListenerPort" xml:"ListenerPort"`
+	PipelineName                  string                   `json:"PipelineName" xml:"PipelineName"`
 	NamespaceDescription          string                   `json:"NamespaceDescription" xml:"NamespaceDescription"`
+	UpdateTime                    int64                    `json:"UpdateTime" xml:"UpdateTime"`
 	JarStartArgs                  string                   `json:"JarStartArgs" xml:"JarStartArgs"`
 	Id                            int64                    `json:"Id" xml:"Id"`
 	Command                       string                   `json:"Command" xml:"Command"`
@@ -40,7 +40,6 @@ type Data struct {
 	Envs                          string                   `json:"Envs" xml:"Envs"`
 	RepoType                      string                   `json:"RepoType" xml:"RepoType"`
 	RepoTag                       string                   `json:"RepoTag" xml:"RepoTag"`
-	ArmsApmInfo                   string                   `json:"ArmsApmInfo" xml:"ArmsApmInfo"`
 	SlbId                         string                   `json:"SlbId" xml:"SlbId"`
 	TotalSize                     int                      `json:"TotalSize" xml:"TotalSize"`
 	NotificationExpired           bool                     `json:"NotificationExpired" xml:"NotificationExpired"`
@@ -49,15 +48,15 @@ type Data struct {
 	ChangeOrderId                 string                   `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	SecurityGroupId               string                   `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	Timezone                      string                   `json:"Timezone" xml:"Timezone"`
-	Auto                          bool                     `json:"Auto" xml:"Auto"`
-	CreateTime                    string                   `json:"CreateTime" xml:"CreateTime"`
 	PackageVersion                string                   `json:"PackageVersion" xml:"PackageVersion"`
 	PageSize                      int                      `json:"PageSize" xml:"PageSize"`
 	Replicas                      int                      `json:"Replicas" xml:"Replicas"`
 	PhpConfigLocation             string                   `json:"PhpConfigLocation" xml:"PhpConfigLocation"`
+	CoStatus                      string                   `json:"CoStatus" xml:"CoStatus"`
 	CustomHostAlias               string                   `json:"CustomHostAlias" xml:"CustomHostAlias"`
 	TenantId                      string                   `json:"TenantId" xml:"TenantId"`
 	NamespaceName                 string                   `json:"NamespaceName" xml:"NamespaceName"`
+	NextPipelineId                string                   `json:"NextPipelineId" xml:"NextPipelineId"`
 	Memory                        int                      `json:"Memory" xml:"Memory"`
 	PhpArmsConfigLocation         string                   `json:"PhpArmsConfigLocation" xml:"PhpArmsConfigLocation"`
 	VSwitchId                     string                   `json:"VSwitchId" xml:"VSwitchId"`
@@ -74,63 +73,66 @@ type Data struct {
 	LastChangeOrderRunning        bool                     `json:"LastChangeOrderRunning" xml:"LastChangeOrderRunning"`
 	MountHost                     string                   `json:"MountHost" xml:"MountHost"`
 	SlbType                       string                   `json:"SlbType" xml:"SlbType"`
-	CurrentPipelineId             string                   `json:"CurrentPipelineId" xml:"CurrentPipelineId"`
+	CurrentPoint                  int                      `json:"CurrentPoint" xml:"CurrentPoint"`
 	ImageUrl                      string                   `json:"ImageUrl" xml:"ImageUrl"`
 	LastChangeOrderStatus         string                   `json:"LastChangeOrderStatus" xml:"LastChangeOrderStatus"`
 	VpcId                         string                   `json:"VpcId" xml:"VpcId"`
 	IntranetIp                    string                   `json:"IntranetIp" xml:"IntranetIp"`
 	CertId                        string                   `json:"CertId" xml:"CertId"`
+	ShowBatch                     bool                     `json:"ShowBatch" xml:"ShowBatch"`
 	BatchWaitTime                 int                      `json:"BatchWaitTime" xml:"BatchWaitTime"`
 	RepoId                        int                      `json:"RepoId" xml:"RepoId"`
 	BelongRegion                  string                   `json:"BelongRegion" xml:"BelongRegion"`
 	CrUrl                         string                   `json:"CrUrl" xml:"CrUrl"`
-	SupportRollback               bool                     `json:"SupportRollback" xml:"SupportRollback"`
 	Jdk                           string                   `json:"Jdk" xml:"Jdk"`
-	CurrentStatus                 string                   `json:"CurrentStatus" xml:"CurrentStatus"`
-	BatchCount                    int                      `json:"BatchCount" xml:"BatchCount"`
 	AppId                         string                   `json:"AppId" xml:"AppId"`
+	ScaleRuleName                 string                   `json:"ScaleRuleName" xml:"ScaleRuleName"`
 	AcrAssumeRoleArn              string                   `json:"AcrAssumeRoleArn" xml:"AcrAssumeRoleArn"`
 	Cpu                           int                      `json:"Cpu" xml:"Cpu"`
-	BatchType                     string                   `json:"BatchType" xml:"BatchType"`
 	TerminationGracePeriodSeconds int                      `json:"TerminationGracePeriodSeconds" xml:"TerminationGracePeriodSeconds"`
 	WebContainer                  string                   `json:"WebContainer" xml:"WebContainer"`
-	ErrorMessage                  string                   `json:"ErrorMessage" xml:"ErrorMessage"`
 	RepoOriginType                string                   `json:"RepoOriginType" xml:"RepoOriginType"`
+	PipelineStatus                int                      `json:"PipelineStatus" xml:"PipelineStatus"`
+	CreateTime                    int64                    `json:"CreateTime" xml:"CreateTime"`
 	MinReadyInstances             int                      `json:"MinReadyInstances" xml:"MinReadyInstances"`
 	CommandArgs                   string                   `json:"CommandArgs" xml:"CommandArgs"`
+	CurrentStageId                string                   `json:"CurrentStageId" xml:"CurrentStageId"`
 	AppDescription                string                   `json:"AppDescription" xml:"AppDescription"`
 	RegionId                      string                   `json:"RegionId" xml:"RegionId"`
 	PipelineId                    string                   `json:"PipelineId" xml:"PipelineId"`
 	WarStartOptions               string                   `json:"WarStartOptions" xml:"WarStartOptions"`
 	UserId                        string                   `json:"UserId" xml:"UserId"`
-	SupportAbortFreeze            bool                     `json:"SupportAbortFreeze" xml:"SupportAbortFreeze"`
 	Description                   string                   `json:"Description" xml:"Description"`
-	Status                        int                      `json:"Status" xml:"Status"`
+	ScaleRuleEnabled              bool                     `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
 	InternetIp                    string                   `json:"InternetIp" xml:"InternetIp"`
 	AppCount                      int64                    `json:"AppCount" xml:"AppCount"`
 	ConfigMapId                   int64                    `json:"ConfigMapId" xml:"ConfigMapId"`
 	IngressId                     int64                    `json:"IngressId" xml:"IngressId"`
 	Readiness                     string                   `json:"Readiness" xml:"Readiness"`
-	ArmsAdvancedEnabled           string                   `json:"ArmsAdvancedEnabled" xml:"ArmsAdvancedEnabled"`
+	ScaleRuleType                 string                   `json:"ScaleRuleType" xml:"ScaleRuleType"`
 	NamespaceId                   string                   `json:"NamespaceId" xml:"NamespaceId"`
-	CoTargets                     []string                 `json:"CoTargets" xml:"CoTargets"`
+	Data                          map[string]interface{}   `json:"Data" xml:"Data"`
+	Timer                         Timer                    `json:"Timer" xml:"Timer"`
 	DefaultRule                   DefaultRule              `json:"DefaultRule" xml:"DefaultRule"`
 	RealTimeRes                   RealTimeRes              `json:"RealTimeRes" xml:"RealTimeRes"`
+	Metric                        Metric                   `json:"Metric" xml:"Metric"`
 	Summary                       Summary                  `json:"Summary" xml:"Summary"`
 	MountDesc                     []MountDescItem          `json:"MountDesc" xml:"MountDesc"`
 	Intranet                      []IntranetItem           `json:"Intranet" xml:"Intranet"`
+	RelateApps                    []RelateApp              `json:"RelateApps" xml:"RelateApps"`
 	Namespaces                    []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	Internet                      []InternetItem           `json:"Internet" xml:"Internet"`
-	Instances                     []Instance               `json:"Instances" xml:"Instances"`
-	Rules                         []Rule                   `json:"Rules" xml:"Rules"`
 	ChangeOrderList               []ChangeOrder            `json:"ChangeOrderList" xml:"ChangeOrderList"`
+	ApplicationScalingRules       []ApplicationScalingRule `json:"ApplicationScalingRules" xml:"ApplicationScalingRules"`
+	Rules                         []Rule                   `json:"Rules" xml:"Rules"`
+	Applications                  []Application            `json:"Applications" xml:"Applications"`
+	StageList                     []Stage                  `json:"StageList" xml:"StageList"`
 	LogConfigs                    []LogConfig              `json:"LogConfigs" xml:"LogConfigs"`
 	ConfigMaps                    []ConfigMap              `json:"ConfigMaps" xml:"ConfigMaps"`
 	ConfigMapMountDesc            []ConfigMapMountDescItem `json:"ConfigMapMountDesc" xml:"ConfigMapMountDesc"`
 	Tags                          []Tag                    `json:"Tags" xml:"Tags"`
-	Pipelines                     []Pipeline               `json:"Pipelines" xml:"Pipelines"`
+	Instances                     []Instance               `json:"Instances" xml:"Instances"`
 	AppEventEntity                []AppEventEntityItem     `json:"AppEventEntity" xml:"AppEventEntity"`
-	Applications                  []Application            `json:"Applications" xml:"Applications"`
 	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
 	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
 }

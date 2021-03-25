@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BindSlb invokes the sae.BindSlb API synchronously
-func (client *Client) BindSlb(request *BindSlbRequest) (response *BindSlbResponse, err error) {
-	response = CreateBindSlbResponse()
+// DescribePipeline invokes the sae.DescribePipeline API synchronously
+func (client *Client) DescribePipeline(request *DescribePipelineRequest) (response *DescribePipelineResponse, err error) {
+	response = CreateDescribePipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BindSlbWithChan invokes the sae.BindSlb API asynchronously
-func (client *Client) BindSlbWithChan(request *BindSlbRequest) (<-chan *BindSlbResponse, <-chan error) {
-	responseChan := make(chan *BindSlbResponse, 1)
+// DescribePipelineWithChan invokes the sae.DescribePipeline API asynchronously
+func (client *Client) DescribePipelineWithChan(request *DescribePipelineRequest) (<-chan *DescribePipelineResponse, <-chan error) {
+	responseChan := make(chan *DescribePipelineResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BindSlb(request)
+		response, err := client.DescribePipeline(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) BindSlbWithChan(request *BindSlbRequest) (<-chan *BindSlbR
 	return responseChan, errChan
 }
 
-// BindSlbWithCallback invokes the sae.BindSlb API asynchronously
-func (client *Client) BindSlbWithCallback(request *BindSlbRequest, callback func(response *BindSlbResponse, err error)) <-chan int {
+// DescribePipelineWithCallback invokes the sae.DescribePipeline API asynchronously
+func (client *Client) DescribePipelineWithCallback(request *DescribePipelineRequest, callback func(response *DescribePipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BindSlbResponse
+		var response *DescribePipelineResponse
 		var err error
 		defer close(result)
-		response, err = client.BindSlb(request)
+		response, err = client.DescribePipeline(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,18 +68,14 @@ func (client *Client) BindSlbWithCallback(request *BindSlbRequest, callback func
 	return result
 }
 
-// BindSlbRequest is the request struct for api BindSlb
-type BindSlbRequest struct {
+// DescribePipelineRequest is the request struct for api DescribePipeline
+type DescribePipelineRequest struct {
 	*requests.RoaRequest
-	Intranet      string `position:"Query" name:"Intranet"`
-	IntranetSlbId string `position:"Query" name:"IntranetSlbId"`
-	InternetSlbId string `position:"Query" name:"InternetSlbId"`
-	AppId         string `position:"Query" name:"AppId"`
-	Internet      string `position:"Query" name:"Internet"`
+	PipelineId string `position:"Query" name:"PipelineId"`
 }
 
-// BindSlbResponse is the response struct for api BindSlb
-type BindSlbResponse struct {
+// DescribePipelineResponse is the response struct for api DescribePipeline
+type DescribePipelineResponse struct {
 	*responses.BaseResponse
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -90,19 +86,19 @@ type BindSlbResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateBindSlbRequest creates a request to invoke BindSlb API
-func CreateBindSlbRequest() (request *BindSlbRequest) {
-	request = &BindSlbRequest{
+// CreateDescribePipelineRequest creates a request to invoke DescribePipeline API
+func CreateDescribePipelineRequest() (request *DescribePipelineRequest) {
+	request = &DescribePipelineRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("sae", "2019-05-06", "BindSlb", "/pop/v1/sam/app/slb", "serverless", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("sae", "2019-05-06", "DescribePipeline", "/pop/v1/sam/changeorder/DescribePipeline", "serverless", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateBindSlbResponse creates a response to parse from BindSlb response
-func CreateBindSlbResponse() (response *BindSlbResponse) {
-	response = &BindSlbResponse{
+// CreateDescribePipelineResponse creates a response to parse from DescribePipeline response
+func CreateDescribePipelineResponse() (response *DescribePipelineResponse) {
+	response = &DescribePipelineResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

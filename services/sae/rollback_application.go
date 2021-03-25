@@ -82,12 +82,12 @@ type RollbackApplicationRequest struct {
 // RollbackApplicationResponse is the response struct for api RollbackApplication
 type RollbackApplicationResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TraceId   string `json:"TraceId" xml:"TraceId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	Message   string `json:"Message" xml:"Message"`
-	TraceId   string `json:"TraceId" xml:"TraceId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
