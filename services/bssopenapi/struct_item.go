@@ -20,8 +20,8 @@ type Item struct {
 	Tax                         float64 `json:"Tax" xml:"Tax"`
 	PreviousBillingCycleBalance float64 `json:"PreviousBillingCycleBalance" xml:"PreviousBillingCycleBalance"`
 	PayerAccount                string  `json:"PayerAccount" xml:"PayerAccount"`
-	UsageStartTime              string  `json:"UsageStartTime" xml:"UsageStartTime"`
 	CommodityCode               string  `json:"CommodityCode" xml:"CommodityCode"`
+	UsageStartTime              string  `json:"UsageStartTime" xml:"UsageStartTime"`
 	SuborderID                  string  `json:"SuborderID" xml:"SuborderID"`
 	SolutionCode                string  `json:"SolutionCode" xml:"SolutionCode"`
 	ProductDetail               string  `json:"ProductDetail" xml:"ProductDetail"`
@@ -42,8 +42,8 @@ type Item struct {
 	InvoiceDiscount             float64 `json:"InvoiceDiscount" xml:"InvoiceDiscount"`
 	BucketOwnerId               int64   `json:"BucketOwnerId" xml:"BucketOwnerId"`
 	MybankPaymentAmount         float64 `json:"MybankPaymentAmount" xml:"MybankPaymentAmount"`
-	PretaxGrossAmount           float64 `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
 	InstanceID                  string  `json:"InstanceID" xml:"InstanceID"`
+	PretaxGrossAmount           float64 `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
 	SplitItemName               string  `json:"SplitItemName" xml:"SplitItemName"`
 	SubscribeBucket             string  `json:"SubscribeBucket" xml:"SubscribeBucket"`
 	RecordID                    string  `json:"RecordID" xml:"RecordID"`
@@ -62,14 +62,14 @@ type Item struct {
 	CreateTime                  string  `json:"CreateTime" xml:"CreateTime"`
 	LinkedCustomerOrderID       string  `json:"LinkedCustomerOrderID" xml:"LinkedCustomerOrderID"`
 	CostUnit                    string  `json:"CostUnit" xml:"CostUnit"`
-	AfterTaxAmount              float64 `json:"AfterTaxAmount" xml:"AfterTaxAmount"`
 	SplitBillingCycle           string  `json:"SplitBillingCycle" xml:"SplitBillingCycle"`
-	SubOrderId                  string  `json:"SubOrderId" xml:"SubOrderId"`
+	AfterTaxAmount              float64 `json:"AfterTaxAmount" xml:"AfterTaxAmount"`
 	ResourceGroup               string  `json:"ResourceGroup" xml:"ResourceGroup"`
 	SplitAccountName            string  `json:"SplitAccountName" xml:"SplitAccountName"`
-	SubscribeTime               string  `json:"SubscribeTime" xml:"SubscribeTime"`
+	SubOrderId                  string  `json:"SubOrderId" xml:"SubOrderId"`
 	BillingType                 string  `json:"BillingType" xml:"BillingType"`
 	InstanceSpec                string  `json:"InstanceSpec" xml:"InstanceSpec"`
+	SubscribeTime               string  `json:"SubscribeTime" xml:"SubscribeTime"`
 	Tag                         string  `json:"Tag" xml:"Tag"`
 	OwnerID                     string  `json:"OwnerID" xml:"OwnerID"`
 	SolutionName                string  `json:"SolutionName" xml:"SolutionName"`
@@ -84,9 +84,9 @@ type Item struct {
 	BillID                      string  `json:"BillID" xml:"BillID"`
 	ListPriceUnit               string  `json:"ListPriceUnit" xml:"ListPriceUnit"`
 	SplitCommodityCode          string  `json:"SplitCommodityCode" xml:"SplitCommodityCode"`
-	PaymentCurrency             string  `json:"PaymentCurrency" xml:"PaymentCurrency"`
 	UsageUnit                   string  `json:"UsageUnit" xml:"UsageUnit"`
 	SplitItemID                 string  `json:"SplitItemID" xml:"SplitItemID"`
+	PaymentCurrency             string  `json:"PaymentCurrency" xml:"PaymentCurrency"`
 	SubscribeType               string  `json:"SubscribeType" xml:"SubscribeType"`
 	SubscribeLanguage           string  `json:"SubscribeLanguage" xml:"SubscribeLanguage"`
 	ProductType                 string  `json:"ProductType" xml:"ProductType"`
@@ -98,8 +98,8 @@ type Item struct {
 	OrderID                     string  `json:"OrderID" xml:"OrderID"`
 	OrderType                   string  `json:"OrderType" xml:"OrderType"`
 	BillingDate                 string  `json:"BillingDate" xml:"BillingDate"`
-	DeductedByCoupons           float64 `json:"DeductedByCoupons" xml:"DeductedByCoupons"`
 	BillingItem                 string  `json:"BillingItem" xml:"BillingItem"`
+	DeductedByCoupons           float64 `json:"DeductedByCoupons" xml:"DeductedByCoupons"`
 	Zone                        string  `json:"Zone" xml:"Zone"`
 	ChargeDiscount              float64 `json:"ChargeDiscount" xml:"ChargeDiscount"`
 	PretaxAmount                float64 `json:"PretaxAmount" xml:"PretaxAmount"`

@@ -18,20 +18,26 @@ package bssopenapi
 // Data is a nested struct in bssopenapi response
 type Data struct {
 	ToUnitUserId                int64                                                   `json:"ToUnitUserId" xml:"ToUnitUserId"`
+	MasterId                    int64                                                   `json:"MasterId" xml:"MasterId"`
 	TradePrice                  float64                                                 `json:"TradePrice" xml:"TradePrice"`
 	HostId                      string                                                  `json:"HostId" xml:"HostId"`
 	TotalUnAppliedInvoiceAmount int64                                                   `json:"TotalUnAppliedInvoiceAmount" xml:"TotalUnAppliedInvoiceAmount"`
 	OriginalPrice               float64                                                 `json:"OriginalPrice" xml:"OriginalPrice"`
+	RelationType                string                                                  `json:"RelationType" xml:"RelationType"`
 	ToUnitId                    int64                                                   `json:"ToUnitId" xml:"ToUnitId"`
 	OrderId                     string                                                  `json:"OrderId" xml:"OrderId"`
 	HostingStatus               string                                                  `json:"HostingStatus" xml:"HostingStatus"`
 	TotalCount                  int                                                     `json:"TotalCount" xml:"TotalCount"`
-	CreditLimitStatus           string                                                  `json:"CreditLimitStatus" xml:"CreditLimitStatus"`
 	MaxResults                  int                                                     `json:"MaxResults" xml:"MaxResults"`
+	CreditLimitStatus           string                                                  `json:"CreditLimitStatus" xml:"CreditLimitStatus"`
+	MemberId                    int64                                                   `json:"MemberId" xml:"MemberId"`
 	BillingCycle                string                                                  `json:"BillingCycle" xml:"BillingCycle"`
 	OutstandingAmount           float64                                                 `json:"OutstandingAmount" xml:"OutstandingAmount"`
 	Quantity                    int                                                     `json:"Quantity" xml:"Quantity"`
 	AvailableCashAmount         string                                                  `json:"AvailableCashAmount" xml:"AvailableCashAmount"`
+	MemberNickName              string                                                  `json:"MemberNickName" xml:"MemberNickName"`
+	StartTime                   string                                                  `json:"StartTime" xml:"StartTime"`
+	EndTime                     string                                                  `json:"EndTime" xml:"EndTime"`
 	HostName                    string                                                  `json:"HostName" xml:"HostName"`
 	TotalOutstandingAmount      float64                                                 `json:"TotalOutstandingAmount" xml:"TotalOutstandingAmount"`
 	NewInvoiceAmount            float64                                                 `json:"NewInvoiceAmount" xml:"NewInvoiceAmount"`
@@ -44,19 +50,25 @@ type Data struct {
 	CreditAmount                string                                                  `json:"CreditAmount" xml:"CreditAmount"`
 	AccountID                   string                                                  `json:"AccountID" xml:"AccountID"`
 	InstanceId                  string                                                  `json:"InstanceId" xml:"InstanceId"`
+	IsFinancialAccount          bool                                                    `json:"IsFinancialAccount" xml:"IsFinancialAccount"`
 	OwnerUid                    int64                                                   `json:"OwnerUid" xml:"OwnerUid"`
 	InvoiceApplyId              int64                                                   `json:"InvoiceApplyId" xml:"InvoiceApplyId"`
 	Boolean                     bool                                                    `json:"Boolean" xml:"Boolean"`
 	IsCertified                 bool                                                    `json:"IsCertified" xml:"IsCertified"`
 	TotalInvoiceAmount          int64                                                   `json:"TotalInvoiceAmount" xml:"TotalInvoiceAmount"`
+	SetupTime                   string                                                  `json:"SetupTime" xml:"SetupTime"`
 	PageNum                     int                                                     `json:"PageNum" xml:"PageNum"`
 	IsSuccess                   bool                                                    `json:"IsSuccess" xml:"IsSuccess"`
 	Currency                    string                                                  `json:"Currency" xml:"Currency"`
+	MemberGroupId               int64                                                   `json:"MemberGroupId" xml:"MemberGroupId"`
 	LoginEmail                  string                                                  `json:"LoginEmail" xml:"LoginEmail"`
 	DiscountPrice               float64                                                 `json:"DiscountPrice" xml:"DiscountPrice"`
+	State                       string                                                  `json:"State" xml:"State"`
 	AccountName                 string                                                  `json:"AccountName" xml:"AccountName"`
 	NextToken                   string                                                  `json:"NextToken" xml:"NextToken"`
+	UserName                    string                                                  `json:"UserName" xml:"UserName"`
 	Mpk                         int64                                                   `json:"Mpk" xml:"Mpk"`
+	MemberGroupName             string                                                  `json:"MemberGroupName" xml:"MemberGroupName"`
 	UidList                     UidList                                                 `json:"UidList" xml:"UidList"`
 	OmsData                     OmsData                                                 `json:"OmsData" xml:"OmsData"`
 	CostUnit                    CostUnit                                                `json:"CostUnit" xml:"CostUnit"`
@@ -71,11 +83,13 @@ type Data struct {
 	ProductList                 ProductList                                             `json:"ProductList" xml:"ProductList"`
 	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice                       `json:"ModuleDetails" xml:"ModuleDetails"`
 	PromotionDetails            PromotionDetailsInGetPayAsYouGoPrice                    `json:"PromotionDetails" xml:"PromotionDetails"`
+	PermissionList              []PermissionListItem                                    `json:"PermissionList" xml:"PermissionList"`
 	AccountTransactionsList     AccountTransactionsListInQueryAccountTransactionDetails `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
 	EvaluateList                EvaluateList                                            `json:"EvaluateList" xml:"EvaluateList"`
 	Promotions                  Promotions                                              `json:"Promotions" xml:"Promotions"`
 	ResourceInstanceDtoList     []ResourceInstanceList                                  `json:"ResourceInstanceDtoList" xml:"ResourceInstanceDtoList"`
 	CustomerInvoiceAddressList  CustomerInvoiceAddressList                              `json:"CustomerInvoiceAddressList" xml:"CustomerInvoiceAddressList"`
 	CustomerInvoiceList         CustomerInvoiceList                                     `json:"CustomerInvoiceList" xml:"CustomerInvoiceList"`
+	FinancialRelationInfoList   []FinancialRelationInfoListItem                         `json:"FinancialRelationInfoList" xml:"FinancialRelationInfoList"`
 	AttributeList               AttributeList                                           `json:"AttributeList" xml:"AttributeList"`
 }

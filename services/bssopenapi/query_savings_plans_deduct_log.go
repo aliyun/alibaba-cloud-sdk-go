@@ -76,7 +76,6 @@ type QuerySavingsPlansDeductLogRequest struct {
 	Locale       string           `position:"Query" name:"Locale"`
 	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
-	RequestId    string           `position:"Query" name:"RequestId"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	InstanceType string           `position:"Query" name:"InstanceType"`
 }

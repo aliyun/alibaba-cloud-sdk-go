@@ -80,6 +80,7 @@ type QuerySettleBillRequest struct {
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	BillOwnerId            requests.Integer `position:"Query" name:"BillOwnerId"`
 	ProductType            string           `position:"Query" name:"ProductType"`
+	RecordID               string           `position:"Query" name:"RecordID"`
 	NextToken              string           `position:"Query" name:"NextToken"`
 	MaxResults             requests.Integer `position:"Query" name:"MaxResults"`
 }

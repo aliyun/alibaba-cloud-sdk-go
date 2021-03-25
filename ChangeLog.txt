@@ -1,3 +1,8 @@
+2021-03-25 Version: v1.61.1004
+- Generated 2017-12-14 for `BssOpenApi`.
+- Add DescribeInstanceBill.
+- Update QuerySettleBill to support RecordID filter.
+
 2021-03-25 Version: v1.61.1003
 - Generated 2019-05-06 for `sae`.
 - Release autoscaling apis for timer features.
