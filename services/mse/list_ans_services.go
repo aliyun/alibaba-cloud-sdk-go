@@ -101,7 +101,7 @@ func CreateListAnsServicesRequest() (request *ListAnsServicesRequest) {
 	request = &ListAnsServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServices", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServices", "", "")
 	request.Method = requests.GET
 	return
 }

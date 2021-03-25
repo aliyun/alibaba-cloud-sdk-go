@@ -92,7 +92,7 @@ func CreateQueryClusterDiskSpecificationRequest() (request *QueryClusterDiskSpec
 	request = &QueryClusterDiskSpecificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterDiskSpecification", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterDiskSpecification", "", "")
 	request.Method = requests.POST
 	return
 }

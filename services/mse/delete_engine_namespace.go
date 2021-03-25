@@ -91,7 +91,7 @@ func CreateDeleteEngineNamespaceRequest() (request *DeleteEngineNamespaceRequest
 	request = &DeleteEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteEngineNamespace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteEngineNamespace", "", "")
 	request.Method = requests.POST
 	return
 }

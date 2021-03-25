@@ -99,7 +99,7 @@ func CreateListAlarmHistoriesRequest() (request *ListAlarmHistoriesRequest) {
 	request = &ListAlarmHistoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmHistories", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmHistories", "", "")
 	request.Method = requests.GET
 	return
 }

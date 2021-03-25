@@ -17,17 +17,17 @@ package mse
 
 // ClusterForListModel is a nested struct in mse response
 type ClusterForListModel struct {
-	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
+	AppVersion       string `json:"AppVersion" xml:"AppVersion"`
 	ClusterAliasName string `json:"ClusterAliasName" xml:"ClusterAliasName"`
-	InitStatus       string `json:"InitStatus" xml:"InitStatus"`
-	IntranetDomain   string `json:"IntranetDomain" xml:"IntranetDomain"`
-	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
 	InternetAddress  string `json:"InternetAddress" xml:"InternetAddress"`
 	IntranetAddress  string `json:"IntranetAddress" xml:"IntranetAddress"`
-	InternetDomain   string `json:"InternetDomain" xml:"InternetDomain"`
-	ClusterType      string `json:"ClusterType" xml:"ClusterType"`
-	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
-	EndDate          string `json:"EndDate" xml:"EndDate"`
+	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
 	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	AppVersion       string `json:"AppVersion" xml:"AppVersion"`
+	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
+	InternetDomain   string `json:"InternetDomain" xml:"InternetDomain"`
+	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
+	InitStatus       string `json:"InitStatus" xml:"InitStatus"`
+	ClusterType      string `json:"ClusterType" xml:"ClusterType"`
+	IntranetDomain   string `json:"IntranetDomain" xml:"IntranetDomain"`
+	EndDate          string `json:"EndDate" xml:"EndDate"`
 }

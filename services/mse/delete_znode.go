@@ -92,7 +92,7 @@ func CreateDeleteZnodeRequest() (request *DeleteZnodeRequest) {
 	request = &DeleteZnodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteZnode", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteZnode", "", "")
 	request.Method = requests.POST
 	return
 }

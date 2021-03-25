@@ -80,14 +80,14 @@ type ListClustersRequest struct {
 // ListClustersResponse is the response struct for api ListClusters
 type ListClustersResponse struct {
 	*responses.BaseResponse
-	RequestId  string                `json:"RequestId" xml:"RequestId"`
-	Success    bool                  `json:"Success" xml:"Success"`
-	Message    string                `json:"Message" xml:"Message"`
-	ErrorCode  string                `json:"ErrorCode" xml:"ErrorCode"`
-	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                   `json:"PageSize" xml:"PageSize"`
-	TotalCount int                   `json:"TotalCount" xml:"TotalCount"`
 	HttpCode   string                `json:"HttpCode" xml:"HttpCode"`
+	TotalCount int                   `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int                   `json:"PageSize" xml:"PageSize"`
+	Message    string                `json:"Message" xml:"Message"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
+	ErrorCode  string                `json:"ErrorCode" xml:"ErrorCode"`
+	Success    bool                  `json:"Success" xml:"Success"`
 	Data       []ClusterForListModel `json:"Data" xml:"Data"`
 }
 
@@ -96,7 +96,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -96,7 +96,7 @@ func CreateListListenersByIpRequest() (request *ListListenersByIpRequest) {
 	request = &ListListenersByIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByIp", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByIp", "", "")
 	request.Method = requests.POST
 	return
 }

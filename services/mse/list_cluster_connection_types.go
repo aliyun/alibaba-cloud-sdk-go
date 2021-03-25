@@ -91,7 +91,7 @@ func CreateListClusterConnectionTypesRequest() (request *ListClusterConnectionTy
 	request = &ListClusterConnectionTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterConnectionTypes", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterConnectionTypes", "", "")
 	request.Method = requests.POST
 	return
 }

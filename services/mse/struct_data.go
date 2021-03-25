@@ -19,82 +19,65 @@ package mse
 type Data struct {
 	Step                     int                    `json:"Step" xml:"Step"`
 	ExtraJson                string                 `json:"ExtraJson" xml:"ExtraJson"`
-	IntranetDomain           string                 `json:"IntranetDomain" xml:"IntranetDomain"`
 	Dir                      bool                   `json:"Dir" xml:"Dir"`
 	Source                   string                 `json:"Source" xml:"Source"`
 	ConfigAuthEnabled        bool                   `json:"ConfigAuthEnabled" xml:"ConfigAuthEnabled"`
-	ClusterAliasName         string                 `json:"ClusterAliasName" xml:"ClusterAliasName"`
 	JuteMaxbuffer            string                 `json:"JuteMaxbuffer" xml:"JuteMaxbuffer"`
 	ConsumerAppName          string                 `json:"ConsumerAppName" xml:"ConsumerAppName"`
-	VpcId                    string                 `json:"VpcId" xml:"VpcId"`
 	InitLimit                string                 `json:"InitLimit" xml:"InitLimit"`
 	Path                     string                 `json:"Path" xml:"Path"`
-	ClusterId                string                 `json:"ClusterId" xml:"ClusterId"`
+	LicenseKey               string                 `json:"LicenseKey" xml:"LicenseKey"`
 	SyncLimit                string                 `json:"SyncLimit" xml:"SyncLimit"`
+	UpdateTime               int64                  `json:"UpdateTime" xml:"UpdateTime"`
 	NamespaceDesc            string                 `json:"NamespaceDesc" xml:"NamespaceDesc"`
 	Data                     string                 `json:"Data" xml:"Data"`
 	ProtectThreshold         float64                `json:"ProtectThreshold" xml:"ProtectThreshold"`
-	DiskType                 string                 `json:"DiskType" xml:"DiskType"`
 	MCPSupported             bool                   `json:"MCPSupported" xml:"MCPSupported"`
 	ProviderAppName          string                 `json:"ProviderAppName" xml:"ProviderAppName"`
 	Id                       int64                  `json:"Id" xml:"Id"`
-	AclId                    string                 `json:"AclId" xml:"AclId"`
 	JvmFlagsCustom           string                 `json:"JvmFlagsCustom" xml:"JvmFlagsCustom"`
-	PayInfo                  string                 `json:"PayInfo" xml:"PayInfo"`
+	AppId                    string                 `json:"AppId" xml:"AppId"`
 	AccountId                string                 `json:"AccountId" xml:"AccountId"`
-	InstanceCount            int                    `json:"InstanceCount" xml:"InstanceCount"`
 	Metadata                 map[string]interface{} `json:"Metadata" xml:"Metadata"`
 	Enable                   bool                   `json:"Enable" xml:"Enable"`
 	ServiceCount             int                    `json:"ServiceCount" xml:"ServiceCount"`
 	SuccCount                int                    `json:"SuccCount" xml:"SuccCount"`
-	InternetPort             string                 `json:"InternetPort" xml:"InternetPort"`
-	Cpu                      int                    `json:"Cpu" xml:"Cpu"`
 	AutopurgePurgeInterval   string                 `json:"AutopurgePurgeInterval" xml:"AutopurgePurgeInterval"`
 	SelectorType             string                 `json:"SelectorType" xml:"SelectorType"`
-	InitStatus               string                 `json:"InitStatus" xml:"InitStatus"`
 	Type                     int                    `json:"Type" xml:"Type"`
 	Region                   string                 `json:"Region" xml:"Region"`
 	Name                     string                 `json:"Name" xml:"Name"`
 	Max                      int                    `json:"Max" xml:"Max"`
-	IntranetAddress          string                 `json:"IntranetAddress" xml:"IntranetAddress"`
-	MemoryCapacity           int64                  `json:"MemoryCapacity" xml:"MemoryCapacity"`
-	CreateTime               string                 `json:"CreateTime" xml:"CreateTime"`
+	Language                 string                 `json:"Language" xml:"Language"`
 	GroupName                string                 `json:"GroupName" xml:"GroupName"`
-	InitCostTime             int64                  `json:"InitCostTime" xml:"InitCostTime"`
+	CreateTime               int64                  `json:"CreateTime" xml:"CreateTime"`
 	MaxClientCnxns           string                 `json:"MaxClientCnxns" xml:"MaxClientCnxns"`
+	ExtraInfo                string                 `json:"ExtraInfo" xml:"ExtraInfo"`
 	MCPEnabled               bool                   `json:"MCPEnabled" xml:"MCPEnabled"`
 	ConsumerAppId            string                 `json:"ConsumerAppId" xml:"ConsumerAppId"`
-	InternetAddress          string                 `json:"InternetAddress" xml:"InternetAddress"`
 	RegionId                 string                 `json:"RegionId" xml:"RegionId"`
-	InstanceId               string                 `json:"InstanceId" xml:"InstanceId"`
+	UserId                   string                 `json:"UserId" xml:"UserId"`
 	ConfigCount              int                    `json:"ConfigCount" xml:"ConfigCount"`
 	ClusterName              string                 `json:"ClusterName" xml:"ClusterName"`
 	PassWord                 string                 `json:"PassWord" xml:"PassWord"`
 	NamespaceShowName        string                 `json:"NamespaceShowName" xml:"NamespaceShowName"`
 	Min                      int                    `json:"Min" xml:"Min"`
-	InternetDomain           string                 `json:"InternetDomain" xml:"InternetDomain"`
-	PubNetworkFlow           string                 `json:"PubNetworkFlow" xml:"PubNetworkFlow"`
 	OpenSuperAcl             bool                   `json:"OpenSuperAcl" xml:"OpenSuperAcl"`
-	ClusterType              string                 `json:"ClusterType" xml:"ClusterType"`
-	DiskCapacity             int64                  `json:"DiskCapacity" xml:"DiskCapacity"`
+	Status                   int                    `json:"Status" xml:"Status"`
 	SkipCount                int                    `json:"SkipCount" xml:"SkipCount"`
 	AutopurgeSnapRetainCount string                 `json:"AutopurgeSnapRetainCount" xml:"AutopurgeSnapRetainCount"`
 	TickTime                 string                 `json:"TickTime" xml:"TickTime"`
 	Quota                    int                    `json:"Quota" xml:"Quota"`
-	IntranetPort             string                 `json:"IntranetPort" xml:"IntranetPort"`
 	Url                      string                 `json:"Url" xml:"Url"`
 	ScMockItemJson           string                 `json:"ScMockItemJson" xml:"ScMockItemJson"`
 	RestartFlag              bool                   `json:"RestartFlag" xml:"RestartFlag"`
 	Namespace                string                 `json:"Namespace" xml:"Namespace"`
 	NamespaceId              string                 `json:"NamespaceId" xml:"NamespaceId"`
-	HealthStatus             string                 `json:"HealthStatus" xml:"HealthStatus"`
-	AclEntryList             string                 `json:"AclEntryList" xml:"AclEntryList"`
-	AppVersion               string                 `json:"AppVersion" xml:"AppVersion"`
 	UserName                 string                 `json:"UserName" xml:"UserName"`
 	ProviderAppId            string                 `json:"ProviderAppId" xml:"ProviderAppId"`
+	AppName                  string                 `json:"AppName" xml:"AppName"`
 	ConfigAuthSupported      bool                   `json:"ConfigAuthSupported" xml:"ConfigAuthSupported"`
 	FailData                 []FailDataItem         `json:"FailData" xml:"FailData"`
 	Clusters                 []NacosAnsCluster      `json:"Clusters" xml:"Clusters"`
 	SkipData                 []SkipDataItem         `json:"SkipData" xml:"SkipData"`
-	InstanceModels           []InstanceModel        `json:"InstanceModels" xml:"InstanceModels"`
 }

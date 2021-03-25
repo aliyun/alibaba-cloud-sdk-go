@@ -96,7 +96,7 @@ func CreateListEurekaServicesRequest() (request *ListEurekaServicesRequest) {
 	request = &ListEurekaServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListEurekaServices", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListEurekaServices", "", "")
 	request.Method = requests.GET
 	return
 }

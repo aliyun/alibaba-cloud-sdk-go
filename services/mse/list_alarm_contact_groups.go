@@ -95,7 +95,7 @@ func CreateListAlarmContactGroupsRequest() (request *ListAlarmContactGroupsReque
 	request = &ListAlarmContactGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmContactGroups", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmContactGroups", "", "")
 	request.Method = requests.GET
 	return
 }

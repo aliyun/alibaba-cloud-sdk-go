@@ -90,7 +90,7 @@ func CreateQueryClusterSpecificationRequest() (request *QueryClusterSpecificatio
 	request = &QueryClusterSpecificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterSpecification", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterSpecification", "", "")
 	request.Method = requests.POST
 	return
 }

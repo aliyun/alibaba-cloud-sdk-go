@@ -93,7 +93,7 @@ func CreateScalingClusterRequest() (request *ScalingClusterRequest) {
 	request = &ScalingClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ScalingCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ScalingCluster", "", "")
 	request.Method = requests.POST
 	return
 }

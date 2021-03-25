@@ -90,7 +90,7 @@ func CreateDeleteAlarmRuleRequest() (request *DeleteAlarmRuleRequest) {
 	request = &DeleteAlarmRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAlarmRule", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAlarmRule", "", "")
 	request.Method = requests.POST
 	return
 }

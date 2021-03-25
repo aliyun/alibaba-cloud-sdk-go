@@ -88,7 +88,7 @@ func CreateQueryBusinessLocationsRequest() (request *QueryBusinessLocationsReque
 	request = &QueryBusinessLocationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryBusinessLocations", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryBusinessLocations", "", "")
 	request.Method = requests.GET
 	return
 }

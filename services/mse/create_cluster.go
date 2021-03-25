@@ -91,12 +91,12 @@ type CreateClusterRequest struct {
 // CreateClusterResponse is the response struct for api CreateCluster
 type CreateClusterResponse struct {
 	*responses.BaseResponse
-	ErrorCode  string `json:"ErrorCode" xml:"ErrorCode"`
 	Message    string `json:"Message" xml:"Message"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Success    bool   `json:"Success" xml:"Success"`
-	OrderId    string `json:"OrderId" xml:"OrderId"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	ErrorCode  string `json:"ErrorCode" xml:"ErrorCode"`
+	OrderId    string `json:"OrderId" xml:"OrderId"`
+	Success    bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateClusterRequest creates a request to invoke CreateCluster API
@@ -104,7 +104,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateCluster", "", "")
 	request.Method = requests.POST
 	return
 }
