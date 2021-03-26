@@ -28,11 +28,14 @@ type ResultInfo struct {
 	ReviewTime      string                `json:"ReviewTime" xml:"ReviewTime"`
 	TaskId          string                `json:"TaskId" xml:"TaskId"`
 	Rid             int64                 `json:"Rid" xml:"Rid"`
+	LastDataId      string                `json:"LastDataId" xml:"LastDataId"`
 	Status          int                   `json:"Status" xml:"Status"`
 	ReviewTimeLong  string                `json:"ReviewTimeLong" xml:"ReviewTimeLong"`
 	TaskName        string                `json:"TaskName" xml:"TaskName"`
 	Reviewer        string                `json:"Reviewer" xml:"Reviewer"`
 	Score           int                   `json:"Score" xml:"Score"`
+	AssignmentTime  string                `json:"AssignmentTime" xml:"AssignmentTime"`
+	ReviewType      int                   `json:"ReviewType" xml:"ReviewType"`
 	HandScoreIdList HandScoreIdList       `json:"HandScoreIdList" xml:"HandScoreIdList"`
 	Recording       Recording             `json:"Recording" xml:"Recording"`
 	Agent           Agent                 `json:"Agent" xml:"Agent"`

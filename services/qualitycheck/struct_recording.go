@@ -17,29 +17,30 @@ package qualitycheck
 
 // Recording is a nested struct in qualitycheck response
 type Recording struct {
-	Name        string `json:"Name" xml:"Name"`
-	Remark5     int64  `json:"Remark5" xml:"Remark5"`
-	CallTime    string `json:"CallTime" xml:"CallTime"`
-	CallId      string `json:"CallId" xml:"CallId"`
-	Caller      string `json:"Caller" xml:"Caller"`
-	Remark7     string `json:"Remark7" xml:"Remark7"`
-	Remark9     string `json:"Remark9" xml:"Remark9"`
-	Remark11    string `json:"Remark11" xml:"Remark11"`
-	Remark2     string `json:"Remark2" xml:"Remark2"`
-	Id          string `json:"Id" xml:"Id"`
-	Remark4     string `json:"Remark4" xml:"Remark4"`
-	Duration    int64  `json:"Duration" xml:"Duration"`
-	Business    string `json:"Business" xml:"Business"`
-	Remark6     string `json:"Remark6" xml:"Remark6"`
-	Remark13    string `json:"Remark13" xml:"Remark13"`
-	Callee      string `json:"Callee" xml:"Callee"`
-	Remark1     string `json:"Remark1" xml:"Remark1"`
-	PrimaryId   string `json:"PrimaryId" xml:"PrimaryId"`
-	CallType    int    `json:"CallType" xml:"CallType"`
-	Url         string `json:"Url" xml:"Url"`
-	Remark8     string `json:"Remark8" xml:"Remark8"`
-	Remark12    string `json:"Remark12" xml:"Remark12"`
-	DataSetName string `json:"DataSetName" xml:"DataSetName"`
-	Remark10    string `json:"Remark10" xml:"Remark10"`
-	Remark3     string `json:"Remark3" xml:"Remark3"`
+	Name         string `json:"Name" xml:"Name"`
+	Remark5      int64  `json:"Remark5" xml:"Remark5"`
+	CallTime     string `json:"CallTime" xml:"CallTime"`
+	CallId       string `json:"CallId" xml:"CallId"`
+	Caller       string `json:"Caller" xml:"Caller"`
+	Remark7      string `json:"Remark7" xml:"Remark7"`
+	Remark9      string `json:"Remark9" xml:"Remark9"`
+	Remark11     string `json:"Remark11" xml:"Remark11"`
+	Remark2      string `json:"Remark2" xml:"Remark2"`
+	Id           string `json:"Id" xml:"Id"`
+	Remark4      string `json:"Remark4" xml:"Remark4"`
+	Duration     int64  `json:"Duration" xml:"Duration"`
+	Business     string `json:"Business" xml:"Business"`
+	DialogueSize int    `json:"DialogueSize" xml:"DialogueSize"`
+	Remark6      string `json:"Remark6" xml:"Remark6"`
+	Remark13     string `json:"Remark13" xml:"Remark13"`
+	Callee       string `json:"Callee" xml:"Callee"`
+	Remark1      string `json:"Remark1" xml:"Remark1"`
+	PrimaryId    string `json:"PrimaryId" xml:"PrimaryId"`
+	CallType     int    `json:"CallType" xml:"CallType"`
+	Url          string `json:"Url" xml:"Url"`
+	Remark8      string `json:"Remark8" xml:"Remark8"`
+	Remark12     string `json:"Remark12" xml:"Remark12"`
+	DataSetName  string `json:"DataSetName" xml:"DataSetName"`
+	Remark10     string `json:"Remark10" xml:"Remark10"`
+	Remark3      string `json:"Remark3" xml:"Remark3"`
 }

@@ -20,7 +20,6 @@ type Data struct {
 	SkillGroupFrom         int                              `json:"SkillGroupFrom" xml:"SkillGroupFrom"`
 	Vid                    string                           `json:"Vid" xml:"Vid"`
 	ModelName              string                           `json:"ModelName" xml:"ModelName"`
-	TaskAsrRequestId       int64                            `json:"TaskAsrRequestId" xml:"TaskAsrRequestId"`
 	TaskId                 string                           `json:"TaskId" xml:"TaskId"`
 	SkillGroupId           string                           `json:"SkillGroupId" xml:"SkillGroupId"`
 	ReviewNumber           int                              `json:"ReviewNumber" xml:"ReviewNumber"`
@@ -57,7 +56,6 @@ type Data struct {
 	BusinessType           int                              `json:"BusinessType" xml:"BusinessType"`
 	TotalScore             int                              `json:"TotalScore" xml:"TotalScore"`
 	Audio                  bool                             `json:"Audio" xml:"Audio"`
-	TaskType               int                              `json:"TaskType" xml:"TaskType"`
 	Status                 int                              `json:"Status" xml:"Status"`
 	UpdateTime             string                           `json:"UpdateTime" xml:"UpdateTime"`
 	Source                 int                              `json:"Source" xml:"Source"`
@@ -69,7 +67,7 @@ type Data struct {
 	DataSetId              int64                            `json:"DataSetId" xml:"DataSetId"`
 	RuleList               RuleListInGetSkillGroupConfig    `json:"RuleList" xml:"RuleList"`
 	AllRuleList            AllRuleListInGetSkillGroupConfig `json:"AllRuleList" xml:"AllRuleList"`
-	Dialogues              DialoguesInGetRecognizeResult    `json:"Dialogues" xml:"Dialogues"`
+	Dialogues              DialoguesInGetResultToReview     `json:"Dialogues" xml:"Dialogues"`
 	ReviewHistoryList      ReviewHistoryList                `json:"ReviewHistoryList" xml:"ReviewHistoryList"`
 	HitRuleReviewInfoList  HitRuleReviewInfoList            `json:"HitRuleReviewInfoList" xml:"HitRuleReviewInfoList"`
 	Precisions             PrecisionsInGetPrecisionTask     `json:"Precisions" xml:"Precisions"`

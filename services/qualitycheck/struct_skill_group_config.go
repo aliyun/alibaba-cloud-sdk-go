@@ -35,6 +35,8 @@ type SkillGroupConfig struct {
 	AllContentQualityCheck int                               `json:"AllContentQualityCheck" xml:"AllContentQualityCheck"`
 	AllRids                string                            `json:"AllRids" xml:"AllRids"`
 	SkillGroupFrom         int                               `json:"SkillGroupFrom" xml:"SkillGroupFrom"`
+	ScreenSwitch           bool                              `json:"ScreenSwitch" xml:"ScreenSwitch"`
 	RuleList               RuleListInListSkillGroupConfig    `json:"RuleList" xml:"RuleList"`
 	AllRuleList            AllRuleListInListSkillGroupConfig `json:"AllRuleList" xml:"AllRuleList"`
+	SkillGroupScreens      SkillGroupScreens                 `json:"SkillGroupScreens" xml:"SkillGroupScreens"`
 }
