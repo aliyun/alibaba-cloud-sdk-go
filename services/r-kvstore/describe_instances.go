@@ -88,6 +88,7 @@ type DescribeInstancesRequest struct {
 	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
 	GlobalInstance       requests.Boolean        `position:"Query" name:"GlobalInstance"`
+	PrivateIp            string                  `position:"Query" name:"PrivateIp"`
 	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
 	VSwitchId            string                  `position:"Query" name:"VSwitchId"`
 	VpcCloudInsInfo      requests.Integer        `position:"Query" name:"VpcCloudInsInfo"`

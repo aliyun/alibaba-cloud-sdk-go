@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddShardingNode invokes the r_kvstore.AddShardingNode API synchronously
-func (client *Client) AddShardingNode(request *AddShardingNodeRequest) (response *AddShardingNodeResponse, err error) {
-	response = CreateAddShardingNodeResponse()
+// RenewAdditionalBandwidth invokes the r_kvstore.RenewAdditionalBandwidth API synchronously
+func (client *Client) RenewAdditionalBandwidth(request *RenewAdditionalBandwidthRequest) (response *RenewAdditionalBandwidthResponse, err error) {
+	response = CreateRenewAdditionalBandwidthResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddShardingNodeWithChan invokes the r_kvstore.AddShardingNode API asynchronously
-func (client *Client) AddShardingNodeWithChan(request *AddShardingNodeRequest) (<-chan *AddShardingNodeResponse, <-chan error) {
-	responseChan := make(chan *AddShardingNodeResponse, 1)
+// RenewAdditionalBandwidthWithChan invokes the r_kvstore.RenewAdditionalBandwidth API asynchronously
+func (client *Client) RenewAdditionalBandwidthWithChan(request *RenewAdditionalBandwidthRequest) (<-chan *RenewAdditionalBandwidthResponse, <-chan error) {
+	responseChan := make(chan *RenewAdditionalBandwidthResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddShardingNode(request)
+		response, err := client.RenewAdditionalBandwidth(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddShardingNodeWithChan(request *AddShardingNodeRequest) (
 	return responseChan, errChan
 }
 
-// AddShardingNodeWithCallback invokes the r_kvstore.AddShardingNode API asynchronously
-func (client *Client) AddShardingNodeWithCallback(request *AddShardingNodeRequest, callback func(response *AddShardingNodeResponse, err error)) <-chan int {
+// RenewAdditionalBandwidthWithCallback invokes the r_kvstore.RenewAdditionalBandwidth API asynchronously
+func (client *Client) RenewAdditionalBandwidthWithCallback(request *RenewAdditionalBandwidthRequest, callback func(response *RenewAdditionalBandwidthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddShardingNodeResponse
+		var response *RenewAdditionalBandwidthResponse
 		var err error
 		defer close(result)
-		response, err = client.AddShardingNode(request)
+		response, err = client.RenewAdditionalBandwidth(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,46 +68,43 @@ func (client *Client) AddShardingNodeWithCallback(request *AddShardingNodeReques
 	return result
 }
 
-// AddShardingNodeRequest is the request struct for api AddShardingNode
-type AddShardingNodeRequest struct {
+// RenewAdditionalBandwidthRequest is the request struct for api RenewAdditionalBandwidth
+type RenewAdditionalBandwidthRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	SourceBiz            string           `position:"Query" name:"SourceBiz"`
-	ShardCount           requests.Integer `position:"Query" name:"ShardCount"`
-	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	OrderTimeLength      string           `position:"Query" name:"OrderTimeLength"`
+	Product              string           `position:"Query" name:"Product"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ShardClass           string           `position:"Query" name:"ShardClass"`
+	Category             string           `position:"Query" name:"Category"`
 }
 
-// AddShardingNodeResponse is the response struct for api AddShardingNode
-type AddShardingNodeResponse struct {
+// RenewAdditionalBandwidthResponse is the response struct for api RenewAdditionalBandwidth
+type RenewAdditionalBandwidthResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	OrderId   int64    `json:"OrderId" xml:"OrderId"`
-	NodeId    string   `json:"NodeId" xml:"NodeId"`
-	NodeIds   []string `json:"NodeIds" xml:"NodeIds"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// CreateAddShardingNodeRequest creates a request to invoke AddShardingNode API
-func CreateAddShardingNodeRequest() (request *AddShardingNodeRequest) {
-	request = &AddShardingNodeRequest{
+// CreateRenewAdditionalBandwidthRequest creates a request to invoke RenewAdditionalBandwidth API
+func CreateRenewAdditionalBandwidthRequest() (request *RenewAdditionalBandwidthRequest) {
+	request = &RenewAdditionalBandwidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "AddShardingNode", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewAdditionalBandwidth", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddShardingNodeResponse creates a response to parse from AddShardingNode response
-func CreateAddShardingNodeResponse() (response *AddShardingNodeResponse) {
-	response = &AddShardingNodeResponse{
+// CreateRenewAdditionalBandwidthResponse creates a response to parse from RenewAdditionalBandwidth response
+func CreateRenewAdditionalBandwidthResponse() (response *RenewAdditionalBandwidthResponse) {
+	response = &RenewAdditionalBandwidthResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
