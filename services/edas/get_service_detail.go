@@ -88,10 +88,10 @@ type GetServiceDetailRequest struct {
 // GetServiceDetailResponse is the response struct for api GetServiceDetail
 type GetServiceDetailResponse struct {
 	*responses.BaseResponse
-	Code    int    `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Success bool   `json:"Success" xml:"Success"`
-	Data    Data   `json:"Data" xml:"Data"`
+	Code    int                    `json:"Code" xml:"Code"`
+	Message string                 `json:"Message" xml:"Message"`
+	Success bool                   `json:"Success" xml:"Success"`
+	Data    DataInGetServiceDetail `json:"Data" xml:"Data"`
 }
 
 // CreateGetServiceDetailRequest creates a request to invoke GetServiceDetail API
@@ -99,7 +99,7 @@ func CreateGetServiceDetailRequest() (request *GetServiceDetailRequest) {
 	request = &GetServiceDetailRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceDetail", "/pop/sp/api/mseForOam/getServiceDetail", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceDetail", "/pop/sp/api/mseForOam/getServiceDetail", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

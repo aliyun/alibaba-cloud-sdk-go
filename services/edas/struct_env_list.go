@@ -17,5 +17,10 @@ package edas
 
 // EnvList is a nested struct in edas response
 type EnvList struct {
-	Env []Env `json:"Env" xml:"Env"`
+	AccountId  string   `json:"AccountId" xml:"AccountId"`
+	RegionId   string   `json:"RegionId" xml:"RegionId"`
+	PointcutId int64    `json:"PointcutId" xml:"PointcutId"`
+	TenantId   string   `json:"TenantId" xml:"TenantId"`
+	Spec       Spec     `json:"Spec" xml:"Spec"`
+	Metadata   Metadata `json:"Metadata" xml:"Metadata"`
 }

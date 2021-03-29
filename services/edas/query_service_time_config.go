@@ -97,7 +97,7 @@ func CreateQueryServiceTimeConfigRequest() (request *QueryServiceTimeConfigReque
 	request = &QueryServiceTimeConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryServiceTimeConfig", "/pop/sp/api/timeout/page", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryServiceTimeConfig", "/pop/sp/api/timeout/page", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

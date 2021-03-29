@@ -88,7 +88,7 @@ func CreateDeleteSwimmingLaneGroupRequest() (request *DeleteSwimmingLaneGroupReq
 	request = &DeleteSwimmingLaneGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteSwimmingLaneGroup", "/pop/v5/trafficmgnt/swimming_lane_groups", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteSwimmingLaneGroup", "/pop/v5/trafficmgnt/swimming_lane_groups", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

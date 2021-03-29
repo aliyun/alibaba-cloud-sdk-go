@@ -88,7 +88,7 @@ func CreateQueryK8sClusterLogProjectInfoRequest() (request *QueryK8sClusterLogPr
 	request = &QueryK8sClusterLogProjectInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryK8sClusterLogProjectInfo", "/pop/v5/k8s/sls/project", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryK8sClusterLogProjectInfo", "/pop/v5/k8s/sls/project", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

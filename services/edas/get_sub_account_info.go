@@ -88,7 +88,7 @@ func CreateGetSubAccountInfoRequest() (request *GetSubAccountInfoRequest) {
 	request = &GetSubAccountInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetSubAccountInfo", "/pop/v5/account/sub_account_info", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetSubAccountInfo", "/pop/v5/account/sub_account_info", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

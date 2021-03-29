@@ -106,6 +106,7 @@ type DeployK8sApplicationRequest struct {
 	UriEncoding            string           `position:"Query" name:"UriEncoding"`
 	AppId                  string           `position:"Query" name:"AppId"`
 	BatchTimeout           requests.Integer `position:"Query" name:"BatchTimeout"`
+	PvcMountDescs          string           `position:"Query" name:"PvcMountDescs"`
 	McpuRequest            requests.Integer `position:"Query" name:"McpuRequest"`
 	McpuLimit              requests.Integer `position:"Query" name:"McpuLimit"`
 	VolumesStr             string           `position:"Query" name:"VolumesStr"`
@@ -129,7 +130,7 @@ func CreateDeployK8sApplicationRequest() (request *DeployK8sApplicationRequest) 
 	request = &DeployK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateListCSBGatewayRequest() (request *ListCSBGatewayRequest) {
 	request = &ListCSBGatewayRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListCSBGateway", "/pop/v5/csbgateway/gateway", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListCSBGateway", "/pop/v5/csbgateway/gateway", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

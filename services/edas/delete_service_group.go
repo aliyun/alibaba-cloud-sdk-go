@@ -87,7 +87,7 @@ func CreateDeleteServiceGroupRequest() (request *DeleteServiceGroupRequest) {
 	request = &DeleteServiceGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteServiceGroup", "/pop/v5/service/serviceGroups", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteServiceGroup", "/pop/v5/service/serviceGroups", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

@@ -24,5 +24,6 @@ type SwimmingLane struct {
 	GroupId                         int64                         `json:"GroupId" xml:"GroupId"`
 	EntryRule                       string                        `json:"EntryRule" xml:"EntryRule"`
 	EnableRules                     bool                          `json:"EnableRules" xml:"EnableRules"`
+	ScenarioSign                    string                        `json:"ScenarioSign" xml:"ScenarioSign"`
 	SwimmingLaneAppRelationShipList []SwimmingLaneAppRelationShip `json:"SwimmingLaneAppRelationShipList" xml:"SwimmingLaneAppRelationShipList"`
 }

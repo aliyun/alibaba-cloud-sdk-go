@@ -117,6 +117,7 @@ type InsertK8sApplicationRequest struct {
 	UriEncoding            string           `position:"Query" name:"UriEncoding"`
 	IntranetSlbProtocol    string           `position:"Query" name:"IntranetSlbProtocol"`
 	ImageUrl               string           `position:"Query" name:"ImageUrl"`
+	PvcMountDescs          string           `position:"Query" name:"PvcMountDescs"`
 	Namespace              string           `position:"Query" name:"Namespace"`
 	ApplicationDescription string           `position:"Query" name:"ApplicationDescription"`
 	RequestsCpu            requests.Integer `position:"Query" name:"RequestsCpu"`
@@ -137,7 +138,7 @@ func CreateInsertK8sApplicationRequest() (request *InsertK8sApplicationRequest) 
 	request = &InsertK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

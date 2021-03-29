@@ -97,7 +97,7 @@ func CreateListStatusRequest() (request *ListStatusRequest) {
 	request = &ListStatusRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListStatus", "/pop/sp/api/mse/status/list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListStatus", "/pop/sp/api/mse/status/list", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

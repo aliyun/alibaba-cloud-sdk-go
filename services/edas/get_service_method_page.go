@@ -93,12 +93,12 @@ type GetServiceMethodPageRequest struct {
 // GetServiceMethodPageResponse is the response struct for api GetServiceMethodPage
 type GetServiceMethodPageResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string                     `json:"Code" xml:"Code"`
+	Message   string                     `json:"Message" xml:"Message"`
+	Success   bool                       `json:"Success" xml:"Success"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	HttpCode  string                     `json:"HttpCode" xml:"HttpCode"`
+	Data      DataInGetServiceMethodPage `json:"Data" xml:"Data"`
 }
 
 // CreateGetServiceMethodPageRequest creates a request to invoke GetServiceMethodPage API
@@ -106,7 +106,7 @@ func CreateGetServiceMethodPageRequest() (request *GetServiceMethodPageRequest) 
 	request = &GetServiceMethodPageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceMethodPage", "/pop/sp/api/mseForOam/getServiceMethodPage", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceMethodPage", "/pop/sp/api/mseForOam/getServiceMethodPage", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateGetSecureTokenRequest() (request *GetSecureTokenRequest) {
 	request = &GetSecureTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetSecureToken", "/pop/v5/secure_token", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetSecureToken", "/pop/v5/secure_token", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -17,10 +17,10 @@ package edas
 
 // ServiceMethod is a nested struct in edas response
 type ServiceMethod struct {
-	AppName     string      `json:"AppName" xml:"AppName"`
-	ServiceName string      `json:"ServiceName" xml:"ServiceName"`
-	MethodName  string      `json:"MethodName" xml:"MethodName"`
-	Output      string      `json:"Output" xml:"Output"`
-	InputParams InputParams `json:"InputParams" xml:"InputParams"`
-	ParamTypes  ParamTypes  `json:"ParamTypes" xml:"ParamTypes"`
+	AppName     string                  `json:"AppName" xml:"AppName"`
+	ServiceName string                  `json:"ServiceName" xml:"ServiceName"`
+	MethodName  string                  `json:"MethodName" xml:"MethodName"`
+	Output      string                  `json:"Output" xml:"Output"`
+	InputParams InputParams             `json:"InputParams" xml:"InputParams"`
+	ParamTypes  ParamTypesInListMethods `json:"ParamTypes" xml:"ParamTypes"`
 }
