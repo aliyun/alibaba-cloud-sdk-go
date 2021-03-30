@@ -1,3 +1,7 @@
+2021-03-30 Version: v1.61.1012
+- Generated 2018-06-19, 2020-09-28 for `openanalytics-open`.
+- Supported Open Api.
+
 2021-03-30 Version: v1.61.1011
 - Generated 2018-06-19, 2020-09-28 for `openanalytics-open`.
 - Supported Open Api.
