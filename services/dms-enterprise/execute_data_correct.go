@@ -71,19 +71,19 @@ func (client *Client) ExecuteDataCorrectWithCallback(request *ExecuteDataCorrect
 // ExecuteDataCorrectRequest is the request struct for api ExecuteDataCorrect
 type ExecuteDataCorrectRequest struct {
 	*requests.RpcRequest
-	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
 	OrderId      requests.Integer       `position:"Query" name:"OrderId"`
 	ActionName   string                 `position:"Query" name:"ActionName"`
 	Tid          string                 `position:"Query" name:"Tid"`
+	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
 }
 
 // ExecuteDataCorrectResponse is the response struct for api ExecuteDataCorrect
 type ExecuteDataCorrectResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateExecuteDataCorrectRequest creates a request to invoke ExecuteDataCorrect API
@@ -91,7 +91,7 @@ func CreateExecuteDataCorrectRequest() (request *ExecuteDataCorrectRequest) {
 	request = &ExecuteDataCorrectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "", "")
 	request.Method = requests.POST
 	return
 }

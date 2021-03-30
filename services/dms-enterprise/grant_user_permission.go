@@ -86,9 +86,9 @@ type GrantUserPermissionRequest struct {
 type GrantUserPermissionResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateGrantUserPermissionRequest creates a request to invoke GrantUserPermission API
@@ -96,7 +96,7 @@ func CreateGrantUserPermissionRequest() (request *GrantUserPermissionRequest) {
 	request = &GrantUserPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GrantUserPermission", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GrantUserPermission", "", "")
 	request.Method = requests.POST
 	return
 }

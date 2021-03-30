@@ -17,8 +17,8 @@ package dms_enterprise
 
 // DataSource is a nested struct in dms_enterprise response
 type DataSource struct {
-	Host         string                         `json:"Host" xml:"Host"`
 	Port         int                            `json:"Port" xml:"Port"`
+	Host         string                         `json:"Host" xml:"Host"`
 	DbType       string                         `json:"DbType" xml:"DbType"`
 	Sid          string                         `json:"Sid" xml:"Sid"`
 	DatabaseList []DatabaseInGetTableDBTopology `json:"DatabaseList" xml:"DatabaseList"`

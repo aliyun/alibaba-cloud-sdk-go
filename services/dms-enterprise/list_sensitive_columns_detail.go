@@ -72,18 +72,18 @@ func (client *Client) ListSensitiveColumnsDetailWithCallback(request *ListSensit
 type ListSensitiveColumnsDetailRequest struct {
 	*requests.RpcRequest
 	SchemaName string           `position:"Query" name:"SchemaName"`
-	TableName  string           `position:"Query" name:"TableName"`
 	ColumnName string           `position:"Query" name:"ColumnName"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
+	TableName  string           `position:"Query" name:"TableName"`
 }
 
 // ListSensitiveColumnsDetailResponse is the response struct for api ListSensitiveColumnsDetail
 type ListSensitiveColumnsDetailResponse struct {
 	*responses.BaseResponse
 	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
-	Success                    bool                       `json:"Success" xml:"Success"`
-	ErrorMessage               string                     `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode                  string                     `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage               string                     `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success                    bool                       `json:"Success" xml:"Success"`
 	SensitiveColumnsDetailList SensitiveColumnsDetailList `json:"SensitiveColumnsDetailList" xml:"SensitiveColumnsDetailList"`
 }
 
@@ -92,7 +92,7 @@ func CreateListSensitiveColumnsDetailRequest() (request *ListSensitiveColumnsDet
 	request = &ListSensitiveColumnsDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "", "")
 	request.Method = requests.POST
 	return
 }

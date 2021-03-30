@@ -80,9 +80,9 @@ type GetDataExportDownloadURLRequest struct {
 type GetDataExportDownloadURLResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	Success           bool              `json:"Success" xml:"Success"`
-	ErrorMessage      string            `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode         string            `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage      string            `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success           bool              `json:"Success" xml:"Success"`
 	DownloadURLResult DownloadURLResult `json:"DownloadURLResult" xml:"DownloadURLResult"`
 }
 
@@ -91,7 +91,7 @@ func CreateGetDataExportDownloadURLRequest() (request *GetDataExportDownloadURLR
 	request = &GetDataExportDownloadURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL", "", "")
 	request.Method = requests.POST
 	return
 }

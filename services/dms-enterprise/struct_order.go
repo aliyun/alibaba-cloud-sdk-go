@@ -17,13 +17,13 @@ package dms_enterprise
 
 // Order is a nested struct in dms_enterprise response
 type Order struct {
-	OrderId        int64  `json:"OrderId" xml:"OrderId"`
+	StatusDesc     string `json:"StatusDesc" xml:"StatusDesc"`
 	Comment        string `json:"Comment" xml:"Comment"`
-	Committer      string `json:"Committer" xml:"Committer"`
-	CommitterId    int64  `json:"CommitterId" xml:"CommitterId"`
 	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+	Committer      string `json:"Committer" xml:"Committer"`
+	OrderId        int64  `json:"OrderId" xml:"OrderId"`
 	LastModifyTime string `json:"LastModifyTime" xml:"LastModifyTime"`
 	PluginType     string `json:"PluginType" xml:"PluginType"`
+	CommitterId    int64  `json:"CommitterId" xml:"CommitterId"`
 	StatusCode     string `json:"StatusCode" xml:"StatusCode"`
-	StatusDesc     string `json:"StatusDesc" xml:"StatusDesc"`
 }

@@ -93,7 +93,7 @@ func CreateListDBTaskSQLJobDetailRequest() (request *ListDBTaskSQLJobDetailReque
 	request = &ListDBTaskSQLJobDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDBTaskSQLJobDetail", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDBTaskSQLJobDetail", "", "")
 	request.Method = requests.POST
 	return
 }

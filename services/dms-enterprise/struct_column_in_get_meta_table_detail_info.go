@@ -17,14 +17,14 @@ package dms_enterprise
 
 // ColumnInGetMetaTableDetailInfo is a nested struct in dms_enterprise response
 type ColumnInGetMetaTableDetailInfo struct {
-	Description   string `json:"Description" xml:"Description"`
-	ColumnType    string `json:"ColumnType" xml:"ColumnType"`
-	Position      string `json:"Position" xml:"Position"`
-	DataLength    int    `json:"DataLength" xml:"DataLength"`
-	Nullable      bool   `json:"Nullable" xml:"Nullable"`
-	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
-	AutoIncrement bool   `json:"AutoIncrement" xml:"AutoIncrement"`
-	DataPrecision int    `json:"DataPrecision" xml:"DataPrecision"`
-	DataScale     int    `json:"DataScale" xml:"DataScale"`
 	ColumnId      string `json:"ColumnId" xml:"ColumnId"`
+	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
+	ColumnType    string `json:"ColumnType" xml:"ColumnType"`
+	Description   string `json:"Description" xml:"Description"`
+	Position      string `json:"Position" xml:"Position"`
+	AutoIncrement bool   `json:"AutoIncrement" xml:"AutoIncrement"`
+	DataLength    int64  `json:"DataLength" xml:"DataLength"`
+	DataScale     int    `json:"DataScale" xml:"DataScale"`
+	DataPrecision int    `json:"DataPrecision" xml:"DataPrecision"`
+	Nullable      bool   `json:"Nullable" xml:"Nullable"`
 }

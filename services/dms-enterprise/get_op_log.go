@@ -72,21 +72,21 @@ func (client *Client) GetOpLogWithCallback(request *GetOpLogRequest, callback fu
 type GetOpLogRequest struct {
 	*requests.RpcRequest
 	Module     string           `position:"Query" name:"Module"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // GetOpLogResponse is the response struct for api GetOpLog
 type GetOpLogResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Success      bool         `json:"Success" xml:"Success"`
-	ErrorMessage string       `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount   int64        `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string       `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool         `json:"Success" xml:"Success"`
 	OpLogDetails OpLogDetails `json:"OpLogDetails" xml:"OpLogDetails"`
 }
 
@@ -95,7 +95,7 @@ func CreateGetOpLogRequest() (request *GetOpLogRequest) {
 	request = &GetOpLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOpLog", "", "")
 	request.Method = requests.POST
 	return
 }

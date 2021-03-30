@@ -71,19 +71,19 @@ func (client *Client) GetDataCorrectBackupFilesWithCallback(request *GetDataCorr
 // GetDataCorrectBackupFilesRequest is the request struct for api GetDataCorrectBackupFiles
 type GetDataCorrectBackupFilesRequest struct {
 	*requests.RpcRequest
-	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
 	OrderId      requests.Integer       `position:"Query" name:"OrderId"`
 	ActionName   string                 `position:"Query" name:"ActionName"`
 	Tid          requests.Integer       `position:"Query" name:"Tid"`
+	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
 }
 
 // GetDataCorrectBackupFilesResponse is the response struct for api GetDataCorrectBackupFiles
 type GetDataCorrectBackupFilesResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
-	Success                bool                   `json:"Success" xml:"Success"`
-	ErrorMessage           string                 `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode              string                 `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage           string                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success                bool                   `json:"Success" xml:"Success"`
 	DataCorrectBackupFiles DataCorrectBackupFiles `json:"DataCorrectBackupFiles" xml:"DataCorrectBackupFiles"`
 }
 
@@ -92,7 +92,7 @@ func CreateGetDataCorrectBackupFilesRequest() (request *GetDataCorrectBackupFile
 	request = &GetDataCorrectBackupFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,8 +21,8 @@ type WorkflowNode struct {
 	CreateUserId       int64           `json:"CreateUserId" xml:"CreateUserId"`
 	CreateUserNickName string          `json:"CreateUserNickName" xml:"CreateUserNickName"`
 	Comment            string          `json:"Comment" xml:"Comment"`
-	NodeName           string          `json:"NodeName" xml:"NodeName"`
 	OperateTime        string          `json:"OperateTime" xml:"OperateTime"`
+	NodeName           string          `json:"NodeName" xml:"NodeName"`
 	NodeId             int64           `json:"NodeId" xml:"NodeId"`
 	OperateComment     string          `json:"OperateComment" xml:"OperateComment"`
 	OperatorId         int64           `json:"OperatorId" xml:"OperatorId"`

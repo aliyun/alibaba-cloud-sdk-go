@@ -18,6 +18,6 @@ package dms_enterprise
 // AuditUser is a nested struct in dms_enterprise response
 type AuditUser struct {
 	UserId   int64  `json:"UserId" xml:"UserId"`
-	NickName string `json:"NickName" xml:"NickName"`
 	RealName string `json:"RealName" xml:"RealName"`
+	NickName string `json:"NickName" xml:"NickName"`
 }

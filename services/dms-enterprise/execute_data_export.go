@@ -71,19 +71,19 @@ func (client *Client) ExecuteDataExportWithCallback(request *ExecuteDataExportRe
 // ExecuteDataExportRequest is the request struct for api ExecuteDataExport
 type ExecuteDataExportRequest struct {
 	*requests.RpcRequest
-	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
 	OrderId      requests.Integer       `position:"Query" name:"OrderId"`
 	ActionName   string                 `position:"Query" name:"ActionName"`
 	Tid          requests.Integer       `position:"Query" name:"Tid"`
+	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
 }
 
 // ExecuteDataExportResponse is the response struct for api ExecuteDataExport
 type ExecuteDataExportResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateExecuteDataExportRequest creates a request to invoke ExecuteDataExport API
@@ -91,7 +91,7 @@ func CreateExecuteDataExportRequest() (request *ExecuteDataExportRequest) {
 	request = &ExecuteDataExportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataExport", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataExport", "", "")
 	request.Method = requests.POST
 	return
 }

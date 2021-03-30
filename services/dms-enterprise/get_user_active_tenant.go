@@ -71,15 +71,16 @@ func (client *Client) GetUserActiveTenantWithCallback(request *GetUserActiveTena
 // GetUserActiveTenantRequest is the request struct for api GetUserActiveTenant
 type GetUserActiveTenantRequest struct {
 	*requests.RpcRequest
+	Tid requests.Integer `position:"Query" name:"Tid"`
 }
 
 // GetUserActiveTenantResponse is the response struct for api GetUserActiveTenant
 type GetUserActiveTenantResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 	Tenant       Tenant `json:"Tenant" xml:"Tenant"`
 }
 
@@ -88,7 +89,7 @@ func CreateGetUserActiveTenantRequest() (request *GetUserActiveTenantRequest) {
 	request = &GetUserActiveTenantRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUserActiveTenant", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUserActiveTenant", "", "")
 	request.Method = requests.POST
 	return
 }

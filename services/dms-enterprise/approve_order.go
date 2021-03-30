@@ -91,7 +91,7 @@ func CreateApproveOrderRequest() (request *ApproveOrderRequest) {
 	request = &ApproveOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ApproveOrder", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ApproveOrder", "", "")
 	request.Method = requests.POST
 	return
 }

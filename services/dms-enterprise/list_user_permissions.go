@@ -85,11 +85,11 @@ type ListUserPermissionsRequest struct {
 // ListUserPermissionsResponse is the response struct for api ListUserPermissions
 type ListUserPermissionsResponse struct {
 	*responses.BaseResponse
-	RequestId       string                               `json:"RequestId" xml:"RequestId"`
-	Success         bool                                 `json:"Success" xml:"Success"`
-	ErrorMessage    string                               `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode       string                               `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount      int64                                `json:"TotalCount" xml:"TotalCount"`
+	RequestId       string                               `json:"RequestId" xml:"RequestId"`
+	ErrorCode       string                               `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage    string                               `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success         bool                                 `json:"Success" xml:"Success"`
 	UserPermissions UserPermissionsInListUserPermissions `json:"UserPermissions" xml:"UserPermissions"`
 }
 
@@ -98,7 +98,7 @@ func CreateListUserPermissionsRequest() (request *ListUserPermissionsRequest) {
 	request = &ListUserPermissionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUserPermissions", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUserPermissions", "", "")
 	request.Method = requests.POST
 	return
 }

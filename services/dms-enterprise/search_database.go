@@ -84,11 +84,11 @@ type SearchDatabaseRequest struct {
 // SearchDatabaseResponse is the response struct for api SearchDatabase
 type SearchDatabaseResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	Success            bool               `json:"Success" xml:"Success"`
-	ErrorMessage       string             `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode          string             `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount         int64              `json:"TotalCount" xml:"TotalCount"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	ErrorCode          string             `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage       string             `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success            bool               `json:"Success" xml:"Success"`
 	SearchDatabaseList SearchDatabaseList `json:"SearchDatabaseList" xml:"SearchDatabaseList"`
 }
 
@@ -97,7 +97,7 @@ func CreateSearchDatabaseRequest() (request *SearchDatabaseRequest) {
 	request = &SearchDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SearchDatabase", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SearchDatabase", "", "")
 	request.Method = requests.POST
 	return
 }

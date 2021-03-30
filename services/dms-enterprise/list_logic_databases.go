@@ -71,19 +71,19 @@ func (client *Client) ListLogicDatabasesWithCallback(request *ListLogicDatabases
 // ListLogicDatabasesRequest is the request struct for api ListLogicDatabases
 type ListLogicDatabasesRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListLogicDatabasesResponse is the response struct for api ListLogicDatabases
 type ListLogicDatabasesResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	Success           bool              `json:"Success" xml:"Success"`
-	ErrorMessage      string            `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode         string            `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount        int64             `json:"TotalCount" xml:"TotalCount"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	ErrorCode         string            `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage      string            `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success           bool              `json:"Success" xml:"Success"`
 	LogicDatabaseList LogicDatabaseList `json:"LogicDatabaseList" xml:"LogicDatabaseList"`
 }
 
@@ -92,7 +92,7 @@ func CreateListLogicDatabasesRequest() (request *ListLogicDatabasesRequest) {
 	request = &ListLogicDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicDatabases", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicDatabases", "", "")
 	request.Method = requests.POST
 	return
 }

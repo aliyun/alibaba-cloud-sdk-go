@@ -99,9 +99,9 @@ type UpdateInstanceRequest struct {
 type UpdateInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateInstanceRequest creates a request to invoke UpdateInstance API
@@ -109,7 +109,7 @@ func CreateUpdateInstanceRequest() (request *UpdateInstanceRequest) {
 	request = &UpdateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "UpdateInstance", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "UpdateInstance", "", "")
 	request.Method = requests.POST
 	return
 }

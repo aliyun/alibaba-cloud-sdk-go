@@ -72,21 +72,21 @@ func (client *Client) CreatePublishGroupTaskWithCallback(request *CreatePublishG
 type CreatePublishGroupTaskRequest struct {
 	*requests.RpcRequest
 	OrderId         requests.Integer `position:"Query" name:"OrderId"`
+	Tid             requests.Integer `position:"Query" name:"Tid"`
 	DbId            requests.Integer `position:"Query" name:"DbId"`
 	PlanTime        string           `position:"Query" name:"PlanTime"`
 	Logic           requests.Boolean `position:"Query" name:"Logic"`
-	Tid             requests.Integer `position:"Query" name:"Tid"`
 	PublishStrategy string           `position:"Query" name:"PublishStrategy"`
 }
 
 // CreatePublishGroupTaskResponse is the response struct for api CreatePublishGroupTask
 type CreatePublishGroupTaskResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
 	TaskId       int64  `json:"TaskId" xml:"TaskId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreatePublishGroupTaskRequest creates a request to invoke CreatePublishGroupTask API
@@ -94,7 +94,7 @@ func CreateCreatePublishGroupTaskRequest() (request *CreatePublishGroupTaskReque
 	request = &CreatePublishGroupTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "", "")
 	request.Method = requests.POST
 	return
 }

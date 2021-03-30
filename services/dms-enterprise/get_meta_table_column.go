@@ -79,9 +79,9 @@ type GetMetaTableColumnRequest struct {
 type GetMetaTableColumnResponse struct {
 	*responses.BaseResponse
 	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	Success      bool     `json:"Success" xml:"Success"`
-	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool     `json:"Success" xml:"Success"`
 	ColumnList   []Column `json:"ColumnList" xml:"ColumnList"`
 }
 
@@ -90,7 +90,7 @@ func CreateGetMetaTableColumnRequest() (request *GetMetaTableColumnRequest) {
 	request = &GetMetaTableColumnRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetMetaTableColumn", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetMetaTableColumn", "", "")
 	request.Method = requests.POST
 	return
 }

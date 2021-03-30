@@ -19,8 +19,8 @@ package dms_enterprise
 type LogicDatabase struct {
 	DatabaseId    string                          `json:"DatabaseId" xml:"DatabaseId"`
 	Logic         bool                            `json:"Logic" xml:"Logic"`
-	EnvType       string                          `json:"EnvType" xml:"EnvType"`
 	SearchName    string                          `json:"SearchName" xml:"SearchName"`
+	EnvType       string                          `json:"EnvType" xml:"EnvType"`
 	SchemaName    string                          `json:"SchemaName" xml:"SchemaName"`
 	DbType        string                          `json:"DbType" xml:"DbType"`
 	OwnerNameList OwnerNameListInGetLogicDatabase `json:"OwnerNameList" xml:"OwnerNameList"`

@@ -1,3 +1,8 @@
+2021-03-30 Version: v1.61.1009
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support ListDDLPublishRecords API.
+- Fixed GetMetaTableColumn, GetMetaTableDetailInfo API response param DataLength lack of precision.
+
 2021-03-29 Version: v1.61.1008
 - Generated 2017-08-01 for `Edas`.
 - Modify API CreateGrayEnviroment.

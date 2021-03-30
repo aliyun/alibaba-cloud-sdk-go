@@ -24,4 +24,5 @@ type StructSyncJobDetail struct {
 	TableCount    int64  `json:"TableCount" xml:"TableCount"`
 	ExecuteCount  int64  `json:"ExecuteCount" xml:"ExecuteCount"`
 	SecurityRule  string `json:"SecurityRule" xml:"SecurityRule"`
+	DBTaskGroupId int64  `json:"DBTaskGroupId" xml:"DBTaskGroupId"`
 }

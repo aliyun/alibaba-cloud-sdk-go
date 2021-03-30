@@ -71,18 +71,18 @@ func (client *Client) ListColumnsWithCallback(request *ListColumnsRequest, callb
 // ListColumnsRequest is the request struct for api ListColumns
 type ListColumnsRequest struct {
 	*requests.RpcRequest
+	Tid     requests.Integer `position:"Query" name:"Tid"`
 	TableId string           `position:"Query" name:"TableId"`
 	Logic   requests.Boolean `position:"Query" name:"Logic"`
-	Tid     requests.Integer `position:"Query" name:"Tid"`
 }
 
 // ListColumnsResponse is the response struct for api ListColumns
 type ListColumnsResponse struct {
 	*responses.BaseResponse
 	RequestId    string                  `json:"RequestId" xml:"RequestId"`
-	Success      bool                    `json:"Success" xml:"Success"`
-	ErrorMessage string                  `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string                  `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string                  `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool                    `json:"Success" xml:"Success"`
 	ColumnList   ColumnListInListColumns `json:"ColumnList" xml:"ColumnList"`
 }
 
@@ -91,7 +91,7 @@ func CreateListColumnsRequest() (request *ListColumnsRequest) {
 	request = &ListColumnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListColumns", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListColumns", "", "")
 	request.Method = requests.POST
 	return
 }

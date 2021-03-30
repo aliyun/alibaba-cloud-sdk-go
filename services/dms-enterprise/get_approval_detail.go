@@ -79,9 +79,9 @@ type GetApprovalDetailRequest struct {
 type GetApprovalDetailResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	Success        bool           `json:"Success" xml:"Success"`
-	ErrorMessage   string         `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode      string         `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string         `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success        bool           `json:"Success" xml:"Success"`
 	ApprovalDetail ApprovalDetail `json:"ApprovalDetail" xml:"ApprovalDetail"`
 }
 
@@ -90,7 +90,7 @@ func CreateGetApprovalDetailRequest() (request *GetApprovalDetailRequest) {
 	request = &GetApprovalDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetApprovalDetail", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetApprovalDetail", "", "")
 	request.Method = requests.POST
 	return
 }

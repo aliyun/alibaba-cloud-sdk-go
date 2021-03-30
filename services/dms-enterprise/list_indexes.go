@@ -71,18 +71,18 @@ func (client *Client) ListIndexesWithCallback(request *ListIndexesRequest, callb
 // ListIndexesRequest is the request struct for api ListIndexes
 type ListIndexesRequest struct {
 	*requests.RpcRequest
+	Tid     requests.Integer `position:"Query" name:"Tid"`
 	TableId string           `position:"Query" name:"TableId"`
 	Logic   requests.Boolean `position:"Query" name:"Logic"`
-	Tid     requests.Integer `position:"Query" name:"Tid"`
 }
 
 // ListIndexesResponse is the response struct for api ListIndexes
 type ListIndexesResponse struct {
 	*responses.BaseResponse
 	RequestId    string                 `json:"RequestId" xml:"RequestId"`
-	Success      bool                   `json:"Success" xml:"Success"`
-	ErrorMessage string                 `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string                 `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool                   `json:"Success" xml:"Success"`
 	IndexList    IndexListInListIndexes `json:"IndexList" xml:"IndexList"`
 }
 
@@ -91,7 +91,7 @@ func CreateListIndexesRequest() (request *ListIndexesRequest) {
 	request = &ListIndexesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListIndexes", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListIndexes", "", "")
 	request.Method = requests.POST
 	return
 }

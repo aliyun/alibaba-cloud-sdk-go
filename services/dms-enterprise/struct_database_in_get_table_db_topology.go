@@ -17,8 +17,8 @@ package dms_enterprise
 
 // DatabaseInGetTableDBTopology is a nested struct in dms_enterprise response
 type DatabaseInGetTableDBTopology struct {
-	DbName    string  `json:"DbName" xml:"DbName"`
 	DbId      string  `json:"DbId" xml:"DbId"`
+	DbName    string  `json:"DbName" xml:"DbName"`
 	EnvType   string  `json:"EnvType" xml:"EnvType"`
 	DbType    string  `json:"DbType" xml:"DbType"`
 	TableList []Table `json:"TableList" xml:"TableList"`

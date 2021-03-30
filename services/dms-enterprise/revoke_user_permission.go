@@ -86,9 +86,9 @@ type RevokeUserPermissionRequest struct {
 type RevokeUserPermissionResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateRevokeUserPermissionRequest creates a request to invoke RevokeUserPermission API
@@ -96,7 +96,7 @@ func CreateRevokeUserPermissionRequest() (request *RevokeUserPermissionRequest) 
 	request = &RevokeUserPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RevokeUserPermission", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RevokeUserPermission", "", "")
 	request.Method = requests.POST
 	return
 }

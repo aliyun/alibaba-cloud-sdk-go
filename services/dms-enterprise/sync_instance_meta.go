@@ -71,18 +71,18 @@ func (client *Client) SyncInstanceMetaWithCallback(request *SyncInstanceMetaRequ
 // SyncInstanceMetaRequest is the request struct for api SyncInstanceMeta
 type SyncInstanceMetaRequest struct {
 	*requests.RpcRequest
-	InstanceId  string           `position:"Query" name:"InstanceId"`
 	IgnoreTable requests.Boolean `position:"Query" name:"IgnoreTable"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
 }
 
 // SyncInstanceMetaResponse is the response struct for api SyncInstanceMeta
 type SyncInstanceMetaResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSyncInstanceMetaRequest creates a request to invoke SyncInstanceMeta API
@@ -90,7 +90,7 @@ func CreateSyncInstanceMetaRequest() (request *SyncInstanceMetaRequest) {
 	request = &SyncInstanceMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncInstanceMeta", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncInstanceMeta", "", "")
 	request.Method = requests.POST
 	return
 }

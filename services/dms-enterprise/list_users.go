@@ -82,11 +82,11 @@ type ListUsersRequest struct {
 // ListUsersResponse is the response struct for api ListUsers
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	Success      bool     `json:"Success" xml:"Success"`
-	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount   int64    `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool     `json:"Success" xml:"Success"`
 	UserList     UserList `json:"UserList" xml:"UserList"`
 }
 
@@ -95,7 +95,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUsers", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUsers", "", "")
 	request.Method = requests.POST
 	return
 }

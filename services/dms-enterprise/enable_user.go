@@ -79,9 +79,9 @@ type EnableUserRequest struct {
 type EnableUserResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEnableUserRequest creates a request to invoke EnableUser API
@@ -89,7 +89,7 @@ func CreateEnableUserRequest() (request *EnableUserRequest) {
 	request = &EnableUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "EnableUser", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "EnableUser", "", "")
 	request.Method = requests.POST
 	return
 }

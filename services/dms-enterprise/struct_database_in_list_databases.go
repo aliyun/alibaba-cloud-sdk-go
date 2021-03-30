@@ -17,20 +17,20 @@ package dms_enterprise
 
 // DatabaseInListDatabases is a nested struct in dms_enterprise response
 type DatabaseInListDatabases struct {
-	InstanceId    string                       `json:"InstanceId" xml:"InstanceId"`
-	DatabaseId    string                       `json:"DatabaseId" xml:"DatabaseId"`
-	EnvType       string                       `json:"EnvType" xml:"EnvType"`
-	SchemaName    string                       `json:"SchemaName" xml:"SchemaName"`
-	CatalogName   string                       `json:"CatalogName" xml:"CatalogName"`
-	Encoding      string                       `json:"Encoding" xml:"Encoding"`
 	SearchName    string                       `json:"SearchName" xml:"SearchName"`
-	State         string                       `json:"State" xml:"State"`
-	DbType        string                       `json:"DbType" xml:"DbType"`
-	Host          string                       `json:"Host" xml:"Host"`
+	InstanceId    string                       `json:"InstanceId" xml:"InstanceId"`
 	Port          int                          `json:"Port" xml:"Port"`
+	Encoding      string                       `json:"Encoding" xml:"Encoding"`
+	Host          string                       `json:"Host" xml:"Host"`
+	DatabaseId    string                       `json:"DatabaseId" xml:"DatabaseId"`
+	DbType        string                       `json:"DbType" xml:"DbType"`
+	EnvType       string                       `json:"EnvType" xml:"EnvType"`
 	Sid           string                       `json:"Sid" xml:"Sid"`
 	DbaName       string                       `json:"DbaName" xml:"DbaName"`
 	DbaId         string                       `json:"DbaId" xml:"DbaId"`
-	OwnerIdList   OwnerIdListInListDatabases   `json:"OwnerIdList" xml:"OwnerIdList"`
+	State         string                       `json:"State" xml:"State"`
+	CatalogName   string                       `json:"CatalogName" xml:"CatalogName"`
+	SchemaName    string                       `json:"SchemaName" xml:"SchemaName"`
 	OwnerNameList OwnerNameListInListDatabases `json:"OwnerNameList" xml:"OwnerNameList"`
+	OwnerIdList   OwnerIdListInListDatabases   `json:"OwnerIdList" xml:"OwnerIdList"`
 }

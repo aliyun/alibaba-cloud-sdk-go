@@ -71,15 +71,16 @@ func (client *Client) ListUserTenantsWithCallback(request *ListUserTenantsReques
 // ListUserTenantsRequest is the request struct for api ListUserTenants
 type ListUserTenantsRequest struct {
 	*requests.RpcRequest
+	Tid requests.Integer `position:"Query" name:"Tid"`
 }
 
 // ListUserTenantsResponse is the response struct for api ListUserTenants
 type ListUserTenantsResponse struct {
 	*responses.BaseResponse
 	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	Success      bool     `json:"Success" xml:"Success"`
-	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool     `json:"Success" xml:"Success"`
 	TenantList   []Tenant `json:"TenantList" xml:"TenantList"`
 }
 
@@ -88,7 +89,7 @@ func CreateListUserTenantsRequest() (request *ListUserTenantsRequest) {
 	request = &ListUserTenantsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUserTenants", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUserTenants", "", "")
 	request.Method = requests.POST
 	return
 }

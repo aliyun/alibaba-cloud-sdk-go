@@ -71,9 +71,10 @@ func (client *Client) CreateOrderWithCallback(request *CreateOrderRequest, callb
 // CreateOrderRequest is the request struct for api CreateOrder
 type CreateOrderRequest struct {
 	*requests.RpcRequest
-	PluginType      string                 `position:"Query" name:"PluginType"`
-	Comment         string                 `position:"Query" name:"Comment"`
 	Tid             requests.Integer       `position:"Query" name:"Tid"`
+	PluginType      string                 `position:"Query" name:"PluginType"`
+	AttachmentKey   string                 `position:"Query" name:"AttachmentKey"`
+	Comment         string                 `position:"Query" name:"Comment"`
 	PluginParam     map[string]interface{} `position:"Body" name:"PluginParam"`
 	RelatedUserList string                 `position:"Query" name:"RelatedUserList"`
 }
@@ -82,9 +83,9 @@ type CreateOrderRequest struct {
 type CreateOrderResponse struct {
 	*responses.BaseResponse
 	RequestId         string                         `json:"RequestId" xml:"RequestId"`
-	Success           bool                           `json:"Success" xml:"Success"`
-	ErrorMessage      string                         `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode         string                         `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage      string                         `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success           bool                           `json:"Success" xml:"Success"`
 	CreateOrderResult CreateOrderResultInCreateOrder `json:"CreateOrderResult" xml:"CreateOrderResult"`
 }
 
@@ -93,7 +94,7 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 	request = &CreateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateOrder", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateOrder", "", "")
 	request.Method = requests.POST
 	return
 }

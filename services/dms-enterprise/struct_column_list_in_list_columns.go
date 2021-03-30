@@ -17,5 +17,5 @@ package dms_enterprise
 
 // ColumnListInListColumns is a nested struct in dms_enterprise response
 type ColumnListInListColumns struct {
-	Column []ColumnInListColumns `json:"Column" xml:"Column"`
+	Column []Column `json:"Column" xml:"Column"`
 }

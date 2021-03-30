@@ -17,16 +17,19 @@ package dms_enterprise
 
 // Column is a nested struct in dms_enterprise response
 type Column struct {
-	Nullable      bool   `json:"Nullable" xml:"Nullable"`
 	ColumnId      string `json:"ColumnId" xml:"ColumnId"`
-	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
 	AutoIncrement bool   `json:"AutoIncrement" xml:"AutoIncrement"`
+	PrimaryKey    string `json:"PrimaryKey" xml:"PrimaryKey"`
+	DefaultValue  string `json:"DefaultValue" xml:"DefaultValue"`
+	Sensitive     bool   `json:"Sensitive" xml:"Sensitive"`
+	Nullable      bool   `json:"Nullable" xml:"Nullable"`
+	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
 	SecurityLevel string `json:"SecurityLevel" xml:"SecurityLevel"`
 	ColumnType    string `json:"ColumnType" xml:"ColumnType"`
-	PrimaryKey    string `json:"PrimaryKey" xml:"PrimaryKey"`
 	Position      int    `json:"Position" xml:"Position"`
+	DataLength    int64  `json:"DataLength" xml:"DataLength"`
+	FunctionType  string `json:"FunctionType" xml:"FunctionType"`
 	Description   string `json:"Description" xml:"Description"`
 	DataScale     int    `json:"DataScale" xml:"DataScale"`
-	DataLength    int    `json:"DataLength" xml:"DataLength"`
 	DataPrecision int    `json:"DataPrecision" xml:"DataPrecision"`
 }

@@ -79,9 +79,9 @@ type ListWorkFlowNodesRequest struct {
 type ListWorkFlowNodesResponse struct {
 	*responses.BaseResponse
 	RequestId     string                           `json:"RequestId" xml:"RequestId"`
-	Success       bool                             `json:"Success" xml:"Success"`
-	ErrorMessage  string                           `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode     string                           `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage  string                           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success       bool                             `json:"Success" xml:"Success"`
 	WorkflowNodes WorkflowNodesInListWorkFlowNodes `json:"WorkflowNodes" xml:"WorkflowNodes"`
 }
 
@@ -90,7 +90,7 @@ func CreateListWorkFlowNodesRequest() (request *ListWorkFlowNodesRequest) {
 	request = &ListWorkFlowNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListWorkFlowNodes", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListWorkFlowNodes", "", "")
 	request.Method = requests.POST
 	return
 }

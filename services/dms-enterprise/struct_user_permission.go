@@ -19,15 +19,15 @@ package dms_enterprise
 type UserPermission struct {
 	Logic        bool                                    `json:"Logic" xml:"Logic"`
 	SchemaName   string                                  `json:"SchemaName" xml:"SchemaName"`
-	TableName    string                                  `json:"TableName" xml:"TableName"`
 	TableId      string                                  `json:"TableId" xml:"TableId"`
-	UserNickName string                                  `json:"UserNickName" xml:"UserNickName"`
+	TableName    string                                  `json:"TableName" xml:"TableName"`
 	DbType       string                                  `json:"DbType" xml:"DbType"`
+	UserNickName string                                  `json:"UserNickName" xml:"UserNickName"`
 	ColumnName   string                                  `json:"ColumnName" xml:"ColumnName"`
 	SearchName   string                                  `json:"SearchName" xml:"SearchName"`
 	EnvType      string                                  `json:"EnvType" xml:"EnvType"`
-	UserId       string                                  `json:"UserId" xml:"UserId"`
 	InstanceId   string                                  `json:"InstanceId" xml:"InstanceId"`
+	UserId       string                                  `json:"UserId" xml:"UserId"`
 	Alias        string                                  `json:"Alias" xml:"Alias"`
 	DsType       string                                  `json:"DsType" xml:"DsType"`
 	DbId         string                                  `json:"DbId" xml:"DbId"`

@@ -79,9 +79,9 @@ type GetDataCorrectOrderDetailRequest struct {
 type GetDataCorrectOrderDetailResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
-	Success                bool                   `json:"Success" xml:"Success"`
-	ErrorMessage           string                 `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode              string                 `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage           string                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success                bool                   `json:"Success" xml:"Success"`
 	DataCorrectOrderDetail DataCorrectOrderDetail `json:"DataCorrectOrderDetail" xml:"DataCorrectOrderDetail"`
 }
 
@@ -90,7 +90,7 @@ func CreateGetDataCorrectOrderDetailRequest() (request *GetDataCorrectOrderDetai
 	request = &GetDataCorrectOrderDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectOrderDetail", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectOrderDetail", "", "")
 	request.Method = requests.POST
 	return
 }

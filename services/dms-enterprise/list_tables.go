@@ -73,20 +73,20 @@ type ListTablesRequest struct {
 	*requests.RpcRequest
 	SearchName string           `position:"Query" name:"SearchName"`
 	ReturnGuid requests.Boolean `position:"Query" name:"ReturnGuid"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	DatabaseId string           `position:"Query" name:"DatabaseId"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	DatabaseId string           `position:"Query" name:"DatabaseId"`
 }
 
 // ListTablesResponse is the response struct for api ListTables
 type ListTablesResponse struct {
 	*responses.BaseResponse
-	RequestId    string                `json:"RequestId" xml:"RequestId"`
-	Success      bool                  `json:"Success" xml:"Success"`
-	ErrorMessage string                `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string                `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount   int64                 `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string                `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string                `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string                `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool                  `json:"Success" xml:"Success"`
 	TableList    TableListInListTables `json:"TableList" xml:"TableList"`
 }
 
@@ -95,7 +95,7 @@ func CreateListTablesRequest() (request *ListTablesRequest) {
 	request = &ListTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListTables", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListTables", "", "")
 	request.Method = requests.POST
 	return
 }

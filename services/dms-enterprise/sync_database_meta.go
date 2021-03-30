@@ -71,18 +71,18 @@ func (client *Client) SyncDatabaseMetaWithCallback(request *SyncDatabaseMetaRequ
 // SyncDatabaseMetaRequest is the request struct for api SyncDatabaseMeta
 type SyncDatabaseMetaRequest struct {
 	*requests.RpcRequest
+	Tid   requests.Integer `position:"Query" name:"Tid"`
 	DbId  string           `position:"Query" name:"DbId"`
 	Logic requests.Boolean `position:"Query" name:"Logic"`
-	Tid   requests.Integer `position:"Query" name:"Tid"`
 }
 
 // SyncDatabaseMetaResponse is the response struct for api SyncDatabaseMeta
 type SyncDatabaseMetaResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSyncDatabaseMetaRequest creates a request to invoke SyncDatabaseMeta API
@@ -90,7 +90,7 @@ func CreateSyncDatabaseMetaRequest() (request *SyncDatabaseMetaRequest) {
 	request = &SyncDatabaseMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncDatabaseMeta", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncDatabaseMeta", "", "")
 	request.Method = requests.POST
 	return
 }

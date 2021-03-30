@@ -91,7 +91,7 @@ func CreateGetDataCorrectSQLFileRequest() (request *GetDataCorrectSQLFileRequest
 	request = &GetDataCorrectSQLFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectSQLFile", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectSQLFile", "", "")
 	request.Method = requests.POST
 	return
 }

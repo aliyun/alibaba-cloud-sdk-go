@@ -89,7 +89,7 @@ func CreateExecuteStructSyncRequest() (request *ExecuteStructSyncRequest) {
 	request = &ExecuteStructSyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteStructSync", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteStructSync", "", "")
 	request.Method = requests.POST
 	return
 }

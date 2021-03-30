@@ -90,7 +90,7 @@ func CreateGetOwnerApplyOrderDetailRequest() (request *GetOwnerApplyOrderDetailR
 	request = &GetOwnerApplyOrderDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOwnerApplyOrderDetail", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOwnerApplyOrderDetail", "", "")
 	request.Method = requests.POST
 	return
 }

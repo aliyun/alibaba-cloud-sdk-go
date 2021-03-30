@@ -17,11 +17,11 @@ package dms_enterprise
 
 // WorkFlowTemplate is a nested struct in dms_enterprise response
 type WorkFlowTemplate struct {
-	TemplateName  string                               `json:"TemplateName" xml:"TemplateName"`
 	Comment       string                               `json:"Comment" xml:"Comment"`
-	TemplateId    int64                                `json:"TemplateId" xml:"TemplateId"`
-	IsSystem      int                                  `json:"IsSystem" xml:"IsSystem"`
-	Enabled       string                               `json:"Enabled" xml:"Enabled"`
 	CreateUserId  int64                                `json:"CreateUserId" xml:"CreateUserId"`
+	TemplateName  string                               `json:"TemplateName" xml:"TemplateName"`
+	Enabled       string                               `json:"Enabled" xml:"Enabled"`
+	IsSystem      int                                  `json:"IsSystem" xml:"IsSystem"`
+	TemplateId    int64                                `json:"TemplateId" xml:"TemplateId"`
 	WorkflowNodes WorkflowNodesInListWorkFlowTemplates `json:"WorkflowNodes" xml:"WorkflowNodes"`
 }

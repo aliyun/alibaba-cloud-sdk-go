@@ -73,20 +73,20 @@ type ListLogicTablesRequest struct {
 	*requests.RpcRequest
 	SearchName string           `position:"Query" name:"SearchName"`
 	ReturnGuid requests.Boolean `position:"Query" name:"ReturnGuid"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	DatabaseId string           `position:"Query" name:"DatabaseId"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	DatabaseId string           `position:"Query" name:"DatabaseId"`
 }
 
 // ListLogicTablesResponse is the response struct for api ListLogicTables
 type ListLogicTablesResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	Success        bool           `json:"Success" xml:"Success"`
-	ErrorMessage   string         `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string         `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount     int64          `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string         `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string         `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success        bool           `json:"Success" xml:"Success"`
 	LogicTableList LogicTableList `json:"LogicTableList" xml:"LogicTableList"`
 }
 
@@ -95,7 +95,7 @@ func CreateListLogicTablesRequest() (request *ListLogicTablesRequest) {
 	request = &ListLogicTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicTables", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicTables", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateCreateUploadOSSFileJobRequest() (request *CreateUploadOSSFileJobReque
 	request = &CreateUploadOSSFileJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateUploadOSSFileJob", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateUploadOSSFileJob", "", "")
 	request.Method = requests.POST
 	return
 }

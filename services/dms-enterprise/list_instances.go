@@ -85,11 +85,11 @@ type ListInstancesRequest struct {
 // ListInstancesResponse is the response struct for api ListInstances
 type ListInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Success      bool         `json:"Success" xml:"Success"`
-	ErrorMessage string       `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount   int64        `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string       `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool         `json:"Success" xml:"Success"`
 	InstanceList InstanceList `json:"InstanceList" xml:"InstanceList"`
 }
 
@@ -98,7 +98,7 @@ func CreateListInstancesRequest() (request *ListInstancesRequest) {
 	request = &ListInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListInstances", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListInstances", "", "")
 	request.Method = requests.POST
 	return
 }

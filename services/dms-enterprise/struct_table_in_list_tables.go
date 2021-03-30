@@ -18,16 +18,16 @@ package dms_enterprise
 // TableInListTables is a nested struct in dms_enterprise response
 type TableInListTables struct {
 	TableId         string                    `json:"TableId" xml:"TableId"`
-	DatabaseId      string                    `json:"DatabaseId" xml:"DatabaseId"`
 	TableName       string                    `json:"TableName" xml:"TableName"`
-	TableSchemaName string                    `json:"TableSchemaName" xml:"TableSchemaName"`
-	Engine          string                    `json:"Engine" xml:"Engine"`
-	Encoding        string                    `json:"Encoding" xml:"Encoding"`
+	TableGuid       string                    `json:"TableGuid" xml:"TableGuid"`
 	TableType       string                    `json:"TableType" xml:"TableType"`
+	Description     string                    `json:"Description" xml:"Description"`
+	TableSchemaName string                    `json:"TableSchemaName" xml:"TableSchemaName"`
+	Encoding        string                    `json:"Encoding" xml:"Encoding"`
+	DatabaseId      string                    `json:"DatabaseId" xml:"DatabaseId"`
 	NumRows         int64                     `json:"NumRows" xml:"NumRows"`
 	StoreCapacity   int64                     `json:"StoreCapacity" xml:"StoreCapacity"`
-	TableGuid       string                    `json:"TableGuid" xml:"TableGuid"`
-	Description     string                    `json:"Description" xml:"Description"`
-	OwnerIdList     OwnerIdListInListTables   `json:"OwnerIdList" xml:"OwnerIdList"`
+	Engine          string                    `json:"Engine" xml:"Engine"`
 	OwnerNameList   OwnerNameListInListTables `json:"OwnerNameList" xml:"OwnerNameList"`
+	OwnerIdList     OwnerIdListInListTables   `json:"OwnerIdList" xml:"OwnerIdList"`
 }

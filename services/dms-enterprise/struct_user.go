@@ -21,8 +21,8 @@ type User struct {
 	CurResultCount  int64                 `json:"CurResultCount" xml:"CurResultCount"`
 	MaxExecuteCount int64                 `json:"MaxExecuteCount" xml:"MaxExecuteCount"`
 	LastLoginTime   string                `json:"LastLoginTime" xml:"LastLoginTime"`
-	Mobile          string                `json:"Mobile" xml:"Mobile"`
 	State           string                `json:"State" xml:"State"`
+	Mobile          string                `json:"Mobile" xml:"Mobile"`
 	CurExecuteCount int64                 `json:"CurExecuteCount" xml:"CurExecuteCount"`
 	UserId          string                `json:"UserId" xml:"UserId"`
 	ParentUid       int64                 `json:"ParentUid" xml:"ParentUid"`

@@ -72,19 +72,19 @@ func (client *Client) GetDatabaseWithCallback(request *GetDatabaseRequest, callb
 type GetDatabaseRequest struct {
 	*requests.RpcRequest
 	SchemaName string           `position:"Query" name:"SchemaName"`
-	Port       requests.Integer `position:"Query" name:"Port"`
-	Host       string           `position:"Query" name:"Host"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	Sid        string           `position:"Query" name:"Sid"`
+	Port       requests.Integer `position:"Query" name:"Port"`
+	Host       string           `position:"Query" name:"Host"`
 }
 
 // GetDatabaseResponse is the response struct for api GetDatabase
 type GetDatabaseResponse struct {
 	*responses.BaseResponse
 	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	Success      bool     `json:"Success" xml:"Success"`
-	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool     `json:"Success" xml:"Success"`
 	Database     Database `json:"Database" xml:"Database"`
 }
 
@@ -93,7 +93,7 @@ func CreateGetDatabaseRequest() (request *GetDatabaseRequest) {
 	request = &GetDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDatabase", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDatabase", "", "")
 	request.Method = requests.POST
 	return
 }

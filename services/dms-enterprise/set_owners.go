@@ -73,17 +73,17 @@ type SetOwnersRequest struct {
 	*requests.RpcRequest
 	ResourceId string           `position:"Query" name:"ResourceId"`
 	OwnerIds   string           `position:"Query" name:"OwnerIds"`
-	OwnerType  string           `position:"Query" name:"OwnerType"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
+	OwnerType  string           `position:"Query" name:"OwnerType"`
 }
 
 // SetOwnersResponse is the response struct for api SetOwners
 type SetOwnersResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSetOwnersRequest creates a request to invoke SetOwners API
@@ -91,7 +91,7 @@ func CreateSetOwnersRequest() (request *SetOwnersRequest) {
 	request = &SetOwnersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SetOwners", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SetOwners", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,11 +86,11 @@ type ListOrdersRequest struct {
 // ListOrdersResponse is the response struct for api ListOrders
 type ListOrdersResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount   int64  `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
 	Orders       Orders `json:"Orders" xml:"Orders"`
 }
 
@@ -99,7 +99,7 @@ func CreateListOrdersRequest() (request *ListOrdersRequest) {
 	request = &ListOrdersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListOrders", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListOrders", "", "")
 	request.Method = requests.POST
 	return
 }

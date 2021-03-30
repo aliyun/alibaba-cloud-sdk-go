@@ -79,9 +79,9 @@ type GetOrderBaseInfoRequest struct {
 type GetOrderBaseInfoResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	Success       bool          `json:"Success" xml:"Success"`
-	ErrorMessage  string        `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode     string        `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage  string        `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success       bool          `json:"Success" xml:"Success"`
 	OrderBaseInfo OrderBaseInfo `json:"OrderBaseInfo" xml:"OrderBaseInfo"`
 }
 
@@ -90,7 +90,7 @@ func CreateGetOrderBaseInfoRequest() (request *GetOrderBaseInfoRequest) {
 	request = &GetOrderBaseInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOrderBaseInfo", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOrderBaseInfo", "", "")
 	request.Method = requests.POST
 	return
 }

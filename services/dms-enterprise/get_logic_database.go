@@ -79,9 +79,9 @@ type GetLogicDatabaseRequest struct {
 type GetLogicDatabaseResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	Success       bool          `json:"Success" xml:"Success"`
-	ErrorMessage  string        `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode     string        `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage  string        `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success       bool          `json:"Success" xml:"Success"`
 	LogicDatabase LogicDatabase `json:"LogicDatabase" xml:"LogicDatabase"`
 }
 
@@ -90,7 +90,7 @@ func CreateGetLogicDatabaseRequest() (request *GetLogicDatabaseRequest) {
 	request = &GetLogicDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetLogicDatabase", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetLogicDatabase", "", "")
 	request.Method = requests.POST
 	return
 }

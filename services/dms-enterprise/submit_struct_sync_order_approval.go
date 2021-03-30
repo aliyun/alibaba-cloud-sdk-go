@@ -90,7 +90,7 @@ func CreateSubmitStructSyncOrderApprovalRequest() (request *SubmitStructSyncOrde
 	request = &SubmitStructSyncOrderApprovalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SubmitStructSyncOrderApproval", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SubmitStructSyncOrderApproval", "", "")
 	request.Method = requests.POST
 	return
 }

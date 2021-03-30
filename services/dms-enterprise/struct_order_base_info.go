@@ -17,17 +17,17 @@ package dms_enterprise
 
 // OrderBaseInfo is a nested struct in dms_enterprise response
 type OrderBaseInfo struct {
+	StatusDesc          string              `json:"StatusDesc" xml:"StatusDesc"`
+	WorkflowStatusDesc  string              `json:"WorkflowStatusDesc" xml:"WorkflowStatusDesc"`
 	Comment             string              `json:"Comment" xml:"Comment"`
-	Committer           string              `json:"Committer" xml:"Committer"`
-	CommitterId         int64               `json:"CommitterId" xml:"CommitterId"`
 	CreateTime          string              `json:"CreateTime" xml:"CreateTime"`
-	LastModifyTime      string              `json:"LastModifyTime" xml:"LastModifyTime"`
+	WorkflowInstanceId  int64               `json:"WorkflowInstanceId" xml:"WorkflowInstanceId"`
+	Committer           string              `json:"Committer" xml:"Committer"`
 	OrderId             int64               `json:"OrderId" xml:"OrderId"`
+	LastModifyTime      string              `json:"LastModifyTime" xml:"LastModifyTime"`
 	PluginType          string              `json:"PluginType" xml:"PluginType"`
 	StatusCode          string              `json:"StatusCode" xml:"StatusCode"`
-	StatusDesc          string              `json:"StatusDesc" xml:"StatusDesc"`
-	WorkflowInstanceId  int64               `json:"WorkflowInstanceId" xml:"WorkflowInstanceId"`
-	WorkflowStatusDesc  string              `json:"WorkflowStatusDesc" xml:"WorkflowStatusDesc"`
+	CommitterId         int64               `json:"CommitterId" xml:"CommitterId"`
 	RelatedUserList     RelatedUserList     `json:"RelatedUserList" xml:"RelatedUserList"`
 	RelatedUserNickList RelatedUserNickList `json:"RelatedUserNickList" xml:"RelatedUserNickList"`
 }
