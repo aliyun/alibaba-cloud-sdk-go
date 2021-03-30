@@ -71,9 +71,10 @@ func (client *Client) UpdateAuditCallbackWithCallback(request *UpdateAuditCallba
 // UpdateAuditCallbackRequest is the request struct for api UpdateAuditCallback
 type UpdateAuditCallbackRequest struct {
 	*requests.RpcRequest
-	Seed     string `position:"Query" name:"Seed"`
-	SourceIp string `position:"Query" name:"SourceIp"`
-	Callback string `position:"Query" name:"Callback"`
+	Seed      string           `position:"Query" name:"Seed"`
+	CryptType requests.Integer `position:"Query" name:"CryptType"`
+	SourceIp  string           `position:"Query" name:"SourceIp"`
+	Callback  string           `position:"Query" name:"Callback"`
 }
 
 // UpdateAuditCallbackResponse is the response struct for api UpdateAuditCallback

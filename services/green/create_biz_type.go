@@ -71,6 +71,7 @@ func (client *Client) CreateBizTypeWithCallback(request *CreateBizTypeRequest, c
 // CreateBizTypeRequest is the request struct for api CreateBizType
 type CreateBizTypeRequest struct {
 	*requests.RpcRequest
+	Description   string           `position:"Query" name:"Description"`
 	BizTypeImport string           `position:"Query" name:"BizTypeImport"`
 	CiteTemplate  requests.Boolean `position:"Query" name:"CiteTemplate"`
 	SourceIp      string           `position:"Query" name:"SourceIp"`

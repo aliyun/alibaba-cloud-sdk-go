@@ -76,6 +76,7 @@ type UpdateBizTypeSettingRequest struct {
 	SourceIp     string `position:"Query" name:"SourceIp"`
 	Terrorism    string `position:"Query" name:"Terrorism"`
 	BizTypeName  string `position:"Query" name:"BizTypeName"`
+	Live         string `position:"Query" name:"Live"`
 	Ad           string `position:"Query" name:"Ad"`
 	ResourceType string `position:"Query" name:"ResourceType"`
 }

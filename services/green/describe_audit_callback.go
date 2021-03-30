@@ -80,6 +80,7 @@ type DescribeAuditCallbackResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Seed      string `json:"Seed" xml:"Seed"`
 	Callback  string `json:"Callback" xml:"Callback"`
+	CryptType int    `json:"CryptType" xml:"CryptType"`
 }
 
 // CreateDescribeAuditCallbackRequest creates a request to invoke DescribeAuditCallback API

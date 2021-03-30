@@ -81,6 +81,7 @@ type DescribeOssIncrementCheckSettingResponse struct {
 	RequestId                 string                    `json:"RequestId" xml:"RequestId"`
 	ImageEnableLimit          bool                      `json:"ImageEnableLimit" xml:"ImageEnableLimit"`
 	ImageScanLimit            int64                     `json:"ImageScanLimit" xml:"ImageScanLimit"`
+	ScanImageNoFileType       bool                      `json:"ScanImageNoFileType" xml:"ScanImageNoFileType"`
 	VideoFrameInterval        int                       `json:"VideoFrameInterval" xml:"VideoFrameInterval"`
 	VideoMaxFrames            int                       `json:"VideoMaxFrames" xml:"VideoMaxFrames"`
 	VideoMaxSize              int                       `json:"VideoMaxSize" xml:"VideoMaxSize"`

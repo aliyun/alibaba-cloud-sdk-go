@@ -71,6 +71,7 @@ func (client *Client) MarkAuditContentWithCallback(request *MarkAuditContentRequ
 // MarkAuditContentRequest is the request struct for api MarkAuditContent
 type MarkAuditContentRequest struct {
 	*requests.RpcRequest
+	BizTypes            string `position:"Query" name:"BizTypes"`
 	AuditIllegalReasons string `position:"Query" name:"AuditIllegalReasons"`
 	SourceIp            string `position:"Query" name:"SourceIp"`
 	AuditResult         string `position:"Query" name:"AuditResult"`

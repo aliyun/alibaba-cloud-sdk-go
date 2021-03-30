@@ -72,6 +72,7 @@ func (client *Client) UpdateOssIncrementCheckSettingWithCallback(request *Update
 type UpdateOssIncrementCheckSettingRequest struct {
 	*requests.RpcRequest
 	VideoSceneList            string           `position:"Query" name:"VideoSceneList"`
+	ScanImageNoFileType       requests.Boolean `position:"Query" name:"ScanImageNoFileType"`
 	ImageSceneList            string           `position:"Query" name:"ImageSceneList"`
 	AudioSceneList            string           `position:"Query" name:"AudioSceneList"`
 	VideoFrameInterval        requests.Integer `position:"Query" name:"VideoFrameInterval"`

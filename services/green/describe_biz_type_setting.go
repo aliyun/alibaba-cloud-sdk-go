@@ -84,6 +84,7 @@ type DescribeBizTypeSettingResponse struct {
 	Porn      Porn      `json:"Porn" xml:"Porn"`
 	Antispam  Antispam  `json:"Antispam" xml:"Antispam"`
 	Ad        Ad        `json:"Ad" xml:"Ad"`
+	Live      Live      `json:"Live" xml:"Live"`
 }
 
 // CreateDescribeBizTypeSettingRequest creates a request to invoke DescribeBizTypeSetting API

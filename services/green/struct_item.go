@@ -25,6 +25,7 @@ type Item struct {
 	Y             int    `json:"Y" xml:"Y"`
 	Width         int    `json:"Width" xml:"Width"`
 	Height        int    `json:"Height" xml:"Height"`
+	Description   string `json:"Description" xml:"Description"`
 	SourceBizType string `json:"SourceBizType" xml:"SourceBizType"`
 	Gray          bool   `json:"Gray" xml:"Gray"`
 	Source        string `json:"Source" xml:"Source"`

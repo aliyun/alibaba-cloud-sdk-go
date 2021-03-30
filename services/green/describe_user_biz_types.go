@@ -78,9 +78,9 @@ type DescribeUserBizTypesRequest struct {
 // DescribeUserBizTypesResponse is the response struct for api DescribeUserBizTypes
 type DescribeUserBizTypesResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	BizTypeList       []Item `json:"BizTypeList" xml:"BizTypeList"`
-	BizTypeListImport []Item `json:"BizTypeListImport" xml:"BizTypeListImport"`
+	RequestId         string       `json:"RequestId" xml:"RequestId"`
+	BizTypeList       []Item       `json:"BizTypeList" xml:"BizTypeList"`
+	BizTypeListImport []ImportItem `json:"BizTypeListImport" xml:"BizTypeListImport"`
 }
 
 // CreateDescribeUserBizTypesRequest creates a request to invoke DescribeUserBizTypes API

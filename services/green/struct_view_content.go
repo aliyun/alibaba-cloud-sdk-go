@@ -31,4 +31,5 @@ type ViewContent struct {
 	ScanResult       string        `json:"ScanResult" xml:"ScanResult"`
 	Results          []Result      `json:"Results" xml:"Results"`
 	FrameResults     []FrameResult `json:"FrameResults" xml:"FrameResults"`
+	FaceResults      []FaceResult  `json:"FaceResults" xml:"FaceResults"`
 }

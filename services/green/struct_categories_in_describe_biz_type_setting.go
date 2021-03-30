@@ -17,5 +17,5 @@ package green
 
 // CategoriesInDescribeBizTypeSetting is a nested struct in green response
 type CategoriesInDescribeBizTypeSetting struct {
-	Category []string `json:"category" xml:"category"`
+	LiveCategory []string `json:"liveCategory" xml:"liveCategory"`
 }
