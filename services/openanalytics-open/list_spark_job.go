@@ -72,6 +72,7 @@ func (client *Client) ListSparkJobWithCallback(request *ListSparkJobRequest, cal
 type ListSparkJobRequest struct {
 	*requests.RpcRequest
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	Condition  string           `position:"Query" name:"Condition"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	VcName     string           `position:"Query" name:"VcName"`
 }
