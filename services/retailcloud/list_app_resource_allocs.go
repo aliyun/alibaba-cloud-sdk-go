@@ -95,7 +95,7 @@ func CreateListAppResourceAllocsRequest() (request *ListAppResourceAllocsRequest
 	request = &ListAppResourceAllocsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppResourceAllocs", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppResourceAllocs", "", "")
 	request.Method = requests.GET
 	return
 }

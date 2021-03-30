@@ -76,6 +76,7 @@ type CreateEnvironmentRequest struct {
 	AppId       requests.Integer `position:"Query" name:"AppId"`
 	EnvType     requests.Integer `position:"Query" name:"EnvType"`
 	AppSchemaId requests.Integer `position:"Query" name:"AppSchemaId"`
+	ClusterId   string           `position:"Query" name:"ClusterId"`
 	Region      string           `position:"Query" name:"Region"`
 }
 
@@ -93,7 +94,7 @@ func CreateCreateEnvironmentRequest() (request *CreateEnvironmentRequest) {
 	request = &CreateEnvironmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateEnvironment", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateEnvironment", "", "")
 	request.Method = requests.POST
 	return
 }

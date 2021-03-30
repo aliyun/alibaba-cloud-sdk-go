@@ -1,3 +1,7 @@
+2021-03-30 Version: v1.61.1010
+- Generated 2018-03-13 for `retailcloud`.
+- Monitor.
+
 2021-03-30 Version: v1.61.1009
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support ListDDLPublishRecords API.

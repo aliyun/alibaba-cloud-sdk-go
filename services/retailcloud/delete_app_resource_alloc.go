@@ -88,7 +88,7 @@ func CreateDeleteAppResourceAllocRequest() (request *DeleteAppResourceAllocReque
 	request = &DeleteAppResourceAllocRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteAppResourceAlloc", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteAppResourceAlloc", "", "")
 	request.Method = requests.POST
 	return
 }
