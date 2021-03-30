@@ -77,8 +77,8 @@ type CreateRuleRequest struct {
 // CreateRuleResponse is the response struct for api CreateRule
 type CreateRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string             `json:"requestId" xml:"requestId"`
 	Code      string             `json:"code" xml:"code"`
+	RequestId string             `json:"requestId" xml:"requestId"`
 	Message   string             `json:"message" xml:"message"`
 	Result    ResultInCreateRule `json:"result" xml:"result"`
 }

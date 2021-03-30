@@ -17,8 +17,8 @@ package airec
 
 // ResultInCreateRule is a nested struct in airec response
 type ResultInCreateRule struct {
-	GmtCreate   string `json:"gmtCreate" xml:"gmtCreate"`
 	GmtModified string `json:"gmtModified" xml:"gmtModified"`
+	GmtCreate   string `json:"gmtCreate" xml:"gmtCreate"`
 	RuleId      string `json:"ruleId" xml:"ruleId"`
 	Status      string `json:"status" xml:"status"`
 }

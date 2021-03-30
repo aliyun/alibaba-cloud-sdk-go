@@ -19,11 +19,7 @@ package airec
 type ResultItem struct {
 	OnlineTime         string                 `json:"onlineTime" xml:"onlineTime"`
 	Timestamp          string                 `json:"timestamp" xml:"timestamp"`
-	ErrorType          string                 `json:"errorType" xml:"errorType"`
-	SelectType         string                 `json:"selectType" xml:"selectType"`
-	GmtModified        string                 `json:"gmtModified" xml:"gmtModified"`
-	Category           string                 `json:"category" xml:"category"`
-	HasConfig          bool                   `json:"hasConfig" xml:"hasConfig"`
+	DefaultDisplay     bool                   `json:"defaultDisplay" xml:"defaultDisplay"`
 	DefaultValue       string                 `json:"defaultValue" xml:"defaultValue"`
 	TraceInfo          string                 `json:"traceInfo" xml:"traceInfo"`
 	OfflineTime        string                 `json:"offlineTime" xml:"offlineTime"`
@@ -31,34 +27,44 @@ type ResultItem struct {
 	RankingModelId     string                 `json:"rankingModelId" xml:"rankingModelId"`
 	Base               bool                   `json:"base" xml:"base"`
 	ErrorLevel         string                 `json:"errorLevel" xml:"errorLevel"`
-	Type               string                 `json:"type" xml:"type"`
-	SceneId            string                 `json:"sceneId" xml:"sceneId"`
 	ConsoleUrl         string                 `json:"consoleUrl" xml:"consoleUrl"`
 	Endpoint           string                 `json:"endpoint" xml:"endpoint"`
 	MetricData         map[string]interface{} `json:"metricData" xml:"metricData"`
 	Key                string                 `json:"key" xml:"key"`
 	RegionId           string                 `json:"regionId" xml:"regionId"`
 	LocalName          string                 `json:"localName" xml:"localName"`
-	Position           int                    `json:"position" xml:"position"`
 	Message            string                 `json:"message" xml:"message"`
+	SelectionOperation string                 `json:"selectionOperation" xml:"selectionOperation"`
+	Weight             float64                `json:"weight" xml:"weight"`
+	SelectValue        string                 `json:"selectValue" xml:"selectValue"`
+	ErrorPercent       float64                `json:"errorPercent" xml:"errorPercent"`
+	MetricType         string                 `json:"metricType" xml:"metricType"`
+	Total              map[string]interface{} `json:"total" xml:"total"`
+	ExperimentValue    string                 `json:"experimentValue" xml:"experimentValue"`
+	Meta               map[string]interface{} `json:"meta" xml:"meta"`
+	ErrorType          string                 `json:"errorType" xml:"errorType"`
+	SelectType         string                 `json:"selectType" xml:"selectType"`
+	GmtModified        string                 `json:"gmtModified" xml:"gmtModified"`
+	Category           string                 `json:"category" xml:"category"`
+	HasConfig          bool                   `json:"hasConfig" xml:"hasConfig"`
+	Type               string                 `json:"type" xml:"type"`
+	SceneId            string                 `json:"sceneId" xml:"sceneId"`
+	ErrorCount         int                    `json:"errorCount" xml:"errorCount"`
+	SampleDisplay      bool                   `json:"sampleDisplay" xml:"sampleDisplay"`
+	Position           int                    `json:"position" xml:"position"`
 	TraceId            string                 `json:"traceId" xml:"traceId"`
 	Status             string                 `json:"status" xml:"status"`
-	SelectionOperation string                 `json:"selectionOperation" xml:"selectionOperation"`
 	Description        string                 `json:"description" xml:"description"`
 	MatchInfo          string                 `json:"matchInfo" xml:"matchInfo"`
-	Weight             float64                `json:"weight" xml:"weight"`
 	GmtCreate          string                 `json:"gmtCreate" xml:"gmtCreate"`
-	SelectValue        string                 `json:"selectValue" xml:"selectValue"`
-	MetricType         string                 `json:"metricType" xml:"metricType"`
 	TotalProgress      int                    `json:"totalProgress" xml:"totalProgress"`
-	Total              map[string]interface{} `json:"total" xml:"total"`
 	ExperimentId       string                 `json:"experimentId" xml:"experimentId"`
 	ItemId             string                 `json:"itemId" xml:"itemId"`
-	ExperimentValue    string                 `json:"experimentValue" xml:"experimentValue"`
 	ItemType           string                 `json:"itemType" xml:"itemType"`
-	Meta               map[string]interface{} `json:"meta" xml:"meta"`
 	Buckets            []string               `json:"buckets" xml:"buckets"`
+	Categories         []int64                `json:"categories" xml:"categories"`
 	MetricRes          MetricRes              `json:"metricRes" xml:"metricRes"`
+	HistoryData        []HistoryData          `json:"historyData" xml:"historyData"`
 	Detail             []DetailItem           `json:"detail" xml:"detail"`
 	Config             []ConfigItem           `json:"config" xml:"config"`
 	SubProgressInfos   []SubProgressInfosItem `json:"subProgressInfos" xml:"subProgressInfos"`

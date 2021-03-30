@@ -78,8 +78,8 @@ type CreateSceneRequest struct {
 // CreateSceneResponse is the response struct for api CreateScene
 type CreateSceneResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"requestId" xml:"requestId"`
 	Code      string              `json:"code" xml:"code"`
+	RequestId string              `json:"requestId" xml:"requestId"`
 	Message   string              `json:"message" xml:"message"`
 	Result    ResultInCreateScene `json:"result" xml:"result"`
 }

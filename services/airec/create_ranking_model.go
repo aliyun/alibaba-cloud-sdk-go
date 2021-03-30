@@ -79,8 +79,8 @@ type CreateRankingModelRequest struct {
 type CreateRankingModelResponse struct {
 	*responses.BaseResponse
 	Code      string                     `json:"code" xml:"code"`
-	Message   string                     `json:"message" xml:"message"`
 	RequestId string                     `json:"requestId" xml:"requestId"`
+	Message   string                     `json:"message" xml:"message"`
 	Result    ResultInCreateRankingModel `json:"result" xml:"result"`
 }
 

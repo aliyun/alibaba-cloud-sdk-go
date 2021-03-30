@@ -18,6 +18,8 @@ package airec
 // Result is a nested struct in airec response
 type Result struct {
 	OnlineTime     string                 `json:"onlineTime" xml:"onlineTime"`
+	CurrentQps     int                    `json:"currentQps" xml:"currentQps"`
+	UserCount      int64                  `json:"userCount" xml:"userCount"`
 	RuleId         string                 `json:"ruleId" xml:"ruleId"`
 	State          string                 `json:"state" xml:"state"`
 	Num            int                    `json:"num" xml:"num"`
@@ -31,18 +33,24 @@ type Result struct {
 	Base           bool                   `json:"base" xml:"base"`
 	GmtCreate      int64                  `json:"gmtCreate" xml:"gmtCreate"`
 	SceneId        string                 `json:"sceneId" xml:"sceneId"`
+	Platform       string                 `json:"platform" xml:"platform"`
+	UserCountUsed  int64                  `json:"userCountUsed" xml:"userCountUsed"`
 	DivideType     string                 `json:"divideType" xml:"divideType"`
 	Progress       int                    `json:"progress" xml:"progress"`
+	Qps            int                    `json:"qps" xml:"qps"`
+	ItemCountUsed  int64                  `json:"itemCountUsed" xml:"itemCountUsed"`
 	InstanceId     string                 `json:"instanceId" xml:"instanceId"`
 	Status         string                 `json:"status" xml:"status"`
 	Description    string                 `json:"description" xml:"description"`
 	FinishTime     int                    `json:"finishTime" xml:"finishTime"`
+	ItemCount      int64                  `json:"itemCount" xml:"itemCount"`
 	MetricType     string                 `json:"metricType" xml:"metricType"`
 	ExperimentId   string                 `json:"experimentId" xml:"experimentId"`
 	BucketCount    int                    `json:"bucketCount" xml:"bucketCount"`
 	InUse          string                 `json:"inUse" xml:"inUse"`
 	Meta           map[string]interface{} `json:"meta" xml:"meta"`
 	PvCount        int64                  `json:"pvCount" xml:"pvCount"`
+	Appkey         string                 `json:"appkey" xml:"appkey"`
 	Buckets        []string               `json:"buckets" xml:"buckets"`
 	Algorithms     []Algorithm            `json:"algorithms" xml:"algorithms"`
 	MetricData     []MetricData           `json:"metricData" xml:"metricData"`

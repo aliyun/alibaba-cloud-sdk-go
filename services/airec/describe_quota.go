@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateInstance invokes the airec.CreateInstance API synchronously
-func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *CreateInstanceResponse, err error) {
-	response = CreateCreateInstanceResponse()
+// DescribeQuota invokes the airec.DescribeQuota API synchronously
+func (client *Client) DescribeQuota(request *DescribeQuotaRequest) (response *DescribeQuotaResponse, err error) {
+	response = CreateDescribeQuotaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateInstanceWithChan invokes the airec.CreateInstance API asynchronously
-func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-chan *CreateInstanceResponse, <-chan error) {
-	responseChan := make(chan *CreateInstanceResponse, 1)
+// DescribeQuotaWithChan invokes the airec.DescribeQuota API asynchronously
+func (client *Client) DescribeQuotaWithChan(request *DescribeQuotaRequest) (<-chan *DescribeQuotaResponse, <-chan error) {
+	responseChan := make(chan *DescribeQuotaResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateInstance(request)
+		response, err := client.DescribeQuota(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// CreateInstanceWithCallback invokes the airec.CreateInstance API asynchronously
-func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) <-chan int {
+// DescribeQuotaWithCallback invokes the airec.DescribeQuota API asynchronously
+func (client *Client) DescribeQuotaWithCallback(request *DescribeQuotaRequest, callback func(response *DescribeQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateInstanceResponse
+		var response *DescribeQuotaResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateInstance(request)
+		response, err = client.DescribeQuota(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,34 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 	return result
 }
 
-// CreateInstanceRequest is the request struct for api CreateInstance
-type CreateInstanceRequest struct {
+// DescribeQuotaRequest is the request struct for api DescribeQuota
+type DescribeQuotaRequest struct {
 	*requests.RoaRequest
+	InstanceId string `position:"Path" name:"instanceId"`
 }
 
-// CreateInstanceResponse is the response struct for api CreateInstance
-type CreateInstanceResponse struct {
+// DescribeQuotaResponse is the response struct for api DescribeQuota
+type DescribeQuotaResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"code" xml:"code"`
-	RequestId string `json:"requestId" xml:"requestId"`
 	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
 	Result    Result `json:"result" xml:"result"`
 }
 
-// CreateCreateInstanceRequest creates a request to invoke CreateInstance API
-func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
-	request = &CreateInstanceRequest{
+// CreateDescribeQuotaRequest creates a request to invoke DescribeQuota API
+func CreateDescribeQuotaRequest() (request *DescribeQuotaRequest) {
+	request = &DescribeQuotaRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2020-11-26", "CreateInstance", "/v2/openapi/instances", "airec", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("Airec", "2020-11-26", "DescribeQuota", "/v2/openapi/instances/[instanceId]/quota", "airec", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateCreateInstanceResponse creates a response to parse from CreateInstance response
-func CreateCreateInstanceResponse() (response *CreateInstanceResponse) {
-	response = &CreateInstanceResponse{
+// CreateDescribeQuotaResponse creates a response to parse from DescribeQuota response
+func CreateDescribeQuotaResponse() (response *DescribeQuotaResponse) {
+	response = &DescribeQuotaResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
