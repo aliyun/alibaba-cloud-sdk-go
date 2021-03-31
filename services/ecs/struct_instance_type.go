@@ -39,6 +39,7 @@ type InstanceType struct {
 	SecondaryEniQueueNumber     int     `json:"SecondaryEniQueueNumber" xml:"SecondaryEniQueueNumber"`
 	InstanceBandwidthTx         int     `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
 	MaximumQueueNumberPerEni    int     `json:"MaximumQueueNumberPerEni" xml:"MaximumQueueNumberPerEni"`
+	DiskQuantity                int     `json:"DiskQuantity" xml:"DiskQuantity"`
 	PrimaryEniQueueNumber       int     `json:"PrimaryEniQueueNumber" xml:"PrimaryEniQueueNumber"`
 	Memory                      int     `json:"Memory" xml:"Memory"`
 	BaselineCredit              int     `json:"BaselineCredit" xml:"BaselineCredit"`

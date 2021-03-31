@@ -1,3 +1,8 @@
+2021-03-31 Version: v1.61.1015
+- Generated 2014-05-26 for `Ecs`.
+- Ecs support hibernation.
+- DescribeSnapshotGroups add ProgressStatus.
+
 2021-03-30 Version: v1.61.1014
 - Generated 2020-11-26 for `Airec`.
 
