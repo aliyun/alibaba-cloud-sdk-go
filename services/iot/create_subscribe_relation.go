@@ -71,10 +71,12 @@ func (client *Client) CreateSubscribeRelationWithCallback(request *CreateSubscri
 // CreateSubscribeRelationRequest is the request struct for api CreateSubscribeRelation
 type CreateSubscribeRelationRequest struct {
 	*requests.RpcRequest
+	RealTenantId            string           `position:"Query" name:"RealTenantId"`
 	OtaEventFlag            requests.Boolean `position:"Query" name:"OtaEventFlag"`
 	DeviceTopoLifeCycleFlag requests.Boolean `position:"Query" name:"DeviceTopoLifeCycleFlag"`
 	DeviceLifeCycleFlag     requests.Boolean `position:"Query" name:"DeviceLifeCycleFlag"`
 	Type                    string           `position:"Query" name:"Type"`
+	RealTripartiteKey       string           `position:"Query" name:"RealTripartiteKey"`
 	IotInstanceId           string           `position:"Query" name:"IotInstanceId"`
 	DeviceStatusChangeFlag  requests.Boolean `position:"Query" name:"DeviceStatusChangeFlag"`
 	OtaVersionFlag          requests.Boolean `position:"Query" name:"OtaVersionFlag"`

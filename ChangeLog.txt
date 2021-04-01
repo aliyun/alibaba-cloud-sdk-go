@@ -1,3 +1,8 @@
+2021-04-01 Version: v1.61.1016
+- Generated 2018-01-20 for `Iot`.
+- Add data service api, including ListAnalyticsData.
+- Update file uploading api, including GenerateFileUploadURL.
+
 2021-03-31 Version: v1.61.1015
 - Generated 2014-05-26 for `Ecs`.
 - Ecs support hibernation.

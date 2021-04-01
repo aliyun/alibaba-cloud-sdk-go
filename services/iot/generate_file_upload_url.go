@@ -73,6 +73,7 @@ type GenerateFileUploadURLRequest struct {
 	*requests.RpcRequest
 	FileSuffix    string `position:"Query" name:"FileSuffix"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	FileName      string `position:"Query" name:"FileName"`
 	BizCode       string `position:"Query" name:"BizCode"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`

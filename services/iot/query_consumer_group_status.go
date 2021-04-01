@@ -82,14 +82,16 @@ type QueryConsumerGroupStatusRequest struct {
 // QueryConsumerGroupStatusResponse is the response struct for api QueryConsumerGroupStatus
 type QueryConsumerGroupStatusResponse struct {
 	*responses.BaseResponse
-	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
-	Success                    bool                       `json:"Success" xml:"Success"`
-	ErrorMessage               string                     `json:"ErrorMessage" xml:"ErrorMessage"`
-	AccumulationCount          int                        `json:"AccumulationCount" xml:"AccumulationCount"`
-	ConsumerSpeed              int                        `json:"ConsumerSpeed" xml:"ConsumerSpeed"`
-	LastConsumerTime           string                     `json:"LastConsumerTime" xml:"LastConsumerTime"`
-	Code                       string                     `json:"Code" xml:"Code"`
-	ClientConnectionStatusList ClientConnectionStatusList `json:"ClientConnectionStatusList" xml:"ClientConnectionStatusList"`
+	RequestId                        string                     `json:"RequestId" xml:"RequestId"`
+	Success                          bool                       `json:"Success" xml:"Success"`
+	ErrorMessage                     string                     `json:"ErrorMessage" xml:"ErrorMessage"`
+	AccumulationCount                int                        `json:"AccumulationCount" xml:"AccumulationCount"`
+	ConsumerSpeed                    int                        `json:"ConsumerSpeed" xml:"ConsumerSpeed"`
+	LastConsumerTime                 string                     `json:"LastConsumerTime" xml:"LastConsumerTime"`
+	Code                             string                     `json:"Code" xml:"Code"`
+	AccumulatedConsumeCountPerMinute int                        `json:"AccumulatedConsumeCountPerMinute" xml:"AccumulatedConsumeCountPerMinute"`
+	RealTimeConsumeCountPerMinute    int                        `json:"RealTimeConsumeCountPerMinute" xml:"RealTimeConsumeCountPerMinute"`
+	ClientConnectionStatusList       ClientConnectionStatusList `json:"ClientConnectionStatusList" xml:"ClientConnectionStatusList"`
 }
 
 // CreateQueryConsumerGroupStatusRequest creates a request to invoke QueryConsumerGroupStatus API

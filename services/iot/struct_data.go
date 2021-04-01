@@ -43,22 +43,27 @@ type Data struct {
 	Host                      string                    `json:"Host" xml:"Host"`
 	DeviceName                string                    `json:"DeviceName" xml:"DeviceName"`
 	PageCount                 int64                     `json:"PageCount" xml:"PageCount"`
+	Count                     int64                     `json:"Count" xml:"Count"`
 	Size                      string                    `json:"Size" xml:"Size"`
 	ProductName               string                    `json:"ProductName" xml:"ProductName"`
 	Name                      string                    `json:"Name" xml:"Name"`
+	DeviceErrorMessage        string                    `json:"DeviceErrorMessage" xml:"DeviceErrorMessage"`
 	GmtCreateTimestamp        int64                     `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
-	DownloadUrl               string                    `json:"DownloadUrl" xml:"DownloadUrl"`
 	RetryCount                int                       `json:"RetryCount" xml:"RetryCount"`
+	DownloadUrl               string                    `json:"DownloadUrl" xml:"DownloadUrl"`
 	PageSize                  int                       `json:"PageSize" xml:"PageSize"`
 	Key                       string                    `json:"Key" xml:"Key"`
 	GmtCreate                 string                    `json:"GmtCreate" xml:"GmtCreate"`
+	ResultJson                string                    `json:"ResultJson" xml:"ResultJson"`
 	InstanceId                string                    `json:"InstanceId" xml:"InstanceId"`
 	Policy                    string                    `json:"Policy" xml:"Policy"`
 	DateFormat                string                    `json:"DateFormat" xml:"DateFormat"`
 	DeviceOnline              int                       `json:"DeviceOnline" xml:"DeviceOnline"`
 	JobId                     string                    `json:"JobId" xml:"JobId"`
+	DeviceErrorCode           string                    `json:"DeviceErrorCode" xml:"DeviceErrorCode"`
 	ProductSecret             string                    `json:"ProductSecret" xml:"ProductSecret"`
 	ScriptType                string                    `json:"ScriptType" xml:"ScriptType"`
+	PageNum                   int                       `json:"PageNum" xml:"PageNum"`
 	AccessKeyId               string                    `json:"AccessKeyId" xml:"AccessKeyId"`
 	EdgeVersion               string                    `json:"EdgeVersion" xml:"EdgeVersion"`
 	JoinEui                   string                    `json:"JoinEui" xml:"JoinEui"`
@@ -74,6 +79,7 @@ type Data struct {
 	BizEnable                 bool                      `json:"BizEnable" xml:"BizEnable"`
 	GmtCompleted              string                    `json:"GmtCompleted" xml:"GmtCompleted"`
 	UtcCreate                 string                    `json:"UtcCreate" xml:"UtcCreate"`
+	HasNext                   bool                      `json:"HasNext" xml:"HasNext"`
 	DeviceActive              int                       `json:"DeviceActive" xml:"DeviceActive"`
 	DriverVersion             string                    `json:"DriverVersion" xml:"DriverVersion"`
 	GmtCompletedTimestamp     int64                     `json:"GmtCompletedTimestamp" xml:"GmtCompletedTimestamp"`
@@ -86,6 +92,7 @@ type Data struct {
 	UtcCreatedOn              string                    `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
 	MessageId                 string                    `json:"MessageId" xml:"MessageId"`
 	FileUrl                   string                    `json:"FileUrl" xml:"FileUrl"`
+	Success                   bool                      `json:"Success" xml:"Success"`
 	Id2                       bool                      `json:"Id2" xml:"Id2"`
 	NodeType                  int                       `json:"NodeType" xml:"NodeType"`
 	ConfigCheckRule           string                    `json:"ConfigCheckRule" xml:"ConfigCheckRule"`

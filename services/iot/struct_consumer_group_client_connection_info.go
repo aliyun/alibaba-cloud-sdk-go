@@ -17,7 +17,9 @@ package iot
 
 // ConsumerGroupClientConnectionInfo is a nested struct in iot response
 type ConsumerGroupClientConnectionInfo struct {
-	ClientId     string `json:"ClientId" xml:"ClientId"`
-	ClientIpPort string `json:"ClientIpPort" xml:"ClientIpPort"`
-	OnlineTime   int64  `json:"OnlineTime" xml:"OnlineTime"`
+	ClientId                         string `json:"ClientId" xml:"ClientId"`
+	ClientIpPort                     string `json:"ClientIpPort" xml:"ClientIpPort"`
+	OnlineTime                       int64  `json:"OnlineTime" xml:"OnlineTime"`
+	RealTimeConsumeCountPerMinute    int    `json:"RealTimeConsumeCountPerMinute" xml:"RealTimeConsumeCountPerMinute"`
+	AccumulatedConsumeCountPerMinute int    `json:"AccumulatedConsumeCountPerMinute" xml:"AccumulatedConsumeCountPerMinute"`
 }
