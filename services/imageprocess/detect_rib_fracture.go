@@ -71,12 +71,12 @@ func (client *Client) DetectRibFractureWithCallback(request *DetectRibFractureRe
 // DetectRibFractureRequest is the request struct for api DetectRibFracture
 type DetectRibFractureRequest struct {
 	*requests.RpcRequest
+	OrgName    string                      `position:"Body" name:"OrgName"`
+	SourceType string                      `position:"Body" name:"SourceType"`
 	DataFormat string                      `position:"Body" name:"DataFormat"`
 	URLList    *[]DetectRibFractureURLList `position:"Body" name:"URLList"  type:"Repeated"`
 	OrgId      string                      `position:"Body" name:"OrgId"`
 	Async      requests.Boolean            `position:"Body" name:"Async"`
-	OrgName    string                      `position:"Body" name:"OrgName"`
-	SourceType string                      `position:"Body" name:"SourceType"`
 }
 
 // DetectRibFractureURLList is a repeated param struct in DetectRibFractureRequest

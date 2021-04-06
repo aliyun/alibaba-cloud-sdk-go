@@ -19,6 +19,8 @@ package imageprocess
 type DetectionsItemInScreenChestCT struct {
 	FractureCategory   int64   `json:"FractureCategory" xml:"FractureCategory"`
 	FractureConfidence float64 `json:"FractureConfidence" xml:"FractureConfidence"`
+	FractureLocation   string  `json:"FractureLocation" xml:"FractureLocation"`
+	FractureSegment    int64   `json:"FractureSegment" xml:"FractureSegment"`
 	FractureId         int64   `json:"FractureId" xml:"FractureId"`
 	CoordinateImage    []int64 `json:"CoordinateImage" xml:"CoordinateImage"`
 	Coordinates        []int64 `json:"Coordinates" xml:"Coordinates"`

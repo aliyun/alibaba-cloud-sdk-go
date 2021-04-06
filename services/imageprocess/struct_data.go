@@ -42,15 +42,15 @@ type Data struct {
 	Spacing           []float64              `json:"Spacing" xml:"Spacing"`
 	SimilarQuestion   []string               `json:"SimilarQuestion" xml:"SimilarQuestion"`
 	Origin            []float64              `json:"Origin" xml:"Origin"`
-	CACS              CACS                   `json:"CACS" xml:"CACS"`
 	DetectRibFracture DetectRibFracture      `json:"DetectRibFracture" xml:"DetectRibFracture"`
+	CACS              CACS                   `json:"CACS" xml:"CACS"`
 	Covid             Covid                  `json:"Covid" xml:"Covid"`
 	LungNodule        LungNodule             `json:"LungNodule" xml:"LungNodule"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
+	KeyPoints         []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
 	Discs             []Disc                 `json:"Discs" xml:"Discs"`
-	Detections        []DetectionsItem       `json:"Detections" xml:"Detections"`
 	Series            []Serie                `json:"Series" xml:"Series"`
 	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
 	KLDetections      []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
-	KeyPoints         []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
+	Detections        []DetectionsItem       `json:"Detections" xml:"Detections"`
 }

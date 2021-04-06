@@ -71,12 +71,12 @@ func (client *Client) DetectLungNoduleWithCallback(request *DetectLungNoduleRequ
 // DetectLungNoduleRequest is the request struct for api DetectLungNodule
 type DetectLungNoduleRequest struct {
 	*requests.RpcRequest
-	DataFormat string                     `position:"Body" name:"DataFormat"`
 	Threshold  requests.Float             `position:"Body" name:"Threshold"`
+	OrgName    string                     `position:"Body" name:"OrgName"`
+	DataFormat string                     `position:"Body" name:"DataFormat"`
 	URLList    *[]DetectLungNoduleURLList `position:"Body" name:"URLList"  type:"Repeated"`
 	OrgId      string                     `position:"Body" name:"OrgId"`
 	Async      requests.Boolean           `position:"Body" name:"Async"`
-	OrgName    string                     `position:"Body" name:"OrgName"`
 }
 
 // DetectLungNoduleURLList is a repeated param struct in DetectLungNoduleRequest

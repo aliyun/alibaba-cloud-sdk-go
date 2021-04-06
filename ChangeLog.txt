@@ -1,3 +1,7 @@
+2021-04-06 Version: v1.61.1017
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT DetectRibFracture.
+
 2021-04-01 Version: v1.61.1016
 - Generated 2018-01-20 for `Iot`.
 - Add data service api, including ListAnalyticsData.
