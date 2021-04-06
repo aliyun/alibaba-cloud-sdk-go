@@ -76,7 +76,8 @@ type RecognizePublicFaceRequest struct {
 
 // RecognizePublicFaceTask is a repeated param struct in RecognizePublicFaceRequest
 type RecognizePublicFaceTask struct {
-	ImageURL string `name:"ImageURL"`
+	ImageURL  string `name:"ImageURL"`
+	ImageData string `name:"ImageData"`
 }
 
 // RecognizePublicFaceResponse is the response struct for api RecognizePublicFace

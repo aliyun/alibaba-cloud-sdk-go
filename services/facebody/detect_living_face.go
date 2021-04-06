@@ -76,7 +76,8 @@ type DetectLivingFaceRequest struct {
 
 // DetectLivingFaceTasks is a repeated param struct in DetectLivingFaceRequest
 type DetectLivingFaceTasks struct {
-	ImageURL string `name:"ImageURL"`
+	ImageURL  string `name:"ImageURL"`
+	ImageData string `name:"ImageData"`
 }
 
 // DetectLivingFaceResponse is the response struct for api DetectLivingFace

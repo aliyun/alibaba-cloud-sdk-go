@@ -35,6 +35,7 @@ type Data struct {
 	HotMap               string                                    `json:"HotMap" xml:"HotMap"`
 	QualityScoreB        float64                                   `json:"QualityScoreB" xml:"QualityScoreB"`
 	Id                   int64                                     `json:"Id" xml:"Id"`
+	ChatScore            float64                                   `json:"ChatScore" xml:"ChatScore"`
 	DbName               string                                    `json:"DbName" xml:"DbName"`
 	InstanceId           int64                                     `json:"InstanceId" xml:"InstanceId"`
 	DbId                 int64                                     `json:"DbId" xml:"DbId"`
@@ -50,6 +51,7 @@ type Data struct {
 	ImageWidth           int64                                     `json:"ImageWidth" xml:"ImageWidth"`
 	Hair                 string                                    `json:"Hair" xml:"Hair"`
 	MessageTips          string                                    `json:"MessageTips" xml:"MessageTips"`
+	Threshold            float64                                   `json:"Threshold" xml:"Threshold"`
 	DenseFeatureLength   int                                       `json:"DenseFeatureLength" xml:"DenseFeatureLength"`
 	AgeScore             float64                                   `json:"AgeScore" xml:"AgeScore"`
 	LowerColor           string                                    `json:"LowerColor" xml:"LowerColor"`
@@ -89,6 +91,8 @@ type Data struct {
 	Expressions          []int                                     `json:"Expressions" xml:"Expressions"`
 	MetaObject           MetaObject                                `json:"MetaObject" xml:"MetaObject"`
 	Qualities            Qualities                                 `json:"Qualities" xml:"Qualities"`
+	PersonInfo           PersonInfo                                `json:"PersonInfo" xml:"PersonInfo"`
+	FaceInfo             FaceInfo                                  `json:"FaceInfo" xml:"FaceInfo"`
 	PersonList           []Person                                  `json:"PersonList" xml:"PersonList"`
 	Outputs              []Output                                  `json:"Outputs" xml:"Outputs"`
 	Faces                []Face                                    `json:"Faces" xml:"Faces"`
