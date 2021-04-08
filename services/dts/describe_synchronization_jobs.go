@@ -72,6 +72,7 @@ func (client *Client) DescribeSynchronizationJobsWithCallback(request *DescribeS
 type DescribeSynchronizationJobsRequest struct {
 	*requests.RpcRequest
 	ClientToken            string                            `position:"Query" name:"ClientToken"`
+	InstFilterRegion       string                            `position:"Query" name:"InstFilterRegion"`
 	PageNum                requests.Integer                  `position:"Query" name:"PageNum"`
 	OwnerId                string                            `position:"Query" name:"OwnerId"`
 	SynchronizationJobName string                            `position:"Query" name:"SynchronizationJobName"`

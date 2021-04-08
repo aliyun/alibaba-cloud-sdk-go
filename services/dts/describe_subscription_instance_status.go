@@ -93,6 +93,7 @@ type DescribeSubscriptionInstanceStatusResponse struct {
 	ErrCode                  string                                                 `json:"ErrCode" xml:"ErrCode"`
 	Success                  string                                                 `json:"Success" xml:"Success"`
 	ErrorMessage             string                                                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	TaskId                   string                                                 `json:"TaskId" xml:"TaskId"`
 	SourceEndpoint           SourceEndpoint                                         `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	SubscriptionDataType     SubscriptionDataType                                   `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
 	SubscriptionHost         SubscriptionHost                                       `json:"SubscriptionHost" xml:"SubscriptionHost"`

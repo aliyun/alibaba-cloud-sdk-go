@@ -71,6 +71,7 @@ func (client *Client) DescribeMigrationJobsWithCallback(request *DescribeMigrati
 // DescribeMigrationJobsRequest is the request struct for api DescribeMigrationJobs
 type DescribeMigrationJobsRequest struct {
 	*requests.RpcRequest
+	InstFilterRegion string                      `position:"Query" name:"InstFilterRegion"`
 	PageNum          requests.Integer            `position:"Query" name:"PageNum"`
 	OwnerId          string                      `position:"Query" name:"OwnerId"`
 	AccountId        string                      `position:"Query" name:"AccountId"`

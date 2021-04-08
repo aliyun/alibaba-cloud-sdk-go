@@ -90,6 +90,7 @@ type DescribeMigrationJobStatusResponse struct {
 	PayType                       string                                     `json:"PayType" xml:"PayType"`
 	RequestId                     string                                     `json:"RequestId" xml:"RequestId"`
 	Success                       string                                     `json:"Success" xml:"Success"`
+	TaskId                        string                                     `json:"TaskId" xml:"TaskId"`
 	DataInitializationStatus      DataInitializationStatus                   `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus                  `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 	DestinationEndpoint           DestinationEndpoint                        `json:"DestinationEndpoint" xml:"DestinationEndpoint"`

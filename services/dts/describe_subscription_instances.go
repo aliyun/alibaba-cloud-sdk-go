@@ -72,6 +72,7 @@ func (client *Client) DescribeSubscriptionInstancesWithCallback(request *Describ
 type DescribeSubscriptionInstancesRequest struct {
 	*requests.RpcRequest
 	ClientToken              string                              `position:"Query" name:"ClientToken"`
+	InstFilterRegion         string                              `position:"Query" name:"InstFilterRegion"`
 	PageNum                  requests.Integer                    `position:"Query" name:"PageNum"`
 	OwnerId                  string                              `position:"Query" name:"OwnerId"`
 	AccountId                string                              `position:"Query" name:"AccountId"`

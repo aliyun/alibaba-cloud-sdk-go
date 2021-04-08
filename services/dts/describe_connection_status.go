@@ -71,28 +71,28 @@ func (client *Client) DescribeConnectionStatusWithCallback(request *DescribeConn
 // DescribeConnectionStatusRequest is the request struct for api DescribeConnectionStatus
 type DescribeConnectionStatusRequest struct {
 	*requests.RpcRequest
-	SourceEndpointRegion            string           `position:"Query" name:"SourceEndpointRegion"`
-	SourceEndpointArchitecture      string           `position:"Query" name:"SourceEndpointArchitecture"`
-	DestinationEndpointInstanceType string           `position:"Query" name:"DestinationEndpointInstanceType"`
-	SourceEndpointInstanceID        string           `position:"Query" name:"SourceEndpointInstanceID"`
-	SourceEndpointUserName          string           `position:"Query" name:"SourceEndpointUserName"`
-	SourceEndpointDatabaseName      string           `position:"Query" name:"SourceEndpointDatabaseName"`
-	DestinationEndpointRegion       string           `position:"Query" name:"DestinationEndpointRegion"`
-	SourceEndpointIP                string           `position:"Query" name:"SourceEndpointIP"`
-	DestinationEndpointUserName     string           `position:"Query" name:"DestinationEndpointUserName"`
-	DestinationEndpointArchitecture requests.Boolean `position:"Query" name:"DestinationEndpointArchitecture"`
-	DestinationEndpointOracleSID    requests.Boolean `position:"Query" name:"DestinationEndpointOracleSID"`
-	DestinationEndpointEngineName   string           `position:"Query" name:"DestinationEndpointEngineName"`
-	DestinationEndpointInstanceID   string           `position:"Query" name:"DestinationEndpointInstanceID"`
-	DestinationEndpointPort         string           `position:"Query" name:"DestinationEndpointPort"`
-	SourceEndpointPassword          string           `position:"Query" name:"SourceEndpointPassword"`
-	SourceEndpointPort              string           `position:"Query" name:"SourceEndpointPort"`
-	DestinationEndpointIP           string           `position:"Query" name:"DestinationEndpointIP"`
-	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpointInstanceType"`
-	SourceEndpointOracleSID         string           `position:"Query" name:"SourceEndpointOracleSID"`
-	DestinationEndpointDatabaseName string           `position:"Query" name:"DestinationEndpointDatabaseName"`
-	DestinationEndpointPassword     string           `position:"Query" name:"DestinationEndpointPassword"`
-	SourceEndpointEngineName        string           `position:"Query" name:"SourceEndpointEngineName"`
+	SourceEndpointRegion            string `position:"Query" name:"SourceEndpointRegion"`
+	SourceEndpointArchitecture      string `position:"Query" name:"SourceEndpointArchitecture"`
+	DestinationEndpointInstanceType string `position:"Query" name:"DestinationEndpointInstanceType"`
+	SourceEndpointInstanceID        string `position:"Query" name:"SourceEndpointInstanceID"`
+	SourceEndpointUserName          string `position:"Query" name:"SourceEndpointUserName"`
+	SourceEndpointDatabaseName      string `position:"Query" name:"SourceEndpointDatabaseName"`
+	DestinationEndpointRegion       string `position:"Query" name:"DestinationEndpointRegion"`
+	SourceEndpointIP                string `position:"Query" name:"SourceEndpointIP"`
+	DestinationEndpointUserName     string `position:"Query" name:"DestinationEndpointUserName"`
+	DestinationEndpointArchitecture string `position:"Query" name:"DestinationEndpointArchitecture"`
+	DestinationEndpointOracleSID    string `position:"Query" name:"DestinationEndpointOracleSID"`
+	DestinationEndpointEngineName   string `position:"Query" name:"DestinationEndpointEngineName"`
+	DestinationEndpointInstanceID   string `position:"Query" name:"DestinationEndpointInstanceID"`
+	DestinationEndpointPort         string `position:"Query" name:"DestinationEndpointPort"`
+	SourceEndpointPassword          string `position:"Query" name:"SourceEndpointPassword"`
+	SourceEndpointPort              string `position:"Query" name:"SourceEndpointPort"`
+	DestinationEndpointIP           string `position:"Query" name:"DestinationEndpointIP"`
+	SourceEndpointInstanceType      string `position:"Query" name:"SourceEndpointInstanceType"`
+	SourceEndpointOracleSID         string `position:"Query" name:"SourceEndpointOracleSID"`
+	DestinationEndpointDatabaseName string `position:"Query" name:"DestinationEndpointDatabaseName"`
+	DestinationEndpointPassword     string `position:"Query" name:"DestinationEndpointPassword"`
+	SourceEndpointEngineName        string `position:"Query" name:"SourceEndpointEngineName"`
 }
 
 // DescribeConnectionStatusResponse is the response struct for api DescribeConnectionStatus

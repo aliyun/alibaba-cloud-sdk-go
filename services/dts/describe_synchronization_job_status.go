@@ -81,31 +81,32 @@ type DescribeSynchronizationJobStatusRequest struct {
 // DescribeSynchronizationJobStatusResponse is the response struct for api DescribeSynchronizationJobStatus
 type DescribeSynchronizationJobStatusResponse struct {
 	*responses.BaseResponse
-	Checkpoint                    string                        `json:"Checkpoint" xml:"Checkpoint"`
-	DataInitialization            string                        `json:"DataInitialization" xml:"DataInitialization"`
-	Delay                         string                        `json:"Delay" xml:"Delay"`
-	DelayMillis                   int64                         `json:"DelayMillis" xml:"DelayMillis"`
-	ErrCode                       string                        `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                    string                        `json:"ErrMessage" xml:"ErrMessage"`
-	ErrorMessage                  string                        `json:"ErrorMessage" xml:"ErrorMessage"`
-	ExpireTime                    string                        `json:"ExpireTime" xml:"ExpireTime"`
-	PayType                       string                        `json:"PayType" xml:"PayType"`
-	RequestId                     string                        `json:"RequestId" xml:"RequestId"`
-	Status                        string                        `json:"Status" xml:"Status"`
-	StructureInitialization       string                        `json:"StructureInitialization" xml:"StructureInitialization"`
-	Success                       string                        `json:"Success" xml:"Success"`
-	SynchronizationDirection      string                        `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
-	SynchronizationJobClass       string                        `json:"SynchronizationJobClass" xml:"SynchronizationJobClass"`
-	SynchronizationJobId          string                        `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
-	SynchronizationJobName        string                        `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
-	DataInitializationStatus      DataInitializationStatus      `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
-	DataSynchronizationStatus     DataSynchronizationStatus     `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
-	DestinationEndpoint           DestinationEndpoint           `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
-	Performance                   Performance                   `json:"Performance" xml:"Performance"`
-	PrecheckStatus                PrecheckStatus                `json:"PrecheckStatus" xml:"PrecheckStatus"`
-	SourceEndpoint                SourceEndpoint                `json:"SourceEndpoint" xml:"SourceEndpoint"`
-	StructureInitializationStatus StructureInitializationStatus `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
-	SynchronizationObjects        []SynchronizationObject       `json:"SynchronizationObjects" xml:"SynchronizationObjects"`
+	Checkpoint                    string                                           `json:"Checkpoint" xml:"Checkpoint"`
+	DataInitialization            string                                           `json:"DataInitialization" xml:"DataInitialization"`
+	Delay                         string                                           `json:"Delay" xml:"Delay"`
+	DelayMillis                   int64                                            `json:"DelayMillis" xml:"DelayMillis"`
+	ErrCode                       string                                           `json:"ErrCode" xml:"ErrCode"`
+	ErrMessage                    string                                           `json:"ErrMessage" xml:"ErrMessage"`
+	ErrorMessage                  string                                           `json:"ErrorMessage" xml:"ErrorMessage"`
+	ExpireTime                    string                                           `json:"ExpireTime" xml:"ExpireTime"`
+	PayType                       string                                           `json:"PayType" xml:"PayType"`
+	RequestId                     string                                           `json:"RequestId" xml:"RequestId"`
+	Status                        string                                           `json:"Status" xml:"Status"`
+	StructureInitialization       string                                           `json:"StructureInitialization" xml:"StructureInitialization"`
+	Success                       string                                           `json:"Success" xml:"Success"`
+	SynchronizationDirection      string                                           `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
+	SynchronizationJobClass       string                                           `json:"SynchronizationJobClass" xml:"SynchronizationJobClass"`
+	SynchronizationJobId          string                                           `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
+	SynchronizationJobName        string                                           `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
+	TaskId                        string                                           `json:"TaskId" xml:"TaskId"`
+	DataInitializationStatus      DataInitializationStatus                         `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
+	DataSynchronizationStatus     DataSynchronizationStatus                        `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
+	DestinationEndpoint           DestinationEndpoint                              `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
+	Performance                   Performance                                      `json:"Performance" xml:"Performance"`
+	PrecheckStatus                PrecheckStatusInDescribeSynchronizationJobStatus `json:"PrecheckStatus" xml:"PrecheckStatus"`
+	SourceEndpoint                SourceEndpoint                                   `json:"SourceEndpoint" xml:"SourceEndpoint"`
+	StructureInitializationStatus StructureInitializationStatus                    `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
+	SynchronizationObjects        []SynchronizationObject                          `json:"SynchronizationObjects" xml:"SynchronizationObjects"`
 }
 
 // CreateDescribeSynchronizationJobStatusRequest creates a request to invoke DescribeSynchronizationJobStatus API
