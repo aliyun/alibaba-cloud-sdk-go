@@ -17,17 +17,23 @@ package objectdet
 
 // Data is a nested struct in objectdet response
 type Data struct {
+	ErrorMessage            string                        `json:"ErrorMessage" xml:"ErrorMessage"`
 	Threshold               float64                       `json:"Threshold" xml:"Threshold"`
+	TaskId                  string                        `json:"TaskId" xml:"TaskId"`
+	ErrorCode               string                        `json:"ErrorCode" xml:"ErrorCode"`
+	JobId                   string                        `json:"JobId" xml:"JobId"`
+	Result                  string                        `json:"Result" xml:"Result"`
 	Height                  int64                         `json:"Height" xml:"Height"`
 	FrameNo                 string                        `json:"FrameNo" xml:"FrameNo"`
-	TaskId                  string                        `json:"TaskId" xml:"TaskId"`
 	Width                   int64                         `json:"Width" xml:"Width"`
+	Status                  string                        `json:"Status" xml:"Status"`
 	OriginShapes            []int                         `json:"OriginShapes" xml:"OriginShapes"`
 	Location                Location                      `json:"Location" xml:"Location"`
-	Elements                []Element                     `json:"Elements" xml:"Elements"`
-	Labels                  []Label                       `json:"Labels" xml:"Labels"`
 	RepairParts             []RepairItems                 `json:"RepairParts" xml:"RepairParts"`
-	RegionIntersectMatched  []RegionIntersectMatchedItem  `json:"RegionIntersectMatched" xml:"RegionIntersectMatched"`
+	Elements                []Element                     `json:"Elements" xml:"Elements"`
 	RegionIntersects        []RegionIntersectsItem        `json:"RegionIntersects" xml:"RegionIntersects"`
 	RegionIntersectFeatures []RegionIntersectFeaturesItem `json:"RegionIntersectFeatures" xml:"RegionIntersectFeatures"`
+	Labels                  []Label                       `json:"Labels" xml:"Labels"`
+	Frames                  []Frame                       `json:"Frames" xml:"Frames"`
+	RegionIntersectMatched  []RegionIntersectMatchedItem  `json:"RegionIntersectMatched" xml:"RegionIntersectMatched"`
 }

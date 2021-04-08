@@ -1,3 +1,7 @@
+2021-04-08 Version: v1.61.1019
+- Generated 2019-12-30 for `objectdet`.
+- Release DetectVideoIPCObject.
+
 2021-04-06 Version: v1.61.1018
 - Generated 2019-12-30 for `facebody`.
 - Release MonitorExamination.
