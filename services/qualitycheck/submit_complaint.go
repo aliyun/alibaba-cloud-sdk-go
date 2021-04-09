@@ -90,7 +90,7 @@ func CreateSubmitComplaintRequest() (request *SubmitComplaintRequest) {
 	request = &SubmitComplaintRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitComplaint", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitComplaint", "", "")
 	request.Method = requests.POST
 	return
 }

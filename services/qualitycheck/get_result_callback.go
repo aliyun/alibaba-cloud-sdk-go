@@ -89,7 +89,7 @@ func CreateGetResultCallbackRequest() (request *GetResultCallbackRequest) {
 	request = &GetResultCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetResultCallback", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetResultCallback", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateGetResultToReviewRequest() (request *GetResultToReviewRequest) {
 	request = &GetResultToReviewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetResultToReview", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetResultToReview", "", "")
 	request.Method = requests.POST
 	return
 }

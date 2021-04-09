@@ -90,7 +90,7 @@ func CreateDelRuleCategoryRequest() (request *DelRuleCategoryRequest) {
 	request = &DelRuleCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DelRuleCategory", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DelRuleCategory", "", "")
 	request.Method = requests.POST
 	return
 }

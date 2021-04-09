@@ -89,7 +89,7 @@ func CreateDeleteDataSetRequest() (request *DeleteDataSetRequest) {
 	request = &DeleteDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteDataSet", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteDataSet", "", "")
 	request.Method = requests.POST
 	return
 }

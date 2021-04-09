@@ -89,7 +89,7 @@ func CreateAssignReviewerRequest() (request *AssignReviewerRequest) {
 	request = &AssignReviewerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AssignReviewer", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AssignReviewer", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateSubmitQualityCheckTaskRequest() (request *SubmitQualityCheckTaskReque
 	request = &SubmitQualityCheckTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitQualityCheckTask", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitQualityCheckTask", "", "")
 	request.Method = requests.POST
 	return
 }

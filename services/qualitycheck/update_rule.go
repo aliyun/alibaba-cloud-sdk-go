@@ -90,7 +90,7 @@ func CreateUpdateRuleRequest() (request *UpdateRuleRequest) {
 	request = &UpdateRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateRule", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateRule", "", "")
 	request.Method = requests.POST
 	return
 }

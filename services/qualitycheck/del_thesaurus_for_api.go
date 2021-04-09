@@ -89,7 +89,7 @@ func CreateDelThesaurusForApiRequest() (request *DelThesaurusForApiRequest) {
 	request = &DelThesaurusForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DelThesaurusForApi", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DelThesaurusForApi", "", "")
 	request.Method = requests.POST
 	return
 }

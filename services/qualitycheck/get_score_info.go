@@ -90,7 +90,7 @@ func CreateGetScoreInfoRequest() (request *GetScoreInfoRequest) {
 	request = &GetScoreInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetScoreInfo", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetScoreInfo", "", "")
 	request.Method = requests.POST
 	return
 }

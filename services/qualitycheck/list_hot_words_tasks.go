@@ -93,7 +93,7 @@ func CreateListHotWordsTasksRequest() (request *ListHotWordsTasksRequest) {
 	request = &ListHotWordsTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListHotWordsTasks", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListHotWordsTasks", "", "")
 	request.Method = requests.POST
 	return
 }

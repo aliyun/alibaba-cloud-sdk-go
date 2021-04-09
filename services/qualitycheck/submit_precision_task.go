@@ -90,7 +90,7 @@ func CreateSubmitPrecisionTaskRequest() (request *SubmitPrecisionTaskRequest) {
 	request = &SubmitPrecisionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitPrecisionTask", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitPrecisionTask", "", "")
 	request.Method = requests.POST
 	return
 }

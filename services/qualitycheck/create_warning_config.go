@@ -90,7 +90,7 @@ func CreateCreateWarningConfigRequest() (request *CreateWarningConfigRequest) {
 	request = &CreateWarningConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateWarningConfig", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateWarningConfig", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateCreateTaskAssignRuleRequest() (request *CreateTaskAssignRuleRequest) 
 	request = &CreateTaskAssignRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateTaskAssignRule", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateTaskAssignRule", "", "")
 	request.Method = requests.POST
 	return
 }
