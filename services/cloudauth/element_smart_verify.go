@@ -71,14 +71,15 @@ func (client *Client) ElementSmartVerifyWithCallback(request *ElementSmartVerify
 // ElementSmartVerifyRequest is the request struct for api ElementSmartVerify
 type ElementSmartVerifyRequest struct {
 	*requests.RpcRequest
-	CertFile     string           `position:"Body" name:"CertFile"`
-	CertName     string           `position:"Body" name:"CertName"`
-	Mode         string           `position:"Body" name:"Mode"`
-	CertNo       string           `position:"Body" name:"CertNo"`
-	OuterOrderNo string           `position:"Body" name:"OuterOrderNo"`
-	CertUrl      string           `position:"Body" name:"CertUrl"`
-	CertType     string           `position:"Body" name:"CertType"`
-	SceneId      requests.Integer `position:"Body" name:"SceneId"`
+	CertFile              string           `position:"Body" name:"CertFile"`
+	CertNationalEmblemUrl string           `position:"Body" name:"CertNationalEmblemUrl"`
+	CertName              string           `position:"Body" name:"CertName"`
+	Mode                  string           `position:"Body" name:"Mode"`
+	CertNo                string           `position:"Body" name:"CertNo"`
+	OuterOrderNo          string           `position:"Body" name:"OuterOrderNo"`
+	CertUrl               string           `position:"Body" name:"CertUrl"`
+	CertType              string           `position:"Body" name:"CertType"`
+	SceneId               requests.Integer `position:"Body" name:"SceneId"`
 }
 
 // ElementSmartVerifyResponse is the response struct for api ElementSmartVerify

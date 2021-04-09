@@ -71,6 +71,7 @@ func (client *Client) InitSmartVerifyWithCallback(request *InitSmartVerifyReques
 // InitSmartVerifyRequest is the request struct for api InitSmartVerify
 type InitSmartVerifyRequest struct {
 	*requests.RpcRequest
+	IdName            string           `position:"Body" name:"IdName"`
 	UserId            string           `position:"Body" name:"UserId"`
 	CertifyId         string           `position:"Body" name:"CertifyId"`
 	FacePictureBase64 string           `position:"Body" name:"FacePictureBase64"`
@@ -85,6 +86,7 @@ type InitSmartVerifyRequest struct {
 	Ip                string           `position:"Body" name:"Ip"`
 	CertName          string           `position:"Body" name:"CertName"`
 	Mobile            string           `position:"Body" name:"Mobile"`
+	IdNo              string           `position:"Body" name:"IdNo"`
 	SceneId           requests.Integer `position:"Body" name:"SceneId"`
 	CallbackToken     string           `position:"Body" name:"CallbackToken"`
 	OssBucketName     string           `position:"Body" name:"OssBucketName"`
