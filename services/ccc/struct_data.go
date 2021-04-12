@@ -17,8 +17,10 @@ package ccc
 
 // Data is a nested struct in ccc response
 type Data struct {
+	Name                   string       `json:"Name" xml:"Name"`
 	PageSize               int          `json:"PageSize" xml:"PageSize"`
 	Password               string       `json:"Password" xml:"Password"`
+	SkillGroupId           string       `json:"SkillGroupId" xml:"SkillGroupId"`
 	UserState              string       `json:"UserState" xml:"UserState"`
 	InstanceId             string       `json:"InstanceId" xml:"InstanceId"`
 	UserId                 string       `json:"UserId" xml:"UserId"`
@@ -28,9 +30,11 @@ type Data struct {
 	PageNumber             int          `json:"PageNumber" xml:"PageNumber"`
 	BreakCode              string       `json:"BreakCode" xml:"BreakCode"`
 	Extension              string       `json:"Extension" xml:"Extension"`
+	Description            string       `json:"Description" xml:"Description"`
 	FileName               string       `json:"FileName" xml:"FileName"`
 	JobId                  string       `json:"JobId" xml:"JobId"`
 	Heartbeat              int64        `json:"Heartbeat" xml:"Heartbeat"`
+	Email                  string       `json:"Email" xml:"Email"`
 	City                   string       `json:"City" xml:"City"`
 	DisplayName            string       `json:"DisplayName" xml:"DisplayName"`
 	SipServerUrl           string       `json:"SipServerUrl" xml:"SipServerUrl"`
@@ -41,6 +45,7 @@ type Data struct {
 	FileUrl                string       `json:"FileUrl" xml:"FileUrl"`
 	Mobile                 string       `json:"Mobile" xml:"Mobile"`
 	OutboundScenario       bool         `json:"OutboundScenario" xml:"OutboundScenario"`
+	LoginName              string       `json:"LoginName" xml:"LoginName"`
 	UserName               string       `json:"UserName" xml:"UserName"`
 	UserKey                string       `json:"UserKey" xml:"UserKey"`
 	SignedSkillGroupIdList []string     `json:"SignedSkillGroupIdList" xml:"SignedSkillGroupIdList"`

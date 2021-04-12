@@ -19,6 +19,7 @@ package ccc
 type UserContext struct {
 	Heartbeat              int64    `json:"Heartbeat" xml:"Heartbeat"`
 	JobId                  string   `json:"JobId" xml:"JobId"`
+	DeviceState            string   `json:"DeviceState" xml:"DeviceState"`
 	WorkMode               string   `json:"WorkMode" xml:"WorkMode"`
 	Mobile                 string   `json:"Mobile" xml:"Mobile"`
 	OutboundScenario       bool     `json:"OutboundScenario" xml:"OutboundScenario"`
@@ -29,5 +30,6 @@ type UserContext struct {
 	Reserved               int64    `json:"Reserved" xml:"Reserved"`
 	BreakCode              string   `json:"BreakCode" xml:"BreakCode"`
 	Extension              string   `json:"Extension" xml:"Extension"`
+	Uri                    string   `json:"Uri" xml:"Uri"`
 	SignedSkillGroupIdList []string `json:"SignedSkillGroupIdList" xml:"SignedSkillGroupIdList"`
 }

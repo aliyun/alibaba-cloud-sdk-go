@@ -17,7 +17,13 @@ package ccc
 
 // PhoneNumber is a nested struct in ccc response
 type PhoneNumber struct {
-	City     string `json:"City" xml:"City"`
-	Number   string `json:"Number" xml:"Number"`
-	Province string `json:"Province" xml:"Province"`
+	Usage         string       `json:"Usage" xml:"Usage"`
+	InstanceId    string       `json:"InstanceId" xml:"InstanceId"`
+	UserId        string       `json:"UserId" xml:"UserId"`
+	Active        bool         `json:"Active" xml:"Active"`
+	ContactFlowId string       `json:"ContactFlowId" xml:"ContactFlowId"`
+	City          string       `json:"City" xml:"City"`
+	Number        string       `json:"Number" xml:"Number"`
+	Province      string       `json:"Province" xml:"Province"`
+	SkillGroups   []SkillGroup `json:"SkillGroups" xml:"SkillGroups"`
 }
