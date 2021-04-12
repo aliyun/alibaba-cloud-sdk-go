@@ -74,7 +74,9 @@ type AddZoneRequest struct {
 	ProxyPattern    string `position:"Query" name:"ProxyPattern"`
 	ZoneName        string `position:"Query" name:"ZoneName"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	ZoneTag         string `position:"Query" name:"ZoneTag"`
 	UserClientIp    string `position:"Query" name:"UserClientIp"`
+	ZoneType        string `position:"Query" name:"ZoneType"`
 	Lang            string `position:"Query" name:"Lang"`
 }
 

@@ -92,6 +92,8 @@ type DescribeZoneInfoResponse struct {
 	ProxyPattern    string   `json:"ProxyPattern" xml:"ProxyPattern"`
 	SlaveDns        bool     `json:"SlaveDns" xml:"SlaveDns"`
 	ResourceGroupId string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ZoneType        string   `json:"ZoneType" xml:"ZoneType"`
+	ZoneTag         string   `json:"ZoneTag" xml:"ZoneTag"`
 	BindVpcs        BindVpcs `json:"BindVpcs" xml:"BindVpcs"`
 }
 
