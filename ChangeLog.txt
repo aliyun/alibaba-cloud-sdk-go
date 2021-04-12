@@ -1,3 +1,7 @@
+2021-04-12 Version: v1.61.1023
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support GetDBTopology API.
+
 2021-04-09 Version: v1.61.1022
 - Generated 2019-03-07, 2020-06-18, 2018-09-16 for `Cloudauth`.
 - Bank Card Ocr and Verify.

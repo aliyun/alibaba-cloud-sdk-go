@@ -17,7 +17,14 @@ package dms_enterprise
 
 // DBTopology is a nested struct in dms_enterprise response
 type DBTopology struct {
-	TableName      string       `json:"TableName" xml:"TableName"`
-	TableGuid      string       `json:"TableGuid" xml:"TableGuid"`
-	DataSourceList []DataSource `json:"DataSourceList" xml:"DataSourceList"`
+	SearchName         string           `json:"SearchName" xml:"SearchName"`
+	EnvType            string           `json:"EnvType" xml:"EnvType"`
+	LogicDbId          int64            `json:"LogicDbId" xml:"LogicDbId"`
+	Alias              string           `json:"Alias" xml:"Alias"`
+	TableName          string           `json:"TableName" xml:"TableName"`
+	TableGuid          string           `json:"TableGuid" xml:"TableGuid"`
+	LogicDbName        string           `json:"LogicDbName" xml:"LogicDbName"`
+	DbType             string           `json:"DbType" xml:"DbType"`
+	DBTopologyInfoList []DBTopologyInfo `json:"DBTopologyInfoList" xml:"DBTopologyInfoList"`
+	DataSourceList     []DataSource     `json:"DataSourceList" xml:"DataSourceList"`
 }
