@@ -71,37 +71,40 @@ func (client *Client) DescribeDtsJobDetailWithCallback(request *DescribeDtsJobDe
 // DescribeDtsJobDetailRequest is the request struct for api DescribeDtsJobDetail
 type DescribeDtsJobDetailRequest struct {
 	*requests.RpcRequest
-	DtsJobId string `position:"Query" name:"DtsJobId"`
+	DtsJobId                 string `position:"Query" name:"DtsJobId"`
+	DtsInstanceID            string `position:"Query" name:"DtsInstanceID"`
+	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
 }
 
 // DescribeDtsJobDetailResponse is the response struct for api DescribeDtsJobDetail
 type DescribeDtsJobDetailResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	Success             bool                `json:"Success" xml:"Success"`
-	Code                int                 `json:"Code" xml:"Code"`
-	ErrCode             string              `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage          string              `json:"ErrMessage" xml:"ErrMessage"`
-	DynamicMessage      string              `json:"DynamicMessage" xml:"DynamicMessage"`
-	HttpStatusCode      int                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	DtsInstanceID       string              `json:"DtsInstanceID" xml:"DtsInstanceID"`
-	DtsJobId            string              `json:"DtsJobId" xml:"DtsJobId"`
-	DtsJobName          string              `json:"DtsJobName" xml:"DtsJobName"`
-	DtsJobClass         string              `json:"DtsJobClass" xml:"DtsJobClass"`
-	DtsJobDirection     string              `json:"DtsJobDirection" xml:"DtsJobDirection"`
-	PayType             string              `json:"PayType" xml:"PayType"`
-	ExpireTime          string              `json:"ExpireTime" xml:"ExpireTime"`
-	CreateTime          string              `json:"CreateTime" xml:"CreateTime"`
-	FinishTime          string              `json:"FinishTime" xml:"FinishTime"`
-	Status              string              `json:"Status" xml:"Status"`
-	Checkpoint          int                 `json:"Checkpoint" xml:"Checkpoint"`
-	Delay               int                 `json:"Delay" xml:"Delay"`
-	Reserved            string              `json:"Reserved" xml:"Reserved"`
-	ErrorMessage        string              `json:"ErrorMessage" xml:"ErrorMessage"`
-	DbObject            string              `json:"DbObject" xml:"DbObject"`
-	SourceEndpoint      SourceEndpoint      `json:"SourceEndpoint" xml:"SourceEndpoint"`
-	DestinationEndpoint DestinationEndpoint `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
-	MigrationMode       MigrationMode       `json:"MigrationMode" xml:"MigrationMode"`
+	RequestId                string              `json:"RequestId" xml:"RequestId"`
+	Success                  bool                `json:"Success" xml:"Success"`
+	Code                     int                 `json:"Code" xml:"Code"`
+	ErrCode                  string              `json:"ErrCode" xml:"ErrCode"`
+	ErrMessage               string              `json:"ErrMessage" xml:"ErrMessage"`
+	DynamicMessage           string              `json:"DynamicMessage" xml:"DynamicMessage"`
+	HttpStatusCode           int                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	DtsInstanceID            string              `json:"DtsInstanceID" xml:"DtsInstanceID"`
+	DtsJobId                 string              `json:"DtsJobId" xml:"DtsJobId"`
+	DtsJobName               string              `json:"DtsJobName" xml:"DtsJobName"`
+	DtsJobClass              string              `json:"DtsJobClass" xml:"DtsJobClass"`
+	DtsJobDirection          string              `json:"DtsJobDirection" xml:"DtsJobDirection"`
+	PayType                  string              `json:"PayType" xml:"PayType"`
+	ExpireTime               string              `json:"ExpireTime" xml:"ExpireTime"`
+	CreateTime               string              `json:"CreateTime" xml:"CreateTime"`
+	FinishTime               string              `json:"FinishTime" xml:"FinishTime"`
+	Status                   string              `json:"Status" xml:"Status"`
+	Checkpoint               int                 `json:"Checkpoint" xml:"Checkpoint"`
+	Delay                    int                 `json:"Delay" xml:"Delay"`
+	Reserved                 string              `json:"Reserved" xml:"Reserved"`
+	ErrorMessage             string              `json:"ErrorMessage" xml:"ErrorMessage"`
+	DbObject                 string              `json:"DbObject" xml:"DbObject"`
+	SynchronizationDirection string              `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
+	SourceEndpoint           SourceEndpoint      `json:"SourceEndpoint" xml:"SourceEndpoint"`
+	DestinationEndpoint      DestinationEndpoint `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
+	MigrationMode            MigrationMode       `json:"MigrationMode" xml:"MigrationMode"`
 }
 
 // CreateDescribeDtsJobDetailRequest creates a request to invoke DescribeDtsJobDetail API

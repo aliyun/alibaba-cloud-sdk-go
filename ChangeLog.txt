@@ -1,3 +1,8 @@
+2021-04-13 Version: v1.61.1028
+- Generated 2020-01-01 for `Dts`.
+- Supported ConfigureDtsJob SynchronizationDirection.
+- Fixed DescribePreCheckStatus JobProgress bootTime.
+
 2021-04-13 Version: v1.61.1027
 - Generated 2020-03-20 for `videoenhan`.
 - Release AddFaceVideoTemplate DeleteFaceVideoTemplate QueryFaceVideoTemplate MergeVideoModelFace.

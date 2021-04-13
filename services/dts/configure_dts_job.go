@@ -89,6 +89,7 @@ type ConfigureDtsJobRequest struct {
 	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpointInstanceType"`
 	DtsJobName                      string           `position:"Query" name:"DtsJobName"`
 	DtsInstanceId                   string           `position:"Query" name:"DtsInstanceId"`
+	SynchronizationDirection        string           `position:"Query" name:"SynchronizationDirection"`
 	SourceEndpointRegion            string           `position:"Query" name:"SourceEndpointRegion"`
 	DelayNotice                     requests.Boolean `position:"Query" name:"DelayNotice"`
 	DestinationEndpointInstanceType string           `position:"Query" name:"DestinationEndpointInstanceType"`

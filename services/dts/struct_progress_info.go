@@ -17,10 +17,10 @@ package dts
 
 // ProgressInfo is a nested struct in dts response
 type ProgressInfo struct {
-	BootTime     int64    `json:"BootTime" xml:"BootTime"`
+	BootTime     string   `json:"BootTime" xml:"BootTime"`
 	CanSkip      bool     `json:"CanSkip" xml:"CanSkip"`
 	DelaySeconds int      `json:"DelaySeconds" xml:"DelaySeconds"`
-	FinishTime   int64    `json:"FinishTime" xml:"FinishTime"`
+	FinishTime   string   `json:"FinishTime" xml:"FinishTime"`
 	IgnoreFlag   string   `json:"IgnoreFlag" xml:"IgnoreFlag"`
 	Item         string   `json:"Item" xml:"Item"`
 	JobId        string   `json:"JobId" xml:"JobId"`
