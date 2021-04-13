@@ -21,7 +21,6 @@ import (
 )
 
 // AddAxnTrackNo invokes the dyplsapi.AddAxnTrackNo API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/addaxntrackno.html
 func (client *Client) AddAxnTrackNo(request *AddAxnTrackNoRequest) (response *AddAxnTrackNoResponse, err error) {
 	response = CreateAddAxnTrackNoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddAxnTrackNo(request *AddAxnTrackNoRequest) (response *Ad
 }
 
 // AddAxnTrackNoWithChan invokes the dyplsapi.AddAxnTrackNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/addaxntrackno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAxnTrackNoWithChan(request *AddAxnTrackNoRequest) (<-chan *AddAxnTrackNoResponse, <-chan error) {
 	responseChan := make(chan *AddAxnTrackNoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddAxnTrackNoWithChan(request *AddAxnTrackNoRequest) (<-ch
 }
 
 // AddAxnTrackNoWithCallback invokes the dyplsapi.AddAxnTrackNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/addaxntrackno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAxnTrackNoWithCallback(request *AddAxnTrackNoRequest, callback func(response *AddAxnTrackNoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateAddAxnTrackNoRequest() (request *AddAxnTrackNoRequest) {
 	request = &AddAxnTrackNoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "AddAxnTrackNo", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "AddAxnTrackNo", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryPhoneNoAByTrackNo invokes the dyplsapi.QueryPhoneNoAByTrackNo API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/queryphonenoabytrackno.html
 func (client *Client) QueryPhoneNoAByTrackNo(request *QueryPhoneNoAByTrackNoRequest) (response *QueryPhoneNoAByTrackNoResponse, err error) {
 	response = CreateQueryPhoneNoAByTrackNoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryPhoneNoAByTrackNo(request *QueryPhoneNoAByTrackNoRequ
 }
 
 // QueryPhoneNoAByTrackNoWithChan invokes the dyplsapi.QueryPhoneNoAByTrackNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/queryphonenoabytrackno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPhoneNoAByTrackNoWithChan(request *QueryPhoneNoAByTrackNoRequest) (<-chan *QueryPhoneNoAByTrackNoResponse, <-chan error) {
 	responseChan := make(chan *QueryPhoneNoAByTrackNoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryPhoneNoAByTrackNoWithChan(request *QueryPhoneNoAByTra
 }
 
 // QueryPhoneNoAByTrackNoWithCallback invokes the dyplsapi.QueryPhoneNoAByTrackNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/queryphonenoabytrackno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPhoneNoAByTrackNoWithCallback(request *QueryPhoneNoAByTrackNoRequest, callback func(response *QueryPhoneNoAByTrackNoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,19 +72,20 @@ func (client *Client) QueryPhoneNoAByTrackNoWithCallback(request *QueryPhoneNoAB
 type QueryPhoneNoAByTrackNoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CabinetNo            string           `position:"Query" name:"CabinetNo"`
+	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TrackNo              string           `position:"Query" name:"trackNo"`
-	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 }
 
 // QueryPhoneNoAByTrackNoResponse is the response struct for api QueryPhoneNoAByTrackNo
 type QueryPhoneNoAByTrackNoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Module    Module `json:"Module" xml:"Module"`
+	RequestId string         `json:"RequestId" xml:"RequestId"`
+	Code      string         `json:"Code" xml:"Code"`
+	Message   string         `json:"Message" xml:"Message"`
+	Module    []PhoneNoAInfo `json:"Module" xml:"Module"`
 }
 
 // CreateQueryPhoneNoAByTrackNoRequest creates a request to invoke QueryPhoneNoAByTrackNo API
@@ -97,7 +93,7 @@ func CreateQueryPhoneNoAByTrackNoRequest() (request *QueryPhoneNoAByTrackNoReque
 	request = &QueryPhoneNoAByTrackNoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo", "", "")
 	request.Method = requests.POST
 	return
 }

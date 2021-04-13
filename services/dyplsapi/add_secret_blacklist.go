@@ -21,7 +21,6 @@ import (
 )
 
 // AddSecretBlacklist invokes the dyplsapi.AddSecretBlacklist API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/addsecretblacklist.html
 func (client *Client) AddSecretBlacklist(request *AddSecretBlacklistRequest) (response *AddSecretBlacklistResponse, err error) {
 	response = CreateAddSecretBlacklistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddSecretBlacklist(request *AddSecretBlacklistRequest) (re
 }
 
 // AddSecretBlacklistWithChan invokes the dyplsapi.AddSecretBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/addsecretblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddSecretBlacklistWithChan(request *AddSecretBlacklistRequest) (<-chan *AddSecretBlacklistResponse, <-chan error) {
 	responseChan := make(chan *AddSecretBlacklistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddSecretBlacklistWithChan(request *AddSecretBlacklistRequ
 }
 
 // AddSecretBlacklistWithCallback invokes the dyplsapi.AddSecretBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/addsecretblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddSecretBlacklistWithCallback(request *AddSecretBlacklistRequest, callback func(response *AddSecretBlacklistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,7 @@ type AddSecretBlacklistRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
 	BlackNo              string           `position:"Query" name:"BlackNo"`
+	WayControl           string           `position:"Query" name:"WayControl"`
 }
 
 // AddSecretBlacklistResponse is the response struct for api AddSecretBlacklist
@@ -98,7 +94,7 @@ func CreateAddSecretBlacklistRequest() (request *AddSecretBlacklistRequest) {
 	request = &AddSecretBlacklistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "AddSecretBlacklist", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "AddSecretBlacklist", "", "")
 	request.Method = requests.POST
 	return
 }

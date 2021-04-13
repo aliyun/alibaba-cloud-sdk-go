@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSubscription invokes the dyplsapi.UpdateSubscription API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/updatesubscription.html
 func (client *Client) UpdateSubscription(request *UpdateSubscriptionRequest) (response *UpdateSubscriptionResponse, err error) {
 	response = CreateUpdateSubscriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSubscription(request *UpdateSubscriptionRequest) (re
 }
 
 // UpdateSubscriptionWithChan invokes the dyplsapi.UpdateSubscription API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/updatesubscription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSubscriptionWithChan(request *UpdateSubscriptionRequest) (<-chan *UpdateSubscriptionResponse, <-chan error) {
 	responseChan := make(chan *UpdateSubscriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSubscriptionWithChan(request *UpdateSubscriptionRequ
 }
 
 // UpdateSubscriptionWithCallback invokes the dyplsapi.UpdateSubscription API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/updatesubscription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSubscriptionWithCallback(request *UpdateSubscriptionRequest, callback func(response *UpdateSubscriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -110,7 +105,7 @@ func CreateUpdateSubscriptionRequest() (request *UpdateSubscriptionRequest) {
 	request = &UpdateSubscriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "UpdateSubscription", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "UpdateSubscription", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // BuySecretNo invokes the dyplsapi.BuySecretNo API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/buysecretno.html
 func (client *Client) BuySecretNo(request *BuySecretNoRequest) (response *BuySecretNoResponse, err error) {
 	response = CreateBuySecretNoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BuySecretNo(request *BuySecretNoRequest) (response *BuySec
 }
 
 // BuySecretNoWithChan invokes the dyplsapi.BuySecretNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/buysecretno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BuySecretNoWithChan(request *BuySecretNoRequest) (<-chan *BuySecretNoResponse, <-chan error) {
 	responseChan := make(chan *BuySecretNoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BuySecretNoWithChan(request *BuySecretNoRequest) (<-chan *
 }
 
 // BuySecretNoWithCallback invokes the dyplsapi.BuySecretNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/buysecretno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BuySecretNoWithCallback(request *BuySecretNoRequest, callback func(response *BuySecretNoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateBuySecretNoRequest() (request *BuySecretNoRequest) {
 	request = &BuySecretNoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BuySecretNo", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BuySecretNo", "", "")
 	request.Method = requests.POST
 	return
 }

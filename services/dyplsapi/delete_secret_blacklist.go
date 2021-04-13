@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSecretBlacklist invokes the dyplsapi.DeleteSecretBlacklist API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/deletesecretblacklist.html
 func (client *Client) DeleteSecretBlacklist(request *DeleteSecretBlacklistRequest) (response *DeleteSecretBlacklistResponse, err error) {
 	response = CreateDeleteSecretBlacklistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSecretBlacklist(request *DeleteSecretBlacklistReques
 }
 
 // DeleteSecretBlacklistWithChan invokes the dyplsapi.DeleteSecretBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/deletesecretblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecretBlacklistWithChan(request *DeleteSecretBlacklistRequest) (<-chan *DeleteSecretBlacklistResponse, <-chan error) {
 	responseChan := make(chan *DeleteSecretBlacklistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSecretBlacklistWithChan(request *DeleteSecretBlackli
 }
 
 // DeleteSecretBlacklistWithCallback invokes the dyplsapi.DeleteSecretBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/deletesecretblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecretBlacklistWithCallback(request *DeleteSecretBlacklistRequest, callback func(response *DeleteSecretBlacklistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,7 @@ type DeleteSecretBlacklistRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
 	BlackNo              string           `position:"Query" name:"BlackNo"`
+	WayControl           string           `position:"Query" name:"WayControl"`
 }
 
 // DeleteSecretBlacklistResponse is the response struct for api DeleteSecretBlacklist
@@ -98,7 +94,7 @@ func CreateDeleteSecretBlacklistRequest() (request *DeleteSecretBlacklistRequest
 	request = &DeleteSecretBlacklistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "DeleteSecretBlacklist", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "DeleteSecretBlacklist", "", "")
 	request.Method = requests.POST
 	return
 }

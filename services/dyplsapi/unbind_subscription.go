@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindSubscription invokes the dyplsapi.UnbindSubscription API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/unbindsubscription.html
 func (client *Client) UnbindSubscription(request *UnbindSubscriptionRequest) (response *UnbindSubscriptionResponse, err error) {
 	response = CreateUnbindSubscriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindSubscription(request *UnbindSubscriptionRequest) (re
 }
 
 // UnbindSubscriptionWithChan invokes the dyplsapi.UnbindSubscription API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/unbindsubscription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindSubscriptionWithChan(request *UnbindSubscriptionRequest) (<-chan *UnbindSubscriptionResponse, <-chan error) {
 	responseChan := make(chan *UnbindSubscriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindSubscriptionWithChan(request *UnbindSubscriptionRequ
 }
 
 // UnbindSubscriptionWithCallback invokes the dyplsapi.UnbindSubscription API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/unbindsubscription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindSubscriptionWithCallback(request *UnbindSubscriptionRequest, callback func(response *UnbindSubscriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateUnbindSubscriptionRequest() (request *UnbindSubscriptionRequest) {
 	request = &UnbindSubscriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "UnbindSubscription", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "UnbindSubscription", "", "")
 	request.Method = requests.POST
 	return
 }

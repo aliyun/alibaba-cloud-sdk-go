@@ -21,7 +21,6 @@ import (
 )
 
 // GetSecretAsrDetail invokes the dyplsapi.GetSecretAsrDetail API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/getsecretasrdetail.html
 func (client *Client) GetSecretAsrDetail(request *GetSecretAsrDetailRequest) (response *GetSecretAsrDetailResponse, err error) {
 	response = CreateGetSecretAsrDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSecretAsrDetail(request *GetSecretAsrDetailRequest) (re
 }
 
 // GetSecretAsrDetailWithChan invokes the dyplsapi.GetSecretAsrDetail API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/getsecretasrdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecretAsrDetailWithChan(request *GetSecretAsrDetailRequest) (<-chan *GetSecretAsrDetailResponse, <-chan error) {
 	responseChan := make(chan *GetSecretAsrDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSecretAsrDetailWithChan(request *GetSecretAsrDetailRequ
 }
 
 // GetSecretAsrDetailWithCallback invokes the dyplsapi.GetSecretAsrDetail API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/getsecretasrdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecretAsrDetailWithCallback(request *GetSecretAsrDetailRequest, callback func(response *GetSecretAsrDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateGetSecretAsrDetailRequest() (request *GetSecretAsrDetailRequest) {
 	request = &GetSecretAsrDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "GetSecretAsrDetail", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "GetSecretAsrDetail", "", "")
 	request.Method = requests.POST
 	return
 }

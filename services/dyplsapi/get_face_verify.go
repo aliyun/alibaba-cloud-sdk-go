@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseSecretNo invokes the dyplsapi.ReleaseSecretNo API synchronously
-func (client *Client) ReleaseSecretNo(request *ReleaseSecretNoRequest) (response *ReleaseSecretNoResponse, err error) {
-	response = CreateReleaseSecretNoResponse()
+// GetFaceVerify invokes the dyplsapi.GetFaceVerify API synchronously
+func (client *Client) GetFaceVerify(request *GetFaceVerifyRequest) (response *GetFaceVerifyResponse, err error) {
+	response = CreateGetFaceVerifyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseSecretNoWithChan invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (<-chan *ReleaseSecretNoResponse, <-chan error) {
-	responseChan := make(chan *ReleaseSecretNoResponse, 1)
+// GetFaceVerifyWithChan invokes the dyplsapi.GetFaceVerify API asynchronously
+func (client *Client) GetFaceVerifyWithChan(request *GetFaceVerifyRequest) (<-chan *GetFaceVerifyResponse, <-chan error) {
+	responseChan := make(chan *GetFaceVerifyResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseSecretNo(request)
+		response, err := client.GetFaceVerify(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (
 	return responseChan, errChan
 }
 
-// ReleaseSecretNoWithCallback invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoRequest, callback func(response *ReleaseSecretNoResponse, err error)) <-chan int {
+// GetFaceVerifyWithCallback invokes the dyplsapi.GetFaceVerify API asynchronously
+func (client *Client) GetFaceVerifyWithCallback(request *GetFaceVerifyRequest, callback func(response *GetFaceVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseSecretNoResponse
+		var response *GetFaceVerifyResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseSecretNo(request)
+		response, err = client.GetFaceVerify(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,38 @@ func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoReques
 	return result
 }
 
-// ReleaseSecretNoRequest is the request struct for api ReleaseSecretNo
-type ReleaseSecretNoRequest struct {
+// GetFaceVerifyRequest is the request struct for api GetFaceVerify
+type GetFaceVerifyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VerifyToken          string           `position:"Query" name:"VerifyToken"`
+	ProdCode             string           `position:"Query" name:"ProdCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PoolKey              string           `position:"Query" name:"PoolKey"`
-	SecretNo             string           `position:"Query" name:"SecretNo"`
 }
 
-// ReleaseSecretNoResponse is the response struct for api ReleaseSecretNo
-type ReleaseSecretNoResponse struct {
+// GetFaceVerifyResponse is the response struct for api GetFaceVerify
+type GetFaceVerifyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateReleaseSecretNoRequest creates a request to invoke ReleaseSecretNo API
-func CreateReleaseSecretNoRequest() (request *ReleaseSecretNoRequest) {
-	request = &ReleaseSecretNoRequest{
+// CreateGetFaceVerifyRequest creates a request to invoke GetFaceVerify API
+func CreateGetFaceVerifyRequest() (request *GetFaceVerifyRequest) {
+	request = &GetFaceVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "", "")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "GetFaceVerify", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateReleaseSecretNoResponse creates a response to parse from ReleaseSecretNo response
-func CreateReleaseSecretNoResponse() (response *ReleaseSecretNoResponse) {
-	response = &ReleaseSecretNoResponse{
+// CreateGetFaceVerifyResponse creates a response to parse from GetFaceVerify response
+func CreateGetFaceVerifyResponse() (response *GetFaceVerifyResponse) {
+	response = &GetFaceVerifyResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

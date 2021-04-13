@@ -21,7 +21,6 @@ import (
 )
 
 // BindAxg invokes the dyplsapi.BindAxg API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxg.html
 func (client *Client) BindAxg(request *BindAxgRequest) (response *BindAxgResponse, err error) {
 	response = CreateBindAxgResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindAxg(request *BindAxgRequest) (response *BindAxgRespons
 }
 
 // BindAxgWithChan invokes the dyplsapi.BindAxg API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxg.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAxgWithChan(request *BindAxgRequest) (<-chan *BindAxgResponse, <-chan error) {
 	responseChan := make(chan *BindAxgResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindAxgWithChan(request *BindAxgRequest) (<-chan *BindAxgR
 }
 
 // BindAxgWithCallback invokes the dyplsapi.BindAxg API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxg.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAxgWithCallback(request *BindAxgRequest, callback func(response *BindAxgResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ type BindAxgRequest struct {
 	IsRecordingEnabled   requests.Boolean `position:"Query" name:"IsRecordingEnabled"`
 	OutId                string           `position:"Query" name:"OutId"`
 	ASRModelId           string           `position:"Query" name:"ASRModelId"`
+	CallRestrict         string           `position:"Query" name:"CallRestrict"`
 }
 
 // BindAxgResponse is the response struct for api BindAxg
@@ -109,7 +105,7 @@ func CreateBindAxgRequest() (request *BindAxgRequest) {
 	request = &BindAxgRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxg", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxg", "", "")
 	request.Method = requests.POST
 	return
 }

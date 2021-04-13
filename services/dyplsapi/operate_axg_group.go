@@ -21,7 +21,6 @@ import (
 )
 
 // OperateAxgGroup invokes the dyplsapi.OperateAxgGroup API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
 func (client *Client) OperateAxgGroup(request *OperateAxgGroupRequest) (response *OperateAxgGroupResponse, err error) {
 	response = CreateOperateAxgGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OperateAxgGroup(request *OperateAxgGroupRequest) (response
 }
 
 // OperateAxgGroupWithChan invokes the dyplsapi.OperateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperateAxgGroupWithChan(request *OperateAxgGroupRequest) (<-chan *OperateAxgGroupResponse, <-chan error) {
 	responseChan := make(chan *OperateAxgGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OperateAxgGroupWithChan(request *OperateAxgGroupRequest) (
 }
 
 // OperateAxgGroupWithCallback invokes the dyplsapi.OperateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperateAxgGroupWithCallback(request *OperateAxgGroupRequest, callback func(response *OperateAxgGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateOperateAxgGroupRequest() (request *OperateAxgGroupRequest) {
 	request = &OperateAxgGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "OperateAxgGroup", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "OperateAxgGroup", "", "")
 	request.Method = requests.POST
 	return
 }

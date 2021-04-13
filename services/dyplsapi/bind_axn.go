@@ -21,7 +21,6 @@ import (
 )
 
 // BindAxn invokes the dyplsapi.BindAxn API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxn.html
 func (client *Client) BindAxn(request *BindAxnRequest) (response *BindAxnResponse, err error) {
 	response = CreateBindAxnResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindAxn(request *BindAxnRequest) (response *BindAxnRespons
 }
 
 // BindAxnWithChan invokes the dyplsapi.BindAxn API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAxnWithChan(request *BindAxnRequest) (<-chan *BindAxnResponse, <-chan error) {
 	responseChan := make(chan *BindAxnResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindAxnWithChan(request *BindAxnRequest) (<-chan *BindAxnR
 }
 
 // BindAxnWithCallback invokes the dyplsapi.BindAxn API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAxnWithCallback(request *BindAxnRequest, callback func(response *BindAxnResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type BindAxnRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CallDisplayType      requests.Integer `position:"Query" name:"CallDisplayType"`
+	CallTimeout          requests.Integer `position:"Query" name:"CallTimeout"`
 	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 	RingConfig           string           `position:"Query" name:"RingConfig"`
 	ASRStatus            requests.Boolean `position:"Query" name:"ASRStatus"`
@@ -93,6 +89,7 @@ type BindAxnRequest struct {
 	OutId                string           `position:"Query" name:"OutId"`
 	NoType               string           `position:"Query" name:"NoType"`
 	ASRModelId           string           `position:"Query" name:"ASRModelId"`
+	CallRestrict         string           `position:"Query" name:"CallRestrict"`
 }
 
 // BindAxnResponse is the response struct for api BindAxn
@@ -109,7 +106,7 @@ func CreateBindAxnRequest() (request *BindAxnRequest) {
 	request = &BindAxnRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxn", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxn", "", "")
 	request.Method = requests.POST
 	return
 }

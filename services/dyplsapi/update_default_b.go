@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseSecretNo invokes the dyplsapi.ReleaseSecretNo API synchronously
-func (client *Client) ReleaseSecretNo(request *ReleaseSecretNoRequest) (response *ReleaseSecretNoResponse, err error) {
-	response = CreateReleaseSecretNoResponse()
+// UpdateDefaultB invokes the dyplsapi.UpdateDefaultB API synchronously
+func (client *Client) UpdateDefaultB(request *UpdateDefaultBRequest) (response *UpdateDefaultBResponse, err error) {
+	response = CreateUpdateDefaultBResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseSecretNoWithChan invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (<-chan *ReleaseSecretNoResponse, <-chan error) {
-	responseChan := make(chan *ReleaseSecretNoResponse, 1)
+// UpdateDefaultBWithChan invokes the dyplsapi.UpdateDefaultB API asynchronously
+func (client *Client) UpdateDefaultBWithChan(request *UpdateDefaultBRequest) (<-chan *UpdateDefaultBResponse, <-chan error) {
+	responseChan := make(chan *UpdateDefaultBResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseSecretNo(request)
+		response, err := client.UpdateDefaultB(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (
 	return responseChan, errChan
 }
 
-// ReleaseSecretNoWithCallback invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoRequest, callback func(response *ReleaseSecretNoResponse, err error)) <-chan int {
+// UpdateDefaultBWithCallback invokes the dyplsapi.UpdateDefaultB API asynchronously
+func (client *Client) UpdateDefaultBWithCallback(request *UpdateDefaultBRequest, callback func(response *UpdateDefaultBResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseSecretNoResponse
+		var response *UpdateDefaultBResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseSecretNo(request)
+		response, err = client.UpdateDefaultB(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,41 @@ func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoReques
 	return result
 }
 
-// ReleaseSecretNoRequest is the request struct for api ReleaseSecretNo
-type ReleaseSecretNoRequest struct {
+// UpdateDefaultBRequest is the request struct for api UpdateDefaultB
+type UpdateDefaultBRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PoolKey              string           `position:"Query" name:"PoolKey"`
+	SubsId               requests.Integer `position:"Query" name:"SubsId"`
 	SecretNo             string           `position:"Query" name:"SecretNo"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ProdCode             string           `position:"Query" name:"ProdCode"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PhoneNo              string           `position:"Query" name:"PhoneNo"`
+	PoolKey              string           `position:"Query" name:"PoolKey"`
 }
 
-// ReleaseSecretNoResponse is the response struct for api ReleaseSecretNo
-type ReleaseSecretNoResponse struct {
+// UpdateDefaultBResponse is the response struct for api UpdateDefaultB
+type UpdateDefaultBResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateReleaseSecretNoRequest creates a request to invoke ReleaseSecretNo API
-func CreateReleaseSecretNoRequest() (request *ReleaseSecretNoRequest) {
-	request = &ReleaseSecretNoRequest{
+// CreateUpdateDefaultBRequest creates a request to invoke UpdateDefaultB API
+func CreateUpdateDefaultBRequest() (request *UpdateDefaultBRequest) {
+	request = &UpdateDefaultBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "", "")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "UpdateDefaultB", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateReleaseSecretNoResponse creates a response to parse from ReleaseSecretNo response
-func CreateReleaseSecretNoResponse() (response *ReleaseSecretNoResponse) {
-	response = &ReleaseSecretNoResponse{
+// CreateUpdateDefaultBResponse creates a response to parse from UpdateDefaultB response
+func CreateUpdateDefaultBResponse() (response *UpdateDefaultBResponse) {
+	response = &UpdateDefaultBResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

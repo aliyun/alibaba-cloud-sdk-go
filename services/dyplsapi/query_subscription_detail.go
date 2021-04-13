@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySubscriptionDetail invokes the dyplsapi.QuerySubscriptionDetail API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/querysubscriptiondetail.html
 func (client *Client) QuerySubscriptionDetail(request *QuerySubscriptionDetailRequest) (response *QuerySubscriptionDetailResponse, err error) {
 	response = CreateQuerySubscriptionDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySubscriptionDetail(request *QuerySubscriptionDetailRe
 }
 
 // QuerySubscriptionDetailWithChan invokes the dyplsapi.QuerySubscriptionDetail API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/querysubscriptiondetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySubscriptionDetailWithChan(request *QuerySubscriptionDetailRequest) (<-chan *QuerySubscriptionDetailResponse, <-chan error) {
 	responseChan := make(chan *QuerySubscriptionDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySubscriptionDetailWithChan(request *QuerySubscription
 }
 
 // QuerySubscriptionDetailWithCallback invokes the dyplsapi.QuerySubscriptionDetail API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/querysubscriptiondetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySubscriptionDetailWithCallback(request *QuerySubscriptionDetailRequest, callback func(response *QuerySubscriptionDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateQuerySubscriptionDetailRequest() (request *QuerySubscriptionDetailReq
 	request = &QuerySubscriptionDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QuerySubscriptionDetail", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QuerySubscriptionDetail", "", "")
 	request.Method = requests.POST
 	return
 }

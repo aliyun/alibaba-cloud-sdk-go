@@ -21,7 +21,6 @@ import (
 )
 
 // LockSecretNo invokes the dyplsapi.LockSecretNo API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/locksecretno.html
 func (client *Client) LockSecretNo(request *LockSecretNoRequest) (response *LockSecretNoResponse, err error) {
 	response = CreateLockSecretNoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) LockSecretNo(request *LockSecretNoRequest) (response *Lock
 }
 
 // LockSecretNoWithChan invokes the dyplsapi.LockSecretNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/locksecretno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LockSecretNoWithChan(request *LockSecretNoRequest) (<-chan *LockSecretNoResponse, <-chan error) {
 	responseChan := make(chan *LockSecretNoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) LockSecretNoWithChan(request *LockSecretNoRequest) (<-chan
 }
 
 // LockSecretNoWithCallback invokes the dyplsapi.LockSecretNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/locksecretno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LockSecretNoWithCallback(request *LockSecretNoRequest, callback func(response *LockSecretNoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateLockSecretNoRequest() (request *LockSecretNoRequest) {
 	request = &LockSecretNoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "LockSecretNo", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "LockSecretNo", "", "")
 	request.Method = requests.POST
 	return
 }

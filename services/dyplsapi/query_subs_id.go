@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySubsId invokes the dyplsapi.QuerySubsId API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/querysubsid.html
 func (client *Client) QuerySubsId(request *QuerySubsIdRequest) (response *QuerySubsIdResponse, err error) {
 	response = CreateQuerySubsIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySubsId(request *QuerySubsIdRequest) (response *QueryS
 }
 
 // QuerySubsIdWithChan invokes the dyplsapi.QuerySubsId API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/querysubsid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySubsIdWithChan(request *QuerySubsIdRequest) (<-chan *QuerySubsIdResponse, <-chan error) {
 	responseChan := make(chan *QuerySubsIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySubsIdWithChan(request *QuerySubsIdRequest) (<-chan *
 }
 
 // QuerySubsIdWithCallback invokes the dyplsapi.QuerySubsId API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/querysubsid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySubsIdWithCallback(request *QuerySubsIdRequest, callback func(response *QuerySubsIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateQuerySubsIdRequest() (request *QuerySubsIdRequest) {
 	request = &QuerySubsIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QuerySubsId", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QuerySubsId", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseSecretNo invokes the dyplsapi.ReleaseSecretNo API synchronously
-func (client *Client) ReleaseSecretNo(request *ReleaseSecretNoRequest) (response *ReleaseSecretNoResponse, err error) {
-	response = CreateReleaseSecretNoResponse()
+// CreateSubscription invokes the dyplsapi.CreateSubscription API synchronously
+func (client *Client) CreateSubscription(request *CreateSubscriptionRequest) (response *CreateSubscriptionResponse, err error) {
+	response = CreateCreateSubscriptionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseSecretNoWithChan invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (<-chan *ReleaseSecretNoResponse, <-chan error) {
-	responseChan := make(chan *ReleaseSecretNoResponse, 1)
+// CreateSubscriptionWithChan invokes the dyplsapi.CreateSubscription API asynchronously
+func (client *Client) CreateSubscriptionWithChan(request *CreateSubscriptionRequest) (<-chan *CreateSubscriptionResponse, <-chan error) {
+	responseChan := make(chan *CreateSubscriptionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseSecretNo(request)
+		response, err := client.CreateSubscription(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (
 	return responseChan, errChan
 }
 
-// ReleaseSecretNoWithCallback invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoRequest, callback func(response *ReleaseSecretNoResponse, err error)) <-chan int {
+// CreateSubscriptionWithCallback invokes the dyplsapi.CreateSubscription API asynchronously
+func (client *Client) CreateSubscriptionWithCallback(request *CreateSubscriptionRequest, callback func(response *CreateSubscriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseSecretNoResponse
+		var response *CreateSubscriptionResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseSecretNo(request)
+		response, err = client.CreateSubscription(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,41 @@ func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoReques
 	return result
 }
 
-// ReleaseSecretNoRequest is the request struct for api ReleaseSecretNo
-type ReleaseSecretNoRequest struct {
+// CreateSubscriptionRequest is the request struct for api CreateSubscription
+type CreateSubscriptionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PoolKey              string           `position:"Query" name:"PoolKey"`
 	SecretNo             string           `position:"Query" name:"SecretNo"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ProdCode             string           `position:"Query" name:"ProdCode"`
+	BindToken            string           `position:"Query" name:"BindToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PhoneNo              string           `position:"Query" name:"PhoneNo"`
+	PoolKey              string           `position:"Query" name:"PoolKey"`
 }
 
-// ReleaseSecretNoResponse is the response struct for api ReleaseSecretNo
-type ReleaseSecretNoResponse struct {
+// CreateSubscriptionResponse is the response struct for api CreateSubscription
+type CreateSubscriptionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateReleaseSecretNoRequest creates a request to invoke ReleaseSecretNo API
-func CreateReleaseSecretNoRequest() (request *ReleaseSecretNoRequest) {
-	request = &ReleaseSecretNoRequest{
+// CreateCreateSubscriptionRequest creates a request to invoke CreateSubscription API
+func CreateCreateSubscriptionRequest() (request *CreateSubscriptionRequest) {
+	request = &CreateSubscriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "", "")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "CreateSubscription", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateReleaseSecretNoResponse creates a response to parse from ReleaseSecretNo response
-func CreateReleaseSecretNoResponse() (response *ReleaseSecretNoResponse) {
-	response = &ReleaseSecretNoResponse{
+// CreateCreateSubscriptionResponse creates a response to parse from CreateSubscription response
+func CreateCreateSubscriptionResponse() (response *CreateSubscriptionResponse) {
+	response = &CreateSubscriptionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

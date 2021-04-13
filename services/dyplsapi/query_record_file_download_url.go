@@ -21,7 +21,6 @@ import (
 )
 
 // QueryRecordFileDownloadUrl invokes the dyplsapi.QueryRecordFileDownloadUrl API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/queryrecordfiledownloadurl.html
 func (client *Client) QueryRecordFileDownloadUrl(request *QueryRecordFileDownloadUrlRequest) (response *QueryRecordFileDownloadUrlResponse, err error) {
 	response = CreateQueryRecordFileDownloadUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryRecordFileDownloadUrl(request *QueryRecordFileDownloa
 }
 
 // QueryRecordFileDownloadUrlWithChan invokes the dyplsapi.QueryRecordFileDownloadUrl API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/queryrecordfiledownloadurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRecordFileDownloadUrlWithChan(request *QueryRecordFileDownloadUrlRequest) (<-chan *QueryRecordFileDownloadUrlResponse, <-chan error) {
 	responseChan := make(chan *QueryRecordFileDownloadUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryRecordFileDownloadUrlWithChan(request *QueryRecordFil
 }
 
 // QueryRecordFileDownloadUrlWithCallback invokes the dyplsapi.QueryRecordFileDownloadUrl API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/queryrecordfiledownloadurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRecordFileDownloadUrlWithCallback(request *QueryRecordFileDownloadUrlRequest, callback func(response *QueryRecordFileDownloadUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateQueryRecordFileDownloadUrlRequest() (request *QueryRecordFileDownload
 	request = &QueryRecordFileDownloadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl", "", "")
 	request.Method = requests.POST
 	return
 }

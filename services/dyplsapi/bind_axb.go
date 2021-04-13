@@ -21,7 +21,6 @@ import (
 )
 
 // BindAxb invokes the dyplsapi.BindAxb API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxb.html
 func (client *Client) BindAxb(request *BindAxbRequest) (response *BindAxbResponse, err error) {
 	response = CreateBindAxbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindAxb(request *BindAxbRequest) (response *BindAxbRespons
 }
 
 // BindAxbWithChan invokes the dyplsapi.BindAxb API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAxbWithChan(request *BindAxbRequest) (<-chan *BindAxbResponse, <-chan error) {
 	responseChan := make(chan *BindAxbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindAxbWithChan(request *BindAxbRequest) (<-chan *BindAxbR
 }
 
 // BindAxbWithCallback invokes the dyplsapi.BindAxb API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAxbWithCallback(request *BindAxbRequest, callback func(response *BindAxbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type BindAxbRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CallDisplayType      requests.Integer `position:"Query" name:"CallDisplayType"`
+	CallTimeout          requests.Integer `position:"Query" name:"CallTimeout"`
 	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 	RingConfig           string           `position:"Query" name:"RingConfig"`
 	ASRStatus            requests.Boolean `position:"Query" name:"ASRStatus"`
@@ -109,7 +105,7 @@ func CreateBindAxbRequest() (request *BindAxbRequest) {
 	request = &BindAxbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxb", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxb", "", "")
 	request.Method = requests.POST
 	return
 }

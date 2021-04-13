@@ -21,7 +21,6 @@ import (
 )
 
 // OperateBlackNo invokes the dyplsapi.OperateBlackNo API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateblackno.html
 func (client *Client) OperateBlackNo(request *OperateBlackNoRequest) (response *OperateBlackNoResponse, err error) {
 	response = CreateOperateBlackNoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OperateBlackNo(request *OperateBlackNoRequest) (response *
 }
 
 // OperateBlackNoWithChan invokes the dyplsapi.OperateBlackNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateblackno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperateBlackNoWithChan(request *OperateBlackNoRequest) (<-chan *OperateBlackNoResponse, <-chan error) {
 	responseChan := make(chan *OperateBlackNoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OperateBlackNoWithChan(request *OperateBlackNoRequest) (<-
 }
 
 // OperateBlackNoWithCallback invokes the dyplsapi.OperateBlackNo API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateblackno.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperateBlackNoWithCallback(request *OperateBlackNoRequest, callback func(response *OperateBlackNoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateOperateBlackNoRequest() (request *OperateBlackNoRequest) {
 	request = &OperateBlackNoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "OperateBlackNo", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "OperateBlackNo", "", "")
 	request.Method = requests.POST
 	return
 }

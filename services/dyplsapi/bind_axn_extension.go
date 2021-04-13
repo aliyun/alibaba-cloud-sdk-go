@@ -21,7 +21,6 @@ import (
 )
 
 // BindAxnExtension invokes the dyplsapi.BindAxnExtension API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxnextension.html
 func (client *Client) BindAxnExtension(request *BindAxnExtensionRequest) (response *BindAxnExtensionResponse, err error) {
 	response = CreateBindAxnExtensionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindAxnExtension(request *BindAxnExtensionRequest) (respon
 }
 
 // BindAxnExtensionWithChan invokes the dyplsapi.BindAxnExtension API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxnextension.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAxnExtensionWithChan(request *BindAxnExtensionRequest) (<-chan *BindAxnExtensionResponse, <-chan error) {
 	responseChan := make(chan *BindAxnExtensionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindAxnExtensionWithChan(request *BindAxnExtensionRequest)
 }
 
 // BindAxnExtensionWithCallback invokes the dyplsapi.BindAxnExtension API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/bindaxnextension.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAxnExtensionWithCallback(request *BindAxnExtensionRequest, callback func(response *BindAxnExtensionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ type BindAxnExtensionRequest struct {
 	IsRecordingEnabled   requests.Boolean `position:"Query" name:"IsRecordingEnabled"`
 	OutId                string           `position:"Query" name:"OutId"`
 	ASRModelId           string           `position:"Query" name:"ASRModelId"`
+	CallRestrict         string           `position:"Query" name:"CallRestrict"`
 }
 
 // BindAxnExtensionResponse is the response struct for api BindAxnExtension
@@ -109,7 +105,7 @@ func CreateBindAxnExtensionRequest() (request *BindAxnExtensionRequest) {
 	request = &BindAxnExtensionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxnExtension", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxnExtension", "", "")
 	request.Method = requests.POST
 	return
 }

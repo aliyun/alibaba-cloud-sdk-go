@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseSecretNo invokes the dyplsapi.ReleaseSecretNo API synchronously
-func (client *Client) ReleaseSecretNo(request *ReleaseSecretNoRequest) (response *ReleaseSecretNoResponse, err error) {
-	response = CreateReleaseSecretNoResponse()
+// UpdatePhoneSwitch invokes the dyplsapi.UpdatePhoneSwitch API synchronously
+func (client *Client) UpdatePhoneSwitch(request *UpdatePhoneSwitchRequest) (response *UpdatePhoneSwitchResponse, err error) {
+	response = CreateUpdatePhoneSwitchResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseSecretNoWithChan invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (<-chan *ReleaseSecretNoResponse, <-chan error) {
-	responseChan := make(chan *ReleaseSecretNoResponse, 1)
+// UpdatePhoneSwitchWithChan invokes the dyplsapi.UpdatePhoneSwitch API asynchronously
+func (client *Client) UpdatePhoneSwitchWithChan(request *UpdatePhoneSwitchRequest) (<-chan *UpdatePhoneSwitchResponse, <-chan error) {
+	responseChan := make(chan *UpdatePhoneSwitchResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseSecretNo(request)
+		response, err := client.UpdatePhoneSwitch(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (
 	return responseChan, errChan
 }
 
-// ReleaseSecretNoWithCallback invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoRequest, callback func(response *ReleaseSecretNoResponse, err error)) <-chan int {
+// UpdatePhoneSwitchWithCallback invokes the dyplsapi.UpdatePhoneSwitch API asynchronously
+func (client *Client) UpdatePhoneSwitchWithCallback(request *UpdatePhoneSwitchRequest, callback func(response *UpdatePhoneSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseSecretNoResponse
+		var response *UpdatePhoneSwitchResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseSecretNo(request)
+		response, err = client.UpdatePhoneSwitch(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,41 @@ func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoReques
 	return result
 }
 
-// ReleaseSecretNoRequest is the request struct for api ReleaseSecretNo
-type ReleaseSecretNoRequest struct {
+// UpdatePhoneSwitchRequest is the request struct for api UpdatePhoneSwitch
+type UpdatePhoneSwitchRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SwitchStatus         requests.Integer `position:"Query" name:"SwitchStatus"`
+	SubsId               requests.Integer `position:"Query" name:"SubsId"`
+	SecretNo             string           `position:"Query" name:"SecretNo"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ProdCode             string           `position:"Query" name:"ProdCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
-	SecretNo             string           `position:"Query" name:"SecretNo"`
 }
 
-// ReleaseSecretNoResponse is the response struct for api ReleaseSecretNo
-type ReleaseSecretNoResponse struct {
+// UpdatePhoneSwitchResponse is the response struct for api UpdatePhoneSwitch
+type UpdatePhoneSwitchResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateReleaseSecretNoRequest creates a request to invoke ReleaseSecretNo API
-func CreateReleaseSecretNoRequest() (request *ReleaseSecretNoRequest) {
-	request = &ReleaseSecretNoRequest{
+// CreateUpdatePhoneSwitchRequest creates a request to invoke UpdatePhoneSwitch API
+func CreateUpdatePhoneSwitchRequest() (request *UpdatePhoneSwitchRequest) {
+	request = &UpdatePhoneSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "", "")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "UpdatePhoneSwitch", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateReleaseSecretNoResponse creates a response to parse from ReleaseSecretNo response
-func CreateReleaseSecretNoResponse() (response *ReleaseSecretNoResponse) {
-	response = &ReleaseSecretNoResponse{
+// CreateUpdatePhoneSwitchResponse creates a response to parse from UpdatePhoneSwitch response
+func CreateUpdatePhoneSwitchResponse() (response *UpdatePhoneSwitchResponse) {
+	response = &UpdatePhoneSwitchResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
