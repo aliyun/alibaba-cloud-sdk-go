@@ -74,7 +74,7 @@ type AdjustVideoColorRequest struct {
 	Mode         string           `position:"Body" name:"Mode"`
 	Async        requests.Boolean `position:"Body" name:"Async"`
 	VideoUrl     string           `position:"Body" name:"VideoUrl"`
-	VideoBitrate string           `position:"Body" name:"VideoBitrate"`
+	VideoBitrate requests.Integer `position:"Body" name:"VideoBitrate"`
 	VideoCodec   string           `position:"Body" name:"VideoCodec"`
 	VideoFormat  string           `position:"Body" name:"VideoFormat"`
 }

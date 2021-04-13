@@ -1,3 +1,7 @@
+2021-04-13 Version: v1.61.1027
+- Generated 2020-03-20 for `videoenhan`.
+- Release AddFaceVideoTemplate DeleteFaceVideoTemplate QueryFaceVideoTemplate MergeVideoModelFace.
+
 2021-04-13 Version: v1.61.1026
 - Generated 2017-05-25 for `Dyplsapi`.
 - Fixed bugs for UnbindSubscription API.
