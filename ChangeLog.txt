@@ -1,3 +1,7 @@
+2021-04-14 Version: v1.61.1030
+- Generated 2017-08-23, 2018-05-09, 2016-12-22 for `Green`.
+- Delete MultiMedia Post Scan API.
+
 2021-04-14 Version: v1.61.1029
 - Generated 2020-01-01 for `geoip`.
 - Download url add fixed domain.
