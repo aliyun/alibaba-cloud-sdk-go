@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGeoipInstanceDataInfos invokes the geoip.DescribeGeoipInstanceDataInfos API synchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstancedatainfos.html
 func (client *Client) DescribeGeoipInstanceDataInfos(request *DescribeGeoipInstanceDataInfosRequest) (response *DescribeGeoipInstanceDataInfosResponse, err error) {
 	response = CreateDescribeGeoipInstanceDataInfosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGeoipInstanceDataInfos(request *DescribeGeoipInsta
 }
 
 // DescribeGeoipInstanceDataInfosWithChan invokes the geoip.DescribeGeoipInstanceDataInfos API asynchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstancedatainfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGeoipInstanceDataInfosWithChan(request *DescribeGeoipInstanceDataInfosRequest) (<-chan *DescribeGeoipInstanceDataInfosResponse, <-chan error) {
 	responseChan := make(chan *DescribeGeoipInstanceDataInfosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGeoipInstanceDataInfosWithChan(request *DescribeGe
 }
 
 // DescribeGeoipInstanceDataInfosWithCallback invokes the geoip.DescribeGeoipInstanceDataInfos API asynchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstancedatainfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGeoipInstanceDataInfosWithCallback(request *DescribeGeoipInstanceDataInfosRequest, callback func(response *DescribeGeoipInstanceDataInfosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,10 @@ func (client *Client) DescribeGeoipInstanceDataInfosWithCallback(request *Descri
 // DescribeGeoipInstanceDataInfosRequest is the request struct for api DescribeGeoipInstanceDataInfos
 type DescribeGeoipInstanceDataInfosRequest struct {
 	*requests.RpcRequest
-	InstanceId   string `position:"Query" name:"InstanceId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	LocationDataType string `position:"Query" name:"LocationDataType"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
+	UserClientIp     string `position:"Query" name:"UserClientIp"`
+	Lang             string `position:"Query" name:"Lang"`
 }
 
 // DescribeGeoipInstanceDataInfosResponse is the response struct for api DescribeGeoipInstanceDataInfos

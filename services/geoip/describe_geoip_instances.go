@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGeoipInstances invokes the geoip.DescribeGeoipInstances API synchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstances.html
 func (client *Client) DescribeGeoipInstances(request *DescribeGeoipInstancesRequest) (response *DescribeGeoipInstancesResponse, err error) {
 	response = CreateDescribeGeoipInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGeoipInstances(request *DescribeGeoipInstancesRequ
 }
 
 // DescribeGeoipInstancesWithChan invokes the geoip.DescribeGeoipInstances API asynchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGeoipInstancesWithChan(request *DescribeGeoipInstancesRequest) (<-chan *DescribeGeoipInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeGeoipInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGeoipInstancesWithChan(request *DescribeGeoipInsta
 }
 
 // DescribeGeoipInstancesWithCallback invokes the geoip.DescribeGeoipInstances API asynchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGeoipInstancesWithCallback(request *DescribeGeoipInstancesRequest, callback func(response *DescribeGeoipInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

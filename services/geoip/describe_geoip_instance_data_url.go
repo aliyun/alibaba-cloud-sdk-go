@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGeoipInstanceDataUrl invokes the geoip.DescribeGeoipInstanceDataUrl API synchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstancedataurl.html
 func (client *Client) DescribeGeoipInstanceDataUrl(request *DescribeGeoipInstanceDataUrlRequest) (response *DescribeGeoipInstanceDataUrlResponse, err error) {
 	response = CreateDescribeGeoipInstanceDataUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGeoipInstanceDataUrl(request *DescribeGeoipInstanc
 }
 
 // DescribeGeoipInstanceDataUrlWithChan invokes the geoip.DescribeGeoipInstanceDataUrl API asynchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstancedataurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGeoipInstanceDataUrlWithChan(request *DescribeGeoipInstanceDataUrlRequest) (<-chan *DescribeGeoipInstanceDataUrlResponse, <-chan error) {
 	responseChan := make(chan *DescribeGeoipInstanceDataUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGeoipInstanceDataUrlWithChan(request *DescribeGeoi
 }
 
 // DescribeGeoipInstanceDataUrlWithCallback invokes the geoip.DescribeGeoipInstanceDataUrl API asynchronously
-// api document: https://help.aliyun.com/api/geoip/describegeoipinstancedataurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGeoipInstanceDataUrlWithCallback(request *DescribeGeoipInstanceDataUrlRequest, callback func(response *DescribeGeoipInstanceDataUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,8 +80,9 @@ type DescribeGeoipInstanceDataUrlRequest struct {
 // DescribeGeoipInstanceDataUrlResponse is the response struct for api DescribeGeoipInstanceDataUrl
 type DescribeGeoipInstanceDataUrlResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	DownloadUrl string `json:"DownloadUrl" xml:"DownloadUrl"`
+	FixedDomainDownloadUrl string `json:"FixedDomainDownloadUrl" xml:"FixedDomainDownloadUrl"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	DownloadUrl            string `json:"DownloadUrl" xml:"DownloadUrl"`
 }
 
 // CreateDescribeGeoipInstanceDataUrlRequest creates a request to invoke DescribeGeoipInstanceDataUrl API

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIpv4Location invokes the geoip.DescribeIpv4Location API synchronously
-// api document: https://help.aliyun.com/api/geoip/describeipv4location.html
 func (client *Client) DescribeIpv4Location(request *DescribeIpv4LocationRequest) (response *DescribeIpv4LocationResponse, err error) {
 	response = CreateDescribeIpv4LocationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIpv4Location(request *DescribeIpv4LocationRequest)
 }
 
 // DescribeIpv4LocationWithChan invokes the geoip.DescribeIpv4Location API asynchronously
-// api document: https://help.aliyun.com/api/geoip/describeipv4location.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpv4LocationWithChan(request *DescribeIpv4LocationRequest) (<-chan *DescribeIpv4LocationResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpv4LocationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIpv4LocationWithChan(request *DescribeIpv4Location
 }
 
 // DescribeIpv4LocationWithCallback invokes the geoip.DescribeIpv4Location API asynchronously
-// api document: https://help.aliyun.com/api/geoip/describeipv4location.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpv4LocationWithCallback(request *DescribeIpv4LocationRequest, callback func(response *DescribeIpv4LocationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

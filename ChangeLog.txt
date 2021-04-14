@@ -1,3 +1,7 @@
+2021-04-14 Version: v1.61.1029
+- Generated 2020-01-01 for `geoip`.
+- Download url add fixed domain.
+
 2021-04-13 Version: v1.61.1028
 - Generated 2020-01-01 for `Dts`.
 - Supported ConfigureDtsJob SynchronizationDirection.
