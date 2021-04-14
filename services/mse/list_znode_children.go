@@ -90,7 +90,7 @@ func CreateListZnodeChildrenRequest() (request *ListZnodeChildrenRequest) {
 	request = &ListZnodeChildrenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListZnodeChildren", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListZnodeChildren", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

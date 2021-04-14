@@ -94,7 +94,7 @@ func CreateUpdateEngineNamespaceRequest() (request *UpdateEngineNamespaceRequest
 	request = &UpdateEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateEngineNamespace", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateEngineNamespace", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

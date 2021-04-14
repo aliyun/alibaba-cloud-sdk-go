@@ -94,7 +94,7 @@ func CreateGetImportFileUrlRequest() (request *GetImportFileUrlRequest) {
 	request = &GetImportFileUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetImportFileUrl", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetImportFileUrl", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

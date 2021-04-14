@@ -90,7 +90,7 @@ func CreateRetryClusterRequest() (request *RetryClusterRequest) {
 	request = &RetryClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "RetryCluster", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "RetryCluster", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }
