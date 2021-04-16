@@ -1,3 +1,7 @@
+2021-04-16 Version: v1.61.1035
+- Generated 2020-03-03 for `devops-rdc`.
+- Support devops organization deletion.
+
 2021-04-16 Version: v1.61.1034
 - Generated 2020-04-15 for `Privatelink`.
 - Add CheckProductOpen.
