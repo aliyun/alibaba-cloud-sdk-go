@@ -40,5 +40,6 @@ type ResultInCreateAppGroup struct {
 	Updated                           int    `json:"updated" xml:"updated"`
 	Status                            string `json:"status" xml:"status"`
 	LockMode                          string `json:"lockMode" xml:"lockMode"`
+	Domain                            string `json:"domain" xml:"domain"`
 	Quota                             Quota  `json:"quota" xml:"quota"`
 }

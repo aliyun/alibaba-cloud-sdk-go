@@ -1,3 +1,9 @@
+2021-04-16 Version: v1.61.1033
+- Generated 2017-12-25 for `OpenSearch`.
+- Add API GetDomain.
+- Add API ListSystemAnalyzers.
+- Add parameter domain to API ListAppGroups, ModifyAppGroup, CreateAppGroup, DescribeAppGroup, DescribeApp.
+
 2021-04-14 Version: v1.61.1032
 - Generated 2014-05-15 for `Slb`.
 - Support latest openAPIs.

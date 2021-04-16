@@ -29,4 +29,5 @@ type ResultInDescribeApp struct {
 	Schema           map[string]interface{} `json:"schema" xml:"schema"`
 	FetchFields      []string               `json:"fetchFields" xml:"fetchFields"`
 	Quota            Quota                  `json:"quota" xml:"quota"`
+	Domain           Domain                 `json:"domain" xml:"domain"`
 }
