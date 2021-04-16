@@ -17,18 +17,19 @@ package privatelink
 
 // Endpoint is a nested struct in privatelink response
 type Endpoint struct {
-	EndpointId             string `json:"EndpointId" xml:"EndpointId"`
-	EndpointName           string `json:"EndpointName" xml:"EndpointName"`
-	EndpointDescription    string `json:"EndpointDescription" xml:"EndpointDescription"`
-	EndpointStatus         string `json:"EndpointStatus" xml:"EndpointStatus"`
-	EndpointBusinessStatus string `json:"EndpointBusinessStatus" xml:"EndpointBusinessStatus"`
 	EndpointDomain         string `json:"EndpointDomain" xml:"EndpointDomain"`
-	Bandwidth              int64  `json:"Bandwidth" xml:"Bandwidth"`
-	ConnectionStatus       string `json:"ConnectionStatus" xml:"ConnectionStatus"`
-	ServiceId              string `json:"ServiceId" xml:"ServiceId"`
-	ServiceName            string `json:"ServiceName" xml:"ServiceName"`
-	VpcId                  string `json:"VpcId" xml:"VpcId"`
-	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
-	RegionId               string `json:"RegionId" xml:"RegionId"`
 	ResourceOwner          bool   `json:"ResourceOwner" xml:"ResourceOwner"`
+	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
+	EndpointBusinessStatus string `json:"EndpointBusinessStatus" xml:"EndpointBusinessStatus"`
+	EndpointDescription    string `json:"EndpointDescription" xml:"EndpointDescription"`
+	ServiceId              string `json:"ServiceId" xml:"ServiceId"`
+	EndpointStatus         string `json:"EndpointStatus" xml:"EndpointStatus"`
+	EndpointName           string `json:"EndpointName" xml:"EndpointName"`
+	VpcId                  string `json:"VpcId" xml:"VpcId"`
+	ServiceName            string `json:"ServiceName" xml:"ServiceName"`
+	EndpointId             string `json:"EndpointId" xml:"EndpointId"`
+	Bandwidth              int64  `json:"Bandwidth" xml:"Bandwidth"`
+	RegionId               string `json:"RegionId" xml:"RegionId"`
+	ConnectionStatus       string `json:"ConnectionStatus" xml:"ConnectionStatus"`
+	ZoneAffinityEnabled    bool   `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
 }

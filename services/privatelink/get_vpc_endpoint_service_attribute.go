@@ -77,20 +77,21 @@ type GetVpcEndpointServiceAttributeRequest struct {
 // GetVpcEndpointServiceAttributeResponse is the response struct for api GetVpcEndpointServiceAttribute
 type GetVpcEndpointServiceAttributeResponse struct {
 	*responses.BaseResponse
+	Payer                 string   `json:"Payer" xml:"Payer"`
 	RequestId             string   `json:"RequestId" xml:"RequestId"`
-	ServiceId             string   `json:"ServiceId" xml:"ServiceId"`
-	ServiceName           string   `json:"ServiceName" xml:"ServiceName"`
-	ServiceDomain         string   `json:"ServiceDomain" xml:"ServiceDomain"`
 	ServiceDescription    string   `json:"ServiceDescription" xml:"ServiceDescription"`
-	ServiceBusinessStatus string   `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
-	ServiceStatus         string   `json:"ServiceStatus" xml:"ServiceStatus"`
-	AutoAcceptEnabled     bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
-	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
 	MaxBandwidth          int      `json:"MaxBandwidth" xml:"MaxBandwidth"`
+	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
+	ServiceDomain         string   `json:"ServiceDomain" xml:"ServiceDomain"`
 	MinBandwidth          int      `json:"MinBandwidth" xml:"MinBandwidth"`
+	ServiceId             string   `json:"ServiceId" xml:"ServiceId"`
+	AutoAcceptEnabled     bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
+	ServiceBusinessStatus string   `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
+	ServiceName           string   `json:"ServiceName" xml:"ServiceName"`
+	ServiceStatus         string   `json:"ServiceStatus" xml:"ServiceStatus"`
 	ConnectBandwidth      int      `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
 	RegionId              string   `json:"RegionId" xml:"RegionId"`
-	Payer                 string   `json:"Payer" xml:"Payer"`
+	ZoneAffinityEnabled   bool     `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
 	Zones                 []string `json:"Zones" xml:"Zones"`
 }
 

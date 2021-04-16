@@ -86,24 +86,25 @@ type CreateVpcEndpointRequest struct {
 type CreateVpcEndpointZone struct {
 	VSwitchId string `name:"VSwitchId"`
 	ZoneId    string `name:"ZoneId"`
+	Ip        string `name:"ip"`
 }
 
 // CreateVpcEndpointResponse is the response struct for api CreateVpcEndpoint
 type CreateVpcEndpointResponse struct {
 	*responses.BaseResponse
-	EndpointId             string `json:"EndpointId" xml:"EndpointId"`
-	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
-	RequestId              string `json:"RequestId" xml:"RequestId"`
+	EndpointStatus         string `json:"EndpointStatus" xml:"EndpointStatus"`
 	EndpointName           string `json:"EndpointName" xml:"EndpointName"`
 	VpcId                  string `json:"VpcId" xml:"VpcId"`
-	EndpointDescription    string `json:"EndpointDescription" xml:"EndpointDescription"`
-	ServiceId              string `json:"ServiceId" xml:"ServiceId"`
-	ServiceName            string `json:"ServiceName" xml:"ServiceName"`
-	EndpointBusinessStatus string `json:"EndpointBusinessStatus" xml:"EndpointBusinessStatus"`
-	EndpointStatus         string `json:"EndpointStatus" xml:"EndpointStatus"`
-	ConnectionStatus       string `json:"ConnectionStatus" xml:"ConnectionStatus"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
 	EndpointDomain         string `json:"EndpointDomain" xml:"EndpointDomain"`
+	ServiceName            string `json:"ServiceName" xml:"ServiceName"`
+	EndpointId             string `json:"EndpointId" xml:"EndpointId"`
 	Bandwidth              int64  `json:"Bandwidth" xml:"Bandwidth"`
+	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
+	EndpointBusinessStatus string `json:"EndpointBusinessStatus" xml:"EndpointBusinessStatus"`
+	EndpointDescription    string `json:"EndpointDescription" xml:"EndpointDescription"`
+	ConnectionStatus       string `json:"ConnectionStatus" xml:"ConnectionStatus"`
+	ServiceId              string `json:"ServiceId" xml:"ServiceId"`
 }
 
 // CreateCreateVpcEndpointRequest creates a request to invoke CreateVpcEndpoint API

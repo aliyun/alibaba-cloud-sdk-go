@@ -79,9 +79,9 @@ type ListVpcEndpointZonesRequest struct {
 // ListVpcEndpointZonesResponse is the response struct for api ListVpcEndpointZones
 type ListVpcEndpointZonesResponse struct {
 	*responses.BaseResponse
-	MaxResults string `json:"MaxResults" xml:"MaxResults"`
-	NextToken  string `json:"NextToken" xml:"NextToken"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	NextToken  string `json:"NextToken" xml:"NextToken"`
+	MaxResults string `json:"MaxResults" xml:"MaxResults"`
 	Zones      []Zone `json:"Zones" xml:"Zones"`
 }
 

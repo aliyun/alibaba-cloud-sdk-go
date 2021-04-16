@@ -74,6 +74,7 @@ type AddZoneToVpcEndpointRequest struct {
 	ClientToken string           `position:"Query" name:"ClientToken"`
 	EndpointId  string           `position:"Query" name:"EndpointId"`
 	DryRun      requests.Boolean `position:"Query" name:"DryRun"`
+	Ip          string           `position:"Query" name:"ip"`
 	VSwitchId   string           `position:"Query" name:"VSwitchId"`
 	ZoneId      string           `position:"Query" name:"ZoneId"`
 }

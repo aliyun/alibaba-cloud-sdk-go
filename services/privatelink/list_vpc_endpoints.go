@@ -84,9 +84,9 @@ type ListVpcEndpointsRequest struct {
 // ListVpcEndpointsResponse is the response struct for api ListVpcEndpoints
 type ListVpcEndpointsResponse struct {
 	*responses.BaseResponse
-	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
-	NextToken  string     `json:"NextToken" xml:"NextToken"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	NextToken  string     `json:"NextToken" xml:"NextToken"`
+	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
 	Endpoints  []Endpoint `json:"Endpoints" xml:"Endpoints"`
 }
 

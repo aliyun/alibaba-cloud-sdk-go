@@ -75,6 +75,7 @@ type ListVpcEndpointServicesRequest struct {
 	AutoAcceptEnabled     requests.Boolean `position:"Query" name:"AutoAcceptEnabled"`
 	ServiceStatus         string           `position:"Query" name:"ServiceStatus"`
 	NextToken             string           `position:"Query" name:"NextToken"`
+	ZoneAffinityEnabled   requests.Boolean `position:"Query" name:"ZoneAffinityEnabled"`
 	ServiceName           string           `position:"Query" name:"ServiceName"`
 	MaxResults            requests.Integer `position:"Query" name:"MaxResults"`
 	ServiceId             string           `position:"Query" name:"ServiceId"`
@@ -83,9 +84,9 @@ type ListVpcEndpointServicesRequest struct {
 // ListVpcEndpointServicesResponse is the response struct for api ListVpcEndpointServices
 type ListVpcEndpointServicesResponse struct {
 	*responses.BaseResponse
-	MaxResults string    `json:"MaxResults" xml:"MaxResults"`
-	NextToken  string    `json:"NextToken" xml:"NextToken"`
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	NextToken  string    `json:"NextToken" xml:"NextToken"`
+	MaxResults string    `json:"MaxResults" xml:"MaxResults"`
 	Services   []Service `json:"Services" xml:"Services"`
 }
 

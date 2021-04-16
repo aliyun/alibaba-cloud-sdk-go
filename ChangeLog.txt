@@ -1,3 +1,8 @@
+2021-04-16 Version: v1.61.1034
+- Generated 2020-04-15 for `Privatelink`.
+- Add CheckProductOpen.
+- Add az routing policy.
+
 2021-04-16 Version: v1.61.1033
 - Generated 2017-12-25 for `OpenSearch`.
 - Add API GetDomain.
