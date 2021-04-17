@@ -20,8 +20,10 @@ type Data struct {
 	Text              string                 `json:"Text" xml:"Text"`
 	ErrorMessage      string                 `json:"ErrorMessage" xml:"ErrorMessage"`
 	NormalProbability string                 `json:"NormalProbability" xml:"NormalProbability"`
+	SessionId         string                 `json:"SessionId" xml:"SessionId"`
 	NewProbability    string                 `json:"NewProbability" xml:"NewProbability"`
 	Score             string                 `json:"Score" xml:"Score"`
+	Reports           map[string]interface{} `json:"Reports" xml:"Reports"`
 	DUrl              string                 `json:"DUrl" xml:"DUrl"`
 	ImageUrl          string                 `json:"ImageUrl" xml:"ImageUrl"`
 	Mask              string                 `json:"Mask" xml:"Mask"`
@@ -29,18 +31,20 @@ type Data struct {
 	JobId             string                 `json:"JobId" xml:"JobId"`
 	OrgId             string                 `json:"OrgId" xml:"OrgId"`
 	Result            string                 `json:"Result" xml:"Result"`
+	Question          string                 `json:"Question" xml:"Question"`
 	OtherProbability  string                 `json:"OtherProbability" xml:"OtherProbability"`
 	Words             int64                  `json:"Words" xml:"Words"`
 	LesionRatio       string                 `json:"LesionRatio" xml:"LesionRatio"`
+	QuestionType      string                 `json:"QuestionType" xml:"QuestionType"`
+	AnswerType        string                 `json:"AnswerType" xml:"AnswerType"`
 	NUrl              string                 `json:"NUrl" xml:"NUrl"`
 	Status            string                 `json:"Status" xml:"Status"`
-	Answer            string                 `json:"Answer" xml:"Answer"`
 	Results           map[string]interface{} `json:"Results" xml:"Results"`
 	OrgName           string                 `json:"OrgName" xml:"OrgName"`
 	ResultURL         string                 `json:"ResultURL" xml:"ResultURL"`
 	ResultUrl         string                 `json:"ResultUrl" xml:"ResultUrl"`
 	Spacing           []float64              `json:"Spacing" xml:"Spacing"`
-	SimilarQuestion   []string               `json:"SimilarQuestion" xml:"SimilarQuestion"`
+	Options           []string               `json:"Options" xml:"Options"`
 	Origin            []float64              `json:"Origin" xml:"Origin"`
 	DetectRibFracture DetectRibFracture      `json:"DetectRibFracture" xml:"DetectRibFracture"`
 	CACS              CACS                   `json:"CACS" xml:"CACS"`

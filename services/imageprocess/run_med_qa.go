@@ -71,15 +71,37 @@ func (client *Client) RunMedQAWithCallback(request *RunMedQARequest, callback fu
 // RunMedQARequest is the request struct for api RunMedQA
 type RunMedQARequest struct {
 	*requests.RpcRequest
-	Question string `position:"Body" name:"Question"`
-	OrgId    string `position:"Body" name:"OrgId"`
-	OrgName  string `position:"Body" name:"OrgName"`
+	SessionId           string                         `position:"Body" name:"SessionId"`
+	OrgName             string                         `position:"Body" name:"OrgName"`
+	AnswerImageDataList *[]RunMedQAAnswerImageDataList `position:"Body" name:"AnswerImageDataList"  type:"Repeated"`
+	AnswerTextList      *[]RunMedQAAnswerTextList      `position:"Body" name:"AnswerTextList"  type:"Repeated"`
+	Department          string                         `position:"Body" name:"Department"`
+	AnswerImageURLList  *[]RunMedQAAnswerImageURLList  `position:"Body" name:"AnswerImageURLList"  type:"Repeated"`
+	QuestionType        string                         `position:"Body" name:"QuestionType"`
+	OrgId               string                         `position:"Body" name:"OrgId"`
+}
+
+// RunMedQAAnswerImageDataList is a repeated param struct in RunMedQARequest
+type RunMedQAAnswerImageDataList struct {
+	AnswerImageData string `name:"AnswerImageData"`
+}
+
+// RunMedQAAnswerTextList is a repeated param struct in RunMedQARequest
+type RunMedQAAnswerTextList struct {
+	AnswerText string `name:"AnswerText"`
+}
+
+// RunMedQAAnswerImageURLList is a repeated param struct in RunMedQARequest
+type RunMedQAAnswerImageURLList struct {
+	AnswerImageURL string `name:"AnswerImageURL"`
 }
 
 // RunMedQAResponse is the response struct for api RunMedQA
 type RunMedQAResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
