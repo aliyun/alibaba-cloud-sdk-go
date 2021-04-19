@@ -74,6 +74,7 @@ type StartBack2BackCallRequest struct {
 	Callee           string           `position:"Query" name:"Callee"`
 	Broker           string           `position:"Query" name:"Broker"`
 	UserId           string           `position:"Query" name:"UserId"`
+	DeviceId         string           `position:"Query" name:"DeviceId"`
 	AdditionalBroker string           `position:"Query" name:"AdditionalBroker"`
 	Tags             string           `position:"Query" name:"Tags"`
 	TimeoutSeconds   requests.Integer `position:"Query" name:"TimeoutSeconds"`
