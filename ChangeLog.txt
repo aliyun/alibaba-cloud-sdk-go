@@ -1,3 +1,7 @@
+2021-04-20 Version: v1.61.1038
+- Generated 2019-03-07, 2018-09-16, 2020-06-18, 2020-11-12 for `Cloudauth`.
+- LivenessFaceVerify ContrastFaceVerify CompareFaceVerify API Return CertifyId.
+
 2021-04-19 Version: v1.61.1037
 - Generated 2020-07-01 for `CCC`.
 - Export StartBack2BackCall API.
