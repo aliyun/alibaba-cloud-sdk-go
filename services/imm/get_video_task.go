@@ -79,18 +79,18 @@ type GetVideoTaskRequest struct {
 // GetVideoTaskResponse is the response struct for api GetVideoTask
 type GetVideoTaskResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	TaskId          string `json:"TaskId" xml:"TaskId"`
-	TaskType        string `json:"TaskType" xml:"TaskType"`
-	Parameters      string `json:"Parameters" xml:"Parameters"`
-	Result          string `json:"Result" xml:"Result"`
 	Status          string `json:"Status" xml:"Status"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	EndTime         string `json:"EndTime" xml:"EndTime"`
-	ErrorMessage    string `json:"ErrorMessage" xml:"ErrorMessage"`
 	NotifyEndpoint  string `json:"NotifyEndpoint" xml:"NotifyEndpoint"`
-	NotifyTopicName string `json:"NotifyTopicName" xml:"NotifyTopicName"`
 	Progress        int    `json:"Progress" xml:"Progress"`
+	TaskId          string `json:"TaskId" xml:"TaskId"`
+	Parameters      string `json:"Parameters" xml:"Parameters"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	EndTime         string `json:"EndTime" xml:"EndTime"`
+	TaskType        string `json:"TaskType" xml:"TaskType"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	NotifyTopicName string `json:"NotifyTopicName" xml:"NotifyTopicName"`
+	ErrorMessage    string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Result          string `json:"Result" xml:"Result"`
 }
 
 // CreateGetVideoTaskRequest creates a request to invoke GetVideoTask API

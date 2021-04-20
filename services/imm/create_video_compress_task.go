@@ -78,6 +78,7 @@ type CreateVideoCompressTaskRequest struct {
 	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
 	TargetList      string `position:"Query" name:"TargetList"`
 	VideoUri        string `position:"Query" name:"VideoUri"`
+	TargetSegment   string `position:"Query" name:"TargetSegment"`
 }
 
 // CreateVideoCompressTaskResponse is the response struct for api CreateVideoCompressTask

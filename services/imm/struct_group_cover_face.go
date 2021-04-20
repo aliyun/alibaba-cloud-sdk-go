@@ -18,7 +18,9 @@ package imm
 // GroupCoverFace is a nested struct in imm response
 type GroupCoverFace struct {
 	FaceId       string       `json:"FaceId" xml:"FaceId"`
-	ImageUri     string       `json:"ImageUri" xml:"ImageUri"`
+	ImageHeight  int64        `json:"ImageHeight" xml:"ImageHeight"`
+	ImageWidth   int64        `json:"ImageWidth" xml:"ImageWidth"`
 	ExternalId   string       `json:"ExternalId" xml:"ExternalId"`
+	ImageUri     string       `json:"ImageUri" xml:"ImageUri"`
 	FaceBoundary FaceBoundary `json:"FaceBoundary" xml:"FaceBoundary"`
 }

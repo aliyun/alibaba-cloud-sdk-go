@@ -75,6 +75,7 @@ type CreateOfficeConversionTaskRequest struct {
 	Project         string           `position:"Query" name:"Project"`
 	IdempotentToken string           `position:"Query" name:"IdempotentToken"`
 	PdfVector       requests.Boolean `position:"Query" name:"PdfVector"`
+	UserData        string           `position:"Query" name:"UserData"`
 	Password        string           `position:"Query" name:"Password"`
 	StartPage       requests.Integer `position:"Query" name:"StartPage"`
 	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
@@ -100,12 +101,12 @@ type CreateOfficeConversionTaskRequest struct {
 // CreateOfficeConversionTaskResponse is the response struct for api CreateOfficeConversionTask
 type CreateOfficeConversionTaskResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TaskId     string `json:"TaskId" xml:"TaskId"`
-	TgtLoc     string `json:"TgtLoc" xml:"TgtLoc"`
 	Status     string `json:"Status" xml:"Status"`
-	CreateTime string `json:"CreateTime" xml:"CreateTime"`
+	TaskId     string `json:"TaskId" xml:"TaskId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Percent    int    `json:"Percent" xml:"Percent"`
+	TgtLoc     string `json:"TgtLoc" xml:"TgtLoc"`
+	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 }
 
 // CreateCreateOfficeConversionTaskRequest creates a request to invoke CreateOfficeConversionTask API

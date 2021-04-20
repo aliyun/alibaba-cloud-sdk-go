@@ -80,8 +80,8 @@ type GetDRMLicenseRequest struct {
 type GetDRMLicenseResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	DRMData    string `json:"DRMData" xml:"DRMData"`
 	DeviceInfo string `json:"DeviceInfo" xml:"DeviceInfo"`
+	DRMData    string `json:"DRMData" xml:"DRMData"`
 }
 
 // CreateGetDRMLicenseRequest creates a request to invoke GetDRMLicense API

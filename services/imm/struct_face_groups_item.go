@@ -17,22 +17,22 @@ package imm
 
 // FaceGroupsItem is a nested struct in imm response
 type FaceGroupsItem struct {
-	GroupId        string         `json:"GroupId" xml:"GroupId"`
 	GroupName      string         `json:"GroupName" xml:"GroupName"`
-	FaceCount      int            `json:"FaceCount" xml:"FaceCount"`
-	CreateTime     string         `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime     string         `json:"ModifyTime" xml:"ModifyTime"`
+	ExternalId     string         `json:"ExternalId" xml:"ExternalId"`
+	CreateTime     string         `json:"CreateTime" xml:"CreateTime"`
+	MaxAge         float64        `json:"MaxAge" xml:"MaxAge"`
+	Gender         string         `json:"Gender" xml:"Gender"`
+	AverageAge     float64        `json:"AverageAge" xml:"AverageAge"`
 	RemarksA       string         `json:"RemarksA" xml:"RemarksA"`
 	RemarksB       string         `json:"RemarksB" xml:"RemarksB"`
+	GroupId        string         `json:"GroupId" xml:"GroupId"`
+	RemarksArrayB  string         `json:"RemarksArrayB" xml:"RemarksArrayB"`
+	ImageCount     int            `json:"ImageCount" xml:"ImageCount"`
+	MinAge         float64        `json:"MinAge" xml:"MinAge"`
 	RemarksC       string         `json:"RemarksC" xml:"RemarksC"`
 	RemarksD       string         `json:"RemarksD" xml:"RemarksD"`
 	RemarksArrayA  string         `json:"RemarksArrayA" xml:"RemarksArrayA"`
-	RemarksArrayB  string         `json:"RemarksArrayB" xml:"RemarksArrayB"`
-	ExternalId     string         `json:"ExternalId" xml:"ExternalId"`
-	ImageCount     int            `json:"ImageCount" xml:"ImageCount"`
-	Gender         string         `json:"Gender" xml:"Gender"`
-	MaxAge         float64        `json:"MaxAge" xml:"MaxAge"`
-	AverageAge     float64        `json:"AverageAge" xml:"AverageAge"`
-	MinAge         float64        `json:"MinAge" xml:"MinAge"`
+	FaceCount      int            `json:"FaceCount" xml:"FaceCount"`
 	GroupCoverFace GroupCoverFace `json:"GroupCoverFace" xml:"GroupCoverFace"`
 }
