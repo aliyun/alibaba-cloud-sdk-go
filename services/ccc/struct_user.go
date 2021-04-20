@@ -17,14 +17,17 @@ package ccc
 
 // User is a nested struct in ccc response
 type User struct {
-	DisplayName string `json:"DisplayName" xml:"DisplayName"`
-	Email       string `json:"Email" xml:"Email"`
-	Extension   string `json:"Extension" xml:"Extension"`
-	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
-	LoginName   string `json:"LoginName" xml:"LoginName"`
-	Mobile      string `json:"Mobile" xml:"Mobile"`
-	RoleId      string `json:"RoleId" xml:"RoleId"`
-	RoleName    string `json:"RoleName" xml:"RoleName"`
-	UserId      string `json:"UserId" xml:"UserId"`
-	WorkMode    string `json:"WorkMode" xml:"WorkMode"`
+	StateDesc               string                 `json:"StateDesc" xml:"StateDesc"`
+	RamId                   string                 `json:"RamId" xml:"RamId"`
+	DisplayName             string                 `json:"DisplayName" xml:"DisplayName"`
+	Primary                 bool                   `json:"Primary" xml:"Primary"`
+	State                   string                 `json:"State" xml:"State"`
+	PrivateOutboundNumberId string                 `json:"PrivateOutboundNumberId" xml:"PrivateOutboundNumberId"`
+	UserId                  string                 `json:"UserId" xml:"UserId"`
+	InstanceId              string                 `json:"InstanceId" xml:"InstanceId"`
+	Dn                      string                 `json:"Dn" xml:"Dn"`
+	Phone                   string                 `json:"Phone" xml:"Phone"`
+	Detail                  Detail                 `json:"Detail" xml:"Detail"`
+	SkillLevels             SkillLevelsInFindUsers `json:"SkillLevels" xml:"SkillLevels"`
+	Roles                   RolesInFindUsers       `json:"Roles" xml:"Roles"`
 }

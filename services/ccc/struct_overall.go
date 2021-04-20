@@ -17,23 +17,26 @@ package ccc
 
 // Overall is a nested struct in ccc response
 type Overall struct {
-	AverageBreakTime             float64 `json:"AverageBreakTime" xml:"AverageBreakTime"`
-	AverageReadyTime             float64 `json:"AverageReadyTime" xml:"AverageReadyTime"`
-	AverageTalkTime              float64 `json:"AverageTalkTime" xml:"AverageTalkTime"`
-	AverageWorkTime              float64 `json:"AverageWorkTime" xml:"AverageWorkTime"`
-	MaxBreakTime                 int64   `json:"MaxBreakTime" xml:"MaxBreakTime"`
-	MaxReadyTime                 int64   `json:"MaxReadyTime" xml:"MaxReadyTime"`
-	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
-	MaxWorkTime                  int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`
-	OccupancyRate                float64 `json:"OccupancyRate" xml:"OccupancyRate"`
-	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
-	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
-	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
-	TotalBreakTime               int64   `json:"TotalBreakTime" xml:"TotalBreakTime"`
-	TotalCalls                   int64   `json:"TotalCalls" xml:"TotalCalls"`
 	TotalHoldTime                int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
 	TotalLoggedInTime            int64   `json:"TotalLoggedInTime" xml:"TotalLoggedInTime"`
-	TotalReadyTime               int64   `json:"TotalReadyTime" xml:"TotalReadyTime"`
+	MaxHoldTime                  int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`
+	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
+	AverageWorkTime              int64   `json:"AverageWorkTime" xml:"AverageWorkTime"`
+	FirstLogInTime               string  `json:"FirstLogInTime" xml:"FirstLogInTime"`
+	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
+	AverageReadyTime             int64   `json:"AverageReadyTime" xml:"AverageReadyTime"`
+	AverageTalkTime              int64   `json:"AverageTalkTime" xml:"AverageTalkTime"`
+	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
+	MaxReadyTime                 int64   `json:"MaxReadyTime" xml:"MaxReadyTime"`
 	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
+	LastLogOutTime               string  `json:"LastLogOutTime" xml:"LastLogOutTime"`
+	TotalCalls                   int64   `json:"TotalCalls" xml:"TotalCalls"`
+	MaxWorkTime                  int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`
+	TotalReadyTime               int64   `json:"TotalReadyTime" xml:"TotalReadyTime"`
+	OneTransferCalls             int64   `json:"OneTransferCalls" xml:"OneTransferCalls"`
 	TotalWorkTime                int64   `json:"TotalWorkTime" xml:"TotalWorkTime"`
+	AverageHoldTime              int64   `json:"AverageHoldTime" xml:"AverageHoldTime"`
+	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
+	TotalBreakTime               int64   `json:"TotalBreakTime" xml:"TotalBreakTime"`
+	OccupancyRate                float64 `json:"OccupancyRate" xml:"OccupancyRate"`
 }
