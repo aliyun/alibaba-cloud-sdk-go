@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetInstanceIpWhiteList invokes the hitsdb.GetInstanceIpWhiteList API synchronously
-func (client *Client) GetInstanceIpWhiteList(request *GetInstanceIpWhiteListRequest) (response *GetInstanceIpWhiteListResponse, err error) {
-	response = CreateGetInstanceIpWhiteListResponse()
+// RenewTSDBInstance invokes the hitsdb.RenewTSDBInstance API synchronously
+func (client *Client) RenewTSDBInstance(request *RenewTSDBInstanceRequest) (response *RenewTSDBInstanceResponse, err error) {
+	response = CreateRenewTSDBInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetInstanceIpWhiteListWithChan invokes the hitsdb.GetInstanceIpWhiteList API asynchronously
-func (client *Client) GetInstanceIpWhiteListWithChan(request *GetInstanceIpWhiteListRequest) (<-chan *GetInstanceIpWhiteListResponse, <-chan error) {
-	responseChan := make(chan *GetInstanceIpWhiteListResponse, 1)
+// RenewTSDBInstanceWithChan invokes the hitsdb.RenewTSDBInstance API asynchronously
+func (client *Client) RenewTSDBInstanceWithChan(request *RenewTSDBInstanceRequest) (<-chan *RenewTSDBInstanceResponse, <-chan error) {
+	responseChan := make(chan *RenewTSDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetInstanceIpWhiteList(request)
+		response, err := client.RenewTSDBInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetInstanceIpWhiteListWithChan(request *GetInstanceIpWhite
 	return responseChan, errChan
 }
 
-// GetInstanceIpWhiteListWithCallback invokes the hitsdb.GetInstanceIpWhiteList API asynchronously
-func (client *Client) GetInstanceIpWhiteListWithCallback(request *GetInstanceIpWhiteListRequest, callback func(response *GetInstanceIpWhiteListResponse, err error)) <-chan int {
+// RenewTSDBInstanceWithCallback invokes the hitsdb.RenewTSDBInstance API asynchronously
+func (client *Client) RenewTSDBInstanceWithCallback(request *RenewTSDBInstanceRequest, callback func(response *RenewTSDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetInstanceIpWhiteListResponse
+		var response *RenewTSDBInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.GetInstanceIpWhiteList(request)
+		response, err = client.RenewTSDBInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,39 @@ func (client *Client) GetInstanceIpWhiteListWithCallback(request *GetInstanceIpW
 	return result
 }
 
-// GetInstanceIpWhiteListRequest is the request struct for api GetInstanceIpWhiteList
-type GetInstanceIpWhiteListRequest struct {
+// RenewTSDBInstanceRequest is the request struct for api RenewTSDBInstance
+type RenewTSDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	GroupName            string           `position:"Query" name:"GroupName"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 }
 
-// GetInstanceIpWhiteListResponse is the response struct for api GetInstanceIpWhiteList
-type GetInstanceIpWhiteListResponse struct {
+// RenewTSDBInstanceResponse is the response struct for api RenewTSDBInstance
+type RenewTSDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	InstanceId string   `json:"InstanceId" xml:"InstanceId"`
-	IpList     []string `json:"IpList" xml:"IpList"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   int64  `json:"OrderId" xml:"OrderId"`
 }
 
-// CreateGetInstanceIpWhiteListRequest creates a request to invoke GetInstanceIpWhiteList API
-func CreateGetInstanceIpWhiteListRequest() (request *GetInstanceIpWhiteListRequest) {
-	request = &GetInstanceIpWhiteListRequest{
+// CreateRenewTSDBInstanceRequest creates a request to invoke RenewTSDBInstance API
+func CreateRenewTSDBInstanceRequest() (request *RenewTSDBInstanceRequest) {
+	request = &RenewTSDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2020-06-15", "GetInstanceIpWhiteList", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "RenewTSDBInstance", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetInstanceIpWhiteListResponse creates a response to parse from GetInstanceIpWhiteList response
-func CreateGetInstanceIpWhiteListResponse() (response *GetInstanceIpWhiteListResponse) {
-	response = &GetInstanceIpWhiteListResponse{
+// CreateRenewTSDBInstanceResponse creates a response to parse from RenewTSDBInstance response
+func CreateRenewTSDBInstanceResponse() (response *RenewTSDBInstanceResponse) {
+	response = &RenewTSDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
