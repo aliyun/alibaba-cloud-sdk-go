@@ -32,6 +32,7 @@ type Result struct {
 	Message                  string              `json:"Message" xml:"Message"`
 	Email                    string              `json:"Email" xml:"Email"`
 	AccessLevel              int                 `json:"AccessLevel" xml:"AccessLevel"`
+	ReceiveTimestamp         string              `json:"ReceiveTimestamp" xml:"ReceiveTimestamp"`
 	Id                       int64               `json:"Id" xml:"Id"`
 	Result                   bool                `json:"Result" xml:"Result"`
 	Note                     string              `json:"Note" xml:"Note"`
@@ -47,6 +48,7 @@ type Result struct {
 	Title                    string              `json:"Title" xml:"Title"`
 	DemoProjectStatus        bool                `json:"DemoProjectStatus" xml:"DemoProjectStatus"`
 	IsEnableSmartCodeReview  bool                `json:"IsEnableSmartCodeReview" xml:"IsEnableSmartCodeReview"`
+	ClientTimestamp          string              `json:"ClientTimestamp" xml:"ClientTimestamp"`
 	Key                      string              `json:"Key" xml:"Key"`
 	SourceType               string              `json:"SourceType" xml:"SourceType"`
 	CreatedAt                string              `json:"CreatedAt" xml:"CreatedAt"`
@@ -61,6 +63,8 @@ type Result struct {
 	State                    string              `json:"State" xml:"State"`
 	MergeRequestEnableStatus bool                `json:"MergeRequestEnableStatus" xml:"MergeRequestEnableStatus"`
 	MergeStatus              string              `json:"MergeStatus" xml:"MergeStatus"`
+	InvokeTimestamp          string              `json:"InvokeTimestamp" xml:"InvokeTimestamp"`
+	RspTimestamp             string              `json:"RspTimestamp" xml:"RspTimestamp"`
 	EnableSslVerification    bool                `json:"EnableSslVerification" xml:"EnableSslVerification"`
 	AvatarUrl                string              `json:"AvatarUrl" xml:"AvatarUrl"`
 	BranchName               string              `json:"BranchName" xml:"BranchName"`
@@ -87,6 +91,7 @@ type Result struct {
 	BuildEvents              bool                `json:"BuildEvents" xml:"BuildEvents"`
 	SourceId                 int64               `json:"SourceId" xml:"SourceId"`
 	ParentNoteId             int64               `json:"ParentNoteId" xml:"ParentNoteId"`
+	FetchTimestamp           string              `json:"FetchTimestamp" xml:"FetchTimestamp"`
 	AheadCommitCount         int                 `json:"AheadCommitCount" xml:"AheadCommitCount"`
 	Description              string              `json:"Description" xml:"Description"`
 	ParentId                 int64               `json:"ParentId" xml:"ParentId"`
@@ -94,6 +99,7 @@ type Result struct {
 	ProtectedBranch          bool                `json:"ProtectedBranch" xml:"ProtectedBranch"`
 	ImportFromSubversion     bool                `json:"ImportFromSubversion" xml:"ImportFromSubversion"`
 	NoteEvents               bool                `json:"NoteEvents" xml:"NoteEvents"`
+	Body                     string              `json:"Body" xml:"Body"`
 	SecretToken              string              `json:"SecretToken" xml:"SecretToken"`
 	Closed                   int                 `json:"Closed" xml:"Closed"`
 	Url                      string              `json:"Url" xml:"Url"`

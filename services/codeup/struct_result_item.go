@@ -78,5 +78,6 @@ type ResultItem struct {
 	OrganizationSecurityScore OrganizationSecurityScore `json:"OrganizationSecurityScore" xml:"OrganizationSecurityScore"`
 	Author                    Author                    `json:"Author" xml:"Author"`
 	CommitInfo                CommitInfo                `json:"CommitInfo" xml:"CommitInfo"`
+	Inherited                 Inherited                 `json:"Inherited" xml:"Inherited"`
 	AssigneeList              []AssigneeListItem        `json:"AssigneeList" xml:"AssigneeList"`
 }

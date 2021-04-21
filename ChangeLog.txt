@@ -1,3 +1,7 @@
+2021-04-21 Version: v1.61.1042
+- Generated 2020-04-14 for `codeup`.
+- Add API to list repo members with group inherited info.
+
 2021-04-20 Version: v1.61.1041
 - Generated 2017-09-06 for `imm`.
 - Support Tag.
