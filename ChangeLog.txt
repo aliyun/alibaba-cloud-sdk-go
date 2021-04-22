@@ -1,3 +1,7 @@
+2021-04-22 Version: v1.61.1044
+- Generated 2017-09-12 for `Cbn`.
+- Support CEN latest Apis.
+
 2021-04-22 Version: v1.61.1043
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support GetPhysicalDatabase API.
