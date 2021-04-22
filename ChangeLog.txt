@@ -1,3 +1,7 @@
+2021-04-22 Version: v1.61.1046
+- Generated 2014-05-26 for `Ecs`.
+- Support NetworkInterface TrafficMode.
+
 2021-04-22 Version: v1.61.1045
 - Generated 2014-05-26 for `Ecs`.
 - AcceptInquiredSystemEvent adds Choice parameter.
