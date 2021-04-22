@@ -93,7 +93,7 @@ func CreateGetStructSyncJobAnalyzeResultRequest() (request *GetStructSyncJobAnal
 	request = &GetStructSyncJobAnalyzeResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetStructSyncJobAnalyzeResult", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetStructSyncJobAnalyzeResult", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

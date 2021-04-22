@@ -89,7 +89,7 @@ func CreateDisableUserRequest() (request *DisableUserRequest) {
 	request = &DisableUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "DisableUser", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "DisableUser", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

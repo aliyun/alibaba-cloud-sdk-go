@@ -90,7 +90,7 @@ func CreateGetMetaTableColumnRequest() (request *GetMetaTableColumnRequest) {
 	request = &GetMetaTableColumnRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetMetaTableColumn", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetMetaTableColumn", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

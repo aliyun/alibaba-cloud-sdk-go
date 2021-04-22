@@ -93,7 +93,7 @@ func CreateCreateFreeLockCorrectOrderRequest() (request *CreateFreeLockCorrectOr
 	request = &CreateFreeLockCorrectOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateFreeLockCorrectOrder", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateFreeLockCorrectOrder", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

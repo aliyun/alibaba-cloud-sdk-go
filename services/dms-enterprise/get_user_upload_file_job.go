@@ -90,7 +90,7 @@ func CreateGetUserUploadFileJobRequest() (request *GetUserUploadFileJobRequest) 
 	request = &GetUserUploadFileJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUserUploadFileJob", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUserUploadFileJob", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

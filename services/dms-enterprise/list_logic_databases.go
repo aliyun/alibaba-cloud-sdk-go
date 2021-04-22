@@ -92,7 +92,7 @@ func CreateListLogicDatabasesRequest() (request *ListLogicDatabasesRequest) {
 	request = &ListLogicDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicDatabases", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicDatabases", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

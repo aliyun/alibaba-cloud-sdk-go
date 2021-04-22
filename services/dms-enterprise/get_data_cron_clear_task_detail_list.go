@@ -93,7 +93,7 @@ func CreateGetDataCronClearTaskDetailListRequest() (request *GetDataCronClearTas
 	request = &GetDataCronClearTaskDetailListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCronClearTaskDetailList", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCronClearTaskDetailList", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateGetUserRequest() (request *GetUserRequest) {
 	request = &GetUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUser", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUser", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

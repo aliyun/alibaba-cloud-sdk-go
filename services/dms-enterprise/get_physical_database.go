@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetDatabase invokes the dms_enterprise.GetDatabase API synchronously
-func (client *Client) GetDatabase(request *GetDatabaseRequest) (response *GetDatabaseResponse, err error) {
-	response = CreateGetDatabaseResponse()
+// GetPhysicalDatabase invokes the dms_enterprise.GetPhysicalDatabase API synchronously
+func (client *Client) GetPhysicalDatabase(request *GetPhysicalDatabaseRequest) (response *GetPhysicalDatabaseResponse, err error) {
+	response = CreateGetPhysicalDatabaseResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetDatabaseWithChan invokes the dms_enterprise.GetDatabase API asynchronously
-func (client *Client) GetDatabaseWithChan(request *GetDatabaseRequest) (<-chan *GetDatabaseResponse, <-chan error) {
-	responseChan := make(chan *GetDatabaseResponse, 1)
+// GetPhysicalDatabaseWithChan invokes the dms_enterprise.GetPhysicalDatabase API asynchronously
+func (client *Client) GetPhysicalDatabaseWithChan(request *GetPhysicalDatabaseRequest) (<-chan *GetPhysicalDatabaseResponse, <-chan error) {
+	responseChan := make(chan *GetPhysicalDatabaseResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetDatabase(request)
+		response, err := client.GetPhysicalDatabase(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetDatabaseWithChan(request *GetDatabaseRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// GetDatabaseWithCallback invokes the dms_enterprise.GetDatabase API asynchronously
-func (client *Client) GetDatabaseWithCallback(request *GetDatabaseRequest, callback func(response *GetDatabaseResponse, err error)) <-chan int {
+// GetPhysicalDatabaseWithCallback invokes the dms_enterprise.GetPhysicalDatabase API asynchronously
+func (client *Client) GetPhysicalDatabaseWithCallback(request *GetPhysicalDatabaseRequest, callback func(response *GetPhysicalDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetDatabaseResponse
+		var response *GetPhysicalDatabaseResponse
 		var err error
 		defer close(result)
-		response, err = client.GetDatabase(request)
+		response, err = client.GetPhysicalDatabase(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,18 +68,15 @@ func (client *Client) GetDatabaseWithCallback(request *GetDatabaseRequest, callb
 	return result
 }
 
-// GetDatabaseRequest is the request struct for api GetDatabase
-type GetDatabaseRequest struct {
+// GetPhysicalDatabaseRequest is the request struct for api GetPhysicalDatabase
+type GetPhysicalDatabaseRequest struct {
 	*requests.RpcRequest
-	SchemaName string           `position:"Query" name:"SchemaName"`
-	Tid        requests.Integer `position:"Query" name:"Tid"`
-	Sid        string           `position:"Query" name:"Sid"`
-	Port       requests.Integer `position:"Query" name:"Port"`
-	Host       string           `position:"Query" name:"Host"`
+	DbId requests.Integer `position:"Query" name:"DbId"`
+	Tid  requests.Integer `position:"Query" name:"Tid"`
 }
 
-// GetDatabaseResponse is the response struct for api GetDatabase
-type GetDatabaseResponse struct {
+// GetPhysicalDatabaseResponse is the response struct for api GetPhysicalDatabase
+type GetPhysicalDatabaseResponse struct {
 	*responses.BaseResponse
 	RequestId    string   `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,19 +85,19 @@ type GetDatabaseResponse struct {
 	Database     Database `json:"Database" xml:"Database"`
 }
 
-// CreateGetDatabaseRequest creates a request to invoke GetDatabase API
-func CreateGetDatabaseRequest() (request *GetDatabaseRequest) {
-	request = &GetDatabaseRequest{
+// CreateGetPhysicalDatabaseRequest creates a request to invoke GetPhysicalDatabase API
+func CreateGetPhysicalDatabaseRequest() (request *GetPhysicalDatabaseRequest) {
+	request = &GetPhysicalDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDatabase", "dms-enterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetPhysicalDatabase", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetDatabaseResponse creates a response to parse from GetDatabase response
-func CreateGetDatabaseResponse() (response *GetDatabaseResponse) {
-	response = &GetDatabaseResponse{
+// CreateGetPhysicalDatabaseResponse creates a response to parse from GetPhysicalDatabase response
+func CreateGetPhysicalDatabaseResponse() (response *GetPhysicalDatabaseResponse) {
+	response = &GetPhysicalDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

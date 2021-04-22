@@ -90,7 +90,7 @@ func CreateGetTableDBTopologyRequest() (request *GetTableDBTopologyRequest) {
 	request = &GetTableDBTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetTableDBTopology", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetTableDBTopology", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

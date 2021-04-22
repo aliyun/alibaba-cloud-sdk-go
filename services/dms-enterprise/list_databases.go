@@ -93,7 +93,7 @@ func CreateListDatabasesRequest() (request *ListDatabasesRequest) {
 	request = &ListDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDatabases", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDatabases", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

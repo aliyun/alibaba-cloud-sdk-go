@@ -89,7 +89,7 @@ func CreateGetUserActiveTenantRequest() (request *GetUserActiveTenantRequest) {
 	request = &GetUserActiveTenantRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUserActiveTenant", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUserActiveTenant", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

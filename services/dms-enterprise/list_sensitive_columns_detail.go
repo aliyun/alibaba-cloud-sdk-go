@@ -92,7 +92,7 @@ func CreateListSensitiveColumnsDetailRequest() (request *ListSensitiveColumnsDet
 	request = &ListSensitiveColumnsDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

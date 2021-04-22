@@ -93,7 +93,7 @@ func CreateCreateDataImportOrderRequest() (request *CreateDataImportOrderRequest
 	request = &CreateDataImportOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateDataImportOrder", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateDataImportOrder", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

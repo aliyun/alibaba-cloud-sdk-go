@@ -95,7 +95,7 @@ func CreateListLogicTablesRequest() (request *ListLogicTablesRequest) {
 	request = &ListLogicTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicTables", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicTables", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

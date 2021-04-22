@@ -90,7 +90,7 @@ func CreateListDDLPublishRecordsRequest() (request *ListDDLPublishRecordsRequest
 	request = &ListDDLPublishRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDDLPublishRecords", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDDLPublishRecords", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

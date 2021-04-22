@@ -90,7 +90,7 @@ func CreateSyncInstanceMetaRequest() (request *SyncInstanceMetaRequest) {
 	request = &SyncInstanceMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncInstanceMeta", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncInstanceMeta", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

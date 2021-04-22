@@ -98,7 +98,7 @@ func CreateListUserPermissionsRequest() (request *ListUserPermissionsRequest) {
 	request = &ListUserPermissionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUserPermissions", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUserPermissions", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

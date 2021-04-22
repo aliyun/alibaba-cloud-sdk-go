@@ -94,7 +94,7 @@ func CreateCreatePublishGroupTaskRequest() (request *CreatePublishGroupTaskReque
 	request = &CreatePublishGroupTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

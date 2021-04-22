@@ -91,7 +91,7 @@ func CreateExecuteDataCorrectRequest() (request *ExecuteDataCorrectRequest) {
 	request = &ExecuteDataCorrectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

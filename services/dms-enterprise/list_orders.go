@@ -99,7 +99,7 @@ func CreateListOrdersRequest() (request *ListOrdersRequest) {
 	request = &ListOrdersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListOrders", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListOrders", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

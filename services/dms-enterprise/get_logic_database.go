@@ -90,7 +90,7 @@ func CreateGetLogicDatabaseRequest() (request *GetLogicDatabaseRequest) {
 	request = &GetLogicDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetLogicDatabase", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetLogicDatabase", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

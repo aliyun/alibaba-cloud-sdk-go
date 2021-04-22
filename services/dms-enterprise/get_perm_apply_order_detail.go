@@ -90,7 +90,7 @@ func CreateGetPermApplyOrderDetailRequest() (request *GetPermApplyOrderDetailReq
 	request = &GetPermApplyOrderDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetPermApplyOrderDetail", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetPermApplyOrderDetail", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateExecuteScriptRequest() (request *ExecuteScriptRequest) {
 	request = &ExecuteScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteScript", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteScript", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

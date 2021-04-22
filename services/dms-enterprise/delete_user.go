@@ -89,7 +89,7 @@ func CreateDeleteUserRequest() (request *DeleteUserRequest) {
 	request = &DeleteUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "DeleteUser", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "DeleteUser", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

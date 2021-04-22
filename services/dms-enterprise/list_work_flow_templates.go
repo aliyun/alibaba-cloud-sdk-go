@@ -90,7 +90,7 @@ func CreateListWorkFlowTemplatesRequest() (request *ListWorkFlowTemplatesRequest
 	request = &ListWorkFlowTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListWorkFlowTemplates", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListWorkFlowTemplates", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

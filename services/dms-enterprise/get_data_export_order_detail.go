@@ -90,7 +90,7 @@ func CreateGetDataExportOrderDetailRequest() (request *GetDataExportOrderDetailR
 	request = &GetDataExportOrderDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataExportOrderDetail", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataExportOrderDetail", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }

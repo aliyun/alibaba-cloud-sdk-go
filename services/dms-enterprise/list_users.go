@@ -95,7 +95,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUsers", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUsers", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }
