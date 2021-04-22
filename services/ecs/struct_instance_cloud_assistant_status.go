@@ -24,4 +24,5 @@ type InstanceCloudAssistantStatus struct {
 	InvocationCount       int64  `json:"InvocationCount" xml:"InvocationCount"`
 	ActiveTaskCount       int64  `json:"ActiveTaskCount" xml:"ActiveTaskCount"`
 	LastInvokedTime       string `json:"LastInvokedTime" xml:"LastInvokedTime"`
+	LastHeartbeatTime     string `json:"LastHeartbeatTime" xml:"LastHeartbeatTime"`
 }

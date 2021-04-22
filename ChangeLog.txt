@@ -1,3 +1,8 @@
+2021-04-22 Version: v1.61.1045
+- Generated 2014-05-26 for `Ecs`.
+- AcceptInquiredSystemEvent adds Choice parameter.
+- DescribeInstanceHistoryEvents supports multiple resource types.
+
 2021-04-22 Version: v1.61.1044
 - Generated 2017-09-12 for `Cbn`.
 - Support CEN latest Apis.
