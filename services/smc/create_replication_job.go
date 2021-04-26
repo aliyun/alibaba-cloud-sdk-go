@@ -76,6 +76,7 @@ type CreateReplicationJobRequest struct {
 	SystemDiskSize         requests.Integer                      `position:"Query" name:"SystemDiskSize"`
 	Tag                    *[]CreateReplicationJobTag            `position:"Query" name:"Tag"  type:"Repeated"`
 	NetMode                requests.Integer                      `position:"Query" name:"NetMode"`
+	LicenseType            string                                `position:"Query" name:"LicenseType"`
 	ContainerNamespace     string                                `position:"Query" name:"ContainerNamespace"`
 	LaunchTemplateId       string                                `position:"Query" name:"LaunchTemplateId"`
 	ValidTime              string                                `position:"Query" name:"ValidTime"`

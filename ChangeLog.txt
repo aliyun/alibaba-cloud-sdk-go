@@ -1,3 +1,7 @@
+2021-04-26 Version: v1.61.1047
+- Generated 2019-06-01 for `smc`.
+
+
 2021-04-22 Version: v1.61.1046
 - Generated 2014-05-26 for `Ecs`.
 - Support NetworkInterface TrafficMode.

@@ -52,6 +52,7 @@ type ReplicationJob struct {
 	ContainerNamespace     string                                   `json:"ContainerNamespace" xml:"ContainerNamespace"`
 	ContainerRepository    string                                   `json:"ContainerRepository" xml:"ContainerRepository"`
 	ContainerTag           string                                   `json:"ContainerTag" xml:"ContainerTag"`
+	LicenseType            string                                   `json:"LicenseType" xml:"LicenseType"`
 	SystemDiskParts        SystemDiskPartsInDescribeReplicationJobs `json:"SystemDiskParts" xml:"SystemDiskParts"`
 	DataDisks              DataDisksInDescribeReplicationJobs       `json:"DataDisks" xml:"DataDisks"`
 	ReplicationJobRuns     ReplicationJobRuns                       `json:"ReplicationJobRuns" xml:"ReplicationJobRuns"`
