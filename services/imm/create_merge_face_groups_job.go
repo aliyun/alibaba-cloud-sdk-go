@@ -73,6 +73,7 @@ type CreateMergeFaceGroupsJobRequest struct {
 	*requests.RpcRequest
 	Project         string `position:"Query" name:"Project"`
 	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
+	CustomMessage   string `position:"Query" name:"CustomMessage"`
 	GroupIdFrom     string `position:"Query" name:"GroupIdFrom"`
 	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
 	GroupIdTo       string `position:"Query" name:"GroupIdTo"`
@@ -82,12 +83,12 @@ type CreateMergeFaceGroupsJobRequest struct {
 // CreateMergeFaceGroupsJobResponse is the response struct for api CreateMergeFaceGroupsJob
 type CreateMergeFaceGroupsJobResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	JobId       string `json:"JobId" xml:"JobId"`
-	SetId       string `json:"SetId" xml:"SetId"`
-	JobType     string `json:"JobType" xml:"JobType"`
-	GroupIdTo   string `json:"GroupIdTo" xml:"GroupIdTo"`
 	GroupIdFrom string `json:"GroupIdFrom" xml:"GroupIdFrom"`
+	JobType     string `json:"JobType" xml:"JobType"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	SetId       string `json:"SetId" xml:"SetId"`
+	GroupIdTo   string `json:"GroupIdTo" xml:"GroupIdTo"`
+	JobId       string `json:"JobId" xml:"JobId"`
 }
 
 // CreateCreateMergeFaceGroupsJobRequest creates a request to invoke CreateMergeFaceGroupsJob API
