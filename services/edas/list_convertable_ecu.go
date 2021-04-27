@@ -77,10 +77,10 @@ type ListConvertableEcuRequest struct {
 // ListConvertableEcuResponse is the response struct for api ListConvertableEcu
 type ListConvertableEcuResponse struct {
 	*responses.BaseResponse
-	Code         int          `json:"Code" xml:"Code"`
-	Message      string       `json:"Message" xml:"Message"`
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	InstanceList InstanceList `json:"InstanceList" xml:"InstanceList"`
+	Code         int                              `json:"Code" xml:"Code"`
+	Message      string                           `json:"Message" xml:"Message"`
+	RequestId    string                           `json:"RequestId" xml:"RequestId"`
+	InstanceList InstanceListInListConvertableEcu `json:"InstanceList" xml:"InstanceList"`
 }
 
 // CreateListConvertableEcuRequest creates a request to invoke ListConvertableEcu API

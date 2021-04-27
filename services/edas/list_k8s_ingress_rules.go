@@ -71,6 +71,7 @@ func (client *Client) ListK8sIngressRulesWithCallback(request *ListK8sIngressRul
 // ListK8sIngressRulesRequest is the request struct for api ListK8sIngressRules
 type ListK8sIngressRulesRequest struct {
 	*requests.RoaRequest
+	Condition string `position:"Query" name:"Condition"`
 	Namespace string `position:"Query" name:"Namespace"`
 	ClusterId string `position:"Query" name:"ClusterId"`
 }
@@ -78,11 +79,10 @@ type ListK8sIngressRulesRequest struct {
 // ListK8sIngressRulesResponse is the response struct for api ListK8sIngressRules
 type ListK8sIngressRulesResponse struct {
 	*responses.BaseResponse
-	Code           int                  `json:"Code" xml:"Code"`
-	Message        string               `json:"Message" xml:"Message"`
-	RequestId      string               `json:"RequestId" xml:"RequestId"`
-	IngressConfigs []IngressConfigsItem `json:"IngressConfigs" xml:"IngressConfigs"`
-	Data           []DataItem           `json:"Data" xml:"Data"`
+	Code      int        `json:"Code" xml:"Code"`
+	Message   string     `json:"Message" xml:"Message"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateListK8sIngressRulesRequest creates a request to invoke ListK8sIngressRules API

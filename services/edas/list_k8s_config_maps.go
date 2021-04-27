@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListK8sSecrets invokes the edas.ListK8sSecrets API synchronously
-func (client *Client) ListK8sSecrets(request *ListK8sSecretsRequest) (response *ListK8sSecretsResponse, err error) {
-	response = CreateListK8sSecretsResponse()
+// ListK8sConfigMaps invokes the edas.ListK8sConfigMaps API synchronously
+func (client *Client) ListK8sConfigMaps(request *ListK8sConfigMapsRequest) (response *ListK8sConfigMapsResponse, err error) {
+	response = CreateListK8sConfigMapsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListK8sSecretsWithChan invokes the edas.ListK8sSecrets API asynchronously
-func (client *Client) ListK8sSecretsWithChan(request *ListK8sSecretsRequest) (<-chan *ListK8sSecretsResponse, <-chan error) {
-	responseChan := make(chan *ListK8sSecretsResponse, 1)
+// ListK8sConfigMapsWithChan invokes the edas.ListK8sConfigMaps API asynchronously
+func (client *Client) ListK8sConfigMapsWithChan(request *ListK8sConfigMapsRequest) (<-chan *ListK8sConfigMapsResponse, <-chan error) {
+	responseChan := make(chan *ListK8sConfigMapsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListK8sSecrets(request)
+		response, err := client.ListK8sConfigMaps(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListK8sSecretsWithChan(request *ListK8sSecretsRequest) (<-
 	return responseChan, errChan
 }
 
-// ListK8sSecretsWithCallback invokes the edas.ListK8sSecrets API asynchronously
-func (client *Client) ListK8sSecretsWithCallback(request *ListK8sSecretsRequest, callback func(response *ListK8sSecretsResponse, err error)) <-chan int {
+// ListK8sConfigMapsWithCallback invokes the edas.ListK8sConfigMaps API asynchronously
+func (client *Client) ListK8sConfigMapsWithCallback(request *ListK8sConfigMapsRequest, callback func(response *ListK8sConfigMapsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListK8sSecretsResponse
+		var response *ListK8sConfigMapsResponse
 		var err error
 		defer close(result)
-		response, err = client.ListK8sSecrets(request)
+		response, err = client.ListK8sConfigMaps(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) ListK8sSecretsWithCallback(request *ListK8sSecretsRequest,
 	return result
 }
 
-// ListK8sSecretsRequest is the request struct for api ListK8sSecrets
-type ListK8sSecretsRequest struct {
+// ListK8sConfigMapsRequest is the request struct for api ListK8sConfigMaps
+type ListK8sConfigMapsRequest struct {
 	*requests.RoaRequest
 	Condition       string           `position:"Query" name:"Condition"`
 	PageNo          requests.Integer `position:"Query" name:"PageNo"`
@@ -79,29 +79,28 @@ type ListK8sSecretsRequest struct {
 	ShowRelatedApps requests.Boolean `position:"Query" name:"ShowRelatedApps"`
 }
 
-// ListK8sSecretsResponse is the response struct for api ListK8sSecrets
-type ListK8sSecretsResponse struct {
+// ListK8sConfigMapsResponse is the response struct for api ListK8sConfigMaps
+type ListK8sConfigMapsResponse struct {
 	*responses.BaseResponse
-	Code       int              `json:"Code" xml:"Code"`
-	Message    string           `json:"Message" xml:"Message"`
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	K8sSecrets []K8sSecretsItem `json:"K8sSecrets" xml:"K8sSecrets"`
-	Result     []ResultItem     `json:"Result" xml:"Result"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
+	Code      int          `json:"Code" xml:"Code"`
+	Message   string       `json:"Message" xml:"Message"`
+	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 
-// CreateListK8sSecretsRequest creates a request to invoke ListK8sSecrets API
-func CreateListK8sSecretsRequest() (request *ListK8sSecretsRequest) {
-	request = &ListK8sSecretsRequest{
+// CreateListK8sConfigMapsRequest creates a request to invoke ListK8sConfigMaps API
+func CreateListK8sConfigMapsRequest() (request *ListK8sConfigMapsRequest) {
+	request = &ListK8sConfigMapsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sSecrets", "/pop/v5/k8s/acs/k8s_secret", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sConfigMaps", "/pop/v5/k8s/acs/k8s_config_map", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }
 
-// CreateListK8sSecretsResponse creates a response to parse from ListK8sSecrets response
-func CreateListK8sSecretsResponse() (response *ListK8sSecretsResponse) {
-	response = &ListK8sSecretsResponse{
+// CreateListK8sConfigMapsResponse creates a response to parse from ListK8sConfigMaps response
+func CreateListK8sConfigMapsResponse() (response *ListK8sConfigMapsResponse) {
+	response = &ListK8sConfigMapsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -76,6 +76,7 @@ type InsertK8sApplicationRequest struct {
 	Envs                   string           `position:"Query" name:"Envs"`
 	RequestsMem            requests.Integer `position:"Query" name:"RequestsMem"`
 	StorageType            string           `position:"Query" name:"StorageType"`
+	ConfigMountDescs       string           `position:"Query" name:"ConfigMountDescs"`
 	AppName                string           `position:"Query" name:"AppName"`
 	RequestsmCpu           requests.Integer `position:"Query" name:"RequestsmCpu"`
 	DeployAcrossZones      string           `position:"Query" name:"DeployAcrossZones"`
@@ -90,11 +91,13 @@ type InsertK8sApplicationRequest struct {
 	RepoId                 string           `position:"Query" name:"RepoId"`
 	InternetTargetPort     requests.Integer `position:"Query" name:"InternetTargetPort"`
 	WebContainer           string           `position:"Query" name:"WebContainer"`
+	EnableAsm              requests.Boolean `position:"Query" name:"EnableAsm"`
 	EnableAhas             requests.Boolean `position:"Query" name:"EnableAhas"`
 	SlsConfigs             string           `position:"Query" name:"SlsConfigs"`
 	CommandArgs            string           `position:"Query" name:"CommandArgs"`
 	Readiness              string           `position:"Query" name:"Readiness"`
 	Liveness               string           `position:"Query" name:"Liveness"`
+	CsClusterId            string           `position:"Query" name:"CsClusterId"`
 	InternetSlbPort        requests.Integer `position:"Query" name:"InternetSlbPort"`
 	PackageVersion         string           `position:"Query" name:"PackageVersion"`
 	Timeout                requests.Integer `position:"Query" name:"Timeout"`

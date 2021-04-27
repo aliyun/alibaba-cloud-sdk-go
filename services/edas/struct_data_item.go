@@ -22,7 +22,9 @@ type DataItem struct {
 	LabelAdviceId int64              `json:"LabelAdviceId" xml:"LabelAdviceId"`
 	RegionName    string             `json:"RegionName" xml:"RegionName"`
 	PointcutId    int64              `json:"PointcutId" xml:"PointcutId"`
+	Key           string             `json:"Key" xml:"Key"`
 	AppId         string             `json:"AppId" xml:"AppId"`
+	Value         string             `json:"Value" xml:"Value"`
 	RegionId      string             `json:"RegionId" xml:"RegionId"`
 	LabelType     string             `json:"LabelType" xml:"LabelType"`
 	ClusterName   string             `json:"ClusterName" xml:"ClusterName"`

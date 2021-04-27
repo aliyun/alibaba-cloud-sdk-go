@@ -1,3 +1,8 @@
+2021-04-27 Version: v1.61.1049
+- Generated 2017-08-01 for `Edas`.
+- Add API GetAppDeployment.
+- Modify API DescribeAppInstanceList.
+
 2021-04-27 Version: v1.61.1048
 - Generated 2017-09-06 for `imm`.
 - Add CustomMessage to CreateMergeFaceGroupsJob.

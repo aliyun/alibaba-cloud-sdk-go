@@ -79,9 +79,8 @@ type DeleteK8sIngressRuleRequest struct {
 // DeleteK8sIngressRuleResponse is the response struct for api DeleteK8sIngressRule
 type DeleteK8sIngressRuleResponse struct {
 	*responses.BaseResponse
-	Code           int                  `json:"Code" xml:"Code"`
-	Message        string               `json:"Message" xml:"Message"`
-	ChangeOrderIds []ChangeOrderIdsItem `json:"ChangeOrderIds" xml:"ChangeOrderIds"`
+	Code    int    `json:"Code" xml:"Code"`
+	Message string `json:"Message" xml:"Message"`
 }
 
 // CreateDeleteK8sIngressRuleRequest creates a request to invoke DeleteK8sIngressRule API

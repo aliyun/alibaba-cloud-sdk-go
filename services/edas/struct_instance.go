@@ -17,18 +17,26 @@ package edas
 
 // Instance is a nested struct in edas response
 type Instance struct {
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName string `json:"InstanceName" xml:"InstanceName"`
-	EcuId        string `json:"EcuId" xml:"EcuId"`
-	VpcId        string `json:"VpcId" xml:"VpcId"`
-	VpcName      string `json:"VpcName" xml:"VpcName"`
 	Expired      bool   `json:"Expired" xml:"Expired"`
-	Status       string `json:"Status" xml:"Status"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
-	Cpu          int    `json:"Cpu" xml:"Cpu"`
-	Mem          int    `json:"Mem" xml:"Mem"`
 	PublicIp     string `json:"PublicIp" xml:"PublicIp"`
-	InnerIp      string `json:"InnerIp" xml:"InnerIp"`
+	VpcName      string `json:"VpcName" xml:"VpcName"`
+	Version      string `json:"Version" xml:"Version"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	GroupName    string `json:"GroupName" xml:"GroupName"`
+	Mem          int    `json:"Mem" xml:"Mem"`
+	NodeLabels   string `json:"NodeLabels" xml:"NodeLabels"`
+	EcuId        string `json:"EcuId" xml:"EcuId"`
+	AppId        string `json:"AppId" xml:"AppId"`
+	NodeName     string `json:"NodeName" xml:"NodeName"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
 	PrivateIp    string `json:"PrivateIp" xml:"PrivateIp"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
 	Eip          string `json:"Eip" xml:"Eip"`
+	GroupId      string `json:"GroupId" xml:"GroupId"`
+	InnerIp      string `json:"InnerIp" xml:"InnerIp"`
+	Canary       bool   `json:"Canary" xml:"Canary"`
+	VpcId        string `json:"VpcId" xml:"VpcId"`
+	Status       string `json:"Status" xml:"Status"`
+	Cpu          int    `json:"Cpu" xml:"Cpu"`
+	PodRaw       string `json:"PodRaw" xml:"PodRaw"`
 }

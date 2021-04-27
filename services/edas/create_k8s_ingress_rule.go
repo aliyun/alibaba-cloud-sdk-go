@@ -74,16 +74,14 @@ type CreateK8sIngressRuleRequest struct {
 	Namespace   string `position:"Query" name:"Namespace"`
 	Name        string `position:"Query" name:"Name"`
 	IngressConf string `position:"Query" name:"IngressConf"`
-	Rules       string `position:"Query" name:"Rules"`
 	ClusterId   string `position:"Query" name:"ClusterId"`
 }
 
 // CreateK8sIngressRuleResponse is the response struct for api CreateK8sIngressRule
 type CreateK8sIngressRuleResponse struct {
 	*responses.BaseResponse
-	Code           int                  `json:"Code" xml:"Code"`
-	Message        string               `json:"Message" xml:"Message"`
-	ChangeOrderIds []ChangeOrderIdsItem `json:"ChangeOrderIds" xml:"ChangeOrderIds"`
+	Code    int    `json:"Code" xml:"Code"`
+	Message string `json:"Message" xml:"Message"`
 }
 
 // CreateCreateK8sIngressRuleRequest creates a request to invoke CreateK8sIngressRule API
