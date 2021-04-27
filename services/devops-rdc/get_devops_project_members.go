@@ -71,18 +71,22 @@ func (client *Client) GetDevopsProjectMembersWithCallback(request *GetDevopsProj
 // GetDevopsProjectMembersRequest is the request struct for api GetDevopsProjectMembers
 type GetDevopsProjectMembersRequest struct {
 	*requests.RpcRequest
-	ProjectId string `position:"Body" name:"ProjectId"`
-	OrgId     string `position:"Body" name:"OrgId"`
+	PageSize  requests.Integer `position:"Body" name:"PageSize"`
+	ProjectId string           `position:"Body" name:"ProjectId"`
+	OrgId     string           `position:"Body" name:"OrgId"`
+	PageToken string           `position:"Body" name:"PageToken"`
 }
 
 // GetDevopsProjectMembersResponse is the response struct for api GetDevopsProjectMembers
 type GetDevopsProjectMembersResponse struct {
 	*responses.BaseResponse
-	Successful bool     `json:"Successful" xml:"Successful"`
-	ErrorCode  string   `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMsg   string   `json:"ErrorMsg" xml:"ErrorMsg"`
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	Object     []Member `json:"Object" xml:"Object"`
+	Successful    bool     `json:"Successful" xml:"Successful"`
+	ErrorCode     string   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMsg      string   `json:"ErrorMsg" xml:"ErrorMsg"`
+	RequestId     string   `json:"RequestId" xml:"RequestId"`
+	Total         int      `json:"Total" xml:"Total"`
+	NextPageToken string   `json:"NextPageToken" xml:"NextPageToken"`
+	Object        []Member `json:"Object" xml:"Object"`
 }
 
 // CreateGetDevopsProjectMembersRequest creates a request to invoke GetDevopsProjectMembers API
