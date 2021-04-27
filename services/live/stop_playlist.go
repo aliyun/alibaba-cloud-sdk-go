@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteCaster invokes the live.DeleteCaster API synchronously
-func (client *Client) DeleteCaster(request *DeleteCasterRequest) (response *DeleteCasterResponse, err error) {
-	response = CreateDeleteCasterResponse()
+// StopPlaylist invokes the live.StopPlaylist API synchronously
+func (client *Client) StopPlaylist(request *StopPlaylistRequest) (response *StopPlaylistResponse, err error) {
+	response = CreateStopPlaylistResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteCasterWithChan invokes the live.DeleteCaster API asynchronously
-func (client *Client) DeleteCasterWithChan(request *DeleteCasterRequest) (<-chan *DeleteCasterResponse, <-chan error) {
-	responseChan := make(chan *DeleteCasterResponse, 1)
+// StopPlaylistWithChan invokes the live.StopPlaylist API asynchronously
+func (client *Client) StopPlaylistWithChan(request *StopPlaylistRequest) (<-chan *StopPlaylistResponse, <-chan error) {
+	responseChan := make(chan *StopPlaylistResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteCaster(request)
+		response, err := client.StopPlaylist(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteCasterWithChan(request *DeleteCasterRequest) (<-chan
 	return responseChan, errChan
 }
 
-// DeleteCasterWithCallback invokes the live.DeleteCaster API asynchronously
-func (client *Client) DeleteCasterWithCallback(request *DeleteCasterRequest, callback func(response *DeleteCasterResponse, err error)) <-chan int {
+// StopPlaylistWithCallback invokes the live.StopPlaylist API asynchronously
+func (client *Client) StopPlaylistWithCallback(request *StopPlaylistRequest, callback func(response *StopPlaylistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteCasterResponse
+		var response *StopPlaylistResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteCaster(request)
+		response, err = client.StopPlaylist(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) DeleteCasterWithCallback(request *DeleteCasterRequest, cal
 	return result
 }
 
-// DeleteCasterRequest is the request struct for api DeleteCaster
-type DeleteCasterRequest struct {
+// StopPlaylistRequest is the request struct for api StopPlaylist
+type StopPlaylistRequest struct {
 	*requests.RpcRequest
-	CasterId string           `position:"Query" name:"CasterId"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	ProgramId string           `position:"Query" name:"ProgramId"`
+	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DeleteCasterResponse is the response struct for api DeleteCaster
-type DeleteCasterResponse struct {
+// StopPlaylistResponse is the response struct for api StopPlaylist
+type StopPlaylistResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	CasterId  string `json:"CasterId" xml:"CasterId"`
+	ProgramId string `json:"ProgramId" xml:"ProgramId"`
 }
 
-// CreateDeleteCasterRequest creates a request to invoke DeleteCaster API
-func CreateDeleteCasterRequest() (request *DeleteCasterRequest) {
-	request = &DeleteCasterRequest{
+// CreateStopPlaylistRequest creates a request to invoke StopPlaylist API
+func CreateStopPlaylistRequest() (request *StopPlaylistRequest) {
+	request = &StopPlaylistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCaster", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "StopPlaylist", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteCasterResponse creates a response to parse from DeleteCaster response
-func CreateDeleteCasterResponse() (response *DeleteCasterResponse) {
-	response = &DeleteCasterResponse{
+// CreateStopPlaylistResponse creates a response to parse from StopPlaylist response
+func CreateStopPlaylistResponse() (response *StopPlaylistResponse) {
+	response = &StopPlaylistResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

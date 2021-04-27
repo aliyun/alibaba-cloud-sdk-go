@@ -17,14 +17,20 @@ package live
 
 // CertInfo is a nested struct in live response
 type CertInfo struct {
-	DomainName     string `json:"DomainName" xml:"DomainName"`
 	CertName       string `json:"CertName" xml:"CertName"`
-	CertDomainName string `json:"CertDomainName" xml:"CertDomainName"`
-	CertExpireTime string `json:"CertExpireTime" xml:"CertExpireTime"`
-	CertLife       string `json:"CertLife" xml:"CertLife"`
 	CertOrg        string `json:"CertOrg" xml:"CertOrg"`
+	ServCert       string `json:"ServCert" xml:"ServCert"`
+	CertExpireTime string `json:"CertExpireTime" xml:"CertExpireTime"`
+	PrivateKey     string `json:"PrivateKey" xml:"PrivateKey"`
+	DomainName     string `json:"DomainName" xml:"DomainName"`
 	CertType       string `json:"CertType" xml:"CertType"`
+	Ask            string `json:"Ask" xml:"Ask"`
 	SSLProtocol    string `json:"SSLProtocol" xml:"SSLProtocol"`
-	Status         string `json:"Status" xml:"Status"`
 	SSLPub         string `json:"SSLPub" xml:"SSLPub"`
+	Passphrase     string `json:"Passphrase" xml:"Passphrase"`
+	Status         string `json:"Status" xml:"Status"`
+	Description    string `json:"Description" xml:"Description"`
+	CertDomainName string `json:"CertDomainName" xml:"CertDomainName"`
+	CertLife       string `json:"CertLife" xml:"CertLife"`
+	CertId         string `json:"CertId" xml:"CertId"`
 }

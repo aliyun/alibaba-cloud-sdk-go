@@ -71,10 +71,10 @@ func (client *Client) UpdateLiveDetectNotifyConfigWithCallback(request *UpdateLi
 // UpdateLiveDetectNotifyConfigRequest is the request struct for api UpdateLiveDetectNotifyConfig
 type UpdateLiveDetectNotifyConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	NotifyUrl     string           `position:"Query" name:"NotifyUrl"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // UpdateLiveDetectNotifyConfigResponse is the response struct for api UpdateLiveDetectNotifyConfig

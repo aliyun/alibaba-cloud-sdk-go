@@ -17,9 +17,12 @@ package live
 
 // StreamInfo is a nested struct in live response
 type StreamInfo struct {
-	VideoFormat     string `json:"VideoFormat" xml:"VideoFormat"`
-	TranscodeConfig string `json:"TranscodeConfig" xml:"TranscodeConfig"`
-	OutputStreamUrl string `json:"OutputStreamUrl" xml:"OutputStreamUrl"`
-	StreamName      string `json:"StreamName" xml:"StreamName"`
-	Infos           []Info `json:"Infos" xml:"Infos"`
+	VideoFormat     string  `json:"VideoFormat" xml:"VideoFormat"`
+	TranscodeConfig string  `json:"TranscodeConfig" xml:"TranscodeConfig"`
+	DomainName      string  `json:"DomainName" xml:"DomainName"`
+	OutputStreamUrl string  `json:"OutputStreamUrl" xml:"OutputStreamUrl"`
+	AppName         string  `json:"AppName" xml:"AppName"`
+	StreamName      string  `json:"StreamName" xml:"StreamName"`
+	Infos           []Info  `json:"Infos" xml:"Infos"`
+	Streams         Streams `json:"Streams" xml:"Streams"`
 }

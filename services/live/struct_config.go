@@ -17,6 +17,10 @@ package live
 
 // Config is a nested struct in live response
 type Config struct {
-	AppUid string `json:"AppUid" xml:"AppUid"`
-	Data   string `json:"Data" xml:"Data"`
+	Vision     int    `json:"Vision" xml:"Vision"`
+	Data       string `json:"Data" xml:"Data"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	AppUid     string `json:"AppUid" xml:"AppUid"`
+	AppName    string `json:"AppName" xml:"AppName"`
+	StreamName string `json:"StreamName" xml:"StreamName"`
 }

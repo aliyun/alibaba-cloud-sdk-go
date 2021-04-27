@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteCaster invokes the live.DeleteCaster API synchronously
-func (client *Client) DeleteCaster(request *DeleteCasterRequest) (response *DeleteCasterResponse, err error) {
-	response = CreateDeleteCasterResponse()
+// DeleteStudioLayout invokes the live.DeleteStudioLayout API synchronously
+func (client *Client) DeleteStudioLayout(request *DeleteStudioLayoutRequest) (response *DeleteStudioLayoutResponse, err error) {
+	response = CreateDeleteStudioLayoutResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteCasterWithChan invokes the live.DeleteCaster API asynchronously
-func (client *Client) DeleteCasterWithChan(request *DeleteCasterRequest) (<-chan *DeleteCasterResponse, <-chan error) {
-	responseChan := make(chan *DeleteCasterResponse, 1)
+// DeleteStudioLayoutWithChan invokes the live.DeleteStudioLayout API asynchronously
+func (client *Client) DeleteStudioLayoutWithChan(request *DeleteStudioLayoutRequest) (<-chan *DeleteStudioLayoutResponse, <-chan error) {
+	responseChan := make(chan *DeleteStudioLayoutResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteCaster(request)
+		response, err := client.DeleteStudioLayout(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteCasterWithChan(request *DeleteCasterRequest) (<-chan
 	return responseChan, errChan
 }
 
-// DeleteCasterWithCallback invokes the live.DeleteCaster API asynchronously
-func (client *Client) DeleteCasterWithCallback(request *DeleteCasterRequest, callback func(response *DeleteCasterResponse, err error)) <-chan int {
+// DeleteStudioLayoutWithCallback invokes the live.DeleteStudioLayout API asynchronously
+func (client *Client) DeleteStudioLayoutWithCallback(request *DeleteStudioLayoutRequest, callback func(response *DeleteStudioLayoutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteCasterResponse
+		var response *DeleteStudioLayoutResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteCaster(request)
+		response, err = client.DeleteStudioLayout(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) DeleteCasterWithCallback(request *DeleteCasterRequest, cal
 	return result
 }
 
-// DeleteCasterRequest is the request struct for api DeleteCaster
-type DeleteCasterRequest struct {
+// DeleteStudioLayoutRequest is the request struct for api DeleteStudioLayout
+type DeleteStudioLayoutRequest struct {
 	*requests.RpcRequest
+	LayoutId string           `position:"Query" name:"LayoutId"`
 	CasterId string           `position:"Query" name:"CasterId"`
 	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DeleteCasterResponse is the response struct for api DeleteCaster
-type DeleteCasterResponse struct {
+// DeleteStudioLayoutResponse is the response struct for api DeleteStudioLayout
+type DeleteStudioLayoutResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	CasterId  string `json:"CasterId" xml:"CasterId"`
 }
 
-// CreateDeleteCasterRequest creates a request to invoke DeleteCaster API
-func CreateDeleteCasterRequest() (request *DeleteCasterRequest) {
-	request = &DeleteCasterRequest{
+// CreateDeleteStudioLayoutRequest creates a request to invoke DeleteStudioLayout API
+func CreateDeleteStudioLayoutRequest() (request *DeleteStudioLayoutRequest) {
+	request = &DeleteStudioLayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCaster", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteStudioLayout", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteCasterResponse creates a response to parse from DeleteCaster response
-func CreateDeleteCasterResponse() (response *DeleteCasterResponse) {
-	response = &DeleteCasterResponse{
+// CreateDeleteStudioLayoutResponse creates a response to parse from DeleteStudioLayout response
+func CreateDeleteStudioLayoutResponse() (response *DeleteStudioLayoutResponse) {
+	response = &DeleteStudioLayoutResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
