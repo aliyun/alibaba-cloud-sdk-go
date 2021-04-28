@@ -17,17 +17,14 @@ package ccc
 
 // User is a nested struct in ccc response
 type User struct {
-	StateDesc               string                 `json:"StateDesc" xml:"StateDesc"`
-	RamId                   string                 `json:"RamId" xml:"RamId"`
-	DisplayName             string                 `json:"DisplayName" xml:"DisplayName"`
-	Primary                 bool                   `json:"Primary" xml:"Primary"`
-	State                   string                 `json:"State" xml:"State"`
-	PrivateOutboundNumberId string                 `json:"PrivateOutboundNumberId" xml:"PrivateOutboundNumberId"`
-	UserId                  string                 `json:"UserId" xml:"UserId"`
-	InstanceId              string                 `json:"InstanceId" xml:"InstanceId"`
-	Dn                      string                 `json:"Dn" xml:"Dn"`
-	Phone                   string                 `json:"Phone" xml:"Phone"`
-	Detail                  Detail                 `json:"Detail" xml:"Detail"`
-	SkillLevels             SkillLevelsInFindUsers `json:"SkillLevels" xml:"SkillLevels"`
-	Roles                   RolesInFindUsers       `json:"Roles" xml:"Roles"`
+	WorkMode    string `json:"WorkMode" xml:"WorkMode"`
+	RoleId      string `json:"RoleId" xml:"RoleId"`
+	Mobile      string `json:"Mobile" xml:"Mobile"`
+	Email       string `json:"Email" xml:"Email"`
+	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
+	LoginName   string `json:"LoginName" xml:"LoginName"`
+	UserId      string `json:"UserId" xml:"UserId"`
+	Extension   string `json:"Extension" xml:"Extension"`
+	DisplayName string `json:"DisplayName" xml:"DisplayName"`
+	RoleName    string `json:"RoleName" xml:"RoleName"`
 }

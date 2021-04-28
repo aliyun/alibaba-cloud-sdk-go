@@ -71,25 +71,20 @@ func (client *Client) CreateSkillGroupWithCallback(request *CreateSkillGroupRequ
 // CreateSkillGroupRequest is the request struct for api CreateSkillGroup
 type CreateSkillGroupRequest struct {
 	*requests.RpcRequest
-	AllowPrivateOutboundNumber requests.Boolean `position:"Query" name:"AllowPrivateOutboundNumber"`
-	Description                string           `position:"Query" name:"Description"`
-	RoutingStrategy            string           `position:"Query" name:"RoutingStrategy"`
-	UserId                     *[]string        `position:"Query" name:"UserId"  type:"Repeated"`
-	SkillLevel                 *[]string        `position:"Query" name:"SkillLevel"  type:"Repeated"`
-	InstanceId                 string           `position:"Query" name:"InstanceId"`
-	OutboundPhoneNumberId      *[]string        `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
-	Name                       string           `position:"Query" name:"Name"`
+	Description string `position:"Query" name:"Description"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	DisplayName string `position:"Query" name:"DisplayName"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // CreateSkillGroupResponse is the response struct for api CreateSkillGroup
 type CreateSkillGroupResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	SkillGroupId   string `json:"SkillGroupId" xml:"SkillGroupId"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateCreateSkillGroupRequest creates a request to invoke CreateSkillGroup API
@@ -97,7 +92,7 @@ func CreateCreateSkillGroupRequest() (request *CreateSkillGroupRequest) {
 	request = &CreateSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "CreateSkillGroup", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CreateSkillGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

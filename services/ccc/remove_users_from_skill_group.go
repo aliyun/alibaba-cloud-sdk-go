@@ -71,19 +71,18 @@ func (client *Client) RemoveUsersFromSkillGroupWithCallback(request *RemoveUsers
 // RemoveUsersFromSkillGroupRequest is the request struct for api RemoveUsersFromSkillGroup
 type RemoveUsersFromSkillGroupRequest struct {
 	*requests.RpcRequest
-	UserId       *[]string `position:"Query" name:"UserId"  type:"Repeated"`
-	InstanceId   string    `position:"Query" name:"InstanceId"`
-	SkillGroupId string    `position:"Query" name:"SkillGroupId"`
+	UserIdList   string `position:"Query" name:"UserIdList"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
+	SkillGroupId string `position:"Query" name:"SkillGroupId"`
 }
 
 // RemoveUsersFromSkillGroupResponse is the response struct for api RemoveUsersFromSkillGroup
 type RemoveUsersFromSkillGroupResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRemoveUsersFromSkillGroupRequest creates a request to invoke RemoveUsersFromSkillGroup API
@@ -91,7 +90,7 @@ func CreateRemoveUsersFromSkillGroupRequest() (request *RemoveUsersFromSkillGrou
 	request = &RemoveUsersFromSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "RemoveUsersFromSkillGroup", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveUsersFromSkillGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

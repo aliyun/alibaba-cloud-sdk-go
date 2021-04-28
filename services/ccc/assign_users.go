@@ -71,21 +71,23 @@ func (client *Client) AssignUsersWithCallback(request *AssignUsersRequest, callb
 // AssignUsersRequest is the request struct for api AssignUsers
 type AssignUsersRequest struct {
 	*requests.RpcRequest
-	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
-	UserRamId    *[]string `position:"Query" name:"UserRamId"  type:"Repeated"`
-	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
-	InstanceId   string    `position:"Query" name:"InstanceId"`
-	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
+	RamIdList      string `position:"Query" name:"RamIdList"`
+	RoleId         string `position:"Query" name:"RoleId"`
+	WorkMode       string `position:"Query" name:"WorkMode"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	SkillLevelList string `position:"Query" name:"SkillLevelList"`
 }
 
 // AssignUsersResponse is the response struct for api AssignUsers
 type AssignUsersResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
+	Data           string `json:"Data" xml:"Data"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Sync           string `json:"Sync" xml:"Sync"`
+	WorkflowId     string `json:"WorkflowId" xml:"WorkflowId"`
 }
 
 // CreateAssignUsersRequest creates a request to invoke AssignUsers API
@@ -93,7 +95,7 @@ func CreateAssignUsersRequest() (request *AssignUsersRequest) {
 	request = &AssignUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "AssignUsers", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "AssignUsers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

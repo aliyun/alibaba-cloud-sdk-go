@@ -1,3 +1,7 @@
+2021-04-28 Version: v1.61.1052
+- Generated 2020-07-01 for `CCC`.
+- Export new API.
+
 2021-04-27 Version: v1.61.1051
 - Generated 2020-03-03 for `devops-rdc`.
 - GetProjectMember support pageSize.

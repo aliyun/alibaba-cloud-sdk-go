@@ -71,19 +71,20 @@ func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func
 // GetUserRequest is the request struct for api GetUser
 type GetUserRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
+	Extension  string `position:"Query" name:"Extension"`
 	UserId     string `position:"Query" name:"UserId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // GetUserResponse is the response struct for api GetUser
 type GetUserResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	User           User   `json:"User" xml:"User"`
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
+	RequestId      string   `json:"RequestId" xml:"RequestId"`
+	Params         []string `json:"Params" xml:"Params"`
+	Data           Data     `json:"Data" xml:"Data"`
 }
 
 // CreateGetUserRequest creates a request to invoke GetUser API
@@ -91,7 +92,7 @@ func CreateGetUserRequest() (request *GetUserRequest) {
 	request = &GetUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "GetUser", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetUser", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
