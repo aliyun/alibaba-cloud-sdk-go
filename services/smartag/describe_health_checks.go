@@ -71,24 +71,24 @@ func (client *Client) DescribeHealthChecksWithCallback(request *DescribeHealthCh
 // DescribeHealthChecksRequest is the request struct for api DescribeHealthChecks
 type DescribeHealthChecksRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	HcInstanceId         string           `position:"Query" name:"HcInstanceId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	HcInstanceId         string           `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	Name                 string           `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // DescribeHealthChecksResponse is the response struct for api DescribeHealthChecks
 type DescribeHealthChecksResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
 	HealthChecks HealthChecks `json:"HealthChecks" xml:"HealthChecks"`
 }
 

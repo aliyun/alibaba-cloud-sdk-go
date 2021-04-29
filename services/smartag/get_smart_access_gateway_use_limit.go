@@ -71,18 +71,18 @@ func (client *Client) GetSmartAccessGatewayUseLimitWithCallback(request *GetSmar
 // GetSmartAccessGatewayUseLimitRequest is the request struct for api GetSmartAccessGatewayUseLimit
 type GetSmartAccessGatewayUseLimitRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
 }
 
 // GetSmartAccessGatewayUseLimitResponse is the response struct for api GetSmartAccessGatewayUseLimit
 type GetSmartAccessGatewayUseLimitResponse struct {
 	*responses.BaseResponse
+	UsedAmount  int    `json:"UsedAmount" xml:"UsedAmount"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	TotalAmount int    `json:"TotalAmount" xml:"TotalAmount"`
-	UsedAmount  int    `json:"UsedAmount" xml:"UsedAmount"`
 }
 
 // CreateGetSmartAccessGatewayUseLimitRequest creates a request to invoke GetSmartAccessGatewayUseLimit API

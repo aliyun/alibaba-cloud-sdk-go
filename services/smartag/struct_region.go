@@ -18,6 +18,6 @@ package smartag
 // Region is a nested struct in smartag response
 type Region struct {
 	RegionId       string `json:"RegionId" xml:"RegionId"`
-	LocalName      string `json:"LocalName" xml:"LocalName"`
 	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	LocalName      string `json:"LocalName" xml:"LocalName"`
 }

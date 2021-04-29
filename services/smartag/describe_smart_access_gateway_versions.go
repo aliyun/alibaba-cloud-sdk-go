@@ -71,12 +71,13 @@ func (client *Client) DescribeSmartAccessGatewayVersionsWithCallback(request *De
 // DescribeSmartAccessGatewayVersionsRequest is the request struct for api DescribeSmartAccessGatewayVersions
 type DescribeSmartAccessGatewayVersionsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
-	SmartAGSn            string           `position:"Query" name:"SmartAGSn"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	VersionType          string           `position:"Query"`
+	SmartAGId            string           `position:"Query"`
+	SmartAGSn            string           `position:"Query"`
 }
 
 // DescribeSmartAccessGatewayVersionsResponse is the response struct for api DescribeSmartAccessGatewayVersions

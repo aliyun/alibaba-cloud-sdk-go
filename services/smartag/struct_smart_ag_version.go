@@ -18,7 +18,7 @@ package smartag
 // SmartAGVersion is a nested struct in smartag response
 type SmartAGVersion struct {
 	VersionCode string `json:"VersionCode" xml:"VersionCode"`
-	VersionName string `json:"VersionName" xml:"VersionName"`
-	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
 	Type        string `json:"Type" xml:"Type"`
+	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
+	VersionName string `json:"VersionName" xml:"VersionName"`
 }

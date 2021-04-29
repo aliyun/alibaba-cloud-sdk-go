@@ -71,11 +71,11 @@ func (client *Client) UnicomSignConfirmWithCallback(request *UnicomSignConfirmRe
 // UnicomSignConfirmRequest is the request struct for api UnicomSignConfirm
 type UnicomSignConfirmRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerId      requests.Integer             `position:"Query"`
+	ResourceOwnerAccount string                       `position:"Query"`
+	OwnerAccount         string                       `position:"Query"`
 	TmsOrder             *[]UnicomSignConfirmTmsOrder `position:"Query" name:"TmsOrder"  type:"Repeated"`
-	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
+	OwnerId              requests.Integer             `position:"Query"`
 }
 
 // UnicomSignConfirmTmsOrder is a repeated param struct in UnicomSignConfirmRequest
@@ -90,8 +90,8 @@ type UnicomSignConfirmTmsOrder struct {
 type UnicomSignConfirmResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 

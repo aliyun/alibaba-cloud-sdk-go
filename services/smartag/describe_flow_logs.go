@@ -71,26 +71,26 @@ func (client *Client) DescribeFlowLogsWithCallback(request *DescribeFlowLogsRequ
 // DescribeFlowLogsRequest is the request struct for api DescribeFlowLogs
 type DescribeFlowLogsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description          string           `position:"Query" name:"Description"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OutputType           string           `position:"Query" name:"OutputType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	FlowLogId            string           `position:"Query" name:"FlowLogId"`
-	FlowLogName          string           `position:"Query" name:"FlowLogName"`
-	Status               string           `position:"Query" name:"Status"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	Description          string           `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	OutputType           string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	FlowLogId            string           `position:"Query"`
+	FlowLogName          string           `position:"Query"`
+	Status               string           `position:"Query"`
 }
 
 // DescribeFlowLogsResponse is the response struct for api DescribeFlowLogs
 type DescribeFlowLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
 	FlowLogs   FlowLogs `json:"FlowLogs" xml:"FlowLogs"`
 }
 

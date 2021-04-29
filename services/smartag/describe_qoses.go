@@ -71,23 +71,23 @@ func (client *Client) DescribeQosesWithCallback(request *DescribeQosesRequest, c
 // DescribeQosesRequest is the request struct for api DescribeQoses
 type DescribeQosesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	QosIds               string           `position:"Query" name:"QosIds"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	QosName              string           `position:"Query" name:"QosName"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	QosIds               string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	QosName              string           `position:"Query"`
 }
 
 // DescribeQosesResponse is the response struct for api DescribeQoses
 type DescribeQosesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	Qoses      Qoses  `json:"Qoses" xml:"Qoses"`
 }
 

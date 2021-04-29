@@ -71,26 +71,26 @@ func (client *Client) DescribeSagRouteProtocolOspfWithCallback(request *Describe
 // DescribeSagRouteProtocolOspfRequest is the request struct for api DescribeSagRouteProtocolOspf
 type DescribeSagRouteProtocolOspfRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
-	SmartAGSn            string           `position:"Query" name:"SmartAGSn"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
+	SmartAGSn            string           `position:"Query"`
 }
 
 // DescribeSagRouteProtocolOspfResponse is the response struct for api DescribeSagRouteProtocolOspf
 type DescribeSagRouteProtocolOspfResponse struct {
 	*responses.BaseResponse
 	RequestId          string      `json:"RequestId" xml:"RequestId"`
-	RouterId           string      `json:"RouterId" xml:"RouterId"`
-	AreaId             string      `json:"AreaId" xml:"AreaId"`
-	AreaType           string      `json:"AreaType" xml:"AreaType"`
 	DeadTime           int         `json:"DeadTime" xml:"DeadTime"`
-	HelloTime          int         `json:"HelloTime" xml:"HelloTime"`
-	AuthenticationType string      `json:"AuthenticationType" xml:"AuthenticationType"`
 	Md5KeyId           int         `json:"Md5KeyId" xml:"Md5KeyId"`
+	AreaId             string      `json:"AreaId" xml:"AreaId"`
+	HelloTime          int         `json:"HelloTime" xml:"HelloTime"`
+	RouterId           string      `json:"RouterId" xml:"RouterId"`
+	AreaType           string      `json:"AreaType" xml:"AreaType"`
 	Md5Key             string      `json:"Md5Key" xml:"Md5Key"`
+	AuthenticationType string      `json:"AuthenticationType" xml:"AuthenticationType"`
 	TaskStates         []TaskState `json:"TaskStates" xml:"TaskStates"`
 }
 

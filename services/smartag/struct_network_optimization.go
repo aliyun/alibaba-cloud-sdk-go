@@ -17,10 +17,10 @@ package smartag
 
 // NetworkOptimization is a nested struct in smartag response
 type NetworkOptimization struct {
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
-	Name       string `json:"Name" xml:"Name"`
-	State      string `json:"State" xml:"State"`
-	CreateTime int64  `json:"CreateTime" xml:"CreateTime"`
 	SagCount   int    `json:"SagCount" xml:"SagCount"`
+	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	State      string `json:"State" xml:"State"`
 	CcnId      string `json:"CcnId" xml:"CcnId"`
+	CreateTime int64  `json:"CreateTime" xml:"CreateTime"`
+	Name       string `json:"Name" xml:"Name"`
 }

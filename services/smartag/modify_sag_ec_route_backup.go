@@ -71,15 +71,15 @@ func (client *Client) ModifySagECRouteBackupWithCallback(request *ModifySagECRou
 // ModifySagECRouteBackupRequest is the request struct for api ModifySagECRouteBackup
 type ModifySagECRouteBackupRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ExpressConnectionInterface string           `position:"Query" name:"ExpressConnectionInterface"`
-	HcIp                       string           `position:"Query" name:"HcIp"`
-	RouteBackup                requests.Boolean `position:"Query" name:"RouteBackup"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId                  string           `position:"Query" name:"SmartAGId"`
-	ExpressConnectionNexthop   string           `position:"Query" name:"ExpressConnectionNexthop"`
+	ResourceOwnerId            requests.Integer `position:"Query"`
+	ExpressConnectionInterface string           `position:"Query"`
+	HcIp                       string           `position:"Query"`
+	RouteBackup                requests.Boolean `position:"Query"`
+	ResourceOwnerAccount       string           `position:"Query"`
+	OwnerAccount               string           `position:"Query"`
+	OwnerId                    requests.Integer `position:"Query"`
+	SmartAGId                  string           `position:"Query"`
+	ExpressConnectionNexthop   string           `position:"Query"`
 }
 
 // ModifySagECRouteBackupResponse is the response struct for api ModifySagECRouteBackup

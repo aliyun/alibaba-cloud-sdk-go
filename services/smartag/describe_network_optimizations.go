@@ -71,24 +71,24 @@ func (client *Client) DescribeNetworkOptimizationsWithCallback(request *Describe
 // DescribeNetworkOptimizationsRequest is the request struct for api DescribeNetworkOptimizations
 type DescribeNetworkOptimizationsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CcnId                string           `position:"Query" name:"CcnId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	CcnId                string           `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	NetworkOptId         string           `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	Name                 string           `position:"Query"`
 }
 
 // DescribeNetworkOptimizationsResponse is the response struct for api DescribeNetworkOptimizations
 type DescribeNetworkOptimizationsResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
 	NetworkOptimizations NetworkOptimizations `json:"NetworkOptimizations" xml:"NetworkOptimizations"`
 }
 

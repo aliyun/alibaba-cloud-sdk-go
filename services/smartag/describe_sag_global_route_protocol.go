@@ -71,19 +71,19 @@ func (client *Client) DescribeSagGlobalRouteProtocolWithCallback(request *Descri
 // DescribeSagGlobalRouteProtocolRequest is the request struct for api DescribeSagGlobalRouteProtocol
 type DescribeSagGlobalRouteProtocolRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
-	SmartAGSn            string           `position:"Query" name:"SmartAGSn"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
+	SmartAGSn            string           `position:"Query"`
 }
 
 // DescribeSagGlobalRouteProtocolResponse is the response struct for api DescribeSagGlobalRouteProtocol
 type DescribeSagGlobalRouteProtocolResponse struct {
 	*responses.BaseResponse
-	RequestId     string      `json:"RequestId" xml:"RequestId"`
 	RouteProtocol string      `json:"RouteProtocol" xml:"RouteProtocol"`
+	RequestId     string      `json:"RequestId" xml:"RequestId"`
 	TaskStates    []TaskState `json:"TaskStates" xml:"TaskStates"`
 }
 

@@ -71,21 +71,21 @@ func (client *Client) DescribeSagManagementPortWithCallback(request *DescribeSag
 // DescribeSagManagementPortRequest is the request struct for api DescribeSagManagementPort
 type DescribeSagManagementPortRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
-	SmartAGSn            string           `position:"Query" name:"SmartAGSn"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
+	SmartAGSn            string           `position:"Query"`
 }
 
 // DescribeSagManagementPortResponse is the response struct for api DescribeSagManagementPort
 type DescribeSagManagementPortResponse struct {
 	*responses.BaseResponse
 	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	Gateway    string      `json:"Gateway" xml:"Gateway"`
 	IP         string      `json:"IP" xml:"IP"`
 	Mask       string      `json:"Mask" xml:"Mask"`
-	Gateway    string      `json:"Gateway" xml:"Gateway"`
 	TaskStates []TaskState `json:"TaskStates" xml:"TaskStates"`
 }
 

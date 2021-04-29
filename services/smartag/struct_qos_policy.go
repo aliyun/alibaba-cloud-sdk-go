@@ -17,16 +17,18 @@ package smartag
 
 // QosPolicy is a nested struct in smartag response
 type QosPolicy struct {
-	QosPolicyId     string `json:"QosPolicyId" xml:"QosPolicyId"`
-	QosId           string `json:"QosId" xml:"QosId"`
-	Priority        int    `json:"Priority" xml:"Priority"`
-	Description     string `json:"Description" xml:"Description"`
-	SourceCidr      string `json:"SourceCidr" xml:"SourceCidr"`
-	DestCidr        string `json:"DestCidr" xml:"DestCidr"`
-	IpProtocol      string `json:"IpProtocol" xml:"IpProtocol"`
-	SourcePortRange string `json:"SourcePortRange" xml:"SourcePortRange"`
-	DestPortRange   string `json:"DestPortRange" xml:"DestPortRange"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	EndTime         string `json:"EndTime" xml:"EndTime"`
-	Name            string `json:"Name" xml:"Name"`
+	IpProtocol      string                               `json:"IpProtocol" xml:"IpProtocol"`
+	Name            string                               `json:"Name" xml:"Name"`
+	Priority        int                                  `json:"Priority" xml:"Priority"`
+	SourcePortRange string                               `json:"SourcePortRange" xml:"SourcePortRange"`
+	DestPortRange   string                               `json:"DestPortRange" xml:"DestPortRange"`
+	SourceCidr      string                               `json:"SourceCidr" xml:"SourceCidr"`
+	StartTime       string                               `json:"StartTime" xml:"StartTime"`
+	EndTime         string                               `json:"EndTime" xml:"EndTime"`
+	QosId           string                               `json:"QosId" xml:"QosId"`
+	DestCidr        string                               `json:"DestCidr" xml:"DestCidr"`
+	Description     string                               `json:"Description" xml:"Description"`
+	QosPolicyId     string                               `json:"QosPolicyId" xml:"QosPolicyId"`
+	DpiSignatureIds DpiSignatureIdsInDescribeQosPolicies `json:"DpiSignatureIds" xml:"DpiSignatureIds"`
+	DpiGroupIds     DpiGroupIdsInDescribeQosPolicies     `json:"DpiGroupIds" xml:"DpiGroupIds"`
 }

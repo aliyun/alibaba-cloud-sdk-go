@@ -17,18 +17,20 @@ package smartag
 
 // Acr is a nested struct in smartag response
 type Acr struct {
-	AcrId           string `json:"AcrId" xml:"AcrId"`
-	Description     string `json:"Description" xml:"Description"`
-	Direction       string `json:"Direction" xml:"Direction"`
-	SourceCidr      string `json:"SourceCidr" xml:"SourceCidr"`
-	DestCidr        string `json:"DestCidr" xml:"DestCidr"`
-	IpProtocol      string `json:"IpProtocol" xml:"IpProtocol"`
-	SourcePortRange string `json:"SourcePortRange" xml:"SourcePortRange"`
-	DestPortRange   string `json:"DestPortRange" xml:"DestPortRange"`
-	Policy          string `json:"Policy" xml:"Policy"`
-	Priority        int    `json:"Priority" xml:"Priority"`
-	GmtCreate       int64  `json:"GmtCreate" xml:"GmtCreate"`
-	AclId           string `json:"AclId" xml:"AclId"`
-	Type            string `json:"Type" xml:"Type"`
-	Name            string `json:"Name" xml:"Name"`
+	Policy          string                                `json:"Policy" xml:"Policy"`
+	Description     string                                `json:"Description" xml:"Description"`
+	SourcePortRange string                                `json:"SourcePortRange" xml:"SourcePortRange"`
+	SourceCidr      string                                `json:"SourceCidr" xml:"SourceCidr"`
+	Priority        int                                   `json:"Priority" xml:"Priority"`
+	AclId           string                                `json:"AclId" xml:"AclId"`
+	AcrId           string                                `json:"AcrId" xml:"AcrId"`
+	DestPortRange   string                                `json:"DestPortRange" xml:"DestPortRange"`
+	Direction       string                                `json:"Direction" xml:"Direction"`
+	Name            string                                `json:"Name" xml:"Name"`
+	GmtCreate       int64                                 `json:"GmtCreate" xml:"GmtCreate"`
+	Type            string                                `json:"Type" xml:"Type"`
+	DestCidr        string                                `json:"DestCidr" xml:"DestCidr"`
+	IpProtocol      string                                `json:"IpProtocol" xml:"IpProtocol"`
+	DpiSignatureIds DpiSignatureIdsInDescribeACLAttribute `json:"DpiSignatureIds" xml:"DpiSignatureIds"`
+	DpiGroupIds     DpiGroupIdsInDescribeACLAttribute     `json:"DpiGroupIds" xml:"DpiGroupIds"`
 }

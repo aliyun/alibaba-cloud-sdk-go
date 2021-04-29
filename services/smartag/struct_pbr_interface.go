@@ -17,8 +17,8 @@ package smartag
 
 // PbrInterface is a nested struct in smartag response
 type PbrInterface struct {
-	InterfaceName         string `json:"InterfaceName" xml:"InterfaceName"`
-	HealthCheckInstanceId string `json:"HealthCheckInstanceId" xml:"HealthCheckInstanceId"`
-	Priority              int    `json:"Priority" xml:"Priority"`
 	Action                string `json:"Action" xml:"Action"`
+	Priority              int    `json:"Priority" xml:"Priority"`
+	HealthCheckInstanceId string `json:"HealthCheckInstanceId" xml:"HealthCheckInstanceId"`
+	InterfaceName         string `json:"InterfaceName" xml:"InterfaceName"`
 }

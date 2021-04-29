@@ -17,15 +17,17 @@ package smartag
 
 // QosCar is a nested struct in smartag response
 type QosCar struct {
-	QosCarId            string `json:"QosCarId" xml:"QosCarId"`
-	QosId               string `json:"QosId" xml:"QosId"`
-	Description         string `json:"Description" xml:"Description"`
+	Name                string `json:"Name" xml:"Name"`
+	QosCarName          string `json:"QosCarName" xml:"QosCarName"`
+	PercentSourceType   string `json:"PercentSourceType" xml:"PercentSourceType"`
+	QosCarDescription   string `json:"QosCarDescription" xml:"QosCarDescription"`
 	Priority            int    `json:"Priority" xml:"Priority"`
+	MaxBandwidthAbs     int    `json:"MaxBandwidthAbs" xml:"MaxBandwidthAbs"`
+	MaxBandwidthPercent int    `json:"MaxBandwidthPercent" xml:"MaxBandwidthPercent"`
+	MinBandwidthPercent int    `json:"MinBandwidthPercent" xml:"MinBandwidthPercent"`
+	QosId               string `json:"QosId" xml:"QosId"`
 	LimitType           string `json:"LimitType" xml:"LimitType"`
 	MinBandwidthAbs     int    `json:"MinBandwidthAbs" xml:"MinBandwidthAbs"`
-	MaxBandwidthAbs     int    `json:"MaxBandwidthAbs" xml:"MaxBandwidthAbs"`
-	MinBandwidthPercent int    `json:"MinBandwidthPercent" xml:"MinBandwidthPercent"`
-	MaxBandwidthPercent int    `json:"MaxBandwidthPercent" xml:"MaxBandwidthPercent"`
-	PercentSourceType   string `json:"PercentSourceType" xml:"PercentSourceType"`
-	Name                string `json:"Name" xml:"Name"`
+	QosCarId            string `json:"QosCarId" xml:"QosCarId"`
+	Description         string `json:"Description" xml:"Description"`
 }

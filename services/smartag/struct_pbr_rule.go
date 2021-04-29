@@ -17,12 +17,12 @@ package smartag
 
 // PbrRule is a nested struct in smartag response
 type PbrRule struct {
-	PbrRuleId   string `json:"PbrRuleId" xml:"PbrRuleId"`
-	SrcCidr     string `json:"SrcCidr" xml:"SrcCidr"`
-	DstCidr     string `json:"DstCidr" xml:"DstCidr"`
 	SrcPort     string `json:"SrcPort" xml:"SrcPort"`
-	DstPort     string `json:"DstPort" xml:"DstPort"`
-	Protocol    string `json:"Protocol" xml:"Protocol"`
-	Name        string `json:"Name" xml:"Name"`
 	Description string `json:"Description" xml:"Description"`
+	SrcCidr     string `json:"SrcCidr" xml:"SrcCidr"`
+	DstPort     string `json:"DstPort" xml:"DstPort"`
+	PbrRuleId   string `json:"PbrRuleId" xml:"PbrRuleId"`
+	Protocol    string `json:"Protocol" xml:"Protocol"`
+	DstCidr     string `json:"DstCidr" xml:"DstCidr"`
+	Name        string `json:"Name" xml:"Name"`
 }

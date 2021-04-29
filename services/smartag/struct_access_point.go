@@ -18,8 +18,8 @@ package smartag
 // AccessPoint is a nested struct in smartag response
 type AccessPoint struct {
 	AccessPointId        int    `json:"AccessPointId" xml:"AccessPointId"`
-	Latitude             string `json:"Latitude" xml:"Latitude"`
-	Longitude            string `json:"Longitude" xml:"Longitude"`
-	InactiveSmartAGCount int    `json:"InactiveSmartAGCount" xml:"InactiveSmartAGCount"`
 	ActiveSmartAGCount   int    `json:"ActiveSmartAGCount" xml:"ActiveSmartAGCount"`
+	Latitude             string `json:"Latitude" xml:"Latitude"`
+	InactiveSmartAGCount int    `json:"InactiveSmartAGCount" xml:"InactiveSmartAGCount"`
+	Longitude            string `json:"Longitude" xml:"Longitude"`
 }

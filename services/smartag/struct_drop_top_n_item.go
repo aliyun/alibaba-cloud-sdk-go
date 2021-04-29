@@ -18,7 +18,7 @@ package smartag
 // DropTopNItem is a nested struct in smartag response
 type DropTopNItem struct {
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
 	DropRate   string `json:"DropRate" xml:"DropRate"`
 	Name       string `json:"Name" xml:"Name"`
-	RegionId   string `json:"RegionId" xml:"RegionId"`
 }

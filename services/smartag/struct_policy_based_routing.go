@@ -18,7 +18,7 @@ package smartag
 // PolicyBasedRouting is a nested struct in smartag response
 type PolicyBasedRouting struct {
 	PbrInstanceId string `json:"PbrInstanceId" xml:"PbrInstanceId"`
+	Description   string `json:"Description" xml:"Description"`
 	Priority      int    `json:"Priority" xml:"Priority"`
 	Name          string `json:"Name" xml:"Name"`
-	Description   string `json:"Description" xml:"Description"`
 }

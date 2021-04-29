@@ -17,18 +17,18 @@ package smartag
 
 // FlowLogSetType is a nested struct in smartag response
 type FlowLogSetType struct {
-	FlowLogId         string `json:"FlowLogId" xml:"FlowLogId"`
+	NetflowServerPort string `json:"NetflowServerPort" xml:"NetflowServerPort"`
+	Status            string `json:"Status" xml:"Status"`
+	LogstoreName      string `json:"LogstoreName" xml:"LogstoreName"`
 	Description       string `json:"Description" xml:"Description"`
 	ActiveAging       int    `json:"ActiveAging" xml:"ActiveAging"`
-	InactiveAging     int    `json:"InactiveAging" xml:"InactiveAging"`
-	OutputType        string `json:"OutputType" xml:"OutputType"`
-	SlsRegionId       string `json:"SlsRegionId" xml:"SlsRegionId"`
 	ProjectName       string `json:"ProjectName" xml:"ProjectName"`
-	LogstoreName      string `json:"LogstoreName" xml:"LogstoreName"`
 	NetflowServerIp   string `json:"NetflowServerIp" xml:"NetflowServerIp"`
-	NetflowServerPort string `json:"NetflowServerPort" xml:"NetflowServerPort"`
 	NetflowVersion    string `json:"NetflowVersion" xml:"NetflowVersion"`
-	Status            string `json:"Status" xml:"Status"`
+	InactiveAging     int    `json:"InactiveAging" xml:"InactiveAging"`
+	FlowLogId         string `json:"FlowLogId" xml:"FlowLogId"`
 	Name              string `json:"Name" xml:"Name"`
 	TotalSagNum       int    `json:"TotalSagNum" xml:"TotalSagNum"`
+	SlsRegionId       string `json:"SlsRegionId" xml:"SlsRegionId"`
+	OutputType        string `json:"OutputType" xml:"OutputType"`
 }

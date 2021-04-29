@@ -71,16 +71,16 @@ func (client *Client) UnicomOrderConfirmWithCallback(request *UnicomOrderConfirm
 // UnicomOrderConfirmRequest is the request struct for api UnicomOrderConfirm
 type UnicomOrderConfirmRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	TmsCode              string                         `position:"Query" name:"TmsCode"`
+	ResourceOwnerId      requests.Integer               `position:"Query"`
+	TmsCode              string                         `position:"Query"`
 	OrderItem            *[]UnicomOrderConfirmOrderItem `position:"Query" name:"OrderItem"  type:"Repeated"`
-	OrderPostFee         requests.Integer               `position:"Query" name:"OrderPostFee"`
-	TradeId              string                         `position:"Query" name:"TradeId"`
-	OwnerUserId          string                         `position:"Query" name:"OwnerUserId"`
-	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
-	TmsOrderCode         string                         `position:"Query" name:"TmsOrderCode"`
+	OrderPostFee         requests.Integer               `position:"Query"`
+	TradeId              string                         `position:"Query"`
+	OwnerUserId          string                         `position:"Query"`
+	ResourceOwnerAccount string                         `position:"Query"`
+	OwnerAccount         string                         `position:"Query"`
+	OwnerId              requests.Integer               `position:"Query"`
+	TmsOrderCode         string                         `position:"Query"`
 }
 
 // UnicomOrderConfirmOrderItem is a repeated param struct in UnicomOrderConfirmRequest
@@ -99,8 +99,8 @@ type UnicomOrderConfirmOrderItem struct {
 type UnicomOrderConfirmResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 

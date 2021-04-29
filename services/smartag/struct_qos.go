@@ -17,9 +17,9 @@ package smartag
 
 // Qos is a nested struct in smartag response
 type Qos struct {
-	QosId          string `json:"QosId" xml:"QosId"`
-	QosName        string `json:"QosName" xml:"QosName"`
 	SagCount       string `json:"SagCount" xml:"SagCount"`
+	QosId          string `json:"QosId" xml:"QosId"`
 	SmartAGIds     string `json:"SmartAGIds" xml:"SmartAGIds"`
+	QosName        string `json:"QosName" xml:"QosName"`
 	QosDescription string `json:"QosDescription" xml:"QosDescription"`
 }

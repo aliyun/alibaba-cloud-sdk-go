@@ -71,16 +71,17 @@ func (client *Client) ModifyDeviceAutoUpgradePolicyWithCallback(request *ModifyD
 // ModifyDeviceAutoUpgradePolicyRequest is the request struct for api ModifyDeviceAutoUpgradePolicy
 type ModifyDeviceAutoUpgradePolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CronExpression       string           `position:"Query" name:"CronExpression"`
-	TimeZone             string           `position:"Query" name:"TimeZone"`
-	UpgradeType          string           `position:"Query" name:"UpgradeType"`
-	Duration             requests.Integer `position:"Query" name:"Duration"`
-	SerialNumber         string           `position:"Query" name:"SerialNumber"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	CronExpression       string           `position:"Query"`
+	TimeZone             string           `position:"Query"`
+	UpgradeType          string           `position:"Query"`
+	Duration             requests.Integer `position:"Query"`
+	SerialNumber         string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	VersionType          string           `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // ModifyDeviceAutoUpgradePolicyResponse is the response struct for api ModifyDeviceAutoUpgradePolicy

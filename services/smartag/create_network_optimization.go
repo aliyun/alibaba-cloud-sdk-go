@@ -71,21 +71,21 @@ func (client *Client) CreateNetworkOptimizationWithCallback(request *CreateNetwo
 // CreateNetworkOptimizationRequest is the request struct for api CreateNetworkOptimization
 type CreateNetworkOptimizationRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CcnId                string           `position:"Query" name:"CcnId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	CcnId                string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	Name                 string           `position:"Query"`
 }
 
 // CreateNetworkOptimizationResponse is the response struct for api CreateNetworkOptimization
 type CreateNetworkOptimizationResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	NetworkOptId string `json:"NetworkOptId" xml:"NetworkOptId"`
-	Name         string `json:"Name" xml:"Name"`
 	State        string `json:"State" xml:"State"`
+	Name         string `json:"Name" xml:"Name"`
+	NetworkOptId string `json:"NetworkOptId" xml:"NetworkOptId"`
 }
 
 // CreateCreateNetworkOptimizationRequest creates a request to invoke CreateNetworkOptimization API

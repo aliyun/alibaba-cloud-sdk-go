@@ -71,22 +71,22 @@ func (client *Client) DescribeNetworkOptimizationSagsWithCallback(request *Descr
 // DescribeNetworkOptimizationSagsRequest is the request struct for api DescribeNetworkOptimizationSags
 type DescribeNetworkOptimizationSagsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	NetworkOptId         string           `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
 }
 
 // DescribeNetworkOptimizationSagsResponse is the response struct for api DescribeNetworkOptimizationSags
 type DescribeNetworkOptimizationSagsResponse struct {
 	*responses.BaseResponse
-	RequestId           string                                               `json:"RequestId" xml:"RequestId"`
 	TotalCount          int                                                  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber          int                                                  `json:"PageNumber" xml:"PageNumber"`
+	RequestId           string                                               `json:"RequestId" xml:"RequestId"`
 	PageSize            int                                                  `json:"PageSize" xml:"PageSize"`
+	PageNumber          int                                                  `json:"PageNumber" xml:"PageNumber"`
 	SmartAccessGateways SmartAccessGatewaysInDescribeNetworkOptimizationSags `json:"SmartAccessGateways" xml:"SmartAccessGateways"`
 }
 

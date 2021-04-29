@@ -71,12 +71,12 @@ func (client *Client) CreateQosWithCallback(request *CreateQosRequest, callback 
 // CreateQosRequest is the request struct for api CreateQos
 type CreateQosRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	QosName              string           `position:"Query" name:"QosName"`
-	QosDescription       string           `position:"Query" name:"QosDescription"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	QosName              string           `position:"Query"`
+	QosDescription       string           `position:"Query"`
 }
 
 // CreateQosResponse is the response struct for api CreateQos

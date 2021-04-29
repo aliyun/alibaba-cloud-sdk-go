@@ -71,12 +71,12 @@ func (client *Client) DeleteSagCidrWithCallback(request *DeleteSagCidrRequest, c
 // DeleteSagCidrRequest is the request struct for api DeleteSagCidr
 type DeleteSagCidrRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Cidr                 string           `position:"Query" name:"Cidr"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	Cidr                 string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // DeleteSagCidrResponse is the response struct for api DeleteSagCidr

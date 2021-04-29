@@ -71,11 +71,11 @@ func (client *Client) DeleteNetworkOptimizationWithCallback(request *DeleteNetwo
 // DeleteNetworkOptimizationRequest is the request struct for api DeleteNetworkOptimization
 type DeleteNetworkOptimizationRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	NetworkOptId         string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
 }
 
 // DeleteNetworkOptimizationResponse is the response struct for api DeleteNetworkOptimization

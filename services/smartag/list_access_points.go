@@ -71,20 +71,20 @@ func (client *Client) ListAccessPointsWithCallback(request *ListAccessPointsRequ
 // ListAccessPointsRequest is the request struct for api ListAccessPoints
 type ListAccessPointsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // ListAccessPointsResponse is the response struct for api ListAccessPoints
 type ListAccessPointsResponse struct {
 	*responses.BaseResponse
-	RequestId    string        `json:"RequestId" xml:"RequestId"`
 	TotalCount   int           `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string        `json:"RequestId" xml:"RequestId"`
 	AccessPoints []AccessPoint `json:"AccessPoints" xml:"AccessPoints"`
 }
 

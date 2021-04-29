@@ -71,12 +71,12 @@ func (client *Client) DetachNetworkOptimizationSagsWithCallback(request *DetachN
 // DetachNetworkOptimizationSagsRequest is the request struct for api DetachNetworkOptimizationSags
 type DetachNetworkOptimizationSagsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	NetworkOptId         string           `position:"Query"`
 	SmartAGIds           *[]string        `position:"Query" name:"SmartAGIds"  type:"Repeated"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
 }
 
 // DetachNetworkOptimizationSagsResponse is the response struct for api DetachNetworkOptimizationSags

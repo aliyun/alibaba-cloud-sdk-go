@@ -17,11 +17,11 @@ package smartag
 
 // Item is a nested struct in smartag response
 type Item struct {
-	StartTime int64  `json:"StartTime" xml:"StartTime"`
-	Level     string `json:"Level" xml:"Level"`
-	EndTime   int64  `json:"EndTime" xml:"EndTime"`
-	ItemName  string `json:"ItemName" xml:"ItemName"`
 	Type      string `json:"Type" xml:"Type"`
+	EndTime   int64  `json:"EndTime" xml:"EndTime"`
+	StartTime int64  `json:"StartTime" xml:"StartTime"`
+	ItemName  string `json:"ItemName" xml:"ItemName"`
+	Level     string `json:"Level" xml:"Level"`
 	EN        EN     `json:"EN" xml:"EN"`
 	CN        CN     `json:"CN" xml:"CN"`
 }

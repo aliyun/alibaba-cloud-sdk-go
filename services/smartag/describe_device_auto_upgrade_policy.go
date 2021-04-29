@@ -71,24 +71,26 @@ func (client *Client) DescribeDeviceAutoUpgradePolicyWithCallback(request *Descr
 // DescribeDeviceAutoUpgradePolicyRequest is the request struct for api DescribeDeviceAutoUpgradePolicy
 type DescribeDeviceAutoUpgradePolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SerialNumber         string           `position:"Query" name:"SerialNumber"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	SerialNumber         string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	VersionType          string           `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // DescribeDeviceAutoUpgradePolicyResponse is the response struct for api DescribeDeviceAutoUpgradePolicy
 type DescribeDeviceAutoUpgradePolicyResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	SmartAGId      string `json:"SmartAGId" xml:"SmartAGId"`
-	SerialNumber   string `json:"SerialNumber" xml:"SerialNumber"`
 	UpgradeType    string `json:"UpgradeType" xml:"UpgradeType"`
-	CronExpression string `json:"CronExpression" xml:"CronExpression"`
-	Duration       string `json:"Duration" xml:"Duration"`
 	TimeZone       string `json:"TimeZone" xml:"TimeZone"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	SerialNumber   string `json:"SerialNumber" xml:"SerialNumber"`
+	Jitter         string `json:"Jitter" xml:"Jitter"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	CronExpression string `json:"CronExpression" xml:"CronExpression"`
+	SmartAGId      string `json:"SmartAGId" xml:"SmartAGId"`
 }
 
 // CreateDescribeDeviceAutoUpgradePolicyRequest creates a request to invoke DescribeDeviceAutoUpgradePolicy API

@@ -71,23 +71,23 @@ func (client *Client) DescribeDnatEntriesWithCallback(request *DescribeDnatEntri
 // DescribeDnatEntriesRequest is the request struct for api DescribeDnatEntries
 type DescribeDnatEntriesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Type                 string           `position:"Query" name:"Type"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SagId                string           `position:"Query" name:"SagId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	Type                 string           `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SagId                string           `position:"Query"`
 }
 
 // DescribeDnatEntriesResponse is the response struct for api DescribeDnatEntries
 type DescribeDnatEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
 	DnatEntries DnatEntries `json:"DnatEntries" xml:"DnatEntries"`
 }
 

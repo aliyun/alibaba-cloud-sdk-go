@@ -71,25 +71,25 @@ func (client *Client) DescribeACLAttributeWithCallback(request *DescribeACLAttri
 // DescribeACLAttributeRequest is the request struct for api DescribeACLAttribute
 type DescribeACLAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	Direction            string           `position:"Query" name:"Direction"`
-	Order                string           `position:"Query" name:"Order"`
-	AclId                string           `position:"Query" name:"AclId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	Direction            string           `position:"Query"`
+	Order                string           `position:"Query"`
+	AclId                string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	Name                 string           `position:"Query"`
 }
 
 // DescribeACLAttributeResponse is the response struct for api DescribeACLAttribute
 type DescribeACLAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	Acrs       Acrs   `json:"Acrs" xml:"Acrs"`
 }
 

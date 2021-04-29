@@ -71,22 +71,22 @@ func (client *Client) DescribePbrRulesWithCallback(request *DescribePbrRulesRequ
 // DescribePbrRulesRequest is the request struct for api DescribePbrRules
 type DescribePbrRulesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	PbrInstanceId        string           `position:"Query" name:"PbrInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	PageNumber           string           `position:"Query"`
+	PageSize             string           `position:"Query"`
+	PbrInstanceId        string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
 }
 
 // DescribePbrRulesResponse is the response struct for api DescribePbrRules
 type DescribePbrRulesResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
 	PbrRules   PbrRules `json:"PbrRules" xml:"PbrRules"`
 }
 

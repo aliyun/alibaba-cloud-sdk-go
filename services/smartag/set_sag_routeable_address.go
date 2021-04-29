@@ -71,13 +71,13 @@ func (client *Client) SetSagRouteableAddressWithCallback(request *SetSagRouteabl
 // SetSagRouteableAddressRequest is the request struct for api SetSagRouteableAddress
 type SetSagRouteableAddressRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RouteableAddress     string           `position:"Query" name:"RouteableAddress"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SagId                string           `position:"Query" name:"SagId"`
+	AccessKeyId          string           `position:"Query"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	RouteableAddress     string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SagId                string           `position:"Query"`
 }
 
 // SetSagRouteableAddressResponse is the response struct for api SetSagRouteableAddress

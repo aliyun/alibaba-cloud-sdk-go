@@ -71,23 +71,23 @@ func (client *Client) DescribeSagECRouteBackupAttributeWithCallback(request *Des
 // DescribeSagECRouteBackupAttributeRequest is the request struct for api DescribeSagECRouteBackupAttribute
 type DescribeSagECRouteBackupAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // DescribeSagECRouteBackupAttributeResponse is the response struct for api DescribeSagECRouteBackupAttribute
 type DescribeSagECRouteBackupAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                  string `json:"RequestId" xml:"RequestId"`
-	SagId                      string `json:"SagId" xml:"SagId"`
 	HcIp                       string `json:"HcIp" xml:"HcIp"`
-	ExpressConnectionInterface string `json:"ExpressConnectionInterface" xml:"ExpressConnectionInterface"`
-	ExpressConnectionNexthop   string `json:"ExpressConnectionNexthop" xml:"ExpressConnectionNexthop"`
-	RouteBackup                bool   `json:"RouteBackup" xml:"RouteBackup"`
 	Status                     string `json:"Status" xml:"Status"`
+	RequestId                  string `json:"RequestId" xml:"RequestId"`
+	ExpressConnectionInterface string `json:"ExpressConnectionInterface" xml:"ExpressConnectionInterface"`
+	RouteBackup                bool   `json:"RouteBackup" xml:"RouteBackup"`
+	ExpressConnectionNexthop   string `json:"ExpressConnectionNexthop" xml:"ExpressConnectionNexthop"`
+	SagId                      string `json:"SagId" xml:"SagId"`
 	Cidrs                      Cidrs  `json:"Cidrs" xml:"Cidrs"`
 }
 

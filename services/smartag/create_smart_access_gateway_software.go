@@ -71,15 +71,15 @@ func (client *Client) CreateSmartAccessGatewaySoftwareWithCallback(request *Crea
 // CreateSmartAccessGatewaySoftwareRequest is the request struct for api CreateSmartAccessGatewaySoftware
 type CreateSmartAccessGatewaySoftwareRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	UserCount            requests.Integer `position:"Query" name:"UserCount"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ChargeType           string           `position:"Query" name:"ChargeType"`
-	DataPlan             requests.Integer `position:"Query" name:"DataPlan"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	UserCount            requests.Integer `position:"Query"`
+	Period               requests.Integer `position:"Query"`
+	AutoPay              requests.Boolean `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	ChargeType           string           `position:"Query"`
+	DataPlan             requests.Integer `position:"Query"`
 }
 
 // CreateSmartAccessGatewaySoftwareResponse is the response struct for api CreateSmartAccessGatewaySoftware

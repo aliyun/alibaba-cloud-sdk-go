@@ -71,21 +71,21 @@ func (client *Client) ListSmartAGByAccessPointWithCallback(request *ListSmartAGB
 // ListSmartAGByAccessPointRequest is the request struct for api ListSmartAGByAccessPoint
 type ListSmartAGByAccessPointRequest struct {
 	*requests.RpcRequest
-	AccessPointId        requests.Integer `position:"Query" name:"AccessPointId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGStatus        string           `position:"Query" name:"SmartAGStatus"`
+	AccessPointId        requests.Integer `position:"Query"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGStatus        string           `position:"Query"`
 }
 
 // ListSmartAGByAccessPointResponse is the response struct for api ListSmartAGByAccessPoint
 type ListSmartAGByAccessPointResponse struct {
 	*responses.BaseResponse
-	RequestId           string               `json:"RequestId" xml:"RequestId"`
 	TotalCount          int                  `json:"TotalCount" xml:"TotalCount"`
+	RequestId           string               `json:"RequestId" xml:"RequestId"`
 	SmartAccessGateways []SmartAccessGateway `json:"SmartAccessGateways" xml:"SmartAccessGateways"`
 }
 

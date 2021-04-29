@@ -71,8 +71,8 @@ func (client *Client) DeleteSmartAccessGatewayWithCallback(request *DeleteSmartA
 // DeleteSmartAccessGatewayRequest is the request struct for api DeleteSmartAccessGateway
 type DeleteSmartAccessGatewayRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerId requests.Integer `position:"Query"`
+	InstanceId      string           `position:"Query"`
 }
 
 // DeleteSmartAccessGatewayResponse is the response struct for api DeleteSmartAccessGateway

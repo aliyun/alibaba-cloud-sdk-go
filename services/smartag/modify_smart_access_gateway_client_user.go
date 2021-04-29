@@ -71,24 +71,24 @@ func (client *Client) ModifySmartAccessGatewayClientUserWithCallback(request *Mo
 // ModifySmartAccessGatewayClientUserRequest is the request struct for api ModifySmartAccessGatewayClientUser
 type ModifySmartAccessGatewayClientUserRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Email                string           `position:"Query" name:"Email"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
-	UserName             string           `position:"Query" name:"UserName"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	Email                string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	Bandwidth            requests.Integer `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
+	UserName             string           `position:"Query"`
 }
 
 // ModifySmartAccessGatewayClientUserResponse is the response struct for api ModifySmartAccessGatewayClientUser
 type ModifySmartAccessGatewayClientUserResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	ClientIp  string `json:"ClientIp" xml:"ClientIp"`
-	UserMail  string `json:"UserMail" xml:"UserMail"`
 	UserName  string `json:"UserName" xml:"UserName"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	UserMail  string `json:"UserMail" xml:"UserMail"`
 	Bandwidth int    `json:"Bandwidth" xml:"Bandwidth"`
+	ClientIp  string `json:"ClientIp" xml:"ClientIp"`
 }
 
 // CreateModifySmartAccessGatewayClientUserRequest creates a request to invoke ModifySmartAccessGatewayClientUser API

@@ -71,22 +71,22 @@ func (client *Client) DescribeSmartAccessGatewayHaWithCallback(request *Describe
 // DescribeSmartAccessGatewayHaRequest is the request struct for api DescribeSmartAccessGatewayHa
 type DescribeSmartAccessGatewayHaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // DescribeSmartAccessGatewayHaResponse is the response struct for api DescribeSmartAccessGatewayHa
 type DescribeSmartAccessGatewayHaResponse struct {
 	*responses.BaseResponse
-	RequestId              string             `json:"RequestId" xml:"RequestId"`
 	DeviceLevelBackupState string             `json:"DeviceLevelBackupState" xml:"DeviceLevelBackupState"`
-	DeviceLevelBackupType  string             `json:"DeviceLevelBackupType" xml:"DeviceLevelBackupType"`
-	MainDeviceId           string             `json:"MainDeviceId" xml:"MainDeviceId"`
+	RequestId              string             `json:"RequestId" xml:"RequestId"`
 	BackupDeviceId         string             `json:"BackupDeviceId" xml:"BackupDeviceId"`
 	SmartAGId              string             `json:"SmartAGId" xml:"SmartAGId"`
+	DeviceLevelBackupType  string             `json:"DeviceLevelBackupType" xml:"DeviceLevelBackupType"`
+	MainDeviceId           string             `json:"MainDeviceId" xml:"MainDeviceId"`
 	LinkBackupInfoList     LinkBackupInfoList `json:"LinkBackupInfoList" xml:"LinkBackupInfoList"`
 }
 

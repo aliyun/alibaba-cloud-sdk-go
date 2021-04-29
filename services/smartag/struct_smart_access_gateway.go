@@ -26,29 +26,36 @@ type SmartAccessGateway struct {
 	EndTime               int64                              `json:"EndTime" xml:"EndTime"`
 	SerialNumber          string                             `json:"SerialNumber" xml:"SerialNumber"`
 	ResourceGroupId       string                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ResellerInstanceId    string                             `json:"ResellerInstanceId" xml:"ResellerInstanceId"`
 	AclIds                string                             `json:"AclIds" xml:"AclIds"`
 	SmartAGDescription    string                             `json:"SmartAGDescription" xml:"SmartAGDescription"`
 	InstanceId            string                             `json:"InstanceId" xml:"InstanceId"`
-	SecurityLockThreshold int                                `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
 	UserCount             int                                `json:"UserCount" xml:"UserCount"`
+	SecurityLockThreshold int                                `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
 	VpnStatus             string                             `json:"VpnStatus" xml:"VpnStatus"`
 	CidrBlock             string                             `json:"CidrBlock" xml:"CidrBlock"`
 	Description           string                             `json:"Description" xml:"Description"`
 	IpsecStatus           string                             `json:"IpsecStatus" xml:"IpsecStatus"`
+	DpiStatus             string                             `json:"DpiStatus" xml:"DpiStatus"`
 	UpBandwidth4G         int                                `json:"UpBandwidth4G" xml:"UpBandwidth4G"`
 	SmartAGName           string                             `json:"SmartAGName" xml:"SmartAGName"`
 	SoftwareVersion       string                             `json:"SoftwareVersion" xml:"SoftwareVersion"`
+	IdaasId               string                             `json:"IdaasId" xml:"IdaasId"`
+	EnterpriseCode        string                             `json:"EnterpriseCode" xml:"EnterpriseCode"`
 	City                  string                             `json:"City" xml:"City"`
 	SmartAGUid            int64                              `json:"SmartAGUid" xml:"SmartAGUid"`
 	AssociatedCcnId       string                             `json:"AssociatedCcnId" xml:"AssociatedCcnId"`
 	State                 string                             `json:"State" xml:"State"`
+	ResellerUid           string                             `json:"ResellerUid" xml:"ResellerUid"`
 	RoutingStrategy       string                             `json:"RoutingStrategy" xml:"RoutingStrategy"`
+	IdaasApplicationId    string                             `json:"IdaasApplicationId" xml:"IdaasApplicationId"`
 	BackupStatus          string                             `json:"BackupStatus" xml:"BackupStatus"`
 	BackupSoftwareVersion string                             `json:"BackupSoftwareVersion" xml:"BackupSoftwareVersion"`
 	QosIds                string                             `json:"QosIds" xml:"QosIds"`
 	UpBandwidthWan        int                                `json:"UpBandwidthWan" xml:"UpBandwidthWan"`
 	Status                string                             `json:"Status" xml:"Status"`
 	AssociatedCcnName     string                             `json:"AssociatedCcnName" xml:"AssociatedCcnName"`
+	DpiMonitorStatus      string                             `json:"DpiMonitorStatus" xml:"DpiMonitorStatus"`
 	SmartAGId             string                             `json:"SmartAGId" xml:"SmartAGId"`
 	DataPlan              int64                              `json:"DataPlan" xml:"DataPlan"`
 	Links                 LinksInDescribeSmartAccessGateways `json:"Links" xml:"Links"`

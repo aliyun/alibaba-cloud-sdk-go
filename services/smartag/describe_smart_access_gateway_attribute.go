@@ -71,48 +71,50 @@ func (client *Client) DescribeSmartAccessGatewayAttributeWithCallback(request *D
 // DescribeSmartAccessGatewayAttributeRequest is the request struct for api DescribeSmartAccessGatewayAttribute
 type DescribeSmartAccessGatewayAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // DescribeSmartAccessGatewayAttributeResponse is the response struct for api DescribeSmartAccessGatewayAttribute
 type DescribeSmartAccessGatewayAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId             string                                     `json:"RequestId" xml:"RequestId"`
-	SmartAGId             string                                     `json:"SmartAGId" xml:"SmartAGId"`
-	Name                  string                                     `json:"Name" xml:"Name"`
-	City                  string                                     `json:"City" xml:"City"`
-	MaxBandwidth          string                                     `json:"MaxBandwidth" xml:"MaxBandwidth"`
-	Status                string                                     `json:"Status" xml:"Status"`
-	CidrBlock             string                                     `json:"CidrBlock" xml:"CidrBlock"`
-	AssociatedCcnId       string                                     `json:"AssociatedCcnId" xml:"AssociatedCcnId"`
-	AssociatedCcnName     string                                     `json:"AssociatedCcnName" xml:"AssociatedCcnName"`
 	Description           string                                     `json:"Description" xml:"Description"`
-	CreateTime            int64                                      `json:"CreateTime" xml:"CreateTime"`
-	EndTime               int64                                      `json:"EndTime" xml:"EndTime"`
-	InstanceType          string                                     `json:"InstanceType" xml:"InstanceType"`
-	SerialNumber          string                                     `json:"SerialNumber" xml:"SerialNumber"`
-	SecurityLockThreshold int                                        `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
-	DataPlan              int64                                      `json:"DataPlan" xml:"DataPlan"`
-	UserCount             int                                        `json:"UserCount" xml:"UserCount"`
-	RoutingStrategy       string                                     `json:"RoutingStrategy" xml:"RoutingStrategy"`
-	IpsecStatus           string                                     `json:"IpsecStatus" xml:"IpsecStatus"`
-	VpnStatus             string                                     `json:"VpnStatus" xml:"VpnStatus"`
-	TrafficMasterSn       string                                     `json:"TrafficMasterSn" xml:"TrafficMasterSn"`
-	BoxControllerIp       string                                     `json:"BoxControllerIp" xml:"BoxControllerIp"`
-	BackupBoxControllerIp string                                     `json:"BackupBoxControllerIp" xml:"BackupBoxControllerIp"`
-	UpBandwidthWan        int                                        `json:"UpBandwidthWan" xml:"UpBandwidthWan"`
 	UpBandwidth4G         int                                        `json:"UpBandwidth4G" xml:"UpBandwidth4G"`
-	EnableOptimization    bool                                       `json:"EnableOptimization" xml:"EnableOptimization"`
-	OptimizationType      bool                                       `json:"OptimizationType" xml:"OptimizationType"`
 	ResourceGroupId       string                                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	EndTime               int64                                      `json:"EndTime" xml:"EndTime"`
+	UserCount             int                                        `json:"UserCount" xml:"UserCount"`
+	VpnStatus             string                                     `json:"VpnStatus" xml:"VpnStatus"`
+	MaxBandwidth          string                                     `json:"MaxBandwidth" xml:"MaxBandwidth"`
+	AssociatedCcnName     string                                     `json:"AssociatedCcnName" xml:"AssociatedCcnName"`
+	BoxControllerIp       string                                     `json:"BoxControllerIp" xml:"BoxControllerIp"`
+	CidrBlock             string                                     `json:"CidrBlock" xml:"CidrBlock"`
+	UpBandwidthWan        int                                        `json:"UpBandwidthWan" xml:"UpBandwidthWan"`
+	Name                  string                                     `json:"Name" xml:"Name"`
+	OptimizationType      bool                                       `json:"OptimizationType" xml:"OptimizationType"`
+	IpsecStatus           string                                     `json:"IpsecStatus" xml:"IpsecStatus"`
+	RoutingStrategy       string                                     `json:"RoutingStrategy" xml:"RoutingStrategy"`
+	AssociatedCcnId       string                                     `json:"AssociatedCcnId" xml:"AssociatedCcnId"`
+	InstanceType          string                                     `json:"InstanceType" xml:"InstanceType"`
+	SmartAGId             string                                     `json:"SmartAGId" xml:"SmartAGId"`
+	SecurityLockThreshold int                                        `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
+	ResellerUid           string                                     `json:"ResellerUid" xml:"ResellerUid"`
+	Status                string                                     `json:"Status" xml:"Status"`
+	RequestId             string                                     `json:"RequestId" xml:"RequestId"`
+	CreateTime            int64                                      `json:"CreateTime" xml:"CreateTime"`
+	DataPlan              int64                                      `json:"DataPlan" xml:"DataPlan"`
+	EnableOptimization    bool                                       `json:"EnableOptimization" xml:"EnableOptimization"`
+	City                  string                                     `json:"City" xml:"City"`
+	ResellerInstanceId    string                                     `json:"ResellerInstanceId" xml:"ResellerInstanceId"`
+	BackupBoxControllerIp string                                     `json:"BackupBoxControllerIp" xml:"BackupBoxControllerIp"`
+	SerialNumber          string                                     `json:"SerialNumber" xml:"SerialNumber"`
+	TrafficMasterSn       string                                     `json:"TrafficMasterSn" xml:"TrafficMasterSn"`
 	AccessPointId         string                                     `json:"AccessPointId" xml:"AccessPointId"`
-	AclIds                AclIds                                     `json:"AclIds" xml:"AclIds"`
 	QosIds                QosIds                                     `json:"QosIds" xml:"QosIds"`
 	FlowLogIds            FlowLogIds                                 `json:"FlowLogIds" xml:"FlowLogIds"`
+	AclIds                AclIds                                     `json:"AclIds" xml:"AclIds"`
 	Links                 LinksInDescribeSmartAccessGatewayAttribute `json:"Links" xml:"Links"`
 	Devices               Devices                                    `json:"Devices" xml:"Devices"`
 }

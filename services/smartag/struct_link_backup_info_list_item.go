@@ -17,10 +17,10 @@ package smartag
 
 // LinkBackupInfoListItem is a nested struct in smartag response
 type LinkBackupInfoListItem struct {
-	LinkLevelBackupState string `json:"LinkLevelBackupState" xml:"LinkLevelBackupState"`
-	LinkLevelBackupType  string `json:"LinkLevelBackupType" xml:"LinkLevelBackupType"`
-	MainLinkId           string `json:"MainLinkId" xml:"MainLinkId"`
+	BackupLinkState      string `json:"BackupLinkState" xml:"BackupLinkState"`
 	MainLinkState        string `json:"MainLinkState" xml:"MainLinkState"`
 	BackupLinkId         string `json:"BackupLinkId" xml:"BackupLinkId"`
-	BackupLinkState      string `json:"BackupLinkState" xml:"BackupLinkState"`
+	LinkLevelBackupType  string `json:"LinkLevelBackupType" xml:"LinkLevelBackupType"`
+	MainLinkId           string `json:"MainLinkId" xml:"MainLinkId"`
+	LinkLevelBackupState string `json:"LinkLevelBackupState" xml:"LinkLevelBackupState"`
 }

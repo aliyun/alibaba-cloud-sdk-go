@@ -71,26 +71,26 @@ func (client *Client) DescribeSagWifiWithCallback(request *DescribeSagWifiReques
 // DescribeSagWifiRequest is the request struct for api DescribeSagWifi
 type DescribeSagWifiRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
-	SmartAGSn            string           `position:"Query" name:"SmartAGSn"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
+	SmartAGSn            string           `position:"Query"`
 }
 
 // DescribeSagWifiResponse is the response struct for api DescribeSagWifi
 type DescribeSagWifiResponse struct {
 	*responses.BaseResponse
-	RequestId          string      `json:"RequestId" xml:"RequestId"`
 	IsEnable           string      `json:"IsEnable" xml:"IsEnable"`
-	Ssid               string      `json:"Ssid" xml:"Ssid"`
-	IsBroadcast        string      `json:"IsBroadcast" xml:"IsBroadcast"`
+	RequestId          string      `json:"RequestId" xml:"RequestId"`
 	Channel            string      `json:"Channel" xml:"Channel"`
 	Bandwidth          string      `json:"Bandwidth" xml:"Bandwidth"`
 	IsAuth             string      `json:"IsAuth" xml:"IsAuth"`
-	AuthenticationType string      `json:"AuthenticationType" xml:"AuthenticationType"`
+	Ssid               string      `json:"Ssid" xml:"Ssid"`
+	IsBroadcast        string      `json:"IsBroadcast" xml:"IsBroadcast"`
 	EncryptAlgorithm   string      `json:"EncryptAlgorithm" xml:"EncryptAlgorithm"`
+	AuthenticationType string      `json:"AuthenticationType" xml:"AuthenticationType"`
 	TaskStates         []TaskState `json:"TaskStates" xml:"TaskStates"`
 }
 

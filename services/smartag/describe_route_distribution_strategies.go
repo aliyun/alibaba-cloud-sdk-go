@@ -71,23 +71,23 @@ func (client *Client) DescribeRouteDistributionStrategiesWithCallback(request *D
 // DescribeRouteDistributionStrategiesRequest is the request struct for api DescribeRouteDistributionStrategies
 type DescribeRouteDistributionStrategiesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	SourceType           string           `position:"Query" name:"SourceType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             requests.Integer `position:"Query"`
+	SourceType           string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SmartAGId            string           `position:"Query"`
 }
 
 // DescribeRouteDistributionStrategiesResponse is the response struct for api DescribeRouteDistributionStrategies
 type DescribeRouteDistributionStrategiesResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
 	Strategies Strategies `json:"Strategies" xml:"Strategies"`
 }
 

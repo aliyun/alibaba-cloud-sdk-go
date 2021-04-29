@@ -17,6 +17,6 @@ package smartag
 
 // Cidr is a nested struct in smartag response
 type Cidr struct {
-	Cidr         string `json:"Cidr" xml:"Cidr"`
 	EnableBackup bool   `json:"EnableBackup" xml:"EnableBackup"`
+	Cidr         string `json:"Cidr" xml:"Cidr"`
 }

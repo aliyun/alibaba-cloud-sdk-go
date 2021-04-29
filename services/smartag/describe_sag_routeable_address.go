@@ -71,19 +71,19 @@ func (client *Client) DescribeSagRouteableAddressWithCallback(request *DescribeS
 // DescribeSagRouteableAddressRequest is the request struct for api DescribeSagRouteableAddress
 type DescribeSagRouteableAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SagId                string           `position:"Query" name:"SagId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
+	SagId                string           `position:"Query"`
 }
 
 // DescribeSagRouteableAddressResponse is the response struct for api DescribeSagRouteableAddress
 type DescribeSagRouteableAddressResponse struct {
 	*responses.BaseResponse
+	Origin           string `json:"Origin" xml:"Origin"`
 	RequestId        string `json:"RequestId" xml:"RequestId"`
 	RouteableAddress string `json:"RouteableAddress" xml:"RouteableAddress"`
-	Origin           string `json:"Origin" xml:"Origin"`
 }
 
 // CreateDescribeSagRouteableAddressRequest creates a request to invoke DescribeSagRouteableAddress API

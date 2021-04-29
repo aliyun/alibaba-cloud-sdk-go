@@ -17,6 +17,6 @@ package smartag
 
 // Setting is a nested struct in smartag response
 type Setting struct {
-	Domain string `json:"Domain" xml:"Domain"`
 	Type   string `json:"Type" xml:"Type"`
+	Domain string `json:"Domain" xml:"Domain"`
 }

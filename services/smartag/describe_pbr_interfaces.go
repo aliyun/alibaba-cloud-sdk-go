@@ -71,18 +71,18 @@ func (client *Client) DescribePbrInterfacesWithCallback(request *DescribePbrInte
 // DescribePbrInterfacesRequest is the request struct for api DescribePbrInterfaces
 type DescribePbrInterfacesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PbrInstanceId        string           `position:"Query" name:"PbrInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query"`
+	PbrInstanceId        string           `position:"Query"`
+	ResourceOwnerAccount string           `position:"Query"`
+	OwnerAccount         string           `position:"Query"`
+	OwnerId              requests.Integer `position:"Query"`
 }
 
 // DescribePbrInterfacesResponse is the response struct for api DescribePbrInterfaces
 type DescribePbrInterfacesResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	PbrInterfaces PbrInterfaces `json:"PbrInterfaces" xml:"PbrInterfaces"`
 }
 
