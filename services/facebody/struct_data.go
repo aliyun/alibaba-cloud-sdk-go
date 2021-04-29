@@ -36,6 +36,7 @@ type Data struct {
 	QualityScoreB        float64                                   `json:"QualityScoreB" xml:"QualityScoreB"`
 	Id                   int64                                     `json:"Id" xml:"Id"`
 	ChatScore            float64                                   `json:"ChatScore" xml:"ChatScore"`
+	OrientationScore     float64                                   `json:"OrientationScore" xml:"OrientationScore"`
 	DbName               string                                    `json:"DbName" xml:"DbName"`
 	InstanceId           int64                                     `json:"InstanceId" xml:"InstanceId"`
 	DbId                 int64                                     `json:"DbId" xml:"DbId"`
@@ -58,6 +59,7 @@ type Data struct {
 	LowerColorScore      float64                                   `json:"LowerColorScore" xml:"LowerColorScore"`
 	IdentityInfo         string                                    `json:"IdentityInfo" xml:"IdentityInfo"`
 	QualityScore         float64                                   `json:"QualityScore" xml:"QualityScore"`
+	Orientation          string                                    `json:"Orientation" xml:"Orientation"`
 	FaceId               string                                    `json:"FaceId" xml:"FaceId"`
 	UpperType            string                                    `json:"UpperType" xml:"UpperType"`
 	LandmarkCount        int                                       `json:"LandmarkCount" xml:"LandmarkCount"`
@@ -84,7 +86,8 @@ type Data struct {
 	Thresholds           []float64                                 `json:"Thresholds" xml:"Thresholds"`
 	Landmarks            []float64                                 `json:"Landmarks" xml:"Landmarks"`
 	FaceRectangles       []int                                     `json:"FaceRectangles" xml:"FaceRectangles"`
-	BeuatyList           []float64                                 `json:"BeuatyList" xml:"BeuatyList"`
+	BeautyList           []float64                                 `json:"BeautyList" xml:"BeautyList"`
+	Masks                []int64                                   `json:"Masks" xml:"Masks"`
 	RectAList            []int                                     `json:"RectAList" xml:"RectAList"`
 	AgeList              []int                                     `json:"AgeList" xml:"AgeList"`
 	FaceProbabilityList  []float64                                 `json:"FaceProbabilityList" xml:"FaceProbabilityList"`

@@ -79,7 +79,9 @@ type ExtractPedestrianFeatureAttrRequest struct {
 // ExtractPedestrianFeatureAttrResponse is the response struct for api ExtractPedestrianFeatureAttr
 type ExtractPedestrianFeatureAttrResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

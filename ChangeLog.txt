@@ -1,3 +1,7 @@
+2021-04-29 Version: v1.61.1057
+- Generated 2019-12-30 for `facebody`.
+- Update RecognizeFace.
+
 2021-04-29 Version: v1.61.1056
 - Generated 2019-08-08 for `ARMS`.
 - Mod ListDashboards add parameters,support dashboardName query.
