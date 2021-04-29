@@ -21,7 +21,6 @@ import (
 )
 
 // PushFaultEvent invokes the unimkt.PushFaultEvent API synchronously
-// api document: https://help.aliyun.com/api/unimkt/pushfaultevent.html
 func (client *Client) PushFaultEvent(request *PushFaultEventRequest) (response *PushFaultEventResponse, err error) {
 	response = CreatePushFaultEventResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushFaultEvent(request *PushFaultEventRequest) (response *
 }
 
 // PushFaultEventWithChan invokes the unimkt.PushFaultEvent API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/pushfaultevent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushFaultEventWithChan(request *PushFaultEventRequest) (<-chan *PushFaultEventResponse, <-chan error) {
 	responseChan := make(chan *PushFaultEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushFaultEventWithChan(request *PushFaultEventRequest) (<-
 }
 
 // PushFaultEventWithCallback invokes the unimkt.PushFaultEvent API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/pushfaultevent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushFaultEventWithCallback(request *PushFaultEventRequest, callback func(response *PushFaultEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

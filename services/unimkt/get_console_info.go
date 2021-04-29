@@ -21,7 +21,6 @@ import (
 )
 
 // GetConsoleInfo invokes the unimkt.GetConsoleInfo API synchronously
-// api document: https://help.aliyun.com/api/unimkt/getconsoleinfo.html
 func (client *Client) GetConsoleInfo(request *GetConsoleInfoRequest) (response *GetConsoleInfoResponse, err error) {
 	response = CreateGetConsoleInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetConsoleInfo(request *GetConsoleInfoRequest) (response *
 }
 
 // GetConsoleInfoWithChan invokes the unimkt.GetConsoleInfo API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/getconsoleinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConsoleInfoWithChan(request *GetConsoleInfoRequest) (<-chan *GetConsoleInfoResponse, <-chan error) {
 	responseChan := make(chan *GetConsoleInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetConsoleInfoWithChan(request *GetConsoleInfoRequest) (<-
 }
 
 // GetConsoleInfoWithCallback invokes the unimkt.GetConsoleInfo API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/getconsoleinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConsoleInfoWithCallback(request *GetConsoleInfoRequest, callback func(response *GetConsoleInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

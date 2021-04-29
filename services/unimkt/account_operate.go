@@ -21,7 +21,6 @@ import (
 )
 
 // AccountOperate invokes the unimkt.AccountOperate API synchronously
-// api document: https://help.aliyun.com/api/unimkt/accountoperate.html
 func (client *Client) AccountOperate(request *AccountOperateRequest) (response *AccountOperateResponse, err error) {
 	response = CreateAccountOperateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AccountOperate(request *AccountOperateRequest) (response *
 }
 
 // AccountOperateWithChan invokes the unimkt.AccountOperate API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/accountoperate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AccountOperateWithChan(request *AccountOperateRequest) (<-chan *AccountOperateResponse, <-chan error) {
 	responseChan := make(chan *AccountOperateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AccountOperateWithChan(request *AccountOperateRequest) (<-
 }
 
 // AccountOperateWithCallback invokes the unimkt.AccountOperate API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/accountoperate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AccountOperateWithCallback(request *AccountOperateRequest, callback func(response *AccountOperateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

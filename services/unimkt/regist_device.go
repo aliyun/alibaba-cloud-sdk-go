@@ -21,7 +21,6 @@ import (
 )
 
 // RegistDevice invokes the unimkt.RegistDevice API synchronously
-// api document: https://help.aliyun.com/api/unimkt/registdevice.html
 func (client *Client) RegistDevice(request *RegistDeviceRequest) (response *RegistDeviceResponse, err error) {
 	response = CreateRegistDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegistDevice(request *RegistDeviceRequest) (response *Regi
 }
 
 // RegistDeviceWithChan invokes the unimkt.RegistDevice API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/registdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegistDeviceWithChan(request *RegistDeviceRequest) (<-chan *RegistDeviceResponse, <-chan error) {
 	responseChan := make(chan *RegistDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegistDeviceWithChan(request *RegistDeviceRequest) (<-chan
 }
 
 // RegistDeviceWithCallback invokes the unimkt.RegistDevice API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/registdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegistDeviceWithCallback(request *RegistDeviceRequest, callback func(response *RegistDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ScanCodeNotification invokes the unimkt.ScanCodeNotification API synchronously
-// api document: https://help.aliyun.com/api/unimkt/scancodenotification.html
 func (client *Client) ScanCodeNotification(request *ScanCodeNotificationRequest) (response *ScanCodeNotificationResponse, err error) {
 	response = CreateScanCodeNotificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScanCodeNotification(request *ScanCodeNotificationRequest)
 }
 
 // ScanCodeNotificationWithChan invokes the unimkt.ScanCodeNotification API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/scancodenotification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScanCodeNotificationWithChan(request *ScanCodeNotificationRequest) (<-chan *ScanCodeNotificationResponse, <-chan error) {
 	responseChan := make(chan *ScanCodeNotificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScanCodeNotificationWithChan(request *ScanCodeNotification
 }
 
 // ScanCodeNotificationWithCallback invokes the unimkt.ScanCodeNotification API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/scancodenotification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScanCodeNotificationWithCallback(request *ScanCodeNotificationRequest, callback func(response *ScanCodeNotificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

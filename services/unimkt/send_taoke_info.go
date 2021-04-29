@@ -21,7 +21,6 @@ import (
 )
 
 // SendTaokeInfo invokes the unimkt.SendTaokeInfo API synchronously
-// api document: https://help.aliyun.com/api/unimkt/sendtaokeinfo.html
 func (client *Client) SendTaokeInfo(request *SendTaokeInfoRequest) (response *SendTaokeInfoResponse, err error) {
 	response = CreateSendTaokeInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SendTaokeInfo(request *SendTaokeInfoRequest) (response *Se
 }
 
 // SendTaokeInfoWithChan invokes the unimkt.SendTaokeInfo API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/sendtaokeinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendTaokeInfoWithChan(request *SendTaokeInfoRequest) (<-chan *SendTaokeInfoResponse, <-chan error) {
 	responseChan := make(chan *SendTaokeInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SendTaokeInfoWithChan(request *SendTaokeInfoRequest) (<-ch
 }
 
 // SendTaokeInfoWithCallback invokes the unimkt.SendTaokeInfo API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/sendtaokeinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendTaokeInfoWithCallback(request *SendTaokeInfoRequest, callback func(response *SendTaokeInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOrderProxy invokes the unimkt.CreateOrderProxy API synchronously
-// api document: https://help.aliyun.com/api/unimkt/createorderproxy.html
 func (client *Client) CreateOrderProxy(request *CreateOrderProxyRequest) (response *CreateOrderProxyResponse, err error) {
 	response = CreateCreateOrderProxyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOrderProxy(request *CreateOrderProxyRequest) (respon
 }
 
 // CreateOrderProxyWithChan invokes the unimkt.CreateOrderProxy API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/createorderproxy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrderProxyWithChan(request *CreateOrderProxyRequest) (<-chan *CreateOrderProxyResponse, <-chan error) {
 	responseChan := make(chan *CreateOrderProxyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOrderProxyWithChan(request *CreateOrderProxyRequest)
 }
 
 // CreateOrderProxyWithCallback invokes the unimkt.CreateOrderProxy API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/createorderproxy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrderProxyWithCallback(request *CreateOrderProxyRequest, callback func(response *CreateOrderProxyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

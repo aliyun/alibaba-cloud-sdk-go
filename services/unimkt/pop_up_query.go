@@ -21,7 +21,6 @@ import (
 )
 
 // PopUpQuery invokes the unimkt.PopUpQuery API synchronously
-// api document: https://help.aliyun.com/api/unimkt/popupquery.html
 func (client *Client) PopUpQuery(request *PopUpQueryRequest) (response *PopUpQueryResponse, err error) {
 	response = CreatePopUpQueryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PopUpQuery(request *PopUpQueryRequest) (response *PopUpQue
 }
 
 // PopUpQueryWithChan invokes the unimkt.PopUpQuery API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/popupquery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PopUpQueryWithChan(request *PopUpQueryRequest) (<-chan *PopUpQueryResponse, <-chan error) {
 	responseChan := make(chan *PopUpQueryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PopUpQueryWithChan(request *PopUpQueryRequest) (<-chan *Po
 }
 
 // PopUpQueryWithCallback invokes the unimkt.PopUpQuery API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/popupquery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PopUpQueryWithCallback(request *PopUpQueryRequest, callback func(response *PopUpQueryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

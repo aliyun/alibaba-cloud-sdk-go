@@ -21,7 +21,6 @@ import (
 )
 
 // PushTradeDetail invokes the unimkt.PushTradeDetail API synchronously
-// api document: https://help.aliyun.com/api/unimkt/pushtradedetail.html
 func (client *Client) PushTradeDetail(request *PushTradeDetailRequest) (response *PushTradeDetailResponse, err error) {
 	response = CreatePushTradeDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushTradeDetail(request *PushTradeDetailRequest) (response
 }
 
 // PushTradeDetailWithChan invokes the unimkt.PushTradeDetail API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/pushtradedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushTradeDetailWithChan(request *PushTradeDetailRequest) (<-chan *PushTradeDetailResponse, <-chan error) {
 	responseChan := make(chan *PushTradeDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushTradeDetailWithChan(request *PushTradeDetailRequest) (
 }
 
 // PushTradeDetailWithCallback invokes the unimkt.PushTradeDetail API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/pushtradedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushTradeDetailWithCallback(request *PushTradeDetailRequest, callback func(response *PushTradeDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

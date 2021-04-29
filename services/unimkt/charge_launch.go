@@ -21,7 +21,6 @@ import (
 )
 
 // ChargeLaunch invokes the unimkt.ChargeLaunch API synchronously
-// api document: https://help.aliyun.com/api/unimkt/chargelaunch.html
 func (client *Client) ChargeLaunch(request *ChargeLaunchRequest) (response *ChargeLaunchResponse, err error) {
 	response = CreateChargeLaunchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ChargeLaunch(request *ChargeLaunchRequest) (response *Char
 }
 
 // ChargeLaunchWithChan invokes the unimkt.ChargeLaunch API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/chargelaunch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChargeLaunchWithChan(request *ChargeLaunchRequest) (<-chan *ChargeLaunchResponse, <-chan error) {
 	responseChan := make(chan *ChargeLaunchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ChargeLaunchWithChan(request *ChargeLaunchRequest) (<-chan
 }
 
 // ChargeLaunchWithCallback invokes the unimkt.ChargeLaunch API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/chargelaunch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChargeLaunchWithCallback(request *ChargeLaunchRequest, callback func(response *ChargeLaunchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

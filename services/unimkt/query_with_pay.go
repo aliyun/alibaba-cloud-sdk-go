@@ -21,7 +21,6 @@ import (
 )
 
 // QueryWithPay invokes the unimkt.QueryWithPay API synchronously
-// api document: https://help.aliyun.com/api/unimkt/querywithpay.html
 func (client *Client) QueryWithPay(request *QueryWithPayRequest) (response *QueryWithPayResponse, err error) {
 	response = CreateQueryWithPayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryWithPay(request *QueryWithPayRequest) (response *Quer
 }
 
 // QueryWithPayWithChan invokes the unimkt.QueryWithPay API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/querywithpay.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryWithPayWithChan(request *QueryWithPayRequest) (<-chan *QueryWithPayResponse, <-chan error) {
 	responseChan := make(chan *QueryWithPayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryWithPayWithChan(request *QueryWithPayRequest) (<-chan
 }
 
 // QueryWithPayWithCallback invokes the unimkt.QueryWithPay API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/querywithpay.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryWithPayWithCallback(request *QueryWithPayRequest, callback func(response *QueryWithPayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetImageUrl invokes the unimkt.GetImageUrl API synchronously
-// api document: https://help.aliyun.com/api/unimkt/getimageurl.html
 func (client *Client) GetImageUrl(request *GetImageUrlRequest) (response *GetImageUrlResponse, err error) {
 	response = CreateGetImageUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImageUrl(request *GetImageUrlRequest) (response *GetIma
 }
 
 // GetImageUrlWithChan invokes the unimkt.GetImageUrl API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/getimageurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageUrlWithChan(request *GetImageUrlRequest) (<-chan *GetImageUrlResponse, <-chan error) {
 	responseChan := make(chan *GetImageUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageUrlWithChan(request *GetImageUrlRequest) (<-chan *
 }
 
 // GetImageUrlWithCallback invokes the unimkt.GetImageUrl API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/getimageurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageUrlWithCallback(request *GetImageUrlRequest, callback func(response *GetImageUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

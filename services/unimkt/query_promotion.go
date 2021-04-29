@@ -21,7 +21,6 @@ import (
 )
 
 // QueryPromotion invokes the unimkt.QueryPromotion API synchronously
-// api document: https://help.aliyun.com/api/unimkt/querypromotion.html
 func (client *Client) QueryPromotion(request *QueryPromotionRequest) (response *QueryPromotionResponse, err error) {
 	response = CreateQueryPromotionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryPromotion(request *QueryPromotionRequest) (response *
 }
 
 // QueryPromotionWithChan invokes the unimkt.QueryPromotion API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/querypromotion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPromotionWithChan(request *QueryPromotionRequest) (<-chan *QueryPromotionResponse, <-chan error) {
 	responseChan := make(chan *QueryPromotionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryPromotionWithChan(request *QueryPromotionRequest) (<-
 }
 
 // QueryPromotionWithCallback invokes the unimkt.QueryPromotion API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/querypromotion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPromotionWithCallback(request *QueryPromotionRequest, callback func(response *QueryPromotionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

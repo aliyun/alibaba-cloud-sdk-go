@@ -21,7 +21,6 @@ import (
 )
 
 // KeepAlive invokes the unimkt.KeepAlive API synchronously
-// api document: https://help.aliyun.com/api/unimkt/keepalive.html
 func (client *Client) KeepAlive(request *KeepAliveRequest) (response *KeepAliveResponse, err error) {
 	response = CreateKeepAliveResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) KeepAlive(request *KeepAliveRequest) (response *KeepAliveR
 }
 
 // KeepAliveWithChan invokes the unimkt.KeepAlive API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/keepalive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KeepAliveWithChan(request *KeepAliveRequest) (<-chan *KeepAliveResponse, <-chan error) {
 	responseChan := make(chan *KeepAliveResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) KeepAliveWithChan(request *KeepAliveRequest) (<-chan *Keep
 }
 
 // KeepAliveWithCallback invokes the unimkt.KeepAlive API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/keepalive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KeepAliveWithCallback(request *KeepAliveRequest, callback func(response *KeepAliveResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

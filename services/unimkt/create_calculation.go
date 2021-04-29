@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCalculation invokes the unimkt.CreateCalculation API synchronously
-// api document: https://help.aliyun.com/api/unimkt/createcalculation.html
 func (client *Client) CreateCalculation(request *CreateCalculationRequest) (response *CreateCalculationResponse, err error) {
 	response = CreateCreateCalculationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCalculation(request *CreateCalculationRequest) (resp
 }
 
 // CreateCalculationWithChan invokes the unimkt.CreateCalculation API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/createcalculation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCalculationWithChan(request *CreateCalculationRequest) (<-chan *CreateCalculationResponse, <-chan error) {
 	responseChan := make(chan *CreateCalculationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCalculationWithChan(request *CreateCalculationReques
 }
 
 // CreateCalculationWithCallback invokes the unimkt.CreateCalculation API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/createcalculation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCalculationWithCallback(request *CreateCalculationRequest, callback func(response *CreateCalculationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

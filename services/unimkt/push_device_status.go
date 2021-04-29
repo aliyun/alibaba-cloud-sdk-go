@@ -21,7 +21,6 @@ import (
 )
 
 // PushDeviceStatus invokes the unimkt.PushDeviceStatus API synchronously
-// api document: https://help.aliyun.com/api/unimkt/pushdevicestatus.html
 func (client *Client) PushDeviceStatus(request *PushDeviceStatusRequest) (response *PushDeviceStatusResponse, err error) {
 	response = CreatePushDeviceStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushDeviceStatus(request *PushDeviceStatusRequest) (respon
 }
 
 // PushDeviceStatusWithChan invokes the unimkt.PushDeviceStatus API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/pushdevicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushDeviceStatusWithChan(request *PushDeviceStatusRequest) (<-chan *PushDeviceStatusResponse, <-chan error) {
 	responseChan := make(chan *PushDeviceStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushDeviceStatusWithChan(request *PushDeviceStatusRequest)
 }
 
 // PushDeviceStatusWithCallback invokes the unimkt.PushDeviceStatus API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/pushdevicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushDeviceStatusWithCallback(request *PushDeviceStatusRequest, callback func(response *PushDeviceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

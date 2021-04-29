@@ -21,7 +21,6 @@ import (
 )
 
 // CheckReceivingDetail invokes the unimkt.CheckReceivingDetail API synchronously
-// api document: https://help.aliyun.com/api/unimkt/checkreceivingdetail.html
 func (client *Client) CheckReceivingDetail(request *CheckReceivingDetailRequest) (response *CheckReceivingDetailResponse, err error) {
 	response = CreateCheckReceivingDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckReceivingDetail(request *CheckReceivingDetailRequest)
 }
 
 // CheckReceivingDetailWithChan invokes the unimkt.CheckReceivingDetail API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/checkreceivingdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckReceivingDetailWithChan(request *CheckReceivingDetailRequest) (<-chan *CheckReceivingDetailResponse, <-chan error) {
 	responseChan := make(chan *CheckReceivingDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckReceivingDetailWithChan(request *CheckReceivingDetail
 }
 
 // CheckReceivingDetailWithCallback invokes the unimkt.CheckReceivingDetail API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/checkreceivingdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckReceivingDetailWithCallback(request *CheckReceivingDetailRequest, callback func(response *CheckReceivingDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CheckDevice invokes the unimkt.CheckDevice API synchronously
-// api document: https://help.aliyun.com/api/unimkt/checkdevice.html
 func (client *Client) CheckDevice(request *CheckDeviceRequest) (response *CheckDeviceResponse, err error) {
 	response = CreateCheckDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckDevice(request *CheckDeviceRequest) (response *CheckD
 }
 
 // CheckDeviceWithChan invokes the unimkt.CheckDevice API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/checkdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDeviceWithChan(request *CheckDeviceRequest) (<-chan *CheckDeviceResponse, <-chan error) {
 	responseChan := make(chan *CheckDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckDeviceWithChan(request *CheckDeviceRequest) (<-chan *
 }
 
 // CheckDeviceWithCallback invokes the unimkt.CheckDevice API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/checkdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDeviceWithCallback(request *CheckDeviceRequest, callback func(response *CheckDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

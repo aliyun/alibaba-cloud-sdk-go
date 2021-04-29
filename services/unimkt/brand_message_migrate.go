@@ -21,7 +21,6 @@ import (
 )
 
 // BrandMessageMigrate invokes the unimkt.BrandMessageMigrate API synchronously
-// api document: https://help.aliyun.com/api/unimkt/brandmessagemigrate.html
 func (client *Client) BrandMessageMigrate(request *BrandMessageMigrateRequest) (response *BrandMessageMigrateResponse, err error) {
 	response = CreateBrandMessageMigrateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BrandMessageMigrate(request *BrandMessageMigrateRequest) (
 }
 
 // BrandMessageMigrateWithChan invokes the unimkt.BrandMessageMigrate API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/brandmessagemigrate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BrandMessageMigrateWithChan(request *BrandMessageMigrateRequest) (<-chan *BrandMessageMigrateResponse, <-chan error) {
 	responseChan := make(chan *BrandMessageMigrateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BrandMessageMigrateWithChan(request *BrandMessageMigrateRe
 }
 
 // BrandMessageMigrateWithCallback invokes the unimkt.BrandMessageMigrate API asynchronously
-// api document: https://help.aliyun.com/api/unimkt/brandmessagemigrate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BrandMessageMigrateWithCallback(request *BrandMessageMigrateRequest, callback func(response *BrandMessageMigrateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
