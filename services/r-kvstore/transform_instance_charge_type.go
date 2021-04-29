@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// TransformToPrePaid invokes the r_kvstore.TransformToPrePaid API synchronously
-func (client *Client) TransformToPrePaid(request *TransformToPrePaidRequest) (response *TransformToPrePaidResponse, err error) {
-	response = CreateTransformToPrePaidResponse()
+// TransformInstanceChargeType invokes the r_kvstore.TransformInstanceChargeType API synchronously
+func (client *Client) TransformInstanceChargeType(request *TransformInstanceChargeTypeRequest) (response *TransformInstanceChargeTypeResponse, err error) {
+	response = CreateTransformInstanceChargeTypeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TransformToPrePaidWithChan invokes the r_kvstore.TransformToPrePaid API asynchronously
-func (client *Client) TransformToPrePaidWithChan(request *TransformToPrePaidRequest) (<-chan *TransformToPrePaidResponse, <-chan error) {
-	responseChan := make(chan *TransformToPrePaidResponse, 1)
+// TransformInstanceChargeTypeWithChan invokes the r_kvstore.TransformInstanceChargeType API asynchronously
+func (client *Client) TransformInstanceChargeTypeWithChan(request *TransformInstanceChargeTypeRequest) (<-chan *TransformInstanceChargeTypeResponse, <-chan error) {
+	responseChan := make(chan *TransformInstanceChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.TransformToPrePaid(request)
+		response, err := client.TransformInstanceChargeType(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) TransformToPrePaidWithChan(request *TransformToPrePaidRequ
 	return responseChan, errChan
 }
 
-// TransformToPrePaidWithCallback invokes the r_kvstore.TransformToPrePaid API asynchronously
-func (client *Client) TransformToPrePaidWithCallback(request *TransformToPrePaidRequest, callback func(response *TransformToPrePaidResponse, err error)) <-chan int {
+// TransformInstanceChargeTypeWithCallback invokes the r_kvstore.TransformInstanceChargeType API asynchronously
+func (client *Client) TransformInstanceChargeTypeWithCallback(request *TransformInstanceChargeTypeRequest, callback func(response *TransformInstanceChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TransformToPrePaidResponse
+		var response *TransformInstanceChargeTypeResponse
 		var err error
 		defer close(result)
-		response, err = client.TransformToPrePaid(request)
+		response, err = client.TransformInstanceChargeType(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) TransformToPrePaidWithCallback(request *TransformToPrePaid
 	return result
 }
 
-// TransformToPrePaidRequest is the request struct for api TransformToPrePaid
-type TransformToPrePaidRequest struct {
+// TransformInstanceChargeTypeRequest is the request struct for api TransformInstanceChargeType
+type TransformInstanceChargeTypeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -83,27 +83,27 @@ type TransformToPrePaidRequest struct {
 	ChargeType           string           `position:"Query" name:"ChargeType"`
 }
 
-// TransformToPrePaidResponse is the response struct for api TransformToPrePaid
-type TransformToPrePaidResponse struct {
+// TransformInstanceChargeTypeResponse is the response struct for api TransformInstanceChargeType
+type TransformInstanceChargeTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 	EndTime   string `json:"EndTime" xml:"EndTime"`
 }
 
-// CreateTransformToPrePaidRequest creates a request to invoke TransformToPrePaid API
-func CreateTransformToPrePaidRequest() (request *TransformToPrePaidRequest) {
-	request = &TransformToPrePaidRequest{
+// CreateTransformInstanceChargeTypeRequest creates a request to invoke TransformInstanceChargeType API
+func CreateTransformInstanceChargeTypeRequest() (request *TransformInstanceChargeTypeRequest) {
+	request = &TransformInstanceChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TransformToPrePaid", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TransformInstanceChargeType", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateTransformToPrePaidResponse creates a response to parse from TransformToPrePaid response
-func CreateTransformToPrePaidResponse() (response *TransformToPrePaidResponse) {
-	response = &TransformToPrePaidResponse{
+// CreateTransformInstanceChargeTypeResponse creates a response to parse from TransformInstanceChargeType response
+func CreateTransformInstanceChargeTypeResponse() (response *TransformInstanceChargeTypeResponse) {
+	response = &TransformInstanceChargeTypeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

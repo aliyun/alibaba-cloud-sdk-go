@@ -1,3 +1,7 @@
+2021-04-29 Version: v1.61.1058
+- Generated 2015-01-01 for `R-kvstore`.
+- Add DescribeInstances API.
+
 2021-04-29 Version: v1.61.1057
 - Generated 2019-12-30 for `facebody`.
 - Update RecognizeFace.

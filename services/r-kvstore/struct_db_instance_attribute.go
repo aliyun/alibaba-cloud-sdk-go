@@ -60,5 +60,7 @@ type DBInstanceAttribute struct {
 	Storage                   string                          `json:"Storage" xml:"Storage"`
 	StorageType               string                          `json:"StorageType" xml:"StorageType"`
 	GlobalInstanceId          string                          `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
+	SecondaryZoneId           string                          `json:"SecondaryZoneId" xml:"SecondaryZoneId"`
+	ZoneType                  string                          `json:"ZoneType" xml:"ZoneType"`
 	Tags                      TagsInDescribeInstanceAttribute `json:"Tags" xml:"Tags"`
 }

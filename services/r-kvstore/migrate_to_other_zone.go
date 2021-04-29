@@ -72,6 +72,7 @@ func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZone
 type MigrateToOtherZoneRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecondaryZoneId      string           `position:"Query" name:"SecondaryZoneId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`

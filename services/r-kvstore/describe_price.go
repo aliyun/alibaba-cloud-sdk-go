@@ -80,6 +80,7 @@ type DescribePriceRequest struct {
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	Period               requests.Integer `position:"Query" name:"Period"`
+	Product              string           `position:"Query" name:"Product"`
 	Quantity             requests.Integer `position:"Query" name:"Quantity"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -88,6 +89,7 @@ type DescribePriceRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
+	Category             string           `position:"Query" name:"Category"`
 	ForceUpgrade         requests.Boolean `position:"Query" name:"ForceUpgrade"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 }

@@ -17,10 +17,11 @@ package r_kvstore
 
 // Order is a nested struct in r_kvstore response
 type Order struct {
-	OriginalAmount string                 `json:"OriginalAmount" xml:"OriginalAmount"`
-	TradeAmount    string                 `json:"TradeAmount" xml:"TradeAmount"`
-	DiscountAmount string                 `json:"DiscountAmount" xml:"DiscountAmount"`
-	Currency       string                 `json:"Currency" xml:"Currency"`
-	RuleIds        RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
-	Coupons        Coupons                `json:"Coupons" xml:"Coupons"`
+	OriginalAmount    string                 `json:"OriginalAmount" xml:"OriginalAmount"`
+	TradeAmount       string                 `json:"TradeAmount" xml:"TradeAmount"`
+	DiscountAmount    string                 `json:"DiscountAmount" xml:"DiscountAmount"`
+	Currency          string                 `json:"Currency" xml:"Currency"`
+	HandlingFeeAmount string                 `json:"HandlingFeeAmount" xml:"HandlingFeeAmount"`
+	RuleIds           RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
+	Coupons           Coupons                `json:"Coupons" xml:"Coupons"`
 }
