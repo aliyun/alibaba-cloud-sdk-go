@@ -25,5 +25,10 @@ type DashboardVosItem struct {
 	Type           string   `json:"Type" xml:"Type"`
 	Exporter       string   `json:"Exporter" xml:"Exporter"`
 	IsArmsExporter bool     `json:"IsArmsExporter" xml:"IsArmsExporter"`
+	Name           string   `json:"Name" xml:"Name"`
+	Version        string   `json:"Version" xml:"Version"`
+	DashboardType  string   `json:"DashboardType" xml:"DashboardType"`
+	Kind           string   `json:"Kind" xml:"Kind"`
+	NeedUpdate     bool     `json:"NeedUpdate" xml:"NeedUpdate"`
 	Tags           []string `json:"Tags" xml:"Tags"`
 }

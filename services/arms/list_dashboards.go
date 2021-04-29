@@ -71,6 +71,7 @@ func (client *Client) ListDashboardsWithCallback(request *ListDashboardsRequest,
 // ListDashboardsRequest is the request struct for api ListDashboards
 type ListDashboardsRequest struct {
 	*requests.RpcRequest
+	DashboardName  string           `position:"Query" name:"DashboardName"`
 	Product        string           `position:"Query" name:"Product"`
 	RecreateSwitch requests.Boolean `position:"Query" name:"RecreateSwitch"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`

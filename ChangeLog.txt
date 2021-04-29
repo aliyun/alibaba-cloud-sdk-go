@@ -1,3 +1,7 @@
+2021-04-29 Version: v1.61.1056
+- Generated 2019-08-08 for `ARMS`.
+- Mod ListDashboards add parameters,support dashboardName query.
+
 2021-04-29 Version: v1.61.1055
 - Generated 2018-03-13 for `Smartag`.
 - Support sag reseller.
