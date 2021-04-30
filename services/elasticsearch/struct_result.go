@@ -20,7 +20,7 @@ type Result struct {
 	Unit                      string                         `json:"unit" xml:"unit"`
 	QueueType                 string                         `json:"queueType" xml:"queueType"`
 	Endpoints                 string                         `json:"endpoints" xml:"endpoints"`
-	Tags                      map[string]interface{}         `json:"tags" xml:"tags"`
+	Tags                      []Tag                          `json:"tags" xml:"tags"`
 	Domain                    string                         `json:"domain" xml:"domain"`
 	GmtUpdateTime             string                         `json:"gmtUpdateTime" xml:"gmtUpdateTime"`
 	BatchSize                 int                            `json:"batchSize" xml:"batchSize"`
@@ -119,4 +119,13 @@ type Result struct {
 	NodeSpecList              []NodeSpecListItem             `json:"nodeSpecList" xml:"nodeSpecList"`
 	DataDiskList              []DataDiskListItem             `json:"dataDiskList" xml:"dataDiskList"`
 	DiagnoseItems             []DiagnoseItemsItem            `json:"diagnoseItems" xml:"diagnoseItems"`
+}
+
+type GetEmonMonitorDataResult struct {
+	Summary          float64                `json:"summary" xml:"summary"`
+	Dps              map[string]interface{} `json:"dps" xml:"dps"`
+	Tags             map[string]interface{} `json:"tags" xml:"tags"`
+	Integrity        float64                `json:"integrity" xml:"integrity"`
+	MessageWatermark int64                  `json:"messageWatermark" xml:"messageWatermark"`
+	Metric           string                 `json:"metric" xml:"metric"`
 }

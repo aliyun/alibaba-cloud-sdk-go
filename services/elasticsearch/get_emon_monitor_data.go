@@ -81,7 +81,7 @@ type GetEmonMonitorDataResponse struct {
 	Code      string   `json:"Code" xml:"Code"`
 	Message   string   `json:"Message" xml:"Message"`
 	Success   bool     `json:"Success" xml:"Success"`
-	Result    []Result `json:"Result" xml:"Result"`
+	Result    []GetEmonMonitorDataResult `json:"Result" xml:"Result"`
 }
 
 // CreateGetEmonMonitorDataRequest creates a request to invoke GetEmonMonitorData API
