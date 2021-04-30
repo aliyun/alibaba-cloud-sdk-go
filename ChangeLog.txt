@@ -1,3 +1,7 @@
+2021-04-30 Version: v1.61.1060
+- Generated 2019-08-08 for `ARMS`.
+- Add OpenArmsServiceSecondVersion.
+
 2021-04-29 Version: v1.61.1059
 - Generated 2015-12-01 for `Dds`.
 - ModifyNodeSpec API add SwitchTime.
