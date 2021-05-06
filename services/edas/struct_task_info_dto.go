@@ -25,4 +25,5 @@ type TaskInfoDTO struct {
 	TaskErrorMessage    string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
 	ShowManualIgnorance bool   `json:"ShowManualIgnorance" xml:"ShowManualIgnorance"`
 	TaskErrorIgnorance  int    `json:"TaskErrorIgnorance" xml:"TaskErrorIgnorance"`
+	RetryType           int    `json:"RetryType" xml:"RetryType"`
 }

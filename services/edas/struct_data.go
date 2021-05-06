@@ -34,6 +34,7 @@ type Data struct {
 	ExtVServerGroupId               string                                   `json:"ExtVServerGroupId" xml:"ExtVServerGroupId"`
 	PodName                         string                                   `json:"PodName" xml:"PodName"`
 	AppInfos                        string                                   `json:"AppInfos" xml:"AppInfos"`
+	Enabled                         bool                                     `json:"Enabled" xml:"Enabled"`
 	Enable                          bool                                     `json:"Enable" xml:"Enable"`
 	LabelType                       string                                   `json:"LabelType" xml:"LabelType"`
 	SlbId                           string                                   `json:"SlbId" xml:"SlbId"`
@@ -48,6 +49,7 @@ type Data struct {
 	TotalPages                      int                                      `json:"TotalPages" xml:"TotalPages"`
 	PageSize                        int                                      `json:"PageSize" xml:"PageSize"`
 	OversoldFactor                  int                                      `json:"OversoldFactor" xml:"OversoldFactor"`
+	Threshold                       float64                                  `json:"Threshold" xml:"Threshold"`
 	ConsumerAppId                   string                                   `json:"ConsumerAppId" xml:"ConsumerAppId"`
 	Size                            int                                      `json:"Size" xml:"Size"`
 	RegionId                        string                                   `json:"RegionId" xml:"RegionId"`
