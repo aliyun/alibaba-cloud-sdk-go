@@ -85,10 +85,11 @@ type DescribeScheduleTasksRequest struct {
 // DescribeScheduleTasksResponse is the response struct for api DescribeScheduleTasks
 type DescribeScheduleTasksResponse struct {
 	*responses.BaseResponse
-	Message string `json:"Message" xml:"Message"`
-	Code    string `json:"Code" xml:"Code"`
-	Success bool   `json:"Success" xml:"Success"`
-	Data    Data   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeScheduleTasksRequest creates a request to invoke DescribeScheduleTasks API

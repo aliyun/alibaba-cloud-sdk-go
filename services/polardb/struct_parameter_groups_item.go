@@ -19,7 +19,6 @@ package polardb
 type ParameterGroupsItem struct {
 	DBVersion          string `json:"DBVersion" xml:"DBVersion"`
 	ParameterGroupId   string `json:"ParameterGroupId" xml:"ParameterGroupId"`
-	DigitalId          string `json:"DigitalId" xml:"DigitalId"`
 	ForceRestart       string `json:"ForceRestart" xml:"ForceRestart"`
 	ParameterGroupName string `json:"ParameterGroupName" xml:"ParameterGroupName"`
 	CreateTime         string `json:"CreateTime" xml:"CreateTime"`

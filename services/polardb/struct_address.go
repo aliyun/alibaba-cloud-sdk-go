@@ -17,8 +17,8 @@ package polardb
 
 // Address is a nested struct in polardb response
 type Address struct {
-	VpcInstanceId               string `json:"VpcInstanceId" xml:"VpcInstanceId"`
 	PrivateZoneConnectionString string `json:"PrivateZoneConnectionString" xml:"PrivateZoneConnectionString"`
+	VpcInstanceId               string `json:"VpcInstanceId" xml:"VpcInstanceId"`
 	VPCId                       string `json:"VPCId" xml:"VPCId"`
 	Port                        string `json:"Port" xml:"Port"`
 	VSwitchId                   string `json:"VSwitchId" xml:"VSwitchId"`

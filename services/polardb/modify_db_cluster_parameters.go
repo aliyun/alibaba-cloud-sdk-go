@@ -73,7 +73,6 @@ type ModifyDBClusterParametersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

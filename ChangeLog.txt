@@ -1,3 +1,7 @@
+2021-05-06 Version: v1.61.1061
+- Generated 2017-08-01 for `polardb`.
+- Support DescribePolarSQLCollectorPolicy.
+
 2021-04-30 Version: v1.61.1060
 - Generated 2019-08-08 for `ARMS`.
 - Add OpenArmsServiceSecondVersion.
