@@ -76,6 +76,7 @@ type DescribeLiveDomainStreamTranscodeDataRequest struct {
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeLiveDomainStreamTranscodeDataResponse is the response struct for api DescribeLiveDomainStreamTranscodeData
