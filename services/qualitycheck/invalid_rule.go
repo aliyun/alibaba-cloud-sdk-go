@@ -90,7 +90,7 @@ func CreateInvalidRuleRequest() (request *InvalidRuleRequest) {
 	request = &InvalidRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "InvalidRule", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "InvalidRule", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

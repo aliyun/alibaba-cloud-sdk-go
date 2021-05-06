@@ -90,7 +90,7 @@ func CreateVerifyFileRequest() (request *VerifyFileRequest) {
 	request = &VerifyFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "VerifyFile", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "VerifyFile", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

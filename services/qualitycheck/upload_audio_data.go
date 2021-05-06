@@ -90,7 +90,7 @@ func CreateUploadAudioDataRequest() (request *UploadAudioDataRequest) {
 	request = &UploadAudioDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadAudioData", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadAudioData", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

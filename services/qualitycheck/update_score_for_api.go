@@ -89,7 +89,7 @@ func CreateUpdateScoreForApiRequest() (request *UpdateScoreForApiRequest) {
 	request = &UpdateScoreForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateScoreForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateScoreForApi", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

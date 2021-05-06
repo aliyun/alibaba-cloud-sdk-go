@@ -90,7 +90,7 @@ func CreateDeleteBusinessCategoryRequest() (request *DeleteBusinessCategoryReque
 	request = &DeleteBusinessCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteBusinessCategory", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteBusinessCategory", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

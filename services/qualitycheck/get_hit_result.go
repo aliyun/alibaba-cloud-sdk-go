@@ -93,7 +93,7 @@ func CreateGetHitResultRequest() (request *GetHitResultRequest) {
 	request = &GetHitResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetHitResult", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetHitResult", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

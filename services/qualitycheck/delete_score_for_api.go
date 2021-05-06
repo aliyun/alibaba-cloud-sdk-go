@@ -89,7 +89,7 @@ func CreateDeleteScoreForApiRequest() (request *DeleteScoreForApiRequest) {
 	request = &DeleteScoreForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteScoreForApi", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteScoreForApi", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

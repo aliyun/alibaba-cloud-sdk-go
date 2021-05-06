@@ -90,7 +90,7 @@ func CreateSubmitReviewInfoRequest() (request *SubmitReviewInfoRequest) {
 	request = &SubmitReviewInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitReviewInfo", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SubmitReviewInfo", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

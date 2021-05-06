@@ -89,7 +89,7 @@ func CreateDeletePrecisionTaskRequest() (request *DeletePrecisionTaskRequest) {
 	request = &DeletePrecisionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeletePrecisionTask", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeletePrecisionTask", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

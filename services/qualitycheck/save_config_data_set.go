@@ -89,7 +89,7 @@ func CreateSaveConfigDataSetRequest() (request *SaveConfigDataSetRequest) {
 	request = &SaveConfigDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SaveConfigDataSet", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SaveConfigDataSet", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateSyncQualityCheckRequest() (request *SyncQualityCheckRequest) {
 	request = &SyncQualityCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SyncQualityCheck", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "SyncQualityCheck", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

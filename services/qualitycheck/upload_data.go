@@ -90,7 +90,7 @@ func CreateUploadDataRequest() (request *UploadDataRequest) {
 	request = &UploadDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadData", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UploadData", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

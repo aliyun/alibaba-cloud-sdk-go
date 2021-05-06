@@ -90,7 +90,7 @@ func CreateAddBusinessCategoryRequest() (request *AddBusinessCategoryRequest) {
 	request = &AddBusinessCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AddBusinessCategory", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "AddBusinessCategory", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

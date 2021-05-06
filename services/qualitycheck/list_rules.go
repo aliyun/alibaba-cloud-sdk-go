@@ -93,7 +93,7 @@ func CreateListRulesRequest() (request *ListRulesRequest) {
 	request = &ListRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListRules", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "ListRules", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }

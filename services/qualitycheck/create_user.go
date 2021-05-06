@@ -89,7 +89,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 	request = &CreateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateUser", "", "")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateUser", "Qualitycheck", "openAPI")
 	request.Method = requests.POST
 	return
 }
