@@ -55,6 +55,7 @@ type DBInstance struct {
 	ReplicateId                  string                                     `json:"ReplicateId" xml:"ReplicateId"`
 	DedicatedHostNameForSlave    string                                     `json:"DedicatedHostNameForSlave" xml:"DedicatedHostNameForSlave"`
 	DedicatedHostZoneIdForLog    string                                     `json:"DedicatedHostZoneIdForLog" xml:"DedicatedHostZoneIdForLog"`
+	ConnectionString             string                                     `json:"ConnectionString" xml:"ConnectionString"`
 	ConnectionMode               string                                     `json:"ConnectionMode" xml:"ConnectionMode"`
 	DedicatedHostNameForMaster   string                                     `json:"DedicatedHostNameForMaster" xml:"DedicatedHostNameForMaster"`
 	AutoUpgradeMinorVersion      string                                     `json:"AutoUpgradeMinorVersion" xml:"AutoUpgradeMinorVersion"`

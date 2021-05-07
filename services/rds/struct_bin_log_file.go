@@ -17,6 +17,7 @@ package rds
 
 // BinLogFile is a nested struct in rds response
 type BinLogFile struct {
+	RemoteStatus         string `json:"RemoteStatus" xml:"RemoteStatus"`
 	HostInstanceID       string `json:"HostInstanceID" xml:"HostInstanceID"`
 	LogEndTime           string `json:"LogEndTime" xml:"LogEndTime"`
 	IntranetDownloadLink string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`

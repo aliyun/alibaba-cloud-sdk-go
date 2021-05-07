@@ -71,6 +71,7 @@ func (client *Client) DescribeAvailableZonesWithCallback(request *DescribeAvaila
 // DescribeAvailableZonesRequest is the request struct for api DescribeAvailableZones
 type DescribeAvailableZonesRequest struct {
 	*requests.RpcRequest
+	DBInstanceName       string           `position:"Query" name:"DBInstanceName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	Engine               string           `position:"Query" name:"Engine"`

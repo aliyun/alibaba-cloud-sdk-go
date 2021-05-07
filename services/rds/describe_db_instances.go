@@ -74,6 +74,7 @@ type DescribeDBInstancesRequest struct {
 	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	ConnectionString     string           `position:"Query" name:"ConnectionString"`
 	NeedVpcName          requests.Boolean `position:"Query" name:"NeedVpcName"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`

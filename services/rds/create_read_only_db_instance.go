@@ -85,12 +85,15 @@ type CreateReadOnlyDBInstanceRequest struct {
 	DBInstanceStorageType          string           `position:"Query" name:"DBInstanceStorageType"`
 	DedicatedHostGroupId           string           `position:"Query" name:"DedicatedHostGroupId"`
 	TddlBizType                    string           `position:"Query" name:"TddlBizType"`
+	Period                         string           `position:"Query" name:"Period"`
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
+	UsedTime                       string           `position:"Query" name:"UsedTime"`
 	DBInstanceClass                string           `position:"Query" name:"DBInstanceClass"`
 	VSwitchId                      string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress               string           `position:"Query" name:"PrivateIpAddress"`
+	AutoRenew                      string           `position:"Query" name:"AutoRenew"`
 	VPCId                          string           `position:"Query" name:"VPCId"`
 	ZoneId                         string           `position:"Query" name:"ZoneId"`
 	Category                       string           `position:"Query" name:"Category"`
