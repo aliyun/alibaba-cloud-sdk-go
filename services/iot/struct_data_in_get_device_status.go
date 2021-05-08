@@ -17,5 +17,6 @@ package iot
 
 // DataInGetDeviceStatus is a nested struct in iot response
 type DataInGetDeviceStatus struct {
-	Status string `json:"Status" xml:"Status"`
+	Status    string `json:"Status" xml:"Status"`
+	Timestamp int64  `json:"Timestamp" xml:"Timestamp"`
 }

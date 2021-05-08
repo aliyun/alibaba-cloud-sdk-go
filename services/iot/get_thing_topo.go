@@ -71,14 +71,16 @@ func (client *Client) GetThingTopoWithCallback(request *GetThingTopoRequest, cal
 // GetThingTopoRequest is the request struct for api GetThingTopo
 type GetThingTopoRequest struct {
 	*requests.RpcRequest
-	IotId         string           `position:"Query" name:"IotId"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
-	PageNo        requests.Integer `position:"Query" name:"PageNo"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	DeviceName    string           `position:"Query" name:"DeviceName"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	IotId             string           `position:"Query" name:"IotId"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	ProductKey        string           `position:"Query" name:"ProductKey"`
+	PageNo            requests.Integer `position:"Query" name:"PageNo"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	DeviceName        string           `position:"Query" name:"DeviceName"`
 }
 
 // GetThingTopoResponse is the response struct for api GetThingTopo
@@ -96,7 +98,7 @@ func CreateGetThingTopoRequest() (request *GetThingTopoRequest) {
 	request = &GetThingTopoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingTopo", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingTopo", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreatePrintByTemplateRequest() (request *PrintByTemplateRequest) {
 	request = &PrintByTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "PrintByTemplate", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "PrintByTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

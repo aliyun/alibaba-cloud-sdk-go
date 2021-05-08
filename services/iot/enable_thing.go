@@ -95,7 +95,7 @@ func CreateEnableThingRequest() (request *EnableThingRequest) {
 	request = &EnableThingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "EnableThing", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "EnableThing", "", "")
 	request.Method = requests.POST
 	return
 }

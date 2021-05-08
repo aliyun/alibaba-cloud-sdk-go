@@ -95,7 +95,7 @@ func CreateDisableThingRequest() (request *DisableThingRequest) {
 	request = &DisableThingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DisableThing", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DisableThing", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,11 +17,12 @@ package iot
 
 // DataInListJob is a nested struct in iot response
 type DataInListJob struct {
-	JobId       string `json:"JobId" xml:"JobId"`
-	JobName     string `json:"JobName" xml:"JobName"`
-	UtcCreate   string `json:"UtcCreate" xml:"UtcCreate"`
-	UtcModified string `json:"UtcModified" xml:"UtcModified"`
-	Status      string `json:"Status" xml:"Status"`
-	Description string `json:"Description" xml:"Description"`
-	Type        string `json:"Type" xml:"Type"`
+	JobId         string `json:"JobId" xml:"JobId"`
+	JobName       string `json:"JobName" xml:"JobName"`
+	UtcCreate     string `json:"UtcCreate" xml:"UtcCreate"`
+	UtcModified   string `json:"UtcModified" xml:"UtcModified"`
+	Status        string `json:"Status" xml:"Status"`
+	Description   string `json:"Description" xml:"Description"`
+	Type          string `json:"Type" xml:"Type"`
+	ScheduledTime int64  `json:"ScheduledTime" xml:"ScheduledTime"`
 }

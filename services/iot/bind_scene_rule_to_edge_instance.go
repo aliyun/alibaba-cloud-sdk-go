@@ -92,7 +92,7 @@ func CreateBindSceneRuleToEdgeInstanceRequest() (request *BindSceneRuleToEdgeIns
 	request = &BindSceneRuleToEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindSceneRuleToEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BindSceneRuleToEdgeInstance", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -71,6 +71,7 @@ func (client *Client) ListDeviceDistributeJobWithCallback(request *ListDeviceDis
 // ListDeviceDistributeJobRequest is the request struct for api ListDeviceDistributeJob
 type ListDeviceDistributeJobRequest struct {
 	*requests.RpcRequest
+	JobId       string           `position:"Body" name:"JobId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	ApiProduct  string           `position:"Body" name:"ApiProduct"`
@@ -94,7 +95,7 @@ func CreateListDeviceDistributeJobRequest() (request *ListDeviceDistributeJobReq
 	request = &ListDeviceDistributeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListDeviceDistributeJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListDeviceDistributeJob", "", "")
 	request.Method = requests.POST
 	return
 }

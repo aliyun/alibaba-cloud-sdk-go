@@ -95,7 +95,7 @@ func CreateCreateOTAVerifyJobRequest() (request *CreateOTAVerifyJobRequest) {
 	request = &CreateOTAVerifyJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateOTAVerifyJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateOTAVerifyJob", "", "")
 	request.Method = requests.POST
 	return
 }

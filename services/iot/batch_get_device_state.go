@@ -71,12 +71,14 @@ func (client *Client) BatchGetDeviceStateWithCallback(request *BatchGetDeviceSta
 // BatchGetDeviceStateRequest is the request struct for api BatchGetDeviceState
 type BatchGetDeviceStateRequest struct {
 	*requests.RpcRequest
-	IotId         *[]string `position:"Query" name:"IotId"  type:"Repeated"`
-	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
-	ApiProduct    string    `position:"Body" name:"ApiProduct"`
-	ApiRevision   string    `position:"Body" name:"ApiRevision"`
-	DeviceName    *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
+	RealTenantId      string    `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string    `position:"Query" name:"RealTripartiteKey"`
+	IotId             *[]string `position:"Query" name:"IotId"  type:"Repeated"`
+	IotInstanceId     string    `position:"Query" name:"IotInstanceId"`
+	ProductKey        string    `position:"Query" name:"ProductKey"`
+	ApiProduct        string    `position:"Body" name:"ApiProduct"`
+	ApiRevision       string    `position:"Body" name:"ApiRevision"`
+	DeviceName        *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
 }
 
 // BatchGetDeviceStateResponse is the response struct for api BatchGetDeviceState
@@ -94,7 +96,7 @@ func CreateBatchGetDeviceStateRequest() (request *BatchGetDeviceStateRequest) {
 	request = &BatchGetDeviceStateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetDeviceState", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetDeviceState", "", "")
 	request.Method = requests.POST
 	return
 }

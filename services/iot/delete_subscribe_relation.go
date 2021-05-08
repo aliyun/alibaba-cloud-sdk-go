@@ -92,7 +92,7 @@ func CreateDeleteSubscribeRelationRequest() (request *DeleteSubscribeRelationReq
 	request = &DeleteSubscribeRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSubscribeRelation", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSubscribeRelation", "", "")
 	request.Method = requests.POST
 	return
 }

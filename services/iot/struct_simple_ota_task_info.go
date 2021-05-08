@@ -31,4 +31,5 @@ type SimpleOTATaskInfo struct {
 	Progress    string `json:"Progress" xml:"Progress"`
 	IotId       string `json:"IotId" xml:"IotId"`
 	UtcCreate   string `json:"UtcCreate" xml:"UtcCreate"`
+	Timeout     string `json:"Timeout" xml:"Timeout"`
 }

@@ -71,13 +71,15 @@ func (client *Client) DeleteDevicePropWithCallback(request *DeleteDevicePropRequ
 // DeleteDevicePropRequest is the request struct for api DeleteDeviceProp
 type DeleteDevicePropRequest struct {
 	*requests.RpcRequest
-	PropKey       string `position:"Query" name:"PropKey"`
-	IotId         string `position:"Query" name:"IotId"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
-	DeviceName    string `position:"Query" name:"DeviceName"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	PropKey           string `position:"Query" name:"PropKey"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotId             string `position:"Query" name:"IotId"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
+	DeviceName        string `position:"Query" name:"DeviceName"`
 }
 
 // DeleteDevicePropResponse is the response struct for api DeleteDeviceProp
@@ -94,7 +96,7 @@ func CreateDeleteDevicePropRequest() (request *DeleteDevicePropRequest) {
 	request = &DeleteDevicePropRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceProp", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceProp", "", "")
 	request.Method = requests.POST
 	return
 }

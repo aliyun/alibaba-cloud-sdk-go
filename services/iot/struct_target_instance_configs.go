@@ -17,5 +17,7 @@ package iot
 
 // TargetInstanceConfigs is a nested struct in iot response
 type TargetInstanceConfigs struct {
-	TargetInstanceId string `json:"TargetInstanceId" xml:"TargetInstanceId"`
+	TargetInstanceName string `json:"TargetInstanceName" xml:"TargetInstanceName"`
+	TargetRegion       string `json:"TargetRegion" xml:"TargetRegion"`
+	TargetInstanceId   string `json:"TargetInstanceId" xml:"TargetInstanceId"`
 }

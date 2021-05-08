@@ -96,7 +96,7 @@ func CreateCreateTopicRouteTableRequest() (request *CreateTopicRouteTableRequest
 	request = &CreateTopicRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateTopicRouteTable", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateTopicRouteTable", "", "")
 	request.Method = requests.POST
 	return
 }

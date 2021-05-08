@@ -25,6 +25,7 @@ type DataInQueryJob struct {
 	Type          string        `json:"Type" xml:"Type"`
 	JobDocument   string        `json:"JobDocument" xml:"JobDocument"`
 	UtcModified   string        `json:"UtcModified" xml:"UtcModified"`
+	ScheduledTime int64         `json:"ScheduledTime" xml:"ScheduledTime"`
 	RolloutConfig RolloutConfig `json:"RolloutConfig" xml:"RolloutConfig"`
 	TimeoutConfig TimeoutConfig `json:"TimeoutConfig" xml:"TimeoutConfig"`
 	JobFile       JobFile       `json:"JobFile" xml:"JobFile"`

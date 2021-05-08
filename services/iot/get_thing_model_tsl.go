@@ -74,7 +74,6 @@ type GetThingModelTslRequest struct {
 	RealTenantId      string           `position:"Query" name:"RealTenantId"`
 	Simple            requests.Boolean `position:"Query" name:"Simple"`
 	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
-	ResourceGroupId   string           `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
 	ProductKey        string           `position:"Query" name:"ProductKey"`
 	ApiProduct        string           `position:"Body" name:"ApiProduct"`
@@ -98,7 +97,7 @@ func CreateGetThingModelTslRequest() (request *GetThingModelTslRequest) {
 	request = &GetThingModelTslRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingModelTsl", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingModelTsl", "", "")
 	request.Method = requests.POST
 	return
 }

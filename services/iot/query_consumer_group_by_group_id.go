@@ -92,7 +92,7 @@ func CreateQueryConsumerGroupByGroupIdRequest() (request *QueryConsumerGroupByGr
 	request = &QueryConsumerGroupByGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryConsumerGroupByGroupId", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryConsumerGroupByGroupId", "", "")
 	request.Method = requests.POST
 	return
 }

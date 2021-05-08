@@ -93,7 +93,7 @@ func CreateDeleteOTAModuleRequest() (request *DeleteOTAModuleRequest) {
 	request = &DeleteOTAModuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteOTAModule", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteOTAModule", "", "")
 	request.Method = requests.POST
 	return
 }

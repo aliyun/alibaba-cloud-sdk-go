@@ -71,11 +71,10 @@ func (client *Client) ListThingModelVersionWithCallback(request *ListThingModelV
 // ListThingModelVersionRequest is the request struct for api ListThingModelVersion
 type ListThingModelVersionRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
-	ProductKey      string `position:"Query" name:"ProductKey"`
-	ApiProduct      string `position:"Body" name:"ApiProduct"`
-	ApiRevision     string `position:"Body" name:"ApiRevision"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // ListThingModelVersionResponse is the response struct for api ListThingModelVersion
@@ -93,7 +92,7 @@ func CreateListThingModelVersionRequest() (request *ListThingModelVersionRequest
 	request = &ListThingModelVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListThingModelVersion", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListThingModelVersion", "", "")
 	request.Method = requests.POST
 	return
 }

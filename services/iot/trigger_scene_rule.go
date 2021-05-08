@@ -92,7 +92,7 @@ func CreateTriggerSceneRuleRequest() (request *TriggerSceneRuleRequest) {
 	request = &TriggerSceneRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "TriggerSceneRule", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "TriggerSceneRule", "", "")
 	request.Method = requests.POST
 	return
 }

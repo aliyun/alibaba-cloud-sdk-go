@@ -71,17 +71,18 @@ func (client *Client) CreateJobWithCallback(request *CreateJobRequest, callback 
 // CreateJobRequest is the request struct for api CreateJob
 type CreateJobRequest struct {
 	*requests.RpcRequest
-	JobDocument   string `position:"Query" name:"JobDocument"`
-	Description   string `position:"Query" name:"Description"`
-	Type          string `position:"Query" name:"Type"`
-	RolloutConfig string `position:"Query" name:"RolloutConfig"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	JobName       string `position:"Query" name:"JobName"`
-	TimeoutConfig string `position:"Query" name:"TimeoutConfig"`
-	TargetConfig  string `position:"Query" name:"TargetConfig"`
-	JobFile       string `position:"Query" name:"JobFile"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	JobDocument   string           `position:"Query" name:"JobDocument"`
+	Description   string           `position:"Query" name:"Description"`
+	Type          string           `position:"Query" name:"Type"`
+	RolloutConfig string           `position:"Query" name:"RolloutConfig"`
+	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	JobName       string           `position:"Query" name:"JobName"`
+	TimeoutConfig string           `position:"Query" name:"TimeoutConfig"`
+	TargetConfig  string           `position:"Query" name:"TargetConfig"`
+	JobFile       string           `position:"Query" name:"JobFile"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
+	ScheduledTime requests.Integer `position:"Query" name:"ScheduledTime"`
 }
 
 // CreateJobResponse is the response struct for api CreateJob
@@ -99,7 +100,7 @@ func CreateCreateJobRequest() (request *CreateJobRequest) {
 	request = &CreateJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateJob", "", "")
 	request.Method = requests.POST
 	return
 }

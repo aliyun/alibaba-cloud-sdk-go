@@ -97,7 +97,7 @@ func CreateQuerySummarySceneRuleLogRequest() (request *QuerySummarySceneRuleLogR
 	request = &QuerySummarySceneRuleLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySummarySceneRuleLog", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySummarySceneRuleLog", "", "")
 	request.Method = requests.POST
 	return
 }

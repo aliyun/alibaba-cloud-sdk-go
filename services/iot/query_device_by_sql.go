@@ -71,10 +71,12 @@ func (client *Client) QueryDeviceBySQLWithCallback(request *QueryDeviceBySQLRequ
 // QueryDeviceBySQLRequest is the request struct for api QueryDeviceBySQL
 type QueryDeviceBySQLRequest struct {
 	*requests.RpcRequest
-	SQL           string `position:"Query" name:"SQL"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	SQL               string `position:"Query" name:"SQL"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryDeviceBySQLResponse is the response struct for api QueryDeviceBySQL
@@ -93,7 +95,7 @@ func CreateQueryDeviceBySQLRequest() (request *QueryDeviceBySQLRequest) {
 	request = &QueryDeviceBySQLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceBySQL", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceBySQL", "", "")
 	request.Method = requests.POST
 	return
 }

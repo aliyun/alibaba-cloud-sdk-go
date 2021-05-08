@@ -71,10 +71,9 @@ func (client *Client) ListThingTemplatesWithCallback(request *ListThingTemplates
 // ListThingTemplatesRequest is the request struct for api ListThingTemplates
 type ListThingTemplatesRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
-	ApiProduct      string `position:"Body" name:"ApiProduct"`
-	ApiRevision     string `position:"Body" name:"ApiRevision"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // ListThingTemplatesResponse is the response struct for api ListThingTemplates
@@ -92,7 +91,7 @@ func CreateListThingTemplatesRequest() (request *ListThingTemplatesRequest) {
 	request = &ListThingTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListThingTemplates", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListThingTemplates", "", "")
 	request.Method = requests.POST
 	return
 }

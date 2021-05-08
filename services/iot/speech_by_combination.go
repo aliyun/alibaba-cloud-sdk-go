@@ -94,7 +94,7 @@ func CreateSpeechByCombinationRequest() (request *SpeechByCombinationRequest) {
 	request = &SpeechByCombinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SpeechByCombination", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SpeechByCombination", "", "")
 	request.Method = requests.POST
 	return
 }
