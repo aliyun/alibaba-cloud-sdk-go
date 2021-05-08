@@ -17,11 +17,11 @@ package dataworks_public
 
 // StatusCount is a nested struct in dataworks_public response
 type StatusCount struct {
+	SuccessCount  int `json:"SuccessCount" xml:"SuccessCount"`
+	WaitTimeCount int `json:"WaitTimeCount" xml:"WaitTimeCount"`
 	TotalCount    int `json:"TotalCount" xml:"TotalCount"`
 	NotRunCount   int `json:"NotRunCount" xml:"NotRunCount"`
-	WaitTimeCount int `json:"WaitTimeCount" xml:"WaitTimeCount"`
 	WaitResCount  int `json:"WaitResCount" xml:"WaitResCount"`
 	RunningCount  int `json:"RunningCount" xml:"RunningCount"`
 	FailureCount  int `json:"FailureCount" xml:"FailureCount"`
-	SuccessCount  int `json:"SuccessCount" xml:"SuccessCount"`
 }

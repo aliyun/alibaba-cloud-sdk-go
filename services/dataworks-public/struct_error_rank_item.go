@@ -17,10 +17,11 @@ package dataworks_public
 
 // ErrorRankItem is a nested struct in dataworks_public response
 type ErrorRankItem struct {
-	NodeId    int64  `json:"NodeId" xml:"NodeId"`
-	NodeName  string `json:"NodeName" xml:"NodeName"`
-	Owner     string `json:"Owner" xml:"Owner"`
-	Count     int    `json:"Count" xml:"Count"`
-	ProjectId int64  `json:"ProjectId" xml:"ProjectId"`
-	PrgType   int    `json:"PrgType" xml:"PrgType"`
+	NodeName    string `json:"NodeName" xml:"NodeName"`
+	Count       int    `json:"Count" xml:"Count"`
+	NodeId      int64  `json:"NodeId" xml:"NodeId"`
+	ProgramType int    `json:"ProgramType" xml:"ProgramType"`
+	PrgType     int    `json:"PrgType" xml:"PrgType"`
+	Owner       string `json:"Owner" xml:"Owner"`
+	ProjectId   int64  `json:"ProjectId" xml:"ProjectId"`
 }

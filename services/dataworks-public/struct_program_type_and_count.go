@@ -17,6 +17,6 @@ package dataworks_public
 
 // ProgramTypeAndCount is a nested struct in dataworks_public response
 type ProgramTypeAndCount struct {
-	ProgramType string `json:"ProgramType" xml:"ProgramType"`
 	Count       int    `json:"Count" xml:"Count"`
+	ProgramType string `json:"ProgramType" xml:"ProgramType"`
 }

@@ -17,8 +17,8 @@ package dataworks_public
 
 // NodeTypeInfoList is a nested struct in dataworks_public response
 type NodeTypeInfoList struct {
+	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
 	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
 	PageSize     int                `json:"PageSize" xml:"PageSize"`
-	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
 	NodeTypeInfo []NodeTypeInfoItem `json:"NodeTypeInfo" xml:"NodeTypeInfo"`
 }

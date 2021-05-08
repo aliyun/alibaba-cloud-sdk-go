@@ -23,6 +23,7 @@ type Data struct {
 	ApplicationSecret   string                `json:"ApplicationSecret" xml:"ApplicationSecret"`
 	CycTime             int64                 `json:"CycTime" xml:"CycTime"`
 	WhereCondition      string                `json:"WhereCondition" xml:"WhereCondition"`
+	ViewCount           int64                 `json:"ViewCount" xml:"ViewCount"`
 	Property            string                `json:"Property" xml:"Property"`
 	BaselineType        string                `json:"BaselineType" xml:"BaselineType"`
 	TaskId              string                `json:"TaskId" xml:"TaskId"`
@@ -45,16 +46,19 @@ type Data struct {
 	InstanceId          int64                 `json:"InstanceId" xml:"InstanceId"`
 	ExpHour             int                   `json:"ExpHour" xml:"ExpHour"`
 	Status              string                `json:"Status" xml:"Status"`
+	TaskType            string                `json:"TaskType" xml:"TaskType"`
 	RemindUnit          string                `json:"RemindUnit" xml:"RemindUnit"`
 	Name                string                `json:"Name" xml:"Name"`
 	InGroupId           int                   `json:"InGroupId" xml:"InGroupId"`
 	ModifyTime          int64                 `json:"ModifyTime" xml:"ModifyTime"`
 	ApplicationId       int64                 `json:"ApplicationId" xml:"ApplicationId"`
+	ReadCount           int64                 `json:"ReadCount" xml:"ReadCount"`
 	FilePropertyContent string                `json:"FilePropertyContent" xml:"FilePropertyContent"`
 	ExpTime             int64                 `json:"ExpTime" xml:"ExpTime"`
 	TemplateId          int                   `json:"TemplateId" xml:"TemplateId"`
 	Repeatability       bool                  `json:"Repeatability" xml:"Repeatability"`
 	TenantId            int64                 `json:"TenantId" xml:"TenantId"`
+	IsPartitionTable    bool                  `json:"IsPartitionTable" xml:"IsPartitionTable"`
 	Detail              string                `json:"Detail" xml:"Detail"`
 	PageSize            int                   `json:"PageSize" xml:"PageSize"`
 	DataSize            int64                 `json:"DataSize" xml:"DataSize"`
@@ -134,6 +138,7 @@ type Data struct {
 	FolderId            string                `json:"FolderId" xml:"FolderId"`
 	BlockType           int                   `json:"BlockType" xml:"BlockType"`
 	Endpoint            string                `json:"Endpoint" xml:"Endpoint"`
+	TaskRerunTime       int                   `json:"TaskRerunTime" xml:"TaskRerunTime"`
 	NextTaskId          string                `json:"NextTaskId" xml:"NextTaskId"`
 	SlaTime             int64                 `json:"SlaTime" xml:"SlaTime"`
 	PageNumber          int                   `json:"PageNumber" xml:"PageNumber"`
@@ -147,6 +152,7 @@ type Data struct {
 	DagId               int64                 `json:"DagId" xml:"DagId"`
 	AlertUnit           string                `json:"AlertUnit" xml:"AlertUnit"`
 	RelatedFlowId       int64                 `json:"RelatedFlowId" xml:"RelatedFlowId"`
+	FavoriteCount       int64                 `json:"FavoriteCount" xml:"FavoriteCount"`
 	LastDdlTime         int64                 `json:"LastDdlTime" xml:"LastDdlTime"`
 	ModifiedTime        int64                 `json:"ModifiedTime" xml:"ModifiedTime"`
 	Useflag             bool                  `json:"Useflag" xml:"Useflag"`

@@ -71,6 +71,7 @@ func (client *Client) ListResourceGroupsWithCallback(request *ListResourceGroups
 // ListResourceGroupsRequest is the request struct for api ListResourceGroups
 type ListResourceGroupsRequest struct {
 	*requests.RpcRequest
+	BizExtKey         string           `position:"Query" name:"BizExtKey"`
 	ResourceGroupType requests.Integer `position:"Query" name:"ResourceGroupType"`
 	Keyword           string           `position:"Query" name:"Keyword"`
 }

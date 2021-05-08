@@ -17,11 +17,13 @@ package dataworks_public
 
 // ConsumeTimeRankItem is a nested struct in dataworks_public response
 type ConsumeTimeRankItem struct {
-	NodeName   string `json:"NodeName" xml:"NodeName"`
-	NodeId     int64  `json:"NodeId" xml:"NodeId"`
-	Bizdate    int64  `json:"Bizdate" xml:"Bizdate"`
-	Owner      string `json:"Owner" xml:"Owner"`
-	Consumed   int64  `json:"Consumed" xml:"Consumed"`
-	InstanceId int64  `json:"InstanceId" xml:"InstanceId"`
-	PrgType    int    `json:"PrgType" xml:"PrgType"`
+	InstanceId   int64  `json:"InstanceId" xml:"InstanceId"`
+	NodeName     string `json:"NodeName" xml:"NodeName"`
+	NodeId       int64  `json:"NodeId" xml:"NodeId"`
+	ProgramType  int    `json:"ProgramType" xml:"ProgramType"`
+	PrgType      int    `json:"PrgType" xml:"PrgType"`
+	BusinessDate int64  `json:"BusinessDate" xml:"BusinessDate"`
+	Owner        string `json:"Owner" xml:"Owner"`
+	Consumed     int64  `json:"Consumed" xml:"Consumed"`
+	Bizdate      int64  `json:"Bizdate" xml:"Bizdate"`
 }

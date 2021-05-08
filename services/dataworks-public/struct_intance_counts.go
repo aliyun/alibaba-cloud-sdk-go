@@ -17,6 +17,6 @@ package dataworks_public
 
 // IntanceCounts is a nested struct in dataworks_public response
 type IntanceCounts struct {
-	Date  int64 `json:"Date" xml:"Date"`
 	Count int   `json:"Count" xml:"Count"`
+	Date  int64 `json:"Date" xml:"Date"`
 }

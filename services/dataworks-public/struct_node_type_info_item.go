@@ -17,6 +17,6 @@ package dataworks_public
 
 // NodeTypeInfoItem is a nested struct in dataworks_public response
 type NodeTypeInfoItem struct {
-	NodeType     int    `json:"NodeType" xml:"NodeType"`
 	NodeTypeName string `json:"NodeTypeName" xml:"NodeTypeName"`
+	NodeType     int    `json:"NodeType" xml:"NodeType"`
 }

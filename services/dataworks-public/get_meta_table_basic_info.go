@@ -71,11 +71,12 @@ func (client *Client) GetMetaTableBasicInfoWithCallback(request *GetMetaTableBas
 // GetMetaTableBasicInfoRequest is the request struct for api GetMetaTableBasicInfo
 type GetMetaTableBasicInfoRequest struct {
 	*requests.RpcRequest
-	DataSourceType string `position:"Query" name:"DataSourceType"`
-	TableGuid      string `position:"Query" name:"TableGuid"`
-	DatabaseName   string `position:"Query" name:"DatabaseName"`
-	ClusterId      string `position:"Query" name:"ClusterId"`
-	TableName      string `position:"Query" name:"TableName"`
+	DataSourceType string           `position:"Query" name:"DataSourceType"`
+	Extension      requests.Boolean `position:"Query" name:"Extension"`
+	TableGuid      string           `position:"Query" name:"TableGuid"`
+	DatabaseName   string           `position:"Query" name:"DatabaseName"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	TableName      string           `position:"Query" name:"TableName"`
 }
 
 // GetMetaTableBasicInfoResponse is the response struct for api GetMetaTableBasicInfo

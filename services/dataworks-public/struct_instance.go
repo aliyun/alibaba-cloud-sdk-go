@@ -41,4 +41,6 @@ type Instance struct {
 	DqcDescription    string `json:"DqcDescription" xml:"DqcDescription"`
 	ErrorMessage      string `json:"ErrorMessage" xml:"ErrorMessage"`
 	RelatedFlowId     int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
+	TaskType          string `json:"TaskType" xml:"TaskType"`
+	TaskRerunTime     int    `json:"TaskRerunTime" xml:"TaskRerunTime"`
 }

@@ -33,4 +33,5 @@ type InstancesItem struct {
 	BeginWaitTimeTime int64  `json:"BeginWaitTimeTime" xml:"BeginWaitTimeTime"`
 	ProjectId         int64  `json:"ProjectId" xml:"ProjectId"`
 	Status            string `json:"Status" xml:"Status"`
+	TaskType          string `json:"TaskType" xml:"TaskType"`
 }

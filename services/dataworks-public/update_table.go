@@ -71,23 +71,24 @@ func (client *Client) UpdateTableWithCallback(request *UpdateTableRequest, callb
 // UpdateTableRequest is the request struct for api UpdateTable
 type UpdateTableRequest struct {
 	*requests.RpcRequest
-	Visibility        requests.Integer      `position:"Query" name:"Visibility"`
-	PhysicsLevelId    requests.Integer      `position:"Query" name:"PhysicsLevelId"`
 	Columns           *[]UpdateTableColumns `position:"Body" name:"Columns"  type:"Repeated"`
-	OwnerId           string                `position:"Query" name:"OwnerId"`
 	LifeCycle         requests.Integer      `position:"Query" name:"LifeCycle"`
 	Themes            *[]UpdateTableThemes  `position:"Body" name:"Themes"  type:"Repeated"`
 	LogicalLevelId    requests.Integer      `position:"Query" name:"LogicalLevelId"`
 	Endpoint          string                `position:"Body" name:"Endpoint"`
-	IsView            requests.Integer      `position:"Query" name:"IsView"`
-	ExternalTableType string                `position:"Query" name:"ExternalTableType"`
 	EnvType           requests.Integer      `position:"Body" name:"EnvType"`
 	HasPart           requests.Integer      `position:"Query" name:"HasPart"`
-	Location          string                `position:"Query" name:"Location"`
 	TableName         string                `position:"Query" name:"TableName"`
 	AppGuid           string                `position:"Query" name:"AppGuid"`
 	ProjectId         requests.Integer      `position:"Query" name:"ProjectId"`
 	CategoryId        requests.Integer      `position:"Query" name:"CategoryId"`
+	Visibility        requests.Integer      `position:"Query" name:"Visibility"`
+	PhysicsLevelId    requests.Integer      `position:"Query" name:"PhysicsLevelId"`
+	OwnerId           string                `position:"Query" name:"OwnerId"`
+	IsView            requests.Integer      `position:"Query" name:"IsView"`
+	ExternalTableType string                `position:"Query" name:"ExternalTableType"`
+	Location          string                `position:"Query" name:"Location"`
+	Comment           string                `position:"Query" name:"Comment"`
 	CreateIfNotExists requests.Boolean      `position:"Query" name:"CreateIfNotExists"`
 }
 
@@ -97,9 +98,7 @@ type UpdateTableColumns struct {
 	IsPartitionCol string `name:"IsPartitionCol"`
 	ColumnNameCn   string `name:"ColumnNameCn"`
 	Length         string `name:"Length"`
-	IsNullable     string `name:"IsNullable"`
 	Comment        string `name:"Comment"`
-	IsPrimaryKey   string `name:"IsPrimaryKey"`
 	ColumnName     string `name:"ColumnName"`
 	ColumnType     string `name:"ColumnType"`
 }

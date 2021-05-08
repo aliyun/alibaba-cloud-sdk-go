@@ -71,15 +71,15 @@ func (client *Client) CreateImportMigrationWithCallback(request *CreateImportMig
 // CreateImportMigrationRequest is the request struct for api CreateImportMigration
 type CreateImportMigrationRequest struct {
 	*requests.RpcRequest
-	Description            string           `position:"Body" name:"Description"`
-	CommitRule             string           `position:"Body" name:"CommitRule"`
-	WorkspaceMap           string           `position:"Body" name:"WorkspaceMap"`
-	CalculateEngineMap     string           `position:"Body" name:"CalculateEngineMap"`
-	Name                   string           `position:"Body" name:"Name"`
-	PackageType            string           `position:"Body" name:"PackageType"`
-	ProjectId              requests.Integer `position:"Body" name:"ProjectId"`
-	PackageOssDownloadLink string           `position:"Body" name:"PackageOssDownloadLink"`
-	ResourceGroupMap       string           `position:"Body" name:"ResourceGroupMap"`
+	Description        string           `position:"Body" name:"Description"`
+	CommitRule         string           `position:"Body" name:"CommitRule"`
+	WorkspaceMap       string           `position:"Body" name:"WorkspaceMap"`
+	CalculateEngineMap string           `position:"Body" name:"CalculateEngineMap"`
+	PackageFile        string           `position:"Body" name:"PackageFile"`
+	Name               string           `position:"Body" name:"Name"`
+	PackageType        string           `position:"Body" name:"PackageType"`
+	ProjectId          requests.Integer `position:"Body" name:"ProjectId"`
+	ResourceGroupMap   string           `position:"Body" name:"ResourceGroupMap"`
 }
 
 // CreateImportMigrationResponse is the response struct for api CreateImportMigration

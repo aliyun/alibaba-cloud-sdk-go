@@ -22,6 +22,7 @@ type File struct {
 	Owner           string `json:"Owner" xml:"Owner"`
 	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
 	FileFolderId    string `json:"FileFolderId" xml:"FileFolderId"`
+	DeletedStatus   string `json:"DeletedStatus" xml:"DeletedStatus"`
 	FileDescription string `json:"FileDescription" xml:"FileDescription"`
 	FileId          int64  `json:"FileId" xml:"FileId"`
 	BizId           int64  `json:"BizId" xml:"BizId"`
@@ -30,6 +31,7 @@ type File struct {
 	Content         string `json:"Content" xml:"Content"`
 	NodeId          int64  `json:"NodeId" xml:"NodeId"`
 	CreateUser      string `json:"CreateUser" xml:"CreateUser"`
+	BusinessId      int64  `json:"BusinessId" xml:"BusinessId"`
 	LastEditUser    string `json:"LastEditUser" xml:"LastEditUser"`
 	FileName        string `json:"FileName" xml:"FileName"`
 	UseType         string `json:"UseType" xml:"UseType"`
