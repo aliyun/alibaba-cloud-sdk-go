@@ -1,3 +1,7 @@
+2021-05-10 Version: v1.61.1073
+- Generated 2017-11-15 for `scdn`.
+- Delete API.
+
 2021-05-10 Version: v1.61.1072
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Delete live API.
