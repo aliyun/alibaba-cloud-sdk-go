@@ -78,12 +78,12 @@ type Data struct {
 	OfficePhoneNumbers  []string             `json:"OfficePhoneNumbers" xml:"OfficePhoneNumbers"`
 	Titles              []string             `json:"Titles" xml:"Titles"`
 	Addresses           []string             `json:"Addresses" xml:"Addresses"`
-	Box                 Box                  `json:"Box" xml:"Box"`
+	BackResult          BackResult           `json:"BackResult" xml:"BackResult"`
 	FaceResult          FaceResult           `json:"FaceResult" xml:"FaceResult"`
+	Box                 Box                  `json:"Box" xml:"Box"`
 	Summary             Summary              `json:"Summary" xml:"Summary"`
 	Content             Content              `json:"Content" xml:"Content"`
 	SpoofResult         SpoofResult          `json:"SpoofResult" xml:"SpoofResult"`
-	BackResult          BackResult           `json:"BackResult" xml:"BackResult"`
 	Stamp               Stamp                `json:"Stamp" xml:"Stamp"`
 	FrontResult         FrontResult          `json:"FrontResult" xml:"FrontResult"`
 	TitleArea           TitleArea            `json:"TitleArea" xml:"TitleArea"`

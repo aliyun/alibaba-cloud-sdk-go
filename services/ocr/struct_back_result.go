@@ -17,6 +17,7 @@ package ocr
 
 // BackResult is a nested struct in ocr response
 type BackResult struct {
+	Name                      string `json:"Name" xml:"Name"`
 	Issue                     string `json:"Issue" xml:"Issue"`
 	ApprovedLoad              string `json:"ApprovedLoad" xml:"ApprovedLoad"`
 	EndDate                   string `json:"EndDate" xml:"EndDate"`
@@ -24,6 +25,7 @@ type BackResult struct {
 	EnergyType                string `json:"EnergyType" xml:"EnergyType"`
 	StartDate                 string `json:"StartDate" xml:"StartDate"`
 	OverallDimension          string `json:"OverallDimension" xml:"OverallDimension"`
+	Record                    string `json:"Record" xml:"Record"`
 	TractionMass              string `json:"TractionMass" xml:"TractionMass"`
 	InspectionRecord          string `json:"InspectionRecord" xml:"InspectionRecord"`
 	UnladenMass               string `json:"UnladenMass" xml:"UnladenMass"`
@@ -31,4 +33,5 @@ type BackResult struct {
 	FileNumber                string `json:"FileNumber" xml:"FileNumber"`
 	ApprovedPassengerCapacity string `json:"ApprovedPassengerCapacity" xml:"ApprovedPassengerCapacity"`
 	GrossMass                 string `json:"GrossMass" xml:"GrossMass"`
+	CardNumber                string `json:"CardNumber" xml:"CardNumber"`
 }

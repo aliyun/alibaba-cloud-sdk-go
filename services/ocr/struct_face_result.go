@@ -19,6 +19,7 @@ package ocr
 type FaceResult struct {
 	Name          string `json:"Name" xml:"Name"`
 	EndDate       string `json:"EndDate" xml:"EndDate"`
+	IssueUnit     string `json:"IssueUnit" xml:"IssueUnit"`
 	EngineNumber  string `json:"EngineNumber" xml:"EngineNumber"`
 	VehicleType   string `json:"VehicleType" xml:"VehicleType"`
 	PlateNumber   string `json:"PlateNumber" xml:"PlateNumber"`
