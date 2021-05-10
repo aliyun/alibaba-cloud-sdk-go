@@ -1,3 +1,10 @@
+2021-05-10 Version: v1.61.1074
+- Generated 2017-12-25 for `OpenSearch`.
+- Add API GenerateMergedTable.
+- Add API ListDateSourceTables.
+- Add API ListDateSourceTableFields.
+- Add API ListRamRoles.
+
 2021-05-10 Version: v1.61.1073
 - Generated 2017-11-15 for `scdn`.
 - Delete API.

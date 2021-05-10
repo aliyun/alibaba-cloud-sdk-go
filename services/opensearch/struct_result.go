@@ -33,10 +33,13 @@ type Result struct {
 	Updated            int                      `json:"updated" xml:"updated"`
 	Content            string                   `json:"content" xml:"content"`
 	RegionId           string                   `json:"regionId" xml:"regionId"`
+	PrimaryKey         string                   `json:"primaryKey" xml:"primaryKey"`
+	MergeTable         map[string]interface{}   `json:"mergeTable" xml:"mergeTable"`
 	Status             int                      `json:"status" xml:"status"`
 	Version            int64                    `json:"version" xml:"version"`
 	Online             bool                     `json:"online" xml:"online"`
 	Description        string                   `json:"description" xml:"description"`
+	FromTable          map[string]interface{}   `json:"fromTable" xml:"fromTable"`
 	SundialId          string                   `json:"sundialId" xml:"sundialId"`
 	Params             map[string]interface{}   `json:"params" xml:"params"`
 	AppQuery           string                   `json:"appQuery" xml:"appQuery"`

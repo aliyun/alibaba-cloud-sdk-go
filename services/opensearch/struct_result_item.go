@@ -19,6 +19,7 @@ package opensearch
 type ResultItem struct {
 	Date               string                   `json:"date" xml:"date"`
 	Traffic            int                      `json:"traffic" xml:"traffic"`
+	Service            string                   `json:"service" xml:"service"`
 	Created            int                      `json:"created" xml:"created"`
 	ZeroHitRate        float64                  `json:"zeroHitRate" xml:"zeroHitRate"`
 	IndustryName       string                   `json:"industryName" xml:"industryName"`
@@ -30,6 +31,7 @@ type ResultItem struct {
 	Domain             string                   `json:"domain" xml:"domain"`
 	ExperimentName     string                   `json:"experimentName" xml:"experimentName"`
 	Name               string                   `json:"name" xml:"name"`
+	Assumed            bool                     `json:"assumed" xml:"assumed"`
 	IsSys              string                   `json:"isSys" xml:"isSys"`
 	Type               string                   `json:"type" xml:"type"`
 	Endpoint           string                   `json:"endpoint" xml:"endpoint"`
@@ -37,6 +39,7 @@ type ResultItem struct {
 	Updated            int                      `json:"updated" xml:"updated"`
 	RegionId           string                   `json:"regionId" xml:"regionId"`
 	Tag                string                   `json:"tag" xml:"tag"`
+	TemplateId         string                   `json:"template_id" xml:"template_id"`
 	LocalName          string                   `json:"localName" xml:"localName"`
 	Status             int                      `json:"status" xml:"status"`
 	Ctr                float64                  `json:"ctr" xml:"ctr"`
