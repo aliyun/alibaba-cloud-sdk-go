@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeScdnDdosTrafficInfo invokes the scdn.DescribeScdnDdosTrafficInfo API synchronously
-func (client *Client) DescribeScdnDdosTrafficInfo(request *DescribeScdnDdosTrafficInfoRequest) (response *DescribeScdnDdosTrafficInfoResponse, err error) {
-	response = CreateDescribeScdnDdosTrafficInfoResponse()
+// DescribeScdnDDoSTrafficInfo invokes the scdn.DescribeScdnDDoSTrafficInfo API synchronously
+func (client *Client) DescribeScdnDDoSTrafficInfo(request *DescribeScdnDDoSTrafficInfoRequest) (response *DescribeScdnDDoSTrafficInfoResponse, err error) {
+	response = CreateDescribeScdnDDoSTrafficInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeScdnDdosTrafficInfoWithChan invokes the scdn.DescribeScdnDdosTrafficInfo API asynchronously
-func (client *Client) DescribeScdnDdosTrafficInfoWithChan(request *DescribeScdnDdosTrafficInfoRequest) (<-chan *DescribeScdnDdosTrafficInfoResponse, <-chan error) {
-	responseChan := make(chan *DescribeScdnDdosTrafficInfoResponse, 1)
+// DescribeScdnDDoSTrafficInfoWithChan invokes the scdn.DescribeScdnDDoSTrafficInfo API asynchronously
+func (client *Client) DescribeScdnDDoSTrafficInfoWithChan(request *DescribeScdnDDoSTrafficInfoRequest) (<-chan *DescribeScdnDDoSTrafficInfoResponse, <-chan error) {
+	responseChan := make(chan *DescribeScdnDDoSTrafficInfoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeScdnDdosTrafficInfo(request)
+		response, err := client.DescribeScdnDDoSTrafficInfo(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeScdnDdosTrafficInfoWithChan(request *DescribeScdnD
 	return responseChan, errChan
 }
 
-// DescribeScdnDdosTrafficInfoWithCallback invokes the scdn.DescribeScdnDdosTrafficInfo API asynchronously
-func (client *Client) DescribeScdnDdosTrafficInfoWithCallback(request *DescribeScdnDdosTrafficInfoRequest, callback func(response *DescribeScdnDdosTrafficInfoResponse, err error)) <-chan int {
+// DescribeScdnDDoSTrafficInfoWithCallback invokes the scdn.DescribeScdnDDoSTrafficInfo API asynchronously
+func (client *Client) DescribeScdnDDoSTrafficInfoWithCallback(request *DescribeScdnDDoSTrafficInfoRequest, callback func(response *DescribeScdnDDoSTrafficInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeScdnDdosTrafficInfoResponse
+		var response *DescribeScdnDDoSTrafficInfoResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeScdnDdosTrafficInfo(request)
+		response, err = client.DescribeScdnDDoSTrafficInfo(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) DescribeScdnDdosTrafficInfoWithCallback(request *DescribeS
 	return result
 }
 
-// DescribeScdnDdosTrafficInfoRequest is the request struct for api DescribeScdnDdosTrafficInfo
-type DescribeScdnDdosTrafficInfoRequest struct {
+// DescribeScdnDDoSTrafficInfoRequest is the request struct for api DescribeScdnDDoSTrafficInfo
+type DescribeScdnDDoSTrafficInfoRequest struct {
 	*requests.RpcRequest
 	Line      string           `position:"Query" name:"Line"`
 	StartTime string           `position:"Query" name:"StartTime"`
@@ -77,30 +77,30 @@ type DescribeScdnDdosTrafficInfoRequest struct {
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DescribeScdnDdosTrafficInfoResponse is the response struct for api DescribeScdnDdosTrafficInfo
-type DescribeScdnDdosTrafficInfoResponse struct {
+// DescribeScdnDDoSTrafficInfoResponse is the response struct for api DescribeScdnDDoSTrafficInfo
+type DescribeScdnDDoSTrafficInfoResponse struct {
 	*responses.BaseResponse
 	RequestId  string                                  `json:"RequestId" xml:"RequestId"`
 	BpsDrops   BpsDrops                                `json:"BpsDrops" xml:"BpsDrops"`
 	BpsTotals  BpsTotals                               `json:"BpsTotals" xml:"BpsTotals"`
 	PpsTotals  PpsTotals                               `json:"PpsTotals" xml:"PpsTotals"`
 	PpsDrops   PpsDrops                                `json:"PpsDrops" xml:"PpsDrops"`
-	TimeScopes TimeScopesInDescribeScdnDdosTrafficInfo `json:"TimeScopes" xml:"TimeScopes"`
+	TimeScopes TimeScopesInDescribeScdnDDoSTrafficInfo `json:"TimeScopes" xml:"TimeScopes"`
 }
 
-// CreateDescribeScdnDdosTrafficInfoRequest creates a request to invoke DescribeScdnDdosTrafficInfo API
-func CreateDescribeScdnDdosTrafficInfoRequest() (request *DescribeScdnDdosTrafficInfoRequest) {
-	request = &DescribeScdnDdosTrafficInfoRequest{
+// CreateDescribeScdnDDoSTrafficInfoRequest creates a request to invoke DescribeScdnDDoSTrafficInfo API
+func CreateDescribeScdnDDoSTrafficInfoRequest() (request *DescribeScdnDDoSTrafficInfoRequest) {
+	request = &DescribeScdnDDoSTrafficInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDdosTrafficInfo", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDDoSTrafficInfo", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateDescribeScdnDdosTrafficInfoResponse creates a response to parse from DescribeScdnDdosTrafficInfo response
-func CreateDescribeScdnDdosTrafficInfoResponse() (response *DescribeScdnDdosTrafficInfoResponse) {
-	response = &DescribeScdnDdosTrafficInfoResponse{
+// CreateDescribeScdnDDoSTrafficInfoResponse creates a response to parse from DescribeScdnDDoSTrafficInfo response
+func CreateDescribeScdnDDoSTrafficInfoResponse() (response *DescribeScdnDDoSTrafficInfoResponse) {
+	response = &DescribeScdnDDoSTrafficInfoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

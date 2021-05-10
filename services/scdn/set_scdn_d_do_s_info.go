@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SetScdnDdosInfo invokes the scdn.SetScdnDdosInfo API synchronously
-func (client *Client) SetScdnDdosInfo(request *SetScdnDdosInfoRequest) (response *SetScdnDdosInfoResponse, err error) {
-	response = CreateSetScdnDdosInfoResponse()
+// SetScdnDDoSInfo invokes the scdn.SetScdnDDoSInfo API synchronously
+func (client *Client) SetScdnDDoSInfo(request *SetScdnDDoSInfoRequest) (response *SetScdnDDoSInfoResponse, err error) {
+	response = CreateSetScdnDDoSInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SetScdnDdosInfoWithChan invokes the scdn.SetScdnDdosInfo API asynchronously
-func (client *Client) SetScdnDdosInfoWithChan(request *SetScdnDdosInfoRequest) (<-chan *SetScdnDdosInfoResponse, <-chan error) {
-	responseChan := make(chan *SetScdnDdosInfoResponse, 1)
+// SetScdnDDoSInfoWithChan invokes the scdn.SetScdnDDoSInfo API asynchronously
+func (client *Client) SetScdnDDoSInfoWithChan(request *SetScdnDDoSInfoRequest) (<-chan *SetScdnDDoSInfoResponse, <-chan error) {
+	responseChan := make(chan *SetScdnDDoSInfoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SetScdnDdosInfo(request)
+		response, err := client.SetScdnDDoSInfo(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SetScdnDdosInfoWithChan(request *SetScdnDdosInfoRequest) (
 	return responseChan, errChan
 }
 
-// SetScdnDdosInfoWithCallback invokes the scdn.SetScdnDdosInfo API asynchronously
-func (client *Client) SetScdnDdosInfoWithCallback(request *SetScdnDdosInfoRequest, callback func(response *SetScdnDdosInfoResponse, err error)) <-chan int {
+// SetScdnDDoSInfoWithCallback invokes the scdn.SetScdnDDoSInfo API asynchronously
+func (client *Client) SetScdnDDoSInfoWithCallback(request *SetScdnDDoSInfoRequest, callback func(response *SetScdnDDoSInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SetScdnDdosInfoResponse
+		var response *SetScdnDDoSInfoResponse
 		var err error
 		defer close(result)
-		response, err = client.SetScdnDdosInfo(request)
+		response, err = client.SetScdnDDoSInfo(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,32 @@ func (client *Client) SetScdnDdosInfoWithCallback(request *SetScdnDdosInfoReques
 	return result
 }
 
-// SetScdnDdosInfoRequest is the request struct for api SetScdnDdosInfo
-type SetScdnDdosInfoRequest struct {
+// SetScdnDDoSInfoRequest is the request struct for api SetScdnDDoSInfo
+type SetScdnDDoSInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	ElasticBandwidth requests.Integer `position:"Query" name:"ElasticBandwidth"`
 }
 
-// SetScdnDdosInfoResponse is the response struct for api SetScdnDdosInfo
-type SetScdnDdosInfoResponse struct {
+// SetScdnDDoSInfoResponse is the response struct for api SetScdnDDoSInfo
+type SetScdnDDoSInfoResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateSetScdnDdosInfoRequest creates a request to invoke SetScdnDdosInfo API
-func CreateSetScdnDdosInfoRequest() (request *SetScdnDdosInfoRequest) {
-	request = &SetScdnDdosInfoRequest{
+// CreateSetScdnDDoSInfoRequest creates a request to invoke SetScdnDDoSInfo API
+func CreateSetScdnDDoSInfoRequest() (request *SetScdnDDoSInfoRequest) {
+	request = &SetScdnDDoSInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "SetScdnDdosInfo", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "SetScdnDDoSInfo", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateSetScdnDdosInfoResponse creates a response to parse from SetScdnDdosInfo response
-func CreateSetScdnDdosInfoResponse() (response *SetScdnDdosInfoResponse) {
-	response = &SetScdnDdosInfoResponse{
+// CreateSetScdnDDoSInfoResponse creates a response to parse from SetScdnDDoSInfo response
+func CreateSetScdnDDoSInfoResponse() (response *SetScdnDDoSInfoResponse) {
+	response = &SetScdnDDoSInfoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

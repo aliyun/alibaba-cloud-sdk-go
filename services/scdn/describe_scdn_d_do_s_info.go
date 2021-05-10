@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeScdnDdosInfo invokes the scdn.DescribeScdnDdosInfo API synchronously
-func (client *Client) DescribeScdnDdosInfo(request *DescribeScdnDdosInfoRequest) (response *DescribeScdnDdosInfoResponse, err error) {
-	response = CreateDescribeScdnDdosInfoResponse()
+// DescribeScdnDDoSInfo invokes the scdn.DescribeScdnDDoSInfo API synchronously
+func (client *Client) DescribeScdnDDoSInfo(request *DescribeScdnDDoSInfoRequest) (response *DescribeScdnDDoSInfoResponse, err error) {
+	response = CreateDescribeScdnDDoSInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeScdnDdosInfoWithChan invokes the scdn.DescribeScdnDdosInfo API asynchronously
-func (client *Client) DescribeScdnDdosInfoWithChan(request *DescribeScdnDdosInfoRequest) (<-chan *DescribeScdnDdosInfoResponse, <-chan error) {
-	responseChan := make(chan *DescribeScdnDdosInfoResponse, 1)
+// DescribeScdnDDoSInfoWithChan invokes the scdn.DescribeScdnDDoSInfo API asynchronously
+func (client *Client) DescribeScdnDDoSInfoWithChan(request *DescribeScdnDDoSInfoRequest) (<-chan *DescribeScdnDDoSInfoResponse, <-chan error) {
+	responseChan := make(chan *DescribeScdnDDoSInfoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeScdnDdosInfo(request)
+		response, err := client.DescribeScdnDDoSInfo(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeScdnDdosInfoWithChan(request *DescribeScdnDdosInfo
 	return responseChan, errChan
 }
 
-// DescribeScdnDdosInfoWithCallback invokes the scdn.DescribeScdnDdosInfo API asynchronously
-func (client *Client) DescribeScdnDdosInfoWithCallback(request *DescribeScdnDdosInfoRequest, callback func(response *DescribeScdnDdosInfoResponse, err error)) <-chan int {
+// DescribeScdnDDoSInfoWithCallback invokes the scdn.DescribeScdnDDoSInfo API asynchronously
+func (client *Client) DescribeScdnDDoSInfoWithCallback(request *DescribeScdnDDoSInfoRequest, callback func(response *DescribeScdnDDoSInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeScdnDdosInfoResponse
+		var response *DescribeScdnDDoSInfoResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeScdnDdosInfo(request)
+		response, err = client.DescribeScdnDDoSInfo(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) DescribeScdnDdosInfoWithCallback(request *DescribeScdnDdos
 	return result
 }
 
-// DescribeScdnDdosInfoRequest is the request struct for api DescribeScdnDdosInfo
-type DescribeScdnDdosInfoRequest struct {
+// DescribeScdnDDoSInfoRequest is the request struct for api DescribeScdnDDoSInfo
+type DescribeScdnDDoSInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DescribeScdnDdosInfoResponse is the response struct for api DescribeScdnDdosInfo
-type DescribeScdnDdosInfoResponse struct {
+// DescribeScdnDDoSInfoResponse is the response struct for api DescribeScdnDDoSInfo
+type DescribeScdnDDoSInfoResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
 	SecBandwidth     int    `json:"SecBandwidth" xml:"SecBandwidth"`
 	ElasticBandwidth int    `json:"ElasticBandwidth" xml:"ElasticBandwidth"`
 }
 
-// CreateDescribeScdnDdosInfoRequest creates a request to invoke DescribeScdnDdosInfo API
-func CreateDescribeScdnDdosInfoRequest() (request *DescribeScdnDdosInfoRequest) {
-	request = &DescribeScdnDdosInfoRequest{
+// CreateDescribeScdnDDoSInfoRequest creates a request to invoke DescribeScdnDDoSInfo API
+func CreateDescribeScdnDDoSInfoRequest() (request *DescribeScdnDDoSInfoRequest) {
+	request = &DescribeScdnDDoSInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDdosInfo", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDDoSInfo", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateDescribeScdnDdosInfoResponse creates a response to parse from DescribeScdnDdosInfo response
-func CreateDescribeScdnDdosInfoResponse() (response *DescribeScdnDdosInfoResponse) {
-	response = &DescribeScdnDdosInfoResponse{
+// CreateDescribeScdnDDoSInfoResponse creates a response to parse from DescribeScdnDDoSInfo response
+func CreateDescribeScdnDDoSInfoResponse() (response *DescribeScdnDDoSInfoResponse) {
+	response = &DescribeScdnDDoSInfoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
