@@ -1,3 +1,7 @@
+2021-05-11 Version: v1.61.1076
+- Generated 2015-01-01 for `R-kvstore`.
+- CreateInstance API add Port, Tags, DryRun.
+
 2021-05-10 Version: v1.61.1075
 - Generated 2019-12-30 for `ocr`.
 - Update RecognizeDriverLicense RecognizeLicensePlate.
