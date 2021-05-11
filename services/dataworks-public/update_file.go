@@ -73,6 +73,7 @@ type UpdateFileRequest struct {
 	*requests.RpcRequest
 	OutputList              string           `position:"Body" name:"OutputList"`
 	DependentNodeIdList     string           `position:"Body" name:"DependentNodeIdList"`
+	AutoParse               requests.Boolean `position:"Body" name:"AutoParse"`
 	Content                 string           `position:"Body" name:"Content"`
 	ProjectIdentifier       string           `position:"Body" name:"ProjectIdentifier"`
 	ProjectId               requests.Integer `position:"Body" name:"ProjectId"`

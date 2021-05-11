@@ -35,6 +35,7 @@ type Data struct {
 	FileName            string                `json:"FileName" xml:"FileName"`
 	Type                string                `json:"Type" xml:"Type"`
 	TotalCount          int64                 `json:"TotalCount" xml:"TotalCount"`
+	IsView              bool                  `json:"IsView" xml:"IsView"`
 	FinishTime          int64                 `json:"FinishTime" xml:"FinishTime"`
 	Connection          string                `json:"Connection" xml:"Connection"`
 	Id                  int64                 `json:"Id" xml:"Id"`
@@ -164,10 +165,10 @@ type Data struct {
 	TableGuidList       []string              `json:"TableGuidList" xml:"TableGuidList"`
 	AlertMethods        []string              `json:"AlertMethods" xml:"AlertMethods"`
 	Deployment          Deployment            `json:"Deployment" xml:"Deployment"`
-	File                File                  `json:"File" xml:"File"`
-	NodeConfiguration   NodeConfiguration     `json:"NodeConfiguration" xml:"NodeConfiguration"`
 	BlockInstance       BlockInstance         `json:"BlockInstance" xml:"BlockInstance"`
+	NodeConfiguration   NodeConfiguration     `json:"NodeConfiguration" xml:"NodeConfiguration"`
 	LastInstance        LastInstance          `json:"LastInstance" xml:"LastInstance"`
+	File                File                  `json:"File" xml:"File"`
 	Rules               []RulesItem           `json:"Rules" xml:"Rules"`
 	DataEntityList      []DataEntityListItem  `json:"DataEntityList" xml:"DataEntityList"`
 	ColumnList          []ColumnListItem      `json:"ColumnList" xml:"ColumnList"`

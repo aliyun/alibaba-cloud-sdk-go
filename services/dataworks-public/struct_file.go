@@ -30,6 +30,7 @@ type File struct {
 	FileType        int    `json:"FileType" xml:"FileType"`
 	Content         string `json:"Content" xml:"Content"`
 	NodeId          int64  `json:"NodeId" xml:"NodeId"`
+	AutoParse       bool   `json:"AutoParse" xml:"AutoParse"`
 	CreateUser      string `json:"CreateUser" xml:"CreateUser"`
 	BusinessId      int64  `json:"BusinessId" xml:"BusinessId"`
 	LastEditUser    string `json:"LastEditUser" xml:"LastEditUser"`
