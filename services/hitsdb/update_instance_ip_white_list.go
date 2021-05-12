@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteHiTSDBInstance invokes the hitsdb.DeleteHiTSDBInstance API synchronously
-func (client *Client) DeleteHiTSDBInstance(request *DeleteHiTSDBInstanceRequest) (response *DeleteHiTSDBInstanceResponse, err error) {
-	response = CreateDeleteHiTSDBInstanceResponse()
+// UpdateInstanceIpWhiteList invokes the hitsdb.UpdateInstanceIpWhiteList API synchronously
+func (client *Client) UpdateInstanceIpWhiteList(request *UpdateInstanceIpWhiteListRequest) (response *UpdateInstanceIpWhiteListResponse, err error) {
+	response = CreateUpdateInstanceIpWhiteListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteHiTSDBInstanceWithChan invokes the hitsdb.DeleteHiTSDBInstance API asynchronously
-func (client *Client) DeleteHiTSDBInstanceWithChan(request *DeleteHiTSDBInstanceRequest) (<-chan *DeleteHiTSDBInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteHiTSDBInstanceResponse, 1)
+// UpdateInstanceIpWhiteListWithChan invokes the hitsdb.UpdateInstanceIpWhiteList API asynchronously
+func (client *Client) UpdateInstanceIpWhiteListWithChan(request *UpdateInstanceIpWhiteListRequest) (<-chan *UpdateInstanceIpWhiteListResponse, <-chan error) {
+	responseChan := make(chan *UpdateInstanceIpWhiteListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteHiTSDBInstance(request)
+		response, err := client.UpdateInstanceIpWhiteList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteHiTSDBInstanceWithChan(request *DeleteHiTSDBInstance
 	return responseChan, errChan
 }
 
-// DeleteHiTSDBInstanceWithCallback invokes the hitsdb.DeleteHiTSDBInstance API asynchronously
-func (client *Client) DeleteHiTSDBInstanceWithCallback(request *DeleteHiTSDBInstanceRequest, callback func(response *DeleteHiTSDBInstanceResponse, err error)) <-chan int {
+// UpdateInstanceIpWhiteListWithCallback invokes the hitsdb.UpdateInstanceIpWhiteList API asynchronously
+func (client *Client) UpdateInstanceIpWhiteListWithCallback(request *UpdateInstanceIpWhiteListRequest, callback func(response *UpdateInstanceIpWhiteListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteHiTSDBInstanceResponse
+		var response *UpdateInstanceIpWhiteListResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteHiTSDBInstance(request)
+		response, err = client.UpdateInstanceIpWhiteList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,38 @@ func (client *Client) DeleteHiTSDBInstanceWithCallback(request *DeleteHiTSDBInst
 	return result
 }
 
-// DeleteHiTSDBInstanceRequest is the request struct for api DeleteHiTSDBInstance
-type DeleteHiTSDBInstanceRequest struct {
+// UpdateInstanceIpWhiteListRequest is the request struct for api UpdateInstanceIpWhiteList
+type UpdateInstanceIpWhiteListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	GroupName            string           `position:"Query" name:"GroupName"`
+	SecurityIpList       string           `position:"Query" name:"SecurityIpList"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	AppKey               string           `position:"Query" name:"AppKey"`
 }
 
-// DeleteHiTSDBInstanceResponse is the response struct for api DeleteHiTSDBInstance
-type DeleteHiTSDBInstanceResponse struct {
+// UpdateInstanceIpWhiteListResponse is the response struct for api UpdateInstanceIpWhiteList
+type UpdateInstanceIpWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteHiTSDBInstanceRequest creates a request to invoke DeleteHiTSDBInstance API
-func CreateDeleteHiTSDBInstanceRequest() (request *DeleteHiTSDBInstanceRequest) {
-	request = &DeleteHiTSDBInstanceRequest{
+// CreateUpdateInstanceIpWhiteListRequest creates a request to invoke UpdateInstanceIpWhiteList API
+func CreateUpdateInstanceIpWhiteListRequest() (request *UpdateInstanceIpWhiteListRequest) {
+	request = &UpdateInstanceIpWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DeleteHiTSDBInstance", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2020-06-15", "UpdateInstanceIpWhiteList", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteHiTSDBInstanceResponse creates a response to parse from DeleteHiTSDBInstance response
-func CreateDeleteHiTSDBInstanceResponse() (response *DeleteHiTSDBInstanceResponse) {
-	response = &DeleteHiTSDBInstanceResponse{
+// CreateUpdateInstanceIpWhiteListResponse creates a response to parse from UpdateInstanceIpWhiteList response
+func CreateUpdateInstanceIpWhiteListResponse() (response *UpdateInstanceIpWhiteListResponse) {
+	response = &UpdateInstanceIpWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

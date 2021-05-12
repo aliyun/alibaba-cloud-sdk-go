@@ -1,3 +1,7 @@
+2021-05-12 Version: v1.61.1079
+- Generated 2020-06-15 for `hitsdb`.
+- Create Lindorm Open api.
+
 2021-05-12 Version: v1.61.1078
 - Generated 2020-05-18 for `dataworks-public`.
 
