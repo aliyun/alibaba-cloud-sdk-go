@@ -17,6 +17,7 @@ package codeup
 
 // ResultItem is a nested struct in codeup response
 type ResultItem struct {
+	DeletedFile               bool                      `json:"DeletedFile" xml:"DeletedFile"`
 	SourceBranch              string                    `json:"SourceBranch" xml:"SourceBranch"`
 	OutDated                  bool                      `json:"OutDated" xml:"OutDated"`
 	EnableSslVerification     bool                      `json:"EnableSslVerification" xml:"EnableSslVerification"`
@@ -25,12 +26,17 @@ type ResultItem struct {
 	WebUrl                    string                    `json:"WebUrl" xml:"WebUrl"`
 	MergedRevision            string                    `json:"MergedRevision" xml:"MergedRevision"`
 	MergeRequestsEvents       bool                      `json:"MergeRequestsEvents" xml:"MergeRequestsEvents"`
+	OldId                     string                    `json:"OldId" xml:"OldId"`
 	MergeError                string                    `json:"MergeError" xml:"MergeError"`
 	PushEvents                bool                      `json:"PushEvents" xml:"PushEvents"`
 	TargetBranch              string                    `json:"TargetBranch" xml:"TargetBranch"`
 	AcceptedRevision          string                    `json:"AcceptedRevision" xml:"AcceptedRevision"`
+	IsBinary                  bool                      `json:"IsBinary" xml:"IsBinary"`
 	RangeContext              string                    `json:"RangeContext" xml:"RangeContext"`
+	OldPath                   string                    `json:"OldPath" xml:"OldPath"`
 	OrganizationId            string                    `json:"OrganizationId" xml:"OrganizationId"`
+	Diff                      string                    `json:"Diff" xml:"Diff"`
+	BMode                     string                    `json:"BMode" xml:"BMode"`
 	Path                      string                    `json:"Path" xml:"Path"`
 	Email                     string                    `json:"Email" xml:"Email"`
 	Side                      string                    `json:"Side" xml:"Side"`
@@ -47,14 +53,18 @@ type ResultItem struct {
 	Name                      string                    `json:"Name" xml:"Name"`
 	ExternUserId              string                    `json:"ExternUserId" xml:"ExternUserId"`
 	OrganizationRole          string                    `json:"OrganizationRole" xml:"OrganizationRole"`
+	IsNewLfs                  bool                      `json:"IsNewLfs" xml:"IsNewLfs"`
 	Title                     string                    `json:"Title" xml:"Title"`
+	AMode                     string                    `json:"AMode" xml:"AMode"`
 	UpdatedAt                 string                    `json:"UpdatedAt" xml:"UpdatedAt"`
+	NewFile                   bool                      `json:"NewFile" xml:"NewFile"`
 	VisibilityLevel           int                       `json:"VisibilityLevel" xml:"VisibilityLevel"`
 	ParentNoteId              int64                     `json:"ParentNoteId" xml:"ParentNoteId"`
 	AheadCommitCount          int                       `json:"AheadCommitCount" xml:"AheadCommitCount"`
 	CreatedAt                 string                    `json:"CreatedAt" xml:"CreatedAt"`
 	NamespaceId               int64                     `json:"NamespaceId" xml:"NamespaceId"`
 	Description               string                    `json:"Description" xml:"Description"`
+	NewId                     string                    `json:"NewId" xml:"NewId"`
 	NameWithNamespace         string                    `json:"NameWithNamespace" xml:"NameWithNamespace"`
 	SshCloneUrl               string                    `json:"SshCloneUrl" xml:"SshCloneUrl"`
 	ProtectedBranch           bool                      `json:"ProtectedBranch" xml:"ProtectedBranch"`
@@ -65,6 +75,7 @@ type ResultItem struct {
 	IsDraft                   bool                      `json:"IsDraft" xml:"IsDraft"`
 	OrganizationName          string                    `json:"OrganizationName" xml:"OrganizationName"`
 	MergeType                 string                    `json:"MergeType" xml:"MergeType"`
+	NewPath                   string                    `json:"NewPath" xml:"NewPath"`
 	SecretToken               string                    `json:"SecretToken" xml:"SecretToken"`
 	Closed                    int                       `json:"Closed" xml:"Closed"`
 	Url                       string                    `json:"Url" xml:"Url"`
@@ -72,7 +83,9 @@ type ResultItem struct {
 	BehindCommitCount         int                       `json:"BehindCommitCount" xml:"BehindCommitCount"`
 	HttpCloneUrl              string                    `json:"HttpCloneUrl" xml:"HttpCloneUrl"`
 	ProjectId                 int64                     `json:"ProjectId" xml:"ProjectId"`
+	IsOldLfs                  bool                      `json:"IsOldLfs" xml:"IsOldLfs"`
 	MergeStatus               string                    `json:"MergeStatus" xml:"MergeStatus"`
+	RenamedFile               bool                      `json:"RenamedFile" xml:"RenamedFile"`
 	ImportStatus              string                    `json:"ImportStatus" xml:"ImportStatus"`
 	ApproveCheckResult        ApproveCheckResult        `json:"ApproveCheckResult" xml:"ApproveCheckResult"`
 	OrganizationSecurityScore OrganizationSecurityScore `json:"OrganizationSecurityScore" xml:"OrganizationSecurityScore"`
