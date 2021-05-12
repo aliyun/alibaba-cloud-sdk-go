@@ -73,7 +73,6 @@ type CreateFileRequest struct {
 	*requests.RpcRequest
 	FileType                requests.Integer `position:"Body" name:"FileType"`
 	DependentNodeIdList     string           `position:"Body" name:"DependentNodeIdList"`
-	AutoParse               requests.Boolean `position:"Body" name:"AutoParse"`
 	Content                 string           `position:"Body" name:"Content"`
 	ProjectIdentifier       string           `position:"Body" name:"ProjectIdentifier"`
 	ResourceGroupId         requests.Integer `position:"Body" name:"ResourceGroupId"`
