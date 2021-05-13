@@ -71,6 +71,7 @@ func (client *Client) ModifyWebRuleWithCallback(request *ModifyWebRuleRequest, c
 // ModifyWebRuleRequest is the request struct for api ModifyWebRule
 type ModifyWebRuleRequest struct {
 	*requests.RpcRequest
+	HttpsExt        string           `position:"Query" name:"HttpsExt"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	RsType          requests.Integer `position:"Query" name:"RsType"`

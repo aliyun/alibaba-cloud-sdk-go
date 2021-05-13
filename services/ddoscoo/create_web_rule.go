@@ -71,10 +71,12 @@ func (client *Client) CreateWebRuleWithCallback(request *CreateWebRuleRequest, c
 // CreateWebRuleRequest is the request struct for api CreateWebRule
 type CreateWebRuleRequest struct {
 	*requests.RpcRequest
+	HttpsExt        string           `position:"Query" name:"HttpsExt"`
 	Rules           string           `position:"Query" name:"Rules"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	RsType          requests.Integer `position:"Query" name:"RsType"`
+	DefenseId       string           `position:"Query" name:"DefenseId"`
 	InstanceIds     *[]string        `position:"Query" name:"InstanceIds"  type:"Repeated"`
 	Domain          string           `position:"Query" name:"Domain"`
 }

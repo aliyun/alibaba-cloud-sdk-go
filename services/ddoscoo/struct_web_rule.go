@@ -17,17 +17,28 @@ package ddoscoo
 
 // WebRule is a nested struct in ddoscoo response
 type WebRule struct {
-	Domain        string        `json:"Domain" xml:"Domain"`
-	CcEnabled     bool          `json:"CcEnabled" xml:"CcEnabled"`
-	CcRuleEnabled bool          `json:"CcRuleEnabled" xml:"CcRuleEnabled"`
-	CcTemplate    string        `json:"CcTemplate" xml:"CcTemplate"`
-	SslProtocols  string        `json:"SslProtocols" xml:"SslProtocols"`
-	SslCiphers    string        `json:"SslCiphers" xml:"SslCiphers"`
-	Http2Enable   bool          `json:"Http2Enable" xml:"Http2Enable"`
-	Cname         string        `json:"Cname" xml:"Cname"`
-	CertName      string        `json:"CertName" xml:"CertName"`
-	WhiteList     []string      `json:"WhiteList" xml:"WhiteList"`
-	BlackList     []string      `json:"BlackList" xml:"BlackList"`
-	ProxyTypes    []ProxyConfig `json:"ProxyTypes" xml:"ProxyTypes"`
-	RealServers   []RealServer  `json:"RealServers" xml:"RealServers"`
+	Domain           string        `json:"Domain" xml:"Domain"`
+	Cname            string        `json:"Cname" xml:"Cname"`
+	CertName         string        `json:"CertName" xml:"CertName"`
+	PunishReason     int           `json:"PunishReason" xml:"PunishReason"`
+	SslCiphers       string        `json:"SslCiphers" xml:"SslCiphers"`
+	SslProtocols     string        `json:"SslProtocols" xml:"SslProtocols"`
+	Ssl13Enabled     bool          `json:"Ssl13Enabled" xml:"Ssl13Enabled"`
+	PunishStatus     bool          `json:"PunishStatus" xml:"PunishStatus"`
+	Http2HttpsEnable bool          `json:"Http2HttpsEnable" xml:"Http2HttpsEnable"`
+	HttpsExt         string        `json:"HttpsExt" xml:"HttpsExt"`
+	ProxyEnabled     bool          `json:"ProxyEnabled" xml:"ProxyEnabled"`
+	RsType           int           `json:"RsType" xml:"RsType"`
+	CcRuleEnabled    bool          `json:"CcRuleEnabled" xml:"CcRuleEnabled"`
+	CcTemplate       string        `json:"CcTemplate" xml:"CcTemplate"`
+	PolicyMode       string        `json:"PolicyMode" xml:"PolicyMode"`
+	CcEnabled        bool          `json:"CcEnabled" xml:"CcEnabled"`
+	Https2HttpEnable bool          `json:"Https2HttpEnable" xml:"Https2HttpEnable"`
+	Http2Enable      bool          `json:"Http2Enable" xml:"Http2Enable"`
+	InstanceIds      []string      `json:"InstanceIds" xml:"InstanceIds"`
+	BlackList        []string      `json:"BlackList" xml:"BlackList"`
+	WhiteList        []string      `json:"WhiteList" xml:"WhiteList"`
+	CustomCiphers    []string      `json:"CustomCiphers" xml:"CustomCiphers"`
+	RealServers      []string      `json:"RealServers" xml:"RealServers"`
+	ProxyTypes       []ProxyConfig `json:"ProxyTypes" xml:"ProxyTypes"`
 }

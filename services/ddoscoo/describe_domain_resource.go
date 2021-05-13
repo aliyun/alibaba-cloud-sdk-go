@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeWebRules invokes the ddoscoo.DescribeWebRules API synchronously
-func (client *Client) DescribeWebRules(request *DescribeWebRulesRequest) (response *DescribeWebRulesResponse, err error) {
-	response = CreateDescribeWebRulesResponse()
+// DescribeDomainResource invokes the ddoscoo.DescribeDomainResource API synchronously
+func (client *Client) DescribeDomainResource(request *DescribeDomainResourceRequest) (response *DescribeDomainResourceResponse, err error) {
+	response = CreateDescribeDomainResourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeWebRulesWithChan invokes the ddoscoo.DescribeWebRules API asynchronously
-func (client *Client) DescribeWebRulesWithChan(request *DescribeWebRulesRequest) (<-chan *DescribeWebRulesResponse, <-chan error) {
-	responseChan := make(chan *DescribeWebRulesResponse, 1)
+// DescribeDomainResourceWithChan invokes the ddoscoo.DescribeDomainResource API asynchronously
+func (client *Client) DescribeDomainResourceWithChan(request *DescribeDomainResourceRequest) (<-chan *DescribeDomainResourceResponse, <-chan error) {
+	responseChan := make(chan *DescribeDomainResourceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeWebRules(request)
+		response, err := client.DescribeDomainResource(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeWebRulesWithChan(request *DescribeWebRulesRequest)
 	return responseChan, errChan
 }
 
-// DescribeWebRulesWithCallback invokes the ddoscoo.DescribeWebRules API asynchronously
-func (client *Client) DescribeWebRulesWithCallback(request *DescribeWebRulesRequest, callback func(response *DescribeWebRulesResponse, err error)) <-chan int {
+// DescribeDomainResourceWithCallback invokes the ddoscoo.DescribeDomainResource API asynchronously
+func (client *Client) DescribeDomainResourceWithCallback(request *DescribeDomainResourceRequest, callback func(response *DescribeDomainResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeWebRulesResponse
+		var response *DescribeDomainResourceResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeWebRules(request)
+		response, err = client.DescribeDomainResource(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,11 +68,10 @@ func (client *Client) DescribeWebRulesWithCallback(request *DescribeWebRulesRequ
 	return result
 }
 
-// DescribeWebRulesRequest is the request struct for api DescribeWebRules
-type DescribeWebRulesRequest struct {
+// DescribeDomainResourceRequest is the request struct for api DescribeDomainResource
+type DescribeDomainResourceRequest struct {
 	*requests.RpcRequest
 	PageNumber         requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceGroupId    string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp           string           `position:"Query" name:"SourceIp"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 	InstanceIds        *[]string        `position:"Query" name:"InstanceIds"  type:"Repeated"`
@@ -80,27 +79,27 @@ type DescribeWebRulesRequest struct {
 	Domain             string           `position:"Query" name:"Domain"`
 }
 
-// DescribeWebRulesResponse is the response struct for api DescribeWebRules
-type DescribeWebRulesResponse struct {
+// DescribeDomainResourceResponse is the response struct for api DescribeDomainResource
+type DescribeDomainResourceResponse struct {
 	*responses.BaseResponse
-	RequestId  string                      `json:"RequestId" xml:"RequestId"`
-	TotalCount int64                       `json:"TotalCount" xml:"TotalCount"`
-	WebRules   []WebRuleInDescribeWebRules `json:"WebRules" xml:"WebRules"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	TotalCount int64     `json:"TotalCount" xml:"TotalCount"`
+	WebRules   []WebRule `json:"WebRules" xml:"WebRules"`
 }
 
-// CreateDescribeWebRulesRequest creates a request to invoke DescribeWebRules API
-func CreateDescribeWebRulesRequest() (request *DescribeWebRulesRequest) {
-	request = &DescribeWebRulesRequest{
+// CreateDescribeDomainResourceRequest creates a request to invoke DescribeDomainResource API
+func CreateDescribeDomainResourceRequest() (request *DescribeDomainResourceRequest) {
+	request = &DescribeDomainResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebRules", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainResource", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeWebRulesResponse creates a response to parse from DescribeWebRules response
-func CreateDescribeWebRulesResponse() (response *DescribeWebRulesResponse) {
-	response = &DescribeWebRulesResponse{
+// CreateDescribeDomainResourceResponse creates a response to parse from DescribeDomainResource response
+func CreateDescribeDomainResourceResponse() (response *DescribeDomainResourceResponse) {
+	response = &DescribeDomainResourceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
