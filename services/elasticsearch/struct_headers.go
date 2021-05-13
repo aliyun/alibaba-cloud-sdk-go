@@ -17,5 +17,7 @@ package elasticsearch
 
 // Headers is a nested struct in elasticsearch response
 type Headers struct {
-	XTotalCount int `json:"X-Total-Count" xml:"X-Total-Count"`
+	XTotalCount         int   `json:"X-Total-Count" xml:"X-Total-Count"`
+	XManagedStorageSize int64 `json:"X-Managed-StorageSize" xml:"X-Managed-StorageSize"`
+	XManagedCount       int   `json:"X-Managed-Count" xml:"X-Managed-Count"`
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListInstanceIndices invokes the elasticsearch.ListInstanceIndices API synchronously
-func (client *Client) ListInstanceIndices(request *ListInstanceIndicesRequest) (response *ListInstanceIndicesResponse, err error) {
-	response = CreateListInstanceIndicesResponse()
+// ListDataStreams invokes the elasticsearch.ListDataStreams API synchronously
+func (client *Client) ListDataStreams(request *ListDataStreamsRequest) (response *ListDataStreamsResponse, err error) {
+	response = CreateListDataStreamsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListInstanceIndicesWithChan invokes the elasticsearch.ListInstanceIndices API asynchronously
-func (client *Client) ListInstanceIndicesWithChan(request *ListInstanceIndicesRequest) (<-chan *ListInstanceIndicesResponse, <-chan error) {
-	responseChan := make(chan *ListInstanceIndicesResponse, 1)
+// ListDataStreamsWithChan invokes the elasticsearch.ListDataStreams API asynchronously
+func (client *Client) ListDataStreamsWithChan(request *ListDataStreamsRequest) (<-chan *ListDataStreamsResponse, <-chan error) {
+	responseChan := make(chan *ListDataStreamsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListInstanceIndices(request)
+		response, err := client.ListDataStreams(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListInstanceIndicesWithChan(request *ListInstanceIndicesRe
 	return responseChan, errChan
 }
 
-// ListInstanceIndicesWithCallback invokes the elasticsearch.ListInstanceIndices API asynchronously
-func (client *Client) ListInstanceIndicesWithCallback(request *ListInstanceIndicesRequest, callback func(response *ListInstanceIndicesResponse, err error)) <-chan int {
+// ListDataStreamsWithCallback invokes the elasticsearch.ListDataStreams API asynchronously
+func (client *Client) ListDataStreamsWithCallback(request *ListDataStreamsRequest, callback func(response *ListDataStreamsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListInstanceIndicesResponse
+		var response *ListDataStreamsResponse
 		var err error
 		defer close(result)
-		response, err = client.ListInstanceIndices(request)
+		response, err = client.ListDataStreams(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,35 @@ func (client *Client) ListInstanceIndicesWithCallback(request *ListInstanceIndic
 	return result
 }
 
-// ListInstanceIndicesRequest is the request struct for api ListInstanceIndices
-type ListInstanceIndicesRequest struct {
+// ListDataStreamsRequest is the request struct for api ListDataStreams
+type ListDataStreamsRequest struct {
 	*requests.RoaRequest
 	InstanceId string           `position:"Path" name:"InstanceId"`
 	IsManaged  requests.Boolean `position:"Query" name:"isManaged"`
 	Name       string           `position:"Query" name:"name"`
-	Lang       string           `position:"Query" name:"lang"`
 }
 
-// ListInstanceIndicesResponse is the response struct for api ListInstanceIndices
-type ListInstanceIndicesResponse struct {
+// ListDataStreamsResponse is the response struct for api ListDataStreams
+type ListDataStreamsResponse struct {
 	*responses.BaseResponse
 	RequestId string       `json:"RequestId" xml:"RequestId"`
 	Headers   Headers      `json:"Headers" xml:"Headers"`
 	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 
-// CreateListInstanceIndicesRequest creates a request to invoke ListInstanceIndices API
-func CreateListInstanceIndicesRequest() (request *ListInstanceIndicesRequest) {
-	request = &ListInstanceIndicesRequest{
+// CreateListDataStreamsRequest creates a request to invoke ListDataStreams API
+func CreateListDataStreamsRequest() (request *ListDataStreamsRequest) {
+	request = &ListDataStreamsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("elasticsearch", "2017-06-13", "ListInstanceIndices", "/openapi/instances/[InstanceId]/indices", "elasticsearch", "openAPI")
+	request.InitWithApiInfo("elasticsearch", "2017-06-13", "ListDataStreams", "/openapi/instances/[InstanceId]/data-streams", "elasticsearch", "openAPI")
 	request.Method = requests.GET
 	return
 }
 
-// CreateListInstanceIndicesResponse creates a response to parse from ListInstanceIndices response
-func CreateListInstanceIndicesResponse() (response *ListInstanceIndicesResponse) {
-	response = &ListInstanceIndicesResponse{
+// CreateListDataStreamsResponse creates a response to parse from ListDataStreams response
+func CreateListDataStreamsResponse() (response *ListDataStreamsResponse) {
+	response = &ListDataStreamsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

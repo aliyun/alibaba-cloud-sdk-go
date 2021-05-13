@@ -17,13 +17,17 @@ package elasticsearch
 
 // ResultItem is a nested struct in elasticsearch response
 type ResultItem struct {
+	IlmPolicyName        string                 `json:"ilmPolicyName" xml:"ilmPolicyName"`
 	Timestamp            int64                  `json:"timestamp" xml:"timestamp"`
 	Health               string                 `json:"health" xml:"health"`
 	TaskId               string                 `json:"taskId" xml:"taskId"`
+	IsManaged            string                 `json:"isManaged" xml:"isManaged"`
 	ResId                string                 `json:"resId" xml:"resId"`
 	FileName             string                 `json:"fileName" xml:"fileName"`
+	IlmPolicy            string                 `json:"ilmPolicy" xml:"ilmPolicy"`
 	ContentCollection    map[string]interface{} `json:"contentCollection" xml:"contentCollection"`
 	EcsInstanceName      string                 `json:"ecsInstanceName" xml:"ecsInstanceName"`
+	Priority             int                    `json:"priority" xml:"priority"`
 	Namespace            string                 `json:"namespace" xml:"namespace"`
 	HeapPercent          string                 `json:"heapPercent" xml:"heapPercent"`
 	GmtUpdateTime        string                 `json:"gmtUpdateTime" xml:"gmtUpdateTime"`
@@ -48,18 +52,26 @@ type ResultItem struct {
 	FilePath             string                 `json:"filePath" xml:"filePath"`
 	Instances            string                 `json:"instances" xml:"instances"`
 	NetworkType          string                 `json:"networkType" xml:"networkType"`
+	Phases               map[string]interface{} `json:"phases" xml:"phases"`
 	Level                string                 `json:"level" xml:"level"`
 	LoadOneM             string                 `json:"loadOneM" xml:"loadOneM"`
+	TotalStorageSize     int64                  `json:"totalStorageSize" xml:"totalStorageSize"`
 	FileSize             int64                  `json:"fileSize" xml:"fileSize"`
 	State                string                 `json:"state" xml:"state"`
+	Size                 int64                  `json:"size" xml:"size"`
 	EcsInstanceId        string                 `json:"ecsInstanceId" xml:"ecsInstanceId"`
+	ManagedStatus        string                 `json:"managedStatus" xml:"managedStatus"`
 	KibanaEndpoint       string                 `json:"kibanaEndpoint" xml:"kibanaEndpoint"`
 	CpuPercent           string                 `json:"cpuPercent" xml:"cpuPercent"`
+	IndexTemplate        string                 `json:"indexTemplate" xml:"indexTemplate"`
 	TagValue             string                 `json:"TagValue" xml:"TagValue"`
 	DiskUsedPercent      string                 `json:"diskUsedPercent" xml:"diskUsedPercent"`
 	DryRun               bool                   `json:"dryRun" xml:"dryRun"`
 	OwnerId              string                 `json:"ownerId" xml:"ownerId"`
+	IndexTemplateName    string                 `json:"indexTemplateName" xml:"indexTemplateName"`
+	ManagedStorageSize   int64                  `json:"managedStorageSize" xml:"managedStorageSize"`
 	PipelineStatus       string                 `json:"pipelineStatus" xml:"pipelineStatus"`
+	DataStream           bool                   `json:"dataStream" xml:"dataStream"`
 	Status               string                 `json:"status" xml:"status"`
 	NodeType             string                 `json:"nodeType" xml:"nodeType"`
 	InstanceId           string                 `json:"instanceId" xml:"instanceId"`
@@ -70,10 +82,13 @@ type ResultItem struct {
 	EsInstanceId         string                 `json:"esInstanceId" xml:"esInstanceId"`
 	SpecificationUrl     string                 `json:"specificationUrl" xml:"specificationUrl"`
 	GmtCreatedTime       string                 `json:"gmtCreatedTime" xml:"gmtCreatedTime"`
+	IndexPatterns        []string               `json:"indexPatterns" xml:"indexPatterns"`
 	CollectorPaths       []string               `json:"collectorPaths" xml:"collectorPaths"`
 	SourceCluster        SourceCluster          `json:"sourceCluster" xml:"sourceCluster"`
 	SinkCluster          SinkCluster            `json:"sinkCluster" xml:"sinkCluster"`
+	Template             Template               `json:"template" xml:"template"`
 	Configs              []ConfigsItem          `json:"configs" xml:"configs"`
+	Indices              []IndicesItem          `json:"indices" xml:"indices"`
 	ExtendConfigs        []ExtendConfigsItem    `json:"extendConfigs" xml:"extendConfigs"`
 	IpAddress            []IpAddressItem        `json:"ipAddress" xml:"ipAddress"`
 	Collectors           []CollectorsItem       `json:"collectors" xml:"collectors"`

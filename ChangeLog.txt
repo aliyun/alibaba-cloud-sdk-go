@@ -1,3 +1,8 @@
+2021-05-13 Version: v1.61.1081
+- Generated 2017-06-13 for `elasticsearch`.
+- Add Indexing-Service support.
+- Remove jsonItem form.
+
 2021-05-12 Version: v1.61.1080
 - Generated 2020-04-14 for `codeup`.
 - Add GetRepositoryCommit and ListRepositoryCommitDiff API.
