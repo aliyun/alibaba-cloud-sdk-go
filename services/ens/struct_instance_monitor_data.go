@@ -17,7 +17,7 @@ package ens
 
 // InstanceMonitorData is a nested struct in ens response
 type InstanceMonitorData struct {
+	CPU        string `json:"CPU" xml:"CPU"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 	Memory     string `json:"Memory" xml:"Memory"`
-	CPU        string `json:"CPU" xml:"CPU"`
 }

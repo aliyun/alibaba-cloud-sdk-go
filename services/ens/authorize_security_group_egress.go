@@ -71,14 +71,13 @@ func (client *Client) AuthorizeSecurityGroupEgressWithCallback(request *Authoriz
 // AuthorizeSecurityGroupEgressRequest is the request struct for api AuthorizeSecurityGroupEgress
 type AuthorizeSecurityGroupEgressRequest struct {
 	*requests.RpcRequest
-	SourcePortRange string           `position:"Query" name:"SourcePortRange"`
-	SecurityGroupId string           `position:"Query" name:"SecurityGroupId"`
-	Policy          string           `position:"Query" name:"Policy"`
-	PortRange       string           `position:"Query" name:"PortRange"`
-	IpProtocol      string           `position:"Query" name:"IpProtocol"`
-	Priority        requests.Integer `position:"Query" name:"Priority"`
-	Version         string           `position:"Query" name:"Version"`
-	DestCidrIp      string           `position:"Query" name:"DestCidrIp"`
+	SourcePortRange string           `position:"Query"`
+	PortRange       string           `position:"Query"`
+	IpProtocol      string           `position:"Query"`
+	Priority        requests.Integer `position:"Query"`
+	DestCidrIp      string           `position:"Query"`
+	SecurityGroupId string           `position:"Query"`
+	Policy          string           `position:"Query"`
 }
 
 // AuthorizeSecurityGroupEgressResponse is the response struct for api AuthorizeSecurityGroupEgress

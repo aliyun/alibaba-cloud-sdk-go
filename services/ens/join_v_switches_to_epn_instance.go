@@ -71,8 +71,8 @@ func (client *Client) JoinVSwitchesToEpnInstanceWithCallback(request *JoinVSwitc
 // JoinVSwitchesToEpnInstanceRequest is the request struct for api JoinVSwitchesToEpnInstance
 type JoinVSwitchesToEpnInstanceRequest struct {
 	*requests.RpcRequest
-	VSwitchesInfo string `position:"Query" name:"VSwitchesInfo"`
-	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
+	VSwitchesInfo string `position:"Query"`
+	EPNInstanceId string `position:"Query"`
 }
 
 // JoinVSwitchesToEpnInstanceResponse is the response struct for api JoinVSwitchesToEpnInstance

@@ -71,8 +71,7 @@ func (client *Client) DeleteSecurityGroupWithCallback(request *DeleteSecurityGro
 // DeleteSecurityGroupRequest is the request struct for api DeleteSecurityGroup
 type DeleteSecurityGroupRequest struct {
 	*requests.RpcRequest
-	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
-	Version         string `position:"Query" name:"Version"`
+	SecurityGroupId string `position:"Query"`
 }
 
 // DeleteSecurityGroupResponse is the response struct for api DeleteSecurityGroup

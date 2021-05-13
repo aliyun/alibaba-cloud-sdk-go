@@ -71,7 +71,7 @@ func (client *Client) StopEpnInstanceWithCallback(request *StopEpnInstanceReques
 // StopEpnInstanceRequest is the request struct for api StopEpnInstance
 type StopEpnInstanceRequest struct {
 	*requests.RpcRequest
-	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
+	EPNInstanceId string `position:"Query"`
 }
 
 // StopEpnInstanceResponse is the response struct for api StopEpnInstance

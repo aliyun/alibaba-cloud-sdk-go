@@ -71,9 +71,8 @@ func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroup
 // LeaveSecurityGroupRequest is the request struct for api LeaveSecurityGroup
 type LeaveSecurityGroupRequest struct {
 	*requests.RpcRequest
-	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
-	Version         string `position:"Query" name:"Version"`
-	InstanceId      string `position:"Query" name:"InstanceId"`
+	SecurityGroupId string `position:"Query"`
+	InstanceId      string `position:"Query"`
 }
 
 // LeaveSecurityGroupResponse is the response struct for api LeaveSecurityGroup

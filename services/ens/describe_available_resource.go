@@ -71,14 +71,13 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 // DescribeAvailableResourceRequest is the request struct for api DescribeAvailableResource
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
-	Version string `position:"Query" name:"Version"`
 }
 
 // DescribeAvailableResourceResponse is the response struct for api DescribeAvailableResource
 type DescribeAvailableResourceResponse struct {
 	*responses.BaseResponse
-	RequestId        string                                      `json:"RequestId" xml:"RequestId"`
 	Code             int                                         `json:"Code" xml:"Code"`
+	RequestId        string                                      `json:"RequestId" xml:"RequestId"`
 	Images           ImagesInDescribeAvailableResource           `json:"Images" xml:"Images"`
 	SupportResources SupportResourcesInDescribeAvailableResource `json:"SupportResources" xml:"SupportResources"`
 }

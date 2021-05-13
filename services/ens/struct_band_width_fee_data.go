@@ -17,7 +17,9 @@ package ens
 
 // BandWidthFeeData is a nested struct in ens response
 type BandWidthFeeData struct {
-	CostVal  int    `json:"CostVal" xml:"CostVal"`
 	CostCode string `json:"CostCode" xml:"CostCode"`
+	CostType string `json:"CostType" xml:"CostType"`
+	CostVal  int    `json:"CostVal" xml:"CostVal"`
+	IspLine  string `json:"IspLine" xml:"IspLine"`
 	CostName string `json:"CostName" xml:"CostName"`
 }

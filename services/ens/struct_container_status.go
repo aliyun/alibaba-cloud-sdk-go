@@ -17,6 +17,6 @@ package ens
 
 // ContainerStatus is a nested struct in ens response
 type ContainerStatus struct {
-	Name        string `json:"Name" xml:"Name"`
 	ContainerId string `json:"ContainerId" xml:"ContainerId"`
+	Name        string `json:"Name" xml:"Name"`
 }

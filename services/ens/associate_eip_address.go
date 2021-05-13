@@ -71,10 +71,9 @@ func (client *Client) AssociateEipAddressWithCallback(request *AssociateEipAddre
 // AssociateEipAddressRequest is the request struct for api AssociateEipAddress
 type AssociateEipAddressRequest struct {
 	*requests.RpcRequest
-	Eip                  string `position:"Query" name:"Eip"`
-	EnsRegionId          string `position:"Query" name:"EnsRegionId"`
-	InstanceIdInternetIp string `position:"Query" name:"InstanceIdInternetIp"`
-	Version              string `position:"Query" name:"Version"`
+	Eip                  string `position:"Query"`
+	EnsRegionId          string `position:"Query"`
+	InstanceIdInternetIp string `position:"Query"`
 }
 
 // AssociateEipAddressResponse is the response struct for api AssociateEipAddress

@@ -71,20 +71,19 @@ func (client *Client) DescribeSecurityGroupsWithCallback(request *DescribeSecuri
 // DescribeSecurityGroupsRequest is the request struct for api DescribeSecurityGroups
 type DescribeSecurityGroupsRequest struct {
 	*requests.RpcRequest
-	SecurityGroupId   string           `position:"Query" name:"SecurityGroupId"`
-	SecurityGroupName string           `position:"Query" name:"SecurityGroupName"`
-	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize          requests.Integer `position:"Query" name:"PageSize"`
-	Version           string           `position:"Query" name:"Version"`
+	SecurityGroupId   string           `position:"Query"`
+	SecurityGroupName string           `position:"Query"`
+	PageNumber        requests.Integer `position:"Query"`
+	PageSize          requests.Integer `position:"Query"`
 }
 
 // DescribeSecurityGroupsResponse is the response struct for api DescribeSecurityGroups
 type DescribeSecurityGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
 	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
 	SecurityGroups SecurityGroups `json:"SecurityGroups" xml:"SecurityGroups"`
 }
 

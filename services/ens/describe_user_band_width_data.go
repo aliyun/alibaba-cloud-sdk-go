@@ -71,21 +71,20 @@ func (client *Client) DescribeUserBandWidthDataWithCallback(request *DescribeUse
 // DescribeUserBandWidthDataRequest is the request struct for api DescribeUserBandWidthData
 type DescribeUserBandWidthDataRequest struct {
 	*requests.RpcRequest
-	Isp         string `position:"Query" name:"Isp"`
-	StartTime   string `position:"Query" name:"StartTime"`
-	EnsRegionId string `position:"Query" name:"EnsRegionId"`
-	Period      string `position:"Query" name:"Period"`
-	EndTime     string `position:"Query" name:"EndTime"`
-	Version     string `position:"Query" name:"Version"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
+	Isp         string `position:"Query"`
+	StartTime   string `position:"Query"`
+	EnsRegionId string `position:"Query"`
+	Period      string `position:"Query"`
+	InstanceId  string `position:"Query"`
+	EndTime     string `position:"Query"`
 }
 
 // DescribeUserBandWidthDataResponse is the response struct for api DescribeUserBandWidthData
 type DescribeUserBandWidthDataResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	Code        int         `json:"Code" xml:"Code"`
-	MonitorData MonitorData `json:"MonitorData" xml:"MonitorData"`
+	Code        int                                    `json:"Code" xml:"Code"`
+	RequestId   string                                 `json:"RequestId" xml:"RequestId"`
+	MonitorData MonitorDataInDescribeUserBandWidthData `json:"MonitorData" xml:"MonitorData"`
 }
 
 // CreateDescribeUserBandWidthDataRequest creates a request to invoke DescribeUserBandWidthData API

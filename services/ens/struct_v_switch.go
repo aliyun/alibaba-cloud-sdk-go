@@ -17,11 +17,13 @@ package ens
 
 // VSwitch is a nested struct in ens response
 type VSwitch struct {
-	VSwitchId   string `json:"VSwitchId" xml:"VSwitchId"`
-	VSwitchName string `json:"VSwitchName" xml:"VSwitchName"`
-	Status      string `json:"Status" xml:"Status"`
-	CidrBlock   string `json:"CidrBlock" xml:"CidrBlock"`
 	EnsRegionId string `json:"EnsRegionId" xml:"EnsRegionId"`
+	Status      string `json:"Status" xml:"Status"`
 	FreeIpCount int64  `json:"FreeIpCount" xml:"FreeIpCount"`
+	VSwitchId   string `json:"VSwitchId" xml:"VSwitchId"`
+	CidrBlock   string `json:"CidrBlock" xml:"CidrBlock"`
+	Description string `json:"Description" xml:"Description"`
+	NetworkId   string `json:"NetworkId" xml:"NetworkId"`
 	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
+	VSwitchName string `json:"VSwitchName" xml:"VSwitchName"`
 }

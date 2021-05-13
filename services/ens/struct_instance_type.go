@@ -18,7 +18,7 @@ package ens
 // InstanceType is a nested struct in ens response
 type InstanceType struct {
 	CpuCoreCount     int    `json:"CpuCoreCount" xml:"CpuCoreCount"`
-	MemorySize       int    `json:"MemorySize" xml:"MemorySize"`
 	InstanceTypeId   string `json:"InstanceTypeId" xml:"InstanceTypeId"`
 	InstanceTypeName string `json:"InstanceTypeName" xml:"InstanceTypeName"`
+	MemorySize       int    `json:"MemorySize" xml:"MemorySize"`
 }

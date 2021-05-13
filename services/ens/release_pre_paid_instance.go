@@ -71,8 +71,7 @@ func (client *Client) ReleasePrePaidInstanceWithCallback(request *ReleasePrePaid
 // ReleasePrePaidInstanceRequest is the request struct for api ReleasePrePaidInstance
 type ReleasePrePaidInstanceRequest struct {
 	*requests.RpcRequest
-	Version    string `position:"Query" name:"Version"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	InstanceId string `position:"Query"`
 }
 
 // ReleasePrePaidInstanceResponse is the response struct for api ReleasePrePaidInstance

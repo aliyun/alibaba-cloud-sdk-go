@@ -71,16 +71,15 @@ func (client *Client) DescribeEnsNetDistrictWithCallback(request *DescribeEnsNet
 // DescribeEnsNetDistrictRequest is the request struct for api DescribeEnsNetDistrict
 type DescribeEnsNetDistrictRequest struct {
 	*requests.RpcRequest
-	NetLevelCode    string `position:"Query" name:"NetLevelCode"`
-	NetDistrictCode string `position:"Query" name:"NetDistrictCode"`
-	Version         string `position:"Query" name:"Version"`
+	NetLevelCode    string `position:"Query"`
+	NetDistrictCode string `position:"Query"`
 }
 
 // DescribeEnsNetDistrictResponse is the response struct for api DescribeEnsNetDistrict
 type DescribeEnsNetDistrictResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                  `json:"RequestId" xml:"RequestId"`
 	Code            int                                     `json:"Code" xml:"Code"`
+	RequestId       string                                  `json:"RequestId" xml:"RequestId"`
 	EnsNetDistricts EnsNetDistrictsInDescribeEnsNetDistrict `json:"EnsNetDistricts" xml:"EnsNetDistricts"`
 }
 

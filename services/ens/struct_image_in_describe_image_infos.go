@@ -17,10 +17,10 @@ package ens
 
 // ImageInDescribeImageInfos is a nested struct in ens response
 type ImageInDescribeImageInfos struct {
-	ImageId      string `json:"ImageId" xml:"ImageId"`
 	Description  string `json:"Description" xml:"Description"`
-	ImageVersion string `json:"ImageVersion" xml:"ImageVersion"`
-	OSType       string `json:"OSType" xml:"OSType"`
-	OSName       string `json:"OSName" xml:"OSName"`
+	ImageId      string `json:"ImageId" xml:"ImageId"`
 	ImageSize    string `json:"ImageSize" xml:"ImageSize"`
+	ImageVersion string `json:"ImageVersion" xml:"ImageVersion"`
+	OSName       string `json:"OSName" xml:"OSName"`
+	OSType       string `json:"OSType" xml:"OSType"`
 }

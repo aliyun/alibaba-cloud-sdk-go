@@ -17,7 +17,7 @@ package ens
 
 // InstanceRenewAttribute is a nested struct in ens response
 type InstanceRenewAttribute struct {
-	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
 	AutoRenewal bool   `json:"AutoRenewal" xml:"AutoRenewal"`
 	Duration    string `json:"Duration" xml:"Duration"`
+	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
 }

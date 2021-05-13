@@ -71,15 +71,15 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 // CreateSecurityGroupRequest is the request struct for api CreateSecurityGroup
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
-	SecurityGroupName string `position:"Query" name:"SecurityGroupName"`
-	Version           string `position:"Query" name:"Version"`
+	Description       string `position:"Query"`
+	SecurityGroupName string `position:"Query"`
 }
 
 // CreateSecurityGroupResponse is the response struct for api CreateSecurityGroup
 type CreateSecurityGroupResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
 	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateSecurityGroupRequest creates a request to invoke CreateSecurityGroup API

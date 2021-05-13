@@ -71,14 +71,13 @@ func (client *Client) RevokeSecurityGroupWithCallback(request *RevokeSecurityGro
 // RevokeSecurityGroupRequest is the request struct for api RevokeSecurityGroup
 type RevokeSecurityGroupRequest struct {
 	*requests.RpcRequest
-	SourcePortRange string           `position:"Query" name:"SourcePortRange"`
-	SecurityGroupId string           `position:"Query" name:"SecurityGroupId"`
-	Policy          string           `position:"Query" name:"Policy"`
-	PortRange       string           `position:"Query" name:"PortRange"`
-	IpProtocol      string           `position:"Query" name:"IpProtocol"`
-	SourceCidrIp    string           `position:"Query" name:"SourceCidrIp"`
-	Priority        requests.Integer `position:"Query" name:"Priority"`
-	Version         string           `position:"Query" name:"Version"`
+	SourcePortRange string           `position:"Query"`
+	PortRange       string           `position:"Query"`
+	IpProtocol      string           `position:"Query"`
+	SourceCidrIp    string           `position:"Query"`
+	Priority        requests.Integer `position:"Query"`
+	SecurityGroupId string           `position:"Query"`
+	Policy          string           `position:"Query"`
 }
 
 // RevokeSecurityGroupResponse is the response struct for api RevokeSecurityGroup

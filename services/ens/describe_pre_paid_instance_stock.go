@@ -71,23 +71,22 @@ func (client *Client) DescribePrePaidInstanceStockWithCallback(request *Describe
 // DescribePrePaidInstanceStockRequest is the request struct for api DescribePrePaidInstanceStock
 type DescribePrePaidInstanceStockRequest struct {
 	*requests.RpcRequest
-	InstanceSpec   string           `position:"Query" name:"InstanceSpec"`
-	EnsRegionId    string           `position:"Query" name:"EnsRegionId"`
-	SystemDiskSize requests.Integer `position:"Query" name:"SystemDiskSize"`
-	Version        string           `position:"Query" name:"Version"`
-	DataDiskSize   requests.Integer `position:"Query" name:"DataDiskSize"`
+	InstanceSpec   string           `position:"Query"`
+	EnsRegionId    string           `position:"Query"`
+	SystemDiskSize requests.Integer `position:"Query"`
+	DataDiskSize   requests.Integer `position:"Query"`
 }
 
 // DescribePrePaidInstanceStockResponse is the response struct for api DescribePrePaidInstanceStock
 type DescribePrePaidInstanceStockResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
+	AvaliableCount int    `json:"AvaliableCount" xml:"AvaliableCount"`
+	Cores          int    `json:"Cores" xml:"Cores"`
 	DataDiskSize   int    `json:"DataDiskSize" xml:"DataDiskSize"`
 	EnsRegionId    string `json:"EnsRegionId" xml:"EnsRegionId"`
-	Cores          int    `json:"Cores" xml:"Cores"`
-	Memory         int    `json:"Memory" xml:"Memory"`
-	AvaliableCount int    `json:"AvaliableCount" xml:"AvaliableCount"`
 	InstanceSpec   string `json:"InstanceSpec" xml:"InstanceSpec"`
+	Memory         int    `json:"Memory" xml:"Memory"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	SystemDiskSize int    `json:"SystemDiskSize" xml:"SystemDiskSize"`
 }
 

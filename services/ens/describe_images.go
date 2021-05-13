@@ -71,24 +71,23 @@ func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest,
 // DescribeImagesRequest is the request struct for api DescribeImages
 type DescribeImagesRequest struct {
 	*requests.RpcRequest
-	ImageId     string `position:"Query" name:"ImageId"`
-	PageNumber  string `position:"Query" name:"PageNumber"`
-	ImageName   string `position:"Query" name:"ImageName"`
-	EnsRegionId string `position:"Query" name:"EnsRegionId"`
-	PageSize    string `position:"Query" name:"PageSize"`
-	Product     string `position:"Query" name:"product"`
-	Version     string `position:"Query" name:"Version"`
-	Status      string `position:"Query" name:"Status"`
+	EnsRegionId string `position:"Query"`
+	Status      string `position:"Query"`
+	ImageId     string `position:"Query"`
+	PageNumber  string `position:"Query"`
+	ImageName   string `position:"Query"`
+	PageSize    string `position:"Query"`
+	Product     string `position:"Query"`
 }
 
 // DescribeImagesResponse is the response struct for api DescribeImages
 type DescribeImagesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                 `json:"RequestId" xml:"RequestId"`
 	Code       int                    `json:"Code" xml:"Code"`
-	TotalCount int                    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	TotalCount int                    `json:"TotalCount" xml:"TotalCount"`
 	Images     ImagesInDescribeImages `json:"Images" xml:"Images"`
 }
 

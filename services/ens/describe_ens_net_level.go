@@ -71,14 +71,13 @@ func (client *Client) DescribeEnsNetLevelWithCallback(request *DescribeEnsNetLev
 // DescribeEnsNetLevelRequest is the request struct for api DescribeEnsNetLevel
 type DescribeEnsNetLevelRequest struct {
 	*requests.RpcRequest
-	Version string `position:"Query" name:"Version"`
 }
 
 // DescribeEnsNetLevelResponse is the response struct for api DescribeEnsNetLevel
 type DescribeEnsNetLevelResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Code         int          `json:"Code" xml:"Code"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	EnsNetLevels EnsNetLevels `json:"EnsNetLevels" xml:"EnsNetLevels"`
 }
 

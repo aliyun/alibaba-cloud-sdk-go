@@ -71,23 +71,23 @@ func (client *Client) DescribeDataDistResultWithCallback(request *DescribeDataDi
 // DescribeDataDistResultRequest is the request struct for api DescribeDataDistResult
 type DescribeDataDistResultRequest struct {
 	*requests.RpcRequest
-	MaxDate      string           `position:"Query" name:"MaxDate"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	MinDate      string           `position:"Query" name:"MinDate"`
-	DataVersions string           `position:"Query" name:"DataVersions"`
-	InstanceIds  string           `position:"Query" name:"InstanceIds"`
-	AppId        string           `position:"Query" name:"AppId"`
-	DataNames    string           `position:"Query" name:"DataNames"`
+	DataVersions string           `position:"Query"`
+	InstanceIds  string           `position:"Query"`
+	MaxDate      string           `position:"Query"`
+	PageNumber   requests.Integer `position:"Query"`
+	PageSize     requests.Integer `position:"Query"`
+	MinDate      string           `position:"Query"`
+	AppId        string           `position:"Query"`
+	DataNames    string           `position:"Query"`
 }
 
 // DescribeDataDistResultResponse is the response struct for api DescribeDataDistResult
 type DescribeDataDistResultResponse struct {
 	*responses.BaseResponse
-	RequestId   string                              `json:"RequestId" xml:"RequestId"`
-	TotalCount  int                                 `json:"TotalCount" xml:"TotalCount"`
 	PageNumber  int                                 `json:"PageNumber" xml:"PageNumber"`
 	PageSize    int                                 `json:"PageSize" xml:"PageSize"`
+	RequestId   string                              `json:"RequestId" xml:"RequestId"`
+	TotalCount  int                                 `json:"TotalCount" xml:"TotalCount"`
 	DistResults DistResultsInDescribeDataDistResult `json:"DistResults" xml:"DistResults"`
 }
 

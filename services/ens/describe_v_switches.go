@@ -71,22 +71,22 @@ func (client *Client) DescribeVSwitchesWithCallback(request *DescribeVSwitchesRe
 // DescribeVSwitchesRequest is the request struct for api DescribeVSwitches
 type DescribeVSwitchesRequest struct {
 	*requests.RpcRequest
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	OrderByParams string           `position:"Query" name:"OrderByParams"`
-	EnsRegionId   string           `position:"Query" name:"EnsRegionId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Version       string           `position:"Query" name:"Version"`
-	VSwitchId     string           `position:"Query" name:"VSwitchId"`
-	VSwitchName   string           `position:"Query" name:"VSwitchName"`
+	OrderByParams string           `position:"Query"`
+	EnsRegionId   string           `position:"Query"`
+	VSwitchId     string           `position:"Query"`
+	NetworkId     string           `position:"Query"`
+	PageNumber    requests.Integer `position:"Query"`
+	PageSize      requests.Integer `position:"Query"`
+	VSwitchName   string           `position:"Query"`
 }
 
 // DescribeVSwitchesResponse is the response struct for api DescribeVSwitches
 type DescribeVSwitchesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                       `json:"RequestId" xml:"RequestId"`
-	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
 	VSwitches  VSwitchesInDescribeVSwitches `json:"VSwitches" xml:"VSwitches"`
 }
 

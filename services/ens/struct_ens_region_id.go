@@ -18,8 +18,8 @@ package ens
 // EnsRegionId is a nested struct in ens response
 type EnsRegionId struct {
 	EnsRegionId string `json:"EnsRegionId" xml:"EnsRegionId"`
-	Name        string `json:"Name" xml:"Name"`
 	EnName      string `json:"EnName" xml:"EnName"`
 	Area        string `json:"Area" xml:"Area"`
+	Name        string `json:"Name" xml:"Name"`
 	Province    string `json:"Province" xml:"Province"`
 }

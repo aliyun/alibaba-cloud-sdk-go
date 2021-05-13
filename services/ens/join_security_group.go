@@ -71,9 +71,8 @@ func (client *Client) JoinSecurityGroupWithCallback(request *JoinSecurityGroupRe
 // JoinSecurityGroupRequest is the request struct for api JoinSecurityGroup
 type JoinSecurityGroupRequest struct {
 	*requests.RpcRequest
-	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
-	Version         string `position:"Query" name:"Version"`
-	InstanceId      string `position:"Query" name:"InstanceId"`
+	SecurityGroupId string `position:"Query"`
+	InstanceId      string `position:"Query"`
 }
 
 // JoinSecurityGroupResponse is the response struct for api JoinSecurityGroup

@@ -71,19 +71,19 @@ func (client *Client) DescribeExportImageInfoWithCallback(request *DescribeExpor
 // DescribeExportImageInfoRequest is the request struct for api DescribeExportImageInfo
 type DescribeExportImageInfoRequest struct {
 	*requests.RpcRequest
-	ImageId    string           `position:"Query" name:"ImageId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	ImageName  string           `position:"Query" name:"ImageName"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	ImageId    string           `position:"Query"`
+	PageNumber requests.Integer `position:"Query"`
+	ImageName  string           `position:"Query"`
+	PageSize   requests.Integer `position:"Query"`
 }
 
 // DescribeExportImageInfoResponse is the response struct for api DescribeExportImageInfo
 type DescribeExportImageInfoResponse struct {
 	*responses.BaseResponse
-	RequestId  string                          `json:"RequestId" xml:"RequestId"`
-	TotalCount int                             `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int                             `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                             `json:"PageSize" xml:"PageSize"`
+	RequestId  string                          `json:"RequestId" xml:"RequestId"`
+	TotalCount int                             `json:"TotalCount" xml:"TotalCount"`
 	Images     ImagesInDescribeExportImageInfo `json:"Images" xml:"Images"`
 }
 

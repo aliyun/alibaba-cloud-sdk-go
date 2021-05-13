@@ -71,15 +71,15 @@ func (client *Client) DescribeApplicationResourceSummaryWithCallback(request *De
 // DescribeApplicationResourceSummaryRequest is the request struct for api DescribeApplicationResourceSummary
 type DescribeApplicationResourceSummaryRequest struct {
 	*requests.RpcRequest
-	Level        string `position:"Query" name:"Level"`
-	ResourceType string `position:"Query" name:"ResourceType"`
+	Level        string `position:"Query"`
+	ResourceType string `position:"Query"`
 }
 
 // DescribeApplicationResourceSummaryResponse is the response struct for api DescribeApplicationResourceSummary
 type DescribeApplicationResourceSummaryResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
 	ApplicationResource string `json:"ApplicationResource" xml:"ApplicationResource"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeApplicationResourceSummaryRequest creates a request to invoke DescribeApplicationResourceSummary API

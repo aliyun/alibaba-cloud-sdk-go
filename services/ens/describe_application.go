@@ -71,17 +71,17 @@ func (client *Client) DescribeApplicationWithCallback(request *DescribeApplicati
 // DescribeApplicationRequest is the request struct for api DescribeApplication
 type DescribeApplicationRequest struct {
 	*requests.RpcRequest
-	AppVersions         string `position:"Query" name:"AppVersions"`
-	OutDetailStatParams string `position:"Query" name:"OutDetailStatParams"`
-	Level               string `position:"Query" name:"Level"`
-	AppId               string `position:"Query" name:"AppId"`
+	AppVersions         string `position:"Query"`
+	OutDetailStatParams string `position:"Query"`
+	Level               string `position:"Query"`
+	AppId               string `position:"Query"`
 }
 
 // DescribeApplicationResponse is the response struct for api DescribeApplication
 type DescribeApplicationResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Application string `json:"Application" xml:"Application"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeApplicationRequest creates a request to invoke DescribeApplication API

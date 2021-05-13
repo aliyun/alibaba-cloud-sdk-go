@@ -17,6 +17,6 @@ package ens
 
 // ConfVersionsItem is a nested struct in ens response
 type ConfVersionsItem struct {
-	EnsRegionId string `json:"EnsRegionId" xml:"EnsRegionId"`
 	ConfVersion string `json:"ConfVersion" xml:"ConfVersion"`
+	EnsRegionId string `json:"EnsRegionId" xml:"EnsRegionId"`
 }

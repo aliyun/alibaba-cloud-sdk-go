@@ -17,9 +17,9 @@ package ens
 
 // BandWidthMonitorDataItem is a nested struct in ens response
 type BandWidthMonitorDataItem struct {
-	UpBandWidth   int    `json:"UpBandWidth" xml:"UpBandWidth"`
-	DownBandWidth int    `json:"DownBandWidth" xml:"DownBandWidth"`
-	InternetTX    int    `json:"InternetTX" xml:"InternetTX"`
-	InternetRX    int    `json:"InternetRX" xml:"InternetRX"`
+	DownBandWidth int64  `json:"DownBandWidth" xml:"DownBandWidth"`
+	UpBandWidth   int64  `json:"UpBandWidth" xml:"UpBandWidth"`
 	TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
+	InternetRX    int64  `json:"InternetRX" xml:"InternetRX"`
+	InternetTX    int64  `json:"InternetTX" xml:"InternetTX"`
 }

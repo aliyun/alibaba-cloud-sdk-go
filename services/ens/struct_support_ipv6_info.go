@@ -17,6 +17,6 @@ package ens
 
 // SupportIpv6Info is a nested struct in ens response
 type SupportIpv6Info struct {
-	SupportIpv6 bool   `json:"SupportIpv6" xml:"SupportIpv6"`
 	EnsRegionId string `json:"EnsRegionId" xml:"EnsRegionId"`
+	SupportIpv6 bool   `json:"SupportIpv6" xml:"SupportIpv6"`
 }

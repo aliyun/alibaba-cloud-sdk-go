@@ -71,31 +71,30 @@ func (client *Client) PreCreateEnsServiceWithCallback(request *PreCreateEnsServi
 // PreCreateEnsServiceRequest is the request struct for api PreCreateEnsService
 type PreCreateEnsServiceRequest struct {
 	*requests.RpcRequest
-	BandwidthType           string `position:"Query" name:"BandwidthType"`
-	SchedulingPriceStrategy string `position:"Query" name:"SchedulingPriceStrategy"`
-	ImageId                 string `position:"Query" name:"ImageId"`
-	InstanceSpec            string `position:"Query" name:"InstanceSpec"`
-	KeyPairName             string `position:"Query" name:"KeyPairName"`
-	UserData                string `position:"Query" name:"UserData"`
-	Password                string `position:"Query" name:"Password"`
-	BuyResourcesDetail      string `position:"Query" name:"BuyResourcesDetail"`
-	SystemDiskSize          string `position:"Query" name:"SystemDiskSize"`
-	InstanceBandwithdLimit  string `position:"Query" name:"InstanceBandwithdLimit"`
-	EnsServiceName          string `position:"Query" name:"EnsServiceName"`
-	Version                 string `position:"Query" name:"Version"`
-	NetLevel                string `position:"Query" name:"NetLevel"`
-	SchedulingStrategy      string `position:"Query" name:"SchedulingStrategy"`
-	DataDiskSize            string `position:"Query" name:"DataDiskSize"`
+	BandwidthType           string `position:"Query"`
+	KeyPairName             string `position:"Query"`
+	Password                string `position:"Query"`
+	BuyResourcesDetail      string `position:"Query"`
+	SystemDiskSize          string `position:"Query"`
+	InstanceBandwithdLimit  string `position:"Query"`
+	EnsServiceName          string `position:"Query"`
+	NetLevel                string `position:"Query"`
+	DataDiskSize            string `position:"Query"`
+	SchedulingPriceStrategy string `position:"Query"`
+	ImageId                 string `position:"Query"`
+	InstanceSpec            string `position:"Query"`
+	UserData                string `position:"Query"`
+	SchedulingStrategy      string `position:"Query"`
 }
 
 // PreCreateEnsServiceResponse is the response struct for api PreCreateEnsService
 type PreCreateEnsServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
+	BuyResourcesDetail string `json:"BuyResourcesDetail" xml:"BuyResourcesDetail"`
 	Code               int    `json:"Code" xml:"Code"`
 	EnsServiceId       string `json:"EnsServiceId" xml:"EnsServiceId"`
 	NetLevel           string `json:"NetLevel" xml:"NetLevel"`
-	BuyResourcesDetail string `json:"BuyResourcesDetail" xml:"BuyResourcesDetail"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePreCreateEnsServiceRequest creates a request to invoke PreCreateEnsService API

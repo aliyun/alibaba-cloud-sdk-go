@@ -18,12 +18,12 @@ package ens
 // DataDiskItem is a nested struct in ens response
 type DataDiskItem struct {
 	DeviceType string `json:"device_type" xml:"device_type"`
-	Storage    int    `json:"storage" xml:"storage"`
-	Uuid       string `json:"uuid" xml:"uuid"`
 	DiskType   string `json:"disk_type" xml:"disk_type"`
-	Name       string `json:"name" xml:"name"`
-	Category   string `json:"Category" xml:"Category"`
 	Size       int    `json:"Size" xml:"Size"`
-	DiskId     string `json:"DiskId" xml:"DiskId"`
 	DiskName   string `json:"DiskName" xml:"DiskName"`
+	Uuid       string `json:"uuid" xml:"uuid"`
+	Storage    int    `json:"storage" xml:"storage"`
+	DiskId     string `json:"DiskId" xml:"DiskId"`
+	Category   string `json:"Category" xml:"Category"`
+	Name       string `json:"name" xml:"name"`
 }

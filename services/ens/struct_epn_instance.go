@@ -21,11 +21,11 @@ type EPNInstance struct {
 	EPNInstanceName         string `json:"EPNInstanceName" xml:"EPNInstanceName"`
 	ModifyTime              string `json:"ModifyTime" xml:"ModifyTime"`
 	VSwitchId               string `json:"VSwitchId" xml:"VSwitchId"`
-	VSwitchName             string `json:"VSwitchName" xml:"VSwitchName"`
 	InstanceName            string `json:"InstanceName" xml:"InstanceName"`
+	VSwitchName             string `json:"VSwitchName" xml:"VSwitchName"`
 	EnsRegionId             string `json:"EnsRegionId" xml:"EnsRegionId"`
-	EPNInstanceType         string `json:"EPNInstanceType" xml:"EPNInstanceType"`
 	CreationTime            string `json:"CreationTime" xml:"CreationTime"`
+	EPNInstanceType         string `json:"EPNInstanceType" xml:"EPNInstanceType"`
 	PublicIpAddress         string `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	NetworkingModel         string `json:"NetworkingModel" xml:"NetworkingModel"`
 	InternetMaxBandwidthOut int    `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
@@ -33,7 +33,7 @@ type EPNInstance struct {
 	EndTime                 string `json:"EndTime" xml:"EndTime"`
 	InstanceId              string `json:"InstanceId" xml:"InstanceId"`
 	Status                  string `json:"Status" xml:"Status"`
-	CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
 	Isp                     string `json:"Isp" xml:"Isp"`
+	CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
 	EPNInstanceId           string `json:"EPNInstanceId" xml:"EPNInstanceId"`
 }

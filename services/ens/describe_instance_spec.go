@@ -71,18 +71,17 @@ func (client *Client) DescribeInstanceSpecWithCallback(request *DescribeInstance
 // DescribeInstanceSpecRequest is the request struct for api DescribeInstanceSpec
 type DescribeInstanceSpecRequest struct {
 	*requests.RpcRequest
-	Version string `position:"Query" name:"Version"`
 }
 
 // DescribeInstanceSpecResponse is the response struct for api DescribeInstanceSpec
 type DescribeInstanceSpecResponse struct {
 	*responses.BaseResponse
-	RequestId         string        `json:"RequestId" xml:"RequestId"`
-	Code              int           `json:"Code" xml:"Code"`
-	DataDiskMinSize   int           `json:"DataDiskMinSize" xml:"DataDiskMinSize"`
-	DataDiskMaxSize   int           `json:"DataDiskMaxSize" xml:"DataDiskMaxSize"`
-	SystemDiskMaxSize int           `json:"SystemDiskMaxSize" xml:"SystemDiskMaxSize"`
 	BandwidthLimit    int           `json:"BandwidthLimit" xml:"BandwidthLimit"`
+	Code              int           `json:"Code" xml:"Code"`
+	DataDiskMaxSize   int           `json:"DataDiskMaxSize" xml:"DataDiskMaxSize"`
+	DataDiskMinSize   int           `json:"DataDiskMinSize" xml:"DataDiskMinSize"`
+	RequestId         string        `json:"RequestId" xml:"RequestId"`
+	SystemDiskMaxSize int           `json:"SystemDiskMaxSize" xml:"SystemDiskMaxSize"`
 	InstanceSpecs     InstanceSpecs `json:"InstanceSpecs" xml:"InstanceSpecs"`
 }
 

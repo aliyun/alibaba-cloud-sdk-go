@@ -17,7 +17,7 @@ package ens
 
 // MonitorData is a nested struct in ens response
 type MonitorData struct {
-	MaxUpBandWidth       string                     `json:"MaxUpBandWidth" xml:"MaxUpBandWidth"`
-	MaxDownBandWidth     string                     `json:"MaxDownBandWidth" xml:"MaxDownBandWidth"`
+	MaxUpBandWidth       int64                      `json:"MaxUpBandWidth" xml:"MaxUpBandWidth"`
+	MaxDownBandWidth     int64                      `json:"MaxDownBandWidth" xml:"MaxDownBandWidth"`
 	BandWidthMonitorData []BandWidthMonitorDataItem `json:"BandWidthMonitorData" xml:"BandWidthMonitorData"`
 }

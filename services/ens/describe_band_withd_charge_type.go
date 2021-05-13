@@ -71,17 +71,16 @@ func (client *Client) DescribeBandWithdChargeTypeWithCallback(request *DescribeB
 // DescribeBandWithdChargeTypeRequest is the request struct for api DescribeBandWithdChargeType
 type DescribeBandWithdChargeTypeRequest struct {
 	*requests.RpcRequest
-	Version string `position:"Query" name:"Version"`
 }
 
 // DescribeBandWithdChargeTypeResponse is the response struct for api DescribeBandWithdChargeType
 type DescribeBandWithdChargeTypeResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	Code               int    `json:"Code" xml:"Code"`
 	BandWithTypeInfo   string `json:"BandWithTypeInfo" xml:"BandWithTypeInfo"`
-	ChargeCycleInfo    string `json:"ChargeCycleInfo" xml:"ChargeCycleInfo"`
 	ChargeContractType string `json:"ChargeContractType" xml:"ChargeContractType"`
+	ChargeCycleInfo    string `json:"ChargeCycleInfo" xml:"ChargeCycleInfo"`
+	Code               int    `json:"Code" xml:"Code"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeBandWithdChargeTypeRequest creates a request to invoke DescribeBandWithdChargeType API

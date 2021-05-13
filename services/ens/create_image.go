@@ -71,18 +71,17 @@ func (client *Client) CreateImageWithCallback(request *CreateImageRequest, callb
 // CreateImageRequest is the request struct for api CreateImage
 type CreateImageRequest struct {
 	*requests.RpcRequest
-	DeleteAfterImageUpload string `position:"Query" name:"DeleteAfterImageUpload"`
-	ImageName              string `position:"Query" name:"ImageName"`
-	Product                string `position:"Query" name:"product"`
-	Version                string `position:"Query" name:"Version"`
-	InstanceId             string `position:"Query" name:"InstanceId"`
+	InstanceId             string `position:"Query"`
+	DeleteAfterImageUpload string `position:"Query"`
+	ImageName              string `position:"Query"`
+	Product                string `position:"Query"`
 }
 
 // CreateImageResponse is the response struct for api CreateImage
 type CreateImageResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateImageRequest creates a request to invoke CreateImage API

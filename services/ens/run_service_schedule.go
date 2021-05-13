@@ -71,27 +71,27 @@ func (client *Client) RunServiceScheduleWithCallback(request *RunServiceSchedule
 // RunServiceScheduleRequest is the request struct for api RunServiceSchedule
 type RunServiceScheduleRequest struct {
 	*requests.RpcRequest
-	Directorys       string           `position:"Query" name:"Directorys"`
-	PreLockedTimeout requests.Integer `position:"Query" name:"PreLockedTimeout"`
-	Uuid             string           `position:"Query" name:"Uuid"`
-	ClientIp         string           `position:"Query" name:"ClientIp"`
-	PodConfigName    string           `position:"Query" name:"PodConfigName"`
-	ServiceAction    string           `position:"Query" name:"ServiceAction"`
-	ServiceCommands  string           `position:"Query" name:"ServiceCommands"`
-	ScheduleStrategy string           `position:"Query" name:"ScheduleStrategy"`
-	AppId            string           `position:"Query" name:"AppId"`
+	Uuid             string           `position:"Query"`
+	ClientIp         string           `position:"Query"`
+	PodConfigName    string           `position:"Query"`
+	ServiceCommands  string           `position:"Query"`
+	ScheduleStrategy string           `position:"Query"`
+	Directorys       string           `position:"Query"`
+	PreLockedTimeout requests.Integer `position:"Query"`
+	ServiceAction    string           `position:"Query"`
+	AppId            string           `position:"Query"`
 }
 
 // RunServiceScheduleResponse is the response struct for api RunServiceSchedule
 type RunServiceScheduleResponse struct {
 	*responses.BaseResponse
+	Index           int            `json:"Index" xml:"Index"`
+	InstanceId      string         `json:"InstanceId" xml:"InstanceId"`
+	InstanceIp      string         `json:"InstanceIp" xml:"InstanceIp"`
+	InstancePort    int            `json:"InstancePort" xml:"InstancePort"`
 	RequestId       string         `json:"RequestId" xml:"RequestId"`
 	RequestRepeated string         `json:"RequestRepeated" xml:"RequestRepeated"`
 	TcpPorts        bool           `json:"TcpPorts" xml:"TcpPorts"`
-	InstanceId      string         `json:"InstanceId" xml:"InstanceId"`
-	InstancePort    int            `json:"InstancePort" xml:"InstancePort"`
-	InstanceIp      string         `json:"InstanceIp" xml:"InstanceIp"`
-	Index           int            `json:"Index" xml:"Index"`
 	CommandResults  CommandResults `json:"CommandResults" xml:"CommandResults"`
 }
 

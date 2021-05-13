@@ -71,16 +71,15 @@ func (client *Client) ExportMeasurementDataWithCallback(request *ExportMeasureme
 // ExportMeasurementDataRequest is the request struct for api ExportMeasurementData
 type ExportMeasurementDataRequest struct {
 	*requests.RpcRequest
-	StartDate string `position:"Query" name:"StartDate"`
-	Version   string `position:"Query" name:"Version"`
-	EndDate   string `position:"Query" name:"EndDate"`
+	StartDate string `position:"Query"`
+	EndDate   string `position:"Query"`
 }
 
 // ExportMeasurementDataResponse is the response struct for api ExportMeasurementData
 type ExportMeasurementDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	FilePath  string `json:"FilePath" xml:"FilePath"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateExportMeasurementDataRequest creates a request to invoke ExportMeasurementData API

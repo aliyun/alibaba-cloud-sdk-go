@@ -71,21 +71,21 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 // DescribeNetworkInterfacesRequest is the request struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
-	PageNumber       string `position:"Query" name:"PageNumber"`
-	EnsRegionId      string `position:"Query" name:"EnsRegionId"`
-	PageSize         string `position:"Query" name:"PageSize"`
-	VSwitchId        string `position:"Query" name:"VSwitchId"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
-	PrimaryIpAddress string `position:"Query" name:"PrimaryIpAddress"`
+	EnsRegionId      string `position:"Query"`
+	VSwitchId        string `position:"Query"`
+	InstanceId       string `position:"Query"`
+	PageNumber       string `position:"Query"`
+	PageSize         string `position:"Query"`
+	PrimaryIpAddress string `position:"Query"`
 }
 
 // DescribeNetworkInterfacesResponse is the response struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
 	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
 	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
 	NetworkInterfaceSets NetworkInterfaceSets `json:"NetworkInterfaceSets" xml:"NetworkInterfaceSets"`
 }
 

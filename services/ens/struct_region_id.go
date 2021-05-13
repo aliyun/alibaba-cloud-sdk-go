@@ -17,8 +17,8 @@ package ens
 
 // RegionId is a nested struct in ens response
 type RegionId struct {
-	StartTime     string `json:"StartTime" xml:"StartTime"`
-	UpdateTime    string `json:"UpdateTime" xml:"UpdateTime"`
 	RegionId      string `json:"RegionId" xml:"RegionId"`
+	StartTime     string `json:"StartTime" xml:"StartTime"`
 	StatusDescrip string `json:"StatusDescrip" xml:"StatusDescrip"`
+	UpdateTime    string `json:"UpdateTime" xml:"UpdateTime"`
 }

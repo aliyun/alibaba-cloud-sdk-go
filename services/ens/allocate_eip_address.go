@@ -71,17 +71,16 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 // AllocateEipAddressRequest is the request struct for api AllocateEipAddress
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
-	MinCount    requests.Integer `position:"Query" name:"MinCount"`
-	EnsRegionId string           `position:"Query" name:"EnsRegionId"`
-	Count       requests.Integer `position:"Query" name:"Count"`
-	Version     string           `position:"Query" name:"Version"`
+	MinCount    requests.Integer `position:"Query"`
+	EnsRegionId string           `position:"Query"`
+	Count       requests.Integer `position:"Query"`
 }
 
 // AllocateEipAddressResponse is the response struct for api AllocateEipAddress
 type AllocateEipAddressResponse struct {
 	*responses.BaseResponse
-	RequestId     string                           `json:"RequestId" xml:"RequestId"`
 	BizStatusCode string                           `json:"BizStatusCode" xml:"BizStatusCode"`
+	RequestId     string                           `json:"RequestId" xml:"RequestId"`
 	EipAddresses  EipAddressesInAllocateEipAddress `json:"EipAddresses" xml:"EipAddresses"`
 }
 

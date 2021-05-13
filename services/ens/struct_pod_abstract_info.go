@@ -17,10 +17,10 @@ package ens
 
 // PodAbstractInfo is a nested struct in ens response
 type PodAbstractInfo struct {
-	Name              bool              `json:"Name" xml:"Name"`
-	ResourceScope     bool              `json:"ResourceScope" xml:"ResourceScope"`
 	ContainerService  bool              `json:"ContainerService" xml:"ContainerService"`
+	Name              bool              `json:"Name" xml:"Name"`
 	Namespace         bool              `json:"Namespace" xml:"Namespace"`
+	ResourceScope     bool              `json:"ResourceScope" xml:"ResourceScope"`
 	Status            bool              `json:"Status" xml:"Status"`
 	ContainerStatuses ContainerStatuses `json:"ContainerStatuses" xml:"ContainerStatuses"`
 }

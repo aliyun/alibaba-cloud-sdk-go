@@ -71,17 +71,16 @@ func (client *Client) ModifyImageAttributeWithCallback(request *ModifyImageAttri
 // ModifyImageAttributeRequest is the request struct for api ModifyImageAttribute
 type ModifyImageAttributeRequest struct {
 	*requests.RpcRequest
-	ImageId   string `position:"Query" name:"ImageId"`
-	ImageName string `position:"Query" name:"ImageName"`
-	Product   string `position:"Query" name:"product"`
-	Version   string `position:"Query" name:"Version"`
+	ImageId   string `position:"Query"`
+	ImageName string `position:"Query"`
+	Product   string `position:"Query"`
 }
 
 // ModifyImageAttributeResponse is the response struct for api ModifyImageAttribute
 type ModifyImageAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyImageAttributeRequest creates a request to invoke ModifyImageAttribute API

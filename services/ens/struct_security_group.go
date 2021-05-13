@@ -17,7 +17,9 @@ package ens
 
 // SecurityGroup is a nested struct in ens response
 type SecurityGroup struct {
-	SecurityGroupId   string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	CreationTime      string `json:"CreationTime" xml:"CreationTime"`
+	InstanceCount     int    `json:"InstanceCount" xml:"InstanceCount"`
+	Description       string `json:"Description" xml:"Description"`
+	SecurityGroupId   string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	SecurityGroupName string `json:"SecurityGroupName" xml:"SecurityGroupName"`
 }

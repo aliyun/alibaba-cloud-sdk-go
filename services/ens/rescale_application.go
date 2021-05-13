@@ -71,12 +71,12 @@ func (client *Client) RescaleApplicationWithCallback(request *RescaleApplication
 // RescaleApplicationRequest is the request struct for api RescaleApplication
 type RescaleApplicationRequest struct {
 	*requests.RpcRequest
-	RescaleType      string           `position:"Query" name:"RescaleType"`
-	ResourceSelector string           `position:"Query" name:"ResourceSelector"`
-	Timeout          requests.Integer `position:"Query" name:"Timeout"`
-	RescaleLevel     string           `position:"Query" name:"RescaleLevel"`
-	AppId            string           `position:"Query" name:"AppId"`
-	ToAppVersion     string           `position:"Query" name:"ToAppVersion"`
+	ResourceSelector string           `position:"Query"`
+	ToAppVersion     string           `position:"Query"`
+	RescaleType      string           `position:"Query"`
+	Timeout          requests.Integer `position:"Query"`
+	RescaleLevel     string           `position:"Query"`
+	AppId            string           `position:"Query"`
 }
 
 // RescaleApplicationResponse is the response struct for api RescaleApplication

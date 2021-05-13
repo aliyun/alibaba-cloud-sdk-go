@@ -17,7 +17,7 @@ package ens
 
 // ResourceFeeData is a nested struct in ens response
 type ResourceFeeData struct {
-	Storage int `json:"Storage" xml:"Storage"`
 	Memory  int `json:"Memory" xml:"Memory"`
+	Storage int `json:"Storage" xml:"Storage"`
 	Vcpu    int `json:"Vcpu" xml:"Vcpu"`
 }

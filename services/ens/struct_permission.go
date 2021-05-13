@@ -17,13 +17,13 @@ package ens
 
 // Permission is a nested struct in ens response
 type Permission struct {
-	DestCidrIp      string `json:"DestCidrIp" xml:"DestCidrIp"`
+	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
+	Direction       string `json:"Direction" xml:"Direction"`
+	Policy          string `json:"Policy" xml:"Policy"`
+	PortRange       string `json:"PortRange" xml:"PortRange"`
 	SourceCidrIp    string `json:"SourceCidrIp" xml:"SourceCidrIp"`
 	IpProtocol      string `json:"IpProtocol" xml:"IpProtocol"`
+	DestCidrIp      string `json:"DestCidrIp" xml:"DestCidrIp"`
 	Priority        int    `json:"Priority" xml:"Priority"`
-	Policy          string `json:"Policy" xml:"Policy"`
-	Direction       string `json:"Direction" xml:"Direction"`
-	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	PortRange       string `json:"PortRange" xml:"PortRange"`
 	SourcePortRange string `json:"SourcePortRange" xml:"SourcePortRange"`
 }

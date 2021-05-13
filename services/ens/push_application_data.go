@@ -71,10 +71,10 @@ func (client *Client) PushApplicationDataWithCallback(request *PushApplicationDa
 // PushApplicationDataRequest is the request struct for api PushApplicationData
 type PushApplicationDataRequest struct {
 	*requests.RpcRequest
-	Data         string           `position:"Query" name:"Data"`
-	Timeout      requests.Integer `position:"Query" name:"Timeout"`
-	PushStrategy string           `position:"Query" name:"PushStrategy"`
-	AppId        string           `position:"Query" name:"AppId"`
+	Data         string           `position:"Query"`
+	Timeout      requests.Integer `position:"Query"`
+	PushStrategy string           `position:"Query"`
+	AppId        string           `position:"Query"`
 }
 
 // PushApplicationDataResponse is the response struct for api PushApplicationData

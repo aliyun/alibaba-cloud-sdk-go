@@ -18,6 +18,6 @@ package ens
 // PrivateIpAddress is a nested struct in ens response
 type PrivateIpAddress struct {
 	Ip      string `json:"Ip" xml:"Ip"`
-	GateWay string `json:"GateWay" xml:"GateWay"`
 	Isp     string `json:"Isp" xml:"Isp"`
+	GateWay string `json:"GateWay" xml:"GateWay"`
 }

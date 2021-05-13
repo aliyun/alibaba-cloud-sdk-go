@@ -19,11 +19,11 @@ package ens
 type EnsRegionIdResource struct {
 	Area              string `json:"Area" xml:"Area"`
 	AreaCode          string `json:"AreaCode" xml:"AreaCode"`
+	BizDate           string `json:"BizDate" xml:"BizDate"`
 	EnsRegionId       string `json:"EnsRegionId" xml:"EnsRegionId"`
 	EnsRegionIdName   string `json:"EnsRegionIdName" xml:"EnsRegionIdName"`
-	VCpu              int    `json:"VCpu" xml:"VCpu"`
+	InstanceCount     int    `json:"InstanceCount" xml:"InstanceCount"`
 	InternetBandwidth int    `json:"InternetBandwidth" xml:"InternetBandwidth"`
 	Isp               string `json:"Isp" xml:"Isp"`
-	BizDate           string `json:"BizDate" xml:"BizDate"`
-	InstanceCount     int    `json:"InstanceCount" xml:"InstanceCount"`
+	VCpu              int    `json:"VCpu" xml:"VCpu"`
 }

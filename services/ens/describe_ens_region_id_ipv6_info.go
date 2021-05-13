@@ -71,8 +71,7 @@ func (client *Client) DescribeEnsRegionIdIpv6InfoWithCallback(request *DescribeE
 // DescribeEnsRegionIdIpv6InfoRequest is the request struct for api DescribeEnsRegionIdIpv6Info
 type DescribeEnsRegionIdIpv6InfoRequest struct {
 	*requests.RpcRequest
-	EnsRegionId string `position:"Query" name:"EnsRegionId"`
-	Version     string `position:"Query" name:"Version"`
+	EnsRegionId string `position:"Query"`
 }
 
 // DescribeEnsRegionIdIpv6InfoResponse is the response struct for api DescribeEnsRegionIdIpv6Info

@@ -71,21 +71,21 @@ func (client *Client) DescribeServcieScheduleWithCallback(request *DescribeServc
 // DescribeServcieScheduleRequest is the request struct for api DescribeServcieSchedule
 type DescribeServcieScheduleRequest struct {
 	*requests.RpcRequest
-	Uuid          string `position:"Query" name:"Uuid"`
-	PodConfigName string `position:"Query" name:"PodConfigName"`
-	AppId         string `position:"Query" name:"AppId"`
+	Uuid          string `position:"Query"`
+	PodConfigName string `position:"Query"`
+	AppId         string `position:"Query"`
 }
 
 // DescribeServcieScheduleResponse is the response struct for api DescribeServcieSchedule
 type DescribeServcieScheduleResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	Index           int             `json:"Index" xml:"Index"`
 	InstanceId      string          `json:"InstanceId" xml:"InstanceId"`
 	InstanceIp      string          `json:"InstanceIp" xml:"InstanceIp"`
 	InstancePort    int             `json:"InstancePort" xml:"InstancePort"`
-	Index           int             `json:"Index" xml:"Index"`
-	TcpPorts        string          `json:"TcpPorts" xml:"TcpPorts"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	RequestRepeated bool            `json:"RequestRepeated" xml:"RequestRepeated"`
+	TcpPorts        string          `json:"TcpPorts" xml:"TcpPorts"`
 	PodAbstractInfo PodAbstractInfo `json:"PodAbstractInfo" xml:"PodAbstractInfo"`
 }
 

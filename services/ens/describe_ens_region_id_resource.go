@@ -71,22 +71,21 @@ func (client *Client) DescribeEnsRegionIdResourceWithCallback(request *DescribeE
 // DescribeEnsRegionIdResourceRequest is the request struct for api DescribeEnsRegionIdResource
 type DescribeEnsRegionIdResourceRequest struct {
 	*requests.RpcRequest
-	Isp           string           `position:"Query" name:"Isp"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	OrderByParams string           `position:"Query" name:"OrderByParams"`
-	PageSize      string           `position:"Query" name:"PageSize"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	Version       string           `position:"Query" name:"Version"`
+	Isp           string           `position:"Query"`
+	StartTime     string           `position:"Query"`
+	OrderByParams string           `position:"Query"`
+	PageNumber    requests.Integer `position:"Query"`
+	PageSize      string           `position:"Query"`
+	EndTime       string           `position:"Query"`
 }
 
 // DescribeEnsRegionIdResourceResponse is the response struct for api DescribeEnsRegionIdResource
 type DescribeEnsRegionIdResourceResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
 	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
 	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
 	EnsRegionIdResources EnsRegionIdResources `json:"EnsRegionIdResources" xml:"EnsRegionIdResources"`
 }
 

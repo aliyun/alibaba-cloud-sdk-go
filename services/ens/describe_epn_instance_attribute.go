@@ -71,19 +71,19 @@ func (client *Client) DescribeEpnInstanceAttributeWithCallback(request *Describe
 // DescribeEpnInstanceAttributeRequest is the request struct for api DescribeEpnInstanceAttribute
 type DescribeEpnInstanceAttributeRequest struct {
 	*requests.RpcRequest
-	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
+	EPNInstanceId string `position:"Query"`
 }
 
 // DescribeEpnInstanceAttributeResponse is the response struct for api DescribeEpnInstanceAttribute
 type DescribeEpnInstanceAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId       string             `json:"RequestId" xml:"RequestId"`
 	EPNInstanceId   string             `json:"EPNInstanceId" xml:"EPNInstanceId"`
 	EPNInstanceName string             `json:"EPNInstanceName" xml:"EPNInstanceName"`
 	NetworkingModel string             `json:"NetworkingModel" xml:"NetworkingModel"`
-	VSwitches       []EPNInstance      `json:"VSwitches" xml:"VSwitches"`
-	Instances       []EPNInstance      `json:"Instances" xml:"Instances"`
+	RequestId       string             `json:"RequestId" xml:"RequestId"`
 	ConfVersions    []ConfVersionsItem `json:"ConfVersions" xml:"ConfVersions"`
+	Instances       []EPNInstance      `json:"Instances" xml:"Instances"`
+	VSwitches       []EPNInstance      `json:"VSwitches" xml:"VSwitches"`
 }
 
 // CreateDescribeEpnInstanceAttributeRequest creates a request to invoke DescribeEpnInstanceAttribute API

@@ -71,16 +71,15 @@ func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest,
 // RebootInstanceRequest is the request struct for api RebootInstance
 type RebootInstanceRequest struct {
 	*requests.RpcRequest
-	ForceStop  string `position:"Query" name:"ForceStop"`
-	Version    string `position:"Query" name:"Version"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	ForceStop  string `position:"Query"`
+	InstanceId string `position:"Query"`
 }
 
 // RebootInstanceResponse is the response struct for api RebootInstance
 type RebootInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRebootInstanceRequest creates a request to invoke RebootInstance API

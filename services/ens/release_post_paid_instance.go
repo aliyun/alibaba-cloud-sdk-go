@@ -71,8 +71,7 @@ func (client *Client) ReleasePostPaidInstanceWithCallback(request *ReleasePostPa
 // ReleasePostPaidInstanceRequest is the request struct for api ReleasePostPaidInstance
 type ReleasePostPaidInstanceRequest struct {
 	*requests.RpcRequest
-	Version    string `position:"Query" name:"Version"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	InstanceId string `position:"Query"`
 }
 
 // ReleasePostPaidInstanceResponse is the response struct for api ReleasePostPaidInstance

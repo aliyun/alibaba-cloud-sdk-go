@@ -71,15 +71,14 @@ func (client *Client) DescribeEnsRegionsWithCallback(request *DescribeEnsRegions
 // DescribeEnsRegionsRequest is the request struct for api DescribeEnsRegions
 type DescribeEnsRegionsRequest struct {
 	*requests.RpcRequest
-	EnsRegionId string `position:"Query" name:"EnsRegionId"`
-	Version     string `position:"Query" name:"Version"`
+	EnsRegionId string `position:"Query"`
 }
 
 // DescribeEnsRegionsResponse is the response struct for api DescribeEnsRegions
 type DescribeEnsRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Code       int        `json:"Code" xml:"Code"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	EnsRegions EnsRegions `json:"EnsRegions" xml:"EnsRegions"`
 }
 

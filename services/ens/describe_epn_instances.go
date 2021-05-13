@@ -71,19 +71,19 @@ func (client *Client) DescribeEpnInstancesWithCallback(request *DescribeEpnInsta
 // DescribeEpnInstancesRequest is the request struct for api DescribeEpnInstances
 type DescribeEpnInstancesRequest struct {
 	*requests.RpcRequest
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	EPNInstanceId   string           `position:"Query" name:"EPNInstanceId"`
-	EPNInstanceName string           `position:"Query" name:"EPNInstanceName"`
+	PageNumber      requests.Integer `position:"Query"`
+	PageSize        requests.Integer `position:"Query"`
+	EPNInstanceId   string           `position:"Query"`
+	EPNInstanceName string           `position:"Query"`
 }
 
 // DescribeEpnInstancesResponse is the response struct for api DescribeEpnInstances
 type DescribeEpnInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
 	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
 	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
 	EPNInstances EPNInstances `json:"EPNInstances" xml:"EPNInstances"`
 }
 

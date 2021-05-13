@@ -71,15 +71,14 @@ func (client *Client) DescribeExportImageStatusWithCallback(request *DescribeExp
 // DescribeExportImageStatusRequest is the request struct for api DescribeExportImageStatus
 type DescribeExportImageStatusRequest struct {
 	*requests.RpcRequest
-	ImageId string `position:"Query" name:"ImageId"`
-	Version string `position:"Query" name:"Version"`
+	ImageId string `position:"Query"`
 }
 
 // DescribeExportImageStatusResponse is the response struct for api DescribeExportImageStatus
 type DescribeExportImageStatusResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ImageExportStatus string `json:"ImageExportStatus" xml:"ImageExportStatus"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeExportImageStatusRequest creates a request to invoke DescribeExportImageStatus API

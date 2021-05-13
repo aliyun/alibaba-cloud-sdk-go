@@ -71,10 +71,10 @@ func (client *Client) RollbackApplicationWithCallback(request *RollbackApplicati
 // RollbackApplicationRequest is the request struct for api RollbackApplication
 type RollbackApplicationRequest struct {
 	*requests.RpcRequest
-	Timeout        requests.Integer `position:"Query" name:"Timeout"`
-	FromAppVersion string           `position:"Query" name:"FromAppVersion"`
-	AppId          string           `position:"Query" name:"AppId"`
-	ToAppVersion   string           `position:"Query" name:"ToAppVersion"`
+	Timeout        requests.Integer `position:"Query"`
+	FromAppVersion string           `position:"Query"`
+	AppId          string           `position:"Query"`
+	ToAppVersion   string           `position:"Query"`
 }
 
 // RollbackApplicationResponse is the response struct for api RollbackApplication

@@ -17,7 +17,7 @@ package ens
 
 // CommandResult is a nested struct in ens response
 type CommandResult struct {
-	ContainerName string `json:"ContainerName" xml:"ContainerName"`
 	Command       string `json:"Command" xml:"Command"`
+	ContainerName string `json:"ContainerName" xml:"ContainerName"`
 	ResultMsg     string `json:"ResultMsg" xml:"ResultMsg"`
 }

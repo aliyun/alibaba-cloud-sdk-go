@@ -71,30 +71,32 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	ImageId              string           `position:"Query" name:"ImageId"`
-	SearchKey            string           `position:"Query" name:"SearchKey"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	OrderByParams        string           `position:"Query" name:"OrderByParams"`
-	EnsRegionId          string           `position:"Query" name:"EnsRegionId"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	EnsRegionIds         string           `position:"Query" name:"EnsRegionIds"`
-	InstanceResourceType string           `position:"Query" name:"InstanceResourceType"`
-	EnsServiceId         string           `position:"Query" name:"EnsServiceId"`
-	Version              string           `position:"Query" name:"Version"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	InstanceName         string           `position:"Query" name:"InstanceName"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	Status               string           `position:"Query" name:"Status"`
+	OrderByParams        string           `position:"Query"`
+	EnsRegionId          string           `position:"Query"`
+	InstanceResourceType string           `position:"Query"`
+	EnsServiceId         string           `position:"Query"`
+	VSwitchId            string           `position:"Query"`
+	InstanceId           string           `position:"Query"`
+	InstanceName         string           `position:"Query"`
+	InstanceIds          string           `position:"Query"`
+	NetworkId            string           `position:"Query"`
+	Status               string           `position:"Query"`
+	ImageId              string           `position:"Query"`
+	SecurityGroupId      string           `position:"Query"`
+	SearchKey            string           `position:"Query"`
+	PageNumber           requests.Integer `position:"Query"`
+	PageSize             string           `position:"Query"`
+	EnsRegionIds         string           `position:"Query"`
 }
 
 // DescribeInstancesResponse is the response struct for api DescribeInstances
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                       `json:"RequestId" xml:"RequestId"`
 	Code       int                          `json:"Code" xml:"Code"`
-	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
 	Instances  InstancesInDescribeInstances `json:"Instances" xml:"Instances"`
 }
 

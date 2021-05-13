@@ -71,14 +71,13 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 // DescribePriceRequest is the request struct for api DescribePrice
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
-	InstanceType       string           `position:"Query" name:"InstanceType"`
-	DataDisk1Size      requests.Integer `position:"Query" name:"DataDisk.1.Size"`
-	Period             requests.Integer `position:"Query" name:"Period"`
-	Quantity           requests.Integer `position:"Query" name:"Quantity"`
-	Version            string           `position:"Query" name:"Version"`
-	SystemDiskSize     requests.Integer `position:"Query" name:"SystemDisk.Size"`
-	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
+	EnsRegionId        string           `position:"Query"`
+	Period             requests.Integer `position:"Query"`
+	InternetChargeType string           `position:"Query"`
+	InstanceType       string           `position:"Query"`
+	DataDisk1Size      requests.Integer `position:"Query"`
+	Quantity           requests.Integer `position:"Query"`
+	SystemDiskSize     requests.Integer `position:"Query"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice

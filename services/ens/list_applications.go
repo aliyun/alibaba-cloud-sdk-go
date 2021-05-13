@@ -71,23 +71,23 @@ func (client *Client) ListApplicationsWithCallback(request *ListApplicationsRequ
 // ListApplicationsRequest is the request struct for api ListApplications
 type ListApplicationsRequest struct {
 	*requests.RpcRequest
-	MaxDate          string           `position:"Query" name:"MaxDate"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	ClusterNames     string           `position:"Query" name:"ClusterNames"`
-	AppVersions      string           `position:"Query" name:"AppVersions"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	Level            string           `position:"Query" name:"Level"`
-	OutAppInfoParams string           `position:"Query" name:"OutAppInfoParams"`
-	MinDate          string           `position:"Query" name:"MinDate"`
+	ClusterNames     string           `position:"Query"`
+	Level            string           `position:"Query"`
+	OutAppInfoParams string           `position:"Query"`
+	MaxDate          string           `position:"Query"`
+	PageNumber       requests.Integer `position:"Query"`
+	AppVersions      string           `position:"Query"`
+	PageSize         requests.Integer `position:"Query"`
+	MinDate          string           `position:"Query"`
 }
 
 // ListApplicationsResponse is the response struct for api ListApplications
 type ListApplicationsResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
 	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
 	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
 	Applications Applications `json:"Applications" xml:"Applications"`
 }
 

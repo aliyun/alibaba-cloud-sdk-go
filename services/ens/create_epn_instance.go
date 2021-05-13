@@ -71,18 +71,18 @@ func (client *Client) CreateEpnInstanceWithCallback(request *CreateEpnInstanceRe
 // CreateEpnInstanceRequest is the request struct for api CreateEpnInstance
 type CreateEpnInstanceRequest struct {
 	*requests.RpcRequest
-	NetworkingModel         string           `position:"Query" name:"NetworkingModel"`
-	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	EPNInstanceType         string           `position:"Query" name:"EPNInstanceType"`
-	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
-	EPNInstanceName         string           `position:"Query" name:"EPNInstanceName"`
+	EPNInstanceType         string           `position:"Query"`
+	InternetChargeType      string           `position:"Query"`
+	EPNInstanceName         string           `position:"Query"`
+	NetworkingModel         string           `position:"Query"`
+	InternetMaxBandwidthOut requests.Integer `position:"Query"`
 }
 
 // CreateEpnInstanceResponse is the response struct for api CreateEpnInstance
 type CreateEpnInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	EPNInstanceId string `json:"EPNInstanceId" xml:"EPNInstanceId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateEpnInstanceRequest creates a request to invoke CreateEpnInstance API

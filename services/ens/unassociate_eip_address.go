@@ -71,10 +71,9 @@ func (client *Client) UnassociateEipAddressWithCallback(request *UnassociateEipA
 // UnassociateEipAddressRequest is the request struct for api UnassociateEipAddress
 type UnassociateEipAddressRequest struct {
 	*requests.RpcRequest
-	Eip                  string `position:"Query" name:"Eip"`
-	EnsRegionId          string `position:"Query" name:"EnsRegionId"`
-	InstanceIdInternetIp string `position:"Query" name:"InstanceIdInternetIp"`
-	Version              string `position:"Query" name:"Version"`
+	Eip                  string `position:"Query"`
+	EnsRegionId          string `position:"Query"`
+	InstanceIdInternetIp string `position:"Query"`
 }
 
 // UnassociateEipAddressResponse is the response struct for api UnassociateEipAddress

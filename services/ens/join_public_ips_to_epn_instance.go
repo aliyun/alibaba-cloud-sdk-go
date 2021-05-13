@@ -71,8 +71,8 @@ func (client *Client) JoinPublicIpsToEpnInstanceWithCallback(request *JoinPublic
 // JoinPublicIpsToEpnInstanceRequest is the request struct for api JoinPublicIpsToEpnInstance
 type JoinPublicIpsToEpnInstanceRequest struct {
 	*requests.RpcRequest
-	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
-	InstanceInfos string `position:"Query" name:"InstanceInfos"`
+	EPNInstanceId string `position:"Query"`
+	InstanceInfos string `position:"Query"`
 }
 
 // JoinPublicIpsToEpnInstanceResponse is the response struct for api JoinPublicIpsToEpnInstance

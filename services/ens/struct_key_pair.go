@@ -18,6 +18,6 @@ package ens
 // KeyPair is a nested struct in ens response
 type KeyPair struct {
 	CreationTime       string `json:"CreationTime" xml:"CreationTime"`
-	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
 	KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
+	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
 }

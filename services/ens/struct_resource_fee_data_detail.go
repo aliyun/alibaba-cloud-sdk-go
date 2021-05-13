@@ -17,8 +17,8 @@ package ens
 
 // ResourceFeeDataDetail is a nested struct in ens response
 type ResourceFeeDataDetail struct {
-	CostVal      int    `json:"CostVal" xml:"CostVal"`
 	CostCode     string `json:"CostCode" xml:"CostCode"`
 	CostName     string `json:"CostName" xml:"CostName"`
+	CostVal      int    `json:"CostVal" xml:"CostVal"`
 	ResourceType string `json:"ResourceType" xml:"ResourceType"`
 }

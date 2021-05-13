@@ -20,6 +20,6 @@ type StatusStat struct {
 	RegionIdCount int                               `json:"RegionIdCount" xml:"RegionIdCount"`
 	InstanceCount string                            `json:"InstanceCount" xml:"InstanceCount"`
 	Status        string                            `json:"Status" xml:"Status"`
-	RegionIds     RegionIds                         `json:"RegionIds" xml:"RegionIds"`
 	Instances     InstancesInDescribeDataDistResult `json:"Instances" xml:"Instances"`
+	RegionIds     RegionIds                         `json:"RegionIds" xml:"RegionIds"`
 }

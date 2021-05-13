@@ -71,18 +71,17 @@ func (client *Client) CreateKeyPairWithCallback(request *CreateKeyPairRequest, c
 // CreateKeyPairRequest is the request struct for api CreateKeyPair
 type CreateKeyPairRequest struct {
 	*requests.RpcRequest
-	KeyPairName string `position:"Query" name:"KeyPairName"`
-	Version     string `position:"Query" name:"Version"`
+	KeyPairName string `position:"Query"`
 }
 
 // CreateKeyPairResponse is the response struct for api CreateKeyPair
 type CreateKeyPairResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	KeyPairId          string `json:"KeyPairId" xml:"KeyPairId"`
-	PrivateKeyBody     string `json:"PrivateKeyBody" xml:"PrivateKeyBody"`
-	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
 	KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
+	KeyPairId          string `json:"KeyPairId" xml:"KeyPairId"`
+	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
+	PrivateKeyBody     string `json:"PrivateKeyBody" xml:"PrivateKeyBody"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateKeyPairRequest creates a request to invoke CreateKeyPair API

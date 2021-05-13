@@ -71,15 +71,14 @@ func (client *Client) DescribeImageInfosWithCallback(request *DescribeImageInfos
 // DescribeImageInfosRequest is the request struct for api DescribeImageInfos
 type DescribeImageInfosRequest struct {
 	*requests.RpcRequest
-	OsType  string `position:"Query" name:"OsType"`
-	Version string `position:"Query" name:"Version"`
+	OsType string `position:"Query"`
 }
 
 // DescribeImageInfosResponse is the response struct for api DescribeImageInfos
 type DescribeImageInfosResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Code      int                        `json:"Code" xml:"Code"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Images    ImagesInDescribeImageInfos `json:"Images" xml:"Images"`
 }
 

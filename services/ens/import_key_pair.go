@@ -71,17 +71,16 @@ func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, c
 // ImportKeyPairRequest is the request struct for api ImportKeyPair
 type ImportKeyPairRequest struct {
 	*requests.RpcRequest
-	KeyPairName   string `position:"Query" name:"KeyPairName"`
-	PublicKeyBody string `position:"Query" name:"PublicKeyBody"`
-	Version       string `position:"Query" name:"Version"`
+	KeyPairName   string `position:"Query"`
+	PublicKeyBody string `position:"Query"`
 }
 
 // ImportKeyPairResponse is the response struct for api ImportKeyPair
 type ImportKeyPairResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
 	KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
+	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateImportKeyPairRequest creates a request to invoke ImportKeyPair API

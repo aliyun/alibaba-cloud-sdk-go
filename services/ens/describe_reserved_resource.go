@@ -71,7 +71,6 @@ func (client *Client) DescribeReservedResourceWithCallback(request *DescribeRese
 // DescribeReservedResourceRequest is the request struct for api DescribeReservedResource
 type DescribeReservedResourceRequest struct {
 	*requests.RpcRequest
-	Version string `position:"Query" name:"Version"`
 }
 
 // DescribeReservedResourceResponse is the response struct for api DescribeReservedResource

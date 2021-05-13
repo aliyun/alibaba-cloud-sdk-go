@@ -17,8 +17,8 @@ package ens
 
 // InstanceSpec is a nested struct in ens response
 type InstanceSpec struct {
-	InstanceType string `json:"InstanceType" xml:"InstanceType"`
 	Core         string `json:"Core" xml:"Core"`
-	Memory       string `json:"Memory" xml:"Memory"`
 	DisplayName  string `json:"DisplayName" xml:"DisplayName"`
+	InstanceType string `json:"InstanceType" xml:"InstanceType"`
+	Memory       string `json:"Memory" xml:"Memory"`
 }

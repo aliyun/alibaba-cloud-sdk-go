@@ -71,18 +71,19 @@ func (client *Client) DescribeImageSharePermissionWithCallback(request *Describe
 // DescribeImageSharePermissionRequest is the request struct for api DescribeImageSharePermission
 type DescribeImageSharePermissionRequest struct {
 	*requests.RpcRequest
-	ImageId    string `position:"Query" name:"ImageId"`
-	PageNumber string `position:"Query" name:"PageNumber"`
-	PageSize   string `position:"Query" name:"PageSize"`
+	ImageId    string           `position:"Query"`
+	PageNumber string           `position:"Query"`
+	PageSize   string           `position:"Query"`
+	AliyunId   requests.Integer `position:"Query"`
 }
 
 // DescribeImageSharePermissionResponse is the response struct for api DescribeImageSharePermission
 type DescribeImageSharePermissionResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
 	ImageId    string   `json:"ImageId" xml:"ImageId"`
 	Accounts   Accounts `json:"Accounts" xml:"Accounts"`
 }

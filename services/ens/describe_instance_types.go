@@ -71,14 +71,13 @@ func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanc
 // DescribeInstanceTypesRequest is the request struct for api DescribeInstanceTypes
 type DescribeInstanceTypesRequest struct {
 	*requests.RpcRequest
-	Version string `position:"Query" name:"Version"`
 }
 
 // DescribeInstanceTypesResponse is the response struct for api DescribeInstanceTypes
 type DescribeInstanceTypesResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	Code          int           `json:"Code" xml:"Code"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	InstanceTypes InstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }
 

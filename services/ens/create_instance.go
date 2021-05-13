@@ -71,27 +71,27 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	UniqueSuffix       requests.Boolean `position:"Query" name:"UniqueSuffix"`
-	KeyPairName        string           `position:"Query" name:"KeyPairName"`
-	Password           string           `position:"Query" name:"Password"`
-	HostName           string           `position:"Query" name:"HostName"`
-	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
-	AutoRenewPeriod    string           `position:"Query" name:"AutoRenewPeriod"`
-	Period             string           `position:"Query" name:"Period"`
-	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId          string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress   string           `position:"Query" name:"PrivateIpAddress"`
-	InstanceName       string           `position:"Query" name:"InstanceName"`
-	AutoRenew          string           `position:"Query" name:"AutoRenew"`
-	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
-	ImageId            string           `position:"Query" name:"ImageId"`
-	UserData           string           `position:"Query" name:"UserData"`
-	InstanceType       string           `position:"Query" name:"InstanceType"`
-	DataDisk1Size      string           `position:"Query" name:"DataDisk.1.Size"`
-	Quantity           string           `position:"Query" name:"Quantity"`
-	IpType             string           `position:"Query" name:"IpType"`
-	SystemDiskSize     string           `position:"Query" name:"SystemDisk.Size"`
-	PaymentType        string           `position:"Query" name:"PaymentType"`
+	UniqueSuffix       requests.Boolean `position:"Query"`
+	KeyPairName        string           `position:"Query"`
+	Password           string           `position:"Query"`
+	HostName           string           `position:"Query"`
+	EnsRegionId        string           `position:"Query"`
+	AutoRenewPeriod    string           `position:"Query"`
+	Period             string           `position:"Query"`
+	OwnerId            requests.Integer `position:"Query"`
+	VSwitchId          string           `position:"Query"`
+	PrivateIpAddress   string           `position:"Query"`
+	InstanceName       string           `position:"Query"`
+	AutoRenew          string           `position:"Query"`
+	InternetChargeType string           `position:"Query"`
+	ImageId            string           `position:"Query"`
+	UserData           string           `position:"Query"`
+	InstanceType       string           `position:"Query"`
+	DataDisk1Size      string           `position:"Query"`
+	Quantity           string           `position:"Query"`
+	IpType             string           `position:"Query"`
+	SystemDiskSize     string           `position:"Query"`
+	PaymentType        string           `position:"Query"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance

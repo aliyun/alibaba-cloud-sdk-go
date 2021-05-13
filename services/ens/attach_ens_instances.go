@@ -71,9 +71,8 @@ func (client *Client) AttachEnsInstancesWithCallback(request *AttachEnsInstances
 // AttachEnsInstancesRequest is the request struct for api AttachEnsInstances
 type AttachEnsInstancesRequest struct {
 	*requests.RpcRequest
-	Scripts    string `position:"Query" name:"Scripts"`
-	Version    string `position:"Query" name:"Version"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	Scripts    string `position:"Query"`
+	InstanceId string `position:"Query"`
 }
 
 // AttachEnsInstancesResponse is the response struct for api AttachEnsInstances

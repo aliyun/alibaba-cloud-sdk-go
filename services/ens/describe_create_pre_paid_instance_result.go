@@ -71,8 +71,7 @@ func (client *Client) DescribeCreatePrePaidInstanceResultWithCallback(request *D
 // DescribeCreatePrePaidInstanceResultRequest is the request struct for api DescribeCreatePrePaidInstanceResult
 type DescribeCreatePrePaidInstanceResultRequest struct {
 	*requests.RpcRequest
-	Version    string `position:"Query" name:"Version"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	InstanceId string `position:"Query"`
 }
 
 // DescribeCreatePrePaidInstanceResultResponse is the response struct for api DescribeCreatePrePaidInstanceResult

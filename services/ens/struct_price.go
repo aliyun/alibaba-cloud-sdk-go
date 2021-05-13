@@ -17,8 +17,8 @@ package ens
 
 // Price is a nested struct in ens response
 type Price struct {
+	Currency      string  `json:"Currency" xml:"Currency"`
 	DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
 	OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
 	TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
-	Currency      string  `json:"Currency" xml:"Currency"`
 }
