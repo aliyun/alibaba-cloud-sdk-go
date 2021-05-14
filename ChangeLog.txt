@@ -1,3 +1,10 @@
+2021-05-14 Version: v1.61.1085
+- Generated 2019-01-23 for `Drds`.
+- Support Private RDS management through OpenAPI.
+- ManagePrivateRds to do RDS information query and some management.
+- DescribeDrdsRdsInstances to find RDS under a certain DRDS instance.
+- UpdatePrivateRdsClass to Upgrade or Downgrade your Private RDS class.
+
 2021-05-13 Version: v1.61.1084
 - Generated 2017-11-10 for `Ens`.
 - Support EIP.

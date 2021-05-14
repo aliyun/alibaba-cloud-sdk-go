@@ -88,7 +88,7 @@ func CreateDescribeHiStoreInstanceInfoRequest() (request *DescribeHiStoreInstanc
 	request = &DescribeHiStoreInstanceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

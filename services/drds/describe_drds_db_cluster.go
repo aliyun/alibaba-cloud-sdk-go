@@ -89,7 +89,7 @@ func CreateDescribeDrdsDBClusterRequest() (request *DescribeDrdsDBClusterRequest
 	request = &DescribeDrdsDBClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBCluster", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBCluster", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

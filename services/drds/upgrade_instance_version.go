@@ -88,7 +88,7 @@ func CreateUpgradeInstanceVersionRequest() (request *UpgradeInstanceVersionReque
 	request = &UpgradeInstanceVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "UpgradeInstanceVersion", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "UpgradeInstanceVersion", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

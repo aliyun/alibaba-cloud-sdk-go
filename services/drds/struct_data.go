@@ -17,23 +17,32 @@ package drds
 
 // Data is a nested struct in drds response
 type Data struct {
-	Version            int64                      `json:"Version" xml:"Version"`
-	SpecTypeName       string                     `json:"SpecTypeName" xml:"SpecTypeName"`
-	OrderId            int64                      `json:"OrderId" xml:"OrderId"`
-	CreateTime         int64                      `json:"CreateTime" xml:"CreateTime"`
-	DbName             string                     `json:"DbName" xml:"DbName"`
-	DrdsInstanceId     string                     `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
-	VpcCloudInstanceId string                     `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-	RegionId           string                     `json:"RegionId" xml:"RegionId"`
-	ZoneId             string                     `json:"ZoneId" xml:"ZoneId"`
-	AccountName        string                     `json:"AccountName" xml:"AccountName"`
-	SpecTypeId         string                     `json:"SpecTypeId" xml:"SpecTypeId"`
-	Status             string                     `json:"Status" xml:"Status"`
-	NetworkType        string                     `json:"NetworkType" xml:"NetworkType"`
-	Description        string                     `json:"Description" xml:"Description"`
-	Specification      string                     `json:"Specification" xml:"Specification"`
-	Type               string                     `json:"Type" xml:"Type"`
-	DrdsInstanceIdList DrdsInstanceIdList         `json:"DrdsInstanceIdList" xml:"DrdsInstanceIdList"`
-	IpWhiteList        IpWhiteList                `json:"IpWhiteList" xml:"IpWhiteList"`
-	Vips               VipsInDescribeDrdsInstance `json:"Vips" xml:"Vips"`
+	OrderId            int64                   `json:"OrderId" xml:"OrderId"`
+	NewestVersion      string                  `json:"NewestVersion" xml:"NewestVersion"`
+	CreateTime         string                  `json:"CreateTime" xml:"CreateTime"`
+	Mode               string                  `json:"Mode" xml:"Mode"`
+	InstRole           string                  `json:"InstRole" xml:"InstRole"`
+	ShardTbKey         string                  `json:"ShardTbKey" xml:"ShardTbKey"`
+	Expired            string                  `json:"Expired" xml:"Expired"`
+	IsActive           bool                    `json:"IsActive" xml:"IsActive"`
+	Schema             string                  `json:"Schema" xml:"Schema"`
+	DbInstType         string                  `json:"DbInstType" xml:"DbInstType"`
+	SourceTableName    string                  `json:"SourceTableName" xml:"SourceTableName"`
+	ShardDbKey         string                  `json:"ShardDbKey" xml:"ShardDbKey"`
+	TableName          string                  `json:"TableName" xml:"TableName"`
+	DbName             string                  `json:"DbName" xml:"DbName"`
+	Stage              string                  `json:"Stage" xml:"Stage"`
+	Progress           string                  `json:"Progress" xml:"Progress"`
+	InstanceVersion    string                  `json:"InstanceVersion" xml:"InstanceVersion"`
+	RandomCode         string                  `json:"RandomCode" xml:"RandomCode"`
+	TargetTableName    string                  `json:"TargetTableName" xml:"TargetTableName"`
+	Msg                string                  `json:"Msg" xml:"Msg"`
+	Status             string                  `json:"Status" xml:"Status"`
+	DrdsInstanceIdList DrdsInstanceIdList      `json:"DrdsInstanceIdList" xml:"DrdsInstanceIdList"`
+	FullRevise         FullRevise              `json:"FullRevise" xml:"FullRevise"`
+	Increment          Increment               `json:"Increment" xml:"Increment"`
+	FullCheck          FullCheck               `json:"FullCheck" xml:"FullCheck"`
+	Full               Full                    `json:"Full" xml:"Full"`
+	Review             Review                  `json:"Review" xml:"Review"`
+	List               ListInDescribeHotDbList `json:"List" xml:"List"`
 }

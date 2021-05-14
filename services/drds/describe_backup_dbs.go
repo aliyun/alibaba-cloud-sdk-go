@@ -79,9 +79,9 @@ type DescribeBackupDbsRequest struct {
 // DescribeBackupDbsResponse is the response struct for api DescribeBackupDbs
 type DescribeBackupDbsResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Success   bool                       `json:"Success" xml:"Success"`
-	DbNames   DbNamesInDescribeBackupDbs `json:"DbNames" xml:"DbNames"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Success   bool    `json:"Success" xml:"Success"`
+	DbNames   DbNames `json:"DbNames" xml:"DbNames"`
 }
 
 // CreateDescribeBackupDbsRequest creates a request to invoke DescribeBackupDbs API
@@ -89,7 +89,7 @@ func CreateDescribeBackupDbsRequest() (request *DescribeBackupDbsRequest) {
 	request = &DescribeBackupDbsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupDbs", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupDbs", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

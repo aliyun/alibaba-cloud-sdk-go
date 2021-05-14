@@ -89,7 +89,7 @@ func CreateSubmitSmoothExpandPreCheckTaskRequest() (request *SubmitSmoothExpandP
 	request = &SubmitSmoothExpandPreCheckTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandPreCheckTask", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandPreCheckTask", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

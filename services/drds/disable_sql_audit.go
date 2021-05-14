@@ -88,7 +88,7 @@ func CreateDisableSqlAuditRequest() (request *DisableSqlAuditRequest) {
 	request = &DisableSqlAuditRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DisableSqlAudit", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DisableSqlAudit", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateDescribeShardTaskInfoRequest() (request *DescribeShardTaskInfoRequest
 	request = &DescribeShardTaskInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeShardTaskInfo", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeShardTaskInfo", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

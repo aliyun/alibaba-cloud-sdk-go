@@ -89,7 +89,7 @@ func CreateUpdateInstanceNetworkRequest() (request *UpdateInstanceNetworkRequest
 	request = &UpdateInstanceNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "UpdateInstanceNetwork", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "UpdateInstanceNetwork", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

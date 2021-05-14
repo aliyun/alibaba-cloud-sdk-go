@@ -92,7 +92,7 @@ func CreateDescribeRDSPerformanceRequest() (request *DescribeRDSPerformanceReque
 	request = &DescribeRDSPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRDSPerformance", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRDSPerformance", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

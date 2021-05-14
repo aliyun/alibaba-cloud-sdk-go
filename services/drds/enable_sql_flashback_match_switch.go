@@ -88,7 +88,7 @@ func CreateEnableSqlFlashbackMatchSwitchRequest() (request *EnableSqlFlashbackMa
 	request = &EnableSqlFlashbackMatchSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateDescribeInstanceSwitchNetworkRequest() (request *DescribeInstanceSwit
 	request = &DescribeInstanceSwitchNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateDescribeExpandLogicTableInfoListRequest() (request *DescribeExpandLog
 	request = &DescribeExpandLogicTableInfoListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

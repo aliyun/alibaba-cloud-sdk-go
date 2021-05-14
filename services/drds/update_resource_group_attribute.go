@@ -86,7 +86,7 @@ func CreateUpdateResourceGroupAttributeRequest() (request *UpdateResourceGroupAt
 	request = &UpdateResourceGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "UpdateResourceGroupAttribute", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "UpdateResourceGroupAttribute", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

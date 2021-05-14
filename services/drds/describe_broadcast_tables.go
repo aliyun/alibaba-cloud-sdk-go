@@ -95,7 +95,7 @@ func CreateDescribeBroadcastTablesRequest() (request *DescribeBroadcastTablesReq
 	request = &DescribeBroadcastTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBroadcastTables", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBroadcastTables", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

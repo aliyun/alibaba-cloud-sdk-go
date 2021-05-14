@@ -90,7 +90,7 @@ func CreateManagePrivateRdsRequest() (request *ManagePrivateRdsRequest) {
 	request = &ManagePrivateRdsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ManagePrivateRds", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ManagePrivateRds", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

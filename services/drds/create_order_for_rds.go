@@ -87,7 +87,7 @@ func CreateCreateOrderForRdsRequest() (request *CreateOrderForRdsRequest) {
 	request = &CreateOrderForRdsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CreateOrderForRds", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CreateOrderForRds", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

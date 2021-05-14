@@ -71,15 +71,20 @@ func (client *Client) DescribeDrdsDBsWithCallback(request *DescribeDrdsDBsReques
 // DescribeDrdsDBsRequest is the request struct for api DescribeDrdsDBs
 type DescribeDrdsDBsRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeDrdsDBsResponse is the response struct for api DescribeDrdsDBs
 type DescribeDrdsDBsResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Success   bool                  `json:"Success" xml:"Success"`
-	Data      DataInDescribeDrdsDBs `json:"Data" xml:"Data"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	Success    bool                  `json:"Success" xml:"Success"`
+	PageNumber string                `json:"PageNumber" xml:"PageNumber"`
+	PageSize   string                `json:"PageSize" xml:"PageSize"`
+	Total      string                `json:"Total" xml:"Total"`
+	Data       DataInDescribeDrdsDBs `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsDBsRequest creates a request to invoke DescribeDrdsDBs API
@@ -87,7 +92,7 @@ func CreateDescribeDrdsDBsRequest() (request *DescribeDrdsDBsRequest) {
 	request = &DescribeDrdsDBsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsDBs", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBs", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

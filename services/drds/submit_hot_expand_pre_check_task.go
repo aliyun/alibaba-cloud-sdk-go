@@ -91,7 +91,7 @@ func CreateSubmitHotExpandPreCheckTaskRequest() (request *SubmitHotExpandPreChec
 	request = &SubmitHotExpandPreCheckTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

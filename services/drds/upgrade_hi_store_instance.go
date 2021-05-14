@@ -88,7 +88,7 @@ func CreateUpgradeHiStoreInstanceRequest() (request *UpgradeHiStoreInstanceReque
 	request = &UpgradeHiStoreInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "UpgradeHiStoreInstance", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "UpgradeHiStoreInstance", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

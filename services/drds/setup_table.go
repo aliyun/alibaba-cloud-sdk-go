@@ -90,7 +90,7 @@ func CreateSetupTableRequest() (request *SetupTableRequest) {
 	request = &SetupTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SetupTable", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SetupTable", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

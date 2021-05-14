@@ -71,16 +71,31 @@ func (client *Client) DescribeDrdsInstancesWithCallback(request *DescribeDrdsIns
 // DescribeDrdsInstancesRequest is the request struct for api DescribeDrdsInstances
 type DescribeDrdsInstancesRequest struct {
 	*requests.RpcRequest
-	Type string `position:"Query" name:"Type"`
-	Tags string `position:"Query" name:"Tags"`
+	Description     string                      `position:"Query" name:"Description"`
+	ProductVersion  string                      `position:"Query" name:"ProductVersion"`
+	Type            string                      `position:"Query" name:"Type"`
+	PageNumber      requests.Integer            `position:"Query" name:"PageNumber"`
+	ResourceGroupId string                      `position:"Query" name:"ResourceGroupId"`
+	Expired         requests.Boolean            `position:"Query" name:"Expired"`
+	PageSize        requests.Integer            `position:"Query" name:"PageSize"`
+	Tag             *[]DescribeDrdsInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Mix             requests.Boolean            `position:"Query" name:"Mix"`
+}
+
+// DescribeDrdsInstancesTag is a repeated param struct in DescribeDrdsInstancesRequest
+type DescribeDrdsInstancesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDrdsInstancesResponse is the response struct for api DescribeDrdsInstances
 type DescribeDrdsInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
-	Success   bool                        `json:"Success" xml:"Success"`
-	Data      DataInDescribeDrdsInstances `json:"Data" xml:"Data"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	Total      int       `json:"Total" xml:"Total"`
+	Instances  Instances `json:"Instances" xml:"Instances"`
 }
 
 // CreateDescribeDrdsInstancesRequest creates a request to invoke DescribeDrdsInstances API
@@ -88,7 +103,7 @@ func CreateDescribeDrdsInstancesRequest() (request *DescribeDrdsInstancesRequest
 	request = &DescribeDrdsInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstances", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstances", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

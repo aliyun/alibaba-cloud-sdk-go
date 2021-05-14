@@ -78,9 +78,9 @@ type DescribeDrdsDBRequest struct {
 // DescribeDrdsDBResponse is the response struct for api DescribeDrdsDB
 type DescribeDrdsDBResponse struct {
 	*responses.BaseResponse
-	RequestId string               `json:"RequestId" xml:"RequestId"`
-	Success   bool                 `json:"Success" xml:"Success"`
-	Data      DataInDescribeDrdsDB `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsDBRequest creates a request to invoke DescribeDrdsDB API
@@ -88,7 +88,7 @@ func CreateDescribeDrdsDBRequest() (request *DescribeDrdsDBRequest) {
 	request = &DescribeDrdsDBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsDB", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDB", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

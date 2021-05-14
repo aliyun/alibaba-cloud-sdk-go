@@ -89,7 +89,7 @@ func CreateDescribeDrdsDbInstanceRequest() (request *DescribeDrdsDbInstanceReque
 	request = &DescribeDrdsDbInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbInstance", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbInstance", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

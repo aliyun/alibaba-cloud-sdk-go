@@ -87,7 +87,7 @@ func CreateDescribeDrdsInstanceLevelTasksRequest() (request *DescribeDrdsInstanc
 	request = &DescribeDrdsInstanceLevelTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceLevelTasks", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceLevelTasks", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

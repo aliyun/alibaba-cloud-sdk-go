@@ -88,7 +88,7 @@ func CreateSwitchGlobalBroadcastTypeRequest() (request *SwitchGlobalBroadcastTyp
 	request = &SwitchGlobalBroadcastTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SwitchGlobalBroadcastType", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SwitchGlobalBroadcastType", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

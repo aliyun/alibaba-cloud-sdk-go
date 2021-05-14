@@ -88,7 +88,7 @@ func CreateDescribeInstDbLogInfoRequest() (request *DescribeInstDbLogInfoRequest
 	request = &DescribeInstDbLogInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbLogInfo", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbLogInfo", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

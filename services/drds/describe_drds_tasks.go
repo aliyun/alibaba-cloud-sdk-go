@@ -89,7 +89,7 @@ func CreateDescribeDrdsTasksRequest() (request *DescribeDrdsTasksRequest) {
 	request = &DescribeDrdsTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsTasks", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsTasks", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

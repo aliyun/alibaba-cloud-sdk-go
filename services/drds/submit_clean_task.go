@@ -90,7 +90,7 @@ func CreateSubmitCleanTaskRequest() (request *SubmitCleanTaskRequest) {
 	request = &SubmitCleanTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitCleanTask", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitCleanTask", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

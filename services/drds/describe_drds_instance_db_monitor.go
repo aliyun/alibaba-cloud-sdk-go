@@ -81,9 +81,9 @@ type DescribeDrdsInstanceDbMonitorRequest struct {
 // DescribeDrdsInstanceDbMonitorResponse is the response struct for api DescribeDrdsInstanceDbMonitor
 type DescribeDrdsInstanceDbMonitorResponse struct {
 	*responses.BaseResponse
-	RequestId string                              `json:"RequestId" xml:"RequestId"`
-	Success   bool                                `json:"Success" xml:"Success"`
-	Data      DataInDescribeDrdsInstanceDbMonitor `json:"Data" xml:"Data"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Success   bool                     `json:"Success" xml:"Success"`
+	Data      []PartialPerformanceData `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsInstanceDbMonitorRequest creates a request to invoke DescribeDrdsInstanceDbMonitor API
@@ -91,7 +91,7 @@ func CreateDescribeDrdsInstanceDbMonitorRequest() (request *DescribeDrdsInstance
 	request = &DescribeDrdsInstanceDbMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstanceDbMonitor", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

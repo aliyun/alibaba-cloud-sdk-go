@@ -88,7 +88,7 @@ func CreateCheckDrdsDbNameRequest() (request *CheckDrdsDbNameRequest) {
 	request = &CheckDrdsDbNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CheckDrdsDbName", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CheckDrdsDbName", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

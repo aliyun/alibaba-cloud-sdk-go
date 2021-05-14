@@ -40,6 +40,7 @@ type DataInDescribeDrdsInstance struct {
 	MysqlVersion          int                                         `json:"MysqlVersion" xml:"MysqlVersion"`
 	StorageType           string                                      `json:"StorageType" xml:"StorageType"`
 	ResourceGroupId       string                                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ProductVersion        string                                      `json:"ProductVersion" xml:"ProductVersion"`
 	ReadOnlyDBInstanceIds ReadOnlyDBInstanceIdsInDescribeDrdsInstance `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 	Vips                  VipsInDescribeDrdsInstance                  `json:"Vips" xml:"Vips"`
 }

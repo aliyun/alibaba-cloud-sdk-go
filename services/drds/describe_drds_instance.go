@@ -77,9 +77,9 @@ type DescribeDrdsInstanceRequest struct {
 // DescribeDrdsInstanceResponse is the response struct for api DescribeDrdsInstance
 type DescribeDrdsInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Success   bool                       `json:"Success" xml:"Success"`
+	Data      DataInDescribeDrdsInstance `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsInstanceRequest creates a request to invoke DescribeDrdsInstance API
@@ -87,7 +87,7 @@ func CreateDescribeDrdsInstanceRequest() (request *DescribeDrdsInstanceRequest) 
 	request = &DescribeDrdsInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstance", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstance", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

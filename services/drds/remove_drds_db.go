@@ -87,7 +87,7 @@ func CreateRemoveDrdsDbRequest() (request *RemoveDrdsDbRequest) {
 	request = &RemoveDrdsDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDb", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDb", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateCheckExpandStatusRequest() (request *CheckExpandStatusRequest) {
 	request = &CheckExpandStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CheckExpandStatus", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CheckExpandStatus", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

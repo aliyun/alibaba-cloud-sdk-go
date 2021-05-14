@@ -88,7 +88,7 @@ func CreateDescribeRdsSuperAccountInstancesRequest() (request *DescribeRdsSuperA
 	request = &DescribeRdsSuperAccountInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

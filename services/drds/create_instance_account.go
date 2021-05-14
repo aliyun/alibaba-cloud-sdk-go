@@ -95,7 +95,7 @@ func CreateCreateInstanceAccountRequest() (request *CreateInstanceAccountRequest
 	request = &CreateInstanceAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CreateInstanceAccount", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CreateInstanceAccount", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

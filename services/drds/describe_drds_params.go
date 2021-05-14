@@ -89,7 +89,7 @@ func CreateDescribeDrdsParamsRequest() (request *DescribeDrdsParamsRequest) {
 	request = &DescribeDrdsParamsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsParams", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsParams", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

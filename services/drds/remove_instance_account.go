@@ -87,7 +87,7 @@ func CreateRemoveInstanceAccountRequest() (request *RemoveInstanceAccountRequest
 	request = &RemoveInstanceAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveInstanceAccount", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveInstanceAccount", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

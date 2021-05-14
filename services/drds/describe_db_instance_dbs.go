@@ -81,10 +81,10 @@ type DescribeDbInstanceDbsRequest struct {
 // DescribeDbInstanceDbsResponse is the response struct for api DescribeDbInstanceDbs
 type DescribeDbInstanceDbsResponse struct {
 	*responses.BaseResponse
-	RequestId string                           `json:"RequestId" xml:"RequestId"`
-	Success   bool                             `json:"Success" xml:"Success"`
-	Total     string                           `json:"Total" xml:"Total"`
-	Databases DatabasesInDescribeDbInstanceDbs `json:"Databases" xml:"Databases"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	Success   bool      `json:"Success" xml:"Success"`
+	Total     string    `json:"Total" xml:"Total"`
+	Databases Databases `json:"Databases" xml:"Databases"`
 }
 
 // CreateDescribeDbInstanceDbsRequest creates a request to invoke DescribeDbInstanceDbs API
@@ -92,7 +92,7 @@ func CreateDescribeDbInstanceDbsRequest() (request *DescribeDbInstanceDbsRequest
 	request = &DescribeDbInstanceDbsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDbInstanceDbs", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDbInstanceDbs", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

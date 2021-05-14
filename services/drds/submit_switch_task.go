@@ -90,7 +90,7 @@ func CreateSubmitSwitchTaskRequest() (request *SubmitSwitchTaskRequest) {
 	request = &SubmitSwitchTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSwitchTask", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSwitchTask", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

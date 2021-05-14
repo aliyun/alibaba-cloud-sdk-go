@@ -123,7 +123,7 @@ func CreateSubmitHotExpandTaskRequest() (request *SubmitHotExpandTaskRequest) {
 	request = &SubmitHotExpandTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandTask", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandTask", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

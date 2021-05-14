@@ -87,7 +87,7 @@ func CreateDescribeDrdsInstanceVersionRequest() (request *DescribeDrdsInstanceVe
 	request = &DescribeDrdsInstanceVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceVersion", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceVersion", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

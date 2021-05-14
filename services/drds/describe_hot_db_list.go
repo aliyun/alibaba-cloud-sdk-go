@@ -89,7 +89,7 @@ func CreateDescribeHotDbListRequest() (request *DescribeHotDbListRequest) {
 	request = &DescribeHotDbListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeHotDbList", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeHotDbList", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

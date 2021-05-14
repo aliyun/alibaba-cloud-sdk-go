@@ -96,7 +96,7 @@ func CreateSubmitSqlFlashbackTaskRequest() (request *SubmitSqlFlashbackTaskReque
 	request = &SubmitSqlFlashbackTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

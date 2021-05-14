@@ -17,7 +17,9 @@ package drds
 
 // PartialPerformanceData is a nested struct in drds response
 type PartialPerformanceData struct {
-	Key    string                                `json:"Key" xml:"Key"`
-	Unit   string                                `json:"Unit" xml:"Unit"`
-	Values ValuesInDescribeDrdsInstanceDbMonitor `json:"Values" xml:"Values"`
+	Key      string             `json:"Key" xml:"Key"`
+	NodeName string             `json:"NodeName" xml:"NodeName"`
+	Unit     string             `json:"Unit" xml:"Unit"`
+	NodeNum  int                `json:"NodeNum" xml:"NodeNum"`
+	Values   []PerformanceValue `json:"Values" xml:"Values"`
 }

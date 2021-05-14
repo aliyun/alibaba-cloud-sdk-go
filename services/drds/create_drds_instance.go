@@ -71,20 +71,23 @@ func (client *Client) CreateDrdsInstanceWithCallback(request *CreateDrdsInstance
 // CreateDrdsInstanceRequest is the request struct for api CreateDrdsInstance
 type CreateDrdsInstanceRequest struct {
 	*requests.RpcRequest
-	IsAutoRenew    requests.Boolean `position:"Query" name:"IsAutoRenew"`
-	ClientToken    string           `position:"Query" name:"ClientToken"`
-	Description    string           `position:"Query" name:"Description"`
-	Type           string           `position:"Query" name:"Type"`
-	Duration       requests.Integer `position:"Query" name:"Duration"`
-	IsHa           requests.Boolean `position:"Query" name:"IsHa"`
-	InstanceSeries string           `position:"Query" name:"InstanceSeries"`
-	Quantity       requests.Integer `position:"Query" name:"Quantity"`
-	Specification  string           `position:"Query" name:"Specification"`
-	VswitchId      string           `position:"Query" name:"VswitchId"`
-	VpcId          string           `position:"Query" name:"VpcId"`
-	ZoneId         string           `position:"Query" name:"ZoneId"`
-	PayType        string           `position:"Query" name:"PayType"`
-	PricingCycle   string           `position:"Query" name:"PricingCycle"`
+	IsAutoRenew     requests.Boolean `position:"Query" name:"IsAutoRenew"`
+	ClientToken     string           `position:"Query" name:"ClientToken"`
+	Description     string           `position:"Query" name:"Description"`
+	Type            string           `position:"Query" name:"Type"`
+	Duration        requests.Integer `position:"Query" name:"Duration"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	IsHa            requests.Boolean `position:"Query" name:"isHa"`
+	MySQLVersion    requests.Integer `position:"Query" name:"MySQLVersion"`
+	InstanceSeries  string           `position:"Query" name:"InstanceSeries"`
+	MasterInstId    string           `position:"Query" name:"MasterInstId"`
+	Quantity        requests.Integer `position:"Query" name:"Quantity"`
+	Specification   string           `position:"Query" name:"Specification"`
+	VswitchId       string           `position:"Query" name:"VswitchId"`
+	VpcId           string           `position:"Query" name:"VpcId"`
+	ZoneId          string           `position:"Query" name:"ZoneId"`
+	PayType         string           `position:"Query" name:"PayType"`
+	PricingCycle    string           `position:"Query" name:"PricingCycle"`
 }
 
 // CreateDrdsInstanceResponse is the response struct for api CreateDrdsInstance
@@ -100,7 +103,7 @@ func CreateCreateDrdsInstanceRequest() (request *CreateDrdsInstanceRequest) {
 	request = &CreateDrdsInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "CreateDrdsInstance", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CreateDrdsInstance", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

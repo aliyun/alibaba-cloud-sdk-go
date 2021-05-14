@@ -89,7 +89,7 @@ func CreateDescribeBackupSetsRequest() (request *DescribeBackupSetsRequest) {
 	request = &DescribeBackupSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupSets", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupSets", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

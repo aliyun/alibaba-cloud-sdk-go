@@ -96,7 +96,7 @@ func CreateDescribeDrdsSlowSqlsRequest() (request *DescribeDrdsSlowSqlsRequest) 
 	request = &DescribeDrdsSlowSqlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsSlowSqls", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsSlowSqls", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

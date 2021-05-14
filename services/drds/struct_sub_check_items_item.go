@@ -17,8 +17,8 @@ package drds
 
 // SubCheckItemsItem is a nested struct in drds response
 type SubCheckItemsItem struct {
-	State            string                                           `json:"State" xml:"State"`
-	ErrorMsgCode     string                                           `json:"ErrorMsgCode" xml:"ErrorMsgCode"`
-	PreCheckItemName string                                           `json:"PreCheckItemName" xml:"PreCheckItemName"`
-	ErrorMsgParams   ErrorMsgParamsInDescribeDataExportPreCheckResult `json:"ErrorMsgParams" xml:"ErrorMsgParams"`
+	PreCheckItemName string   `json:"PreCheckItemName" xml:"PreCheckItemName"`
+	State            string   `json:"State" xml:"State"`
+	ErrorMsgCode     string   `json:"ErrorMsgCode" xml:"ErrorMsgCode"`
+	ErrorMsgParams   []string `json:"ErrorMsgParams" xml:"ErrorMsgParams"`
 }

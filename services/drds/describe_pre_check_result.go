@@ -78,9 +78,9 @@ type DescribePreCheckResultRequest struct {
 // DescribePreCheckResultResponse is the response struct for api DescribePreCheckResult
 type DescribePreCheckResultResponse struct {
 	*responses.BaseResponse
-	RequestId      string                                 `json:"RequestId" xml:"RequestId"`
-	Success        bool                                   `json:"Success" xml:"Success"`
-	PreCheckResult PreCheckResultInDescribePreCheckResult `json:"PreCheckResult" xml:"PreCheckResult"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	Success        bool           `json:"Success" xml:"Success"`
+	PreCheckResult PreCheckResult `json:"PreCheckResult" xml:"PreCheckResult"`
 }
 
 // CreateDescribePreCheckResultRequest creates a request to invoke DescribePreCheckResult API
@@ -88,7 +88,7 @@ func CreateDescribePreCheckResultRequest() (request *DescribePreCheckResultReque
 	request = &DescribePreCheckResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribePreCheckResult", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribePreCheckResult", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,14 +17,25 @@ package drds
 
 // Task is a nested struct in drds response
 type Task struct {
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TargetId    string `json:"TargetId" xml:"TargetId"`
-	TaskDetail  string `json:"TaskDetail" xml:"TaskDetail"`
-	TaskStatus  int    `json:"taskStatus" xml:"taskStatus"`
-	TaskPhase   string `json:"TaskPhase" xml:"TaskPhase"`
-	TaskType    int    `json:"TaskType" xml:"TaskType"`
-	TaskName    string `json:"TaskName" xml:"TaskName"`
-	GmtCreate   int64  `json:"gmtCreate" xml:"gmtCreate"`
-	AllowCancel string `json:"AllowCancel" xml:"AllowCancel"`
-	ErrMsg      string `json:"ErrMsg" xml:"ErrMsg"`
+	TaskType            int    `json:"TaskType" xml:"TaskType"`
+	TbComputeLength     int    `json:"TbComputeLength" xml:"TbComputeLength"`
+	Label               string `json:"Label" xml:"Label"`
+	Id                  int64  `json:"Id" xml:"Id"`
+	TargetId            int64  `json:"TargetId" xml:"TargetId"`
+	ParentJobId         string `json:"ParentJobId" xml:"ParentJobId"`
+	TaskStatus          int    `json:"TaskStatus" xml:"TaskStatus"`
+	ShowProgress        bool   `json:"ShowProgress" xml:"ShowProgress"`
+	GmtCreate           int64  `json:"GmtCreate" xml:"GmtCreate"`
+	TaskPhase           string `json:"TaskPhase" xml:"TaskPhase"`
+	ErrMsg              string `json:"ErrMsg" xml:"ErrMsg"`
+	ExpandType          string `json:"ExpandType" xml:"ExpandType"`
+	DbComputeLength     int    `json:"DbComputeLength" xml:"DbComputeLength"`
+	State               string `json:"State" xml:"State"`
+	AllowCancel         bool   `json:"AllowCancel" xml:"AllowCancel"`
+	DetailTaskId        string `json:"DetailTaskId" xml:"DetailTaskId"`
+	Content             string `json:"Content" xml:"Content"`
+	TaskName            string `json:"TaskName" xml:"TaskName"`
+	Progress            int    `json:"Progress" xml:"Progress"`
+	ProgressDescription string `json:"ProgressDescription" xml:"ProgressDescription"`
+	TaskDetail          string `json:"TaskDetail" xml:"TaskDetail"`
 }

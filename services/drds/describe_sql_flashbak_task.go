@@ -87,7 +87,7 @@ func CreateDescribeSqlFlashbakTaskRequest() (request *DescribeSqlFlashbakTaskReq
 	request = &DescribeSqlFlashbakTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

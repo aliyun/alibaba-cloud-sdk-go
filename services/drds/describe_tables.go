@@ -94,7 +94,7 @@ func CreateDescribeTablesRequest() (request *DescribeTablesRequest) {
 	request = &DescribeTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeTables", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeTables", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

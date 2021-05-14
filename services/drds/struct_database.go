@@ -17,7 +17,7 @@ package drds
 
 // Database is a nested struct in drds response
 type Database struct {
-	Status      int    `json:"Status" xml:"Status"`
 	DbName      string `json:"DbName" xml:"DbName"`
+	Status      int    `json:"Status" xml:"Status"`
 	Description string `json:"Description" xml:"Description"`
 }

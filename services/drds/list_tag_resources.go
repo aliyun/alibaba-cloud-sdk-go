@@ -98,7 +98,7 @@ func CreateListTagResourcesRequest() (request *ListTagResourcesRequest) {
 	request = &ListTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ListTagResources", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ListTagResources", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

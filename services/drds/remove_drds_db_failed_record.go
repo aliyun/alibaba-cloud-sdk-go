@@ -88,7 +88,7 @@ func CreateRemoveDrdsDbFailedRecordRequest() (request *RemoveDrdsDbFailedRecordR
 	request = &RemoveDrdsDbFailedRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

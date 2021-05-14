@@ -88,7 +88,7 @@ func CreateDescribeInstDbSlsInfoRequest() (request *DescribeInstDbSlsInfoRequest
 	request = &DescribeInstDbSlsInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbSlsInfo", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbSlsInfo", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

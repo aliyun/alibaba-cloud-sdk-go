@@ -91,7 +91,7 @@ func CreateCreateShardTaskRequest() (request *CreateShardTaskRequest) {
 	request = &CreateShardTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CreateShardTask", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CreateShardTask", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

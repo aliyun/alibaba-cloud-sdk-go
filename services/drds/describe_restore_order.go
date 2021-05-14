@@ -92,7 +92,7 @@ func CreateDescribeRestoreOrderRequest() (request *DescribeRestoreOrderRequest) 
 	request = &DescribeRestoreOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRestoreOrder", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRestoreOrder", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }

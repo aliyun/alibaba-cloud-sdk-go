@@ -87,7 +87,7 @@ func CreateDescribeBackupLocalRequest() (request *DescribeBackupLocalRequest) {
 	request = &DescribeBackupLocalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupLocal", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupLocal", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }
