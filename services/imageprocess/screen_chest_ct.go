@@ -72,6 +72,7 @@ func (client *Client) ScreenChestCTWithCallback(request *ScreenChestCTRequest, c
 type ScreenChestCTRequest struct {
 	*requests.RpcRequest
 	OrgName    string                  `position:"Body" name:"OrgName"`
+	Mask       requests.Integer        `position:"Body" name:"Mask"`
 	DataFormat string                  `position:"Body" name:"DataFormat"`
 	URLList    *[]ScreenChestCTURLList `position:"Body" name:"URLList"  type:"Repeated"`
 	OrgId      string                  `position:"Body" name:"OrgId"`
@@ -86,9 +87,9 @@ type ScreenChestCTURLList struct {
 // ScreenChestCTResponse is the response struct for api ScreenChestCT
 type ScreenChestCTResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

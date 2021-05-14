@@ -17,11 +17,11 @@ package imageprocess
 
 // DetectionsItemInScreenChestCT is a nested struct in imageprocess response
 type DetectionsItemInScreenChestCT struct {
-	FractureCategory   int64   `json:"FractureCategory" xml:"FractureCategory"`
+	FractureId         int64   `json:"FractureId" xml:"FractureId"`
 	FractureConfidence float64 `json:"FractureConfidence" xml:"FractureConfidence"`
+	FractureCategory   int64   `json:"FractureCategory" xml:"FractureCategory"`
 	FractureLocation   string  `json:"FractureLocation" xml:"FractureLocation"`
 	FractureSegment    int64   `json:"FractureSegment" xml:"FractureSegment"`
-	FractureId         int64   `json:"FractureId" xml:"FractureId"`
-	CoordinateImage    []int64 `json:"CoordinateImage" xml:"CoordinateImage"`
 	Coordinates        []int64 `json:"Coordinates" xml:"Coordinates"`
+	CoordinateImage    []int64 `json:"CoordinateImage" xml:"CoordinateImage"`
 }

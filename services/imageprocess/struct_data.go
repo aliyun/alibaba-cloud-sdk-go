@@ -47,9 +47,9 @@ type Data struct {
 	Options           []string               `json:"Options" xml:"Options"`
 	Origin            []float64              `json:"Origin" xml:"Origin"`
 	DetectRibFracture DetectRibFracture      `json:"DetectRibFracture" xml:"DetectRibFracture"`
-	CACS              CACS                   `json:"CACS" xml:"CACS"`
 	Covid             Covid                  `json:"Covid" xml:"Covid"`
 	LungNodule        LungNodule             `json:"LungNodule" xml:"LungNodule"`
+	CACS              CACS                   `json:"CACS" xml:"CACS"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	KeyPoints         []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
 	Discs             []Disc                 `json:"Discs" xml:"Discs"`

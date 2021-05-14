@@ -18,7 +18,7 @@ package imageprocess
 // DetectRibFracture is a nested struct in imageprocess response
 type DetectRibFracture struct {
 	ResultURL  string                          `json:"ResultURL" xml:"ResultURL"`
-	Origin     []float64                       `json:"Origin" xml:"Origin"`
 	Spacing    []float64                       `json:"Spacing" xml:"Spacing"`
+	Origin     []float64                       `json:"Origin" xml:"Origin"`
 	Detections []DetectionsItemInScreenChestCT `json:"Detections" xml:"Detections"`
 }

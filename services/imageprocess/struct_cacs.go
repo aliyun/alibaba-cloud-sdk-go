@@ -17,6 +17,6 @@ package imageprocess
 
 // CACS is a nested struct in imageprocess response
 type CACS struct {
-	Score     string `json:"Score" xml:"Score"`
 	ResultUrl string `json:"ResultUrl" xml:"ResultUrl"`
+	Score     string `json:"Score" xml:"Score"`
 }
