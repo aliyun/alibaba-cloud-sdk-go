@@ -77,6 +77,7 @@ type EnableAdditionalBandwidthRequest struct {
 	SourceBiz            string           `position:"Query" name:"SourceBiz"`
 	NodeId               string           `position:"Query" name:"NodeId"`
 	OrderTimeLength      string           `position:"Query" name:"OrderTimeLength"`
+	AutoRenewPeriod      requests.Integer `position:"Query" name:"AutoRenewPeriod"`
 	Product              string           `position:"Query" name:"Product"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -84,6 +85,7 @@ type EnableAdditionalBandwidthRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
 	Category             string           `position:"Query" name:"Category"`
 }
 
