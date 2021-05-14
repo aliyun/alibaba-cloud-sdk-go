@@ -79,9 +79,9 @@ type RecognizeHandGestureRequest struct {
 // RecognizeHandGestureResponse is the response struct for api RecognizeHandGesture
 type RecognizeHandGestureResponse struct {
 	*responses.BaseResponse
-	Message   string                     `json:"Message" xml:"Message"`
 	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Code      string                     `json:"Code" xml:"Code"`
+	Message   string                     `json:"Message" xml:"Message"`
 	Data      DataInRecognizeHandGesture `json:"Data" xml:"Data"`
 }
 

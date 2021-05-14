@@ -17,9 +17,9 @@ package facebody
 
 // ElementsItemInDetectPedestrianIntrusion is a nested struct in facebody response
 type ElementsItemInDetectPedestrianIntrusion struct {
-	BoxId     int64  `json:"BoxId" xml:"BoxId"`
-	Type      string `json:"Type" xml:"Type"`
 	Score     int64  `json:"Score" xml:"Score"`
+	Type      string `json:"Type" xml:"Type"`
 	IsIntrude bool   `json:"IsIntrude" xml:"IsIntrude"`
+	BoxId     int64  `json:"BoxId" xml:"BoxId"`
 	Box       Box    `json:"Box" xml:"Box"`
 }

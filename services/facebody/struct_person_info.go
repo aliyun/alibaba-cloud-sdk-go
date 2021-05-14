@@ -18,6 +18,6 @@ package facebody
 // PersonInfo is a nested struct in facebody response
 type PersonInfo struct {
 	PersonNumber int64     `json:"PersonNumber" xml:"PersonNumber"`
-	EarPhone     EarPhone  `json:"EarPhone" xml:"EarPhone"`
 	CellPhone    CellPhone `json:"CellPhone" xml:"CellPhone"`
+	EarPhone     EarPhone  `json:"EarPhone" xml:"EarPhone"`
 }

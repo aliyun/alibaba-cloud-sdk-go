@@ -78,9 +78,9 @@ type AddFaceImageTemplateRequest struct {
 // AddFaceImageTemplateResponse is the response struct for api AddFaceImageTemplate
 type AddFaceImageTemplateResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

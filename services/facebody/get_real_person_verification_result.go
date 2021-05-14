@@ -71,16 +71,16 @@ func (client *Client) GetRealPersonVerificationResultWithCallback(request *GetRe
 // GetRealPersonVerificationResultRequest is the request struct for api GetRealPersonVerificationResult
 type GetRealPersonVerificationResultRequest struct {
 	*requests.RpcRequest
-	VerificationToken string `position:"Body" name:"VerificationToken"`
 	MaterialHash      string `position:"Body" name:"MaterialHash"`
+	VerificationToken string `position:"Body" name:"VerificationToken"`
 }
 
 // GetRealPersonVerificationResultResponse is the response struct for api GetRealPersonVerificationResult
 type GetRealPersonVerificationResultResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Code         string `json:"Code" xml:"Code"`
 	Success      bool   `json:"Success" xml:"Success"`
 	Data         Data   `json:"Data" xml:"Data"`
 }

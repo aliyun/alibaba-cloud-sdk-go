@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// MergeImageFace invokes the facebody.MergeImageFace API synchronously
-func (client *Client) MergeImageFace(request *MergeImageFaceRequest) (response *MergeImageFaceResponse, err error) {
-	response = CreateMergeImageFaceResponse()
+// ExtractFingerPrint invokes the facebody.ExtractFingerPrint API synchronously
+func (client *Client) ExtractFingerPrint(request *ExtractFingerPrintRequest) (response *ExtractFingerPrintResponse, err error) {
+	response = CreateExtractFingerPrintResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// MergeImageFaceWithChan invokes the facebody.MergeImageFace API asynchronously
-func (client *Client) MergeImageFaceWithChan(request *MergeImageFaceRequest) (<-chan *MergeImageFaceResponse, <-chan error) {
-	responseChan := make(chan *MergeImageFaceResponse, 1)
+// ExtractFingerPrintWithChan invokes the facebody.ExtractFingerPrint API asynchronously
+func (client *Client) ExtractFingerPrintWithChan(request *ExtractFingerPrintRequest) (<-chan *ExtractFingerPrintResponse, <-chan error) {
+	responseChan := make(chan *ExtractFingerPrintResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.MergeImageFace(request)
+		response, err := client.ExtractFingerPrint(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) MergeImageFaceWithChan(request *MergeImageFaceRequest) (<-
 	return responseChan, errChan
 }
 
-// MergeImageFaceWithCallback invokes the facebody.MergeImageFace API asynchronously
-func (client *Client) MergeImageFaceWithCallback(request *MergeImageFaceRequest, callback func(response *MergeImageFaceResponse, err error)) <-chan int {
+// ExtractFingerPrintWithCallback invokes the facebody.ExtractFingerPrint API asynchronously
+func (client *Client) ExtractFingerPrintWithCallback(request *ExtractFingerPrintRequest, callback func(response *ExtractFingerPrintResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *MergeImageFaceResponse
+		var response *ExtractFingerPrintResponse
 		var err error
 		defer close(result)
-		response, err = client.MergeImageFace(request)
+		response, err = client.ExtractFingerPrint(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,15 @@ func (client *Client) MergeImageFaceWithCallback(request *MergeImageFaceRequest,
 	return result
 }
 
-// MergeImageFaceRequest is the request struct for api MergeImageFace
-type MergeImageFaceRequest struct {
+// ExtractFingerPrintRequest is the request struct for api ExtractFingerPrint
+type ExtractFingerPrintRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Body" name:"UserId"`
-	TemplateId string `position:"Body" name:"TemplateId"`
-	ImageURL   string `position:"Body" name:"ImageURL"`
+	ImageData string `position:"Body" name:"ImageData"`
+	ImageURL  string `position:"Body" name:"ImageURL"`
 }
 
-// MergeImageFaceResponse is the response struct for api MergeImageFace
-type MergeImageFaceResponse struct {
+// ExtractFingerPrintResponse is the response struct for api ExtractFingerPrint
+type ExtractFingerPrintResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
@@ -85,19 +84,19 @@ type MergeImageFaceResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateMergeImageFaceRequest creates a request to invoke MergeImageFace API
-func CreateMergeImageFaceRequest() (request *MergeImageFaceRequest) {
-	request = &MergeImageFaceRequest{
+// CreateExtractFingerPrintRequest creates a request to invoke ExtractFingerPrint API
+func CreateExtractFingerPrintRequest() (request *ExtractFingerPrintRequest) {
+	request = &ExtractFingerPrintRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "MergeImageFace", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "ExtractFingerPrint", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateMergeImageFaceResponse creates a response to parse from MergeImageFace response
-func CreateMergeImageFaceResponse() (response *MergeImageFaceResponse) {
-	response = &MergeImageFaceResponse{
+// CreateExtractFingerPrintResponse creates a response to parse from ExtractFingerPrint response
+func CreateExtractFingerPrintResponse() (response *ExtractFingerPrintResponse) {
+	response = &ExtractFingerPrintResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

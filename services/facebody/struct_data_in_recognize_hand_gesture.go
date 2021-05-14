@@ -17,10 +17,10 @@ package facebody
 
 // DataInRecognizeHandGesture is a nested struct in facebody response
 type DataInRecognizeHandGesture struct {
-	Score  float64 `json:"Score" xml:"Score"`
 	Type   string  `json:"Type" xml:"Type"`
 	X      int64   `json:"X" xml:"X"`
 	Y      int64   `json:"Y" xml:"Y"`
-	Height int64   `json:"Height" xml:"Height"`
 	Width  int64   `json:"Width" xml:"Width"`
+	Height int64   `json:"Height" xml:"Height"`
+	Score  float64 `json:"Score" xml:"Score"`
 }

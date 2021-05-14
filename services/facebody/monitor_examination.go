@@ -78,8 +78,8 @@ type MonitorExaminationRequest struct {
 // MonitorExaminationResponse is the response struct for api MonitorExamination
 type MonitorExaminationResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
 	Code      string `json:"Code" xml:"Code"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
