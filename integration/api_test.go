@@ -25,31 +25,6 @@ var (
 	flag            = false
 )
 
-func Test_ScaleClusterWithROArequestWithXMLWithGet(t *testing.T) {
-	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-	assert.Nil(t, err)
-	request := cs.CreateScaleClusterRequest()
-	request.SetContentType("XML")
-	request.SetScheme("HTTPS")
-	request.Method = "GET"
-	response, err := client.ScaleCluster(request)
-	assert.NotNil(t, err)
-	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "Request url is invalid")
-}
-
-func Test_ScaleClusterWithROArequestWithXMLWithPUT(t *testing.T) {
-	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-	assert.Nil(t, err)
-	request := cs.CreateScaleClusterRequest()
-	request.SetContentType("XML")
-	request.SetScheme("HTTPS")
-	response, err := client.ScaleCluster(request)
-	assert.NotNil(t, err)
-	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "Request url is invalid")
-}
-
 func Test_CreateClusterTokenWithROArequestWithXMLWithPOST(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -71,7 +46,7 @@ func Test_DeleteClusterWithROArequestWithXMLWithDelete(t *testing.T) {
 	response, err := client.DeleteCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "Request url is invalid")
+	assert.Contains(t, err.Error(), "ErrorClusterNotFound")
 }
 
 func Test_DeleteClusterWithROArequestWithJSONWithDelete(t *testing.T) {
@@ -83,19 +58,7 @@ func Test_DeleteClusterWithROArequestWithJSONWithDelete(t *testing.T) {
 	response, err := client.DeleteCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "Request url is invalid")
-}
-
-func Test_ScaleClusterWithROArequestWithJSONWithPUT(t *testing.T) {
-	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-	assert.Nil(t, err)
-	request := cs.CreateScaleClusterRequest()
-	request.SetContentType("JSON")
-	request.SetScheme("HTTPS")
-	response, err := client.ScaleCluster(request)
-	assert.NotNil(t, err)
-	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "Request url is invalid")
+	assert.Contains(t, err.Error(), "ErrorCheckAcl")
 }
 
 func Test_CreateSecurityGroupWithRPCrequestWithJSONWithNestingparametersWithPOST(t *testing.T) {

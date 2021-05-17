@@ -10,7 +10,6 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/services/cs"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"github.com/stretchr/testify/assert"
 
@@ -45,19 +44,6 @@ func Test_DescribeRegionsWithRPCrequestWithSTStoken(t *testing.T) {
 	assert.NotNil(t, response)
 	assert.Equal(t, 36, len(response.RequestId))
 	assert.True(t, len(response.Regions.Region) > 0)
-}
-
-func Test_ScaleClusterWithROArequestWithAK(t *testing.T) {
-	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-	assert.Nil(t, err)
-	request := cs.CreateScaleClusterRequest()
-	request.SetDomain("cs.cn-hangzhou.aliyuncs.com")
-	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
-	request.Method = "GET"
-	response, err := client.ScaleCluster(request)
-	assert.NotNil(t, err)
-	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "Request url is invalid")
 }
 
 func Test_DescribeRegionsWithRPCrequestWithArn(t *testing.T) {
