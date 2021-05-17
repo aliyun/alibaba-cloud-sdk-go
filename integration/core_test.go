@@ -169,7 +169,7 @@ func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, client.GetLoggerMsg(), `1.1, cs.aliyuncs.com`)
-	assert.Contains(t, err.Error(), "Request url is invalid")
+	assert.Contains(t, err.Error(), "ErrorClusterNotFound")
 }
 
 func Test_DescribeClusterDetailWithCommonRequestWithROAWithHTTPS(t *testing.T) {
@@ -186,7 +186,7 @@ func Test_DescribeClusterDetailWithCommonRequestWithROAWithHTTPS(t *testing.T) {
 
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Request url is invalid")
+	assert.Contains(t, err.Error(), "ErrorClusterNotFound")
 }
 
 func Test_DescribeClusterDetailWithCommonRequestWithTimeout(t *testing.T) {
@@ -230,7 +230,7 @@ func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
 	request.TransToAcsRequest()
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "user order resource type ")
+	assert.Contains(t, err.Error(), "QuotaExceed.ElasticQuota")
 
 	policy := `{
     "Version": "1",
