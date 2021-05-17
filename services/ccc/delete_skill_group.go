@@ -71,18 +71,18 @@ func (client *Client) DeleteSkillGroupWithCallback(request *DeleteSkillGroupRequ
 // DeleteSkillGroupRequest is the request struct for api DeleteSkillGroup
 type DeleteSkillGroupRequest struct {
 	*requests.RpcRequest
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
-	Force        requests.Boolean `position:"Query" name:"Force"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
+	SkillGroupId string `position:"Query" name:"SkillGroupId"`
 }
 
 // DeleteSkillGroupResponse is the response struct for api DeleteSkillGroup
 type DeleteSkillGroupResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateDeleteSkillGroupRequest creates a request to invoke DeleteSkillGroup API
@@ -90,7 +90,7 @@ func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {
 	request = &DeleteSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "DeleteSkillGroup", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "DeleteSkillGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

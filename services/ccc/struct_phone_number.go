@@ -17,17 +17,29 @@ package ccc
 
 // PhoneNumber is a nested struct in ccc response
 type PhoneNumber struct {
-	Usage           string       `json:"Usage" xml:"Usage"`
-	Tags            string       `json:"Tags" xml:"Tags"`
-	Active          bool         `json:"Active" xml:"Active"`
-	CreateTime      string       `json:"CreateTime" xml:"CreateTime"`
-	City            string       `json:"City" xml:"City"`
-	Number          string       `json:"Number" xml:"Number"`
-	Province        string       `json:"Province" xml:"Province"`
-	Provider        string       `json:"Provider" xml:"Provider"`
-	InstanceId      string       `json:"InstanceId" xml:"InstanceId"`
-	UserId          string       `json:"UserId" xml:"UserId"`
-	ContactFlowName string       `json:"ContactFlowName" xml:"ContactFlowName"`
-	ContactFlowId   string       `json:"ContactFlowId" xml:"ContactFlowId"`
-	SkillGroups     []SkillGroup `json:"SkillGroups" xml:"SkillGroups"`
+	CreateTime             int64                            `json:"CreateTime" xml:"CreateTime"`
+	InstanceId             string                           `json:"InstanceId" xml:"InstanceId"`
+	RemainingTime          int                              `json:"RemainingTime" xml:"RemainingTime"`
+	ServiceTag             string                           `json:"ServiceTag" xml:"ServiceTag"`
+	TestOnly               bool                             `json:"TestOnly" xml:"TestOnly"`
+	Concurrency            int                              `json:"Concurrency" xml:"Concurrency"`
+	ContactFlowId          string                           `json:"ContactFlowId" xml:"ContactFlowId"`
+	AllowOutbound          bool                             `json:"AllowOutbound" xml:"AllowOutbound"`
+	PhoneNumberId          string                           `json:"PhoneNumberId" xml:"PhoneNumberId"`
+	Usage                  string                           `json:"Usage" xml:"Usage"`
+	Trunks                 int                              `json:"Trunks" xml:"Trunks"`
+	PrivateFlag            bool                             `json:"PrivateFlag" xml:"PrivateFlag"`
+	City                   string                           `json:"City" xml:"City"`
+	Number                 string                           `json:"Number" xml:"Number"`
+	Province               string                           `json:"Province" xml:"Province"`
+	Provider               string                           `json:"Provider" xml:"Provider"`
+	Assignee               string                           `json:"Assignee" xml:"Assignee"`
+	NumberCommodityStatus  int                              `json:"NumberCommodityStatus" xml:"NumberCommodityStatus"`
+	PhoneNumberDescription string                           `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+	SipTelX                string                           `json:"SipTelX" xml:"SipTelX"`
+	Type                   int                              `json:"Type" xml:"Type"`
+	SkillGroupIdList       SkillGroupIdList                 `json:"SkillGroupIdList" xml:"SkillGroupIdList"`
+	ContactFlow            ContactFlow                      `json:"ContactFlow" xml:"ContactFlow"`
+	PrivacyNumber          PrivacyNumber                    `json:"PrivacyNumber" xml:"PrivacyNumber"`
+	SkillGroups            SkillGroupsInAddBulkPhoneNumbers `json:"SkillGroups" xml:"SkillGroups"`
 }

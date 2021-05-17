@@ -71,19 +71,25 @@ func (client *Client) ModifySkillGroupWithCallback(request *ModifySkillGroupRequ
 // ModifySkillGroupRequest is the request struct for api ModifySkillGroup
 type ModifySkillGroupRequest struct {
 	*requests.RpcRequest
-	Description  string `position:"Query" name:"Description"`
-	InstanceId   string `position:"Query" name:"InstanceId"`
-	SkillGroupId string `position:"Query" name:"SkillGroupId"`
-	DisplayName  string `position:"Query" name:"DisplayName"`
+	AllowPrivateOutboundNumber requests.Boolean `position:"Query" name:"AllowPrivateOutboundNumber"`
+	Description                string           `position:"Query" name:"Description"`
+	RoutingStrategy            string           `position:"Query" name:"RoutingStrategy"`
+	UserId                     *[]string        `position:"Query" name:"UserId"  type:"Repeated"`
+	SkillLevel                 *[]string        `position:"Query" name:"SkillLevel"  type:"Repeated"`
+	InstanceId                 string           `position:"Query" name:"InstanceId"`
+	OutboundPhoneNumberId      *[]string        `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
+	SkillGroupId               string           `position:"Query" name:"SkillGroupId"`
+	Name                       string           `position:"Query" name:"Name"`
 }
 
 // ModifySkillGroupResponse is the response struct for api ModifySkillGroup
 type ModifySkillGroupResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateModifySkillGroupRequest creates a request to invoke ModifySkillGroup API
@@ -91,7 +97,7 @@ func CreateModifySkillGroupRequest() (request *ModifySkillGroupRequest) {
 	request = &ModifySkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ModifySkillGroup", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "ModifySkillGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,24 +17,32 @@ package ccc
 
 // Inbound is a nested struct in ccc response
 type Inbound struct {
-	AverageRingTime              float64 `json:"AverageRingTime" xml:"AverageRingTime"`
-	AverageTalkTime              float64 `json:"AverageTalkTime" xml:"AverageTalkTime"`
-	AverageWorkTime              float64 `json:"AverageWorkTime" xml:"AverageWorkTime"`
-	CallsConsulted               int64   `json:"CallsConsulted" xml:"CallsConsulted"`
-	CallsHandled                 int64   `json:"CallsHandled" xml:"CallsHandled"`
-	CallsHold                    int64   `json:"CallsHold" xml:"CallsHold"`
-	CallsOffered                 int64   `json:"CallsOffered" xml:"CallsOffered"`
-	CallsTransfered              int64   `json:"CallsTransfered" xml:"CallsTransfered"`
-	HandleRate                   float64 `json:"HandleRate" xml:"HandleRate"`
-	MaxRingTime                  int64   `json:"MaxRingTime" xml:"MaxRingTime"`
-	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
-	MaxWorkTime                  int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`
-	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
-	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
-	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
-	ServiceLevel20               float64 `json:"ServiceLevel20" xml:"ServiceLevel20"`
-	TotalHoldTime                int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
-	TotalRingTime                int64   `json:"TotalRingTime" xml:"TotalRingTime"`
-	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
-	TotalWorkTime                int64   `json:"TotalWorkTime" xml:"TotalWorkTime"`
+	GiveUpByAgentOfQueueCount                 int64   `json:"GiveUpByAgentOfQueueCount" xml:"GiveUpByAgentOfQueueCount"`
+	TotalRingTime                             int64   `json:"TotalRingTime" xml:"TotalRingTime"`
+	AnsweredByAgentOfQueueCount               int64   `json:"AnsweredByAgentOfQueueCount" xml:"AnsweredByAgentOfQueueCount"`
+	InComingQueueOfQueueCount                 int64   `json:"InComingQueueOfQueueCount" xml:"InComingQueueOfQueueCount"`
+	MaxRingTime                               int64   `json:"MaxRingTime" xml:"MaxRingTime"`
+	AverageRingTime                           int64   `json:"AverageRingTime" xml:"AverageRingTime"`
+	AnsweredByAgentOfQueueWaitTimeDuration    int64   `json:"AnsweredByAgentOfQueueWaitTimeDuration" xml:"AnsweredByAgentOfQueueWaitTimeDuration"`
+	MaxWorkTime                               int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`
+	TotalWorkTime                             int64   `json:"TotalWorkTime" xml:"TotalWorkTime"`
+	AverageHoldTime                           int64   `json:"AverageHoldTime" xml:"AverageHoldTime"`
+	SatisfactionSurveysOffered                int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
+	TotalHoldTime                             int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
+	MaxHoldTime                               int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`
+	SatisfactionSurveysResponded              int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
+	ServiceLevel20                            float64 `json:"ServiceLevel20" xml:"ServiceLevel20"`
+	AverageWorkTime                           int64   `json:"AverageWorkTime" xml:"AverageWorkTime"`
+	HandleRate                                float64 `json:"HandleRate" xml:"HandleRate"`
+	SatisfactionIndex                         float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
+	QueueMaxWaitTimeDuration                  int64   `json:"QueueMaxWaitTimeDuration" xml:"QueueMaxWaitTimeDuration"`
+	AverageTalkTime                           int64   `json:"AverageTalkTime" xml:"AverageTalkTime"`
+	AbandonedInQueueOfQueueCount              int64   `json:"AbandonedInQueueOfQueueCount" xml:"AbandonedInQueueOfQueueCount"`
+	OverFlowInQueueOfQueueCount               int64   `json:"OverFlowInQueueOfQueueCount" xml:"OverFlowInQueueOfQueueCount"`
+	MaxTalkTime                               int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
+	TotalTalkTime                             int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
+	QueueWaitTimeDuration                     int64   `json:"QueueWaitTimeDuration" xml:"QueueWaitTimeDuration"`
+	CallsOffered                              int64   `json:"CallsOffered" xml:"CallsOffered"`
+	CallsHandled                              int64   `json:"CallsHandled" xml:"CallsHandled"`
+	AnsweredByAgentOfQueueMaxWaitTimeDuration int64   `json:"AnsweredByAgentOfQueueMaxWaitTimeDuration" xml:"AnsweredByAgentOfQueueMaxWaitTimeDuration"`
 }
