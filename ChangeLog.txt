@@ -1,3 +1,7 @@
+2021-05-17 Version: v1.61.1090
+- Generated 2018-01-15 for `dcdn`.
+- Add DescribeDcdnRefreshTaskById.
+
 2021-05-14 Version: v1.61.1089
 - Generated 2019-12-30 for `facebody`.
 - Release ExtractFingerPrint.
