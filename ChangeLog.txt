@@ -1,3 +1,7 @@
+2021-05-17 Version: v1.61.1092
+- Generated 2017-12-25 for `OpenSearch`.
+- Add API ListQuotaReviewTasks.
+
 2021-05-17 Version: v1.61.1091
 - Generated 2017-07-05 for `CCC`.
 - Export new API for predictive dialer.
