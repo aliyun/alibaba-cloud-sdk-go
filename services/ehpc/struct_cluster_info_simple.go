@@ -27,6 +27,7 @@ type ClusterInfoSimple struct {
 	LoginNodes            string         `json:"LoginNodes" xml:"LoginNodes"`
 	NodeSuffix            string         `json:"NodeSuffix" xml:"NodeSuffix"`
 	RegionId              string         `json:"RegionId" xml:"RegionId"`
+	IsComputeEss          bool           `json:"IsComputeEss" xml:"IsComputeEss"`
 	SchedulerType         string         `json:"SchedulerType" xml:"SchedulerType"`
 	EhpcVersion           string         `json:"EhpcVersion" xml:"EhpcVersion"`
 	BaseOsTag             string         `json:"BaseOsTag" xml:"BaseOsTag"`

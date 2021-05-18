@@ -79,6 +79,7 @@ type AddNodesRequest struct {
 	JobQueue                string           `position:"Query" name:"JobQueue"`
 	ImageOwnerAlias         string           `position:"Query" name:"ImageOwnerAlias"`
 	SystemDiskType          string           `position:"Query" name:"SystemDiskType"`
+	MinCount                requests.Integer `position:"Query" name:"MinCount"`
 	SystemDiskSize          requests.Integer `position:"Query" name:"SystemDiskSize"`
 	InstanceType            string           `position:"Query" name:"InstanceType"`
 	HostNamePrefix          string           `position:"Query" name:"HostNamePrefix"`

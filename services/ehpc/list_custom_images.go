@@ -71,6 +71,7 @@ func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequ
 // ListCustomImagesRequest is the request struct for api ListCustomImages
 type ListCustomImagesRequest struct {
 	*requests.RpcRequest
+	ClusterId       string `position:"Query" name:"ClusterId"`
 	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
 	BaseOsTag       string `position:"Query" name:"BaseOsTag"`
 	InstanceType    string `position:"Query" name:"InstanceType"`

@@ -72,6 +72,7 @@ func (client *Client) CreateHybridClusterWithCallback(request *CreateHybridClust
 type CreateHybridClusterRequest struct {
 	*requests.RpcRequest
 	KeyPairName                 string                                  `position:"Query" name:"KeyPairName"`
+	MultiOs                     requests.Boolean                        `position:"Query" name:"MultiOs"`
 	SecurityGroupName           string                                  `position:"Query" name:"SecurityGroupName"`
 	OnPremiseVolumeRemotePath   string                                  `position:"Query" name:"OnPremiseVolumeRemotePath"`
 	ImageOwnerAlias             string                                  `position:"Query" name:"ImageOwnerAlias"`

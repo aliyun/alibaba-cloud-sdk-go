@@ -72,13 +72,15 @@ func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback 
 type ListNodesRequest struct {
 	*requests.RpcRequest
 	Role             string           `position:"Query" name:"Role"`
-	ClusterId        string           `position:"Query" name:"ClusterId"`
 	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	HostName         string           `position:"Query" name:"HostName"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	HostNamePrefix   string           `position:"Query" name:"HostNamePrefix"`
+	ClusterId        string           `position:"Query" name:"ClusterId"`
+	HostNameSuffix   string           `position:"Query" name:"HostNameSuffix"`
 	Filter           string           `position:"Query" name:"Filter"`
 	PrivateIpAddress string           `position:"Query" name:"PrivateIpAddress"`
 	Sequence         string           `position:"Query" name:"Sequence"`
-	HostName         string           `position:"Query" name:"HostName"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	SortBy           string           `position:"Query" name:"SortBy"`
 }
 

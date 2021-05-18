@@ -79,15 +79,16 @@ type DescribePriceRequest struct {
 
 // DescribePriceCommodities is a repeated param struct in DescribePriceRequest
 type DescribePriceCommodities struct {
-	Amount                  string `name:"Amount"`
-	Period                  string `name:"Period"`
-	NodeType                string `name:"NodeType"`
-	SystemDiskCategory      string `name:"SystemDiskCategory"`
-	InternetChargeType      string `name:"InternetChargeType"`
-	SystemDiskSize          string `name:"SystemDiskSize"`
-	InternetMaxBandWidthOut string `name:"InternetMaxBandWidthOut"`
-	InstanceType            string `name:"InstanceType"`
-	NetworkType             string `name:"NetworkType"`
+	Amount                     string `name:"Amount"`
+	Period                     string `name:"Period"`
+	NodeType                   string `name:"NodeType"`
+	SystemDiskCategory         string `name:"SystemDiskCategory"`
+	InternetChargeType         string `name:"InternetChargeType"`
+	SystemDiskPerformanceLevel string `name:"SystemDiskPerformanceLevel"`
+	SystemDiskSize             string `name:"SystemDiskSize"`
+	InternetMaxBandWidthOut    string `name:"InternetMaxBandWidthOut"`
+	InstanceType               string `name:"InstanceType"`
+	NetworkType                string `name:"NetworkType"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice

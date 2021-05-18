@@ -1,3 +1,8 @@
+2021-05-18 Version: v1.61.1093
+- Generated 2018-04-12 for `EHPC`.
+- Support MinCount for AddNodes.
+- Support HostNamePreffix and HostNameSuffix for ListNodes.
+
 2021-05-17 Version: v1.61.1092
 - Generated 2017-12-25 for `OpenSearch`.
 - Add API ListQuotaReviewTasks.

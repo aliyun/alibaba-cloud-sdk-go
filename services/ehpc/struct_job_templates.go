@@ -28,4 +28,11 @@ type JobTemplates struct {
 	ReRunable          bool   `json:"ReRunable" xml:"ReRunable"`
 	ArrayRequest       string `json:"ArrayRequest" xml:"ArrayRequest"`
 	Variables          string `json:"Variables" xml:"Variables"`
+	Queue              string `json:"Queue" xml:"Queue"`
+	ClockTime          string `json:"ClockTime" xml:"ClockTime"`
+	Node               int    `json:"Node" xml:"Node"`
+	Task               int    `json:"Task" xml:"Task"`
+	Thread             int    `json:"Thread" xml:"Thread"`
+	Mem                string `json:"Mem" xml:"Mem"`
+	Gpu                int    `json:"Gpu" xml:"Gpu"`
 }

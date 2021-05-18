@@ -17,17 +17,21 @@ package ehpc
 
 // QueueInfo is a nested struct in ehpc response
 type QueueInfo struct {
-	QueueName           string        `json:"QueueName" xml:"QueueName"`
-	SpotPriceLimit      float64       `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
-	EnableAutoGrow      bool          `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
-	MinNodesInQueue     int           `json:"MinNodesInQueue" xml:"MinNodesInQueue"`
-	InstanceType        string        `json:"InstanceType" xml:"InstanceType"`
-	ComputeInstanceType string        `json:"ComputeInstanceType" xml:"ComputeInstanceType"`
-	MaxNodesInQueue     int           `json:"MaxNodesInQueue" xml:"MaxNodesInQueue"`
-	ResourceGroupId     string        `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	EnableAutoShrink    bool          `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
-	QueueImageId        string        `json:"QueueImageId" xml:"QueueImageId"`
-	SpotStrategy        string        `json:"SpotStrategy" xml:"SpotStrategy"`
-	Type                string        `json:"Type" xml:"Type"`
-	InstanceTypes       InstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
+	QueueName           string              `json:"QueueName" xml:"QueueName"`
+	HostNameSuffix      string              `json:"HostNameSuffix" xml:"HostNameSuffix"`
+	SpotPriceLimit      float64             `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	EnableAutoGrow      bool                `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
+	HostNamePrefix      string              `json:"HostNamePrefix" xml:"HostNamePrefix"`
+	ImageId             string              `json:"ImageId" xml:"ImageId"`
+	MinNodesInQueue     int                 `json:"MinNodesInQueue" xml:"MinNodesInQueue"`
+	InstanceType        string              `json:"InstanceType" xml:"InstanceType"`
+	MaxNodesInQueue     int                 `json:"MaxNodesInQueue" xml:"MaxNodesInQueue"`
+	ResourceGroupId     string              `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	EnableAutoShrink    bool                `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
+	QueueImageId        string              `json:"QueueImageId" xml:"QueueImageId"`
+	SpotStrategy        string              `json:"SpotStrategy" xml:"SpotStrategy"`
+	Type                string              `json:"Type" xml:"Type"`
+	ComputeInstanceType ComputeInstanceType `json:"ComputeInstanceType" xml:"ComputeInstanceType"`
+	SpotInstanceTypes   SpotInstanceTypes   `json:"SpotInstanceTypes" xml:"SpotInstanceTypes"`
+	InstanceTypes       InstanceTypes       `json:"InstanceTypes" xml:"InstanceTypes"`
 }
