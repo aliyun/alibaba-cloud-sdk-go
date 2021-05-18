@@ -2,19 +2,19 @@ language: go
 
 go:
   - 1.10.x
-  - 1.11.x
   - 1.12.x
-  - 1.13.x
   - 1.14.x
   - 1.15.x
+  - 1.16.x
 
 branches: # build only on these branches
   only:
     - master
 
 notifications:
-    webhooks: https://oapi.dingtalk.com/robot/send?access_token=096ed387df243a6d60835aadeccc47165f3813bc7cb81cdd0cfeadfd28e3acc1
-    email: false
+  webhooks:
+    urls:
+      - https://oapi.dingtalk.com/robot/send?access_token=096ed387df243a6d60835aadeccc47165f3813bc7cb81cdd0cfeadfd28e3acc1
     on_success: change
     on_failure: always
 
