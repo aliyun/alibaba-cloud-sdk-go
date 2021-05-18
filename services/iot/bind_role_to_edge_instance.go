@@ -93,7 +93,7 @@ func CreateBindRoleToEdgeInstanceRequest() (request *BindRoleToEdgeInstanceReque
 	request = &BindRoleToEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindRoleToEdgeInstance", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BindRoleToEdgeInstance", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

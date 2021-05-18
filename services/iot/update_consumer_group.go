@@ -92,7 +92,7 @@ func CreateUpdateConsumerGroupRequest() (request *UpdateConsumerGroupRequest) {
 	request = &UpdateConsumerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateConsumerGroup", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateConsumerGroup", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

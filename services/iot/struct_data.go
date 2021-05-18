@@ -17,6 +17,7 @@ package iot
 
 // Data is a nested struct in iot response
 type Data struct {
+	IsEnable                  string                    `json:"IsEnable" xml:"IsEnable"`
 	LatestDeploymentStatus    int                       `json:"LatestDeploymentStatus" xml:"LatestDeploymentStatus"`
 	SourceData                string                    `json:"SourceData" xml:"SourceData"`
 	RoleAttachTime            string                    `json:"RoleAttachTime" xml:"RoleAttachTime"`
@@ -27,6 +28,8 @@ type Data struct {
 	RequestMethod             string                    `json:"RequestMethod" xml:"RequestMethod"`
 	Nickname                  string                    `json:"Nickname" xml:"Nickname"`
 	DevEui                    string                    `json:"DevEui" xml:"DevEui"`
+	ProjectId                 string                    `json:"ProjectId" xml:"ProjectId"`
+	IsBeian                   string                    `json:"IsBeian" xml:"IsBeian"`
 	GroupId                   string                    `json:"GroupId" xml:"GroupId"`
 	LatestDeploymentType      string                    `json:"LatestDeploymentType" xml:"LatestDeploymentType"`
 	OssPreSignedAddress       string                    `json:"OssPreSignedAddress" xml:"OssPreSignedAddress"`
@@ -49,9 +52,9 @@ type Data struct {
 	IsOpen                    bool                      `json:"IsOpen" xml:"IsOpen"`
 	ProductName               string                    `json:"ProductName" xml:"ProductName"`
 	Name                      string                    `json:"Name" xml:"Name"`
-	DeviceErrorMessage        string                    `json:"DeviceErrorMessage" xml:"DeviceErrorMessage"`
 	GmtCreateTimestamp        int64                     `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
-	RetryCount                int                       `json:"RetryCount" xml:"RetryCount"`
+	SpeechCode                string                    `json:"SpeechCode" xml:"SpeechCode"`
+	SpeechType                string                    `json:"SpeechType" xml:"SpeechType"`
 	DownloadUrl               string                    `json:"DownloadUrl" xml:"DownloadUrl"`
 	PageSize                  int                       `json:"PageSize" xml:"PageSize"`
 	Key                       string                    `json:"Key" xml:"Key"`
@@ -59,11 +62,14 @@ type Data struct {
 	SourceType                string                    `json:"SourceType" xml:"SourceType"`
 	ResultJson                string                    `json:"ResultJson" xml:"ResultJson"`
 	InstanceId                string                    `json:"InstanceId" xml:"InstanceId"`
+	Voice                     string                    `json:"Voice" xml:"Voice"`
 	Policy                    string                    `json:"Policy" xml:"Policy"`
 	DateFormat                string                    `json:"DateFormat" xml:"DateFormat"`
+	Volume                    int                       `json:"Volume" xml:"Volume"`
+	TenantId                  string                    `json:"TenantId" xml:"TenantId"`
 	DeviceOnline              int                       `json:"DeviceOnline" xml:"DeviceOnline"`
 	JobId                     string                    `json:"JobId" xml:"JobId"`
-	DeviceErrorCode           string                    `json:"DeviceErrorCode" xml:"DeviceErrorCode"`
+	Id                        int                       `json:"Id" xml:"Id"`
 	ProductSecret             string                    `json:"ProductSecret" xml:"ProductSecret"`
 	ScriptType                string                    `json:"ScriptType" xml:"ScriptType"`
 	PageNum                   int                       `json:"PageNum" xml:"PageNum"`
@@ -73,7 +79,6 @@ type Data struct {
 	DriverId                  string                    `json:"DriverId" xml:"DriverId"`
 	CurrentPage               int                       `json:"CurrentPage" xml:"CurrentPage"`
 	Signature                 string                    `json:"Signature" xml:"Signature"`
-	MaxRetryCount             int                       `json:"MaxRetryCount" xml:"MaxRetryCount"`
 	ObjectStorage             string                    `json:"ObjectStorage" xml:"ObjectStorage"`
 	DeviceCount               int                       `json:"DeviceCount" xml:"DeviceCount"`
 	ProtocolType              string                    `json:"ProtocolType" xml:"ProtocolType"`
@@ -87,18 +92,21 @@ type Data struct {
 	TargetType                string                    `json:"TargetType" xml:"TargetType"`
 	DeviceActive              int                       `json:"DeviceActive" xml:"DeviceActive"`
 	DriverVersion             string                    `json:"DriverVersion" xml:"DriverVersion"`
+	BizType                   string                    `json:"BizType" xml:"BizType"`
 	Password                  string                    `json:"Password" xml:"Password"`
 	GmtCompletedTimestamp     int64                     `json:"GmtCompletedTimestamp" xml:"GmtCompletedTimestamp"`
 	PageNo                    int                       `json:"PageNo" xml:"PageNo"`
-	Id                        string                    `json:"Id" xml:"Id"`
 	DriverConfig              string                    `json:"DriverConfig" xml:"DriverConfig"`
+	BizCode                   string                    `json:"BizCode" xml:"BizCode"`
 	RoleArn                   string                    `json:"RoleArn" xml:"RoleArn"`
+	Token                     string                    `json:"Token" xml:"Token"`
 	Tags                      string                    `json:"Tags" xml:"Tags"`
 	Configuration             string                    `json:"Configuration" xml:"Configuration"`
+	AuthMode                  int                       `json:"AuthMode" xml:"AuthMode"`
 	UtcCreatedOn              string                    `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
+	AppId                     string                    `json:"AppId" xml:"AppId"`
 	MessageId                 string                    `json:"MessageId" xml:"MessageId"`
 	FileUrl                   string                    `json:"FileUrl" xml:"FileUrl"`
-	Success                   bool                      `json:"Success" xml:"Success"`
 	Id2                       bool                      `json:"Id2" xml:"Id2"`
 	NodeType                  int                       `json:"NodeType" xml:"NodeType"`
 	ConfigCheckRule           string                    `json:"ConfigCheckRule" xml:"ConfigCheckRule"`
@@ -106,12 +114,15 @@ type Data struct {
 	ApiSrn                    string                    `json:"ApiSrn" xml:"ApiSrn"`
 	ScriptUrl                 string                    `json:"ScriptUrl" xml:"ScriptUrl"`
 	OSSAccessKeyId            string                    `json:"OSSAccessKeyId" xml:"OSSAccessKeyId"`
+	Text                      string                    `json:"Text" xml:"Text"`
 	ShareId                   string                    `json:"ShareId" xml:"ShareId"`
+	AudioFormat               string                    `json:"AudioFormat" xml:"AudioFormat"`
 	TargetData                string                    `json:"TargetData" xml:"TargetData"`
 	SourceConfig              string                    `json:"SourceConfig" xml:"SourceConfig"`
 	GroupName                 string                    `json:"GroupName" xml:"GroupName"`
 	CreateTime                int64                     `json:"CreateTime" xml:"CreateTime"`
 	DeploymentId              string                    `json:"DeploymentId" xml:"DeploymentId"`
+	BizId                     string                    `json:"BizId" xml:"BizId"`
 	FirmwareUrl               string                    `json:"FirmwareUrl" xml:"FirmwareUrl"`
 	RoleAttachTimestamp       int64                     `json:"RoleAttachTimestamp" xml:"RoleAttachTimestamp"`
 	GmtOpened                 int64                     `json:"GmtOpened" xml:"GmtOpened"`
@@ -119,6 +130,7 @@ type Data struct {
 	GmtModifiedTimestamp      int64                     `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
 	ApiPath                   string                    `json:"ApiPath" xml:"ApiPath"`
 	Status                    int                       `json:"Status" xml:"Status"`
+	Protocol                  string                    `json:"Protocol" xml:"Protocol"`
 	TopicFilter               string                    `json:"TopicFilter" xml:"TopicFilter"`
 	Result                    string                    `json:"Result" xml:"Result"`
 	DeviceSecret              string                    `json:"DeviceSecret" xml:"DeviceSecret"`
@@ -129,12 +141,14 @@ type Data struct {
 	IotId                     string                    `json:"IotId" xml:"IotId"`
 	GroupDesc                 string                    `json:"GroupDesc" xml:"GroupDesc"`
 	Argument                  string                    `json:"Argument" xml:"Argument"`
+	SpeechRate                int                       `json:"SpeechRate" xml:"SpeechRate"`
 	InvalidDeviceNameList     InvalidDeviceNameList     `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
 	ResultList                ResultList                `json:"ResultList" xml:"ResultList"`
 	FieldNameList             FieldNameList             `json:"FieldNameList" xml:"FieldNameList"`
 	InvalidDeviceNicknameList InvalidDeviceNicknameList `json:"InvalidDeviceNicknameList" xml:"InvalidDeviceNicknameList"`
 	RouteContext              RouteContext              `json:"RouteContext" xml:"RouteContext"`
 	SqlTemplateDTO            SqlTemplateDTO            `json:"SqlTemplateDTO" xml:"SqlTemplateDTO"`
+	TokenInfo                 TokenInfo                 `json:"TokenInfo" xml:"TokenInfo"`
 	TaskList                  []Task                    `json:"TaskList" xml:"TaskList"`
 	ModelVersions             []ModelVersion            `json:"ModelVersions" xml:"ModelVersions"`
 	List                      ListInGetThingTopo        `json:"List" xml:"List"`

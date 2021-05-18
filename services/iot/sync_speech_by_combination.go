@@ -83,11 +83,11 @@ type SyncSpeechByCombinationRequest struct {
 // SyncSpeechByCombinationResponse is the response struct for api SyncSpeechByCombination
 type SyncSpeechByCombinationResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                        `json:"RequestId" xml:"RequestId"`
+	Success      bool                          `json:"Success" xml:"Success"`
+	Code         string                        `json:"Code" xml:"Code"`
+	ErrorMessage string                        `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInSyncSpeechByCombination `json:"Data" xml:"Data"`
 }
 
 // CreateSyncSpeechByCombinationRequest creates a request to invoke SyncSpeechByCombination API
@@ -95,7 +95,7 @@ func CreateSyncSpeechByCombinationRequest() (request *SyncSpeechByCombinationReq
 	request = &SyncSpeechByCombinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SyncSpeechByCombination", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SyncSpeechByCombination", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

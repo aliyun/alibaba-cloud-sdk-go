@@ -85,11 +85,11 @@ type PrintByTemplateRequest struct {
 // PrintByTemplateResponse is the response struct for api PrintByTemplate
 type PrintByTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                `json:"RequestId" xml:"RequestId"`
+	Success      bool                  `json:"Success" xml:"Success"`
+	Code         string                `json:"Code" xml:"Code"`
+	ErrorMessage string                `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInPrintByTemplate `json:"Data" xml:"Data"`
 }
 
 // CreatePrintByTemplateRequest creates a request to invoke PrintByTemplate API
@@ -97,7 +97,7 @@ func CreatePrintByTemplateRequest() (request *PrintByTemplateRequest) {
 	request = &PrintByTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "PrintByTemplate", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "PrintByTemplate", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

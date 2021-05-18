@@ -1,3 +1,17 @@
+2021-05-18 Version: v1.61.1094
+- Generated 2018-01-20 for `Iot`.
+- Add IoT Studio SetStudioProjectCooperation API.
+- Add IoT Studio QueryStudioProjectList API.
+- Add IoT Studio QueryStudioAppList API.
+- Add IoT Studio QueryStudioAppPageListOpen API.
+- Add IoT Studio QueryStudioAppDomainListOpen API.
+- Add IoT Studio DeleteStudioAppDomainOpen API.
+- Add IoT Studio CreateStudioAppDomainOpen API.
+- Add IoT Studio GetStudioAppTokenOpen API.
+- Add IoT Studio SetupStudioAppAuthModeOpen API.
+- Add IoT Studio RefreshStudioAppTokenOpen API.
+- Add IoT Studio PublishStudioApp API.
+
 2021-05-18 Version: v1.61.1093
 - Generated 2018-04-12 for `EHPC`.
 - Support MinCount for AddNodes.

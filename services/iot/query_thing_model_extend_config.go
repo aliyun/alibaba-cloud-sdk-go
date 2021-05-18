@@ -97,7 +97,7 @@ func CreateQueryThingModelExtendConfigRequest() (request *QueryThingModelExtendC
 	request = &QueryThingModelExtendConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryThingModelExtendConfig", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryThingModelExtendConfig", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

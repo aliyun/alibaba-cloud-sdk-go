@@ -95,7 +95,7 @@ func CreateCancelOTATaskByJobRequest() (request *CancelOTATaskByJobRequest) {
 	request = &CancelOTATaskByJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CancelOTATaskByJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CancelOTATaskByJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateQueryEdgeInstanceMessageRoutingRequest() (request *QueryEdgeInstanceM
 	request = &QueryEdgeInstanceMessageRoutingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceMessageRouting", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceMessageRouting", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

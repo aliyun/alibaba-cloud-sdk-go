@@ -92,7 +92,7 @@ func CreateDeleteEdgeInstanceMessageRoutingRequest() (request *DeleteEdgeInstanc
 	request = &DeleteEdgeInstanceMessageRoutingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteEdgeInstanceMessageRouting", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteEdgeInstanceMessageRouting", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,22 +17,31 @@ package iot
 
 // Items is a nested struct in iot response
 type Items struct {
-	JobId                 string                                         `json:"JobId" xml:"JobId"`
-	Status                int                                            `json:"Status" xml:"Status"`
-	ProductKey            string                                         `json:"ProductKey" xml:"ProductKey"`
+	Text                  string                                         `json:"Text" xml:"Text"`
+	SpeechCode            string                                         `json:"SpeechCode" xml:"SpeechCode"`
+	SpeechType            string                                         `json:"SpeechType" xml:"SpeechType"`
 	Strategy              int                                            `json:"Strategy" xml:"Strategy"`
 	SourceInstanceName    string                                         `json:"SourceInstanceName" xml:"SourceInstanceName"`
 	SourceRegion          string                                         `json:"SourceRegion" xml:"SourceRegion"`
+	TargetAliyunId        string                                         `json:"TargetAliyunId" xml:"TargetAliyunId"`
+	TargetUid             string                                         `json:"TargetUid" xml:"TargetUid"`
+	TargetRegion          string                                         `json:"TargetRegion" xml:"TargetRegion"`
+	BizCode               string                                         `json:"BizCode" xml:"BizCode"`
+	Voice                 string                                         `json:"Voice" xml:"Voice"`
+	JobId                 string                                         `json:"JobId" xml:"JobId"`
+	Status                int                                            `json:"Status" xml:"Status"`
+	Label                 string                                         `json:"Label" xml:"Label"`
+	ProductKey            string                                         `json:"ProductKey" xml:"ProductKey"`
 	TargetInstanceId      string                                         `json:"TargetInstanceId" xml:"TargetInstanceId"`
 	GmtCreate             int64                                          `json:"GmtCreate" xml:"GmtCreate"`
 	SourceUid             string                                         `json:"SourceUid" xml:"SourceUid"`
-	TargetAliyunId        string                                         `json:"TargetAliyunId" xml:"TargetAliyunId"`
+	Value                 string                                         `json:"Value" xml:"Value"`
 	DeviceName            string                                         `json:"DeviceName" xml:"DeviceName"`
 	TargetInstanceName    string                                         `json:"TargetInstanceName" xml:"TargetInstanceName"`
 	Total                 int                                            `json:"Total" xml:"Total"`
 	SourceInstanceId      string                                         `json:"SourceInstanceId" xml:"SourceInstanceId"`
 	GmtModified           int64                                          `json:"GmtModified" xml:"GmtModified"`
-	TargetUid             string                                         `json:"TargetUid" xml:"TargetUid"`
-	TargetRegion          string                                         `json:"TargetRegion" xml:"TargetRegion"`
+	SpeechList            SpeechListInQuerySpeechPushJobSpeech           `json:"SpeechList" xml:"SpeechList"`
+	VoiceList             VoiceList                                      `json:"VoiceList" xml:"VoiceList"`
 	TargetInstanceConfigs TargetInstanceConfigsInListDeviceDistributeJob `json:"TargetInstanceConfigs" xml:"TargetInstanceConfigs"`
 }

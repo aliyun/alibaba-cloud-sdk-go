@@ -86,7 +86,7 @@ func CreateOpenIotServiceRequest() (request *OpenIotServiceRequest) {
 	request = &OpenIotServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "OpenIotService", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "OpenIotService", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

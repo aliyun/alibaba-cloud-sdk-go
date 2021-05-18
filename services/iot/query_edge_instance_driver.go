@@ -94,7 +94,7 @@ func CreateQueryEdgeInstanceDriverRequest() (request *QueryEdgeInstanceDriverReq
 	request = &QueryEdgeInstanceDriverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceDriver", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceDriver", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

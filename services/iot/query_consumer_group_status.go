@@ -99,7 +99,7 @@ func CreateQueryConsumerGroupStatusRequest() (request *QueryConsumerGroupStatusR
 	request = &QueryConsumerGroupStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryConsumerGroupStatus", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryConsumerGroupStatus", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

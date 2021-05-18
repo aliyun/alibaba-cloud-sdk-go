@@ -91,7 +91,7 @@ func CreateQueryDeviceDistributeDetailRequest() (request *QueryDeviceDistributeD
 	request = &QueryDeviceDistributeDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceDistributeDetail", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceDistributeDetail", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -112,7 +112,7 @@ func CreateCreateOTAStaticUpgradeJobRequest() (request *CreateOTAStaticUpgradeJo
 	request = &CreateOTAStaticUpgradeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateOTAStaticUpgradeJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateOTAStaticUpgradeJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

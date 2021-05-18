@@ -92,7 +92,7 @@ func CreateSetDeviceGroupTagsRequest() (request *SetDeviceGroupTagsRequest) {
 	request = &SetDeviceGroupTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SetDeviceGroupTags", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SetDeviceGroupTags", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

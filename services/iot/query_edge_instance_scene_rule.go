@@ -94,7 +94,7 @@ func CreateQueryEdgeInstanceSceneRuleRequest() (request *QueryEdgeInstanceSceneR
 	request = &QueryEdgeInstanceSceneRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceSceneRule", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceSceneRule", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

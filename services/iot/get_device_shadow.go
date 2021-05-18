@@ -93,7 +93,7 @@ func CreateGetDeviceShadowRequest() (request *GetDeviceShadowRequest) {
 	request = &GetDeviceShadowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetDeviceShadow", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetDeviceShadow", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

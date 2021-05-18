@@ -93,7 +93,7 @@ func CreateGetDeviceTunnelShareStatusRequest() (request *GetDeviceTunnelShareSta
 	request = &GetDeviceTunnelShareStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetDeviceTunnelShareStatus", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetDeviceTunnelShareStatus", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

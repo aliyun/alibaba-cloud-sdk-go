@@ -93,7 +93,7 @@ func CreateBatchBindProductsIntoProjectRequest() (request *BatchBindProductsInto
 	request = &BatchBindProductsIntoProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchBindProductsIntoProject", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchBindProductsIntoProject", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

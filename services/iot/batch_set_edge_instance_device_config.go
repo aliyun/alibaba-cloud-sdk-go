@@ -98,7 +98,7 @@ func CreateBatchSetEdgeInstanceDeviceConfigRequest() (request *BatchSetEdgeInsta
 	request = &BatchSetEdgeInstanceDeviceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchSetEdgeInstanceDeviceConfig", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchSetEdgeInstanceDeviceConfig", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }
