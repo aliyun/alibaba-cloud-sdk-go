@@ -17,6 +17,7 @@ package dataworks_public
 
 // File is a nested struct in dataworks_public response
 type File struct {
+	AutoParsing     bool   `json:"AutoParsing" xml:"AutoParsing"`
 	LastEditTime    int64  `json:"LastEditTime" xml:"LastEditTime"`
 	ConnectionName  string `json:"ConnectionName" xml:"ConnectionName"`
 	Owner           string `json:"Owner" xml:"Owner"`

@@ -17,6 +17,7 @@ package dataworks_public
 
 // NodeInputOutput is a nested struct in dataworks_public response
 type NodeInputOutput struct {
+	ParseType    string `json:"ParseType" xml:"ParseType"`
 	Output       string `json:"Output" xml:"Output"`
 	Input        string `json:"Input" xml:"Input"`
 	RefTableName string `json:"RefTableName" xml:"RefTableName"`

@@ -166,8 +166,8 @@ type Data struct {
 	AlertMethods        []string              `json:"AlertMethods" xml:"AlertMethods"`
 	Deployment          Deployment            `json:"Deployment" xml:"Deployment"`
 	File                File                  `json:"File" xml:"File"`
-	NodeConfiguration   NodeConfiguration     `json:"NodeConfiguration" xml:"NodeConfiguration"`
 	BlockInstance       BlockInstance         `json:"BlockInstance" xml:"BlockInstance"`
+	NodeConfiguration   NodeConfiguration     `json:"NodeConfiguration" xml:"NodeConfiguration"`
 	LastInstance        LastInstance          `json:"LastInstance" xml:"LastInstance"`
 	Rules               []RulesItem           `json:"Rules" xml:"Rules"`
 	DataEntityList      []DataEntityListItem  `json:"DataEntityList" xml:"DataEntityList"`

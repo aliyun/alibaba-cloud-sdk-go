@@ -94,6 +94,7 @@ type CreateFileRequest struct {
 	DependentType           string           `position:"Body" name:"DependentType"`
 	FileFolderPath          string           `position:"Body" name:"FileFolderPath"`
 	FileDescription         string           `position:"Body" name:"FileDescription"`
+	AutoParsing             requests.Boolean `position:"Body" name:"AutoParsing"`
 }
 
 // CreateFileResponse is the response struct for api CreateFile
