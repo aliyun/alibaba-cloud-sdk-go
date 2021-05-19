@@ -89,7 +89,7 @@ func CreateUpdateUserConfigRequest() (request *UpdateUserConfigRequest) {
 	request = &UpdateUserConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateUserConfig", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateUserConfig", "", "")
 	request.Method = requests.POST
 	return
 }

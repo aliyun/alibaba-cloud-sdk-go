@@ -90,7 +90,7 @@ func CreateCreateAsrVocabRequest() (request *CreateAsrVocabRequest) {
 	request = &CreateAsrVocabRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateAsrVocab", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "CreateAsrVocab", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -39,8 +39,13 @@ type Param struct {
 	CompareOperator       string             `json:"CompareOperator" xml:"CompareOperator"`
 	CheckType             int                `json:"CheckType" xml:"CheckType"`
 	MaxEmotionChangeValue int                `json:"MaxEmotionChangeValue" xml:"MaxEmotionChangeValue"`
+	NotRegex              string             `json:"NotRegex" xml:"NotRegex"`
+	SimilarityThreshold   float64            `json:"Similarity_threshold" xml:"Similarity_threshold"`
+	DelayTime             int                `json:"DelayTime" xml:"DelayTime"`
 	OperKeyWords          OperKeyWords       `json:"OperKeyWords" xml:"OperKeyWords"`
 	References            References         `json:"References" xml:"References"`
 	SimilarlySentences    SimilarlySentences `json:"SimilarlySentences" xml:"SimilarlySentences"`
 	Excludes              Excludes           `json:"Excludes" xml:"Excludes"`
+	Pvalues               Pvalues            `json:"Pvalues" xml:"Pvalues"`
+	AntModelInfo          AntModelInfo       `json:"AntModelInfo" xml:"AntModelInfo"`
 }

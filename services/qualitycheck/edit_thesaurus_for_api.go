@@ -90,7 +90,7 @@ func CreateEditThesaurusForApiRequest() (request *EditThesaurusForApiRequest) {
 	request = &EditThesaurusForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "EditThesaurusForApi", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "EditThesaurusForApi", "", "")
 	request.Method = requests.POST
 	return
 }

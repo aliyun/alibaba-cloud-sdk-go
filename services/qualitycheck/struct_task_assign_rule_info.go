@@ -27,6 +27,11 @@ type TaskAssignRuleInfo struct {
 	UpdateTime     string                     `json:"UpdateTime" xml:"UpdateTime"`
 	AgentsStr      string                     `json:"AgentsStr" xml:"AgentsStr"`
 	SkillGroupsStr string                     `json:"SkillGroupsStr" xml:"SkillGroupsStr"`
+	CallTimeStart  int64                      `json:"CallTimeStart" xml:"CallTimeStart"`
+	CallTimeEnd    int64                      `json:"CallTimeEnd" xml:"CallTimeEnd"`
+	AssignmentType int                        `json:"AssignmentType" xml:"AssignmentType"`
+	RuleName       string                     `json:"RuleName" xml:"RuleName"`
+	SamplingMode   SamplingMode               `json:"SamplingMode" xml:"SamplingMode"`
 	Agents         Agents                     `json:"Agents" xml:"Agents"`
 	SkillGroups    SkillGroups                `json:"SkillGroups" xml:"SkillGroups"`
 	Reviewers      Reviewers                  `json:"Reviewers" xml:"Reviewers"`

@@ -90,7 +90,7 @@ func CreateRestartAsrTaskRequest() (request *RestartAsrTaskRequest) {
 	request = &RestartAsrTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "RestartAsrTask", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "RestartAsrTask", "", "")
 	request.Method = requests.POST
 	return
 }

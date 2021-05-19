@@ -89,7 +89,7 @@ func CreateUpdateSkillGroupConfigRequest() (request *UpdateSkillGroupConfigReque
 	request = &UpdateSkillGroupConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateSkillGroupConfig", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "UpdateSkillGroupConfig", "", "")
 	request.Method = requests.POST
 	return
 }

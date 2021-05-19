@@ -90,7 +90,7 @@ func CreateDeleteCustomizationConfigRequest() (request *DeleteCustomizationConfi
 	request = &DeleteCustomizationConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteCustomizationConfig", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteCustomizationConfig", "", "")
 	request.Method = requests.POST
 	return
 }

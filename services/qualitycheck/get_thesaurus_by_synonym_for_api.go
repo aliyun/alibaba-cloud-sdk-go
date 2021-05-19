@@ -90,7 +90,7 @@ func CreateGetThesaurusBySynonymForApiRequest() (request *GetThesaurusBySynonymF
 	request = &GetThesaurusBySynonymForApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetThesaurusBySynonymForApi", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetThesaurusBySynonymForApi", "", "")
 	request.Method = requests.POST
 	return
 }

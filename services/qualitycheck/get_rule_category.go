@@ -90,7 +90,7 @@ func CreateGetRuleCategoryRequest() (request *GetRuleCategoryRequest) {
 	request = &GetRuleCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetRuleCategory", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetRuleCategory", "", "")
 	request.Method = requests.POST
 	return
 }

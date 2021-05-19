@@ -90,7 +90,7 @@ func CreateDeleteAsrVocabRequest() (request *DeleteAsrVocabRequest) {
 	request = &DeleteAsrVocabRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteAsrVocab", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "DeleteAsrVocab", "", "")
 	request.Method = requests.POST
 	return
 }

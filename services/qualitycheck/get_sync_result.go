@@ -93,7 +93,7 @@ func CreateGetSyncResultRequest() (request *GetSyncResultRequest) {
 	request = &GetSyncResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetSyncResult", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "GetSyncResult", "", "")
 	request.Method = requests.POST
 	return
 }

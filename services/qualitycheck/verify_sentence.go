@@ -93,7 +93,7 @@ func CreateVerifySentenceRequest() (request *VerifySentenceRequest) {
 	request = &VerifySentenceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "VerifySentence", "Qualitycheck", "openAPI")
+	request.InitWithApiInfo("Qualitycheck", "2019-01-15", "VerifySentence", "", "")
 	request.Method = requests.POST
 	return
 }
