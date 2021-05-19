@@ -1,3 +1,7 @@
+2021-05-19 Version: v1.61.1095
+- Generated 2020-07-02 for `scsp`.
+- Publish multi language sdk.
+
 2021-05-18 Version: v1.61.1094
 - Generated 2018-01-20 for `Iot`.
 - Add IoT Studio SetStudioProjectCooperation API.
