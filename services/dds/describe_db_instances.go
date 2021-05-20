@@ -108,8 +108,8 @@ type DescribeDBInstancesTag struct {
 type DescribeDBInstancesResponse struct {
 	*responses.BaseResponse
 	TotalCount  int                              `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int                              `json:"PageSize" xml:"PageSize"`
 	RequestId   string                           `json:"RequestId" xml:"RequestId"`
+	PageSize    int                              `json:"PageSize" xml:"PageSize"`
 	PageNumber  int                              `json:"PageNumber" xml:"PageNumber"`
 	DBInstances DBInstancesInDescribeDBInstances `json:"DBInstances" xml:"DBInstances"`
 }
@@ -119,7 +119,7 @@ func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {
 	request = &DescribeDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstances", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstances", "", "")
 	request.Method = requests.POST
 	return
 }

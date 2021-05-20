@@ -83,10 +83,10 @@ type DescribeParameterTemplatesRequest struct {
 // DescribeParameterTemplatesResponse is the response struct for api DescribeParameterTemplates
 type DescribeParameterTemplatesResponse struct {
 	*responses.BaseResponse
+	ParameterCount string     `json:"ParameterCount" xml:"ParameterCount"`
+	EngineVersion  string     `json:"EngineVersion" xml:"EngineVersion"`
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
 	Engine         string     `json:"Engine" xml:"Engine"`
-	EngineVersion  string     `json:"EngineVersion" xml:"EngineVersion"`
-	ParameterCount string     `json:"ParameterCount" xml:"ParameterCount"`
 	Parameters     Parameters `json:"Parameters" xml:"Parameters"`
 }
 
@@ -95,7 +95,7 @@ func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTempla
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeParameterTemplates", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeParameterTemplates", "", "")
 	request.Method = requests.POST
 	return
 }

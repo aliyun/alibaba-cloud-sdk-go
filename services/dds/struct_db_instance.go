@@ -52,9 +52,9 @@ type DBInstance struct {
 	ProtocolType                string                                   `json:"ProtocolType" xml:"ProtocolType"`
 	KindCode                    string                                   `json:"KindCode" xml:"KindCode"`
 	LockMode                    string                                   `json:"LockMode" xml:"LockMode"`
-	ShardList                   ShardListInDescribeDBInstances           `json:"ShardList" xml:"ShardList"`
 	ReplicaSets                 ReplicaSetsInDescribeDBInstanceAttribute `json:"ReplicaSets" xml:"ReplicaSets"`
+	Tags                        TagsInDescribeDBInstances                `json:"Tags" xml:"Tags"`
 	MongosList                  MongosListInDescribeDBInstances          `json:"MongosList" xml:"MongosList"`
-	Tags                        TagsInDescribeDBInstanceAttribute        `json:"Tags" xml:"Tags"`
+	ShardList                   ShardListInDescribeDBInstances           `json:"ShardList" xml:"ShardList"`
 	ConfigserverList            ConfigserverList                         `json:"ConfigserverList" xml:"ConfigserverList"`
 }

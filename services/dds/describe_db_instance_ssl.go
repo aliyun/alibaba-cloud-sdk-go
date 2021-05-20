@@ -93,7 +93,7 @@ func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest
 	request = &DescribeDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstanceSSL", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstanceSSL", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -98,7 +98,7 @@ func CreateEvaluateResourceRequest() (request *EvaluateResourceRequest) {
 	request = &EvaluateResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "EvaluateResource", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "EvaluateResource", "", "")
 	request.Method = requests.POST
 	return
 }
