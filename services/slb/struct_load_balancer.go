@@ -41,5 +41,6 @@ type LoadBalancer struct {
 	Bandwidth                    int                         `json:"Bandwidth" xml:"Bandwidth"`
 	InternetChargeTypeAlias      string                      `json:"InternetChargeTypeAlias" xml:"InternetChargeTypeAlias"`
 	LoadBalancerSpec             string                      `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
+	DeleteProtection             string                      `json:"DeleteProtection" xml:"DeleteProtection"`
 	Tags                         TagsInDescribeLoadBalancers `json:"Tags" xml:"Tags"`
 }
