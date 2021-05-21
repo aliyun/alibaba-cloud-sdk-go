@@ -77,6 +77,7 @@ type ApplyNodesRequest struct {
 	AllocatePublicAddress         requests.Boolean               `position:"Query" name:"AllocatePublicAddress"`
 	InternetMaxBandWidthOut       requests.Integer               `position:"Query" name:"InternetMaxBandWidthOut"`
 	ResourceAmountType            string                         `position:"Query" name:"ResourceAmountType"`
+	StrictResourceProvision       requests.Boolean               `position:"Query" name:"StrictResourceProvision"`
 	SystemDiskType                string                         `position:"Query" name:"SystemDiskType"`
 	Cores                         requests.Integer               `position:"Query" name:"Cores"`
 	SystemDiskSize                requests.Integer               `position:"Query" name:"SystemDiskSize"`
