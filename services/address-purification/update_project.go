@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateProject invokes the address_purification.UpdateProject API synchronously
-// api document: https://help.aliyun.com/api/address-purification/updateproject.html
 func (client *Client) UpdateProject(request *UpdateProjectRequest) (response *UpdateProjectResponse, err error) {
 	response = CreateUpdateProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateProject(request *UpdateProjectRequest) (response *Up
 }
 
 // UpdateProjectWithChan invokes the address_purification.UpdateProject API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/updateproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateProjectWithChan(request *UpdateProjectRequest) (<-chan *UpdateProjectResponse, <-chan error) {
 	responseChan := make(chan *UpdateProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateProjectWithChan(request *UpdateProjectRequest) (<-ch
 }
 
 // UpdateProjectWithCallback invokes the address_purification.UpdateProject API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/updateproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateProjectWithCallback(request *UpdateProjectRequest, callback func(response *UpdateProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetAddressSimilarity invokes the address_purification.GetAddressSimilarity API synchronously
-// api document: https://help.aliyun.com/api/address-purification/getaddresssimilarity.html
 func (client *Client) GetAddressSimilarity(request *GetAddressSimilarityRequest) (response *GetAddressSimilarityResponse, err error) {
 	response = CreateGetAddressSimilarityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAddressSimilarity(request *GetAddressSimilarityRequest)
 }
 
 // GetAddressSimilarityWithChan invokes the address_purification.GetAddressSimilarity API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/getaddresssimilarity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAddressSimilarityWithChan(request *GetAddressSimilarityRequest) (<-chan *GetAddressSimilarityResponse, <-chan error) {
 	responseChan := make(chan *GetAddressSimilarityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAddressSimilarityWithChan(request *GetAddressSimilarity
 }
 
 // GetAddressSimilarityWithCallback invokes the address_purification.GetAddressSimilarity API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/getaddresssimilarity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAddressSimilarityWithCallback(request *GetAddressSimilarityRequest, callback func(response *GetAddressSimilarityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

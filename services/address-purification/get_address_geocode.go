@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetZipcode invokes the address_purification.GetZipcode API synchronously
-func (client *Client) GetZipcode(request *GetZipcodeRequest) (response *GetZipcodeResponse, err error) {
-	response = CreateGetZipcodeResponse()
+// GetAddressGeocode invokes the address_purification.GetAddressGeocode API synchronously
+func (client *Client) GetAddressGeocode(request *GetAddressGeocodeRequest) (response *GetAddressGeocodeResponse, err error) {
+	response = CreateGetAddressGeocodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetZipcodeWithChan invokes the address_purification.GetZipcode API asynchronously
-func (client *Client) GetZipcodeWithChan(request *GetZipcodeRequest) (<-chan *GetZipcodeResponse, <-chan error) {
-	responseChan := make(chan *GetZipcodeResponse, 1)
+// GetAddressGeocodeWithChan invokes the address_purification.GetAddressGeocode API asynchronously
+func (client *Client) GetAddressGeocodeWithChan(request *GetAddressGeocodeRequest) (<-chan *GetAddressGeocodeResponse, <-chan error) {
+	responseChan := make(chan *GetAddressGeocodeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetZipcode(request)
+		response, err := client.GetAddressGeocode(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetZipcodeWithChan(request *GetZipcodeRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
-// GetZipcodeWithCallback invokes the address_purification.GetZipcode API asynchronously
-func (client *Client) GetZipcodeWithCallback(request *GetZipcodeRequest, callback func(response *GetZipcodeResponse, err error)) <-chan int {
+// GetAddressGeocodeWithCallback invokes the address_purification.GetAddressGeocode API asynchronously
+func (client *Client) GetAddressGeocodeWithCallback(request *GetAddressGeocodeRequest, callback func(response *GetAddressGeocodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetZipcodeResponse
+		var response *GetAddressGeocodeResponse
 		var err error
 		defer close(result)
-		response, err = client.GetZipcode(request)
+		response, err = client.GetAddressGeocode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) GetZipcodeWithCallback(request *GetZipcodeRequest, callbac
 	return result
 }
 
-// GetZipcodeRequest is the request struct for api GetZipcode
-type GetZipcodeRequest struct {
+// GetAddressGeocodeRequest is the request struct for api GetAddressGeocode
+type GetAddressGeocodeRequest struct {
 	*requests.RpcRequest
 	DefaultProvince string `position:"Body" name:"DefaultProvince"`
 	ServiceCode     string `position:"Body" name:"ServiceCode"`
@@ -79,26 +79,26 @@ type GetZipcodeRequest struct {
 	Text            string `position:"Body" name:"Text"`
 }
 
-// GetZipcodeResponse is the response struct for api GetZipcode
-type GetZipcodeResponse struct {
+// GetAddressGeocodeResponse is the response struct for api GetAddressGeocode
+type GetAddressGeocodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateGetZipcodeRequest creates a request to invoke GetZipcode API
-func CreateGetZipcodeRequest() (request *GetZipcodeRequest) {
-	request = &GetZipcodeRequest{
+// CreateGetAddressGeocodeRequest creates a request to invoke GetAddressGeocode API
+func CreateGetAddressGeocodeRequest() (request *GetAddressGeocodeRequest) {
+	request = &GetAddressGeocodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("address-purification", "2019-11-18", "GetZipcode", "addrp", "openAPI")
+	request.InitWithApiInfo("address-purification", "2019-11-18", "GetAddressGeocode", "addrp", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetZipcodeResponse creates a response to parse from GetZipcode response
-func CreateGetZipcodeResponse() (response *GetZipcodeResponse) {
-	response = &GetZipcodeResponse{
+// CreateGetAddressGeocodeResponse creates a response to parse from GetAddressGeocode response
+func CreateGetAddressGeocodeResponse() (response *GetAddressGeocodeResponse) {
+	response = &GetAddressGeocodeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

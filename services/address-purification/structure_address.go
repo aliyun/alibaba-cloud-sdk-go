@@ -21,7 +21,6 @@ import (
 )
 
 // StructureAddress invokes the address_purification.StructureAddress API synchronously
-// api document: https://help.aliyun.com/api/address-purification/structureaddress.html
 func (client *Client) StructureAddress(request *StructureAddressRequest) (response *StructureAddressResponse, err error) {
 	response = CreateStructureAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StructureAddress(request *StructureAddressRequest) (respon
 }
 
 // StructureAddressWithChan invokes the address_purification.StructureAddress API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/structureaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StructureAddressWithChan(request *StructureAddressRequest) (<-chan *StructureAddressResponse, <-chan error) {
 	responseChan := make(chan *StructureAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StructureAddressWithChan(request *StructureAddressRequest)
 }
 
 // StructureAddressWithCallback invokes the address_purification.StructureAddress API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/structureaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StructureAddressWithCallback(request *StructureAddressRequest, callback func(response *StructureAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

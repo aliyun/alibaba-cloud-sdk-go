@@ -21,7 +21,6 @@ import (
 )
 
 // ExtractAddress invokes the address_purification.ExtractAddress API synchronously
-// api document: https://help.aliyun.com/api/address-purification/extractaddress.html
 func (client *Client) ExtractAddress(request *ExtractAddressRequest) (response *ExtractAddressResponse, err error) {
 	response = CreateExtractAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExtractAddress(request *ExtractAddressRequest) (response *
 }
 
 // ExtractAddressWithChan invokes the address_purification.ExtractAddress API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/extractaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExtractAddressWithChan(request *ExtractAddressRequest) (<-chan *ExtractAddressResponse, <-chan error) {
 	responseChan := make(chan *ExtractAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExtractAddressWithChan(request *ExtractAddressRequest) (<-
 }
 
 // ExtractAddressWithCallback invokes the address_purification.ExtractAddress API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/extractaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExtractAddressWithCallback(request *ExtractAddressRequest, callback func(response *ExtractAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

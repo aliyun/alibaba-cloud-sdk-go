@@ -21,7 +21,6 @@ import (
 )
 
 // GetAddressDivisionCode invokes the address_purification.GetAddressDivisionCode API synchronously
-// api document: https://help.aliyun.com/api/address-purification/getaddressdivisioncode.html
 func (client *Client) GetAddressDivisionCode(request *GetAddressDivisionCodeRequest) (response *GetAddressDivisionCodeResponse, err error) {
 	response = CreateGetAddressDivisionCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAddressDivisionCode(request *GetAddressDivisionCodeRequ
 }
 
 // GetAddressDivisionCodeWithChan invokes the address_purification.GetAddressDivisionCode API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/getaddressdivisioncode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAddressDivisionCodeWithChan(request *GetAddressDivisionCodeRequest) (<-chan *GetAddressDivisionCodeResponse, <-chan error) {
 	responseChan := make(chan *GetAddressDivisionCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAddressDivisionCodeWithChan(request *GetAddressDivision
 }
 
 // GetAddressDivisionCodeWithCallback invokes the address_purification.GetAddressDivisionCode API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/getaddressdivisioncode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAddressDivisionCodeWithCallback(request *GetAddressDivisionCodeRequest, callback func(response *GetAddressDivisionCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

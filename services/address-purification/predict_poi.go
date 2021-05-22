@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetZipcode invokes the address_purification.GetZipcode API synchronously
-func (client *Client) GetZipcode(request *GetZipcodeRequest) (response *GetZipcodeResponse, err error) {
-	response = CreateGetZipcodeResponse()
+// PredictPOI invokes the address_purification.PredictPOI API synchronously
+func (client *Client) PredictPOI(request *PredictPOIRequest) (response *PredictPOIResponse, err error) {
+	response = CreatePredictPOIResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetZipcodeWithChan invokes the address_purification.GetZipcode API asynchronously
-func (client *Client) GetZipcodeWithChan(request *GetZipcodeRequest) (<-chan *GetZipcodeResponse, <-chan error) {
-	responseChan := make(chan *GetZipcodeResponse, 1)
+// PredictPOIWithChan invokes the address_purification.PredictPOI API asynchronously
+func (client *Client) PredictPOIWithChan(request *PredictPOIRequest) (<-chan *PredictPOIResponse, <-chan error) {
+	responseChan := make(chan *PredictPOIResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetZipcode(request)
+		response, err := client.PredictPOI(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetZipcodeWithChan(request *GetZipcodeRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
-// GetZipcodeWithCallback invokes the address_purification.GetZipcode API asynchronously
-func (client *Client) GetZipcodeWithCallback(request *GetZipcodeRequest, callback func(response *GetZipcodeResponse, err error)) <-chan int {
+// PredictPOIWithCallback invokes the address_purification.PredictPOI API asynchronously
+func (client *Client) PredictPOIWithCallback(request *PredictPOIRequest, callback func(response *PredictPOIResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetZipcodeResponse
+		var response *PredictPOIResponse
 		var err error
 		defer close(result)
-		response, err = client.GetZipcode(request)
+		response, err = client.PredictPOI(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) GetZipcodeWithCallback(request *GetZipcodeRequest, callbac
 	return result
 }
 
-// GetZipcodeRequest is the request struct for api GetZipcode
-type GetZipcodeRequest struct {
+// PredictPOIRequest is the request struct for api PredictPOI
+type PredictPOIRequest struct {
 	*requests.RpcRequest
 	DefaultProvince string `position:"Body" name:"DefaultProvince"`
 	ServiceCode     string `position:"Body" name:"ServiceCode"`
@@ -79,26 +79,26 @@ type GetZipcodeRequest struct {
 	Text            string `position:"Body" name:"Text"`
 }
 
-// GetZipcodeResponse is the response struct for api GetZipcode
-type GetZipcodeResponse struct {
+// PredictPOIResponse is the response struct for api PredictPOI
+type PredictPOIResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateGetZipcodeRequest creates a request to invoke GetZipcode API
-func CreateGetZipcodeRequest() (request *GetZipcodeRequest) {
-	request = &GetZipcodeRequest{
+// CreatePredictPOIRequest creates a request to invoke PredictPOI API
+func CreatePredictPOIRequest() (request *PredictPOIRequest) {
+	request = &PredictPOIRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("address-purification", "2019-11-18", "GetZipcode", "addrp", "openAPI")
+	request.InitWithApiInfo("address-purification", "2019-11-18", "PredictPOI", "addrp", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetZipcodeResponse creates a response to parse from GetZipcode response
-func CreateGetZipcodeResponse() (response *GetZipcodeResponse) {
-	response = &GetZipcodeResponse{
+// CreatePredictPOIResponse creates a response to parse from PredictPOI response
+func CreatePredictPOIResponse() (response *PredictPOIResponse) {
+	response = &PredictPOIResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

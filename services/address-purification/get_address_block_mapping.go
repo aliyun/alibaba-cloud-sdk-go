@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetZipcode invokes the address_purification.GetZipcode API synchronously
-func (client *Client) GetZipcode(request *GetZipcodeRequest) (response *GetZipcodeResponse, err error) {
-	response = CreateGetZipcodeResponse()
+// GetAddressBlockMapping invokes the address_purification.GetAddressBlockMapping API synchronously
+func (client *Client) GetAddressBlockMapping(request *GetAddressBlockMappingRequest) (response *GetAddressBlockMappingResponse, err error) {
+	response = CreateGetAddressBlockMappingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetZipcodeWithChan invokes the address_purification.GetZipcode API asynchronously
-func (client *Client) GetZipcodeWithChan(request *GetZipcodeRequest) (<-chan *GetZipcodeResponse, <-chan error) {
-	responseChan := make(chan *GetZipcodeResponse, 1)
+// GetAddressBlockMappingWithChan invokes the address_purification.GetAddressBlockMapping API asynchronously
+func (client *Client) GetAddressBlockMappingWithChan(request *GetAddressBlockMappingRequest) (<-chan *GetAddressBlockMappingResponse, <-chan error) {
+	responseChan := make(chan *GetAddressBlockMappingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetZipcode(request)
+		response, err := client.GetAddressBlockMapping(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetZipcodeWithChan(request *GetZipcodeRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
-// GetZipcodeWithCallback invokes the address_purification.GetZipcode API asynchronously
-func (client *Client) GetZipcodeWithCallback(request *GetZipcodeRequest, callback func(response *GetZipcodeResponse, err error)) <-chan int {
+// GetAddressBlockMappingWithCallback invokes the address_purification.GetAddressBlockMapping API asynchronously
+func (client *Client) GetAddressBlockMappingWithCallback(request *GetAddressBlockMappingRequest, callback func(response *GetAddressBlockMappingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetZipcodeResponse
+		var response *GetAddressBlockMappingResponse
 		var err error
 		defer close(result)
-		response, err = client.GetZipcode(request)
+		response, err = client.GetAddressBlockMapping(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) GetZipcodeWithCallback(request *GetZipcodeRequest, callbac
 	return result
 }
 
-// GetZipcodeRequest is the request struct for api GetZipcode
-type GetZipcodeRequest struct {
+// GetAddressBlockMappingRequest is the request struct for api GetAddressBlockMapping
+type GetAddressBlockMappingRequest struct {
 	*requests.RpcRequest
 	DefaultProvince string `position:"Body" name:"DefaultProvince"`
 	ServiceCode     string `position:"Body" name:"ServiceCode"`
@@ -79,26 +79,26 @@ type GetZipcodeRequest struct {
 	Text            string `position:"Body" name:"Text"`
 }
 
-// GetZipcodeResponse is the response struct for api GetZipcode
-type GetZipcodeResponse struct {
+// GetAddressBlockMappingResponse is the response struct for api GetAddressBlockMapping
+type GetAddressBlockMappingResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateGetZipcodeRequest creates a request to invoke GetZipcode API
-func CreateGetZipcodeRequest() (request *GetZipcodeRequest) {
-	request = &GetZipcodeRequest{
+// CreateGetAddressBlockMappingRequest creates a request to invoke GetAddressBlockMapping API
+func CreateGetAddressBlockMappingRequest() (request *GetAddressBlockMappingRequest) {
+	request = &GetAddressBlockMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("address-purification", "2019-11-18", "GetZipcode", "addrp", "openAPI")
+	request.InitWithApiInfo("address-purification", "2019-11-18", "GetAddressBlockMapping", "addrp", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetZipcodeResponse creates a response to parse from GetZipcode response
-func CreateGetZipcodeResponse() (response *GetZipcodeResponse) {
-	response = &GetZipcodeResponse{
+// CreateGetAddressBlockMappingResponse creates a response to parse from GetAddressBlockMapping response
+func CreateGetAddressBlockMappingResponse() (response *GetAddressBlockMappingResponse) {
+	response = &GetAddressBlockMappingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

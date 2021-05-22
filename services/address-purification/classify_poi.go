@@ -21,7 +21,6 @@ import (
 )
 
 // ClassifyPOI invokes the address_purification.ClassifyPOI API synchronously
-// api document: https://help.aliyun.com/api/address-purification/classifypoi.html
 func (client *Client) ClassifyPOI(request *ClassifyPOIRequest) (response *ClassifyPOIResponse, err error) {
 	response = CreateClassifyPOIResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ClassifyPOI(request *ClassifyPOIRequest) (response *Classi
 }
 
 // ClassifyPOIWithChan invokes the address_purification.ClassifyPOI API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/classifypoi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClassifyPOIWithChan(request *ClassifyPOIRequest) (<-chan *ClassifyPOIResponse, <-chan error) {
 	responseChan := make(chan *ClassifyPOIResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ClassifyPOIWithChan(request *ClassifyPOIRequest) (<-chan *
 }
 
 // ClassifyPOIWithCallback invokes the address_purification.ClassifyPOI API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/classifypoi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClassifyPOIWithCallback(request *ClassifyPOIRequest, callback func(response *ClassifyPOIResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

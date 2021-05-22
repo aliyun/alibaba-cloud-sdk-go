@@ -21,7 +21,6 @@ import (
 )
 
 // CorrectAddress invokes the address_purification.CorrectAddress API synchronously
-// api document: https://help.aliyun.com/api/address-purification/correctaddress.html
 func (client *Client) CorrectAddress(request *CorrectAddressRequest) (response *CorrectAddressResponse, err error) {
 	response = CreateCorrectAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CorrectAddress(request *CorrectAddressRequest) (response *
 }
 
 // CorrectAddressWithChan invokes the address_purification.CorrectAddress API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/correctaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CorrectAddressWithChan(request *CorrectAddressRequest) (<-chan *CorrectAddressResponse, <-chan error) {
 	responseChan := make(chan *CorrectAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CorrectAddressWithChan(request *CorrectAddressRequest) (<-
 }
 
 // CorrectAddressWithCallback invokes the address_purification.CorrectAddress API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/correctaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CorrectAddressWithCallback(request *CorrectAddressRequest, callback func(response *CorrectAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CompleteAddress invokes the address_purification.CompleteAddress API synchronously
-// api document: https://help.aliyun.com/api/address-purification/completeaddress.html
 func (client *Client) CompleteAddress(request *CompleteAddressRequest) (response *CompleteAddressResponse, err error) {
 	response = CreateCompleteAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CompleteAddress(request *CompleteAddressRequest) (response
 }
 
 // CompleteAddressWithChan invokes the address_purification.CompleteAddress API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/completeaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompleteAddressWithChan(request *CompleteAddressRequest) (<-chan *CompleteAddressResponse, <-chan error) {
 	responseChan := make(chan *CompleteAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CompleteAddressWithChan(request *CompleteAddressRequest) (
 }
 
 // CompleteAddressWithCallback invokes the address_purification.CompleteAddress API asynchronously
-// api document: https://help.aliyun.com/api/address-purification/completeaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompleteAddressWithCallback(request *CompleteAddressRequest, callback func(response *CompleteAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,8 +82,8 @@ type CompleteAddressRequest struct {
 // CompleteAddressResponse is the response struct for api CompleteAddress
 type CompleteAddressResponse struct {
 	*responses.BaseResponse
-	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreateCompleteAddressRequest creates a request to invoke CompleteAddress API
