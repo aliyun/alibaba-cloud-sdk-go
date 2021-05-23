@@ -17,11 +17,15 @@ package drds
 
 // DataItem is a nested struct in drds response
 type DataItem struct {
-	DbName            string `json:"DbName" xml:"DbName"`
-	Enabled           string `json:"Enabled" xml:"Enabled"`
-	Detailed          string `json:"Detailed" xml:"Detailed"`
-	ExtraWriteEnabled bool   `json:"ExtraWriteEnabled" xml:"ExtraWriteEnabled"`
-	ExtraAliUid       int64  `json:"ExtraAliUid" xml:"ExtraAliUid"`
-	ExtraSlsProject   string `json:"ExtraSlsProject" xml:"ExtraSlsProject"`
-	ExtraSlsLogStore  string `json:"ExtraSlsLogStore" xml:"ExtraSlsLogStore"`
+	UsedInstanceType     string   `json:"UsedInstanceType" xml:"UsedInstanceType"`
+	ExtraSlsProject      string   `json:"ExtraSlsProject" xml:"ExtraSlsProject"`
+	RdsInstanceId        string   `json:"RdsInstanceId" xml:"RdsInstanceId"`
+	Enabled              string   `json:"Enabled" xml:"Enabled"`
+	ExtraWriteEnabled    bool     `json:"ExtraWriteEnabled" xml:"ExtraWriteEnabled"`
+	Detailed             string   `json:"Detailed" xml:"Detailed"`
+	ExtraAliUid          int64    `json:"ExtraAliUid" xml:"ExtraAliUid"`
+	ExtraSlsLogStore     string   `json:"ExtraSlsLogStore" xml:"ExtraSlsLogStore"`
+	DbName               string   `json:"DbName" xml:"DbName"`
+	UsedInstanceId       string   `json:"UsedInstanceId" xml:"UsedInstanceId"`
+	ReadOnlyInstanceInfo []string `json:"ReadOnlyInstanceInfo" xml:"ReadOnlyInstanceInfo"`
 }
