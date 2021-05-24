@@ -17,12 +17,16 @@ package ccc
 
 // ContactFlow is a nested struct in ccc response
 type ContactFlow struct {
-	ContactFlowDescription string                          `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
-	InstanceId             string                          `json:"InstanceId" xml:"InstanceId"`
-	ContactFlowName        string                          `json:"ContactFlowName" xml:"ContactFlowName"`
-	ContactFlowId          string                          `json:"ContactFlowId" xml:"ContactFlowId"`
-	AppliedVersion         string                          `json:"AppliedVersion" xml:"AppliedVersion"`
-	Type                   string                          `json:"Type" xml:"Type"`
-	Versions               VersionsInListContactFlows      `json:"Versions" xml:"Versions"`
-	PhoneNumbers           PhoneNumbersInListVoiceAppraise `json:"PhoneNumbers" xml:"PhoneNumbers"`
+	ContactFlowId string   `json:"ContactFlowId" xml:"ContactFlowId"`
+	CreatedTime   string   `json:"CreatedTime" xml:"CreatedTime"`
+	Definition    string   `json:"Definition" xml:"Definition"`
+	Description   string   `json:"Description" xml:"Description"`
+	DraftId       string   `json:"DraftId" xml:"DraftId"`
+	Editor        string   `json:"Editor" xml:"Editor"`
+	InstanceId    string   `json:"InstanceId" xml:"InstanceId"`
+	Name          string   `json:"Name" xml:"Name"`
+	Published     bool     `json:"Published" xml:"Published"`
+	Type          string   `json:"Type" xml:"Type"`
+	UpdatedTime   string   `json:"UpdatedTime" xml:"UpdatedTime"`
+	NumberList    []string `json:"NumberList" xml:"NumberList"`
 }
