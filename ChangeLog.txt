@@ -1,3 +1,7 @@
+2021-05-24 Version: v1.61.1104
+- Generated 2017-08-01 for `polardb`.
+- Support TransformDBClusterPayType.
+
 2021-05-23 Version: v1.61.1103
 - Generated 2019-01-23 for `Drds`.
 - New API- GetDrdsDbRdsRelationInfo, which can get private RDS list under certain DB out of DRDS instance ID and DB name.
