@@ -76,6 +76,7 @@ type CreateDtsInstanceRequest struct {
 	InstanceClass                 string           `position:"Query" name:"InstanceClass"`
 	DatabaseCount                 requests.Integer `position:"Query" name:"DatabaseCount"`
 	JobId                         string           `position:"Query" name:"JobId"`
+	ComputeUnit                   requests.Integer `position:"Query" name:"ComputeUnit"`
 	DestinationRegion             string           `position:"Query" name:"DestinationRegion"`
 	Period                        string           `position:"Query" name:"Period"`
 	DestinationEndpointEngineName string           `position:"Query" name:"DestinationEndpointEngineName"`

@@ -17,27 +17,27 @@ package dts
 
 // ProgressInfo is a nested struct in dts response
 type ProgressInfo struct {
-	BootTime     string   `json:"BootTime" xml:"BootTime"`
-	CanSkip      bool     `json:"CanSkip" xml:"CanSkip"`
-	DelaySeconds int      `json:"DelaySeconds" xml:"DelaySeconds"`
-	FinishTime   string   `json:"FinishTime" xml:"FinishTime"`
-	IgnoreFlag   string   `json:"IgnoreFlag" xml:"IgnoreFlag"`
-	Item         string   `json:"Item" xml:"Item"`
+	RepairMethod string   `json:"RepairMethod" xml:"RepairMethod"`
 	JobId        string   `json:"JobId" xml:"JobId"`
-	Names        string   `json:"Names" xml:"Names"`
-	OrderNum     int      `json:"OrderNum" xml:"OrderNum"`
 	Skip         bool     `json:"Skip" xml:"Skip"`
+	DestSchema   string   `json:"DestSchema" xml:"DestSchema"`
+	DdlSql       string   `json:"DdlSql" xml:"DdlSql"`
+	SourceSchema string   `json:"SourceSchema" xml:"SourceSchema"`
+	FinishTime   string   `json:"FinishTime" xml:"FinishTime"`
+	ErrDetail    string   `json:"ErrDetail" xml:"ErrDetail"`
+	BootTime     string   `json:"BootTime" xml:"BootTime"`
+	OrderNum     int      `json:"OrderNum" xml:"OrderNum"`
+	DiffRow      int64    `json:"DiffRow" xml:"DiffRow"`
+	ErrMsg       string   `json:"ErrMsg" xml:"ErrMsg"`
+	DelaySeconds int      `json:"DelaySeconds" xml:"DelaySeconds"`
+	TargetNames  string   `json:"TargetNames" xml:"TargetNames"`
 	State        string   `json:"State" xml:"State"`
 	Sub          string   `json:"Sub" xml:"Sub"`
-	RepairMethod string   `json:"RepairMethod" xml:"RepairMethod"`
-	TargetNames  string   `json:"TargetNames" xml:"TargetNames"`
-	Total        int      `json:"Total" xml:"Total"`
-	SourceSchema string   `json:"SourceSchema" xml:"SourceSchema"`
 	ParentObj    string   `json:"ParentObj" xml:"ParentObj"`
-	DiffRow      int64    `json:"DiffRow" xml:"DiffRow"`
-	DestSchema   string   `json:"DestSchema" xml:"DestSchema"`
-	ErrDetail    string   `json:"ErrDetail" xml:"ErrDetail"`
-	ErrMsg       string   `json:"ErrMsg" xml:"ErrMsg"`
-	DdlSql       string   `json:"DdlSql" xml:"DdlSql"`
+	Total        int      `json:"Total" xml:"Total"`
+	IgnoreFlag   string   `json:"IgnoreFlag" xml:"IgnoreFlag"`
+	Names        string   `json:"Names" xml:"Names"`
+	CanSkip      bool     `json:"CanSkip" xml:"CanSkip"`
+	Item         string   `json:"Item" xml:"Item"`
 	Logs         []JobLog `json:"Logs" xml:"Logs"`
 }

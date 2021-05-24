@@ -17,6 +17,8 @@ package dts
 
 // SubscriptionDataType is a nested struct in dts response
 type SubscriptionDataType struct {
+	Ddl bool `json:"Ddl" xml:"Ddl"`
 	DDL bool `json:"DDL" xml:"DDL"`
 	DML bool `json:"DML" xml:"DML"`
+	Dml bool `json:"Dml" xml:"Dml"`
 }

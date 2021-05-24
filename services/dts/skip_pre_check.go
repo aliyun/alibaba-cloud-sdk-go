@@ -75,6 +75,7 @@ type SkipPreCheckRequest struct {
 	Skip              requests.Boolean `position:"Query" name:"Skip"`
 	JobId             string           `position:"Query" name:"JobId"`
 	SkipPreCheckNames string           `position:"Query" name:"SkipPreCheckNames"`
+	DtsJobId          string           `position:"Query" name:"DtsJobId"`
 }
 
 // SkipPreCheckResponse is the response struct for api SkipPreCheck

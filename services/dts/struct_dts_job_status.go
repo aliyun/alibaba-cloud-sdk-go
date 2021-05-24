@@ -17,28 +17,34 @@ package dts
 
 // DtsJobStatus is a nested struct in dts response
 type DtsJobStatus struct {
+	Checkpoint                    string                        `json:"Checkpoint" xml:"Checkpoint"`
+	CreateTime                    string                        `json:"CreateTime" xml:"CreateTime"`
+	DbObject                      string                        `json:"DbObject" xml:"DbObject"`
+	Delay                         int                           `json:"Delay" xml:"Delay"`
 	DtsInstanceID                 string                        `json:"DtsInstanceID" xml:"DtsInstanceID"`
-	DtsJobId                      string                        `json:"DtsJobId" xml:"DtsJobId"`
-	DtsJobName                    string                        `json:"DtsJobName" xml:"DtsJobName"`
 	DtsJobClass                   string                        `json:"DtsJobClass" xml:"DtsJobClass"`
 	DtsJobDirection               string                        `json:"DtsJobDirection" xml:"DtsJobDirection"`
-	PayType                       string                        `json:"PayType" xml:"PayType"`
-	ExpireTime                    string                        `json:"ExpireTime" xml:"ExpireTime"`
-	CreateTime                    string                        `json:"CreateTime" xml:"CreateTime"`
-	Status                        string                        `json:"Status" xml:"Status"`
+	DtsJobId                      string                        `json:"DtsJobId" xml:"DtsJobId"`
+	DtsJobName                    string                        `json:"DtsJobName" xml:"DtsJobName"`
 	ErrorMessage                  string                        `json:"ErrorMessage" xml:"ErrorMessage"`
-	Delay                         int                           `json:"Delay" xml:"Delay"`
-	Checkpoint                    string                        `json:"Checkpoint" xml:"Checkpoint"`
-	DbObject                      string                        `json:"DbObject" xml:"DbObject"`
+	ExpireTime                    string                        `json:"ExpireTime" xml:"ExpireTime"`
+	PayType                       string                        `json:"PayType" xml:"PayType"`
 	Reserved                      string                        `json:"Reserved" xml:"Reserved"`
-	SourceEndpoint                SourceEndpoint                `json:"SourceEndpoint" xml:"SourceEndpoint"`
-	DestinationEndpoint           DestinationEndpoint           `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
-	MigrationMode                 MigrationMode                 `json:"MigrationMode" xml:"MigrationMode"`
-	PrecheckStatus                PrecheckStatus                `json:"PrecheckStatus" xml:"PrecheckStatus"`
-	StructureInitializationStatus StructureInitializationStatus `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
+	Status                        string                        `json:"Status" xml:"Status"`
+	ConsumptionClient             string                        `json:"ConsumptionClient" xml:"ConsumptionClient"`
+	BeginTimestamp                string                        `json:"BeginTimestamp" xml:"BeginTimestamp"`
+	EndTimestamp                  string                        `json:"EndTimestamp" xml:"EndTimestamp"`
+	ConsumptionCheckpoint         string                        `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
+	AppName                       string                        `json:"AppName" xml:"AppName"`
 	DataInitializationStatus      DataInitializationStatus      `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus     `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
+	DataEtlStatus                 DataEtlStatus                 `json:"DataEtlStatus" xml:"DataEtlStatus"`
+	DestinationEndpoint           DestinationEndpoint           `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
+	MigrationMode                 MigrationMode                 `json:"MigrationMode" xml:"MigrationMode"`
 	Performance                   Performance                   `json:"Performance" xml:"Performance"`
+	PrecheckStatus                PrecheckStatus                `json:"PrecheckStatus" xml:"PrecheckStatus"`
 	ReverseJob                    ReverseJob                    `json:"ReverseJob" xml:"ReverseJob"`
+	SourceEndpoint                SourceEndpoint                `json:"SourceEndpoint" xml:"SourceEndpoint"`
+	StructureInitializationStatus StructureInitializationStatus `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
 	TagList                       []DtsTag                      `json:"TagList" xml:"TagList"`
 }

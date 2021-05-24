@@ -81,15 +81,17 @@ type DescribePreCheckStatusRequest struct {
 // DescribePreCheckStatusResponse is the response struct for api DescribePreCheckStatus
 type DescribePreCheckStatusResponse struct {
 	*responses.BaseResponse
-	Code           string         `json:"Code" xml:"Code"`
-	ErrorItem      int            `json:"ErrorItem" xml:"ErrorItem"`
-	HttpStatusCode int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	JobName        string         `json:"JobName" xml:"JobName"`
-	State          string         `json:"State" xml:"State"`
-	Success        bool           `json:"Success" xml:"Success"`
-	Total          int            `json:"Total" xml:"Total"`
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	JobProgress    []ProgressInfo `json:"JobProgress" xml:"JobProgress"`
+	Code                    string                        `json:"Code" xml:"Code"`
+	ErrorItem               int                           `json:"ErrorItem" xml:"ErrorItem"`
+	HttpStatusCode          int                           `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	JobName                 string                        `json:"JobName" xml:"JobName"`
+	State                   string                        `json:"State" xml:"State"`
+	Success                 bool                          `json:"Success" xml:"Success"`
+	Total                   int                           `json:"Total" xml:"Total"`
+	RequestId               string                        `json:"RequestId" xml:"RequestId"`
+	JobId                   string                        `json:"JobId" xml:"JobId"`
+	JobProgress             []ProgressInfo                `json:"JobProgress" xml:"JobProgress"`
+	SubDistributedJobStatus []SubDistributedJobStatusItem `json:"SubDistributedJobStatus" xml:"SubDistributedJobStatus"`
 }
 
 // CreateDescribePreCheckStatusRequest creates a request to invoke DescribePreCheckStatus API

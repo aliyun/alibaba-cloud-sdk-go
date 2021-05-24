@@ -17,6 +17,7 @@ package dts
 
 // SubscriptionHost is a nested struct in dts response
 type SubscriptionHost struct {
+	VpcHost     string `json:"VpcHost" xml:"VpcHost"`
 	VPCHost     string `json:"VPCHost" xml:"VPCHost"`
 	PublicHost  string `json:"PublicHost" xml:"PublicHost"`
 	PrivateHost string `json:"PrivateHost" xml:"PrivateHost"`

@@ -73,12 +73,13 @@ type DescribeDtsJobsRequest struct {
 	*requests.RpcRequest
 	OrderDirection string           `position:"Query" name:"OrderDirection"`
 	Type           string           `position:"Query" name:"Type"`
-	Params         string           `position:"Query" name:"Params"`
-	JobType        string           `position:"Query" name:"JobType"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	Tags           string           `position:"Query" name:"Tags"`
 	OrderColumn    string           `position:"Query" name:"OrderColumn"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	GroupId        string           `position:"Query" name:"GroupId"`
+	Params         string           `position:"Query" name:"Params"`
+	JobType        string           `position:"Query" name:"JobType"`
+	Tags           string           `position:"Query" name:"Tags"`
 	Region         string           `position:"Query" name:"Region"`
 	Status         string           `position:"Query" name:"Status"`
 }
@@ -86,15 +87,15 @@ type DescribeDtsJobsRequest struct {
 // DescribeDtsJobsResponse is the response struct for api DescribeDtsJobs
 type DescribeDtsJobsResponse struct {
 	*responses.BaseResponse
-	RequestId        string         `json:"RequestId" xml:"RequestId"`
-	Success          bool           `json:"Success" xml:"Success"`
-	ErrCode          string         `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage       string         `json:"ErrMessage" xml:"ErrMessage"`
 	DynamicCode      string         `json:"DynamicCode" xml:"DynamicCode"`
 	DynamicMessage   string         `json:"DynamicMessage" xml:"DynamicMessage"`
+	ErrCode          string         `json:"ErrCode" xml:"ErrCode"`
+	ErrMessage       string         `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode   int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	PageNumber       int            `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int            `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string         `json:"RequestId" xml:"RequestId"`
+	Success          bool           `json:"Success" xml:"Success"`
 	TotalRecordCount int            `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	DtsJobList       []DtsJobStatus `json:"DtsJobList" xml:"DtsJobList"`
 }

@@ -17,8 +17,8 @@ package dts
 
 // JobLog is a nested struct in dts response
 type JobLog struct {
-	ErrData  string `json:"ErrData" xml:"ErrData"`
 	ErrMsg   string `json:"ErrMsg" xml:"ErrMsg"`
+	ErrData  string `json:"ErrData" xml:"ErrData"`
 	ErrType  string `json:"ErrType" xml:"ErrType"`
 	LogLevel string `json:"LogLevel" xml:"LogLevel"`
 }
