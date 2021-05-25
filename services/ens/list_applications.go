@@ -71,14 +71,14 @@ func (client *Client) ListApplicationsWithCallback(request *ListApplicationsRequ
 // ListApplicationsRequest is the request struct for api ListApplications
 type ListApplicationsRequest struct {
 	*requests.RpcRequest
-	ClusterNames     string           `position:"Query"`
-	Level            string           `position:"Query"`
-	OutAppInfoParams string           `position:"Query"`
-	MaxDate          string           `position:"Query"`
-	PageNumber       requests.Integer `position:"Query"`
-	AppVersions      string           `position:"Query"`
-	PageSize         requests.Integer `position:"Query"`
-	MinDate          string           `position:"Query"`
+	ClusterNames     string           `position:"Query" name:"ClusterNames"`
+	Level            string           `position:"Query" name:"Level"`
+	OutAppInfoParams string           `position:"Query" name:"OutAppInfoParams"`
+	MaxDate          string           `position:"Query" name:"MaxDate"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	AppVersions      string           `position:"Query" name:"AppVersions"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	MinDate          string           `position:"Query" name:"MinDate"`
 }
 
 // ListApplicationsResponse is the response struct for api ListApplications

@@ -71,9 +71,9 @@ func (client *Client) DistApplicationDataWithCallback(request *DistApplicationDa
 // DistApplicationDataRequest is the request struct for api DistApplicationData
 type DistApplicationDataRequest struct {
 	*requests.RpcRequest
-	Data         string `position:"Query"`
-	DistStrategy string `position:"Query"`
-	AppId        string `position:"Query"`
+	Data         string `position:"Query" name:"Data"`
+	DistStrategy string `position:"Query" name:"DistStrategy"`
+	AppId        string `position:"Query" name:"AppId"`
 }
 
 // DistApplicationDataResponse is the response struct for api DistApplicationData

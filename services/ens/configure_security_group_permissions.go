@@ -71,7 +71,7 @@ func (client *Client) ConfigureSecurityGroupPermissionsWithCallback(request *Con
 // ConfigureSecurityGroupPermissionsRequest is the request struct for api ConfigureSecurityGroupPermissions
 type ConfigureSecurityGroupPermissionsRequest struct {
 	*requests.RpcRequest
-	SecurityGroupId      string                                                   `position:"Query"`
+	SecurityGroupId      string                                                   `position:"Query" name:"SecurityGroupId"`
 	RevokePermissions    *[]ConfigureSecurityGroupPermissionsRevokePermissions    `position:"Query" name:"RevokePermissions"  type:"Repeated"`
 	AuthorizePermissions *[]ConfigureSecurityGroupPermissionsAuthorizePermissions `position:"Query" name:"AuthorizePermissions"  type:"Repeated"`
 }

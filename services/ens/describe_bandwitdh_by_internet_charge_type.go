@@ -71,10 +71,10 @@ func (client *Client) DescribeBandwitdhByInternetChargeTypeWithCallback(request 
 // DescribeBandwitdhByInternetChargeTypeRequest is the request struct for api DescribeBandwitdhByInternetChargeType
 type DescribeBandwitdhByInternetChargeTypeRequest struct {
 	*requests.RpcRequest
-	Isp         string `position:"Query"`
-	StartTime   string `position:"Query"`
-	EnsRegionId string `position:"Query"`
-	EndTime     string `position:"Query"`
+	Isp         string `position:"Query" name:"Isp"`
+	StartTime   string `position:"Query" name:"StartTime"`
+	EnsRegionId string `position:"Query" name:"EnsRegionId"`
+	EndTime     string `position:"Query" name:"EndTime"`
 }
 
 // DescribeBandwitdhByInternetChargeTypeResponse is the response struct for api DescribeBandwitdhByInternetChargeType

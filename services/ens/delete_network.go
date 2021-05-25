@@ -71,7 +71,7 @@ func (client *Client) DeleteNetworkWithCallback(request *DeleteNetworkRequest, c
 // DeleteNetworkRequest is the request struct for api DeleteNetwork
 type DeleteNetworkRequest struct {
 	*requests.RpcRequest
-	NetworkId string `position:"Query"`
+	NetworkId string `position:"Query" name:"NetworkId"`
 }
 
 // DeleteNetworkResponse is the response struct for api DeleteNetwork

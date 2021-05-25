@@ -71,9 +71,9 @@ func (client *Client) ModifySecurityGroupAttributeWithCallback(request *ModifySe
 // ModifySecurityGroupAttributeRequest is the request struct for api ModifySecurityGroupAttribute
 type ModifySecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
-	SecurityGroupId   string `position:"Query"`
-	Description       string `position:"Query"`
-	SecurityGroupName string `position:"Query"`
+	SecurityGroupId   string `position:"Query" name:"SecurityGroupId"`
+	Description       string `position:"Query" name:"Description"`
+	SecurityGroupName string `position:"Query" name:"SecurityGroupName"`
 }
 
 // ModifySecurityGroupAttributeResponse is the response struct for api ModifySecurityGroupAttribute

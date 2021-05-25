@@ -71,15 +71,15 @@ func (client *Client) RunServiceScheduleWithCallback(request *RunServiceSchedule
 // RunServiceScheduleRequest is the request struct for api RunServiceSchedule
 type RunServiceScheduleRequest struct {
 	*requests.RpcRequest
-	Uuid             string           `position:"Query"`
-	ClientIp         string           `position:"Query"`
-	PodConfigName    string           `position:"Query"`
-	ServiceCommands  string           `position:"Query"`
-	ScheduleStrategy string           `position:"Query"`
-	Directorys       string           `position:"Query"`
-	PreLockedTimeout requests.Integer `position:"Query"`
-	ServiceAction    string           `position:"Query"`
-	AppId            string           `position:"Query"`
+	Uuid             string           `position:"Query" name:"Uuid"`
+	ClientIp         string           `position:"Query" name:"ClientIp"`
+	PodConfigName    string           `position:"Query" name:"PodConfigName"`
+	ServiceCommands  string           `position:"Query" name:"ServiceCommands"`
+	ScheduleStrategy string           `position:"Query" name:"ScheduleStrategy"`
+	Directorys       string           `position:"Query" name:"Directorys"`
+	PreLockedTimeout requests.Integer `position:"Query" name:"PreLockedTimeout"`
+	ServiceAction    string           `position:"Query" name:"ServiceAction"`
+	AppId            string           `position:"Query" name:"AppId"`
 }
 
 // RunServiceScheduleResponse is the response struct for api RunServiceSchedule

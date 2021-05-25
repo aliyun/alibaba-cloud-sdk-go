@@ -71,8 +71,8 @@ func (client *Client) RestartDeviceInstanceWithCallback(request *RestartDeviceIn
 // RestartDeviceInstanceRequest is the request struct for api RestartDeviceInstance
 type RestartDeviceInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query"`
-	AppId      string `position:"Query"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	AppId      string `position:"Query" name:"AppId"`
 }
 
 // RestartDeviceInstanceResponse is the response struct for api RestartDeviceInstance

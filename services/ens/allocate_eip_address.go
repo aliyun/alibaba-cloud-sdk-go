@@ -71,9 +71,9 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 // AllocateEipAddressRequest is the request struct for api AllocateEipAddress
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
-	MinCount    requests.Integer `position:"Query"`
-	EnsRegionId string           `position:"Query"`
-	Count       requests.Integer `position:"Query"`
+	MinCount    requests.Integer `position:"Query" name:"MinCount"`
+	EnsRegionId string           `position:"Query" name:"EnsRegionId"`
+	Count       requests.Integer `position:"Query" name:"Count"`
 }
 
 // AllocateEipAddressResponse is the response struct for api AllocateEipAddress

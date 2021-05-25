@@ -71,8 +71,8 @@ func (client *Client) DescribeEnsNetSaleDistrictWithCallback(request *DescribeEn
 // DescribeEnsNetSaleDistrictRequest is the request struct for api DescribeEnsNetSaleDistrict
 type DescribeEnsNetSaleDistrictRequest struct {
 	*requests.RpcRequest
-	NetLevelCode    string `position:"Query"`
-	NetDistrictCode string `position:"Query"`
+	NetLevelCode    string `position:"Query" name:"NetLevelCode"`
+	NetDistrictCode string `position:"Query" name:"NetDistrictCode"`
 }
 
 // DescribeEnsNetSaleDistrictResponse is the response struct for api DescribeEnsNetSaleDistrict

@@ -71,7 +71,7 @@ func (client *Client) DescribeEpnInstanceAttributeWithCallback(request *Describe
 // DescribeEpnInstanceAttributeRequest is the request struct for api DescribeEpnInstanceAttribute
 type DescribeEpnInstanceAttributeRequest struct {
 	*requests.RpcRequest
-	EPNInstanceId string `position:"Query"`
+	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
 }
 
 // DescribeEpnInstanceAttributeResponse is the response struct for api DescribeEpnInstanceAttribute

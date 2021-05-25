@@ -71,10 +71,10 @@ func (client *Client) DescribeImageSharePermissionWithCallback(request *Describe
 // DescribeImageSharePermissionRequest is the request struct for api DescribeImageSharePermission
 type DescribeImageSharePermissionRequest struct {
 	*requests.RpcRequest
-	ImageId    string           `position:"Query"`
-	PageNumber string           `position:"Query"`
-	PageSize   string           `position:"Query"`
-	AliyunId   requests.Integer `position:"Query"`
+	ImageId    string           `position:"Query" name:"ImageId"`
+	PageNumber string           `position:"Query" name:"PageNumber"`
+	PageSize   string           `position:"Query" name:"PageSize"`
+	AliyunId   requests.Integer `position:"Query" name:"AliyunId"`
 }
 
 // DescribeImageSharePermissionResponse is the response struct for api DescribeImageSharePermission

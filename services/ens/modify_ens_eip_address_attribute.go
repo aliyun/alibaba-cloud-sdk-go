@@ -71,10 +71,10 @@ func (client *Client) ModifyEnsEipAddressAttributeWithCallback(request *ModifyEn
 // ModifyEnsEipAddressAttributeRequest is the request struct for api ModifyEnsEipAddressAttribute
 type ModifyEnsEipAddressAttributeRequest struct {
 	*requests.RpcRequest
-	Description  string           `position:"Query"`
-	AllocationId string           `position:"Query"`
-	Bandwidth    requests.Integer `position:"Query"`
-	Name         string           `position:"Query"`
+	Description  string           `position:"Query" name:"Description"`
+	AllocationId string           `position:"Query" name:"AllocationId"`
+	Bandwidth    requests.Integer `position:"Query" name:"Bandwidth"`
+	Name         string           `position:"Query" name:"Name"`
 }
 
 // ModifyEnsEipAddressAttributeResponse is the response struct for api ModifyEnsEipAddressAttribute

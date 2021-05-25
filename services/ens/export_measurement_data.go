@@ -71,8 +71,8 @@ func (client *Client) ExportMeasurementDataWithCallback(request *ExportMeasureme
 // ExportMeasurementDataRequest is the request struct for api ExportMeasurementData
 type ExportMeasurementDataRequest struct {
 	*requests.RpcRequest
-	StartDate string `position:"Query"`
-	EndDate   string `position:"Query"`
+	StartDate string `position:"Query" name:"StartDate"`
+	EndDate   string `position:"Query" name:"EndDate"`
 }
 
 // ExportMeasurementDataResponse is the response struct for api ExportMeasurementData

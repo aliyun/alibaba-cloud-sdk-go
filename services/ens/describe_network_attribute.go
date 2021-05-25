@@ -71,7 +71,7 @@ func (client *Client) DescribeNetworkAttributeWithCallback(request *DescribeNetw
 // DescribeNetworkAttributeRequest is the request struct for api DescribeNetworkAttribute
 type DescribeNetworkAttributeRequest struct {
 	*requests.RpcRequest
-	NetworkId string `position:"Query"`
+	NetworkId string `position:"Query" name:"NetworkId"`
 }
 
 // DescribeNetworkAttributeResponse is the response struct for api DescribeNetworkAttribute

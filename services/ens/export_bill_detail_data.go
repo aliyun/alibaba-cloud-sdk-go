@@ -71,8 +71,8 @@ func (client *Client) ExportBillDetailDataWithCallback(request *ExportBillDetail
 // ExportBillDetailDataRequest is the request struct for api ExportBillDetailData
 type ExportBillDetailDataRequest struct {
 	*requests.RpcRequest
-	StartDate string `position:"Query"`
-	EndDate   string `position:"Query"`
+	StartDate string `position:"Query" name:"StartDate"`
+	EndDate   string `position:"Query" name:"EndDate"`
 }
 
 // ExportBillDetailDataResponse is the response struct for api ExportBillDetailData

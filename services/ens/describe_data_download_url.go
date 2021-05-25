@@ -71,11 +71,11 @@ func (client *Client) DescribeDataDownloadURLWithCallback(request *DescribeDataD
 // DescribeDataDownloadURLRequest is the request struct for api DescribeDataDownloadURL
 type DescribeDataDownloadURLRequest struct {
 	*requests.RpcRequest
-	ExpireTimeout        requests.Integer `position:"Query"`
-	ServerFilterStrategy string           `position:"Query"`
-	DataName             string           `position:"Query"`
-	DataVersion          string           `position:"Query"`
-	AppId                string           `position:"Query"`
+	ExpireTimeout        requests.Integer `position:"Query" name:"ExpireTimeout"`
+	ServerFilterStrategy string           `position:"Query" name:"ServerFilterStrategy"`
+	DataName             string           `position:"Query" name:"DataName"`
+	DataVersion          string           `position:"Query" name:"DataVersion"`
+	AppId                string           `position:"Query" name:"AppId"`
 }
 
 // DescribeDataDownloadURLResponse is the response struct for api DescribeDataDownloadURL

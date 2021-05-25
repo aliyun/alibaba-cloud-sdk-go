@@ -71,7 +71,7 @@ func (client *Client) DescribeEnsRegionsWithCallback(request *DescribeEnsRegions
 // DescribeEnsRegionsRequest is the request struct for api DescribeEnsRegions
 type DescribeEnsRegionsRequest struct {
 	*requests.RpcRequest
-	EnsRegionId string `position:"Query"`
+	EnsRegionId string `position:"Query" name:"EnsRegionId"`
 }
 
 // DescribeEnsRegionsResponse is the response struct for api DescribeEnsRegions

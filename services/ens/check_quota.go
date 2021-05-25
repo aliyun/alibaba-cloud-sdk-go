@@ -71,9 +71,9 @@ func (client *Client) CheckQuotaWithCallback(request *CheckQuotaRequest, callbac
 // CheckQuotaRequest is the request struct for api CheckQuota
 type CheckQuotaRequest struct {
 	*requests.RpcRequest
-	GroupUuid         string           `position:"Query"`
-	ResourceAttribute string           `position:"Body"`
-	AliUid            requests.Integer `position:"Query"`
+	GroupUuid         string           `position:"Query" name:"GroupUuid"`
+	ResourceAttribute string           `position:"Body" name:"ResourceAttribute"`
+	AliUid            requests.Integer `position:"Query" name:"AliUid"`
 }
 
 // CheckQuotaResponse is the response struct for api CheckQuota

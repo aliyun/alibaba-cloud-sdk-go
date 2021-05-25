@@ -1,3 +1,7 @@
+2021-05-25 Version: v1.61.1107
+- Generated 2017-11-10 for `Ens`.
+- Support EIP.
+
 2021-05-24 Version: v1.61.1106
 - Generated 2020-01-01 for `Dts`.
 - Support a2a openapi.

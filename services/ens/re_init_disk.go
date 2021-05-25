@@ -71,8 +71,8 @@ func (client *Client) ReInitDiskWithCallback(request *ReInitDiskRequest, callbac
 // ReInitDiskRequest is the request struct for api ReInitDisk
 type ReInitDiskRequest struct {
 	*requests.RpcRequest
-	ImageId string `position:"Query"`
-	DiskId  string `position:"Query"`
+	ImageId string `position:"Query" name:"ImageId"`
+	DiskId  string `position:"Query" name:"DiskId"`
 }
 
 // ReInitDiskResponse is the response struct for api ReInitDisk

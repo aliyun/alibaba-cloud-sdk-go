@@ -71,14 +71,14 @@ func (client *Client) DescribeEpnBandWidthDataWithCallback(request *DescribeEpnB
 // DescribeEpnBandWidthDataRequest is the request struct for api DescribeEpnBandWidthData
 type DescribeEpnBandWidthDataRequest struct {
 	*requests.RpcRequest
-	Isp             string `position:"Query"`
-	StartTime       string `position:"Query"`
-	EnsRegionId     string `position:"Query"`
-	EPNInstanceId   string `position:"Query"`
-	Period          string `position:"Query"`
-	InstanceId      string `position:"Query"`
-	NetworkingModel string `position:"Query"`
-	EndTime         string `position:"Query"`
+	Isp             string `position:"Query" name:"Isp"`
+	StartTime       string `position:"Query" name:"StartTime"`
+	EnsRegionId     string `position:"Query" name:"EnsRegionId"`
+	EPNInstanceId   string `position:"Query" name:"EPNInstanceId"`
+	Period          string `position:"Query" name:"Period"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	NetworkingModel string `position:"Query" name:"NetworkingModel"`
+	EndTime         string `position:"Query" name:"EndTime"`
 }
 
 // DescribeEpnBandWidthDataResponse is the response struct for api DescribeEpnBandWidthData

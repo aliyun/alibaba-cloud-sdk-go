@@ -71,10 +71,10 @@ func (client *Client) ModifyEpnInstanceWithCallback(request *ModifyEpnInstanceRe
 // ModifyEpnInstanceRequest is the request struct for api ModifyEpnInstance
 type ModifyEpnInstanceRequest struct {
 	*requests.RpcRequest
-	NetworkingModel         string           `position:"Query"`
-	InternetMaxBandwidthOut requests.Integer `position:"Query"`
-	EPNInstanceId           string           `position:"Query"`
-	EPNInstanceName         string           `position:"Query"`
+	NetworkingModel         string           `position:"Query" name:"NetworkingModel"`
+	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
+	EPNInstanceId           string           `position:"Query" name:"EPNInstanceId"`
+	EPNInstanceName         string           `position:"Query" name:"EPNInstanceName"`
 }
 
 // ModifyEpnInstanceResponse is the response struct for api ModifyEpnInstance

@@ -71,9 +71,9 @@ func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequ
 // DescribeKeyPairsRequest is the request struct for api DescribeKeyPairs
 type DescribeKeyPairsRequest struct {
 	*requests.RpcRequest
-	KeyPairName string `position:"Query"`
-	PageNumber  string `position:"Query"`
-	PageSize    string `position:"Query"`
+	KeyPairName string `position:"Query" name:"KeyPairName"`
+	PageNumber  string `position:"Query" name:"PageNumber"`
+	PageSize    string `position:"Query" name:"PageSize"`
 }
 
 // DescribeKeyPairsResponse is the response struct for api DescribeKeyPairs

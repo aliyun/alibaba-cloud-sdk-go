@@ -71,20 +71,20 @@ func (client *Client) PreCreateEnsServiceWithCallback(request *PreCreateEnsServi
 // PreCreateEnsServiceRequest is the request struct for api PreCreateEnsService
 type PreCreateEnsServiceRequest struct {
 	*requests.RpcRequest
-	BandwidthType           string `position:"Query"`
-	KeyPairName             string `position:"Query"`
-	Password                string `position:"Query"`
-	BuyResourcesDetail      string `position:"Query"`
-	SystemDiskSize          string `position:"Query"`
-	InstanceBandwithdLimit  string `position:"Query"`
-	EnsServiceName          string `position:"Query"`
-	NetLevel                string `position:"Query"`
-	DataDiskSize            string `position:"Query"`
-	SchedulingPriceStrategy string `position:"Query"`
-	ImageId                 string `position:"Query"`
-	InstanceSpec            string `position:"Query"`
-	UserData                string `position:"Query"`
-	SchedulingStrategy      string `position:"Query"`
+	BandwidthType           string `position:"Query" name:"BandwidthType"`
+	KeyPairName             string `position:"Query" name:"KeyPairName"`
+	Password                string `position:"Query" name:"Password"`
+	BuyResourcesDetail      string `position:"Query" name:"BuyResourcesDetail"`
+	SystemDiskSize          string `position:"Query" name:"SystemDiskSize"`
+	InstanceBandwithdLimit  string `position:"Query" name:"InstanceBandwithdLimit"`
+	EnsServiceName          string `position:"Query" name:"EnsServiceName"`
+	NetLevel                string `position:"Query" name:"NetLevel"`
+	DataDiskSize            string `position:"Query" name:"DataDiskSize"`
+	SchedulingPriceStrategy string `position:"Query" name:"SchedulingPriceStrategy"`
+	ImageId                 string `position:"Query" name:"ImageId"`
+	InstanceSpec            string `position:"Query" name:"InstanceSpec"`
+	UserData                string `position:"Query" name:"UserData"`
+	SchedulingStrategy      string `position:"Query" name:"SchedulingStrategy"`
 }
 
 // PreCreateEnsServiceResponse is the response struct for api PreCreateEnsService

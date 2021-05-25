@@ -71,12 +71,12 @@ func (client *Client) CreateEipInstanceWithCallback(request *CreateEipInstanceRe
 // CreateEipInstanceRequest is the request struct for api CreateEipInstance
 type CreateEipInstanceRequest struct {
 	*requests.RpcRequest
-	Isp                string           `position:"Query"`
-	EnsRegionId        string           `position:"Query"`
-	InternetChargeType string           `position:"Query"`
-	Name               string           `position:"Query"`
-	InstanceChargeType string           `position:"Query"`
-	Bandwidth          requests.Integer `position:"Query"`
+	Isp                string           `position:"Query" name:"Isp"`
+	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
+	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
+	Name               string           `position:"Query" name:"Name"`
+	InstanceChargeType string           `position:"Query" name:"InstanceChargeType"`
+	Bandwidth          requests.Integer `position:"Query" name:"Bandwidth"`
 }
 
 // CreateEipInstanceResponse is the response struct for api CreateEipInstance

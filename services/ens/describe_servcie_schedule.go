@@ -71,9 +71,9 @@ func (client *Client) DescribeServcieScheduleWithCallback(request *DescribeServc
 // DescribeServcieScheduleRequest is the request struct for api DescribeServcieSchedule
 type DescribeServcieScheduleRequest struct {
 	*requests.RpcRequest
-	Uuid          string `position:"Query"`
-	PodConfigName string `position:"Query"`
-	AppId         string `position:"Query"`
+	Uuid          string `position:"Query" name:"Uuid"`
+	PodConfigName string `position:"Query" name:"PodConfigName"`
+	AppId         string `position:"Query" name:"AppId"`
 }
 
 // DescribeServcieScheduleResponse is the response struct for api DescribeServcieSchedule

@@ -71,7 +71,7 @@ func (client *Client) DescribeSecurityGroupAttributeWithCallback(request *Descri
 // DescribeSecurityGroupAttributeRequest is the request struct for api DescribeSecurityGroupAttribute
 type DescribeSecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
-	SecurityGroupId string `position:"Query"`
+	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
 }
 
 // DescribeSecurityGroupAttributeResponse is the response struct for api DescribeSecurityGroupAttribute

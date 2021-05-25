@@ -71,8 +71,8 @@ func (client *Client) DescribeEipAddressesWithCallback(request *DescribeEipAddre
 // DescribeEipAddressesRequest is the request struct for api DescribeEipAddresses
 type DescribeEipAddressesRequest struct {
 	*requests.RpcRequest
-	Eips        string `position:"Query"`
-	EnsRegionId string `position:"Query"`
+	Eips        string `position:"Query" name:"Eips"`
+	EnsRegionId string `position:"Query" name:"EnsRegionId"`
 }
 
 // DescribeEipAddressesResponse is the response struct for api DescribeEipAddresses

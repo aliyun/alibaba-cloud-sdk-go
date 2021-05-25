@@ -71,11 +71,11 @@ func (client *Client) CreateVmAndSaveStockWithCallback(request *CreateVmAndSaveS
 // CreateVmAndSaveStockRequest is the request struct for api CreateVmAndSaveStock
 type CreateVmAndSaveStockRequest struct {
 	*requests.RpcRequest
-	GroupUuid         string           `position:"Query"`
-	ResourceAttribute string           `position:"Body"`
-	AliUid            requests.Integer `position:"Query"`
-	Tenant            string           `position:"Query"`
-	WorkloadUuid      string           `position:"Query"`
+	GroupUuid         string           `position:"Query" name:"GroupUuid"`
+	ResourceAttribute string           `position:"Body" name:"ResourceAttribute"`
+	AliUid            requests.Integer `position:"Query" name:"AliUid"`
+	Tenant            string           `position:"Query" name:"Tenant"`
+	WorkloadUuid      string           `position:"Query" name:"WorkloadUuid"`
 }
 
 // CreateVmAndSaveStockResponse is the response struct for api CreateVmAndSaveStock

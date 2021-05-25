@@ -71,10 +71,10 @@ func (client *Client) DescribePrePaidInstanceStockWithCallback(request *Describe
 // DescribePrePaidInstanceStockRequest is the request struct for api DescribePrePaidInstanceStock
 type DescribePrePaidInstanceStockRequest struct {
 	*requests.RpcRequest
-	InstanceSpec   string           `position:"Query"`
-	EnsRegionId    string           `position:"Query"`
-	SystemDiskSize requests.Integer `position:"Query"`
-	DataDiskSize   requests.Integer `position:"Query"`
+	InstanceSpec   string           `position:"Query" name:"InstanceSpec"`
+	EnsRegionId    string           `position:"Query" name:"EnsRegionId"`
+	SystemDiskSize requests.Integer `position:"Query" name:"SystemDiskSize"`
+	DataDiskSize   requests.Integer `position:"Query" name:"DataDiskSize"`
 }
 
 // DescribePrePaidInstanceStockResponse is the response struct for api DescribePrePaidInstanceStock

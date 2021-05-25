@@ -71,10 +71,10 @@ func (client *Client) DescribeInstanceMonitorDataWithCallback(request *DescribeI
 // DescribeInstanceMonitorDataRequest is the request struct for api DescribeInstanceMonitorData
 type DescribeInstanceMonitorDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string `position:"Query"`
-	Period     string `position:"Query"`
-	EndTime    string `position:"Query"`
-	InstanceId string `position:"Query"`
+	StartTime  string `position:"Query" name:"StartTime"`
+	Period     string `position:"Query" name:"Period"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // DescribeInstanceMonitorDataResponse is the response struct for api DescribeInstanceMonitorData

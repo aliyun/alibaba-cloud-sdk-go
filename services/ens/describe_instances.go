@@ -71,22 +71,22 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	OrderByParams        string           `position:"Query"`
-	EnsRegionId          string           `position:"Query"`
-	InstanceResourceType string           `position:"Query"`
-	EnsServiceId         string           `position:"Query"`
-	VSwitchId            string           `position:"Query"`
-	InstanceId           string           `position:"Query"`
-	InstanceName         string           `position:"Query"`
-	InstanceIds          string           `position:"Query"`
-	NetworkId            string           `position:"Query"`
-	Status               string           `position:"Query"`
-	ImageId              string           `position:"Query"`
-	SecurityGroupId      string           `position:"Query"`
-	SearchKey            string           `position:"Query"`
-	PageNumber           requests.Integer `position:"Query"`
-	PageSize             string           `position:"Query"`
-	EnsRegionIds         string           `position:"Query"`
+	OrderByParams        string           `position:"Query" name:"OrderByParams"`
+	EnsRegionId          string           `position:"Query" name:"EnsRegionId"`
+	InstanceResourceType string           `position:"Query" name:"InstanceResourceType"`
+	EnsServiceId         string           `position:"Query" name:"EnsServiceId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	InstanceName         string           `position:"Query" name:"InstanceName"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	NetworkId            string           `position:"Query" name:"NetworkId"`
+	Status               string           `position:"Query" name:"Status"`
+	ImageId              string           `position:"Query" name:"ImageId"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	SearchKey            string           `position:"Query" name:"SearchKey"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	EnsRegionIds         string           `position:"Query" name:"EnsRegionIds"`
 }
 
 // DescribeInstancesResponse is the response struct for api DescribeInstances

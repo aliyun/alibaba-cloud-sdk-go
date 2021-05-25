@@ -71,7 +71,7 @@ func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, c
 // StartInstanceRequest is the request struct for api StartInstance
 type StartInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // StartInstanceResponse is the response struct for api StartInstance

@@ -71,7 +71,7 @@ func (client *Client) DeleteEpnInstanceWithCallback(request *DeleteEpnInstanceRe
 // DeleteEpnInstanceRequest is the request struct for api DeleteEpnInstance
 type DeleteEpnInstanceRequest struct {
 	*requests.RpcRequest
-	EPNInstanceId string `position:"Query"`
+	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
 }
 
 // DeleteEpnInstanceResponse is the response struct for api DeleteEpnInstance

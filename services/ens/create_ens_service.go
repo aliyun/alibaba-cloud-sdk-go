@@ -71,8 +71,8 @@ func (client *Client) CreateEnsServiceWithCallback(request *CreateEnsServiceRequ
 // CreateEnsServiceRequest is the request struct for api CreateEnsService
 type CreateEnsServiceRequest struct {
 	*requests.RpcRequest
-	EnsServiceId string `position:"Query"`
-	OrderType    string `position:"Query"`
+	EnsServiceId string `position:"Query" name:"EnsServiceId"`
+	OrderType    string `position:"Query" name:"OrderType"`
 }
 
 // CreateEnsServiceResponse is the response struct for api CreateEnsService

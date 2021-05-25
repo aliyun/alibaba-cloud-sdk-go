@@ -71,12 +71,12 @@ func (client *Client) DescribeEnsRegionIdResourceWithCallback(request *DescribeE
 // DescribeEnsRegionIdResourceRequest is the request struct for api DescribeEnsRegionIdResource
 type DescribeEnsRegionIdResourceRequest struct {
 	*requests.RpcRequest
-	Isp           string           `position:"Query"`
-	StartTime     string           `position:"Query"`
-	OrderByParams string           `position:"Query"`
-	PageNumber    requests.Integer `position:"Query"`
-	PageSize      string           `position:"Query"`
-	EndTime       string           `position:"Query"`
+	Isp           string           `position:"Query" name:"Isp"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OrderByParams string           `position:"Query" name:"OrderByParams"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize      string           `position:"Query" name:"PageSize"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 // DescribeEnsRegionIdResourceResponse is the response struct for api DescribeEnsRegionIdResource

@@ -71,9 +71,9 @@ func (client *Client) ModifyNetworkAttributeWithCallback(request *ModifyNetworkA
 // ModifyNetworkAttributeRequest is the request struct for api ModifyNetworkAttribute
 type ModifyNetworkAttributeRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Query"`
-	NetworkName string `position:"Query"`
-	NetworkId   string `position:"Query"`
+	Description string `position:"Query" name:"Description"`
+	NetworkName string `position:"Query" name:"NetworkName"`
+	NetworkId   string `position:"Query" name:"NetworkId"`
 }
 
 // ModifyNetworkAttributeResponse is the response struct for api ModifyNetworkAttribute

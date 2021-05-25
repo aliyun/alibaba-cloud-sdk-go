@@ -71,9 +71,9 @@ func (client *Client) ModifyVSwitchAttributeWithCallback(request *ModifyVSwitchA
 // ModifyVSwitchAttributeRequest is the request struct for api ModifyVSwitchAttribute
 type ModifyVSwitchAttributeRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Query"`
-	VSwitchId   string `position:"Query"`
-	VSwitchName string `position:"Query"`
+	Description string `position:"Query" name:"Description"`
+	VSwitchId   string `position:"Query" name:"VSwitchId"`
+	VSwitchName string `position:"Query" name:"VSwitchName"`
 }
 
 // ModifyVSwitchAttributeResponse is the response struct for api ModifyVSwitchAttribute

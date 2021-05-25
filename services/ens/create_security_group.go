@@ -71,8 +71,8 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 // CreateSecurityGroupRequest is the request struct for api CreateSecurityGroup
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
-	Description       string `position:"Query"`
-	SecurityGroupName string `position:"Query"`
+	Description       string `position:"Query" name:"Description"`
+	SecurityGroupName string `position:"Query" name:"SecurityGroupName"`
 }
 
 // CreateSecurityGroupResponse is the response struct for api CreateSecurityGroup

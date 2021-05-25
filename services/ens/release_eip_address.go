@@ -71,8 +71,8 @@ func (client *Client) ReleaseEipAddressWithCallback(request *ReleaseEipAddressRe
 // ReleaseEipAddressRequest is the request struct for api ReleaseEipAddress
 type ReleaseEipAddressRequest struct {
 	*requests.RpcRequest
-	Eips        string `position:"Query"`
-	EnsRegionId string `position:"Query"`
+	Eips        string `position:"Query" name:"Eips"`
+	EnsRegionId string `position:"Query" name:"EnsRegionId"`
 }
 
 // ReleaseEipAddressResponse is the response struct for api ReleaseEipAddress

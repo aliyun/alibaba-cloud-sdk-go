@@ -71,11 +71,11 @@ func (client *Client) DescribeNetworksWithCallback(request *DescribeNetworksRequ
 // DescribeNetworksRequest is the request struct for api DescribeNetworks
 type DescribeNetworksRequest struct {
 	*requests.RpcRequest
-	PageNumber  requests.Integer `position:"Query"`
-	EnsRegionId string           `position:"Query"`
-	PageSize    requests.Integer `position:"Query"`
-	NetworkName string           `position:"Query"`
-	NetworkId   string           `position:"Query"`
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
+	EnsRegionId string           `position:"Query" name:"EnsRegionId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	NetworkName string           `position:"Query" name:"NetworkName"`
+	NetworkId   string           `position:"Query" name:"NetworkId"`
 }
 
 // DescribeNetworksResponse is the response struct for api DescribeNetworks

@@ -71,8 +71,8 @@ func (client *Client) RemovePublicIpsFromEpnInstanceWithCallback(request *Remove
 // RemovePublicIpsFromEpnInstanceRequest is the request struct for api RemovePublicIpsFromEpnInstance
 type RemovePublicIpsFromEpnInstanceRequest struct {
 	*requests.RpcRequest
-	EPNInstanceId string `position:"Query"`
-	InstanceInfos string `position:"Query"`
+	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
+	InstanceInfos string `position:"Query" name:"InstanceInfos"`
 }
 
 // RemovePublicIpsFromEpnInstanceResponse is the response struct for api RemovePublicIpsFromEpnInstance

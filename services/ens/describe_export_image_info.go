@@ -71,10 +71,10 @@ func (client *Client) DescribeExportImageInfoWithCallback(request *DescribeExpor
 // DescribeExportImageInfoRequest is the request struct for api DescribeExportImageInfo
 type DescribeExportImageInfoRequest struct {
 	*requests.RpcRequest
-	ImageId    string           `position:"Query"`
-	PageNumber requests.Integer `position:"Query"`
-	ImageName  string           `position:"Query"`
-	PageSize   requests.Integer `position:"Query"`
+	ImageId    string           `position:"Query" name:"ImageId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	ImageName  string           `position:"Query" name:"ImageName"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeExportImageInfoResponse is the response struct for api DescribeExportImageInfo

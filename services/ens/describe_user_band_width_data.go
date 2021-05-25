@@ -71,12 +71,12 @@ func (client *Client) DescribeUserBandWidthDataWithCallback(request *DescribeUse
 // DescribeUserBandWidthDataRequest is the request struct for api DescribeUserBandWidthData
 type DescribeUserBandWidthDataRequest struct {
 	*requests.RpcRequest
-	Isp         string `position:"Query"`
-	StartTime   string `position:"Query"`
-	EnsRegionId string `position:"Query"`
-	Period      string `position:"Query"`
-	InstanceId  string `position:"Query"`
-	EndTime     string `position:"Query"`
+	Isp         string `position:"Query" name:"Isp"`
+	StartTime   string `position:"Query" name:"StartTime"`
+	EnsRegionId string `position:"Query" name:"EnsRegionId"`
+	Period      string `position:"Query" name:"Period"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	EndTime     string `position:"Query" name:"EndTime"`
 }
 
 // DescribeUserBandWidthDataResponse is the response struct for api DescribeUserBandWidthData

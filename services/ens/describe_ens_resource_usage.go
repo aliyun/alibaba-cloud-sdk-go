@@ -71,8 +71,8 @@ func (client *Client) DescribeEnsResourceUsageWithCallback(request *DescribeEnsR
 // DescribeEnsResourceUsageRequest is the request struct for api DescribeEnsResourceUsage
 type DescribeEnsResourceUsageRequest struct {
 	*requests.RpcRequest
-	ExpiredStartTime string `position:"Query"`
-	ExpiredEndTime   string `position:"Query"`
+	ExpiredStartTime string `position:"Query" name:"ExpiredStartTime"`
+	ExpiredEndTime   string `position:"Query" name:"ExpiredEndTime"`
 }
 
 // DescribeEnsResourceUsageResponse is the response struct for api DescribeEnsResourceUsage

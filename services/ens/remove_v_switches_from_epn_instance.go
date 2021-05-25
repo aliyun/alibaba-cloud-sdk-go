@@ -71,8 +71,8 @@ func (client *Client) RemoveVSwitchesFromEpnInstanceWithCallback(request *Remove
 // RemoveVSwitchesFromEpnInstanceRequest is the request struct for api RemoveVSwitchesFromEpnInstance
 type RemoveVSwitchesFromEpnInstanceRequest struct {
 	*requests.RpcRequest
-	VSwitchesInfo string `position:"Query"`
-	EPNInstanceId string `position:"Query"`
+	VSwitchesInfo string `position:"Query" name:"VSwitchesInfo"`
+	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
 }
 
 // RemoveVSwitchesFromEpnInstanceResponse is the response struct for api RemoveVSwitchesFromEpnInstance

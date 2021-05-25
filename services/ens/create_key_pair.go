@@ -71,7 +71,7 @@ func (client *Client) CreateKeyPairWithCallback(request *CreateKeyPairRequest, c
 // CreateKeyPairRequest is the request struct for api CreateKeyPair
 type CreateKeyPairRequest struct {
 	*requests.RpcRequest
-	KeyPairName string `position:"Query"`
+	KeyPairName string `position:"Query" name:"KeyPairName"`
 }
 
 // CreateKeyPairResponse is the response struct for api CreateKeyPair

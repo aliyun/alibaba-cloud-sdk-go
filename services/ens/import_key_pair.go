@@ -71,8 +71,8 @@ func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, c
 // ImportKeyPairRequest is the request struct for api ImportKeyPair
 type ImportKeyPairRequest struct {
 	*requests.RpcRequest
-	KeyPairName   string `position:"Query"`
-	PublicKeyBody string `position:"Query"`
+	KeyPairName   string `position:"Query" name:"KeyPairName"`
+	PublicKeyBody string `position:"Query" name:"PublicKeyBody"`
 }
 
 // ImportKeyPairResponse is the response struct for api ImportKeyPair

@@ -71,14 +71,14 @@ func (client *Client) DescribeDataPushResultWithCallback(request *DescribeDataPu
 // DescribeDataPushResultRequest is the request struct for api DescribeDataPushResult
 type DescribeDataPushResultRequest struct {
 	*requests.RpcRequest
-	RegionIds    string           `position:"Query"`
-	DataVersions string           `position:"Query"`
-	MaxDate      string           `position:"Query"`
-	PageNumber   requests.Integer `position:"Query"`
-	PageSize     requests.Integer `position:"Query"`
-	MinDate      string           `position:"Query"`
-	AppId        string           `position:"Query"`
-	DataNames    string           `position:"Query"`
+	RegionIds    string           `position:"Query" name:"RegionIds"`
+	DataVersions string           `position:"Query" name:"DataVersions"`
+	MaxDate      string           `position:"Query" name:"MaxDate"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	MinDate      string           `position:"Query" name:"MinDate"`
+	AppId        string           `position:"Query" name:"AppId"`
+	DataNames    string           `position:"Query" name:"DataNames"`
 }
 
 // DescribeDataPushResultResponse is the response struct for api DescribeDataPushResult

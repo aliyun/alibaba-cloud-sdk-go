@@ -71,8 +71,8 @@ func (client *Client) DescribeEpnMeasurementDataWithCallback(request *DescribeEp
 // DescribeEpnMeasurementDataRequest is the request struct for api DescribeEpnMeasurementData
 type DescribeEpnMeasurementDataRequest struct {
 	*requests.RpcRequest
-	StartDate string `position:"Query"`
-	EndDate   string `position:"Query"`
+	StartDate string `position:"Query" name:"StartDate"`
+	EndDate   string `position:"Query" name:"EndDate"`
 }
 
 // DescribeEpnMeasurementDataResponse is the response struct for api DescribeEpnMeasurementData

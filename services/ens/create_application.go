@@ -71,8 +71,8 @@ func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRe
 // CreateApplicationRequest is the request struct for api CreateApplication
 type CreateApplicationRequest struct {
 	*requests.RpcRequest
-	Template string           `position:"Query"`
-	Timeout  requests.Integer `position:"Query"`
+	Template string           `position:"Query" name:"Template"`
+	Timeout  requests.Integer `position:"Query" name:"Timeout"`
 }
 
 // CreateApplicationResponse is the response struct for api CreateApplication

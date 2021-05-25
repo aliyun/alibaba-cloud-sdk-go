@@ -71,11 +71,11 @@ func (client *Client) ExportImageWithCallback(request *ExportImageRequest, callb
 // ExportImageRequest is the request struct for api ExportImage
 type ExportImageRequest struct {
 	*requests.RpcRequest
-	OSSRegionId string `position:"Query"`
-	OSSBucket   string `position:"Query"`
-	RoleName    string `position:"Query"`
-	OSSPrefix   string `position:"Query"`
-	ImageId     string `position:"Query"`
+	OSSRegionId string `position:"Query" name:"OSSRegionId"`
+	OSSBucket   string `position:"Query" name:"OSSBucket"`
+	RoleName    string `position:"Query" name:"RoleName"`
+	OSSPrefix   string `position:"Query" name:"OSSPrefix"`
+	ImageId     string `position:"Query" name:"ImageId"`
 }
 
 // ExportImageResponse is the response struct for api ExportImage

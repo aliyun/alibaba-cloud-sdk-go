@@ -71,16 +71,16 @@ func (client *Client) SchedulePodWithCallback(request *SchedulePodRequest, callb
 // SchedulePodRequest is the request struct for api SchedulePod
 type SchedulePodRequest struct {
 	*requests.RpcRequest
-	AreaCodes         string           `position:"Query"`
-	GroupUuid         string           `position:"Query"`
-	Isps              string           `position:"Query"`
-	Tenant            string           `position:"Query"`
-	WorkloadUuid      string           `position:"Query"`
-	Labels            string           `position:"Query"`
-	Regions           string           `position:"Query"`
-	ResourceAttribute string           `position:"Body"`
-	AliUid            requests.Integer `position:"Query"`
-	Requirements      string           `position:"Body"`
+	AreaCodes         string           `position:"Query" name:"AreaCodes"`
+	GroupUuid         string           `position:"Query" name:"GroupUuid"`
+	Isps              string           `position:"Query" name:"Isps"`
+	Tenant            string           `position:"Query" name:"Tenant"`
+	WorkloadUuid      string           `position:"Query" name:"WorkloadUuid"`
+	Labels            string           `position:"Query" name:"Labels"`
+	Regions           string           `position:"Query" name:"Regions"`
+	ResourceAttribute string           `position:"Body" name:"ResourceAttribute"`
+	AliUid            requests.Integer `position:"Query" name:"AliUid"`
+	Requirements      string           `position:"Body" name:"Requirements"`
 }
 
 // SchedulePodResponse is the response struct for api SchedulePod

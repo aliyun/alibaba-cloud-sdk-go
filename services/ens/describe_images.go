@@ -71,13 +71,13 @@ func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest,
 // DescribeImagesRequest is the request struct for api DescribeImages
 type DescribeImagesRequest struct {
 	*requests.RpcRequest
-	EnsRegionId string `position:"Query"`
-	Status      string `position:"Query"`
-	ImageId     string `position:"Query"`
-	PageNumber  string `position:"Query"`
-	ImageName   string `position:"Query"`
-	PageSize    string `position:"Query"`
-	Product     string `position:"Query"`
+	EnsRegionId string `position:"Query" name:"EnsRegionId"`
+	Status      string `position:"Query" name:"Status"`
+	ImageId     string `position:"Query" name:"ImageId"`
+	PageNumber  string `position:"Query" name:"PageNumber"`
+	ImageName   string `position:"Query" name:"ImageName"`
+	PageSize    string `position:"Query" name:"PageSize"`
+	Product     string `position:"Query" name:"product"`
 }
 
 // DescribeImagesResponse is the response struct for api DescribeImages

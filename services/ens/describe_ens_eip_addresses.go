@@ -71,13 +71,13 @@ func (client *Client) DescribeEnsEipAddressesWithCallback(request *DescribeEnsEi
 // DescribeEnsEipAddressesRequest is the request struct for api DescribeEnsEipAddresses
 type DescribeEnsEipAddressesRequest struct {
 	*requests.RpcRequest
-	EipAddress             string           `position:"Query"`
-	Status                 string           `position:"Query"`
-	AllocationId           string           `position:"Query"`
-	PageNumber             requests.Integer `position:"Query"`
-	AssociatedInstanceType string           `position:"Query"`
-	PageSize               requests.Integer `position:"Query"`
-	AssociatedInstanceId   string           `position:"Query"`
+	EipAddress             string           `position:"Query" name:"EipAddress"`
+	Status                 string           `position:"Query" name:"Status"`
+	AllocationId           string           `position:"Query" name:"AllocationId"`
+	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
+	AssociatedInstanceType string           `position:"Query" name:"AssociatedInstanceType"`
+	PageSize               requests.Integer `position:"Query" name:"PageSize"`
+	AssociatedInstanceId   string           `position:"Query" name:"AssociatedInstanceId"`
 }
 
 // DescribeEnsEipAddressesResponse is the response struct for api DescribeEnsEipAddresses

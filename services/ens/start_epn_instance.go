@@ -71,7 +71,7 @@ func (client *Client) StartEpnInstanceWithCallback(request *StartEpnInstanceRequ
 // StartEpnInstanceRequest is the request struct for api StartEpnInstance
 type StartEpnInstanceRequest struct {
 	*requests.RpcRequest
-	EPNInstanceId string `position:"Query"`
+	EPNInstanceId string `position:"Query" name:"EPNInstanceId"`
 }
 
 // StartEpnInstanceResponse is the response struct for api StartEpnInstance

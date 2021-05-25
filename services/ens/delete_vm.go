@@ -71,8 +71,8 @@ func (client *Client) DeleteVmWithCallback(request *DeleteVmRequest, callback fu
 // DeleteVmRequest is the request struct for api DeleteVm
 type DeleteVmRequest struct {
 	*requests.RpcRequest
-	AliUid       requests.Integer `position:"Query"`
-	WorkloadUuid string           `position:"Query"`
+	AliUid       requests.Integer `position:"Query" name:"AliUid"`
+	WorkloadUuid string           `position:"Query" name:"WorkloadUuid"`
 }
 
 // DeleteVmResponse is the response struct for api DeleteVm

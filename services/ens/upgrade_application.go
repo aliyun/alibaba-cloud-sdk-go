@@ -71,9 +71,9 @@ func (client *Client) UpgradeApplicationWithCallback(request *UpgradeApplication
 // UpgradeApplicationRequest is the request struct for api UpgradeApplication
 type UpgradeApplicationRequest struct {
 	*requests.RpcRequest
-	Template string           `position:"Query"`
-	Timeout  requests.Integer `position:"Query"`
-	AppId    string           `position:"Query"`
+	Template string           `position:"Query" name:"Template"`
+	Timeout  requests.Integer `position:"Query" name:"Timeout"`
+	AppId    string           `position:"Query" name:"AppId"`
 }
 
 // UpgradeApplicationResponse is the response struct for api UpgradeApplication

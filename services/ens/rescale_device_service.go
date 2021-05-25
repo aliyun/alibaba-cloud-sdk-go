@@ -71,11 +71,11 @@ func (client *Client) RescaleDeviceServiceWithCallback(request *RescaleDeviceSer
 // RescaleDeviceServiceRequest is the request struct for api RescaleDeviceService
 type RescaleDeviceServiceRequest struct {
 	*requests.RpcRequest
-	RescaleType      string           `position:"Query"`
-	ResourceSelector string           `position:"Body"`
-	Timeout          requests.Integer `position:"Query"`
-	RescaleLevel     string           `position:"Query"`
-	AppId            string           `position:"Query"`
+	RescaleType      string           `position:"Query" name:"RescaleType"`
+	ResourceSelector string           `position:"Body" name:"ResourceSelector"`
+	Timeout          requests.Integer `position:"Query" name:"Timeout"`
+	RescaleLevel     string           `position:"Query" name:"RescaleLevel"`
+	AppId            string           `position:"Query" name:"AppId"`
 }
 
 // RescaleDeviceServiceResponse is the response struct for api RescaleDeviceService

@@ -71,12 +71,12 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 // DescribeNetworkInterfacesRequest is the request struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
-	EnsRegionId      string `position:"Query"`
-	VSwitchId        string `position:"Query"`
-	InstanceId       string `position:"Query"`
-	PageNumber       string `position:"Query"`
-	PageSize         string `position:"Query"`
-	PrimaryIpAddress string `position:"Query"`
+	EnsRegionId      string `position:"Query" name:"EnsRegionId"`
+	VSwitchId        string `position:"Query" name:"VSwitchId"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
+	PageNumber       string `position:"Query" name:"PageNumber"`
+	PageSize         string `position:"Query" name:"PageSize"`
+	PrimaryIpAddress string `position:"Query" name:"PrimaryIpAddress"`
 }
 
 // DescribeNetworkInterfacesResponse is the response struct for api DescribeNetworkInterfaces
