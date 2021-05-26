@@ -18,7 +18,7 @@ package sts
 // SAMLAssertionInfo is a nested struct in sts response
 type SAMLAssertionInfo struct {
 	SubjectType string `json:"SubjectType" xml:"SubjectType"`
-	Subject     string `json:"Subject" xml:"Subject"`
-	Recipient   string `json:"Recipient" xml:"Recipient"`
 	Issuer      string `json:"Issuer" xml:"Issuer"`
+	Recipient   string `json:"Recipient" xml:"Recipient"`
+	Subject     string `json:"Subject" xml:"Subject"`
 }

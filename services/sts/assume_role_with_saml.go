@@ -21,7 +21,6 @@ import (
 )
 
 // AssumeRoleWithSAML invokes the sts.AssumeRoleWithSAML API synchronously
-// api document: https://help.aliyun.com/api/sts/assumerolewithsaml.html
 func (client *Client) AssumeRoleWithSAML(request *AssumeRoleWithSAMLRequest) (response *AssumeRoleWithSAMLResponse, err error) {
 	response = CreateAssumeRoleWithSAMLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssumeRoleWithSAML(request *AssumeRoleWithSAMLRequest) (re
 }
 
 // AssumeRoleWithSAMLWithChan invokes the sts.AssumeRoleWithSAML API asynchronously
-// api document: https://help.aliyun.com/api/sts/assumerolewithsaml.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssumeRoleWithSAMLWithChan(request *AssumeRoleWithSAMLRequest) (<-chan *AssumeRoleWithSAMLResponse, <-chan error) {
 	responseChan := make(chan *AssumeRoleWithSAMLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssumeRoleWithSAMLWithChan(request *AssumeRoleWithSAMLRequ
 }
 
 // AssumeRoleWithSAMLWithCallback invokes the sts.AssumeRoleWithSAML API asynchronously
-// api document: https://help.aliyun.com/api/sts/assumerolewithsaml.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssumeRoleWithSAMLWithCallback(request *AssumeRoleWithSAMLRequest, callback func(response *AssumeRoleWithSAMLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,9 +82,9 @@ type AssumeRoleWithSAMLRequest struct {
 type AssumeRoleWithSAMLResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	Credentials       Credentials       `json:"Credentials" xml:"Credentials"`
-	AssumedRoleUser   AssumedRoleUser   `json:"AssumedRoleUser" xml:"AssumedRoleUser"`
 	SAMLAssertionInfo SAMLAssertionInfo `json:"SAMLAssertionInfo" xml:"SAMLAssertionInfo"`
+	AssumedRoleUser   AssumedRoleUser   `json:"AssumedRoleUser" xml:"AssumedRoleUser"`
+	Credentials       Credentials       `json:"Credentials" xml:"Credentials"`
 }
 
 // CreateAssumeRoleWithSAMLRequest creates a request to invoke AssumeRoleWithSAML API
@@ -97,7 +92,8 @@ func CreateAssumeRoleWithSAMLRequest() (request *AssumeRoleWithSAMLRequest) {
 	request = &AssumeRoleWithSAMLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sts", "2015-04-01", "AssumeRoleWithSAML", "sts", "openAPI")
+	request.InitWithApiInfo("Sts", "2015-04-01", "AssumeRoleWithSAML", "", "")
+	request.Method = requests.POST
 	return
 }
 
