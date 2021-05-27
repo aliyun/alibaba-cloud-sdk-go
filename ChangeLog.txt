@@ -1,3 +1,7 @@
+2021-05-27 Version: v1.61.1113
+- Generated 2017-05-25 for `Dysmsapi`.
+- Generated for dysmsapi.
+
 2021-05-27 Version: v1.61.1112
 - Generated 2019-09-10 for `waf-openapi`.
 
