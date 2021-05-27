@@ -21,7 +21,6 @@ import (
 )
 
 // GetRepoListByNamespace invokes the cr.GetRepoListByNamespace API synchronously
-// api document: https://help.aliyun.com/api/cr/getrepolistbynamespace.html
 func (client *Client) GetRepoListByNamespace(request *GetRepoListByNamespaceRequest) (response *GetRepoListByNamespaceResponse, err error) {
 	response = CreateGetRepoListByNamespaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRepoListByNamespace(request *GetRepoListByNamespaceRequ
 }
 
 // GetRepoListByNamespaceWithChan invokes the cr.GetRepoListByNamespace API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepolistbynamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoListByNamespaceWithChan(request *GetRepoListByNamespaceRequest) (<-chan *GetRepoListByNamespaceResponse, <-chan error) {
 	responseChan := make(chan *GetRepoListByNamespaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRepoListByNamespaceWithChan(request *GetRepoListByNames
 }
 
 // GetRepoListByNamespaceWithCallback invokes the cr.GetRepoListByNamespace API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepolistbynamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoListByNamespaceWithCallback(request *GetRepoListByNamespaceRequest, callback func(response *GetRepoListByNamespaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

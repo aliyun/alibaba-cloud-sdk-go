@@ -21,7 +21,6 @@ import (
 )
 
 // CancelRepoBuild invokes the cr.CancelRepoBuild API synchronously
-// api document: https://help.aliyun.com/api/cr/cancelrepobuild.html
 func (client *Client) CancelRepoBuild(request *CancelRepoBuildRequest) (response *CancelRepoBuildResponse, err error) {
 	response = CreateCancelRepoBuildResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelRepoBuild(request *CancelRepoBuildRequest) (response
 }
 
 // CancelRepoBuildWithChan invokes the cr.CancelRepoBuild API asynchronously
-// api document: https://help.aliyun.com/api/cr/cancelrepobuild.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelRepoBuildWithChan(request *CancelRepoBuildRequest) (<-chan *CancelRepoBuildResponse, <-chan error) {
 	responseChan := make(chan *CancelRepoBuildResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelRepoBuildWithChan(request *CancelRepoBuildRequest) (
 }
 
 // CancelRepoBuildWithCallback invokes the cr.CancelRepoBuild API asynchronously
-// api document: https://help.aliyun.com/api/cr/cancelrepobuild.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelRepoBuildWithCallback(request *CancelRepoBuildRequest, callback func(response *CancelRepoBuildResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

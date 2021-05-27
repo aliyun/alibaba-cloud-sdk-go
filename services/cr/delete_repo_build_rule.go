@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRepoBuildRule invokes the cr.DeleteRepoBuildRule API synchronously
-// api document: https://help.aliyun.com/api/cr/deleterepobuildrule.html
 func (client *Client) DeleteRepoBuildRule(request *DeleteRepoBuildRuleRequest) (response *DeleteRepoBuildRuleResponse, err error) {
 	response = CreateDeleteRepoBuildRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRepoBuildRule(request *DeleteRepoBuildRuleRequest) (
 }
 
 // DeleteRepoBuildRuleWithChan invokes the cr.DeleteRepoBuildRule API asynchronously
-// api document: https://help.aliyun.com/api/cr/deleterepobuildrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRepoBuildRuleWithChan(request *DeleteRepoBuildRuleRequest) (<-chan *DeleteRepoBuildRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteRepoBuildRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRepoBuildRuleWithChan(request *DeleteRepoBuildRuleRe
 }
 
 // DeleteRepoBuildRuleWithCallback invokes the cr.DeleteRepoBuildRule API asynchronously
-// api document: https://help.aliyun.com/api/cr/deleterepobuildrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRepoBuildRuleWithCallback(request *DeleteRepoBuildRuleRequest, callback func(response *DeleteRepoBuildRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

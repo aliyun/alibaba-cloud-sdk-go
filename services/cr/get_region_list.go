@@ -21,7 +21,6 @@ import (
 )
 
 // GetRegionList invokes the cr.GetRegionList API synchronously
-// api document: https://help.aliyun.com/api/cr/getregionlist.html
 func (client *Client) GetRegionList(request *GetRegionListRequest) (response *GetRegionListResponse, err error) {
 	response = CreateGetRegionListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRegionList(request *GetRegionListRequest) (response *Ge
 }
 
 // GetRegionListWithChan invokes the cr.GetRegionList API asynchronously
-// api document: https://help.aliyun.com/api/cr/getregionlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRegionListWithChan(request *GetRegionListRequest) (<-chan *GetRegionListResponse, <-chan error) {
 	responseChan := make(chan *GetRegionListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRegionListWithChan(request *GetRegionListRequest) (<-ch
 }
 
 // GetRegionListWithCallback invokes the cr.GetRegionList API asynchronously
-// api document: https://help.aliyun.com/api/cr/getregionlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRegionListWithCallback(request *GetRegionListRequest, callback func(response *GetRegionListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

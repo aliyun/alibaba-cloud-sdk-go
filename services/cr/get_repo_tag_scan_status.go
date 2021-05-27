@@ -21,7 +21,6 @@ import (
 )
 
 // GetRepoTagScanStatus invokes the cr.GetRepoTagScanStatus API synchronously
-// api document: https://help.aliyun.com/api/cr/getrepotagscanstatus.html
 func (client *Client) GetRepoTagScanStatus(request *GetRepoTagScanStatusRequest) (response *GetRepoTagScanStatusResponse, err error) {
 	response = CreateGetRepoTagScanStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRepoTagScanStatus(request *GetRepoTagScanStatusRequest)
 }
 
 // GetRepoTagScanStatusWithChan invokes the cr.GetRepoTagScanStatus API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepotagscanstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoTagScanStatusWithChan(request *GetRepoTagScanStatusRequest) (<-chan *GetRepoTagScanStatusResponse, <-chan error) {
 	responseChan := make(chan *GetRepoTagScanStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRepoTagScanStatusWithChan(request *GetRepoTagScanStatus
 }
 
 // GetRepoTagScanStatusWithCallback invokes the cr.GetRepoTagScanStatus API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepotagscanstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoTagScanStatusWithCallback(request *GetRepoTagScanStatusRequest, callback func(response *GetRepoTagScanStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

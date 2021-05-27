@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRepoWebhook invokes the cr.DeleteRepoWebhook API synchronously
-// api document: https://help.aliyun.com/api/cr/deleterepowebhook.html
 func (client *Client) DeleteRepoWebhook(request *DeleteRepoWebhookRequest) (response *DeleteRepoWebhookResponse, err error) {
 	response = CreateDeleteRepoWebhookResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRepoWebhook(request *DeleteRepoWebhookRequest) (resp
 }
 
 // DeleteRepoWebhookWithChan invokes the cr.DeleteRepoWebhook API asynchronously
-// api document: https://help.aliyun.com/api/cr/deleterepowebhook.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRepoWebhookWithChan(request *DeleteRepoWebhookRequest) (<-chan *DeleteRepoWebhookResponse, <-chan error) {
 	responseChan := make(chan *DeleteRepoWebhookResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRepoWebhookWithChan(request *DeleteRepoWebhookReques
 }
 
 // DeleteRepoWebhookWithCallback invokes the cr.DeleteRepoWebhook API asynchronously
-// api document: https://help.aliyun.com/api/cr/deleterepowebhook.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRepoWebhookWithCallback(request *DeleteRepoWebhookRequest, callback func(response *DeleteRepoWebhookResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

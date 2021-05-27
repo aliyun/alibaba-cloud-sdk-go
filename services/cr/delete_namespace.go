@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNamespace invokes the cr.DeleteNamespace API synchronously
-// api document: https://help.aliyun.com/api/cr/deletenamespace.html
 func (client *Client) DeleteNamespace(request *DeleteNamespaceRequest) (response *DeleteNamespaceResponse, err error) {
 	response = CreateDeleteNamespaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNamespace(request *DeleteNamespaceRequest) (response
 }
 
 // DeleteNamespaceWithChan invokes the cr.DeleteNamespace API asynchronously
-// api document: https://help.aliyun.com/api/cr/deletenamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNamespaceWithChan(request *DeleteNamespaceRequest) (<-chan *DeleteNamespaceResponse, <-chan error) {
 	responseChan := make(chan *DeleteNamespaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNamespaceWithChan(request *DeleteNamespaceRequest) (
 }
 
 // DeleteNamespaceWithCallback invokes the cr.DeleteNamespace API asynchronously
-// api document: https://help.aliyun.com/api/cr/deletenamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNamespaceWithCallback(request *DeleteNamespaceRequest, callback func(response *DeleteNamespaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

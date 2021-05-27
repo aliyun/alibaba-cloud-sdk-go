@@ -21,7 +21,6 @@ import (
 )
 
 // GetRepo invokes the cr.GetRepo API synchronously
-// api document: https://help.aliyun.com/api/cr/getrepo.html
 func (client *Client) GetRepo(request *GetRepoRequest) (response *GetRepoResponse, err error) {
 	response = CreateGetRepoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRepo(request *GetRepoRequest) (response *GetRepoRespons
 }
 
 // GetRepoWithChan invokes the cr.GetRepo API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoWithChan(request *GetRepoRequest) (<-chan *GetRepoResponse, <-chan error) {
 	responseChan := make(chan *GetRepoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRepoWithChan(request *GetRepoRequest) (<-chan *GetRepoR
 }
 
 // GetRepoWithCallback invokes the cr.GetRepo API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoWithCallback(request *GetRepoRequest, callback func(response *GetRepoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

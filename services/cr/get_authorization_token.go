@@ -21,7 +21,6 @@ import (
 )
 
 // GetAuthorizationToken invokes the cr.GetAuthorizationToken API synchronously
-// api document: https://help.aliyun.com/api/cr/getauthorizationtoken.html
 func (client *Client) GetAuthorizationToken(request *GetAuthorizationTokenRequest) (response *GetAuthorizationTokenResponse, err error) {
 	response = CreateGetAuthorizationTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAuthorizationToken(request *GetAuthorizationTokenReques
 }
 
 // GetAuthorizationTokenWithChan invokes the cr.GetAuthorizationToken API asynchronously
-// api document: https://help.aliyun.com/api/cr/getauthorizationtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAuthorizationTokenWithChan(request *GetAuthorizationTokenRequest) (<-chan *GetAuthorizationTokenResponse, <-chan error) {
 	responseChan := make(chan *GetAuthorizationTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAuthorizationTokenWithChan(request *GetAuthorizationTok
 }
 
 // GetAuthorizationTokenWithCallback invokes the cr.GetAuthorizationToken API asynchronously
-// api document: https://help.aliyun.com/api/cr/getauthorizationtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAuthorizationTokenWithCallback(request *GetAuthorizationTokenRequest, callback func(response *GetAuthorizationTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

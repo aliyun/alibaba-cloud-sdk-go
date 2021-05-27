@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUserInfo invokes the cr.CreateUserInfo API synchronously
-// api document: https://help.aliyun.com/api/cr/createuserinfo.html
 func (client *Client) CreateUserInfo(request *CreateUserInfoRequest) (response *CreateUserInfoResponse, err error) {
 	response = CreateCreateUserInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUserInfo(request *CreateUserInfoRequest) (response *
 }
 
 // CreateUserInfoWithChan invokes the cr.CreateUserInfo API asynchronously
-// api document: https://help.aliyun.com/api/cr/createuserinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserInfoWithChan(request *CreateUserInfoRequest) (<-chan *CreateUserInfoResponse, <-chan error) {
 	responseChan := make(chan *CreateUserInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUserInfoWithChan(request *CreateUserInfoRequest) (<-
 }
 
 // CreateUserInfoWithCallback invokes the cr.CreateUserInfo API asynchronously
-// api document: https://help.aliyun.com/api/cr/createuserinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserInfoWithCallback(request *CreateUserInfoRequest, callback func(response *CreateUserInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

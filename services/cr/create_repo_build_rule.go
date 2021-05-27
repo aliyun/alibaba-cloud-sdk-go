@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRepoBuildRule invokes the cr.CreateRepoBuildRule API synchronously
-// api document: https://help.aliyun.com/api/cr/createrepobuildrule.html
 func (client *Client) CreateRepoBuildRule(request *CreateRepoBuildRuleRequest) (response *CreateRepoBuildRuleResponse, err error) {
 	response = CreateCreateRepoBuildRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRepoBuildRule(request *CreateRepoBuildRuleRequest) (
 }
 
 // CreateRepoBuildRuleWithChan invokes the cr.CreateRepoBuildRule API asynchronously
-// api document: https://help.aliyun.com/api/cr/createrepobuildrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRepoBuildRuleWithChan(request *CreateRepoBuildRuleRequest) (<-chan *CreateRepoBuildRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateRepoBuildRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRepoBuildRuleWithChan(request *CreateRepoBuildRuleRe
 }
 
 // CreateRepoBuildRuleWithCallback invokes the cr.CreateRepoBuildRule API asynchronously
-// api document: https://help.aliyun.com/api/cr/createrepobuildrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRepoBuildRuleWithCallback(request *CreateRepoBuildRuleRequest, callback func(response *CreateRepoBuildRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

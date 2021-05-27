@@ -21,7 +21,6 @@ import (
 )
 
 // GetImageLayer invokes the cr.GetImageLayer API synchronously
-// api document: https://help.aliyun.com/api/cr/getimagelayer.html
 func (client *Client) GetImageLayer(request *GetImageLayerRequest) (response *GetImageLayerResponse, err error) {
 	response = CreateGetImageLayerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImageLayer(request *GetImageLayerRequest) (response *Ge
 }
 
 // GetImageLayerWithChan invokes the cr.GetImageLayer API asynchronously
-// api document: https://help.aliyun.com/api/cr/getimagelayer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageLayerWithChan(request *GetImageLayerRequest) (<-chan *GetImageLayerResponse, <-chan error) {
 	responseChan := make(chan *GetImageLayerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageLayerWithChan(request *GetImageLayerRequest) (<-ch
 }
 
 // GetImageLayerWithCallback invokes the cr.GetImageLayer API asynchronously
-// api document: https://help.aliyun.com/api/cr/getimagelayer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageLayerWithCallback(request *GetImageLayerRequest, callback func(response *GetImageLayerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

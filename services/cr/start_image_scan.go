@@ -21,7 +21,6 @@ import (
 )
 
 // StartImageScan invokes the cr.StartImageScan API synchronously
-// api document: https://help.aliyun.com/api/cr/startimagescan.html
 func (client *Client) StartImageScan(request *StartImageScanRequest) (response *StartImageScanResponse, err error) {
 	response = CreateStartImageScanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartImageScan(request *StartImageScanRequest) (response *
 }
 
 // StartImageScanWithChan invokes the cr.StartImageScan API asynchronously
-// api document: https://help.aliyun.com/api/cr/startimagescan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartImageScanWithChan(request *StartImageScanRequest) (<-chan *StartImageScanResponse, <-chan error) {
 	responseChan := make(chan *StartImageScanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartImageScanWithChan(request *StartImageScanRequest) (<-
 }
 
 // StartImageScanWithCallback invokes the cr.StartImageScan API asynchronously
-// api document: https://help.aliyun.com/api/cr/startimagescan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartImageScanWithCallback(request *StartImageScanRequest, callback func(response *StartImageScanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

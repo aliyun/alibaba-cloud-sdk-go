@@ -21,7 +21,6 @@ import (
 )
 
 // GetRepoList invokes the cr.GetRepoList API synchronously
-// api document: https://help.aliyun.com/api/cr/getrepolist.html
 func (client *Client) GetRepoList(request *GetRepoListRequest) (response *GetRepoListResponse, err error) {
 	response = CreateGetRepoListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRepoList(request *GetRepoListRequest) (response *GetRep
 }
 
 // GetRepoListWithChan invokes the cr.GetRepoList API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepolist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoListWithChan(request *GetRepoListRequest) (<-chan *GetRepoListResponse, <-chan error) {
 	responseChan := make(chan *GetRepoListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRepoListWithChan(request *GetRepoListRequest) (<-chan *
 }
 
 // GetRepoListWithCallback invokes the cr.GetRepoList API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepolist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoListWithCallback(request *GetRepoListRequest, callback func(response *GetRepoListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

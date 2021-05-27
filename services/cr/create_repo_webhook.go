@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRepoWebhook invokes the cr.CreateRepoWebhook API synchronously
-// api document: https://help.aliyun.com/api/cr/createrepowebhook.html
 func (client *Client) CreateRepoWebhook(request *CreateRepoWebhookRequest) (response *CreateRepoWebhookResponse, err error) {
 	response = CreateCreateRepoWebhookResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRepoWebhook(request *CreateRepoWebhookRequest) (resp
 }
 
 // CreateRepoWebhookWithChan invokes the cr.CreateRepoWebhook API asynchronously
-// api document: https://help.aliyun.com/api/cr/createrepowebhook.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRepoWebhookWithChan(request *CreateRepoWebhookRequest) (<-chan *CreateRepoWebhookResponse, <-chan error) {
 	responseChan := make(chan *CreateRepoWebhookResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRepoWebhookWithChan(request *CreateRepoWebhookReques
 }
 
 // CreateRepoWebhookWithCallback invokes the cr.CreateRepoWebhook API asynchronously
-// api document: https://help.aliyun.com/api/cr/createrepowebhook.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRepoWebhookWithCallback(request *CreateRepoWebhookRequest, callback func(response *CreateRepoWebhookResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRepo invokes the cr.CreateRepo API synchronously
-// api document: https://help.aliyun.com/api/cr/createrepo.html
 func (client *Client) CreateRepo(request *CreateRepoRequest) (response *CreateRepoResponse, err error) {
 	response = CreateCreateRepoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRepo(request *CreateRepoRequest) (response *CreateRe
 }
 
 // CreateRepoWithChan invokes the cr.CreateRepo API asynchronously
-// api document: https://help.aliyun.com/api/cr/createrepo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRepoWithChan(request *CreateRepoRequest) (<-chan *CreateRepoResponse, <-chan error) {
 	responseChan := make(chan *CreateRepoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRepoWithChan(request *CreateRepoRequest) (<-chan *Cr
 }
 
 // CreateRepoWithCallback invokes the cr.CreateRepo API asynchronously
-// api document: https://help.aliyun.com/api/cr/createrepo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRepoWithCallback(request *CreateRepoRequest, callback func(response *CreateRepoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

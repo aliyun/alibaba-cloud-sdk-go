@@ -21,7 +21,6 @@ import (
 )
 
 // GetRepoBuildRuleList invokes the cr.GetRepoBuildRuleList API synchronously
-// api document: https://help.aliyun.com/api/cr/getrepobuildrulelist.html
 func (client *Client) GetRepoBuildRuleList(request *GetRepoBuildRuleListRequest) (response *GetRepoBuildRuleListResponse, err error) {
 	response = CreateGetRepoBuildRuleListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRepoBuildRuleList(request *GetRepoBuildRuleListRequest)
 }
 
 // GetRepoBuildRuleListWithChan invokes the cr.GetRepoBuildRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepobuildrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoBuildRuleListWithChan(request *GetRepoBuildRuleListRequest) (<-chan *GetRepoBuildRuleListResponse, <-chan error) {
 	responseChan := make(chan *GetRepoBuildRuleListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRepoBuildRuleListWithChan(request *GetRepoBuildRuleList
 }
 
 // GetRepoBuildRuleListWithCallback invokes the cr.GetRepoBuildRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cr/getrepobuildrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRepoBuildRuleListWithCallback(request *GetRepoBuildRuleListRequest, callback func(response *GetRepoBuildRuleListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

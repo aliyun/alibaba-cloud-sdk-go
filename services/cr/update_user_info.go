@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateUserInfo invokes the cr.UpdateUserInfo API synchronously
-// api document: https://help.aliyun.com/api/cr/updateuserinfo.html
 func (client *Client) UpdateUserInfo(request *UpdateUserInfoRequest) (response *UpdateUserInfoResponse, err error) {
 	response = CreateUpdateUserInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateUserInfo(request *UpdateUserInfoRequest) (response *
 }
 
 // UpdateUserInfoWithChan invokes the cr.UpdateUserInfo API asynchronously
-// api document: https://help.aliyun.com/api/cr/updateuserinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserInfoWithChan(request *UpdateUserInfoRequest) (<-chan *UpdateUserInfoResponse, <-chan error) {
 	responseChan := make(chan *UpdateUserInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateUserInfoWithChan(request *UpdateUserInfoRequest) (<-
 }
 
 // UpdateUserInfoWithCallback invokes the cr.UpdateUserInfo API asynchronously
-// api document: https://help.aliyun.com/api/cr/updateuserinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserInfoWithCallback(request *UpdateUserInfoRequest, callback func(response *UpdateUserInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

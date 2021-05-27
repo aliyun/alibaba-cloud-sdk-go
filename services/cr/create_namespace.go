@@ -21,7 +21,6 @@ import (
 )
 
 // CreateNamespace invokes the cr.CreateNamespace API synchronously
-// api document: https://help.aliyun.com/api/cr/createnamespace.html
 func (client *Client) CreateNamespace(request *CreateNamespaceRequest) (response *CreateNamespaceResponse, err error) {
 	response = CreateCreateNamespaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateNamespace(request *CreateNamespaceRequest) (response
 }
 
 // CreateNamespaceWithChan invokes the cr.CreateNamespace API asynchronously
-// api document: https://help.aliyun.com/api/cr/createnamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNamespaceWithChan(request *CreateNamespaceRequest) (<-chan *CreateNamespaceResponse, <-chan error) {
 	responseChan := make(chan *CreateNamespaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateNamespaceWithChan(request *CreateNamespaceRequest) (
 }
 
 // CreateNamespaceWithCallback invokes the cr.CreateNamespace API asynchronously
-// api document: https://help.aliyun.com/api/cr/createnamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNamespaceWithCallback(request *CreateNamespaceRequest, callback func(response *CreateNamespaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

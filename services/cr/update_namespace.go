@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateNamespace invokes the cr.UpdateNamespace API synchronously
-// api document: https://help.aliyun.com/api/cr/updatenamespace.html
 func (client *Client) UpdateNamespace(request *UpdateNamespaceRequest) (response *UpdateNamespaceResponse, err error) {
 	response = CreateUpdateNamespaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateNamespace(request *UpdateNamespaceRequest) (response
 }
 
 // UpdateNamespaceWithChan invokes the cr.UpdateNamespace API asynchronously
-// api document: https://help.aliyun.com/api/cr/updatenamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateNamespaceWithChan(request *UpdateNamespaceRequest) (<-chan *UpdateNamespaceResponse, <-chan error) {
 	responseChan := make(chan *UpdateNamespaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateNamespaceWithChan(request *UpdateNamespaceRequest) (
 }
 
 // UpdateNamespaceWithCallback invokes the cr.UpdateNamespace API asynchronously
-// api document: https://help.aliyun.com/api/cr/updatenamespace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateNamespaceWithCallback(request *UpdateNamespaceRequest, callback func(response *UpdateNamespaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
