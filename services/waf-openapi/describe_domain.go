@@ -71,10 +71,10 @@ func (client *Client) DescribeDomainWithCallback(request *DescribeDomainRequest,
 // DescribeDomainRequest is the request struct for api DescribeDomain
 type DescribeDomainRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
 	SourceIp   string `position:"Query" name:"SourceIp"`
-	Domain     string `position:"Query" name:"Domain"`
 	Lang       string `position:"Query" name:"Lang"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Domain     string `position:"Query" name:"Domain"`
 }
 
 // DescribeDomainResponse is the response struct for api DescribeDomain

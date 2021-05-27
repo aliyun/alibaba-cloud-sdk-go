@@ -23,6 +23,7 @@ type Domain struct {
 	LoadBalancing        int                        `json:"LoadBalancing" xml:"LoadBalancing"`
 	Cname                string                     `json:"Cname" xml:"Cname"`
 	IsAccessProduct      int                        `json:"IsAccessProduct" xml:"IsAccessProduct"`
+	AccessHeaderMode     int                        `json:"AccessHeaderMode" xml:"AccessHeaderMode"`
 	Version              int64                      `json:"Version" xml:"Version"`
 	ClusterType          int                        `json:"ClusterType" xml:"ClusterType"`
 	ConnectionTime       int                        `json:"ConnectionTime" xml:"ConnectionTime"`
@@ -33,6 +34,7 @@ type Domain struct {
 	SourceIps            []string                   `json:"SourceIps" xml:"SourceIps"`
 	Http2Port            []string                   `json:"Http2Port" xml:"Http2Port"`
 	HttpPort             []string                   `json:"HttpPort" xml:"HttpPort"`
+	AccessHeaders        []string                   `json:"AccessHeaders" xml:"AccessHeaders"`
 	HttpsPort            []string                   `json:"HttpsPort" xml:"HttpsPort"`
 	LogHeaders           []LogHeader                `json:"LogHeaders" xml:"LogHeaders"`
 	CloudNativeInstances []CloudNativeInstancesItem `json:"CloudNativeInstances" xml:"CloudNativeInstances"`

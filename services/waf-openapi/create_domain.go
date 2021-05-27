@@ -78,8 +78,10 @@ type CreateDomainRequest struct {
 	Http2Port            string           `position:"Query" name:"Http2Port"`
 	WriteTime            requests.Integer `position:"Query" name:"WriteTime"`
 	Lang                 string           `position:"Query" name:"Lang"`
+	AccessHeaderMode     requests.Integer `position:"Query" name:"AccessHeaderMode"`
 	AccessType           string           `position:"Query" name:"AccessType"`
 	LogHeaders           string           `position:"Query" name:"LogHeaders"`
+	AccessHeaders        string           `position:"Query" name:"AccessHeaders"`
 	ConnectionTime       requests.Integer `position:"Query" name:"ConnectionTime"`
 	ClusterType          requests.Integer `position:"Query" name:"ClusterType"`
 	CloudNativeInstances string           `position:"Query" name:"CloudNativeInstances"`

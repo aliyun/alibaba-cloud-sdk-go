@@ -72,16 +72,17 @@ func (client *Client) ModifyDomainWithCallback(request *ModifyDomainRequest, cal
 type ModifyDomainRequest struct {
 	*requests.RpcRequest
 	IpFollowStatus       requests.Integer `position:"Query" name:"IpFollowStatus"`
+	HybridCloudType      requests.Integer `position:"Query" name:"HybridCloudType"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
-	XffHeaderMode        requests.Integer `position:"Query" name:"XffHeaderMode"`
 	HttpPort             string           `position:"Query" name:"HttpPort"`
 	Http2Port            string           `position:"Query" name:"Http2Port"`
 	WriteTime            requests.Integer `position:"Query" name:"WriteTime"`
 	Lang                 string           `position:"Query" name:"Lang"`
-	XffHeaders           string           `position:"Query" name:"XffHeaders"`
+	AccessHeaderMode     requests.Integer `position:"Query" name:"AccessHeaderMode"`
 	AccessType           string           `position:"Query" name:"AccessType"`
 	BindingIpv6          requests.Integer `position:"Query" name:"BindingIpv6"`
 	LogHeaders           string           `position:"Query" name:"LogHeaders"`
+	AccessHeaders        string           `position:"Query" name:"AccessHeaders"`
 	ConnectionTime       requests.Integer `position:"Query" name:"ConnectionTime"`
 	ClusterType          requests.Integer `position:"Query" name:"ClusterType"`
 	CloudNativeInstances string           `position:"Query" name:"CloudNativeInstances"`
