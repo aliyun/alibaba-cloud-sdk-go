@@ -117,6 +117,7 @@ type DescribeGatewayResponse struct {
 	DataLoadType             string                        `json:"DataLoadType" xml:"DataLoadType"`
 	DataLoadInterval         int                           `json:"DataLoadInterval" xml:"DataLoadInterval"`
 	LastErrorKey             string                        `json:"LastErrorKey" xml:"LastErrorKey"`
+	InnerIpv6Ip              string                        `json:"InnerIpv6Ip" xml:"InnerIpv6Ip"`
 	ElasticNodes             ElasticNodesInDescribeGateway `json:"ElasticNodes" xml:"ElasticNodes"`
 }
 

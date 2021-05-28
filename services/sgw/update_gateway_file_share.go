@@ -77,6 +77,7 @@ type UpdateGatewayFileShareRequest struct {
 	ReadWriteUserList      string           `position:"Query" name:"ReadWriteUserList"`
 	PollingInterval        requests.Integer `position:"Query" name:"PollingInterval"`
 	ReadWriteClientList    string           `position:"Query" name:"ReadWriteClientList"`
+	BypassCacheRead        requests.Boolean `position:"Query" name:"BypassCacheRead"`
 	BackendLimit           requests.Integer `position:"Query" name:"BackendLimit"`
 	Squash                 string           `position:"Query" name:"Squash"`
 	ReadOnlyClientList     string           `position:"Query" name:"ReadOnlyClientList"`
@@ -107,11 +108,11 @@ type UpdateGatewayFileShareRequest struct {
 // UpdateGatewayFileShareResponse is the response struct for api UpdateGatewayFileShare
 type UpdateGatewayFileShareResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateGatewayFileShareRequest creates a request to invoke UpdateGatewayFileShare API

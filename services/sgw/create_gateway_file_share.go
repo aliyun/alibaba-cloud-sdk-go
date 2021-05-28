@@ -74,6 +74,7 @@ type CreateGatewayFileShareRequest struct {
 	InPlace                requests.Boolean `position:"Query" name:"InPlace"`
 	OssEndpoint            string           `position:"Query" name:"OssEndpoint"`
 	ReadWriteClientList    string           `position:"Query" name:"ReadWriteClientList"`
+	BypassCacheRead        requests.Boolean `position:"Query" name:"BypassCacheRead"`
 	BackendLimit           requests.Integer `position:"Query" name:"BackendLimit"`
 	Squash                 string           `position:"Query" name:"Squash"`
 	ReadOnlyClientList     string           `position:"Query" name:"ReadOnlyClientList"`
@@ -101,6 +102,7 @@ type CreateGatewayFileShareRequest struct {
 	ReadWriteUserList      string           `position:"Query" name:"ReadWriteUserList"`
 	PollingInterval        requests.Integer `position:"Query" name:"PollingInterval"`
 	Enabled                requests.Boolean `position:"Query" name:"Enabled"`
+	ServerSideAlgorithm    string           `position:"Query" name:"ServerSideAlgorithm"`
 	ServerSideCmk          string           `position:"Query" name:"ServerSideCmk"`
 	ServerSideEncryption   requests.Boolean `position:"Query" name:"ServerSideEncryption"`
 	IgnoreDelete           requests.Boolean `position:"Query" name:"IgnoreDelete"`
@@ -115,11 +117,11 @@ type CreateGatewayFileShareRequest struct {
 // CreateGatewayFileShareResponse is the response struct for api CreateGatewayFileShare
 type CreateGatewayFileShareResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateGatewayFileShareRequest creates a request to invoke CreateGatewayFileShare API

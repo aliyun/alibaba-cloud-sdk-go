@@ -1,3 +1,7 @@
+2021-05-28 Version: v1.61.1116
+- Generated 2018-05-11 for `sgw`.
+- Add TriggerRemoteSync api.
+
 2021-05-28 Version: v1.61.1115
 - Generated 2017-06-01 for `hitsdb`.
 - Create Lindorm Open api.

@@ -44,6 +44,7 @@ type Gateway struct {
 	VSwitchId                string                         `json:"VSwitchId" xml:"VSwitchId"`
 	Ip                       string                         `json:"Ip" xml:"Ip"`
 	GatewayId                string                         `json:"GatewayId" xml:"GatewayId"`
+	InnerIpv6Ip              string                         `json:"InnerIpv6Ip" xml:"InnerIpv6Ip"`
 	Location                 string                         `json:"Location" xml:"Location"`
 	IsReleaseAfterExpiration bool                           `json:"IsReleaseAfterExpiration" xml:"IsReleaseAfterExpiration"`
 	EcsInstanceId            string                         `json:"EcsInstanceId" xml:"EcsInstanceId"`

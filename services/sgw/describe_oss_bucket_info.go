@@ -91,6 +91,7 @@ type DescribeOssBucketInfoResponse struct {
 	IsSupportServerSideEncryption bool   `json:"IsSupportServerSideEncryption" xml:"IsSupportServerSideEncryption"`
 	IsFresh                       bool   `json:"IsFresh" xml:"IsFresh"`
 	StorageSize                   int64  `json:"StorageSize" xml:"StorageSize"`
+	IsVersioning                  bool   `json:"IsVersioning" xml:"IsVersioning"`
 }
 
 // CreateDescribeOssBucketInfoRequest creates a request to invoke DescribeOssBucketInfo API

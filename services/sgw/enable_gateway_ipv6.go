@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteGateway invokes the sgw.DeleteGateway API synchronously
-func (client *Client) DeleteGateway(request *DeleteGatewayRequest) (response *DeleteGatewayResponse, err error) {
-	response = CreateDeleteGatewayResponse()
+// EnableGatewayIpv6 invokes the sgw.EnableGatewayIpv6 API synchronously
+func (client *Client) EnableGatewayIpv6(request *EnableGatewayIpv6Request) (response *EnableGatewayIpv6Response, err error) {
+	response = CreateEnableGatewayIpv6Response()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteGatewayWithChan invokes the sgw.DeleteGateway API asynchronously
-func (client *Client) DeleteGatewayWithChan(request *DeleteGatewayRequest) (<-chan *DeleteGatewayResponse, <-chan error) {
-	responseChan := make(chan *DeleteGatewayResponse, 1)
+// EnableGatewayIpv6WithChan invokes the sgw.EnableGatewayIpv6 API asynchronously
+func (client *Client) EnableGatewayIpv6WithChan(request *EnableGatewayIpv6Request) (<-chan *EnableGatewayIpv6Response, <-chan error) {
+	responseChan := make(chan *EnableGatewayIpv6Response, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteGateway(request)
+		response, err := client.EnableGatewayIpv6(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteGatewayWithChan(request *DeleteGatewayRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteGatewayWithCallback invokes the sgw.DeleteGateway API asynchronously
-func (client *Client) DeleteGatewayWithCallback(request *DeleteGatewayRequest, callback func(response *DeleteGatewayResponse, err error)) <-chan int {
+// EnableGatewayIpv6WithCallback invokes the sgw.EnableGatewayIpv6 API asynchronously
+func (client *Client) EnableGatewayIpv6WithCallback(request *EnableGatewayIpv6Request, callback func(response *EnableGatewayIpv6Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteGatewayResponse
+		var response *EnableGatewayIpv6Response
 		var err error
 		defer close(result)
-		response, err = client.DeleteGateway(request)
+		response, err = client.EnableGatewayIpv6(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,17 +68,15 @@ func (client *Client) DeleteGatewayWithCallback(request *DeleteGatewayRequest, c
 	return result
 }
 
-// DeleteGatewayRequest is the request struct for api DeleteGateway
-type DeleteGatewayRequest struct {
+// EnableGatewayIpv6Request is the request struct for api EnableGatewayIpv6
+type EnableGatewayIpv6Request struct {
 	*requests.RpcRequest
-	ReasonDetail  string `position:"Query" name:"ReasonDetail"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GatewayId     string `position:"Query" name:"GatewayId"`
-	ReasonType    string `position:"Query" name:"ReasonType"`
 }
 
-// DeleteGatewayResponse is the response struct for api DeleteGateway
-type DeleteGatewayResponse struct {
+// EnableGatewayIpv6Response is the response struct for api EnableGatewayIpv6
+type EnableGatewayIpv6Response struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -87,19 +85,19 @@ type DeleteGatewayResponse struct {
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateDeleteGatewayRequest creates a request to invoke DeleteGateway API
-func CreateDeleteGatewayRequest() (request *DeleteGatewayRequest) {
-	request = &DeleteGatewayRequest{
+// CreateEnableGatewayIpv6Request creates a request to invoke EnableGatewayIpv6 API
+func CreateEnableGatewayIpv6Request() (request *EnableGatewayIpv6Request) {
+	request = &EnableGatewayIpv6Request{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("sgw", "2018-05-11", "DeleteGateway", "hcs_sgw", "openAPI")
+	request.InitWithApiInfo("sgw", "2018-05-11", "EnableGatewayIpv6", "hcs_sgw", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteGatewayResponse creates a response to parse from DeleteGateway response
-func CreateDeleteGatewayResponse() (response *DeleteGatewayResponse) {
-	response = &DeleteGatewayResponse{
+// CreateEnableGatewayIpv6Response creates a response to parse from EnableGatewayIpv6 response
+func CreateEnableGatewayIpv6Response() (response *EnableGatewayIpv6Response) {
+	response = &EnableGatewayIpv6Response{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

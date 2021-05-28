@@ -17,15 +17,16 @@ package sgw
 
 // Cache is a nested struct in sgw response
 type Cache struct {
-	SizeInGB         int64  `json:"SizeInGB" xml:"SizeInGB"`
-	Iops             int64  `json:"Iops" xml:"Iops"`
-	CacheId          string `json:"CacheId" xml:"CacheId"`
-	CacheType        string `json:"CacheType" xml:"CacheType"`
-	IsUsed           bool   `json:"IsUsed" xml:"IsUsed"`
-	LocalFilePath    string `json:"LocalFilePath" xml:"LocalFilePath"`
-	RenewURL         string `json:"RenewURL" xml:"RenewURL"`
-	ExpiredTime      int64  `json:"ExpiredTime" xml:"ExpiredTime"`
-	ExpireStatus     int    `json:"ExpireStatus" xml:"ExpireStatus"`
-	PerformanceLevel string `json:"PerformanceLevel" xml:"PerformanceLevel"`
-	BuyURL           string `json:"BuyURL" xml:"BuyURL"`
+	SizeInGB               int64  `json:"SizeInGB" xml:"SizeInGB"`
+	Iops                   int64  `json:"Iops" xml:"Iops"`
+	CacheId                string `json:"CacheId" xml:"CacheId"`
+	CacheType              string `json:"CacheType" xml:"CacheType"`
+	IsUsed                 bool   `json:"IsUsed" xml:"IsUsed"`
+	LocalFilePath          string `json:"LocalFilePath" xml:"LocalFilePath"`
+	RenewURL               string `json:"RenewURL" xml:"RenewURL"`
+	ExpiredTime            int64  `json:"ExpiredTime" xml:"ExpiredTime"`
+	ExpireStatus           int    `json:"ExpireStatus" xml:"ExpireStatus"`
+	PerformanceLevel       string `json:"PerformanceLevel" xml:"PerformanceLevel"`
+	BuyURL                 string `json:"BuyURL" xml:"BuyURL"`
+	SubscriptionInstanceId string `json:"SubscriptionInstanceId" xml:"SubscriptionInstanceId"`
 }

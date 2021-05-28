@@ -79,13 +79,13 @@ type DescribeGatewayCapacityLimitRequest struct {
 // DescribeGatewayCapacityLimitResponse is the response struct for api DescribeGatewayCapacityLimit
 type DescribeGatewayCapacityLimitResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	Success            bool   `json:"Success" xml:"Success"`
-	Code               string `json:"Code" xml:"Code"`
-	Message            string `json:"Message" xml:"Message"`
-	FileNumber         int64  `json:"FileNumber" xml:"FileNumber"`
 	FileSystemSizeInTB int64  `json:"FileSystemSizeInTB" xml:"FileSystemSizeInTB"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	Message            string `json:"Message" xml:"Message"`
 	IsMetadataSeparate bool   `json:"IsMetadataSeparate" xml:"IsMetadataSeparate"`
+	FileNumber         int64  `json:"FileNumber" xml:"FileNumber"`
+	Code               string `json:"Code" xml:"Code"`
+	Success            bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDescribeGatewayCapacityLimitRequest creates a request to invoke DescribeGatewayCapacityLimit API
