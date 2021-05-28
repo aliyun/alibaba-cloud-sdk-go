@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeRegions invokes the hitsdb.DescribeRegions API synchronously
-func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
-	response = CreateDescribeRegionsResponse()
+// RestartHiTSDBInstance invokes the hitsdb.RestartHiTSDBInstance API synchronously
+func (client *Client) RestartHiTSDBInstance(request *RestartHiTSDBInstanceRequest) (response *RestartHiTSDBInstanceResponse, err error) {
+	response = CreateRestartHiTSDBInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeRegionsWithChan invokes the hitsdb.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeRegionsResponse, 1)
+// RestartHiTSDBInstanceWithChan invokes the hitsdb.RestartHiTSDBInstance API asynchronously
+func (client *Client) RestartHiTSDBInstanceWithChan(request *RestartHiTSDBInstanceRequest) (<-chan *RestartHiTSDBInstanceResponse, <-chan error) {
+	responseChan := make(chan *RestartHiTSDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeRegions(request)
+		response, err := client.RestartHiTSDBInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// DescribeRegionsWithCallback invokes the hitsdb.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
+// RestartHiTSDBInstanceWithCallback invokes the hitsdb.RestartHiTSDBInstance API asynchronously
+func (client *Client) RestartHiTSDBInstanceWithCallback(request *RestartHiTSDBInstanceRequest, callback func(response *RestartHiTSDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeRegionsResponse
+		var response *RestartHiTSDBInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeRegions(request)
+		response, err = client.RestartHiTSDBInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,36 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
-// DescribeRegionsRequest is the request struct for api DescribeRegions
-type DescribeRegionsRequest struct {
+// RestartHiTSDBInstanceRequest is the request struct for api RestartHiTSDBInstance
+type RestartHiTSDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DescribeRegionsResponse is the response struct for api DescribeRegions
-type DescribeRegionsResponse struct {
+// RestartHiTSDBInstanceResponse is the response struct for api RestartHiTSDBInstance
+type RestartHiTSDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Regions   Regions `json:"Regions" xml:"Regions"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
-	request = &DescribeRegionsRequest{
+// CreateRestartHiTSDBInstanceRequest creates a request to invoke RestartHiTSDBInstance API
+func CreateRestartHiTSDBInstanceRequest() (request *RestartHiTSDBInstanceRequest) {
+	request = &RestartHiTSDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeRegions", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "RestartHiTSDBInstance", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
-func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
-	response = &DescribeRegionsResponse{
+// CreateRestartHiTSDBInstanceResponse creates a response to parse from RestartHiTSDBInstance response
+func CreateRestartHiTSDBInstanceResponse() (response *RestartHiTSDBInstanceResponse) {
+	response = &RestartHiTSDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
