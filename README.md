@@ -40,12 +40,6 @@ Use `go get` to install SDK：
 $ go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
 ```
 
-If you have used glide to manage dependence，you can also use glide to install Alibaba Cloud SDK for Go：
-
-```sh
-$ glide get github.com/aliyun/alibaba-cloud-sdk-go
-```
-
 ## Quick Examples
 Before you begin, you need to sign up for an Alibaba Cloud account and retrieve your [Credentials](https://usercenter.console.aliyun.com/#/manage/ak).
 

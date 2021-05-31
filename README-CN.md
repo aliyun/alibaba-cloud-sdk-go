@@ -37,12 +37,6 @@
 $ go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
 ```
 
-如果您使用了 glide 管理依赖，您也可以使用 glide 来安装 Alibaba Cloud SDK for Go
-
-```sh
-$ glide get github.com/aliyun/alibaba-cloud-sdk-go
-```
-
 另外，Alibaba Cloud SDK for Go 也会发布在 https://develop.aliyun.com/tools/sdk#/go 这个地址。
 
 ## 快速使用
