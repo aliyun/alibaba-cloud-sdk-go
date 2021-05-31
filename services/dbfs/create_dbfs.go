@@ -74,6 +74,7 @@ type CreateDbfsRequest struct {
 	SizeG                requests.Integer `position:"Query" name:"SizeG"`
 	SnapshotId           string           `position:"Query" name:"SnapshotId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	UsedScene            string           `position:"Query" name:"UsedScene"`
 	FsName               string           `position:"Query" name:"FsName"`
 	RaidStripeUnitNumber requests.Integer `position:"Query" name:"RaidStripeUnitNumber"`
 	Encryption           requests.Boolean `position:"Query" name:"Encryption"`

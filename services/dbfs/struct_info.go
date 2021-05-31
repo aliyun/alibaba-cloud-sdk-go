@@ -17,19 +17,26 @@ package dbfs
 
 // Info is a nested struct in dbfs response
 type Info struct {
-	FsName           string              `json:"FsName" xml:"FsName"`
-	DBFSClusterId    string              `json:"DBFSClusterId" xml:"DBFSClusterId"`
-	Category         string              `json:"Category" xml:"Category"`
 	Status           string              `json:"Status" xml:"Status"`
-	RegionId         string              `json:"RegionId" xml:"RegionId"`
-	ZoneId           string              `json:"ZoneId" xml:"ZoneId"`
-	AttachNodeNumber int                 `json:"AttachNodeNumber" xml:"AttachNodeNumber"`
+	Encryption       bool                `json:"Encryption" xml:"Encryption"`
 	PayType          string              `json:"PayType" xml:"PayType"`
 	FsId             string              `json:"FsId" xml:"FsId"`
 	SizeG            int                 `json:"SizeG" xml:"SizeG"`
+	RegionId         string              `json:"RegionId" xml:"RegionId"`
+	DBFSClusterId    string              `json:"DBFSClusterId" xml:"DBFSClusterId"`
+	ZoneId           string              `json:"ZoneId" xml:"ZoneId"`
+	FsName           string              `json:"FsName" xml:"FsName"`
+	Category         string              `json:"Category" xml:"Category"`
 	CreatedTime      string              `json:"CreatedTime" xml:"CreatedTime"`
+	AttachNodeNumber int                 `json:"AttachNodeNumber" xml:"AttachNodeNumber"`
 	KMSKeyId         string              `json:"KMSKeyId" xml:"KMSKeyId"`
-	Encryption       bool                `json:"Encryption" xml:"Encryption"`
+	PerformanceLevel string              `json:"PerformanceLevel" xml:"PerformanceLevel"`
+	UsedScene        string              `json:"UsedScene" xml:"UsedScene"`
+	LastMountTime    string              `json:"LastMountTime" xml:"LastMountTime"`
+	LastUmountTime   string              `json:"LastUmountTime" xml:"LastUmountTime"`
+	EnableRaid       bool                `json:"EnableRaid" xml:"EnableRaid"`
+	RaidStrip        int                 `json:"RaidStrip" xml:"RaidStrip"`
 	Tags             []TagListInListDbfs `json:"Tags" xml:"Tags"`
 	EcsList          []EcsListItem       `json:"EcsList" xml:"EcsList"`
+	EbsList          []EbsListItem       `json:"EbsList" xml:"EbsList"`
 }

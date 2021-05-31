@@ -72,6 +72,7 @@ func (client *Client) AttachDbfsWithCallback(request *AttachDbfsRequest, callbac
 type AttachDbfsRequest struct {
 	*requests.RpcRequest
 	ECSInstanceId string `position:"Query" name:"ECSInstanceId"`
+	ServerUrl     string `position:"Query" name:"ServerUrl"`
 	FsId          string `position:"Query" name:"FsId"`
 }
 

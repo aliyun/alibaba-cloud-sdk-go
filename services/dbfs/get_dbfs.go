@@ -77,10 +77,8 @@ type GetDbfsRequest struct {
 // GetDbfsResponse is the response struct for api GetDbfs
 type GetDbfsResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	KMSKeyId   string   `json:"KMSKeyId" xml:"KMSKeyId"`
-	Encryption bool     `json:"Encryption" xml:"Encryption"`
-	DBFSInfo   DBFSInfo `json:"DBFSInfo" xml:"DBFSInfo"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	DBFSInfo  DBFSInfo `json:"DBFSInfo" xml:"DBFSInfo"`
 }
 
 // CreateGetDbfsRequest creates a request to invoke GetDbfs API
