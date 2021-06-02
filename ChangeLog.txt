@@ -1,3 +1,7 @@
+2021-06-02 Version: v1.61.1118
+- Generated 2016-01-20 for `Kms`.
+- Support key deletion protection.
+
 2021-05-31 Version: v1.61.1117
 - Generated 2020-04-18 for `DBFS`.
 - Support upgrade.

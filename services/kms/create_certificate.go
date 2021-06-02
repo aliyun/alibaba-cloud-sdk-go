@@ -72,6 +72,8 @@ func (client *Client) CreateCertificateWithCallback(request *CreateCertificateRe
 type CreateCertificateRequest struct {
 	*requests.RpcRequest
 	ProtectionLevel         string                 `position:"Query" name:"ProtectionLevel"`
+	ExportablePrivateKey    requests.Boolean       `position:"Query" name:"ExportablePrivateKey"`
+	ClientToken             string                 `position:"Query" name:"ClientToken"`
 	Subject                 string                 `position:"Query" name:"Subject"`
 	SubjectAlternativeNames map[string]interface{} `position:"Query" name:"SubjectAlternativeNames"`
 	KeySpec                 string                 `position:"Query" name:"KeySpec"`

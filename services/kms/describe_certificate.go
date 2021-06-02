@@ -81,7 +81,6 @@ type DescribeCertificateResponse struct {
 	CertificateId           string                 `json:"CertificateId" xml:"CertificateId"`
 	Arn                     string                 `json:"Arn" xml:"Arn"`
 	KeySpec                 string                 `json:"KeySpec" xml:"KeySpec"`
-	ProtectionLevel         string                 `json:"ProtectionLevel" xml:"ProtectionLevel"`
 	Status                  string                 `json:"Status" xml:"Status"`
 	CreatedAt               string                 `json:"CreatedAt" xml:"CreatedAt"`
 	UpdatedAt               string                 `json:"UpdatedAt" xml:"UpdatedAt"`
@@ -94,6 +93,8 @@ type DescribeCertificateResponse struct {
 	SubjectPublicKey        string                 `json:"SubjectPublicKey" xml:"SubjectPublicKey"`
 	SubjectKeyIdentifier    string                 `json:"SubjectKeyIdentifier" xml:"SubjectKeyIdentifier"`
 	Tags                    map[string]interface{} `json:"Tags" xml:"Tags"`
+	ExportablePrivateKey    bool                   `json:"ExportablePrivateKey" xml:"ExportablePrivateKey"`
+	ProtectionLevel         string                 `json:"ProtectionLevel" xml:"ProtectionLevel"`
 	SubjectAlternativeNames []string               `json:"SubjectAlternativeNames" xml:"SubjectAlternativeNames"`
 }
 

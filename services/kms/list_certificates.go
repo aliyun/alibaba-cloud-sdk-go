@@ -86,6 +86,7 @@ type ListCertificatesResponse struct {
 	PageNumber             int                    `json:"PageNumber" xml:"PageNumber"`
 	PageSize               int                    `json:"PageSize" xml:"PageSize"`
 	CertificateSummaryList CertificateSummaryList `json:"CertificateSummaryList" xml:"CertificateSummaryList"`
+	Certificates           Certificates           `json:"Certificates" xml:"Certificates"`
 }
 
 // CreateListCertificatesRequest creates a request to invoke ListCertificates API
