@@ -91,7 +91,7 @@ func CreateBatchInsertMembersRequest() (request *BatchInsertMembersRequest) {
 	request = &BatchInsertMembersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "BatchInsertMembers", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "BatchInsertMembers", "", "")
 	request.Method = requests.POST
 	return
 }

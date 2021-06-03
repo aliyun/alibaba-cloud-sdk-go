@@ -89,7 +89,7 @@ func CreateDeleteDevopsOrganizationRequest() (request *DeleteDevopsOrganizationR
 	request = &DeleteDevopsOrganizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "DeleteDevopsOrganization", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "DeleteDevopsOrganization", "", "")
 	request.Method = requests.POST
 	return
 }

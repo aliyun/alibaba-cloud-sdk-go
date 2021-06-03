@@ -94,7 +94,7 @@ func CreateUpdateCommonGroupRequest() (request *UpdateCommonGroupRequest) {
 	request = &UpdateCommonGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "UpdateCommonGroup", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "UpdateCommonGroup", "", "")
 	request.Method = requests.POST
 	return
 }

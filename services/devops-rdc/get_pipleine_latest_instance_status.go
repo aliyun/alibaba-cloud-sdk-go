@@ -91,7 +91,7 @@ func CreateGetPipleineLatestInstanceStatusRequest() (request *GetPipleineLatestI
 	request = &GetPipleineLatestInstanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetPipleineLatestInstanceStatus", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetPipleineLatestInstanceStatus", "", "")
 	request.Method = requests.POST
 	return
 }

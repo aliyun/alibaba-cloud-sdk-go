@@ -94,7 +94,7 @@ func CreateCreateCredentialRequest() (request *CreateCredentialRequest) {
 	request = &CreateCredentialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateCredential", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateCredential", "", "")
 	request.Method = requests.POST
 	return
 }

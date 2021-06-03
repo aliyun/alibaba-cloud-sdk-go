@@ -90,7 +90,7 @@ func CreateListDevopsProjectSprintsRequest() (request *ListDevopsProjectSprintsR
 	request = &ListDevopsProjectSprintsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListDevopsProjectSprints", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListDevopsProjectSprints", "", "")
 	request.Method = requests.POST
 	return
 }

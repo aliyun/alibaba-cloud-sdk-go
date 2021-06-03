@@ -91,7 +91,7 @@ func CreateInsertProjectMembersRequest() (request *InsertProjectMembersRequest) 
 	request = &InsertProjectMembersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "InsertProjectMembers", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "InsertProjectMembers", "", "")
 	request.Method = requests.POST
 	return
 }

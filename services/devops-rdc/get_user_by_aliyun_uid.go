@@ -90,7 +90,7 @@ func CreateGetUserByAliyunUidRequest() (request *GetUserByAliyunUidRequest) {
 	request = &GetUserByAliyunUidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetUserByAliyunUid", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetUserByAliyunUid", "", "")
 	request.Method = requests.POST
 	return
 }

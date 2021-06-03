@@ -17,6 +17,8 @@ package devops_rdc
 
 // Option is a nested struct in devops_rdc response
 type Option struct {
-	Name  string `json:"Name" xml:"Name"`
-	Value string `json:"Value" xml:"Value"`
+	Name      string `json:"Name" xml:"Name"`
+	Value     string `json:"Value" xml:"Value"`
+	Kind      string `json:"Kind" xml:"Kind"`
+	ScopeName string `json:"ScopeName" xml:"ScopeName"`
 }

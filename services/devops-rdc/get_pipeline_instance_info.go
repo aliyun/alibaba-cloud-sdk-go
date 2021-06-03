@@ -92,7 +92,7 @@ func CreateGetPipelineInstanceInfoRequest() (request *GetPipelineInstanceInfoReq
 	request = &GetPipelineInstanceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetPipelineInstanceInfo", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetPipelineInstanceInfo", "", "")
 	request.Method = requests.POST
 	return
 }

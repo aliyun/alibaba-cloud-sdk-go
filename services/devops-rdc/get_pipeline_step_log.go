@@ -95,7 +95,7 @@ func CreateGetPipelineStepLogRequest() (request *GetPipelineStepLogRequest) {
 	request = &GetPipelineStepLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetPipelineStepLog", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetPipelineStepLog", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateListCredentialsRequest() (request *ListCredentialsRequest) {
 	request = &ListCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListCredentials", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListCredentials", "", "")
 	request.Method = requests.POST
 	return
 }

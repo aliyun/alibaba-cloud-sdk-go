@@ -90,7 +90,7 @@ func CreateGetLastWorkspaceRequest() (request *GetLastWorkspaceRequest) {
 	request = &GetLastWorkspaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetLastWorkspace", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetLastWorkspace", "", "")
 	request.Method = requests.POST
 	return
 }

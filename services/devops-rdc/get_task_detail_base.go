@@ -91,7 +91,7 @@ func CreateGetTaskDetailBaseRequest() (request *GetTaskDetailBaseRequest) {
 	request = &GetTaskDetailBaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetTaskDetailBase", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetTaskDetailBase", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateCreateDevopsProjectSprintRequest() (request *CreateDevopsProjectSprin
 	request = &CreateDevopsProjectSprintRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateDevopsProjectSprint", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateDevopsProjectSprint", "", "")
 	request.Method = requests.POST
 	return
 }

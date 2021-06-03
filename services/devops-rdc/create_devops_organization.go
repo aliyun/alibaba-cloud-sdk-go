@@ -92,7 +92,7 @@ func CreateCreateDevopsOrganizationRequest() (request *CreateDevopsOrganizationR
 	request = &CreateDevopsOrganizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateDevopsOrganization", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateDevopsOrganization", "", "")
 	request.Method = requests.POST
 	return
 }

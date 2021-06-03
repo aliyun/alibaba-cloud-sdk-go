@@ -93,7 +93,7 @@ func CreateInsertPipelineMemberRequest() (request *InsertPipelineMemberRequest) 
 	request = &InsertPipelineMemberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "InsertPipelineMember", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "InsertPipelineMember", "", "")
 	request.Method = requests.POST
 	return
 }

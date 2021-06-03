@@ -91,7 +91,7 @@ func CreateCreatePipelineRequest() (request *CreatePipelineRequest) {
 	request = &CreatePipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreatePipeline", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreatePipeline", "", "")
 	request.Method = requests.POST
 	return
 }

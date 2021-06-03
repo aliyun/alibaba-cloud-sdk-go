@@ -90,7 +90,7 @@ func CreateListDevopsProjectTaskFlowStatusRequest() (request *ListDevopsProjectT
 	request = &ListDevopsProjectTaskFlowStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListDevopsProjectTaskFlowStatus", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListDevopsProjectTaskFlowStatus", "", "")
 	request.Method = requests.POST
 	return
 }

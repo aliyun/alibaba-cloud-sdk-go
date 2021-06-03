@@ -108,7 +108,7 @@ func CreateGetTaskListFilterRequest() (request *GetTaskListFilterRequest) {
 	request = &GetTaskListFilterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetTaskListFilter", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetTaskListFilter", "", "")
 	request.Method = requests.POST
 	return
 }

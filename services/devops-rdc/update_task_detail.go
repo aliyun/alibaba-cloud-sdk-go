@@ -106,7 +106,7 @@ func CreateUpdateTaskDetailRequest() (request *UpdateTaskDetailRequest) {
 	request = &UpdateTaskDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "UpdateTaskDetail", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "UpdateTaskDetail", "", "")
 	request.Method = requests.POST
 	return
 }

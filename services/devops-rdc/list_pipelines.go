@@ -100,7 +100,7 @@ func CreateListPipelinesRequest() (request *ListPipelinesRequest) {
 	request = &ListPipelinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListPipelines", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListPipelines", "", "")
 	request.Method = requests.POST
 	return
 }

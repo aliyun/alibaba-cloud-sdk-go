@@ -90,7 +90,7 @@ func CreateListDevopsScenarioFieldConfigRequest() (request *ListDevopsScenarioFi
 	request = &ListDevopsScenarioFieldConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListDevopsScenarioFieldConfig", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListDevopsScenarioFieldConfig", "", "")
 	request.Method = requests.POST
 	return
 }

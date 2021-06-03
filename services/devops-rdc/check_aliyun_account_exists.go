@@ -89,7 +89,7 @@ func CreateCheckAliyunAccountExistsRequest() (request *CheckAliyunAccountExistsR
 	request = &CheckAliyunAccountExistsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CheckAliyunAccountExists", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CheckAliyunAccountExists", "", "")
 	request.Method = requests.POST
 	return
 }

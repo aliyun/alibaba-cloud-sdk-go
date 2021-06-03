@@ -92,7 +92,7 @@ func CreateCancelPipelineRequest() (request *CancelPipelineRequest) {
 	request = &CancelPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CancelPipeline", "1.9.6", "openAPI")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CancelPipeline", "", "")
 	request.Method = requests.POST
 	return
 }
