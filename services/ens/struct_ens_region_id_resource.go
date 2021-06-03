@@ -23,7 +23,7 @@ type EnsRegionIdResource struct {
 	EnsRegionId       string `json:"EnsRegionId" xml:"EnsRegionId"`
 	EnsRegionIdName   string `json:"EnsRegionIdName" xml:"EnsRegionIdName"`
 	InstanceCount     int    `json:"InstanceCount" xml:"InstanceCount"`
-	InternetBandwidth int    `json:"InternetBandwidth" xml:"InternetBandwidth"`
+	InternetBandwidth int64  `json:"InternetBandwidth" xml:"InternetBandwidth"`
 	Isp               string `json:"Isp" xml:"Isp"`
 	VCpu              int    `json:"VCpu" xml:"VCpu"`
 }

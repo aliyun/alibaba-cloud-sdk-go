@@ -23,5 +23,6 @@ type ResourceDetailInfo struct {
 	Server   string `json:"Server" xml:"Server"`
 	ID       string `json:"ID" xml:"ID"`
 	Status   string `json:"Status" xml:"Status"`
+	ISP      string `json:"ISP" xml:"ISP"`
 	Type     string `json:"Type" xml:"Type"`
 }

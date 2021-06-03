@@ -1,3 +1,7 @@
+2021-06-03 Version: v1.61.1119
+- Generated 2017-11-10 for `Ens`.
+- Support EIP.
+
 2021-06-02 Version: v1.61.1118
 - Generated 2016-01-20 for `Kms`.
 - Support key deletion protection.
