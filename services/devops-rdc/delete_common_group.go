@@ -91,7 +91,7 @@ func CreateDeleteCommonGroupRequest() (request *DeleteCommonGroupRequest) {
 	request = &DeleteCommonGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "DeleteCommonGroup", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "DeleteCommonGroup", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

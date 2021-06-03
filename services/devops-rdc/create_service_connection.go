@@ -91,7 +91,7 @@ func CreateCreateServiceConnectionRequest() (request *CreateServiceConnectionReq
 	request = &CreateServiceConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateServiceConnection", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateServiceConnection", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

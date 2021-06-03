@@ -90,7 +90,7 @@ func CreateGetUserNameRequest() (request *GetUserNameRequest) {
 	request = &GetUserNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetUserName", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetUserName", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateGetProjectOptionRequest() (request *GetProjectOptionRequest) {
 	request = &GetProjectOptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetProjectOption", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetProjectOption", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateListUserOrganizationRequest() (request *ListUserOrganizationRequest) 
 	request = &ListUserOrganizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListUserOrganization", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListUserOrganization", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

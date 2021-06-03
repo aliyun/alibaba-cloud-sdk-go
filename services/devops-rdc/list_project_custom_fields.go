@@ -90,7 +90,7 @@ func CreateListProjectCustomFieldsRequest() (request *ListProjectCustomFieldsReq
 	request = &ListProjectCustomFieldsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListProjectCustomFields", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListProjectCustomFields", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

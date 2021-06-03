@@ -92,7 +92,7 @@ func CreateListCommonGroupRequest() (request *ListCommonGroupRequest) {
 	request = &ListCommonGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListCommonGroup", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListCommonGroup", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

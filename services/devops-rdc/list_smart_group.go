@@ -90,7 +90,7 @@ func CreateListSmartGroupRequest() (request *ListSmartGroupRequest) {
 	request = &ListSmartGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListSmartGroup", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListSmartGroup", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

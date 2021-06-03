@@ -92,7 +92,7 @@ func CreateTransferPipelineOwnerRequest() (request *TransferPipelineOwnerRequest
 	request = &TransferPipelineOwnerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "TransferPipelineOwner", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "TransferPipelineOwner", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

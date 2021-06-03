@@ -90,7 +90,7 @@ func CreateGetDevopsProjectTaskInfoRequest() (request *GetDevopsProjectTaskInfoR
 	request = &GetDevopsProjectTaskInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetDevopsProjectTaskInfo", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetDevopsProjectTaskInfo", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

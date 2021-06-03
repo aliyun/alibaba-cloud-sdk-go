@@ -91,7 +91,7 @@ func CreateListServiceConnectionsRequest() (request *ListServiceConnectionsReque
 	request = &ListServiceConnectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListServiceConnections", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListServiceConnections", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }

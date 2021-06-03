@@ -92,7 +92,7 @@ func CreateGetTaskDetailActivityRequest() (request *GetTaskDetailActivityRequest
 	request = &GetTaskDetailActivityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetTaskDetailActivity", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "GetTaskDetailActivity", "1.9.6", "openAPI")
 	request.Method = requests.POST
 	return
 }
