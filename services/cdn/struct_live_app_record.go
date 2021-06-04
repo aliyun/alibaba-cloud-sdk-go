@@ -17,14 +17,9 @@ package cdn
 
 // LiveAppRecord is a nested struct in cdn response
 type LiveAppRecord struct {
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	OssObjectPrefix string `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
-	EndTime         string `json:"EndTime" xml:"EndTime"`
-	DomainName      string `json:"DomainName" xml:"DomainName"`
-	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-	OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
-	AppName         string `json:"AppName" xml:"AppName"`
-	SourceUrl       string `json:"SourceUrl" xml:"SourceUrl"`
-	StreamName      string `json:"StreamName" xml:"StreamName"`
-	OssBucket       string `json:"OssBucket" xml:"OssBucket"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	StreamName string `json:"StreamName" xml:"StreamName"`
+	SourceUrl  string `json:"SourceUrl" xml:"SourceUrl"`
+	StartTime  string `json:"StartTime" xml:"StartTime"`
+	EndTime    string `json:"EndTime" xml:"EndTime"`
 }

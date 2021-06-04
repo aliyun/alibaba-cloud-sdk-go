@@ -79,8 +79,8 @@ type DescribeLivePullStreamConfigRequest struct {
 // DescribeLivePullStreamConfigResponse is the response struct for api DescribeLivePullStreamConfig
 type DescribeLivePullStreamConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string                                          `json:"RequestId" xml:"RequestId"`
-	LiveAppRecordList LiveAppRecordListInDescribeLivePullStreamConfig `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	LiveAppRecordList LiveAppRecordList `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
 // CreateDescribeLivePullStreamConfigRequest creates a request to invoke DescribeLivePullStreamConfig API

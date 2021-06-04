@@ -1,3 +1,7 @@
+2021-06-04 Version: v1.61.1122
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Delete live API.
+
 2021-06-03 Version: v1.61.1121
 - Generated 2020-03-03 for `devops-rdc`.
 - Add name.
