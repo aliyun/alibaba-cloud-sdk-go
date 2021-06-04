@@ -22,7 +22,7 @@ type Result struct {
 	Endpoints                 string                     `json:"endpoints" xml:"endpoints"`
 	IlmPolicy                 string                     `json:"ilmPolicy" xml:"ilmPolicy"`
 	Priority                  int                        `json:"priority" xml:"priority"`
-	Tags                      []Tag                      `json:"tags" xml:"tags"`
+	Tags                      map[string]interface{}     `json:"tags" xml:"tags"`
 	Domain                    string                     `json:"domain" xml:"domain"`
 	GmtUpdateTime             string                     `json:"gmtUpdateTime" xml:"gmtUpdateTime"`
 	BatchSize                 int                        `json:"batchSize" xml:"batchSize"`
@@ -34,7 +34,6 @@ type Result struct {
 	Connectable               bool                       `json:"connectable" xml:"connectable"`
 	Dps                       map[string]interface{}     `json:"dps" xml:"dps"`
 	Phases                    map[string]interface{}     `json:"phases" xml:"phases"`
-	Id                        string                     `json:"id" xml:"id"`
 	PublicPort                int                        `json:"publicPort" xml:"publicPort"`
 	Enable                    bool                       `json:"enable" xml:"enable"`
 	State                     string                     `json:"state" xml:"state"`
@@ -126,13 +125,4 @@ type Result struct {
 	NodeSpecList              []NodeSpecListItem         `json:"nodeSpecList" xml:"nodeSpecList"`
 	DataDiskList              []DataDiskListItem         `json:"dataDiskList" xml:"dataDiskList"`
 	DiagnoseItems             []DiagnoseItemsItem        `json:"diagnoseItems" xml:"diagnoseItems"`
-}
-
-type GetEmonMonitorDataResult struct {
-	Summary          float64                `json:"summary" xml:"summary"`
-	Dps              map[string]interface{} `json:"dps" xml:"dps"`
-	Tags             map[string]interface{} `json:"tags" xml:"tags"`
-	Integrity        float64                `json:"integrity" xml:"integrity"`
-	MessageWatermark int64                  `json:"messageWatermark" xml:"messageWatermark"`
-	Metric           string                 `json:"metric" xml:"metric"`
 }

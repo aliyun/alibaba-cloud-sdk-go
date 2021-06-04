@@ -73,7 +73,6 @@ type ListInstanceRequest struct {
 	*requests.RoaRequest
 	Description      string           `position:"Query" name:"description"`
 	InstanceCategory string           `position:"Query" name:"instanceCategory"`
-	OwnerId          string           `position:"Query" name:"ownerId"`
 	Tags             string           `position:"Query" name:"tags"`
 	ResourceGroupId  string           `position:"Query" name:"resourceGroupId"`
 	InstanceId       string           `position:"Query" name:"instanceId"`

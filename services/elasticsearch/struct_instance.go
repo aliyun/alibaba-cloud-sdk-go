@@ -25,6 +25,7 @@ type Instance struct {
 	Description                  string                       `json:"description" xml:"description"`
 	AdvancedDedicateMaster       bool                         `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
 	EsVersion                    string                       `json:"esVersion" xml:"esVersion"`
+	PostpaidServiceStatus        string                       `json:"postpaidServiceStatus" xml:"postpaidServiceStatus"`
 	PaymentType                  string                       `json:"paymentType" xml:"paymentType"`
 	ResourceGroupId              string                       `json:"resourceGroupId" xml:"resourceGroupId"`
 	CreatedAt                    string                       `json:"createdAt" xml:"createdAt"`
