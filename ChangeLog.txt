@@ -1,3 +1,7 @@
+2021-06-05 Version: v1.61.1126
+- Generated 2021-05-10 for `Workorder`.
+- Supported new version of Ticket for Alibaba Cloud.
+
 2021-06-05 Version: v1.61.1125
 - Generated 2021-05-10 for `Workorder`.
 - New API Version of Work Order System.
