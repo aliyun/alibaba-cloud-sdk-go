@@ -21,7 +21,6 @@ import (
 )
 
 // CloseTicket invokes the workorder.CloseTicket API synchronously
-// api document: https://help.aliyun.com/api/workorder/closeticket.html
 func (client *Client) CloseTicket(request *CloseTicketRequest) (response *CloseTicketResponse, err error) {
 	response = CreateCloseTicketResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloseTicket(request *CloseTicketRequest) (response *CloseT
 }
 
 // CloseTicketWithChan invokes the workorder.CloseTicket API asynchronously
-// api document: https://help.aliyun.com/api/workorder/closeticket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseTicketWithChan(request *CloseTicketRequest) (<-chan *CloseTicketResponse, <-chan error) {
 	responseChan := make(chan *CloseTicketResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloseTicketWithChan(request *CloseTicketRequest) (<-chan *
 }
 
 // CloseTicketWithCallback invokes the workorder.CloseTicket API asynchronously
-// api document: https://help.aliyun.com/api/workorder/closeticket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseTicketWithCallback(request *CloseTicketRequest, callback func(response *CloseTicketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,16 @@ func (client *Client) CloseTicketWithCallback(request *CloseTicketRequest, callb
 // CloseTicketRequest is the request struct for api CloseTicket
 type CloseTicketRequest struct {
 	*requests.RpcRequest
-	Language string `position:"Query" name:"Language"`
-	TicketId string `position:"Query" name:"TicketId"`
+	TicketId string `position:"Body" name:"TicketId"`
 }
 
 // CloseTicketResponse is the response struct for api CloseTicket
 type CloseTicketResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCloseTicketRequest creates a request to invoke CloseTicket API
@@ -94,7 +88,8 @@ func CreateCloseTicketRequest() (request *CloseTicketRequest) {
 	request = &CloseTicketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2020-03-26", "CloseTicket", "workorder", "openAPI")
+	request.InitWithApiInfo("Workorder", "2021-05-10", "CloseTicket", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReplyTicket invokes the workorder.ReplyTicket API synchronously
-func (client *Client) ReplyTicket(request *ReplyTicketRequest) (response *ReplyTicketResponse, err error) {
-	response = CreateReplyTicketResponse()
+// GetMessageTag invokes the workorder.GetMessageTag API synchronously
+func (client *Client) GetMessageTag(request *GetMessageTagRequest) (response *GetMessageTagResponse, err error) {
+	response = CreateGetMessageTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReplyTicketWithChan invokes the workorder.ReplyTicket API asynchronously
-func (client *Client) ReplyTicketWithChan(request *ReplyTicketRequest) (<-chan *ReplyTicketResponse, <-chan error) {
-	responseChan := make(chan *ReplyTicketResponse, 1)
+// GetMessageTagWithChan invokes the workorder.GetMessageTag API asynchronously
+func (client *Client) GetMessageTagWithChan(request *GetMessageTagRequest) (<-chan *GetMessageTagResponse, <-chan error) {
+	responseChan := make(chan *GetMessageTagResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReplyTicket(request)
+		response, err := client.GetMessageTag(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReplyTicketWithChan(request *ReplyTicketRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// ReplyTicketWithCallback invokes the workorder.ReplyTicket API asynchronously
-func (client *Client) ReplyTicketWithCallback(request *ReplyTicketRequest, callback func(response *ReplyTicketResponse, err error)) <-chan int {
+// GetMessageTagWithCallback invokes the workorder.GetMessageTag API asynchronously
+func (client *Client) GetMessageTagWithCallback(request *GetMessageTagRequest, callback func(response *GetMessageTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReplyTicketResponse
+		var response *GetMessageTagResponse
 		var err error
 		defer close(result)
-		response, err = client.ReplyTicket(request)
+		response, err = client.GetMessageTag(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,13 @@ func (client *Client) ReplyTicketWithCallback(request *ReplyTicketRequest, callb
 	return result
 }
 
-// ReplyTicketRequest is the request struct for api ReplyTicket
-type ReplyTicketRequest struct {
+// GetMessageTagRequest is the request struct for api GetMessageTag
+type GetMessageTagRequest struct {
 	*requests.RpcRequest
-	SecContent string `position:"Body" name:"SecContent"`
-	Content    string `position:"Body" name:"Content"`
-	TicketId   string `position:"Body" name:"TicketId"`
 }
 
-// ReplyTicketResponse is the response struct for api ReplyTicket
-type ReplyTicketResponse struct {
+// GetMessageTagResponse is the response struct for api GetMessageTag
+type GetMessageTagResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -86,19 +83,19 @@ type ReplyTicketResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateReplyTicketRequest creates a request to invoke ReplyTicket API
-func CreateReplyTicketRequest() (request *ReplyTicketRequest) {
-	request = &ReplyTicketRequest{
+// CreateGetMessageTagRequest creates a request to invoke GetMessageTag API
+func CreateGetMessageTagRequest() (request *GetMessageTagRequest) {
+	request = &GetMessageTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2021-05-10", "ReplyTicket", "", "")
+	request.InitWithApiInfo("Workorder", "2021-05-10", "GetMessageTag", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateReplyTicketResponse creates a response to parse from ReplyTicket response
-func CreateReplyTicketResponse() (response *ReplyTicketResponse) {
-	response = &ReplyTicketResponse{
+// CreateGetMessageTagResponse creates a response to parse from GetMessageTag response
+func CreateGetMessageTagResponse() (response *GetMessageTagResponse) {
+	response = &GetMessageTagResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // ListProducts invokes the workorder.ListProducts API synchronously
-// api document: https://help.aliyun.com/api/workorder/listproducts.html
 func (client *Client) ListProducts(request *ListProductsRequest) (response *ListProductsResponse, err error) {
 	response = CreateListProductsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListProducts(request *ListProductsRequest) (response *List
 }
 
 // ListProductsWithChan invokes the workorder.ListProducts API asynchronously
-// api document: https://help.aliyun.com/api/workorder/listproducts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductsWithChan(request *ListProductsRequest) (<-chan *ListProductsResponse, <-chan error) {
 	responseChan := make(chan *ListProductsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListProductsWithChan(request *ListProductsRequest) (<-chan
 }
 
 // ListProductsWithCallback invokes the workorder.ListProducts API asynchronously
-// api document: https://help.aliyun.com/api/workorder/listproducts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductsWithCallback(request *ListProductsRequest, callback func(response *ListProductsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) ListProductsWithCallback(request *ListProductsRequest, cal
 // ListProductsRequest is the request struct for api ListProducts
 type ListProductsRequest struct {
 	*requests.RpcRequest
-	Language string `position:"Query" name:"Language"`
+	Name string `position:"Query" name:"Name"`
 }
 
 // ListProductsResponse is the response struct for api ListProducts
 type ListProductsResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int        `json:"Code" xml:"Code"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Message   string     `json:"Message" xml:"Message"`
+	Success   bool       `json:"Success" xml:"Success"`
+	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateListProductsRequest creates a request to invoke ListProducts API
@@ -94,7 +89,8 @@ func CreateListProductsRequest() (request *ListProductsRequest) {
 	request = &ListProductsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2020-03-26", "ListProducts", "workorder", "openAPI")
+	request.InitWithApiInfo("Workorder", "2021-05-10", "ListProducts", "", "")
+	request.Method = requests.POST
 	return
 }
 

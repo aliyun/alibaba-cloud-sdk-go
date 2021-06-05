@@ -21,7 +21,6 @@ import (
 )
 
 // ListCategories invokes the workorder.ListCategories API synchronously
-// api document: https://help.aliyun.com/api/workorder/listcategories.html
 func (client *Client) ListCategories(request *ListCategoriesRequest) (response *ListCategoriesResponse, err error) {
 	response = CreateListCategoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCategories(request *ListCategoriesRequest) (response *
 }
 
 // ListCategoriesWithChan invokes the workorder.ListCategories API asynchronously
-// api document: https://help.aliyun.com/api/workorder/listcategories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCategoriesWithChan(request *ListCategoriesRequest) (<-chan *ListCategoriesResponse, <-chan error) {
 	responseChan := make(chan *ListCategoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCategoriesWithChan(request *ListCategoriesRequest) (<-
 }
 
 // ListCategoriesWithCallback invokes the workorder.ListCategories API asynchronously
-// api document: https://help.aliyun.com/api/workorder/listcategories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCategoriesWithCallback(request *ListCategoriesRequest, callback func(response *ListCategoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,18 +71,17 @@ func (client *Client) ListCategoriesWithCallback(request *ListCategoriesRequest,
 // ListCategoriesRequest is the request struct for api ListCategories
 type ListCategoriesRequest struct {
 	*requests.RpcRequest
-	ProductCode string `position:"Query" name:"ProductCode"`
-	Language    string `position:"Query" name:"Language"`
+	ParentId requests.Integer `position:"Query" name:"ParentId"`
 }
 
 // ListCategoriesResponse is the response struct for api ListCategories
 type ListCategoriesResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int        `json:"Code" xml:"Code"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Message   string     `json:"Message" xml:"Message"`
+	Success   bool       `json:"Success" xml:"Success"`
+	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateListCategoriesRequest creates a request to invoke ListCategories API
@@ -95,7 +89,8 @@ func CreateListCategoriesRequest() (request *ListCategoriesRequest) {
 	request = &ListCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2020-03-26", "ListCategories", "workorder", "openAPI")
+	request.InitWithApiInfo("Workorder", "2021-05-10", "ListCategories", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ListTickets invokes the workorder.ListTickets API synchronously
-// api document: https://help.aliyun.com/api/workorder/listtickets.html
 func (client *Client) ListTickets(request *ListTicketsRequest) (response *ListTicketsResponse, err error) {
 	response = CreateListTicketsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTickets(request *ListTicketsRequest) (response *ListTi
 }
 
 // ListTicketsWithChan invokes the workorder.ListTickets API asynchronously
-// api document: https://help.aliyun.com/api/workorder/listtickets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTicketsWithChan(request *ListTicketsRequest) (<-chan *ListTicketsResponse, <-chan error) {
 	responseChan := make(chan *ListTicketsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTicketsWithChan(request *ListTicketsRequest) (<-chan *
 }
 
 // ListTicketsWithCallback invokes the workorder.ListTickets API asynchronously
-// api document: https://help.aliyun.com/api/workorder/listtickets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTicketsWithCallback(request *ListTicketsRequest, callback func(response *ListTicketsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,25 +71,26 @@ func (client *Client) ListTicketsWithCallback(request *ListTicketsRequest, callb
 // ListTicketsRequest is the request struct for api ListTickets
 type ListTicketsRequest struct {
 	*requests.RpcRequest
-	ProductCode       string           `position:"Query" name:"ProductCode"`
-	Language          string           `position:"Query" name:"Language"`
-	SubUserId         string           `position:"Query" name:"SubUserId"`
-	CreatedBeforeTime requests.Integer `position:"Query" name:"CreatedBeforeTime"`
-	PageSize          requests.Integer `position:"Query" name:"PageSize"`
-	Ids               string           `position:"Query" name:"Ids"`
-	TicketStatus      string           `position:"Query" name:"TicketStatus"`
-	PageStart         requests.Integer `position:"Query" name:"PageStart"`
-	CreatedAfterTime  requests.Integer `position:"Query" name:"CreatedAfterTime"`
+	BeginDate  requests.Integer `position:"Query" name:"BeginDate"`
+	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	EndDate    requests.Integer `position:"Query" name:"EndDate"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Keyword    string           `position:"Query" name:"Keyword"`
+	TicketId   string           `position:"Query" name:"TicketId"`
 }
 
 // ListTicketsResponse is the response struct for api ListTickets
 type ListTicketsResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code       int                     `json:"Code" xml:"Code"`
+	RequestId  string                  `json:"RequestId" xml:"RequestId"`
+	Message    string                  `json:"Message" xml:"Message"`
+	PageNumber int                     `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                     `json:"PageSize" xml:"PageSize"`
+	TotalCount int64                   `json:"TotalCount" xml:"TotalCount"`
+	Success    bool                    `json:"Success" xml:"Success"`
+	Data       []DataItemInListTickets `json:"Data" xml:"Data"`
 }
 
 // CreateListTicketsRequest creates a request to invoke ListTickets API
@@ -102,7 +98,8 @@ func CreateListTicketsRequest() (request *ListTicketsRequest) {
 	request = &ListTicketsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2020-03-26", "ListTickets", "workorder", "openAPI")
+	request.InitWithApiInfo("Workorder", "2021-05-10", "ListTickets", "", "")
+	request.Method = requests.POST
 	return
 }
 

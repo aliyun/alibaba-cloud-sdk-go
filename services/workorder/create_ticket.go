@@ -21,7 +21,6 @@ import (
 )
 
 // CreateTicket invokes the workorder.CreateTicket API synchronously
-// api document: https://help.aliyun.com/api/workorder/createticket.html
 func (client *Client) CreateTicket(request *CreateTicketRequest) (response *CreateTicketResponse, err error) {
 	response = CreateCreateTicketResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateTicket(request *CreateTicketRequest) (response *Crea
 }
 
 // CreateTicketWithChan invokes the workorder.CreateTicket API asynchronously
-// api document: https://help.aliyun.com/api/workorder/createticket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTicketWithChan(request *CreateTicketRequest) (<-chan *CreateTicketResponse, <-chan error) {
 	responseChan := make(chan *CreateTicketResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateTicketWithChan(request *CreateTicketRequest) (<-chan
 }
 
 // CreateTicketWithCallback invokes the workorder.CreateTicket API asynchronously
-// api document: https://help.aliyun.com/api/workorder/createticket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTicketWithCallback(request *CreateTicketRequest, callback func(response *CreateTicketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,25 +71,19 @@ func (client *Client) CreateTicketWithCallback(request *CreateTicketRequest, cal
 // CreateTicketRequest is the request struct for api CreateTicket
 type CreateTicketRequest struct {
 	*requests.RpcRequest
-	ProductCode     string `position:"Query" name:"ProductCode"`
-	Language        string `position:"Query" name:"Language"`
-	Title           string `position:"Query" name:"Title"`
-	Content         string `position:"Query" name:"Content"`
-	NotifyTimeRange string `position:"Query" name:"NotifyTimeRange"`
-	Phone           string `position:"Query" name:"Phone"`
-	Category        string `position:"Query" name:"Category"`
-	Email           string `position:"Query" name:"Email"`
-	SecretContent   string `position:"Query" name:"SecretContent"`
+	Severity    requests.Integer `position:"Body" name:"Severity"`
+	Description string           `position:"Body" name:"Description"`
+	CategoryId  string           `position:"Body" name:"CategoryId"`
 }
 
 // CreateTicketResponse is the response struct for api CreateTicket
 type CreateTicketResponse struct {
 	*responses.BaseResponse
+	Code      int    `json:"Code" xml:"Code"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateTicketRequest creates a request to invoke CreateTicket API
@@ -102,7 +91,8 @@ func CreateCreateTicketRequest() (request *CreateTicketRequest) {
 	request = &CreateTicketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2020-03-26", "CreateTicket", "workorder", "openAPI")
+	request.InitWithApiInfo("Workorder", "2021-05-10", "CreateTicket", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ListTicketNotes invokes the workorder.ListTicketNotes API synchronously
-// api document: https://help.aliyun.com/api/workorder/listticketnotes.html
 func (client *Client) ListTicketNotes(request *ListTicketNotesRequest) (response *ListTicketNotesResponse, err error) {
 	response = CreateListTicketNotesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTicketNotes(request *ListTicketNotesRequest) (response
 }
 
 // ListTicketNotesWithChan invokes the workorder.ListTicketNotes API asynchronously
-// api document: https://help.aliyun.com/api/workorder/listticketnotes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTicketNotesWithChan(request *ListTicketNotesRequest) (<-chan *ListTicketNotesResponse, <-chan error) {
 	responseChan := make(chan *ListTicketNotesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTicketNotesWithChan(request *ListTicketNotesRequest) (
 }
 
 // ListTicketNotesWithCallback invokes the workorder.ListTicketNotes API asynchronously
-// api document: https://help.aliyun.com/api/workorder/listticketnotes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTicketNotesWithCallback(request *ListTicketNotesRequest, callback func(response *ListTicketNotesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,18 +71,17 @@ func (client *Client) ListTicketNotesWithCallback(request *ListTicketNotesReques
 // ListTicketNotesRequest is the request struct for api ListTicketNotes
 type ListTicketNotesRequest struct {
 	*requests.RpcRequest
-	Language string `position:"Query" name:"Language"`
 	TicketId string `position:"Query" name:"TicketId"`
 }
 
 // ListTicketNotesResponse is the response struct for api ListTicketNotes
 type ListTicketNotesResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int        `json:"Code" xml:"Code"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Message   string     `json:"Message" xml:"Message"`
+	Success   bool       `json:"Success" xml:"Success"`
+	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateListTicketNotesRequest creates a request to invoke ListTicketNotes API
@@ -95,7 +89,8 @@ func CreateListTicketNotesRequest() (request *ListTicketNotesRequest) {
 	request = &ListTicketNotesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2020-03-26", "ListTicketNotes", "workorder", "openAPI")
+	request.InitWithApiInfo("Workorder", "2021-05-10", "ListTicketNotes", "", "")
+	request.Method = requests.POST
 	return
 }
 
