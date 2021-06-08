@@ -24,4 +24,5 @@ type TaskOption struct {
 	HttpKeyword         string `json:"HttpKeyword" xml:"HttpKeyword"`
 	HttpMethod          string `json:"HttpMethod" xml:"HttpMethod"`
 	HttpNegative        bool   `json:"HttpNegative" xml:"HttpNegative"`
+	Interval            int    `json:"Interval" xml:"Interval"`
 }

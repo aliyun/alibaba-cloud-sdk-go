@@ -88,6 +88,7 @@ type PutResourceMetricRuleRequest struct {
 	EscalationsCriticalStatistics         string           `position:"Query" name:"Escalations.Critical.Statistics"`
 	Resources                             string           `position:"Query" name:"Resources"`
 	EscalationsInfoTimes                  requests.Integer `position:"Query" name:"Escalations.Info.Times"`
+	GroupBy                               string           `position:"Query" name:"GroupBy"`
 	EscalationsCriticalTimes              requests.Integer `position:"Query" name:"Escalations.Critical.Times"`
 	EscalationsWarnStatistics             string           `position:"Query" name:"Escalations.Warn.Statistics"`
 	EscalationsInfoThreshold              string           `position:"Query" name:"Escalations.Info.Threshold"`

@@ -71,13 +71,14 @@ func (client *Client) ModifySiteMonitorWithCallback(request *ModifySiteMonitorRe
 // ModifySiteMonitorRequest is the request struct for api ModifySiteMonitor
 type ModifySiteMonitorRequest struct {
 	*requests.RpcRequest
-	Address     string `position:"Query" name:"Address"`
-	TaskName    string `position:"Query" name:"TaskName"`
-	IspCities   string `position:"Query" name:"IspCities"`
-	OptionsJson string `position:"Query" name:"OptionsJson"`
-	AlertIds    string `position:"Query" name:"AlertIds"`
-	Interval    string `position:"Query" name:"Interval"`
-	TaskId      string `position:"Query" name:"TaskId"`
+	Address      string `position:"Query" name:"Address"`
+	TaskName     string `position:"Query" name:"TaskName"`
+	IspCities    string `position:"Query" name:"IspCities"`
+	OptionsJson  string `position:"Query" name:"OptionsJson"`
+	AlertIds     string `position:"Query" name:"AlertIds"`
+	IntervalUnit string `position:"Query" name:"IntervalUnit"`
+	Interval     string `position:"Query" name:"Interval"`
+	TaskId       string `position:"Query" name:"TaskId"`
 }
 
 // ModifySiteMonitorResponse is the response struct for api ModifySiteMonitor

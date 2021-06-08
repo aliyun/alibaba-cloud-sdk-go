@@ -19,6 +19,7 @@ package cms
 type ResourceQuota struct {
 	ExpireTime               string                   `json:"ExpireTime" xml:"ExpireTime"`
 	SuitInfo                 string                   `json:"SuitInfo" xml:"SuitInfo"`
+	CRMType                  string                   `json:"CRMType" xml:"CRMType"`
 	InstanceId               string                   `json:"InstanceId" xml:"InstanceId"`
 	SiteMonitorEcsProbe      SiteMonitorEcsProbe      `json:"SiteMonitorEcsProbe" xml:"SiteMonitorEcsProbe"`
 	SiteMonitorOperatorProbe SiteMonitorOperatorProbe `json:"SiteMonitorOperatorProbe" xml:"SiteMonitorOperatorProbe"`
@@ -29,4 +30,5 @@ type ResourceQuota struct {
 	Api                      Api                      `json:"Api" xml:"Api"`
 	SMS                      SMS                      `json:"SMS" xml:"SMS"`
 	Phone                    Phone                    `json:"Phone" xml:"Phone"`
+	EnterpriseQuota          EnterpriseQuota          `json:"EnterpriseQuota" xml:"EnterpriseQuota"`
 }

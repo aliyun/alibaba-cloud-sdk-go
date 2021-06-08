@@ -19,6 +19,7 @@ package cms
 type OptionsJson struct {
 	DnsType         string  `json:"dns_type" xml:"dns_type"`
 	DnsServer       string  `json:"dns_server" xml:"dns_server"`
+	GroupId         string  `json:"group_id" xml:"group_id"`
 	ExpectValue     string  `json:"expect_value" xml:"expect_value"`
 	HttpMethod      string  `json:"http_method" xml:"http_method"`
 	ResponseContent string  `json:"response_content" xml:"response_content"`

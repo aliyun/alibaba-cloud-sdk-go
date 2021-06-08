@@ -35,5 +35,6 @@ type AlarmInDescribeMetricRuleList struct {
 	GroupName           string      `json:"GroupName" xml:"GroupName"`
 	Dimensions          string      `json:"Dimensions" xml:"Dimensions"`
 	SourceType          string      `json:"SourceType" xml:"SourceType"`
+	GroupBy             string      `json:"GroupBy" xml:"GroupBy"`
 	Escalations         Escalations `json:"Escalations" xml:"Escalations"`
 }
