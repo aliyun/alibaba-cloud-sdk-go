@@ -89,7 +89,7 @@ func CreateListProductsRequest() (request *ListProductsRequest) {
 	request = &ListProductsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2021-05-10", "ListProducts", "", "")
+	request.InitWithApiInfo("Workorder", "2021-06-10", "ListProducts", "", "")
 	request.Method = requests.POST
 	return
 }

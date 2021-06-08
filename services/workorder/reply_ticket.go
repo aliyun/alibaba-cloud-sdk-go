@@ -91,7 +91,7 @@ func CreateReplyTicketRequest() (request *ReplyTicketRequest) {
 	request = &ReplyTicketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2021-05-10", "ReplyTicket", "", "")
+	request.InitWithApiInfo("Workorder", "2021-06-10", "ReplyTicket", "", "")
 	request.Method = requests.POST
 	return
 }

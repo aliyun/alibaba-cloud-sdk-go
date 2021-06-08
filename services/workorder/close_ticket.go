@@ -88,7 +88,7 @@ func CreateCloseTicketRequest() (request *CloseTicketRequest) {
 	request = &CloseTicketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2021-05-10", "CloseTicket", "", "")
+	request.InitWithApiInfo("Workorder", "2021-06-10", "CloseTicket", "", "")
 	request.Method = requests.POST
 	return
 }

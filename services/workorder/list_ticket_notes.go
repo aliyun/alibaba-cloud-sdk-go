@@ -89,7 +89,7 @@ func CreateListTicketNotesRequest() (request *ListTicketNotesRequest) {
 	request = &ListTicketNotesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2021-05-10", "ListTicketNotes", "", "")
+	request.InitWithApiInfo("Workorder", "2021-06-10", "ListTicketNotes", "", "")
 	request.Method = requests.POST
 	return
 }

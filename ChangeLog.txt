@@ -1,3 +1,7 @@
+2021-06-08 Version: v1.61.1130
+- Generated 2021-06-10 for `Workorder`.
+- Support Aliyun Workorder OpenAPI.
+
 2021-06-08 Version: v1.61.1129
 - Generated 2020-07-01 for `CCC`.
 - Refine API response for GetCallDetailRecord.

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetMessageTag invokes the workorder.GetMessageTag API synchronously
-func (client *Client) GetMessageTag(request *GetMessageTagRequest) (response *GetMessageTagResponse, err error) {
-	response = CreateGetMessageTagResponse()
+// GetMqConsumerTag invokes the workorder.GetMqConsumerTag API synchronously
+func (client *Client) GetMqConsumerTag(request *GetMqConsumerTagRequest) (response *GetMqConsumerTagResponse, err error) {
+	response = CreateGetMqConsumerTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetMessageTagWithChan invokes the workorder.GetMessageTag API asynchronously
-func (client *Client) GetMessageTagWithChan(request *GetMessageTagRequest) (<-chan *GetMessageTagResponse, <-chan error) {
-	responseChan := make(chan *GetMessageTagResponse, 1)
+// GetMqConsumerTagWithChan invokes the workorder.GetMqConsumerTag API asynchronously
+func (client *Client) GetMqConsumerTagWithChan(request *GetMqConsumerTagRequest) (<-chan *GetMqConsumerTagResponse, <-chan error) {
+	responseChan := make(chan *GetMqConsumerTagResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetMessageTag(request)
+		response, err := client.GetMqConsumerTag(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetMessageTagWithChan(request *GetMessageTagRequest) (<-ch
 	return responseChan, errChan
 }
 
-// GetMessageTagWithCallback invokes the workorder.GetMessageTag API asynchronously
-func (client *Client) GetMessageTagWithCallback(request *GetMessageTagRequest, callback func(response *GetMessageTagResponse, err error)) <-chan int {
+// GetMqConsumerTagWithCallback invokes the workorder.GetMqConsumerTag API asynchronously
+func (client *Client) GetMqConsumerTagWithCallback(request *GetMqConsumerTagRequest, callback func(response *GetMqConsumerTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetMessageTagResponse
+		var response *GetMqConsumerTagResponse
 		var err error
 		defer close(result)
-		response, err = client.GetMessageTag(request)
+		response, err = client.GetMqConsumerTag(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,13 +68,13 @@ func (client *Client) GetMessageTagWithCallback(request *GetMessageTagRequest, c
 	return result
 }
 
-// GetMessageTagRequest is the request struct for api GetMessageTag
-type GetMessageTagRequest struct {
+// GetMqConsumerTagRequest is the request struct for api GetMqConsumerTag
+type GetMqConsumerTagRequest struct {
 	*requests.RpcRequest
 }
 
-// GetMessageTagResponse is the response struct for api GetMessageTag
-type GetMessageTagResponse struct {
+// GetMqConsumerTagResponse is the response struct for api GetMqConsumerTag
+type GetMqConsumerTagResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -83,19 +83,19 @@ type GetMessageTagResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateGetMessageTagRequest creates a request to invoke GetMessageTag API
-func CreateGetMessageTagRequest() (request *GetMessageTagRequest) {
-	request = &GetMessageTagRequest{
+// CreateGetMqConsumerTagRequest creates a request to invoke GetMqConsumerTag API
+func CreateGetMqConsumerTagRequest() (request *GetMqConsumerTagRequest) {
+	request = &GetMqConsumerTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2021-05-10", "GetMessageTag", "", "")
+	request.InitWithApiInfo("Workorder", "2021-06-10", "GetMqConsumerTag", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetMessageTagResponse creates a response to parse from GetMessageTag response
-func CreateGetMessageTagResponse() (response *GetMessageTagResponse) {
-	response = &GetMessageTagResponse{
+// CreateGetMqConsumerTagResponse creates a response to parse from GetMqConsumerTag response
+func CreateGetMqConsumerTagResponse() (response *GetMqConsumerTagResponse) {
+	response = &GetMqConsumerTagResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

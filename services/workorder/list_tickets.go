@@ -71,13 +71,13 @@ func (client *Client) ListTicketsWithCallback(request *ListTicketsRequest, callb
 // ListTicketsRequest is the request struct for api ListTickets
 type ListTicketsRequest struct {
 	*requests.RpcRequest
-	BeginDate  requests.Integer `position:"Query" name:"BeginDate"`
-	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
+	StatusList *[]string        `position:"Body" name:"StatusList"  type:"Repeated"`
+	StartDate  requests.Integer `position:"Body" name:"StartDate"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	EndDate    requests.Integer `position:"Query" name:"EndDate"`
+	EndDate    requests.Integer `position:"Body" name:"EndDate"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	Keyword    string           `position:"Query" name:"Keyword"`
-	TicketId   string           `position:"Query" name:"TicketId"`
+	Keyword    string           `position:"Body" name:"Keyword"`
+	TicketId   string           `position:"Body" name:"TicketId"`
 }
 
 // ListTicketsResponse is the response struct for api ListTickets
@@ -98,7 +98,7 @@ func CreateListTicketsRequest() (request *ListTicketsRequest) {
 	request = &ListTicketsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2021-05-10", "ListTickets", "", "")
+	request.InitWithApiInfo("Workorder", "2021-06-10", "ListTickets", "", "")
 	request.Method = requests.POST
 	return
 }

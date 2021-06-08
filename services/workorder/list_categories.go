@@ -71,7 +71,8 @@ func (client *Client) ListCategoriesWithCallback(request *ListCategoriesRequest,
 // ListCategoriesRequest is the request struct for api ListCategories
 type ListCategoriesRequest struct {
 	*requests.RpcRequest
-	ParentId requests.Integer `position:"Query" name:"ParentId"`
+	ProductId requests.Integer `position:"Body" name:"ProductId"`
+	Name      string           `position:"Body" name:"Name"`
 }
 
 // ListCategoriesResponse is the response struct for api ListCategories
@@ -89,7 +90,7 @@ func CreateListCategoriesRequest() (request *ListCategoriesRequest) {
 	request = &ListCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Workorder", "2021-05-10", "ListCategories", "", "")
+	request.InitWithApiInfo("Workorder", "2021-06-10", "ListCategories", "", "")
 	request.Method = requests.POST
 	return
 }

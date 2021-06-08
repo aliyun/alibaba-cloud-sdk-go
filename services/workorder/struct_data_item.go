@@ -17,17 +17,16 @@ package workorder
 
 // DataItem is a nested struct in workorder response
 type DataItem struct {
-	OrderNumber     int         `json:"OrderNumber" xml:"OrderNumber"`
-	Status          int         `json:"Status" xml:"Status"`
-	TopCategoryId   int64       `json:"TopCategoryId" xml:"TopCategoryId"`
-	DialogId        int64       `json:"DialogId" xml:"DialogId"`
-	CreateTime      int64       `json:"CreateTime" xml:"CreateTime"`
-	Tip             string      `json:"Tip" xml:"Tip"`
-	CategoryId      int64       `json:"CategoryId" xml:"CategoryId"`
-	CategoryName    string      `json:"CategoryName" xml:"CategoryName"`
-	TopCategoryName string      `json:"TopCategoryName" xml:"TopCategoryName"`
-	Type            int         `json:"Type" xml:"Type"`
-	UserInfo        UserInfo    `json:"UserInfo" xml:"UserInfo"`
-	DataInfo        DataInfo    `json:"DataInfo" xml:"DataInfo"`
-	Roots           []RootsItem `json:"Roots" xml:"Roots"`
+	DirectoryId   int64             `json:"DirectoryId" xml:"DirectoryId"`
+	CategoryName  string            `json:"CategoryName" xml:"CategoryName"`
+	Status        int               `json:"Status" xml:"Status"`
+	DialogId      int64             `json:"DialogId" xml:"DialogId"`
+	CreateTime    int64             `json:"CreateTime" xml:"CreateTime"`
+	Tip           string            `json:"Tip" xml:"Tip"`
+	CategoryId    int64             `json:"CategoryId" xml:"CategoryId"`
+	DirectoryName string            `json:"DirectoryName" xml:"DirectoryName"`
+	Type          int               `json:"Type" xml:"Type"`
+	User          User              `json:"User" xml:"User"`
+	Dialog        Dialog            `json:"Dialog" xml:"Dialog"`
+	ProductList   []ProductListItem `json:"ProductList" xml:"ProductList"`
 }
