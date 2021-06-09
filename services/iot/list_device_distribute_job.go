@@ -72,6 +72,7 @@ func (client *Client) ListDeviceDistributeJobWithCallback(request *ListDeviceDis
 type ListDeviceDistributeJobRequest struct {
 	*requests.RpcRequest
 	JobId       string           `position:"Body" name:"JobId"`
+	NextToken   string           `position:"Query" name:"NextToken"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	ApiProduct  string           `position:"Body" name:"ApiProduct"`

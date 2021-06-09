@@ -40,6 +40,8 @@ type DataInQueryOTAJob struct {
 	UtcScheduleFinishTime string            `json:"UtcScheduleFinishTime" xml:"UtcScheduleFinishTime"`
 	OverwriteMode         int               `json:"OverwriteMode" xml:"OverwriteMode"`
 	DynamicMode           int               `json:"DynamicMode" xml:"DynamicMode"`
+	NeedPush              bool              `json:"NeedPush" xml:"NeedPush"`
+	NeedConfirm           bool              `json:"NeedConfirm" xml:"NeedConfirm"`
 	SrcVersions           SrcVersions       `json:"SrcVersions" xml:"SrcVersions"`
 	Tags                  TagsInQueryOTAJob `json:"Tags" xml:"Tags"`
 }

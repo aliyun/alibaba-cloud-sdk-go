@@ -73,6 +73,8 @@ type CreateOTAStaticUpgradeJobRequest struct {
 	*requests.RpcRequest
 	RetryCount         requests.Integer                `position:"Query" name:"RetryCount"`
 	TimeoutInMinutes   requests.Integer                `position:"Query" name:"TimeoutInMinutes"`
+	NeedConfirm        requests.Boolean                `position:"Query" name:"NeedConfirm"`
+	NeedPush           requests.Boolean                `position:"Query" name:"NeedPush"`
 	IotInstanceId      string                          `position:"Query" name:"IotInstanceId"`
 	TargetSelection    string                          `position:"Query" name:"TargetSelection"`
 	ScheduleFinishTime requests.Integer                `position:"Query" name:"ScheduleFinishTime"`

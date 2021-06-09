@@ -17,19 +17,20 @@ package iot
 
 // SimpleOTATaskInfo is a nested struct in iot response
 type SimpleOTATaskInfo struct {
-	TaskId      string `json:"TaskId" xml:"TaskId"`
-	UtcModified string `json:"UtcModified" xml:"UtcModified"`
+	ProductName string `json:"ProductName" xml:"ProductName"`
+	JobId       string `json:"JobId" xml:"JobId"`
+	Timeout     string `json:"Timeout" xml:"Timeout"`
 	ProductKey  string `json:"ProductKey" xml:"ProductKey"`
 	FirmwareId  string `json:"FirmwareId" xml:"FirmwareId"`
-	TaskStatus  string `json:"TaskStatus" xml:"TaskStatus"`
-	JobId       string `json:"JobId" xml:"JobId"`
-	ProductName string `json:"ProductName" xml:"ProductName"`
-	DeviceName  string `json:"DeviceName" xml:"DeviceName"`
 	SrcVersion  string `json:"SrcVersion" xml:"SrcVersion"`
-	DestVersion string `json:"DestVersion" xml:"DestVersion"`
-	TaskDesc    string `json:"TaskDesc" xml:"TaskDesc"`
-	Progress    string `json:"Progress" xml:"Progress"`
-	IotId       string `json:"IotId" xml:"IotId"`
+	UtcModified string `json:"UtcModified" xml:"UtcModified"`
 	UtcCreate   string `json:"UtcCreate" xml:"UtcCreate"`
-	Timeout     string `json:"Timeout" xml:"Timeout"`
+	TaskStatus  string `json:"TaskStatus" xml:"TaskStatus"`
+	Progress    string `json:"Progress" xml:"Progress"`
+	DeviceName  string `json:"DeviceName" xml:"DeviceName"`
+	ModuleName  string `json:"ModuleName" xml:"ModuleName"`
+	TaskId      string `json:"TaskId" xml:"TaskId"`
+	DestVersion string `json:"DestVersion" xml:"DestVersion"`
+	IotId       string `json:"IotId" xml:"IotId"`
+	TaskDesc    string `json:"TaskDesc" xml:"TaskDesc"`
 }

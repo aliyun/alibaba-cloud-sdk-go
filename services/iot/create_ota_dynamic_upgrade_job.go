@@ -74,6 +74,8 @@ type CreateOTADynamicUpgradeJobRequest struct {
 	DynamicMode      requests.Integer                 `position:"Query" name:"DynamicMode"`
 	RetryCount       requests.Integer                 `position:"Query" name:"RetryCount"`
 	TimeoutInMinutes requests.Integer                 `position:"Query" name:"TimeoutInMinutes"`
+	NeedConfirm      requests.Boolean                 `position:"Query" name:"NeedConfirm"`
+	NeedPush         requests.Boolean                 `position:"Query" name:"NeedPush"`
 	IotInstanceId    string                           `position:"Query" name:"IotInstanceId"`
 	Tag              *[]CreateOTADynamicUpgradeJobTag `position:"Query" name:"Tag"  type:"Repeated"`
 	FirmwareId       string                           `position:"Query" name:"FirmwareId"`

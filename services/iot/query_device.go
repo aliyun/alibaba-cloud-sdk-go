@@ -73,6 +73,7 @@ type QueryDeviceRequest struct {
 	*requests.RpcRequest
 	RealTenantId      string           `position:"Query" name:"RealTenantId"`
 	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	NextToken         string           `position:"Query" name:"NextToken"`
 	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
 	PageSize          requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
@@ -92,6 +93,7 @@ type QueryDeviceResponse struct {
 	PageSize     int               `json:"PageSize" xml:"PageSize"`
 	PageCount    int               `json:"PageCount" xml:"PageCount"`
 	Page         int               `json:"Page" xml:"Page"`
+	NextToken    string            `json:"NextToken" xml:"NextToken"`
 	Data         DataInQueryDevice `json:"Data" xml:"Data"`
 }
 

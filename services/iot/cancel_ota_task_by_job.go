@@ -71,14 +71,15 @@ func (client *Client) CancelOTATaskByJobWithCallback(request *CancelOTATaskByJob
 // CancelOTATaskByJobRequest is the request struct for api CancelOTATaskByJob
 type CancelOTATaskByJobRequest struct {
 	*requests.RpcRequest
-	CancelScheduledTask  requests.Boolean `position:"Query" name:"CancelScheduledTask"`
-	JobId                string           `position:"Query" name:"JobId"`
-	IotInstanceId        string           `position:"Query" name:"IotInstanceId"`
-	CancelQueuedTask     requests.Boolean `position:"Query" name:"CancelQueuedTask"`
-	CancelInProgressTask requests.Boolean `position:"Query" name:"CancelInProgressTask"`
-	CancelNotifiedTask   requests.Boolean `position:"Query" name:"CancelNotifiedTask"`
-	ApiProduct           string           `position:"Body" name:"ApiProduct"`
-	ApiRevision          string           `position:"Body" name:"ApiRevision"`
+	CancelScheduledTask   requests.Boolean `position:"Query" name:"CancelScheduledTask"`
+	JobId                 string           `position:"Query" name:"JobId"`
+	CancelUnconfirmedTask requests.Boolean `position:"Query" name:"CancelUnconfirmedTask"`
+	IotInstanceId         string           `position:"Query" name:"IotInstanceId"`
+	CancelQueuedTask      requests.Boolean `position:"Query" name:"CancelQueuedTask"`
+	CancelInProgressTask  requests.Boolean `position:"Query" name:"CancelInProgressTask"`
+	CancelNotifiedTask    requests.Boolean `position:"Query" name:"CancelNotifiedTask"`
+	ApiProduct            string           `position:"Body" name:"ApiProduct"`
+	ApiRevision           string           `position:"Body" name:"ApiRevision"`
 }
 
 // CancelOTATaskByJobResponse is the response struct for api CancelOTATaskByJob

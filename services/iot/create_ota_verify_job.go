@@ -72,6 +72,8 @@ func (client *Client) CreateOTAVerifyJobWithCallback(request *CreateOTAVerifyJob
 type CreateOTAVerifyJobRequest struct {
 	*requests.RpcRequest
 	TimeoutInMinutes requests.Integer `position:"Query" name:"TimeoutInMinutes"`
+	NeedConfirm      requests.Boolean `position:"Query" name:"NeedConfirm"`
+	NeedPush         requests.Boolean `position:"Query" name:"NeedPush"`
 	IotInstanceId    string           `position:"Query" name:"IotInstanceId"`
 	FirmwareId       string           `position:"Query" name:"FirmwareId"`
 	ProductKey       string           `position:"Query" name:"ProductKey"`
