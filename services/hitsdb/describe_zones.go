@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeRegions invokes the hitsdb.DescribeRegions API synchronously
-func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
-	response = CreateDescribeRegionsResponse()
+// DescribeZones invokes the hitsdb.DescribeZones API synchronously
+func (client *Client) DescribeZones(request *DescribeZonesRequest) (response *DescribeZonesResponse, err error) {
+	response = CreateDescribeZonesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeRegionsWithChan invokes the hitsdb.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeRegionsResponse, 1)
+// DescribeZonesWithChan invokes the hitsdb.DescribeZones API asynchronously
+func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-chan *DescribeZonesResponse, <-chan error) {
+	responseChan := make(chan *DescribeZonesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeRegions(request)
+		response, err := client.DescribeZones(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// DescribeRegionsWithCallback invokes the hitsdb.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
+// DescribeZonesWithCallback invokes the hitsdb.DescribeZones API asynchronously
+func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, callback func(response *DescribeZonesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeRegionsResponse
+		var response *DescribeZonesResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeRegions(request)
+		response, err = client.DescribeZones(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,37 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
-// DescribeRegionsRequest is the request struct for api DescribeRegions
-type DescribeRegionsRequest struct {
+// DescribeZonesRequest is the request struct for api DescribeZones
+type DescribeZonesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Language             string           `position:"Query" name:"Language"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
-// DescribeRegionsResponse is the response struct for api DescribeRegions
-type DescribeRegionsResponse struct {
+// DescribeZonesResponse is the response struct for api DescribeZones
+type DescribeZonesResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Regions   Regions `json:"Regions" xml:"Regions"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	ZoneList  ZoneList `json:"ZoneList" xml:"ZoneList"`
 }
 
-// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
-	request = &DescribeRegionsRequest{
+// CreateDescribeZonesRequest creates a request to invoke DescribeZones API
+func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
+	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeRegions", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeZones", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
-func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
-	response = &DescribeRegionsResponse{
+// CreateDescribeZonesResponse creates a response to parse from DescribeZones response
+func CreateDescribeZonesResponse() (response *DescribeZonesResponse) {
+	response = &DescribeZonesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
