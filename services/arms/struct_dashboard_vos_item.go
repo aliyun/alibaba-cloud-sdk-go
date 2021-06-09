@@ -30,5 +30,7 @@ type DashboardVosItem struct {
 	DashboardType  string   `json:"DashboardType" xml:"DashboardType"`
 	Kind           string   `json:"Kind" xml:"Kind"`
 	NeedUpdate     bool     `json:"NeedUpdate" xml:"NeedUpdate"`
+	HttpUrl        string   `json:"HttpUrl" xml:"HttpUrl"`
+	HttpsUrl       string   `json:"HttpsUrl" xml:"HttpsUrl"`
 	Tags           []string `json:"Tags" xml:"Tags"`
 }

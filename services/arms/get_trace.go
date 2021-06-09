@@ -71,7 +71,9 @@ func (client *Client) GetTraceWithCallback(request *GetTraceRequest, callback fu
 // GetTraceRequest is the request struct for api GetTrace
 type GetTraceRequest struct {
 	*requests.RpcRequest
-	TraceID string `position:"Query" name:"TraceID"`
+	TraceID   string           `position:"Query" name:"TraceID"`
+	EndTime   requests.Integer `position:"Query" name:"EndTime"`
+	StartTime requests.Integer `position:"Query" name:"StartTime"`
 }
 
 // GetTraceResponse is the response struct for api GetTrace
