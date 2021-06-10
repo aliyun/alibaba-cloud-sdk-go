@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeZones invokes the vpc.DescribeZones API synchronously
-func (client *Client) DescribeZones(request *DescribeZonesRequest) (response *DescribeZonesResponse, err error) {
-	response = CreateDescribeZonesResponse()
+// DeleteVbrHa invokes the vpc.DeleteVbrHa API synchronously
+func (client *Client) DeleteVbrHa(request *DeleteVbrHaRequest) (response *DeleteVbrHaResponse, err error) {
+	response = CreateDeleteVbrHaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeZonesWithChan invokes the vpc.DescribeZones API asynchronously
-func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-chan *DescribeZonesResponse, <-chan error) {
-	responseChan := make(chan *DescribeZonesResponse, 1)
+// DeleteVbrHaWithChan invokes the vpc.DeleteVbrHa API asynchronously
+func (client *Client) DeleteVbrHaWithChan(request *DeleteVbrHaRequest) (<-chan *DeleteVbrHaResponse, <-chan error) {
+	responseChan := make(chan *DeleteVbrHaResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeZones(request)
+		response, err := client.DeleteVbrHa(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DescribeZonesWithCallback invokes the vpc.DescribeZones API asynchronously
-func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, callback func(response *DescribeZonesResponse, err error)) <-chan int {
+// DeleteVbrHaWithCallback invokes the vpc.DeleteVbrHa API asynchronously
+func (client *Client) DeleteVbrHaWithCallback(request *DeleteVbrHaRequest, callback func(response *DeleteVbrHaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeZonesResponse
+		var response *DeleteVbrHaResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeZones(request)
+		response, err = client.DeleteVbrHa(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,37 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 	return result
 }
 
-// DescribeZonesRequest is the request struct for api DescribeZones
-type DescribeZonesRequest struct {
+// DeleteVbrHaRequest is the request struct for api DeleteVbrHa
+type DeleteVbrHaRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
-	ZoneType             string           `position:"Query" name:"ZoneType"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DescribeZonesResponse is the response struct for api DescribeZones
-type DescribeZonesResponse struct {
+// DeleteVbrHaResponse is the response struct for api DeleteVbrHa
+type DeleteVbrHaResponse struct {
 	*responses.BaseResponse
-	RequestId string               `json:"RequestId" xml:"RequestId"`
-	Zones     ZonesInDescribeZones `json:"Zones" xml:"Zones"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDescribeZonesRequest creates a request to invoke DescribeZones API
-func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
-	request = &DescribeZonesRequest{
+// CreateDeleteVbrHaRequest creates a request to invoke DeleteVbrHa API
+func CreateDeleteVbrHaRequest() (request *DeleteVbrHaRequest) {
+	request = &DeleteVbrHaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeZones", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVbrHa", "vpc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeZonesResponse creates a response to parse from DescribeZones response
-func CreateDescribeZonesResponse() (response *DescribeZonesResponse) {
-	response = &DescribeZonesResponse{
+// CreateDeleteVbrHaResponse creates a response to parse from DeleteVbrHa response
+func CreateDeleteVbrHaResponse() (response *DeleteVbrHaResponse) {
+	response = &DeleteVbrHaResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

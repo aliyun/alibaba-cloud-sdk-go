@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateVSwitch invokes the vpc.CreateVSwitch API synchronously
-func (client *Client) CreateVSwitch(request *CreateVSwitchRequest) (response *CreateVSwitchResponse, err error) {
-	response = CreateCreateVSwitchResponse()
+// CreateVbrHa invokes the vpc.CreateVbrHa API synchronously
+func (client *Client) CreateVbrHa(request *CreateVbrHaRequest) (response *CreateVbrHaResponse, err error) {
+	response = CreateCreateVbrHaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateVSwitchWithChan invokes the vpc.CreateVSwitch API asynchronously
-func (client *Client) CreateVSwitchWithChan(request *CreateVSwitchRequest) (<-chan *CreateVSwitchResponse, <-chan error) {
-	responseChan := make(chan *CreateVSwitchResponse, 1)
+// CreateVbrHaWithChan invokes the vpc.CreateVbrHa API asynchronously
+func (client *Client) CreateVbrHaWithChan(request *CreateVbrHaRequest) (<-chan *CreateVbrHaResponse, <-chan error) {
+	responseChan := make(chan *CreateVbrHaResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateVSwitch(request)
+		response, err := client.CreateVbrHa(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateVSwitchWithChan(request *CreateVSwitchRequest) (<-ch
 	return responseChan, errChan
 }
 
-// CreateVSwitchWithCallback invokes the vpc.CreateVSwitch API asynchronously
-func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, callback func(response *CreateVSwitchResponse, err error)) <-chan int {
+// CreateVbrHaWithCallback invokes the vpc.CreateVbrHa API asynchronously
+func (client *Client) CreateVbrHaWithCallback(request *CreateVbrHaRequest, callback func(response *CreateVbrHaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateVSwitchResponse
+		var response *CreateVbrHaResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateVSwitch(request)
+		response, err = client.CreateVbrHa(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,43 +68,41 @@ func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, c
 	return result
 }
 
-// CreateVSwitchRequest is the request struct for api CreateVSwitch
-type CreateVSwitchRequest struct {
+// CreateVbrHaRequest is the request struct for api CreateVbrHa
+type CreateVbrHaRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Description          string           `position:"Query" name:"Description"`
+	VbrId                string           `position:"Query" name:"VbrId"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Ipv6CidrBlock        requests.Integer `position:"Query" name:"Ipv6CidrBlock"`
-	VpcIpv6CidrBlock     string           `position:"Query" name:"VpcIpv6CidrBlock"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	VSwitchName          string           `position:"Query" name:"VSwitchName"`
-	CidrBlock            string           `position:"Query" name:"CidrBlock"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
+	PeerVbrId            string           `position:"Query" name:"PeerVbrId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
-// CreateVSwitchResponse is the response struct for api CreateVSwitch
-type CreateVSwitchResponse struct {
+// CreateVbrHaResponse is the response struct for api CreateVbrHa
+type CreateVbrHaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	VSwitchId string `json:"VSwitchId" xml:"VSwitchId"`
+	VbrHaId   string `json:"VbrHaId" xml:"VbrHaId"`
 }
 
-// CreateCreateVSwitchRequest creates a request to invoke CreateVSwitch API
-func CreateCreateVSwitchRequest() (request *CreateVSwitchRequest) {
-	request = &CreateVSwitchRequest{
+// CreateCreateVbrHaRequest creates a request to invoke CreateVbrHa API
+func CreateCreateVbrHaRequest() (request *CreateVbrHaRequest) {
+	request = &CreateVbrHaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVSwitch", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVbrHa", "vpc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateVSwitchResponse creates a response to parse from CreateVSwitch response
-func CreateCreateVSwitchResponse() (response *CreateVSwitchResponse) {
-	response = &CreateVSwitchResponse{
+// CreateCreateVbrHaResponse creates a response to parse from CreateVbrHa response
+func CreateCreateVbrHaResponse() (response *CreateVbrHaResponse) {
+	response = &CreateVbrHaResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
