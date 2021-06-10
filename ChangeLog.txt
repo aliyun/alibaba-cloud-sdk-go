@@ -1,3 +1,7 @@
+2021-06-10 Version: v1.61.1137
+- Generated 2019-01-01 for `HBase`.
+- DiskEncryption.
+
 2021-06-10 Version: v1.61.1136
 - Generated 2016-04-28 for `Vpc`.
 
