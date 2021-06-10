@@ -17,7 +17,7 @@ package dms_enterprise
 
 // UploadOSSParam is a nested struct in dms_enterprise response
 type UploadOSSParam struct {
-	BucketName string `json:"BucketName" xml:"BucketName"`
 	Endpoint   string `json:"Endpoint" xml:"Endpoint"`
+	BucketName string `json:"BucketName" xml:"BucketName"`
 	ObjectName string `json:"ObjectName" xml:"ObjectName"`
 }

@@ -19,6 +19,6 @@ package dms_enterprise
 type DataCorrectOrderDetail struct {
 	Status         string                                  `json:"Status" xml:"Status"`
 	OrderDetail    OrderDetail                             `json:"OrderDetail" xml:"OrderDetail"`
-	DatabaseList   DatabaseListInGetDataCorrectOrderDetail `json:"DatabaseList" xml:"DatabaseList"`
 	PreCheckDetail PreCheckDetail                          `json:"PreCheckDetail" xml:"PreCheckDetail"`
+	DatabaseList   DatabaseListInGetDataCorrectOrderDetail `json:"DatabaseList" xml:"DatabaseList"`
 }

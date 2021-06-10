@@ -20,22 +20,22 @@ type Instance struct {
 	DataLinkName     string                     `json:"DataLinkName" xml:"DataLinkName"`
 	Port             int                        `json:"Port" xml:"Port"`
 	DatabasePassword string                     `json:"DatabasePassword" xml:"DatabasePassword"`
-	DdlOnline        int                        `json:"DdlOnline" xml:"DdlOnline"`
 	DbaNickName      string                     `json:"DbaNickName" xml:"DbaNickName"`
+	DdlOnline        int                        `json:"DdlOnline" xml:"DdlOnline"`
 	Sid              string                     `json:"Sid" xml:"Sid"`
 	InstanceType     string                     `json:"InstanceType" xml:"InstanceType"`
 	QueryTimeout     int                        `json:"QueryTimeout" xml:"QueryTimeout"`
-	InstanceSource   string                     `json:"InstanceSource" xml:"InstanceSource"`
-	EcsInstanceId    string                     `json:"EcsInstanceId" xml:"EcsInstanceId"`
 	DbaId            string                     `json:"DbaId" xml:"DbaId"`
+	EcsInstanceId    string                     `json:"EcsInstanceId" xml:"EcsInstanceId"`
+	InstanceSource   string                     `json:"InstanceSource" xml:"InstanceSource"`
 	Host             string                     `json:"Host" xml:"Host"`
 	SafeRuleId       string                     `json:"SafeRuleId" xml:"SafeRuleId"`
 	State            string                     `json:"State" xml:"State"`
 	EnvType          string                     `json:"EnvType" xml:"EnvType"`
 	InstanceId       string                     `json:"InstanceId" xml:"InstanceId"`
 	UseDsql          int                        `json:"UseDsql" xml:"UseDsql"`
-	ExportTimeout    int                        `json:"ExportTimeout" xml:"ExportTimeout"`
 	VpcId            string                     `json:"VpcId" xml:"VpcId"`
+	ExportTimeout    int                        `json:"ExportTimeout" xml:"ExportTimeout"`
 	InstanceAlias    string                     `json:"InstanceAlias" xml:"InstanceAlias"`
 	DatabaseUser     string                     `json:"DatabaseUser" xml:"DatabaseUser"`
 	EcsRegion        string                     `json:"EcsRegion" xml:"EcsRegion"`

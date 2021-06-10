@@ -17,11 +17,11 @@ package dms_enterprise
 
 // OpLogDetail is a nested struct in dms_enterprise response
 type OpLogDetail struct {
-	UserId    int64  `json:"UserId" xml:"UserId"`
+	Module    string `json:"Module" xml:"Module"`
 	Database  string `json:"Database" xml:"Database"`
+	UserId    int64  `json:"UserId" xml:"UserId"`
 	OpContent string `json:"OpContent" xml:"OpContent"`
 	UserNick  string `json:"UserNick" xml:"UserNick"`
 	OrderId   int64  `json:"OrderId" xml:"OrderId"`
-	Module    string `json:"Module" xml:"Module"`
 	OpTime    string `json:"OpTime" xml:"OpTime"`
 }

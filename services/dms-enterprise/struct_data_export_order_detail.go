@@ -17,6 +17,6 @@ package dms_enterprise
 
 // DataExportOrderDetail is a nested struct in dms_enterprise response
 type DataExportOrderDetail struct {
-	OrderDetail OrderDetail `json:"OrderDetail" xml:"OrderDetail"`
 	KeyInfo     KeyInfo     `json:"KeyInfo" xml:"KeyInfo"`
+	OrderDetail OrderDetail `json:"OrderDetail" xml:"OrderDetail"`
 }

@@ -17,19 +17,19 @@ package dms_enterprise
 
 // SearchDatabase is a nested struct in dms_enterprise response
 type SearchDatabase struct {
+	DatabaseId    string                        `json:"DatabaseId" xml:"DatabaseId"`
+	Host          string                        `json:"Host" xml:"Host"`
 	DbaId         string                        `json:"DbaId" xml:"DbaId"`
+	SchemaName    string                        `json:"SchemaName" xml:"SchemaName"`
+	Logic         bool                          `json:"Logic" xml:"Logic"`
+	DatalinkName  string                        `json:"DatalinkName" xml:"DatalinkName"`
+	Port          int                           `json:"Port" xml:"Port"`
+	EnvType       string                        `json:"EnvType" xml:"EnvType"`
+	Sid           string                        `json:"Sid" xml:"Sid"`
+	Encoding      string                        `json:"Encoding" xml:"Encoding"`
+	DbType        string                        `json:"DbType" xml:"DbType"`
 	SearchName    string                        `json:"SearchName" xml:"SearchName"`
 	Alias         string                        `json:"Alias" xml:"Alias"`
-	Port          int                           `json:"Port" xml:"Port"`
-	DatalinkName  string                        `json:"DatalinkName" xml:"DatalinkName"`
-	Encoding      string                        `json:"Encoding" xml:"Encoding"`
-	Host          string                        `json:"Host" xml:"Host"`
-	DatabaseId    string                        `json:"DatabaseId" xml:"DatabaseId"`
-	Logic         bool                          `json:"Logic" xml:"Logic"`
-	DbType        string                        `json:"DbType" xml:"DbType"`
-	EnvType       string                        `json:"EnvType" xml:"EnvType"`
-	SchemaName    string                        `json:"SchemaName" xml:"SchemaName"`
-	Sid           string                        `json:"Sid" xml:"Sid"`
-	OwnerNameList OwnerNameListInSearchDatabase `json:"OwnerNameList" xml:"OwnerNameList"`
 	OwnerIdList   OwnerIdListInSearchDatabase   `json:"OwnerIdList" xml:"OwnerIdList"`
+	OwnerNameList OwnerNameListInSearchDatabase `json:"OwnerNameList" xml:"OwnerNameList"`
 }

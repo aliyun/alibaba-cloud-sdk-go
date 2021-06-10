@@ -79,11 +79,11 @@ type GetDataCorrectSQLFileRequest struct {
 // GetDataCorrectSQLFileResponse is the response struct for api GetDataCorrectSQLFile
 type GetDataCorrectSQLFileResponse struct {
 	*responses.BaseResponse
-	FileUrl      string `json:"FileUrl" xml:"FileUrl"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success      bool   `json:"Success" xml:"Success"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	FileUrl      string `json:"FileUrl" xml:"FileUrl"`
 }
 
 // CreateGetDataCorrectSQLFileRequest creates a request to invoke GetDataCorrectSQLFile API

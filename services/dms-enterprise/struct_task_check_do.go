@@ -18,6 +18,6 @@ package dms_enterprise
 // TaskCheckDO is a nested struct in dms_enterprise response
 type TaskCheckDO struct {
 	UserTip     string `json:"UserTip" xml:"UserTip"`
-	CheckStep   string `json:"CheckStep" xml:"CheckStep"`
 	CheckStatus string `json:"CheckStatus" xml:"CheckStatus"`
+	CheckStep   string `json:"CheckStep" xml:"CheckStep"`
 }

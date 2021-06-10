@@ -17,6 +17,6 @@ package dms_enterprise
 
 // DetailInfo is a nested struct in dms_enterprise response
 type DetailInfo struct {
-	ColumnList []ColumnInGetMetaTableDetailInfo `json:"ColumnList" xml:"ColumnList"`
 	IndexList  []Index                          `json:"IndexList" xml:"IndexList"`
+	ColumnList []ColumnInGetMetaTableDetailInfo `json:"ColumnList" xml:"ColumnList"`
 }

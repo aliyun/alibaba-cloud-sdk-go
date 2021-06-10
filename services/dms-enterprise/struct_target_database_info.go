@@ -17,9 +17,9 @@ package dms_enterprise
 
 // TargetDatabaseInfo is a nested struct in dms_enterprise response
 type TargetDatabaseInfo struct {
-	SearchName string `json:"SearchName" xml:"SearchName"`
 	DbId       int64  `json:"DbId" xml:"DbId"`
-	Logic      bool   `json:"Logic" xml:"Logic"`
-	EnvType    string `json:"EnvType" xml:"EnvType"`
+	SearchName string `json:"SearchName" xml:"SearchName"`
 	DbType     string `json:"DbType" xml:"DbType"`
+	EnvType    string `json:"EnvType" xml:"EnvType"`
+	Logic      bool   `json:"Logic" xml:"Logic"`
 }

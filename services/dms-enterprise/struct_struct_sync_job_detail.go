@@ -17,11 +17,11 @@ package dms_enterprise
 
 // StructSyncJobDetail is a nested struct in dms_enterprise response
 type StructSyncJobDetail struct {
-	SqlCount      int64  `json:"SqlCount" xml:"SqlCount"`
 	JobStatus     string `json:"JobStatus" xml:"JobStatus"`
 	Message       string `json:"Message" xml:"Message"`
 	TableAnalyzed int64  `json:"TableAnalyzed" xml:"TableAnalyzed"`
 	TableCount    int64  `json:"TableCount" xml:"TableCount"`
+	SqlCount      int64  `json:"SqlCount" xml:"SqlCount"`
 	ExecuteCount  int64  `json:"ExecuteCount" xml:"ExecuteCount"`
 	SecurityRule  string `json:"SecurityRule" xml:"SecurityRule"`
 	DBTaskGroupId int64  `json:"DBTaskGroupId" xml:"DBTaskGroupId"`

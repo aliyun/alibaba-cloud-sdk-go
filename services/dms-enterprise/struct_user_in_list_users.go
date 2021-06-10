@@ -17,17 +17,17 @@ package dms_enterprise
 
 // UserInListUsers is a nested struct in dms_enterprise response
 type UserInListUsers struct {
-	Uid             string                  `json:"Uid" xml:"Uid"`
-	LastLoginTime   string                  `json:"LastLoginTime" xml:"LastLoginTime"`
-	CurResultCount  int64                   `json:"CurResultCount" xml:"CurResultCount"`
-	MaxResultCount  int64                   `json:"MaxResultCount" xml:"MaxResultCount"`
-	UserId          string                  `json:"UserId" xml:"UserId"`
 	State           string                  `json:"State" xml:"State"`
-	CurExecuteCount int64                   `json:"CurExecuteCount" xml:"CurExecuteCount"`
-	NickName        string                  `json:"NickName" xml:"NickName"`
-	Mobile          string                  `json:"Mobile" xml:"Mobile"`
-	MaxExecuteCount int64                   `json:"MaxExecuteCount" xml:"MaxExecuteCount"`
+	CurResultCount  int64                   `json:"CurResultCount" xml:"CurResultCount"`
+	UserId          string                  `json:"UserId" xml:"UserId"`
+	LastLoginTime   string                  `json:"LastLoginTime" xml:"LastLoginTime"`
+	MaxResultCount  int64                   `json:"MaxResultCount" xml:"MaxResultCount"`
 	ParentUid       string                  `json:"ParentUid" xml:"ParentUid"`
+	NickName        string                  `json:"NickName" xml:"NickName"`
+	MaxExecuteCount int64                   `json:"MaxExecuteCount" xml:"MaxExecuteCount"`
+	CurExecuteCount int64                   `json:"CurExecuteCount" xml:"CurExecuteCount"`
+	Mobile          string                  `json:"Mobile" xml:"Mobile"`
+	Uid             string                  `json:"Uid" xml:"Uid"`
 	RoleIdList      RoleIdListInListUsers   `json:"RoleIdList" xml:"RoleIdList"`
 	RoleNameList    RoleNameListInListUsers `json:"RoleNameList" xml:"RoleNameList"`
 }
