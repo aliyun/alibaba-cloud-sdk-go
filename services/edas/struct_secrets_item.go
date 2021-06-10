@@ -23,6 +23,8 @@ type SecretsItem struct {
 	Type         string            `json:"Type" xml:"Type"`
 	ClusterId    string            `json:"ClusterId" xml:"ClusterId"`
 	ClusterName  string            `json:"ClusterName" xml:"ClusterName"`
+	CertId       string            `json:"CertId" xml:"CertId"`
+	CertRegionId string            `json:"CertRegionId" xml:"CertRegionId"`
 	Data         []DataItem        `json:"Data" xml:"Data"`
 	RelatedApps  []RelatedAppsItem `json:"RelatedApps" xml:"RelatedApps"`
 }

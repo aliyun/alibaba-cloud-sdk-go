@@ -71,11 +71,13 @@ func (client *Client) UpdateK8sSecretWithCallback(request *UpdateK8sSecretReques
 // UpdateK8sSecretRequest is the request struct for api UpdateK8sSecret
 type UpdateK8sSecretRequest struct {
 	*requests.RoaRequest
-	Data      string `position:"Body" name:"Data"`
-	Name      string `position:"Body" name:"Name"`
-	Namespace string `position:"Body" name:"Namespace"`
-	ClusterId string `position:"Body" name:"ClusterId"`
-	Type      string `position:"Body" name:"Type"`
+	Data         string `position:"Body" name:"Data"`
+	Name         string `position:"Body" name:"Name"`
+	Namespace    string `position:"Body" name:"Namespace"`
+	ClusterId    string `position:"Body" name:"ClusterId"`
+	CertId       string `position:"Body" name:"CertId"`
+	Type         string `position:"Body" name:"Type"`
+	CertRegionId string `position:"Body" name:"CertRegionId"`
 }
 
 // UpdateK8sSecretResponse is the response struct for api UpdateK8sSecret

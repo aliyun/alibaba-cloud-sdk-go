@@ -33,6 +33,7 @@ type Data struct {
 	AccountId                       string                                   `json:"AccountId" xml:"AccountId"`
 	ExtVServerGroupId               string                                   `json:"ExtVServerGroupId" xml:"ExtVServerGroupId"`
 	PodName                         string                                   `json:"PodName" xml:"PodName"`
+	Total                           int                                      `json:"Total" xml:"Total"`
 	AppInfos                        string                                   `json:"AppInfos" xml:"AppInfos"`
 	Enabled                         bool                                     `json:"Enabled" xml:"Enabled"`
 	Enable                          bool                                     `json:"Enable" xml:"Enable"`
@@ -73,6 +74,7 @@ type Data struct {
 	EntryApplication                EntryApplication                         `json:"EntryApplication" xml:"EntryApplication"`
 	Spec                            Spec                                     `json:"Spec" xml:"Spec"`
 	Metadata                        Metadata                                 `json:"Metadata" xml:"Metadata"`
+	CertificateList                 []CertificateListItem                    `json:"CertificateList" xml:"CertificateList"`
 	ApplicationList                 ApplicationListInInsertSwimmingLaneGroup `json:"ApplicationList" xml:"ApplicationList"`
 	RuleList                        RuleListInGetScalingRules                `json:"RuleList" xml:"RuleList"`
 	Content                         []Provider                               `json:"Content" xml:"Content"`

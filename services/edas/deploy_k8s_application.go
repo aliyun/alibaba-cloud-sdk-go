@@ -83,6 +83,7 @@ type DeployK8sApplicationRequest struct {
 	CpuLimit               requests.Integer `position:"Query" name:"CpuLimit"`
 	PackageVersion         string           `position:"Query" name:"PackageVersion"`
 	StorageType            string           `position:"Query" name:"StorageType"`
+	EnvFroms               string           `position:"Query" name:"EnvFroms"`
 	ConfigMountDescs       string           `position:"Query" name:"ConfigMountDescs"`
 	EdasContainerVersion   string           `position:"Query" name:"EdasContainerVersion"`
 	PackageUrl             string           `position:"Query" name:"PackageUrl"`

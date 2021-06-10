@@ -1,3 +1,10 @@
+2021-06-10 Version: v1.61.1135
+- Generated 2017-08-01 for `Edas`.
+- Modify API ListK8sIngressRules.
+- Modify API CreateK8sIngressRule.
+- Modify API UpdateK8sIngressRule.
+- Modify API DeleteK8sIngressRule.
+
 2021-06-09 Version: v1.61.1134
 - Generated 2018-01-20 for `Iot`.
 - Update TMP API, including QueryDevice, CreateThingModel, UpdateThingModel, ImportThingModelTsl, BatchPickThingModel, ListDeviceDistributeJob.

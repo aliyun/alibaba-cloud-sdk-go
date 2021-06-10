@@ -82,11 +82,10 @@ type ListK8sSecretsRequest struct {
 // ListK8sSecretsResponse is the response struct for api ListK8sSecrets
 type ListK8sSecretsResponse struct {
 	*responses.BaseResponse
-	Code       int              `json:"Code" xml:"Code"`
-	Message    string           `json:"Message" xml:"Message"`
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	K8sSecrets []K8sSecretsItem `json:"K8sSecrets" xml:"K8sSecrets"`
-	Result     []ResultItem     `json:"Result" xml:"Result"`
+	Code      int          `json:"Code" xml:"Code"`
+	Message   string       `json:"Message" xml:"Message"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
+	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 
 // CreateListK8sSecretsRequest creates a request to invoke ListK8sSecrets API

@@ -101,6 +101,7 @@ type InsertK8sApplicationRequest struct {
 	InternetSlbPort        requests.Integer `position:"Query" name:"InternetSlbPort"`
 	PackageVersion         string           `position:"Query" name:"PackageVersion"`
 	Timeout                requests.Integer `position:"Query" name:"Timeout"`
+	EnvFroms               string           `position:"Query" name:"EnvFroms"`
 	LimitMem               requests.Integer `position:"Query" name:"LimitMem"`
 	LimitmCpu              requests.Integer `position:"Query" name:"LimitmCpu"`
 	EdasContainerVersion   string           `position:"Query" name:"EdasContainerVersion"`
