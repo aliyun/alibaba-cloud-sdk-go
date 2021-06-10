@@ -80,8 +80,8 @@ type DescribeLiveDomainConfigsRequest struct {
 // DescribeLiveDomainConfigsResponse is the response struct for api DescribeLiveDomainConfigs
 type DescribeLiveDomainConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	DomainConfigs DomainConfigs `json:"DomainConfigs" xml:"DomainConfigs"`
+	RequestId     string                                   `json:"RequestId" xml:"RequestId"`
+	DomainConfigs DomainConfigsInDescribeLiveDomainConfigs `json:"DomainConfigs" xml:"DomainConfigs"`
 }
 
 // CreateDescribeLiveDomainConfigsRequest creates a request to invoke DescribeLiveDomainConfigs API

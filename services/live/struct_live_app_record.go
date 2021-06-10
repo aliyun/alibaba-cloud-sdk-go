@@ -17,6 +17,7 @@ package live
 
 // LiveAppRecord is a nested struct in live response
 type LiveAppRecord struct {
+	SourceUsing      string           `json:"SourceUsing" xml:"SourceUsing"`
 	StartTime        string           `json:"StartTime" xml:"StartTime"`
 	EndTime          string           `json:"EndTime" xml:"EndTime"`
 	DomainName       string           `json:"DomainName" xml:"DomainName"`
