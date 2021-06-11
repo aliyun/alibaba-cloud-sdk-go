@@ -21,6 +21,7 @@ type Result struct {
 	SourceBranch             string              `json:"SourceBranch" xml:"SourceBranch"`
 	Branch                   string              `json:"Branch" xml:"Branch"`
 	OutDated                 bool                `json:"OutDated" xml:"OutDated"`
+	KeyScope                 string              `json:"KeyScope" xml:"KeyScope"`
 	MergedRevision           string              `json:"MergedRevision" xml:"MergedRevision"`
 	WebUrl                   string              `json:"WebUrl" xml:"WebUrl"`
 	Content                  string              `json:"Content" xml:"Content"`
