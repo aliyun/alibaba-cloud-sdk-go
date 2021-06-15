@@ -78,8 +78,6 @@ type StartLoggingRequest struct {
 type StartLoggingResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Param     string `json:"Param" xml:"Param"`
-	Result    string `json:"Result" xml:"Result"`
 }
 
 // CreateStartLoggingRequest creates a request to invoke StartLogging API
@@ -87,8 +85,8 @@ func CreateStartLoggingRequest() (request *StartLoggingRequest) {
 	request = &StartLoggingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2017-12-04", "StartLogging", "actiontrail", "openAPI")
-	request.Method = requests.GET
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "StartLogging", "actiontrail", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

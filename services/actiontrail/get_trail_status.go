@@ -78,12 +78,16 @@ type GetTrailStatusRequest struct {
 // GetTrailStatusResponse is the response struct for api GetTrailStatus
 type GetTrailStatusResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	IsLogging           bool   `json:"IsLogging" xml:"IsLogging"`
-	LatestDeliveryError string `json:"LatestDeliveryError" xml:"LatestDeliveryError"`
-	LatestDeliveryTime  string `json:"LatestDeliveryTime" xml:"LatestDeliveryTime"`
-	StartLoggingTime    string `json:"StartLoggingTime" xml:"StartLoggingTime"`
-	StopLoggingTime     string `json:"StopLoggingTime" xml:"StopLoggingTime"`
+	LatestDeliveryLogServiceTime  string `json:"LatestDeliveryLogServiceTime" xml:"LatestDeliveryLogServiceTime"`
+	RequestId                     string `json:"RequestId" xml:"RequestId"`
+	LatestDeliveryLogServiceError string `json:"LatestDeliveryLogServiceError" xml:"LatestDeliveryLogServiceError"`
+	StartLoggingTime              string `json:"StartLoggingTime" xml:"StartLoggingTime"`
+	OssBucketStatus               bool   `json:"OssBucketStatus" xml:"OssBucketStatus"`
+	LatestDeliveryError           string `json:"LatestDeliveryError" xml:"LatestDeliveryError"`
+	StopLoggingTime               string `json:"StopLoggingTime" xml:"StopLoggingTime"`
+	SlsLogStoreStatus             bool   `json:"SlsLogStoreStatus" xml:"SlsLogStoreStatus"`
+	LatestDeliveryTime            string `json:"LatestDeliveryTime" xml:"LatestDeliveryTime"`
+	IsLogging                     bool   `json:"IsLogging" xml:"IsLogging"`
 }
 
 // CreateGetTrailStatusRequest creates a request to invoke GetTrailStatus API
@@ -91,7 +95,7 @@ func CreateGetTrailStatusRequest() (request *GetTrailStatusRequest) {
 	request = &GetTrailStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2017-12-04", "GetTrailStatus", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "GetTrailStatus", "actiontrail", "openAPI")
 	request.Method = requests.POST
 	return
 }

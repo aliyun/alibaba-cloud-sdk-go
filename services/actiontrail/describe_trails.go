@@ -71,15 +71,16 @@ func (client *Client) DescribeTrailsWithCallback(request *DescribeTrailsRequest,
 // DescribeTrailsRequest is the request struct for api DescribeTrails
 type DescribeTrailsRequest struct {
 	*requests.RpcRequest
-	IncludeShadowTrails requests.Boolean `position:"Query" name:"IncludeShadowTrails"`
-	NameList            string           `position:"Query" name:"NameList"`
+	IncludeOrganizationTrail requests.Boolean `position:"Query" name:"IncludeOrganizationTrail"`
+	IncludeShadowTrails      requests.Boolean `position:"Query" name:"IncludeShadowTrails"`
+	NameList                 string           `position:"Query" name:"NameList"`
 }
 
 // DescribeTrailsResponse is the response struct for api DescribeTrails
 type DescribeTrailsResponse struct {
 	*responses.BaseResponse
-	RequestId string          `json:"RequestId" xml:"RequestId"`
-	TrailList []TrailListItem `json:"TrailList" xml:"TrailList"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	TrailList []Trail `json:"TrailList" xml:"TrailList"`
 }
 
 // CreateDescribeTrailsRequest creates a request to invoke DescribeTrails API
@@ -87,7 +88,7 @@ func CreateDescribeTrailsRequest() (request *DescribeTrailsRequest) {
 	request = &DescribeTrailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2017-12-04", "DescribeTrails", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "DescribeTrails", "actiontrail", "openAPI")
 	request.Method = requests.POST
 	return
 }

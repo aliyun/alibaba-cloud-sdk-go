@@ -17,5 +17,7 @@ package actiontrail
 
 // Region is a nested struct in actiontrail response
 type Region struct {
-	RegionItem []RegionItem `json:"Region" xml:"Region"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
+	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	LocalName      string `json:"LocalName" xml:"LocalName"`
 }

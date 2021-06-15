@@ -74,8 +74,7 @@ type UpdateTrailRequest struct {
 	SlsProjectArn   string `position:"Query" name:"SlsProjectArn"`
 	SlsWriteRoleArn string `position:"Query" name:"SlsWriteRoleArn"`
 	OssKeyPrefix    string `position:"Query" name:"OssKeyPrefix"`
-	MnsTopicArn     string `position:"Query" name:"MnsTopicArn"`
-	RoleName        string `position:"Query" name:"RoleName"`
+	OssWriteRoleArn string `position:"Query" name:"OssWriteRoleArn"`
 	EventRW         string `position:"Query" name:"EventRW"`
 	Name            string `position:"Query" name:"Name"`
 	OssBucketName   string `position:"Query" name:"OssBucketName"`
@@ -85,17 +84,16 @@ type UpdateTrailRequest struct {
 // UpdateTrailResponse is the response struct for api UpdateTrail
 type UpdateTrailResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	Name            string `json:"Name" xml:"Name"`
-	HomeRegion      string `json:"HomeRegion" xml:"HomeRegion"`
-	OssBucketName   string `json:"OssBucketName" xml:"OssBucketName"`
-	OssKeyPrefix    string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
-	RoleName        string `json:"RoleName" xml:"RoleName"`
 	SlsProjectArn   string `json:"SlsProjectArn" xml:"SlsProjectArn"`
-	SlsWriteRoleArn string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
 	EventRW         string `json:"EventRW" xml:"EventRW"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	HomeRegion      string `json:"HomeRegion" xml:"HomeRegion"`
+	OssKeyPrefix    string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
+	OssBucketName   string `json:"OssBucketName" xml:"OssBucketName"`
+	SlsWriteRoleArn string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
+	OssWriteRoleArn string `json:"OssWriteRoleArn" xml:"OssWriteRoleArn"`
 	TrailRegion     string `json:"TrailRegion" xml:"TrailRegion"`
-	MnsTopicArn     string `json:"MnsTopicArn" xml:"MnsTopicArn"`
+	Name            string `json:"Name" xml:"Name"`
 }
 
 // CreateUpdateTrailRequest creates a request to invoke UpdateTrail API
@@ -103,7 +101,7 @@ func CreateUpdateTrailRequest() (request *UpdateTrailRequest) {
 	request = &UpdateTrailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2017-12-04", "UpdateTrail", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "UpdateTrail", "actiontrail", "openAPI")
 	request.Method = requests.POST
 	return
 }
