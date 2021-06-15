@@ -78,6 +78,7 @@ type ModifyDBClusterTDERequest struct {
 	EncryptionKey        string           `position:"Query" name:"EncryptionKey"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RoleArn              string           `position:"Query" name:"RoleArn"`
+	EncryptNewTables     string           `position:"Query" name:"EncryptNewTables"`
 	TDEStatus            string           `position:"Query" name:"TDEStatus"`
 }
 

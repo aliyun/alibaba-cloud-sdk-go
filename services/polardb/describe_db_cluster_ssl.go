@@ -81,8 +81,9 @@ type DescribeDBClusterSSLRequest struct {
 // DescribeDBClusterSSLResponse is the response struct for api DescribeDBClusterSSL
 type DescribeDBClusterSSLResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     []Item `json:"Items" xml:"Items"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	SSLAutoRotate string `json:"SSLAutoRotate" xml:"SSLAutoRotate"`
+	Items         []Item `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeDBClusterSSLRequest creates a request to invoke DescribeDBClusterSSL API

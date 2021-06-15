@@ -73,6 +73,7 @@ type ModifyDBClusterSSLRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
+	SSLAutoRotate        string           `position:"Query" name:"SSLAutoRotate"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

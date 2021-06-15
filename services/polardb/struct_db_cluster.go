@@ -40,6 +40,6 @@ type DBCluster struct {
 	IsDeleted            int                         `json:"IsDeleted" xml:"IsDeleted"`
 	DBClusterDescription string                      `json:"DBClusterDescription" xml:"DBClusterDescription"`
 	LockMode             string                      `json:"LockMode" xml:"LockMode"`
-	Tags                 TagsInDescribeDBClusters    `json:"Tags" xml:"Tags"`
 	DBNodes              DBNodesInDescribeDBClusters `json:"DBNodes" xml:"DBNodes"`
+	Tags                 TagsInDescribeDBClusters    `json:"Tags" xml:"Tags"`
 }

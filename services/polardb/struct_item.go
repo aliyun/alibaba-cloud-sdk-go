@@ -17,8 +17,8 @@ package polardb
 
 // Item is a nested struct in polardb response
 type Item struct {
-	DBEndpointId        string `json:"DBEndpointId" xml:"DBEndpointId"`
+	SSLExpireTime       string `json:"SSLExpireTime" xml:"SSLExpireTime"`
 	SSLEnabled          string `json:"SSLEnabled" xml:"SSLEnabled"`
 	SSLConnectionString string `json:"SSLConnectionString" xml:"SSLConnectionString"`
-	SSLExpireTime       string `json:"SSLExpireTime" xml:"SSLExpireTime"`
+	DBEndpointId        string `json:"DBEndpointId" xml:"DBEndpointId"`
 }

@@ -94,10 +94,10 @@ type DescribeDBClustersTag struct {
 // DescribeDBClustersResponse is the response struct for api DescribeDBClusters
 type DescribeDBClustersResponse struct {
 	*responses.BaseResponse
-	RequestId        string                    `json:"RequestId" xml:"RequestId"`
-	PageNumber       int                       `json:"PageNumber" xml:"PageNumber"`
 	TotalRecordCount int                       `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int                       `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                    `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                       `json:"PageNumber" xml:"PageNumber"`
 	Items            ItemsInDescribeDBClusters `json:"Items" xml:"Items"`
 }
 
