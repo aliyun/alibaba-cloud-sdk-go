@@ -17,7 +17,7 @@ package imageaudit
 
 // Face is a nested struct in imageaudit response
 type Face struct {
-	Name string  `json:"Name" xml:"Name"`
 	Rate float64 `json:"Rate" xml:"Rate"`
 	Id   string  `json:"Id" xml:"Id"`
+	Name string  `json:"Name" xml:"Name"`
 }

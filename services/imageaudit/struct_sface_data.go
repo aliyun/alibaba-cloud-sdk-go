@@ -19,7 +19,7 @@ package imageaudit
 type SfaceData struct {
 	X      float64 `json:"X" xml:"X"`
 	Y      float64 `json:"Y" xml:"Y"`
-	Width  float64 `json:"Width" xml:"Width"`
 	Height float64 `json:"Height" xml:"Height"`
+	Width  float64 `json:"Width" xml:"Width"`
 	Faces  []Face  `json:"Faces" xml:"Faces"`
 }

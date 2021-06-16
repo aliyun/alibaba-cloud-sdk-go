@@ -17,6 +17,6 @@ package imageaudit
 
 // Data is a nested struct in imageaudit response
 type Data struct {
-	Results  []Result  `json:"Results" xml:"Results"`
 	Elements []Element `json:"Elements" xml:"Elements"`
+	Results  []Result  `json:"Results" xml:"Results"`
 }

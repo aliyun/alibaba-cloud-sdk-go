@@ -18,10 +18,10 @@ package imageaudit
 // Result is a nested struct in imageaudit response
 type Result struct {
 	Rate       float64     `json:"Rate" xml:"Rate"`
-	DataId     string      `json:"DataId" xml:"DataId"`
 	TaskId     string      `json:"TaskId" xml:"TaskId"`
-	Label      string      `json:"Label" xml:"Label"`
+	DataId     string      `json:"DataId" xml:"DataId"`
 	Suggestion string      `json:"Suggestion" xml:"Suggestion"`
+	Label      string      `json:"Label" xml:"Label"`
 	ImageURL   string      `json:"ImageURL" xml:"ImageURL"`
 	SubResults []SubResult `json:"SubResults" xml:"SubResults"`
 	Details    []Detail    `json:"Details" xml:"Details"`

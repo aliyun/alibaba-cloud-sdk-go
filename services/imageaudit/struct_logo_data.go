@@ -18,9 +18,9 @@ package imageaudit
 // LogoData is a nested struct in imageaudit response
 type LogoData struct {
 	Type   string  `json:"Type" xml:"Type"`
-	Name   string  `json:"Name" xml:"Name"`
 	X      float64 `json:"X" xml:"X"`
 	Y      float64 `json:"Y" xml:"Y"`
-	Width  float64 `json:"Width" xml:"Width"`
 	Height float64 `json:"Height" xml:"Height"`
+	Width  float64 `json:"Width" xml:"Width"`
+	Name   string  `json:"Name" xml:"Name"`
 }
