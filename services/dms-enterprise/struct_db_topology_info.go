@@ -17,14 +17,14 @@ package dms_enterprise
 
 // DBTopologyInfo is a nested struct in dms_enterprise response
 type DBTopologyInfo struct {
-	DbId               int64  `json:"DbId" xml:"DbId"`
-	SchemaName         string `json:"SchemaName" xml:"SchemaName"`
-	CatalogName        string `json:"CatalogName" xml:"CatalogName"`
-	SearchName         string `json:"SearchName" xml:"SearchName"`
-	DbType             string `json:"DbType" xml:"DbType"`
-	EnvType            string `json:"EnvType" xml:"EnvType"`
-	InstanceId         int64  `json:"InstanceId" xml:"InstanceId"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	InstanceResourceId string `json:"InstanceResourceId" xml:"InstanceResourceId"`
 	InstanceSource     string `json:"InstanceSource" xml:"InstanceSource"`
+	InstanceResourceId string `json:"InstanceResourceId" xml:"InstanceResourceId"`
+	InstanceId         int64  `json:"InstanceId" xml:"InstanceId"`
+	SearchName         string `json:"SearchName" xml:"SearchName"`
+	DbId               int64  `json:"DbId" xml:"DbId"`
+	CatalogName        string `json:"CatalogName" xml:"CatalogName"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
+	EnvType            string `json:"EnvType" xml:"EnvType"`
+	DbType             string `json:"DbType" xml:"DbType"`
+	SchemaName         string `json:"SchemaName" xml:"SchemaName"`
 }

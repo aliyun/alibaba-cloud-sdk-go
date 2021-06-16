@@ -17,11 +17,11 @@ package dms_enterprise
 
 // DatabaseInfo is a nested struct in dms_enterprise response
 type DatabaseInfo struct {
+	SearchName     string   `json:"SearchName" xml:"SearchName"`
 	DbId           int64    `json:"DbId" xml:"DbId"`
 	Logic          bool     `json:"Logic" xml:"Logic"`
-	DbType         string   `json:"DbType" xml:"DbType"`
-	SearchName     string   `json:"SearchName" xml:"SearchName"`
 	EnvType        string   `json:"EnvType" xml:"EnvType"`
-	OwnerIds       []int64  `json:"OwnerIds" xml:"OwnerIds"`
+	DbType         string   `json:"DbType" xml:"DbType"`
 	OwnerNickNames []string `json:"OwnerNickNames" xml:"OwnerNickNames"`
+	OwnerIds       []int64  `json:"OwnerIds" xml:"OwnerIds"`
 }

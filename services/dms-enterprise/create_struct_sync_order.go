@@ -71,51 +71,20 @@ func (client *Client) CreateStructSyncOrderWithCallback(request *CreateStructSyn
 // CreateStructSyncOrderRequest is the request struct for api CreateStructSyncOrder
 type CreateStructSyncOrderRequest struct {
 	*requests.RpcRequest
-	Tid             requests.Integer           `position:"Query" name:"Tid"`
-	AttachmentKey   string                     `position:"Query" name:"AttachmentKey"`
-	Param           CreateStructSyncOrderParam `position:"Query" name:"Param"  type:"Repeated"`
-	Comment         string                     `position:"Query" name:"Comment"`
-	RelatedUserList *[]string                  `position:"Query" name:"RelatedUserList"  type:"Repeated"`
-}
-
-// CreateStructSyncOrderParam is a repeated param struct in CreateStructSyncOrderRequest
-type CreateStructSyncOrderParam struct {
-	SyncType      string                                         `name:"SyncType"`
-	TableInfoList *[]CreateStructSyncOrderParamTableInfoListItem `name:"TableInfoList" type:"Repeated"`
-	Source        CreateStructSyncOrderParamSource               `name:"Source" type:"Repeated"`
-	IgnoreError   string                                         `name:"IgnoreError"`
-	Target        CreateStructSyncOrderParamTarget               `name:"Target" type:"Repeated"`
-}
-
-// CreateStructSyncOrderParamTableInfoListItem is a repeated param struct in CreateStructSyncOrderRequest
-type CreateStructSyncOrderParamTableInfoListItem struct {
-	SourceTableName string `name:"SourceTableName"`
-	TargetTableName string `name:"TargetTableName"`
-}
-
-// CreateStructSyncOrderParamSource is a repeated param struct in CreateStructSyncOrderRequest
-type CreateStructSyncOrderParamSource struct {
-	DbSearchName string `name:"DbSearchName"`
-	VersionId    string `name:"VersionId"`
-	DbId         string `name:"DbId"`
-	Logic        string `name:"Logic"`
-}
-
-// CreateStructSyncOrderParamTarget is a repeated param struct in CreateStructSyncOrderRequest
-type CreateStructSyncOrderParamTarget struct {
-	DbSearchName string `name:"DbSearchName"`
-	VersionId    string `name:"VersionId"`
-	DbId         string `name:"DbId"`
-	Logic        string `name:"Logic"`
+	Tid             requests.Integer `position:"Query" name:"Tid"`
+	AttachmentKey   string           `position:"Query" name:"AttachmentKey"`
+	Param           string           `position:"Query" name:"Param"`
+	Comment         string           `position:"Query" name:"Comment"`
+	RelatedUserList string           `position:"Query" name:"RelatedUserList"`
 }
 
 // CreateStructSyncOrderResponse is the response struct for api CreateStructSyncOrder
 type CreateStructSyncOrderResponse struct {
 	*responses.BaseResponse
 	RequestId         string  `json:"RequestId" xml:"RequestId"`
-	Success           bool    `json:"Success" xml:"Success"`
-	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode         string  `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success           bool    `json:"Success" xml:"Success"`
 	CreateOrderResult []int64 `json:"CreateOrderResult" xml:"CreateOrderResult"`
 }
 

@@ -34,9 +34,9 @@ type Instance struct {
 	EnvType          string                     `json:"EnvType" xml:"EnvType"`
 	InstanceId       string                     `json:"InstanceId" xml:"InstanceId"`
 	UseDsql          int                        `json:"UseDsql" xml:"UseDsql"`
-	VpcId            string                     `json:"VpcId" xml:"VpcId"`
-	ExportTimeout    int                        `json:"ExportTimeout" xml:"ExportTimeout"`
 	InstanceAlias    string                     `json:"InstanceAlias" xml:"InstanceAlias"`
+	ExportTimeout    int                        `json:"ExportTimeout" xml:"ExportTimeout"`
+	VpcId            string                     `json:"VpcId" xml:"VpcId"`
 	DatabaseUser     string                     `json:"DatabaseUser" xml:"DatabaseUser"`
 	EcsRegion        string                     `json:"EcsRegion" xml:"EcsRegion"`
 	OwnerIdList      OwnerIdListInGetInstance   `json:"OwnerIdList" xml:"OwnerIdList"`

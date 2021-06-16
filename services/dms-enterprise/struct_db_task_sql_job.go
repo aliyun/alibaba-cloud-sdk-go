@@ -17,15 +17,15 @@ package dms_enterprise
 
 // DBTaskSQLJob is a nested struct in dms_enterprise response
 type DBTaskSQLJob struct {
-	JobId         int64  `json:"JobId" xml:"JobId"`
-	JobType       string `json:"JobType" xml:"JobType"`
+	Status        string `json:"Status" xml:"Status"`
 	Comment       string `json:"Comment" xml:"Comment"`
+	LastExecTime  string `json:"LastExecTime" xml:"LastExecTime"`
 	DbSearchName  string `json:"DbSearchName" xml:"DbSearchName"`
+	JobType       string `json:"JobType" xml:"JobType"`
+	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
+	DbTaskGroupId int64  `json:"DbTaskGroupId" xml:"DbTaskGroupId"`
 	DbId          int64  `json:"DbId" xml:"DbId"`
 	Logic         bool   `json:"Logic" xml:"Logic"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	LastExecTime  string `json:"LastExecTime" xml:"LastExecTime"`
-	DbTaskGroupId int64  `json:"DbTaskGroupId" xml:"DbTaskGroupId"`
-	Status        string `json:"Status" xml:"Status"`
+	JobId         int64  `json:"JobId" xml:"JobId"`
 	Transactional bool   `json:"Transactional" xml:"Transactional"`
 }

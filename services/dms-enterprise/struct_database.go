@@ -20,17 +20,17 @@ type Database struct {
 	Port          int                        `json:"Port" xml:"Port"`
 	DbaName       string                     `json:"DbaName" xml:"DbaName"`
 	Logic         bool                       `json:"Logic" xml:"Logic"`
-	SchemaName    string                     `json:"SchemaName" xml:"SchemaName"`
 	Sid           string                     `json:"Sid" xml:"Sid"`
-	DbaId         string                     `json:"DbaId" xml:"DbaId"`
+	SchemaName    string                     `json:"SchemaName" xml:"SchemaName"`
 	DbType        string                     `json:"DbType" xml:"DbType"`
-	DatabaseId    string                     `json:"DatabaseId" xml:"DatabaseId"`
+	DbaId         string                     `json:"DbaId" xml:"DbaId"`
 	Host          string                     `json:"Host" xml:"Host"`
+	DatabaseId    string                     `json:"DatabaseId" xml:"DatabaseId"`
 	State         string                     `json:"State" xml:"State"`
 	CatalogName   string                     `json:"CatalogName" xml:"CatalogName"`
-	EnvType       string                     `json:"EnvType" xml:"EnvType"`
-	Encoding      string                     `json:"Encoding" xml:"Encoding"`
 	SearchName    string                     `json:"SearchName" xml:"SearchName"`
+	Encoding      string                     `json:"Encoding" xml:"Encoding"`
+	EnvType       string                     `json:"EnvType" xml:"EnvType"`
 	InstanceId    string                     `json:"InstanceId" xml:"InstanceId"`
 	DbId          int                        `json:"DbId" xml:"DbId"`
 	OwnerNameList OwnerNameListInGetDatabase `json:"OwnerNameList" xml:"OwnerNameList"`

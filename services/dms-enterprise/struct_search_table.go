@@ -17,19 +17,19 @@ package dms_enterprise
 
 // SearchTable is a nested struct in dms_enterprise response
 type SearchTable struct {
-	DatabaseId      string                     `json:"DatabaseId" xml:"DatabaseId"`
-	TableName       string                     `json:"TableName" xml:"TableName"`
-	DBSearchName    string                     `json:"DBSearchName" xml:"DBSearchName"`
-	Logic           bool                       `json:"Logic" xml:"Logic"`
-	EnvType         string                     `json:"EnvType" xml:"EnvType"`
-	DbName          string                     `json:"DbName" xml:"DbName"`
-	Description     string                     `json:"Description" xml:"Description"`
-	Encoding        string                     `json:"Encoding" xml:"Encoding"`
-	DbType          string                     `json:"DbType" xml:"DbType"`
-	TableSchemaName string                     `json:"TableSchemaName" xml:"TableSchemaName"`
-	TableGuid       string                     `json:"TableGuid" xml:"TableGuid"`
-	Engine          string                     `json:"Engine" xml:"Engine"`
 	TableId         string                     `json:"TableId" xml:"TableId"`
-	OwnerIdList     OwnerIdListInSearchTable   `json:"OwnerIdList" xml:"OwnerIdList"`
+	TableName       string                     `json:"TableName" xml:"TableName"`
+	TableGuid       string                     `json:"TableGuid" xml:"TableGuid"`
+	Description     string                     `json:"Description" xml:"Description"`
+	TableSchemaName string                     `json:"TableSchemaName" xml:"TableSchemaName"`
+	Encoding        string                     `json:"Encoding" xml:"Encoding"`
+	DbName          string                     `json:"DbName" xml:"DbName"`
+	DatabaseId      string                     `json:"DatabaseId" xml:"DatabaseId"`
+	Logic           bool                       `json:"Logic" xml:"Logic"`
+	DBSearchName    string                     `json:"DBSearchName" xml:"DBSearchName"`
+	Engine          string                     `json:"Engine" xml:"Engine"`
+	DbType          string                     `json:"DbType" xml:"DbType"`
+	EnvType         string                     `json:"EnvType" xml:"EnvType"`
 	OwnerNameList   OwnerNameListInSearchTable `json:"OwnerNameList" xml:"OwnerNameList"`
+	OwnerIdList     OwnerIdListInSearchTable   `json:"OwnerIdList" xml:"OwnerIdList"`
 }

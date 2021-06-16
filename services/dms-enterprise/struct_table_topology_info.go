@@ -17,15 +17,15 @@ package dms_enterprise
 
 // TableTopologyInfo is a nested struct in dms_enterprise response
 type TableTopologyInfo struct {
-	TableNameList      string `json:"TableNameList" xml:"TableNameList"`
 	TableNameExpr      string `json:"TableNameExpr" xml:"TableNameExpr"`
+	DbSearchName       string `json:"DbSearchName" xml:"DbSearchName"`
+	InstanceSource     string `json:"InstanceSource" xml:"InstanceSource"`
+	InstanceResourceId string `json:"InstanceResourceId" xml:"InstanceResourceId"`
+	InstanceId         int64  `json:"InstanceId" xml:"InstanceId"`
+	TableNameList      string `json:"TableNameList" xml:"TableNameList"`
 	TableCount         int64  `json:"TableCount" xml:"TableCount"`
 	DbId               int64  `json:"DbId" xml:"DbId"`
-	DbSearchName       string `json:"DbSearchName" xml:"DbSearchName"`
-	InstanceId         int64  `json:"InstanceId" xml:"InstanceId"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	InstanceResourceId string `json:"InstanceResourceId" xml:"InstanceResourceId"`
-	InstanceSource     string `json:"InstanceSource" xml:"InstanceSource"`
 	DbName             string `json:"DbName" xml:"DbName"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
 	DbType             string `json:"DbType" xml:"DbType"`
 }

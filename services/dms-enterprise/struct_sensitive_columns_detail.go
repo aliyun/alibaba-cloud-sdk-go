@@ -17,14 +17,14 @@ package dms_enterprise
 
 // SensitiveColumnsDetail is a nested struct in dms_enterprise response
 type SensitiveColumnsDetail struct {
-	DbId              int64  `json:"DbId" xml:"DbId"`
-	ColumnName        string `json:"ColumnName" xml:"ColumnName"`
-	ColumnDescription string `json:"ColumnDescription" xml:"ColumnDescription"`
 	TableName         string `json:"TableName" xml:"TableName"`
-	DbType            string `json:"DbType" xml:"DbType"`
+	ColumnName        string `json:"ColumnName" xml:"ColumnName"`
 	ColumnType        string `json:"ColumnType" xml:"ColumnType"`
-	Logic             bool   `json:"Logic" xml:"Logic"`
-	SchemaName        string `json:"SchemaName" xml:"SchemaName"`
 	SearchName        string `json:"SearchName" xml:"SearchName"`
+	ColumnDescription string `json:"ColumnDescription" xml:"ColumnDescription"`
+	DbId              int64  `json:"DbId" xml:"DbId"`
+	Logic             bool   `json:"Logic" xml:"Logic"`
 	EnvType           string `json:"EnvType" xml:"EnvType"`
+	SchemaName        string `json:"SchemaName" xml:"SchemaName"`
+	DbType            string `json:"DbType" xml:"DbType"`
 }

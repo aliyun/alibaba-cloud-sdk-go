@@ -17,6 +17,6 @@ package dms_enterprise
 
 // KeyInfo is a nested struct in dms_enterprise response
 type KeyInfo struct {
-	PreCheckId int64  `json:"PreCheckId" xml:"PreCheckId"`
 	JobStatus  string `json:"JobStatus" xml:"JobStatus"`
+	PreCheckId int64  `json:"PreCheckId" xml:"PreCheckId"`
 }

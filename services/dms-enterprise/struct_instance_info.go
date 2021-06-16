@@ -17,14 +17,14 @@ package dms_enterprise
 
 // InstanceInfo is a nested struct in dms_enterprise response
 type InstanceInfo struct {
-	InstanceId    string   `json:"InstanceId" xml:"InstanceId"`
-	SearchName    string   `json:"SearchName" xml:"SearchName"`
-	DbType        string   `json:"DbType" xml:"DbType"`
-	EnvType       string   `json:"EnvType" xml:"EnvType"`
-	Host          string   `json:"Host" xml:"Host"`
-	Port          int64    `json:"Port" xml:"Port"`
 	DbaId         int64    `json:"DbaId" xml:"DbaId"`
+	SearchName    string   `json:"SearchName" xml:"SearchName"`
+	InstanceId    string   `json:"InstanceId" xml:"InstanceId"`
+	Port          int64    `json:"Port" xml:"Port"`
+	Host          string   `json:"Host" xml:"Host"`
 	DbaNickName   string   `json:"DbaNickName" xml:"DbaNickName"`
-	OwnerIds      []int64  `json:"OwnerIds" xml:"OwnerIds"`
+	EnvType       string   `json:"EnvType" xml:"EnvType"`
+	DbType        string   `json:"DbType" xml:"DbType"`
 	OwnerNickName []string `json:"OwnerNickName" xml:"OwnerNickName"`
+	OwnerIds      []int64  `json:"OwnerIds" xml:"OwnerIds"`
 }

@@ -17,11 +17,11 @@ package dms_enterprise
 
 // PublishTaskInfo is a nested struct in dms_enterprise response
 type PublishTaskInfo struct {
-	DbId            int64        `json:"DbId" xml:"DbId"`
-	Logic           bool         `json:"Logic" xml:"Logic"`
-	PlanTime        string       `json:"PlanTime" xml:"PlanTime"`
-	PublishStrategy string       `json:"PublishStrategy" xml:"PublishStrategy"`
 	StatusDesc      string       `json:"StatusDesc" xml:"StatusDesc"`
 	TaskJobStatus   string       `json:"TaskJobStatus" xml:"TaskJobStatus"`
+	PublishStrategy string       `json:"PublishStrategy" xml:"PublishStrategy"`
+	DbId            int64        `json:"DbId" xml:"DbId"`
+	PlanTime        string       `json:"PlanTime" xml:"PlanTime"`
+	Logic           bool         `json:"Logic" xml:"Logic"`
 	PublishJobList  []PublishJob `json:"PublishJobList" xml:"PublishJobList"`
 }

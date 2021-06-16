@@ -17,17 +17,17 @@ package dms_enterprise
 
 // TableInListTables is a nested struct in dms_enterprise response
 type TableInListTables struct {
-	DatabaseId      string                    `json:"DatabaseId" xml:"DatabaseId"`
-	TableName       string                    `json:"TableName" xml:"TableName"`
-	StoreCapacity   int64                     `json:"StoreCapacity" xml:"StoreCapacity"`
-	Description     string                    `json:"Description" xml:"Description"`
-	Encoding        string                    `json:"Encoding" xml:"Encoding"`
-	TableSchemaName string                    `json:"TableSchemaName" xml:"TableSchemaName"`
-	TableType       string                    `json:"TableType" xml:"TableType"`
-	TableGuid       string                    `json:"TableGuid" xml:"TableGuid"`
-	Engine          string                    `json:"Engine" xml:"Engine"`
-	NumRows         int64                     `json:"NumRows" xml:"NumRows"`
 	TableId         string                    `json:"TableId" xml:"TableId"`
-	OwnerIdList     OwnerIdListInListTables   `json:"OwnerIdList" xml:"OwnerIdList"`
+	TableName       string                    `json:"TableName" xml:"TableName"`
+	TableGuid       string                    `json:"TableGuid" xml:"TableGuid"`
+	TableType       string                    `json:"TableType" xml:"TableType"`
+	Description     string                    `json:"Description" xml:"Description"`
+	TableSchemaName string                    `json:"TableSchemaName" xml:"TableSchemaName"`
+	Encoding        string                    `json:"Encoding" xml:"Encoding"`
+	DatabaseId      string                    `json:"DatabaseId" xml:"DatabaseId"`
+	NumRows         int64                     `json:"NumRows" xml:"NumRows"`
+	StoreCapacity   int64                     `json:"StoreCapacity" xml:"StoreCapacity"`
+	Engine          string                    `json:"Engine" xml:"Engine"`
 	OwnerNameList   OwnerNameListInListTables `json:"OwnerNameList" xml:"OwnerNameList"`
+	OwnerIdList     OwnerIdListInListTables   `json:"OwnerIdList" xml:"OwnerIdList"`
 }

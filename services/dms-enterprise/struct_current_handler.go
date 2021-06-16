@@ -17,6 +17,6 @@ package dms_enterprise
 
 // CurrentHandler is a nested struct in dms_enterprise response
 type CurrentHandler struct {
-	NickName string `json:"NickName" xml:"NickName"`
 	Id       int64  `json:"Id" xml:"Id"`
+	NickName string `json:"NickName" xml:"NickName"`
 }

@@ -71,17 +71,10 @@ func (client *Client) CreateSQLReviewOrderWithCallback(request *CreateSQLReviewO
 // CreateSQLReviewOrderRequest is the request struct for api CreateSQLReviewOrder
 type CreateSQLReviewOrderRequest struct {
 	*requests.RpcRequest
-	Tid             requests.Integer          `position:"Query" name:"Tid"`
-	Param           CreateSQLReviewOrderParam `position:"Query" name:"Param"  type:"Repeated"`
-	Comment         string                    `position:"Query" name:"Comment"`
-	RelatedUserList *[]string                 `position:"Query" name:"RelatedUserList"  type:"Repeated"`
-}
-
-// CreateSQLReviewOrderParam is a repeated param struct in CreateSQLReviewOrderRequest
-type CreateSQLReviewOrderParam struct {
-	AttachmentKeyList *[]string `name:"AttachmentKeyList" type:"Repeated"`
-	ProjectName       string    `name:"ProjectName"`
-	DbId              string    `name:"DbId"`
+	Tid             requests.Integer `position:"Query" name:"Tid"`
+	Param           string           `position:"Query" name:"Param"`
+	Comment         string           `position:"Query" name:"Comment"`
+	RelatedUserList string           `position:"Query" name:"RelatedUserList"`
 }
 
 // CreateSQLReviewOrderResponse is the response struct for api CreateSQLReviewOrder

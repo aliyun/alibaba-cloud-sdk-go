@@ -17,8 +17,8 @@ package dms_enterprise
 
 // Column is a nested struct in dms_enterprise response
 type Column struct {
-	AutoIncrement bool   `json:"AutoIncrement" xml:"AutoIncrement"`
 	ColumnId      string `json:"ColumnId" xml:"ColumnId"`
+	AutoIncrement bool   `json:"AutoIncrement" xml:"AutoIncrement"`
 	PrimaryKey    string `json:"PrimaryKey" xml:"PrimaryKey"`
 	DefaultValue  string `json:"DefaultValue" xml:"DefaultValue"`
 	Sensitive     bool   `json:"Sensitive" xml:"Sensitive"`

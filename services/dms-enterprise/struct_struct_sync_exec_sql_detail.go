@@ -17,6 +17,6 @@ package dms_enterprise
 
 // StructSyncExecSqlDetail is a nested struct in dms_enterprise response
 type StructSyncExecSqlDetail struct {
-	TotalSqlCount int64  `json:"TotalSqlCount" xml:"TotalSqlCount"`
 	ExecSql       string `json:"ExecSql" xml:"ExecSql"`
+	TotalSqlCount int64  `json:"TotalSqlCount" xml:"TotalSqlCount"`
 }

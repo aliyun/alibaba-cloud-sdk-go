@@ -17,13 +17,13 @@ package dms_enterprise
 
 // DBTaskSQLJobDetail is a nested struct in dms_enterprise response
 type DBTaskSQLJobDetail struct {
-	JobDetailId  int64  `json:"JobDetailId" xml:"JobDetailId"`
-	CurrentSql   string `json:"CurrentSql" xml:"CurrentSql"`
-	ExecuteCount int64  `json:"ExecuteCount" xml:"ExecuteCount"`
-	JobId        int64  `json:"JobId" xml:"JobId"`
-	DbId         int64  `json:"DbId" xml:"DbId"`
-	Logic        bool   `json:"Logic" xml:"Logic"`
-	Skip         bool   `json:"Skip" xml:"Skip"`
-	SqlType      string `json:"SqlType" xml:"SqlType"`
 	Status       string `json:"Status" xml:"Status"`
+	Skip         bool   `json:"Skip" xml:"Skip"`
+	DbId         int64  `json:"DbId" xml:"DbId"`
+	SqlType      string `json:"SqlType" xml:"SqlType"`
+	ExecuteCount int64  `json:"ExecuteCount" xml:"ExecuteCount"`
+	Logic        bool   `json:"Logic" xml:"Logic"`
+	CurrentSql   string `json:"CurrentSql" xml:"CurrentSql"`
+	JobDetailId  int64  `json:"JobDetailId" xml:"JobDetailId"`
+	JobId        int64  `json:"JobId" xml:"JobId"`
 }

@@ -17,10 +17,10 @@ package dms_enterprise
 
 // PublishJob is a nested struct in dms_enterprise response
 type PublishJob struct {
-	ExecuteCount  int64  `json:"ExecuteCount" xml:"ExecuteCount"`
-	Scripts       string `json:"Scripts" xml:"Scripts"`
-	TableName     string `json:"TableName" xml:"TableName"`
 	StatusDesc    string `json:"StatusDesc" xml:"StatusDesc"`
+	TableName     string `json:"TableName" xml:"TableName"`
+	Scripts       string `json:"Scripts" xml:"Scripts"`
 	TaskJobStatus string `json:"TaskJobStatus" xml:"TaskJobStatus"`
+	ExecuteCount  int64  `json:"ExecuteCount" xml:"ExecuteCount"`
 	DBTaskGroupId int64  `json:"DBTaskGroupId" xml:"DBTaskGroupId"`
 }

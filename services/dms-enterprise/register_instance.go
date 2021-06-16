@@ -99,9 +99,9 @@ type RegisterInstanceRequest struct {
 type RegisterInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success      bool   `json:"Success" xml:"Success"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
 // CreateRegisterInstanceRequest creates a request to invoke RegisterInstance API

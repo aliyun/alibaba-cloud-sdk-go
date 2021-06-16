@@ -17,8 +17,8 @@ package dms_enterprise
 
 // DataCorrectTaskDetail is a nested struct in dms_enterprise response
 type DataCorrectTaskDetail struct {
-	DBTaskGroupId    int64  `json:"DBTaskGroupId" xml:"DBTaskGroupId"`
 	JobStatus        string `json:"jobStatus" xml:"jobStatus"`
-	ActualAffectRows int64  `json:"ActualAffectRows" xml:"ActualAffectRows"`
 	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
+	ActualAffectRows int64  `json:"ActualAffectRows" xml:"ActualAffectRows"`
+	DBTaskGroupId    int64  `json:"DBTaskGroupId" xml:"DBTaskGroupId"`
 }

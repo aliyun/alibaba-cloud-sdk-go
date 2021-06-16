@@ -19,8 +19,8 @@ package dms_enterprise
 type PermDetail struct {
 	CreateDate   string `json:"CreateDate" xml:"CreateDate"`
 	OriginFrom   string `json:"OriginFrom" xml:"OriginFrom"`
-	PermType     string `json:"PermType" xml:"PermType"`
 	ExpireDate   string `json:"ExpireDate" xml:"ExpireDate"`
+	PermType     string `json:"PermType" xml:"PermType"`
 	UserAccessId string `json:"UserAccessId" xml:"UserAccessId"`
 	ExtraData    string `json:"ExtraData" xml:"ExtraData"`
 }

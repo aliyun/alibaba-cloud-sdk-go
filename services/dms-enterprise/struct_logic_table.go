@@ -17,14 +17,14 @@ package dms_enterprise
 
 // LogicTable is a nested struct in dms_enterprise response
 type LogicTable struct {
-	DatabaseId    string                         `json:"DatabaseId" xml:"DatabaseId"`
-	TableName     string                         `json:"TableName" xml:"TableName"`
-	TableCount    string                         `json:"TableCount" xml:"TableCount"`
-	SchemaName    string                         `json:"SchemaName" xml:"SchemaName"`
-	Logic         bool                           `json:"Logic" xml:"Logic"`
-	TableExpr     string                         `json:"TableExpr" xml:"TableExpr"`
-	TableGuid     string                         `json:"TableGuid" xml:"TableGuid"`
 	TableId       string                         `json:"TableId" xml:"TableId"`
-	OwnerIdList   OwnerIdListInListLogicTables   `json:"OwnerIdList" xml:"OwnerIdList"`
+	TableName     string                         `json:"TableName" xml:"TableName"`
+	TableGuid     string                         `json:"TableGuid" xml:"TableGuid"`
+	TableExpr     string                         `json:"TableExpr" xml:"TableExpr"`
+	TableCount    string                         `json:"TableCount" xml:"TableCount"`
+	DatabaseId    string                         `json:"DatabaseId" xml:"DatabaseId"`
+	Logic         bool                           `json:"Logic" xml:"Logic"`
+	SchemaName    string                         `json:"SchemaName" xml:"SchemaName"`
 	OwnerNameList OwnerNameListInListLogicTables `json:"OwnerNameList" xml:"OwnerNameList"`
+	OwnerIdList   OwnerIdListInListLogicTables   `json:"OwnerIdList" xml:"OwnerIdList"`
 }

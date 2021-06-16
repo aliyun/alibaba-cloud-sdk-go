@@ -17,8 +17,8 @@ package dms_enterprise
 
 // TableTopology is a nested struct in dms_enterprise response
 type TableTopology struct {
-	TableGuid             string              `json:"TableGuid" xml:"TableGuid"`
 	TableName             string              `json:"TableName" xml:"TableName"`
+	TableGuid             string              `json:"TableGuid" xml:"TableGuid"`
 	Logic                 bool                `json:"Logic" xml:"Logic"`
 	TableTopologyInfoList []TableTopologyInfo `json:"TableTopologyInfoList" xml:"TableTopologyInfoList"`
 }

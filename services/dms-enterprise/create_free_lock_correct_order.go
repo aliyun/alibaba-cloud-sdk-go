@@ -71,38 +71,20 @@ func (client *Client) CreateFreeLockCorrectOrderWithCallback(request *CreateFree
 // CreateFreeLockCorrectOrderRequest is the request struct for api CreateFreeLockCorrectOrder
 type CreateFreeLockCorrectOrderRequest struct {
 	*requests.RpcRequest
-	Tid             requests.Integer                `position:"Query" name:"Tid"`
-	AttachmentKey   string                          `position:"Query" name:"AttachmentKey"`
-	Param           CreateFreeLockCorrectOrderParam `position:"Query" name:"Param"  type:"Repeated"`
-	Comment         string                          `position:"Query" name:"Comment"`
-	RelatedUserList *[]string                       `position:"Query" name:"RelatedUserList"  type:"Repeated"`
-}
-
-// CreateFreeLockCorrectOrderParam is a repeated param struct in CreateFreeLockCorrectOrderRequest
-type CreateFreeLockCorrectOrderParam struct {
-	SqlType                string                                           `name:"SqlType"`
-	Classify               string                                           `name:"Classify"`
-	RollbackSQL            string                                           `name:"RollbackSQL"`
-	RollbackSqlType        string                                           `name:"RollbackSqlType"`
-	DbItemList             *[]CreateFreeLockCorrectOrderParamDbItemListItem `name:"DbItemList" type:"Repeated"`
-	ExecSQL                string                                           `name:"ExecSQL"`
-	RollbackAttachmentName string                                           `name:"RollbackAttachmentName"`
-	AttachmentName         string                                           `name:"AttachmentName"`
-}
-
-// CreateFreeLockCorrectOrderParamDbItemListItem is a repeated param struct in CreateFreeLockCorrectOrderRequest
-type CreateFreeLockCorrectOrderParamDbItemListItem struct {
-	DbId  string `name:"DbId"`
-	Logic string `name:"Logic"`
+	Tid             requests.Integer `position:"Query" name:"Tid"`
+	AttachmentKey   string           `position:"Query" name:"AttachmentKey"`
+	Param           string           `position:"Query" name:"Param"`
+	Comment         string           `position:"Query" name:"Comment"`
+	RelatedUserList string           `position:"Query" name:"RelatedUserList"`
 }
 
 // CreateFreeLockCorrectOrderResponse is the response struct for api CreateFreeLockCorrectOrder
 type CreateFreeLockCorrectOrderResponse struct {
 	*responses.BaseResponse
 	RequestId         string  `json:"RequestId" xml:"RequestId"`
-	Success           bool    `json:"Success" xml:"Success"`
-	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode         string  `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success           bool    `json:"Success" xml:"Success"`
 	CreateOrderResult []int64 `json:"CreateOrderResult" xml:"CreateOrderResult"`
 }
 

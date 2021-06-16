@@ -17,9 +17,9 @@ package dms_enterprise
 
 // SourceDatabaseInfo is a nested struct in dms_enterprise response
 type SourceDatabaseInfo struct {
-	DbId       int64  `json:"DbId" xml:"DbId"`
 	SearchName string `json:"SearchName" xml:"SearchName"`
-	DbType     string `json:"DbType" xml:"DbType"`
-	EnvType    string `json:"EnvType" xml:"EnvType"`
+	DbId       int64  `json:"DbId" xml:"DbId"`
 	Logic      bool   `json:"Logic" xml:"Logic"`
+	EnvType    string `json:"EnvType" xml:"EnvType"`
+	DbType     string `json:"DbType" xml:"DbType"`
 }

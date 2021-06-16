@@ -17,10 +17,10 @@ package dms_enterprise
 
 // ResourceDetail is a nested struct in dms_enterprise response
 type ResourceDetail struct {
-	SearchName     string   `json:"SearchName" xml:"SearchName"`
-	DbType         string   `json:"DbType" xml:"DbType"`
-	EnvType        string   `json:"EnvType" xml:"EnvType"`
 	TableName      string   `json:"TableName" xml:"TableName"`
-	OwnerIds       []int64  `json:"OwnerIds" xml:"OwnerIds"`
+	SearchName     string   `json:"SearchName" xml:"SearchName"`
+	EnvType        string   `json:"EnvType" xml:"EnvType"`
+	DbType         string   `json:"DbType" xml:"DbType"`
 	OwnerNickNames []string `json:"OwnerNickNames" xml:"OwnerNickNames"`
+	OwnerIds       []int64  `json:"OwnerIds" xml:"OwnerIds"`
 }

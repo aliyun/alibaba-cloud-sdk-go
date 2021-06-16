@@ -17,15 +17,15 @@ package dms_enterprise
 
 // UploadFileJobDetail is a nested struct in dms_enterprise response
 type UploadFileJobDetail struct {
+	JobStatus      string         `json:"JobStatus" xml:"JobStatus"`
+	AttachmentKey  string         `json:"AttachmentKey" xml:"AttachmentKey"`
 	JobKey         string         `json:"JobKey" xml:"JobKey"`
-	FileName       string         `json:"FileName" xml:"FileName"`
-	FileSize       int64          `json:"FileSize" xml:"FileSize"`
-	FileSource     string         `json:"FileSource" xml:"FileSource"`
-	UploadType     string         `json:"UploadType" xml:"UploadType"`
 	UploadURL      string         `json:"UploadURL" xml:"UploadURL"`
 	UploadedSize   int64          `json:"UploadedSize" xml:"UploadedSize"`
-	JobStatus      string         `json:"JobStatus" xml:"JobStatus"`
 	JobStatusDesc  string         `json:"JobStatusDesc" xml:"JobStatusDesc"`
-	AttachmentKey  string         `json:"AttachmentKey" xml:"AttachmentKey"`
+	FileSource     string         `json:"FileSource" xml:"FileSource"`
+	FileName       string         `json:"FileName" xml:"FileName"`
+	UploadType     string         `json:"UploadType" xml:"UploadType"`
+	FileSize       int64          `json:"FileSize" xml:"FileSize"`
 	UploadOSSParam UploadOSSParam `json:"UploadOSSParam" xml:"UploadOSSParam"`
 }
