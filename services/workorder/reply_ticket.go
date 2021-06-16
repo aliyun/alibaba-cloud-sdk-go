@@ -71,9 +71,9 @@ func (client *Client) ReplyTicketWithCallback(request *ReplyTicketRequest, callb
 // ReplyTicketRequest is the request struct for api ReplyTicket
 type ReplyTicketRequest struct {
 	*requests.RpcRequest
-	SecContent string `position:"Body" name:"SecContent"`
-	Content    string `position:"Body" name:"Content"`
-	TicketId   string `position:"Body" name:"TicketId"`
+	Content  string           `position:"Body" name:"Content"`
+	Encrypt  requests.Boolean `position:"Body" name:"Encrypt"`
+	TicketId string           `position:"Body" name:"TicketId"`
 }
 
 // ReplyTicketResponse is the response struct for api ReplyTicket
