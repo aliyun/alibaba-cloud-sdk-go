@@ -87,7 +87,7 @@ func CreateDeleteIpSetRequest() (request *DeleteIpSetRequest) {
 	request = &DeleteIpSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteIpSet", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteIpSet", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

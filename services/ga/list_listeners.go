@@ -79,10 +79,10 @@ type ListListenersRequest struct {
 // ListListenersResponse is the response struct for api ListListeners
 type ListListenersResponse struct {
 	*responses.BaseResponse
-	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int             `json:"PageSize" xml:"PageSize"`
-	RequestId  string          `json:"RequestId" xml:"RequestId"`
 	TotalCount int             `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string          `json:"RequestId" xml:"RequestId"`
+	PageSize   int             `json:"PageSize" xml:"PageSize"`
+	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
 	Listeners  []ListenersItem `json:"Listeners" xml:"Listeners"`
 }
 
@@ -91,7 +91,7 @@ func CreateListListenersRequest() (request *ListListenersRequest) {
 	request = &ListListenersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListListeners", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListListeners", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -79,10 +79,10 @@ type ListIpSetsRequest struct {
 // ListIpSetsResponse is the response struct for api ListIpSets
 type ListIpSetsResponse struct {
 	*responses.BaseResponse
-	PageNumber int          `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int          `json:"PageSize" xml:"PageSize"`
-	RequestId  string       `json:"RequestId" xml:"RequestId"`
 	TotalCount int          `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string       `json:"RequestId" xml:"RequestId"`
+	PageSize   int          `json:"PageSize" xml:"PageSize"`
+	PageNumber int          `json:"PageNumber" xml:"PageNumber"`
 	IpSets     []IpSetsItem `json:"IpSets" xml:"IpSets"`
 }
 
@@ -91,7 +91,7 @@ func CreateListIpSetsRequest() (request *ListIpSetsRequest) {
 	request = &ListIpSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListIpSets", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListIpSets", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

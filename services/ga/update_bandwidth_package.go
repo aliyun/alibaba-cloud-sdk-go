@@ -84,10 +84,10 @@ type UpdateBandwidthPackageRequest struct {
 // UpdateBandwidthPackageResponse is the response struct for api UpdateBandwidthPackage
 type UpdateBandwidthPackageResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	BandwidthPackage string `json:"BandwidthPackage" xml:"BandwidthPackage"`
-	Name             string `json:"Name" xml:"Name"`
 	Description      string `json:"Description" xml:"Description"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	Name             string `json:"Name" xml:"Name"`
 }
 
 // CreateUpdateBandwidthPackageRequest creates a request to invoke UpdateBandwidthPackage API
@@ -95,7 +95,7 @@ func CreateUpdateBandwidthPackageRequest() (request *UpdateBandwidthPackageReque
 	request = &UpdateBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateBandwidthPackage", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateBandwidthPackage", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

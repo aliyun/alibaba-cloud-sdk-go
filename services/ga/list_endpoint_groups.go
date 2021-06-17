@@ -71,19 +71,22 @@ func (client *Client) ListEndpointGroupsWithCallback(request *ListEndpointGroups
 // ListEndpointGroupsRequest is the request struct for api ListEndpointGroups
 type ListEndpointGroupsRequest struct {
 	*requests.RpcRequest
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	ListenerId    string           `position:"Query" name:"ListenerId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	AcceleratorId string           `position:"Query" name:"AcceleratorId"`
+	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
+	ListenerId        string           `position:"Query" name:"ListenerId"`
+	EndpointGroupType string           `position:"Query" name:"EndpointGroupType"`
+	AccessLogSwitch   string           `position:"Query" name:"AccessLogSwitch"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	AcceleratorId     string           `position:"Query" name:"AcceleratorId"`
+	EndpointGroupId   string           `position:"Query" name:"EndpointGroupId"`
 }
 
 // ListEndpointGroupsResponse is the response struct for api ListEndpointGroups
 type ListEndpointGroupsResponse struct {
 	*responses.BaseResponse
-	PageNumber     int                  `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int                  `json:"PageSize" xml:"PageSize"`
-	RequestId      string               `json:"RequestId" xml:"RequestId"`
 	TotalCount     int                  `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string               `json:"RequestId" xml:"RequestId"`
+	PageSize       int                  `json:"PageSize" xml:"PageSize"`
+	PageNumber     int                  `json:"PageNumber" xml:"PageNumber"`
 	EndpointGroups []EndpointGroupsItem `json:"EndpointGroups" xml:"EndpointGroups"`
 }
 
@@ -92,7 +95,7 @@ func CreateListEndpointGroupsRequest() (request *ListEndpointGroupsRequest) {
 	request = &ListEndpointGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListEndpointGroups", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListEndpointGroups", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

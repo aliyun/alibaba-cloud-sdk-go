@@ -79,10 +79,10 @@ type ListAcceleratorsRequest struct {
 // ListAcceleratorsResponse is the response struct for api ListAccelerators
 type ListAcceleratorsResponse struct {
 	*responses.BaseResponse
-	RequestId    string             `json:"RequestId" xml:"RequestId"`
 	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
+	RequestId    string             `json:"RequestId" xml:"RequestId"`
 	PageSize     int                `json:"PageSize" xml:"PageSize"`
+	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
 	Accelerators []AcceleratorsItem `json:"Accelerators" xml:"Accelerators"`
 }
 
@@ -91,7 +91,7 @@ func CreateListAcceleratorsRequest() (request *ListAcceleratorsRequest) {
 	request = &ListAcceleratorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListAccelerators", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListAccelerators", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

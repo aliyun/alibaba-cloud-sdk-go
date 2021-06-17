@@ -77,20 +77,21 @@ type DescribeBandwidthPackageRequest struct {
 // DescribeBandwidthPackageResponse is the response struct for api DescribeBandwidthPackage
 type DescribeBandwidthPackageResponse struct {
 	*responses.BaseResponse
-	RequestId              string   `json:"RequestId" xml:"RequestId"`
-	BandwidthPackageId     string   `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-	Name                   string   `json:"Name" xml:"Name"`
-	Description            string   `json:"Description" xml:"Description"`
-	State                  string   `json:"State" xml:"State"`
-	Bandwidth              int      `json:"Bandwidth" xml:"Bandwidth"`
-	ChargeType             string   `json:"ChargeType" xml:"ChargeType"`
-	ExpiredTime            string   `json:"ExpiredTime" xml:"ExpiredTime"`
-	CreateTime             string   `json:"CreateTime" xml:"CreateTime"`
-	RegionId               string   `json:"RegionId" xml:"RegionId"`
-	Type                   string   `json:"Type" xml:"Type"`
-	BandwidthType          string   `json:"BandwidthType" xml:"BandwidthType"`
-	CbnGeographicRegionIdA string   `json:"CbnGeographicRegionIdA" xml:"CbnGeographicRegionIdA"`
 	CbnGeographicRegionIdB string   `json:"CbnGeographicRegionIdB" xml:"CbnGeographicRegionIdB"`
+	Description            string   `json:"Description" xml:"Description"`
+	CbnGeographicRegionIdA string   `json:"CbnGeographicRegionIdA" xml:"CbnGeographicRegionIdA"`
+	RequestId              string   `json:"RequestId" xml:"RequestId"`
+	CreateTime             string   `json:"CreateTime" xml:"CreateTime"`
+	Name                   string   `json:"Name" xml:"Name"`
+	BandwidthType          string   `json:"BandwidthType" xml:"BandwidthType"`
+	Type                   string   `json:"Type" xml:"Type"`
+	ChargeType             string   `json:"ChargeType" xml:"ChargeType"`
+	State                  string   `json:"State" xml:"State"`
+	ExpiredTime            string   `json:"ExpiredTime" xml:"ExpiredTime"`
+	Bandwidth              int      `json:"Bandwidth" xml:"Bandwidth"`
+	BandwidthPackageId     string   `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+	Ratio                  int      `json:"Ratio" xml:"Ratio"`
+	RegionId               string   `json:"RegionId" xml:"RegionId"`
 	BillingType            string   `json:"BillingType" xml:"BillingType"`
 	Accelerators           []string `json:"Accelerators" xml:"Accelerators"`
 }
@@ -100,7 +101,7 @@ func CreateDescribeBandwidthPackageRequest() (request *DescribeBandwidthPackageR
 	request = &DescribeBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeBandwidthPackage", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeBandwidthPackage", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

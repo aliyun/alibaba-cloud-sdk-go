@@ -86,7 +86,7 @@ func CreateListAvailableAccelerateAreasRequest() (request *ListAvailableAccelera
 	request = &ListAvailableAccelerateAreasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListAvailableAccelerateAreas", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListAvailableAccelerateAreas", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -77,20 +77,20 @@ type DescribeAcceleratorRequest struct {
 // DescribeAcceleratorResponse is the response struct for api DescribeAccelerator
 type DescribeAcceleratorResponse struct {
 	*responses.BaseResponse
-	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
-	AcceleratorId               string                      `json:"AcceleratorId" xml:"AcceleratorId"`
-	Name                        string                      `json:"Name" xml:"Name"`
+	DdosId                      string                      `json:"DdosId" xml:"DdosId"`
+	DnsName                     string                      `json:"DnsName" xml:"DnsName"`
 	Description                 string                      `json:"Description" xml:"Description"`
+	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
 	InstanceChargeType          string                      `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	CreateTime                  int64                       `json:"CreateTime" xml:"CreateTime"`
+	SecondDnsName               string                      `json:"SecondDnsName" xml:"SecondDnsName"`
+	Name                        string                      `json:"Name" xml:"Name"`
+	State                       string                      `json:"State" xml:"State"`
 	ExpiredTime                 int64                       `json:"ExpiredTime" xml:"ExpiredTime"`
 	CenId                       string                      `json:"CenId" xml:"CenId"`
-	State                       string                      `json:"State" xml:"State"`
-	DnsName                     string                      `json:"DnsName" xml:"DnsName"`
-	CreateTime                  int64                       `json:"CreateTime" xml:"CreateTime"`
-	Spec                        string                      `json:"Spec" xml:"Spec"`
 	RegionId                    string                      `json:"RegionId" xml:"RegionId"`
-	DdosId                      string                      `json:"DdosId" xml:"DdosId"`
-	SecondDnsName               string                      `json:"SecondDnsName" xml:"SecondDnsName"`
+	Spec                        string                      `json:"Spec" xml:"Spec"`
+	AcceleratorId               string                      `json:"AcceleratorId" xml:"AcceleratorId"`
 	BasicBandwidthPackage       BasicBandwidthPackage       `json:"BasicBandwidthPackage" xml:"BasicBandwidthPackage"`
 	CrossDomainBandwidthPackage CrossDomainBandwidthPackage `json:"CrossDomainBandwidthPackage" xml:"CrossDomainBandwidthPackage"`
 }
@@ -100,7 +100,7 @@ func CreateDescribeAcceleratorRequest() (request *DescribeAcceleratorRequest) {
 	request = &DescribeAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeAccelerator", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeAccelerator", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

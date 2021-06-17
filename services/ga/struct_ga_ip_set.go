@@ -17,8 +17,8 @@ package ga
 
 // GaIpSet is a nested struct in ga response
 type GaIpSet struct {
-	AccelerateRegionId string   `json:"AccelerateRegionId" xml:"AccelerateRegionId"`
-	Bandwidth          int      `json:"Bandwidth" xml:"Bandwidth"`
 	IpSetId            string   `json:"IpSetId" xml:"IpSetId"`
+	Bandwidth          int      `json:"Bandwidth" xml:"Bandwidth"`
+	AccelerateRegionId string   `json:"AccelerateRegionId" xml:"AccelerateRegionId"`
 	IpList             []string `json:"IpList" xml:"IpList"`
 }

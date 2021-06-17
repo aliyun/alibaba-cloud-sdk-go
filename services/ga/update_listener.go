@@ -76,9 +76,9 @@ type UpdateListenerRequest struct {
 	BackendPorts   *[]UpdateListenerBackendPorts `position:"Query" name:"BackendPorts"  type:"Repeated"`
 	ListenerId     string                        `position:"Query" name:"ListenerId"`
 	Protocol       string                        `position:"Query" name:"Protocol"`
-	PortRanges     *[]UpdateListenerPortRanges   `position:"Query" name:"PortRanges"  type:"Repeated"`
 	ProxyProtocol  string                        `position:"Query" name:"ProxyProtocol"`
-	Certificates   *[]UpdateListenerJson         `position:"Query" name:"Certificates"  type:"Repeated"`
+	PortRanges     *[]UpdateListenerPortRanges   `position:"Query" name:"PortRanges"  type:"Repeated"`
+	Certificates   *[]UpdateListenerCertificates `position:"Query" name:"Certificates"  type:"Repeated"`
 	Name           string                        `position:"Query" name:"Name"`
 	ClientAffinity string                        `position:"Query" name:"ClientAffinity"`
 }
@@ -95,8 +95,8 @@ type UpdateListenerPortRanges struct {
 	ToPort   string `name:"ToPort"`
 }
 
-// UpdateListenerJson is a repeated param struct in UpdateListenerRequest
-type UpdateListenerJson struct {
+// UpdateListenerCertificates is a repeated param struct in UpdateListenerRequest
+type UpdateListenerCertificates struct {
 	Id string `name:"Id"`
 }
 
@@ -111,7 +111,7 @@ func CreateUpdateListenerRequest() (request *UpdateListenerRequest) {
 	request = &UpdateListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateListener", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateListener", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

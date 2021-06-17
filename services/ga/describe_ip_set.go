@@ -77,12 +77,13 @@ type DescribeIpSetRequest struct {
 // DescribeIpSetResponse is the response struct for api DescribeIpSet
 type DescribeIpSetResponse struct {
 	*responses.BaseResponse
-	AccelerateRegionId string   `json:"AccelerateRegionId" xml:"AccelerateRegionId"`
-	Bandwidth          int      `json:"Bandwidth" xml:"Bandwidth"`
 	IpSetId            string   `json:"IpSetId" xml:"IpSetId"`
 	RequestId          string   `json:"RequestId" xml:"RequestId"`
-	State              string   `json:"State" xml:"State"`
 	IpVersion          string   `json:"IpVersion" xml:"IpVersion"`
+	State              string   `json:"State" xml:"State"`
+	Bandwidth          int      `json:"Bandwidth" xml:"Bandwidth"`
+	AccelerateRegionId string   `json:"AccelerateRegionId" xml:"AccelerateRegionId"`
+	AcceleratorId      string   `json:"AcceleratorId" xml:"AcceleratorId"`
 	IpAddressList      []string `json:"IpAddressList" xml:"IpAddressList"`
 }
 
@@ -91,7 +92,7 @@ func CreateDescribeIpSetRequest() (request *DescribeIpSetRequest) {
 	request = &DescribeIpSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeIpSet", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeIpSet", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

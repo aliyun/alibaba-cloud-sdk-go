@@ -77,17 +77,21 @@ type DescribeListenerRequest struct {
 // DescribeListenerResponse is the response struct for api DescribeListener
 type DescribeListenerResponse struct {
 	*responses.BaseResponse
-	ClientAffinity string           `json:"ClientAffinity" xml:"ClientAffinity"`
-	CreateTime     string           `json:"CreateTime" xml:"CreateTime"`
 	Description    string           `json:"Description" xml:"Description"`
-	ListenerId     string           `json:"ListenerId" xml:"ListenerId"`
-	Name           string           `json:"Name" xml:"Name"`
-	Protocol       string           `json:"Protocol" xml:"Protocol"`
 	RequestId      string           `json:"RequestId" xml:"RequestId"`
 	State          string           `json:"State" xml:"State"`
+	ProxyProtocol  bool             `json:"ProxyProtocol" xml:"ProxyProtocol"`
+	CreateTime     string           `json:"CreateTime" xml:"CreateTime"`
+	AclType        string           `json:"AclType" xml:"AclType"`
+	Protocol       string           `json:"Protocol" xml:"Protocol"`
+	AcceleratorId  string           `json:"AcceleratorId" xml:"AcceleratorId"`
+	Name           string           `json:"Name" xml:"Name"`
+	ClientAffinity string           `json:"ClientAffinity" xml:"ClientAffinity"`
+	ListenerId     string           `json:"ListenerId" xml:"ListenerId"`
+	BackendPorts   []BackendPort    `json:"BackendPorts" xml:"BackendPorts"`
 	PortRanges     []PortRangesItem `json:"PortRanges" xml:"PortRanges"`
 	Certificates   []Certificate    `json:"Certificates" xml:"Certificates"`
-	BackendPorts   []BackendPort    `json:"BackendPorts" xml:"BackendPorts"`
+	RelatedAcls    []RelatedAcls    `json:"RelatedAcls" xml:"RelatedAcls"`
 }
 
 // CreateDescribeListenerRequest creates a request to invoke DescribeListener API
@@ -95,7 +99,7 @@ func CreateDescribeListenerRequest() (request *DescribeListenerRequest) {
 	request = &DescribeListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeListener", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeListener", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

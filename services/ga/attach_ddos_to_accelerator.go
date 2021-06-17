@@ -79,8 +79,8 @@ type AttachDdosToAcceleratorRequest struct {
 // AttachDdosToAcceleratorResponse is the response struct for api AttachDdosToAccelerator
 type AttachDdosToAcceleratorResponse struct {
 	*responses.BaseResponse
-	GaId      string `json:"GaId" xml:"GaId"`
 	DdosId    string `json:"DdosId" xml:"DdosId"`
+	GaId      string `json:"GaId" xml:"GaId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -89,7 +89,7 @@ func CreateAttachDdosToAcceleratorRequest() (request *AttachDdosToAcceleratorReq
 	request = &AttachDdosToAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "AttachDdosToAccelerator", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "AttachDdosToAccelerator", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

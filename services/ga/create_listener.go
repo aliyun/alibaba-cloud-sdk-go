@@ -73,18 +73,18 @@ type CreateListenerRequest struct {
 	*requests.RpcRequest
 	ClientToken    string                        `position:"Query" name:"ClientToken"`
 	Description    string                        `position:"Query" name:"Description"`
-	BackendPorts   *[]CreateListenerString       `position:"Query" name:"BackendPorts"  type:"Repeated"`
+	BackendPorts   *[]CreateListenerBackendPorts `position:"Query" name:"BackendPorts"  type:"Repeated"`
 	Protocol       string                        `position:"Query" name:"Protocol"`
 	AcceleratorId  string                        `position:"Query" name:"AcceleratorId"`
-	PortRanges     *[]CreateListenerPortRanges   `position:"Query" name:"PortRanges"  type:"Repeated"`
 	ProxyProtocol  requests.Boolean              `position:"Query" name:"ProxyProtocol"`
+	PortRanges     *[]CreateListenerPortRanges   `position:"Query" name:"PortRanges"  type:"Repeated"`
 	Certificates   *[]CreateListenerCertificates `position:"Query" name:"Certificates"  type:"Repeated"`
 	Name           string                        `position:"Query" name:"Name"`
 	ClientAffinity string                        `position:"Query" name:"ClientAffinity"`
 }
 
-// CreateListenerString is a repeated param struct in CreateListenerRequest
-type CreateListenerString struct {
+// CreateListenerBackendPorts is a repeated param struct in CreateListenerRequest
+type CreateListenerBackendPorts struct {
 	FromPort string `name:"FromPort"`
 	ToPort   string `name:"ToPort"`
 }
@@ -103,8 +103,8 @@ type CreateListenerCertificates struct {
 // CreateListenerResponse is the response struct for api CreateListener
 type CreateListenerResponse struct {
 	*responses.BaseResponse
-	ListenerId string `json:"ListenerId" xml:"ListenerId"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ListenerId string `json:"ListenerId" xml:"ListenerId"`
 }
 
 // CreateCreateListenerRequest creates a request to invoke CreateListener API
@@ -112,7 +112,7 @@ func CreateCreateListenerRequest() (request *CreateListenerRequest) {
 	request = &CreateListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "CreateListener", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "CreateListener", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

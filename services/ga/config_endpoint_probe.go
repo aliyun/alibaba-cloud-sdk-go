@@ -91,7 +91,7 @@ func CreateConfigEndpointProbeRequest() (request *ConfigEndpointProbeRequest) {
 	request = &ConfigEndpointProbeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ConfigEndpointProbe", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ConfigEndpointProbe", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,13 +71,16 @@ func (client *Client) CreateEndpointGroupWithCallback(request *CreateEndpointGro
 // CreateEndpointGroupRequest is the request struct for api CreateEndpointGroup
 type CreateEndpointGroupRequest struct {
 	*requests.RpcRequest
+	PortOverrides              *[]CreateEndpointGroupPortOverrides          `position:"Query" name:"PortOverrides"  type:"Repeated"`
 	ClientToken                string                                       `position:"Query" name:"ClientToken"`
 	HealthCheckIntervalSeconds requests.Integer                             `position:"Query" name:"HealthCheckIntervalSeconds"`
 	Description                string                                       `position:"Query" name:"Description"`
 	HealthCheckProtocol        string                                       `position:"Query" name:"HealthCheckProtocol"`
+	EndpointRequestProtocol    string                                       `position:"Query" name:"EndpointRequestProtocol"`
 	ListenerId                 string                                       `position:"Query" name:"ListenerId"`
 	HealthCheckPath            string                                       `position:"Query" name:"HealthCheckPath"`
 	EndpointConfigurations     *[]CreateEndpointGroupEndpointConfigurations `position:"Query" name:"EndpointConfigurations"  type:"Repeated"`
+	EndpointGroupType          string                                       `position:"Query" name:"EndpointGroupType"`
 	AcceleratorId              string                                       `position:"Query" name:"AcceleratorId"`
 	TrafficPercentage          requests.Integer                             `position:"Query" name:"TrafficPercentage"`
 	HealthCheckPort            requests.Integer                             `position:"Query" name:"HealthCheckPort"`
@@ -86,13 +89,19 @@ type CreateEndpointGroupRequest struct {
 	Name                       string                                       `position:"Query" name:"Name"`
 }
 
+// CreateEndpointGroupPortOverrides is a repeated param struct in CreateEndpointGroupRequest
+type CreateEndpointGroupPortOverrides struct {
+	ListenerPort string `name:"ListenerPort"`
+	EndpointPort string `name:"EndpointPort"`
+}
+
 // CreateEndpointGroupEndpointConfigurations is a repeated param struct in CreateEndpointGroupRequest
 type CreateEndpointGroupEndpointConfigurations struct {
-	Endpoint                   string `name:"Endpoint"`
 	Type                       string `name:"Type"`
-	Weight                     string `name:"Weight"`
 	EnableClientIPPreservation string `name:"EnableClientIPPreservation"`
+	Weight                     string `name:"Weight"`
 	EnableProxyProtocol        string `name:"EnableProxyProtocol"`
+	Endpoint                   string `name:"Endpoint"`
 }
 
 // CreateEndpointGroupResponse is the response struct for api CreateEndpointGroup
@@ -107,7 +116,7 @@ func CreateCreateEndpointGroupRequest() (request *CreateEndpointGroupRequest) {
 	request = &CreateEndpointGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "CreateEndpointGroup", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "CreateEndpointGroup", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

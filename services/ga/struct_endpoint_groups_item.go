@@ -17,18 +17,23 @@ package ga
 
 // EndpointGroupsItem is a nested struct in ga response
 type EndpointGroupsItem struct {
+	HealthCheckIntervalSeconds int                          `json:"HealthCheckIntervalSeconds" xml:"HealthCheckIntervalSeconds"`
+	TrafficPercentage          int                          `json:"TrafficPercentage" xml:"TrafficPercentage"`
 	Description                string                       `json:"Description" xml:"Description"`
 	EndpointGroupId            string                       `json:"EndpointGroupId" xml:"EndpointGroupId"`
-	EndpointGroupRegion        string                       `json:"EndpointGroupRegion" xml:"EndpointGroupRegion"`
-	HealthCheckIntervalSeconds int                          `json:"HealthCheckIntervalSeconds" xml:"HealthCheckIntervalSeconds"`
 	HealthCheckPath            string                       `json:"HealthCheckPath" xml:"HealthCheckPath"`
-	HealthCheckPort            int                          `json:"HealthCheckPort" xml:"HealthCheckPort"`
-	HealthCheckProtocol        string                       `json:"HealthCheckProtocol" xml:"HealthCheckProtocol"`
-	ListenerId                 string                       `json:"ListenerId" xml:"ListenerId"`
-	Name                       string                       `json:"Name" xml:"Name"`
-	State                      string                       `json:"State" xml:"State"`
 	ThresholdCount             int                          `json:"ThresholdCount" xml:"ThresholdCount"`
-	TrafficPercentage          int                          `json:"TrafficPercentage" xml:"TrafficPercentage"`
+	EndpointRequestProtocol    string                       `json:"EndpointRequestProtocol" xml:"EndpointRequestProtocol"`
+	Name                       string                       `json:"Name" xml:"Name"`
+	EndpointGroupRegion        string                       `json:"EndpointGroupRegion" xml:"EndpointGroupRegion"`
+	State                      string                       `json:"State" xml:"State"`
+	HealthCheckProtocol        string                       `json:"HealthCheckProtocol" xml:"HealthCheckProtocol"`
+	HealthCheckPort            int                          `json:"HealthCheckPort" xml:"HealthCheckPort"`
+	AcceleratorId              string                       `json:"AcceleratorId" xml:"AcceleratorId"`
+	EndpointGroupType          string                       `json:"EndpointGroupType" xml:"EndpointGroupType"`
+	ListenerId                 string                       `json:"ListenerId" xml:"ListenerId"`
 	EndpointGroupIpList        []string                     `json:"EndpointGroupIpList" xml:"EndpointGroupIpList"`
+	ForwardingRuleIds          []string                     `json:"ForwardingRuleIds" xml:"ForwardingRuleIds"`
+	PortOverrides              []PortOverridesItem          `json:"PortOverrides" xml:"PortOverrides"`
 	EndpointConfigurations     []EndpointConfigurationsItem `json:"EndpointConfigurations" xml:"EndpointConfigurations"`
 }

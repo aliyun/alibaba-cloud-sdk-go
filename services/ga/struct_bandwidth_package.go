@@ -21,6 +21,7 @@ type BandwidthPackage struct {
 	ExpiredTime            string   `json:"ExpiredTime" xml:"ExpiredTime"`
 	ChargeType             string   `json:"ChargeType" xml:"ChargeType"`
 	CreateTime             string   `json:"CreateTime" xml:"CreateTime"`
+	Ratio                  int      `json:"Ratio" xml:"Ratio"`
 	Bandwidth              int      `json:"Bandwidth" xml:"Bandwidth"`
 	State                  string   `json:"State" xml:"State"`
 	RegionId               string   `json:"RegionId" xml:"RegionId"`

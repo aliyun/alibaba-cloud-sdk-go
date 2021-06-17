@@ -81,10 +81,10 @@ type ListBandwidthPackagesRequest struct {
 // ListBandwidthPackagesResponse is the response struct for api ListBandwidthPackages
 type ListBandwidthPackagesResponse struct {
 	*responses.BaseResponse
-	RequestId         string             `json:"RequestId" xml:"RequestId"`
 	TotalCount        int                `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int                `json:"PageNumber" xml:"PageNumber"`
+	RequestId         string             `json:"RequestId" xml:"RequestId"`
 	PageSize          int                `json:"PageSize" xml:"PageSize"`
+	PageNumber        int                `json:"PageNumber" xml:"PageNumber"`
 	BandwidthPackages []BandwidthPackage `json:"BandwidthPackages" xml:"BandwidthPackages"`
 }
 
@@ -93,7 +93,7 @@ func CreateListBandwidthPackagesRequest() (request *ListBandwidthPackagesRequest
 	request = &ListBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListBandwidthPackages", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListBandwidthPackages", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

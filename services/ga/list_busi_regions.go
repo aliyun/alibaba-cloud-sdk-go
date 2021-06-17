@@ -85,7 +85,7 @@ func CreateListBusiRegionsRequest() (request *ListBusiRegionsRequest) {
 	request = &ListBusiRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListBusiRegions", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListBusiRegions", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

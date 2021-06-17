@@ -17,10 +17,10 @@ package ga
 
 // IpSetsItem is a nested struct in ga response
 type IpSetsItem struct {
-	AccelerateRegionId string   `json:"AccelerateRegionId" xml:"AccelerateRegionId"`
-	Bandwidth          int      `json:"Bandwidth" xml:"Bandwidth"`
 	IpSetId            string   `json:"IpSetId" xml:"IpSetId"`
-	State              string   `json:"State" xml:"State"`
 	IpVersion          string   `json:"IpVersion" xml:"IpVersion"`
+	State              string   `json:"State" xml:"State"`
+	Bandwidth          int      `json:"Bandwidth" xml:"Bandwidth"`
+	AccelerateRegionId string   `json:"AccelerateRegionId" xml:"AccelerateRegionId"`
 	IpAddressList      []string `json:"IpAddressList" xml:"IpAddressList"`
 }

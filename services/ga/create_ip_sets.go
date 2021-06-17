@@ -79,15 +79,15 @@ type CreateIpSetsRequest struct {
 // CreateIpSetsAccelerateRegion is a repeated param struct in CreateIpSetsRequest
 type CreateIpSetsAccelerateRegion struct {
 	AccelerateRegionId string `name:"AccelerateRegionId"`
-	Bandwidth          string `name:"Bandwidth"`
 	IpVersion          string `name:"IpVersion"`
+	Bandwidth          string `name:"Bandwidth"`
 }
 
 // CreateIpSetsResponse is the response struct for api CreateIpSets
 type CreateIpSetsResponse struct {
 	*responses.BaseResponse
-	AcceleratorId string    `json:"AcceleratorId" xml:"AcceleratorId"`
 	RequestId     string    `json:"RequestId" xml:"RequestId"`
+	AcceleratorId string    `json:"AcceleratorId" xml:"AcceleratorId"`
 	IpSets        []GaIpSet `json:"IpSets" xml:"IpSets"`
 }
 
@@ -96,7 +96,7 @@ func CreateCreateIpSetsRequest() (request *CreateIpSetsRequest) {
 	request = &CreateIpSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "CreateIpSets", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "CreateIpSets", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

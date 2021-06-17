@@ -78,8 +78,8 @@ type BandwidthPackageAddAcceleratorRequest struct {
 // BandwidthPackageAddAcceleratorResponse is the response struct for api BandwidthPackageAddAccelerator
 type BandwidthPackageAddAcceleratorResponse struct {
 	*responses.BaseResponse
-	BandwidthPackageId string   `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 	RequestId          string   `json:"RequestId" xml:"RequestId"`
+	BandwidthPackageId string   `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 	Accelerators       []string `json:"Accelerators" xml:"Accelerators"`
 }
 
@@ -88,7 +88,7 @@ func CreateBandwidthPackageAddAcceleratorRequest() (request *BandwidthPackageAdd
 	request = &BandwidthPackageAddAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "BandwidthPackageAddAccelerator", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "BandwidthPackageAddAccelerator", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

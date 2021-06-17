@@ -85,7 +85,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeRegions", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeRegions", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

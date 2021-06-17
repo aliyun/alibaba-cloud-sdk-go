@@ -17,21 +17,21 @@ package ga
 
 // AcceleratorsItem is a nested struct in ga response
 type AcceleratorsItem struct {
-	AcceleratorId               string                      `json:"AcceleratorId" xml:"AcceleratorId"`
-	Name                        string                      `json:"Name" xml:"Name"`
-	Description                 string                      `json:"Description" xml:"Description"`
-	Bandwidth                   int                         `json:"Bandwidth" xml:"Bandwidth"`
-	Type                        string                      `json:"Type" xml:"Type"`
-	InstanceChargeType          string                      `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	ExpiredTime                 int64                       `json:"ExpiredTime" xml:"ExpiredTime"`
-	CenId                       string                      `json:"CenId" xml:"CenId"`
-	State                       string                      `json:"State" xml:"State"`
+	DdosId                      string                      `json:"DdosId" xml:"DdosId"`
 	DnsName                     string                      `json:"DnsName" xml:"DnsName"`
+	Description                 string                      `json:"Description" xml:"Description"`
+	InstanceChargeType          string                      `json:"InstanceChargeType" xml:"InstanceChargeType"`
 	CreateTime                  int64                       `json:"CreateTime" xml:"CreateTime"`
+	SecondDnsName               string                      `json:"SecondDnsName" xml:"SecondDnsName"`
+	Name                        string                      `json:"Name" xml:"Name"`
+	Type                        string                      `json:"Type" xml:"Type"`
+	State                       string                      `json:"State" xml:"State"`
+	ExpiredTime                 int64                       `json:"ExpiredTime" xml:"ExpiredTime"`
+	Bandwidth                   int                         `json:"Bandwidth" xml:"Bandwidth"`
+	CenId                       string                      `json:"CenId" xml:"CenId"`
 	RegionId                    string                      `json:"RegionId" xml:"RegionId"`
 	Spec                        string                      `json:"Spec" xml:"Spec"`
-	DdosId                      string                      `json:"DdosId" xml:"DdosId"`
-	SecondDnsName               string                      `json:"SecondDnsName" xml:"SecondDnsName"`
+	AcceleratorId               string                      `json:"AcceleratorId" xml:"AcceleratorId"`
 	BasicBandwidthPackage       BasicBandwidthPackage       `json:"BasicBandwidthPackage" xml:"BasicBandwidthPackage"`
 	CrossDomainBandwidthPackage CrossDomainBandwidthPackage `json:"CrossDomainBandwidthPackage" xml:"CrossDomainBandwidthPackage"`
 }

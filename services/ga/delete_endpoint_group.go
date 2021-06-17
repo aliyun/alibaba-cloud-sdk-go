@@ -87,7 +87,7 @@ func CreateDeleteEndpointGroupRequest() (request *DeleteEndpointGroupRequest) {
 	request = &DeleteEndpointGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteEndpointGroup", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteEndpointGroup", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

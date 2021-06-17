@@ -77,8 +77,8 @@ type DetachDdosFromAcceleratorRequest struct {
 // DetachDdosFromAcceleratorResponse is the response struct for api DetachDdosFromAccelerator
 type DetachDdosFromAcceleratorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	DdosId    string `json:"DdosId" xml:"DdosId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDetachDdosFromAcceleratorRequest creates a request to invoke DetachDdosFromAccelerator API
@@ -86,7 +86,7 @@ func CreateDetachDdosFromAcceleratorRequest() (request *DetachDdosFromAccelerato
 	request = &DetachDdosFromAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DetachDdosFromAccelerator", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DetachDdosFromAccelerator", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

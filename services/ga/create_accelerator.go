@@ -84,9 +84,9 @@ type CreateAcceleratorRequest struct {
 // CreateAcceleratorResponse is the response struct for api CreateAccelerator
 type CreateAcceleratorResponse struct {
 	*responses.BaseResponse
-	AcceleratorId string `json:"AcceleratorId" xml:"AcceleratorId"`
-	OrderId       string `json:"OrderId" xml:"OrderId"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
+	OrderId       string `json:"OrderId" xml:"OrderId"`
+	AcceleratorId string `json:"AcceleratorId" xml:"AcceleratorId"`
 }
 
 // CreateCreateAcceleratorRequest creates a request to invoke CreateAccelerator API
@@ -94,7 +94,7 @@ func CreateCreateAcceleratorRequest() (request *CreateAcceleratorRequest) {
 	request = &CreateAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "CreateAccelerator", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "CreateAccelerator", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

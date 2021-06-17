@@ -17,15 +17,16 @@ package ga
 
 // ListenersItem is a nested struct in ga response
 type ListenersItem struct {
-	ClientAffinity string           `json:"ClientAffinity" xml:"ClientAffinity"`
-	CreateTime     int64            `json:"CreateTime" xml:"CreateTime"`
 	Description    string           `json:"Description" xml:"Description"`
-	ListenerId     string           `json:"ListenerId" xml:"ListenerId"`
-	Name           string           `json:"Name" xml:"Name"`
-	Protocol       string           `json:"Protocol" xml:"Protocol"`
 	State          string           `json:"State" xml:"State"`
 	ProxyProtocol  bool             `json:"ProxyProtocol" xml:"ProxyProtocol"`
+	CreateTime     int64            `json:"CreateTime" xml:"CreateTime"`
+	Protocol       string           `json:"Protocol" xml:"Protocol"`
+	AcceleratorId  string           `json:"AcceleratorId" xml:"AcceleratorId"`
+	Name           string           `json:"Name" xml:"Name"`
+	ClientAffinity string           `json:"ClientAffinity" xml:"ClientAffinity"`
+	ListenerId     string           `json:"ListenerId" xml:"ListenerId"`
 	PortRanges     []PortRangesItem `json:"PortRanges" xml:"PortRanges"`
-	Certificates   []Certificate    `json:"Certificates" xml:"Certificates"`
 	BackendPorts   []BackendPort    `json:"BackendPorts" xml:"BackendPorts"`
+	Certificates   []Certificate    `json:"Certificates" xml:"Certificates"`
 }

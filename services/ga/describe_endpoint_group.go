@@ -77,20 +77,30 @@ type DescribeEndpointGroupRequest struct {
 // DescribeEndpointGroupResponse is the response struct for api DescribeEndpointGroup
 type DescribeEndpointGroupResponse struct {
 	*responses.BaseResponse
+	HealthCheckIntervalSeconds int                          `json:"HealthCheckIntervalSeconds" xml:"HealthCheckIntervalSeconds"`
+	TrafficPercentage          int                          `json:"TrafficPercentage" xml:"TrafficPercentage"`
 	Description                string                       `json:"Description" xml:"Description"`
 	EndpointGroupId            string                       `json:"EndpointGroupId" xml:"EndpointGroupId"`
-	EndpointGroupRegion        string                       `json:"EndpointGroupRegion" xml:"EndpointGroupRegion"`
-	HealthCheckIntervalSeconds int                          `json:"HealthCheckIntervalSeconds" xml:"HealthCheckIntervalSeconds"`
-	HealthCheckPath            string                       `json:"HealthCheckPath" xml:"HealthCheckPath"`
-	HealthCheckPort            int                          `json:"HealthCheckPort" xml:"HealthCheckPort"`
-	HealthCheckProtocol        string                       `json:"HealthCheckProtocol" xml:"HealthCheckProtocol"`
-	ListenerId                 string                       `json:"ListenerId" xml:"ListenerId"`
-	Name                       string                       `json:"Name" xml:"Name"`
 	RequestId                  string                       `json:"RequestId" xml:"RequestId"`
-	State                      string                       `json:"State" xml:"State"`
+	SlsRegion                  string                       `json:"SlsRegion" xml:"SlsRegion"`
+	HealthCheckPath            string                       `json:"HealthCheckPath" xml:"HealthCheckPath"`
 	ThresholdCount             int                          `json:"ThresholdCount" xml:"ThresholdCount"`
+	SlsLogStoreName            string                       `json:"SlsLogStoreName" xml:"SlsLogStoreName"`
+	EndpointRequestProtocol    string                       `json:"EndpointRequestProtocol" xml:"EndpointRequestProtocol"`
+	Name                       string                       `json:"Name" xml:"Name"`
+	EnableAccessLog            bool                         `json:"EnableAccessLog" xml:"EnableAccessLog"`
 	TotalCount                 int                          `json:"TotalCount" xml:"TotalCount"`
-	TrafficPercentage          int                          `json:"TrafficPercentage" xml:"TrafficPercentage"`
+	EndpointGroupRegion        string                       `json:"EndpointGroupRegion" xml:"EndpointGroupRegion"`
+	SlsProjectName             string                       `json:"SlsProjectName" xml:"SlsProjectName"`
+	State                      string                       `json:"State" xml:"State"`
+	AccessLogSwitch            string                       `json:"AccessLogSwitch" xml:"AccessLogSwitch"`
+	HealthCheckProtocol        string                       `json:"HealthCheckProtocol" xml:"HealthCheckProtocol"`
+	HealthCheckPort            int                          `json:"HealthCheckPort" xml:"HealthCheckPort"`
+	AcceleratorId              string                       `json:"AcceleratorId" xml:"AcceleratorId"`
+	EndpointGroupType          string                       `json:"EndpointGroupType" xml:"EndpointGroupType"`
+	ListenerId                 string                       `json:"ListenerId" xml:"ListenerId"`
+	ForwardingRuleIds          []string                     `json:"ForwardingRuleIds" xml:"ForwardingRuleIds"`
+	PortOverrides              []PortOverridesItem          `json:"PortOverrides" xml:"PortOverrides"`
 	EndpointConfigurations     []EndpointConfigurationsItem `json:"EndpointConfigurations" xml:"EndpointConfigurations"`
 }
 
@@ -99,7 +109,7 @@ func CreateDescribeEndpointGroupRequest() (request *DescribeEndpointGroupRequest
 	request = &DescribeEndpointGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeEndpointGroup", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeEndpointGroup", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,10 +71,12 @@ func (client *Client) UpdateEndpointGroupWithCallback(request *UpdateEndpointGro
 // UpdateEndpointGroupRequest is the request struct for api UpdateEndpointGroup
 type UpdateEndpointGroupRequest struct {
 	*requests.RpcRequest
+	PortOverrides              *[]UpdateEndpointGroupPortOverrides          `position:"Query" name:"PortOverrides"  type:"Repeated"`
 	ClientToken                string                                       `position:"Query" name:"ClientToken"`
 	HealthCheckIntervalSeconds requests.Integer                             `position:"Query" name:"HealthCheckIntervalSeconds"`
 	Description                string                                       `position:"Query" name:"Description"`
 	HealthCheckProtocol        string                                       `position:"Query" name:"HealthCheckProtocol"`
+	EndpointRequestProtocol    string                                       `position:"Query" name:"EndpointRequestProtocol"`
 	HealthCheckPath            string                                       `position:"Query" name:"HealthCheckPath"`
 	EndpointConfigurations     *[]UpdateEndpointGroupEndpointConfigurations `position:"Query" name:"EndpointConfigurations"  type:"Repeated"`
 	EndpointGroupId            string                                       `position:"Query" name:"EndpointGroupId"`
@@ -85,13 +87,19 @@ type UpdateEndpointGroupRequest struct {
 	Name                       string                                       `position:"Query" name:"Name"`
 }
 
+// UpdateEndpointGroupPortOverrides is a repeated param struct in UpdateEndpointGroupRequest
+type UpdateEndpointGroupPortOverrides struct {
+	ListenerPort string `name:"ListenerPort"`
+	EndpointPort string `name:"EndpointPort"`
+}
+
 // UpdateEndpointGroupEndpointConfigurations is a repeated param struct in UpdateEndpointGroupRequest
 type UpdateEndpointGroupEndpointConfigurations struct {
-	Endpoint                   string `name:"Endpoint"`
 	Type                       string `name:"Type"`
-	Weight                     string `name:"Weight"`
 	EnableClientIPPreservation string `name:"EnableClientIPPreservation"`
+	Weight                     string `name:"Weight"`
 	EnableProxyProtocol        string `name:"EnableProxyProtocol"`
+	Endpoint                   string `name:"Endpoint"`
 }
 
 // UpdateEndpointGroupResponse is the response struct for api UpdateEndpointGroup
@@ -105,7 +113,7 @@ func CreateUpdateEndpointGroupRequest() (request *UpdateEndpointGroupRequest) {
 	request = &UpdateEndpointGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateEndpointGroup", "gaplus", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateEndpointGroup", "ga", "openAPI")
 	request.Method = requests.POST
 	return
 }
