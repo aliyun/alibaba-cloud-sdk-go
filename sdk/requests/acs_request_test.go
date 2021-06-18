@@ -121,13 +121,22 @@ func Test_AcsRequest(t *testing.T) {
 
 type AcsRequestTest struct {
 	*baseRequest
-	Ontology AcsRequest
-	Query    string                 `position:"Query" name:"Query"`
-	Header   string                 `position:"Header" name:"Header"`
-	Path     string                 `position:"Path" name:"Path"`
-	Body     string                 `position:"Body" name:"Body"`
-	Target   map[string]interface{} `position:"Query" name:"Target"`
-	TypeAcs  *[]string              `position:"type" name:"type" type:"Repeated"`
+	Ontology       AcsRequest
+	RuleConditions *[]CreateRuleRuleConditions `position:"Query" name:"RuleConditions" type:"Repeated"`
+	Query          string                      `position:"Query" name:"Query"`
+	Header         string                      `position:"Header" name:"Header"`
+	Path           string                      `position:"Path" name:"Path"`
+	Body           string                      `position:"Body" name:"Body"`
+	Target         map[string]interface{}      `position:"Query" name:"Target"`
+	TypeAcs        *[]string                   `position:"type" name:"type" type:"Repeated"`
+}
+
+type CreateRuleRuleConditionsPathConfig struct {
+	Values *[]string `name:"Values" type:"Repeated"`
+}
+
+type CreateRuleRuleConditions struct {
+	PathConfig CreateRuleRuleConditionsPathConfig `name:"PathConfig" type:"Struct"`
 }
 
 func (r AcsRequestTest) BuildQueries() string {
@@ -151,12 +160,18 @@ func (r AcsRequestTest) addPathParam(key, value string) {
 }
 
 func Test_AcsRequest_InitParams(t *testing.T) {
+	tmp1 := CreateRuleRuleConditions{
+		PathConfig: CreateRuleRuleConditionsPathConfig{
+			Values: &[]string{"/http:"},
+		},
+	}
 	r := &AcsRequestTest{
-		baseRequest: defaultBaseRequest(),
-		Query:       "query value",
-		Header:      "header value",
-		Path:        "path value",
-		Body:        "body value",
+		RuleConditions: &[]CreateRuleRuleConditions{tmp1},
+		baseRequest:    defaultBaseRequest(),
+		Query:          "query value",
+		Header:         "header value",
+		Path:           "path value",
+		Body:           "body value",
 		Target: map[string]interface{}{
 			"key":   "test",
 			"value": 1234,
