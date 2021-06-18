@@ -410,9 +410,17 @@ func handleStruct(request AcsRequest, dataValue reflect.Value, prefix, name, fie
 					if repeatedFieldValue.IsValid() && !repeatedFieldValue.IsNil() {
 						for m := 0; m < repeatedFieldValue.Len(); m++ {
 							elementValue := repeatedFieldValue.Index(m)
-							err = flatRepeatedList(elementValue, request, fieldPosition, key+"."+strconv.Itoa(m+1)+".")
-							if err != nil {
-								return
+							if elementValue.Type().Kind().String() == "string" {
+								value := elementValue.String()
+								err := addParam(request, fieldPosition, key+"."+strconv.Itoa(m+1), value)
+								if err != nil {
+									return err
+								}
+							} else {
+								err = flatRepeatedList(elementValue, request, fieldPosition, key+"."+strconv.Itoa(m+1)+".")
+								if err != nil {
+									return
+								}
 							}
 						}
 					}
