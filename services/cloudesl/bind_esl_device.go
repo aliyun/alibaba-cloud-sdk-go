@@ -71,18 +71,26 @@ func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, c
 // BindEslDeviceRequest is the request struct for api BindEslDevice
 type BindEslDeviceRequest struct {
 	*requests.RpcRequest
-	StoreId     string `position:"Query" name:"StoreId"`
-	EslBarCode  string `position:"Query" name:"EslBarCode"`
-	ItemBarCode string `position:"Query" name:"ItemBarCode"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
+	StoreId     string           `position:"Body" name:"StoreId"`
+	Layer       requests.Integer `position:"Body" name:"Layer"`
+	EslBarCode  string           `position:"Body" name:"EslBarCode"`
+	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
+	Column      string           `position:"Body" name:"Column"`
+	Shelf       string           `position:"Body" name:"Shelf"`
 }
 
 // BindEslDeviceResponse is the response struct for api BindEslDevice
 type BindEslDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Message        string `json:"Message" xml:"Message"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
+	Code           string `json:"Code" xml:"Code"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateBindEslDeviceRequest creates a request to invoke BindEslDevice API
@@ -90,7 +98,7 @@ func CreateBindEslDeviceRequest() (request *BindEslDeviceRequest) {
 	request = &BindEslDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "BindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "BindEslDevice", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }

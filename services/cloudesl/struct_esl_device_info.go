@@ -17,25 +17,14 @@ package cloudesl
 
 // EslDeviceInfo is a nested struct in cloudesl response
 type EslDeviceInfo struct {
-	CompanyId           string `json:"CompanyId" xml:"CompanyId"`
-	StoreId             string `json:"StoreId" xml:"StoreId"`
-	Mac                 string `json:"Mac" xml:"Mac"`
-	EslBarCode          string `json:"EslBarCode" xml:"EslBarCode"`
-	ItemBarCode         string `json:"ItemBarCode" xml:"ItemBarCode"`
-	Vendor              string `json:"Vendor" xml:"Vendor"`
-	ConnectAp           string `json:"ConnectAp" xml:"ConnectAp"`
-	Type                string `json:"Type" xml:"Type"`
-	Model               string `json:"Model" xml:"Model"`
-	BeBind              string `json:"BeBind" xml:"BeBind"`
-	ScreenWidth         string `json:"ScreenWidth" xml:"ScreenWidth"`
-	ScreenHeight        string `json:"ScreenHeight" xml:"ScreenHeight"`
 	LastCommunicateTime string `json:"LastCommunicateTime" xml:"LastCommunicateTime"`
-	BatteryLevel        int    `json:"BatteryLevel" xml:"BatteryLevel"`
+	Model               string `json:"Model" xml:"Model"`
 	EslStatus           string `json:"EslStatus" xml:"EslStatus"`
-	ShelfCode           string `json:"ShelfCode" xml:"ShelfCode"`
-	PositionCode        string `json:"PositionCode" xml:"PositionCode"`
-	ItemId              int64  `json:"ItemId" xml:"ItemId"`
-	ItemTitle           string `json:"ItemTitle" xml:"ItemTitle"`
-	ItemActionPrice     int    `json:"ItemActionPrice" xml:"ItemActionPrice"`
-	ItemPriceUnit       string `json:"ItemPriceUnit" xml:"ItemPriceUnit"`
+	StoreId             string `json:"StoreId" xml:"StoreId"`
+	EslBarCode          string `json:"EslBarCode" xml:"EslBarCode"`
+	Type                string `json:"Type" xml:"Type"`
+	Mac                 string `json:"Mac" xml:"Mac"`
+	BatteryLevel        int    `json:"BatteryLevel" xml:"BatteryLevel"`
+	ScreenWidth         int    `json:"ScreenWidth" xml:"ScreenWidth"`
+	ScreenHeight        int    `json:"ScreenHeight" xml:"ScreenHeight"`
 }

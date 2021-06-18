@@ -17,16 +17,13 @@ package cloudesl
 
 // StoreInfo is a nested struct in cloudesl response
 type StoreInfo struct {
-	CompanyId   string `json:"CompanyId" xml:"CompanyId"`
-	StoreId     string `json:"StoreId" xml:"StoreId"`
-	StoreName   string `json:"StoreName" xml:"StoreName"`
-	Brand       string `json:"Brand" xml:"Brand"`
-	OutId       string `json:"OutId" xml:"OutId"`
-	Phone       string `json:"Phone" xml:"Phone"`
-	Level       string `json:"Level" xml:"Level"`
-	Groups      string `json:"Groups" xml:"Groups"`
-	Comments    string `json:"Comments" xml:"Comments"`
-	ParentId    string `json:"ParentId" xml:"ParentId"`
-	GmtCreate   string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified string `json:"GmtModified" xml:"GmtModified"`
+	StoreName       string `json:"StoreName" xml:"StoreName"`
+	StoreId         string `json:"StoreId" xml:"StoreId"`
+	GmtCreate       string `json:"GmtCreate" xml:"GmtCreate"`
+	ParentId        string `json:"ParentId" xml:"ParentId"`
+	UserStoreCode   string `json:"UserStoreCode" xml:"UserStoreCode"`
+	GmtModified     string `json:"GmtModified" xml:"GmtModified"`
+	Phone           string `json:"Phone" xml:"Phone"`
+	Level           string `json:"Level" xml:"Level"`
+	TemplateVersion string `json:"TemplateVersion" xml:"TemplateVersion"`
 }
