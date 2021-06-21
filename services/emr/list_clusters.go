@@ -83,6 +83,7 @@ type ListClustersRequest struct {
 	CreateType      string             `position:"Query" name:"CreateType"`
 	ExpiredTagList  *[]string          `position:"Query" name:"ExpiredTagList"  type:"Repeated"`
 	DefaultStatus   requests.Boolean   `position:"Query" name:"DefaultStatus"`
+	VpcId           string             `position:"Query" name:"VpcId"`
 	Name            string             `position:"Query" name:"Name"`
 	ClusterTypeList *[]string          `position:"Query" name:"ClusterTypeList"  type:"Repeated"`
 }

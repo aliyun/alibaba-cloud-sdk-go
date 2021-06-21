@@ -36,12 +36,10 @@ type Item struct {
 	Type                   string       `json:"Type" xml:"Type"`
 	ScalingGroupBizId      string       `json:"ScalingGroupBizId" xml:"ScalingGroupBizId"`
 	ClusterId              string       `json:"ClusterId" xml:"ClusterId"`
-	Message                string       `json:"Message" xml:"Message"`
 	ScalingInMode          string       `json:"ScalingInMode" xml:"ScalingInMode"`
 	ConfigItemType         string       `json:"ConfigItemType" xml:"ConfigItemType"`
 	ScalingMaxSize         int          `json:"ScalingMaxSize" xml:"ScalingMaxSize"`
 	StorePath              string       `json:"StorePath" xml:"StorePath"`
-	Data                   string       `json:"Data" xml:"Data"`
 	Transition             string       `json:"Transition" xml:"Transition"`
 	ConfigItemInformation  string       `json:"ConfigItemInformation" xml:"ConfigItemInformation"`
 	ExpectNum              int          `json:"ExpectNum" xml:"ExpectNum"`
@@ -59,8 +57,6 @@ type Item struct {
 	LibraryName            string       `json:"LibraryName" xml:"LibraryName"`
 	Name                   string       `json:"Name" xml:"Name"`
 	Category               string       `json:"Category" xml:"Category"`
-	EntityGroupId          string       `json:"EntityGroupId" xml:"EntityGroupId"`
-	Revision               string       `json:"Revision" xml:"Revision"`
 	Detail                 string       `json:"Detail" xml:"Detail"`
 	CreateTime             int64        `json:"CreateTime" xml:"CreateTime"`
 	TaskGroupId            string       `json:"TaskGroupId" xml:"TaskGroupId"`
@@ -68,16 +64,13 @@ type Item struct {
 	SourceType             string       `json:"SourceType" xml:"SourceType"`
 	Md5                    string       `json:"Md5" xml:"Md5"`
 	UserId                 string       `json:"UserId" xml:"UserId"`
-	CommitterId            string       `json:"CommitterId" xml:"CommitterId"`
 	ScalingRuleName        string       `json:"ScalingRuleName" xml:"ScalingRuleName"`
 	ClusterName            string       `json:"ClusterName" xml:"ClusterName"`
 	ScalingConfigItemBizId string       `json:"ScalingConfigItemBizId" xml:"ScalingConfigItemBizId"`
 	Properties             string       `json:"Properties" xml:"Properties"`
 	Description            string       `json:"Description" xml:"Description"`
 	TarFileName            string       `json:"TarFileName" xml:"TarFileName"`
-	DataSourceId           string       `json:"DataSourceId" xml:"DataSourceId"`
 	Component              string       `json:"Component" xml:"Component"`
-	Active                 bool         `json:"Active" xml:"Active"`
 	LibraryBizId           string       `json:"LibraryBizId" xml:"LibraryBizId"`
 	BackupPlanId           string       `json:"BackupPlanId" xml:"BackupPlanId"`
 	EntityType             string       `json:"EntityType" xml:"EntityType"`
@@ -87,6 +80,5 @@ type Item struct {
 	HostgroupName          string       `json:"HostgroupName" xml:"HostgroupName"`
 	TagId                  int64        `json:"TagId" xml:"TagId"`
 	ConfigItemKey          string       `json:"ConfigItemKey" xml:"ConfigItemKey"`
-	SoftwareInfo           SoftwareInfo `json:"SoftwareInfo" xml:"SoftwareInfo"`
 	MetadataInfo           MetadataInfo `json:"MetadataInfo" xml:"MetadataInfo"`
 }

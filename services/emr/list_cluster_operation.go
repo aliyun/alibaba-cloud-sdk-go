@@ -75,6 +75,7 @@ type ListClusterOperationRequest struct {
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	OperationId     string           `position:"Query" name:"OperationId"`
 	ServiceName     string           `position:"Query" name:"ServiceName"`
 	Status          string           `position:"Query" name:"Status"`
 }

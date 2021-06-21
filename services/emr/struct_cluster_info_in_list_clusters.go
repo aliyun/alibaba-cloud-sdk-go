@@ -34,9 +34,6 @@ type ClusterInfoInListClusters struct {
 	MetaStoreType       string             `json:"MetaStoreType" xml:"MetaStoreType"`
 	K8sClusterId        string             `json:"K8sClusterId" xml:"K8sClusterId"`
 	OperationId         int64              `json:"OperationId" xml:"OperationId"`
-	ClusterId           string             `json:"ClusterId" xml:"ClusterId"`
-	VpcId               string             `json:"VpcId" xml:"VpcId"`
-	VSwitchId           string             `json:"VSwitchId" xml:"VSwitchId"`
 	OrderTaskInfo       OrderTaskInfo      `json:"OrderTaskInfo" xml:"OrderTaskInfo"`
 	FailReason          FailReason         `json:"FailReason" xml:"FailReason"`
 	Tags                TagsInListClusters `json:"Tags" xml:"Tags"`

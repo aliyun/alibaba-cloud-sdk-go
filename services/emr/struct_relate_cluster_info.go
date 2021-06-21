@@ -18,6 +18,7 @@ package emr
 // RelateClusterInfo is a nested struct in emr response
 type RelateClusterInfo struct {
 	ClusterId   string `json:"ClusterId" xml:"ClusterId"`
+	ClusterType string `json:"ClusterType" xml:"ClusterType"`
 	ClusterName string `json:"ClusterName" xml:"ClusterName"`
 	Status      string `json:"Status" xml:"Status"`
 }

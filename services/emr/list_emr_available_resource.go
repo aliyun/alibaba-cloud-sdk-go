@@ -76,6 +76,7 @@ type ListEmrAvailableResourceRequest struct {
 	SystemDiskType      string           `position:"Query" name:"SystemDiskType"`
 	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
 	InstanceType        string           `position:"Query" name:"InstanceType"`
+	EmrVersion          string           `position:"Query" name:"EmrVersion"`
 	InstanceChargeType  string           `position:"Query" name:"InstanceChargeType"`
 	ClusterId           string           `position:"Query" name:"ClusterId"`
 	DestinationResource string           `position:"Query" name:"DestinationResource"`

@@ -1,3 +1,7 @@
+2021-06-21 Version: v1.61.1153
+- Generated 2016-04-08 for `Emr`.
+- Supported createClusterHostGroup for public.
+
 2021-06-21 Version: v1.61.1152
 - Generated 2019-11-20 for `Ga`.
 

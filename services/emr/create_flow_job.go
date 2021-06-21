@@ -72,22 +72,22 @@ func (client *Client) CreateFlowJobWithCallback(request *CreateFlowJobRequest, c
 type CreateFlowJobRequest struct {
 	*requests.RpcRequest
 	RetryPolicy       string                       `position:"Query" name:"RetryPolicy"`
-	RunConf           string                       `position:"Query" name:"RunConf"`
-	Description       string                       `position:"Query" name:"Description"`
+	RunConf           string                       `position:"Body" name:"RunConf"`
+	Description       string                       `position:"Body" name:"Description"`
 	Type              string                       `position:"Query" name:"Type"`
-	ParamConf         string                       `position:"Query" name:"ParamConf"`
-	ResourceList      *[]CreateFlowJobResourceList `position:"Query" name:"ResourceList"  type:"Repeated"`
+	ParamConf         string                       `position:"Body" name:"ParamConf"`
+	ResourceList      *[]CreateFlowJobResourceList `position:"Body" name:"ResourceList"  type:"Repeated"`
 	FailAct           string                       `position:"Query" name:"FailAct"`
 	Mode              string                       `position:"Query" name:"Mode"`
-	MonitorConf       string                       `position:"Query" name:"MonitorConf"`
+	MonitorConf       string                       `position:"Body" name:"MonitorConf"`
 	MaxRetry          requests.Integer             `position:"Query" name:"MaxRetry"`
 	AlertConf         string                       `position:"Query" name:"AlertConf"`
 	ProjectId         string                       `position:"Query" name:"ProjectId"`
-	EnvConf           string                       `position:"Query" name:"EnvConf"`
+	EnvConf           string                       `position:"Body" name:"EnvConf"`
 	MaxRunningTimeSec requests.Integer             `position:"Query" name:"MaxRunningTimeSec"`
 	ClusterId         string                       `position:"Query" name:"ClusterId"`
-	Params            string                       `position:"Query" name:"Params"`
-	CustomVariables   string                       `position:"Query" name:"CustomVariables"`
+	Params            string                       `position:"Body" name:"Params"`
+	CustomVariables   string                       `position:"Body" name:"CustomVariables"`
 	RetryInterval     requests.Integer             `position:"Query" name:"RetryInterval"`
 	Name              string                       `position:"Query" name:"Name"`
 	Adhoc             requests.Boolean             `position:"Query" name:"Adhoc"`
