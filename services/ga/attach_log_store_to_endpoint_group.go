@@ -91,7 +91,7 @@ func CreateAttachLogStoreToEndpointGroupRequest() (request *AttachLogStoreToEndp
 	request = &AttachLogStoreToEndpointGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "AttachLogStoreToEndpointGroup", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "AttachLogStoreToEndpointGroup", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

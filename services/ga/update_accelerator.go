@@ -92,7 +92,7 @@ func CreateUpdateAcceleratorRequest() (request *UpdateAcceleratorRequest) {
 	request = &UpdateAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateAccelerator", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateAccelerator", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

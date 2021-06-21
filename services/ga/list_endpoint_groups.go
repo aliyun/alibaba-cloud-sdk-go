@@ -95,7 +95,7 @@ func CreateListEndpointGroupsRequest() (request *ListEndpointGroupsRequest) {
 	request = &ListEndpointGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListEndpointGroups", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListEndpointGroups", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

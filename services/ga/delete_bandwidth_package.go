@@ -87,7 +87,7 @@ func CreateDeleteBandwidthPackageRequest() (request *DeleteBandwidthPackageReque
 	request = &DeleteBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteBandwidthPackage", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteBandwidthPackage", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateDeleteAcceleratorRequest() (request *DeleteAcceleratorRequest) {
 	request = &DeleteAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteAccelerator", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteAccelerator", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

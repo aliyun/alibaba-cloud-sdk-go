@@ -93,7 +93,7 @@ func CreateListAclsRequest() (request *ListAclsRequest) {
 	request = &ListAclsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListAcls", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListAcls", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

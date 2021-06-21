@@ -92,7 +92,7 @@ func CreateDescribeIpSetRequest() (request *DescribeIpSetRequest) {
 	request = &DescribeIpSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeIpSet", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeIpSet", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -111,7 +111,7 @@ func CreateUpdateListenerRequest() (request *UpdateListenerRequest) {
 	request = &UpdateListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateListener", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateListener", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

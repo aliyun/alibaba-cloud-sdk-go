@@ -109,7 +109,7 @@ func CreateDescribeEndpointGroupRequest() (request *DescribeEndpointGroupRequest
 	request = &DescribeEndpointGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeEndpointGroup", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeEndpointGroup", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

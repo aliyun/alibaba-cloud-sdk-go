@@ -91,7 +91,7 @@ func CreateListIpSetsRequest() (request *ListIpSetsRequest) {
 	request = &ListIpSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListIpSets", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListIpSets", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateDetachDdosFromAcceleratorRequest() (request *DetachDdosFromAccelerato
 	request = &DetachDdosFromAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DetachDdosFromAccelerator", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DetachDdosFromAccelerator", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

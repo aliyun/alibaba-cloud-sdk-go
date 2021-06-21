@@ -90,7 +90,7 @@ func CreateDissociateAclsFromListenerRequest() (request *DissociateAclsFromListe
 	request = &DissociateAclsFromListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DissociateAclsFromListener", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DissociateAclsFromListener", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

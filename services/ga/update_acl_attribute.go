@@ -89,7 +89,7 @@ func CreateUpdateAclAttributeRequest() (request *UpdateAclAttributeRequest) {
 	request = &UpdateAclAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateAclAttribute", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateAclAttribute", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

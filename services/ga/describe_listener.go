@@ -99,7 +99,7 @@ func CreateDescribeListenerRequest() (request *DescribeListenerRequest) {
 	request = &DescribeListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeListener", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DescribeListener", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

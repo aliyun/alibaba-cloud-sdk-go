@@ -89,7 +89,7 @@ func CreateDeleteForwardingRulesRequest() (request *DeleteForwardingRulesRequest
 	request = &DeleteForwardingRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteForwardingRules", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteForwardingRules", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

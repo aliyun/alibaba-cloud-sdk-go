@@ -91,7 +91,7 @@ func CreateAssociateAclsWithListenerRequest() (request *AssociateAclsWithListene
 	request = &AssociateAclsWithListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "AssociateAclsWithListener", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "AssociateAclsWithListener", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

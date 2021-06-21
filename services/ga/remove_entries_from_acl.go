@@ -94,7 +94,7 @@ func CreateRemoveEntriesFromAclRequest() (request *RemoveEntriesFromAclRequest) 
 	request = &RemoveEntriesFromAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "RemoveEntriesFromAcl", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "RemoveEntriesFromAcl", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

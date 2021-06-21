@@ -91,7 +91,7 @@ func CreateGetAclRequest() (request *GetAclRequest) {
 	request = &GetAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "GetAcl", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "GetAcl", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

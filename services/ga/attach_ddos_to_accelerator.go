@@ -89,7 +89,7 @@ func CreateAttachDdosToAcceleratorRequest() (request *AttachDdosToAcceleratorReq
 	request = &AttachDdosToAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "AttachDdosToAccelerator", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "AttachDdosToAccelerator", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

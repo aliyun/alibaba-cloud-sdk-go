@@ -113,7 +113,7 @@ func CreateUpdateEndpointGroupRequest() (request *UpdateEndpointGroupRequest) {
 	request = &UpdateEndpointGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateEndpointGroup", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateEndpointGroup", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

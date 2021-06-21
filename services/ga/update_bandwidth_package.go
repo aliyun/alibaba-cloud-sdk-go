@@ -95,7 +95,7 @@ func CreateUpdateBandwidthPackageRequest() (request *UpdateBandwidthPackageReque
 	request = &UpdateBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateBandwidthPackage", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateBandwidthPackage", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

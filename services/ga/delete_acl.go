@@ -88,7 +88,7 @@ func CreateDeleteAclRequest() (request *DeleteAclRequest) {
 	request = &DeleteAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteAcl", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DeleteAcl", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateBandwidthPackageRemoveAcceleratorRequest() (request *BandwidthPackage
 	request = &BandwidthPackageRemoveAcceleratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "BandwidthPackageRemoveAccelerator", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "BandwidthPackageRemoveAccelerator", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

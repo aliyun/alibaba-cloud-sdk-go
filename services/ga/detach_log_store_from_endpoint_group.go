@@ -88,7 +88,7 @@ func CreateDetachLogStoreFromEndpointGroupRequest() (request *DetachLogStoreFrom
 	request = &DetachLogStoreFromEndpointGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "DetachLogStoreFromEndpointGroup", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "DetachLogStoreFromEndpointGroup", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

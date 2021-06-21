@@ -89,7 +89,7 @@ func CreateUpdateForwardingRulesRequest() (request *UpdateForwardingRulesRequest
 	request = &UpdateForwardingRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateForwardingRules", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "UpdateForwardingRules", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }

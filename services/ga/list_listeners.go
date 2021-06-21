@@ -91,7 +91,7 @@ func CreateListListenersRequest() (request *ListListenersRequest) {
 	request = &ListListenersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ga", "2019-11-20", "ListListeners", "ga", "openAPI")
+	request.InitWithApiInfo("Ga", "2019-11-20", "ListListeners", "gaplus", "openAPI")
 	request.Method = requests.POST
 	return
 }
