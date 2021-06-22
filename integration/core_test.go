@@ -226,7 +226,7 @@ func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
 	request.SetScheme("HTTPS")
 	request.ApiName = "CreateInstance"
 	request.QueryParams["ImageId"] = "win2008r2_64_ent_sp1_en-us_40G_alibase_20170915.vhd"
-	request.QueryParams["InstanceType"] = "ecs.g5.large"
+	request.QueryParams["InstanceType"] = "ecs.s6-c1m1.small"
 	request.TransToAcsRequest()
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
