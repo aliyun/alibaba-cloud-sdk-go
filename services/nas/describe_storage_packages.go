@@ -91,7 +91,7 @@ func CreateDescribeStoragePackagesRequest() (request *DescribeStoragePackagesReq
 	request = &DescribeStoragePackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeStoragePackages", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeStoragePackages", "", "")
 	request.Method = requests.POST
 	return
 }

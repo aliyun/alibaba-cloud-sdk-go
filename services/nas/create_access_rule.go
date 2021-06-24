@@ -92,7 +92,7 @@ func CreateCreateAccessRuleRequest() (request *CreateAccessRuleRequest) {
 	request = &CreateAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CreateAccessRule", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateAccessRule", "", "")
 	request.Method = requests.POST
 	return
 }

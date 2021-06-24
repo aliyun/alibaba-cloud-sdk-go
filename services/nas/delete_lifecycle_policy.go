@@ -87,7 +87,7 @@ func CreateDeleteLifecyclePolicyRequest() (request *DeleteLifecyclePolicyRequest
 	request = &DeleteLifecyclePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteLifecyclePolicy", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteLifecyclePolicy", "", "")
 	request.Method = requests.POST
 	return
 }

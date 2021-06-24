@@ -92,7 +92,7 @@ func CreateRemoveTagsRequest() (request *RemoveTagsRequest) {
 	request = &RemoveTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "RemoveTags", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "RemoveTags", "", "")
 	request.Method = requests.POST
 	return
 }

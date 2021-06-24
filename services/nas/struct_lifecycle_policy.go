@@ -17,10 +17,11 @@ package nas
 
 // LifecyclePolicy is a nested struct in nas response
 type LifecyclePolicy struct {
-	FileSystemId        string `json:"FileSystemId" xml:"FileSystemId"`
-	LifecyclePolicyName string `json:"LifecyclePolicyName" xml:"LifecyclePolicyName"`
-	Path                string `json:"Path" xml:"Path"`
-	LifecycleRuleName   string `json:"LifecycleRuleName" xml:"LifecycleRuleName"`
-	StorageType         string `json:"StorageType" xml:"StorageType"`
-	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
+	Path                string   `json:"Path" xml:"Path"`
+	LifecyclePolicyName string   `json:"LifecyclePolicyName" xml:"LifecyclePolicyName"`
+	StorageType         string   `json:"StorageType" xml:"StorageType"`
+	LifecycleRuleName   string   `json:"LifecycleRuleName" xml:"LifecycleRuleName"`
+	CreateTime          string   `json:"CreateTime" xml:"CreateTime"`
+	FileSystemId        string   `json:"FileSystemId" xml:"FileSystemId"`
+	Paths               []string `json:"Paths" xml:"Paths"`
 }

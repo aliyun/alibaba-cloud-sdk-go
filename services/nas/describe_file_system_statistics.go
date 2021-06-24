@@ -78,11 +78,12 @@ type DescribeFileSystemStatisticsRequest struct {
 // DescribeFileSystemStatisticsResponse is the response struct for api DescribeFileSystemStatistics
 type DescribeFileSystemStatisticsResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
-	PageSize             int                  `json:"PageSize" xml:"PageSize"`
-	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
-	FileSystemStatistics FileSystemStatistics `json:"FileSystemStatistics" xml:"FileSystemStatistics"`
+	RequestId            string                                    `json:"RequestId" xml:"RequestId"`
+	PageSize             int                                       `json:"PageSize" xml:"PageSize"`
+	PageNumber           int                                       `json:"PageNumber" xml:"PageNumber"`
+	TotalCount           int                                       `json:"TotalCount" xml:"TotalCount"`
+	FileSystemStatistics FileSystemStatistics                      `json:"FileSystemStatistics" xml:"FileSystemStatistics"`
+	FileSystems          FileSystemsInDescribeFileSystemStatistics `json:"FileSystems" xml:"FileSystems"`
 }
 
 // CreateDescribeFileSystemStatisticsRequest creates a request to invoke DescribeFileSystemStatistics API
@@ -90,7 +91,7 @@ func CreateDescribeFileSystemStatisticsRequest() (request *DescribeFileSystemSta
 	request = &DescribeFileSystemStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystemStatistics", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystemStatistics", "", "")
 	request.Method = requests.POST
 	return
 }

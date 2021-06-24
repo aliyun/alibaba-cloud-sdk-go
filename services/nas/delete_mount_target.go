@@ -86,7 +86,7 @@ func CreateDeleteMountTargetRequest() (request *DeleteMountTargetRequest) {
 	request = &DeleteMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteMountTarget", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteMountTarget", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateDeleteLDAPConfigRequest() (request *DeleteLDAPConfigRequest) {
 	request = &DeleteLDAPConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteLDAPConfig", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteLDAPConfig", "", "")
 	request.Method = requests.POST
 	return
 }

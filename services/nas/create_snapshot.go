@@ -89,7 +89,7 @@ func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CreateSnapshot", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateSnapshot", "", "")
 	request.Method = requests.POST
 	return
 }
