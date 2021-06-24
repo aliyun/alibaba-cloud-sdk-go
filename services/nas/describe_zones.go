@@ -85,7 +85,7 @@ func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeZones", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeZones", "", "")
 	request.Method = requests.POST
 	return
 }

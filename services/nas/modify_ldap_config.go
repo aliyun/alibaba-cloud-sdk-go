@@ -88,7 +88,7 @@ func CreateModifyLDAPConfigRequest() (request *ModifyLDAPConfigRequest) {
 	request = &ModifyLDAPConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyLDAPConfig", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyLDAPConfig", "", "")
 	request.Method = requests.POST
 	return
 }

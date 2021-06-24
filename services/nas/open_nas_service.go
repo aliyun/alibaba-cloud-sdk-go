@@ -85,7 +85,7 @@ func CreateOpenNASServiceRequest() (request *OpenNASServiceRequest) {
 	request = &OpenNASServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "OpenNASService", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "OpenNASService", "", "")
 	request.Method = requests.POST
 	return
 }

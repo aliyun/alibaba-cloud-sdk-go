@@ -88,7 +88,7 @@ func CreateUpgradeFileSystemRequest() (request *UpgradeFileSystemRequest) {
 	request = &UpgradeFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "UpgradeFileSystem", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "UpgradeFileSystem", "", "")
 	request.Method = requests.POST
 	return
 }

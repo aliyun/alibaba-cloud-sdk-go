@@ -83,6 +83,7 @@ type DescribeFileSystemsRequest struct {
 	Tag            *[]DescribeFileSystemsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	FileSystemId   string                    `position:"Query" name:"FileSystemId"`
 	VpcId          string                    `position:"Query" name:"VpcId"`
+	ChargeType     string                    `position:"Query" name:"ChargeType"`
 	FileSystemIds  string                    `position:"Query" name:"FileSystemIds"`
 }
 
@@ -95,11 +96,11 @@ type DescribeFileSystemsTag struct {
 // DescribeFileSystemsResponse is the response struct for api DescribeFileSystems
 type DescribeFileSystemsResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int         `json:"PageSize" xml:"PageSize"`
-	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
-	FileSystems FileSystems `json:"FileSystems" xml:"FileSystems"`
+	RequestId   string                           `json:"RequestId" xml:"RequestId"`
+	TotalCount  int                              `json:"TotalCount" xml:"TotalCount"`
+	PageSize    int                              `json:"PageSize" xml:"PageSize"`
+	PageNumber  int                              `json:"PageNumber" xml:"PageNumber"`
+	FileSystems FileSystemsInDescribeFileSystems `json:"FileSystems" xml:"FileSystems"`
 }
 
 // CreateDescribeFileSystemsRequest creates a request to invoke DescribeFileSystems API
@@ -107,7 +108,7 @@ func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
 	request = &DescribeFileSystemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystems", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystems", "", "")
 	request.Method = requests.POST
 	return
 }

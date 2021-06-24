@@ -79,9 +79,9 @@ type DescribeLifecyclePoliciesRequest struct {
 // DescribeLifecyclePoliciesResponse is the response struct for api DescribeLifecyclePolicies
 type DescribeLifecyclePoliciesResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
 	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
 	LifecyclePolicies []LifecyclePolicy `json:"LifecyclePolicies" xml:"LifecyclePolicies"`
 }
@@ -91,7 +91,7 @@ func CreateDescribeLifecyclePoliciesRequest() (request *DescribeLifecyclePolicie
 	request = &DescribeLifecyclePoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeLifecyclePolicies", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeLifecyclePolicies", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -71,11 +71,12 @@ func (client *Client) CreateLifecyclePolicyWithCallback(request *CreateLifecycle
 // CreateLifecyclePolicyRequest is the request struct for api CreateLifecyclePolicy
 type CreateLifecyclePolicyRequest struct {
 	*requests.RpcRequest
-	StorageType         string `position:"Query" name:"StorageType"`
-	Path                string `position:"Query" name:"Path"`
-	LifecyclePolicyName string `position:"Query" name:"LifecyclePolicyName"`
-	FileSystemId        string `position:"Query" name:"FileSystemId"`
-	LifecycleRuleName   string `position:"Query" name:"LifecycleRuleName"`
+	StorageType         string    `position:"Query" name:"StorageType"`
+	Path                string    `position:"Query" name:"Path"`
+	LifecyclePolicyName string    `position:"Query" name:"LifecyclePolicyName"`
+	FileSystemId        string    `position:"Query" name:"FileSystemId"`
+	LifecycleRuleName   string    `position:"Query" name:"LifecycleRuleName"`
+	Paths               *[]string `position:"Query" name:"Paths"  type:"Repeated"`
 }
 
 // CreateLifecyclePolicyResponse is the response struct for api CreateLifecyclePolicy
@@ -90,7 +91,7 @@ func CreateCreateLifecyclePolicyRequest() (request *CreateLifecyclePolicyRequest
 	request = &CreateLifecyclePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CreateLifecyclePolicy", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateLifecyclePolicy", "", "")
 	request.Method = requests.POST
 	return
 }

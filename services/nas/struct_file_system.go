@@ -17,30 +17,30 @@ package nas
 
 // FileSystem is a nested struct in nas response
 type FileSystem struct {
-	FileSystemId          string                            `json:"FileSystemId" xml:"FileSystemId"`
-	Description           string                            `json:"Description" xml:"Description"`
-	CreateTime            string                            `json:"CreateTime" xml:"CreateTime"`
-	ExpiredTime           string                            `json:"ExpiredTime" xml:"ExpiredTime"`
-	RegionId              string                            `json:"RegionId" xml:"RegionId"`
-	ZoneId                string                            `json:"ZoneId" xml:"ZoneId"`
-	ProtocolType          string                            `json:"ProtocolType" xml:"ProtocolType"`
-	StorageType           string                            `json:"StorageType" xml:"StorageType"`
-	FileSystemType        string                            `json:"FileSystemType" xml:"FileSystemType"`
-	EncryptType           int                               `json:"EncryptType" xml:"EncryptType"`
-	MeteredSize           int64                             `json:"MeteredSize" xml:"MeteredSize"`
-	MeteredIASize         int64                             `json:"MeteredIASize" xml:"MeteredIASize"`
-	Bandwidth             int64                             `json:"Bandwidth" xml:"Bandwidth"`
-	Capacity              int64                             `json:"Capacity" xml:"Capacity"`
-	AutoSnapshotPolicyId  string                            `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-	Status                string                            `json:"Status" xml:"Status"`
-	ChargeType            string                            `json:"ChargeType" xml:"ChargeType"`
 	MountTargetCountLimit int64                             `json:"MountTargetCountLimit" xml:"MountTargetCountLimit"`
+	FileSystemId          string                            `json:"FileSystemId" xml:"FileSystemId"`
+	MeteredIASize         int64                             `json:"MeteredIASize" xml:"MeteredIASize"`
+	MeteredSize           int64                             `json:"MeteredSize" xml:"MeteredSize"`
+	ChargeType            string                            `json:"ChargeType" xml:"ChargeType"`
+	AutoSnapshotPolicyId  string                            `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+	CreateTime            string                            `json:"CreateTime" xml:"CreateTime"`
+	RegionId              string                            `json:"RegionId" xml:"RegionId"`
+	Bandwidth             int64                             `json:"Bandwidth" xml:"Bandwidth"`
+	FileSystemType        string                            `json:"FileSystemType" xml:"FileSystemType"`
+	Description           string                            `json:"Description" xml:"Description"`
+	ExpiredTime           string                            `json:"ExpiredTime" xml:"ExpiredTime"`
+	Capacity              int64                             `json:"Capacity" xml:"Capacity"`
+	Version               string                            `json:"Version" xml:"Version"`
+	EncryptType           int                               `json:"EncryptType" xml:"EncryptType"`
 	NasNamespaceId        string                            `json:"NasNamespaceId" xml:"NasNamespaceId"`
 	KMSKeyId              string                            `json:"KMSKeyId" xml:"KMSKeyId"`
-	Version               string                            `json:"Version" xml:"Version"`
+	StorageType           string                            `json:"StorageType" xml:"StorageType"`
+	ZoneId                string                            `json:"ZoneId" xml:"ZoneId"`
+	ProtocolType          string                            `json:"ProtocolType" xml:"ProtocolType"`
+	Status                string                            `json:"Status" xml:"Status"`
 	SupportedFeatures     SupportedFeatures                 `json:"SupportedFeatures" xml:"SupportedFeatures"`
 	Ldap                  Ldap                              `json:"Ldap" xml:"Ldap"`
-	MountTargets          MountTargetsInDescribeFileSystems `json:"MountTargets" xml:"MountTargets"`
 	Packages              PackagesInDescribeFileSystems     `json:"Packages" xml:"Packages"`
+	MountTargets          MountTargetsInDescribeFileSystems `json:"MountTargets" xml:"MountTargets"`
 	Tags                  TagsInDescribeFileSystems         `json:"Tags" xml:"Tags"`
 }

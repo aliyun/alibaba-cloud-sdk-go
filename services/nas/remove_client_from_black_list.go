@@ -87,7 +87,7 @@ func CreateRemoveClientFromBlackListRequest() (request *RemoveClientFromBlackLis
 	request = &RemoveClientFromBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "RemoveClientFromBlackList", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "RemoveClientFromBlackList", "", "")
 	request.Method = requests.POST
 	return
 }
