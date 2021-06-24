@@ -17,5 +17,5 @@ package hitsdb
 
 // InstanceList is a nested struct in hitsdb response
 type InstanceList struct {
-	Instance []Instance `json:"Instance" xml:"Instance"`
+	LindormInstanceSummary []LindormInstanceSummary `json:"LindormInstanceSummary" xml:"LindormInstanceSummary"`
 }

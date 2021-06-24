@@ -82,8 +82,8 @@ type DescribeRegionsRequest struct {
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Regions   Regions `json:"Regions" xml:"Regions"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Regions   []Region `json:"Regions" xml:"Regions"`
 }
 
 // CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
@@ -91,7 +91,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeRegions", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2020-06-15", "DescribeRegions", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
