@@ -72,13 +72,16 @@ type Data struct {
 	UidList                     UidList                                                 `json:"UidList" xml:"UidList"`
 	OmsData                     OmsData                                                 `json:"OmsData" xml:"OmsData"`
 	CostUnit                    CostUnit                                                `json:"CostUnit" xml:"CostUnit"`
+	TotalUsage                  TotalUsage                                              `json:"TotalUsage" xml:"TotalUsage"`
 	CostUnitStatisInfo          CostUnitStatisInfo                                      `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
+	TotalCoverage               TotalCoverage                                           `json:"TotalCoverage" xml:"TotalCoverage"`
 	OrderList                   OrderListInGetOrderDetail                               `json:"OrderList" xml:"OrderList"`
 	CostUnitDtoList             []CostUnitDtoListItem                                   `json:"CostUnitDtoList" xml:"CostUnitDtoList"`
 	ModuleList                  ModuleList                                              `json:"ModuleList" xml:"ModuleList"`
+	PeriodCoverage              []Item                                                  `json:"PeriodCoverage" xml:"PeriodCoverage"`
 	InstanceList                []Instance                                              `json:"InstanceList" xml:"InstanceList"`
+	Items                       []Item                                                  `json:"Items" xml:"Items"`
 	Modules                     Modules                                                 `json:"Modules" xml:"Modules"`
-	Items                       ItemsInQueryAccountBill                                 `json:"Items" xml:"Items"`
 	ResourcePackages            ResourcePackages                                        `json:"ResourcePackages" xml:"ResourcePackages"`
 	ProductList                 ProductList                                             `json:"ProductList" xml:"ProductList"`
 	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice                       `json:"ModuleDetails" xml:"ModuleDetails"`
@@ -87,6 +90,7 @@ type Data struct {
 	AccountTransactionsList     AccountTransactionsListInQueryAccountTransactionDetails `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
 	EvaluateList                EvaluateList                                            `json:"EvaluateList" xml:"EvaluateList"`
 	Promotions                  Promotions                                              `json:"Promotions" xml:"Promotions"`
+	DetailList                  DetailListInQueryDPUtilizationDetail                    `json:"DetailList" xml:"DetailList"`
 	ResourceInstanceDtoList     []ResourceInstanceList                                  `json:"ResourceInstanceDtoList" xml:"ResourceInstanceDtoList"`
 	CustomerInvoiceAddressList  CustomerInvoiceAddressList                              `json:"CustomerInvoiceAddressList" xml:"CustomerInvoiceAddressList"`
 	CustomerInvoiceList         CustomerInvoiceList                                     `json:"CustomerInvoiceList" xml:"CustomerInvoiceList"`
