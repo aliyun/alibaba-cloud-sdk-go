@@ -1,3 +1,7 @@
+2021-06-24 Version: v1.61.1160
+- Generated 2020-01-01 for `Dts`.
+- DescribeSynchronizationJobs, DescribeSubscriptionInstances, DescribeMigrationJobs, Add InstanceCreateTime and JobCreateTime.
+
 2021-06-24 Version: v1.61.1159
 - Generated 2020-06-15 for `hitsdb`.
 - Create Lindorm Open api.

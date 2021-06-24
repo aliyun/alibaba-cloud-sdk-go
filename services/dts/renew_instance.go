@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// TransferPayType invokes the dts.TransferPayType API synchronously
-func (client *Client) TransferPayType(request *TransferPayTypeRequest) (response *TransferPayTypeResponse, err error) {
-	response = CreateTransferPayTypeResponse()
+// RenewInstance invokes the dts.RenewInstance API synchronously
+func (client *Client) RenewInstance(request *RenewInstanceRequest) (response *RenewInstanceResponse, err error) {
+	response = CreateRenewInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TransferPayTypeWithChan invokes the dts.TransferPayType API asynchronously
-func (client *Client) TransferPayTypeWithChan(request *TransferPayTypeRequest) (<-chan *TransferPayTypeResponse, <-chan error) {
-	responseChan := make(chan *TransferPayTypeResponse, 1)
+// RenewInstanceWithChan invokes the dts.RenewInstance API asynchronously
+func (client *Client) RenewInstanceWithChan(request *RenewInstanceRequest) (<-chan *RenewInstanceResponse, <-chan error) {
+	responseChan := make(chan *RenewInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.TransferPayType(request)
+		response, err := client.RenewInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) TransferPayTypeWithChan(request *TransferPayTypeRequest) (
 	return responseChan, errChan
 }
 
-// TransferPayTypeWithCallback invokes the dts.TransferPayType API asynchronously
-func (client *Client) TransferPayTypeWithCallback(request *TransferPayTypeRequest, callback func(response *TransferPayTypeResponse, err error)) <-chan int {
+// RenewInstanceWithCallback invokes the dts.RenewInstance API asynchronously
+func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, callback func(response *RenewInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TransferPayTypeResponse
+		var response *RenewInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.TransferPayType(request)
+		response, err = client.RenewInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) TransferPayTypeWithCallback(request *TransferPayTypeReques
 	return result
 }
 
-// TransferPayTypeRequest is the request struct for api TransferPayType
-type TransferPayTypeRequest struct {
+// RenewInstanceRequest is the request struct for api RenewInstance
+type RenewInstanceRequest struct {
 	*requests.RpcRequest
 	Period     string `position:"Query" name:"Period"`
 	BuyCount   string `position:"Query" name:"BuyCount"`
@@ -77,35 +77,35 @@ type TransferPayTypeRequest struct {
 	ChargeType string `position:"Query" name:"ChargeType"`
 }
 
-// TransferPayTypeResponse is the response struct for api TransferPayType
-type TransferPayTypeResponse struct {
+// RenewInstanceResponse is the response struct for api RenewInstance
+type RenewInstanceResponse struct {
 	*responses.BaseResponse
+	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
 	Code           string `json:"Code" xml:"Code"`
+	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
 	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	EndTime        string `json:"EndTime" xml:"EndTime"`
 	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
-	EndTime        string `json:"EndTime" xml:"EndTime"`
 }
 
-// CreateTransferPayTypeRequest creates a request to invoke TransferPayType API
-func CreateTransferPayTypeRequest() (request *TransferPayTypeRequest) {
-	request = &TransferPayTypeRequest{
+// CreateRenewInstanceRequest creates a request to invoke RenewInstance API
+func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
+	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "TransferPayType", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2020-01-01", "RenewInstance", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateTransferPayTypeResponse creates a response to parse from TransferPayType response
-func CreateTransferPayTypeResponse() (response *TransferPayTypeResponse) {
-	response = &TransferPayTypeResponse{
+// CreateRenewInstanceResponse creates a response to parse from RenewInstance response
+func CreateRenewInstanceResponse() (response *RenewInstanceResponse) {
+	response = &RenewInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

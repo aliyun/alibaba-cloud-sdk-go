@@ -71,6 +71,8 @@ func (client *Client) StartDtsJobWithCallback(request *StartDtsJobRequest, callb
 // StartDtsJobRequest is the request struct for api StartDtsJob
 type StartDtsJobRequest struct {
 	*requests.RpcRequest
+	ResetCheckpoint          string `position:"Query" name:"ResetCheckpoint"`
+	ResumeHoldJob            string `position:"Query" name:"ResumeHoldJob"`
 	DtsJobId                 string `position:"Query" name:"DtsJobId"`
 	DtsInstanceId            string `position:"Query" name:"DtsInstanceId"`
 	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`

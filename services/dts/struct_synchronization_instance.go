@@ -29,6 +29,8 @@ type SynchronizationInstance struct {
 	SynchronizationJobClass       string                                      `json:"SynchronizationJobClass" xml:"SynchronizationJobClass"`
 	SynchronizationJobId          string                                      `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
 	SynchronizationJobName        string                                      `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
+	JobCreateTime                 string                                      `json:"JobCreateTime" xml:"JobCreateTime"`
+	InstanceCreateTime            string                                      `json:"InstanceCreateTime" xml:"InstanceCreateTime"`
 	DataInitializationStatus      DataInitializationStatus                    `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus                   `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 	DestinationEndpoint           DestinationEndpoint                         `json:"DestinationEndpoint" xml:"DestinationEndpoint"`

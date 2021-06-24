@@ -27,6 +27,8 @@ type SubscriptionInstance struct {
 	SubscribeTopic           string                                            `json:"SubscribeTopic" xml:"SubscribeTopic"`
 	SubscriptionInstanceID   string                                            `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
 	SubscriptionInstanceName string                                            `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
+	JobCreateTime            string                                            `json:"JobCreateTime" xml:"JobCreateTime"`
+	InstanceCreateTime       string                                            `json:"InstanceCreateTime" xml:"InstanceCreateTime"`
 	SourceEndpoint           SourceEndpoint                                    `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	SubscriptionDataType     SubscriptionDataType                              `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
 	SubscriptionHost         SubscriptionHost                                  `json:"SubscriptionHost" xml:"SubscriptionHost"`

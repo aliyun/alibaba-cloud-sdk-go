@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// TransferPayType invokes the dts.TransferPayType API synchronously
-func (client *Client) TransferPayType(request *TransferPayTypeRequest) (response *TransferPayTypeResponse, err error) {
-	response = CreateTransferPayTypeResponse()
+// TransferInstanceClass invokes the dts.TransferInstanceClass API synchronously
+func (client *Client) TransferInstanceClass(request *TransferInstanceClassRequest) (response *TransferInstanceClassResponse, err error) {
+	response = CreateTransferInstanceClassResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TransferPayTypeWithChan invokes the dts.TransferPayType API asynchronously
-func (client *Client) TransferPayTypeWithChan(request *TransferPayTypeRequest) (<-chan *TransferPayTypeResponse, <-chan error) {
-	responseChan := make(chan *TransferPayTypeResponse, 1)
+// TransferInstanceClassWithChan invokes the dts.TransferInstanceClass API asynchronously
+func (client *Client) TransferInstanceClassWithChan(request *TransferInstanceClassRequest) (<-chan *TransferInstanceClassResponse, <-chan error) {
+	responseChan := make(chan *TransferInstanceClassResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.TransferPayType(request)
+		response, err := client.TransferInstanceClass(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) TransferPayTypeWithChan(request *TransferPayTypeRequest) (
 	return responseChan, errChan
 }
 
-// TransferPayTypeWithCallback invokes the dts.TransferPayType API asynchronously
-func (client *Client) TransferPayTypeWithCallback(request *TransferPayTypeRequest, callback func(response *TransferPayTypeResponse, err error)) <-chan int {
+// TransferInstanceClassWithCallback invokes the dts.TransferInstanceClass API asynchronously
+func (client *Client) TransferInstanceClassWithCallback(request *TransferInstanceClassRequest, callback func(response *TransferInstanceClassResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TransferPayTypeResponse
+		var response *TransferInstanceClassResponse
 		var err error
 		defer close(result)
-		response, err = client.TransferPayType(request)
+		response, err = client.TransferInstanceClass(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,17 +68,16 @@ func (client *Client) TransferPayTypeWithCallback(request *TransferPayTypeReques
 	return result
 }
 
-// TransferPayTypeRequest is the request struct for api TransferPayType
-type TransferPayTypeRequest struct {
+// TransferInstanceClassRequest is the request struct for api TransferInstanceClass
+type TransferInstanceClassRequest struct {
 	*requests.RpcRequest
-	Period     string `position:"Query" name:"Period"`
-	BuyCount   string `position:"Query" name:"BuyCount"`
-	DtsJobId   string `position:"Query" name:"DtsJobId"`
-	ChargeType string `position:"Query" name:"ChargeType"`
+	InstanceClass string `position:"Query" name:"InstanceClass"`
+	DtsJobId      string `position:"Query" name:"DtsJobId"`
+	OrderType     string `position:"Query" name:"OrderType"`
 }
 
-// TransferPayTypeResponse is the response struct for api TransferPayType
-type TransferPayTypeResponse struct {
+// TransferInstanceClassResponse is the response struct for api TransferInstanceClass
+type TransferInstanceClassResponse struct {
 	*responses.BaseResponse
 	Code           string `json:"Code" xml:"Code"`
 	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
@@ -93,19 +92,19 @@ type TransferPayTypeResponse struct {
 	EndTime        string `json:"EndTime" xml:"EndTime"`
 }
 
-// CreateTransferPayTypeRequest creates a request to invoke TransferPayType API
-func CreateTransferPayTypeRequest() (request *TransferPayTypeRequest) {
-	request = &TransferPayTypeRequest{
+// CreateTransferInstanceClassRequest creates a request to invoke TransferInstanceClass API
+func CreateTransferInstanceClassRequest() (request *TransferInstanceClassRequest) {
+	request = &TransferInstanceClassRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "TransferPayType", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2020-01-01", "TransferInstanceClass", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateTransferPayTypeResponse creates a response to parse from TransferPayType response
-func CreateTransferPayTypeResponse() (response *TransferPayTypeResponse) {
-	response = &TransferPayTypeResponse{
+// CreateTransferInstanceClassResponse creates a response to parse from TransferInstanceClass response
+func CreateTransferInstanceClassResponse() (response *TransferInstanceClassResponse) {
+	response = &TransferInstanceClassResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
