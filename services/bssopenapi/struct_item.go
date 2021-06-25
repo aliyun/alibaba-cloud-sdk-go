@@ -97,6 +97,7 @@ type Item struct {
 	SubscribeType             string  `json:"SubscribeType" xml:"SubscribeType"`
 	SubscribeLanguage         string  `json:"SubscribeLanguage" xml:"SubscribeLanguage"`
 	ProductType               string  `json:"ProductType" xml:"ProductType"`
+	SplitBillingDate          string  `json:"SplitBillingDate" xml:"SplitBillingDate"`
 	Currency                  string  `json:"Currency" xml:"Currency"`
 	DeductedByPrepaidCard     float64 `json:"DeductedByPrepaidCard" xml:"DeductedByPrepaidCard"`
 	BillAccountName           string  `json:"BillAccountName" xml:"BillAccountName"`
