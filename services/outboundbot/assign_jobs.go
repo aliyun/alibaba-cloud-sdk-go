@@ -71,22 +71,26 @@ func (client *Client) AssignJobsWithCallback(request *AssignJobsRequest, callbac
 // AssignJobsRequest is the request struct for api AssignJobs
 type AssignJobsRequest struct {
 	*requests.RpcRequest
-	JobsJson      *[]string `position:"Query" name:"JobsJson"  type:"Repeated"`
-	CallingNumber *[]string `position:"Query" name:"CallingNumber"  type:"Repeated"`
-	InstanceId    string    `position:"Query" name:"InstanceId"`
-	StrategyJson  string    `position:"Query" name:"StrategyJson"`
-	JobGroupId    string    `position:"Query" name:"JobGroupId"`
+	JobsJson             *[]string        `position:"Query" name:"JobsJson"  type:"Repeated"`
+	CallingNumber        *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	RosterType           string           `position:"Query" name:"RosterType"`
+	JobDataParsingTaskId string           `position:"Query" name:"JobDataParsingTaskId"`
+	StrategyJson         string           `position:"Query" name:"StrategyJson"`
+	JobGroupId           string           `position:"Query" name:"JobGroupId"`
+	IsAsynchrony         requests.Boolean `position:"Query" name:"IsAsynchrony"`
 }
 
 // AssignJobsResponse is the response struct for api AssignJobs
 type AssignJobsResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	JobGroupId     string `json:"JobGroupId" xml:"JobGroupId"`
-	Message        string `json:"Message" xml:"Message"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	JobGroupId     string   `json:"JobGroupId" xml:"JobGroupId"`
+	Message        string   `json:"Message" xml:"Message"`
+	RequestId      string   `json:"RequestId" xml:"RequestId"`
+	Success        bool     `json:"Success" xml:"Success"`
+	JobsId         []string `json:"JobsId" xml:"JobsId"`
 }
 
 // CreateAssignJobsRequest creates a request to invoke AssignJobs API

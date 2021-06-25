@@ -17,17 +17,25 @@ package outboundbot
 
 // Progress is a nested struct in outboundbot response
 type Progress struct {
+	FailErrorCode    string         `json:"FailErrorCode" xml:"FailErrorCode"`
 	TotalJobs        int            `json:"TotalJobs" xml:"TotalJobs"`
+	PausedNum        int            `json:"PausedNum" xml:"PausedNum"`
 	Scheduling       int            `json:"Scheduling" xml:"Scheduling"`
 	Cancelled        int            `json:"Cancelled" xml:"Cancelled"`
 	Executing        int            `json:"Executing" xml:"Executing"`
+	HandledJobCount  int            `json:"HandledJobCount" xml:"HandledJobCount"`
+	FailReason       string         `json:"FailReason" xml:"FailReason"`
 	TotalNotAnswered int            `json:"TotalNotAnswered" xml:"TotalNotAnswered"`
+	CancelledNum     int            `json:"CancelledNum" xml:"CancelledNum"`
 	Failed           int            `json:"Failed" xml:"Failed"`
 	StartTime        int64          `json:"StartTime" xml:"StartTime"`
+	ExecutingNum     int            `json:"ExecutingNum" xml:"ExecutingNum"`
 	Duration         int            `json:"Duration" xml:"Duration"`
-	Paused           int            `json:"Paused" xml:"Paused"`
+	FailedNum        int            `json:"FailedNum" xml:"FailedNum"`
 	Status           string         `json:"Status" xml:"Status"`
+	Paused           int            `json:"Paused" xml:"Paused"`
 	TotalCompleted   int            `json:"TotalCompleted" xml:"TotalCompleted"`
+	TotalJobCount    int            `json:"TotalJobCount" xml:"TotalJobCount"`
 	Categories       []KeyValuePair `json:"Categories" xml:"Categories"`
 	Briefs           []KeyValuePair `json:"Briefs" xml:"Briefs"`
 }

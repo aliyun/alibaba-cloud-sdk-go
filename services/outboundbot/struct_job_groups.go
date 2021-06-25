@@ -17,8 +17,8 @@ package outboundbot
 
 // JobGroups is a nested struct in outboundbot response
 type JobGroups struct {
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int        `json:"PageSize" xml:"PageSize"`
-	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
 	List       []JobGroup `json:"List" xml:"List"`
 }

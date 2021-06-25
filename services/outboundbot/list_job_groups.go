@@ -71,11 +71,14 @@ func (client *Client) ListJobGroupsWithCallback(request *ListJobGroupsRequest, c
 // ListJobGroupsRequest is the request struct for api ListJobGroups
 type ListJobGroupsRequest struct {
 	*requests.RpcRequest
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	AsyncQuery           requests.Boolean `position:"Query" name:"AsyncQuery"`
+	SearchText           string           `position:"Query" name:"SearchText"`
+	EndTime              requests.Integer `position:"Query" name:"EndTime"`
+	StartTime            requests.Integer `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	JobGroupStatusFilter string           `position:"Query" name:"JobGroupStatusFilter"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListJobGroupsResponse is the response struct for api ListJobGroups
@@ -86,6 +89,7 @@ type ListJobGroupsResponse struct {
 	Message        string    `json:"Message" xml:"Message"`
 	RequestId      string    `json:"RequestId" xml:"RequestId"`
 	Success        bool      `json:"Success" xml:"Success"`
+	AsyncTaskId    string    `json:"AsyncTaskId" xml:"AsyncTaskId"`
 	JobGroups      JobGroups `json:"JobGroups" xml:"JobGroups"`
 }
 

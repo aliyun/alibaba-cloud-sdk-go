@@ -17,14 +17,19 @@ package outboundbot
 
 // Instance is a nested struct in outboundbot response
 type Instance struct {
-	NluServiceType            string     `json:"NluServiceType" xml:"NluServiceType"`
-	InstanceId                string     `json:"InstanceId" xml:"InstanceId"`
-	InstanceName              string     `json:"InstanceName" xml:"InstanceName"`
-	CallCenterInstanceId      string     `json:"CallCenterInstanceId" xml:"CallCenterInstanceId"`
-	CreationTime              int64      `json:"CreationTime" xml:"CreationTime"`
-	Owner                     string     `json:"Owner" xml:"Owner"`
-	MaxConcurrentConversation int        `json:"MaxConcurrentConversation" xml:"MaxConcurrentConversation"`
-	InstanceDescription       string     `json:"InstanceDescription" xml:"InstanceDescription"`
-	IsTemplateContainer       bool       `json:"IsTemplateContainer" xml:"IsTemplateContainer"`
-	NluProfile                NluProfile `json:"NluProfile" xml:"NluProfile"`
+	CreatorName               string        `json:"CreatorName" xml:"CreatorName"`
+	OwnerName                 string        `json:"OwnerName" xml:"OwnerName"`
+	InstanceName              string        `json:"InstanceName" xml:"InstanceName"`
+	CallCenterInstanceId      string        `json:"CallCenterInstanceId" xml:"CallCenterInstanceId"`
+	CreationTime              int64         `json:"CreationTime" xml:"CreationTime"`
+	Owner                     string        `json:"Owner" xml:"Owner"`
+	InstanceDescription       string        `json:"InstanceDescription" xml:"InstanceDescription"`
+	IsTemplateContainer       bool          `json:"IsTemplateContainer" xml:"IsTemplateContainer"`
+	ResourceGroupId           string        `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	NluServiceType            string        `json:"NluServiceType" xml:"NluServiceType"`
+	InstanceId                string        `json:"InstanceId" xml:"InstanceId"`
+	MaxConcurrentConversation int           `json:"MaxConcurrentConversation" xml:"MaxConcurrentConversation"`
+	CreatorId                 int64         `json:"CreatorId" xml:"CreatorId"`
+	NluProfile                NluProfile    `json:"NluProfile" xml:"NluProfile"`
+	ResourceTags              []ResourceTag `json:"ResourceTags" xml:"ResourceTags"`
 }

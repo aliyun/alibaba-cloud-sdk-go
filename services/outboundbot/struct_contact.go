@@ -17,12 +17,17 @@ package outboundbot
 
 // Contact is a nested struct in outboundbot response
 type Contact struct {
-	ContactName string `json:"ContactName" xml:"ContactName"`
-	JobId       string `json:"JobId" xml:"JobId"`
-	PhoneNumber string `json:"PhoneNumber" xml:"PhoneNumber"`
-	State       string `json:"State" xml:"State"`
-	Role        string `json:"Role" xml:"Role"`
-	ContactId   string `json:"ContactId" xml:"ContactId"`
-	Honorific   string `json:"Honorific" xml:"Honorific"`
-	ReferenceId string `json:"ReferenceId" xml:"ReferenceId"`
+	Name                 string `json:"Name" xml:"Name"`
+	JobId                string `json:"JobId" xml:"JobId"`
+	PhoneNumber          string `json:"PhoneNumber" xml:"PhoneNumber"`
+	ContactId            string `json:"ContactId" xml:"ContactId"`
+	ReferenceId          string `json:"ReferenceId" xml:"ReferenceId"`
+	PreferredPhoneNumber string `json:"PreferredPhoneNumber" xml:"PreferredPhoneNumber"`
+	JobUuid              string `json:"JobUuid" xml:"JobUuid"`
+	ContactName          string `json:"ContactName" xml:"ContactName"`
+	Round                int    `json:"Round" xml:"Round"`
+	State                string `json:"State" xml:"State"`
+	Role                 string `json:"Role" xml:"Role"`
+	Honorific            string `json:"Honorific" xml:"Honorific"`
+	Id                   string `json:"Id" xml:"Id"`
 }

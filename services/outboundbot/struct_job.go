@@ -17,18 +17,28 @@ package outboundbot
 
 // Job is a nested struct in outboundbot response
 type Job struct {
-	JobId          string         `json:"JobId" xml:"JobId"`
-	JobGroupId     string         `json:"JobGroupId" xml:"JobGroupId"`
-	Priority       int            `json:"Priority" xml:"Priority"`
-	ReferenceId    string         `json:"ReferenceId" xml:"ReferenceId"`
-	StrategyId     string         `json:"StrategyId" xml:"StrategyId"`
-	ScenarioId     string         `json:"ScenarioId" xml:"ScenarioId"`
-	SystemPriority int            `json:"SystemPriority" xml:"SystemPriority"`
-	FailureReason  string         `json:"FailureReason" xml:"FailureReason"`
-	Status         string         `json:"Status" xml:"Status"`
-	CallingNumbers []string       `json:"CallingNumbers" xml:"CallingNumbers"`
-	Tasks          []Task         `json:"Tasks" xml:"Tasks"`
-	Extras         []KeyValuePair `json:"Extras" xml:"Extras"`
-	Summary        []SummaryItem  `json:"Summary" xml:"Summary"`
-	Contacts       []Contact      `json:"Contacts" xml:"Contacts"`
+	JobGroupId        string         `json:"JobGroupId" xml:"JobGroupId"`
+	JobFailureReason  string         `json:"JobFailureReason" xml:"JobFailureReason"`
+	StrategyId        string         `json:"StrategyId" xml:"StrategyId"`
+	EndReason         int            `json:"EndReason" xml:"EndReason"`
+	DsReport          string         `json:"DsReport" xml:"DsReport"`
+	SystemPriority    int            `json:"SystemPriority" xml:"SystemPriority"`
+	InstanceId        string         `json:"InstanceId" xml:"InstanceId"`
+	FailureReason     string         `json:"FailureReason" xml:"FailureReason"`
+	Id                string         `json:"Id" xml:"Id"`
+	JobId             string         `json:"JobId" xml:"JobId"`
+	Priority          int            `json:"Priority" xml:"Priority"`
+	ReferenceId       string         `json:"ReferenceId" xml:"ReferenceId"`
+	ScenarioId        string         `json:"ScenarioId" xml:"ScenarioId"`
+	CalledNumber      string         `json:"CalledNumber" xml:"CalledNumber"`
+	NextExecutionTime int64          `json:"NextExecutionTime" xml:"NextExecutionTime"`
+	StatusName        string         `json:"StatusName" xml:"StatusName"`
+	ActualTime        int64          `json:"ActualTime" xml:"ActualTime"`
+	Status            string         `json:"Status" xml:"Status"`
+	CallingNumbers    []string       `json:"CallingNumbers" xml:"CallingNumbers"`
+	LatestTask        LatestTask     `json:"LatestTask" xml:"LatestTask"`
+	Extras            []KeyValuePair `json:"Extras" xml:"Extras"`
+	Summary           []SummaryItem  `json:"Summary" xml:"Summary"`
+	Tasks             []Task         `json:"Tasks" xml:"Tasks"`
+	Contacts          []Contact      `json:"Contacts" xml:"Contacts"`
 }

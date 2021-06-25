@@ -17,6 +17,8 @@ package outboundbot
 
 // TimeFrame is a nested struct in outboundbot response
 type TimeFrame struct {
-	EndTime   string `json:"EndTime" xml:"EndTime"`
-	BeginTime string `json:"BeginTime" xml:"BeginTime"`
+	EndTime         string `json:"EndTime" xml:"EndTime"`
+	BeginTimeMillis int64  `json:"BeginTimeMillis" xml:"BeginTimeMillis"`
+	EndTimeMillis   int64  `json:"EndTimeMillis" xml:"EndTimeMillis"`
+	BeginTime       string `json:"BeginTime" xml:"BeginTime"`
 }

@@ -17,7 +17,9 @@ package outboundbot
 
 // Jobs is a nested struct in outboundbot response
 type Jobs struct {
+	RowCount   int   `json:"RowCount" xml:"RowCount"`
 	TotalCount int   `json:"TotalCount" xml:"TotalCount"`
+	PageCount  int   `json:"PageCount" xml:"PageCount"`
 	PageNumber int   `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int   `json:"PageSize" xml:"PageSize"`
 	List       []Job `json:"List" xml:"List"`

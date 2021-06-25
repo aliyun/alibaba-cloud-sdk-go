@@ -71,6 +71,14 @@ func (client *Client) ListInstancesWithCallback(request *ListInstancesRequest, c
 // ListInstancesRequest is the request struct for api ListInstances
 type ListInstancesRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string              `position:"Query" name:"ResourceGroupId"`
+	Tag             *[]ListInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// ListInstancesTag is a repeated param struct in ListInstancesRequest
+type ListInstancesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListInstancesResponse is the response struct for api ListInstances

@@ -73,6 +73,7 @@ type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	MaxConcurrentConversation requests.Integer `position:"Query" name:"MaxConcurrentConversation"`
 	SecretKey                 string           `position:"Query" name:"SecretKey"`
+	ResourceGroupId           string           `position:"Query" name:"ResourceGroupId"`
 	Endpoint                  string           `position:"Query" name:"Endpoint"`
 	InstanceName              string           `position:"Query" name:"InstanceName"`
 	CallCenterInstanceId      string           `position:"Query" name:"CallCenterInstanceId"`

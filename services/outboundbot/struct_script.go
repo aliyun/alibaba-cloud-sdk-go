@@ -26,9 +26,12 @@ type Script struct {
 	DebugStatus       string `json:"DebugStatus" xml:"DebugStatus"`
 	ScriptId          string `json:"ScriptId" xml:"ScriptId"`
 	Scene             string `json:"Scene" xml:"Scene"`
+	ChatbotId         string `json:"ChatbotId" xml:"ChatbotId"`
+	TtsConfig         string `json:"TtsConfig" xml:"TtsConfig"`
 	Status            string `json:"Status" xml:"Status"`
 	IsDebugDrafted    bool   `json:"IsDebugDrafted" xml:"IsDebugDrafted"`
 	ScriptDescription string `json:"ScriptDescription" xml:"ScriptDescription"`
+	AsrConfig         string `json:"AsrConfig" xml:"AsrConfig"`
 	AppliedVersion    string `json:"AppliedVersion" xml:"AppliedVersion"`
 	DebugVersion      string `json:"DebugVersion" xml:"DebugVersion"`
 }
