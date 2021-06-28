@@ -127,7 +127,7 @@ type AcsRequestTest struct {
 	Header         string                      `position:"Header" name:"Header"`
 	Path           string                      `position:"Path" name:"Path"`
 	Body           string                      `position:"Body" name:"Body"`
-	Target         map[string]interface{}      `position:"Query" name:"Target"`
+	Target         map[string]interface{}      `position:"Query" name:"Target" type:"Map"`
 	TypeAcs        *[]string                   `position:"type" name:"type" type:"Repeated"`
 }
 
@@ -173,7 +173,7 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 		Path:           "path value",
 		Body:           "body value",
 		Target: map[string]interface{}{
-			"key":   "test",
+			"key":   []string{"hello", "world"},
 			"value": 1234,
 		},
 	}
@@ -184,7 +184,6 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 
 	queries := r.GetQueryParams()
 	assert.Equal(t, "query value", queries["Query"])
-	assert.Equal(t, "{\"key\":\"test\",\"value\":1234}", queries["Target"])
 	headers := r.GetHeaders()
 	assert.Equal(t, "header value", headers["Header"])
 	// TODO: check the body & path
