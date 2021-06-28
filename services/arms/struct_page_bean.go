@@ -21,10 +21,10 @@ type PageBean struct {
 	TotalCount     int               `json:"TotalCount" xml:"TotalCount"`
 	PageNumber     int               `json:"PageNumber" xml:"PageNumber"`
 	PageSize       int               `json:"PageSize" xml:"PageSize"`
-	RetcodeApps    []RetcodeApp      `json:"RetcodeApps" xml:"RetcodeApps"`
 	Event          []EventItem       `json:"Event" xml:"Event"`
 	TraceApps      []TraceApp        `json:"TraceApps" xml:"TraceApps"`
 	AlertRules     []AlertRuleEntity `json:"AlertRules" xml:"AlertRules"`
+	RetcodeApps    []RetcodeApp      `json:"RetcodeApps" xml:"RetcodeApps"`
 	AlarmHistories []AlarmHistory    `json:"AlarmHistories" xml:"AlarmHistories"`
 	Contacts       []Contact         `json:"Contacts" xml:"Contacts"`
 	TraceInfos     []TraceInfo       `json:"TraceInfos" xml:"TraceInfos"`

@@ -33,6 +33,7 @@ type AlertRuleEntity struct {
 	UserId             string       `json:"UserId" xml:"UserId"`
 	Title              string       `json:"Title" xml:"Title"`
 	ContactGroupIds    string       `json:"ContactGroupIds" xml:"ContactGroupIds"`
+	HostByAlertManager bool         `json:"HostByAlertManager" xml:"HostByAlertManager"`
 	AlertWays          []string     `json:"AlertWays" xml:"AlertWays"`
 	AlertWay           []string     `json:"AlertWay" xml:"AlertWay"`
 	AlarmContext       AlarmContext `json:"AlarmContext" xml:"AlarmContext"`

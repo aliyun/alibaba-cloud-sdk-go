@@ -19,7 +19,9 @@ package arms
 type DispatchRule struct {
 	Name                     string                   `json:"Name" xml:"Name"`
 	State                    string                   `json:"State" xml:"State"`
+	DispatchType             string                   `json:"DispatchType" xml:"DispatchType"`
 	RuleId                   int64                    `json:"RuleId" xml:"RuleId"`
+	IsRecover                bool                     `json:"IsRecover" xml:"IsRecover"`
 	LabelMatchExpressionGrid LabelMatchExpressionGrid `json:"LabelMatchExpressionGrid" xml:"LabelMatchExpressionGrid"`
 	GroupRules               []GroupRule              `json:"GroupRules" xml:"GroupRules"`
 	NotifyRules              []NotifyRule             `json:"NotifyRules" xml:"NotifyRules"`

@@ -20,5 +20,6 @@ type GroupRule struct {
 	GroupId        int64    `json:"GroupId" xml:"GroupId"`
 	GroupWaitTime  int64    `json:"GroupWaitTime" xml:"GroupWaitTime"`
 	GroupInterval  int64    `json:"GroupInterval" xml:"GroupInterval"`
+	RepeatInterval int64    `json:"RepeatInterval" xml:"RepeatInterval"`
 	GroupingFields []string `json:"GroupingFields" xml:"GroupingFields"`
 }
