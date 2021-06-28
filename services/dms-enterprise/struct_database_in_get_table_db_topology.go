@@ -19,7 +19,7 @@ package dms_enterprise
 type DatabaseInGetTableDBTopology struct {
 	DbId      string  `json:"DbId" xml:"DbId"`
 	DbName    string  `json:"DbName" xml:"DbName"`
-	EnvType   string  `json:"EnvType" xml:"EnvType"`
 	DbType    string  `json:"DbType" xml:"DbType"`
+	EnvType   string  `json:"EnvType" xml:"EnvType"`
 	TableList []Table `json:"TableList" xml:"TableList"`
 }

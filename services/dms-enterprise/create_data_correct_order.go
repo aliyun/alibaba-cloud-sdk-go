@@ -71,20 +71,39 @@ func (client *Client) CreateDataCorrectOrderWithCallback(request *CreateDataCorr
 // CreateDataCorrectOrderRequest is the request struct for api CreateDataCorrectOrder
 type CreateDataCorrectOrderRequest struct {
 	*requests.RpcRequest
-	Tid             requests.Integer `position:"Query" name:"Tid"`
-	AttachmentKey   string           `position:"Query" name:"AttachmentKey"`
-	Param           string           `position:"Query" name:"Param"`
-	Comment         string           `position:"Query" name:"Comment"`
-	RelatedUserList string           `position:"Query" name:"RelatedUserList"`
+	Tid             requests.Integer            `position:"Query" name:"Tid"`
+	AttachmentKey   string                      `position:"Query" name:"AttachmentKey"`
+	Param           CreateDataCorrectOrderParam `position:"Query" name:"Param"  type:"Struct"`
+	Comment         string                      `position:"Query" name:"Comment"`
+	RelatedUserList *[]string                   `position:"Query" name:"RelatedUserList"  type:"Repeated"`
+}
+
+// CreateDataCorrectOrderParam is a repeated param struct in CreateDataCorrectOrderRequest
+type CreateDataCorrectOrderParam struct {
+	SqlType                string                                       `name:"SqlType"`
+	Classify               string                                       `name:"Classify"`
+	RollbackSQL            string                                       `name:"RollbackSQL"`
+	RollbackSqlType        string                                       `name:"RollbackSqlType"`
+	DbItemList             *[]CreateDataCorrectOrderParamDbItemListItem `name:"DbItemList" type:"Repeated"`
+	ExecSQL                string                                       `name:"ExecSQL"`
+	EstimateAffectRows     string                                       `name:"EstimateAffectRows"`
+	RollbackAttachmentName string                                       `name:"RollbackAttachmentName"`
+	AttachmentName         string                                       `name:"AttachmentName"`
+}
+
+// CreateDataCorrectOrderParamDbItemListItem is a repeated param struct in CreateDataCorrectOrderRequest
+type CreateDataCorrectOrderParamDbItemListItem struct {
+	DbId  string `name:"DbId"`
+	Logic string `name:"Logic"`
 }
 
 // CreateDataCorrectOrderResponse is the response struct for api CreateDataCorrectOrder
 type CreateDataCorrectOrderResponse struct {
 	*responses.BaseResponse
 	RequestId         string  `json:"RequestId" xml:"RequestId"`
-	ErrorCode         string  `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success           bool    `json:"Success" xml:"Success"`
+	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode         string  `json:"ErrorCode" xml:"ErrorCode"`
 	CreateOrderResult []int64 `json:"CreateOrderResult" xml:"CreateOrderResult"`
 }
 

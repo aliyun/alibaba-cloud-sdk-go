@@ -17,10 +17,10 @@ package dms_enterprise
 
 // SensitiveColumn is a nested struct in dms_enterprise response
 type SensitiveColumn struct {
-	TableName     string `json:"TableName" xml:"TableName"`
 	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
-	ColumnCount   int64  `json:"ColumnCount" xml:"ColumnCount"`
-	FunctionType  string `json:"FunctionType" xml:"FunctionType"`
+	TableName     string `json:"TableName" xml:"TableName"`
 	SecurityLevel string `json:"SecurityLevel" xml:"SecurityLevel"`
+	ColumnCount   int64  `json:"ColumnCount" xml:"ColumnCount"`
 	SchemaName    string `json:"SchemaName" xml:"SchemaName"`
+	FunctionType  string `json:"FunctionType" xml:"FunctionType"`
 }

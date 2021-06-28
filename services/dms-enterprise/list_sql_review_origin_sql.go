@@ -71,10 +71,24 @@ func (client *Client) ListSQLReviewOriginSQLWithCallback(request *ListSQLReviewO
 // ListSQLReviewOriginSQLRequest is the request struct for api ListSQLReviewOriginSQL
 type ListSQLReviewOriginSQLRequest struct {
 	*requests.RpcRequest
-	OrderId           requests.Integer `position:"Query" name:"OrderId"`
-	OrderActionDetail string           `position:"Query" name:"OrderActionDetail"`
-	Tid               requests.Integer `position:"Query" name:"Tid"`
-	OrderActionName   string           `position:"Query" name:"OrderActionName"`
+	OrderId           requests.Integer                        `position:"Query" name:"OrderId"`
+	OrderActionDetail ListSQLReviewOriginSQLOrderActionDetail `position:"Query" name:"OrderActionDetail"  type:"Struct"`
+	Tid               requests.Integer                        `position:"Query" name:"Tid"`
+	OrderActionName   string                                  `position:"Query" name:"OrderActionName"`
+}
+
+// ListSQLReviewOriginSQLOrderActionDetail is a repeated param struct in ListSQLReviewOriginSQLRequest
+type ListSQLReviewOriginSQLOrderActionDetail struct {
+	CheckStatusResult string                                      `name:"CheckStatusResult"`
+	SQLReviewResult   string                                      `name:"SQLReviewResult"`
+	Page              ListSQLReviewOriginSQLOrderActionDetailPage `name:"Page" type:"Struct"`
+	FileId            string                                      `name:"FileId"`
+}
+
+// ListSQLReviewOriginSQLOrderActionDetailPage is a repeated param struct in ListSQLReviewOriginSQLRequest
+type ListSQLReviewOriginSQLOrderActionDetailPage struct {
+	PageSize   string `name:"PageSize"`
+	PageNumber string `name:"PageNumber"`
 }
 
 // ListSQLReviewOriginSQLResponse is the response struct for api ListSQLReviewOriginSQL

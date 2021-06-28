@@ -17,14 +17,14 @@ package dms_enterprise
 
 // DDLPublishRecord is a nested struct in dms_enterprise response
 type DDLPublishRecord struct {
-	StatusDesc          string            `json:"StatusDesc" xml:"StatusDesc"`
 	AuditStatus         string            `json:"AuditStatus" xml:"AuditStatus"`
+	AuditExpireTime     string            `json:"AuditExpireTime" xml:"AuditExpireTime"`
 	CreatorId           int64             `json:"CreatorId" xml:"CreatorId"`
 	Finality            bool              `json:"Finality" xml:"Finality"`
-	AuditExpireTime     string            `json:"AuditExpireTime" xml:"AuditExpireTime"`
-	WorkflowInstanceId  int64             `json:"WorkflowInstanceId" xml:"WorkflowInstanceId"`
-	RiskLevel           string            `json:"RiskLevel" xml:"RiskLevel"`
 	FinalityReason      string            `json:"FinalityReason" xml:"FinalityReason"`
 	PublishStatus       string            `json:"PublishStatus" xml:"PublishStatus"`
+	RiskLevel           string            `json:"RiskLevel" xml:"RiskLevel"`
+	StatusDesc          string            `json:"StatusDesc" xml:"StatusDesc"`
+	WorkflowInstanceId  int64             `json:"WorkflowInstanceId" xml:"WorkflowInstanceId"`
 	PublishTaskInfoList []PublishTaskInfo `json:"PublishTaskInfoList" xml:"PublishTaskInfoList"`
 }

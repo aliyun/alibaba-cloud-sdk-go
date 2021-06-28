@@ -19,8 +19,8 @@ package dms_enterprise
 type OrderDetail struct {
 	Logic                  bool   `json:"Logic" xml:"Logic"`
 	ActualAffectRows       int64  `json:"ActualAffectRows" xml:"ActualAffectRows"`
-	EstimateAffectRows     int64  `json:"EstimateAffectRows" xml:"EstimateAffectRows"`
 	RbSQL                  string `json:"RbSQL" xml:"RbSQL"`
+	EstimateAffectRows     int64  `json:"EstimateAffectRows" xml:"EstimateAffectRows"`
 	Classify               string `json:"Classify" xml:"Classify"`
 	ExeSQL                 string `json:"ExeSQL" xml:"ExeSQL"`
 	SqlType                string `json:"SqlType" xml:"SqlType"`

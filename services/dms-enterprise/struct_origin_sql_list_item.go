@@ -17,11 +17,14 @@ package dms_enterprise
 
 // OriginSQLListItem is a nested struct in dms_enterprise response
 type OriginSQLListItem struct {
-	SQLId       int64  `json:"SQLId" xml:"SQLId"`
-	FileId      int64  `json:"FileId" xml:"FileId"`
-	FileName    string `json:"FileName" xml:"FileName"`
-	SQLContent  string `json:"SQLContent" xml:"SQLContent"`
-	CheckStatus string `json:"CheckStatus" xml:"CheckStatus"`
-	StatusDesc  string `json:"StatusDesc" xml:"StatusDesc"`
-	CheckedTime string `json:"CheckedTime" xml:"CheckedTime"`
+	SQLId             int64  `json:"SQLId" xml:"SQLId"`
+	FileId            int64  `json:"FileId" xml:"FileId"`
+	FileName          string `json:"FileName" xml:"FileName"`
+	SQLContent        string `json:"SQLContent" xml:"SQLContent"`
+	CheckStatus       string `json:"CheckStatus" xml:"CheckStatus"`
+	StatusDesc        string `json:"StatusDesc" xml:"StatusDesc"`
+	CheckedTime       string `json:"CheckedTime" xml:"CheckedTime"`
+	SqlHash           string `json:"SqlHash" xml:"SqlHash"`
+	ReviewSummary     string `json:"ReviewSummary" xml:"ReviewSummary"`
+	SQLReviewQueryKey string `json:"SQLReviewQueryKey" xml:"SQLReviewQueryKey"`
 }

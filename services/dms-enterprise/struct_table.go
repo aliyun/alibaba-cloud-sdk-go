@@ -20,8 +20,8 @@ type Table struct {
 	StoreCapacity   int64    `json:"StoreCapacity" xml:"StoreCapacity"`
 	Engine          string   `json:"Engine" xml:"Engine"`
 	NumRows         int64    `json:"NumRows" xml:"NumRows"`
-	TableId         string   `json:"TableId" xml:"TableId"`
 	TableName       string   `json:"TableName" xml:"TableName"`
+	TableId         string   `json:"TableId" xml:"TableId"`
 	TableType       string   `json:"TableType" xml:"TableType"`
 	TableSchemaName string   `json:"TableSchemaName" xml:"TableSchemaName"`
 	DatabaseId      string   `json:"DatabaseId" xml:"DatabaseId"`

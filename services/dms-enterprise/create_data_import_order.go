@@ -71,20 +71,43 @@ func (client *Client) CreateDataImportOrderWithCallback(request *CreateDataImpor
 // CreateDataImportOrderRequest is the request struct for api CreateDataImportOrder
 type CreateDataImportOrderRequest struct {
 	*requests.RpcRequest
-	Tid             requests.Integer `position:"Query" name:"Tid"`
-	AttachmentKey   string           `position:"Query" name:"AttachmentKey"`
-	Param           string           `position:"Query" name:"Param"`
-	Comment         string           `position:"Query" name:"Comment"`
-	RelatedUserList string           `position:"Query" name:"RelatedUserList"`
+	Tid             requests.Integer           `position:"Query" name:"Tid"`
+	AttachmentKey   string                     `position:"Query" name:"AttachmentKey"`
+	Param           CreateDataImportOrderParam `position:"Query" name:"Param"  type:"Struct"`
+	Comment         string                     `position:"Query" name:"Comment"`
+	RelatedUserList *[]string                  `position:"Query" name:"RelatedUserList"  type:"Repeated"`
+}
+
+// CreateDataImportOrderParam is a repeated param struct in CreateDataImportOrderRequest
+type CreateDataImportOrderParam struct {
+	FileEncoding           string                                      `name:"FileEncoding"`
+	Classify               string                                      `name:"Classify"`
+	FileType               string                                      `name:"FileType"`
+	CsvFirstRowIsColumnDef string                                      `name:"CsvFirstRowIsColumnDef"`
+	RollbackAttachmentName string                                      `name:"RollbackAttachmentName"`
+	AttachmentName         string                                      `name:"AttachmentName"`
+	ImportMode             string                                      `name:"ImportMode"`
+	RollbackSQL            string                                      `name:"RollbackSQL"`
+	RollbackSqlType        string                                      `name:"RollbackSqlType"`
+	DbItemList             *[]CreateDataImportOrderParamDbItemListItem `name:"DbItemList" type:"Repeated"`
+	InsertType             string                                      `name:"InsertType"`
+	TableName              string                                      `name:"TableName"`
+	IgnoreError            string                                      `name:"IgnoreError"`
+}
+
+// CreateDataImportOrderParamDbItemListItem is a repeated param struct in CreateDataImportOrderRequest
+type CreateDataImportOrderParamDbItemListItem struct {
+	DbId  string `name:"DbId"`
+	Logic string `name:"Logic"`
 }
 
 // CreateDataImportOrderResponse is the response struct for api CreateDataImportOrder
 type CreateDataImportOrderResponse struct {
 	*responses.BaseResponse
 	RequestId         string  `json:"RequestId" xml:"RequestId"`
-	ErrorCode         string  `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success           bool    `json:"Success" xml:"Success"`
+	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode         string  `json:"ErrorCode" xml:"ErrorCode"`
 	CreateOrderResult []int64 `json:"CreateOrderResult" xml:"CreateOrderResult"`
 }
 

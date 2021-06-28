@@ -71,20 +71,45 @@ func (client *Client) CreateDataCronClearOrderWithCallback(request *CreateDataCr
 // CreateDataCronClearOrderRequest is the request struct for api CreateDataCronClearOrder
 type CreateDataCronClearOrderRequest struct {
 	*requests.RpcRequest
-	Tid             requests.Integer `position:"Query" name:"Tid"`
-	AttachmentKey   string           `position:"Query" name:"AttachmentKey"`
-	Param           string           `position:"Query" name:"Param"`
-	Comment         string           `position:"Query" name:"Comment"`
-	RelatedUserList string           `position:"Query" name:"RelatedUserList"`
+	Tid             requests.Integer              `position:"Query" name:"Tid"`
+	AttachmentKey   string                        `position:"Query" name:"AttachmentKey"`
+	Param           CreateDataCronClearOrderParam `position:"Query" name:"Param"  type:"Struct"`
+	Comment         string                        `position:"Query" name:"Comment"`
+	RelatedUserList *[]string                     `position:"Query" name:"RelatedUserList"  type:"Repeated"`
+}
+
+// CreateDataCronClearOrderParam is a repeated param struct in CreateDataCronClearOrderRequest
+type CreateDataCronClearOrderParam struct {
+	Classify          string                                                `name:"Classify"`
+	DbItemList        *[]CreateDataCronClearOrderParamDbItemListItem        `name:"DbItemList" type:"Repeated"`
+	CronClearItemList *[]CreateDataCronClearOrderParamCronClearItemListItem `name:"CronClearItemList" type:"Repeated"`
+	DurationHour      string                                                `name:"DurationHour"`
+	CronFormat        string                                                `name:"CronFormat"`
+	SpecifyDuration   string                                                `name:"specifyDuration"`
+}
+
+// CreateDataCronClearOrderParamDbItemListItem is a repeated param struct in CreateDataCronClearOrderRequest
+type CreateDataCronClearOrderParamDbItemListItem struct {
+	DbId  string `name:"DbId"`
+	Logic string `name:"Logic"`
+}
+
+// CreateDataCronClearOrderParamCronClearItemListItem is a repeated param struct in CreateDataCronClearOrderRequest
+type CreateDataCronClearOrderParamCronClearItemListItem struct {
+	FilterSQL  string `name:"FilterSQL"`
+	RemainDays string `name:"RemainDays"`
+	TableName  string `name:"TableName"`
+	ColumnName string `name:"ColumnName"`
+	TimeUnit   string `name:"TimeUnit"`
 }
 
 // CreateDataCronClearOrderResponse is the response struct for api CreateDataCronClearOrder
 type CreateDataCronClearOrderResponse struct {
 	*responses.BaseResponse
 	RequestId         string  `json:"RequestId" xml:"RequestId"`
-	ErrorCode         string  `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success           bool    `json:"Success" xml:"Success"`
+	ErrorMessage      string  `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode         string  `json:"ErrorCode" xml:"ErrorCode"`
 	CreateOrderResult []int64 `json:"CreateOrderResult" xml:"CreateOrderResult"`
 }
 

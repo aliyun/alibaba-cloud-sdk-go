@@ -81,11 +81,11 @@ type CreateUploadFileJobRequest struct {
 // CreateUploadFileJobResponse is the response struct for api CreateUploadFileJob
 type CreateUploadFileJobResponse struct {
 	*responses.BaseResponse
-	JobKey       string `json:"JobKey" xml:"JobKey"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success      bool   `json:"Success" xml:"Success"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	JobKey       string `json:"JobKey" xml:"JobKey"`
 }
 
 // CreateCreateUploadFileJobRequest creates a request to invoke CreateUploadFileJob API

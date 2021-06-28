@@ -17,17 +17,17 @@ package dms_enterprise
 
 // UserInListUsers is a nested struct in dms_enterprise response
 type UserInListUsers struct {
-	UserId          string                  `json:"UserId" xml:"UserId"`
-	Uid             string                  `json:"Uid" xml:"Uid"`
-	NickName        string                  `json:"NickName" xml:"NickName"`
-	Mobile          string                  `json:"Mobile" xml:"Mobile"`
-	ParentUid       string                  `json:"ParentUid" xml:"ParentUid"`
 	State           string                  `json:"State" xml:"State"`
-	LastLoginTime   string                  `json:"LastLoginTime" xml:"LastLoginTime"`
-	CurExecuteCount int64                   `json:"CurExecuteCount" xml:"CurExecuteCount"`
 	CurResultCount  int64                   `json:"CurResultCount" xml:"CurResultCount"`
-	MaxExecuteCount int64                   `json:"MaxExecuteCount" xml:"MaxExecuteCount"`
+	UserId          string                  `json:"UserId" xml:"UserId"`
+	LastLoginTime   string                  `json:"LastLoginTime" xml:"LastLoginTime"`
 	MaxResultCount  int64                   `json:"MaxResultCount" xml:"MaxResultCount"`
+	ParentUid       string                  `json:"ParentUid" xml:"ParentUid"`
+	NickName        string                  `json:"NickName" xml:"NickName"`
+	MaxExecuteCount int64                   `json:"MaxExecuteCount" xml:"MaxExecuteCount"`
+	CurExecuteCount int64                   `json:"CurExecuteCount" xml:"CurExecuteCount"`
+	Mobile          string                  `json:"Mobile" xml:"Mobile"`
+	Uid             string                  `json:"Uid" xml:"Uid"`
 	RoleIdList      RoleIdListInListUsers   `json:"RoleIdList" xml:"RoleIdList"`
 	RoleNameList    RoleNameListInListUsers `json:"RoleNameList" xml:"RoleNameList"`
 }

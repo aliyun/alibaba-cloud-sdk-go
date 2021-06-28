@@ -17,6 +17,6 @@ package dms_enterprise
 
 // ColumnInfo is a nested struct in dms_enterprise response
 type ColumnInfo struct {
-	ColumnName string `json:"ColumnName" xml:"ColumnName"`
 	TableName  string `json:"TableName" xml:"TableName"`
+	ColumnName string `json:"ColumnName" xml:"ColumnName"`
 }

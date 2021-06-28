@@ -82,11 +82,11 @@ type ListUsersRequest struct {
 // ListUsersResponse is the response struct for api ListUsers
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	Success      bool     `json:"Success" xml:"Success"`
-	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
 	TotalCount   int64    `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool     `json:"Success" xml:"Success"`
 	UserList     UserList `json:"UserList" xml:"UserList"`
 }
 

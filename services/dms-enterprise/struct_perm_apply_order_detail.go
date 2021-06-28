@@ -17,8 +17,8 @@ package dms_enterprise
 
 // PermApplyOrderDetail is a nested struct in dms_enterprise response
 type PermApplyOrderDetail struct {
-	ApplyType string     `json:"ApplyType" xml:"ApplyType"`
 	PermType  int64      `json:"PermType" xml:"PermType"`
 	Seconds   int64      `json:"Seconds" xml:"Seconds"`
+	ApplyType string     `json:"ApplyType" xml:"ApplyType"`
 	Resources []Resource `json:"Resources" xml:"Resources"`
 }

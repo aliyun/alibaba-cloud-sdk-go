@@ -79,9 +79,9 @@ type GetDBTopologyRequest struct {
 type GetDBTopologyResponse struct {
 	*responses.BaseResponse
 	RequestId    string     `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string     `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string     `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success      bool       `json:"Success" xml:"Success"`
+	ErrorMessage string     `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string     `json:"ErrorCode" xml:"ErrorCode"`
 	DBTopology   DBTopology `json:"DBTopology" xml:"DBTopology"`
 }
 

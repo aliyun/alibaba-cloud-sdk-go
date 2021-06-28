@@ -17,6 +17,6 @@ package dms_enterprise
 
 // StructSyncJobAnalyzeResult is a nested struct in dms_enterprise response
 type StructSyncJobAnalyzeResult struct {
-	ResultList  []Result  `json:"ResultList" xml:"ResultList"`
 	SummaryList []Summary `json:"SummaryList" xml:"SummaryList"`
+	ResultList  []Result  `json:"ResultList" xml:"ResultList"`
 }

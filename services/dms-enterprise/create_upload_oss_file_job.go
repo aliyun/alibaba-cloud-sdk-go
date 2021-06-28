@@ -71,21 +71,28 @@ func (client *Client) CreateUploadOSSFileJobWithCallback(request *CreateUploadOS
 // CreateUploadOSSFileJobRequest is the request struct for api CreateUploadOSSFileJob
 type CreateUploadOSSFileJobRequest struct {
 	*requests.RpcRequest
-	UploadType   string           `position:"Query" name:"UploadType"`
-	FileSource   string           `position:"Query" name:"FileSource"`
-	Tid          requests.Integer `position:"Query" name:"Tid"`
-	FileName     string           `position:"Query" name:"FileName"`
-	UploadTarget string           `position:"Query" name:"UploadTarget"`
+	UploadType   string                             `position:"Query" name:"UploadType"`
+	FileSource   string                             `position:"Query" name:"FileSource"`
+	Tid          requests.Integer                   `position:"Query" name:"Tid"`
+	FileName     string                             `position:"Query" name:"FileName"`
+	UploadTarget CreateUploadOSSFileJobUploadTarget `position:"Query" name:"UploadTarget"  type:"Struct"`
+}
+
+// CreateUploadOSSFileJobUploadTarget is a repeated param struct in CreateUploadOSSFileJobRequest
+type CreateUploadOSSFileJobUploadTarget struct {
+	Endpoint   string `name:"Endpoint"`
+	BucketName string `name:"BucketName"`
+	ObjectName string `name:"ObjectName"`
 }
 
 // CreateUploadOSSFileJobResponse is the response struct for api CreateUploadOSSFileJob
 type CreateUploadOSSFileJobResponse struct {
 	*responses.BaseResponse
-	JobKey       string `json:"JobKey" xml:"JobKey"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success      bool   `json:"Success" xml:"Success"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	JobKey       string `json:"JobKey" xml:"JobKey"`
 }
 
 // CreateCreateUploadOSSFileJobRequest creates a request to invoke CreateUploadOSSFileJob API

@@ -19,9 +19,9 @@ package dms_enterprise
 type Resource struct {
 	Logic          bool           `json:"Logic" xml:"Logic"`
 	TargetId       string         `json:"TargetId" xml:"TargetId"`
-	ResourceDetail ResourceDetail `json:"ResourceDetail" xml:"ResourceDetail"`
-	InstanceInfo   InstanceInfo   `json:"InstanceInfo" xml:"InstanceInfo"`
 	TableInfo      TableInfo      `json:"TableInfo" xml:"TableInfo"`
 	ColumnInfo     ColumnInfo     `json:"ColumnInfo" xml:"ColumnInfo"`
+	InstanceInfo   InstanceInfo   `json:"InstanceInfo" xml:"InstanceInfo"`
+	ResourceDetail ResourceDetail `json:"ResourceDetail" xml:"ResourceDetail"`
 	DatabaseInfo   DatabaseInfo   `json:"DatabaseInfo" xml:"DatabaseInfo"`
 }
