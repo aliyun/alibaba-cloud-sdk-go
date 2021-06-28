@@ -129,7 +129,11 @@ type AcsRequestTest struct {
 	Path           string                      `position:"Path" name:"Path"`
 	Body           string                      `position:"Body" name:"Body"`
 	Target         map[string]interface{}      `position:"Query" name:"Target" type:"Map"`
+<<<<<<< HEAD
 	TypeAcs        *[]string                   `position:"Query" name:"TypeAcs" type:"Repeated"`
+=======
+	TypeAcs        *[]string                   `position:"type" name:"type" type:"Repeated"`
+>>>>>>> cd779e69070633099a5584c93bf3caffb1fa0cc9
 }
 
 type CreateRuleRuleConditionsPathConfig struct {
@@ -174,7 +178,12 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 		Path:           "path value",
 		Body:           "body value",
 		Target: map[string]interface{}{
+<<<<<<< HEAD
 			"key": []string{"hello", "world"},
+=======
+			"key":   []string{"hello", "world"},
+			"value": 1234,
+>>>>>>> cd779e69070633099a5584c93bf3caffb1fa0cc9
 		},
 	}
 	tmp := []string{r.Query, r.Header}
@@ -183,6 +192,7 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 	InitParams(r)
 	queries := r.GetQueryParams()
 	assert.Equal(t, "query value", queries["Query"])
+<<<<<<< HEAD
 	sortedKeys := make([]string, 0)
 	for k := range queries {
 		sortedKeys = append(sortedKeys, k)
@@ -196,6 +206,8 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 		resultBuilder.WriteString(key + "=" + queries[key] + "&")
 	}
 	assert.Equal(t, "Target.#3#key.1=hello&Target.#3#key.2=world&", resultBuilder.String())
+=======
+>>>>>>> cd779e69070633099a5584c93bf3caffb1fa0cc9
 	headers := r.GetHeaders()
 	assert.Equal(t, "header value", headers["Header"])
 	// TODO: check the body & path
