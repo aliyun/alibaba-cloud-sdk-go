@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"sort"
+	"strings"
 	"testing"
 	"time"
 
@@ -127,8 +128,8 @@ type AcsRequestTest struct {
 	Header         string                      `position:"Header" name:"Header"`
 	Path           string                      `position:"Path" name:"Path"`
 	Body           string                      `position:"Body" name:"Body"`
-	Target         map[string]interface{}      `position:"Query" name:"Target"`
-	TypeAcs        *[]string                   `position:"type" name:"type" type:"Repeated"`
+	Target         map[string]interface{}      `position:"Query" name:"Target" type:"Map"`
+	TypeAcs        *[]string                   `position:"Query" name:"TypeAcs" type:"Repeated"`
 }
 
 type CreateRuleRuleConditionsPathConfig struct {
@@ -173,8 +174,7 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 		Path:           "path value",
 		Body:           "body value",
 		Target: map[string]interface{}{
-			"key":   "test",
-			"value": 1234,
+			"key": []string{"hello", "world"},
 		},
 	}
 	tmp := []string{r.Query, r.Header}
@@ -184,7 +184,19 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 
 	queries := r.GetQueryParams()
 	assert.Equal(t, "query value", queries["Query"])
-	assert.Equal(t, "{\"key\":\"test\",\"value\":1234}", queries["Target"])
+	sortedKeys := make([]string, 0)
+	for k := range queries {
+		sortedKeys = append(sortedKeys, k)
+	}
+	sort.Strings(sortedKeys)
+	resultBuilder := bytes.Buffer{}
+	for _, key := range sortedKeys {
+		if !strings.HasPrefix(key, "Target") {
+			continue
+		}
+		resultBuilder.WriteString(key + "=" + queries[key] + "&")
+	}
+	assert.Equal(t, "Target.#3#key.1=hello&Target.#3#key.2=world&", resultBuilder.String())
 	headers := r.GetHeaders()
 	assert.Equal(t, "header value", headers["Header"])
 	// TODO: check the body & path
