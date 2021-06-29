@@ -213,7 +213,6 @@ func Test_DescribeClusterDetailWithCommonRequestWithTimeout(t *testing.T) {
 func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
 	err := createAttachPolicyToRole()
 	assert.Nil(t, err)
-
 	subaccesskeyid, subaccesskeysecret, err := createAccessKey()
 	assert.Nil(t, err)
 	client, err := sdk.NewClientWithRamRoleArnAndPolicy(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret, rolearn, "alice_test", "")

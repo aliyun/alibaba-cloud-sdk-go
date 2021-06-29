@@ -15,7 +15,6 @@
 package requests
 
 import (
-	"encoding/json"
 	"fmt"
 	"io"
 	"reflect"
@@ -320,13 +319,6 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 				// simple param
 				key := prefix + name
 				value := dataValue.Field(i).String()
-				if dataValue.Field(i).Kind().String() == "map" {
-					byt, _ := json.Marshal(dataValue.Field(i).Interface())
-					value = string(byt)
-					if value == "null" {
-						value = ""
-					}
-				}
 				err = addParam(request, fieldPosition, key, value)
 				if err != nil {
 					return
@@ -339,6 +331,11 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 				}
 			} else if typeTag == "Struct" {
 				err = handleStruct(request, dataValue, prefix, name, fieldPosition, i)
+				if err != nil {
+					return
+				}
+			} else if typeTag == "Map" {
+				err = handleMap(request, dataValue, prefix, name, fieldPosition, i)
 				if err != nil {
 					return
 				}
@@ -368,6 +365,66 @@ func handleRepeatedParams(request AcsRequest, dataValue reflect.Value, prefix, n
 				err = flatRepeatedList(elementValue, request, fieldPosition, key+".")
 				if err != nil {
 					return
+				}
+			}
+		}
+	}
+	return nil
+}
+
+func handleParam(request AcsRequest, dataValue reflect.Value, prefix, key, fieldPosition string) (err error) {
+	if dataValue.Type().String() == "[]string" {
+		if dataValue.IsNil() {
+			return
+		}
+		for j := 0; j < dataValue.Len(); j++ {
+			err = addParam(request, fieldPosition, key+"."+strconv.Itoa(j+1), dataValue.Index(j).String())
+			fmt.Println(dataValue.Index(j).String())
+			if err != nil {
+				return
+			}
+		}
+	} else {
+		if dataValue.Type().Kind().String() == "string" {
+			value := dataValue.String()
+			err = addParam(request, fieldPosition, key, value)
+			if err != nil {
+				return
+			}
+		} else if dataValue.Type().Kind().String() == "struct" {
+			err = flatRepeatedList(dataValue, request, fieldPosition, key+".")
+			if err != nil {
+				return
+			}
+		} else if dataValue.Type().Kind().String() == "int" {
+			value := dataValue.Int()
+			err = addParam(request, fieldPosition, key, strconv.Itoa(int(value)))
+			if err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func handleMap(request AcsRequest, dataValue reflect.Value, prefix, name, fieldPosition string, index int) (err error) {
+	valueField := dataValue.Field(index)
+	if valueField.IsValid() && !valueField.IsNil() {
+		iter := valueField.MapRange()
+		for iter.Next() {
+			k := iter.Key()
+			v := iter.Value()
+			key := prefix + name + ".#" + strconv.Itoa(k.Len()) + "#" + k.String()
+			if v.Kind() == reflect.Ptr || v.Kind() == reflect.Interface {
+				elementValue := v.Elem()
+				err = handleParam(request, elementValue, prefix, key, fieldPosition)
+				if err != nil {
+					return err
+				}
+			} else if v.IsValid() && v.IsNil() {
+				err = handleParam(request, v, prefix, key, fieldPosition)
+				if err != nil {
+					return err
 				}
 			}
 		}
