@@ -24,8 +24,8 @@ var role_doc = `{
 
 var (
 	travisValue = strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")
-	username    = "test-go-user" + travisValue[len(travisValue)-1]
-	rolename    = "test-go-role" + travisValue[len(travisValue)-1]
+	username    = "test-user" + travisValue[len(travisValue)-1]
+	rolename    = "test-role" + travisValue[len(travisValue)-1]
 	rolearn     = fmt.Sprintf("acs:ram::%s:role/%s", os.Getenv("USER_ID"), rolename)
 )
 
@@ -198,6 +198,9 @@ func createAssumeRole() (*sts.AssumeRoleResponse, error) {
 	request.RoleSessionName = "alice_test"
 	request.Scheme = "HTTPS"
 	client, err := sts.NewClientWithAccessKey(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret)
+	if err != nil {
+		return nil, err
+	}
 	response, err := client.AssumeRole(request)
 	if err != nil {
 		return nil, err
