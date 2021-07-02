@@ -17,23 +17,25 @@ package ocr
 
 // Content is a nested struct in ocr response
 type Content struct {
-	InvoiceCode      string `json:"InvoiceCode" xml:"InvoiceCode"`
-	InvoiceNo        string `json:"InvoiceNo" xml:"InvoiceNo"`
-	InvoiceDate      string `json:"InvoiceDate" xml:"InvoiceDate"`
-	AntiFakeCode     string `json:"AntiFakeCode" xml:"AntiFakeCode"`
-	PayerName        string `json:"PayerName" xml:"PayerName"`
-	PayerRegisterNo  string `json:"PayerRegisterNo" xml:"PayerRegisterNo"`
-	PayerAddress     string `json:"PayerAddress" xml:"PayerAddress"`
+	PayeeRegisterNo  string `json:"PayeeRegisterNo" xml:"PayeeRegisterNo"`
 	PayerBankName    string `json:"PayerBankName" xml:"PayerBankName"`
+	PayeeAddress     string `json:"PayeeAddress" xml:"PayeeAddress"`
+	InvoiceNumber    string `json:"InvoiceNumber" xml:"InvoiceNumber"`
+	Clerk            string `json:"Clerk" xml:"Clerk"`
+	AntiFakeCode     string `json:"AntiFakeCode" xml:"AntiFakeCode"`
 	WithoutTaxAmount string `json:"WithoutTaxAmount" xml:"WithoutTaxAmount"`
-	TaxAmount        string `json:"TaxAmount" xml:"TaxAmount"`
+	InvoiceCode      string `json:"InvoiceCode" xml:"InvoiceCode"`
+	Payee            string `json:"Payee" xml:"Payee"`
 	SumAmount        string `json:"SumAmount" xml:"SumAmount"`
 	InvoiceAmount    string `json:"InvoiceAmount" xml:"InvoiceAmount"`
 	PayeeName        string `json:"PayeeName" xml:"PayeeName"`
-	PayeeRegisterNo  string `json:"PayeeRegisterNo" xml:"PayeeRegisterNo"`
-	PayeeAddress     string `json:"PayeeAddress" xml:"PayeeAddress"`
+	TaxAmount        string `json:"TaxAmount" xml:"TaxAmount"`
 	PayeeBankName    string `json:"PayeeBankName" xml:"PayeeBankName"`
-	Payee            string `json:"Payee" xml:"Payee"`
+	PayerAddress     string `json:"PayerAddress" xml:"PayerAddress"`
+	InvoiceDetails   string `json:"InvoiceDetails" xml:"InvoiceDetails"`
+	InvoiceNo        string `json:"InvoiceNo" xml:"InvoiceNo"`
+	InvoiceDate      string `json:"InvoiceDate" xml:"InvoiceDate"`
+	PayerName        string `json:"PayerName" xml:"PayerName"`
+	PayerRegisterNo  string `json:"PayerRegisterNo" xml:"PayerRegisterNo"`
 	Checker          string `json:"Checker" xml:"Checker"`
-	Clerk            string `json:"Clerk" xml:"Clerk"`
 }
