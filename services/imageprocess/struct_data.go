@@ -40,21 +40,23 @@ type Data struct {
 	NUrl              string                 `json:"NUrl" xml:"NUrl"`
 	Status            string                 `json:"Status" xml:"Status"`
 	Results           map[string]interface{} `json:"Results" xml:"Results"`
-	OrgName           string                 `json:"OrgName" xml:"OrgName"`
 	ResultURL         string                 `json:"ResultURL" xml:"ResultURL"`
+	OrgName           string                 `json:"OrgName" xml:"OrgName"`
 	ResultUrl         string                 `json:"ResultUrl" xml:"ResultUrl"`
 	Spacing           []float64              `json:"Spacing" xml:"Spacing"`
 	Options           []string               `json:"Options" xml:"Options"`
 	Origin            []float64              `json:"Origin" xml:"Origin"`
 	DetectRibFracture DetectRibFracture      `json:"DetectRibFracture" xml:"DetectRibFracture"`
 	Covid             Covid                  `json:"Covid" xml:"Covid"`
+	PulmonaryInfo     PulmonaryInfo          `json:"PulmonaryInfo" xml:"PulmonaryInfo"`
 	LungNodule        LungNodule             `json:"LungNodule" xml:"LungNodule"`
 	CACS              CACS                   `json:"CACS" xml:"CACS"`
+	AortaInfo         AortaInfo              `json:"AortaInfo" xml:"AortaInfo"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	KeyPoints         []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
+	Detections        []DetectionsItem       `json:"Detections" xml:"Detections"`
 	Discs             []Disc                 `json:"Discs" xml:"Discs"`
 	Series            []Serie                `json:"Series" xml:"Series"`
 	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
 	KLDetections      []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
-	Detections        []DetectionsItem       `json:"Detections" xml:"Detections"`
 }
