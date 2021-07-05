@@ -70,4 +70,5 @@ type ItemInfo struct {
 	GmtCreate         string `json:"GmtCreate" xml:"GmtCreate"`
 	GmtModified       string `json:"GmtModified" xml:"GmtModified"`
 	BeMember          bool   `json:"BeMember" xml:"BeMember"`
+	TemplateSceneId   string `json:"TemplateSceneId" xml:"TemplateSceneId"`
 }

@@ -35,4 +35,5 @@ type UserLogInfo struct {
 	ItemBarCode           string `json:"ItemBarCode" xml:"ItemBarCode"`
 	BePromotion           bool   `json:"BePromotion" xml:"BePromotion"`
 	UserId                string `json:"UserId" xml:"UserId"`
+	EslSignal             int    `json:"EslSignal" xml:"EslSignal"`
 }

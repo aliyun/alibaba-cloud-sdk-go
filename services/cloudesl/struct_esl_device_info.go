@@ -27,4 +27,5 @@ type EslDeviceInfo struct {
 	BatteryLevel        int    `json:"BatteryLevel" xml:"BatteryLevel"`
 	ScreenWidth         int    `json:"ScreenWidth" xml:"ScreenWidth"`
 	ScreenHeight        int    `json:"ScreenHeight" xml:"ScreenHeight"`
+	EslSignal           int    `json:"EslSignal" xml:"EslSignal"`
 }
