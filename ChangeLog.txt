@@ -1,3 +1,7 @@
+2021-07-06 Version: v1.61.1169
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support ListDataCorrectPreCheckDB,ListDataCorrectPreCheckSQL Order API.
+
 2021-07-05 Version: v1.61.1168
 - Generated 2020-02-01 for `cloudesl`.
 - Supported deleteItem for sdk.
