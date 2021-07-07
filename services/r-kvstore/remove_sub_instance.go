@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RestoreInstance invokes the r_kvstore.RestoreInstance API synchronously
-func (client *Client) RestoreInstance(request *RestoreInstanceRequest) (response *RestoreInstanceResponse, err error) {
-	response = CreateRestoreInstanceResponse()
+// RemoveSubInstance invokes the r_kvstore.RemoveSubInstance API synchronously
+func (client *Client) RemoveSubInstance(request *RemoveSubInstanceRequest) (response *RemoveSubInstanceResponse, err error) {
+	response = CreateRemoveSubInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RestoreInstanceWithChan invokes the r_kvstore.RestoreInstance API asynchronously
-func (client *Client) RestoreInstanceWithChan(request *RestoreInstanceRequest) (<-chan *RestoreInstanceResponse, <-chan error) {
-	responseChan := make(chan *RestoreInstanceResponse, 1)
+// RemoveSubInstanceWithChan invokes the r_kvstore.RemoveSubInstance API asynchronously
+func (client *Client) RemoveSubInstanceWithChan(request *RemoveSubInstanceRequest) (<-chan *RemoveSubInstanceResponse, <-chan error) {
+	responseChan := make(chan *RemoveSubInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RestoreInstance(request)
+		response, err := client.RemoveSubInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RestoreInstanceWithChan(request *RestoreInstanceRequest) (
 	return responseChan, errChan
 }
 
-// RestoreInstanceWithCallback invokes the r_kvstore.RestoreInstance API asynchronously
-func (client *Client) RestoreInstanceWithCallback(request *RestoreInstanceRequest, callback func(response *RestoreInstanceResponse, err error)) <-chan int {
+// RemoveSubInstanceWithCallback invokes the r_kvstore.RemoveSubInstance API asynchronously
+func (client *Client) RemoveSubInstanceWithCallback(request *RemoveSubInstanceRequest, callback func(response *RemoveSubInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RestoreInstanceResponse
+		var response *RemoveSubInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.RestoreInstance(request)
+		response, err = client.RemoveSubInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,40 +68,37 @@ func (client *Client) RestoreInstanceWithCallback(request *RestoreInstanceReques
 	return result
 }
 
-// RestoreInstanceRequest is the request struct for api RestoreInstance
-type RestoreInstanceRequest struct {
+// RemoveSubInstanceRequest is the request struct for api RemoveSubInstance
+type RemoveSubInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	FilterKey            string           `position:"Query" name:"FilterKey"`
+	ReleaseSubInstance   requests.Boolean `position:"Query" name:"ReleaseSubInstance"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	RestoreType          string           `position:"Query" name:"RestoreType"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// RestoreInstanceResponse is the response struct for api RestoreInstance
-type RestoreInstanceResponse struct {
+// RemoveSubInstanceResponse is the response struct for api RemoveSubInstance
+type RemoveSubInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRestoreInstanceRequest creates a request to invoke RestoreInstance API
-func CreateRestoreInstanceRequest() (request *RestoreInstanceRequest) {
-	request = &RestoreInstanceRequest{
+// CreateRemoveSubInstanceRequest creates a request to invoke RemoveSubInstance API
+func CreateRemoveSubInstanceRequest() (request *RemoveSubInstanceRequest) {
+	request = &RemoveSubInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestoreInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RemoveSubInstance", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRestoreInstanceResponse creates a response to parse from RestoreInstance response
-func CreateRestoreInstanceResponse() (response *RestoreInstanceResponse) {
-	response = &RestoreInstanceResponse{
+// CreateRemoveSubInstanceResponse creates a response to parse from RemoveSubInstance response
+func CreateRemoveSubInstanceResponse() (response *RemoveSubInstanceResponse) {
+	response = &RemoveSubInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

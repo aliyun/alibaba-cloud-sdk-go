@@ -1,3 +1,9 @@
+2021-07-07 Version: v1.61.1171
+- Generated 2015-01-01 for `R-kvstore`.
+- Support FilterKey for RestoreInstance.
+- DescribeInstanceAttribute add return argument BackupLogStartTime.
+- Add RemoveSubInstance for Global Distributed Cache.
+
 2021-07-07 Version: v1.61.1170
 - Generated 2020-03-09 for `Eipanycast`.
 - Supported AAA for BBB.

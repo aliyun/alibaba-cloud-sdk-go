@@ -72,6 +72,7 @@ func (client *Client) CreateTairInstanceWithCallback(request *CreateTairInstance
 type CreateTairInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecondaryZoneId      string           `position:"Query" name:"SecondaryZoneId"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	StorageType          string           `position:"Query" name:"StorageType"`

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RestoreInstance invokes the r_kvstore.RestoreInstance API synchronously
-func (client *Client) RestoreInstance(request *RestoreInstanceRequest) (response *RestoreInstanceResponse, err error) {
-	response = CreateRestoreInstanceResponse()
+// SwitchInstanceProxy invokes the r_kvstore.SwitchInstanceProxy API synchronously
+func (client *Client) SwitchInstanceProxy(request *SwitchInstanceProxyRequest) (response *SwitchInstanceProxyResponse, err error) {
+	response = CreateSwitchInstanceProxyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RestoreInstanceWithChan invokes the r_kvstore.RestoreInstance API asynchronously
-func (client *Client) RestoreInstanceWithChan(request *RestoreInstanceRequest) (<-chan *RestoreInstanceResponse, <-chan error) {
-	responseChan := make(chan *RestoreInstanceResponse, 1)
+// SwitchInstanceProxyWithChan invokes the r_kvstore.SwitchInstanceProxy API asynchronously
+func (client *Client) SwitchInstanceProxyWithChan(request *SwitchInstanceProxyRequest) (<-chan *SwitchInstanceProxyResponse, <-chan error) {
+	responseChan := make(chan *SwitchInstanceProxyResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RestoreInstance(request)
+		response, err := client.SwitchInstanceProxy(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RestoreInstanceWithChan(request *RestoreInstanceRequest) (
 	return responseChan, errChan
 }
 
-// RestoreInstanceWithCallback invokes the r_kvstore.RestoreInstance API asynchronously
-func (client *Client) RestoreInstanceWithCallback(request *RestoreInstanceRequest, callback func(response *RestoreInstanceResponse, err error)) <-chan int {
+// SwitchInstanceProxyWithCallback invokes the r_kvstore.SwitchInstanceProxy API asynchronously
+func (client *Client) SwitchInstanceProxyWithCallback(request *SwitchInstanceProxyRequest, callback func(response *SwitchInstanceProxyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RestoreInstanceResponse
+		var response *SwitchInstanceProxyResponse
 		var err error
 		defer close(result)
-		response, err = client.RestoreInstance(request)
+		response, err = client.SwitchInstanceProxy(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,40 +68,38 @@ func (client *Client) RestoreInstanceWithCallback(request *RestoreInstanceReques
 	return result
 }
 
-// RestoreInstanceRequest is the request struct for api RestoreInstance
-type RestoreInstanceRequest struct {
+// SwitchInstanceProxyRequest is the request struct for api SwitchInstanceProxy
+type SwitchInstanceProxyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	FilterKey            string           `position:"Query" name:"FilterKey"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	Product              string           `position:"Query" name:"Product"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	RestoreType          string           `position:"Query" name:"RestoreType"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Category             string           `position:"Query" name:"Category"`
 }
 
-// RestoreInstanceResponse is the response struct for api RestoreInstance
-type RestoreInstanceResponse struct {
+// SwitchInstanceProxyResponse is the response struct for api SwitchInstanceProxy
+type SwitchInstanceProxyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRestoreInstanceRequest creates a request to invoke RestoreInstance API
-func CreateRestoreInstanceRequest() (request *RestoreInstanceRequest) {
-	request = &RestoreInstanceRequest{
+// CreateSwitchInstanceProxyRequest creates a request to invoke SwitchInstanceProxy API
+func CreateSwitchInstanceProxyRequest() (request *SwitchInstanceProxyRequest) {
+	request = &SwitchInstanceProxyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestoreInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "SwitchInstanceProxy", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRestoreInstanceResponse creates a response to parse from RestoreInstance response
-func CreateRestoreInstanceResponse() (response *RestoreInstanceResponse) {
-	response = &RestoreInstanceResponse{
+// CreateSwitchInstanceProxyResponse creates a response to parse from SwitchInstanceProxy response
+func CreateSwitchInstanceProxyResponse() (response *SwitchInstanceProxyResponse) {
+	response = &SwitchInstanceProxyResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
