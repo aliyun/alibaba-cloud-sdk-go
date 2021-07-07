@@ -1,3 +1,7 @@
+2021-07-07 Version: v1.61.1170
+- Generated 2020-03-09 for `Eipanycast`.
+- Supported AAA for BBB.
+
 2021-07-06 Version: v1.61.1169
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support ListDataCorrectPreCheckDB,ListDataCorrectPreCheckSQL Order API.
