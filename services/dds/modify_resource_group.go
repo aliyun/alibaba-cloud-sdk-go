@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateBackup invokes the dds.CreateBackup API synchronously
-func (client *Client) CreateBackup(request *CreateBackupRequest) (response *CreateBackupResponse, err error) {
-	response = CreateCreateBackupResponse()
+// ModifyResourceGroup invokes the dds.ModifyResourceGroup API synchronously
+func (client *Client) ModifyResourceGroup(request *ModifyResourceGroupRequest) (response *ModifyResourceGroupResponse, err error) {
+	response = CreateModifyResourceGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateBackupWithChan invokes the dds.CreateBackup API asynchronously
-func (client *Client) CreateBackupWithChan(request *CreateBackupRequest) (<-chan *CreateBackupResponse, <-chan error) {
-	responseChan := make(chan *CreateBackupResponse, 1)
+// ModifyResourceGroupWithChan invokes the dds.ModifyResourceGroup API asynchronously
+func (client *Client) ModifyResourceGroupWithChan(request *ModifyResourceGroupRequest) (<-chan *ModifyResourceGroupResponse, <-chan error) {
+	responseChan := make(chan *ModifyResourceGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateBackup(request)
+		response, err := client.ModifyResourceGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateBackupWithChan(request *CreateBackupRequest) (<-chan
 	return responseChan, errChan
 }
 
-// CreateBackupWithCallback invokes the dds.CreateBackup API asynchronously
-func (client *Client) CreateBackupWithCallback(request *CreateBackupRequest, callback func(response *CreateBackupResponse, err error)) <-chan int {
+// ModifyResourceGroupWithCallback invokes the dds.ModifyResourceGroup API asynchronously
+func (client *Client) ModifyResourceGroupWithCallback(request *ModifyResourceGroupRequest, callback func(response *ModifyResourceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateBackupResponse
+		var response *ModifyResourceGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateBackup(request)
+		response, err = client.ModifyResourceGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,37 @@ func (client *Client) CreateBackupWithCallback(request *CreateBackupRequest, cal
 	return result
 }
 
-// CreateBackupRequest is the request struct for api CreateBackup
-type CreateBackupRequest struct {
+// ModifyResourceGroupRequest is the request struct for api ModifyResourceGroup
+type ModifyResourceGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	BackupMethod         string           `position:"Query" name:"BackupMethod"`
 }
 
-// CreateBackupResponse is the response struct for api CreateBackup
-type CreateBackupResponse struct {
+// ModifyResourceGroupResponse is the response struct for api ModifyResourceGroup
+type ModifyResourceGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	BackupId  string `json:"BackupId" xml:"BackupId"`
 }
 
-// CreateCreateBackupRequest creates a request to invoke CreateBackup API
-func CreateCreateBackupRequest() (request *CreateBackupRequest) {
-	request = &CreateBackupRequest{
+// CreateModifyResourceGroupRequest creates a request to invoke ModifyResourceGroup API
+func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
+	request = &ModifyResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateBackup", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyResourceGroup", "Dds", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateBackupResponse creates a response to parse from CreateBackup response
-func CreateCreateBackupResponse() (response *CreateBackupResponse) {
-	response = &CreateBackupResponse{
+// CreateModifyResourceGroupResponse creates a response to parse from ModifyResourceGroup response
+func CreateModifyResourceGroupResponse() (response *ModifyResourceGroupResponse) {
+	response = &ModifyResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

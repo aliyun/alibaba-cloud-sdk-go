@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RenewDBInstance invokes the dds.RenewDBInstance API synchronously
-func (client *Client) RenewDBInstance(request *RenewDBInstanceRequest) (response *RenewDBInstanceResponse, err error) {
-	response = CreateRenewDBInstanceResponse()
+// ModifyNodeSpecBatch invokes the dds.ModifyNodeSpecBatch API synchronously
+func (client *Client) ModifyNodeSpecBatch(request *ModifyNodeSpecBatchRequest) (response *ModifyNodeSpecBatchResponse, err error) {
+	response = CreateModifyNodeSpecBatchResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RenewDBInstanceWithChan invokes the dds.RenewDBInstance API asynchronously
-func (client *Client) RenewDBInstanceWithChan(request *RenewDBInstanceRequest) (<-chan *RenewDBInstanceResponse, <-chan error) {
-	responseChan := make(chan *RenewDBInstanceResponse, 1)
+// ModifyNodeSpecBatchWithChan invokes the dds.ModifyNodeSpecBatch API asynchronously
+func (client *Client) ModifyNodeSpecBatchWithChan(request *ModifyNodeSpecBatchRequest) (<-chan *ModifyNodeSpecBatchResponse, <-chan error) {
+	responseChan := make(chan *ModifyNodeSpecBatchResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RenewDBInstance(request)
+		response, err := client.ModifyNodeSpecBatch(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RenewDBInstanceWithChan(request *RenewDBInstanceRequest) (
 	return responseChan, errChan
 }
 
-// RenewDBInstanceWithCallback invokes the dds.RenewDBInstance API asynchronously
-func (client *Client) RenewDBInstanceWithCallback(request *RenewDBInstanceRequest, callback func(response *RenewDBInstanceResponse, err error)) <-chan int {
+// ModifyNodeSpecBatchWithCallback invokes the dds.ModifyNodeSpecBatch API asynchronously
+func (client *Client) ModifyNodeSpecBatchWithCallback(request *ModifyNodeSpecBatchRequest, callback func(response *ModifyNodeSpecBatchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RenewDBInstanceResponse
+		var response *ModifyNodeSpecBatchResponse
 		var err error
 		defer close(result)
-		response, err = client.RenewDBInstance(request)
+		response, err = client.ModifyNodeSpecBatch(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,42 +68,45 @@ func (client *Client) RenewDBInstanceWithCallback(request *RenewDBInstanceReques
 	return result
 }
 
-// RenewDBInstanceRequest is the request struct for api RenewDBInstance
-type RenewDBInstanceRequest struct {
+// ModifyNodeSpecBatchRequest is the request struct for api ModifyNodeSpecBatch
+type ModifyNodeSpecBatchRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	NodesInfo            string           `position:"Query" name:"NodesInfo"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
-	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
-// RenewDBInstanceResponse is the response struct for api RenewDBInstance
-type RenewDBInstanceResponse struct {
+// ModifyNodeSpecBatchResponse is the response struct for api ModifyNodeSpecBatch
+type ModifyNodeSpecBatchResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRenewDBInstanceRequest creates a request to invoke RenewDBInstance API
-func CreateRenewDBInstanceRequest() (request *RenewDBInstanceRequest) {
-	request = &RenewDBInstanceRequest{
+// CreateModifyNodeSpecBatchRequest creates a request to invoke ModifyNodeSpecBatch API
+func CreateModifyNodeSpecBatchRequest() (request *ModifyNodeSpecBatchRequest) {
+	request = &ModifyNodeSpecBatchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "RenewDBInstance", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpecBatch", "Dds", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRenewDBInstanceResponse creates a response to parse from RenewDBInstance response
-func CreateRenewDBInstanceResponse() (response *RenewDBInstanceResponse) {
-	response = &RenewDBInstanceResponse{
+// CreateModifyNodeSpecBatchResponse creates a response to parse from ModifyNodeSpecBatch response
+func CreateModifyNodeSpecBatchResponse() (response *ModifyNodeSpecBatchResponse) {
+	response = &ModifyNodeSpecBatchResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

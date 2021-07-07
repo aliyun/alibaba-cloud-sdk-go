@@ -1,3 +1,7 @@
+2021-07-07 Version: v1.61.1172
+- Generated 2015-12-01 for `Dds`.
+- Add ModifyResourceGroup API.
+
 2021-07-07 Version: v1.61.1171
 - Generated 2015-01-01 for `R-kvstore`.
 - Support FilterKey for RestoreInstance.
