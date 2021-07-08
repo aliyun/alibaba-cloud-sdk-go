@@ -1,3 +1,7 @@
+2021-07-08 Version: v1.61.1175
+- Generated 2019-01-01 for `Cassandra`.
+
+
 2021-07-08 Version: v1.61.1174
 - Generated 2016-11-01 for `live`.
 
