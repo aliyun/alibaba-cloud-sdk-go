@@ -76,6 +76,7 @@ type CreateAppRequest struct {
 	Description      string                `position:"Body" name:"Description"`
 	Language         string                `position:"Body" name:"Language"`
 	Title            string                `position:"Body" name:"Title"`
+	GroupName        string                `position:"Body" name:"GroupName"`
 	MiddleWareIdList *[]string             `position:"Body" name:"MiddleWareIdList"  type:"Repeated"`
 	StateType        requests.Integer      `position:"Body" name:"StateType"`
 	ServiceType      string                `position:"Body" name:"ServiceType"`

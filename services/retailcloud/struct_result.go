@@ -68,6 +68,7 @@ type Result struct {
 	Protocol                string                `json:"Protocol" xml:"Protocol"`
 	EnvName                 string                `json:"EnvName" xml:"EnvName"`
 	AppSchemaId             int64                 `json:"AppSchemaId" xml:"AppSchemaId"`
+	AppGroupId              int64                 `json:"AppGroupId" xml:"AppGroupId"`
 	NetworkMode             string                `json:"NetworkMode" xml:"NetworkMode"`
 	RequestId               string                `json:"RequestId" xml:"RequestId"`
 	OperatingSystem         string                `json:"OperatingSystem" xml:"OperatingSystem"`
