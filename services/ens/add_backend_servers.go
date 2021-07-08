@@ -77,11 +77,6 @@ type AddBackendServersRequest struct {
 
 // AddBackendServersBackendServers is a repeated param struct in AddBackendServersRequest
 type AddBackendServersBackendServers struct {
-	BackendServers AddBackendServersBackendServersBackendServers `name:"BackendServers" type:"Repeated"`
-}
-
-// AddBackendServersBackendServersBackendServers is a repeated param struct in AddBackendServersRequest
-type AddBackendServersBackendServersBackendServers struct {
 	Port     string `name:"Port"`
 	Ip       string `name:"Ip"`
 	Weight   string `name:"Weight"`

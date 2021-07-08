@@ -77,11 +77,6 @@ type RemoveBackendServersRequest struct {
 
 // RemoveBackendServersBackendServers is a repeated param struct in RemoveBackendServersRequest
 type RemoveBackendServersBackendServers struct {
-	BackendServers RemoveBackendServersBackendServersBackendServers `name:"BackendServers" type:"Repeated"`
-}
-
-// RemoveBackendServersBackendServersBackendServers is a repeated param struct in RemoveBackendServersRequest
-type RemoveBackendServersBackendServersBackendServers struct {
 	Port     string `name:"Port"`
 	Ip       string `name:"Ip"`
 	Weight   string `name:"Weight"`

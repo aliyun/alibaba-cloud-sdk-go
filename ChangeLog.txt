@@ -1,3 +1,7 @@
+2021-07-08 Version: v1.61.1176
+- Generated 2017-11-10 for `Ens`.
+- Support EIP.
+
 2021-07-08 Version: v1.61.1175
 - Generated 2019-01-01 for `Cassandra`.
 

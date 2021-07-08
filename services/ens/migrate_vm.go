@@ -71,6 +71,7 @@ func (client *Client) MigrateVmWithCallback(request *MigrateVmRequest, callback 
 // MigrateVmRequest is the request struct for api MigrateVm
 type MigrateVmRequest struct {
 	*requests.RpcRequest
+	Instances   string `position:"Body" name:"Instances"`
 	GroupUuid   string `position:"Query" name:"GroupUuid"`
 	Tenant      string `position:"Query" name:"Tenant"`
 	InstanceIds string `position:"Query" name:"InstanceIds"`

@@ -80,8 +80,9 @@ type CreateImageRequest struct {
 // CreateImageResponse is the response struct for api CreateImage
 type CreateImageResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      int    `json:"Code" xml:"Code"`
+	ImageId   string `json:"ImageId" xml:"ImageId"`
 }
 
 // CreateCreateImageRequest creates a request to invoke CreateImage API

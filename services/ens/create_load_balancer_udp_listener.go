@@ -74,13 +74,13 @@ type CreateLoadBalancerUDPListenerRequest struct {
 	Protocol                  string           `position:"Query" name:"Protocol"`
 	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
 	HealthCheckInterval       requests.Integer `position:"Query" name:"HealthCheckInterval"`
+	BackendServerPort         requests.Integer `position:"Query" name:"BackendServerPort"`
 	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
 	Description               string           `position:"Query" name:"Description"`
 	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
 	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
 	Scheduler                 string           `position:"Query" name:"Scheduler"`
 	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
-	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
 }
 
 // CreateLoadBalancerUDPListenerResponse is the response struct for api CreateLoadBalancerUDPListener

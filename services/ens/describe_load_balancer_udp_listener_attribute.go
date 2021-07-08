@@ -88,9 +88,9 @@ type DescribeLoadBalancerUDPListenerAttributeResponse struct {
 	HealthyThreshold          int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
 	UnhealthyThreshold        int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
 	HealthCheckConnectTimeout int    `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
-	HealthCheckConnectPort    int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
 	HealthCheckInterval       int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
 	Description               string `json:"Description" xml:"Description"`
+	BackendServerPort         int    `json:"BackendServerPort" xml:"BackendServerPort"`
 }
 
 // CreateDescribeLoadBalancerUDPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerUDPListenerAttribute API

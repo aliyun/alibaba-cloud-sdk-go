@@ -77,11 +77,6 @@ type SetBackendServersRequest struct {
 
 // SetBackendServersBackendServers is a repeated param struct in SetBackendServersRequest
 type SetBackendServersBackendServers struct {
-	BackendServers SetBackendServersBackendServersBackendServers `name:"BackendServers" type:"Repeated"`
-}
-
-// SetBackendServersBackendServersBackendServers is a repeated param struct in SetBackendServersRequest
-type SetBackendServersBackendServersBackendServers struct {
 	Weight   string `name:"Weight"`
 	Type     string `name:"Type"`
 	ServerId string `name:"ServerId"`

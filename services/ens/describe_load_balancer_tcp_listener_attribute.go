@@ -90,13 +90,13 @@ type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	HealthyThreshold          int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
 	UnhealthyThreshold        int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
 	HealthCheckConnectTimeout int    `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
-	HealthCheckConnectPort    int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
 	HealthCheckInterval       int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
 	Description               string `json:"Description" xml:"Description"`
 	HealthCheckHttpCode       string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
 	HealthCheckDomain         string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	HealthCheckURI            string `json:"HealthCheckURI" xml:"HealthCheckURI"`
 	HealthCheckType           string `json:"HealthCheckType" xml:"HealthCheckType"`
+	BackendServerPort         int    `json:"BackendServerPort" xml:"BackendServerPort"`
 }
 
 // CreateDescribeLoadBalancerTCPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerTCPListenerAttribute API

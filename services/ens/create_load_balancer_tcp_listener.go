@@ -78,6 +78,7 @@ type CreateLoadBalancerTCPListenerRequest struct {
 	HealthCheckDomain         string           `position:"Query" name:"HealthCheckDomain"`
 	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
 	HealthCheckInterval       requests.Integer `position:"Query" name:"HealthCheckInterval"`
+	BackendServerPort         requests.Integer `position:"Query" name:"BackendServerPort"`
 	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
 	Description               string           `position:"Query" name:"Description"`
 	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
@@ -85,7 +86,6 @@ type CreateLoadBalancerTCPListenerRequest struct {
 	Scheduler                 string           `position:"Query" name:"Scheduler"`
 	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
 	HealthCheckType           string           `position:"Query" name:"HealthCheckType"`
-	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
 	HealthCheckHttpCode       string           `position:"Query" name:"HealthCheckHttpCode"`
 }
 

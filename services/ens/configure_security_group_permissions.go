@@ -78,16 +78,6 @@ type ConfigureSecurityGroupPermissionsRequest struct {
 
 // ConfigureSecurityGroupPermissionsRevokePermissions is a repeated param struct in ConfigureSecurityGroupPermissionsRequest
 type ConfigureSecurityGroupPermissionsRevokePermissions struct {
-	RevokePermissions ConfigureSecurityGroupPermissionsRevokePermissionsRevokePermissions `name:"RevokePermissions" type:"Repeated"`
-}
-
-// ConfigureSecurityGroupPermissionsAuthorizePermissions is a repeated param struct in ConfigureSecurityGroupPermissionsRequest
-type ConfigureSecurityGroupPermissionsAuthorizePermissions struct {
-	AuthorizePermissions ConfigureSecurityGroupPermissionsAuthorizePermissionsAuthorizePermissions `name:"AuthorizePermissions" type:"Repeated"`
-}
-
-// ConfigureSecurityGroupPermissionsRevokePermissionsRevokePermissions is a repeated param struct in ConfigureSecurityGroupPermissionsRequest
-type ConfigureSecurityGroupPermissionsRevokePermissionsRevokePermissions struct {
 	SourcePortRange string `name:"SourcePortRange"`
 	PortRange       string `name:"PortRange"`
 	IpProtocol      string `name:"IpProtocol"`
@@ -98,8 +88,8 @@ type ConfigureSecurityGroupPermissionsRevokePermissionsRevokePermissions struct 
 	Policy          string `name:"Policy"`
 }
 
-// ConfigureSecurityGroupPermissionsAuthorizePermissionsAuthorizePermissions is a repeated param struct in ConfigureSecurityGroupPermissionsRequest
-type ConfigureSecurityGroupPermissionsAuthorizePermissionsAuthorizePermissions struct {
+// ConfigureSecurityGroupPermissionsAuthorizePermissions is a repeated param struct in ConfigureSecurityGroupPermissionsRequest
+type ConfigureSecurityGroupPermissionsAuthorizePermissions struct {
 	SourcePortRange string `name:"SourcePortRange"`
 	PortRange       string `name:"PortRange"`
 	IpProtocol      string `name:"IpProtocol"`
