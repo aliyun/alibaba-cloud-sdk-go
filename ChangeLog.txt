@@ -1,3 +1,7 @@
+2021-07-08 Version: v1.61.1174
+- Generated 2016-11-01 for `live`.
+
+
 2021-07-07 Version: v1.61.1173
 - Generated 2017-08-01 for `polardb`.
 - Supported DescribeGlobalDatabaseNetworks set pages.

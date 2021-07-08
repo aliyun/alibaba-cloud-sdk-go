@@ -71,12 +71,13 @@ func (client *Client) DescribeLiveRealtimeDeliveryAccWithCallback(request *Descr
 // DescribeLiveRealtimeDeliveryAccRequest is the request struct for api DescribeLiveRealtimeDeliveryAcc
 type DescribeLiveRealtimeDeliveryAccRequest struct {
 	*requests.RpcRequest
-	Project   string           `position:"Query" name:"Project"`
-	StartTime string           `position:"Query" name:"StartTime"`
-	EndTime   string           `position:"Query" name:"EndTime"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
-	Interval  string           `position:"Query" name:"Interval"`
-	LogStore  string           `position:"Query" name:"LogStore"`
+	Project    string           `position:"Query" name:"Project"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
+	LogStore   string           `position:"Query" name:"LogStore"`
 }
 
 // DescribeLiveRealtimeDeliveryAccResponse is the response struct for api DescribeLiveRealtimeDeliveryAcc

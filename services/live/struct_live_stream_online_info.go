@@ -27,6 +27,7 @@ type LiveStreamOnlineInfo struct {
 	PublishType   string `json:"PublishType" xml:"PublishType"`
 	Transcoded    string `json:"Transcoded" xml:"Transcoded"`
 	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
+	TranscodeDrm  string `json:"TranscodeDrm" xml:"TranscodeDrm"`
 	ServerIp      string `json:"ServerIp" xml:"ServerIp"`
 	ClientIp      string `json:"ClientIp" xml:"ClientIp"`
 	VideoCodecId  int    `json:"VideoCodecId" xml:"VideoCodecId"`

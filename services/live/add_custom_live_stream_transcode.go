@@ -71,23 +71,27 @@ func (client *Client) AddCustomLiveStreamTranscodeWithCallback(request *AddCusto
 // AddCustomLiveStreamTranscodeRequest is the request struct for api AddCustomLiveStreamTranscode
 type AddCustomLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
-	Template        string           `position:"Query" name:"Template"`
-	Lazy            string           `position:"Query" name:"Lazy"`
-	Gop             string           `position:"Query" name:"Gop"`
-	AudioCodec      string           `position:"Query" name:"AudioCodec"`
-	TemplateType    string           `position:"Query" name:"TemplateType"`
-	AudioProfile    string           `position:"Query" name:"AudioProfile"`
-	Height          requests.Integer `position:"Query" name:"Height"`
-	App             string           `position:"Query" name:"App"`
-	AudioChannelNum requests.Integer `position:"Query" name:"AudioChannelNum"`
-	Profile         requests.Integer `position:"Query" name:"Profile"`
-	FPS             requests.Integer `position:"Query" name:"FPS"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	AudioRate       requests.Integer `position:"Query" name:"AudioRate"`
-	AudioBitrate    requests.Integer `position:"Query" name:"AudioBitrate"`
-	Domain          string           `position:"Query" name:"Domain"`
-	Width           requests.Integer `position:"Query" name:"Width"`
-	VideoBitrate    requests.Integer `position:"Query" name:"VideoBitrate"`
+	Template             string           `position:"Query" name:"Template"`
+	Lazy                 string           `position:"Query" name:"Lazy"`
+	Gop                  string           `position:"Query" name:"Gop"`
+	KmsKeyExpireInterval string           `position:"Query" name:"KmsKeyExpireInterval"`
+	AudioCodec           string           `position:"Query" name:"AudioCodec"`
+	KmsUID               string           `position:"Query" name:"KmsUID"`
+	TemplateType         string           `position:"Query" name:"TemplateType"`
+	AudioProfile         string           `position:"Query" name:"AudioProfile"`
+	Height               requests.Integer `position:"Query" name:"Height"`
+	App                  string           `position:"Query" name:"App"`
+	EncryptParameters    string           `position:"Query" name:"EncryptParameters"`
+	AudioChannelNum      requests.Integer `position:"Query" name:"AudioChannelNum"`
+	Profile              requests.Integer `position:"Query" name:"Profile"`
+	FPS                  requests.Integer `position:"Query" name:"FPS"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AudioRate            requests.Integer `position:"Query" name:"AudioRate"`
+	AudioBitrate         requests.Integer `position:"Query" name:"AudioBitrate"`
+	Domain               string           `position:"Query" name:"Domain"`
+	Width                requests.Integer `position:"Query" name:"Width"`
+	VideoBitrate         requests.Integer `position:"Query" name:"VideoBitrate"`
+	KmsKeyID             string           `position:"Query" name:"KmsKeyID"`
 }
 
 // AddCustomLiveStreamTranscodeResponse is the response struct for api AddCustomLiveStreamTranscode

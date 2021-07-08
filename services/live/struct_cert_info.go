@@ -28,6 +28,7 @@ type CertInfo struct {
 	SSLProtocol    string `json:"SSLProtocol" xml:"SSLProtocol"`
 	SSLPub         string `json:"SSLPub" xml:"SSLPub"`
 	Passphrase     string `json:"Passphrase" xml:"Passphrase"`
+	CreateDate     string `json:"CreateDate" xml:"CreateDate"`
 	Status         string `json:"Status" xml:"Status"`
 	Description    string `json:"Description" xml:"Description"`
 	CertDomainName string `json:"CertDomainName" xml:"CertDomainName"`

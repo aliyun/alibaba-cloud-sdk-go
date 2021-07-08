@@ -22,13 +22,14 @@ type DataModule struct {
 	Region            string `json:"Region" xml:"Region"`
 	BpsValue          string `json:"BpsValue" xml:"BpsValue"`
 	HttpsTrafficValue string `json:"HttpsTrafficValue" xml:"HttpsTrafficValue"`
+	DrmType           string `json:"DrmType" xml:"DrmType"`
 	Value             string `json:"Value" xml:"Value"`
 	TrafficValue      string `json:"TrafficValue" xml:"TrafficValue"`
 	Scene             string `json:"Scene" xml:"Scene"`
 	Count             int64  `json:"Count" xml:"Count"`
-	Size              string `json:"Size" xml:"Size"`
 	TimeStamp         string `json:"TimeStamp" xml:"TimeStamp"`
 	HttpBpsValue      string `json:"HttpBpsValue" xml:"HttpBpsValue"`
+	Size              int64  `json:"Size" xml:"Size"`
 	Fee               string `json:"Fee" xml:"Fee"`
 	HttpsBpsValue     string `json:"HttpsBpsValue" xml:"HttpsBpsValue"`
 	HttpTrafficValue  string `json:"HttpTrafficValue" xml:"HttpTrafficValue"`
