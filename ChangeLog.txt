@@ -1,3 +1,7 @@
+2021-07-09 Version: v1.61.1180
+- Generated 2020-01-16 for `DAS`.
+- Support Redis BigKey and TopBigKey, TopHotkey.
+
 2021-07-09 Version: v1.61.1179
 - Generated 2020-01-16 for `DAS`.
 - Support Redis BigKey and TopBigKey, TopHotkey.
