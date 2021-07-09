@@ -79,6 +79,7 @@ type QueryPushRecordsRequest struct {
 	EndTime   string           `position:"Query" name:"EndTime"`
 	Target    string           `position:"Query" name:"Target"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	Page      requests.Integer `position:"Query" name:"Page"`
 	PushType  string           `position:"Query" name:"PushType"`
 }
 
@@ -88,6 +89,8 @@ type QueryPushRecordsResponse struct {
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	NextToken string    `json:"NextToken" xml:"NextToken"`
 	PageSize  int       `json:"PageSize" xml:"PageSize"`
+	Page      int       `json:"Page" xml:"Page"`
+	Total     int       `json:"Total" xml:"Total"`
 	PushInfos PushInfos `json:"PushInfos" xml:"PushInfos"`
 }
 

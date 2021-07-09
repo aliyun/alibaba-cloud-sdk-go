@@ -96,21 +96,25 @@ type PushRequest struct {
 	AndroidOpenUrl                   string           `position:"Query" name:"AndroidOpenUrl"`
 	AndroidXiaoMiNotifyBody          string           `position:"Query" name:"AndroidXiaoMiNotifyBody"`
 	IOSSubtitle                      string           `position:"Query" name:"iOSSubtitle"`
+	AndroidXiaomiBigPictureUrl       string           `position:"Query" name:"AndroidXiaomiBigPictureUrl"`
 	IOSRemind                        requests.Boolean `position:"Query" name:"iOSRemind"`
 	AndroidMusic                     string           `position:"Query" name:"AndroidMusic"`
 	IOSNotificationCollapseId        string           `position:"Query" name:"iOSNotificationCollapseId"`
 	PushType                         string           `position:"Query" name:"PushType"`
 	AndroidExtParameters             string           `position:"Query" name:"AndroidExtParameters"`
 	IOSBadge                         requests.Integer `position:"Query" name:"iOSBadge"`
+	AndroidBigBody                   string           `position:"Query" name:"AndroidBigBody"`
 	IOSBadgeAutoIncrement            requests.Boolean `position:"Query" name:"iOSBadgeAutoIncrement"`
 	AndroidOpenType                  string           `position:"Query" name:"AndroidOpenType"`
 	Title                            string           `position:"Query" name:"Title"`
 	SmsDelaySecs                     requests.Integer `position:"Query" name:"SmsDelaySecs"`
+	AndroidRenderStyle               requests.Integer `position:"Query" name:"AndroidRenderStyle"`
 	IOSExtParameters                 string           `position:"Query" name:"iOSExtParameters"`
 	SmsTemplateName                  string           `position:"Query" name:"SmsTemplateName"`
 	AndroidPopupBody                 string           `position:"Query" name:"AndroidPopupBody"`
 	IOSSilentNotification            requests.Boolean `position:"Query" name:"iOSSilentNotification"`
 	Target                           string           `position:"Query" name:"Target"`
+	AndroidBigTitle                  string           `position:"Query" name:"AndroidBigTitle"`
 	AndroidNotificationChannel       string           `position:"Query" name:"AndroidNotificationChannel"`
 	AndroidRemind                    requests.Boolean `position:"Query" name:"AndroidRemind"`
 	AndroidActivity                  string           `position:"Query" name:"AndroidActivity"`

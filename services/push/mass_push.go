@@ -80,6 +80,7 @@ type MassPushPushTask struct {
 	AndroidNotificationBarType       string `name:"AndroidNotificationBarType"`
 	AndroidExtParameters             string `name:"AndroidExtParameters"`
 	IOSBadge                         string `name:"iOSBadge"`
+	AndroidBigBody                   string `name:"AndroidBigBody"`
 	IOSBadgeAutoIncrement            string `name:"iOSBadgeAutoIncrement"`
 	AndroidOpenType                  string `name:"AndroidOpenType"`
 	Title                            string `name:"Title"`
@@ -90,6 +91,7 @@ type MassPushPushTask struct {
 	AndroidNotificationHuaweiChannel string `name:"AndroidNotificationHuaweiChannel"`
 	AndroidPopupActivity             string `name:"AndroidPopupActivity"`
 	IOSRemindBody                    string `name:"iOSRemindBody"`
+	AndroidRenderStyle               string `name:"AndroidRenderStyle"`
 	IOSExtParameters                 string `name:"iOSExtParameters"`
 	AndroidNotifyType                string `name:"AndroidNotifyType"`
 	AndroidPopupTitle                string `name:"AndroidPopupTitle"`
@@ -106,12 +108,14 @@ type MassPushPushTask struct {
 	IOSSilentNotification            string `name:"iOSSilentNotification"`
 	JobKey                           string `name:"JobKey"`
 	Target                           string `name:"Target"`
+	AndroidBigTitle                  string `name:"AndroidBigTitle"`
 	AndroidOpenUrl                   string `name:"AndroidOpenUrl"`
 	AndroidNotificationChannel       string `name:"AndroidNotificationChannel"`
 	AndroidRemind                    string `name:"AndroidRemind"`
 	AndroidActivity                  string `name:"AndroidActivity"`
 	AndroidXiaoMiNotifyBody          string `name:"AndroidXiaoMiNotifyBody"`
 	IOSSubtitle                      string `name:"iOSSubtitle"`
+	AndroidXiaomiBigPictureUrl       string `name:"AndroidXiaomiBigPictureUrl"`
 	IOSRemind                        string `name:"iOSRemind"`
 	AndroidNotificationNotifyId      string `name:"AndroidNotificationNotifyId"`
 	TargetValue                      string `name:"TargetValue"`
