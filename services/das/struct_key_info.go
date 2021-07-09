@@ -20,8 +20,8 @@ type KeyInfo struct {
 	Key                  string `json:"Key" xml:"Key"`
 	Db                   int    `json:"Db" xml:"Db"`
 	NodeId               string `json:"NodeId" xml:"NodeId"`
-	Encoding             string `json:"Encoding" xml:"Encoding"`
 	ExpirationTimeMillis int64  `json:"ExpirationTimeMillis" xml:"ExpirationTimeMillis"`
+	Encoding             string `json:"Encoding" xml:"Encoding"`
 	Count                int64  `json:"Count" xml:"Count"`
 	Bytes                int64  `json:"Bytes" xml:"Bytes"`
 	Type                 string `json:"Type" xml:"Type"`

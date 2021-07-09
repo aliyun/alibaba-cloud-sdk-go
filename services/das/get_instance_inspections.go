@@ -83,9 +83,9 @@ type GetInstanceInspectionsRequest struct {
 // GetInstanceInspectionsResponse is the response struct for api GetInstanceInspections
 type GetInstanceInspectionsResponse struct {
 	*responses.BaseResponse
-	Code      string                       `json:"Code" xml:"Code"`
-	Message   string                       `json:"Message" xml:"Message"`
 	RequestId string                       `json:"RequestId" xml:"RequestId"`
+	Message   string                       `json:"Message" xml:"Message"`
+	Code      string                       `json:"Code" xml:"Code"`
 	Success   string                       `json:"Success" xml:"Success"`
 	Data      DataInGetInstanceInspections `json:"Data" xml:"Data"`
 }

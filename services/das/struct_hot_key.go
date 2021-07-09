@@ -17,9 +17,11 @@ package das
 
 // HotKey is a nested struct in das response
 type HotKey struct {
+	Key     string `json:"Key" xml:"Key"`
+	NodeId  string `json:"NodeId" xml:"NodeId"`
 	Db      int    `json:"Db" xml:"Db"`
+	Lfu     int    `json:"Lfu" xml:"Lfu"`
+	Hot     string `json:"Hot" xml:"Hot"`
 	KeyType string `json:"KeyType" xml:"KeyType"`
 	Size    int64  `json:"Size" xml:"Size"`
-	Hot     string `json:"Hot" xml:"Hot"`
-	Key     string `json:"Key" xml:"Key"`
 }

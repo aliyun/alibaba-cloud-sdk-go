@@ -17,8 +17,8 @@ package das
 
 // ResourceSyncSubResult is a nested struct in das response
 type ResourceSyncSubResult struct {
-	ResourceType string `json:"ResourceType" xml:"ResourceType"`
 	ErrMsg       string `json:"ErrMsg" xml:"ErrMsg"`
+	ResourceType string `json:"ResourceType" xml:"ResourceType"`
 	Success      bool   `json:"Success" xml:"Success"`
 	SyncCount    int    `json:"SyncCount" xml:"SyncCount"`
 }

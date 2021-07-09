@@ -103,12 +103,12 @@ type AccessHDMInstanceRequest struct {
 // AccessHDMInstanceResponse is the response struct for api AccessHDMInstance
 type AccessHDMInstanceResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Data      string `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
 	Synchro   string `json:"Synchro" xml:"Synchro"`
+	Data      string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateAccessHDMInstanceRequest creates a request to invoke AccessHDMInstance API

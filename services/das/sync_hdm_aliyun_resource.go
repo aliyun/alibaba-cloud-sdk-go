@@ -86,12 +86,12 @@ type SyncHDMAliyunResourceRequest struct {
 // SyncHDMAliyunResourceResponse is the response struct for api SyncHDMAliyunResource
 type SyncHDMAliyunResourceResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Data      string `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
 	Synchro   string `json:"Synchro" xml:"Synchro"`
+	Data      string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateSyncHDMAliyunResourceRequest creates a request to invoke SyncHDMAliyunResource API

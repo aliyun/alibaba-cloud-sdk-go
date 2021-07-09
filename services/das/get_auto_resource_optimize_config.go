@@ -82,11 +82,11 @@ type GetAutoResourceOptimizeConfigRequest struct {
 // GetAutoResourceOptimizeConfigResponse is the response struct for api GetAutoResourceOptimizeConfig
 type GetAutoResourceOptimizeConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Data      string `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Synchro   string `json:"Synchro" xml:"Synchro"`
+	Data      string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   string `json:"Success" xml:"Success"`
 }
 

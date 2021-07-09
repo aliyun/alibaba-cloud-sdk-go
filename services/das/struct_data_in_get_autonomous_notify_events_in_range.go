@@ -17,9 +17,9 @@ package das
 
 // DataInGetAutonomousNotifyEventsInRange is a nested struct in das response
 type DataInGetAutonomousNotifyEventsInRange struct {
+	Extra    string                                 `json:"Extra" xml:"Extra"`
+	PageSize int64                                  `json:"PageSize" xml:"PageSize"`
 	Total    int64                                  `json:"Total" xml:"Total"`
 	PageNo   int64                                  `json:"PageNo" xml:"PageNo"`
-	PageSize int64                                  `json:"PageSize" xml:"PageSize"`
-	Extra    string                                 `json:"Extra" xml:"Extra"`
 	List     ListInGetAutonomousNotifyEventsInRange `json:"List" xml:"List"`
 }

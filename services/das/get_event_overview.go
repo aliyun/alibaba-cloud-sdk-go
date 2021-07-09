@@ -73,17 +73,19 @@ type GetEventOverviewRequest struct {
 	*requests.RpcRequest
 	EndTime    string `position:"Query" name:"EndTime"`
 	StartTime  string `position:"Query" name:"StartTime"`
+	Tags       string `position:"Query" name:"Tags"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 	MinLevel   string `position:"Query" name:"MinLevel"`
+	TicketId   string `position:"Query" name:"TicketId"`
 }
 
 // GetEventOverviewResponse is the response struct for api GetEventOverview
 type GetEventOverviewResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Data      string `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   string `json:"Success" xml:"Success"`
 }
 

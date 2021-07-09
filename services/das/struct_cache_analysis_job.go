@@ -17,10 +17,10 @@ package das
 
 // CacheAnalysisJob is a nested struct in das response
 type CacheAnalysisJob struct {
-	JobId      string                             `json:"JobId" xml:"JobId"`
+	Message    string                             `json:"Message" xml:"Message"`
 	InstanceId string                             `json:"InstanceId" xml:"InstanceId"`
 	NodeId     string                             `json:"NodeId" xml:"NodeId"`
 	TaskState  string                             `json:"TaskState" xml:"TaskState"`
-	Message    string                             `json:"Message" xml:"Message"`
+	JobId      string                             `json:"JobId" xml:"JobId"`
 	BigKeys    BigKeysInDescribeCacheAnalysisJobs `json:"BigKeys" xml:"BigKeys"`
 }

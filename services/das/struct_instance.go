@@ -17,15 +17,15 @@ package das
 
 // Instance is a nested struct in das response
 type Instance struct {
-	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-	AccountId     string `json:"AccountId" xml:"AccountId"`
-	Engine        string `json:"Engine" xml:"Engine"`
 	EngineVersion string `json:"EngineVersion" xml:"EngineVersion"`
-	Region        string `json:"Region" xml:"Region"`
-	VpcId         string `json:"VpcId" xml:"VpcId"`
+	AccountId     string `json:"AccountId" xml:"AccountId"`
 	Uuid          string `json:"Uuid" xml:"Uuid"`
+	VpcId         string `json:"VpcId" xml:"VpcId"`
+	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
+	NetworkType   string `json:"NetworkType" xml:"NetworkType"`
 	NodeId        string `json:"NodeId" xml:"NodeId"`
 	InstanceArea  string `json:"InstanceArea" xml:"InstanceArea"`
+	Region        string `json:"Region" xml:"Region"`
 	InstanceClass string `json:"InstanceClass" xml:"InstanceClass"`
-	NetworkType   string `json:"NetworkType" xml:"NetworkType"`
+	Engine        string `json:"Engine" xml:"Engine"`
 }

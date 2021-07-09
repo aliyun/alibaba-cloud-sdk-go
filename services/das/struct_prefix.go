@@ -17,9 +17,9 @@ package das
 
 // Prefix is a nested struct in das response
 type Prefix struct {
-	Prefix string `json:"Prefix" xml:"Prefix"`
-	Type   string `json:"Type" xml:"Type"`
 	Bytes  int64  `json:"Bytes" xml:"Bytes"`
+	Type   string `json:"Type" xml:"Type"`
 	KeyNum int64  `json:"KeyNum" xml:"KeyNum"`
 	Count  int64  `json:"Count" xml:"Count"`
+	Prefix string `json:"Prefix" xml:"Prefix"`
 }

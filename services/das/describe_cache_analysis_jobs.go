@@ -81,9 +81,9 @@ type DescribeCacheAnalysisJobsRequest struct {
 // DescribeCacheAnalysisJobsResponse is the response struct for api DescribeCacheAnalysisJobs
 type DescribeCacheAnalysisJobsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   string `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
