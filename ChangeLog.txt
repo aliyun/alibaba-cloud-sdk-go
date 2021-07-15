@@ -1,3 +1,7 @@
+2021-07-15 Version: v1.61.1183
+- Generated 2020-06-16 for `Alb`.
+- Support Alb Open API.
+
 2021-07-15 Version: v1.61.1182
 - Generated 2020-01-01 for `ddoscoo`.
 
