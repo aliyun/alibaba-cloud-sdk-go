@@ -17,11 +17,11 @@ package imageprocess
 
 // PulmonaryInfo is a nested struct in imageprocess response
 type PulmonaryInfo struct {
-	MaxAreaIndex     int64     `json:"MaxAreaIndex" xml:"MaxAreaIndex"`
-	MaxArea          float64   `json:"MaxArea" xml:"MaxArea"`
 	MaxDiameter      float64   `json:"MaxDiameter" xml:"MaxDiameter"`
-	LabelValue       int64     `json:"LabelValue" xml:"LabelValue"`
+	MaxAreaIndex     int64     `json:"MaxAreaIndex" xml:"MaxAreaIndex"`
 	NearestAortaArea float64   `json:"NearestAortaArea" xml:"NearestAortaArea"`
+	MaxArea          float64   `json:"MaxArea" xml:"MaxArea"`
+	LabelValue       int64     `json:"LabelValue" xml:"LabelValue"`
 	Coordinates      []string  `json:"Coordinates" xml:"Coordinates"`
 	Area             []float64 `json:"Area" xml:"Area"`
 }

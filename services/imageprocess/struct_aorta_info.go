@@ -17,9 +17,9 @@ package imageprocess
 
 // AortaInfo is a nested struct in imageprocess response
 type AortaInfo struct {
+	MaxDiameter  float64   `json:"MaxDiameter" xml:"MaxDiameter"`
 	MaxAreaIndex int64     `json:"MaxAreaIndex" xml:"MaxAreaIndex"`
 	MaxArea      float64   `json:"MaxArea" xml:"MaxArea"`
-	MaxDiameter  float64   `json:"MaxDiameter" xml:"MaxDiameter"`
 	LabelValue   int64     `json:"LabelValue" xml:"LabelValue"`
 	Coordinates  []string  `json:"Coordinates" xml:"Coordinates"`
 	Area         []float64 `json:"Area" xml:"Area"`

@@ -22,13 +22,13 @@ type Element struct {
 	Confidence     float64 `json:"Confidence" xml:"Confidence"`
 	SOPInstanceUID string  `json:"SOPInstanceUID" xml:"SOPInstanceUID"`
 	Z              float64 `json:"Z" xml:"Z"`
-	ImageX         float64 `json:"ImageX" xml:"ImageX"`
 	Lobe           string  `json:"Lobe" xml:"Lobe"`
+	ImageX         float64 `json:"ImageX" xml:"ImageX"`
 	Y              float64 `json:"Y" xml:"Y"`
 	Volume         float64 `json:"Volume" xml:"Volume"`
 	X              float64 `json:"X" xml:"X"`
 	Diameter       float64 `json:"Diameter" xml:"Diameter"`
-	ImageZ         float64 `json:"ImageZ" xml:"ImageZ"`
 	MeanValue      float64 `json:"MeanValue" xml:"MeanValue"`
+	ImageZ         float64 `json:"ImageZ" xml:"ImageZ"`
 	Lung           string  `json:"Lung" xml:"Lung"`
 }
