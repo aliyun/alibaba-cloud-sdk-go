@@ -1,3 +1,7 @@
+2021-07-19 Version: v1.61.1185
+- Generated 2014-05-26 for `Ecs`.
+- CreateNetworkInterface supports to allocate Ipv6.
+
 2021-07-19 Version: v1.61.1184
 - Generated 2020-03-20 for `imageprocess`.
 - Update ScreenChestCT.

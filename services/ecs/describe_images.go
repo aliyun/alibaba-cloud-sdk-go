@@ -99,7 +99,7 @@ type DescribeImagesRequest struct {
 
 // DescribeImagesTag is a repeated param struct in DescribeImagesRequest
 type DescribeImagesTag struct {
-	Value string `name:"Value"`
+	Value string `name:"value"`
 	Key   string `name:"Key"`
 }
 
@@ -112,11 +112,11 @@ type DescribeImagesFilter struct {
 // DescribeImagesResponse is the response struct for api DescribeImages
 type DescribeImagesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	RegionId   string `json:"RegionId" xml:"RegionId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
 	Images     Images `json:"Images" xml:"Images"`
 }
 
