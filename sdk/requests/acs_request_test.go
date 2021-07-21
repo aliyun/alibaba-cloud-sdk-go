@@ -2,6 +2,7 @@ package requests
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"io"
 	"sort"
@@ -127,7 +128,7 @@ type AcsRequestTest struct {
 	Query          string                      `position:"Query" name:"Query"`
 	Header         string                      `position:"Header" name:"Header"`
 	Path           string                      `position:"Path" name:"Path"`
-	Body           string                      `position:"Body" name:"Body"`
+	Body           []string                    `position:"Body" name:"Body"`
 	Target         map[string]interface{}      `position:"Query" name:"Target" type:"Map"`
 	TypeAcs        *[]string                   `position:"Query" name:"TypeAcs" type:"Repeated"`
 }
@@ -172,7 +173,7 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 		Query:          "query value",
 		Header:         "header value",
 		Path:           "path value",
-		Body:           "body value",
+		Body:           []string{"hello"},
 		Target: map[string]interface{}{
 			"key": []string{"hello", "world"},
 		},
@@ -181,7 +182,8 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 	r.TypeAcs = &tmp
 	r.addQueryParam("qkey", "qvalue")
 	InitParams(r)
-
+	byt, _ := json.Marshal(r.Body)
+	assert.Equal(t, "[\"hello\"]", string(byt))
 	queries := r.GetQueryParams()
 	assert.Equal(t, "query value", queries["Query"])
 	sortedKeys := make([]string, 0)
