@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeRegions invokes the hitsdb.DescribeRegions API synchronously
-func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
-	response = CreateDescribeRegionsResponse()
+// RenewTSDBInstance invokes the hitsdb.RenewTSDBInstance API synchronously
+func (client *Client) RenewTSDBInstance(request *RenewTSDBInstanceRequest) (response *RenewTSDBInstanceResponse, err error) {
+	response = CreateRenewTSDBInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeRegionsWithChan invokes the hitsdb.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeRegionsResponse, 1)
+// RenewTSDBInstanceWithChan invokes the hitsdb.RenewTSDBInstance API asynchronously
+func (client *Client) RenewTSDBInstanceWithChan(request *RenewTSDBInstanceRequest) (<-chan *RenewTSDBInstanceResponse, <-chan error) {
+	responseChan := make(chan *RenewTSDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeRegions(request)
+		response, err := client.RenewTSDBInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// DescribeRegionsWithCallback invokes the hitsdb.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
+// RenewTSDBInstanceWithCallback invokes the hitsdb.RenewTSDBInstance API asynchronously
+func (client *Client) RenewTSDBInstanceWithCallback(request *RenewTSDBInstanceRequest, callback func(response *RenewTSDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeRegionsResponse
+		var response *RenewTSDBInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeRegions(request)
+		response, err = client.RenewTSDBInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,39 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
-// DescribeRegionsRequest is the request struct for api DescribeRegions
-type DescribeRegionsRequest struct {
+// RenewTSDBInstanceRequest is the request struct for api RenewTSDBInstance
+type RenewTSDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 }
 
-// DescribeRegionsResponse is the response struct for api DescribeRegions
-type DescribeRegionsResponse struct {
+// RenewTSDBInstanceResponse is the response struct for api RenewTSDBInstance
+type RenewTSDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Regions   Regions `json:"Regions" xml:"Regions"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   int64  `json:"OrderId" xml:"OrderId"`
 }
 
-// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
-	request = &DescribeRegionsRequest{
+// CreateRenewTSDBInstanceRequest creates a request to invoke RenewTSDBInstance API
+func CreateRenewTSDBInstanceRequest() (request *RenewTSDBInstanceRequest) {
+	request = &RenewTSDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeRegions", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "RenewTSDBInstance", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
-func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
-	response = &DescribeRegionsResponse{
+// CreateRenewTSDBInstanceResponse creates a response to parse from RenewTSDBInstance response
+func CreateRenewTSDBInstanceResponse() (response *RenewTSDBInstanceResponse) {
+	response = &RenewTSDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

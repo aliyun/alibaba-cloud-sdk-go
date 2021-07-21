@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeRegions invokes the hitsdb.DescribeRegions API synchronously
-func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
-	response = CreateDescribeRegionsResponse()
+// DeleteHiTSDBInstance invokes the hitsdb.DeleteHiTSDBInstance API synchronously
+func (client *Client) DeleteHiTSDBInstance(request *DeleteHiTSDBInstanceRequest) (response *DeleteHiTSDBInstanceResponse, err error) {
+	response = CreateDeleteHiTSDBInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeRegionsWithChan invokes the hitsdb.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeRegionsResponse, 1)
+// DeleteHiTSDBInstanceWithChan invokes the hitsdb.DeleteHiTSDBInstance API asynchronously
+func (client *Client) DeleteHiTSDBInstanceWithChan(request *DeleteHiTSDBInstanceRequest) (<-chan *DeleteHiTSDBInstanceResponse, <-chan error) {
+	responseChan := make(chan *DeleteHiTSDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeRegions(request)
+		response, err := client.DeleteHiTSDBInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// DescribeRegionsWithCallback invokes the hitsdb.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
+// DeleteHiTSDBInstanceWithCallback invokes the hitsdb.DeleteHiTSDBInstance API asynchronously
+func (client *Client) DeleteHiTSDBInstanceWithCallback(request *DeleteHiTSDBInstanceRequest, callback func(response *DeleteHiTSDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeRegionsResponse
+		var response *DeleteHiTSDBInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeRegions(request)
+		response, err = client.DeleteHiTSDBInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,37 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
-// DescribeRegionsRequest is the request struct for api DescribeRegions
-type DescribeRegionsRequest struct {
+// DeleteHiTSDBInstanceRequest is the request struct for api DeleteHiTSDBInstance
+type DeleteHiTSDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	AppKey               string           `position:"Query" name:"AppKey"`
 }
 
-// DescribeRegionsResponse is the response struct for api DescribeRegions
-type DescribeRegionsResponse struct {
+// DeleteHiTSDBInstanceResponse is the response struct for api DeleteHiTSDBInstance
+type DeleteHiTSDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Regions   Regions `json:"Regions" xml:"Regions"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
-	request = &DescribeRegionsRequest{
+// CreateDeleteHiTSDBInstanceRequest creates a request to invoke DeleteHiTSDBInstance API
+func CreateDeleteHiTSDBInstanceRequest() (request *DeleteHiTSDBInstanceRequest) {
+	request = &DeleteHiTSDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeRegions", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "DeleteHiTSDBInstance", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
-func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
-	response = &DescribeRegionsResponse{
+// CreateDeleteHiTSDBInstanceResponse creates a response to parse from DeleteHiTSDBInstance response
+func CreateDeleteHiTSDBInstanceResponse() (response *DeleteHiTSDBInstanceResponse) {
+	response = &DeleteHiTSDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
