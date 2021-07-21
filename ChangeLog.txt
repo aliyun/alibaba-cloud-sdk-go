@@ -1,3 +1,7 @@
+2021-07-21 Version: v1.61.1186
+- Generated 2014-05-15 for `Slb`.
+- Support HealthCheckMethod for HTTP and HTTPS listener.
+
 2021-07-19 Version: v1.61.1185
 - Generated 2014-05-26 for `Ecs`.
 - CreateNetworkInterface supports to allocate Ipv6.
