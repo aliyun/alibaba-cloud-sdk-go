@@ -1,3 +1,7 @@
+2021-07-21 Version: v1.61.1187
+- Generated 2019-01-01 for `Cms`.
+- Fix the return SDK of describealertloglist API.
+
 2021-07-21 Version: v1.61.1186
 - Generated 2014-05-15 for `Slb`.
 - Support HealthCheckMethod for HTTP and HTTPS listener.
