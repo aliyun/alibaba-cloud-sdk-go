@@ -1,3 +1,10 @@
+2021-07-22 Version: v1.61.1191
+- Generated 2017-06-13 for `elasticsearch`.
+- Add private-link support.
+- Add download dicts.
+- Add whiteIpGroup support.
+- Add recovery infos support.
+
 2021-07-21 Version: v1.61.1190
 - Generated 2017-06-01 for `hitsdb`.
 - Create Lindorm Open api.
