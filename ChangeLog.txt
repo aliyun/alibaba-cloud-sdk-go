@@ -1,3 +1,7 @@
+2021-07-22 Version: v1.61.1192
+- Generated 2020-06-19 for `cas`.
+- Added new API of Go Lang for 2020-06-19.
+
 2021-07-22 Version: v1.61.1191
 - Generated 2017-06-13 for `elasticsearch`.
 - Add private-link support.
