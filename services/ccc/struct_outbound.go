@@ -17,24 +17,30 @@ package ccc
 
 // Outbound is a nested struct in ccc response
 type Outbound struct {
-	TotalHoldTime                int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
+	CallsAttendedTransferred     int64   `json:"CallsAttendedTransferred" xml:"CallsAttendedTransferred"`
 	AverageHoldTime              float64 `json:"AverageHoldTime" xml:"AverageHoldTime"`
 	CallsDialed                  int64   `json:"CallsDialed" xml:"CallsDialed"`
-	MaxHoldTime                  int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`
-	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
+	TotalRingTime                int64   `json:"TotalRingTime" xml:"TotalRingTime"`
 	CallsAnswered                int64   `json:"CallsAnswered" xml:"CallsAnswered"`
-	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
-	CallsDialedSuccess           int64   `json:"CallsDialedSuccess" xml:"CallsDialedSuccess"`
+	MaxRingTime                  int64   `json:"MaxRingTime" xml:"MaxRingTime"`
 	AnswerRate                   float64 `json:"AnswerRate" xml:"AnswerRate"`
-	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
 	AverageTalkTime              float64 `json:"AverageTalkTime" xml:"AverageTalkTime"`
-	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
 	TotalDialingTime             int64   `json:"TotalDialingTime" xml:"TotalDialingTime"`
 	MaxWorkTime                  int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`
-	CallsHold                    int     `json:"CallsHold" xml:"CallsHold"`
 	TotalWorkTime                int64   `json:"TotalWorkTime" xml:"TotalWorkTime"`
 	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
 	AverageDialingTime           float64 `json:"AverageDialingTime" xml:"AverageDialingTime"`
+	TotalHoldTime                int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
+	SatisfactionRate             float64 `json:"SatisfactionRate" xml:"SatisfactionRate"`
+	MaxHoldTime                  int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`
+	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
+	AverageRingTime              float64 `json:"AverageRingTime" xml:"AverageRingTime"`
+	CallsBlindTransferred        int64   `json:"CallsBlindTransferred" xml:"CallsBlindTransferred"`
+	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
+	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
+	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
+	CallsHold                    int     `json:"CallsHold" xml:"CallsHold"`
+	CallsRinged                  int64   `json:"CallsRinged" xml:"CallsRinged"`
 	MaxDialingTime               int64   `json:"MaxDialingTime" xml:"MaxDialingTime"`
 	AverageWorkTime              float64 `json:"AverageWorkTime" xml:"AverageWorkTime"`
 }

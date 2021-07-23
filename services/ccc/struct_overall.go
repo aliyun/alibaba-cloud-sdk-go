@@ -18,6 +18,7 @@ package ccc
 // Overall is a nested struct in ccc response
 type Overall struct {
 	TotalHoldTime                int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
+	SatisfactionRate             float64 `json:"SatisfactionRate" xml:"SatisfactionRate"`
 	TotalLoggedInTime            int64   `json:"TotalLoggedInTime" xml:"TotalLoggedInTime"`
 	AverageHoldTime              float64 `json:"AverageHoldTime" xml:"AverageHoldTime"`
 	MaxHoldTime                  int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`

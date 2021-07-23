@@ -17,13 +17,14 @@ package ccc
 
 // CallCenterInstance is a nested struct in ccc response
 type CallCenterInstance struct {
+	Name        string        `json:"Name" xml:"Name"`
+	DomainName  string        `json:"DomainName" xml:"DomainName"`
 	AliyunUid   string        `json:"AliyunUid" xml:"AliyunUid"`
 	ConsoleUrl  string        `json:"ConsoleUrl" xml:"ConsoleUrl"`
-	Description string        `json:"Description" xml:"Description"`
-	DomainName  string        `json:"DomainName" xml:"DomainName"`
 	Id          string        `json:"Id" xml:"Id"`
-	Name        string        `json:"Name" xml:"Name"`
+	CreateTime  int64         `json:"CreateTime" xml:"CreateTime"`
 	Status      string        `json:"Status" xml:"Status"`
+	Description string        `json:"Description" xml:"Description"`
 	AdminList   []User        `json:"AdminList" xml:"AdminList"`
 	NumberList  []PhoneNumber `json:"NumberList" xml:"NumberList"`
 }

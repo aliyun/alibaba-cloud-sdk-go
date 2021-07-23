@@ -17,6 +17,7 @@ package ccc
 
 // Data is a nested struct in ccc response
 type Data struct {
+	AgentServerUrl            string            `json:"AgentServerUrl" xml:"AgentServerUrl"`
 	SatisfactionSurveyChannel string            `json:"SatisfactionSurveyChannel" xml:"SatisfactionSurveyChannel"`
 	RoleName                  string            `json:"RoleName" xml:"RoleName"`
 	AgentIds                  string            `json:"AgentIds" xml:"AgentIds"`
@@ -32,10 +33,10 @@ type Data struct {
 	WaitingCalls              int64             `json:"WaitingCalls" xml:"WaitingCalls"`
 	TalkingAgents             int64             `json:"TalkingAgents" xml:"TalkingAgents"`
 	BreakingAgents            int64             `json:"BreakingAgents" xml:"BreakingAgents"`
+	LongestWaitingTime        int64             `json:"LongestWaitingTime" xml:"LongestWaitingTime"`
 	RoleId                    string            `json:"RoleId" xml:"RoleId"`
 	TotalAgents               int64             `json:"TotalAgents" xml:"TotalAgents"`
 	Email                     string            `json:"Email" xml:"Email"`
-	LongestCall               int64             `json:"LongestCall" xml:"LongestCall"`
 	ContactId                 string            `json:"ContactId" xml:"ContactId"`
 	DomainName                string            `json:"DomainName" xml:"DomainName"`
 	RecordingReady            bool              `json:"RecordingReady" xml:"RecordingReady"`
@@ -87,9 +88,9 @@ type Data struct {
 	SignedSkillGroupIdList    []string          `json:"SignedSkillGroupIdList" xml:"SignedSkillGroupIdList"`
 	UserContext               UserContext       `json:"UserContext" xml:"UserContext"`
 	CallContext               CallContext       `json:"CallContext" xml:"CallContext"`
-	Overall                   Overall           `json:"Overall" xml:"Overall"`
-	Inbound                   Inbound           `json:"Inbound" xml:"Inbound"`
 	Outbound                  Outbound          `json:"Outbound" xml:"Outbound"`
+	Inbound                   Inbound           `json:"Inbound" xml:"Inbound"`
+	Overall                   Overall           `json:"Overall" xml:"Overall"`
 	QueueEvents               []QueueEventsItem `json:"QueueEvents" xml:"QueueEvents"`
 	IvrEvents                 []IvrEventsItem   `json:"IvrEvents" xml:"IvrEvents"`
 	AgentEvents               []AgentEventsItem `json:"AgentEvents" xml:"AgentEvents"`

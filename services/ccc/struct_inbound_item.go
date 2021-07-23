@@ -17,11 +17,11 @@ package ccc
 
 // InboundItem is a nested struct in ccc response
 type InboundItem struct {
-	CallsAbandonedInIVR     int64 `json:"CallsAbandonedInIVR" xml:"CallsAbandonedInIVR"`
-	CallsAbandonedInQueue   int64 `json:"CallsAbandonedInQueue" xml:"CallsAbandonedInQueue"`
-	CallsAbandonedInRinging int64 `json:"CallsAbandonedInRinging" xml:"CallsAbandonedInRinging"`
-	CallsHandled            int64 `json:"CallsHandled" xml:"CallsHandled"`
-	CallsQueued             int64 `json:"CallsQueued" xml:"CallsQueued"`
-	StatsTime               int64 `json:"StatsTime" xml:"StatsTime"`
-	TotalCalls              int64 `json:"TotalCalls" xml:"TotalCalls"`
+	CallsAbandonedInIVR   int64 `json:"CallsAbandonedInIVR" xml:"CallsAbandonedInIVR"`
+	CallsAbandonedInQueue int64 `json:"CallsAbandonedInQueue" xml:"CallsAbandonedInQueue"`
+	CallsAbandonedInRing  int64 `json:"CallsAbandonedInRing" xml:"CallsAbandonedInRing"`
+	CallsHandled          int64 `json:"CallsHandled" xml:"CallsHandled"`
+	CallsQueued           int64 `json:"CallsQueued" xml:"CallsQueued"`
+	StatsTime             int64 `json:"StatsTime" xml:"StatsTime"`
+	TotalCalls            int64 `json:"TotalCalls" xml:"TotalCalls"`
 }

@@ -71,22 +71,24 @@ func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailR
 // ListCallDetailRecordsRequest is the request struct for api ListCallDetailRecords
 type ListCallDetailRecordsRequest struct {
 	*requests.RpcRequest
-	ContactId                 string           `position:"Query" name:"ContactId"`
-	OrderByField              string           `position:"Query" name:"OrderByField"`
-	StartTime                 requests.Integer `position:"Query" name:"StartTime"`
-	PageNumber                requests.Integer `position:"Query" name:"PageNumber"`
-	CalledNumber              string           `position:"Query" name:"CalledNumber"`
-	SatisfactionList          string           `position:"Query" name:"SatisfactionList"`
-	PageSize                  requests.Integer `position:"Query" name:"PageSize"`
-	SortOrder                 string           `position:"Query" name:"SortOrder"`
-	AgentId                   string           `position:"Query" name:"AgentId"`
-	ContactType               string           `position:"Query" name:"ContactType"`
-	SatisfactionSurveyChannel string           `position:"Query" name:"SatisfactionSurveyChannel"`
-	EndTime                   requests.Integer `position:"Query" name:"EndTime"`
-	CallingNumber             string           `position:"Query" name:"CallingNumber"`
-	ContactDisposition        string           `position:"Query" name:"ContactDisposition"`
-	InstanceId                string           `position:"Query" name:"InstanceId"`
-	SkillGroupId              string           `position:"Query" name:"SkillGroupId"`
+	ContactId                   string           `position:"Query" name:"ContactId"`
+	Criteria                    string           `position:"Query" name:"Criteria"`
+	OrderByField                string           `position:"Query" name:"OrderByField"`
+	StartTime                   requests.Integer `position:"Query" name:"StartTime"`
+	PageNumber                  requests.Integer `position:"Query" name:"PageNumber"`
+	CalledNumber                string           `position:"Query" name:"CalledNumber"`
+	SatisfactionList            string           `position:"Query" name:"SatisfactionList"`
+	PageSize                    requests.Integer `position:"Query" name:"PageSize"`
+	SortOrder                   string           `position:"Query" name:"SortOrder"`
+	SatisfactionDescriptionList string           `position:"Query" name:"SatisfactionDescriptionList"`
+	AgentId                     string           `position:"Query" name:"AgentId"`
+	ContactType                 string           `position:"Query" name:"ContactType"`
+	SatisfactionSurveyChannel   string           `position:"Query" name:"SatisfactionSurveyChannel"`
+	EndTime                     requests.Integer `position:"Query" name:"EndTime"`
+	CallingNumber               string           `position:"Query" name:"CallingNumber"`
+	ContactDisposition          string           `position:"Query" name:"ContactDisposition"`
+	InstanceId                  string           `position:"Query" name:"InstanceId"`
+	SkillGroupId                string           `position:"Query" name:"SkillGroupId"`
 }
 
 // ListCallDetailRecordsResponse is the response struct for api ListCallDetailRecords

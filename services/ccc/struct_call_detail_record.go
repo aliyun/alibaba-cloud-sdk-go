@@ -19,22 +19,28 @@ package ccc
 type CallDetailRecord struct {
 	SatisfactionSurveyChannel string `json:"SatisfactionSurveyChannel" xml:"SatisfactionSurveyChannel"`
 	SkillGroupIds             string `json:"SkillGroupIds" xml:"SkillGroupIds"`
+	IvrTime                   int64  `json:"IvrTime" xml:"IvrTime"`
+	WaitTime                  int64  `json:"WaitTime" xml:"WaitTime"`
+	AgentIds                  string `json:"AgentIds" xml:"AgentIds"`
+	SkillGroupNames           string `json:"SkillGroupNames" xml:"SkillGroupNames"`
+	StartTime                 int64  `json:"StartTime" xml:"StartTime"`
+	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
+	RecordingDuration         int64  `json:"RecordingDuration" xml:"RecordingDuration"`
+	EstablishedTime           int64  `json:"EstablishedTime" xml:"EstablishedTime"`
+	ReleaseTime               int64  `json:"ReleaseTime" xml:"ReleaseTime"`
+	Duration                  int64  `json:"Duration" xml:"Duration"`
+	QueueTime                 int64  `json:"QueueTime" xml:"QueueTime"`
+	RingTime                  int64  `json:"RingTime" xml:"RingTime"`
 	ContactId                 string `json:"ContactId" xml:"ContactId"`
 	RecordingReady            bool   `json:"RecordingReady" xml:"RecordingReady"`
 	AgentNames                string `json:"AgentNames" xml:"AgentNames"`
 	CallDuration              string `json:"CallDuration" xml:"CallDuration"`
 	CalledNumber              string `json:"CalledNumber" xml:"CalledNumber"`
 	ContactType               string `json:"ContactType" xml:"ContactType"`
-	AgentIds                  string `json:"AgentIds" xml:"AgentIds"`
+	SatisfactionIndex         int    `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
 	CallingNumber             string `json:"CallingNumber" xml:"CallingNumber"`
-	SkillGroupNames           string `json:"SkillGroupNames" xml:"SkillGroupNames"`
-	StartTime                 int64  `json:"StartTime" xml:"StartTime"`
 	SatisfactionSurveyOffered bool   `json:"SatisfactionSurveyOffered" xml:"SatisfactionSurveyOffered"`
 	ContactDisposition        string `json:"ContactDisposition" xml:"ContactDisposition"`
-	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
-	Satisfaction              int    `json:"Satisfaction" xml:"Satisfaction"`
-	EstablishedTime           int64  `json:"EstablishedTime" xml:"EstablishedTime"`
-	ReleaseTime               int64  `json:"ReleaseTime" xml:"ReleaseTime"`
+	SatisfactionDescription   string `json:"SatisfactionDescription" xml:"SatisfactionDescription"`
 	ReleaseInitiator          string `json:"ReleaseInitiator" xml:"ReleaseInitiator"`
-	Duration                  int64  `json:"Duration" xml:"Duration"`
 }
