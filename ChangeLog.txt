@@ -1,3 +1,7 @@
+2021-07-26 Version: v1.61.1194
+- Generated 2019-08-08 for `ARMS`.
+- Add ENDPOINT V1.
+
 2021-07-23 Version: v1.61.1193
 - Generated 2020-07-01 for `CCC`.
 - Export instance relative API.
