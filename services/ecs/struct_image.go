@@ -40,6 +40,8 @@ type Image struct {
 	IsSelfShared         string                                      `json:"IsSelfShared" xml:"IsSelfShared"`
 	ImageName            string                                      `json:"ImageName" xml:"ImageName"`
 	Status               string                                      `json:"Status" xml:"Status"`
+	ImageOwnerId         int64                                       `json:"ImageOwnerId" xml:"ImageOwnerId"`
+	IsPublic             bool                                        `json:"IsPublic" xml:"IsPublic"`
 	Tags                 TagsInDescribeImages                        `json:"Tags" xml:"Tags"`
 	DiskDeviceMappings   DiskDeviceMappingsInDescribeImageFromFamily `json:"DiskDeviceMappings" xml:"DiskDeviceMappings"`
 }

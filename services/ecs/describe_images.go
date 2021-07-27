@@ -72,6 +72,7 @@ func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest,
 type DescribeImagesRequest struct {
 	*requests.RpcRequest
 	ActionType           string                  `position:"Query" name:"ActionType"`
+	ImageOwnerId         requests.Integer        `position:"Query" name:"ImageOwnerId"`
 	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string                  `position:"Query" name:"ImageId"`
 	SnapshotId           string                  `position:"Query" name:"SnapshotId"`
@@ -82,6 +83,7 @@ type DescribeImagesRequest struct {
 	IsSupportIoOptimized requests.Boolean        `position:"Query" name:"IsSupportIoOptimized"`
 	ImageName            string                  `position:"Query" name:"ImageName"`
 	IsSupportCloudinit   requests.Boolean        `position:"Query" name:"IsSupportCloudinit"`
+	IsPublic             requests.Boolean        `position:"Query" name:"IsPublic"`
 	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
 	InstanceType         string                  `position:"Query" name:"InstanceType"`
 	Tag                  *[]DescribeImagesTag    `position:"Query" name:"Tag"  type:"Repeated"`
