@@ -36,6 +36,10 @@ type Signer interface {
 
 func NewSignerWithCredential(credential Credential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer Signer, err error) {
 	switch instance := credential.(type) {
+	case *credentials.SourceCredential:
+		{
+			signer = signers.NewSourceSigner(instance)
+		}
 	case *credentials.AccessKeyCredential:
 		{
 			signer = signers.NewAccessKeySigner(instance)

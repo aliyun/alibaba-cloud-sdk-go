@@ -108,6 +108,12 @@ func Test_NewClientWithPolicy(t *testing.T) {
 	assert.NotNil(t, client)
 }
 
+func Test_NewClientWithSource(t *testing.T) {
+	client, err := NewClientWithSource("regionid", "accesskey", "accesskeysecret", "sourceip", "securitytransport")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+}
+
 func Test_NewClientWithAccessKey(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
