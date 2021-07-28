@@ -131,3 +131,11 @@ func Test_Sign_RPC(t *testing.T) {
 	err := Sign(request, signer, "regionId")
 	assert.Nil(t, err)
 }
+
+func Test_NewSignerWithCredential(t *testing.T) {
+	c := credentials.NewSourceCredential("accessKeyId", "accessKeySecret", "sourceIp", "secruityTransport")
+	signer, err := NewSignerWithCredential(c, nil)
+	assert.Nil(t, err)
+	_, ok := signer.(*signers.SourceCredentialSigner)
+	assert.True(t, ok)
+}

@@ -252,6 +252,17 @@ func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret s
 	return client.InitWithOptions(regionId, config, credential)
 }
 
+func (client *Client) InitWithSource(regionId, accessKeyId, accessKeySecret, sourceIp, SecurityTransport string) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.SourceCredential{
+		AccessKeyId:       accessKeyId,
+		AccessKeySecret:   accessKeySecret,
+		SourceIp:          sourceIp,
+		SecurityTransport: SecurityTransport,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
 func (client *Client) InitWithStsToken(regionId, accessKeyId, accessKeySecret, securityToken string) (err error) {
 	config := client.InitClientConfig()
 	credential := &credentials.StsTokenCredential{
@@ -749,6 +760,15 @@ func NewClientWithProvider(regionId string, providers ...provider.Provider) (cli
 func NewClientWithOptions(regionId string, config *Config, credential auth.Credential) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithOptions(regionId, config, credential)
+	return
+}
+
+func NewClientWithSource(regionId, accessKeyId, accessKeySecret, sourceIp, securityTransport string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithSource(regionId, accessKeyId, accessKeySecret, sourceIp, securityTransport)
+	if err != nil {
+		return nil, err
+	}
 	return
 }
 

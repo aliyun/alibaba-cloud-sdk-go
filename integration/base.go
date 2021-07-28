@@ -177,7 +177,11 @@ func createAccessKey() (string, string, error) {
 }
 
 func createAssumeRole() (*sts.AssumeRoleResponse, error) {
-	err := createUser()
+	subaccesskeyid, subaccesskeysecret, err := createAccessKey()
+	if err != nil {
+		return nil, err
+	}
+	err = createUser()
 	if err != nil {
 		return nil, err
 	}
@@ -189,10 +193,10 @@ func createAssumeRole() (*sts.AssumeRoleResponse, error) {
 	if err != nil {
 		return nil, err
 	}
-	subaccesskeyid, subaccesskeysecret, err := createAccessKey()
-	if err != nil {
-		return nil, err
-	}
+	// subaccesskeyid, subaccesskeysecret, err := createAccessKey()
+	// if err != nil {
+	// 	return nil, err
+	// }
 	request := sts.CreateAssumeRoleRequest()
 	request.RoleArn = rolearn
 	request.RoleSessionName = "alice_test"
