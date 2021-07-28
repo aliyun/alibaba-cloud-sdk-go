@@ -17,8 +17,9 @@ package arms
 
 // Data is a nested struct in arms response
 type Data struct {
-	Page     int                      `json:"Page" xml:"Page"`
-	Total    string                   `json:"Total" xml:"Total"`
-	PageSize int                      `json:"PageSize" xml:"PageSize"`
-	Items    []map[string]interface{} `json:"Items" xml:"Items"`
+	IsControllerInstalled bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
+	Page                  int                      `json:"Page" xml:"Page"`
+	Total                 string                   `json:"Total" xml:"Total"`
+	PageSize              int                      `json:"PageSize" xml:"PageSize"`
+	Items                 []map[string]interface{} `json:"Items" xml:"Items"`
 }
