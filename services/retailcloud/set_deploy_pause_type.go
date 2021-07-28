@@ -89,7 +89,7 @@ func CreateSetDeployPauseTypeRequest() (request *SetDeployPauseTypeRequest) {
 	request = &SetDeployPauseTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "SetDeployPauseType", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "SetDeployPauseType", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

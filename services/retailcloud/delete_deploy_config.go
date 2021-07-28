@@ -88,7 +88,7 @@ func CreateDeleteDeployConfigRequest() (request *DeleteDeployConfigRequest) {
 	request = &DeleteDeployConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteDeployConfig", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteDeployConfig", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -106,7 +106,7 @@ func CreateCreateAppRequest() (request *CreateAppRequest) {
 	request = &CreateAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateApp", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateApp", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

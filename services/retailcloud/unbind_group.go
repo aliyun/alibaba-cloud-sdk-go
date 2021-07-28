@@ -90,7 +90,7 @@ func CreateUnbindGroupRequest() (request *UnbindGroupRequest) {
 	request = &UnbindGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UnbindGroup", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UnbindGroup", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -103,7 +103,7 @@ func CreateCreateServiceRequest() (request *CreateServiceRequest) {
 	request = &CreateServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateService", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateService", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

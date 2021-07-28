@@ -90,7 +90,7 @@ func CreateBindGroupRequest() (request *BindGroupRequest) {
 	request = &BindGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "BindGroup", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "BindGroup", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

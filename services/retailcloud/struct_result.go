@@ -80,6 +80,7 @@ type Result struct {
 	BasicInfo               BasicInfo             `json:"BasicInfo" xml:"BasicInfo"`
 	NetInfo                 NetInfo               `json:"NetInfo" xml:"NetInfo"`
 	PodEvents               []PodEvent            `json:"PodEvents" xml:"PodEvents"`
+	ContainerLogList        []PodContainerLog     `json:"ContainerLogList" xml:"ContainerLogList"`
 	UserRoles               []UserRole            `json:"UserRoles" xml:"UserRoles"`
 	NodeWorkLoadList        []ClusterNodeWorkLoad `json:"NodeWorkLoadList" xml:"NodeWorkLoadList"`
 	PortMappings            []ServicePortMapping  `json:"PortMappings" xml:"PortMappings"`

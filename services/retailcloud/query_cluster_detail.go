@@ -89,7 +89,7 @@ func CreateQueryClusterDetailRequest() (request *QueryClusterDetailRequest) {
 	request = &QueryClusterDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "QueryClusterDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "QueryClusterDetail", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

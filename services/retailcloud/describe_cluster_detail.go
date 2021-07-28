@@ -89,7 +89,7 @@ func CreateDescribeClusterDetailRequest() (request *DescribeClusterDetailRequest
 	request = &DescribeClusterDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeClusterDetail", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeClusterDetail", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

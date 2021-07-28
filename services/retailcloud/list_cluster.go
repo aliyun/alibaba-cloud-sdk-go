@@ -94,7 +94,7 @@ func CreateListClusterRequest() (request *ListClusterRequest) {
 	request = &ListClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListCluster", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListCluster", "retailcloud", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -71,17 +71,18 @@ func (client *Client) DeployAppWithCallback(request *DeployAppRequest, callback 
 // DeployAppRequest is the request struct for api DeployApp
 type DeployAppRequest struct {
 	*requests.RpcRequest
-	DeployPacketUrl        string           `position:"Query" name:"DeployPacketUrl"`
-	TotalPartitions        requests.Integer `position:"Query" name:"TotalPartitions"`
-	Description            string           `position:"Query" name:"Description"`
-	EnvId                  requests.Integer `position:"Query" name:"EnvId"`
-	UpdateStrategyType     string           `position:"Query" name:"UpdateStrategyType"`
-	PauseType              string           `position:"Query" name:"PauseType"`
-	DeployPacketId         requests.Integer `position:"Query" name:"DeployPacketId"`
-	ContainerImageList     *[]string        `position:"Query" name:"ContainerImageList"  type:"Repeated"`
-	Name                   string           `position:"Query" name:"Name"`
-	InitContainerImageList *[]string        `position:"Query" name:"InitContainerImageList"  type:"Repeated"`
-	ArmsFlag               requests.Boolean `position:"Query" name:"ArmsFlag"`
+	DeployPacketUrl         string           `position:"Query" name:"DeployPacketUrl"`
+	TotalPartitions         requests.Integer `position:"Query" name:"TotalPartitions"`
+	Description             string           `position:"Query" name:"Description"`
+	EnvId                   requests.Integer `position:"Query" name:"EnvId"`
+	UpdateStrategyType      string           `position:"Query" name:"UpdateStrategyType"`
+	PauseType               string           `position:"Query" name:"PauseType"`
+	DeployPacketId          requests.Integer `position:"Query" name:"DeployPacketId"`
+	ContainerImageList      *[]string        `position:"Query" name:"ContainerImageList"  type:"Repeated"`
+	Name                    string           `position:"Query" name:"Name"`
+	InitContainerImageList  *[]string        `position:"Query" name:"InitContainerImageList"  type:"Repeated"`
+	DefaultPacketOfAppGroup string           `position:"Query" name:"DefaultPacketOfAppGroup"`
+	ArmsFlag                requests.Boolean `position:"Query" name:"ArmsFlag"`
 }
 
 // DeployAppResponse is the response struct for api DeployApp
@@ -99,7 +100,7 @@ func CreateDeployAppRequest() (request *DeployAppRequest) {
 	request = &DeployAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeployApp", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeployApp", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }

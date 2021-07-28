@@ -93,7 +93,7 @@ func CreateListAppGroupRequest() (request *ListAppGroupRequest) {
 	request = &ListAppGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppGroup", "", "")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppGroup", "retailcloud", "openAPI")
 	request.Method = requests.POST
 	return
 }
