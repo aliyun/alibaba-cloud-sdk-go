@@ -1,3 +1,9 @@
+2021-07-29 Version: v1.61.1203
+- Generated 2017-08-01 for `polardb`.
+- Supported DescribeMaskingRules.
+- ModifyMaskingRules.
+- DeleteMaskingRules.
+
 2021-07-29 Version: v1.61.1202
 - Generated 2018-03-13 for `retailcloud`.
 - ListAppInstanceResponse add status field.
