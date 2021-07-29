@@ -1,3 +1,7 @@
+2021-07-29 Version: v1.61.1204
+- Generated 2020-06-16 for `Alb`.
+- Support Alb Open API.
+
 2021-07-29 Version: v1.61.1203
 - Generated 2017-08-01 for `polardb`.
 - Supported DescribeMaskingRules.
