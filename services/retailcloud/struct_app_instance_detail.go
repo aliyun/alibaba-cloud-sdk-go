@@ -27,4 +27,5 @@ type AppInstanceDetail struct {
 	Requests      string `json:"Requests" xml:"Requests"`
 	Limits        string `json:"Limits" xml:"Limits"`
 	Version       string `json:"Version" xml:"Version"`
+	Status        string `json:"Status" xml:"Status"`
 }

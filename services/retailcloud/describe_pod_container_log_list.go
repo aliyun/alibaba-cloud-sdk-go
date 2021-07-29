@@ -92,7 +92,7 @@ func CreateDescribePodContainerLogListRequest() (request *DescribePodContainerLo
 	request = &DescribePodContainerLogListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribePodContainerLogList", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribePodContainerLogList", "", "")
 	request.Method = requests.POST
 	return
 }

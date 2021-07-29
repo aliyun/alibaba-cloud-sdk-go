@@ -88,7 +88,7 @@ func CreateDeleteServiceRequest() (request *DeleteServiceRequest) {
 	request = &DeleteServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteService", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteService", "", "")
 	request.Method = requests.POST
 	return
 }

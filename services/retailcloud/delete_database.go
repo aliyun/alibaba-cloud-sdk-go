@@ -88,7 +88,7 @@ func CreateDeleteDatabaseRequest() (request *DeleteDatabaseRequest) {
 	request = &DeleteDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteDatabase", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteDatabase", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateListDeployConfigRequest() (request *ListDeployConfigRequest) {
 	request = &ListDeployConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListDeployConfig", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListDeployConfig", "", "")
 	request.Method = requests.POST
 	return
 }

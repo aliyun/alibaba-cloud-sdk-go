@@ -91,7 +91,7 @@ func CreateAllocatePodConfigRequest() (request *AllocatePodConfigRequest) {
 	request = &AllocatePodConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "AllocatePodConfig", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "AllocatePodConfig", "", "")
 	request.Method = requests.POST
 	return
 }

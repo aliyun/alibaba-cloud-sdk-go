@@ -93,7 +93,7 @@ func CreateSyncPodInfoRequest() (request *SyncPodInfoRequest) {
 	request = &SyncPodInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "SyncPodInfo", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "SyncPodInfo", "", "")
 	request.Method = requests.POST
 	return
 }

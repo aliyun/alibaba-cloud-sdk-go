@@ -1,3 +1,7 @@
+2021-07-29 Version: v1.61.1202
+- Generated 2018-03-13 for `retailcloud`.
+- ListAppInstanceResponse add status field.
+
 2021-07-28 Version: v1.61.1201
 - Generated 2018-03-13 for `retailcloud`.
 

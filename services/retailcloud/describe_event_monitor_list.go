@@ -99,7 +99,7 @@ func CreateDescribeEventMonitorListRequest() (request *DescribeEventMonitorListR
 	request = &DescribeEventMonitorListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeEventMonitorList", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeEventMonitorList", "", "")
 	request.Method = requests.POST
 	return
 }

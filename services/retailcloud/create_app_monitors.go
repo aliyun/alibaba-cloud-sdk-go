@@ -91,7 +91,7 @@ func CreateCreateAppMonitorsRequest() (request *CreateAppMonitorsRequest) {
 	request = &CreateAppMonitorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateAppMonitors", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateAppMonitors", "", "")
 	request.Method = requests.POST
 	return
 }

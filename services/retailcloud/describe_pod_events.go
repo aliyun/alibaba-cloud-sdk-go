@@ -90,7 +90,7 @@ func CreateDescribePodEventsRequest() (request *DescribePodEventsRequest) {
 	request = &DescribePodEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribePodEvents", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribePodEvents", "", "")
 	request.Method = requests.POST
 	return
 }
