@@ -21,7 +21,6 @@ import (
 )
 
 // SmartCall invokes the dyvmsapi.SmartCall API synchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/smartcall.html
 func (client *Client) SmartCall(request *SmartCallRequest) (response *SmartCallResponse, err error) {
 	response = CreateSmartCallResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SmartCall(request *SmartCallRequest) (response *SmartCallR
 }
 
 // SmartCallWithChan invokes the dyvmsapi.SmartCall API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/smartcall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SmartCallWithChan(request *SmartCallRequest) (<-chan *SmartCallResponse, <-chan error) {
 	responseChan := make(chan *SmartCallResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SmartCallWithChan(request *SmartCallRequest) (<-chan *Smar
 }
 
 // SmartCallWithCallback invokes the dyvmsapi.SmartCall API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/smartcall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SmartCallWithCallback(request *SmartCallRequest, callback func(response *SmartCallResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ type SmartCallRequest struct {
 	RecordFlag           requests.Boolean `position:"Query" name:"RecordFlag"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TtsVolume            requests.Integer `position:"Query" name:"TtsVolume"`
+	StreamAsr            requests.Integer `position:"Query" name:"StreamAsr"`
 	Volume               requests.Integer `position:"Query" name:"Volume"`
 	MuteTime             requests.Integer `position:"Query" name:"MuteTime"`
 	OutId                string           `position:"Query" name:"OutId"`
@@ -117,6 +113,7 @@ func CreateSmartCallRequest() (request *SmartCallRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "SmartCall", "dyvms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

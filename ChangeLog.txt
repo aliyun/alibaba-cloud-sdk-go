@@ -1,3 +1,7 @@
+2021-07-30 Version: v1.61.1205
+- Generated 2017-05-25 for `Dyvmsapi`.
+- Update Dyvmsapi SDK.
+
 2021-07-29 Version: v1.61.1204
 - Generated 2020-06-16 for `Alb`.
 - Support Alb Open API.
