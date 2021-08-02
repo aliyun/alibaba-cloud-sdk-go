@@ -17,7 +17,7 @@ package imagerecog
 
 // TopFivesItem is a nested struct in imagerecog response
 type TopFivesItem struct {
-	Calorie  string  `json:"Calorie" xml:"Calorie"`
-	Score    float64 `json:"Score" xml:"Score"`
 	Category string  `json:"Category" xml:"Category"`
+	Score    float64 `json:"Score" xml:"Score"`
+	Calorie  string  `json:"Calorie" xml:"Calorie"`
 }
