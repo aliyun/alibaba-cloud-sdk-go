@@ -71,15 +71,18 @@ func (client *Client) DbfsRecordWithCallback(request *DbfsRecordRequest, callbac
 // DbfsRecordRequest is the request struct for api DbfsRecord
 type DbfsRecordRequest struct {
 	*requests.RpcRequest
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	BatchStrategyNo string           `position:"Query" name:"BatchStrategyNo"`
+	Data       string           `position:"Query" name:"Data"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DbfsRecordResponse is the response struct for api DbfsRecord
 type DbfsRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string        `json:"RequestId" xml:"RequestId"`
+	PageNo    int64         `json:"PageNo" xml:"PageNo"`
+	PageSize  int64         `json:"PageSize" xml:"PageSize"`
+	Total     int64         `json:"Total" xml:"Total"`
 	Records   []RecordsItem `json:"Records" xml:"Records"`
 }
 
