@@ -73,8 +73,8 @@ type DescribeEnsRegionIdResourceRequest struct {
 	*requests.RpcRequest
 	Isp           string           `position:"Query" name:"Isp"`
 	StartTime     string           `position:"Query" name:"StartTime"`
-	OrderByParams string           `position:"Query" name:"OrderByParams"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	OrderByParams string           `position:"Query" name:"OrderByParams"`
 	PageSize      string           `position:"Query" name:"PageSize"`
 	EndTime       string           `position:"Query" name:"EndTime"`
 }

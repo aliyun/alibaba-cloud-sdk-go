@@ -18,11 +18,11 @@ package ens
 // ResourceDetailInfo is a nested struct in ens response
 type ResourceDetailInfo struct {
 	RegionID string `json:"RegionID" xml:"RegionID"`
-	Mac      string `json:"Mac" xml:"Mac"`
+	ID       string `json:"ID" xml:"ID"`
 	IP       string `json:"IP" xml:"IP"`
 	Server   string `json:"Server" xml:"Server"`
-	ID       string `json:"ID" xml:"ID"`
-	Status   string `json:"Status" xml:"Status"`
-	ISP      string `json:"ISP" xml:"ISP"`
 	Type     string `json:"Type" xml:"Type"`
+	Status   string `json:"Status" xml:"Status"`
+	Mac      string `json:"Mac" xml:"Mac"`
+	ISP      string `json:"ISP" xml:"ISP"`
 }

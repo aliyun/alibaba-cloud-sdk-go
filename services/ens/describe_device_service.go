@@ -73,13 +73,14 @@ type DescribeDeviceServiceRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	AppId      string `position:"Query" name:"AppId"`
+	ServiceId  string `position:"Query" name:"ServiceId"`
 }
 
 // DescribeDeviceServiceResponse is the response struct for api DescribeDeviceService
 type DescribeDeviceServiceResponse struct {
 	*responses.BaseResponse
-	RequestId           string               `json:"RequestId" xml:"RequestId"`
-	ResourceDetailInfos []ResourceDetailInfo `json:"ResourceDetailInfos" xml:"ResourceDetailInfos"`
+	RequestId           string       `json:"RequestId" xml:"RequestId"`
+	ResourceDetailInfos []DeviceInfo `json:"ResourceDetailInfos" xml:"ResourceDetailInfos"`
 }
 
 // CreateDescribeDeviceServiceRequest creates a request to invoke DescribeDeviceService API

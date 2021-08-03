@@ -73,10 +73,10 @@ type CreateEipInstanceRequest struct {
 	*requests.RpcRequest
 	Isp                string           `position:"Query" name:"Isp"`
 	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
-	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
-	Name               string           `position:"Query" name:"Name"`
 	InstanceChargeType string           `position:"Query" name:"InstanceChargeType"`
 	Bandwidth          requests.Integer `position:"Query" name:"Bandwidth"`
+	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
+	Name               string           `position:"Query" name:"Name"`
 }
 
 // CreateEipInstanceResponse is the response struct for api CreateEipInstance
