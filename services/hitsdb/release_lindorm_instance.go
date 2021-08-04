@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeZones invokes the hitsdb.DescribeZones API synchronously
-func (client *Client) DescribeZones(request *DescribeZonesRequest) (response *DescribeZonesResponse, err error) {
-	response = CreateDescribeZonesResponse()
+// ReleaseLindormInstance invokes the hitsdb.ReleaseLindormInstance API synchronously
+func (client *Client) ReleaseLindormInstance(request *ReleaseLindormInstanceRequest) (response *ReleaseLindormInstanceResponse, err error) {
+	response = CreateReleaseLindormInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeZonesWithChan invokes the hitsdb.DescribeZones API asynchronously
-func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-chan *DescribeZonesResponse, <-chan error) {
-	responseChan := make(chan *DescribeZonesResponse, 1)
+// ReleaseLindormInstanceWithChan invokes the hitsdb.ReleaseLindormInstance API asynchronously
+func (client *Client) ReleaseLindormInstanceWithChan(request *ReleaseLindormInstanceRequest) (<-chan *ReleaseLindormInstanceResponse, <-chan error) {
+	responseChan := make(chan *ReleaseLindormInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeZones(request)
+		response, err := client.ReleaseLindormInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DescribeZonesWithCallback invokes the hitsdb.DescribeZones API asynchronously
-func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, callback func(response *DescribeZonesResponse, err error)) <-chan int {
+// ReleaseLindormInstanceWithCallback invokes the hitsdb.ReleaseLindormInstance API asynchronously
+func (client *Client) ReleaseLindormInstanceWithCallback(request *ReleaseLindormInstanceRequest, callback func(response *ReleaseLindormInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeZonesResponse
+		var response *ReleaseLindormInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeZones(request)
+		response, err = client.ReleaseLindormInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,36 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 	return result
 }
 
-// DescribeZonesRequest is the request struct for api DescribeZones
-type DescribeZonesRequest struct {
+// ReleaseLindormInstanceRequest is the request struct for api ReleaseLindormInstance
+type ReleaseLindormInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Language             string           `position:"Query" name:"Language"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DescribeZonesResponse is the response struct for api DescribeZones
-type DescribeZonesResponse struct {
+// ReleaseLindormInstanceResponse is the response struct for api ReleaseLindormInstance
+type ReleaseLindormInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	ZoneList  ZoneList `json:"ZoneList" xml:"ZoneList"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDescribeZonesRequest creates a request to invoke DescribeZones API
-func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
-	request = &DescribeZonesRequest{
+// CreateReleaseLindormInstanceRequest creates a request to invoke ReleaseLindormInstance API
+func CreateReleaseLindormInstanceRequest() (request *ReleaseLindormInstanceRequest) {
+	request = &ReleaseLindormInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeZones", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2020-06-15", "ReleaseLindormInstance", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeZonesResponse creates a response to parse from DescribeZones response
-func CreateDescribeZonesResponse() (response *DescribeZonesResponse) {
-	response = &DescribeZonesResponse{
+// CreateReleaseLindormInstanceResponse creates a response to parse from ReleaseLindormInstance response
+func CreateReleaseLindormInstanceResponse() (response *ReleaseLindormInstanceResponse) {
+	response = &ReleaseLindormInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

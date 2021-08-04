@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateHiTSDBInstance invokes the hitsdb.CreateHiTSDBInstance API synchronously
-func (client *Client) CreateHiTSDBInstance(request *CreateHiTSDBInstanceRequest) (response *CreateHiTSDBInstanceResponse, err error) {
-	response = CreateCreateHiTSDBInstanceResponse()
+// CreateLindormInstance invokes the hitsdb.CreateLindormInstance API synchronously
+func (client *Client) CreateLindormInstance(request *CreateLindormInstanceRequest) (response *CreateLindormInstanceResponse, err error) {
+	response = CreateCreateLindormInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateHiTSDBInstanceWithChan invokes the hitsdb.CreateHiTSDBInstance API asynchronously
-func (client *Client) CreateHiTSDBInstanceWithChan(request *CreateHiTSDBInstanceRequest) (<-chan *CreateHiTSDBInstanceResponse, <-chan error) {
-	responseChan := make(chan *CreateHiTSDBInstanceResponse, 1)
+// CreateLindormInstanceWithChan invokes the hitsdb.CreateLindormInstance API asynchronously
+func (client *Client) CreateLindormInstanceWithChan(request *CreateLindormInstanceRequest) (<-chan *CreateLindormInstanceResponse, <-chan error) {
+	responseChan := make(chan *CreateLindormInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateHiTSDBInstance(request)
+		response, err := client.CreateLindormInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateHiTSDBInstanceWithChan(request *CreateHiTSDBInstance
 	return responseChan, errChan
 }
 
-// CreateHiTSDBInstanceWithCallback invokes the hitsdb.CreateHiTSDBInstance API asynchronously
-func (client *Client) CreateHiTSDBInstanceWithCallback(request *CreateHiTSDBInstanceRequest, callback func(response *CreateHiTSDBInstanceResponse, err error)) <-chan int {
+// CreateLindormInstanceWithCallback invokes the hitsdb.CreateLindormInstance API asynchronously
+func (client *Client) CreateLindormInstanceWithCallback(request *CreateLindormInstanceRequest, callback func(response *CreateLindormInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateHiTSDBInstanceResponse
+		var response *CreateLindormInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateHiTSDBInstance(request)
+		response, err = client.CreateLindormInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,56 +68,57 @@ func (client *Client) CreateHiTSDBInstanceWithCallback(request *CreateHiTSDBInst
 	return result
 }
 
-// CreateHiTSDBInstanceRequest is the request struct for api CreateHiTSDBInstance
-type CreateHiTSDBInstanceRequest struct {
+// CreateLindormInstanceRequest is the request struct for api CreateLindormInstance
+type CreateLindormInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	InstanceClass        string           `position:"Query" name:"InstanceClass"`
+	TsdbSpec             string           `position:"Query" name:"TsdbSpec"`
+	FilestoreSpec        string           `position:"Query" name:"FilestoreSpec"`
 	Duration             string           `position:"Query" name:"Duration"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	MaxSeriesPerDatabase string           `position:"Query" name:"MaxSeriesPerDatabase"`
+	TsdbNum              requests.Integer `position:"Query" name:"TsdbNum"`
 	DiskCategory         string           `position:"Query" name:"DiskCategory"`
-	MaxTimelineLimit     string           `position:"Query" name:"MaxTimelineLimit"`
+	LindormSpec          string           `position:"Query" name:"LindormSpec"`
+	SolrNum              requests.Integer `position:"Query" name:"SolrNum"`
+	ColdStorage          requests.Integer `position:"Query" name:"ColdStorage"`
 	InstanceStorage      string           `position:"Query" name:"InstanceStorage"`
-	EngineType           string           `position:"Query" name:"EngineType"`
+	SolrSpec             string           `position:"Query" name:"SolrSpec"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceAlias        string           `position:"Query" name:"InstanceAlias"`
-	MaxDatabaseLimit     string           `position:"Query" name:"MaxDatabaseLimit"`
+	FilestoreNum         requests.Integer `position:"Query" name:"FilestoreNum"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LindormNum           requests.Integer `position:"Query" name:"LindormNum"`
+	CoreSpec             string           `position:"Query" name:"CoreSpec"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	InstanceName         string           `position:"Query" name:"InstanceName"`
-	InstanceTps          string           `position:"Query" name:"InstanceTps"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	TSDBVersion          string           `position:"Query" name:"TSDBVersion"`
-	AppKey               string           `position:"Query" name:"AppKey"`
 	PayType              string           `position:"Query" name:"PayType"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 }
 
-// CreateHiTSDBInstanceResponse is the response struct for api CreateHiTSDBInstance
-type CreateHiTSDBInstanceResponse struct {
+// CreateLindormInstanceResponse is the response struct for api CreateLindormInstance
+type CreateLindormInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 	OrderId    int64  `json:"OrderId" xml:"OrderId"`
 }
 
-// CreateCreateHiTSDBInstanceRequest creates a request to invoke CreateHiTSDBInstance API
-func CreateCreateHiTSDBInstanceRequest() (request *CreateHiTSDBInstanceRequest) {
-	request = &CreateHiTSDBInstanceRequest{
+// CreateCreateLindormInstanceRequest creates a request to invoke CreateLindormInstance API
+func CreateCreateLindormInstanceRequest() (request *CreateLindormInstanceRequest) {
+	request = &CreateLindormInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "CreateHiTSDBInstance", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2020-06-15", "CreateLindormInstance", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateHiTSDBInstanceResponse creates a response to parse from CreateHiTSDBInstance response
-func CreateCreateHiTSDBInstanceResponse() (response *CreateHiTSDBInstanceResponse) {
-	response = &CreateHiTSDBInstanceResponse{
+// CreateCreateLindormInstanceResponse creates a response to parse from CreateLindormInstance response
+func CreateCreateLindormInstanceResponse() (response *CreateLindormInstanceResponse) {
+	response = &CreateLindormInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
