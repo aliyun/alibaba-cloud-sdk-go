@@ -92,7 +92,7 @@ func CreateDescribeLocalitySettingRequest() (request *DescribeLocalitySettingReq
 	request = &DescribeLocalitySettingRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DescribeLocalitySetting", "/pop/sp/applications/locality/setting", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DescribeLocalitySetting", "/pop/sp/applications/locality/setting", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

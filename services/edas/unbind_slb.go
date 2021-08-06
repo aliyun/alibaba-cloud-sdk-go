@@ -71,9 +71,10 @@ func (client *Client) UnbindSlbWithCallback(request *UnbindSlbRequest, callback 
 // UnbindSlbRequest is the request struct for api UnbindSlb
 type UnbindSlbRequest struct {
 	*requests.RoaRequest
-	SlbId string `position:"Query" name:"SlbId"`
-	AppId string `position:"Query" name:"AppId"`
-	Type  string `position:"Query" name:"Type"`
+	SlbId          string `position:"Query" name:"SlbId"`
+	AppId          string `position:"Query" name:"AppId"`
+	DeleteListener string `position:"Query" name:"DeleteListener"`
+	Type           string `position:"Query" name:"Type"`
 }
 
 // UnbindSlbResponse is the response struct for api UnbindSlb
@@ -90,7 +91,7 @@ func CreateUnbindSlbRequest() (request *UnbindSlbRequest) {
 	request = &UnbindSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UnbindSlb", "/pop/app/unbind_slb_json", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UnbindSlb", "/pop/app/unbind_slb_json", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

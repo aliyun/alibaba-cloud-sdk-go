@@ -91,7 +91,7 @@ func CreateGetMockRuleByConsumerAppIdRequest() (request *GetMockRuleByConsumerAp
 	request = &GetMockRuleByConsumerAppIdRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetMockRuleByConsumerAppId", "/pop/sp/api/mock/getMockRuleByConsumerAppId", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetMockRuleByConsumerAppId", "/pop/sp/api/mock/getMockRuleByConsumerAppId", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

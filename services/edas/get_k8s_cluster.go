@@ -91,7 +91,7 @@ func CreateGetK8sClusterRequest() (request *GetK8sClusterRequest) {
 	request = &GetK8sClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sCluster", "/pop/v5/k8s_clusters", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sCluster", "/pop/v5/k8s_clusters", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

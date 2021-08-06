@@ -89,7 +89,7 @@ func CreateListEcsNotInClusterRequest() (request *ListEcsNotInClusterRequest) {
 	request = &ListEcsNotInClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListEcsNotInCluster", "/pop/v5/resource/ecs_not_in_cluster", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListEcsNotInCluster", "/pop/v5/resource/ecs_not_in_cluster", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

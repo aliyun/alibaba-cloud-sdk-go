@@ -90,7 +90,7 @@ func CreateListChildrenStacksRequest() (request *ListChildrenStacksRequest) {
 	request = &ListChildrenStacksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListChildrenStacks", "/pop/v5/s2i/list_children_stack", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListChildrenStacks", "/pop/v5/s2i/list_children_stack", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -95,7 +95,7 @@ func CreateUpdateMockRuleRequest() (request *UpdateMockRuleRequest) {
 	request = &UpdateMockRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateMockRule", "/pop/sp/api/mock/updateMockRule", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateMockRule", "/pop/sp/api/mock/updateMockRule", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateListK8sConfigMapsRequest() (request *ListK8sConfigMapsRequest) {
 	request = &ListK8sConfigMapsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sConfigMaps", "/pop/v5/k8s/acs/k8s_config_map", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sConfigMaps", "/pop/v5/k8s/acs/k8s_config_map", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

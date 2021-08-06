@@ -90,7 +90,7 @@ func CreateInstallAgentRequest() (request *InstallAgentRequest) {
 	request = &InstallAgentRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InstallAgent", "/pop/v5/ecss/install_agent", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InstallAgent", "/pop/v5/ecss/install_agent", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

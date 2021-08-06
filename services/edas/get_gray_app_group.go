@@ -90,7 +90,7 @@ func CreateGetGrayAppGroupRequest() (request *GetGrayAppGroupRequest) {
 	request = &GetGrayAppGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetGrayAppGroup", "/pop/v5/gray/app_group_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetGrayAppGroup", "/pop/v5/gray/app_group_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }
