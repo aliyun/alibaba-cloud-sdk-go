@@ -71,11 +71,12 @@ func (client *Client) DescribePreCheckStatusWithCallback(request *DescribePreChe
 // DescribePreCheckStatusRequest is the request struct for api DescribePreCheckStatus
 type DescribePreCheckStatusRequest struct {
 	*requests.RpcRequest
-	StructType string `position:"Query" name:"StructType"`
-	PageNo     string `position:"Query" name:"PageNo"`
-	PageSize   string `position:"Query" name:"PageSize"`
-	JobCode    string `position:"Query" name:"JobCode"`
-	DtsJobId   string `position:"Query" name:"DtsJobId"`
+	StructType  string `position:"Query" name:"StructType"`
+	PageNo      string `position:"Query" name:"PageNo"`
+	PageSize    string `position:"Query" name:"PageSize"`
+	JobCode     string `position:"Query" name:"JobCode"`
+	DtsJobId    string `position:"Query" name:"DtsJobId"`
+	StructPhase string `position:"Query" name:"StructPhase"`
 }
 
 // DescribePreCheckStatusResponse is the response struct for api DescribePreCheckStatus
@@ -90,6 +91,9 @@ type DescribePreCheckStatusResponse struct {
 	Total                   int                           `json:"Total" xml:"Total"`
 	RequestId               string                        `json:"RequestId" xml:"RequestId"`
 	JobId                   string                        `json:"JobId" xml:"JobId"`
+	PageNumber              int64                         `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount         int64                         `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount        int64                         `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	JobProgress             []ProgressInfo                `json:"JobProgress" xml:"JobProgress"`
 	SubDistributedJobStatus []SubDistributedJobStatusItem `json:"SubDistributedJobStatus" xml:"SubDistributedJobStatus"`
 }
