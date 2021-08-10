@@ -71,10 +71,11 @@ func (client *Client) DescribeConsumerChannelWithCallback(request *DescribeConsu
 // DescribeConsumerChannelRequest is the request struct for api DescribeConsumerChannel
 type DescribeConsumerChannelRequest struct {
 	*requests.RpcRequest
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	DtsJobId      string           `position:"Query" name:"DtsJobId"`
-	DtsInstanceId string           `position:"Query" name:"DtsInstanceId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ParentChannelId string           `position:"Query" name:"ParentChannelId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	DtsJobId        string           `position:"Query" name:"DtsJobId"`
+	DtsInstanceId   string           `position:"Query" name:"DtsInstanceId"`
 }
 
 // DescribeConsumerChannelResponse is the response struct for api DescribeConsumerChannel

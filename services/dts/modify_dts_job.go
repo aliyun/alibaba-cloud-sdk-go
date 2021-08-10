@@ -74,6 +74,7 @@ type ModifyDtsJobRequest struct {
 	DbList                   string `position:"Body" name:"DbList"`
 	ClientToken              string `position:"Query" name:"ClientToken"`
 	OwnerId                  string `position:"Query" name:"OwnerId"`
+	Reserve                  string `position:"Body" name:"Reserve"`
 	DtsInstanceId            string `position:"Query" name:"DtsInstanceId"`
 	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
 }

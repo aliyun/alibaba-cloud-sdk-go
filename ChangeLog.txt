@@ -1,3 +1,9 @@
+2021-08-10 Version: v1.61.1217
+- Generated 2020-01-01 for `Dts`.
+- Supported DescribeSubscriptionMeta for distributed subscription.
+- Supported ParentChannelId for DescribeConsumerChannel.
+- Supported Reserve for ModifyDtsJob.
+
 2021-08-09 Version: v1.61.1216
 - Generated 2020-01-01 for `Dts`.
 - Supported DescribeSubscriptionMeta for distributed subscription.
