@@ -79,10 +79,10 @@ type TaggingAdImageRequest struct {
 // TaggingAdImageResponse is the response struct for api TaggingAdImage
 type TaggingAdImageResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Code      string               `json:"Code" xml:"Code"`
+	Message   string               `json:"Message" xml:"Message"`
+	Data      DataInTaggingAdImage `json:"Data" xml:"Data"`
 }
 
 // CreateTaggingAdImageRequest creates a request to invoke TaggingAdImage API
