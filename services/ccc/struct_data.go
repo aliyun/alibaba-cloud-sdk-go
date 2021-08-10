@@ -17,6 +17,7 @@ package ccc
 
 // Data is a nested struct in ccc response
 type Data struct {
+	ContextId                 int64             `json:"ContextId" xml:"ContextId"`
 	AgentServerUrl            string            `json:"AgentServerUrl" xml:"AgentServerUrl"`
 	SatisfactionSurveyChannel string            `json:"SatisfactionSurveyChannel" xml:"SatisfactionSurveyChannel"`
 	RoleName                  string            `json:"RoleName" xml:"RoleName"`
