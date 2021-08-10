@@ -83,11 +83,11 @@ type DescribeResourceUsageDetailRequest struct {
 // DescribeResourceUsageDetailResponse is the response struct for api DescribeResourceUsageDetail
 type DescribeResourceUsageDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string                            `json:"RequestId" xml:"RequestId"`
-	Success   bool                              `json:"Success" xml:"Success"`
-	Code      string                            `json:"Code" xml:"Code"`
-	Message   string                            `json:"Message" xml:"Message"`
-	Data      DataInDescribeResourceUsageDetail `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeResourceUsageDetailRequest creates a request to invoke DescribeResourceUsageDetail API

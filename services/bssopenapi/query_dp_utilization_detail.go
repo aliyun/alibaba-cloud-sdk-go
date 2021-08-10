@@ -74,6 +74,7 @@ type QueryDPUtilizationDetailRequest struct {
 	DeductedInstanceId string           `position:"Query" name:"DeductedInstanceId"`
 	LastToken          string           `position:"Query" name:"LastToken"`
 	InstanceSpec       string           `position:"Query" name:"InstanceSpec"`
+	ProdCode           string           `position:"Query" name:"ProdCode"`
 	EndTime            string           `position:"Query" name:"EndTime"`
 	IncludeShare       requests.Boolean `position:"Query" name:"IncludeShare"`
 	CommodityCode      string           `position:"Query" name:"CommodityCode"`
@@ -85,11 +86,11 @@ type QueryDPUtilizationDetailRequest struct {
 // QueryDPUtilizationDetailResponse is the response struct for api QueryDPUtilizationDetail
 type QueryDPUtilizationDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Success   bool                           `json:"Success" xml:"Success"`
+	Code      string                         `json:"Code" xml:"Code"`
+	Message   string                         `json:"Message" xml:"Message"`
+	Data      DataInQueryDPUtilizationDetail `json:"Data" xml:"Data"`
 }
 
 // CreateQueryDPUtilizationDetailRequest creates a request to invoke QueryDPUtilizationDetail API

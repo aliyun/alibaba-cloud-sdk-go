@@ -1,3 +1,10 @@
+2021-08-10 Version: v1.61.1220
+- Generated 2017-12-14 for `BssOpenApi`.
+- Supported DescribeSavingsPlansUsageTotal.
+- Supported DescribeSavingsPlansUsageDetail.
+- Supported DescribeSavingsPlansCoverageTotal.
+- Supported DescribeSavingsPlansCoverageDetail.
+
 2021-08-10 Version: v1.61.1219
 - Generated 2020-07-01 for `CCC`.
 - Export instance relative API.

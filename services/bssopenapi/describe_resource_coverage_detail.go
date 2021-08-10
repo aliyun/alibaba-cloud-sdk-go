@@ -83,11 +83,11 @@ type DescribeResourceCoverageDetailRequest struct {
 // DescribeResourceCoverageDetailResponse is the response struct for api DescribeResourceCoverageDetail
 type DescribeResourceCoverageDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string                               `json:"RequestId" xml:"RequestId"`
-	Success   bool                                 `json:"Success" xml:"Success"`
-	Code      string                               `json:"Code" xml:"Code"`
-	Message   string                               `json:"Message" xml:"Message"`
-	Data      DataInDescribeResourceCoverageDetail `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeResourceCoverageDetailRequest creates a request to invoke DescribeResourceCoverageDetail API

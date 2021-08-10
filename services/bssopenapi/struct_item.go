@@ -89,6 +89,7 @@ type Item struct {
 	ServicePeriod             string  `json:"ServicePeriod" xml:"ServicePeriod"`
 	MultAccountRelSubscribe   string  `json:"MultAccountRelSubscribe" xml:"MultAccountRelSubscribe"`
 	DiscountAmount            float64 `json:"DiscountAmount" xml:"DiscountAmount"`
+	Percentage                float64 `json:"Percentage" xml:"Percentage"`
 	ListPriceUnit             string  `json:"ListPriceUnit" xml:"ListPriceUnit"`
 	SplitCommodityCode        string  `json:"SplitCommodityCode" xml:"SplitCommodityCode"`
 	UsageUnit                 string  `json:"UsageUnit" xml:"UsageUnit"`

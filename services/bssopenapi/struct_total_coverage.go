@@ -17,8 +17,9 @@ package bssopenapi
 
 // TotalCoverage is a nested struct in bssopenapi response
 type TotalCoverage struct {
-	CoveragePercentage float64 `json:"CoveragePercentage" xml:"CoveragePercentage"`
 	DeductQuantity     float64 `json:"DeductQuantity" xml:"DeductQuantity"`
 	TotalQuantity      float64 `json:"TotalQuantity" xml:"TotalQuantity"`
+	DeductAmount       float64 `json:"DeductAmount" xml:"DeductAmount"`
+	CoveragePercentage float64 `json:"CoveragePercentage" xml:"CoveragePercentage"`
 	CapacityUnit       string  `json:"CapacityUnit" xml:"CapacityUnit"`
 }

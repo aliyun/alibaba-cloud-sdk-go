@@ -95,11 +95,11 @@ type DescribeSplitItemBillTagFilter struct {
 // DescribeSplitItemBillResponse is the response struct for api DescribeSplitItemBill
 type DescribeSplitItemBillResponse struct {
 	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
-	Success   bool                        `json:"Success" xml:"Success"`
-	Code      string                      `json:"Code" xml:"Code"`
-	Message   string                      `json:"Message" xml:"Message"`
-	Data      DataInDescribeSplitItemBill `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeSplitItemBillRequest creates a request to invoke DescribeSplitItemBill API
