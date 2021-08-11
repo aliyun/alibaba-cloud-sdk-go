@@ -1,3 +1,7 @@
+2021-08-11 Version: v1.61.1221
+- Generated 2017-09-12 for `Cbn`.
+- Support CEN latest Apis.
+
 2021-08-10 Version: v1.61.1220
 - Generated 2017-12-14 for `BssOpenApi`.
 - Supported DescribeSavingsPlansUsageTotal.
