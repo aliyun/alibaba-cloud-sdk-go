@@ -27,13 +27,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
 
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
-
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -106,6 +104,24 @@ func Test_NewClientWithPolicy(t *testing.T) {
 	client, err := NewClientWithRamRoleArnAndPolicy("regionid", "acesskeyid", "accesskeysecret", "roleArn", "sessionName", "policy")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
+}
+
+func Test_ClientWithSouceIp(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+	client.SourceIp = "192.168.0.1"
+	client.SecurityTransport = "true"
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	// 因为是RPC接口，因此需指定ApiName(Action)
+	request.ApiName = "DescribeInstanceStatus"
+	request.QueryParams["PageNumber"] = "1"
+	request.QueryParams["PageSize"] = "30"
+	resp, err := client.ProcessCommonRequest(request)
+	fmt.Println(resp)
+	assert.Nil(t, err)
 }
 
 func Test_NewClientWithAccessKey(t *testing.T) {
