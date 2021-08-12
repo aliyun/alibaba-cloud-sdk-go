@@ -1,3 +1,8 @@
+2021-08-12 Version: v1.61.1223
+- Generated 2015-01-01 for `R-kvstore`.
+- DescirbeAvailableResource add NodeId input parameter.
+- CreateTairInstance add GlobalInstanceId input paramter.
+
 2021-08-12 Version: v1.61.1222
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support CreateProxy, DeleteProxy, GetProxy, ListProxies, CreateProxyAccess, DeleteProxyAccess, ListProxyAccesses, InspectProxyAccessSecret Safety Protection Management APIs.

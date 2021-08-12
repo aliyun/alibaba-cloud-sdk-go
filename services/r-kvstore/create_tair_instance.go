@@ -100,6 +100,7 @@ type CreateTairInstanceRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	GlobalInstanceId     string           `position:"Query" name:"GlobalInstanceId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
 }
