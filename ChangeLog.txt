@@ -1,3 +1,7 @@
+2021-08-13 Version: v1.61.1227
+- Generated 2018-03-13 for `Smartag`.
+- Support  sts.
+
 2021-08-12 Version: v1.61.1226
 - Generated 2020-04-18 for `DBFS`.
 - Support query dbfs specification.
