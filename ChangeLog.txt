@@ -1,3 +1,7 @@
+2021-08-13 Version: v1.61.1229
+- Generated 2017-08-01 for `Edas`.
+- Support more info for GetK8sApplication.
+
 2021-08-13 Version: v1.61.1228
 - Generated 2020-01-01 for `Dts`.
 - Supported etlOperatorColumnReference for ModifyDtsJob.

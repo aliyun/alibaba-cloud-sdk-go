@@ -26,11 +26,14 @@ type App struct {
 	EdasContainerVersion   string                     `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
 	RegionId               string                     `json:"RegionId" xml:"RegionId"`
 	SlbPort                int                        `json:"SlbPort" xml:"SlbPort"`
+	RequestMem             int                        `json:"RequestMem" xml:"RequestMem"`
 	UserId                 string                     `json:"UserId" xml:"UserId"`
 	ApplicationType        string                     `json:"ApplicationType" xml:"ApplicationType"`
 	TomcatVersion          string                     `json:"TomcatVersion" xml:"TomcatVersion"`
 	Description            string                     `json:"Description" xml:"Description"`
+	LimitMem               int                        `json:"LimitMem" xml:"LimitMem"`
 	ClusterId              string                     `json:"ClusterId" xml:"ClusterId"`
+	LimitCpuM              int                        `json:"LimitCpuM" xml:"LimitCpuM"`
 	Port                   int                        `json:"Port" xml:"Port"`
 	ApplicationName        string                     `json:"ApplicationName" xml:"ApplicationName"`
 	ExtSlbIp               string                     `json:"ExtSlbIp" xml:"ExtSlbIp"`
@@ -47,6 +50,7 @@ type App struct {
 	ClusterType            int                        `json:"ClusterType" xml:"ClusterType"`
 	Cpu                    int                        `json:"Cpu" xml:"Cpu"`
 	Cmd                    string                     `json:"Cmd" xml:"Cmd"`
+	RequestCpuM            int                        `json:"RequestCpuM" xml:"RequestCpuM"`
 	RunningInstanceCount   int                        `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
 	SlbIp                  string                     `json:"SlbIp" xml:"SlbIp"`
 	CmdArgs                CmdArgs                    `json:"CmdArgs" xml:"CmdArgs"`
