@@ -49,7 +49,6 @@ type Data struct {
 	ChangeOrderId                   string                                   `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	DubboMockItemJson               string                                   `json:"DubboMockItemJson" xml:"DubboMockItemJson"`
 	TotalPages                      int                                      `json:"TotalPages" xml:"TotalPages"`
-	OriginalConfigs                 string                                   `json:"OriginalConfigs" xml:"OriginalConfigs"`
 	PageSize                        int                                      `json:"PageSize" xml:"PageSize"`
 	OversoldFactor                  int                                      `json:"OversoldFactor" xml:"OversoldFactor"`
 	Threshold                       float64                                  `json:"Threshold" xml:"Threshold"`
@@ -60,7 +59,6 @@ type Data struct {
 	Tag                             string                                   `json:"Tag" xml:"Tag"`
 	PageNumber                      int                                      `json:"PageNumber" xml:"PageNumber"`
 	TenantId                        string                                   `json:"TenantId" xml:"TenantId"`
-	StartUpArgs                     string                                   `json:"StartUpArgs" xml:"StartUpArgs"`
 	EnvName                         string                                   `json:"EnvName" xml:"EnvName"`
 	LabelAdviceId                   int64                                    `json:"LabelAdviceId" xml:"LabelAdviceId"`
 	Ip                              string                                   `json:"Ip" xml:"Ip"`

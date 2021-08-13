@@ -77,10 +77,10 @@ type GetJavaStartUpConfigRequest struct {
 // GetJavaStartUpConfigResponse is the response struct for api GetJavaStartUpConfig
 type GetJavaStartUpConfigResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code              int               `json:"Code" xml:"Code"`
+	Message           string            `json:"Message" xml:"Message"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	JavaStartUpConfig JavaStartUpConfig `json:"JavaStartUpConfig" xml:"JavaStartUpConfig"`
 }
 
 // CreateGetJavaStartUpConfigRequest creates a request to invoke GetJavaStartUpConfig API

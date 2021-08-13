@@ -1,3 +1,7 @@
+2021-08-13 Version: v1.61.1230
+- Generated 2017-08-01 for `Edas`.
+- Rename field Data to JavaStartUpConfig in edas api GetJavaStartUpConfig.
+
 2021-08-13 Version: v1.61.1229
 - Generated 2017-08-01 for `Edas`.
 - Support more info for GetK8sApplication.
