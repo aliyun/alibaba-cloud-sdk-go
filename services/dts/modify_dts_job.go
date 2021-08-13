@@ -71,12 +71,12 @@ func (client *Client) ModifyDtsJobWithCallback(request *ModifyDtsJobRequest, cal
 // ModifyDtsJobRequest is the request struct for api ModifyDtsJob
 type ModifyDtsJobRequest struct {
 	*requests.RpcRequest
-	DbList                   string `position:"Body" name:"DbList"`
-	ClientToken              string `position:"Query" name:"ClientToken"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	Reserve                  string `position:"Body" name:"Reserve"`
-	DtsInstanceId            string `position:"Query" name:"DtsInstanceId"`
-	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
+	DbList                     string `position:"Body" name:"DbList"`
+	ClientToken                string `position:"Query" name:"ClientToken"`
+	OwnerId                    string `position:"Query" name:"OwnerId"`
+	EtlOperatorColumnReference string `position:"Body" name:"EtlOperatorColumnReference"`
+	DtsInstanceId              string `position:"Query" name:"DtsInstanceId"`
+	SynchronizationDirection   string `position:"Query" name:"SynchronizationDirection"`
 }
 
 // ModifyDtsJobResponse is the response struct for api ModifyDtsJob

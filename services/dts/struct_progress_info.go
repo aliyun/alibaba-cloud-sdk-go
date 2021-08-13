@@ -38,6 +38,7 @@ type ProgressInfo struct {
 	IgnoreFlag   string   `json:"IgnoreFlag" xml:"IgnoreFlag"`
 	Names        string   `json:"Names" xml:"Names"`
 	CanSkip      bool     `json:"CanSkip" xml:"CanSkip"`
+	Id           string   `json:"Id" xml:"Id"`
 	Item         string   `json:"Item" xml:"Item"`
 	Logs         []JobLog `json:"Logs" xml:"Logs"`
 }

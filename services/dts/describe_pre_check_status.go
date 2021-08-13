@@ -75,6 +75,7 @@ type DescribePreCheckStatusRequest struct {
 	PageNo      string `position:"Query" name:"PageNo"`
 	PageSize    string `position:"Query" name:"PageSize"`
 	JobCode     string `position:"Query" name:"JobCode"`
+	Name        string `position:"Query" name:"Name"`
 	DtsJobId    string `position:"Query" name:"DtsJobId"`
 	StructPhase string `position:"Query" name:"StructPhase"`
 }

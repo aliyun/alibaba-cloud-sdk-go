@@ -1,3 +1,7 @@
+2021-08-13 Version: v1.61.1228
+- Generated 2020-01-01 for `Dts`.
+- Supported etlOperatorColumnReference for ModifyDtsJob.
+
 2021-08-13 Version: v1.61.1227
 - Generated 2018-03-13 for `Smartag`.
 - Support  sts.
