@@ -86,8 +86,8 @@ type GetAutonomousNotifyEventsRequest struct {
 // GetAutonomousNotifyEventsResponse is the response struct for api GetAutonomousNotifyEvents
 type GetAutonomousNotifyEventsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   string `json:"Success" xml:"Success"`
