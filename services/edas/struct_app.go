@@ -43,6 +43,7 @@ type App struct {
 	ExtSlbId               string                     `json:"ExtSlbId" xml:"ExtSlbId"`
 	Owner                  string                     `json:"Owner" xml:"Owner"`
 	AppId                  string                     `json:"AppId" xml:"AppId"`
+	K8sNamespace           string                     `json:"K8sNamespace" xml:"K8sNamespace"`
 	InstanceCount          int                        `json:"InstanceCount" xml:"InstanceCount"`
 	HealthCheckUrl         string                     `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
 	InstancesBeforeScaling int                        `json:"InstancesBeforeScaling" xml:"InstancesBeforeScaling"`

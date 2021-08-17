@@ -1,3 +1,9 @@
+2021-08-17 Version: v1.61.1233
+- Generated 2017-08-01 for `Edas`.
+- Add param for GetK8sApplication.
+- Add param for InsertK8sApplication.
+- Add pop GetWebContainerConfig.
+
 2021-08-16 Version: v1.61.1232
 - Generated 2020-01-16 for `DAS`.
 - Add SQL throttle APIs for MySQL and PolarDB MySQL.
