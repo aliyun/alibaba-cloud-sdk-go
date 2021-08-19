@@ -113,6 +113,7 @@ type CreateClusterRequest struct {
 	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
 	ClientVersion               string                            `position:"Query" name:"ClientVersion"`
 	OsTag                       string                            `position:"Query" name:"OsTag"`
+	ClusterVersion              string                            `position:"Query" name:"ClusterVersion"`
 	IsComputeEss                requests.Boolean                  `position:"Query" name:"IsComputeEss"`
 	Application                 *[]CreateClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
 	EcsChargeType               string                            `position:"Query" name:"EcsChargeType"`

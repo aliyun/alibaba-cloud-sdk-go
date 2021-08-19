@@ -24,12 +24,15 @@ type QueueInfo struct {
 	HostNamePrefix      string              `json:"HostNamePrefix" xml:"HostNamePrefix"`
 	ImageId             string              `json:"ImageId" xml:"ImageId"`
 	MinNodesInQueue     int                 `json:"MinNodesInQueue" xml:"MinNodesInQueue"`
+	SystemDiskSize      int                 `json:"SystemDiskSize" xml:"SystemDiskSize"`
 	InstanceType        string              `json:"InstanceType" xml:"InstanceType"`
 	MaxNodesInQueue     int                 `json:"MaxNodesInQueue" xml:"MaxNodesInQueue"`
 	ResourceGroupId     string              `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	EnableAutoShrink    bool                `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
 	QueueImageId        string              `json:"QueueImageId" xml:"QueueImageId"`
+	SystemDiskLevel     string              `json:"SystemDiskLevel" xml:"SystemDiskLevel"`
 	SpotStrategy        string              `json:"SpotStrategy" xml:"SpotStrategy"`
+	SystemDiskCategory  string              `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
 	Type                string              `json:"Type" xml:"Type"`
 	ComputeInstanceType ComputeInstanceType `json:"ComputeInstanceType" xml:"ComputeInstanceType"`
 	SpotInstanceTypes   SpotInstanceTypes   `json:"SpotInstanceTypes" xml:"SpotInstanceTypes"`

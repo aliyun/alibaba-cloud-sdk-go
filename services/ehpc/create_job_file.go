@@ -81,8 +81,7 @@ type CreateJobFileRequest struct {
 // CreateJobFileResponse is the response struct for api CreateJobFile
 type CreateJobFileResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateJobFileRequest creates a request to invoke CreateJobFile API

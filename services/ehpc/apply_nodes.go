@@ -89,7 +89,9 @@ type ApplyNodesRequest struct {
 	HostNameSuffix                string                         `position:"Query" name:"HostNameSuffix"`
 	PriorityStrategy              string                         `position:"Query" name:"PriorityStrategy"`
 	InstanceFamilyLevel           string                         `position:"Query" name:"InstanceFamilyLevel"`
+	Round                         requests.Integer               `position:"Query" name:"Round"`
 	InternetChargeType            string                         `position:"Query" name:"InternetChargeType"`
+	Interval                      requests.Integer               `position:"Query" name:"Interval"`
 	InstanceTypeModel             *[]ApplyNodesInstanceTypeModel `position:"Query" name:"InstanceTypeModel"  type:"Repeated"`
 	InternetMaxBandWidthIn        requests.Integer               `position:"Query" name:"InternetMaxBandWidthIn"`
 	TargetCapacity                requests.Integer               `position:"Query" name:"TargetCapacity"`

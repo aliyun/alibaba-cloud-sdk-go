@@ -81,11 +81,8 @@ type ListNodesNoPagingRequest struct {
 // ListNodesNoPagingResponse is the response struct for api ListNodesNoPaging
 type ListNodesNoPagingResponse struct {
 	*responses.BaseResponse
-	RequestId  string                   `json:"RequestId" xml:"RequestId"`
-	TotalCount int                      `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                      `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                      `json:"PageSize" xml:"PageSize"`
-	Nodes      NodesInListNodesNoPaging `json:"Nodes" xml:"Nodes"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Nodes     NodesInListNodesNoPaging `json:"Nodes" xml:"Nodes"`
 }
 
 // CreateListNodesNoPagingRequest creates a request to invoke ListNodesNoPaging API

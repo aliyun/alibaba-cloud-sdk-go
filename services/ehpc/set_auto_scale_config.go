@@ -90,16 +90,21 @@ type SetAutoScaleConfigRequest struct {
 
 // SetAutoScaleConfigQueues is a repeated param struct in SetAutoScaleConfigRequest
 type SetAutoScaleConfigQueues struct {
-	SpotStrategy     string                             `name:"SpotStrategy"`
-	QueueName        string                             `name:"QueueName"`
-	MinNodesInQueue  string                             `name:"MinNodesInQueue"`
-	InstanceTypes    *[]SetAutoScaleConfigInstanceTypes `name:"InstanceTypes" type:"Repeated"`
-	MaxNodesInQueue  string                             `name:"MaxNodesInQueue"`
-	InstanceType     string                             `name:"InstanceType"`
-	QueueImageId     string                             `name:"QueueImageId"`
-	EnableAutoGrow   string                             `name:"EnableAutoGrow"`
-	SpotPriceLimit   string                             `name:"SpotPriceLimit"`
-	EnableAutoShrink string                             `name:"EnableAutoShrink"`
+	QueueName          string                             `name:"QueueName"`
+	SystemDiskLevel    string                             `name:"SystemDiskLevel"`
+	InstanceTypes      *[]SetAutoScaleConfigInstanceTypes `name:"InstanceTypes" type:"Repeated"`
+	EnableAutoGrow     string                             `name:"EnableAutoGrow"`
+	SpotPriceLimit     string                             `name:"SpotPriceLimit"`
+	HostNameSuffix     string                             `name:"HostNameSuffix"`
+	EnableAutoShrink   string                             `name:"EnableAutoShrink"`
+	SpotStrategy       string                             `name:"SpotStrategy"`
+	MinNodesInQueue    string                             `name:"MinNodesInQueue"`
+	SystemDiskCategory string                             `name:"SystemDiskCategory"`
+	MaxNodesInQueue    string                             `name:"MaxNodesInQueue"`
+	SystemDiskSize     string                             `name:"SystemDiskSize"`
+	InstanceType       string                             `name:"InstanceType"`
+	QueueImageId       string                             `name:"QueueImageId"`
+	HostNamePrefix     string                             `name:"HostNamePrefix"`
 }
 
 // SetAutoScaleConfigInstanceTypes is a repeated param struct in SetAutoScaleConfigRequest
@@ -108,7 +113,6 @@ type SetAutoScaleConfigInstanceTypes struct {
 	VSwitchId      string `name:"VSwitchId"`
 	InstanceType   string `name:"InstanceType"`
 	ZoneId         string `name:"ZoneId"`
-	HostNamePrefix string `name:"HostNamePrefix"`
 	SpotPriceLimit string `name:"SpotPriceLimit"`
 }
 

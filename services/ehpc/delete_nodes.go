@@ -73,6 +73,7 @@ type DeleteNodesRequest struct {
 	*requests.RpcRequest
 	Instance        *[]DeleteNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
 	ClusterId       string                 `position:"Query" name:"ClusterId"`
+	Sync            requests.Boolean       `position:"Query" name:"Sync"`
 	ReleaseInstance requests.Boolean       `position:"Query" name:"ReleaseInstance"`
 }
 

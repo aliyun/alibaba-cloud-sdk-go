@@ -90,6 +90,7 @@ type AddNodesRequest struct {
 	ClusterId               string           `position:"Query" name:"ClusterId"`
 	ComputeSpotStrategy     string           `position:"Query" name:"ComputeSpotStrategy"`
 	HostNameSuffix          string           `position:"Query" name:"HostNameSuffix"`
+	Sync                    requests.Boolean `position:"Query" name:"Sync"`
 	VSwitchId               string           `position:"Query" name:"VSwitchId"`
 	PeriodUnit              string           `position:"Query" name:"PeriodUnit"`
 	ComputeEnableHt         requests.Boolean `position:"Query" name:"ComputeEnableHt"`
