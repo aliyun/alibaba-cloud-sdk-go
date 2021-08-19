@@ -18,8 +18,8 @@ package facebody
 // SubResult is a nested struct in facebody response
 type SubResult struct {
 	W     float64 `json:"W" xml:"W"`
-	X     float64 `json:"X" xml:"X"`
 	H     float64 `json:"H" xml:"H"`
 	Y     float64 `json:"Y" xml:"Y"`
+	X     float64 `json:"X" xml:"X"`
 	Faces []Face  `json:"Faces" xml:"Faces"`
 }

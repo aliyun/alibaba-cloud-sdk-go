@@ -17,6 +17,6 @@ package facebody
 
 // Frame is a nested struct in facebody response
 type Frame struct {
-	Rate float64 `json:"Rate" xml:"Rate"`
 	Url  string  `json:"Url" xml:"Url"`
+	Rate float64 `json:"Rate" xml:"Rate"`
 }

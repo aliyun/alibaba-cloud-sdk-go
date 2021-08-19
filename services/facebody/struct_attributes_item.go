@@ -17,16 +17,16 @@ package facebody
 
 // AttributesItem is a nested struct in facebody response
 type AttributesItem struct {
-	Backpack    Backpack    `json:"Backpack" xml:"Backpack"`
-	LowerWear   LowerWear   `json:"LowerWear" xml:"LowerWear"`
-	ShoulderBag ShoulderBag `json:"ShoulderBag" xml:"ShoulderBag"`
-	Orient      Orient      `json:"Orient" xml:"Orient"`
-	LowerColor  LowerColor  `json:"LowerColor" xml:"LowerColor"`
-	Glasses     Glasses     `json:"Glasses" xml:"Glasses"`
-	UpperColor  UpperColor  `json:"UpperColor" xml:"UpperColor"`
-	Handbag     Handbag     `json:"Handbag" xml:"Handbag"`
-	Hat         Hat         `json:"Hat" xml:"Hat"`
 	Gender      Gender      `json:"Gender" xml:"Gender"`
-	UpperWear   UpperWear   `json:"UpperWear" xml:"UpperWear"`
+	Orient      Orient      `json:"Orient" xml:"Orient"`
 	Age         Age         `json:"Age" xml:"Age"`
+	UpperWear   UpperWear   `json:"UpperWear" xml:"UpperWear"`
+	Glasses     Glasses     `json:"Glasses" xml:"Glasses"`
+	LowerWear   LowerWear   `json:"LowerWear" xml:"LowerWear"`
+	LowerColor  LowerColor  `json:"LowerColor" xml:"LowerColor"`
+	Hat         Hat         `json:"Hat" xml:"Hat"`
+	Handbag     Handbag     `json:"Handbag" xml:"Handbag"`
+	Backpack    Backpack    `json:"Backpack" xml:"Backpack"`
+	UpperColor  UpperColor  `json:"UpperColor" xml:"UpperColor"`
+	ShoulderBag ShoulderBag `json:"ShoulderBag" xml:"ShoulderBag"`
 }

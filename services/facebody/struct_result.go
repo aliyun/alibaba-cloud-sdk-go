@@ -22,7 +22,7 @@ type Result struct {
 	Label      string      `json:"Label" xml:"Label"`
 	Hands      Hands       `json:"Hands" xml:"Hands"`
 	Box        Box         `json:"Box" xml:"Box"`
-	Frames     []Frame     `json:"Frames" xml:"Frames"`
 	Bodies     []Body      `json:"Bodies" xml:"Bodies"`
+	Frames     []Frame     `json:"Frames" xml:"Frames"`
 	SubResults []SubResult `json:"SubResults" xml:"SubResults"`
 }

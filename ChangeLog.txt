@@ -1,3 +1,7 @@
+2021-08-19 Version: v1.61.1234
+- Generated 2019-12-30 for `facebody`.
+- Release BeautifyBody.
+
 2021-08-17 Version: v1.61.1233
 - Generated 2017-08-01 for `Edas`.
 - Add param for GetK8sApplication.

@@ -18,9 +18,9 @@ package facebody
 // Qualities is a nested struct in facebody response
 type Qualities struct {
 	MaskList  []float64 `json:"MaskList" xml:"MaskList"`
-	NoiseList []float64 `json:"NoiseList" xml:"NoiseList"`
 	FnfList   []float64 `json:"FnfList" xml:"FnfList"`
 	IlluList  []float64 `json:"IlluList" xml:"IlluList"`
+	NoiseList []float64 `json:"NoiseList" xml:"NoiseList"`
 	PoseList  []float64 `json:"PoseList" xml:"PoseList"`
 	ScoreList []float64 `json:"ScoreList" xml:"ScoreList"`
 	BlurList  []float64 `json:"BlurList" xml:"BlurList"`

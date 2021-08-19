@@ -17,8 +17,8 @@ package facebody
 
 // Location is a nested struct in facebody response
 type Location struct {
-	X      int `json:"X" xml:"X"`
-	Y      int `json:"Y" xml:"Y"`
-	Height int `json:"Height" xml:"Height"`
 	Width  int `json:"Width" xml:"Width"`
+	Height int `json:"Height" xml:"Height"`
+	Y      int `json:"Y" xml:"Y"`
+	X      int `json:"X" xml:"X"`
 }

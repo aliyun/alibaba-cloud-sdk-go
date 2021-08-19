@@ -71,9 +71,9 @@ func (client *Client) GenRealPersonVerificationTokenWithCallback(request *GenRea
 // GenRealPersonVerificationTokenRequest is the request struct for api GenRealPersonVerificationToken
 type GenRealPersonVerificationTokenRequest struct {
 	*requests.RpcRequest
+	MetaInfo          string `position:"Body" name:"MetaInfo"`
 	CertificateNumber string `position:"Body" name:"CertificateNumber"`
 	CertificateName   string `position:"Body" name:"CertificateName"`
-	MetaInfo          string `position:"Body" name:"MetaInfo"`
 }
 
 // GenRealPersonVerificationTokenResponse is the response struct for api GenRealPersonVerificationToken
@@ -81,8 +81,8 @@ type GenRealPersonVerificationTokenResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
 	Code         string `json:"Code" xml:"Code"`
+	Success      bool   `json:"Success" xml:"Success"`
 	Data         Data   `json:"Data" xml:"Data"`
 }
 
