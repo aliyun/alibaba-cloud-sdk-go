@@ -90,8 +90,8 @@ type CreateDedicatedBlockStorageClusterRequest struct {
 // CreateDedicatedBlockStorageClusterResponse is the response struct for api CreateDedicatedBlockStorageCluster
 type CreateDedicatedBlockStorageClusterResponse struct {
 	*responses.BaseResponse
-	RequestId                           string `json:"RequestId" xml:"RequestId"`
 	DedicatedBlockStorageClusterOrderId string `json:"DedicatedBlockStorageClusterOrderId" xml:"DedicatedBlockStorageClusterOrderId"`
+	RequestId                           string `json:"RequestId" xml:"RequestId"`
 	DedicatedBlockStorageClusterId      string `json:"DedicatedBlockStorageClusterId" xml:"DedicatedBlockStorageClusterId"`
 }
 

@@ -1,3 +1,7 @@
+2021-08-19 Version: v1.61.1237
+- Generated 2014-05-26 for `Ecs`.
+- Add SupportSessionManager for DescribeCloudAssistantStatus.
+
 2021-08-19 Version: v1.61.1236
 - Generated 2018-04-12 for `EHPC`.
 - Support Round and Interval for ApplyNodes API.
