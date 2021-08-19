@@ -79,8 +79,8 @@ type GetTaskByUuidRequest struct {
 // GetTaskByUuidResponse is the response struct for api GetTaskByUuid
 type GetTaskByUuidResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Task      Task   `json:"Task" xml:"Task"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Task      TaskInGetTaskByUuid `json:"Task" xml:"Task"`
 }
 
 // CreateGetTaskByUuidRequest creates a request to invoke GetTaskByUuid API

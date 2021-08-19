@@ -71,15 +71,18 @@ func (client *Client) ModifyScriptWithCallback(request *ModifyScriptRequest, cal
 // ModifyScriptRequest is the request struct for api ModifyScript
 type ModifyScriptRequest struct {
 	*requests.RpcRequest
-	TtsConfig         string `position:"Query" name:"TtsConfig"`
-	Industry          string `position:"Query" name:"Industry"`
-	ScriptName        string `position:"Query" name:"ScriptName"`
-	Scene             string `position:"Query" name:"Scene"`
-	ScriptId          string `position:"Query" name:"ScriptId"`
-	ChatbotId         string `position:"Query" name:"ChatbotId"`
-	InstanceId        string `position:"Query" name:"InstanceId"`
-	AsrConfig         string `position:"Query" name:"AsrConfig"`
-	ScriptDescription string `position:"Query" name:"ScriptDescription"`
+	TtsConfig           string           `position:"Query" name:"TtsConfig"`
+	Industry            string           `position:"Query" name:"Industry"`
+	ScriptName          string           `position:"Query" name:"ScriptName"`
+	Scene               string           `position:"Query" name:"Scene"`
+	ScriptId            string           `position:"Query" name:"ScriptId"`
+	ScriptWaveform      *[]string        `position:"Query" name:"ScriptWaveform"  type:"Repeated"`
+	AsrConfig           string           `position:"Query" name:"AsrConfig"`
+	MiniPlaybackEnabled requests.Boolean `position:"Query" name:"MiniPlaybackEnabled"`
+	ChatbotId           string           `position:"Query" name:"ChatbotId"`
+	InstanceId          string           `position:"Query" name:"InstanceId"`
+	ScriptDescription   string           `position:"Query" name:"ScriptDescription"`
+	ScriptContent       *[]string        `position:"Query" name:"ScriptContent"  type:"Repeated"`
 }
 
 // ModifyScriptResponse is the response struct for api ModifyScript

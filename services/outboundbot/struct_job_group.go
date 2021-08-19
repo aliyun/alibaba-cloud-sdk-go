@@ -23,6 +23,7 @@ type JobGroup struct {
 	JobGroupName         string         `json:"JobGroupName" xml:"JobGroupName"`
 	CreationTime         int64          `json:"CreationTime" xml:"CreationTime"`
 	ScenarioId           string         `json:"ScenarioId" xml:"ScenarioId"`
+	TotalCallNum         int            `json:"TotalCallNum" xml:"TotalCallNum"`
 	ScriptVersion        string         `json:"ScriptVersion" xml:"ScriptVersion"`
 	ScriptId             string         `json:"ScriptId" xml:"ScriptId"`
 	JobDataParsingTaskId string         `json:"JobDataParsingTaskId" xml:"JobDataParsingTaskId"`

@@ -75,6 +75,7 @@ type CreateInstanceRequest struct {
 	SecretKey                 string           `position:"Query" name:"SecretKey"`
 	ResourceGroupId           string           `position:"Query" name:"ResourceGroupId"`
 	Endpoint                  string           `position:"Query" name:"Endpoint"`
+	CallingNumber             *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	InstanceName              string           `position:"Query" name:"InstanceName"`
 	CallCenterInstanceId      string           `position:"Query" name:"CallCenterInstanceId"`
 	AccessKey                 string           `position:"Query" name:"AccessKey"`

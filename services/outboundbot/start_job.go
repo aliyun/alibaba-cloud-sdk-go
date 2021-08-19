@@ -73,6 +73,7 @@ type StartJobRequest struct {
 	*requests.RpcRequest
 	JobJson              string           `position:"Query" name:"JobJson"`
 	CallingNumber        *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
+	ScriptId             string           `position:"Query" name:"ScriptId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	JobGroupId           string           `position:"Query" name:"JobGroupId"`
 	SelfHostedCallCenter requests.Boolean `position:"Query" name:"SelfHostedCallCenter"`
@@ -88,6 +89,7 @@ type StartJobResponse struct {
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Success        bool           `json:"Success" xml:"Success"`
 	TaskIds        []KeyValuePair `json:"TaskIds" xml:"TaskIds"`
+	CallIds        []KeyValuePair `json:"CallIds" xml:"CallIds"`
 }
 
 // CreateStartJobRequest creates a request to invoke StartJob API

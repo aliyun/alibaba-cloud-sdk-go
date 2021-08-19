@@ -74,6 +74,7 @@ type ModifyInstanceRequest struct {
 	MaxConcurrentConversation requests.Integer `position:"Query" name:"MaxConcurrentConversation"`
 	SecretKey                 string           `position:"Query" name:"SecretKey"`
 	Endpoint                  string           `position:"Query" name:"Endpoint"`
+	CallingNumber             *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	InstanceId                string           `position:"Query" name:"InstanceId"`
 	InstanceName              string           `position:"Query" name:"InstanceName"`
 	CallCenterInstanceId      string           `position:"Query" name:"CallCenterInstanceId"`

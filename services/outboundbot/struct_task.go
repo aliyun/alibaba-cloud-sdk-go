@@ -17,23 +17,19 @@ package outboundbot
 
 // Task is a nested struct in outboundbot response
 type Task struct {
+	EndReason     string               `json:"EndReason" xml:"EndReason"`
 	JobId         string               `json:"JobId" xml:"JobId"`
-	JobGroupId    string               `json:"JobGroupId" xml:"JobGroupId"`
 	Brief         string               `json:"Brief" xml:"Brief"`
 	PlanedTime    int64                `json:"PlanedTime" xml:"PlanedTime"`
-	PlannedTime   int64                `json:"PlannedTime" xml:"PlannedTime"`
 	CallId        string               `json:"CallId" xml:"CallId"`
-	EndReason     int                  `json:"EndReason" xml:"EndReason"`
 	CalledNumber  string               `json:"CalledNumber" xml:"CalledNumber"`
 	ScenarioId    string               `json:"ScenarioId" xml:"ScenarioId"`
 	EndTime       int64                `json:"EndTime" xml:"EndTime"`
 	CallingNumber string               `json:"CallingNumber" xml:"CallingNumber"`
 	TaskId        string               `json:"TaskId" xml:"TaskId"`
 	Duration      int                  `json:"Duration" xml:"Duration"`
-	InstanceId    string               `json:"InstanceId" xml:"InstanceId"`
 	ActualTime    int64                `json:"ActualTime" xml:"ActualTime"`
 	ChatbotId     string               `json:"ChatbotId" xml:"ChatbotId"`
-	Id            string               `json:"Id" xml:"Id"`
 	Status        string               `json:"Status" xml:"Status"`
 	Contact       Contact              `json:"Contact" xml:"Contact"`
 	Conversation  []ConversationDetail `json:"Conversation" xml:"Conversation"`
