@@ -24,6 +24,7 @@ type Data struct {
 	OrderId         string                                        `json:"OrderId" xml:"OrderId"`
 	GmtCreate       int64                                         `json:"GmtCreate" xml:"GmtCreate"`
 	PageNo          int                                           `json:"PageNo" xml:"PageNo"`
+	ChannelId       string                                        `json:"ChannelId" xml:"ChannelId"`
 	VoipPassword    string                                        `json:"VoipPassword" xml:"VoipPassword"`
 	QualificationId string                                        `json:"QualificationId" xml:"QualificationId"`
 	Status          string                                        `json:"Status" xml:"Status"`
