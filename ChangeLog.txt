@@ -1,3 +1,7 @@
+2021-08-24 Version: v1.61.1240
+- Generated 2019-12-30 for `facebody`.
+- Release RetouchBody.
+
 2021-08-20 Version: v1.61.1239
 - Generated 2017-05-25 for `Dyvmsapi`.
 - Update Dyvmsapi SDK.
