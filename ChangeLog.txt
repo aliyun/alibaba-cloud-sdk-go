@@ -1,3 +1,8 @@
+2021-08-26 Version: v1.61.1241
+- Generated 2018-04-12 for `EHPC`.
+- ListAvailableEcsTypes set param ZoneId not required.
+- ListAvailableEcsTypes return ZoneIds.
+
 2021-08-24 Version: v1.61.1240
 - Generated 2019-12-30 for `facebody`.
 - Release RetouchBody.

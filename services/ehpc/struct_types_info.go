@@ -17,15 +17,16 @@ package ehpc
 
 // TypesInfo is a nested struct in ehpc response
 type TypesInfo struct {
-	CpuCoreCount        int    `json:"CpuCoreCount" xml:"CpuCoreCount"`
-	MemorySize          int    `json:"MemorySize" xml:"MemorySize"`
-	GPUAmount           int    `json:"GPUAmount" xml:"GPUAmount"`
-	InstanceBandwidthRx int    `json:"InstanceBandwidthRx" xml:"InstanceBandwidthRx"`
-	InstancePpsRx       int    `json:"InstancePpsRx" xml:"InstancePpsRx"`
-	InstancePpsTx       int    `json:"InstancePpsTx" xml:"InstancePpsTx"`
-	EniQuantity         int    `json:"EniQuantity" xml:"EniQuantity"`
-	InstanceBandwidthTx int    `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
-	InstanceTypeId      string `json:"InstanceTypeId" xml:"InstanceTypeId"`
-	GPUSpec             string `json:"GPUSpec" xml:"GPUSpec"`
-	Status              string `json:"Status" xml:"Status"`
+	CpuCoreCount        int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
+	MemorySize          int     `json:"MemorySize" xml:"MemorySize"`
+	GPUAmount           int     `json:"GPUAmount" xml:"GPUAmount"`
+	InstanceBandwidthRx int     `json:"InstanceBandwidthRx" xml:"InstanceBandwidthRx"`
+	InstancePpsRx       int     `json:"InstancePpsRx" xml:"InstancePpsRx"`
+	InstancePpsTx       int     `json:"InstancePpsTx" xml:"InstancePpsTx"`
+	EniQuantity         int     `json:"EniQuantity" xml:"EniQuantity"`
+	InstanceBandwidthTx int     `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
+	InstanceTypeId      string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
+	GPUSpec             string  `json:"GPUSpec" xml:"GPUSpec"`
+	Status              string  `json:"Status" xml:"Status"`
+	ZoneIds             ZoneIds `json:"ZoneIds" xml:"ZoneIds"`
 }
