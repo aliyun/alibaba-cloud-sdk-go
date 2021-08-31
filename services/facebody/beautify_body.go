@@ -75,6 +75,7 @@ type BeautifyBodyRequest struct {
 	LengthenDegree      requests.Float   `position:"Body" name:"LengthenDegree"`
 	MaleLiquifyDegree   requests.Float   `position:"Body" name:"MaleLiquifyDegree"`
 	OriginalWidth       requests.Integer `position:"Body" name:"OriginalWidth"`
+	IsPregnant          requests.Boolean `position:"Body" name:"IsPregnant"`
 	FaceList            string           `position:"Body" name:"FaceList"`
 	AgeRange            string           `position:"Body" name:"AgeRange"`
 	Custom              requests.Integer `position:"Body" name:"Custom"`
