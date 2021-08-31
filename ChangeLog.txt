@@ -1,3 +1,7 @@
+2021-08-31 Version: v1.61.1244
+- Generated 2016-08-01 for `Push`.
+- Supported AndroidBigPictureUrl, AndroidInboxBody, AndroidImageUrl, AndroidOppoImageId, AndroidXiaomiImageUrl, iOSNotificationThreadId for Push and MassPush.
+
 2021-08-31 Version: v1.61.1243
 - Generated 2019-12-30 for `facebody`.
 - Release BeautifyBody.

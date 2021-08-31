@@ -87,17 +87,20 @@ type PushRequest struct {
 	IOSMutableContent                requests.Boolean `position:"Query" name:"iOSMutableContent"`
 	AndroidNotificationBarPriority   requests.Integer `position:"Query" name:"AndroidNotificationBarPriority"`
 	ExpireTime                       string           `position:"Query" name:"ExpireTime"`
+	AndroidImageUrl                  string           `position:"Query" name:"AndroidImageUrl"`
 	AndroidNotificationVivoChannel   string           `position:"Query" name:"AndroidNotificationVivoChannel"`
 	IOSNotificationCategory          string           `position:"Query" name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string           `position:"Query" name:"AndroidNotificationXiaomiChannel"`
 	StoreOffline                     requests.Boolean `position:"Query" name:"StoreOffline"`
 	SmsParams                        string           `position:"Query" name:"SmsParams"`
+	AndroidInboxBody                 string           `position:"Query" name:"AndroidInboxBody"`
 	JobKey                           string           `position:"Query" name:"JobKey"`
 	AndroidOpenUrl                   string           `position:"Query" name:"AndroidOpenUrl"`
 	AndroidXiaoMiNotifyBody          string           `position:"Query" name:"AndroidXiaoMiNotifyBody"`
 	IOSSubtitle                      string           `position:"Query" name:"iOSSubtitle"`
 	AndroidXiaomiBigPictureUrl       string           `position:"Query" name:"AndroidXiaomiBigPictureUrl"`
 	IOSRemind                        requests.Boolean `position:"Query" name:"iOSRemind"`
+	IOSNotificationThreadId          string           `position:"Query" name:"iOSNotificationThreadId"`
 	AndroidMusic                     string           `position:"Query" name:"AndroidMusic"`
 	IOSNotificationCollapseId        string           `position:"Query" name:"iOSNotificationCollapseId"`
 	PushType                         string           `position:"Query" name:"PushType"`
@@ -110,8 +113,10 @@ type PushRequest struct {
 	SmsDelaySecs                     requests.Integer `position:"Query" name:"SmsDelaySecs"`
 	AndroidRenderStyle               requests.Integer `position:"Query" name:"AndroidRenderStyle"`
 	IOSExtParameters                 string           `position:"Query" name:"iOSExtParameters"`
+	AndroidXiaomiImageUrl            string           `position:"Query" name:"AndroidXiaomiImageUrl"`
 	SmsTemplateName                  string           `position:"Query" name:"SmsTemplateName"`
 	AndroidPopupBody                 string           `position:"Query" name:"AndroidPopupBody"`
+	AndroidBigPictureUrl             string           `position:"Query" name:"AndroidBigPictureUrl"`
 	IOSSilentNotification            requests.Boolean `position:"Query" name:"iOSSilentNotification"`
 	Target                           string           `position:"Query" name:"Target"`
 	AndroidBigTitle                  string           `position:"Query" name:"AndroidBigTitle"`
@@ -129,8 +134,8 @@ type PushRequest struct {
 // PushResponse is the response struct for api Push
 type PushResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePushRequest creates a request to invoke Push API

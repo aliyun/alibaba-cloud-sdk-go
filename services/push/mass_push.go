@@ -78,12 +78,6 @@ type MassPushRequest struct {
 // MassPushPushTask is a repeated param struct in MassPushRequest
 type MassPushPushTask struct {
 	AndroidNotificationBarType       string `name:"AndroidNotificationBarType"`
-	AndroidExtParameters             string `name:"AndroidExtParameters"`
-	IOSBadge                         string `name:"iOSBadge"`
-	AndroidBigBody                   string `name:"AndroidBigBody"`
-	IOSBadgeAutoIncrement            string `name:"iOSBadgeAutoIncrement"`
-	AndroidOpenType                  string `name:"AndroidOpenType"`
-	Title                            string `name:"Title"`
 	Body                             string `name:"Body"`
 	DeviceType                       string `name:"DeviceType"`
 	PushTime                         string `name:"PushTime"`
@@ -91,8 +85,6 @@ type MassPushPushTask struct {
 	AndroidNotificationHuaweiChannel string `name:"AndroidNotificationHuaweiChannel"`
 	AndroidPopupActivity             string `name:"AndroidPopupActivity"`
 	IOSRemindBody                    string `name:"iOSRemindBody"`
-	AndroidRenderStyle               string `name:"AndroidRenderStyle"`
-	IOSExtParameters                 string `name:"iOSExtParameters"`
 	AndroidNotifyType                string `name:"AndroidNotifyType"`
 	AndroidPopupTitle                string `name:"AndroidPopupTitle"`
 	IOSMusic                         string `name:"iOSMusic"`
@@ -100,30 +92,43 @@ type MassPushPushTask struct {
 	IOSMutableContent                string `name:"iOSMutableContent"`
 	AndroidNotificationBarPriority   string `name:"AndroidNotificationBarPriority"`
 	ExpireTime                       string `name:"ExpireTime"`
+	AndroidImageUrl                  string `name:"AndroidImageUrl"`
 	AndroidNotificationVivoChannel   string `name:"AndroidNotificationVivoChannel"`
-	AndroidPopupBody                 string `name:"AndroidPopupBody"`
 	IOSNotificationCategory          string `name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string `name:"AndroidNotificationXiaomiChannel"`
 	StoreOffline                     string `name:"StoreOffline"`
-	IOSSilentNotification            string `name:"iOSSilentNotification"`
+	AndroidInboxBody                 string `name:"AndroidInboxBody"`
 	JobKey                           string `name:"JobKey"`
-	Target                           string `name:"Target"`
-	AndroidBigTitle                  string `name:"AndroidBigTitle"`
 	AndroidOpenUrl                   string `name:"AndroidOpenUrl"`
-	AndroidNotificationChannel       string `name:"AndroidNotificationChannel"`
-	AndroidRemind                    string `name:"AndroidRemind"`
-	AndroidActivity                  string `name:"AndroidActivity"`
 	AndroidXiaoMiNotifyBody          string `name:"AndroidXiaoMiNotifyBody"`
 	IOSSubtitle                      string `name:"iOSSubtitle"`
 	AndroidXiaomiBigPictureUrl       string `name:"AndroidXiaomiBigPictureUrl"`
 	IOSRemind                        string `name:"iOSRemind"`
-	AndroidNotificationNotifyId      string `name:"AndroidNotificationNotifyId"`
-	TargetValue                      string `name:"TargetValue"`
+	IOSNotificationThreadId          string `name:"iOSNotificationThreadId"`
 	AndroidMusic                     string `name:"AndroidMusic"`
-	AndroidXiaoMiActivity            string `name:"AndroidXiaoMiActivity"`
-	AndroidXiaoMiNotifyTitle         string `name:"AndroidXiaoMiNotifyTitle"`
 	IOSNotificationCollapseId        string `name:"iOSNotificationCollapseId"`
 	PushType                         string `name:"PushType"`
+	AndroidExtParameters             string `name:"AndroidExtParameters"`
+	IOSBadge                         string `name:"iOSBadge"`
+	AndroidBigBody                   string `name:"AndroidBigBody"`
+	IOSBadgeAutoIncrement            string `name:"iOSBadgeAutoIncrement"`
+	AndroidOpenType                  string `name:"AndroidOpenType"`
+	Title                            string `name:"Title"`
+	AndroidRenderStyle               string `name:"AndroidRenderStyle"`
+	IOSExtParameters                 string `name:"iOSExtParameters"`
+	AndroidXiaomiImageUrl            string `name:"AndroidXiaomiImageUrl"`
+	AndroidPopupBody                 string `name:"AndroidPopupBody"`
+	AndroidBigPictureUrl             string `name:"AndroidBigPictureUrl"`
+	IOSSilentNotification            string `name:"iOSSilentNotification"`
+	Target                           string `name:"Target"`
+	AndroidBigTitle                  string `name:"AndroidBigTitle"`
+	AndroidNotificationChannel       string `name:"AndroidNotificationChannel"`
+	AndroidRemind                    string `name:"AndroidRemind"`
+	AndroidActivity                  string `name:"AndroidActivity"`
+	AndroidNotificationNotifyId      string `name:"AndroidNotificationNotifyId"`
+	TargetValue                      string `name:"TargetValue"`
+	AndroidXiaoMiNotifyTitle         string `name:"AndroidXiaoMiNotifyTitle"`
+	AndroidXiaoMiActivity            string `name:"AndroidXiaoMiActivity"`
 }
 
 // MassPushResponse is the response struct for api MassPush
