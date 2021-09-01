@@ -17,15 +17,15 @@ package mts
 
 // ImageSearchJob is a nested struct in mts response
 type ImageSearchJob struct {
-	Id           string     `json:"Id" xml:"Id"`
-	UserData     string     `json:"UserData" xml:"UserData"`
-	PipelineId   string     `json:"PipelineId" xml:"PipelineId"`
-	State        string     `json:"State" xml:"State"`
-	Code         string     `json:"Code" xml:"Code"`
-	Message      string     `json:"Message" xml:"Message"`
 	CreationTime string     `json:"CreationTime" xml:"CreationTime"`
 	FinishTime   string     `json:"FinishTime" xml:"FinishTime"`
-	InputVideo   InputVideo `json:"InputVideo" xml:"InputVideo"`
-	InputImage   InputImage `json:"inputImage" xml:"inputImage"`
+	State        string     `json:"State" xml:"State"`
+	UserData     string     `json:"UserData" xml:"UserData"`
+	Code         string     `json:"Code" xml:"Code"`
+	Message      string     `json:"Message" xml:"Message"`
+	PipelineId   string     `json:"PipelineId" xml:"PipelineId"`
+	Id           string     `json:"Id" xml:"Id"`
 	Result       Result     `json:"Result" xml:"Result"`
+	InputImage   InputImage `json:"inputImage" xml:"inputImage"`
+	InputVideo   InputVideo `json:"InputVideo" xml:"InputVideo"`
 }

@@ -17,7 +17,7 @@ package mts
 
 // ImageSearchShotsItem is a nested struct in mts response
 type ImageSearchShotsItem struct {
-	MatchedTimestamp string `json:"MatchedTimestamp" xml:"MatchedTimestamp"`
 	MatchedFrame     string `json:"MatchedFrame" xml:"MatchedFrame"`
+	MatchedTimestamp string `json:"MatchedTimestamp" xml:"MatchedTimestamp"`
 	Similarity       string `json:"Similarity" xml:"Similarity"`
 }

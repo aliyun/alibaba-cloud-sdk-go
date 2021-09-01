@@ -17,20 +17,20 @@ package mts
 
 // PlayInfo is a nested struct in mts response
 type PlayInfo struct {
-	Url            string `json:"Url" xml:"Url"`
-	Duration       string `json:"duration" xml:"duration"`
-	Size           string `json:"size" xml:"size"`
-	Width          string `json:"width" xml:"width"`
-	Height         string `json:"height" xml:"height"`
-	Bitrate        string `json:"bitrate" xml:"bitrate"`
-	Fps            string `json:"fps" xml:"fps"`
-	Format         string `json:"format" xml:"format"`
-	Definition     string `json:"definition" xml:"definition"`
-	Encryption     string `json:"encryption" xml:"encryption"`
-	Rand           string `json:"rand" xml:"rand"`
-	Plaintext      string `json:"plaintext" xml:"plaintext"`
-	Complexity     string `json:"complexity" xml:"complexity"`
-	ActivityName   string `json:"activityName" xml:"activityName"`
-	EncryptionType string `json:"encryptionType" xml:"encryptionType"`
 	DownloadType   string `json:"downloadType" xml:"downloadType"`
+	Width          string `json:"width" xml:"width"`
+	Definition     string `json:"definition" xml:"definition"`
+	Rand           string `json:"rand" xml:"rand"`
+	Url            string `json:"Url" xml:"Url"`
+	Complexity     string `json:"complexity" xml:"complexity"`
+	Encryption     string `json:"encryption" xml:"encryption"`
+	Fps            string `json:"fps" xml:"fps"`
+	EncryptionType string `json:"encryptionType" xml:"encryptionType"`
+	Height         string `json:"height" xml:"height"`
+	ActivityName   string `json:"activityName" xml:"activityName"`
+	Size           string `json:"size" xml:"size"`
+	Bitrate        string `json:"bitrate" xml:"bitrate"`
+	Plaintext      string `json:"plaintext" xml:"plaintext"`
+	Duration       string `json:"duration" xml:"duration"`
+	Format         string `json:"format" xml:"format"`
 }

@@ -18,9 +18,9 @@ package mts
 // CensorPornResult is a nested struct in mts response
 type CensorPornResult struct {
 	MaxScore        string                              `json:"MaxScore" xml:"MaxScore"`
-	Label           string                              `json:"Label" xml:"Label"`
 	Suggestion      string                              `json:"Suggestion" xml:"Suggestion"`
+	Label           string                              `json:"Label" xml:"Label"`
 	AverageScore    string                              `json:"AverageScore" xml:"AverageScore"`
-	PornCounterList PornCounterListInQueryCensorJobList `json:"PornCounterList" xml:"PornCounterList"`
 	PornTopList     PornTopListInQueryCensorJobList     `json:"PornTopList" xml:"PornTopList"`
+	PornCounterList PornCounterListInQueryCensorJobList `json:"PornCounterList" xml:"PornCounterList"`
 }

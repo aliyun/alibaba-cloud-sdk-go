@@ -17,6 +17,6 @@ package mts
 
 // TagAnResult is a nested struct in mts response
 type TagAnResult struct {
-	Label string `json:"Label" xml:"Label"`
 	Score string `json:"Score" xml:"Score"`
+	Label string `json:"Label" xml:"Label"`
 }

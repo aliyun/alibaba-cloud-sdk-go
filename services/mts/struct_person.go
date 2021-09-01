@@ -17,8 +17,8 @@ package mts
 
 // Person is a nested struct in mts response
 type Person struct {
-	PersonId          string                   `json:"PersonId" xml:"PersonId"`
 	PersonName        string                   `json:"PersonName" xml:"PersonName"`
 	PersonDescription string                   `json:"PersonDescription" xml:"PersonDescription"`
+	PersonId          string                   `json:"PersonId" xml:"PersonId"`
 	Faces             FacesInListCustomPersons `json:"Faces" xml:"Faces"`
 }

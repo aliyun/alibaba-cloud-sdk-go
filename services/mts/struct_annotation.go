@@ -17,6 +17,6 @@ package mts
 
 // Annotation is a nested struct in mts response
 type Annotation struct {
-	Label string `json:"Label" xml:"Label"`
 	Score string `json:"Score" xml:"Score"`
+	Label string `json:"Label" xml:"Label"`
 }

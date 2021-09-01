@@ -17,8 +17,8 @@ package mts
 
 // Switch is a nested struct in mts response
 type Switch struct {
-	State        string `json:"State" xml:"State"`
 	FunctionId   string `json:"FunctionId" xml:"FunctionId"`
-	SwitchId     string `json:"SwitchId" xml:"SwitchId"`
 	FunctionName string `json:"FunctionName" xml:"FunctionName"`
+	State        string `json:"State" xml:"State"`
+	SwitchId     string `json:"SwitchId" xml:"SwitchId"`
 }

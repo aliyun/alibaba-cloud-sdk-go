@@ -17,7 +17,7 @@ package mts
 
 // FpCompareResult is a nested struct in mts response
 type FpCompareResult struct {
-	MasterMediaInfo    MasterMediaInfo    `json:"MasterMediaInfo" xml:"MasterMediaInfo"`
 	QueryMediaInfo     QueryMediaInfo     `json:"QueryMediaInfo" xml:"QueryMediaInfo"`
+	MasterMediaInfo    MasterMediaInfo    `json:"MasterMediaInfo" xml:"MasterMediaInfo"`
 	MediaMatchSegments MediaMatchSegments `json:"MediaMatchSegments" xml:"MediaMatchSegments"`
 }

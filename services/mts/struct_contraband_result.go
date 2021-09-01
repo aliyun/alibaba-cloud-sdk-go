@@ -18,6 +18,6 @@ package mts
 // ContrabandResult is a nested struct in mts response
 type ContrabandResult struct {
 	ContrabandAudios ContrabandAudios `json:"ContrabandAudios" xml:"ContrabandAudios"`
-	ContrabandTexts  ContrabandTexts  `json:"ContrabandTexts" xml:"ContrabandTexts"`
 	ContrabandOcrs   ContrabandOcrs   `json:"ContrabandOcrs" xml:"ContrabandOcrs"`
+	ContrabandTexts  ContrabandTexts  `json:"ContrabandTexts" xml:"ContrabandTexts"`
 }

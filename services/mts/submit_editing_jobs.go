@@ -71,15 +71,18 @@ func (client *Client) SubmitEditingJobsWithCallback(request *SubmitEditingJobsRe
 // SubmitEditingJobsRequest is the request struct for api SubmitEditingJobs
 type SubmitEditingJobsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OutputLocation       string           `position:"Query" name:"OutputLocation"`
-	EditingInputs        string           `position:"Query" name:"EditingInputs"`
-	EditingJobOutputs    string           `position:"Query" name:"EditingJobOutputs"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	OutputBucket         string           `position:"Query" name:"OutputBucket"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OutputLocation           string           `position:"Query" name:"OutputLocation"`
+	EditingInputs            string           `position:"Query" name:"EditingInputs"`
+	EditingJobURL            string           `position:"Query" name:"EditingJobURL"`
+	EditingJobOssFileUid     requests.Integer `position:"Query" name:"EditingJobOssFileUid"`
+	EditingJobOutputs        string           `position:"Query" name:"EditingJobOutputs"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId               string           `position:"Query" name:"PipelineId"`
+	OutputBucket             string           `position:"Query" name:"OutputBucket"`
+	EditingJobOssFileRoleArn string           `position:"Query" name:"EditingJobOssFileRoleArn"`
 }
 
 // SubmitEditingJobsResponse is the response struct for api SubmitEditingJobs

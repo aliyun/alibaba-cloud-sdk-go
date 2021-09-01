@@ -20,8 +20,8 @@ type SubtitleStream struct {
 	StartTime      string `json:"StartTime" xml:"StartTime"`
 	CodecName      string `json:"CodecName" xml:"CodecName"`
 	Duration       string `json:"Duration" xml:"Duration"`
-	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
 	Timebase       string `json:"Timebase" xml:"Timebase"`
+	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
 	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
 	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
 	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`

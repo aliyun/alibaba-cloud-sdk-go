@@ -18,7 +18,7 @@ package mts
 // Job is a nested struct in mts response
 type Job struct {
 	TemplateId            string                                     `json:"TemplateId" xml:"TemplateId"`
-	ResultOutputFile      string                                     `json:"ResultOutputFile" xml:"ResultOutputFile"`
+	JobTime               int64                                      `json:"JobTime" xml:"JobTime"`
 	UserData              string                                     `json:"UserData" xml:"UserData"`
 	PipelineId            string                                     `json:"PipelineId" xml:"PipelineId"`
 	Template              string                                     `json:"Template" xml:"Template"`
@@ -28,30 +28,33 @@ type Job struct {
 	JobId                 string                                     `json:"JobId" xml:"JobId"`
 	Message               string                                     `json:"Message" xml:"Message"`
 	Code                  string                                     `json:"Code" xml:"Code"`
+	Result                string                                     `json:"Result" xml:"Result"`
 	CreationTime          string                                     `json:"CreationTime" xml:"CreationTime"`
 	FinishTime            string                                     `json:"FinishTime" xml:"FinishTime"`
 	State                 string                                     `json:"State" xml:"State"`
+	JobParams             string                                     `json:"JobParams" xml:"JobParams"`
+	Status                string                                     `json:"Status" xml:"Status"`
+	UserId                int64                                      `json:"UserId" xml:"UserId"`
 	OutputConfig          string                                     `json:"OutputConfig" xml:"OutputConfig"`
-	Output                Output                                     `json:"Output" xml:"Output"`
-	BeautifyConfig        BeautifyConfig                             `json:"BeautifyConfig" xml:"BeautifyConfig"`
-	EditingConfig         EditingConfig                              `json:"EditingConfig" xml:"EditingConfig"`
-	Input                 Input                                      `json:"Input" xml:"Input"`
-	Result                Result                                     `json:"Result" xml:"Result"`
-	CategoryResult        CategoryResult                             `json:"CategoryResult" xml:"CategoryResult"`
-	MNSMessageResult      MNSMessageResult                           `json:"MNSMessageResult" xml:"MNSMessageResult"`
-	VideoSplitResult      VideoSplitResult                           `json:"VideoSplitResult" xml:"VideoSplitResult"`
 	MediaDetailConfig     MediaDetailConfig                          `json:"MediaDetailConfig" xml:"MediaDetailConfig"`
 	VideoGifResult        VideoGifResult                             `json:"VideoGifResult" xml:"VideoGifResult"`
-	AsrConfig             AsrConfig                                  `json:"AsrConfig" xml:"AsrConfig"`
-	MediaDetailResult     MediaDetailResult                          `json:"MediaDetailResult" xml:"MediaDetailResult"`
-	AsrResult             AsrResult                                  `json:"AsrResult" xml:"AsrResult"`
-	TranscodeOutput       TranscodeOutput                            `json:"transcodeOutput" xml:"transcodeOutput"`
+	CategoryResult        CategoryResult                             `json:"CategoryResult" xml:"CategoryResult"`
 	VideoSummaryResult    VideoSummaryResult                         `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
-	Inputs                InputsInQueryComplexJobList                `json:"Inputs" xml:"Inputs"`
+	VideoSplitResult      VideoSplitResult                           `json:"VideoSplitResult" xml:"VideoSplitResult"`
+	BeautifyConfig        BeautifyConfig                             `json:"BeautifyConfig" xml:"BeautifyConfig"`
+	MNSMessageResult      MNSMessageResult                           `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	MediaDetailResult     MediaDetailResult                          `json:"MediaDetailResult" xml:"MediaDetailResult"`
+	Output                Output                                     `json:"Output" xml:"Output"`
+	AsrResult             AsrResult                                  `json:"AsrResult" xml:"AsrResult"`
+	AsrConfig             AsrConfig                                  `json:"AsrConfig" xml:"AsrConfig"`
+	Input                 Input                                      `json:"Input" xml:"Input"`
+	TranscodeOutput       TranscodeOutput                            `json:"transcodeOutput" xml:"transcodeOutput"`
+	EditingConfig         EditingConfig                              `json:"EditingConfig" xml:"EditingConfig"`
 	EditingInputs         EditingInputsInQueryEditingJobList         `json:"EditingInputs" xml:"EditingInputs"`
+	FaceResult            FaceResult                                 `json:"FaceResult" xml:"FaceResult"`
+	Inputs                InputsInQueryComplexJobList                `json:"Inputs" xml:"Inputs"`
 	TagResult             TagResult                                  `json:"TagResult" xml:"TagResult"`
-	ComplexEditingConfigs ComplexEditingConfigsInQueryComplexJobList `json:"ComplexEditingConfigs" xml:"ComplexEditingConfigs"`
 	OcrResult             OcrResult                                  `json:"OcrResult" xml:"OcrResult"`
 	SubTaskInfo           SubTaskInfo                                `json:"SubTaskInfo" xml:"SubTaskInfo"`
-	FaceResult            FaceResult                                 `json:"FaceResult" xml:"FaceResult"`
+	ComplexEditingConfigs ComplexEditingConfigsInQueryComplexJobList `json:"ComplexEditingConfigs" xml:"ComplexEditingConfigs"`
 }

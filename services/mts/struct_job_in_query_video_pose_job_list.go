@@ -17,12 +17,12 @@ package mts
 
 // JobInQueryVideoPoseJobList is a nested struct in mts response
 type JobInQueryVideoPoseJobList struct {
-	JobId            string           `json:"JobId" xml:"JobId"`
-	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
-	UserData         string           `json:"UserData" xml:"UserData"`
 	State            string           `json:"State" xml:"State"`
-	Input            Input            `json:"Input" xml:"Input"`
+	JobId            string           `json:"JobId" xml:"JobId"`
+	UserData         string           `json:"UserData" xml:"UserData"`
+	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
 	OutputConfig     OutputConfig     `json:"OutputConfig" xml:"OutputConfig"`
-	Properties       Properties       `json:"Properties" xml:"Properties"`
 	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	Input            Input            `json:"Input" xml:"Input"`
+	Properties       Properties       `json:"Properties" xml:"Properties"`
 }

@@ -17,9 +17,9 @@ package mts
 
 // PipelineInQueryAsrPipelineList is a nested struct in mts response
 type PipelineInQueryAsrPipelineList struct {
-	Id           string       `json:"Id" xml:"Id"`
-	Name         string       `json:"Name" xml:"Name"`
 	State        string       `json:"State" xml:"State"`
 	Priority     string       `json:"Priority" xml:"Priority"`
+	Name         string       `json:"Name" xml:"Name"`
+	Id           string       `json:"Id" xml:"Id"`
 	NotifyConfig NotifyConfig `json:"NotifyConfig" xml:"NotifyConfig"`
 }

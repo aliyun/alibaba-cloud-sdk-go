@@ -17,6 +17,6 @@ package mts
 
 // QrcodeResult is a nested struct in mts response
 type QrcodeResult struct {
-	QrcodeVideos QrcodeVideos `json:"QrcodeVideos" xml:"QrcodeVideos"`
 	QrcodeImages QrcodeImages `json:"QrcodeImages" xml:"QrcodeImages"`
+	QrcodeVideos QrcodeVideos `json:"QrcodeVideos" xml:"QrcodeVideos"`
 }

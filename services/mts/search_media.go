@@ -90,10 +90,10 @@ type SearchMediaRequest struct {
 // SearchMediaResponse is the response struct for api SearchMedia
 type SearchMediaResponse struct {
 	*responses.BaseResponse
-	RequestId  string                 `json:"RequestId" xml:"RequestId"`
 	TotalNum   int64                  `json:"TotalNum" xml:"TotalNum"`
-	PageNumber int64                  `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int64                  `json:"PageSize" xml:"PageSize"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	PageNumber int64                  `json:"PageNumber" xml:"PageNumber"`
 	MediaList  MediaListInSearchMedia `json:"MediaList" xml:"MediaList"`
 }
 

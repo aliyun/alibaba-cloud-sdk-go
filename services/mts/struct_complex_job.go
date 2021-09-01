@@ -17,16 +17,16 @@ package mts
 
 // ComplexJob is a nested struct in mts response
 type ComplexJob struct {
-	JobId                 string                                  `json:"JobId" xml:"JobId"`
-	State                 string                                  `json:"State" xml:"State"`
-	Code                  string                                  `json:"Code" xml:"Code"`
-	Message               string                                  `json:"Message" xml:"Message"`
-	Percent               int64                                   `json:"Percent" xml:"Percent"`
-	PipelineId            string                                  `json:"PipelineId" xml:"PipelineId"`
 	CreationTime          string                                  `json:"CreationTime" xml:"CreationTime"`
+	Percent               int64                                   `json:"Percent" xml:"Percent"`
 	FinishTime            string                                  `json:"FinishTime" xml:"FinishTime"`
+	State                 string                                  `json:"State" xml:"State"`
+	Message               string                                  `json:"Message" xml:"Message"`
+	JobId                 string                                  `json:"JobId" xml:"JobId"`
+	Code                  string                                  `json:"Code" xml:"Code"`
+	PipelineId            string                                  `json:"PipelineId" xml:"PipelineId"`
 	TranscodeOutput       TranscodeOutput                         `json:"transcodeOutput" xml:"transcodeOutput"`
 	MNSMessageResult      MNSMessageResult                        `json:"MNSMessageResult" xml:"MNSMessageResult"`
-	Inputs                InputsInSubmitComplexJob                `json:"Inputs" xml:"Inputs"`
 	ComplexEditingConfigs ComplexEditingConfigsInSubmitComplexJob `json:"ComplexEditingConfigs" xml:"ComplexEditingConfigs"`
+	Inputs                InputsInSubmitComplexJob                `json:"Inputs" xml:"Inputs"`
 }

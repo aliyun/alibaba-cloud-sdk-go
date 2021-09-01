@@ -83,10 +83,10 @@ type ListAsrPipelineRequest struct {
 // ListAsrPipelineResponse is the response struct for api ListAsrPipeline
 type ListAsrPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string                        `json:"RequestId" xml:"RequestId"`
 	TotalCount   int64                         `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int64                         `json:"PageNumber" xml:"PageNumber"`
 	PageSize     int64                         `json:"PageSize" xml:"PageSize"`
+	RequestId    string                        `json:"RequestId" xml:"RequestId"`
+	PageNumber   int64                         `json:"PageNumber" xml:"PageNumber"`
 	PipelineList PipelineListInListAsrPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 

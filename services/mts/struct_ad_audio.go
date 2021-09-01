@@ -17,10 +17,10 @@ package mts
 
 // AdAudio is a nested struct in mts response
 type AdAudio struct {
+	EndTime    string `json:"EndTime" xml:"EndTime"`
+	StartTime  string `json:"StartTime" xml:"StartTime"`
 	Suggestion string `json:"Suggestion" xml:"Suggestion"`
 	Score      string `json:"Score" xml:"Score"`
-	StartTime  string `json:"StartTime" xml:"StartTime"`
-	EndTime    string `json:"EndTime" xml:"EndTime"`
 	Text       string `json:"Text" xml:"Text"`
 	Object     string `json:"Object" xml:"Object"`
 }

@@ -17,6 +17,6 @@ package mts
 
 // OutputConfig is a nested struct in mts response
 type OutputConfig struct {
-	VideoFile VideoFile `json:"VideoFile" xml:"VideoFile"`
 	DataFile  DataFile  `json:"DataFile" xml:"DataFile"`
+	VideoFile VideoFile `json:"VideoFile" xml:"VideoFile"`
 }

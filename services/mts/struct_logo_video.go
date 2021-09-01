@@ -17,8 +17,8 @@ package mts
 
 // LogoVideo is a nested struct in mts response
 type LogoVideo struct {
+	Time       string `json:"Time" xml:"Time"`
 	Suggestion string `json:"Suggestion" xml:"Suggestion"`
 	Score      string `json:"Score" xml:"Score"`
-	Time       string `json:"Time" xml:"Time"`
 	Object     string `json:"Object" xml:"Object"`
 }

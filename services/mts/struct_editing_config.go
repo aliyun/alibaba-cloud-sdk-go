@@ -26,20 +26,20 @@ type EditingConfig struct {
 	VideoStreamMap         string                             `json:"VideoStreamMap" xml:"VideoStreamMap"`
 	Priority               string                             `json:"Priority" xml:"Priority"`
 	WaterMarkConfigUrl     string                             `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
-	Properties             Properties                         `json:"Properties" xml:"Properties"`
-	DigiWaterMark          DigiWaterMark                      `json:"DigiWaterMark" xml:"DigiWaterMark"`
-	Video                  Video                              `json:"Video" xml:"Video"`
+	Encryption             Encryption                         `json:"Encryption" xml:"Encryption"`
 	Clip                   Clip                               `json:"Clip" xml:"Clip"`
-	MuxConfig              MuxConfig                          `json:"MuxConfig" xml:"MuxConfig"`
-	OutputFile             OutputFile                         `json:"OutputFile" xml:"OutputFile"`
 	M3U8NonStandardSupport M3U8NonStandardSupport             `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
 	Audio                  Audio                              `json:"Audio" xml:"Audio"`
 	SubtitleConfig         SubtitleConfig                     `json:"SubtitleConfig" xml:"SubtitleConfig"`
 	Editing                Editing                            `json:"Editing" xml:"Editing"`
 	Container              Container                          `json:"Container" xml:"Container"`
-	TransConfig            TransConfig                        `json:"TransConfig" xml:"TransConfig"`
-	Encryption             Encryption                         `json:"Encryption" xml:"Encryption"`
+	Properties             Properties                         `json:"Properties" xml:"Properties"`
+	OutputFile             OutputFile                         `json:"OutputFile" xml:"OutputFile"`
 	SuperReso              SuperReso                          `json:"SuperReso" xml:"SuperReso"`
-	WaterMarkList          WaterMarkListInQueryEditingJobList `json:"WaterMarkList" xml:"WaterMarkList"`
+	Video                  Video                              `json:"Video" xml:"Video"`
+	TransConfig            TransConfig                        `json:"TransConfig" xml:"TransConfig"`
+	MuxConfig              MuxConfig                          `json:"MuxConfig" xml:"MuxConfig"`
+	DigiWaterMark          DigiWaterMark                      `json:"DigiWaterMark" xml:"DigiWaterMark"`
 	MergeList              MergeListInQueryEditingJobList     `json:"MergeList" xml:"MergeList"`
+	WaterMarkList          WaterMarkListInQueryEditingJobList `json:"WaterMarkList" xml:"WaterMarkList"`
 }

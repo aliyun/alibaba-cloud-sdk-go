@@ -18,6 +18,6 @@ package mts
 // MatchFrameStorage is a nested struct in mts response
 type MatchFrameStorage struct {
 	MasterMediaFrames     MasterMediaFrames     `json:"MasterMediaFrames" xml:"MasterMediaFrames"`
-	QueryMediaFrames      QueryMediaFrames      `json:"QueryMediaFrames" xml:"QueryMediaFrames"`
 	MatchedFramesDescFile MatchedFramesDescFile `json:"MatchedFramesDescFile" xml:"MatchedFramesDescFile"`
+	QueryMediaFrames      QueryMediaFrames      `json:"QueryMediaFrames" xml:"QueryMediaFrames"`
 }

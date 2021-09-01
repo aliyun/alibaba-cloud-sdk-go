@@ -20,8 +20,8 @@ type AnalysisJob struct {
 	Message          string                             `json:"Message" xml:"Message"`
 	Code             string                             `json:"Code" xml:"Code"`
 	CreationTime     string                             `json:"CreationTime" xml:"CreationTime"`
-	UserData         string                             `json:"UserData" xml:"UserData"`
 	Priority         string                             `json:"Priority" xml:"Priority"`
+	UserData         string                             `json:"UserData" xml:"UserData"`
 	State            string                             `json:"State" xml:"State"`
 	PipelineId       string                             `json:"PipelineId" xml:"PipelineId"`
 	Percent          int64                              `json:"Percent" xml:"Percent"`

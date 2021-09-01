@@ -17,8 +17,8 @@ package mts
 
 // TerrorismVideo is a nested struct in mts response
 type TerrorismVideo struct {
+	Time       string `json:"Time" xml:"Time"`
 	Suggestion string `json:"Suggestion" xml:"Suggestion"`
 	Score      string `json:"Score" xml:"Score"`
-	Time       string `json:"Time" xml:"Time"`
 	Object     string `json:"Object" xml:"Object"`
 }

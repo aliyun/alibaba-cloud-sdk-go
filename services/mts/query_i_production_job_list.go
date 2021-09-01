@@ -83,8 +83,8 @@ type QueryIProductionJobListResponse struct {
 	*responses.BaseResponse
 	RequestId     string                               `json:"RequestId" xml:"RequestId"`
 	NextPageToken string                               `json:"NextPageToken" xml:"NextPageToken"`
+	Jobs          JobsInQueryIProductionJobList        `json:"Jobs" xml:"Jobs"`
 	NonExistIds   NonExistIdsInQueryIProductionJobList `json:"NonExistIds" xml:"NonExistIds"`
-	Jobs          Jobs                                 `json:"Jobs" xml:"Jobs"`
 }
 
 // CreateQueryIProductionJobListRequest creates a request to invoke QueryIProductionJobList API

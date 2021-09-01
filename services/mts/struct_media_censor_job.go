@@ -17,19 +17,19 @@ package mts
 
 // MediaCensorJob is a nested struct in mts response
 type MediaCensorJob struct {
-	JobId                   string                                           `json:"JobId" xml:"JobId"`
-	UserData                string                                           `json:"UserData" xml:"UserData"`
-	PipelineId              string                                           `json:"PipelineId" xml:"PipelineId"`
-	State                   string                                           `json:"State" xml:"State"`
-	Code                    string                                           `json:"Code" xml:"Code"`
-	Suggestion              string                                           `json:"Suggestion" xml:"Suggestion"`
-	Message                 string                                           `json:"Message" xml:"Message"`
 	CreationTime            string                                           `json:"CreationTime" xml:"CreationTime"`
 	FinishTime              string                                           `json:"FinishTime" xml:"FinishTime"`
+	Suggestion              string                                           `json:"Suggestion" xml:"Suggestion"`
+	State                   string                                           `json:"State" xml:"State"`
+	Message                 string                                           `json:"Message" xml:"Message"`
+	JobId                   string                                           `json:"JobId" xml:"JobId"`
+	UserData                string                                           `json:"UserData" xml:"UserData"`
+	Code                    string                                           `json:"Code" xml:"Code"`
+	PipelineId              string                                           `json:"PipelineId" xml:"PipelineId"`
 	TitleCensorResult       TitleCensorResult                                `json:"TitleCensorResult" xml:"TitleCensorResult"`
-	DescCensorResult        DescCensorResult                                 `json:"DescCensorResult" xml:"DescCensorResult"`
-	BarrageCensorResult     BarrageCensorResult                              `json:"BarrageCensorResult" xml:"BarrageCensorResult"`
 	Input                   Input                                            `json:"Input" xml:"Input"`
+	BarrageCensorResult     BarrageCensorResult                              `json:"BarrageCensorResult" xml:"BarrageCensorResult"`
+	DescCensorResult        DescCensorResult                                 `json:"DescCensorResult" xml:"DescCensorResult"`
 	VideoCensorConfig       VideoCensorConfig                                `json:"VideoCensorConfig" xml:"VideoCensorConfig"`
 	VensorCensorResult      VensorCensorResult                               `json:"VensorCensorResult" xml:"VensorCensorResult"`
 	CoverImageCensorResults CoverImageCensorResultsInQueryMediaCensorJobList `json:"CoverImageCensorResults" xml:"CoverImageCensorResults"`

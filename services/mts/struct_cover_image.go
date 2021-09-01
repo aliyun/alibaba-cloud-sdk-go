@@ -17,7 +17,7 @@ package mts
 
 // CoverImage is a nested struct in mts response
 type CoverImage struct {
+	Time  string `json:"Time" xml:"Time"`
 	Score string `json:"Score" xml:"Score"`
 	Url   string `json:"Url" xml:"Url"`
-	Time  string `json:"Time" xml:"Time"`
 }

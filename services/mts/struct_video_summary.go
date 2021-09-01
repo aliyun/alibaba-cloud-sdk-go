@@ -17,6 +17,6 @@ package mts
 
 // VideoSummary is a nested struct in mts response
 type VideoSummary struct {
-	StartTime string `json:"StartTime" xml:"StartTime"`
 	EndTime   string `json:"EndTime" xml:"EndTime"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
 }

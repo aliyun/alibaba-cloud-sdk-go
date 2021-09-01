@@ -20,12 +20,12 @@ type MediaInfoJob struct {
 	JobId            string           `json:"JobId" xml:"JobId"`
 	Message          string           `json:"Message" xml:"Message"`
 	State            string           `json:"State" xml:"State"`
-	Async            bool             `json:"Async" xml:"Async"`
 	Code             string           `json:"Code" xml:"Code"`
+	Async            bool             `json:"Async" xml:"Async"`
 	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
 	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
 	UserData         string           `json:"UserData" xml:"UserData"`
-	Properties       Properties       `json:"Properties" xml:"Properties"`
-	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
 	Input            Input            `json:"Input" xml:"Input"`
+	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	Properties       Properties       `json:"Properties" xml:"Properties"`
 }

@@ -17,20 +17,20 @@ package mts
 
 // CensorJob is a nested struct in mts response
 type CensorJob struct {
-	Id                    string                `json:"Id" xml:"Id"`
-	UserData              string                `json:"UserData" xml:"UserData"`
-	PipelineId            string                `json:"PipelineId" xml:"PipelineId"`
-	State                 string                `json:"State" xml:"State"`
-	Code                  string                `json:"Code" xml:"Code"`
-	Message               string                `json:"Message" xml:"Message"`
 	CreationTime          string                `json:"CreationTime" xml:"CreationTime"`
+	State                 string                `json:"State" xml:"State"`
 	TitleCensorResult     string                `json:"TitleCensorResult" xml:"TitleCensorResult"`
-	DescCensorResult      string                `json:"DescCensorResult" xml:"DescCensorResult"`
+	Message               string                `json:"Message" xml:"Message"`
 	BarrageCensorResult   string                `json:"BarrageCensorResult" xml:"BarrageCensorResult"`
+	DescCensorResult      string                `json:"DescCensorResult" xml:"DescCensorResult"`
 	ResultSaveObject      string                `json:"ResultSaveObject" xml:"ResultSaveObject"`
+	UserData              string                `json:"UserData" xml:"UserData"`
+	Code                  string                `json:"Code" xml:"Code"`
+	PipelineId            string                `json:"PipelineId" xml:"PipelineId"`
+	Id                    string                `json:"Id" xml:"Id"`
+	CensorTerrorismResult CensorTerrorismResult `json:"CensorTerrorismResult" xml:"CensorTerrorismResult"`
 	Input                 Input                 `json:"Input" xml:"Input"`
 	CensorConfig          CensorConfig          `json:"CensorConfig" xml:"CensorConfig"`
 	CensorPornResult      CensorPornResult      `json:"CensorPornResult" xml:"CensorPornResult"`
-	CensorTerrorismResult CensorTerrorismResult `json:"CensorTerrorismResult" xml:"CensorTerrorismResult"`
 	ImageCensorResults    ImageCensorResults    `json:"ImageCensorResults" xml:"ImageCensorResults"`
 }

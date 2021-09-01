@@ -83,8 +83,8 @@ type RegisterCustomFaceRequest struct {
 // RegisterCustomFaceResponse is the response struct for api RegisterCustomFace
 type RegisterCustomFaceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	FaceId    string `json:"FaceId" xml:"FaceId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRegisterCustomFaceRequest creates a request to invoke RegisterCustomFace API

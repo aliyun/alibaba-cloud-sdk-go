@@ -17,7 +17,7 @@ package mts
 
 // AbuseResult is a nested struct in mts response
 type AbuseResult struct {
+	AbuseOcrs   AbuseOcrs   `json:"AbuseOcrs" xml:"AbuseOcrs"`
 	AbuseAudios AbuseAudios `json:"AbuseAudios" xml:"AbuseAudios"`
 	AbuseTexts  AbuseTexts  `json:"AbuseTexts" xml:"AbuseTexts"`
-	AbuseOcrs   AbuseOcrs   `json:"AbuseOcrs" xml:"AbuseOcrs"`
 }

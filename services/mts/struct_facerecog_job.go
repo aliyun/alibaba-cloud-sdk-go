@@ -17,13 +17,13 @@ package mts
 
 // FacerecogJob is a nested struct in mts response
 type FacerecogJob struct {
-	Id                   string               `json:"Id" xml:"Id"`
-	UserData             string               `json:"UserData" xml:"UserData"`
-	PipelineId           string               `json:"PipelineId" xml:"PipelineId"`
+	CreationTime         string               `json:"CreationTime" xml:"CreationTime"`
 	State                string               `json:"State" xml:"State"`
+	UserData             string               `json:"UserData" xml:"UserData"`
 	Code                 string               `json:"Code" xml:"Code"`
 	Message              string               `json:"Message" xml:"Message"`
-	CreationTime         string               `json:"CreationTime" xml:"CreationTime"`
-	Input                Input                `json:"Input" xml:"Input"`
+	PipelineId           string               `json:"PipelineId" xml:"PipelineId"`
+	Id                   string               `json:"Id" xml:"Id"`
 	VideoFacerecogResult VideoFacerecogResult `json:"VideoFacerecogResult" xml:"VideoFacerecogResult"`
+	Input                Input                `json:"Input" xml:"Input"`
 }

@@ -18,8 +18,8 @@ package mts
 // CensorTerrorismResult is a nested struct in mts response
 type CensorTerrorismResult struct {
 	MaxScore             string                                   `json:"MaxScore" xml:"MaxScore"`
-	Label                string                                   `json:"Label" xml:"Label"`
 	Suggestion           string                                   `json:"Suggestion" xml:"Suggestion"`
+	Label                string                                   `json:"Label" xml:"Label"`
 	AverageScore         string                                   `json:"AverageScore" xml:"AverageScore"`
 	TerrorismCounterList TerrorismCounterListInQueryCensorJobList `json:"TerrorismCounterList" xml:"TerrorismCounterList"`
 	TerrorismTopList     TerrorismTopListInQueryCensorJobList     `json:"TerrorismTopList" xml:"TerrorismTopList"`

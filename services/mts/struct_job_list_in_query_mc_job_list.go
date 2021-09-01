@@ -17,5 +17,5 @@ package mts
 
 // JobListInQueryMCJobList is a nested struct in mts response
 type JobListInQueryMCJobList struct {
-	Job []Job `json:"Job" xml:"Job"`
+	Job []JobInQueryMCJobList `json:"Job" xml:"Job"`
 }

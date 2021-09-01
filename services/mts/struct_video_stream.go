@@ -17,28 +17,31 @@ package mts
 
 // VideoStream is a nested struct in mts response
 type VideoStream struct {
-	Height         string      `json:"Height" xml:"Height"`
-	Dar            string      `json:"Dar" xml:"Dar"`
 	NumFrames      string      `json:"NumFrames" xml:"NumFrames"`
 	CodecName      string      `json:"CodecName" xml:"CodecName"`
-	Profile        string      `json:"Profile" xml:"Profile"`
-	Fps            string      `json:"Fps" xml:"Fps"`
 	Timebase       string      `json:"Timebase" xml:"Timebase"`
-	Bitrate        string      `json:"Bitrate" xml:"Bitrate"`
+	Fps            string      `json:"Fps" xml:"Fps"`
 	Sar            string      `json:"Sar" xml:"Sar"`
-	Level          string      `json:"Level" xml:"Level"`
 	PixFmt         string      `json:"PixFmt" xml:"PixFmt"`
-	CodecTag       string      `json:"CodecTag" xml:"CodecTag"`
 	CodecTagString string      `json:"CodecTagString" xml:"CodecTagString"`
 	Index          string      `json:"Index" xml:"Index"`
 	Lang           string      `json:"Lang" xml:"Lang"`
 	HasBFrames     string      `json:"HasBFrames" xml:"HasBFrames"`
 	Width          string      `json:"Width" xml:"Width"`
-	StartTime      string      `json:"StartTime" xml:"StartTime"`
 	Rotate         string      `json:"Rotate" xml:"Rotate"`
-	Duration       string      `json:"Duration" xml:"Duration"`
 	CodecTimeBase  string      `json:"CodecTimeBase" xml:"CodecTimeBase"`
+	ColorPrimaries string      `json:"ColorPrimaries" xml:"ColorPrimaries"`
 	CodecLongName  string      `json:"CodecLongName" xml:"CodecLongName"`
+	ColorTransfer  string      `json:"ColorTransfer" xml:"ColorTransfer"`
 	AvgFPS         string      `json:"AvgFPS" xml:"AvgFPS"`
+	Height         string      `json:"Height" xml:"Height"`
+	Dar            string      `json:"Dar" xml:"Dar"`
+	Profile        string      `json:"Profile" xml:"Profile"`
+	Bitrate        string      `json:"Bitrate" xml:"Bitrate"`
+	Level          string      `json:"Level" xml:"Level"`
+	CodecTag       string      `json:"CodecTag" xml:"CodecTag"`
+	ColorRange     string      `json:"ColorRange" xml:"ColorRange"`
+	StartTime      string      `json:"StartTime" xml:"StartTime"`
+	Duration       string      `json:"Duration" xml:"Duration"`
 	NetworkCost    NetworkCost `json:"NetworkCost" xml:"NetworkCost"`
 }

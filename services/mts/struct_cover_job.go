@@ -17,13 +17,13 @@ package mts
 
 // CoverJob is a nested struct in mts response
 type CoverJob struct {
-	Id             string         `json:"Id" xml:"Id"`
-	UserData       string         `json:"UserData" xml:"UserData"`
-	PipelineId     string         `json:"PipelineId" xml:"PipelineId"`
+	CreationTime   string         `json:"CreationTime" xml:"CreationTime"`
 	State          string         `json:"State" xml:"State"`
+	UserData       string         `json:"UserData" xml:"UserData"`
 	Code           string         `json:"Code" xml:"Code"`
 	Message        string         `json:"Message" xml:"Message"`
-	CreationTime   string         `json:"CreationTime" xml:"CreationTime"`
+	PipelineId     string         `json:"PipelineId" xml:"PipelineId"`
+	Id             string         `json:"Id" xml:"Id"`
 	Input          Input          `json:"Input" xml:"Input"`
 	CoverConfig    CoverConfig    `json:"CoverConfig" xml:"CoverConfig"`
 	CoverImageList CoverImageList `json:"CoverImageList" xml:"CoverImageList"`

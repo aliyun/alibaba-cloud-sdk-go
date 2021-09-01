@@ -17,7 +17,7 @@ package mts
 
 // Sensitive is a nested struct in mts response
 type Sensitive struct {
-	Name   string `json:"Name" xml:"Name"`
 	Score  string `json:"Score" xml:"Score"`
+	Name   string `json:"Name" xml:"Name"`
 	Target string `json:"Target" xml:"Target"`
 }

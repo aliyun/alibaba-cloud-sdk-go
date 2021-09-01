@@ -81,15 +81,15 @@ type QueryIProductionJobRequest struct {
 // QueryIProductionJobResponse is the response struct for api QueryIProductionJob
 type QueryIProductionJobResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	JobId        string `json:"JobId" xml:"JobId"`
 	FunctionName string `json:"FunctionName" xml:"FunctionName"`
 	Input        string `json:"Input" xml:"Input"`
-	Output       string `json:"Output" xml:"Output"`
-	JobParams    string `json:"JobParams" xml:"JobParams"`
-	PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	UserData     string `json:"UserData" xml:"UserData"`
 	State        string `json:"State" xml:"State"`
+	Output       string `json:"Output" xml:"Output"`
+	PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+	JobParams    string `json:"JobParams" xml:"JobParams"`
+	JobId        string `json:"JobId" xml:"JobId"`
 	Result       string `json:"Result" xml:"Result"`
 }
 

@@ -17,7 +17,7 @@ package mts
 
 // VideoSplit is a nested struct in mts response
 type VideoSplit struct {
-	StartTime string `json:"StartTime" xml:"StartTime"`
 	EndTime   string `json:"EndTime" xml:"EndTime"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
 	Path      string `json:"Path" xml:"Path"`
 }

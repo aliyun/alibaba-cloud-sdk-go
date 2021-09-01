@@ -82,9 +82,9 @@ type SetAuthConfigRequest struct {
 // SetAuthConfigResponse is the response struct for api SetAuthConfig
 type SetAuthConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Key1      string `json:"Key1" xml:"Key1"`
 	Key2      string `json:"Key2" xml:"Key2"`
+	Key1      string `json:"Key1" xml:"Key1"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetAuthConfigRequest creates a request to invoke SetAuthConfig API

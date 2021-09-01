@@ -17,15 +17,15 @@ package mts
 
 // FpCompareJob is a nested struct in mts response
 type FpCompareJob struct {
-	Id                string            `json:"Id" xml:"Id"`
-	UserData          string            `json:"UserData" xml:"UserData"`
-	PipelineId        string            `json:"PipelineId" xml:"PipelineId"`
-	FpDBId            string            `json:"FpDBId" xml:"FpDBId"`
-	State             string            `json:"State" xml:"State"`
-	Code              string            `json:"Code" xml:"Code"`
-	Message           string            `json:"Message" xml:"Message"`
 	CreationTime      string            `json:"CreationTime" xml:"CreationTime"`
 	FinishTime        string            `json:"FinishTime" xml:"FinishTime"`
+	State             string            `json:"State" xml:"State"`
+	Message           string            `json:"Message" xml:"Message"`
+	FpDBId            string            `json:"FpDBId" xml:"FpDBId"`
+	UserData          string            `json:"UserData" xml:"UserData"`
+	Code              string            `json:"Code" xml:"Code"`
+	PipelineId        string            `json:"PipelineId" xml:"PipelineId"`
+	Id                string            `json:"Id" xml:"Id"`
 	MasterFile        MasterFile        `json:"MasterFile" xml:"MasterFile"`
 	QueryFile         QueryFile         `json:"QueryFile" xml:"QueryFile"`
 	MatchFrameStorage MatchFrameStorage `json:"MatchFrameStorage" xml:"MatchFrameStorage"`

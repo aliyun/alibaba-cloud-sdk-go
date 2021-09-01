@@ -17,14 +17,14 @@ package mts
 
 // TerrorismJob is a nested struct in mts response
 type TerrorismJob struct {
-	Id                    string                `json:"Id" xml:"Id"`
-	UserData              string                `json:"UserData" xml:"UserData"`
-	PipelineId            string                `json:"PipelineId" xml:"PipelineId"`
+	CreationTime          string                `json:"CreationTime" xml:"CreationTime"`
 	State                 string                `json:"State" xml:"State"`
+	UserData              string                `json:"UserData" xml:"UserData"`
 	Code                  string                `json:"Code" xml:"Code"`
 	Message               string                `json:"Message" xml:"Message"`
-	CreationTime          string                `json:"CreationTime" xml:"CreationTime"`
-	Input                 Input                 `json:"Input" xml:"Input"`
-	TerrorismConfig       TerrorismConfig       `json:"TerrorismConfig" xml:"TerrorismConfig"`
+	PipelineId            string                `json:"PipelineId" xml:"PipelineId"`
+	Id                    string                `json:"Id" xml:"Id"`
 	CensorTerrorismResult CensorTerrorismResult `json:"CensorTerrorismResult" xml:"CensorTerrorismResult"`
+	TerrorismConfig       TerrorismConfig       `json:"TerrorismConfig" xml:"TerrorismConfig"`
+	Input                 Input                 `json:"Input" xml:"Input"`
 }

@@ -19,8 +19,8 @@ package mts
 type Pipeline struct {
 	Name          string       `json:"Name" xml:"Name"`
 	SpeedLevel    int64        `json:"SpeedLevel" xml:"SpeedLevel"`
-	Priority      int          `json:"Priority" xml:"Priority"`
 	State         string       `json:"State" xml:"State"`
+	Priority      int          `json:"Priority" xml:"Priority"`
 	Role          string       `json:"Role" xml:"Role"`
 	Speed         string       `json:"Speed" xml:"Speed"`
 	QuotaAllocate int64        `json:"QuotaAllocate" xml:"QuotaAllocate"`

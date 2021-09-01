@@ -17,18 +17,18 @@ package mts
 
 // FpShotJob is a nested struct in mts response
 type FpShotJob struct {
-	Id            string       `json:"Id" xml:"Id"`
-	UserData      string       `json:"UserData" xml:"UserData"`
-	PipelineId    string       `json:"PipelineId" xml:"PipelineId"`
-	FileId        string       `json:"FileId" xml:"FileId"`
-	TransactionId string       `json:"TransactionId" xml:"TransactionId"`
-	TxHash        string       `json:"TxHash" xml:"TxHash"`
-	State         string       `json:"State" xml:"State"`
-	Code          string       `json:"Code" xml:"Code"`
-	Message       string       `json:"Message" xml:"Message"`
 	CreationTime  string       `json:"CreationTime" xml:"CreationTime"`
 	FinishTime    string       `json:"FinishTime" xml:"FinishTime"`
-	InputFile     InputFile    `json:"InputFile" xml:"InputFile"`
-	FpShotConfig  FpShotConfig `json:"FpShotConfig" xml:"FpShotConfig"`
+	State         string       `json:"State" xml:"State"`
+	Message       string       `json:"Message" xml:"Message"`
+	TxHash        string       `json:"TxHash" xml:"TxHash"`
+	TransactionId string       `json:"TransactionId" xml:"TransactionId"`
+	FileId        string       `json:"FileId" xml:"FileId"`
+	UserData      string       `json:"UserData" xml:"UserData"`
+	Code          string       `json:"Code" xml:"Code"`
+	PipelineId    string       `json:"PipelineId" xml:"PipelineId"`
+	Id            string       `json:"Id" xml:"Id"`
 	FpShotResult  FpShotResult `json:"FpShotResult" xml:"FpShotResult"`
+	FpShotConfig  FpShotConfig `json:"FpShotConfig" xml:"FpShotConfig"`
+	InputFile     InputFile    `json:"InputFile" xml:"InputFile"`
 }

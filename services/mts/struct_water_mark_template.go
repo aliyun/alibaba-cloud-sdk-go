@@ -17,8 +17,8 @@ package mts
 
 // WaterMarkTemplate is a nested struct in mts response
 type WaterMarkTemplate struct {
-	Name       string     `json:"Name" xml:"Name"`
 	Height     string     `json:"Height" xml:"Height"`
+	Name       string     `json:"Name" xml:"Name"`
 	Width      string     `json:"Width" xml:"Width"`
 	State      string     `json:"State" xml:"State"`
 	Dx         string     `json:"Dx" xml:"Dx"`

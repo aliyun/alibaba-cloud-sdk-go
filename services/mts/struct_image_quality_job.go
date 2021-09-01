@@ -17,11 +17,11 @@ package mts
 
 // ImageQualityJob is a nested struct in mts response
 type ImageQualityJob struct {
+	CreationTime string `json:"CreationTime" xml:"CreationTime"`
+	State        string `json:"State" xml:"State"`
 	JobId        string `json:"JobId" xml:"JobId"`
 	UserData     string `json:"UserData" xml:"UserData"`
 	PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-	State        string `json:"State" xml:"State"`
-	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	Input        Input  `json:"Input" xml:"Input"`
 	Result       Result `json:"Result" xml:"Result"`
+	Input        Input  `json:"Input" xml:"Input"`
 }

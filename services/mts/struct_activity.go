@@ -20,10 +20,10 @@ type Activity struct {
 	Name             string           `json:"Name" xml:"Name"`
 	JobId            string           `json:"JobId" xml:"JobId"`
 	Message          string           `json:"Message" xml:"Message"`
-	State            string           `json:"State" xml:"State"`
 	StartTime        string           `json:"StartTime" xml:"StartTime"`
-	Code             string           `json:"Code" xml:"Code"`
+	State            string           `json:"State" xml:"State"`
 	EndTime          string           `json:"EndTime" xml:"EndTime"`
+	Code             string           `json:"Code" xml:"Code"`
 	Type             string           `json:"Type" xml:"Type"`
 	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
 }

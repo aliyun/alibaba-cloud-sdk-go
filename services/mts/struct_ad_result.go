@@ -17,9 +17,9 @@ package mts
 
 // AdResult is a nested struct in mts response
 type AdResult struct {
-	AdVideos AdVideos `json:"AdVideos" xml:"AdVideos"`
-	AdAudios AdAudios `json:"AdAudios" xml:"AdAudios"`
+	AdOcrs   AdOcrs   `json:"AdOcrs" xml:"AdOcrs"`
 	AdTexts  AdTexts  `json:"AdTexts" xml:"AdTexts"`
 	AdImages AdImages `json:"AdImages" xml:"AdImages"`
-	AdOcrs   AdOcrs   `json:"AdOcrs" xml:"AdOcrs"`
+	AdAudios AdAudios `json:"AdAudios" xml:"AdAudios"`
+	AdVideos AdVideos `json:"AdVideos" xml:"AdVideos"`
 }

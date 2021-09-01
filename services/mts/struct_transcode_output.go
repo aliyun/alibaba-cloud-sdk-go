@@ -20,25 +20,25 @@ type TranscodeOutput struct {
 	TemplateId             string                             `json:"TemplateId" xml:"TemplateId"`
 	DeWatermark            string                             `json:"DeWatermark" xml:"DeWatermark"`
 	MergeConfigUrl         string                             `json:"MergeConfigUrl" xml:"MergeConfigUrl"`
-	UserData               string                             `json:"UserData" xml:"UserData"`
 	Priority               string                             `json:"Priority" xml:"Priority"`
+	UserData               string                             `json:"UserData" xml:"UserData"`
 	Rotate                 string                             `json:"Rotate" xml:"Rotate"`
-	AudioStreamMap         string                             `json:"AudioStreamMap" xml:"AudioStreamMap"`
 	WaterMarkConfigUrl     string                             `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
+	AudioStreamMap         string                             `json:"AudioStreamMap" xml:"AudioStreamMap"`
 	VideoStreamMap         string                             `json:"VideoStreamMap" xml:"VideoStreamMap"`
-	Properties             Properties                         `json:"Properties" xml:"Properties"`
-	M3U8NonStandardSupport M3U8NonStandardSupport             `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
-	DigiWaterMark          DigiWaterMark                      `json:"DigiWaterMark" xml:"DigiWaterMark"`
-	Audio                  Audio                              `json:"Audio" xml:"Audio"`
-	Video                  Video                              `json:"Video" xml:"Video"`
+	Encryption             Encryption                         `json:"Encryption" xml:"Encryption"`
 	SubtitleConfig         SubtitleConfig                     `json:"SubtitleConfig" xml:"SubtitleConfig"`
 	Clip                   Clip                               `json:"Clip" xml:"Clip"`
-	MuxConfig              MuxConfig                          `json:"MuxConfig" xml:"MuxConfig"`
 	Container              Container                          `json:"Container" xml:"Container"`
+	Properties             Properties                         `json:"Properties" xml:"Properties"`
 	OutputFile             OutputFile                         `json:"OutputFile" xml:"OutputFile"`
-	TransConfig            TransConfig                        `json:"TransConfig" xml:"TransConfig"`
-	Encryption             Encryption                         `json:"Encryption" xml:"Encryption"`
+	M3U8NonStandardSupport M3U8NonStandardSupport             `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
 	SuperReso              SuperReso                          `json:"SuperReso" xml:"SuperReso"`
-	WaterMarkList          WaterMarkListInQueryComplexJobList `json:"WaterMarkList" xml:"WaterMarkList"`
+	Audio                  Audio                              `json:"Audio" xml:"Audio"`
+	Video                  Video                              `json:"Video" xml:"Video"`
+	TransConfig            TransConfig                        `json:"TransConfig" xml:"TransConfig"`
+	MuxConfig              MuxConfig                          `json:"MuxConfig" xml:"MuxConfig"`
+	DigiWaterMark          DigiWaterMark                      `json:"DigiWaterMark" xml:"DigiWaterMark"`
 	MergeList              MergeListInQueryComplexJobList     `json:"MergeList" xml:"MergeList"`
+	WaterMarkList          WaterMarkListInQueryComplexJobList `json:"WaterMarkList" xml:"WaterMarkList"`
 }

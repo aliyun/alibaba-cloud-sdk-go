@@ -82,9 +82,9 @@ type DecryptKeyRequest struct {
 // DecryptKeyResponse is the response struct for api DecryptKey
 type DecryptKeyResponse struct {
 	*responses.BaseResponse
+	Rand      string `json:"Rand" xml:"Rand"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Plaintext string `json:"Plaintext" xml:"Plaintext"`
-	Rand      string `json:"Rand" xml:"Rand"`
 }
 
 // CreateDecryptKeyRequest creates a request to invoke DecryptKey API

@@ -83,10 +83,10 @@ type ListCoverPipelineRequest struct {
 // ListCoverPipelineResponse is the response struct for api ListCoverPipeline
 type ListCoverPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string                          `json:"RequestId" xml:"RequestId"`
 	TotalCount   int64                           `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int64                           `json:"PageNumber" xml:"PageNumber"`
 	PageSize     int64                           `json:"PageSize" xml:"PageSize"`
+	RequestId    string                          `json:"RequestId" xml:"RequestId"`
+	PageNumber   int64                           `json:"PageNumber" xml:"PageNumber"`
 	PipelineList PipelineListInListCoverPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 

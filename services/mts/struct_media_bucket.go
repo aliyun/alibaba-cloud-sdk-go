@@ -17,6 +17,6 @@ package mts
 
 // MediaBucket is a nested struct in mts response
 type MediaBucket struct {
-	Bucket string `json:"Bucket" xml:"Bucket"`
 	Type   string `json:"Type" xml:"Type"`
+	Bucket string `json:"Bucket" xml:"Bucket"`
 }

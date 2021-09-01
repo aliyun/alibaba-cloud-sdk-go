@@ -17,6 +17,6 @@ package mts
 
 // LogoResult is a nested struct in mts response
 type LogoResult struct {
-	LogoVideos LogoVideos `json:"LogoVideos" xml:"LogoVideos"`
 	LogoImages LogoImages `json:"LogoImages" xml:"LogoImages"`
+	LogoVideos LogoVideos `json:"LogoVideos" xml:"LogoVideos"`
 }

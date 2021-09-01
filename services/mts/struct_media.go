@@ -34,8 +34,8 @@ type Media struct {
 	CateId       int64                        `json:"CateId" xml:"CateId"`
 	RunIdList    RunIdListInAddMedia          `json:"RunIdList" xml:"RunIdList"`
 	Tags         TagsInAddMedia               `json:"Tags" xml:"Tags"`
-	MediaInfo    MediaInfo                    `json:"MediaInfo" xml:"MediaInfo"`
 	File         File                         `json:"File" xml:"File"`
+	MediaInfo    MediaInfo                    `json:"MediaInfo" xml:"MediaInfo"`
 	SnapshotList SnapshotListInQueryMediaList `json:"SnapshotList" xml:"SnapshotList"`
 	SummaryList  SummaryListInQueryMediaList  `json:"SummaryList" xml:"SummaryList"`
 	PlayList     PlayListInQueryMediaList     `json:"PlayList" xml:"PlayList"`

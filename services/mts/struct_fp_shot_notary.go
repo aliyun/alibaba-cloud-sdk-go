@@ -17,11 +17,11 @@ package mts
 
 // FpShotNotary is a nested struct in mts response
 type FpShotNotary struct {
-	TransactionId string `json:"TransactionId" xml:"TransactionId"`
-	TxHash        string `json:"TxHash" xml:"TxHash"`
-	FpDBId        string `json:"FpDBId" xml:"FpDBId"`
-	JobId         string `json:"JobId" xml:"JobId"`
-	Detail        string `json:"Detail" xml:"Detail"`
 	CreationTime  string `json:"CreationTime" xml:"CreationTime"`
 	FinishTime    string `json:"FinishTime" xml:"FinishTime"`
+	JobId         string `json:"JobId" xml:"JobId"`
+	TxHash        string `json:"TxHash" xml:"TxHash"`
+	TransactionId string `json:"TransactionId" xml:"TransactionId"`
+	FpDBId        string `json:"FpDBId" xml:"FpDBId"`
+	Detail        string `json:"Detail" xml:"Detail"`
 }

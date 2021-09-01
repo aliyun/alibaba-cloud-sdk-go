@@ -81,8 +81,8 @@ type GetPackageRequest struct {
 // GetPackageResponse is the response struct for api GetPackage
 type GetPackageResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	CertPackage string `json:"CertPackage" xml:"CertPackage"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetPackageRequest creates a request to invoke GetPackage API

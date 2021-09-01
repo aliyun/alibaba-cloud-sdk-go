@@ -17,10 +17,10 @@ package mts
 
 // PipelineInQueryCoverPipelineList is a nested struct in mts response
 type PipelineInQueryCoverPipelineList struct {
-	Id           string       `json:"Id" xml:"Id"`
-	Name         string       `json:"Name" xml:"Name"`
 	State        string       `json:"State" xml:"State"`
 	Priority     string       `json:"Priority" xml:"Priority"`
 	Role         string       `json:"Role" xml:"Role"`
+	Name         string       `json:"Name" xml:"Name"`
+	Id           string       `json:"Id" xml:"Id"`
 	NotifyConfig NotifyConfig `json:"NotifyConfig" xml:"NotifyConfig"`
 }

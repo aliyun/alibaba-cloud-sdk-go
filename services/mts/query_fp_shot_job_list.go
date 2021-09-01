@@ -90,8 +90,8 @@ type QueryFpShotJobListResponse struct {
 	*responses.BaseResponse
 	RequestId           string                          `json:"RequestId" xml:"RequestId"`
 	NextPageToken       string                          `json:"NextPageToken" xml:"NextPageToken"`
-	NonExistIds         NonExistIdsInQueryFpShotJobList `json:"NonExistIds" xml:"NonExistIds"`
 	NonExistPrimaryKeys NonExistPrimaryKeys             `json:"NonExistPrimaryKeys" xml:"NonExistPrimaryKeys"`
+	NonExistIds         NonExistIdsInQueryFpShotJobList `json:"NonExistIds" xml:"NonExistIds"`
 	FpShotJobList       FpShotJobList                   `json:"FpShotJobList" xml:"FpShotJobList"`
 }
 

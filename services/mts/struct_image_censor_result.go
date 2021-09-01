@@ -17,8 +17,8 @@ package mts
 
 // ImageCensorResult is a nested struct in mts response
 type ImageCensorResult struct {
-	ImageLocation string `json:"ImageLocation" xml:"ImageLocation"`
 	ImageBucket   string `json:"ImageBucket" xml:"ImageBucket"`
-	ImageObject   string `json:"ImageObject" xml:"ImageObject"`
 	Result        string `json:"Result" xml:"Result"`
+	ImageLocation string `json:"ImageLocation" xml:"ImageLocation"`
+	ImageObject   string `json:"ImageObject" xml:"ImageObject"`
 }

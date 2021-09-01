@@ -17,7 +17,7 @@ package mts
 
 // FailedImage is a nested struct in mts response
 type FailedImage struct {
-	Code      string    `json:"Code" xml:"Code"`
 	Success   string    `json:"Success" xml:"Success"`
+	Code      string    `json:"Code" xml:"Code"`
 	ImageFile ImageFile `json:"ImageFile" xml:"ImageFile"`
 }

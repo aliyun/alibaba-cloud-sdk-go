@@ -17,7 +17,7 @@ package mts
 
 // MatchedFramesDescFile is a nested struct in mts response
 type MatchedFramesDescFile struct {
-	Bucket   string `json:"Bucket" xml:"Bucket"`
-	Location string `json:"Location" xml:"Location"`
 	Object   string `json:"Object" xml:"Object"`
+	Location string `json:"Location" xml:"Location"`
+	Bucket   string `json:"Bucket" xml:"Bucket"`
 }

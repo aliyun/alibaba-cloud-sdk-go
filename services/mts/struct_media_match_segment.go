@@ -17,14 +17,14 @@ package mts
 
 // MediaMatchSegment is a nested struct in mts response
 type MediaMatchSegment struct {
-	QueryStartFrame    string `json:"QueryStartFrame" xml:"QueryStartFrame"`
-	QueryEndFrame      string `json:"QueryEndFrame" xml:"QueryEndFrame"`
-	MasterStartFrame   string `json:"MasterStartFrame" xml:"MasterStartFrame"`
-	MasterEndFrame     string `json:"MasterEndFrame" xml:"MasterEndFrame"`
 	QueryStartTime     string `json:"QueryStartTime" xml:"QueryStartTime"`
-	QueryEndTime       string `json:"QueryEndTime" xml:"QueryEndTime"`
-	MasterStartTime    string `json:"MasterStartTime" xml:"MasterStartTime"`
-	MasterEndTime      string `json:"MasterEndTime" xml:"MasterEndTime"`
-	TotalMatchFrameNum string `json:"TotalMatchFrameNum" xml:"TotalMatchFrameNum"`
+	QueryEndFrame      string `json:"QueryEndFrame" xml:"QueryEndFrame"`
 	Score              string `json:"Score" xml:"Score"`
+	TotalMatchFrameNum string `json:"TotalMatchFrameNum" xml:"TotalMatchFrameNum"`
+	MasterEndTime      string `json:"MasterEndTime" xml:"MasterEndTime"`
+	MasterStartTime    string `json:"MasterStartTime" xml:"MasterStartTime"`
+	QueryStartFrame    string `json:"QueryStartFrame" xml:"QueryStartFrame"`
+	MasterEndFrame     string `json:"MasterEndFrame" xml:"MasterEndFrame"`
+	MasterStartFrame   string `json:"MasterStartFrame" xml:"MasterStartFrame"`
+	QueryEndTime       string `json:"QueryEndTime" xml:"QueryEndTime"`
 }

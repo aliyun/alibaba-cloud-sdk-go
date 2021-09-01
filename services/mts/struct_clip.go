@@ -32,7 +32,7 @@ type Clip struct {
 	Id            string                       `json:"Id" xml:"Id"`
 	EndTarget     string                       `json:"EndTarget" xml:"EndTarget"`
 	Type          string                       `json:"Type" xml:"Type"`
-	ClipsConfig   ClipsConfig                  `json:"ClipsConfig" xml:"ClipsConfig"`
 	TimeSpan      TimeSpan                     `json:"TimeSpan" xml:"TimeSpan"`
+	ClipsConfig   ClipsConfig                  `json:"ClipsConfig" xml:"ClipsConfig"`
 	Effects       EffectsInQueryComplexJobList `json:"Effects" xml:"Effects"`
 }

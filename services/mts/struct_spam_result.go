@@ -17,7 +17,7 @@ package mts
 
 // SpamResult is a nested struct in mts response
 type SpamResult struct {
-	SpamAudios SpamAudios `json:"SpamAudios" xml:"SpamAudios"`
 	SpamTexts  SpamTexts  `json:"SpamTexts" xml:"SpamTexts"`
+	SpamAudios SpamAudios `json:"SpamAudios" xml:"SpamAudios"`
 	SpamOcrs   SpamOcrs   `json:"SpamOcrs" xml:"SpamOcrs"`
 }

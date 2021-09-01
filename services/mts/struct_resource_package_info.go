@@ -17,10 +17,10 @@ package mts
 
 // ResourcePackageInfo is a nested struct in mts response
 type ResourcePackageInfo struct {
+	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
+	Status        string `json:"Status" xml:"Status"`
+	CommodityCode string `json:"CommodityCode" xml:"CommodityCode"`
 	CurrCapacity  string `json:"CurrCapacity" xml:"CurrCapacity"`
 	InitCapacity  string `json:"InitCapacity" xml:"InitCapacity"`
-	CommodityCode string `json:"CommodityCode" xml:"CommodityCode"`
-	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-	Status        string `json:"Status" xml:"Status"`
 }

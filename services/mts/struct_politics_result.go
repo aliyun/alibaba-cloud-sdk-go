@@ -17,9 +17,9 @@ package mts
 
 // PoliticsResult is a nested struct in mts response
 type PoliticsResult struct {
-	PoliticsVideos PoliticsVideos `json:"PoliticsVideos" xml:"PoliticsVideos"`
-	PoliticsAudios PoliticsAudios `json:"PoliticsAudios" xml:"PoliticsAudios"`
-	PoliticsTexts  PoliticsTexts  `json:"PoliticsTexts" xml:"PoliticsTexts"`
-	PoliticsImages PoliticsImages `json:"PoliticsImages" xml:"PoliticsImages"`
 	PoliticsOcrs   PoliticsOcrs   `json:"PoliticsOcrs" xml:"PoliticsOcrs"`
+	PoliticsVideos PoliticsVideos `json:"PoliticsVideos" xml:"PoliticsVideos"`
+	PoliticsImages PoliticsImages `json:"PoliticsImages" xml:"PoliticsImages"`
+	PoliticsTexts  PoliticsTexts  `json:"PoliticsTexts" xml:"PoliticsTexts"`
+	PoliticsAudios PoliticsAudios `json:"PoliticsAudios" xml:"PoliticsAudios"`
 }

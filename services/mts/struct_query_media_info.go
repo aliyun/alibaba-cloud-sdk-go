@@ -17,13 +17,13 @@ package mts
 
 // QueryMediaInfo is a nested struct in mts response
 type QueryMediaInfo struct {
-	Duration        string `json:"Duration" xml:"Duration"`
+	AudioSampleRate string `json:"AudioSampleRate" xml:"AudioSampleRate"`
+	AudioBitRate    string `json:"AudioBitRate" xml:"AudioBitRate"`
 	FpNum           string `json:"FpNum" xml:"FpNum"`
 	Width           string `json:"Width" xml:"Width"`
 	Height          string `json:"Height" xml:"Height"`
-	Fps             string `json:"Fps" xml:"Fps"`
 	TotalVideoFrame string `json:"TotalVideoFrame" xml:"TotalVideoFrame"`
-	AudioBitRate    string `json:"AudioBitRate" xml:"AudioBitRate"`
+	Fps             string `json:"Fps" xml:"Fps"`
+	Duration        string `json:"Duration" xml:"Duration"`
 	AudioChannels   string `json:"AudioChannels" xml:"AudioChannels"`
-	AudioSampleRate string `json:"AudioSampleRate" xml:"AudioSampleRate"`
 }

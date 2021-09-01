@@ -17,14 +17,14 @@ package mts
 
 // MediaFpDeleteJob is a nested struct in mts response
 type MediaFpDeleteJob struct {
-	Id           string `json:"Id" xml:"Id"`
-	UserData     string `json:"UserData" xml:"UserData"`
-	PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-	State        string `json:"State" xml:"State"`
-	Code         string `json:"Code" xml:"Code"`
-	Message      string `json:"Message" xml:"Message"`
 	CreationTime string `json:"CreationTime" xml:"CreationTime"`
 	FinishTime   string `json:"FinishTime" xml:"FinishTime"`
 	PrimaryKey   string `json:"PrimaryKey" xml:"PrimaryKey"`
+	State        string `json:"State" xml:"State"`
+	UserData     string `json:"UserData" xml:"UserData"`
+	Code         string `json:"Code" xml:"Code"`
+	Message      string `json:"Message" xml:"Message"`
+	PipelineId   string `json:"PipelineId" xml:"PipelineId"`
 	FpDBId       string `json:"FpDBId" xml:"FpDBId"`
+	Id           string `json:"Id" xml:"Id"`
 }

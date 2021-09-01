@@ -81,8 +81,8 @@ type QuerySmarttagJobRequest struct {
 // QuerySmarttagJobResponse is the response struct for api QuerySmarttagJob
 type QuerySmarttagJobResponse struct {
 	*responses.BaseResponse
-	RequestId string                    `json:"RequestId" xml:"RequestId"`
 	JobStatus string                    `json:"JobStatus" xml:"JobStatus"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
 	UserData  string                    `json:"UserData" xml:"UserData"`
 	Results   ResultsInQuerySmarttagJob `json:"Results" xml:"Results"`
 }

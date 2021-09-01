@@ -22,11 +22,11 @@ type SnapshotJob struct {
 	Code             string           `json:"Code" xml:"Code"`
 	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
 	TileCount        string           `json:"TileCount" xml:"TileCount"`
-	Count            string           `json:"Count" xml:"Count"`
 	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
-	Id               string           `json:"Id" xml:"Id"`
+	Count            string           `json:"Count" xml:"Count"`
 	UserData         string           `json:"UserData" xml:"UserData"`
+	Id               string           `json:"Id" xml:"Id"`
+	Input            Input            `json:"Input" xml:"Input"`
 	SnapshotConfig   SnapshotConfig   `json:"SnapshotConfig" xml:"SnapshotConfig"`
 	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
-	Input            Input            `json:"Input" xml:"Input"`
 }

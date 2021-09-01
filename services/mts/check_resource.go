@@ -90,20 +90,20 @@ type CheckResourceRequest struct {
 // CheckResourceResponse is the response struct for api CheckResource
 type CheckResourceResponse struct {
 	*responses.BaseResponse
+	GmtWakeup      string `json:"GmtWakeup" xml:"GmtWakeup"`
+	Hid            int64  `json:"Hid" xml:"Hid"`
+	Message        string `json:"Message" xml:"Message"`
+	TaskIdentifier string `json:"TaskIdentifier" xml:"TaskIdentifier"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Url            string `json:"Url" xml:"Url"`
 	Interrupt      bool   `json:"Interrupt" xml:"Interrupt"`
 	Invoker        string `json:"Invoker" xml:"Invoker"`
+	TaskExtraData  string `json:"TaskExtraData" xml:"TaskExtraData"`
+	Country        string `json:"Country" xml:"Country"`
+	Prompt         string `json:"Prompt" xml:"Prompt"`
+	Level          int64  `json:"Level" xml:"Level"`
 	Pk             string `json:"Pk" xml:"Pk"`
 	Bid            string `json:"Bid" xml:"Bid"`
-	Hid            int64  `json:"Hid" xml:"Hid"`
-	Country        string `json:"Country" xml:"Country"`
-	TaskIdentifier string `json:"TaskIdentifier" xml:"TaskIdentifier"`
-	TaskExtraData  string `json:"TaskExtraData" xml:"TaskExtraData"`
-	GmtWakeup      string `json:"GmtWakeup" xml:"GmtWakeup"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Message        string `json:"Message" xml:"Message"`
-	Level          int64  `json:"Level" xml:"Level"`
-	Url            string `json:"Url" xml:"Url"`
-	Prompt         string `json:"Prompt" xml:"Prompt"`
 }
 
 // CreateCheckResourceRequest creates a request to invoke CheckResource API

@@ -17,8 +17,8 @@ package mts
 
 // TransConfig is a nested struct in mts response
 type TransConfig struct {
-	IsCheckResoFail         string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
 	AdjDarMethod            string `json:"AdjDarMethod" xml:"AdjDarMethod"`
+	IsCheckResoFail         string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
 	IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate" xml:"IsCheckAudioBitrate"`
 	Duration                string `json:"Duration" xml:"Duration"`
 	IsCheckReso             string `json:"IsCheckReso" xml:"IsCheckReso"`

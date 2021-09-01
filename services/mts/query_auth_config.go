@@ -80,9 +80,9 @@ type QueryAuthConfigRequest struct {
 // QueryAuthConfigResponse is the response struct for api QueryAuthConfig
 type QueryAuthConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Key1      string `json:"Key1" xml:"Key1"`
 	Key2      string `json:"Key2" xml:"Key2"`
+	Key1      string `json:"Key1" xml:"Key1"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateQueryAuthConfigRequest creates a request to invoke QueryAuthConfig API

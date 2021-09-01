@@ -22,18 +22,20 @@ type Result struct {
 	Label            string           `json:"Label" xml:"Label"`
 	Data             string           `json:"Data" xml:"Data"`
 	Rate             string           `json:"Rate" xml:"Rate"`
+	Index            int              `json:"Index" xml:"Index"`
 	Score            string           `json:"Score" xml:"Score"`
 	Suggestion       string           `json:"Suggestion" xml:"Suggestion"`
 	Scene            string           `json:"Scene" xml:"Scene"`
+	Result           int              `json:"Result" xml:"Result"`
 	Type             string           `json:"Type" xml:"Type"`
-	PornResult       PornResult       `json:"PornResult" xml:"PornResult"`
-	PoliticsResult   PoliticsResult   `json:"PoliticsResult" xml:"PoliticsResult"`
-	QrcodeResult     QrcodeResult     `json:"QrcodeResult" xml:"QrcodeResult"`
-	ContrabandResult ContrabandResult `json:"ContrabandResult" xml:"ContrabandResult"`
-	AbuseResult      AbuseResult      `json:"AbuseResult" xml:"AbuseResult"`
 	AdResult         AdResult         `json:"AdResult" xml:"AdResult"`
+	PoliticsResult   PoliticsResult   `json:"PoliticsResult" xml:"PoliticsResult"`
+	ContrabandResult ContrabandResult `json:"ContrabandResult" xml:"ContrabandResult"`
 	TerrorismResult  TerrorismResult  `json:"TerrorismResult" xml:"TerrorismResult"`
 	LiveResult       LiveResult       `json:"LiveResult" xml:"LiveResult"`
+	AbuseResult      AbuseResult      `json:"AbuseResult" xml:"AbuseResult"`
+	PornResult       PornResult       `json:"PornResult" xml:"PornResult"`
+	QrcodeResult     QrcodeResult     `json:"QrcodeResult" xml:"QrcodeResult"`
 	LogoResult       LogoResult       `json:"LogoResult" xml:"LogoResult"`
 	SpamResult       SpamResult       `json:"SpamResult" xml:"SpamResult"`
 	ImageSearchShots ImageSearchShots `json:"ImageSearchShots" xml:"ImageSearchShots"`

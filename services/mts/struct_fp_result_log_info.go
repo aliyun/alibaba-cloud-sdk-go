@@ -17,10 +17,10 @@ package mts
 
 // FpResultLogInfo is a nested struct in mts response
 type FpResultLogInfo struct {
-	LogPath      string `json:"LogPath" xml:"LogPath"`
-	LogName      string `json:"LogName" xml:"LogName"`
 	LogStartTime int64  `json:"LogStartTime" xml:"LogStartTime"`
-	LogEndTime   int64  `json:"LogEndTime" xml:"LogEndTime"`
-	LogSize      int64  `json:"LogSize" xml:"LogSize"`
+	LogPath      string `json:"LogPath" xml:"LogPath"`
 	CreateTime   int64  `json:"CreateTime" xml:"CreateTime"`
+	LogSize      int64  `json:"LogSize" xml:"LogSize"`
+	LogName      string `json:"LogName" xml:"LogName"`
+	LogEndTime   int64  `json:"LogEndTime" xml:"LogEndTime"`
 }

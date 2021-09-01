@@ -24,7 +24,7 @@ type Properties struct {
 	Fps         string      `json:"Fps" xml:"Fps"`
 	Bitrate     string      `json:"Bitrate" xml:"Bitrate"`
 	FileFormat  string      `json:"FileFormat" xml:"FileFormat"`
-	Streams     Streams     `json:"Streams" xml:"Streams"`
 	Format      Format      `json:"Format" xml:"Format"`
+	Streams     Streams     `json:"Streams" xml:"Streams"`
 	SourceLogos SourceLogos `json:"SourceLogos" xml:"SourceLogos"`
 }

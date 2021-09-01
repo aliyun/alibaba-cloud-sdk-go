@@ -17,14 +17,14 @@ package mts
 
 // PornJob is a nested struct in mts response
 type PornJob struct {
-	Id               string           `json:"Id" xml:"Id"`
-	UserData         string           `json:"UserData" xml:"UserData"`
-	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
+	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
 	State            string           `json:"State" xml:"State"`
+	UserData         string           `json:"UserData" xml:"UserData"`
 	Code             string           `json:"Code" xml:"Code"`
 	Message          string           `json:"Message" xml:"Message"`
-	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
-	Input            Input            `json:"Input" xml:"Input"`
+	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
+	Id               string           `json:"Id" xml:"Id"`
 	PornConfig       PornConfig       `json:"PornConfig" xml:"PornConfig"`
 	CensorPornResult CensorPornResult `json:"CensorPornResult" xml:"CensorPornResult"`
+	Input            Input            `json:"Input" xml:"Input"`
 }

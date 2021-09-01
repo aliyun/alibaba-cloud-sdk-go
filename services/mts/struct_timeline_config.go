@@ -17,6 +17,6 @@ package mts
 
 // TimelineConfig is a nested struct in mts response
 type TimelineConfig struct {
-	TimelineConfigAudio TimelineConfigAudio `json:"TimelineConfigAudio" xml:"TimelineConfigAudio"`
 	TimelineConfigVideo TimelineConfigVideo `json:"TimelineConfigVideo" xml:"TimelineConfigVideo"`
+	TimelineConfigAudio TimelineConfigAudio `json:"TimelineConfigAudio" xml:"TimelineConfigAudio"`
 }

@@ -17,6 +17,6 @@ package mts
 
 // AnalysisConfig is a nested struct in mts response
 type AnalysisConfig struct {
-	QualityControl    QualityControl    `json:"QualityControl" xml:"QualityControl"`
 	PropertiesControl PropertiesControl `json:"PropertiesControl" xml:"PropertiesControl"`
+	QualityControl    QualityControl    `json:"QualityControl" xml:"QualityControl"`
 }

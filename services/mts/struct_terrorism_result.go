@@ -17,9 +17,9 @@ package mts
 
 // TerrorismResult is a nested struct in mts response
 type TerrorismResult struct {
-	TerrorismVideos TerrorismVideos `json:"TerrorismVideos" xml:"TerrorismVideos"`
+	TerrorismOcrs   TerrorismOcrs   `json:"TerrorismOcrs" xml:"TerrorismOcrs"`
 	TerrorismAudios TerrorismAudios `json:"TerrorismAudios" xml:"TerrorismAudios"`
+	TerrorismVideos TerrorismVideos `json:"TerrorismVideos" xml:"TerrorismVideos"`
 	TerrorismTexts  TerrorismTexts  `json:"TerrorismTexts" xml:"TerrorismTexts"`
 	TerrorismImages TerrorismImages `json:"TerrorismImages" xml:"TerrorismImages"`
-	TerrorismOcrs   TerrorismOcrs   `json:"TerrorismOcrs" xml:"TerrorismOcrs"`
 }

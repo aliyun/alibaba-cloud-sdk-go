@@ -18,8 +18,8 @@ package mts
 // CensorConfig is a nested struct in mts response
 type CensorConfig struct {
 	Interval   string     `json:"Interval" xml:"Interval"`
-	BizType    string     `json:"BizType" xml:"BizType"`
 	SaveType   string     `json:"SaveType" xml:"SaveType"`
 	Scenes     string     `json:"Scenes" xml:"Scenes"`
+	BizType    string     `json:"BizType" xml:"BizType"`
 	OutputFile OutputFile `json:"OutputFile" xml:"OutputFile"`
 }

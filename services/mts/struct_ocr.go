@@ -18,7 +18,7 @@ package mts
 // Ocr is a nested struct in mts response
 type Ocr struct {
 	Time     string `json:"Time" xml:"Time"`
-	OcrText  string `json:"OcrText" xml:"OcrText"`
 	ImageUrl string `json:"ImageUrl" xml:"ImageUrl"`
+	OcrText  string `json:"OcrText" xml:"OcrText"`
 	ImageId  string `json:"ImageId" xml:"ImageId"`
 }

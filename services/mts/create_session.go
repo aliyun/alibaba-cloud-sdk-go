@@ -83,9 +83,9 @@ type CreateSessionRequest struct {
 // CreateSessionResponse is the response struct for api CreateSession
 type CreateSessionResponse struct {
 	*responses.BaseResponse
+	Ticket    string `json:"Ticket" xml:"Ticket"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	SessionId string `json:"SessionId" xml:"SessionId"`
-	Ticket    string `json:"Ticket" xml:"Ticket"`
 }
 
 // CreateCreateSessionRequest creates a request to invoke CreateSession API

@@ -17,7 +17,7 @@ package mts
 
 // InputImage is a nested struct in mts response
 type InputImage struct {
-	Bucket   string `json:"Bucket" xml:"Bucket"`
-	Location string `json:"Location" xml:"Location"`
 	Object   string `json:"Object" xml:"Object"`
+	Location string `json:"Location" xml:"Location"`
+	Bucket   string `json:"Bucket" xml:"Bucket"`
 }

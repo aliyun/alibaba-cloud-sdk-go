@@ -17,9 +17,9 @@ package mts
 
 // PornResult is a nested struct in mts response
 type PornResult struct {
+	PornTexts  PornTexts  `json:"PornTexts" xml:"PornTexts"`
 	PornVideos PornVideos `json:"PornVideos" xml:"PornVideos"`
 	PornAudios PornAudios `json:"PornAudios" xml:"PornAudios"`
-	PornTexts  PornTexts  `json:"PornTexts" xml:"PornTexts"`
 	PornImages PornImages `json:"PornImages" xml:"PornImages"`
 	PornOcrs   PornOcrs   `json:"PornOcrs" xml:"PornOcrs"`
 }

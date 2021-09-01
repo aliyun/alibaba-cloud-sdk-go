@@ -17,11 +17,11 @@ package mts
 
 // RegisteredPersonage is a nested struct in mts response
 type RegisteredPersonage struct {
+	Quality    string    `json:"Quality" xml:"Quality"`
 	PersonName string    `json:"PersonName" xml:"PersonName"`
+	Gender     string    `json:"Gender" xml:"Gender"`
 	FaceId     string    `json:"FaceId" xml:"FaceId"`
 	Target     string    `json:"Target" xml:"Target"`
-	Quality    string    `json:"Quality" xml:"Quality"`
-	Gender     string    `json:"Gender" xml:"Gender"`
 	ImageId    string    `json:"ImageId" xml:"ImageId"`
 	ImageFile  ImageFile `json:"ImageFile" xml:"ImageFile"`
 }

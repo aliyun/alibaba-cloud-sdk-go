@@ -17,8 +17,8 @@ package mts
 
 // TitleCensorResult is a nested struct in mts response
 type TitleCensorResult struct {
-	Label      string `json:"Label" xml:"Label"`
 	Suggestion string `json:"Suggestion" xml:"Suggestion"`
+	Label      string `json:"Label" xml:"Label"`
 	Scene      string `json:"Scene" xml:"Scene"`
 	Rate       string `json:"Rate" xml:"Rate"`
 }

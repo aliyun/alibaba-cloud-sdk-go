@@ -91,6 +91,7 @@ type SubmitIProductionJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
+	Result    string `json:"Result" xml:"Result"`
 }
 
 // CreateSubmitIProductionJobRequest creates a request to invoke SubmitIProductionJob API

@@ -17,9 +17,9 @@ package mts
 
 // PoliticsOcr is a nested struct in mts response
 type PoliticsOcr struct {
+	Time       string `json:"Time" xml:"Time"`
 	Suggestion string `json:"Suggestion" xml:"Suggestion"`
 	Score      string `json:"Score" xml:"Score"`
-	Time       string `json:"Time" xml:"Time"`
-	Object     string `json:"Object" xml:"Object"`
 	Text       string `json:"Text" xml:"Text"`
+	Object     string `json:"Object" xml:"Object"`
 }

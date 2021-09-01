@@ -83,8 +83,8 @@ type RegisterMediaDetailScenarioRequest struct {
 // RegisterMediaDetailScenarioResponse is the response struct for api RegisterMediaDetailScenario
 type RegisterMediaDetailScenarioResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	ScenarioId string `json:"ScenarioId" xml:"ScenarioId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRegisterMediaDetailScenarioRequest creates a request to invoke RegisterMediaDetailScenario API

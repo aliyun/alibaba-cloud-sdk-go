@@ -26,23 +26,23 @@ type Output struct {
 	VideoStreamMap         string                   `json:"VideoStreamMap" xml:"VideoStreamMap"`
 	Priority               string                   `json:"Priority" xml:"Priority"`
 	WaterMarkConfigUrl     string                   `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
-	Properties             Properties               `json:"Properties" xml:"Properties"`
-	MuxConfig              MuxConfig                `json:"MuxConfig" xml:"MuxConfig"`
-	DigiWaterMark          DigiWaterMark            `json:"DigiWaterMark" xml:"DigiWaterMark"`
-	Video                  Video                    `json:"Video" xml:"Video"`
+	Encryption             Encryption               `json:"Encryption" xml:"Encryption"`
+	TransConfig            TransConfig              `json:"TransConfig" xml:"TransConfig"`
 	Clip                   Clip                     `json:"Clip" xml:"Clip"`
-	OutputFile             OutputFile               `json:"OutputFile" xml:"OutputFile"`
+	MuxConfig              MuxConfig                `json:"MuxConfig" xml:"MuxConfig"`
 	M3U8NonStandardSupport M3U8NonStandardSupport   `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
 	Audio                  Audio                    `json:"Audio" xml:"Audio"`
-	TransConfig            TransConfig              `json:"TransConfig" xml:"TransConfig"`
+	Properties             Properties               `json:"Properties" xml:"Properties"`
 	SubtitleConfig         SubtitleConfig           `json:"SubtitleConfig" xml:"SubtitleConfig"`
 	Container              Container                `json:"Container" xml:"Container"`
-	Encryption             Encryption               `json:"Encryption" xml:"Encryption"`
+	OutputFile             OutputFile               `json:"OutputFile" xml:"OutputFile"`
 	SuperReso              SuperReso                `json:"SuperReso" xml:"SuperReso"`
-	TailSlateList          TailSlateListInListJob   `json:"TailSlateList" xml:"TailSlateList"`
-	WaterMarkList          WaterMarkListInListJob   `json:"WaterMarkList" xml:"WaterMarkList"`
+	Video                  Video                    `json:"Video" xml:"Video"`
+	DigiWaterMark          DigiWaterMark            `json:"DigiWaterMark" xml:"DigiWaterMark"`
 	MergeList              MergeListInListJob       `json:"MergeList" xml:"MergeList"`
 	OutSubtitleList        OutSubtitleListInListJob `json:"OutSubtitleList" xml:"OutSubtitleList"`
-	OpeningList            OpeningListInListJob     `json:"OpeningList" xml:"OpeningList"`
+	TailSlateList          TailSlateListInListJob   `json:"TailSlateList" xml:"TailSlateList"`
 	AmixList               AmixList                 `json:"AmixList" xml:"AmixList"`
+	WaterMarkList          WaterMarkListInListJob   `json:"WaterMarkList" xml:"WaterMarkList"`
+	OpeningList            OpeningListInListJob     `json:"OpeningList" xml:"OpeningList"`
 }

@@ -17,6 +17,6 @@ package mts
 
 // LiveResult is a nested struct in mts response
 type LiveResult struct {
-	LiveVideos LiveVideos `json:"LiveVideos" xml:"LiveVideos"`
 	LiveImages LiveImages `json:"LiveImages" xml:"LiveImages"`
+	LiveVideos LiveVideos `json:"LiveVideos" xml:"LiveVideos"`
 }

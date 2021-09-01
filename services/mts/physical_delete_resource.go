@@ -87,17 +87,17 @@ type PhysicalDeleteResourceRequest struct {
 // PhysicalDeleteResourceResponse is the response struct for api PhysicalDeleteResource
 type PhysicalDeleteResourceResponse struct {
 	*responses.BaseResponse
-	Interrupt      bool   `json:"Interrupt" xml:"Interrupt"`
-	Invoker        string `json:"Invoker" xml:"Invoker"`
-	Pk             string `json:"Pk" xml:"Pk"`
-	Bid            string `json:"Bid" xml:"Bid"`
+	GmtWakeup      string `json:"GmtWakeup" xml:"GmtWakeup"`
 	Hid            int64  `json:"Hid" xml:"Hid"`
-	Country        string `json:"Country" xml:"Country"`
+	Invoker        string `json:"Invoker" xml:"Invoker"`
+	Message        string `json:"Message" xml:"Message"`
 	TaskIdentifier string `json:"TaskIdentifier" xml:"TaskIdentifier"`
 	TaskExtraData  string `json:"TaskExtraData" xml:"TaskExtraData"`
-	GmtWakeup      string `json:"GmtWakeup" xml:"GmtWakeup"`
+	Country        string `json:"Country" xml:"Country"`
+	Pk             string `json:"Pk" xml:"Pk"`
+	Bid            string `json:"Bid" xml:"Bid"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Message        string `json:"Message" xml:"Message"`
+	Interrupt      bool   `json:"Interrupt" xml:"Interrupt"`
 }
 
 // CreatePhysicalDeleteResourceRequest creates a request to invoke PhysicalDeleteResource API

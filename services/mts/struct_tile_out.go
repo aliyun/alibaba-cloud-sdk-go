@@ -23,7 +23,7 @@ type TileOut struct {
 	CellHeight    string `json:"CellHeight" xml:"CellHeight"`
 	CellSelStep   string `json:"CellSelStep" xml:"CellSelStep"`
 	Lines         string `json:"Lines" xml:"Lines"`
-	Columns       string `json:"Columns" xml:"Columns"`
 	Padding       string `json:"Padding" xml:"Padding"`
 	Color         string `json:"Color" xml:"Color"`
+	Columns       string `json:"Columns" xml:"Columns"`
 }

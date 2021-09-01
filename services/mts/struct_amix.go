@@ -17,9 +17,9 @@ package mts
 
 // Amix is a nested struct in mts response
 type Amix struct {
-	AmixURL    string `json:"AmixURL" xml:"AmixURL"`
 	Map        string `json:"Map" xml:"Map"`
-	MixDurMode string `json:"MixDurMode" xml:"MixDurMode"`
 	Start      string `json:"Start" xml:"Start"`
+	AmixURL    string `json:"AmixURL" xml:"AmixURL"`
 	Duration   string `json:"Duration" xml:"Duration"`
+	MixDurMode string `json:"MixDurMode" xml:"MixDurMode"`
 }

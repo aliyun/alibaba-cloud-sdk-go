@@ -17,8 +17,9 @@ package mts
 
 // SubtitleJob is a nested struct in mts response
 type SubtitleJob struct {
-	JobId       string `json:"JobId" xml:"JobId"`
-	InputConfig string `json:"InputConfig" xml:"InputConfig"`
-	UserData    string `json:"UserData" xml:"UserData"`
-	State       string `json:"State" xml:"State"`
+	OutputConfig string `json:"OutputConfig" xml:"OutputConfig"`
+	State        string `json:"State" xml:"State"`
+	JobId        string `json:"JobId" xml:"JobId"`
+	UserData     string `json:"UserData" xml:"UserData"`
+	InputConfig  string `json:"InputConfig" xml:"InputConfig"`
 }
