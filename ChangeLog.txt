@@ -1,3 +1,7 @@
+2021-09-01 Version: v1.61.1246
+- Generated 2019-10-23 for `Sls`.
+- Add Alert Init API.
+
 2021-09-01 Version: v1.61.1245
 - Generated 2018-04-12 for `EHPC`.
 - SDK updated.
