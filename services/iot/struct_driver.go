@@ -21,6 +21,7 @@ type Driver struct {
 	IsBuiltIn            bool   `json:"IsBuiltIn" xml:"IsBuiltIn"`
 	CpuArch              string `json:"CpuArch" xml:"CpuArch"`
 	GmtCreateTimestamp   int64  `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
+	IsApply              bool   `json:"IsApply" xml:"IsApply"`
 	GmtModified          string `json:"GmtModified" xml:"GmtModified"`
 	Runtime              string `json:"Runtime" xml:"Runtime"`
 	DriverId             string `json:"DriverId" xml:"DriverId"`

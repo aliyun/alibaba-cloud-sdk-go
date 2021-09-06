@@ -1,3 +1,7 @@
+2021-09-06 Version: v1.61.1248
+- Generated 2018-01-20 for `Iot`.
+- Update LinkSpeech API, including SpeechByCombination, SyncSpeechByCombination.
+
 2021-09-01 Version: v1.61.1247
 - Generated 2014-06-18 for `Mts`.
 - SubmitURLUploadJob, support S3 Storage.

@@ -152,4 +152,5 @@ type Data struct {
 	TaskList                  []Task                    `json:"TaskList" xml:"TaskList"`
 	ModelVersions             []ModelVersion            `json:"ModelVersions" xml:"ModelVersions"`
 	List                      ListInGetThingTopo        `json:"List" xml:"List"`
+	DynamicRegClientIds       []DynamicRegClientId      `json:"DynamicRegClientIds" xml:"DynamicRegClientIds"`
 }

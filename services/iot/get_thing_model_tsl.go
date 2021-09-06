@@ -74,6 +74,7 @@ type GetThingModelTslRequest struct {
 	RealTenantId      string           `position:"Query" name:"RealTenantId"`
 	Simple            requests.Boolean `position:"Query" name:"Simple"`
 	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	DTModelId         string           `position:"Query" name:"DTModelId"`
 	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
 	ProductKey        string           `position:"Query" name:"ProductKey"`
 	ApiProduct        string           `position:"Body" name:"ApiProduct"`

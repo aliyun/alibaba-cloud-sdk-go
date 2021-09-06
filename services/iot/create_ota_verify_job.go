@@ -71,15 +71,22 @@ func (client *Client) CreateOTAVerifyJobWithCallback(request *CreateOTAVerifyJob
 // CreateOTAVerifyJobRequest is the request struct for api CreateOTAVerifyJob
 type CreateOTAVerifyJobRequest struct {
 	*requests.RpcRequest
-	TimeoutInMinutes requests.Integer `position:"Query" name:"TimeoutInMinutes"`
-	NeedConfirm      requests.Boolean `position:"Query" name:"NeedConfirm"`
-	NeedPush         requests.Boolean `position:"Query" name:"NeedPush"`
-	IotInstanceId    string           `position:"Query" name:"IotInstanceId"`
-	FirmwareId       string           `position:"Query" name:"FirmwareId"`
-	ProductKey       string           `position:"Query" name:"ProductKey"`
-	ApiProduct       string           `position:"Body" name:"ApiProduct"`
-	ApiRevision      string           `position:"Body" name:"ApiRevision"`
-	TargetDeviceName *[]string        `position:"Query" name:"TargetDeviceName"  type:"Repeated"`
+	TimeoutInMinutes requests.Integer         `position:"Query" name:"TimeoutInMinutes"`
+	NeedConfirm      requests.Boolean         `position:"Query" name:"NeedConfirm"`
+	NeedPush         requests.Boolean         `position:"Query" name:"NeedPush"`
+	IotInstanceId    string                   `position:"Query" name:"IotInstanceId"`
+	Tag              *[]CreateOTAVerifyJobTag `position:"Query" name:"Tag"  type:"Repeated"`
+	FirmwareId       string                   `position:"Query" name:"FirmwareId"`
+	ProductKey       string                   `position:"Query" name:"ProductKey"`
+	ApiProduct       string                   `position:"Body" name:"ApiProduct"`
+	ApiRevision      string                   `position:"Body" name:"ApiRevision"`
+	TargetDeviceName *[]string                `position:"Query" name:"TargetDeviceName"  type:"Repeated"`
+}
+
+// CreateOTAVerifyJobTag is a repeated param struct in CreateOTAVerifyJobRequest
+type CreateOTAVerifyJobTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateOTAVerifyJobResponse is the response struct for api CreateOTAVerifyJob

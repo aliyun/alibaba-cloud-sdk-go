@@ -71,21 +71,32 @@ func (client *Client) CreateOTAFirmwareWithCallback(request *CreateOTAFirmwareRe
 // CreateOTAFirmwareRequest is the request struct for api CreateOTAFirmware
 type CreateOTAFirmwareRequest struct {
 	*requests.RpcRequest
-	SignMethod    string           `position:"Query" name:"SignMethod"`
-	NeedToVerify  requests.Boolean `position:"Query" name:"NeedToVerify"`
-	Type          requests.Integer `position:"Query" name:"Type"`
-	FirmwareUrl   string           `position:"Query" name:"FirmwareUrl"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	FirmwareDesc  string           `position:"Query" name:"FirmwareDesc"`
-	ModuleName    string           `position:"Query" name:"ModuleName"`
-	FirmwareSign  string           `position:"Query" name:"FirmwareSign"`
-	FirmwareSize  requests.Integer `position:"Query" name:"FirmwareSize"`
-	FirmwareName  string           `position:"Query" name:"FirmwareName"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
-	SrcVersion    string           `position:"Query" name:"SrcVersion"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	DestVersion   string           `position:"Query" name:"DestVersion"`
+	SignMethod    string                         `position:"Query" name:"SignMethod"`
+	MultiFiles    *[]CreateOTAFirmwareMultiFiles `position:"Query" name:"MultiFiles"  type:"Repeated"`
+	NeedToVerify  requests.Boolean               `position:"Query" name:"NeedToVerify"`
+	Type          requests.Integer               `position:"Query" name:"Type"`
+	FirmwareUrl   string                         `position:"Query" name:"FirmwareUrl"`
+	IotInstanceId string                         `position:"Query" name:"IotInstanceId"`
+	FirmwareDesc  string                         `position:"Query" name:"FirmwareDesc"`
+	ModuleName    string                         `position:"Query" name:"ModuleName"`
+	FirmwareSign  string                         `position:"Query" name:"FirmwareSign"`
+	FirmwareSize  requests.Integer               `position:"Query" name:"FirmwareSize"`
+	FirmwareName  string                         `position:"Query" name:"FirmwareName"`
+	ProductKey    string                         `position:"Query" name:"ProductKey"`
+	SrcVersion    string                         `position:"Query" name:"SrcVersion"`
+	ApiProduct    string                         `position:"Body" name:"ApiProduct"`
+	ApiRevision   string                         `position:"Body" name:"ApiRevision"`
+	Udi           string                         `position:"Query" name:"Udi"`
+	DestVersion   string                         `position:"Query" name:"DestVersion"`
+}
+
+// CreateOTAFirmwareMultiFiles is a repeated param struct in CreateOTAFirmwareRequest
+type CreateOTAFirmwareMultiFiles struct {
+	Size      string `name:"Size"`
+	Name      string `name:"Name"`
+	SignValue string `name:"SignValue"`
+	FileMd5   string `name:"FileMd5"`
+	Url       string `name:"Url"`
 }
 
 // CreateOTAFirmwareResponse is the response struct for api CreateOTAFirmware

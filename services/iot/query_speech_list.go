@@ -73,6 +73,7 @@ type QuerySpeechListRequest struct {
 	*requests.RpcRequest
 	ProjectCode   string           `position:"Body" name:"ProjectCode"`
 	PageId        requests.Integer `position:"Body" name:"PageId"`
+	AudioFormat   string           `position:"Body" name:"AudioFormat"`
 	IotInstanceId string           `position:"Body" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Body" name:"PageSize"`
 	ApiProduct    string           `position:"Body" name:"ApiProduct"`

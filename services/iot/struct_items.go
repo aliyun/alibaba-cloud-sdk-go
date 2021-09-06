@@ -18,12 +18,14 @@ package iot
 // Items is a nested struct in iot response
 type Items struct {
 	Text                  string                                         `json:"Text" xml:"Text"`
+	AudioFormat           string                                         `json:"AudioFormat" xml:"AudioFormat"`
 	SpeechCode            string                                         `json:"SpeechCode" xml:"SpeechCode"`
 	SpeechType            string                                         `json:"SpeechType" xml:"SpeechType"`
 	Strategy              int                                            `json:"Strategy" xml:"Strategy"`
 	SourceInstanceName    string                                         `json:"SourceInstanceName" xml:"SourceInstanceName"`
 	SourceRegion          string                                         `json:"SourceRegion" xml:"SourceRegion"`
 	TargetAliyunId        string                                         `json:"TargetAliyunId" xml:"TargetAliyunId"`
+	Size                  float64                                        `json:"Size" xml:"Size"`
 	TargetUid             string                                         `json:"TargetUid" xml:"TargetUid"`
 	TargetRegion          string                                         `json:"TargetRegion" xml:"TargetRegion"`
 	BizCode               string                                         `json:"BizCode" xml:"BizCode"`
@@ -39,8 +41,10 @@ type Items struct {
 	DeviceName            string                                         `json:"DeviceName" xml:"DeviceName"`
 	TargetInstanceName    string                                         `json:"TargetInstanceName" xml:"TargetInstanceName"`
 	Total                 int                                            `json:"Total" xml:"Total"`
+	IotId                 string                                         `json:"IotId" xml:"IotId"`
 	SourceInstanceId      string                                         `json:"SourceInstanceId" xml:"SourceInstanceId"`
 	GmtModified           int64                                          `json:"GmtModified" xml:"GmtModified"`
+	AvailableSpace        float64                                        `json:"AvailableSpace" xml:"AvailableSpace"`
 	SpeechList            SpeechListInQuerySpeechPushJobSpeech           `json:"SpeechList" xml:"SpeechList"`
 	VoiceList             VoiceList                                      `json:"VoiceList" xml:"VoiceList"`
 	TargetInstanceConfigs TargetInstanceConfigsInListDeviceDistributeJob `json:"TargetInstanceConfigs" xml:"TargetInstanceConfigs"`

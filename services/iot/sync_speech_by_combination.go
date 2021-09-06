@@ -71,6 +71,8 @@ func (client *Client) SyncSpeechByCombinationWithCallback(request *SyncSpeechByC
 // SyncSpeechByCombinationRequest is the request struct for api SyncSpeechByCombination
 type SyncSpeechByCombinationRequest struct {
 	*requests.RpcRequest
+	SpeechId        string    `position:"Body" name:"SpeechId"`
+	AudioFormat     string    `position:"Body" name:"AudioFormat"`
 	IotId           string    `position:"Body" name:"IotId"`
 	CombinationList *[]string `position:"Body" name:"CombinationList"  type:"Repeated"`
 	IotInstanceId   string    `position:"Body" name:"IotInstanceId"`

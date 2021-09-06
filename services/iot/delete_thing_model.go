@@ -76,6 +76,7 @@ type DeleteThingModelRequest struct {
 	RealTripartiteKey  string           `position:"Query" name:"RealTripartiteKey"`
 	ResourceGroupId    string           `position:"Query" name:"ResourceGroupId"`
 	PropertyIdentifier *[]string        `position:"Query" name:"PropertyIdentifier"  type:"Repeated"`
+	DTModelId          string           `position:"Query" name:"DTModelId"`
 	IotInstanceId      string           `position:"Query" name:"IotInstanceId"`
 	ServiceIdentifier  *[]string        `position:"Query" name:"ServiceIdentifier"  type:"Repeated"`
 	ProductKey         string           `position:"Query" name:"ProductKey"`

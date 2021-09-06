@@ -73,6 +73,7 @@ type TestSpeechRequest struct {
 	*requests.RpcRequest
 	Voice         string           `position:"Body" name:"Voice"`
 	ProjectCode   string           `position:"Body" name:"ProjectCode"`
+	AudioFormat   string           `position:"Body" name:"AudioFormat"`
 	IotInstanceId string           `position:"Body" name:"IotInstanceId"`
 	Text          string           `position:"Body" name:"Text"`
 	SpeechType    string           `position:"Body" name:"SpeechType"`

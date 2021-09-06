@@ -17,21 +17,23 @@ package iot
 
 // FirmwareInfo is a nested struct in iot response
 type FirmwareInfo struct {
-	ProductName    string `json:"ProductName" xml:"ProductName"`
-	Status         int    `json:"Status" xml:"Status"`
-	ProductKey     string `json:"ProductKey" xml:"ProductKey"`
-	FirmwareName   string `json:"FirmwareName" xml:"FirmwareName"`
-	FirmwareId     string `json:"FirmwareId" xml:"FirmwareId"`
-	SrcVersion     string `json:"SrcVersion" xml:"SrcVersion"`
-	VerifyProgress int    `json:"VerifyProgress" xml:"VerifyProgress"`
-	UtcModified    string `json:"UtcModified" xml:"UtcModified"`
-	UtcCreate      string `json:"UtcCreate" xml:"UtcCreate"`
-	FirmwareSize   int    `json:"FirmwareSize" xml:"FirmwareSize"`
-	ModuleName     string `json:"ModuleName" xml:"ModuleName"`
-	FirmwareUrl    string `json:"FirmwareUrl" xml:"FirmwareUrl"`
-	DestVersion    string `json:"DestVersion" xml:"DestVersion"`
-	SignMethod     string `json:"SignMethod" xml:"SignMethod"`
-	FirmwareSign   string `json:"FirmwareSign" xml:"FirmwareSign"`
-	FirmwareDesc   string `json:"FirmwareDesc" xml:"FirmwareDesc"`
-	Type           int    `json:"Type" xml:"Type"`
+	ProductName    string              `json:"ProductName" xml:"ProductName"`
+	Status         int                 `json:"Status" xml:"Status"`
+	ProductKey     string              `json:"ProductKey" xml:"ProductKey"`
+	FirmwareName   string              `json:"FirmwareName" xml:"FirmwareName"`
+	FirmwareId     string              `json:"FirmwareId" xml:"FirmwareId"`
+	SrcVersion     string              `json:"SrcVersion" xml:"SrcVersion"`
+	VerifyProgress int                 `json:"VerifyProgress" xml:"VerifyProgress"`
+	UtcModified    string              `json:"UtcModified" xml:"UtcModified"`
+	UtcCreate      string              `json:"UtcCreate" xml:"UtcCreate"`
+	FirmwareSize   int                 `json:"FirmwareSize" xml:"FirmwareSize"`
+	ModuleName     string              `json:"ModuleName" xml:"ModuleName"`
+	FirmwareUrl    string              `json:"FirmwareUrl" xml:"FirmwareUrl"`
+	DestVersion    string              `json:"DestVersion" xml:"DestVersion"`
+	SignMethod     string              `json:"SignMethod" xml:"SignMethod"`
+	Udi            string              `json:"Udi" xml:"Udi"`
+	FirmwareSign   string              `json:"FirmwareSign" xml:"FirmwareSign"`
+	FirmwareDesc   string              `json:"FirmwareDesc" xml:"FirmwareDesc"`
+	Type           int                 `json:"Type" xml:"Type"`
+	MultiFiles     []OtaPackageFileDTO `json:"MultiFiles" xml:"MultiFiles"`
 }
