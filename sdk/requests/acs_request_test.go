@@ -2,6 +2,7 @@ package requests
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"io"
 	"sort"
@@ -130,6 +131,7 @@ type AcsRequestTest struct {
 	Body           string                      `position:"Body" name:"Body"`
 	Target         map[string]interface{}      `position:"Query" name:"Target" type:"Map"`
 	TypeAcs        *[]string                   `position:"Query" name:"TypeAcs" type:"Repeated"`
+	TypeJson       map[string]string           `position:"Query" name:"TypeJson" type:"Json"`
 }
 
 type CreateRuleRuleConditionsPathConfig struct {
@@ -176,12 +178,14 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 		Target: map[string]interface{}{
 			"key": []string{"hello", "world"},
 		},
+		TypeJson: map[string]string{"key": "value"},
 	}
 	tmp := []string{r.Query, r.Header}
 	r.TypeAcs = &tmp
 	r.addQueryParam("qkey", "qvalue")
 	InitParams(r)
-
+	byt, _ := json.Marshal(r.TypeJson)
+	assert.Equal(t, "{\"key\":\"value\"}", string(byt))
 	queries := r.GetQueryParams()
 	assert.Equal(t, "query value", queries["Query"])
 	sortedKeys := make([]string, 0)
