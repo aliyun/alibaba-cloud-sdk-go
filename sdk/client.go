@@ -58,26 +58,26 @@ var hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *
 
 // Client the type Client
 type Client struct {
-	SourceIp          string
-	SecurityTransport string
-	isInsecure        bool
-	regionId          string
-	config            *Config
-	httpProxy         string
-	httpsProxy        string
-	noProxy           string
-	logger            *Logger
-	userAgent         map[string]string
-	signer            auth.Signer
-	httpClient        *http.Client
-	asyncTaskQueue    chan func()
-	readTimeout       time.Duration
-	connectTimeout    time.Duration
-	EndpointMap       map[string]string
-	EndpointType      string
-	Network           string
-	Domain            string
-	isOpenAsync       bool
+	SourceIp        string
+	SecureTransport string
+	isInsecure      bool
+	regionId        string
+	config          *Config
+	httpProxy       string
+	httpsProxy      string
+	noProxy         string
+	logger          *Logger
+	userAgent       map[string]string
+	signer          auth.Signer
+	httpClient      *http.Client
+	asyncTaskQueue  chan func()
+	readTimeout     time.Duration
+	connectTimeout  time.Duration
+	EndpointMap     map[string]string
+	EndpointType    string
+	Network         string
+	Domain          string
+	isOpenAsync     bool
 }
 
 func (client *Client) Init() (err error) {
@@ -323,22 +323,22 @@ func (client *Client) InitClientConfig() (config *Config) {
 }
 
 func (client *Client) DoAction(request requests.AcsRequest, response responses.AcsResponse) (err error) {
-	if (client.SecurityTransport == "false" || client.SecurityTransport == "true") && client.SourceIp != "" {
+	if (client.SecureTransport == "false" || client.SecureTransport == "true") && client.SourceIp != "" {
 		t := reflect.TypeOf(request).Elem()
 		v := reflect.ValueOf(request).Elem()
 		for i := 0; i < t.NumField(); i++ {
 			value := v.FieldByName(t.Field(i).Name)
 			if t.Field(i).Name == "requests.RoaRequest" {
 				request.GetHeaders()["x-acs-proxy-source-ip"] = client.SourceIp
-				request.GetHeaders()["x-acs-proxy-secure-transport"] = client.SecurityTransport
+				request.GetHeaders()["x-acs-proxy-secure-transport"] = client.SecureTransport
 				return client.DoActionWithSigner(request, response, nil)
 			} else if t.Field(i).Name == "PathPattern" && !value.IsZero() {
 				request.GetHeaders()["x-acs-proxy-source-ip"] = client.SourceIp
-				request.GetHeaders()["x-acs-proxy-secure-transport"] = client.SecurityTransport
+				request.GetHeaders()["x-acs-proxy-secure-transport"] = client.SecureTransport
 				return client.DoActionWithSigner(request, response, nil)
 			} else if i == t.NumField()-1 {
-				request.GetQueryParams()["sourceIp"] = client.SourceIp
-				request.GetQueryParams()["securityTransport"] = client.SecurityTransport
+				request.GetQueryParams()["SourceIp"] = client.SourceIp
+				request.GetQueryParams()["SecureTransport"] = client.SecureTransport
 				return client.DoActionWithSigner(request, response, nil)
 			}
 		}
