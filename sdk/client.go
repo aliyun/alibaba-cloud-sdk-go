@@ -337,8 +337,8 @@ func (client *Client) DoAction(request requests.AcsRequest, response responses.A
 				request.GetHeaders()["x-acs-proxy-secure-transport"] = client.SecurityTransport
 				return client.DoActionWithSigner(request, response, nil)
 			} else if i == t.NumField()-1 {
-				request.GetQueryParams()["sourceIp"] = client.SourceIp
-				request.GetQueryParams()["securityTransport"] = client.SecurityTransport
+				request.GetQueryParams()["SourceIp"] = client.SourceIp
+				request.GetQueryParams()["SecurityTransport"] = client.SecurityTransport
 				return client.DoActionWithSigner(request, response, nil)
 			}
 		}
