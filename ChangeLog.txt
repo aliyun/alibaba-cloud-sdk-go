@@ -1,3 +1,7 @@
+2021-09-08 Version: v1.61.1249
+- Generated 2018-07-13 for `Ft`.
+- AMP version.
+
 2021-09-06 Version: v1.61.1248
 - Generated 2018-01-20 for `Iot`.
 - Update LinkSpeech API, including SpeechByCombination, SyncSpeechByCombination.
