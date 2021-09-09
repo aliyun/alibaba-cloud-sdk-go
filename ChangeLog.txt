@@ -1,3 +1,7 @@
+2021-09-09 Version: v1.61.1251
+- Generated 2020-10-22, 2020-03-06, 2019-05-08 for `companyreg`.
+- Public version.
+
 2021-09-09 Version: v1.61.1250
 - Generated 2020-10-22 for `companyreg`.
 - Public version.
