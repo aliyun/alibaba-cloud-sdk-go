@@ -1,3 +1,7 @@
+2021-09-09 Version: v1.61.1250
+- Generated 2020-10-22 for `companyreg`.
+- Public version.
+
 2021-09-08 Version: v1.61.1249
 - Generated 2018-07-13 for `Ft`.
 - AMP version.
