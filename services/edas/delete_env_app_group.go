@@ -88,7 +88,7 @@ func CreateDeleteEnvAppGroupRequest() (request *DeleteEnvAppGroupRequest) {
 	request = &DeleteEnvAppGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteEnvAppGroup", "/pop/v5/gray/EnvAppGroups", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteEnvAppGroup", "/pop/v5/gray/EnvAppGroups", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

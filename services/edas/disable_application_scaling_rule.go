@@ -89,7 +89,7 @@ func CreateDisableApplicationScalingRuleRequest() (request *DisableApplicationSc
 	request = &DisableApplicationScalingRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DisableApplicationScalingRule", "/pop/v1/eam/scale/disable_application_scaling_rule", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DisableApplicationScalingRule", "/pop/v1/eam/scale/disable_application_scaling_rule", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

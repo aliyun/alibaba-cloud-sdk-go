@@ -89,7 +89,7 @@ func CreateGetApplicationRequest() (request *GetApplicationRequest) {
 	request = &GetApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetApplication", "/pop/v5/app/app_info", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetApplication", "/pop/v5/app/app_info", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

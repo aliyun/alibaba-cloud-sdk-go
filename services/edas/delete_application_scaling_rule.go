@@ -86,7 +86,7 @@ func CreateDeleteApplicationScalingRuleRequest() (request *DeleteApplicationScal
 	request = &DeleteApplicationScalingRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteApplicationScalingRule", "/pop/v1/eam/scale/application_scaling_rule", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteApplicationScalingRule", "/pop/v1/eam/scale/application_scaling_rule", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

@@ -108,7 +108,7 @@ func CreateInsertApplicationRequest() (request *InsertApplicationRequest) {
 	request = &InsertApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertApplication", "/pop/v5/changeorder/co_create_app", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertApplication", "/pop/v5/changeorder/co_create_app", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

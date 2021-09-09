@@ -93,7 +93,7 @@ func CreateUpdateK8sSecretRequest() (request *UpdateK8sSecretRequest) {
 	request = &UpdateK8sSecretRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSecret", "/pop/v5/k8s/acs/k8s_secret", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSecret", "/pop/v5/k8s/acs/k8s_secret", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

@@ -88,7 +88,7 @@ func CreateListDeployGroupRequest() (request *ListDeployGroupRequest) {
 	request = &ListDeployGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListDeployGroup", "/pop/v5/app/deploy_group_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListDeployGroup", "/pop/v5/app/deploy_group_list", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

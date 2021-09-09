@@ -89,7 +89,7 @@ func CreateEnableMockRuleRequest() (request *EnableMockRuleRequest) {
 	request = &EnableMockRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "EnableMockRule", "/pop/sp/api/mock/enableMockRule", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "EnableMockRule", "/pop/sp/api/mock/enableMockRule", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

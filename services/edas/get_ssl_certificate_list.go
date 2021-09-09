@@ -89,7 +89,7 @@ func CreateGetSslCertificateListRequest() (request *GetSslCertificateListRequest
 	request = &GetSslCertificateListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetSslCertificateList", "/pop/v5/ssl_certificate", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetSslCertificateList", "/pop/v5/ssl_certificate", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

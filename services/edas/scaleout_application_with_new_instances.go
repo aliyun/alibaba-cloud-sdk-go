@@ -101,7 +101,7 @@ func CreateScaleoutApplicationWithNewInstancesRequest() (request *ScaleoutApplic
 	request = &ScaleoutApplicationWithNewInstancesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "/pop/v5/scaling/scale_out", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "/pop/v5/scaling/scale_out", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

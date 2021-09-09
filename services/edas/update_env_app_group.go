@@ -88,7 +88,7 @@ func CreateUpdateEnvAppGroupRequest() (request *UpdateEnvAppGroupRequest) {
 	request = &UpdateEnvAppGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateEnvAppGroup", "/pop/v5/gray/env_app_groups", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateEnvAppGroup", "/pop/v5/gray/env_app_groups", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

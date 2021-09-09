@@ -88,7 +88,7 @@ func CreateListFlowControlsRequest() (request *ListFlowControlsRequest) {
 	request = &ListFlowControlsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListFlowControls", "/pop/v5/app/flowControls", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListFlowControls", "/pop/v5/app/flowControls", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

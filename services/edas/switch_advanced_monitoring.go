@@ -89,7 +89,7 @@ func CreateSwitchAdvancedMonitoringRequest() (request *SwitchAdvancedMonitoringR
 	request = &SwitchAdvancedMonitoringRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "SwitchAdvancedMonitoring", "/pop/v5/monitor/advancedMonitorInfo", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "SwitchAdvancedMonitoring", "/pop/v5/monitor/advancedMonitorInfo", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDeleteConfigCenterRequest() (request *DeleteConfigCenterRequest) {
 	request = &DeleteConfigCenterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteConfigCenter", "/pop/v5/configCenter", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteConfigCenter", "/pop/v5/configCenter", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }
