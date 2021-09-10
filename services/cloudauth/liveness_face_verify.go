@@ -84,14 +84,15 @@ type LivenessFaceVerifyRequest struct {
 	SceneId                requests.Integer `position:"Body" name:"SceneId"`
 	OssBucketName          string           `position:"Body" name:"OssBucketName"`
 	Model                  string           `position:"Query" name:"Model"`
+	Crop                   string           `position:"Body" name:"Crop"`
 }
 
 // LivenessFaceVerifyResponse is the response struct for api LivenessFaceVerify
 type LivenessFaceVerifyResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Message      string       `json:"Message" xml:"Message"`
 	Code         string       `json:"Code" xml:"Code"`
+	Message      string       `json:"Message" xml:"Message"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
@@ -100,7 +101,7 @@ func CreateLivenessFaceVerifyRequest() (request *LivenessFaceVerifyRequest) {
 	request = &LivenessFaceVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "LivenessFaceVerify", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "LivenessFaceVerify", "", "")
 	request.Method = requests.POST
 	return
 }

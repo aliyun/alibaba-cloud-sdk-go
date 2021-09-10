@@ -87,7 +87,7 @@ func CreateDescribeUpdatePackageResultRequest() (request *DescribeUpdatePackageR
 	request = &DescribeUpdatePackageResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeUpdatePackageResult", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeUpdatePackageResult", "", "")
 	request.Method = requests.POST
 	return
 }

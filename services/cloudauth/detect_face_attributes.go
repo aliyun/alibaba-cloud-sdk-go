@@ -71,14 +71,8 @@ func (client *Client) DetectFaceAttributesWithCallback(request *DetectFaceAttrib
 // DetectFaceAttributesRequest is the request struct for api DetectFaceAttributes
 type DetectFaceAttributesRequest struct {
 	*requests.RpcRequest
-	MaxNumPhotosPerCategory requests.Integer `position:"Body" name:"MaxNumPhotosPerCategory"`
-	MaxFaceNum              requests.Integer `position:"Body" name:"MaxFaceNum"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RetAttributes           string           `position:"Body" name:"RetAttributes"`
-	ClientTag               string           `position:"Body" name:"ClientTag"`
-	SourceIp                string           `position:"Query" name:"SourceIp"`
-	MaterialValue           string           `position:"Body" name:"MaterialValue"`
-	DontSaveDB              requests.Boolean `position:"Body" name:"DontSaveDB"`
+	BizType       string `position:"Body" name:"BizType"`
+	MaterialValue string `position:"Body" name:"MaterialValue"`
 }
 
 // DetectFaceAttributesResponse is the response struct for api DetectFaceAttributes
@@ -96,7 +90,7 @@ func CreateDetectFaceAttributesRequest() (request *DetectFaceAttributesRequest) 
 	request = &DetectFaceAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-09-16", "DetectFaceAttributes", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DetectFaceAttributes", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,12 +17,15 @@ package cloudauth
 
 // FaceAttributes is a nested struct in cloudauth response
 type FaceAttributes struct {
-	Age       int      `json:"Age" xml:"Age"`
-	Glasses   string   `json:"Glasses" xml:"Glasses"`
-	Facetype  string   `json:"Facetype" xml:"Facetype"`
-	Blur      float64  `json:"Blur" xml:"Blur"`
-	Ethnicity string   `json:"Ethnicity" xml:"Ethnicity"`
-	Gender    Gender   `json:"Gender" xml:"Gender"`
-	Smiling   Smiling  `json:"Smiling" xml:"Smiling"`
-	Headpose  Headpose `json:"Headpose" xml:"Headpose"`
+	Age             int      `json:"Age" xml:"Age"`
+	Glasses         string   `json:"Glasses" xml:"Glasses"`
+	Facetype        string   `json:"Facetype" xml:"Facetype"`
+	Blur            float64  `json:"Blur" xml:"Blur"`
+	Facequal        float64  `json:"Facequal" xml:"Facequal"`
+	Integrity       int      `json:"Integrity" xml:"Integrity"`
+	Respirator      string   `json:"Respirator" xml:"Respirator"`
+	AppearanceScore float64  `json:"AppearanceScore" xml:"AppearanceScore"`
+	Gender          Gender   `json:"Gender" xml:"Gender"`
+	Smiling         Smiling  `json:"Smiling" xml:"Smiling"`
+	Headpose        Headpose `json:"Headpose" xml:"Headpose"`
 }

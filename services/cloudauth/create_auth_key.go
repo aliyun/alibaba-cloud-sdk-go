@@ -91,7 +91,7 @@ func CreateCreateAuthKeyRequest() (request *CreateAuthKeyRequest) {
 	request = &CreateAuthKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-09-16", "CreateAuthKey", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateAuthKey", "", "")
 	request.Method = requests.POST
 	return
 }

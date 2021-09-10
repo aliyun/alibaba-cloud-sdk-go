@@ -84,14 +84,15 @@ type CompareFaceVerifyRequest struct {
 	SceneId                      requests.Integer `position:"Body" name:"SceneId"`
 	SourceFaceContrastPictureUrl string           `position:"Body" name:"SourceFaceContrastPictureUrl"`
 	SourceCertifyId              string           `position:"Body" name:"SourceCertifyId"`
+	Crop                         string           `position:"Body" name:"Crop"`
 }
 
 // CompareFaceVerifyResponse is the response struct for api CompareFaceVerify
 type CompareFaceVerifyResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Message      string       `json:"Message" xml:"Message"`
 	Code         string       `json:"Code" xml:"Code"`
+	Message      string       `json:"Message" xml:"Message"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
@@ -100,7 +101,7 @@ func CreateCompareFaceVerifyRequest() (request *CompareFaceVerifyRequest) {
 	request = &CompareFaceVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CompareFaceVerify", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CompareFaceVerify", "", "")
 	request.Method = requests.POST
 	return
 }

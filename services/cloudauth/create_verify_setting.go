@@ -95,7 +95,7 @@ func CreateCreateVerifySettingRequest() (request *CreateVerifySettingRequest) {
 	request = &CreateVerifySettingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateVerifySetting", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateVerifySetting", "", "")
 	request.Method = requests.POST
 	return
 }

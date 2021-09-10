@@ -79,9 +79,9 @@ type DescribeFaceVerifyRequest struct {
 // DescribeFaceVerifyResponse is the response struct for api DescribeFaceVerify
 type DescribeFaceVerifyResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Message      string       `json:"Message" xml:"Message"`
 	Code         string       `json:"Code" xml:"Code"`
+	Message      string       `json:"Message" xml:"Message"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
@@ -90,7 +90,7 @@ func CreateDescribeFaceVerifyRequest() (request *DescribeFaceVerifyRequest) {
 	request = &DescribeFaceVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeFaceVerify", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeFaceVerify", "", "")
 	request.Method = requests.POST
 	return
 }

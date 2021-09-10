@@ -92,7 +92,7 @@ func CreateDescribeUploadInfoRequest() (request *DescribeUploadInfoRequest) {
 	request = &DescribeUploadInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeUploadInfo", "", "")
 	request.Method = requests.POST
 	return
 }

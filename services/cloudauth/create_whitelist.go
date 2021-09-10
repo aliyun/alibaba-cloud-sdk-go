@@ -90,7 +90,7 @@ func CreateCreateWhitelistRequest() (request *CreateWhitelistRequest) {
 	request = &CreateWhitelistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateWhitelist", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateWhitelist", "", "")
 	request.Method = requests.POST
 	return
 }

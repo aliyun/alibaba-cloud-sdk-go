@@ -17,14 +17,14 @@ package cloudauth
 
 // Item is a nested struct in cloudauth response
 type Item struct {
-	Id          int64  `json:"Id" xml:"Id"`
+	BizId       string `json:"BizId" xml:"BizId"`
+	GmtCreate   int64  `json:"GmtCreate" xml:"GmtCreate"`
 	Uid         int64  `json:"Uid" xml:"Uid"`
 	BizType     string `json:"BizType" xml:"BizType"`
+	Valid       int    `json:"Valid" xml:"Valid"`
+	IdCardNum   string `json:"IdCardNum" xml:"IdCardNum"`
+	GmtModified int64  `json:"GmtModified" xml:"GmtModified"`
+	Id          int64  `json:"Id" xml:"Id"`
 	StartDate   int64  `json:"StartDate" xml:"StartDate"`
 	EndDate     int64  `json:"EndDate" xml:"EndDate"`
-	IdCardNum   string `json:"IdCardNum" xml:"IdCardNum"`
-	BizId       string `json:"BizId" xml:"BizId"`
-	Valid       int    `json:"Valid" xml:"Valid"`
-	GmtCreate   int64  `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified int64  `json:"GmtModified" xml:"GmtModified"`
 }

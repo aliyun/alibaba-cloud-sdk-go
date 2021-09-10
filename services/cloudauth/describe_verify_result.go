@@ -91,7 +91,7 @@ func CreateDescribeVerifyResultRequest() (request *DescribeVerifyResultRequest) 
 	request = &DescribeVerifyResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeVerifyResult", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeVerifyResult", "", "")
 	request.Method = requests.POST
 	return
 }

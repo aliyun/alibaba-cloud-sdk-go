@@ -1,3 +1,7 @@
+2021-09-10 Version: v1.61.1253
+- Generated 2019-03-07 for `Cloudauth`.
+- Support crop face image.
+
 2021-09-09 Version: v1.61.1252
 - Generated 2017-08-01 for `Edas`.
 - Modify API InsertK8sApplication.

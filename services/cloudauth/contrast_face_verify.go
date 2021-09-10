@@ -88,14 +88,15 @@ type ContrastFaceVerifyRequest struct {
 	FaceContrastFile       string           `position:"Body" name:"FaceContrastFile"`
 	SceneId                requests.Integer `position:"Body" name:"SceneId"`
 	OssBucketName          string           `position:"Body" name:"OssBucketName"`
+	Crop                   string           `position:"Body" name:"Crop"`
 }
 
 // ContrastFaceVerifyResponse is the response struct for api ContrastFaceVerify
 type ContrastFaceVerifyResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Message      string       `json:"Message" xml:"Message"`
 	Code         string       `json:"Code" xml:"Code"`
+	Message      string       `json:"Message" xml:"Message"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
@@ -104,7 +105,7 @@ func CreateContrastFaceVerifyRequest() (request *ContrastFaceVerifyRequest) {
 	request = &ContrastFaceVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "ContrastFaceVerify", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "ContrastFaceVerify", "", "")
 	request.Method = requests.POST
 	return
 }
