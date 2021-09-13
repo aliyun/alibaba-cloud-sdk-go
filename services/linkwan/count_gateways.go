@@ -71,6 +71,8 @@ func (client *Client) CountGatewaysWithCallback(request *CountGatewaysRequest, c
 // CountGatewaysRequest is the request struct for api CountGateways
 type CountGatewaysRequest struct {
 	*requests.RpcRequest
+	RealTenantId        string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey   string           `position:"Query" name:"RealTripartiteKey"`
 	FuzzyGwEui          string           `position:"Query" name:"FuzzyGwEui"`
 	IotInstanceId       string           `position:"Query" name:"IotInstanceId"`
 	FuzzyCity           string           `position:"Query" name:"FuzzyCity"`
