@@ -18,8 +18,8 @@ package ccc
 // Outbound is a nested struct in ccc response
 type Outbound struct {
 	CallsAttendedTransferred     int64   `json:"CallsAttendedTransferred" xml:"CallsAttendedTransferred"`
-	AverageHoldTime              float64 `json:"AverageHoldTime" xml:"AverageHoldTime"`
 	CallsDialed                  int64   `json:"CallsDialed" xml:"CallsDialed"`
+	AverageHoldTime              float64 `json:"AverageHoldTime" xml:"AverageHoldTime"`
 	TotalRingTime                int64   `json:"TotalRingTime" xml:"TotalRingTime"`
 	CallsAnswered                int64   `json:"CallsAnswered" xml:"CallsAnswered"`
 	MaxRingTime                  int64   `json:"MaxRingTime" xml:"MaxRingTime"`

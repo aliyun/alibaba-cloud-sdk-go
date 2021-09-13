@@ -18,18 +18,18 @@ package ccc
 // Overall is a nested struct in ccc response
 type Overall struct {
 	TotalHoldTime                int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
-	SatisfactionRate             float64 `json:"SatisfactionRate" xml:"SatisfactionRate"`
 	TotalLoggedInTime            int64   `json:"TotalLoggedInTime" xml:"TotalLoggedInTime"`
-	AverageHoldTime              float64 `json:"AverageHoldTime" xml:"AverageHoldTime"`
+	SatisfactionRate             float64 `json:"SatisfactionRate" xml:"SatisfactionRate"`
 	MaxHoldTime                  int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`
+	AverageHoldTime              float64 `json:"AverageHoldTime" xml:"AverageHoldTime"`
 	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
 	AverageBreakTime             float64 `json:"AverageBreakTime" xml:"AverageBreakTime"`
 	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
 	LastCheckoutTime             int64   `json:"LastCheckoutTime" xml:"LastCheckoutTime"`
 	MaxReadyTime                 int64   `json:"MaxReadyTime" xml:"MaxReadyTime"`
 	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
-	AverageTalkTime              float64 `json:"AverageTalkTime" xml:"AverageTalkTime"`
 	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
+	AverageTalkTime              float64 `json:"AverageTalkTime" xml:"AverageTalkTime"`
 	AverageReadyTime             float64 `json:"AverageReadyTime" xml:"AverageReadyTime"`
 	TotalCalls                   int64   `json:"TotalCalls" xml:"TotalCalls"`
 	MaxWorkTime                  int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`

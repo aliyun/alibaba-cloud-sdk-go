@@ -20,6 +20,7 @@ type Data struct {
 	ContextId                 int64             `json:"ContextId" xml:"ContextId"`
 	AgentServerUrl            string            `json:"AgentServerUrl" xml:"AgentServerUrl"`
 	SatisfactionSurveyChannel string            `json:"SatisfactionSurveyChannel" xml:"SatisfactionSurveyChannel"`
+	CalleeLocation            string            `json:"CalleeLocation" xml:"CalleeLocation"`
 	RoleName                  string            `json:"RoleName" xml:"RoleName"`
 	AgentIds                  string            `json:"AgentIds" xml:"AgentIds"`
 	StartTime                 int64             `json:"StartTime" xml:"StartTime"`
@@ -52,6 +53,7 @@ type Data struct {
 	UserKey                   string            `json:"UserKey" xml:"UserKey"`
 	Name                      string            `json:"Name" xml:"Name"`
 	SkillGroupIds             string            `json:"SkillGroupIds" xml:"SkillGroupIds"`
+	CallerLocation            string            `json:"CallerLocation" xml:"CallerLocation"`
 	PageSize                  int               `json:"PageSize" xml:"PageSize"`
 	UserState                 string            `json:"UserState" xml:"UserState"`
 	InstanceId                string            `json:"InstanceId" xml:"InstanceId"`
@@ -89,13 +91,13 @@ type Data struct {
 	SignedSkillGroupIdList    []string          `json:"SignedSkillGroupIdList" xml:"SignedSkillGroupIdList"`
 	UserContext               UserContext       `json:"UserContext" xml:"UserContext"`
 	CallContext               CallContext       `json:"CallContext" xml:"CallContext"`
+	Overall                   Overall           `json:"Overall" xml:"Overall"`
 	Outbound                  Outbound          `json:"Outbound" xml:"Outbound"`
 	Inbound                   Inbound           `json:"Inbound" xml:"Inbound"`
-	Overall                   Overall           `json:"Overall" xml:"Overall"`
-	QueueEvents               []QueueEventsItem `json:"QueueEvents" xml:"QueueEvents"`
 	IvrEvents                 []IvrEventsItem   `json:"IvrEvents" xml:"IvrEvents"`
-	AgentEvents               []AgentEventsItem `json:"AgentEvents" xml:"AgentEvents"`
 	AdminList                 []User            `json:"AdminList" xml:"AdminList"`
 	NumberList                []PhoneNumber     `json:"NumberList" xml:"NumberList"`
+	QueueEvents               []QueueEventsItem `json:"QueueEvents" xml:"QueueEvents"`
+	AgentEvents               []AgentEventsItem `json:"AgentEvents" xml:"AgentEvents"`
 	List                      []SkillGroup      `json:"List" xml:"List"`
 }

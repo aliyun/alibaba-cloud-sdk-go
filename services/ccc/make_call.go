@@ -74,6 +74,7 @@ type MakeCallRequest struct {
 	Callee         string           `position:"Query" name:"Callee"`
 	UserId         string           `position:"Query" name:"UserId"`
 	DeviceId       string           `position:"Query" name:"DeviceId"`
+	Tags           string           `position:"Query" name:"Tags"`
 	TimeoutSeconds requests.Integer `position:"Query" name:"TimeoutSeconds"`
 	Caller         string           `position:"Query" name:"Caller"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`

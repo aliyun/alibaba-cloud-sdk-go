@@ -20,24 +20,28 @@ type CallDetailRecord struct {
 	SatisfactionSurveyChannel string `json:"SatisfactionSurveyChannel" xml:"SatisfactionSurveyChannel"`
 	SkillGroupIds             string `json:"SkillGroupIds" xml:"SkillGroupIds"`
 	IvrTime                   int64  `json:"IvrTime" xml:"IvrTime"`
+	CalleeLocation            string `json:"CalleeLocation" xml:"CalleeLocation"`
+	CallerLocation            string `json:"CallerLocation" xml:"CallerLocation"`
 	WaitTime                  int64  `json:"WaitTime" xml:"WaitTime"`
-	AgentIds                  string `json:"AgentIds" xml:"AgentIds"`
 	SkillGroupNames           string `json:"SkillGroupNames" xml:"SkillGroupNames"`
+	AgentIds                  string `json:"AgentIds" xml:"AgentIds"`
 	StartTime                 int64  `json:"StartTime" xml:"StartTime"`
 	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
 	RecordingDuration         int64  `json:"RecordingDuration" xml:"RecordingDuration"`
 	EstablishedTime           int64  `json:"EstablishedTime" xml:"EstablishedTime"`
 	ReleaseTime               int64  `json:"ReleaseTime" xml:"ReleaseTime"`
+	Broker                    string `json:"Broker" xml:"Broker"`
 	Duration                  int64  `json:"Duration" xml:"Duration"`
-	QueueTime                 int64  `json:"QueueTime" xml:"QueueTime"`
 	RingTime                  int64  `json:"RingTime" xml:"RingTime"`
+	QueueTime                 int64  `json:"QueueTime" xml:"QueueTime"`
 	ContactId                 string `json:"ContactId" xml:"ContactId"`
 	RecordingReady            bool   `json:"RecordingReady" xml:"RecordingReady"`
-	AgentNames                string `json:"AgentNames" xml:"AgentNames"`
 	CallDuration              string `json:"CallDuration" xml:"CallDuration"`
+	AgentNames                string `json:"AgentNames" xml:"AgentNames"`
 	CalledNumber              string `json:"CalledNumber" xml:"CalledNumber"`
 	ContactType               string `json:"ContactType" xml:"ContactType"`
 	SatisfactionIndex         int    `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
+	AdditionalBroker          string `json:"AdditionalBroker" xml:"AdditionalBroker"`
 	CallingNumber             string `json:"CallingNumber" xml:"CallingNumber"`
 	SatisfactionSurveyOffered bool   `json:"SatisfactionSurveyOffered" xml:"SatisfactionSurveyOffered"`
 	ContactDisposition        string `json:"ContactDisposition" xml:"ContactDisposition"`

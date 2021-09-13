@@ -17,8 +17,8 @@ package ccc
 
 // AgentEventsItem is a nested struct in ccc response
 type AgentEventsItem struct {
-	AgentId       string              `json:"AgentId" xml:"AgentId"`
 	AgentName     string              `json:"AgentName" xml:"AgentName"`
+	AgentId       string              `json:"AgentId" xml:"AgentId"`
 	SkillGroupId  string              `json:"SkillGroupId" xml:"SkillGroupId"`
 	EventSequence []EventSequenceItem `json:"EventSequence" xml:"EventSequence"`
 }

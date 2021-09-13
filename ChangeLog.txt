@@ -1,3 +1,7 @@
+2021-09-13 Version: v1.61.1254
+- Generated 2020-07-01 for `CCC`.
+- Supported CallerLocation, CalleeLocation in CDR API.
+
 2021-09-10 Version: v1.61.1253
 - Generated 2019-03-07 for `Cloudauth`.
 - Support crop face image.
