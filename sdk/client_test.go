@@ -111,7 +111,7 @@ func Test_ClientWithSouceIp(t *testing.T) {
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 	client.SourceIp = "192.168.0.1"
-	client.SecurityTransport = "true"
+	client.SecureTransport = "true"
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
