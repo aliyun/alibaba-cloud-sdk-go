@@ -79,6 +79,7 @@ type RunInstancesRequest struct {
 	PrivatePoolOptionsMatchCriteria          string                          `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
 	HostName                                 string                          `position:"Query" name:"HostName"`
 	Password                                 string                          `position:"Query" name:"Password"`
+	SystemDisk                               string                          `position:"Query" name:"SystemDisk"`
 	DeploymentSetGroupNo                     requests.Integer                `position:"Query" name:"DeploymentSetGroupNo"`
 	SystemDiskAutoSnapshotPolicyId           string                          `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
 	CpuOptionsCore                           requests.Integer                `position:"Query" name:"CpuOptions.Core"`
@@ -195,6 +196,7 @@ type RunInstancesDataDisk struct {
 	EncryptAlgorithm     string `name:"EncryptAlgorithm"`
 	DeleteWithInstance   string `name:"DeleteWithInstance"`
 	KMSKeyId             string `name:"KMSKeyId"`
+	StorageClusterId     string `name:"StorageClusterId"`
 }
 
 // RunInstancesResponse is the response struct for api RunInstances
