@@ -1,3 +1,7 @@
+2021-09-15 Version: v1.61.1258
+- Generated 2019-12-30 for `facebody`.
+- Update AddFace SearchFace.
+
 2021-09-14 Version: v1.61.1257
 - Generated 2014-05-26 for `Ecs`.
 - Add DiskIds for CreateSnapshotGroup.

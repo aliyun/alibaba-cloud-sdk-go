@@ -71,10 +71,13 @@ func (client *Client) AddFaceWithCallback(request *AddFaceRequest, callback func
 // AddFaceRequest is the request struct for api AddFace
 type AddFaceRequest struct {
 	*requests.RpcRequest
-	EntityId  string `position:"Body" name:"EntityId"`
-	ExtraData string `position:"Body" name:"ExtraData"`
-	DbName    string `position:"Body" name:"DbName"`
-	ImageUrl  string `position:"Body" name:"ImageUrl"`
+	EntityId                              string         `position:"Body" name:"EntityId"`
+	QualityScoreThreshold                 requests.Float `position:"Body" name:"QualityScoreThreshold"`
+	SimilarityScoreThresholdBetweenEntity requests.Float `position:"Body" name:"SimilarityScoreThresholdBetweenEntity"`
+	ExtraData                             string         `position:"Body" name:"ExtraData"`
+	SimilarityScoreThresholdInEntity      requests.Float `position:"Body" name:"SimilarityScoreThresholdInEntity"`
+	DbName                                string         `position:"Body" name:"DbName"`
+	ImageUrl                              string         `position:"Body" name:"ImageUrl"`
 }
 
 // AddFaceResponse is the response struct for api AddFace

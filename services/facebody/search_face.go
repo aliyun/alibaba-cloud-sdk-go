@@ -71,10 +71,11 @@ func (client *Client) SearchFaceWithCallback(request *SearchFaceRequest, callbac
 // SearchFaceRequest is the request struct for api SearchFace
 type SearchFaceRequest struct {
 	*requests.RpcRequest
-	Limit    requests.Integer `position:"Body" name:"Limit"`
-	DbNames  string           `position:"Query" name:"DbNames"`
-	DbName   string           `position:"Body" name:"DbName"`
-	ImageUrl string           `position:"Body" name:"ImageUrl"`
+	QualityScoreThreshold requests.Float   `position:"Body" name:"QualityScoreThreshold"`
+	Limit                 requests.Integer `position:"Body" name:"Limit"`
+	DbNames               string           `position:"Body" name:"DbNames"`
+	DbName                string           `position:"Body" name:"DbName"`
+	ImageUrl              string           `position:"Body" name:"ImageUrl"`
 }
 
 // SearchFaceResponse is the response struct for api SearchFace

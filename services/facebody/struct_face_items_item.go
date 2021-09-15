@@ -17,9 +17,10 @@ package facebody
 
 // FaceItemsItem is a nested struct in facebody response
 type FaceItemsItem struct {
-	EntityId  string  `json:"EntityId" xml:"EntityId"`
-	FaceId    string  `json:"FaceId" xml:"FaceId"`
-	Score     float64 `json:"Score" xml:"Score"`
-	ExtraData string  `json:"ExtraData" xml:"ExtraData"`
-	DbName    string  `json:"DbName" xml:"DbName"`
+	EntityId   string  `json:"EntityId" xml:"EntityId"`
+	FaceId     string  `json:"FaceId" xml:"FaceId"`
+	Score      float64 `json:"Score" xml:"Score"`
+	ExtraData  string  `json:"ExtraData" xml:"ExtraData"`
+	DbName     string  `json:"DbName" xml:"DbName"`
+	Confidence float64 `json:"Confidence" xml:"Confidence"`
 }
