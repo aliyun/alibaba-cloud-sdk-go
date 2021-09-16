@@ -19,5 +19,6 @@ package live
 type SceneInfo struct {
 	SceneId     string                   `json:"SceneId" xml:"SceneId"`
 	StreamUrl   string                   `json:"StreamUrl" xml:"StreamUrl"`
+	RtsUrl      string                   `json:"RtsUrl" xml:"RtsUrl"`
 	StreamInfos StreamInfosInStartCaster `json:"StreamInfos" xml:"StreamInfos"`
 }

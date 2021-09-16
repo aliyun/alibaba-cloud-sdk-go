@@ -17,16 +17,18 @@ package live
 
 // LiveAppRecord is a nested struct in live response
 type LiveAppRecord struct {
-	SourceUsing      string           `json:"SourceUsing" xml:"SourceUsing"`
-	StartTime        string           `json:"StartTime" xml:"StartTime"`
-	EndTime          string           `json:"EndTime" xml:"EndTime"`
-	DomainName       string           `json:"DomainName" xml:"DomainName"`
-	OnDemond         int              `json:"OnDemond" xml:"OnDemond"`
-	CreateTime       string           `json:"CreateTime" xml:"CreateTime"`
-	OssEndpoint      string           `json:"OssEndpoint" xml:"OssEndpoint"`
-	AppName          string           `json:"AppName" xml:"AppName"`
-	SourceUrl        string           `json:"SourceUrl" xml:"SourceUrl"`
-	StreamName       string           `json:"StreamName" xml:"StreamName"`
-	OssBucket        string           `json:"OssBucket" xml:"OssBucket"`
-	RecordFormatList RecordFormatList `json:"RecordFormatList" xml:"RecordFormatList"`
+	SourceUsing               string                    `json:"SourceUsing" xml:"SourceUsing"`
+	DomainName                string                    `json:"DomainName" xml:"DomainName"`
+	CreateTime                string                    `json:"CreateTime" xml:"CreateTime"`
+	SourceUrl                 string                    `json:"SourceUrl" xml:"SourceUrl"`
+	StreamName                string                    `json:"StreamName" xml:"StreamName"`
+	OssBucket                 string                    `json:"OssBucket" xml:"OssBucket"`
+	StartTime                 string                    `json:"StartTime" xml:"StartTime"`
+	EndTime                   string                    `json:"EndTime" xml:"EndTime"`
+	OnDemond                  int                       `json:"OnDemond" xml:"OnDemond"`
+	OssEndpoint               string                    `json:"OssEndpoint" xml:"OssEndpoint"`
+	AppName                   string                    `json:"AppName" xml:"AppName"`
+	TranscodeTemplates        TranscodeTemplates        `json:"TranscodeTemplates" xml:"TranscodeTemplates"`
+	TranscodeRecordFormatList TranscodeRecordFormatList `json:"TranscodeRecordFormatList" xml:"TranscodeRecordFormatList"`
+	RecordFormatList          RecordFormatList          `json:"RecordFormatList" xml:"RecordFormatList"`
 }

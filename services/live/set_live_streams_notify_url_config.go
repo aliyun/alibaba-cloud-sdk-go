@@ -71,12 +71,14 @@ func (client *Client) SetLiveStreamsNotifyUrlConfigWithCallback(request *SetLive
 // SetLiveStreamsNotifyUrlConfigRequest is the request struct for api SetLiveStreamsNotifyUrlConfig
 type SetLiveStreamsNotifyUrlConfigRequest struct {
 	*requests.RpcRequest
-	AuthKey    string           `position:"Query" name:"AuthKey"`
-	AuthType   string           `position:"Query" name:"AuthType"`
-	NotifyUrl  string           `position:"Query" name:"NotifyUrl"`
-	NotifyType string           `position:"Query" name:"NotifyType"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	AuthKey       string           `position:"Query" name:"AuthKey"`
+	AuthType      string           `position:"Query" name:"AuthType"`
+	NotifyReqAuth string           `position:"Query" name:"NotifyReqAuth"`
+	NotifyUrl     string           `position:"Query" name:"NotifyUrl"`
+	NotifyType    string           `position:"Query" name:"NotifyType"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	NotifyAuthKey string           `position:"Query" name:"NotifyAuthKey"`
 }
 
 // SetLiveStreamsNotifyUrlConfigResponse is the response struct for api SetLiveStreamsNotifyUrlConfig

@@ -17,5 +17,5 @@ package live
 
 // TimeShiftData is a nested struct in live response
 type TimeShiftData struct {
-	DataModule []DataModuleInDescribeLiveDomainTimeShiftData `json:"DataModule" xml:"DataModule"`
+	DataModule []DataModule `json:"DataModule" xml:"DataModule"`
 }

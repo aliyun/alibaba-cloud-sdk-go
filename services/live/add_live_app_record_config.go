@@ -71,22 +71,34 @@ func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppReco
 // AddLiveAppRecordConfigRequest is the request struct for api AddLiveAppRecordConfig
 type AddLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
-	OssEndpoint   string                                `position:"Query" name:"OssEndpoint"`
-	StartTime     string                                `position:"Query" name:"StartTime"`
-	AppName       string                                `position:"Query" name:"AppName"`
-	SecurityToken string                                `position:"Query" name:"SecurityToken"`
-	OnDemand      requests.Integer                      `position:"Query" name:"OnDemand"`
-	StreamName    string                                `position:"Query" name:"StreamName"`
-	OssBucket     string                                `position:"Query" name:"OssBucket"`
-	DomainName    string                                `position:"Query" name:"DomainName"`
-	EndTime       string                                `position:"Query" name:"EndTime"`
-	OwnerId       requests.Integer                      `position:"Query" name:"OwnerId"`
-	RecordFormat  *[]AddLiveAppRecordConfigRecordFormat `position:"Query" name:"RecordFormat"  type:"Repeated"`
+	OssEndpoint           string                                         `position:"Query" name:"OssEndpoint"`
+	TranscodeTemplates    *[]string                                      `position:"Query" name:"TranscodeTemplates"  type:"Repeated"`
+	StartTime             string                                         `position:"Query" name:"StartTime"`
+	AppName               string                                         `position:"Query" name:"AppName"`
+	SecurityToken         string                                         `position:"Query" name:"SecurityToken"`
+	TranscodeRecordFormat *[]AddLiveAppRecordConfigTranscodeRecordFormat `position:"Query" name:"TranscodeRecordFormat"  type:"Repeated"`
+	OnDemand              requests.Integer                               `position:"Query" name:"OnDemand"`
+	StreamName            string                                         `position:"Query" name:"StreamName"`
+	OssBucket             string                                         `position:"Query" name:"OssBucket"`
+	DomainName            string                                         `position:"Query" name:"DomainName"`
+	EndTime               string                                         `position:"Query" name:"EndTime"`
+	OwnerId               requests.Integer                               `position:"Query" name:"OwnerId"`
+	RecordFormat          *[]AddLiveAppRecordConfigRecordFormat          `position:"Query" name:"RecordFormat"  type:"Repeated"`
+}
+
+// AddLiveAppRecordConfigTranscodeRecordFormat is a repeated param struct in AddLiveAppRecordConfigRequest
+type AddLiveAppRecordConfigTranscodeRecordFormat struct {
+	SliceOssObjectPrefix string `name:"SliceOssObjectPrefix"`
+	SliceDuration        string `name:"SliceDuration"`
+	Format               string `name:"Format"`
+	OssObjectPrefix      string `name:"OssObjectPrefix"`
+	CycleDuration        string `name:"CycleDuration"`
 }
 
 // AddLiveAppRecordConfigRecordFormat is a repeated param struct in AddLiveAppRecordConfigRequest
 type AddLiveAppRecordConfigRecordFormat struct {
 	SliceOssObjectPrefix string `name:"SliceOssObjectPrefix"`
+	SliceDuration        string `name:"SliceDuration"`
 	Format               string `name:"Format"`
 	OssObjectPrefix      string `name:"OssObjectPrefix"`
 	CycleDuration        string `name:"CycleDuration"`

@@ -22,6 +22,7 @@ type VideoResource struct {
 	ResourceName        string `json:"ResourceName" xml:"ResourceName"`
 	LocationId          string `json:"LocationId" xml:"LocationId"`
 	LiveStreamUrl       string `json:"LiveStreamUrl" xml:"LiveStreamUrl"`
+	FlvUrl              string `json:"FlvUrl" xml:"FlvUrl"`
 	RepeatNum           int    `json:"RepeatNum" xml:"RepeatNum"`
 	VodUrl              string `json:"VodUrl" xml:"VodUrl"`
 	BeginOffset         int    `json:"BeginOffset" xml:"BeginOffset"`

@@ -71,8 +71,9 @@ func (client *Client) StartCasterWithCallback(request *StartCasterRequest, callb
 // StartCasterRequest is the request struct for api StartCaster
 type StartCasterRequest struct {
 	*requests.RpcRequest
-	CasterId string           `position:"Query" name:"CasterId"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	PlayerType requests.Integer `position:"Query" name:"PlayerType"`
+	CasterId   string           `position:"Query" name:"CasterId"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // StartCasterResponse is the response struct for api StartCaster

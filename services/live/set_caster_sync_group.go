@@ -82,6 +82,7 @@ type SetCasterSyncGroupSyncGroup struct {
 	SyncDelayThreshold string    `name:"SyncDelayThreshold"`
 	HostResourceId     string    `name:"HostResourceId"`
 	ResourceIds        *[]string `name:"ResourceIds" type:"Repeated"`
+	SyncOffsets        *[]string `name:"SyncOffsets" type:"Repeated"`
 }
 
 // SetCasterSyncGroupResponse is the response struct for api SetCasterSyncGroup

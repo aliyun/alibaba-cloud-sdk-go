@@ -21,4 +21,7 @@ type Channel struct {
 	ResourceId string `json:"ResourceId" xml:"ResourceId"`
 	StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
 	RtmpUrl    string `json:"RtmpUrl" xml:"RtmpUrl"`
+	RtsUrl     string `json:"RtsUrl" xml:"RtsUrl"`
+	InputType  int    `json:"InputType" xml:"InputType"`
+	FaceBeauty string `json:"FaceBeauty" xml:"FaceBeauty"`
 }

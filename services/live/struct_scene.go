@@ -22,6 +22,7 @@ type Scene struct {
 	OutputType   string                             `json:"OutputType" xml:"OutputType"`
 	LayoutId     string                             `json:"LayoutId" xml:"LayoutId"`
 	StreamUrl    string                             `json:"StreamUrl" xml:"StreamUrl"`
+	RtsUrl       string                             `json:"RtsUrl" xml:"RtsUrl"`
 	Status       int                                `json:"Status" xml:"Status"`
 	ComponentIds ComponentIdsInDescribeCasterScenes `json:"ComponentIds" xml:"ComponentIds"`
 	StreamInfos  StreamInfosInDescribeCasterScenes  `json:"StreamInfos" xml:"StreamInfos"`
