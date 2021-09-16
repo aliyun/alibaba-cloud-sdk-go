@@ -86,8 +86,8 @@ type SyncHDMAliyunResourceRequest struct {
 // SyncHDMAliyunResourceResponse is the response struct for api SyncHDMAliyunResource
 type SyncHDMAliyunResourceResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
 	Synchro   string `json:"Synchro" xml:"Synchro"`
 	Data      string `json:"Data" xml:"Data"`
 	Code      string `json:"Code" xml:"Code"`
