@@ -17,17 +17,17 @@ package dyplsapi
 
 // SecretBindDetailDTO is a nested struct in dyplsapi response
 type SecretBindDetailDTO struct {
-	SubsId       string `json:"SubsId" xml:"SubsId"`
-	PhoneNoA     string `json:"PhoneNoA" xml:"PhoneNoA"`
-	PhoneNoX     string `json:"PhoneNoX" xml:"PhoneNoX"`
-	PhoneNoB     string `json:"PhoneNoB" xml:"PhoneNoB"`
+	Status       int64  `json:"Status" xml:"Status"`
 	Extension    string `json:"Extension" xml:"Extension"`
+	PhoneNoB     string `json:"PhoneNoB" xml:"PhoneNoB"`
 	GroupId      int64  `json:"GroupId" xml:"GroupId"`
+	NeedRecord   bool   `json:"NeedRecord" xml:"NeedRecord"`
+	ASRStatus    bool   `json:"ASRStatus" xml:"ASRStatus"`
 	GmtCreate    string `json:"GmtCreate" xml:"GmtCreate"`
 	ExpireDate   string `json:"ExpireDate" xml:"ExpireDate"`
-	NeedRecord   bool   `json:"NeedRecord" xml:"NeedRecord"`
+	SubsId       string `json:"SubsId" xml:"SubsId"`
+	PhoneNoX     string `json:"PhoneNoX" xml:"PhoneNoX"`
 	CallRestrict string `json:"CallRestrict" xml:"CallRestrict"`
-	Status       int64  `json:"Status" xml:"Status"`
-	ASRStatus    bool   `json:"ASRStatus" xml:"ASRStatus"`
 	ASRModelId   string `json:"ASRModelId" xml:"ASRModelId"`
+	PhoneNoA     string `json:"PhoneNoA" xml:"PhoneNoA"`
 }

@@ -17,9 +17,17 @@ package dyplsapi
 
 // Data is a nested struct in dyplsapi response
 type Data struct {
-	RingPublicUrl  string `json:"RingPublicUrl" xml:"RingPublicUrl"`
-	PhonePublicUrl string `json:"PhonePublicUrl" xml:"PhonePublicUrl"`
-	CertifyId      string `json:"CertifyId" xml:"CertifyId"`
-	SubsId         string `json:"SubsId" xml:"SubsId"`
-	VerifyResult   string `json:"VerifyResult" xml:"VerifyResult"`
+	Code           string                 `json:"Code" xml:"Code"`
+	PhonePublicUrl string                 `json:"PhonePublicUrl" xml:"PhonePublicUrl"`
+	SubsId         string                 `json:"SubsId" xml:"SubsId"`
+	VerifyResult   string                 `json:"VerifyResult" xml:"VerifyResult"`
+	BusinessId     string                 `json:"BusinessId" xml:"BusinessId"`
+	RingPublicUrl  string                 `json:"RingPublicUrl" xml:"RingPublicUrl"`
+	BizDuration    int64                  `json:"BizDuration" xml:"BizDuration"`
+	RequestId      string                 `json:"RequestId" xml:"RequestId"`
+	CertifyId      string                 `json:"CertifyId" xml:"CertifyId"`
+	Msg            string                 `json:"Msg" xml:"Msg"`
+	BusinessKey    string                 `json:"BusinessKey" xml:"BusinessKey"`
+	Type           string                 `json:"Type" xml:"Type"`
+	Sentences      []SecretAsrSentenceDTO `json:"Sentences" xml:"Sentences"`
 }

@@ -95,9 +95,9 @@ type UpdateSubscriptionRequest struct {
 // UpdateSubscriptionResponse is the response struct for api UpdateSubscription
 type UpdateSubscriptionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateSubscriptionRequest creates a request to invoke UpdateSubscription API

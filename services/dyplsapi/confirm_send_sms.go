@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddAxnTrackNo invokes the dyplsapi.AddAxnTrackNo API synchronously
-func (client *Client) AddAxnTrackNo(request *AddAxnTrackNoRequest) (response *AddAxnTrackNoResponse, err error) {
-	response = CreateAddAxnTrackNoResponse()
+// ConfirmSendSms invokes the dyplsapi.ConfirmSendSms API synchronously
+func (client *Client) ConfirmSendSms(request *ConfirmSendSmsRequest) (response *ConfirmSendSmsResponse, err error) {
+	response = CreateConfirmSendSmsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddAxnTrackNoWithChan invokes the dyplsapi.AddAxnTrackNo API asynchronously
-func (client *Client) AddAxnTrackNoWithChan(request *AddAxnTrackNoRequest) (<-chan *AddAxnTrackNoResponse, <-chan error) {
-	responseChan := make(chan *AddAxnTrackNoResponse, 1)
+// ConfirmSendSmsWithChan invokes the dyplsapi.ConfirmSendSms API asynchronously
+func (client *Client) ConfirmSendSmsWithChan(request *ConfirmSendSmsRequest) (<-chan *ConfirmSendSmsResponse, <-chan error) {
+	responseChan := make(chan *ConfirmSendSmsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddAxnTrackNo(request)
+		response, err := client.ConfirmSendSms(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddAxnTrackNoWithChan(request *AddAxnTrackNoRequest) (<-ch
 	return responseChan, errChan
 }
 
-// AddAxnTrackNoWithCallback invokes the dyplsapi.AddAxnTrackNo API asynchronously
-func (client *Client) AddAxnTrackNoWithCallback(request *AddAxnTrackNoRequest, callback func(response *AddAxnTrackNoResponse, err error)) <-chan int {
+// ConfirmSendSmsWithCallback invokes the dyplsapi.ConfirmSendSms API asynchronously
+func (client *Client) ConfirmSendSmsWithCallback(request *ConfirmSendSmsRequest, callback func(response *ConfirmSendSmsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddAxnTrackNoResponse
+		var response *ConfirmSendSmsResponse
 		var err error
 		defer close(result)
-		response, err = client.AddAxnTrackNo(request)
+		response, err = client.ConfirmSendSms(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,40 @@ func (client *Client) AddAxnTrackNoWithCallback(request *AddAxnTrackNoRequest, c
 	return result
 }
 
-// AddAxnTrackNoRequest is the request struct for api AddAxnTrackNo
-type AddAxnTrackNoRequest struct {
+// ConfirmSendSmsRequest is the request struct for api ConfirmSendSms
+type ConfirmSendSmsRequest struct {
 	*requests.RpcRequest
+	CallId               string           `position:"Query" name:"CallId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SubsId               string           `position:"Query" name:"SubsId"`
-	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
+	SecretNo             string           `position:"Query" name:"SecretNo"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ProdCode             string           `position:"Query" name:"ProdCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TrackNo              string           `position:"Query" name:"trackNo"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
 }
 
-// AddAxnTrackNoResponse is the response struct for api AddAxnTrackNo
-type AddAxnTrackNoResponse struct {
+// ConfirmSendSmsResponse is the response struct for api ConfirmSendSms
+type ConfirmSendSmsResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateAddAxnTrackNoRequest creates a request to invoke AddAxnTrackNo API
-func CreateAddAxnTrackNoRequest() (request *AddAxnTrackNoRequest) {
-	request = &AddAxnTrackNoRequest{
+// CreateConfirmSendSmsRequest creates a request to invoke ConfirmSendSms API
+func CreateConfirmSendSmsRequest() (request *ConfirmSendSmsRequest) {
+	request = &ConfirmSendSmsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "AddAxnTrackNo", "", "")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "ConfirmSendSms", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddAxnTrackNoResponse creates a response to parse from AddAxnTrackNo response
-func CreateAddAxnTrackNoResponse() (response *AddAxnTrackNoResponse) {
-	response = &AddAxnTrackNoResponse{
+// CreateConfirmSendSmsResponse creates a response to parse from ConfirmSendSms response
+func CreateConfirmSendSmsResponse() (response *ConfirmSendSmsResponse) {
+	response = &ConfirmSendSmsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

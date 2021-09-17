@@ -84,9 +84,9 @@ type DeleteSecretBlacklistRequest struct {
 // DeleteSecretBlacklistResponse is the response struct for api DeleteSecretBlacklist
 type DeleteSecretBlacklistResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteSecretBlacklistRequest creates a request to invoke DeleteSecretBlacklist API

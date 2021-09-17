@@ -17,7 +17,7 @@ package dyplsapi
 
 // PhoneNoAInfo is a nested struct in dyplsapi response
 type PhoneNoAInfo struct {
-	PhoneNoA  string `json:"PhoneNoA" xml:"PhoneNoA"`
-	PhoneNoX  string `json:"PhoneNoX" xml:"PhoneNoX"`
 	Extension string `json:"Extension" xml:"Extension"`
+	PhoneNoX  string `json:"PhoneNoX" xml:"PhoneNoX"`
+	PhoneNoA  string `json:"PhoneNoA" xml:"PhoneNoA"`
 }

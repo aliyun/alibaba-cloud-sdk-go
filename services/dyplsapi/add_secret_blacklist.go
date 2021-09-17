@@ -84,9 +84,9 @@ type AddSecretBlacklistRequest struct {
 // AddSecretBlacklistResponse is the response struct for api AddSecretBlacklist
 type AddSecretBlacklistResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddSecretBlacklistRequest creates a request to invoke AddSecretBlacklist API

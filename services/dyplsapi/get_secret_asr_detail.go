@@ -82,10 +82,10 @@ type GetSecretAsrDetailRequest struct {
 // GetSecretAsrDetailResponse is the response struct for api GetSecretAsrDetail
 type GetSecretAsrDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetSecretAsrDetailRequest creates a request to invoke GetSecretAsrDetail API

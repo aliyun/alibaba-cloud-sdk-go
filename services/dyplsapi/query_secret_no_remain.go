@@ -82,9 +82,9 @@ type QuerySecretNoRemainRequest struct {
 // QuerySecretNoRemainResponse is the response struct for api QuerySecretNoRemain
 type QuerySecretNoRemainResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	Code            string          `json:"Code" xml:"Code"`
 	Message         string          `json:"Message" xml:"Message"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	SecretRemainDTO SecretRemainDTO `json:"SecretRemainDTO" xml:"SecretRemainDTO"`
 }
 

@@ -81,9 +81,9 @@ type ReleaseSecretNoRequest struct {
 // ReleaseSecretNoResponse is the response struct for api ReleaseSecretNo
 type ReleaseSecretNoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateReleaseSecretNoRequest creates a request to invoke ReleaseSecretNo API

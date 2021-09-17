@@ -83,9 +83,9 @@ type GetSubscriptionDetailRequest struct {
 // GetSubscriptionDetailResponse is the response struct for api GetSubscriptionDetail
 type GetSubscriptionDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
 	Code      string                      `json:"Code" xml:"Code"`
 	Message   string                      `json:"Message" xml:"Message"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
 	Data      DataInGetSubscriptionDetail `json:"Data" xml:"Data"`
 }
 

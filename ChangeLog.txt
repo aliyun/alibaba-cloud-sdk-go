@@ -1,3 +1,7 @@
+2021-09-17 Version: v1.61.1261
+- Generated 2017-05-25 for `Dyplsapi`.
+- Fixed bug for GetSecretAsrDetail.
+
 2021-09-16 Version: v1.61.1260
 - Generated 2020-01-16 for `DAS`.
 - Supported GetSqlOptimizeAdvice.

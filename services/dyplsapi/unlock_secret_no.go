@@ -81,9 +81,9 @@ type UnlockSecretNoRequest struct {
 // UnlockSecretNoResponse is the response struct for api UnlockSecretNo
 type UnlockSecretNoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUnlockSecretNoRequest creates a request to invoke UnlockSecretNo API

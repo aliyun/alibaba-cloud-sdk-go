@@ -84,9 +84,9 @@ type BuySecretNoRequest struct {
 // BuySecretNoResponse is the response struct for api BuySecretNo
 type BuySecretNoResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	Code             string           `json:"Code" xml:"Code"`
 	Message          string           `json:"Message" xml:"Message"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	SecretBuyInfoDTO SecretBuyInfoDTO `json:"SecretBuyInfoDTO" xml:"SecretBuyInfoDTO"`
 }
 

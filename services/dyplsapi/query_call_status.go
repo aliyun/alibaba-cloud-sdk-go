@@ -82,9 +82,9 @@ type QueryCallStatusRequest struct {
 // QueryCallStatusResponse is the response struct for api QueryCallStatus
 type QueryCallStatusResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Code                string              `json:"Code" xml:"Code"`
 	Message             string              `json:"Message" xml:"Message"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	SecretCallStatusDTO SecretCallStatusDTO `json:"SecretCallStatusDTO" xml:"SecretCallStatusDTO"`
 }
 
