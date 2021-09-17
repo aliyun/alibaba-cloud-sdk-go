@@ -44,12 +44,12 @@ type Data struct {
 	DtsJobClass         string                                     `json:"DtsJobClass" xml:"DtsJobClass"`
 	SrcInstanceUuid     string                                     `json:"SrcInstanceUuid" xml:"SrcInstanceUuid"`
 	ArchiveFolder       string                                     `json:"ArchiveFolder" xml:"ArchiveFolder"`
-	Extra               string                                     `json:"Extra" xml:"Extra"`
 	PageNo              int64                                      `json:"PageNo" xml:"PageNo"`
+	Extra               string                                     `json:"Extra" xml:"Extra"`
 	EcsInstanceId       string                                     `json:"EcsInstanceId" xml:"EcsInstanceId"`
 	ArchiveOssTableName string                                     `json:"ArchiveOssTableName" xml:"ArchiveOssTableName"`
-	AccountId           string                                     `json:"AccountId" xml:"AccountId"`
 	OriUuid             string                                     `json:"OriUuid" xml:"OriUuid"`
+	AccountId           string                                     `json:"AccountId" xml:"AccountId"`
 	MetaFileOnOss       string                                     `json:"MetaFileOnOss" xml:"MetaFileOnOss"`
 	ArchiveState        int                                        `json:"ArchiveState" xml:"ArchiveState"`
 	TaskType            string                                     `json:"TaskType" xml:"TaskType"`
@@ -60,6 +60,8 @@ type Data struct {
 	ArchiveJobId        string                                     `json:"ArchiveJobId" xml:"ArchiveJobId"`
 	ErrorMessage        string                                     `json:"ErrorMessage" xml:"ErrorMessage"`
 	External            string                                     `json:"External" xml:"External"`
+	CreateTime          string                                     `json:"CreateTime" xml:"CreateTime"`
+	DownloadUrl         string                                     `json:"DownloadUrl" xml:"DownloadUrl"`
 	JarOnOss            string                                     `json:"JarOnOss" xml:"JarOnOss"`
 	SqlFilePath         string                                     `json:"SqlFilePath" xml:"SqlFilePath"`
 	Uuid                string                                     `json:"Uuid" xml:"Uuid"`
@@ -68,6 +70,7 @@ type Data struct {
 	InstanceId          string                                     `json:"InstanceId" xml:"InstanceId"`
 	UserId              string                                     `json:"UserId" xml:"UserId"`
 	SrcPublicIp         string                                     `json:"SrcPublicIp" xml:"SrcPublicIp"`
+	ExpireTime          string                                     `json:"ExpireTime" xml:"ExpireTime"`
 	SrcInstanceArea     string                                     `json:"SrcInstanceArea" xml:"SrcInstanceArea"`
 	MetaFileName        string                                     `json:"MetaFileName" xml:"MetaFileName"`
 	DtsJobName          string                                     `json:"DtsJobName" xml:"DtsJobName"`
@@ -91,6 +94,7 @@ type Data struct {
 	ParseFilePath       string                                     `json:"ParseFilePath" xml:"ParseFilePath"`
 	ClientType          string                                     `json:"ClientType" xml:"ClientType"`
 	ClientGatewayId     string                                     `json:"ClientGatewayId" xml:"ClientGatewayId"`
+	StatusCode          string                                     `json:"StatusCode" xml:"StatusCode"`
 	State               string                                     `json:"State" xml:"State"`
 	ParseCmd            string                                     `json:"ParseCmd" xml:"ParseCmd"`
 	OwnerId             string                                     `json:"OwnerId" xml:"OwnerId"`
@@ -99,8 +103,8 @@ type Data struct {
 	Code                int                                        `json:"Code" xml:"Code"`
 	Total               int64                                      `json:"Total" xml:"Total"`
 	DstIp               string                                     `json:"DstIp" xml:"DstIp"`
-	KeyPrefixes         KeyPrefixes                                `json:"KeyPrefixes" xml:"KeyPrefixes"`
-	List                ListInDescribeCacheAnalysisJobs            `json:"List" xml:"List"`
-	BigKeys             BigKeysInDescribeCacheAnalysisJob          `json:"BigKeys" xml:"BigKeys"`
 	SubResults          SubResultsInGetHDMAliyunResourceSyncResult `json:"SubResults" xml:"SubResults"`
+	KeyPrefixes         KeyPrefixes                                `json:"KeyPrefixes" xml:"KeyPrefixes"`
+	BigKeys             BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
+	List                ListInDescribeCacheAnalysisJobs            `json:"List" xml:"List"`
 }

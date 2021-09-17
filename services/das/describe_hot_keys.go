@@ -78,8 +78,8 @@ type DescribeHotKeysRequest struct {
 // DescribeHotKeysResponse is the response struct for api DescribeHotKeys
 type DescribeHotKeysResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
 	Message   string                `json:"Message" xml:"Message"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
 	Code      string                `json:"Code" xml:"Code"`
 	Success   string                `json:"Success" xml:"Success"`
 	Data      DataInDescribeHotKeys `json:"Data" xml:"Data"`

@@ -84,8 +84,8 @@ type GetHDMAliyunResourceSyncResultRequest struct {
 // GetHDMAliyunResourceSyncResultResponse is the response struct for api GetHDMAliyunResourceSyncResult
 type GetHDMAliyunResourceSyncResultResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Synchro   string `json:"Synchro" xml:"Synchro"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   string `json:"Success" xml:"Success"`

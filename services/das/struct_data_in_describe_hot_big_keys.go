@@ -17,8 +17,8 @@ package das
 
 // DataInDescribeHotBigKeys is a nested struct in das response
 type DataInDescribeHotBigKeys struct {
-	BigKeyMsg string                      `json:"BigKeyMsg" xml:"BigKeyMsg"`
 	HotKeyMsg string                      `json:"HotKeyMsg" xml:"HotKeyMsg"`
+	BigKeyMsg string                      `json:"BigKeyMsg" xml:"BigKeyMsg"`
 	HotKeys   HotKeys                     `json:"HotKeys" xml:"HotKeys"`
 	BigKeys   BigKeysInDescribeHotBigKeys `json:"BigKeys" xml:"BigKeys"`
 }

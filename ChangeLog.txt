@@ -1,3 +1,7 @@
+2021-09-17 Version: v1.61.1263
+- Generated 2020-01-16 for `DAS`.
+- Fix Bugs for GetSqlOptimizeAdvice.
+
 2021-09-17 Version: v1.61.1262
 - Generated 2016-08-01 for `Push`.
 - Supported SendChannels, AndroidMessageHuaweiUrgency, AndroidMessageHuaweiCategory for Push and MassPush.

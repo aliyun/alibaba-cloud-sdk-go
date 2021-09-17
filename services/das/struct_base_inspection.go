@@ -17,11 +17,11 @@ package das
 
 // BaseInspection is a nested struct in das response
 type BaseInspection struct {
-	Score     int      `json:"Score" xml:"Score"`
-	GmtCreate int64    `json:"GmtCreate" xml:"GmtCreate"`
-	ScoreMap  string   `json:"ScoreMap" xml:"ScoreMap"`
 	EndTime   int64    `json:"EndTime" xml:"EndTime"`
 	StartTime int64    `json:"StartTime" xml:"StartTime"`
 	Data      string   `json:"Data" xml:"Data"`
+	ScoreMap  string   `json:"ScoreMap" xml:"ScoreMap"`
+	GmtCreate int64    `json:"GmtCreate" xml:"GmtCreate"`
+	Score     int      `json:"Score" xml:"Score"`
 	Instance  Instance `json:"Instance" xml:"Instance"`
 }

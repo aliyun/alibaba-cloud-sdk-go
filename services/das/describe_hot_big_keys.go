@@ -79,8 +79,8 @@ type DescribeHotBigKeysRequest struct {
 // DescribeHotBigKeysResponse is the response struct for api DescribeHotBigKeys
 type DescribeHotBigKeysResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Code      string                   `json:"Code" xml:"Code"`
 	Success   string                   `json:"Success" xml:"Success"`
 	Data      DataInDescribeHotBigKeys `json:"Data" xml:"Data"`

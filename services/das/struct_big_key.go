@@ -18,8 +18,8 @@ package das
 // BigKey is a nested struct in das response
 type BigKey struct {
 	Key     string `json:"Key" xml:"Key"`
-	NodeId  string `json:"NodeId" xml:"NodeId"`
 	Db      int    `json:"Db" xml:"Db"`
+	NodeId  string `json:"NodeId" xml:"NodeId"`
 	KeyType string `json:"KeyType" xml:"KeyType"`
 	Size    int64  `json:"Size" xml:"Size"`
 }

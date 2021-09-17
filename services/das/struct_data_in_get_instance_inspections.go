@@ -17,8 +17,8 @@ package das
 
 // DataInGetInstanceInspections is a nested struct in das response
 type DataInGetInstanceInspections struct {
+	PageNo   int64                        `json:"PageNo" xml:"PageNo"`
 	PageSize int64                        `json:"PageSize" xml:"PageSize"`
 	Total    int64                        `json:"Total" xml:"Total"`
-	PageNo   int64                        `json:"PageNo" xml:"PageNo"`
 	List     ListInGetInstanceInspections `json:"List" xml:"List"`
 }

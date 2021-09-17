@@ -81,8 +81,8 @@ type DescribeTopBigKeysRequest struct {
 // DescribeTopBigKeysResponse is the response struct for api DescribeTopBigKeys
 type DescribeTopBigKeysResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Code      string                   `json:"Code" xml:"Code"`
 	Success   string                   `json:"Success" xml:"Success"`
 	Data      DataInDescribeTopBigKeys `json:"Data" xml:"Data"`

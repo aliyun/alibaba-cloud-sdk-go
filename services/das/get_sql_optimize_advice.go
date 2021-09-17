@@ -83,9 +83,9 @@ type GetSqlOptimizeAdviceResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   string `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetSqlOptimizeAdviceRequest creates a request to invoke GetSqlOptimizeAdvice API

@@ -83,8 +83,8 @@ type GetHDMLastAliyunResourceSyncResultRequest struct {
 // GetHDMLastAliyunResourceSyncResultResponse is the response struct for api GetHDMLastAliyunResourceSyncResult
 type GetHDMLastAliyunResourceSyncResultResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Synchro   string `json:"Synchro" xml:"Synchro"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   string `json:"Success" xml:"Success"`

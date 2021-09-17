@@ -95,8 +95,8 @@ type AddHDMInstanceRequest struct {
 // AddHDMInstanceResponse is the response struct for api AddHDMInstance
 type AddHDMInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Synchro   string `json:"Synchro" xml:"Synchro"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   string `json:"Success" xml:"Success"`
