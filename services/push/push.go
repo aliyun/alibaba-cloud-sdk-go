@@ -82,6 +82,7 @@ type PushRequest struct {
 	IOSRemindBody                    string           `position:"Query" name:"iOSRemindBody"`
 	AndroidNotifyType                string           `position:"Query" name:"AndroidNotifyType"`
 	AndroidPopupTitle                string           `position:"Query" name:"AndroidPopupTitle"`
+	AndroidMessageHuaweiCategory     string           `position:"Query" name:"AndroidMessageHuaweiCategory"`
 	IOSMusic                         string           `position:"Query" name:"iOSMusic"`
 	IOSApnsEnv                       string           `position:"Query" name:"iOSApnsEnv"`
 	IOSMutableContent                requests.Boolean `position:"Query" name:"iOSMutableContent"`
@@ -103,6 +104,7 @@ type PushRequest struct {
 	IOSNotificationThreadId          string           `position:"Query" name:"iOSNotificationThreadId"`
 	AndroidMusic                     string           `position:"Query" name:"AndroidMusic"`
 	IOSNotificationCollapseId        string           `position:"Query" name:"iOSNotificationCollapseId"`
+	AndroidMessageHuaweiUrgency      string           `position:"Query" name:"AndroidMessageHuaweiUrgency"`
 	PushType                         string           `position:"Query" name:"PushType"`
 	AndroidExtParameters             string           `position:"Query" name:"AndroidExtParameters"`
 	IOSBadge                         requests.Integer `position:"Query" name:"iOSBadge"`
@@ -118,6 +120,7 @@ type PushRequest struct {
 	AndroidPopupBody                 string           `position:"Query" name:"AndroidPopupBody"`
 	AndroidBigPictureUrl             string           `position:"Query" name:"AndroidBigPictureUrl"`
 	IOSSilentNotification            requests.Boolean `position:"Query" name:"iOSSilentNotification"`
+	SendChannels                     string           `position:"Query" name:"SendChannels"`
 	Target                           string           `position:"Query" name:"Target"`
 	AndroidBigTitle                  string           `position:"Query" name:"AndroidBigTitle"`
 	AndroidNotificationChannel       string           `position:"Query" name:"AndroidNotificationChannel"`

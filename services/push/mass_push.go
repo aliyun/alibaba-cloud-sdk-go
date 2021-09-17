@@ -87,6 +87,7 @@ type MassPushPushTask struct {
 	IOSRemindBody                    string `name:"iOSRemindBody"`
 	AndroidNotifyType                string `name:"AndroidNotifyType"`
 	AndroidPopupTitle                string `name:"AndroidPopupTitle"`
+	AndroidMessageHuaweiCategory     string `name:"AndroidMessageHuaweiCategory"`
 	IOSMusic                         string `name:"iOSMusic"`
 	IOSApnsEnv                       string `name:"iOSApnsEnv"`
 	IOSMutableContent                string `name:"iOSMutableContent"`
@@ -107,6 +108,7 @@ type MassPushPushTask struct {
 	IOSNotificationThreadId          string `name:"iOSNotificationThreadId"`
 	AndroidMusic                     string `name:"AndroidMusic"`
 	IOSNotificationCollapseId        string `name:"iOSNotificationCollapseId"`
+	AndroidMessageHuaweiUrgency      string `name:"AndroidMessageHuaweiUrgency"`
 	PushType                         string `name:"PushType"`
 	AndroidExtParameters             string `name:"AndroidExtParameters"`
 	IOSBadge                         string `name:"iOSBadge"`
@@ -120,6 +122,7 @@ type MassPushPushTask struct {
 	AndroidPopupBody                 string `name:"AndroidPopupBody"`
 	AndroidBigPictureUrl             string `name:"AndroidBigPictureUrl"`
 	IOSSilentNotification            string `name:"iOSSilentNotification"`
+	SendChannels                     string `name:"SendChannels"`
 	Target                           string `name:"Target"`
 	AndroidBigTitle                  string `name:"AndroidBigTitle"`
 	AndroidNotificationChannel       string `name:"AndroidNotificationChannel"`

@@ -1,3 +1,7 @@
+2021-09-17 Version: v1.61.1262
+- Generated 2016-08-01 for `Push`.
+- Supported SendChannels, AndroidMessageHuaweiUrgency, AndroidMessageHuaweiCategory for Push and MassPush.
+
 2021-09-17 Version: v1.61.1261
 - Generated 2017-05-25 for `Dyplsapi`.
 - Fixed bug for GetSecretAsrDetail.
