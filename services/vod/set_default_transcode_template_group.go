@@ -71,10 +71,7 @@ func (client *Client) SetDefaultTranscodeTemplateGroupWithCallback(request *SetD
 // SetDefaultTranscodeTemplateGroupRequest is the request struct for api SetDefaultTranscodeTemplateGroup
 type SetDefaultTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
+	TranscodeTemplateGroupId string `position:"Query" name:"TranscodeTemplateGroupId"`
 }
 
 // SetDefaultTranscodeTemplateGroupResponse is the response struct for api SetDefaultTranscodeTemplateGroup

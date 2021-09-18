@@ -71,19 +71,16 @@ func (client *Client) CreateUploadImageWithCallback(request *CreateUploadImageRe
 // CreateUploadImageRequest is the request struct for api CreateUploadImage
 type CreateUploadImageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description          string           `position:"Query" name:"Description"`
-	Title                string           `position:"Query" name:"Title"`
-	StorageLocation      string           `position:"Query" name:"StorageLocation"`
-	UserData             string           `position:"Query" name:"UserData"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
-	ImageType            string           `position:"Query" name:"ImageType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ImageExt             string           `position:"Query" name:"ImageExt"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	OriginalFileName     string           `position:"Query" name:"OriginalFileName"`
-	AppId                string           `position:"Query" name:"AppId"`
+	Description      string           `position:"Query" name:"Description"`
+	Title            string           `position:"Query" name:"Title"`
+	StorageLocation  string           `position:"Query" name:"StorageLocation"`
+	UserData         string           `position:"Query" name:"UserData"`
+	CateId           requests.Integer `position:"Query" name:"CateId"`
+	ImageType        string           `position:"Query" name:"ImageType"`
+	ImageExt         string           `position:"Query" name:"ImageExt"`
+	Tags             string           `position:"Query" name:"Tags"`
+	OriginalFileName string           `position:"Query" name:"OriginalFileName"`
+	AppId            string           `position:"Query" name:"AppId"`
 }
 
 // CreateUploadImageResponse is the response struct for api CreateUploadImage

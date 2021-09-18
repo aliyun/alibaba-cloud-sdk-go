@@ -71,14 +71,11 @@ func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callb
 // DeleteImageRequest is the request struct for api DeleteImage
 type DeleteImageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ImageURLs            string           `position:"Query" name:"ImageURLs"`
-	ImageType            string           `position:"Query" name:"ImageType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VideoId              string           `position:"Query" name:"VideoId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DeleteImageType      string           `position:"Query" name:"DeleteImageType"`
-	ImageIds             string           `position:"Query" name:"ImageIds"`
+	ImageURLs       string `position:"Query" name:"ImageURLs"`
+	ImageType       string `position:"Query" name:"ImageType"`
+	VideoId         string `position:"Query" name:"VideoId"`
+	DeleteImageType string `position:"Query" name:"DeleteImageType"`
+	ImageIds        string `position:"Query" name:"ImageIds"`
 }
 
 // DeleteImageResponse is the response struct for api DeleteImage

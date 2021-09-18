@@ -71,12 +71,9 @@ func (client *Client) UpdateAITemplateWithCallback(request *UpdateAITemplateRequ
 // UpdateAITemplateRequest is the request struct for api UpdateAITemplate
 type UpdateAITemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TemplateConfig       string           `position:"Query" name:"TemplateConfig"`
-	TemplateName         string           `position:"Query" name:"TemplateName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TemplateId           string           `position:"Query" name:"TemplateId"`
+	TemplateId     string `position:"Query" name:"TemplateId"`
+	TemplateConfig string `position:"Query" name:"TemplateConfig"`
+	TemplateName   string `position:"Query" name:"TemplateName"`
 }
 
 // UpdateAITemplateResponse is the response struct for api UpdateAITemplate

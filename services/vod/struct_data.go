@@ -22,5 +22,6 @@ type Data struct {
 	AbnormalModules string            `json:"AbnormalModules" xml:"AbnormalModules"`
 	VideoResult     VideoResult       `json:"VideoResult" xml:"VideoResult"`
 	TextResult      []TextResultItem  `json:"TextResult" xml:"TextResult"`
+	AudioResult     []AudioResultItem `json:"AudioResult" xml:"AudioResult"`
 	ImageResult     []ImageResultItem `json:"ImageResult" xml:"ImageResult"`
 }

@@ -71,10 +71,7 @@ func (client *Client) GetAIMediaAuditJobWithCallback(request *GetAIMediaAuditJob
 // GetAIMediaAuditJobRequest is the request struct for api GetAIMediaAuditJob
 type GetAIMediaAuditJobRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
-	JobId                string           `position:"Query" name:"JobId"`
+	JobId string `position:"Query" name:"JobId"`
 }
 
 // GetAIMediaAuditJobResponse is the response struct for api GetAIMediaAuditJob

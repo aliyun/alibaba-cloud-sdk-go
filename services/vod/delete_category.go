@@ -71,10 +71,7 @@ func (client *Client) DeleteCategoryWithCallback(request *DeleteCategoryRequest,
 // DeleteCategoryRequest is the request struct for api DeleteCategory
 type DeleteCategoryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
+	CateId requests.Integer `position:"Query" name:"CateId"`
 }
 
 // DeleteCategoryResponse is the response struct for api DeleteCategory

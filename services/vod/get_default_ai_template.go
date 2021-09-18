@@ -71,10 +71,7 @@ func (client *Client) GetDefaultAITemplateWithCallback(request *GetDefaultAITemp
 // GetDefaultAITemplateRequest is the request struct for api GetDefaultAITemplate
 type GetDefaultAITemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TemplateType         string           `position:"Query" name:"TemplateType"`
+	TemplateType string `position:"Query" name:"TemplateType"`
 }
 
 // GetDefaultAITemplateResponse is the response struct for api GetDefaultAITemplate

@@ -71,11 +71,8 @@ func (client *Client) GetURLUploadInfosWithCallback(request *GetURLUploadInfosRe
 // GetURLUploadInfosRequest is the request struct for api GetURLUploadInfos
 type GetURLUploadInfosRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	JobIds               string           `position:"Query" name:"JobIds"`
-	UploadURLs           string           `position:"Query" name:"UploadURLs"`
+	JobIds     string `position:"Query" name:"JobIds"`
+	UploadURLs string `position:"Query" name:"UploadURLs"`
 }
 
 // GetURLUploadInfosResponse is the response struct for api GetURLUploadInfos

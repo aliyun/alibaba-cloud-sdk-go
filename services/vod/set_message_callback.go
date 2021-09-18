@@ -71,20 +71,17 @@ func (client *Client) SetMessageCallbackWithCallback(request *SetMessageCallback
 // SetMessageCallbackRequest is the request struct for api SetMessageCallback
 type SetMessageCallbackRequest struct {
 	*requests.RpcRequest
-	AuthKey              string           `position:"Query" name:"AuthKey"`
-	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	CallbackType         string           `position:"Query" name:"CallbackType"`
-	CallbackSwitch       string           `position:"Query" name:"CallbackSwitch"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EventTypeList        string           `position:"Query" name:"EventTypeList"`
-	MnsQueueName         string           `position:"Query" name:"MnsQueueName"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
-	MnsEndpoint          string           `position:"Query" name:"MnsEndpoint"`
-	AppId                string           `position:"Query" name:"AppId"`
-	AuthSwitch           string           `position:"Query" name:"AuthSwitch"`
-	CallbackURL          string           `position:"Query" name:"CallbackURL"`
+	AuthKey             string           `position:"Query" name:"AuthKey"`
+	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	CallbackType        string           `position:"Query" name:"CallbackType"`
+	CallbackSwitch      string           `position:"Query" name:"CallbackSwitch"`
+	OwnerAccount        string           `position:"Query" name:"OwnerAccount"`
+	EventTypeList       string           `position:"Query" name:"EventTypeList"`
+	MnsQueueName        string           `position:"Query" name:"MnsQueueName"`
+	MnsEndpoint         string           `position:"Query" name:"MnsEndpoint"`
+	AppId               string           `position:"Query" name:"AppId"`
+	AuthSwitch          string           `position:"Query" name:"AuthSwitch"`
+	CallbackURL         string           `position:"Query" name:"CallbackURL"`
 }
 
 // SetMessageCallbackResponse is the response struct for api SetMessageCallback

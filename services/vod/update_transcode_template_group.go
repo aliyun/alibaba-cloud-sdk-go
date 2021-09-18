@@ -71,13 +71,10 @@ func (client *Client) UpdateTranscodeTemplateGroupWithCallback(request *UpdateTr
 // UpdateTranscodeTemplateGroupRequest is the request struct for api UpdateTranscodeTemplateGroup
 type UpdateTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
-	TranscodeTemplateList    string           `position:"Query" name:"TranscodeTemplateList"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Locked                   string           `position:"Query" name:"Locked"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
-	Name                     string           `position:"Query" name:"Name"`
+	TranscodeTemplateList    string `position:"Query" name:"TranscodeTemplateList"`
+	TranscodeTemplateGroupId string `position:"Query" name:"TranscodeTemplateGroupId"`
+	Name                     string `position:"Query" name:"Name"`
+	Locked                   string `position:"Query" name:"Locked"`
 }
 
 // UpdateTranscodeTemplateGroupResponse is the response struct for api UpdateTranscodeTemplateGroup

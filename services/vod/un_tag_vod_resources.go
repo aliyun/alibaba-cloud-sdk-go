@@ -71,6 +71,7 @@ func (client *Client) UnTagVodResourcesWithCallback(request *UnTagVodResourcesRe
 // UnTagVodResourcesRequest is the request struct for api UnTagVodResources
 type UnTagVodResourcesRequest struct {
 	*requests.RpcRequest
+	All          requests.Boolean `position:"Query" name:"All"`
 	ResourceId   *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType string           `position:"Query" name:"ResourceType"`

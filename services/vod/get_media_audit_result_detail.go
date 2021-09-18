@@ -71,11 +71,8 @@ func (client *Client) GetMediaAuditResultDetailWithCallback(request *GetMediaAud
 // GetMediaAuditResultDetailRequest is the request struct for api GetMediaAuditResultDetail
 type GetMediaAuditResultDetailRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	MediaId string           `position:"Query" name:"MediaId"`
+	PageNo  requests.Integer `position:"Query" name:"PageNo"`
 }
 
 // GetMediaAuditResultDetailResponse is the response struct for api GetMediaAuditResultDetail

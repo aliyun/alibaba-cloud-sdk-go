@@ -71,14 +71,11 @@ func (client *Client) ListSnapshotsWithCallback(request *ListSnapshotsRequest, c
 // ListSnapshotsRequest is the request struct for api ListSnapshots
 type ListSnapshotsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	AuthTimeout          string           `position:"Query" name:"AuthTimeout"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VideoId              string           `position:"Query" name:"VideoId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SnapshotType         string           `position:"Query" name:"SnapshotType"`
-	PageNo               string           `position:"Query" name:"PageNo"`
+	PageSize     string `position:"Query" name:"PageSize"`
+	AuthTimeout  string `position:"Query" name:"AuthTimeout"`
+	VideoId      string `position:"Query" name:"VideoId"`
+	SnapshotType string `position:"Query" name:"SnapshotType"`
+	PageNo       string `position:"Query" name:"PageNo"`
 }
 
 // ListSnapshotsResponse is the response struct for api ListSnapshots

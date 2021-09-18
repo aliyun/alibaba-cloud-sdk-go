@@ -71,10 +71,7 @@ func (client *Client) GetTranscodeTemplateGroupWithCallback(request *GetTranscod
 // GetTranscodeTemplateGroupRequest is the request struct for api GetTranscodeTemplateGroup
 type GetTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
+	TranscodeTemplateGroupId string `position:"Query" name:"TranscodeTemplateGroupId"`
 }
 
 // GetTranscodeTemplateGroupResponse is the response struct for api GetTranscodeTemplateGroup

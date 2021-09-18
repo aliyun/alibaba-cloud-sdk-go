@@ -71,10 +71,7 @@ func (client *Client) ListDynamicImageWithCallback(request *ListDynamicImageRequ
 // ListDynamicImageRequest is the request struct for api ListDynamicImage
 type ListDynamicImageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VideoId              string           `position:"Query" name:"VideoId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VideoId string `position:"Query" name:"VideoId"`
 }
 
 // ListDynamicImageResponse is the response struct for api ListDynamicImage

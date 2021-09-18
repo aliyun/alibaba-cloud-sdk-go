@@ -17,6 +17,7 @@ package vod
 
 // Project is a nested struct in vod response
 type Project struct {
+	FEExtend        string  `json:"FEExtend" xml:"FEExtend"`
 	ModifiedTime    string  `json:"ModifiedTime" xml:"ModifiedTime"`
 	RegionId        string  `json:"RegionId" xml:"RegionId"`
 	Title           string  `json:"Title" xml:"Title"`

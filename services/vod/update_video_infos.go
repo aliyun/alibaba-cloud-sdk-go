@@ -71,10 +71,7 @@ func (client *Client) UpdateVideoInfosWithCallback(request *UpdateVideoInfosRequ
 // UpdateVideoInfosRequest is the request struct for api UpdateVideoInfos
 type UpdateVideoInfosRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	UpdateContent        string           `position:"Query" name:"UpdateContent"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UpdateContent string `position:"Query" name:"UpdateContent"`
 }
 
 // UpdateVideoInfosResponse is the response struct for api UpdateVideoInfos

@@ -71,11 +71,8 @@ func (client *Client) DeleteDynamicImageWithCallback(request *DeleteDynamicImage
 // DeleteDynamicImageRequest is the request struct for api DeleteDynamicImage
 type DeleteDynamicImageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VideoId              string           `position:"Query" name:"VideoId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DynamicImageIds      string           `position:"Query" name:"DynamicImageIds"`
+	VideoId         string `position:"Query" name:"VideoId"`
+	DynamicImageIds string `position:"Query" name:"DynamicImageIds"`
 }
 
 // DeleteDynamicImageResponse is the response struct for api DeleteDynamicImage

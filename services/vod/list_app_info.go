@@ -71,13 +71,10 @@ func (client *Client) ListAppInfoWithCallback(request *ListAppInfoRequest, callb
 // ListAppInfoRequest is the request struct for api ListAppInfo
 type ListAppInfoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	Status               string           `position:"Query" name:"Status"`
+	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	PageNo              requests.Integer `position:"Query" name:"PageNo"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	Status              string           `position:"Query" name:"Status"`
 }
 
 // ListAppInfoResponse is the response struct for api ListAppInfo

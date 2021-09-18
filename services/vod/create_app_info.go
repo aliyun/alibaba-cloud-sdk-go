@@ -71,19 +71,16 @@ func (client *Client) CreateAppInfoWithCallback(request *CreateAppInfoRequest, c
 // CreateAppInfoRequest is the request struct for api CreateAppInfo
 type CreateAppInfoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	AppName              string           `position:"Query" name:"AppName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Description         string           `position:"Query" name:"Description"`
+	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	AppName             string           `position:"Query" name:"AppName"`
 }
 
 // CreateAppInfoResponse is the response struct for api CreateAppInfo
 type CreateAppInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	AppId     string `json:"AppId" xml:"AppId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateAppInfoRequest creates a request to invoke CreateAppInfo API

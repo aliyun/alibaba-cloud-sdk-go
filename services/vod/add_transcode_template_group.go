@@ -71,13 +71,10 @@ func (client *Client) AddTranscodeTemplateGroupWithCallback(request *AddTranscod
 // AddTranscodeTemplateGroupRequest is the request struct for api AddTranscodeTemplateGroup
 type AddTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
-	TranscodeTemplateList    string           `position:"Query" name:"TranscodeTemplateList"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
-	AppId                    string           `position:"Query" name:"AppId"`
-	Name                     string           `position:"Query" name:"Name"`
+	TranscodeTemplateList    string `position:"Query" name:"TranscodeTemplateList"`
+	TranscodeTemplateGroupId string `position:"Query" name:"TranscodeTemplateGroupId"`
+	AppId                    string `position:"Query" name:"AppId"`
+	Name                     string `position:"Query" name:"Name"`
 }
 
 // AddTranscodeTemplateGroupResponse is the response struct for api AddTranscodeTemplateGroup

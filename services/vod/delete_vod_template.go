@@ -71,10 +71,7 @@ func (client *Client) DeleteVodTemplateWithCallback(request *DeleteVodTemplateRe
 // DeleteVodTemplateRequest is the request struct for api DeleteVodTemplate
 type DeleteVodTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VodTemplateId        string           `position:"Query" name:"VodTemplateId"`
+	VodTemplateId string `position:"Query" name:"VodTemplateId"`
 }
 
 // DeleteVodTemplateResponse is the response struct for api DeleteVodTemplate

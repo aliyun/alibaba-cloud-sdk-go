@@ -71,11 +71,8 @@ func (client *Client) DeleteAppInfoWithCallback(request *DeleteAppInfoRequest, c
 // DeleteAppInfoRequest is the request struct for api DeleteAppInfo
 type DeleteAppInfoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AppId                string           `position:"Query" name:"AppId"`
+	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	AppId               string           `position:"Query" name:"AppId"`
 }
 
 // DeleteAppInfoResponse is the response struct for api DeleteAppInfo

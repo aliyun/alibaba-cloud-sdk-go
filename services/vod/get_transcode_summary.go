@@ -71,10 +71,7 @@ func (client *Client) GetTranscodeSummaryWithCallback(request *GetTranscodeSumma
 // GetTranscodeSummaryRequest is the request struct for api GetTranscodeSummary
 type GetTranscodeSummaryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VideoIds             string           `position:"Query" name:"VideoIds"`
+	VideoIds string `position:"Query" name:"VideoIds"`
 }
 
 // GetTranscodeSummaryResponse is the response struct for api GetTranscodeSummary

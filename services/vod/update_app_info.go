@@ -71,14 +71,11 @@ func (client *Client) UpdateAppInfoWithCallback(request *UpdateAppInfoRequest, c
 // UpdateAppInfoRequest is the request struct for api UpdateAppInfo
 type UpdateAppInfoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	AppName              string           `position:"Query" name:"AppName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AppId                string           `position:"Query" name:"AppId"`
-	Status               string           `position:"Query" name:"Status"`
+	Description         string           `position:"Query" name:"Description"`
+	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	AppName             string           `position:"Query" name:"AppName"`
+	AppId               string           `position:"Query" name:"AppId"`
+	Status              string           `position:"Query" name:"Status"`
 }
 
 // UpdateAppInfoResponse is the response struct for api UpdateAppInfo

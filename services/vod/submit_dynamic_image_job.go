@@ -71,12 +71,9 @@ func (client *Client) SubmitDynamicImageJobWithCallback(request *SubmitDynamicIm
 // SubmitDynamicImageJobRequest is the request struct for api SubmitDynamicImageJob
 type SubmitDynamicImageJobRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DynamicImageTemplateId string           `position:"Query" name:"DynamicImageTemplateId"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	VideoId                string           `position:"Query" name:"VideoId"`
-	OverrideParams         string           `position:"Query" name:"OverrideParams"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	DynamicImageTemplateId string `position:"Query" name:"DynamicImageTemplateId"`
+	VideoId                string `position:"Query" name:"VideoId"`
+	OverrideParams         string `position:"Query" name:"OverrideParams"`
 }
 
 // SubmitDynamicImageJobResponse is the response struct for api SubmitDynamicImageJob

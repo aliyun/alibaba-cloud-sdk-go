@@ -19,13 +19,11 @@ package vod
 type PageData struct {
 	DomainName   string                          `json:"DomainName" xml:"DomainName"`
 	Cname        string                          `json:"Cname" xml:"Cname"`
-	CdnType      string                          `json:"CdnType" xml:"CdnType"`
 	DomainStatus string                          `json:"DomainStatus" xml:"DomainStatus"`
 	GmtCreated   string                          `json:"GmtCreated" xml:"GmtCreated"`
 	GmtModified  string                          `json:"GmtModified" xml:"GmtModified"`
 	Description  string                          `json:"Description" xml:"Description"`
 	SslProtocol  string                          `json:"SslProtocol" xml:"SslProtocol"`
-	Weight       string                          `json:"Weight" xml:"Weight"`
 	Sandbox      string                          `json:"Sandbox" xml:"Sandbox"`
 	Sources      SourcesInDescribeVodUserDomains `json:"Sources" xml:"Sources"`
 }

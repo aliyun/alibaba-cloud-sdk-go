@@ -17,8 +17,8 @@ package vod
 
 // AudioResultItem is a nested struct in vod response
 type AudioResultItem struct {
-	Label      string `json:"Label" xml:"Label"`
-	Scene      string `json:"Scene" xml:"Scene"`
 	Score      string `json:"Score" xml:"Score"`
 	Suggestion string `json:"Suggestion" xml:"Suggestion"`
+	Label      string `json:"Label" xml:"Label"`
+	Scene      string `json:"Scene" xml:"Scene"`
 }

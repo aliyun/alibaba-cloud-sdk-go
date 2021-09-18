@@ -71,10 +71,7 @@ func (client *Client) DeleteVideoWithCallback(request *DeleteVideoRequest, callb
 // DeleteVideoRequest is the request struct for api DeleteVideo
 type DeleteVideoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VideoIds             string           `position:"Query" name:"VideoIds"`
+	VideoIds string `position:"Query" name:"VideoIds"`
 }
 
 // DeleteVideoResponse is the response struct for api DeleteVideo

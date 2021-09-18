@@ -71,11 +71,8 @@ func (client *Client) UpdateCategoryWithCallback(request *UpdateCategoryRequest,
 // UpdateCategoryRequest is the request struct for api UpdateCategory
 type UpdateCategoryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
-	CateName             string           `position:"Query" name:"CateName"`
+	CateId   requests.Integer `position:"Query" name:"CateId"`
+	CateName string           `position:"Query" name:"CateName"`
 }
 
 // UpdateCategoryResponse is the response struct for api UpdateCategory

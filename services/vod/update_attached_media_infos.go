@@ -71,11 +71,8 @@ func (client *Client) UpdateAttachedMediaInfosWithCallback(request *UpdateAttach
 // UpdateAttachedMediaInfosRequest is the request struct for api UpdateAttachedMediaInfos
 type UpdateAttachedMediaInfosRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	UpdateContent        string           `position:"Query" name:"UpdateContent"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UpdateContent       string           `position:"Query" name:"UpdateContent"`
+	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 }
 
 // UpdateAttachedMediaInfosResponse is the response struct for api UpdateAttachedMediaInfos

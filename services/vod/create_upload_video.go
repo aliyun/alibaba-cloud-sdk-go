@@ -71,24 +71,21 @@ func (client *Client) CreateUploadVideoWithCallback(request *CreateUploadVideoRe
 // CreateUploadVideoRequest is the request struct for api CreateUploadVideo
 type CreateUploadVideoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TranscodeMode        string           `position:"Query" name:"TranscodeMode"`
-	Description          string           `position:"Query" name:"Description"`
-	FileSize             requests.Integer `position:"Query" name:"FileSize"`
-	Title                string           `position:"Query" name:"Title"`
-	StorageLocation      string           `position:"Query" name:"StorageLocation"`
-	CoverURL             string           `position:"Query" name:"CoverURL"`
-	UserData             string           `position:"Query" name:"UserData"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
-	WorkflowId           string           `position:"Query" name:"WorkflowId"`
-	CustomMediaInfo      string           `position:"Query" name:"CustomMediaInfo"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	IP                   string           `position:"Query" name:"IP"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	FileName             string           `position:"Query" name:"FileName"`
-	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
-	AppId                string           `position:"Query" name:"AppId"`
+	TranscodeMode   string           `position:"Query" name:"TranscodeMode"`
+	Description     string           `position:"Query" name:"Description"`
+	FileSize        requests.Integer `position:"Query" name:"FileSize"`
+	Title           string           `position:"Query" name:"Title"`
+	StorageLocation string           `position:"Query" name:"StorageLocation"`
+	CoverURL        string           `position:"Query" name:"CoverURL"`
+	UserData        string           `position:"Query" name:"UserData"`
+	CateId          requests.Integer `position:"Query" name:"CateId"`
+	WorkflowId      string           `position:"Query" name:"WorkflowId"`
+	CustomMediaInfo string           `position:"Query" name:"CustomMediaInfo"`
+	IP              string           `position:"Query" name:"IP"`
+	Tags            string           `position:"Query" name:"Tags"`
+	FileName        string           `position:"Query" name:"FileName"`
+	TemplateGroupId string           `position:"Query" name:"TemplateGroupId"`
+	AppId           string           `position:"Query" name:"AppId"`
 }
 
 // CreateUploadVideoResponse is the response struct for api CreateUploadVideo

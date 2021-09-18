@@ -71,12 +71,9 @@ func (client *Client) GetImageInfoWithCallback(request *GetImageInfoRequest, cal
 // GetImageInfoRequest is the request struct for api GetImageInfo
 type GetImageInfoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ImageId              string           `position:"Query" name:"ImageId"`
-	OutputType           string           `position:"Query" name:"OutputType"`
-	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ImageId     string           `position:"Query" name:"ImageId"`
+	OutputType  string           `position:"Query" name:"OutputType"`
+	AuthTimeout requests.Integer `position:"Query" name:"AuthTimeout"`
 }
 
 // GetImageInfoResponse is the response struct for api GetImageInfo

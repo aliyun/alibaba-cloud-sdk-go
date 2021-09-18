@@ -71,12 +71,9 @@ func (client *Client) GetUploadDetailsWithCallback(request *GetUploadDetailsRequ
 // GetUploadDetailsRequest is the request struct for api GetUploadDetails
 type GetUploadDetailsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	MediaIds             string           `position:"Query" name:"MediaIds"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	MediaType            string           `position:"Query" name:"MediaType"`
+	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	MediaIds            string           `position:"Query" name:"MediaIds"`
+	MediaType           string           `position:"Query" name:"MediaType"`
 }
 
 // GetUploadDetailsResponse is the response struct for api GetUploadDetails

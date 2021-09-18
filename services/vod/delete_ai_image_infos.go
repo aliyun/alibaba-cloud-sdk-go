@@ -71,10 +71,7 @@ func (client *Client) DeleteAIImageInfosWithCallback(request *DeleteAIImageInfos
 // DeleteAIImageInfosRequest is the request struct for api DeleteAIImageInfos
 type DeleteAIImageInfosRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AIImageInfoIds       string           `position:"Query" name:"AIImageInfoIds"`
+	AIImageInfoIds string `position:"Query" name:"AIImageInfoIds"`
 }
 
 // DeleteAIImageInfosResponse is the response struct for api DeleteAIImageInfos

@@ -71,14 +71,11 @@ func (client *Client) SubmitAIMediaAuditJobWithCallback(request *SubmitAIMediaAu
 // SubmitAIMediaAuditJobRequest is the request struct for api SubmitAIMediaAuditJob
 type SubmitAIMediaAuditJobRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	UserData                string           `position:"Query" name:"UserData"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId                 string           `position:"Query" name:"OwnerId"`
-	MediaId                 string           `position:"Query" name:"MediaId"`
-	TemplateId              string           `position:"Query" name:"TemplateId"`
-	MediaAuditConfiguration string           `position:"Query" name:"MediaAuditConfiguration"`
-	MediaType               string           `position:"Query" name:"MediaType"`
+	UserData                string `position:"Query" name:"UserData"`
+	MediaId                 string `position:"Query" name:"MediaId"`
+	TemplateId              string `position:"Query" name:"TemplateId"`
+	MediaAuditConfiguration string `position:"Query" name:"MediaAuditConfiguration"`
+	MediaType               string `position:"Query" name:"MediaType"`
 }
 
 // SubmitAIMediaAuditJobResponse is the response struct for api SubmitAIMediaAuditJob

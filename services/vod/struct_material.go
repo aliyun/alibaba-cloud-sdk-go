@@ -31,6 +31,7 @@ type Material struct {
 	CateName     string                                `json:"CateName" xml:"CateName"`
 	Source       string                                `json:"Source" xml:"Source"`
 	SpriteConfig string                                `json:"SpriteConfig" xml:"SpriteConfig"`
+	MaterialType string                                `json:"MaterialType" xml:"MaterialType"`
 	Snapshots    SnapshotsInGetEditingProjectMaterials `json:"Snapshots" xml:"Snapshots"`
 	Sprites      Sprites                               `json:"Sprites" xml:"Sprites"`
 }

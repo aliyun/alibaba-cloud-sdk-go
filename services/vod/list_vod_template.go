@@ -71,11 +71,8 @@ func (client *Client) ListVodTemplateWithCallback(request *ListVodTemplateReques
 // ListVodTemplateRequest is the request struct for api ListVodTemplate
 type ListVodTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TemplateType         string           `position:"Query" name:"TemplateType"`
-	AppId                string           `position:"Query" name:"AppId"`
+	TemplateType string `position:"Query" name:"TemplateType"`
+	AppId        string `position:"Query" name:"AppId"`
 }
 
 // ListVodTemplateResponse is the response struct for api ListVodTemplate

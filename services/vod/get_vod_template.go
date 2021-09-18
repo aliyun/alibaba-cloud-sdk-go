@@ -71,10 +71,7 @@ func (client *Client) GetVodTemplateWithCallback(request *GetVodTemplateRequest,
 // GetVodTemplateRequest is the request struct for api GetVodTemplate
 type GetVodTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VodTemplateId        string           `position:"Query" name:"VodTemplateId"`
+	VodTemplateId string `position:"Query" name:"VodTemplateId"`
 }
 
 // GetVodTemplateResponse is the response struct for api GetVodTemplate

@@ -71,10 +71,7 @@ func (client *Client) DeleteWatermarkWithCallback(request *DeleteWatermarkReques
 // DeleteWatermarkRequest is the request struct for api DeleteWatermark
 type DeleteWatermarkRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	WatermarkId          string           `position:"Query" name:"WatermarkId"`
+	WatermarkId string `position:"Query" name:"WatermarkId"`
 }
 
 // DeleteWatermarkResponse is the response struct for api DeleteWatermark

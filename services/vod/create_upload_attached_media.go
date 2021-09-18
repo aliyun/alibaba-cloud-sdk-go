@@ -71,22 +71,19 @@ func (client *Client) CreateUploadAttachedMediaWithCallback(request *CreateUploa
 // CreateUploadAttachedMediaRequest is the request struct for api CreateUploadAttachedMedia
 type CreateUploadAttachedMediaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Icon                 string           `position:"Query" name:"Icon"`
-	Description          string           `position:"Query" name:"Description"`
-	FileSize             string           `position:"Query" name:"FileSize"`
-	Title                string           `position:"Query" name:"Title"`
-	BusinessType         string           `position:"Query" name:"BusinessType"`
-	StorageLocation      string           `position:"Query" name:"StorageLocation"`
-	UserData             string           `position:"Query" name:"UserData"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CateIds              string           `position:"Query" name:"CateIds"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	MediaExt             string           `position:"Query" name:"MediaExt"`
-	FileName             string           `position:"Query" name:"FileName"`
-	AppId                string           `position:"Query" name:"AppId"`
+	Icon            string           `position:"Query" name:"Icon"`
+	Description     string           `position:"Query" name:"Description"`
+	FileSize        string           `position:"Query" name:"FileSize"`
+	Title           string           `position:"Query" name:"Title"`
+	BusinessType    string           `position:"Query" name:"BusinessType"`
+	StorageLocation string           `position:"Query" name:"StorageLocation"`
+	UserData        string           `position:"Query" name:"UserData"`
+	CateId          requests.Integer `position:"Query" name:"CateId"`
+	CateIds         string           `position:"Query" name:"CateIds"`
+	Tags            string           `position:"Query" name:"Tags"`
+	MediaExt        string           `position:"Query" name:"MediaExt"`
+	FileName        string           `position:"Query" name:"FileName"`
+	AppId           string           `position:"Query" name:"AppId"`
 }
 
 // CreateUploadAttachedMediaResponse is the response struct for api CreateUploadAttachedMedia

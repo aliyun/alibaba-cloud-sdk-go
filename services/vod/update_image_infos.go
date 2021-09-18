@@ -71,11 +71,8 @@ func (client *Client) UpdateImageInfosWithCallback(request *UpdateImageInfosRequ
 // UpdateImageInfosRequest is the request struct for api UpdateImageInfos
 type UpdateImageInfosRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	UpdateContent        string           `position:"Query" name:"UpdateContent"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UpdateContent       string           `position:"Query" name:"UpdateContent"`
+	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 }
 
 // UpdateImageInfosResponse is the response struct for api UpdateImageInfos

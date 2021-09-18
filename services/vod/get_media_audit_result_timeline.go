@@ -71,10 +71,7 @@ func (client *Client) GetMediaAuditResultTimelineWithCallback(request *GetMediaA
 // GetMediaAuditResultTimelineRequest is the request struct for api GetMediaAuditResultTimeline
 type GetMediaAuditResultTimelineRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
-	MediaId              string           `position:"Query" name:"MediaId"`
+	MediaId string `position:"Query" name:"MediaId"`
 }
 
 // GetMediaAuditResultTimelineResponse is the response struct for api GetMediaAuditResultTimeline

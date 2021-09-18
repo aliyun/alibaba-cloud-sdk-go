@@ -71,11 +71,12 @@ func (client *Client) GetEditingProjectWithCallback(request *GetEditingProjectRe
 // GetEditingProjectRequest is the request struct for api GetEditingProject
 type GetEditingProjectRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ProjectId            string `position:"Query" name:"ProjectId"`
+	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	FEExtendFlag         requests.Integer `position:"Query" name:"FEExtendFlag"`
+	ProjectId            string           `position:"Query" name:"ProjectId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              string           `position:"Query" name:"OwnerId"`
 }
 
 // GetEditingProjectResponse is the response struct for api GetEditingProject

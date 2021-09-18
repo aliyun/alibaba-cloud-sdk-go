@@ -71,18 +71,15 @@ func (client *Client) ListLiveRecordVideoWithCallback(request *ListLiveRecordVid
 // ListLiveRecordVideoRequest is the request struct for api ListLiveRecordVideo
 type ListLiveRecordVideoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	AppName              string           `position:"Query" name:"AppName"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	StreamName           string           `position:"Query" name:"StreamName"`
-	QueryType            string           `position:"Query" name:"QueryType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DomainName           string           `position:"Query" name:"DomainName"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	SortBy               string           `position:"Query" name:"SortBy"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	AppName    string           `position:"Query" name:"AppName"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	StreamName string           `position:"Query" name:"StreamName"`
+	QueryType  string           `position:"Query" name:"QueryType"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	PageNo     requests.Integer `position:"Query" name:"PageNo"`
+	SortBy     string           `position:"Query" name:"SortBy"`
 }
 
 // ListLiveRecordVideoResponse is the response struct for api ListLiveRecordVideo

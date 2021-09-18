@@ -71,12 +71,9 @@ func (client *Client) AddAITemplateWithCallback(request *AddAITemplateRequest, c
 // AddAITemplateRequest is the request struct for api AddAITemplate
 type AddAITemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TemplateConfig       string           `position:"Query" name:"TemplateConfig"`
-	TemplateType         string           `position:"Query" name:"TemplateType"`
-	TemplateName         string           `position:"Query" name:"TemplateName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateConfig string `position:"Query" name:"TemplateConfig"`
+	TemplateType   string `position:"Query" name:"TemplateType"`
+	TemplateName   string `position:"Query" name:"TemplateName"`
 }
 
 // AddAITemplateResponse is the response struct for api AddAITemplate

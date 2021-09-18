@@ -71,10 +71,7 @@ func (client *Client) ListAITemplateWithCallback(request *ListAITemplateRequest,
 // ListAITemplateRequest is the request struct for api ListAITemplate
 type ListAITemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TemplateType         string           `position:"Query" name:"TemplateType"`
+	TemplateType string `position:"Query" name:"TemplateType"`
 }
 
 // ListAITemplateResponse is the response struct for api ListAITemplate

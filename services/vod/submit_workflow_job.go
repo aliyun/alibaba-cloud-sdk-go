@@ -71,12 +71,9 @@ func (client *Client) SubmitWorkflowJobWithCallback(request *SubmitWorkflowJobRe
 // SubmitWorkflowJobRequest is the request struct for api SubmitWorkflowJob
 type SubmitWorkflowJobRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	WorkflowId           string           `position:"Query" name:"WorkflowId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	FileUrl              string           `position:"Query" name:"FileUrl"`
+	MediaId    string `position:"Query" name:"MediaId"`
+	FileUrl    string `position:"Query" name:"FileUrl"`
+	WorkflowId string `position:"Query" name:"WorkflowId"`
 }
 
 // SubmitWorkflowJobResponse is the response struct for api SubmitWorkflowJob

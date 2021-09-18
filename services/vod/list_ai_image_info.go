@@ -71,10 +71,7 @@ func (client *Client) ListAIImageInfoWithCallback(request *ListAIImageInfoReques
 // ListAIImageInfoRequest is the request struct for api ListAIImageInfo
 type ListAIImageInfoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VideoId              string           `position:"Query" name:"VideoId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VideoId string `position:"Query" name:"VideoId"`
 }
 
 // ListAIImageInfoResponse is the response struct for api ListAIImageInfo

@@ -17,5 +17,6 @@ package vod
 
 // Domains is a nested struct in vod response
 type Domains struct {
-	PageData []PageData `json:"PageData" xml:"PageData"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	Status     string `json:"Status" xml:"Status"`
 }

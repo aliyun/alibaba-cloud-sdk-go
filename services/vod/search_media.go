@@ -71,18 +71,15 @@ func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callb
 // SearchMediaRequest is the request struct for api SearchMedia
 type SearchMediaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SessionId            string           `position:"Query" name:"SessionId"`
-	ScrollToken          string           `position:"Query" name:"ScrollToken"`
-	SearchType           string           `position:"Query" name:"SearchType"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResultTypes          string           `position:"Query" name:"ResultTypes"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Match                string           `position:"Query" name:"Match"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	SortBy               string           `position:"Query" name:"SortBy"`
-	Fields               string           `position:"Query" name:"Fields"`
+	SessionId   string           `position:"Query" name:"SessionId"`
+	ScrollToken string           `position:"Query" name:"ScrollToken"`
+	SearchType  string           `position:"Query" name:"SearchType"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	ResultTypes string           `position:"Query" name:"ResultTypes"`
+	Match       string           `position:"Query" name:"Match"`
+	PageNo      requests.Integer `position:"Query" name:"PageNo"`
+	SortBy      string           `position:"Query" name:"SortBy"`
+	Fields      string           `position:"Query" name:"Fields"`
 }
 
 // SearchMediaResponse is the response struct for api SearchMedia

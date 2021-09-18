@@ -71,11 +71,8 @@ func (client *Client) GetVideoInfosWithCallback(request *GetVideoInfosRequest, c
 // GetVideoInfosRequest is the request struct for api GetVideoInfos
 type GetVideoInfosRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AdditionType         string           `position:"Query" name:"AdditionType"`
-	VideoIds             string           `position:"Query" name:"VideoIds"`
+	AdditionType string `position:"Query" name:"AdditionType"`
+	VideoIds     string `position:"Query" name:"VideoIds"`
 }
 
 // GetVideoInfosResponse is the response struct for api GetVideoInfos

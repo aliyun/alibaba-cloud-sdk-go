@@ -71,17 +71,14 @@ func (client *Client) SubmitTranscodeJobsWithCallback(request *SubmitTranscodeJo
 // SubmitTranscodeJobsRequest is the request struct for api SubmitTranscodeJobs
 type SubmitTranscodeJobsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VideoId              string           `position:"Query" name:"VideoId"`
-	OverrideParams       string           `position:"Query" name:"OverrideParams"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Priority             string           `position:"Query" name:"Priority"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
-	FileUrl              string           `position:"Query" name:"FileUrl"`
-	EncryptConfig        string           `position:"Query" name:"EncryptConfig"`
+	UserData        string `position:"Query" name:"UserData"`
+	VideoId         string `position:"Query" name:"VideoId"`
+	OverrideParams  string `position:"Query" name:"OverrideParams"`
+	Priority        string `position:"Query" name:"Priority"`
+	PipelineId      string `position:"Query" name:"PipelineId"`
+	TemplateGroupId string `position:"Query" name:"TemplateGroupId"`
+	FileUrl         string `position:"Query" name:"FileUrl"`
+	EncryptConfig   string `position:"Query" name:"EncryptConfig"`
 }
 
 // SubmitTranscodeJobsResponse is the response struct for api SubmitTranscodeJobs

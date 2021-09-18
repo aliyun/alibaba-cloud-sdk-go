@@ -17,6 +17,6 @@ package vod
 
 // UploadJob is a nested struct in vod response
 type UploadJob struct {
-	JobId     string `json:"JobId" xml:"JobId"`
 	SourceURL string `json:"SourceURL" xml:"SourceURL"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }

@@ -71,11 +71,8 @@ func (client *Client) SubmitPreprocessJobsWithCallback(request *SubmitPreprocess
 // SubmitPreprocessJobsRequest is the request struct for api SubmitPreprocessJobs
 type SubmitPreprocessJobsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VideoId              string           `position:"Query" name:"VideoId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PreprocessType       string           `position:"Query" name:"PreprocessType"`
+	VideoId        string `position:"Query" name:"VideoId"`
+	PreprocessType string `position:"Query" name:"PreprocessType"`
 }
 
 // SubmitPreprocessJobsResponse is the response struct for api SubmitPreprocessJobs

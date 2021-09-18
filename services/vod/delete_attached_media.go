@@ -71,10 +71,7 @@ func (client *Client) DeleteAttachedMediaWithCallback(request *DeleteAttachedMed
 // DeleteAttachedMediaRequest is the request struct for api DeleteAttachedMedia
 type DeleteAttachedMediaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	MediaIds             string           `position:"Query" name:"MediaIds"`
+	MediaIds string `position:"Query" name:"MediaIds"`
 }
 
 // DeleteAttachedMediaResponse is the response struct for api DeleteAttachedMedia

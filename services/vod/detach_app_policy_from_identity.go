@@ -71,13 +71,10 @@ func (client *Client) DetachAppPolicyFromIdentityWithCallback(request *DetachApp
 // DetachAppPolicyFromIdentityRequest is the request struct for api DetachAppPolicyFromIdentity
 type DetachAppPolicyFromIdentityRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PolicyNames          string           `position:"Query" name:"PolicyNames"`
-	IdentityName         string           `position:"Query" name:"IdentityName"`
-	IdentityType         string           `position:"Query" name:"IdentityType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AppId                string           `position:"Query" name:"AppId"`
+	IdentityType string `position:"Query" name:"IdentityType"`
+	PolicyNames  string `position:"Query" name:"PolicyNames"`
+	IdentityName string `position:"Query" name:"IdentityName"`
+	AppId        string `position:"Query" name:"AppId"`
 }
 
 // DetachAppPolicyFromIdentityResponse is the response struct for api DetachAppPolicyFromIdentity
