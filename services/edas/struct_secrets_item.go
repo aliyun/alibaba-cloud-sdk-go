@@ -17,14 +17,17 @@ package edas
 
 // SecretsItem is a nested struct in edas response
 type SecretsItem struct {
-	Name         string            `json:"Name" xml:"Name"`
-	Namespace    string            `json:"Namespace" xml:"Namespace"`
-	CreationTime string            `json:"CreationTime" xml:"CreationTime"`
-	Type         string            `json:"Type" xml:"Type"`
-	ClusterId    string            `json:"ClusterId" xml:"ClusterId"`
-	ClusterName  string            `json:"ClusterName" xml:"ClusterName"`
-	CertId       string            `json:"CertId" xml:"CertId"`
-	CertRegionId string            `json:"CertRegionId" xml:"CertRegionId"`
-	Data         []DataItem        `json:"Data" xml:"Data"`
-	RelatedApps  []RelatedAppsItem `json:"RelatedApps" xml:"RelatedApps"`
+	Type                string                    `json:"Type" xml:"Type"`
+	CreationTime        string                    `json:"CreationTime" xml:"CreationTime"`
+	ClusterName         string                    `json:"ClusterName" xml:"ClusterName"`
+	Namespace           string                    `json:"Namespace" xml:"Namespace"`
+	Base64Encoded       bool                      `json:"Base64Encoded" xml:"Base64Encoded"`
+	CertRegionId        string                    `json:"CertRegionId" xml:"CertRegionId"`
+	CertId              string                    `json:"CertId" xml:"CertId"`
+	Name                string                    `json:"Name" xml:"Name"`
+	ClusterId           string                    `json:"ClusterId" xml:"ClusterId"`
+	CertDetail          CertDetail                `json:"CertDetail" xml:"CertDetail"`
+	RelatedIngressRules []RelatedIngressRulesItem `json:"RelatedIngressRules" xml:"RelatedIngressRules"`
+	Data                []DataItem                `json:"Data" xml:"Data"`
+	RelatedApps         []RelatedAppsItem         `json:"RelatedApps" xml:"RelatedApps"`
 }

@@ -71,21 +71,22 @@ func (client *Client) CreateK8sSecretWithCallback(request *CreateK8sSecretReques
 // CreateK8sSecretRequest is the request struct for api CreateK8sSecret
 type CreateK8sSecretRequest struct {
 	*requests.RoaRequest
-	Data         string `position:"Body" name:"Data"`
-	Name         string `position:"Body" name:"Name"`
-	Namespace    string `position:"Body" name:"Namespace"`
-	ClusterId    string `position:"Body" name:"ClusterId"`
-	CertId       string `position:"Body" name:"CertId"`
-	Type         string `position:"Body" name:"Type"`
-	CertRegionId string `position:"Body" name:"CertRegionId"`
+	Base64Encoded requests.Boolean `position:"Body" name:"Base64Encoded"`
+	Data          string           `position:"Body" name:"Data"`
+	Name          string           `position:"Body" name:"Name"`
+	Namespace     string           `position:"Body" name:"Namespace"`
+	ClusterId     string           `position:"Body" name:"ClusterId"`
+	CertId        string           `position:"Body" name:"CertId"`
+	Type          string           `position:"Body" name:"Type"`
+	CertRegionId  string           `position:"Body" name:"CertRegionId"`
 }
 
 // CreateK8sSecretResponse is the response struct for api CreateK8sSecret
 type CreateK8sSecretResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateK8sSecretRequest creates a request to invoke CreateK8sSecret API

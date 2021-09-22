@@ -17,10 +17,11 @@ package edas
 
 // IngressConfsItem is a nested struct in edas response
 type IngressConfsItem struct {
-	Name         string      `json:"Name" xml:"Name"`
-	Namespace    string      `json:"Namespace" xml:"Namespace"`
-	Endpoint     string      `json:"Endpoint" xml:"Endpoint"`
 	CreationTime string      `json:"CreationTime" xml:"CreationTime"`
+	SslRedirect  bool        `json:"SslRedirect" xml:"SslRedirect"`
+	Endpoint     string      `json:"Endpoint" xml:"Endpoint"`
+	Namespace    string      `json:"Namespace" xml:"Namespace"`
+	Name         string      `json:"Name" xml:"Name"`
 	DashboardUrl string      `json:"DashboardUrl" xml:"DashboardUrl"`
 	Rules        []RulesItem `json:"Rules" xml:"Rules"`
 }

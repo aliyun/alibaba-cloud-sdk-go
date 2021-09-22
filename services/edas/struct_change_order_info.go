@@ -17,16 +17,17 @@ package edas
 
 // ChangeOrderInfo is a nested struct in edas response
 type ChangeOrderInfo struct {
-	ChangeOrderId          string           `json:"ChangeOrderId" xml:"ChangeOrderId"`
-	CreateUserId           string           `json:"CreateUserId" xml:"CreateUserId"`
-	Desc                   string           `json:"Desc" xml:"Desc"`
-	BatchCount             int              `json:"BatchCount" xml:"BatchCount"`
-	BatchType              string           `json:"BatchType" xml:"BatchType"`
 	Status                 int              `json:"Status" xml:"Status"`
+	ChangeOrderId          string           `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	BatchType              string           `json:"BatchType" xml:"BatchType"`
 	CoType                 string           `json:"CoType" xml:"CoType"`
 	CreateTime             string           `json:"CreateTime" xml:"CreateTime"`
-	SupportRollback        bool             `json:"SupportRollback" xml:"SupportRollback"`
 	ChangeOrderDescription string           `json:"ChangeOrderDescription" xml:"ChangeOrderDescription"`
+	BatchCount             int              `json:"BatchCount" xml:"BatchCount"`
+	CreateUserId           string           `json:"CreateUserId" xml:"CreateUserId"`
+	SupportRollback        bool             `json:"SupportRollback" xml:"SupportRollback"`
+	Desc                   string           `json:"Desc" xml:"Desc"`
+	Targets                Targets          `json:"Targets" xml:"Targets"`
 	TrafficControl         TrafficControl   `json:"TrafficControl" xml:"TrafficControl"`
 	PipelineInfoList       PipelineInfoList `json:"PipelineInfoList" xml:"PipelineInfoList"`
 }

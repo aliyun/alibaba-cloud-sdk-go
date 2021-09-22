@@ -18,7 +18,7 @@ package edas
 // ServiceStage is a nested struct in edas response
 type ServiceStage struct {
 	StageId   string `json:"StageId" xml:"StageId"`
-	StageName string `json:"StageName" xml:"StageName"`
 	Status    int    `json:"Status" xml:"Status"`
 	Message   string `json:"Message" xml:"Message"`
+	StageName string `json:"StageName" xml:"StageName"`
 }

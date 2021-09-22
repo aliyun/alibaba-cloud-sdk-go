@@ -18,6 +18,6 @@ package edas
 // ResultItem is a nested struct in edas response
 type ResultItem struct {
 	Total      int              `json:"Total" xml:"Total"`
-	Secrets    []SecretsItem    `json:"Secrets" xml:"Secrets"`
 	ConfigMaps []ConfigMapsItem `json:"ConfigMaps" xml:"ConfigMaps"`
+	Secrets    []SecretsItem    `json:"Secrets" xml:"Secrets"`
 }

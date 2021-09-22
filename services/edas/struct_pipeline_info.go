@@ -17,11 +17,11 @@ package edas
 
 // PipelineInfo is a nested struct in edas response
 type PipelineInfo struct {
-	PipelineId      string          `json:"PipelineId" xml:"PipelineId"`
 	PipelineName    string          `json:"PipelineName" xml:"PipelineName"`
-	PipelineStatus  int             `json:"PipelineStatus" xml:"PipelineStatus"`
 	StartTime       string          `json:"StartTime" xml:"StartTime"`
 	UpdateTime      string          `json:"UpdateTime" xml:"UpdateTime"`
+	PipelineStatus  int             `json:"PipelineStatus" xml:"PipelineStatus"`
+	PipelineId      string          `json:"PipelineId" xml:"PipelineId"`
 	StageList       StageList       `json:"StageList" xml:"StageList"`
 	StageDetailList StageDetailList `json:"StageDetailList" xml:"StageDetailList"`
 }

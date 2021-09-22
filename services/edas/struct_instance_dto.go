@@ -17,10 +17,10 @@ package edas
 
 // InstanceDTO is a nested struct in edas response
 type InstanceDTO struct {
-	InstanceName         string               `json:"InstanceName" xml:"InstanceName"`
-	InstanceIp           string               `json:"InstanceIp" xml:"InstanceIp"`
 	Status               int                  `json:"Status" xml:"Status"`
+	InstanceIp           string               `json:"InstanceIp" xml:"InstanceIp"`
 	PodName              string               `json:"PodName" xml:"PodName"`
+	InstanceName         string               `json:"InstanceName" xml:"InstanceName"`
 	PodStatus            string               `json:"PodStatus" xml:"PodStatus"`
 	InstanceStageDTOList InstanceStageDTOList `json:"InstanceStageDTOList" xml:"InstanceStageDTOList"`
 }

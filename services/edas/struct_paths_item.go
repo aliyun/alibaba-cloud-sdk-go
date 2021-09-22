@@ -17,9 +17,9 @@ package edas
 
 // PathsItem is a nested struct in edas response
 type PathsItem struct {
-	Path    string  `json:"Path" xml:"Path"`
-	AppId   string  `json:"AppId" xml:"AppId"`
-	AppName string  `json:"AppName" xml:"AppName"`
 	Status  string  `json:"Status" xml:"Status"`
+	Path    string  `json:"Path" xml:"Path"`
+	AppName string  `json:"AppName" xml:"AppName"`
+	AppId   string  `json:"AppId" xml:"AppId"`
 	Backend Backend `json:"Backend" xml:"Backend"`
 }

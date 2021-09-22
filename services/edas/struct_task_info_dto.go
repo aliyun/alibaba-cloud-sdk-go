@@ -17,13 +17,13 @@ package edas
 
 // TaskInfoDTO is a nested struct in edas response
 type TaskInfoDTO struct {
-	TaskName            string `json:"TaskName" xml:"TaskName"`
+	TaskErrorIgnorance  int    `json:"TaskErrorIgnorance" xml:"TaskErrorIgnorance"`
+	ShowManualIgnorance bool   `json:"ShowManualIgnorance" xml:"ShowManualIgnorance"`
 	TaskStatus          string `json:"TaskStatus" xml:"TaskStatus"`
 	TaskMessage         string `json:"TaskMessage" xml:"TaskMessage"`
-	TaskId              string `json:"TaskId" xml:"TaskId"`
+	TaskName            string `json:"TaskName" xml:"TaskName"`
 	TaskErrorCode       string `json:"TaskErrorCode" xml:"TaskErrorCode"`
-	TaskErrorMessage    string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
-	ShowManualIgnorance bool   `json:"ShowManualIgnorance" xml:"ShowManualIgnorance"`
-	TaskErrorIgnorance  int    `json:"TaskErrorIgnorance" xml:"TaskErrorIgnorance"`
 	RetryType           int    `json:"RetryType" xml:"RetryType"`
+	TaskId              string `json:"TaskId" xml:"TaskId"`
+	TaskErrorMessage    string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
 }

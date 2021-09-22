@@ -18,7 +18,7 @@ package edas
 // StageInfoDTO is a nested struct in edas response
 type StageInfoDTO struct {
 	StageId        string         `json:"StageId" xml:"StageId"`
-	StageName      string         `json:"StageName" xml:"StageName"`
 	Status         int            `json:"Status" xml:"Status"`
+	StageName      string         `json:"StageName" xml:"StageName"`
 	StageResultDTO StageResultDTO `json:"StageResultDTO" xml:"StageResultDTO"`
 }

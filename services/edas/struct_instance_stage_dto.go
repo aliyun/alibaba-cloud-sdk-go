@@ -18,9 +18,9 @@ package edas
 // InstanceStageDTO is a nested struct in edas response
 type InstanceStageDTO struct {
 	StageId      string `json:"StageId" xml:"StageId"`
-	StageName    string `json:"StageName" xml:"StageName"`
 	Status       int    `json:"Status" xml:"Status"`
-	StageMessage string `json:"StageMessage" xml:"StageMessage"`
 	StartTime    string `json:"StartTime" xml:"StartTime"`
+	StageMessage string `json:"StageMessage" xml:"StageMessage"`
 	FinishTime   string `json:"FinishTime" xml:"FinishTime"`
+	StageName    string `json:"StageName" xml:"StageName"`
 }
