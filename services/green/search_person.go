@@ -84,7 +84,7 @@ func CreateSearchPersonRequest() (request *SearchPersonRequest) {
 	request = &SearchPersonRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "SearchPerson", "/green/sface/search", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "SearchPerson", "/green/sface/search", "", "")
 	request.Method = requests.POST
 	return
 }

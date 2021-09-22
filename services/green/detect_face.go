@@ -84,7 +84,7 @@ func CreateDetectFaceRequest() (request *DetectFaceRequest) {
 	request = &DetectFaceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "DetectFace", "/green/face/detect", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "DetectFace", "/green/face/detect", "", "")
 	request.Method = requests.POST
 	return
 }

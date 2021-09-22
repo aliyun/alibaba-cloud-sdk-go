@@ -84,7 +84,7 @@ func CreateFileAsyncScanResultsRequest() (request *FileAsyncScanResultsRequest) 
 	request = &FileAsyncScanResultsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "FileAsyncScanResults", "/green/file/results", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "FileAsyncScanResults", "/green/file/results", "", "")
 	request.Method = requests.POST
 	return
 }

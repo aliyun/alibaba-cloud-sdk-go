@@ -84,7 +84,7 @@ func CreateDeletePersonRequest() (request *DeletePersonRequest) {
 	request = &DeletePersonRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "DeletePerson", "/green/sface/person/delete", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "DeletePerson", "/green/sface/person/delete", "", "")
 	request.Method = requests.POST
 	return
 }

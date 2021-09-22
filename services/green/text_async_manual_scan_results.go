@@ -84,7 +84,7 @@ func CreateTextAsyncManualScanResultsRequest() (request *TextAsyncManualScanResu
 	request = &TextAsyncManualScanResultsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "TextAsyncManualScanResults", "/green/text/manual/scan/results", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "TextAsyncManualScanResults", "/green/text/manual/scan/results", "", "")
 	request.Method = requests.POST
 	return
 }

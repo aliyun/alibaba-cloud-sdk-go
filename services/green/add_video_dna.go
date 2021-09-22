@@ -84,7 +84,7 @@ func CreateAddVideoDnaRequest() (request *AddVideoDnaRequest) {
 	request = &AddVideoDnaRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "AddVideoDna", "/green/video/dna/add", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "AddVideoDna", "/green/video/dna/add", "", "")
 	request.Method = requests.POST
 	return
 }

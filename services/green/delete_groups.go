@@ -84,7 +84,7 @@ func CreateDeleteGroupsRequest() (request *DeleteGroupsRequest) {
 	request = &DeleteGroupsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "DeleteGroups", "/green/sface/person/groups/delete", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "DeleteGroups", "/green/sface/person/groups/delete", "", "")
 	request.Method = requests.POST
 	return
 }

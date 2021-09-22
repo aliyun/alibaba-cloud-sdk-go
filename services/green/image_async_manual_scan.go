@@ -84,7 +84,7 @@ func CreateImageAsyncManualScanRequest() (request *ImageAsyncManualScanRequest) 
 	request = &ImageAsyncManualScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "ImageAsyncManualScan", "/green/image/manual/asyncScan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "ImageAsyncManualScan", "/green/image/manual/asyncScan", "", "")
 	request.Method = requests.POST
 	return
 }

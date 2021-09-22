@@ -84,7 +84,7 @@ func CreateAddSimilarityLibraryRequest() (request *AddSimilarityLibraryRequest) 
 	request = &AddSimilarityLibraryRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "AddSimilarityLibrary", "/green/similarity/library/add", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "AddSimilarityLibrary", "/green/similarity/library/add", "", "")
 	request.Method = requests.POST
 	return
 }

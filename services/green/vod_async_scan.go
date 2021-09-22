@@ -84,7 +84,7 @@ func CreateVodAsyncScanRequest() (request *VodAsyncScanRequest) {
 	request = &VodAsyncScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "VodAsyncScan", "/green/vod/asyncscan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VodAsyncScan", "/green/vod/asyncscan", "", "")
 	request.Method = requests.POST
 	return
 }

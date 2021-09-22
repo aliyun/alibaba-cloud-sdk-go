@@ -84,7 +84,7 @@ func CreateAddFacesRequest() (request *AddFacesRequest) {
 	request = &AddFacesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "AddFaces", "/green/sface/face/add", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "AddFaces", "/green/sface/face/add", "", "")
 	request.Method = requests.POST
 	return
 }

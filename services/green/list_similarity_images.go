@@ -84,7 +84,7 @@ func CreateListSimilarityImagesRequest() (request *ListSimilarityImagesRequest) 
 	request = &ListSimilarityImagesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "ListSimilarityImages", "/green/similarity/image/list", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "ListSimilarityImages", "/green/similarity/image/list", "", "")
 	request.Method = requests.POST
 	return
 }

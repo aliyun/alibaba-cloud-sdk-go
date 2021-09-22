@@ -84,7 +84,7 @@ func CreateTextFeedbackRequest() (request *TextFeedbackRequest) {
 	request = &TextFeedbackRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "TextFeedback", "/green/text/feedback", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "TextFeedback", "/green/text/feedback", "", "")
 	request.Method = requests.POST
 	return
 }

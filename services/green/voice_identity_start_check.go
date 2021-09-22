@@ -84,7 +84,7 @@ func CreateVoiceIdentityStartCheckRequest() (request *VoiceIdentityStartCheckReq
 	request = &VoiceIdentityStartCheckRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "VoiceIdentityStartCheck", "/green/voice/auth/start/check", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VoiceIdentityStartCheck", "/green/voice/auth/start/check", "", "")
 	request.Method = requests.POST
 	return
 }

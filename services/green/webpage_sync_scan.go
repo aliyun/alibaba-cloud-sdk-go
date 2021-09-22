@@ -84,7 +84,7 @@ func CreateWebpageSyncScanRequest() (request *WebpageSyncScanRequest) {
 	request = &WebpageSyncScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "WebpageSyncScan", "/green/webpage/scan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "WebpageSyncScan", "/green/webpage/scan", "", "")
 	request.Method = requests.POST
 	return
 }

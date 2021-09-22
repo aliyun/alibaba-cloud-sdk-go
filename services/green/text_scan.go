@@ -84,7 +84,7 @@ func CreateTextScanRequest() (request *TextScanRequest) {
 	request = &TextScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "TextScan", "/green/text/scan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "TextScan", "/green/text/scan", "", "")
 	request.Method = requests.POST
 	return
 }

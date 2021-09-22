@@ -84,7 +84,7 @@ func CreateWebpageAsyncScanRequest() (request *WebpageAsyncScanRequest) {
 	request = &WebpageAsyncScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "WebpageAsyncScan", "/green/webpage/asyncscan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "WebpageAsyncScan", "/green/webpage/asyncscan", "", "")
 	request.Method = requests.POST
 	return
 }

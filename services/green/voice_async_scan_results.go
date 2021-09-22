@@ -84,7 +84,7 @@ func CreateVoiceAsyncScanResultsRequest() (request *VoiceAsyncScanResultsRequest
 	request = &VoiceAsyncScanResultsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "VoiceAsyncScanResults", "/green/voice/results", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VoiceAsyncScanResults", "/green/voice/results", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,7 +84,7 @@ func CreateVoiceIdentityUnregisterRequest() (request *VoiceIdentityUnregisterReq
 	request = &VoiceIdentityUnregisterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "VoiceIdentityUnregister", "/green/voice/auth/unregister", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VoiceIdentityUnregister", "/green/voice/auth/unregister", "", "")
 	request.Method = requests.POST
 	return
 }

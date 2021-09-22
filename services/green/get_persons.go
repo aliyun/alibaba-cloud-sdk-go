@@ -84,7 +84,7 @@ func CreateGetPersonsRequest() (request *GetPersonsRequest) {
 	request = &GetPersonsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "GetPersons", "/green/sface/group/persons", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "GetPersons", "/green/sface/group/persons", "", "")
 	request.Method = requests.POST
 	return
 }

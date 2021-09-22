@@ -84,7 +84,7 @@ func CreateLiveStreamCancelScanRequest() (request *LiveStreamCancelScanRequest) 
 	request = &LiveStreamCancelScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "LiveStreamCancelScan", "/green/livestream/cancelscan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "LiveStreamCancelScan", "/green/livestream/cancelscan", "", "")
 	request.Method = requests.POST
 	return
 }

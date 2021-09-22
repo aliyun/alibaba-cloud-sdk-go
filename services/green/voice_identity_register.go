@@ -84,7 +84,7 @@ func CreateVoiceIdentityRegisterRequest() (request *VoiceIdentityRegisterRequest
 	request = &VoiceIdentityRegisterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "VoiceIdentityRegister", "/green/voice/auth/register", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VoiceIdentityRegister", "/green/voice/auth/register", "", "")
 	request.Method = requests.POST
 	return
 }

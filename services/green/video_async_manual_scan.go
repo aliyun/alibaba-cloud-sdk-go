@@ -84,7 +84,7 @@ func CreateVideoAsyncManualScanRequest() (request *VideoAsyncManualScanRequest) 
 	request = &VideoAsyncManualScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "VideoAsyncManualScan", "/green/video/manual/asyncScan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VideoAsyncManualScan", "/green/video/manual/asyncScan", "", "")
 	request.Method = requests.POST
 	return
 }

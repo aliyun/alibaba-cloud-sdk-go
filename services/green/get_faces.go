@@ -85,7 +85,7 @@ func CreateGetFacesRequest() (request *GetFacesRequest) {
 	request = &GetFacesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "GetFaces", "/green/sface/faces", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "GetFaces", "/green/sface/faces", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,7 +84,7 @@ func CreateDeleteVideoDnaGroupRequest() (request *DeleteVideoDnaGroupRequest) {
 	request = &DeleteVideoDnaGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "DeleteVideoDnaGroup", "/green/video/dna/group/delete", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "DeleteVideoDnaGroup", "/green/video/dna/group/delete", "", "")
 	request.Method = requests.POST
 	return
 }

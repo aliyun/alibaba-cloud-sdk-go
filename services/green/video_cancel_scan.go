@@ -84,7 +84,7 @@ func CreateVideoCancelScanRequest() (request *VideoCancelScanRequest) {
 	request = &VideoCancelScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "VideoCancelScan", "/green/video/cancelscan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VideoCancelScan", "/green/video/cancelscan", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,7 +84,7 @@ func CreateLiveStreamAsyncScanResultsRequest() (request *LiveStreamAsyncScanResu
 	request = &LiveStreamAsyncScanResultsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "LiveStreamAsyncScanResults", "/green/livestream/results", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "LiveStreamAsyncScanResults", "/green/livestream/results", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,7 +84,7 @@ func CreateDeleteSimilarityImageRequest() (request *DeleteSimilarityImageRequest
 	request = &DeleteSimilarityImageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "DeleteSimilarityImage", "/green/similarity/image/delete", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "DeleteSimilarityImage", "/green/similarity/image/delete", "", "")
 	request.Method = requests.POST
 	return
 }

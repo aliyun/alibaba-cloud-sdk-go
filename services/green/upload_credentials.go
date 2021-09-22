@@ -84,7 +84,7 @@ func CreateUploadCredentialsRequest() (request *UploadCredentialsRequest) {
 	request = &UploadCredentialsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "UploadCredentials", "/green/credentials/uploadcredentials", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "UploadCredentials", "/green/credentials/uploadcredentials", "", "")
 	request.Method = requests.POST
 	return
 }

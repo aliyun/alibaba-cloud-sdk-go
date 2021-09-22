@@ -84,7 +84,7 @@ func CreateImageSyncScanRequest() (request *ImageSyncScanRequest) {
 	request = &ImageSyncScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "ImageSyncScan", "/green/image/scan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "ImageSyncScan", "/green/image/scan", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,7 +84,7 @@ func CreateAddGroupsRequest() (request *AddGroupsRequest) {
 	request = &AddGroupsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "AddGroups", "/green/sface/person/groups/add", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "AddGroups", "/green/sface/person/groups/add", "", "")
 	request.Method = requests.POST
 	return
 }

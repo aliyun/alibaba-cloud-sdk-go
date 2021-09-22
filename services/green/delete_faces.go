@@ -84,7 +84,7 @@ func CreateDeleteFacesRequest() (request *DeleteFacesRequest) {
 	request = &DeleteFacesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "DeleteFaces", "/green/sface/face/delete", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "DeleteFaces", "/green/sface/face/delete", "", "")
 	request.Method = requests.POST
 	return
 }

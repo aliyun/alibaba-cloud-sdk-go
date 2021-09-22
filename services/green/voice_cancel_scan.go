@@ -84,7 +84,7 @@ func CreateVoiceCancelScanRequest() (request *VoiceCancelScanRequest) {
 	request = &VoiceCancelScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "VoiceCancelScan", "/green/voice/cancelscan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VoiceCancelScan", "/green/voice/cancelscan", "", "")
 	request.Method = requests.POST
 	return
 }
