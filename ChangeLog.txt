@@ -1,3 +1,7 @@
+2021-09-22 Version: v1.61.1269
+- Generated 2015-01-09 for `Alidns`.
+- Supported API for GTM.
+
 2021-09-22 Version: v1.61.1268
 - Generated 2018-05-09 for `Green`.
 
