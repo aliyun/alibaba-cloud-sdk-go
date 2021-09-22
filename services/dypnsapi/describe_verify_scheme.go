@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVerifyScheme invokes the dypnsapi.DescribeVerifyScheme API synchronously
-// api document: https://help.aliyun.com/api/dypnsapi/describeverifyscheme.html
 func (client *Client) DescribeVerifyScheme(request *DescribeVerifySchemeRequest) (response *DescribeVerifySchemeResponse, err error) {
 	response = CreateDescribeVerifySchemeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVerifyScheme(request *DescribeVerifySchemeRequest)
 }
 
 // DescribeVerifySchemeWithChan invokes the dypnsapi.DescribeVerifyScheme API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/describeverifyscheme.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVerifySchemeWithChan(request *DescribeVerifySchemeRequest) (<-chan *DescribeVerifySchemeResponse, <-chan error) {
 	responseChan := make(chan *DescribeVerifySchemeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVerifySchemeWithChan(request *DescribeVerifyScheme
 }
 
 // DescribeVerifySchemeWithCallback invokes the dypnsapi.DescribeVerifyScheme API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/describeverifyscheme.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVerifySchemeWithCallback(request *DescribeVerifySchemeRequest, callback func(response *DescribeVerifySchemeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type DescribeVerifySchemeRequest struct {
 // DescribeVerifySchemeResponse is the response struct for api DescribeVerifyScheme
 type DescribeVerifySchemeResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	Code                 string               `json:"Code" xml:"Code"`
 	Message              string               `json:"Message" xml:"Message"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	SchemeQueryResultDTO SchemeQueryResultDTO `json:"SchemeQueryResultDTO" xml:"SchemeQueryResultDTO"`
 }
 
@@ -97,7 +92,7 @@ func CreateDescribeVerifySchemeRequest() (request *DescribeVerifySchemeRequest) 
 	request = &DescribeVerifySchemeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "DescribeVerifyScheme", "dypns", "openAPI")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "DescribeVerifyScheme", "", "")
 	request.Method = requests.POST
 	return
 }

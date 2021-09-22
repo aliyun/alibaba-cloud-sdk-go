@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteVerifyScheme invokes the dypnsapi.DeleteVerifyScheme API synchronously
-func (client *Client) DeleteVerifyScheme(request *DeleteVerifySchemeRequest) (response *DeleteVerifySchemeResponse, err error) {
-	response = CreateDeleteVerifySchemeResponse()
+// GetSmsCode invokes the dypnsapi.GetSmsCode API synchronously
+func (client *Client) GetSmsCode(request *GetSmsCodeRequest) (response *GetSmsCodeResponse, err error) {
+	response = CreateGetSmsCodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteVerifySchemeWithChan invokes the dypnsapi.DeleteVerifyScheme API asynchronously
-func (client *Client) DeleteVerifySchemeWithChan(request *DeleteVerifySchemeRequest) (<-chan *DeleteVerifySchemeResponse, <-chan error) {
-	responseChan := make(chan *DeleteVerifySchemeResponse, 1)
+// GetSmsCodeWithChan invokes the dypnsapi.GetSmsCode API asynchronously
+func (client *Client) GetSmsCodeWithChan(request *GetSmsCodeRequest) (<-chan *GetSmsCodeResponse, <-chan error) {
+	responseChan := make(chan *GetSmsCodeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteVerifyScheme(request)
+		response, err := client.GetSmsCode(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteVerifySchemeWithChan(request *DeleteVerifySchemeRequ
 	return responseChan, errChan
 }
 
-// DeleteVerifySchemeWithCallback invokes the dypnsapi.DeleteVerifyScheme API asynchronously
-func (client *Client) DeleteVerifySchemeWithCallback(request *DeleteVerifySchemeRequest, callback func(response *DeleteVerifySchemeResponse, err error)) <-chan int {
+// GetSmsCodeWithCallback invokes the dypnsapi.GetSmsCode API asynchronously
+func (client *Client) GetSmsCodeWithCallback(request *GetSmsCodeRequest, callback func(response *GetSmsCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteVerifySchemeResponse
+		var response *GetSmsCodeResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteVerifyScheme(request)
+		response, err = client.GetSmsCode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,41 @@ func (client *Client) DeleteVerifySchemeWithCallback(request *DeleteVerifyScheme
 	return result
 }
 
-// DeleteVerifySchemeRequest is the request struct for api DeleteVerifyScheme
-type DeleteVerifySchemeRequest struct {
+// GetSmsCodeRequest is the request struct for api GetSmsCode
+type GetSmsCodeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ProductCode          string           `position:"Query" name:"ProductCode"`
+	PhoneNumber          string           `position:"Query" name:"PhoneNumber"`
+	BizToken             string           `position:"Query" name:"BizToken"`
+	SceneCode            string           `position:"Query" name:"SceneCode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OsType               string           `position:"Query" name:"OsType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SchemeCode           string           `position:"Query" name:"SchemeCode"`
-	CustomerId           requests.Integer `position:"Query" name:"CustomerId"`
 }
 
-// DeleteVerifySchemeResponse is the response struct for api DeleteVerifyScheme
-type DeleteVerifySchemeResponse struct {
+// GetSmsCodeResponse is the response struct for api GetSmsCode
+type GetSmsCodeResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	SmsToken  string `json:"SmsToken" xml:"SmsToken"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    bool   `json:"Result" xml:"Result"`
 }
 
-// CreateDeleteVerifySchemeRequest creates a request to invoke DeleteVerifyScheme API
-func CreateDeleteVerifySchemeRequest() (request *DeleteVerifySchemeRequest) {
-	request = &DeleteVerifySchemeRequest{
+// CreateGetSmsCodeRequest creates a request to invoke GetSmsCode API
+func CreateGetSmsCodeRequest() (request *GetSmsCodeRequest) {
+	request = &GetSmsCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "DeleteVerifyScheme", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetSmsCode", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteVerifySchemeResponse creates a response to parse from DeleteVerifyScheme response
-func CreateDeleteVerifySchemeResponse() (response *DeleteVerifySchemeResponse) {
-	response = &DeleteVerifySchemeResponse{
+// CreateGetSmsCodeResponse creates a response to parse from GetSmsCode response
+func CreateGetSmsCodeResponse() (response *GetSmsCodeResponse) {
+	response = &GetSmsCodeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

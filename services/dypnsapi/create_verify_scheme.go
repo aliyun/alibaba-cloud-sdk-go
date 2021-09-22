@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVerifyScheme invokes the dypnsapi.CreateVerifyScheme API synchronously
-// api document: https://help.aliyun.com/api/dypnsapi/createverifyscheme.html
 func (client *Client) CreateVerifyScheme(request *CreateVerifySchemeRequest) (response *CreateVerifySchemeResponse, err error) {
 	response = CreateCreateVerifySchemeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVerifyScheme(request *CreateVerifySchemeRequest) (re
 }
 
 // CreateVerifySchemeWithChan invokes the dypnsapi.CreateVerifyScheme API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/createverifyscheme.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVerifySchemeWithChan(request *CreateVerifySchemeRequest) (<-chan *CreateVerifySchemeResponse, <-chan error) {
 	responseChan := make(chan *CreateVerifySchemeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVerifySchemeWithChan(request *CreateVerifySchemeRequ
 }
 
 // CreateVerifySchemeWithCallback invokes the dypnsapi.CreateVerifyScheme API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/createverifyscheme.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVerifySchemeWithCallback(request *CreateVerifySchemeRequest, callback func(response *CreateVerifySchemeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,9 +85,9 @@ type CreateVerifySchemeRequest struct {
 // CreateVerifySchemeResponse is the response struct for api CreateVerifyScheme
 type CreateVerifySchemeResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Code                string              `json:"Code" xml:"Code"`
 	Message             string              `json:"Message" xml:"Message"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	GateVerifySchemeDTO GateVerifySchemeDTO `json:"GateVerifySchemeDTO" xml:"GateVerifySchemeDTO"`
 }
 
@@ -101,7 +96,7 @@ func CreateCreateVerifySchemeRequest() (request *CreateVerifySchemeRequest) {
 	request = &CreateVerifySchemeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypns", "openAPI")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "", "")
 	request.Method = requests.POST
 	return
 }

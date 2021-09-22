@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyMobile invokes the dypnsapi.VerifyMobile API synchronously
-// api document: https://help.aliyun.com/api/dypnsapi/verifymobile.html
 func (client *Client) VerifyMobile(request *VerifyMobileRequest) (response *VerifyMobileResponse, err error) {
 	response = CreateVerifyMobileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyMobile(request *VerifyMobileRequest) (response *Veri
 }
 
 // VerifyMobileWithChan invokes the dypnsapi.VerifyMobile API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/verifymobile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyMobileWithChan(request *VerifyMobileRequest) (<-chan *VerifyMobileResponse, <-chan error) {
 	responseChan := make(chan *VerifyMobileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyMobileWithChan(request *VerifyMobileRequest) (<-chan
 }
 
 // VerifyMobileWithCallback invokes the dypnsapi.VerifyMobile API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/verifymobile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyMobileWithCallback(request *VerifyMobileRequest, callback func(response *VerifyMobileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,9 +82,9 @@ type VerifyMobileRequest struct {
 // VerifyMobileResponse is the response struct for api VerifyMobile
 type VerifyMobileResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Code                string              `json:"Code" xml:"Code"`
 	Message             string              `json:"Message" xml:"Message"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	GateVerifyResultDTO GateVerifyResultDTO `json:"GateVerifyResultDTO" xml:"GateVerifyResultDTO"`
 }
 
@@ -98,7 +93,7 @@ func CreateVerifyMobileRequest() (request *VerifyMobileRequest) {
 	request = &VerifyMobileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifyMobile", "dypns", "openAPI")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifyMobile", "", "")
 	request.Method = requests.POST
 	return
 }

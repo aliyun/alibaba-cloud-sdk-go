@@ -21,7 +21,6 @@ import (
 )
 
 // GetAuthToken invokes the dypnsapi.GetAuthToken API synchronously
-// api document: https://help.aliyun.com/api/dypnsapi/getauthtoken.html
 func (client *Client) GetAuthToken(request *GetAuthTokenRequest) (response *GetAuthTokenResponse, err error) {
 	response = CreateGetAuthTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAuthToken(request *GetAuthTokenRequest) (response *GetA
 }
 
 // GetAuthTokenWithChan invokes the dypnsapi.GetAuthToken API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/getauthtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAuthTokenWithChan(request *GetAuthTokenRequest) (<-chan *GetAuthTokenResponse, <-chan error) {
 	responseChan := make(chan *GetAuthTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAuthTokenWithChan(request *GetAuthTokenRequest) (<-chan
 }
 
 // GetAuthTokenWithCallback invokes the dypnsapi.GetAuthToken API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/getauthtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAuthTokenWithCallback(request *GetAuthTokenRequest, callback func(response *GetAuthTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type GetAuthTokenRequest struct {
 // GetAuthTokenResponse is the response struct for api GetAuthToken
 type GetAuthTokenResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Code      string    `json:"Code" xml:"Code"`
 	Message   string    `json:"Message" xml:"Message"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	TokenInfo TokenInfo `json:"TokenInfo" xml:"TokenInfo"`
 }
 
@@ -97,7 +92,7 @@ func CreateGetAuthTokenRequest() (request *GetAuthTokenRequest) {
 	request = &GetAuthTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetAuthToken", "dypns", "openAPI")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetAuthToken", "", "")
 	request.Method = requests.POST
 	return
 }

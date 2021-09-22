@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyPhoneWithToken invokes the dypnsapi.VerifyPhoneWithToken API synchronously
-// api document: https://help.aliyun.com/api/dypnsapi/verifyphonewithtoken.html
 func (client *Client) VerifyPhoneWithToken(request *VerifyPhoneWithTokenRequest) (response *VerifyPhoneWithTokenResponse, err error) {
 	response = CreateVerifyPhoneWithTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyPhoneWithToken(request *VerifyPhoneWithTokenRequest)
 }
 
 // VerifyPhoneWithTokenWithChan invokes the dypnsapi.VerifyPhoneWithToken API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/verifyphonewithtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyPhoneWithTokenWithChan(request *VerifyPhoneWithTokenRequest) (<-chan *VerifyPhoneWithTokenResponse, <-chan error) {
 	responseChan := make(chan *VerifyPhoneWithTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyPhoneWithTokenWithChan(request *VerifyPhoneWithToken
 }
 
 // VerifyPhoneWithTokenWithCallback invokes the dypnsapi.VerifyPhoneWithToken API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/verifyphonewithtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyPhoneWithTokenWithCallback(request *VerifyPhoneWithTokenRequest, callback func(response *VerifyPhoneWithTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type VerifyPhoneWithTokenRequest struct {
 // VerifyPhoneWithTokenResponse is the response struct for api VerifyPhoneWithToken
 type VerifyPhoneWithTokenResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Code       string     `json:"Code" xml:"Code"`
 	Message    string     `json:"Message" xml:"Message"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	GateVerify GateVerify `json:"GateVerify" xml:"GateVerify"`
 }
 
@@ -97,7 +92,7 @@ func CreateVerifyPhoneWithTokenRequest() (request *VerifyPhoneWithTokenRequest) 
 	request = &VerifyPhoneWithTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifyPhoneWithToken", "dypns", "openAPI")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifyPhoneWithToken", "", "")
 	request.Method = requests.POST
 	return
 }

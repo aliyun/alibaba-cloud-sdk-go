@@ -21,7 +21,6 @@ import (
 )
 
 // GetMobile invokes the dypnsapi.GetMobile API synchronously
-// api document: https://help.aliyun.com/api/dypnsapi/getmobile.html
 func (client *Client) GetMobile(request *GetMobileRequest) (response *GetMobileResponse, err error) {
 	response = CreateGetMobileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMobile(request *GetMobileRequest) (response *GetMobileR
 }
 
 // GetMobileWithChan invokes the dypnsapi.GetMobile API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/getmobile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMobileWithChan(request *GetMobileRequest) (<-chan *GetMobileResponse, <-chan error) {
 	responseChan := make(chan *GetMobileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMobileWithChan(request *GetMobileRequest) (<-chan *GetM
 }
 
 // GetMobileWithCallback invokes the dypnsapi.GetMobile API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/getmobile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMobileWithCallback(request *GetMobileRequest, callback func(response *GetMobileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type GetMobileRequest struct {
 // GetMobileResponse is the response struct for api GetMobile
 type GetMobileResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	Code               string             `json:"Code" xml:"Code"`
 	Message            string             `json:"Message" xml:"Message"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	GetMobileResultDTO GetMobileResultDTO `json:"GetMobileResultDTO" xml:"GetMobileResultDTO"`
 }
 
@@ -97,7 +92,7 @@ func CreateGetMobileRequest() (request *GetMobileRequest) {
 	request = &GetMobileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetMobile", "dypns", "openAPI")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetMobile", "", "")
 	request.Method = requests.POST
 	return
 }

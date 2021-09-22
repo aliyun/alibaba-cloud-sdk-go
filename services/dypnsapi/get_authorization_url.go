@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteVerifyScheme invokes the dypnsapi.DeleteVerifyScheme API synchronously
-func (client *Client) DeleteVerifyScheme(request *DeleteVerifySchemeRequest) (response *DeleteVerifySchemeResponse, err error) {
-	response = CreateDeleteVerifySchemeResponse()
+// GetAuthorizationUrl invokes the dypnsapi.GetAuthorizationUrl API synchronously
+func (client *Client) GetAuthorizationUrl(request *GetAuthorizationUrlRequest) (response *GetAuthorizationUrlResponse, err error) {
+	response = CreateGetAuthorizationUrlResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteVerifySchemeWithChan invokes the dypnsapi.DeleteVerifyScheme API asynchronously
-func (client *Client) DeleteVerifySchemeWithChan(request *DeleteVerifySchemeRequest) (<-chan *DeleteVerifySchemeResponse, <-chan error) {
-	responseChan := make(chan *DeleteVerifySchemeResponse, 1)
+// GetAuthorizationUrlWithChan invokes the dypnsapi.GetAuthorizationUrl API asynchronously
+func (client *Client) GetAuthorizationUrlWithChan(request *GetAuthorizationUrlRequest) (<-chan *GetAuthorizationUrlResponse, <-chan error) {
+	responseChan := make(chan *GetAuthorizationUrlResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteVerifyScheme(request)
+		response, err := client.GetAuthorizationUrl(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteVerifySchemeWithChan(request *DeleteVerifySchemeRequ
 	return responseChan, errChan
 }
 
-// DeleteVerifySchemeWithCallback invokes the dypnsapi.DeleteVerifyScheme API asynchronously
-func (client *Client) DeleteVerifySchemeWithCallback(request *DeleteVerifySchemeRequest, callback func(response *DeleteVerifySchemeResponse, err error)) <-chan int {
+// GetAuthorizationUrlWithCallback invokes the dypnsapi.GetAuthorizationUrl API asynchronously
+func (client *Client) GetAuthorizationUrlWithCallback(request *GetAuthorizationUrlRequest, callback func(response *GetAuthorizationUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteVerifySchemeResponse
+		var response *GetAuthorizationUrlResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteVerifyScheme(request)
+		response, err = client.GetAuthorizationUrl(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,39 @@ func (client *Client) DeleteVerifySchemeWithCallback(request *DeleteVerifyScheme
 	return result
 }
 
-// DeleteVerifySchemeRequest is the request struct for api DeleteVerifyScheme
-type DeleteVerifySchemeRequest struct {
+// GetAuthorizationUrlRequest is the request struct for api GetAuthorizationUrl
+type GetAuthorizationUrlRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SchemeId             requests.Integer `position:"Query" name:"SchemeId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SchemeCode           string           `position:"Query" name:"SchemeCode"`
-	CustomerId           requests.Integer `position:"Query" name:"CustomerId"`
+	PhoneNo              string           `position:"Query" name:"PhoneNo"`
+	EndDate              string           `position:"Query" name:"EndDate"`
 }
 
-// DeleteVerifySchemeResponse is the response struct for api DeleteVerifyScheme
-type DeleteVerifySchemeResponse struct {
+// GetAuthorizationUrlResponse is the response struct for api GetAuthorizationUrl
+type GetAuthorizationUrlResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    bool   `json:"Result" xml:"Result"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateDeleteVerifySchemeRequest creates a request to invoke DeleteVerifyScheme API
-func CreateDeleteVerifySchemeRequest() (request *DeleteVerifySchemeRequest) {
-	request = &DeleteVerifySchemeRequest{
+// CreateGetAuthorizationUrlRequest creates a request to invoke GetAuthorizationUrl API
+func CreateGetAuthorizationUrlRequest() (request *GetAuthorizationUrlRequest) {
+	request = &GetAuthorizationUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "DeleteVerifyScheme", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetAuthorizationUrl", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteVerifySchemeResponse creates a response to parse from DeleteVerifyScheme response
-func CreateDeleteVerifySchemeResponse() (response *DeleteVerifySchemeResponse) {
-	response = &DeleteVerifySchemeResponse{
+// CreateGetAuthorizationUrlResponse creates a response to parse from GetAuthorizationUrl response
+func CreateGetAuthorizationUrlResponse() (response *GetAuthorizationUrlResponse) {
+	response = &GetAuthorizationUrlResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

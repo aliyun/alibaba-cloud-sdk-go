@@ -17,6 +17,6 @@ package dypnsapi
 
 // GateVerify is a nested struct in dypnsapi response
 type GateVerify struct {
-	VerifyId     string `json:"VerifyId" xml:"VerifyId"`
 	VerifyResult string `json:"VerifyResult" xml:"VerifyResult"`
+	VerifyId     string `json:"VerifyId" xml:"VerifyId"`
 }

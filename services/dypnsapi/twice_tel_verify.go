@@ -21,7 +21,6 @@ import (
 )
 
 // TwiceTelVerify invokes the dypnsapi.TwiceTelVerify API synchronously
-// api document: https://help.aliyun.com/api/dypnsapi/twicetelverify.html
 func (client *Client) TwiceTelVerify(request *TwiceTelVerifyRequest) (response *TwiceTelVerifyResponse, err error) {
 	response = CreateTwiceTelVerifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TwiceTelVerify(request *TwiceTelVerifyRequest) (response *
 }
 
 // TwiceTelVerifyWithChan invokes the dypnsapi.TwiceTelVerify API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/twicetelverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TwiceTelVerifyWithChan(request *TwiceTelVerifyRequest) (<-chan *TwiceTelVerifyResponse, <-chan error) {
 	responseChan := make(chan *TwiceTelVerifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TwiceTelVerifyWithChan(request *TwiceTelVerifyRequest) (<-
 }
 
 // TwiceTelVerifyWithCallback invokes the dypnsapi.TwiceTelVerify API asynchronously
-// api document: https://help.aliyun.com/api/dypnsapi/twicetelverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TwiceTelVerifyWithCallback(request *TwiceTelVerifyRequest, callback func(response *TwiceTelVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type TwiceTelVerifyRequest struct {
 // TwiceTelVerifyResponse is the response struct for api TwiceTelVerify
 type TwiceTelVerifyResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	Code                 string               `json:"Code" xml:"Code"`
 	Message              string               `json:"Message" xml:"Message"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	TwiceTelVerifyResult TwiceTelVerifyResult `json:"TwiceTelVerifyResult" xml:"TwiceTelVerifyResult"`
 }
 
@@ -97,7 +92,7 @@ func CreateTwiceTelVerifyRequest() (request *TwiceTelVerifyRequest) {
 	request = &TwiceTelVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypns", "openAPI")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "TwiceTelVerify", "", "")
 	request.Method = requests.POST
 	return
 }
