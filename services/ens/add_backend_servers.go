@@ -71,7 +71,7 @@ func (client *Client) AddBackendServersWithCallback(request *AddBackendServersRe
 // AddBackendServersRequest is the request struct for api AddBackendServers
 type AddBackendServersRequest struct {
 	*requests.RpcRequest
-	BackendServers *[]AddBackendServersBackendServers `position:"Query" name:"BackendServers"  type:"Repeated"`
+	BackendServers *[]AddBackendServersBackendServers `position:"Query" name:"BackendServers"  type:"Json"`
 	LoadBalancerId string                             `position:"Query" name:"LoadBalancerId"`
 }
 

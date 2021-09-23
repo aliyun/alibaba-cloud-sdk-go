@@ -73,7 +73,9 @@ type SetLoadBalancerUDPListenerAttributeRequest struct {
 	*requests.RpcRequest
 	Protocol                  string           `position:"Query" name:"Protocol"`
 	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
+	HealthCheckReq            string           `position:"Query" name:"HealthCheckReq"`
 	HealthCheckInterval       requests.Integer `position:"Query" name:"HealthCheckInterval"`
+	HealthCheckExp            string           `position:"Query" name:"HealthCheckExp"`
 	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
 	Description               string           `position:"Query" name:"Description"`
 	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`

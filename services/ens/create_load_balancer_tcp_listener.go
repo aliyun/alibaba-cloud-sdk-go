@@ -87,6 +87,7 @@ type CreateLoadBalancerTCPListenerRequest struct {
 	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
 	HealthCheckType           string           `position:"Query" name:"HealthCheckType"`
 	HealthCheckHttpCode       string           `position:"Query" name:"HealthCheckHttpCode"`
+	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
 }
 
 // CreateLoadBalancerTCPListenerResponse is the response struct for api CreateLoadBalancerTCPListener

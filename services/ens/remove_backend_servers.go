@@ -71,7 +71,7 @@ func (client *Client) RemoveBackendServersWithCallback(request *RemoveBackendSer
 // RemoveBackendServersRequest is the request struct for api RemoveBackendServers
 type RemoveBackendServersRequest struct {
 	*requests.RpcRequest
-	BackendServers *[]RemoveBackendServersBackendServers `position:"Query" name:"BackendServers"  type:"Repeated"`
+	BackendServers *[]RemoveBackendServersBackendServers `position:"Query" name:"BackendServers"  type:"Json"`
 	LoadBalancerId string                                `position:"Query" name:"LoadBalancerId"`
 }
 

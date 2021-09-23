@@ -71,8 +71,9 @@ func (client *Client) AddNetworkInterfaceToInstanceWithCallback(request *AddNetw
 // AddNetworkInterfaceToInstanceRequest is the request struct for api AddNetworkInterfaceToInstance
 type AddNetworkInterfaceToInstanceRequest struct {
 	*requests.RpcRequest
-	Networks   string `position:"Query" name:"Networks"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	Networks   string           `position:"Query" name:"Networks"`
+	AutoStart  requests.Boolean `position:"Query" name:"AutoStart"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 // AddNetworkInterfaceToInstanceResponse is the response struct for api AddNetworkInterfaceToInstance

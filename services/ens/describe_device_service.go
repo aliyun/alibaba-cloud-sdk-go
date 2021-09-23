@@ -71,9 +71,10 @@ func (client *Client) DescribeDeviceServiceWithCallback(request *DescribeDeviceS
 // DescribeDeviceServiceRequest is the request struct for api DescribeDeviceService
 type DescribeDeviceServiceRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
-	AppId      string `position:"Query" name:"AppId"`
-	ServiceId  string `position:"Query" name:"ServiceId"`
+	EnsRegionId string `position:"Query" name:"EnsRegionId"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	AppId       string `position:"Query" name:"AppId"`
+	ServiceId   string `position:"Query" name:"ServiceId"`
 }
 
 // DescribeDeviceServiceResponse is the response struct for api DescribeDeviceService
