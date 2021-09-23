@@ -72,9 +72,11 @@ func (client *Client) DescribeScheduleTasksWithCallback(request *DescribeSchedul
 type DescribeScheduleTasksRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OrderId              string           `position:"Query" name:"OrderId"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,10 +87,10 @@ type DescribeScheduleTasksRequest struct {
 // DescribeScheduleTasksResponse is the response struct for api DescribeScheduleTasks
 type DescribeScheduleTasksResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

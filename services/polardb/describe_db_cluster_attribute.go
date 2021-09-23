@@ -86,11 +86,11 @@ type DescribeDBClusterAttributeResponse struct {
 	ResourceGroupId           string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DataLevel1BackupChainSize int64    `json:"DataLevel1BackupChainSize" xml:"DataLevel1BackupChainSize"`
 	DBClusterId               string   `json:"DBClusterId" xml:"DBClusterId"`
-	DBClusterNetworkType      string   `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
 	DBType                    string   `json:"DBType" xml:"DBType"`
+	DBClusterNetworkType      string   `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
 	IsLatestVersion           bool     `json:"IsLatestVersion" xml:"IsLatestVersion"`
-	DBVersion                 string   `json:"DBVersion" xml:"DBVersion"`
 	StorageMax                int64    `json:"StorageMax" xml:"StorageMax"`
+	DBVersion                 string   `json:"DBVersion" xml:"DBVersion"`
 	ZoneIds                   string   `json:"ZoneIds" xml:"ZoneIds"`
 	MaintainTime              string   `json:"MaintainTime" xml:"MaintainTime"`
 	Engine                    string   `json:"Engine" xml:"Engine"`
@@ -100,15 +100,16 @@ type DescribeDBClusterAttributeResponse struct {
 	VSwitchId                 string   `json:"VSwitchId" xml:"VSwitchId"`
 	DBClusterDescription      string   `json:"DBClusterDescription" xml:"DBClusterDescription"`
 	Expired                   string   `json:"Expired" xml:"Expired"`
-	LockMode                  string   `json:"LockMode" xml:"LockMode"`
 	PayType                   string   `json:"PayType" xml:"PayType"`
+	LockMode                  string   `json:"LockMode" xml:"LockMode"`
 	StorageUsed               int64    `json:"StorageUsed" xml:"StorageUsed"`
 	DBVersionStatus           string   `json:"DBVersionStatus" xml:"DBVersionStatus"`
-	SubCategory               string   `json:"SubCategory" xml:"SubCategory"`
 	CreationTime              string   `json:"CreationTime" xml:"CreationTime"`
-	RegionId                  string   `json:"RegionId" xml:"RegionId"`
 	SQLSize                   int64    `json:"SQLSize" xml:"SQLSize"`
+	RegionId                  string   `json:"RegionId" xml:"RegionId"`
 	ExpireTime                string   `json:"ExpireTime" xml:"ExpireTime"`
+	SubCategory               string   `json:"SubCategory" xml:"SubCategory"`
+	IsProxyLatestVersion      bool     `json:"IsProxyLatestVersion" xml:"IsProxyLatestVersion"`
 	DBNodes                   []DBNode `json:"DBNodes" xml:"DBNodes"`
 	Tags                      []Tag    `json:"Tags" xml:"Tags"`
 }

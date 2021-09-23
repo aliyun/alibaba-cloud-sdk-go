@@ -107,8 +107,8 @@ type CreateDBClusterRequest struct {
 // CreateDBClusterResponse is the response struct for api CreateDBCluster
 type CreateDBClusterResponse struct {
 	*responses.BaseResponse
-	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	RequestId       string `json:"RequestId" xml:"RequestId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
 	OrderId         string `json:"OrderId" xml:"OrderId"`
 }

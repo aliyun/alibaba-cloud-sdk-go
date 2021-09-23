@@ -17,17 +17,18 @@ package polardb
 
 // DBClusterInDescribeGlobalDatabaseNetwork is a nested struct in polardb response
 type DBClusterInDescribeGlobalDatabaseNetwork struct {
-	ReplicaLag           string `json:"ReplicaLag" xml:"ReplicaLag"`
-	ExpireTime           string `json:"ExpireTime" xml:"ExpireTime"`
-	Expired              string `json:"Expired" xml:"Expired"`
-	DBNodeClass          string `json:"DBNodeClass" xml:"DBNodeClass"`
-	PayType              string `json:"PayType" xml:"PayType"`
-	DBType               string `json:"DBType" xml:"DBType"`
-	RegionId             string `json:"RegionId" xml:"RegionId"`
-	DBVersion            string `json:"DBVersion" xml:"DBVersion"`
-	DBClusterId          string `json:"DBClusterId" xml:"DBClusterId"`
-	DBClusterStatus      string `json:"DBClusterStatus" xml:"DBClusterStatus"`
-	StorageUsed          string `json:"StorageUsed" xml:"StorageUsed"`
-	DBClusterDescription string `json:"DBClusterDescription" xml:"DBClusterDescription"`
-	Role                 string `json:"Role" xml:"Role"`
+	ReplicaLag           string   `json:"ReplicaLag" xml:"ReplicaLag"`
+	ExpireTime           string   `json:"ExpireTime" xml:"ExpireTime"`
+	Expired              string   `json:"Expired" xml:"Expired"`
+	DBNodeClass          string   `json:"DBNodeClass" xml:"DBNodeClass"`
+	PayType              string   `json:"PayType" xml:"PayType"`
+	DBType               string   `json:"DBType" xml:"DBType"`
+	RegionId             string   `json:"RegionId" xml:"RegionId"`
+	DBVersion            string   `json:"DBVersion" xml:"DBVersion"`
+	DBClusterId          string   `json:"DBClusterId" xml:"DBClusterId"`
+	DBClusterStatus      string   `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	StorageUsed          string   `json:"StorageUsed" xml:"StorageUsed"`
+	DBClusterDescription string   `json:"DBClusterDescription" xml:"DBClusterDescription"`
+	Role                 string   `json:"Role" xml:"Role"`
+	DBNodes              []DBNode `json:"DBNodes" xml:"DBNodes"`
 }

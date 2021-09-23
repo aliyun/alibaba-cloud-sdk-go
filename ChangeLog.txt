@@ -1,3 +1,9 @@
+2021-09-23 Version: v1.61.1271
+- Generated 2017-08-01 for `polardb`.
+- Supports the purchase of polardb storage packages.
+- Support temporary upgrades and allocations of instances.
+- Query the detailed information of the node returned by the GDN instance.
+
 2021-09-23 Version: v1.61.1270
 - Generated 2015-12-01 for `Dds`.
 - Update by sdk platform.

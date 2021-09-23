@@ -23,8 +23,8 @@ type TimerInfos struct {
 	Action               string `json:"Action" xml:"Action"`
 	PlannedStartTime     string `json:"PlannedStartTime" xml:"PlannedStartTime"`
 	Status               string `json:"Status" xml:"Status"`
-	DbClusterDescription string `json:"DbClusterDescription" xml:"DbClusterDescription"`
 	PlannedEndTime       string `json:"PlannedEndTime" xml:"PlannedEndTime"`
+	DbClusterDescription string `json:"DbClusterDescription" xml:"DbClusterDescription"`
 	PlannedTime          string `json:"PlannedTime" xml:"PlannedTime"`
 	DBClusterId          string `json:"DBClusterId" xml:"DBClusterId"`
 	OrderId              string `json:"OrderId" xml:"OrderId"`

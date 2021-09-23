@@ -18,6 +18,7 @@ package polardb
 // DBCluster is a nested struct in polardb response
 type DBCluster struct {
 	DBNodeClass          string                      `json:"DBNodeClass" xml:"DBNodeClass"`
+	Category             string                      `json:"Category" xml:"Category"`
 	DBType               string                      `json:"DBType" xml:"DBType"`
 	Engine               string                      `json:"Engine" xml:"Engine"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
