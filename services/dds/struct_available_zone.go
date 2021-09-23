@@ -17,7 +17,7 @@ package dds
 
 // AvailableZone is a nested struct in dds response
 type AvailableZone struct {
-	RegionId                string                  `json:"RegionId" xml:"RegionId"`
 	ZoneId                  string                  `json:"ZoneId" xml:"ZoneId"`
+	RegionId                string                  `json:"RegionId" xml:"RegionId"`
 	SupportedEngineVersions SupportedEngineVersions `json:"SupportedEngineVersions" xml:"SupportedEngineVersions"`
 }

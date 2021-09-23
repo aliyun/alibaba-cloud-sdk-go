@@ -92,7 +92,7 @@ func CreateModifyAuditLogFilterRequest() (request *ModifyAuditLogFilterRequest) 
 	request = &ModifyAuditLogFilterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyAuditLogFilter", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyAuditLogFilter", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

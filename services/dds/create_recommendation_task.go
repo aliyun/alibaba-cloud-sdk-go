@@ -93,7 +93,7 @@ func CreateCreateRecommendationTaskRequest() (request *CreateRecommendationTaskR
 	request = &CreateRecommendationTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateRecommendationTask", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateRecommendationTask", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

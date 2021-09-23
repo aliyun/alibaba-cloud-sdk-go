@@ -99,8 +99,8 @@ type CreateServerlessDBInstanceRequest struct {
 type CreateServerlessDBInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	OrderId      string `json:"OrderId" xml:"OrderId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId      string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateServerlessDBInstanceRequest creates a request to invoke CreateServerlessDBInstance API
@@ -108,7 +108,7 @@ func CreateCreateServerlessDBInstanceRequest() (request *CreateServerlessDBInsta
 	request = &CreateServerlessDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateServerlessDBInstance", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateServerlessDBInstance", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

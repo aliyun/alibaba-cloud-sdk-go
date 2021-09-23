@@ -91,7 +91,7 @@ func CreateDescribeSecurityGroupConfigurationRequest() (request *DescribeSecurit
 	request = &DescribeSecurityGroupConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeSecurityGroupConfiguration", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeSecurityGroupConfiguration", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

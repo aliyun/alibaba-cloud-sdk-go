@@ -99,7 +99,7 @@ func CreateModifyNodeSpecBatchRequest() (request *ModifyNodeSpecBatchRequest) {
 	request = &ModifyNodeSpecBatchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpecBatch", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpecBatch", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

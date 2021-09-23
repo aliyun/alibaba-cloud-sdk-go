@@ -103,7 +103,7 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeSlowLogRecords", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeSlowLogRecords", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

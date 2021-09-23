@@ -92,7 +92,7 @@ func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) 
 	request = &ResetAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ResetAccountPassword", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ResetAccountPassword", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -74,11 +74,14 @@ type ModifyNodeSpecRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ReadonlyReplicas     requests.Integer `position:"Query" name:"ReadonlyReplicas"`
+	CouponNo             string           `position:"Query" name:"CouponNo"`
 	NodeClass            string           `position:"Query" name:"NodeClass"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SwitchTime           string           `position:"Query" name:"SwitchTime"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -100,7 +103,7 @@ func CreateModifyNodeSpecRequest() (request *ModifyNodeSpecRequest) {
 	request = &ModifyNodeSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpec", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpec", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

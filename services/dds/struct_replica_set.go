@@ -23,7 +23,7 @@ type ReplicaSet struct {
 	ExpiredTime        string `json:"ExpiredTime" xml:"ExpiredTime"`
 	VPCId              string `json:"VPCId" xml:"VPCId"`
 	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
-	ConnectionDomain   string `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	ReplicaSetRole     string `json:"ReplicaSetRole" xml:"ReplicaSetRole"`
+	ConnectionDomain   string `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
 }

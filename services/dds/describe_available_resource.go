@@ -72,11 +72,14 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Level                string           `position:"Query" name:"Level"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DbType               string           `position:"Query" name:"DbType"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
@@ -92,7 +95,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 	request = &DescribeAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAvailableResource", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAvailableResource", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

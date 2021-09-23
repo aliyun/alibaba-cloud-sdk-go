@@ -1,3 +1,7 @@
+2021-09-23 Version: v1.61.1270
+- Generated 2015-12-01 for `Dds`.
+- Update by sdk platform.
+
 2021-09-22 Version: v1.61.1269
 - Generated 2015-01-09 for `Alidns`.
 - Supported API for GTM.

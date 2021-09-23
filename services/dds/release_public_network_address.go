@@ -91,7 +91,7 @@ func CreateReleasePublicNetworkAddressRequest() (request *ReleasePublicNetworkAd
 	request = &ReleasePublicNetworkAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ReleasePublicNetworkAddress", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ReleasePublicNetworkAddress", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

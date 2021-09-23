@@ -93,7 +93,7 @@ func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeTags", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeTags", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

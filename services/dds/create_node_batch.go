@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyDBInstanceSSL invokes the dds.ModifyDBInstanceSSL API synchronously
-func (client *Client) ModifyDBInstanceSSL(request *ModifyDBInstanceSSLRequest) (response *ModifyDBInstanceSSLResponse, err error) {
-	response = CreateModifyDBInstanceSSLResponse()
+// CreateNodeBatch invokes the dds.CreateNodeBatch API synchronously
+func (client *Client) CreateNodeBatch(request *CreateNodeBatchRequest) (response *CreateNodeBatchResponse, err error) {
+	response = CreateCreateNodeBatchResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyDBInstanceSSLWithChan invokes the dds.ModifyDBInstanceSSL API asynchronously
-func (client *Client) ModifyDBInstanceSSLWithChan(request *ModifyDBInstanceSSLRequest) (<-chan *ModifyDBInstanceSSLResponse, <-chan error) {
-	responseChan := make(chan *ModifyDBInstanceSSLResponse, 1)
+// CreateNodeBatchWithChan invokes the dds.CreateNodeBatch API asynchronously
+func (client *Client) CreateNodeBatchWithChan(request *CreateNodeBatchRequest) (<-chan *CreateNodeBatchResponse, <-chan error) {
+	responseChan := make(chan *CreateNodeBatchResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyDBInstanceSSL(request)
+		response, err := client.CreateNodeBatch(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ModifyDBInstanceSSLWithChan(request *ModifyDBInstanceSSLRe
 	return responseChan, errChan
 }
 
-// ModifyDBInstanceSSLWithCallback invokes the dds.ModifyDBInstanceSSL API asynchronously
-func (client *Client) ModifyDBInstanceSSLWithCallback(request *ModifyDBInstanceSSLRequest, callback func(response *ModifyDBInstanceSSLResponse, err error)) <-chan int {
+// CreateNodeBatchWithCallback invokes the dds.CreateNodeBatch API asynchronously
+func (client *Client) CreateNodeBatchWithCallback(request *CreateNodeBatchRequest, callback func(response *CreateNodeBatchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyDBInstanceSSLResponse
+		var response *CreateNodeBatchResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyDBInstanceSSL(request)
+		response, err = client.CreateNodeBatch(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,44 @@ func (client *Client) ModifyDBInstanceSSLWithCallback(request *ModifyDBInstanceS
 	return result
 }
 
-// ModifyDBInstanceSSLRequest is the request struct for api ModifyDBInstanceSSL
-type ModifyDBInstanceSSLRequest struct {
+// CreateNodeBatchRequest is the request struct for api CreateNodeBatch
+type CreateNodeBatchRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	NodesInfo            string           `position:"Query" name:"NodesInfo"`
+	CouponNo             string           `position:"Query" name:"CouponNo"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SSLAction            string           `position:"Query" name:"SSLAction"`
 }
 
-// ModifyDBInstanceSSLResponse is the response struct for api ModifyDBInstanceSSL
-type ModifyDBInstanceSSLResponse struct {
+// CreateNodeBatchResponse is the response struct for api CreateNodeBatch
+type CreateNodeBatchResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
+	NodeId    string `json:"NodeId" xml:"NodeId"`
 }
 
-// CreateModifyDBInstanceSSLRequest creates a request to invoke ModifyDBInstanceSSL API
-func CreateModifyDBInstanceSSLRequest() (request *ModifyDBInstanceSSLRequest) {
-	request = &ModifyDBInstanceSSLRequest{
+// CreateCreateNodeBatchRequest creates a request to invoke CreateNodeBatch API
+func CreateCreateNodeBatchRequest() (request *CreateNodeBatchRequest) {
+	request = &CreateNodeBatchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceSSL", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateNodeBatch", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateModifyDBInstanceSSLResponse creates a response to parse from ModifyDBInstanceSSL response
-func CreateModifyDBInstanceSSLResponse() (response *ModifyDBInstanceSSLResponse) {
-	response = &ModifyDBInstanceSSLResponse{
+// CreateCreateNodeBatchResponse creates a response to parse from CreateNodeBatch response
+func CreateCreateNodeBatchResponse() (response *CreateNodeBatchResponse) {
+	response = &CreateNodeBatchResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

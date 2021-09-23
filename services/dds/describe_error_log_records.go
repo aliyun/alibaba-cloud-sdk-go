@@ -103,7 +103,7 @@ func CreateDescribeErrorLogRecordsRequest() (request *DescribeErrorLogRecordsReq
 	request = &DescribeErrorLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeErrorLogRecords", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeErrorLogRecords", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

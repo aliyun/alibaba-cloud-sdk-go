@@ -102,7 +102,7 @@ func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	request = &DescribePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribePrice", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribePrice", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }

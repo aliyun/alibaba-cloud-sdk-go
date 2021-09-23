@@ -17,6 +17,8 @@ package dds
 
 // Items is a nested struct in dds response
 type Items struct {
-	Count    int    `json:"Count" xml:"Count"`
-	TaskType string `json:"TaskType" xml:"TaskType"`
+	TaskTypeInfoZh string `json:"TaskTypeInfoZh" xml:"TaskTypeInfoZh"`
+	Count          int    `json:"Count" xml:"Count"`
+	TaskTypeInfoEn string `json:"TaskTypeInfoEn" xml:"TaskTypeInfoEn"`
+	TaskType       string `json:"TaskType" xml:"TaskType"`
 }
