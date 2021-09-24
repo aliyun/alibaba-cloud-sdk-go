@@ -1,3 +1,7 @@
+2021-09-24 Version: v1.61.1274
+- Generated 2020-02-17 for `Dytnsapi`.
+- Fixed SDK update delay.
+
 2021-09-24 Version: v1.61.1273
 - Generated 2019-12-30 for `facebody`.
 - Release RetouchSkin LiquifyFace.
