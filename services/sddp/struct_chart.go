@@ -17,5 +17,5 @@ package sddp
 
 // Chart is a nested struct in sddp response
 type Chart struct {
-	ChartItem []ChartItem `json:"ChartItem" xml:"ChartItem"`
+	ChartItem []ChartItem `json:"Chart" xml:"Chart"`
 }

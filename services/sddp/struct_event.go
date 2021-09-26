@@ -17,28 +17,33 @@ package sddp
 
 // Event is a nested struct in sddp response
 type Event struct {
-	Status            int    `json:"Status" xml:"Status"`
-	DealTime          int    `json:"DealTime" xml:"DealTime"`
-	EventTime         int    `json:"EventTime" xml:"EventTime"`
-	TypeName          string `json:"TypeName" xml:"TypeName"`
-	DealUserId        int    `json:"DealUserId" xml:"DealUserId"`
-	SubTypeCode       string `json:"SubTypeCode" xml:"SubTypeCode"`
-	DepartName        string `json:"DepartName" xml:"DepartName"`
-	AlertTime         int    `json:"AlertTime" xml:"AlertTime"`
-	DealReason        string `json:"DealReason" xml:"DealReason"`
-	TargetProductCode string `json:"TargetProductCode" xml:"TargetProductCode"`
-	Id                int    `json:"Id" xml:"Id"`
-	DealDisplayName   string `json:"DealDisplayName" xml:"DealDisplayName"`
-	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
-	DisplayName       string `json:"DisplayName" xml:"DisplayName"`
-	StatusName        string `json:"StatusName" xml:"StatusName"`
-	Backed            bool   `json:"Backed" xml:"Backed"`
-	LoginName         string `json:"LoginName" xml:"LoginName"`
-	SubTypeName       string `json:"SubTypeName" xml:"SubTypeName"`
-	DealLoginName     string `json:"DealLoginName" xml:"DealLoginName"`
-	UserId            int    `json:"UserId" xml:"UserId"`
-	TypeCode          string `json:"TypeCode" xml:"TypeCode"`
-	TelephoneNum      string `json:"TelephoneNum" xml:"TelephoneNum"`
-	DataInstance      string `json:"DataInstance" xml:"DataInstance"`
-	Detail            Detail `json:"Detail" xml:"Detail"`
+	EventTime         int64        `json:"EventTime" xml:"EventTime"`
+	TypeName          string       `json:"TypeName" xml:"TypeName"`
+	DealUserIdValue   string       `json:"dealUserIdValue" xml:"dealUserIdValue"`
+	SubTypeCode       string       `json:"SubTypeCode" xml:"SubTypeCode"`
+	AlertTime         int64        `json:"AlertTime" xml:"AlertTime"`
+	DealReason        string       `json:"DealReason" xml:"DealReason"`
+	TargetProductCode string       `json:"TargetProductCode" xml:"TargetProductCode"`
+	DealDisplayName   string       `json:"DealDisplayName" xml:"DealDisplayName"`
+	Backed            bool         `json:"Backed" xml:"Backed"`
+	UserIdValue       string       `json:"UserIdValue" xml:"UserIdValue"`
+	DealLoginName     string       `json:"DealLoginName" xml:"DealLoginName"`
+	TypeCode          string       `json:"TypeCode" xml:"TypeCode"`
+	DataInstance      string       `json:"DataInstance" xml:"DataInstance"`
+	LogDetail         string       `json:"LogDetail" xml:"LogDetail"`
+	Status            int          `json:"Status" xml:"Status"`
+	DealTime          int64        `json:"DealTime" xml:"DealTime"`
+	DealUserId        int64        `json:"DealUserId" xml:"DealUserId"`
+	DepartName        string       `json:"DepartName" xml:"DepartName"`
+	InstanceName      string       `json:"InstanceName" xml:"InstanceName"`
+	Id                int64        `json:"Id" xml:"Id"`
+	ProductCode       string       `json:"ProductCode" xml:"ProductCode"`
+	DisplayName       string       `json:"DisplayName" xml:"DisplayName"`
+	StatusName        string       `json:"StatusName" xml:"StatusName"`
+	WarnLevel         int          `json:"WarnLevel" xml:"WarnLevel"`
+	LoginName         string       `json:"LoginName" xml:"LoginName"`
+	SubTypeName       string       `json:"SubTypeName" xml:"SubTypeName"`
+	UserId            int64        `json:"UserId" xml:"UserId"`
+	Detail            Detail       `json:"Detail" xml:"Detail"`
+	HandleInfoList    []HandleInfo `json:"HandleInfoList" xml:"HandleInfoList"`
 }

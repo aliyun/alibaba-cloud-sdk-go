@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssObjectDetail invokes the sddp.DescribeOssObjectDetail API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeossobjectdetail.html
 func (client *Client) DescribeOssObjectDetail(request *DescribeOssObjectDetailRequest) (response *DescribeOssObjectDetailResponse, err error) {
 	response = CreateDescribeOssObjectDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssObjectDetail(request *DescribeOssObjectDetailRe
 }
 
 // DescribeOssObjectDetailWithChan invokes the sddp.DescribeOssObjectDetail API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeossobjectdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssObjectDetailWithChan(request *DescribeOssObjectDetailRequest) (<-chan *DescribeOssObjectDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssObjectDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssObjectDetailWithChan(request *DescribeOssObject
 }
 
 // DescribeOssObjectDetailWithCallback invokes the sddp.DescribeOssObjectDetail API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeossobjectdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssObjectDetailWithCallback(request *DescribeOssObjectDetailRequest, callback func(response *DescribeOssObjectDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,9 +72,9 @@ func (client *Client) DescribeOssObjectDetailWithCallback(request *DescribeOssOb
 type DescribeOssObjectDetailRequest struct {
 	*requests.RpcRequest
 	SourceIp    string           `position:"Query" name:"SourceIp"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 }
 
 // DescribeOssObjectDetailResponse is the response struct for api DescribeOssObjectDetail
@@ -94,7 +89,8 @@ func CreateDescribeOssObjectDetailRequest() (request *DescribeOssObjectDetailReq
 	request = &DescribeOssObjectDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeOssObjectDetail", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeOssObjectDetail", "", "")
+	request.Method = requests.POST
 	return
 }
 

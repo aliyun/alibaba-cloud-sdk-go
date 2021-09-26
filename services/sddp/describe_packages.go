@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePackages invokes the sddp.DescribePackages API synchronously
-// api document: https://help.aliyun.com/api/sddp/describepackages.html
 func (client *Client) DescribePackages(request *DescribePackagesRequest) (response *DescribePackagesResponse, err error) {
 	response = CreateDescribePackagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePackages(request *DescribePackagesRequest) (respon
 }
 
 // DescribePackagesWithChan invokes the sddp.DescribePackages API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describepackages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePackagesWithChan(request *DescribePackagesRequest) (<-chan *DescribePackagesResponse, <-chan error) {
 	responseChan := make(chan *DescribePackagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePackagesWithChan(request *DescribePackagesRequest)
 }
 
 // DescribePackagesWithCallback invokes the sddp.DescribePackages API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describepackages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePackagesWithCallback(request *DescribePackagesRequest, callback func(response *DescribePackagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,28 +71,30 @@ func (client *Client) DescribePackagesWithCallback(request *DescribePackagesRequ
 // DescribePackagesRequest is the request struct for api DescribePackages
 type DescribePackagesRequest struct {
 	*requests.RpcRequest
-	InstanceId  requests.Integer `position:"Query" name:"InstanceId"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
 	ProductId   requests.Integer `position:"Query" name:"ProductId"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	Name        string           `position:"Query" name:"Name"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	RiskLevels  string           `position:"Query" name:"RiskLevels"`
 	QueryName   string           `position:"Query" name:"QueryName"`
 	RiskLevelId requests.Integer `position:"Query" name:"RiskLevelId"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Lang        string           `position:"Query" name:"Lang"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
 	QueryType   requests.Integer `position:"Query" name:"QueryType"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	OrderBy     string           `position:"Query" name:"OrderBy"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId  requests.Integer `position:"Query" name:"InstanceId"`
+	Name        string           `position:"Query" name:"Name"`
+	RuleId      requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // DescribePackagesResponse is the response struct for api DescribePackages
 type DescribePackagesResponse struct {
 	*responses.BaseResponse
-	RequestId   string    `json:"RequestId" xml:"RequestId"`
-	PageSize    int       `json:"PageSize" xml:"PageSize"`
-	CurrentPage int       `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int       `json:"TotalCount" xml:"TotalCount"`
-	Items       []Package `json:"Items" xml:"Items"`
+	RequestId   string                      `json:"RequestId" xml:"RequestId"`
+	PageSize    int                         `json:"PageSize" xml:"PageSize"`
+	CurrentPage int                         `json:"CurrentPage" xml:"CurrentPage"`
+	TotalCount  int                         `json:"TotalCount" xml:"TotalCount"`
+	Items       []PackageInDescribePackages `json:"Items" xml:"Items"`
 }
 
 // CreateDescribePackagesRequest creates a request to invoke DescribePackages API
@@ -105,7 +102,8 @@ func CreateDescribePackagesRequest() (request *DescribePackagesRequest) {
 	request = &DescribePackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribePackages", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribePackages", "", "")
+	request.Method = requests.POST
 	return
 }
 

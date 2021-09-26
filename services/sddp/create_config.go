@@ -21,7 +21,6 @@ import (
 )
 
 // CreateConfig invokes the sddp.CreateConfig API synchronously
-// api document: https://help.aliyun.com/api/sddp/createconfig.html
 func (client *Client) CreateConfig(request *CreateConfigRequest) (response *CreateConfigResponse, err error) {
 	response = CreateCreateConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateConfig(request *CreateConfigRequest) (response *Crea
 }
 
 // CreateConfigWithChan invokes the sddp.CreateConfig API asynchronously
-// api document: https://help.aliyun.com/api/sddp/createconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateConfigWithChan(request *CreateConfigRequest) (<-chan *CreateConfigResponse, <-chan error) {
 	responseChan := make(chan *CreateConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateConfigWithChan(request *CreateConfigRequest) (<-chan
 }
 
 // CreateConfigWithCallback invokes the sddp.CreateConfig API asynchronously
-// api document: https://help.aliyun.com/api/sddp/createconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateConfigWithCallback(request *CreateConfigRequest, callback func(response *CreateConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,18 +72,19 @@ func (client *Client) CreateConfigWithCallback(request *CreateConfigRequest, cal
 type CreateConfigRequest struct {
 	*requests.RpcRequest
 	Code        string           `position:"Query" name:"Code"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 	Description string           `position:"Query" name:"Description"`
-	ConfigList  string           `position:"Query" name:"ConfigList"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Lang        string           `position:"Query" name:"Lang"`
 	Value       string           `position:"Query" name:"Value"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	ConfigList  string           `position:"Query" name:"ConfigList"`
 }
 
 // CreateConfigResponse is the response struct for api CreateConfig
 type CreateConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Id        int64  `json:"Id" xml:"Id"`
 }
 
 // CreateCreateConfigRequest creates a request to invoke CreateConfig API
@@ -96,7 +92,8 @@ func CreateCreateConfigRequest() (request *CreateConfigRequest) {
 	request = &CreateConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateConfig", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

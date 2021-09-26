@@ -17,5 +17,5 @@ package sddp
 
 // ItemsInDescribeOssObjects is a nested struct in sddp response
 type ItemsInDescribeOssObjects struct {
-	Column []Column `json:"Column" xml:"Column"`
+	Column []ColumnInDescribeOssObjects `json:"Column" xml:"Column"`
 }

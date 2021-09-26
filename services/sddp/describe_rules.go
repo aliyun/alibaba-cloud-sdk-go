@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRules invokes the sddp.DescribeRules API synchronously
-// api document: https://help.aliyun.com/api/sddp/describerules.html
 func (client *Client) DescribeRules(request *DescribeRulesRequest) (response *DescribeRulesResponse, err error) {
 	response = CreateDescribeRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRules(request *DescribeRulesRequest) (response *De
 }
 
 // DescribeRulesWithChan invokes the sddp.DescribeRules API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describerules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRulesWithChan(request *DescribeRulesRequest) (<-chan *DescribeRulesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRulesWithChan(request *DescribeRulesRequest) (<-ch
 }
 
 // DescribeRulesWithCallback invokes the sddp.DescribeRules API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describerules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRulesWithCallback(request *DescribeRulesRequest, callback func(response *DescribeRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,22 @@ func (client *Client) DescribeRulesWithCallback(request *DescribeRulesRequest, c
 // DescribeRulesRequest is the request struct for api DescribeRules
 type DescribeRulesRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	Name        string           `position:"Query" name:"Name"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	RiskLevelId requests.Integer `position:"Query" name:"RiskLevelId"`
-	Lang        string           `position:"Query" name:"Lang"`
-	CustomType  requests.Integer `position:"Query" name:"CustomType"`
-	Category    requests.Integer `position:"Query" name:"Category"`
+	WarnLevel         requests.Integer `position:"Query" name:"WarnLevel"`
+	ProductCode       requests.Integer `position:"Query" name:"ProductCode"`
+	ProductId         requests.Integer `position:"Query" name:"ProductId"`
+	RiskLevelId       requests.Integer `position:"Query" name:"RiskLevelId"`
+	SourceIp          string           `position:"Query" name:"SourceIp"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	Lang              string           `position:"Query" name:"Lang"`
+	KeywordCompatible requests.Boolean `position:"Query" name:"KeywordCompatible"`
+	RuleType          requests.Integer `position:"Query" name:"RuleType"`
+	GroupId           string           `position:"Query" name:"GroupId"`
+	ContentCategory   requests.Integer `position:"Query" name:"ContentCategory"`
+	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
+	CustomType        requests.Integer `position:"Query" name:"CustomType"`
+	Name              string           `position:"Query" name:"Name"`
+	Category          requests.Integer `position:"Query" name:"Category"`
+	Status            requests.Integer `position:"Query" name:"Status"`
 }
 
 // DescribeRulesResponse is the response struct for api DescribeRules
@@ -101,7 +104,8 @@ func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
 	request = &DescribeRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeRules", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeRules", "", "")
+	request.Method = requests.POST
 	return
 }
 

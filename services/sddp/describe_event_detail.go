@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEventDetail invokes the sddp.DescribeEventDetail API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeeventdetail.html
 func (client *Client) DescribeEventDetail(request *DescribeEventDetailRequest) (response *DescribeEventDetailResponse, err error) {
 	response = CreateDescribeEventDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEventDetail(request *DescribeEventDetailRequest) (
 }
 
 // DescribeEventDetailWithChan invokes the sddp.DescribeEventDetail API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeeventdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventDetailWithChan(request *DescribeEventDetailRequest) (<-chan *DescribeEventDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeEventDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEventDetailWithChan(request *DescribeEventDetailRe
 }
 
 // DescribeEventDetailWithCallback invokes the sddp.DescribeEventDetail API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeeventdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventDetailWithCallback(request *DescribeEventDetailRequest, callback func(response *DescribeEventDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) DescribeEventDetailWithCallback(request *DescribeEventDeta
 // DescribeEventDetailRequest is the request struct for api DescribeEventDetail
 type DescribeEventDetailRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
 	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
 }
@@ -94,7 +89,8 @@ func CreateDescribeEventDetailRequest() (request *DescribeEventDetailRequest) {
 	request = &DescribeEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEventDetail", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEventDetail", "", "")
+	request.Method = requests.POST
 	return
 }
 

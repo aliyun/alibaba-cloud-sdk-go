@@ -17,8 +17,8 @@ package sddp
 
 // Total is a nested struct in sddp response
 type Total struct {
-	TotalCount   int `json:"TotalCount" xml:"TotalCount"`
-	ExcludeCount int `json:"ExcludeCount" xml:"ExcludeCount"`
-	ConfirmCount int `json:"ConfirmCount" xml:"ConfirmCount"`
-	UndealCount  int `json:"UndealCount" xml:"UndealCount"`
+	TotalCount   int64 `json:"TotalCount" xml:"TotalCount"`
+	ExcludeCount int64 `json:"ExcludeCount" xml:"ExcludeCount"`
+	ConfirmCount int64 `json:"ConfirmCount" xml:"ConfirmCount"`
+	UndealCount  int64 `json:"UndealCount" xml:"UndealCount"`
 }

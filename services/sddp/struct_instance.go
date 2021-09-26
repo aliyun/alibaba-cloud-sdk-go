@@ -17,21 +17,10 @@ package sddp
 
 // Instance is a nested struct in sddp response
 type Instance struct {
-	Id                int    `json:"Id" xml:"Id"`
-	Name              string `json:"Name" xml:"Name"`
-	Owner             string `json:"Owner" xml:"Owner"`
-	CreationTime      int    `json:"CreationTime" xml:"CreationTime"`
-	ProductId         string `json:"ProductId" xml:"ProductId"`
-	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
-	Protection        bool   `json:"Protection" xml:"Protection"`
-	Labelsec          int    `json:"Labelsec" xml:"Labelsec"`
-	OdpsRiskLevelName string `json:"OdpsRiskLevelName" xml:"OdpsRiskLevelName"`
-	Sensitive         bool   `json:"Sensitive" xml:"Sensitive"`
-	RiskLevelId       int    `json:"RiskLevelId" xml:"RiskLevelId"`
-	RiskLevelName     string `json:"RiskLevelName" xml:"RiskLevelName"`
-	RuleName          string `json:"RuleName" xml:"RuleName"`
-	DepartName        string `json:"DepartName" xml:"DepartName"`
-	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
-	SensitiveCount    int    `json:"SensitiveCount" xml:"SensitiveCount"`
-	Acl               string `json:"Acl" xml:"Acl"`
+	TotalCount         int64       `json:"TotalCount" xml:"TotalCount"`
+	SensitiveCount     int64       `json:"SensitiveCount" xml:"SensitiveCount"`
+	LastCount          int64       `json:"LastCount" xml:"LastCount"`
+	Count              int64       `json:"Count" xml:"Count"`
+	LastSensitiveCount int64       `json:"LastSensitiveCount" xml:"LastSensitiveCount"`
+	RiskCountList      []RiskCount `json:"RiskCountList" xml:"RiskCountList"`
 }

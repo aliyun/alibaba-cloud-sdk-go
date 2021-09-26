@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyEventTypeStatus invokes the sddp.ModifyEventTypeStatus API synchronously
-// api document: https://help.aliyun.com/api/sddp/modifyeventtypestatus.html
 func (client *Client) ModifyEventTypeStatus(request *ModifyEventTypeStatusRequest) (response *ModifyEventTypeStatusResponse, err error) {
 	response = CreateModifyEventTypeStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyEventTypeStatus(request *ModifyEventTypeStatusReques
 }
 
 // ModifyEventTypeStatusWithChan invokes the sddp.ModifyEventTypeStatus API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifyeventtypestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEventTypeStatusWithChan(request *ModifyEventTypeStatusRequest) (<-chan *ModifyEventTypeStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyEventTypeStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyEventTypeStatusWithChan(request *ModifyEventTypeStat
 }
 
 // ModifyEventTypeStatusWithCallback invokes the sddp.ModifyEventTypeStatus API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifyeventtypestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEventTypeStatusWithCallback(request *ModifyEventTypeStatusRequest, callback func(response *ModifyEventTypeStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateModifyEventTypeStatusRequest() (request *ModifyEventTypeStatusRequest
 	request = &ModifyEventTypeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyEventTypeStatus", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyEventTypeStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

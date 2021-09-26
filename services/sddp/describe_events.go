@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEvents invokes the sddp.DescribeEvents API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeevents.html
 func (client *Client) DescribeEvents(request *DescribeEventsRequest) (response *DescribeEventsResponse, err error) {
 	response = CreateDescribeEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEvents(request *DescribeEventsRequest) (response *
 }
 
 // DescribeEventsWithChan invokes the sddp.DescribeEvents API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventsWithChan(request *DescribeEventsRequest) (<-chan *DescribeEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEventsWithChan(request *DescribeEventsRequest) (<-
 }
 
 // DescribeEventsWithCallback invokes the sddp.DescribeEvents API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventsWithCallback(request *DescribeEventsRequest, callback func(response *DescribeEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,9 +72,6 @@ func (client *Client) DescribeEventsWithCallback(request *DescribeEventsRequest,
 type DescribeEventsRequest struct {
 	*requests.RpcRequest
 	ProductCode       string           `position:"Query" name:"ProductCode"`
-	FeatureType       requests.Integer `position:"Query" name:"FeatureType"`
-	EndTime           string           `position:"Query" name:"EndTime"`
-	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
 	StartTime         string           `position:"Query" name:"StartTime"`
 	UserId            requests.Integer `position:"Query" name:"UserId"`
 	TypeCode          string           `position:"Query" name:"TypeCode"`
@@ -87,10 +79,16 @@ type DescribeEventsRequest struct {
 	SourceIp          string           `position:"Query" name:"SourceIp"`
 	TargetProductCode string           `position:"Query" name:"TargetProductCode"`
 	PageSize          requests.Integer `position:"Query" name:"PageSize"`
-	DepartId          requests.Integer `position:"Query" name:"DepartId"`
+	Id                requests.Integer `position:"Query" name:"Id"`
 	Lang              string           `position:"Query" name:"Lang"`
 	DealUserId        string           `position:"Query" name:"DealUserId"`
+	FeatureType       requests.Integer `position:"Query" name:"FeatureType"`
+	EndTime           string           `position:"Query" name:"EndTime"`
+	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceName      string           `position:"Query" name:"InstanceName"`
+	DepartId          requests.Integer `position:"Query" name:"DepartId"`
 	Status            string           `position:"Query" name:"Status"`
+	UserName          string           `position:"Query" name:"UserName"`
 }
 
 // DescribeEventsResponse is the response struct for api DescribeEvents
@@ -108,7 +106,8 @@ func CreateDescribeEventsRequest() (request *DescribeEventsRequest) {
 	request = &DescribeEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEvents", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEvents", "", "")
+	request.Method = requests.POST
 	return
 }
 

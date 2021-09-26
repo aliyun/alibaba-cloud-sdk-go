@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataLimitDetail invokes the sddp.DescribeDataLimitDetail API synchronously
-// api document: https://help.aliyun.com/api/sddp/describedatalimitdetail.html
 func (client *Client) DescribeDataLimitDetail(request *DescribeDataLimitDetailRequest) (response *DescribeDataLimitDetailResponse, err error) {
 	response = CreateDescribeDataLimitDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataLimitDetail(request *DescribeDataLimitDetailRe
 }
 
 // DescribeDataLimitDetailWithChan invokes the sddp.DescribeDataLimitDetail API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describedatalimitdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataLimitDetailWithChan(request *DescribeDataLimitDetailRequest) (<-chan *DescribeDataLimitDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataLimitDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataLimitDetailWithChan(request *DescribeDataLimit
 }
 
 // DescribeDataLimitDetailWithCallback invokes the sddp.DescribeDataLimitDetail API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describedatalimitdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataLimitDetailWithCallback(request *DescribeDataLimitDetailRequest, callback func(response *DescribeDataLimitDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,9 @@ func (client *Client) DescribeDataLimitDetailWithCallback(request *DescribeDataL
 // DescribeDataLimitDetailRequest is the request struct for api DescribeDataLimitDetail
 type DescribeDataLimitDetailRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Id          requests.Integer `position:"Query" name:"id"`
 	NetworkType requests.Integer `position:"Query" name:"NetworkType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
 }
 
@@ -94,7 +89,8 @@ func CreateDescribeDataLimitDetailRequest() (request *DescribeDataLimitDetailReq
 	request = &DescribeDataLimitDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataLimitDetail", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataLimitDetail", "", "")
+	request.Method = requests.POST
 	return
 }
 

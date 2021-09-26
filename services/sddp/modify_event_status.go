@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyEventStatus invokes the sddp.ModifyEventStatus API synchronously
-// api document: https://help.aliyun.com/api/sddp/modifyeventstatus.html
 func (client *Client) ModifyEventStatus(request *ModifyEventStatusRequest) (response *ModifyEventStatusResponse, err error) {
 	response = CreateModifyEventStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyEventStatus(request *ModifyEventStatusRequest) (resp
 }
 
 // ModifyEventStatusWithChan invokes the sddp.ModifyEventStatus API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifyeventstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEventStatusWithChan(request *ModifyEventStatusRequest) (<-chan *ModifyEventStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyEventStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyEventStatusWithChan(request *ModifyEventStatusReques
 }
 
 // ModifyEventStatusWithCallback invokes the sddp.ModifyEventStatus API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifyeventstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEventStatusWithCallback(request *ModifyEventStatusRequest, callback func(response *ModifyEventStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,13 @@ func (client *Client) ModifyEventStatusWithCallback(request *ModifyEventStatusRe
 // ModifyEventStatusRequest is the request struct for api ModifyEventStatus
 type ModifyEventStatusRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Backed      requests.Boolean `position:"Query" name:"Backed"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	HandleInfo  string           `position:"Query" name:"HandleInfo"`
 	DealReason  string           `position:"Query" name:"DealReason"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 	Status      requests.Integer `position:"Query" name:"Status"`
 }
 
@@ -96,7 +92,8 @@ func CreateModifyEventStatusRequest() (request *ModifyEventStatusRequest) {
 	request = &ModifyEventStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyEventStatus", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyEventStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

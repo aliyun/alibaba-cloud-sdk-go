@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssObjects invokes the sddp.DescribeOssObjects API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeossobjects.html
 func (client *Client) DescribeOssObjects(request *DescribeOssObjectsRequest) (response *DescribeOssObjectsResponse, err error) {
 	response = CreateDescribeOssObjectsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssObjects(request *DescribeOssObjectsRequest) (re
 }
 
 // DescribeOssObjectsWithChan invokes the sddp.DescribeOssObjects API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeossobjects.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssObjectsWithChan(request *DescribeOssObjectsRequest) (<-chan *DescribeOssObjectsResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssObjectsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssObjectsWithChan(request *DescribeOssObjectsRequ
 }
 
 // DescribeOssObjectsWithCallback invokes the sddp.DescribeOssObjects API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeossobjects.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssObjectsWithCallback(request *DescribeOssObjectsRequest, callback func(response *DescribeOssObjectsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,26 +71,34 @@ func (client *Client) DescribeOssObjectsWithCallback(request *DescribeOssObjects
 // DescribeOssObjectsRequest is the request struct for api DescribeOssObjects
 type DescribeOssObjectsRequest struct {
 	*requests.RpcRequest
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	Name        string           `position:"Query" name:"Name"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	QueryName   string           `position:"Query" name:"QueryName"`
-	RiskLevelId requests.Integer `position:"Query" name:"RiskLevelId"`
-	Lang        string           `position:"Query" name:"Lang"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
+	RiskLevels        string           `position:"Query" name:"RiskLevels"`
+	NeedRiskCount     requests.Boolean `position:"Query" name:"NeedRiskCount"`
+	QueryName         string           `position:"Query" name:"QueryName"`
+	RiskLevelId       requests.Integer `position:"Query" name:"RiskLevelId"`
+	LastScanTimeEnd   requests.Integer `position:"Query" name:"LastScanTimeEnd"`
+	LastScanTimeStart requests.Integer `position:"Query" name:"LastScanTimeStart"`
+	SourceIp          string           `position:"Query" name:"SourceIp"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	Lang              string           `position:"Query" name:"Lang"`
+	ServiceRegionId   string           `position:"Query" name:"ServiceRegionId"`
+	FeatureType       requests.Integer `position:"Query" name:"FeatureType"`
+	OrderBy           string           `position:"Query" name:"OrderBy"`
+	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
+	RuleIds           string           `position:"Query" name:"RuleIds"`
+	InstanceId        string           `position:"Query" name:"InstanceId"`
+	Name              string           `position:"Query" name:"Name"`
+	RuleId            requests.Integer `position:"Query" name:"RuleId"`
+	Category          requests.Integer `position:"Query" name:"Category"`
 }
 
 // DescribeOssObjectsResponse is the response struct for api DescribeOssObjects
 type DescribeOssObjectsResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId" xml:"RequestId"`
-	PageSize    int      `json:"PageSize" xml:"PageSize"`
-	CurrentPage int      `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int      `json:"TotalCount" xml:"TotalCount"`
-	Items       []Column `json:"Items" xml:"Items"`
+	RequestId   string                       `json:"RequestId" xml:"RequestId"`
+	PageSize    int                          `json:"PageSize" xml:"PageSize"`
+	CurrentPage int                          `json:"CurrentPage" xml:"CurrentPage"`
+	TotalCount  int                          `json:"TotalCount" xml:"TotalCount"`
+	Items       []ColumnInDescribeOssObjects `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeOssObjectsRequest creates a request to invoke DescribeOssObjects API
@@ -103,7 +106,8 @@ func CreateDescribeOssObjectsRequest() (request *DescribeOssObjectsRequest) {
 	request = &DescribeOssObjectsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeOssObjects", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeOssObjects", "", "")
+	request.Method = requests.POST
 	return
 }
 

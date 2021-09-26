@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDataLimit invokes the sddp.DeleteDataLimit API synchronously
-// api document: https://help.aliyun.com/api/sddp/deletedatalimit.html
 func (client *Client) DeleteDataLimit(request *DeleteDataLimitRequest) (response *DeleteDataLimitResponse, err error) {
 	response = CreateDeleteDataLimitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDataLimit(request *DeleteDataLimitRequest) (response
 }
 
 // DeleteDataLimitWithChan invokes the sddp.DeleteDataLimit API asynchronously
-// api document: https://help.aliyun.com/api/sddp/deletedatalimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDataLimitWithChan(request *DeleteDataLimitRequest) (<-chan *DeleteDataLimitResponse, <-chan error) {
 	responseChan := make(chan *DeleteDataLimitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDataLimitWithChan(request *DeleteDataLimitRequest) (
 }
 
 // DeleteDataLimitWithCallback invokes the sddp.DeleteDataLimit API asynchronously
-// api document: https://help.aliyun.com/api/sddp/deletedatalimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDataLimitWithCallback(request *DeleteDataLimitRequest, callback func(response *DeleteDataLimitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) DeleteDataLimitWithCallback(request *DeleteDataLimitReques
 // DeleteDataLimitRequest is the request struct for api DeleteDataLimit
 type DeleteDataLimitRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
 	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
 }
@@ -93,7 +88,8 @@ func CreateDeleteDataLimitRequest() (request *DeleteDataLimitRequest) {
 	request = &DeleteDataLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DeleteDataLimit", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DeleteDataLimit", "", "")
+	request.Method = requests.POST
 	return
 }
 

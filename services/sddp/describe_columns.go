@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeColumns invokes the sddp.DescribeColumns API synchronously
-// api document: https://help.aliyun.com/api/sddp/describecolumns.html
 func (client *Client) DescribeColumns(request *DescribeColumnsRequest) (response *DescribeColumnsResponse, err error) {
 	response = CreateDescribeColumnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeColumns(request *DescribeColumnsRequest) (response
 }
 
 // DescribeColumnsWithChan invokes the sddp.DescribeColumns API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describecolumns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeColumnsWithChan(request *DescribeColumnsRequest) (<-chan *DescribeColumnsResponse, <-chan error) {
 	responseChan := make(chan *DescribeColumnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeColumnsWithChan(request *DescribeColumnsRequest) (
 }
 
 // DescribeColumnsWithCallback invokes the sddp.DescribeColumns API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describecolumns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeColumnsWithCallback(request *DescribeColumnsRequest, callback func(response *DescribeColumnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,26 +71,34 @@ func (client *Client) DescribeColumnsWithCallback(request *DescribeColumnsReques
 // DescribeColumnsRequest is the request struct for api DescribeColumns
 type DescribeColumnsRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	RiskLevels  string           `position:"Query" name:"RiskLevels"`
-	Name        string           `position:"Query" name:"Name"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	TableId     requests.Integer `position:"Query" name:"TableId"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	QueryName   string           `position:"Query" name:"QueryName"`
-	Lang        string           `position:"Query" name:"Lang"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
+	ProductCode   string           `position:"Query" name:"ProductCode"`
+	RiskLevels    string           `position:"Query" name:"RiskLevels"`
+	RuleName      string           `position:"Query" name:"RuleName"`
+	QueryName     string           `position:"Query" name:"QueryName"`
+	RiskLevelId   requests.Integer `position:"Query" name:"RiskLevelId"`
+	SensLevelName string           `position:"Query" name:"SensLevelName"`
+	SourceIp      string           `position:"Query" name:"SourceIp"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	TableId       requests.Integer `position:"Query" name:"TableId"`
+	Lang          string           `position:"Query" name:"Lang"`
+	TableName     string           `position:"Query" name:"TableName"`
+	FeatureType   requests.Integer `position:"Query" name:"FeatureType"`
+	OrderBy       string           `position:"Query" name:"OrderBy"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId    requests.Integer `position:"Query" name:"InstanceId"`
+	InstanceName  string           `position:"Query" name:"InstanceName"`
+	Name          string           `position:"Query" name:"Name"`
+	RuleId        requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // DescribeColumnsResponse is the response struct for api DescribeColumns
 type DescribeColumnsResponse struct {
 	*responses.BaseResponse
-	RequestId   string                    `json:"RequestId" xml:"RequestId"`
-	PageSize    int                       `json:"PageSize" xml:"PageSize"`
-	CurrentPage int                       `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int                       `json:"TotalCount" xml:"TotalCount"`
-	Items       []ColumnInDescribeColumns `json:"Items" xml:"Items"`
+	CurrentPage int      `json:"CurrentPage" xml:"CurrentPage"`
+	RequestId   string   `json:"RequestId" xml:"RequestId"`
+	PageSize    int      `json:"PageSize" xml:"PageSize"`
+	TotalCount  int      `json:"TotalCount" xml:"TotalCount"`
+	Items       []Column `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeColumnsRequest creates a request to invoke DescribeColumns API
@@ -103,7 +106,8 @@ func CreateDescribeColumnsRequest() (request *DescribeColumnsRequest) {
 	request = &DescribeColumnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeColumns", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeColumns", "", "")
+	request.Method = requests.POST
 	return
 }
 

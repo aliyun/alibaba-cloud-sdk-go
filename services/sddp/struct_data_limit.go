@@ -17,14 +17,45 @@ package sddp
 
 // DataLimit is a nested struct in sddp response
 type DataLimit struct {
-	GmtCreate       int    `json:"GmtCreate" xml:"GmtCreate"`
-	Connector       string `json:"Connector" xml:"Connector"`
-	CheckStatusName string `json:"CheckStatusName" xml:"CheckStatusName"`
-	Password        string `json:"Password" xml:"Password"`
-	RegionId        string `json:"RegionId" xml:"RegionId"`
-	ParentId        string `json:"ParentId" xml:"ParentId"`
-	LocalName       string `json:"LocalName" xml:"LocalName"`
-	Id              int    `json:"Id" xml:"Id"`
-	UserName        string `json:"UserName" xml:"UserName"`
-	CheckStatus     int    `json:"CheckStatus" xml:"CheckStatus"`
+	Connector           string               `json:"Connector" xml:"Connector"`
+	Enable              int                  `json:"Enable" xml:"Enable"`
+	ErrorMessage        string               `json:"ErrorMessage" xml:"ErrorMessage"`
+	TenantName          string               `json:"TenantName" xml:"TenantName"`
+	LocalName           string               `json:"LocalName" xml:"LocalName"`
+	SupportAgentInstall bool                 `json:"SupportAgentInstall" xml:"SupportAgentInstall"`
+	InstanceDescription string               `json:"InstanceDescription" xml:"InstanceDescription"`
+	SupportAudit        bool                 `json:"SupportAudit" xml:"SupportAudit"`
+	CheckStatusName     string               `json:"CheckStatusName" xml:"CheckStatusName"`
+	DbVersion           string               `json:"DbVersion" xml:"DbVersion"`
+	SupportEvent        bool                 `json:"SupportEvent" xml:"SupportEvent"`
+	RegionId            string               `json:"RegionId" xml:"RegionId"`
+	TotalCount          int                  `json:"TotalCount" xml:"TotalCount"`
+	InstanceId          string               `json:"InstanceId" xml:"InstanceId"`
+	OcrStatus           int                  `json:"OcrStatus" xml:"OcrStatus"`
+	AuditStatus         int                  `json:"AuditStatus" xml:"AuditStatus"`
+	LogStoreDay         int                  `json:"LogStoreDay" xml:"LogStoreDay"`
+	EngineType          string               `json:"EngineType" xml:"EngineType"`
+	ErrorCode           string               `json:"ErrorCode" xml:"ErrorCode"`
+	ProcessTotalCount   int                  `json:"ProcessTotalCount" xml:"ProcessTotalCount"`
+	CheckStatus         int                  `json:"CheckStatus" xml:"CheckStatus"`
+	ResourceTypeCode    string               `json:"ResourceTypeCode" xml:"ResourceTypeCode"`
+	Port                int                  `json:"Port" xml:"Port"`
+	SupportDatamask     bool                 `json:"SupportDatamask" xml:"SupportDatamask"`
+	SamplingSize        int                  `json:"SamplingSize" xml:"SamplingSize"`
+	ParentId            string               `json:"ParentId" xml:"ParentId"`
+	EventStatus         int                  `json:"EventStatus" xml:"EventStatus"`
+	ProcessStatus       int                  `json:"ProcessStatus" xml:"ProcessStatus"`
+	SupportScan         bool                 `json:"SupportScan" xml:"SupportScan"`
+	Id                  int64                `json:"Id" xml:"Id"`
+	NextStartTime       int64                `json:"NextStartTime" xml:"NextStartTime"`
+	GmtCreate           int64                `json:"GmtCreate" xml:"GmtCreate"`
+	ResourceType        int64                `json:"ResourceType" xml:"ResourceType"`
+	AgentId             string               `json:"AgentId" xml:"AgentId"`
+	AutoScan            int                  `json:"AutoScan" xml:"AutoScan"`
+	UserName            string               `json:"UserName" xml:"UserName"`
+	LastFinishedTime    int64                `json:"LastFinishedTime" xml:"LastFinishedTime"`
+	DatamaskStatus      int                  `json:"DatamaskStatus" xml:"DatamaskStatus"`
+	SupportOcr          bool                 `json:"SupportOcr" xml:"SupportOcr"`
+	AgentState          int                  `json:"AgentState" xml:"AgentState"`
+	DataLimitList       []DataLimitListInner `json:"DataLimitList" xml:"DataLimitList"`
 }

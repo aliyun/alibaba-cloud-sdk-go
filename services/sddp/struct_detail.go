@@ -17,6 +17,7 @@ package sddp
 
 // Detail is a nested struct in sddp response
 type Detail struct {
-	Content []ContentItem `json:"Content" xml:"Content"`
-	Chart   []ChartItem   `json:"Chart" xml:"Chart"`
+	Content      []ContentItem      `json:"Content" xml:"Content"`
+	Chart        []ChartItem        `json:"Chart" xml:"Chart"`
+	ResourceInfo []ResourceInfoItem `json:"ResourceInfo" xml:"ResourceInfo"`
 }

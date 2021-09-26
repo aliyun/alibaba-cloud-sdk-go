@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRule invokes the sddp.CreateRule API synchronously
-// api document: https://help.aliyun.com/api/sddp/createrule.html
 func (client *Client) CreateRule(request *CreateRuleRequest) (response *CreateRuleResponse, err error) {
 	response = CreateCreateRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRule(request *CreateRuleRequest) (response *CreateRu
 }
 
 // CreateRuleWithChan invokes the sddp.CreateRule API asynchronously
-// api document: https://help.aliyun.com/api/sddp/createrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRuleWithChan(request *CreateRuleRequest) (<-chan *CreateRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRuleWithChan(request *CreateRuleRequest) (<-chan *Cr
 }
 
 // CreateRuleWithCallback invokes the sddp.CreateRule API asynchronously
-// api document: https://help.aliyun.com/api/sddp/createrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRuleWithCallback(request *CreateRuleRequest, callback func(response *CreateRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,20 +71,30 @@ func (client *Client) CreateRuleWithCallback(request *CreateRuleRequest, callbac
 // CreateRuleRequest is the request struct for api CreateRule
 type CreateRuleRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	Name        string           `position:"Query" name:"Name"`
-	RiskLevelId requests.Integer `position:"Query" name:"RiskLevelId"`
-	Lang        string           `position:"Query" name:"Lang"`
-	CustomType  requests.Integer `position:"Query" name:"CustomType"`
-	Category    requests.Integer `position:"Query" name:"Category"`
-	Content     string           `position:"Query" name:"Content"`
+	WarnLevel       requests.Integer `position:"Query" name:"WarnLevel"`
+	ProductCode     string           `position:"Query" name:"ProductCode"`
+	ProductId       requests.Integer `position:"Query" name:"ProductId"`
+	Description     string           `position:"Query" name:"Description"`
+	RiskLevelId     requests.Integer `position:"Query" name:"RiskLevelId"`
+	Content         string           `position:"Query" name:"Content"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Lang            string           `position:"Query" name:"Lang"`
+	FeatureType     requests.Integer `position:"Query" name:"FeatureType"`
+	RuleType        requests.Integer `position:"Query" name:"RuleType"`
+	StatExpress     string           `position:"Query" name:"StatExpress"`
+	ContentCategory requests.Integer `position:"Query" name:"ContentCategory"`
+	CustomType      requests.Integer `position:"Query" name:"CustomType"`
+	Target          string           `position:"Query" name:"Target"`
+	Name            string           `position:"Query" name:"Name"`
+	Category        requests.Integer `position:"Query" name:"Category"`
+	Status          requests.Integer `position:"Query" name:"Status"`
 }
 
 // CreateRuleResponse is the response struct for api CreateRule
 type CreateRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Id        int    `json:"Id" xml:"Id"`
 }
 
 // CreateCreateRuleRequest creates a request to invoke CreateRule API
@@ -97,7 +102,8 @@ func CreateCreateRuleRequest() (request *CreateRuleRequest) {
 	request = &CreateRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateRule", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

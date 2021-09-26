@@ -20,5 +20,6 @@ type ChartItem struct {
 	Label  string `json:"Label" xml:"Label"`
 	XLabel string `json:"XLabel" xml:"XLabel"`
 	YLabel string `json:"YLabel" xml:"YLabel"`
+	Type   string `json:"Type" xml:"Type"`
 	Data   Data   `json:"Data" xml:"Data"`
 }

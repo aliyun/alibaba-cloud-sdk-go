@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRule invokes the sddp.DeleteRule API synchronously
-// api document: https://help.aliyun.com/api/sddp/deleterule.html
 func (client *Client) DeleteRule(request *DeleteRuleRequest) (response *DeleteRuleResponse, err error) {
 	response = CreateDeleteRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRule(request *DeleteRuleRequest) (response *DeleteRu
 }
 
 // DeleteRuleWithChan invokes the sddp.DeleteRule API asynchronously
-// api document: https://help.aliyun.com/api/sddp/deleterule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRuleWithChan(request *DeleteRuleRequest) (<-chan *DeleteRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRuleWithChan(request *DeleteRuleRequest) (<-chan *De
 }
 
 // DeleteRuleWithCallback invokes the sddp.DeleteRule API asynchronously
-// api document: https://help.aliyun.com/api/sddp/deleterule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRuleWithCallback(request *DeleteRuleRequest, callback func(response *DeleteRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) DeleteRuleWithCallback(request *DeleteRuleRequest, callbac
 // DeleteRuleRequest is the request struct for api DeleteRule
 type DeleteRuleRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
 	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
 }
@@ -93,7 +88,8 @@ func CreateDeleteRuleRequest() (request *DeleteRuleRequest) {
 	request = &DeleteRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DeleteRule", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DeleteRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

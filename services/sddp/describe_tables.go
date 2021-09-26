@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTables invokes the sddp.DescribeTables API synchronously
-// api document: https://help.aliyun.com/api/sddp/describetables.html
 func (client *Client) DescribeTables(request *DescribeTablesRequest) (response *DescribeTablesResponse, err error) {
 	response = CreateDescribeTablesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTables(request *DescribeTablesRequest) (response *
 }
 
 // DescribeTablesWithChan invokes the sddp.DescribeTables API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describetables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTablesWithChan(request *DescribeTablesRequest) (<-chan *DescribeTablesResponse, <-chan error) {
 	responseChan := make(chan *DescribeTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTablesWithChan(request *DescribeTablesRequest) (<-
 }
 
 // DescribeTablesWithCallback invokes the sddp.DescribeTables API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describetables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTablesWithCallback(request *DescribeTablesRequest, callback func(response *DescribeTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,29 +71,43 @@ func (client *Client) DescribeTablesWithCallback(request *DescribeTablesRequest,
 // DescribeTablesRequest is the request struct for api DescribeTables
 type DescribeTablesRequest struct {
 	*requests.RpcRequest
-	ProductId   requests.Integer `position:"Query" name:"ProductId"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	PackageId   requests.Integer `position:"Query" name:"PackageId"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	QueryName   string           `position:"Query" name:"QueryName"`
-	RiskLevelId requests.Integer `position:"Query" name:"RiskLevelId"`
-	InstanceId  requests.Integer `position:"Query" name:"InstanceId"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Name        string           `position:"Query" name:"Name"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	Lang        string           `position:"Query" name:"Lang"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
-	QueryType   requests.Integer `position:"Query" name:"QueryType"`
+	ProductCode         string           `position:"Query" name:"ProductCode"`
+	ProductId           requests.Integer `position:"Query" name:"ProductId"`
+	RiskLevels          string           `position:"Query" name:"RiskLevels"`
+	NeedRiskCount       requests.Boolean `position:"Query" name:"NeedRiskCount"`
+	PackageId           requests.Integer `position:"Query" name:"PackageId"`
+	RuleName            string           `position:"Query" name:"RuleName"`
+	QueryName           string           `position:"Query" name:"QueryName"`
+	RiskLevelId         requests.Integer `position:"Query" name:"RiskLevelId"`
+	StartTime           requests.Integer `position:"Query" name:"StartTime"`
+	LastScanTimeEnd     requests.Integer `position:"Query" name:"LastScanTimeEnd"`
+	LastScanTimeStart   requests.Integer `position:"Query" name:"LastScanTimeStart"`
+	SensLevelName       string           `position:"Query" name:"SensLevelName"`
+	SourceIp            string           `position:"Query" name:"SourceIp"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	InstanceDescription string           `position:"Query" name:"InstanceDescription"`
+	Lang                string           `position:"Query" name:"Lang"`
+	QueryType           requests.Integer `position:"Query" name:"QueryType"`
+	ServiceRegionId     string           `position:"Query" name:"ServiceRegionId"`
+	FeatureType         requests.Integer `position:"Query" name:"FeatureType"`
+	OrderBy             string           `position:"Query" name:"OrderBy"`
+	EndTime             requests.Integer `position:"Query" name:"EndTime"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	RuleIds             string           `position:"Query" name:"RuleIds"`
+	InstanceId          requests.Integer `position:"Query" name:"InstanceId"`
+	InstanceName        string           `position:"Query" name:"InstanceName"`
+	Name                string           `position:"Query" name:"Name"`
+	RuleId              requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // DescribeTablesResponse is the response struct for api DescribeTables
 type DescribeTablesResponse struct {
 	*responses.BaseResponse
-	RequestId   string  `json:"RequestId" xml:"RequestId"`
-	PageSize    int     `json:"PageSize" xml:"PageSize"`
-	CurrentPage int     `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int     `json:"TotalCount" xml:"TotalCount"`
-	Items       []Table `json:"Items" xml:"Items"`
+	RequestId   string                  `json:"RequestId" xml:"RequestId"`
+	PageSize    int                     `json:"PageSize" xml:"PageSize"`
+	CurrentPage int                     `json:"CurrentPage" xml:"CurrentPage"`
+	TotalCount  int                     `json:"TotalCount" xml:"TotalCount"`
+	Items       []TableInDescribeTables `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeTablesRequest creates a request to invoke DescribeTables API
@@ -106,7 +115,8 @@ func CreateDescribeTablesRequest() (request *DescribeTablesRequest) {
 	request = &DescribeTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeTables", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeTables", "", "")
+	request.Method = requests.POST
 	return
 }
 

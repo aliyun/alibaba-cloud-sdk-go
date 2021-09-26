@@ -17,22 +17,33 @@ package sddp
 
 // Rule is a nested struct in sddp response
 type Rule struct {
-	Name          string `json:"Name" xml:"Name"`
-	Status        int    `json:"Status" xml:"Status"`
-	RiskLevelName string `json:"RiskLevelName" xml:"RiskLevelName"`
-	RuleName      string `json:"RuleName" xml:"RuleName"`
-	DepartName    string `json:"DepartName" xml:"DepartName"`
-	Id            int    `json:"Id" xml:"Id"`
-	CustomType    int    `json:"CustomType" xml:"CustomType"`
-	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
-	GmtCreate     int    `json:"GmtCreate" xml:"GmtCreate"`
-	CategoryName  string `json:"CategoryName" xml:"CategoryName"`
-	Content       string `json:"Content" xml:"Content"`
-	Count         int    `json:"Count" xml:"Count"`
-	LoginName     string `json:"LoginName" xml:"LoginName"`
-	GmtModified   int    `json:"GmtModified" xml:"GmtModified"`
-	Category      int    `json:"Category" xml:"Category"`
-	RiskLevelId   int    `json:"RiskLevelId" xml:"RiskLevelId"`
-	UserId        int    `json:"UserId" xml:"UserId"`
-	Description   string `json:"Description" xml:"Description"`
+	Name            string      `json:"Name" xml:"Name"`
+	ProductId       int64       `json:"ProductId" xml:"ProductId"`
+	RuleName        string      `json:"RuleName" xml:"RuleName"`
+	HitTotalCount   int         `json:"HitTotalCount" xml:"HitTotalCount"`
+	CategoryName    string      `json:"CategoryName" xml:"CategoryName"`
+	Content         string      `json:"Content" xml:"Content"`
+	GroupId         string      `json:"GroupId" xml:"GroupId"`
+	Description     string      `json:"Description" xml:"Description"`
+	Status          int         `json:"Status" xml:"Status"`
+	StatExpress     string      `json:"StatExpress" xml:"StatExpress"`
+	RiskLevelName   string      `json:"RiskLevelName" xml:"RiskLevelName"`
+	DepartName      string      `json:"DepartName" xml:"DepartName"`
+	Id              int64       `json:"Id" xml:"Id"`
+	ContentCategory string      `json:"ContentCategory" xml:"ContentCategory"`
+	ProductCode     string      `json:"ProductCode" xml:"ProductCode"`
+	CustomType      int         `json:"CustomType" xml:"CustomType"`
+	DisplayName     string      `json:"DisplayName" xml:"DisplayName"`
+	GmtCreate       int64       `json:"GmtCreate" xml:"GmtCreate"`
+	WarnLevel       int         `json:"WarnLevel" xml:"WarnLevel"`
+	Count           int64       `json:"Count" xml:"Count"`
+	LoginName       string      `json:"LoginName" xml:"LoginName"`
+	GmtModified     int64       `json:"GmtModified" xml:"GmtModified"`
+	Target          string      `json:"Target" xml:"Target"`
+	Category        int         `json:"Category" xml:"Category"`
+	RiskLevelId     int64       `json:"RiskLevelId" xml:"RiskLevelId"`
+	UserId          int64       `json:"UserId" xml:"UserId"`
+	MajorKey        string      `json:"MajorKey" xml:"MajorKey"`
+	SampleList      []string    `json:"SampleList" xml:"SampleList"`
+	ChildList       []ChildRule `json:"ChildList" xml:"ChildList"`
 }

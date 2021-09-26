@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAccountDetail invokes the sddp.DescribeAccountDetail API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeaccountdetail.html
 func (client *Client) DescribeAccountDetail(request *DescribeAccountDetailRequest) (response *DescribeAccountDetailResponse, err error) {
 	response = CreateDescribeAccountDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAccountDetail(request *DescribeAccountDetailReques
 }
 
 // DescribeAccountDetailWithChan invokes the sddp.DescribeAccountDetail API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeaccountdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountDetailWithChan(request *DescribeAccountDetailRequest) (<-chan *DescribeAccountDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccountDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAccountDetailWithChan(request *DescribeAccountDeta
 }
 
 // DescribeAccountDetailWithCallback invokes the sddp.DescribeAccountDetail API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeaccountdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountDetailWithCallback(request *DescribeAccountDetailRequest, callback func(response *DescribeAccountDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,10 @@ func (client *Client) DescribeAccountDetailWithCallback(request *DescribeAccount
 // DescribeAccountDetailRequest is the request struct for api DescribeAccountDetail
 type DescribeAccountDetailRequest struct {
 	*requests.RpcRequest
-	SourceIp      string           `position:"Query" name:"SourceIp"`
-	Lang          string           `position:"Query" name:"Lang"`
 	UserId        requests.Integer `position:"Query" name:"UserId"`
 	AccountTypeId requests.Integer `position:"Query" name:"AccountTypeId"`
+	SourceIp      string           `position:"Query" name:"SourceIp"`
+	Lang          string           `position:"Query" name:"Lang"`
 }
 
 // DescribeAccountDetailResponse is the response struct for api DescribeAccountDetail
@@ -94,7 +89,8 @@ func CreateDescribeAccountDetailRequest() (request *DescribeAccountDetailRequest
 	request = &DescribeAccountDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeAccountDetail", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeAccountDetail", "", "")
+	request.Method = requests.POST
 	return
 }
 

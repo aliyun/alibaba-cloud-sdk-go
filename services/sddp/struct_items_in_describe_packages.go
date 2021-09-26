@@ -17,5 +17,5 @@ package sddp
 
 // ItemsInDescribePackages is a nested struct in sddp response
 type ItemsInDescribePackages struct {
-	Package []Package `json:"Package" xml:"Package"`
+	Package []PackageInDescribePackages `json:"Package" xml:"Package"`
 }

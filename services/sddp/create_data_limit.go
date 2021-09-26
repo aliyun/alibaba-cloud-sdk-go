@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDataLimit invokes the sddp.CreateDataLimit API synchronously
-// api document: https://help.aliyun.com/api/sddp/createdatalimit.html
 func (client *Client) CreateDataLimit(request *CreateDataLimitRequest) (response *CreateDataLimitResponse, err error) {
 	response = CreateCreateDataLimitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDataLimit(request *CreateDataLimitRequest) (response
 }
 
 // CreateDataLimitWithChan invokes the sddp.CreateDataLimit API asynchronously
-// api document: https://help.aliyun.com/api/sddp/createdatalimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDataLimitWithChan(request *CreateDataLimitRequest) (<-chan *CreateDataLimitResponse, <-chan error) {
 	responseChan := make(chan *CreateDataLimitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDataLimitWithChan(request *CreateDataLimitRequest) (
 }
 
 // CreateDataLimitWithCallback invokes the sddp.CreateDataLimit API asynchronously
-// api document: https://help.aliyun.com/api/sddp/createdatalimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDataLimitWithCallback(request *CreateDataLimitRequest, callback func(response *CreateDataLimitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,22 @@ func (client *Client) CreateDataLimitWithCallback(request *CreateDataLimitReques
 // CreateDataLimitRequest is the request struct for api CreateDataLimit
 type CreateDataLimitRequest struct {
 	*requests.RpcRequest
+	OcrStatus       requests.Integer `position:"Query" name:"OcrStatus"`
+	ParentId        string           `position:"Query" name:"ParentId"`
 	Password        string           `position:"Query" name:"Password"`
+	BatchCreate     requests.Boolean `position:"Query" name:"BatchCreate"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	Connector       string           `position:"Query" name:"Connector"`
 	DataLimitList   string           `position:"Query" name:"DataLimitList"`
 	Lang            string           `position:"Query" name:"Lang"`
-	ResourceType    requests.Integer `position:"Query" name:"ResourceType"`
 	ServiceRegionId string           `position:"Query" name:"ServiceRegionId"`
-	ParentId        string           `position:"Query" name:"ParentId"`
+	EngineType      string           `position:"Query" name:"EngineType"`
+	AuditStatus     requests.Integer `position:"Query" name:"AuditStatus"`
+	AutoScan        requests.Integer `position:"Query" name:"AutoScan"`
+	LogStoreDay     requests.Integer `position:"Query" name:"LogStoreDay"`
+	ResourceType    requests.Integer `position:"Query" name:"ResourceType"`
+	Connector       string           `position:"Query" name:"Connector"`
+	Port            requests.Integer `position:"Query" name:"Port"`
+	EventStatus     requests.Integer `position:"Query" name:"EventStatus"`
 	UserName        string           `position:"Query" name:"UserName"`
 }
 
@@ -91,6 +94,7 @@ type CreateDataLimitRequest struct {
 type CreateDataLimitResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Id        int    `json:"Id" xml:"Id"`
 }
 
 // CreateCreateDataLimitRequest creates a request to invoke CreateDataLimit API
@@ -98,7 +102,8 @@ func CreateCreateDataLimitRequest() (request *CreateDataLimitRequest) {
 	request = &CreateDataLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateDataLimit", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateDataLimit", "", "")
+	request.Method = requests.POST
 	return
 }
 

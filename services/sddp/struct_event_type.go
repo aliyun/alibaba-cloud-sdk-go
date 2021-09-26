@@ -17,7 +17,7 @@ package sddp
 
 // EventType is a nested struct in sddp response
 type EventType struct {
-	Id          int       `json:"Id" xml:"Id"`
+	Id          int64     `json:"Id" xml:"Id"`
 	Name        string    `json:"Name" xml:"Name"`
 	Code        string    `json:"Code" xml:"Code"`
 	Description string    `json:"Description" xml:"Description"`

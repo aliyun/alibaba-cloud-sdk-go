@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAccounts invokes the sddp.DescribeAccounts API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeaccounts.html
 func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (response *DescribeAccountsResponse, err error) {
 	response = CreateDescribeAccountsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (respon
 }
 
 // DescribeAccountsWithChan invokes the sddp.DescribeAccounts API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest) (<-chan *DescribeAccountsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccountsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest)
 }
 
 // DescribeAccountsWithCallback invokes the sddp.DescribeAccounts API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequest, callback func(response *DescribeAccountsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,20 +72,20 @@ func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequ
 type DescribeAccountsRequest struct {
 	*requests.RpcRequest
 	ProductCode string           `position:"Query" name:"ProductCode"`
-	LoginName   string           `position:"Query" name:"LoginName"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	ColumnId    string           `position:"Query" name:"ColumnId"`
 	PackageId   string           `position:"Query" name:"PackageId"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	DepartId    requests.Integer `position:"Query" name:"DepartId"`
-	OperationId requests.Integer `position:"Query" name:"OperationId"`
 	TableId     string           `position:"Query" name:"TableId"`
 	Lang        string           `position:"Query" name:"Lang"`
 	Key         string           `position:"Query" name:"Key"`
 	QueryType   requests.Integer `position:"Query" name:"QueryType"`
+	LoginName   string           `position:"Query" name:"LoginName"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	ColumnId    string           `position:"Query" name:"ColumnId"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	DepartId    requests.Integer `position:"Query" name:"DepartId"`
+	OperationId requests.Integer `position:"Query" name:"OperationId"`
 }
 
 // DescribeAccountsResponse is the response struct for api DescribeAccounts
@@ -108,7 +103,8 @@ func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	request = &DescribeAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeAccounts", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeAccounts", "", "")
+	request.Method = requests.POST
 	return
 }
 

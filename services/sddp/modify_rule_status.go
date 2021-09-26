@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRuleStatus invokes the sddp.ModifyRuleStatus API synchronously
-// api document: https://help.aliyun.com/api/sddp/modifyrulestatus.html
 func (client *Client) ModifyRuleStatus(request *ModifyRuleStatusRequest) (response *ModifyRuleStatusResponse, err error) {
 	response = CreateModifyRuleStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRuleStatus(request *ModifyRuleStatusRequest) (respon
 }
 
 // ModifyRuleStatusWithChan invokes the sddp.ModifyRuleStatus API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifyrulestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRuleStatusWithChan(request *ModifyRuleStatusRequest) (<-chan *ModifyRuleStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyRuleStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRuleStatusWithChan(request *ModifyRuleStatusRequest)
 }
 
 // ModifyRuleStatusWithCallback invokes the sddp.ModifyRuleStatus API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifyrulestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRuleStatusWithCallback(request *ModifyRuleStatusRequest, callback func(response *ModifyRuleStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) ModifyRuleStatusWithCallback(request *ModifyRuleStatusRequ
 // ModifyRuleStatusRequest is the request struct for api ModifyRuleStatus
 type ModifyRuleStatusRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
 	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Ids         string           `position:"Query" name:"Ids"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
 	Status      requests.Integer `position:"Query" name:"Status"`
@@ -87,6 +83,7 @@ type ModifyRuleStatusRequest struct {
 type ModifyRuleStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	FailedIds string `json:"FailedIds" xml:"FailedIds"`
 }
 
 // CreateModifyRuleStatusRequest creates a request to invoke ModifyRuleStatus API
@@ -94,7 +91,8 @@ func CreateModifyRuleStatusRequest() (request *ModifyRuleStatusRequest) {
 	request = &ModifyRuleStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyRuleStatus", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyRuleStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRule invokes the sddp.ModifyRule API synchronously
-// api document: https://help.aliyun.com/api/sddp/modifyrule.html
 func (client *Client) ModifyRule(request *ModifyRuleRequest) (response *ModifyRuleResponse, err error) {
 	response = CreateModifyRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRule(request *ModifyRuleRequest) (response *ModifyRu
 }
 
 // ModifyRuleWithChan invokes the sddp.ModifyRule API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifyrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRuleWithChan(request *ModifyRuleRequest) (<-chan *ModifyRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRuleWithChan(request *ModifyRuleRequest) (<-chan *Mo
 }
 
 // ModifyRuleWithCallback invokes the sddp.ModifyRule API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifyrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRuleWithCallback(request *ModifyRuleRequest, callback func(response *ModifyRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,23 @@ func (client *Client) ModifyRuleWithCallback(request *ModifyRuleRequest, callbac
 // ModifyRuleRequest is the request struct for api ModifyRule
 type ModifyRuleRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	Name        string           `position:"Query" name:"Name"`
-	Id          requests.Integer `position:"Query" name:"Id"`
-	RiskLevelId requests.Integer `position:"Query" name:"RiskLevelId"`
-	Lang        string           `position:"Query" name:"Lang"`
-	CustomType  requests.Integer `position:"Query" name:"CustomType"`
-	Category    requests.Integer `position:"Query" name:"Category"`
-	Content     string           `position:"Query" name:"Content"`
+	WarnLevel       requests.Integer `position:"Query" name:"WarnLevel"`
+	ProductCode     string           `position:"Query" name:"ProductCode"`
+	ProductId       requests.Integer `position:"Query" name:"ProductId"`
+	Description     string           `position:"Query" name:"Description"`
+	RiskLevelId     requests.Integer `position:"Query" name:"RiskLevelId"`
+	Content         string           `position:"Query" name:"Content"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Id              requests.Integer `position:"Query" name:"Id"`
+	Lang            string           `position:"Query" name:"Lang"`
+	FeatureType     requests.Integer `position:"Query" name:"FeatureType"`
+	RuleType        requests.Integer `position:"Query" name:"RuleType"`
+	StatExpress     string           `position:"Query" name:"StatExpress"`
+	ContentCategory requests.Integer `position:"Query" name:"ContentCategory"`
+	CustomType      requests.Integer `position:"Query" name:"CustomType"`
+	Target          string           `position:"Query" name:"Target"`
+	Name            string           `position:"Query" name:"Name"`
+	Category        requests.Integer `position:"Query" name:"Category"`
 }
 
 // ModifyRuleResponse is the response struct for api ModifyRule
@@ -98,7 +101,8 @@ func CreateModifyRuleRequest() (request *ModifyRuleRequest) {
 	request = &ModifyRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyRule", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

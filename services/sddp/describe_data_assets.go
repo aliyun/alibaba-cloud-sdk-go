@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataAssets invokes the sddp.DescribeDataAssets API synchronously
-// api document: https://help.aliyun.com/api/sddp/describedataassets.html
 func (client *Client) DescribeDataAssets(request *DescribeDataAssetsRequest) (response *DescribeDataAssetsResponse, err error) {
 	response = CreateDescribeDataAssetsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataAssets(request *DescribeDataAssetsRequest) (re
 }
 
 // DescribeDataAssetsWithChan invokes the sddp.DescribeDataAssets API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describedataassets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataAssetsWithChan(request *DescribeDataAssetsRequest) (<-chan *DescribeDataAssetsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataAssetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataAssetsWithChan(request *DescribeDataAssetsRequ
 }
 
 // DescribeDataAssetsWithCallback invokes the sddp.DescribeDataAssets API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describedataassets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataAssetsWithCallback(request *DescribeDataAssetsRequest, callback func(response *DescribeDataAssetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,14 @@ func (client *Client) DescribeDataAssetsWithCallback(request *DescribeDataAssets
 // DescribeDataAssetsRequest is the request struct for api DescribeDataAssets
 type DescribeDataAssetsRequest struct {
 	*requests.RpcRequest
+	RiskLevels  string           `position:"Query" name:"RiskLevels"`
 	RangeId     requests.Integer `position:"Query" name:"RangeId"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	RiskLevels  string           `position:"Query" name:"RiskLevels"`
-	Name        string           `position:"Query" name:"Name"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	Lang        string           `position:"Query" name:"Lang"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Name        string           `position:"Query" name:"Name"`
 	RuleId      requests.Integer `position:"Query" name:"RuleId"`
 }
 
@@ -102,7 +97,8 @@ func CreateDescribeDataAssetsRequest() (request *DescribeDataAssetsRequest) {
 	request = &DescribeDataAssetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataAssets", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataAssets", "", "")
+	request.Method = requests.POST
 	return
 }
 

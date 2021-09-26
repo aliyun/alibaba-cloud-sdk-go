@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDefaultLevel invokes the sddp.ModifyDefaultLevel API synchronously
-// api document: https://help.aliyun.com/api/sddp/modifydefaultlevel.html
 func (client *Client) ModifyDefaultLevel(request *ModifyDefaultLevelRequest) (response *ModifyDefaultLevelResponse, err error) {
 	response = CreateModifyDefaultLevelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDefaultLevel(request *ModifyDefaultLevelRequest) (re
 }
 
 // ModifyDefaultLevelWithChan invokes the sddp.ModifyDefaultLevel API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifydefaultlevel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDefaultLevelWithChan(request *ModifyDefaultLevelRequest) (<-chan *ModifyDefaultLevelResponse, <-chan error) {
 	responseChan := make(chan *ModifyDefaultLevelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDefaultLevelWithChan(request *ModifyDefaultLevelRequ
 }
 
 // ModifyDefaultLevelWithCallback invokes the sddp.ModifyDefaultLevel API asynchronously
-// api document: https://help.aliyun.com/api/sddp/modifydefaultlevel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDefaultLevelWithCallback(request *ModifyDefaultLevelRequest, callback func(response *ModifyDefaultLevelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,9 @@ func (client *Client) ModifyDefaultLevelWithCallback(request *ModifyDefaultLevel
 // ModifyDefaultLevelRequest is the request struct for api ModifyDefaultLevel
 type ModifyDefaultLevelRequest struct {
 	*requests.RpcRequest
-	SourceIp     string           `position:"Query" name:"SourceIp"`
 	FeatureType  requests.Integer `position:"Query" name:"FeatureType"`
 	DefaultId    requests.Integer `position:"Query" name:"DefaultId"`
+	SourceIp     string           `position:"Query" name:"SourceIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 	SensitiveIds string           `position:"Query" name:"SensitiveIds"`
 }
@@ -94,7 +89,8 @@ func CreateModifyDefaultLevelRequest() (request *ModifyDefaultLevelRequest) {
 	request = &ModifyDefaultLevelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyDefaultLevel", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyDefaultLevel", "", "")
+	request.Method = requests.POST
 	return
 }
 

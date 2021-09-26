@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEventTypes invokes the sddp.DescribeEventTypes API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeeventtypes.html
 func (client *Client) DescribeEventTypes(request *DescribeEventTypesRequest) (response *DescribeEventTypesResponse, err error) {
 	response = CreateDescribeEventTypesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEventTypes(request *DescribeEventTypesRequest) (re
 }
 
 // DescribeEventTypesWithChan invokes the sddp.DescribeEventTypes API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeeventtypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventTypesWithChan(request *DescribeEventTypesRequest) (<-chan *DescribeEventTypesResponse, <-chan error) {
 	responseChan := make(chan *DescribeEventTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEventTypesWithChan(request *DescribeEventTypesRequ
 }
 
 // DescribeEventTypesWithCallback invokes the sddp.DescribeEventTypes API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeeventtypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventTypesWithCallback(request *DescribeEventTypesRequest, callback func(response *DescribeEventTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,11 @@ func (client *Client) DescribeEventTypesWithCallback(request *DescribeEventTypes
 // DescribeEventTypesRequest is the request struct for api DescribeEventTypes
 type DescribeEventTypesRequest struct {
 	*requests.RpcRequest
-	SourceIp     string           `position:"Query" name:"SourceIp"`
+	ResourceId   requests.Integer `position:"Query" name:"ResourceId"`
 	ParentTypeId requests.Integer `position:"Query" name:"ParentTypeId"`
+	SourceIp     string           `position:"Query" name:"SourceIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	Status       requests.Integer `position:"Query" name:"Status"`
 }
 
 // DescribeEventTypesResponse is the response struct for api DescribeEventTypes
@@ -93,7 +90,8 @@ func CreateDescribeEventTypesRequest() (request *DescribeEventTypesRequest) {
 	request = &DescribeEventTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEventTypes", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEventTypes", "", "")
+	request.Method = requests.POST
 	return
 }
 

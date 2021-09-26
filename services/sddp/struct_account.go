@@ -20,25 +20,22 @@ type Account struct {
 	CellphoneNum         string      `json:"CellphoneNum" xml:"CellphoneNum"`
 	Email                string      `json:"Email" xml:"Email"`
 	InstanceName         string      `json:"InstanceName" xml:"InstanceName"`
-	Id                   int         `json:"Id" xml:"Id"`
-	CreateTime           int         `json:"CreateTime" xml:"CreateTime"`
+	Id                   int64       `json:"Id" xml:"Id"`
+	CreateTime           int64       `json:"CreateTime" xml:"CreateTime"`
 	FullName             string      `json:"FullName" xml:"FullName"`
-	LoginDataTime        int         `json:"LoginDataTime" xml:"LoginDataTime"`
+	LoginDataTime        int64       `json:"LoginDataTime" xml:"LoginDataTime"`
 	FirstLevelDepartName string      `json:"FirstLevelDepartName" xml:"FirstLevelDepartName"`
-	AuthTime             int         `json:"AuthTime" xml:"AuthTime"`
-	FirstLevelDepartId   int         `json:"FirstLevelDepartId" xml:"FirstLevelDepartId"`
-	AccountTypeId        int         `json:"AccountTypeId" xml:"AccountTypeId"`
+	FirstLevelDepartId   int64       `json:"FirstLevelDepartId" xml:"FirstLevelDepartId"`
+	AccountTypeId        int64       `json:"AccountTypeId" xml:"AccountTypeId"`
 	LoginPolicyName      string      `json:"LoginPolicyName" xml:"LoginPolicyName"`
 	ActiveStatus         string      `json:"ActiveStatus" xml:"ActiveStatus"`
 	LoginName            string      `json:"LoginName" xml:"LoginName"`
-	AliUid               int         `json:"AliUid" xml:"AliUid"`
+	AliUid               int64       `json:"AliUid" xml:"AliUid"`
 	RoleNames            string      `json:"RoleNames" xml:"RoleNames"`
-	UserId               int         `json:"UserId" xml:"UserId"`
+	UserId               int64       `json:"UserId" xml:"UserId"`
 	TelephoneNum         string      `json:"TelephoneNum" xml:"TelephoneNum"`
 	DataInstance         string      `json:"DataInstance" xml:"DataInstance"`
 	DeleteStatus         string      `json:"DeleteStatus" xml:"DeleteStatus"`
-	AuthLoginName        string      `json:"AuthLoginName" xml:"AuthLoginName"`
-	AuthFullName         string      `json:"AuthFullName" xml:"AuthFullName"`
 	EventCount           EventCount  `json:"EventCount" xml:"EventCount"`
 	PrivilegeList        []Privilege `json:"PrivilegeList" xml:"PrivilegeList"`
 }

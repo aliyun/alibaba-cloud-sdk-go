@@ -17,17 +17,17 @@ package sddp
 
 // Asset is a nested struct in sddp response
 type Asset struct {
-	Id                int    `json:"Id" xml:"Id"`
+	Id                string `json:"Id" xml:"Id"`
 	Name              string `json:"Name" xml:"Name"`
 	Owner             string `json:"Owner" xml:"Owner"`
-	CreationTime      int    `json:"CreationTime" xml:"CreationTime"`
+	CreationTime      int64  `json:"CreationTime" xml:"CreationTime"`
 	ProductId         string `json:"ProductId" xml:"ProductId"`
 	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
 	Protection        bool   `json:"Protection" xml:"Protection"`
-	Labelsec          int    `json:"Labelsec" xml:"Labelsec"`
+	Labelsec          bool   `json:"Labelsec" xml:"Labelsec"`
 	OdpsRiskLevelName string `json:"OdpsRiskLevelName" xml:"OdpsRiskLevelName"`
 	Sensitive         bool   `json:"Sensitive" xml:"Sensitive"`
-	RiskLevelId       int    `json:"RiskLevelId" xml:"RiskLevelId"`
+	RiskLevelId       int64  `json:"RiskLevelId" xml:"RiskLevelId"`
 	RiskLevelName     string `json:"RiskLevelName" xml:"RiskLevelName"`
 	RuleName          string `json:"RuleName" xml:"RuleName"`
 	DepartName        string `json:"DepartName" xml:"DepartName"`

@@ -17,15 +17,10 @@ package sddp
 
 // Package is a nested struct in sddp response
 type Package struct {
-	Id             int    `json:"Id" xml:"Id"`
-	Name           string `json:"Name" xml:"Name"`
-	Owner          string `json:"Owner" xml:"Owner"`
-	CreationTime   int    `json:"CreationTime" xml:"CreationTime"`
-	Sensitive      bool   `json:"Sensitive" xml:"Sensitive"`
-	RiskLevelId    int    `json:"RiskLevelId" xml:"RiskLevelId"`
-	RiskLevelName  string `json:"RiskLevelName" xml:"RiskLevelName"`
-	DepartName     string `json:"DepartName" xml:"DepartName"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
-	SensitiveCount int    `json:"SensitiveCount" xml:"SensitiveCount"`
-	InstanceId     int    `json:"InstanceId" xml:"InstanceId"`
+	TotalCount         int64       `json:"TotalCount" xml:"TotalCount"`
+	SensitiveCount     int64       `json:"SensitiveCount" xml:"SensitiveCount"`
+	LastCount          int64       `json:"LastCount" xml:"LastCount"`
+	Count              int64       `json:"Count" xml:"Count"`
+	LastSensitiveCount int64       `json:"LastSensitiveCount" xml:"LastSensitiveCount"`
+	RiskCountList      []RiskCount `json:"RiskCountList" xml:"RiskCountList"`
 }

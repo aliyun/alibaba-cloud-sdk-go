@@ -17,12 +17,32 @@ package sddp
 
 // Column is a nested struct in sddp response
 type Column struct {
-	Name          string `json:"Name" xml:"Name"`
-	InstanceId    int    `json:"InstanceId" xml:"InstanceId"`
-	FileId        string `json:"FileId" xml:"FileId"`
-	Category      int    `json:"Category" xml:"Category"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	RiskLevelName int    `json:"RiskLevelName" xml:"RiskLevelName"`
-	Id            int    `json:"Id" xml:"Id"`
-	RiskLevelId   int    `json:"RiskLevelId" xml:"RiskLevelId"`
+	Name               string        `json:"Name" xml:"Name"`
+	RuleName           string        `json:"RuleName" xml:"RuleName"`
+	Sensitive          bool          `json:"Sensitive" xml:"Sensitive"`
+	DataType           string        `json:"DataType" xml:"DataType"`
+	OdpsRiskLevelValue int           `json:"OdpsRiskLevelValue" xml:"OdpsRiskLevelValue"`
+	RuleId             int64         `json:"RuleId" xml:"RuleId"`
+	Id                 string        `json:"Id" xml:"Id"`
+	OdpsRiskLevelName  string        `json:"OdpsRiskLevelName" xml:"OdpsRiskLevelName"`
+	RiskLevelName      string        `json:"RiskLevelName" xml:"RiskLevelName"`
+	TotalCount         int64         `json:"TotalCount" xml:"TotalCount"`
+	TableId            int64         `json:"TableId" xml:"TableId"`
+	LastCount          int64         `json:"LastCount" xml:"LastCount"`
+	DepartName         string        `json:"DepartName" xml:"DepartName"`
+	InstanceName       string        `json:"InstanceName" xml:"InstanceName"`
+	RevisionStatus     int64         `json:"RevisionStatus" xml:"RevisionStatus"`
+	CreationTime       int64         `json:"CreationTime" xml:"CreationTime"`
+	SensLevelName      string        `json:"SensLevelName" xml:"SensLevelName"`
+	TableName          string        `json:"TableName" xml:"TableName"`
+	RevisionId         int64         `json:"RevisionId" xml:"RevisionId"`
+	ProductCode        string        `json:"ProductCode" xml:"ProductCode"`
+	InstanceId         int64         `json:"InstanceId" xml:"InstanceId"`
+	SensitiveCount     int64         `json:"SensitiveCount" xml:"SensitiveCount"`
+	Count              int64         `json:"Count" xml:"Count"`
+	RiskLevelId        int64         `json:"RiskLevelId" xml:"RiskLevelId"`
+	LastSensitiveCount int64         `json:"LastSensitiveCount" xml:"LastSensitiveCount"`
+	SampleList         []string      `json:"SampleList" xml:"SampleList"`
+	RiskCountList      []RiskCount   `json:"RiskCountList" xml:"RiskCountList"`
+	ColumnRuleTop      []ColumnCount `json:"ColumnRuleTop" xml:"ColumnRuleTop"`
 }

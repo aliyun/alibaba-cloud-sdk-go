@@ -18,9 +18,9 @@ package sddp
 // Privilege is a nested struct in sddp response
 type Privilege struct {
 	ProductName          string `json:"ProductName" xml:"ProductName"`
-	UseAccountCreateTime int    `json:"UseAccountCreateTime" xml:"UseAccountCreateTime"`
-	UseAccountName       string `json:"UseAccountName" xml:"UseAccountName"`
-	UseAccountTypeName   string `json:"UseAccountTypeName" xml:"UseAccountTypeName"`
-	UseAccountType       int    `json:"UseAccountType" xml:"UseAccountType"`
 	UseAccountId         string `json:"UseAccountId" xml:"UseAccountId"`
+	UseAccountType       int    `json:"UseAccountType" xml:"UseAccountType"`
+	UseAccountTypeName   string `json:"UseAccountTypeName" xml:"UseAccountTypeName"`
+	UseAccountCreateTime int64  `json:"UseAccountCreateTime" xml:"UseAccountCreateTime"`
+	UseAccountName       string `json:"UseAccountName" xml:"UseAccountName"`
 }

@@ -1,3 +1,7 @@
+2021-09-26 Version: v1.61.1275
+- Generated 2019-01-03 for `Sddp`.
+- Supported sdk for sddp.
+
 2021-09-24 Version: v1.61.1274
 - Generated 2020-02-17 for `Dytnsapi`.
 - Fixed SDK update delay.

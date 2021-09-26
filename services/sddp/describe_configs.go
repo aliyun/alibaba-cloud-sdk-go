@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeConfigs invokes the sddp.DescribeConfigs API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeconfigs.html
 func (client *Client) DescribeConfigs(request *DescribeConfigsRequest) (response *DescribeConfigsResponse, err error) {
 	response = CreateDescribeConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeConfigs(request *DescribeConfigsRequest) (response
 }
 
 // DescribeConfigsWithChan invokes the sddp.DescribeConfigs API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConfigsWithChan(request *DescribeConfigsRequest) (<-chan *DescribeConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeConfigsWithChan(request *DescribeConfigsRequest) (
 }
 
 // DescribeConfigsWithCallback invokes the sddp.DescribeConfigs API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConfigsWithCallback(request *DescribeConfigsRequest, callback func(response *DescribeConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) DescribeConfigsWithCallback(request *DescribeConfigsReques
 // DescribeConfigsRequest is the request struct for api DescribeConfigs
 type DescribeConfigsRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
 	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Lang        string           `position:"Query" name:"Lang"`
 }
 
@@ -93,7 +88,8 @@ func CreateDescribeConfigsRequest() (request *DescribeConfigsRequest) {
 	request = &DescribeConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeConfigs", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeConfigs", "", "")
+	request.Method = requests.POST
 	return
 }
 

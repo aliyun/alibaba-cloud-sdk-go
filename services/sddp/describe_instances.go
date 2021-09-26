@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstances invokes the sddp.DescribeInstances API synchronously
-// api document: https://help.aliyun.com/api/sddp/describeinstances.html
 func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (response *DescribeInstancesResponse, err error) {
 	response = CreateDescribeInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (resp
 }
 
 // DescribeInstancesWithChan invokes the sddp.DescribeInstances API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesRequest) (<-chan *DescribeInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesReques
 }
 
 // DescribeInstancesWithCallback invokes the sddp.DescribeInstances API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describeinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRequest, callback func(response *DescribeInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,28 +71,42 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	ProductCode string           `position:"Query" name:"ProductCode"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	ProductId   requests.Integer `position:"Query" name:"ProductId"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
-	Name        string           `position:"Query" name:"Name"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	QueryName   string           `position:"Query" name:"QueryName"`
-	RiskLevelId requests.Integer `position:"Query" name:"RiskLevelId"`
-	Lang        string           `position:"Query" name:"Lang"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
-	QueryType   requests.Integer `position:"Query" name:"QueryType"`
+	ProductCode         string           `position:"Query" name:"ProductCode"`
+	ProductId           requests.Integer `position:"Query" name:"ProductId"`
+	RiskLevels          string           `position:"Query" name:"RiskLevels"`
+	QueryName           string           `position:"Query" name:"QueryName"`
+	RiskLevelId         requests.Integer `position:"Query" name:"RiskLevelId"`
+	Source              string           `position:"Query" name:"Source"`
+	StartTime           requests.Integer `position:"Query" name:"StartTime"`
+	UserId              requests.Integer `position:"Query" name:"UserId"`
+	NameAccurate        string           `position:"Query" name:"NameAccurate"`
+	SensLevelName       string           `position:"Query" name:"SensLevelName"`
+	SourceIp            string           `position:"Query" name:"SourceIp"`
+	LastFinishTimeStart requests.Integer `position:"Query" name:"LastFinishTimeStart"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	CheckStatus         requests.Integer `position:"Query" name:"CheckStatus"`
+	Lang                string           `position:"Query" name:"Lang"`
+	QueryType           requests.Integer `position:"Query" name:"QueryType"`
+	ServiceRegionId     string           `position:"Query" name:"ServiceRegionId"`
+	EngineType          string           `position:"Query" name:"EngineType"`
+	FeatureType         requests.Integer `position:"Query" name:"FeatureType"`
+	OrderBy             string           `position:"Query" name:"OrderBy"`
+	UserType            requests.Integer `position:"Query" name:"UserType"`
+	EndTime             requests.Integer `position:"Query" name:"EndTime"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	Name                string           `position:"Query" name:"Name"`
+	RuleId              requests.Integer `position:"Query" name:"RuleId"`
+	LastFinishTimeEnd   requests.Integer `position:"Query" name:"LastFinishTimeEnd"`
 }
 
 // DescribeInstancesResponse is the response struct for api DescribeInstances
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId   string     `json:"RequestId" xml:"RequestId"`
-	PageSize    int        `json:"PageSize" xml:"PageSize"`
-	CurrentPage int        `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int        `json:"TotalCount" xml:"TotalCount"`
-	Items       []Instance `json:"Items" xml:"Items"`
+	RequestId   string                        `json:"RequestId" xml:"RequestId"`
+	PageSize    int                           `json:"PageSize" xml:"PageSize"`
+	CurrentPage int                           `json:"CurrentPage" xml:"CurrentPage"`
+	TotalCount  int                           `json:"TotalCount" xml:"TotalCount"`
+	Items       []InstanceInDescribeInstances `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeInstancesRequest creates a request to invoke DescribeInstances API
@@ -105,7 +114,8 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeInstances", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeInstances", "", "")
+	request.Method = requests.POST
 	return
 }
 

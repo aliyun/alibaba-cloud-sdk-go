@@ -17,5 +17,5 @@ package sddp
 
 // ItemsInDescribeColumns is a nested struct in sddp response
 type ItemsInDescribeColumns struct {
-	Column []ColumnInDescribeColumns `json:"Column" xml:"Column"`
+	Column []Column `json:"Column" xml:"Column"`
 }

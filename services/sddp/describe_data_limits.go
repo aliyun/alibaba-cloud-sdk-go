@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataLimits invokes the sddp.DescribeDataLimits API synchronously
-// api document: https://help.aliyun.com/api/sddp/describedatalimits.html
 func (client *Client) DescribeDataLimits(request *DescribeDataLimitsRequest) (response *DescribeDataLimitsResponse, err error) {
 	response = CreateDescribeDataLimitsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataLimits(request *DescribeDataLimitsRequest) (re
 }
 
 // DescribeDataLimitsWithChan invokes the sddp.DescribeDataLimits API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describedatalimits.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataLimitsWithChan(request *DescribeDataLimitsRequest) (<-chan *DescribeDataLimitsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataLimitsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataLimitsWithChan(request *DescribeDataLimitsRequ
 }
 
 // DescribeDataLimitsWithCallback invokes the sddp.DescribeDataLimits API asynchronously
-// api document: https://help.aliyun.com/api/sddp/describedatalimits.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataLimitsWithCallback(request *DescribeDataLimitsRequest, callback func(response *DescribeDataLimitsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,30 @@ func (client *Client) DescribeDataLimitsWithCallback(request *DescribeDataLimits
 // DescribeDataLimitsRequest is the request struct for api DescribeDataLimits
 type DescribeDataLimitsRequest struct {
 	*requests.RpcRequest
-	SourceIp     string           `position:"Query" name:"SourceIp"`
-	Lang         string           `position:"Query" name:"Lang"`
-	ResourceType requests.Integer `position:"Query" name:"ResourceType"`
-	ParentId     string           `position:"Query" name:"ParentId"`
+	StartTime       requests.Integer `position:"Query" name:"StartTime"`
+	ParentId        string           `position:"Query" name:"ParentId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Enable          requests.Integer `position:"Query" name:"Enable"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	CheckStatus     requests.Integer `position:"Query" name:"CheckStatus"`
+	DatamaskStatus  requests.Integer `position:"Query" name:"DatamaskStatus"`
+	Lang            string           `position:"Query" name:"Lang"`
+	ServiceRegionId string           `position:"Query" name:"ServiceRegionId"`
+	EngineType      string           `position:"Query" name:"EngineType"`
+	AuditStatus     requests.Integer `position:"Query" name:"AuditStatus"`
+	EndTime         requests.Integer `position:"Query" name:"EndTime"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	ResourceType    requests.Integer `position:"Query" name:"ResourceType"`
 }
 
 // DescribeDataLimitsResponse is the response struct for api DescribeDataLimits
 type DescribeDataLimitsResponse struct {
 	*responses.BaseResponse
-	RequestId     string      `json:"RequestId" xml:"RequestId"`
-	DataLimitList []DataLimit `json:"DataLimitList" xml:"DataLimitList"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	Items       []DataLimit `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeDataLimitsRequest creates a request to invoke DescribeDataLimits API
@@ -94,7 +102,8 @@ func CreateDescribeDataLimitsRequest() (request *DescribeDataLimitsRequest) {
 	request = &DescribeDataLimitsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataLimits", "sddp", "openAPI")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataLimits", "", "")
+	request.Method = requests.POST
 	return
 }
 
