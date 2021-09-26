@@ -84,6 +84,8 @@ type DescribeVsDomainPvUvDataResponse struct {
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	DomainName    string        `json:"DomainName" xml:"DomainName"`
 	StartTime     string        `json:"StartTime" xml:"StartTime"`
+	EndTime       string        `json:"EndTime" xml:"EndTime"`
+	DataInterval  string        `json:"DataInterval" xml:"DataInterval"`
 	PvUvDataInfos PvUvDataInfos `json:"PvUvDataInfos" xml:"PvUvDataInfos"`
 }
 

@@ -71,9 +71,10 @@ func (client *Client) DescribePresetsWithCallback(request *DescribePresetsReques
 // DescribePresetsRequest is the request struct for api DescribePresets
 type DescribePresetsRequest struct {
 	*requests.RpcRequest
-	Id      string           `position:"Query" name:"Id"`
-	ShowLog string           `position:"Query" name:"ShowLog"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	SubProtocol string           `position:"Query" name:"SubProtocol"`
+	Id          string           `position:"Query" name:"Id"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribePresetsResponse is the response struct for api DescribePresets

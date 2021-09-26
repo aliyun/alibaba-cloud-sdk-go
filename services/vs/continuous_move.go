@@ -71,12 +71,13 @@ func (client *Client) ContinuousMoveWithCallback(request *ContinuousMoveRequest,
 // ContinuousMoveRequest is the request struct for api ContinuousMove
 type ContinuousMoveRequest struct {
 	*requests.RpcRequest
-	Tilt    string           `position:"Query" name:"Tilt"`
-	Id      string           `position:"Query" name:"Id"`
-	Pan     string           `position:"Query" name:"Pan"`
-	ShowLog string           `position:"Query" name:"ShowLog"`
-	Zoom    string           `position:"Query" name:"Zoom"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	Tilt        string           `position:"Query" name:"Tilt"`
+	SubProtocol string           `position:"Query" name:"SubProtocol"`
+	Id          string           `position:"Query" name:"Id"`
+	Pan         string           `position:"Query" name:"Pan"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
+	Zoom        string           `position:"Query" name:"Zoom"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ContinuousMoveResponse is the response struct for api ContinuousMove

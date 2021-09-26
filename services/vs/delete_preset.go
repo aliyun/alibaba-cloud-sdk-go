@@ -71,10 +71,11 @@ func (client *Client) DeletePresetWithCallback(request *DeletePresetRequest, cal
 // DeletePresetRequest is the request struct for api DeletePreset
 type DeletePresetRequest struct {
 	*requests.RpcRequest
-	Id       string           `position:"Query" name:"Id"`
-	PresetId string           `position:"Query" name:"PresetId"`
-	ShowLog  string           `position:"Query" name:"ShowLog"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	SubProtocol string           `position:"Query" name:"SubProtocol"`
+	Id          string           `position:"Query" name:"Id"`
+	PresetId    string           `position:"Query" name:"PresetId"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeletePresetResponse is the response struct for api DeletePreset

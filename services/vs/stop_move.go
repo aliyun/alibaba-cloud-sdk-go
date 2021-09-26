@@ -71,12 +71,13 @@ func (client *Client) StopMoveWithCallback(request *StopMoveRequest, callback fu
 // StopMoveRequest is the request struct for api StopMove
 type StopMoveRequest struct {
 	*requests.RpcRequest
-	Tilt    requests.Boolean `position:"Query" name:"Tilt"`
-	Id      string           `position:"Query" name:"Id"`
-	Pan     requests.Boolean `position:"Query" name:"Pan"`
-	ShowLog string           `position:"Query" name:"ShowLog"`
-	Zoom    requests.Boolean `position:"Query" name:"Zoom"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	Tilt        requests.Boolean `position:"Query" name:"Tilt"`
+	SubProtocol string           `position:"Query" name:"SubProtocol"`
+	Id          string           `position:"Query" name:"Id"`
+	Pan         requests.Boolean `position:"Query" name:"Pan"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
+	Zoom        requests.Boolean `position:"Query" name:"Zoom"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // StopMoveResponse is the response struct for api StopMove

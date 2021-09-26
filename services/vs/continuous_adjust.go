@@ -71,11 +71,12 @@ func (client *Client) ContinuousAdjustWithCallback(request *ContinuousAdjustRequ
 // ContinuousAdjustRequest is the request struct for api ContinuousAdjust
 type ContinuousAdjustRequest struct {
 	*requests.RpcRequest
-	Focus   string           `position:"Query" name:"Focus"`
-	Id      string           `position:"Query" name:"Id"`
-	ShowLog string           `position:"Query" name:"ShowLog"`
-	Iris    string           `position:"Query" name:"Iris"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	Focus       string           `position:"Query" name:"Focus"`
+	SubProtocol string           `position:"Query" name:"SubProtocol"`
+	Id          string           `position:"Query" name:"Id"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
+	Iris        string           `position:"Query" name:"Iris"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ContinuousAdjustResponse is the response struct for api ContinuousAdjust

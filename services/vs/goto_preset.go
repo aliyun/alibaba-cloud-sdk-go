@@ -71,10 +71,11 @@ func (client *Client) GotoPresetWithCallback(request *GotoPresetRequest, callbac
 // GotoPresetRequest is the request struct for api GotoPreset
 type GotoPresetRequest struct {
 	*requests.RpcRequest
-	Id       string           `position:"Query" name:"Id"`
-	PresetId string           `position:"Query" name:"PresetId"`
-	ShowLog  string           `position:"Query" name:"ShowLog"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	SubProtocol string           `position:"Query" name:"SubProtocol"`
+	Id          string           `position:"Query" name:"Id"`
+	PresetId    string           `position:"Query" name:"PresetId"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // GotoPresetResponse is the response struct for api GotoPreset

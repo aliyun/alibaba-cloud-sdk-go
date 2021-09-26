@@ -18,12 +18,15 @@ package vs
 // Record is a nested struct in vs response
 type Record struct {
 	TemplateId  string `json:"TemplateId" xml:"TemplateId"`
+	RecordType  string `json:"RecordType" xml:"RecordType"`
 	OssObject   string `json:"OssObject" xml:"OssObject"`
+	Filename    string `json:"Filename" xml:"Filename"`
 	Url         string `json:"Url" xml:"Url"`
 	OssBucket   string `json:"OssBucket" xml:"OssBucket"`
 	Height      int64  `json:"Height" xml:"Height"`
 	StartTime   string `json:"StartTime" xml:"StartTime"`
 	EndTime     string `json:"EndTime" xml:"EndTime"`
+	FileSize    int64  `json:"FileSize" xml:"FileSize"`
 	StreamId    string `json:"StreamId" xml:"StreamId"`
 	FileFormat  string `json:"FileFormat" xml:"FileFormat"`
 	Width       int64  `json:"Width" xml:"Width"`

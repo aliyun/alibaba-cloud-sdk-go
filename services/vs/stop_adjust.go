@@ -71,11 +71,12 @@ func (client *Client) StopAdjustWithCallback(request *StopAdjustRequest, callbac
 // StopAdjustRequest is the request struct for api StopAdjust
 type StopAdjustRequest struct {
 	*requests.RpcRequest
-	Focus   requests.Boolean `position:"Query" name:"Focus"`
-	Id      string           `position:"Query" name:"Id"`
-	ShowLog string           `position:"Query" name:"ShowLog"`
-	Iris    requests.Boolean `position:"Query" name:"Iris"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	Focus       requests.Boolean `position:"Query" name:"Focus"`
+	SubProtocol string           `position:"Query" name:"SubProtocol"`
+	Id          string           `position:"Query" name:"Id"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
+	Iris        requests.Boolean `position:"Query" name:"Iris"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // StopAdjustResponse is the response struct for api StopAdjust

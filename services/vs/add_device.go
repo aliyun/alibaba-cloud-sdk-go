@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SetPreset invokes the vs.SetPreset API synchronously
-func (client *Client) SetPreset(request *SetPresetRequest) (response *SetPresetResponse, err error) {
-	response = CreateSetPresetResponse()
+// AddDevice invokes the vs.AddDevice API synchronously
+func (client *Client) AddDevice(request *AddDeviceRequest) (response *AddDeviceResponse, err error) {
+	response = CreateAddDeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SetPresetWithChan invokes the vs.SetPreset API asynchronously
-func (client *Client) SetPresetWithChan(request *SetPresetRequest) (<-chan *SetPresetResponse, <-chan error) {
-	responseChan := make(chan *SetPresetResponse, 1)
+// AddDeviceWithChan invokes the vs.AddDevice API asynchronously
+func (client *Client) AddDeviceWithChan(request *AddDeviceRequest) (<-chan *AddDeviceResponse, <-chan error) {
+	responseChan := make(chan *AddDeviceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SetPreset(request)
+		response, err := client.AddDevice(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SetPresetWithChan(request *SetPresetRequest) (<-chan *SetP
 	return responseChan, errChan
 }
 
-// SetPresetWithCallback invokes the vs.SetPreset API asynchronously
-func (client *Client) SetPresetWithCallback(request *SetPresetRequest, callback func(response *SetPresetResponse, err error)) <-chan int {
+// AddDeviceWithCallback invokes the vs.AddDevice API asynchronously
+func (client *Client) AddDeviceWithCallback(request *AddDeviceRequest, callback func(response *AddDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SetPresetResponse
+		var response *AddDeviceResponse
 		var err error
 		defer close(result)
-		response, err = client.SetPreset(request)
+		response, err = client.AddDevice(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,36 @@ func (client *Client) SetPresetWithCallback(request *SetPresetRequest, callback 
 	return result
 }
 
-// SetPresetRequest is the request struct for api SetPreset
-type SetPresetRequest struct {
+// AddDeviceRequest is the request struct for api AddDevice
+type AddDeviceRequest struct {
 	*requests.RpcRequest
-	SubProtocol string           `position:"Query" name:"SubProtocol"`
-	Id          string           `position:"Query" name:"Id"`
-	PresetId    string           `position:"Query" name:"PresetId"`
-	ShowLog     string           `position:"Query" name:"ShowLog"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	Protocol string           `position:"Query" name:"Protocol"`
+	ShowLog  string           `position:"Query" name:"ShowLog"`
+	GroupId  string           `position:"Query" name:"GroupId"`
+	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	Config   string           `position:"Query" name:"Config"`
 }
 
-// SetPresetResponse is the response struct for api SetPreset
-type SetPresetResponse struct {
+// AddDeviceResponse is the response struct for api AddDevice
+type AddDeviceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
 }
 
-// CreateSetPresetRequest creates a request to invoke SetPreset API
-func CreateSetPresetRequest() (request *SetPresetRequest) {
-	request = &SetPresetRequest{
+// CreateAddDeviceRequest creates a request to invoke AddDevice API
+func CreateAddDeviceRequest() (request *AddDeviceRequest) {
+	request = &AddDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "SetPreset", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "AddDevice", "vs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSetPresetResponse creates a response to parse from SetPreset response
-func CreateSetPresetResponse() (response *SetPresetResponse) {
-	response = &SetPresetResponse{
+// CreateAddDeviceResponse creates a response to parse from AddDevice response
+func CreateAddDeviceResponse() (response *AddDeviceResponse) {
+	response = &AddDeviceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
