@@ -89,7 +89,7 @@ func CreateModifyDeviceCaptureRequest() (request *ModifyDeviceCaptureRequest) {
 	request = &ModifyDeviceCaptureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ModifyDeviceCapture", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ModifyDeviceCapture", "", "")
 	request.Method = requests.POST
 	return
 }

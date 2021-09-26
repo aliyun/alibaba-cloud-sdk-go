@@ -87,7 +87,7 @@ func CreateDeleteRenderingDevicesRequest() (request *DeleteRenderingDevicesReque
 	request = &DeleteRenderingDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DeleteRenderingDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DeleteRenderingDevices", "", "")
 	request.Method = requests.POST
 	return
 }

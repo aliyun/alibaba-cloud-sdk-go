@@ -91,7 +91,7 @@ func CreateDescribeVsUpPeakPublishStreamDataRequest() (request *DescribeVsUpPeak
 	request = &DescribeVsUpPeakPublishStreamDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsUpPeakPublishStreamData", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsUpPeakPublishStreamData", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -101,7 +101,7 @@ func CreateDescribeVsStreamsOnlineListRequest() (request *DescribeVsStreamsOnlin
 	request = &DescribeVsStreamsOnlineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsStreamsOnlineList", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsStreamsOnlineList", "", "")
 	request.Method = requests.POST
 	return
 }

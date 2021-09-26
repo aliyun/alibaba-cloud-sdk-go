@@ -93,7 +93,7 @@ func CreateAddVsPullStreamInfoConfigRequest() (request *AddVsPullStreamInfoConfi
 	request = &AddVsPullStreamInfoConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "AddVsPullStreamInfoConfig", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "AddVsPullStreamInfoConfig", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateDescribeVsDomainReqTrafficDataRequest() (request *DescribeVsDomainReq
 	request = &DescribeVsDomainReqTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsDomainReqTrafficData", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsDomainReqTrafficData", "", "")
 	request.Method = requests.POST
 	return
 }

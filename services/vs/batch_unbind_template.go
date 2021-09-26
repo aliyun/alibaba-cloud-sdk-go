@@ -91,7 +91,7 @@ func CreateBatchUnbindTemplateRequest() (request *BatchUnbindTemplateRequest) {
 	request = &BatchUnbindTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchUnbindTemplate", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchUnbindTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

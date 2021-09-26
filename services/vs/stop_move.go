@@ -92,7 +92,7 @@ func CreateStopMoveRequest() (request *StopMoveRequest) {
 	request = &StopMoveRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "StopMove", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "StopMove", "", "")
 	request.Method = requests.POST
 	return
 }

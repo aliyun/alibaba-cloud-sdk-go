@@ -90,7 +90,7 @@ func CreateBatchBindPurchasedDevicesRequest() (request *BatchBindPurchasedDevice
 	request = &BatchBindPurchasedDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchBindPurchasedDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchBindPurchasedDevices", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateDescribeVsCertificateDetailRequest() (request *DescribeVsCertificateD
 	request = &DescribeVsCertificateDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsCertificateDetail", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsCertificateDetail", "", "")
 	request.Method = requests.POST
 	return
 }

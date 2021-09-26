@@ -95,7 +95,7 @@ func CreateDescribeDeviceURLRequest() (request *DescribeDeviceURLRequest) {
 	request = &DescribeDeviceURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeDeviceURL", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeDeviceURL", "", "")
 	request.Method = requests.POST
 	return
 }

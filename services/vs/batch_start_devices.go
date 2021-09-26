@@ -88,7 +88,7 @@ func CreateBatchStartDevicesRequest() (request *BatchStartDevicesRequest) {
 	request = &BatchStartDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchStartDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchStartDevices", "", "")
 	request.Method = requests.POST
 	return
 }

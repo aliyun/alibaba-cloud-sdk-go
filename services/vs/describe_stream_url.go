@@ -99,7 +99,7 @@ func CreateDescribeStreamURLRequest() (request *DescribeStreamURLRequest) {
 	request = &DescribeStreamURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeStreamURL", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeStreamURL", "", "")
 	request.Method = requests.POST
 	return
 }

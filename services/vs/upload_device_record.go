@@ -94,7 +94,7 @@ func CreateUploadDeviceRecordRequest() (request *UploadDeviceRecordRequest) {
 	request = &UploadDeviceRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "UploadDeviceRecord", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "UploadDeviceRecord", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateCreateStreamSnapshotRequest() (request *CreateStreamSnapshotRequest) 
 	request = &CreateStreamSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "CreateStreamSnapshot", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "CreateStreamSnapshot", "", "")
 	request.Method = requests.POST
 	return
 }

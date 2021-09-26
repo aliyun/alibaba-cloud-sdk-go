@@ -91,7 +91,7 @@ func CreateDeleteRenderingDeviceInternetPortsRequest() (request *DeleteRendering
 	request = &DeleteRenderingDeviceInternetPortsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DeleteRenderingDeviceInternetPorts", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DeleteRenderingDeviceInternetPorts", "", "")
 	request.Method = requests.POST
 	return
 }

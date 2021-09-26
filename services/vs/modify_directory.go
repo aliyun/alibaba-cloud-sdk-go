@@ -90,7 +90,7 @@ func CreateModifyDirectoryRequest() (request *ModifyDirectoryRequest) {
 	request = &ModifyDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ModifyDirectory", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ModifyDirectory", "", "")
 	request.Method = requests.POST
 	return
 }

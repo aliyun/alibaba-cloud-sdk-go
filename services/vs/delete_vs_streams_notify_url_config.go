@@ -87,7 +87,7 @@ func CreateDeleteVsStreamsNotifyUrlConfigRequest() (request *DeleteVsStreamsNoti
 	request = &DeleteVsStreamsNotifyUrlConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DeleteVsStreamsNotifyUrlConfig", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DeleteVsStreamsNotifyUrlConfig", "", "")
 	request.Method = requests.POST
 	return
 }

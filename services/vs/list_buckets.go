@@ -93,7 +93,7 @@ func CreateListBucketsRequest() (request *ListBucketsRequest) {
 	request = &ListBucketsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ListBuckets", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ListBuckets", "", "")
 	request.Method = requests.POST
 	return
 }

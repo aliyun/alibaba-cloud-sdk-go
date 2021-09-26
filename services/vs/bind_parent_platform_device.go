@@ -88,7 +88,7 @@ func CreateBindParentPlatformDeviceRequest() (request *BindParentPlatformDeviceR
 	request = &BindParentPlatformDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BindParentPlatformDevice", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BindParentPlatformDevice", "", "")
 	request.Method = requests.POST
 	return
 }

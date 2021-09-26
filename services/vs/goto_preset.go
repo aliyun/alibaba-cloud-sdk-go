@@ -90,7 +90,7 @@ func CreateGotoPresetRequest() (request *GotoPresetRequest) {
 	request = &GotoPresetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "GotoPreset", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "GotoPreset", "", "")
 	request.Method = requests.POST
 	return
 }

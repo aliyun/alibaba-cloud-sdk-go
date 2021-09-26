@@ -88,7 +88,7 @@ func CreateDescribeVsDomainDetailRequest() (request *DescribeVsDomainDetailReque
 	request = &DescribeVsDomainDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsDomainDetail", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsDomainDetail", "", "")
 	request.Method = requests.POST
 	return
 }

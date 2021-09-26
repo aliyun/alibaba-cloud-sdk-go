@@ -88,7 +88,7 @@ func CreateBindDirectoryRequest() (request *BindDirectoryRequest) {
 	request = &BindDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BindDirectory", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BindDirectory", "", "")
 	request.Method = requests.POST
 	return
 }

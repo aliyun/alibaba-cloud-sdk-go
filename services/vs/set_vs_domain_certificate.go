@@ -94,7 +94,7 @@ func CreateSetVsDomainCertificateRequest() (request *SetVsDomainCertificateReque
 	request = &SetVsDomainCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "SetVsDomainCertificate", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "SetVsDomainCertificate", "", "")
 	request.Method = requests.POST
 	return
 }

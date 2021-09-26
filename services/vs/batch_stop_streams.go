@@ -89,7 +89,7 @@ func CreateBatchStopStreamsRequest() (request *BatchStopStreamsRequest) {
 	request = &BatchStopStreamsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchStopStreams", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchStopStreams", "", "")
 	request.Method = requests.POST
 	return
 }

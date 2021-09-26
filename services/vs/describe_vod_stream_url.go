@@ -92,7 +92,7 @@ func CreateDescribeVodStreamURLRequest() (request *DescribeVodStreamURLRequest) 
 	request = &DescribeVodStreamURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVodStreamURL", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVodStreamURL", "", "")
 	request.Method = requests.POST
 	return
 }

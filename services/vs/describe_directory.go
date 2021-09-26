@@ -93,7 +93,7 @@ func CreateDescribeDirectoryRequest() (request *DescribeDirectoryRequest) {
 	request = &DescribeDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeDirectory", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeDirectory", "", "")
 	request.Method = requests.POST
 	return
 }

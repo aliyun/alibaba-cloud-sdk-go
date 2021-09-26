@@ -91,7 +91,7 @@ func CreateStartStreamRequest() (request *StartStreamRequest) {
 	request = &StartStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "StartStream", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "StartStream", "", "")
 	request.Method = requests.POST
 	return
 }

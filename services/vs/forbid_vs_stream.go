@@ -93,7 +93,7 @@ func CreateForbidVsStreamRequest() (request *ForbidVsStreamRequest) {
 	request = &ForbidVsStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ForbidVsStream", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ForbidVsStream", "", "")
 	request.Method = requests.POST
 	return
 }

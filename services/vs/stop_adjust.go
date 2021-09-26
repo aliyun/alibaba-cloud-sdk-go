@@ -91,7 +91,7 @@ func CreateStopAdjustRequest() (request *StopAdjustRequest) {
 	request = &StopAdjustRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "StopAdjust", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "StopAdjust", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateBindTemplateRequest() (request *BindTemplateRequest) {
 	request = &BindTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BindTemplate", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BindTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

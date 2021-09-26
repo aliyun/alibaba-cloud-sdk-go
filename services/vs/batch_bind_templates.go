@@ -93,7 +93,7 @@ func CreateBatchBindTemplatesRequest() (request *BatchBindTemplatesRequest) {
 	request = &BatchBindTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchBindTemplates", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchBindTemplates", "", "")
 	request.Method = requests.POST
 	return
 }

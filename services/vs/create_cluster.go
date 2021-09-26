@@ -92,7 +92,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "CreateCluster", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "CreateCluster", "", "")
 	request.Method = requests.POST
 	return
 }

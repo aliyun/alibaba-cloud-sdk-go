@@ -90,7 +90,7 @@ func CreateSetVsStreamsNotifyUrlConfigRequest() (request *SetVsStreamsNotifyUrlC
 	request = &SetVsStreamsNotifyUrlConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "SetVsStreamsNotifyUrlConfig", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "SetVsStreamsNotifyUrlConfig", "", "")
 	request.Method = requests.POST
 	return
 }

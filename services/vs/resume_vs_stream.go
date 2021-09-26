@@ -91,7 +91,7 @@ func CreateResumeVsStreamRequest() (request *ResumeVsStreamRequest) {
 	request = &ResumeVsStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ResumeVsStream", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ResumeVsStream", "", "")
 	request.Method = requests.POST
 	return
 }

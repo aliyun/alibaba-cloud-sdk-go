@@ -88,7 +88,7 @@ func CreateUnlockDeviceRequest() (request *UnlockDeviceRequest) {
 	request = &UnlockDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "UnlockDevice", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "UnlockDevice", "", "")
 	request.Method = requests.POST
 	return
 }

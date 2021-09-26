@@ -88,7 +88,7 @@ func CreateBatchStartStreamsRequest() (request *BatchStartStreamsRequest) {
 	request = &BatchStartStreamsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchStartStreams", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchStartStreams", "", "")
 	request.Method = requests.POST
 	return
 }

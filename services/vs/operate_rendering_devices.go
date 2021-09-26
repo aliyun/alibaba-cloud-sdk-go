@@ -89,7 +89,7 @@ func CreateOperateRenderingDevicesRequest() (request *OperateRenderingDevicesReq
 	request = &OperateRenderingDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "OperateRenderingDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "OperateRenderingDevices", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateBatchUnbindDirectoriesRequest() (request *BatchUnbindDirectoriesReque
 	request = &BatchUnbindDirectoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchUnbindDirectories", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchUnbindDirectories", "", "")
 	request.Method = requests.POST
 	return
 }

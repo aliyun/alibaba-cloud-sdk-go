@@ -107,7 +107,7 @@ func CreateListObjectsRequest() (request *ListObjectsRequest) {
 	request = &ListObjectsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ListObjects", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ListObjects", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateDescribeDeviceGatewayRequest() (request *DescribeDeviceGatewayRequest
 	request = &DescribeDeviceGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeDeviceGateway", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeDeviceGateway", "", "")
 	request.Method = requests.POST
 	return
 }

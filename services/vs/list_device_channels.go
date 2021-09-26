@@ -94,7 +94,7 @@ func CreateListDeviceChannelsRequest() (request *ListDeviceChannelsRequest) {
 	request = &ListDeviceChannelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ListDeviceChannels", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ListDeviceChannels", "", "")
 	request.Method = requests.POST
 	return
 }

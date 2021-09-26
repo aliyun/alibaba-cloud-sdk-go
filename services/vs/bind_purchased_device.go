@@ -89,7 +89,7 @@ func CreateBindPurchasedDeviceRequest() (request *BindPurchasedDeviceRequest) {
 	request = &BindPurchasedDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BindPurchasedDevice", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BindPurchasedDevice", "", "")
 	request.Method = requests.POST
 	return
 }

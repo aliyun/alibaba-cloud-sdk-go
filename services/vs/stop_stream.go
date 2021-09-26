@@ -90,7 +90,7 @@ func CreateStopStreamRequest() (request *StopStreamRequest) {
 	request = &StopStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "StopStream", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "StopStream", "", "")
 	request.Method = requests.POST
 	return
 }

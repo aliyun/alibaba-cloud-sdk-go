@@ -91,7 +91,7 @@ func CreateContinuousAdjustRequest() (request *ContinuousAdjustRequest) {
 	request = &ContinuousAdjustRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ContinuousAdjust", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ContinuousAdjust", "", "")
 	request.Method = requests.POST
 	return
 }

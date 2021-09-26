@@ -94,7 +94,7 @@ func CreateUnbindTemplateRequest() (request *UnbindTemplateRequest) {
 	request = &UnbindTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "UnbindTemplate", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "UnbindTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateSyncDeviceChannelsRequest() (request *SyncDeviceChannelsRequest) {
 	request = &SyncDeviceChannelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "SyncDeviceChannels", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "SyncDeviceChannels", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateBatchForbidVsStreamRequest() (request *BatchForbidVsStreamRequest) {
 	request = &BatchForbidVsStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchForbidVsStream", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchForbidVsStream", "", "")
 	request.Method = requests.POST
 	return
 }

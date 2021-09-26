@@ -88,7 +88,7 @@ func CreateDescribeVsUserResourcePackageRequest() (request *DescribeVsUserResour
 	request = &DescribeVsUserResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsUserResourcePackage", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsUserResourcePackage", "", "")
 	request.Method = requests.POST
 	return
 }

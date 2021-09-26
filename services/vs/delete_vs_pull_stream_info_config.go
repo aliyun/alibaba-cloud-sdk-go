@@ -89,7 +89,7 @@ func CreateDeleteVsPullStreamInfoConfigRequest() (request *DeleteVsPullStreamInf
 	request = &DeleteVsPullStreamInfoConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DeleteVsPullStreamInfoConfig", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DeleteVsPullStreamInfoConfig", "", "")
 	request.Method = requests.POST
 	return
 }

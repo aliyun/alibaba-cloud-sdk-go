@@ -88,7 +88,7 @@ func CreateUnbindDirectoryRequest() (request *UnbindDirectoryRequest) {
 	request = &UnbindDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "UnbindDirectory", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "UnbindDirectory", "", "")
 	request.Method = requests.POST
 	return
 }

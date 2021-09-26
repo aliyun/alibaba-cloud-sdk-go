@@ -87,7 +87,7 @@ func CreateDeleteParentPlatformRequest() (request *DeleteParentPlatformRequest) 
 	request = &DeleteParentPlatformRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DeleteParentPlatform", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DeleteParentPlatform", "", "")
 	request.Method = requests.POST
 	return
 }

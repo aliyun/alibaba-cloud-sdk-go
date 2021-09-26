@@ -114,7 +114,7 @@ func CreateDescribeGroupRequest() (request *DescribeGroupRequest) {
 	request = &DescribeGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeGroup", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeGroup", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateResetRenderingDevicesRequest() (request *ResetRenderingDevicesRequest
 	request = &ResetRenderingDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ResetRenderingDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ResetRenderingDevices", "", "")
 	request.Method = requests.POST
 	return
 }

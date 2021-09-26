@@ -90,7 +90,7 @@ func CreateAddDeviceRequest() (request *AddDeviceRequest) {
 	request = &AddDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "AddDevice", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "AddDevice", "", "")
 	request.Method = requests.POST
 	return
 }

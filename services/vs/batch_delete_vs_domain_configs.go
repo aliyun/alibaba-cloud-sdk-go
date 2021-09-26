@@ -88,7 +88,7 @@ func CreateBatchDeleteVsDomainConfigsRequest() (request *BatchDeleteVsDomainConf
 	request = &BatchDeleteVsDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchDeleteVsDomainConfigs", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchDeleteVsDomainConfigs", "", "")
 	request.Method = requests.POST
 	return
 }

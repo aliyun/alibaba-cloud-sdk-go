@@ -98,7 +98,7 @@ func CreateCreateDeviceAlarmRequest() (request *CreateDeviceAlarmRequest) {
 	request = &CreateDeviceAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "CreateDeviceAlarm", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "CreateDeviceAlarm", "", "")
 	request.Method = requests.POST
 	return
 }

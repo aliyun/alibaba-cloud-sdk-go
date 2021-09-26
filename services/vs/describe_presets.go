@@ -90,7 +90,7 @@ func CreateDescribePresetsRequest() (request *DescribePresetsRequest) {
 	request = &DescribePresetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribePresets", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribePresets", "", "")
 	request.Method = requests.POST
 	return
 }

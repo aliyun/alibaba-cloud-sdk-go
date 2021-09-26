@@ -99,7 +99,7 @@ func CreateCreateRenderingDeviceRequest() (request *CreateRenderingDeviceRequest
 	request = &CreateRenderingDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "CreateRenderingDevice", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "CreateRenderingDevice", "", "")
 	request.Method = requests.POST
 	return
 }

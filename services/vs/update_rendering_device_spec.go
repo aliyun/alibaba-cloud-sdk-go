@@ -94,7 +94,7 @@ func CreateUpdateRenderingDeviceSpecRequest() (request *UpdateRenderingDeviceSpe
 	request = &UpdateRenderingDeviceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "UpdateRenderingDeviceSpec", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "UpdateRenderingDeviceSpec", "", "")
 	request.Method = requests.POST
 	return
 }

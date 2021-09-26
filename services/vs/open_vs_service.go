@@ -85,7 +85,7 @@ func CreateOpenVsServiceRequest() (request *OpenVsServiceRequest) {
 	request = &OpenVsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "OpenVsService", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "OpenVsService", "", "")
 	request.Method = requests.POST
 	return
 }

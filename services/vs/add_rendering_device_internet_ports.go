@@ -91,7 +91,7 @@ func CreateAddRenderingDeviceInternetPortsRequest() (request *AddRenderingDevice
 	request = &AddRenderingDeviceInternetPortsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "AddRenderingDeviceInternetPorts", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "AddRenderingDeviceInternetPorts", "", "")
 	request.Method = requests.POST
 	return
 }

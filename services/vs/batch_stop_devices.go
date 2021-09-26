@@ -89,7 +89,7 @@ func CreateBatchStopDevicesRequest() (request *BatchStopDevicesRequest) {
 	request = &BatchStopDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchStopDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchStopDevices", "", "")
 	request.Method = requests.POST
 	return
 }

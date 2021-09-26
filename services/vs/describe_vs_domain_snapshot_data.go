@@ -93,7 +93,7 @@ func CreateDescribeVsDomainSnapshotDataRequest() (request *DescribeVsDomainSnaps
 	request = &DescribeVsDomainSnapshotDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsDomainSnapshotData", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsDomainSnapshotData", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateBatchUnbindPurchasedDevicesRequest() (request *BatchUnbindPurchasedDe
 	request = &BatchUnbindPurchasedDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchUnbindPurchasedDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchUnbindPurchasedDevices", "", "")
 	request.Method = requests.POST
 	return
 }

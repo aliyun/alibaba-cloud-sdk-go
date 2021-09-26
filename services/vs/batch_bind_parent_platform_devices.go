@@ -89,7 +89,7 @@ func CreateBatchBindParentPlatformDevicesRequest() (request *BatchBindParentPlat
 	request = &BatchBindParentPlatformDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchBindParentPlatformDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchBindParentPlatformDevices", "", "")
 	request.Method = requests.POST
 	return
 }

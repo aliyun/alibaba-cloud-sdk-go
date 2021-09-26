@@ -91,7 +91,7 @@ func CreateCreateDeviceSnapshotRequest() (request *CreateDeviceSnapshotRequest) 
 	request = &CreateDeviceSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "CreateDeviceSnapshot", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "CreateDeviceSnapshot", "", "")
 	request.Method = requests.POST
 	return
 }

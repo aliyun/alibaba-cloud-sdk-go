@@ -103,7 +103,7 @@ func CreateModifyGroupRequest() (request *ModifyGroupRequest) {
 	request = &ModifyGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ModifyGroup", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ModifyGroup", "", "")
 	request.Method = requests.POST
 	return
 }

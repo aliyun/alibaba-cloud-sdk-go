@@ -89,7 +89,7 @@ func CreateStopDeviceRequest() (request *StopDeviceRequest) {
 	request = &StopDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "StopDevice", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "StopDevice", "", "")
 	request.Method = requests.POST
 	return
 }

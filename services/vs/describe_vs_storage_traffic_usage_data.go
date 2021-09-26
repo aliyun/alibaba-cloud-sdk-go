@@ -92,7 +92,7 @@ func CreateDescribeVsStorageTrafficUsageDataRequest() (request *DescribeVsStorag
 	request = &DescribeVsStorageTrafficUsageDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsStorageTrafficUsageData", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsStorageTrafficUsageData", "", "")
 	request.Method = requests.POST
 	return
 }

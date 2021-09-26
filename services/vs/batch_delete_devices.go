@@ -88,7 +88,7 @@ func CreateBatchDeleteDevicesRequest() (request *BatchDeleteDevicesRequest) {
 	request = &BatchDeleteDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "BatchDeleteDevices", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "BatchDeleteDevices", "", "")
 	request.Method = requests.POST
 	return
 }

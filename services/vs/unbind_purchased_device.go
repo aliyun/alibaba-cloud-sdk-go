@@ -87,7 +87,7 @@ func CreateUnbindPurchasedDeviceRequest() (request *UnbindPurchasedDeviceRequest
 	request = &UnbindPurchasedDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "UnbindPurchasedDevice", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "UnbindPurchasedDevice", "", "")
 	request.Method = requests.POST
 	return
 }

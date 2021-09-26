@@ -103,7 +103,7 @@ func CreateDescribeParentPlatformRequest() (request *DescribeParentPlatformReque
 	request = &DescribeParentPlatformRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeParentPlatform", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeParentPlatform", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateModifyDeviceChannelsRequest() (request *ModifyDeviceChannelsRequest) 
 	request = &ModifyDeviceChannelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "ModifyDeviceChannels", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "ModifyDeviceChannels", "", "")
 	request.Method = requests.POST
 	return
 }

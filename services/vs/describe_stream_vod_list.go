@@ -90,7 +90,7 @@ func CreateDescribeStreamVodListRequest() (request *DescribeStreamVodListRequest
 	request = &DescribeStreamVodListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeStreamVodList", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeStreamVodList", "", "")
 	request.Method = requests.POST
 	return
 }

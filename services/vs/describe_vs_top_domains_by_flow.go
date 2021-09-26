@@ -94,7 +94,7 @@ func CreateDescribeVsTopDomainsByFlowRequest() (request *DescribeVsTopDomainsByF
 	request = &DescribeVsTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsTopDomainsByFlow", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeVsTopDomainsByFlow", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -111,7 +111,7 @@ func CreateDescribeTemplateRequest() (request *DescribeTemplateRequest) {
 	request = &DescribeTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "DescribeTemplate", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "DescribeTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

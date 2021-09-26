@@ -88,7 +88,7 @@ func CreateSyncCatalogsRequest() (request *SyncCatalogsRequest) {
 	request = &SyncCatalogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "SyncCatalogs", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "SyncCatalogs", "", "")
 	request.Method = requests.POST
 	return
 }

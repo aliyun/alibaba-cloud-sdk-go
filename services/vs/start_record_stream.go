@@ -90,7 +90,7 @@ func CreateStartRecordStreamRequest() (request *StartRecordStreamRequest) {
 	request = &StartRecordStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vs", "2018-12-12", "StartRecordStream", "vs", "openAPI")
+	request.InitWithApiInfo("vs", "2018-12-12", "StartRecordStream", "", "")
 	request.Method = requests.POST
 	return
 }
