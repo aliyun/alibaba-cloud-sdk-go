@@ -71,34 +71,29 @@ func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailR
 // ListCallDetailRecordsRequest is the request struct for api ListCallDetailRecords
 type ListCallDetailRecordsRequest struct {
 	*requests.RpcRequest
-	ContactId                   string           `position:"Query" name:"ContactId"`
-	Criteria                    string           `position:"Query" name:"Criteria"`
-	OrderByField                string           `position:"Query" name:"OrderByField"`
-	StartTime                   requests.Integer `position:"Query" name:"StartTime"`
-	PageNumber                  requests.Integer `position:"Query" name:"PageNumber"`
-	CalledNumber                string           `position:"Query" name:"CalledNumber"`
-	SatisfactionList            string           `position:"Query" name:"SatisfactionList"`
-	PageSize                    requests.Integer `position:"Query" name:"PageSize"`
-	SortOrder                   string           `position:"Query" name:"SortOrder"`
-	SatisfactionDescriptionList string           `position:"Query" name:"SatisfactionDescriptionList"`
-	AgentId                     string           `position:"Query" name:"AgentId"`
-	ContactType                 string           `position:"Query" name:"ContactType"`
-	SatisfactionSurveyChannel   string           `position:"Query" name:"SatisfactionSurveyChannel"`
-	EndTime                     requests.Integer `position:"Query" name:"EndTime"`
-	CallingNumber               string           `position:"Query" name:"CallingNumber"`
-	ContactDisposition          string           `position:"Query" name:"ContactDisposition"`
-	InstanceId                  string           `position:"Query" name:"InstanceId"`
-	SkillGroupId                string           `position:"Query" name:"SkillGroupId"`
+	ContactType        string           `position:"Query" name:"ContactType"`
+	ContactId          string           `position:"Query" name:"ContactId"`
+	Criteria           string           `position:"Query" name:"Criteria"`
+	PhoneNumber        string           `position:"Query" name:"PhoneNumber"`
+	OrderBy            string           `position:"Query" name:"OrderBy"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	StopTime           requests.Integer `position:"Query" name:"StopTime"`
+	PageNumber         requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId         string           `position:"Query" name:"InstanceId"`
+	ContactDisposition string           `position:"Query" name:"ContactDisposition"`
+	PageSize           requests.Integer `position:"Query" name:"PageSize"`
+	WithRecording      requests.Boolean `position:"Query" name:"WithRecording"`
 }
 
 // ListCallDetailRecordsResponse is the response struct for api ListCallDetailRecords
 type ListCallDetailRecordsResponse struct {
 	*responses.BaseResponse
-	Code           string                      `json:"Code" xml:"Code"`
-	HttpStatusCode int                         `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string                      `json:"Message" xml:"Message"`
-	RequestId      string                      `json:"RequestId" xml:"RequestId"`
-	Data           DataInListCallDetailRecords `json:"Data" xml:"Data"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	Success           bool              `json:"Success" xml:"Success"`
+	Code              string            `json:"Code" xml:"Code"`
+	Message           string            `json:"Message" xml:"Message"`
+	HttpStatusCode    int               `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	CallDetailRecords CallDetailRecords `json:"CallDetailRecords" xml:"CallDetailRecords"`
 }
 
 // CreateListCallDetailRecordsRequest creates a request to invoke ListCallDetailRecords API
@@ -106,7 +101,7 @@ func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest
 	request = &ListCallDetailRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListCallDetailRecords", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "ListCallDetailRecords", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

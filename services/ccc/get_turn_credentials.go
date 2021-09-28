@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTurnCredentials invokes the ccc.GetTurnCredentials API synchronously
-func (client *Client) GetTurnCredentials(request *GetTurnCredentialsRequest) (response *GetTurnCredentialsResponse, err error) {
-	response = CreateGetTurnCredentialsResponse()
+// GetTURNCredentials invokes the ccc.GetTURNCredentials API synchronously
+func (client *Client) GetTURNCredentials(request *GetTURNCredentialsRequest) (response *GetTURNCredentialsResponse, err error) {
+	response = CreateGetTURNCredentialsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTurnCredentialsWithChan invokes the ccc.GetTurnCredentials API asynchronously
-func (client *Client) GetTurnCredentialsWithChan(request *GetTurnCredentialsRequest) (<-chan *GetTurnCredentialsResponse, <-chan error) {
-	responseChan := make(chan *GetTurnCredentialsResponse, 1)
+// GetTURNCredentialsWithChan invokes the ccc.GetTURNCredentials API asynchronously
+func (client *Client) GetTURNCredentialsWithChan(request *GetTURNCredentialsRequest) (<-chan *GetTURNCredentialsResponse, <-chan error) {
+	responseChan := make(chan *GetTURNCredentialsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTurnCredentials(request)
+		response, err := client.GetTURNCredentials(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTurnCredentialsWithChan(request *GetTurnCredentialsRequ
 	return responseChan, errChan
 }
 
-// GetTurnCredentialsWithCallback invokes the ccc.GetTurnCredentials API asynchronously
-func (client *Client) GetTurnCredentialsWithCallback(request *GetTurnCredentialsRequest, callback func(response *GetTurnCredentialsResponse, err error)) <-chan int {
+// GetTURNCredentialsWithCallback invokes the ccc.GetTURNCredentials API asynchronously
+func (client *Client) GetTURNCredentialsWithCallback(request *GetTURNCredentialsRequest, callback func(response *GetTURNCredentialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTurnCredentialsResponse
+		var response *GetTURNCredentialsResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTurnCredentials(request)
+		response, err = client.GetTURNCredentials(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,38 @@ func (client *Client) GetTurnCredentialsWithCallback(request *GetTurnCredentials
 	return result
 }
 
-// GetTurnCredentialsRequest is the request struct for api GetTurnCredentials
-type GetTurnCredentialsRequest struct {
+// GetTURNCredentialsRequest is the request struct for api GetTURNCredentials
+type GetTURNCredentialsRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	UserName   string `position:"Query" name:"UserName"`
 }
 
-// GetTurnCredentialsResponse is the response struct for api GetTurnCredentials
-type GetTurnCredentialsResponse struct {
+// GetTURNCredentialsResponse is the response struct for api GetTURNCredentials
+type GetTURNCredentialsResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
-	Data           Data     `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Username       string `json:"Username" xml:"Username"`
+	Password       string `json:"Password" xml:"Password"`
 }
 
-// CreateGetTurnCredentialsRequest creates a request to invoke GetTurnCredentials API
-func CreateGetTurnCredentialsRequest() (request *GetTurnCredentialsRequest) {
-	request = &GetTurnCredentialsRequest{
+// CreateGetTURNCredentialsRequest creates a request to invoke GetTURNCredentials API
+func CreateGetTURNCredentialsRequest() (request *GetTURNCredentialsRequest) {
+	request = &GetTURNCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnCredentials", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "GetTURNCredentials", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTurnCredentialsResponse creates a response to parse from GetTurnCredentials response
-func CreateGetTurnCredentialsResponse() (response *GetTurnCredentialsResponse) {
-	response = &GetTurnCredentialsResponse{
+// CreateGetTURNCredentialsResponse creates a response to parse from GetTURNCredentials response
+func CreateGetTURNCredentialsResponse() (response *GetTURNCredentialsResponse) {
+	response = &GetTURNCredentialsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

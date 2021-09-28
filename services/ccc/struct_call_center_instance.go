@@ -17,14 +17,20 @@ package ccc
 
 // CallCenterInstance is a nested struct in ccc response
 type CallCenterInstance struct {
-	Name        string        `json:"Name" xml:"Name"`
-	DomainName  string        `json:"DomainName" xml:"DomainName"`
-	AliyunUid   string        `json:"AliyunUid" xml:"AliyunUid"`
-	ConsoleUrl  string        `json:"ConsoleUrl" xml:"ConsoleUrl"`
-	Id          string        `json:"Id" xml:"Id"`
-	CreateTime  int64         `json:"CreateTime" xml:"CreateTime"`
-	Status      string        `json:"Status" xml:"Status"`
-	Description string        `json:"Description" xml:"Description"`
-	AdminList   []User        `json:"AdminList" xml:"AdminList"`
-	NumberList  []PhoneNumber `json:"NumberList" xml:"NumberList"`
+	InstanceId          string                            `json:"InstanceId" xml:"InstanceId"`
+	InstanceName        string                            `json:"InstanceName" xml:"InstanceName"`
+	InstanceDescription string                            `json:"InstanceDescription" xml:"InstanceDescription"`
+	DomainName          string                            `json:"DomainName" xml:"DomainName"`
+	ConsoleUrl          string                            `json:"ConsoleUrl" xml:"ConsoleUrl"`
+	StorageBucket       string                            `json:"StorageBucket" xml:"StorageBucket"`
+	StorageMaxDays      int                               `json:"StorageMaxDays" xml:"StorageMaxDays"`
+	StorageMaxSize      int                               `json:"StorageMaxSize" xml:"StorageMaxSize"`
+	MaxOnlineAgents     int                               `json:"MaxOnlineAgents" xml:"MaxOnlineAgents"`
+	TenantId            string                            `json:"TenantId" xml:"TenantId"`
+	DirectoryId         string                            `json:"DirectoryId" xml:"DirectoryId"`
+	Status              string                            `json:"Status" xml:"Status"`
+	CreatedTime         int64                             `json:"CreatedTime" xml:"CreatedTime"`
+	Owner               string                            `json:"Owner" xml:"Owner"`
+	Admin               AdminInListInstancesOfUser        `json:"Admin" xml:"Admin"`
+	PhoneNumbers        PhoneNumbersInListInstancesOfUser `json:"PhoneNumbers" xml:"PhoneNumbers"`
 }

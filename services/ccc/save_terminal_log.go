@@ -98,7 +98,7 @@ func CreateSaveTerminalLogRequest() (request *SaveTerminalLogRequest) {
 	request = &SaveTerminalLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "SaveTerminalLog", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "SaveTerminalLog", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

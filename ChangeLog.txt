@@ -1,3 +1,7 @@
+2021-09-28 Version: v1.61.1279
+- Generated 2017-07-05 for `CCC`.
+- Add new internal API.
+
 2021-09-26 Version: v1.61.1278
 - Generated 2018-12-12 for `vs`.
 - Support odcap device.

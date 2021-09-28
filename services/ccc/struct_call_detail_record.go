@@ -17,34 +17,21 @@ package ccc
 
 // CallDetailRecord is a nested struct in ccc response
 type CallDetailRecord struct {
-	SatisfactionSurveyChannel string `json:"SatisfactionSurveyChannel" xml:"SatisfactionSurveyChannel"`
-	SkillGroupIds             string `json:"SkillGroupIds" xml:"SkillGroupIds"`
-	IvrTime                   int64  `json:"IvrTime" xml:"IvrTime"`
-	CalleeLocation            string `json:"CalleeLocation" xml:"CalleeLocation"`
-	CallerLocation            string `json:"CallerLocation" xml:"CallerLocation"`
-	WaitTime                  int64  `json:"WaitTime" xml:"WaitTime"`
-	SkillGroupNames           string `json:"SkillGroupNames" xml:"SkillGroupNames"`
-	AgentIds                  string `json:"AgentIds" xml:"AgentIds"`
-	StartTime                 int64  `json:"StartTime" xml:"StartTime"`
-	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
-	RecordingDuration         int64  `json:"RecordingDuration" xml:"RecordingDuration"`
-	EstablishedTime           int64  `json:"EstablishedTime" xml:"EstablishedTime"`
-	ReleaseTime               int64  `json:"ReleaseTime" xml:"ReleaseTime"`
-	Broker                    string `json:"Broker" xml:"Broker"`
-	Duration                  int64  `json:"Duration" xml:"Duration"`
-	RingTime                  int64  `json:"RingTime" xml:"RingTime"`
-	QueueTime                 int64  `json:"QueueTime" xml:"QueueTime"`
-	ContactId                 string `json:"ContactId" xml:"ContactId"`
-	RecordingReady            bool   `json:"RecordingReady" xml:"RecordingReady"`
-	CallDuration              string `json:"CallDuration" xml:"CallDuration"`
-	AgentNames                string `json:"AgentNames" xml:"AgentNames"`
-	CalledNumber              string `json:"CalledNumber" xml:"CalledNumber"`
-	ContactType               string `json:"ContactType" xml:"ContactType"`
-	SatisfactionIndex         int    `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
-	AdditionalBroker          string `json:"AdditionalBroker" xml:"AdditionalBroker"`
-	CallingNumber             string `json:"CallingNumber" xml:"CallingNumber"`
-	SatisfactionSurveyOffered bool   `json:"SatisfactionSurveyOffered" xml:"SatisfactionSurveyOffered"`
-	ContactDisposition        string `json:"ContactDisposition" xml:"ContactDisposition"`
-	SatisfactionDescription   string `json:"SatisfactionDescription" xml:"SatisfactionDescription"`
-	ReleaseInitiator          string `json:"ReleaseInitiator" xml:"ReleaseInitiator"`
+	SkillGroupIdList   string                            `json:"SkillGroupIdList" xml:"SkillGroupIdList"`
+	ExtraAttr          string                            `json:"ExtraAttr" xml:"ExtraAttr"`
+	Feedback           string                            `json:"Feedback" xml:"Feedback"`
+	ContactId          string                            `json:"ContactId" xml:"ContactId"`
+	AgentNames         string                            `json:"AgentNames" xml:"AgentNames"`
+	SatisfactionDesc   string                            `json:"SatisfactionDesc" xml:"SatisfactionDesc"`
+	CalledNumber       string                            `json:"CalledNumber" xml:"CalledNumber"`
+	ContactType        string                            `json:"ContactType" xml:"ContactType"`
+	StartTime          int64                             `json:"StartTime" xml:"StartTime"`
+	CallingNumber      string                            `json:"CallingNumber" xml:"CallingNumber"`
+	SkillGroupNames    string                            `json:"SkillGroupNames" xml:"SkillGroupNames"`
+	Duration           int                               `json:"Duration" xml:"Duration"`
+	ContactDisposition string                            `json:"ContactDisposition" xml:"ContactDisposition"`
+	InstanceId         string                            `json:"InstanceId" xml:"InstanceId"`
+	Satisfaction       int                               `json:"Satisfaction" xml:"Satisfaction"`
+	Agents             AgentsInListRecentCallRecords     `json:"Agents" xml:"Agents"`
+	Recordings         RecordingsInListRecentCallRecords `json:"Recordings" xml:"Recordings"`
 }

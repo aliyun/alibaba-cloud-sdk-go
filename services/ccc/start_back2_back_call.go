@@ -71,24 +71,25 @@ func (client *Client) StartBack2BackCallWithCallback(request *StartBack2BackCall
 // StartBack2BackCallRequest is the request struct for api StartBack2BackCall
 type StartBack2BackCallRequest struct {
 	*requests.RpcRequest
-	Callee           string           `position:"Query" name:"Callee"`
-	Broker           string           `position:"Query" name:"Broker"`
-	AdditionalBroker string           `position:"Query" name:"AdditionalBroker"`
-	Tags             string           `position:"Query" name:"Tags"`
-	TimeoutSeconds   requests.Integer `position:"Query" name:"TimeoutSeconds"`
-	Caller           string           `position:"Query" name:"Caller"`
-	InstanceId       string           `position:"Query" name:"InstanceId"`
+	CallCenterNumber string `position:"Query" name:"CallCenterNumber"`
+	Callee           string `position:"Query" name:"Callee"`
+	Caller           string `position:"Query" name:"Caller"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
+	WorkflowId       string `position:"Query" name:"WorkflowId"`
 }
 
 // StartBack2BackCallResponse is the response struct for api StartBack2BackCall
 type StartBack2BackCallResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
-	Data           Data     `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	StatusCode     string `json:"StatusCode" xml:"StatusCode"`
+	StatusDesc     string `json:"StatusDesc" xml:"StatusDesc"`
+	TaskId         string `json:"TaskId" xml:"TaskId"`
+	TimeStamp      string `json:"TimeStamp" xml:"TimeStamp"`
 }
 
 // CreateStartBack2BackCallRequest creates a request to invoke StartBack2BackCall API
@@ -96,7 +97,7 @@ func CreateStartBack2BackCallRequest() (request *StartBack2BackCallRequest) {
 	request = &StartBack2BackCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "StartBack2BackCall", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "StartBack2BackCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
