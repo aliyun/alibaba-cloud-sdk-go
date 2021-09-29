@@ -76,13 +76,13 @@ type GetCallerIdentityRequest struct {
 // GetCallerIdentityResponse is the response struct for api GetCallerIdentity
 type GetCallerIdentityResponse struct {
 	*responses.BaseResponse
-	AccountId    string `json:"AccountId" xml:"AccountId"`
-	UserId       string `json:"UserId" xml:"UserId"`
-	RoleId       string `json:"RoleId" xml:"RoleId"`
-	Arn          string `json:"Arn" xml:"Arn"`
 	IdentityType string `json:"IdentityType" xml:"IdentityType"`
-	PrincipalId  string `json:"PrincipalId" xml:"PrincipalId"`
+	AccountId    string `json:"AccountId" xml:"AccountId"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
+	PrincipalId  string `json:"PrincipalId" xml:"PrincipalId"`
+	UserId       string `json:"UserId" xml:"UserId"`
+	Arn          string `json:"Arn" xml:"Arn"`
+	RoleId       string `json:"RoleId" xml:"RoleId"`
 }
 
 // CreateGetCallerIdentityRequest creates a request to invoke GetCallerIdentity API
@@ -90,7 +90,7 @@ func CreateGetCallerIdentityRequest() (request *GetCallerIdentityRequest) {
 	request = &GetCallerIdentityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sts", "2015-04-01", "GetCallerIdentity", "sts", "openAPI")
+	request.InitWithApiInfo("Sts", "2015-04-01", "GetCallerIdentity", "", "")
 	request.Method = requests.POST
 	return
 }
