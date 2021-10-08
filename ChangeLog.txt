@@ -1,3 +1,7 @@
+2021-10-08 Version: v1.61.1282
+- Generated 2017-11-15 for `scdn`.
+- Fixed SDK update delay.
+
 2021-10-08 Version: v1.61.1281
 - Generated 2019-12-30 for `facebody`.
 - Release SearchFace BatchAddFaces.
