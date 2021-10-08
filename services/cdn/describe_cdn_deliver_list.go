@@ -73,7 +73,6 @@ type DescribeCdnDeliverListRequest struct {
 	*requests.RpcRequest
 	DeliverId requests.Integer `position:"Query" name:"DeliverId"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
-	Status    string           `position:"Query" name:"Status"`
 }
 
 // DescribeCdnDeliverListResponse is the response struct for api DescribeCdnDeliverList

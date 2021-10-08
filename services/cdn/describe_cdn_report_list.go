@@ -71,10 +71,8 @@ func (client *Client) DescribeCdnReportListWithCallback(request *DescribeCdnRepo
 // DescribeCdnReportListRequest is the request struct for api DescribeCdnReportList
 type DescribeCdnReportListRequest struct {
 	*requests.RpcRequest
-	ReportId   requests.Integer `position:"Query" name:"ReportId"`
-	Permission string           `position:"Query" name:"Permission"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Status     string           `position:"Query" name:"Status"`
+	ReportId requests.Integer `position:"Query" name:"ReportId"`
+	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnReportListResponse is the response struct for api DescribeCdnReportList

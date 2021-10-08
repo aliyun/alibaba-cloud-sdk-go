@@ -71,6 +71,7 @@ func (client *Client) DescribeUserDomainsWithCallback(request *DescribeUserDomai
 // DescribeUserDomainsRequest is the request struct for api DescribeUserDomains
 type DescribeUserDomainsRequest struct {
 	*requests.RpcRequest
+	Source           string                    `position:"Query" name:"Source"`
 	PageNumber       requests.Integer          `position:"Query" name:"PageNumber"`
 	CheckDomainShow  requests.Boolean          `position:"Query" name:"CheckDomainShow"`
 	ResourceGroupId  string                    `position:"Query" name:"ResourceGroupId"`

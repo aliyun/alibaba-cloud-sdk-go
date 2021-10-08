@@ -77,7 +77,6 @@ type CreateCdnDeliverTaskRequest struct {
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	Schedule   string           `position:"Body" name:"Schedule"`
 	Name       string           `position:"Body" name:"Name"`
-	Status     string           `position:"Body" name:"Status"`
 }
 
 // CreateCdnDeliverTaskResponse is the response struct for api CreateCdnDeliverTask

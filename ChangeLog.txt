@@ -1,3 +1,7 @@
+2021-10-08 Version: v1.61.1284
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Fixed SDK update delay.
+
 2021-10-08 Version: v1.61.1283
 - Generated 2018-01-15 for `dcdn`.
 - Fixed SDK update delay.
