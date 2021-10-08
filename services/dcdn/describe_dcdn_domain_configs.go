@@ -75,6 +75,7 @@ type DescribeDcdnDomainConfigsRequest struct {
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	ConfigId      string           `position:"Query" name:"ConfigId"`
 }
 
 // DescribeDcdnDomainConfigsResponse is the response struct for api DescribeDcdnDomainConfigs

@@ -71,17 +71,24 @@ func (client *Client) DescribeDcdnIpaUserDomainsWithCallback(request *DescribeDc
 // DescribeDcdnIpaUserDomainsRequest is the request struct for api DescribeDcdnIpaUserDomains
 type DescribeDcdnIpaUserDomainsRequest struct {
 	*requests.RpcRequest
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
-	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	FuncFilter       string           `position:"Query" name:"FuncFilter"`
-	DomainName       string           `position:"Query" name:"DomainName"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	FuncId           string           `position:"Query" name:"FuncId"`
-	DomainStatus     string           `position:"Query" name:"DomainStatus"`
-	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
+	PageNumber       requests.Integer                 `position:"Query" name:"PageNumber"`
+	CheckDomainShow  requests.Boolean                 `position:"Query" name:"CheckDomainShow"`
+	ResourceGroupId  string                           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken    string                           `position:"Query" name:"SecurityToken"`
+	PageSize         requests.Integer                 `position:"Query" name:"PageSize"`
+	Tag              *[]DescribeDcdnIpaUserDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	FuncFilter       string                           `position:"Query" name:"FuncFilter"`
+	DomainName       string                           `position:"Query" name:"DomainName"`
+	OwnerId          requests.Integer                 `position:"Query" name:"OwnerId"`
+	FuncId           string                           `position:"Query" name:"FuncId"`
+	DomainStatus     string                           `position:"Query" name:"DomainStatus"`
+	DomainSearchType string                           `position:"Query" name:"DomainSearchType"`
+}
+
+// DescribeDcdnIpaUserDomainsTag is a repeated param struct in DescribeDcdnIpaUserDomainsRequest
+type DescribeDcdnIpaUserDomainsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDcdnIpaUserDomainsResponse is the response struct for api DescribeDcdnIpaUserDomains

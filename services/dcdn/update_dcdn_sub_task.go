@@ -76,7 +76,6 @@ type UpdateDcdnSubTaskRequest struct {
 	EndTime    string           `position:"Body" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	ReportIds  string           `position:"Body" name:"ReportIds"`
-	Status     string           `position:"Body" name:"Status"`
 }
 
 // UpdateDcdnSubTaskResponse is the response struct for api UpdateDcdnSubTask

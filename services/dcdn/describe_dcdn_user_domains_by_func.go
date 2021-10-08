@@ -74,6 +74,8 @@ type DescribeDcdnUserDomainsByFuncRequest struct {
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	FuncFilter      string           `position:"Query" name:"FuncFilter"`
+	DomainName      string           `position:"Query" name:"DomainName"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	FuncId          requests.Integer `position:"Query" name:"FuncId"`
 }

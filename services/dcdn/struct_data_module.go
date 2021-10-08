@@ -18,6 +18,7 @@ package dcdn
 // DataModule is a nested struct in dcdn response
 type DataModule struct {
 	StaticHttpTraffic                float64                          `json:"StaticHttpTraffic" xml:"StaticHttpTraffic"`
+	PeakTime                         string                           `json:"PeakTime" xml:"PeakTime"`
 	StaticHttpBps                    float64                          `json:"StaticHttpBps" xml:"StaticHttpBps"`
 	DynamicHttpsAcc                  float64                          `json:"DynamicHttpsAcc" xml:"DynamicHttpsAcc"`
 	DynamicHttpOriginBps             float64                          `json:"DynamicHttpOriginBps" xml:"DynamicHttpOriginBps"`
@@ -36,6 +37,7 @@ type DataModule struct {
 	DynamicHttpOriginTraffic         float64                          `json:"DynamicHttpOriginTraffic" xml:"DynamicHttpOriginTraffic"`
 	ReqHitRate                       float64                          `json:"ReqHitRate" xml:"ReqHitRate"`
 	StaticHttpQps                    float64                          `json:"StaticHttpQps" xml:"StaticHttpQps"`
+	SpecialValue                     string                           `json:"SpecialValue" xml:"SpecialValue"`
 	WebsocketBps                     float64                          `json:"WebsocketBps" xml:"WebsocketBps"`
 	WebsocketTraffic                 float64                          `json:"WebsocketTraffic" xml:"WebsocketTraffic"`
 	DynamicHttpTraffic               float64                          `json:"DynamicHttpTraffic" xml:"DynamicHttpTraffic"`

@@ -71,8 +71,9 @@ func (client *Client) DescribeDcdnWafDomainWithCallback(request *DescribeDcdnWaf
 // DescribeDcdnWafDomainRequest is the request struct for api DescribeDcdnWafDomain
 type DescribeDcdnWafDomainRequest struct {
 	*requests.RpcRequest
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnWafDomainResponse is the response struct for api DescribeDcdnWafDomain

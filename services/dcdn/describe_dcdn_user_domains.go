@@ -79,6 +79,7 @@ type DescribeDcdnUserDomainsRequest struct {
 	PageSize         requests.Integer              `position:"Query" name:"PageSize"`
 	Tag              *[]DescribeDcdnUserDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	FuncFilter       string                        `position:"Query" name:"FuncFilter"`
+	Coverage         string                        `position:"Query" name:"Coverage"`
 	DomainName       string                        `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer              `position:"Query" name:"OwnerId"`
 	FuncId           string                        `position:"Query" name:"FuncId"`
