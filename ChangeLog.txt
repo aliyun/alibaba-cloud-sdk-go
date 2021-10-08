@@ -1,3 +1,7 @@
+2021-10-08 Version: v1.61.1281
+- Generated 2019-12-30 for `facebody`.
+- Release SearchFace BatchAddFaces.
+
 2021-09-29 Version: v1.61.1280
 - Generated 2015-04-01 for `Sts`.
 - Supported AssumeRoleWithOIDC.

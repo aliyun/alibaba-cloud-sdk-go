@@ -106,7 +106,9 @@ type Data struct {
 	ImageInfoList        []ImageInfoListItem   `json:"ImageInfoList" xml:"ImageInfoList"`
 	DbList               []DbListItem          `json:"DbList" xml:"DbList"`
 	Entities             []Entity              `json:"Entities" xml:"Entities"`
+	FailedFaces          []FailedFaces         `json:"FailedFaces" xml:"FailedFaces"`
 	PersonList           []Person              `json:"PersonList" xml:"PersonList"`
+	InsertedFaces        []InsertedFaces       `json:"InsertedFaces" xml:"InsertedFaces"`
 	MatchList            []Trace               `json:"MatchList" xml:"MatchList"`
 	TraceList            []Trace               `json:"TraceList" xml:"TraceList"`
 	FaceRecognizeResults []FaceRecognizeResult `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`

@@ -71,6 +71,7 @@ func (client *Client) SearchFaceWithCallback(request *SearchFaceRequest, callbac
 // SearchFaceRequest is the request struct for api SearchFace
 type SearchFaceRequest struct {
 	*requests.RpcRequest
+	MaxFaceNum            requests.Integer `position:"Body" name:"MaxFaceNum"`
 	QualityScoreThreshold requests.Float   `position:"Body" name:"QualityScoreThreshold"`
 	Limit                 requests.Integer `position:"Body" name:"Limit"`
 	DbNames               string           `position:"Body" name:"DbNames"`

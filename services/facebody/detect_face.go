@@ -71,8 +71,12 @@ func (client *Client) DetectFaceWithCallback(request *DetectFaceRequest, callbac
 // DetectFaceRequest is the request struct for api DetectFace
 type DetectFaceRequest struct {
 	*requests.RpcRequest
-	ImageType requests.Integer `position:"Body" name:"ImageType"`
-	ImageURL  string           `position:"Body" name:"ImageURL"`
+	MaxFaceNumber requests.Integer `position:"Body" name:"MaxFaceNumber"`
+	Landmark      requests.Boolean `position:"Body" name:"Landmark"`
+	ImageType     requests.Integer `position:"Body" name:"ImageType"`
+	Pose          requests.Boolean `position:"Body" name:"Pose"`
+	Quality       requests.Boolean `position:"Body" name:"Quality"`
+	ImageURL      string           `position:"Body" name:"ImageURL"`
 }
 
 // DetectFaceResponse is the response struct for api DetectFace
