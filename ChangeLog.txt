@@ -1,3 +1,7 @@
+2021-10-11 Version: v1.61.1286
+- Generated 2020-02-17 for `Dytnsapi`.
+- Fixed SDK update delay.
+
 2021-10-08 Version: v1.61.1285
 - Generated 2014-05-26 for `Ecs`.
 - Adjust ecs openapi endpoint.
