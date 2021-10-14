@@ -71,18 +71,20 @@ func (client *Client) ListSkillGroupsWithCallback(request *ListSkillGroupsReques
 // ListSkillGroupsRequest is the request struct for api ListSkillGroups
 type ListSkillGroupsRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SearchPattern string           `position:"Query" name:"SearchPattern"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListSkillGroupsResponse is the response struct for api ListSkillGroups
 type ListSkillGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId      string                       `json:"RequestId" xml:"RequestId"`
-	Success        bool                         `json:"Success" xml:"Success"`
-	Code           string                       `json:"Code" xml:"Code"`
-	Message        string                       `json:"Message" xml:"Message"`
-	HttpStatusCode int                          `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	SkillGroups    SkillGroupsInListSkillGroups `json:"SkillGroups" xml:"SkillGroups"`
+	Code           string                `json:"Code" xml:"Code"`
+	HttpStatusCode int                   `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                `json:"Message" xml:"Message"`
+	RequestId      string                `json:"RequestId" xml:"RequestId"`
+	Data           DataInListSkillGroups `json:"Data" xml:"Data"`
 }
 
 // CreateListSkillGroupsRequest creates a request to invoke ListSkillGroups API
@@ -90,7 +92,7 @@ func CreateListSkillGroupsRequest() (request *ListSkillGroupsRequest) {
 	request = &ListSkillGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListSkillGroups", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListSkillGroups", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,18 +71,18 @@ func (client *Client) RemoveUsersWithCallback(request *RemoveUsersRequest, callb
 // RemoveUsersRequest is the request struct for api RemoveUsers
 type RemoveUsersRequest struct {
 	*requests.RpcRequest
-	InstanceId string    `position:"Query" name:"InstanceId"`
-	UserId     *[]string `position:"Query" name:"UserId"  type:"Repeated"`
+	UserIdList string `position:"Query" name:"UserIdList"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // RemoveUsersResponse is the response struct for api RemoveUsers
 type RemoveUsersResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
+	RequestId      string   `json:"RequestId" xml:"RequestId"`
+	Params         []string `json:"Params" xml:"Params"`
 }
 
 // CreateRemoveUsersRequest creates a request to invoke RemoveUsers API
@@ -90,7 +90,7 @@ func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {
 	request = &RemoveUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "RemoveUsers", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveUsers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

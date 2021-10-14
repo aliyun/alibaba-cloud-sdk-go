@@ -1,3 +1,7 @@
+2021-10-14 Version: v1.61.1287
+- Generated 2020-07-01 for `CCC`.
+- Add API for predictive dialer.
+
 2021-10-11 Version: v1.61.1286
 - Generated 2020-02-17 for `Dytnsapi`.
 - Fixed SDK update delay.

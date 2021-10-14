@@ -71,26 +71,24 @@ func (client *Client) SaveWebRTCStatsWithCallback(request *SaveWebRTCStatsReques
 // SaveWebRTCStatsRequest is the request struct for api SaveWebRTCStats
 type SaveWebRTCStatsRequest struct {
 	*requests.RpcRequest
-	CallId        string           `position:"Query" name:"CallId"`
-	RecordTime    requests.Integer `position:"Query" name:"RecordTime"`
-	CallStartTime requests.Integer `position:"Query" name:"CallStartTime"`
-	Uid           string           `position:"Query" name:"Uid"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
-	Stats         string           `position:"Query" name:"Stats"`
-	TenantId      string           `position:"Query" name:"TenantId"`
-	CalleeNumber  string           `position:"Query" name:"CalleeNumber"`
-	CallerNumber  string           `position:"Query" name:"CallerNumber"`
+	CallId         string `position:"Query" name:"CallId"`
+	SenderReport   string `position:"Query" name:"SenderReport"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	ReceiverReport string `position:"Query" name:"ReceiverReport"`
+	GoogAddress    string `position:"Query" name:"GoogAddress"`
+	GeneralInfo    string `position:"Query" name:"GeneralInfo"`
 }
 
 // SaveWebRTCStatsResponse is the response struct for api SaveWebRTCStats
 type SaveWebRTCStatsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int64  `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	RowCount       int64  `json:"RowCount" xml:"RowCount"`
+	Success        bool   `json:"Success" xml:"Success"`
+	TimeStamp      int64  `json:"TimeStamp" xml:"TimeStamp"`
 }
 
 // CreateSaveWebRTCStatsRequest creates a request to invoke SaveWebRTCStats API
@@ -98,7 +96,7 @@ func CreateSaveWebRTCStatsRequest() (request *SaveWebRTCStatsRequest) {
 	request = &SaveWebRTCStatsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "SaveWebRTCStats", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "SaveWebRTCStats", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
