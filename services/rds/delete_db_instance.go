@@ -72,17 +72,19 @@ func (client *Client) DeleteDBInstanceWithCallback(request *DeleteDBInstanceRequ
 type DeleteDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ReleasedKeepPolicy   string           `position:"Query" name:"ReleasedKeepPolicy"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // DeleteDBInstanceResponse is the response struct for api DeleteDBInstance
 type DeleteDBInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	RegionId  string `json:"RegionId" xml:"RegionId"`
 }
 
 // CreateDeleteDBInstanceRequest creates a request to invoke DeleteDBInstance API
@@ -90,7 +92,7 @@ func CreateDeleteDBInstanceRequest() (request *DeleteDBInstanceRequest) {
 	request = &DeleteDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "DeleteDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDBInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -72,18 +72,24 @@ func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequ
 type DescribeAccountsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeAccountsResponse is the response struct for api DescribeAccounts
 type DescribeAccountsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Accounts  Accounts `json:"Accounts" xml:"Accounts"`
+	RequestId                             string                     `json:"RequestId" xml:"RequestId"`
+	SystemAdminAccountStatus              string                     `json:"SystemAdminAccountStatus" xml:"SystemAdminAccountStatus"`
+	SystemAdminAccountFirstActivationTime string                     `json:"SystemAdminAccountFirstActivationTime" xml:"SystemAdminAccountFirstActivationTime"`
+	PageNumber                            int                        `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount                      int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	Accounts                              AccountsInDescribeAccounts `json:"Accounts" xml:"Accounts"`
 }
 
 // CreateDescribeAccountsRequest creates a request to invoke DescribeAccounts API
@@ -91,7 +97,7 @@ func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	request = &DescribeAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeAccounts", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

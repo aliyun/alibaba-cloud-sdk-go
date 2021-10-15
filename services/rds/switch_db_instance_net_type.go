@@ -73,16 +73,21 @@ type SwitchDBInstanceNetTypeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	ClientToken            string           `position:"Query" name:"ClientToken"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ConnectionStringType   string           `position:"Query" name:"ConnectionStringType"`
+	Port                   string           `position:"Query" name:"Port"`
 }
 
 // SwitchDBInstanceNetTypeResponse is the response struct for api SwitchDBInstanceNetType
 type SwitchDBInstanceNetTypeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	OldConnectionString string `json:"OldConnectionString" xml:"OldConnectionString"`
+	NewConnectionString string `json:"NewConnectionString" xml:"NewConnectionString"`
 }
 
 // CreateSwitchDBInstanceNetTypeRequest creates a request to invoke SwitchDBInstanceNetType API
@@ -90,7 +95,7 @@ func CreateSwitchDBInstanceNetTypeRequest() (request *SwitchDBInstanceNetTypeReq
 	request = &SwitchDBInstanceNetTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "SwitchDBInstanceNetType", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceNetType", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

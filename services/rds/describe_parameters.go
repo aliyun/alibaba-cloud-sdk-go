@@ -73,6 +73,7 @@ type DescribeParametersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
@@ -82,11 +83,10 @@ type DescribeParametersRequest struct {
 type DescribeParametersResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string            `json:"DBInstanceId" xml:"DBInstanceId"`
 	Engine            string            `json:"Engine" xml:"Engine"`
 	EngineVersion     string            `json:"EngineVersion" xml:"EngineVersion"`
-	RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
 	ConfigParameters  ConfigParameters  `json:"ConfigParameters" xml:"ConfigParameters"`
+	RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
 }
 
 // CreateDescribeParametersRequest creates a request to invoke DescribeParameters API
@@ -94,7 +94,7 @@ func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
 	request = &DescribeParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeParameters", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

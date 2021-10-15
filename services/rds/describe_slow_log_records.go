@@ -81,17 +81,27 @@ type DescribeSlowLogRecordsRequest struct {
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBName               string           `position:"Query" name:"DBName"`
+	SQLHASH              string           `position:"Query" name:"SQLHASH"`
 }
 
 // DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId         string                          `json:"RequestId" xml:"RequestId"`
-	Engine            string                          `json:"Engine" xml:"Engine"`
-	TotalRecordCounts int                             `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
-	PageNumber        int                             `json:"PageNumber" xml:"PageNumber"`
-	SQLItemsCounts    int                             `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
-	SQLLogs           SQLLogsInDescribeSlowLogRecords `json:"SQLLogs" xml:"SQLLogs"`
+	RequestId             string                        `json:"RequestId" xml:"RequestId"`
+	DBInstanceId          string                        `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine                string                        `json:"Engine" xml:"Engine"`
+	TotalRecordCount      int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber            int                           `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount       int                           `json:"PageRecordCount" xml:"PageRecordCount"`
+	SQLHash               string                        `json:"SQLHash" xml:"SQLHash"`
+	CPUTime               int64                         `json:"CPUTime" xml:"CPUTime"`
+	LogicalIORead         int64                         `json:"LogicalIORead" xml:"LogicalIORead"`
+	PhysicalIORead        int64                         `json:"PhysicalIORead" xml:"PhysicalIORead"`
+	WritesIOCount         int64                         `json:"WritesIOCount" xml:"WritesIOCount"`
+	RowsAffectedCount     int64                         `json:"RowsAffectedCount" xml:"RowsAffectedCount"`
+	LastRowsAffectedCount int64                         `json:"LastRowsAffectedCount" xml:"LastRowsAffectedCount"`
+	UserName              string                        `json:"UserName" xml:"UserName"`
+	Items                 ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeSlowLogRecordsRequest creates a request to invoke DescribeSlowLogRecords API
@@ -99,7 +109,7 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeSlowLogRecords", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

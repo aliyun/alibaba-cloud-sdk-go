@@ -73,9 +73,8 @@ type DescribeResourceUsageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
@@ -83,8 +82,21 @@ type DescribeResourceUsageRequest struct {
 // DescribeResourceUsageResponse is the response struct for api DescribeResourceUsage
 type DescribeResourceUsageResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Resources Resources `json:"Resources" xml:"Resources"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine            string `json:"Engine" xml:"Engine"`
+	DiskUsed          int64  `json:"DiskUsed" xml:"DiskUsed"`
+	DataSize          int64  `json:"DataSize" xml:"DataSize"`
+	LogSize           int64  `json:"LogSize" xml:"LogSize"`
+	BackupSize        int64  `json:"BackupSize" xml:"BackupSize"`
+	BackupOssDataSize int64  `json:"BackupOssDataSize" xml:"BackupOssDataSize"`
+	BackupOssLogSize  int64  `json:"BackupOssLogSize" xml:"BackupOssLogSize"`
+	SQLSize           int64  `json:"SQLSize" xml:"SQLSize"`
+	ColdBackupSize    int64  `json:"ColdBackupSize" xml:"ColdBackupSize"`
+	BackupDataSize    int64  `json:"BackupDataSize" xml:"BackupDataSize"`
+	BackupLogSize     int64  `json:"BackupLogSize" xml:"BackupLogSize"`
+	PaidBackupSize    int64  `json:"PaidBackupSize" xml:"PaidBackupSize"`
+	ArchiveBackupSize int64  `json:"ArchiveBackupSize" xml:"ArchiveBackupSize"`
 }
 
 // CreateDescribeResourceUsageRequest creates a request to invoke DescribeResourceUsage API
@@ -92,7 +104,7 @@ func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest
 	request = &DescribeResourceUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeResourceUsage", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeResourceUsage", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -22,5 +22,6 @@ type DBInstanceAccount struct {
 	AccountStatus      string             `json:"AccountStatus" xml:"AccountStatus"`
 	AccountType        string             `json:"AccountType" xml:"AccountType"`
 	AccountDescription string             `json:"AccountDescription" xml:"AccountDescription"`
+	PrivExceeded       string             `json:"PrivExceeded" xml:"PrivExceeded"`
 	DatabasePrivileges DatabasePrivileges `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
 }

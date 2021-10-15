@@ -72,10 +72,14 @@ func (client *Client) RestartDBInstanceWithCallback(request *RestartDBInstanceRe
 type RestartDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	RestartMethod        string           `position:"Query" name:"RestartMethod"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SwitchTime           string           `position:"Query" name:"SwitchTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // RestartDBInstanceResponse is the response struct for api RestartDBInstance
@@ -89,7 +93,7 @@ func CreateRestartDBInstanceRequest() (request *RestartDBInstanceRequest) {
 	request = &RestartDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "RestartDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RestartDBInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

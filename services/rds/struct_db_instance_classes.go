@@ -17,5 +17,5 @@ package rds
 
 // DBInstanceClasses is a nested struct in rds response
 type DBInstanceClasses struct {
-	DBInstanceClassItem []DBInstanceClassItem `json:"DBInstanceClassItem" xml:"DBInstanceClassItem"`
+	DBInstanceClass []DBInstanceClass `json:"DBInstanceClass" xml:"DBInstanceClass"`
 }

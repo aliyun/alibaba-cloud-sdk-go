@@ -85,11 +85,11 @@ type DescribeErrorLogsRequest struct {
 // DescribeErrorLogsResponse is the response struct for api DescribeErrorLogs
 type DescribeErrorLogsResponse struct {
 	*responses.BaseResponse
-	RequestId         string    `json:"RequestId" xml:"RequestId"`
-	TotalRecordCounts int       `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
-	PageNumber        int       `json:"PageNumber" xml:"PageNumber"`
-	LogItemsCounts    int       `json:"LogItemsCounts" xml:"LogItemsCounts"`
-	ErrorLogs         ErrorLogs `json:"ErrorLogs" xml:"ErrorLogs"`
+	PageNumber       int                      `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                      `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                   `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int                      `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	Items            ItemsInDescribeErrorLogs `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeErrorLogsRequest creates a request to invoke DescribeErrorLogs API
@@ -97,7 +97,7 @@ func CreateDescribeErrorLogsRequest() (request *DescribeErrorLogsRequest) {
 	request = &DescribeErrorLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeErrorLogs", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeErrorLogs", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

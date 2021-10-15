@@ -87,14 +87,15 @@ type DescribeSlowLogsRequest struct {
 // DescribeSlowLogsResponse is the response struct for api DescribeSlowLogs
 type DescribeSlowLogsResponse struct {
 	*responses.BaseResponse
-	RequestId         string                    `json:"RequestId" xml:"RequestId"`
-	Engine            string                    `json:"Engine" xml:"Engine"`
-	StartTime         string                    `json:"StartTime" xml:"StartTime"`
-	EndTime           string                    `json:"EndTime" xml:"EndTime"`
-	TotalRecordCounts int                       `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
-	PageNumber        int                       `json:"PageNumber" xml:"PageNumber"`
-	SQLItemsCounts    int                       `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
-	SQLLogs           SQLLogsInDescribeSlowLogs `json:"SQLLogs" xml:"SQLLogs"`
+	RequestId        string                  `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string                  `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine           string                  `json:"Engine" xml:"Engine"`
+	StartTime        string                  `json:"StartTime" xml:"StartTime"`
+	EndTime          string                  `json:"EndTime" xml:"EndTime"`
+	TotalRecordCount int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeSlowLogs `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeSlowLogsRequest creates a request to invoke DescribeSlowLogs API
@@ -102,7 +103,7 @@ func CreateDescribeSlowLogsRequest() (request *DescribeSlowLogsRequest) {
 	request = &DescribeSlowLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeSlowLogs", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogs", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

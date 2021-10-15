@@ -72,15 +72,14 @@ func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, c
 type CreateAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountType          string           `position:"Query" name:"AccountType"`
 	AccountDescription   string           `position:"Query" name:"AccountDescription"`
-	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AccountPassword      string           `position:"Query" name:"AccountPassword"`
-	DBName               string           `position:"Query" name:"DBName"`
 }
 
 // CreateAccountResponse is the response struct for api CreateAccount
@@ -94,7 +93,7 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "CreateAccount", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateAccount", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

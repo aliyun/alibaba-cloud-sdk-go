@@ -73,20 +73,29 @@ type DescribeBackupsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	BackupLocation       string           `position:"Query" name:"BackupLocation"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	BackupStatus         string           `position:"Query" name:"BackupStatus"`
-	BackupMode           requests.Integer `position:"Query" name:"BackupMode"`
+	BackupMode           string           `position:"Query" name:"BackupMode"`
 }
 
 // DescribeBackupsResponse is the response struct for api DescribeBackups
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Backups   Backups `json:"Backups" xml:"Backups"`
+	RequestId            string                 `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount     string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber           string                 `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount      string                 `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalBackupSize      int64                  `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	TotalEcsSnapshotSize int64                  `json:"TotalEcsSnapshotSize" xml:"TotalEcsSnapshotSize"`
+	Items                ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeBackupsRequest creates a request to invoke DescribeBackups API
@@ -94,7 +103,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeBackups", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackups", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }
