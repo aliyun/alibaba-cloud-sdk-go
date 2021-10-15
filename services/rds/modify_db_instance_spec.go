@@ -77,6 +77,7 @@ type ModifyDBInstanceSpecRequest struct {
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	SwitchTime            string           `position:"Query" name:"SwitchTime"`
 	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	SourceBiz             string           `position:"Query" name:"SourceBiz"`
 	DedicatedHostGroupId  string           `position:"Query" name:"DedicatedHostGroupId"`

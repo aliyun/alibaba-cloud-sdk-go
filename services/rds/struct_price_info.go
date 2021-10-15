@@ -17,11 +17,11 @@ package rds
 
 // PriceInfo is a nested struct in rds response
 type PriceInfo struct {
-	TradePrice    float64                `json:"TradePrice" xml:"TradePrice"`
-	DiscountPrice float64                `json:"DiscountPrice" xml:"DiscountPrice"`
-	OriginalPrice float64                `json:"OriginalPrice" xml:"OriginalPrice"`
-	Currency      string                 `json:"Currency" xml:"Currency"`
-	RuleIds       RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
-	ActivityInfo  ActivityInfo           `json:"ActivityInfo" xml:"ActivityInfo"`
-	Coupons       CouponsInDescribePrice `json:"Coupons" xml:"Coupons"`
+	DiscountPrice float64                       `json:"DiscountPrice" xml:"DiscountPrice"`
+	TradePrice    float64                       `json:"TradePrice" xml:"TradePrice"`
+	OriginalPrice float64                       `json:"OriginalPrice" xml:"OriginalPrice"`
+	Currency      string                        `json:"Currency" xml:"Currency"`
+	RuleIds       RuleIdsInDescribePrice        `json:"RuleIds" xml:"RuleIds"`
+	ActivityInfo  ActivityInfo                  `json:"ActivityInfo" xml:"ActivityInfo"`
+	Coupons       CouponsInDescribeRenewalPrice `json:"Coupons" xml:"Coupons"`
 }

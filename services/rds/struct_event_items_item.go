@@ -28,4 +28,5 @@ type EventItemsItem struct {
 	EventReason     string `json:"EventReason" xml:"EventReason"`
 	EventPayload    string `json:"EventPayload" xml:"EventPayload"`
 	EventRecordTime string `json:"EventRecordTime" xml:"EventRecordTime"`
+	CallerUid       int64  `json:"CallerUid" xml:"CallerUid"`
 }

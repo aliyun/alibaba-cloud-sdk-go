@@ -72,12 +72,12 @@ func (client *Client) ModifyDBInstanceMonitorWithCallback(request *ModifyDBInsta
 type ModifyDBInstanceMonitorRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	Period               string           `position:"Query" name:"Period"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // ModifyDBInstanceMonitorResponse is the response struct for api ModifyDBInstanceMonitor

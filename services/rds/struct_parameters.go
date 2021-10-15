@@ -17,5 +17,5 @@ package rds
 
 // Parameters is a nested struct in rds response
 type Parameters struct {
-	TemplateRecord []TemplateRecord `json:"TemplateRecord" xml:"TemplateRecord"`
+	Parameter []Parameter `json:"Parameter" xml:"Parameter"`
 }

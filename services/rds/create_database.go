@@ -72,7 +72,9 @@ func (client *Client) CreateDatabaseWithCallback(request *CreateDatabaseRequest,
 type CreateDatabaseRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	DbInstanceId         string           `position:"Query" name:"DbInstanceId"`
 	DBDescription        string           `position:"Query" name:"DBDescription"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -92,7 +94,7 @@ func CreateCreateDatabaseRequest() (request *CreateDatabaseRequest) {
 	request = &CreateDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDatabase", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2013-05-28", "CreateDatabase", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

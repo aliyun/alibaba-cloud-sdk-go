@@ -72,12 +72,12 @@ func (client *Client) RevokeAccountPrivilegeWithCallback(request *RevokeAccountP
 type RevokeAccountPrivilegeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBName               string           `position:"Query" name:"DBName"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // RevokeAccountPrivilegeResponse is the response struct for api RevokeAccountPrivilege
@@ -91,7 +91,7 @@ func CreateRevokeAccountPrivilegeRequest() (request *RevokeAccountPrivilegeReque
 	request = &RevokeAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RevokeAccountPrivilege", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2013-05-28", "RevokeAccountPrivilege", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

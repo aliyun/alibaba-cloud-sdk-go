@@ -72,21 +72,19 @@ func (client *Client) DescribeDatabasesWithCallback(request *DescribeDatabasesRe
 type DescribeDatabasesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	DBStatus             string           `position:"Query" name:"DBStatus"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBName               string           `position:"Query" name:"DBName"`
+	DBStatus             string           `position:"Query" name:"DBStatus"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeDatabasesResponse is the response struct for api DescribeDatabases
 type DescribeDatabasesResponse struct {
 	*responses.BaseResponse
-	RequestId string                       `json:"RequestId" xml:"RequestId"`
-	Databases DatabasesInDescribeDatabases `json:"Databases" xml:"Databases"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	Databases Databases `json:"Databases" xml:"Databases"`
 }
 
 // CreateDescribeDatabasesRequest creates a request to invoke DescribeDatabases API
@@ -94,7 +92,7 @@ func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	request = &DescribeDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabases", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeDatabases", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

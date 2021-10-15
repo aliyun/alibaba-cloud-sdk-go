@@ -72,30 +72,25 @@ func (client *Client) DescribeSQLLogRecordsWithCallback(request *DescribeSQLLogR
 type DescribeSQLLogRecordsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Database             string           `position:"Query" name:"Database"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	SQLId                requests.Integer `position:"Query" name:"SQLId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	QueryKeyword         string           `position:"Query" name:"QueryKeyword"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Form                 string           `position:"Query" name:"Form"`
-	User                 string           `position:"Query" name:"User"`
 }
 
 // DescribeSQLLogRecordsResponse is the response struct for api DescribeSQLLogRecords
 type DescribeSQLLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                       `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int64                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                          `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int                          `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            ItemsInDescribeSQLLogRecords `json:"Items" xml:"Items"`
+	RequestId         string                          `json:"RequestId" xml:"RequestId"`
+	TotalRecordCounts int                             `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
+	PageNumber        int                             `json:"PageNumber" xml:"PageNumber"`
+	ItemsCounts       int                             `json:"ItemsCounts" xml:"ItemsCounts"`
+	SQLItems          SQLItemsInDescribeSQLLogRecords `json:"SQLItems" xml:"SQLItems"`
 }
 
 // CreateDescribeSQLLogRecordsRequest creates a request to invoke DescribeSQLLogRecords API
@@ -103,7 +98,7 @@ func CreateDescribeSQLLogRecordsRequest() (request *DescribeSQLLogRecordsRequest
 	request = &DescribeSQLLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogRecords", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeSQLLogRecords", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

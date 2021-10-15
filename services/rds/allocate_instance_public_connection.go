@@ -73,6 +73,7 @@ type AllocateInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	GeneralGroupName       string           `position:"Query" name:"GeneralGroupName"`
 	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`

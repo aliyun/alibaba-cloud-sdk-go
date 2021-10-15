@@ -72,24 +72,21 @@ func (client *Client) DescribeParameterTemplatesWithCallback(request *DescribePa
 type DescribeParameterTemplatesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	Engine               string           `position:"Query" name:"Engine"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Category             string           `position:"Query" name:"Category"`
+	Engine               string           `position:"Query" name:"Engine"`
 }
 
 // DescribeParameterTemplatesResponse is the response struct for api DescribeParameterTemplates
 type DescribeParameterTemplatesResponse struct {
 	*responses.BaseResponse
-	RequestId      string     `json:"RequestId" xml:"RequestId"`
-	Engine         string     `json:"Engine" xml:"Engine"`
-	EngineVersion  string     `json:"EngineVersion" xml:"EngineVersion"`
-	ParameterCount string     `json:"ParameterCount" xml:"ParameterCount"`
-	Parameters     Parameters `json:"Parameters" xml:"Parameters"`
+	RequestId       string     `json:"RequestId" xml:"RequestId"`
+	Engine          string     `json:"Engine" xml:"Engine"`
+	EngineVersion   string     `json:"EngineVersion" xml:"EngineVersion"`
+	ParameterCounts int        `json:"ParameterCounts" xml:"ParameterCounts"`
+	Parameters      Parameters `json:"Parameters" xml:"Parameters"`
 }
 
 // CreateDescribeParameterTemplatesRequest creates a request to invoke DescribeParameterTemplates API
@@ -97,7 +94,7 @@ func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTempla
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeParameterTemplates", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

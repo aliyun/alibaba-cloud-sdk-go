@@ -71,45 +71,21 @@ func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstanc
 // DescribeDBInstancesRequest is the request struct for api DescribeDBInstances
 type DescribeDBInstancesRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
-	ConnectionString     string           `position:"Query" name:"ConnectionString"`
-	NeedVpcName          requests.Boolean `position:"Query" name:"NeedVpcName"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceType       string           `position:"Query" name:"DBInstanceType"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
-	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
 	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	InstanceLevel        requests.Integer `position:"Query" name:"InstanceLevel"`
 	SearchKey            string           `position:"Query" name:"SearchKey"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Expired              string           `position:"Query" name:"Expired"`
 	Engine               string           `position:"Query" name:"Engine"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceStatus     string           `position:"Query" name:"DBInstanceStatus"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
-	PayType              string           `position:"Query" name:"PayType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceType       string           `position:"Query" name:"DBInstanceType"`
+	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
 }
 
 // DescribeDBInstancesResponse is the response struct for api DescribeDBInstances
@@ -127,7 +103,7 @@ func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {
 	request = &DescribeDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstances", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeDBInstances", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

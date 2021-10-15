@@ -72,6 +72,9 @@ func (client *Client) ModifyDBInstanceTDEWithCallback(request *ModifyDBInstanceT
 type ModifyDBInstanceTDERequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Certificate          string           `position:"Query" name:"Certificate"`
+	PrivateKey           string           `position:"Query" name:"PrivateKey"`
+	PassWord             string           `position:"Query" name:"PassWord"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

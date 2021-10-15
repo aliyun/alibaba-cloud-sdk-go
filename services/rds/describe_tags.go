@@ -78,6 +78,7 @@ type DescribeTagsRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 

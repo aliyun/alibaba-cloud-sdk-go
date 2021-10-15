@@ -72,21 +72,17 @@ func (client *Client) CreateBackupWithCallback(request *CreateBackupRequest, cal
 type CreateBackupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BackupStrategy       string           `position:"Query" name:"BackupStrategy"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	BackupType           string           `position:"Query" name:"BackupType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	BackupMethod         string           `position:"Query" name:"BackupMethod"`
-	DBName               string           `position:"Query" name:"DBName"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // CreateBackupResponse is the response struct for api CreateBackup
 type CreateBackupResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	BackupJobId string `json:"BackupJobId" xml:"BackupJobId"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
+	BackupRetentionPeriod int64  `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
 }
 
 // CreateCreateBackupRequest creates a request to invoke CreateBackup API
@@ -94,7 +90,7 @@ func CreateCreateBackupRequest() (request *CreateBackupRequest) {
 	request = &CreateBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateBackup", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2013-05-28", "CreateBackup", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

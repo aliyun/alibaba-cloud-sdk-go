@@ -1,3 +1,7 @@
+2021-10-15 Version: v1.61.1289
+- Generated 2012-06-15, 2014-08-15, 2013-05-28 for `Rds`.
+- Supported NextToken and MaxResults for DescribeDBInstances.
+
 2021-10-15 Version: v1.61.1288
 - Generated 2020-02-01 for `cloudesl`.
 

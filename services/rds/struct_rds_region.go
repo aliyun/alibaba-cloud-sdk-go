@@ -17,6 +17,9 @@ package rds
 
 // RDSRegion is a nested struct in rds response
 type RDSRegion struct {
-	RegionId string `json:"RegionId" xml:"RegionId"`
-	ZoneId   string `json:"ZoneId" xml:"ZoneId"`
+	ZoneId         string `json:"ZoneId" xml:"ZoneId"`
+	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	LocalName      string `json:"LocalName" xml:"LocalName"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
+	ZoneName       string `json:"ZoneName" xml:"ZoneName"`
 }

@@ -81,10 +81,10 @@ type DescribeDBInstanceHAConfigRequest struct {
 // DescribeDBInstanceHAConfigResponse is the response struct for api DescribeDBInstanceHAConfig
 type DescribeDBInstanceHAConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	DBInstanceId      string            `json:"DBInstanceId" xml:"DBInstanceId"`
-	SyncMode          string            `json:"SyncMode" xml:"SyncMode"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	HAMode            string            `json:"HAMode" xml:"HAMode"`
+	SyncMode          string            `json:"SyncMode" xml:"SyncMode"`
 	HostInstanceInfos HostInstanceInfos `json:"HostInstanceInfos" xml:"HostInstanceInfos"`
 }
 

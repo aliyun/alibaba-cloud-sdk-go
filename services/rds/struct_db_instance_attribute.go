@@ -43,10 +43,12 @@ type DBInstanceAttribute struct {
 	LatestKernelVersion               string                                             `json:"LatestKernelVersion" xml:"LatestKernelVersion"`
 	SupportUpgradeAccountType         string                                             `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
 	MaxIOPS                           int                                                `json:"MaxIOPS" xml:"MaxIOPS"`
+	TipsLevel                         int                                                `json:"TipsLevel" xml:"TipsLevel"`
 	Tags                              string                                             `json:"Tags" xml:"Tags"`
 	EngineVersion                     string                                             `json:"EngineVersion" xml:"EngineVersion"`
 	MaintainTime                      string                                             `json:"MaintainTime" xml:"MaintainTime"`
 	PayType                           string                                             `json:"PayType" xml:"PayType"`
+	Tips                              string                                             `json:"Tips" xml:"Tips"`
 	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
 	SupportCreateSuperAccount         string                                             `json:"SupportCreateSuperAccount" xml:"SupportCreateSuperAccount"`
 	TempDBInstanceId                  string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
@@ -67,6 +69,7 @@ type DBInstanceAttribute struct {
 	AccountType                       string                                             `json:"AccountType" xml:"AccountType"`
 	SuperPermissionMode               string                                             `json:"SuperPermissionMode" xml:"SuperPermissionMode"`
 	GuardDBInstanceName               string                                             `json:"GuardDBInstanceName" xml:"GuardDBInstanceName"`
+	GeneralGroupName                  string                                             `json:"GeneralGroupName" xml:"GeneralGroupName"`
 	RegionId                          string                                             `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId                   string                                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ConsoleVersion                    string                                             `json:"ConsoleVersion" xml:"ConsoleVersion"`

@@ -72,6 +72,7 @@ func (client *Client) DescribeSQLLogReportsWithCallback(request *DescribeSQLLogR
 type DescribeSQLLogReportsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ReportType           string           `position:"Query" name:"ReportType"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
@@ -85,11 +86,11 @@ type DescribeSQLLogReportsRequest struct {
 // DescribeSQLLogReportsResponse is the response struct for api DescribeSQLLogReports
 type DescribeSQLLogReportsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                       `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                          `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                          `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int                          `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            ItemsInDescribeSQLLogReports `json:"Items" xml:"Items"`
+	RequestId         string                          `json:"RequestId" xml:"RequestId"`
+	TotalRecordCounts int                             `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
+	PageNumber        int                             `json:"PageNumber" xml:"PageNumber"`
+	ItemsNumberCounts int                             `json:"ItemsNumberCounts" xml:"ItemsNumberCounts"`
+	SQLItems          SQLItemsInDescribeSQLLogReports `json:"SQLItems" xml:"SQLItems"`
 }
 
 // CreateDescribeSQLLogReportsRequest creates a request to invoke DescribeSQLLogReports API
@@ -97,7 +98,7 @@ func CreateDescribeSQLLogReportsRequest() (request *DescribeSQLLogReportsRequest
 	request = &DescribeSQLLogReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogReports", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2013-05-28", "DescribeSQLLogReports", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

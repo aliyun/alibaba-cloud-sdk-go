@@ -76,6 +76,7 @@ type DescribeRegionsRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions

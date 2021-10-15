@@ -82,6 +82,7 @@ type DescribeAvailableZonesRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	EvaluateResource     requests.Boolean `position:"Query" name:"EvaluateResource"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Category             string           `position:"Query" name:"Category"`
 }
 
 // DescribeAvailableZonesResponse is the response struct for api DescribeAvailableZones

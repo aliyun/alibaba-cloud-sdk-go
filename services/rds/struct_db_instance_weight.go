@@ -18,6 +18,7 @@ package rds
 // DBInstanceWeight is a nested struct in rds response
 type DBInstanceWeight struct {
 	Availability                   string `json:"Availability" xml:"Availability"`
+	Role                           string `json:"Role" xml:"Role"`
 	DBInstanceType                 string `json:"DBInstanceType" xml:"DBInstanceType"`
 	DBInstanceId                   string `json:"DBInstanceId" xml:"DBInstanceId"`
 	ReadonlyInstanceSQLDelayedTime string `json:"ReadonlyInstanceSQLDelayedTime" xml:"ReadonlyInstanceSQLDelayedTime"`

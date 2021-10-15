@@ -104,11 +104,11 @@ type CreateReadOnlyDBInstanceRequest struct {
 // CreateReadOnlyDBInstanceResponse is the response struct for api CreateReadOnlyDBInstance
 type CreateReadOnlyDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	OrderId          string `json:"OrderId" xml:"OrderId"`
-	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	Port             string `json:"Port" xml:"Port"`
+	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	OrderId          string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateReadOnlyDBInstanceRequest creates a request to invoke CreateReadOnlyDBInstance API
