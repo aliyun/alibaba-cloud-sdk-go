@@ -72,6 +72,7 @@ func (client *Client) UpdateStoreWithCallback(request *UpdateStoreRequest, callb
 type UpdateStoreRequest struct {
 	*requests.RpcRequest
 	ExtraParams     string `position:"Body" name:"ExtraParams"`
+	Timezone        string `position:"Body" name:"Timezone"`
 	StoreName       string `position:"Body" name:"StoreName"`
 	StoreId         string `position:"Body" name:"StoreId"`
 	TemplateVersion string `position:"Body" name:"TemplateVersion"`

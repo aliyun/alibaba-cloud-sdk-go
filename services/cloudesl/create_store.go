@@ -73,6 +73,7 @@ type CreateStoreRequest struct {
 	*requests.RpcRequest
 	ExtraParams   string `position:"Body" name:"ExtraParams"`
 	ClientToken   string `position:"Body" name:"ClientToken"`
+	TimeZone      string `position:"Body" name:"TimeZone"`
 	StoreName     string `position:"Body" name:"StoreName"`
 	ParentId      string `position:"Body" name:"ParentId"`
 	UserStoreCode string `position:"Body" name:"UserStoreCode"`
