@@ -31,6 +31,8 @@ type Domain struct {
 	WriteTime            int                        `json:"WriteTime" xml:"WriteTime"`
 	ResourceGroupId      string                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AccessType           string                     `json:"AccessType" xml:"AccessType"`
+	SniStatus            int                        `json:"SniStatus" xml:"SniStatus"`
+	SniHost              string                     `json:"SniHost" xml:"SniHost"`
 	SourceIps            []string                   `json:"SourceIps" xml:"SourceIps"`
 	Http2Port            []string                   `json:"Http2Port" xml:"Http2Port"`
 	HttpPort             []string                   `json:"HttpPort" xml:"HttpPort"`

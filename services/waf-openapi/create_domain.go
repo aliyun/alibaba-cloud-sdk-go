@@ -72,11 +72,13 @@ func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, cal
 type CreateDomainRequest struct {
 	*requests.RpcRequest
 	IpFollowStatus       requests.Integer `position:"Query" name:"IpFollowStatus"`
+	SniHost              string           `position:"Query" name:"SniHost"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
 	HttpPort             string           `position:"Query" name:"HttpPort"`
 	Http2Port            string           `position:"Query" name:"Http2Port"`
 	WriteTime            requests.Integer `position:"Query" name:"WriteTime"`
+	SniStatus            requests.Integer `position:"Query" name:"SniStatus"`
 	Lang                 string           `position:"Query" name:"Lang"`
 	AccessHeaderMode     requests.Integer `position:"Query" name:"AccessHeaderMode"`
 	AccessType           string           `position:"Query" name:"AccessType"`

@@ -71,18 +71,21 @@ func (client *Client) ModifyProtectionRuleCacheStatusWithCallback(request *Modif
 // ModifyProtectionRuleCacheStatusRequest is the request struct for api ModifyProtectionRuleCacheStatus
 type ModifyProtectionRuleCacheStatusRequest struct {
 	*requests.RpcRequest
-	DefenseType string           `position:"Query" name:"DefenseType"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Domain      string           `position:"Query" name:"Domain"`
-	Lang        string           `position:"Query" name:"Lang"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
+	SourceIp   string           `position:"Query" name:"SourceIp"`
+	Defense    string           `position:"Query" name:"Defense"`
+	Id         requests.Integer `position:"Query" name:"Id"`
+	Lang       string           `position:"Query" name:"Lang"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	Domain     string           `position:"Query" name:"Domain"`
+	Region     string           `position:"Query" name:"Region"`
 }
 
 // ModifyProtectionRuleCacheStatusResponse is the response struct for api ModifyProtectionRuleCacheStatus
 type ModifyProtectionRuleCacheStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TaskStatus int    `json:"TaskStatus" xml:"TaskStatus"`
+	WafTaskId  int    `json:"WafTaskId" xml:"WafTaskId"`
 }
 
 // CreateModifyProtectionRuleCacheStatusRequest creates a request to invoke ModifyProtectionRuleCacheStatus API
@@ -90,7 +93,7 @@ func CreateModifyProtectionRuleCacheStatusRequest() (request *ModifyProtectionRu
 	request = &ModifyProtectionRuleCacheStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2019-09-10", "ModifyProtectionRuleCacheStatus", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2018-01-17", "ModifyProtectionRuleCacheStatus", "waf", "openAPI")
 	request.Method = requests.POST
 	return
 }

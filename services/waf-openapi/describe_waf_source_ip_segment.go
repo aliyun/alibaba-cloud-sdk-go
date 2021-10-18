@@ -75,6 +75,7 @@ type DescribeWafSourceIpSegmentRequest struct {
 	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	Lang            string `position:"Query" name:"Lang"`
+	Region          string `position:"Query" name:"Region"`
 }
 
 // DescribeWafSourceIpSegmentResponse is the response struct for api DescribeWafSourceIpSegment
@@ -82,7 +83,6 @@ type DescribeWafSourceIpSegmentResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Ips       string `json:"Ips" xml:"Ips"`
-	IpV6s     string `json:"IpV6s" xml:"IpV6s"`
 }
 
 // CreateDescribeWafSourceIpSegmentRequest creates a request to invoke DescribeWafSourceIpSegment API
@@ -90,7 +90,7 @@ func CreateDescribeWafSourceIpSegmentRequest() (request *DescribeWafSourceIpSegm
 	request = &DescribeWafSourceIpSegmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DescribeWafSourceIpSegment", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2018-01-17", "DescribeWafSourceIpSegment", "waf", "openAPI")
 	request.Method = requests.POST
 	return
 }

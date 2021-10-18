@@ -17,16 +17,16 @@ package waf_openapi
 
 // Profile is a nested struct in waf_openapi response
 type Profile struct {
-	Cname              string `json:"Cname" xml:"Cname"`
-	ResolvedType       int    `json:"ResolvedType" xml:"ResolvedType"`
-	VipServiceStatus   int    `json:"VipServiceStatus" xml:"VipServiceStatus"`
-	CertStatus         int    `json:"CertStatus" xml:"CertStatus"`
-	ExclusiveVipStatus int    `json:"ExclusiveVipStatus" xml:"ExclusiveVipStatus"`
-	Ipv6Status         int    `json:"Ipv6Status" xml:"Ipv6Status"`
-	HttpPort           string `json:"HttpPort" xml:"HttpPort"`
-	HttpsPort          string `json:"HttpsPort" xml:"HttpsPort"`
-	Http2Port          string `json:"Http2Port" xml:"Http2Port"`
-	Rs                 string `json:"Rs" xml:"Rs"`
-	ClusterType        int    `json:"ClusterType" xml:"ClusterType"`
-	GSLBStatus         string `json:"GSLBStatus" xml:"GSLBStatus"`
+	Ipv6Status         int      `json:"Ipv6Status" xml:"Ipv6Status"`
+	GSLBStatus         string   `json:"GSLBStatus" xml:"GSLBStatus"`
+	VipServiceStatus   int      `json:"VipServiceStatus" xml:"VipServiceStatus"`
+	ClusterType        int      `json:"ClusterType" xml:"ClusterType"`
+	ExclusiveVipStatus int      `json:"ExclusiveVipStatus" xml:"ExclusiveVipStatus"`
+	Cname              string   `json:"Cname" xml:"Cname"`
+	CertStatus         int      `json:"CertStatus" xml:"CertStatus"`
+	ResolvedType       int      `json:"ResolvedType" xml:"ResolvedType"`
+	Http2Port          []int    `json:"Http2Port" xml:"Http2Port"`
+	HttpPort           []int    `json:"HttpPort" xml:"HttpPort"`
+	Rs                 []string `json:"Rs" xml:"Rs"`
+	HttpsPort          []int    `json:"HttpsPort" xml:"HttpsPort"`
 }
