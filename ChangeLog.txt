@@ -1,3 +1,7 @@
+2021-10-18 Version: v1.61.1294
+- Generated 2014-08-15 for `Rds`.
+- Supported NextToken and MaxResults for DescribeDBInstances.
+
 2021-10-18 Version: v1.61.1293
 - Generated 2019-09-10, 2018-01-17 for `waf-openapi`.
 
