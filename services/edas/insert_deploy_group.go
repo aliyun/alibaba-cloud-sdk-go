@@ -90,7 +90,7 @@ func CreateInsertDeployGroupRequest() (request *InsertDeployGroupRequest) {
 	request = &InsertDeployGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertDeployGroup", "/pop/v5/deploy_group", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertDeployGroup", "/pop/v5/deploy_group", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

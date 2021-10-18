@@ -87,7 +87,7 @@ func CreateDelegateAdminRoleRequest() (request *DelegateAdminRoleRequest) {
 	request = &DelegateAdminRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DelegateAdminRole", "/pop/v5/account/delegate_admin_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DelegateAdminRole", "/pop/v5/account/delegate_admin_role", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

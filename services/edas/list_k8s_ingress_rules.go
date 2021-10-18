@@ -90,7 +90,7 @@ func CreateListK8sIngressRulesRequest() (request *ListK8sIngressRulesRequest) {
 	request = &ListK8sIngressRulesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sIngressRules", "/pop/v5/k8s/acs/k8s_ingress", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sIngressRules", "/pop/v5/k8s/acs/k8s_ingress", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

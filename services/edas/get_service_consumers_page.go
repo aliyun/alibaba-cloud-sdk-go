@@ -101,7 +101,7 @@ func CreateGetServiceConsumersPageRequest() (request *GetServiceConsumersPageReq
 	request = &GetServiceConsumersPageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceConsumersPage", "/pop/sp/api/mseForOam/getServiceConsumersPage", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceConsumersPage", "/pop/sp/api/mseForOam/getServiceConsumersPage", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

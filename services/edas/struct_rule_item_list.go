@@ -17,11 +17,11 @@ package edas
 
 // RuleItemList is a nested struct in edas response
 type RuleItemList struct {
-	Name            string `json:"Name" xml:"Name"`
 	Region          string `json:"Region" xml:"Region"`
+	Name            string `json:"Name" xml:"Name"`
 	ExtraJson       string `json:"ExtraJson" xml:"ExtraJson"`
-	Id              int64  `json:"Id" xml:"Id"`
 	ProviderAppName string `json:"ProviderAppName" xml:"ProviderAppName"`
+	Id              int64  `json:"Id" xml:"Id"`
 	Source          string `json:"Source" xml:"Source"`
 	ConsumerAppId   string `json:"ConsumerAppId" xml:"ConsumerAppId"`
 	ScMockItemJson  string `json:"ScMockItemJson" xml:"ScMockItemJson"`

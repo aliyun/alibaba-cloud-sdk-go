@@ -89,7 +89,7 @@ func CreateListRootStacksRequest() (request *ListRootStacksRequest) {
 	request = &ListRootStacksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListRootStacks", "/pop/v5/s2i/list_root_stack", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListRootStacks", "/pop/v5/s2i/list_root_stack", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

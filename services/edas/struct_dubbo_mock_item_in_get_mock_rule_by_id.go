@@ -17,15 +17,18 @@ package edas
 
 // DubboMockItemInGetMockRuleById is a nested struct in edas response
 type DubboMockItemInGetMockRuleById struct {
-	ExceptionClassName string `json:"ExceptionClassName" xml:"ExceptionClassName"`
-	ExecuteCondition   string `json:"ExecuteCondition" xml:"ExecuteCondition"`
-	MethodName         string `json:"MethodName" xml:"MethodName"`
-	Oper               string `json:"Oper" xml:"Oper"`
-	Path               string `json:"Path" xml:"Path"`
-	ServiceName        string `json:"ServiceName" xml:"ServiceName"`
-	Value              string `json:"Value" xml:"Value"`
-	Version            string `json:"Version" xml:"Version"`
-	Group              string `json:"Group" xml:"Group"`
-	ParamTypes         string `json:"ParamTypes" xml:"ParamTypes"`
-	ExceptionMessage   string `json:"ExceptionMessage" xml:"ExceptionMessage"`
+	ParamTypes         string             `json:"ParamTypes" xml:"ParamTypes"`
+	MethodName         string             `json:"MethodName" xml:"MethodName"`
+	Value              string             `json:"Value" xml:"Value"`
+	Oper               string             `json:"Oper" xml:"Oper"`
+	ExceptionMessage   string             `json:"ExceptionMessage" xml:"ExceptionMessage"`
+	ExecuteCondition   string             `json:"ExecuteCondition" xml:"ExecuteCondition"`
+	Version            string             `json:"Version" xml:"Version"`
+	Path               string             `json:"Path" xml:"Path"`
+	ExceptionClassName string             `json:"ExceptionClassName" xml:"ExceptionClassName"`
+	ServiceName        string             `json:"ServiceName" xml:"ServiceName"`
+	Group              string             `json:"Group" xml:"Group"`
+	Condition          string             `json:"Condition" xml:"Condition"`
+	Timeout            int64              `json:"Timeout" xml:"Timeout"`
+	ArgumentMockItems  []ArgumentMockItem `json:"ArgumentMockItems" xml:"ArgumentMockItems"`
 }

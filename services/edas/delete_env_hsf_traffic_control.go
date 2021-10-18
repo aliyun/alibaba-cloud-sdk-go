@@ -88,7 +88,7 @@ func CreateDeleteEnvHsfTrafficControlRequest() (request *DeleteEnvHsfTrafficCont
 	request = &DeleteEnvHsfTrafficControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteEnvHsfTrafficControl", "/pop/v5/gray/env_hsf_traffic_control", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteEnvHsfTrafficControl", "/pop/v5/gray/env_hsf_traffic_control", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

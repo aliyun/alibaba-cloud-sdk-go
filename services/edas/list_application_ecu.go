@@ -71,7 +71,8 @@ func (client *Client) ListApplicationEcuWithCallback(request *ListApplicationEcu
 // ListApplicationEcuRequest is the request struct for api ListApplicationEcu
 type ListApplicationEcuRequest struct {
 	*requests.RoaRequest
-	AppId string `position:"Query" name:"AppId"`
+	LogicalRegionId string `position:"Query" name:"LogicalRegionId"`
+	AppId           string `position:"Query" name:"AppId"`
 }
 
 // ListApplicationEcuResponse is the response struct for api ListApplicationEcu
@@ -88,7 +89,7 @@ func CreateListApplicationEcuRequest() (request *ListApplicationEcuRequest) {
 	request = &ListApplicationEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListApplicationEcu", "/pop/v5/resource/ecu_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListApplicationEcu", "/pop/v5/resource/ecu_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

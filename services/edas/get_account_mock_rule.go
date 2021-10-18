@@ -71,13 +71,14 @@ func (client *Client) GetAccountMockRuleWithCallback(request *GetAccountMockRule
 // GetAccountMockRuleRequest is the request struct for api GetAccountMockRule
 type GetAccountMockRuleRequest struct {
 	*requests.RoaRequest
-	ProviderAppName string `position:"Query" name:"ProviderAppName"`
-	PageNumber      string `position:"Query" name:"PageNumber"`
-	PageSize        string `position:"Query" name:"PageSize"`
-	Name            string `position:"Query" name:"Name"`
-	Namespace       string `position:"Query" name:"Namespace"`
-	Region          string `position:"Query" name:"Region"`
-	ConsumerAppName string `position:"Query" name:"ConsumerAppName"`
+	ProviderAppName string           `position:"Query" name:"ProviderAppName"`
+	PageNumber      string           `position:"Query" name:"PageNumber"`
+	PageSize        string           `position:"Query" name:"PageSize"`
+	Name            string           `position:"Query" name:"Name"`
+	Namespace       string           `position:"Query" name:"Namespace"`
+	MockType        requests.Integer `position:"Query" name:"MockType"`
+	Region          string           `position:"Query" name:"Region"`
+	ConsumerAppName string           `position:"Query" name:"ConsumerAppName"`
 }
 
 // GetAccountMockRuleResponse is the response struct for api GetAccountMockRule
@@ -94,7 +95,7 @@ func CreateGetAccountMockRuleRequest() (request *GetAccountMockRuleRequest) {
 	request = &GetAccountMockRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetAccountMockRule", "/pop/sp/api/mock/getAccountMockRule", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetAccountMockRule", "/pop/sp/api/mock/getAccountMockRule", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

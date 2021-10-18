@@ -89,7 +89,7 @@ func CreateListK8sPvcRequest() (request *ListK8sPvcRequest) {
 	request = &ListK8sPvcRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sPvc", "/pop/v5/k8s/acs/k8s_pvc", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sPvc", "/pop/v5/k8s/acs/k8s_pvc", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

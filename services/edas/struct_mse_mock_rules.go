@@ -17,17 +17,17 @@ package edas
 
 // MseMockRules is a nested struct in edas response
 type MseMockRules struct {
-	Id              int                   `json:"Id" xml:"Id"`
-	Name            string                `json:"Name" xml:"Name"`
-	Region          string                `json:"Region" xml:"Region"`
-	Enable          bool                  `json:"Enable" xml:"Enable"`
 	Status          int                   `json:"Status" xml:"Status"`
-	ProviderAppId   string                `json:"ProviderAppId" xml:"ProviderAppId"`
-	ProviderAppName string                `json:"ProviderAppName" xml:"ProviderAppName"`
-	ConsumerAppId   string                `json:"ConsumerAppId" xml:"ConsumerAppId"`
+	Region          string                `json:"Region" xml:"Region"`
 	ConsumerAppName string                `json:"ConsumerAppName" xml:"ConsumerAppName"`
 	GmtCreate       string                `json:"GmtCreate" xml:"GmtCreate"`
+	ProviderAppId   string                `json:"ProviderAppId" xml:"ProviderAppId"`
+	ConsumerAppId   string                `json:"ConsumerAppId" xml:"ConsumerAppId"`
 	GmtModified     string                `json:"GmtModified" xml:"GmtModified"`
+	ProviderAppName string                `json:"ProviderAppName" xml:"ProviderAppName"`
+	Name            string                `json:"Name" xml:"Name"`
+	Id              int                   `json:"Id" xml:"Id"`
+	Enable          bool                  `json:"Enable" xml:"Enable"`
 	DubboMockItems  []DubboMockItem       `json:"DubboMockItems" xml:"DubboMockItems"`
 	ScMockItems     []SpringCloudMockItem `json:"ScMockItems" xml:"ScMockItems"`
 }

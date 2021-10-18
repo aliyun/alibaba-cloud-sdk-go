@@ -88,7 +88,7 @@ func CreateGetK8sStorageInfoRequest() (request *GetK8sStorageInfoRequest) {
 	request = &GetK8sStorageInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sStorageInfo", "/pop/v5/k8s/acs/k8s_storage", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sStorageInfo", "/pop/v5/k8s/acs/k8s_storage", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

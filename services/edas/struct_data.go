@@ -25,8 +25,8 @@ type Data struct {
 	Path                            string                                   `json:"Path" xml:"Path"`
 	ExtSlbIp                        string                                   `json:"ExtSlbIp" xml:"ExtSlbIp"`
 	UpdateTime                      int64                                    `json:"UpdateTime" xml:"UpdateTime"`
-	Id                              int64                                    `json:"Id" xml:"Id"`
 	ProviderAppName                 string                                   `json:"ProviderAppName" xml:"ProviderAppName"`
+	Id                              int64                                    `json:"Id" xml:"Id"`
 	ExtSlbName                      string                                   `json:"ExtSlbName" xml:"ExtSlbName"`
 	PointcutId                      int64                                    `json:"PointcutId" xml:"PointcutId"`
 	VServerGroupId                  string                                   `json:"VServerGroupId" xml:"VServerGroupId"`
@@ -45,8 +45,8 @@ type Data struct {
 	Status                          string                                   `json:"Status" xml:"Status"`
 	ClusterType                     int                                      `json:"ClusterType" xml:"ClusterType"`
 	TotalSize                       int                                      `json:"TotalSize" xml:"TotalSize"`
-	Name                            string                                   `json:"Name" xml:"Name"`
 	Region                          string                                   `json:"Region" xml:"Region"`
+	Name                            string                                   `json:"Name" xml:"Name"`
 	Timeout                         string                                   `json:"Timeout" xml:"Timeout"`
 	ChangeOrderId                   string                                   `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	DubboMockItemJson               string                                   `json:"DubboMockItemJson" xml:"DubboMockItemJson"`
@@ -82,12 +82,12 @@ type Data struct {
 	Spec                            Spec                                     `json:"Spec" xml:"Spec"`
 	Metadata                        Metadata                                 `json:"Metadata" xml:"Metadata"`
 	SourceConfig                    SourceConfig                             `json:"SourceConfig" xml:"SourceConfig"`
+	Result                          []MseMockRules                           `json:"Result" xml:"Result"`
 	CertificateList                 []CertificateListItem                    `json:"CertificateList" xml:"CertificateList"`
+	DubboMockItems                  []DubboMockItemInGetMockRuleById         `json:"DubboMockItems" xml:"DubboMockItems"`
 	ApplicationList                 ApplicationListInInsertSwimmingLaneGroup `json:"ApplicationList" xml:"ApplicationList"`
 	RuleList                        RuleListInGetScalingRules                `json:"RuleList" xml:"RuleList"`
 	Content                         []Provider                               `json:"Content" xml:"Content"`
 	SwimmingLaneAppRelationShipList []SwimmingLaneAppRelationShip            `json:"SwimmingLaneAppRelationShipList" xml:"SwimmingLaneAppRelationShipList"`
-	DubboMockItems                  []DubboMockItemInGetMockRuleById         `json:"DubboMockItems" xml:"DubboMockItems"`
 	ScMockItems                     []SpringCloudMockItem                    `json:"ScMockItems" xml:"ScMockItems"`
-	Result                          []MseMockRules                           `json:"Result" xml:"Result"`
 }

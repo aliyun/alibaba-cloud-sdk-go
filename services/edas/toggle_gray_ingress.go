@@ -90,7 +90,7 @@ func CreateToggleGrayIngressRequest() (request *ToggleGrayIngressRequest) {
 	request = &ToggleGrayIngressRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ToggleGrayIngress", "/pop/v5/gray/env_switch", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ToggleGrayIngress", "/pop/v5/gray/env_switch", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

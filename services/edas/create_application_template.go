@@ -122,7 +122,7 @@ func CreateCreateApplicationTemplateRequest() (request *CreateApplicationTemplat
 	request = &CreateApplicationTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "CreateApplicationTemplate", "/pop/v5/cnedas/app_template", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "CreateApplicationTemplate", "/pop/v5/cnedas/app_template", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

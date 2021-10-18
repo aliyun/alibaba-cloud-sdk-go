@@ -26,8 +26,8 @@ type EcuEntity struct {
 	EcuId         string `json:"EcuId" xml:"EcuId"`
 	AppId         string `json:"AppId" xml:"AppId"`
 	RegionId      string `json:"RegionId" xml:"RegionId"`
-	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
 	AvailableCpu  int    `json:"AvailableCpu" xml:"AvailableCpu"`
+	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
 	DockerEnv     bool   `json:"DockerEnv" xml:"DockerEnv"`
 	UserId        string `json:"UserId" xml:"UserId"`
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`

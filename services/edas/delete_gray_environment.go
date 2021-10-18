@@ -88,7 +88,7 @@ func CreateDeleteGrayEnvironmentRequest() (request *DeleteGrayEnvironmentRequest
 	request = &DeleteGrayEnvironmentRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteGrayEnvironment", "/pop/v5/gray/env", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteGrayEnvironment", "/pop/v5/gray/env", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

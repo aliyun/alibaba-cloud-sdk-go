@@ -1,3 +1,7 @@
+2021-10-18 Version: v1.61.1292
+- Generated 2017-08-01 for `Edas`.
+- Fixed ListApplicationEcu.
+
 2021-10-18 Version: v1.61.1291
 - Generated 2014-05-26 for `Ecs`.
 - Adjust ecs openapi endpoint.
