@@ -1,3 +1,7 @@
+2021-10-19 Version: v1.61.1295
+- Generated 2018-03-13 for `retailcloud`.
+- Supported ScaleApp totalPartitions.
+
 2021-10-18 Version: v1.61.1294
 - Generated 2014-08-15 for `Rds`.
 - Supported NextToken and MaxResults for DescribeDBInstances.

@@ -71,8 +71,9 @@ func (client *Client) ScaleAppWithCallback(request *ScaleAppRequest, callback fu
 // ScaleAppRequest is the request struct for api ScaleApp
 type ScaleAppRequest struct {
 	*requests.RpcRequest
-	Replicas requests.Integer `position:"Query" name:"Replicas"`
-	EnvId    requests.Integer `position:"Query" name:"EnvId"`
+	TotalPartitions requests.Integer `position:"Query" name:"TotalPartitions"`
+	Replicas        requests.Integer `position:"Query" name:"Replicas"`
+	EnvId           requests.Integer `position:"Query" name:"EnvId"`
 }
 
 // ScaleAppResponse is the response struct for api ScaleApp

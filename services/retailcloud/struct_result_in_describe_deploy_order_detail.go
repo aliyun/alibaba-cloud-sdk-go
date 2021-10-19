@@ -17,31 +17,31 @@ package retailcloud
 
 // ResultInDescribeDeployOrderDetail is a nested struct in retailcloud response
 type ResultInDescribeDeployOrderDetail struct {
-	AppInstanceType     string `json:"AppInstanceType" xml:"AppInstanceType"`
-	CurrentPartitionNum int    `json:"CurrentPartitionNum" xml:"CurrentPartitionNum"`
-	DeployOrderId       int64  `json:"DeployOrderId" xml:"DeployOrderId"`
-	DeployPauseType     string `json:"DeployPauseType" xml:"DeployPauseType"`
-	DeployPauseTypeName string `json:"DeployPauseTypeName" xml:"DeployPauseTypeName"`
-	DeployType          string `json:"DeployType" xml:"DeployType"`
-	DeployTypeName      string `json:"DeployTypeName" xml:"DeployTypeName"`
-	Description         string `json:"Description" xml:"Description"`
-	ElapsedTime         int    `json:"ElapsedTime" xml:"ElapsedTime"`
-	EndTime             string `json:"EndTime" xml:"EndTime"`
-	EnvId               int64  `json:"EnvId" xml:"EnvId"`
-	EnvType             string `json:"EnvType" xml:"EnvType"`
-	FailureRate         string `json:"FailureRate" xml:"FailureRate"`
-	FinishAppInstanceCt int    `json:"FinishAppInstanceCt" xml:"FinishAppInstanceCt"`
-	Name                string `json:"Name" xml:"Name"`
-	PartitionType       string `json:"PartitionType" xml:"PartitionType"`
-	PartitionTypeName   string `json:"PartitionTypeName" xml:"PartitionTypeName"`
-	Result              int    `json:"Result" xml:"Result"`
-	ResultName          string `json:"ResultName" xml:"ResultName"`
-	SchemaId            int64  `json:"SchemaId" xml:"SchemaId"`
-	StartTime           string `json:"StartTime" xml:"StartTime"`
 	Status              int    `json:"Status" xml:"Status"`
-	StatusName          string `json:"StatusName" xml:"StatusName"`
-	TotalAppInstanceCt  int    `json:"TotalAppInstanceCt" xml:"TotalAppInstanceCt"`
-	TotalPartitions     int    `json:"TotalPartitions" xml:"TotalPartitions"`
+	AppInstanceType     string `json:"AppInstanceType" xml:"AppInstanceType"`
+	DeployType          string `json:"DeployType" xml:"DeployType"`
 	UserId              string `json:"UserId" xml:"UserId"`
+	PartitionTypeName   string `json:"PartitionTypeName" xml:"PartitionTypeName"`
+	StatusName          string `json:"StatusName" xml:"StatusName"`
+	EnvType             string `json:"EnvType" xml:"EnvType"`
+	TotalAppInstanceCt  int    `json:"TotalAppInstanceCt" xml:"TotalAppInstanceCt"`
+	ElapsedTime         int    `json:"ElapsedTime" xml:"ElapsedTime"`
+	Description         string `json:"Description" xml:"Description"`
+	Name                string `json:"Name" xml:"Name"`
+	DeployTypeName      string `json:"DeployTypeName" xml:"DeployTypeName"`
+	FinishAppInstanceCt int    `json:"FinishAppInstanceCt" xml:"FinishAppInstanceCt"`
+	SchemaId            int64  `json:"SchemaId" xml:"SchemaId"`
+	DeployPauseType     string `json:"DeployPauseType" xml:"DeployPauseType"`
+	Result              int    `json:"Result" xml:"Result"`
+	FailureRate         string `json:"FailureRate" xml:"FailureRate"`
+	TotalPartitions     int    `json:"TotalPartitions" xml:"TotalPartitions"`
 	UserNick            string `json:"UserNick" xml:"UserNick"`
+	EndTime             string `json:"EndTime" xml:"EndTime"`
+	StartTime           string `json:"StartTime" xml:"StartTime"`
+	DeployOrderId       int64  `json:"DeployOrderId" xml:"DeployOrderId"`
+	DeployPauseTypeName string `json:"DeployPauseTypeName" xml:"DeployPauseTypeName"`
+	ResultName          string `json:"ResultName" xml:"ResultName"`
+	CurrentPartitionNum int    `json:"CurrentPartitionNum" xml:"CurrentPartitionNum"`
+	PartitionType       string `json:"PartitionType" xml:"PartitionType"`
+	EnvId               int64  `json:"EnvId" xml:"EnvId"`
 }
