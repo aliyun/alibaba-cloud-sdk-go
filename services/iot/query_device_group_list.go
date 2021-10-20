@@ -71,6 +71,7 @@ func (client *Client) QueryDeviceGroupListWithCallback(request *QueryDeviceGroup
 // QueryDeviceGroupListRequest is the request struct for api QueryDeviceGroupList
 type QueryDeviceGroupListRequest struct {
 	*requests.RpcRequest
+	GroupTypes    *[]string        `position:"Query" name:"GroupTypes"  type:"Repeated"`
 	SuperGroupId  string           `position:"Query" name:"SuperGroupId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`

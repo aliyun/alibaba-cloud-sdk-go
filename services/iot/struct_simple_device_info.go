@@ -17,15 +17,21 @@ package iot
 
 // SimpleDeviceInfo is a nested struct in iot response
 type SimpleDeviceInfo struct {
-	ProductName  string `json:"ProductName" xml:"ProductName"`
-	DeviceName   string `json:"DeviceName" xml:"DeviceName"`
-	Nickname     string `json:"Nickname" xml:"Nickname"`
-	GmtCreate    string `json:"GmtCreate" xml:"GmtCreate"`
-	IotId        string `json:"IotId" xml:"IotId"`
-	DeviceSecret string `json:"DeviceSecret" xml:"DeviceSecret"`
-	ProductKey   string `json:"ProductKey" xml:"ProductKey"`
-	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-	Status       string `json:"Status" xml:"Status"`
-	UtcModified  string `json:"UtcModified" xml:"UtcModified"`
-	UtcCreate    string `json:"UtcCreate" xml:"UtcCreate"`
+	ProductName       string `json:"ProductName" xml:"ProductName"`
+	DeviceSecret      string `json:"DeviceSecret" xml:"DeviceSecret"`
+	ActiveTime        string `json:"ActiveTime" xml:"ActiveTime"`
+	ProductKey        string `json:"ProductKey" xml:"ProductKey"`
+	GmtModified       string `json:"GmtModified" xml:"GmtModified"`
+	CategoryKey       string `json:"CategoryKey" xml:"CategoryKey"`
+	UtcModified       string `json:"UtcModified" xml:"UtcModified"`
+	UtcCreate         string `json:"UtcCreate" xml:"UtcCreate"`
+	DeviceName        string `json:"DeviceName" xml:"DeviceName"`
+	Nickname          string `json:"Nickname" xml:"Nickname"`
+	GmtCreate         string `json:"GmtCreate" xml:"GmtCreate"`
+	UtcActiveTime     string `json:"UtcActiveTime" xml:"UtcActiveTime"`
+	IotId             string `json:"IotId" xml:"IotId"`
+	LastOnlineTime    string `json:"LastOnlineTime" xml:"LastOnlineTime"`
+	Status            string `json:"Status" xml:"Status"`
+	UtcLastOnlineTime string `json:"UtcLastOnlineTime" xml:"UtcLastOnlineTime"`
+	NodeType          int    `json:"NodeType" xml:"NodeType"`
 }

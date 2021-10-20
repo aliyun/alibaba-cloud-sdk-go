@@ -42,6 +42,9 @@ type DataInQueryOTAJob struct {
 	DynamicMode           int               `json:"DynamicMode" xml:"DynamicMode"`
 	NeedPush              bool              `json:"NeedPush" xml:"NeedPush"`
 	NeedConfirm           bool              `json:"NeedConfirm" xml:"NeedConfirm"`
+	GroupId               string            `json:"GroupId" xml:"GroupId"`
+	GroupName             string            `json:"GroupName" xml:"GroupName"`
+	DownloadProtocol      string            `json:"DownloadProtocol" xml:"DownloadProtocol"`
 	SrcVersions           SrcVersions       `json:"SrcVersions" xml:"SrcVersions"`
 	Tags                  TagsInQueryOTAJob `json:"Tags" xml:"Tags"`
 }

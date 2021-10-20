@@ -73,6 +73,7 @@ type QueryDeviceGroupInfoRequest struct {
 	*requests.RpcRequest
 	RealTenantId      string `position:"Query" name:"RealTenantId"`
 	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	GroupType         string `position:"Query" name:"GroupType"`
 	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
 	GroupId           string `position:"Query" name:"GroupId"`
 	ApiProduct        string `position:"Body" name:"ApiProduct"`

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SetDeviceGroupTags invokes the iot.SetDeviceGroupTags API synchronously
-func (client *Client) SetDeviceGroupTags(request *SetDeviceGroupTagsRequest) (response *SetDeviceGroupTagsResponse, err error) {
-	response = CreateSetDeviceGroupTagsResponse()
+// CreateDeviceTunnel invokes the iot.CreateDeviceTunnel API synchronously
+func (client *Client) CreateDeviceTunnel(request *CreateDeviceTunnelRequest) (response *CreateDeviceTunnelResponse, err error) {
+	response = CreateCreateDeviceTunnelResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SetDeviceGroupTagsWithChan invokes the iot.SetDeviceGroupTags API asynchronously
-func (client *Client) SetDeviceGroupTagsWithChan(request *SetDeviceGroupTagsRequest) (<-chan *SetDeviceGroupTagsResponse, <-chan error) {
-	responseChan := make(chan *SetDeviceGroupTagsResponse, 1)
+// CreateDeviceTunnelWithChan invokes the iot.CreateDeviceTunnel API asynchronously
+func (client *Client) CreateDeviceTunnelWithChan(request *CreateDeviceTunnelRequest) (<-chan *CreateDeviceTunnelResponse, <-chan error) {
+	responseChan := make(chan *CreateDeviceTunnelResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SetDeviceGroupTags(request)
+		response, err := client.CreateDeviceTunnel(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SetDeviceGroupTagsWithChan(request *SetDeviceGroupTagsRequ
 	return responseChan, errChan
 }
 
-// SetDeviceGroupTagsWithCallback invokes the iot.SetDeviceGroupTags API asynchronously
-func (client *Client) SetDeviceGroupTagsWithCallback(request *SetDeviceGroupTagsRequest, callback func(response *SetDeviceGroupTagsResponse, err error)) <-chan int {
+// CreateDeviceTunnelWithCallback invokes the iot.CreateDeviceTunnel API asynchronously
+func (client *Client) CreateDeviceTunnelWithCallback(request *CreateDeviceTunnelRequest, callback func(response *CreateDeviceTunnelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SetDeviceGroupTagsResponse
+		var response *CreateDeviceTunnelResponse
 		var err error
 		defer close(result)
-		response, err = client.SetDeviceGroupTags(request)
+		response, err = client.CreateDeviceTunnel(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,42 @@ func (client *Client) SetDeviceGroupTagsWithCallback(request *SetDeviceGroupTags
 	return result
 }
 
-// SetDeviceGroupTagsRequest is the request struct for api SetDeviceGroupTags
-type SetDeviceGroupTagsRequest struct {
+// CreateDeviceTunnelRequest is the request struct for api CreateDeviceTunnel
+type CreateDeviceTunnelRequest struct {
 	*requests.RpcRequest
-	GroupType     string `position:"Query" name:"GroupType"`
+	Description   string `position:"Query" name:"Description"`
+	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	TagString     string `position:"Query" name:"TagString"`
-	GroupId       string `position:"Query" name:"GroupId"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	DeviceName    string `position:"Query" name:"DeviceName"`
+	Udi           string `position:"Query" name:"Udi"`
 }
 
-// SetDeviceGroupTagsResponse is the response struct for api SetDeviceGroupTags
-type SetDeviceGroupTagsResponse struct {
+// CreateDeviceTunnelResponse is the response struct for api CreateDeviceTunnel
+type CreateDeviceTunnelResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         Data   `json:"Data" xml:"Data"`
 }
 
-// CreateSetDeviceGroupTagsRequest creates a request to invoke SetDeviceGroupTags API
-func CreateSetDeviceGroupTagsRequest() (request *SetDeviceGroupTagsRequest) {
-	request = &SetDeviceGroupTagsRequest{
+// CreateCreateDeviceTunnelRequest creates a request to invoke CreateDeviceTunnel API
+func CreateCreateDeviceTunnelRequest() (request *CreateDeviceTunnelRequest) {
+	request = &CreateDeviceTunnelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SetDeviceGroupTags", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDeviceTunnel", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSetDeviceGroupTagsResponse creates a response to parse from SetDeviceGroupTags response
-func CreateSetDeviceGroupTagsResponse() (response *SetDeviceGroupTagsResponse) {
-	response = &SetDeviceGroupTagsResponse{
+// CreateCreateDeviceTunnelResponse creates a response to parse from CreateDeviceTunnel response
+func CreateCreateDeviceTunnelResponse() (response *CreateDeviceTunnelResponse) {
+	response = &CreateDeviceTunnelResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -31,9 +31,11 @@ type Data struct {
 	ProjectId                 string                    `json:"ProjectId" xml:"ProjectId"`
 	IsBeian                   string                    `json:"IsBeian" xml:"IsBeian"`
 	GroupId                   string                    `json:"GroupId" xml:"GroupId"`
+	TunnelId                  string                    `json:"TunnelId" xml:"TunnelId"`
 	LatestDeploymentType      string                    `json:"LatestDeploymentType" xml:"LatestDeploymentType"`
 	OssPreSignedAddress       string                    `json:"OssPreSignedAddress" xml:"OssPreSignedAddress"`
 	Type                      string                    `json:"Type" xml:"Type"`
+	DeviceConnState           string                    `json:"DeviceConnState" xml:"DeviceConnState"`
 	FileId                    string                    `json:"FileId" xml:"FileId"`
 	ThingModelJson            string                    `json:"ThingModelJson" xml:"ThingModelJson"`
 	LastUpdateTime            int64                     `json:"LastUpdateTime" xml:"LastUpdateTime"`
@@ -44,12 +46,16 @@ type Data struct {
 	AliyunCommodityCode       string                    `json:"AliyunCommodityCode" xml:"AliyunCommodityCode"`
 	OssAccessKeyId            string                    `json:"OssAccessKeyId" xml:"OssAccessKeyId"`
 	ApplyId                   int64                     `json:"ApplyId" xml:"ApplyId"`
+	UtcCreated                string                    `json:"UtcCreated" xml:"UtcCreated"`
 	Host                      string                    `json:"Host" xml:"Host"`
 	DeviceName                string                    `json:"DeviceName" xml:"DeviceName"`
 	PageCount                 int64                     `json:"PageCount" xml:"PageCount"`
 	Count                     int64                     `json:"Count" xml:"Count"`
 	Size                      string                    `json:"Size" xml:"Size"`
+	Udi                       string                    `json:"Udi" xml:"Udi"`
 	IsOpen                    bool                      `json:"IsOpen" xml:"IsOpen"`
+	TotalPage                 int64                     `json:"TotalPage" xml:"TotalPage"`
+	SourceURI                 string                    `json:"SourceURI" xml:"SourceURI"`
 	ProductName               string                    `json:"ProductName" xml:"ProductName"`
 	Name                      string                    `json:"Name" xml:"Name"`
 	GmtCreateTimestamp        int64                     `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
@@ -62,6 +68,8 @@ type Data struct {
 	SourceType                string                    `json:"SourceType" xml:"SourceType"`
 	ResultJson                string                    `json:"ResultJson" xml:"ResultJson"`
 	InstanceId                string                    `json:"InstanceId" xml:"InstanceId"`
+	SourceConnState           string                    `json:"SourceConnState" xml:"SourceConnState"`
+	UtcClosed                 string                    `json:"UtcClosed" xml:"UtcClosed"`
 	Voice                     string                    `json:"Voice" xml:"Voice"`
 	Policy                    string                    `json:"Policy" xml:"Policy"`
 	DateFormat                string                    `json:"DateFormat" xml:"DateFormat"`
@@ -83,6 +91,7 @@ type Data struct {
 	DeviceCount               int                       `json:"DeviceCount" xml:"DeviceCount"`
 	ProtocolType              string                    `json:"ProtocolType" xml:"ProtocolType"`
 	AuthType                  string                    `json:"AuthType" xml:"AuthType"`
+	SourceAccessToken         string                    `json:"SourceAccessToken" xml:"SourceAccessToken"`
 	Total                     int64                     `json:"Total" xml:"Total"`
 	DataFormat                int                       `json:"DataFormat" xml:"DataFormat"`
 	BizEnable                 bool                      `json:"BizEnable" xml:"BizEnable"`
@@ -118,6 +127,7 @@ type Data struct {
 	ShareId                   string                    `json:"ShareId" xml:"ShareId"`
 	AudioFormat               string                    `json:"AudioFormat" xml:"AudioFormat"`
 	TargetData                string                    `json:"TargetData" xml:"TargetData"`
+	DynamicGroupExpression    string                    `json:"DynamicGroupExpression" xml:"DynamicGroupExpression"`
 	SourceConfig              string                    `json:"SourceConfig" xml:"SourceConfig"`
 	GroupName                 string                    `json:"GroupName" xml:"GroupName"`
 	CreateTime                int64                     `json:"CreateTime" xml:"CreateTime"`
@@ -142,6 +152,7 @@ type Data struct {
 	GroupDesc                 string                    `json:"GroupDesc" xml:"GroupDesc"`
 	Argument                  string                    `json:"Argument" xml:"Argument"`
 	SpeechRate                int                       `json:"SpeechRate" xml:"SpeechRate"`
+	TunnelState               string                    `json:"TunnelState" xml:"TunnelState"`
 	InvalidDeviceNameList     InvalidDeviceNameList     `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
 	ResultList                ResultList                `json:"ResultList" xml:"ResultList"`
 	FieldNameList             FieldNameList             `json:"FieldNameList" xml:"FieldNameList"`
@@ -149,6 +160,7 @@ type Data struct {
 	RouteContext              RouteContext              `json:"RouteContext" xml:"RouteContext"`
 	SqlTemplateDTO            SqlTemplateDTO            `json:"SqlTemplateDTO" xml:"SqlTemplateDTO"`
 	TokenInfo                 TokenInfo                 `json:"TokenInfo" xml:"TokenInfo"`
+	DataList                  []DataListItem            `json:"DataList" xml:"DataList"`
 	TaskList                  []Task                    `json:"TaskList" xml:"TaskList"`
 	ModelVersions             []ModelVersion            `json:"ModelVersions" xml:"ModelVersions"`
 	List                      ListInGetThingTopo        `json:"List" xml:"List"`

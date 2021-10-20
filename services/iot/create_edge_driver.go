@@ -71,14 +71,15 @@ func (client *Client) CreateEdgeDriverWithCallback(request *CreateEdgeDriverRequ
 // CreateEdgeDriverRequest is the request struct for api CreateEdgeDriver
 type CreateEdgeDriverRequest struct {
 	*requests.RpcRequest
-	DriverProtocol string           `position:"Query" name:"DriverProtocol"`
-	DriverName     string           `position:"Query" name:"DriverName"`
-	IsBuiltIn      requests.Boolean `position:"Query" name:"IsBuiltIn"`
-	IotInstanceId  string           `position:"Query" name:"IotInstanceId"`
-	Runtime        string           `position:"Query" name:"Runtime"`
-	ApiProduct     string           `position:"Body" name:"ApiProduct"`
-	CpuArch        string           `position:"Query" name:"CpuArch"`
-	ApiRevision    string           `position:"Body" name:"ApiRevision"`
+	DriverProtocol    string           `position:"Query" name:"DriverProtocol"`
+	DriverName        string           `position:"Query" name:"DriverName"`
+	IsBuiltIn         requests.Boolean `position:"Query" name:"IsBuiltIn"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	Runtime           string           `position:"Query" name:"Runtime"`
+	UseOfficialConfig requests.Integer `position:"Query" name:"UseOfficialConfig"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	CpuArch           string           `position:"Query" name:"CpuArch"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
 }
 
 // CreateEdgeDriverResponse is the response struct for api CreateEdgeDriver

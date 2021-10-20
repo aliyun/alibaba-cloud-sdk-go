@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SetDeviceGroupTags invokes the iot.SetDeviceGroupTags API synchronously
-func (client *Client) SetDeviceGroupTags(request *SetDeviceGroupTagsRequest) (response *SetDeviceGroupTagsResponse, err error) {
-	response = CreateSetDeviceGroupTagsResponse()
+// DeleteDeviceDynamicGroup invokes the iot.DeleteDeviceDynamicGroup API synchronously
+func (client *Client) DeleteDeviceDynamicGroup(request *DeleteDeviceDynamicGroupRequest) (response *DeleteDeviceDynamicGroupResponse, err error) {
+	response = CreateDeleteDeviceDynamicGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SetDeviceGroupTagsWithChan invokes the iot.SetDeviceGroupTags API asynchronously
-func (client *Client) SetDeviceGroupTagsWithChan(request *SetDeviceGroupTagsRequest) (<-chan *SetDeviceGroupTagsResponse, <-chan error) {
-	responseChan := make(chan *SetDeviceGroupTagsResponse, 1)
+// DeleteDeviceDynamicGroupWithChan invokes the iot.DeleteDeviceDynamicGroup API asynchronously
+func (client *Client) DeleteDeviceDynamicGroupWithChan(request *DeleteDeviceDynamicGroupRequest) (<-chan *DeleteDeviceDynamicGroupResponse, <-chan error) {
+	responseChan := make(chan *DeleteDeviceDynamicGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SetDeviceGroupTags(request)
+		response, err := client.DeleteDeviceDynamicGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SetDeviceGroupTagsWithChan(request *SetDeviceGroupTagsRequ
 	return responseChan, errChan
 }
 
-// SetDeviceGroupTagsWithCallback invokes the iot.SetDeviceGroupTags API asynchronously
-func (client *Client) SetDeviceGroupTagsWithCallback(request *SetDeviceGroupTagsRequest, callback func(response *SetDeviceGroupTagsResponse, err error)) <-chan int {
+// DeleteDeviceDynamicGroupWithCallback invokes the iot.DeleteDeviceDynamicGroup API asynchronously
+func (client *Client) DeleteDeviceDynamicGroupWithCallback(request *DeleteDeviceDynamicGroupRequest, callback func(response *DeleteDeviceDynamicGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SetDeviceGroupTagsResponse
+		var response *DeleteDeviceDynamicGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.SetDeviceGroupTags(request)
+		response, err = client.DeleteDeviceDynamicGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,19 +68,17 @@ func (client *Client) SetDeviceGroupTagsWithCallback(request *SetDeviceGroupTags
 	return result
 }
 
-// SetDeviceGroupTagsRequest is the request struct for api SetDeviceGroupTags
-type SetDeviceGroupTagsRequest struct {
+// DeleteDeviceDynamicGroupRequest is the request struct for api DeleteDeviceDynamicGroup
+type DeleteDeviceDynamicGroupRequest struct {
 	*requests.RpcRequest
-	GroupType     string `position:"Query" name:"GroupType"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	TagString     string `position:"Query" name:"TagString"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
-// SetDeviceGroupTagsResponse is the response struct for api SetDeviceGroupTags
-type SetDeviceGroupTagsResponse struct {
+// DeleteDeviceDynamicGroupResponse is the response struct for api DeleteDeviceDynamicGroup
+type DeleteDeviceDynamicGroupResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
@@ -88,19 +86,19 @@ type SetDeviceGroupTagsResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-// CreateSetDeviceGroupTagsRequest creates a request to invoke SetDeviceGroupTags API
-func CreateSetDeviceGroupTagsRequest() (request *SetDeviceGroupTagsRequest) {
-	request = &SetDeviceGroupTagsRequest{
+// CreateDeleteDeviceDynamicGroupRequest creates a request to invoke DeleteDeviceDynamicGroup API
+func CreateDeleteDeviceDynamicGroupRequest() (request *DeleteDeviceDynamicGroupRequest) {
+	request = &DeleteDeviceDynamicGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SetDeviceGroupTags", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceDynamicGroup", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSetDeviceGroupTagsResponse creates a response to parse from SetDeviceGroupTags response
-func CreateSetDeviceGroupTagsResponse() (response *SetDeviceGroupTagsResponse) {
-	response = &SetDeviceGroupTagsResponse{
+// CreateDeleteDeviceDynamicGroupResponse creates a response to parse from DeleteDeviceDynamicGroup response
+func CreateDeleteDeviceDynamicGroupResponse() (response *DeleteDeviceDynamicGroupResponse) {
+	response = &DeleteDeviceDynamicGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

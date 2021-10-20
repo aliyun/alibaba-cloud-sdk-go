@@ -75,9 +75,12 @@ type CreateOTADynamicUpgradeJobRequest struct {
 	RetryCount       requests.Integer                 `position:"Query" name:"RetryCount"`
 	TimeoutInMinutes requests.Integer                 `position:"Query" name:"TimeoutInMinutes"`
 	NeedConfirm      requests.Boolean                 `position:"Query" name:"NeedConfirm"`
+	GroupType        string                           `position:"Query" name:"GroupType"`
 	NeedPush         requests.Boolean                 `position:"Query" name:"NeedPush"`
 	IotInstanceId    string                           `position:"Query" name:"IotInstanceId"`
+	DownloadProtocol string                           `position:"Query" name:"DownloadProtocol"`
 	Tag              *[]CreateOTADynamicUpgradeJobTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GroupId          string                           `position:"Query" name:"GroupId"`
 	FirmwareId       string                           `position:"Query" name:"FirmwareId"`
 	ProductKey       string                           `position:"Query" name:"ProductKey"`
 	RetryInterval    requests.Integer                 `position:"Query" name:"RetryInterval"`

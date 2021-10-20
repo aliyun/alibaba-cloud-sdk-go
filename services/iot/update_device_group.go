@@ -71,6 +71,7 @@ func (client *Client) UpdateDeviceGroupWithCallback(request *UpdateDeviceGroupRe
 // UpdateDeviceGroupRequest is the request struct for api UpdateDeviceGroup
 type UpdateDeviceGroupRequest struct {
 	*requests.RpcRequest
+	GroupType     string `position:"Query" name:"GroupType"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	GroupDesc     string `position:"Query" name:"GroupDesc"`

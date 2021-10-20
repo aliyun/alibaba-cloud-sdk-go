@@ -74,13 +74,16 @@ type CreateOTAStaticUpgradeJobRequest struct {
 	RetryCount         requests.Integer                `position:"Query" name:"RetryCount"`
 	TimeoutInMinutes   requests.Integer                `position:"Query" name:"TimeoutInMinutes"`
 	NeedConfirm        requests.Boolean                `position:"Query" name:"NeedConfirm"`
+	GroupType          string                          `position:"Query" name:"GroupType"`
 	NeedPush           requests.Boolean                `position:"Query" name:"NeedPush"`
 	IotInstanceId      string                          `position:"Query" name:"IotInstanceId"`
+	DownloadProtocol   string                          `position:"Query" name:"DownloadProtocol"`
 	TargetSelection    string                          `position:"Query" name:"TargetSelection"`
 	ScheduleFinishTime requests.Integer                `position:"Query" name:"ScheduleFinishTime"`
 	Tag                *[]CreateOTAStaticUpgradeJobTag `position:"Query" name:"Tag"  type:"Repeated"`
 	GrayPercent        string                          `position:"Query" name:"GrayPercent"`
 	DnListFileUrl      string                          `position:"Query" name:"DnListFileUrl"`
+	GroupId            string                          `position:"Query" name:"GroupId"`
 	FirmwareId         string                          `position:"Query" name:"FirmwareId"`
 	ProductKey         string                          `position:"Query" name:"ProductKey"`
 	RetryInterval      requests.Integer                `position:"Query" name:"RetryInterval"`

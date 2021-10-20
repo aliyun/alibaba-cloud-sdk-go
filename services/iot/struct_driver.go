@@ -28,6 +28,7 @@ type Driver struct {
 	OrderId              string `json:"OrderId" xml:"OrderId"`
 	DriverVersion        string `json:"DriverVersion" xml:"DriverVersion"`
 	GmtCreate            string `json:"GmtCreate" xml:"GmtCreate"`
+	UseOfficialConfig    int    `json:"UseOfficialConfig" xml:"UseOfficialConfig"`
 	DriverName           string `json:"DriverName" xml:"DriverName"`
 	GmtModifiedTimestamp int64  `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
 	Type                 int    `json:"Type" xml:"Type"`
