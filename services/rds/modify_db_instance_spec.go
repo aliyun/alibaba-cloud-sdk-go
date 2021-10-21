@@ -75,6 +75,7 @@ type ModifyDBInstanceSpecRequest struct {
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	SwitchTime            string           `position:"Query" name:"SwitchTime"`
@@ -85,6 +86,7 @@ type ModifyDBInstanceSpecRequest struct {
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	UsedTime              requests.Integer `position:"Query" name:"UsedTime"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	PayType               string           `position:"Query" name:"PayType"`
@@ -93,8 +95,8 @@ type ModifyDBInstanceSpecRequest struct {
 // ModifyDBInstanceSpecResponse is the response struct for api ModifyDBInstanceSpec
 type ModifyDBInstanceSpecResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	OrderId      int64  `json:"OrderId" xml:"OrderId"`
 }
 

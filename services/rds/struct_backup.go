@@ -18,8 +18,8 @@ package rds
 // Backup is a nested struct in rds response
 type Backup struct {
 	MetaStatus                string                 `json:"MetaStatus" xml:"MetaStatus"`
-	HostInstanceID            string                 `json:"HostInstanceID" xml:"HostInstanceID"`
 	CopyOnlyBackup            string                 `json:"CopyOnlyBackup" xml:"CopyOnlyBackup"`
+	HostInstanceID            string                 `json:"HostInstanceID" xml:"HostInstanceID"`
 	BackupMode                string                 `json:"BackupMode" xml:"BackupMode"`
 	IsAvail                   int                    `json:"IsAvail" xml:"IsAvail"`
 	BackupDBNames             string                 `json:"BackupDBNames" xml:"BackupDBNames"`
@@ -27,6 +27,7 @@ type Backup struct {
 	Encryption                string                 `json:"Encryption" xml:"Encryption"`
 	BackupSize                int64                  `json:"BackupSize" xml:"BackupSize"`
 	BackupStartTime           string                 `json:"BackupStartTime" xml:"BackupStartTime"`
+	Checksum                  string                 `json:"Checksum" xml:"Checksum"`
 	ConsistentTime            int64                  `json:"ConsistentTime" xml:"ConsistentTime"`
 	DBInstanceId              string                 `json:"DBInstanceId" xml:"DBInstanceId"`
 	BackupScale               string                 `json:"BackupScale" xml:"BackupScale"`

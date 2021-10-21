@@ -90,11 +90,11 @@ type DescribeBackupsRequest struct {
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
 	RequestId            string                 `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount     string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber           string                 `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount      string                 `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalBackupSize      int64                  `json:"TotalBackupSize" xml:"TotalBackupSize"`
 	TotalEcsSnapshotSize int64                  `json:"TotalEcsSnapshotSize" xml:"TotalEcsSnapshotSize"`
+	PageRecordCount      string                 `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount     string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	TotalBackupSize      int64                  `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	PageNumber           string                 `json:"PageNumber" xml:"PageNumber"`
 	Items                ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
