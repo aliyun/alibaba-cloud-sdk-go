@@ -88,7 +88,7 @@ func CreateCreateBodyDbRequest() (request *CreateBodyDbRequest) {
 	request = &CreateBodyDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "CreateBodyDb", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "CreateBodyDb", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateDetectChefCapRequest() (request *DetectChefCapRequest) {
 	request = &DetectChefCapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectChefCap", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectChefCap", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,6 +84,8 @@ type AddFaceRequest struct {
 type AddFaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -92,7 +94,7 @@ func CreateAddFaceRequest() (request *AddFaceRequest) {
 	request = &AddFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "AddFace", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "AddFace", "", "")
 	request.Method = requests.POST
 	return
 }

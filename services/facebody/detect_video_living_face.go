@@ -86,7 +86,7 @@ func CreateDetectVideoLivingFaceRequest() (request *DetectVideoLivingFaceRequest
 	request = &DetectVideoLivingFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectVideoLivingFace", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectVideoLivingFace", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateRecognizeActionRequest() (request *RecognizeActionRequest) {
 	request = &RecognizeActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizeAction", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizeAction", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateDeleteBodyDbRequest() (request *DeleteBodyDbRequest) {
 	request = &DeleteBodyDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteBodyDb", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteBodyDb", "", "")
 	request.Method = requests.POST
 	return
 }

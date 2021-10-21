@@ -89,7 +89,7 @@ func CreateAddFaceImageTemplateRequest() (request *AddFaceImageTemplateRequest) 
 	request = &AddFaceImageTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "AddFaceImageTemplate", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "AddFaceImageTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateDeleteFaceImageTemplateRequest() (request *DeleteFaceImageTemplateReq
 	request = &DeleteFaceImageTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceImageTemplate", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceImageTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateAddBodyTraceRequest() (request *AddBodyTraceRequest) {
 	request = &AddBodyTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "AddBodyTrace", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "AddBodyTrace", "", "")
 	request.Method = requests.POST
 	return
 }

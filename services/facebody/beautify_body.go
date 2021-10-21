@@ -99,7 +99,7 @@ func CreateBeautifyBodyRequest() (request *BeautifyBodyRequest) {
 	request = &BeautifyBodyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "BeautifyBody", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "BeautifyBody", "", "")
 	request.Method = requests.POST
 	return
 }

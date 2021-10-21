@@ -86,7 +86,7 @@ func CreateBlurFaceRequest() (request *BlurFaceRequest) {
 	request = &BlurFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "BlurFace", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "BlurFace", "", "")
 	request.Method = requests.POST
 	return
 }

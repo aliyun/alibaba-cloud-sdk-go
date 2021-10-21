@@ -17,6 +17,7 @@ package facebody
 
 // MatchListItem is a nested struct in facebody response
 type MatchListItem struct {
-	Location  Location        `json:"Location" xml:"Location"`
-	FaceItems []FaceItemsItem `json:"FaceItems" xml:"FaceItems"`
+	QualitieScore float64         `json:"QualitieScore" xml:"QualitieScore"`
+	Location      Location        `json:"Location" xml:"Location"`
+	FaceItems     []FaceItemsItem `json:"FaceItems" xml:"FaceItems"`
 }

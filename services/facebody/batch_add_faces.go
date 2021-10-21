@@ -93,7 +93,7 @@ func CreateBatchAddFacesRequest() (request *BatchAddFacesRequest) {
 	request = &BatchAddFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "BatchAddFaces", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "BatchAddFaces", "", "")
 	request.Method = requests.POST
 	return
 }

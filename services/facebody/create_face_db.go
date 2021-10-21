@@ -85,7 +85,7 @@ func CreateCreateFaceDbRequest() (request *CreateFaceDbRequest) {
 	request = &CreateFaceDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "CreateFaceDb", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "CreateFaceDb", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateGenRealPersonVerificationTokenRequest() (request *GenRealPersonVerifi
 	request = &GenRealPersonVerificationTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "GenRealPersonVerificationToken", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "GenRealPersonVerificationToken", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateExtractPedestrianFeatureAttrRequest() (request *ExtractPedestrianFeat
 	request = &ExtractPedestrianFeatureAttrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "ExtractPedestrianFeatureAttr", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "ExtractPedestrianFeatureAttr", "", "")
 	request.Method = requests.POST
 	return
 }

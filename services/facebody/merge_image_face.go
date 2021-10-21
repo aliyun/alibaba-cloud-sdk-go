@@ -90,7 +90,7 @@ func CreateMergeImageFaceRequest() (request *MergeImageFaceRequest) {
 	request = &MergeImageFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "MergeImageFace", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "MergeImageFace", "", "")
 	request.Method = requests.POST
 	return
 }

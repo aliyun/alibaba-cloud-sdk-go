@@ -39,6 +39,7 @@ type Data struct {
 	MessageTips          string                `json:"MessageTips" xml:"MessageTips"`
 	DenseFeatureLength   int                   `json:"DenseFeatureLength" xml:"DenseFeatureLength"`
 	LowerColor           string                `json:"LowerColor" xml:"LowerColor"`
+	QualitieScore        float64               `json:"QualitieScore" xml:"QualitieScore"`
 	IdentityInfo         string                `json:"IdentityInfo" xml:"IdentityInfo"`
 	Orientation          string                `json:"Orientation" xml:"Orientation"`
 	FaceId               string                `json:"FaceId" xml:"FaceId"`
@@ -102,13 +103,13 @@ type Data struct {
 	PersonInfo           PersonInfo            `json:"PersonInfo" xml:"PersonInfo"`
 	Elements             []ElementsItem        `json:"Elements" xml:"Elements"`
 	Outputs              []Output              `json:"Outputs" xml:"Outputs"`
+	InsertedFaces        []InsertedFaces       `json:"InsertedFaces" xml:"InsertedFaces"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`
 	ImageInfoList        []ImageInfoListItem   `json:"ImageInfoList" xml:"ImageInfoList"`
 	DbList               []DbListItem          `json:"DbList" xml:"DbList"`
 	Entities             []Entity              `json:"Entities" xml:"Entities"`
 	FailedFaces          []FailedFaces         `json:"FailedFaces" xml:"FailedFaces"`
 	PersonList           []Person              `json:"PersonList" xml:"PersonList"`
-	InsertedFaces        []InsertedFaces       `json:"InsertedFaces" xml:"InsertedFaces"`
 	MatchList            []Trace               `json:"MatchList" xml:"MatchList"`
 	TraceList            []Trace               `json:"TraceList" xml:"TraceList"`
 	FaceRecognizeResults []FaceRecognizeResult `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`

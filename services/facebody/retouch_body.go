@@ -90,7 +90,7 @@ func CreateRetouchBodyRequest() (request *RetouchBodyRequest) {
 	request = &RetouchBodyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "RetouchBody", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "RetouchBody", "", "")
 	request.Method = requests.POST
 	return
 }

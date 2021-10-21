@@ -89,7 +89,7 @@ func CreateQueryFaceImageTemplateRequest() (request *QueryFaceImageTemplateReque
 	request = &QueryFaceImageTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "QueryFaceImageTemplate", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "QueryFaceImageTemplate", "", "")
 	request.Method = requests.GET
 	return
 }

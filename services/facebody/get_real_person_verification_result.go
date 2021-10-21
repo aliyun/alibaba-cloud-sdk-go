@@ -90,7 +90,7 @@ func CreateGetRealPersonVerificationResultRequest() (request *GetRealPersonVerif
 	request = &GetRealPersonVerificationResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "GetRealPersonVerificationResult", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "GetRealPersonVerificationResult", "", "")
 	request.Method = requests.POST
 	return
 }
