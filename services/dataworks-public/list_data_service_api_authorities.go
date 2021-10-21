@@ -81,12 +81,12 @@ type ListDataServiceApiAuthoritiesRequest struct {
 // ListDataServiceApiAuthoritiesResponse is the response struct for api ListDataServiceApiAuthorities
 type ListDataServiceApiAuthoritiesResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string                              `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string                              `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int                                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string                              `json:"RequestId" xml:"RequestId"`
-	Success        bool                                `json:"Success" xml:"Success"`
-	Data           DataInListDataServiceApiAuthorities `json:"Data" xml:"Data"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListDataServiceApiAuthoritiesRequest creates a request to invoke ListDataServiceApiAuthorities API

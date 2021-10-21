@@ -83,12 +83,12 @@ type SearchMetaTablesRequest struct {
 // SearchMetaTablesResponse is the response struct for api SearchMetaTables
 type SearchMetaTablesResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                 `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string                 `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Success        bool                   `json:"Success" xml:"Success"`
+	Data           DataInSearchMetaTables `json:"Data" xml:"Data"`
 }
 
 // CreateSearchMetaTablesRequest creates a request to invoke SearchMetaTables API

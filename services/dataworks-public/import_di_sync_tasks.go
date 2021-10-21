@@ -71,17 +71,17 @@ func (client *Client) ImportDISyncTasksWithCallback(request *ImportDISyncTasksRe
 // ImportDISyncTasksRequest is the request struct for api ImportDISyncTasks
 type ImportDISyncTasksRequest struct {
 	*requests.RpcRequest
-	TaskType    string           `position:"Query" name:"TaskType"`
-	TaskContent string           `position:"Query" name:"TaskContent"`
-	TaskParam   string           `position:"Query" name:"TaskParam"`
-	ProjectId   requests.Integer `position:"Query" name:"ProjectId"`
+	TaskType  string           `position:"Query" name:"TaskType"`
+	TaskParam string           `position:"Query" name:"TaskParam"`
+	Body      string           `position:"Body" name:"body"`
+	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
 }
 
 // ImportDISyncTasksResponse is the response struct for api ImportDISyncTasks
 type ImportDISyncTasksResponse struct {
 	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
 	Success   bool                        `json:"Success" xml:"Success"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
 	TaskInfo  TaskInfoInImportDISyncTasks `json:"TaskInfo" xml:"TaskInfo"`
 }
 

@@ -71,12 +71,15 @@ func (client *Client) RunManualDagNodesWithCallback(request *RunManualDagNodesRe
 // RunManualDagNodesRequest is the request struct for api RunManualDagNodes
 type RunManualDagNodesRequest struct {
 	*requests.RpcRequest
-	ProjectEnv     string `position:"Body" name:"ProjectEnv"`
-	ProjectName    string `position:"Body" name:"ProjectName"`
-	BizDate        string `position:"Body" name:"BizDate"`
-	FlowName       string `position:"Body" name:"FlowName"`
-	DagParameters  string `position:"Body" name:"DagParameters"`
-	NodeParameters string `position:"Body" name:"NodeParameters"`
+	ProjectEnv     string           `position:"Body" name:"ProjectEnv"`
+	ProjectName    string           `position:"Body" name:"ProjectName"`
+	DagParameters  string           `position:"Body" name:"DagParameters"`
+	IncludeNodeIds string           `position:"Body" name:"IncludeNodeIds"`
+	BizDate        string           `position:"Body" name:"BizDate"`
+	ExcludeNodeIds string           `position:"Body" name:"ExcludeNodeIds"`
+	FlowName       string           `position:"Body" name:"FlowName"`
+	ProjectId      requests.Integer `position:"Body" name:"ProjectId"`
+	NodeParameters string           `position:"Body" name:"NodeParameters"`
 }
 
 // RunManualDagNodesResponse is the response struct for api RunManualDagNodes

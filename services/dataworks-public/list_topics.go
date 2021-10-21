@@ -85,12 +85,12 @@ type ListTopicsRequest struct {
 // ListTopicsResponse is the response struct for api ListTopics
 type ListTopicsResponse struct {
 	*responses.BaseResponse
-	Success        bool             `json:"Success" xml:"Success"`
-	ErrorCode      string           `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string           `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int              `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	Data           DataInListTopics `json:"Data" xml:"Data"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListTopicsRequest creates a request to invoke ListTopics API

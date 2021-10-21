@@ -81,12 +81,12 @@ type GetMetaTableOutputRequest struct {
 // GetMetaTableOutputResponse is the response struct for api GetMetaTableOutput
 type GetMetaTableOutputResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                   `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string                   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string                   `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int                      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Success        bool                     `json:"Success" xml:"Success"`
+	Data           DataInGetMetaTableOutput `json:"Data" xml:"Data"`
 }
 
 // CreateGetMetaTableOutputRequest creates a request to invoke GetMetaTableOutput API

@@ -35,4 +35,5 @@ type DataInGetNode struct {
 	DqcType        int    `json:"DqcType" xml:"DqcType"`
 	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
 	RelatedFlowId  int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
+	BusinessId     int64  `json:"BusinessId" xml:"BusinessId"`
 }

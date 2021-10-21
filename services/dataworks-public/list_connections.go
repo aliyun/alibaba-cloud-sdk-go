@@ -84,10 +84,10 @@ type ListConnectionsRequest struct {
 // ListConnectionsResponse is the response struct for api ListConnections
 type ListConnectionsResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int                   `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool                  `json:"Success" xml:"Success"`
-	RequestId      string                `json:"RequestId" xml:"RequestId"`
-	Data           DataInListConnections `json:"Data" xml:"Data"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListConnectionsRequest creates a request to invoke ListConnections API

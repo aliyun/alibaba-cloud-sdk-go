@@ -79,9 +79,9 @@ type ExportDISyncTasksRequest struct {
 // ExportDISyncTasksResponse is the response struct for api ExportDISyncTasks
 type ExportDISyncTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Success    bool       `json:"Success" xml:"Success"`
-	TaskDetail TaskDetail `json:"TaskDetail" xml:"TaskDetail"`
+	Success   bool   `json:"success" xml:"success"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Data      Data   `json:"data" xml:"data"`
 }
 
 // CreateExportDISyncTasksRequest creates a request to invoke ExportDISyncTasks API

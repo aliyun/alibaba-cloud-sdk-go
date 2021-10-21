@@ -82,10 +82,10 @@ type ListCalcEnginesRequest struct {
 // ListCalcEnginesResponse is the response struct for api ListCalcEngines
 type ListCalcEnginesResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int                   `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool                  `json:"Success" xml:"Success"`
-	RequestId      string                `json:"RequestId" xml:"RequestId"`
-	Data           DataInListCalcEngines `json:"Data" xml:"Data"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListCalcEnginesRequest creates a request to invoke ListCalcEngines API

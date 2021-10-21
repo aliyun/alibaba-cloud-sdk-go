@@ -84,12 +84,12 @@ type ListNodesRequest struct {
 // ListNodesResponse is the response struct for api ListNodes
 type ListNodesResponse struct {
 	*responses.BaseResponse
-	Success        bool            `json:"Success" xml:"Success"`
-	HttpStatusCode int             `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	ErrorCode      string          `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string          `json:"ErrorMessage" xml:"ErrorMessage"`
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	Data           DataInListNodes `json:"Data" xml:"Data"`
+	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListNodesRequest creates a request to invoke ListNodes API

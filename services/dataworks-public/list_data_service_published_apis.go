@@ -83,12 +83,12 @@ type ListDataServicePublishedApisRequest struct {
 // ListDataServicePublishedApisResponse is the response struct for api ListDataServicePublishedApis
 type ListDataServicePublishedApisResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string                             `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string                             `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int                                `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string                             `json:"RequestId" xml:"RequestId"`
-	Success        bool                               `json:"Success" xml:"Success"`
-	Data           DataInListDataServicePublishedApis `json:"Data" xml:"Data"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListDataServicePublishedApisRequest creates a request to invoke ListDataServicePublishedApis API

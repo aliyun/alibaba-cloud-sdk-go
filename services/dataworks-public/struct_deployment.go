@@ -26,4 +26,5 @@ type Deployment struct {
 	FromEnvironment int    `json:"FromEnvironment" xml:"FromEnvironment"`
 	ToEnvironment   int    `json:"ToEnvironment" xml:"ToEnvironment"`
 	ErrorMessage    string `json:"ErrorMessage" xml:"ErrorMessage"`
+	CheckingStatus  int    `json:"CheckingStatus" xml:"CheckingStatus"`
 }

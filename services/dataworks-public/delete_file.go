@@ -84,6 +84,7 @@ type DeleteFileResponse struct {
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	DeploymentId   int64  `json:"DeploymentId" xml:"DeploymentId"`
 }
 
 // CreateDeleteFileRequest creates a request to invoke DeleteFile API

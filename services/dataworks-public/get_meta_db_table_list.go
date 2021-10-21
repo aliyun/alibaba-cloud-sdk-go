@@ -82,8 +82,8 @@ type GetMetaDBTableListRequest struct {
 // GetMetaDBTableListResponse is the response struct for api GetMetaDBTableList
 type GetMetaDBTableListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetMetaDBTableList `json:"Data" xml:"Data"`
 }
 
 // CreateGetMetaDBTableListRequest creates a request to invoke GetMetaDBTableList API

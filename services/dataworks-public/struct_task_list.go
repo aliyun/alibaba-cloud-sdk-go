@@ -17,8 +17,10 @@ package dataworks_public
 
 // TaskList is a nested struct in dataworks_public response
 type TaskList struct {
-	PageNumber           int                        `json:"PageNumber" xml:"PageNumber"`
-	PageSize             int                        `json:"PageSize" xml:"PageSize"`
+	ConnectStatus        bool                       `json:"ConnectStatus" xml:"ConnectStatus"`
 	TotalCount           int                        `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int                        `json:"PageNumber" xml:"PageNumber"`
+	ConnectMessage       string                     `json:"ConnectMessage" xml:"ConnectMessage"`
+	PageSize             int                        `json:"PageSize" xml:"PageSize"`
 	RealTimeSolutionList []RealTimeSolutionListItem `json:"RealTimeSolutionList" xml:"RealTimeSolutionList"`
 }

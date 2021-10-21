@@ -43,4 +43,5 @@ type Instance struct {
 	RelatedFlowId     int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
 	TaskType          string `json:"TaskType" xml:"TaskType"`
 	TaskRerunTime     int    `json:"TaskRerunTime" xml:"TaskRerunTime"`
+	BusinessId        int64  `json:"BusinessId" xml:"BusinessId"`
 }

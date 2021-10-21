@@ -35,5 +35,6 @@ type NodesItem struct {
 	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
 	DqcType        int    `json:"DqcType" xml:"DqcType"`
 	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
+	BusinessId     int64  `json:"BusinessId" xml:"BusinessId"`
 	Description    string `json:"Description" xml:"Description"`
 }

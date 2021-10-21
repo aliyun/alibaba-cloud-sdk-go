@@ -17,18 +17,19 @@ package dataworks_public
 
 // NodeConfiguration is a nested struct in dataworks_public response
 type NodeConfiguration struct {
-	AutoRerunTimes          int               `json:"AutoRerunTimes" xml:"AutoRerunTimes"`
-	AutoRerunIntervalMillis int               `json:"AutoRerunIntervalMillis" xml:"AutoRerunIntervalMillis"`
 	RerunMode               string            `json:"RerunMode" xml:"RerunMode"`
+	SchedulerType           string            `json:"SchedulerType" xml:"SchedulerType"`
 	Stop                    bool              `json:"Stop" xml:"Stop"`
 	ParaValue               string            `json:"ParaValue" xml:"ParaValue"`
 	StartEffectDate         int64             `json:"StartEffectDate" xml:"StartEffectDate"`
 	EndEffectDate           int64             `json:"EndEffectDate" xml:"EndEffectDate"`
-	CronExpress             string            `json:"CronExpress" xml:"CronExpress"`
 	CycleType               string            `json:"CycleType" xml:"CycleType"`
-	DependentType           string            `json:"DependentType" xml:"DependentType"`
 	DependentNodeIdList     string            `json:"DependentNodeIdList" xml:"DependentNodeIdList"`
 	ResourceGroupId         int64             `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DependentType           string            `json:"DependentType" xml:"DependentType"`
+	AutoRerunTimes          int               `json:"AutoRerunTimes" xml:"AutoRerunTimes"`
+	AutoRerunIntervalMillis int               `json:"AutoRerunIntervalMillis" xml:"AutoRerunIntervalMillis"`
+	CronExpress             string            `json:"CronExpress" xml:"CronExpress"`
 	InputList               []NodeInputOutput `json:"InputList" xml:"InputList"`
 	OutputList              []NodeInputOutput `json:"OutputList" xml:"OutputList"`
 }

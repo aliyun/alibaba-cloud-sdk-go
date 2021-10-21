@@ -80,12 +80,12 @@ type ListDataServiceApplicationsRequest struct {
 // ListDataServiceApplicationsResponse is the response struct for api ListDataServiceApplications
 type ListDataServiceApplicationsResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string                            `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string                            `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int                               `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string                            `json:"RequestId" xml:"RequestId"`
-	Success        bool                              `json:"Success" xml:"Success"`
-	Data           DataInListDataServiceApplications `json:"Data" xml:"Data"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListDataServiceApplicationsRequest creates a request to invoke ListDataServiceApplications API

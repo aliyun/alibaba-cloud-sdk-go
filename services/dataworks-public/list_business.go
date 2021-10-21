@@ -81,12 +81,12 @@ type ListBusinessRequest struct {
 // ListBusinessResponse is the response struct for api ListBusiness
 type ListBusinessResponse struct {
 	*responses.BaseResponse
-	RequestId      string             `json:"RequestId" xml:"RequestId"`
-	Success        bool               `json:"Success" xml:"Success"`
-	ErrorCode      string             `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string             `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int                `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           DataInListBusiness `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListBusinessRequest creates a request to invoke ListBusiness API

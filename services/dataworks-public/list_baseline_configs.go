@@ -84,12 +84,12 @@ type ListBaselineConfigsRequest struct {
 // ListBaselineConfigsResponse is the response struct for api ListBaselineConfigs
 type ListBaselineConfigsResponse struct {
 	*responses.BaseResponse
-	Success        bool                      `json:"Success" xml:"Success"`
-	ErrorCode      string                    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string                    `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int                       `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string                    `json:"RequestId" xml:"RequestId"`
-	Data           DataInListBaselineConfigs `json:"Data" xml:"Data"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListBaselineConfigsRequest creates a request to invoke ListBaselineConfigs API

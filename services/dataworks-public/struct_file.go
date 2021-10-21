@@ -19,15 +19,15 @@ package dataworks_public
 type File struct {
 	AutoParsing     bool   `json:"AutoParsing" xml:"AutoParsing"`
 	LastEditTime    int64  `json:"LastEditTime" xml:"LastEditTime"`
-	ConnectionName  string `json:"ConnectionName" xml:"ConnectionName"`
 	Owner           string `json:"Owner" xml:"Owner"`
+	ConnectionName  string `json:"ConnectionName" xml:"ConnectionName"`
 	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
 	FileFolderId    string `json:"FileFolderId" xml:"FileFolderId"`
 	DeletedStatus   string `json:"DeletedStatus" xml:"DeletedStatus"`
 	FileDescription string `json:"FileDescription" xml:"FileDescription"`
 	FileId          int64  `json:"FileId" xml:"FileId"`
-	BizId           int64  `json:"BizId" xml:"BizId"`
 	CurrentVersion  int    `json:"CurrentVersion" xml:"CurrentVersion"`
+	BizId           int64  `json:"BizId" xml:"BizId"`
 	FileType        int    `json:"FileType" xml:"FileType"`
 	Content         string `json:"Content" xml:"Content"`
 	NodeId          int64  `json:"NodeId" xml:"NodeId"`
@@ -36,7 +36,7 @@ type File struct {
 	LastEditUser    string `json:"LastEditUser" xml:"LastEditUser"`
 	FileName        string `json:"FileName" xml:"FileName"`
 	UseType         string `json:"UseType" xml:"UseType"`
+	CommitStatus    int    `json:"CommitStatus" xml:"CommitStatus"`
 	ParentId        int64  `json:"ParentId" xml:"ParentId"`
 	IsMaxCompute    bool   `json:"IsMaxCompute" xml:"IsMaxCompute"`
-	CommitStatus    int    `json:"CommitStatus" xml:"CommitStatus"`
 }

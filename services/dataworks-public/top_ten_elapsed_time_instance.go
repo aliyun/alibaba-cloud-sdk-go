@@ -71,8 +71,7 @@ func (client *Client) TopTenElapsedTimeInstanceWithCallback(request *TopTenElaps
 // TopTenElapsedTimeInstanceRequest is the request struct for api TopTenElapsedTimeInstance
 type TopTenElapsedTimeInstanceRequest struct {
 	*requests.RpcRequest
-	BusinessDate string           `position:"Body" name:"BusinessDate"`
-	ProjectId    requests.Integer `position:"Body" name:"ProjectId"`
+	ProjectId requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // TopTenElapsedTimeInstanceResponse is the response struct for api TopTenElapsedTimeInstance

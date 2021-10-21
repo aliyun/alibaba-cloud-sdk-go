@@ -17,21 +17,22 @@ package dataworks_public
 
 // DataSourcesItem is a nested struct in dataworks_public response
 type DataSourcesItem struct {
-	Shared              bool   `json:"Shared" xml:"Shared"`
-	GmtModified         string `json:"GmtModified" xml:"GmtModified"`
-	ConnectStatus       int    `json:"ConnectStatus" xml:"ConnectStatus"`
+	Name                string `json:"Name" xml:"Name"`
 	BindingCalcEngineId int    `json:"BindingCalcEngineId" xml:"BindingCalcEngineId"`
-	Description         string `json:"Description" xml:"Description"`
-	DataSourceType      string `json:"DataSourceType" xml:"DataSourceType"`
-	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
 	DefaultEngine       bool   `json:"DefaultEngine" xml:"DefaultEngine"`
+	Id                  int    `json:"Id" xml:"Id"`
+	Status              int    `json:"Status" xml:"Status"`
+	SubType             string `json:"SubType" xml:"SubType"`
+	DataSourceType      string `json:"DataSourceType" xml:"DataSourceType"`
+	GmtModified         string `json:"GmtModified" xml:"GmtModified"`
+	TenantId            int64  `json:"TenantId" xml:"TenantId"`
+	ConnectStatus       int    `json:"ConnectStatus" xml:"ConnectStatus"`
 	Operator            string `json:"Operator" xml:"Operator"`
 	Sequence            int    `json:"Sequence" xml:"Sequence"`
+	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
+	Content             string `json:"Content" xml:"Content"`
 	EnvType             int    `json:"EnvType" xml:"EnvType"`
-	TenantId            int64  `json:"TenantId" xml:"TenantId"`
-	Name                string `json:"Name" xml:"Name"`
-	SubType             string `json:"SubType" xml:"SubType"`
-	Id                  int    `json:"Id" xml:"Id"`
 	ProjectId           int    `json:"ProjectId" xml:"ProjectId"`
-	Status              int    `json:"Status" xml:"Status"`
+	Shared              bool   `json:"Shared" xml:"Shared"`
+	Description         string `json:"Description" xml:"Description"`
 }

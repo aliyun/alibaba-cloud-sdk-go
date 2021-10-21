@@ -86,12 +86,12 @@ type ListBaselineStatusesRequest struct {
 // ListBaselineStatusesResponse is the response struct for api ListBaselineStatuses
 type ListBaselineStatusesResponse struct {
 	*responses.BaseResponse
-	Success        bool                       `json:"Success" xml:"Success"`
-	ErrorCode      string                     `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string                     `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int                        `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string                     `json:"RequestId" xml:"RequestId"`
-	Data           DataInListBaselineStatuses `json:"Data" xml:"Data"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListBaselineStatusesRequest creates a request to invoke ListBaselineStatuses API

@@ -95,17 +95,18 @@ type CreateFileRequest struct {
 	FileFolderPath          string           `position:"Body" name:"FileFolderPath"`
 	FileDescription         string           `position:"Body" name:"FileDescription"`
 	AutoParsing             requests.Boolean `position:"Body" name:"AutoParsing"`
+	SchedulerType           string           `position:"Body" name:"SchedulerType"`
 }
 
 // CreateFileResponse is the response struct for api CreateFile
 type CreateFileResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           int64  `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data           int64  `json:"Data" xml:"Data"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateCreateFileRequest creates a request to invoke CreateFile API

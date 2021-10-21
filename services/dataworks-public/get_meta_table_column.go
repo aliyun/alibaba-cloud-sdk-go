@@ -83,12 +83,12 @@ type GetMetaTableColumnRequest struct {
 // GetMetaTableColumnResponse is the response struct for api GetMetaTableColumn
 type GetMetaTableColumnResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                   `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string                   `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string                   `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int                      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Success        bool                     `json:"Success" xml:"Success"`
+	Data           DataInGetMetaTableColumn `json:"Data" xml:"Data"`
 }
 
 // CreateGetMetaTableColumnRequest creates a request to invoke GetMetaTableColumn API

@@ -72,6 +72,7 @@ func (client *Client) GetFileWithCallback(request *GetFileRequest, callback func
 type GetFileRequest struct {
 	*requests.RpcRequest
 	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
+	NodeId            requests.Integer `position:"Body" name:"NodeId"`
 	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
 	FileId            requests.Integer `position:"Body" name:"FileId"`
 }
@@ -79,11 +80,11 @@ type GetFileRequest struct {
 // GetFileResponse is the response struct for api GetFile
 type GetFileResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
 

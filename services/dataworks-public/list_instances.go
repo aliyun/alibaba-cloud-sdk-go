@@ -89,12 +89,12 @@ type ListInstancesRequest struct {
 // ListInstancesResponse is the response struct for api ListInstances
 type ListInstancesResponse struct {
 	*responses.BaseResponse
-	Success        bool                `json:"Success" xml:"Success"`
-	HttpStatusCode int                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	ErrorCode      string              `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string              `json:"ErrorMessage" xml:"ErrorMessage"`
-	RequestId      string              `json:"RequestId" xml:"RequestId"`
-	Data           DataInListInstances `json:"Data" xml:"Data"`
+	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListInstancesRequest creates a request to invoke ListInstances API

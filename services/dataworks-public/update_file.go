@@ -95,16 +95,17 @@ type UpdateFileRequest struct {
 	FileFolderPath          string           `position:"Body" name:"FileFolderPath"`
 	FileDescription         string           `position:"Body" name:"FileDescription"`
 	AutoParsing             requests.Boolean `position:"Body" name:"AutoParsing"`
+	SchedulerType           string           `position:"Body" name:"SchedulerType"`
 }
 
 // UpdateFileResponse is the response struct for api UpdateFile
 type UpdateFileResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateFileRequest creates a request to invoke UpdateFile API

@@ -80,12 +80,12 @@ type ListTableThemeRequest struct {
 // ListTableThemeResponse is the response struct for api ListTableTheme
 type ListTableThemeResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string               `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string               `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string               `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int                  `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Success        bool                 `json:"Success" xml:"Success"`
+	Data           DataInListTableTheme `json:"Data" xml:"Data"`
 }
 
 // CreateListTableThemeRequest creates a request to invoke ListTableTheme API

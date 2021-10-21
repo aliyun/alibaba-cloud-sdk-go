@@ -71,7 +71,6 @@ func (client *Client) QueryPublicModelEngineWithCallback(request *QueryPublicMod
 // QueryPublicModelEngineRequest is the request struct for api QueryPublicModelEngine
 type QueryPublicModelEngineRequest struct {
 	*requests.RpcRequest
-	TenantId  string `position:"Body" name:"TenantId"`
 	Text      string `position:"Body" name:"Text"`
 	ProjectId string `position:"Body" name:"ProjectId"`
 }

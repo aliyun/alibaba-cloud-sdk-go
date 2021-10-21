@@ -79,8 +79,8 @@ type ListProjectMembersRequest struct {
 // ListProjectMembersResponse is the response struct for api ListProjectMembers
 type ListProjectMembersResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Data      DataInListProjectMembers `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListProjectMembersRequest creates a request to invoke ListProjectMembers API

@@ -80,17 +80,18 @@ type ListFilesRequest struct {
 	Keyword           string           `position:"Body" name:"Keyword"`
 	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 	UseType           string           `position:"Body" name:"UseType"`
+	NodeId            requests.Integer `position:"Body" name:"NodeId"`
 }
 
 // ListFilesResponse is the response struct for api ListFiles
 type ListFilesResponse struct {
 	*responses.BaseResponse
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	Success        bool            `json:"Success" xml:"Success"`
-	ErrorCode      string          `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string          `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int             `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           DataInListFiles `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListFilesRequest creates a request to invoke ListFiles API
