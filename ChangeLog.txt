@@ -1,3 +1,7 @@
+2021-10-25 Version: v1.61.1303
+- Generated 2020-01-01 for `Dts`.
+- DescribeDtsJobs api, delay filed change from int to long.
+
 2021-10-25 Version: v1.61.1302
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support ListInstances and GetInstance API to return StandardGroup information.

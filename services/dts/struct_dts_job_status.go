@@ -17,25 +17,25 @@ package dts
 
 // DtsJobStatus is a nested struct in dts response
 type DtsJobStatus struct {
-	Checkpoint                    string                        `json:"Checkpoint" xml:"Checkpoint"`
-	CreateTime                    string                        `json:"CreateTime" xml:"CreateTime"`
-	DbObject                      string                        `json:"DbObject" xml:"DbObject"`
-	Delay                         int                           `json:"Delay" xml:"Delay"`
-	DtsInstanceID                 string                        `json:"DtsInstanceID" xml:"DtsInstanceID"`
-	DtsJobClass                   string                        `json:"DtsJobClass" xml:"DtsJobClass"`
-	DtsJobDirection               string                        `json:"DtsJobDirection" xml:"DtsJobDirection"`
-	DtsJobId                      string                        `json:"DtsJobId" xml:"DtsJobId"`
+	Status                        string                        `json:"Status" xml:"Status"`
 	DtsJobName                    string                        `json:"DtsJobName" xml:"DtsJobName"`
+	Delay                         int64                         `json:"Delay" xml:"Delay"`
 	ErrorMessage                  string                        `json:"ErrorMessage" xml:"ErrorMessage"`
 	ExpireTime                    string                        `json:"ExpireTime" xml:"ExpireTime"`
+	DtsJobId                      string                        `json:"DtsJobId" xml:"DtsJobId"`
+	CreateTime                    string                        `json:"CreateTime" xml:"CreateTime"`
 	PayType                       string                        `json:"PayType" xml:"PayType"`
 	Reserved                      string                        `json:"Reserved" xml:"Reserved"`
-	Status                        string                        `json:"Status" xml:"Status"`
 	ConsumptionClient             string                        `json:"ConsumptionClient" xml:"ConsumptionClient"`
-	BeginTimestamp                string                        `json:"BeginTimestamp" xml:"BeginTimestamp"`
-	EndTimestamp                  string                        `json:"EndTimestamp" xml:"EndTimestamp"`
+	DbObject                      string                        `json:"DbObject" xml:"DbObject"`
+	DtsJobClass                   string                        `json:"DtsJobClass" xml:"DtsJobClass"`
 	ConsumptionCheckpoint         string                        `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
+	EndTimestamp                  string                        `json:"EndTimestamp" xml:"EndTimestamp"`
 	AppName                       string                        `json:"AppName" xml:"AppName"`
+	BeginTimestamp                string                        `json:"BeginTimestamp" xml:"BeginTimestamp"`
+	DtsInstanceID                 string                        `json:"DtsInstanceID" xml:"DtsInstanceID"`
+	DtsJobDirection               string                        `json:"DtsJobDirection" xml:"DtsJobDirection"`
+	Checkpoint                    string                        `json:"Checkpoint" xml:"Checkpoint"`
 	DataInitializationStatus      DataInitializationStatus      `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus     `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 	DataEtlStatus                 DataEtlStatus                 `json:"DataEtlStatus" xml:"DataEtlStatus"`
@@ -46,5 +46,6 @@ type DtsJobStatus struct {
 	ReverseJob                    ReverseJob                    `json:"ReverseJob" xml:"ReverseJob"`
 	SourceEndpoint                SourceEndpoint                `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	StructureInitializationStatus StructureInitializationStatus `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
+	RetryState                    RetryState                    `json:"RetryState" xml:"RetryState"`
 	TagList                       []DtsTag                      `json:"TagList" xml:"TagList"`
 }

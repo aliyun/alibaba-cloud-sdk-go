@@ -17,20 +17,20 @@ package dts
 
 // ReverseJob is a nested struct in dts response
 type ReverseJob struct {
-	Checkpoint                    string                        `json:"Checkpoint" xml:"Checkpoint"`
-	CreateTime                    string                        `json:"CreateTime" xml:"CreateTime"`
-	DbObject                      string                        `json:"DbObject" xml:"DbObject"`
-	Delay                         int                           `json:"Delay" xml:"Delay"`
-	DtsInstanceID                 string                        `json:"DtsInstanceID" xml:"DtsInstanceID"`
-	DtsJobClass                   string                        `json:"DtsJobClass" xml:"DtsJobClass"`
-	DtsJobDirection               string                        `json:"DtsJobDirection" xml:"DtsJobDirection"`
-	DtsJobId                      string                        `json:"DtsJobId" xml:"DtsJobId"`
+	Status                        string                        `json:"Status" xml:"Status"`
 	DtsJobName                    string                        `json:"DtsJobName" xml:"DtsJobName"`
+	Delay                         int64                         `json:"Delay" xml:"Delay"`
 	ErrorMessage                  string                        `json:"ErrorMessage" xml:"ErrorMessage"`
+	DtsJobId                      string                        `json:"DtsJobId" xml:"DtsJobId"`
 	ExpireTime                    string                        `json:"ExpireTime" xml:"ExpireTime"`
+	CreateTime                    string                        `json:"CreateTime" xml:"CreateTime"`
 	PayType                       string                        `json:"PayType" xml:"PayType"`
 	Reserved                      string                        `json:"Reserved" xml:"Reserved"`
-	Status                        string                        `json:"Status" xml:"Status"`
+	DbObject                      string                        `json:"DbObject" xml:"DbObject"`
+	DtsJobClass                   string                        `json:"DtsJobClass" xml:"DtsJobClass"`
+	DtsInstanceID                 string                        `json:"DtsInstanceID" xml:"DtsInstanceID"`
+	DtsJobDirection               string                        `json:"DtsJobDirection" xml:"DtsJobDirection"`
+	Checkpoint                    string                        `json:"Checkpoint" xml:"Checkpoint"`
 	DataInitializationStatus      DataInitializationStatus      `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus     `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 	DestinationEndpoint           DestinationEndpoint           `json:"DestinationEndpoint" xml:"DestinationEndpoint"`

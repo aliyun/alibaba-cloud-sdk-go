@@ -23,5 +23,6 @@ type DataSynchronizationStatus struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Status       string `json:"Status" xml:"Status"`
 	Percent      string `json:"Percent" xml:"Percent"`
+	NeedUpgrade  bool   `json:"NeedUpgrade" xml:"NeedUpgrade"`
 	DelayMillis  int64  `json:"DelayMillis" xml:"DelayMillis"`
 }

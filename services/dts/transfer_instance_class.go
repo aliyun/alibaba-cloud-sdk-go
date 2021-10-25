@@ -79,17 +79,17 @@ type TransferInstanceClassRequest struct {
 // TransferInstanceClassResponse is the response struct for api TransferInstanceClass
 type TransferInstanceClassResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
+	EndTime        string `json:"EndTime" xml:"EndTime"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
-	EndTime        string `json:"EndTime" xml:"EndTime"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
+	Code           string `json:"Code" xml:"Code"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 }
 
 // CreateTransferInstanceClassRequest creates a request to invoke TransferInstanceClass API

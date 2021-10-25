@@ -87,16 +87,16 @@ type DescribeDtsJobsRequest struct {
 // DescribeDtsJobsResponse is the response struct for api DescribeDtsJobs
 type DescribeDtsJobsResponse struct {
 	*responses.BaseResponse
-	DynamicCode      string         `json:"DynamicCode" xml:"DynamicCode"`
-	DynamicMessage   string         `json:"DynamicMessage" xml:"DynamicMessage"`
-	ErrCode          string         `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage       string         `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode   int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	PageNumber       int            `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int            `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId        string         `json:"RequestId" xml:"RequestId"`
+	ErrCode          string         `json:"ErrCode" xml:"ErrCode"`
 	Success          bool           `json:"Success" xml:"Success"`
+	PageRecordCount  int            `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalRecordCount int            `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	ErrMessage       string         `json:"ErrMessage" xml:"ErrMessage"`
+	DynamicMessage   string         `json:"DynamicMessage" xml:"DynamicMessage"`
+	PageNumber       int            `json:"PageNumber" xml:"PageNumber"`
+	DynamicCode      string         `json:"DynamicCode" xml:"DynamicCode"`
 	DtsJobList       []DtsJobStatus `json:"DtsJobList" xml:"DtsJobList"`
 }
 

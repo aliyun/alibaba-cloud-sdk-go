@@ -17,6 +17,6 @@ package dts
 
 // DtsTag is a nested struct in dts response
 type DtsTag struct {
-	TagKey   string `json:"TagKey" xml:"TagKey"`
 	TagValue string `json:"TagValue" xml:"TagValue"`
+	TagKey   string `json:"TagKey" xml:"TagKey"`
 }

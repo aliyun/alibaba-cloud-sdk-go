@@ -79,39 +79,39 @@ type DescribeDtsJobDetailRequest struct {
 // DescribeDtsJobDetailResponse is the response struct for api DescribeDtsJobDetail
 type DescribeDtsJobDetailResponse struct {
 	*responses.BaseResponse
-	RequestId                string               `json:"RequestId" xml:"RequestId"`
-	Success                  bool                 `json:"Success" xml:"Success"`
-	Code                     int                  `json:"Code" xml:"Code"`
-	ErrCode                  string               `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage               string               `json:"ErrMessage" xml:"ErrMessage"`
-	DynamicMessage           string               `json:"DynamicMessage" xml:"DynamicMessage"`
-	HttpStatusCode           int                  `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	DtsInstanceID            string               `json:"DtsInstanceID" xml:"DtsInstanceID"`
-	DtsJobId                 string               `json:"DtsJobId" xml:"DtsJobId"`
-	DtsJobName               string               `json:"DtsJobName" xml:"DtsJobName"`
-	DtsJobClass              string               `json:"DtsJobClass" xml:"DtsJobClass"`
-	DtsJobDirection          string               `json:"DtsJobDirection" xml:"DtsJobDirection"`
-	PayType                  string               `json:"PayType" xml:"PayType"`
-	ExpireTime               string               `json:"ExpireTime" xml:"ExpireTime"`
-	CreateTime               string               `json:"CreateTime" xml:"CreateTime"`
-	FinishTime               string               `json:"FinishTime" xml:"FinishTime"`
 	Status                   string               `json:"Status" xml:"Status"`
-	Checkpoint               int                  `json:"Checkpoint" xml:"Checkpoint"`
-	Delay                    int                  `json:"Delay" xml:"Delay"`
-	Reserved                 string               `json:"Reserved" xml:"Reserved"`
+	DtsJobName               string               `json:"DtsJobName" xml:"DtsJobName"`
+	FinishTime               string               `json:"FinishTime" xml:"FinishTime"`
 	ErrorMessage             string               `json:"ErrorMessage" xml:"ErrorMessage"`
-	DbObject                 string               `json:"DbObject" xml:"DbObject"`
-	SynchronizationDirection string               `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
-	EtlCalculator            string               `json:"EtlCalculator" xml:"EtlCalculator"`
-	GroupId                  string               `json:"GroupId" xml:"GroupId"`
+	DtsJobId                 string               `json:"DtsJobId" xml:"DtsJobId"`
+	CreateTime               string               `json:"CreateTime" xml:"CreateTime"`
+	PayType                  string               `json:"PayType" xml:"PayType"`
+	Reserved                 string               `json:"Reserved" xml:"Reserved"`
 	DatabaseCount            int                  `json:"DatabaseCount" xml:"DatabaseCount"`
-	SubscribeTopic           string               `json:"SubscribeTopic" xml:"SubscribeTopic"`
-	ConsumptionCheckpoint    string               `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
-	BeginTimestamp           string               `json:"BeginTimestamp" xml:"BeginTimestamp"`
+	DtsJobClass              string               `json:"DtsJobClass" xml:"DtsJobClass"`
 	EndTimestamp             string               `json:"EndTimestamp" xml:"EndTimestamp"`
-	ConsumptionClient        string               `json:"ConsumptionClient" xml:"ConsumptionClient"`
 	AppName                  string               `json:"AppName" xml:"AppName"`
 	DestNetType              string               `json:"DestNetType" xml:"DestNetType"`
+	SubscribeTopic           string               `json:"SubscribeTopic" xml:"SubscribeTopic"`
+	DtsInstanceID            string               `json:"DtsInstanceID" xml:"DtsInstanceID"`
+	RequestId                string               `json:"RequestId" xml:"RequestId"`
+	Code                     int                  `json:"Code" xml:"Code"`
+	Checkpoint               int64                `json:"Checkpoint" xml:"Checkpoint"`
+	Delay                    int64                `json:"Delay" xml:"Delay"`
+	ExpireTime               string               `json:"ExpireTime" xml:"ExpireTime"`
+	ErrCode                  string               `json:"ErrCode" xml:"ErrCode"`
+	Success                  bool                 `json:"Success" xml:"Success"`
+	ErrMessage               string               `json:"ErrMessage" xml:"ErrMessage"`
+	ConsumptionClient        string               `json:"ConsumptionClient" xml:"ConsumptionClient"`
+	DbObject                 string               `json:"DbObject" xml:"DbObject"`
+	DynamicMessage           string               `json:"DynamicMessage" xml:"DynamicMessage"`
+	ConsumptionCheckpoint    string               `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
+	EtlCalculator            string               `json:"EtlCalculator" xml:"EtlCalculator"`
+	HttpStatusCode           int                  `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	BeginTimestamp           string               `json:"BeginTimestamp" xml:"BeginTimestamp"`
+	GroupId                  string               `json:"GroupId" xml:"GroupId"`
+	SynchronizationDirection string               `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
+	DtsJobDirection          string               `json:"DtsJobDirection" xml:"DtsJobDirection"`
 	SourceEndpoint           SourceEndpoint       `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	DestinationEndpoint      DestinationEndpoint  `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
 	MigrationMode            MigrationMode        `json:"MigrationMode" xml:"MigrationMode"`

@@ -17,8 +17,8 @@ package dts
 
 // DataEtlStatus is a nested struct in dts response
 type DataEtlStatus struct {
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Percent      string `json:"Percent" xml:"Percent"`
-	Progress     string `json:"Progress" xml:"Progress"`
 	Status       string `json:"Status" xml:"Status"`
+	Percent      string `json:"Percent" xml:"Percent"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Progress     string `json:"Progress" xml:"Progress"`
 }
