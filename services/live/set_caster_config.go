@@ -79,6 +79,7 @@ type SetCasterConfigRequest struct {
 	TranscodeConfig  string           `position:"Query" name:"TranscodeConfig"`
 	CasterName       string           `position:"Query" name:"CasterName"`
 	SideOutputUrl    string           `position:"Query" name:"SideOutputUrl"`
+	SyncGroupsConfig string           `position:"Query" name:"SyncGroupsConfig"`
 	CasterId         string           `position:"Query" name:"CasterId"`
 	DomainName       string           `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
