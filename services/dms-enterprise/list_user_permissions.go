@@ -71,6 +71,7 @@ func (client *Client) ListUserPermissionsWithCallback(request *ListUserPermissio
 // ListUserPermissionsRequest is the request struct for api ListUserPermissions
 type ListUserPermissionsRequest struct {
 	*requests.RpcRequest
+	SearchKey    string           `position:"Query" name:"SearchKey"`
 	UserId       string           `position:"Query" name:"UserId"`
 	Tid          requests.Integer `position:"Query" name:"Tid"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`

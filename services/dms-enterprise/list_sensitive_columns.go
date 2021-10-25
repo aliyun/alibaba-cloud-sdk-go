@@ -76,7 +76,9 @@ type ListSensitiveColumnsRequest struct {
 	Tid           requests.Integer `position:"Query" name:"Tid"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityLevel string           `position:"Query" name:"SecurityLevel"`
+	DbId          requests.Integer `position:"Query" name:"DbId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Logic         requests.Boolean `position:"Query" name:"Logic"`
 	TableName     string           `position:"Query" name:"TableName"`
 }
 

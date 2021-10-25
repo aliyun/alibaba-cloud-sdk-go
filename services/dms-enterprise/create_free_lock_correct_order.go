@@ -75,7 +75,7 @@ type CreateFreeLockCorrectOrderRequest struct {
 	AttachmentKey   string                          `position:"Query" name:"AttachmentKey"`
 	Param           CreateFreeLockCorrectOrderParam `position:"Query" name:"Param"  type:"Struct"`
 	Comment         string                          `position:"Query" name:"Comment"`
-	RelatedUserList *[]string                       `position:"Query" name:"RelatedUserList"  type:"Repeated"`
+	RelatedUserList *[]string                       `position:"Query" name:"RelatedUserList"  type:"Json"`
 }
 
 // CreateFreeLockCorrectOrderParam is a repeated param struct in CreateFreeLockCorrectOrderRequest

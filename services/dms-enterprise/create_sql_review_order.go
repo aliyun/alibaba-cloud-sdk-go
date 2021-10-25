@@ -74,7 +74,7 @@ type CreateSQLReviewOrderRequest struct {
 	Tid             requests.Integer          `position:"Query" name:"Tid"`
 	Param           CreateSQLReviewOrderParam `position:"Query" name:"Param"  type:"Struct"`
 	Comment         string                    `position:"Query" name:"Comment"`
-	RelatedUserList *[]string                 `position:"Query" name:"RelatedUserList"  type:"Repeated"`
+	RelatedUserList *[]string                 `position:"Query" name:"RelatedUserList"  type:"Json"`
 }
 
 // CreateSQLReviewOrderParam is a repeated param struct in CreateSQLReviewOrderRequest

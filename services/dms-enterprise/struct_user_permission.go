@@ -21,8 +21,10 @@ type UserPermission struct {
 	SchemaName   string                                  `json:"SchemaName" xml:"SchemaName"`
 	TableName    string                                  `json:"TableName" xml:"TableName"`
 	TableId      string                                  `json:"TableId" xml:"TableId"`
+	Port         int64                                   `json:"Port" xml:"Port"`
 	UserNickName string                                  `json:"UserNickName" xml:"UserNickName"`
 	DbType       string                                  `json:"DbType" xml:"DbType"`
+	Host         string                                  `json:"Host" xml:"Host"`
 	ColumnName   string                                  `json:"ColumnName" xml:"ColumnName"`
 	EnvType      string                                  `json:"EnvType" xml:"EnvType"`
 	SearchName   string                                  `json:"SearchName" xml:"SearchName"`

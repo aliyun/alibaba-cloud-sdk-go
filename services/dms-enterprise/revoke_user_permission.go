@@ -76,6 +76,7 @@ type RevokeUserPermissionRequest struct {
 	DsType       string           `position:"Query" name:"DsType"`
 	UserId       string           `position:"Query" name:"UserId"`
 	Tid          requests.Integer `position:"Query" name:"Tid"`
+	InstanceId   requests.Integer `position:"Query" name:"InstanceId"`
 	DbId         string           `position:"Query" name:"DbId"`
 	TableId      string           `position:"Query" name:"TableId"`
 	Logic        requests.Boolean `position:"Query" name:"Logic"`

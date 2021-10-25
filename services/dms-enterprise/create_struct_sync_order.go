@@ -75,7 +75,7 @@ type CreateStructSyncOrderRequest struct {
 	AttachmentKey   string                     `position:"Query" name:"AttachmentKey"`
 	Param           CreateStructSyncOrderParam `position:"Query" name:"Param"  type:"Struct"`
 	Comment         string                     `position:"Query" name:"Comment"`
-	RelatedUserList *[]string                  `position:"Query" name:"RelatedUserList"  type:"Repeated"`
+	RelatedUserList *[]string                  `position:"Query" name:"RelatedUserList"  type:"Json"`
 }
 
 // CreateStructSyncOrderParam is a repeated param struct in CreateStructSyncOrderRequest

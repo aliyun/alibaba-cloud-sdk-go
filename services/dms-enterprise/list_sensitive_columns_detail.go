@@ -74,6 +74,8 @@ type ListSensitiveColumnsDetailRequest struct {
 	SchemaName string           `position:"Query" name:"SchemaName"`
 	ColumnName string           `position:"Query" name:"ColumnName"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
+	DbId       requests.Integer `position:"Query" name:"DbId"`
+	Logic      requests.Boolean `position:"Query" name:"Logic"`
 	TableName  string           `position:"Query" name:"TableName"`
 }
 

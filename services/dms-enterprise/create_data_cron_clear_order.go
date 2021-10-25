@@ -75,7 +75,7 @@ type CreateDataCronClearOrderRequest struct {
 	AttachmentKey   string                        `position:"Query" name:"AttachmentKey"`
 	Param           CreateDataCronClearOrderParam `position:"Query" name:"Param"  type:"Struct"`
 	Comment         string                        `position:"Query" name:"Comment"`
-	RelatedUserList *[]string                     `position:"Query" name:"RelatedUserList"  type:"Repeated"`
+	RelatedUserList *[]string                     `position:"Query" name:"RelatedUserList"  type:"Json"`
 }
 
 // CreateDataCronClearOrderParam is a repeated param struct in CreateDataCronClearOrderRequest
