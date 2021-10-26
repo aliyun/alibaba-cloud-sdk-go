@@ -74,6 +74,8 @@ type SmartCallRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VoiceCodeParam       string           `position:"Query" name:"VoiceCodeParam"`
 	EarlyMediaAsr        requests.Boolean `position:"Query" name:"EarlyMediaAsr"`
+	BackgroundSpeed      requests.Integer `position:"Query" name:"BackgroundSpeed"`
+	BackgroundVolume     requests.Integer `position:"Query" name:"BackgroundVolume"`
 	Speed                requests.Integer `position:"Query" name:"Speed"`
 	AsrBaseId            string           `position:"Query" name:"AsrBaseId"`
 	SessionTimeout       requests.Integer `position:"Query" name:"SessionTimeout"`
@@ -82,6 +84,7 @@ type SmartCallRequest struct {
 	TtsSpeed             requests.Integer `position:"Query" name:"TtsSpeed"`
 	VoiceCode            string           `position:"Query" name:"VoiceCode"`
 	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
+	EnableITN            requests.Boolean `position:"Query" name:"EnableITN"`
 	ActionCodeTimeBreak  requests.Integer `position:"Query" name:"ActionCodeTimeBreak"`
 	TtsConf              requests.Boolean `position:"Query" name:"TtsConf"`
 	ActionCodeBreak      requests.Boolean `position:"Query" name:"ActionCodeBreak"`
@@ -92,6 +95,7 @@ type SmartCallRequest struct {
 	StreamAsr            requests.Integer `position:"Query" name:"StreamAsr"`
 	Volume               requests.Integer `position:"Query" name:"Volume"`
 	MuteTime             requests.Integer `position:"Query" name:"MuteTime"`
+	BackgroundFileCode   string           `position:"Query" name:"BackgroundFileCode"`
 	OutId                string           `position:"Query" name:"OutId"`
 	AsrModelId           string           `position:"Query" name:"AsrModelId"`
 	PauseTime            requests.Integer `position:"Query" name:"PauseTime"`
@@ -101,10 +105,10 @@ type SmartCallRequest struct {
 // SmartCallResponse is the response struct for api SmartCall
 type SmartCallResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	CallId    string `json:"CallId" xml:"CallId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	CallId    string `json:"CallId" xml:"CallId"`
 }
 
 // CreateSmartCallRequest creates a request to invoke SmartCall API

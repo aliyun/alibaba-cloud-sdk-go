@@ -87,10 +87,10 @@ type SingleCallByTtsRequest struct {
 // SingleCallByTtsResponse is the response struct for api SingleCallByTts
 type SingleCallByTtsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	CallId    string `json:"CallId" xml:"CallId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	CallId    string `json:"CallId" xml:"CallId"`
 }
 
 // CreateSingleCallByTtsRequest creates a request to invoke SingleCallByTts API

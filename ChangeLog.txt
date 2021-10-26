@@ -1,3 +1,7 @@
+2021-10-26 Version: v1.61.1304
+- Generated 2017-05-25 for `Dyvmsapi`.
+- Update Dyvmsapi SDK.
+
 2021-10-25 Version: v1.61.1303
 - Generated 2020-01-01 for `Dts`.
 - DescribeDtsJobs api, delay filed change from int to long.
