@@ -91,6 +91,7 @@ type InitFaceVerifyRequest struct {
 	ReturnUrl              string           `position:"Query" name:"ReturnUrl"`
 	CallbackUrl            string           `position:"Query" name:"CallbackUrl"`
 	Crop                   string           `position:"Body" name:"Crop"`
+	CertifyUrlType         string           `position:"Query" name:"CertifyUrlType"`
 }
 
 // InitFaceVerifyResponse is the response struct for api InitFaceVerify
@@ -107,7 +108,7 @@ func CreateInitFaceVerifyRequest() (request *InitFaceVerifyRequest) {
 	request = &InitFaceVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitFaceVerify", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

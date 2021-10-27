@@ -1,3 +1,7 @@
+2021-10-27 Version: v1.61.1307
+- Generated 2019-03-07 for `Cloudauth`.
+
+
 2021-10-27 Version: v1.61.1306
 - Generated 2019-01-01 for `HBase`.
 - Fix ModifyInstanceName.

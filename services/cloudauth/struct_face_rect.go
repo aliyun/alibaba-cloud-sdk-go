@@ -17,8 +17,8 @@ package cloudauth
 
 // FaceRect is a nested struct in cloudauth response
 type FaceRect struct {
-	Top    int `json:"Top" xml:"Top"`
 	Left   int `json:"Left" xml:"Left"`
+	Top    int `json:"Top" xml:"Top"`
 	Width  int `json:"Width" xml:"Width"`
 	Height int `json:"Height" xml:"Height"`
 }

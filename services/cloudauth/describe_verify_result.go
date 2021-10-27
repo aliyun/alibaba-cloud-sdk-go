@@ -78,9 +78,9 @@ type DescribeVerifyResultRequest struct {
 // DescribeVerifyResultResponse is the response struct for api DescribeVerifyResult
 type DescribeVerifyResultResponse struct {
 	*responses.BaseResponse
-	RequestId                 string   `json:"RequestId" xml:"RequestId"`
-	VerifyStatus              int      `json:"VerifyStatus" xml:"VerifyStatus"`
 	AuthorityComparisionScore float64  `json:"AuthorityComparisionScore" xml:"AuthorityComparisionScore"`
+	VerifyStatus              int      `json:"VerifyStatus" xml:"VerifyStatus"`
+	RequestId                 string   `json:"RequestId" xml:"RequestId"`
 	FaceComparisonScore       float64  `json:"FaceComparisonScore" xml:"FaceComparisonScore"`
 	IdCardFaceComparisonScore float64  `json:"IdCardFaceComparisonScore" xml:"IdCardFaceComparisonScore"`
 	Material                  Material `json:"Material" xml:"Material"`
@@ -91,7 +91,7 @@ func CreateDescribeVerifyResultRequest() (request *DescribeVerifyResultRequest) 
 	request = &DescribeVerifyResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeVerifyResult", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeVerifyResult", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

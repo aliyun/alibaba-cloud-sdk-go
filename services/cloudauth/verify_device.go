@@ -81,9 +81,9 @@ type VerifyDeviceRequest struct {
 // VerifyDeviceResponse is the response struct for api VerifyDevice
 type VerifyDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Code         string       `json:"Code" xml:"Code"`
 	Message      string       `json:"Message" xml:"Message"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
@@ -92,7 +92,7 @@ func CreateVerifyDeviceRequest() (request *VerifyDeviceRequest) {
 	request = &VerifyDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "VerifyDevice", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "VerifyDevice", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

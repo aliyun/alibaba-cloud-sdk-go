@@ -88,7 +88,7 @@ func CreateUpdateFaceConfigRequest() (request *UpdateFaceConfigRequest) {
 	request = &UpdateFaceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "UpdateFaceConfig", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "UpdateFaceConfig", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

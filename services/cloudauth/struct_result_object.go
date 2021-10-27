@@ -32,8 +32,8 @@ type ResultObject struct {
 	SecurityToken     string  `json:"SecurityToken" xml:"SecurityToken"`
 	Message           string  `json:"Message" xml:"Message"`
 	Protocol          string  `json:"Protocol" xml:"Protocol"`
-	ExtParams         string  `json:"ExtParams" xml:"ExtParams"`
 	OssEndPoint       string  `json:"OssEndPoint" xml:"OssEndPoint"`
+	ExtParams         string  `json:"ExtParams" xml:"ExtParams"`
 	RetCodeSub        string  `json:"RetCodeSub" xml:"RetCodeSub"`
 	SubCode           string  `json:"SubCode" xml:"SubCode"`
 	RetMessageSub     string  `json:"RetMessageSub" xml:"RetMessageSub"`

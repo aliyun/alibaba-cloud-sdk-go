@@ -101,7 +101,7 @@ func CreateLivenessFaceVerifyRequest() (request *LivenessFaceVerifyRequest) {
 	request = &LivenessFaceVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "LivenessFaceVerify", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "LivenessFaceVerify", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

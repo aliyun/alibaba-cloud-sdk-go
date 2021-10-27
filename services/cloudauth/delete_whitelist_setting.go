@@ -89,7 +89,7 @@ func CreateDeleteWhitelistSettingRequest() (request *DeleteWhitelistSettingReque
 	request = &DeleteWhitelistSettingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DeleteWhitelistSetting", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DeleteWhitelistSetting", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

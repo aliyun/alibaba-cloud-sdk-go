@@ -78,10 +78,10 @@ type DetectFaceAttributesRequest struct {
 // DetectFaceAttributesResponse is the response struct for api DetectFaceAttributes
 type DetectFaceAttributesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -90,7 +90,7 @@ func CreateDetectFaceAttributesRequest() (request *DetectFaceAttributesRequest) 
 	request = &DetectFaceAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DetectFaceAttributes", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DetectFaceAttributes", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

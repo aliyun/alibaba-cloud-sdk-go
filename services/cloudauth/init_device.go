@@ -89,9 +89,9 @@ type InitDeviceRequest struct {
 // InitDeviceResponse is the response struct for api InitDevice
 type InitDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Message      string       `json:"Message" xml:"Message"`
 	Code         string       `json:"Code" xml:"Code"`
+	Message      string       `json:"Message" xml:"Message"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
@@ -100,7 +100,7 @@ func CreateInitDeviceRequest() (request *InitDeviceRequest) {
 	request = &InitDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitDevice", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitDevice", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

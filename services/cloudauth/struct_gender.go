@@ -17,6 +17,6 @@ package cloudauth
 
 // Gender is a nested struct in cloudauth response
 type Gender struct {
-	Score float64 `json:"Score" xml:"Score"`
 	Value string  `json:"Value" xml:"Value"`
+	Score float64 `json:"Score" xml:"Score"`
 }
