@@ -123,6 +123,8 @@ type DescribeInstanceResponse struct {
 	ResourceGroupId      string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	EncryptionType       string                 `json:"EncryptionType" xml:"EncryptionType"`
 	EncryptionKey        string                 `json:"EncryptionKey" xml:"EncryptionKey"`
+	NeedUpgrade          bool                   `json:"NeedUpgrade" xml:"NeedUpgrade"`
+	NeedUpgradeComps     NeedUpgradeComps       `json:"NeedUpgradeComps" xml:"NeedUpgradeComps"`
 	Tags                 TagsInDescribeInstance `json:"Tags" xml:"Tags"`
 }
 
