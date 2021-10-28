@@ -71,30 +71,27 @@ func (client *Client) DescribeVerifyTokenWithCallback(request *DescribeVerifyTok
 // DescribeVerifyTokenRequest is the request struct for api DescribeVerifyToken
 type DescribeVerifyTokenRequest struct {
 	*requests.RpcRequest
-	FaceRetainedImageUrl string           `position:"Query" name:"FaceRetainedImageUrl"`
-	UserId               string           `position:"Query" name:"UserId"`
-	CallbackSeed         string           `position:"Query" name:"CallbackSeed"`
-	UserIp               string           `position:"Query" name:"UserIp"`
-	IdCardBackImageUrl   string           `position:"Query" name:"IdCardBackImageUrl"`
 	IdCardNumber         string           `position:"Query" name:"IdCardNumber"`
 	IdCardFrontImageUrl  string           `position:"Query" name:"IdCardFrontImageUrl"`
+	FaceRetainedImageUrl string           `position:"Query" name:"FaceRetainedImageUrl"`
+	UserId               string           `position:"Query" name:"UserId"`
 	BizType              string           `position:"Query" name:"BizType"`
-	PassedRedirectUrl    string           `position:"Query" name:"PassedRedirectUrl"`
 	UserRegistTime       requests.Integer `position:"Query" name:"UserRegistTime"`
 	BizId                string           `position:"Query" name:"BizId"`
 	Name                 string           `position:"Query" name:"Name"`
+	UserIp               string           `position:"Query" name:"UserIp"`
+	IdCardBackImageUrl   string           `position:"Query" name:"IdCardBackImageUrl"`
 	UserPhoneNumber      string           `position:"Query" name:"UserPhoneNumber"`
-	CallbackUrl          string           `position:"Query" name:"CallbackUrl"`
-	FailedRedirectUrl    string           `position:"Query" name:"FailedRedirectUrl"`
 }
 
 // DescribeVerifyTokenResponse is the response struct for api DescribeVerifyToken
 type DescribeVerifyTokenResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	VerifyPageUrl  string         `json:"VerifyPageUrl" xml:"VerifyPageUrl"`
-	VerifyToken    string         `json:"VerifyToken" xml:"VerifyToken"`
-	OssUploadToken OssUploadToken `json:"OssUploadToken" xml:"OssUploadToken"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	Code         string       `json:"Code" xml:"Code"`
+	Message      string       `json:"Message" xml:"Message"`
+	Success      bool         `json:"Success" xml:"Success"`
+	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
 // CreateDescribeVerifyTokenRequest creates a request to invoke DescribeVerifyToken API
@@ -102,7 +99,7 @@ func CreateDescribeVerifyTokenRequest() (request *DescribeVerifyTokenRequest) {
 	request = &DescribeVerifyTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeVerifyToken", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2020-11-12", "DescribeVerifyToken", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

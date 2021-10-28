@@ -17,29 +17,19 @@ package cloudauth
 
 // ResultObject is a nested struct in cloudauth response
 type ResultObject struct {
-	VerifyScore       float64 `json:"VerifyScore" xml:"VerifyScore"`
-	ValidationRetCode string  `json:"ValidationRetCode" xml:"ValidationRetCode"`
-	PresignedUrl      string  `json:"PresignedUrl" xml:"PresignedUrl"`
-	FileNamePrefix    string  `json:"FileNamePrefix" xml:"FileNamePrefix"`
-	ProductRetCode    string  `json:"ProductRetCode" xml:"ProductRetCode"`
-	DeviceToken       string  `json:"DeviceToken" xml:"DeviceToken"`
-	RetCode           string  `json:"RetCode" xml:"RetCode"`
-	Passed            string  `json:"Passed" xml:"Passed"`
-	MaterialInfo      string  `json:"MaterialInfo" xml:"MaterialInfo"`
-	IdentityInfo      string  `json:"IdentityInfo" xml:"IdentityInfo"`
-	CertifyId         string  `json:"CertifyId" xml:"CertifyId"`
-	FileName          string  `json:"FileName" xml:"FileName"`
-	SecurityToken     string  `json:"SecurityToken" xml:"SecurityToken"`
-	Message           string  `json:"Message" xml:"Message"`
-	Protocol          string  `json:"Protocol" xml:"Protocol"`
-	OssEndPoint       string  `json:"OssEndPoint" xml:"OssEndPoint"`
-	ExtParams         string  `json:"ExtParams" xml:"ExtParams"`
-	RetCodeSub        string  `json:"RetCodeSub" xml:"RetCodeSub"`
-	SubCode           string  `json:"SubCode" xml:"SubCode"`
-	RetMessageSub     string  `json:"RetMessageSub" xml:"RetMessageSub"`
-	AccessKeyId       string  `json:"AccessKeyId" xml:"AccessKeyId"`
-	AccessKeySecret   string  `json:"AccessKeySecret" xml:"AccessKeySecret"`
-	CertifyUrl        string  `json:"CertifyUrl" xml:"CertifyUrl"`
-	BucketName        string  `json:"BucketName" xml:"BucketName"`
-	HasNext           string  `json:"HasNext" xml:"HasNext"`
+	Score                     float64                  `json:"Score" xml:"Score"`
+	VerifyStatus              int                      `json:"VerifyStatus" xml:"VerifyStatus"`
+	FaceComparisonScore       float64                  `json:"FaceComparisonScore" xml:"FaceComparisonScore"`
+	SimilarityScore           float64                  `json:"SimilarityScore" xml:"SimilarityScore"`
+	Passed                    string                   `json:"Passed" xml:"Passed"`
+	AuthorityComparisionScore float64                  `json:"AuthorityComparisionScore" xml:"AuthorityComparisionScore"`
+	VerifyPageUrl             string                   `json:"VerifyPageUrl" xml:"VerifyPageUrl"`
+	ImgWidth                  int                      `json:"ImgWidth" xml:"ImgWidth"`
+	ImgHeight                 int                      `json:"ImgHeight" xml:"ImgHeight"`
+	IdCardFaceComparisonScore float64                  `json:"IdCardFaceComparisonScore" xml:"IdCardFaceComparisonScore"`
+	VerifyToken               string                   `json:"VerifyToken" xml:"VerifyToken"`
+	FrameUrl                  string                   `json:"FrameUrl" xml:"FrameUrl"`
+	ConfidenceThresholds      string                   `json:"ConfidenceThresholds" xml:"ConfidenceThresholds"`
+	Material                  MaterialInVerifyMaterial `json:"Material" xml:"Material"`
+	FaceInfos                 FaceInfos                `json:"FaceInfos" xml:"FaceInfos"`
 }

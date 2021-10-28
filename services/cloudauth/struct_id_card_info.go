@@ -20,12 +20,12 @@ type IdCardInfo struct {
 	Name          string `json:"Name" xml:"Name"`
 	Sex           string `json:"Sex" xml:"Sex"`
 	EndDate       string `json:"EndDate" xml:"EndDate"`
-	BackImageUrl  string `json:"BackImageUrl" xml:"BackImageUrl"`
 	Nationality   string `json:"Nationality" xml:"Nationality"`
+	BackImageUrl  string `json:"BackImageUrl" xml:"BackImageUrl"`
 	Authority     string `json:"Authority" xml:"Authority"`
 	Birth         string `json:"Birth" xml:"Birth"`
 	Address       string `json:"Address" xml:"Address"`
 	StartDate     string `json:"StartDate" xml:"StartDate"`
-	FrontImageUrl string `json:"FrontImageUrl" xml:"FrontImageUrl"`
 	Number        string `json:"Number" xml:"Number"`
+	FrontImageUrl string `json:"FrontImageUrl" xml:"FrontImageUrl"`
 }

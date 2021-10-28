@@ -71,25 +71,24 @@ func (client *Client) VerifyMaterialWithCallback(request *VerifyMaterialRequest,
 // VerifyMaterialRequest is the request struct for api VerifyMaterial
 type VerifyMaterialRequest struct {
 	*requests.RpcRequest
-	FaceImageUrl        string `position:"Query" name:"FaceImageUrl"`
-	UserId              string `position:"Query" name:"UserId"`
-	IdCardBackImageUrl  string `position:"Query" name:"IdCardBackImageUrl"`
 	IdCardNumber        string `position:"Query" name:"IdCardNumber"`
 	IdCardFrontImageUrl string `position:"Query" name:"IdCardFrontImageUrl"`
+	FaceImageUrl        string `position:"Query" name:"FaceImageUrl"`
+	UserId              string `position:"Query" name:"UserId"`
 	BizType             string `position:"Query" name:"BizType"`
 	BizId               string `position:"Query" name:"BizId"`
 	Name                string `position:"Query" name:"Name"`
+	IdCardBackImageUrl  string `position:"Query" name:"IdCardBackImageUrl"`
 }
 
 // VerifyMaterialResponse is the response struct for api VerifyMaterial
 type VerifyMaterialResponse struct {
 	*responses.BaseResponse
-	RequestId                 string                   `json:"RequestId" xml:"RequestId"`
-	VerifyToken               string                   `json:"VerifyToken" xml:"VerifyToken"`
-	VerifyStatus              int                      `json:"VerifyStatus" xml:"VerifyStatus"`
-	AuthorityComparisionScore float64                  `json:"AuthorityComparisionScore" xml:"AuthorityComparisionScore"`
-	IdCardFaceComparisonScore float64                  `json:"IdCardFaceComparisonScore" xml:"IdCardFaceComparisonScore"`
-	Material                  MaterialInVerifyMaterial `json:"Material" xml:"Material"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	Code         string       `json:"Code" xml:"Code"`
+	Message      string       `json:"Message" xml:"Message"`
+	Success      bool         `json:"Success" xml:"Success"`
+	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
 // CreateVerifyMaterialRequest creates a request to invoke VerifyMaterial API
@@ -97,7 +96,7 @@ func CreateVerifyMaterialRequest() (request *VerifyMaterialRequest) {
 	request = &VerifyMaterialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "VerifyMaterial", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2020-11-12", "VerifyMaterial", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

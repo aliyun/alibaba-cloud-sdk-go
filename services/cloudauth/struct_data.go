@@ -17,9 +17,29 @@ package cloudauth
 
 // Data is a nested struct in cloudauth response
 type Data struct {
-	ImgWidth             int       `json:"ImgWidth" xml:"ImgWidth"`
-	ImgHeight            int       `json:"ImgHeight" xml:"ImgHeight"`
-	SimilarityScore      float64   `json:"SimilarityScore" xml:"SimilarityScore"`
-	ConfidenceThresholds string    `json:"ConfidenceThresholds" xml:"ConfidenceThresholds"`
-	FaceInfos            FaceInfos `json:"FaceInfos" xml:"FaceInfos"`
+	Name                     string       `json:"Name" xml:"Name"`
+	TrustedScore             float64      `json:"TrustedScore" xml:"TrustedScore"`
+	IdCardType               string       `json:"IdCardType" xml:"IdCardType"`
+	IdentificationNumber     string       `json:"IdentificationNumber" xml:"IdentificationNumber"`
+	Sex                      string       `json:"Sex" xml:"Sex"`
+	ImgWidth                 int          `json:"ImgWidth" xml:"ImgWidth"`
+	IdCardBackPic            string       `json:"IdCardBackPic" xml:"IdCardBackPic"`
+	Authority                string       `json:"Authority" xml:"Authority"`
+	CloudauthPageUrl         string       `json:"CloudauthPageUrl" xml:"CloudauthPageUrl"`
+	ImgHeight                int          `json:"ImgHeight" xml:"ImgHeight"`
+	StatusCode               int          `json:"StatusCode" xml:"StatusCode"`
+	IdCardFrontPic           string       `json:"IdCardFrontPic" xml:"IdCardFrontPic"`
+	FacePic                  string       `json:"FacePic" xml:"FacePic"`
+	IdCardExpiry             string       `json:"IdCardExpiry" xml:"IdCardExpiry"`
+	AuthorityComparisonScore float64      `json:"AuthorityComparisonScore" xml:"AuthorityComparisonScore"`
+	AuditConclusions         string       `json:"AuditConclusions" xml:"AuditConclusions"`
+	IdCardStartDate          string       `json:"IdCardStartDate" xml:"IdCardStartDate"`
+	SimilarityScore          float64      `json:"SimilarityScore" xml:"SimilarityScore"`
+	Address                  string       `json:"Address" xml:"Address"`
+	EthnicGroup              string       `json:"EthnicGroup" xml:"EthnicGroup"`
+	ConfidenceThresholds     string       `json:"ConfidenceThresholds" xml:"ConfidenceThresholds"`
+	StsToken                 StsToken     `json:"StsToken" xml:"StsToken"`
+	VerifyToken              VerifyToken  `json:"VerifyToken" xml:"VerifyToken"`
+	VerifyStatus             VerifyStatus `json:"VerifyStatus" xml:"VerifyStatus"`
+	FaceInfos                FaceInfos    `json:"FaceInfos" xml:"FaceInfos"`
 }

@@ -17,7 +17,17 @@ package cloudauth
 
 // ItemsItem is a nested struct in cloudauth response
 type ItemsItem struct {
-	BizType    string `json:"BizType" xml:"BizType"`
-	BizName    string `json:"BizName" xml:"BizName"`
-	GmtUpdated int64  `json:"GmtUpdated" xml:"GmtUpdated"`
+	BizId        string `json:"BizId" xml:"BizId"`
+	OuterOrderNo string `json:"OuterOrderNo" xml:"OuterOrderNo"`
+	Content      string `json:"Content" xml:"Content"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	SmsSize      int    `json:"SmsSize" xml:"SmsSize"`
+	Mobile       string `json:"Mobile" xml:"Mobile"`
+	ReceiveDate  string `json:"ReceiveDate" xml:"ReceiveDate"`
+	SendDate     string `json:"SendDate" xml:"SendDate"`
+	SignName     string `json:"SignName" xml:"SignName"`
+	TemplateCode string `json:"TemplateCode" xml:"TemplateCode"`
+	TaskDate     string `json:"TaskDate" xml:"TaskDate"`
+	SendStatus   string `json:"SendStatus" xml:"SendStatus"`
 }

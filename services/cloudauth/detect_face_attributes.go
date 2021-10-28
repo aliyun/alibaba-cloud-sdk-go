@@ -71,18 +71,20 @@ func (client *Client) DetectFaceAttributesWithCallback(request *DetectFaceAttrib
 // DetectFaceAttributesRequest is the request struct for api DetectFaceAttributes
 type DetectFaceAttributesRequest struct {
 	*requests.RpcRequest
-	BizType       string `position:"Body" name:"BizType"`
-	MaterialValue string `position:"Body" name:"MaterialValue"`
+	ImageFile string `position:"Body" name:"ImageFile"`
+	BizType   string `position:"Body" name:"BizType"`
+	ImageUrl  string `position:"Body" name:"ImageUrl"`
+	BizId     string `position:"Body" name:"BizId"`
 }
 
 // DetectFaceAttributesResponse is the response struct for api DetectFaceAttributes
 type DetectFaceAttributesResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId    string                             `json:"RequestId" xml:"RequestId"`
+	Success      bool                               `json:"Success" xml:"Success"`
+	Code         string                             `json:"Code" xml:"Code"`
+	Message      string                             `json:"Message" xml:"Message"`
+	ResultObject ResultObjectInDetectFaceAttributes `json:"ResultObject" xml:"ResultObject"`
 }
 
 // CreateDetectFaceAttributesRequest creates a request to invoke DetectFaceAttributes API
@@ -90,7 +92,7 @@ func CreateDetectFaceAttributesRequest() (request *DetectFaceAttributesRequest) 
 	request = &DetectFaceAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DetectFaceAttributes", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2020-11-12", "DetectFaceAttributes", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }
