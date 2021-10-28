@@ -1,3 +1,8 @@
+2021-10-28 Version: v1.61.1310
+- Generated 2016-04-28 for `Vpc`.
+- Supported SecurityProtectionTypes for AllocateEipAddress.
+- Supported SecurityProtectionTypes for CreateCommonBandwidthPackage.
+
 2021-10-28 Version: v1.61.1309
 - Generated 2019-03-07, 2020-06-18, 2018-09-16, 2020-11-12 for `Cloudauth`.
 
