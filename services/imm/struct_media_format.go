@@ -17,16 +17,16 @@ package imm
 
 // MediaFormat is a nested struct in imm response
 type MediaFormat struct {
-	Size           string  `json:"Size" xml:"Size"`
-	NumberStreams  int     `json:"NumberStreams" xml:"NumberStreams"`
-	FormatLongName string  `json:"FormatLongName" xml:"FormatLongName"`
-	StartTime      string  `json:"StartTime" xml:"StartTime"`
 	CreationTime   string  `json:"CreationTime" xml:"CreationTime"`
-	FormatName     string  `json:"FormatName" xml:"FormatName"`
-	Duration       string  `json:"Duration" xml:"Duration"`
-	Bitrate        string  `json:"Bitrate" xml:"Bitrate"`
-	Location       string  `json:"Location" xml:"Location"`
 	NumberPrograms int     `json:"NumberPrograms" xml:"NumberPrograms"`
-	Address        Address `json:"Address" xml:"Address"`
+	NumberStreams  int     `json:"NumberStreams" xml:"NumberStreams"`
+	Bitrate        string  `json:"Bitrate" xml:"Bitrate"`
+	StartTime      string  `json:"StartTime" xml:"StartTime"`
+	Size           string  `json:"Size" xml:"Size"`
+	FormatLongName string  `json:"FormatLongName" xml:"FormatLongName"`
+	Duration       string  `json:"Duration" xml:"Duration"`
+	FormatName     string  `json:"FormatName" xml:"FormatName"`
+	Location       string  `json:"Location" xml:"Location"`
 	Tag            Tag     `json:"Tag" xml:"Tag"`
+	Address        Address `json:"Address" xml:"Address"`
 }

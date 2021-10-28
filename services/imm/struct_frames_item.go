@@ -17,35 +17,35 @@ package imm
 
 // FramesItem is a nested struct in imm response
 type FramesItem struct {
-	FacesModifyTime string      `json:"FacesModifyTime" xml:"FacesModifyTime"`
-	OCRModifyTime   string      `json:"OCRModifyTime" xml:"OCRModifyTime"`
-	OCRStatus       string      `json:"OCRStatus" xml:"OCRStatus"`
-	SourcePosition  string      `json:"SourcePosition" xml:"SourcePosition"`
-	Exif            string      `json:"Exif" xml:"Exif"`
-	ImageUri        string      `json:"ImageUri" xml:"ImageUri"`
-	ImageWidth      int         `json:"ImageWidth" xml:"ImageWidth"`
-	ImageFormat     string      `json:"ImageFormat" xml:"ImageFormat"`
-	SourceType      string      `json:"SourceType" xml:"SourceType"`
-	ModifyTime      string      `json:"ModifyTime" xml:"ModifyTime"`
-	FileSize        int         `json:"FileSize" xml:"FileSize"`
-	SourceUri       string      `json:"SourceUri" xml:"SourceUri"`
-	CreateTime      string      `json:"CreateTime" xml:"CreateTime"`
-	FacesStatus     string      `json:"FacesStatus" xml:"FacesStatus"`
-	RemarksA        string      `json:"RemarksA" xml:"RemarksA"`
-	ImageHeight     int         `json:"ImageHeight" xml:"ImageHeight"`
-	RemarksB        string      `json:"RemarksB" xml:"RemarksB"`
-	ImageTime       string      `json:"ImageTime" xml:"ImageTime"`
-	Orientation     string      `json:"Orientation" xml:"Orientation"`
-	Location        string      `json:"Location" xml:"Location"`
-	OCRFailReason   string      `json:"OCRFailReason" xml:"OCRFailReason"`
-	FacesFailReason string      `json:"FacesFailReason" xml:"FacesFailReason"`
 	TagsFailReason  string      `json:"TagsFailReason" xml:"TagsFailReason"`
-	TagsModifyTime  string      `json:"TagsModifyTime" xml:"TagsModifyTime"`
-	TagsStatus      string      `json:"TagsStatus" xml:"TagsStatus"`
 	RemarksC        string      `json:"RemarksC" xml:"RemarksC"`
-	RemarksD        string      `json:"RemarksD" xml:"RemarksD"`
+	CreateTime      string      `json:"CreateTime" xml:"CreateTime"`
+	SourceType      string      `json:"SourceType" xml:"SourceType"`
+	FacesFailReason string      `json:"FacesFailReason" xml:"FacesFailReason"`
+	FacesModifyTime string      `json:"FacesModifyTime" xml:"FacesModifyTime"`
+	ImageTime       string      `json:"ImageTime" xml:"ImageTime"`
+	OCRModifyTime   string      `json:"OCRModifyTime" xml:"OCRModifyTime"`
+	FacesStatus     string      `json:"FacesStatus" xml:"FacesStatus"`
+	ImageHeight     int         `json:"ImageHeight" xml:"ImageHeight"`
 	ExternalId      string      `json:"ExternalId" xml:"ExternalId"`
-	Faces           []FacesItem `json:"Faces" xml:"Faces"`
+	SourceUri       string      `json:"SourceUri" xml:"SourceUri"`
+	FileSize        int         `json:"FileSize" xml:"FileSize"`
+	ModifyTime      string      `json:"ModifyTime" xml:"ModifyTime"`
+	SourcePosition  string      `json:"SourcePosition" xml:"SourcePosition"`
+	OCRFailReason   string      `json:"OCRFailReason" xml:"OCRFailReason"`
+	ImageFormat     string      `json:"ImageFormat" xml:"ImageFormat"`
+	ImageWidth      int         `json:"ImageWidth" xml:"ImageWidth"`
+	Orientation     string      `json:"Orientation" xml:"Orientation"`
+	RemarksD        string      `json:"RemarksD" xml:"RemarksD"`
+	TagsStatus      string      `json:"TagsStatus" xml:"TagsStatus"`
+	RemarksA        string      `json:"RemarksA" xml:"RemarksA"`
+	ImageUri        string      `json:"ImageUri" xml:"ImageUri"`
+	TagsModifyTime  string      `json:"TagsModifyTime" xml:"TagsModifyTime"`
+	OCRStatus       string      `json:"OCRStatus" xml:"OCRStatus"`
+	Exif            string      `json:"Exif" xml:"Exif"`
+	Location        string      `json:"Location" xml:"Location"`
+	RemarksB        string      `json:"RemarksB" xml:"RemarksB"`
 	Tags            []TagsItem  `json:"Tags" xml:"Tags"`
 	OCR             []OCRItem   `json:"OCR" xml:"OCR"`
+	Faces           []FacesItem `json:"Faces" xml:"Faces"`
 }

@@ -17,6 +17,6 @@ package imm
 
 // SubtitleStream is a nested struct in imm response
 type SubtitleStream struct {
-	Language string `json:"Language" xml:"Language"`
 	Index    int    `json:"Index" xml:"Index"`
+	Language string `json:"Language" xml:"Language"`
 }

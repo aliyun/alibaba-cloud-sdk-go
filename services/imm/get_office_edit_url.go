@@ -86,12 +86,12 @@ type GetOfficeEditURLRequest struct {
 // GetOfficeEditURLResponse is the response struct for api GetOfficeEditURL
 type GetOfficeEditURLResponse struct {
 	*responses.BaseResponse
+	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
 	RequestId               string `json:"RequestId" xml:"RequestId"`
 	EditURL                 string `json:"EditURL" xml:"EditURL"`
 	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
-	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
-	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
+	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 }
 
 // CreateGetOfficeEditURLRequest creates a request to invoke GetOfficeEditURL API

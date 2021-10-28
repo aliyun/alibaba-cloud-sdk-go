@@ -105,9 +105,9 @@ type FindImagesRequest struct {
 // FindImagesResponse is the response struct for api FindImages
 type FindImagesResponse struct {
 	*responses.BaseResponse
-	SetId      string       `json:"SetId" xml:"SetId"`
-	NextMarker string       `json:"NextMarker" xml:"NextMarker"`
 	RequestId  string       `json:"RequestId" xml:"RequestId"`
+	NextMarker string       `json:"NextMarker" xml:"NextMarker"`
+	SetId      string       `json:"SetId" xml:"SetId"`
 	Images     []ImagesItem `json:"Images" xml:"Images"`
 }
 

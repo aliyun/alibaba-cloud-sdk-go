@@ -17,27 +17,27 @@ package imm
 
 // VideoStream is a nested struct in imm response
 type VideoStream struct {
-	CodecTag           string `json:"CodecTag" xml:"CodecTag"`
-	Frames             string `json:"Frames" xml:"Frames"`
-	CodecTimeBase      string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-	Rotate             string `json:"Rotate" xml:"Rotate"`
-	SampleAspectRatio  string `json:"SampleAspectRatio" xml:"SampleAspectRatio"`
-	StartTime          string `json:"StartTime" xml:"StartTime"`
-	Duration           string `json:"Duration" xml:"Duration"`
 	Index              int    `json:"Index" xml:"Index"`
-	CodecName          string `json:"CodecName" xml:"CodecName"`
-	Bitrate            string `json:"Bitrate" xml:"Bitrate"`
-	Profile            string `json:"Profile" xml:"Profile"`
-	DisplayAspectRatio string `json:"DisplayAspectRatio" xml:"DisplayAspectRatio"`
-	HasBFrames         int    `json:"HasBFrames" xml:"HasBFrames"`
-	CodecTagString     string `json:"CodecTagString" xml:"CodecTagString"`
-	AverageFrameRate   string `json:"AverageFrameRate" xml:"AverageFrameRate"`
-	Language           string `json:"Language" xml:"Language"`
 	CodecLongName      string `json:"CodecLongName" xml:"CodecLongName"`
-	PixelFormat        string `json:"PixelFormat" xml:"PixelFormat"`
-	Level              int    `json:"Level" xml:"Level"`
 	Height             int    `json:"Height" xml:"Height"`
+	SampleAspectRatio  string `json:"SampleAspectRatio" xml:"SampleAspectRatio"`
+	AverageFrameRate   string `json:"AverageFrameRate" xml:"AverageFrameRate"`
+	Bitrate            string `json:"Bitrate" xml:"Bitrate"`
+	Rotate             string `json:"Rotate" xml:"Rotate"`
+	CodecTagString     string `json:"CodecTagString" xml:"CodecTagString"`
+	Language           string `json:"Language" xml:"Language"`
+	HasBFrames         int    `json:"HasBFrames" xml:"HasBFrames"`
 	FrameRrate         string `json:"FrameRrate" xml:"FrameRrate"`
+	Profile            string `json:"Profile" xml:"Profile"`
+	StartTime          string `json:"StartTime" xml:"StartTime"`
+	Frames             string `json:"Frames" xml:"Frames"`
+	CodecName          string `json:"CodecName" xml:"CodecName"`
 	Width              int    `json:"Width" xml:"Width"`
+	Duration           string `json:"Duration" xml:"Duration"`
+	DisplayAspectRatio string `json:"DisplayAspectRatio" xml:"DisplayAspectRatio"`
+	CodecTag           string `json:"CodecTag" xml:"CodecTag"`
+	CodecTimeBase      string `json:"CodecTimeBase" xml:"CodecTimeBase"`
 	TimeBase           string `json:"TimeBase" xml:"TimeBase"`
+	Level              int    `json:"Level" xml:"Level"`
+	PixelFormat        string `json:"PixelFormat" xml:"PixelFormat"`
 }

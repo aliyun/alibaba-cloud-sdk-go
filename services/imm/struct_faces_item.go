@@ -28,8 +28,8 @@ type FacesItem struct {
 	Age                  int                `json:"Age" xml:"Age"`
 	AgeConfidence        float64            `json:"AgeConfidence" xml:"AgeConfidence"`
 	Gender               string             `json:"Gender" xml:"Gender"`
-	Emotion              string             `json:"Emotion" xml:"Emotion"`
 	GenderConfidence     float64            `json:"GenderConfidence" xml:"GenderConfidence"`
+	Emotion              string             `json:"Emotion" xml:"Emotion"`
 	FaceId               string             `json:"FaceId" xml:"FaceId"`
 	GroupId              string             `json:"GroupId" xml:"GroupId"`
 	FaceAttributes       FaceAttributes     `json:"FaceAttributes" xml:"FaceAttributes"`

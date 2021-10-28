@@ -79,15 +79,15 @@ type CreateSetRequest struct {
 // CreateSetResponse is the response struct for api CreateSet
 type CreateSetResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	SetId       string `json:"SetId" xml:"SetId"`
-	SetName     string `json:"SetName" xml:"SetName"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
-	FaceCount   int    `json:"FaceCount" xml:"FaceCount"`
-	ImageCount  int    `json:"ImageCount" xml:"ImageCount"`
 	VideoCount  int    `json:"VideoCount" xml:"VideoCount"`
+	ImageCount  int    `json:"ImageCount" xml:"ImageCount"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	SetName     string `json:"SetName" xml:"SetName"`
+	SetId       string `json:"SetId" xml:"SetId"`
 	VideoLength int    `json:"VideoLength" xml:"VideoLength"`
+	FaceCount   int    `json:"FaceCount" xml:"FaceCount"`
 }
 
 // CreateCreateSetRequest creates a request to invoke CreateSet API

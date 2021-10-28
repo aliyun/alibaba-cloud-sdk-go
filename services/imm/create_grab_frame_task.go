@@ -82,8 +82,8 @@ type CreateGrabFrameTaskRequest struct {
 // CreateGrabFrameTaskResponse is the response struct for api CreateGrabFrameTask
 type CreateGrabFrameTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskType  string `json:"TaskType" xml:"TaskType"`
 }
 

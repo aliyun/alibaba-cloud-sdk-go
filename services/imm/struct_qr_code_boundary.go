@@ -18,7 +18,7 @@ package imm
 // QRCodeBoundary is a nested struct in imm response
 type QRCodeBoundary struct {
 	Top    int `json:"Top" xml:"Top"`
-	Left   int `json:"Left" xml:"Left"`
 	Width  int `json:"Width" xml:"Width"`
 	Height int `json:"Height" xml:"Height"`
+	Left   int `json:"Left" xml:"Left"`
 }

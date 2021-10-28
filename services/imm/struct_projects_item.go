@@ -17,13 +17,13 @@ package imm
 
 // ProjectsItem is a nested struct in imm response
 type ProjectsItem struct {
-	Project     string `json:"Project" xml:"Project"`
-	Endpoint    string `json:"Endpoint" xml:"Endpoint"`
-	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
-	CU          int    `json:"CU" xml:"CU"`
 	Type        string `json:"Type" xml:"Type"`
-	BillingType string `json:"BillingType" xml:"BillingType"`
+	CU          int    `json:"CU" xml:"CU"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
+	Endpoint    string `json:"Endpoint" xml:"Endpoint"`
+	Project     string `json:"Project" xml:"Project"`
 	RegionId    string `json:"RegionId" xml:"RegionId"`
+	BillingType string `json:"BillingType" xml:"BillingType"`
+	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
 }

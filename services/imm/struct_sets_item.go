@@ -17,12 +17,12 @@ package imm
 
 // SetsItem is a nested struct in imm response
 type SetsItem struct {
-	SetId       string `json:"SetId" xml:"SetId"`
-	SetName     string `json:"SetName" xml:"SetName"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
-	FaceCount   int    `json:"FaceCount" xml:"FaceCount"`
-	ImageCount  int    `json:"ImageCount" xml:"ImageCount"`
 	VideoCount  int    `json:"VideoCount" xml:"VideoCount"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	VideoLength int    `json:"VideoLength" xml:"VideoLength"`
+	SetId       string `json:"SetId" xml:"SetId"`
+	ImageCount  int    `json:"ImageCount" xml:"ImageCount"`
+	FaceCount   int    `json:"FaceCount" xml:"FaceCount"`
+	SetName     string `json:"SetName" xml:"SetName"`
+	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
 }

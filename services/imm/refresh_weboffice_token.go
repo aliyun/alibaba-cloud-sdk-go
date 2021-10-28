@@ -79,11 +79,11 @@ type RefreshWebofficeTokenRequest struct {
 // RefreshWebofficeTokenResponse is the response struct for api RefreshWebofficeToken
 type RefreshWebofficeTokenResponse struct {
 	*responses.BaseResponse
-	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
-	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
-	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
 	RequestId               string `json:"RequestId" xml:"RequestId"`
+	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
+	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
+	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 }
 
 // CreateRefreshWebofficeTokenRequest creates a request to invoke RefreshWebofficeToken API

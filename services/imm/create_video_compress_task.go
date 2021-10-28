@@ -71,6 +71,7 @@ func (client *Client) CreateVideoCompressTaskWithCallback(request *CreateVideoCo
 // CreateVideoCompressTaskRequest is the request struct for api CreateVideoCompressTask
 type CreateVideoCompressTaskRequest struct {
 	*requests.RpcRequest
+	TargetSubtitle  string `position:"Query" name:"TargetSubtitle"`
 	Project         string `position:"Query" name:"Project"`
 	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
 	TargetContainer string `position:"Query" name:"TargetContainer"`

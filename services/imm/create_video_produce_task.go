@@ -86,8 +86,8 @@ type CreateVideoProduceTaskRequest struct {
 // CreateVideoProduceTaskResponse is the response struct for api CreateVideoProduceTask
 type CreateVideoProduceTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskType  string `json:"TaskType" xml:"TaskType"`
 }
 

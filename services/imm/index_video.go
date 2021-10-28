@@ -93,19 +93,19 @@ type IndexVideoRequest struct {
 type IndexVideoResponse struct {
 	*responses.BaseResponse
 	ModifyTime string  `json:"ModifyTime" xml:"ModifyTime"`
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
 	EndTime    string  `json:"EndTime" xml:"EndTime"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
 	SaveType   bool    `json:"SaveType" xml:"SaveType"`
-	ExternalId string  `json:"ExternalId" xml:"ExternalId"`
 	CreateTime string  `json:"CreateTime" xml:"CreateTime"`
+	ExternalId string  `json:"ExternalId" xml:"ExternalId"`
 	StartTime  string  `json:"StartTime" xml:"StartTime"`
-	VideoUri   string  `json:"VideoUri" xml:"VideoUri"`
 	GrabType   string  `json:"GrabType" xml:"GrabType"`
+	VideoUri   string  `json:"VideoUri" xml:"VideoUri"`
 	RemarksA   string  `json:"RemarksA" xml:"RemarksA"`
 	RemarksB   string  `json:"RemarksB" xml:"RemarksB"`
 	RemarksC   string  `json:"RemarksC" xml:"RemarksC"`
-	TgtUri     string  `json:"TgtUri" xml:"TgtUri"`
 	RemarksD   string  `json:"RemarksD" xml:"RemarksD"`
+	TgtUri     string  `json:"TgtUri" xml:"TgtUri"`
 	SetId      string  `json:"SetId" xml:"SetId"`
 	Interval   float64 `json:"Interval" xml:"Interval"`
 }

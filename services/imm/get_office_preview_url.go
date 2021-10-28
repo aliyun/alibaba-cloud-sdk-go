@@ -86,12 +86,12 @@ type GetOfficePreviewURLRequest struct {
 // GetOfficePreviewURLResponse is the response struct for api GetOfficePreviewURL
 type GetOfficePreviewURLResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
 	PreviewURL              string `json:"PreviewURL" xml:"PreviewURL"`
-	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
 	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
-	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
 	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
+	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 }
 
 // CreateGetOfficePreviewURLRequest creates a request to invoke GetOfficePreviewURL API

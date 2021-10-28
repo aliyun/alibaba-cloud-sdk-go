@@ -17,16 +17,16 @@ package imm
 
 // FacesItemInGetImage is a nested struct in imm response
 type FacesItemInGetImage struct {
-	FaceConfidence    float64        `json:"FaceConfidence" xml:"FaceConfidence"`
-	FaceId            string         `json:"FaceId" xml:"FaceId"`
-	Attractive        float64        `json:"Attractive" xml:"Attractive"`
-	FaceQuality       float64        `json:"FaceQuality" xml:"FaceQuality"`
-	GenderConfidence  float64        `json:"GenderConfidence" xml:"GenderConfidence"`
-	EmotionConfidence float64        `json:"EmotionConfidence" xml:"EmotionConfidence"`
-	Emotion           string         `json:"Emotion" xml:"Emotion"`
 	Gender            string         `json:"Gender" xml:"Gender"`
+	GenderConfidence  float64        `json:"GenderConfidence" xml:"GenderConfidence"`
+	FaceId            string         `json:"FaceId" xml:"FaceId"`
+	FaceQuality       float64        `json:"FaceQuality" xml:"FaceQuality"`
+	Emotion           string         `json:"Emotion" xml:"Emotion"`
 	Age               string         `json:"Age" xml:"Age"`
+	FaceConfidence    float64        `json:"FaceConfidence" xml:"FaceConfidence"`
+	EmotionConfidence float64        `json:"EmotionConfidence" xml:"EmotionConfidence"`
+	Attractive        float64        `json:"Attractive" xml:"Attractive"`
 	GroupId           string         `json:"GroupId" xml:"GroupId"`
-	EmotionDetails    EmotionDetails `json:"EmotionDetails" xml:"EmotionDetails"`
 	FaceAttributes    FaceAttributes `json:"FaceAttributes" xml:"FaceAttributes"`
+	EmotionDetails    EmotionDetails `json:"EmotionDetails" xml:"EmotionDetails"`
 }

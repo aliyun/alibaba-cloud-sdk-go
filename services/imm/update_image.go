@@ -71,36 +71,43 @@ func (client *Client) UpdateImageWithCallback(request *UpdateImageRequest, callb
 // UpdateImageRequest is the request struct for api UpdateImage
 type UpdateImageRequest struct {
 	*requests.RpcRequest
-	Project        string `position:"Query" name:"Project"`
-	ExternalId     string `position:"Query" name:"ExternalId"`
-	SourceType     string `position:"Query" name:"SourceType"`
-	RemarksB       string `position:"Query" name:"RemarksB"`
-	RemarksA       string `position:"Query" name:"RemarksA"`
-	ImageUri       string `position:"Query" name:"ImageUri"`
-	RemarksArrayA  string `position:"Query" name:"RemarksArrayA"`
-	RemarksArrayB  string `position:"Query" name:"RemarksArrayB"`
-	SourceUri      string `position:"Query" name:"SourceUri"`
-	SourcePosition string `position:"Query" name:"SourcePosition"`
-	RemarksD       string `position:"Query" name:"RemarksD"`
-	RemarksC       string `position:"Query" name:"RemarksC"`
-	SetId          string `position:"Query" name:"SetId"`
+	Project        string              `position:"Query" name:"Project"`
+	ExternalId     string              `position:"Query" name:"ExternalId"`
+	SourceType     string              `position:"Query" name:"SourceType"`
+	RemarksB       string              `position:"Query" name:"RemarksB"`
+	RemarksA       string              `position:"Query" name:"RemarksA"`
+	ImageUri       string              `position:"Query" name:"ImageUri"`
+	RemarksArrayA  string              `position:"Query" name:"RemarksArrayA"`
+	RemarksArrayB  string              `position:"Query" name:"RemarksArrayB"`
+	SourceUri      string              `position:"Query" name:"SourceUri"`
+	SourcePosition string              `position:"Query" name:"SourcePosition"`
+	RemarksD       string              `position:"Query" name:"RemarksD"`
+	RemarksC       string              `position:"Query" name:"RemarksC"`
+	SetId          string              `position:"Query" name:"SetId"`
+	Faces          *[]UpdateImageFaces `position:"Query" name:"Faces"  type:"Json"`
+}
+
+// UpdateImageFaces is a repeated param struct in UpdateImageRequest
+type UpdateImageFaces struct {
+	GroupId string `name:"GroupId"`
+	FaceId  string `name:"FaceId"`
 }
 
 // UpdateImageResponse is the response struct for api UpdateImage
 type UpdateImageResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	SetId         string `json:"SetId" xml:"SetId"`
-	ImageUri      string `json:"ImageUri" xml:"ImageUri"`
-	RemarksA      string `json:"RemarksA" xml:"RemarksA"`
-	RemarksB      string `json:"RemarksB" xml:"RemarksB"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
+	RemarksArrayB string `json:"RemarksArrayB" xml:"RemarksArrayB"`
 	ModifyTime    string `json:"ModifyTime" xml:"ModifyTime"`
 	RemarksC      string `json:"RemarksC" xml:"RemarksC"`
 	RemarksD      string `json:"RemarksD" xml:"RemarksD"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 	ExternalId    string `json:"ExternalId" xml:"ExternalId"`
 	RemarksArrayA string `json:"RemarksArrayA" xml:"RemarksArrayA"`
-	RemarksArrayB string `json:"RemarksArrayB" xml:"RemarksArrayB"`
+	RemarksA      string `json:"RemarksA" xml:"RemarksA"`
+	ImageUri      string `json:"ImageUri" xml:"ImageUri"`
+	SetId         string `json:"SetId" xml:"SetId"`
+	RemarksB      string `json:"RemarksB" xml:"RemarksB"`
 }
 
 // CreateUpdateImageRequest creates a request to invoke UpdateImage API

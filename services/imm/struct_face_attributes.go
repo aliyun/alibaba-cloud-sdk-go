@@ -19,8 +19,8 @@ package imm
 type FaceAttributes struct {
 	Glasses           string       `json:"Glasses" xml:"Glasses"`
 	MaskConfidence    float64      `json:"MaskConfidence" xml:"MaskConfidence"`
-	Mask              string       `json:"Mask" xml:"Mask"`
 	GlassesConfidence float64      `json:"GlassesConfidence" xml:"GlassesConfidence"`
+	Mask              string       `json:"Mask" xml:"Mask"`
 	Beard             string       `json:"Beard" xml:"Beard"`
 	BeardConfidence   float64      `json:"BeardConfidence" xml:"BeardConfidence"`
 	FaceBoundary      FaceBoundary `json:"FaceBoundary" xml:"FaceBoundary"`

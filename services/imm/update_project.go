@@ -71,21 +71,22 @@ func (client *Client) UpdateProjectWithCallback(request *UpdateProjectRequest, c
 // UpdateProjectRequest is the request struct for api UpdateProject
 type UpdateProjectRequest struct {
 	*requests.RpcRequest
-	Project        string           `position:"Query" name:"Project"`
-	NewServiceRole string           `position:"Query" name:"NewServiceRole"`
-	NewCU          requests.Integer `position:"Query" name:"NewCU"`
+	Project          string           `position:"Query" name:"Project"`
+	NewBCTaskVersion string           `position:"Query" name:"NewBCTaskVersion"`
+	NewServiceRole   string           `position:"Query" name:"NewServiceRole"`
+	NewCU            requests.Integer `position:"Query" name:"NewCU"`
 }
 
 // UpdateProjectResponse is the response struct for api UpdateProject
 type UpdateProjectResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Project     string `json:"Project" xml:"Project"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
-	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
-	CU          int    `json:"CU" xml:"CU"`
 	Type        string `json:"Type" xml:"Type"`
+	CU          int    `json:"CU" xml:"CU"`
+	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	RegionId    string `json:"RegionId" xml:"RegionId"`
 }
 

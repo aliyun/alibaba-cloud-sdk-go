@@ -17,14 +17,14 @@ package imm
 
 // AudioTextsItem is a nested struct in imm response
 type AudioTextsItem struct {
-	Text            string  `json:"Text" xml:"Text"`
-	BeginTime       float64 `json:"BeginTime" xml:"BeginTime"`
 	EndTime         float64 `json:"EndTime" xml:"EndTime"`
-	SilenceDuration float64 `json:"SilenceDuration" xml:"SilenceDuration"`
-	EmotionValue    float64 `json:"EmotionValue" xml:"EmotionValue"`
-	ChannelId       int     `json:"ChannelId" xml:"ChannelId"`
-	SpeechRate      int     `json:"SpeechRate" xml:"SpeechRate"`
-	Confidence      float64 `json:"Confidence" xml:"Confidence"`
-	Person          string  `json:"Person" xml:"Person"`
 	Library         string  `json:"Library" xml:"Library"`
+	Confidence      float64 `json:"Confidence" xml:"Confidence"`
+	BeginTime       float64 `json:"BeginTime" xml:"BeginTime"`
+	ChannelId       int     `json:"ChannelId" xml:"ChannelId"`
+	EmotionValue    float64 `json:"EmotionValue" xml:"EmotionValue"`
+	SpeechRate      int     `json:"SpeechRate" xml:"SpeechRate"`
+	Text            string  `json:"Text" xml:"Text"`
+	Person          string  `json:"Person" xml:"Person"`
+	SilenceDuration float64 `json:"SilenceDuration" xml:"SilenceDuration"`
 }

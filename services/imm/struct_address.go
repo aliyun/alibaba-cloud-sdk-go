@@ -21,6 +21,6 @@ type Address struct {
 	Township    string `json:"Township" xml:"Township"`
 	AddressLine string `json:"AddressLine" xml:"AddressLine"`
 	City        string `json:"City" xml:"City"`
-	Province    string `json:"Province" xml:"Province"`
 	District    string `json:"District" xml:"District"`
+	Province    string `json:"Province" xml:"Province"`
 }

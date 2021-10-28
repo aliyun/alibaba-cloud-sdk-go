@@ -96,8 +96,8 @@ type ConvertOfficeFormatRequest struct {
 // ConvertOfficeFormatResponse is the response struct for api ConvertOfficeFormat
 type ConvertOfficeFormatResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	PageCount int    `json:"PageCount" xml:"PageCount"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateConvertOfficeFormatRequest creates a request to invoke ConvertOfficeFormat API

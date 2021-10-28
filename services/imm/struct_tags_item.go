@@ -20,8 +20,8 @@ type TagsItem struct {
 	TagEnName       string  `json:"TagEnName" xml:"TagEnName"`
 	TagName         string  `json:"TagName" xml:"TagName"`
 	TagCount        int     `json:"TagCount" xml:"TagCount"`
-	TagConfidence   float64 `json:"TagConfidence" xml:"TagConfidence"`
 	ParentTagEnName string  `json:"ParentTagEnName" xml:"ParentTagEnName"`
+	TagConfidence   float64 `json:"TagConfidence" xml:"TagConfidence"`
 	TagLevel        int     `json:"TagLevel" xml:"TagLevel"`
 	ParentTagName   string  `json:"ParentTagName" xml:"ParentTagName"`
 }

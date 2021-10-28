@@ -71,26 +71,24 @@ func (client *Client) PutProjectWithCallback(request *PutProjectRequest, callbac
 // PutProjectRequest is the request struct for api PutProject
 type PutProjectRequest struct {
 	*requests.RpcRequest
-	Project     string           `position:"Query" name:"Project"`
-	Type        string           `position:"Query" name:"Type"`
-	CU          requests.Integer `position:"Query" name:"CU"`
-	ServiceRole string           `position:"Query" name:"ServiceRole"`
-	BillingType string           `position:"Query" name:"BillingType"`
+	Project       string `position:"Query" name:"Project"`
+	BCTaskVersion string `position:"Query" name:"BCTaskVersion"`
+	ServiceRole   string `position:"Query" name:"ServiceRole"`
 }
 
 // PutProjectResponse is the response struct for api PutProject
 type PutProjectResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Project     string `json:"Project" xml:"Project"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
-	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
-	CU          int    `json:"CU" xml:"CU"`
 	Type        string `json:"Type" xml:"Type"`
+	CU          int    `json:"CU" xml:"CU"`
+	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Endpoint    string `json:"Endpoint" xml:"Endpoint"`
-	BillingType string `json:"BillingType" xml:"BillingType"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	RegionId    string `json:"RegionId" xml:"RegionId"`
+	BillingType string `json:"BillingType" xml:"BillingType"`
 }
 
 // CreatePutProjectRequest creates a request to invoke PutProject API

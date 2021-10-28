@@ -80,8 +80,8 @@ type CreateMediaComplexTaskRequest struct {
 // CreateMediaComplexTaskResponse is the response struct for api CreateMediaComplexTask
 type CreateMediaComplexTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskType  string `json:"TaskType" xml:"TaskType"`
 }
 

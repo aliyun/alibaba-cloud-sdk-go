@@ -79,11 +79,11 @@ type RefreshOfficePreviewTokenRequest struct {
 // RefreshOfficePreviewTokenResponse is the response struct for api RefreshOfficePreviewToken
 type RefreshOfficePreviewTokenResponse struct {
 	*responses.BaseResponse
-	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
-	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
-	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
 	RequestId               string `json:"RequestId" xml:"RequestId"`
+	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
+	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
+	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 }
 
 // CreateRefreshOfficePreviewTokenRequest creates a request to invoke RefreshOfficePreviewToken API

@@ -80,8 +80,8 @@ type GetContentKeyRequest struct {
 // GetContentKeyResponse is the response struct for api GetContentKey
 type GetContentKeyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	VersionId string `json:"VersionId" xml:"VersionId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	KeyInfos  string `json:"KeyInfos" xml:"KeyInfos"`
 }
 

@@ -17,8 +17,8 @@ package imm
 
 // BodyBoundary is a nested struct in imm response
 type BodyBoundary struct {
-	Left   int `json:"Left" xml:"Left"`
 	Top    int `json:"Top" xml:"Top"`
 	Width  int `json:"Width" xml:"Width"`
 	Height int `json:"Height" xml:"Height"`
+	Left   int `json:"Left" xml:"Left"`
 }

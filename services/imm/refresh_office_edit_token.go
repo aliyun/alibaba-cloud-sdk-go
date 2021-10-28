@@ -79,11 +79,11 @@ type RefreshOfficeEditTokenRequest struct {
 // RefreshOfficeEditTokenResponse is the response struct for api RefreshOfficeEditToken
 type RefreshOfficeEditTokenResponse struct {
 	*responses.BaseResponse
-	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
-	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
-	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
 	RequestId               string `json:"RequestId" xml:"RequestId"`
+	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
+	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
+	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 }
 
 // CreateRefreshOfficeEditTokenRequest creates a request to invoke RefreshOfficeEditToken API

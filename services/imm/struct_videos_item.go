@@ -17,32 +17,32 @@ package imm
 
 // VideosItem is a nested struct in imm response
 type VideosItem struct {
-	VideoUri            string          `json:"VideoUri" xml:"VideoUri"`
-	RemarksA            string          `json:"RemarksA" xml:"RemarksA"`
-	RemarksB            string          `json:"RemarksB" xml:"RemarksB"`
 	CreateTime          string          `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime          string          `json:"ModifyTime" xml:"ModifyTime"`
-	VideoWidth          int             `json:"VideoWidth" xml:"VideoWidth"`
-	VideoHeight         int             `json:"VideoHeight" xml:"VideoHeight"`
-	VideoFormat         string          `json:"VideoFormat" xml:"VideoFormat"`
-	VideoDuration       float64         `json:"VideoDuration" xml:"VideoDuration"`
-	FileSize            int             `json:"FileSize" xml:"FileSize"`
-	VideoFrames         int             `json:"VideoFrames" xml:"VideoFrames"`
-	SourceType          string          `json:"SourceType" xml:"SourceType"`
-	SourceUri           string          `json:"SourceUri" xml:"SourceUri"`
-	SourcePosition      string          `json:"SourcePosition" xml:"SourcePosition"`
-	ProcessStatus       string          `json:"ProcessStatus" xml:"ProcessStatus"`
-	ProcessModifyTime   string          `json:"ProcessModifyTime" xml:"ProcessModifyTime"`
-	VideoTagsStatus     string          `json:"VideoTagsStatus" xml:"VideoTagsStatus"`
-	VideoTagsModifyTime string          `json:"VideoTagsModifyTime" xml:"VideoTagsModifyTime"`
-	CelebrityStatus     string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
-	CelebrityModifyTime string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
-	CelebrityFailReason string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
-	VideoTagsFailReason string          `json:"VideoTagsFailReason" xml:"VideoTagsFailReason"`
-	ProcessFailReason   string          `json:"ProcessFailReason" xml:"ProcessFailReason"`
 	RemarksC            string          `json:"RemarksC" xml:"RemarksC"`
-	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
+	VideoTagsFailReason string          `json:"VideoTagsFailReason" xml:"VideoTagsFailReason"`
+	SourceType          string          `json:"SourceType" xml:"SourceType"`
+	CelebrityModifyTime string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
+	VideoDuration       float64         `json:"VideoDuration" xml:"VideoDuration"`
+	ProcessModifyTime   string          `json:"ProcessModifyTime" xml:"ProcessModifyTime"`
+	VideoFrames         int             `json:"VideoFrames" xml:"VideoFrames"`
+	VideoTagsStatus     string          `json:"VideoTagsStatus" xml:"VideoTagsStatus"`
 	ExternalId          string          `json:"ExternalId" xml:"ExternalId"`
+	SourceUri           string          `json:"SourceUri" xml:"SourceUri"`
+	FileSize            int             `json:"FileSize" xml:"FileSize"`
+	ModifyTime          string          `json:"ModifyTime" xml:"ModifyTime"`
+	CelebrityFailReason string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
+	SourcePosition      string          `json:"SourcePosition" xml:"SourcePosition"`
+	VideoWidth          int             `json:"VideoWidth" xml:"VideoWidth"`
+	VideoFormat         string          `json:"VideoFormat" xml:"VideoFormat"`
+	VideoHeight         int             `json:"VideoHeight" xml:"VideoHeight"`
+	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
+	VideoUri            string          `json:"VideoUri" xml:"VideoUri"`
+	ProcessFailReason   string          `json:"ProcessFailReason" xml:"ProcessFailReason"`
+	VideoTagsModifyTime string          `json:"VideoTagsModifyTime" xml:"VideoTagsModifyTime"`
+	RemarksA            string          `json:"RemarksA" xml:"RemarksA"`
+	CelebrityStatus     string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
+	ProcessStatus       string          `json:"ProcessStatus" xml:"ProcessStatus"`
+	RemarksB            string          `json:"RemarksB" xml:"RemarksB"`
 	VideoTags           []VideoTagsItem `json:"VideoTags" xml:"VideoTags"`
 	Celebrity           []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
 	Persons             []PersonsItem   `json:"Persons" xml:"Persons"`

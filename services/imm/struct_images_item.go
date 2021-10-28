@@ -17,8 +17,8 @@ package imm
 
 // ImagesItem is a nested struct in imm response
 type ImagesItem struct {
-	FacesStatus                  string                   `json:"FacesStatus" xml:"FacesStatus"`
 	AddressModifyTime            string                   `json:"AddressModifyTime" xml:"AddressModifyTime"`
+	FacesStatus                  string                   `json:"FacesStatus" xml:"FacesStatus"`
 	ModifyTime                   string                   `json:"ModifyTime" xml:"ModifyTime"`
 	AddressFailReason            string                   `json:"AddressFailReason" xml:"AddressFailReason"`
 	CroppingSuggestionFailReason string                   `json:"CroppingSuggestionFailReason" xml:"CroppingSuggestionFailReason"`
@@ -27,15 +27,15 @@ type ImagesItem struct {
 	ImageFormat                  string                   `json:"ImageFormat" xml:"ImageFormat"`
 	FacesFailReason              string                   `json:"FacesFailReason" xml:"FacesFailReason"`
 	AddressStatus                string                   `json:"AddressStatus" xml:"AddressStatus"`
-	Exif                         string                   `json:"Exif" xml:"Exif"`
 	CroppingSuggestionModifyTime string                   `json:"CroppingSuggestionModifyTime" xml:"CroppingSuggestionModifyTime"`
-	ImageHeight                  int                      `json:"ImageHeight" xml:"ImageHeight"`
+	Exif                         string                   `json:"Exif" xml:"Exif"`
 	CroppingSuggestionStatus     string                   `json:"CroppingSuggestionStatus" xml:"CroppingSuggestionStatus"`
+	ImageHeight                  int                      `json:"ImageHeight" xml:"ImageHeight"`
 	SourceType                   string                   `json:"SourceType" xml:"SourceType"`
 	RemarksB                     string                   `json:"RemarksB" xml:"RemarksB"`
 	FileSize                     int                      `json:"FileSize" xml:"FileSize"`
-	Orientation                  string                   `json:"Orientation" xml:"Orientation"`
 	RemarksArrayA                string                   `json:"RemarksArrayA" xml:"RemarksArrayA"`
+	Orientation                  string                   `json:"Orientation" xml:"Orientation"`
 	TagsStatus                   string                   `json:"TagsStatus" xml:"TagsStatus"`
 	FacesModifyTime              string                   `json:"FacesModifyTime" xml:"FacesModifyTime"`
 	RemarksD                     string                   `json:"RemarksD" xml:"RemarksD"`
@@ -45,21 +45,21 @@ type ImagesItem struct {
 	ExternalId                   string                   `json:"ExternalId" xml:"ExternalId"`
 	ImageTime                    string                   `json:"ImageTime" xml:"ImageTime"`
 	Location                     string                   `json:"Location" xml:"Location"`
-	TagsModifyTime               string                   `json:"TagsModifyTime" xml:"TagsModifyTime"`
 	ImageQualityStatus           string                   `json:"ImageQualityStatus" xml:"ImageQualityStatus"`
+	TagsModifyTime               string                   `json:"TagsModifyTime" xml:"TagsModifyTime"`
 	RemarksArrayB                string                   `json:"RemarksArrayB" xml:"RemarksArrayB"`
 	RemarksA                     string                   `json:"RemarksA" xml:"RemarksA"`
 	ImageQualityModifyTime       string                   `json:"ImageQualityModifyTime" xml:"ImageQualityModifyTime"`
-	SourcePosition               string                   `json:"SourcePosition" xml:"SourcePosition"`
 	ImageQualityFailReason       string                   `json:"ImageQualityFailReason" xml:"ImageQualityFailReason"`
+	SourcePosition               string                   `json:"SourcePosition" xml:"SourcePosition"`
 	OCRFailReason                string                   `json:"OCRFailReason" xml:"OCRFailReason"`
 	RemarksC                     string                   `json:"RemarksC" xml:"RemarksC"`
 	SourceUri                    string                   `json:"SourceUri" xml:"SourceUri"`
 	ImageWidth                   int                      `json:"ImageWidth" xml:"ImageWidth"`
-	Address                      Address                  `json:"Address" xml:"Address"`
 	ImageQuality                 ImageQuality             `json:"ImageQuality" xml:"ImageQuality"`
-	Faces                        []FacesItem              `json:"Faces" xml:"Faces"`
+	Address                      Address                  `json:"Address" xml:"Address"`
 	CroppingSuggestion           []CroppingSuggestionItem `json:"CroppingSuggestion" xml:"CroppingSuggestion"`
 	Tags                         []TagsItem               `json:"Tags" xml:"Tags"`
 	OCR                          []OCRItem                `json:"OCR" xml:"OCR"`
+	Faces                        []FacesItem              `json:"Faces" xml:"Faces"`
 }

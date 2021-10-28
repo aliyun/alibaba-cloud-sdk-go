@@ -17,22 +17,22 @@ package imm
 
 // FaceGroupsItem is a nested struct in imm response
 type FaceGroupsItem struct {
-	GroupName      string         `json:"GroupName" xml:"GroupName"`
-	ModifyTime     string         `json:"ModifyTime" xml:"ModifyTime"`
-	ExternalId     string         `json:"ExternalId" xml:"ExternalId"`
-	CreateTime     string         `json:"CreateTime" xml:"CreateTime"`
-	MaxAge         float64        `json:"MaxAge" xml:"MaxAge"`
 	Gender         string         `json:"Gender" xml:"Gender"`
-	AverageAge     float64        `json:"AverageAge" xml:"AverageAge"`
-	RemarksA       string         `json:"RemarksA" xml:"RemarksA"`
-	RemarksB       string         `json:"RemarksB" xml:"RemarksB"`
-	GroupId        string         `json:"GroupId" xml:"GroupId"`
-	RemarksArrayB  string         `json:"RemarksArrayB" xml:"RemarksArrayB"`
-	ImageCount     int            `json:"ImageCount" xml:"ImageCount"`
-	MinAge         float64        `json:"MinAge" xml:"MinAge"`
+	CreateTime     string         `json:"CreateTime" xml:"CreateTime"`
 	RemarksC       string         `json:"RemarksC" xml:"RemarksC"`
-	RemarksD       string         `json:"RemarksD" xml:"RemarksD"`
-	RemarksArrayA  string         `json:"RemarksArrayA" xml:"RemarksArrayA"`
 	FaceCount      int            `json:"FaceCount" xml:"FaceCount"`
+	RemarksArrayB  string         `json:"RemarksArrayB" xml:"RemarksArrayB"`
+	RemarksD       string         `json:"RemarksD" xml:"RemarksD"`
+	MaxAge         float64        `json:"MaxAge" xml:"MaxAge"`
+	GroupId        string         `json:"GroupId" xml:"GroupId"`
+	GroupName      string         `json:"GroupName" xml:"GroupName"`
+	RemarksA       string         `json:"RemarksA" xml:"RemarksA"`
+	AverageAge     float64        `json:"AverageAge" xml:"AverageAge"`
+	RemarksArrayA  string         `json:"RemarksArrayA" xml:"RemarksArrayA"`
+	MinAge         float64        `json:"MinAge" xml:"MinAge"`
+	ImageCount     int            `json:"ImageCount" xml:"ImageCount"`
+	ExternalId     string         `json:"ExternalId" xml:"ExternalId"`
+	RemarksB       string         `json:"RemarksB" xml:"RemarksB"`
+	ModifyTime     string         `json:"ModifyTime" xml:"ModifyTime"`
 	GroupCoverFace GroupCoverFace `json:"GroupCoverFace" xml:"GroupCoverFace"`
 }

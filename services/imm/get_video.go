@@ -82,16 +82,16 @@ type GetVideoResponse struct {
 	ModifyTime               string          `json:"ModifyTime" xml:"ModifyTime"`
 	ProcessStatus            string          `json:"ProcessStatus" xml:"ProcessStatus"`
 	VideoWidth               int             `json:"VideoWidth" xml:"VideoWidth"`
-	SourceUri                string          `json:"SourceUri" xml:"SourceUri"`
 	SourceType               string          `json:"SourceType" xml:"SourceType"`
+	SourceUri                string          `json:"SourceUri" xml:"SourceUri"`
 	VideoInfo                string          `json:"VideoInfo" xml:"VideoInfo"`
-	RemarksA                 string          `json:"RemarksA" xml:"RemarksA"`
 	VideoFrameTagsModifyTime string          `json:"VideoFrameTagsModifyTime" xml:"VideoFrameTagsModifyTime"`
-	RemarksB                 string          `json:"RemarksB" xml:"RemarksB"`
+	RemarksA                 string          `json:"RemarksA" xml:"RemarksA"`
 	VideoFacesFailReason     string          `json:"VideoFacesFailReason" xml:"VideoFacesFailReason"`
+	RemarksB                 string          `json:"RemarksB" xml:"RemarksB"`
 	VideoFacesStatus         string          `json:"VideoFacesStatus" xml:"VideoFacesStatus"`
-	VideoOCRModifyTime       string          `json:"VideoOCRModifyTime" xml:"VideoOCRModifyTime"`
 	RemarksC                 string          `json:"RemarksC" xml:"RemarksC"`
+	VideoOCRModifyTime       string          `json:"VideoOCRModifyTime" xml:"VideoOCRModifyTime"`
 	RemarksD                 string          `json:"RemarksD" xml:"RemarksD"`
 	VideoHeight              int             `json:"VideoHeight" xml:"VideoHeight"`
 	SourcePosition           string          `json:"SourcePosition" xml:"SourcePosition"`
@@ -102,27 +102,27 @@ type GetVideoResponse struct {
 	VideoOCRStatus           string          `json:"VideoOCRStatus" xml:"VideoOCRStatus"`
 	VideoFrames              int             `json:"VideoFrames" xml:"VideoFrames"`
 	RequestId                string          `json:"RequestId" xml:"RequestId"`
-	VideoSTTModifyTime       string          `json:"VideoSTTModifyTime" xml:"VideoSTTModifyTime"`
 	ProcessModifyTime        string          `json:"ProcessModifyTime" xml:"ProcessModifyTime"`
+	VideoSTTModifyTime       string          `json:"VideoSTTModifyTime" xml:"VideoSTTModifyTime"`
 	ProcessFailReason        string          `json:"ProcessFailReason" xml:"ProcessFailReason"`
-	VideoSTTFailReason       string          `json:"VideoSTTFailReason" xml:"VideoSTTFailReason"`
-	ExternalId               string          `json:"ExternalId" xml:"ExternalId"`
 	CreateTime               string          `json:"CreateTime" xml:"CreateTime"`
+	ExternalId               string          `json:"ExternalId" xml:"ExternalId"`
+	VideoSTTFailReason       string          `json:"VideoSTTFailReason" xml:"VideoSTTFailReason"`
 	VideoUri                 string          `json:"VideoUri" xml:"VideoUri"`
-	VideoFormat              string          `json:"VideoFormat" xml:"VideoFormat"`
 	VideoFrameTagsFailReason string          `json:"VideoFrameTagsFailReason" xml:"VideoFrameTagsFailReason"`
+	VideoFormat              string          `json:"VideoFormat" xml:"VideoFormat"`
 	VideoSTTStatus           string          `json:"VideoSTTStatus" xml:"VideoSTTStatus"`
 	VideoFacesModifyTime     string          `json:"VideoFacesModifyTime" xml:"VideoFacesModifyTime"`
 	CelebrityModifyTime      string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
 	VideoDuration            float64         `json:"VideoDuration" xml:"VideoDuration"`
 	CelebrityFailReason      string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
-	CelebrityStatus          string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
 	SetId                    string          `json:"SetId" xml:"SetId"`
+	CelebrityStatus          string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
 	VideoTagsStatus          string          `json:"VideoTagsStatus" xml:"VideoTagsStatus"`
 	FileSize                 int             `json:"FileSize" xml:"FileSize"`
-	VideoTags                []VideoTagsItem `json:"VideoTags" xml:"VideoTags"`
 	Persons                  []PersonsItem   `json:"Persons" xml:"Persons"`
 	Celebrity                []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
+	VideoTags                []VideoTagsItem `json:"VideoTags" xml:"VideoTags"`
 }
 
 // CreateGetVideoRequest creates a request to invoke GetVideo API

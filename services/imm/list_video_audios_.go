@@ -80,10 +80,10 @@ type ListVideoAudiosRequest struct {
 // ListVideoAudiosResponse is the response struct for api ListVideoAudios
 type ListVideoAudiosResponse struct {
 	*responses.BaseResponse
-	SetId      string       `json:"SetId" xml:"SetId"`
+	RequestId  string       `json:"RequestId" xml:"RequestId"`
 	VideoUri   string       `json:"VideoUri" xml:"VideoUri"`
 	NextMarker string       `json:"NextMarker" xml:"NextMarker"`
-	RequestId  string       `json:"RequestId" xml:"RequestId"`
+	SetId      string       `json:"SetId" xml:"SetId"`
 	Audios     []AudiosItem `json:"Audios" xml:"Audios"`
 }
 

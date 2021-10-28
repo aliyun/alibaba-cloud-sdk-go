@@ -86,8 +86,8 @@ type EncodeBlindWatermarkRequest struct {
 type EncodeBlindWatermarkResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	TargetUri string `json:"TargetUri" xml:"TargetUri"`
 	Content   string `json:"Content" xml:"Content"`
+	TargetUri string `json:"TargetUri" xml:"TargetUri"`
 }
 
 // CreateEncodeBlindWatermarkRequest creates a request to invoke EncodeBlindWatermark API

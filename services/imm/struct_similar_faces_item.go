@@ -19,7 +19,7 @@ package imm
 type SimilarFacesItem struct {
 	FaceId         string         `json:"FaceId" xml:"FaceId"`
 	ImageUri       string         `json:"ImageUri" xml:"ImageUri"`
-	Similarity     float64        `json:"Similarity" xml:"Similarity"`
 	ExternalId     string         `json:"ExternalId" xml:"ExternalId"`
+	Similarity     float64        `json:"Similarity" xml:"Similarity"`
 	FaceAttributes FaceAttributes `json:"FaceAttributes" xml:"FaceAttributes"`
 }

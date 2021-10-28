@@ -105,8 +105,8 @@ type CreateOfficeConversionTaskResponse struct {
 	TaskId     string `json:"TaskId" xml:"TaskId"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Percent    int    `json:"Percent" xml:"Percent"`
-	TgtLoc     string `json:"TgtLoc" xml:"TgtLoc"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
+	TgtLoc     string `json:"TgtLoc" xml:"TgtLoc"`
 }
 
 // CreateCreateOfficeConversionTaskRequest creates a request to invoke CreateOfficeConversionTask API

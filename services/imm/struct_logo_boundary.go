@@ -17,8 +17,8 @@ package imm
 
 // LogoBoundary is a nested struct in imm response
 type LogoBoundary struct {
+	Top    int `json:"Top" xml:"Top"`
 	Width  int `json:"Width" xml:"Width"`
 	Height int `json:"Height" xml:"Height"`
-	Top    int `json:"Top" xml:"Top"`
 	Left   int `json:"Left" xml:"Left"`
 }

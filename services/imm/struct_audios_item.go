@@ -17,26 +17,26 @@ package imm
 
 // AudiosItem is a nested struct in imm response
 type AudiosItem struct {
+	SourcePosition       string           `json:"SourcePosition" xml:"SourcePosition"`
+	CreateTime           string           `json:"CreateTime" xml:"CreateTime"`
+	RemarksC             string           `json:"RemarksC" xml:"RemarksC"`
 	AudioDuration        float64          `json:"AudioDuration" xml:"AudioDuration"`
+	SourceType           string           `json:"SourceType" xml:"SourceType"`
+	AudioTextsStatus     string           `json:"AudioTextsStatus" xml:"AudioTextsStatus"`
+	AudioFormat          string           `json:"AudioFormat" xml:"AudioFormat"`
+	RemarksD             string           `json:"RemarksD" xml:"RemarksD"`
+	ProcessModifyTime    string           `json:"ProcessModifyTime" xml:"ProcessModifyTime"`
+	ProcessFailReason    string           `json:"ProcessFailReason" xml:"ProcessFailReason"`
 	AudioUri             string           `json:"AudioUri" xml:"AudioUri"`
 	AudioRate            int              `json:"AudioRate" xml:"AudioRate"`
-	SourceType           string           `json:"SourceType" xml:"SourceType"`
-	ModifyTime           string           `json:"ModifyTime" xml:"ModifyTime"`
-	FileSize             int              `json:"FileSize" xml:"FileSize"`
-	SourceUri            string           `json:"SourceUri" xml:"SourceUri"`
-	CreateTime           string           `json:"CreateTime" xml:"CreateTime"`
-	RemarksA             string           `json:"RemarksA" xml:"RemarksA"`
-	RemarksB             string           `json:"RemarksB" xml:"RemarksB"`
-	AudioTextsStatus     string           `json:"AudioTextsStatus" xml:"AudioTextsStatus"`
 	AudioTextsModifyTime string           `json:"AudioTextsModifyTime" xml:"AudioTextsModifyTime"`
-	ProcessModifyTime    string           `json:"ProcessModifyTime" xml:"ProcessModifyTime"`
-	ProcessStatus        string           `json:"ProcessStatus" xml:"ProcessStatus"`
-	SourcePosition       string           `json:"SourcePosition" xml:"SourcePosition"`
-	AudioFormat          string           `json:"AudioFormat" xml:"AudioFormat"`
-	AudioTextsFailReason string           `json:"AudioTextsFailReason" xml:"AudioTextsFailReason"`
-	ProcessFailReason    string           `json:"ProcessFailReason" xml:"ProcessFailReason"`
-	RemarksC             string           `json:"RemarksC" xml:"RemarksC"`
-	RemarksD             string           `json:"RemarksD" xml:"RemarksD"`
+	RemarksA             string           `json:"RemarksA" xml:"RemarksA"`
 	ExternalId           string           `json:"ExternalId" xml:"ExternalId"`
+	SourceUri            string           `json:"SourceUri" xml:"SourceUri"`
+	ProcessStatus        string           `json:"ProcessStatus" xml:"ProcessStatus"`
+	AudioTextsFailReason string           `json:"AudioTextsFailReason" xml:"AudioTextsFailReason"`
+	RemarksB             string           `json:"RemarksB" xml:"RemarksB"`
+	FileSize             int              `json:"FileSize" xml:"FileSize"`
+	ModifyTime           string           `json:"ModifyTime" xml:"ModifyTime"`
 	AudioTexts           []AudioTextsItem `json:"AudioTexts" xml:"AudioTexts"`
 }

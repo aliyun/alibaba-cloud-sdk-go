@@ -17,7 +17,7 @@ package imm
 
 // FailDetailsItem is a nested struct in imm response
 type FailDetailsItem struct {
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	SrcUri       string `json:"SrcUri" xml:"SrcUri"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }

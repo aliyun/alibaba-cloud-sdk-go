@@ -17,8 +17,8 @@ package imm
 
 // ImageQuality is a nested struct in imm response
 type ImageQuality struct {
-	ClarityScore     float64 `json:"ClarityScore" xml:"ClarityScore"`
 	ContrastScore    float64 `json:"ContrastScore" xml:"ContrastScore"`
+	ClarityScore     float64 `json:"ClarityScore" xml:"ClarityScore"`
 	ColorScore       float64 `json:"ColorScore" xml:"ColorScore"`
 	OverallScore     float64 `json:"OverallScore" xml:"OverallScore"`
 	Contrast         float64 `json:"Contrast" xml:"Contrast"`

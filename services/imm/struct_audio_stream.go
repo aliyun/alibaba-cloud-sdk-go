@@ -17,20 +17,20 @@ package imm
 
 // AudioStream is a nested struct in imm response
 type AudioStream struct {
-	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
-	Frames         string `json:"Frames" xml:"Frames"`
-	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-	ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
-	Duration       string `json:"Duration" xml:"Duration"`
 	Index          int    `json:"Index" xml:"Index"`
-	CodecName      string `json:"CodecName" xml:"CodecName"`
-	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-	SampleFormat   string `json:"SampleFormat" xml:"SampleFormat"`
-	Channels       int    `json:"Channels" xml:"Channels"`
-	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
 	SampleRate     string `json:"SampleRate" xml:"SampleRate"`
-	Language       string `json:"Language" xml:"Language"`
+	ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
 	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
+	Channels       int    `json:"Channels" xml:"Channels"`
+	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
+	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
+	Language       string `json:"Language" xml:"Language"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	SampleFormat   string `json:"SampleFormat" xml:"SampleFormat"`
+	Frames         string `json:"Frames" xml:"Frames"`
+	CodecName      string `json:"CodecName" xml:"CodecName"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
+	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
 	TimeBase       string `json:"TimeBase" xml:"TimeBase"`
 }

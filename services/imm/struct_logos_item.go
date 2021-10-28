@@ -17,7 +17,7 @@ package imm
 
 // LogosItem is a nested struct in imm response
 type LogosItem struct {
-	LogoName       string       `json:"LogoName" xml:"LogoName"`
 	LogoConfidence float64      `json:"LogoConfidence" xml:"LogoConfidence"`
+	LogoName       string       `json:"LogoName" xml:"LogoName"`
 	LogoBoundary   LogoBoundary `json:"LogoBoundary" xml:"LogoBoundary"`
 }

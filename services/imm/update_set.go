@@ -79,11 +79,11 @@ type UpdateSetRequest struct {
 // UpdateSetResponse is the response struct for api UpdateSet
 type UpdateSetResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	SetId      string `json:"SetId" xml:"SetId"`
-	SetName    string `json:"SetName" xml:"SetName"`
-	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime string `json:"ModifyTime" xml:"ModifyTime"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	CreateTime string `json:"CreateTime" xml:"CreateTime"`
+	SetName    string `json:"SetName" xml:"SetName"`
+	SetId      string `json:"SetId" xml:"SetId"`
 }
 
 // CreateUpdateSetRequest creates a request to invoke UpdateSet API

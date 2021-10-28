@@ -17,8 +17,8 @@ package imm
 
 // PersonsItem is a nested struct in imm response
 type PersonsItem struct {
-	Age              int     `json:"Age" xml:"Age"`
 	AgeConfidence    float64 `json:"AgeConfidence" xml:"AgeConfidence"`
+	Age              int     `json:"Age" xml:"Age"`
 	Gender           string  `json:"Gender" xml:"Gender"`
 	GenderConfidence float64 `json:"GenderConfidence" xml:"GenderConfidence"`
 	PersonId         string  `json:"PersonId" xml:"PersonId"`

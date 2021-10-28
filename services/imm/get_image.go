@@ -80,51 +80,51 @@ type GetImageRequest struct {
 type GetImageResponse struct {
 	*responses.BaseResponse
 	ModifyTime                   string                   `json:"ModifyTime" xml:"ModifyTime"`
-	SourceUri                    string                   `json:"SourceUri" xml:"SourceUri"`
 	SourceType                   string                   `json:"SourceType" xml:"SourceType"`
+	SourceUri                    string                   `json:"SourceUri" xml:"SourceUri"`
 	FacesFailReason              string                   `json:"FacesFailReason" xml:"FacesFailReason"`
 	CroppingSuggestionStatus     string                   `json:"CroppingSuggestionStatus" xml:"CroppingSuggestionStatus"`
 	CroppingSuggestionFailReason string                   `json:"CroppingSuggestionFailReason" xml:"CroppingSuggestionFailReason"`
-	RemarksA                     string                   `json:"RemarksA" xml:"RemarksA"`
 	AddressFailReason            string                   `json:"AddressFailReason" xml:"AddressFailReason"`
-	RemarksB                     string                   `json:"RemarksB" xml:"RemarksB"`
+	RemarksA                     string                   `json:"RemarksA" xml:"RemarksA"`
 	AddressModifyTime            string                   `json:"AddressModifyTime" xml:"AddressModifyTime"`
+	RemarksB                     string                   `json:"RemarksB" xml:"RemarksB"`
 	ImageFormat                  string                   `json:"ImageFormat" xml:"ImageFormat"`
-	RemarksArrayB                string                   `json:"RemarksArrayB" xml:"RemarksArrayB"`
 	TagsFailReason               string                   `json:"TagsFailReason" xml:"TagsFailReason"`
-	Exif                         string                   `json:"Exif" xml:"Exif"`
+	RemarksArrayB                string                   `json:"RemarksArrayB" xml:"RemarksArrayB"`
 	FacesModifyTime              string                   `json:"FacesModifyTime" xml:"FacesModifyTime"`
+	Exif                         string                   `json:"Exif" xml:"Exif"`
 	RemarksC                     string                   `json:"RemarksC" xml:"RemarksC"`
 	RemarksD                     string                   `json:"RemarksD" xml:"RemarksD"`
 	ImageWidth                   int                      `json:"ImageWidth" xml:"ImageWidth"`
-	SourcePosition               string                   `json:"SourcePosition" xml:"SourcePosition"`
 	RemarksArrayA                string                   `json:"RemarksArrayA" xml:"RemarksArrayA"`
+	SourcePosition               string                   `json:"SourcePosition" xml:"SourcePosition"`
 	AddressStatus                string                   `json:"AddressStatus" xml:"AddressStatus"`
 	FacesStatus                  string                   `json:"FacesStatus" xml:"FacesStatus"`
 	ImageQualityModifyTime       string                   `json:"ImageQualityModifyTime" xml:"ImageQualityModifyTime"`
 	RequestId                    string                   `json:"RequestId" xml:"RequestId"`
-	TagsModifyTime               string                   `json:"TagsModifyTime" xml:"TagsModifyTime"`
-	ExternalId                   string                   `json:"ExternalId" xml:"ExternalId"`
 	CreateTime                   string                   `json:"CreateTime" xml:"CreateTime"`
+	ExternalId                   string                   `json:"ExternalId" xml:"ExternalId"`
+	TagsModifyTime               string                   `json:"TagsModifyTime" xml:"TagsModifyTime"`
 	ImageQualityFailReason       string                   `json:"ImageQualityFailReason" xml:"ImageQualityFailReason"`
-	ImageUri                     string                   `json:"ImageUri" xml:"ImageUri"`
 	Orientation                  string                   `json:"Orientation" xml:"Orientation"`
+	ImageUri                     string                   `json:"ImageUri" xml:"ImageUri"`
 	OCRStatus                    string                   `json:"OCRStatus" xml:"OCRStatus"`
 	OCRModifyTime                string                   `json:"OCRModifyTime" xml:"OCRModifyTime"`
-	CroppingSuggestionModifyTime string                   `json:"CroppingSuggestionModifyTime" xml:"CroppingSuggestionModifyTime"`
 	ImageTime                    string                   `json:"ImageTime" xml:"ImageTime"`
-	TagsStatus                   string                   `json:"TagsStatus" xml:"TagsStatus"`
-	ImageQualityStatus           string                   `json:"ImageQualityStatus" xml:"ImageQualityStatus"`
+	CroppingSuggestionModifyTime string                   `json:"CroppingSuggestionModifyTime" xml:"CroppingSuggestionModifyTime"`
 	ImageHeight                  int                      `json:"ImageHeight" xml:"ImageHeight"`
+	ImageQualityStatus           string                   `json:"ImageQualityStatus" xml:"ImageQualityStatus"`
+	TagsStatus                   string                   `json:"TagsStatus" xml:"TagsStatus"`
 	OCRFailReason                string                   `json:"OCRFailReason" xml:"OCRFailReason"`
 	SetId                        string                   `json:"SetId" xml:"SetId"`
-	Location                     string                   `json:"Location" xml:"Location"`
 	FileSize                     int                      `json:"FileSize" xml:"FileSize"`
+	Location                     string                   `json:"Location" xml:"Location"`
 	ImageQuality                 ImageQuality             `json:"ImageQuality" xml:"ImageQuality"`
 	Address                      Address                  `json:"Address" xml:"Address"`
-	CroppingSuggestion           []CroppingSuggestionItem `json:"CroppingSuggestion" xml:"CroppingSuggestion"`
-	Faces                        []FacesItemInGetImage    `json:"Faces" xml:"Faces"`
 	Tags                         []TagsItem               `json:"Tags" xml:"Tags"`
+	Faces                        []FacesItemInGetImage    `json:"Faces" xml:"Faces"`
+	CroppingSuggestion           []CroppingSuggestionItem `json:"CroppingSuggestion" xml:"CroppingSuggestion"`
 	OCR                          []OCRItem                `json:"OCR" xml:"OCR"`
 }
 

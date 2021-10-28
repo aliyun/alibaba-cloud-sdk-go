@@ -77,8 +77,8 @@ type ListProjectAPIsRequest struct {
 // ListProjectAPIsResponse is the response struct for api ListProjectAPIs
 type ListProjectAPIsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Project   string   `json:"Project" xml:"Project"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	APIs      []string `json:"APIs" xml:"APIs"`
 }
 

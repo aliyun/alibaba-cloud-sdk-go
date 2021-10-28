@@ -80,12 +80,12 @@ type GetVideoTaskRequest struct {
 type GetVideoTaskResponse struct {
 	*responses.BaseResponse
 	Status          string `json:"Status" xml:"Status"`
-	NotifyEndpoint  string `json:"NotifyEndpoint" xml:"NotifyEndpoint"`
 	Progress        int    `json:"Progress" xml:"Progress"`
-	TaskId          string `json:"TaskId" xml:"TaskId"`
+	NotifyEndpoint  string `json:"NotifyEndpoint" xml:"NotifyEndpoint"`
 	Parameters      string `json:"Parameters" xml:"Parameters"`
-	RequestId       string `json:"RequestId" xml:"RequestId"`
+	TaskId          string `json:"TaskId" xml:"TaskId"`
 	EndTime         string `json:"EndTime" xml:"EndTime"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
 	TaskType        string `json:"TaskType" xml:"TaskType"`
 	StartTime       string `json:"StartTime" xml:"StartTime"`
 	NotifyTopicName string `json:"NotifyTopicName" xml:"NotifyTopicName"`

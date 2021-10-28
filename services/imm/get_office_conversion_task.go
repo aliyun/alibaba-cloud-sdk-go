@@ -78,19 +78,19 @@ type GetOfficeConversionTaskRequest struct {
 // GetOfficeConversionTaskResponse is the response struct for api GetOfficeConversionTask
 type GetOfficeConversionTaskResponse struct {
 	*responses.BaseResponse
-	RequestId       string     `json:"RequestId" xml:"RequestId"`
-	TgtType         string     `json:"TgtType" xml:"TgtType"`
 	Status          string     `json:"Status" xml:"Status"`
-	Percent         int        `json:"Percent" xml:"Percent"`
-	PageCount       int        `json:"PageCount" xml:"PageCount"`
+	TgtType         string     `json:"TgtType" xml:"TgtType"`
 	TaskId          string     `json:"TaskId" xml:"TaskId"`
-	TgtUri          string     `json:"TgtUri" xml:"TgtUri"`
-	ImageSpec       string     `json:"ImageSpec" xml:"ImageSpec"`
-	NotifyTopicName string     `json:"NotifyTopicName" xml:"NotifyTopicName"`
-	NotifyEndpoint  string     `json:"NotifyEndpoint" xml:"NotifyEndpoint"`
-	ExternalID      string     `json:"ExternalID" xml:"ExternalID"`
+	RequestId       string     `json:"RequestId" xml:"RequestId"`
+	Percent         int        `json:"Percent" xml:"Percent"`
 	CreateTime      string     `json:"CreateTime" xml:"CreateTime"`
+	ExternalID      string     `json:"ExternalID" xml:"ExternalID"`
+	ImageSpec       string     `json:"ImageSpec" xml:"ImageSpec"`
+	NotifyEndpoint  string     `json:"NotifyEndpoint" xml:"NotifyEndpoint"`
+	TgtUri          string     `json:"TgtUri" xml:"TgtUri"`
 	FinishTime      string     `json:"FinishTime" xml:"FinishTime"`
+	PageCount       int        `json:"PageCount" xml:"PageCount"`
+	NotifyTopicName string     `json:"NotifyTopicName" xml:"NotifyTopicName"`
 	SrcUri          string     `json:"SrcUri" xml:"SrcUri"`
 	FailDetail      FailDetail `json:"FailDetail" xml:"FailDetail"`
 }

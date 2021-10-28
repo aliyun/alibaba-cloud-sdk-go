@@ -83,8 +83,8 @@ type CompareImageFacesRequest struct {
 type CompareImageFacesResponse struct {
 	*responses.BaseResponse
 	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	SetId      string  `json:"SetId" xml:"SetId"`
 	Similarity float64 `json:"Similarity" xml:"Similarity"`
+	SetId      string  `json:"SetId" xml:"SetId"`
 	FaceA      FaceA   `json:"FaceA" xml:"FaceA"`
 	FaceB      FaceB   `json:"FaceB" xml:"FaceB"`
 }

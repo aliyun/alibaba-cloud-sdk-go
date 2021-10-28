@@ -97,12 +97,12 @@ type IndexImageResponse struct {
 	RemarksC      string `json:"RemarksC" xml:"RemarksC"`
 	RemarksD      string `json:"RemarksD" xml:"RemarksD"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
-	RemarksArrayA string `json:"RemarksArrayA" xml:"RemarksArrayA"`
-	ExternalId    string `json:"ExternalId" xml:"ExternalId"`
 	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	SetId         string `json:"SetId" xml:"SetId"`
-	ImageUri      string `json:"ImageUri" xml:"ImageUri"`
+	ExternalId    string `json:"ExternalId" xml:"ExternalId"`
+	RemarksArrayA string `json:"RemarksArrayA" xml:"RemarksArrayA"`
 	RemarksA      string `json:"RemarksA" xml:"RemarksA"`
+	ImageUri      string `json:"ImageUri" xml:"ImageUri"`
+	SetId         string `json:"SetId" xml:"SetId"`
 	RemarksB      string `json:"RemarksB" xml:"RemarksB"`
 }
 
