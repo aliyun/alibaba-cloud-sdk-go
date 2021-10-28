@@ -17,24 +17,27 @@ package cms
 
 // OptionsJson is a nested struct in cms response
 type OptionsJson struct {
-	DnsType         string  `json:"dns_type" xml:"dns_type"`
-	DnsServer       string  `json:"dns_server" xml:"dns_server"`
-	GroupId         string  `json:"group_id" xml:"group_id"`
-	ExpectValue     string  `json:"expect_value" xml:"expect_value"`
-	HttpMethod      string  `json:"http_method" xml:"http_method"`
-	ResponseContent string  `json:"response_content" xml:"response_content"`
-	MatchRule       int     `json:"match_rule" xml:"match_rule"`
-	RequestContent  string  `json:"request_content" xml:"request_content"`
-	Cookie          string  `json:"cookie" xml:"cookie"`
-	Header          string  `json:"header" xml:"header"`
-	Username        string  `json:"username" xml:"username"`
-	Password        string  `json:"password" xml:"password"`
-	TimeOut         int64   `json:"time_out" xml:"time_out"`
-	PingNum         int     `json:"ping_num" xml:"ping_num"`
-	FailureRate     float64 `json:"failure_rate" xml:"failure_rate"`
-	RequestFormat   string  `json:"request_format" xml:"request_format"`
-	ResponseFormat  string  `json:"response_format" xml:"response_format"`
-	Port            int     `json:"port" xml:"port"`
-	Authentication  int     `json:"authentication" xml:"authentication"`
-	Traceroute      int64   `json:"traceroute" xml:"traceroute"`
+	Password          string  `json:"password" xml:"password"`
+	RequestFormat     string  `json:"request_format" xml:"request_format"`
+	ExpectValue       string  `json:"expect_value" xml:"expect_value"`
+	ResponseContent   string  `json:"response_content" xml:"response_content"`
+	FailureRate       float64 `json:"failure_rate" xml:"failure_rate"`
+	TimeOut           int64   `json:"time_out" xml:"time_out"`
+	Header            string  `json:"header" xml:"header"`
+	Cookie            string  `json:"cookie" xml:"cookie"`
+	Port              int     `json:"port" xml:"port"`
+	PingNum           int     `json:"ping_num" xml:"ping_num"`
+	Authentication    int     `json:"authentication" xml:"authentication"`
+	HttpMethod        string  `json:"http_method" xml:"http_method"`
+	MatchRule         int     `json:"match_rule" xml:"match_rule"`
+	RequestContent    string  `json:"request_content" xml:"request_content"`
+	Username          string  `json:"username" xml:"username"`
+	Traceroute        int64   `json:"traceroute" xml:"traceroute"`
+	ResponseFormat    string  `json:"response_format" xml:"response_format"`
+	DnsType           string  `json:"dns_type" xml:"dns_type"`
+	GroupId           string  `json:"group_id" xml:"group_id"`
+	DnsServer         string  `json:"dns_server" xml:"dns_server"`
+	EnableOperatorDns bool    `json:"enable_operator_dns" xml:"enable_operator_dns"`
+	Attempts          int64   `json:"attempts" xml:"attempts"`
+	Protocol          string  `json:"protocol" xml:"protocol"`
 }

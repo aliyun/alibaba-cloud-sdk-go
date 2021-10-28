@@ -18,8 +18,8 @@ package cms
 // CriticalInDescribeMetricRuleList is a nested struct in cms response
 type CriticalInDescribeMetricRuleList struct {
 	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	Statistics         string `json:"Statistics" xml:"Statistics"`
-	Threshold          string `json:"Threshold" xml:"Threshold"`
-	Times              int    `json:"Times" xml:"Times"`
 	PreCondition       string `json:"PreCondition" xml:"PreCondition"`
+	Times              int    `json:"Times" xml:"Times"`
+	Threshold          string `json:"Threshold" xml:"Threshold"`
+	Statistics         string `json:"Statistics" xml:"Statistics"`
 }

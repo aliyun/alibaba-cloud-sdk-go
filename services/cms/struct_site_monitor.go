@@ -17,14 +17,14 @@ package cms
 
 // SiteMonitor is a nested struct in cms response
 type SiteMonitor struct {
-	TaskId      string      `json:"TaskId" xml:"TaskId"`
+	EndTime     string      `json:"EndTime" xml:"EndTime"`
 	TaskType    string      `json:"TaskType" xml:"TaskType"`
-	Address     string      `json:"Address" xml:"Address"`
+	UpdateTime  string      `json:"UpdateTime" xml:"UpdateTime"`
+	Interval    string      `json:"Interval" xml:"Interval"`
 	TaskState   string      `json:"TaskState" xml:"TaskState"`
 	CreateTime  string      `json:"CreateTime" xml:"CreateTime"`
 	TaskName    string      `json:"TaskName" xml:"TaskName"`
-	Interval    string      `json:"Interval" xml:"Interval"`
-	UpdateTime  string      `json:"UpdateTime" xml:"UpdateTime"`
-	EndTime     string      `json:"EndTime" xml:"EndTime"`
+	Address     string      `json:"Address" xml:"Address"`
+	TaskId      string      `json:"TaskId" xml:"TaskId"`
 	OptionsJson OptionsJson `json:"OptionsJson" xml:"OptionsJson"`
 }

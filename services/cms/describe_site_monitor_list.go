@@ -81,10 +81,10 @@ type DescribeSiteMonitorListRequest struct {
 // DescribeSiteMonitorListResponse is the response struct for api DescribeSiteMonitorList
 type DescribeSiteMonitorListResponse struct {
 	*responses.BaseResponse
+	RequestId    string                                `json:"RequestId" xml:"RequestId"`
+	Success      string                                `json:"Success" xml:"Success"`
 	Code         string                                `json:"Code" xml:"Code"`
 	Message      string                                `json:"Message" xml:"Message"`
-	Success      string                                `json:"Success" xml:"Success"`
-	RequestId    string                                `json:"RequestId" xml:"RequestId"`
 	PageNumber   int                                   `json:"PageNumber" xml:"PageNumber"`
 	PageSize     int                                   `json:"PageSize" xml:"PageSize"`
 	TotalCount   int                                   `json:"TotalCount" xml:"TotalCount"`

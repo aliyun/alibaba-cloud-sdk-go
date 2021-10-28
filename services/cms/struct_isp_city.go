@@ -19,20 +19,22 @@ package cms
 type IspCity struct {
 	Region         string `json:"Region" xml:"Region"`
 	Country        string `json:"Country" xml:"Country"`
+	AreaEn         string `json:"Area.en" xml:"Area.en"`
 	IPV4ProbeCount string `json:"IPV4ProbeCount" xml:"IPV4ProbeCount"`
-	IspNameZhCN    string `json:"IspName.zh_CN" xml:"IspName.zh_CN"`
 	CityNameZhCN   string `json:"CityName.zh_CN" xml:"CityName.zh_CN"`
+	IspNameZhCN    string `json:"IspName.zh_CN" xml:"IspName.zh_CN"`
 	IspName        string `json:"IspName" xml:"IspName"`
 	CountryEn      string `json:"Country.en" xml:"Country.en"`
 	City           string `json:"City" xml:"City"`
-	IspNameEn      string `json:"IspName.en" xml:"IspName.en"`
 	RegionZhCN     string `json:"Region.zh_CN" xml:"Region.zh_CN"`
+	IspNameEn      string `json:"IspName.en" xml:"IspName.en"`
 	CountryZhCN    string `json:"Country.zh_CN" xml:"Country.zh_CN"`
 	CityNameEn     string `json:"CityName.en" xml:"CityName.en"`
-	CityName       string `json:"CityName" xml:"CityName"`
 	Isp            string `json:"Isp" xml:"Isp"`
+	CityName       string `json:"CityName" xml:"CityName"`
 	RegionEn       string `json:"Region.en" xml:"Region.en"`
 	IPV6ProbeCount string `json:"IPV6ProbeCount" xml:"IPV6ProbeCount"`
+	AreaZhCN       string `json:"Area.zh_CN" xml:"Area.zh_CN"`
 	APIProbeCount  string `json:"APIProbeCount" xml:"APIProbeCount"`
 	IPPool         IPPool `json:"IPPool" xml:"IPPool"`
 }

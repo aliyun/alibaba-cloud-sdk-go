@@ -82,20 +82,23 @@ type PutResourceMetricRulesRules struct {
 	EscalationsInfoStatistics             string `name:"Escalations.Info.Statistics"`
 	EffectiveInterval                     string `name:"EffectiveInterval"`
 	EscalationsInfoComparisonOperator     string `name:"Escalations.Info.ComparisonOperator"`
+	NoDataPolicy                          string `name:"NoDataPolicy"`
 	NoEffectiveInterval                   string `name:"NoEffectiveInterval"`
 	EmailSubject                          string `name:"EmailSubject"`
 	SilenceTime                           string `name:"SilenceTime"`
 	MetricName                            string `name:"MetricName"`
 	EscalationsWarnTimes                  string `name:"Escalations.Warn.Times"`
-	Period                                string `name:"Period"`
+	CompositeExpression                   string `name:"CompositeExpression"`
 	EscalationsWarnThreshold              string `name:"Escalations.Warn.Threshold"`
+	Period                                string `name:"Period"`
 	ContactGroups                         string `name:"ContactGroups"`
 	EscalationsCriticalStatistics         string `name:"Escalations.Critical.Statistics"`
-	Resources                             string `name:"Resources"`
+	GroupId                               string `name:"GroupId"`
 	EscalationsInfoTimes                  string `name:"Escalations.Info.Times"`
+	Resources                             string `name:"Resources"`
 	EscalationsCriticalTimes              string `name:"Escalations.Critical.Times"`
-	EscalationsWarnStatistics             string `name:"Escalations.Warn.Statistics"`
 	EscalationsInfoThreshold              string `name:"Escalations.Info.Threshold"`
+	EscalationsWarnStatistics             string `name:"Escalations.Warn.Statistics"`
 	Namespace                             string `name:"Namespace"`
 	Interval                              string `name:"Interval"`
 	RuleId                                string `name:"RuleId"`
@@ -106,10 +109,10 @@ type PutResourceMetricRulesRules struct {
 // PutResourceMetricRulesResponse is the response struct for api PutResourceMetricRules
 type PutResourceMetricRulesResponse struct {
 	*responses.BaseResponse
-	Success          bool             `json:"Success" xml:"Success"`
 	Code             string           `json:"Code" xml:"Code"`
 	Message          string           `json:"Message" xml:"Message"`
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	Success          bool             `json:"Success" xml:"Success"`
 	FailedListResult FailedListResult `json:"FailedListResult" xml:"FailedListResult"`
 }
 

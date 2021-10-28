@@ -17,15 +17,18 @@ package cms
 
 // Result is a nested struct in cms response
 type Result struct {
-	Name         string       `json:"Name" xml:"Name"`
-	Message      string       `json:"Message" xml:"Message"`
-	State        string       `json:"State" xml:"State"`
-	RuleName     string       `json:"RuleName" xml:"RuleName"`
-	Code         string       `json:"Code" xml:"Code"`
-	Success      bool         `json:"Success" xml:"Success"`
-	EventType    string       `json:"EventType" xml:"EventType"`
-	GroupId      string       `json:"GroupId" xml:"GroupId"`
-	RuleId       string       `json:"RuleId" xml:"RuleId"`
-	Description  string       `json:"Description" xml:"Description"`
-	EventPattern EventPattern `json:"EventPattern" xml:"EventPattern"`
+	Name             string       `json:"Name" xml:"Name"`
+	Message          string       `json:"Message" xml:"Message"`
+	RuleName         string       `json:"RuleName" xml:"RuleName"`
+	Code             string       `json:"Code" xml:"Code"`
+	Detail           string       `json:"Detail" xml:"Detail"`
+	RuleId           string       `json:"RuleId" xml:"RuleId"`
+	State            string       `json:"State" xml:"State"`
+	Success          bool         `json:"Success" xml:"Success"`
+	EventType        string       `json:"EventType" xml:"EventType"`
+	RequestId        string       `json:"RequestId" xml:"RequestId"`
+	GroupId          string       `json:"GroupId" xml:"GroupId"`
+	Description      string       `json:"Description" xml:"Description"`
+	NotifyTargetList []string     `json:"notifyTargetList" xml:"notifyTargetList"`
+	EventPattern     EventPattern `json:"EventPattern" xml:"EventPattern"`
 }

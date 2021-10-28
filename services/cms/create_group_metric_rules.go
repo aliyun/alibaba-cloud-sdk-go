@@ -83,22 +83,24 @@ type CreateGroupMetricRulesGroupMetricRules struct {
 	EscalationsInfoStatistics             string `name:"Escalations.Info.Statistics"`
 	EffectiveInterval                     string `name:"EffectiveInterval"`
 	EscalationsInfoComparisonOperator     string `name:"Escalations.Info.ComparisonOperator"`
+	NoDataPolicy                          string `name:"NoDataPolicy"`
 	NoEffectiveInterval                   string `name:"NoEffectiveInterval"`
 	EmailSubject                          string `name:"EmailSubject"`
 	SilenceTime                           string `name:"SilenceTime"`
 	MetricName                            string `name:"MetricName"`
 	EscalationsWarnTimes                  string `name:"Escalations.Warn.Times"`
-	Period                                string `name:"Period"`
+	CompositeExpression                   string `name:"CompositeExpression"`
 	EscalationsWarnThreshold              string `name:"Escalations.Warn.Threshold"`
+	Period                                string `name:"Period"`
 	EscalationsCriticalStatistics         string `name:"Escalations.Critical.Statistics"`
 	EscalationsInfoTimes                  string `name:"Escalations.Info.Times"`
 	EscalationsCriticalTimes              string `name:"Escalations.Critical.Times"`
-	EscalationsWarnStatistics             string `name:"Escalations.Warn.Statistics"`
 	EscalationsInfoThreshold              string `name:"Escalations.Info.Threshold"`
+	EscalationsWarnStatistics             string `name:"Escalations.Warn.Statistics"`
 	Namespace                             string `name:"Namespace"`
 	Interval                              string `name:"Interval"`
-	Category                              string `name:"Category"`
 	RuleId                                string `name:"RuleId"`
+	Category                              string `name:"Category"`
 	EscalationsCriticalComparisonOperator string `name:"Escalations.Critical.ComparisonOperator"`
 	EscalationsCriticalThreshold          string `name:"Escalations.Critical.Threshold"`
 	Dimensions                            string `name:"Dimensions"`
@@ -107,10 +109,10 @@ type CreateGroupMetricRulesGroupMetricRules struct {
 // CreateGroupMetricRulesResponse is the response struct for api CreateGroupMetricRules
 type CreateGroupMetricRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string                            `json:"RequestId" xml:"RequestId"`
-	Success   bool                              `json:"Success" xml:"Success"`
 	Code      int                               `json:"Code" xml:"Code"`
 	Message   string                            `json:"Message" xml:"Message"`
+	RequestId string                            `json:"RequestId" xml:"RequestId"`
+	Success   bool                              `json:"Success" xml:"Success"`
 	Resources ResourcesInCreateGroupMetricRules `json:"Resources" xml:"Resources"`
 }
 

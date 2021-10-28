@@ -17,24 +17,26 @@ package cms
 
 // AlarmInDescribeMetricRuleList is a nested struct in cms response
 type AlarmInDescribeMetricRuleList struct {
-	RuleId              string      `json:"RuleId" xml:"RuleId"`
-	Namespace           string      `json:"Namespace" xml:"Namespace"`
-	MetricName          string      `json:"MetricName" xml:"MetricName"`
-	Period              string      `json:"Period" xml:"Period"`
-	EffectiveInterval   string      `json:"EffectiveInterval" xml:"EffectiveInterval"`
-	NoEffectiveInterval string      `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
-	SilenceTime         int         `json:"SilenceTime" xml:"SilenceTime"`
-	EnableState         bool        `json:"EnableState" xml:"EnableState"`
-	AlertState          string      `json:"AlertState" xml:"AlertState"`
-	ContactGroups       string      `json:"ContactGroups" xml:"ContactGroups"`
-	Webhook             string      `json:"Webhook" xml:"Webhook"`
-	MailSubject         string      `json:"MailSubject" xml:"MailSubject"`
-	RuleName            string      `json:"RuleName" xml:"RuleName"`
-	Resources           string      `json:"Resources" xml:"Resources"`
-	GroupId             string      `json:"GroupId" xml:"GroupId"`
-	GroupName           string      `json:"GroupName" xml:"GroupName"`
-	Dimensions          string      `json:"Dimensions" xml:"Dimensions"`
-	SourceType          string      `json:"SourceType" xml:"SourceType"`
-	GroupBy             string      `json:"GroupBy" xml:"GroupBy"`
-	Escalations         Escalations `json:"Escalations" xml:"Escalations"`
+	SilenceTime         int                 `json:"SilenceTime" xml:"SilenceTime"`
+	MetricName          string              `json:"MetricName" xml:"MetricName"`
+	Webhook             string              `json:"Webhook" xml:"Webhook"`
+	ContactGroups       string              `json:"ContactGroups" xml:"ContactGroups"`
+	SourceType          string              `json:"SourceType" xml:"SourceType"`
+	Namespace           string              `json:"Namespace" xml:"Namespace"`
+	MailSubject         string              `json:"MailSubject" xml:"MailSubject"`
+	NoEffectiveInterval string              `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
+	EffectiveInterval   string              `json:"EffectiveInterval" xml:"EffectiveInterval"`
+	RuleName            string              `json:"RuleName" xml:"RuleName"`
+	AlertState          string              `json:"AlertState" xml:"AlertState"`
+	Period              string              `json:"Period" xml:"Period"`
+	RuleId              string              `json:"RuleId" xml:"RuleId"`
+	GroupName           string              `json:"GroupName" xml:"GroupName"`
+	GroupId             string              `json:"GroupId" xml:"GroupId"`
+	Dimensions          string              `json:"Dimensions" xml:"Dimensions"`
+	EnableState         bool                `json:"EnableState" xml:"EnableState"`
+	GroupBy             string              `json:"GroupBy" xml:"GroupBy"`
+	Resources           string              `json:"Resources" xml:"Resources"`
+	NoDataPolicy        string              `json:"NoDataPolicy" xml:"NoDataPolicy"`
+	Escalations         Escalations         `json:"Escalations" xml:"Escalations"`
+	CompositeExpression CompositeExpression `json:"CompositeExpression" xml:"CompositeExpression"`
 }

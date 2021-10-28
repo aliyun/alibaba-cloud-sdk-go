@@ -86,11 +86,11 @@ type DescribeMetricRuleListRequest struct {
 // DescribeMetricRuleListResponse is the response struct for api DescribeMetricRuleList
 type DescribeMetricRuleListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Total     string `json:"Total" xml:"Total"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Alarms    Alarms `json:"Alarms" xml:"Alarms"`
 }
 

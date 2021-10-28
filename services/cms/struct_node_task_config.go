@@ -17,13 +17,13 @@ package cms
 
 // NodeTaskConfig is a nested struct in cms response
 type NodeTaskConfig struct {
-	Id          int64       `json:"Id" xml:"Id"`
-	TaskName    string      `json:"TaskName" xml:"TaskName"`
 	TaskType    string      `json:"TaskType" xml:"TaskType"`
-	TaskScope   string      `json:"TaskScope" xml:"TaskScope"`
-	Disabled    bool        `json:"Disabled" xml:"Disabled"`
-	GroupId     int64       `json:"GroupId" xml:"GroupId"`
 	GroupName   string      `json:"GroupName" xml:"GroupName"`
+	GroupId     int64       `json:"GroupId" xml:"GroupId"`
+	TaskName    string      `json:"TaskName" xml:"TaskName"`
+	Disabled    bool        `json:"Disabled" xml:"Disabled"`
+	TaskScope   string      `json:"TaskScope" xml:"TaskScope"`
+	Id          int64       `json:"Id" xml:"Id"`
 	Instances   Instances   `json:"Instances" xml:"Instances"`
 	TaskOption  TaskOption  `json:"TaskOption" xml:"TaskOption"`
 	AlertConfig AlertConfig `json:"AlertConfig" xml:"AlertConfig"`

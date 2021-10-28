@@ -17,12 +17,12 @@ package cms
 
 // TaskOption is a nested struct in cms response
 type TaskOption struct {
+	HttpMethod          string `json:"HttpMethod" xml:"HttpMethod"`
+	Interval            int    `json:"Interval" xml:"Interval"`
 	HttpURI             string `json:"HttpURI" xml:"HttpURI"`
 	TelnetOrPingHost    string `json:"TelnetOrPingHost" xml:"TelnetOrPingHost"`
 	HttpResponseCharset string `json:"HttpResponseCharset" xml:"HttpResponseCharset"`
 	HttpPostContent     string `json:"HttpPostContent" xml:"HttpPostContent"`
-	HttpKeyword         string `json:"HttpKeyword" xml:"HttpKeyword"`
-	HttpMethod          string `json:"HttpMethod" xml:"HttpMethod"`
 	HttpNegative        bool   `json:"HttpNegative" xml:"HttpNegative"`
-	Interval            int    `json:"Interval" xml:"Interval"`
+	HttpKeyword         string `json:"HttpKeyword" xml:"HttpKeyword"`
 }

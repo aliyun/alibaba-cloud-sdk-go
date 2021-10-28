@@ -17,20 +17,20 @@ package cms
 
 // MetricRule is a nested struct in cms response
 type MetricRule struct {
-	RuleId             string `json:"RuleId" xml:"RuleId"`
-	RuleName           string `json:"RuleName" xml:"RuleName"`
-	Namespace          string `json:"Namespace" xml:"Namespace"`
 	MetricName         string `json:"MetricName" xml:"MetricName"`
+	EvaluationCount    string `json:"EvaluationCount" xml:"EvaluationCount"`
+	Namespace          string `json:"Namespace" xml:"Namespace"`
 	OkActions          string `json:"OkActions" xml:"OkActions"`
 	AlarmActions       string `json:"AlarmActions" xml:"AlarmActions"`
-	Statistics         string `json:"Statistics" xml:"Statistics"`
-	ActionEnable       string `json:"ActionEnable" xml:"ActionEnable"`
+	RuleId             string `json:"RuleId" xml:"RuleId"`
+	RuleName           string `json:"RuleName" xml:"RuleName"`
 	Period             string `json:"Period" xml:"Period"`
 	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	Threshold          string `json:"Threshold" xml:"Threshold"`
-	EvaluationCount    string `json:"EvaluationCount" xml:"EvaluationCount"`
-	Level              string `json:"Level" xml:"Level"`
 	Expression         string `json:"Expression" xml:"Expression"`
-	StateValue         string `json:"StateValue" xml:"StateValue"`
 	Dimensions         string `json:"Dimensions" xml:"Dimensions"`
+	StateValue         string `json:"StateValue" xml:"StateValue"`
+	ActionEnable       string `json:"ActionEnable" xml:"ActionEnable"`
+	Level              string `json:"Level" xml:"Level"`
+	Threshold          string `json:"Threshold" xml:"Threshold"`
+	Statistics         string `json:"Statistics" xml:"Statistics"`
 }

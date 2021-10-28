@@ -42,6 +42,7 @@ type AlarmInDescribeAlertLogList struct {
 	ContactMailList     []string          `json:"ContactMailList" xml:"ContactMailList"`
 	ContactDingList     []string          `json:"ContactDingList" xml:"ContactDingList"`
 	DingdingWebhookList []string          `json:"DingdingWebhookList" xml:"DingdingWebhookList"`
+	SendDetail          SendDetail        `json:"SendDetail" xml:"SendDetail"`
 	Escalation          Escalation        `json:"Escalation" xml:"Escalation"`
 	ExtendedInfo        []ExtInfo         `json:"ExtendedInfo" xml:"ExtendedInfo"`
 	Dimensions          []DimensionsItem  `json:"Dimensions" xml:"Dimensions"`

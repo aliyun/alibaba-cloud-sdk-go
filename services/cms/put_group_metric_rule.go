@@ -77,11 +77,13 @@ type PutGroupMetricRuleRequest struct {
 	EscalationsInfoStatistics             string           `position:"Query" name:"Escalations.Info.Statistics"`
 	EffectiveInterval                     string           `position:"Query" name:"EffectiveInterval"`
 	EscalationsInfoComparisonOperator     string           `position:"Query" name:"Escalations.Info.ComparisonOperator"`
+	NoDataPolicy                          string           `position:"Query" name:"NoDataPolicy"`
 	NoEffectiveInterval                   string           `position:"Query" name:"NoEffectiveInterval"`
 	EmailSubject                          string           `position:"Query" name:"EmailSubject"`
 	SilenceTime                           requests.Integer `position:"Query" name:"SilenceTime"`
 	MetricName                            string           `position:"Query" name:"MetricName"`
 	EscalationsWarnTimes                  requests.Integer `position:"Query" name:"Escalations.Warn.Times"`
+	CompositeExpression                   string           `position:"Query" name:"CompositeExpression"`
 	Period                                string           `position:"Query" name:"Period"`
 	EscalationsWarnThreshold              string           `position:"Query" name:"Escalations.Warn.Threshold"`
 	ContactGroups                         string           `position:"Query" name:"ContactGroups"`
@@ -104,10 +106,10 @@ type PutGroupMetricRuleRequest struct {
 // PutGroupMetricRuleResponse is the response struct for api PutGroupMetricRule
 type PutGroupMetricRuleResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreatePutGroupMetricRuleRequest creates a request to invoke PutGroupMetricRule API

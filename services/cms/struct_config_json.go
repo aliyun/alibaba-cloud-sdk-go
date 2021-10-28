@@ -20,6 +20,5 @@ type ConfigJson struct {
 	Logstore string `json:"logstore" xml:"logstore"`
 	Project  string `json:"project" xml:"project"`
 	Endpoint string `json:"endpoint" xml:"endpoint"`
-	As       string `json:"as" xml:"as"`
 	Ak       string `json:"ak" xml:"ak"`
 }

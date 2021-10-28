@@ -81,11 +81,11 @@ type DescribeMetricMetaListRequest struct {
 // DescribeMetricMetaListResponse is the response struct for api DescribeMetricMetaList
 type DescribeMetricMetaListResponse struct {
 	*responses.BaseResponse
-	RequestId  string                            `json:"RequestId" xml:"RequestId"`
-	Success    bool                              `json:"Success" xml:"Success"`
 	Code       string                            `json:"Code" xml:"Code"`
 	Message    string                            `json:"Message" xml:"Message"`
+	RequestId  string                            `json:"RequestId" xml:"RequestId"`
 	TotalCount string                            `json:"TotalCount" xml:"TotalCount"`
+	Success    bool                              `json:"Success" xml:"Success"`
 	Resources  ResourcesInDescribeMetricMetaList `json:"Resources" xml:"Resources"`
 }
 
