@@ -35,7 +35,6 @@ func GetEndpointMap() map[string]string {
 			"cn-hangzhou-internal-test-3": "arms.aliyuncs.com",
 			"cn-hangzhou-internal-test-2": "arms.aliyuncs.com",
 			"me-east-1":                   "arms.aliyuncs.com",
-			"cn-chengdu":                  "arms.aliyuncs.com",
 			"cn-hangzhou-test-306":        "arms.aliyuncs.com",
 			"cn-huhehaote-nebula-1":       "arms.aliyuncs.com",
 			"cn-shanghai-et2-b01":         "arms.aliyuncs.com",

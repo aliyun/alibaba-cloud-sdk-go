@@ -1,3 +1,7 @@
+2021-11-01 Version: v1.61.1312
+- Generated 2019-08-08 for `ARMS`.
+- Support recover body for webhook api.
+
 2021-10-28 Version: v1.61.1311
 - Generated 2019-01-01 for `Cms`.
 - Add no data alarm processing.

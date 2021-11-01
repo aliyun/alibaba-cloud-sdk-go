@@ -79,13 +79,14 @@ type UpdateWebhookRequest struct {
 	Body        string           `position:"Query" name:"Body"`
 	Url         string           `position:"Query" name:"Url"`
 	ContactName string           `position:"Query" name:"ContactName"`
+	RecoverBody string           `position:"Query" name:"RecoverBody"`
 }
 
 // UpdateWebhookResponse is the response struct for api UpdateWebhook
 type UpdateWebhookResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
 	UpdateWebhookIsSuccess bool   `json:"IsSuccess" xml:"IsSuccess"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateWebhookRequest creates a request to invoke UpdateWebhook API

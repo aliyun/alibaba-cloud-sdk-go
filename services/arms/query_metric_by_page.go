@@ -76,16 +76,16 @@ type QueryMetricByPageRequest struct {
 	OrderBy                  string                      `position:"Query" name:"OrderBy"`
 	CurrentPage              requests.Integer            `position:"Query" name:"CurrentPage"`
 	StartTime                requests.Integer            `position:"Query" name:"StartTime"`
-	Filters                  *[]QueryMetricByPageFilters `position:"Query" name:"Filters"  type:"Repeated"`
 	ConsistencyDataKey       string                      `position:"Query" name:"ConsistencyDataKey"`
+	Filters                  *[]QueryMetricByPageFilters `position:"Query" name:"Filters"  type:"Repeated"`
 	ProxyUserId              string                      `position:"Query" name:"ProxyUserId"`
 	Measures                 *[]string                   `position:"Query" name:"Measures"  type:"Repeated"`
 	IntervalInSec            requests.Integer            `position:"Query" name:"IntervalInSec"`
 	Metric                   string                      `position:"Query" name:"Metric"`
 	CustomFilters            *[]string                   `position:"Query" name:"CustomFilters"  type:"Repeated"`
 	PageSize                 requests.Integer            `position:"Query" name:"PageSize"`
-	Dimensions               *[]string                   `position:"Query" name:"Dimensions"  type:"Repeated"`
 	Order                    string                      `position:"Query" name:"Order"`
+	Dimensions               *[]string                   `position:"Query" name:"Dimensions"  type:"Repeated"`
 }
 
 // QueryMetricByPageFilters is a repeated param struct in QueryMetricByPageRequest
@@ -97,10 +97,10 @@ type QueryMetricByPageFilters struct {
 // QueryMetricByPageResponse is the response struct for api QueryMetricByPage
 type QueryMetricByPageResponse struct {
 	*responses.BaseResponse
-	RequestId string                  `json:"RequestId" xml:"RequestId"`
 	Code      string                  `json:"Code" xml:"Code"`
-	Success   bool                    `json:"Success" xml:"Success"`
 	Message   string                  `json:"Message" xml:"Message"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Success   bool                    `json:"Success" xml:"Success"`
 	Data      DataInQueryMetricByPage `json:"Data" xml:"Data"`
 }
 

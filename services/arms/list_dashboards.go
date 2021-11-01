@@ -75,6 +75,7 @@ type ListDashboardsRequest struct {
 	Product        string           `position:"Query" name:"Product"`
 	RecreateSwitch requests.Boolean `position:"Query" name:"RecreateSwitch"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
+	ProxyUserId    string           `position:"Query" name:"ProxyUserId"`
 	Title          string           `position:"Query" name:"Title"`
 	ClusterType    string           `position:"Query" name:"ClusterType"`
 }

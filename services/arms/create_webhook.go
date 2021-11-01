@@ -78,13 +78,14 @@ type CreateWebhookRequest struct {
 	Body        string `position:"Query" name:"Body"`
 	Url         string `position:"Query" name:"Url"`
 	ContactName string `position:"Query" name:"ContactName"`
+	RecoverBody string `position:"Query" name:"RecoverBody"`
 }
 
 // CreateWebhookResponse is the response struct for api CreateWebhook
 type CreateWebhookResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ContactId string `json:"ContactId" xml:"ContactId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateWebhookRequest creates a request to invoke CreateWebhook API
