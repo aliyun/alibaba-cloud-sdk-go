@@ -21,7 +21,6 @@ import (
 )
 
 // CreatePackage invokes the foas.CreatePackage API synchronously
-// api document: https://help.aliyun.com/api/foas/createpackage.html
 func (client *Client) CreatePackage(request *CreatePackageRequest) (response *CreatePackageResponse, err error) {
 	response = CreateCreatePackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreatePackage(request *CreatePackageRequest) (response *Cr
 }
 
 // CreatePackageWithChan invokes the foas.CreatePackage API asynchronously
-// api document: https://help.aliyun.com/api/foas/createpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePackageWithChan(request *CreatePackageRequest) (<-chan *CreatePackageResponse, <-chan error) {
 	responseChan := make(chan *CreatePackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreatePackageWithChan(request *CreatePackageRequest) (<-ch
 }
 
 // CreatePackageWithCallback invokes the foas.CreatePackage API asynchronously
-// api document: https://help.aliyun.com/api/foas/createpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePackageWithCallback(request *CreatePackageRequest, callback func(response *CreatePackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

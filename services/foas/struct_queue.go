@@ -17,15 +17,16 @@ package foas
 
 // Queue is a nested struct in foas response
 type Queue struct {
-	ClusterId string `json:"ClusterId" xml:"ClusterId"`
-	QueueName string `json:"QueueName" xml:"QueueName"`
-	UsedVCore int    `json:"UsedVCore" xml:"UsedVCore"`
-	MinGpu    int    `json:"MinGpu" xml:"MinGpu"`
-	UsedMem   int    `json:"UsedMem" xml:"UsedMem"`
-	MaxVCore  int    `json:"MaxVCore" xml:"MaxVCore"`
-	MaxMem    int    `json:"MaxMem" xml:"MaxMem"`
-	MaxGpu    int    `json:"MaxGpu" xml:"MaxGpu"`
-	UsedGpu   int    `json:"UsedGpu" xml:"UsedGpu"`
-	MinMem    int    `json:"MinMem" xml:"MinMem"`
-	MinVCore  int    `json:"MinVCore" xml:"MinVCore"`
+	ClusterId    string `json:"ClusterId" xml:"ClusterId"`
+	QueueName    string `json:"QueueName" xml:"QueueName"`
+	UsedVCore    int    `json:"UsedVCore" xml:"UsedVCore"`
+	ExternalInfo string `json:"ExternalInfo" xml:"ExternalInfo"`
+	MinGpu       int    `json:"MinGpu" xml:"MinGpu"`
+	UsedMem      int    `json:"UsedMem" xml:"UsedMem"`
+	MaxVCore     int    `json:"MaxVCore" xml:"MaxVCore"`
+	MaxMem       int    `json:"MaxMem" xml:"MaxMem"`
+	MaxGpu       int    `json:"MaxGpu" xml:"MaxGpu"`
+	UsedGpu      int    `json:"UsedGpu" xml:"UsedGpu"`
+	MinMem       int    `json:"MinMem" xml:"MinMem"`
+	MinVCore     int    `json:"MinVCore" xml:"MinVCore"`
 }

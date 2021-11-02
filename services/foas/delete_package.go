@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePackage invokes the foas.DeletePackage API synchronously
-// api document: https://help.aliyun.com/api/foas/deletepackage.html
 func (client *Client) DeletePackage(request *DeletePackageRequest) (response *DeletePackageResponse, err error) {
 	response = CreateDeletePackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePackage(request *DeletePackageRequest) (response *De
 }
 
 // DeletePackageWithChan invokes the foas.DeletePackage API asynchronously
-// api document: https://help.aliyun.com/api/foas/deletepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePackageWithChan(request *DeletePackageRequest) (<-chan *DeletePackageResponse, <-chan error) {
 	responseChan := make(chan *DeletePackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePackageWithChan(request *DeletePackageRequest) (<-ch
 }
 
 // DeletePackageWithCallback invokes the foas.DeletePackage API asynchronously
-// api document: https://help.aliyun.com/api/foas/deletepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePackageWithCallback(request *DeletePackageRequest, callback func(response *DeletePackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

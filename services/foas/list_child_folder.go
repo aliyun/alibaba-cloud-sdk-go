@@ -21,7 +21,6 @@ import (
 )
 
 // ListChildFolder invokes the foas.ListChildFolder API synchronously
-// api document: https://help.aliyun.com/api/foas/listchildfolder.html
 func (client *Client) ListChildFolder(request *ListChildFolderRequest) (response *ListChildFolderResponse, err error) {
 	response = CreateListChildFolderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListChildFolder(request *ListChildFolderRequest) (response
 }
 
 // ListChildFolderWithChan invokes the foas.ListChildFolder API asynchronously
-// api document: https://help.aliyun.com/api/foas/listchildfolder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListChildFolderWithChan(request *ListChildFolderRequest) (<-chan *ListChildFolderResponse, <-chan error) {
 	responseChan := make(chan *ListChildFolderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListChildFolderWithChan(request *ListChildFolderRequest) (
 }
 
 // ListChildFolderWithCallback invokes the foas.ListChildFolder API asynchronously
-// api document: https://help.aliyun.com/api/foas/listchildfolder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListChildFolderWithCallback(request *ListChildFolderRequest, callback func(response *ListChildFolderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

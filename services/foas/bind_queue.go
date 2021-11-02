@@ -21,7 +21,6 @@ import (
 )
 
 // BindQueue invokes the foas.BindQueue API synchronously
-// api document: https://help.aliyun.com/api/foas/bindqueue.html
 func (client *Client) BindQueue(request *BindQueueRequest) (response *BindQueueResponse, err error) {
 	response = CreateBindQueueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindQueue(request *BindQueueRequest) (response *BindQueueR
 }
 
 // BindQueueWithChan invokes the foas.BindQueue API asynchronously
-// api document: https://help.aliyun.com/api/foas/bindqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindQueueWithChan(request *BindQueueRequest) (<-chan *BindQueueResponse, <-chan error) {
 	responseChan := make(chan *BindQueueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindQueueWithChan(request *BindQueueRequest) (<-chan *Bind
 }
 
 // BindQueueWithCallback invokes the foas.BindQueue API asynchronously
-// api document: https://help.aliyun.com/api/foas/bindqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindQueueWithCallback(request *BindQueueRequest, callback func(response *BindQueueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

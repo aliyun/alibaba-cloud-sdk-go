@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceMetric invokes the foas.GetInstanceMetric API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstancemetric.html
 func (client *Client) GetInstanceMetric(request *GetInstanceMetricRequest) (response *GetInstanceMetricResponse, err error) {
 	response = CreateGetInstanceMetricResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceMetric(request *GetInstanceMetricRequest) (resp
 }
 
 // GetInstanceMetricWithChan invokes the foas.GetInstanceMetric API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancemetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceMetricWithChan(request *GetInstanceMetricRequest) (<-chan *GetInstanceMetricResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceMetricResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceMetricWithChan(request *GetInstanceMetricReques
 }
 
 // GetInstanceMetricWithCallback invokes the foas.GetInstanceMetric API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancemetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceMetricWithCallback(request *GetInstanceMetricRequest, callback func(response *GetInstanceMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

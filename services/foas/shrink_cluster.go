@@ -21,7 +21,6 @@ import (
 )
 
 // ShrinkCluster invokes the foas.ShrinkCluster API synchronously
-// api document: https://help.aliyun.com/api/foas/shrinkcluster.html
 func (client *Client) ShrinkCluster(request *ShrinkClusterRequest) (response *ShrinkClusterResponse, err error) {
 	response = CreateShrinkClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ShrinkCluster(request *ShrinkClusterRequest) (response *Sh
 }
 
 // ShrinkClusterWithChan invokes the foas.ShrinkCluster API asynchronously
-// api document: https://help.aliyun.com/api/foas/shrinkcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ShrinkClusterWithChan(request *ShrinkClusterRequest) (<-chan *ShrinkClusterResponse, <-chan error) {
 	responseChan := make(chan *ShrinkClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ShrinkClusterWithChan(request *ShrinkClusterRequest) (<-ch
 }
 
 // ShrinkClusterWithCallback invokes the foas.ShrinkCluster API asynchronously
-// api document: https://help.aliyun.com/api/foas/shrinkcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ShrinkClusterWithCallback(request *ShrinkClusterRequest, callback func(response *ShrinkClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

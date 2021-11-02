@@ -17,16 +17,17 @@ package foas
 
 // Project is a nested struct in foas response
 type Project struct {
-	Name        string `json:"Name" xml:"Name"`
-	Region      string `json:"Region" xml:"Region"`
-	ModifyTime  int64  `json:"ModifyTime" xml:"ModifyTime"`
-	ClusterId   string `json:"ClusterId" xml:"ClusterId"`
-	ManagerIds  string `json:"ManagerIds" xml:"ManagerIds"`
-	State       string `json:"State" xml:"State"`
-	Modifier    string `json:"Modifier" xml:"Modifier"`
-	Creator     string `json:"Creator" xml:"Creator"`
-	Id          string `json:"Id" xml:"Id"`
-	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
-	Description string `json:"Description" xml:"Description"`
-	DeployType  string `json:"DeployType" xml:"DeployType"`
+	Name            string `json:"Name" xml:"Name"`
+	Region          string `json:"Region" xml:"Region"`
+	ModifyTime      int64  `json:"ModifyTime" xml:"ModifyTime"`
+	ClusterId       string `json:"ClusterId" xml:"ClusterId"`
+	ManagerIds      string `json:"ManagerIds" xml:"ManagerIds"`
+	GlobalJobConfig string `json:"GlobalJobConfig" xml:"GlobalJobConfig"`
+	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
+	DeployType      string `json:"DeployType" xml:"DeployType"`
+	State           string `json:"State" xml:"State"`
+	Modifier        string `json:"Modifier" xml:"Modifier"`
+	Creator         string `json:"Creator" xml:"Creator"`
+	Id              string `json:"Id" xml:"Id"`
+	Description     string `json:"Description" xml:"Description"`
 }

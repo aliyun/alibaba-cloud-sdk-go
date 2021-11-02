@@ -21,7 +21,6 @@ import (
 )
 
 // GetProject invokes the foas.GetProject API synchronously
-// api document: https://help.aliyun.com/api/foas/getproject.html
 func (client *Client) GetProject(request *GetProjectRequest) (response *GetProjectResponse, err error) {
 	response = CreateGetProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetProject(request *GetProjectRequest) (response *GetProje
 }
 
 // GetProjectWithChan invokes the foas.GetProject API asynchronously
-// api document: https://help.aliyun.com/api/foas/getproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProjectWithChan(request *GetProjectRequest) (<-chan *GetProjectResponse, <-chan error) {
 	responseChan := make(chan *GetProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetProjectWithChan(request *GetProjectRequest) (<-chan *Ge
 }
 
 // GetProjectWithCallback invokes the foas.GetProject API asynchronously
-// api document: https://help.aliyun.com/api/foas/getproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProjectWithCallback(request *GetProjectRequest, callback func(response *GetProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -17,6 +17,7 @@ package foas
 
 // Job is a nested struct in foas response
 type Job struct {
+	FileId        string `json:"FileId" xml:"FileId"`
 	ModifyTime    int64  `json:"ModifyTime" xml:"ModifyTime"`
 	ClusterId     string `json:"ClusterId" xml:"ClusterId"`
 	QueueName     string `json:"QueueName" xml:"QueueName"`

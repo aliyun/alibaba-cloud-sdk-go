@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceFinalState invokes the foas.GetInstanceFinalState API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstancefinalstate.html
 func (client *Client) GetInstanceFinalState(request *GetInstanceFinalStateRequest) (response *GetInstanceFinalStateResponse, err error) {
 	response = CreateGetInstanceFinalStateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceFinalState(request *GetInstanceFinalStateReques
 }
 
 // GetInstanceFinalStateWithChan invokes the foas.GetInstanceFinalState API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancefinalstate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceFinalStateWithChan(request *GetInstanceFinalStateRequest) (<-chan *GetInstanceFinalStateResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceFinalStateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceFinalStateWithChan(request *GetInstanceFinalSta
 }
 
 // GetInstanceFinalStateWithCallback invokes the foas.GetInstanceFinalState API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancefinalstate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceFinalStateWithCallback(request *GetInstanceFinalStateRequest, callback func(response *GetInstanceFinalStateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

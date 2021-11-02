@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// MVFolder invokes the foas.MVFolder API synchronously
-func (client *Client) MVFolder(request *MVFolderRequest) (response *MVFolderResponse, err error) {
-	response = CreateMVFolderResponse()
+// UpdateProject invokes the foas.UpdateProject API synchronously
+func (client *Client) UpdateProject(request *UpdateProjectRequest) (response *UpdateProjectResponse, err error) {
+	response = CreateUpdateProjectResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// MVFolderWithChan invokes the foas.MVFolder API asynchronously
-func (client *Client) MVFolderWithChan(request *MVFolderRequest) (<-chan *MVFolderResponse, <-chan error) {
-	responseChan := make(chan *MVFolderResponse, 1)
+// UpdateProjectWithChan invokes the foas.UpdateProject API asynchronously
+func (client *Client) UpdateProjectWithChan(request *UpdateProjectRequest) (<-chan *UpdateProjectResponse, <-chan error) {
+	responseChan := make(chan *UpdateProjectResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.MVFolder(request)
+		response, err := client.UpdateProject(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) MVFolderWithChan(request *MVFolderRequest) (<-chan *MVFold
 	return responseChan, errChan
 }
 
-// MVFolderWithCallback invokes the foas.MVFolder API asynchronously
-func (client *Client) MVFolderWithCallback(request *MVFolderRequest, callback func(response *MVFolderResponse, err error)) <-chan int {
+// UpdateProjectWithCallback invokes the foas.UpdateProject API asynchronously
+func (client *Client) UpdateProjectWithCallback(request *UpdateProjectRequest, callback func(response *UpdateProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *MVFolderResponse
+		var response *UpdateProjectResponse
 		var err error
 		defer close(result)
-		response, err = client.MVFolder(request)
+		response, err = client.UpdateProject(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,32 @@ func (client *Client) MVFolderWithCallback(request *MVFolderRequest, callback fu
 	return result
 }
 
-// MVFolderRequest is the request struct for api MVFolder
-type MVFolderRequest struct {
+// UpdateProjectRequest is the request struct for api UpdateProject
+type UpdateProjectRequest struct {
 	*requests.RoaRequest
-	ProjectName string `position:"Path" name:"projectName"`
-	SrcPath     string `position:"Body" name:"srcPath"`
-	DestPath    string `position:"Body" name:"destPath"`
+	ProjectName     string `position:"Path" name:"projectName"`
+	GlobalJobConfig string `position:"Body" name:"globalJobConfig"`
 }
 
-// MVFolderResponse is the response struct for api MVFolder
-type MVFolderResponse struct {
+// UpdateProjectResponse is the response struct for api UpdateProject
+type UpdateProjectResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateMVFolderRequest creates a request to invoke MVFolder API
-func CreateMVFolderRequest() (request *MVFolderRequest) {
-	request = &MVFolderRequest{
+// CreateUpdateProjectRequest creates a request to invoke UpdateProject API
+func CreateUpdateProjectRequest() (request *UpdateProjectRequest) {
+	request = &UpdateProjectRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("foas", "2018-11-11", "MVFolder", "/api/v2/projects/[projectName]/folders", "foas", "openAPI")
+	request.InitWithApiInfo("foas", "2018-11-11", "UpdateProject", "/api/v2/projects/[projectName]", "foas", "openAPI")
 	request.Method = requests.PUT
 	return
 }
 
-// CreateMVFolderResponse creates a response to parse from MVFolder response
-func CreateMVFolderResponse() (response *MVFolderResponse) {
-	response = &MVFolderResponse{
+// CreateUpdateProjectResponse creates a response to parse from UpdateProject response
+func CreateUpdateProjectResponse() (response *UpdateProjectResponse) {
+	response = &UpdateProjectResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

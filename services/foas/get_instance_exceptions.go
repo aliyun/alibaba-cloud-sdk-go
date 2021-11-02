@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceExceptions invokes the foas.GetInstanceExceptions API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceexceptions.html
 func (client *Client) GetInstanceExceptions(request *GetInstanceExceptionsRequest) (response *GetInstanceExceptionsResponse, err error) {
 	response = CreateGetInstanceExceptionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceExceptions(request *GetInstanceExceptionsReques
 }
 
 // GetInstanceExceptionsWithChan invokes the foas.GetInstanceExceptions API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceexceptions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceExceptionsWithChan(request *GetInstanceExceptionsRequest) (<-chan *GetInstanceExceptionsResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceExceptionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceExceptionsWithChan(request *GetInstanceExceptio
 }
 
 // GetInstanceExceptionsWithCallback invokes the foas.GetInstanceExceptions API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceexceptions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceExceptionsWithCallback(request *GetInstanceExceptionsRequest, callback func(response *GetInstanceExceptionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

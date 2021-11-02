@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCellClusterOrder invokes the foas.CreateCellClusterOrder API synchronously
-// api document: https://help.aliyun.com/api/foas/createcellclusterorder.html
 func (client *Client) CreateCellClusterOrder(request *CreateCellClusterOrderRequest) (response *CreateCellClusterOrderResponse, err error) {
 	response = CreateCreateCellClusterOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCellClusterOrder(request *CreateCellClusterOrderRequ
 }
 
 // CreateCellClusterOrderWithChan invokes the foas.CreateCellClusterOrder API asynchronously
-// api document: https://help.aliyun.com/api/foas/createcellclusterorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCellClusterOrderWithChan(request *CreateCellClusterOrderRequest) (<-chan *CreateCellClusterOrderResponse, <-chan error) {
 	responseChan := make(chan *CreateCellClusterOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCellClusterOrderWithChan(request *CreateCellClusterO
 }
 
 // CreateCellClusterOrderWithCallback invokes the foas.CreateCellClusterOrder API asynchronously
-// api document: https://help.aliyun.com/api/foas/createcellclusterorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCellClusterOrderWithCallback(request *CreateCellClusterOrderRequest, callback func(response *CreateCellClusterOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

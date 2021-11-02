@@ -21,4 +21,5 @@ type Output struct {
 	Workspace  string                 `json:"Workspace" xml:"Workspace"`
 	Name       string                 `json:"Name" xml:"Name"`
 	Properties map[string]interface{} `json:"Properties" xml:"Properties"`
+	Alias      string                 `json:"Alias" xml:"Alias"`
 }

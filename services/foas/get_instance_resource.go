@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceResource invokes the foas.GetInstanceResource API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceresource.html
 func (client *Client) GetInstanceResource(request *GetInstanceResourceRequest) (response *GetInstanceResourceResponse, err error) {
 	response = CreateGetInstanceResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceResource(request *GetInstanceResourceRequest) (
 }
 
 // GetInstanceResourceWithChan invokes the foas.GetInstanceResource API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceResourceWithChan(request *GetInstanceResourceRequest) (<-chan *GetInstanceResourceResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceResourceWithChan(request *GetInstanceResourceRe
 }
 
 // GetInstanceResourceWithCallback invokes the foas.GetInstanceResource API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceResourceWithCallback(request *GetInstanceResourceRequest, callback func(response *GetInstanceResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

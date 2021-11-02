@@ -21,7 +21,6 @@ import (
 )
 
 // OfflineJob invokes the foas.OfflineJob API synchronously
-// api document: https://help.aliyun.com/api/foas/offlinejob.html
 func (client *Client) OfflineJob(request *OfflineJobRequest) (response *OfflineJobResponse, err error) {
 	response = CreateOfflineJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OfflineJob(request *OfflineJobRequest) (response *OfflineJ
 }
 
 // OfflineJobWithChan invokes the foas.OfflineJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/offlinejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OfflineJobWithChan(request *OfflineJobRequest) (<-chan *OfflineJobResponse, <-chan error) {
 	responseChan := make(chan *OfflineJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OfflineJobWithChan(request *OfflineJobRequest) (<-chan *Of
 }
 
 // OfflineJobWithCallback invokes the foas.OfflineJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/offlinejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OfflineJobWithCallback(request *OfflineJobRequest, callback func(response *OfflineJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DestroyCluster invokes the foas.DestroyCluster API synchronously
-// api document: https://help.aliyun.com/api/foas/destroycluster.html
 func (client *Client) DestroyCluster(request *DestroyClusterRequest) (response *DestroyClusterResponse, err error) {
 	response = CreateDestroyClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DestroyCluster(request *DestroyClusterRequest) (response *
 }
 
 // DestroyClusterWithChan invokes the foas.DestroyCluster API asynchronously
-// api document: https://help.aliyun.com/api/foas/destroycluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DestroyClusterWithChan(request *DestroyClusterRequest) (<-chan *DestroyClusterResponse, <-chan error) {
 	responseChan := make(chan *DestroyClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DestroyClusterWithChan(request *DestroyClusterRequest) (<-
 }
 
 // DestroyClusterWithCallback invokes the foas.DestroyCluster API asynchronously
-// api document: https://help.aliyun.com/api/foas/destroycluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DestroyClusterWithCallback(request *DestroyClusterRequest, callback func(response *DestroyClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

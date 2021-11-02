@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceState invokes the foas.ModifyInstanceState API synchronously
-// api document: https://help.aliyun.com/api/foas/modifyinstancestate.html
 func (client *Client) ModifyInstanceState(request *ModifyInstanceStateRequest) (response *ModifyInstanceStateResponse, err error) {
 	response = CreateModifyInstanceStateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceState(request *ModifyInstanceStateRequest) (
 }
 
 // ModifyInstanceStateWithChan invokes the foas.ModifyInstanceState API asynchronously
-// api document: https://help.aliyun.com/api/foas/modifyinstancestate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceStateWithChan(request *ModifyInstanceStateRequest) (<-chan *ModifyInstanceStateResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceStateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceStateWithChan(request *ModifyInstanceStateRe
 }
 
 // ModifyInstanceStateWithCallback invokes the foas.ModifyInstanceState API asynchronously
-// api document: https://help.aliyun.com/api/foas/modifyinstancestate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceStateWithCallback(request *ModifyInstanceStateRequest, callback func(response *ModifyInstanceStateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,12 @@ func (client *Client) ModifyInstanceStateWithCallback(request *ModifyInstanceSta
 // ModifyInstanceStateRequest is the request struct for api ModifyInstanceState
 type ModifyInstanceStateRequest struct {
 	*requests.RoaRequest
-	IsFlush     requests.Boolean `position:"Body" name:"isFlush"`
-	ProjectName string           `position:"Path" name:"projectName"`
-	InstanceId  requests.Integer `position:"Path" name:"instanceId"`
-	ExpectState string           `position:"Body" name:"expectState"`
-	JobName     string           `position:"Path" name:"jobName"`
+	IsFlush           requests.Boolean `position:"Body" name:"isFlush"`
+	ProjectName       string           `position:"Path" name:"projectName"`
+	InstanceId        requests.Integer `position:"Path" name:"instanceId"`
+	TriggerCheckpoint requests.Boolean `position:"Body" name:"triggerCheckpoint"`
+	ExpectState       string           `position:"Body" name:"expectState"`
+	JobName           string           `position:"Path" name:"jobName"`
 }
 
 // ModifyInstanceStateResponse is the response struct for api ModifyInstanceState

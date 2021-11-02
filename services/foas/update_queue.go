@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateQueue invokes the foas.CreateQueue API synchronously
-func (client *Client) CreateQueue(request *CreateQueueRequest) (response *CreateQueueResponse, err error) {
-	response = CreateCreateQueueResponse()
+// UpdateQueue invokes the foas.UpdateQueue API synchronously
+func (client *Client) UpdateQueue(request *UpdateQueueRequest) (response *UpdateQueueResponse, err error) {
+	response = CreateUpdateQueueResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateQueueWithChan invokes the foas.CreateQueue API asynchronously
-func (client *Client) CreateQueueWithChan(request *CreateQueueRequest) (<-chan *CreateQueueResponse, <-chan error) {
-	responseChan := make(chan *CreateQueueResponse, 1)
+// UpdateQueueWithChan invokes the foas.UpdateQueue API asynchronously
+func (client *Client) UpdateQueueWithChan(request *UpdateQueueRequest) (<-chan *UpdateQueueResponse, <-chan error) {
+	responseChan := make(chan *UpdateQueueResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateQueue(request)
+		response, err := client.UpdateQueue(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateQueueWithChan(request *CreateQueueRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// CreateQueueWithCallback invokes the foas.CreateQueue API asynchronously
-func (client *Client) CreateQueueWithCallback(request *CreateQueueRequest, callback func(response *CreateQueueResponse, err error)) <-chan int {
+// UpdateQueueWithCallback invokes the foas.UpdateQueue API asynchronously
+func (client *Client) UpdateQueueWithCallback(request *UpdateQueueRequest, callback func(response *UpdateQueueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateQueueResponse
+		var response *UpdateQueueResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateQueue(request)
+		response, err = client.UpdateQueue(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) CreateQueueWithCallback(request *CreateQueueRequest, callb
 	return result
 }
 
-// CreateQueueRequest is the request struct for api CreateQueue
-type CreateQueueRequest struct {
+// UpdateQueueRequest is the request struct for api UpdateQueue
+type UpdateQueueRequest struct {
 	*requests.RoaRequest
 	QueueName string           `position:"Body" name:"queueName"`
 	MaxMemMB  requests.Integer `position:"Body" name:"maxMemMB"`
@@ -78,25 +78,25 @@ type CreateQueueRequest struct {
 	MaxVcore  requests.Integer `position:"Body" name:"maxVcore"`
 }
 
-// CreateQueueResponse is the response struct for api CreateQueue
-type CreateQueueResponse struct {
+// UpdateQueueResponse is the response struct for api UpdateQueue
+type UpdateQueueResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateCreateQueueRequest creates a request to invoke CreateQueue API
-func CreateCreateQueueRequest() (request *CreateQueueRequest) {
-	request = &CreateQueueRequest{
+// CreateUpdateQueueRequest creates a request to invoke UpdateQueue API
+func CreateUpdateQueueRequest() (request *UpdateQueueRequest) {
+	request = &UpdateQueueRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("foas", "2018-11-11", "CreateQueue", "/api/v2/clusters/[clusterId]/queue", "foas", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("foas", "2018-11-11", "UpdateQueue", "/api/v2/clusters/[clusterId]/queue", "foas", "openAPI")
+	request.Method = requests.PUT
 	return
 }
 
-// CreateCreateQueueResponse creates a response to parse from CreateQueue response
-func CreateCreateQueueResponse() (response *CreateQueueResponse) {
-	response = &CreateQueueResponse{
+// CreateUpdateQueueResponse creates a response to parse from UpdateQueue response
+func CreateUpdateQueueResponse() (response *UpdateQueueResponse) {
+	response = &UpdateQueueResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

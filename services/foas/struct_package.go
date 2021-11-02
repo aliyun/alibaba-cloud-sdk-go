@@ -17,19 +17,23 @@ package foas
 
 // Package is a nested struct in foas response
 type Package struct {
-	ModifyTime  int64  `json:"ModifyTime" xml:"ModifyTime"`
-	OriginName  string `json:"OriginName" xml:"OriginName"`
-	OssOwner    string `json:"OssOwner" xml:"OssOwner"`
-	PackageName string `json:"PackageName" xml:"PackageName"`
-	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
-	OssBucket   string `json:"OssBucket" xml:"OssBucket"`
-	OssPath     string `json:"OssPath" xml:"OssPath"`
-	Tag         string `json:"Tag" xml:"Tag"`
-	ProjectName string `json:"ProjectName" xml:"ProjectName"`
-	Modifier    string `json:"Modifier" xml:"Modifier"`
-	Md5         string `json:"Md5" xml:"Md5"`
-	Creator     string `json:"Creator" xml:"Creator"`
-	OssEndpoint string `json:"OssEndpoint" xml:"OssEndpoint"`
-	Description string `json:"Description" xml:"Description"`
-	Type        string `json:"Type" xml:"Type"`
+	ModifyTime       int64  `json:"ModifyTime" xml:"ModifyTime"`
+	OriginName       string `json:"OriginName" xml:"OriginName"`
+	OssOwner         string `json:"OssOwner" xml:"OssOwner"`
+	ScanErrorMessage string `json:"ScanErrorMessage" xml:"ScanErrorMessage"`
+	PackageName      string `json:"PackageName" xml:"PackageName"`
+	ScanExtBizNo     string `json:"ScanExtBizNo" xml:"ScanExtBizNo"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	ScanLink         string `json:"ScanLink" xml:"ScanLink"`
+	OssBucket        string `json:"OssBucket" xml:"OssBucket"`
+	OssPath          string `json:"OssPath" xml:"OssPath"`
+	Tag              string `json:"Tag" xml:"Tag"`
+	ProjectName      string `json:"ProjectName" xml:"ProjectName"`
+	Modifier         string `json:"Modifier" xml:"Modifier"`
+	Md5              string `json:"Md5" xml:"Md5"`
+	Creator          string `json:"Creator" xml:"Creator"`
+	OssEndpoint      string `json:"OssEndpoint" xml:"OssEndpoint"`
+	ScanState        string `json:"ScanState" xml:"ScanState"`
+	Description      string `json:"Description" xml:"Description"`
+	Type             string `json:"Type" xml:"Type"`
 }

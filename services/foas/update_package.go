@@ -21,7 +21,6 @@ import (
 )
 
 // UpdatePackage invokes the foas.UpdatePackage API synchronously
-// api document: https://help.aliyun.com/api/foas/updatepackage.html
 func (client *Client) UpdatePackage(request *UpdatePackageRequest) (response *UpdatePackageResponse, err error) {
 	response = CreateUpdatePackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdatePackage(request *UpdatePackageRequest) (response *Up
 }
 
 // UpdatePackageWithChan invokes the foas.UpdatePackage API asynchronously
-// api document: https://help.aliyun.com/api/foas/updatepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePackageWithChan(request *UpdatePackageRequest) (<-chan *UpdatePackageResponse, <-chan error) {
 	responseChan := make(chan *UpdatePackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdatePackageWithChan(request *UpdatePackageRequest) (<-ch
 }
 
 // UpdatePackageWithCallback invokes the foas.UpdatePackage API asynchronously
-// api document: https://help.aliyun.com/api/foas/updatepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePackageWithCallback(request *UpdatePackageRequest, callback func(response *UpdatePackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetRawPlanJson invokes the foas.GetRawPlanJson API synchronously
-// api document: https://help.aliyun.com/api/foas/getrawplanjson.html
 func (client *Client) GetRawPlanJson(request *GetRawPlanJsonRequest) (response *GetRawPlanJsonResponse, err error) {
 	response = CreateGetRawPlanJsonResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRawPlanJson(request *GetRawPlanJsonRequest) (response *
 }
 
 // GetRawPlanJsonWithChan invokes the foas.GetRawPlanJson API asynchronously
-// api document: https://help.aliyun.com/api/foas/getrawplanjson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRawPlanJsonWithChan(request *GetRawPlanJsonRequest) (<-chan *GetRawPlanJsonResponse, <-chan error) {
 	responseChan := make(chan *GetRawPlanJsonResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRawPlanJsonWithChan(request *GetRawPlanJsonRequest) (<-
 }
 
 // GetRawPlanJsonWithCallback invokes the foas.GetRawPlanJson API asynchronously
-// api document: https://help.aliyun.com/api/foas/getrawplanjson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRawPlanJsonWithCallback(request *GetRawPlanJsonRequest, callback func(response *GetRawPlanJsonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type GetRawPlanJsonRequest struct {
 	ProjectName    string           `position:"Path" name:"projectName"`
 	ExpectedGB     requests.Float   `position:"Query" name:"expectedGB"`
 	ExpectedCore   requests.Float   `position:"Query" name:"expectedCore"`
+	AdvisorAction  string           `position:"Query" name:"AdvisorAction"`
 	JobName        string           `position:"Path" name:"jobName"`
 	AutoconfEnable requests.Boolean `position:"Query" name:"autoconfEnable"`
 }

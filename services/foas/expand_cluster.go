@@ -21,7 +21,6 @@ import (
 )
 
 // ExpandCluster invokes the foas.ExpandCluster API synchronously
-// api document: https://help.aliyun.com/api/foas/expandcluster.html
 func (client *Client) ExpandCluster(request *ExpandClusterRequest) (response *ExpandClusterResponse, err error) {
 	response = CreateExpandClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExpandCluster(request *ExpandClusterRequest) (response *Ex
 }
 
 // ExpandClusterWithChan invokes the foas.ExpandCluster API asynchronously
-// api document: https://help.aliyun.com/api/foas/expandcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExpandClusterWithChan(request *ExpandClusterRequest) (<-chan *ExpandClusterResponse, <-chan error) {
 	responseChan := make(chan *ExpandClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExpandClusterWithChan(request *ExpandClusterRequest) (<-ch
 }
 
 // ExpandClusterWithCallback invokes the foas.ExpandCluster API asynchronously
-// api document: https://help.aliyun.com/api/foas/expandcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExpandClusterWithCallback(request *ExpandClusterRequest, callback func(response *ExpandClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListProjectBindQueueResource invokes the foas.ListProjectBindQueueResource API synchronously
-// api document: https://help.aliyun.com/api/foas/listprojectbindqueueresource.html
 func (client *Client) ListProjectBindQueueResource(request *ListProjectBindQueueResourceRequest) (response *ListProjectBindQueueResourceResponse, err error) {
 	response = CreateListProjectBindQueueResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListProjectBindQueueResource(request *ListProjectBindQueue
 }
 
 // ListProjectBindQueueResourceWithChan invokes the foas.ListProjectBindQueueResource API asynchronously
-// api document: https://help.aliyun.com/api/foas/listprojectbindqueueresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProjectBindQueueResourceWithChan(request *ListProjectBindQueueResourceRequest) (<-chan *ListProjectBindQueueResourceResponse, <-chan error) {
 	responseChan := make(chan *ListProjectBindQueueResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListProjectBindQueueResourceWithChan(request *ListProjectB
 }
 
 // ListProjectBindQueueResourceWithCallback invokes the foas.ListProjectBindQueueResource API asynchronously
-// api document: https://help.aliyun.com/api/foas/listprojectbindqueueresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProjectBindQueueResourceWithCallback(request *ListProjectBindQueueResourceRequest, callback func(response *ListProjectBindQueueResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

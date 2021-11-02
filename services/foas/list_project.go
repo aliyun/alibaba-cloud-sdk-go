@@ -21,7 +21,6 @@ import (
 )
 
 // ListProject invokes the foas.ListProject API synchronously
-// api document: https://help.aliyun.com/api/foas/listproject.html
 func (client *Client) ListProject(request *ListProjectRequest) (response *ListProjectResponse, err error) {
 	response = CreateListProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListProject(request *ListProjectRequest) (response *ListPr
 }
 
 // ListProjectWithChan invokes the foas.ListProject API asynchronously
-// api document: https://help.aliyun.com/api/foas/listproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProjectWithChan(request *ListProjectRequest) (<-chan *ListProjectResponse, <-chan error) {
 	responseChan := make(chan *ListProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListProjectWithChan(request *ListProjectRequest) (<-chan *
 }
 
 // ListProjectWithCallback invokes the foas.ListProject API asynchronously
-// api document: https://help.aliyun.com/api/foas/listproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProjectWithCallback(request *ListProjectRequest, callback func(response *ListProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetClusterDetails invokes the foas.GetClusterDetails API synchronously
-// api document: https://help.aliyun.com/api/foas/getclusterdetails.html
 func (client *Client) GetClusterDetails(request *GetClusterDetailsRequest) (response *GetClusterDetailsResponse, err error) {
 	response = CreateGetClusterDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetClusterDetails(request *GetClusterDetailsRequest) (resp
 }
 
 // GetClusterDetailsWithChan invokes the foas.GetClusterDetails API asynchronously
-// api document: https://help.aliyun.com/api/foas/getclusterdetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterDetailsWithChan(request *GetClusterDetailsRequest) (<-chan *GetClusterDetailsResponse, <-chan error) {
 	responseChan := make(chan *GetClusterDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetClusterDetailsWithChan(request *GetClusterDetailsReques
 }
 
 // GetClusterDetailsWithCallback invokes the foas.GetClusterDetails API asynchronously
-// api document: https://help.aliyun.com/api/foas/getclusterdetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterDetailsWithCallback(request *GetClusterDetailsRequest, callback func(response *GetClusterDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

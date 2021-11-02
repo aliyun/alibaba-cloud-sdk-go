@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceRunSummary invokes the foas.GetInstanceRunSummary API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstancerunsummary.html
 func (client *Client) GetInstanceRunSummary(request *GetInstanceRunSummaryRequest) (response *GetInstanceRunSummaryResponse, err error) {
 	response = CreateGetInstanceRunSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceRunSummary(request *GetInstanceRunSummaryReques
 }
 
 // GetInstanceRunSummaryWithChan invokes the foas.GetInstanceRunSummary API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancerunsummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceRunSummaryWithChan(request *GetInstanceRunSummaryRequest) (<-chan *GetInstanceRunSummaryResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceRunSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceRunSummaryWithChan(request *GetInstanceRunSumma
 }
 
 // GetInstanceRunSummaryWithCallback invokes the foas.GetInstanceRunSummary API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancerunsummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceRunSummaryWithCallback(request *GetInstanceRunSummaryRequest, callback func(response *GetInstanceRunSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

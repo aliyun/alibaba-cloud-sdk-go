@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceCheckpoint invokes the foas.GetInstanceCheckpoint API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstancecheckpoint.html
 func (client *Client) GetInstanceCheckpoint(request *GetInstanceCheckpointRequest) (response *GetInstanceCheckpointResponse, err error) {
 	response = CreateGetInstanceCheckpointResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceCheckpoint(request *GetInstanceCheckpointReques
 }
 
 // GetInstanceCheckpointWithChan invokes the foas.GetInstanceCheckpoint API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancecheckpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceCheckpointWithChan(request *GetInstanceCheckpointRequest) (<-chan *GetInstanceCheckpointResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceCheckpointResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceCheckpointWithChan(request *GetInstanceCheckpoi
 }
 
 // GetInstanceCheckpointWithCallback invokes the foas.GetInstanceCheckpoint API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancecheckpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceCheckpointWithCallback(request *GetInstanceCheckpointRequest, callback func(response *GetInstanceCheckpointResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

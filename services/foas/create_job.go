@@ -21,7 +21,6 @@ import (
 )
 
 // CreateJob invokes the foas.CreateJob API synchronously
-// api document: https://help.aliyun.com/api/foas/createjob.html
 func (client *Client) CreateJob(request *CreateJobRequest) (response *CreateJobResponse, err error) {
 	response = CreateCreateJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateJob(request *CreateJobRequest) (response *CreateJobR
 }
 
 // CreateJobWithChan invokes the foas.CreateJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/createjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobWithChan(request *CreateJobRequest) (<-chan *CreateJobResponse, <-chan error) {
 	responseChan := make(chan *CreateJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateJobWithChan(request *CreateJobRequest) (<-chan *Crea
 }
 
 // CreateJobWithCallback invokes the foas.CreateJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/createjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobWithCallback(request *CreateJobRequest, callback func(response *CreateJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

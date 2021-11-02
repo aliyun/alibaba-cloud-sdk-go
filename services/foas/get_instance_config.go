@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceConfig invokes the foas.GetInstanceConfig API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceconfig.html
 func (client *Client) GetInstanceConfig(request *GetInstanceConfigRequest) (response *GetInstanceConfigResponse, err error) {
 	response = CreateGetInstanceConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceConfig(request *GetInstanceConfigRequest) (resp
 }
 
 // GetInstanceConfigWithChan invokes the foas.GetInstanceConfig API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceConfigWithChan(request *GetInstanceConfigRequest) (<-chan *GetInstanceConfigResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceConfigWithChan(request *GetInstanceConfigReques
 }
 
 // GetInstanceConfigWithCallback invokes the foas.GetInstanceConfig API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstanceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceConfigWithCallback(request *GetInstanceConfigRequest, callback func(response *GetInstanceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

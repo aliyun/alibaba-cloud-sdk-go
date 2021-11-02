@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyMasterSpec invokes the foas.ModifyMasterSpec API synchronously
-// api document: https://help.aliyun.com/api/foas/modifymasterspec.html
 func (client *Client) ModifyMasterSpec(request *ModifyMasterSpecRequest) (response *ModifyMasterSpecResponse, err error) {
 	response = CreateModifyMasterSpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyMasterSpec(request *ModifyMasterSpecRequest) (respon
 }
 
 // ModifyMasterSpecWithChan invokes the foas.ModifyMasterSpec API asynchronously
-// api document: https://help.aliyun.com/api/foas/modifymasterspec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMasterSpecWithChan(request *ModifyMasterSpecRequest) (<-chan *ModifyMasterSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyMasterSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyMasterSpecWithChan(request *ModifyMasterSpecRequest)
 }
 
 // ModifyMasterSpecWithCallback invokes the foas.ModifyMasterSpec API asynchronously
-// api document: https://help.aliyun.com/api/foas/modifymasterspec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMasterSpecWithCallback(request *ModifyMasterSpecRequest, callback func(response *ModifyMasterSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

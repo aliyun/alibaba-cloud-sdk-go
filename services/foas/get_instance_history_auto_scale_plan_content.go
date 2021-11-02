@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceHistoryAutoScalePlanContent invokes the foas.GetInstanceHistoryAutoScalePlanContent API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstancehistoryautoscaleplancontent.html
 func (client *Client) GetInstanceHistoryAutoScalePlanContent(request *GetInstanceHistoryAutoScalePlanContentRequest) (response *GetInstanceHistoryAutoScalePlanContentResponse, err error) {
 	response = CreateGetInstanceHistoryAutoScalePlanContentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceHistoryAutoScalePlanContent(request *GetInstanc
 }
 
 // GetInstanceHistoryAutoScalePlanContentWithChan invokes the foas.GetInstanceHistoryAutoScalePlanContent API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancehistoryautoscaleplancontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceHistoryAutoScalePlanContentWithChan(request *GetInstanceHistoryAutoScalePlanContentRequest) (<-chan *GetInstanceHistoryAutoScalePlanContentResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceHistoryAutoScalePlanContentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceHistoryAutoScalePlanContentWithChan(request *Ge
 }
 
 // GetInstanceHistoryAutoScalePlanContentWithCallback invokes the foas.GetInstanceHistoryAutoScalePlanContent API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancehistoryautoscaleplancontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceHistoryAutoScalePlanContentWithCallback(request *GetInstanceHistoryAutoScalePlanContentRequest, callback func(response *GetInstanceHistoryAutoScalePlanContentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

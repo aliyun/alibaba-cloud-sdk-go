@@ -21,7 +21,6 @@ import (
 )
 
 // CalcPlanJsonResource invokes the foas.CalcPlanJsonResource API synchronously
-// api document: https://help.aliyun.com/api/foas/calcplanjsonresource.html
 func (client *Client) CalcPlanJsonResource(request *CalcPlanJsonResourceRequest) (response *CalcPlanJsonResourceResponse, err error) {
 	response = CreateCalcPlanJsonResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CalcPlanJsonResource(request *CalcPlanJsonResourceRequest)
 }
 
 // CalcPlanJsonResourceWithChan invokes the foas.CalcPlanJsonResource API asynchronously
-// api document: https://help.aliyun.com/api/foas/calcplanjsonresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CalcPlanJsonResourceWithChan(request *CalcPlanJsonResourceRequest) (<-chan *CalcPlanJsonResourceResponse, <-chan error) {
 	responseChan := make(chan *CalcPlanJsonResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CalcPlanJsonResourceWithChan(request *CalcPlanJsonResource
 }
 
 // CalcPlanJsonResourceWithCallback invokes the foas.CalcPlanJsonResource API asynchronously
-// api document: https://help.aliyun.com/api/foas/calcplanjsonresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CalcPlanJsonResourceWithCallback(request *CalcPlanJsonResourceRequest, callback func(response *CalcPlanJsonResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

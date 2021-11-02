@@ -21,7 +21,6 @@ import (
 )
 
 // BatchGetInstanceRunSummary invokes the foas.BatchGetInstanceRunSummary API synchronously
-// api document: https://help.aliyun.com/api/foas/batchgetinstancerunsummary.html
 func (client *Client) BatchGetInstanceRunSummary(request *BatchGetInstanceRunSummaryRequest) (response *BatchGetInstanceRunSummaryResponse, err error) {
 	response = CreateBatchGetInstanceRunSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchGetInstanceRunSummary(request *BatchGetInstanceRunSum
 }
 
 // BatchGetInstanceRunSummaryWithChan invokes the foas.BatchGetInstanceRunSummary API asynchronously
-// api document: https://help.aliyun.com/api/foas/batchgetinstancerunsummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetInstanceRunSummaryWithChan(request *BatchGetInstanceRunSummaryRequest) (<-chan *BatchGetInstanceRunSummaryResponse, <-chan error) {
 	responseChan := make(chan *BatchGetInstanceRunSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchGetInstanceRunSummaryWithChan(request *BatchGetInstan
 }
 
 // BatchGetInstanceRunSummaryWithCallback invokes the foas.BatchGetInstanceRunSummary API asynchronously
-// api document: https://help.aliyun.com/api/foas/batchgetinstancerunsummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetInstanceRunSummaryWithCallback(request *BatchGetInstanceRunSummaryRequest, callback func(response *BatchGetInstanceRunSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindQueue invokes the foas.UnbindQueue API synchronously
-// api document: https://help.aliyun.com/api/foas/unbindqueue.html
 func (client *Client) UnbindQueue(request *UnbindQueueRequest) (response *UnbindQueueResponse, err error) {
 	response = CreateUnbindQueueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindQueue(request *UnbindQueueRequest) (response *Unbind
 }
 
 // UnbindQueueWithChan invokes the foas.UnbindQueue API asynchronously
-// api document: https://help.aliyun.com/api/foas/unbindqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindQueueWithChan(request *UnbindQueueRequest) (<-chan *UnbindQueueResponse, <-chan error) {
 	responseChan := make(chan *UnbindQueueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindQueueWithChan(request *UnbindQueueRequest) (<-chan *
 }
 
 // UnbindQueueWithCallback invokes the foas.UnbindQueue API asynchronously
-// api document: https://help.aliyun.com/api/foas/unbindqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindQueueWithCallback(request *UnbindQueueRequest, callback func(response *UnbindQueueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

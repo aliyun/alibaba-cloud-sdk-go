@@ -21,7 +21,6 @@ import (
 )
 
 // GetRefPackageJob invokes the foas.GetRefPackageJob API synchronously
-// api document: https://help.aliyun.com/api/foas/getrefpackagejob.html
 func (client *Client) GetRefPackageJob(request *GetRefPackageJobRequest) (response *GetRefPackageJobResponse, err error) {
 	response = CreateGetRefPackageJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRefPackageJob(request *GetRefPackageJobRequest) (respon
 }
 
 // GetRefPackageJobWithChan invokes the foas.GetRefPackageJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/getrefpackagejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRefPackageJobWithChan(request *GetRefPackageJobRequest) (<-chan *GetRefPackageJobResponse, <-chan error) {
 	responseChan := make(chan *GetRefPackageJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRefPackageJobWithChan(request *GetRefPackageJobRequest)
 }
 
 // GetRefPackageJobWithCallback invokes the foas.GetRefPackageJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/getrefpackagejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRefPackageJobWithCallback(request *GetRefPackageJobRequest, callback func(response *GetRefPackageJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

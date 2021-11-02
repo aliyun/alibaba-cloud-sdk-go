@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceDetail invokes the foas.GetInstanceDetail API synchronously
-// api document: https://help.aliyun.com/api/foas/getinstancedetail.html
 func (client *Client) GetInstanceDetail(request *GetInstanceDetailRequest) (response *GetInstanceDetailResponse, err error) {
 	response = CreateGetInstanceDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceDetail(request *GetInstanceDetailRequest) (resp
 }
 
 // GetInstanceDetailWithChan invokes the foas.GetInstanceDetail API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceDetailWithChan(request *GetInstanceDetailRequest) (<-chan *GetInstanceDetailResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceDetailWithChan(request *GetInstanceDetailReques
 }
 
 // GetInstanceDetailWithCallback invokes the foas.GetInstanceDetail API asynchronously
-// api document: https://help.aliyun.com/api/foas/getinstancedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceDetailWithCallback(request *GetInstanceDetailRequest, callback func(response *GetInstanceDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

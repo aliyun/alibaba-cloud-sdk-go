@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAutoScaleConfig invokes the foas.UpdateAutoScaleConfig API synchronously
-// api document: https://help.aliyun.com/api/foas/updateautoscaleconfig.html
 func (client *Client) UpdateAutoScaleConfig(request *UpdateAutoScaleConfigRequest) (response *UpdateAutoScaleConfigResponse, err error) {
 	response = CreateUpdateAutoScaleConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAutoScaleConfig(request *UpdateAutoScaleConfigReques
 }
 
 // UpdateAutoScaleConfigWithChan invokes the foas.UpdateAutoScaleConfig API asynchronously
-// api document: https://help.aliyun.com/api/foas/updateautoscaleconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAutoScaleConfigWithChan(request *UpdateAutoScaleConfigRequest) (<-chan *UpdateAutoScaleConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateAutoScaleConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAutoScaleConfigWithChan(request *UpdateAutoScaleConf
 }
 
 // UpdateAutoScaleConfigWithCallback invokes the foas.UpdateAutoScaleConfig API asynchronously
-// api document: https://help.aliyun.com/api/foas/updateautoscaleconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAutoScaleConfigWithCallback(request *UpdateAutoScaleConfigRequest, callback func(response *UpdateAutoScaleConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

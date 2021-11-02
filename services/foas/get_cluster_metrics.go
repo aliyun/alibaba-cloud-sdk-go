@@ -21,7 +21,6 @@ import (
 )
 
 // GetClusterMetrics invokes the foas.GetClusterMetrics API synchronously
-// api document: https://help.aliyun.com/api/foas/getclustermetrics.html
 func (client *Client) GetClusterMetrics(request *GetClusterMetricsRequest) (response *GetClusterMetricsResponse, err error) {
 	response = CreateGetClusterMetricsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetClusterMetrics(request *GetClusterMetricsRequest) (resp
 }
 
 // GetClusterMetricsWithChan invokes the foas.GetClusterMetrics API asynchronously
-// api document: https://help.aliyun.com/api/foas/getclustermetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterMetricsWithChan(request *GetClusterMetricsRequest) (<-chan *GetClusterMetricsResponse, <-chan error) {
 	responseChan := make(chan *GetClusterMetricsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetClusterMetricsWithChan(request *GetClusterMetricsReques
 }
 
 // GetClusterMetricsWithCallback invokes the foas.GetClusterMetrics API asynchronously
-// api document: https://help.aliyun.com/api/foas/getclustermetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterMetricsWithCallback(request *GetClusterMetricsRequest, callback func(response *GetClusterMetricsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListPackage invokes the foas.ListPackage API synchronously
-// api document: https://help.aliyun.com/api/foas/listpackage.html
 func (client *Client) ListPackage(request *ListPackageRequest) (response *ListPackageResponse, err error) {
 	response = CreateListPackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPackage(request *ListPackageRequest) (response *ListPa
 }
 
 // ListPackageWithChan invokes the foas.ListPackage API asynchronously
-// api document: https://help.aliyun.com/api/foas/listpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPackageWithChan(request *ListPackageRequest) (<-chan *ListPackageResponse, <-chan error) {
 	responseChan := make(chan *ListPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPackageWithChan(request *ListPackageRequest) (<-chan *
 }
 
 // ListPackageWithCallback invokes the foas.ListPackage API asynchronously
-// api document: https://help.aliyun.com/api/foas/listpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPackageWithCallback(request *ListPackageRequest, callback func(response *ListPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

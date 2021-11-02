@@ -21,7 +21,6 @@ import (
 )
 
 // GetClusterQueueInfo invokes the foas.GetClusterQueueInfo API synchronously
-// api document: https://help.aliyun.com/api/foas/getclusterqueueinfo.html
 func (client *Client) GetClusterQueueInfo(request *GetClusterQueueInfoRequest) (response *GetClusterQueueInfoResponse, err error) {
 	response = CreateGetClusterQueueInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetClusterQueueInfo(request *GetClusterQueueInfoRequest) (
 }
 
 // GetClusterQueueInfoWithChan invokes the foas.GetClusterQueueInfo API asynchronously
-// api document: https://help.aliyun.com/api/foas/getclusterqueueinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterQueueInfoWithChan(request *GetClusterQueueInfoRequest) (<-chan *GetClusterQueueInfoResponse, <-chan error) {
 	responseChan := make(chan *GetClusterQueueInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetClusterQueueInfoWithChan(request *GetClusterQueueInfoRe
 }
 
 // GetClusterQueueInfoWithCallback invokes the foas.GetClusterQueueInfo API asynchronously
-// api document: https://help.aliyun.com/api/foas/getclusterqueueinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterQueueInfoWithCallback(request *GetClusterQueueInfoRequest, callback func(response *GetClusterQueueInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

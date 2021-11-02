@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFolder invokes the foas.CreateFolder API synchronously
-// api document: https://help.aliyun.com/api/foas/createfolder.html
 func (client *Client) CreateFolder(request *CreateFolderRequest) (response *CreateFolderResponse, err error) {
 	response = CreateCreateFolderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFolder(request *CreateFolderRequest) (response *Crea
 }
 
 // CreateFolderWithChan invokes the foas.CreateFolder API asynchronously
-// api document: https://help.aliyun.com/api/foas/createfolder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFolderWithChan(request *CreateFolderRequest) (<-chan *CreateFolderResponse, <-chan error) {
 	responseChan := make(chan *CreateFolderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFolderWithChan(request *CreateFolderRequest) (<-chan
 }
 
 // CreateFolderWithCallback invokes the foas.CreateFolder API asynchronously
-// api document: https://help.aliyun.com/api/foas/createfolder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFolderWithCallback(request *CreateFolderRequest, callback func(response *CreateFolderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

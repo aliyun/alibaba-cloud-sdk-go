@@ -21,7 +21,6 @@ import (
 )
 
 // CommitJob invokes the foas.CommitJob API synchronously
-// api document: https://help.aliyun.com/api/foas/commitjob.html
 func (client *Client) CommitJob(request *CommitJobRequest) (response *CommitJobResponse, err error) {
 	response = CreateCommitJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CommitJob(request *CommitJobRequest) (response *CommitJobR
 }
 
 // CommitJobWithChan invokes the foas.CommitJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/commitjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CommitJobWithChan(request *CommitJobRequest) (<-chan *CommitJobResponse, <-chan error) {
 	responseChan := make(chan *CommitJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CommitJobWithChan(request *CommitJobRequest) (<-chan *Comm
 }
 
 // CommitJobWithCallback invokes the foas.CommitJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/commitjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CommitJobWithCallback(request *CommitJobRequest, callback func(response *CommitJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,22 @@ func (client *Client) CommitJobWithCallback(request *CommitJobRequest, callback 
 // CommitJobRequest is the request struct for api CommitJob
 type CommitJobRequest struct {
 	*requests.RoaRequest
-	ProjectName string           `position:"Path" name:"projectName"`
-	MaxCU       requests.Float   `position:"Body" name:"maxCU"`
-	Configure   string           `position:"Body" name:"configure"`
-	IsOnOff     requests.Boolean `position:"Body" name:"isOnOff"`
-	JobName     string           `position:"Path" name:"jobName"`
+	ProjectName        string                         `position:"Path" name:"projectName"`
+	RecommendOnly      requests.Boolean               `position:"Body" name:"recommendOnly"`
+	SuspendPeriods     string                         `position:"Body" name:"suspendPeriods"`
+	MaxCU              requests.Float                 `position:"Body" name:"maxCU"`
+	Configure          string                         `position:"Body" name:"configure"`
+	IsOnOff            requests.Boolean               `position:"Body" name:"isOnOff"`
+	JobName            string                         `position:"Path" name:"jobName"`
+	SuspendPeriodParam *[]CommitJobSuspendPeriodParam `position:"Body" name:"suspendPeriodParam"  type:"Repeated"`
+}
+
+// CommitJobSuspendPeriodParam is a repeated param struct in CommitJobRequest
+type CommitJobSuspendPeriodParam struct {
+	EndTime   string `name:"endTime"`
+	StartTime string `name:"startTime"`
+	Plan      string `name:"plan"`
+	Policy    string `name:"policy"`
 }
 
 // CommitJobResponse is the response struct for api CommitJob

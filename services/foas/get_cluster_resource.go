@@ -21,7 +21,6 @@ import (
 )
 
 // GetClusterResource invokes the foas.GetClusterResource API synchronously
-// api document: https://help.aliyun.com/api/foas/getclusterresource.html
 func (client *Client) GetClusterResource(request *GetClusterResourceRequest) (response *GetClusterResourceResponse, err error) {
 	response = CreateGetClusterResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetClusterResource(request *GetClusterResourceRequest) (re
 }
 
 // GetClusterResourceWithChan invokes the foas.GetClusterResource API asynchronously
-// api document: https://help.aliyun.com/api/foas/getclusterresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterResourceWithChan(request *GetClusterResourceRequest) (<-chan *GetClusterResourceResponse, <-chan error) {
 	responseChan := make(chan *GetClusterResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetClusterResourceWithChan(request *GetClusterResourceRequ
 }
 
 // GetClusterResourceWithCallback invokes the foas.GetClusterResource API asynchronously
-// api document: https://help.aliyun.com/api/foas/getclusterresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterResourceWithCallback(request *GetClusterResourceRequest, callback func(response *GetClusterResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -19,4 +19,5 @@ package foas
 type JobInOut struct {
 	Inputs  Inputs  `json:"Inputs" xml:"Inputs"`
 	Outputs Outputs `json:"Outputs" xml:"Outputs"`
+	Dims    Dims    `json:"Dims" xml:"Dims"`
 }

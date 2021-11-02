@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobLatestAutoScalePlan invokes the foas.GetJobLatestAutoScalePlan API synchronously
-// api document: https://help.aliyun.com/api/foas/getjoblatestautoscaleplan.html
 func (client *Client) GetJobLatestAutoScalePlan(request *GetJobLatestAutoScalePlanRequest) (response *GetJobLatestAutoScalePlanResponse, err error) {
 	response = CreateGetJobLatestAutoScalePlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobLatestAutoScalePlan(request *GetJobLatestAutoScalePl
 }
 
 // GetJobLatestAutoScalePlanWithChan invokes the foas.GetJobLatestAutoScalePlan API asynchronously
-// api document: https://help.aliyun.com/api/foas/getjoblatestautoscaleplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobLatestAutoScalePlanWithChan(request *GetJobLatestAutoScalePlanRequest) (<-chan *GetJobLatestAutoScalePlanResponse, <-chan error) {
 	responseChan := make(chan *GetJobLatestAutoScalePlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobLatestAutoScalePlanWithChan(request *GetJobLatestAut
 }
 
 // GetJobLatestAutoScalePlanWithCallback invokes the foas.GetJobLatestAutoScalePlan API asynchronously
-// api document: https://help.aliyun.com/api/foas/getjoblatestautoscaleplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobLatestAutoScalePlanWithCallback(request *GetJobLatestAutoScalePlanRequest, callback func(response *GetJobLatestAutoScalePlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

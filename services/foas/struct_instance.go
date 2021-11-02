@@ -17,27 +17,29 @@ package foas
 
 // Instance is a nested struct in foas response
 type Instance struct {
-	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
 	QueueName        string `json:"QueueName" xml:"QueueName"`
-	Code             string `json:"Code" xml:"Code"`
 	LastOperateTime  int64  `json:"LastOperateTime" xml:"LastOperateTime"`
-	EngineVersion    string `json:"EngineVersion" xml:"EngineVersion"`
 	ApiType          string `json:"ApiType" xml:"ApiType"`
-	LastErrorTime    int64  `json:"LastErrorTime" xml:"LastErrorTime"`
 	LastOperator     string `json:"LastOperator" xml:"LastOperator"`
-	InputDelay       int64  `json:"InputDelay" xml:"InputDelay"`
 	Packages         string `json:"Packages" xml:"Packages"`
-	Id               int64  `json:"Id" xml:"Id"`
 	Starter          string `json:"Starter" xml:"Starter"`
 	EndTime          int64  `json:"EndTime" xml:"EndTime"`
 	StartTime        int64  `json:"StartTime" xml:"StartTime"`
 	PlanJson         string `json:"PlanJson" xml:"PlanJson"`
 	ProjectName      string `json:"ProjectName" xml:"ProjectName"`
-	EngineJobHandler string `json:"EngineJobHandler" xml:"EngineJobHandler"`
-	ActualState      string `json:"ActualState" xml:"ActualState"`
 	JobType          string `json:"JobType" xml:"JobType"`
 	LastErrorMessage string `json:"LastErrorMessage" xml:"LastErrorMessage"`
 	JobName          string `json:"JobName" xml:"JobName"`
-	ExpectState      string `json:"ExpectState" xml:"ExpectState"`
 	Properties       string `json:"Properties" xml:"Properties"`
+	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
+	Priority         int    `json:"Priority" xml:"Priority"`
+	Code             string `json:"Code" xml:"Code"`
+	EngineVersion    string `json:"EngineVersion" xml:"EngineVersion"`
+	LastErrorTime    int64  `json:"LastErrorTime" xml:"LastErrorTime"`
+	InputDelay       int64  `json:"InputDelay" xml:"InputDelay"`
+	Id               int64  `json:"Id" xml:"Id"`
+	AutoScaleParams  string `json:"AutoScaleParams" xml:"AutoScaleParams"`
+	EngineJobHandler string `json:"EngineJobHandler" xml:"EngineJobHandler"`
+	ActualState      string `json:"ActualState" xml:"ActualState"`
+	ExpectState      string `json:"ExpectState" xml:"ExpectState"`
 }

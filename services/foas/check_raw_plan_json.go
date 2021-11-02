@@ -21,7 +21,6 @@ import (
 )
 
 // CheckRawPlanJson invokes the foas.CheckRawPlanJson API synchronously
-// api document: https://help.aliyun.com/api/foas/checkrawplanjson.html
 func (client *Client) CheckRawPlanJson(request *CheckRawPlanJsonRequest) (response *CheckRawPlanJsonResponse, err error) {
 	response = CreateCheckRawPlanJsonResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckRawPlanJson(request *CheckRawPlanJsonRequest) (respon
 }
 
 // CheckRawPlanJsonWithChan invokes the foas.CheckRawPlanJson API asynchronously
-// api document: https://help.aliyun.com/api/foas/checkrawplanjson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckRawPlanJsonWithChan(request *CheckRawPlanJsonRequest) (<-chan *CheckRawPlanJsonResponse, <-chan error) {
 	responseChan := make(chan *CheckRawPlanJsonResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckRawPlanJsonWithChan(request *CheckRawPlanJsonRequest)
 }
 
 // CheckRawPlanJsonWithCallback invokes the foas.CheckRawPlanJson API asynchronously
-// api document: https://help.aliyun.com/api/foas/checkrawplanjson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckRawPlanJsonWithCallback(request *CheckRawPlanJsonRequest, callback func(response *CheckRawPlanJsonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

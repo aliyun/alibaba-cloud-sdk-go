@@ -1,3 +1,7 @@
+2021-11-02 Version: v1.61.1315
+- Generated 2018-11-11 for `foas`.
+- Support multi language.
+
 2021-11-02 Version: v1.61.1314
 - Generated 2017-03-21 for `vod`.
 - Add API UploadStreamByURL.

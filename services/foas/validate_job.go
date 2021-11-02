@@ -21,7 +21,6 @@ import (
 )
 
 // ValidateJob invokes the foas.ValidateJob API synchronously
-// api document: https://help.aliyun.com/api/foas/validatejob.html
 func (client *Client) ValidateJob(request *ValidateJobRequest) (response *ValidateJobResponse, err error) {
 	response = CreateValidateJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ValidateJob(request *ValidateJobRequest) (response *Valida
 }
 
 // ValidateJobWithChan invokes the foas.ValidateJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/validatejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateJobWithChan(request *ValidateJobRequest) (<-chan *ValidateJobResponse, <-chan error) {
 	responseChan := make(chan *ValidateJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ValidateJobWithChan(request *ValidateJobRequest) (<-chan *
 }
 
 // ValidateJobWithCallback invokes the foas.ValidateJob API asynchronously
-// api document: https://help.aliyun.com/api/foas/validatejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateJobWithCallback(request *ValidateJobRequest, callback func(response *ValidateJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
