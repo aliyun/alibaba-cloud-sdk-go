@@ -1,3 +1,7 @@
+2021-11-02 Version: v1.61.1313
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Fixed SDK update delay.
+
 2021-11-01 Version: v1.61.1312
 - Generated 2019-08-08 for `ARMS`.
 - Support recover body for webhook api.
