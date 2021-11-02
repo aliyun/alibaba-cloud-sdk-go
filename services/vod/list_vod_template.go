@@ -87,7 +87,7 @@ func CreateListVodTemplateRequest() (request *ListVodTemplateRequest) {
 	request = &ListVodTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListVodTemplate", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListVodTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

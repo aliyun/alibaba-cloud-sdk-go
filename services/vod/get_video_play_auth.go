@@ -71,17 +71,18 @@ func (client *Client) GetVideoPlayAuthWithCallback(request *GetVideoPlayAuthRequ
 // GetVideoPlayAuthRequest is the request struct for api GetVideoPlayAuth
 type GetVideoPlayAuthRequest struct {
 	*requests.RpcRequest
-	VideoId         string           `position:"Query" name:"VideoId"`
 	ReAuthInfo      string           `position:"Query" name:"ReAuthInfo"`
 	PlayConfig      string           `position:"Query" name:"PlayConfig"`
+	VideoId         string           `position:"Query" name:"VideoId"`
+	ApiVersion      string           `position:"Query" name:"ApiVersion"`
 	AuthInfoTimeout requests.Integer `position:"Query" name:"AuthInfoTimeout"`
 }
 
 // GetVideoPlayAuthResponse is the response struct for api GetVideoPlayAuth
 type GetVideoPlayAuthResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
 	PlayAuth  string    `json:"PlayAuth" xml:"PlayAuth"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	VideoMeta VideoMeta `json:"VideoMeta" xml:"VideoMeta"`
 }
 
@@ -90,7 +91,7 @@ func CreateGetVideoPlayAuthRequest() (request *GetVideoPlayAuthRequest) {
 	request = &GetVideoPlayAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetVideoPlayAuth", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetVideoPlayAuth", "", "")
 	request.Method = requests.POST
 	return
 }

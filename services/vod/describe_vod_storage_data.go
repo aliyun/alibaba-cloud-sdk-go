@@ -93,7 +93,7 @@ func CreateDescribeVodStorageDataRequest() (request *DescribeVodStorageDataReque
 	request = &DescribeVodStorageDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodStorageData", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodStorageData", "", "")
 	request.Method = requests.POST
 	return
 }

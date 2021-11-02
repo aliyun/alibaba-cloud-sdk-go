@@ -91,7 +91,7 @@ func CreateAttachAppPolicyToIdentityRequest() (request *AttachAppPolicyToIdentit
 	request = &AttachAppPolicyToIdentityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "AttachAppPolicyToIdentity", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "AttachAppPolicyToIdentity", "", "")
 	request.Method = requests.POST
 	return
 }

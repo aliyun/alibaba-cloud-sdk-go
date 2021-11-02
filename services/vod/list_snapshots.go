@@ -90,7 +90,7 @@ func CreateListSnapshotsRequest() (request *ListSnapshotsRequest) {
 	request = &ListSnapshotsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListSnapshots", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListSnapshots", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateGetAIVideoTagResultRequest() (request *GetAIVideoTagResultRequest) {
 	request = &GetAIVideoTagResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetAIVideoTagResult", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetAIVideoTagResult", "", "")
 	request.Method = requests.POST
 	return
 }

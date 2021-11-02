@@ -91,7 +91,7 @@ func CreateListAIJobRequest() (request *ListAIJobRequest) {
 	request = &ListAIJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListAIJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListAIJob", "", "")
 	request.Method = requests.POST
 	return
 }

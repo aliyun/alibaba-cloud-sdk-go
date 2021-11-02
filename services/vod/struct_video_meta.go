@@ -17,9 +17,9 @@ package vod
 
 // VideoMeta is a nested struct in vod response
 type VideoMeta struct {
-	CoverURL string  `json:"CoverURL" xml:"CoverURL"`
-	Duration float64 `json:"Duration" xml:"Duration"`
 	Status   string  `json:"Status" xml:"Status"`
+	Duration float64 `json:"Duration" xml:"Duration"`
 	Title    string  `json:"Title" xml:"Title"`
 	VideoId  string  `json:"VideoId" xml:"VideoId"`
+	CoverURL string  `json:"CoverURL" xml:"CoverURL"`
 }

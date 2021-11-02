@@ -88,7 +88,7 @@ func CreateListAppPoliciesForIdentityRequest() (request *ListAppPoliciesForIdent
 	request = &ListAppPoliciesForIdentityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListAppPoliciesForIdentity", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListAppPoliciesForIdentity", "", "")
 	request.Method = requests.POST
 	return
 }

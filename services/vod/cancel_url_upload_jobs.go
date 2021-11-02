@@ -88,7 +88,7 @@ func CreateCancelUrlUploadJobsRequest() (request *CancelUrlUploadJobsRequest) {
 	request = &CancelUrlUploadJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "CancelUrlUploadJobs", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "CancelUrlUploadJobs", "", "")
 	request.Method = requests.POST
 	return
 }

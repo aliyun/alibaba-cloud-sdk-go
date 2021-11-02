@@ -88,7 +88,7 @@ func CreateGetAppInfosRequest() (request *GetAppInfosRequest) {
 	request = &GetAppInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetAppInfos", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetAppInfos", "", "")
 	request.Method = requests.POST
 	return
 }

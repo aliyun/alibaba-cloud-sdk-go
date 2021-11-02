@@ -86,7 +86,7 @@ func CreateDisableVodRealtimeLogDeliveryRequest() (request *DisableVodRealtimeLo
 	request = &DisableVodRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DisableVodRealtimeLogDelivery", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DisableVodRealtimeLogDelivery", "", "")
 	request.Method = requests.GET
 	return
 }

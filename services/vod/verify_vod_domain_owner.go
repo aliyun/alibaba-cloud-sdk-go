@@ -88,7 +88,7 @@ func CreateVerifyVodDomainOwnerRequest() (request *VerifyVodDomainOwnerRequest) 
 	request = &VerifyVodDomainOwnerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "VerifyVodDomainOwner", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "VerifyVodDomainOwner", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateEnableVodRealtimeLogDeliveryRequest() (request *EnableVodRealtimeLogD
 	request = &EnableVodRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "EnableVodRealtimeLogDelivery", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "EnableVodRealtimeLogDelivery", "", "")
 	request.Method = requests.GET
 	return
 }

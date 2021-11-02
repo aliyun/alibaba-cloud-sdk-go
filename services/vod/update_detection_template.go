@@ -95,7 +95,7 @@ func CreateUpdateDetectionTemplateRequest() (request *UpdateDetectionTemplateReq
 	request = &UpdateDetectionTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "UpdateDetectionTemplate", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "UpdateDetectionTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

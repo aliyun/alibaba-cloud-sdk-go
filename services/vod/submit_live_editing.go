@@ -99,7 +99,7 @@ func CreateSubmitLiveEditingRequest() (request *SubmitLiveEditingRequest) {
 	request = &SubmitLiveEditingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitLiveEditing", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitLiveEditing", "", "")
 	request.Method = requests.POST
 	return
 }

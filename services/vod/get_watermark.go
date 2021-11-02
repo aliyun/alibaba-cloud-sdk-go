@@ -86,7 +86,7 @@ func CreateGetWatermarkRequest() (request *GetWatermarkRequest) {
 	request = &GetWatermarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetWatermark", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetWatermark", "", "")
 	request.Method = requests.POST
 	return
 }

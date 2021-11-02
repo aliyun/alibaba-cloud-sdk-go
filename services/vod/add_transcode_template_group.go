@@ -89,7 +89,7 @@ func CreateAddTranscodeTemplateGroupRequest() (request *AddTranscodeTemplateGrou
 	request = &AddTranscodeTemplateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "AddTranscodeTemplateGroup", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "AddTranscodeTemplateGroup", "", "")
 	request.Method = requests.POST
 	return
 }

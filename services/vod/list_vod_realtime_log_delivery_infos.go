@@ -86,7 +86,7 @@ func CreateListVodRealtimeLogDeliveryInfosRequest() (request *ListVodRealtimeLog
 	request = &ListVodRealtimeLogDeliveryInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListVodRealtimeLogDeliveryInfos", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListVodRealtimeLogDeliveryInfos", "", "")
 	request.Method = requests.GET
 	return
 }

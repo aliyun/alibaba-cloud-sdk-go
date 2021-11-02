@@ -91,7 +91,7 @@ func CreateListMediaDNADeleteJobRequest() (request *ListMediaDNADeleteJobRequest
 	request = &ListMediaDNADeleteJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListMediaDNADeleteJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListMediaDNADeleteJob", "", "")
 	request.Method = requests.POST
 	return
 }

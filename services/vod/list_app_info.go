@@ -90,7 +90,7 @@ func CreateListAppInfoRequest() (request *ListAppInfoRequest) {
 	request = &ListAppInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListAppInfo", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListAppInfo", "", "")
 	request.Method = requests.POST
 	return
 }

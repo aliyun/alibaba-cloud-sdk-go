@@ -90,7 +90,7 @@ func CreateGetDetectionResultRequest() (request *GetDetectionResultRequest) {
 	request = &GetDetectionResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetDetectionResult", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetDetectionResult", "", "")
 	request.Method = requests.GET
 	return
 }

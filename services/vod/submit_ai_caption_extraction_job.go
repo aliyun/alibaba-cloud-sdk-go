@@ -89,7 +89,7 @@ func CreateSubmitAICaptionExtractionJobRequest() (request *SubmitAICaptionExtrac
 	request = &SubmitAICaptionExtractionJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAICaptionExtractionJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAICaptionExtractionJob", "", "")
 	request.Method = requests.POST
 	return
 }

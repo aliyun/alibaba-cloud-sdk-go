@@ -86,7 +86,7 @@ func CreateDeleteAppInfoRequest() (request *DeleteAppInfoRequest) {
 	request = &DeleteAppInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteAppInfo", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteAppInfo", "", "")
 	request.Method = requests.POST
 	return
 }

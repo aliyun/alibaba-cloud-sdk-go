@@ -87,7 +87,7 @@ func CreateDescribeVodVerifyContentRequest() (request *DescribeVodVerifyContentR
 	request = &DescribeVodVerifyContentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodVerifyContent", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodVerifyContent", "", "")
 	request.Method = requests.POST
 	return
 }

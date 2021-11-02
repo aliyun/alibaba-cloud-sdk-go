@@ -98,7 +98,7 @@ func CreateDescribeVodDomainBpsDataRequest() (request *DescribeVodDomainBpsDataR
 	request = &DescribeVodDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodDomainBpsData", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodDomainBpsData", "", "")
 	request.Method = requests.POST
 	return
 }

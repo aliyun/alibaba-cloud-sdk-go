@@ -90,7 +90,7 @@ func CreateGetUploadDetailsRequest() (request *GetUploadDetailsRequest) {
 	request = &GetUploadDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetUploadDetails", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetUploadDetails", "", "")
 	request.Method = requests.POST
 	return
 }

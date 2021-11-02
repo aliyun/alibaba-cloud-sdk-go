@@ -88,7 +88,7 @@ func CreateListLetterSendJobRequest() (request *ListLetterSendJobRequest) {
 	request = &ListLetterSendJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListLetterSendJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListLetterSendJob", "", "")
 	request.Method = requests.GET
 	return
 }

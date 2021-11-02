@@ -95,7 +95,7 @@ func CreateUpdateDetectionJobRequest() (request *UpdateDetectionJobRequest) {
 	request = &UpdateDetectionJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "UpdateDetectionJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "UpdateDetectionJob", "", "")
 	request.Method = requests.POST
 	return
 }

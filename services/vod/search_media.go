@@ -96,7 +96,7 @@ func CreateSearchMediaRequest() (request *SearchMediaRequest) {
 	request = &SearchMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SearchMedia", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SearchMedia", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateTagVodResourcesRequest() (request *TagVodResourcesRequest) {
 	request = &TagVodResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "TagVodResources", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "TagVodResources", "", "")
 	request.Method = requests.POST
 	return
 }

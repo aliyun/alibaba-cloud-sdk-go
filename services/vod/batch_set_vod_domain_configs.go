@@ -89,7 +89,7 @@ func CreateBatchSetVodDomainConfigsRequest() (request *BatchSetVodDomainConfigsR
 	request = &BatchSetVodDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "BatchSetVodDomainConfigs", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "BatchSetVodDomainConfigs", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateSubmitWorkflowJobRequest() (request *SubmitWorkflowJobRequest) {
 	request = &SubmitWorkflowJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitWorkflowJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitWorkflowJob", "", "")
 	request.Method = requests.POST
 	return
 }

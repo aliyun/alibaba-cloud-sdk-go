@@ -90,7 +90,7 @@ func CreateUploadStreamByURLRequest() (request *UploadStreamByURLRequest) {
 	request = &UploadStreamByURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "UploadStreamByURL", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "UploadStreamByURL", "", "")
 	request.Method = requests.POST
 	return
 }

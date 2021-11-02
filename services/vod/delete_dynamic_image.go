@@ -86,7 +86,7 @@ func CreateDeleteDynamicImageRequest() (request *DeleteDynamicImageRequest) {
 	request = &DeleteDynamicImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteDynamicImage", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteDynamicImage", "", "")
 	request.Method = requests.POST
 	return
 }

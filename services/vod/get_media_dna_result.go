@@ -90,7 +90,7 @@ func CreateGetMediaDNAResultRequest() (request *GetMediaDNAResultRequest) {
 	request = &GetMediaDNAResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetMediaDNAResult", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetMediaDNAResult", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateUpdateCategoryRequest() (request *UpdateCategoryRequest) {
 	request = &UpdateCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "UpdateCategory", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "UpdateCategory", "", "")
 	request.Method = requests.POST
 	return
 }

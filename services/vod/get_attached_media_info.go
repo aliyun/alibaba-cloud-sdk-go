@@ -90,7 +90,7 @@ func CreateGetAttachedMediaInfoRequest() (request *GetAttachedMediaInfoRequest) 
 	request = &GetAttachedMediaInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetAttachedMediaInfo", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetAttachedMediaInfo", "", "")
 	request.Method = requests.POST
 	return
 }

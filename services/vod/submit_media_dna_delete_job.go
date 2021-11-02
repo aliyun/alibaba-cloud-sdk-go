@@ -92,7 +92,7 @@ func CreateSubmitMediaDNADeleteJobRequest() (request *SubmitMediaDNADeleteJobReq
 	request = &SubmitMediaDNADeleteJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitMediaDNADeleteJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitMediaDNADeleteJob", "", "")
 	request.Method = requests.POST
 	return
 }

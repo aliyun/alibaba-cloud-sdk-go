@@ -87,7 +87,7 @@ func CreateDeleteMessageCallbackRequest() (request *DeleteMessageCallbackRequest
 	request = &DeleteMessageCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteMessageCallback", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteMessageCallback", "", "")
 	request.Method = requests.POST
 	return
 }

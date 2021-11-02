@@ -87,7 +87,7 @@ func CreateBatchStopVodDomainRequest() (request *BatchStopVodDomainRequest) {
 	request = &BatchStopVodDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "BatchStopVodDomain", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "BatchStopVodDomain", "", "")
 	request.Method = requests.POST
 	return
 }
