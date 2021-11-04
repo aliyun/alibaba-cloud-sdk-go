@@ -77,22 +77,31 @@ type GetVpcEndpointServiceAttributeRequest struct {
 // GetVpcEndpointServiceAttributeResponse is the response struct for api GetVpcEndpointServiceAttribute
 type GetVpcEndpointServiceAttributeResponse struct {
 	*responses.BaseResponse
-	Payer                 string   `json:"Payer" xml:"Payer"`
-	RequestId             string   `json:"RequestId" xml:"RequestId"`
-	ServiceDescription    string   `json:"ServiceDescription" xml:"ServiceDescription"`
-	MaxBandwidth          int      `json:"MaxBandwidth" xml:"MaxBandwidth"`
-	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
-	ServiceDomain         string   `json:"ServiceDomain" xml:"ServiceDomain"`
-	MinBandwidth          int      `json:"MinBandwidth" xml:"MinBandwidth"`
-	ServiceId             string   `json:"ServiceId" xml:"ServiceId"`
-	AutoAcceptEnabled     bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
-	ServiceBusinessStatus string   `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
-	ServiceName           string   `json:"ServiceName" xml:"ServiceName"`
-	ServiceStatus         string   `json:"ServiceStatus" xml:"ServiceStatus"`
-	ConnectBandwidth      int      `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
-	RegionId              string   `json:"RegionId" xml:"RegionId"`
-	ZoneAffinityEnabled   bool     `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
-	Zones                 []string `json:"Zones" xml:"Zones"`
+	Payer                              string   `json:"Payer" xml:"Payer"`
+	RequestId                          string   `json:"RequestId" xml:"RequestId"`
+	ServiceDescription                 string   `json:"ServiceDescription" xml:"ServiceDescription"`
+	CreateTime                         string   `json:"CreateTime" xml:"CreateTime"`
+	MaxBandwidth                       int      `json:"MaxBandwidth" xml:"MaxBandwidth"`
+	MinBandwidth                       int      `json:"MinBandwidth" xml:"MinBandwidth"`
+	ServiceDomain                      string   `json:"ServiceDomain" xml:"ServiceDomain"`
+	AutoAcceptEnabled                  bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
+	ZoneAffinityEnabled                bool     `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
+	ServiceId                          string   `json:"ServiceId" xml:"ServiceId"`
+	ServiceBusinessStatus              string   `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
+	ServiceName                        string   `json:"ServiceName" xml:"ServiceName"`
+	ServiceStatus                      string   `json:"ServiceStatus" xml:"ServiceStatus"`
+	ConnectBandwidth                   int      `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
+	RegionId                           string   `json:"RegionId" xml:"RegionId"`
+	ServiceType                        string   `json:"ServiceType" xml:"ServiceType"`
+	ServiceResourceType                string   `json:"ServiceResourceType" xml:"ServiceResourceType"`
+	PrivateServiceDomainEnabled        bool     `json:"PrivateServiceDomainEnabled" xml:"PrivateServiceDomainEnabled"`
+	PrivateServiceDomain               string   `json:"PrivateServiceDomain" xml:"PrivateServiceDomain"`
+	PrivateServiceDomainVerifyStatus   string   `json:"PrivateServiceDomainVerifyStatus" xml:"PrivateServiceDomainVerifyStatus"`
+	PrivateServiceDomainBusinessStatus string   `json:"PrivateServiceDomainBusinessStatus" xml:"PrivateServiceDomainBusinessStatus"`
+	PrivateServiceDomainVerifyName     string   `json:"PrivateServiceDomainVerifyName" xml:"PrivateServiceDomainVerifyName"`
+	PrivateServiceDomainVerifyValue    string   `json:"PrivateServiceDomainVerifyValue" xml:"PrivateServiceDomainVerifyValue"`
+	PrivateServiceName                 string   `json:"PrivateServiceName" xml:"PrivateServiceName"`
+	Zones                              []string `json:"Zones" xml:"Zones"`
 }
 
 // CreateGetVpcEndpointServiceAttributeRequest creates a request to invoke GetVpcEndpointServiceAttribute API

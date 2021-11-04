@@ -17,14 +17,17 @@ package privatelink
 
 // Zone is a nested struct in privatelink response
 type Zone struct {
-	ResourceId    string `json:"ResourceId" xml:"ResourceId"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
-	EniId         string `json:"EniId" xml:"EniId"`
-	VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
-	LocalName     string `json:"LocalName" xml:"LocalName"`
-	ZoneStatus    string `json:"ZoneStatus" xml:"ZoneStatus"`
-	EniIp         string `json:"EniIp" xml:"EniIp"`
-	ZoneDomain    string `json:"ZoneDomain" xml:"ZoneDomain"`
-	ServiceStatus string `json:"ServiceStatus" xml:"ServiceStatus"`
+	ResourceId         string `json:"ResourceId" xml:"ResourceId"`
+	ReplacedEniId      string `json:"ReplacedEniId" xml:"ReplacedEniId"`
+	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
+	LocalName          string `json:"LocalName" xml:"LocalName"`
+	EniIp              string `json:"EniIp" xml:"EniIp"`
+	ZoneDomain         string `json:"ZoneDomain" xml:"ZoneDomain"`
+	ServiceStatus      string `json:"ServiceStatus" xml:"ServiceStatus"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
+	ZoneId             string `json:"ZoneId" xml:"ZoneId"`
+	EniId              string `json:"EniId" xml:"EniId"`
+	StatusInfo         string `json:"StatusInfo" xml:"StatusInfo"`
+	ZoneStatus         string `json:"ZoneStatus" xml:"ZoneStatus"`
+	ReplacedResourceId string `json:"ReplacedResourceId" xml:"ReplacedResourceId"`
 }

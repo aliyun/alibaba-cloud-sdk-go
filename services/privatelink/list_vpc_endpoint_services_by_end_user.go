@@ -73,6 +73,7 @@ type ListVpcEndpointServicesByEndUserRequest struct {
 	*requests.RpcRequest
 	NextToken   string           `position:"Query" name:"NextToken"`
 	ServiceName string           `position:"Query" name:"ServiceName"`
+	ServiceType string           `position:"Query" name:"ServiceType"`
 	MaxResults  requests.Integer `position:"Query" name:"MaxResults"`
 	ServiceId   string           `position:"Query" name:"ServiceId"`
 }
@@ -80,9 +81,9 @@ type ListVpcEndpointServicesByEndUserRequest struct {
 // ListVpcEndpointServicesByEndUserResponse is the response struct for api ListVpcEndpointServicesByEndUser
 type ListVpcEndpointServicesByEndUserResponse struct {
 	*responses.BaseResponse
-	MaxResults string    `json:"MaxResults" xml:"MaxResults"`
 	NextToken  string    `json:"NextToken" xml:"NextToken"`
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	MaxResults string    `json:"MaxResults" xml:"MaxResults"`
 	Services   []Service `json:"Services" xml:"Services"`
 }
 

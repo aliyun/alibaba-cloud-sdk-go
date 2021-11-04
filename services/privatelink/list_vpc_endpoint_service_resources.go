@@ -73,15 +73,16 @@ type ListVpcEndpointServiceResourcesRequest struct {
 	*requests.RpcRequest
 	NextToken  string           `position:"Query" name:"NextToken"`
 	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
+	ZoneId     string           `position:"Query" name:"ZoneId"`
 	ServiceId  string           `position:"Query" name:"ServiceId"`
 }
 
 // ListVpcEndpointServiceResourcesResponse is the response struct for api ListVpcEndpointServiceResources
 type ListVpcEndpointServiceResourcesResponse struct {
 	*responses.BaseResponse
-	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
 	NextToken  string     `json:"NextToken" xml:"NextToken"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
 	Resources  []Resource `json:"Resources" xml:"Resources"`
 }
 

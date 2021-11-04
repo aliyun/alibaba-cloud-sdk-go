@@ -79,9 +79,9 @@ type ListVpcEndpointSecurityGroupsRequest struct {
 // ListVpcEndpointSecurityGroupsResponse is the response struct for api ListVpcEndpointSecurityGroups
 type ListVpcEndpointSecurityGroupsResponse struct {
 	*responses.BaseResponse
-	MaxResults     string          `json:"MaxResults" xml:"MaxResults"`
 	NextToken      string          `json:"NextToken" xml:"NextToken"`
 	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	MaxResults     string          `json:"MaxResults" xml:"MaxResults"`
 	SecurityGroups []SecurityGroup `json:"SecurityGroups" xml:"SecurityGroups"`
 }
 

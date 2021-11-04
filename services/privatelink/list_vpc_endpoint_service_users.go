@@ -80,9 +80,9 @@ type ListVpcEndpointServiceUsersRequest struct {
 // ListVpcEndpointServiceUsersResponse is the response struct for api ListVpcEndpointServiceUsers
 type ListVpcEndpointServiceUsersResponse struct {
 	*responses.BaseResponse
-	MaxResults string `json:"MaxResults" xml:"MaxResults"`
 	NextToken  string `json:"NextToken" xml:"NextToken"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	MaxResults string `json:"MaxResults" xml:"MaxResults"`
 	Users      []User `json:"Users" xml:"Users"`
 }
 

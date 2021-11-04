@@ -71,15 +71,18 @@ func (client *Client) CreateVpcEndpointWithCallback(request *CreateVpcEndpointRe
 // CreateVpcEndpointRequest is the request struct for api CreateVpcEndpoint
 type CreateVpcEndpointRequest struct {
 	*requests.RpcRequest
-	ClientToken         string                   `position:"Query" name:"ClientToken"`
-	SecurityGroupId     *[]string                `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
-	Zone                *[]CreateVpcEndpointZone `position:"Query" name:"Zone"  type:"Repeated"`
-	ServiceName         string                   `position:"Query" name:"ServiceName"`
-	DryRun              requests.Boolean         `position:"Query" name:"DryRun"`
-	EndpointDescription string                   `position:"Query" name:"EndpointDescription"`
-	EndpointName        string                   `position:"Query" name:"EndpointName"`
-	VpcId               string                   `position:"Query" name:"VpcId"`
-	ServiceId           string                   `position:"Query" name:"ServiceId"`
+	ClientToken               string                   `position:"Query" name:"ClientToken"`
+	SecurityGroupId           *[]string                `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
+	EndpointType              string                   `position:"Query" name:"EndpointType"`
+	Zone                      *[]CreateVpcEndpointZone `position:"Query" name:"Zone"  type:"Repeated"`
+	ServiceName               string                   `position:"Query" name:"ServiceName"`
+	DryRun                    requests.Boolean         `position:"Query" name:"DryRun"`
+	EndpointDescription       string                   `position:"Query" name:"EndpointDescription"`
+	ZonePrivateIpAddressCount requests.Integer         `position:"Query" name:"ZonePrivateIpAddressCount"`
+	ProtectedEnabled          requests.Boolean         `position:"Query" name:"ProtectedEnabled"`
+	EndpointName              string                   `position:"Query" name:"EndpointName"`
+	VpcId                     string                   `position:"Query" name:"VpcId"`
+	ServiceId                 string                   `position:"Query" name:"ServiceId"`
 }
 
 // CreateVpcEndpointZone is a repeated param struct in CreateVpcEndpointRequest
@@ -92,19 +95,19 @@ type CreateVpcEndpointZone struct {
 // CreateVpcEndpointResponse is the response struct for api CreateVpcEndpoint
 type CreateVpcEndpointResponse struct {
 	*responses.BaseResponse
-	EndpointStatus         string `json:"EndpointStatus" xml:"EndpointStatus"`
-	EndpointName           string `json:"EndpointName" xml:"EndpointName"`
-	VpcId                  string `json:"VpcId" xml:"VpcId"`
-	RequestId              string `json:"RequestId" xml:"RequestId"`
 	EndpointDomain         string `json:"EndpointDomain" xml:"EndpointDomain"`
-	ServiceName            string `json:"ServiceName" xml:"ServiceName"`
-	EndpointId             string `json:"EndpointId" xml:"EndpointId"`
-	Bandwidth              int64  `json:"Bandwidth" xml:"Bandwidth"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
 	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
 	EndpointBusinessStatus string `json:"EndpointBusinessStatus" xml:"EndpointBusinessStatus"`
 	EndpointDescription    string `json:"EndpointDescription" xml:"EndpointDescription"`
-	ConnectionStatus       string `json:"ConnectionStatus" xml:"ConnectionStatus"`
 	ServiceId              string `json:"ServiceId" xml:"ServiceId"`
+	EndpointStatus         string `json:"EndpointStatus" xml:"EndpointStatus"`
+	VpcId                  string `json:"VpcId" xml:"VpcId"`
+	EndpointName           string `json:"EndpointName" xml:"EndpointName"`
+	ServiceName            string `json:"ServiceName" xml:"ServiceName"`
+	Bandwidth              int64  `json:"Bandwidth" xml:"Bandwidth"`
+	EndpointId             string `json:"EndpointId" xml:"EndpointId"`
+	ConnectionStatus       string `json:"ConnectionStatus" xml:"ConnectionStatus"`
 }
 
 // CreateCreateVpcEndpointRequest creates a request to invoke CreateVpcEndpoint API

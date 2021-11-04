@@ -71,13 +71,16 @@ func (client *Client) CreateVpcEndpointServiceWithCallback(request *CreateVpcEnd
 // CreateVpcEndpointServiceRequest is the request struct for api CreateVpcEndpointService
 type CreateVpcEndpointServiceRequest struct {
 	*requests.RpcRequest
-	AutoAcceptEnabled   requests.Boolean                    `position:"Query" name:"AutoAcceptEnabled"`
-	ClientToken         string                              `position:"Query" name:"ClientToken"`
-	Payer               string                              `position:"Query" name:"Payer"`
-	ZoneAffinityEnabled requests.Boolean                    `position:"Query" name:"ZoneAffinityEnabled"`
-	DryRun              requests.Boolean                    `position:"Query" name:"DryRun"`
-	Resource            *[]CreateVpcEndpointServiceResource `position:"Query" name:"Resource"  type:"Repeated"`
-	ServiceDescription  string                              `position:"Query" name:"ServiceDescription"`
+	PrivateServiceDomainEnabled requests.Boolean                    `position:"Query" name:"PrivateServiceDomainEnabled"`
+	PrivateServiceDomain        string                              `position:"Query" name:"PrivateServiceDomain"`
+	AutoAcceptEnabled           requests.Boolean                    `position:"Query" name:"AutoAcceptEnabled"`
+	ClientToken                 string                              `position:"Query" name:"ClientToken"`
+	Payer                       string                              `position:"Query" name:"Payer"`
+	ZoneAffinityEnabled         requests.Boolean                    `position:"Query" name:"ZoneAffinityEnabled"`
+	DryRun                      requests.Boolean                    `position:"Query" name:"DryRun"`
+	Resource                    *[]CreateVpcEndpointServiceResource `position:"Query" name:"Resource"  type:"Repeated"`
+	ServiceResourceType         string                              `position:"Query" name:"ServiceResourceType"`
+	ServiceDescription          string                              `position:"Query" name:"ServiceDescription"`
 }
 
 // CreateVpcEndpointServiceResource is a repeated param struct in CreateVpcEndpointServiceRequest
@@ -92,13 +95,13 @@ type CreateVpcEndpointServiceResponse struct {
 	ServiceBusinessStatus string `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
 	RequestId             string `json:"RequestId" xml:"RequestId"`
 	ServiceName           string `json:"ServiceName" xml:"ServiceName"`
-	ServiceDescription    string `json:"ServiceDescription" xml:"ServiceDescription"`
 	ServiceStatus         string `json:"ServiceStatus" xml:"ServiceStatus"`
+	ServiceDescription    string `json:"ServiceDescription" xml:"ServiceDescription"`
 	CreateTime            string `json:"CreateTime" xml:"CreateTime"`
-	ZoneAffinityEnabled   bool   `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
 	ServiceDomain         string `json:"ServiceDomain" xml:"ServiceDomain"`
-	ServiceId             string `json:"ServiceId" xml:"ServiceId"`
+	ZoneAffinityEnabled   bool   `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
 	AutoAcceptEnabled     bool   `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
+	ServiceId             string `json:"ServiceId" xml:"ServiceId"`
 }
 
 // CreateCreateVpcEndpointServiceRequest creates a request to invoke CreateVpcEndpointService API

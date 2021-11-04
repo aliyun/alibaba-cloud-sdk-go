@@ -77,23 +77,25 @@ type GetVpcEndpointAttributeRequest struct {
 // GetVpcEndpointAttributeResponse is the response struct for api GetVpcEndpointAttribute
 type GetVpcEndpointAttributeResponse struct {
 	*responses.BaseResponse
-	Payer                  string `json:"Payer" xml:"Payer"`
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	EndpointDomain         string `json:"EndpointDomain" xml:"EndpointDomain"`
-	ResourceOwner          bool   `json:"ResourceOwner" xml:"ResourceOwner"`
-	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
-	EndpointBusinessStatus string `json:"EndpointBusinessStatus" xml:"EndpointBusinessStatus"`
-	EndpointDescription    string `json:"EndpointDescription" xml:"EndpointDescription"`
-	ServiceId              string `json:"ServiceId" xml:"ServiceId"`
-	EndpointStatus         string `json:"EndpointStatus" xml:"EndpointStatus"`
-	EndpointName           string `json:"EndpointName" xml:"EndpointName"`
-	VpcId                  string `json:"VpcId" xml:"VpcId"`
-	ServiceName            string `json:"ServiceName" xml:"ServiceName"`
-	EndpointId             string `json:"EndpointId" xml:"EndpointId"`
-	Bandwidth              int    `json:"Bandwidth" xml:"Bandwidth"`
-	RegionId               string `json:"RegionId" xml:"RegionId"`
-	ConnectionStatus       string `json:"ConnectionStatus" xml:"ConnectionStatus"`
-	ZoneAffinityEnabled    bool   `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
+	Payer                     string `json:"Payer" xml:"Payer"`
+	EndpointDomain            string `json:"EndpointDomain" xml:"EndpointDomain"`
+	RequestId                 string `json:"RequestId" xml:"RequestId"`
+	CreateTime                string `json:"CreateTime" xml:"CreateTime"`
+	ResourceOwner             bool   `json:"ResourceOwner" xml:"ResourceOwner"`
+	EndpointBusinessStatus    string `json:"EndpointBusinessStatus" xml:"EndpointBusinessStatus"`
+	EndpointDescription       string `json:"EndpointDescription" xml:"EndpointDescription"`
+	ServiceId                 string `json:"ServiceId" xml:"ServiceId"`
+	EndpointStatus            string `json:"EndpointStatus" xml:"EndpointStatus"`
+	VpcId                     string `json:"VpcId" xml:"VpcId"`
+	EndpointName              string `json:"EndpointName" xml:"EndpointName"`
+	ZonePrivateIpAddressCount int64  `json:"ZonePrivateIpAddressCount" xml:"ZonePrivateIpAddressCount"`
+	EndpointType              string `json:"EndpointType" xml:"EndpointType"`
+	ServiceName               string `json:"ServiceName" xml:"ServiceName"`
+	Bandwidth                 int    `json:"Bandwidth" xml:"Bandwidth"`
+	EndpointId                string `json:"EndpointId" xml:"EndpointId"`
+	RegionId                  string `json:"RegionId" xml:"RegionId"`
+	ConnectionStatus          string `json:"ConnectionStatus" xml:"ConnectionStatus"`
+	ZoneAffinityEnabled       bool   `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
 }
 
 // CreateGetVpcEndpointAttributeRequest creates a request to invoke GetVpcEndpointAttribute API

@@ -22,6 +22,7 @@ type Service struct {
 	ConnectBandwidth      int      `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
 	ZoneAffinityEnabled   bool     `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
 	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
+	ServiceResourceType   string   `json:"ServiceResourceType" xml:"ServiceResourceType"`
 	AutoAcceptEnabled     bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
 	Payer                 string   `json:"Payer" xml:"Payer"`
 	ServiceStatus         string   `json:"ServiceStatus" xml:"ServiceStatus"`
@@ -30,6 +31,7 @@ type Service struct {
 	MinBandwidth          int      `json:"MinBandwidth" xml:"MinBandwidth"`
 	ServiceDescription    string   `json:"ServiceDescription" xml:"ServiceDescription"`
 	ServiceBusinessStatus string   `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
+	ServiceType           string   `json:"ServiceType" xml:"ServiceType"`
 	ServiceName           string   `json:"ServiceName" xml:"ServiceName"`
 	Zones                 []string `json:"Zones" xml:"Zones"`
 }

@@ -17,7 +17,7 @@ package privatelink
 
 // Region is a nested struct in privatelink response
 type Region struct {
-	RegionId       string `json:"RegionId" xml:"RegionId"`
 	LocalName      string `json:"LocalName" xml:"LocalName"`
 	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 }

@@ -71,13 +71,15 @@ func (client *Client) UpdateVpcEndpointServiceAttributeWithCallback(request *Upd
 // UpdateVpcEndpointServiceAttributeRequest is the request struct for api UpdateVpcEndpointServiceAttribute
 type UpdateVpcEndpointServiceAttributeRequest struct {
 	*requests.RpcRequest
-	AutoAcceptEnabled   requests.Boolean `position:"Query" name:"AutoAcceptEnabled"`
-	ClientToken         string           `position:"Query" name:"ClientToken"`
-	ConnectBandwidth    requests.Integer `position:"Query" name:"ConnectBandwidth"`
-	ZoneAffinityEnabled requests.Boolean `position:"Query" name:"ZoneAffinityEnabled"`
-	DryRun              requests.Boolean `position:"Query" name:"DryRun"`
-	ServiceDescription  string           `position:"Query" name:"ServiceDescription"`
-	ServiceId           string           `position:"Query" name:"ServiceId"`
+	PrivateServiceDomainEnabled requests.Boolean `position:"Query" name:"PrivateServiceDomainEnabled"`
+	PrivateServiceDomain        string           `position:"Query" name:"PrivateServiceDomain"`
+	AutoAcceptEnabled           requests.Boolean `position:"Query" name:"AutoAcceptEnabled"`
+	ClientToken                 string           `position:"Query" name:"ClientToken"`
+	ConnectBandwidth            requests.Integer `position:"Query" name:"ConnectBandwidth"`
+	ZoneAffinityEnabled         requests.Boolean `position:"Query" name:"ZoneAffinityEnabled"`
+	DryRun                      requests.Boolean `position:"Query" name:"DryRun"`
+	ServiceDescription          string           `position:"Query" name:"ServiceDescription"`
+	ServiceId                   string           `position:"Query" name:"ServiceId"`
 }
 
 // UpdateVpcEndpointServiceAttributeResponse is the response struct for api UpdateVpcEndpointServiceAttribute

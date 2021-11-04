@@ -1,3 +1,7 @@
+2021-11-04 Version: v1.61.1319
+- Generated 2020-04-15 for `Privatelink`.
+- Adjust some param.
+
 2021-11-04 Version: v1.61.1318
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support ListSQLExecAuditLog API.

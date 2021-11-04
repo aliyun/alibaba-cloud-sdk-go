@@ -17,13 +17,13 @@ package privatelink
 
 // Connection is a nested struct in privatelink response
 type Connection struct {
-	ServiceId        string `json:"ServiceId" xml:"ServiceId"`
-	EndpointId       string `json:"EndpointId" xml:"EndpointId"`
-	EndpointOwnerId  int64  `json:"EndpointOwnerId" xml:"EndpointOwnerId"`
-	ConnectionStatus string `json:"ConnectionStatus" xml:"ConnectionStatus"`
-	EndpointVpcId    string `json:"EndpointVpcId" xml:"EndpointVpcId"`
-	Bandwidth        int    `json:"Bandwidth" xml:"Bandwidth"`
-	ModifiedTime     string `json:"ModifiedTime" xml:"ModifiedTime"`
 	ResourceOwner    bool   `json:"ResourceOwner" xml:"ResourceOwner"`
+	ModifiedTime     string `json:"ModifiedTime" xml:"ModifiedTime"`
+	Bandwidth        int    `json:"Bandwidth" xml:"Bandwidth"`
+	EndpointOwnerId  int64  `json:"EndpointOwnerId" xml:"EndpointOwnerId"`
+	ServiceId        string `json:"ServiceId" xml:"ServiceId"`
+	ConnectionStatus string `json:"ConnectionStatus" xml:"ConnectionStatus"`
+	EndpointId       string `json:"EndpointId" xml:"EndpointId"`
+	EndpointVpcId    string `json:"EndpointVpcId" xml:"EndpointVpcId"`
 	Zones            []Zone `json:"Zones" xml:"Zones"`
 }

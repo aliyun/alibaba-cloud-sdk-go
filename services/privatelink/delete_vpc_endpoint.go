@@ -74,6 +74,7 @@ type DeleteVpcEndpointRequest struct {
 	ClientToken string           `position:"Query" name:"ClientToken"`
 	EndpointId  string           `position:"Query" name:"EndpointId"`
 	DryRun      requests.Boolean `position:"Query" name:"DryRun"`
+	Force       requests.Boolean `position:"Query" name:"Force"`
 }
 
 // DeleteVpcEndpointResponse is the response struct for api DeleteVpcEndpoint

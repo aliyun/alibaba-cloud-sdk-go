@@ -74,6 +74,7 @@ type ListVpcEndpointsRequest struct {
 	EndpointId       string           `position:"Query" name:"EndpointId"`
 	EndpointStatus   string           `position:"Query" name:"EndpointStatus"`
 	NextToken        string           `position:"Query" name:"NextToken"`
+	EndpointType     string           `position:"Query" name:"EndpointType"`
 	ServiceName      string           `position:"Query" name:"ServiceName"`
 	ConnectionStatus string           `position:"Query" name:"ConnectionStatus"`
 	VpcId            string           `position:"Query" name:"VpcId"`
@@ -84,8 +85,8 @@ type ListVpcEndpointsRequest struct {
 // ListVpcEndpointsResponse is the response struct for api ListVpcEndpoints
 type ListVpcEndpointsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	NextToken  string     `json:"NextToken" xml:"NextToken"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
 	Endpoints  []Endpoint `json:"Endpoints" xml:"Endpoints"`
 }
