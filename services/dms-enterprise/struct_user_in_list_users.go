@@ -17,17 +17,22 @@ package dms_enterprise
 
 // UserInListUsers is a nested struct in dms_enterprise response
 type UserInListUsers struct {
-	State           string                  `json:"State" xml:"State"`
-	CurResultCount  int64                   `json:"CurResultCount" xml:"CurResultCount"`
-	UserId          string                  `json:"UserId" xml:"UserId"`
-	LastLoginTime   string                  `json:"LastLoginTime" xml:"LastLoginTime"`
-	MaxResultCount  int64                   `json:"MaxResultCount" xml:"MaxResultCount"`
-	ParentUid       string                  `json:"ParentUid" xml:"ParentUid"`
-	NickName        string                  `json:"NickName" xml:"NickName"`
-	MaxExecuteCount int64                   `json:"MaxExecuteCount" xml:"MaxExecuteCount"`
-	CurExecuteCount int64                   `json:"CurExecuteCount" xml:"CurExecuteCount"`
-	Mobile          string                  `json:"Mobile" xml:"Mobile"`
-	Uid             string                  `json:"Uid" xml:"Uid"`
-	RoleIdList      RoleIdListInListUsers   `json:"RoleIdList" xml:"RoleIdList"`
-	RoleNameList    RoleNameListInListUsers `json:"RoleNameList" xml:"RoleNameList"`
+	State            string                  `json:"State" xml:"State"`
+	CurResultCount   int64                   `json:"CurResultCount" xml:"CurResultCount"`
+	UserId           string                  `json:"UserId" xml:"UserId"`
+	LastLoginTime    string                  `json:"LastLoginTime" xml:"LastLoginTime"`
+	MaxResultCount   int64                   `json:"MaxResultCount" xml:"MaxResultCount"`
+	ParentUid        string                  `json:"ParentUid" xml:"ParentUid"`
+	NickName         string                  `json:"NickName" xml:"NickName"`
+	MaxExecuteCount  int64                   `json:"MaxExecuteCount" xml:"MaxExecuteCount"`
+	CurExecuteCount  int64                   `json:"CurExecuteCount" xml:"CurExecuteCount"`
+	Mobile           string                  `json:"Mobile" xml:"Mobile"`
+	Uid              string                  `json:"Uid" xml:"Uid"`
+	Email            string                  `json:"Email" xml:"Email"`
+	DingRobot        string                  `json:"DingRobot" xml:"DingRobot"`
+	Webhook          string                  `json:"Webhook" xml:"Webhook"`
+	SignatureMethod  string                  `json:"SignatureMethod" xml:"SignatureMethod"`
+	NotificationMode string                  `json:"NotificationMode" xml:"NotificationMode"`
+	RoleIdList       RoleIdListInListUsers   `json:"RoleIdList" xml:"RoleIdList"`
+	RoleNameList     RoleNameListInListUsers `json:"RoleNameList" xml:"RoleNameList"`
 }

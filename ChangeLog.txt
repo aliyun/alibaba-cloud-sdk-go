@@ -1,3 +1,9 @@
+2021-11-04 Version: v1.61.1318
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support ListSQLExecAuditLog API.
+- Support ListUsers, GetUser API to return information of Email, Webhook and DingRobot.
+- Support GetApprovalDetail API to return information of CreateTime.
+
 2021-11-02 Version: v1.61.1317
 - Generated 2017-03-21 for `vod`.
 - Add GetVideoPlayAuth API parameter.

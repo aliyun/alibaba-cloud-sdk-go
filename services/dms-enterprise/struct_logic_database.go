@@ -22,6 +22,7 @@ type LogicDatabase struct {
 	SearchName    string                          `json:"SearchName" xml:"SearchName"`
 	EnvType       string                          `json:"EnvType" xml:"EnvType"`
 	SchemaName    string                          `json:"SchemaName" xml:"SchemaName"`
+	Alias         string                          `json:"Alias" xml:"Alias"`
 	DbType        string                          `json:"DbType" xml:"DbType"`
 	OwnerNameList OwnerNameListInGetLogicDatabase `json:"OwnerNameList" xml:"OwnerNameList"`
 	OwnerIdList   OwnerIdListInGetLogicDatabase   `json:"OwnerIdList" xml:"OwnerIdList"`
