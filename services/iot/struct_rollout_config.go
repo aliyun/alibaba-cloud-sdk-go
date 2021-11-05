@@ -17,5 +17,6 @@ package iot
 
 // RolloutConfig is a nested struct in iot response
 type RolloutConfig struct {
-	MaximumPerMinute int `json:"MaximumPerMinute" xml:"MaximumPerMinute"`
+	MaximumPerMinute int    `json:"MaximumPerMinute" xml:"MaximumPerMinute"`
+	MessageQoS       string `json:"MessageQoS" xml:"MessageQoS"`
 }

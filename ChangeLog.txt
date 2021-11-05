@@ -1,3 +1,7 @@
+2021-11-05 Version: v1.61.1320
+- Generated 2018-01-20 for `Iot`.
+- Update OTA API, including CreateOTAVerifyJob.
+
 2021-11-04 Version: v1.61.1319
 - Generated 2020-04-15 for `Privatelink`.
 - Adjust some param.

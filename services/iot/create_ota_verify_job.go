@@ -75,6 +75,7 @@ type CreateOTAVerifyJobRequest struct {
 	NeedConfirm      requests.Boolean         `position:"Query" name:"NeedConfirm"`
 	NeedPush         requests.Boolean         `position:"Query" name:"NeedPush"`
 	IotInstanceId    string                   `position:"Query" name:"IotInstanceId"`
+	DownloadProtocol string                   `position:"Query" name:"DownloadProtocol"`
 	Tag              *[]CreateOTAVerifyJobTag `position:"Query" name:"Tag"  type:"Repeated"`
 	FirmwareId       string                   `position:"Query" name:"FirmwareId"`
 	ProductKey       string                   `position:"Query" name:"ProductKey"`
