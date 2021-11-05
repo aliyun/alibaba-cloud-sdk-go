@@ -79,8 +79,8 @@ type DescribeDcdnCertificateListRequest struct {
 // DescribeDcdnCertificateListResponse is the response struct for api DescribeDcdnCertificateList
 type DescribeDcdnCertificateListResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	CertificateListModel CertificateListModel `json:"CertificateListModel" xml:"CertificateListModel"`
+	RequestId            string                                            `json:"RequestId" xml:"RequestId"`
+	CertificateListModel CertificateListModelInDescribeDcdnCertificateList `json:"CertificateListModel" xml:"CertificateListModel"`
 }
 
 // CreateDescribeDcdnCertificateListRequest creates a request to invoke DescribeDcdnCertificateList API

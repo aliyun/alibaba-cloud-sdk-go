@@ -17,10 +17,11 @@ package dcdn
 
 // Cert is a nested struct in dcdn response
 type Cert struct {
-	CertName    string `json:"CertName" xml:"CertName"`
-	CertId      int64  `json:"CertId" xml:"CertId"`
-	Fingerprint string `json:"Fingerprint" xml:"Fingerprint"`
-	Common      string `json:"Common" xml:"Common"`
-	Issuer      string `json:"Issuer" xml:"Issuer"`
-	LastTime    int64  `json:"LastTime" xml:"LastTime"`
+	Common         string `json:"Common" xml:"Common"`
+	CertName       string `json:"CertName" xml:"CertName"`
+	Fingerprint    string `json:"Fingerprint" xml:"Fingerprint"`
+	Issuer         string `json:"Issuer" xml:"Issuer"`
+	CertId         int64  `json:"CertId" xml:"CertId"`
+	CertIdentifier string `json:"CertIdentifier" xml:"CertIdentifier"`
+	LastTime       int64  `json:"LastTime" xml:"LastTime"`
 }

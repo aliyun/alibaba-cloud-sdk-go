@@ -17,6 +17,7 @@ package dcdn
 
 // ContentItem is a nested struct in dcdn response
 type ContentItem struct {
-	Label string `json:"Label" xml:"Label"`
-	Value string `json:"Value" xml:"Value"`
+	Value  string `json:"Value" xml:"Value"`
+	Label  string `json:"Label" xml:"Label"`
+	Fields string `json:"Fields" xml:"Fields"`
 }

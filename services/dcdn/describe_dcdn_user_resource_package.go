@@ -73,6 +73,7 @@ type DescribeDcdnUserResourcePackageRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Status        string           `position:"Query" name:"Status"`
 }
 
 // DescribeDcdnUserResourcePackageResponse is the response struct for api DescribeDcdnUserResourcePackage

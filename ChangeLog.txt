@@ -1,3 +1,7 @@
+2021-11-05 Version: v1.61.1322
+- Generated 2018-01-15 for `dcdn`.
+- Add SetDcdnDomainSMCertificate.
+
 2021-11-05 Version: v1.61.1321
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Add SetCdnDomainSMCertificate.
