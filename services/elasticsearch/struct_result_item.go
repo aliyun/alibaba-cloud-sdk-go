@@ -17,6 +17,7 @@ package elasticsearch
 
 // ResultItem is a nested struct in elasticsearch response
 type ResultItem struct {
+	IlmExplain             string                 `json:"ilmExplain" xml:"ilmExplain"`
 	IlmPolicyName          string                 `json:"ilmPolicyName" xml:"ilmPolicyName"`
 	Timestamp              int64                  `json:"timestamp" xml:"timestamp"`
 	TaskId                 string                 `json:"taskId" xml:"taskId"`
@@ -68,6 +69,7 @@ type ResultItem struct {
 	EsInstanceId           string                 `json:"esInstanceId" xml:"esInstanceId"`
 	SpecificationUrl       string                 `json:"specificationUrl" xml:"specificationUrl"`
 	GmtCreatedTime         string                 `json:"gmtCreatedTime" xml:"gmtCreatedTime"`
+	Phase                  string                 `json:"phase" xml:"phase"`
 	Health                 string                 `json:"health" xml:"health"`
 	TargetNode             string                 `json:"targetNode" xml:"targetNode"`
 	IsManaged              string                 `json:"isManaged" xml:"isManaged"`
@@ -94,6 +96,7 @@ type ResultItem struct {
 	DiskUsedPercent        string                 `json:"diskUsedPercent" xml:"diskUsedPercent"`
 	OwnerId                string                 `json:"ownerId" xml:"ownerId"`
 	ManagedStorageSize     int64                  `json:"managedStorageSize" xml:"managedStorageSize"`
+	HostName               string                 `json:"hostName" xml:"hostName"`
 	Status                 string                 `json:"status" xml:"status"`
 	FilesTotal             int64                  `json:"filesTotal" xml:"filesTotal"`
 	TargetHost             string                 `json:"targetHost" xml:"targetHost"`

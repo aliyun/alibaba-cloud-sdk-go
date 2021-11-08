@@ -78,8 +78,8 @@ type UpdateCollectorNameRequest struct {
 // UpdateCollectorNameResponse is the response struct for api UpdateCollectorName
 type UpdateCollectorNameResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Result    ResultInUpdateCollectorName `json:"Result" xml:"Result"`
 }
 
 // CreateUpdateCollectorNameRequest creates a request to invoke UpdateCollectorName API

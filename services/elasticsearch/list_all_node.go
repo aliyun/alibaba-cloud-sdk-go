@@ -71,7 +71,8 @@ func (client *Client) ListAllNodeWithCallback(request *ListAllNodeRequest, callb
 // ListAllNodeRequest is the request struct for api ListAllNode
 type ListAllNodeRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId string           `position:"Path" name:"InstanceId"`
+	Extended   requests.Boolean `position:"Query" name:"extended"`
 }
 
 // ListAllNodeResponse is the response struct for api ListAllNode

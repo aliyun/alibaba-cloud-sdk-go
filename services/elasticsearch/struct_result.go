@@ -24,10 +24,8 @@ type Result struct {
 	Priority                  int                        `json:"priority" xml:"priority"`
 	EndpointName              string                     `json:"endpointName" xml:"endpointName"`
 	Tags                      map[string]interface{}     `json:"tags" xml:"tags"`
-	Domain                    string                     `json:"domain" xml:"domain"`
 	GmtUpdateTime             string                     `json:"gmtUpdateTime" xml:"gmtUpdateTime"`
 	BatchSize                 int                        `json:"batchSize" xml:"batchSize"`
-	ResVersion                string                     `json:"resVersion" xml:"resVersion"`
 	PipelineId                string                     `json:"pipelineId" xml:"pipelineId"`
 	RegionId                  string                     `json:"regionId" xml:"regionId"`
 	EndpointDomain            string                     `json:"endpointDomain" xml:"endpointDomain"`
@@ -36,61 +34,66 @@ type Result struct {
 	Connectable               bool                       `json:"connectable" xml:"connectable"`
 	Dps                       map[string]interface{}     `json:"dps" xml:"dps"`
 	Phases                    map[string]interface{}     `json:"phases" xml:"phases"`
-	PublicPort                int                        `json:"publicPort" xml:"publicPort"`
+	Status                    string                     `json:"Status" xml:"Status"`
+	PaymentType               string                     `json:"PaymentType" xml:"PaymentType"`
 	Enable                    bool                       `json:"enable" xml:"enable"`
 	State                     string                     `json:"state" xml:"state"`
 	Workers                   int                        `json:"workers" xml:"workers"`
 	CreateUrl                 string                     `json:"createUrl" xml:"createUrl"`
 	PipelineManagementType    string                     `json:"pipelineManagementType" xml:"pipelineManagementType"`
+	InstanceId                string                     `json:"InstanceId" xml:"InstanceId"`
+	OutputES                  string                     `json:"OutputES" xml:"OutputES"`
+	VswitchId                 string                     `json:"VswitchId" xml:"VswitchId"`
 	ReportId                  string                     `json:"reportId" xml:"reportId"`
+	VsArea                    string                     `json:"VsArea" xml:"VsArea"`
+	CreatedAt                 string                     `json:"CreatedAt" xml:"CreatedAt"`
 	Metric                    string                     `json:"metric" xml:"metric"`
 	Summary                   float64                    `json:"summary" xml:"summary"`
-	DryRun                    bool                       `json:"dryRun" xml:"dryRun"`
+	Replica                   int64                      `json:"Replica" xml:"Replica"`
 	Type                      string                     `json:"type" xml:"type"`
+	Version                   string                     `json:"Version" xml:"Version"`
 	PipelineStatus            string                     `json:"pipelineStatus" xml:"pipelineStatus"`
-	NodeAmount                int                        `json:"nodeAmount" xml:"nodeAmount"`
 	DataStream                bool                       `json:"dataStream" xml:"dataStream"`
-	InstanceId                string                     `json:"instanceId" xml:"instanceId"`
 	ServiceId                 string                     `json:"serviceId" xml:"serviceId"`
 	Description               string                     `json:"description" xml:"description"`
+	InstanceCategory          string                     `json:"InstanceCategory" xml:"InstanceCategory"`
 	Trigger                   string                     `json:"trigger" xml:"trigger"`
+	OwnerId                   string                     `json:"OwnerId" xml:"OwnerId"`
+	OutputEsDescription       string                     `json:"OutputEsDescription" xml:"OutputEsDescription"`
 	EsInstanceId              string                     `json:"esInstanceId" xml:"esInstanceId"`
 	Scene                     string                     `json:"scene" xml:"scene"`
-	CreatedAt                 string                     `json:"createdAt" xml:"createdAt"`
+	OutputESUserName          string                     `json:"OutputESUserName" xml:"OutputESUserName"`
 	GmtCreatedTime            string                     `json:"gmtCreatedTime" xml:"gmtCreatedTime"`
 	ValidateType              string                     `json:"validateType" xml:"validateType"`
-	KibanaPort                int                        `json:"kibanaPort" xml:"kibanaPort"`
 	Health                    string                     `json:"health" xml:"health"`
 	UserName                  string                     `json:"userName" xml:"userName"`
 	ClusterType               string                     `json:"clusterType" xml:"clusterType"`
+	NodeAmount                int64                      `json:"NodeAmount" xml:"NodeAmount"`
 	ResId                     string                     `json:"resId" xml:"resId"`
-	PublicDomain              string                     `json:"publicDomain" xml:"publicDomain"`
-	KibanaDomain              string                     `json:"kibanaDomain" xml:"kibanaDomain"`
+	EndTime                   int64                      `json:"EndTime" xml:"EndTime"`
 	QueueCheckPointWrites     int                        `json:"queueCheckPointWrites" xml:"queueCheckPointWrites"`
 	Name                      string                     `json:"name" xml:"name"`
 	MessageWatermark          int64                      `json:"messageWatermark" xml:"messageWatermark"`
+	DeployedReplica           int64                      `json:"DeployedReplica" xml:"DeployedReplica"`
 	QuartzRegex               string                     `json:"QuartzRegex" xml:"QuartzRegex"`
 	EndpointId                string                     `json:"endpointId" xml:"endpointId"`
-	ResType                   string                     `json:"resType" xml:"resType"`
 	Integrity                 float64                    `json:"integrity" xml:"integrity"`
 	EnablePublic              bool                       `json:"enablePublic" xml:"enablePublic"`
-	EsVersion                 string                     `json:"esVersion" xml:"esVersion"`
+	OversizedCluster          bool                       `json:"OversizedCluster" xml:"OversizedCluster"`
+	ResourceSpec              string                     `json:"ResourceSpec" xml:"ResourceSpec"`
+	Region                    string                     `json:"Region" xml:"Region"`
 	ClusterId                 string                     `json:"clusterId" xml:"clusterId"`
 	FileSize                  int64                      `json:"fileSize" xml:"fileSize"`
 	Config                    string                     `json:"config" xml:"config"`
 	Value                     int64                      `json:"value" xml:"value"`
 	UpdateTime                int64                      `json:"updateTime" xml:"updateTime"`
 	IndexTemplate             string                     `json:"indexTemplate" xml:"indexTemplate"`
-	PaymentType               string                     `json:"paymentType" xml:"paymentType"`
-	UpdatedAt                 string                     `json:"updatedAt" xml:"updatedAt"`
-	OwnerId                   string                     `json:"ownerId" xml:"ownerId"`
+	LastDayUsage              int64                      `json:"lastDayUsage" xml:"lastDayUsage"`
 	QueueMaxBytes             int                        `json:"queueMaxBytes" xml:"queueMaxBytes"`
-	Status                    string                     `json:"status" xml:"status"`
 	BatchDelay                int                        `json:"batchDelay" xml:"batchDelay"`
-	Version                   string                     `json:"version" xml:"version"`
 	CreateTime                int64                      `json:"createTime" xml:"createTime"`
+	CurrentUsage              int64                      `json:"currentUsage" xml:"currentUsage"`
 	MasterSpec                []string                   `json:"masterSpec" xml:"masterSpec"`
-	CollectorPaths            []string                   `json:"collectorPaths" xml:"collectorPaths"`
 	PrivateNetworkIpWhiteList []string                   `json:"privateNetworkIpWhiteList" xml:"privateNetworkIpWhiteList"`
 	EsVersions                []string                   `json:"esVersions" xml:"esVersions"`
 	EsIPWhitelist             []string                   `json:"esIPWhitelist" xml:"esIPWhitelist"`
@@ -105,13 +108,9 @@ type Result struct {
 	PipelineIds               []string                   `json:"pipelineIds" xml:"pipelineIds"`
 	Node                      Node                       `json:"node" xml:"node"`
 	ElasticExpansionTask      ElasticExpansionTask       `json:"elasticExpansionTask" xml:"elasticExpansionTask"`
-	NodeSpec                  NodeSpec                   `json:"nodeSpec" xml:"nodeSpec"`
-	MasterConfiguration       MasterConfiguration        `json:"masterConfiguration" xml:"masterConfiguration"`
 	JvmConfine                JvmConfine                 `json:"jvmConfine" xml:"jvmConfine"`
 	MetaInfo                  MetaInfo                   `json:"metaInfo" xml:"metaInfo"`
 	ElasticShrinkTask         ElasticShrinkTask          `json:"elasticShrinkTask" xml:"elasticShrinkTask"`
-	NetworkConfig             NetworkConfig              `json:"networkConfig" xml:"networkConfig"`
-	KibanaConfiguration       KibanaConfiguration        `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
 	KibanaNodeProperties      KibanaNodeProperties       `json:"kibanaNodeProperties" xml:"kibanaNodeProperties"`
 	ClientNodeAmountRange     ClientNodeAmountRange      `json:"clientNodeAmountRange" xml:"clientNodeAmountRange"`
 	Template                  Template                   `json:"template" xml:"template"`
@@ -119,12 +118,10 @@ type Result struct {
 	OssObject                 OssObject                  `json:"ossObject" xml:"ossObject"`
 	ElasticNodeProperties     ElasticNodeProperties      `json:"elasticNodeProperties" xml:"elasticNodeProperties"`
 	WarmNodeProperties        WarmNodeProperties         `json:"warmNodeProperties" xml:"warmNodeProperties"`
-	Configs                   []ConfigsItem              `json:"configs" xml:"configs"`
 	MasterDiskList            []Disk                     `json:"masterDiskList" xml:"masterDiskList"`
-	SynonymsDicts             []SynonymsDictsItem        `json:"synonymsDicts" xml:"synonymsDicts"`
 	ClientNodeDiskList        []Disk                     `json:"clientNodeDiskList" xml:"clientNodeDiskList"`
-	ExtendConfigs             []ExtendConfigsItem        `json:"extendConfigs" xml:"extendConfigs"`
-	DictList                  []DictListItem             `json:"dictList" xml:"dictList"`
+	NodeConfigurations        []NodeConfigurationsItem   `json:"NodeConfigurations" xml:"NodeConfigurations"`
+	ExtendConfigs             []ExtendConfigsItem        `json:"ExtendConfigs" xml:"ExtendConfigs"`
 	SupportVersions           []CategoryEntity           `json:"supportVersions" xml:"supportVersions"`
 	EsVersionsLatestList      []EsVersionsLatestListItem `json:"esVersionsLatestList" xml:"esVersionsLatestList"`
 	NodeSpecList              []NodeSpecListItem         `json:"nodeSpecList" xml:"nodeSpecList"`

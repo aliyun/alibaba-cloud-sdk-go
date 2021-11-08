@@ -73,7 +73,7 @@ type UpdateDescriptionRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
-	Description string `position:"Body" name:"description"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateDescriptionResponse is the response struct for api UpdateDescription

@@ -78,8 +78,8 @@ type UpdateCollectorRequest struct {
 // UpdateCollectorResponse is the response struct for api UpdateCollector
 type UpdateCollectorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Result    ResultInUpdateCollector `json:"Result" xml:"Result"`
 }
 
 // CreateUpdateCollectorRequest creates a request to invoke UpdateCollector API

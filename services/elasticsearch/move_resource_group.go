@@ -78,8 +78,8 @@ type MoveResourceGroupRequest struct {
 // MoveResourceGroupResponse is the response struct for api MoveResourceGroup
 type MoveResourceGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Result    ResultInMoveResourceGroup `json:"Result" xml:"Result"`
 }
 
 // CreateMoveResourceGroupRequest creates a request to invoke MoveResourceGroup API

@@ -77,8 +77,8 @@ type DescribeCollectorRequest struct {
 // DescribeCollectorResponse is the response struct for api DescribeCollector
 type DescribeCollectorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Result    ResultInDescribeCollector `json:"Result" xml:"Result"`
 }
 
 // CreateDescribeCollectorRequest creates a request to invoke DescribeCollector API

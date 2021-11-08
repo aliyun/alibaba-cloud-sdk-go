@@ -17,12 +17,14 @@ package elasticsearch
 
 // ExtendConfigsItem is a nested struct in elasticsearch response
 type ExtendConfigsItem struct {
+	Disk             int64          `json:"Disk" xml:"Disk"`
 	Type             string         `json:"type" xml:"type"`
+	ConfigType       string         `json:"ConfigType" xml:"ConfigType"`
 	GroupId          string         `json:"groupId" xml:"groupId"`
 	SuccessPodsCount string         `json:"successPodsCount" xml:"successPodsCount"`
+	DiskType         string         `json:"DiskType" xml:"DiskType"`
 	InstanceType     string         `json:"instanceType" xml:"instanceType"`
 	UserName         string         `json:"userName" xml:"userName"`
-	ConfigType       string         `json:"configType" xml:"configType"`
 	Host             string         `json:"host" xml:"host"`
 	KibanaHost       string         `json:"kibanaHost" xml:"kibanaHost"`
 	InstanceId       string         `json:"instanceId" xml:"instanceId"`
