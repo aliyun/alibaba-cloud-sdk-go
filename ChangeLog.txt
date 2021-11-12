@@ -1,3 +1,7 @@
+2021-11-12 Version: v1.61.1324
+- Generated 2017-08-01 for `polardb`.
+- Optimize the API for querying storage package information.
+
 2021-11-08 Version: v1.61.1323
 - Generated 2017-06-13 for `elasticsearch`.
 - Supported apm restful api.

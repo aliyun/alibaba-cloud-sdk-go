@@ -28,4 +28,5 @@ type TimerInfos struct {
 	PlannedTime          string `json:"PlannedTime" xml:"PlannedTime"`
 	DBClusterId          string `json:"DBClusterId" xml:"DBClusterId"`
 	OrderId              string `json:"OrderId" xml:"OrderId"`
+	TaskCancel           bool   `json:"TaskCancel" xml:"TaskCancel"`
 }
