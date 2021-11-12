@@ -1,3 +1,7 @@
+2021-11-12 Version: v1.61.1325
+- Generated 2015-12-01 for `Dds`.
+- Update by sdk platform.
+
 2021-11-12 Version: v1.61.1324
 - Generated 2017-08-01 for `polardb`.
 - Optimize the API for querying storage package information.
