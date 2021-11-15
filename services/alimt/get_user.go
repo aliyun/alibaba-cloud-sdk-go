@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// Translate invokes the alimt.Translate API synchronously
-func (client *Client) Translate(request *TranslateRequest) (response *TranslateResponse, err error) {
-	response = CreateTranslateResponse()
+// GetUser invokes the alimt.GetUser API synchronously
+func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
+	response = CreateGetUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TranslateWithChan invokes the alimt.Translate API asynchronously
-func (client *Client) TranslateWithChan(request *TranslateRequest) (<-chan *TranslateResponse, <-chan error) {
-	responseChan := make(chan *TranslateResponse, 1)
+// GetUserWithChan invokes the alimt.GetUser API asynchronously
+func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
+	responseChan := make(chan *GetUserResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.Translate(request)
+		response, err := client.GetUser(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) TranslateWithChan(request *TranslateRequest) (<-chan *Tran
 	return responseChan, errChan
 }
 
-// TranslateWithCallback invokes the alimt.Translate API asynchronously
-func (client *Client) TranslateWithCallback(request *TranslateRequest, callback func(response *TranslateResponse, err error)) <-chan int {
+// GetUserWithCallback invokes the alimt.GetUser API asynchronously
+func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TranslateResponse
+		var response *GetUserResponse
 		var err error
 		defer close(result)
-		response, err = client.Translate(request)
+		response, err = client.GetUser(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,33 @@ func (client *Client) TranslateWithCallback(request *TranslateRequest, callback 
 	return result
 }
 
-// TranslateRequest is the request struct for api Translate
-type TranslateRequest struct {
+// GetUserRequest is the request struct for api GetUser
+type GetUserRequest struct {
 	*requests.RpcRequest
-	SourceLanguage string `position:"Body" name:"SourceLanguage"`
-	SourceText     string `position:"Body" name:"SourceText"`
-	FormatType     string `position:"Body" name:"FormatType"`
-	Scene          string `position:"Body" name:"Scene"`
-	TargetLanguage string `position:"Body" name:"TargetLanguage"`
 }
 
-// TranslateResponse is the response struct for api Translate
-type TranslateResponse struct {
+// GetUserResponse is the response struct for api GetUser
+type GetUserResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateTranslateRequest creates a request to invoke Translate API
-func CreateTranslateRequest() (request *TranslateRequest) {
-	request = &TranslateRequest{
+// CreateGetUserRequest creates a request to invoke GetUser API
+func CreateGetUserRequest() (request *GetUserRequest) {
+	request = &GetUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "Translate", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetUser", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateTranslateResponse creates a response to parse from Translate response
-func CreateTranslateResponse() (response *TranslateResponse) {
-	response = &TranslateResponse{
+// CreateGetUserResponse creates a response to parse from GetUser response
+func CreateGetUserResponse() (response *GetUserResponse) {
+	response = &GetUserResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

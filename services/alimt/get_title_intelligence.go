@@ -81,9 +81,9 @@ type GetTitleIntelligenceRequest struct {
 // GetTitleIntelligenceResponse is the response struct for api GetTitleIntelligence
 type GetTitleIntelligenceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -92,7 +92,7 @@ func CreateGetTitleIntelligenceRequest() (request *GetTitleIntelligenceRequest) 
 	request = &GetTitleIntelligenceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleIntelligence", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleIntelligence", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -77,9 +77,9 @@ type GetImageTranslateTaskRequest struct {
 // GetImageTranslateTaskResponse is the response struct for api GetImageTranslateTask
 type GetImageTranslateTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -88,7 +88,7 @@ func CreateGetImageTranslateTaskRequest() (request *GetImageTranslateTaskRequest
 	request = &GetImageTranslateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageTranslateTask", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageTranslateTask", "", "")
 	request.Method = requests.POST
 	return
 }

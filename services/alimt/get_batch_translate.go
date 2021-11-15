@@ -82,9 +82,9 @@ type GetBatchTranslateRequest struct {
 // GetBatchTranslateResponse is the response struct for api GetBatchTranslate
 type GetBatchTranslateResponse struct {
 	*responses.BaseResponse
-	RequestId      string                   `json:"RequestId" xml:"RequestId"`
 	Code           int                      `json:"Code" xml:"Code"`
 	Message        string                   `json:"Message" xml:"Message"`
+	RequestId      string                   `json:"RequestId" xml:"RequestId"`
 	TranslatedList []map[string]interface{} `json:"TranslatedList" xml:"TranslatedList"`
 }
 
@@ -93,7 +93,7 @@ func CreateGetBatchTranslateRequest() (request *GetBatchTranslateRequest) {
 	request = &GetBatchTranslateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetBatchTranslate", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetBatchTranslate", "", "")
 	request.Method = requests.POST
 	return
 }

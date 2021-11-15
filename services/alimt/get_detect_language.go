@@ -77,8 +77,8 @@ type GetDetectLanguageRequest struct {
 // GetDetectLanguageResponse is the response struct for api GetDetectLanguage
 type GetDetectLanguageResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	DetectedLanguage string `json:"DetectedLanguage" xml:"DetectedLanguage"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetDetectLanguageRequest creates a request to invoke GetDetectLanguage API
@@ -86,7 +86,7 @@ func CreateGetDetectLanguageRequest() (request *GetDetectLanguageRequest) {
 	request = &GetDetectLanguageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetDetectLanguage", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetDetectLanguage", "", "")
 	request.Method = requests.POST
 	return
 }

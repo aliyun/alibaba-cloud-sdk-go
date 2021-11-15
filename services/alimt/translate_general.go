@@ -81,9 +81,9 @@ type TranslateGeneralRequest struct {
 // TranslateGeneralResponse is the response struct for api TranslateGeneral
 type TranslateGeneralResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -92,7 +92,7 @@ func CreateTranslateGeneralRequest() (request *TranslateGeneralRequest) {
 	request = &TranslateGeneralRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateGeneral", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateGeneral", "", "")
 	request.Method = requests.POST
 	return
 }

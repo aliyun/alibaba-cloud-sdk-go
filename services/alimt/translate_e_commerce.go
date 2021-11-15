@@ -81,9 +81,9 @@ type TranslateECommerceRequest struct {
 // TranslateECommerceResponse is the response struct for api TranslateECommerce
 type TranslateECommerceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -92,7 +92,7 @@ func CreateTranslateECommerceRequest() (request *TranslateECommerceRequest) {
 	request = &TranslateECommerceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateECommerce", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateECommerce", "", "")
 	request.Method = requests.POST
 	return
 }

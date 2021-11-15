@@ -83,9 +83,9 @@ type GetTitleGenerateRequest struct {
 // GetTitleGenerateResponse is the response struct for api GetTitleGenerate
 type GetTitleGenerateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -94,7 +94,7 @@ func CreateGetTitleGenerateRequest() (request *GetTitleGenerateRequest) {
 	request = &GetTitleGenerateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleGenerate", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleGenerate", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -81,9 +81,9 @@ type GetTitleDiagnoseRequest struct {
 // GetTitleDiagnoseResponse is the response struct for api GetTitleDiagnose
 type GetTitleDiagnoseResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -92,7 +92,7 @@ func CreateGetTitleDiagnoseRequest() (request *GetTitleDiagnoseRequest) {
 	request = &GetTitleDiagnoseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleDiagnose", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleDiagnose", "", "")
 	request.Method = requests.POST
 	return
 }

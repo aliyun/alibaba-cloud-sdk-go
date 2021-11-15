@@ -78,8 +78,8 @@ type OpenAlimtServiceRequest struct {
 // OpenAlimtServiceResponse is the response struct for api OpenAlimtService
 type OpenAlimtServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenAlimtServiceRequest creates a request to invoke OpenAlimtService API
@@ -87,7 +87,7 @@ func CreateOpenAlimtServiceRequest() (request *OpenAlimtServiceRequest) {
 	request = &OpenAlimtServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "OpenAlimtService", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "OpenAlimtService", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -78,9 +78,9 @@ type GetImageDiagnoseRequest struct {
 // GetImageDiagnoseResponse is the response struct for api GetImageDiagnose
 type GetImageDiagnoseResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -89,7 +89,7 @@ func CreateGetImageDiagnoseRequest() (request *GetImageDiagnoseRequest) {
 	request = &GetImageDiagnoseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageDiagnose", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageDiagnose", "", "")
 	request.Method = requests.POST
 	return
 }

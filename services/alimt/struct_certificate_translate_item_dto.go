@@ -17,8 +17,8 @@ package alimt
 
 // CertificateTranslateItemDTO is a nested struct in alimt response
 type CertificateTranslateItemDTO struct {
+	KeyTranslation   string `json:"KeyTranslation" xml:"KeyTranslation"`
 	Key              string `json:"Key" xml:"Key"`
 	Value            string `json:"Value" xml:"Value"`
 	ValueTranslation string `json:"ValueTranslation" xml:"ValueTranslation"`
-	KeyTranslation   string `json:"KeyTranslation" xml:"KeyTranslation"`
 }

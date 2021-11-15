@@ -71,6 +71,7 @@ func (client *Client) TranslateCertificateWithCallback(request *TranslateCertifi
 // TranslateCertificateRequest is the request struct for api TranslateCertificate
 type TranslateCertificateRequest struct {
 	*requests.RpcRequest
+	Ext             string `position:"Body" name:"Ext"`
 	SourceLanguage  string `position:"Body" name:"SourceLanguage"`
 	CertificateType string `position:"Body" name:"CertificateType"`
 	ResultType      string `position:"Body" name:"ResultType"`
@@ -90,7 +91,7 @@ func CreateTranslateCertificateRequest() (request *TranslateCertificateRequest) 
 	request = &TranslateCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateCertificate", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateCertificate", "", "")
 	request.Method = requests.POST
 	return
 }

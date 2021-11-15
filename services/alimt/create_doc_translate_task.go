@@ -82,9 +82,9 @@ type CreateDocTranslateTaskRequest struct {
 // CreateDocTranslateTaskResponse is the response struct for api CreateDocTranslateTask
 type CreateDocTranslateTaskResponse struct {
 	*responses.BaseResponse
+	Status    string `json:"Status" xml:"Status"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
-	Status    string `json:"Status" xml:"Status"`
 }
 
 // CreateCreateDocTranslateTaskRequest creates a request to invoke CreateDocTranslateTask API
@@ -92,7 +92,7 @@ func CreateCreateDocTranslateTaskRequest() (request *CreateDocTranslateTaskReque
 	request = &CreateDocTranslateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "CreateDocTranslateTask", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "CreateDocTranslateTask", "", "")
 	request.Method = requests.POST
 	return
 }

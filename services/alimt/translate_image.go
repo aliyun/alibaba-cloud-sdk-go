@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetImageTranslate invokes the alimt.GetImageTranslate API synchronously
-func (client *Client) GetImageTranslate(request *GetImageTranslateRequest) (response *GetImageTranslateResponse, err error) {
-	response = CreateGetImageTranslateResponse()
+// TranslateImage invokes the alimt.TranslateImage API synchronously
+func (client *Client) TranslateImage(request *TranslateImageRequest) (response *TranslateImageResponse, err error) {
+	response = CreateTranslateImageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetImageTranslateWithChan invokes the alimt.GetImageTranslate API asynchronously
-func (client *Client) GetImageTranslateWithChan(request *GetImageTranslateRequest) (<-chan *GetImageTranslateResponse, <-chan error) {
-	responseChan := make(chan *GetImageTranslateResponse, 1)
+// TranslateImageWithChan invokes the alimt.TranslateImage API asynchronously
+func (client *Client) TranslateImageWithChan(request *TranslateImageRequest) (<-chan *TranslateImageResponse, <-chan error) {
+	responseChan := make(chan *TranslateImageResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetImageTranslate(request)
+		response, err := client.TranslateImage(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetImageTranslateWithChan(request *GetImageTranslateReques
 	return responseChan, errChan
 }
 
-// GetImageTranslateWithCallback invokes the alimt.GetImageTranslate API asynchronously
-func (client *Client) GetImageTranslateWithCallback(request *GetImageTranslateRequest, callback func(response *GetImageTranslateResponse, err error)) <-chan int {
+// TranslateImageWithCallback invokes the alimt.TranslateImage API asynchronously
+func (client *Client) TranslateImageWithCallback(request *TranslateImageRequest, callback func(response *TranslateImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetImageTranslateResponse
+		var response *TranslateImageResponse
 		var err error
 		defer close(result)
-		response, err = client.GetImageTranslate(request)
+		response, err = client.TranslateImage(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,39 @@ func (client *Client) GetImageTranslateWithCallback(request *GetImageTranslateRe
 	return result
 }
 
-// GetImageTranslateRequest is the request struct for api GetImageTranslate
-type GetImageTranslateRequest struct {
+// TranslateImageRequest is the request struct for api TranslateImage
+type TranslateImageRequest struct {
 	*requests.RpcRequest
+	Ext            string `position:"Body" name:"Ext"`
 	SourceLanguage string `position:"Body" name:"SourceLanguage"`
-	Url            string `position:"Body" name:"Url"`
-	Extra          string `position:"Body" name:"Extra"`
+	Field          string `position:"Body" name:"Field"`
+	ImageUrl       string `position:"Body" name:"ImageUrl"`
 	TargetLanguage string `position:"Body" name:"TargetLanguage"`
+	ImageBase64    string `position:"Body" name:"ImageBase64"`
 }
 
-// GetImageTranslateResponse is the response struct for api GetImageTranslate
-type GetImageTranslateResponse struct {
+// TranslateImageResponse is the response struct for api TranslateImage
+type TranslateImageResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateGetImageTranslateRequest creates a request to invoke GetImageTranslate API
-func CreateGetImageTranslateRequest() (request *GetImageTranslateRequest) {
-	request = &GetImageTranslateRequest{
+// CreateTranslateImageRequest creates a request to invoke TranslateImage API
+func CreateTranslateImageRequest() (request *TranslateImageRequest) {
+	request = &TranslateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageTranslate", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateImage", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetImageTranslateResponse creates a response to parse from GetImageTranslate response
-func CreateGetImageTranslateResponse() (response *GetImageTranslateResponse) {
-	response = &GetImageTranslateResponse{
+// CreateTranslateImageResponse creates a response to parse from TranslateImage response
+func CreateTranslateImageResponse() (response *TranslateImageResponse) {
+	response = &TranslateImageResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

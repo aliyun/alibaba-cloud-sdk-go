@@ -1,3 +1,7 @@
+2021-11-15 Version: v1.61.1326
+- Generated 2018-10-12 for `alimt`.
+- Add Ext parameter to image translation API.
+
 2021-11-12 Version: v1.61.1325
 - Generated 2015-12-01 for `Dds`.
 - Update by sdk platform.
