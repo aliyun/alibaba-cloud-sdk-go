@@ -1,3 +1,7 @@
+2021-11-15 Version: v1.61.1327
+- Generated 2020-01-01 for `ddoscoo`.
+
+
 2021-11-15 Version: v1.61.1326
 - Generated 2018-10-12 for `alimt`.
 - Add Ext parameter to image translation API.

@@ -27,4 +27,5 @@ type InstanceSpec struct {
 	DefenseCount     int    `json:"DefenseCount" xml:"DefenseCount"`
 	FunctionVersion  string `json:"FunctionVersion" xml:"FunctionVersion"`
 	QpsLimit         int    `json:"QpsLimit" xml:"QpsLimit"`
+	ElasticBw        int    `json:"ElasticBw" xml:"ElasticBw"`
 }

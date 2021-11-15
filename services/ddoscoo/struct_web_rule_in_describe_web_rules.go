@@ -24,6 +24,7 @@ type WebRuleInDescribeWebRules struct {
 	SslProtocols     string        `json:"SslProtocols" xml:"SslProtocols"`
 	SslCiphers       string        `json:"SslCiphers" xml:"SslCiphers"`
 	Http2Enable      bool          `json:"Http2Enable" xml:"Http2Enable"`
+	OcspEnabled      bool          `json:"OcspEnabled" xml:"OcspEnabled"`
 	Http2HttpsEnable bool          `json:"Http2HttpsEnable" xml:"Http2HttpsEnable"`
 	Https2HttpEnable bool          `json:"Https2HttpEnable" xml:"Https2HttpEnable"`
 	PolicyMode       string        `json:"PolicyMode" xml:"PolicyMode"`

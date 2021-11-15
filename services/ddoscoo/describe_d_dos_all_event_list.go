@@ -71,11 +71,11 @@ func (client *Client) DescribeDDosAllEventListWithCallback(request *DescribeDDos
 // DescribeDDosAllEventListRequest is the request struct for api DescribeDDosAllEventList
 type DescribeDDosAllEventListRequest struct {
 	*requests.RpcRequest
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	SourceIp   string           `position:"Query" name:"SourceIp"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	EndTime    requests.Integer `position:"Query" name:"EndTime"`
 	EventType  string           `position:"Query" name:"EventType"`
 }
 

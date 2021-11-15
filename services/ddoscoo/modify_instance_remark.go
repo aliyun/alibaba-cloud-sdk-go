@@ -72,8 +72,8 @@ func (client *Client) ModifyInstanceRemarkWithCallback(request *ModifyInstanceRe
 type ModifyInstanceRemarkRequest struct {
 	*requests.RpcRequest
 	Remark     string `position:"Query" name:"Remark"`
-	InstanceId string `position:"Query" name:"InstanceId"`
 	SourceIp   string `position:"Query" name:"SourceIp"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // ModifyInstanceRemarkResponse is the response struct for api ModifyInstanceRemark
