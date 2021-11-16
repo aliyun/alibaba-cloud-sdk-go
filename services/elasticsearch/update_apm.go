@@ -71,12 +71,8 @@ func (client *Client) UpdateApmWithCallback(request *UpdateApmRequest, callback 
 // UpdateApmRequest is the request struct for api UpdateApm
 type UpdateApmRequest struct {
 	*requests.RoaRequest
-	OutputES         string `position:"Query" name:"outputES"`
-	OutputESPassword string `position:"Query" name:"outputESPassword"`
-	InstanceId       string `position:"Path" name:"instanceId"`
-	Yml              string `position:"Query" name:"yml"`
-	OutputESUserName string `position:"Query" name:"outputESUserName"`
-	Token            string `position:"Query" name:"token"`
+	InstanceId string `position:"Path" name:"instanceId"`
+	Body       string `position:"Body" name:"body"`
 }
 
 // UpdateApmResponse is the response struct for api UpdateApm
