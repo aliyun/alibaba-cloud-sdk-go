@@ -72,20 +72,20 @@ func (client *Client) DescribeDDoSEventsWithCallback(request *DescribeDDoSEvents
 type DescribeDDoSEventsRequest struct {
 	*requests.RpcRequest
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	Eip             string           `position:"Query" name:"Eip"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	PageSize        string           `position:"Query" name:"PageSize"`
+	Offset          requests.Integer `position:"Query" name:"Offset"`
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
-	InstanceIds     *[]string        `position:"Query" name:"InstanceIds"  type:"Repeated"`
 }
 
 // DescribeDDoSEventsResponse is the response struct for api DescribeDDoSEvents
 type DescribeDDoSEventsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Total      int64  `json:"Total" xml:"Total"`
-	DDoSEvents []Data `json:"DDoSEvents" xml:"DDoSEvents"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Total     int64   `json:"Total" xml:"Total"`
+	Events    []Event `json:"Events" xml:"Events"`
 }
 
 // CreateDescribeDDoSEventsRequest creates a request to invoke DescribeDDoSEvents API
@@ -93,7 +93,7 @@ func CreateDescribeDDoSEventsRequest() (request *DescribeDDoSEventsRequest) {
 	request = &DescribeDDoSEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDoSEvents", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeDDoSEvents", "", "")
 	request.Method = requests.POST
 	return
 }

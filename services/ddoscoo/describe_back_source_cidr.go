@@ -80,7 +80,7 @@ type DescribeBackSourceCidrRequest struct {
 type DescribeBackSourceCidrResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Cidrs     []string `json:"Cidrs" xml:"Cidrs"`
+	CidrList  []string `json:"CidrList" xml:"CidrList"`
 }
 
 // CreateDescribeBackSourceCidrRequest creates a request to invoke DescribeBackSourceCidr API
@@ -88,7 +88,7 @@ func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrReque
 	request = &DescribeBackSourceCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBackSourceCidr", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeBackSourceCidr", "", "")
 	request.Method = requests.POST
 	return
 }

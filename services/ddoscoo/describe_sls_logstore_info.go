@@ -92,7 +92,7 @@ func CreateDescribeSlsLogstoreInfoRequest() (request *DescribeSlsLogstoreInfoReq
 	request = &DescribeSlsLogstoreInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSlsLogstoreInfo", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeSlsLogstoreInfo", "", "")
 	request.Method = requests.POST
 	return
 }

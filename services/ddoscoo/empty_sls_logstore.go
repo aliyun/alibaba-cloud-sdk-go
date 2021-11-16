@@ -87,7 +87,7 @@ func CreateEmptySlsLogstoreRequest() (request *EmptySlsLogstoreRequest) {
 	request = &EmptySlsLogstoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EmptySlsLogstore", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "EmptySlsLogstore", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,5 +17,6 @@ package ddoscoo
 
 // SlsConfigStatus is a nested struct in ddoscoo response
 type SlsConfigStatus struct {
-	SlsConfigStatusItem []SlsConfigStatusItem `json:"SlsConfigStatus" xml:"SlsConfigStatus"`
+	Enable bool   `json:"Enable" xml:"Enable"`
+	Domain string `json:"Domain" xml:"Domain"`
 }

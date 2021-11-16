@@ -17,5 +17,5 @@ package ddoscoo
 
 // Domains is a nested struct in ddoscoo response
 type Domains struct {
-	Domain []string `json:"Domain" xml:"Domain"`
+	Domain []Domain `json:"Domain" xml:"Domain"`
 }

@@ -19,7 +19,9 @@ package ddoscoo
 type InstanceDetail struct {
 	FunctionVersion string    `json:"FunctionVersion" xml:"FunctionVersion"`
 	InstanceId      string    `json:"InstanceId" xml:"InstanceId"`
+	IpMode          string    `json:"IpMode" xml:"IpMode"`
+	IpVersion       string    `json:"IpVersion" xml:"IpVersion"`
 	Line            string    `json:"Line" xml:"Line"`
 	EipList         []string  `json:"EipList" xml:"EipList"`
-	EipInfos        []EipInfo `json:"EipInfos" xml:"EipInfos"`
+	EipInfoList     []EipInfo `json:"EipInfoList" xml:"EipInfoList"`
 }

@@ -87,7 +87,7 @@ func CreateModifyElasticBandWidthRequest() (request *ModifyElasticBandWidthReque
 	request = &ModifyElasticBandWidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyElasticBandWidth", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "ModifyElasticBandWidth", "", "")
 	request.Method = requests.POST
 	return
 }

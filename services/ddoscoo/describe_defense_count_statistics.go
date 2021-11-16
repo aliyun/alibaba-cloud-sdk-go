@@ -87,7 +87,7 @@ func CreateDescribeDefenseCountStatisticsRequest() (request *DescribeDefenseCoun
 	request = &DescribeDefenseCountStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDefenseCountStatistics", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeDefenseCountStatistics", "", "")
 	request.Method = requests.POST
 	return
 }

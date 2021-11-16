@@ -73,7 +73,6 @@ type DescribeInstancesRequest struct {
 	*requests.RpcRequest
 	Edition         requests.Integer        `position:"Query" name:"Edition"`
 	Remark          string                  `position:"Query" name:"Remark"`
-	PageNumber      string                  `position:"Query" name:"PageNumber"`
 	Enabled         requests.Integer        `position:"Query" name:"Enabled"`
 	ResourceGroupId string                  `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string                  `position:"Query" name:"SourceIp"`
@@ -82,7 +81,8 @@ type DescribeInstancesRequest struct {
 	ExpireStartTime requests.Integer        `position:"Query" name:"ExpireStartTime"`
 	ExpireEndTime   requests.Integer        `position:"Query" name:"ExpireEndTime"`
 	Ip              string                  `position:"Query" name:"Ip"`
-	InstanceIds     *[]string               `position:"Query" name:"InstanceIds"  type:"Repeated"`
+	InstanceIds     string                  `position:"Query" name:"InstanceIds"`
+	PageNo          string                  `position:"Query" name:"PageNo"`
 	Status          *[]string               `position:"Query" name:"Status"  type:"Repeated"`
 }
 
@@ -95,9 +95,9 @@ type DescribeInstancesTag struct {
 // DescribeInstancesResponse is the response struct for api DescribeInstances
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	TotalCount int64      `json:"TotalCount" xml:"TotalCount"`
-	Instances  []Instance `json:"Instances" xml:"Instances"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Total     int64      `json:"Total" xml:"Total"`
+	Instances []Instance `json:"Instances" xml:"Instances"`
 }
 
 // CreateDescribeInstancesRequest creates a request to invoke DescribeInstances API
@@ -105,7 +105,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeInstances", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeInstances", "", "")
 	request.Method = requests.POST
 	return
 }

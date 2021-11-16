@@ -86,7 +86,7 @@ func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
 	request = &ReleaseInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ReleaseInstance", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "ReleaseInstance", "", "")
 	request.Method = requests.POST
 	return
 }

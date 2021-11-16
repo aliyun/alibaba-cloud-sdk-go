@@ -71,15 +71,15 @@ func (client *Client) DescribeHealthCheckListWithCallback(request *DescribeHealt
 // DescribeHealthCheckListRequest is the request struct for api DescribeHealthCheckList
 type DescribeHealthCheckListRequest struct {
 	*requests.RpcRequest
-	NetworkRules string `position:"Query" name:"NetworkRules"`
-	SourceIp     string `position:"Query" name:"SourceIp"`
+	Listeners string `position:"Query" name:"Listeners"`
+	SourceIp  string `position:"Query" name:"SourceIp"`
 }
 
 // DescribeHealthCheckListResponse is the response struct for api DescribeHealthCheckList
 type DescribeHealthCheckListResponse struct {
 	*responses.BaseResponse
-	RequestId       string            `json:"RequestId" xml:"RequestId"`
-	HealthCheckList []HealthCheckItem `json:"HealthCheckList" xml:"HealthCheckList"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Listeners []Listener `json:"Listeners" xml:"Listeners"`
 }
 
 // CreateDescribeHealthCheckListRequest creates a request to invoke DescribeHealthCheckList API
@@ -87,7 +87,7 @@ func CreateDescribeHealthCheckListRequest() (request *DescribeHealthCheckListReq
 	request = &DescribeHealthCheckListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeHealthCheckList", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeHealthCheckList", "", "")
 	request.Method = requests.POST
 	return
 }

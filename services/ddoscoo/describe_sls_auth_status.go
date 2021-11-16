@@ -88,7 +88,7 @@ func CreateDescribeSlsAuthStatusRequest() (request *DescribeSlsAuthStatusRequest
 	request = &DescribeSlsAuthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSlsAuthStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeSlsAuthStatus", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,8 +17,6 @@ package ddoscoo
 
 // EipInfo is a nested struct in ddoscoo response
 type EipInfo struct {
-	Eip       string `json:"Eip" xml:"Eip"`
-	Status    string `json:"Status" xml:"Status"`
-	IpVersion string `json:"IpVersion" xml:"IpVersion"`
-	IpMode    string `json:"IpMode" xml:"IpMode"`
+	Eip    string `json:"Eip" xml:"Eip"`
+	Status string `json:"Status" xml:"Status"`
 }
