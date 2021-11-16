@@ -1,3 +1,7 @@
+2021-11-16 Version: v1.61.1329
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update SetCdnDomainSMCertificate.
+
 2021-11-16 Version: v1.61.1328
 - Generated 2017-06-13 for `elasticsearch`.
 - Update apm interface parameter.
