@@ -19,11 +19,11 @@ package vod
 type PlayInfo struct {
 	JobId            string `json:"JobId" xml:"JobId"`
 	Format           string `json:"Format" xml:"Format"`
-	PreprocessStatus string `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	EncryptType      string `json:"EncryptType" xml:"EncryptType"`
-	Fps              string `json:"Fps" xml:"Fps"`
-	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
+	PreprocessStatus string `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	NarrowBandType   string `json:"NarrowBandType" xml:"NarrowBandType"`
+	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
+	Fps              string `json:"Fps" xml:"Fps"`
 	Bitrate          string `json:"Bitrate" xml:"Bitrate"`
 	Encrypt          int64  `json:"Encrypt" xml:"Encrypt"`
 	Rand             string `json:"Rand" xml:"Rand"`
@@ -31,13 +31,14 @@ type PlayInfo struct {
 	StreamType       string `json:"StreamType" xml:"StreamType"`
 	Height           int64  `json:"Height" xml:"Height"`
 	WatermarkId      string `json:"WatermarkId" xml:"WatermarkId"`
-	Duration         string `json:"Duration" xml:"Duration"`
 	Complexity       string `json:"Complexity" xml:"Complexity"`
+	Duration         string `json:"Duration" xml:"Duration"`
+	HDRType          string `json:"HDRType" xml:"HDRType"`
 	Width            int64  `json:"Width" xml:"Width"`
 	Size             int64  `json:"Size" xml:"Size"`
 	Status           string `json:"Status" xml:"Status"`
 	Definition       string `json:"Definition" xml:"Definition"`
 	Plaintext        string `json:"Plaintext" xml:"Plaintext"`
-	PlayURL          string `json:"PlayURL" xml:"PlayURL"`
 	Specification    string `json:"Specification" xml:"Specification"`
+	PlayURL          string `json:"PlayURL" xml:"PlayURL"`
 }

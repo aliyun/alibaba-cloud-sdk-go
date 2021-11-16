@@ -90,7 +90,7 @@ func CreateDetachAppPolicyFromIdentityRequest() (request *DetachAppPolicyFromIde
 	request = &DetachAppPolicyFromIdentityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DetachAppPolicyFromIdentity", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DetachAppPolicyFromIdentity", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateListDynamicImageRequest() (request *ListDynamicImageRequest) {
 	request = &ListDynamicImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListDynamicImage", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListDynamicImage", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
 	request = &SubmitSnapshotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitSnapshotJob", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitSnapshotJob", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateSetCrossdomainContentRequest() (request *SetCrossdomainContentRequest
 	request = &SetCrossdomainContentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SetCrossdomainContent", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "SetCrossdomainContent", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

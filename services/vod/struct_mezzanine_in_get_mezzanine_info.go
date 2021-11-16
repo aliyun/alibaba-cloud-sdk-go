@@ -17,20 +17,20 @@ package vod
 
 // MezzanineInGetMezzanineInfo is a nested struct in vod response
 type MezzanineInGetMezzanineInfo struct {
-	VideoId          string        `json:"VideoId" xml:"VideoId"`
-	Bitrate          string        `json:"Bitrate" xml:"Bitrate"`
 	CreationTime     string        `json:"CreationTime" xml:"CreationTime"`
-	Duration         string        `json:"Duration" xml:"Duration"`
-	Fps              string        `json:"Fps" xml:"Fps"`
-	Height           int64         `json:"Height" xml:"Height"`
-	Width            int64         `json:"Width" xml:"Width"`
-	Size             int64         `json:"Size" xml:"Size"`
 	Status           string        `json:"Status" xml:"Status"`
 	FileURL          string        `json:"FileURL" xml:"FileURL"`
+	VideoId          string        `json:"VideoId" xml:"VideoId"`
+	Height           int64         `json:"Height" xml:"Height"`
+	Bitrate          string        `json:"Bitrate" xml:"Bitrate"`
 	FileName         string        `json:"FileName" xml:"FileName"`
-	CRC64            string        `json:"CRC64" xml:"CRC64"`
-	PreprocessStatus string        `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	OutputType       string        `json:"OutputType" xml:"OutputType"`
+	PreprocessStatus string        `json:"PreprocessStatus" xml:"PreprocessStatus"`
+	Width            int64         `json:"Width" xml:"Width"`
+	Size             int64         `json:"Size" xml:"Size"`
+	CRC64            string        `json:"CRC64" xml:"CRC64"`
+	Duration         string        `json:"Duration" xml:"Duration"`
+	Fps              string        `json:"Fps" xml:"Fps"`
 	AudioStreamList  []AudioStream `json:"AudioStreamList" xml:"AudioStreamList"`
 	VideoStreamList  []VideoStream `json:"VideoStreamList" xml:"VideoStreamList"`
 }

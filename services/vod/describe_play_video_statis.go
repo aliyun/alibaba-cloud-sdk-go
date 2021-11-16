@@ -89,7 +89,7 @@ func CreateDescribePlayVideoStatisRequest() (request *DescribePlayVideoStatisReq
 	request = &DescribePlayVideoStatisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribePlayVideoStatis", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribePlayVideoStatis", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

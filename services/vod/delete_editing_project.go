@@ -89,7 +89,7 @@ func CreateDeleteEditingProjectRequest() (request *DeleteEditingProjectRequest) 
 	request = &DeleteEditingProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteEditingProject", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteEditingProject", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

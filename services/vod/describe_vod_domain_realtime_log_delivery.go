@@ -90,7 +90,7 @@ func CreateDescribeVodDomainRealtimeLogDeliveryRequest() (request *DescribeVodDo
 	request = &DescribeVodDomainRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodDomainRealtimeLogDelivery", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodDomainRealtimeLogDelivery", "vod", "openAPI")
 	request.Method = requests.GET
 	return
 }

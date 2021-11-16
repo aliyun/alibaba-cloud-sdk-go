@@ -85,7 +85,7 @@ func CreateDeleteWatermarkRequest() (request *DeleteWatermarkRequest) {
 	request = &DeleteWatermarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteWatermark", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteWatermark", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

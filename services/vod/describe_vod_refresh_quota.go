@@ -94,7 +94,7 @@ func CreateDescribeVodRefreshQuotaRequest() (request *DescribeVodRefreshQuotaReq
 	request = &DescribeVodRefreshQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodRefreshQuota", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodRefreshQuota", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

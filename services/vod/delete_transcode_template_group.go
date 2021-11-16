@@ -88,7 +88,7 @@ func CreateDeleteTranscodeTemplateGroupRequest() (request *DeleteTranscodeTempla
 	request = &DeleteTranscodeTemplateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteTranscodeTemplateGroup", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteTranscodeTemplateGroup", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

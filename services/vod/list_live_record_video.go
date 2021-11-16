@@ -95,7 +95,7 @@ func CreateListLiveRecordVideoRequest() (request *ListLiveRecordVideoRequest) {
 	request = &ListLiveRecordVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListLiveRecordVideo", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListLiveRecordVideo", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

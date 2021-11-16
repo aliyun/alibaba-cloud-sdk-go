@@ -72,10 +72,11 @@ func (client *Client) UploadStreamByURLWithCallback(request *UploadStreamByURLRe
 type UploadStreamByURLRequest struct {
 	*requests.RpcRequest
 	FileExtension string `position:"Query" name:"FileExtension"`
-	MediaId       string `position:"Query" name:"MediaId"`
 	UserData      string `position:"Query" name:"UserData"`
+	HDRType       string `position:"Query" name:"HDRType"`
 	Definition    string `position:"Query" name:"Definition"`
 	StreamURL     string `position:"Query" name:"StreamURL"`
+	MediaId       string `position:"Query" name:"MediaId"`
 }
 
 // UploadStreamByURLResponse is the response struct for api UploadStreamByURL
@@ -90,7 +91,7 @@ func CreateUploadStreamByURLRequest() (request *UploadStreamByURLRequest) {
 	request = &UploadStreamByURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "UploadStreamByURL", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "UploadStreamByURL", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

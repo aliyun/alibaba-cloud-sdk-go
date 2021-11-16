@@ -102,7 +102,7 @@ func CreateCreateUploadVideoRequest() (request *CreateUploadVideoRequest) {
 	request = &CreateUploadVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "CreateUploadVideo", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "CreateUploadVideo", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

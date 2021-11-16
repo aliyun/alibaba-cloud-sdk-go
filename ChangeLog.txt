@@ -1,3 +1,7 @@
+2021-11-16 Version: v1.61.1331
+- Generated 2017-03-21 for `vod`.
+- Add parameter type HDRType.
+
 2021-11-16 Version: v1.61.1330
 - Generated 2017-12-28 for `ddoscoo`.
 

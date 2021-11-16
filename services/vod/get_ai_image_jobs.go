@@ -90,7 +90,7 @@ func CreateGetAIImageJobsRequest() (request *GetAIImageJobsRequest) {
 	request = &GetAIImageJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetAIImageJobs", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetAIImageJobs", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

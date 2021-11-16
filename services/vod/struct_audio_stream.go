@@ -18,19 +18,19 @@ package vod
 // AudioStream is a nested struct in vod response
 type AudioStream struct {
 	Index          string `json:"Index" xml:"Index"`
-	CodecName      string `json:"CodecName" xml:"CodecName"`
-	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
-	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
-	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
+	Timebase       string `json:"Timebase" xml:"Timebase"`
 	SampleFmt      string `json:"SampleFmt" xml:"SampleFmt"`
 	SampleRate     string `json:"SampleRate" xml:"SampleRate"`
-	Channels       string `json:"Channels" xml:"Channels"`
 	ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
-	Timebase       string `json:"Timebase" xml:"Timebase"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
-	Duration       string `json:"Duration" xml:"Duration"`
-	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-	NumFrames      string `json:"NumFrames" xml:"NumFrames"`
 	Lang           string `json:"Lang" xml:"Lang"`
+	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
+	Channels       string `json:"Channels" xml:"Channels"`
+	NumFrames      string `json:"NumFrames" xml:"NumFrames"`
+	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
+	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	CodecName      string `json:"CodecName" xml:"CodecName"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
+	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
 }

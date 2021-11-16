@@ -88,7 +88,7 @@ func CreateListDetectionTemplateRequest() (request *ListDetectionTemplateRequest
 	request = &ListDetectionTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListDetectionTemplate", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListDetectionTemplate", "vod", "openAPI")
 	request.Method = requests.GET
 	return
 }

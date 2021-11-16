@@ -86,7 +86,7 @@ func CreateGetMediaAuditResultTimelineRequest() (request *GetMediaAuditResultTim
 	request = &GetMediaAuditResultTimelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetMediaAuditResultTimeline", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetMediaAuditResultTimeline", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

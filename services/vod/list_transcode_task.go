@@ -90,7 +90,7 @@ func CreateListTranscodeTaskRequest() (request *ListTranscodeTaskRequest) {
 	request = &ListTranscodeTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListTranscodeTask", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListTranscodeTask", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDeleteVodRealtimeLogDeliveryRequest() (request *DeleteVodRealtimeLogD
 	request = &DeleteVodRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVodRealtimeLogDelivery", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVodRealtimeLogDelivery", "vod", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -88,7 +88,7 @@ func CreateDeleteVodSpecificConfigRequest() (request *DeleteVodSpecificConfigReq
 	request = &DeleteVodSpecificConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVodSpecificConfig", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVodSpecificConfig", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

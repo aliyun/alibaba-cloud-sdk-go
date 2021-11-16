@@ -88,7 +88,7 @@ func CreateDeleteMultipartUploadRequest() (request *DeleteMultipartUploadRequest
 	request = &DeleteMultipartUploadRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteMultipartUpload", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteMultipartUpload", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

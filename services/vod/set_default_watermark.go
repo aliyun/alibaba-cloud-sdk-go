@@ -85,7 +85,7 @@ func CreateSetDefaultWatermarkRequest() (request *SetDefaultWatermarkRequest) {
 	request = &SetDefaultWatermarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SetDefaultWatermark", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "SetDefaultWatermark", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

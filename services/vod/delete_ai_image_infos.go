@@ -85,7 +85,7 @@ func CreateDeleteAIImageInfosRequest() (request *DeleteAIImageInfosRequest) {
 	request = &DeleteAIImageInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteAIImageInfos", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteAIImageInfos", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

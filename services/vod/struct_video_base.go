@@ -17,15 +17,15 @@ package vod
 
 // VideoBase is a nested struct in vod response
 type VideoBase struct {
+	CreationTime  string                     `json:"CreationTime" xml:"CreationTime"`
+	Status        string                     `json:"Status" xml:"Status"`
+	TranscodeMode string                     `json:"TranscodeMode" xml:"TranscodeMode"`
 	OutputType    string                     `json:"OutputType" xml:"OutputType"`
+	VideoId       string                     `json:"VideoId" xml:"VideoId"`
 	CoverURL      string                     `json:"CoverURL" xml:"CoverURL"`
 	Duration      string                     `json:"Duration" xml:"Duration"`
-	Status        string                     `json:"Status" xml:"Status"`
 	Title         string                     `json:"Title" xml:"Title"`
-	VideoId       string                     `json:"VideoId" xml:"VideoId"`
 	MediaType     string                     `json:"MediaType" xml:"MediaType"`
-	CreationTime  string                     `json:"CreationTime" xml:"CreationTime"`
-	TranscodeMode string                     `json:"TranscodeMode" xml:"TranscodeMode"`
 	DanMuURL      string                     `json:"DanMuURL" xml:"DanMuURL"`
 	ThumbnailList ThumbnailListInGetPlayInfo `json:"ThumbnailList" xml:"ThumbnailList"`
 }

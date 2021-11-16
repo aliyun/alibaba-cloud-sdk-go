@@ -99,7 +99,7 @@ func CreateDescribeVodRefreshTasksRequest() (request *DescribeVodRefreshTasksReq
 	request = &DescribeVodRefreshTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodRefreshTasks", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodRefreshTasks", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }

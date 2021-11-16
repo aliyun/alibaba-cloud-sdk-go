@@ -93,7 +93,7 @@ func CreateSubmitAIImageJobRequest() (request *SubmitAIImageJobRequest) {
 	request = &SubmitAIImageJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAIImageJob", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAIImageJob", "vod", "openAPI")
 	request.Method = requests.POST
 	return
 }
