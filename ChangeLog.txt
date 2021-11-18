@@ -1,3 +1,8 @@
+2021-11-18 Version: v1.61.1332
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support ListInstanceLoginAuditLog, ListProxySQLExecAuditLog API.
+- Support GetOpLog API to return OpUserId information.
+
 2021-11-16 Version: v1.61.1331
 - Generated 2017-03-21 for `vod`.
 - Add parameter type HDRType.
