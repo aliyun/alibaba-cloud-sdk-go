@@ -19,13 +19,13 @@ package cms
 type Alarm struct {
 	RuleName           string `json:"RuleName" xml:"RuleName"`
 	ContactGroups      string `json:"ContactGroups" xml:"ContactGroups"`
-	RuleId             string `json:"RuleId" xml:"RuleId"`
 	SilenceTime        string `json:"SilenceTime" xml:"SilenceTime"`
+	RuleId             string `json:"RuleId" xml:"RuleId"`
 	Threshold          string `json:"Threshold" xml:"Threshold"`
 	Period             string `json:"Period" xml:"Period"`
 	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	StartTime          string `json:"StartTime" xml:"StartTime"`
 	State              string `json:"State" xml:"State"`
+	StartTime          string `json:"StartTime" xml:"StartTime"`
 	EndTime            string `json:"EndTime" xml:"EndTime"`
 	Namespace          string `json:"Namespace" xml:"Namespace"`
 	Enable             string `json:"Enable" xml:"Enable"`

@@ -30,6 +30,7 @@ type OptionsJson struct {
 	Authentication    int     `json:"authentication" xml:"authentication"`
 	HttpMethod        string  `json:"http_method" xml:"http_method"`
 	MatchRule         int     `json:"match_rule" xml:"match_rule"`
+	DnsMatchRule      string  `json:"dns_match_rule" xml:"dns_match_rule"`
 	RequestContent    string  `json:"request_content" xml:"request_content"`
 	Username          string  `json:"username" xml:"username"`
 	Traceroute        int64   `json:"traceroute" xml:"traceroute"`

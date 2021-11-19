@@ -17,34 +17,35 @@ package cms
 
 // AlarmInDescribeAlertLogList is a nested struct in cms response
 type AlarmInDescribeAlertLogList struct {
-	RuleId              string            `json:"RuleId" xml:"RuleId"`
-	RuleName            string            `json:"RuleName" xml:"RuleName"`
-	Namespace           string            `json:"Namespace" xml:"Namespace"`
-	Product             string            `json:"Product" xml:"Product"`
-	EventName           string            `json:"EventName" xml:"EventName"`
-	GroupId             string            `json:"GroupId" xml:"GroupId"`
-	GroupName           string            `json:"GroupName" xml:"GroupName"`
 	MetricName          string            `json:"MetricName" xml:"MetricName"`
-	InstanceId          string            `json:"InstanceId" xml:"InstanceId"`
-	InstanceName        string            `json:"InstanceName" xml:"InstanceName"`
-	Level               string            `json:"Level" xml:"Level"`
-	LevelChange         string            `json:"LevelChange" xml:"LevelChange"`
-	SendStatus          string            `json:"SendStatus" xml:"SendStatus"`
-	AlertTime           string            `json:"AlertTime" xml:"AlertTime"`
-	Message             string            `json:"Message" xml:"Message"`
+	EventName           string            `json:"EventName" xml:"EventName"`
+	Product             string            `json:"Product" xml:"Product"`
 	BlackListUUID       string            `json:"BlackListUUID" xml:"BlackListUUID"`
+	Message             string            `json:"Message" xml:"Message"`
+	Namespace           string            `json:"Namespace" xml:"Namespace"`
+	LevelChange         string            `json:"LevelChange" xml:"LevelChange"`
+	InstanceId          string            `json:"InstanceId" xml:"InstanceId"`
+	RuleName            string            `json:"RuleName" xml:"RuleName"`
+	RuleId              string            `json:"RuleId" xml:"RuleId"`
 	BlackListName       string            `json:"BlackListName" xml:"BlackListName"`
+	GroupName           string            `json:"GroupName" xml:"GroupName"`
+	GroupId             string            `json:"GroupId" xml:"GroupId"`
+	AlertTime           string            `json:"AlertTime" xml:"AlertTime"`
+	InstanceName        string            `json:"InstanceName" xml:"InstanceName"`
 	BlackListDetail     string            `json:"BlackListDetail" xml:"BlackListDetail"`
+	Level               string            `json:"Level" xml:"Level"`
+	SendStatus          string            `json:"SendStatus" xml:"SendStatus"`
+	DingdingWebhookList []string          `json:"DingdingWebhookList" xml:"DingdingWebhookList"`
+	ContactOnCallList   []string          `json:"ContactOnCallList" xml:"ContactOnCallList"`
+	ContactMailList     []string          `json:"ContactMailList" xml:"ContactMailList"`
 	ContactGroups       []string          `json:"ContactGroups" xml:"ContactGroups"`
 	ContactALIIWWList   []string          `json:"ContactALIIWWList" xml:"ContactALIIWWList"`
 	ContactSMSList      []string          `json:"ContactSMSList" xml:"ContactSMSList"`
-	ContactOnCallList   []string          `json:"ContactOnCallList" xml:"ContactOnCallList"`
-	ContactMailList     []string          `json:"ContactMailList" xml:"ContactMailList"`
 	ContactDingList     []string          `json:"ContactDingList" xml:"ContactDingList"`
-	DingdingWebhookList []string          `json:"DingdingWebhookList" xml:"DingdingWebhookList"`
 	SendDetail          SendDetail        `json:"SendDetail" xml:"SendDetail"`
 	Escalation          Escalation        `json:"Escalation" xml:"Escalation"`
 	ExtendedInfo        []ExtInfo         `json:"ExtendedInfo" xml:"ExtendedInfo"`
 	Dimensions          []DimensionsItem  `json:"Dimensions" xml:"Dimensions"`
 	WebhookList         []WebhookListItem `json:"WebhookList" xml:"WebhookList"`
+	SendResultList      []SendResult      `json:"SendResultList" xml:"SendResultList"`
 }

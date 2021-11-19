@@ -17,6 +17,6 @@ package cms
 
 // CreateResultListItem is a nested struct in cms response
 type CreateResultListItem struct {
-	TaskName string `json:"TaskName" xml:"TaskName"`
 	TaskId   string `json:"TaskId" xml:"TaskId"`
+	TaskName string `json:"TaskName" xml:"TaskName"`
 }

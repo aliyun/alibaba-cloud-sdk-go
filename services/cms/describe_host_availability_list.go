@@ -75,6 +75,7 @@ type DescribeHostAvailabilityListRequest struct {
 	TaskName   string           `position:"Query" name:"TaskName"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Ids        string           `position:"Query" name:"Ids"`
 	Id         requests.Integer `position:"Query" name:"Id"`
 }
 

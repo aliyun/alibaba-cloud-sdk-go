@@ -17,11 +17,13 @@ package cms
 
 // AlertTemplate is a nested struct in cms response
 type AlertTemplate struct {
-	RuleName    string      `json:"RuleName" xml:"RuleName"`
-	Category    string      `json:"Category" xml:"Category"`
-	Namespace   string      `json:"Namespace" xml:"Namespace"`
-	MetricName  string      `json:"MetricName" xml:"MetricName"`
-	Selector    string      `json:"Selector" xml:"Selector"`
-	Webhook     string      `json:"Webhook" xml:"Webhook"`
-	Escalations Escalations `json:"Escalations" xml:"Escalations"`
+	MetricName          string              `json:"MetricName" xml:"MetricName"`
+	Selector            string              `json:"Selector" xml:"Selector"`
+	Webhook             string              `json:"Webhook" xml:"Webhook"`
+	Namespace           string              `json:"Namespace" xml:"Namespace"`
+	Category            string              `json:"Category" xml:"Category"`
+	RuleName            string              `json:"RuleName" xml:"RuleName"`
+	NoDataPolicy        string              `json:"NoDataPolicy" xml:"NoDataPolicy"`
+	CompositeExpression CompositeExpression `json:"CompositeExpression" xml:"CompositeExpression"`
+	Escalations         Escalations         `json:"Escalations" xml:"Escalations"`
 }

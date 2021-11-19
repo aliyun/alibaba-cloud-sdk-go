@@ -1,3 +1,7 @@
+2021-11-19 Version: v1.61.1333
+- Generated 2019-01-01 for `Cms`.
+- Add site monitoring dial DNS_ match_ rule.
+
 2021-11-18 Version: v1.61.1332
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support ListInstanceLoginAuditLog, ListProxySQLExecAuditLog API.

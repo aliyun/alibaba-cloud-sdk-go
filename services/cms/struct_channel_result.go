@@ -17,6 +17,6 @@ package cms
 
 // ChannelResult is a nested struct in cms response
 type ChannelResult struct {
-	Channel    string   `json:"Channel" xml:"Channel"`
-	ResultList []Result `json:"ResultList" xml:"ResultList"`
+	Channel    string                         `json:"Channel" xml:"Channel"`
+	ResultList []ResultInDescribeAlertLogList `json:"ResultList" xml:"ResultList"`
 }

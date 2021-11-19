@@ -78,10 +78,10 @@ type DescribeMetricRuleTemplateAttributeRequest struct {
 // DescribeMetricRuleTemplateAttributeResponse is the response struct for api DescribeMetricRuleTemplateAttribute
 type DescribeMetricRuleTemplateAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Success   bool     `json:"Success" xml:"Success"`
 	Code      int      `json:"Code" xml:"Code"`
 	Message   string   `json:"Message" xml:"Message"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Success   bool     `json:"Success" xml:"Success"`
 	Resource  Resource `json:"Resource" xml:"Resource"`
 }
 

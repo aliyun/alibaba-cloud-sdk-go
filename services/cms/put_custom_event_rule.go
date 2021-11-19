@@ -77,6 +77,7 @@ type PutCustomEventRuleRequest struct {
 	EffectiveInterval string `position:"Query" name:"EffectiveInterval"`
 	EventName         string `position:"Query" name:"EventName"`
 	EmailSubject      string `position:"Query" name:"EmailSubject"`
+	MetricName        string `position:"Query" name:"MetricName"`
 	Period            string `position:"Query" name:"Period"`
 	ContactGroups     string `position:"Query" name:"ContactGroups"`
 	Level             string `position:"Query" name:"Level"`
@@ -87,10 +88,10 @@ type PutCustomEventRuleRequest struct {
 // PutCustomEventRuleResponse is the response struct for api PutCustomEventRule
 type PutCustomEventRuleResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreatePutCustomEventRuleRequest creates a request to invoke PutCustomEventRule API

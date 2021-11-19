@@ -17,20 +17,20 @@ package cms
 
 // Alert is a nested struct in cms response
 type Alert struct {
-	RuleId              string      `json:"RuleId" xml:"RuleId"`
-	Namespace           string      `json:"Namespace" xml:"Namespace"`
+	SilenceTime         string      `json:"SilenceTime" xml:"SilenceTime"`
 	MetricName          string      `json:"MetricName" xml:"MetricName"`
-	Period              string      `json:"Period" xml:"Period"`
+	Webhook             string      `json:"Webhook" xml:"Webhook"`
+	ContactGroups       string      `json:"ContactGroups" xml:"ContactGroups"`
+	Namespace           string      `json:"Namespace" xml:"Namespace"`
 	EffectiveInterval   string      `json:"EffectiveInterval" xml:"EffectiveInterval"`
 	NoEffectiveInterval string      `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
-	SilenceTime         string      `json:"SilenceTime" xml:"SilenceTime"`
-	EnableState         bool        `json:"EnableState" xml:"EnableState"`
-	AlertState          string      `json:"AlertState" xml:"AlertState"`
-	ContactGroups       string      `json:"ContactGroups" xml:"ContactGroups"`
-	Webhook             string      `json:"Webhook" xml:"Webhook"`
 	MailSubject         string      `json:"MailSubject" xml:"MailSubject"`
 	RuleName            string      `json:"RuleName" xml:"RuleName"`
-	Resources           string      `json:"Resources" xml:"Resources"`
+	RuleId              string      `json:"RuleId" xml:"RuleId"`
+	Period              string      `json:"Period" xml:"Period"`
+	AlertState          string      `json:"AlertState" xml:"AlertState"`
 	Dimensions          string      `json:"Dimensions" xml:"Dimensions"`
+	EnableState         bool        `json:"EnableState" xml:"EnableState"`
+	Resources           string      `json:"Resources" xml:"Resources"`
 	Escalations         Escalations `json:"Escalations" xml:"Escalations"`
 }

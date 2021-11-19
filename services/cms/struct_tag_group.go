@@ -17,11 +17,12 @@ package cms
 
 // TagGroup is a nested struct in cms response
 type TagGroup struct {
-	DynamicTagRuleId           string                                   `json:"DynamicTagRuleId" xml:"DynamicTagRuleId"`
-	TagKey                     string                                   `json:"TagKey" xml:"TagKey"`
-	RegionId                   string                                   `json:"RegionId" xml:"RegionId"`
-	MatchExpressFilterRelation string                                   `json:"MatchExpressFilterRelation" xml:"MatchExpressFilterRelation"`
-	Status                     string                                   `json:"Status" xml:"Status"`
-	TemplateIdList             TemplateIdList                           `json:"TemplateIdList" xml:"TemplateIdList"`
-	MatchExpress               MatchExpressInDescribeDynamicTagRuleList `json:"MatchExpress" xml:"MatchExpress"`
+	Status                     string                                       `json:"Status" xml:"Status"`
+	MatchExpressFilterRelation string                                       `json:"MatchExpressFilterRelation" xml:"MatchExpressFilterRelation"`
+	RegionId                   string                                       `json:"RegionId" xml:"RegionId"`
+	TagKey                     string                                       `json:"TagKey" xml:"TagKey"`
+	DynamicTagRuleId           string                                       `json:"DynamicTagRuleId" xml:"DynamicTagRuleId"`
+	TemplateIdList             TemplateIdList                               `json:"TemplateIdList" xml:"TemplateIdList"`
+	ContactGroupList           ContactGroupListInDescribeDynamicTagRuleList `json:"ContactGroupList" xml:"ContactGroupList"`
+	MatchExpress               MatchExpressInDescribeDynamicTagRuleList     `json:"MatchExpress" xml:"MatchExpress"`
 }

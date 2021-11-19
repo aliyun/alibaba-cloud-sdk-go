@@ -17,8 +17,8 @@ package cms
 
 // CriticalInDescribeMetricRuleTemplateAttribute is a nested struct in cms response
 type CriticalInDescribeMetricRuleTemplateAttribute struct {
-	Statistics         string `json:"Statistics" xml:"Statistics"`
 	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	Threshold          string `json:"Threshold" xml:"Threshold"`
 	Times              int    `json:"Times" xml:"Times"`
+	Threshold          string `json:"Threshold" xml:"Threshold"`
+	Statistics         string `json:"Statistics" xml:"Statistics"`
 }

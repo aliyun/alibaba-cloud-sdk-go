@@ -79,6 +79,7 @@ type PutLogMonitorRequest struct {
 	MetricName          string                      `position:"Query" name:"MetricName"`
 	GroupId             string                      `position:"Query" name:"GroupId"`
 	Tumblingwindows     string                      `position:"Query" name:"Tumblingwindows"`
+	GroupBy             string                      `position:"Query" name:"GroupBy"`
 	ValueFilterRelation string                      `position:"Query" name:"ValueFilterRelation"`
 	Unit                string                      `position:"Query" name:"Unit"`
 	Groupbys            *[]PutLogMonitorGroupbys    `position:"Query" name:"Groupbys"  type:"Repeated"`
@@ -112,8 +113,8 @@ type PutLogMonitorResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	LogId     string `json:"LogId" xml:"LogId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreatePutLogMonitorRequest creates a request to invoke PutLogMonitor API

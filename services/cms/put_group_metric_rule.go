@@ -110,6 +110,7 @@ type PutGroupMetricRuleResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreatePutGroupMetricRuleRequest creates a request to invoke PutGroupMetricRule API

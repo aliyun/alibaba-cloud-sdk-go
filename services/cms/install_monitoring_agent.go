@@ -71,8 +71,9 @@ func (client *Client) InstallMonitoringAgentWithCallback(request *InstallMonitor
 // InstallMonitoringAgentRequest is the request struct for api InstallMonitoringAgent
 type InstallMonitoringAgentRequest struct {
 	*requests.RpcRequest
-	InstanceIds *[]string        `position:"Query" name:"InstanceIds"  type:"Repeated"`
-	Force       requests.Boolean `position:"Query" name:"Force"`
+	InstanceIds    *[]string        `position:"Query" name:"InstanceIds"  type:"Repeated"`
+	Force          requests.Boolean `position:"Query" name:"Force"`
+	InstallCommand string           `position:"Query" name:"InstallCommand"`
 }
 
 // InstallMonitoringAgentResponse is the response struct for api InstallMonitoringAgent
@@ -80,8 +81,8 @@ type InstallMonitoringAgentResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateInstallMonitoringAgentRequest creates a request to invoke InstallMonitoringAgent API

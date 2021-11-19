@@ -23,6 +23,7 @@ type OptionJson struct {
 	ProxyProtocol          bool    `json:"proxy_protocol" xml:"proxy_protocol"`
 	Authentication         int     `json:"authentication" xml:"authentication"`
 	MatchRule              int     `json:"match_rule" xml:"match_rule"`
+	DnsMatchRule           string  `json:"dns_match_rule" xml:"dns_match_rule"`
 	Ipv6Task               string  `json:"ipv6_task" xml:"ipv6_task"`
 	RequestContent         string  `json:"request_content" xml:"request_content"`
 	AcceptableResponseCode string  `json:"acceptable_response_code" xml:"acceptable_response_code"`

@@ -17,5 +17,5 @@ package cms
 
 // ResultList is a nested struct in cms response
 type ResultList struct {
-	Result []Result `json:"Result" xml:"Result"`
+	Result []ResultInDescribeAlertLogList `json:"Result" xml:"Result"`
 }
