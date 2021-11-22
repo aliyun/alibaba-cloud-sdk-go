@@ -90,7 +90,7 @@ func CreateDescribeAppRequest() (request *DescribeAppRequest) {
 	request = &DescribeAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "DescribeApp", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "DescribeApp", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

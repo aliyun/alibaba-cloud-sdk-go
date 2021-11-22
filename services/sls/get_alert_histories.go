@@ -97,7 +97,7 @@ func CreateGetAlertHistoriesRequest() (request *GetAlertHistoriesRequest) {
 	request = &GetAlertHistoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "GetAlertHistories", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "GetAlertHistories", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

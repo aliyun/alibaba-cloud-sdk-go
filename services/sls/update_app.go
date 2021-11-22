@@ -91,7 +91,7 @@ func CreateUpdateAppRequest() (request *UpdateAppRequest) {
 	request = &UpdateAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "UpdateApp", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "UpdateApp", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

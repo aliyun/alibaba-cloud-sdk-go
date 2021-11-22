@@ -76,11 +76,12 @@ type GetSlsServiceRequest struct {
 // GetSlsServiceResponse is the response struct for api GetSlsService
 type GetSlsServiceResponse struct {
 	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 	Enabled   bool   `json:"Enabled" xml:"Enabled"`
-	Code      string `json:"Code" xml:"Code"`
+	Status    string `json:"Status" xml:"Status"`
 }
 
 // CreateGetSlsServiceRequest creates a request to invoke GetSlsService API
@@ -88,7 +89,7 @@ func CreateGetSlsServiceRequest() (request *GetSlsServiceRequest) {
 	request = &GetSlsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "GetSlsService", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "GetSlsService", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

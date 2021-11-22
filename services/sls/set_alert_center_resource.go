@@ -90,7 +90,7 @@ func CreateSetAlertCenterResourceRequest() (request *SetAlertCenterResourceReque
 	request = &SetAlertCenterResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "SetAlertCenterResource", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "SetAlertCenterResource", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

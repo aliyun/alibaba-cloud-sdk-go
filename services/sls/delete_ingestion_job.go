@@ -90,7 +90,7 @@ func CreateDeleteIngestionJobRequest() (request *DeleteIngestionJobRequest) {
 	request = &DeleteIngestionJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "DeleteIngestionJob", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "DeleteIngestionJob", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

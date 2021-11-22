@@ -78,11 +78,11 @@ type InitProjectAlertResourceRequest struct {
 // InitProjectAlertResourceResponse is the response struct for api InitProjectAlertResource
 type InitProjectAlertResourceResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateInitProjectAlertResourceRequest creates a request to invoke InitProjectAlertResource API
@@ -90,7 +90,7 @@ func CreateInitProjectAlertResourceRequest() (request *InitProjectAlertResourceR
 	request = &InitProjectAlertResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "InitProjectAlertResource", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "InitProjectAlertResource", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

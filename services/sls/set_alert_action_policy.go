@@ -91,7 +91,7 @@ func CreateSetAlertActionPolicyRequest() (request *SetAlertActionPolicyRequest) 
 	request = &SetAlertActionPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "SetAlertActionPolicy", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "SetAlertActionPolicy", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

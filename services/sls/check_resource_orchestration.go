@@ -91,7 +91,7 @@ func CreateCheckResourceOrchestrationRequest() (request *CheckResourceOrchestrat
 	request = &CheckResourceOrchestrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "CheckResourceOrchestration", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "CheckResourceOrchestration", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

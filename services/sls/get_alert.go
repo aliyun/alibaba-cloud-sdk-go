@@ -92,7 +92,7 @@ func CreateGetAlertRequest() (request *GetAlertRequest) {
 	request = &GetAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "GetAlert", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "GetAlert", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

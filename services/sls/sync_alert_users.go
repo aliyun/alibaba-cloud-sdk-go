@@ -90,7 +90,7 @@ func CreateSyncAlertUsersRequest() (request *SyncAlertUsersRequest) {
 	request = &SyncAlertUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "SyncAlertUsers", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "SyncAlertUsers", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

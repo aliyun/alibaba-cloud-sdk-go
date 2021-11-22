@@ -89,7 +89,7 @@ func CreateDeleteAppRequest() (request *DeleteAppRequest) {
 	request = &DeleteAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "DeleteApp", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "DeleteApp", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

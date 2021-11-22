@@ -87,7 +87,7 @@ func CreateOpenSlsServiceRequest() (request *OpenSlsServiceRequest) {
 	request = &OpenSlsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "OpenSlsService", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "OpenSlsService", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

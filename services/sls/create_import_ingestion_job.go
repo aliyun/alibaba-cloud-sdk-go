@@ -99,7 +99,7 @@ func CreateCreateImportIngestionJobRequest() (request *CreateImportIngestionJobR
 	request = &CreateImportIngestionJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "CreateImportIngestionJob", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "CreateImportIngestionJob", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

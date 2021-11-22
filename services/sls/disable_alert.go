@@ -91,7 +91,7 @@ func CreateDisableAlertRequest() (request *DisableAlertRequest) {
 	request = &DisableAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "DisableAlert", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "DisableAlert", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }
