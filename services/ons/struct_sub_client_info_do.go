@@ -17,10 +17,10 @@ package ons
 
 // SubClientInfoDo is a nested struct in ons response
 type SubClientInfoDo struct {
-	SubGroupName   string `json:"SubGroupName" xml:"SubGroupName"`
-	SubTime        int64  `json:"SubTime" xml:"SubTime"`
-	ClientHost     string `json:"ClientHost" xml:"ClientHost"`
-	ReconsumeTimes int    `json:"ReconsumeTimes" xml:"ReconsumeTimes"`
-	CostTime       int    `json:"CostTime" xml:"CostTime"`
 	Status         string `json:"Status" xml:"Status"`
+	SubTime        int64  `json:"SubTime" xml:"SubTime"`
+	ReconsumeTimes int    `json:"ReconsumeTimes" xml:"ReconsumeTimes"`
+	SubGroupName   string `json:"SubGroupName" xml:"SubGroupName"`
+	ClientHost     string `json:"ClientHost" xml:"ClientHost"`
+	CostTime       int    `json:"CostTime" xml:"CostTime"`
 }

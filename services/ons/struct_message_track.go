@@ -17,8 +17,8 @@ package ons
 
 // MessageTrack is a nested struct in ons response
 type MessageTrack struct {
-	ConsumerGroup string `json:"ConsumerGroup" xml:"ConsumerGroup"`
-	TrackType     string `json:"TrackType" xml:"TrackType"`
 	ExceptionDesc string `json:"ExceptionDesc" xml:"ExceptionDesc"`
+	TrackType     string `json:"TrackType" xml:"TrackType"`
+	ConsumerGroup string `json:"ConsumerGroup" xml:"ConsumerGroup"`
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
 }

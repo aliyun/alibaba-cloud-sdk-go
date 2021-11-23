@@ -18,8 +18,8 @@ package ons
 // MqttClientInfoDo is a nested struct in ons response
 type MqttClientInfoDo struct {
 	Online          bool            `json:"Online" xml:"Online"`
-	ClientId        string          `json:"ClientId" xml:"ClientId"`
-	SocketChannel   string          `json:"SocketChannel" xml:"SocketChannel"`
 	LastTouch       int64           `json:"LastTouch" xml:"LastTouch"`
+	SocketChannel   string          `json:"SocketChannel" xml:"SocketChannel"`
+	ClientId        string          `json:"ClientId" xml:"ClientId"`
 	SubScriptonData SubScriptonData `json:"SubScriptonData" xml:"SubScriptonData"`
 }

@@ -17,8 +17,8 @@ package ons
 
 // SubscriptionData is a nested struct in ons response
 type SubscriptionData struct {
-	Topic      string  `json:"Topic" xml:"Topic"`
 	SubString  string  `json:"SubString" xml:"SubString"`
 	SubVersion int64   `json:"SubVersion" xml:"SubVersion"`
+	Topic      string  `json:"Topic" xml:"Topic"`
 	TagsSet    TagsSet `json:"TagsSet" xml:"TagsSet"`
 }

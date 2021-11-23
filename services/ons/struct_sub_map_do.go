@@ -17,8 +17,8 @@ package ons
 
 // SubMapDo is a nested struct in ons response
 type SubMapDo struct {
+	FailCount    int        `json:"FailCount" xml:"FailCount"`
 	SubGroupName string     `json:"SubGroupName" xml:"SubGroupName"`
 	SuccessCount int        `json:"SuccessCount" xml:"SuccessCount"`
-	FailCount    int        `json:"FailCount" xml:"FailCount"`
 	ClientList   ClientList `json:"ClientList" xml:"ClientList"`
 }

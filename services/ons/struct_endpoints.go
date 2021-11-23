@@ -19,6 +19,6 @@ package ons
 type Endpoints struct {
 	TcpEndpoint                string `json:"TcpEndpoint" xml:"TcpEndpoint"`
 	HttpInternetEndpoint       string `json:"HttpInternetEndpoint" xml:"HttpInternetEndpoint"`
-	HttpInternetSecureEndpoint string `json:"HttpInternetSecureEndpoint" xml:"HttpInternetSecureEndpoint"`
 	HttpInternalEndpoint       string `json:"HttpInternalEndpoint" xml:"HttpInternalEndpoint"`
+	HttpInternetSecureEndpoint string `json:"HttpInternetSecureEndpoint" xml:"HttpInternetSecureEndpoint"`
 }

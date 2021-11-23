@@ -17,7 +17,7 @@ package ons
 
 // SubscriptionDo is a nested struct in ons response
 type SubscriptionDo struct {
-	ParentTopic string `json:"ParentTopic" xml:"ParentTopic"`
 	SubTopic    string `json:"SubTopic" xml:"SubTopic"`
+	ParentTopic string `json:"ParentTopic" xml:"ParentTopic"`
 	Qos         int    `json:"Qos" xml:"Qos"`
 }

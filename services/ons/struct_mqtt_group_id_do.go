@@ -17,14 +17,14 @@ package ons
 
 // MqttGroupIdDo is a nested struct in ons response
 type MqttGroupIdDo struct {
-	Id                int64  `json:"Id" xml:"Id"`
-	ChannelId         int    `json:"ChannelId" xml:"ChannelId"`
-	Owner             string `json:"Owner" xml:"Owner"`
-	GroupId           string `json:"GroupId" xml:"GroupId"`
-	Topic             string `json:"Topic" xml:"Topic"`
 	Status            int    `json:"Status" xml:"Status"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime        int64  `json:"UpdateTime" xml:"UpdateTime"`
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
+	Owner             string `json:"Owner" xml:"Owner"`
 	IndependentNaming bool   `json:"IndependentNaming" xml:"IndependentNaming"`
+	GroupId           string `json:"GroupId" xml:"GroupId"`
+	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	Topic             string `json:"Topic" xml:"Topic"`
+	ChannelId         int    `json:"ChannelId" xml:"ChannelId"`
+	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
+	Id                int64  `json:"Id" xml:"Id"`
 }

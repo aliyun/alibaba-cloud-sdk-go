@@ -17,14 +17,14 @@ package ons
 
 // TraceMapDo is a nested struct in ons response
 type TraceMapDo struct {
+	Status       string  `json:"Status" xml:"Status"`
+	MsgKey       string  `json:"MsgKey" xml:"MsgKey"`
 	PubTime      int64   `json:"PubTime" xml:"PubTime"`
 	Topic        string  `json:"Topic" xml:"Topic"`
-	PubGroupName string  `json:"PubGroupName" xml:"PubGroupName"`
-	MsgId        string  `json:"MsgId" xml:"MsgId"`
-	Tag          string  `json:"Tag" xml:"Tag"`
-	MsgKey       string  `json:"MsgKey" xml:"MsgKey"`
-	BornHost     string  `json:"BornHost" xml:"BornHost"`
 	CostTime     int     `json:"CostTime" xml:"CostTime"`
-	Status       string  `json:"Status" xml:"Status"`
+	Tag          string  `json:"Tag" xml:"Tag"`
+	MsgId        string  `json:"MsgId" xml:"MsgId"`
+	PubGroupName string  `json:"PubGroupName" xml:"PubGroupName"`
+	BornHost     string  `json:"BornHost" xml:"BornHost"`
 	SubList      SubList `json:"SubList" xml:"SubList"`
 }

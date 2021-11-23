@@ -18,9 +18,9 @@ package ons
 // ConsumerRunningDataDo is a nested struct in ons response
 type ConsumerRunningDataDo struct {
 	GroupId            string  `json:"GroupId" xml:"GroupId"`
-	Topic              string  `json:"Topic" xml:"Topic"`
 	Rt                 float64 `json:"Rt" xml:"Rt"`
+	Topic              string  `json:"Topic" xml:"Topic"`
+	FailedCountPerHour int64   `json:"FailedCountPerHour" xml:"FailedCountPerHour"`
 	OkTps              float64 `json:"OkTps" xml:"OkTps"`
 	FailedTps          float64 `json:"FailedTps" xml:"FailedTps"`
-	FailedCountPerHour int64   `json:"FailedCountPerHour" xml:"FailedCountPerHour"`
 }

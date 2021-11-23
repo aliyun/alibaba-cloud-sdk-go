@@ -17,16 +17,16 @@ package ons
 
 // ConsumerConnectionInfoDo is a nested struct in ons response
 type ConsumerConnectionInfoDo struct {
+	ConsumeModel    string          `json:"ConsumeModel" xml:"ConsumeModel"`
+	LastTimeStamp   int64           `json:"LastTimeStamp" xml:"LastTimeStamp"`
+	StartTimeStamp  int64           `json:"StartTimeStamp" xml:"StartTimeStamp"`
+	Language        string          `json:"Language" xml:"Language"`
 	ClientId        string          `json:"ClientId" xml:"ClientId"`
 	Connection      string          `json:"Connection" xml:"Connection"`
-	Language        string          `json:"Language" xml:"Language"`
 	Version         string          `json:"Version" xml:"Version"`
-	ConsumeModel    string          `json:"ConsumeModel" xml:"ConsumeModel"`
 	ConsumeType     string          `json:"ConsumeType" xml:"ConsumeType"`
 	ThreadCount     int             `json:"ThreadCount" xml:"ThreadCount"`
-	StartTimeStamp  int64           `json:"StartTimeStamp" xml:"StartTimeStamp"`
-	LastTimeStamp   int64           `json:"LastTimeStamp" xml:"LastTimeStamp"`
-	SubscriptionSet SubscriptionSet `json:"SubscriptionSet" xml:"SubscriptionSet"`
 	RunningDataList RunningDataList `json:"RunningDataList" xml:"RunningDataList"`
+	SubscriptionSet SubscriptionSet `json:"SubscriptionSet" xml:"SubscriptionSet"`
 	Jstack          Jstack          `json:"Jstack" xml:"Jstack"`
 }

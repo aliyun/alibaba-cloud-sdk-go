@@ -50,11 +50,11 @@ type Data struct {
 	YUnit                      string                                   `json:"YUnit" xml:"YUnit"`
 	LastTimestamp              int64                                    `json:"LastTimestamp" xml:"LastTimestamp"`
 	Perm                       int                                      `json:"Perm" xml:"Perm"`
+	DetailInTopicList          DetailInTopicListInOnsConsumerAccumulate `json:"DetailInTopicList" xml:"DetailInTopicList"`
+	SubscriptionDataList       SubscriptionDataListInOnsTopicSubDetail  `json:"SubscriptionDataList" xml:"SubscriptionDataList"`
+	ConnectionSet              ConnectionSet                            `json:"ConnectionSet" xml:"ConnectionSet"`
 	PropertyList               PropertyListInOnsDLQMessageGetById       `json:"PropertyList" xml:"PropertyList"`
 	Records                    RecordsInOnsMqttQueryHistoryOnline       `json:"Records" xml:"Records"`
-	ConsumerConnectionInfoList ConsumerConnectionInfoList               `json:"ConsumerConnectionInfoList" xml:"ConsumerConnectionInfoList"`
-	DetailInTopicList          DetailInTopicListInOnsConsumerAccumulate `json:"DetailInTopicList" xml:"DetailInTopicList"`
-	SubscriptionDataList       SubscriptionDataListInOnsGroupSubDetail  `json:"SubscriptionDataList" xml:"SubscriptionDataList"`
-	ConnectionSet              ConnectionSet                            `json:"ConnectionSet" xml:"ConnectionSet"`
 	ConnectionList             ConnectionList                           `json:"ConnectionList" xml:"ConnectionList"`
+	ConsumerConnectionInfoList ConsumerConnectionInfoList               `json:"ConsumerConnectionInfoList" xml:"ConsumerConnectionInfoList"`
 }

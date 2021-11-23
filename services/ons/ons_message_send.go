@@ -82,8 +82,8 @@ type OnsMessageSendRequest struct {
 type OnsMessageSendResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	HelpUrl   string `json:"HelpUrl" xml:"HelpUrl"`
 	Data      string `json:"Data" xml:"Data"`
+	HelpUrl   string `json:"HelpUrl" xml:"HelpUrl"`
 }
 
 // CreateOnsMessageSendRequest creates a request to invoke OnsMessageSend API

@@ -17,9 +17,9 @@ package ons
 
 // TagResource is a nested struct in ons response
 type TagResource struct {
-	TagKey       string `json:"TagKey" xml:"TagKey"`
-	TagValue     string `json:"TagValue" xml:"TagValue"`
 	ResourceType string `json:"ResourceType" xml:"ResourceType"`
-	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
 	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	TagValue     string `json:"TagValue" xml:"TagValue"`
+	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
+	TagKey       string `json:"TagKey" xml:"TagKey"`
 }

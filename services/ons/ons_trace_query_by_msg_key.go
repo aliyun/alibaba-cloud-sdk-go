@@ -82,8 +82,8 @@ type OnsTraceQueryByMsgKeyRequest struct {
 type OnsTraceQueryByMsgKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	HelpUrl   string `json:"HelpUrl" xml:"HelpUrl"`
 	QueryId   string `json:"QueryId" xml:"QueryId"`
+	HelpUrl   string `json:"HelpUrl" xml:"HelpUrl"`
 }
 
 // CreateOnsTraceQueryByMsgKeyRequest creates a request to invoke OnsTraceQueryByMsgKey API

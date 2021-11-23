@@ -17,14 +17,14 @@ package ons
 
 // TraceData is a nested struct in ons response
 type TraceData struct {
-	QueryId    string    `json:"QueryId" xml:"QueryId"`
-	UserId     string    `json:"UserId" xml:"UserId"`
-	Topic      string    `json:"Topic" xml:"Topic"`
-	MsgId      string    `json:"MsgId" xml:"MsgId"`
-	MsgKey     string    `json:"MsgKey" xml:"MsgKey"`
 	Status     string    `json:"Status" xml:"Status"`
-	CreateTime int64     `json:"CreateTime" xml:"CreateTime"`
+	MsgKey     string    `json:"MsgKey" xml:"MsgKey"`
 	UpdateTime int64     `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime int64     `json:"CreateTime" xml:"CreateTime"`
+	Topic      string    `json:"Topic" xml:"Topic"`
+	UserId     string    `json:"UserId" xml:"UserId"`
 	InstanceId string    `json:"InstanceId" xml:"InstanceId"`
+	MsgId      string    `json:"MsgId" xml:"MsgId"`
+	QueryId    string    `json:"QueryId" xml:"QueryId"`
 	TraceList  TraceList `json:"TraceList" xml:"TraceList"`
 }
