@@ -17,8 +17,8 @@ package bssopenapi
 
 // AccountTransactionsListItem is a nested struct in bssopenapi response
 type AccountTransactionsListItem struct {
-	Balance              string `json:"Balance" xml:"Balance"`
 	TransactionAccount   string `json:"TransactionAccount" xml:"TransactionAccount"`
+	Balance              string `json:"Balance" xml:"Balance"`
 	TransactionTime      string `json:"TransactionTime" xml:"TransactionTime"`
 	TransactionChannel   string `json:"TransactionChannel" xml:"TransactionChannel"`
 	FundType             string `json:"FundType" xml:"FundType"`

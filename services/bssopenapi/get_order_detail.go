@@ -78,9 +78,9 @@ type GetOrderDetailRequest struct {
 // GetOrderDetailResponse is the response struct for api GetOrderDetail
 type GetOrderDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string               `json:"RequestId" xml:"RequestId"`
-	Message   string               `json:"Message" xml:"Message"`
 	Code      string               `json:"Code" xml:"Code"`
+	Message   string               `json:"Message" xml:"Message"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
 	Success   bool                 `json:"Success" xml:"Success"`
 	Data      DataInGetOrderDetail `json:"Data" xml:"Data"`
 }

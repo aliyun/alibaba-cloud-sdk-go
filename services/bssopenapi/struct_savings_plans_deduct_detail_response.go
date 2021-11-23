@@ -17,15 +17,15 @@ package bssopenapi
 
 // SavingsPlansDeductDetailResponse is a nested struct in bssopenapi response
 type SavingsPlansDeductDetailResponse struct {
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
 	EndTime          string `json:"EndTime" xml:"EndTime"`
+	StartTime        string `json:"StartTime" xml:"StartTime"`
 	SavingsType      string `json:"SavingsType" xml:"SavingsType"`
-	BillModule       string `json:"BillModule" xml:"BillModule"`
-	DeductFee        string `json:"DeductFee" xml:"DeductFee"`
-	DeductRate       string `json:"DeductRate" xml:"DeductRate"`
 	UserId           int64  `json:"UserId" xml:"UserId"`
-	DeductCommodity  string `json:"DeductCommodity" xml:"DeductCommodity"`
-	DeductInstanceId string `json:"DeductInstanceId" xml:"DeductInstanceId"`
 	DiscountRate     string `json:"DiscountRate" xml:"DiscountRate"`
+	BillModule       string `json:"BillModule" xml:"BillModule"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+	DeductInstanceId string `json:"DeductInstanceId" xml:"DeductInstanceId"`
+	DeductCommodity  string `json:"DeductCommodity" xml:"DeductCommodity"`
+	DeductRate       string `json:"DeductRate" xml:"DeductRate"`
+	DeductFee        string `json:"DeductFee" xml:"DeductFee"`
 }

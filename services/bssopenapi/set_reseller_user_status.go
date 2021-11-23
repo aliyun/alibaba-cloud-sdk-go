@@ -79,11 +79,11 @@ type SetResellerUserStatusRequest struct {
 // SetResellerUserStatusResponse is the response struct for api SetResellerUserStatus
 type SetResellerUserStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSetResellerUserStatusRequest creates a request to invoke SetResellerUserStatus API

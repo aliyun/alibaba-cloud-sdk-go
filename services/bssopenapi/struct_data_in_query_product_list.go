@@ -17,8 +17,8 @@ package bssopenapi
 
 // DataInQueryProductList is a nested struct in bssopenapi response
 type DataInQueryProductList struct {
-	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
 	PageNum     int         `json:"PageNum" xml:"PageNum"`
 	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
 	ProductList ProductList `json:"ProductList" xml:"ProductList"`
 }

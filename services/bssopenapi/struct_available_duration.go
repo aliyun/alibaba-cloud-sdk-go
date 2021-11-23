@@ -17,7 +17,7 @@ package bssopenapi
 
 // AvailableDuration is a nested struct in bssopenapi response
 type AvailableDuration struct {
-	Name  string `json:"Name" xml:"Name"`
 	Value int    `json:"Value" xml:"Value"`
+	Name  string `json:"Name" xml:"Name"`
 	Unit  string `json:"Unit" xml:"Unit"`
 }

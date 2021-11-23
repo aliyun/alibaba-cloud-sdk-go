@@ -89,10 +89,10 @@ type GetPayAsYouGoPriceModuleList struct {
 // GetPayAsYouGoPriceResponse is the response struct for api GetPayAsYouGoPrice
 type GetPayAsYouGoPriceResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Success   bool                     `json:"Success" xml:"Success"`
 	Code      string                   `json:"Code" xml:"Code"`
 	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Success   bool                     `json:"Success" xml:"Success"`
 	Data      DataInGetPayAsYouGoPrice `json:"Data" xml:"Data"`
 }
 

@@ -86,10 +86,10 @@ type QueryOrdersRequest struct {
 // QueryOrdersResponse is the response struct for api QueryOrders
 type QueryOrdersResponse struct {
 	*responses.BaseResponse
-	RequestId string            `json:"RequestId" xml:"RequestId"`
-	Success   bool              `json:"Success" xml:"Success"`
 	Code      string            `json:"Code" xml:"Code"`
 	Message   string            `json:"Message" xml:"Message"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Success   bool              `json:"Success" xml:"Success"`
 	Data      DataInQueryOrders `json:"Data" xml:"Data"`
 }
 

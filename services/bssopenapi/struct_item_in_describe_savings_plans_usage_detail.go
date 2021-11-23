@@ -17,17 +17,17 @@ package bssopenapi
 
 // ItemInDescribeSavingsPlansUsageDetail is a nested struct in bssopenapi response
 type ItemInDescribeSavingsPlansUsageDetail struct {
-	UserId          int64   `json:"UserId" xml:"UserId"`
-	UserName        string  `json:"UserName" xml:"UserName"`
-	InstanceId      string  `json:"InstanceId" xml:"InstanceId"`
-	StartPeriod     string  `json:"StartPeriod" xml:"StartPeriod"`
-	EndPeriod       string  `json:"EndPeriod" xml:"EndPeriod"`
 	Status          string  `json:"Status" xml:"Status"`
 	Type            string  `json:"Type" xml:"Type"`
 	UsagePercentage float64 `json:"UsagePercentage" xml:"UsagePercentage"`
-	PoolValue       float64 `json:"PoolValue" xml:"PoolValue"`
-	DeductValue     float64 `json:"DeductValue" xml:"DeductValue"`
-	PostpaidCost    float64 `json:"PostpaidCost" xml:"PostpaidCost"`
-	SavedCost       float64 `json:"SavedCost" xml:"SavedCost"`
+	UserId          int64   `json:"UserId" xml:"UserId"`
+	InstanceId      string  `json:"InstanceId" xml:"InstanceId"`
 	Currency        string  `json:"Currency" xml:"Currency"`
+	PostpaidCost    float64 `json:"PostpaidCost" xml:"PostpaidCost"`
+	DeductValue     float64 `json:"DeductValue" xml:"DeductValue"`
+	StartPeriod     string  `json:"StartPeriod" xml:"StartPeriod"`
+	SavedCost       float64 `json:"SavedCost" xml:"SavedCost"`
+	PoolValue       float64 `json:"PoolValue" xml:"PoolValue"`
+	UserName        string  `json:"UserName" xml:"UserName"`
+	EndPeriod       string  `json:"EndPeriod" xml:"EndPeriod"`
 }

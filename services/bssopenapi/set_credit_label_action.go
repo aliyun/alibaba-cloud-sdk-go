@@ -94,10 +94,10 @@ type SetCreditLabelActionRequest struct {
 type SetCreditLabelActionResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
-	Data      bool   `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
+	Data      bool   `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSetCreditLabelActionRequest creates a request to invoke SetCreditLabelAction API

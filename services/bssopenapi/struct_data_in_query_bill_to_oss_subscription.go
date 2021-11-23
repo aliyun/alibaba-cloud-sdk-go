@@ -17,7 +17,7 @@ package bssopenapi
 
 // DataInQueryBillToOSSSubscription is a nested struct in bssopenapi response
 type DataInQueryBillToOSSSubscription struct {
-	AccountID   string                            `json:"AccountID" xml:"AccountID"`
 	AccountName string                            `json:"AccountName" xml:"AccountName"`
+	AccountID   string                            `json:"AccountID" xml:"AccountID"`
 	Items       ItemsInQueryBillToOSSSubscription `json:"Items" xml:"Items"`
 }

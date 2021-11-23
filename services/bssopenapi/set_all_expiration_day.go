@@ -78,10 +78,10 @@ type SetAllExpirationDayRequest struct {
 // SetAllExpirationDayResponse is the response struct for api SetAllExpirationDay
 type SetAllExpirationDayResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSetAllExpirationDayRequest creates a request to invoke SetAllExpirationDay API

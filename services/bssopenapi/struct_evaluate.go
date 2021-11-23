@@ -17,25 +17,25 @@ package bssopenapi
 
 // Evaluate is a nested struct in bssopenapi response
 type Evaluate struct {
-	Id                 int64  `json:"Id" xml:"Id"`
-	GmtCreate          string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified        string `json:"GmtModified" xml:"GmtModified"`
-	UserId             int64  `json:"UserId" xml:"UserId"`
-	UserNick           string `json:"UserNick" xml:"UserNick"`
-	OutBizId           string `json:"OutBizId" xml:"OutBizId"`
+	Type               int    `json:"Type" xml:"Type"`
+	Status             int    `json:"Status" xml:"Status"`
 	BillId             int64  `json:"BillId" xml:"BillId"`
-	ItemId             int64  `json:"ItemId" xml:"ItemId"`
+	UserId             int64  `json:"UserId" xml:"UserId"`
 	BillCycle          string `json:"BillCycle" xml:"BillCycle"`
+	CanInvoiceAmount   int64  `json:"CanInvoiceAmount" xml:"CanInvoiceAmount"`
+	OffsetAcceptAmount int64  `json:"OffsetAcceptAmount" xml:"OffsetAcceptAmount"`
+	ItemId             int64  `json:"ItemId" xml:"ItemId"`
+	OutBizId           string `json:"OutBizId" xml:"OutBizId"`
+	UserNick           string `json:"UserNick" xml:"UserNick"`
+	GmtModified        string `json:"GmtModified" xml:"GmtModified"`
+	OpId               string `json:"OpId" xml:"OpId"`
 	BizType            string `json:"BizType" xml:"BizType"`
 	OriginalAmount     int64  `json:"OriginalAmount" xml:"OriginalAmount"`
-	PresentAmount      int64  `json:"PresentAmount" xml:"PresentAmount"`
-	CanInvoiceAmount   int64  `json:"CanInvoiceAmount" xml:"CanInvoiceAmount"`
 	InvoicedAmount     int64  `json:"InvoicedAmount" xml:"InvoicedAmount"`
-	OffsetCostAmount   int64  `json:"OffsetCostAmount" xml:"OffsetCostAmount"`
-	OffsetAcceptAmount int64  `json:"OffsetAcceptAmount" xml:"OffsetAcceptAmount"`
-	Status             int    `json:"Status" xml:"Status"`
-	OpId               string `json:"OpId" xml:"OpId"`
-	Name               string `json:"Name" xml:"Name"`
+	GmtCreate          string `json:"GmtCreate" xml:"GmtCreate"`
+	PresentAmount      int64  `json:"PresentAmount" xml:"PresentAmount"`
 	BizTime            string `json:"BizTime" xml:"BizTime"`
-	Type               int    `json:"Type" xml:"Type"`
+	Name               string `json:"Name" xml:"Name"`
+	OffsetCostAmount   int64  `json:"OffsetCostAmount" xml:"OffsetCostAmount"`
+	Id                 int64  `json:"Id" xml:"Id"`
 }

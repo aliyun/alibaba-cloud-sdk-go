@@ -86,10 +86,10 @@ type TagResourcesTag struct {
 type TagResourcesResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateTagResourcesRequest creates a request to invoke TagResources API

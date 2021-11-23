@@ -19,9 +19,9 @@ package bssopenapi
 type DataInGetSubscriptionPrice struct {
 	OriginalPrice    float64                                `json:"OriginalPrice" xml:"OriginalPrice"`
 	DiscountPrice    float64                                `json:"DiscountPrice" xml:"DiscountPrice"`
-	TradePrice       float64                                `json:"TradePrice" xml:"TradePrice"`
 	Currency         string                                 `json:"Currency" xml:"Currency"`
 	Quantity         int                                    `json:"Quantity" xml:"Quantity"`
+	TradePrice       float64                                `json:"TradePrice" xml:"TradePrice"`
 	ModuleDetails    ModuleDetailsInGetSubscriptionPrice    `json:"ModuleDetails" xml:"ModuleDetails"`
 	PromotionDetails PromotionDetailsInGetSubscriptionPrice `json:"PromotionDetails" xml:"PromotionDetails"`
 }

@@ -80,11 +80,11 @@ type UpgradeResourcePackageRequest struct {
 // UpgradeResourcePackageResponse is the response struct for api UpgradeResourcePackage
 type UpgradeResourcePackageResponse struct {
 	*responses.BaseResponse
-	RequestId string                       `json:"RequestId" xml:"RequestId"`
-	OrderId   int64                        `json:"OrderId" xml:"OrderId"`
-	Success   bool                         `json:"Success" xml:"Success"`
 	Code      string                       `json:"Code" xml:"Code"`
 	Message   string                       `json:"Message" xml:"Message"`
+	RequestId string                       `json:"RequestId" xml:"RequestId"`
+	Success   bool                         `json:"Success" xml:"Success"`
+	OrderId   int64                        `json:"OrderId" xml:"OrderId"`
 	Data      DataInUpgradeResourcePackage `json:"Data" xml:"Data"`
 }
 

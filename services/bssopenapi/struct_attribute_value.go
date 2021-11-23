@@ -18,7 +18,7 @@ package bssopenapi
 // AttributeValue is a nested struct in bssopenapi response
 type AttributeValue struct {
 	Type   string `json:"Type" xml:"Type"`
-	Name   string `json:"Name" xml:"Name"`
 	Value  string `json:"Value" xml:"Value"`
 	Remark string `json:"Remark" xml:"Remark"`
+	Name   string `json:"Name" xml:"Name"`
 }

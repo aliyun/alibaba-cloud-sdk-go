@@ -1,3 +1,7 @@
+2021-11-23 Version: v1.61.1337
+- Generated 2017-12-14 for `BssOpenApi`.
+- Add Create Savingplan Instance API.
+
 2021-11-23 Version: v1.61.1336
 - Generated 2019-01-01 for `HBase`.
 - Fix BdsColdStorage.

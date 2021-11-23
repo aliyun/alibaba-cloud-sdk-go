@@ -17,14 +17,14 @@ package bssopenapi
 
 // FinancialRelationInfoListItem is a nested struct in bssopenapi response
 type FinancialRelationInfoListItem struct {
-	RelationId      int64  `json:"RelationId" xml:"RelationId"`
-	AccountType     string `json:"AccountType" xml:"AccountType"`
-	AccountId       int64  `json:"AccountId" xml:"AccountId"`
-	AccountName     string `json:"AccountName" xml:"AccountName"`
-	AccountNickName string `json:"AccountNickName" xml:"AccountNickName"`
-	RelationType    string `json:"RelationType" xml:"RelationType"`
-	State           string `json:"State" xml:"State"`
-	SetupTime       string `json:"SetupTime" xml:"SetupTime"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
 	EndTime         string `json:"EndTime" xml:"EndTime"`
+	RelationType    string `json:"RelationType" xml:"RelationType"`
+	AccountNickName string `json:"AccountNickName" xml:"AccountNickName"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	State           string `json:"State" xml:"State"`
+	AccountId       int64  `json:"AccountId" xml:"AccountId"`
+	SetupTime       string `json:"SetupTime" xml:"SetupTime"`
+	AccountType     string `json:"AccountType" xml:"AccountType"`
+	AccountName     string `json:"AccountName" xml:"AccountName"`
+	RelationId      int64  `json:"RelationId" xml:"RelationId"`
 }

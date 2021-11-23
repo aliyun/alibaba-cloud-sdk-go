@@ -17,6 +17,6 @@ package bssopenapi
 
 // Promotion is a nested struct in bssopenapi response
 type Promotion struct {
-	Id   int64  `json:"Id" xml:"Id"`
 	Name string `json:"Name" xml:"Name"`
+	Id   int64  `json:"Id" xml:"Id"`
 }

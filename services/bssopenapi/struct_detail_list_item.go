@@ -17,18 +17,18 @@ package bssopenapi
 
 // DetailListItem is a nested struct in bssopenapi response
 type DetailListItem struct {
-	DeductQuantity        float64 `json:"DeductQuantity" xml:"DeductQuantity"`
 	Region                string  `json:"Region" xml:"Region"`
+	DeductQuantity        float64 `json:"DeductQuantity" xml:"DeductQuantity"`
 	Uid                   int64   `json:"Uid" xml:"Uid"`
-	DeductMeasure         float64 `json:"DeductMeasure" xml:"DeductMeasure"`
 	ShareUid              int64   `json:"ShareUid" xml:"ShareUid"`
+	DeductMeasure         float64 `json:"DeductMeasure" xml:"DeductMeasure"`
 	DeductedProductDetail string  `json:"DeductedProductDetail" xml:"DeductedProductDetail"`
 	InstanceSpec          string  `json:"InstanceSpec" xml:"InstanceSpec"`
 	DeductFactorTotal     float64 `json:"DeductFactorTotal" xml:"DeductFactorTotal"`
 	InstanceId            string  `json:"InstanceId" xml:"InstanceId"`
 	ResCode               string  `json:"ResCode" xml:"ResCode"`
-	DeductedCommodityCode string  `json:"DeductedCommodityCode" xml:"DeductedCommodityCode"`
-	DeductDate            string  `json:"DeductDate" xml:"DeductDate"`
 	DeductHours           float64 `json:"DeductHours" xml:"DeductHours"`
+	DeductDate            string  `json:"DeductDate" xml:"DeductDate"`
+	DeductedCommodityCode string  `json:"DeductedCommodityCode" xml:"DeductedCommodityCode"`
 	DeductedInstanceId    string  `json:"DeductedInstanceId" xml:"DeductedInstanceId"`
 }

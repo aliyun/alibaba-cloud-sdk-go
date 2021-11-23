@@ -17,17 +17,17 @@ package bssopenapi
 
 // ResourceInstanceList is a nested struct in bssopenapi response
 type ResourceInstanceList struct {
-	ResourceUserId   int64  `json:"ResourceUserId" xml:"ResourceUserId"`
-	ResourceTag      string `json:"ResourceTag" xml:"ResourceTag"`
-	RelatedResources string `json:"RelatedResources" xml:"RelatedResources"`
-	ApportionName    string `json:"ApportionName" xml:"ApportionName"`
-	ResourceId       string `json:"ResourceId" xml:"ResourceId"`
 	CommodityCode    string `json:"CommodityCode" xml:"CommodityCode"`
-	ResourceStatus   string `json:"ResourceStatus" xml:"ResourceStatus"`
-	ResourceType     string `json:"ResourceType" xml:"ResourceType"`
 	ResourceUserName string `json:"ResourceUserName" xml:"ResourceUserName"`
-	ResourceNick     string `json:"ResourceNick" xml:"ResourceNick"`
-	ResourceGroup    string `json:"ResourceGroup" xml:"ResourceGroup"`
 	CommodityName    string `json:"CommodityName" xml:"CommodityName"`
+	ResourceUserId   int64  `json:"ResourceUserId" xml:"ResourceUserId"`
+	ApportionName    string `json:"ApportionName" xml:"ApportionName"`
 	ApportionCode    string `json:"ApportionCode" xml:"ApportionCode"`
+	ResourceType     string `json:"ResourceType" xml:"ResourceType"`
+	ResourceNick     string `json:"ResourceNick" xml:"ResourceNick"`
+	ResourceTag      string `json:"ResourceTag" xml:"ResourceTag"`
+	ResourceId       string `json:"ResourceId" xml:"ResourceId"`
+	ResourceGroup    string `json:"ResourceGroup" xml:"ResourceGroup"`
+	RelatedResources string `json:"RelatedResources" xml:"RelatedResources"`
+	ResourceStatus   string `json:"ResourceStatus" xml:"ResourceStatus"`
 }

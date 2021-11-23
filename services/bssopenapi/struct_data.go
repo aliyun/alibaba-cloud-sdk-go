@@ -40,8 +40,8 @@ type Data struct {
 	LoginEmail                  string                                                  `json:"LoginEmail" xml:"LoginEmail"`
 	DiscountPrice               float64                                                 `json:"DiscountPrice" xml:"DiscountPrice"`
 	State                       string                                                  `json:"State" xml:"State"`
-	AccountName                 string                                                  `json:"AccountName" xml:"AccountName"`
 	NextToken                   string                                                  `json:"NextToken" xml:"NextToken"`
+	AccountName                 string                                                  `json:"AccountName" xml:"AccountName"`
 	MemberGroupName             string                                                  `json:"MemberGroupName" xml:"MemberGroupName"`
 	ToUnitUserId                int64                                                   `json:"ToUnitUserId" xml:"ToUnitUserId"`
 	MasterId                    int64                                                   `json:"MasterId" xml:"MasterId"`
@@ -71,29 +71,29 @@ type Data struct {
 	Mpk                         int64                                                   `json:"Mpk" xml:"Mpk"`
 	OmsData                     []map[string]interface{}                                `json:"OmsData" xml:"OmsData"`
 	UidList                     []string                                                `json:"UidList" xml:"UidList"`
-	CostUnit                    CostUnit                                                `json:"CostUnit" xml:"CostUnit"`
-	CostUnitStatisInfo          CostUnitStatisInfo                                      `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
-	TotalCoverage               TotalCoverage                                           `json:"TotalCoverage" xml:"TotalCoverage"`
 	TotalUsage                  TotalUsage                                              `json:"TotalUsage" xml:"TotalUsage"`
-	CostUnitDtoList             []CostUnitDtoListItem                                   `json:"CostUnitDtoList" xml:"CostUnitDtoList"`
-	ModuleList                  ModuleList                                              `json:"ModuleList" xml:"ModuleList"`
-	PeriodCoverage              []Item                                                  `json:"PeriodCoverage" xml:"PeriodCoverage"`
+	TotalCoverage               TotalCoverage                                           `json:"TotalCoverage" xml:"TotalCoverage"`
+	CostUnitStatisInfo          CostUnitStatisInfo                                      `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
+	CostUnit                    CostUnit                                                `json:"CostUnit" xml:"CostUnit"`
 	Modules                     Modules                                                 `json:"Modules" xml:"Modules"`
-	ResourcePackages            ResourcePackages                                        `json:"ResourcePackages" xml:"ResourcePackages"`
-	ProductList                 ProductList                                             `json:"ProductList" xml:"ProductList"`
-	Items                       []Item                                                  `json:"Items" xml:"Items"`
-	PermissionList              []PermissionListItem                                    `json:"PermissionList" xml:"PermissionList"`
-	ResourceInstanceDtoList     []ResourceInstanceList                                  `json:"ResourceInstanceDtoList" xml:"ResourceInstanceDtoList"`
-	CustomerInvoiceList         CustomerInvoiceList                                     `json:"CustomerInvoiceList" xml:"CustomerInvoiceList"`
-	AttributeList               AttributeList                                           `json:"AttributeList" xml:"AttributeList"`
-	OrderList                   OrderListInGetOrderDetail                               `json:"OrderList" xml:"OrderList"`
-	InstanceList                []Instance                                              `json:"InstanceList" xml:"InstanceList"`
-	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice                       `json:"ModuleDetails" xml:"ModuleDetails"`
-	PromotionDetails            PromotionDetailsInGetPayAsYouGoPrice                    `json:"PromotionDetails" xml:"PromotionDetails"`
-	AccountTransactionsList     AccountTransactionsListInQueryAccountTransactionDetails `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
-	EvaluateList                EvaluateList                                            `json:"EvaluateList" xml:"EvaluateList"`
-	Promotions                  Promotions                                              `json:"Promotions" xml:"Promotions"`
-	DetailList                  DetailListInQueryDPUtilizationDetail                    `json:"DetailList" xml:"DetailList"`
+	Items                       []ItemInDescribeSavingsPlansUsageDetail                 `json:"Items" xml:"Items"`
+	PeriodCoverage              []Item                                                  `json:"PeriodCoverage" xml:"PeriodCoverage"`
 	CustomerInvoiceAddressList  CustomerInvoiceAddressList                              `json:"CustomerInvoiceAddressList" xml:"CustomerInvoiceAddressList"`
+	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice                       `json:"ModuleDetails" xml:"ModuleDetails"`
 	FinancialRelationInfoList   []FinancialRelationInfoListItem                         `json:"FinancialRelationInfoList" xml:"FinancialRelationInfoList"`
+	AttributeList               AttributeList                                           `json:"AttributeList" xml:"AttributeList"`
+	ResourceInstanceDtoList     []ResourceInstanceList                                  `json:"ResourceInstanceDtoList" xml:"ResourceInstanceDtoList"`
+	DetailList                  DetailListInQueryDPUtilizationDetail                    `json:"DetailList" xml:"DetailList"`
+	OrderList                   OrderListInQueryOrders                                  `json:"OrderList" xml:"OrderList"`
+	AccountTransactionsList     AccountTransactionsListInQueryAccountTransactionDetails `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
+	CostUnitDtoList             []CostUnitDtoListItem                                   `json:"CostUnitDtoList" xml:"CostUnitDtoList"`
+	EvaluateList                EvaluateList                                            `json:"EvaluateList" xml:"EvaluateList"`
+	PermissionList              []PermissionListItem                                    `json:"PermissionList" xml:"PermissionList"`
+	CustomerInvoiceList         CustomerInvoiceList                                     `json:"CustomerInvoiceList" xml:"CustomerInvoiceList"`
+	InstanceList                []Instance                                              `json:"InstanceList" xml:"InstanceList"`
+	Promotions                  Promotions                                              `json:"Promotions" xml:"Promotions"`
+	PromotionDetails            PromotionDetailsInGetPayAsYouGoPrice                    `json:"PromotionDetails" xml:"PromotionDetails"`
+	ProductList                 ProductList                                             `json:"ProductList" xml:"ProductList"`
+	ResourcePackages            ResourcePackages                                        `json:"ResourcePackages" xml:"ResourcePackages"`
+	ModuleList                  ModuleList                                              `json:"ModuleList" xml:"ModuleList"`
 }

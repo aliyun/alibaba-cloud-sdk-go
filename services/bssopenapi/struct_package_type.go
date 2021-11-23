@@ -17,8 +17,8 @@ package bssopenapi
 
 // PackageType is a nested struct in bssopenapi response
 type PackageType struct {
-	Name           string         `json:"Name" xml:"Name"`
 	Code           string         `json:"Code" xml:"Code"`
+	Name           string         `json:"Name" xml:"Name"`
 	Properties     Properties     `json:"Properties" xml:"Properties"`
 	Specifications Specifications `json:"Specifications" xml:"Specifications"`
 }

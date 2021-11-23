@@ -19,7 +19,7 @@ package bssopenapi
 type ModuleDetail struct {
 	InvoiceDiscount   float64 `json:"InvoiceDiscount" xml:"InvoiceDiscount"`
 	UnitPrice         float64 `json:"UnitPrice" xml:"UnitPrice"`
-	OriginalCost      float64 `json:"OriginalCost" xml:"OriginalCost"`
 	CostAfterDiscount float64 `json:"CostAfterDiscount" xml:"CostAfterDiscount"`
+	OriginalCost      float64 `json:"OriginalCost" xml:"OriginalCost"`
 	ModuleCode        string  `json:"ModuleCode" xml:"ModuleCode"`
 }

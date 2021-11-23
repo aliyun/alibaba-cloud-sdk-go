@@ -18,8 +18,8 @@ package bssopenapi
 // DataInQuerySettlementBill is a nested struct in bssopenapi response
 type DataInQuerySettlementBill struct {
 	PageNum      int                        `json:"PageNum" xml:"PageNum"`
+	BillingCycle string                     `json:"BillingCycle" xml:"BillingCycle"`
 	PageSize     int                        `json:"PageSize" xml:"PageSize"`
 	TotalCount   int                        `json:"TotalCount" xml:"TotalCount"`
-	BillingCycle string                     `json:"BillingCycle" xml:"BillingCycle"`
 	Items        ItemsInQuerySettlementBill `json:"Items" xml:"Items"`
 }

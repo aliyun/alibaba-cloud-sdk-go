@@ -84,9 +84,9 @@ type ModifyCostUnitUnitEntityList struct {
 // ModifyCostUnitResponse is the response struct for api ModifyCostUnit
 type ModifyCostUnitResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Message   string     `json:"Message" xml:"Message"`
 	Code      string     `json:"Code" xml:"Code"`
+	Message   string     `json:"Message" xml:"Message"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Success   bool       `json:"Success" xml:"Success"`
 	Data      []DataItem `json:"Data" xml:"Data"`
 }

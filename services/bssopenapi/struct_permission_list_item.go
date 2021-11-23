@@ -17,8 +17,8 @@ package bssopenapi
 
 // PermissionListItem is a nested struct in bssopenapi response
 type PermissionListItem struct {
+	EndTime        string `json:"EndTime" xml:"EndTime"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
 	PermissionCode string `json:"PermissionCode" xml:"PermissionCode"`
 	PermissionName string `json:"PermissionName" xml:"PermissionName"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
-	EndTime        string `json:"EndTime" xml:"EndTime"`
 }

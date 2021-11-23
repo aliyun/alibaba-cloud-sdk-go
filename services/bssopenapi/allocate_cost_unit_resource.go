@@ -89,9 +89,9 @@ type AllocateCostUnitResourceResourceInstanceList struct {
 // AllocateCostUnitResourceResponse is the response struct for api AllocateCostUnitResource
 type AllocateCostUnitResourceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }

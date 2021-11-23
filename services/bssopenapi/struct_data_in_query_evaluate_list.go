@@ -17,11 +17,11 @@ package bssopenapi
 
 // DataInQueryEvaluateList is a nested struct in bssopenapi response
 type DataInQueryEvaluateList struct {
-	HostId                      string       `json:"HostId" xml:"HostId"`
 	PageNum                     int          `json:"PageNum" xml:"PageNum"`
+	TotalUnAppliedInvoiceAmount int64        `json:"TotalUnAppliedInvoiceAmount" xml:"TotalUnAppliedInvoiceAmount"`
 	PageSize                    int          `json:"PageSize" xml:"PageSize"`
 	TotalCount                  int          `json:"TotalCount" xml:"TotalCount"`
 	TotalInvoiceAmount          int64        `json:"TotalInvoiceAmount" xml:"TotalInvoiceAmount"`
-	TotalUnAppliedInvoiceAmount int64        `json:"TotalUnAppliedInvoiceAmount" xml:"TotalUnAppliedInvoiceAmount"`
+	HostId                      string       `json:"HostId" xml:"HostId"`
 	EvaluateList                EvaluateList `json:"EvaluateList" xml:"EvaluateList"`
 }

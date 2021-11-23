@@ -84,11 +84,11 @@ type ChangeResellerConsumeAmountRequest struct {
 // ChangeResellerConsumeAmountResponse is the response struct for api ChangeResellerConsumeAmount
 type ChangeResellerConsumeAmountResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateChangeResellerConsumeAmountRequest creates a request to invoke ChangeResellerConsumeAmount API

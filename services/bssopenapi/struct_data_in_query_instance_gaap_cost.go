@@ -17,9 +17,9 @@ package bssopenapi
 
 // DataInQueryInstanceGaapCost is a nested struct in bssopenapi response
 type DataInQueryInstanceGaapCost struct {
-	HostId     string  `json:"HostId" xml:"HostId"`
 	PageNum    int     `json:"PageNum" xml:"PageNum"`
 	PageSize   int     `json:"PageSize" xml:"PageSize"`
 	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	HostId     string  `json:"HostId" xml:"HostId"`
 	Modules    Modules `json:"Modules" xml:"Modules"`
 }

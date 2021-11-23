@@ -17,13 +17,13 @@ package bssopenapi
 
 // DetailListItemInQueryRIUtilizationDetail is a nested struct in bssopenapi response
 type DetailListItemInQueryRIUtilizationDetail struct {
+	DeductedCommodityCode string  `json:"DeductedCommodityCode" xml:"DeductedCommodityCode"`
+	DeductedProductDetail string  `json:"DeductedProductDetail" xml:"DeductedProductDetail"`
+	DeductedInstanceId    string  `json:"DeductedInstanceId" xml:"DeductedInstanceId"`
+	DeductFactorTotal     float64 `json:"DeductFactorTotal" xml:"DeductFactorTotal"`
+	DeductQuantity        float64 `json:"DeductQuantity" xml:"DeductQuantity"`
+	DeductHours           string  `json:"DeductHours" xml:"DeductHours"`
+	DeductDate            string  `json:"DeductDate" xml:"DeductDate"`
 	RIInstanceId          string  `json:"RIInstanceId" xml:"RIInstanceId"`
 	InstanceSpec          string  `json:"InstanceSpec" xml:"InstanceSpec"`
-	DeductedInstanceId    string  `json:"DeductedInstanceId" xml:"DeductedInstanceId"`
-	DeductedCommodityCode string  `json:"DeductedCommodityCode" xml:"DeductedCommodityCode"`
-	DeductDate            string  `json:"DeductDate" xml:"DeductDate"`
-	DeductHours           string  `json:"DeductHours" xml:"DeductHours"`
-	DeductedProductDetail string  `json:"DeductedProductDetail" xml:"DeductedProductDetail"`
-	DeductQuantity        float64 `json:"DeductQuantity" xml:"DeductQuantity"`
-	DeductFactorTotal     float64 `json:"DeductFactorTotal" xml:"DeductFactorTotal"`
 }

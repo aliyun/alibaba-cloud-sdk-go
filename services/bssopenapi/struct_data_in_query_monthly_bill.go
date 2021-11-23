@@ -18,8 +18,8 @@ package bssopenapi
 // DataInQueryMonthlyBill is a nested struct in bssopenapi response
 type DataInQueryMonthlyBill struct {
 	OutstandingAmount      float64                 `json:"OutstandingAmount" xml:"OutstandingAmount"`
+	BillingCycle           string                  `json:"BillingCycle" xml:"BillingCycle"`
 	TotalOutstandingAmount float64                 `json:"TotalOutstandingAmount" xml:"TotalOutstandingAmount"`
 	NewInvoiceAmount       float64                 `json:"NewInvoiceAmount" xml:"NewInvoiceAmount"`
-	BillingCycle           string                  `json:"BillingCycle" xml:"BillingCycle"`
 	Items                  ItemsInQueryMonthlyBill `json:"Items" xml:"Items"`
 }

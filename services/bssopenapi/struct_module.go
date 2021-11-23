@@ -22,8 +22,8 @@ type Module struct {
 	PayerAccount                     string     `json:"PayerAccount" xml:"PayerAccount"`
 	GaapPretaxAmountLocal            string     `json:"GaapPretaxAmountLocal" xml:"GaapPretaxAmountLocal"`
 	UsageStartDate                   string     `json:"UsageStartDate" xml:"UsageStartDate"`
-	MonthGaapPaymentAmount           string     `json:"MonthGaapPaymentAmount" xml:"MonthGaapPaymentAmount"`
 	OrderId                          string     `json:"OrderId" xml:"OrderId"`
+	MonthGaapPaymentAmount           string     `json:"MonthGaapPaymentAmount" xml:"MonthGaapPaymentAmount"`
 	UnallocatedDeductedByCoupons     string     `json:"UnallocatedDeductedByCoupons" xml:"UnallocatedDeductedByCoupons"`
 	ModuleName                       string     `json:"ModuleName" xml:"ModuleName"`
 	PretaxGrossAmount                string     `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
@@ -38,14 +38,14 @@ type Module struct {
 	UnallocatedPretaxAmount          string     `json:"UnallocatedPretaxAmount" xml:"UnallocatedPretaxAmount"`
 	PriceType                        string     `json:"PriceType" xml:"PriceType"`
 	GaapPricingDiscount              string     `json:"GaapPricingDiscount" xml:"GaapPricingDiscount"`
-	AccountingUnit                   string     `json:"AccountingUnit" xml:"AccountingUnit"`
 	MonthGaapPretaxAmount            string     `json:"MonthGaapPretaxAmount" xml:"MonthGaapPretaxAmount"`
+	AccountingUnit                   string     `json:"AccountingUnit" xml:"AccountingUnit"`
 	Region                           string     `json:"Region" xml:"Region"`
 	PricingDiscount                  string     `json:"PricingDiscount" xml:"PricingDiscount"`
 	GaapPretaxAmount                 string     `json:"GaapPretaxAmount" xml:"GaapPretaxAmount"`
-	ResourceGroup                    string     `json:"ResourceGroup" xml:"ResourceGroup"`
 	SubOrderId                       string     `json:"SubOrderId" xml:"SubOrderId"`
 	UnallocatedDeductedByPrepaidCard string     `json:"UnallocatedDeductedByPrepaidCard" xml:"UnallocatedDeductedByPrepaidCard"`
+	ResourceGroup                    string     `json:"ResourceGroup" xml:"ResourceGroup"`
 	MonthGaapPretaxGrossAmount       string     `json:"MonthGaapPretaxGrossAmount" xml:"MonthGaapPretaxGrossAmount"`
 	UnallocatedPretaxGrossAmount     string     `json:"UnallocatedPretaxGrossAmount" xml:"UnallocatedPretaxGrossAmount"`
 	DeductedByCoupons                string     `json:"DeductedByCoupons" xml:"DeductedByCoupons"`

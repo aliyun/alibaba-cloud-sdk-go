@@ -17,8 +17,8 @@ package bssopenapi
 
 // CostUnit is a nested struct in bssopenapi response
 type CostUnit struct {
-	UnitId       int64  `json:"UnitId" xml:"UnitId"`
 	ParentUnitId int64  `json:"ParentUnitId" xml:"ParentUnitId"`
-	OwnerUid     int64  `json:"OwnerUid" xml:"OwnerUid"`
 	UnitName     string `json:"UnitName" xml:"UnitName"`
+	UnitId       int64  `json:"UnitId" xml:"UnitId"`
+	OwnerUid     int64  `json:"OwnerUid" xml:"OwnerUid"`
 }

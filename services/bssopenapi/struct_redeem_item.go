@@ -17,14 +17,14 @@ package bssopenapi
 
 // RedeemItem is a nested struct in bssopenapi response
 type RedeemItem struct {
+	ExpiryTime         string `json:"ExpiryTime" xml:"ExpiryTime"`
+	GrantedTime        string `json:"GrantedTime" xml:"GrantedTime"`
+	Status             string `json:"Status" xml:"Status"`
+	Specification      string `json:"Specification" xml:"Specification"`
+	NominalValue       string `json:"NominalValue" xml:"NominalValue"`
+	EffectiveTime      string `json:"EffectiveTime" xml:"EffectiveTime"`
 	RedeemId           string `json:"RedeemId" xml:"RedeemId"`
 	RedeemNo           string `json:"RedeemNo" xml:"RedeemNo"`
-	Status             string `json:"Status" xml:"Status"`
-	GrantedTime        string `json:"GrantedTime" xml:"GrantedTime"`
-	EffectiveTime      string `json:"EffectiveTime" xml:"EffectiveTime"`
-	ExpiryTime         string `json:"ExpiryTime" xml:"ExpiryTime"`
-	NominalValue       string `json:"NominalValue" xml:"NominalValue"`
-	Balance            string `json:"Balance" xml:"Balance"`
 	ApplicableProducts string `json:"ApplicableProducts" xml:"ApplicableProducts"`
-	Specification      string `json:"Specification" xml:"Specification"`
+	Balance            string `json:"Balance" xml:"Balance"`
 }

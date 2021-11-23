@@ -17,11 +17,11 @@ package bssopenapi
 
 // DataInQueryInstanceBill is a nested struct in bssopenapi response
 type DataInQueryInstanceBill struct {
+	PageNum      int                      `json:"PageNum" xml:"PageNum"`
 	BillingCycle string                   `json:"BillingCycle" xml:"BillingCycle"`
 	AccountID    string                   `json:"AccountID" xml:"AccountID"`
-	AccountName  string                   `json:"AccountName" xml:"AccountName"`
-	TotalCount   int                      `json:"TotalCount" xml:"TotalCount"`
-	PageNum      int                      `json:"PageNum" xml:"PageNum"`
 	PageSize     int                      `json:"PageSize" xml:"PageSize"`
+	TotalCount   int                      `json:"TotalCount" xml:"TotalCount"`
+	AccountName  string                   `json:"AccountName" xml:"AccountName"`
 	Items        ItemsInQueryInstanceBill `json:"Items" xml:"Items"`
 }

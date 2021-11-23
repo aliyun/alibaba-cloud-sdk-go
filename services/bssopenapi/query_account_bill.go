@@ -85,10 +85,10 @@ type QueryAccountBillRequest struct {
 // QueryAccountBillResponse is the response struct for api QueryAccountBill
 type QueryAccountBillResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
-	Success   bool                   `json:"Success" xml:"Success"`
 	Code      string                 `json:"Code" xml:"Code"`
 	Message   string                 `json:"Message" xml:"Message"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Success   bool                   `json:"Success" xml:"Success"`
 	Data      DataInQueryAccountBill `json:"Data" xml:"Data"`
 }
 

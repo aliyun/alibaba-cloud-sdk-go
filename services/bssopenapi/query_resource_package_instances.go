@@ -76,6 +76,7 @@ type QueryResourcePackageInstancesRequest struct {
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	ExpiryTimeStart string           `position:"Query" name:"ExpiryTimeStart"`
 	PageNum         requests.Integer `position:"Query" name:"PageNum"`
+	IncludePartner  requests.Boolean `position:"Query" name:"IncludePartner"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
@@ -86,9 +87,9 @@ type QueryResourcePackageInstancesResponse struct {
 	Success   bool                                `json:"Success" xml:"Success"`
 	Code      string                              `json:"Code" xml:"Code"`
 	Message   string                              `json:"Message" xml:"Message"`
-	Page      int                                 `json:"Page" xml:"Page"`
 	PageSize  int                                 `json:"PageSize" xml:"PageSize"`
 	Total     int                                 `json:"Total" xml:"Total"`
+	Page      int                                 `json:"Page" xml:"Page"`
 	Data      DataInQueryResourcePackageInstances `json:"Data" xml:"Data"`
 }
 

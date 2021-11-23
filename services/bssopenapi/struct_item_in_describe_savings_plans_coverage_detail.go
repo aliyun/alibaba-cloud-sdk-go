@@ -18,15 +18,15 @@ package bssopenapi
 // ItemInDescribeSavingsPlansCoverageDetail is a nested struct in bssopenapi response
 type ItemInDescribeSavingsPlansCoverageDetail struct {
 	UserId             int64   `json:"UserId" xml:"UserId"`
-	UserName           string  `json:"UserName" xml:"UserName"`
 	InstanceId         string  `json:"InstanceId" xml:"InstanceId"`
-	Region             string  `json:"Region" xml:"Region"`
-	InstanceSpec       string  `json:"InstanceSpec" xml:"InstanceSpec"`
 	Currency           string  `json:"Currency" xml:"Currency"`
-	CoveragePercentage float64 `json:"CoveragePercentage" xml:"CoveragePercentage"`
-	DeductAmount       float64 `json:"DeductAmount" xml:"DeductAmount"`
-	TotalAmount        float64 `json:"TotalAmount" xml:"TotalAmount"`
+	InstanceSpec       string  `json:"InstanceSpec" xml:"InstanceSpec"`
 	PostpaidCost       float64 `json:"PostpaidCost" xml:"PostpaidCost"`
+	CoveragePercentage float64 `json:"CoveragePercentage" xml:"CoveragePercentage"`
+	Region             string  `json:"Region" xml:"Region"`
+	DeductAmount       float64 `json:"DeductAmount" xml:"DeductAmount"`
 	StartPeriod        string  `json:"StartPeriod" xml:"StartPeriod"`
+	TotalAmount        float64 `json:"TotalAmount" xml:"TotalAmount"`
+	UserName           string  `json:"UserName" xml:"UserName"`
 	EndPeriod          string  `json:"EndPeriod" xml:"EndPeriod"`
 }

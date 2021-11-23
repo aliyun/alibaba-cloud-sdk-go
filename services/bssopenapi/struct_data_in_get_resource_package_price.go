@@ -17,9 +17,9 @@ package bssopenapi
 
 // DataInGetResourcePackagePrice is a nested struct in bssopenapi response
 type DataInGetResourcePackagePrice struct {
-	Currency      string     `json:"Currency" xml:"Currency"`
 	OriginalPrice float64    `json:"OriginalPrice" xml:"OriginalPrice"`
-	TradePrice    float64    `json:"TradePrice" xml:"TradePrice"`
 	DiscountPrice float64    `json:"DiscountPrice" xml:"DiscountPrice"`
+	Currency      string     `json:"Currency" xml:"Currency"`
+	TradePrice    float64    `json:"TradePrice" xml:"TradePrice"`
 	Promotions    Promotions `json:"Promotions" xml:"Promotions"`
 }

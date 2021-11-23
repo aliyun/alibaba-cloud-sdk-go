@@ -76,10 +76,10 @@ type QueryBillToOSSSubscriptionRequest struct {
 // QueryBillToOSSSubscriptionResponse is the response struct for api QueryBillToOSSSubscription
 type QueryBillToOSSSubscriptionResponse struct {
 	*responses.BaseResponse
-	RequestId string                           `json:"RequestId" xml:"RequestId"`
-	Success   bool                             `json:"Success" xml:"Success"`
 	Code      string                           `json:"Code" xml:"Code"`
 	Message   string                           `json:"Message" xml:"Message"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	Success   bool                             `json:"Success" xml:"Success"`
 	Data      DataInQueryBillToOSSSubscription `json:"Data" xml:"Data"`
 }
 

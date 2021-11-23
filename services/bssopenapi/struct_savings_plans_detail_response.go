@@ -17,19 +17,24 @@ package bssopenapi
 
 // SavingsPlansDetailResponse is a nested struct in bssopenapi response
 type SavingsPlansDetailResponse struct {
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	SavingsType      string `json:"SavingsType" xml:"SavingsType"`
-	InstanceFamily   string `json:"InstanceFamily" xml:"InstanceFamily"`
-	Region           string `json:"Region" xml:"Region"`
-	PoolValue        string `json:"PoolValue" xml:"PoolValue"`
-	Currency         string `json:"Currency" xml:"Currency"`
-	Status           string `json:"Status" xml:"Status"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	PayMode          string `json:"PayMode" xml:"PayMode"`
-	PrepayFee        string `json:"PrepayFee" xml:"PrepayFee"`
-	TotalSave        string `json:"TotalSave" xml:"TotalSave"`
-	Utilization      string `json:"Utilization" xml:"Utilization"`
-	AllocationStatus string `json:"AllocationStatus" xml:"AllocationStatus"`
-	Tags             []Tag  `json:"Tags" xml:"Tags"`
+	Status              string `json:"Status" xml:"Status"`
+	Cycle               string `json:"Cycle" xml:"Cycle"`
+	StartTimestamp      int64  `json:"StartTimestamp" xml:"StartTimestamp"`
+	SavingsType         string `json:"SavingsType" xml:"SavingsType"`
+	Utilization         string `json:"Utilization" xml:"Utilization"`
+	PrepayFee           string `json:"PrepayFee" xml:"PrepayFee"`
+	InstanceId          string `json:"InstanceId" xml:"InstanceId"`
+	Currency            string `json:"Currency" xml:"Currency"`
+	EndTimestamp        int64  `json:"EndTimestamp" xml:"EndTimestamp"`
+	EndTime             string `json:"EndTime" xml:"EndTime"`
+	StartTime           string `json:"StartTime" xml:"StartTime"`
+	AllocationStatus    string `json:"AllocationStatus" xml:"AllocationStatus"`
+	InstanceFamily      string `json:"InstanceFamily" xml:"InstanceFamily"`
+	Region              string `json:"Region" xml:"Region"`
+	LastBillTotalUsage  string `json:"LastBillTotalUsage" xml:"LastBillTotalUsage"`
+	LastBillUtilization string `json:"LastBillUtilization" xml:"LastBillUtilization"`
+	TotalSave           string `json:"TotalSave" xml:"TotalSave"`
+	PoolValue           string `json:"PoolValue" xml:"PoolValue"`
+	PayMode             string `json:"PayMode" xml:"PayMode"`
+	Tags                []Tag  `json:"Tags" xml:"Tags"`
 }

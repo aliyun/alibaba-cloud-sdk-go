@@ -17,17 +17,17 @@ package bssopenapi
 
 // InstanceInQueryResourcePackageInstances is a nested struct in bssopenapi response
 type InstanceInQueryResourcePackageInstances struct {
+	ExpiryTime          string             `json:"ExpiryTime" xml:"ExpiryTime"`
+	Status              string             `json:"Status" xml:"Status"`
+	Remark              string             `json:"Remark" xml:"Remark"`
+	RemainingAmountUnit string             `json:"RemainingAmountUnit" xml:"RemainingAmountUnit"`
 	InstanceId          string             `json:"InstanceId" xml:"InstanceId"`
+	PackageType         string             `json:"PackageType" xml:"PackageType"`
+	EffectiveTime       string             `json:"EffectiveTime" xml:"EffectiveTime"`
 	Region              string             `json:"Region" xml:"Region"`
 	TotalAmount         string             `json:"TotalAmount" xml:"TotalAmount"`
+	DeductType          string             `json:"DeductType" xml:"DeductType"`
 	TotalAmountUnit     string             `json:"TotalAmountUnit" xml:"TotalAmountUnit"`
 	RemainingAmount     string             `json:"RemainingAmount" xml:"RemainingAmount"`
-	RemainingAmountUnit string             `json:"RemainingAmountUnit" xml:"RemainingAmountUnit"`
-	EffectiveTime       string             `json:"EffectiveTime" xml:"EffectiveTime"`
-	ExpiryTime          string             `json:"ExpiryTime" xml:"ExpiryTime"`
-	Remark              string             `json:"Remark" xml:"Remark"`
-	PackageType         string             `json:"PackageType" xml:"PackageType"`
-	Status              string             `json:"Status" xml:"Status"`
-	DeductType          string             `json:"DeductType" xml:"DeductType"`
 	ApplicableProducts  ApplicableProducts `json:"ApplicableProducts" xml:"ApplicableProducts"`
 }

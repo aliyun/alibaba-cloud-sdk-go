@@ -17,16 +17,16 @@ package bssopenapi
 
 // CustomerInvoiceAddress is a nested struct in bssopenapi response
 type CustomerInvoiceAddress struct {
-	Id              int64  `json:"Id" xml:"Id"`
-	UserId          int64  `json:"UserId" xml:"UserId"`
-	UserNick        string `json:"UserNick" xml:"UserNick"`
 	Addressee       string `json:"Addressee" xml:"Addressee"`
-	Province        string `json:"Province" xml:"Province"`
-	City            string `json:"City" xml:"City"`
-	County          string `json:"County" xml:"County"`
-	Street          string `json:"Street" xml:"Street"`
 	PostalCode      string `json:"PostalCode" xml:"PostalCode"`
+	UserId          int64  `json:"UserId" xml:"UserId"`
+	City            string `json:"City" xml:"City"`
+	UserNick        string `json:"UserNick" xml:"UserNick"`
+	Street          string `json:"Street" xml:"Street"`
 	Phone           string `json:"Phone" xml:"Phone"`
+	County          string `json:"County" xml:"County"`
 	BizType         string `json:"BizType" xml:"BizType"`
 	DeliveryAddress string `json:"DeliveryAddress" xml:"DeliveryAddress"`
+	Id              int64  `json:"Id" xml:"Id"`
+	Province        string `json:"Province" xml:"Province"`
 }

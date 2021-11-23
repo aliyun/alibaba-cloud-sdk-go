@@ -86,10 +86,10 @@ type QueryInstanceByTagTag struct {
 type QueryInstanceByTagResponse struct {
 	*responses.BaseResponse
 	Code        string            `json:"Code" xml:"Code"`
-	RequestId   string            `json:"RequestId" xml:"RequestId"`
-	Success     bool              `json:"Success" xml:"Success"`
 	Message     string            `json:"Message" xml:"Message"`
 	NextToken   string            `json:"NextToken" xml:"NextToken"`
+	RequestId   string            `json:"RequestId" xml:"RequestId"`
+	Success     bool              `json:"Success" xml:"Success"`
 	TagResource []TagResourceItem `json:"TagResource" xml:"TagResource"`
 }
 

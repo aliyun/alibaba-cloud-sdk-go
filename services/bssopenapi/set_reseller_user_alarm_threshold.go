@@ -79,11 +79,11 @@ type SetResellerUserAlarmThresholdRequest struct {
 // SetResellerUserAlarmThresholdResponse is the response struct for api SetResellerUserAlarmThreshold
 type SetResellerUserAlarmThresholdResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSetResellerUserAlarmThresholdRequest creates a request to invoke SetResellerUserAlarmThreshold API

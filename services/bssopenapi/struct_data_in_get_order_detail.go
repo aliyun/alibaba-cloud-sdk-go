@@ -17,9 +17,9 @@ package bssopenapi
 
 // DataInGetOrderDetail is a nested struct in bssopenapi response
 type DataInGetOrderDetail struct {
-	TotalCount int                       `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                       `json:"PageSize" xml:"PageSize"`
-	PageNum    int                       `json:"PageNum" xml:"PageNum"`
 	HostName   string                    `json:"HostName" xml:"HostName"`
+	PageNum    int                       `json:"PageNum" xml:"PageNum"`
+	PageSize   int                       `json:"PageSize" xml:"PageSize"`
+	TotalCount int                       `json:"TotalCount" xml:"TotalCount"`
 	OrderList  OrderListInGetOrderDetail `json:"OrderList" xml:"OrderList"`
 }

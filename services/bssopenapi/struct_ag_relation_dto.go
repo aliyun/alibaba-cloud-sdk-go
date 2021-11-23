@@ -17,8 +17,8 @@ package bssopenapi
 
 // AgRelationDto is a nested struct in bssopenapi response
 type AgRelationDto struct {
-	Pk               string `json:"Pk" xml:"Pk"`
 	Type             string `json:"Type" xml:"Type"`
-	Mpk              string `json:"Mpk" xml:"Mpk"`
+	Pk               string `json:"Pk" xml:"Pk"`
 	RamAdminRoleName string `json:"RamAdminRoleName" xml:"RamAdminRoleName"`
+	Mpk              string `json:"Mpk" xml:"Mpk"`
 }

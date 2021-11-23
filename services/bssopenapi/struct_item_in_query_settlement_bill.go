@@ -17,47 +17,47 @@ package bssopenapi
 
 // ItemInQuerySettlementBill is a nested struct in bssopenapi response
 type ItemInQuerySettlementBill struct {
-	RecordID                    string  `json:"RecordID" xml:"RecordID"`
-	Item                        string  `json:"Item" xml:"Item"`
-	PayerAccount                string  `json:"PayerAccount" xml:"PayerAccount"`
-	OwnerID                     string  `json:"OwnerID" xml:"OwnerID"`
+	Status                      string  `json:"Status" xml:"Status"`
+	InvoiceNo                   string  `json:"InvoiceNo" xml:"InvoiceNo"`
+	BillID                      string  `json:"BillID" xml:"BillID"`
 	CreateTime                  string  `json:"CreateTime" xml:"CreateTime"`
+	Item                        string  `json:"Item" xml:"Item"`
+	Seller                      string  `json:"Seller" xml:"Seller"`
+	Currency                    string  `json:"Currency" xml:"Currency"`
+	ChargeDiscount              float64 `json:"ChargeDiscount" xml:"ChargeDiscount"`
+	DeductedByCashCoupons       float64 `json:"DeductedByCashCoupons" xml:"DeductedByCashCoupons"`
+	Config                      string  `json:"Config" xml:"Config"`
+	SubscriptionType            string  `json:"SubscriptionType" xml:"SubscriptionType"`
 	UsageStartTime              string  `json:"UsageStartTime" xml:"UsageStartTime"`
 	UsageEndTime                string  `json:"UsageEndTime" xml:"UsageEndTime"`
-	SuborderID                  string  `json:"SuborderID" xml:"SuborderID"`
-	OrderID                     string  `json:"OrderID" xml:"OrderID"`
-	OrderType                   string  `json:"OrderType" xml:"OrderType"`
-	LinkedCustomerOrderID       string  `json:"LinkedCustomerOrderID" xml:"LinkedCustomerOrderID"`
-	OriginalOrderID             string  `json:"OriginalOrderID" xml:"OriginalOrderID"`
+	DeductedByCoupons           float64 `json:"DeductedByCoupons" xml:"DeductedByCoupons"`
+	Region                      string  `json:"Region" xml:"Region"`
+	OutstandingAmount           float64 `json:"OutstandingAmount" xml:"OutstandingAmount"`
+	AfterTaxAmount              float64 `json:"AfterTaxAmount" xml:"AfterTaxAmount"`
 	PaymentTime                 string  `json:"PaymentTime" xml:"PaymentTime"`
 	SolutionID                  string  `json:"SolutionID" xml:"SolutionID"`
-	SolutionName                string  `json:"SolutionName" xml:"SolutionName"`
-	BillID                      string  `json:"BillID" xml:"BillID"`
-	ProductCode                 string  `json:"ProductCode" xml:"ProductCode"`
-	ProductType                 string  `json:"ProductType" xml:"ProductType"`
-	SubscriptionType            string  `json:"SubscriptionType" xml:"SubscriptionType"`
-	Region                      string  `json:"Region" xml:"Region"`
-	Config                      string  `json:"Config" xml:"Config"`
-	Quantity                    string  `json:"Quantity" xml:"Quantity"`
-	PretaxGrossAmount           float64 `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
-	ChargeDiscount              float64 `json:"ChargeDiscount" xml:"ChargeDiscount"`
-	DeductedByCoupons           float64 `json:"DeductedByCoupons" xml:"DeductedByCoupons"`
-	AccountDiscount             float64 `json:"AccountDiscount" xml:"AccountDiscount"`
-	Promotion                   string  `json:"Promotion" xml:"Promotion"`
-	PretaxAmount                float64 `json:"PretaxAmount" xml:"PretaxAmount"`
-	Currency                    string  `json:"Currency" xml:"Currency"`
-	PretaxAmountLocal           float64 `json:"PretaxAmountLocal" xml:"PretaxAmountLocal"`
-	PreviousBillingCycleBalance float64 `json:"PreviousBillingCycleBalance" xml:"PreviousBillingCycleBalance"`
-	Tax                         float64 `json:"Tax" xml:"Tax"`
-	AfterTaxAmount              float64 `json:"AfterTaxAmount" xml:"AfterTaxAmount"`
-	Status                      string  `json:"Status" xml:"Status"`
+	OrderType                   string  `json:"OrderType" xml:"OrderType"`
 	ClearedTime                 string  `json:"ClearedTime" xml:"ClearedTime"`
-	OutstandingAmount           float64 `json:"OutstandingAmount" xml:"OutstandingAmount"`
-	DeductedByCashCoupons       float64 `json:"DeductedByCashCoupons" xml:"DeductedByCashCoupons"`
-	DeductedByPrepaidCard       float64 `json:"DeductedByPrepaidCard" xml:"DeductedByPrepaidCard"`
+	Quantity                    string  `json:"Quantity" xml:"Quantity"`
+	Tax                         float64 `json:"Tax" xml:"Tax"`
+	PretaxAmountLocal           float64 `json:"PretaxAmountLocal" xml:"PretaxAmountLocal"`
+	PretaxAmount                float64 `json:"PretaxAmount" xml:"PretaxAmount"`
+	LinkedCustomerOrderID       string  `json:"LinkedCustomerOrderID" xml:"LinkedCustomerOrderID"`
+	AccountDiscount             float64 `json:"AccountDiscount" xml:"AccountDiscount"`
+	RecordID                    string  `json:"RecordID" xml:"RecordID"`
+	PayerAccount                string  `json:"PayerAccount" xml:"PayerAccount"`
+	Promotion                   string  `json:"Promotion" xml:"Promotion"`
+	OriginalOrderID             string  `json:"OriginalOrderID" xml:"OriginalOrderID"`
+	PreviousBillingCycleBalance float64 `json:"PreviousBillingCycleBalance" xml:"PreviousBillingCycleBalance"`
 	MybankPaymentAmount         float64 `json:"MybankPaymentAmount" xml:"MybankPaymentAmount"`
-	PaymentAmount               float64 `json:"PaymentAmount" xml:"PaymentAmount"`
 	PaymentCurrency             string  `json:"PaymentCurrency" xml:"PaymentCurrency"`
-	Seller                      string  `json:"Seller" xml:"Seller"`
-	InvoiceNo                   string  `json:"InvoiceNo" xml:"InvoiceNo"`
+	OrderID                     string  `json:"OrderID" xml:"OrderID"`
+	OwnerID                     string  `json:"OwnerID" xml:"OwnerID"`
+	DeductedByPrepaidCard       float64 `json:"DeductedByPrepaidCard" xml:"DeductedByPrepaidCard"`
+	PaymentAmount               float64 `json:"PaymentAmount" xml:"PaymentAmount"`
+	ProductType                 string  `json:"ProductType" xml:"ProductType"`
+	PretaxGrossAmount           float64 `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
+	SuborderID                  string  `json:"SuborderID" xml:"SuborderID"`
+	SolutionName                string  `json:"SolutionName" xml:"SolutionName"`
+	ProductCode                 string  `json:"ProductCode" xml:"ProductCode"`
 }

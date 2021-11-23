@@ -17,9 +17,9 @@ package bssopenapi
 
 // DataInQueryAccountTransactionDetails is a nested struct in bssopenapi response
 type DataInQueryAccountTransactionDetails struct {
-	AccountName             string                                                  `json:"AccountName" xml:"AccountName"`
-	TotalCount              int                                                     `json:"TotalCount" xml:"TotalCount"`
 	NextToken               string                                                  `json:"NextToken" xml:"NextToken"`
+	TotalCount              int                                                     `json:"TotalCount" xml:"TotalCount"`
 	MaxResults              int                                                     `json:"MaxResults" xml:"MaxResults"`
+	AccountName             string                                                  `json:"AccountName" xml:"AccountName"`
 	AccountTransactionsList AccountTransactionsListInQueryAccountTransactionDetails `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
 }

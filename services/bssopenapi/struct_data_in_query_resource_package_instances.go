@@ -17,9 +17,9 @@ package bssopenapi
 
 // DataInQueryResourcePackageInstances is a nested struct in bssopenapi response
 type DataInQueryResourcePackageInstances struct {
-	HostId     string    `json:"HostId" xml:"HostId"`
 	PageNum    string    `json:"PageNum" xml:"PageNum"`
 	PageSize   string    `json:"PageSize" xml:"PageSize"`
 	TotalCount string    `json:"TotalCount" xml:"TotalCount"`
+	HostId     string    `json:"HostId" xml:"HostId"`
 	Instances  Instances `json:"Instances" xml:"Instances"`
 }

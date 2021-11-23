@@ -17,14 +17,14 @@ package bssopenapi
 
 // CashCoupon is a nested struct in bssopenapi response
 type CashCoupon struct {
-	CashCouponId        int64  `json:"CashCouponId" xml:"CashCouponId"`
-	CashCouponNo        string `json:"CashCouponNo" xml:"CashCouponNo"`
-	GrantedTime         string `json:"GrantedTime" xml:"GrantedTime"`
-	EffectiveTime       string `json:"EffectiveTime" xml:"EffectiveTime"`
-	ExpiryTime          string `json:"ExpiryTime" xml:"ExpiryTime"`
-	ApplicableProducts  string `json:"ApplicableProducts" xml:"ApplicableProducts"`
-	ApplicableScenarios string `json:"ApplicableScenarios" xml:"ApplicableScenarios"`
-	NominalValue        string `json:"NominalValue" xml:"NominalValue"`
-	Balance             string `json:"Balance" xml:"Balance"`
 	Status              string `json:"Status" xml:"Status"`
+	ExpiryTime          string `json:"ExpiryTime" xml:"ExpiryTime"`
+	GrantedTime         string `json:"GrantedTime" xml:"GrantedTime"`
+	NominalValue        string `json:"NominalValue" xml:"NominalValue"`
+	EffectiveTime       string `json:"EffectiveTime" xml:"EffectiveTime"`
+	ApplicableScenarios string `json:"ApplicableScenarios" xml:"ApplicableScenarios"`
+	CashCouponId        int64  `json:"CashCouponId" xml:"CashCouponId"`
+	ApplicableProducts  string `json:"ApplicableProducts" xml:"ApplicableProducts"`
+	CashCouponNo        string `json:"CashCouponNo" xml:"CashCouponNo"`
+	Balance             string `json:"Balance" xml:"Balance"`
 }

@@ -17,25 +17,25 @@ package bssopenapi
 
 // CustomerInvoice is a nested struct in bssopenapi response
 type CustomerInvoice struct {
-	Id                      int64  `json:"Id" xml:"Id"`
-	UserId                  int64  `json:"UserId" xml:"UserId"`
-	UserNick                string `json:"UserNick" xml:"UserNick"`
-	InvoiceTitle            string `json:"InvoiceTitle" xml:"InvoiceTitle"`
-	CustomerType            int64  `json:"CustomerType" xml:"CustomerType"`
-	TaxpayerType            int64  `json:"TaxpayerType" xml:"TaxpayerType"`
-	Bank                    string `json:"Bank" xml:"Bank"`
-	BankNo                  string `json:"BankNo" xml:"BankNo"`
-	OperatingLicenseAddress string `json:"OperatingLicenseAddress" xml:"OperatingLicenseAddress"`
-	OperatingLicensePhone   string `json:"OperatingLicensePhone" xml:"OperatingLicensePhone"`
-	RegisterNo              string `json:"RegisterNo" xml:"RegisterNo"`
-	StartCycle              int64  `json:"StartCycle" xml:"StartCycle"`
-	Status                  int64  `json:"Status" xml:"Status"`
-	GmtCreate               string `json:"GmtCreate" xml:"GmtCreate"`
-	TaxationLicense         string `json:"TaxationLicense" xml:"TaxationLicense"`
-	AdjustType              int64  `json:"AdjustType" xml:"AdjustType"`
-	EndCycle                int64  `json:"EndCycle" xml:"EndCycle"`
-	TitleChangeInstructions string `json:"TitleChangeInstructions" xml:"TitleChangeInstructions"`
-	IssueType               int64  `json:"IssueType" xml:"IssueType"`
 	Type                    int64  `json:"Type" xml:"Type"`
+	Status                  int64  `json:"Status" xml:"Status"`
+	AdjustType              int64  `json:"AdjustType" xml:"AdjustType"`
+	Bank                    string `json:"Bank" xml:"Bank"`
+	StartCycle              int64  `json:"StartCycle" xml:"StartCycle"`
+	TitleChangeInstructions string `json:"TitleChangeInstructions" xml:"TitleChangeInstructions"`
+	UserId                  int64  `json:"UserId" xml:"UserId"`
+	OperatingLicenseAddress string `json:"OperatingLicenseAddress" xml:"OperatingLicenseAddress"`
+	InvoiceTitle            string `json:"InvoiceTitle" xml:"InvoiceTitle"`
+	UserNick                string `json:"UserNick" xml:"UserNick"`
+	OperatingLicensePhone   string `json:"OperatingLicensePhone" xml:"OperatingLicensePhone"`
+	EndCycle                int64  `json:"EndCycle" xml:"EndCycle"`
 	DefaultRemark           string `json:"DefaultRemark" xml:"DefaultRemark"`
+	TaxationLicense         string `json:"TaxationLicense" xml:"TaxationLicense"`
+	RegisterNo              string `json:"RegisterNo" xml:"RegisterNo"`
+	GmtCreate               string `json:"GmtCreate" xml:"GmtCreate"`
+	TaxpayerType            int64  `json:"TaxpayerType" xml:"TaxpayerType"`
+	CustomerType            int64  `json:"CustomerType" xml:"CustomerType"`
+	IssueType               int64  `json:"IssueType" xml:"IssueType"`
+	Id                      int64  `json:"Id" xml:"Id"`
+	BankNo                  string `json:"BankNo" xml:"BankNo"`
 }

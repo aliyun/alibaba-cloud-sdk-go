@@ -19,8 +19,8 @@ package bssopenapi
 type TotalUsage struct {
 	PoolValue          float64 `json:"PoolValue" xml:"PoolValue"`
 	UsagePercentage    float64 `json:"UsagePercentage" xml:"UsagePercentage"`
-	ReservationCost    float64 `json:"ReservationCost" xml:"ReservationCost"`
 	SavedCost          float64 `json:"SavedCost" xml:"SavedCost"`
+	ReservationCost    float64 `json:"ReservationCost" xml:"ReservationCost"`
 	PotentialSavedCost float64 `json:"PotentialSavedCost" xml:"PotentialSavedCost"`
 	PostpaidCost       float64 `json:"PostpaidCost" xml:"PostpaidCost"`
 }
