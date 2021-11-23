@@ -77,12 +77,14 @@ type DescribeColdStorageRequest struct {
 // DescribeColdStorageResponse is the response struct for api DescribeColdStorage
 type DescribeColdStorageResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	ClusterId             string `json:"ClusterId" xml:"ClusterId"`
 	OpenStatus            string `json:"OpenStatus" xml:"OpenStatus"`
-	ColdStorageSize       string `json:"ColdStorageSize" xml:"ColdStorageSize"`
-	ColdStorageUsePercent string `json:"ColdStorageUsePercent" xml:"ColdStorageUsePercent"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
 	PayType               string `json:"PayType" xml:"PayType"`
+	ColdStorageUsePercent string `json:"ColdStorageUsePercent" xml:"ColdStorageUsePercent"`
+	ColdStorageUseAmount  string `json:"ColdStorageUseAmount" xml:"ColdStorageUseAmount"`
+	ColdStorageSize       string `json:"ColdStorageSize" xml:"ColdStorageSize"`
+	ColdStorageType       string `json:"ColdStorageType" xml:"ColdStorageType"`
+	ClusterId             string `json:"ClusterId" xml:"ClusterId"`
 }
 
 // CreateDescribeColdStorageRequest creates a request to invoke DescribeColdStorage API
