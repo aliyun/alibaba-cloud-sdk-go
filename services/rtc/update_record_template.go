@@ -71,53 +71,66 @@ func (client *Client) UpdateRecordTemplateWithCallback(request *UpdateRecordTemp
 // UpdateRecordTemplateRequest is the request struct for api UpdateRecordTemplate
 type UpdateRecordTemplateRequest struct {
 	*requests.RpcRequest
-	Formats           *[]string                          `position:"Query" name:"Formats"  type:"Repeated"`
-	OssFilePrefix     string                             `position:"Query" name:"OssFilePrefix"`
-	BackgroundColor   requests.Integer                   `position:"Query" name:"BackgroundColor"`
-	TaskProfile       string                             `position:"Query" name:"TaskProfile"`
-	LayoutIds         *[]string                          `position:"Query" name:"LayoutIds"  type:"Repeated"`
-	ShowLog           string                             `position:"Query" name:"ShowLog"`
-	OssBucket         string                             `position:"Query" name:"OssBucket"`
-	MnsQueue          string                             `position:"Query" name:"MnsQueue"`
-	FileSplitInterval requests.Integer                   `position:"Query" name:"FileSplitInterval"`
-	HttpCallbackUrl   string                             `position:"Query" name:"HttpCallbackUrl"`
-	Watermarks        *[]UpdateRecordTemplateWatermarks  `position:"Query" name:"Watermarks"  type:"Repeated"`
-	OwnerId           requests.Integer                   `position:"Query" name:"OwnerId"`
-	TemplateId        string                             `position:"Query" name:"TemplateId"`
-	AppId             string                             `position:"Query" name:"AppId"`
-	Backgrounds       *[]UpdateRecordTemplateBackgrounds `position:"Query" name:"Backgrounds"  type:"Repeated"`
-	Name              string                             `position:"Query" name:"Name"`
-	MediaEncode       requests.Integer                   `position:"Query" name:"MediaEncode"`
+	Formats            *[]string                           `position:"Query" name:"Formats"  type:"Repeated"`
+	OssFilePrefix      string                              `position:"Query" name:"OssFilePrefix"`
+	BackgroundColor    requests.Integer                    `position:"Query" name:"BackgroundColor"`
+	TaskProfile        string                              `position:"Query" name:"TaskProfile"`
+	LayoutIds          *[]string                           `position:"Query" name:"LayoutIds"  type:"Repeated"`
+	ClockWidgets       *[]UpdateRecordTemplateClockWidgets `position:"Query" name:"ClockWidgets"  type:"Repeated"`
+	ShowLog            string                              `position:"Query" name:"ShowLog"`
+	OssBucket          string                              `position:"Query" name:"OssBucket"`
+	DelayStopTime      requests.Integer                    `position:"Query" name:"DelayStopTime"`
+	MnsQueue           string                              `position:"Query" name:"MnsQueue"`
+	FileSplitInterval  requests.Integer                    `position:"Query" name:"FileSplitInterval"`
+	HttpCallbackUrl    string                              `position:"Query" name:"HttpCallbackUrl"`
+	Watermarks         *[]UpdateRecordTemplateWatermarks   `position:"Query" name:"Watermarks"  type:"Repeated"`
+	OwnerId            requests.Integer                    `position:"Query" name:"OwnerId"`
+	TemplateId         string                              `position:"Query" name:"TemplateId"`
+	EnableM3u8DateTime requests.Boolean                    `position:"Query" name:"EnableM3u8DateTime"`
+	AppId              string                              `position:"Query" name:"AppId"`
+	Backgrounds        *[]UpdateRecordTemplateBackgrounds  `position:"Query" name:"Backgrounds"  type:"Repeated"`
+	Name               string                              `position:"Query" name:"Name"`
+	MediaEncode        requests.Integer                    `position:"Query" name:"MediaEncode"`
+}
+
+// UpdateRecordTemplateClockWidgets is a repeated param struct in UpdateRecordTemplateRequest
+type UpdateRecordTemplateClockWidgets struct {
+	FontType  string `name:"FontType"`
+	FontColor string `name:"FontColor"`
+	Y         string `name:"Y"`
+	ZOrder    string `name:"ZOrder"`
+	X         string `name:"X"`
+	FontSize  string `name:"FontSize"`
 }
 
 // UpdateRecordTemplateWatermarks is a repeated param struct in UpdateRecordTemplateRequest
 type UpdateRecordTemplateWatermarks struct {
-	Url     string `name:"Url"`
 	Alpha   string `name:"Alpha"`
-	Display string `name:"Display"`
-	X       string `name:"X"`
-	Y       string `name:"Y"`
 	Width   string `name:"Width"`
 	Height  string `name:"Height"`
+	Y       string `name:"Y"`
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
 	ZOrder  string `name:"ZOrder"`
+	X       string `name:"X"`
 }
 
 // UpdateRecordTemplateBackgrounds is a repeated param struct in UpdateRecordTemplateRequest
 type UpdateRecordTemplateBackgrounds struct {
-	Url     string `name:"Url"`
-	Display string `name:"Display"`
-	X       string `name:"X"`
-	Y       string `name:"Y"`
 	Width   string `name:"Width"`
 	Height  string `name:"Height"`
+	Y       string `name:"Y"`
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
 	ZOrder  string `name:"ZOrder"`
+	X       string `name:"X"`
 }
 
 // UpdateRecordTemplateResponse is the response struct for api UpdateRecordTemplate
 type UpdateRecordTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateRecordTemplateRequest creates a request to invoke UpdateRecordTemplate API
@@ -125,7 +138,7 @@ func CreateUpdateRecordTemplateRequest() (request *UpdateRecordTemplateRequest) 
 	request = &UpdateRecordTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateRecordTemplate", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateRecordTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

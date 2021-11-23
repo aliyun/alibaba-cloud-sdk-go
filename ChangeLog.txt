@@ -1,3 +1,9 @@
+2021-11-23 Version: v1.61.1340
+- Generated 2018-01-11 for `rtc`.
+- Delete some abandoned interface in SDK.
+- Add AutoLiveStream series interfaces.
+- Add UpdateMPUTask, CreateRecordIndexFile interfaces.
+
 2021-11-23 Version: v1.61.1339
 - Generated 2016-04-08 for `Emr`.
 

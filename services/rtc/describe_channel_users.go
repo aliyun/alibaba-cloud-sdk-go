@@ -80,13 +80,13 @@ type DescribeChannelUsersRequest struct {
 // DescribeChannelUsersResponse is the response struct for api DescribeChannelUsers
 type DescribeChannelUsersResponse struct {
 	*responses.BaseResponse
-	RequestId           string   `json:"RequestId" xml:"RequestId"`
-	Timestamp           int      `json:"Timestamp" xml:"Timestamp"`
-	IsChannelExist      bool     `json:"IsChannelExist" xml:"IsChannelExist"`
-	ChannelProfile      int      `json:"ChannelProfile" xml:"ChannelProfile"`
 	CommTotalNum        int      `json:"CommTotalNum" xml:"CommTotalNum"`
-	InteractiveUserNum  int      `json:"InteractiveUserNum" xml:"InteractiveUserNum"`
+	RequestId           string   `json:"RequestId" xml:"RequestId"`
+	IsChannelExist      bool     `json:"IsChannelExist" xml:"IsChannelExist"`
 	LiveUserNum         int      `json:"LiveUserNum" xml:"LiveUserNum"`
+	Timestamp           int      `json:"Timestamp" xml:"Timestamp"`
+	ChannelProfile      int      `json:"ChannelProfile" xml:"ChannelProfile"`
+	InteractiveUserNum  int      `json:"InteractiveUserNum" xml:"InteractiveUserNum"`
 	UserList            []string `json:"UserList" xml:"UserList"`
 	InteractiveUserList []string `json:"InteractiveUserList" xml:"InteractiveUserList"`
 	LiveUserList        []string `json:"LiveUserList" xml:"LiveUserList"`
@@ -97,7 +97,7 @@ func CreateDescribeChannelUsersRequest() (request *DescribeChannelUsersRequest) 
 	request = &DescribeChannelUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeChannelUsers", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeChannelUsers", "", "")
 	request.Method = requests.POST
 	return
 }

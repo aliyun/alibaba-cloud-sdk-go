@@ -88,7 +88,7 @@ func CreateStopMPUTaskRequest() (request *StopMPUTaskRequest) {
 	request = &StopMPUTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StopMPUTask", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StopMPUTask", "", "")
 	request.Method = requests.POST
 	return
 }

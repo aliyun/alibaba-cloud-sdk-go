@@ -80,8 +80,8 @@ type GetMPUTaskStatusRequest struct {
 // GetMPUTaskStatusResponse is the response struct for api GetMPUTaskStatus
 type GetMPUTaskStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Status    int    `json:"Status" xml:"Status"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetMPUTaskStatusRequest creates a request to invoke GetMPUTaskStatus API
@@ -89,7 +89,7 @@ func CreateGetMPUTaskStatusRequest() (request *GetMPUTaskStatusRequest) {
 	request = &GetMPUTaskStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "GetMPUTaskStatus", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "GetMPUTaskStatus", "", "")
 	request.Method = requests.POST
 	return
 }

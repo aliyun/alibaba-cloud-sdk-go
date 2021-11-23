@@ -17,16 +17,22 @@ package rtc
 
 // Template is a nested struct in rtc response
 type Template struct {
-	CreateTime        string   `json:"CreateTime" xml:"CreateTime"`
-	TemplateId        string   `json:"TemplateId" xml:"TemplateId"`
-	Name              string   `json:"Name" xml:"Name"`
-	MediaEncode       int      `json:"MediaEncode" xml:"MediaEncode"`
-	BackgroundColor   int      `json:"BackgroundColor" xml:"BackgroundColor"`
-	FileSplitInterval int      `json:"FileSplitInterval" xml:"FileSplitInterval"`
-	TaskProfile       string   `json:"TaskProfile" xml:"TaskProfile"`
-	OssBucket         string   `json:"OssBucket" xml:"OssBucket"`
-	OssFilePrefix     string   `json:"OssFilePrefix" xml:"OssFilePrefix"`
-	MnsQueue          string   `json:"MnsQueue" xml:"MnsQueue"`
-	LayoutIds         []int    `json:"LayoutIds" xml:"LayoutIds"`
-	Formats           []string `json:"Formats" xml:"Formats"`
+	MnsQueue           string       `json:"MnsQueue" xml:"MnsQueue"`
+	OssFilePrefix      string       `json:"OssFilePrefix" xml:"OssFilePrefix"`
+	CreateTime         string       `json:"CreateTime" xml:"CreateTime"`
+	OssBucket          string       `json:"OssBucket" xml:"OssBucket"`
+	DelayStopTime      int          `json:"DelayStopTime" xml:"DelayStopTime"`
+	MediaEncode        int          `json:"MediaEncode" xml:"MediaEncode"`
+	FileSplitInterval  int          `json:"FileSplitInterval" xml:"FileSplitInterval"`
+	HttpCallbackUrl    string       `json:"HttpCallbackUrl" xml:"HttpCallbackUrl"`
+	EnableM3u8DateTime bool         `json:"EnableM3u8DateTime" xml:"EnableM3u8DateTime"`
+	BackgroundColor    int          `json:"BackgroundColor" xml:"BackgroundColor"`
+	Name               string       `json:"Name" xml:"Name"`
+	TemplateId         string       `json:"TemplateId" xml:"TemplateId"`
+	TaskProfile        string       `json:"TaskProfile" xml:"TaskProfile"`
+	LayoutIds          []int        `json:"LayoutIds" xml:"LayoutIds"`
+	Formats            []string     `json:"Formats" xml:"Formats"`
+	Backgrounds        []Background `json:"Backgrounds" xml:"Backgrounds"`
+	Watermarks         []Watermark  `json:"Watermarks" xml:"Watermarks"`
+	ClockWidgets       []Watermark  `json:"ClockWidgets" xml:"ClockWidgets"`
 }

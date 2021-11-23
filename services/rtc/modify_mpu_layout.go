@@ -82,13 +82,13 @@ type ModifyMPULayoutRequest struct {
 
 // ModifyMPULayoutPanes is a repeated param struct in ModifyMPULayoutRequest
 type ModifyMPULayoutPanes struct {
-	PaneId    string `name:"PaneId"`
 	MajorPane string `name:"MajorPane"`
-	X         string `name:"X"`
-	Y         string `name:"Y"`
 	Width     string `name:"Width"`
 	Height    string `name:"Height"`
+	Y         string `name:"Y"`
+	PaneId    string `name:"PaneId"`
 	ZOrder    string `name:"ZOrder"`
+	X         string `name:"X"`
 }
 
 // ModifyMPULayoutResponse is the response struct for api ModifyMPULayout
@@ -102,7 +102,7 @@ func CreateModifyMPULayoutRequest() (request *ModifyMPULayoutRequest) {
 	request = &ModifyMPULayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "ModifyMPULayout", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "ModifyMPULayout", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -71,53 +71,65 @@ func (client *Client) AddRecordTemplateWithCallback(request *AddRecordTemplateRe
 // AddRecordTemplateRequest is the request struct for api AddRecordTemplate
 type AddRecordTemplateRequest struct {
 	*requests.RpcRequest
-	Formats           *[]string                       `position:"Query" name:"Formats"  type:"Repeated"`
-	OssFilePrefix     string                          `position:"Query" name:"OssFilePrefix"`
-	BackgroundColor   requests.Integer                `position:"Query" name:"BackgroundColor"`
-	TaskProfile       string                          `position:"Query" name:"TaskProfile"`
-	LayoutIds         *[]string                       `position:"Query" name:"LayoutIds"  type:"Repeated"`
-	ShowLog           string                          `position:"Query" name:"ShowLog"`
-	OssBucket         string                          `position:"Query" name:"OssBucket"`
-	DelayStopTime     requests.Integer                `position:"Query" name:"DelayStopTime"`
-	FileSplitInterval requests.Integer                `position:"Query" name:"FileSplitInterval"`
-	MnsQueue          string                          `position:"Query" name:"MnsQueue"`
-	HttpCallbackUrl   string                          `position:"Query" name:"HttpCallbackUrl"`
-	Watermarks        *[]AddRecordTemplateWatermarks  `position:"Query" name:"Watermarks"  type:"Repeated"`
-	OwnerId           requests.Integer                `position:"Query" name:"OwnerId"`
-	AppId             string                          `position:"Query" name:"AppId"`
-	Backgrounds       *[]AddRecordTemplateBackgrounds `position:"Query" name:"Backgrounds"  type:"Repeated"`
-	Name              string                          `position:"Query" name:"Name"`
-	MediaEncode       requests.Integer                `position:"Query" name:"MediaEncode"`
+	Formats            *[]string                        `position:"Query" name:"Formats"  type:"Repeated"`
+	OssFilePrefix      string                           `position:"Query" name:"OssFilePrefix"`
+	BackgroundColor    requests.Integer                 `position:"Query" name:"BackgroundColor"`
+	TaskProfile        string                           `position:"Query" name:"TaskProfile"`
+	LayoutIds          *[]string                        `position:"Query" name:"LayoutIds"  type:"Repeated"`
+	ClockWidgets       *[]AddRecordTemplateClockWidgets `position:"Query" name:"ClockWidgets"  type:"Repeated"`
+	ShowLog            string                           `position:"Query" name:"ShowLog"`
+	OssBucket          string                           `position:"Query" name:"OssBucket"`
+	DelayStopTime      requests.Integer                 `position:"Query" name:"DelayStopTime"`
+	FileSplitInterval  requests.Integer                 `position:"Query" name:"FileSplitInterval"`
+	MnsQueue           string                           `position:"Query" name:"MnsQueue"`
+	HttpCallbackUrl    string                           `position:"Query" name:"HttpCallbackUrl"`
+	Watermarks         *[]AddRecordTemplateWatermarks   `position:"Query" name:"Watermarks"  type:"Repeated"`
+	OwnerId            requests.Integer                 `position:"Query" name:"OwnerId"`
+	EnableM3u8DateTime requests.Boolean                 `position:"Query" name:"EnableM3u8DateTime"`
+	AppId              string                           `position:"Query" name:"AppId"`
+	Backgrounds        *[]AddRecordTemplateBackgrounds  `position:"Query" name:"Backgrounds"  type:"Repeated"`
+	Name               string                           `position:"Query" name:"Name"`
+	MediaEncode        requests.Integer                 `position:"Query" name:"MediaEncode"`
+}
+
+// AddRecordTemplateClockWidgets is a repeated param struct in AddRecordTemplateRequest
+type AddRecordTemplateClockWidgets struct {
+	FontType  string `name:"FontType"`
+	FontColor string `name:"FontColor"`
+	Y         string `name:"Y"`
+	ZOrder    string `name:"ZOrder"`
+	X         string `name:"X"`
+	FontSize  string `name:"FontSize"`
 }
 
 // AddRecordTemplateWatermarks is a repeated param struct in AddRecordTemplateRequest
 type AddRecordTemplateWatermarks struct {
-	Url     string `name:"Url"`
 	Alpha   string `name:"Alpha"`
-	Display string `name:"Display"`
-	X       string `name:"X"`
-	Y       string `name:"Y"`
 	Width   string `name:"Width"`
 	Height  string `name:"Height"`
+	Y       string `name:"Y"`
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
 	ZOrder  string `name:"ZOrder"`
+	X       string `name:"X"`
 }
 
 // AddRecordTemplateBackgrounds is a repeated param struct in AddRecordTemplateRequest
 type AddRecordTemplateBackgrounds struct {
-	Url     string `name:"Url"`
-	Display string `name:"Display"`
-	X       string `name:"X"`
-	Y       string `name:"Y"`
 	Width   string `name:"Width"`
 	Height  string `name:"Height"`
+	Y       string `name:"Y"`
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
 	ZOrder  string `name:"ZOrder"`
+	X       string `name:"X"`
 }
 
 // AddRecordTemplateResponse is the response struct for api AddRecordTemplate
 type AddRecordTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddRecordTemplateRequest creates a request to invoke AddRecordTemplate API
@@ -125,7 +137,7 @@ func CreateAddRecordTemplateRequest() (request *AddRecordTemplateRequest) {
 	request = &AddRecordTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "AddRecordTemplate", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "AddRecordTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

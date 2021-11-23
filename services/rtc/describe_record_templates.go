@@ -82,9 +82,9 @@ type DescribeRecordTemplatesRequest struct {
 // DescribeRecordTemplatesResponse is the response struct for api DescribeRecordTemplates
 type DescribeRecordTemplatesResponse struct {
 	*responses.BaseResponse
+	TotalPage int64      `json:"TotalPage" xml:"TotalPage"`
 	RequestId string     `json:"RequestId" xml:"RequestId"`
 	TotalNum  int64      `json:"TotalNum" xml:"TotalNum"`
-	TotalPage int64      `json:"TotalPage" xml:"TotalPage"`
 	Templates []Template `json:"Templates" xml:"Templates"`
 }
 
@@ -93,7 +93,7 @@ func CreateDescribeRecordTemplatesRequest() (request *DescribeRecordTemplatesReq
 	request = &DescribeRecordTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRecordTemplates", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRecordTemplates", "", "")
 	request.Method = requests.POST
 	return
 }

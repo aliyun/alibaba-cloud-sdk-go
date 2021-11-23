@@ -89,7 +89,7 @@ func CreateStopChannelUserPublishRequest() (request *StopChannelUserPublishReque
 	request = &StopChannelUserPublishRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StopChannelUserPublish", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StopChannelUserPublish", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,11 +17,11 @@ package rtc
 
 // PanesItem is a nested struct in rtc response
 type PanesItem struct {
-	X         float64 `json:"X" xml:"X"`
 	MajorPane int     `json:"MajorPane" xml:"MajorPane"`
-	Height    float64 `json:"Height" xml:"Height"`
-	PaneId    int     `json:"PaneId" xml:"PaneId"`
 	Width     float64 `json:"Width" xml:"Width"`
+	Height    float64 `json:"Height" xml:"Height"`
 	Y         float64 `json:"Y" xml:"Y"`
+	PaneId    int     `json:"PaneId" xml:"PaneId"`
 	ZOrder    int     `json:"ZOrder" xml:"ZOrder"`
+	X         float64 `json:"X" xml:"X"`
 }

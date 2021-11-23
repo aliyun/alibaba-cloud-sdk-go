@@ -17,8 +17,8 @@ package rtc
 
 // Layout is a nested struct in rtc response
 type Layout struct {
-	Name          string                       `json:"Name" xml:"Name"`
-	AudioMixCount int                          `json:"AudioMixCount" xml:"AudioMixCount"`
-	LayoutId      int64                        `json:"LayoutId" xml:"LayoutId"`
-	Panes         PanesInDescribeMPULayoutInfo `json:"Panes" xml:"Panes"`
+	LayoutId      int64  `json:"LayoutId" xml:"LayoutId"`
+	Name          string `json:"Name" xml:"Name"`
+	AudioMixCount int    `json:"AudioMixCount" xml:"AudioMixCount"`
+	Panes         Panes  `json:"Panes" xml:"Panes"`
 }

@@ -18,6 +18,6 @@ package rtc
 // PropertyItem is a nested struct in rtc response
 type PropertyItem struct {
 	Session string `json:"Session" xml:"Session"`
-	Join    int    `json:"Join" xml:"Join"`
 	Role    int    `json:"Role" xml:"Role"`
+	Join    int    `json:"Join" xml:"Join"`
 }

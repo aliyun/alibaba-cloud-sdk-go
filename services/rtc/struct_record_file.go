@@ -17,12 +17,12 @@ package rtc
 
 // RecordFile is a nested struct in rtc response
 type RecordFile struct {
+	StartTime  string  `json:"StartTime" xml:"StartTime"`
 	CreateTime string  `json:"CreateTime" xml:"CreateTime"`
 	AppId      string  `json:"AppId" xml:"AppId"`
 	ChannelId  string  `json:"ChannelId" xml:"ChannelId"`
-	TaskId     string  `json:"TaskId" xml:"TaskId"`
-	StartTime  string  `json:"StartTime" xml:"StartTime"`
-	StopTime   string  `json:"StopTime" xml:"StopTime"`
 	Url        string  `json:"Url" xml:"Url"`
 	Duration   float64 `json:"Duration" xml:"Duration"`
+	TaskId     string  `json:"TaskId" xml:"TaskId"`
+	StopTime   string  `json:"StopTime" xml:"StopTime"`
 }

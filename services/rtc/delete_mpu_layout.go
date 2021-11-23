@@ -88,7 +88,7 @@ func CreateDeleteMPULayoutRequest() (request *DeleteMPULayoutRequest) {
 	request = &DeleteMPULayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteMPULayout", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteMPULayout", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -81,20 +81,20 @@ type CreateMPULayoutRequest struct {
 
 // CreateMPULayoutPanes is a repeated param struct in CreateMPULayoutRequest
 type CreateMPULayoutPanes struct {
-	PaneId    string `name:"PaneId"`
 	MajorPane string `name:"MajorPane"`
-	X         string `name:"X"`
-	Y         string `name:"Y"`
 	Width     string `name:"Width"`
 	Height    string `name:"Height"`
+	Y         string `name:"Y"`
+	PaneId    string `name:"PaneId"`
 	ZOrder    string `name:"ZOrder"`
+	X         string `name:"X"`
 }
 
 // CreateMPULayoutResponse is the response struct for api CreateMPULayout
 type CreateMPULayoutResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	LayoutId  int64  `json:"LayoutId" xml:"LayoutId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateMPULayoutRequest creates a request to invoke CreateMPULayout API
@@ -102,7 +102,7 @@ func CreateCreateMPULayoutRequest() (request *CreateMPULayoutRequest) {
 	request = &CreateMPULayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "CreateMPULayout", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "CreateMPULayout", "", "")
 	request.Method = requests.POST
 	return
 }

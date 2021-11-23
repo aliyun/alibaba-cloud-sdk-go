@@ -17,12 +17,12 @@ package rtc
 
 // RecordTask is a nested struct in rtc response
 type RecordTask struct {
+	Status       int             `json:"Status" xml:"Status"`
 	CreateTime   string          `json:"CreateTime" xml:"CreateTime"`
 	AppId        string          `json:"AppId" xml:"AppId"`
 	ChannelId    string          `json:"ChannelId" xml:"ChannelId"`
 	TaskId       string          `json:"TaskId" xml:"TaskId"`
 	TemplateId   string          `json:"TemplateId" xml:"TemplateId"`
-	Status       int             `json:"Status" xml:"Status"`
 	SubSpecUsers []string        `json:"SubSpecUsers" xml:"SubSpecUsers"`
 	UserPanes    []UserPanesItem `json:"UserPanes" xml:"UserPanes"`
 }

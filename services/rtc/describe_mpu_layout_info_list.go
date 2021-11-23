@@ -83,9 +83,9 @@ type DescribeMPULayoutInfoListRequest struct {
 // DescribeMPULayoutInfoListResponse is the response struct for api DescribeMPULayoutInfoList
 type DescribeMPULayoutInfoListResponse struct {
 	*responses.BaseResponse
+	TotalPage int64   `json:"TotalPage" xml:"TotalPage"`
 	RequestId string  `json:"RequestId" xml:"RequestId"`
 	TotalNum  int64   `json:"TotalNum" xml:"TotalNum"`
-	TotalPage int64   `json:"TotalPage" xml:"TotalPage"`
 	Layouts   Layouts `json:"Layouts" xml:"Layouts"`
 }
 
@@ -94,7 +94,7 @@ func CreateDescribeMPULayoutInfoListRequest() (request *DescribeMPULayoutInfoLis
 	request = &DescribeMPULayoutInfoListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeMPULayoutInfoList", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeMPULayoutInfoList", "", "")
 	request.Method = requests.POST
 	return
 }

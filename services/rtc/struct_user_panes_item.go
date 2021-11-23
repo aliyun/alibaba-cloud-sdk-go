@@ -18,6 +18,6 @@ package rtc
 // UserPanesItem is a nested struct in rtc response
 type UserPanesItem struct {
 	PaneId int    `json:"PaneId" xml:"PaneId"`
-	UserId string `json:"UserId" xml:"UserId"`
 	Source string `json:"Source" xml:"Source"`
+	UserId string `json:"UserId" xml:"UserId"`
 }

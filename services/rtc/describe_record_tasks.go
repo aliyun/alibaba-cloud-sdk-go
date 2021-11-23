@@ -72,8 +72,8 @@ func (client *Client) DescribeRecordTasksWithCallback(request *DescribeRecordTas
 type DescribeRecordTasksRequest struct {
 	*requests.RpcRequest
 	StartTime string           `position:"Query" name:"StartTime"`
-	TaskIds   *[]string        `position:"Query" name:"TaskIds"  type:"Repeated"`
 	PageNum   requests.Integer `position:"Query" name:"PageNum"`
+	TaskIds   *[]string        `position:"Query" name:"TaskIds"  type:"Repeated"`
 	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 	ShowLog   string           `position:"Query" name:"ShowLog"`
 	EndTime   string           `position:"Query" name:"EndTime"`
@@ -86,9 +86,9 @@ type DescribeRecordTasksRequest struct {
 // DescribeRecordTasksResponse is the response struct for api DescribeRecordTasks
 type DescribeRecordTasksResponse struct {
 	*responses.BaseResponse
+	TotalPage   int64        `json:"TotalPage" xml:"TotalPage"`
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	TotalNum    int64        `json:"TotalNum" xml:"TotalNum"`
-	TotalPage   int64        `json:"TotalPage" xml:"TotalPage"`
 	RecordTasks []RecordTask `json:"RecordTasks" xml:"RecordTasks"`
 }
 
@@ -97,7 +97,7 @@ func CreateDescribeRecordTasksRequest() (request *DescribeRecordTasksRequest) {
 	request = &DescribeRecordTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRecordTasks", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRecordTasks", "", "")
 	request.Method = requests.POST
 	return
 }

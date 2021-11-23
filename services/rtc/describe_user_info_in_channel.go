@@ -83,8 +83,8 @@ type DescribeUserInfoInChannelResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Timestamp      int            `json:"Timestamp" xml:"Timestamp"`
-	IsChannelExist bool           `json:"IsChannelExist" xml:"IsChannelExist"`
 	IsInChannel    bool           `json:"IsInChannel" xml:"IsInChannel"`
+	IsChannelExist bool           `json:"IsChannelExist" xml:"IsChannelExist"`
 	Property       []PropertyItem `json:"Property" xml:"Property"`
 }
 
@@ -93,7 +93,7 @@ func CreateDescribeUserInfoInChannelRequest() (request *DescribeUserInfoInChanne
 	request = &DescribeUserInfoInChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeUserInfoInChannel", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeUserInfoInChannel", "", "")
 	request.Method = requests.POST
 	return
 }

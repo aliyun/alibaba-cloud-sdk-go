@@ -85,9 +85,9 @@ type DescribeRecordFilesRequest struct {
 // DescribeRecordFilesResponse is the response struct for api DescribeRecordFiles
 type DescribeRecordFilesResponse struct {
 	*responses.BaseResponse
+	TotalPage   int64        `json:"TotalPage" xml:"TotalPage"`
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	TotalNum    int64        `json:"TotalNum" xml:"TotalNum"`
-	TotalPage   int64        `json:"TotalPage" xml:"TotalPage"`
 	RecordFiles []RecordFile `json:"RecordFiles" xml:"RecordFiles"`
 }
 
@@ -96,7 +96,7 @@ func CreateDescribeRecordFilesRequest() (request *DescribeRecordFilesRequest) {
 	request = &DescribeRecordFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRecordFiles", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRecordFiles", "", "")
 	request.Method = requests.POST
 	return
 }

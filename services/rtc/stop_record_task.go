@@ -88,7 +88,7 @@ func CreateStopRecordTaskRequest() (request *StopRecordTaskRequest) {
 	request = &StopRecordTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StopRecordTask", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StopRecordTask", "", "")
 	request.Method = requests.POST
 	return
 }

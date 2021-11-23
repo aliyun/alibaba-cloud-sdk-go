@@ -71,45 +71,58 @@ func (client *Client) StartRecordTaskWithCallback(request *StartRecordTaskReques
 // StartRecordTaskRequest is the request struct for api StartRecordTask
 type StartRecordTaskRequest struct {
 	*requests.RpcRequest
-	UserPanes    *[]StartRecordTaskUserPanes `position:"Query" name:"UserPanes"  type:"Repeated"`
-	TaskId       string                      `position:"Query" name:"TaskId"`
-	ShowLog      string                      `position:"Query" name:"ShowLog"`
-	OwnerId      requests.Integer            `position:"Query" name:"OwnerId"`
-	TemplateId   string                      `position:"Query" name:"TemplateId"`
-	SubSpecUsers *[]string                   `position:"Query" name:"SubSpecUsers"  type:"Repeated"`
-	AppId        string                      `position:"Query" name:"AppId"`
-	ChannelId    string                      `position:"Query" name:"ChannelId"`
+	UserPanes                 *[]StartRecordTaskUserPanes `position:"Query" name:"UserPanes"  type:"Repeated"`
+	CropMode                  requests.Integer            `position:"Query" name:"CropMode"`
+	SubSpecCameraUsers        *[]string                   `position:"Query" name:"SubSpecCameraUsers"  type:"Repeated"`
+	SourceType                string                      `position:"Query" name:"SourceType"`
+	TaskProfile               string                      `position:"Query" name:"TaskProfile"`
+	LayoutIds                 *[]string                   `position:"Query" name:"LayoutIds"  type:"Repeated"`
+	TaskId                    string                      `position:"Query" name:"TaskId"`
+	ShowLog                   string                      `position:"Query" name:"ShowLog"`
+	UnsubSpecCameraUsers      *[]string                   `position:"Query" name:"UnsubSpecCameraUsers"  type:"Repeated"`
+	StreamType                requests.Integer            `position:"Query" name:"StreamType"`
+	UnsubSpecAudioUsers       *[]string                   `position:"Query" name:"UnsubSpecAudioUsers"  type:"Repeated"`
+	UnsubSpecShareScreenUsers *[]string                   `position:"Query" name:"UnsubSpecShareScreenUsers"  type:"Repeated"`
+	OwnerId                   requests.Integer            `position:"Query" name:"OwnerId"`
+	TemplateId                string                      `position:"Query" name:"TemplateId"`
+	SubSpecAudioUsers         *[]string                   `position:"Query" name:"SubSpecAudioUsers"  type:"Repeated"`
+	SubSpecShareScreenUsers   *[]string                   `position:"Query" name:"SubSpecShareScreenUsers"  type:"Repeated"`
+	SubSpecUsers              *[]string                   `position:"Query" name:"SubSpecUsers"  type:"Repeated"`
+	AppId                     string                      `position:"Query" name:"AppId"`
+	MediaEncode               requests.Integer            `position:"Query" name:"MediaEncode"`
+	MixMode                   requests.Integer            `position:"Query" name:"MixMode"`
+	ChannelId                 string                      `position:"Query" name:"ChannelId"`
 }
 
 // StartRecordTaskUserPanes is a repeated param struct in StartRecordTaskRequest
 type StartRecordTaskUserPanes struct {
-	PaneId     string                   `name:"PaneId"`
-	UserId     string                   `name:"UserId"`
-	SourceType string                   `name:"SourceType"`
-	Images     *[]StartRecordTaskImages `name:"Images" type:"Repeated"`
-	Texts      *[]StartRecordTaskTexts  `name:"Texts" type:"Repeated"`
+	Images     *[]StartRecordTaskUserPanesImages `name:"Images" type:"Repeated"`
+	UserId     string                            `name:"UserId"`
+	Texts      *[]StartRecordTaskUserPanesTexts  `name:"Texts" type:"Repeated"`
+	SourceType string                            `name:"SourceType"`
+	PaneId     string                            `name:"PaneId"`
 }
 
-// StartRecordTaskImages is a repeated param struct in StartRecordTaskRequest
-type StartRecordTaskImages struct {
-	Url     string `name:"Url"`
-	Display string `name:"Display"`
-	X       string `name:"X"`
-	Y       string `name:"Y"`
+// StartRecordTaskUserPanesImages is a repeated param struct in StartRecordTaskRequest
+type StartRecordTaskUserPanesImages struct {
 	Width   string `name:"Width"`
 	Height  string `name:"Height"`
+	Y       string `name:"Y"`
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
 	ZOrder  string `name:"ZOrder"`
+	X       string `name:"X"`
 }
 
-// StartRecordTaskTexts is a repeated param struct in StartRecordTaskRequest
-type StartRecordTaskTexts struct {
-	Text      string `name:"Text"`
-	X         string `name:"X"`
-	Y         string `name:"Y"`
+// StartRecordTaskUserPanesTexts is a repeated param struct in StartRecordTaskRequest
+type StartRecordTaskUserPanesTexts struct {
 	FontType  string `name:"FontType"`
-	FontSize  string `name:"FontSize"`
 	FontColor string `name:"FontColor"`
+	Y         string `name:"Y"`
+	Text      string `name:"Text"`
 	ZOrder    string `name:"ZOrder"`
+	X         string `name:"X"`
+	FontSize  string `name:"FontSize"`
 }
 
 // StartRecordTaskResponse is the response struct for api StartRecordTask
@@ -123,7 +136,7 @@ func CreateStartRecordTaskRequest() (request *StartRecordTaskRequest) {
 	request = &StartRecordTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StartRecordTask", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StartRecordTask", "", "")
 	request.Method = requests.POST
 	return
 }

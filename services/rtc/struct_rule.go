@@ -17,14 +17,13 @@ package rtc
 
 // Rule is a nested struct in rtc response
 type Rule struct {
-	RuleId         int64    `json:"RuleId" xml:"RuleId"`
-	ChannelPrefix  string   `json:"ChannelPrefix" xml:"ChannelPrefix"`
-	MediaEncode    int      `json:"MediaEncode" xml:"MediaEncode"`
-	BackgroudColor int      `json:"BackgroudColor" xml:"BackgroudColor"`
-	CropMode       int      `json:"CropMode" xml:"CropMode"`
-	TaskProfile    string   `json:"TaskProfile" xml:"TaskProfile"`
-	PlayDomain     string   `json:"PlayDomain" xml:"PlayDomain"`
-	CallBack       string   `json:"CallBack" xml:"CallBack"`
-	IsEnable       int      `json:"IsEnable" xml:"IsEnable"`
-	LayoutIds      []string `json:"LayoutIds" xml:"LayoutIds"`
+	Status            string   `json:"Status" xml:"Status"`
+	MediaEncode       int      `json:"MediaEncode" xml:"MediaEncode"`
+	PlayDomain        string   `json:"PlayDomain" xml:"PlayDomain"`
+	CallBack          string   `json:"CallBack" xml:"CallBack"`
+	CreateTime        string   `json:"CreateTime" xml:"CreateTime"`
+	RuleId            int64    `json:"RuleId" xml:"RuleId"`
+	RuleName          string   `json:"RuleName" xml:"RuleName"`
+	ChannelIds        []string `json:"ChannelIds" xml:"ChannelIds"`
+	ChannelIdPrefixes []string `json:"ChannelIdPrefixes" xml:"ChannelIdPrefixes"`
 }

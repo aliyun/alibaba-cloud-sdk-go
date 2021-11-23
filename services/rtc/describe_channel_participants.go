@@ -83,10 +83,10 @@ type DescribeChannelParticipantsRequest struct {
 // DescribeChannelParticipantsResponse is the response struct for api DescribeChannelParticipants
 type DescribeChannelParticipantsResponse struct {
 	*responses.BaseResponse
+	TotalPage int                                   `json:"TotalPage" xml:"TotalPage"`
 	RequestId string                                `json:"RequestId" xml:"RequestId"`
 	Timestamp int                                   `json:"Timestamp" xml:"Timestamp"`
 	TotalNum  int                                   `json:"TotalNum" xml:"TotalNum"`
-	TotalPage int                                   `json:"TotalPage" xml:"TotalPage"`
 	UserList  UserListInDescribeChannelParticipants `json:"UserList" xml:"UserList"`
 }
 
@@ -95,7 +95,7 @@ func CreateDescribeChannelParticipantsRequest() (request *DescribeChannelPartici
 	request = &DescribeChannelParticipantsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeChannelParticipants", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeChannelParticipants", "", "")
 	request.Method = requests.POST
 	return
 }

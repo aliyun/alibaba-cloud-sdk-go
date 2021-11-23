@@ -71,45 +71,52 @@ func (client *Client) UpdateRecordTaskWithCallback(request *UpdateRecordTaskRequ
 // UpdateRecordTaskRequest is the request struct for api UpdateRecordTask
 type UpdateRecordTaskRequest struct {
 	*requests.RpcRequest
-	UserPanes    *[]UpdateRecordTaskUserPanes `position:"Query" name:"UserPanes"  type:"Repeated"`
-	TaskId       string                       `position:"Query" name:"TaskId"`
-	ShowLog      string                       `position:"Query" name:"ShowLog"`
-	OwnerId      requests.Integer             `position:"Query" name:"OwnerId"`
-	TemplateId   string                       `position:"Query" name:"TemplateId"`
-	SubSpecUsers *[]string                    `position:"Query" name:"SubSpecUsers"  type:"Repeated"`
-	AppId        string                       `position:"Query" name:"AppId"`
-	ChannelId    string                       `position:"Query" name:"ChannelId"`
+	UserPanes                 *[]UpdateRecordTaskUserPanes `position:"Query" name:"UserPanes"  type:"Repeated"`
+	SubSpecCameraUsers        *[]string                    `position:"Query" name:"SubSpecCameraUsers"  type:"Repeated"`
+	LayoutIds                 *[]string                    `position:"Query" name:"LayoutIds"  type:"Repeated"`
+	TaskId                    string                       `position:"Query" name:"TaskId"`
+	ShowLog                   string                       `position:"Query" name:"ShowLog"`
+	UnsubSpecCameraUsers      *[]string                    `position:"Query" name:"UnsubSpecCameraUsers"  type:"Repeated"`
+	UnsubSpecAudioUsers       *[]string                    `position:"Query" name:"UnsubSpecAudioUsers"  type:"Repeated"`
+	UnsubSpecShareScreenUsers *[]string                    `position:"Query" name:"UnsubSpecShareScreenUsers"  type:"Repeated"`
+	OwnerId                   requests.Integer             `position:"Query" name:"OwnerId"`
+	TemplateId                string                       `position:"Query" name:"TemplateId"`
+	SubSpecAudioUsers         *[]string                    `position:"Query" name:"SubSpecAudioUsers"  type:"Repeated"`
+	SubSpecShareScreenUsers   *[]string                    `position:"Query" name:"SubSpecShareScreenUsers"  type:"Repeated"`
+	SubSpecUsers              *[]string                    `position:"Query" name:"SubSpecUsers"  type:"Repeated"`
+	AppId                     string                       `position:"Query" name:"AppId"`
+	ChannelId                 string                       `position:"Query" name:"ChannelId"`
 }
 
 // UpdateRecordTaskUserPanes is a repeated param struct in UpdateRecordTaskRequest
 type UpdateRecordTaskUserPanes struct {
-	PaneId     string                    `name:"PaneId"`
-	UserId     string                    `name:"UserId"`
-	SourceType string                    `name:"SourceType"`
-	Images     *[]UpdateRecordTaskImages `name:"Images" type:"Repeated"`
-	Texts      *[]UpdateRecordTaskTexts  `name:"Texts" type:"Repeated"`
+	Images     *[]UpdateRecordTaskUserPanesImages `name:"Images" type:"Repeated"`
+	UserId     string                             `name:"UserId"`
+	Texts      *[]UpdateRecordTaskUserPanesTexts  `name:"Texts" type:"Repeated"`
+	SourceType string                             `name:"SourceType"`
+	PaneId     string                             `name:"PaneId"`
 }
 
-// UpdateRecordTaskImages is a repeated param struct in UpdateRecordTaskRequest
-type UpdateRecordTaskImages struct {
-	Url     string `name:"Url"`
-	Display string `name:"Display"`
-	X       string `name:"X"`
-	Y       string `name:"Y"`
+// UpdateRecordTaskUserPanesImages is a repeated param struct in UpdateRecordTaskRequest
+type UpdateRecordTaskUserPanesImages struct {
 	Width   string `name:"Width"`
 	Height  string `name:"Height"`
+	Y       string `name:"Y"`
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
 	ZOrder  string `name:"ZOrder"`
+	X       string `name:"X"`
 }
 
-// UpdateRecordTaskTexts is a repeated param struct in UpdateRecordTaskRequest
-type UpdateRecordTaskTexts struct {
-	Text      string `name:"Text"`
-	X         string `name:"X"`
-	Y         string `name:"Y"`
+// UpdateRecordTaskUserPanesTexts is a repeated param struct in UpdateRecordTaskRequest
+type UpdateRecordTaskUserPanesTexts struct {
 	FontType  string `name:"FontType"`
-	FontSize  string `name:"FontSize"`
 	FontColor string `name:"FontColor"`
+	Y         string `name:"Y"`
+	Text      string `name:"Text"`
 	ZOrder    string `name:"ZOrder"`
+	X         string `name:"X"`
+	FontSize  string `name:"FontSize"`
 }
 
 // UpdateRecordTaskResponse is the response struct for api UpdateRecordTask
@@ -123,7 +130,7 @@ func CreateUpdateRecordTaskRequest() (request *UpdateRecordTaskRequest) {
 	request = &UpdateRecordTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateRecordTask", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateRecordTask", "", "")
 	request.Method = requests.POST
 	return
 }
