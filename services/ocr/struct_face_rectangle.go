@@ -18,6 +18,6 @@ package ocr
 // FaceRectangle is a nested struct in ocr response
 type FaceRectangle struct {
 	Angle  float64 `json:"Angle" xml:"Angle"`
-	Center Center  `json:"Center" xml:"Center"`
 	Size   Size    `json:"Size" xml:"Size"`
+	Center Center  `json:"Center" xml:"Center"`
 }

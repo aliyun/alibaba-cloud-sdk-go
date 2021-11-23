@@ -17,6 +17,6 @@ package ocr
 
 // CardArea is a nested struct in ocr response
 type CardArea struct {
-	X float64 `json:"X" xml:"X"`
 	Y float64 `json:"Y" xml:"Y"`
+	X float64 `json:"X" xml:"X"`
 }

@@ -19,8 +19,8 @@ package ocr
 type Result struct {
 	Rate           float64        `json:"Rate" xml:"Rate"`
 	Text           string         `json:"Text" xml:"Text"`
-	Label          string         `json:"Label" xml:"Label"`
 	Suggestion     string         `json:"Suggestion" xml:"Suggestion"`
+	Label          string         `json:"Label" xml:"Label"`
 	Probability    float64        `json:"Probability" xml:"Probability"`
 	QrCodesData    []string       `json:"QrCodesData" xml:"QrCodesData"`
 	TextRectangles TextRectangles `json:"TextRectangles" xml:"TextRectangles"`

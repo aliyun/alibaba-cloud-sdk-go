@@ -18,7 +18,7 @@ package ocr
 // Emblem is a nested struct in ocr response
 type Emblem struct {
 	Top    int `json:"Top" xml:"Top"`
-	Left   int `json:"Left" xml:"Left"`
-	Height int `json:"Height" xml:"Height"`
 	Width  int `json:"Width" xml:"Width"`
+	Height int `json:"Height" xml:"Height"`
+	Left   int `json:"Left" xml:"Left"`
 }

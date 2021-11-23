@@ -1,3 +1,7 @@
+2021-11-23 Version: v1.61.1338
+- Generated 2019-12-30 for `ocr`.
+- Update RecognizeCharacter.
+
 2021-11-23 Version: v1.61.1337
 - Generated 2017-12-14 for `BssOpenApi`.
 - Add Create Savingplan Instance API.

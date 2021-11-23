@@ -17,23 +17,23 @@ package ocr
 
 // Box is a nested struct in ocr response
 type Box struct {
-	InvoiceCodes      []float64 `json:"InvoiceCodes" xml:"InvoiceCodes"`
-	InvoiceNoes       []float64 `json:"InvoiceNoes" xml:"InvoiceNoes"`
-	InvoiceDates      []float64 `json:"InvoiceDates" xml:"InvoiceDates"`
-	InvoiceFakeCodes  []float64 `json:"InvoiceFakeCodes" xml:"InvoiceFakeCodes"`
-	PayerNames        []float64 `json:"PayerNames" xml:"PayerNames"`
 	PayerRegisterNoes []float64 `json:"PayerRegisterNoes" xml:"PayerRegisterNoes"`
-	PayerAddresses    []float64 `json:"PayerAddresses" xml:"PayerAddresses"`
-	PayerBankNames    []float64 `json:"PayerBankNames" xml:"PayerBankNames"`
-	WithoutTaxAmounts []float64 `json:"WithoutTaxAmounts" xml:"WithoutTaxAmounts"`
-	TaxAmounts        []float64 `json:"TaxAmounts" xml:"TaxAmounts"`
-	SumAmounts        []float64 `json:"SumAmounts" xml:"SumAmounts"`
-	InvoiceAmounts    []float64 `json:"InvoiceAmounts" xml:"InvoiceAmounts"`
-	PayeeNames        []float64 `json:"PayeeNames" xml:"PayeeNames"`
-	PayeeRegisterNoes []float64 `json:"PayeeRegisterNoes" xml:"PayeeRegisterNoes"`
 	PayeeAddresses    []float64 `json:"PayeeAddresses" xml:"PayeeAddresses"`
 	PayeeBankNames    []float64 `json:"PayeeBankNames" xml:"PayeeBankNames"`
-	Payees            []float64 `json:"Payees" xml:"Payees"`
 	Checkers          []float64 `json:"Checkers" xml:"Checkers"`
+	TaxAmounts        []float64 `json:"TaxAmounts" xml:"TaxAmounts"`
+	SumAmounts        []float64 `json:"SumAmounts" xml:"SumAmounts"`
 	Clerks            []float64 `json:"Clerks" xml:"Clerks"`
+	InvoiceNoes       []float64 `json:"InvoiceNoes" xml:"InvoiceNoes"`
+	InvoiceDates      []float64 `json:"InvoiceDates" xml:"InvoiceDates"`
+	InvoiceCodes      []float64 `json:"InvoiceCodes" xml:"InvoiceCodes"`
+	InvoiceFakeCodes  []float64 `json:"InvoiceFakeCodes" xml:"InvoiceFakeCodes"`
+	PayerNames        []float64 `json:"PayerNames" xml:"PayerNames"`
+	PayerBankNames    []float64 `json:"PayerBankNames" xml:"PayerBankNames"`
+	Payees            []float64 `json:"Payees" xml:"Payees"`
+	PayeeNames        []float64 `json:"PayeeNames" xml:"PayeeNames"`
+	InvoiceAmounts    []float64 `json:"InvoiceAmounts" xml:"InvoiceAmounts"`
+	WithoutTaxAmounts []float64 `json:"WithoutTaxAmounts" xml:"WithoutTaxAmounts"`
+	PayerAddresses    []float64 `json:"PayerAddresses" xml:"PayerAddresses"`
+	PayeeRegisterNoes []float64 `json:"PayeeRegisterNoes" xml:"PayeeRegisterNoes"`
 }

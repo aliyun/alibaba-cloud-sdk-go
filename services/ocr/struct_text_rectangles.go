@@ -18,8 +18,8 @@ package ocr
 // TextRectangles is a nested struct in ocr response
 type TextRectangles struct {
 	Angle  int `json:"Angle" xml:"Angle"`
-	Left   int `json:"Left" xml:"Left"`
-	Top    int `json:"Top" xml:"Top"`
 	Width  int `json:"Width" xml:"Width"`
 	Height int `json:"Height" xml:"Height"`
+	Top    int `json:"Top" xml:"Top"`
+	Left   int `json:"Left" xml:"Left"`
 }

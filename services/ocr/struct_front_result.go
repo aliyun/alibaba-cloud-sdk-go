@@ -17,13 +17,13 @@ package ocr
 
 // FrontResult is a nested struct in ocr response
 type FrontResult struct {
-	Address          string            `json:"Address" xml:"Address"`
-	Name             string            `json:"Name" xml:"Name"`
-	Nationality      string            `json:"Nationality" xml:"Nationality"`
-	IDNumber         string            `json:"IDNumber" xml:"IDNumber"`
-	Gender           string            `json:"Gender" xml:"Gender"`
 	BirthDate        string            `json:"BirthDate" xml:"BirthDate"`
+	Gender           string            `json:"Gender" xml:"Gender"`
+	Address          string            `json:"Address" xml:"Address"`
+	Nationality      string            `json:"Nationality" xml:"Nationality"`
+	Name             string            `json:"Name" xml:"Name"`
+	IDNumber         string            `json:"IDNumber" xml:"IDNumber"`
 	FaceRectangle    FaceRectangle     `json:"FaceRectangle" xml:"FaceRectangle"`
-	CardAreas        []CardArea        `json:"CardAreas" xml:"CardAreas"`
 	FaceRectVertices []FaceRectVertice `json:"FaceRectVertices" xml:"FaceRectVertices"`
+	CardAreas        []CardArea        `json:"CardAreas" xml:"CardAreas"`
 }

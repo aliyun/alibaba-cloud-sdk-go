@@ -71,10 +71,13 @@ func (client *Client) RecognizeCharacterWithCallback(request *RecognizeCharacter
 // RecognizeCharacterRequest is the request struct for api RecognizeCharacter
 type RecognizeCharacterRequest struct {
 	*requests.RpcRequest
-	ImageType         requests.Integer `position:"Body" name:"ImageType"`
-	OutputProbability requests.Boolean `position:"Body" name:"OutputProbability"`
-	ImageURL          string           `position:"Body" name:"ImageURL"`
-	MinHeight         requests.Integer `position:"Body" name:"MinHeight"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	MinHeight          requests.Integer `position:"Body" name:"MinHeight"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	ImageType          requests.Integer `position:"Body" name:"ImageType"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	OutputProbability  requests.Boolean `position:"Body" name:"OutputProbability"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // RecognizeCharacterResponse is the response struct for api RecognizeCharacter
