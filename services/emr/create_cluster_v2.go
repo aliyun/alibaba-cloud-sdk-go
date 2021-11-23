@@ -102,13 +102,16 @@ type CreateClusterV2Request struct {
 	ZoneId                 string                              `position:"Query" name:"ZoneId"`
 	UseCustomHiveMetaDB    requests.Boolean                    `position:"Query" name:"UseCustomHiveMetaDB"`
 	InitCustomHiveMetaDB   requests.Boolean                    `position:"Query" name:"InitCustomHiveMetaDB"`
+	ClientToken            string                              `position:"Query" name:"ClientToken"`
 	IoOptimized            requests.Boolean                    `position:"Query" name:"IoOptimized"`
 	SecurityGroupId        string                              `position:"Query" name:"SecurityGroupId"`
 	EasEnable              requests.Boolean                    `position:"Query" name:"EasEnable"`
 	DepositType            string                              `position:"Query" name:"DepositType"`
+	DataDiskKMSKeyId       string                              `position:"Query" name:"DataDiskKMSKeyId"`
 	UseLocalMetaDb         requests.Boolean                    `position:"Query" name:"UseLocalMetaDb"`
 	UserInfo               *[]CreateClusterV2UserInfo          `position:"Query" name:"UserInfo"  type:"Repeated"`
 	UserDefinedEmrEcsRole  string                              `position:"Query" name:"UserDefinedEmrEcsRole"`
+	DataDiskEncrypted      requests.Boolean                    `position:"Query" name:"DataDiskEncrypted"`
 	WhiteListType          string                              `position:"Query" name:"WhiteListType"`
 	RelatedClusterId       string                              `position:"Query" name:"RelatedClusterId"`
 	VpcId                  string                              `position:"Query" name:"VpcId"`
@@ -159,24 +162,26 @@ type CreateClusterV2PromotionInfo struct {
 
 // CreateClusterV2HostGroup is a repeated param struct in CreateClusterV2Request
 type CreateClusterV2HostGroup struct {
-	Period          string `name:"Period"`
-	SysDiskCapacity string `name:"SysDiskCapacity"`
-	DiskCapacity    string `name:"DiskCapacity"`
-	SysDiskType     string `name:"SysDiskType"`
-	ClusterId       string `name:"ClusterId"`
-	DiskType        string `name:"DiskType"`
-	HostGroupName   string `name:"HostGroupName"`
-	VSwitchId       string `name:"VSwitchId"`
-	DiskCount       string `name:"DiskCount"`
-	AutoRenew       string `name:"AutoRenew"`
-	GpuDriver       string `name:"GpuDriver"`
-	HostGroupId     string `name:"HostGroupId"`
-	NodeCount       string `name:"NodeCount"`
-	InstanceType    string `name:"InstanceType"`
-	Comment         string `name:"Comment"`
-	ChargeType      string `name:"ChargeType"`
-	CreateType      string `name:"CreateType"`
-	HostGroupType   string `name:"HostGroupType"`
+	Period                          string `name:"Period"`
+	SysDiskCapacity                 string `name:"SysDiskCapacity"`
+	PrivatePoolOptionsId            string `name:"PrivatePoolOptionsId"`
+	DiskCapacity                    string `name:"DiskCapacity"`
+	SysDiskType                     string `name:"SysDiskType"`
+	ClusterId                       string `name:"ClusterId"`
+	DiskType                        string `name:"DiskType"`
+	HostGroupName                   string `name:"HostGroupName"`
+	VSwitchId                       string `name:"VSwitchId"`
+	DiskCount                       string `name:"DiskCount"`
+	AutoRenew                       string `name:"AutoRenew"`
+	GpuDriver                       string `name:"GpuDriver"`
+	HostGroupId                     string `name:"HostGroupId"`
+	NodeCount                       string `name:"NodeCount"`
+	InstanceType                    string `name:"InstanceType"`
+	Comment                         string `name:"Comment"`
+	ChargeType                      string `name:"ChargeType"`
+	CreateType                      string `name:"CreateType"`
+	HostGroupType                   string `name:"HostGroupType"`
+	PrivatePoolOptionsMatchCriteria string `name:"PrivatePoolOptionsMatchCriteria"`
 }
 
 // CreateClusterV2ServiceInfo is a repeated param struct in CreateClusterV2Request

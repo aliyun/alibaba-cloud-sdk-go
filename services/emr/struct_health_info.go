@@ -26,5 +26,13 @@ type HealthInfo struct {
 	TotalNum              int              `json:"TotalNum" xml:"TotalNum"`
 	AgentHeartBeatLostNum int              `json:"AgentHeartBeatLostNum" xml:"AgentHeartBeatLostNum"`
 	CreatedTime           int64            `json:"CreatedTime" xml:"CreatedTime"`
+	HealthStatus          string           `json:"HealthStatus" xml:"HealthStatus"`
+	StoppedHealthNum      int              `json:"StoppedHealthNum" xml:"StoppedHealthNum"`
+	GoodHealthNum         int              `json:"GoodHealthNum" xml:"GoodHealthNum"`
+	WarningHealthNum      int              `json:"WarningHealthNum" xml:"WarningHealthNum"`
+	BadHealthNum          int              `json:"BadHealthNum" xml:"BadHealthNum"`
+	UnknownHealthNum      int              `json:"UnknownHealthNum" xml:"UnknownHealthNum"`
+	DisabledHealthNum     int              `json:"DisabledHealthNum" xml:"DisabledHealthNum"`
+	NoneHealthNum         int              `json:"NoneHealthNum" xml:"NoneHealthNum"`
 	HealthDetailList      HealthDetailList `json:"HealthDetailList" xml:"HealthDetailList"`
 }

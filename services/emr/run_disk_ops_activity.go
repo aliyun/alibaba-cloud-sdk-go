@@ -71,12 +71,13 @@ func (client *Client) RunDiskOpsActivityWithCallback(request *RunDiskOpsActivity
 // RunDiskOpsActivityRequest is the request struct for api RunDiskOpsActivity
 type RunDiskOpsActivityRequest struct {
 	*requests.RpcRequest
+	EventId         string           `position:"Query" name:"EventId"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CurrentStage    string           `position:"Query" name:"CurrentStage"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	DiskId          string           `position:"Query" name:"DiskId"`
+	CurrentState    string           `position:"Query" name:"CurrentState"`
 }
 
 // RunDiskOpsActivityResponse is the response struct for api RunDiskOpsActivity

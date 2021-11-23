@@ -28,6 +28,7 @@ type DiskOpsEventInfo struct {
 	DiskId               string `json:"DiskId" xml:"DiskId"`
 	DiskDevice           string `json:"DiskDevice" xml:"DiskDevice"`
 	DiskMountPoint       string `json:"DiskMountPoint" xml:"DiskMountPoint"`
+	EventId              string `json:"EventId" xml:"EventId"`
 	EventType            string `json:"EventType" xml:"EventType"`
 	EventTriggerTime     int64  `json:"EventTriggerTime" xml:"EventTriggerTime"`
 	CurrentActivity      string `json:"CurrentActivity" xml:"CurrentActivity"`

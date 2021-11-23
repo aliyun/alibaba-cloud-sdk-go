@@ -29,5 +29,6 @@ type ClusterService struct {
 	AbnormalNum        int                                   `json:"AbnormalNum" xml:"AbnormalNum"`
 	StoppedNum         int                                   `json:"StoppedNum" xml:"StoppedNum"`
 	NeedRestartNum     int                                   `json:"NeedRestartNum" xml:"NeedRestartNum"`
+	State              string                                `json:"State" xml:"State"`
 	ServiceActionList  ServiceActionListInListClusterService `json:"ServiceActionList" xml:"ServiceActionList"`
 }

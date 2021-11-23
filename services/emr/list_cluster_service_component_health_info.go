@@ -72,6 +72,7 @@ func (client *Client) ListClusterServiceComponentHealthInfoWithCallback(request 
 type ListClusterServiceComponentHealthInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ComponentName   string           `position:"Query" name:"ComponentName"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	ServiceName     string           `position:"Query" name:"ServiceName"`
 }

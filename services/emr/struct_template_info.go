@@ -19,6 +19,7 @@ package emr
 type TemplateInfo struct {
 	UserDefinedEmrEcsRole  string                                       `json:"UserDefinedEmrEcsRole" xml:"UserDefinedEmrEcsRole"`
 	InitCustomHiveMetaDb   bool                                         `json:"InitCustomHiveMetaDb" xml:"InitCustomHiveMetaDb"`
+	DataDiskKMSKeyId       string                                       `json:"DataDiskKMSKeyId" xml:"DataDiskKMSKeyId"`
 	TemplateName           string                                       `json:"TemplateName" xml:"TemplateName"`
 	SecurityGroupId        string                                       `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	MachineType            string                                       `json:"MachineType" xml:"MachineType"`
@@ -35,6 +36,7 @@ type TemplateInfo struct {
 	VpcId                  string                                       `json:"VpcId" xml:"VpcId"`
 	SecurityGroupName      string                                       `json:"SecurityGroupName" xml:"SecurityGroupName"`
 	AllowNotebook          bool                                         `json:"AllowNotebook" xml:"AllowNotebook"`
+	DataDiskEncrypted      bool                                         `json:"DataDiskEncrypted" xml:"DataDiskEncrypted"`
 	NetType                string                                       `json:"NetType" xml:"NetType"`
 	ClusterType            string                                       `json:"ClusterType" xml:"ClusterType"`
 	MasterNodeTotal        int                                          `json:"MasterNodeTotal" xml:"MasterNodeTotal"`

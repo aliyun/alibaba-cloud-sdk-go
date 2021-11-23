@@ -71,12 +71,13 @@ func (client *Client) DescribeDiskOpsActivityWithCallback(request *DescribeDiskO
 // DescribeDiskOpsActivityRequest is the request struct for api DescribeDiskOpsActivity
 type DescribeDiskOpsActivityRequest struct {
 	*requests.RpcRequest
+	EventId         string           `position:"Query" name:"EventId"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CurrentStage    string           `position:"Query" name:"CurrentStage"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	DiskId          string           `position:"Query" name:"DiskId"`
+	CurrentState    string           `position:"Query" name:"CurrentState"`
 }
 
 // DescribeDiskOpsActivityResponse is the response struct for api DescribeDiskOpsActivity

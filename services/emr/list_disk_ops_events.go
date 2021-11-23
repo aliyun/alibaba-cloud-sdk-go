@@ -75,7 +75,6 @@ type ListDiskOpsEventsRequest struct {
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
-	UserId          string           `position:"Query" name:"UserId"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }

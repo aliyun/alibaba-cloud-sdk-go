@@ -76,6 +76,7 @@ type ResizeClusterV2Request struct {
 	ClusterId         string                              `position:"Query" name:"ClusterId"`
 	VswitchId         string                              `position:"Query" name:"VswitchId"`
 	HostComponentInfo *[]ResizeClusterV2HostComponentInfo `position:"Query" name:"HostComponentInfo"  type:"Repeated"`
+	ClickhouseConf    string                              `position:"Query" name:"ClickhouseConf"`
 	HostGroup         *[]ResizeClusterV2HostGroup         `position:"Query" name:"HostGroup"  type:"Repeated"`
 	PromotionInfo     *[]ResizeClusterV2PromotionInfo     `position:"Query" name:"PromotionInfo"  type:"Repeated"`
 }
@@ -89,25 +90,27 @@ type ResizeClusterV2HostComponentInfo struct {
 
 // ResizeClusterV2HostGroup is a repeated param struct in ResizeClusterV2Request
 type ResizeClusterV2HostGroup struct {
-	Period          string `name:"Period"`
-	SysDiskCapacity string `name:"SysDiskCapacity"`
-	HostKeyPairName string `name:"HostKeyPairName"`
-	DiskCapacity    string `name:"DiskCapacity"`
-	SysDiskType     string `name:"SysDiskType"`
-	ClusterId       string `name:"ClusterId"`
-	DiskType        string `name:"DiskType"`
-	HostGroupName   string `name:"HostGroupName"`
-	VswitchId       string `name:"VswitchId"`
-	DiskCount       string `name:"DiskCount"`
-	AutoRenew       string `name:"AutoRenew"`
-	HostGroupId     string `name:"HostGroupId"`
-	NodeCount       string `name:"NodeCount"`
-	InstanceType    string `name:"InstanceType"`
-	Comment         string `name:"Comment"`
-	ChargeType      string `name:"ChargeType"`
-	CreateType      string `name:"CreateType"`
-	HostPassword    string `name:"HostPassword"`
-	HostGroupType   string `name:"HostGroupType"`
+	Period                          string `name:"Period"`
+	SysDiskCapacity                 string `name:"SysDiskCapacity"`
+	HostKeyPairName                 string `name:"HostKeyPairName"`
+	PrivatePoolOptionsId            string `name:"PrivatePoolOptionsId"`
+	DiskCapacity                    string `name:"DiskCapacity"`
+	SysDiskType                     string `name:"SysDiskType"`
+	ClusterId                       string `name:"ClusterId"`
+	DiskType                        string `name:"DiskType"`
+	HostGroupName                   string `name:"HostGroupName"`
+	VswitchId                       string `name:"VswitchId"`
+	DiskCount                       string `name:"DiskCount"`
+	AutoRenew                       string `name:"AutoRenew"`
+	HostGroupId                     string `name:"HostGroupId"`
+	NodeCount                       string `name:"NodeCount"`
+	InstanceType                    string `name:"InstanceType"`
+	Comment                         string `name:"Comment"`
+	ChargeType                      string `name:"ChargeType"`
+	CreateType                      string `name:"CreateType"`
+	HostPassword                    string `name:"HostPassword"`
+	HostGroupType                   string `name:"HostGroupType"`
+	PrivatePoolOptionsMatchCriteria string `name:"PrivatePoolOptionsMatchCriteria"`
 }
 
 // ResizeClusterV2PromotionInfo is a repeated param struct in ResizeClusterV2Request

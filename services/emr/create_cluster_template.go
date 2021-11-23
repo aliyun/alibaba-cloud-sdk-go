@@ -96,13 +96,16 @@ type CreateClusterTemplateRequest struct {
 	ZoneId                 string                                  `position:"Query" name:"ZoneId"`
 	UseCustomHiveMetaDb    requests.Boolean                        `position:"Query" name:"UseCustomHiveMetaDb"`
 	InitCustomHiveMetaDb   requests.Boolean                        `position:"Query" name:"InitCustomHiveMetaDb"`
+	ClientToken            string                                  `position:"Query" name:"ClientToken"`
 	IoOptimized            requests.Boolean                        `position:"Query" name:"IoOptimized"`
 	SecurityGroupId        string                                  `position:"Query" name:"SecurityGroupId"`
 	EasEnable              requests.Boolean                        `position:"Query" name:"EasEnable"`
 	DepositType            string                                  `position:"Query" name:"DepositType"`
+	DataDiskKMSKeyId       string                                  `position:"Query" name:"DataDiskKMSKeyId"`
 	UseLocalMetaDb         requests.Boolean                        `position:"Query" name:"UseLocalMetaDb"`
 	TemplateName           string                                  `position:"Query" name:"TemplateName"`
 	UserDefinedEmrEcsRole  string                                  `position:"Query" name:"UserDefinedEmrEcsRole"`
+	DataDiskEncrypted      requests.Boolean                        `position:"Query" name:"DataDiskEncrypted"`
 	VpcId                  string                                  `position:"Query" name:"VpcId"`
 	HostGroup              *[]CreateClusterTemplateHostGroup       `position:"Query" name:"HostGroup"  type:"Repeated"`
 	Config                 *[]CreateClusterTemplateConfig          `position:"Query" name:"Config"  type:"Repeated"`
@@ -127,24 +130,26 @@ type CreateClusterTemplateTag struct {
 
 // CreateClusterTemplateHostGroup is a repeated param struct in CreateClusterTemplateRequest
 type CreateClusterTemplateHostGroup struct {
-	Period             string `name:"Period"`
-	SysDiskCapacity    string `name:"SysDiskCapacity"`
-	DiskCapacity       string `name:"DiskCapacity"`
-	SysDiskType        string `name:"SysDiskType"`
-	ClusterId          string `name:"ClusterId"`
-	DiskType           string `name:"DiskType"`
-	HostGroupName      string `name:"HostGroupName"`
-	VSwitchId          string `name:"VSwitchId"`
-	DiskCount          string `name:"DiskCount"`
-	AutoRenew          string `name:"AutoRenew"`
-	HostGroupId        string `name:"HostGroupId"`
-	NodeCount          string `name:"NodeCount"`
-	InstanceType       string `name:"InstanceType"`
-	Comment            string `name:"Comment"`
-	ChargeType         string `name:"ChargeType"`
-	MultiInstanceTypes string `name:"MultiInstanceTypes"`
-	CreateType         string `name:"CreateType"`
-	HostGroupType      string `name:"HostGroupType"`
+	Period                          string `name:"Period"`
+	SysDiskCapacity                 string `name:"SysDiskCapacity"`
+	PrivatePoolOptionsId            string `name:"PrivatePoolOptionsId"`
+	DiskCapacity                    string `name:"DiskCapacity"`
+	SysDiskType                     string `name:"SysDiskType"`
+	ClusterId                       string `name:"ClusterId"`
+	DiskType                        string `name:"DiskType"`
+	HostGroupName                   string `name:"HostGroupName"`
+	VSwitchId                       string `name:"VSwitchId"`
+	DiskCount                       string `name:"DiskCount"`
+	AutoRenew                       string `name:"AutoRenew"`
+	HostGroupId                     string `name:"HostGroupId"`
+	NodeCount                       string `name:"NodeCount"`
+	InstanceType                    string `name:"InstanceType"`
+	Comment                         string `name:"Comment"`
+	ChargeType                      string `name:"ChargeType"`
+	MultiInstanceTypes              string `name:"MultiInstanceTypes"`
+	CreateType                      string `name:"CreateType"`
+	HostGroupType                   string `name:"HostGroupType"`
+	PrivatePoolOptionsMatchCriteria string `name:"PrivatePoolOptionsMatchCriteria"`
 }
 
 // CreateClusterTemplateConfig is a repeated param struct in CreateClusterTemplateRequest

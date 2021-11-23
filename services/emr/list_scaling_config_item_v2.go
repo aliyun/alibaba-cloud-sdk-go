@@ -71,17 +71,12 @@ func (client *Client) ListScalingConfigItemV2WithCallback(request *ListScalingCo
 // ListScalingConfigItemV2Request is the request struct for api ListScalingConfigItemV2
 type ListScalingConfigItemV2Request struct {
 	*requests.RpcRequest
+	ConfigItemType    string           `position:"Query" name:"ConfigItemType"`
 	ResourceOwnerId   requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageCount         requests.Integer `position:"Query" name:"PageCount"`
-	OrderMode         string           `position:"Query" name:"OrderMode"`
 	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
 	ScalingGroupBizId string           `position:"Query" name:"ScalingGroupBizId"`
 	ResourceGroupId   string           `position:"Query" name:"ResourceGroupId"`
-	Limit             requests.Integer `position:"Query" name:"Limit"`
 	PageSize          requests.Integer `position:"Query" name:"PageSize"`
-	CurrentSize       requests.Integer `position:"Query" name:"CurrentSize"`
-	OrderField        string           `position:"Query" name:"OrderField"`
-	ConfigItemType    string           `position:"Query" name:"ConfigItemType"`
 }
 
 // ListScalingConfigItemV2Response is the response struct for api ListScalingConfigItemV2

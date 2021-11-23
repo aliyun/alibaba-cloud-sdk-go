@@ -18,6 +18,7 @@ package emr
 // ClusterInfo is a nested struct in emr response
 type ClusterInfo struct {
 	UserDefinedEmrEcsRole           string                                           `json:"UserDefinedEmrEcsRole" xml:"UserDefinedEmrEcsRole"`
+	DataDiskKMSKeyId                string                                           `json:"DataDiskKMSKeyId" xml:"DataDiskKMSKeyId"`
 	ImageId                         string                                           `json:"ImageId" xml:"ImageId"`
 	Configurations                  string                                           `json:"Configurations" xml:"Configurations"`
 	AutoScalingEnable               bool                                             `json:"AutoScalingEnable" xml:"AutoScalingEnable"`
@@ -31,6 +32,7 @@ type ClusterInfo struct {
 	VpcId                           string                                           `json:"VpcId" xml:"VpcId"`
 	SecurityGroupName               string                                           `json:"SecurityGroupName" xml:"SecurityGroupName"`
 	TaskNodeInService               int                                              `json:"TaskNodeInService" xml:"TaskNodeInService"`
+	DataDiskEncrypted               bool                                             `json:"DataDiskEncrypted" xml:"DataDiskEncrypted"`
 	ExpiredTime                     int64                                            `json:"ExpiredTime" xml:"ExpiredTime"`
 	NetType                         string                                           `json:"NetType" xml:"NetType"`
 	AutoScalingByLoadAllowed        bool                                             `json:"AutoScalingByLoadAllowed" xml:"AutoScalingByLoadAllowed"`
@@ -53,8 +55,10 @@ type ClusterInfo struct {
 	Status                          string                                           `json:"Status" xml:"Status"`
 	MetaStoreType                   string                                           `json:"MetaStoreType" xml:"MetaStoreType"`
 	Name                            string                                           `json:"Name" xml:"Name"`
+	ClickhouseConf                  string                                           `json:"ClickhouseConf" xml:"ClickhouseConf"`
 	SecurityGroupId                 string                                           `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	AutoScalingSpotWithLimitAllowed bool                                             `json:"AutoScalingSpotWithLimitAllowed" xml:"AutoScalingSpotWithLimitAllowed"`
+	ResizeClusterEnable             bool                                             `json:"ResizeClusterEnable" xml:"ResizeClusterEnable"`
 	ChargeType                      string                                           `json:"ChargeType" xml:"ChargeType"`
 	MachineType                     string                                           `json:"MachineType" xml:"MachineType"`
 	ShowSoftwareInterface           bool                                             `json:"ShowSoftwareInterface" xml:"ShowSoftwareInterface"`

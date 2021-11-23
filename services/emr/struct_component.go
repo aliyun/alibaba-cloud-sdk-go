@@ -17,27 +17,30 @@ package emr
 
 // Component is a nested struct in emr response
 type Component struct {
-	HostInstanceId       string `json:"HostInstanceId" xml:"HostInstanceId"`
 	HostId               string `json:"HostId" xml:"HostId"`
 	PublicIp             string `json:"PublicIp" xml:"PublicIp"`
 	NeedRestart          bool   `json:"NeedRestart" xml:"NeedRestart"`
-	Memory               int    `json:"Memory" xml:"Memory"`
-	ComponentName        string `json:"ComponentName" xml:"ComponentName"`
 	InstanceType         string `json:"InstanceType" xml:"InstanceType"`
 	WorkloadType         string `json:"WorkloadType" xml:"WorkloadType"`
 	ComponentDisplayName string `json:"ComponentDisplayName" xml:"ComponentDisplayName"`
 	SerialNumber         string `json:"SerialNumber" xml:"SerialNumber"`
-	CommissionStatus     string `json:"CommissionStatus" xml:"CommissionStatus"`
-	PodName              string `json:"PodName" xml:"PodName"`
-	ServerStatus         string `json:"ServerStatus" xml:"ServerStatus"`
 	Role                 string `json:"Role" xml:"Role"`
 	PrivateIp            string `json:"PrivateIp" xml:"PrivateIp"`
-	Namespace            string `json:"Namespace" xml:"Namespace"`
 	ServiceDisplayName   string `json:"ServiceDisplayName" xml:"ServiceDisplayName"`
 	WorkloadName         string `json:"WorkloadName" xml:"WorkloadName"`
+	ServiceName          string `json:"ServiceName" xml:"ServiceName"`
+	HealthReportTime     int64  `json:"HealthReportTime" xml:"HealthReportTime"`
+	HostInstanceId       string `json:"HostInstanceId" xml:"HostInstanceId"`
+	Memory               int    `json:"Memory" xml:"Memory"`
+	ComponentName        string `json:"ComponentName" xml:"ComponentName"`
+	CommissionStatus     string `json:"CommissionStatus" xml:"CommissionStatus"`
+	State                string `json:"State" xml:"State"`
+	PodName              string `json:"PodName" xml:"PodName"`
+	ServerStatus         string `json:"ServerStatus" xml:"ServerStatus"`
+	Namespace            string `json:"Namespace" xml:"Namespace"`
+	HealthStatus         string `json:"HealthStatus" xml:"HealthStatus"`
 	HostName             string `json:"HostName" xml:"HostName"`
 	DesiredCount         int    `json:"DesiredCount" xml:"DesiredCount"`
 	Status               string `json:"Status" xml:"Status"`
 	Cpu                  int    `json:"Cpu" xml:"Cpu"`
-	ServiceName          string `json:"ServiceName" xml:"ServiceName"`
 }
