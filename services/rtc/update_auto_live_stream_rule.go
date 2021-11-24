@@ -86,7 +86,6 @@ type UpdateAutoLiveStreamRuleRequest struct {
 // UpdateAutoLiveStreamRuleResponse is the response struct for api UpdateAutoLiveStreamRule
 type UpdateAutoLiveStreamRuleResponse struct {
 	*responses.BaseResponse
-	RuleId    int64  `json:"RuleId" xml:"RuleId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
