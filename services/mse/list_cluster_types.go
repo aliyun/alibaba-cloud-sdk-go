@@ -76,12 +76,12 @@ type ListClusterTypesRequest struct {
 // ListClusterTypesResponse is the response struct for api ListClusterTypes
 type ListClusterTypesResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
 	Success        bool       `json:"Success" xml:"Success"`
-	Message        string     `json:"Message" xml:"Message"`
 	ErrorCode      string     `json:"ErrorCode" xml:"ErrorCode"`
-	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           int        `json:"Code" xml:"Code"`
+	Message        string     `json:"Message" xml:"Message"`
 	DynamicMessage string     `json:"DynamicMessage" xml:"DynamicMessage"`
 	Data           []DataItem `json:"Data" xml:"Data"`
 }
@@ -91,7 +91,7 @@ func CreateListClusterTypesRequest() (request *ListClusterTypesRequest) {
 	request = &ListClusterTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterTypes", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterTypes", "", "")
 	request.Method = requests.POST
 	return
 }

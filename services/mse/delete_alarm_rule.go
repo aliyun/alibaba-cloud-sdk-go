@@ -78,11 +78,11 @@ type DeleteAlarmRuleRequest struct {
 // DeleteAlarmRuleResponse is the response struct for api DeleteAlarmRule
 type DeleteAlarmRuleResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteAlarmRuleRequest creates a request to invoke DeleteAlarmRule API
@@ -90,7 +90,7 @@ func CreateDeleteAlarmRuleRequest() (request *DeleteAlarmRuleRequest) {
 	request = &DeleteAlarmRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAlarmRule", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAlarmRule", "", "")
 	request.Method = requests.POST
 	return
 }

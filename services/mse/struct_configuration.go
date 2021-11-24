@@ -17,13 +17,15 @@ package mse
 
 // Configuration is a nested struct in mse response
 type Configuration struct {
-	Tags    string `json:"Tags" xml:"Tags"`
-	DataId  string `json:"DataId" xml:"DataId"`
-	Group   string `json:"Group" xml:"Group"`
-	Desc    string `json:"Desc" xml:"Desc"`
-	Content string `json:"Content" xml:"Content"`
-	OpType  string `json:"OpType" xml:"OpType"`
-	Md5     string `json:"Md5" xml:"Md5"`
-	AppName string `json:"AppName" xml:"AppName"`
-	Type    string `json:"Type" xml:"Type"`
+	Tags             string `json:"Tags" xml:"Tags"`
+	DataId           string `json:"DataId" xml:"DataId"`
+	BetaIps          string `json:"BetaIps" xml:"BetaIps"`
+	Content          string `json:"Content" xml:"Content"`
+	Group            string `json:"Group" xml:"Group"`
+	Desc             string `json:"Desc" xml:"Desc"`
+	OpType           string `json:"OpType" xml:"OpType"`
+	Md5              string `json:"Md5" xml:"Md5"`
+	EncryptedDataKey string `json:"EncryptedDataKey" xml:"EncryptedDataKey"`
+	AppName          string `json:"AppName" xml:"AppName"`
+	Type             string `json:"Type" xml:"Type"`
 }

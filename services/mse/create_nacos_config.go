@@ -74,6 +74,7 @@ type CreateNacosConfigRequest struct {
 	Type        string `position:"Query" name:"Type"`
 	Content     string `position:"Query" name:"Content"`
 	Tags        string `position:"Query" name:"Tags"`
+	BetaIps     string `position:"Query" name:"BetaIps"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	DataId      string `position:"Query" name:"DataId"`
 	AppName     string `position:"Query" name:"AppName"`
@@ -85,12 +86,12 @@ type CreateNacosConfigRequest struct {
 // CreateNacosConfigResponse is the response struct for api CreateNacosConfig
 type CreateNacosConfigResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
+	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
 	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateNacosConfigRequest creates a request to invoke CreateNacosConfig API
@@ -98,7 +99,7 @@ func CreateCreateNacosConfigRequest() (request *CreateNacosConfigRequest) {
 	request = &CreateNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateNacosConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateNacosConfig", "", "")
 	request.Method = requests.POST
 	return
 }

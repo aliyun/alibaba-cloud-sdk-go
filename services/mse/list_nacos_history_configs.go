@@ -83,14 +83,14 @@ type ListNacosHistoryConfigsRequest struct {
 // ListNacosHistoryConfigsResponse is the response struct for api ListNacosHistoryConfigs
 type ListNacosHistoryConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId    string        `json:"RequestId" xml:"RequestId"`
-	Success      bool          `json:"Success" xml:"Success"`
-	Message      string        `json:"Message" xml:"Message"`
-	ErrorCode    string        `json:"ErrorCode" xml:"ErrorCode"`
-	PageNumber   int           `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int           `json:"PageSize" xml:"PageSize"`
-	TotalCount   int           `json:"TotalCount" xml:"TotalCount"`
 	HttpCode     string        `json:"HttpCode" xml:"HttpCode"`
+	TotalCount   int           `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string        `json:"RequestId" xml:"RequestId"`
+	Message      string        `json:"Message" xml:"Message"`
+	PageSize     int           `json:"PageSize" xml:"PageSize"`
+	PageNumber   int           `json:"PageNumber" xml:"PageNumber"`
+	ErrorCode    string        `json:"ErrorCode" xml:"ErrorCode"`
+	Success      bool          `json:"Success" xml:"Success"`
 	HistoryItems []HistoryItem `json:"HistoryItems" xml:"HistoryItems"`
 }
 
@@ -99,7 +99,7 @@ func CreateListNacosHistoryConfigsRequest() (request *ListNacosHistoryConfigsReq
 	request = &ListNacosHistoryConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosHistoryConfigs", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosHistoryConfigs", "", "")
 	request.Method = requests.POST
 	return
 }

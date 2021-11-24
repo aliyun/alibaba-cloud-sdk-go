@@ -71,27 +71,28 @@ func (client *Client) UpdateNacosConfigWithCallback(request *UpdateNacosConfigRe
 // UpdateNacosConfigRequest is the request struct for api UpdateNacosConfig
 type UpdateNacosConfigRequest struct {
 	*requests.RpcRequest
-	Type        string `position:"Query" name:"Type"`
-	Content     string `position:"Query" name:"Content"`
-	Tags        string `position:"Query" name:"Tags"`
-	BetaIps     string `position:"Query" name:"BetaIps"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	DataId      string `position:"Query" name:"DataId"`
-	AppName     string `position:"Query" name:"AppName"`
-	NamespaceId string `position:"Query" name:"NamespaceId"`
-	Group       string `position:"Query" name:"Group"`
-	Desc        string `position:"Query" name:"Desc"`
-	Md5         string `position:"Query" name:"Md5"`
+	EncryptedDataKey string `position:"Query" name:"EncryptedDataKey"`
+	Type             string `position:"Query" name:"Type"`
+	Content          string `position:"Query" name:"Content"`
+	AppName          string `position:"Query" name:"AppName"`
+	NamespaceId      string `position:"Query" name:"NamespaceId"`
+	Group            string `position:"Query" name:"Group"`
+	Tags             string `position:"Query" name:"Tags"`
+	BetaIps          string `position:"Query" name:"BetaIps"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
+	DataId           string `position:"Query" name:"DataId"`
+	Desc             string `position:"Query" name:"Desc"`
+	Md5              string `position:"Query" name:"Md5"`
 }
 
 // UpdateNacosConfigResponse is the response struct for api UpdateNacosConfig
 type UpdateNacosConfigResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateNacosConfigRequest creates a request to invoke UpdateNacosConfig API
@@ -99,7 +100,7 @@ func CreateUpdateNacosConfigRequest() (request *UpdateNacosConfigRequest) {
 	request = &UpdateNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosConfig", "", "")
 	request.Method = requests.POST
 	return
 }

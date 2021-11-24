@@ -17,17 +17,17 @@ package mse
 
 // LocationData is a nested struct in mse response
 type LocationData struct {
+	Ordering         int    `json:"Ordering" xml:"Ordering"`
 	Type             string `json:"Type" xml:"Type"`
-	Name             string `json:"Name" xml:"Name"`
-	CnName           string `json:"CnName" xml:"CnName"`
-	EnName           string `json:"EnName" xml:"EnName"`
+	DistrictEnName   string `json:"DistrictEnName" xml:"DistrictEnName"`
 	ShowName         string `json:"ShowName" xml:"ShowName"`
+	DistrictCnName   string `json:"DistrictCnName" xml:"DistrictCnName"`
+	EnName           string `json:"EnName" xml:"EnName"`
+	DistrictId       string `json:"DistrictId" xml:"DistrictId"`
+	DistrictShowName string `json:"DistrictShowName" xml:"DistrictShowName"`
 	Description      string `json:"Description" xml:"Description"`
 	EnDescription    string `json:"EnDescription" xml:"EnDescription"`
-	Ordering         int    `json:"Ordering" xml:"Ordering"`
-	DistrictId       string `json:"DistrictId" xml:"DistrictId"`
-	DistrictCnName   string `json:"DistrictCnName" xml:"DistrictCnName"`
-	DistrictEnName   string `json:"DistrictEnName" xml:"DistrictEnName"`
-	DistrictShowName string `json:"DistrictShowName" xml:"DistrictShowName"`
+	CnName           string `json:"CnName" xml:"CnName"`
+	Name             string `json:"Name" xml:"Name"`
 	DistrictOrdering int    `json:"DistrictOrdering" xml:"DistrictOrdering"`
 }

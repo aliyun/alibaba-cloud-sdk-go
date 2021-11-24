@@ -17,24 +17,24 @@ package mse
 
 // NacosAnsInstance is a nested struct in mse response
 type NacosAnsInstance struct {
-	Enabled                   bool                   `json:"Enabled" xml:"Enabled"`
+	DefaultKey                string                 `json:"DefaultKey" xml:"DefaultKey"`
 	Ephemeral                 bool                   `json:"Ephemeral" xml:"Ephemeral"`
-	Healthy                   bool                   `json:"Healthy" xml:"Healthy"`
 	Marked                    bool                   `json:"Marked" xml:"Marked"`
-	FailCount                 int                    `json:"FailCount" xml:"FailCount"`
+	Ip                        string                 `json:"Ip" xml:"Ip"`
+	InstanceId                string                 `json:"InstanceId" xml:"InstanceId"`
 	Port                      int                    `json:"Port" xml:"Port"`
-	InstanceHeartBeatInterval int                    `json:"InstanceHeartBeatInterval" xml:"InstanceHeartBeatInterval"`
-	InstanceHeartBeatTimeOut  int                    `json:"InstanceHeartBeatTimeOut" xml:"InstanceHeartBeatTimeOut"`
-	IpDeleteTimeout           int                    `json:"IpDeleteTimeout" xml:"IpDeleteTimeout"`
+	LastBeat                  int64                  `json:"LastBeat" xml:"LastBeat"`
 	OkCount                   int                    `json:"OkCount" xml:"OkCount"`
 	Weight                    int                    `json:"Weight" xml:"Weight"`
-	LastBeat                  int64                  `json:"LastBeat" xml:"LastBeat"`
+	InstanceHeartBeatInterval int                    `json:"InstanceHeartBeatInterval" xml:"InstanceHeartBeatInterval"`
+	IpDeleteTimeout           int                    `json:"IpDeleteTimeout" xml:"IpDeleteTimeout"`
 	App                       string                 `json:"App" xml:"App"`
-	ClusterName               string                 `json:"ClusterName" xml:"ClusterName"`
+	FailCount                 int                    `json:"FailCount" xml:"FailCount"`
+	Healthy                   bool                   `json:"Healthy" xml:"Healthy"`
+	Enabled                   bool                   `json:"Enabled" xml:"Enabled"`
 	DatumKey                  string                 `json:"DatumKey" xml:"DatumKey"`
-	DefaultKey                string                 `json:"DefaultKey" xml:"DefaultKey"`
-	InstanceId                string                 `json:"InstanceId" xml:"InstanceId"`
-	Ip                        string                 `json:"Ip" xml:"Ip"`
+	ClusterName               string                 `json:"ClusterName" xml:"ClusterName"`
+	InstanceHeartBeatTimeOut  int                    `json:"InstanceHeartBeatTimeOut" xml:"InstanceHeartBeatTimeOut"`
 	ServiceName               string                 `json:"ServiceName" xml:"ServiceName"`
 	Metadata                  map[string]interface{} `json:"Metadata" xml:"Metadata"`
 }

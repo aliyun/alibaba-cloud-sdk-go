@@ -1,3 +1,7 @@
+2021-11-24 Version: v1.61.1344
+- Generated 2019-05-31 for `mse`.
+- HeterogeInterworking.
+
 2021-11-24 Version: v1.61.1343
 - Generated 2018-01-01 for `pvtz`.
 - Support DescribeSyncEcsHostTask, UpdateSyncEcsHostTask for Ecs Hostname Task.

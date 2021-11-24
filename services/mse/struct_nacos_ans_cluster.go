@@ -17,11 +17,11 @@ package mse
 
 // NacosAnsCluster is a nested struct in mse response
 type NacosAnsCluster struct {
+	DefaultCheckPort  int                    `json:"DefaultCheckPort" xml:"DefaultCheckPort"`
+	HealthCheckerType string                 `json:"HealthCheckerType" xml:"HealthCheckerType"`
+	UseIPPort4Check   bool                   `json:"UseIPPort4Check" xml:"UseIPPort4Check"`
 	ServiceName       string                 `json:"ServiceName" xml:"ServiceName"`
 	Name              string                 `json:"Name" xml:"Name"`
-	HealthCheckerType string                 `json:"HealthCheckerType" xml:"HealthCheckerType"`
 	DefaultPort       int                    `json:"DefaultPort" xml:"DefaultPort"`
-	DefaultCheckPort  int                    `json:"DefaultCheckPort" xml:"DefaultCheckPort"`
-	UseIPPort4Check   bool                   `json:"UseIPPort4Check" xml:"UseIPPort4Check"`
 	Metadata          map[string]interface{} `json:"Metadata" xml:"Metadata"`
 }

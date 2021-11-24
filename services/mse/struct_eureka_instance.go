@@ -17,18 +17,18 @@ package mse
 
 // EurekaInstance is a nested struct in mse response
 type EurekaInstance struct {
+	Status                string                 `json:"Status" xml:"Status"`
+	LastDirtyTimestamp    int64                  `json:"LastDirtyTimestamp" xml:"LastDirtyTimestamp"`
+	IpAddr                string                 `json:"IpAddr" xml:"IpAddr"`
+	HomePageUrl           string                 `json:"HomePageUrl" xml:"HomePageUrl"`
+	HostName              string                 `json:"HostName" xml:"HostName"`
+	InstanceId            string                 `json:"InstanceId" xml:"InstanceId"`
 	Port                  int                    `json:"Port" xml:"Port"`
 	SecurePort            int                    `json:"SecurePort" xml:"SecurePort"`
-	DurationInSecs        int                    `json:"DurationInSecs" xml:"DurationInSecs"`
-	RenewalIntervalInSecs int                    `json:"RenewalIntervalInSecs" xml:"RenewalIntervalInSecs"`
-	LastUpdatedTimestamp  int64                  `json:"LastUpdatedTimestamp" xml:"LastUpdatedTimestamp"`
 	App                   string                 `json:"App" xml:"App"`
-	IpAddr                string                 `json:"IpAddr" xml:"IpAddr"`
-	Status                string                 `json:"Status" xml:"Status"`
-	HomePageUrl           string                 `json:"HomePageUrl" xml:"HomePageUrl"`
-	InstanceId            string                 `json:"InstanceId" xml:"InstanceId"`
+	DurationInSecs        int                    `json:"DurationInSecs" xml:"DurationInSecs"`
+	LastUpdatedTimestamp  int64                  `json:"LastUpdatedTimestamp" xml:"LastUpdatedTimestamp"`
+	RenewalIntervalInSecs int                    `json:"RenewalIntervalInSecs" xml:"RenewalIntervalInSecs"`
 	VipAddress            string                 `json:"VipAddress" xml:"VipAddress"`
-	HostName              string                 `json:"HostName" xml:"HostName"`
 	Metadata              map[string]interface{} `json:"Metadata" xml:"Metadata"`
-	LastDirtyTimestamp    int64                  `json:"LastDirtyTimestamp" xml:"LastDirtyTimestamp"`
 }

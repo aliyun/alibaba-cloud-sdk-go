@@ -17,8 +17,8 @@ package mse
 
 // ZnodeModel is a nested struct in mse response
 type ZnodeModel struct {
-	Path string `json:"Path" xml:"Path"`
-	Name string `json:"Name" xml:"Name"`
 	Data string `json:"Data" xml:"Data"`
+	Path string `json:"Path" xml:"Path"`
 	Dir  bool   `json:"Dir" xml:"Dir"`
+	Name string `json:"Name" xml:"Name"`
 }

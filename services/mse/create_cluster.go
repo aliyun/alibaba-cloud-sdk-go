@@ -91,8 +91,8 @@ type CreateClusterRequest struct {
 // CreateClusterResponse is the response struct for api CreateCluster
 type CreateClusterResponse struct {
 	*responses.BaseResponse
-	Message    string `json:"Message" xml:"Message"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Message    string `json:"Message" xml:"Message"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 	ErrorCode  string `json:"ErrorCode" xml:"ErrorCode"`
 	OrderId    string `json:"OrderId" xml:"OrderId"`
@@ -104,7 +104,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateCluster", "", "")
 	request.Method = requests.POST
 	return
 }

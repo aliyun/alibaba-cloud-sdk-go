@@ -81,11 +81,11 @@ type CreateApplicationRequest struct {
 // CreateApplicationResponse is the response struct for api CreateApplication
 type CreateApplicationResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Code           int    `json:"Code" xml:"Code"`
 	Success        string `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
 
@@ -94,7 +94,7 @@ func CreateCreateApplicationRequest() (request *CreateApplicationRequest) {
 	request = &CreateApplicationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateApplication", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateApplication", "", "")
 	request.Method = requests.POST
 	return
 }

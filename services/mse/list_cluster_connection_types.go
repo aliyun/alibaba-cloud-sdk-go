@@ -76,12 +76,12 @@ type ListClusterConnectionTypesRequest struct {
 // ListClusterConnectionTypesResponse is the response struct for api ListClusterConnectionTypes
 type ListClusterConnectionTypesResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
 	Success        bool       `json:"Success" xml:"Success"`
-	Message        string     `json:"Message" xml:"Message"`
 	ErrorCode      string     `json:"ErrorCode" xml:"ErrorCode"`
-	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           int        `json:"Code" xml:"Code"`
+	Message        string     `json:"Message" xml:"Message"`
 	DynamicMessage string     `json:"DynamicMessage" xml:"DynamicMessage"`
 	Data           []DataItem `json:"Data" xml:"Data"`
 }
@@ -91,7 +91,7 @@ func CreateListClusterConnectionTypesRequest() (request *ListClusterConnectionTy
 	request = &ListClusterConnectionTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterConnectionTypes", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterConnectionTypes", "", "")
 	request.Method = requests.POST
 	return
 }

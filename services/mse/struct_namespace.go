@@ -17,11 +17,11 @@ package mse
 
 // Namespace is a nested struct in mse response
 type Namespace struct {
-	Namespace         string `json:"Namespace" xml:"Namespace"`
-	NamespaceShowName string `json:"NamespaceShowName" xml:"NamespaceShowName"`
-	NamespaceDesc     string `json:"NamespaceDesc" xml:"NamespaceDesc"`
-	Quota             int    `json:"Quota" xml:"Quota"`
-	ConfigCount       int    `json:"ConfigCount" xml:"ConfigCount"`
 	Type              int    `json:"Type" xml:"Type"`
+	NamespaceShowName string `json:"NamespaceShowName" xml:"NamespaceShowName"`
+	Quota             int    `json:"Quota" xml:"Quota"`
+	Namespace         string `json:"Namespace" xml:"Namespace"`
+	NamespaceDesc     string `json:"NamespaceDesc" xml:"NamespaceDesc"`
+	ConfigCount       int    `json:"ConfigCount" xml:"ConfigCount"`
 	ServiceCount      string `json:"ServiceCount" xml:"ServiceCount"`
 }

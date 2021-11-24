@@ -17,9 +17,9 @@ package mse
 
 // SimpleNacosAnsService is a nested struct in mse response
 type SimpleNacosAnsService struct {
-	Name                 string `json:"Name" xml:"Name"`
-	GroupName            string `json:"GroupName" xml:"GroupName"`
-	ClusterCount         int    `json:"ClusterCount" xml:"ClusterCount"`
-	IpCount              int    `json:"IpCount" xml:"IpCount"`
 	HealthyInstanceCount int    `json:"HealthyInstanceCount" xml:"HealthyInstanceCount"`
+	GroupName            string `json:"GroupName" xml:"GroupName"`
+	IpCount              int    `json:"IpCount" xml:"IpCount"`
+	Name                 string `json:"Name" xml:"Name"`
+	ClusterCount         int    `json:"ClusterCount" xml:"ClusterCount"`
 }

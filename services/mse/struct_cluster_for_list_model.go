@@ -17,17 +17,21 @@ package mse
 
 // ClusterForListModel is a nested struct in mse response
 type ClusterForListModel struct {
-	AppVersion       string `json:"AppVersion" xml:"AppVersion"`
-	ClusterAliasName string `json:"ClusterAliasName" xml:"ClusterAliasName"`
-	InternetAddress  string `json:"InternetAddress" xml:"InternetAddress"`
-	IntranetAddress  string `json:"IntranetAddress" xml:"IntranetAddress"`
-	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
+	EndDate          string `json:"EndDate" xml:"EndDate"`
+	IntranetDomain   string `json:"IntranetDomain" xml:"IntranetDomain"`
 	InternetDomain   string `json:"InternetDomain" xml:"InternetDomain"`
 	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
-	InitStatus       string `json:"InitStatus" xml:"InitStatus"`
+	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
+	IntranetAddress  string `json:"IntranetAddress" xml:"IntranetAddress"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+	InternetAddress  string `json:"InternetAddress" xml:"InternetAddress"`
+	ClusterAliasName string `json:"ClusterAliasName" xml:"ClusterAliasName"`
 	ClusterType      string `json:"ClusterType" xml:"ClusterType"`
-	IntranetDomain   string `json:"IntranetDomain" xml:"IntranetDomain"`
-	EndDate          string `json:"EndDate" xml:"EndDate"`
+	InitStatus       string `json:"InitStatus" xml:"InitStatus"`
+	AppVersion       string `json:"AppVersion" xml:"AppVersion"`
+	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
+	CanUpdate        bool   `json:"CanUpdate" xml:"CanUpdate"`
+	VersionCode      string `json:"VersionCode" xml:"VersionCode"`
+	InstanceCount    int64  `json:"InstanceCount" xml:"InstanceCount"`
+	ClusterName      string `json:"ClusterName" xml:"ClusterName"`
 }

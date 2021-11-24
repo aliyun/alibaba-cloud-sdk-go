@@ -17,7 +17,7 @@ package mse
 
 // AlarmItem is a nested struct in mse response
 type AlarmItem struct {
-	AlarmCode   string `json:"AlarmCode" xml:"AlarmCode"`
 	AlarmDesc   string `json:"AlarmDesc" xml:"AlarmDesc"`
 	ClusterType string `json:"ClusterType" xml:"ClusterType"`
+	AlarmCode   string `json:"AlarmCode" xml:"AlarmCode"`
 }

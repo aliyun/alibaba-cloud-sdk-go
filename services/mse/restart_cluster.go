@@ -79,10 +79,10 @@ type RestartClusterRequest struct {
 // RestartClusterResponse is the response struct for api RestartCluster
 type RestartClusterResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateRestartClusterRequest creates a request to invoke RestartCluster API
@@ -90,7 +90,7 @@ func CreateRestartClusterRequest() (request *RestartClusterRequest) {
 	request = &RestartClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "RestartCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "RestartCluster", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,10 +84,10 @@ type ListAnsServiceClustersRequest struct {
 // ListAnsServiceClustersResponse is the response struct for api ListAnsServiceClusters
 type ListAnsServiceClustersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -96,7 +96,7 @@ func CreateListAnsServiceClustersRequest() (request *ListAnsServiceClustersReque
 	request = &ListAnsServiceClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServiceClusters", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServiceClusters", "", "")
 	request.Method = requests.GET
 	return
 }

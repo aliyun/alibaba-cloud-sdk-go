@@ -79,12 +79,12 @@ type GetImportFileUrlRequest struct {
 // GetImportFileUrlResponse is the response struct for api GetImportFileUrl
 type GetImportFileUrlResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Message        string `json:"Message" xml:"Message"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           int    `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
 	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
@@ -94,7 +94,7 @@ func CreateGetImportFileUrlRequest() (request *GetImportFileUrlRequest) {
 	request = &GetImportFileUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetImportFileUrl", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetImportFileUrl", "", "")
 	request.Method = requests.POST
 	return
 }

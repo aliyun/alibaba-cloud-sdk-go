@@ -80,12 +80,12 @@ type DeleteNacosServiceRequest struct {
 // DeleteNacosServiceResponse is the response struct for api DeleteNacosService
 type DeleteNacosServiceResponse struct {
 	*responses.BaseResponse
-	Message        string `json:"Message" xml:"Message"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           string `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Message        string `json:"Message" xml:"Message"`
 	Code           int    `json:"Code" xml:"Code"`
 	Success        bool   `json:"Success" xml:"Success"`
+	Data           string `json:"Data" xml:"Data"`
 }
 
 // CreateDeleteNacosServiceRequest creates a request to invoke DeleteNacosService API
@@ -93,7 +93,7 @@ func CreateDeleteNacosServiceRequest() (request *DeleteNacosServiceRequest) {
 	request = &DeleteNacosServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosService", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosService", "", "")
 	request.Method = requests.POST
 	return
 }

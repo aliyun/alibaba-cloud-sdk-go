@@ -80,15 +80,16 @@ type AddMockRuleRequest struct {
 	ConsumerAppIds  string           `position:"Query" name:"ConsumerAppIds"`
 	DubboMockItems  string           `position:"Query" name:"DubboMockItems"`
 	Name            string           `position:"Query" name:"Name"`
+	MockType        requests.Integer `position:"Query" name:"MockType"`
 	Region          string           `position:"Query" name:"Region"`
 }
 
 // AddMockRuleResponse is the response struct for api AddMockRule
 type AddMockRuleResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Message        string `json:"Message" xml:"Message"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Code           int    `json:"Code" xml:"Code"`
 	Success        bool   `json:"Success" xml:"Success"`
 	Data           Data   `json:"Data" xml:"Data"`
@@ -99,7 +100,7 @@ func CreateAddMockRuleRequest() (request *AddMockRuleRequest) {
 	request = &AddMockRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddMockRule", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddMockRule", "", "")
 	request.Method = requests.POST
 	return
 }

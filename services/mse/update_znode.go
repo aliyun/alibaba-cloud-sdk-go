@@ -80,10 +80,10 @@ type UpdateZnodeRequest struct {
 // UpdateZnodeResponse is the response struct for api UpdateZnode
 type UpdateZnodeResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateZnodeRequest creates a request to invoke UpdateZnode API
@@ -91,7 +91,7 @@ func CreateUpdateZnodeRequest() (request *UpdateZnodeRequest) {
 	request = &UpdateZnodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateZnode", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateZnode", "", "")
 	request.Method = requests.POST
 	return
 }

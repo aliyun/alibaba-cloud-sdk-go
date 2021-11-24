@@ -79,8 +79,8 @@ type QueryClusterDetailRequest struct {
 // QueryClusterDetailResponse is the response struct for api QueryClusterDetail
 type QueryClusterDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	ErrorCode string                   `json:"ErrorCode" xml:"ErrorCode"`
 	Success   bool                     `json:"Success" xml:"Success"`
 	Data      DataInQueryClusterDetail `json:"Data" xml:"Data"`
@@ -91,7 +91,7 @@ func CreateQueryClusterDetailRequest() (request *QueryClusterDetailRequest) {
 	request = &QueryClusterDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterDetail", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterDetail", "", "")
 	request.Method = requests.POST
 	return
 }

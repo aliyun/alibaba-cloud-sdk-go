@@ -81,14 +81,14 @@ type ListListenersByConfigRequest struct {
 // ListListenersByConfigResponse is the response struct for api ListListenersByConfig
 type ListListenersByConfigResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Success    bool       `json:"Success" xml:"Success"`
-	Message    string     `json:"Message" xml:"Message"`
-	ErrorCode  string     `json:"ErrorCode" xml:"ErrorCode"`
-	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int        `json:"PageSize" xml:"PageSize"`
-	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
 	HttpCode   string     `json:"HttpCode" xml:"HttpCode"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Message    string     `json:"Message" xml:"Message"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	ErrorCode  string     `json:"ErrorCode" xml:"ErrorCode"`
+	Success    bool       `json:"Success" xml:"Success"`
 	Listeners  []Listener `json:"Listeners" xml:"Listeners"`
 }
 
@@ -97,7 +97,7 @@ func CreateListListenersByConfigRequest() (request *ListListenersByConfigRequest
 	request = &ListListenersByConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByConfig", "", "")
 	request.Method = requests.POST
 	return
 }

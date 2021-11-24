@@ -80,14 +80,14 @@ type ListEurekaServicesRequest struct {
 // ListEurekaServicesResponse is the response struct for api ListEurekaServices
 type ListEurekaServicesResponse struct {
 	*responses.BaseResponse
-	RequestId  string          `json:"RequestId" xml:"RequestId"`
-	Success    bool            `json:"Success" xml:"Success"`
-	Message    string          `json:"Message" xml:"Message"`
-	ErrorCode  string          `json:"ErrorCode" xml:"ErrorCode"`
-	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int             `json:"PageSize" xml:"PageSize"`
-	TotalCount int             `json:"TotalCount" xml:"TotalCount"`
 	HttpCode   string          `json:"HttpCode" xml:"HttpCode"`
+	TotalCount int             `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string          `json:"RequestId" xml:"RequestId"`
+	Message    string          `json:"Message" xml:"Message"`
+	PageSize   int             `json:"PageSize" xml:"PageSize"`
+	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
+	ErrorCode  string          `json:"ErrorCode" xml:"ErrorCode"`
+	Success    bool            `json:"Success" xml:"Success"`
 	Data       []SimpleService `json:"Data" xml:"Data"`
 }
 
@@ -96,7 +96,7 @@ func CreateListEurekaServicesRequest() (request *ListEurekaServicesRequest) {
 	request = &ListEurekaServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListEurekaServices", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListEurekaServices", "", "")
 	request.Method = requests.GET
 	return
 }

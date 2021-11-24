@@ -76,10 +76,10 @@ type QueryBusinessLocationsRequest struct {
 // QueryBusinessLocationsResponse is the response struct for api QueryBusinessLocations
 type QueryBusinessLocationsResponse struct {
 	*responses.BaseResponse
-	RequestId string         `json:"RequestId" xml:"RequestId"`
-	Success   string         `json:"Success" xml:"Success"`
 	Message   string         `json:"Message" xml:"Message"`
+	RequestId string         `json:"RequestId" xml:"RequestId"`
 	ErrorCode string         `json:"ErrorCode" xml:"ErrorCode"`
+	Success   string         `json:"Success" xml:"Success"`
 	Data      []LocationData `json:"Data" xml:"Data"`
 }
 
@@ -88,7 +88,7 @@ func CreateQueryBusinessLocationsRequest() (request *QueryBusinessLocationsReque
 	request = &QueryBusinessLocationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryBusinessLocations", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryBusinessLocations", "", "")
 	request.Method = requests.GET
 	return
 }

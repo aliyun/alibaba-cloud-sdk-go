@@ -79,11 +79,11 @@ type DeleteEngineNamespaceRequest struct {
 // DeleteEngineNamespaceResponse is the response struct for api DeleteEngineNamespace
 type DeleteEngineNamespaceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteEngineNamespaceRequest creates a request to invoke DeleteEngineNamespace API
@@ -91,7 +91,7 @@ func CreateDeleteEngineNamespaceRequest() (request *DeleteEngineNamespaceRequest
 	request = &DeleteEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteEngineNamespace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteEngineNamespace", "", "")
 	request.Method = requests.POST
 	return
 }

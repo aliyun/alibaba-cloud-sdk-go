@@ -79,10 +79,10 @@ type UpdateAclRequest struct {
 // UpdateAclResponse is the response struct for api UpdateAcl
 type UpdateAclResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateAclRequest creates a request to invoke UpdateAcl API
@@ -90,7 +90,7 @@ func CreateUpdateAclRequest() (request *UpdateAclRequest) {
 	request = &UpdateAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateAcl", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateAcl", "", "")
 	request.Method = requests.POST
 	return
 }

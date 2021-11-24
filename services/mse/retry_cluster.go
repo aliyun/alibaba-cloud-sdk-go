@@ -79,10 +79,10 @@ type RetryClusterRequest struct {
 // RetryClusterResponse is the response struct for api RetryCluster
 type RetryClusterResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateRetryClusterRequest creates a request to invoke RetryCluster API
@@ -90,7 +90,7 @@ func CreateRetryClusterRequest() (request *RetryClusterRequest) {
 	request = &RetryClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "RetryCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "RetryCluster", "", "")
 	request.Method = requests.POST
 	return
 }

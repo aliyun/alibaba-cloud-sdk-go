@@ -80,11 +80,12 @@ type QueryConfigRequest struct {
 // QueryConfigResponse is the response struct for api QueryConfig
 type QueryConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           int    `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateQueryConfigRequest creates a request to invoke QueryConfig API
@@ -92,7 +93,7 @@ func CreateQueryConfigRequest() (request *QueryConfigRequest) {
 	request = &QueryConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryConfig", "", "")
 	request.Method = requests.GET
 	return
 }

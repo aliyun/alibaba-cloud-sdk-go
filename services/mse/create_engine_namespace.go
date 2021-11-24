@@ -81,11 +81,11 @@ type CreateEngineNamespaceRequest struct {
 // CreateEngineNamespaceResponse is the response struct for api CreateEngineNamespace
 type CreateEngineNamespaceResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	ClusterId string `json:"ClusterId" xml:"ClusterId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ClusterId string `json:"ClusterId" xml:"ClusterId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -94,7 +94,7 @@ func CreateCreateEngineNamespaceRequest() (request *CreateEngineNamespaceRequest
 	request = &CreateEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateEngineNamespace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateEngineNamespace", "", "")
 	request.Method = requests.POST
 	return
 }

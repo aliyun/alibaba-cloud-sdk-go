@@ -18,9 +18,9 @@ package mse
 // AlarmHistoryModel is a nested struct in mse response
 type AlarmHistoryModel struct {
 	AlarmTime     string `json:"AlarmTime" xml:"AlarmTime"`
-	AlarmPhone    string `json:"AlarmPhone" xml:"AlarmPhone"`
+	AlarmEmail    string `json:"AlarmEmail" xml:"AlarmEmail"`
 	AlarmDingDing string `json:"AlarmDingDing" xml:"AlarmDingDing"`
+	AlarmPhone    string `json:"AlarmPhone" xml:"AlarmPhone"`
 	AlarmName     string `json:"AlarmName" xml:"AlarmName"`
 	AlarmContent  string `json:"AlarmContent" xml:"AlarmContent"`
-	AlarmEmail    string `json:"AlarmEmail" xml:"AlarmEmail"`
 }

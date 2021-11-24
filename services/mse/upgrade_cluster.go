@@ -79,11 +79,11 @@ type UpgradeClusterRequest struct {
 // UpgradeClusterResponse is the response struct for api UpgradeCluster
 type UpgradeClusterResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpgradeClusterRequest creates a request to invoke UpgradeCluster API
@@ -91,7 +91,7 @@ func CreateUpgradeClusterRequest() (request *UpgradeClusterRequest) {
 	request = &UpgradeClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpgradeCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpgradeCluster", "", "")
 	request.Method = requests.POST
 	return
 }

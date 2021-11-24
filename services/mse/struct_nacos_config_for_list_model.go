@@ -17,8 +17,8 @@ package mse
 
 // NacosConfigForListModel is a nested struct in mse response
 type NacosConfigForListModel struct {
-	DataId  string `json:"DataId" xml:"DataId"`
-	Group   string `json:"Group" xml:"Group"`
 	AppName string `json:"AppName" xml:"AppName"`
+	DataId  string `json:"DataId" xml:"DataId"`
 	Id      string `json:"Id" xml:"Id"`
+	Group   string `json:"Group" xml:"Group"`
 }

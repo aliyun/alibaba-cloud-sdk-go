@@ -78,12 +78,12 @@ type GetOverviewRequest struct {
 // GetOverviewResponse is the response struct for api GetOverview
 type GetOverviewResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Data           string `json:"Data" xml:"Data"`
 	Code           int    `json:"Code" xml:"Code"`
 	Success        string `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateGetOverviewRequest creates a request to invoke GetOverview API
@@ -91,7 +91,7 @@ func CreateGetOverviewRequest() (request *GetOverviewRequest) {
 	request = &GetOverviewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetOverview", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetOverview", "", "")
 	request.Method = requests.POST
 	return
 }

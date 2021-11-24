@@ -78,10 +78,10 @@ type ListZnodeChildrenRequest struct {
 // ListZnodeChildrenResponse is the response struct for api ListZnodeChildren
 type ListZnodeChildrenResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Success   bool         `json:"Success" xml:"Success"`
 	Message   string       `json:"Message" xml:"Message"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
 	ErrorCode string       `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool         `json:"Success" xml:"Success"`
 	Data      []ZnodeModel `json:"Data" xml:"Data"`
 }
 
@@ -90,7 +90,7 @@ func CreateListZnodeChildrenRequest() (request *ListZnodeChildrenRequest) {
 	request = &ListZnodeChildrenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListZnodeChildren", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListZnodeChildren", "", "")
 	request.Method = requests.GET
 	return
 }

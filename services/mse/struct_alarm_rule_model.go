@@ -18,8 +18,8 @@ package mse
 // AlarmRuleModel is a nested struct in mse response
 type AlarmRuleModel struct {
 	AlarmStatus     string `json:"AlarmStatus" xml:"AlarmStatus"`
-	AlarmName       string `json:"AlarmName" xml:"AlarmName"`
+	AlarmRuleId     string `json:"AlarmRuleId" xml:"AlarmRuleId"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
 	AlarmRuleDetail string `json:"AlarmRuleDetail" xml:"AlarmRuleDetail"`
-	AlarmRuleId     string `json:"AlarmRuleId" xml:"AlarmRuleId"`
+	AlarmName       string `json:"AlarmName" xml:"AlarmName"`
 }

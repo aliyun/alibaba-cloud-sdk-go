@@ -79,10 +79,10 @@ type QueryZnodeDetailRequest struct {
 // QueryZnodeDetailResponse is the response struct for api QueryZnodeDetail
 type QueryZnodeDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   string `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -91,7 +91,7 @@ func CreateQueryZnodeDetailRequest() (request *QueryZnodeDetailRequest) {
 	request = &QueryZnodeDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryZnodeDetail", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryZnodeDetail", "", "")
 	request.Method = requests.GET
 	return
 }

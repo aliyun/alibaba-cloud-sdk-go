@@ -79,6 +79,7 @@ type UpdateConfigRequest struct {
 	JuteMaxbuffer            string           `position:"Query" name:"JuteMaxbuffer"`
 	ConfigType               string           `position:"Query" name:"ConfigType"`
 	AutopurgeSnapRetainCount string           `position:"Query" name:"AutopurgeSnapRetainCount"`
+	ConfigSecretEnabled      requests.Boolean `position:"Query" name:"ConfigSecretEnabled"`
 	MCPEnabled               requests.Boolean `position:"Query" name:"MCPEnabled"`
 	TickTime                 string           `position:"Query" name:"TickTime"`
 	ClusterId                string           `position:"Query" name:"ClusterId"`
@@ -92,10 +93,11 @@ type UpdateConfigRequest struct {
 // UpdateConfigResponse is the response struct for api UpdateConfig
 type UpdateConfigResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           int    `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateUpdateConfigRequest creates a request to invoke UpdateConfig API
@@ -103,7 +105,7 @@ func CreateUpdateConfigRequest() (request *UpdateConfigRequest) {
 	request = &UpdateConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateConfig", "", "")
 	request.Method = requests.POST
 	return
 }

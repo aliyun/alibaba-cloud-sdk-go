@@ -82,9 +82,9 @@ type ListClustersResponse struct {
 	*responses.BaseResponse
 	HttpCode   string                `json:"HttpCode" xml:"HttpCode"`
 	TotalCount int                   `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                   `json:"PageSize" xml:"PageSize"`
-	Message    string                `json:"Message" xml:"Message"`
 	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	Message    string                `json:"Message" xml:"Message"`
+	PageSize   int                   `json:"PageSize" xml:"PageSize"`
 	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
 	ErrorCode  string                `json:"ErrorCode" xml:"ErrorCode"`
 	Success    bool                  `json:"Success" xml:"Success"`
@@ -96,7 +96,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "", "")
 	request.Method = requests.GET
 	return
 }

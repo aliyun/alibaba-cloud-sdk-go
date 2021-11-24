@@ -17,10 +17,10 @@ package mse
 
 // HistoryItem is a nested struct in mse response
 type HistoryItem struct {
+	AppName          string `json:"AppName" xml:"AppName"`
 	DataId           string `json:"DataId" xml:"DataId"`
 	Group            string `json:"Group" xml:"Group"`
 	LastModifiedTime int64  `json:"LastModifiedTime" xml:"LastModifiedTime"`
 	Id               int64  `json:"Id" xml:"Id"`
 	OpType           string `json:"OpType" xml:"OpType"`
-	AppName          string `json:"AppName" xml:"AppName"`
 }

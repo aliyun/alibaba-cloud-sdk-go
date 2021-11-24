@@ -82,10 +82,10 @@ type ScalingClusterRequest struct {
 // ScalingClusterResponse is the response struct for api ScalingCluster
 type ScalingClusterResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateScalingClusterRequest creates a request to invoke ScalingCluster API
@@ -93,7 +93,7 @@ func CreateScalingClusterRequest() (request *ScalingClusterRequest) {
 	request = &ScalingClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ScalingCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ScalingCluster", "", "")
 	request.Method = requests.POST
 	return
 }

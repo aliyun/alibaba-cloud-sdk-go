@@ -85,15 +85,15 @@ type ListNacosConfigsRequest struct {
 // ListNacosConfigsResponse is the response struct for api ListNacosConfigs
 type ListNacosConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId      string                    `json:"RequestId" xml:"RequestId"`
-	Success        bool                      `json:"Success" xml:"Success"`
-	Message        string                    `json:"Message" xml:"Message"`
-	ErrorCode      string                    `json:"ErrorCode" xml:"ErrorCode"`
-	PageNumber     int                       `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int                       `json:"PageSize" xml:"PageSize"`
-	TotalCount     int                       `json:"TotalCount" xml:"TotalCount"`
 	HttpCode       string                    `json:"HttpCode" xml:"HttpCode"`
+	TotalCount     int                       `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string                    `json:"RequestId" xml:"RequestId"`
+	Message        string                    `json:"Message" xml:"Message"`
+	PageSize       int                       `json:"PageSize" xml:"PageSize"`
+	PageNumber     int                       `json:"PageNumber" xml:"PageNumber"`
+	ErrorCode      string                    `json:"ErrorCode" xml:"ErrorCode"`
 	Code           int                       `json:"Code" xml:"Code"`
+	Success        bool                      `json:"Success" xml:"Success"`
 	Configurations []NacosConfigForListModel `json:"Configurations" xml:"Configurations"`
 }
 
@@ -102,7 +102,7 @@ func CreateListNacosConfigsRequest() (request *ListNacosConfigsRequest) {
 	request = &ListNacosConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosConfigs", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListNacosConfigs", "", "")
 	request.Method = requests.POST
 	return
 }

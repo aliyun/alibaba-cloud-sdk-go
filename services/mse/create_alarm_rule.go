@@ -86,10 +86,10 @@ type CreateAlarmRuleRequest struct {
 // CreateAlarmRuleResponse is the response struct for api CreateAlarmRule
 type CreateAlarmRuleResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateAlarmRuleRequest creates a request to invoke CreateAlarmRule API
@@ -97,7 +97,7 @@ func CreateCreateAlarmRuleRequest() (request *CreateAlarmRuleRequest) {
 	request = &CreateAlarmRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateAlarmRule", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateAlarmRule", "", "")
 	request.Method = requests.POST
 	return
 }

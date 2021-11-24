@@ -79,17 +79,17 @@ type GetEngineNamepaceRequest struct {
 // GetEngineNamepaceResponse is the response struct for api GetEngineNamepace
 type GetEngineNamepaceResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	Success           bool   `json:"Success" xml:"Success"`
-	Message           string `json:"Message" xml:"Message"`
-	ErrorCode         string `json:"ErrorCode" xml:"ErrorCode"`
 	HttpCode          string `json:"HttpCode" xml:"HttpCode"`
-	Namespace         string `json:"Namespace" xml:"Namespace"`
-	NamespaceShowName string `json:"NamespaceShowName" xml:"NamespaceShowName"`
-	NamespaceDesc     string `json:"NamespaceDesc" xml:"NamespaceDesc"`
-	Quota             string `json:"Quota" xml:"Quota"`
-	ConfigCount       string `json:"ConfigCount" xml:"ConfigCount"`
 	Type              string `json:"Type" xml:"Type"`
+	Quota             string `json:"Quota" xml:"Quota"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	Message           string `json:"Message" xml:"Message"`
+	ConfigCount       string `json:"ConfigCount" xml:"ConfigCount"`
+	NamespaceShowName string `json:"NamespaceShowName" xml:"NamespaceShowName"`
+	ErrorCode         string `json:"ErrorCode" xml:"ErrorCode"`
+	Success           bool   `json:"Success" xml:"Success"`
+	NamespaceDesc     string `json:"NamespaceDesc" xml:"NamespaceDesc"`
+	Namespace         string `json:"Namespace" xml:"Namespace"`
 }
 
 // CreateGetEngineNamepaceRequest creates a request to invoke GetEngineNamepace API
@@ -97,7 +97,7 @@ func CreateGetEngineNamepaceRequest() (request *GetEngineNamepaceRequest) {
 	request = &GetEngineNamepaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetEngineNamepace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetEngineNamepace", "", "")
 	request.Method = requests.POST
 	return
 }

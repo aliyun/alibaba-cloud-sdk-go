@@ -80,10 +80,10 @@ type UpdateClusterRequest struct {
 // UpdateClusterResponse is the response struct for api UpdateCluster
 type UpdateClusterResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateClusterRequest creates a request to invoke UpdateCluster API
@@ -91,7 +91,7 @@ func CreateUpdateClusterRequest() (request *UpdateClusterRequest) {
 	request = &UpdateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateCluster", "", "")
 	request.Method = requests.POST
 	return
 }

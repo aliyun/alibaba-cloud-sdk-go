@@ -85,14 +85,14 @@ type ListAnsServicesRequest struct {
 // ListAnsServicesResponse is the response struct for api ListAnsServices
 type ListAnsServicesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                  `json:"RequestId" xml:"RequestId"`
-	Success    bool                    `json:"Success" xml:"Success"`
-	Message    string                  `json:"Message" xml:"Message"`
-	ErrorCode  string                  `json:"ErrorCode" xml:"ErrorCode"`
-	PageNumber int                     `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                     `json:"PageSize" xml:"PageSize"`
-	TotalCount int                     `json:"TotalCount" xml:"TotalCount"`
 	HttpCode   string                  `json:"HttpCode" xml:"HttpCode"`
+	TotalCount int                     `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string                  `json:"RequestId" xml:"RequestId"`
+	Message    string                  `json:"Message" xml:"Message"`
+	PageSize   int                     `json:"PageSize" xml:"PageSize"`
+	PageNumber int                     `json:"PageNumber" xml:"PageNumber"`
+	ErrorCode  string                  `json:"ErrorCode" xml:"ErrorCode"`
+	Success    bool                    `json:"Success" xml:"Success"`
 	Data       []SimpleNacosAnsService `json:"Data" xml:"Data"`
 }
 
@@ -101,7 +101,7 @@ func CreateListAnsServicesRequest() (request *ListAnsServicesRequest) {
 	request = &ListAnsServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServices", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServices", "", "")
 	request.Method = requests.GET
 	return
 }

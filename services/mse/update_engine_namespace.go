@@ -82,10 +82,10 @@ type UpdateEngineNamespaceRequest struct {
 // UpdateEngineNamespaceResponse is the response struct for api UpdateEngineNamespace
 type UpdateEngineNamespaceResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -94,7 +94,7 @@ func CreateUpdateEngineNamespaceRequest() (request *UpdateEngineNamespaceRequest
 	request = &UpdateEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateEngineNamespace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateEngineNamespace", "", "")
 	request.Method = requests.POST
 	return
 }

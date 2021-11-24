@@ -76,12 +76,12 @@ type QueryClusterSpecificationRequest struct {
 // QueryClusterSpecificationResponse is the response struct for api QueryClusterSpecification
 type QueryClusterSpecificationResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
 	Success        bool       `json:"Success" xml:"Success"`
-	Message        string     `json:"Message" xml:"Message"`
 	ErrorCode      string     `json:"ErrorCode" xml:"ErrorCode"`
 	Code           int        `json:"Code" xml:"Code"`
-	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string     `json:"Message" xml:"Message"`
 	Data           []DataItem `json:"Data" xml:"Data"`
 }
 
@@ -90,7 +90,7 @@ func CreateQueryClusterSpecificationRequest() (request *QueryClusterSpecificatio
 	request = &QueryClusterSpecificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterSpecification", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterSpecification", "", "")
 	request.Method = requests.POST
 	return
 }

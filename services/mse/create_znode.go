@@ -79,11 +79,11 @@ type CreateZnodeRequest struct {
 // CreateZnodeResponse is the response struct for api CreateZnode
 type CreateZnodeResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -92,7 +92,7 @@ func CreateCreateZnodeRequest() (request *CreateZnodeRequest) {
 	request = &CreateZnodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateZnode", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateZnode", "", "")
 	request.Method = requests.POST
 	return
 }

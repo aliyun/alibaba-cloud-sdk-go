@@ -87,12 +87,12 @@ type UpdateNacosInstanceRequest struct {
 // UpdateNacosInstanceResponse is the response struct for api UpdateNacosInstance
 type UpdateNacosInstanceResponse struct {
 	*responses.BaseResponse
-	Message        string `json:"Message" xml:"Message"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           string `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Message        string `json:"Message" xml:"Message"`
 	Code           int    `json:"Code" xml:"Code"`
 	Success        bool   `json:"Success" xml:"Success"`
+	Data           string `json:"Data" xml:"Data"`
 }
 
 // CreateUpdateNacosInstanceRequest creates a request to invoke UpdateNacosInstance API
@@ -100,7 +100,7 @@ func CreateUpdateNacosInstanceRequest() (request *UpdateNacosInstanceRequest) {
 	request = &UpdateNacosInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosInstance", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosInstance", "", "")
 	request.Method = requests.POST
 	return
 }

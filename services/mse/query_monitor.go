@@ -83,11 +83,11 @@ type QueryMonitorRequest struct {
 // QueryMonitorResponse is the response struct for api QueryMonitor
 type QueryMonitorResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateQueryMonitorRequest creates a request to invoke QueryMonitor API
@@ -95,7 +95,7 @@ func CreateQueryMonitorRequest() (request *QueryMonitorRequest) {
 	request = &QueryMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryMonitor", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryMonitor", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -71,21 +71,22 @@ func (client *Client) DeleteNacosConfigWithCallback(request *DeleteNacosConfigRe
 // DeleteNacosConfigRequest is the request struct for api DeleteNacosConfig
 type DeleteNacosConfigRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	DataId      string `position:"Query" name:"DataId"`
-	NamespaceId string `position:"Query" name:"NamespaceId"`
-	Group       string `position:"Query" name:"Group"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	DataId      string           `position:"Query" name:"DataId"`
+	NamespaceId string           `position:"Query" name:"NamespaceId"`
+	Beta        requests.Boolean `position:"Query" name:"Beta"`
+	Group       string           `position:"Query" name:"Group"`
 }
 
 // DeleteNacosConfigResponse is the response struct for api DeleteNacosConfig
 type DeleteNacosConfigResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
+	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
 	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteNacosConfigRequest creates a request to invoke DeleteNacosConfig API
@@ -93,7 +94,7 @@ func CreateDeleteNacosConfigRequest() (request *DeleteNacosConfigRequest) {
 	request = &DeleteNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosConfig", "", "")
 	request.Method = requests.POST
 	return
 }

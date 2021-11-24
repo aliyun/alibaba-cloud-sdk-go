@@ -17,37 +17,39 @@ package mse
 
 // DataInQueryClusterDetail is a nested struct in mse response
 type DataInQueryClusterDetail struct {
-	InternetAddress      string          `json:"InternetAddress" xml:"InternetAddress"`
-	AclEntryList         string          `json:"AclEntryList" xml:"AclEntryList"`
-	Cpu                  int             `json:"Cpu" xml:"Cpu"`
-	InternetPort         string          `json:"InternetPort" xml:"InternetPort"`
-	IntranetPort         string          `json:"IntranetPort" xml:"IntranetPort"`
-	AppVersion           string          `json:"AppVersion" xml:"AppVersion"`
-	DiskType             string          `json:"DiskType" xml:"DiskType"`
-	InitCostTime         int64           `json:"InitCostTime" xml:"InitCostTime"`
-	PayInfo              string          `json:"PayInfo" xml:"PayInfo"`
-	ClusterName          string          `json:"ClusterName" xml:"ClusterName"`
-	IntranetDomain       string          `json:"IntranetDomain" xml:"IntranetDomain"`
-	NetType              string          `json:"NetType" xml:"NetType"`
-	ConnectionType       string          `json:"ConnectionType" xml:"ConnectionType"`
-	ClusterVersion       string          `json:"ClusterVersion" xml:"ClusterVersion"`
-	InstanceId           string          `json:"InstanceId" xml:"InstanceId"`
-	ClusterId            string          `json:"ClusterId" xml:"ClusterId"`
-	InternetDomain       string          `json:"InternetDomain" xml:"InternetDomain"`
-	VSwitchId            string          `json:"VSwitchId" xml:"VSwitchId"`
-	ClusterSpecification string          `json:"ClusterSpecification" xml:"ClusterSpecification"`
-	AclId                string          `json:"AclId" xml:"AclId"`
+	VpcId                string          `json:"VpcId" xml:"VpcId"`
 	CreateTime           string          `json:"CreateTime" xml:"CreateTime"`
-	HealthStatus         string          `json:"HealthStatus" xml:"HealthStatus"`
-	ClusterType          string          `json:"ClusterType" xml:"ClusterType"`
+	IntranetAddress      string          `json:"IntranetAddress" xml:"IntranetAddress"`
+	DiskType             string          `json:"DiskType" xml:"DiskType"`
+	PubNetworkFlow       string          `json:"PubNetworkFlow" xml:"PubNetworkFlow"`
+	DiskCapacity         int64           `json:"DiskCapacity" xml:"DiskCapacity"`
 	MemoryCapacity       int64           `json:"MemoryCapacity" xml:"MemoryCapacity"`
 	ClusterAliasName     string          `json:"ClusterAliasName" xml:"ClusterAliasName"`
 	InstanceCount        int             `json:"InstanceCount" xml:"InstanceCount"`
-	IntranetAddress      string          `json:"IntranetAddress" xml:"IntranetAddress"`
-	DiskCapacity         int64           `json:"DiskCapacity" xml:"DiskCapacity"`
-	VpcId                string          `json:"VpcId" xml:"VpcId"`
-	PubNetworkFlow       string          `json:"PubNetworkFlow" xml:"PubNetworkFlow"`
-	InitStatus           string          `json:"InitStatus" xml:"InitStatus"`
+	IntranetPort         string          `json:"IntranetPort" xml:"IntranetPort"`
+	ClusterId            string          `json:"ClusterId" xml:"ClusterId"`
+	IntranetDomain       string          `json:"IntranetDomain" xml:"IntranetDomain"`
+	InternetDomain       string          `json:"InternetDomain" xml:"InternetDomain"`
+	PayInfo              string          `json:"PayInfo" xml:"PayInfo"`
+	InternetAddress      string          `json:"InternetAddress" xml:"InternetAddress"`
+	InstanceId           string          `json:"InstanceId" xml:"InstanceId"`
+	AclEntryList         string          `json:"AclEntryList" xml:"AclEntryList"`
+	HealthStatus         string          `json:"HealthStatus" xml:"HealthStatus"`
+	InitCostTime         int64           `json:"InitCostTime" xml:"InitCostTime"`
 	RegionId             string          `json:"RegionId" xml:"RegionId"`
+	AclId                string          `json:"AclId" xml:"AclId"`
+	Cpu                  int             `json:"Cpu" xml:"Cpu"`
+	ClusterType          string          `json:"ClusterType" xml:"ClusterType"`
+	ClusterName          string          `json:"ClusterName" xml:"ClusterName"`
+	InitStatus           string          `json:"InitStatus" xml:"InitStatus"`
+	InternetPort         string          `json:"InternetPort" xml:"InternetPort"`
+	AppVersion           string          `json:"AppVersion" xml:"AppVersion"`
+	NetType              string          `json:"NetType" xml:"NetType"`
+	ClusterVersion       string          `json:"ClusterVersion" xml:"ClusterVersion"`
+	ClusterSpecification string          `json:"ClusterSpecification" xml:"ClusterSpecification"`
+	VSwitchId            string          `json:"VSwitchId" xml:"VSwitchId"`
+	ConnectionType       string          `json:"ConnectionType" xml:"ConnectionType"`
+	MseVersion           string          `json:"MseVersion" xml:"MseVersion"`
+	ChargeType           string          `json:"ChargeType" xml:"ChargeType"`
 	InstanceModels       []InstanceModel `json:"InstanceModels" xml:"InstanceModels"`
 }
