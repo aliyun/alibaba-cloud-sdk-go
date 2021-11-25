@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StopChannelUserPublish invokes the rtc.StopChannelUserPublish API synchronously
-func (client *Client) StopChannelUserPublish(request *StopChannelUserPublishRequest) (response *StopChannelUserPublishResponse, err error) {
-	response = CreateStopChannelUserPublishResponse()
+// DeleteChannel invokes the rtc.DeleteChannel API synchronously
+func (client *Client) DeleteChannel(request *DeleteChannelRequest) (response *DeleteChannelResponse, err error) {
+	response = CreateDeleteChannelResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StopChannelUserPublishWithChan invokes the rtc.StopChannelUserPublish API asynchronously
-func (client *Client) StopChannelUserPublishWithChan(request *StopChannelUserPublishRequest) (<-chan *StopChannelUserPublishResponse, <-chan error) {
-	responseChan := make(chan *StopChannelUserPublishResponse, 1)
+// DeleteChannelWithChan invokes the rtc.DeleteChannel API asynchronously
+func (client *Client) DeleteChannelWithChan(request *DeleteChannelRequest) (<-chan *DeleteChannelResponse, <-chan error) {
+	responseChan := make(chan *DeleteChannelResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StopChannelUserPublish(request)
+		response, err := client.DeleteChannel(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) StopChannelUserPublishWithChan(request *StopChannelUserPub
 	return responseChan, errChan
 }
 
-// StopChannelUserPublishWithCallback invokes the rtc.StopChannelUserPublish API asynchronously
-func (client *Client) StopChannelUserPublishWithCallback(request *StopChannelUserPublishRequest, callback func(response *StopChannelUserPublishResponse, err error)) <-chan int {
+// DeleteChannelWithCallback invokes the rtc.DeleteChannel API asynchronously
+func (client *Client) DeleteChannelWithCallback(request *DeleteChannelRequest, callback func(response *DeleteChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StopChannelUserPublishResponse
+		var response *DeleteChannelResponse
 		var err error
 		defer close(result)
-		response, err = client.StopChannelUserPublish(request)
+		response, err = client.DeleteChannel(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,34 @@ func (client *Client) StopChannelUserPublishWithCallback(request *StopChannelUse
 	return result
 }
 
-// StopChannelUserPublishRequest is the request struct for api StopChannelUserPublish
-type StopChannelUserPublishRequest struct {
+// DeleteChannelRequest is the request struct for api DeleteChannel
+type DeleteChannelRequest struct {
 	*requests.RpcRequest
-	UserId    string           `position:"Query" name:"UserId"`
 	ShowLog   string           `position:"Query" name:"ShowLog"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	AppId     string           `position:"Query" name:"AppId"`
 	ChannelId string           `position:"Query" name:"ChannelId"`
 }
 
-// StopChannelUserPublishResponse is the response struct for api StopChannelUserPublish
-type StopChannelUserPublishResponse struct {
+// DeleteChannelResponse is the response struct for api DeleteChannel
+type DeleteChannelResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateStopChannelUserPublishRequest creates a request to invoke StopChannelUserPublish API
-func CreateStopChannelUserPublishRequest() (request *StopChannelUserPublishRequest) {
-	request = &StopChannelUserPublishRequest{
+// CreateDeleteChannelRequest creates a request to invoke DeleteChannel API
+func CreateDeleteChannelRequest() (request *DeleteChannelRequest) {
+	request = &DeleteChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StopChannelUserPublish", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteChannel", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateStopChannelUserPublishResponse creates a response to parse from StopChannelUserPublish response
-func CreateStopChannelUserPublishResponse() (response *StopChannelUserPublishResponse) {
-	response = &StopChannelUserPublishResponse{
+// CreateDeleteChannelResponse creates a response to parse from DeleteChannel response
+func CreateDeleteChannelResponse() (response *DeleteChannelResponse) {
+	response = &DeleteChannelResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
