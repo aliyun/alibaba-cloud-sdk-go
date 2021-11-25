@@ -71,16 +71,17 @@ func (client *Client) DescribeTTSConfigWithCallback(request *DescribeTTSConfigRe
 // DescribeTTSConfigRequest is the request struct for api DescribeTTSConfig
 type DescribeTTSConfigRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 }
 
 // DescribeTTSConfigResponse is the response struct for api DescribeTTSConfig
 type DescribeTTSConfigResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Volume     int    `json:"Volume" xml:"Volume"`
 	Voice      string `json:"Voice" xml:"Voice"`
 	SpeechRate int    `json:"SpeechRate" xml:"SpeechRate"`
-	Volume     int    `json:"Volume" xml:"Volume"`
 }
 
 // CreateDescribeTTSConfigRequest creates a request to invoke DescribeTTSConfig API

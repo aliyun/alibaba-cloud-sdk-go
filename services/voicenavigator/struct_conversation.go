@@ -17,12 +17,17 @@ package voicenavigator
 
 // Conversation is a nested struct in voicenavigator response
 type Conversation struct {
-	CallingNumber        string `json:"CallingNumber" xml:"CallingNumber"`
 	EffectiveAnswerCount int    `json:"EffectiveAnswerCount" xml:"EffectiveAnswerCount"`
+	SkillGroup           string `json:"SkillGroup" xml:"SkillGroup"`
+	TransferredToAgent   bool   `json:"TransferredToAgent" xml:"TransferredToAgent"`
+	EndReason            int    `json:"EndReason" xml:"EndReason"`
+	EndTime              int64  `json:"EndTime" xml:"EndTime"`
+	StartTime            int64  `json:"StartTime" xml:"StartTime"`
+	CallingNumber        string `json:"CallingNumber" xml:"CallingNumber"`
 	BeginTime            int64  `json:"BeginTime" xml:"BeginTime"`
 	SkillGroupId         string `json:"SkillGroupId" xml:"SkillGroupId"`
 	UserUtteranceCount   int    `json:"UserUtteranceCount" xml:"UserUtteranceCount"`
-	TransferredToAgent   bool   `json:"TransferredToAgent" xml:"TransferredToAgent"`
+	HasToAgent           bool   `json:"HasToAgent" xml:"HasToAgent"`
 	ConversationId       string `json:"ConversationId" xml:"ConversationId"`
-	EndTime              int64  `json:"EndTime" xml:"EndTime"`
+	Rounds               int    `json:"Rounds" xml:"Rounds"`
 }

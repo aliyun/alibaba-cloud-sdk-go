@@ -71,8 +71,9 @@ func (client *Client) EndDialogueWithCallback(request *EndDialogueRequest, callb
 // EndDialogueRequest is the request struct for api EndDialogue
 type EndDialogueRequest struct {
 	*requests.RpcRequest
-	ConversationId string `position:"Query" name:"ConversationId"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
+	ConversationId  string           `position:"Query" name:"ConversationId"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 }
 
 // EndDialogueResponse is the response struct for api EndDialogue

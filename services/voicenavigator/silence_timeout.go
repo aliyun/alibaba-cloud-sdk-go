@@ -71,18 +71,19 @@ func (client *Client) SilenceTimeoutWithCallback(request *SilenceTimeoutRequest,
 // SilenceTimeoutRequest is the request struct for api SilenceTimeout
 type SilenceTimeoutRequest struct {
 	*requests.RpcRequest
-	ConversationId string `position:"Query" name:"ConversationId"`
-	InitialContext string `position:"Query" name:"InitialContext"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
+	ConversationId  string           `position:"Query" name:"ConversationId"`
+	InitialContext  string           `position:"Query" name:"InitialContext"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 }
 
 // SilenceTimeoutResponse is the response struct for api SilenceTimeout
 type SilenceTimeoutResponse struct {
 	*responses.BaseResponse
 	Action        string `json:"Action" xml:"Action"`
-	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
 	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
+	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
 	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
 }
 

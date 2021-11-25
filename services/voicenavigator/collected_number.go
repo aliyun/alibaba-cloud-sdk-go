@@ -71,19 +71,20 @@ func (client *Client) CollectedNumberWithCallback(request *CollectedNumberReques
 // CollectedNumberRequest is the request struct for api CollectedNumber
 type CollectedNumberRequest struct {
 	*requests.RpcRequest
-	ConversationId string `position:"Query" name:"ConversationId"`
-	Number         string `position:"Query" name:"Number"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
+	ConversationId  string           `position:"Query" name:"ConversationId"`
+	Number          string           `position:"Query" name:"Number"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 }
 
 // CollectedNumberResponse is the response struct for api CollectedNumber
 type CollectedNumberResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
-	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 	Action        string `json:"Action" xml:"Action"`
+	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
+	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
 }
 
 // CreateCollectedNumberRequest creates a request to invoke CollectedNumber API

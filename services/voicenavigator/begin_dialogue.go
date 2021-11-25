@@ -71,21 +71,22 @@ func (client *Client) BeginDialogueWithCallback(request *BeginDialogueRequest, c
 // BeginDialogueRequest is the request struct for api BeginDialogue
 type BeginDialogueRequest struct {
 	*requests.RpcRequest
-	ConversationId string `position:"Query" name:"ConversationId"`
-	InitialContext string `position:"Query" name:"InitialContext"`
-	CallingNumber  string `position:"Query" name:"CallingNumber"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	CalledNumber   string `position:"Query" name:"CalledNumber"`
+	ConversationId  string           `position:"Query" name:"ConversationId"`
+	InitialContext  string           `position:"Query" name:"InitialContext"`
+	CallingNumber   string           `position:"Query" name:"CallingNumber"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	CalledNumber    string           `position:"Query" name:"CalledNumber"`
+	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 }
 
 // BeginDialogueResponse is the response struct for api BeginDialogue
 type BeginDialogueResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
-	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 	Action        string `json:"Action" xml:"Action"`
+	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
+	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
 }
 
 // CreateBeginDialogueRequest creates a request to invoke BeginDialogue API

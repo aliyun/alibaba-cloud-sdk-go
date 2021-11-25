@@ -71,18 +71,23 @@ func (client *Client) ListConversationsWithCallback(request *ListConversationsRe
 // ListConversationsRequest is the request struct for api ListConversations
 type ListConversationsRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	BeginTimeLeftRange  requests.Integer `position:"Query" name:"BeginTimeLeftRange"`
+	Query               string           `position:"Query" name:"Query"`
+	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
+	Result              requests.Integer `position:"Query" name:"Result"`
+	CallingNumber       string           `position:"Query" name:"CallingNumber"`
+	InstanceId          string           `position:"Query" name:"InstanceId"`
+	BeginTimeRightRange requests.Integer `position:"Query" name:"BeginTimeRightRange"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListConversationsResponse is the response struct for api ListConversations
 type ListConversationsResponse struct {
 	*responses.BaseResponse
-	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	TotalCount    int64          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int            `json:"PageNumber" xml:"PageNumber"`
 	PageSize      int            `json:"PageSize" xml:"PageSize"`
+	RequestId     string         `json:"RequestId" xml:"RequestId"`
+	PageNumber    int            `json:"PageNumber" xml:"PageNumber"`
 	Conversations []Conversation `json:"Conversations" xml:"Conversations"`
 }
 
