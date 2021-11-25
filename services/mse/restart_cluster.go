@@ -72,6 +72,7 @@ func (client *Client) RestartClusterWithCallback(request *RestartClusterRequest,
 type RestartClusterRequest struct {
 	*requests.RpcRequest
 	ClusterId   string `position:"Query" name:"ClusterId"`
+	PodNameList string `position:"Query" name:"PodNameList"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	RequestPars string `position:"Query" name:"RequestPars"`
 }
