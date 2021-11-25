@@ -17,16 +17,17 @@ package outboundbot
 
 // LatestTask is a nested struct in outboundbot response
 type LatestTask struct {
-	TaskEndReason        string   `json:"TaskEndReason" xml:"TaskEndReason"`
-	CallDuration         int      `json:"CallDuration" xml:"CallDuration"`
-	CallDurationDisplay  string   `json:"CallDurationDisplay" xml:"CallDurationDisplay"`
-	StatusName           string   `json:"StatusName" xml:"StatusName"`
-	HasAnswered          bool     `json:"HasAnswered" xml:"HasAnswered"`
-	HasReachedEndOfFlow  bool     `json:"HasReachedEndOfFlow" xml:"HasReachedEndOfFlow"`
-	CallTime             int64    `json:"CallTime" xml:"CallTime"`
-	HasHangUpByRejection bool     `json:"HasHangUpByRejection" xml:"HasHangUpByRejection"`
-	Status               string   `json:"Status" xml:"Status"`
-	Contact              Contact  `json:"Contact" xml:"Contact"`
-	Extras               []Extra  `json:"Extras" xml:"Extras"`
-	TagHits              []TagHit `json:"TagHits" xml:"TagHits"`
+	Status               string          `json:"Status" xml:"Status"`
+	TaskEndReason        string          `json:"TaskEndReason" xml:"TaskEndReason"`
+	HasAnswered          bool            `json:"HasAnswered" xml:"HasAnswered"`
+	CallDuration         int             `json:"CallDuration" xml:"CallDuration"`
+	HasReachedEndOfFlow  bool            `json:"HasReachedEndOfFlow" xml:"HasReachedEndOfFlow"`
+	StatusName           string          `json:"StatusName" xml:"StatusName"`
+	CallTime             int64           `json:"CallTime" xml:"CallTime"`
+	CallDurationDisplay  string          `json:"CallDurationDisplay" xml:"CallDurationDisplay"`
+	HasHangUpByRejection bool            `json:"HasHangUpByRejection" xml:"HasHangUpByRejection"`
+	Contact              Contact         `json:"Contact" xml:"Contact"`
+	Extras               []Extra         `json:"Extras" xml:"Extras"`
+	TagHits              []TagHit        `json:"TagHits" xml:"TagHits"`
+	DialExceptionCodes   []ExceptionCode `json:"DialExceptionCodes" xml:"DialExceptionCodes"`
 }

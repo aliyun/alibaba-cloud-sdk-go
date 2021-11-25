@@ -29,9 +29,9 @@ type Job struct {
 	JobId             string         `json:"JobId" xml:"JobId"`
 	Priority          int            `json:"Priority" xml:"Priority"`
 	ReferenceId       string         `json:"ReferenceId" xml:"ReferenceId"`
-	ScenarioId        string         `json:"ScenarioId" xml:"ScenarioId"`
-	CalledNumber      string         `json:"CalledNumber" xml:"CalledNumber"`
 	NextExecutionTime int64          `json:"NextExecutionTime" xml:"NextExecutionTime"`
+	CalledNumber      string         `json:"CalledNumber" xml:"CalledNumber"`
+	ScenarioId        string         `json:"ScenarioId" xml:"ScenarioId"`
 	StatusName        string         `json:"StatusName" xml:"StatusName"`
 	ActualTime        int64          `json:"ActualTime" xml:"ActualTime"`
 	Status            string         `json:"Status" xml:"Status"`

@@ -79,13 +79,14 @@ type RecordFailureRequest struct {
 	CalledNumber    string           `position:"Query" name:"CalledNumber"`
 	InstanceOwnerId string           `position:"Query" name:"InstanceOwnerId"`
 	TaskId          string           `position:"Query" name:"TaskId"`
+	ExceptionCodes  string           `position:"Query" name:"ExceptionCodes"`
 }
 
 // RecordFailureResponse is the response struct for api RecordFailure
 type RecordFailureResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`

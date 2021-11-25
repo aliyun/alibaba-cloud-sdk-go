@@ -22,8 +22,8 @@ type Contact struct {
 	PhoneNumber          string `json:"PhoneNumber" xml:"PhoneNumber"`
 	ContactId            string `json:"ContactId" xml:"ContactId"`
 	ReferenceId          string `json:"ReferenceId" xml:"ReferenceId"`
-	PreferredPhoneNumber string `json:"PreferredPhoneNumber" xml:"PreferredPhoneNumber"`
 	JobUuid              string `json:"JobUuid" xml:"JobUuid"`
+	PreferredPhoneNumber string `json:"PreferredPhoneNumber" xml:"PreferredPhoneNumber"`
 	ContactName          string `json:"ContactName" xml:"ContactName"`
 	Round                int    `json:"Round" xml:"Round"`
 	State                string `json:"State" xml:"State"`

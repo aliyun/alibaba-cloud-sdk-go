@@ -17,20 +17,21 @@ package outboundbot
 
 // Task is a nested struct in outboundbot response
 type Task struct {
-	EndReason     string               `json:"EndReason" xml:"EndReason"`
-	JobId         string               `json:"JobId" xml:"JobId"`
-	Brief         string               `json:"Brief" xml:"Brief"`
-	PlanedTime    int64                `json:"PlanedTime" xml:"PlanedTime"`
-	CallId        string               `json:"CallId" xml:"CallId"`
-	CalledNumber  string               `json:"CalledNumber" xml:"CalledNumber"`
-	ScenarioId    string               `json:"ScenarioId" xml:"ScenarioId"`
-	EndTime       int64                `json:"EndTime" xml:"EndTime"`
-	CallingNumber string               `json:"CallingNumber" xml:"CallingNumber"`
-	TaskId        string               `json:"TaskId" xml:"TaskId"`
-	Duration      int                  `json:"Duration" xml:"Duration"`
-	ActualTime    int64                `json:"ActualTime" xml:"ActualTime"`
-	ChatbotId     string               `json:"ChatbotId" xml:"ChatbotId"`
-	Status        string               `json:"Status" xml:"Status"`
-	Contact       Contact              `json:"Contact" xml:"Contact"`
-	Conversation  []ConversationDetail `json:"Conversation" xml:"Conversation"`
+	EndReason       string               `json:"EndReason" xml:"EndReason"`
+	JobId           string               `json:"JobId" xml:"JobId"`
+	Brief           string               `json:"Brief" xml:"Brief"`
+	PlanedTime      int64                `json:"PlanedTime" xml:"PlanedTime"`
+	CallId          string               `json:"CallId" xml:"CallId"`
+	CalledNumber    string               `json:"CalledNumber" xml:"CalledNumber"`
+	EndTime         int64                `json:"EndTime" xml:"EndTime"`
+	ScenarioId      string               `json:"ScenarioId" xml:"ScenarioId"`
+	HangUpDirection string               `json:"HangUpDirection" xml:"HangUpDirection"`
+	CallingNumber   string               `json:"CallingNumber" xml:"CallingNumber"`
+	TaskId          string               `json:"TaskId" xml:"TaskId"`
+	Duration        int                  `json:"Duration" xml:"Duration"`
+	ChatbotId       string               `json:"ChatbotId" xml:"ChatbotId"`
+	ActualTime      int64                `json:"ActualTime" xml:"ActualTime"`
+	Status          string               `json:"Status" xml:"Status"`
+	Contact         Contact              `json:"Contact" xml:"Contact"`
+	Conversation    []ConversationDetail `json:"Conversation" xml:"Conversation"`
 }

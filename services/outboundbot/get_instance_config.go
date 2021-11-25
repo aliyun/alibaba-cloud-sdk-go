@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeJob invokes the outboundbot.DescribeJob API synchronously
-func (client *Client) DescribeJob(request *DescribeJobRequest) (response *DescribeJobResponse, err error) {
-	response = CreateDescribeJobResponse()
+// GetInstanceConfig invokes the outboundbot.GetInstanceConfig API synchronously
+func (client *Client) GetInstanceConfig(request *GetInstanceConfigRequest) (response *GetInstanceConfigResponse, err error) {
+	response = CreateGetInstanceConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeJobWithChan invokes the outboundbot.DescribeJob API asynchronously
-func (client *Client) DescribeJobWithChan(request *DescribeJobRequest) (<-chan *DescribeJobResponse, <-chan error) {
-	responseChan := make(chan *DescribeJobResponse, 1)
+// GetInstanceConfigWithChan invokes the outboundbot.GetInstanceConfig API asynchronously
+func (client *Client) GetInstanceConfigWithChan(request *GetInstanceConfigRequest) (<-chan *GetInstanceConfigResponse, <-chan error) {
+	responseChan := make(chan *GetInstanceConfigResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeJob(request)
+		response, err := client.GetInstanceConfig(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeJobWithChan(request *DescribeJobRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// DescribeJobWithCallback invokes the outboundbot.DescribeJob API asynchronously
-func (client *Client) DescribeJobWithCallback(request *DescribeJobRequest, callback func(response *DescribeJobResponse, err error)) <-chan int {
+// GetInstanceConfigWithCallback invokes the outboundbot.GetInstanceConfig API asynchronously
+func (client *Client) GetInstanceConfigWithCallback(request *GetInstanceConfigRequest, callback func(response *GetInstanceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeJobResponse
+		var response *GetInstanceConfigResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeJob(request)
+		response, err = client.GetInstanceConfig(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,36 @@ func (client *Client) DescribeJobWithCallback(request *DescribeJobRequest, callb
 	return result
 }
 
-// DescribeJobRequest is the request struct for api DescribeJob
-type DescribeJobRequest struct {
+// GetInstanceConfigRequest is the request struct for api GetInstanceConfig
+type GetInstanceConfigRequest struct {
 	*requests.RpcRequest
-	JobId      string `position:"Query" name:"JobId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// DescribeJobResponse is the response struct for api DescribeJob
-type DescribeJobResponse struct {
+// GetInstanceConfigResponse is the response struct for api GetInstanceConfig
+type GetInstanceConfigResponse struct {
 	*responses.BaseResponse
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Job            Job    `json:"Job" xml:"Job"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
-// CreateDescribeJobRequest creates a request to invoke DescribeJob API
-func CreateDescribeJobRequest() (request *DescribeJobRequest) {
-	request = &DescribeJobRequest{
+// CreateGetInstanceConfigRequest creates a request to invoke GetInstanceConfig API
+func CreateGetInstanceConfigRequest() (request *GetInstanceConfigRequest) {
+	request = &GetInstanceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJob", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetInstanceConfig", "outboundbot", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeJobResponse creates a response to parse from DescribeJob response
-func CreateDescribeJobResponse() (response *DescribeJobResponse) {
-	response = &DescribeJobResponse{
+// CreateGetInstanceConfigResponse creates a response to parse from GetInstanceConfig response
+func CreateGetInstanceConfigResponse() (response *GetInstanceConfigResponse) {
+	response = &GetInstanceConfigResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
