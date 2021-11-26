@@ -17,13 +17,16 @@ package cbn
 
 // FlowLog is a nested struct in cbn response
 type FlowLog struct {
-	FlowLogId    string `json:"FlowLogId" xml:"FlowLogId"`
-	FlowLogName  string `json:"FlowLogName" xml:"FlowLogName"`
-	Description  string `json:"Description" xml:"Description"`
-	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	CenId        string `json:"CenId" xml:"CenId"`
-	ProjectName  string `json:"ProjectName" xml:"ProjectName"`
-	LogStoreName string `json:"LogStoreName" xml:"LogStoreName"`
-	Status       string `json:"Status" xml:"Status"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
+	Status                    string `json:"Status" xml:"Status"`
+	CreationTime              string `json:"CreationTime" xml:"CreationTime"`
+	FlowLogName               string `json:"FlowLogName" xml:"FlowLogName"`
+	Description               string `json:"Description" xml:"Description"`
+	ProjectName               string `json:"ProjectName" xml:"ProjectName"`
+	CenId                     string `json:"CenId" xml:"CenId"`
+	LogStoreName              string `json:"LogStoreName" xml:"LogStoreName"`
+	RegionId                  string `json:"RegionId" xml:"RegionId"`
+	FlowLogId                 string `json:"FlowLogId" xml:"FlowLogId"`
+	PeerRegionId              string `json:"PeerRegionId" xml:"PeerRegionId"`
+	TransitRouterAttachmentId string `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
+	Interval                  int64  `json:"Interval" xml:"Interval"`
 }

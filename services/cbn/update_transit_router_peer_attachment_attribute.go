@@ -72,6 +72,7 @@ func (client *Client) UpdateTransitRouterPeerAttachmentAttributeWithCallback(req
 type UpdateTransitRouterPeerAttachmentAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                    requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BandwidthType                      string           `position:"Query" name:"BandwidthType"`
 	ClientToken                        string           `position:"Query" name:"ClientToken"`
 	TransitRouterAttachmentName        string           `position:"Query" name:"TransitRouterAttachmentName"`
 	AutoPublishRouteEnabled            requests.Boolean `position:"Query" name:"AutoPublishRouteEnabled"`

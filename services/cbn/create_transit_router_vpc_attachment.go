@@ -100,8 +100,8 @@ type CreateTransitRouterVpcAttachmentZoneMappings struct {
 // CreateTransitRouterVpcAttachmentResponse is the response struct for api CreateTransitRouterVpcAttachment
 type CreateTransitRouterVpcAttachmentResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
 	TransitRouterAttachmentId string `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
+	RequestId                 string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateTransitRouterVpcAttachmentRequest creates a request to invoke CreateTransitRouterVpcAttachment API

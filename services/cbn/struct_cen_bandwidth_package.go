@@ -17,27 +17,27 @@ package cbn
 
 // CenBandwidthPackage is a nested struct in cbn response
 type CenBandwidthPackage struct {
-	CenBandwidthPackageId           string                             `json:"CenBandwidthPackageId" xml:"CenBandwidthPackageId"`
-	Name                            string                             `json:"Name" xml:"Name"`
-	Description                     string                             `json:"Description" xml:"Description"`
-	Bandwidth                       int64                              `json:"Bandwidth" xml:"Bandwidth"`
-	BandwidthPackageChargeType      string                             `json:"BandwidthPackageChargeType" xml:"BandwidthPackageChargeType"`
-	GeographicRegionAId             string                             `json:"GeographicRegionAId" xml:"GeographicRegionAId"`
-	GeographicRegionBId             string                             `json:"GeographicRegionBId" xml:"GeographicRegionBId"`
-	GeographicSpanId                string                             `json:"GeographicSpanId" xml:"GeographicSpanId"`
-	BusinessStatus                  string                             `json:"BusinessStatus" xml:"BusinessStatus"`
-	CreationTime                    string                             `json:"CreationTime" xml:"CreationTime"`
-	ExpiredTime                     string                             `json:"ExpiredTime" xml:"ExpiredTime"`
-	Status                          string                             `json:"Status" xml:"Status"`
-	IsCrossBorder                   bool                               `json:"IsCrossBorder" xml:"IsCrossBorder"`
-	TypeFor95                       string                             `json:"TypeFor95" xml:"TypeFor95"`
-	Ratio                           string                             `json:"Ratio" xml:"Ratio"`
-	HasReservationData              string                             `json:"HasReservationData" xml:"HasReservationData"`
-	ReservationBandwidth            string                             `json:"ReservationBandwidth" xml:"ReservationBandwidth"`
-	ReservationInternetChargeType   string                             `json:"ReservationInternetChargeType" xml:"ReservationInternetChargeType"`
 	ReservationActiveTime           string                             `json:"ReservationActiveTime" xml:"ReservationActiveTime"`
+	Status                          string                             `json:"Status" xml:"Status"`
+	CreationTime                    string                             `json:"CreationTime" xml:"CreationTime"`
 	ReservationOrderType            string                             `json:"ReservationOrderType" xml:"ReservationOrderType"`
+	BandwidthPackageChargeType      string                             `json:"BandwidthPackageChargeType" xml:"BandwidthPackageChargeType"`
+	CenBandwidthPackageId           string                             `json:"CenBandwidthPackageId" xml:"CenBandwidthPackageId"`
+	ReservationInternetChargeType   string                             `json:"ReservationInternetChargeType" xml:"ReservationInternetChargeType"`
+	Ratio                           string                             `json:"Ratio" xml:"Ratio"`
+	GeographicRegionAId             string                             `json:"GeographicRegionAId" xml:"GeographicRegionAId"`
+	TypeFor95                       string                             `json:"TypeFor95" xml:"TypeFor95"`
+	Bandwidth                       int64                              `json:"Bandwidth" xml:"Bandwidth"`
+	Description                     string                             `json:"Description" xml:"Description"`
+	ExpiredTime                     string                             `json:"ExpiredTime" xml:"ExpiredTime"`
+	ReservationBandwidth            string                             `json:"ReservationBandwidth" xml:"ReservationBandwidth"`
+	GeographicSpanId                string                             `json:"GeographicSpanId" xml:"GeographicSpanId"`
+	GeographicRegionBId             string                             `json:"GeographicRegionBId" xml:"GeographicRegionBId"`
 	ResourceGroupId                 string                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	IsCrossBorder                   bool                               `json:"IsCrossBorder" xml:"IsCrossBorder"`
+	BusinessStatus                  string                             `json:"BusinessStatus" xml:"BusinessStatus"`
+	Name                            string                             `json:"Name" xml:"Name"`
+	HasReservationData              string                             `json:"HasReservationData" xml:"HasReservationData"`
 	CenIds                          CenIds                             `json:"CenIds" xml:"CenIds"`
 	OrginInterRegionBandwidthLimits OrginInterRegionBandwidthLimits    `json:"OrginInterRegionBandwidthLimits" xml:"OrginInterRegionBandwidthLimits"`
 	Tags                            TagsInDescribeCenBandwidthPackages `json:"Tags" xml:"Tags"`

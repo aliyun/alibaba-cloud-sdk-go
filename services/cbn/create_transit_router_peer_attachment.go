@@ -72,6 +72,7 @@ func (client *Client) CreateTransitRouterPeerAttachmentWithCallback(request *Cre
 type CreateTransitRouterPeerAttachmentRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                    requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BandwidthType                      string           `position:"Query" name:"BandwidthType"`
 	ClientToken                        string           `position:"Query" name:"ClientToken"`
 	CenId                              string           `position:"Query" name:"CenId"`
 	RouteTableAssociationEnabled       requests.Boolean `position:"Query" name:"RouteTableAssociationEnabled"`

@@ -31,6 +31,7 @@ type TransitRouterAttachment struct {
 	RegionId                           string        `json:"RegionId" xml:"RegionId"`
 	TransitRouterAttachmentId          string        `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
 	GeographicSpanId                   string        `json:"GeographicSpanId" xml:"GeographicSpanId"`
+	BandwidthType                      string        `json:"BandwidthType" xml:"BandwidthType"`
 	VpcRegionId                        string        `json:"VpcRegionId" xml:"VpcRegionId"`
 	TransitRouterAttachmentDescription string        `json:"TransitRouterAttachmentDescription" xml:"TransitRouterAttachmentDescription"`
 	BandwidthPackageId                 string        `json:"BandwidthPackageId" xml:"BandwidthPackageId"`

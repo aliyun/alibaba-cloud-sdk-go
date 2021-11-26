@@ -17,13 +17,13 @@ package cbn
 
 // RouteServiceEntry is a nested struct in cbn response
 type RouteServiceEntry struct {
-	CenId          string `json:"CenId" xml:"CenId"`
-	Host           string `json:"Host" xml:"Host"`
-	HostRegionId   string `json:"HostRegionId" xml:"HostRegionId"`
-	AccessRegionId string `json:"AccessRegionId" xml:"AccessRegionId"`
-	UpdateInterval string `json:"UpdateInterval" xml:"UpdateInterval"`
 	Status         string `json:"Status" xml:"Status"`
-	HostVpcId      string `json:"HostVpcId" xml:"HostVpcId"`
+	Host           string `json:"Host" xml:"Host"`
 	Description    string `json:"Description" xml:"Description"`
+	HostVpcId      string `json:"HostVpcId" xml:"HostVpcId"`
+	CenId          string `json:"CenId" xml:"CenId"`
+	AccessRegionId string `json:"AccessRegionId" xml:"AccessRegionId"`
+	HostRegionId   string `json:"HostRegionId" xml:"HostRegionId"`
+	UpdateInterval string `json:"UpdateInterval" xml:"UpdateInterval"`
 	Cidrs          Cidrs  `json:"Cidrs" xml:"Cidrs"`
 }
