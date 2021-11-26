@@ -78,10 +78,10 @@ type DeleteUserRequest struct {
 // DeleteUserResponse is the response struct for api DeleteUser
 type DeleteUserResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteUserRequest creates a request to invoke DeleteUser API

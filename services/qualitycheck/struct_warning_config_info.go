@@ -17,11 +17,11 @@ package qualitycheck
 
 // WarningConfigInfo is a nested struct in qualitycheck response
 type WarningConfigInfo struct {
-	ConfigId   int64                       `json:"ConfigId" xml:"ConfigId"`
-	ConfigName string                      `json:"ConfigName" xml:"ConfigName"`
 	Status     int                         `json:"Status" xml:"Status"`
-	CreateTime string                      `json:"CreateTime" xml:"CreateTime"`
+	ConfigName string                      `json:"ConfigName" xml:"ConfigName"`
 	UpdateTime string                      `json:"UpdateTime" xml:"UpdateTime"`
+	ConfigId   int64                       `json:"ConfigId" xml:"ConfigId"`
+	CreateTime string                      `json:"CreateTime" xml:"CreateTime"`
 	RidList    RidList                     `json:"RidList" xml:"RidList"`
 	RuleList   RuleListInListWarningConfig `json:"RuleList" xml:"RuleList"`
 	Channels   Channels                    `json:"Channels" xml:"Channels"`

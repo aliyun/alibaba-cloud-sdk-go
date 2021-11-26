@@ -18,8 +18,8 @@ package qualitycheck
 // DataInSyncQualityCheck is a nested struct in qualitycheck response
 type DataInSyncQualityCheck struct {
 	Score     int           `json:"Score" xml:"Score"`
+	TaskId    string        `json:"TaskId" xml:"TaskId"`
 	Tid       string        `json:"Tid" xml:"Tid"`
 	BeginTime int64         `json:"BeginTime" xml:"BeginTime"`
-	TaskId    string        `json:"TaskId" xml:"TaskId"`
 	Rules     []RuleHitInfo `json:"Rules" xml:"Rules"`
 }

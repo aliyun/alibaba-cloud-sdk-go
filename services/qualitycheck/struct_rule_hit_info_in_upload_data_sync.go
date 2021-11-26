@@ -17,8 +17,8 @@ package qualitycheck
 
 // RuleHitInfoInUploadDataSync is a nested struct in qualitycheck response
 type RuleHitInfoInUploadDataSync struct {
-	Rid           string              `json:"Rid" xml:"Rid"`
 	Tid           string              `json:"Tid" xml:"Tid"`
+	Rid           string              `json:"Rid" xml:"Rid"`
 	Hit           HitInUploadDataSync `json:"Hit" xml:"Hit"`
 	ConditionInfo ConditionInfo       `json:"ConditionInfo" xml:"ConditionInfo"`
 }

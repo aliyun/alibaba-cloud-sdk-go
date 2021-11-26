@@ -17,11 +17,11 @@ package qualitycheck
 
 // ReviewHistory is a nested struct in qualitycheck response
 type ReviewHistory struct {
-	TimeStr        string `json:"TimeStr" xml:"TimeStr"`
-	OperatorName   string `json:"OperatorName" xml:"OperatorName"`
 	Type           int    `json:"Type" xml:"Type"`
+	OperatorName   string `json:"OperatorName" xml:"OperatorName"`
+	TimeStr        string `json:"TimeStr" xml:"TimeStr"`
+	Score          int    `json:"Score" xml:"Score"`
 	ReviewResult   int    `json:"ReviewResult" xml:"ReviewResult"`
 	ComplainResult int    `json:"ComplainResult" xml:"ComplainResult"`
 	OldScore       int    `json:"OldScore" xml:"OldScore"`
-	Score          int    `json:"Score" xml:"Score"`
 }

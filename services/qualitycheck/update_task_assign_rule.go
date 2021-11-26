@@ -78,10 +78,10 @@ type UpdateTaskAssignRuleRequest struct {
 // UpdateTaskAssignRuleResponse is the response struct for api UpdateTaskAssignRule
 type UpdateTaskAssignRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateTaskAssignRuleRequest creates a request to invoke UpdateTaskAssignRule API

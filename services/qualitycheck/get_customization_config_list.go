@@ -78,10 +78,10 @@ type GetCustomizationConfigListRequest struct {
 // GetCustomizationConfigListResponse is the response struct for api GetCustomizationConfigList
 type GetCustomizationConfigListResponse struct {
 	*responses.BaseResponse
-	RequestId string                           `json:"RequestId" xml:"RequestId"`
-	Success   bool                             `json:"Success" xml:"Success"`
 	Code      string                           `json:"Code" xml:"Code"`
 	Message   string                           `json:"Message" xml:"Message"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	Success   bool                             `json:"Success" xml:"Success"`
 	Data      DataInGetCustomizationConfigList `json:"Data" xml:"Data"`
 }
 

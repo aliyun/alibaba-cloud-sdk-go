@@ -78,11 +78,11 @@ type EditThesaurusForApiRequest struct {
 // EditThesaurusForApiResponse is the response struct for api EditThesaurusForApi
 type EditThesaurusForApiResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      int64  `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEditThesaurusForApiRequest creates a request to invoke EditThesaurusForApi API

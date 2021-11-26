@@ -17,17 +17,17 @@ package qualitycheck
 
 // PrecisionTask is a nested struct in qualitycheck response
 type PrecisionTask struct {
-	Name           string                        `json:"Name" xml:"Name"`
-	TaskId         string                        `json:"TaskId" xml:"TaskId"`
-	Source         int                           `json:"Source" xml:"Source"`
-	DataSetId      int64                         `json:"DataSetId" xml:"DataSetId"`
-	DataSetName    string                        `json:"DataSetName" xml:"DataSetName"`
-	Duration       int                           `json:"Duration" xml:"Duration"`
 	Status         int                           `json:"Status" xml:"Status"`
-	TotalCount     int                           `json:"TotalCount" xml:"TotalCount"`
-	VerifiedCount  int                           `json:"VerifiedCount" xml:"VerifiedCount"`
+	UpdateTime     string                        `json:"UpdateTime" xml:"UpdateTime"`
 	IncorrectWords int                           `json:"IncorrectWords" xml:"IncorrectWords"`
 	CreateTime     string                        `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime     string                        `json:"UpdateTime" xml:"UpdateTime"`
+	DataSetId      int64                         `json:"DataSetId" xml:"DataSetId"`
+	VerifiedCount  int                           `json:"VerifiedCount" xml:"VerifiedCount"`
+	Source         int                           `json:"Source" xml:"Source"`
+	TotalCount     int                           `json:"TotalCount" xml:"TotalCount"`
+	DataSetName    string                        `json:"DataSetName" xml:"DataSetName"`
+	Duration       int                           `json:"Duration" xml:"Duration"`
+	Name           string                        `json:"Name" xml:"Name"`
+	TaskId         string                        `json:"TaskId" xml:"TaskId"`
 	Precisions     PrecisionsInListPrecisionTask `json:"Precisions" xml:"Precisions"`
 }

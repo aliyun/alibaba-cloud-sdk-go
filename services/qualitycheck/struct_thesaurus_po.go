@@ -17,7 +17,7 @@ package qualitycheck
 
 // ThesaurusPo is a nested struct in qualitycheck response
 type ThesaurusPo struct {
-	Id          int64       `json:"Id" xml:"Id"`
 	Business    string      `json:"Business" xml:"Business"`
+	Id          int64       `json:"Id" xml:"Id"`
 	SynonymList SynonymList `json:"SynonymList" xml:"SynonymList"`
 }

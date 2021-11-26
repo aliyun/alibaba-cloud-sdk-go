@@ -78,11 +78,11 @@ type CreateTaskAssignRuleRequest struct {
 // CreateTaskAssignRuleResponse is the response struct for api CreateTaskAssignRule
 type CreateTaskAssignRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateTaskAssignRuleRequest creates a request to invoke CreateTaskAssignRule API

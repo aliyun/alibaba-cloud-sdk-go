@@ -17,7 +17,7 @@ package qualitycheck
 
 // RestartResult is a nested struct in qualitycheck response
 type RestartResult struct {
-	Success bool   `json:"Success" xml:"Success"`
-	Data    string `json:"Data" xml:"Data"`
 	Message string `json:"Message" xml:"Message"`
+	Data    string `json:"Data" xml:"Data"`
+	Success bool   `json:"Success" xml:"Success"`
 }

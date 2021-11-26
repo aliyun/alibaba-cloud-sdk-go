@@ -78,11 +78,11 @@ type InvalidRuleRequest struct {
 // InvalidRuleResponse is the response struct for api InvalidRule
 type InvalidRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateInvalidRuleRequest creates a request to invoke InvalidRule API

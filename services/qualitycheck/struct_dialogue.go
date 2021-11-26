@@ -18,8 +18,8 @@ package qualitycheck
 // Dialogue is a nested struct in qualitycheck response
 type Dialogue struct {
 	End             int64  `json:"End" xml:"End"`
-	HourMinSec      string `json:"HourMinSec" xml:"HourMinSec"`
 	IncorrectWords  int    `json:"IncorrectWords" xml:"IncorrectWords"`
+	HourMinSec      string `json:"HourMinSec" xml:"HourMinSec"`
 	SourceRole      string `json:"SourceRole" xml:"SourceRole"`
 	SilenceDuration int    `json:"SilenceDuration" xml:"SilenceDuration"`
 	EmotionValue    int    `json:"EmotionValue" xml:"EmotionValue"`

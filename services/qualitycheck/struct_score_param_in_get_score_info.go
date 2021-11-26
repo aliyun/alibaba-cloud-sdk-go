@@ -17,8 +17,8 @@ package qualitycheck
 
 // ScoreParamInGetScoreInfo is a nested struct in qualitycheck response
 type ScoreParamInGetScoreInfo struct {
+	ScoreSubName string `json:"ScoreSubName" xml:"ScoreSubName"`
 	ScoreNum     int    `json:"ScoreNum" xml:"ScoreNum"`
 	ScoreSubId   int    `json:"ScoreSubId" xml:"ScoreSubId"`
-	ScoreSubName string `json:"ScoreSubName" xml:"ScoreSubName"`
 	ScoreType    int    `json:"ScoreType" xml:"ScoreType"`
 }

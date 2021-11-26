@@ -78,10 +78,10 @@ type UpdateUserRequest struct {
 // UpdateUserResponse is the response struct for api UpdateUser
 type UpdateUserResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateUserRequest creates a request to invoke UpdateUser API

@@ -17,9 +17,9 @@ package qualitycheck
 
 // HitResultItemInGetResult is a nested struct in qualitycheck response
 type HitResultItemInGetResult struct {
-	Rid          string          `json:"Rid" xml:"Rid"`
-	Name         string          `json:"Name" xml:"Name"`
 	Type         string          `json:"Type" xml:"Type"`
 	ReviewResult int             `json:"ReviewResult" xml:"ReviewResult"`
+	Name         string          `json:"Name" xml:"Name"`
+	Rid          string          `json:"Rid" xml:"Rid"`
 	Hits         HitsInGetResult `json:"Hits" xml:"Hits"`
 }

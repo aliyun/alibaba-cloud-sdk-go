@@ -17,20 +17,20 @@ package qualitycheck
 
 // TaskAssignRuleInfo is a nested struct in qualitycheck response
 type TaskAssignRuleInfo struct {
-	RuleId         int64                      `json:"RuleId" xml:"RuleId"`
-	Enabled        int                        `json:"Enabled" xml:"Enabled"`
-	CallType       int                        `json:"CallType" xml:"CallType"`
-	Priority       int                        `json:"Priority" xml:"Priority"`
-	DurationMin    int                        `json:"DurationMin" xml:"DurationMin"`
+	UpdateTime     string                     `json:"UpdateTime" xml:"UpdateTime"`
+	SkillGroupsStr string                     `json:"SkillGroupsStr" xml:"SkillGroupsStr"`
+	CallTimeEnd    int64                      `json:"CallTimeEnd" xml:"CallTimeEnd"`
 	DurationMax    int                        `json:"DurationMax" xml:"DurationMax"`
 	CreateTime     string                     `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime     string                     `json:"UpdateTime" xml:"UpdateTime"`
+	Priority       int                        `json:"Priority" xml:"Priority"`
+	DurationMin    int                        `json:"DurationMin" xml:"DurationMin"`
 	AgentsStr      string                     `json:"AgentsStr" xml:"AgentsStr"`
-	SkillGroupsStr string                     `json:"SkillGroupsStr" xml:"SkillGroupsStr"`
-	CallTimeStart  int64                      `json:"CallTimeStart" xml:"CallTimeStart"`
-	CallTimeEnd    int64                      `json:"CallTimeEnd" xml:"CallTimeEnd"`
-	AssignmentType int                        `json:"AssignmentType" xml:"AssignmentType"`
 	RuleName       string                     `json:"RuleName" xml:"RuleName"`
+	RuleId         int64                      `json:"RuleId" xml:"RuleId"`
+	AssignmentType int                        `json:"AssignmentType" xml:"AssignmentType"`
+	CallType       int                        `json:"CallType" xml:"CallType"`
+	Enabled        int                        `json:"Enabled" xml:"Enabled"`
+	CallTimeStart  int64                      `json:"CallTimeStart" xml:"CallTimeStart"`
 	SamplingMode   SamplingMode               `json:"SamplingMode" xml:"SamplingMode"`
 	Agents         Agents                     `json:"Agents" xml:"Agents"`
 	SkillGroups    SkillGroups                `json:"SkillGroups" xml:"SkillGroups"`

@@ -17,12 +17,12 @@ package qualitycheck
 
 // PhraseInSyncQualityCheck is a nested struct in qualitycheck response
 type PhraseInSyncQualityCheck struct {
-	Role            string `json:"Role" xml:"Role"`
-	Identity        string `json:"Identity" xml:"Identity"`
 	Words           string `json:"Words" xml:"Words"`
+	Identity        string `json:"Identity" xml:"Identity"`
 	Begin           int64  `json:"Begin" xml:"Begin"`
-	End             int64  `json:"End" xml:"End"`
 	EmotionValue    int    `json:"EmotionValue" xml:"EmotionValue"`
+	End             int64  `json:"End" xml:"End"`
 	SpeechRate      int    `json:"SpeechRate" xml:"SpeechRate"`
+	Role            string `json:"Role" xml:"Role"`
 	SilenceDuration int    `json:"SilenceDuration" xml:"SilenceDuration"`
 }

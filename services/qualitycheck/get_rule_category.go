@@ -78,10 +78,10 @@ type GetRuleCategoryRequest struct {
 // GetRuleCategoryResponse is the response struct for api GetRuleCategory
 type GetRuleCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Success   bool                  `json:"Success" xml:"Success"`
 	Code      string                `json:"Code" xml:"Code"`
 	Message   string                `json:"Message" xml:"Message"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Success   bool                  `json:"Success" xml:"Success"`
 	Data      DataInGetRuleCategory `json:"Data" xml:"Data"`
 }
 

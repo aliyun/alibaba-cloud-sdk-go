@@ -78,10 +78,10 @@ type DeleteTaskAssignRuleRequest struct {
 // DeleteTaskAssignRuleResponse is the response struct for api DeleteTaskAssignRule
 type DeleteTaskAssignRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteTaskAssignRuleRequest creates a request to invoke DeleteTaskAssignRule API

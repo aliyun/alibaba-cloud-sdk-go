@@ -17,6 +17,6 @@ package qualitycheck
 
 // Word is a nested struct in qualitycheck response
 type Word struct {
-	Word   string `json:"Word" xml:"Word"`
 	Weight int    `json:"Weight" xml:"Weight"`
+	Word   string `json:"Word" xml:"Word"`
 }

@@ -17,10 +17,10 @@ package qualitycheck
 
 // Role is a nested struct in qualitycheck response
 type Role struct {
-	Id          int64  `json:"Id" xml:"Id"`
-	Name        string `json:"Name" xml:"Name"`
 	DisplayName string `json:"DisplayName" xml:"DisplayName"`
-	Level       int    `json:"Level" xml:"Level"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	Name        string `json:"Name" xml:"Name"`
+	Id          int64  `json:"Id" xml:"Id"`
+	Level       int    `json:"Level" xml:"Level"`
 }

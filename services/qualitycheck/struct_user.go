@@ -17,13 +17,13 @@ package qualitycheck
 
 // User is a nested struct in qualitycheck response
 type User struct {
-	Id            int64  `json:"Id" xml:"Id"`
-	UserName      string `json:"UserName" xml:"UserName"`
 	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime    string `json:"UpdateTime" xml:"UpdateTime"`
 	Description   string `json:"Description" xml:"Description"`
+	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
+	LoginUserType int    `json:"LoginUserType" xml:"LoginUserType"`
 	AliUid        string `json:"AliUid" xml:"AliUid"`
 	RoleName      string `json:"RoleName" xml:"RoleName"`
-	LoginUserType int    `json:"LoginUserType" xml:"LoginUserType"`
+	UserName      string `json:"UserName" xml:"UserName"`
+	Id            int64  `json:"Id" xml:"Id"`
 }

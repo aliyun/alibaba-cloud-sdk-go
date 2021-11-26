@@ -78,10 +78,10 @@ type GetRuleDetailRequest struct {
 // GetRuleDetailResponse is the response struct for api GetRuleDetail
 type GetRuleDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
-	Success   bool                `json:"Success" xml:"Success"`
 	Code      string              `json:"Code" xml:"Code"`
 	Message   string              `json:"Message" xml:"Message"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Success   bool                `json:"Success" xml:"Success"`
 	Data      DataInGetRuleDetail `json:"Data" xml:"Data"`
 }
 

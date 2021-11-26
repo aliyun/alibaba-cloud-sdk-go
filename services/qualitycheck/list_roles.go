@@ -78,10 +78,10 @@ type ListRolesRequest struct {
 // ListRolesResponse is the response struct for api ListRoles
 type ListRolesResponse struct {
 	*responses.BaseResponse
-	RequestId string          `json:"RequestId" xml:"RequestId"`
-	Success   bool            `json:"Success" xml:"Success"`
 	Code      string          `json:"Code" xml:"Code"`
 	Message   string          `json:"Message" xml:"Message"`
+	RequestId string          `json:"RequestId" xml:"RequestId"`
+	Success   bool            `json:"Success" xml:"Success"`
 	Data      DataInListRoles `json:"Data" xml:"Data"`
 }
 

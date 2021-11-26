@@ -78,10 +78,10 @@ type UpdateScoreForApiRequest struct {
 // UpdateScoreForApiResponse is the response struct for api UpdateScoreForApi
 type UpdateScoreForApiResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateScoreForApiRequest creates a request to invoke UpdateScoreForApi API

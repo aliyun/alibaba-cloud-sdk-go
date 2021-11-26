@@ -78,10 +78,10 @@ type GetBusinessCategoryListRequest struct {
 // GetBusinessCategoryListResponse is the response struct for api GetBusinessCategoryList
 type GetBusinessCategoryListResponse struct {
 	*responses.BaseResponse
-	RequestId string                        `json:"RequestId" xml:"RequestId"`
-	Success   bool                          `json:"Success" xml:"Success"`
 	Code      string                        `json:"Code" xml:"Code"`
 	Message   string                        `json:"Message" xml:"Message"`
+	RequestId string                        `json:"RequestId" xml:"RequestId"`
+	Success   bool                          `json:"Success" xml:"Success"`
 	Data      DataInGetBusinessCategoryList `json:"Data" xml:"Data"`
 }
 

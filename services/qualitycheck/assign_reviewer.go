@@ -78,10 +78,10 @@ type AssignReviewerRequest struct {
 // AssignReviewerResponse is the response struct for api AssignReviewer
 type AssignReviewerResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateAssignReviewerRequest creates a request to invoke AssignReviewer API

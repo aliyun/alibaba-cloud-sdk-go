@@ -17,10 +17,10 @@ package qualitycheck
 
 // ModelCustomizationDataSetPo is a nested struct in qualitycheck response
 type ModelCustomizationDataSetPo struct {
-	ModelId             int64  `json:"ModelId" xml:"ModelId"`
-	ModeCustomizationId string `json:"ModeCustomizationId" xml:"ModeCustomizationId"`
-	ModelName           string `json:"ModelName" xml:"ModelName"`
-	ModelStatus         int    `json:"ModelStatus" xml:"ModelStatus"`
 	TaskType            int    `json:"TaskType" xml:"TaskType"`
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
+	ModelStatus         int    `json:"ModelStatus" xml:"ModelStatus"`
+	ModelName           string `json:"ModelName" xml:"ModelName"`
+	ModelId             int64  `json:"ModelId" xml:"ModelId"`
+	ModeCustomizationId string `json:"ModeCustomizationId" xml:"ModeCustomizationId"`
 }

@@ -17,7 +17,7 @@ package qualitycheck
 
 // WordsParam is a nested struct in qualitycheck response
 type WordsParam struct {
-	ExtraConfigId int64  `json:"ExtraConfigId" xml:"ExtraConfigId"`
 	Excludes      string `json:"Excludes" xml:"Excludes"`
 	Includes      string `json:"Includes" xml:"Includes"`
+	ExtraConfigId int64  `json:"ExtraConfigId" xml:"ExtraConfigId"`
 }

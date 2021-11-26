@@ -24,23 +24,23 @@ type ResultInfo struct {
 	ReviewStatus    int                   `json:"ReviewStatus" xml:"ReviewStatus"`
 	CreateTime      string                `json:"CreateTime" xml:"CreateTime"`
 	ReviewResult    int                   `json:"ReviewResult" xml:"ReviewResult"`
-	Resolver        string                `json:"Resolver" xml:"Resolver"`
 	ReviewTime      string                `json:"ReviewTime" xml:"ReviewTime"`
+	Resolver        string                `json:"Resolver" xml:"Resolver"`
 	TaskId          string                `json:"TaskId" xml:"TaskId"`
 	Rid             int64                 `json:"Rid" xml:"Rid"`
 	LastDataId      string                `json:"LastDataId" xml:"LastDataId"`
 	Status          int                   `json:"Status" xml:"Status"`
 	ReviewTimeLong  string                `json:"ReviewTimeLong" xml:"ReviewTimeLong"`
-	TaskName        string                `json:"TaskName" xml:"TaskName"`
 	Reviewer        string                `json:"Reviewer" xml:"Reviewer"`
+	TaskName        string                `json:"TaskName" xml:"TaskName"`
 	Score           int                   `json:"Score" xml:"Score"`
 	AssignmentTime  string                `json:"AssignmentTime" xml:"AssignmentTime"`
 	ReviewType      int                   `json:"ReviewType" xml:"ReviewType"`
 	HandScoreIdList HandScoreIdList       `json:"HandScoreIdList" xml:"HandScoreIdList"`
-	Recording       Recording             `json:"Recording" xml:"Recording"`
 	Agent           Agent                 `json:"Agent" xml:"Agent"`
-	AsrResult       []AsrResultItem       `json:"AsrResult" xml:"AsrResult"`
-	HitResult       []HitResultItem       `json:"HitResult" xml:"HitResult"`
+	Recording       Recording             `json:"Recording" xml:"Recording"`
 	Rules           RulesInUploadDataSync `json:"Rules" xml:"Rules"`
+	AsrResult       []AsrResultItem       `json:"AsrResult" xml:"AsrResult"`
 	HitScore        HitScore              `json:"HitScore" xml:"HitScore"`
+	HitResult       []HitResultItem       `json:"HitResult" xml:"HitResult"`
 }

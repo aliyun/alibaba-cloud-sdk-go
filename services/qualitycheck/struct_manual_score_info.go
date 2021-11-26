@@ -17,10 +17,10 @@ package qualitycheck
 
 // ManualScoreInfo is a nested struct in qualitycheck response
 type ManualScoreInfo struct {
-	ScoreId           int64                                `json:"ScoreId" xml:"ScoreId"`
-	ScoreSubId        int64                                `json:"ScoreSubId" xml:"ScoreSubId"`
 	ScoreSubName      string                               `json:"ScoreSubName" xml:"ScoreSubName"`
-	ScoreNum          int                                  `json:"ScoreNum" xml:"ScoreNum"`
 	Complainable      bool                                 `json:"Complainable" xml:"Complainable"`
+	ScoreNum          int                                  `json:"ScoreNum" xml:"ScoreNum"`
+	ScoreSubId        int64                                `json:"ScoreSubId" xml:"ScoreSubId"`
+	ScoreId           int64                                `json:"ScoreId" xml:"ScoreId"`
 	ComplainHistories ComplainHistoriesInGetResultToReview `json:"ComplainHistories" xml:"ComplainHistories"`
 }

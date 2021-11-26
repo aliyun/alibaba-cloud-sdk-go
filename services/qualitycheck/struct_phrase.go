@@ -22,6 +22,6 @@ type Phrase struct {
 	SpeechRate      int    `json:"SpeechRate" xml:"SpeechRate"`
 	End             int    `json:"End" xml:"End"`
 	SilenceDuration int    `json:"SilenceDuration" xml:"SilenceDuration"`
-	Begin           int64  `json:"Begin" xml:"Begin"`
 	EmotionValue    int    `json:"EmotionValue" xml:"EmotionValue"`
+	Begin           int64  `json:"Begin" xml:"Begin"`
 }

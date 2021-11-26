@@ -17,6 +17,6 @@ package qualitycheck
 
 // SkillGroup is a nested struct in qualitycheck response
 type SkillGroup struct {
-	SkillId   string `json:"SkillId" xml:"SkillId"`
 	SkillName string `json:"SkillName" xml:"SkillName"`
+	SkillId   string `json:"SkillId" xml:"SkillId"`
 }

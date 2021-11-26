@@ -18,8 +18,8 @@ package qualitycheck
 // ScoreParam is a nested struct in qualitycheck response
 type ScoreParam struct {
 	Hit          int    `json:"Hit" xml:"Hit"`
-	ScoreSubId   int64  `json:"ScoreSubId" xml:"ScoreSubId"`
 	ScoreSubName string `json:"ScoreSubName" xml:"ScoreSubName"`
+	ScoreSubId   int64  `json:"ScoreSubId" xml:"ScoreSubId"`
 	ScoreNum     int    `json:"ScoreNum" xml:"ScoreNum"`
 	ScoreType    int    `json:"ScoreType" xml:"ScoreType"`
 }

@@ -78,11 +78,11 @@ type UploadAudioDataRequest struct {
 // UploadAudioDataResponse is the response struct for api UploadAudioData
 type UploadAudioDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUploadAudioDataRequest creates a request to invoke UploadAudioData API

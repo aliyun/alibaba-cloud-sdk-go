@@ -78,10 +78,10 @@ type ListSkillGroupConfigRequest struct {
 // ListSkillGroupConfigResponse is the response struct for api ListSkillGroupConfig
 type ListSkillGroupConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Success   bool                       `json:"Success" xml:"Success"`
 	Code      string                     `json:"Code" xml:"Code"`
 	Message   string                     `json:"Message" xml:"Message"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Success   bool                       `json:"Success" xml:"Success"`
 	Data      DataInListSkillGroupConfig `json:"Data" xml:"Data"`
 }
 

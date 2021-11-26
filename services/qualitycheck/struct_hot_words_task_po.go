@@ -17,17 +17,17 @@ package qualitycheck
 
 // HotWordsTaskPo is a nested struct in qualitycheck response
 type HotWordsTaskPo struct {
-	TaskConfigId      int64         `json:"TaskConfigId" xml:"TaskConfigId"`
-	Name              string        `json:"Name" xml:"Name"`
-	Status            int           `json:"Status" xml:"Status"`
-	Type              int           `json:"Type" xml:"Type"`
-	StartTime         string        `json:"StartTime" xml:"StartTime"`
-	TimeInterval      int           `json:"TimeInterval" xml:"TimeInterval"`
-	TimeUnit          int           `json:"TimeUnit" xml:"TimeUnit"`
 	EndTime           string        `json:"EndTime" xml:"EndTime"`
+	Type              int           `json:"Type" xml:"Type"`
+	Status            int           `json:"Status" xml:"Status"`
+	TimeInterval      int           `json:"TimeInterval" xml:"TimeInterval"`
+	StartTime         string        `json:"StartTime" xml:"StartTime"`
+	TaskConfigId      int64         `json:"TaskConfigId" xml:"TaskConfigId"`
+	Message           string        `json:"Message" xml:"Message"`
 	InstanceStatus    int           `json:"InstanceStatus" xml:"InstanceStatus"`
 	LastExecutionTime string        `json:"LastExecutionTime" xml:"LastExecutionTime"`
-	Message           string        `json:"Message" xml:"Message"`
+	Name              string        `json:"Name" xml:"Name"`
+	TimeUnit          int           `json:"TimeUnit" xml:"TimeUnit"`
 	DialogueParam     DialogueParam `json:"DialogueParam" xml:"DialogueParam"`
 	WordsParam        WordsParam    `json:"WordsParam" xml:"WordsParam"`
 }

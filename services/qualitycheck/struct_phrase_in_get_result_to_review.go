@@ -17,11 +17,11 @@ package qualitycheck
 
 // PhraseInGetResultToReview is a nested struct in qualitycheck response
 type PhraseInGetResultToReview struct {
-	Role         string `json:"Role" xml:"Role"`
-	Identity     string `json:"Identity" xml:"Identity"`
-	EmotionValue int    `json:"EmotionValue" xml:"EmotionValue"`
 	Words        string `json:"Words" xml:"Words"`
-	End          int64  `json:"End" xml:"End"`
-	Pid          int    `json:"Pid" xml:"Pid"`
 	Begin        int64  `json:"Begin" xml:"Begin"`
+	Identity     string `json:"Identity" xml:"Identity"`
+	Pid          int    `json:"Pid" xml:"Pid"`
+	EmotionValue int    `json:"EmotionValue" xml:"EmotionValue"`
+	End          int64  `json:"End" xml:"End"`
+	Role         string `json:"Role" xml:"Role"`
 }

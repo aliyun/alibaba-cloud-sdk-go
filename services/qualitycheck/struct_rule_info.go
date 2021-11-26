@@ -17,26 +17,28 @@ package qualitycheck
 
 // RuleInfo is a nested struct in qualitycheck response
 type RuleInfo struct {
-	Rid                      string                            `json:"Rid" xml:"Rid"`
-	RuleLambda               string                            `json:"RuleLambda" xml:"RuleLambda"`
-	Name                     string                            `json:"Name" xml:"Name"`
-	Type                     int                               `json:"Type" xml:"Type"`
-	Status                   int                               `json:"Status" xml:"Status"`
-	IsDelete                 int                               `json:"IsDelete" xml:"IsDelete"`
-	StartTime                string                            `json:"StartTime" xml:"StartTime"`
-	EndTime                  string                            `json:"EndTime" xml:"EndTime"`
-	Weight                   string                            `json:"Weight" xml:"Weight"`
-	IsOnline                 int                               `json:"IsOnline" xml:"IsOnline"`
-	CreateEmpid              string                            `json:"CreateEmpid" xml:"CreateEmpid"`
-	CreateTime               string                            `json:"CreateTime" xml:"CreateTime"`
-	LastUpdateTime           string                            `json:"LastUpdateTime" xml:"LastUpdateTime"`
-	LastUpdateEmpid          string                            `json:"LastUpdateEmpid" xml:"LastUpdateEmpid"`
 	Comments                 string                            `json:"Comments" xml:"Comments"`
+	Name                     string                            `json:"Name" xml:"Name"`
+	Status                   int                               `json:"Status" xml:"Status"`
 	AutoReview               int                               `json:"AutoReview" xml:"AutoReview"`
-	RuleScoreType            int                               `json:"RuleScoreType" xml:"RuleScoreType"`
-	ScoreName                string                            `json:"ScoreName" xml:"ScoreName"`
+	CreateTime               string                            `json:"CreateTime" xml:"CreateTime"`
+	CreateEmpid              string                            `json:"CreateEmpid" xml:"CreateEmpid"`
+	LastUpdateTime           string                            `json:"LastUpdateTime" xml:"LastUpdateTime"`
+	IsOnline                 int                               `json:"IsOnline" xml:"IsOnline"`
+	Rid                      string                            `json:"Rid" xml:"Rid"`
 	ScoreSubName             string                            `json:"ScoreSubName" xml:"ScoreSubName"`
+	StartTime                string                            `json:"StartTime" xml:"StartTime"`
+	ScoreName                string                            `json:"ScoreName" xml:"ScoreName"`
+	EndTime                  string                            `json:"EndTime" xml:"EndTime"`
 	ScoreId                  int                               `json:"ScoreId" xml:"ScoreId"`
+	RuleLambda               string                            `json:"RuleLambda" xml:"RuleLambda"`
+	Weight                   string                            `json:"Weight" xml:"Weight"`
 	ScoreSubId               int                               `json:"ScoreSubId" xml:"ScoreSubId"`
+	LastUpdateEmpid          string                            `json:"LastUpdateEmpid" xml:"LastUpdateEmpid"`
+	RuleScoreType            int                               `json:"RuleScoreType" xml:"RuleScoreType"`
+	Type                     int                               `json:"Type" xml:"Type"`
+	IsDelete                 int                               `json:"IsDelete" xml:"IsDelete"`
 	BusinessCategoryNameList BusinessCategoryNameListInGetRule `json:"BusinessCategoryNameList" xml:"BusinessCategoryNameList"`
+	Conditions               ConditionsInConfigDataSet         `json:"Conditions" xml:"Conditions"`
+	Rules                    RulesInConfigDataSet              `json:"Rules" xml:"Rules"`
 }

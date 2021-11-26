@@ -80,12 +80,12 @@ type GetResultResponse struct {
 	*responses.BaseResponse
 	RequestId     string          `json:"RequestId" xml:"RequestId"`
 	Success       bool            `json:"Success" xml:"Success"`
+	ResultCountId string          `json:"ResultCountId" xml:"ResultCountId"`
 	Code          string          `json:"Code" xml:"Code"`
 	Message       string          `json:"Message" xml:"Message"`
-	Count         int             `json:"Count" xml:"Count"`
-	PageSize      int             `json:"PageSize" xml:"PageSize"`
 	PageNumber    int             `json:"PageNumber" xml:"PageNumber"`
-	ResultCountId string          `json:"ResultCountId" xml:"ResultCountId"`
+	PageSize      int             `json:"PageSize" xml:"PageSize"`
+	Count         int             `json:"Count" xml:"Count"`
 	Data          DataInGetResult `json:"Data" xml:"Data"`
 }
 

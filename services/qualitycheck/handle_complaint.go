@@ -78,11 +78,11 @@ type HandleComplaintRequest struct {
 // HandleComplaintResponse is the response struct for api HandleComplaint
 type HandleComplaintResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateHandleComplaintRequest creates a request to invoke HandleComplaint API

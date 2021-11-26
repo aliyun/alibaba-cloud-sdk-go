@@ -17,12 +17,12 @@ package qualitycheck
 
 // Rule is a nested struct in qualitycheck response
 type Rule struct {
-	Name                     string   `json:"Name" xml:"Name"`
 	Type                     int      `json:"Type" xml:"Type"`
-	Comments                 string   `json:"Comments" xml:"Comments"`
-	CreateTime               string   `json:"CreateTime" xml:"CreateTime"`
-	TypeName                 string   `json:"TypeName" xml:"TypeName"`
 	RuleType                 int      `json:"RuleType" xml:"RuleType"`
+	CreateTime               string   `json:"CreateTime" xml:"CreateTime"`
+	Comments                 string   `json:"Comments" xml:"Comments"`
+	TypeName                 string   `json:"TypeName" xml:"TypeName"`
+	Name                     string   `json:"Name" xml:"Name"`
 	Rid                      int64    `json:"Rid" xml:"Rid"`
 	BusinessCategoryNameList []string `json:"BusinessCategoryNameList" xml:"BusinessCategoryNameList"`
 }

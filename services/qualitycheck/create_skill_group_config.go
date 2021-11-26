@@ -78,11 +78,11 @@ type CreateSkillGroupConfigRequest struct {
 // CreateSkillGroupConfigResponse is the response struct for api CreateSkillGroupConfig
 type CreateSkillGroupConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      int64  `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateSkillGroupConfigRequest creates a request to invoke CreateSkillGroupConfig API

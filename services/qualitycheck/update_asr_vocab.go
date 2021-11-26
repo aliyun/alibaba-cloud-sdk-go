@@ -78,11 +78,11 @@ type UpdateAsrVocabRequest struct {
 // UpdateAsrVocabResponse is the response struct for api UpdateAsrVocab
 type UpdateAsrVocabResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateAsrVocabRequest creates a request to invoke UpdateAsrVocab API

@@ -17,6 +17,6 @@ package qualitycheck
 
 // RuleNameInfo is a nested struct in qualitycheck response
 type RuleNameInfo struct {
-	Rid      int64  `json:"Rid" xml:"Rid"`
 	RuleName string `json:"RuleName" xml:"RuleName"`
+	Rid      int64  `json:"Rid" xml:"Rid"`
 }

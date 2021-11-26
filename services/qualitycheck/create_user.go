@@ -78,10 +78,10 @@ type CreateUserRequest struct {
 // CreateUserResponse is the response struct for api CreateUser
 type CreateUserResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateUserRequest creates a request to invoke CreateUser API

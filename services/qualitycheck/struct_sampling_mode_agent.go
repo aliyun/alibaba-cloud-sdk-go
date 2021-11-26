@@ -17,6 +17,6 @@ package qualitycheck
 
 // SamplingModeAgent is a nested struct in qualitycheck response
 type SamplingModeAgent struct {
-	AgentId   string `json:"AgentId" xml:"AgentId"`
 	AgentName string `json:"AgentName" xml:"AgentName"`
+	AgentId   string `json:"AgentId" xml:"AgentId"`
 }

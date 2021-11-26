@@ -17,8 +17,8 @@ package qualitycheck
 
 // SkillGroupScreen is a nested struct in qualitycheck response
 type SkillGroupScreen struct {
-	Name     string `json:"Name" xml:"Name"`
+	Value    string `json:"Value" xml:"Value"`
 	DataType int    `json:"DataType" xml:"DataType"`
 	Symbol   int    `json:"Symbol" xml:"Symbol"`
-	Value    string `json:"Value" xml:"Value"`
+	Name     string `json:"Name" xml:"Name"`
 }

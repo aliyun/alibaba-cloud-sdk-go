@@ -78,10 +78,10 @@ type DeleteSubScoreForApiRequest struct {
 // DeleteSubScoreForApiResponse is the response struct for api DeleteSubScoreForApi
 type DeleteSubScoreForApiResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteSubScoreForApiRequest creates a request to invoke DeleteSubScoreForApi API

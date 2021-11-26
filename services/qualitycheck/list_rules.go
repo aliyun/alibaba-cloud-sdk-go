@@ -82,9 +82,9 @@ type ListRulesResponse struct {
 	Success    bool   `json:"Success" xml:"Success"`
 	Code       string `json:"Code" xml:"Code"`
 	Message    string `json:"Message" xml:"Message"`
-	Count      int    `json:"Count" xml:"Count"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	Count      int    `json:"Count" xml:"Count"`
 	Data       []Rule `json:"Data" xml:"Data"`
 }
 

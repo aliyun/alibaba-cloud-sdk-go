@@ -17,11 +17,11 @@ package qualitycheck
 
 // SamplingMode is a nested struct in qualitycheck response
 type SamplingMode struct {
-	Dimension              int                `json:"Dimension" xml:"Dimension"`
-	Proportion             float64            `json:"Proportion" xml:"Proportion"`
-	Limit                  int                `json:"Limit" xml:"Limit"`
 	NumberOfDraws          int                `json:"NumberOfDraws" xml:"NumberOfDraws"`
 	AnyNumberOfDraws       int                `json:"AnyNumberOfDraws" xml:"AnyNumberOfDraws"`
+	Limit                  int                `json:"Limit" xml:"Limit"`
+	Proportion             float64            `json:"Proportion" xml:"Proportion"`
+	Dimension              int                `json:"Dimension" xml:"Dimension"`
 	Designated             bool               `json:"Designated" xml:"Designated"`
 	RandomInspectionNumber int                `json:"RandomInspectionNumber" xml:"RandomInspectionNumber"`
 	SamplingModeAgents     SamplingModeAgents `json:"SamplingModeAgents" xml:"SamplingModeAgents"`

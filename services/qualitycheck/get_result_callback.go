@@ -78,10 +78,10 @@ type GetResultCallbackRequest struct {
 // GetResultCallbackResponse is the response struct for api GetResultCallback
 type GetResultCallbackResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateGetResultCallbackRequest creates a request to invoke GetResultCallback API

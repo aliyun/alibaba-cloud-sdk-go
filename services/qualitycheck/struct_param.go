@@ -17,35 +17,36 @@ package qualitycheck
 
 // Param is a nested struct in qualitycheck response
 type Param struct {
-	Regex                 string             `json:"Regex" xml:"Regex"`
-	Phrase                string             `json:"Phrase" xml:"Phrase"`
-	Interval              int                `json:"Interval" xml:"Interval"`
-	Threshold             float64            `json:"Threshold" xml:"Threshold"`
-	InSentence            bool               `json:"InSentence" xml:"InSentence"`
-	Target                int                `json:"Target" xml:"Target"`
-	FromEnd               bool               `json:"FromEnd" xml:"FromEnd"`
-	DifferentRole         bool               `json:"DifferentRole" xml:"DifferentRole"`
-	TargetRole            string             `json:"TargetRole" xml:"TargetRole"`
-	Score                 int                `json:"Score" xml:"Score"`
-	ContextChatMatch      bool               `json:"ContextChatMatch" xml:"ContextChatMatch"`
-	KeywordMatchSize      int                `json:"KeywordMatchSize" xml:"KeywordMatchSize"`
-	Average               bool               `json:"Average" xml:"Average"`
 	VelocityInMint        int                `json:"VelocityInMint" xml:"VelocityInMint"`
-	MinWordSize           int                `json:"MinWordSize" xml:"MinWordSize"`
-	KeywordExtension      bool               `json:"KeywordExtension" xml:"KeywordExtension"`
-	HitTime               int                `json:"HitTime" xml:"HitTime"`
-	From                  int                `json:"From" xml:"From"`
-	BeginType             string             `json:"BeginType" xml:"BeginType"`
-	CompareOperator       string             `json:"CompareOperator" xml:"CompareOperator"`
-	CheckType             int                `json:"CheckType" xml:"CheckType"`
-	MaxEmotionChangeValue int                `json:"MaxEmotionChangeValue" xml:"MaxEmotionChangeValue"`
+	TargetRole            string             `json:"TargetRole" xml:"TargetRole"`
+	Threshold             float64            `json:"Threshold" xml:"Threshold"`
 	NotRegex              string             `json:"NotRegex" xml:"NotRegex"`
+	BeginType             string             `json:"BeginType" xml:"BeginType"`
+	Target                int                `json:"Target" xml:"Target"`
+	InSentence            bool               `json:"InSentence" xml:"InSentence"`
+	DifferentRole         bool               `json:"DifferentRole" xml:"DifferentRole"`
+	KeywordMatchSize      int                `json:"KeywordMatchSize" xml:"KeywordMatchSize"`
+	ContextChatMatch      bool               `json:"ContextChatMatch" xml:"ContextChatMatch"`
+	Interval              int                `json:"Interval" xml:"Interval"`
+	HitTime               int                `json:"HitTime" xml:"HitTime"`
+	Regex                 string             `json:"Regex" xml:"Regex"`
+	KeywordExtension      bool               `json:"KeywordExtension" xml:"KeywordExtension"`
+	MinWordSize           int                `json:"MinWordSize" xml:"MinWordSize"`
+	Average               bool               `json:"Average" xml:"Average"`
 	SimilarityThreshold   float64            `json:"Similarity_threshold" xml:"Similarity_threshold"`
+	CheckType             int                `json:"CheckType" xml:"CheckType"`
+	CompareOperator       string             `json:"CompareOperator" xml:"CompareOperator"`
+	MaxEmotionChangeValue int                `json:"MaxEmotionChangeValue" xml:"MaxEmotionChangeValue"`
 	DelayTime             int                `json:"DelayTime" xml:"DelayTime"`
-	OperKeyWords          OperKeyWords       `json:"OperKeyWords" xml:"OperKeyWords"`
-	References            References         `json:"References" xml:"References"`
-	SimilarlySentences    SimilarlySentences `json:"SimilarlySentences" xml:"SimilarlySentences"`
+	Score                 int                `json:"Score" xml:"Score"`
+	FromEnd               bool               `json:"FromEnd" xml:"FromEnd"`
+	From                  int                `json:"From" xml:"From"`
+	Phrase                string             `json:"Phrase" xml:"Phrase"`
 	Excludes              Excludes           `json:"Excludes" xml:"Excludes"`
+	OperKeyWords          OperKeyWords       `json:"OperKeyWords" xml:"OperKeyWords"`
 	Pvalues               Pvalues            `json:"Pvalues" xml:"Pvalues"`
 	AntModelInfo          AntModelInfo       `json:"AntModelInfo" xml:"AntModelInfo"`
+	SimilarlySentences    SimilarlySentences `json:"SimilarlySentences" xml:"SimilarlySentences"`
+	Keywords              Keywords           `json:"Keywords" xml:"Keywords"`
+	References            References         `json:"References" xml:"References"`
 }

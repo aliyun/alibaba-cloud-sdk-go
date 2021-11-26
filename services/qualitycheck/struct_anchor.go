@@ -17,7 +17,8 @@ package qualitycheck
 
 // Anchor is a nested struct in qualitycheck response
 type Anchor struct {
-	AnchorCid string `json:"AnchorCid" xml:"AnchorCid"`
-	Location  string `json:"Location" xml:"Location"`
+	Cid       string `json:"Cid" xml:"Cid"`
 	HitTime   int    `json:"HitTime" xml:"HitTime"`
+	Location  string `json:"Location" xml:"Location"`
+	AnchorCid string `json:"AnchorCid" xml:"AnchorCid"`
 }

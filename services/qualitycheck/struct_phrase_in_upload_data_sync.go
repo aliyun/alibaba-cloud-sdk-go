@@ -17,10 +17,10 @@ package qualitycheck
 
 // PhraseInUploadDataSync is a nested struct in qualitycheck response
 type PhraseInUploadDataSync struct {
-	Role      string `json:"Role" xml:"Role"`
-	Identity  string `json:"Identity" xml:"Identity"`
 	Words     string `json:"Words" xml:"Words"`
+	Identity  string `json:"Identity" xml:"Identity"`
 	Begin     int64  `json:"Begin" xml:"Begin"`
-	End       int64  `json:"End" xml:"End"`
 	BeginTime string `json:"BeginTime" xml:"BeginTime"`
+	End       int64  `json:"End" xml:"End"`
+	Role      string `json:"Role" xml:"Role"`
 }

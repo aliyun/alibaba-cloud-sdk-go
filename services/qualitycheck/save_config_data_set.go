@@ -78,10 +78,10 @@ type SaveConfigDataSetRequest struct {
 // SaveConfigDataSetResponse is the response struct for api SaveConfigDataSet
 type SaveConfigDataSetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSaveConfigDataSetRequest creates a request to invoke SaveConfigDataSet API

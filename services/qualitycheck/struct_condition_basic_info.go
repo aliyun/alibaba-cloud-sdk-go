@@ -17,8 +17,10 @@ package qualitycheck
 
 // ConditionBasicInfo is a nested struct in qualitycheck response
 type ConditionBasicInfo struct {
-	ConditionInfoCid string     `json:"ConditionInfoCid" xml:"ConditionInfoCid"`
-	OperLambda       string     `json:"OperLambda" xml:"OperLambda"`
-	CheckRange       CheckRange `json:"CheckRange" xml:"CheckRange"`
-	Operators        Operators  `json:"Operators" xml:"Operators"`
+	Cid              string                   `json:"Cid" xml:"Cid"`
+	ConditionInfoCid string                   `json:"ConditionInfoCid" xml:"ConditionInfoCid"`
+	Lambda           string                   `json:"Lambda" xml:"Lambda"`
+	OperLambda       string                   `json:"OperLambda" xml:"OperLambda"`
+	CheckRange       CheckRange               `json:"CheckRange" xml:"CheckRange"`
+	Operators        OperatorsInConfigDataSet `json:"Operators" xml:"Operators"`
 }

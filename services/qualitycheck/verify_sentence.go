@@ -80,11 +80,11 @@ type VerifySentenceResponse struct {
 	*responses.BaseResponse
 	RequestId      string               `json:"RequestId" xml:"RequestId"`
 	Success        bool                 `json:"Success" xml:"Success"`
+	IncorrectWords int                  `json:"IncorrectWords" xml:"IncorrectWords"`
+	TargetRole     int                  `json:"TargetRole" xml:"TargetRole"`
 	Code           string               `json:"Code" xml:"Code"`
 	Message        string               `json:"Message" xml:"Message"`
 	SourceRole     int                  `json:"SourceRole" xml:"SourceRole"`
-	TargetRole     int                  `json:"TargetRole" xml:"TargetRole"`
-	IncorrectWords int                  `json:"IncorrectWords" xml:"IncorrectWords"`
 	Data           DataInVerifySentence `json:"Data" xml:"Data"`
 }
 

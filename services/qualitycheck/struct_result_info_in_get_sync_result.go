@@ -17,16 +17,16 @@ package qualitycheck
 
 // ResultInfoInGetSyncResult is a nested struct in qualitycheck response
 type ResultInfoInGetSyncResult struct {
-	Score        int             `json:"Score" xml:"Score"`
-	Comments     string          `json:"Comments" xml:"Comments"`
-	ErrorMessage string          `json:"ErrorMessage" xml:"ErrorMessage"`
 	Status       int             `json:"Status" xml:"Status"`
-	ReviewStatus int             `json:"ReviewStatus" xml:"ReviewStatus"`
-	ReviewResult int             `json:"ReviewResult" xml:"ReviewResult"`
-	TaskId       string          `json:"TaskId" xml:"TaskId"`
-	TaskName     string          `json:"TaskName" xml:"TaskName"`
-	CreateTime   string          `json:"CreateTime" xml:"CreateTime"`
+	ErrorMessage string          `json:"ErrorMessage" xml:"ErrorMessage"`
 	Reviewer     string          `json:"Reviewer" xml:"Reviewer"`
+	CreateTime   string          `json:"CreateTime" xml:"CreateTime"`
+	ReviewStatus int             `json:"ReviewStatus" xml:"ReviewStatus"`
+	TaskName     string          `json:"TaskName" xml:"TaskName"`
+	Comments     string          `json:"Comments" xml:"Comments"`
+	ReviewResult int             `json:"ReviewResult" xml:"ReviewResult"`
+	Score        int             `json:"Score" xml:"Score"`
+	TaskId       string          `json:"TaskId" xml:"TaskId"`
 	Resolver     string          `json:"Resolver" xml:"Resolver"`
 	Recording    Recording       `json:"Recording" xml:"Recording"`
 	Agent        Agent           `json:"Agent" xml:"Agent"`

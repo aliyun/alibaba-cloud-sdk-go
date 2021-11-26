@@ -17,8 +17,8 @@ package qualitycheck
 
 // HitScoreItem is a nested struct in qualitycheck response
 type HitScoreItem struct {
-	ScoreId     string `json:"ScoreId" xml:"ScoreId"`
-	RuleId      string `json:"RuleId" xml:"RuleId"`
 	ScoreName   string `json:"ScoreName" xml:"ScoreName"`
 	ScoreNumber string `json:"ScoreNumber" xml:"ScoreNumber"`
+	ScoreId     string `json:"ScoreId" xml:"ScoreId"`
+	RuleId      string `json:"RuleId" xml:"RuleId"`
 }

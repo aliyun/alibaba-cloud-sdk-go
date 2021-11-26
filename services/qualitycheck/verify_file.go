@@ -78,11 +78,11 @@ type VerifyFileRequest struct {
 // VerifyFileResponse is the response struct for api VerifyFile
 type VerifyFileResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Success   bool    `json:"Success" xml:"Success"`
 	Code      string  `json:"Code" xml:"Code"`
 	Message   string  `json:"Message" xml:"Message"`
 	Data      float64 `json:"Data" xml:"Data"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Success   bool    `json:"Success" xml:"Success"`
 }
 
 // CreateVerifyFileRequest creates a request to invoke VerifyFile API

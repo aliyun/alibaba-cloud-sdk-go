@@ -17,7 +17,22 @@ package qualitycheck
 
 // RuleCountInfo is a nested struct in qualitycheck response
 type RuleCountInfo struct {
-	Type     int    `json:"Type" xml:"Type"`
-	TypeName string `json:"TypeName" xml:"TypeName"`
-	Select   bool   `json:"Select" xml:"Select"`
+	RealViolationNumber  int     `json:"RealViolationNumber" xml:"RealViolationNumber"`
+	Name                 string  `json:"Name" xml:"Name"`
+	Status               int     `json:"Status" xml:"Status"`
+	TypeName             string  `json:"TypeName" xml:"TypeName"`
+	CreateTime           string  `json:"CreateTime" xml:"CreateTime"`
+	CreateEmpid          string  `json:"CreateEmpid" xml:"CreateEmpid"`
+	HitRealViolationRate float64 `json:"HitRealViolationRate" xml:"HitRealViolationRate"`
+	LastUpdateTime       string  `json:"LastUpdateTime" xml:"LastUpdateTime"`
+	Select               bool    `json:"Select" xml:"Select"`
+	PreReviewNumber      int     `json:"PreReviewNumber" xml:"PreReviewNumber"`
+	Rid                  string  `json:"Rid" xml:"Rid"`
+	CheckNumber          int     `json:"CheckNumber" xml:"CheckNumber"`
+	ReviewNumber         int     `json:"ReviewNumber" xml:"ReviewNumber"`
+	HitRate              float64 `json:"HitRate" xml:"HitRate"`
+	HitNumber            int     `json:"HitNumber" xml:"HitNumber"`
+	LastUpdateEmpid      string  `json:"LastUpdateEmpid" xml:"LastUpdateEmpid"`
+	Type                 int     `json:"Type" xml:"Type"`
+	IsDelete             int     `json:"IsDelete" xml:"IsDelete"`
 }

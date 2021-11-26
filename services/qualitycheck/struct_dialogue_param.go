@@ -17,12 +17,12 @@ package qualitycheck
 
 // DialogueParam is a nested struct in qualitycheck response
 type DialogueParam struct {
-	DialogueId int64  `json:"DialogueId" xml:"DialogueId"`
-	Role       int    `json:"Role" xml:"Role"`
-	StartIndex int    `json:"StartIndex" xml:"StartIndex"`
-	EndIndex   int    `json:"EndIndex" xml:"EndIndex"`
-	SourceType int    `json:"SourceType" xml:"SourceType"`
-	DataSetIds string `json:"DataSetIds" xml:"DataSetIds"`
-	StartTime  string `json:"StartTime" xml:"StartTime"`
 	EndTime    string `json:"EndTime" xml:"EndTime"`
+	DialogueId int64  `json:"DialogueId" xml:"DialogueId"`
+	EndIndex   int    `json:"EndIndex" xml:"EndIndex"`
+	StartTime  string `json:"StartTime" xml:"StartTime"`
+	SourceType int    `json:"SourceType" xml:"SourceType"`
+	StartIndex int    `json:"StartIndex" xml:"StartIndex"`
+	Role       int    `json:"Role" xml:"Role"`
+	DataSetIds string `json:"DataSetIds" xml:"DataSetIds"`
 }

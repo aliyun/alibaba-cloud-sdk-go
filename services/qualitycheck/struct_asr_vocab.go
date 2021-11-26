@@ -17,9 +17,9 @@ package qualitycheck
 
 // AsrVocab is a nested struct in qualitycheck response
 type AsrVocab struct {
-	Id           string `json:"Id" xml:"Id"`
+	VocabularyId string `json:"VocabularyId" xml:"VocabularyId"`
+	UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
 	Name         string `json:"Name" xml:"Name"`
 	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-	VocabularyId string `json:"VocabularyId" xml:"VocabularyId"`
+	Id           string `json:"Id" xml:"Id"`
 }
