@@ -84,6 +84,10 @@ type DescribeCdnSMCertificateDetailResponse struct {
 	EncryptCertificate string `json:"EncryptCertificate" xml:"EncryptCertificate"`
 	CertIdentifier     string `json:"CertIdentifier" xml:"CertIdentifier"`
 	CertName           string `json:"CertName" xml:"CertName"`
+	CommonName         string `json:"CommonName" xml:"CommonName"`
+	Sans               string `json:"Sans" xml:"Sans"`
+	CertOrg            string `json:"CertOrg" xml:"CertOrg"`
+	CertExpireTime     string `json:"CertExpireTime" xml:"CertExpireTime"`
 }
 
 // CreateDescribeCdnSMCertificateDetailRequest creates a request to invoke DescribeCdnSMCertificateDetail API

@@ -22,4 +22,5 @@ type DomainInfo struct {
 	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
 	Status      string `json:"Status" xml:"Status"`
+	CdnType     string `json:"CdnType" xml:"CdnType"`
 }

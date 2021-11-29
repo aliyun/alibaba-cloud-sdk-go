@@ -71,6 +71,7 @@ func (client *Client) SetCdnDomainSMCertificateWithCallback(request *SetCdnDomai
 // SetCdnDomainSMCertificateRequest is the request struct for api SetCdnDomainSMCertificate
 type SetCdnDomainSMCertificateRequest struct {
 	*requests.RpcRequest
+	SSLProtocol    string           `position:"Query" name:"SSLProtocol"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`

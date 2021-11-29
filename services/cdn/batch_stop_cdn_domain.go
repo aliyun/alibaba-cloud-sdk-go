@@ -72,8 +72,8 @@ func (client *Client) BatchStopCdnDomainWithCallback(request *BatchStopCdnDomain
 type BatchStopCdnDomainRequest struct {
 	*requests.RpcRequest
 	DomainNames   string           `position:"Query" name:"DomainNames"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // BatchStopCdnDomainResponse is the response struct for api BatchStopCdnDomain
