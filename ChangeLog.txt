@@ -1,3 +1,10 @@
+2021-11-29 Version: v1.61.1354
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported ListLogicTableRouteConfig, AddLogicTableRouteConfig, DeleteLogicTableRouteConfig API.
+- Supported ModifyDataCorrectExecSQL, RetryDataCorrectPreCheck API.
+- Supported GetDBTaskSQLJobLog API.
+- Supported ListDBTaskSQLJobDetail to return execute log information.
+
 2021-11-29 Version: v1.61.1353
 - Generated 2016-11-01 for `live`.
 
