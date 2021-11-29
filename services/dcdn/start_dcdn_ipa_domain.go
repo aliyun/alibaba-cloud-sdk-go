@@ -71,9 +71,9 @@ func (client *Client) StartDcdnIpaDomainWithCallback(request *StartDcdnIpaDomain
 // StartDcdnIpaDomainRequest is the request struct for api StartDcdnIpaDomain
 type StartDcdnIpaDomainRequest struct {
 	*requests.RpcRequest
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // StartDcdnIpaDomainResponse is the response struct for api StartDcdnIpaDomain

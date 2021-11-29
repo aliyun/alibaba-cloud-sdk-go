@@ -1,3 +1,7 @@
+2021-11-29 Version: v1.61.1355
+- Generated 2018-01-15 for `dcdn`.
+- Update SetDcdnDomainSMCertificate.
+
 2021-11-29 Version: v1.61.1354
 - Generated 2018-11-01 for `dms-enterprise`.
 - Supported ListLogicTableRouteConfig, AddLogicTableRouteConfig, DeleteLogicTableRouteConfig API.

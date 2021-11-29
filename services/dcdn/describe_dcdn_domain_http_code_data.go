@@ -83,12 +83,12 @@ type DescribeDcdnDomainHttpCodeDataRequest struct {
 // DescribeDcdnDomainHttpCodeDataResponse is the response struct for api DescribeDcdnDomainHttpCodeData
 type DescribeDcdnDomainHttpCodeDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                          `json:"RequestId" xml:"RequestId"`
-	DomainName      string                                          `json:"DomainName" xml:"DomainName"`
-	StartTime       string                                          `json:"StartTime" xml:"StartTime"`
-	EndTime         string                                          `json:"EndTime" xml:"EndTime"`
-	DataInterval    string                                          `json:"DataInterval" xml:"DataInterval"`
-	DataPerInterval DataPerIntervalInDescribeDcdnDomainHttpCodeData `json:"DataPerInterval" xml:"DataPerInterval"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	DomainName      string          `json:"DomainName" xml:"DomainName"`
+	StartTime       string          `json:"StartTime" xml:"StartTime"`
+	EndTime         string          `json:"EndTime" xml:"EndTime"`
+	DataInterval    string          `json:"DataInterval" xml:"DataInterval"`
+	DataPerInterval DataPerInterval `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
 // CreateDescribeDcdnDomainHttpCodeDataRequest creates a request to invoke DescribeDcdnDomainHttpCodeData API
