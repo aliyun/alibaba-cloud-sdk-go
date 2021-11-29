@@ -73,6 +73,7 @@ type StartPredictiveCallRequest struct {
 	*requests.RpcRequest
 	ContactFlowId        string           `position:"Query" name:"ContactFlowId"`
 	Callee               string           `position:"Query" name:"Callee"`
+	MaskedCallee         string           `position:"Query" name:"MaskedCallee"`
 	ContactFlowVariables string           `position:"Query" name:"ContactFlowVariables"`
 	Tags                 string           `position:"Query" name:"Tags"`
 	TimeoutSeconds       requests.Integer `position:"Query" name:"TimeoutSeconds"`

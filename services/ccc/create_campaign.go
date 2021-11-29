@@ -92,7 +92,7 @@ type CreateCampaignRequest struct {
 type CreateCampaignResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	CampaignId     string `json:"CampaignId" xml:"CampaignId"`
+	Data           string `json:"Data" xml:"Data"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
 	HttpStatusCode int64  `json:"HttpStatusCode" xml:"HttpStatusCode"`

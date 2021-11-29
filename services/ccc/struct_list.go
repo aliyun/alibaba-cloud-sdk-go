@@ -32,7 +32,6 @@ type List struct {
 	ActualEndTime      int64  `json:"ActualEndTime" xml:"ActualEndTime"`
 	AbandonType        string `json:"AbandonType" xml:"AbandonType"`
 	ExpandInfo         string `json:"ExpandInfo" xml:"ExpandInfo"`
-	CompletedRate      int64  `json:"CompletedRate" xml:"CompletedRate"`
 	CasesConnected     int64  `json:"CasesConnected" xml:"CasesConnected"`
 	MinAttemptInterval int64  `json:"MinAttemptInterval" xml:"MinAttemptInterval"`
 	TotalCases         int64  `json:"TotalCases" xml:"TotalCases"`

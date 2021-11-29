@@ -72,6 +72,7 @@ func (client *Client) MakeCallWithCallback(request *MakeCallRequest, callback fu
 type MakeCallRequest struct {
 	*requests.RpcRequest
 	Callee         string           `position:"Query" name:"Callee"`
+	MaskedCallee   string           `position:"Query" name:"MaskedCallee"`
 	UserId         string           `position:"Query" name:"UserId"`
 	DeviceId       string           `position:"Query" name:"DeviceId"`
 	Tags           string           `position:"Query" name:"Tags"`
