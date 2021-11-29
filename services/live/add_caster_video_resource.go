@@ -80,6 +80,7 @@ type AddCasterVideoResourceRequest struct {
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
 	StreamMonitor       requests.Integer `position:"Query" name:"StreamMonitor"`
 	BeginOffset         requests.Integer `position:"Query" name:"BeginOffset"`
+	FixedDelayDuration  requests.Integer `position:"Query" name:"FixedDelayDuration"`
 	LiveStreamUrl       string           `position:"Query" name:"LiveStreamUrl"`
 	LocationId          string           `position:"Query" name:"LocationId"`
 	PtsCallbackInterval requests.Integer `position:"Query" name:"PtsCallbackInterval"`

@@ -71,11 +71,10 @@ func (client *Client) DeleteLivePullStreamInfoConfigWithCallback(request *Delete
 // DeleteLivePullStreamInfoConfigRequest is the request struct for api DeleteLivePullStreamInfoConfig
 type DeleteLivePullStreamInfoConfigRequest struct {
 	*requests.RpcRequest
-	AppName       string           `position:"Query" name:"AppName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	StreamName    string           `position:"Query" name:"StreamName"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	AppName    string           `position:"Query" name:"AppName"`
+	StreamName string           `position:"Query" name:"StreamName"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteLivePullStreamInfoConfigResponse is the response struct for api DeleteLivePullStreamInfoConfig
