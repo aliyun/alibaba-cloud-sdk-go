@@ -73,6 +73,7 @@ type ListLoadBalancersRequest struct {
 	*requests.RpcRequest
 	LoadBalancerNames           *[]string               `position:"Query" name:"LoadBalancerNames"  type:"Repeated"`
 	LoadBalancerIds             *[]string               `position:"Query" name:"LoadBalancerIds"  type:"Repeated"`
+	AddressIpVersion            string                  `position:"Query" name:"AddressIpVersion"`
 	ResourceGroupId             string                  `position:"Query" name:"ResourceGroupId"`
 	NextToken                   string                  `position:"Query" name:"NextToken"`
 	LoadBalancerBussinessStatus string                  `position:"Query" name:"LoadBalancerBussinessStatus"`
@@ -84,6 +85,7 @@ type ListLoadBalancersRequest struct {
 	InternetChargeType          string                  `position:"Query" name:"InternetChargeType"`
 	MaxResults                  requests.Integer        `position:"Query" name:"MaxResults"`
 	ZoneId                      string                  `position:"Query" name:"ZoneId"`
+	Ipv6AddressType             string                  `position:"Query" name:"Ipv6AddressType"`
 	PayType                     string                  `position:"Query" name:"PayType"`
 }
 

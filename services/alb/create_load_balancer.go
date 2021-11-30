@@ -75,6 +75,7 @@ type CreateLoadBalancerRequest struct {
 	ClientToken                  string                                         `position:"Query" name:"ClientToken"`
 	ModificationProtectionConfig CreateLoadBalancerModificationProtectionConfig `position:"Query" name:"ModificationProtectionConfig"  type:"Struct"`
 	LoadBalancerBillingConfig    CreateLoadBalancerLoadBalancerBillingConfig    `position:"Query" name:"LoadBalancerBillingConfig"  type:"Struct"`
+	AddressIpVersion             string                                         `position:"Query" name:"AddressIpVersion"`
 	DeletionProtectionEnabled    requests.Boolean                               `position:"Query" name:"DeletionProtectionEnabled"`
 	ResourceGroupId              string                                         `position:"Query" name:"ResourceGroupId"`
 	LoadBalancerName             string                                         `position:"Query" name:"LoadBalancerName"`
@@ -87,8 +88,9 @@ type CreateLoadBalancerRequest struct {
 
 // CreateLoadBalancerZoneMappings is a repeated param struct in CreateLoadBalancerRequest
 type CreateLoadBalancerZoneMappings struct {
-	VSwitchId string `name:"VSwitchId"`
-	ZoneId    string `name:"ZoneId"`
+	VSwitchId    string `name:"VSwitchId"`
+	ZoneId       string `name:"ZoneId"`
+	AllocationId string `name:"AllocationId"`
 }
 
 // CreateLoadBalancerModificationProtectionConfig is a repeated param struct in CreateLoadBalancerRequest
@@ -99,6 +101,7 @@ type CreateLoadBalancerModificationProtectionConfig struct {
 
 // CreateLoadBalancerLoadBalancerBillingConfig is a repeated param struct in CreateLoadBalancerRequest
 type CreateLoadBalancerLoadBalancerBillingConfig struct {
+	BandwidthPackageId string `name:"BandwidthPackageId"`
 	InternetChargeType string `name:"InternetChargeType"`
 	InternetBandwidth  string `name:"InternetBandwidth"`
 	PayType            string `name:"PayType"`

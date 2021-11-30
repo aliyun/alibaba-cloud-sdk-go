@@ -71,16 +71,18 @@ func (client *Client) CreateServerGroupWithCallback(request *CreateServerGroupRe
 // CreateServerGroupRequest is the request struct for api CreateServerGroup
 type CreateServerGroupRequest struct {
 	*requests.RpcRequest
-	ServerGroupName     string                               `position:"Query" name:"ServerGroupName"`
-	ClientToken         string                               `position:"Query" name:"ClientToken"`
-	HealthCheckConfig   CreateServerGroupHealthCheckConfig   `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
-	Scheduler           string                               `position:"Query" name:"Scheduler"`
-	ResourceGroupId     string                               `position:"Query" name:"ResourceGroupId"`
-	Protocol            string                               `position:"Query" name:"Protocol"`
-	StickySessionConfig CreateServerGroupStickySessionConfig `position:"Query" name:"StickySessionConfig"  type:"Struct"`
-	DryRun              requests.Boolean                     `position:"Query" name:"DryRun"`
-	ServerGroupType     string                               `position:"Query" name:"ServerGroupType"`
-	VpcId               string                               `position:"Query" name:"VpcId"`
+	ServerGroupName          string                               `position:"Query" name:"ServerGroupName"`
+	ClientToken              string                               `position:"Query" name:"ClientToken"`
+	HealthCheckConfig        CreateServerGroupHealthCheckConfig   `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
+	Scheduler                string                               `position:"Query" name:"Scheduler"`
+	ResourceGroupId          string                               `position:"Query" name:"ResourceGroupId"`
+	Protocol                 string                               `position:"Query" name:"Protocol"`
+	UpstreamKeepaliveEnabled requests.Boolean                     `position:"Query" name:"UpstreamKeepaliveEnabled"`
+	StickySessionConfig      CreateServerGroupStickySessionConfig `position:"Query" name:"StickySessionConfig"  type:"Struct"`
+	DryRun                   requests.Boolean                     `position:"Query" name:"DryRun"`
+	Ipv6Enabled              requests.Boolean                     `position:"Query" name:"Ipv6Enabled"`
+	ServerGroupType          string                               `position:"Query" name:"ServerGroupType"`
+	VpcId                    string                               `position:"Query" name:"VpcId"`
 }
 
 // CreateServerGroupHealthCheckConfig is a repeated param struct in CreateServerGroupRequest

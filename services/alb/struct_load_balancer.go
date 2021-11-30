@@ -32,6 +32,9 @@ type LoadBalancer struct {
 	LoadBalancerStatus           string                       `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
 	ResourceGroupId              string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	VpcId                        string                       `json:"VpcId" xml:"VpcId"`
+	ConfigManagedEnabled         bool                         `json:"ConfigManagedEnabled" xml:"ConfigManagedEnabled"`
+	AddressIpVersion             string                       `json:"AddressIpVersion" xml:"AddressIpVersion"`
+	Ipv6AddressType              string                       `json:"Ipv6AddressType" xml:"Ipv6AddressType"`
 	AccessLogConfig              AccessLogConfig              `json:"AccessLogConfig" xml:"AccessLogConfig"`
 	DeletionProtectionConfig     DeletionProtectionConfig     `json:"DeletionProtectionConfig" xml:"DeletionProtectionConfig"`
 	LoadBalancerBillingConfig    LoadBalancerBillingConfig    `json:"LoadBalancerBillingConfig" xml:"LoadBalancerBillingConfig"`

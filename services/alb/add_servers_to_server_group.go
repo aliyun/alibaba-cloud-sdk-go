@@ -79,12 +79,13 @@ type AddServersToServerGroupRequest struct {
 
 // AddServersToServerGroupServers is a repeated param struct in AddServersToServerGroupRequest
 type AddServersToServerGroupServers struct {
-	ServerType  string `name:"ServerType"`
-	Port        string `name:"Port"`
-	Description string `name:"Description"`
-	ServerIp    string `name:"ServerIp"`
-	Weight      string `name:"Weight"`
-	ServerId    string `name:"ServerId"`
+	RemoteIpEnabled string `name:"RemoteIpEnabled"`
+	ServerType      string `name:"ServerType"`
+	Port            string `name:"Port"`
+	Description     string `name:"Description"`
+	ServerIp        string `name:"ServerIp"`
+	Weight          string `name:"Weight"`
+	ServerId        string `name:"ServerId"`
 }
 
 // AddServersToServerGroupResponse is the response struct for api AddServersToServerGroup

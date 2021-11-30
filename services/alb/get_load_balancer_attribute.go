@@ -94,6 +94,9 @@ type GetLoadBalancerAttributeResponse struct {
 	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
 	ResourceGroupId              string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	VpcId                        string                       `json:"VpcId" xml:"VpcId"`
+	ConfigManagedEnabled         bool                         `json:"ConfigManagedEnabled" xml:"ConfigManagedEnabled"`
+	AddressIpVersion             string                       `json:"AddressIpVersion" xml:"AddressIpVersion"`
+	Ipv6AddressType              string                       `json:"Ipv6AddressType" xml:"Ipv6AddressType"`
 	FeatureLabels                []string                     `json:"FeatureLabels" xml:"FeatureLabels"`
 	AccessLogConfig              AccessLogConfig              `json:"AccessLogConfig" xml:"AccessLogConfig"`
 	DeletionProtectionConfig     DeletionProtectionConfig     `json:"DeletionProtectionConfig" xml:"DeletionProtectionConfig"`

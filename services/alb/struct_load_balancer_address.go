@@ -17,5 +17,6 @@ package alb
 
 // LoadBalancerAddress is a nested struct in alb response
 type LoadBalancerAddress struct {
-	Address string `json:"Address" xml:"Address"`
+	Address     string `json:"Address" xml:"Address"`
+	Ipv6Address string `json:"Ipv6Address" xml:"Ipv6Address"`
 }

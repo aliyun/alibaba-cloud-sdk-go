@@ -71,13 +71,14 @@ func (client *Client) UpdateServerGroupAttributeWithCallback(request *UpdateServ
 // UpdateServerGroupAttributeRequest is the request struct for api UpdateServerGroupAttribute
 type UpdateServerGroupAttributeRequest struct {
 	*requests.RpcRequest
-	ServerGroupName     string                                        `position:"Query" name:"ServerGroupName"`
-	ClientToken         string                                        `position:"Query" name:"ClientToken"`
-	HealthCheckConfig   UpdateServerGroupAttributeHealthCheckConfig   `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
-	Scheduler           string                                        `position:"Query" name:"Scheduler"`
-	ServerGroupId       string                                        `position:"Query" name:"ServerGroupId"`
-	StickySessionConfig UpdateServerGroupAttributeStickySessionConfig `position:"Query" name:"StickySessionConfig"  type:"Struct"`
-	DryRun              requests.Boolean                              `position:"Query" name:"DryRun"`
+	ServerGroupName          string                                        `position:"Query" name:"ServerGroupName"`
+	ClientToken              string                                        `position:"Query" name:"ClientToken"`
+	HealthCheckConfig        UpdateServerGroupAttributeHealthCheckConfig   `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
+	Scheduler                string                                        `position:"Query" name:"Scheduler"`
+	ServerGroupId            string                                        `position:"Query" name:"ServerGroupId"`
+	UpstreamKeepaliveEnabled requests.Boolean                              `position:"Query" name:"UpstreamKeepaliveEnabled"`
+	StickySessionConfig      UpdateServerGroupAttributeStickySessionConfig `position:"Query" name:"StickySessionConfig"  type:"Struct"`
+	DryRun                   requests.Boolean                              `position:"Query" name:"DryRun"`
 }
 
 // UpdateServerGroupAttributeHealthCheckConfig is a repeated param struct in UpdateServerGroupAttributeRequest

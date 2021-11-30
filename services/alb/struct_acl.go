@@ -24,4 +24,5 @@ type Acl struct {
 	ResourceGroupId       string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ServiceManagedEnabled bool   `json:"ServiceManagedEnabled" xml:"ServiceManagedEnabled"`
 	ServiceManagedMode    string `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	ConfigManagedEnabled  bool   `json:"ConfigManagedEnabled" xml:"ConfigManagedEnabled"`
 }

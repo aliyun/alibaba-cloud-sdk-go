@@ -17,18 +17,22 @@ package alb
 
 // ServerGroup is a nested struct in alb response
 type ServerGroup struct {
-	Protocol               string              `json:"Protocol" xml:"Protocol"`
-	ResourceGroupId        string              `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Scheduler              string              `json:"Scheduler" xml:"Scheduler"`
-	ServerGroupId          string              `json:"ServerGroupId" xml:"ServerGroupId"`
-	ServerGroupName        string              `json:"ServerGroupName" xml:"ServerGroupName"`
-	ServerGroupStatus      string              `json:"ServerGroupStatus" xml:"ServerGroupStatus"`
-	ServerGroupType        string              `json:"ServerGroupType" xml:"ServerGroupType"`
-	VpcId                  string              `json:"VpcId" xml:"VpcId"`
-	ServiceManagedEnabled  bool                `json:"ServiceManagedEnabled" xml:"ServiceManagedEnabled"`
-	ServiceManagedMode     string              `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
-	RelatedLoadBalancerIds []string            `json:"RelatedLoadBalancerIds" xml:"RelatedLoadBalancerIds"`
-	HealthCheckConfig      HealthCheckConfig   `json:"HealthCheckConfig" xml:"HealthCheckConfig"`
-	StickySessionConfig    StickySessionConfig `json:"StickySessionConfig" xml:"StickySessionConfig"`
-	Tags                   []Tag               `json:"Tags" xml:"Tags"`
+	Protocol                 string              `json:"Protocol" xml:"Protocol"`
+	ResourceGroupId          string              `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Scheduler                string              `json:"Scheduler" xml:"Scheduler"`
+	ServerGroupId            string              `json:"ServerGroupId" xml:"ServerGroupId"`
+	ServerGroupName          string              `json:"ServerGroupName" xml:"ServerGroupName"`
+	ServerGroupStatus        string              `json:"ServerGroupStatus" xml:"ServerGroupStatus"`
+	ServerGroupType          string              `json:"ServerGroupType" xml:"ServerGroupType"`
+	VpcId                    string              `json:"VpcId" xml:"VpcId"`
+	ServiceManagedEnabled    bool                `json:"ServiceManagedEnabled" xml:"ServiceManagedEnabled"`
+	ServiceManagedMode       string              `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	ConfigManagedEnabled     bool                `json:"ConfigManagedEnabled" xml:"ConfigManagedEnabled"`
+	UpstreamKeepaliveEnabled bool                `json:"UpstreamKeepaliveEnabled" xml:"UpstreamKeepaliveEnabled"`
+	Ipv6Enabled              bool                `json:"Ipv6Enabled" xml:"Ipv6Enabled"`
+	ServerCount              int                 `json:"ServerCount" xml:"ServerCount"`
+	RelatedLoadBalancerIds   []string            `json:"RelatedLoadBalancerIds" xml:"RelatedLoadBalancerIds"`
+	HealthCheckConfig        HealthCheckConfig   `json:"HealthCheckConfig" xml:"HealthCheckConfig"`
+	StickySessionConfig      StickySessionConfig `json:"StickySessionConfig" xml:"StickySessionConfig"`
+	Tags                     []Tag               `json:"Tags" xml:"Tags"`
 }
