@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ExecuteRequest invokes the saf.ExecuteRequest API synchronously
-func (client *Client) ExecuteRequest(request *ExecuteRequestRequest) (response *ExecuteRequestResponse, err error) {
-	response = CreateExecuteRequestResponse()
+// RequestDecision invokes the saf.RequestDecision API synchronously
+func (client *Client) RequestDecision(request *RequestDecisionRequest) (response *RequestDecisionResponse, err error) {
+	response = CreateRequestDecisionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ExecuteRequestWithChan invokes the saf.ExecuteRequest API asynchronously
-func (client *Client) ExecuteRequestWithChan(request *ExecuteRequestRequest) (<-chan *ExecuteRequestResponse, <-chan error) {
-	responseChan := make(chan *ExecuteRequestResponse, 1)
+// RequestDecisionWithChan invokes the saf.RequestDecision API asynchronously
+func (client *Client) RequestDecisionWithChan(request *RequestDecisionRequest) (<-chan *RequestDecisionResponse, <-chan error) {
+	responseChan := make(chan *RequestDecisionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ExecuteRequest(request)
+		response, err := client.RequestDecision(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ExecuteRequestWithChan(request *ExecuteRequestRequest) (<-
 	return responseChan, errChan
 }
 
-// ExecuteRequestWithCallback invokes the saf.ExecuteRequest API asynchronously
-func (client *Client) ExecuteRequestWithCallback(request *ExecuteRequestRequest, callback func(response *ExecuteRequestResponse, err error)) <-chan int {
+// RequestDecisionWithCallback invokes the saf.RequestDecision API asynchronously
+func (client *Client) RequestDecisionWithCallback(request *RequestDecisionRequest, callback func(response *RequestDecisionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ExecuteRequestResponse
+		var response *RequestDecisionResponse
 		var err error
 		defer close(result)
-		response, err = client.ExecuteRequest(request)
+		response, err = client.RequestDecision(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,35 @@ func (client *Client) ExecuteRequestWithCallback(request *ExecuteRequestRequest,
 	return result
 }
 
-// ExecuteRequestRequest is the request struct for api ExecuteRequest
-type ExecuteRequestRequest struct {
+// RequestDecisionRequest is the request struct for api RequestDecision
+type RequestDecisionRequest struct {
 	*requests.RpcRequest
 	ServiceParameters string `position:"Query" name:"ServiceParameters"`
-	Service           string `position:"Query" name:"Service"`
+	EventCode         string `position:"Query" name:"EventCode"`
 }
 
-// ExecuteRequestResponse is the response struct for api ExecuteRequest
-type ExecuteRequestResponse struct {
+// RequestDecisionResponse is the response struct for api RequestDecision
+type RequestDecisionResponse struct {
 	*responses.BaseResponse
-	Code      int                    `json:"Code" xml:"Code"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Code      int64                  `json:"Code" xml:"Code"`
 	Message   string                 `json:"Message" xml:"Message"`
 	Data      map[string]interface{} `json:"Data" xml:"Data"`
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateExecuteRequestRequest creates a request to invoke ExecuteRequest API
-func CreateExecuteRequestRequest() (request *ExecuteRequestRequest) {
-	request = &ExecuteRequestRequest{
+// CreateRequestDecisionRequest creates a request to invoke RequestDecision API
+func CreateRequestDecisionRequest() (request *RequestDecisionRequest) {
+	request = &RequestDecisionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequest", "", "")
+	request.InitWithApiInfo("saf", "2019-05-21", "RequestDecision", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateExecuteRequestResponse creates a response to parse from ExecuteRequest response
-func CreateExecuteRequestResponse() (response *ExecuteRequestResponse) {
-	response = &ExecuteRequestResponse{
+// CreateRequestDecisionResponse creates a response to parse from RequestDecision response
+func CreateRequestDecisionResponse() (response *RequestDecisionResponse) {
+	response = &RequestDecisionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // ExecuteRequestSG invokes the saf.ExecuteRequestSG API synchronously
-// api document: https://help.aliyun.com/api/saf/executerequestsg.html
 func (client *Client) ExecuteRequestSG(request *ExecuteRequestSGRequest) (response *ExecuteRequestSGResponse, err error) {
 	response = CreateExecuteRequestSGResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecuteRequestSG(request *ExecuteRequestSGRequest) (respon
 }
 
 // ExecuteRequestSGWithChan invokes the saf.ExecuteRequestSG API asynchronously
-// api document: https://help.aliyun.com/api/saf/executerequestsg.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteRequestSGWithChan(request *ExecuteRequestSGRequest) (<-chan *ExecuteRequestSGResponse, <-chan error) {
 	responseChan := make(chan *ExecuteRequestSGResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecuteRequestSGWithChan(request *ExecuteRequestSGRequest)
 }
 
 // ExecuteRequestSGWithCallback invokes the saf.ExecuteRequestSG API asynchronously
-// api document: https://help.aliyun.com/api/saf/executerequestsg.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteRequestSGWithCallback(request *ExecuteRequestSGRequest, callback func(response *ExecuteRequestSGResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,15 +73,16 @@ type ExecuteRequestSGRequest struct {
 	*requests.RpcRequest
 	ServiceParameters string `position:"Query" name:"ServiceParameters"`
 	Service           string `position:"Query" name:"Service"`
+	Lang              string `position:"Query" name:"Lang"`
 }
 
 // ExecuteRequestSGResponse is the response struct for api ExecuteRequestSG
 type ExecuteRequestSGResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Code      int                    `json:"Code" xml:"Code"`
 	Message   string                 `json:"Message" xml:"Message"`
 	Data      map[string]interface{} `json:"Data" xml:"Data"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateExecuteRequestSGRequest creates a request to invoke ExecuteRequestSG API
@@ -94,7 +90,7 @@ func CreateExecuteRequestSGRequest() (request *ExecuteRequestSGRequest) {
 	request = &ExecuteRequestSGRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequestSG", "saf", "openAPI")
+	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequestSG", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ExecuteRequestML invokes the saf.ExecuteRequestML API synchronously
-// api document: https://help.aliyun.com/api/saf/executerequestml.html
 func (client *Client) ExecuteRequestML(request *ExecuteRequestMLRequest) (response *ExecuteRequestMLResponse, err error) {
 	response = CreateExecuteRequestMLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecuteRequestML(request *ExecuteRequestMLRequest) (respon
 }
 
 // ExecuteRequestMLWithChan invokes the saf.ExecuteRequestML API asynchronously
-// api document: https://help.aliyun.com/api/saf/executerequestml.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteRequestMLWithChan(request *ExecuteRequestMLRequest) (<-chan *ExecuteRequestMLResponse, <-chan error) {
 	responseChan := make(chan *ExecuteRequestMLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecuteRequestMLWithChan(request *ExecuteRequestMLRequest)
 }
 
 // ExecuteRequestMLWithCallback invokes the saf.ExecuteRequestML API asynchronously
-// api document: https://help.aliyun.com/api/saf/executerequestml.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteRequestMLWithCallback(request *ExecuteRequestMLRequest, callback func(response *ExecuteRequestMLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,15 +73,16 @@ type ExecuteRequestMLRequest struct {
 	*requests.RpcRequest
 	ServiceParameters string `position:"Query" name:"ServiceParameters"`
 	Service           string `position:"Query" name:"Service"`
+	Lang              string `position:"Query" name:"Lang"`
 }
 
 // ExecuteRequestMLResponse is the response struct for api ExecuteRequestML
 type ExecuteRequestMLResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Code      int                    `json:"Code" xml:"Code"`
 	Message   string                 `json:"Message" xml:"Message"`
 	Data      map[string]interface{} `json:"Data" xml:"Data"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateExecuteRequestMLRequest creates a request to invoke ExecuteRequestML API
@@ -94,7 +90,7 @@ func CreateExecuteRequestMLRequest() (request *ExecuteRequestMLRequest) {
 	request = &ExecuteRequestMLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequestML", "saf", "openAPI")
+	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequestML", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ExecuteExtendService invokes the saf.ExecuteExtendService API synchronously
-// api document: https://help.aliyun.com/api/saf/executeextendservice.html
 func (client *Client) ExecuteExtendService(request *ExecuteExtendServiceRequest) (response *ExecuteExtendServiceResponse, err error) {
 	response = CreateExecuteExtendServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecuteExtendService(request *ExecuteExtendServiceRequest)
 }
 
 // ExecuteExtendServiceWithChan invokes the saf.ExecuteExtendService API asynchronously
-// api document: https://help.aliyun.com/api/saf/executeextendservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteExtendServiceWithChan(request *ExecuteExtendServiceRequest) (<-chan *ExecuteExtendServiceResponse, <-chan error) {
 	responseChan := make(chan *ExecuteExtendServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecuteExtendServiceWithChan(request *ExecuteExtendService
 }
 
 // ExecuteExtendServiceWithCallback invokes the saf.ExecuteExtendService API asynchronously
-// api document: https://help.aliyun.com/api/saf/executeextendservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteExtendServiceWithCallback(request *ExecuteExtendServiceRequest, callback func(response *ExecuteExtendServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,11 +79,11 @@ type ExecuteExtendServiceRequest struct {
 // ExecuteExtendServiceResponse is the response struct for api ExecuteExtendService
 type ExecuteExtendServiceResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
 
@@ -97,7 +92,7 @@ func CreateExecuteExtendServiceRequest() (request *ExecuteExtendServiceRequest) 
 	request = &ExecuteExtendServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteExtendService", "saf", "openAPI")
+	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteExtendService", "", "")
 	request.Method = requests.POST
 	return
 }
