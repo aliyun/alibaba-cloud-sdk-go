@@ -1,3 +1,8 @@
+2021-12-01 Version: v1.61.1361
+- Generated 2017-09-12 for `Cbn`.
+- Support not switching routes when VBR health check fails.
+- Support order type when cross-account authorization and display.
+
 2021-12-01 Version: v1.61.1360
 - Generated 2019-05-21 for `saf`.
 - Supported RequestDecision For YN.

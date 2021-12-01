@@ -17,14 +17,15 @@ package cbn
 
 // VbrHealthCheck is a nested struct in cbn response
 type VbrHealthCheck struct {
-	CenId               string `json:"CenId" xml:"CenId"`
-	VbrInstanceId       string `json:"VbrInstanceId" xml:"VbrInstanceId"`
-	LinkStatus          string `json:"LinkStatus" xml:"LinkStatus"`
-	PacketLoss          int64  `json:"PacketLoss" xml:"PacketLoss"`
-	HealthCheckSourceIp string `json:"HealthCheckSourceIp" xml:"HealthCheckSourceIp"`
 	HealthCheckTargetIp string `json:"HealthCheckTargetIp" xml:"HealthCheckTargetIp"`
-	Delay               int64  `json:"Delay" xml:"Delay"`
-	HealthCheckInterval int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthyThreshold    int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	VbrInstanceId       string `json:"VbrInstanceId" xml:"VbrInstanceId"`
 	VbrInstanceRegionId string `json:"VbrInstanceRegionId" xml:"VbrInstanceRegionId"`
+	Delay               int64  `json:"Delay" xml:"Delay"`
+	LinkStatus          string `json:"LinkStatus" xml:"LinkStatus"`
+	CenId               string `json:"CenId" xml:"CenId"`
+	HealthyThreshold    int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	HealthCheckInterval int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	HealthCheckSourceIp string `json:"HealthCheckSourceIp" xml:"HealthCheckSourceIp"`
+	PacketLoss          int64  `json:"PacketLoss" xml:"PacketLoss"`
+	HealthCheckOnly     bool   `json:"HealthCheckOnly" xml:"HealthCheckOnly"`
 }

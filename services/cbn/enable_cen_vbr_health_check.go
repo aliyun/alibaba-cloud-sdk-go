@@ -76,6 +76,7 @@ type EnableCenVbrHealthCheckRequest struct {
 	HealthCheckTargetIp  string           `position:"Query" name:"HealthCheckTargetIp"`
 	HealthyThreshold     requests.Integer `position:"Query" name:"HealthyThreshold"`
 	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
+	HealthCheckOnly      requests.Boolean `position:"Query" name:"HealthCheckOnly"`
 	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

@@ -86,10 +86,10 @@ type DescribeCenVbrHealthCheckRequest struct {
 // DescribeCenVbrHealthCheckResponse is the response struct for api DescribeCenVbrHealthCheck
 type DescribeCenVbrHealthCheckResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	TotalCount      int             `json:"TotalCount" xml:"TotalCount"`
-	PageNumber      int             `json:"PageNumber" xml:"PageNumber"`
 	PageSize        int             `json:"PageSize" xml:"PageSize"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	PageNumber      int             `json:"PageNumber" xml:"PageNumber"`
+	TotalCount      int             `json:"TotalCount" xml:"TotalCount"`
 	VbrHealthChecks VbrHealthChecks `json:"VbrHealthChecks" xml:"VbrHealthChecks"`
 }
 
