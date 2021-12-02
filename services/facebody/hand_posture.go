@@ -86,7 +86,7 @@ func CreateHandPostureRequest() (request *HandPostureRequest) {
 	request = &HandPostureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "HandPosture", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "HandPosture", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

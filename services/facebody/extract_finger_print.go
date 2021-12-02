@@ -89,7 +89,7 @@ func CreateExtractFingerPrintRequest() (request *ExtractFingerPrintRequest) {
 	request = &ExtractFingerPrintRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "ExtractFingerPrint", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "ExtractFingerPrint", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

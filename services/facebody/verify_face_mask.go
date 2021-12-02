@@ -89,7 +89,7 @@ func CreateVerifyFaceMaskRequest() (request *VerifyFaceMaskRequest) {
 	request = &VerifyFaceMaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "VerifyFaceMask", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "VerifyFaceMask", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

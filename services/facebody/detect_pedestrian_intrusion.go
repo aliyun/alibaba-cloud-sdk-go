@@ -90,7 +90,7 @@ func CreateDetectPedestrianIntrusionRequest() (request *DetectPedestrianIntrusio
 	request = &DetectPedestrianIntrusionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectPedestrianIntrusion", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectPedestrianIntrusion", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

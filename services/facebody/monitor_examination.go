@@ -89,7 +89,7 @@ func CreateMonitorExaminationRequest() (request *MonitorExaminationRequest) {
 	request = &MonitorExaminationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "MonitorExamination", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "MonitorExamination", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateCountCrowdRequest() (request *CountCrowdRequest) {
 	request = &CountCrowdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "CountCrowd", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "CountCrowd", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

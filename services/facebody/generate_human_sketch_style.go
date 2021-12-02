@@ -89,7 +89,7 @@ func CreateGenerateHumanSketchStyleRequest() (request *GenerateHumanSketchStyleR
 	request = &GenerateHumanSketchStyleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "GenerateHumanSketchStyle", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "GenerateHumanSketchStyle", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

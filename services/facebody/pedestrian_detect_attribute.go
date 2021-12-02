@@ -86,7 +86,7 @@ func CreatePedestrianDetectAttributeRequest() (request *PedestrianDetectAttribut
 	request = &PedestrianDetectAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "PedestrianDetectAttribute", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "PedestrianDetectAttribute", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,9 +71,12 @@ func (client *Client) MergeImageFaceWithCallback(request *MergeImageFaceRequest,
 // MergeImageFaceRequest is the request struct for api MergeImageFace
 type MergeImageFaceRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Body" name:"UserId"`
-	TemplateId string `position:"Body" name:"TemplateId"`
-	ImageURL   string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	UserId             string           `position:"Body" name:"UserId"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	TemplateId         string           `position:"Body" name:"TemplateId"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // MergeImageFaceResponse is the response struct for api MergeImageFace
@@ -90,7 +93,7 @@ func CreateMergeImageFaceRequest() (request *MergeImageFaceRequest) {
 	request = &MergeImageFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "MergeImageFace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "MergeImageFace", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

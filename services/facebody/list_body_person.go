@@ -90,7 +90,7 @@ func CreateListBodyPersonRequest() (request *ListBodyPersonRequest) {
 	request = &ListBodyPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "ListBodyPerson", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "ListBodyPerson", "facebody", "openAPI")
 	request.Method = requests.GET
 	return
 }

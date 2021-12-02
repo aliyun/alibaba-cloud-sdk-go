@@ -90,7 +90,7 @@ func CreateSwapFacialFeaturesRequest() (request *SwapFacialFeaturesRequest) {
 	request = &SwapFacialFeaturesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "SwapFacialFeatures", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "SwapFacialFeatures", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

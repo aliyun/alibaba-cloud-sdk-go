@@ -89,7 +89,7 @@ func CreateLiquifyFaceRequest() (request *LiquifyFaceRequest) {
 	request = &LiquifyFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "LiquifyFace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "LiquifyFace", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

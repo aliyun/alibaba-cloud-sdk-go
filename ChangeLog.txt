@@ -1,3 +1,7 @@
+2021-12-02 Version: v1.61.1362
+- Generated 2019-12-30 for `facebody`.
+- Update MergeImageFace QueryFaceImageTemplate AddFaceImageTemplate DeleteFaceImageTemplate.
+
 2021-12-01 Version: v1.61.1361
 - Generated 2017-09-12 for `Cbn`.
 - Support not switching routes when VBR health check fails.

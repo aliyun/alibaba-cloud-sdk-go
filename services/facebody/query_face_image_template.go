@@ -71,8 +71,11 @@ func (client *Client) QueryFaceImageTemplateWithCallback(request *QueryFaceImage
 // QueryFaceImageTemplateRequest is the request struct for api QueryFaceImageTemplate
 type QueryFaceImageTemplateRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
-	TemplateId string `position:"Query" name:"TemplateId"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	UserId             string           `position:"Query" name:"UserId"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	TemplateId         string           `position:"Query" name:"TemplateId"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
 }
 
 // QueryFaceImageTemplateResponse is the response struct for api QueryFaceImageTemplate
@@ -89,7 +92,7 @@ func CreateQueryFaceImageTemplateRequest() (request *QueryFaceImageTemplateReque
 	request = &QueryFaceImageTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "QueryFaceImageTemplate", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "QueryFaceImageTemplate", "facebody", "openAPI")
 	request.Method = requests.GET
 	return
 }

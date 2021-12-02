@@ -91,7 +91,7 @@ func CreateSearchBodyTraceRequest() (request *SearchBodyTraceRequest) {
 	request = &SearchBodyTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "SearchBodyTrace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "SearchBodyTrace", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,7 +71,10 @@ func (client *Client) RecognizePublicFaceWithCallback(request *RecognizePublicFa
 // RecognizePublicFaceRequest is the request struct for api RecognizePublicFace
 type RecognizePublicFaceRequest struct {
 	*requests.RpcRequest
-	Task *[]RecognizePublicFaceTask `position:"Body" name:"Task"  type:"Repeated"`
+	FormatResultToJson requests.Boolean           `position:"Query" name:"FormatResultToJson"`
+	OssFile            string                     `position:"Query" name:"OssFile"`
+	RequestProxyBy     string                     `position:"Query" name:"RequestProxyBy"`
+	Task               *[]RecognizePublicFaceTask `position:"Body" name:"Task"  type:"Repeated"`
 }
 
 // RecognizePublicFaceTask is a repeated param struct in RecognizePublicFaceRequest
@@ -92,7 +95,7 @@ func CreateRecognizePublicFaceRequest() (request *RecognizePublicFaceRequest) {
 	request = &RecognizePublicFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizePublicFace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizePublicFace", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

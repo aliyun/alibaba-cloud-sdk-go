@@ -87,7 +87,7 @@ func CreateGenerateHumanAnimeStyleRequest() (request *GenerateHumanAnimeStyleReq
 	request = &GenerateHumanAnimeStyleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "GenerateHumanAnimeStyle", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "GenerateHumanAnimeStyle", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

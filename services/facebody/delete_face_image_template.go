@@ -71,8 +71,11 @@ func (client *Client) DeleteFaceImageTemplateWithCallback(request *DeleteFaceIma
 // DeleteFaceImageTemplateRequest is the request struct for api DeleteFaceImageTemplate
 type DeleteFaceImageTemplateRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Body" name:"UserId"`
-	TemplateId string `position:"Body" name:"TemplateId"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	UserId             string           `position:"Body" name:"UserId"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	TemplateId         string           `position:"Body" name:"TemplateId"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
 }
 
 // DeleteFaceImageTemplateResponse is the response struct for api DeleteFaceImageTemplate
@@ -88,7 +91,7 @@ func CreateDeleteFaceImageTemplateRequest() (request *DeleteFaceImageTemplateReq
 	request = &DeleteFaceImageTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceImageTemplate", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceImageTemplate", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

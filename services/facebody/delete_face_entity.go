@@ -86,7 +86,7 @@ func CreateDeleteFaceEntityRequest() (request *DeleteFaceEntityRequest) {
 	request = &DeleteFaceEntityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceEntity", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceEntity", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

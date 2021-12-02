@@ -90,7 +90,7 @@ func CreateRecognizeHandGestureRequest() (request *RecognizeHandGestureRequest) 
 	request = &RecognizeHandGestureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizeHandGesture", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizeHandGesture", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

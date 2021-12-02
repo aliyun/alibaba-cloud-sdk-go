@@ -71,8 +71,11 @@ func (client *Client) AddFaceImageTemplateWithCallback(request *AddFaceImageTemp
 // AddFaceImageTemplateRequest is the request struct for api AddFaceImageTemplate
 type AddFaceImageTemplateRequest struct {
 	*requests.RpcRequest
-	UserId   string `position:"Body" name:"UserId"`
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	UserId             string           `position:"Body" name:"UserId"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // AddFaceImageTemplateResponse is the response struct for api AddFaceImageTemplate
@@ -89,7 +92,7 @@ func CreateAddFaceImageTemplateRequest() (request *AddFaceImageTemplateRequest) 
 	request = &AddFaceImageTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "AddFaceImageTemplate", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "AddFaceImageTemplate", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

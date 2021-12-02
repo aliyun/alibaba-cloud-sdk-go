@@ -86,7 +86,7 @@ func CreateRecognizeExpressionRequest() (request *RecognizeExpressionRequest) {
 	request = &RecognizeExpressionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizeExpression", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizeExpression", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }
