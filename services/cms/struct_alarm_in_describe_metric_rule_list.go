@@ -37,6 +37,9 @@ type AlarmInDescribeMetricRuleList struct {
 	GroupBy             string              `json:"GroupBy" xml:"GroupBy"`
 	Resources           string              `json:"Resources" xml:"Resources"`
 	NoDataPolicy        string              `json:"NoDataPolicy" xml:"NoDataPolicy"`
+	Options             string              `json:"Options" xml:"Options"`
 	Escalations         Escalations         `json:"Escalations" xml:"Escalations"`
 	CompositeExpression CompositeExpression `json:"CompositeExpression" xml:"CompositeExpression"`
+	Prometheus          Prometheus          `json:"Prometheus" xml:"Prometheus"`
+	Labels              Labels              `json:"Labels" xml:"Labels"`
 }

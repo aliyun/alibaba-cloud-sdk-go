@@ -74,33 +74,36 @@ type PutResourceMetricRuleRequest struct {
 	Webhook                               string           `position:"Query" name:"Webhook"`
 	EscalationsWarnComparisonOperator     string           `position:"Query" name:"Escalations.Warn.ComparisonOperator"`
 	RuleName                              string           `position:"Query" name:"RuleName"`
-	EscalationsInfoStatistics             string           `position:"Query" name:"Escalations.Info.Statistics"`
 	EffectiveInterval                     string           `position:"Query" name:"EffectiveInterval"`
-	EscalationsInfoComparisonOperator     string           `position:"Query" name:"Escalations.Info.ComparisonOperator"`
 	NoDataPolicy                          string           `position:"Query" name:"NoDataPolicy"`
 	NoEffectiveInterval                   string           `position:"Query" name:"NoEffectiveInterval"`
 	EmailSubject                          string           `position:"Query" name:"EmailSubject"`
-	SilenceTime                           requests.Integer `position:"Query" name:"SilenceTime"`
+	Options                               string           `position:"Query" name:"Options"`
 	MetricName                            string           `position:"Query" name:"MetricName"`
 	EscalationsWarnTimes                  requests.Integer `position:"Query" name:"Escalations.Warn.Times"`
-	CompositeExpression                   string           `position:"Query" name:"CompositeExpression"`
 	Period                                string           `position:"Query" name:"Period"`
 	EscalationsWarnThreshold              string           `position:"Query" name:"Escalations.Warn.Threshold"`
 	ContactGroups                         string           `position:"Query" name:"ContactGroups"`
 	EscalationsCriticalStatistics         string           `position:"Query" name:"Escalations.Critical.Statistics"`
 	GroupId                               string           `position:"Query" name:"GroupId"`
+	GroupName                             string           `position:"Query" name:"GroupName"`
+	Labels                                string           `position:"Query" name:"Labels"`
+	Interval                              string           `position:"Query" name:"Interval"`
+	RuleId                                string           `position:"Query" name:"RuleId"`
+	EscalationsCriticalThreshold          string           `position:"Query" name:"Escalations.Critical.Threshold"`
+	EscalationsInfoStatistics             string           `position:"Query" name:"Escalations.Info.Statistics"`
+	EscalationsInfoComparisonOperator     string           `position:"Query" name:"Escalations.Info.ComparisonOperator"`
+	SilenceTime                           requests.Integer `position:"Query" name:"SilenceTime"`
+	Prometheus                            string           `position:"Query" name:"Prometheus"`
+	CompositeExpression                   string           `position:"Query" name:"CompositeExpression"`
 	Resources                             string           `position:"Query" name:"Resources"`
 	EscalationsInfoTimes                  requests.Integer `position:"Query" name:"Escalations.Info.Times"`
 	GroupBy                               string           `position:"Query" name:"GroupBy"`
-	GroupName                             string           `position:"Query" name:"GroupName"`
 	EscalationsCriticalTimes              requests.Integer `position:"Query" name:"Escalations.Critical.Times"`
 	EscalationsWarnStatistics             string           `position:"Query" name:"Escalations.Warn.Statistics"`
 	EscalationsInfoThreshold              string           `position:"Query" name:"Escalations.Info.Threshold"`
 	Namespace                             string           `position:"Query" name:"Namespace"`
-	Interval                              string           `position:"Query" name:"Interval"`
-	RuleId                                string           `position:"Query" name:"RuleId"`
 	EscalationsCriticalComparisonOperator string           `position:"Query" name:"Escalations.Critical.ComparisonOperator"`
-	EscalationsCriticalThreshold          string           `position:"Query" name:"Escalations.Critical.Threshold"`
 }
 
 // PutResourceMetricRuleResponse is the response struct for api PutResourceMetricRule

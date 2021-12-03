@@ -80,11 +80,11 @@ type DescribeEventRuleListRequest struct {
 // DescribeEventRuleListResponse is the response struct for api DescribeEventRuleList
 type DescribeEventRuleListResponse struct {
 	*responses.BaseResponse
-	Success    bool       `json:"Success" xml:"Success"`
 	Code       string     `json:"Code" xml:"Code"`
 	Message    string     `json:"Message" xml:"Message"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Total      int        `json:"Total" xml:"Total"`
+	Success    bool       `json:"Success" xml:"Success"`
 	EventRules EventRules `json:"EventRules" xml:"EventRules"`
 }
 

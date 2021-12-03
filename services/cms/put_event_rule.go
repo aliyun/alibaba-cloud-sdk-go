@@ -82,6 +82,7 @@ type PutEventRuleRequest struct {
 // PutEventRuleEventPattern is a repeated param struct in PutEventRuleRequest
 type PutEventRuleEventPattern struct {
 	LevelList     *[]string `name:"LevelList" type:"Repeated"`
+	KeywordFilter string    `name:"KeywordFilter"`
 	Product       string    `name:"Product"`
 	StatusList    *[]string `name:"StatusList" type:"Repeated"`
 	NameList      *[]string `name:"NameList" type:"Repeated"`
@@ -91,11 +92,11 @@ type PutEventRuleEventPattern struct {
 // PutEventRuleResponse is the response struct for api PutEventRule
 type PutEventRuleResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreatePutEventRuleRequest creates a request to invoke PutEventRule API

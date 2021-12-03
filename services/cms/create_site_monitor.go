@@ -86,12 +86,12 @@ type CreateSiteMonitorRequest struct {
 // CreateSiteMonitorResponse is the response struct for api CreateSiteMonitor
 type CreateSiteMonitorResponse struct {
 	*responses.BaseResponse
-	Code             string           `json:"Code" xml:"Code"`
-	Message          string           `json:"Message" xml:"Message"`
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	Success          string           `json:"Success" xml:"Success"`
-	Data             Data             `json:"Data" xml:"Data"`
-	CreateResultList CreateResultList `json:"CreateResultList" xml:"CreateResultList"`
+	Code             string                              `json:"Code" xml:"Code"`
+	Message          string                              `json:"Message" xml:"Message"`
+	RequestId        string                              `json:"RequestId" xml:"RequestId"`
+	Success          string                              `json:"Success" xml:"Success"`
+	Data             Data                                `json:"Data" xml:"Data"`
+	CreateResultList CreateResultListInCreateSiteMonitor `json:"CreateResultList" xml:"CreateResultList"`
 }
 
 // CreateCreateSiteMonitorRequest creates a request to invoke CreateSiteMonitor API

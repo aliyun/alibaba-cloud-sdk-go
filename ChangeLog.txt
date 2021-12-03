@@ -1,3 +1,8 @@
+2021-12-03 Version: v1.61.1364
+- Generated 2019-01-01 for `Cms`.
+- Add EventRule Content Filter.
+- Add MetricRule Labels.
+
 2021-12-03 Version: v1.61.1363
 - Generated 2020-04-15 for `Privatelink`.
 - Support EndpointType and ServiceType.
