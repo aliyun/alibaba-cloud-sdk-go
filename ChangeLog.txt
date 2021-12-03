@@ -1,3 +1,7 @@
+2021-12-03 Version: v1.61.1363
+- Generated 2020-04-15 for `Privatelink`.
+- Support EndpointType and ServiceType.
+
 2021-12-02 Version: v1.61.1362
 - Generated 2019-12-30 for `facebody`.
 - Update MergeImageFace QueryFaceImageTemplate AddFaceImageTemplate DeleteFaceImageTemplate.

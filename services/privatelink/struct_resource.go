@@ -17,14 +17,15 @@ package privatelink
 
 // Resource is a nested struct in privatelink response
 type Resource struct {
-	VpcId                string `json:"VpcId" xml:"VpcId"`
-	VSwitchId            string `json:"VSwitchId" xml:"VSwitchId"`
-	ResourceType         string `json:"ResourceType" xml:"ResourceType"`
-	ZoneId               string `json:"ZoneId" xml:"ZoneId"`
-	Ip                   string `json:"Ip" xml:"Ip"`
-	ResourceId           string `json:"ResourceId" xml:"ResourceId"`
-	RegionId             string `json:"RegionId" xml:"RegionId"`
-	RelatedEndpointCount int64  `json:"RelatedEndpointCount" xml:"RelatedEndpointCount"`
-	AutoAllocatedEnabled bool   `json:"AutoAllocatedEnabled" xml:"AutoAllocatedEnabled"`
-	StatusInfo           string `json:"StatusInfo" xml:"StatusInfo"`
+	VpcId                          string `json:"VpcId" xml:"VpcId"`
+	VSwitchId                      string `json:"VSwitchId" xml:"VSwitchId"`
+	ResourceType                   string `json:"ResourceType" xml:"ResourceType"`
+	ZoneId                         string `json:"ZoneId" xml:"ZoneId"`
+	Ip                             string `json:"Ip" xml:"Ip"`
+	ResourceId                     string `json:"ResourceId" xml:"ResourceId"`
+	RegionId                       string `json:"RegionId" xml:"RegionId"`
+	RelatedEndpointCount           int64  `json:"RelatedEndpointCount" xml:"RelatedEndpointCount"`
+	RelatedDeprecatedEndpointCount int64  `json:"RelatedDeprecatedEndpointCount" xml:"RelatedDeprecatedEndpointCount"`
+	AutoAllocatedEnabled           bool   `json:"AutoAllocatedEnabled" xml:"AutoAllocatedEnabled"`
+	StatusInfo                     string `json:"StatusInfo" xml:"StatusInfo"`
 }

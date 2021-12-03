@@ -71,14 +71,15 @@ func (client *Client) ListVpcEndpointConnectionsWithCallback(request *ListVpcEnd
 // ListVpcEndpointConnectionsRequest is the request struct for api ListVpcEndpointConnections
 type ListVpcEndpointConnectionsRequest struct {
 	*requests.RpcRequest
-	EndpointId       string           `position:"Query" name:"EndpointId"`
-	EndpointOwnerId  requests.Integer `position:"Query" name:"EndpointOwnerId"`
-	NextToken        string           `position:"Query" name:"NextToken"`
-	ResourceId       string           `position:"Query" name:"ResourceId"`
-	ConnectionStatus string           `position:"Query" name:"ConnectionStatus"`
-	MaxResults       requests.Integer `position:"Query" name:"MaxResults"`
-	EniId            string           `position:"Query" name:"EniId"`
-	ServiceId        string           `position:"Query" name:"ServiceId"`
+	EndpointId         string           `position:"Query" name:"EndpointId"`
+	EndpointOwnerId    requests.Integer `position:"Query" name:"EndpointOwnerId"`
+	ReplacedResourceId string           `position:"Query" name:"ReplacedResourceId"`
+	NextToken          string           `position:"Query" name:"NextToken"`
+	ResourceId         string           `position:"Query" name:"ResourceId"`
+	ConnectionStatus   string           `position:"Query" name:"ConnectionStatus"`
+	MaxResults         requests.Integer `position:"Query" name:"MaxResults"`
+	EniId              string           `position:"Query" name:"EniId"`
+	ServiceId          string           `position:"Query" name:"ServiceId"`
 }
 
 // ListVpcEndpointConnectionsResponse is the response struct for api ListVpcEndpointConnections

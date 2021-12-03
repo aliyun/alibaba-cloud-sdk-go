@@ -24,6 +24,7 @@ type Service struct {
 	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
 	ServiceResourceType   string   `json:"ServiceResourceType" xml:"ServiceResourceType"`
 	AutoAcceptEnabled     bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
+	PrivateServiceName    string   `json:"PrivateServiceName" xml:"PrivateServiceName"`
 	Payer                 string   `json:"Payer" xml:"Payer"`
 	ServiceStatus         string   `json:"ServiceStatus" xml:"ServiceStatus"`
 	ServiceId             string   `json:"ServiceId" xml:"ServiceId"`
