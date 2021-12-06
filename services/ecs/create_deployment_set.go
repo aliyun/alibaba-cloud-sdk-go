@@ -88,8 +88,8 @@ type CreateDeploymentSetRequest struct {
 // CreateDeploymentSetResponse is the response struct for api CreateDeploymentSet
 type CreateDeploymentSetResponse struct {
 	*responses.BaseResponse
-	DeploymentSetId string `json:"DeploymentSetId" xml:"DeploymentSetId"`
 	RequestId       string `json:"RequestId" xml:"RequestId"`
+	DeploymentSetId string `json:"DeploymentSetId" xml:"DeploymentSetId"`
 }
 
 // CreateCreateDeploymentSetRequest creates a request to invoke CreateDeploymentSet API

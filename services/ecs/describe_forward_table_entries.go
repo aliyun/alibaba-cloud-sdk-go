@@ -84,10 +84,10 @@ type DescribeForwardTableEntriesRequest struct {
 // DescribeForwardTableEntriesResponse is the response struct for api DescribeForwardTableEntries
 type DescribeForwardTableEntriesResponse struct {
 	*responses.BaseResponse
-	PageSize            int                 `json:"PageSize" xml:"PageSize"`
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
 	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
+	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
+	PageSize            int                 `json:"PageSize" xml:"PageSize"`
 	ForwardTableEntries ForwardTableEntries `json:"ForwardTableEntries" xml:"ForwardTableEntries"`
 }
 

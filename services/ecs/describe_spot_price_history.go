@@ -90,8 +90,8 @@ type DescribeSpotPriceHistoryRequest struct {
 type DescribeSpotPriceHistoryResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Currency   string     `json:"Currency" xml:"Currency"`
 	NextOffset int        `json:"NextOffset" xml:"NextOffset"`
+	Currency   string     `json:"Currency" xml:"Currency"`
 	SpotPrices SpotPrices `json:"SpotPrices" xml:"SpotPrices"`
 }
 

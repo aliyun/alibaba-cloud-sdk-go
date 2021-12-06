@@ -80,8 +80,8 @@ type DescribeDeploymentSetSupportedInstanceTypeFamilyRequest struct {
 // DescribeDeploymentSetSupportedInstanceTypeFamilyResponse is the response struct for api DescribeDeploymentSetSupportedInstanceTypeFamily
 type DescribeDeploymentSetSupportedInstanceTypeFamilyResponse struct {
 	*responses.BaseResponse
-	InstanceTypeFamilies string `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
 	RequestId            string `json:"RequestId" xml:"RequestId"`
+	InstanceTypeFamilies string `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
 }
 
 // CreateDescribeDeploymentSetSupportedInstanceTypeFamilyRequest creates a request to invoke DescribeDeploymentSetSupportedInstanceTypeFamily API

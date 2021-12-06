@@ -17,8 +17,8 @@ package ecs
 
 // EipAddressInDescribeInstanceAttribute is a nested struct in ecs response
 type EipAddressInDescribeInstanceAttribute struct {
-	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
+	AllocationId       string `json:"AllocationId" xml:"AllocationId"`
 	IpAddress          string `json:"IpAddress" xml:"IpAddress"`
 	Bandwidth          int    `json:"Bandwidth" xml:"Bandwidth"`
-	AllocationId       string `json:"AllocationId" xml:"AllocationId"`
+	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
 }

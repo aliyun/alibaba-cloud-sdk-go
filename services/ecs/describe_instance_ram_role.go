@@ -84,8 +84,8 @@ type DescribeInstanceRamRoleRequest struct {
 type DescribeInstanceRamRoleResponse struct {
 	*responses.BaseResponse
 	RequestId           string                                       `json:"RequestId" xml:"RequestId"`
-	TotalCount          int                                          `json:"TotalCount" xml:"TotalCount"`
 	RegionId            string                                       `json:"RegionId" xml:"RegionId"`
+	TotalCount          int                                          `json:"TotalCount" xml:"TotalCount"`
 	InstanceRamRoleSets InstanceRamRoleSetsInDescribeInstanceRamRole `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
 }
 

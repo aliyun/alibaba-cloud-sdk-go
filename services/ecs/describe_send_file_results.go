@@ -85,10 +85,10 @@ type DescribeSendFileResultsRequest struct {
 // DescribeSendFileResultsResponse is the response struct for api DescribeSendFileResults
 type DescribeSendFileResultsResponse struct {
 	*responses.BaseResponse
-	PageSize    int64                                `json:"PageSize" xml:"PageSize"`
 	RequestId   string                               `json:"RequestId" xml:"RequestId"`
-	PageNumber  int64                                `json:"PageNumber" xml:"PageNumber"`
 	TotalCount  int64                                `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int64                                `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int64                                `json:"PageSize" xml:"PageSize"`
 	Invocations InvocationsInDescribeSendFileResults `json:"Invocations" xml:"Invocations"`
 }
 

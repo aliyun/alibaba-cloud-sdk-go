@@ -17,23 +17,23 @@ package ecs
 
 // Demand is a nested struct in ecs response
 type Demand struct {
+	ZoneId             string      `json:"ZoneId" xml:"ZoneId"`
+	DemandTime         string      `json:"DemandTime" xml:"DemandTime"`
+	InstanceTypeFamily string      `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+	DemandId           string      `json:"DemandId" xml:"DemandId"`
+	DemandName         string      `json:"DemandName" xml:"DemandName"`
 	Comment            string      `json:"Comment" xml:"Comment"`
 	DemandDescription  string      `json:"DemandDescription" xml:"DemandDescription"`
-	DemandId           string      `json:"DemandId" xml:"DemandId"`
-	DemandTime         string      `json:"DemandTime" xml:"DemandTime"`
 	InstanceType       string      `json:"InstanceType" xml:"InstanceType"`
-	DemandName         string      `json:"DemandName" xml:"DemandName"`
-	Period             int         `json:"Period" xml:"Period"`
 	InstanceChargeType string      `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	AvailableAmount    int         `json:"AvailableAmount" xml:"AvailableAmount"`
-	EndTime            string      `json:"EndTime" xml:"EndTime"`
-	StartTime          string      `json:"StartTime" xml:"StartTime"`
+	Period             int         `json:"Period" xml:"Period"`
 	PeriodUnit         string      `json:"PeriodUnit" xml:"PeriodUnit"`
-	ZoneId             string      `json:"ZoneId" xml:"ZoneId"`
-	UsedAmount         int         `json:"UsedAmount" xml:"UsedAmount"`
-	TotalAmount        int         `json:"TotalAmount" xml:"TotalAmount"`
-	DeliveringAmount   int         `json:"DeliveringAmount" xml:"DeliveringAmount"`
-	InstanceTypeFamily string      `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+	StartTime          string      `json:"StartTime" xml:"StartTime"`
+	EndTime            string      `json:"EndTime" xml:"EndTime"`
 	DemandStatus       string      `json:"DemandStatus" xml:"DemandStatus"`
+	TotalAmount        int         `json:"TotalAmount" xml:"TotalAmount"`
+	AvailableAmount    int         `json:"AvailableAmount" xml:"AvailableAmount"`
+	UsedAmount         int         `json:"UsedAmount" xml:"UsedAmount"`
+	DeliveringAmount   int         `json:"DeliveringAmount" xml:"DeliveringAmount"`
 	SupplyInfos        SupplyInfos `json:"SupplyInfos" xml:"SupplyInfos"`
 }

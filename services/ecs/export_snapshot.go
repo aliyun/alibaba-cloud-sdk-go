@@ -82,8 +82,8 @@ type ExportSnapshotRequest struct {
 // ExportSnapshotResponse is the response struct for api ExportSnapshot
 type ExportSnapshotResponse struct {
 	*responses.BaseResponse
-	TaskId    string `json:"TaskId" xml:"TaskId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateExportSnapshotRequest creates a request to invoke ExportSnapshot API

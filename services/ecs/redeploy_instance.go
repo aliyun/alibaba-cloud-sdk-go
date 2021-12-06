@@ -82,8 +82,8 @@ type RedeployInstanceRequest struct {
 // RedeployInstanceResponse is the response struct for api RedeployInstance
 type RedeployInstanceResponse struct {
 	*responses.BaseResponse
-	TaskId    string `json:"TaskId" xml:"TaskId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateRedeployInstanceRequest creates a request to invoke RedeployInstance API

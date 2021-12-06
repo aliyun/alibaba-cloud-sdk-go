@@ -89,11 +89,11 @@ type ModifyAutoProvisioningGroupRequest struct {
 
 // ModifyAutoProvisioningGroupLaunchTemplateConfig is a repeated param struct in ModifyAutoProvisioningGroupRequest
 type ModifyAutoProvisioningGroupLaunchTemplateConfig struct {
-	VSwitchId        string `name:"VSwitchId"`
-	MaxPrice         string `name:"MaxPrice"`
-	Priority         string `name:"Priority"`
 	InstanceType     string `name:"InstanceType"`
+	MaxPrice         string `name:"MaxPrice"`
+	VSwitchId        string `name:"VSwitchId"`
 	WeightedCapacity string `name:"WeightedCapacity"`
+	Priority         string `name:"Priority"`
 }
 
 // ModifyAutoProvisioningGroupResponse is the response struct for api ModifyAutoProvisioningGroup

@@ -85,15 +85,15 @@ type CreatePrefixListRequest struct {
 
 // CreatePrefixListEntry is a repeated param struct in CreatePrefixListRequest
 type CreatePrefixListEntry struct {
-	Description string `name:"Description"`
 	Cidr        string `name:"Cidr"`
+	Description string `name:"Description"`
 }
 
 // CreatePrefixListResponse is the response struct for api CreatePrefixList
 type CreatePrefixListResponse struct {
 	*responses.BaseResponse
-	PrefixListId string `json:"PrefixListId" xml:"PrefixListId"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
+	PrefixListId string `json:"PrefixListId" xml:"PrefixListId"`
 }
 
 // CreateCreatePrefixListRequest creates a request to invoke CreatePrefixList API

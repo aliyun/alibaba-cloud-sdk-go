@@ -17,19 +17,19 @@ package ecs
 
 // DedicatedHostType is a nested struct in ecs response
 type DedicatedHostType struct {
-	Cores                         int                                                       `json:"Cores" xml:"Cores"`
-	LocalStorageCategory          string                                                    `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
-	GPUSpec                       string                                                    `json:"GPUSpec" xml:"GPUSpec"`
+	DedicatedHostType             string                                                    `json:"DedicatedHostType" xml:"DedicatedHostType"`
+	Sockets                       int                                                       `json:"Sockets" xml:"Sockets"`
 	TotalVcpus                    int                                                       `json:"TotalVcpus" xml:"TotalVcpus"`
-	CpuOverCommitRatioRange       string                                                    `json:"CpuOverCommitRatioRange" xml:"CpuOverCommitRatioRange"`
+	TotalVgpus                    int                                                       `json:"TotalVgpus" xml:"TotalVgpus"`
+	Cores                         int                                                       `json:"Cores" xml:"Cores"`
 	PhysicalGpus                  int                                                       `json:"PhysicalGpus" xml:"PhysicalGpus"`
 	MemorySize                    float64                                                   `json:"MemorySize" xml:"MemorySize"`
-	SupportCpuOverCommitRatio     bool                                                      `json:"SupportCpuOverCommitRatio" xml:"SupportCpuOverCommitRatio"`
 	LocalStorageCapacity          int64                                                     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
-	DedicatedHostType             string                                                    `json:"DedicatedHostType" xml:"DedicatedHostType"`
 	LocalStorageAmount            int                                                       `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
-	TotalVgpus                    int                                                       `json:"TotalVgpus" xml:"TotalVgpus"`
-	Sockets                       int                                                       `json:"Sockets" xml:"Sockets"`
+	LocalStorageCategory          string                                                    `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
+	GPUSpec                       string                                                    `json:"GPUSpec" xml:"GPUSpec"`
+	SupportCpuOverCommitRatio     bool                                                      `json:"SupportCpuOverCommitRatio" xml:"SupportCpuOverCommitRatio"`
+	CpuOverCommitRatioRange       string                                                    `json:"CpuOverCommitRatioRange" xml:"CpuOverCommitRatioRange"`
 	SupportedInstanceTypeFamilies SupportedInstanceTypeFamiliesInDescribeDedicatedHostTypes `json:"SupportedInstanceTypeFamilies" xml:"SupportedInstanceTypeFamilies"`
 	SupportedInstanceTypesList    SupportedInstanceTypesListInDescribeDedicatedHostTypes    `json:"SupportedInstanceTypesList" xml:"SupportedInstanceTypesList"`
 }

@@ -79,7 +79,7 @@ type RunInstancesRequest struct {
 	PrivatePoolOptionsMatchCriteria          string                          `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
 	HostName                                 string                          `position:"Query" name:"HostName"`
 	Password                                 string                          `position:"Query" name:"Password"`
-	SystemDisk                               RunInstancesSystemDisk          `position:"Query" name:"SystemDisk"  type:"Struct"`
+	SystemDisk                               string                          `position:"Query" name:"SystemDisk"`
 	DeploymentSetGroupNo                     requests.Integer                `position:"Query" name:"DeploymentSetGroupNo"`
 	SystemDiskAutoSnapshotPolicyId           string                          `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
 	CpuOptionsCore                           requests.Integer                `position:"Query" name:"CpuOptions.Core"`
@@ -158,11 +158,6 @@ type RunInstancesRequest struct {
 	SystemDiskDescription                    string                          `position:"Query" name:"SystemDisk.Description"`
 }
 
-// RunInstancesSystemDisk is a repeated param struct in RunInstancesRequest
-type RunInstancesSystemDisk struct {
-	StorageClusterId string `name:"StorageClusterId"`
-}
-
 // RunInstancesArn is a repeated param struct in RunInstancesRequest
 type RunInstancesArn struct {
 	RoleType      string `name:"RoleType"`
@@ -178,13 +173,18 @@ type RunInstancesTag struct {
 
 // RunInstancesNetworkInterface is a repeated param struct in RunInstancesRequest
 type RunInstancesNetworkInterface struct {
-	VSwitchId            string    `name:"VSwitchId"`
-	NetworkInterfaceName string    `name:"NetworkInterfaceName"`
-	Description          string    `name:"Description"`
-	SecurityGroupId      string    `name:"SecurityGroupId"`
-	PrimaryIpAddress     string    `name:"PrimaryIpAddress"`
-	QueueNumber          string    `name:"QueueNumber"`
-	SecurityGroupIds     *[]string `name:"SecurityGroupIds" type:"Repeated"`
+	VSwitchId                   string    `name:"VSwitchId"`
+	NetworkInterfaceName        string    `name:"NetworkInterfaceName"`
+	Description                 string    `name:"Description"`
+	SecurityGroupId             string    `name:"SecurityGroupId"`
+	PrimaryIpAddress            string    `name:"PrimaryIpAddress"`
+	QueueNumber                 string    `name:"QueueNumber"`
+	SecurityGroupIds            *[]string `name:"SecurityGroupIds" type:"Repeated"`
+	NetworkInterfaceTrafficMode string    `name:"NetworkInterfaceTrafficMode"`
+	QueuePairNumber             string    `name:"QueuePairNumber"`
+	InstanceType                string    `name:"InstanceType"`
+	Ipv6AddressCount            string    `name:"Ipv6AddressCount"`
+	Ipv6Address                 *[]string `name:"Ipv6Address" type:"Repeated"`
 }
 
 // RunInstancesDataDisk is a repeated param struct in RunInstancesRequest

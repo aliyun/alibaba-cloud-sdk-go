@@ -84,10 +84,10 @@ type DescribeActivationsRequest struct {
 // DescribeActivationsResponse is the response struct for api DescribeActivations
 type DescribeActivationsResponse struct {
 	*responses.BaseResponse
-	PageSize       int64        `json:"PageSize" xml:"PageSize"`
 	RequestId      string       `json:"RequestId" xml:"RequestId"`
-	PageNumber     int64        `json:"PageNumber" xml:"PageNumber"`
 	TotalCount     int64        `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int64        `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int64        `json:"PageSize" xml:"PageSize"`
 	ActivationList []Activation `json:"ActivationList" xml:"ActivationList"`
 }
 

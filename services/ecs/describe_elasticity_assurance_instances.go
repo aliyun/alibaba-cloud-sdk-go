@@ -84,10 +84,10 @@ type DescribeElasticityAssuranceInstancesRequest struct {
 // DescribeElasticityAssuranceInstancesResponse is the response struct for api DescribeElasticityAssuranceInstances
 type DescribeElasticityAssuranceInstancesResponse struct {
 	*responses.BaseResponse
-	NextToken               string                                                        `json:"NextToken" xml:"NextToken"`
 	RequestId               string                                                        `json:"RequestId" xml:"RequestId"`
-	TotalCount              int                                                           `json:"TotalCount" xml:"TotalCount"`
+	NextToken               string                                                        `json:"NextToken" xml:"NextToken"`
 	MaxResults              int                                                           `json:"MaxResults" xml:"MaxResults"`
+	TotalCount              int                                                           `json:"TotalCount" xml:"TotalCount"`
 	ElasticityAssuranceItem ElasticityAssuranceItemInDescribeElasticityAssuranceInstances `json:"ElasticityAssuranceItem" xml:"ElasticityAssuranceItem"`
 }
 

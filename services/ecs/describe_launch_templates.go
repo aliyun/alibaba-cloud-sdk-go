@@ -92,10 +92,10 @@ type DescribeLaunchTemplatesTemplateTag struct {
 // DescribeLaunchTemplatesResponse is the response struct for api DescribeLaunchTemplates
 type DescribeLaunchTemplatesResponse struct {
 	*responses.BaseResponse
-	PageSize           int                `json:"PageSize" xml:"PageSize"`
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	PageNumber         int                `json:"PageNumber" xml:"PageNumber"`
 	TotalCount         int                `json:"TotalCount" xml:"TotalCount"`
+	PageNumber         int                `json:"PageNumber" xml:"PageNumber"`
+	PageSize           int                `json:"PageSize" xml:"PageSize"`
 	LaunchTemplateSets LaunchTemplateSets `json:"LaunchTemplateSets" xml:"LaunchTemplateSets"`
 }
 

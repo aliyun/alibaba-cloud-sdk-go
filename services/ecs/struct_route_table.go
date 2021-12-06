@@ -17,10 +17,10 @@ package ecs
 
 // RouteTable is a nested struct in ecs response
 type RouteTable struct {
-	CreationTime    string      `json:"CreationTime" xml:"CreationTime"`
 	VRouterId       string      `json:"VRouterId" xml:"VRouterId"`
 	RouteTableId    string      `json:"RouteTableId" xml:"RouteTableId"`
-	ResourceGroupId string      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	RouteTableType  string      `json:"RouteTableType" xml:"RouteTableType"`
+	CreationTime    string      `json:"CreationTime" xml:"CreationTime"`
+	ResourceGroupId string      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	RouteEntrys     RouteEntrys `json:"RouteEntrys" xml:"RouteEntrys"`
 }

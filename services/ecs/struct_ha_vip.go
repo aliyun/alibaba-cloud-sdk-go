@@ -17,15 +17,15 @@ package ecs
 
 // HaVip is a nested struct in ecs response
 type HaVip struct {
-	Status                 string                 `json:"Status" xml:"Status"`
+	HaVipId                string                 `json:"HaVipId" xml:"HaVipId"`
+	RegionId               string                 `json:"RegionId" xml:"RegionId"`
 	VpcId                  string                 `json:"VpcId" xml:"VpcId"`
 	VSwitchId              string                 `json:"VSwitchId" xml:"VSwitchId"`
 	IpAddress              string                 `json:"IpAddress" xml:"IpAddress"`
-	Description            string                 `json:"Description" xml:"Description"`
-	HaVipId                string                 `json:"HaVipId" xml:"HaVipId"`
-	CreateTime             string                 `json:"CreateTime" xml:"CreateTime"`
+	Status                 string                 `json:"Status" xml:"Status"`
 	MasterInstanceId       string                 `json:"MasterInstanceId" xml:"MasterInstanceId"`
-	RegionId               string                 `json:"RegionId" xml:"RegionId"`
-	AssociatedEipAddresses AssociatedEipAddresses `json:"AssociatedEipAddresses" xml:"AssociatedEipAddresses"`
+	Description            string                 `json:"Description" xml:"Description"`
+	CreateTime             string                 `json:"CreateTime" xml:"CreateTime"`
 	AssociatedInstances    AssociatedInstances    `json:"AssociatedInstances" xml:"AssociatedInstances"`
+	AssociatedEipAddresses AssociatedEipAddresses `json:"AssociatedEipAddresses" xml:"AssociatedEipAddresses"`
 }

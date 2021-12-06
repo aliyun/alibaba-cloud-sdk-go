@@ -83,8 +83,8 @@ type CreateHpcClusterRequest struct {
 // CreateHpcClusterResponse is the response struct for api CreateHpcCluster
 type CreateHpcClusterResponse struct {
 	*responses.BaseResponse
-	HpcClusterId string `json:"HpcClusterId" xml:"HpcClusterId"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
+	HpcClusterId string `json:"HpcClusterId" xml:"HpcClusterId"`
 }
 
 // CreateCreateHpcClusterRequest creates a request to invoke CreateHpcCluster API

@@ -17,11 +17,11 @@ package ecs
 
 // SpotPriceType is a nested struct in ecs response
 type SpotPriceType struct {
-	IoOptimized  string  `json:"IoOptimized" xml:"IoOptimized"`
 	ZoneId       string  `json:"ZoneId" xml:"ZoneId"`
-	SpotPrice    float64 `json:"SpotPrice" xml:"SpotPrice"`
+	InstanceType string  `json:"InstanceType" xml:"InstanceType"`
+	IoOptimized  string  `json:"IoOptimized" xml:"IoOptimized"`
 	Timestamp    string  `json:"Timestamp" xml:"Timestamp"`
 	NetworkType  string  `json:"NetworkType" xml:"NetworkType"`
-	InstanceType string  `json:"InstanceType" xml:"InstanceType"`
+	SpotPrice    float64 `json:"SpotPrice" xml:"SpotPrice"`
 	OriginPrice  float64 `json:"OriginPrice" xml:"OriginPrice"`
 }

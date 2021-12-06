@@ -128,7 +128,7 @@ type CreateAutoProvisioningGroupRequest struct {
 	AutoProvisioningGroupName                      string                                                    `position:"Query" name:"AutoProvisioningGroupName"`
 }
 
-// CreateAutoProvisioningGroupLaunchConfigurationDataDisk is a repeated param struct in CreateAutoProvisioningGroupRequest
+// CreateAutoProvisioningGroupLaunchConfiguration.DataDisk is a repeated param struct in CreateAutoProvisioningGroupRequest
 type CreateAutoProvisioningGroupLaunchConfigurationDataDisk struct {
 	PerformanceLevel   string `name:"PerformanceLevel"`
 	KmsKeyId           string `name:"KmsKeyId"`
@@ -161,7 +161,7 @@ type CreateAutoProvisioningGroupLaunchTemplateConfig struct {
 	WeightedCapacity string `name:"WeightedCapacity"`
 }
 
-// CreateAutoProvisioningGroupLaunchConfigurationTag is a repeated param struct in CreateAutoProvisioningGroupRequest
+// CreateAutoProvisioningGroupLaunchConfiguration.Tag is a repeated param struct in CreateAutoProvisioningGroupRequest
 type CreateAutoProvisioningGroupLaunchConfigurationTag struct {
 	Key   string `name:"Key"`
 	Value string `name:"Value"`

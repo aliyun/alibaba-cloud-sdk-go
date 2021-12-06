@@ -84,10 +84,10 @@ type DescribeNetworkInterfacePermissionsRequest struct {
 // DescribeNetworkInterfacePermissionsResponse is the response struct for api DescribeNetworkInterfacePermissions
 type DescribeNetworkInterfacePermissionsResponse struct {
 	*responses.BaseResponse
-	PageSize                    int                         `json:"PageSize" xml:"PageSize"`
 	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
-	PageNumber                  int                         `json:"PageNumber" xml:"PageNumber"`
 	TotalCount                  int                         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber                  int                         `json:"PageNumber" xml:"PageNumber"`
+	PageSize                    int                         `json:"PageSize" xml:"PageSize"`
 	NetworkInterfacePermissions NetworkInterfacePermissions `json:"NetworkInterfacePermissions" xml:"NetworkInterfacePermissions"`
 }
 

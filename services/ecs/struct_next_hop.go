@@ -17,8 +17,8 @@ package ecs
 
 // NextHop is a nested struct in ecs response
 type NextHop struct {
-	Weight      int    `json:"Weight" xml:"Weight"`
-	NextHopId   string `json:"NextHopId" xml:"NextHopId"`
 	NextHopType string `json:"NextHopType" xml:"NextHopType"`
+	NextHopId   string `json:"NextHopId" xml:"NextHopId"`
 	Enabled     int    `json:"Enabled" xml:"Enabled"`
+	Weight      int    `json:"Weight" xml:"Weight"`
 }
