@@ -17,10 +17,11 @@ package hitsdb
 
 // Engine is a nested struct in hitsdb response
 type Engine struct {
-	Engine        string `json:"Engine" xml:"Engine"`
 	Version       string `json:"Version" xml:"Version"`
 	CpuCount      string `json:"CpuCount" xml:"CpuCount"`
-	MemorySize    string `json:"MemorySize" xml:"MemorySize"`
 	CoreCount     string `json:"CoreCount" xml:"CoreCount"`
+	Engine        string `json:"Engine" xml:"Engine"`
+	MemorySize    string `json:"MemorySize" xml:"MemorySize"`
 	IsLastVersion bool   `json:"IsLastVersion" xml:"IsLastVersion"`
+	LatestVersion string `json:"LatestVersion" xml:"LatestVersion"`
 }

@@ -82,34 +82,35 @@ type GetLindormInstanceRequest struct {
 // GetLindormInstanceResponse is the response struct for api GetLindormInstance
 type GetLindormInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId           string   `json:"RequestId" xml:"RequestId"`
-	InstanceId          string   `json:"InstanceId" xml:"InstanceId"`
-	InstanceAlias       string   `json:"InstanceAlias" xml:"InstanceAlias"`
-	RegionId            string   `json:"RegionId" xml:"RegionId"`
-	ZoneId              string   `json:"ZoneId" xml:"ZoneId"`
-	InstanceStatus      string   `json:"InstanceStatus" xml:"InstanceStatus"`
-	PayType             string   `json:"PayType" xml:"PayType"`
-	NetworkType         string   `json:"NetworkType" xml:"NetworkType"`
-	CreateTime          string   `json:"CreateTime" xml:"CreateTime"`
-	ExpireTime          string   `json:"ExpireTime" xml:"ExpireTime"`
-	InstanceStorage     string   `json:"InstanceStorage" xml:"InstanceStorage"`
 	VpcId               string   `json:"VpcId" xml:"VpcId"`
 	VswitchId           string   `json:"VswitchId" xml:"VswitchId"`
-	AutoRenew           bool     `json:"AutoRenew" xml:"AutoRenew"`
-	EngineType          int      `json:"EngineType" xml:"EngineType"`
+	CreateTime          string   `json:"CreateTime" xml:"CreateTime"`
+	PayType             string   `json:"PayType" xml:"PayType"`
+	NetworkType         string   `json:"NetworkType" xml:"NetworkType"`
 	ServiceType         string   `json:"ServiceType" xml:"ServiceType"`
-	DeletionProtection  string   `json:"DeletionProtection" xml:"DeletionProtection"`
-	DiskCategory        string   `json:"DiskCategory" xml:"DiskCategory"`
-	ColdStorage         int      `json:"ColdStorage" xml:"ColdStorage"`
-	EnableBDS           bool     `json:"EnableBDS" xml:"EnableBDS"`
-	AliUid              int64    `json:"AliUid" xml:"AliUid"`
-	EnableFS            bool     `json:"EnableFS" xml:"EnableFS"`
-	EnablePhoenix       bool     `json:"EnablePhoenix" xml:"EnablePhoenix"`
-	DiskUsage           string   `json:"DiskUsage" xml:"DiskUsage"`
-	DiskThreshold       string   `json:"DiskThreshold" xml:"DiskThreshold"`
-	CreateMilliseconds  int64    `json:"CreateMilliseconds" xml:"CreateMilliseconds"`
-	ExpiredMilliseconds int64    `json:"ExpiredMilliseconds" xml:"ExpiredMilliseconds"`
 	EnableKms           bool     `json:"EnableKms" xml:"EnableKms"`
+	DiskUsage           string   `json:"DiskUsage" xml:"DiskUsage"`
+	DiskCategory        string   `json:"DiskCategory" xml:"DiskCategory"`
+	RequestId           string   `json:"RequestId" xml:"RequestId"`
+	ColdStorage         int      `json:"ColdStorage" xml:"ColdStorage"`
+	ExpiredMilliseconds int64    `json:"ExpiredMilliseconds" xml:"ExpiredMilliseconds"`
+	EngineType          int      `json:"EngineType" xml:"EngineType"`
+	ExpireTime          string   `json:"ExpireTime" xml:"ExpireTime"`
+	AutoRenew           bool     `json:"AutoRenew" xml:"AutoRenew"`
+	DeletionProtection  string   `json:"DeletionProtection" xml:"DeletionProtection"`
+	InstanceStorage     string   `json:"InstanceStorage" xml:"InstanceStorage"`
+	AliUid              int64    `json:"AliUid" xml:"AliUid"`
+	InstanceId          string   `json:"InstanceId" xml:"InstanceId"`
+	RegionId            string   `json:"RegionId" xml:"RegionId"`
+	EnableFS            bool     `json:"EnableFS" xml:"EnableFS"`
+	CreateMilliseconds  int64    `json:"CreateMilliseconds" xml:"CreateMilliseconds"`
+	InstanceAlias       string   `json:"InstanceAlias" xml:"InstanceAlias"`
+	EnableBDS           bool     `json:"EnableBDS" xml:"EnableBDS"`
+	EnablePhoenix       bool     `json:"EnablePhoenix" xml:"EnablePhoenix"`
+	DiskThreshold       string   `json:"DiskThreshold" xml:"DiskThreshold"`
+	ZoneId              string   `json:"ZoneId" xml:"ZoneId"`
+	InstanceStatus      string   `json:"InstanceStatus" xml:"InstanceStatus"`
+	EnableCompute       bool     `json:"EnableCompute" xml:"EnableCompute"`
 	EngineList          []Engine `json:"EngineList" xml:"EngineList"`
 }
 
