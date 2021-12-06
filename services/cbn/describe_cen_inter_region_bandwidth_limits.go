@@ -83,10 +83,10 @@ type DescribeCenInterRegionBandwidthLimitsRequest struct {
 // DescribeCenInterRegionBandwidthLimitsResponse is the response struct for api DescribeCenInterRegionBandwidthLimits
 type DescribeCenInterRegionBandwidthLimitsResponse struct {
 	*responses.BaseResponse
-	RequestId                     string                        `json:"RequestId" xml:"RequestId"`
-	TotalCount                    int                           `json:"TotalCount" xml:"TotalCount"`
-	PageNumber                    int                           `json:"PageNumber" xml:"PageNumber"`
 	PageSize                      int                           `json:"PageSize" xml:"PageSize"`
+	RequestId                     string                        `json:"RequestId" xml:"RequestId"`
+	PageNumber                    int                           `json:"PageNumber" xml:"PageNumber"`
+	TotalCount                    int                           `json:"TotalCount" xml:"TotalCount"`
 	CenInterRegionBandwidthLimits CenInterRegionBandwidthLimits `json:"CenInterRegionBandwidthLimits" xml:"CenInterRegionBandwidthLimits"`
 }
 

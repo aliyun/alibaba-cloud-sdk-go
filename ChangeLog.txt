@@ -1,3 +1,7 @@
+2021-12-06 Version: v1.61.1366
+- Generated 2017-09-12 for `Cbn`.
+- Modify the input parameter Action of DescribeCenInterRegionBandwidthLimits to be required.
+
 2021-12-03 Version: v1.61.1365
 - Generated 2019-01-01 for `Cms`.
 - Add MetricRule Labels.
