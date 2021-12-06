@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetDag invokes the dataworks_public.GetDag API synchronously
-func (client *Client) GetDag(request *GetDagRequest) (response *GetDagResponse, err error) {
-	response = CreateGetDagResponse()
+// ListDags invokes the dataworks_public.ListDags API synchronously
+func (client *Client) ListDags(request *ListDagsRequest) (response *ListDagsResponse, err error) {
+	response = CreateListDagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetDagWithChan invokes the dataworks_public.GetDag API asynchronously
-func (client *Client) GetDagWithChan(request *GetDagRequest) (<-chan *GetDagResponse, <-chan error) {
-	responseChan := make(chan *GetDagResponse, 1)
+// ListDagsWithChan invokes the dataworks_public.ListDags API asynchronously
+func (client *Client) ListDagsWithChan(request *ListDagsRequest) (<-chan *ListDagsResponse, <-chan error) {
+	responseChan := make(chan *ListDagsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetDag(request)
+		response, err := client.ListDags(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetDagWithChan(request *GetDagRequest) (<-chan *GetDagResp
 	return responseChan, errChan
 }
 
-// GetDagWithCallback invokes the dataworks_public.GetDag API asynchronously
-func (client *Client) GetDagWithCallback(request *GetDagRequest, callback func(response *GetDagResponse, err error)) <-chan int {
+// ListDagsWithCallback invokes the dataworks_public.ListDags API asynchronously
+func (client *Client) ListDagsWithCallback(request *ListDagsRequest, callback func(response *ListDagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetDagResponse
+		var response *ListDagsResponse
 		var err error
 		defer close(result)
-		response, err = client.GetDag(request)
+		response, err = client.ListDags(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,15 +68,15 @@ func (client *Client) GetDagWithCallback(request *GetDagRequest, callback func(r
 	return result
 }
 
-// GetDagRequest is the request struct for api GetDag
-type GetDagRequest struct {
+// ListDagsRequest is the request struct for api ListDags
+type ListDagsRequest struct {
 	*requests.RpcRequest
 	ProjectEnv string           `position:"Body" name:"ProjectEnv"`
-	DagId      requests.Integer `position:"Body" name:"DagId"`
+	OpSeq      requests.Integer `position:"Body" name:"OpSeq"`
 }
 
-// GetDagResponse is the response struct for api GetDag
-type GetDagResponse struct {
+// ListDagsResponse is the response struct for api ListDags
+type ListDagsResponse struct {
 	*responses.BaseResponse
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -86,19 +86,19 @@ type GetDagResponse struct {
 	Data           Data   `json:"Data" xml:"Data"`
 }
 
-// CreateGetDagRequest creates a request to invoke GetDag API
-func CreateGetDagRequest() (request *GetDagRequest) {
-	request = &GetDagRequest{
+// CreateListDagsRequest creates a request to invoke ListDags API
+func CreateListDagsRequest() (request *ListDagsRequest) {
+	request = &ListDagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dataworks-public", "2020-05-18", "GetDag", "", "")
+	request.InitWithApiInfo("dataworks-public", "2020-05-18", "ListDags", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetDagResponse creates a response to parse from GetDag response
-func CreateGetDagResponse() (response *GetDagResponse) {
-	response = &GetDagResponse{
+// CreateListDagsResponse creates a response to parse from ListDags response
+func CreateListDagsResponse() (response *ListDagsResponse) {
+	response = &ListDagsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

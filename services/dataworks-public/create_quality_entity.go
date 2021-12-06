@@ -81,12 +81,12 @@ type CreateQualityEntityRequest struct {
 // CreateQualityEntityResponse is the response struct for api CreateQualityEntity
 type CreateQualityEntityResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           int    `json:"Data" xml:"Data"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           int    `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
 // CreateCreateQualityEntityRequest creates a request to invoke CreateQualityEntity API

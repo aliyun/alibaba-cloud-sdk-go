@@ -25,5 +25,6 @@ type ColumnListItem struct {
 	IsPartitionColumn bool   `json:"IsPartitionColumn" xml:"IsPartitionColumn"`
 	IsForeignKey      bool   `json:"IsForeignKey" xml:"IsForeignKey"`
 	ColumnType        string `json:"ColumnType" xml:"ColumnType"`
+	RelationCount     int64  `json:"RelationCount" xml:"RelationCount"`
 	Position          int    `json:"Position" xml:"Position"`
 }

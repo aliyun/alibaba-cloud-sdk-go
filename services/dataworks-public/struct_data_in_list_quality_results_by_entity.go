@@ -17,8 +17,8 @@ package dataworks_public
 
 // DataInListQualityResultsByEntity is a nested struct in dataworks_public response
 type DataInListQualityResultsByEntity struct {
-	TotalCount int64            `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int              `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int              `json:"PageSize" xml:"PageSize"`
+	TotalCount int64            `json:"TotalCount" xml:"TotalCount"`
 	RuleChecks []RuleChecksItem `json:"RuleChecks" xml:"RuleChecks"`
 }

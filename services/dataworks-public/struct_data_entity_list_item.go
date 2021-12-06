@@ -19,6 +19,7 @@ package dataworks_public
 type DataEntityListItem struct {
 	Name              string `json:"Name" xml:"Name"`
 	ChangeType        string `json:"ChangeType" xml:"ChangeType"`
+	CreateTimestamp   int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	TaskInstanceId    int64  `json:"TaskInstanceId" xml:"TaskInstanceId"`
 	TenantId          int64  `json:"TenantId" xml:"TenantId"`
 	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`

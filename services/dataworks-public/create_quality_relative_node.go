@@ -84,12 +84,12 @@ type CreateQualityRelativeNodeRequest struct {
 // CreateQualityRelativeNodeResponse is the response struct for api CreateQualityRelativeNode
 type CreateQualityRelativeNodeResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           bool   `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
 // CreateCreateQualityRelativeNodeRequest creates a request to invoke CreateQualityRelativeNode API

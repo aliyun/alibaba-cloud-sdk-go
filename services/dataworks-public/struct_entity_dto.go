@@ -17,20 +17,20 @@ package dataworks_public
 
 // EntityDto is a nested struct in dataworks_public response
 type EntityDto struct {
-	Id                int64  `json:"Id" xml:"Id"`
-	ProjectName       string `json:"ProjectName" xml:"ProjectName"`
-	TableName         string `json:"TableName" xml:"TableName"`
-	EnvType           string `json:"EnvType" xml:"EnvType"`
-	MatchExpression   string `json:"MatchExpression" xml:"MatchExpression"`
-	EntityLevel       int    `json:"EntityLevel" xml:"EntityLevel"`
-	OnDuty            string `json:"OnDuty" xml:"OnDuty"`
-	ModifyUser        string `json:"ModifyUser" xml:"ModifyUser"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime        int64  `json:"ModifyTime" xml:"ModifyTime"`
-	Sql               int    `json:"Sql" xml:"Sql"`
-	Task              int    `json:"Task" xml:"Task"`
-	Followers         string `json:"Followers" xml:"Followers"`
-	HasRelativeNode   bool   `json:"HasRelativeNode" xml:"HasRelativeNode"`
 	RelativeNode      string `json:"RelativeNode" xml:"RelativeNode"`
 	OnDutyAccountName string `json:"OnDutyAccountName" xml:"OnDutyAccountName"`
+	Task              int    `json:"Task" xml:"Task"`
+	TableName         string `json:"TableName" xml:"TableName"`
+	Followers         string `json:"Followers" xml:"Followers"`
+	OnDuty            string `json:"OnDuty" xml:"OnDuty"`
+	MatchExpression   string `json:"MatchExpression" xml:"MatchExpression"`
+	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	ProjectName       string `json:"ProjectName" xml:"ProjectName"`
+	HasRelativeNode   bool   `json:"HasRelativeNode" xml:"HasRelativeNode"`
+	EnvType           string `json:"EnvType" xml:"EnvType"`
+	EntityLevel       int    `json:"EntityLevel" xml:"EntityLevel"`
+	ModifyUser        string `json:"ModifyUser" xml:"ModifyUser"`
+	Sql               int    `json:"Sql" xml:"Sql"`
+	Id                int64  `json:"Id" xml:"Id"`
+	ModifyTime        int64  `json:"ModifyTime" xml:"ModifyTime"`
 }

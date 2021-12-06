@@ -18,13 +18,16 @@ package dataworks_public
 // Deployment is a nested struct in dataworks_public response
 type Deployment struct {
 	Name            string `json:"Name" xml:"Name"`
-	CreatorId       string `json:"CreatorId" xml:"CreatorId"`
-	HandlerId       string `json:"HandlerId" xml:"HandlerId"`
-	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
-	ExecuteTime     int64  `json:"ExecuteTime" xml:"ExecuteTime"`
+	CheckingStatus  int    `json:"CheckingStatus" xml:"CheckingStatus"`
 	Status          int    `json:"Status" xml:"Status"`
 	FromEnvironment int    `json:"FromEnvironment" xml:"FromEnvironment"`
-	ToEnvironment   int    `json:"ToEnvironment" xml:"ToEnvironment"`
 	ErrorMessage    string `json:"ErrorMessage" xml:"ErrorMessage"`
-	CheckingStatus  int    `json:"CheckingStatus" xml:"CheckingStatus"`
+	Id              int64  `json:"Id" xml:"Id"`
+	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
+	ToEnvironment   int    `json:"ToEnvironment" xml:"ToEnvironment"`
+	ExecuteTime     int64  `json:"ExecuteTime" xml:"ExecuteTime"`
+	Executor        string `json:"Executor" xml:"Executor"`
+	CreatorId       string `json:"CreatorId" xml:"CreatorId"`
+	Creator         string `json:"Creator" xml:"Creator"`
+	HandlerId       string `json:"HandlerId" xml:"HandlerId"`
 }

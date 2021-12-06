@@ -17,29 +17,30 @@ package dataworks_public
 
 // RulesItem is a nested struct in dataworks_public response
 type RulesItem struct {
-	ProjectName              string `json:"ProjectName" xml:"ProjectName"`
-	TableName                string `json:"TableName" xml:"TableName"`
-	Id                       int    `json:"Id" xml:"Id"`
-	EntityId                 int    `json:"EntityId" xml:"EntityId"`
-	Property                 string `json:"Property" xml:"Property"`
-	MethodId                 int    `json:"MethodId" xml:"MethodId"`
-	MethodName               string `json:"MethodName" xml:"MethodName"`
-	OnDuty                   string `json:"OnDuty" xml:"OnDuty"`
-	RuleType                 int    `json:"RuleType" xml:"RuleType"`
 	BlockType                int    `json:"BlockType" xml:"BlockType"`
-	TemplateId               int    `json:"TemplateId" xml:"TemplateId"`
-	TemplateName             string `json:"TemplateName" xml:"TemplateName"`
-	RuleCheckerRelationId    int    `json:"RuleCheckerRelationId" xml:"RuleCheckerRelationId"`
-	CheckerId                int    `json:"CheckerId" xml:"CheckerId"`
-	FixCheck                 bool   `json:"FixCheck" xml:"FixCheck"`
-	Trend                    string `json:"Trend" xml:"Trend"`
-	WarningThreshold         string `json:"WarningThreshold" xml:"WarningThreshold"`
-	CriticalThreshold        string `json:"CriticalThreshold" xml:"CriticalThreshold"`
-	HistoryWarningThreshold  string `json:"HistoryWarningThreshold" xml:"HistoryWarningThreshold"`
-	HistoryCriticalThreshold string `json:"HistoryCriticalThreshold" xml:"HistoryCriticalThreshold"`
-	PropertyKey              string `json:"PropertyKey" xml:"PropertyKey"`
-	MatchExpression          string `json:"MatchExpression" xml:"MatchExpression"`
-	Comment                  string `json:"Comment" xml:"Comment"`
-	ExpectValue              string `json:"ExpectValue" xml:"ExpectValue"`
 	OnDutyAccountName        string `json:"OnDutyAccountName" xml:"OnDutyAccountName"`
+	Property                 string `json:"Property" xml:"Property"`
+	WarningThreshold         string `json:"WarningThreshold" xml:"WarningThreshold"`
+	TableName                string `json:"TableName" xml:"TableName"`
+	OnDuty                   string `json:"OnDuty" xml:"OnDuty"`
+	Comment                  string `json:"Comment" xml:"Comment"`
+	RuleCheckerRelationId    int    `json:"RuleCheckerRelationId" xml:"RuleCheckerRelationId"`
+	FixCheck                 bool   `json:"FixCheck" xml:"FixCheck"`
+	MethodId                 int    `json:"MethodId" xml:"MethodId"`
+	TemplateName             string `json:"TemplateName" xml:"TemplateName"`
+	Trend                    string `json:"Trend" xml:"Trend"`
+	HistoryWarningThreshold  string `json:"HistoryWarningThreshold" xml:"HistoryWarningThreshold"`
+	RuleType                 int    `json:"RuleType" xml:"RuleType"`
+	MatchExpression          string `json:"MatchExpression" xml:"MatchExpression"`
+	ProjectName              string `json:"ProjectName" xml:"ProjectName"`
+	PropertyKey              string `json:"PropertyKey" xml:"PropertyKey"`
+	CriticalThreshold        string `json:"CriticalThreshold" xml:"CriticalThreshold"`
+	HistoryCriticalThreshold string `json:"HistoryCriticalThreshold" xml:"HistoryCriticalThreshold"`
+	MethodName               string `json:"MethodName" xml:"MethodName"`
+	CheckerId                int    `json:"CheckerId" xml:"CheckerId"`
+	EntityId                 int    `json:"EntityId" xml:"EntityId"`
+	ExpectValue              string `json:"ExpectValue" xml:"ExpectValue"`
+	TemplateId               int    `json:"TemplateId" xml:"TemplateId"`
+	Id                       int    `json:"Id" xml:"Id"`
+	RuleName                 string `json:"RuleName" xml:"RuleName"`
 }

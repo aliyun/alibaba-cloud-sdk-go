@@ -17,31 +17,32 @@ package dataworks_public
 
 // Instance is a nested struct in dataworks_public response
 type Instance struct {
-	NodeId            int64  `json:"NodeId" xml:"NodeId"`
-	InstanceId        int64  `json:"InstanceId" xml:"InstanceId"`
-	DagId             int64  `json:"DagId" xml:"DagId"`
-	DagType           string `json:"DagType" xml:"DagType"`
 	Status            string `json:"Status" xml:"Status"`
-	Bizdate           int64  `json:"Bizdate" xml:"Bizdate"`
 	CycTime           int64  `json:"CycTime" xml:"CycTime"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime        int64  `json:"ModifyTime" xml:"ModifyTime"`
-	NodeName          string `json:"NodeName" xml:"NodeName"`
-	BeginWaitTimeTime int64  `json:"BeginWaitTimeTime" xml:"BeginWaitTimeTime"`
-	BeginWaitResTime  int64  `json:"BeginWaitResTime" xml:"BeginWaitResTime"`
 	BeginRunningTime  int64  `json:"BeginRunningTime" xml:"BeginRunningTime"`
-	ParamValues       string `json:"ParamValues" xml:"ParamValues"`
 	FinishTime        int64  `json:"FinishTime" xml:"FinishTime"`
+	ErrorMessage      string `json:"ErrorMessage" xml:"ErrorMessage"`
+	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	DagId             int64  `json:"DagId" xml:"DagId"`
 	Priority          int    `json:"Priority" xml:"Priority"`
+	TaskType          string `json:"TaskType" xml:"TaskType"`
+	ParamValues       string `json:"ParamValues" xml:"ParamValues"`
+	Connection        string `json:"Connection" xml:"Connection"`
 	BaselineId        int64  `json:"BaselineId" xml:"BaselineId"`
+	DqcType           int    `json:"DqcType" xml:"DqcType"`
+	DagType           string `json:"DagType" xml:"DagType"`
+	BusinessId        int64  `json:"BusinessId" xml:"BusinessId"`
+	TaskRerunTime     int    `json:"TaskRerunTime" xml:"TaskRerunTime"`
+	ModifyTime        int64  `json:"ModifyTime" xml:"ModifyTime"`
 	Repeatability     bool   `json:"Repeatability" xml:"Repeatability"`
 	RepeatInterval    int64  `json:"RepeatInterval" xml:"RepeatInterval"`
-	Connection        string `json:"Connection" xml:"Connection"`
-	DqcType           int    `json:"DqcType" xml:"DqcType"`
-	DqcDescription    string `json:"DqcDescription" xml:"DqcDescription"`
-	ErrorMessage      string `json:"ErrorMessage" xml:"ErrorMessage"`
+	InstanceId        int64  `json:"InstanceId" xml:"InstanceId"`
+	BeginWaitResTime  int64  `json:"BeginWaitResTime" xml:"BeginWaitResTime"`
 	RelatedFlowId     int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
-	TaskType          string `json:"TaskType" xml:"TaskType"`
-	TaskRerunTime     int    `json:"TaskRerunTime" xml:"TaskRerunTime"`
-	BusinessId        int64  `json:"BusinessId" xml:"BusinessId"`
+	Bizdate           int64  `json:"Bizdate" xml:"Bizdate"`
+	NodeName          string `json:"NodeName" xml:"NodeName"`
+	BeginWaitTimeTime int64  `json:"BeginWaitTimeTime" xml:"BeginWaitTimeTime"`
+	DqcDescription    string `json:"DqcDescription" xml:"DqcDescription"`
+	NodeId            int64  `json:"NodeId" xml:"NodeId"`
+	CreateUser        string `json:"CreateUser" xml:"CreateUser"`
 }

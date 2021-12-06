@@ -80,12 +80,12 @@ type UpdateQualityFollowerRequest struct {
 // UpdateQualityFollowerResponse is the response struct for api UpdateQualityFollower
 type UpdateQualityFollowerResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Data           bool   `json:"Data" xml:"Data"`
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           bool   `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateQualityFollowerRequest creates a request to invoke UpdateQualityFollower API

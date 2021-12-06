@@ -17,19 +17,19 @@ package dataworks_public
 
 // NodeConfiguration is a nested struct in dataworks_public response
 type NodeConfiguration struct {
-	RerunMode               string            `json:"RerunMode" xml:"RerunMode"`
-	SchedulerType           string            `json:"SchedulerType" xml:"SchedulerType"`
-	Stop                    bool              `json:"Stop" xml:"Stop"`
+	DependentType           string            `json:"DependentType" xml:"DependentType"`
+	CronExpress             string            `json:"CronExpress" xml:"CronExpress"`
 	ParaValue               string            `json:"ParaValue" xml:"ParaValue"`
 	StartEffectDate         int64             `json:"StartEffectDate" xml:"StartEffectDate"`
 	EndEffectDate           int64             `json:"EndEffectDate" xml:"EndEffectDate"`
-	CycleType               string            `json:"CycleType" xml:"CycleType"`
-	DependentNodeIdList     string            `json:"DependentNodeIdList" xml:"DependentNodeIdList"`
 	ResourceGroupId         int64             `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	DependentType           string            `json:"DependentType" xml:"DependentType"`
-	AutoRerunTimes          int               `json:"AutoRerunTimes" xml:"AutoRerunTimes"`
 	AutoRerunIntervalMillis int               `json:"AutoRerunIntervalMillis" xml:"AutoRerunIntervalMillis"`
-	CronExpress             string            `json:"CronExpress" xml:"CronExpress"`
-	InputList               []NodeInputOutput `json:"InputList" xml:"InputList"`
+	DependentNodeIdList     string            `json:"DependentNodeIdList" xml:"DependentNodeIdList"`
+	Stop                    bool              `json:"Stop" xml:"Stop"`
+	RerunMode               string            `json:"RerunMode" xml:"RerunMode"`
+	SchedulerType           string            `json:"SchedulerType" xml:"SchedulerType"`
+	CycleType               string            `json:"CycleType" xml:"CycleType"`
+	AutoRerunTimes          int               `json:"AutoRerunTimes" xml:"AutoRerunTimes"`
 	OutputList              []NodeInputOutput `json:"OutputList" xml:"OutputList"`
+	InputList               []NodeInputOutput `json:"InputList" xml:"InputList"`
 }

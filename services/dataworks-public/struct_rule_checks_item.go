@@ -19,13 +19,13 @@ package dataworks_public
 type RuleChecksItem struct {
 	MethodName        string               `json:"MethodName" xml:"MethodName"`
 	CheckerId         int                  `json:"CheckerId" xml:"CheckerId"`
+	TemplateName      string               `json:"TemplateName" xml:"TemplateName"`
 	RuleId            int                  `json:"RuleId" xml:"RuleId"`
 	Op                string               `json:"Op" xml:"Op"`
-	TemplateName      string               `json:"TemplateName" xml:"TemplateName"`
 	RuleName          string               `json:"RuleName" xml:"RuleName"`
 	TemplateId        int                  `json:"TemplateId" xml:"TemplateId"`
-	WhereCondition    string               `json:"WhereCondition" xml:"WhereCondition"`
 	IsPrediction      bool                 `json:"IsPrediction" xml:"IsPrediction"`
+	WhereCondition    string               `json:"WhereCondition" xml:"WhereCondition"`
 	BlockType         int                  `json:"BlockType" xml:"BlockType"`
 	EndTime           int64                `json:"EndTime" xml:"EndTime"`
 	Property          string               `json:"Property" xml:"Property"`
@@ -52,10 +52,10 @@ type RuleChecksItem struct {
 	ExternalType      string               `json:"ExternalType" xml:"ExternalType"`
 	DiscreteCheck     bool                 `json:"DiscreteCheck" xml:"DiscreteCheck"`
 	ResultString      string               `json:"ResultString" xml:"ResultString"`
-	UpperValue        float64              `json:"UpperValue" xml:"UpperValue"`
 	CheckerName       string               `json:"CheckerName" xml:"CheckerName"`
+	UpperValue        float64              `json:"UpperValue" xml:"UpperValue"`
 	CheckResultStatus int                  `json:"CheckResultStatus" xml:"CheckResultStatus"`
 	FixedCheck        bool                 `json:"FixedCheck" xml:"FixedCheck"`
-	ReferenceValue    []ReferenceValueItem `json:"ReferenceValue" xml:"ReferenceValue"`
 	SampleValue       []SampleValueItem    `json:"SampleValue" xml:"SampleValue"`
+	ReferenceValue    []ReferenceValueItem `json:"ReferenceValue" xml:"ReferenceValue"`
 }

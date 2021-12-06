@@ -82,11 +82,11 @@ type ListQualityResultsByEntityRequest struct {
 // ListQualityResultsByEntityResponse is the response struct for api ListQualityResultsByEntity
 type ListQualityResultsByEntityResponse struct {
 	*responses.BaseResponse
-	RequestId      string                           `json:"RequestId" xml:"RequestId"`
 	HttpStatusCode int                              `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	ErrorMessage   string                           `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string                           `json:"ErrorCode" xml:"ErrorCode"`
+	RequestId      string                           `json:"RequestId" xml:"RequestId"`
 	Success        bool                             `json:"Success" xml:"Success"`
+	ErrorCode      string                           `json:"ErrorCode" xml:"ErrorCode"`
 	Data           DataInListQualityResultsByEntity `json:"Data" xml:"Data"`
 }
 

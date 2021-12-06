@@ -17,8 +17,8 @@ package dataworks_public
 
 // DataInGetMetaTableColumn is a nested struct in dataworks_public response
 type DataInGetMetaTableColumn struct {
-	TotalCount int64            `json:"TotalCount" xml:"TotalCount"`
 	PageNum    int              `json:"PageNum" xml:"PageNum"`
 	PageSize   int              `json:"PageSize" xml:"PageSize"`
+	TotalCount int64            `json:"TotalCount" xml:"TotalCount"`
 	ColumnList []ColumnListItem `json:"ColumnList" xml:"ColumnList"`
 }

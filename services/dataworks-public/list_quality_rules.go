@@ -80,11 +80,11 @@ type ListQualityRulesRequest struct {
 // ListQualityRulesResponse is the response struct for api ListQualityRules
 type ListQualityRulesResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string                 `json:"ErrorCode" xml:"ErrorCode"`
-	Success        bool                   `json:"Success" xml:"Success"`
-	ErrorMessage   string                 `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string                 `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success        bool                   `json:"Success" xml:"Success"`
+	ErrorCode      string                 `json:"ErrorCode" xml:"ErrorCode"`
 	Data           DataInListQualityRules `json:"Data" xml:"Data"`
 }
 
