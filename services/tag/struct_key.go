@@ -17,6 +17,7 @@ package tag
 
 // Key is a nested struct in tag response
 type Key struct {
-	Category string `json:"Category" xml:"Category"`
-	Key      string `json:"Key" xml:"Key"`
+	Key         string `json:"Key" xml:"Key"`
+	Category    string `json:"Category" xml:"Category"`
+	Description string `json:"Description" xml:"Description"`
 }

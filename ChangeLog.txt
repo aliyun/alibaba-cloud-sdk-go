@@ -1,3 +1,7 @@
+2021-12-07 Version: v1.61.1370
+- Generated 2018-08-28 for `Tag`.
+- Add MetaTag APIs.
+
 2021-12-06 Version: v1.61.1369
 - Generated 2014-05-26 for `Ecs`.
 - Support Bond Eni.

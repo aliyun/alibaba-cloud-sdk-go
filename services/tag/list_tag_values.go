@@ -71,13 +71,17 @@ func (client *Client) ListTagValuesWithCallback(request *ListTagValuesRequest, c
 // ListTagValuesRequest is the request struct for api ListTagValues
 type ListTagValuesRequest struct {
 	*requests.RpcRequest
+	TagProduct           string           `position:"Query" name:"TagProduct"`
 	NextToken            string           `position:"Query" name:"NextToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	TagFilterValue       string           `position:"Query" name:"TagFilter.Value"`
 	Key                  string           `position:"Query" name:"Key"`
+	QueryType            string           `position:"Query" name:"QueryType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
+	FuzzyType            string           `position:"Query" name:"FuzzyType"`
 }
 
 // ListTagValuesResponse is the response struct for api ListTagValues

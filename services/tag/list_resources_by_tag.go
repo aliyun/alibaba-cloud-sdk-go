@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListTagKeys invokes the tag.ListTagKeys API synchronously
-func (client *Client) ListTagKeys(request *ListTagKeysRequest) (response *ListTagKeysResponse, err error) {
-	response = CreateListTagKeysResponse()
+// ListResourcesByTag invokes the tag.ListResourcesByTag API synchronously
+func (client *Client) ListResourcesByTag(request *ListResourcesByTagRequest) (response *ListResourcesByTagResponse, err error) {
+	response = CreateListResourcesByTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListTagKeysWithChan invokes the tag.ListTagKeys API asynchronously
-func (client *Client) ListTagKeysWithChan(request *ListTagKeysRequest) (<-chan *ListTagKeysResponse, <-chan error) {
-	responseChan := make(chan *ListTagKeysResponse, 1)
+// ListResourcesByTagWithChan invokes the tag.ListResourcesByTag API asynchronously
+func (client *Client) ListResourcesByTagWithChan(request *ListResourcesByTagRequest) (<-chan *ListResourcesByTagResponse, <-chan error) {
+	responseChan := make(chan *ListResourcesByTagResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListTagKeys(request)
+		response, err := client.ListResourcesByTag(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListTagKeysWithChan(request *ListTagKeysRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// ListTagKeysWithCallback invokes the tag.ListTagKeys API asynchronously
-func (client *Client) ListTagKeysWithCallback(request *ListTagKeysRequest, callback func(response *ListTagKeysResponse, err error)) <-chan int {
+// ListResourcesByTagWithCallback invokes the tag.ListResourcesByTag API asynchronously
+func (client *Client) ListResourcesByTagWithCallback(request *ListResourcesByTagRequest, callback func(response *ListResourcesByTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListTagKeysResponse
+		var response *ListResourcesByTagResponse
 		var err error
 		defer close(result)
-		response, err = client.ListTagKeys(request)
+		response, err = client.ListResourcesByTag(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,43 +68,42 @@ func (client *Client) ListTagKeysWithCallback(request *ListTagKeysRequest, callb
 	return result
 }
 
-// ListTagKeysRequest is the request struct for api ListTagKeys
-type ListTagKeysRequest struct {
+// ListResourcesByTagRequest is the request struct for api ListResourcesByTag
+type ListResourcesByTagRequest struct {
 	*requests.RpcRequest
-	TagProduct           string           `position:"Query" name:"TagProduct"`
 	TagFilterKey         string           `position:"Query" name:"TagFilter.Key"`
 	NextToken            string           `position:"Query" name:"NextToken"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	QueryType            string           `position:"Query" name:"QueryType"`
+	IncludeAllTags       requests.Boolean `position:"Query" name:"IncludeAllTags"`
+	TagFilterValue       string           `position:"Query" name:"TagFilter.Value"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
+	MaxResult            requests.Integer `position:"Query" name:"MaxResult"`
 	FuzzyType            string           `position:"Query" name:"FuzzyType"`
-	Category             string           `position:"Query" name:"Category"`
 }
 
-// ListTagKeysResponse is the response struct for api ListTagKeys
-type ListTagKeysResponse struct {
+// ListResourcesByTagResponse is the response struct for api ListResourcesByTag
+type ListResourcesByTagResponse struct {
 	*responses.BaseResponse
-	NextToken string `json:"NextToken" xml:"NextToken"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Keys      Keys   `json:"Keys" xml:"Keys"`
+	RequestId string        `json:"RequestId" xml:"RequestId"`
+	NextToken string        `json:"NextToken" xml:"NextToken"`
+	Resources []TagResource `json:"Resources" xml:"Resources"`
 }
 
-// CreateListTagKeysRequest creates a request to invoke ListTagKeys API
-func CreateListTagKeysRequest() (request *ListTagKeysRequest) {
-	request = &ListTagKeysRequest{
+// CreateListResourcesByTagRequest creates a request to invoke ListResourcesByTag API
+func CreateListResourcesByTagRequest() (request *ListResourcesByTagRequest) {
+	request = &ListResourcesByTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Tag", "2018-08-28", "ListTagKeys", "tag", "openAPI")
+	request.InitWithApiInfo("Tag", "2018-08-28", "ListResourcesByTag", "tag", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateListTagKeysResponse creates a response to parse from ListTagKeys response
-func CreateListTagKeysResponse() (response *ListTagKeysResponse) {
-	response = &ListTagKeysResponse{
+// CreateListResourcesByTagResponse creates a response to parse from ListResourcesByTag response
+func CreateListResourcesByTagResponse() (response *ListResourcesByTagResponse) {
+	response = &ListResourcesByTagResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

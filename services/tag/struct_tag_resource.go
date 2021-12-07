@@ -17,6 +17,7 @@ package tag
 
 // TagResource is a nested struct in tag response
 type TagResource struct {
+	ResourceId  string `json:"ResourceId" xml:"ResourceId"`
 	ResourceARN string `json:"ResourceARN" xml:"ResourceARN"`
 	Tags        []Tag  `json:"Tags" xml:"Tags"`
 }
