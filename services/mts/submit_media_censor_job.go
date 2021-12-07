@@ -71,6 +71,7 @@ func (client *Client) SubmitMediaCensorJobWithCallback(request *SubmitMediaCenso
 // SubmitMediaCensorJobRequest is the request struct for api SubmitMediaCensorJob
 type SubmitMediaCensorJobRequest struct {
 	*requests.RpcRequest
+	ExternalUrl          string           `position:"Query" name:"ExternalUrl"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Description          string           `position:"Query" name:"Description"`
 	Title                string           `position:"Query" name:"Title"`

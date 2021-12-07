@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StopIProductionJob invokes the mts.StopIProductionJob API synchronously
-func (client *Client) StopIProductionJob(request *StopIProductionJobRequest) (response *StopIProductionJobResponse, err error) {
-	response = CreateStopIProductionJobResponse()
+// ImportFpShotJob invokes the mts.ImportFpShotJob API synchronously
+func (client *Client) ImportFpShotJob(request *ImportFpShotJobRequest) (response *ImportFpShotJobResponse, err error) {
+	response = CreateImportFpShotJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StopIProductionJobWithChan invokes the mts.StopIProductionJob API asynchronously
-func (client *Client) StopIProductionJobWithChan(request *StopIProductionJobRequest) (<-chan *StopIProductionJobResponse, <-chan error) {
-	responseChan := make(chan *StopIProductionJobResponse, 1)
+// ImportFpShotJobWithChan invokes the mts.ImportFpShotJob API asynchronously
+func (client *Client) ImportFpShotJobWithChan(request *ImportFpShotJobRequest) (<-chan *ImportFpShotJobResponse, <-chan error) {
+	responseChan := make(chan *ImportFpShotJobResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StopIProductionJob(request)
+		response, err := client.ImportFpShotJob(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) StopIProductionJobWithChan(request *StopIProductionJobRequ
 	return responseChan, errChan
 }
 
-// StopIProductionJobWithCallback invokes the mts.StopIProductionJob API asynchronously
-func (client *Client) StopIProductionJobWithCallback(request *StopIProductionJobRequest, callback func(response *StopIProductionJobResponse, err error)) <-chan int {
+// ImportFpShotJobWithCallback invokes the mts.ImportFpShotJob API asynchronously
+func (client *Client) ImportFpShotJobWithCallback(request *ImportFpShotJobRequest, callback func(response *ImportFpShotJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StopIProductionJobResponse
+		var response *ImportFpShotJobResponse
 		var err error
 		defer close(result)
-		response, err = client.StopIProductionJob(request)
+		response, err = client.ImportFpShotJob(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,40 @@ func (client *Client) StopIProductionJobWithCallback(request *StopIProductionJob
 	return result
 }
 
-// StopIProductionJobRequest is the request struct for api StopIProductionJob
-type StopIProductionJobRequest struct {
+// ImportFpShotJobRequest is the request struct for api ImportFpShotJob
+type ImportFpShotJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	FpDBId               string           `position:"Query" name:"FpDBId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	FpImportConfig       string           `position:"Query" name:"FpImportConfig"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	JobId                string           `position:"Query" name:"JobId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
 }
 
-// StopIProductionJobResponse is the response struct for api StopIProductionJob
-type StopIProductionJobResponse struct {
+// ImportFpShotJobResponse is the response struct for api ImportFpShotJob
+type ImportFpShotJobResponse struct {
 	*responses.BaseResponse
-	JobId     string `json:"JobId" xml:"JobId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// CreateStopIProductionJobRequest creates a request to invoke StopIProductionJob API
-func CreateStopIProductionJobRequest() (request *StopIProductionJobRequest) {
-	request = &StopIProductionJobRequest{
+// CreateImportFpShotJobRequest creates a request to invoke ImportFpShotJob API
+func CreateImportFpShotJobRequest() (request *ImportFpShotJobRequest) {
+	request = &ImportFpShotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "StopIProductionJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ImportFpShotJob", "mts", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateStopIProductionJobResponse creates a response to parse from StopIProductionJob response
-func CreateStopIProductionJobResponse() (response *StopIProductionJobResponse) {
-	response = &StopIProductionJobResponse{
+// CreateImportFpShotJobResponse creates a response to parse from ImportFpShotJob response
+func CreateImportFpShotJobResponse() (response *ImportFpShotJobResponse) {
+	response = &ImportFpShotJobResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

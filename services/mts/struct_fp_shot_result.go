@@ -19,4 +19,5 @@ package mts
 type FpShotResult struct {
 	AudioFpShots AudioFpShots `json:"AudioFpShots" xml:"AudioFpShots"`
 	FpShots      FpShots      `json:"FpShots" xml:"FpShots"`
+	TextFpShots  TextFpShots  `json:"TextFpShots" xml:"TextFpShots"`
 }

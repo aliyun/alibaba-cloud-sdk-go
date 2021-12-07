@@ -23,6 +23,7 @@ type Template struct {
 	TemplateName    string      `json:"TemplateName" xml:"TemplateName"`
 	FaceCategoryIds string      `json:"FaceCategoryIds" xml:"FaceCategoryIds"`
 	Logo            string      `json:"Logo" xml:"Logo"`
+	KnowledgeConfig string      `json:"KnowledgeConfig" xml:"KnowledgeConfig"`
 	Contraband      string      `json:"Contraband" xml:"Contraband"`
 	IsDefault       bool        `json:"IsDefault" xml:"IsDefault"`
 	Qrcode          string      `json:"Qrcode" xml:"Qrcode"`
@@ -32,10 +33,13 @@ type Template struct {
 	AnalyseTypes    string      `json:"AnalyseTypes" xml:"AnalyseTypes"`
 	Industry        string      `json:"Industry" xml:"Industry"`
 	Spam            string      `json:"Spam" xml:"Spam"`
+	KeywordConfig   string      `json:"KeywordConfig" xml:"KeywordConfig"`
 	Ad              string      `json:"Ad" xml:"Ad"`
 	State           string      `json:"State" xml:"State"`
 	Scene           string      `json:"Scene" xml:"Scene"`
+	LabelType       string      `json:"LabelType" xml:"LabelType"`
 	Porn            string      `json:"Porn" xml:"Porn"`
+	LabelVersion    string      `json:"LabelVersion" xml:"LabelVersion"`
 	Politics        string      `json:"Politics" xml:"Politics"`
 	TransConfig     TransConfig `json:"TransConfig" xml:"TransConfig"`
 	MuxConfig       MuxConfig   `json:"MuxConfig" xml:"MuxConfig"`

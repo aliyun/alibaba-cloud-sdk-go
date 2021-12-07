@@ -1,3 +1,8 @@
+2021-12-07 Version: v1.61.1372
+- Generated 2014-06-18 for `Mts`.
+- Support params for QuerySmarttagJob Api.
+- Support params for AddSmarttagTemplate,UpdateSmarttagTemplate,QuerySmarttagTemplateList Api.
+
 2021-12-07 Version: v1.61.1371
 - Generated 2018-08-28 for `Tag`.
 - Add MetaTag APIs.

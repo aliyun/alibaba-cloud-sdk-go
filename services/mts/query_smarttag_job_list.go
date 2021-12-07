@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryFpShotJobList invokes the mts.QueryFpShotJobList API synchronously
-func (client *Client) QueryFpShotJobList(request *QueryFpShotJobListRequest) (response *QueryFpShotJobListResponse, err error) {
-	response = CreateQueryFpShotJobListResponse()
+// QuerySmarttagJobList invokes the mts.QuerySmarttagJobList API synchronously
+func (client *Client) QuerySmarttagJobList(request *QuerySmarttagJobListRequest) (response *QuerySmarttagJobListResponse, err error) {
+	response = CreateQuerySmarttagJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryFpShotJobListWithChan invokes the mts.QueryFpShotJobList API asynchronously
-func (client *Client) QueryFpShotJobListWithChan(request *QueryFpShotJobListRequest) (<-chan *QueryFpShotJobListResponse, <-chan error) {
-	responseChan := make(chan *QueryFpShotJobListResponse, 1)
+// QuerySmarttagJobListWithChan invokes the mts.QuerySmarttagJobList API asynchronously
+func (client *Client) QuerySmarttagJobListWithChan(request *QuerySmarttagJobListRequest) (<-chan *QuerySmarttagJobListResponse, <-chan error) {
+	responseChan := make(chan *QuerySmarttagJobListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryFpShotJobList(request)
+		response, err := client.QuerySmarttagJobList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) QueryFpShotJobListWithChan(request *QueryFpShotJobListRequ
 	return responseChan, errChan
 }
 
-// QueryFpShotJobListWithCallback invokes the mts.QueryFpShotJobList API asynchronously
-func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobListRequest, callback func(response *QueryFpShotJobListResponse, err error)) <-chan int {
+// QuerySmarttagJobListWithCallback invokes the mts.QuerySmarttagJobList API asynchronously
+func (client *Client) QuerySmarttagJobListWithCallback(request *QuerySmarttagJobListRequest, callback func(response *QuerySmarttagJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryFpShotJobListResponse
+		var response *QuerySmarttagJobListResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryFpShotJobList(request)
+		response, err = client.QuerySmarttagJobList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,47 +68,43 @@ func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobList
 	return result
 }
 
-// QueryFpShotJobListRequest is the request struct for api QueryFpShotJobList
-type QueryFpShotJobListRequest struct {
+// QuerySmarttagJobListRequest is the request struct for api QuerySmarttagJobList
+type QuerySmarttagJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NextPageToken              string           `position:"Query" name:"NextPageToken"`
 	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
-	UserData                   string           `position:"Query" name:"UserData"`
-	State                      string           `position:"Query" name:"State"`
 	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId                 string           `position:"Query" name:"PipelineId"`
-	PrimaryKeyList             string           `position:"Query" name:"PrimaryKeyList"`
 	JobIds                     string           `position:"Query" name:"JobIds"`
 }
 
-// QueryFpShotJobListResponse is the response struct for api QueryFpShotJobList
-type QueryFpShotJobListResponse struct {
+// QuerySmarttagJobListResponse is the response struct for api QuerySmarttagJobList
+type QuerySmarttagJobListResponse struct {
 	*responses.BaseResponse
-	RequestId           string                          `json:"RequestId" xml:"RequestId"`
-	NextPageToken       string                          `json:"NextPageToken" xml:"NextPageToken"`
-	NonExistPrimaryKeys NonExistPrimaryKeys             `json:"NonExistPrimaryKeys" xml:"NonExistPrimaryKeys"`
-	NonExistIds         NonExistIdsInQueryFpShotJobList `json:"NonExistIds" xml:"NonExistIds"`
-	FpShotJobList       FpShotJobList                   `json:"FpShotJobList" xml:"FpShotJobList"`
+	NextPageToken  string                               `json:"NextPageToken" xml:"NextPageToken"`
+	RequestId      string                               `json:"RequestId" xml:"RequestId"`
+	NonExistJobIds NonExistJobIdsInQuerySmarttagJobList `json:"NonExistJobIds" xml:"NonExistJobIds"`
+	SmarttagJobs   SmarttagJobs                         `json:"SmarttagJobs" xml:"SmarttagJobs"`
 }
 
-// CreateQueryFpShotJobListRequest creates a request to invoke QueryFpShotJobList API
-func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {
-	request = &QueryFpShotJobListRequest{
+// CreateQuerySmarttagJobListRequest creates a request to invoke QuerySmarttagJobList API
+func CreateQuerySmarttagJobListRequest() (request *QuerySmarttagJobListRequest) {
+	request = &QuerySmarttagJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpShotJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySmarttagJobList", "mts", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQueryFpShotJobListResponse creates a response to parse from QueryFpShotJobList response
-func CreateQueryFpShotJobListResponse() (response *QueryFpShotJobListResponse) {
-	response = &QueryFpShotJobListResponse{
+// CreateQuerySmarttagJobListResponse creates a response to parse from QuerySmarttagJobList response
+func CreateQuerySmarttagJobListResponse() (response *QuerySmarttagJobListResponse) {
+	response = &QuerySmarttagJobListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

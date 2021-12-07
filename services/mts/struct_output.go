@@ -25,6 +25,7 @@ type Output struct {
 	AudioStreamMap         string                   `json:"AudioStreamMap" xml:"AudioStreamMap"`
 	VideoStreamMap         string                   `json:"VideoStreamMap" xml:"VideoStreamMap"`
 	Priority               string                   `json:"Priority" xml:"Priority"`
+	ExtendData             string                   `json:"ExtendData" xml:"ExtendData"`
 	WaterMarkConfigUrl     string                   `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
 	Encryption             Encryption               `json:"Encryption" xml:"Encryption"`
 	TransConfig            TransConfig              `json:"TransConfig" xml:"TransConfig"`

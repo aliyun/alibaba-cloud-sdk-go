@@ -28,6 +28,7 @@ type FpShotJob struct {
 	Code          string       `json:"Code" xml:"Code"`
 	PipelineId    string       `json:"PipelineId" xml:"PipelineId"`
 	Id            string       `json:"Id" xml:"Id"`
+	Input         string       `json:"Input" xml:"Input"`
 	FpShotResult  FpShotResult `json:"FpShotResult" xml:"FpShotResult"`
 	FpShotConfig  FpShotConfig `json:"FpShotConfig" xml:"FpShotConfig"`
 	InputFile     InputFile    `json:"InputFile" xml:"InputFile"`
