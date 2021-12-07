@@ -37,13 +37,13 @@ type Instance struct {
 	VswitchId            string                  `json:"VswitchId" xml:"VswitchId"`
 	ExpireTime           string                  `json:"ExpireTime" xml:"ExpireTime"`
 	ClusterName          string                  `json:"ClusterName" xml:"ClusterName"`
-	NetworkType          string                  `json:"NetworkType" xml:"NetworkType"`
 	VpcId                string                  `json:"VpcId" xml:"VpcId"`
+	NetworkType          string                  `json:"NetworkType" xml:"NetworkType"`
 	IsDeletionProtection bool                    `json:"IsDeletionProtection" xml:"IsDeletionProtection"`
-	MasterNodeCount      int                     `json:"MasterNodeCount" xml:"MasterNodeCount"`
 	CoreDiskType         string                  `json:"CoreDiskType" xml:"CoreDiskType"`
-	IsHa                 bool                    `json:"IsHa" xml:"IsHa"`
+	MasterNodeCount      int                     `json:"MasterNodeCount" xml:"MasterNodeCount"`
 	MasterInstanceType   string                  `json:"MasterInstanceType" xml:"MasterInstanceType"`
+	IsHa                 bool                    `json:"IsHa" xml:"IsHa"`
 	ColdStorageStatus    string                  `json:"ColdStorageStatus" xml:"ColdStorageStatus"`
 	ClusterId            string                  `json:"ClusterId" xml:"ClusterId"`
 	ClusterType          string                  `json:"ClusterType" xml:"ClusterType"`
