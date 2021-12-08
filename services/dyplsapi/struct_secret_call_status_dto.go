@@ -17,6 +17,7 @@ package dyplsapi
 
 // SecretCallStatusDTO is a nested struct in dyplsapi response
 type SecretCallStatusDTO struct {
-	CalledNo string `json:"CalledNo" xml:"CalledNo"`
-	Status   int    `json:"Status" xml:"Status"`
+	CalledNo  string `json:"CalledNo" xml:"CalledNo"`
+	Status    int    `json:"Status" xml:"Status"`
+	Extension string `json:"Extension" xml:"Extension"`
 }

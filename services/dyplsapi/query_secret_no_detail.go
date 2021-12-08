@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QuerySecretNoRemain invokes the dyplsapi.QuerySecretNoRemain API synchronously
-func (client *Client) QuerySecretNoRemain(request *QuerySecretNoRemainRequest) (response *QuerySecretNoRemainResponse, err error) {
-	response = CreateQuerySecretNoRemainResponse()
+// QuerySecretNoDetail invokes the dyplsapi.QuerySecretNoDetail API synchronously
+func (client *Client) QuerySecretNoDetail(request *QuerySecretNoDetailRequest) (response *QuerySecretNoDetailResponse, err error) {
+	response = CreateQuerySecretNoDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QuerySecretNoRemainWithChan invokes the dyplsapi.QuerySecretNoRemain API asynchronously
-func (client *Client) QuerySecretNoRemainWithChan(request *QuerySecretNoRemainRequest) (<-chan *QuerySecretNoRemainResponse, <-chan error) {
-	responseChan := make(chan *QuerySecretNoRemainResponse, 1)
+// QuerySecretNoDetailWithChan invokes the dyplsapi.QuerySecretNoDetail API asynchronously
+func (client *Client) QuerySecretNoDetailWithChan(request *QuerySecretNoDetailRequest) (<-chan *QuerySecretNoDetailResponse, <-chan error) {
+	responseChan := make(chan *QuerySecretNoDetailResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QuerySecretNoRemain(request)
+		response, err := client.QuerySecretNoDetail(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) QuerySecretNoRemainWithChan(request *QuerySecretNoRemainRe
 	return responseChan, errChan
 }
 
-// QuerySecretNoRemainWithCallback invokes the dyplsapi.QuerySecretNoRemain API asynchronously
-func (client *Client) QuerySecretNoRemainWithCallback(request *QuerySecretNoRemainRequest, callback func(response *QuerySecretNoRemainResponse, err error)) <-chan int {
+// QuerySecretNoDetailWithCallback invokes the dyplsapi.QuerySecretNoDetail API asynchronously
+func (client *Client) QuerySecretNoDetailWithCallback(request *QuerySecretNoDetailRequest, callback func(response *QuerySecretNoDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QuerySecretNoRemainResponse
+		var response *QuerySecretNoDetailResponse
 		var err error
 		defer close(result)
-		response, err = client.QuerySecretNoRemain(request)
+		response, err = client.QuerySecretNoDetail(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,39 @@ func (client *Client) QuerySecretNoRemainWithCallback(request *QuerySecretNoRema
 	return result
 }
 
-// QuerySecretNoRemainRequest is the request struct for api QuerySecretNoRemain
-type QuerySecretNoRemainRequest struct {
+// QuerySecretNoDetailRequest is the request struct for api QuerySecretNoDetail
+type QuerySecretNoDetailRequest struct {
 	*requests.RpcRequest
-	SpecId               requests.Integer `position:"Query" name:"SpecId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	City                 string           `position:"Query" name:"City"`
 	SecretNo             string           `position:"Query" name:"SecretNo"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ProdCode             string           `position:"Query" name:"ProdCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PoolKey              string           `position:"Query" name:"PoolKey"`
 }
 
-// QuerySecretNoRemainResponse is the response struct for api QuerySecretNoRemain
-type QuerySecretNoRemainResponse struct {
+// QuerySecretNoDetailResponse is the response struct for api QuerySecretNoDetail
+type QuerySecretNoDetailResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	Code            string          `json:"Code" xml:"Code"`
 	Message         string          `json:"Message" xml:"Message"`
-	SecretRemainDTO SecretRemainDTO `json:"SecretRemainDTO" xml:"SecretRemainDTO"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	SecretNoInfoDTO SecretNoInfoDTO `json:"SecretNoInfoDTO" xml:"SecretNoInfoDTO"`
 }
 
-// CreateQuerySecretNoRemainRequest creates a request to invoke QuerySecretNoRemain API
-func CreateQuerySecretNoRemainRequest() (request *QuerySecretNoRemainRequest) {
-	request = &QuerySecretNoRemainRequest{
+// CreateQuerySecretNoDetailRequest creates a request to invoke QuerySecretNoDetail API
+func CreateQuerySecretNoDetailRequest() (request *QuerySecretNoDetailRequest) {
+	request = &QuerySecretNoDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QuerySecretNoRemain", "", "")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QuerySecretNoDetail", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQuerySecretNoRemainResponse creates a response to parse from QuerySecretNoRemain response
-func CreateQuerySecretNoRemainResponse() (response *QuerySecretNoRemainResponse) {
-	response = &QuerySecretNoRemainResponse{
+// CreateQuerySecretNoDetailResponse creates a response to parse from QuerySecretNoDetail response
+func CreateQuerySecretNoDetailResponse() (response *QuerySecretNoDetailResponse) {
+	response = &QuerySecretNoDetailResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

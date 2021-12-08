@@ -17,11 +17,11 @@ package dyplsapi
 
 // DataInGetSubscriptionDetail is a nested struct in dyplsapi response
 type DataInGetSubscriptionDetail struct {
-	PhoneNo      string `json:"PhoneNo" xml:"PhoneNo"`
-	City         string `json:"City" xml:"City"`
-	SwitchStatus int    `json:"SwitchStatus" xml:"SwitchStatus"`
 	SubsId       int64  `json:"SubsId" xml:"SubsId"`
 	SecretNo     string `json:"SecretNo" xml:"SecretNo"`
-	Vendor       string `json:"Vendor" xml:"Vendor"`
+	PhoneNo      string `json:"PhoneNo" xml:"PhoneNo"`
+	SwitchStatus int    `json:"SwitchStatus" xml:"SwitchStatus"`
 	Province     string `json:"Province" xml:"Province"`
+	City         string `json:"City" xml:"City"`
+	Vendor       string `json:"Vendor" xml:"Vendor"`
 }

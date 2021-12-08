@@ -81,9 +81,9 @@ type GetFaceVerifyRequest struct {
 // GetFaceVerifyResponse is the response struct for api GetFaceVerify
 type GetFaceVerifyResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

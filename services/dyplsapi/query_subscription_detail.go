@@ -83,9 +83,9 @@ type QuerySubscriptionDetailRequest struct {
 // QuerySubscriptionDetailResponse is the response struct for api QuerySubscriptionDetail
 type QuerySubscriptionDetailResponse struct {
 	*responses.BaseResponse
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Code                string              `json:"Code" xml:"Code"`
 	Message             string              `json:"Message" xml:"Message"`
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	SecretBindDetailDTO SecretBindDetailDTO `json:"SecretBindDetailDTO" xml:"SecretBindDetailDTO"`
 }
 

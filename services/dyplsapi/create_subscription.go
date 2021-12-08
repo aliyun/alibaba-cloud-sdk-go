@@ -84,9 +84,9 @@ type CreateSubscriptionRequest struct {
 // CreateSubscriptionResponse is the response struct for api CreateSubscription
 type CreateSubscriptionResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

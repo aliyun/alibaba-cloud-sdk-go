@@ -83,9 +83,9 @@ type OperateAxgGroupRequest struct {
 // OperateAxgGroupResponse is the response struct for api OperateAxgGroup
 type OperateAxgGroupResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOperateAxgGroupRequest creates a request to invoke OperateAxgGroup API

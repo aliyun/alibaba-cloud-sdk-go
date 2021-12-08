@@ -84,10 +84,10 @@ type UpdatePhoneSwitchRequest struct {
 // UpdatePhoneSwitchResponse is the response struct for api UpdatePhoneSwitch
 type UpdatePhoneSwitchResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdatePhoneSwitchRequest creates a request to invoke UpdatePhoneSwitch API

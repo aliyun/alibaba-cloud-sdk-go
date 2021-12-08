@@ -94,9 +94,9 @@ type BindAxbRequest struct {
 // BindAxbResponse is the response struct for api BindAxb
 type BindAxbResponse struct {
 	*responses.BaseResponse
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	Code          string        `json:"Code" xml:"Code"`
 	Message       string        `json:"Message" xml:"Message"`
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	SecretBindDTO SecretBindDTO `json:"SecretBindDTO" xml:"SecretBindDTO"`
 }
 

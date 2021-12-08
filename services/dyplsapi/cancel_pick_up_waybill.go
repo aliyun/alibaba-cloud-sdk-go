@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseSecretNo invokes the dyplsapi.ReleaseSecretNo API synchronously
-func (client *Client) ReleaseSecretNo(request *ReleaseSecretNoRequest) (response *ReleaseSecretNoResponse, err error) {
-	response = CreateReleaseSecretNoResponse()
+// CancelPickUpWaybill invokes the dyplsapi.CancelPickUpWaybill API synchronously
+func (client *Client) CancelPickUpWaybill(request *CancelPickUpWaybillRequest) (response *CancelPickUpWaybillResponse, err error) {
+	response = CreateCancelPickUpWaybillResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseSecretNoWithChan invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (<-chan *ReleaseSecretNoResponse, <-chan error) {
-	responseChan := make(chan *ReleaseSecretNoResponse, 1)
+// CancelPickUpWaybillWithChan invokes the dyplsapi.CancelPickUpWaybill API asynchronously
+func (client *Client) CancelPickUpWaybillWithChan(request *CancelPickUpWaybillRequest) (<-chan *CancelPickUpWaybillResponse, <-chan error) {
+	responseChan := make(chan *CancelPickUpWaybillResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseSecretNo(request)
+		response, err := client.CancelPickUpWaybill(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (
 	return responseChan, errChan
 }
 
-// ReleaseSecretNoWithCallback invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoRequest, callback func(response *ReleaseSecretNoResponse, err error)) <-chan int {
+// CancelPickUpWaybillWithCallback invokes the dyplsapi.CancelPickUpWaybill API asynchronously
+func (client *Client) CancelPickUpWaybillWithCallback(request *CancelPickUpWaybillRequest, callback func(response *CancelPickUpWaybillResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseSecretNoResponse
+		var response *CancelPickUpWaybillResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseSecretNo(request)
+		response, err = client.CancelPickUpWaybill(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,39 @@ func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoReques
 	return result
 }
 
-// ReleaseSecretNoRequest is the request struct for api ReleaseSecretNo
-type ReleaseSecretNoRequest struct {
+// CancelPickUpWaybillRequest is the request struct for api CancelPickUpWaybill
+type CancelPickUpWaybillRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OuterOrderCode       string           `position:"Query" name:"OuterOrderCode"`
+	CancelDesc           string           `position:"Query" name:"CancelDesc"`
+	ContentType          string           `position:"Header" name:"Content-Type"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PoolKey              string           `position:"Query" name:"PoolKey"`
-	SecretNo             string           `position:"Query" name:"SecretNo"`
 }
 
-// ReleaseSecretNoResponse is the response struct for api ReleaseSecretNo
-type ReleaseSecretNoResponse struct {
+// CancelPickUpWaybillResponse is the response struct for api CancelPickUpWaybill
+type CancelPickUpWaybillResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateReleaseSecretNoRequest creates a request to invoke ReleaseSecretNo API
-func CreateReleaseSecretNoRequest() (request *ReleaseSecretNoRequest) {
-	request = &ReleaseSecretNoRequest{
+// CreateCancelPickUpWaybillRequest creates a request to invoke CancelPickUpWaybill API
+func CreateCancelPickUpWaybillRequest() (request *CancelPickUpWaybillRequest) {
+	request = &CancelPickUpWaybillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "", "")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "CancelPickUpWaybill", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateReleaseSecretNoResponse creates a response to parse from ReleaseSecretNo response
-func CreateReleaseSecretNoResponse() (response *ReleaseSecretNoResponse) {
-	response = &ReleaseSecretNoResponse{
+// CreateCancelPickUpWaybillResponse creates a response to parse from CancelPickUpWaybill response
+func CreateCancelPickUpWaybillResponse() (response *CancelPickUpWaybillResponse) {
+	response = &CancelPickUpWaybillResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

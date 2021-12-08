@@ -81,9 +81,9 @@ type LockSecretNoRequest struct {
 // LockSecretNoResponse is the response struct for api LockSecretNo
 type LockSecretNoResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateLockSecretNoRequest creates a request to invoke LockSecretNo API

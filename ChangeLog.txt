@@ -1,3 +1,7 @@
+2021-12-08 Version: v1.61.1374
+- Generated 2017-05-25 for `Dyplsapi`.
+- Fixed bugs for UnbindSubscription API.
+
 2021-12-07 Version: v1.61.1373
 - Generated 2019-01-01 for `HBase`.
 - Fix DescribeInstances clusterId.

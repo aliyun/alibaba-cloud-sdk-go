@@ -83,10 +83,10 @@ type UnbindSubscriptionRequest struct {
 // UnbindSubscriptionResponse is the response struct for api UnbindSubscription
 type UnbindSubscriptionResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ChargeId  string `json:"ChargeId" xml:"ChargeId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateUnbindSubscriptionRequest creates a request to invoke UnbindSubscription API

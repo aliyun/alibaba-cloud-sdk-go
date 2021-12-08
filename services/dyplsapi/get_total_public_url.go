@@ -83,9 +83,9 @@ type GetTotalPublicUrlRequest struct {
 // GetTotalPublicUrlResponse is the response struct for api GetTotalPublicUrl
 type GetTotalPublicUrlResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
