@@ -85,6 +85,7 @@ type CreateClusterRequest struct {
 	PubNetworkFlow          string           `position:"Query" name:"PubNetworkFlow"`
 	VpcId                   string           `position:"Query" name:"VpcId"`
 	NetType                 string           `position:"Query" name:"NetType"`
+	MseVersion              string           `position:"Query" name:"MseVersion"`
 	Region                  string           `position:"Query" name:"Region"`
 }
 
