@@ -79,20 +79,20 @@ type DescribeSubscriptionInstanceStatusRequest struct {
 // DescribeSubscriptionInstanceStatusResponse is the response struct for api DescribeSubscriptionInstanceStatus
 type DescribeSubscriptionInstanceStatusResponse struct {
 	*responses.BaseResponse
-	BeginTimestamp           string                                                 `json:"BeginTimestamp" xml:"BeginTimestamp"`
-	ConsumptionCheckpoint    string                                                 `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
-	ConsumptionClient        string                                                 `json:"ConsumptionClient" xml:"ConsumptionClient"`
-	EndTimestamp             string                                                 `json:"EndTimestamp" xml:"EndTimestamp"`
-	ErrMessage               string                                                 `json:"ErrMessage" xml:"ErrMessage"`
-	PayType                  string                                                 `json:"PayType" xml:"PayType"`
-	RequestId                string                                                 `json:"RequestId" xml:"RequestId"`
 	Status                   string                                                 `json:"Status" xml:"Status"`
-	SubscribeTopic           string                                                 `json:"SubscribeTopic" xml:"SubscribeTopic"`
-	SubscriptionInstanceID   string                                                 `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
-	SubscriptionInstanceName string                                                 `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
+	ErrorMessage             string                                                 `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrCode                  string                                                 `json:"ErrCode" xml:"ErrCode"`
 	Success                  string                                                 `json:"Success" xml:"Success"`
-	ErrorMessage             string                                                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrMessage               string                                                 `json:"ErrMessage" xml:"ErrMessage"`
+	PayType                  string                                                 `json:"PayType" xml:"PayType"`
+	ConsumptionClient        string                                                 `json:"ConsumptionClient" xml:"ConsumptionClient"`
+	ConsumptionCheckpoint    string                                                 `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
+	EndTimestamp             string                                                 `json:"EndTimestamp" xml:"EndTimestamp"`
+	BeginTimestamp           string                                                 `json:"BeginTimestamp" xml:"BeginTimestamp"`
+	RequestId                string                                                 `json:"RequestId" xml:"RequestId"`
+	SubscribeTopic           string                                                 `json:"SubscribeTopic" xml:"SubscribeTopic"`
+	SubscriptionInstanceName string                                                 `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
+	SubscriptionInstanceID   string                                                 `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
 	TaskId                   string                                                 `json:"TaskId" xml:"TaskId"`
 	SourceEndpoint           SourceEndpoint                                         `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	SubscriptionDataType     SubscriptionDataType                                   `json:"SubscriptionDataType" xml:"SubscriptionDataType"`

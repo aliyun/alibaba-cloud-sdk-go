@@ -81,24 +81,24 @@ type DescribeSynchronizationJobStatusRequest struct {
 // DescribeSynchronizationJobStatusResponse is the response struct for api DescribeSynchronizationJobStatus
 type DescribeSynchronizationJobStatusResponse struct {
 	*responses.BaseResponse
-	Checkpoint                    string                                           `json:"Checkpoint" xml:"Checkpoint"`
+	SynchronizationJobName        string                                           `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
+	Status                        string                                           `json:"Status" xml:"Status"`
 	DataInitialization            string                                           `json:"DataInitialization" xml:"DataInitialization"`
 	Delay                         string                                           `json:"Delay" xml:"Delay"`
-	DelayMillis                   int64                                            `json:"DelayMillis" xml:"DelayMillis"`
-	ErrCode                       string                                           `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                    string                                           `json:"ErrMessage" xml:"ErrMessage"`
 	ErrorMessage                  string                                           `json:"ErrorMessage" xml:"ErrorMessage"`
 	ExpireTime                    string                                           `json:"ExpireTime" xml:"ExpireTime"`
-	PayType                       string                                           `json:"PayType" xml:"PayType"`
-	RequestId                     string                                           `json:"RequestId" xml:"RequestId"`
-	Status                        string                                           `json:"Status" xml:"Status"`
-	StructureInitialization       string                                           `json:"StructureInitialization" xml:"StructureInitialization"`
+	ErrCode                       string                                           `json:"ErrCode" xml:"ErrCode"`
 	Success                       string                                           `json:"Success" xml:"Success"`
-	SynchronizationDirection      string                                           `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
+	StructureInitialization       string                                           `json:"StructureInitialization" xml:"StructureInitialization"`
+	PayType                       string                                           `json:"PayType" xml:"PayType"`
+	ErrMessage                    string                                           `json:"ErrMessage" xml:"ErrMessage"`
 	SynchronizationJobClass       string                                           `json:"SynchronizationJobClass" xml:"SynchronizationJobClass"`
+	RequestId                     string                                           `json:"RequestId" xml:"RequestId"`
 	SynchronizationJobId          string                                           `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
-	SynchronizationJobName        string                                           `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
+	DelayMillis                   int64                                            `json:"DelayMillis" xml:"DelayMillis"`
+	SynchronizationDirection      string                                           `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
 	TaskId                        string                                           `json:"TaskId" xml:"TaskId"`
+	Checkpoint                    string                                           `json:"Checkpoint" xml:"Checkpoint"`
 	DataInitializationStatus      DataInitializationStatus                         `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus                        `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 	DestinationEndpoint           DestinationEndpoint                              `json:"DestinationEndpoint" xml:"DestinationEndpoint"`

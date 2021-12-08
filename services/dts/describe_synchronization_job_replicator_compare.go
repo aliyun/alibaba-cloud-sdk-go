@@ -81,11 +81,11 @@ type DescribeSynchronizationJobReplicatorCompareRequest struct {
 // DescribeSynchronizationJobReplicatorCompareResponse is the response struct for api DescribeSynchronizationJobReplicatorCompare
 type DescribeSynchronizationJobReplicatorCompareResponse struct {
 	*responses.BaseResponse
-	ErrCode                                string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                             string `json:"ErrMessage" xml:"ErrMessage"`
-	RequestId                              string `json:"RequestId" xml:"RequestId"`
-	Success                                string `json:"Success" xml:"Success"`
 	SynchronizationReplicatorCompareEnable bool   `json:"SynchronizationReplicatorCompareEnable" xml:"SynchronizationReplicatorCompareEnable"`
+	RequestId                              string `json:"RequestId" xml:"RequestId"`
+	ErrCode                                string `json:"ErrCode" xml:"ErrCode"`
+	Success                                string `json:"Success" xml:"Success"`
+	ErrMessage                             string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateDescribeSynchronizationJobReplicatorCompareRequest creates a request to invoke DescribeSynchronizationJobReplicatorCompare API

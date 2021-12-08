@@ -24,6 +24,6 @@ type DataInitializationDetail struct {
 	MigrationTime          string `json:"MigrationTime" xml:"MigrationTime"`
 	DestinationOwnerDBName string `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
 	Status                 string `json:"Status" xml:"Status"`
-	TableName              string `json:"TableName" xml:"TableName"`
 	UsedTime               string `json:"UsedTime" xml:"UsedTime"`
+	TableName              string `json:"TableName" xml:"TableName"`
 }

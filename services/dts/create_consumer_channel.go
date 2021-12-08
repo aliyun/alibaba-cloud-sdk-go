@@ -81,12 +81,12 @@ type CreateConsumerChannelRequest struct {
 // CreateConsumerChannelResponse is the response struct for api CreateConsumerChannel
 type CreateConsumerChannelResponse struct {
 	*responses.BaseResponse
-	ErrCode         string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage      string `json:"ErrMessage" xml:"ErrMessage"`
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	Success         string `json:"Success" xml:"Success"`
-	ConsumerGroupID string `json:"ConsumerGroupID" xml:"ConsumerGroupID"`
 	HttpStatusCode  string `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	ErrCode         string `json:"ErrCode" xml:"ErrCode"`
+	Success         string `json:"Success" xml:"Success"`
+	ErrMessage      string `json:"ErrMessage" xml:"ErrMessage"`
+	ConsumerGroupID string `json:"ConsumerGroupID" xml:"ConsumerGroupID"`
 }
 
 // CreateCreateConsumerChannelRequest creates a request to invoke CreateConsumerChannel API

@@ -83,10 +83,10 @@ type CreateConsumerGroupRequest struct {
 type CreateConsumerGroupResponse struct {
 	*responses.BaseResponse
 	ConsumerGroupID string `json:"ConsumerGroupID" xml:"ConsumerGroupID"`
-	ErrCode         string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage      string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId       string `json:"RequestId" xml:"RequestId"`
+	ErrCode         string `json:"ErrCode" xml:"ErrCode"`
 	Success         string `json:"Success" xml:"Success"`
+	ErrMessage      string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateCreateConsumerGroupRequest creates a request to invoke CreateConsumerGroup API

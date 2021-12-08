@@ -83,18 +83,18 @@ type DescribePreCheckStatusRequest struct {
 // DescribePreCheckStatusResponse is the response struct for api DescribePreCheckStatus
 type DescribePreCheckStatusResponse struct {
 	*responses.BaseResponse
-	Code                    string                        `json:"Code" xml:"Code"`
-	ErrorItem               int                           `json:"ErrorItem" xml:"ErrorItem"`
-	HttpStatusCode          int                           `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	JobName                 string                        `json:"JobName" xml:"JobName"`
 	State                   string                        `json:"State" xml:"State"`
 	Success                 bool                          `json:"Success" xml:"Success"`
-	Total                   int                           `json:"Total" xml:"Total"`
-	RequestId               string                        `json:"RequestId" xml:"RequestId"`
-	JobId                   string                        `json:"JobId" xml:"JobId"`
-	PageNumber              int64                         `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount         int64                         `json:"PageRecordCount" xml:"PageRecordCount"`
+	Total                   int                           `json:"Total" xml:"Total"`
+	HttpStatusCode          int                           `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId               string                        `json:"RequestId" xml:"RequestId"`
+	JobName                 string                        `json:"JobName" xml:"JobName"`
+	JobId                   string                        `json:"JobId" xml:"JobId"`
+	ErrorItem               int                           `json:"ErrorItem" xml:"ErrorItem"`
 	TotalRecordCount        int64                         `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	Code                    string                        `json:"Code" xml:"Code"`
+	PageNumber              int64                         `json:"PageNumber" xml:"PageNumber"`
 	JobProgress             []ProgressInfo                `json:"JobProgress" xml:"JobProgress"`
 	SubDistributedJobStatus []SubDistributedJobStatusItem `json:"SubDistributedJobStatus" xml:"SubDistributedJobStatus"`
 }

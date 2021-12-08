@@ -17,8 +17,8 @@ package dts
 
 // DataInitialization is a nested struct in dts response
 type DataInitialization struct {
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Percent      string `json:"Percent" xml:"Percent"`
-	Progress     string `json:"Progress" xml:"Progress"`
 	Status       string `json:"status" xml:"status"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Progress     string `json:"Progress" xml:"Progress"`
 }

@@ -80,12 +80,12 @@ type DescribeSynchronizationObjectModifyStatusRequest struct {
 // DescribeSynchronizationObjectModifyStatusResponse is the response struct for api DescribeSynchronizationObjectModifyStatus
 type DescribeSynchronizationObjectModifyStatusResponse struct {
 	*responses.BaseResponse
-	ErrCode                       string                                                    `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                    string                                                    `json:"ErrMessage" xml:"ErrMessage"`
+	Status                        string                                                    `json:"Status" xml:"Status"`
 	ErrorMessage                  string                                                    `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId                     string                                                    `json:"RequestId" xml:"RequestId"`
-	Status                        string                                                    `json:"Status" xml:"Status"`
+	ErrCode                       string                                                    `json:"ErrCode" xml:"ErrCode"`
 	Success                       string                                                    `json:"Success" xml:"Success"`
+	ErrMessage                    string                                                    `json:"ErrMessage" xml:"ErrMessage"`
 	DataInitializationStatus      DataInitializationStatus                                  `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus                                 `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 	PrecheckStatus                PrecheckStatusInDescribeSynchronizationObjectModifyStatus `json:"PrecheckStatus" xml:"PrecheckStatus"`

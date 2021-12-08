@@ -90,13 +90,13 @@ type DescribeSubscriptionInstancesTag struct {
 // DescribeSubscriptionInstancesResponse is the response struct for api DescribeSubscriptionInstances
 type DescribeSubscriptionInstancesResponse struct {
 	*responses.BaseResponse
-	ErrCode               string                `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage            string                `json:"ErrMessage" xml:"ErrMessage"`
-	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount       int                   `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId             string                `json:"RequestId" xml:"RequestId"`
+	ErrCode               string                `json:"ErrCode" xml:"ErrCode"`
+	PageRecordCount       int                   `json:"PageRecordCount" xml:"PageRecordCount"`
 	Success               string                `json:"Success" xml:"Success"`
 	TotalRecordCount      int64                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	ErrMessage            string                `json:"ErrMessage" xml:"ErrMessage"`
+	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
 	SubscriptionInstances SubscriptionInstances `json:"SubscriptionInstances" xml:"SubscriptionInstances"`
 }
 

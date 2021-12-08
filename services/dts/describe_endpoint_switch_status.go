@@ -80,12 +80,12 @@ type DescribeEndpointSwitchStatusRequest struct {
 // DescribeEndpointSwitchStatusResponse is the response struct for api DescribeEndpointSwitchStatus
 type DescribeEndpointSwitchStatusResponse struct {
 	*responses.BaseResponse
-	ErrCode      string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage   string `json:"ErrMessage" xml:"ErrMessage"`
+	Status       string `json:"Status" xml:"Status"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Status       string `json:"Status" xml:"Status"`
+	ErrCode      string `json:"ErrCode" xml:"ErrCode"`
 	Success      string `json:"Success" xml:"Success"`
+	ErrMessage   string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateDescribeEndpointSwitchStatusRequest creates a request to invoke DescribeEndpointSwitchStatus API

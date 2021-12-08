@@ -17,20 +17,20 @@ package dts
 
 // SynchronizationInstance is a nested struct in dts response
 type SynchronizationInstance struct {
-	CreateTime                    string                                      `json:"CreateTime" xml:"CreateTime"`
 	DataInitialization            string                                      `json:"DataInitialization" xml:"DataInitialization"`
+	Status                        string                                      `json:"Status" xml:"Status"`
+	SynchronizationJobName        string                                      `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
 	Delay                         string                                      `json:"Delay" xml:"Delay"`
 	ErrorMessage                  string                                      `json:"ErrorMessage" xml:"ErrorMessage"`
 	ExpireTime                    string                                      `json:"ExpireTime" xml:"ExpireTime"`
+	CreateTime                    string                                      `json:"CreateTime" xml:"CreateTime"`
 	PayType                       string                                      `json:"PayType" xml:"PayType"`
-	Status                        string                                      `json:"Status" xml:"Status"`
 	StructureInitialization       string                                      `json:"StructureInitialization" xml:"StructureInitialization"`
-	SynchronizationDirection      string                                      `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
 	SynchronizationJobClass       string                                      `json:"SynchronizationJobClass" xml:"SynchronizationJobClass"`
-	SynchronizationJobId          string                                      `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
-	SynchronizationJobName        string                                      `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
-	JobCreateTime                 string                                      `json:"JobCreateTime" xml:"JobCreateTime"`
 	InstanceCreateTime            string                                      `json:"InstanceCreateTime" xml:"InstanceCreateTime"`
+	SynchronizationJobId          string                                      `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
+	SynchronizationDirection      string                                      `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
+	JobCreateTime                 string                                      `json:"JobCreateTime" xml:"JobCreateTime"`
 	DataInitializationStatus      DataInitializationStatus                    `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus                   `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 	DestinationEndpoint           DestinationEndpoint                         `json:"DestinationEndpoint" xml:"DestinationEndpoint"`

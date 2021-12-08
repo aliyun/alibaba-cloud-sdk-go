@@ -77,14 +77,15 @@ type DescribeJobMonitorRuleRequest struct {
 // DescribeJobMonitorRuleResponse is the response struct for api DescribeJobMonitorRule
 type DescribeJobMonitorRuleResponse struct {
 	*responses.BaseResponse
-	Code           string        `json:"Code" xml:"Code"`
-	DtsJobId       string        `json:"DtsJobId" xml:"DtsJobId"`
-	DynamicMessage string        `json:"DynamicMessage" xml:"DynamicMessage"`
-	ErrCode        string        `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string        `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int           `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string        `json:"RequestId" xml:"RequestId"`
+	DtsJobId       string        `json:"DtsJobId" xml:"DtsJobId"`
+	ErrCode        string        `json:"ErrCode" xml:"ErrCode"`
 	Success        bool          `json:"Success" xml:"Success"`
+	ErrMessage     string        `json:"ErrMessage" xml:"ErrMessage"`
+	Code           string        `json:"Code" xml:"Code"`
+	DynamicMessage string        `json:"DynamicMessage" xml:"DynamicMessage"`
+	Topics         []string      `json:"Topics" xml:"Topics"`
 	MonitorRules   []MonitorRule `json:"MonitorRules" xml:"MonitorRules"`
 }
 

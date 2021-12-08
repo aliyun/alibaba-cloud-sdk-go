@@ -80,17 +80,17 @@ type DescribeMigrationJobStatusRequest struct {
 // DescribeMigrationJobStatusResponse is the response struct for api DescribeMigrationJobStatus
 type DescribeMigrationJobStatusResponse struct {
 	*responses.BaseResponse
-	ErrCode                       string                                     `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                    string                                     `json:"ErrMessage" xml:"ErrMessage"`
-	MigrationJobClass             string                                     `json:"MigrationJobClass" xml:"MigrationJobClass"`
-	MigrationJobId                string                                     `json:"MigrationJobId" xml:"MigrationJobId"`
+	RequestId                     string                                     `json:"RequestId" xml:"RequestId"`
 	MigrationJobName              string                                     `json:"MigrationJobName" xml:"MigrationJobName"`
 	MigrationJobStatus            string                                     `json:"MigrationJobStatus" xml:"MigrationJobStatus"`
-	MigrationObject               string                                     `json:"MigrationObject" xml:"MigrationObject"`
-	PayType                       string                                     `json:"PayType" xml:"PayType"`
-	RequestId                     string                                     `json:"RequestId" xml:"RequestId"`
+	ErrCode                       string                                     `json:"ErrCode" xml:"ErrCode"`
 	Success                       string                                     `json:"Success" xml:"Success"`
+	PayType                       string                                     `json:"PayType" xml:"PayType"`
+	ErrMessage                    string                                     `json:"ErrMessage" xml:"ErrMessage"`
+	MigrationObject               string                                     `json:"MigrationObject" xml:"MigrationObject"`
+	MigrationJobId                string                                     `json:"MigrationJobId" xml:"MigrationJobId"`
 	TaskId                        string                                     `json:"TaskId" xml:"TaskId"`
+	MigrationJobClass             string                                     `json:"MigrationJobClass" xml:"MigrationJobClass"`
 	DataInitializationStatus      DataInitializationStatus                   `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
 	DataSynchronizationStatus     DataSynchronizationStatus                  `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 	DestinationEndpoint           DestinationEndpoint                        `json:"DestinationEndpoint" xml:"DestinationEndpoint"`

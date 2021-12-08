@@ -78,13 +78,13 @@ type ModifyDtsJobNameRequest struct {
 // ModifyDtsJobNameResponse is the response struct for api ModifyDtsJobName
 type ModifyDtsJobNameResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
+	Code           string `json:"Code" xml:"Code"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
 }
 
 // CreateModifyDtsJobNameRequest creates a request to invoke ModifyDtsJobName API

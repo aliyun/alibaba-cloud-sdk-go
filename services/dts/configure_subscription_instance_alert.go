@@ -84,10 +84,10 @@ type ConfigureSubscriptionInstanceAlertRequest struct {
 // ConfigureSubscriptionInstanceAlertResponse is the response struct for api ConfigureSubscriptionInstanceAlert
 type ConfigureSubscriptionInstanceAlertResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateConfigureSubscriptionInstanceAlertRequest creates a request to invoke ConfigureSubscriptionInstanceAlert API

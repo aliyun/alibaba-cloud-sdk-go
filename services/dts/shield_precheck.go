@@ -78,10 +78,10 @@ type ShieldPrecheckRequest struct {
 // ShieldPrecheckResponse is the response struct for api ShieldPrecheck
 type ShieldPrecheckResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    bool   `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateShieldPrecheckRequest creates a request to invoke ShieldPrecheck API

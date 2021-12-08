@@ -81,14 +81,14 @@ type CreateJobMonitorRuleRequest struct {
 // CreateJobMonitorRuleResponse is the response struct for api CreateJobMonitorRule
 type CreateJobMonitorRuleResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
+	Code           string `json:"Code" xml:"Code"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
 }
 
 // CreateCreateJobMonitorRuleRequest creates a request to invoke CreateJobMonitorRule API

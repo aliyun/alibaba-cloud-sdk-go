@@ -17,10 +17,10 @@ package dts
 
 // SubDistributedJobStatusItem is a nested struct in dts response
 type SubDistributedJobStatusItem struct {
-	State       string         `json:"State" xml:"State"`
-	ErrorItem   int            `json:"ErrorItem" xml:"ErrorItem"`
 	JobName     string         `json:"JobName" xml:"JobName"`
+	State       string         `json:"State" xml:"State"`
 	JobId       string         `json:"JobId" xml:"JobId"`
+	ErrorItem   int            `json:"ErrorItem" xml:"ErrorItem"`
 	Code        string         `json:"Code" xml:"Code"`
 	Total       int            `json:"Total" xml:"Total"`
 	JobProgress []ProgressInfo `json:"JobProgress" xml:"JobProgress"`

@@ -79,10 +79,10 @@ type DeleteSubscriptionInstanceRequest struct {
 // DeleteSubscriptionInstanceResponse is the response struct for api DeleteSubscriptionInstance
 type DeleteSubscriptionInstanceResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateDeleteSubscriptionInstanceRequest creates a request to invoke DeleteSubscriptionInstance API

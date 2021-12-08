@@ -79,10 +79,10 @@ type DeleteMigrationJobRequest struct {
 // DeleteMigrationJobResponse is the response struct for api DeleteMigrationJob
 type DeleteMigrationJobResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateDeleteMigrationJobRequest creates a request to invoke DeleteMigrationJob API

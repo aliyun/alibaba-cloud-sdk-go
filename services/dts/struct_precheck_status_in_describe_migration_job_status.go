@@ -17,7 +17,7 @@ package dts
 
 // PrecheckStatusInDescribeMigrationJobStatus is a nested struct in dts response
 type PrecheckStatusInDescribeMigrationJobStatus struct {
-	Percent string                             `json:"Percent" xml:"Percent"`
 	Status  string                             `json:"Status" xml:"Status"`
+	Percent string                             `json:"Percent" xml:"Percent"`
 	Detail  DetailInDescribeMigrationJobStatus `json:"Detail" xml:"Detail"`
 }

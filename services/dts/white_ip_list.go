@@ -79,14 +79,14 @@ type WhiteIpListRequest struct {
 // WhiteIpListResponse is the response struct for api WhiteIpList
 type WhiteIpListResponse struct {
 	*responses.BaseResponse
-	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	IpList         string `json:"IpList" xml:"IpList"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
 }
 
 // CreateWhiteIpListRequest creates a request to invoke WhiteIpList API

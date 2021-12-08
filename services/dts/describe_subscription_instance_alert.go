@@ -80,17 +80,17 @@ type DescribeSubscriptionInstanceAlertRequest struct {
 // DescribeSubscriptionInstanceAlertResponse is the response struct for api DescribeSubscriptionInstanceAlert
 type DescribeSubscriptionInstanceAlertResponse struct {
 	*responses.BaseResponse
-	DelayAlertPhone          string `json:"DelayAlertPhone" xml:"DelayAlertPhone"`
-	DelayAlertStatus         string `json:"DelayAlertStatus" xml:"DelayAlertStatus"`
-	DelayOverSeconds         string `json:"DelayOverSeconds" xml:"DelayOverSeconds"`
-	ErrCode                  string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage               string `json:"ErrMessage" xml:"ErrMessage"`
-	ErrorAlertPhone          string `json:"ErrorAlertPhone" xml:"ErrorAlertPhone"`
-	ErrorAlertStatus         string `json:"ErrorAlertStatus" xml:"ErrorAlertStatus"`
 	RequestId                string `json:"RequestId" xml:"RequestId"`
-	SubscriptionInstanceID   string `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
-	SubscriptionInstanceName string `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
+	ErrorAlertStatus         string `json:"ErrorAlertStatus" xml:"ErrorAlertStatus"`
+	ErrCode                  string `json:"ErrCode" xml:"ErrCode"`
 	Success                  string `json:"Success" xml:"Success"`
+	ErrorAlertPhone          string `json:"ErrorAlertPhone" xml:"ErrorAlertPhone"`
+	ErrMessage               string `json:"ErrMessage" xml:"ErrMessage"`
+	DelayAlertStatus         string `json:"DelayAlertStatus" xml:"DelayAlertStatus"`
+	SubscriptionInstanceName string `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
+	DelayAlertPhone          string `json:"DelayAlertPhone" xml:"DelayAlertPhone"`
+	SubscriptionInstanceID   string `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
+	DelayOverSeconds         string `json:"DelayOverSeconds" xml:"DelayOverSeconds"`
 }
 
 // CreateDescribeSubscriptionInstanceAlertRequest creates a request to invoke DescribeSubscriptionInstanceAlert API

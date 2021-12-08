@@ -20,16 +20,16 @@ type ProgressInfo struct {
 	RepairMethod string   `json:"RepairMethod" xml:"RepairMethod"`
 	JobId        string   `json:"JobId" xml:"JobId"`
 	Skip         bool     `json:"Skip" xml:"Skip"`
-	DestSchema   string   `json:"DestSchema" xml:"DestSchema"`
 	DdlSql       string   `json:"DdlSql" xml:"DdlSql"`
+	DestSchema   string   `json:"DestSchema" xml:"DestSchema"`
 	SourceSchema string   `json:"SourceSchema" xml:"SourceSchema"`
 	FinishTime   string   `json:"FinishTime" xml:"FinishTime"`
 	ErrDetail    string   `json:"ErrDetail" xml:"ErrDetail"`
 	BootTime     string   `json:"BootTime" xml:"BootTime"`
-	OrderNum     int      `json:"OrderNum" xml:"OrderNum"`
 	DiffRow      int64    `json:"DiffRow" xml:"DiffRow"`
-	ErrMsg       string   `json:"ErrMsg" xml:"ErrMsg"`
+	OrderNum     int      `json:"OrderNum" xml:"OrderNum"`
 	DelaySeconds int      `json:"DelaySeconds" xml:"DelaySeconds"`
+	ErrMsg       string   `json:"ErrMsg" xml:"ErrMsg"`
 	TargetNames  string   `json:"TargetNames" xml:"TargetNames"`
 	State        string   `json:"State" xml:"State"`
 	Sub          string   `json:"Sub" xml:"Sub"`

@@ -17,9 +17,9 @@ package dts
 
 // SubscriptionMetaListItem is a nested struct in dts response
 type SubscriptionMetaListItem struct {
-	DProxyUrl  string `json:"DProxyUrl" xml:"DProxyUrl"`
-	Topic      string `json:"Topic" xml:"Topic"`
 	Sid        string `json:"Sid" xml:"Sid"`
 	Checkpoint int64  `json:"Checkpoint" xml:"Checkpoint"`
+	DProxyUrl  string `json:"DProxyUrl" xml:"DProxyUrl"`
 	DBList     string `json:"DBList" xml:"DBList"`
+	Topic      string `json:"Topic" xml:"Topic"`
 }

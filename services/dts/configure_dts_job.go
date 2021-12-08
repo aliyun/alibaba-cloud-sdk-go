@@ -115,13 +115,13 @@ type ConfigureDtsJobRequest struct {
 // ConfigureDtsJobResponse is the response struct for api ConfigureDtsJob
 type ConfigureDtsJobResponse struct {
 	*responses.BaseResponse
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        string `json:"Success" xml:"Success"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
 	DtsInstanceId  string `json:"DtsInstanceId" xml:"DtsInstanceId"`
+	Success        string `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateConfigureDtsJobRequest creates a request to invoke ConfigureDtsJob API

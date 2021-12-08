@@ -81,13 +81,13 @@ type DescribeConsumerGroupRequest struct {
 // DescribeConsumerGroupResponse is the response struct for api DescribeConsumerGroup
 type DescribeConsumerGroupResponse struct {
 	*responses.BaseResponse
-	PageNumber       int                                     `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int                                     `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId        string                                  `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	ErrCode          string                                  `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage       string                                  `json:"ErrMessage" xml:"ErrMessage"`
 	Success          string                                  `json:"Success" xml:"Success"`
+	PageRecordCount  int                                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	ErrMessage       string                                  `json:"ErrMessage" xml:"ErrMessage"`
+	PageNumber       int                                     `json:"PageNumber" xml:"PageNumber"`
 	ConsumerChannels ConsumerChannelsInDescribeConsumerGroup `json:"ConsumerChannels" xml:"ConsumerChannels"`
 }
 

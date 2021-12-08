@@ -17,18 +17,18 @@ package dts
 
 // SubscriptionInstance is a nested struct in dts response
 type SubscriptionInstance struct {
-	BeginTimestamp           string                                            `json:"BeginTimestamp" xml:"BeginTimestamp"`
-	ConsumptionCheckpoint    string                                            `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
-	ConsumptionClient        string                                            `json:"ConsumptionClient" xml:"ConsumptionClient"`
-	EndTimestamp             string                                            `json:"EndTimestamp" xml:"EndTimestamp"`
+	Status                   string                                            `json:"Status" xml:"Status"`
 	ErrorMessage             string                                            `json:"ErrorMessage" xml:"ErrorMessage"`
 	PayType                  string                                            `json:"PayType" xml:"PayType"`
-	Status                   string                                            `json:"Status" xml:"Status"`
-	SubscribeTopic           string                                            `json:"SubscribeTopic" xml:"SubscribeTopic"`
-	SubscriptionInstanceID   string                                            `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
-	SubscriptionInstanceName string                                            `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
-	JobCreateTime            string                                            `json:"JobCreateTime" xml:"JobCreateTime"`
+	ConsumptionClient        string                                            `json:"ConsumptionClient" xml:"ConsumptionClient"`
+	ConsumptionCheckpoint    string                                            `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
+	EndTimestamp             string                                            `json:"EndTimestamp" xml:"EndTimestamp"`
 	InstanceCreateTime       string                                            `json:"InstanceCreateTime" xml:"InstanceCreateTime"`
+	BeginTimestamp           string                                            `json:"BeginTimestamp" xml:"BeginTimestamp"`
+	SubscribeTopic           string                                            `json:"SubscribeTopic" xml:"SubscribeTopic"`
+	SubscriptionInstanceName string                                            `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
+	SubscriptionInstanceID   string                                            `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
+	JobCreateTime            string                                            `json:"JobCreateTime" xml:"JobCreateTime"`
 	SourceEndpoint           SourceEndpoint                                    `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	SubscriptionDataType     SubscriptionDataType                              `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
 	SubscriptionHost         SubscriptionHost                                  `json:"SubscriptionHost" xml:"SubscriptionHost"`

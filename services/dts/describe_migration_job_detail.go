@@ -85,13 +85,13 @@ type DescribeMigrationJobDetailRequest struct {
 // DescribeMigrationJobDetailResponse is the response struct for api DescribeMigrationJobDetail
 type DescribeMigrationJobDetailResponse struct {
 	*responses.BaseResponse
-	ErrCode                           string                            `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                        string                            `json:"ErrMessage" xml:"ErrMessage"`
-	PageNumber                        int                               `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount                   int                               `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId                         string                            `json:"RequestId" xml:"RequestId"`
+	ErrCode                           string                            `json:"ErrCode" xml:"ErrCode"`
+	PageRecordCount                   int                               `json:"PageRecordCount" xml:"PageRecordCount"`
 	Success                           string                            `json:"Success" xml:"Success"`
 	TotalRecordCount                  int64                             `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	ErrMessage                        string                            `json:"ErrMessage" xml:"ErrMessage"`
+	PageNumber                        int                               `json:"PageNumber" xml:"PageNumber"`
 	DataInitializationDetailList      DataInitializationDetailList      `json:"DataInitializationDetailList" xml:"DataInitializationDetailList"`
 	DataSynchronizationDetailList     DataSynchronizationDetailList     `json:"DataSynchronizationDetailList" xml:"DataSynchronizationDetailList"`
 	StructureInitializationDetailList StructureInitializationDetailList `json:"StructureInitializationDetailList" xml:"StructureInitializationDetailList"`

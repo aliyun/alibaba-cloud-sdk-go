@@ -18,6 +18,7 @@ package dts
 // DtsJobStatus is a nested struct in dts response
 type DtsJobStatus struct {
 	Status                        string                        `json:"Status" xml:"Status"`
+	OriginType                    string                        `json:"OriginType" xml:"OriginType"`
 	DtsJobName                    string                        `json:"DtsJobName" xml:"DtsJobName"`
 	Delay                         int64                         `json:"Delay" xml:"Delay"`
 	ErrorMessage                  string                        `json:"ErrorMessage" xml:"ErrorMessage"`

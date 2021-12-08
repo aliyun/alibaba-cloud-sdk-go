@@ -98,12 +98,12 @@ type DescribeConnectionStatusRequest struct {
 // DescribeConnectionStatusResponse is the response struct for api DescribeConnectionStatus
 type DescribeConnectionStatusResponse struct {
 	*responses.BaseResponse
-	ErrCode                     string                 `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                  string                 `json:"ErrMessage" xml:"ErrMessage"`
-	RequestId                   string                 `json:"RequestId" xml:"RequestId"`
-	Success                     string                 `json:"Success" xml:"Success"`
 	SourceConnectionStatus      map[string]interface{} `json:"SourceConnectionStatus" xml:"SourceConnectionStatus"`
 	DestinationConnectionStatus map[string]interface{} `json:"DestinationConnectionStatus" xml:"DestinationConnectionStatus"`
+	RequestId                   string                 `json:"RequestId" xml:"RequestId"`
+	ErrCode                     string                 `json:"ErrCode" xml:"ErrCode"`
+	Success                     string                 `json:"Success" xml:"Success"`
+	ErrMessage                  string                 `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateDescribeConnectionStatusRequest creates a request to invoke DescribeConnectionStatus API

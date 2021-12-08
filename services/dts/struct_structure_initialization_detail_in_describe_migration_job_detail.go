@@ -17,12 +17,12 @@ package dts
 
 // StructureInitializationDetailInDescribeMigrationJobDetail is a nested struct in dts response
 type StructureInitializationDetailInDescribeMigrationJobDetail struct {
-	DestinationOwnerDBName string         `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
-	ErrorMessage           string         `json:"ErrorMessage" xml:"ErrorMessage"`
-	ObjectDefinition       string         `json:"ObjectDefinition" xml:"ObjectDefinition"`
-	ObjectName             string         `json:"ObjectName" xml:"ObjectName"`
-	ObjectType             string         `json:"ObjectType" xml:"ObjectType"`
-	SourceOwnerDBName      string         `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
 	Status                 string         `json:"Status" xml:"Status"`
+	SourceOwnerDBName      string         `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
+	ObjectDefinition       string         `json:"ObjectDefinition" xml:"ObjectDefinition"`
+	ObjectType             string         `json:"ObjectType" xml:"ObjectType"`
+	ErrorMessage           string         `json:"ErrorMessage" xml:"ErrorMessage"`
+	DestinationOwnerDBName string         `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
+	ObjectName             string         `json:"ObjectName" xml:"ObjectName"`
 	ConstraintList         ConstraintList `json:"ConstraintList" xml:"ConstraintList"`
 }

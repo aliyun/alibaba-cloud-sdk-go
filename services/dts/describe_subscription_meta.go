@@ -80,11 +80,11 @@ type DescribeSubscriptionMetaRequest struct {
 // DescribeSubscriptionMetaResponse is the response struct for api DescribeSubscriptionMeta
 type DescribeSubscriptionMetaResponse struct {
 	*responses.BaseResponse
-	ErrCode              string                     `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage           string                     `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode       string                     `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId            string                     `json:"RequestId" xml:"RequestId"`
+	ErrCode              string                     `json:"ErrCode" xml:"ErrCode"`
 	Success              string                     `json:"Success" xml:"Success"`
+	ErrMessage           string                     `json:"ErrMessage" xml:"ErrMessage"`
 	SubscriptionMetaList []SubscriptionMetaListItem `json:"SubscriptionMetaList" xml:"SubscriptionMetaList"`
 }
 

@@ -80,10 +80,10 @@ type StartSynchronizationJobRequest struct {
 // StartSynchronizationJobResponse is the response struct for api StartSynchronizationJob
 type StartSynchronizationJobResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateStartSynchronizationJobRequest creates a request to invoke StartSynchronizationJob API

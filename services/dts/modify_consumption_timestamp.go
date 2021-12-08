@@ -80,10 +80,10 @@ type ModifyConsumptionTimestampRequest struct {
 // ModifyConsumptionTimestampResponse is the response struct for api ModifyConsumptionTimestamp
 type ModifyConsumptionTimestampResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateModifyConsumptionTimestampRequest creates a request to invoke ModifyConsumptionTimestamp API

@@ -87,11 +87,11 @@ type SwitchSynchronizationEndpointRequest struct {
 // SwitchSynchronizationEndpointResponse is the response struct for api SwitchSynchronizationEndpoint
 type SwitchSynchronizationEndpointResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Success    string `json:"Success" xml:"Success"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	TaskId     string `json:"TaskId" xml:"TaskId"`
+	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateSwitchSynchronizationEndpointRequest creates a request to invoke SwitchSynchronizationEndpoint API

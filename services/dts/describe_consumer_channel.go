@@ -81,14 +81,14 @@ type DescribeConsumerChannelRequest struct {
 // DescribeConsumerChannelResponse is the response struct for api DescribeConsumerChannel
 type DescribeConsumerChannelResponse struct {
 	*responses.BaseResponse
-	ErrCode          string            `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage       string            `json:"ErrMessage" xml:"ErrMessage"`
-	RequestId        string            `json:"RequestId" xml:"RequestId"`
-	Success          string            `json:"Success" xml:"Success"`
 	HttpStatusCode   string            `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	PageNumber       int               `json:"PageNumber" xml:"PageNumber"`
+	RequestId        string            `json:"RequestId" xml:"RequestId"`
+	ErrCode          string            `json:"ErrCode" xml:"ErrCode"`
 	PageRecordCount  int               `json:"PageRecordCount" xml:"PageRecordCount"`
+	Success          string            `json:"Success" xml:"Success"`
 	TotalRecordCount int64             `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	ErrMessage       string            `json:"ErrMessage" xml:"ErrMessage"`
+	PageNumber       int               `json:"PageNumber" xml:"PageNumber"`
 	ConsumerChannels []ConsumerChannel `json:"ConsumerChannels" xml:"ConsumerChannels"`
 }
 

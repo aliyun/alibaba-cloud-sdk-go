@@ -81,10 +81,10 @@ type DescribeInitializationStatusRequest struct {
 // DescribeInitializationStatusResponse is the response struct for api DescribeInitializationStatus
 type DescribeInitializationStatusResponse struct {
 	*responses.BaseResponse
-	ErrCode                        string                          `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage                     string                          `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId                      string                          `json:"RequestId" xml:"RequestId"`
+	ErrCode                        string                          `json:"ErrCode" xml:"ErrCode"`
 	Success                        string                          `json:"Success" xml:"Success"`
+	ErrMessage                     string                          `json:"ErrMessage" xml:"ErrMessage"`
 	DataInitializationDetails      []DataInitializationDetail      `json:"DataInitializationDetails" xml:"DataInitializationDetails"`
 	DataSynchronizationDetails     []DataSynchronizationDetail     `json:"DataSynchronizationDetails" xml:"DataSynchronizationDetails"`
 	StructureInitializationDetails []StructureInitializationDetail `json:"StructureInitializationDetails" xml:"StructureInitializationDetails"`

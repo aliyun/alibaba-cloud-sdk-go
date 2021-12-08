@@ -81,18 +81,18 @@ type DescribeSynchronizationJobAlertRequest struct {
 // DescribeSynchronizationJobAlertResponse is the response struct for api DescribeSynchronizationJobAlert
 type DescribeSynchronizationJobAlertResponse struct {
 	*responses.BaseResponse
-	DelayAlertPhone          string `json:"DelayAlertPhone" xml:"DelayAlertPhone"`
-	DelayAlertStatus         string `json:"DelayAlertStatus" xml:"DelayAlertStatus"`
-	DelayOverSeconds         string `json:"DelayOverSeconds" xml:"DelayOverSeconds"`
-	ErrCode                  string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage               string `json:"ErrMessage" xml:"ErrMessage"`
-	ErrorAlertPhone          string `json:"ErrorAlertPhone" xml:"ErrorAlertPhone"`
-	ErrorAlertStatus         string `json:"ErrorAlertStatus" xml:"ErrorAlertStatus"`
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	Success                  string `json:"Success" xml:"Success"`
-	SynchronizationDirection string `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
-	SynchronizationJobId     string `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
 	SynchronizationJobName   string `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
+	ErrorAlertStatus         string `json:"ErrorAlertStatus" xml:"ErrorAlertStatus"`
+	ErrCode                  string `json:"ErrCode" xml:"ErrCode"`
+	Success                  string `json:"Success" xml:"Success"`
+	ErrorAlertPhone          string `json:"ErrorAlertPhone" xml:"ErrorAlertPhone"`
+	ErrMessage               string `json:"ErrMessage" xml:"ErrMessage"`
+	DelayAlertStatus         string `json:"DelayAlertStatus" xml:"DelayAlertStatus"`
+	DelayAlertPhone          string `json:"DelayAlertPhone" xml:"DelayAlertPhone"`
+	DelayOverSeconds         string `json:"DelayOverSeconds" xml:"DelayOverSeconds"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	SynchronizationJobId     string `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
+	SynchronizationDirection string `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
 }
 
 // CreateDescribeSynchronizationJobAlertRequest creates a request to invoke DescribeSynchronizationJobAlert API

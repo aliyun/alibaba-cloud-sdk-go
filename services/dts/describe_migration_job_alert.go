@@ -80,17 +80,17 @@ type DescribeMigrationJobAlertRequest struct {
 // DescribeMigrationJobAlertResponse is the response struct for api DescribeMigrationJobAlert
 type DescribeMigrationJobAlertResponse struct {
 	*responses.BaseResponse
-	DelayAlertPhone  string `json:"DelayAlertPhone" xml:"DelayAlertPhone"`
-	DelayAlertStatus string `json:"DelayAlertStatus" xml:"DelayAlertStatus"`
-	DelayOverSeconds string `json:"DelayOverSeconds" xml:"DelayOverSeconds"`
-	ErrCode          string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage       string `json:"ErrMessage" xml:"ErrMessage"`
-	ErrorAlertPhone  string `json:"ErrorAlertPhone" xml:"ErrorAlertPhone"`
-	ErrorAlertStatus string `json:"ErrorAlertStatus" xml:"ErrorAlertStatus"`
-	MigrationJobId   string `json:"MigrationJobId" xml:"MigrationJobId"`
-	MigrationJobName string `json:"MigrationJobName" xml:"MigrationJobName"`
 	RequestId        string `json:"RequestId" xml:"RequestId"`
+	MigrationJobName string `json:"MigrationJobName" xml:"MigrationJobName"`
+	ErrorAlertStatus string `json:"ErrorAlertStatus" xml:"ErrorAlertStatus"`
+	ErrCode          string `json:"ErrCode" xml:"ErrCode"`
 	Success          string `json:"Success" xml:"Success"`
+	ErrorAlertPhone  string `json:"ErrorAlertPhone" xml:"ErrorAlertPhone"`
+	ErrMessage       string `json:"ErrMessage" xml:"ErrMessage"`
+	DelayAlertStatus string `json:"DelayAlertStatus" xml:"DelayAlertStatus"`
+	DelayAlertPhone  string `json:"DelayAlertPhone" xml:"DelayAlertPhone"`
+	MigrationJobId   string `json:"MigrationJobId" xml:"MigrationJobId"`
+	DelayOverSeconds string `json:"DelayOverSeconds" xml:"DelayOverSeconds"`
 }
 
 // CreateDescribeMigrationJobAlertRequest creates a request to invoke DescribeMigrationJobAlert API

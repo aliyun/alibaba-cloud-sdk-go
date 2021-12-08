@@ -17,10 +17,10 @@ package dts
 
 // DescribeConsumerChannel is a nested struct in dts response
 type DescribeConsumerChannel struct {
-	ConsumerGroupID       string `json:"ConsumerGroupID" xml:"ConsumerGroupID"`
-	ConsumerGroupName     string `json:"ConsumerGroupName" xml:"ConsumerGroupName"`
 	ConsumerGroupUserName string `json:"ConsumerGroupUserName" xml:"ConsumerGroupUserName"`
-	ConsumptionCheckpoint string `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
+	ConsumerGroupID       string `json:"ConsumerGroupID" xml:"ConsumerGroupID"`
 	MessageDelay          int64  `json:"MessageDelay" xml:"MessageDelay"`
+	ConsumerGroupName     string `json:"ConsumerGroupName" xml:"ConsumerGroupName"`
+	ConsumptionCheckpoint string `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
 	UnconsumedData        int64  `json:"UnconsumedData" xml:"UnconsumedData"`
 }

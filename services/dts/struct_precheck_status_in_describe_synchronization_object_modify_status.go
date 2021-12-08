@@ -17,7 +17,7 @@ package dts
 
 // PrecheckStatusInDescribeSynchronizationObjectModifyStatus is a nested struct in dts response
 type PrecheckStatusInDescribeSynchronizationObjectModifyStatus struct {
-	Percent string      `json:"Percent" xml:"Percent"`
 	Status  string      `json:"Status" xml:"Status"`
+	Percent string      `json:"Percent" xml:"Percent"`
 	Detail  []CheckItem `json:"Detail" xml:"Detail"`
 }

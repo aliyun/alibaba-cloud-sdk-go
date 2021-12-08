@@ -81,11 +81,11 @@ type ModifySynchronizationObjectRequest struct {
 // ModifySynchronizationObjectResponse is the response struct for api ModifySynchronizationObject
 type ModifySynchronizationObjectResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Success    string `json:"Success" xml:"Success"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	TaskId     string `json:"TaskId" xml:"TaskId"`
+	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateModifySynchronizationObjectRequest creates a request to invoke ModifySynchronizationObject API

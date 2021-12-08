@@ -17,8 +17,8 @@ package dts
 
 // MonitorRule is a nested struct in dts response
 type MonitorRule struct {
-	Phone         string `json:"Phone" xml:"Phone"`
+	Type          string `json:"Type" xml:"Type"`
 	DelayRuleTime int64  `json:"DelayRuleTime" xml:"DelayRuleTime"`
 	State         string `json:"State" xml:"State"`
-	Type          string `json:"Type" xml:"Type"`
+	Phone         string `json:"Phone" xml:"Phone"`
 }

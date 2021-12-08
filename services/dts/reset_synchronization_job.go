@@ -80,10 +80,10 @@ type ResetSynchronizationJobRequest struct {
 // ResetSynchronizationJobResponse is the response struct for api ResetSynchronizationJob
 type ResetSynchronizationJobResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateResetSynchronizationJobRequest creates a request to invoke ResetSynchronizationJob API

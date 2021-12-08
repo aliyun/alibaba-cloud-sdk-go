@@ -80,17 +80,17 @@ type RenewInstanceRequest struct {
 // RenewInstanceResponse is the response struct for api RenewInstance
 type RenewInstanceResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	EndTime        string `json:"EndTime" xml:"EndTime"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
 	Code           string `json:"Code" xml:"Code"`
-	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
 	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	EndTime        string `json:"EndTime" xml:"EndTime"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateRenewInstanceRequest creates a request to invoke RenewInstance API

@@ -17,13 +17,13 @@ package dts
 
 // MigrationJob is a nested struct in dts response
 type MigrationJob struct {
-	MigrationJobClass       string                      `json:"MigrationJobClass" xml:"MigrationJobClass"`
-	MigrationJobID          string                      `json:"MigrationJobID" xml:"MigrationJobID"`
 	MigrationJobName        string                      `json:"MigrationJobName" xml:"MigrationJobName"`
 	MigrationJobStatus      string                      `json:"MigrationJobStatus" xml:"MigrationJobStatus"`
 	PayType                 string                      `json:"PayType" xml:"PayType"`
-	JobCreateTime           string                      `json:"JobCreateTime" xml:"JobCreateTime"`
+	MigrationJobClass       string                      `json:"MigrationJobClass" xml:"MigrationJobClass"`
 	InstanceCreateTime      string                      `json:"InstanceCreateTime" xml:"InstanceCreateTime"`
+	MigrationJobID          string                      `json:"MigrationJobID" xml:"MigrationJobID"`
+	JobCreateTime           string                      `json:"JobCreateTime" xml:"JobCreateTime"`
 	DataInitialization      DataInitialization          `json:"DataInitialization" xml:"DataInitialization"`
 	DataSynchronization     DataSynchronization         `json:"DataSynchronization" xml:"DataSynchronization"`
 	DestinationEndpoint     DestinationEndpoint         `json:"DestinationEndpoint" xml:"DestinationEndpoint"`

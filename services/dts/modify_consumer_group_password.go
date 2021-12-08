@@ -84,10 +84,10 @@ type ModifyConsumerGroupPasswordRequest struct {
 // ModifyConsumerGroupPasswordResponse is the response struct for api ModifyConsumerGroupPassword
 type ModifyConsumerGroupPasswordResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateModifyConsumerGroupPasswordRequest creates a request to invoke ModifyConsumerGroupPassword API

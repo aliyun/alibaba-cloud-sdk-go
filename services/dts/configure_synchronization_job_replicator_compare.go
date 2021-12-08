@@ -82,10 +82,10 @@ type ConfigureSynchronizationJobReplicatorCompareRequest struct {
 // ConfigureSynchronizationJobReplicatorCompareResponse is the response struct for api ConfigureSynchronizationJobReplicatorCompare
 type ConfigureSynchronizationJobReplicatorCompareResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateConfigureSynchronizationJobReplicatorCompareRequest creates a request to invoke ConfigureSynchronizationJobReplicatorCompare API

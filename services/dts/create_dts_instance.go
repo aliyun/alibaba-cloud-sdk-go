@@ -77,6 +77,7 @@ type CreateDtsInstanceRequest struct {
 	DatabaseCount                 requests.Integer `position:"Query" name:"DatabaseCount"`
 	JobId                         string           `position:"Query" name:"JobId"`
 	ComputeUnit                   requests.Integer `position:"Query" name:"ComputeUnit"`
+	FeeType                       string           `position:"Query" name:"FeeType"`
 	DestinationRegion             string           `position:"Query" name:"DestinationRegion"`
 	Period                        string           `position:"Query" name:"Period"`
 	DestinationEndpointEngineName string           `position:"Query" name:"DestinationEndpointEngineName"`
@@ -92,12 +93,12 @@ type CreateDtsInstanceRequest struct {
 // CreateDtsInstanceResponse is the response struct for api CreateDtsInstance
 type CreateDtsInstanceResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 	JobId      string `json:"JobId" xml:"JobId"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
+	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 }
 
 // CreateCreateDtsInstanceRequest creates a request to invoke CreateDtsInstance API

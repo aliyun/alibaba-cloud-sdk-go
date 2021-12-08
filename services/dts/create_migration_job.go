@@ -81,11 +81,11 @@ type CreateMigrationJobRequest struct {
 // CreateMigrationJobResponse is the response struct for api CreateMigrationJob
 type CreateMigrationJobResponse struct {
 	*responses.BaseResponse
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
-	MigrationJobId string `json:"MigrationJobId" xml:"MigrationJobId"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	MigrationJobId string `json:"MigrationJobId" xml:"MigrationJobId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	Success        string `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateCreateMigrationJobRequest creates a request to invoke CreateMigrationJob API

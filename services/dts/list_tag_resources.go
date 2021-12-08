@@ -86,11 +86,11 @@ type ListTagResourcesTag struct {
 // ListTagResourcesResponse is the response struct for api ListTagResources
 type ListTagResourcesResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	NextToken    string       `json:"NextToken" xml:"NextToken"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	ErrCode      string       `json:"ErrCode" xml:"ErrCode"`
 	Success      bool         `json:"Success" xml:"Success"`
 	ErrMessage   string       `json:"ErrMessage" xml:"ErrMessage"`
-	ErrCode      string       `json:"ErrCode" xml:"ErrCode"`
 	TagResources TagResources `json:"TagResources" xml:"TagResources"`
 }
 

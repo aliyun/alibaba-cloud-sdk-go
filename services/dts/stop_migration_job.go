@@ -80,10 +80,10 @@ type StopMigrationJobRequest struct {
 // StopMigrationJobResponse is the response struct for api StopMigrationJob
 type StopMigrationJobResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateStopMigrationJobRequest creates a request to invoke StopMigrationJob API

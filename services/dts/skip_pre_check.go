@@ -81,17 +81,17 @@ type SkipPreCheckRequest struct {
 // SkipPreCheckResponse is the response struct for api SkipPreCheck
 type SkipPreCheckResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	Success        bool   `json:"Success" xml:"Success"`
-	MigrationJobId string `json:"MigrationJobId" xml:"MigrationJobId"`
-	ScheduleJobId  string `json:"ScheduleJobId" xml:"ScheduleJobId"`
-	SkipItems      string `json:"SkipItems" xml:"SkipItems"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	SkipNames      string `json:"SkipNames" xml:"SkipNames"`
+	Code           string `json:"Code" xml:"Code"`
+	ScheduleJobId  string `json:"ScheduleJobId" xml:"ScheduleJobId"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	MigrationJobId string `json:"MigrationJobId" xml:"MigrationJobId"`
+	SkipItems      string `json:"SkipItems" xml:"SkipItems"`
 }
 
 // CreateSkipPreCheckRequest creates a request to invoke SkipPreCheck API

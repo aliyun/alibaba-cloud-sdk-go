@@ -104,13 +104,13 @@ type ConfigureSubscriptionRequest struct {
 // ConfigureSubscriptionResponse is the response struct for api ConfigureSubscription
 type ConfigureSubscriptionResponse struct {
 	*responses.BaseResponse
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        string `json:"Success" xml:"Success"`
-	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
-	DtsInstanceId  string `json:"DtsInstanceId" xml:"DtsInstanceId"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	DtsJobId       string `json:"DtsJobId" xml:"DtsJobId"`
+	Success        string `json:"Success" xml:"Success"`
+	DtsInstanceId  string `json:"DtsInstanceId" xml:"DtsInstanceId"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateConfigureSubscriptionRequest creates a request to invoke ConfigureSubscription API

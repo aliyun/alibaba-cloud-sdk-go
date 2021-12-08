@@ -82,11 +82,11 @@ type ModifyConsumerChannelRequest struct {
 // ModifyConsumerChannelResponse is the response struct for api ModifyConsumerChannel
 type ModifyConsumerChannelResponse struct {
 	*responses.BaseResponse
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        string `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        string `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateModifyConsumerChannelRequest creates a request to invoke ModifyConsumerChannel API

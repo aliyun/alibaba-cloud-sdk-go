@@ -86,9 +86,9 @@ type TagResourcesTag struct {
 type TagResourcesResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	Success    bool   `json:"Success" xml:"Success"`
 	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 }
 
 // CreateTagResourcesRequest creates a request to invoke TagResources API

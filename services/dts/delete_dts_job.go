@@ -79,13 +79,13 @@ type DeleteDtsJobRequest struct {
 // DeleteDtsJobResponse is the response struct for api DeleteDtsJob
 type DeleteDtsJobResponse struct {
 	*responses.BaseResponse
-	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
 }
 
 // CreateDeleteDtsJobRequest creates a request to invoke DeleteDtsJob API

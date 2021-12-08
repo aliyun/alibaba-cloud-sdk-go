@@ -90,11 +90,11 @@ type CreateSynchronizationJobRequest struct {
 // CreateSynchronizationJobResponse is the response struct for api CreateSynchronizationJob
 type CreateSynchronizationJobResponse struct {
 	*responses.BaseResponse
-	ErrCode              string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage           string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId            string `json:"RequestId" xml:"RequestId"`
+	ErrCode              string `json:"ErrCode" xml:"ErrCode"`
 	Success              string `json:"Success" xml:"Success"`
 	SynchronizationJobId string `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
+	ErrMessage           string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateCreateSynchronizationJobRequest creates a request to invoke CreateSynchronizationJob API

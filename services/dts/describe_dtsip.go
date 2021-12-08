@@ -78,12 +78,12 @@ type DescribeDTSIPRequest struct {
 // DescribeDTSIPResponse is the response struct for api DescribeDTSIP
 type DescribeDTSIPResponse struct {
 	*responses.BaseResponse
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	Success        string `json:"Success" xml:"Success"`
-	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
 }
 
 // CreateDescribeDTSIPRequest creates a request to invoke DescribeDTSIP API

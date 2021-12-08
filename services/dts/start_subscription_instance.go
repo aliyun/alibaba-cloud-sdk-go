@@ -79,11 +79,11 @@ type StartSubscriptionInstanceRequest struct {
 // StartSubscriptionInstanceResponse is the response struct for api StartSubscriptionInstance
 type StartSubscriptionInstanceResponse struct {
 	*responses.BaseResponse
-	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Success    string `json:"Success" xml:"Success"`
+	ErrCode    string `json:"ErrCode" xml:"ErrCode"`
 	TaskId     string `json:"TaskId" xml:"TaskId"`
+	Success    string `json:"Success" xml:"Success"`
+	ErrMessage string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateStartSubscriptionInstanceRequest creates a request to invoke StartSubscriptionInstance API

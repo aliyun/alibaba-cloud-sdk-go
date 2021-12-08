@@ -79,11 +79,11 @@ type DeleteConsumerChannelRequest struct {
 // DeleteConsumerChannelResponse is the response struct for api DeleteConsumerChannel
 type DeleteConsumerChannelResponse struct {
 	*responses.BaseResponse
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        string `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        string `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateDeleteConsumerChannelRequest creates a request to invoke DeleteConsumerChannel API

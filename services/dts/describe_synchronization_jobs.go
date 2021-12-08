@@ -91,8 +91,8 @@ type DescribeSynchronizationJobsTag struct {
 type DescribeSynchronizationJobsResponse struct {
 	*responses.BaseResponse
 	PageNumber               int                       `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount          int                       `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId                string                    `json:"RequestId" xml:"RequestId"`
+	PageRecordCount          int                       `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalRecordCount         int64                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	SynchronizationInstances []SynchronizationInstance `json:"SynchronizationInstances" xml:"SynchronizationInstances"`
 }
