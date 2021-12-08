@@ -83,9 +83,9 @@ type OperateBlackNoRequest struct {
 // OperateBlackNoResponse is the response struct for api OperateBlackNo
 type OperateBlackNoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOperateBlackNoRequest creates a request to invoke OperateBlackNo API

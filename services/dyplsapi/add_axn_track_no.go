@@ -83,9 +83,9 @@ type AddAxnTrackNoRequest struct {
 // AddAxnTrackNoResponse is the response struct for api AddAxnTrackNo
 type AddAxnTrackNoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddAxnTrackNoRequest creates a request to invoke AddAxnTrackNo API

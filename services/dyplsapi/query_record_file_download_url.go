@@ -83,9 +83,9 @@ type QueryRecordFileDownloadUrlRequest struct {
 // QueryRecordFileDownloadUrlResponse is the response struct for api QueryRecordFileDownloadUrl
 type QueryRecordFileDownloadUrlResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Code        string `json:"Code" xml:"Code"`
 	Message     string `json:"Message" xml:"Message"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DownloadUrl string `json:"DownloadUrl" xml:"DownloadUrl"`
 }
 

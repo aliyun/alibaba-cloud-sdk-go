@@ -17,7 +17,7 @@ package dyplsapi
 
 // SecretRemainDTO is a nested struct in dyplsapi response
 type SecretRemainDTO struct {
-	City          string        `json:"City" xml:"City"`
 	Amount        int64         `json:"Amount" xml:"Amount"`
+	City          string        `json:"City" xml:"City"`
 	RemainDTOList RemainDTOList `json:"RemainDTOList" xml:"RemainDTOList"`
 }

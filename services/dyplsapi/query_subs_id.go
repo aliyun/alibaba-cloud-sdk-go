@@ -81,9 +81,9 @@ type QuerySubsIdRequest struct {
 // QuerySubsIdResponse is the response struct for api QuerySubsId
 type QuerySubsIdResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	SubsId    string `json:"SubsId" xml:"SubsId"`
 }
 

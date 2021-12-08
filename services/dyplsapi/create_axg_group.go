@@ -83,9 +83,9 @@ type CreateAxgGroupRequest struct {
 // CreateAxgGroupResponse is the response struct for api CreateAxgGroup
 type CreateAxgGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	GroupId   int64  `json:"GroupId" xml:"GroupId"`
 }
 

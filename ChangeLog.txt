@@ -1,3 +1,7 @@
+2021-12-08 Version: v1.61.1376
+- Generated 2017-05-25 for `Dyplsapi`.
+- Add API for New Features.
+
 2021-12-08 Version: v1.61.1375
 - Generated 2020-01-01 for `Dts`.
 - Fix CreateDtsInstance bug.

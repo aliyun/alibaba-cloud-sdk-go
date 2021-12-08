@@ -18,6 +18,6 @@ package dyplsapi
 // SecretBindDTO is a nested struct in dyplsapi response
 type SecretBindDTO struct {
 	SubsId    string `json:"SubsId" xml:"SubsId"`
-	SecretNo  string `json:"SecretNo" xml:"SecretNo"`
 	Extension string `json:"Extension" xml:"Extension"`
+	SecretNo  string `json:"SecretNo" xml:"SecretNo"`
 }

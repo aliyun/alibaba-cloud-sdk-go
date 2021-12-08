@@ -71,20 +71,45 @@ func (client *Client) CreatePickUpWaybillWithCallback(request *CreatePickUpWaybi
 // CreatePickUpWaybillRequest is the request struct for api CreatePickUpWaybill
 type CreatePickUpWaybillRequest struct {
 	*requests.RpcRequest
-	ConsigneeName    string `position:"Query" name:"ConsigneeName"`
-	OrderChannels    string `position:"Query" name:"OrderChannels"`
-	SendAddress      string `position:"Query" name:"SendAddress"`
-	OuterOrderCode   string `position:"Query" name:"OuterOrderCode"`
-	Remark           string `position:"Query" name:"Remark"`
-	CpCode           string `position:"Query" name:"CpCode"`
-	SendMobile       string `position:"Query" name:"SendMobile"`
-	ConsigneeMobile  string `position:"Query" name:"ConsigneeMobile"`
-	ContentType      string `position:"Header" name:"Content-Type"`
-	ConsigneeAddress string `position:"Query" name:"ConsigneeAddress"`
-	SendPhone        string `position:"Query" name:"SendPhone"`
-	GoodsInfos       string `position:"Query" name:"GoodsInfos"`
-	SendName         string `position:"Query" name:"SendName"`
-	ConsigneePhone   string `position:"Query" name:"ConsigneePhone"`
+	ConsigneeName    string                              `position:"Query" name:"ConsigneeName"`
+	OrderChannels    string                              `position:"Query" name:"OrderChannels"`
+	SendAddress      CreatePickUpWaybillSendAddress      `position:"Query" name:"SendAddress"  type:"Struct"`
+	OuterOrderCode   string                              `position:"Query" name:"OuterOrderCode"`
+	Remark           string                              `position:"Query" name:"Remark"`
+	CpCode           string                              `position:"Query" name:"CpCode"`
+	SendMobile       string                              `position:"Query" name:"SendMobile"`
+	ConsigneeMobile  string                              `position:"Query" name:"ConsigneeMobile"`
+	ContentType      string                              `position:"Header" name:"Content-Type"`
+	ConsigneeAddress CreatePickUpWaybillConsigneeAddress `position:"Query" name:"ConsigneeAddress"  type:"Struct"`
+	SendPhone        string                              `position:"Query" name:"SendPhone"`
+	GoodsInfos       *[]CreatePickUpWaybillGoodsInfos    `position:"Query" name:"GoodsInfos"  type:"Json"`
+	SendName         string                              `position:"Query" name:"SendName"`
+	ConsigneePhone   string                              `position:"Query" name:"ConsigneePhone"`
+}
+
+// CreatePickUpWaybillGoodsInfos is a repeated param struct in CreatePickUpWaybillRequest
+type CreatePickUpWaybillGoodsInfos struct {
+	Name     string `name:"Name"`
+	Weight   string `name:"Weight"`
+	Quantity string `name:"Quantity"`
+}
+
+// CreatePickUpWaybillSendAddress is a repeated param struct in CreatePickUpWaybillRequest
+type CreatePickUpWaybillSendAddress struct {
+	ProvinceName  string `name:"ProvinceName"`
+	CityName      string `name:"CityName"`
+	AreaName      string `name:"AreaName"`
+	TownName      string `name:"TownName"`
+	AddressDetail string `name:"AddressDetail"`
+}
+
+// CreatePickUpWaybillConsigneeAddress is a repeated param struct in CreatePickUpWaybillRequest
+type CreatePickUpWaybillConsigneeAddress struct {
+	ProvinceName  string `name:"ProvinceName"`
+	CityName      string `name:"CityName"`
+	AreaName      string `name:"AreaName"`
+	TownName      string `name:"TownName"`
+	AddressDetail string `name:"AddressDetail"`
 }
 
 // CreatePickUpWaybillResponse is the response struct for api CreatePickUpWaybill
