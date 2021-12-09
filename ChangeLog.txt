@@ -1,3 +1,7 @@
+2021-12-09 Version: v1.61.1378
+- Generated 2019-05-06 for `sae`.
+- Support ACR EE, OSS, EIP for deploy.
+
 2021-12-08 Version: v1.61.1377
 - Generated 2019-05-31 for `mse`.
 - HeterogeInterworking.

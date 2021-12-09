@@ -78,11 +78,11 @@ type DescribeApplicationStatusRequest struct {
 type DescribeApplicationStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string                          `json:"RequestId" xml:"RequestId"`
-	Code      string                          `json:"Code" xml:"Code"`
 	Message   string                          `json:"Message" xml:"Message"`
 	TraceId   string                          `json:"TraceId" xml:"TraceId"`
-	Success   bool                            `json:"Success" xml:"Success"`
 	ErrorCode string                          `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string                          `json:"Code" xml:"Code"`
+	Success   bool                            `json:"Success" xml:"Success"`
 	Data      DataInDescribeApplicationStatus `json:"Data" xml:"Data"`
 }
 

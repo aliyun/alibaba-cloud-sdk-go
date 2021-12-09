@@ -17,13 +17,13 @@ package sae
 
 // ApplicationScalingRule is a nested struct in sae response
 type ApplicationScalingRule struct {
-	ScaleRuleEnabled bool   `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
-	LastDisableTime  int64  `json:"LastDisableTime" xml:"LastDisableTime"`
+	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
 	AppId            string `json:"AppId" xml:"AppId"`
 	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
-	ScaleRuleName    string `json:"ScaleRuleName" xml:"ScaleRuleName"`
+	LastDisableTime  int64  `json:"LastDisableTime" xml:"LastDisableTime"`
+	ScaleRuleEnabled bool   `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
 	ScaleRuleType    string `json:"ScaleRuleType" xml:"ScaleRuleType"`
+	ScaleRuleName    string `json:"ScaleRuleName" xml:"ScaleRuleName"`
 	Timer            Timer  `json:"Timer" xml:"Timer"`
 	Metric           Metric `json:"Metric" xml:"Metric"`
 }

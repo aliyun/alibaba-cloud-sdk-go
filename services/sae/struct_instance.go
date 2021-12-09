@@ -17,14 +17,15 @@ package sae
 
 // Instance is a nested struct in sae response
 type Instance struct {
-	InstanceContainerIp       string `json:"InstanceContainerIp" xml:"InstanceContainerIp"`
-	InstanceHealthStatus      string `json:"InstanceHealthStatus" xml:"InstanceHealthStatus"`
-	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
-	VSwitchId                 string `json:"VSwitchId" xml:"VSwitchId"`
-	ImageUrl                  string `json:"ImageUrl" xml:"ImageUrl"`
-	InstanceContainerRestarts int64  `json:"InstanceContainerRestarts" xml:"InstanceContainerRestarts"`
-	PackageVersion            string `json:"PackageVersion" xml:"PackageVersion"`
-	InstanceContainerStatus   string `json:"InstanceContainerStatus" xml:"InstanceContainerStatus"`
 	CreateTimeStamp           int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	VSwitchId                 string `json:"VSwitchId" xml:"VSwitchId"`
+	InstanceContainerStatus   string `json:"InstanceContainerStatus" xml:"InstanceContainerStatus"`
+	InstanceHealthStatus      string `json:"InstanceHealthStatus" xml:"InstanceHealthStatus"`
+	InstanceContainerRestarts int64  `json:"InstanceContainerRestarts" xml:"InstanceContainerRestarts"`
 	GroupId                   string `json:"GroupId" xml:"GroupId"`
+	InstanceContainerIp       string `json:"InstanceContainerIp" xml:"InstanceContainerIp"`
+	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
+	ImageUrl                  string `json:"ImageUrl" xml:"ImageUrl"`
+	PackageVersion            string `json:"PackageVersion" xml:"PackageVersion"`
+	Eip                       string `json:"Eip" xml:"Eip"`
 }

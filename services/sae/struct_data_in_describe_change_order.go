@@ -18,20 +18,22 @@ package sae
 // DataInDescribeChangeOrder is a nested struct in sae response
 type DataInDescribeChangeOrder struct {
 	Status             int        `json:"Status" xml:"Status"`
-	Description        string     `json:"Description" xml:"Description"`
-	SupportAbortFreeze bool       `json:"SupportAbortFreeze" xml:"SupportAbortFreeze"`
+	SubStatus          int        `json:"SubStatus" xml:"SubStatus"`
+	ApprovalId         string     `json:"ApprovalId" xml:"ApprovalId"`
+	ErrorMessage       string     `json:"ErrorMessage" xml:"ErrorMessage"`
+	BatchWaitTime      int        `json:"BatchWaitTime" xml:"BatchWaitTime"`
 	CreateTime         string     `json:"CreateTime" xml:"CreateTime"`
+	BatchCount         int        `json:"BatchCount" xml:"BatchCount"`
+	CoTypeCode         string     `json:"CoTypeCode" xml:"CoTypeCode"`
+	SupportAbortFreeze bool       `json:"SupportAbortFreeze" xml:"SupportAbortFreeze"`
+	SupportRollback    bool       `json:"SupportRollback" xml:"SupportRollback"`
 	ChangeOrderId      string     `json:"ChangeOrderId" xml:"ChangeOrderId"`
-	BatchType          string     `json:"BatchType" xml:"BatchType"`
 	AppName            string     `json:"AppName" xml:"AppName"`
+	BatchType          string     `json:"BatchType" xml:"BatchType"`
+	Description        string     `json:"Description" xml:"Description"`
+	CoType             string     `json:"CoType" xml:"CoType"`
 	Auto               bool       `json:"Auto" xml:"Auto"`
 	CurrentPipelineId  string     `json:"CurrentPipelineId" xml:"CurrentPipelineId"`
-	CoTypeCode         string     `json:"CoTypeCode" xml:"CoTypeCode"`
-	SupportRollback    bool       `json:"SupportRollback" xml:"SupportRollback"`
-	BatchWaitTime      int        `json:"BatchWaitTime" xml:"BatchWaitTime"`
-	ErrorMessage       string     `json:"ErrorMessage" xml:"ErrorMessage"`
-	CoType             string     `json:"CoType" xml:"CoType"`
-	BatchCount         int        `json:"BatchCount" xml:"BatchCount"`
 	CoTargets          []string   `json:"CoTargets" xml:"CoTargets"`
 	Pipelines          []Pipeline `json:"Pipelines" xml:"Pipelines"`
 }

@@ -18,10 +18,10 @@ package sae
 // Pipeline is a nested struct in sae response
 type Pipeline struct {
 	Status        int    `json:"Status" xml:"Status"`
-	PipelineName  string `json:"PipelineName" xml:"PipelineName"`
-	ParallelCount int    `json:"ParallelCount" xml:"ParallelCount"`
-	UpdateTime    int64  `json:"UpdateTime" xml:"UpdateTime"`
 	StartTime     int64  `json:"StartTime" xml:"StartTime"`
-	PipelineId    string `json:"PipelineId" xml:"PipelineId"`
+	UpdateTime    int64  `json:"UpdateTime" xml:"UpdateTime"`
 	BatchType     int    `json:"BatchType" xml:"BatchType"`
+	ParallelCount int    `json:"ParallelCount" xml:"ParallelCount"`
+	PipelineName  string `json:"PipelineName" xml:"PipelineName"`
+	PipelineId    string `json:"PipelineId" xml:"PipelineId"`
 }

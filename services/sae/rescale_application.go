@@ -71,19 +71,20 @@ func (client *Client) RescaleApplicationWithCallback(request *RescaleApplication
 // RescaleApplicationRequest is the request struct for api RescaleApplication
 type RescaleApplicationRequest struct {
 	*requests.RoaRequest
-	MinReadyInstances requests.Integer `position:"Query" name:"MinReadyInstances"`
-	Replicas          requests.Integer `position:"Query" name:"Replicas"`
-	AppId             string           `position:"Query" name:"AppId"`
+	MinReadyInstances                requests.Integer `position:"Query" name:"MinReadyInstances"`
+	Replicas                         requests.Integer `position:"Query" name:"Replicas"`
+	AppId                            string           `position:"Query" name:"AppId"`
+	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
 }
 
 // RescaleApplicationResponse is the response struct for api RescaleApplication
 type RescaleApplicationResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

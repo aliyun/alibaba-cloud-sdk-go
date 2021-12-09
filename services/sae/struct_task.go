@@ -18,12 +18,12 @@ package sae
 // Task is a nested struct in sae response
 type Task struct {
 	Status           int    `json:"Status" xml:"Status"`
+	StageId          string `json:"StageId" xml:"StageId"`
+	ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode        string `json:"ErrorCode" xml:"ErrorCode"`
+	TaskName         string `json:"TaskName" xml:"TaskName"`
 	ErrorIgnore      int    `json:"ErrorIgnore" xml:"ErrorIgnore"`
-	TaskId           string `json:"TaskId" xml:"TaskId"`
 	Message          string `json:"Message" xml:"Message"`
 	ShowManualIgnore bool   `json:"ShowManualIgnore" xml:"ShowManualIgnore"`
-	TaskName         string `json:"TaskName" xml:"TaskName"`
-	StageId          string `json:"StageId" xml:"StageId"`
-	ErrorCode        string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+	TaskId           string `json:"TaskId" xml:"TaskId"`
 }

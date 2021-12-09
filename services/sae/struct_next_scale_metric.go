@@ -17,7 +17,7 @@ package sae
 
 // NextScaleMetric is a nested struct in sae response
 type NextScaleMetric struct {
+	NextScaleOutAverageUtilization int    `json:"NextScaleOutAverageUtilization" xml:"NextScaleOutAverageUtilization"`
 	NextScaleInAverageUtilization  int    `json:"NextScaleInAverageUtilization" xml:"NextScaleInAverageUtilization"`
 	Name                           string `json:"Name" xml:"Name"`
-	NextScaleOutAverageUtilization int    `json:"NextScaleOutAverageUtilization" xml:"NextScaleOutAverageUtilization"`
 }

@@ -17,7 +17,8 @@ package sae
 
 // Region is a nested struct in sae response
 type Region struct {
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
-	LocalName      string `json:"LocalName" xml:"LocalName"`
+	LocalName      string         `json:"LocalName" xml:"LocalName"`
+	RegionEndpoint string         `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	RegionId       string         `json:"RegionId" xml:"RegionId"`
+	RecommendZones RecommendZones `json:"RecommendZones" xml:"RecommendZones"`
 }

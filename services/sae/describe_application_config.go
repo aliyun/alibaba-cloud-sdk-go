@@ -78,8 +78,8 @@ type DescribeApplicationConfigRequest struct {
 // DescribeApplicationConfigResponse is the response struct for api DescribeApplicationConfig
 type DescribeApplicationConfigResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Code      string `json:"Code" xml:"Code"`

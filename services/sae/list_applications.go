@@ -74,19 +74,26 @@ type ListApplicationsRequest struct {
 	AppName     string           `position:"Query" name:"AppName"`
 	NamespaceId string           `position:"Query" name:"NamespaceId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	OrderBy     string           `position:"Query" name:"OrderBy"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	FieldValue  string           `position:"Query" name:"FieldValue"`
+	Reverse     requests.Boolean `position:"Query" name:"Reverse"`
+	FieldType   string           `position:"Query" name:"FieldType"`
 	Tags        string           `position:"Query" name:"Tags"`
 }
 
 // ListApplicationsResponse is the response struct for api ListApplications
 type ListApplicationsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	Code      string `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Message     string `json:"Message" xml:"Message"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	ErrorCode   string `json:"ErrorCode" xml:"ErrorCode"`
+	Code        string `json:"Code" xml:"Code"`
+	Success     bool   `json:"Success" xml:"Success"`
+	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
+	TotalSize   int    `json:"TotalSize" xml:"TotalSize"`
+	PageSize    int    `json:"PageSize" xml:"PageSize"`
+	Data        Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListApplicationsRequest creates a request to invoke ListApplications API

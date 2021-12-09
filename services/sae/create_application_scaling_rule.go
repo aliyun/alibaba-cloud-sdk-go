@@ -71,12 +71,13 @@ func (client *Client) CreateApplicationScalingRuleWithCallback(request *CreateAp
 // CreateApplicationScalingRuleRequest is the request struct for api CreateApplicationScalingRule
 type CreateApplicationScalingRuleRequest struct {
 	*requests.RoaRequest
-	ScalingRuleName   string `position:"Query" name:"ScalingRuleName"`
-	MinReadyInstances string `position:"Query" name:"MinReadyInstances"`
-	ScalingRuleTimer  string `position:"Query" name:"ScalingRuleTimer"`
-	ScalingRuleMetric string `position:"Query" name:"ScalingRuleMetric"`
-	AppId             string `position:"Query" name:"AppId"`
-	ScalingRuleType   string `position:"Query" name:"ScalingRuleType"`
+	ScalingRuleName   string           `position:"Query" name:"ScalingRuleName"`
+	MinReadyInstances string           `position:"Query" name:"MinReadyInstances"`
+	ScalingRuleEnable requests.Boolean `position:"Query" name:"ScalingRuleEnable"`
+	ScalingRuleTimer  string           `position:"Query" name:"ScalingRuleTimer"`
+	ScalingRuleMetric string           `position:"Query" name:"ScalingRuleMetric"`
+	AppId             string           `position:"Query" name:"AppId"`
+	ScalingRuleType   string           `position:"Query" name:"ScalingRuleType"`
 }
 
 // CreateApplicationScalingRuleResponse is the response struct for api CreateApplicationScalingRule

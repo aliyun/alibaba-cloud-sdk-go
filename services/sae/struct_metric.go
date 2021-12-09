@@ -17,10 +17,12 @@ package sae
 
 // Metric is a nested struct in sae response
 type Metric struct {
-	MinReplicas                    int           `json:"MinReplicas" xml:"MinReplicas"`
-	MetricType                     string        `json:"MetricType" xml:"MetricType"`
-	MetricTargetAverageUtilization int           `json:"MetricTargetAverageUtilization" xml:"MetricTargetAverageUtilization"`
-	MaxReplicas                    int           `json:"MaxReplicas" xml:"MaxReplicas"`
-	MetricsStatus                  MetricsStatus `json:"MetricsStatus" xml:"MetricsStatus"`
-	Metrics                        []Metric      `json:"Metrics" xml:"Metrics"`
+	MinReplicas                    int            `json:"MinReplicas" xml:"MinReplicas"`
+	MetricTargetAverageUtilization int            `json:"MetricTargetAverageUtilization" xml:"MetricTargetAverageUtilization"`
+	MetricType                     string         `json:"MetricType" xml:"MetricType"`
+	MaxReplicas                    int            `json:"MaxReplicas" xml:"MaxReplicas"`
+	ScaleUpRules                   ScaleUpRules   `json:"ScaleUpRules" xml:"ScaleUpRules"`
+	MetricsStatus                  MetricsStatus  `json:"MetricsStatus" xml:"MetricsStatus"`
+	ScaleDownRules                 ScaleDownRules `json:"ScaleDownRules" xml:"ScaleDownRules"`
+	Metrics                        []Metric       `json:"Metrics" xml:"Metrics"`
 }

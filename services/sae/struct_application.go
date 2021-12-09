@@ -17,15 +17,15 @@ package sae
 
 // Application is a nested struct in sae response
 type Application struct {
-	Instances         int        `json:"Instances" xml:"Instances"`
-	ScaleRuleEnabled  bool       `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
-	AppDescription    string     `json:"AppDescription" xml:"AppDescription"`
-	AppId             string     `json:"AppId" xml:"AppId"`
-	RunningInstances  int        `json:"RunningInstances" xml:"RunningInstances"`
-	RegionId          string     `json:"RegionId" xml:"RegionId"`
-	NamespaceId       string     `json:"NamespaceId" xml:"NamespaceId"`
-	ScaleRuleType     string     `json:"ScaleRuleType" xml:"ScaleRuleType"`
-	AppDeletingStatus bool       `json:"AppDeletingStatus" xml:"AppDeletingStatus"`
 	AppName           string     `json:"AppName" xml:"AppName"`
+	NamespaceId       string     `json:"NamespaceId" xml:"NamespaceId"`
+	AppDeletingStatus bool       `json:"AppDeletingStatus" xml:"AppDeletingStatus"`
+	AppId             string     `json:"AppId" xml:"AppId"`
+	ScaleRuleEnabled  bool       `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
+	ScaleRuleType     string     `json:"ScaleRuleType" xml:"ScaleRuleType"`
+	RunningInstances  int        `json:"RunningInstances" xml:"RunningInstances"`
+	Instances         int        `json:"Instances" xml:"Instances"`
+	RegionId          string     `json:"RegionId" xml:"RegionId"`
+	AppDescription    string     `json:"AppDescription" xml:"AppDescription"`
 	Tags              []TagsItem `json:"Tags" xml:"Tags"`
 }

@@ -17,13 +17,16 @@ package sae
 
 // DataInDescribeApplicationStatus is a nested struct in sae response
 type DataInDescribeApplicationStatus struct {
-	AppId                  string `json:"AppId" xml:"AppId"`
-	LastChangeOrderId      string `json:"LastChangeOrderId" xml:"LastChangeOrderId"`
-	LastChangeOrderStatus  string `json:"LastChangeOrderStatus" xml:"LastChangeOrderStatus"`
-	LastChangeOrderRunning bool   `json:"LastChangeOrderRunning" xml:"LastChangeOrderRunning"`
-	CurrentStatus          string `json:"CurrentStatus" xml:"CurrentStatus"`
-	ArmsApmInfo            string `json:"ArmsApmInfo" xml:"ArmsApmInfo"`
-	RunningInstances       int    `json:"RunningInstances" xml:"RunningInstances"`
 	ArmsAdvancedEnabled    string `json:"ArmsAdvancedEnabled" xml:"ArmsAdvancedEnabled"`
+	LastChangeOrderId      string `json:"LastChangeOrderId" xml:"LastChangeOrderId"`
+	ArmsApmInfo            string `json:"ArmsApmInfo" xml:"ArmsApmInfo"`
 	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
+	CurrentStatus          string `json:"CurrentStatus" xml:"CurrentStatus"`
+	AppId                  string `json:"AppId" xml:"AppId"`
+	LastChangeOrderRunning bool   `json:"LastChangeOrderRunning" xml:"LastChangeOrderRunning"`
+	RunningInstances       int    `json:"RunningInstances" xml:"RunningInstances"`
+	LastChangeOrderStatus  string `json:"LastChangeOrderStatus" xml:"LastChangeOrderStatus"`
+	SubStatus              string `json:"SubStatus" xml:"SubStatus"`
+	EnableAgent            bool   `json:"EnableAgent" xml:"EnableAgent"`
+	FileSizeLimit          int64  `json:"FileSizeLimit" xml:"FileSizeLimit"`
 }

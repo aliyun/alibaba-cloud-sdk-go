@@ -72,53 +72,61 @@ func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRe
 type CreateApplicationRequest struct {
 	*requests.RoaRequest
 	NasId                         string           `position:"Query" name:"NasId"`
-	WebContainer                  string           `position:"Query" name:"WebContainer"`
 	JarStartArgs                  string           `position:"Query" name:"JarStartArgs"`
+	OssAkSecret                   string           `position:"Body" name:"OssAkSecret"`
+	MountHost                     string           `position:"Query" name:"MountHost"`
+	AutoConfig                    requests.Boolean `position:"Query" name:"AutoConfig"`
+	Envs                          string           `position:"Query" name:"Envs"`
+	PhpPECLExtensions             string           `position:"Body" name:"PhpPECLExtensions"`
+	PhpArmsConfigLocation         string           `position:"Query" name:"PhpArmsConfigLocation"`
+	CustomHostAlias               string           `position:"Query" name:"CustomHostAlias"`
+	Deploy                        requests.Boolean `position:"Query" name:"Deploy"`
+	JarStartOptions               string           `position:"Query" name:"JarStartOptions"`
+	AppName                       string           `position:"Query" name:"AppName"`
+	NamespaceId                   string           `position:"Query" name:"NamespaceId"`
+	ConfigMapMountDesc            string           `position:"Body" name:"ConfigMapMountDesc"`
+	OssMountDescs                 string           `position:"Body" name:"OssMountDescs"`
+	PreStop                       string           `position:"Query" name:"PreStop"`
+	Cpu                           requests.Integer `position:"Query" name:"Cpu"`
+	VSwitchId                     string           `position:"Query" name:"VSwitchId"`
+	PackageType                   string           `position:"Query" name:"PackageType"`
+	PostStart                     string           `position:"Query" name:"PostStart"`
+	PhpExtensions                 string           `position:"Body" name:"PhpExtensions"`
+	AssociateEip                  requests.Boolean `position:"Body" name:"AssociateEip"`
+	WebContainer                  string           `position:"Query" name:"WebContainer"`
 	Memory                        requests.Integer `position:"Query" name:"Memory"`
 	SlsConfigs                    string           `position:"Query" name:"SlsConfigs"`
 	CommandArgs                   string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn              string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                     string           `position:"Query" name:"Readiness"`
 	Timezone                      string           `position:"Query" name:"Timezone"`
-	MountHost                     string           `position:"Query" name:"MountHost"`
-	AutoConfig                    requests.Boolean `position:"Query" name:"AutoConfig"`
+	OssAkId                       string           `position:"Body" name:"OssAkId"`
 	Liveness                      string           `position:"Query" name:"Liveness"`
 	SecurityGroupId               string           `position:"Query" name:"SecurityGroupId"`
-	Envs                          string           `position:"Query" name:"Envs"`
-	PhpArmsConfigLocation         string           `position:"Query" name:"PhpArmsConfigLocation"`
 	PackageVersion                string           `position:"Query" name:"PackageVersion"`
 	TomcatConfig                  string           `position:"Query" name:"TomcatConfig"`
-	CustomHostAlias               string           `position:"Query" name:"CustomHostAlias"`
-	Deploy                        requests.Boolean `position:"Query" name:"Deploy"`
 	WarStartOptions               string           `position:"Query" name:"WarStartOptions"`
-	JarStartOptions               string           `position:"Query" name:"JarStartOptions"`
 	EdasContainerVersion          string           `position:"Query" name:"EdasContainerVersion"`
-	AppName                       string           `position:"Query" name:"AppName"`
-	NamespaceId                   string           `position:"Query" name:"NamespaceId"`
 	PackageUrl                    string           `position:"Query" name:"PackageUrl"`
 	TerminationGracePeriodSeconds requests.Integer `position:"Query" name:"TerminationGracePeriodSeconds"`
-	ConfigMapMountDesc            string           `position:"Body" name:"ConfigMapMountDesc"`
 	PhpConfig                     string           `position:"Body" name:"PhpConfig"`
-	PreStop                       string           `position:"Query" name:"PreStop"`
 	Replicas                      requests.Integer `position:"Query" name:"Replicas"`
-	Cpu                           requests.Integer `position:"Query" name:"Cpu"`
 	Command                       string           `position:"Query" name:"Command"`
 	MountDesc                     string           `position:"Query" name:"MountDesc"`
-	VSwitchId                     string           `position:"Query" name:"VSwitchId"`
 	Jdk                           string           `position:"Query" name:"Jdk"`
 	AppDescription                string           `position:"Query" name:"AppDescription"`
+	AcrInstanceId                 string           `position:"Body" name:"AcrInstanceId"`
 	VpcId                         string           `position:"Query" name:"VpcId"`
 	ImageUrl                      string           `position:"Query" name:"ImageUrl"`
-	PackageType                   string           `position:"Query" name:"PackageType"`
+	Php                           string           `position:"Body" name:"Php"`
 	PhpConfigLocation             string           `position:"Query" name:"PhpConfigLocation"`
-	PostStart                     string           `position:"Query" name:"PostStart"`
 }
 
 // CreateApplicationResponse is the response struct for api CreateApplication
 type CreateApplicationResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Code      string `json:"Code" xml:"Code"`

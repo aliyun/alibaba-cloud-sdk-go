@@ -18,9 +18,11 @@ package sae
 // MetricsStatus is a nested struct in sae response
 type MetricsStatus struct {
 	DesiredReplicas     int64             `json:"DesiredReplicas" xml:"DesiredReplicas"`
-	CurrentReplicas     int64             `json:"CurrentReplicas" xml:"CurrentReplicas"`
 	NextScaleTimePeriod int               `json:"NextScaleTimePeriod" xml:"NextScaleTimePeriod"`
+	CurrentReplicas     int64             `json:"CurrentReplicas" xml:"CurrentReplicas"`
 	LastScaleTime       string            `json:"LastScaleTime" xml:"LastScaleTime"`
-	NextScaleMetrics    []NextScaleMetric `json:"NextScaleMetrics" xml:"NextScaleMetrics"`
+	MaxReplicas         int64             `json:"MaxReplicas" xml:"MaxReplicas"`
+	MinReplicas         int64             `json:"MinReplicas" xml:"MinReplicas"`
 	CurrentMetrics      []CurrentMetric   `json:"CurrentMetrics" xml:"CurrentMetrics"`
+	NextScaleMetrics    []NextScaleMetric `json:"NextScaleMetrics" xml:"NextScaleMetrics"`
 }

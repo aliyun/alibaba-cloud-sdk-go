@@ -17,16 +17,21 @@ package sae
 
 // DataItem is a nested struct in sae response
 type DataItem struct {
-	Id                   int    `json:"Id" xml:"Id"`
-	Expired              bool   `json:"Expired" xml:"Expired"`
-	EdasContainerVersion string `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
-	Memory               int    `json:"Memory" xml:"Memory"`
-	Disabled             bool   `json:"Disabled" xml:"Disabled"`
-	Version              int    `json:"Version" xml:"Version"`
-	Enable               bool   `json:"Enable" xml:"Enable"`
-	ComponentKey         string `json:"ComponentKey" xml:"ComponentKey"`
-	ComponentDescription string `json:"ComponentDescription" xml:"ComponentDescription"`
-	Cpu                  int    `json:"Cpu" xml:"Cpu"`
-	SpecInfo             string `json:"SpecInfo" xml:"SpecInfo"`
-	Type                 string `json:"Type" xml:"Type"`
+	PageNumber           string                    `json:"PageNumber" xml:"PageNumber"`
+	Id                   int                       `json:"Id" xml:"Id"`
+	Expired              bool                      `json:"Expired" xml:"Expired"`
+	Memory               int                       `json:"Memory" xml:"Memory"`
+	CurrentPage          string                    `json:"CurrentPage" xml:"CurrentPage"`
+	ComponentKey         string                    `json:"ComponentKey" xml:"ComponentKey"`
+	SpecInfo             string                    `json:"SpecInfo" xml:"SpecInfo"`
+	PageSize             string                    `json:"PageSize" xml:"PageSize"`
+	EdasContainerVersion string                    `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
+	Disabled             bool                      `json:"Disabled" xml:"Disabled"`
+	Version              int                       `json:"Version" xml:"Version"`
+	Enable               bool                      `json:"Enable" xml:"Enable"`
+	TotalSize            string                    `json:"TotalSize" xml:"TotalSize"`
+	ComponentDescription string                    `json:"ComponentDescription" xml:"ComponentDescription"`
+	Cpu                  int                       `json:"Cpu" xml:"Cpu"`
+	Type                 string                    `json:"Type" xml:"Type"`
+	Result               []MscAgentServiceResponse `json:"Result" xml:"Result"`
 }

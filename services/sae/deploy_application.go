@@ -76,14 +76,17 @@ type DeployApplicationRequest struct {
 	JarStartArgs                     string           `position:"Query" name:"JarStartArgs"`
 	EnableAhas                       string           `position:"Query" name:"EnableAhas"`
 	SlsConfigs                       string           `position:"Query" name:"SlsConfigs"`
+	OssAkSecret                      string           `position:"Body" name:"OssAkSecret"`
 	CommandArgs                      string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn                 string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                        string           `position:"Query" name:"Readiness"`
 	Timezone                         string           `position:"Query" name:"Timezone"`
 	MountHost                        string           `position:"Query" name:"MountHost"`
 	BatchWaitTime                    requests.Integer `position:"Query" name:"BatchWaitTime"`
+	OssAkId                          string           `position:"Body" name:"OssAkId"`
 	Liveness                         string           `position:"Query" name:"Liveness"`
 	Envs                             string           `position:"Query" name:"Envs"`
+	PhpPECLExtensions                string           `position:"Body" name:"PhpPECLExtensions"`
 	PhpArmsConfigLocation            string           `position:"Query" name:"PhpArmsConfigLocation"`
 	PackageVersion                   string           `position:"Query" name:"PackageVersion"`
 	TomcatConfig                     string           `position:"Query" name:"TomcatConfig"`
@@ -94,26 +97,32 @@ type DeployApplicationRequest struct {
 	PackageUrl                       string           `position:"Query" name:"PackageUrl"`
 	TerminationGracePeriodSeconds    requests.Integer `position:"Query" name:"TerminationGracePeriodSeconds"`
 	ConfigMapMountDesc               string           `position:"Body" name:"ConfigMapMountDesc"`
+	OssMountDescs                    string           `position:"Body" name:"OssMountDescs"`
 	PhpConfig                        string           `position:"Body" name:"PhpConfig"`
 	PreStop                          string           `position:"Query" name:"PreStop"`
+	EnableGreyTagRoute               requests.Boolean `position:"Query" name:"EnableGreyTagRoute"`
 	Command                          string           `position:"Query" name:"Command"`
 	UpdateStrategy                   string           `position:"Query" name:"UpdateStrategy"`
 	MountDesc                        string           `position:"Query" name:"MountDesc"`
 	Jdk                              string           `position:"Query" name:"Jdk"`
 	MinReadyInstances                requests.Integer `position:"Query" name:"MinReadyInstances"`
 	ChangeOrderDesc                  string           `position:"Query" name:"ChangeOrderDesc"`
+	AcrInstanceId                    string           `position:"Body" name:"AcrInstanceId"`
 	AppId                            string           `position:"Query" name:"AppId"`
 	ImageUrl                         string           `position:"Query" name:"ImageUrl"`
+	Php                              string           `position:"Body" name:"Php"`
 	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
 	PhpConfigLocation                string           `position:"Query" name:"PhpConfigLocation"`
 	PostStart                        string           `position:"Query" name:"PostStart"`
+	PhpExtensions                    string           `position:"Body" name:"PhpExtensions"`
+	AssociateEip                     requests.Boolean `position:"Body" name:"AssociateEip"`
 }
 
 // DeployApplicationResponse is the response struct for api DeployApplication
 type DeployApplicationResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Code      string `json:"Code" xml:"Code"`

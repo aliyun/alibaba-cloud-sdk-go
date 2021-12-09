@@ -72,7 +72,7 @@ func (client *Client) UpdateConfigMapWithCallback(request *UpdateConfigMapReques
 type UpdateConfigMapRequest struct {
 	*requests.RoaRequest
 	Data        string           `position:"Body" name:"Data"`
-	Description string           `position:"Body" name:"Description"`
+	Description string           `position:"Query" name:"Description"`
 	ConfigMapId requests.Integer `position:"Query" name:"ConfigMapId"`
 }
 
@@ -80,10 +80,10 @@ type UpdateConfigMapRequest struct {
 type UpdateConfigMapResponse struct {
 	*responses.BaseResponse
 	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Code      string                `json:"Code" xml:"Code"`
 	Message   string                `json:"Message" xml:"Message"`
-	ErrorCode string                `json:"ErrorCode" xml:"ErrorCode"`
 	TraceId   string                `json:"TraceId" xml:"TraceId"`
+	ErrorCode string                `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string                `json:"Code" xml:"Code"`
 	Success   bool                  `json:"Success" xml:"Success"`
 	Data      DataInUpdateConfigMap `json:"Data" xml:"Data"`
 }

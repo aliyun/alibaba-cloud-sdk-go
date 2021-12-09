@@ -18,8 +18,8 @@ package sae
 // Stage is a nested struct in sae response
 type Stage struct {
 	Status       int    `json:"Status" xml:"Status"`
-	StageName    string `json:"StageName" xml:"StageName"`
-	ExecutorType int    `json:"ExecutorType" xml:"ExecutorType"`
 	StageId      string `json:"StageId" xml:"StageId"`
+	ExecutorType int    `json:"ExecutorType" xml:"ExecutorType"`
+	StageName    string `json:"StageName" xml:"StageName"`
 	TaskList     []Task `json:"TaskList" xml:"TaskList"`
 }
