@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteService invokes the eas.DeleteService API synchronously
-func (client *Client) DeleteService(request *DeleteServiceRequest) (response *DeleteServiceResponse, err error) {
-	response = CreateDeleteServiceResponse()
+// CreateRole invokes the eas.CreateRole API synchronously
+func (client *Client) CreateRole(request *CreateRoleRequest) (response *CreateRoleResponse, err error) {
+	response = CreateCreateRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteServiceWithChan invokes the eas.DeleteService API asynchronously
-func (client *Client) DeleteServiceWithChan(request *DeleteServiceRequest) (<-chan *DeleteServiceResponse, <-chan error) {
-	responseChan := make(chan *DeleteServiceResponse, 1)
+// CreateRoleWithChan invokes the eas.CreateRole API asynchronously
+func (client *Client) CreateRoleWithChan(request *CreateRoleRequest) (<-chan *CreateRoleResponse, <-chan error) {
+	responseChan := make(chan *CreateRoleResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteService(request)
+		response, err := client.CreateRole(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteServiceWithChan(request *DeleteServiceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteServiceWithCallback invokes the eas.DeleteService API asynchronously
-func (client *Client) DeleteServiceWithCallback(request *DeleteServiceRequest, callback func(response *DeleteServiceResponse, err error)) <-chan int {
+// CreateRoleWithCallback invokes the eas.CreateRole API asynchronously
+func (client *Client) CreateRoleWithCallback(request *CreateRoleRequest, callback func(response *CreateRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteServiceResponse
+		var response *CreateRoleResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteService(request)
+		response, err = client.CreateRole(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,31 @@ func (client *Client) DeleteServiceWithCallback(request *DeleteServiceRequest, c
 	return result
 }
 
-// DeleteServiceRequest is the request struct for api DeleteService
-type DeleteServiceRequest struct {
+// CreateRoleRequest is the request struct for api CreateRole
+type CreateRoleRequest struct {
 	*requests.RoaRequest
-	ServiceName string `position:"Path" name:"ServiceName"`
-	ClusterId   string `position:"Path" name:"ClusterId"`
 }
 
-// DeleteServiceResponse is the response struct for api DeleteService
-type DeleteServiceResponse struct {
+// CreateRoleResponse is the response struct for api CreateRole
+type CreateRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateDeleteServiceRequest creates a request to invoke DeleteService API
-func CreateDeleteServiceRequest() (request *DeleteServiceRequest) {
-	request = &DeleteServiceRequest{
+// CreateCreateRoleRequest creates a request to invoke CreateRole API
+func CreateCreateRoleRequest() (request *CreateRoleRequest) {
+	request = &CreateRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2021-07-01", "DeleteService", "/api/v2/services/[ClusterId]/[ServiceName]", "eas", "openAPI")
-	request.Method = requests.DELETE
+	request.InitWithApiInfo("eas", "2021-07-01", "CreateRole", "/api/v2/role", "eas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteServiceResponse creates a response to parse from DeleteService response
-func CreateDeleteServiceResponse() (response *DeleteServiceResponse) {
-	response = &DeleteServiceResponse{
+// CreateCreateRoleResponse creates a response to parse from CreateRole response
+func CreateCreateRoleResponse() (response *CreateRoleResponse) {
+	response = &CreateRoleResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

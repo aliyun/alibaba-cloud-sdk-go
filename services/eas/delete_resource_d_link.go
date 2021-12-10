@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteResource invokes the eas.DeleteResource API synchronously
-func (client *Client) DeleteResource(request *DeleteResourceRequest) (response *DeleteResourceResponse, err error) {
-	response = CreateDeleteResourceResponse()
+// DeleteResourceDLink invokes the eas.DeleteResourceDLink API synchronously
+func (client *Client) DeleteResourceDLink(request *DeleteResourceDLinkRequest) (response *DeleteResourceDLinkResponse, err error) {
+	response = CreateDeleteResourceDLinkResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteResourceWithChan invokes the eas.DeleteResource API asynchronously
-func (client *Client) DeleteResourceWithChan(request *DeleteResourceRequest) (<-chan *DeleteResourceResponse, <-chan error) {
-	responseChan := make(chan *DeleteResourceResponse, 1)
+// DeleteResourceDLinkWithChan invokes the eas.DeleteResourceDLink API asynchronously
+func (client *Client) DeleteResourceDLinkWithChan(request *DeleteResourceDLinkRequest) (<-chan *DeleteResourceDLinkResponse, <-chan error) {
+	responseChan := make(chan *DeleteResourceDLinkResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteResource(request)
+		response, err := client.DeleteResourceDLink(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteResourceWithChan(request *DeleteResourceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteResourceWithCallback invokes the eas.DeleteResource API asynchronously
-func (client *Client) DeleteResourceWithCallback(request *DeleteResourceRequest, callback func(response *DeleteResourceResponse, err error)) <-chan int {
+// DeleteResourceDLinkWithCallback invokes the eas.DeleteResourceDLink API asynchronously
+func (client *Client) DeleteResourceDLinkWithCallback(request *DeleteResourceDLinkRequest, callback func(response *DeleteResourceDLinkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteResourceResponse
+		var response *DeleteResourceDLinkResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteResource(request)
+		response, err = client.DeleteResourceDLink(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) DeleteResourceWithCallback(request *DeleteResourceRequest,
 	return result
 }
 
-// DeleteResourceRequest is the request struct for api DeleteResource
-type DeleteResourceRequest struct {
+// DeleteResourceDLinkRequest is the request struct for api DeleteResourceDLink
+type DeleteResourceDLinkRequest struct {
 	*requests.RoaRequest
 	ResourceId string `position:"Path" name:"ResourceId"`
 	ClusterId  string `position:"Path" name:"ClusterId"`
 }
 
-// DeleteResourceResponse is the response struct for api DeleteResource
-type DeleteResourceResponse struct {
+// DeleteResourceDLinkResponse is the response struct for api DeleteResourceDLink
+type DeleteResourceDLinkResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateDeleteResourceRequest creates a request to invoke DeleteResource API
-func CreateDeleteResourceRequest() (request *DeleteResourceRequest) {
-	request = &DeleteResourceRequest{
+// CreateDeleteResourceDLinkRequest creates a request to invoke DeleteResourceDLink API
+func CreateDeleteResourceDLinkRequest() (request *DeleteResourceDLinkRequest) {
+	request = &DeleteResourceDLinkRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2021-07-01", "DeleteResource", "/api/v2/resources/[ClusterId]/[ResourceId]", "eas", "openAPI")
+	request.InitWithApiInfo("eas", "2021-07-01", "DeleteResourceDLink", "/api/v2/resources/[ClusterId]/[ResourceId]/dlink", "eas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }
 
-// CreateDeleteResourceResponse creates a response to parse from DeleteResource response
-func CreateDeleteResourceResponse() (response *DeleteResourceResponse) {
-	response = &DeleteResourceResponse{
+// CreateDeleteResourceDLinkResponse creates a response to parse from DeleteResourceDLink response
+func CreateDeleteResourceDLinkResponse() (response *DeleteResourceDLinkResponse) {
+	response = &DeleteResourceDLinkResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

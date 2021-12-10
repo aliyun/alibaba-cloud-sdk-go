@@ -21,7 +21,6 @@ import (
 )
 
 // CreateService invokes the eas.CreateService API synchronously
-// api document: https://help.aliyun.com/api/eas/createservice.html
 func (client *Client) CreateService(request *CreateServiceRequest) (response *CreateServiceResponse, err error) {
 	response = CreateCreateServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateService(request *CreateServiceRequest) (response *Cr
 }
 
 // CreateServiceWithChan invokes the eas.CreateService API asynchronously
-// api document: https://help.aliyun.com/api/eas/createservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateServiceWithChan(request *CreateServiceRequest) (<-chan *CreateServiceResponse, <-chan error) {
 	responseChan := make(chan *CreateServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateServiceWithChan(request *CreateServiceRequest) (<-ch
 }
 
 // CreateServiceWithCallback invokes the eas.CreateService API asynchronously
-// api document: https://help.aliyun.com/api/eas/createservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateServiceWithCallback(request *CreateServiceRequest, callback func(response *CreateServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,19 @@ func (client *Client) CreateServiceWithCallback(request *CreateServiceRequest, c
 // CreateServiceRequest is the request struct for api CreateService
 type CreateServiceRequest struct {
 	*requests.RoaRequest
+	Body string `position:"Body" name:"body"`
 }
 
 // CreateServiceResponse is the response struct for api CreateService
 type CreateServiceResponse struct {
 	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	ServiceId        string `json:"ServiceId" xml:"ServiceId"`
+	ServiceName      string `json:"ServiceName" xml:"ServiceName"`
+	Status           string `json:"Status" xml:"Status"`
+	Region           string `json:"Region" xml:"Region"`
+	InternetEndpoint string `json:"InternetEndpoint" xml:"InternetEndpoint"`
+	IntranetEndpoint string `json:"IntranetEndpoint" xml:"IntranetEndpoint"`
 }
 
 // CreateCreateServiceRequest creates a request to invoke CreateService API
@@ -88,7 +91,7 @@ func CreateCreateServiceRequest() (request *CreateServiceRequest) {
 	request = &CreateServiceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2018-05-22", "CreateService", "/api/services", "", "")
+	request.InitWithApiInfo("eas", "2021-07-01", "CreateService", "/api/v2/services", "eas", "openAPI")
 	request.Method = requests.POST
 	return
 }

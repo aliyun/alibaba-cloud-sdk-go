@@ -21,7 +21,6 @@ import (
 )
 
 // StartService invokes the eas.StartService API synchronously
-// api document: https://help.aliyun.com/api/eas/startservice.html
 func (client *Client) StartService(request *StartServiceRequest) (response *StartServiceResponse, err error) {
 	response = CreateStartServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartService(request *StartServiceRequest) (response *Star
 }
 
 // StartServiceWithChan invokes the eas.StartService API asynchronously
-// api document: https://help.aliyun.com/api/eas/startservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartServiceWithChan(request *StartServiceRequest) (<-chan *StartServiceResponse, <-chan error) {
 	responseChan := make(chan *StartServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartServiceWithChan(request *StartServiceRequest) (<-chan
 }
 
 // StartServiceWithCallback invokes the eas.StartService API asynchronously
-// api document: https://help.aliyun.com/api/eas/startservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartServiceWithCallback(request *StartServiceRequest, callback func(response *StartServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,13 +71,15 @@ func (client *Client) StartServiceWithCallback(request *StartServiceRequest, cal
 // StartServiceRequest is the request struct for api StartService
 type StartServiceRequest struct {
 	*requests.RoaRequest
-	ServiceName string `position:"Path" name:"service_name"`
-	Region      string `position:"Path" name:"region"`
+	ServiceName string `position:"Path" name:"ServiceName"`
+	ClusterId   string `position:"Path" name:"ClusterId"`
 }
 
 // StartServiceResponse is the response struct for api StartService
 type StartServiceResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateStartServiceRequest creates a request to invoke StartService API
@@ -90,7 +87,7 @@ func CreateStartServiceRequest() (request *StartServiceRequest) {
 	request = &StartServiceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2018-05-22", "StartService", "/api/services/[region]/[service_name]/start", "", "")
+	request.InitWithApiInfo("eas", "2021-07-01", "StartService", "/api/v2/services/[ClusterId]/[ServiceName]/start", "eas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

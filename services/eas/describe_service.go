@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteService invokes the eas.DeleteService API synchronously
-func (client *Client) DeleteService(request *DeleteServiceRequest) (response *DeleteServiceResponse, err error) {
-	response = CreateDeleteServiceResponse()
+// DescribeService invokes the eas.DescribeService API synchronously
+func (client *Client) DescribeService(request *DescribeServiceRequest) (response *DescribeServiceResponse, err error) {
+	response = CreateDescribeServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteServiceWithChan invokes the eas.DeleteService API asynchronously
-func (client *Client) DeleteServiceWithChan(request *DeleteServiceRequest) (<-chan *DeleteServiceResponse, <-chan error) {
-	responseChan := make(chan *DeleteServiceResponse, 1)
+// DescribeServiceWithChan invokes the eas.DescribeService API asynchronously
+func (client *Client) DescribeServiceWithChan(request *DescribeServiceRequest) (<-chan *DescribeServiceResponse, <-chan error) {
+	responseChan := make(chan *DescribeServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteService(request)
+		response, err := client.DescribeService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteServiceWithChan(request *DeleteServiceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteServiceWithCallback invokes the eas.DeleteService API asynchronously
-func (client *Client) DeleteServiceWithCallback(request *DeleteServiceRequest, callback func(response *DeleteServiceResponse, err error)) <-chan int {
+// DescribeServiceWithCallback invokes the eas.DescribeService API asynchronously
+func (client *Client) DescribeServiceWithCallback(request *DescribeServiceRequest, callback func(response *DescribeServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteServiceResponse
+		var response *DescribeServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteService(request)
+		response, err = client.DescribeService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,31 @@ func (client *Client) DeleteServiceWithCallback(request *DeleteServiceRequest, c
 	return result
 }
 
-// DeleteServiceRequest is the request struct for api DeleteService
-type DeleteServiceRequest struct {
+// DescribeServiceRequest is the request struct for api DescribeService
+type DescribeServiceRequest struct {
 	*requests.RoaRequest
 	ServiceName string `position:"Path" name:"ServiceName"`
 	ClusterId   string `position:"Path" name:"ClusterId"`
 }
 
-// DeleteServiceResponse is the response struct for api DeleteService
-type DeleteServiceResponse struct {
+// DescribeServiceResponse is the response struct for api DescribeService
+type DescribeServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateDeleteServiceRequest creates a request to invoke DeleteService API
-func CreateDeleteServiceRequest() (request *DeleteServiceRequest) {
-	request = &DeleteServiceRequest{
+// CreateDescribeServiceRequest creates a request to invoke DescribeService API
+func CreateDescribeServiceRequest() (request *DescribeServiceRequest) {
+	request = &DescribeServiceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2021-07-01", "DeleteService", "/api/v2/services/[ClusterId]/[ServiceName]", "eas", "openAPI")
-	request.Method = requests.DELETE
+	request.InitWithApiInfo("eas", "2021-07-01", "DescribeService", "/api/v2/services/[ClusterId]/[ServiceName]", "eas", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateDeleteServiceResponse creates a response to parse from DeleteService response
-func CreateDeleteServiceResponse() (response *DeleteServiceResponse) {
-	response = &DeleteServiceResponse{
+// CreateDescribeServiceResponse creates a response to parse from DescribeService response
+func CreateDescribeServiceResponse() (response *DescribeServiceResponse) {
+	response = &DescribeServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

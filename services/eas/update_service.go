@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseService invokes the eas.ReleaseService API synchronously
-func (client *Client) ReleaseService(request *ReleaseServiceRequest) (response *ReleaseServiceResponse, err error) {
-	response = CreateReleaseServiceResponse()
+// UpdateService invokes the eas.UpdateService API synchronously
+func (client *Client) UpdateService(request *UpdateServiceRequest) (response *UpdateServiceResponse, err error) {
+	response = CreateUpdateServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseServiceWithChan invokes the eas.ReleaseService API asynchronously
-func (client *Client) ReleaseServiceWithChan(request *ReleaseServiceRequest) (<-chan *ReleaseServiceResponse, <-chan error) {
-	responseChan := make(chan *ReleaseServiceResponse, 1)
+// UpdateServiceWithChan invokes the eas.UpdateService API asynchronously
+func (client *Client) UpdateServiceWithChan(request *UpdateServiceRequest) (<-chan *UpdateServiceResponse, <-chan error) {
+	responseChan := make(chan *UpdateServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseService(request)
+		response, err := client.UpdateService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReleaseServiceWithChan(request *ReleaseServiceRequest) (<-
 	return responseChan, errChan
 }
 
-// ReleaseServiceWithCallback invokes the eas.ReleaseService API asynchronously
-func (client *Client) ReleaseServiceWithCallback(request *ReleaseServiceRequest, callback func(response *ReleaseServiceResponse, err error)) <-chan int {
+// UpdateServiceWithCallback invokes the eas.UpdateService API asynchronously
+func (client *Client) UpdateServiceWithCallback(request *UpdateServiceRequest, callback func(response *UpdateServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseServiceResponse
+		var response *UpdateServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseService(request)
+		response, err = client.UpdateService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,34 @@ func (client *Client) ReleaseServiceWithCallback(request *ReleaseServiceRequest,
 	return result
 }
 
-// ReleaseServiceRequest is the request struct for api ReleaseService
-type ReleaseServiceRequest struct {
+// UpdateServiceRequest is the request struct for api UpdateService
+type UpdateServiceRequest struct {
 	*requests.RoaRequest
 	ServiceName string `position:"Path" name:"ServiceName"`
 	ClusterId   string `position:"Path" name:"ClusterId"`
 	Body        string `position:"Body" name:"body"`
 }
 
-// ReleaseServiceResponse is the response struct for api ReleaseService
-type ReleaseServiceResponse struct {
+// UpdateServiceResponse is the response struct for api UpdateService
+type UpdateServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateReleaseServiceRequest creates a request to invoke ReleaseService API
-func CreateReleaseServiceRequest() (request *ReleaseServiceRequest) {
-	request = &ReleaseServiceRequest{
+// CreateUpdateServiceRequest creates a request to invoke UpdateService API
+func CreateUpdateServiceRequest() (request *UpdateServiceRequest) {
+	request = &UpdateServiceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2021-07-01", "ReleaseService", "/api/v2/services/[ClusterId]/[ServiceName]/release", "eas", "openAPI")
+	request.InitWithApiInfo("eas", "2021-07-01", "UpdateService", "/api/v2/services/[ClusterId]/[ServiceName]", "eas", "openAPI")
 	request.Method = requests.PUT
 	return
 }
 
-// CreateReleaseServiceResponse creates a response to parse from ReleaseService response
-func CreateReleaseServiceResponse() (response *ReleaseServiceResponse) {
-	response = &ReleaseServiceResponse{
+// CreateUpdateServiceResponse creates a response to parse from UpdateService response
+func CreateUpdateServiceResponse() (response *UpdateServiceResponse) {
+	response = &UpdateServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

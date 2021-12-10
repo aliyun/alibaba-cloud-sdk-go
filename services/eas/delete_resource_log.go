@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteResource invokes the eas.DeleteResource API synchronously
-func (client *Client) DeleteResource(request *DeleteResourceRequest) (response *DeleteResourceResponse, err error) {
-	response = CreateDeleteResourceResponse()
+// DeleteResourceLog invokes the eas.DeleteResourceLog API synchronously
+func (client *Client) DeleteResourceLog(request *DeleteResourceLogRequest) (response *DeleteResourceLogResponse, err error) {
+	response = CreateDeleteResourceLogResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteResourceWithChan invokes the eas.DeleteResource API asynchronously
-func (client *Client) DeleteResourceWithChan(request *DeleteResourceRequest) (<-chan *DeleteResourceResponse, <-chan error) {
-	responseChan := make(chan *DeleteResourceResponse, 1)
+// DeleteResourceLogWithChan invokes the eas.DeleteResourceLog API asynchronously
+func (client *Client) DeleteResourceLogWithChan(request *DeleteResourceLogRequest) (<-chan *DeleteResourceLogResponse, <-chan error) {
+	responseChan := make(chan *DeleteResourceLogResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteResource(request)
+		response, err := client.DeleteResourceLog(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteResourceWithChan(request *DeleteResourceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteResourceWithCallback invokes the eas.DeleteResource API asynchronously
-func (client *Client) DeleteResourceWithCallback(request *DeleteResourceRequest, callback func(response *DeleteResourceResponse, err error)) <-chan int {
+// DeleteResourceLogWithCallback invokes the eas.DeleteResourceLog API asynchronously
+func (client *Client) DeleteResourceLogWithCallback(request *DeleteResourceLogRequest, callback func(response *DeleteResourceLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteResourceResponse
+		var response *DeleteResourceLogResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteResource(request)
+		response, err = client.DeleteResourceLog(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) DeleteResourceWithCallback(request *DeleteResourceRequest,
 	return result
 }
 
-// DeleteResourceRequest is the request struct for api DeleteResource
-type DeleteResourceRequest struct {
+// DeleteResourceLogRequest is the request struct for api DeleteResourceLog
+type DeleteResourceLogRequest struct {
 	*requests.RoaRequest
 	ResourceId string `position:"Path" name:"ResourceId"`
 	ClusterId  string `position:"Path" name:"ClusterId"`
 }
 
-// DeleteResourceResponse is the response struct for api DeleteResource
-type DeleteResourceResponse struct {
+// DeleteResourceLogResponse is the response struct for api DeleteResourceLog
+type DeleteResourceLogResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateDeleteResourceRequest creates a request to invoke DeleteResource API
-func CreateDeleteResourceRequest() (request *DeleteResourceRequest) {
-	request = &DeleteResourceRequest{
+// CreateDeleteResourceLogRequest creates a request to invoke DeleteResourceLog API
+func CreateDeleteResourceLogRequest() (request *DeleteResourceLogRequest) {
+	request = &DeleteResourceLogRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2021-07-01", "DeleteResource", "/api/v2/resources/[ClusterId]/[ResourceId]", "eas", "openAPI")
+	request.InitWithApiInfo("eas", "2021-07-01", "DeleteResourceLog", "/api/v2/resources/[ClusterId]/[ResourceId]/log", "eas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }
 
-// CreateDeleteResourceResponse creates a response to parse from DeleteResource response
-func CreateDeleteResourceResponse() (response *DeleteResourceResponse) {
-	response = &DeleteResourceResponse{
+// CreateDeleteResourceLogResponse creates a response to parse from DeleteResourceLog response
+func CreateDeleteResourceLogResponse() (response *DeleteResourceLogResponse) {
+	response = &DeleteResourceLogResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

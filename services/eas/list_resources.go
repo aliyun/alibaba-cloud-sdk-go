@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListServices invokes the eas.ListServices API synchronously
-func (client *Client) ListServices(request *ListServicesRequest) (response *ListServicesResponse, err error) {
-	response = CreateListServicesResponse()
+// ListResources invokes the eas.ListResources API synchronously
+func (client *Client) ListResources(request *ListResourcesRequest) (response *ListResourcesResponse, err error) {
+	response = CreateListResourcesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListServicesWithChan invokes the eas.ListServices API asynchronously
-func (client *Client) ListServicesWithChan(request *ListServicesRequest) (<-chan *ListServicesResponse, <-chan error) {
-	responseChan := make(chan *ListServicesResponse, 1)
+// ListResourcesWithChan invokes the eas.ListResources API asynchronously
+func (client *Client) ListResourcesWithChan(request *ListResourcesRequest) (<-chan *ListResourcesResponse, <-chan error) {
+	responseChan := make(chan *ListResourcesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListServices(request)
+		response, err := client.ListResources(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListServicesWithChan(request *ListServicesRequest) (<-chan
 	return responseChan, errChan
 }
 
-// ListServicesWithCallback invokes the eas.ListServices API asynchronously
-func (client *Client) ListServicesWithCallback(request *ListServicesRequest, callback func(response *ListServicesResponse, err error)) <-chan int {
+// ListResourcesWithCallback invokes the eas.ListResources API asynchronously
+func (client *Client) ListResourcesWithCallback(request *ListResourcesRequest, callback func(response *ListResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListServicesResponse
+		var response *ListResourcesResponse
 		var err error
 		defer close(result)
-		response, err = client.ListServices(request)
+		response, err = client.ListResources(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,31 @@ func (client *Client) ListServicesWithCallback(request *ListServicesRequest, cal
 	return result
 }
 
-// ListServicesRequest is the request struct for api ListServices
-type ListServicesRequest struct {
+// ListResourcesRequest is the request struct for api ListResources
+type ListResourcesRequest struct {
 	*requests.RoaRequest
-	Filter     string           `position:"Query" name:"Filter"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	Sort       string           `position:"Query" name:"Sort"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	Order      string           `position:"Query" name:"Order"`
 }
 
-// ListServicesResponse is the response struct for api ListServices
-type ListServicesResponse struct {
+// ListResourcesResponse is the response struct for api ListResources
+type ListResourcesResponse struct {
 	*responses.BaseResponse
 }
 
-// CreateListServicesRequest creates a request to invoke ListServices API
-func CreateListServicesRequest() (request *ListServicesRequest) {
-	request = &ListServicesRequest{
+// CreateListResourcesRequest creates a request to invoke ListResources API
+func CreateListResourcesRequest() (request *ListResourcesRequest) {
+	request = &ListResourcesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2021-07-01", "ListServices", "/api/v2/services", "eas", "openAPI")
+	request.InitWithApiInfo("eas", "2021-07-01", "ListResources", "/api/v2/resources", "eas", "openAPI")
 	request.Method = requests.GET
 	return
 }
 
-// CreateListServicesResponse creates a response to parse from ListServices response
-func CreateListServicesResponse() (response *ListServicesResponse) {
-	response = &ListServicesResponse{
+// CreateListResourcesResponse creates a response to parse from ListResources response
+func CreateListResourcesResponse() (response *ListResourcesResponse) {
+	response = &ListResourcesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

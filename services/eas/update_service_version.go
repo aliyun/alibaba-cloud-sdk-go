@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseService invokes the eas.ReleaseService API synchronously
-func (client *Client) ReleaseService(request *ReleaseServiceRequest) (response *ReleaseServiceResponse, err error) {
-	response = CreateReleaseServiceResponse()
+// UpdateServiceVersion invokes the eas.UpdateServiceVersion API synchronously
+func (client *Client) UpdateServiceVersion(request *UpdateServiceVersionRequest) (response *UpdateServiceVersionResponse, err error) {
+	response = CreateUpdateServiceVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseServiceWithChan invokes the eas.ReleaseService API asynchronously
-func (client *Client) ReleaseServiceWithChan(request *ReleaseServiceRequest) (<-chan *ReleaseServiceResponse, <-chan error) {
-	responseChan := make(chan *ReleaseServiceResponse, 1)
+// UpdateServiceVersionWithChan invokes the eas.UpdateServiceVersion API asynchronously
+func (client *Client) UpdateServiceVersionWithChan(request *UpdateServiceVersionRequest) (<-chan *UpdateServiceVersionResponse, <-chan error) {
+	responseChan := make(chan *UpdateServiceVersionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseService(request)
+		response, err := client.UpdateServiceVersion(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReleaseServiceWithChan(request *ReleaseServiceRequest) (<-
 	return responseChan, errChan
 }
 
-// ReleaseServiceWithCallback invokes the eas.ReleaseService API asynchronously
-func (client *Client) ReleaseServiceWithCallback(request *ReleaseServiceRequest, callback func(response *ReleaseServiceResponse, err error)) <-chan int {
+// UpdateServiceVersionWithCallback invokes the eas.UpdateServiceVersion API asynchronously
+func (client *Client) UpdateServiceVersionWithCallback(request *UpdateServiceVersionRequest, callback func(response *UpdateServiceVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseServiceResponse
+		var response *UpdateServiceVersionResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseService(request)
+		response, err = client.UpdateServiceVersion(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,34 @@ func (client *Client) ReleaseServiceWithCallback(request *ReleaseServiceRequest,
 	return result
 }
 
-// ReleaseServiceRequest is the request struct for api ReleaseService
-type ReleaseServiceRequest struct {
+// UpdateServiceVersionRequest is the request struct for api UpdateServiceVersion
+type UpdateServiceVersionRequest struct {
 	*requests.RoaRequest
 	ServiceName string `position:"Path" name:"ServiceName"`
 	ClusterId   string `position:"Path" name:"ClusterId"`
 	Body        string `position:"Body" name:"body"`
 }
 
-// ReleaseServiceResponse is the response struct for api ReleaseService
-type ReleaseServiceResponse struct {
+// UpdateServiceVersionResponse is the response struct for api UpdateServiceVersion
+type UpdateServiceVersionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateReleaseServiceRequest creates a request to invoke ReleaseService API
-func CreateReleaseServiceRequest() (request *ReleaseServiceRequest) {
-	request = &ReleaseServiceRequest{
+// CreateUpdateServiceVersionRequest creates a request to invoke UpdateServiceVersion API
+func CreateUpdateServiceVersionRequest() (request *UpdateServiceVersionRequest) {
+	request = &UpdateServiceVersionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2021-07-01", "ReleaseService", "/api/v2/services/[ClusterId]/[ServiceName]/release", "eas", "openAPI")
+	request.InitWithApiInfo("eas", "2021-07-01", "UpdateServiceVersion", "/api/v2/services/[ClusterId]/[ServiceName]/version", "eas", "openAPI")
 	request.Method = requests.PUT
 	return
 }
 
-// CreateReleaseServiceResponse creates a response to parse from ReleaseService response
-func CreateReleaseServiceResponse() (response *ReleaseServiceResponse) {
-	response = &ReleaseServiceResponse{
+// CreateUpdateServiceVersionResponse creates a response to parse from UpdateServiceVersion response
+func CreateUpdateServiceVersionResponse() (response *UpdateServiceVersionResponse) {
+	response = &UpdateServiceVersionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

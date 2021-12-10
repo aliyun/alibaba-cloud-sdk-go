@@ -21,7 +21,6 @@ import (
 )
 
 // StopService invokes the eas.StopService API synchronously
-// api document: https://help.aliyun.com/api/eas/stopservice.html
 func (client *Client) StopService(request *StopServiceRequest) (response *StopServiceResponse, err error) {
 	response = CreateStopServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopService(request *StopServiceRequest) (response *StopSe
 }
 
 // StopServiceWithChan invokes the eas.StopService API asynchronously
-// api document: https://help.aliyun.com/api/eas/stopservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopServiceWithChan(request *StopServiceRequest) (<-chan *StopServiceResponse, <-chan error) {
 	responseChan := make(chan *StopServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopServiceWithChan(request *StopServiceRequest) (<-chan *
 }
 
 // StopServiceWithCallback invokes the eas.StopService API asynchronously
-// api document: https://help.aliyun.com/api/eas/stopservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopServiceWithCallback(request *StopServiceRequest, callback func(response *StopServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,13 +71,15 @@ func (client *Client) StopServiceWithCallback(request *StopServiceRequest, callb
 // StopServiceRequest is the request struct for api StopService
 type StopServiceRequest struct {
 	*requests.RoaRequest
-	ServiceName string `position:"Path" name:"service_name"`
-	Region      string `position:"Path" name:"region"`
+	ServiceName string `position:"Path" name:"ServiceName"`
+	ClusterId   string `position:"Path" name:"ClusterId"`
 }
 
 // StopServiceResponse is the response struct for api StopService
 type StopServiceResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateStopServiceRequest creates a request to invoke StopService API
@@ -90,7 +87,7 @@ func CreateStopServiceRequest() (request *StopServiceRequest) {
 	request = &StopServiceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("eas", "2018-05-22", "StopService", "/api/services/[region]/[service_name]/stop", "", "")
+	request.InitWithApiInfo("eas", "2021-07-01", "StopService", "/api/v2/services/[ClusterId]/[ServiceName]/stop", "eas", "openAPI")
 	request.Method = requests.PUT
 	return
 }
