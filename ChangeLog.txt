@@ -1,3 +1,7 @@
+2021-12-13 Version: v1.61.1382
+- Generated 2020-09-07 for `Config`.
+- Support query resourceType.
+
 2021-12-13 Version: v1.61.1381
 - Generated 2020-09-07 for `Config`.
 - Support query resourceType.
