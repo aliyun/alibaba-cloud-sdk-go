@@ -17,6 +17,6 @@ package config
 
 // ComplianceSummary is a nested struct in config response
 type ComplianceSummary struct {
-	ComplianceSummaryByConfigRule ComplianceSummaryByConfigRule `json:"ComplianceSummaryByConfigRule" xml:"ComplianceSummaryByConfigRule"`
 	ComplianceSummaryByResource   ComplianceSummaryByResource   `json:"ComplianceSummaryByResource" xml:"ComplianceSummaryByResource"`
+	ComplianceSummaryByConfigRule ComplianceSummaryByConfigRule `json:"ComplianceSummaryByConfigRule" xml:"ComplianceSummaryByConfigRule"`
 }

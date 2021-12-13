@@ -93,7 +93,7 @@ func CreateDescribeEvaluationResultsRequest() (request *DescribeEvaluationResult
 	request = &DescribeEvaluationResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeEvaluationResults", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeEvaluationResults", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -85,7 +85,7 @@ func CreateGetSupportedResourceTypesRequest() (request *GetSupportedResourceType
 	request = &GetSupportedResourceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetSupportedResourceTypes", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetSupportedResourceTypes", "", "")
 	request.Method = requests.GET
 	return
 }

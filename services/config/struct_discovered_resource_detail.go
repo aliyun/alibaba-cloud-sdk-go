@@ -17,15 +17,15 @@ package config
 
 // DiscoveredResourceDetail is a nested struct in config response
 type DiscoveredResourceDetail struct {
-	AccountId            int64  `json:"AccountId" xml:"AccountId"`
-	ResourceId           string `json:"ResourceId" xml:"ResourceId"`
-	ResourceType         string `json:"ResourceType" xml:"ResourceType"`
-	ResourceName         string `json:"ResourceName" xml:"ResourceName"`
 	Region               string `json:"Region" xml:"Region"`
-	AvailabilityZone     string `json:"AvailabilityZone" xml:"AvailabilityZone"`
-	ResourceCreationTime int64  `json:"ResourceCreationTime" xml:"ResourceCreationTime"`
+	ResourceType         string `json:"ResourceType" xml:"ResourceType"`
+	ResourceId           string `json:"ResourceId" xml:"ResourceId"`
 	ResourceStatus       string `json:"ResourceStatus" xml:"ResourceStatus"`
-	ResourceDeleted      int    `json:"ResourceDeleted" xml:"ResourceDeleted"`
 	Tags                 string `json:"Tags" xml:"Tags"`
+	AvailabilityZone     string `json:"AvailabilityZone" xml:"AvailabilityZone"`
 	Configuration        string `json:"Configuration" xml:"Configuration"`
+	AccountId            int64  `json:"AccountId" xml:"AccountId"`
+	ResourceName         string `json:"ResourceName" xml:"ResourceName"`
+	ResourceCreationTime int64  `json:"ResourceCreationTime" xml:"ResourceCreationTime"`
+	ResourceDeleted      int    `json:"ResourceDeleted" xml:"ResourceDeleted"`
 }

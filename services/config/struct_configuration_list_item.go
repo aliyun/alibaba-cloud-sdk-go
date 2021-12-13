@@ -17,17 +17,17 @@ package config
 
 // ConfigurationListItem is a nested struct in config response
 type ConfigurationListItem struct {
+	Relationship       string `json:"Relationship" xml:"Relationship"`
+	Tags               string `json:"Tags" xml:"Tags"`
 	AccountId          int64  `json:"AccountId" xml:"AccountId"`
+	ResourceEventType  string `json:"ResourceEventType" xml:"ResourceEventType"`
+	RelationshipDiff   string `json:"RelationshipDiff" xml:"RelationshipDiff"`
 	AvailabilityZone   string `json:"AvailabilityZone" xml:"AvailabilityZone"`
+	ResourceType       string `json:"ResourceType" xml:"ResourceType"`
+	ResourceCreateTime string `json:"ResourceCreateTime" xml:"ResourceCreateTime"`
+	Region             string `json:"Region" xml:"Region"`
 	CaptureTime        string `json:"CaptureTime" xml:"CaptureTime"`
 	ConfigurationDiff  string `json:"ConfigurationDiff" xml:"ConfigurationDiff"`
-	Region             string `json:"Region" xml:"Region"`
-	Relationship       string `json:"Relationship" xml:"Relationship"`
-	RelationshipDiff   string `json:"RelationshipDiff" xml:"RelationshipDiff"`
-	ResourceCreateTime string `json:"ResourceCreateTime" xml:"ResourceCreateTime"`
 	ResourceId         string `json:"ResourceId" xml:"ResourceId"`
 	ResourceName       string `json:"ResourceName" xml:"ResourceName"`
-	ResourceType       string `json:"ResourceType" xml:"ResourceType"`
-	Tags               string `json:"Tags" xml:"Tags"`
-	ResourceEventType  string `json:"ResourceEventType" xml:"ResourceEventType"`
 }

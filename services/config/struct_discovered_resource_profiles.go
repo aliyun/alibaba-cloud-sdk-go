@@ -17,8 +17,8 @@ package config
 
 // DiscoveredResourceProfiles is a nested struct in config response
 type DiscoveredResourceProfiles struct {
+	TotalCount                    int                         `json:"TotalCount" xml:"TotalCount"`
 	PageNumber                    int                         `json:"PageNumber" xml:"PageNumber"`
 	PageSize                      int                         `json:"PageSize" xml:"PageSize"`
-	TotalCount                    int                         `json:"TotalCount" xml:"TotalCount"`
 	DiscoveredResourceProfileList []DiscoveredResourceProfile `json:"DiscoveredResourceProfileList" xml:"DiscoveredResourceProfileList"`
 }

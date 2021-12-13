@@ -86,7 +86,7 @@ func CreateDeleteConfigRulesRequest() (request *DeleteConfigRulesRequest) {
 	request = &DeleteConfigRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DeleteConfigRules", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DeleteConfigRules", "", "")
 	request.Method = requests.POST
 	return
 }

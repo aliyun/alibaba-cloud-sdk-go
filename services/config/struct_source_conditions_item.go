@@ -18,9 +18,9 @@ package config
 // SourceConditionsItem is a nested struct in config response
 type SourceConditionsItem struct {
 	DesiredValue string `json:"DesiredValue" xml:"DesiredValue"`
-	Name         string `json:"Name" xml:"Name"`
-	Operator     string `json:"Operator" xml:"Operator"`
 	Required     bool   `json:"Required" xml:"Required"`
-	SelectPath   string `json:"SelectPath" xml:"SelectPath"`
 	Tips         string `json:"Tips" xml:"Tips"`
+	Operator     string `json:"Operator" xml:"Operator"`
+	Name         string `json:"Name" xml:"Name"`
+	SelectPath   string `json:"SelectPath" xml:"SelectPath"`
 }

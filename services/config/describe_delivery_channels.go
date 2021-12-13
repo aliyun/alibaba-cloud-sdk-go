@@ -86,7 +86,7 @@ func CreateDescribeDeliveryChannelsRequest() (request *DescribeDeliveryChannelsR
 	request = &DescribeDeliveryChannelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeDeliveryChannels", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeDeliveryChannels", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -87,7 +87,7 @@ func CreateDescribeComplianceSummaryRequest() (request *DescribeComplianceSummar
 	request = &DescribeComplianceSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeComplianceSummary", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeComplianceSummary", "", "")
 	request.Method = requests.GET
 	return
 }

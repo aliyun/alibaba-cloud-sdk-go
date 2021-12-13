@@ -17,12 +17,12 @@ package config
 
 // ConfigRuleEvaluationStatus is a nested struct in config response
 type ConfigRuleEvaluationStatus struct {
+	LastErrorCode                     string `json:"LastErrorCode" xml:"LastErrorCode"`
+	LastSuccessfulEvaluationTimestamp int64  `json:"LastSuccessfulEvaluationTimestamp" xml:"LastSuccessfulEvaluationTimestamp"`
 	FirstActivatedTimestamp           int64  `json:"FirstActivatedTimestamp" xml:"FirstActivatedTimestamp"`
 	FirstEvaluationStarted            bool   `json:"FirstEvaluationStarted" xml:"FirstEvaluationStarted"`
-	LastErrorCode                     string `json:"LastErrorCode" xml:"LastErrorCode"`
+	LastSuccessfulInvocationTimestamp int64  `json:"LastSuccessfulInvocationTimestamp" xml:"LastSuccessfulInvocationTimestamp"`
 	LastErrorMessage                  string `json:"LastErrorMessage" xml:"LastErrorMessage"`
 	LastFailedEvaluationTimestamp     int64  `json:"LastFailedEvaluationTimestamp" xml:"LastFailedEvaluationTimestamp"`
 	LastFailedInvocationTimestamp     int64  `json:"LastFailedInvocationTimestamp" xml:"LastFailedInvocationTimestamp"`
-	LastSuccessfulEvaluationTimestamp int64  `json:"LastSuccessfulEvaluationTimestamp" xml:"LastSuccessfulEvaluationTimestamp"`
-	LastSuccessfulInvocationTimestamp int64  `json:"LastSuccessfulInvocationTimestamp" xml:"LastSuccessfulInvocationTimestamp"`
 }

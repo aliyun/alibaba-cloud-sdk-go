@@ -85,7 +85,7 @@ func CreateDescribeConfigurationRecorderRequest() (request *DescribeConfiguratio
 	request = &DescribeConfigurationRecorderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeConfigurationRecorder", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeConfigurationRecorder", "", "")
 	request.Method = requests.GET
 	return
 }

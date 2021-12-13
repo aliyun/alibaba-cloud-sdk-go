@@ -17,9 +17,11 @@ package config
 
 // CreateBy is a nested struct in config response
 type CreateBy struct {
-	CreatorName         string `json:"CreatorName" xml:"CreatorName"`
 	ConfigRuleSceneId   string `json:"ConfigRuleSceneId" xml:"ConfigRuleSceneId"`
+	CreatorName         string `json:"CreatorName" xml:"CreatorName"`
+	CompliancePackId    string `json:"CompliancePackId" xml:"CompliancePackId"`
 	ConfigRuleSceneName string `json:"ConfigRuleSceneName" xml:"ConfigRuleSceneName"`
 	CreatorType         string `json:"CreatorType" xml:"CreatorType"`
 	CreatorId           string `json:"CreatorId" xml:"CreatorId"`
+	CompliancePackName  string `json:"CompliancePackName" xml:"CompliancePackName"`
 }

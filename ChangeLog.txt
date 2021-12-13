@@ -1,3 +1,7 @@
+2021-12-13 Version: v1.61.1380
+- Generated 2019-01-08 for `Config`.
+- Support query resourceType.
+
 2021-12-10 Version: v1.61.1379
 - Generated 2021-07-01 for `eas`.
 - Update to v2 api.

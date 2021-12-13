@@ -17,6 +17,7 @@ package config
 
 // ConfigRule is a nested struct in config response
 type ConfigRule struct {
+	CompliancePackId           string                     `json:"CompliancePackId" xml:"CompliancePackId"`
 	RiskLevel                  int                        `json:"RiskLevel" xml:"RiskLevel"`
 	CreateTimestamp            int64                      `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	SourceOwner                string                     `json:"SourceOwner" xml:"SourceOwner"`
@@ -31,10 +32,11 @@ type ConfigRule struct {
 	SourceIdentifier           string                     `json:"SourceIdentifier" xml:"SourceIdentifier"`
 	Description                string                     `json:"Description" xml:"Description"`
 	MaximumExecutionFrequency  string                     `json:"MaximumExecutionFrequency" xml:"MaximumExecutionFrequency"`
-	Source                     Source                     `json:"Source" xml:"Source"`
-	ConfigRuleEvaluationStatus ConfigRuleEvaluationStatus `json:"ConfigRuleEvaluationStatus" xml:"ConfigRuleEvaluationStatus"`
+	OrganizationRule           bool                       `json:"OrganizationRule" xml:"OrganizationRule"`
 	CreateBy                   CreateBy                   `json:"CreateBy" xml:"CreateBy"`
-	ManagedRule                ManagedRule                `json:"ManagedRule" xml:"ManagedRule"`
+	ConfigRuleEvaluationStatus ConfigRuleEvaluationStatus `json:"ConfigRuleEvaluationStatus" xml:"ConfigRuleEvaluationStatus"`
+	Source                     Source                     `json:"Source" xml:"Source"`
 	Scope                      Scope                      `json:"Scope" xml:"Scope"`
+	ManagedRule                ManagedRule                `json:"ManagedRule" xml:"ManagedRule"`
 	Compliance                 Compliance                 `json:"Compliance" xml:"Compliance"`
 }

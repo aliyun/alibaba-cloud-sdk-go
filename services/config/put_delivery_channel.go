@@ -94,7 +94,7 @@ func CreatePutDeliveryChannelRequest() (request *PutDeliveryChannelRequest) {
 	request = &PutDeliveryChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "PutDeliveryChannel", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "PutDeliveryChannel", "", "")
 	request.Method = requests.POST
 	return
 }

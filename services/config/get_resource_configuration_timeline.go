@@ -94,7 +94,7 @@ func CreateGetResourceConfigurationTimelineRequest() (request *GetResourceConfig
 	request = &GetResourceConfigurationTimelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceConfigurationTimeline", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceConfigurationTimeline", "", "")
 	request.Method = requests.GET
 	return
 }

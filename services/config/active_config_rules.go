@@ -86,7 +86,7 @@ func CreateActiveConfigRulesRequest() (request *ActiveConfigRulesRequest) {
 	request = &ActiveConfigRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "ActiveConfigRules", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "ActiveConfigRules", "", "")
 	request.Method = requests.POST
 	return
 }

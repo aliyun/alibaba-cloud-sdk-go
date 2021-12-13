@@ -17,13 +17,14 @@ package config
 
 // DiscoveredResourceProfile is a nested struct in config response
 type DiscoveredResourceProfile struct {
-	AccountId            int64  `json:"AccountId" xml:"AccountId"`
 	Region               string `json:"Region" xml:"Region"`
+	ResourceType         string `json:"ResourceType" xml:"ResourceType"`
+	ResourceId           string `json:"ResourceId" xml:"ResourceId"`
+	ResourceStatus       string `json:"ResourceStatus" xml:"ResourceStatus"`
+	Tags                 string `json:"Tags" xml:"Tags"`
+	AccountId            int64  `json:"AccountId" xml:"AccountId"`
+	ResourceName         string `json:"ResourceName" xml:"ResourceName"`
+	ResourceOwnerId      int64  `json:"ResourceOwnerId" xml:"ResourceOwnerId"`
 	ResourceCreationTime int64  `json:"ResourceCreationTime" xml:"ResourceCreationTime"`
 	ResourceDeleted      int    `json:"ResourceDeleted" xml:"ResourceDeleted"`
-	ResourceId           string `json:"ResourceId" xml:"ResourceId"`
-	ResourceName         string `json:"ResourceName" xml:"ResourceName"`
-	ResourceStatus       string `json:"ResourceStatus" xml:"ResourceStatus"`
-	ResourceType         string `json:"ResourceType" xml:"ResourceType"`
-	Tags                 string `json:"Tags" xml:"Tags"`
 }

@@ -88,7 +88,7 @@ func CreateDescribeConfigRuleRequest() (request *DescribeConfigRuleRequest) {
 	request = &DescribeConfigRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeConfigRule", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeConfigRule", "", "")
 	request.Method = requests.GET
 	return
 }

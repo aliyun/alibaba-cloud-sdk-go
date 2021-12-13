@@ -17,6 +17,6 @@ package config
 
 // GroupedResourceCount is a nested struct in config response
 type GroupedResourceCount struct {
-	GroupName     string `json:"GroupName" xml:"GroupName"`
 	ResourceCount int64  `json:"ResourceCount" xml:"ResourceCount"`
+	GroupName     string `json:"GroupName" xml:"GroupName"`
 }

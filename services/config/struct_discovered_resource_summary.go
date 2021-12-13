@@ -17,7 +17,7 @@ package config
 
 // DiscoveredResourceSummary is a nested struct in config response
 type DiscoveredResourceSummary struct {
+	RegionCount       int `json:"RegionCount" xml:"RegionCount"`
 	ResourceCount     int `json:"ResourceCount" xml:"ResourceCount"`
 	ResourceTypeCount int `json:"ResourceTypeCount" xml:"ResourceTypeCount"`
-	RegionCount       int `json:"RegionCount" xml:"RegionCount"`
 }

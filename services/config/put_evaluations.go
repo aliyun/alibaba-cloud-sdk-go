@@ -71,8 +71,9 @@ func (client *Client) PutEvaluationsWithCallback(request *PutEvaluationsRequest,
 // PutEvaluationsRequest is the request struct for api PutEvaluations
 type PutEvaluationsRequest struct {
 	*requests.RpcRequest
-	Evaluations string `position:"Body" name:"Evaluations"`
-	ResultToken string `position:"Body" name:"ResultToken"`
+	Evaluations string           `position:"Body" name:"Evaluations"`
+	DeleteMode  requests.Boolean `position:"Body" name:"DeleteMode"`
+	ResultToken string           `position:"Body" name:"ResultToken"`
 }
 
 // PutEvaluationsResponse is the response struct for api PutEvaluations
@@ -87,7 +88,7 @@ func CreatePutEvaluationsRequest() (request *PutEvaluationsRequest) {
 	request = &PutEvaluationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "PutEvaluations", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "PutEvaluations", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -71,20 +71,23 @@ func (client *Client) PutConfigRuleWithCallback(request *PutConfigRuleRequest, c
 // PutConfigRuleRequest is the request struct for api PutConfigRule
 type PutConfigRuleRequest struct {
 	*requests.RpcRequest
-	ConfigRuleId                    string           `position:"Body" name:"ConfigRuleId"`
-	MultiAccount                    requests.Boolean `position:"Query" name:"MultiAccount"`
-	ClientToken                     string           `position:"Body" name:"ClientToken"`
-	Description                     string           `position:"Body" name:"Description"`
-	SourceIdentifier                string           `position:"Body" name:"SourceIdentifier"`
-	SourceMaximumExecutionFrequency string           `position:"Body" name:"SourceMaximumExecutionFrequency"`
-	ScopeComplianceResourceTypes    string           `position:"Body" name:"ScopeComplianceResourceTypes"`
-	SourceDetailMessageType         string           `position:"Body" name:"SourceDetailMessageType"`
-	RiskLevel                       requests.Integer `position:"Body" name:"RiskLevel"`
-	SourceOwner                     string           `position:"Body" name:"SourceOwner"`
-	InputParameters                 string           `position:"Body" name:"InputParameters"`
-	ConfigRuleName                  string           `position:"Body" name:"ConfigRuleName"`
-	ScopeComplianceResourceId       string           `position:"Body" name:"ScopeComplianceResourceId"`
-	MemberId                        requests.Integer `position:"Query" name:"MemberId"`
+	ConfigRuleId                      string           `position:"Body" name:"ConfigRuleId"`
+	MultiAccount                      requests.Boolean `position:"Query" name:"MultiAccount"`
+	ClientToken                       string           `position:"Body" name:"ClientToken"`
+	Description                       string           `position:"Body" name:"Description"`
+	SourceIdentifier                  string           `position:"Body" name:"SourceIdentifier"`
+	SourceMaximumExecutionFrequency   string           `position:"Body" name:"SourceMaximumExecutionFrequency"`
+	ScopeComplianceResourceTypes      string           `position:"Body" name:"ScopeComplianceResourceTypes"`
+	SourceDetailMessageType           string           `position:"Body" name:"SourceDetailMessageType"`
+	RiskLevel                         requests.Integer `position:"Body" name:"RiskLevel"`
+	SourceOwner                       string           `position:"Body" name:"SourceOwner"`
+	InputParameters                   string           `position:"Body" name:"InputParameters"`
+	ScopeComplianceExcludeResourceIds string           `position:"Body" name:"ScopeComplianceExcludeResourceIds"`
+	ConfigRuleName                    string           `position:"Body" name:"ConfigRuleName"`
+	ScopeComplianceResourceId         string           `position:"Body" name:"ScopeComplianceResourceId"`
+	ScopeComplianceResourceIds        string           `position:"Body" name:"ScopeComplianceResourceIds"`
+	ScopeComplianceRegionIds          string           `position:"Body" name:"ScopeComplianceRegionIds"`
+	MemberId                          requests.Integer `position:"Query" name:"MemberId"`
 }
 
 // PutConfigRuleResponse is the response struct for api PutConfigRule
@@ -99,7 +102,7 @@ func CreatePutConfigRuleRequest() (request *PutConfigRuleRequest) {
 	request = &PutConfigRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "PutConfigRule", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "PutConfigRule", "", "")
 	request.Method = requests.POST
 	return
 }

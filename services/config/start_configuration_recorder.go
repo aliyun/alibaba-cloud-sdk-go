@@ -86,7 +86,7 @@ func CreateStartConfigurationRecorderRequest() (request *StartConfigurationRecor
 	request = &StartConfigurationRecorderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "StartConfigurationRecorder", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "StartConfigurationRecorder", "", "")
 	request.Method = requests.POST
 	return
 }

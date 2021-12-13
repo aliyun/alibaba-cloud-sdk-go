@@ -94,7 +94,7 @@ func CreateGetResourceComplianceTimelineRequest() (request *GetResourceComplianc
 	request = &GetResourceComplianceTimelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceComplianceTimeline", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceComplianceTimeline", "", "")
 	request.Method = requests.GET
 	return
 }

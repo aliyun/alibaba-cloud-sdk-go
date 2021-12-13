@@ -86,7 +86,7 @@ func CreateStopConfigRulesRequest() (request *StopConfigRulesRequest) {
 	request = &StopConfigRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "StopConfigRules", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "StopConfigRules", "", "")
 	request.Method = requests.POST
 	return
 }

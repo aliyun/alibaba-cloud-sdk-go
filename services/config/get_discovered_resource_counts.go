@@ -88,7 +88,7 @@ func CreateGetDiscoveredResourceCountsRequest() (request *GetDiscoveredResourceC
 	request = &GetDiscoveredResourceCountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetDiscoveredResourceCounts", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetDiscoveredResourceCounts", "", "")
 	request.Method = requests.GET
 	return
 }

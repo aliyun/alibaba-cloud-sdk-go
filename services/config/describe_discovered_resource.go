@@ -90,7 +90,7 @@ func CreateDescribeDiscoveredResourceRequest() (request *DescribeDiscoveredResou
 	request = &DescribeDiscoveredResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeDiscoveredResource", "Config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeDiscoveredResource", "", "")
 	request.Method = requests.GET
 	return
 }
