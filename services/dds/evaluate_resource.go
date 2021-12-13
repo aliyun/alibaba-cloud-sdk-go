@@ -72,8 +72,10 @@ func (client *Client) EvaluateResourceWithCallback(request *EvaluateResourceRequ
 type EvaluateResourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ReadonlyReplicas     string           `position:"Query" name:"ReadonlyReplicas"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	ShardsInfo           string           `position:"Query" name:"ShardsInfo"`
+	ReplicationFactor    string           `position:"Query" name:"ReplicationFactor"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	Engine               string           `position:"Query" name:"Engine"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
@@ -87,10 +89,10 @@ type EvaluateResourceRequest struct {
 // EvaluateResourceResponse is the response struct for api EvaluateResource
 type EvaluateResourceResponse struct {
 	*responses.BaseResponse
+	DBInstanceAvailable string `json:"DBInstanceAvailable" xml:"DBInstanceAvailable"`
+	EngineVersion       string `json:"EngineVersion" xml:"EngineVersion"`
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	Engine              string `json:"Engine" xml:"Engine"`
-	EngineVersion       string `json:"EngineVersion" xml:"EngineVersion"`
-	DBInstanceAvailable string `json:"DBInstanceAvailable" xml:"DBInstanceAvailable"`
 }
 
 // CreateEvaluateResourceRequest creates a request to invoke EvaluateResource API

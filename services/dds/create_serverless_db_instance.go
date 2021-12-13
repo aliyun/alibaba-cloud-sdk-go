@@ -71,6 +71,7 @@ func (client *Client) CreateServerlessDBInstanceWithCallback(request *CreateServ
 // CreateServerlessDBInstanceRequest is the request struct for api CreateServerlessDBInstance
 type CreateServerlessDBInstanceRequest struct {
 	*requests.RpcRequest
+	CapacityUnit          string           `position:"Query" name:"CapacityUnit"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`

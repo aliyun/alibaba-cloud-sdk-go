@@ -1,3 +1,7 @@
+2021-12-13 Version: v1.61.1384
+- Generated 2015-12-01 for `Dds`.
+- CreateServerlessDBInstance Add CapacityUnit.
+
 2021-12-13 Version: v1.61.1383
 - Generated 2016-05-03 for `gpdb`.
 - Openapi support querydisplay.
