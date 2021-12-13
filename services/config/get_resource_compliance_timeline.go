@@ -71,15 +71,13 @@ func (client *Client) GetResourceComplianceTimelineWithCallback(request *GetReso
 // GetResourceComplianceTimelineRequest is the request struct for api GetResourceComplianceTimeline
 type GetResourceComplianceTimelineRequest struct {
 	*requests.RpcRequest
-	MultiAccount requests.Boolean `position:"Query" name:"MultiAccount"`
-	StartTime    requests.Integer `position:"Query" name:"StartTime"`
-	NextToken    string           `position:"Query" name:"NextToken"`
-	Limit        requests.Integer `position:"Query" name:"Limit"`
 	ResourceId   string           `position:"Query" name:"ResourceId"`
 	EndTime      requests.Integer `position:"Query" name:"EndTime"`
+	StartTime    requests.Integer `position:"Query" name:"StartTime"`
 	ResourceType string           `position:"Query" name:"ResourceType"`
+	NextToken    string           `position:"Query" name:"NextToken"`
+	MaxResults   requests.Integer `position:"Query" name:"MaxResults"`
 	Region       string           `position:"Query" name:"Region"`
-	MemberId     string           `position:"Query" name:"MemberId"`
 }
 
 // GetResourceComplianceTimelineResponse is the response struct for api GetResourceComplianceTimeline
@@ -94,7 +92,7 @@ func CreateGetResourceComplianceTimelineRequest() (request *GetResourceComplianc
 	request = &GetResourceComplianceTimelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceComplianceTimeline", "", "")
+	request.InitWithApiInfo("Config", "2020-09-07", "GetResourceComplianceTimeline", "", "")
 	request.Method = requests.GET
 	return
 }

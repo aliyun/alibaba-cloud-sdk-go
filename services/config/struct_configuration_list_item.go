@@ -17,17 +17,17 @@ package config
 
 // ConfigurationListItem is a nested struct in config response
 type ConfigurationListItem struct {
-	Relationship       string `json:"Relationship" xml:"Relationship"`
-	Tags               string `json:"Tags" xml:"Tags"`
-	AccountId          int64  `json:"AccountId" xml:"AccountId"`
-	ResourceEventType  string `json:"ResourceEventType" xml:"ResourceEventType"`
-	RelationshipDiff   string `json:"RelationshipDiff" xml:"RelationshipDiff"`
-	AvailabilityZone   string `json:"AvailabilityZone" xml:"AvailabilityZone"`
-	ResourceType       string `json:"ResourceType" xml:"ResourceType"`
-	ResourceCreateTime string `json:"ResourceCreateTime" xml:"ResourceCreateTime"`
 	Region             string `json:"Region" xml:"Region"`
-	CaptureTime        string `json:"CaptureTime" xml:"CaptureTime"`
-	ConfigurationDiff  string `json:"ConfigurationDiff" xml:"ConfigurationDiff"`
 	ResourceId         string `json:"ResourceId" xml:"ResourceId"`
+	Tags               string `json:"Tags" xml:"Tags"`
+	AvailabilityZone   string `json:"AvailabilityZone" xml:"AvailabilityZone"`
+	CaptureTime        string `json:"CaptureTime" xml:"CaptureTime"`
+	RelationshipDiff   string `json:"RelationshipDiff" xml:"RelationshipDiff"`
+	Relationship       string `json:"Relationship" xml:"Relationship"`
+	ResourceType       string `json:"ResourceType" xml:"ResourceType"`
+	ResourceEventType  string `json:"ResourceEventType" xml:"ResourceEventType"`
+	AccountId          int64  `json:"AccountId" xml:"AccountId"`
 	ResourceName       string `json:"ResourceName" xml:"ResourceName"`
+	ResourceCreateTime string `json:"ResourceCreateTime" xml:"ResourceCreateTime"`
+	ConfigurationDiff  string `json:"ConfigurationDiff" xml:"ConfigurationDiff"`
 }

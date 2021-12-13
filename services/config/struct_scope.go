@@ -17,6 +17,5 @@ package config
 
 // Scope is a nested struct in config response
 type Scope struct {
-	ComplianceResourceId    string   `json:"ComplianceResourceId" xml:"ComplianceResourceId"`
 	ComplianceResourceTypes []string `json:"ComplianceResourceTypes" xml:"ComplianceResourceTypes"`
 }
