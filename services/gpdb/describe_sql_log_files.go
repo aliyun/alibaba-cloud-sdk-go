@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSQLLogFiles invokes the gpdb.DescribeSQLLogFiles API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describesqllogfiles.html
 func (client *Client) DescribeSQLLogFiles(request *DescribeSQLLogFilesRequest) (response *DescribeSQLLogFilesResponse, err error) {
 	response = CreateDescribeSQLLogFilesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSQLLogFiles(request *DescribeSQLLogFilesRequest) (
 }
 
 // DescribeSQLLogFilesWithChan invokes the gpdb.DescribeSQLLogFiles API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describesqllogfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLLogFilesWithChan(request *DescribeSQLLogFilesRequest) (<-chan *DescribeSQLLogFilesResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLLogFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSQLLogFilesWithChan(request *DescribeSQLLogFilesRe
 }
 
 // DescribeSQLLogFilesWithCallback invokes the gpdb.DescribeSQLLogFiles API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describesqllogfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLLogFilesWithCallback(request *DescribeSQLLogFilesRequest, callback func(response *DescribeSQLLogFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,19 +71,19 @@ func (client *Client) DescribeSQLLogFilesWithCallback(request *DescribeSQLLogFil
 // DescribeSQLLogFilesRequest is the request struct for api DescribeSQLLogFiles
 type DescribeSQLLogFilesRequest struct {
 	*requests.RpcRequest
-	FileName     string           `position:"Query" name:"FileName"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId string           `position:"Query" name:"DBInstanceId"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	FileName     string           `position:"Query" name:"FileName"`
 }
 
 // DescribeSQLLogFilesResponse is the response struct for api DescribeSQLLogFiles
 type DescribeSQLLogFilesResponse struct {
 	*responses.BaseResponse
-	RequestId        string                     `json:"RequestId" xml:"RequestId"`
 	TotalRecordCount int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                        `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                     `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
 	Items            ItemsInDescribeSQLLogFiles `json:"Items" xml:"Items"`
 }
 
@@ -97,7 +92,8 @@ func CreateDescribeSQLLogFilesRequest() (request *DescribeSQLLogFilesRequest) {
 	request = &DescribeSQLLogFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeSQLLogFiles", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeSQLLogFiles", "", "")
+	request.Method = requests.POST
 	return
 }
 

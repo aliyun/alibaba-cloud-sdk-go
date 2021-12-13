@@ -17,10 +17,12 @@ package gpdb
 
 // DBInstanceNetInfo is a nested struct in gpdb response
 type DBInstanceNetInfo struct {
+	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
 	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
-	IPAddress        string `json:"IPAddress" xml:"IPAddress"`
 	IPType           string `json:"IPType" xml:"IPType"`
 	Port             string `json:"Port" xml:"Port"`
+	VpcInstanceId    string `json:"VpcInstanceId" xml:"VpcInstanceId"`
 	VPCId            string `json:"VPCId" xml:"VPCId"`
-	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
+	IPAddress        string `json:"IPAddress" xml:"IPAddress"`
+	AddressType      string `json:"AddressType" xml:"AddressType"`
 }

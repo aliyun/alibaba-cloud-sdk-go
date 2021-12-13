@@ -17,15 +17,15 @@ package gpdb
 
 // VpcItem is a nested struct in gpdb response
 type VpcItem struct {
-	VpcId       string    `json:"VpcId" xml:"VpcId"`
-	VpcName     string    `json:"VpcName" xml:"VpcName"`
-	Bid         string    `json:"Bid" xml:"Bid"`
-	AliUid      string    `json:"AliUid" xml:"AliUid"`
-	RegionNo    string    `json:"RegionNo" xml:"RegionNo"`
-	CidrBlock   string    `json:"CidrBlock" xml:"CidrBlock"`
-	IsDefault   bool      `json:"IsDefault" xml:"IsDefault"`
 	Status      string    `json:"Status" xml:"Status"`
+	VpcName     string    `json:"VpcName" xml:"VpcName"`
+	VpcId       string    `json:"VpcId" xml:"VpcId"`
+	IsDefault   bool      `json:"IsDefault" xml:"IsDefault"`
+	CidrBlock   string    `json:"CidrBlock" xml:"CidrBlock"`
+	RegionNo    string    `json:"RegionNo" xml:"RegionNo"`
 	GmtCreate   string    `json:"GmtCreate" xml:"GmtCreate"`
+	AliUid      string    `json:"AliUid" xml:"AliUid"`
 	GmtModified string    `json:"GmtModified" xml:"GmtModified"`
+	Bid         string    `json:"Bid" xml:"Bid"`
 	VSwitchs    []VSwitch `json:"VSwitchs" xml:"VSwitchs"`
 }

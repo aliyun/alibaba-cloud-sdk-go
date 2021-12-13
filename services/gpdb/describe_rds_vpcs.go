@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRdsVpcs invokes the gpdb.DescribeRdsVpcs API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describerdsvpcs.html
 func (client *Client) DescribeRdsVpcs(request *DescribeRdsVpcsRequest) (response *DescribeRdsVpcsResponse, err error) {
 	response = CreateDescribeRdsVpcsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRdsVpcs(request *DescribeRdsVpcsRequest) (response
 }
 
 // DescribeRdsVpcsWithChan invokes the gpdb.DescribeRdsVpcs API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describerdsvpcs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsVpcsWithChan(request *DescribeRdsVpcsRequest) (<-chan *DescribeRdsVpcsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRdsVpcsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRdsVpcsWithChan(request *DescribeRdsVpcsRequest) (
 }
 
 // DescribeRdsVpcsWithCallback invokes the gpdb.DescribeRdsVpcs API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describerdsvpcs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsVpcsWithCallback(request *DescribeRdsVpcsRequest, callback func(response *DescribeRdsVpcsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,8 +75,8 @@ type DescribeRdsVpcsRequest struct {
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 // DescribeRdsVpcsResponse is the response struct for api DescribeRdsVpcs
@@ -96,7 +91,8 @@ func CreateDescribeRdsVpcsRequest() (request *DescribeRdsVpcsRequest) {
 	request = &DescribeRdsVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeRdsVpcs", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeRdsVpcs", "", "")
+	request.Method = requests.POST
 	return
 }
 

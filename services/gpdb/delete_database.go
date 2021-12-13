@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDatabase invokes the gpdb.DeleteDatabase API synchronously
-// api document: https://help.aliyun.com/api/gpdb/deletedatabase.html
 func (client *Client) DeleteDatabase(request *DeleteDatabaseRequest) (response *DeleteDatabaseResponse, err error) {
 	response = CreateDeleteDatabaseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDatabase(request *DeleteDatabaseRequest) (response *
 }
 
 // DeleteDatabaseWithChan invokes the gpdb.DeleteDatabase API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/deletedatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDatabaseWithChan(request *DeleteDatabaseRequest) (<-chan *DeleteDatabaseResponse, <-chan error) {
 	responseChan := make(chan *DeleteDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDatabaseWithChan(request *DeleteDatabaseRequest) (<-
 }
 
 // DeleteDatabaseWithCallback invokes the gpdb.DeleteDatabase API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/deletedatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDatabaseWithCallback(request *DeleteDatabaseRequest, callback func(response *DeleteDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) DeleteDatabaseWithCallback(request *DeleteDatabaseRequest,
 // DeleteDatabaseRequest is the request struct for api DeleteDatabase
 type DeleteDatabaseRequest struct {
 	*requests.RpcRequest
-	DBName       string `position:"Query" name:"DBName"`
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
+	DBName       string `position:"Query" name:"DBName"`
 }
 
 // DeleteDatabaseResponse is the response struct for api DeleteDatabase
@@ -91,7 +86,8 @@ func CreateDeleteDatabaseRequest() (request *DeleteDatabaseRequest) {
 	request = &DeleteDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DeleteDatabase", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DeleteDatabase", "", "")
+	request.Method = requests.POST
 	return
 }
 

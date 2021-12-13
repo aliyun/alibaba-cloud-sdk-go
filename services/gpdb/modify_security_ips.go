@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySecurityIps invokes the gpdb.ModifySecurityIps API synchronously
-// api document: https://help.aliyun.com/api/gpdb/modifysecurityips.html
 func (client *Client) ModifySecurityIps(request *ModifySecurityIpsRequest) (response *ModifySecurityIpsResponse, err error) {
 	response = CreateModifySecurityIpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySecurityIps(request *ModifySecurityIpsRequest) (resp
 }
 
 // ModifySecurityIpsWithChan invokes the gpdb.ModifySecurityIps API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifysecurityips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsRequest) (<-chan *ModifySecurityIpsResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsReques
 }
 
 // ModifySecurityIpsWithCallback invokes the gpdb.ModifySecurityIps API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifysecurityips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRequest, callback func(response *ModifySecurityIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,10 @@ func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRe
 // ModifySecurityIpsRequest is the request struct for api ModifySecurityIps
 type ModifySecurityIpsRequest struct {
 	*requests.RpcRequest
-	SecurityIPList             string `position:"Query" name:"SecurityIPList"`
 	DBInstanceIPArrayName      string `position:"Query" name:"DBInstanceIPArrayName"`
-	DBInstanceIPArrayAttribute string `position:"Query" name:"DBInstanceIPArrayAttribute"`
 	DBInstanceId               string `position:"Query" name:"DBInstanceId"`
+	SecurityIPList             string `position:"Query" name:"SecurityIPList"`
+	DBInstanceIPArrayAttribute string `position:"Query" name:"DBInstanceIPArrayAttribute"`
 }
 
 // ModifySecurityIpsResponse is the response struct for api ModifySecurityIps
@@ -93,7 +88,8 @@ func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
 	request = &ModifySecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifySecurityIps", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifySecurityIps", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ListTagResources invokes the gpdb.ListTagResources API synchronously
-// api document: https://help.aliyun.com/api/gpdb/listtagresources.html
 func (client *Client) ListTagResources(request *ListTagResourcesRequest) (response *ListTagResourcesResponse, err error) {
 	response = CreateListTagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTagResources(request *ListTagResourcesRequest) (respon
 }
 
 // ListTagResourcesWithChan invokes the gpdb.ListTagResources API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/listtagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagResourcesWithChan(request *ListTagResourcesRequest) (<-chan *ListTagResourcesResponse, <-chan error) {
 	responseChan := make(chan *ListTagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTagResourcesWithChan(request *ListTagResourcesRequest)
 }
 
 // ListTagResourcesWithCallback invokes the gpdb.ListTagResources API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/listtagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagResourcesWithCallback(request *ListTagResourcesRequest, callback func(response *ListTagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,11 +72,11 @@ func (client *Client) ListTagResourcesWithCallback(request *ListTagResourcesRequ
 type ListTagResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
+	NextToken            string                 `position:"Query" name:"NextToken"`
+	Tag                  *[]ListTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceId           *[]string              `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string                 `position:"Query" name:"ResourceOwnerAccount"`
-	NextToken            string                 `position:"Query" name:"NextToken"`
 	OwnerAccount         string                 `position:"Query" name:"OwnerAccount"`
-	Tag                  *[]ListTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
 	ResourceType         string                 `position:"Query" name:"ResourceType"`
 }
@@ -95,8 +90,8 @@ type ListTagResourcesTag struct {
 // ListTagResourcesResponse is the response struct for api ListTagResources
 type ListTagResourcesResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	NextToken    string       `json:"NextToken" xml:"NextToken"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	TagResources TagResources `json:"TagResources" xml:"TagResources"`
 }
 
@@ -105,7 +100,8 @@ func CreateListTagResourcesRequest() (request *ListTagResourcesRequest) {
 	request = &ListTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "ListTagResources", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "ListTagResources", "", "")
+	request.Method = requests.POST
 	return
 }
 

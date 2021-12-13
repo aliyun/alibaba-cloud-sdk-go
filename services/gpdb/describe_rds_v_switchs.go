@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRdsVSwitchs invokes the gpdb.DescribeRdsVSwitchs API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describerdsvswitchs.html
 func (client *Client) DescribeRdsVSwitchs(request *DescribeRdsVSwitchsRequest) (response *DescribeRdsVSwitchsResponse, err error) {
 	response = CreateDescribeRdsVSwitchsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRdsVSwitchs(request *DescribeRdsVSwitchsRequest) (
 }
 
 // DescribeRdsVSwitchsWithChan invokes the gpdb.DescribeRdsVSwitchs API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describerdsvswitchs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsVSwitchsWithChan(request *DescribeRdsVSwitchsRequest) (<-chan *DescribeRdsVSwitchsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRdsVSwitchsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRdsVSwitchsWithChan(request *DescribeRdsVSwitchsRe
 }
 
 // DescribeRdsVSwitchsWithCallback invokes the gpdb.DescribeRdsVSwitchs API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describerdsvswitchs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsVSwitchsWithCallback(request *DescribeRdsVSwitchsRequest, callback func(response *DescribeRdsVSwitchsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,9 +75,9 @@ type DescribeRdsVSwitchsRequest struct {
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeRdsVSwitchsResponse is the response struct for api DescribeRdsVSwitchs
@@ -97,7 +92,8 @@ func CreateDescribeRdsVSwitchsRequest() (request *DescribeRdsVSwitchsRequest) {
 	request = &DescribeRdsVSwitchsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeRdsVSwitchs", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeRdsVSwitchs", "", "")
+	request.Method = requests.POST
 	return
 }
 

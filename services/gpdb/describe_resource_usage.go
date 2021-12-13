@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeResourceUsage invokes the gpdb.DescribeResourceUsage API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describeresourceusage.html
 func (client *Client) DescribeResourceUsage(request *DescribeResourceUsageRequest) (response *DescribeResourceUsageResponse, err error) {
 	response = CreateDescribeResourceUsageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeResourceUsage(request *DescribeResourceUsageReques
 }
 
 // DescribeResourceUsageWithChan invokes the gpdb.DescribeResourceUsage API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describeresourceusage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceUsageWithChan(request *DescribeResourceUsageRequest) (<-chan *DescribeResourceUsageResponse, <-chan error) {
 	responseChan := make(chan *DescribeResourceUsageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeResourceUsageWithChan(request *DescribeResourceUsa
 }
 
 // DescribeResourceUsageWithCallback invokes the gpdb.DescribeResourceUsage API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describeresourceusage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceUsageWithCallback(request *DescribeResourceUsageRequest, callback func(response *DescribeResourceUsageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,13 +77,13 @@ type DescribeResourceUsageRequest struct {
 // DescribeResourceUsageResponse is the response struct for api DescribeResourceUsage
 type DescribeResourceUsageResponse struct {
 	*responses.BaseResponse
+	LogSize      int64  `json:"LogSize" xml:"LogSize"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	DataSize     int64  `json:"DataSize" xml:"DataSize"`
+	BackupSize   int64  `json:"BackupSize" xml:"BackupSize"`
+	DiskUsed     int64  `json:"DiskUsed" xml:"DiskUsed"`
 	Engine       string `json:"Engine" xml:"Engine"`
-	DiskUsed     int    `json:"DiskUsed" xml:"DiskUsed"`
-	DataSize     int    `json:"DataSize" xml:"DataSize"`
-	LogSize      int    `json:"LogSize" xml:"LogSize"`
-	BackupSize   int    `json:"BackupSize" xml:"BackupSize"`
 }
 
 // CreateDescribeResourceUsageRequest creates a request to invoke DescribeResourceUsage API
@@ -96,7 +91,8 @@ func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest
 	request = &DescribeResourceUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeResourceUsage", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeResourceUsage", "", "")
+	request.Method = requests.POST
 	return
 }
 

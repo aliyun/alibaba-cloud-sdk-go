@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstancePerformance invokes the gpdb.DescribeDBInstancePerformance API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describedbinstanceperformance.html
 func (client *Client) DescribeDBInstancePerformance(request *DescribeDBInstancePerformanceRequest) (response *DescribeDBInstancePerformanceResponse, err error) {
 	response = CreateDescribeDBInstancePerformanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstancePerformance(request *DescribeDBInstanceP
 }
 
 // DescribeDBInstancePerformanceWithChan invokes the gpdb.DescribeDBInstancePerformance API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describedbinstanceperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancePerformanceWithChan(request *DescribeDBInstancePerformanceRequest) (<-chan *DescribeDBInstancePerformanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancePerformanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstancePerformanceWithChan(request *DescribeDBI
 }
 
 // DescribeDBInstancePerformanceWithCallback invokes the gpdb.DescribeDBInstancePerformance API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describedbinstanceperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancePerformanceWithCallback(request *DescribeDBInstancePerformanceRequest, callback func(response *DescribeDBInstancePerformanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,20 +71,20 @@ func (client *Client) DescribeDBInstancePerformanceWithCallback(request *Describ
 // DescribeDBInstancePerformanceRequest is the request struct for api DescribeDBInstancePerformance
 type DescribeDBInstancePerformanceRequest struct {
 	*requests.RpcRequest
-	EndTime      string `position:"Query" name:"EndTime"`
-	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 	StartTime    string `position:"Query" name:"StartTime"`
+	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 	Key          string `position:"Query" name:"Key"`
+	EndTime      string `position:"Query" name:"EndTime"`
 }
 
 // DescribeDBInstancePerformanceResponse is the response struct for api DescribeDBInstancePerformance
 type DescribeDBInstancePerformanceResponse struct {
 	*responses.BaseResponse
+	EndTime         string   `json:"EndTime" xml:"EndTime"`
 	RequestId       string   `json:"RequestId" xml:"RequestId"`
 	DBInstanceId    string   `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine          string   `json:"Engine" xml:"Engine"`
 	StartTime       string   `json:"StartTime" xml:"StartTime"`
-	EndTime         string   `json:"EndTime" xml:"EndTime"`
+	Engine          string   `json:"Engine" xml:"Engine"`
 	PerformanceKeys []string `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
@@ -98,7 +93,8 @@ func CreateDescribeDBInstancePerformanceRequest() (request *DescribeDBInstancePe
 	request = &DescribeDBInstancePerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeDBInstancePerformance", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeDBInstancePerformance", "", "")
+	request.Method = requests.POST
 	return
 }
 

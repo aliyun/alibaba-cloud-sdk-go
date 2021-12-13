@@ -21,7 +21,6 @@ import (
 )
 
 // SwitchDBInstanceNetType invokes the gpdb.SwitchDBInstanceNetType API synchronously
-// api document: https://help.aliyun.com/api/gpdb/switchdbinstancenettype.html
 func (client *Client) SwitchDBInstanceNetType(request *SwitchDBInstanceNetTypeRequest) (response *SwitchDBInstanceNetTypeResponse, err error) {
 	response = CreateSwitchDBInstanceNetTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwitchDBInstanceNetType(request *SwitchDBInstanceNetTypeRe
 }
 
 // SwitchDBInstanceNetTypeWithChan invokes the gpdb.SwitchDBInstanceNetType API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/switchdbinstancenettype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceNetTypeWithChan(request *SwitchDBInstanceNetTypeRequest) (<-chan *SwitchDBInstanceNetTypeResponse, <-chan error) {
 	responseChan := make(chan *SwitchDBInstanceNetTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwitchDBInstanceNetTypeWithChan(request *SwitchDBInstanceN
 }
 
 // SwitchDBInstanceNetTypeWithCallback invokes the gpdb.SwitchDBInstanceNetType API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/switchdbinstancenettype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceNetTypeWithCallback(request *SwitchDBInstanceNetTypeRequest, callback func(response *SwitchDBInstanceNetTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,8 +72,8 @@ func (client *Client) SwitchDBInstanceNetTypeWithCallback(request *SwitchDBInsta
 type SwitchDBInstanceNetTypeRequest struct {
 	*requests.RpcRequest
 	ConnectionStringPrefix string `position:"Query" name:"ConnectionStringPrefix"`
-	Port                   string `position:"Query" name:"Port"`
 	DBInstanceId           string `position:"Query" name:"DBInstanceId"`
+	Port                   string `position:"Query" name:"Port"`
 }
 
 // SwitchDBInstanceNetTypeResponse is the response struct for api SwitchDBInstanceNetType
@@ -92,7 +87,8 @@ func CreateSwitchDBInstanceNetTypeRequest() (request *SwitchDBInstanceNetTypeReq
 	request = &SwitchDBInstanceNetTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "SwitchDBInstanceNetType", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "SwitchDBInstanceNetType", "", "")
+	request.Method = requests.POST
 	return
 }
 

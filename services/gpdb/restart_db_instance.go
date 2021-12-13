@@ -21,7 +21,6 @@ import (
 )
 
 // RestartDBInstance invokes the gpdb.RestartDBInstance API synchronously
-// api document: https://help.aliyun.com/api/gpdb/restartdbinstance.html
 func (client *Client) RestartDBInstance(request *RestartDBInstanceRequest) (response *RestartDBInstanceResponse, err error) {
 	response = CreateRestartDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartDBInstance(request *RestartDBInstanceRequest) (resp
 }
 
 // RestartDBInstanceWithChan invokes the gpdb.RestartDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/restartdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDBInstanceWithChan(request *RestartDBInstanceRequest) (<-chan *RestartDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *RestartDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartDBInstanceWithChan(request *RestartDBInstanceReques
 }
 
 // RestartDBInstanceWithCallback invokes the gpdb.RestartDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/restartdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDBInstanceWithCallback(request *RestartDBInstanceRequest, callback func(response *RestartDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateRestartDBInstanceRequest() (request *RestartDBInstanceRequest) {
 	request = &RestartDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "RestartDBInstance", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "RestartDBInstance", "", "")
+	request.Method = requests.POST
 	return
 }
 

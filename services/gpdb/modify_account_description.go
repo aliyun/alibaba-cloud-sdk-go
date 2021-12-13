@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAccountDescription invokes the gpdb.ModifyAccountDescription API synchronously
-// api document: https://help.aliyun.com/api/gpdb/modifyaccountdescription.html
 func (client *Client) ModifyAccountDescription(request *ModifyAccountDescriptionRequest) (response *ModifyAccountDescriptionResponse, err error) {
 	response = CreateModifyAccountDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAccountDescription(request *ModifyAccountDescription
 }
 
 // ModifyAccountDescriptionWithChan invokes the gpdb.ModifyAccountDescription API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifyaccountdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDescriptionRequest) (<-chan *ModifyAccountDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyAccountDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDes
 }
 
 // ModifyAccountDescriptionWithCallback invokes the gpdb.ModifyAccountDescription API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifyaccountdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccountDescriptionRequest, callback func(response *ModifyAccountDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,9 @@ func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccoun
 // ModifyAccountDescriptionRequest is the request struct for api ModifyAccountDescription
 type ModifyAccountDescriptionRequest struct {
 	*requests.RpcRequest
+	AccountDescription string `position:"Query" name:"AccountDescription"`
 	AccountName        string `position:"Query" name:"AccountName"`
 	DBInstanceId       string `position:"Query" name:"DBInstanceId"`
-	AccountDescription string `position:"Query" name:"AccountDescription"`
 }
 
 // ModifyAccountDescriptionResponse is the response struct for api ModifyAccountDescription
@@ -92,7 +87,8 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifyAccountDescription", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifyAccountDescription", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseInstancePublicConnection invokes the gpdb.ReleaseInstancePublicConnection API synchronously
-// api document: https://help.aliyun.com/api/gpdb/releaseinstancepublicconnection.html
 func (client *Client) ReleaseInstancePublicConnection(request *ReleaseInstancePublicConnectionRequest) (response *ReleaseInstancePublicConnectionResponse, err error) {
 	response = CreateReleaseInstancePublicConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseInstancePublicConnection(request *ReleaseInstancePu
 }
 
 // ReleaseInstancePublicConnectionWithChan invokes the gpdb.ReleaseInstancePublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/releaseinstancepublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstancePublicConnectionWithChan(request *ReleaseInstancePublicConnectionRequest) (<-chan *ReleaseInstancePublicConnectionResponse, <-chan error) {
 	responseChan := make(chan *ReleaseInstancePublicConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseInstancePublicConnectionWithChan(request *ReleaseIn
 }
 
 // ReleaseInstancePublicConnectionWithCallback invokes the gpdb.ReleaseInstancePublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/releaseinstancepublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstancePublicConnectionWithCallback(request *ReleaseInstancePublicConnectionRequest, callback func(response *ReleaseInstancePublicConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) ReleaseInstancePublicConnectionWithCallback(request *Relea
 // ReleaseInstancePublicConnectionRequest is the request struct for api ReleaseInstancePublicConnection
 type ReleaseInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
+	AddressType             string `position:"Query" name:"AddressType"`
 	DBInstanceId            string `position:"Query" name:"DBInstanceId"`
 	CurrentConnectionString string `position:"Query" name:"CurrentConnectionString"`
 }
@@ -91,7 +87,8 @@ func CreateReleaseInstancePublicConnectionRequest() (request *ReleaseInstancePub
 	request = &ReleaseInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "ReleaseInstancePublicConnection", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "ReleaseInstancePublicConnection", "", "")
+	request.Method = requests.POST
 	return
 }
 

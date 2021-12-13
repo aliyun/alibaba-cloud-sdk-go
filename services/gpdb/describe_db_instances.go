@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstances invokes the gpdb.DescribeDBInstances API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describedbinstances.html
 func (client *Client) DescribeDBInstances(request *DescribeDBInstancesRequest) (response *DescribeDBInstancesResponse, err error) {
 	response = CreateDescribeDBInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstances(request *DescribeDBInstancesRequest) (
 }
 
 // DescribeDBInstancesWithChan invokes the gpdb.DescribeDBInstances API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describedbinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesWithChan(request *DescribeDBInstancesRequest) (<-chan *DescribeDBInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstancesWithChan(request *DescribeDBInstancesRe
 }
 
 // DescribeDBInstancesWithCallback invokes the gpdb.DescribeDBInstances API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describedbinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstancesRequest, callback func(response *DescribeDBInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,13 +71,17 @@ func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstanc
 // DescribeDBInstancesRequest is the request struct for api DescribeDBInstances
 type DescribeDBInstancesRequest struct {
 	*requests.RpcRequest
-	DBInstanceIds         string                    `position:"Query" name:"DBInstanceIds"`
+	DBInstanceModes       *[]string                 `position:"Query" name:"DBInstanceModes"  type:"Repeated"`
+	DBInstanceStatuses    *[]string                 `position:"Query" name:"DBInstanceStatuses"  type:"Repeated"`
+	PageNumber            requests.Integer          `position:"Query" name:"PageNumber"`
 	PageSize              requests.Integer          `position:"Query" name:"PageSize"`
 	DBInstanceDescription string                    `position:"Query" name:"DBInstanceDescription"`
 	Tag                   *[]DescribeDBInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DBInstanceIds         string                    `position:"Query" name:"DBInstanceIds"`
 	OwnerId               requests.Integer          `position:"Query" name:"OwnerId"`
+	DBInstanceCategories  *[]string                 `position:"Query" name:"DBInstanceCategories"  type:"Repeated"`
+	InstanceDeployTypes   *[]string                 `position:"Query" name:"InstanceDeployTypes"  type:"Repeated"`
 	InstanceNetworkType   string                    `position:"Query" name:"InstanceNetworkType"`
-	PageNumber            requests.Integer          `position:"Query" name:"PageNumber"`
 }
 
 // DescribeDBInstancesTag is a repeated param struct in DescribeDBInstancesRequest
@@ -94,10 +93,10 @@ type DescribeDBInstancesTag struct {
 // DescribeDBInstancesResponse is the response struct for api DescribeDBInstances
 type DescribeDBInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId        string                     `json:"RequestId" xml:"RequestId"`
-	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
 	TotalRecordCount int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int                        `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                     `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
 	Items            ItemsInDescribeDBInstances `json:"Items" xml:"Items"`
 }
 
@@ -106,7 +105,8 @@ func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {
 	request = &DescribeDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeDBInstances", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeDBInstances", "", "")
+	request.Method = requests.POST
 	return
 }
 

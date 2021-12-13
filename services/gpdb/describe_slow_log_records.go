@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSlowLogRecords invokes the gpdb.DescribeSlowLogRecords API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describeslowlogrecords.html
 func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequest) (response *DescribeSlowLogRecordsResponse, err error) {
 	response = CreateDescribeSlowLogRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequ
 }
 
 // DescribeSlowLogRecordsWithChan invokes the gpdb.DescribeSlowLogRecords API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describeslowlogrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRecordsRequest) (<-chan *DescribeSlowLogRecordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlowLogRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRec
 }
 
 // DescribeSlowLogRecordsWithCallback invokes the gpdb.DescribeSlowLogRecords API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describeslowlogrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLogRecordsRequest, callback func(response *DescribeSlowLogRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,23 +71,23 @@ func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLo
 // DescribeSlowLogRecordsRequest is the request struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
-	SQLId        requests.Integer `position:"Query" name:"SQLId"`
-	DBName       string           `position:"Query" name:"DBName"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	EndTime      string           `position:"Query" name:"EndTime"`
-	DBInstanceId string           `position:"Query" name:"DBInstanceId"`
 	StartTime    string           `position:"Query" name:"StartTime"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId string           `position:"Query" name:"DBInstanceId"`
+	SQLId        requests.Integer `position:"Query" name:"SQLId"`
+	EndTime      string           `position:"Query" name:"EndTime"`
+	DBName       string           `position:"Query" name:"DBName"`
 }
 
 // DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                        `json:"RequestId" xml:"RequestId"`
-	Engine           string                        `json:"Engine" xml:"Engine"`
 	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                        `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
+	Engine           string                        `json:"Engine" xml:"Engine"`
 	Items            ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }
 
@@ -101,7 +96,8 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeSlowLogRecords", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeSlowLogRecords", "", "")
+	request.Method = requests.POST
 	return
 }
 

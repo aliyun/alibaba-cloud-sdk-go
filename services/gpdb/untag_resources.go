@@ -21,7 +21,6 @@ import (
 )
 
 // UntagResources invokes the gpdb.UntagResources API synchronously
-// api document: https://help.aliyun.com/api/gpdb/untagresources.html
 func (client *Client) UntagResources(request *UntagResourcesRequest) (response *UntagResourcesResponse, err error) {
 	response = CreateUntagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UntagResources(request *UntagResourcesRequest) (response *
 }
 
 // UntagResourcesWithChan invokes the gpdb.UntagResources API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/untagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UntagResourcesWithChan(request *UntagResourcesRequest) (<-chan *UntagResourcesResponse, <-chan error) {
 	responseChan := make(chan *UntagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UntagResourcesWithChan(request *UntagResourcesRequest) (<-
 }
 
 // UntagResourcesWithCallback invokes the gpdb.UntagResources API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/untagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest, callback func(response *UntagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,14 @@ func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest,
 // UntagResourcesRequest is the request struct for api UntagResources
 type UntagResourcesRequest struct {
 	*requests.RpcRequest
-	All                  requests.Boolean `position:"Query" name:"All"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	All                  requests.Boolean `position:"Query" name:"All"`
 	ResourceId           *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
+	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 }
 
 // UntagResourcesResponse is the response struct for api UntagResources
@@ -97,7 +92,8 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "UntagResources", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "UntagResources", "", "")
+	request.Method = requests.POST
 	return
 }
 

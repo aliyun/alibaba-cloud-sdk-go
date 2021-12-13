@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySQLCollectorPolicy invokes the gpdb.ModifySQLCollectorPolicy API synchronously
-// api document: https://help.aliyun.com/api/gpdb/modifysqlcollectorpolicy.html
 func (client *Client) ModifySQLCollectorPolicy(request *ModifySQLCollectorPolicyRequest) (response *ModifySQLCollectorPolicyResponse, err error) {
 	response = CreateModifySQLCollectorPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySQLCollectorPolicy(request *ModifySQLCollectorPolicy
 }
 
 // ModifySQLCollectorPolicyWithChan invokes the gpdb.ModifySQLCollectorPolicy API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifysqlcollectorpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySQLCollectorPolicyWithChan(request *ModifySQLCollectorPolicyRequest) (<-chan *ModifySQLCollectorPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifySQLCollectorPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySQLCollectorPolicyWithChan(request *ModifySQLCollect
 }
 
 // ModifySQLCollectorPolicyWithCallback invokes the gpdb.ModifySQLCollectorPolicy API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifysqlcollectorpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySQLCollectorPolicyWithCallback(request *ModifySQLCollectorPolicyRequest, callback func(response *ModifySQLCollectorPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateModifySQLCollectorPolicyRequest() (request *ModifySQLCollectorPolicyR
 	request = &ModifySQLCollectorPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifySQLCollectorPolicy", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifySQLCollectorPolicy", "", "")
+	request.Method = requests.POST
 	return
 }
 

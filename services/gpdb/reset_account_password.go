@@ -21,7 +21,6 @@ import (
 )
 
 // ResetAccountPassword invokes the gpdb.ResetAccountPassword API synchronously
-// api document: https://help.aliyun.com/api/gpdb/resetaccountpassword.html
 func (client *Client) ResetAccountPassword(request *ResetAccountPasswordRequest) (response *ResetAccountPasswordResponse, err error) {
 	response = CreateResetAccountPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetAccountPassword(request *ResetAccountPasswordRequest)
 }
 
 // ResetAccountPasswordWithChan invokes the gpdb.ResetAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/resetaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPasswordRequest) (<-chan *ResetAccountPasswordResponse, <-chan error) {
 	responseChan := make(chan *ResetAccountPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPassword
 }
 
 // ResetAccountPasswordWithCallback invokes the gpdb.ResetAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/resetaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPasswordRequest, callback func(response *ResetAccountPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,9 @@ func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPass
 // ResetAccountPasswordRequest is the request struct for api ResetAccountPassword
 type ResetAccountPasswordRequest struct {
 	*requests.RpcRequest
-	AccountPassword string `position:"Query" name:"AccountPassword"`
 	AccountName     string `position:"Query" name:"AccountName"`
 	DBInstanceId    string `position:"Query" name:"DBInstanceId"`
+	AccountPassword string `position:"Query" name:"AccountPassword"`
 }
 
 // ResetAccountPasswordResponse is the response struct for api ResetAccountPassword
@@ -92,7 +87,8 @@ func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) 
 	request = &ResetAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "ResetAccountPassword", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "ResetAccountPassword", "", "")
+	request.Method = requests.POST
 	return
 }
 

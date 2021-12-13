@@ -21,7 +21,6 @@ import (
 )
 
 // TagResources invokes the gpdb.TagResources API synchronously
-// api document: https://help.aliyun.com/api/gpdb/tagresources.html
 func (client *Client) TagResources(request *TagResourcesRequest) (response *TagResourcesResponse, err error) {
 	response = CreateTagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TagResources(request *TagResourcesRequest) (response *TagR
 }
 
 // TagResourcesWithChan invokes the gpdb.TagResources API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/tagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TagResourcesWithChan(request *TagResourcesRequest) (<-chan *TagResourcesResponse, <-chan error) {
 	responseChan := make(chan *TagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TagResourcesWithChan(request *TagResourcesRequest) (<-chan
 }
 
 // TagResourcesWithCallback invokes the gpdb.TagResources API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/tagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, callback func(response *TagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,10 +72,10 @@ func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, cal
 type TagResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	Tag                  *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceId           *[]string          `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string             `position:"Query" name:"OwnerAccount"`
-	Tag                  *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
 	ResourceType         string             `position:"Query" name:"ResourceType"`
 }
@@ -102,7 +97,8 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 	request = &TagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "TagResources", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "TagResources", "", "")
+	request.Method = requests.POST
 	return
 }
 

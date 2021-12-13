@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceConnectionString invokes the gpdb.ModifyDBInstanceConnectionString API synchronously
-// api document: https://help.aliyun.com/api/gpdb/modifydbinstanceconnectionstring.html
 func (client *Client) ModifyDBInstanceConnectionString(request *ModifyDBInstanceConnectionStringRequest) (response *ModifyDBInstanceConnectionStringResponse, err error) {
 	response = CreateModifyDBInstanceConnectionStringResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceConnectionString(request *ModifyDBInstance
 }
 
 // ModifyDBInstanceConnectionStringWithChan invokes the gpdb.ModifyDBInstanceConnectionString API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifydbinstanceconnectionstring.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionStringWithChan(request *ModifyDBInstanceConnectionStringRequest) (<-chan *ModifyDBInstanceConnectionStringResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceConnectionStringResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceConnectionStringWithChan(request *ModifyDB
 }
 
 // ModifyDBInstanceConnectionStringWithCallback invokes the gpdb.ModifyDBInstanceConnectionString API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifydbinstanceconnectionstring.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *ModifyDBInstanceConnectionStringRequest, callback func(response *ModifyDBInstanceConnectionStringResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,9 +72,9 @@ func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *Modi
 type ModifyDBInstanceConnectionStringRequest struct {
 	*requests.RpcRequest
 	ConnectionStringPrefix  string `position:"Query" name:"ConnectionStringPrefix"`
-	Port                    string `position:"Query" name:"Port"`
 	DBInstanceId            string `position:"Query" name:"DBInstanceId"`
 	CurrentConnectionString string `position:"Query" name:"CurrentConnectionString"`
+	Port                    string `position:"Query" name:"Port"`
 }
 
 // ModifyDBInstanceConnectionStringResponse is the response struct for api ModifyDBInstanceConnectionString
@@ -93,7 +88,8 @@ func CreateModifyDBInstanceConnectionStringRequest() (request *ModifyDBInstanceC
 	request = &ModifyDBInstanceConnectionStringRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateInstancePublicConnection invokes the gpdb.AllocateInstancePublicConnection API synchronously
-// api document: https://help.aliyun.com/api/gpdb/allocateinstancepublicconnection.html
 func (client *Client) AllocateInstancePublicConnection(request *AllocateInstancePublicConnectionRequest) (response *AllocateInstancePublicConnectionResponse, err error) {
 	response = CreateAllocateInstancePublicConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateInstancePublicConnection(request *AllocateInstance
 }
 
 // AllocateInstancePublicConnectionWithChan invokes the gpdb.AllocateInstancePublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/allocateinstancepublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePublicConnectionWithChan(request *AllocateInstancePublicConnectionRequest) (<-chan *AllocateInstancePublicConnectionResponse, <-chan error) {
 	responseChan := make(chan *AllocateInstancePublicConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateInstancePublicConnectionWithChan(request *Allocate
 }
 
 // AllocateInstancePublicConnectionWithCallback invokes the gpdb.AllocateInstancePublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/allocateinstancepublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePublicConnectionWithCallback(request *AllocateInstancePublicConnectionRequest, callback func(response *AllocateInstancePublicConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,10 +73,11 @@ type AllocateInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	Port                   string           `position:"Query" name:"Port"`
+	AddressType            string           `position:"Query" name:"AddressType"`
 	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	Port                   string           `position:"Query" name:"Port"`
 }
 
 // AllocateInstancePublicConnectionResponse is the response struct for api AllocateInstancePublicConnection
@@ -95,7 +91,8 @@ func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstanceP
 	request = &AllocateInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "AllocateInstancePublicConnection", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "AllocateInstancePublicConnection", "", "")
+	request.Method = requests.POST
 	return
 }
 

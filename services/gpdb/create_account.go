@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAccount invokes the gpdb.CreateAccount API synchronously
-// api document: https://help.aliyun.com/api/gpdb/createaccount.html
 func (client *Client) CreateAccount(request *CreateAccountRequest) (response *CreateAccountResponse, err error) {
 	response = CreateCreateAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAccount(request *CreateAccountRequest) (response *Cr
 }
 
 // CreateAccountWithChan invokes the gpdb.CreateAccount API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/createaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-chan *CreateAccountResponse, <-chan error) {
 	responseChan := make(chan *CreateAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-ch
 }
 
 // CreateAccountWithCallback invokes the gpdb.CreateAccount API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/createaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, callback func(response *CreateAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,12 @@ func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, c
 // CreateAccountRequest is the request struct for api CreateAccount
 type CreateAccountRequest struct {
 	*requests.RpcRequest
-	AccountPassword    string           `position:"Query" name:"AccountPassword"`
+	AccountDescription string           `position:"Query" name:"AccountDescription"`
 	AccountName        string           `position:"Query" name:"AccountName"`
-	DatabaseName       string           `position:"Query" name:"DatabaseName"`
 	DBInstanceId       string           `position:"Query" name:"DBInstanceId"`
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
-	AccountDescription string           `position:"Query" name:"AccountDescription"`
+	AccountPassword    string           `position:"Query" name:"AccountPassword"`
+	DatabaseName       string           `position:"Query" name:"DatabaseName"`
 }
 
 // CreateAccountResponse is the response struct for api CreateAccount
@@ -95,7 +90,8 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "CreateAccount", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "CreateAccount", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAccounts invokes the gpdb.DescribeAccounts API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describeaccounts.html
 func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (response *DescribeAccountsResponse, err error) {
 	response = CreateDescribeAccountsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (respon
 }
 
 // DescribeAccountsWithChan invokes the gpdb.DescribeAccounts API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describeaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest) (<-chan *DescribeAccountsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccountsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest)
 }
 
 // DescribeAccountsWithCallback invokes the gpdb.DescribeAccounts API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describeaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequest, callback func(response *DescribeAccountsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	request = &DescribeAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeAccounts", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeAccounts", "", "")
+	request.Method = requests.POST
 	return
 }
 

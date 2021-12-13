@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSQLCollectorPolicy invokes the gpdb.DescribeSQLCollectorPolicy API synchronously
-// api document: https://help.aliyun.com/api/gpdb/describesqlcollectorpolicy.html
 func (client *Client) DescribeSQLCollectorPolicy(request *DescribeSQLCollectorPolicyRequest) (response *DescribeSQLCollectorPolicyResponse, err error) {
 	response = CreateDescribeSQLCollectorPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSQLCollectorPolicy(request *DescribeSQLCollectorPo
 }
 
 // DescribeSQLCollectorPolicyWithChan invokes the gpdb.DescribeSQLCollectorPolicy API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describesqlcollectorpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLCollectorPolicyWithChan(request *DescribeSQLCollectorPolicyRequest) (<-chan *DescribeSQLCollectorPolicyResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLCollectorPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSQLCollectorPolicyWithChan(request *DescribeSQLCol
 }
 
 // DescribeSQLCollectorPolicyWithCallback invokes the gpdb.DescribeSQLCollectorPolicy API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/describesqlcollectorpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLCollectorPolicyWithCallback(request *DescribeSQLCollectorPolicyRequest, callback func(response *DescribeSQLCollectorPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateDescribeSQLCollectorPolicyRequest() (request *DescribeSQLCollectorPol
 	request = &DescribeSQLCollectorPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeSQLCollectorPolicy", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "DescribeSQLCollectorPolicy", "", "")
+	request.Method = requests.POST
 	return
 }
 

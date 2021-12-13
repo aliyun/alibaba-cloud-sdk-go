@@ -17,12 +17,12 @@ package gpdb
 
 // SQLSlowRecord is a nested struct in gpdb response
 type SQLSlowRecord struct {
-	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
-	DBName             string `json:"DBName" xml:"DBName"`
-	SQLText            string `json:"SQLText" xml:"SQLText"`
-	QueryTimes         int    `json:"QueryTimes" xml:"QueryTimes"`
-	LockTimes          int    `json:"LockTimes" xml:"LockTimes"`
-	ParseRowCounts     int    `json:"ParseRowCounts" xml:"ParseRowCounts"`
-	ReturnRowCounts    int    `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
 	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
+	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
+	QueryTimes         int64  `json:"QueryTimes" xml:"QueryTimes"`
+	SQLText            string `json:"SQLText" xml:"SQLText"`
+	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
+	DBName             string `json:"DBName" xml:"DBName"`
+	LockTimes          int64  `json:"LockTimes" xml:"LockTimes"`
 }

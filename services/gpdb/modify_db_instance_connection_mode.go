@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceConnectionMode invokes the gpdb.ModifyDBInstanceConnectionMode API synchronously
-// api document: https://help.aliyun.com/api/gpdb/modifydbinstanceconnectionmode.html
 func (client *Client) ModifyDBInstanceConnectionMode(request *ModifyDBInstanceConnectionModeRequest) (response *ModifyDBInstanceConnectionModeResponse, err error) {
 	response = CreateModifyDBInstanceConnectionModeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceConnectionMode(request *ModifyDBInstanceCo
 }
 
 // ModifyDBInstanceConnectionModeWithChan invokes the gpdb.ModifyDBInstanceConnectionMode API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifydbinstanceconnectionmode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBInstanceConnectionModeRequest) (<-chan *ModifyDBInstanceConnectionModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceConnectionModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBIn
 }
 
 // ModifyDBInstanceConnectionModeWithCallback invokes the gpdb.ModifyDBInstanceConnectionMode API asynchronously
-// api document: https://help.aliyun.com/api/gpdb/modifydbinstanceconnectionmode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *ModifyDBInstanceConnectionModeRequest, callback func(response *ModifyDBInstanceConnectionModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceCon
 	request = &ModifyDBInstanceConnectionModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifyDBInstanceConnectionMode", "gpdb", "openAPI")
+	request.InitWithApiInfo("gpdb", "2016-05-03", "ModifyDBInstanceConnectionMode", "", "")
+	request.Method = requests.POST
 	return
 }
 
