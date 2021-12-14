@@ -71,19 +71,19 @@ func (client *Client) DescribeProtectionModuleCodeConfigWithCallback(request *De
 // DescribeProtectionModuleCodeConfigRequest is the request struct for api DescribeProtectionModuleCodeConfig
 type DescribeProtectionModuleCodeConfigRequest struct {
 	*requests.RpcRequest
-	CodeValue       requests.Integer `position:"Query" name:"CodeValue"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	CodeType        requests.Integer `position:"Query" name:"CodeType"`
 	Lang            string           `position:"Query" name:"Lang"`
+	CodeValue       requests.Integer `position:"Query" name:"CodeValue"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	CodeType        requests.Integer `position:"Query" name:"CodeType"`
 }
 
 // DescribeProtectionModuleCodeConfigResponse is the response struct for api DescribeProtectionModuleCodeConfig
 type DescribeProtectionModuleCodeConfigResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	CodeConfigs string `json:"CodeConfigs" xml:"CodeConfigs"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeProtectionModuleCodeConfigRequest creates a request to invoke DescribeProtectionModuleCodeConfig API

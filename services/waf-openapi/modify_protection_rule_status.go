@@ -73,21 +73,18 @@ type ModifyProtectionRuleStatusRequest struct {
 	*requests.RpcRequest
 	LockVersion requests.Integer `position:"Query" name:"LockVersion"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Defense     string           `position:"Query" name:"Defense"`
-	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
+	DefenseType string           `position:"Query" name:"DefenseType"`
 	RuleStatus  requests.Integer `position:"Query" name:"RuleStatus"`
 	InstanceId  string           `position:"Query" name:"InstanceId"`
 	Domain      string           `position:"Query" name:"Domain"`
-	Region      string           `position:"Query" name:"Region"`
+	RuleId      requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // ModifyProtectionRuleStatusResponse is the response struct for api ModifyProtectionRuleStatus
 type ModifyProtectionRuleStatusResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TaskStatus int    `json:"TaskStatus" xml:"TaskStatus"`
-	WafTaskId  int    `json:"WafTaskId" xml:"WafTaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyProtectionRuleStatusRequest creates a request to invoke ModifyProtectionRuleStatus API
@@ -95,7 +92,7 @@ func CreateModifyProtectionRuleStatusRequest() (request *ModifyProtectionRuleSta
 	request = &ModifyProtectionRuleStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2018-01-17", "ModifyProtectionRuleStatus", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2019-09-10", "ModifyProtectionRuleStatus", "waf", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -75,14 +75,14 @@ type DescribeDomainNamesRequest struct {
 	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	Lang            string `position:"Query" name:"Lang"`
-	Region          string `position:"Query" name:"Region"`
+	CallSource      string `position:"Query" name:"CallSource"`
 }
 
 // DescribeDomainNamesResponse is the response struct for api DescribeDomainNames
 type DescribeDomainNamesResponse struct {
 	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
-	Result    ResultInDescribeDomainNames `json:"Result" xml:"Result"`
+	RequestId   string   `json:"RequestId" xml:"RequestId"`
+	DomainNames []string `json:"DomainNames" xml:"DomainNames"`
 }
 
 // CreateDescribeDomainNamesRequest creates a request to invoke DescribeDomainNames API
@@ -90,7 +90,7 @@ func CreateDescribeDomainNamesRequest() (request *DescribeDomainNamesRequest) {
 	request = &DescribeDomainNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2018-01-17", "DescribeDomainNames", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DescribeDomainNames", "waf", "openAPI")
 	request.Method = requests.POST
 	return
 }

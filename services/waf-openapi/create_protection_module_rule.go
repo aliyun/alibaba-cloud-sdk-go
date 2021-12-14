@@ -71,13 +71,12 @@ func (client *Client) CreateProtectionModuleRuleWithCallback(request *CreateProt
 // CreateProtectionModuleRuleRequest is the request struct for api CreateProtectionModuleRule
 type CreateProtectionModuleRuleRequest struct {
 	*requests.RpcRequest
-	Rule       string `position:"Query" name:"Rule"`
-	SourceIp   string `position:"Query" name:"SourceIp"`
-	Defense    string `position:"Query" name:"Defense"`
-	Lang       string `position:"Query" name:"Lang"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	Domain     string `position:"Query" name:"Domain"`
-	Region     string `position:"Query" name:"Region"`
+	DefenseType string `position:"Query" name:"DefenseType"`
+	Rule        string `position:"Query" name:"Rule"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	SourceIp    string `position:"Query" name:"SourceIp"`
+	Domain      string `position:"Query" name:"Domain"`
+	Lang        string `position:"Query" name:"Lang"`
 }
 
 // CreateProtectionModuleRuleResponse is the response struct for api CreateProtectionModuleRule
@@ -91,7 +90,7 @@ func CreateCreateProtectionModuleRuleRequest() (request *CreateProtectionModuleR
 	request = &CreateProtectionModuleRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2018-01-17", "CreateProtectionModuleRule", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2019-09-10", "CreateProtectionModuleRule", "waf", "openAPI")
 	request.Method = requests.POST
 	return
 }
