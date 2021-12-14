@@ -17,13 +17,11 @@ package config
 
 // EvaluationResultQualifier is a nested struct in config response
 type EvaluationResultQualifier struct {
-	ResourceType     string `json:"ResourceType" xml:"ResourceType"`
-	ResourceId       string `json:"ResourceId" xml:"ResourceId"`
-	CompliancePackId string `json:"CompliancePackId" xml:"CompliancePackId"`
-	ConfigRuleArn    string `json:"ConfigRuleArn" xml:"ConfigRuleArn"`
-	RegionId         string `json:"RegionId" xml:"RegionId"`
-	ResourceName     string `json:"ResourceName" xml:"ResourceName"`
-	ResourceOwnerId  int64  `json:"ResourceOwnerId" xml:"ResourceOwnerId"`
-	ConfigRuleName   string `json:"ConfigRuleName" xml:"ConfigRuleName"`
-	ConfigRuleId     string `json:"ConfigRuleId" xml:"ConfigRuleId"`
+	ConfigRuleArn  string `json:"ConfigRuleArn" xml:"ConfigRuleArn"`
+	ResourceType   string `json:"ResourceType" xml:"ResourceType"`
+	ConfigRuleName string `json:"ConfigRuleName" xml:"ConfigRuleName"`
+	ResourceId     string `json:"ResourceId" xml:"ResourceId"`
+	ConfigRuleId   string `json:"ConfigRuleId" xml:"ConfigRuleId"`
+	ResourceName   string `json:"ResourceName" xml:"ResourceName"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 }
