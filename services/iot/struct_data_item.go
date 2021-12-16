@@ -17,25 +17,18 @@ package iot
 
 // DataItem is a nested struct in iot response
 type DataItem struct {
-	ProductName       string `json:"ProductName" xml:"ProductName"`
-	Region            string `json:"Region" xml:"Region"`
-	DeviceSecret      string `json:"DeviceSecret" xml:"DeviceSecret"`
-	ActiveTime        string `json:"ActiveTime" xml:"ActiveTime"`
-	ProductKey        string `json:"ProductKey" xml:"ProductKey"`
-	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-	UtcCreate         string `json:"UtcCreate" xml:"UtcCreate"`
-	ChildDeviceCount  int64  `json:"ChildDeviceCount" xml:"ChildDeviceCount"`
-	UtcActive         string `json:"UtcActive" xml:"UtcActive"`
-	DeviceName        string `json:"DeviceName" xml:"DeviceName"`
-	Nickname          string `json:"Nickname" xml:"Nickname"`
-	GmtCreate         string `json:"GmtCreate" xml:"GmtCreate"`
-	UtcActiveTime     string `json:"UtcActiveTime" xml:"UtcActiveTime"`
-	FirmwareVersion   string `json:"FirmwareVersion" xml:"FirmwareVersion"`
-	IotId             string `json:"IotId" xml:"IotId"`
-	GmtActive         string `json:"GmtActive" xml:"GmtActive"`
-	LastOnlineTime    string `json:"LastOnlineTime" xml:"LastOnlineTime"`
-	UtcCreateTime     string `json:"UtcCreateTime" xml:"UtcCreateTime"`
-	Status            string `json:"Status" xml:"Status"`
-	UtcLastOnlineTime string `json:"UtcLastOnlineTime" xml:"UtcLastOnlineTime"`
-	NodeType          int    `json:"NodeType" xml:"NodeType"`
+	ProductKey      string `json:"ProductKey" xml:"ProductKey"`
+	ProductName     string `json:"ProductName" xml:"ProductName"`
+	DeviceName      string `json:"DeviceName" xml:"DeviceName"`
+	Nickname        string `json:"Nickname" xml:"Nickname"`
+	DeviceSecret    string `json:"DeviceSecret" xml:"DeviceSecret"`
+	IotId           string `json:"IotId" xml:"IotId"`
+	UtcCreate       string `json:"UtcCreate" xml:"UtcCreate"`
+	GmtCreate       string `json:"GmtCreate" xml:"GmtCreate"`
+	UtcActive       string `json:"UtcActive" xml:"UtcActive"`
+	GmtActive       string `json:"GmtActive" xml:"GmtActive"`
+	Status          string `json:"Status" xml:"Status"`
+	FirmwareVersion string `json:"FirmwareVersion" xml:"FirmwareVersion"`
+	NodeType        int    `json:"NodeType" xml:"NodeType"`
+	Region          string `json:"Region" xml:"Region"`
 }

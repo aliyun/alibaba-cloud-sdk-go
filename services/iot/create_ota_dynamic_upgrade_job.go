@@ -72,6 +72,7 @@ func (client *Client) CreateOTADynamicUpgradeJobWithCallback(request *CreateOTAD
 type CreateOTADynamicUpgradeJobRequest struct {
 	*requests.RpcRequest
 	DynamicMode      requests.Integer                 `position:"Query" name:"DynamicMode"`
+	MultiModuleMode  requests.Boolean                 `position:"Query" name:"MultiModuleMode"`
 	RetryCount       requests.Integer                 `position:"Query" name:"RetryCount"`
 	TimeoutInMinutes requests.Integer                 `position:"Query" name:"TimeoutInMinutes"`
 	NeedConfirm      requests.Boolean                 `position:"Query" name:"NeedConfirm"`

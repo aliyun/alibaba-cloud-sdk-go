@@ -71,16 +71,18 @@ func (client *Client) TestSpeechWithCallback(request *TestSpeechRequest, callbac
 // TestSpeechRequest is the request struct for api TestSpeech
 type TestSpeechRequest struct {
 	*requests.RpcRequest
-	Voice         string           `position:"Body" name:"Voice"`
-	ProjectCode   string           `position:"Body" name:"ProjectCode"`
-	AudioFormat   string           `position:"Body" name:"AudioFormat"`
-	IotInstanceId string           `position:"Body" name:"IotInstanceId"`
-	Text          string           `position:"Body" name:"Text"`
-	SpeechType    string           `position:"Body" name:"SpeechType"`
-	Volume        requests.Integer `position:"Body" name:"Volume"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	SpeechRate    requests.Integer `position:"Body" name:"SpeechRate"`
+	Voice           string           `position:"Body" name:"Voice"`
+	ProjectCode     string           `position:"Body" name:"ProjectCode"`
+	AudioFormat     string           `position:"Body" name:"AudioFormat"`
+	IotInstanceId   string           `position:"Body" name:"IotInstanceId"`
+	Text            string           `position:"Body" name:"Text"`
+	SoundCodeConfig string           `position:"Body" name:"SoundCodeConfig"`
+	SpeechType      string           `position:"Body" name:"SpeechType"`
+	EnableSoundCode requests.Boolean `position:"Body" name:"EnableSoundCode"`
+	Volume          requests.Integer `position:"Body" name:"Volume"`
+	ApiProduct      string           `position:"Body" name:"ApiProduct"`
+	ApiRevision     string           `position:"Body" name:"ApiRevision"`
+	SpeechRate      requests.Integer `position:"Body" name:"SpeechRate"`
 }
 
 // TestSpeechResponse is the response struct for api TestSpeech

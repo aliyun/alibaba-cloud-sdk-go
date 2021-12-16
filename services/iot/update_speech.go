@@ -71,14 +71,16 @@ func (client *Client) UpdateSpeechWithCallback(request *UpdateSpeechRequest, cal
 // UpdateSpeechRequest is the request struct for api UpdateSpeech
 type UpdateSpeechRequest struct {
 	*requests.RpcRequest
-	Voice         string           `position:"Body" name:"Voice"`
-	ProjectCode   string           `position:"Body" name:"ProjectCode"`
-	IotInstanceId string           `position:"Body" name:"IotInstanceId"`
-	Volume        requests.Integer `position:"Body" name:"Volume"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	SpeechRate    requests.Integer `position:"Body" name:"SpeechRate"`
-	SpeechCode    string           `position:"Body" name:"SpeechCode"`
+	Voice           string           `position:"Body" name:"Voice"`
+	ProjectCode     string           `position:"Body" name:"ProjectCode"`
+	IotInstanceId   string           `position:"Body" name:"IotInstanceId"`
+	SoundCodeConfig string           `position:"Body" name:"SoundCodeConfig"`
+	EnableSoundCode requests.Boolean `position:"Body" name:"EnableSoundCode"`
+	Volume          requests.Integer `position:"Body" name:"Volume"`
+	ApiProduct      string           `position:"Body" name:"ApiProduct"`
+	ApiRevision     string           `position:"Body" name:"ApiRevision"`
+	SpeechRate      requests.Integer `position:"Body" name:"SpeechRate"`
+	SpeechCode      string           `position:"Body" name:"SpeechCode"`
 }
 
 // UpdateSpeechResponse is the response struct for api UpdateSpeech

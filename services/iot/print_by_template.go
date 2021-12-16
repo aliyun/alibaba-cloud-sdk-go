@@ -71,15 +71,15 @@ func (client *Client) PrintByTemplateWithCallback(request *PrintByTemplateReques
 // PrintByTemplateRequest is the request struct for api PrintByTemplate
 type PrintByTemplateRequest struct {
 	*requests.RpcRequest
-	ProjectCode      string `position:"Body" name:"ProjectCode"`
-	TemplateBizCode  string `position:"Body" name:"TemplateBizCode"`
-	IotId            string `position:"Body" name:"IotId"`
-	IotInstanceId    string `position:"Body" name:"IotInstanceId"`
-	ProductKey       string `position:"Body" name:"ProductKey"`
-	ParamsJsonString string `position:"Body" name:"ParamsJsonString"`
-	ApiProduct       string `position:"Body" name:"ApiProduct"`
-	ApiRevision      string `position:"Body" name:"ApiRevision"`
-	DeviceName       string `position:"Body" name:"DeviceName"`
+	TemplateBizCode   string           `position:"Body" name:"TemplateBizCode"`
+	IotId             string           `position:"Body" name:"IotId"`
+	IotInstanceId     string           `position:"Body" name:"IotInstanceId"`
+	HistoryPrintTopic requests.Boolean `position:"Body" name:"HistoryPrintTopic"`
+	ProductKey        string           `position:"Body" name:"ProductKey"`
+	ParamsJsonString  string           `position:"Body" name:"ParamsJsonString"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	DeviceName        string           `position:"Body" name:"DeviceName"`
 }
 
 // PrintByTemplateResponse is the response struct for api PrintByTemplate

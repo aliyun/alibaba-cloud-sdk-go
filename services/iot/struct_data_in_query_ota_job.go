@@ -45,6 +45,7 @@ type DataInQueryOTAJob struct {
 	GroupId               string            `json:"GroupId" xml:"GroupId"`
 	GroupName             string            `json:"GroupName" xml:"GroupName"`
 	DownloadProtocol      string            `json:"DownloadProtocol" xml:"DownloadProtocol"`
+	MultiModuleMode       bool              `json:"MultiModuleMode" xml:"MultiModuleMode"`
 	SrcVersions           SrcVersions       `json:"SrcVersions" xml:"SrcVersions"`
 	Tags                  TagsInQueryOTAJob `json:"Tags" xml:"Tags"`
 }

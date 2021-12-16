@@ -54,7 +54,6 @@ type Data struct {
 	Size                      string                    `json:"Size" xml:"Size"`
 	Udi                       string                    `json:"Udi" xml:"Udi"`
 	IsOpen                    bool                      `json:"IsOpen" xml:"IsOpen"`
-	TotalPage                 int64                     `json:"TotalPage" xml:"TotalPage"`
 	SourceURI                 string                    `json:"SourceURI" xml:"SourceURI"`
 	ProductName               string                    `json:"ProductName" xml:"ProductName"`
 	Name                      string                    `json:"Name" xml:"Name"`
@@ -66,6 +65,7 @@ type Data struct {
 	Key                       string                    `json:"Key" xml:"Key"`
 	GmtCreate                 string                    `json:"GmtCreate" xml:"GmtCreate"`
 	SourceType                string                    `json:"SourceType" xml:"SourceType"`
+	EnableSoundCode           bool                      `json:"EnableSoundCode" xml:"EnableSoundCode"`
 	ResultJson                string                    `json:"ResultJson" xml:"ResultJson"`
 	InstanceId                string                    `json:"InstanceId" xml:"InstanceId"`
 	SourceConnState           string                    `json:"SourceConnState" xml:"SourceConnState"`
@@ -160,7 +160,7 @@ type Data struct {
 	RouteContext              RouteContext              `json:"RouteContext" xml:"RouteContext"`
 	SqlTemplateDTO            SqlTemplateDTO            `json:"SqlTemplateDTO" xml:"SqlTemplateDTO"`
 	TokenInfo                 TokenInfo                 `json:"TokenInfo" xml:"TokenInfo"`
-	DataList                  []DataListItem            `json:"DataList" xml:"DataList"`
+	SoundCodeConfig           SoundCodeConfig           `json:"SoundCodeConfig" xml:"SoundCodeConfig"`
 	TaskList                  []Task                    `json:"TaskList" xml:"TaskList"`
 	ModelVersions             []ModelVersion            `json:"ModelVersions" xml:"ModelVersions"`
 	List                      ListInGetThingTopo        `json:"List" xml:"List"`

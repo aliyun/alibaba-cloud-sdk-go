@@ -1,3 +1,7 @@
+2021-12-16 Version: v1.61.1388
+- Generated 2018-01-20 for `Iot`.
+- Update OTA API, including CreateOTADynamicUpgradeJob,CreateOTAStaticUpgradeJob,QueryOTAJob.
+
 2021-12-16 Version: v1.61.1387
 - Generated 2014-08-28 for `Ess`.
 - Optimise input params.
