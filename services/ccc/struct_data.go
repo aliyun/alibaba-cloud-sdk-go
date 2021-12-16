@@ -62,6 +62,7 @@ type Data struct {
 	CasesUncompleted          int64                `json:"CasesUncompleted" xml:"CasesUncompleted"`
 	QueueId                   string               `json:"QueueId" xml:"QueueId"`
 	ContextId                 int64                `json:"ContextId" xml:"ContextId"`
+	EarlyMediaState           string               `json:"EarlyMediaState" xml:"EarlyMediaState"`
 	AgentIds                  string               `json:"AgentIds" xml:"AgentIds"`
 	StartTime                 int64                `json:"StartTime" xml:"StartTime"`
 	SkillGroupNames           string               `json:"SkillGroupNames" xml:"SkillGroupNames"`

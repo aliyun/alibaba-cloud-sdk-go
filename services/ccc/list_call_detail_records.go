@@ -76,6 +76,7 @@ type ListCallDetailRecordsRequest struct {
 	OrderByField                string           `position:"Query" name:"OrderByField"`
 	StartTime                   requests.Integer `position:"Query" name:"StartTime"`
 	PageNumber                  requests.Integer `position:"Query" name:"PageNumber"`
+	EarlyMediaStateList         string           `position:"Query" name:"EarlyMediaStateList"`
 	CalledNumber                string           `position:"Query" name:"CalledNumber"`
 	SatisfactionList            string           `position:"Query" name:"SatisfactionList"`
 	PageSize                    requests.Integer `position:"Query" name:"PageSize"`

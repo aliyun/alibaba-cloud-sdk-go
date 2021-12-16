@@ -19,6 +19,7 @@ package ccc
 type CallDetailRecord struct {
 	SatisfactionSurveyChannel string `json:"SatisfactionSurveyChannel" xml:"SatisfactionSurveyChannel"`
 	SkillGroupIds             string `json:"SkillGroupIds" xml:"SkillGroupIds"`
+	EarlyMediaState           string `json:"EarlyMediaState" xml:"EarlyMediaState"`
 	IvrTime                   int64  `json:"IvrTime" xml:"IvrTime"`
 	CalleeLocation            string `json:"CalleeLocation" xml:"CalleeLocation"`
 	CallerLocation            string `json:"CallerLocation" xml:"CallerLocation"`

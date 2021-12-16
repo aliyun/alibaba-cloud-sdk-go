@@ -79,6 +79,7 @@ type StartPredictiveCallRequest struct {
 	TimeoutSeconds       requests.Integer `position:"Query" name:"TimeoutSeconds"`
 	Caller               string           `position:"Query" name:"Caller"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	SkillGroupId         string           `position:"Query" name:"SkillGroupId"`
 }
 
 // StartPredictiveCallResponse is the response struct for api StartPredictiveCall
