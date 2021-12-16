@@ -66,6 +66,7 @@ type ScalingConfiguration struct {
 	InstanceTypes                   InstanceTypes        `json:"InstanceTypes" xml:"InstanceTypes"`
 	WeightedCapacities              WeightedCapacities   `json:"WeightedCapacities" xml:"WeightedCapacities"`
 	SecurityGroupIds                SecurityGroupIds     `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	SystemDiskCategories            SystemDiskCategories `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
 	SchedulerOptions                SchedulerOptions     `json:"SchedulerOptions" xml:"SchedulerOptions"`
 	DataDisks                       DataDisks            `json:"DataDisks" xml:"DataDisks"`
 	Tags                            Tags                 `json:"Tags" xml:"Tags"`

@@ -17,47 +17,49 @@ package ess
 
 // ScalingGroup is a nested struct in ess response
 type ScalingGroup struct {
-	DefaultCooldown                     int                     `json:"DefaultCooldown" xml:"DefaultCooldown"`
-	MaxSize                             int                     `json:"MaxSize" xml:"MaxSize"`
-	PendingWaitCapacity                 int                     `json:"PendingWaitCapacity" xml:"PendingWaitCapacity"`
-	RemovingWaitCapacity                int                     `json:"RemovingWaitCapacity" xml:"RemovingWaitCapacity"`
-	PendingCapacity                     int                     `json:"PendingCapacity" xml:"PendingCapacity"`
-	RemovingCapacity                    int                     `json:"RemovingCapacity" xml:"RemovingCapacity"`
-	ScalingGroupName                    string                  `json:"ScalingGroupName" xml:"ScalingGroupName"`
-	ActiveCapacity                      int                     `json:"ActiveCapacity" xml:"ActiveCapacity"`
-	StandbyCapacity                     int                     `json:"StandbyCapacity" xml:"StandbyCapacity"`
-	ProtectedCapacity                   int                     `json:"ProtectedCapacity" xml:"ProtectedCapacity"`
-	ActiveScalingConfigurationId        string                  `json:"ActiveScalingConfigurationId" xml:"ActiveScalingConfigurationId"`
-	LaunchTemplateId                    string                  `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
-	LaunchTemplateVersion               string                  `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
-	ScalingGroupId                      string                  `json:"ScalingGroupId" xml:"ScalingGroupId"`
-	RegionId                            string                  `json:"RegionId" xml:"RegionId"`
-	TotalCapacity                       int                     `json:"TotalCapacity" xml:"TotalCapacity"`
-	MinSize                             int                     `json:"MinSize" xml:"MinSize"`
-	LifecycleState                      string                  `json:"LifecycleState" xml:"LifecycleState"`
-	CreationTime                        string                  `json:"CreationTime" xml:"CreationTime"`
-	ModificationTime                    string                  `json:"ModificationTime" xml:"ModificationTime"`
 	VpcId                               string                  `json:"VpcId" xml:"VpcId"`
-	VSwitchId                           string                  `json:"VSwitchId" xml:"VSwitchId"`
-	MultiAZPolicy                       string                  `json:"MultiAZPolicy" xml:"MultiAZPolicy"`
-	HealthCheckType                     string                  `json:"HealthCheckType" xml:"HealthCheckType"`
-	ScalingPolicy                       string                  `json:"ScalingPolicy" xml:"ScalingPolicy"`
-	StoppedCapacity                     int                     `json:"StoppedCapacity" xml:"StoppedCapacity"`
-	OnDemandBaseCapacity                int                     `json:"OnDemandBaseCapacity" xml:"OnDemandBaseCapacity"`
-	OnDemandPercentageAboveBaseCapacity int                     `json:"OnDemandPercentageAboveBaseCapacity" xml:"OnDemandPercentageAboveBaseCapacity"`
-	SpotInstanceRemedy                  bool                    `json:"SpotInstanceRemedy" xml:"SpotInstanceRemedy"`
-	CompensateWithOnDemand              bool                    `json:"CompensateWithOnDemand" xml:"CompensateWithOnDemand"`
-	SpotInstancePools                   int                     `json:"SpotInstancePools" xml:"SpotInstancePools"`
-	DesiredCapacity                     int                     `json:"DesiredCapacity" xml:"DesiredCapacity"`
-	GroupDeletionProtection             bool                    `json:"GroupDeletionProtection" xml:"GroupDeletionProtection"`
-	ScaleOutAmountCheck                 bool                    `json:"ScaleOutAmountCheck" xml:"ScaleOutAmountCheck"`
-	Weighted                            bool                    `json:"Weighted" xml:"Weighted"`
+	CreationTime                        string                  `json:"CreationTime" xml:"CreationTime"`
 	TotalInstanceCount                  int                     `json:"TotalInstanceCount" xml:"TotalInstanceCount"`
+	ScalingGroupName                    string                  `json:"ScalingGroupName" xml:"ScalingGroupName"`
+	Weighted                            bool                    `json:"Weighted" xml:"Weighted"`
+	SpotInstancePools                   int                     `json:"SpotInstancePools" xml:"SpotInstancePools"`
+	StoppedCapacity                     int                     `json:"StoppedCapacity" xml:"StoppedCapacity"`
+	OnDemandPercentageAboveBaseCapacity int                     `json:"OnDemandPercentageAboveBaseCapacity" xml:"OnDemandPercentageAboveBaseCapacity"`
+	ModificationTime                    string                  `json:"ModificationTime" xml:"ModificationTime"`
+	MinSize                             int                     `json:"MinSize" xml:"MinSize"`
+	ScalingGroupId                      string                  `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	CompensateWithOnDemand              bool                    `json:"CompensateWithOnDemand" xml:"CompensateWithOnDemand"`
+	ScalingPolicy                       string                  `json:"ScalingPolicy" xml:"ScalingPolicy"`
+	RemovingWaitCapacity                int                     `json:"RemovingWaitCapacity" xml:"RemovingWaitCapacity"`
+	ActiveCapacity                      int                     `json:"ActiveCapacity" xml:"ActiveCapacity"`
+	OnDemandBaseCapacity                int                     `json:"OnDemandBaseCapacity" xml:"OnDemandBaseCapacity"`
+	ProtectedCapacity                   int                     `json:"ProtectedCapacity" xml:"ProtectedCapacity"`
+	HealthCheckType                     string                  `json:"HealthCheckType" xml:"HealthCheckType"`
+	LifecycleState                      string                  `json:"LifecycleState" xml:"LifecycleState"`
+	GroupDeletionProtection             bool                    `json:"GroupDeletionProtection" xml:"GroupDeletionProtection"`
+	ActiveScalingConfigurationId        string                  `json:"ActiveScalingConfigurationId" xml:"ActiveScalingConfigurationId"`
+	GroupType                           string                  `json:"GroupType" xml:"GroupType"`
+	MultiAZPolicy                       string                  `json:"MultiAZPolicy" xml:"MultiAZPolicy"`
+	RemovingCapacity                    int                     `json:"RemovingCapacity" xml:"RemovingCapacity"`
+	PendingWaitCapacity                 int                     `json:"PendingWaitCapacity" xml:"PendingWaitCapacity"`
+	StandbyCapacity                     int                     `json:"StandbyCapacity" xml:"StandbyCapacity"`
 	CurrentHostName                     string                  `json:"CurrentHostName" xml:"CurrentHostName"`
-	VSwitchIds                          VSwitchIds              `json:"VSwitchIds" xml:"VSwitchIds"`
+	PendingCapacity                     int                     `json:"PendingCapacity" xml:"PendingCapacity"`
+	LaunchTemplateId                    string                  `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
+	TotalCapacity                       int                     `json:"TotalCapacity" xml:"TotalCapacity"`
+	DesiredCapacity                     int                     `json:"DesiredCapacity" xml:"DesiredCapacity"`
+	SpotInstanceRemedy                  bool                    `json:"SpotInstanceRemedy" xml:"SpotInstanceRemedy"`
+	LaunchTemplateVersion               string                  `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
+	RegionId                            string                  `json:"RegionId" xml:"RegionId"`
+	VSwitchId                           string                  `json:"VSwitchId" xml:"VSwitchId"`
+	MaxSize                             int                     `json:"MaxSize" xml:"MaxSize"`
+	ScaleOutAmountCheck                 bool                    `json:"ScaleOutAmountCheck" xml:"ScaleOutAmountCheck"`
+	DefaultCooldown                     int                     `json:"DefaultCooldown" xml:"DefaultCooldown"`
+	SystemSuspended                     bool                    `json:"SystemSuspended" xml:"SystemSuspended"`
 	RemovalPolicies                     RemovalPolicies         `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                       DBInstanceIds           `json:"DBInstanceIds" xml:"DBInstanceIds"`
 	LoadBalancerIds                     LoadBalancerIds         `json:"LoadBalancerIds" xml:"LoadBalancerIds"`
+	VSwitchIds                          VSwitchIds              `json:"VSwitchIds" xml:"VSwitchIds"`
 	SuspendedProcesses                  SuspendedProcesses      `json:"SuspendedProcesses" xml:"SuspendedProcesses"`
 	VServerGroups                       VServerGroups           `json:"VServerGroups" xml:"VServerGroups"`
 	LaunchTemplateOverrides             LaunchTemplateOverrides `json:"LaunchTemplateOverrides" xml:"LaunchTemplateOverrides"`

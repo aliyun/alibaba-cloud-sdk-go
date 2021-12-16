@@ -98,8 +98,8 @@ type CreateAlarmDimension struct {
 // CreateAlarmResponse is the response struct for api CreateAlarm
 type CreateAlarmResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	AlarmTaskId string `json:"AlarmTaskId" xml:"AlarmTaskId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateAlarmRequest creates a request to invoke CreateAlarm API

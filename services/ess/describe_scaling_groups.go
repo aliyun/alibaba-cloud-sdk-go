@@ -72,6 +72,8 @@ func (client *Client) DescribeScalingGroupsWithCallback(request *DescribeScaling
 type DescribeScalingGroupsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	GroupType            string           `position:"Query" name:"GroupType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingGroupId       *[]string        `position:"Query" name:"ScalingGroupId"  type:"Repeated"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
@@ -83,7 +85,6 @@ type DescribeScalingGroupsRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupName     string           `position:"Query" name:"ScalingGroupName"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingGroupName1    string           `position:"Query" name:"ScalingGroupName.1"`
 	ScalingGroupName2    string           `position:"Query" name:"ScalingGroupName.2"`
 	ScalingGroupName7    string           `position:"Query" name:"ScalingGroupName.7"`
@@ -104,10 +105,10 @@ type DescribeScalingGroupsRequest struct {
 // DescribeScalingGroupsResponse is the response struct for api DescribeScalingGroups
 type DescribeScalingGroupsResponse struct {
 	*responses.BaseResponse
-	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
 	PageSize      int           `json:"PageSize" xml:"PageSize"`
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
 	ScalingGroups ScalingGroups `json:"ScalingGroups" xml:"ScalingGroups"`
 }
 

@@ -17,6 +17,6 @@ package ess
 
 // LaunchTemplateOverride is a nested struct in ess response
 type LaunchTemplateOverride struct {
-	InstanceType     string `json:"InstanceType" xml:"InstanceType"`
 	WeightedCapacity int    `json:"WeightedCapacity" xml:"WeightedCapacity"`
+	InstanceType     string `json:"InstanceType" xml:"InstanceType"`
 }

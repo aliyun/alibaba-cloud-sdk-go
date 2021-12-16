@@ -75,13 +75,15 @@ type ExitStandbyRequest struct {
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Async                requests.Boolean `position:"Query" name:"Async"`
 	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 // ExitStandbyResponse is the response struct for api ExitStandby
 type ExitStandbyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 }
 
 // CreateExitStandbyRequest creates a request to invoke ExitStandby API

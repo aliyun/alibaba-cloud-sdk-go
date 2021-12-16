@@ -75,13 +75,15 @@ type EnterStandbyRequest struct {
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Async                requests.Boolean `position:"Query" name:"Async"`
 	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 // EnterStandbyResponse is the response struct for api EnterStandby
 type EnterStandbyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 }
 
 // CreateEnterStandbyRequest creates a request to invoke EnterStandby API

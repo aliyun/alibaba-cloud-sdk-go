@@ -82,6 +82,7 @@ type DescribeScalingActivityDetailResponse struct {
 	*responses.BaseResponse
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 	Detail            string `json:"Detail" xml:"Detail"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeScalingActivityDetailRequest creates a request to invoke DescribeScalingActivityDetail API

@@ -84,6 +84,7 @@ type CreateScalingConfigurationRequest struct {
 	PrivatePoolOptionsId            string                                            `position:"Query" name:"PrivatePoolOptions.Id"`
 	Ipv6AddressCount                requests.Integer                                  `position:"Query" name:"Ipv6AddressCount"`
 	Cpu                             requests.Integer                                  `position:"Query" name:"Cpu"`
+	SystemDiskCategories            *[]string                                         `position:"Query" name:"SystemDiskCategories"  type:"Repeated"`
 	OwnerId                         requests.Integer                                  `position:"Query" name:"OwnerId"`
 	ScalingConfigurationName        string                                            `position:"Query" name:"ScalingConfigurationName"`
 	Tags                            string                                            `position:"Query" name:"Tags"`
@@ -144,17 +145,18 @@ type CreateScalingConfigurationInstancePatternInfo struct {
 
 // CreateScalingConfigurationDataDisk is a repeated param struct in CreateScalingConfigurationRequest
 type CreateScalingConfigurationDataDisk struct {
-	DiskName             string `name:"DiskName"`
-	SnapshotId           string `name:"SnapshotId"`
-	Size                 string `name:"Size"`
-	Encrypted            string `name:"Encrypted"`
-	PerformanceLevel     string `name:"PerformanceLevel"`
-	AutoSnapshotPolicyId string `name:"AutoSnapshotPolicyId"`
-	Description          string `name:"Description"`
-	Category             string `name:"Category"`
-	KMSKeyId             string `name:"KMSKeyId"`
-	Device               string `name:"Device"`
-	DeleteWithInstance   string `name:"DeleteWithInstance"`
+	DiskName             string    `name:"DiskName"`
+	SnapshotId           string    `name:"SnapshotId"`
+	Size                 string    `name:"Size"`
+	Encrypted            string    `name:"Encrypted"`
+	PerformanceLevel     string    `name:"PerformanceLevel"`
+	AutoSnapshotPolicyId string    `name:"AutoSnapshotPolicyId"`
+	Description          string    `name:"Description"`
+	Categories           *[]string `name:"Categories" type:"Repeated"`
+	Category             string    `name:"Category"`
+	KMSKeyId             string    `name:"KMSKeyId"`
+	Device               string    `name:"Device"`
+	DeleteWithInstance   string    `name:"DeleteWithInstance"`
 }
 
 // CreateScalingConfigurationInstanceTypeOverride is a repeated param struct in CreateScalingConfigurationRequest

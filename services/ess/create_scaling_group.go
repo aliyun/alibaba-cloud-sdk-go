@@ -74,8 +74,10 @@ type CreateScalingGroupRequest struct {
 	VSwitchIds                          *[]string                                   `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 	SpotInstanceRemedy                  requests.Boolean                            `position:"Query" name:"SpotInstanceRemedy"`
 	ScaleOutAmountCheck                 requests.Boolean                            `position:"Query" name:"ScaleOutAmountCheck"`
+	GroupType                           string                                      `position:"Query" name:"GroupType"`
 	Tag                                 *[]CreateScalingGroupTag                    `position:"Query" name:"Tag"  type:"Repeated"`
 	DefaultCooldown                     requests.Integer                            `position:"Query" name:"DefaultCooldown"`
+	ContainerGroupId                    string                                      `position:"Query" name:"ContainerGroupId"`
 	MultiAZPolicy                       string                                      `position:"Query" name:"MultiAZPolicy"`
 	DBInstanceIds                       string                                      `position:"Query" name:"DBInstanceIds"`
 	LaunchTemplateId                    string                                      `position:"Query" name:"LaunchTemplateId"`

@@ -1,3 +1,7 @@
+2021-12-16 Version: v1.61.1387
+- Generated 2014-08-28 for `Ess`.
+- Optimise input params.
+
 2021-12-14 Version: v1.61.1386
 - Generated 2019-01-08 for `Config`.
 - Support query resourceType.

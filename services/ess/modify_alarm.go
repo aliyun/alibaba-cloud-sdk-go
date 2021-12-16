@@ -98,8 +98,8 @@ type ModifyAlarmDimension struct {
 // ModifyAlarmResponse is the response struct for api ModifyAlarm
 type ModifyAlarmResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	AlarmTaskId string `json:"AlarmTaskId" xml:"AlarmTaskId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyAlarmRequest creates a request to invoke ModifyAlarm API

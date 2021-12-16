@@ -18,6 +18,6 @@ package ess
 // AlbServerGroup is a nested struct in ess response
 type AlbServerGroup struct {
 	AlbServerGroupId string `json:"AlbServerGroupId" xml:"AlbServerGroupId"`
-	Port             int    `json:"Port" xml:"Port"`
 	Weight           int    `json:"Weight" xml:"Weight"`
+	Port             int    `json:"Port" xml:"Port"`
 }
