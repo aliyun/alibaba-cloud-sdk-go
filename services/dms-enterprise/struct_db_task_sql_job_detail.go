@@ -27,4 +27,8 @@ type DBTaskSQLJobDetail struct {
 	SqlType      string `json:"SqlType" xml:"SqlType"`
 	Status       string `json:"Status" xml:"Status"`
 	Log          string `json:"Log" xml:"Log"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
+	EndTime      string `json:"EndTime" xml:"EndTime"`
+	TimeDelay    int64  `json:"TimeDelay" xml:"TimeDelay"`
+	AffectRows   int64  `json:"AffectRows" xml:"AffectRows"`
 }
