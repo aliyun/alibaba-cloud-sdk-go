@@ -1,3 +1,8 @@
+2021-12-20 Version: v1.61.1393
+- Generated 2014-05-26 for `Ecs`.
+- Add Request Param Ipv6AddressCount For API CreateLaunchTemplate AND CreateLaunchTemplateVersion.
+- Add Response Data Ipv6AddressCount For API DescribeLaunchTemplateVersions.
+
 2021-12-20 Version: v1.61.1392
 - Generated 2016-04-08 for `Emr`.
 
