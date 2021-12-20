@@ -17,9 +17,9 @@ package emr
 
 // SchedulerTrigger is a nested struct in emr response
 type SchedulerTrigger struct {
-	RecurrenceEndTime    int64  `json:"RecurrenceEndTime" xml:"RecurrenceEndTime"`
-	RecurrenceType       string `json:"RecurrenceType" xml:"RecurrenceType"`
 	LaunchTime           int64  `json:"LaunchTime" xml:"LaunchTime"`
-	RecurrenceValue      string `json:"RecurrenceValue" xml:"RecurrenceValue"`
 	LaunchExpirationTime int    `json:"LaunchExpirationTime" xml:"LaunchExpirationTime"`
+	RecurrenceType       string `json:"RecurrenceType" xml:"RecurrenceType"`
+	RecurrenceValue      string `json:"RecurrenceValue" xml:"RecurrenceValue"`
+	RecurrenceEndTime    int64  `json:"RecurrenceEndTime" xml:"RecurrenceEndTime"`
 }

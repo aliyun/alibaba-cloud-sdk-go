@@ -17,18 +17,18 @@ package emr
 
 // EmrMainVersion is a nested struct in emr response
 type EmrMainVersion struct {
-	PublishType              string                                           `json:"PublishType" xml:"PublishType"`
-	Display                  bool                                             `json:"Display" xml:"Display"`
-	ImageId                  string                                           `json:"ImageId" xml:"ImageId"`
-	StackVersion             string                                           `json:"StackVersion" xml:"StackVersion"`
-	ExtraInfo                string                                           `json:"ExtraInfo" xml:"ExtraInfo"`
-	EcmVersion               bool                                             `json:"EcmVersion" xml:"EcmVersion"`
-	RegionId                 string                                           `json:"RegionId" xml:"RegionId"`
-	EmrVersion               string                                           `json:"EmrVersion" xml:"EmrVersion"`
-	MainVersionName          string                                           `json:"MainVersionName" xml:"MainVersionName"`
-	OnCloudNative            bool                                             `json:"OnCloudNative" xml:"OnCloudNative"`
-	StackName                string                                           `json:"StackName" xml:"StackName"`
-	WhiteUserList            WhiteUserListInDescribeEmrMainVersion            `json:"WhiteUserList" xml:"WhiteUserList"`
-	ClusterTypeInfoList      ClusterTypeInfoListInDescribeEmrMainVersion      `json:"ClusterTypeInfoList" xml:"ClusterTypeInfoList"`
-	ClusterTypeWhiteUserList ClusterTypeWhiteUserListInDescribeEmrMainVersion `json:"ClusterTypeWhiteUserList" xml:"ClusterTypeWhiteUserList"`
+	PublishType              string                                  `json:"PublishType" xml:"PublishType"`
+	Display                  bool                                    `json:"Display" xml:"Display"`
+	ImageId                  string                                  `json:"ImageId" xml:"ImageId"`
+	StackVersion             string                                  `json:"StackVersion" xml:"StackVersion"`
+	ExtraInfo                string                                  `json:"ExtraInfo" xml:"ExtraInfo"`
+	EcmVersion               bool                                    `json:"EcmVersion" xml:"EcmVersion"`
+	RegionId                 string                                  `json:"RegionId" xml:"RegionId"`
+	EmrVersion               string                                  `json:"EmrVersion" xml:"EmrVersion"`
+	MainVersionName          string                                  `json:"MainVersionName" xml:"MainVersionName"`
+	OnCloudNative            bool                                    `json:"OnCloudNative" xml:"OnCloudNative"`
+	StackName                string                                  `json:"StackName" xml:"StackName"`
+	WhiteUserList            WhiteUserList                           `json:"WhiteUserList" xml:"WhiteUserList"`
+	ClusterTypeInfoList      ClusterTypeInfoListInListEmrMainVersion `json:"ClusterTypeInfoList" xml:"ClusterTypeInfoList"`
+	ClusterTypeWhiteUserList ClusterTypeWhiteUserList                `json:"ClusterTypeWhiteUserList" xml:"ClusterTypeWhiteUserList"`
 }

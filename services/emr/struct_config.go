@@ -17,17 +17,17 @@ package emr
 
 // Config is a nested struct in emr response
 type Config struct {
-	Author           string                                        `json:"Author" xml:"Author"`
-	CreateTime       string                                        `json:"CreateTime" xml:"CreateTime"`
-	ConfigValue      string                                        `json:"ConfigValue" xml:"ConfigValue"`
-	ConfigVersion    string                                        `json:"ConfigVersion" xml:"ConfigVersion"`
-	Applied          string                                        `json:"Applied" xml:"Applied"`
-	Replace          string                                        `json:"Replace" xml:"Replace"`
-	Comment          string                                        `json:"Comment" xml:"Comment"`
-	ConfigKey        string                                        `json:"ConfigKey" xml:"ConfigKey"`
-	ServiceName      string                                        `json:"ServiceName" xml:"ServiceName"`
-	FileName         string                                        `json:"FileName" xml:"FileName"`
-	Encrypt          string                                        `json:"Encrypt" xml:"Encrypt"`
-	ConfigValueList  ConfigValueListInDescribeClusterServiceConfig `json:"ConfigValueList" xml:"ConfigValueList"`
-	PropertyInfoList PropertyInfoList                              `json:"PropertyInfoList" xml:"PropertyInfoList"`
+	Author           string           `json:"Author" xml:"Author"`
+	CreateTime       string           `json:"CreateTime" xml:"CreateTime"`
+	ConfigValue      string           `json:"ConfigValue" xml:"ConfigValue"`
+	ConfigVersion    string           `json:"ConfigVersion" xml:"ConfigVersion"`
+	Applied          string           `json:"Applied" xml:"Applied"`
+	Replace          string           `json:"Replace" xml:"Replace"`
+	Comment          string           `json:"Comment" xml:"Comment"`
+	ConfigKey        string           `json:"ConfigKey" xml:"ConfigKey"`
+	ServiceName      string           `json:"ServiceName" xml:"ServiceName"`
+	FileName         string           `json:"FileName" xml:"FileName"`
+	Encrypt          string           `json:"Encrypt" xml:"Encrypt"`
+	ConfigValueList  ConfigValueList  `json:"ConfigValueList" xml:"ConfigValueList"`
+	PropertyInfoList PropertyInfoList `json:"PropertyInfoList" xml:"PropertyInfoList"`
 }

@@ -18,7 +18,6 @@ package emr
 // Software is a nested struct in emr response
 type Software struct {
 	Name        string `json:"Name" xml:"Name"`
-	Optional    bool   `json:"Optional" xml:"Optional"`
 	StartTpe    int    `json:"StartTpe" xml:"StartTpe"`
 	Version     string `json:"Version" xml:"Version"`
 	OnlyDisplay bool   `json:"OnlyDisplay" xml:"OnlyDisplay"`

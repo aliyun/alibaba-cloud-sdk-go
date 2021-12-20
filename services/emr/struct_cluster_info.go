@@ -38,14 +38,11 @@ type ClusterInfo struct {
 	AutoScalingByLoadAllowed        bool                                             `json:"AutoScalingByLoadAllowed" xml:"AutoScalingByLoadAllowed"`
 	Type                            string                                           `json:"Type" xml:"Type"`
 	ClusterId                       string                                           `json:"ClusterId" xml:"ClusterId"`
-	InitCustomHiveMetaDB            bool                                             `json:"InitCustomHiveMetaDB" xml:"InitCustomHiveMetaDB"`
 	K8sClusterId                    string                                           `json:"K8sClusterId" xml:"K8sClusterId"`
 	DepositType                     string                                           `json:"DepositType" xml:"DepositType"`
-	UseLocalMetaDb                  bool                                             `json:"UseLocalMetaDb" xml:"UseLocalMetaDb"`
 	AutoScalingWithGraceAllowed     bool                                             `json:"AutoScalingWithGraceAllowed" xml:"AutoScalingWithGraceAllowed"`
 	OrderList                       string                                           `json:"OrderList" xml:"OrderList"`
 	CreateResource                  string                                           `json:"CreateResource" xml:"CreateResource"`
-	UseCustomHiveMetaDB             bool                                             `json:"UseCustomHiveMetaDB" xml:"UseCustomHiveMetaDB"`
 	OperationId                     string                                           `json:"OperationId" xml:"OperationId"`
 	ResizeDiskEnable                bool                                             `json:"ResizeDiskEnable" xml:"ResizeDiskEnable"`
 	StopTime                        int64                                            `json:"StopTime" xml:"StopTime"`
@@ -72,9 +69,7 @@ type ClusterInfo struct {
 	CoreNodeInService               int                                              `json:"CoreNodeInService" xml:"CoreNodeInService"`
 	AutoScalingVersion              string                                           `json:"AutoScalingVersion" xml:"AutoScalingVersion"`
 	UserId                          string                                           `json:"UserId" xml:"UserId"`
-	EmrVer                          string                                           `json:"EmrVer" xml:"EmrVer"`
 	AutoScalingAllowed              bool                                             `json:"AutoScalingAllowed" xml:"AutoScalingAllowed"`
-	ClusterType                     string                                           `json:"ClusterType" xml:"ClusterType"`
 	MasterNodeTotal                 int                                              `json:"MasterNodeTotal" xml:"MasterNodeTotal"`
 	TaskNodeTotal                   int                                              `json:"TaskNodeTotal" xml:"TaskNodeTotal"`
 	VSwitchId                       string                                           `json:"VSwitchId" xml:"VSwitchId"`
@@ -89,9 +84,7 @@ type ClusterInfo struct {
 	SoftwareInfo                    SoftwareInfo                                     `json:"SoftwareInfo" xml:"SoftwareInfo"`
 	AccessInfo                      AccessInfo                                       `json:"AccessInfo" xml:"AccessInfo"`
 	HostPoolInfo                    HostPoolInfo                                     `json:"HostPoolInfo" xml:"HostPoolInfo"`
-	EcsOrders                       EcsOrders                                        `json:"EcsOrders" xml:"EcsOrders"`
 	HostGroupList                   HostGroupListInDescribeClusterV2                 `json:"HostGroupList" xml:"HostGroupList"`
 	BootstrapActionList             BootstrapActionListInDescribeClusterBasicInfo    `json:"BootstrapActionList" xml:"BootstrapActionList"`
-	ConfigList                      ConfigListInDescribeExecutionPlan                `json:"ConfigList" xml:"ConfigList"`
 	GatewayClusterInfoList          GatewayClusterInfoListInDescribeClusterBasicInfo `json:"GatewayClusterInfoList" xml:"GatewayClusterInfoList"`
 }

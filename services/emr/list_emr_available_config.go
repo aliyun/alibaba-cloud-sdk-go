@@ -81,7 +81,7 @@ type ListEmrAvailableConfigResponse struct {
 	RequestId          string                                     `json:"RequestId" xml:"RequestId"`
 	KeyPairNameList    KeyPairNameList                            `json:"KeyPairNameList" xml:"KeyPairNameList"`
 	EmrMainVersionList EmrMainVersionListInListEmrAvailableConfig `json:"EmrMainVersionList" xml:"EmrMainVersionList"`
-	SecurityGroupList  SecurityGroupListInListEmrAvailableConfig  `json:"SecurityGroupList" xml:"SecurityGroupList"`
+	SecurityGroupList  SecurityGroupList                          `json:"SecurityGroupList" xml:"SecurityGroupList"`
 	VpcInfoList        VpcInfoList                                `json:"VpcInfoList" xml:"VpcInfoList"`
 }
 

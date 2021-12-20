@@ -100,9 +100,11 @@ type ModifyClusterTemplateRequest struct {
 	SecurityGroupId        string                                  `position:"Query" name:"SecurityGroupId"`
 	EasEnable              requests.Boolean                        `position:"Query" name:"EasEnable"`
 	DepositType            string                                  `position:"Query" name:"DepositType"`
+	DataDiskKMSKeyId       string                                  `position:"Query" name:"DataDiskKMSKeyId"`
 	UseLocalMetaDb         requests.Boolean                        `position:"Query" name:"UseLocalMetaDb"`
 	TemplateName           string                                  `position:"Query" name:"TemplateName"`
 	UserDefinedEmrEcsRole  string                                  `position:"Query" name:"UserDefinedEmrEcsRole"`
+	DataDiskEncrypted      requests.Boolean                        `position:"Query" name:"DataDiskEncrypted"`
 	VpcId                  string                                  `position:"Query" name:"VpcId"`
 	BizId                  string                                  `position:"Query" name:"BizId"`
 	HostGroup              *[]ModifyClusterTemplateHostGroup       `position:"Query" name:"HostGroup"  type:"Repeated"`

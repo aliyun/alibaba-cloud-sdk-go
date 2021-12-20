@@ -17,7 +17,7 @@ package emr
 
 // SoftwareInfo is a nested struct in emr response
 type SoftwareInfo struct {
-	ClusterType string                           `json:"ClusterType" xml:"ClusterType"`
-	EmrVer      string                           `json:"EmrVer" xml:"EmrVer"`
-	Softwares   SoftwaresInDescribeExecutionPlan `json:"Softwares" xml:"Softwares"`
+	ClusterType string                              `json:"ClusterType" xml:"ClusterType"`
+	EmrVer      string                              `json:"EmrVer" xml:"EmrVer"`
+	Softwares   SoftwaresInDescribeClusterBasicInfo `json:"Softwares" xml:"Softwares"`
 }
