@@ -93,9 +93,9 @@ type CreateCenBandwidthPackageRequest struct {
 // CreateCenBandwidthPackageResponse is the response struct for api CreateCenBandwidthPackage
 type CreateCenBandwidthPackageResponse struct {
 	*responses.BaseResponse
-	RequestId                  string `json:"RequestId" xml:"RequestId"`
 	CenBandwidthPackageId      string `json:"CenBandwidthPackageId" xml:"CenBandwidthPackageId"`
 	CenBandwidthPackageOrderId string `json:"CenBandwidthPackageOrderId" xml:"CenBandwidthPackageOrderId"`
+	RequestId                  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateCenBandwidthPackageRequest creates a request to invoke CreateCenBandwidthPackage API
@@ -103,7 +103,7 @@ func CreateCreateCenBandwidthPackageRequest() (request *CreateCenBandwidthPackag
 	request = &CreateCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "", "")
 	request.Method = requests.POST
 	return
 }

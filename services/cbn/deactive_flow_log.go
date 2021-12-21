@@ -83,8 +83,8 @@ type DeactiveFlowLogRequest struct {
 // DeactiveFlowLogResponse is the response struct for api DeactiveFlowLog
 type DeactiveFlowLogResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   string `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeactiveFlowLogRequest creates a request to invoke DeactiveFlowLog API
@@ -92,7 +92,7 @@ func CreateDeactiveFlowLogRequest() (request *DeactiveFlowLogRequest) {
 	request = &DeactiveFlowLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeactiveFlowLog", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeactiveFlowLog", "", "")
 	request.Method = requests.POST
 	return
 }

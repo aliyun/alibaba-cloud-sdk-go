@@ -96,7 +96,7 @@ func CreateResolveAndRouteServiceInCenRequest() (request *ResolveAndRouteService
 	request = &ResolveAndRouteServiceInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "", "")
 	request.Method = requests.POST
 	return
 }

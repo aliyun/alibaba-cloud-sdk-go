@@ -17,14 +17,14 @@ package cbn
 
 // Cen is a nested struct in cbn response
 type Cen struct {
-	CenId                  string                 `json:"CenId" xml:"CenId"`
-	Name                   string                 `json:"Name" xml:"Name"`
-	Description            string                 `json:"Description" xml:"Description"`
-	ProtectionLevel        string                 `json:"ProtectionLevel" xml:"ProtectionLevel"`
 	Status                 string                 `json:"Status" xml:"Status"`
 	CreationTime           string                 `json:"CreationTime" xml:"CreationTime"`
 	Ipv6Level              string                 `json:"Ipv6Level" xml:"Ipv6Level"`
+	Description            string                 `json:"Description" xml:"Description"`
 	ResourceGroupId        string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CenId                  string                 `json:"CenId" xml:"CenId"`
+	ProtectionLevel        string                 `json:"ProtectionLevel" xml:"ProtectionLevel"`
+	Name                   string                 `json:"Name" xml:"Name"`
 	CenBandwidthPackageIds CenBandwidthPackageIds `json:"CenBandwidthPackageIds" xml:"CenBandwidthPackageIds"`
 	Tags                   TagsInDescribeCens     `json:"Tags" xml:"Tags"`
 }

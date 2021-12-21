@@ -93,7 +93,7 @@ func CreateDeleteRouteServiceInCenRequest() (request *DeleteRouteServiceInCenReq
 	request = &DeleteRouteServiceInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateAssociateCenBandwidthPackageRequest() (request *AssociateCenBandwidth
 	request = &AssociateCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateCenBandwidthPackage", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateCenBandwidthPackage", "", "")
 	request.Method = requests.POST
 	return
 }

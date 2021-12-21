@@ -85,8 +85,8 @@ type DescribeCenGeographicSpanRemainingBandwidthRequest struct {
 // DescribeCenGeographicSpanRemainingBandwidthResponse is the response struct for api DescribeCenGeographicSpanRemainingBandwidth
 type DescribeCenGeographicSpanRemainingBandwidthResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
 	RemainingBandwidth int64  `json:"RemainingBandwidth" xml:"RemainingBandwidth"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeCenGeographicSpanRemainingBandwidthRequest creates a request to invoke DescribeCenGeographicSpanRemainingBandwidth API
@@ -94,7 +94,7 @@ func CreateDescribeCenGeographicSpanRemainingBandwidthRequest() (request *Descri
 	request = &DescribeCenGeographicSpanRemainingBandwidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth", "", "")
 	request.Method = requests.POST
 	return
 }

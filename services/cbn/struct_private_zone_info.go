@@ -17,8 +17,8 @@ package cbn
 
 // PrivateZoneInfo is a nested struct in cbn response
 type PrivateZoneInfo struct {
+	Status         string `json:"Status" xml:"Status"`
 	AccessRegionId string `json:"AccessRegionId" xml:"AccessRegionId"`
 	HostRegionId   string `json:"HostRegionId" xml:"HostRegionId"`
 	HostVpcId      string `json:"HostVpcId" xml:"HostVpcId"`
-	Status         string `json:"Status" xml:"Status"`
 }

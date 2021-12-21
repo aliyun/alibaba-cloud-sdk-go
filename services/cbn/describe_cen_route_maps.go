@@ -94,10 +94,10 @@ type DescribeCenRouteMapsFilter struct {
 // DescribeCenRouteMapsResponse is the response struct for api DescribeCenRouteMaps
 type DescribeCenRouteMapsResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
 	RouteMaps  RouteMaps `json:"RouteMaps" xml:"RouteMaps"`
 }
 
@@ -106,7 +106,7 @@ func CreateDescribeCenRouteMapsRequest() (request *DescribeCenRouteMapsRequest) 
 	request = &DescribeCenRouteMapsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRouteMaps", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRouteMaps", "", "")
 	request.Method = requests.POST
 	return
 }

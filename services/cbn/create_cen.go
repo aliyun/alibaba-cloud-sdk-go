@@ -86,8 +86,8 @@ type CreateCenRequest struct {
 // CreateCenResponse is the response struct for api CreateCen
 type CreateCenResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	CenId     string `json:"CenId" xml:"CenId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateCenRequest creates a request to invoke CreateCen API
@@ -95,7 +95,7 @@ func CreateCreateCenRequest() (request *CreateCenRequest) {
 	request = &CreateCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCen", "", "")
 	request.Method = requests.POST
 	return
 }

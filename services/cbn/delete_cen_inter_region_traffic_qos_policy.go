@@ -91,7 +91,7 @@ func CreateDeleteCenInterRegionTrafficQosPolicyRequest() (request *DeleteCenInte
 	request = &DeleteCenInterRegionTrafficQosPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosPolicy", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

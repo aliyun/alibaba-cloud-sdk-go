@@ -93,7 +93,7 @@ func CreateUpdateTransitRouterRouteTableRequest() (request *UpdateTransitRouterR
 	request = &UpdateTransitRouterRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterRouteTable", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterRouteTable", "", "")
 	request.Method = requests.POST
 	return
 }

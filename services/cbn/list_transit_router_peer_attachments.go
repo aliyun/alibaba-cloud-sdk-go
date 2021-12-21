@@ -86,10 +86,10 @@ type ListTransitRouterPeerAttachmentsRequest struct {
 // ListTransitRouterPeerAttachmentsResponse is the response struct for api ListTransitRouterPeerAttachments
 type ListTransitRouterPeerAttachmentsResponse struct {
 	*responses.BaseResponse
+	NextToken                string                    `json:"NextToken" xml:"NextToken"`
 	RequestId                string                    `json:"RequestId" xml:"RequestId"`
 	TotalCount               int                       `json:"TotalCount" xml:"TotalCount"`
 	MaxResults               int                       `json:"MaxResults" xml:"MaxResults"`
-	NextToken                string                    `json:"NextToken" xml:"NextToken"`
 	TransitRouterAttachments []TransitRouterAttachment `json:"TransitRouterAttachments" xml:"TransitRouterAttachments"`
 }
 
@@ -98,7 +98,7 @@ func CreateListTransitRouterPeerAttachmentsRequest() (request *ListTransitRouter
 	request = &ListTransitRouterPeerAttachmentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterPeerAttachments", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterPeerAttachments", "", "")
 	request.Method = requests.POST
 	return
 }

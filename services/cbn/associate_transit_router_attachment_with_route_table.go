@@ -92,7 +92,7 @@ func CreateAssociateTransitRouterAttachmentWithRouteTableRequest() (request *Ass
 	request = &AssociateTransitRouterAttachmentWithRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateTransitRouterAttachmentWithRouteTable", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateTransitRouterAttachmentWithRouteTable", "", "")
 	request.Method = requests.POST
 	return
 }

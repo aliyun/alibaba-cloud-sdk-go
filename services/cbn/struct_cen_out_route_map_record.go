@@ -17,6 +17,6 @@ package cbn
 
 // CenOutRouteMapRecord is a nested struct in cbn response
 type CenOutRouteMapRecord struct {
-	RegionId   string `json:"RegionId" xml:"RegionId"`
 	RouteMapId string `json:"RouteMapId" xml:"RouteMapId"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
 }

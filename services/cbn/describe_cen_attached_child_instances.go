@@ -85,10 +85,10 @@ type DescribeCenAttachedChildInstancesRequest struct {
 // DescribeCenAttachedChildInstancesResponse is the response struct for api DescribeCenAttachedChildInstances
 type DescribeCenAttachedChildInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
 	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
 	ChildInstances ChildInstances `json:"ChildInstances" xml:"ChildInstances"`
 }
 
@@ -97,7 +97,7 @@ func CreateDescribeCenAttachedChildInstancesRequest() (request *DescribeCenAttac
 	request = &DescribeCenAttachedChildInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "", "")
 	request.Method = requests.POST
 	return
 }

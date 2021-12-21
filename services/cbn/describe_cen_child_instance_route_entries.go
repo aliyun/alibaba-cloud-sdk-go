@@ -89,10 +89,10 @@ type DescribeCenChildInstanceRouteEntriesRequest struct {
 // DescribeCenChildInstanceRouteEntriesResponse is the response struct for api DescribeCenChildInstanceRouteEntries
 type DescribeCenChildInstanceRouteEntriesResponse struct {
 	*responses.BaseResponse
+	PageSize        int                                                   `json:"PageSize" xml:"PageSize"`
 	RequestId       string                                                `json:"RequestId" xml:"RequestId"`
 	PageNumber      int                                                   `json:"PageNumber" xml:"PageNumber"`
 	TotalCount      int                                                   `json:"TotalCount" xml:"TotalCount"`
-	PageSize        int                                                   `json:"PageSize" xml:"PageSize"`
 	CenRouteEntries CenRouteEntriesInDescribeCenChildInstanceRouteEntries `json:"CenRouteEntries" xml:"CenRouteEntries"`
 }
 
@@ -101,7 +101,7 @@ func CreateDescribeCenChildInstanceRouteEntriesRequest() (request *DescribeCenCh
 	request = &DescribeCenChildInstanceRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries", "", "")
 	request.Method = requests.POST
 	return
 }

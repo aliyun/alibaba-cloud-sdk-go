@@ -91,7 +91,7 @@ func CreateTempUpgradeCenBandwidthPackageSpecRequest() (request *TempUpgradeCenB
 	request = &TempUpgradeCenBandwidthPackageSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "", "")
 	request.Method = requests.POST
 	return
 }

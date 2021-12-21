@@ -85,16 +85,16 @@ type DescribeCenAttachedChildInstanceAttributeRequest struct {
 // DescribeCenAttachedChildInstanceAttributeResponse is the response struct for api DescribeCenAttachedChildInstanceAttribute
 type DescribeCenAttachedChildInstanceAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                string                   `json:"RequestId" xml:"RequestId"`
-	CenId                    string                   `json:"CenId" xml:"CenId"`
-	ChildInstanceId          string                   `json:"ChildInstanceId" xml:"ChildInstanceId"`
+	Status                   string                   `json:"Status" xml:"Status"`
 	ChildInstanceType        string                   `json:"ChildInstanceType" xml:"ChildInstanceType"`
 	ChildInstanceRegionId    string                   `json:"ChildInstanceRegionId" xml:"ChildInstanceRegionId"`
+	RequestId                string                   `json:"RequestId" xml:"RequestId"`
 	ChildInstanceOwnerId     int64                    `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
-	Status                   string                   `json:"Status" xml:"Status"`
+	ChildInstanceId          string                   `json:"ChildInstanceId" xml:"ChildInstanceId"`
+	CenId                    string                   `json:"CenId" xml:"CenId"`
 	ChildInstanceName        string                   `json:"ChildInstanceName" xml:"ChildInstanceName"`
-	ChildInstanceAttachTime  string                   `json:"ChildInstanceAttachTime" xml:"ChildInstanceAttachTime"`
 	Ipv6StatusInCen          string                   `json:"Ipv6StatusInCen" xml:"Ipv6StatusInCen"`
+	ChildInstanceAttachTime  string                   `json:"ChildInstanceAttachTime" xml:"ChildInstanceAttachTime"`
 	ChildInstanceRouteTables ChildInstanceRouteTables `json:"ChildInstanceRouteTables" xml:"ChildInstanceRouteTables"`
 }
 
@@ -103,7 +103,7 @@ func CreateDescribeCenAttachedChildInstanceAttributeRequest() (request *Describe
 	request = &DescribeCenAttachedChildInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

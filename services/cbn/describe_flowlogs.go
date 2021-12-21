@@ -103,7 +103,7 @@ func CreateDescribeFlowlogsRequest() (request *DescribeFlowlogsRequest) {
 	request = &DescribeFlowlogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeFlowlogs", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeFlowlogs", "", "")
 	request.Method = requests.POST
 	return
 }

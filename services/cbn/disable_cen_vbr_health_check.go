@@ -92,7 +92,7 @@ func CreateDisableCenVbrHealthCheckRequest() (request *DisableCenVbrHealthCheckR
 	request = &DisableCenVbrHealthCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "", "")
 	request.Method = requests.POST
 	return
 }

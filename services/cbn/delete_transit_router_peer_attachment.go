@@ -92,7 +92,7 @@ func CreateDeleteTransitRouterPeerAttachmentRequest() (request *DeleteTransitRou
 	request = &DeleteTransitRouterPeerAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterPeerAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterPeerAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -83,8 +83,8 @@ type ListTransitRouterAvailableResourceRequest struct {
 type ListTransitRouterAvailableResourceResponse struct {
 	*responses.BaseResponse
 	RequestId   string   `json:"RequestId" xml:"RequestId"`
-	MasterZones []string `json:"MasterZones" xml:"MasterZones"`
 	SlaveZones  []string `json:"SlaveZones" xml:"SlaveZones"`
+	MasterZones []string `json:"MasterZones" xml:"MasterZones"`
 }
 
 // CreateListTransitRouterAvailableResourceRequest creates a request to invoke ListTransitRouterAvailableResource API
@@ -92,7 +92,7 @@ func CreateListTransitRouterAvailableResourceRequest() (request *ListTransitRout
 	request = &ListTransitRouterAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterAvailableResource", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterAvailableResource", "", "")
 	request.Method = requests.POST
 	return
 }

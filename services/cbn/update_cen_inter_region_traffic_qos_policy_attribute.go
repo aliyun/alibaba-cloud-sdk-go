@@ -93,7 +93,7 @@ func CreateUpdateCenInterRegionTrafficQosPolicyAttributeRequest() (request *Upda
 	request = &UpdateCenInterRegionTrafficQosPolicyAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosPolicyAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosPolicyAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

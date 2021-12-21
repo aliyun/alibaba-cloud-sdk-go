@@ -91,7 +91,7 @@ func CreateModifyCenBandwidthPackageAttributeRequest() (request *ModifyCenBandwi
 	request = &ModifyCenBandwidthPackageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenBandwidthPackageAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenBandwidthPackageAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

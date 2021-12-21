@@ -83,10 +83,10 @@ type DescribeGeographicRegionMembershipRequest struct {
 // DescribeGeographicRegionMembershipResponse is the response struct for api DescribeGeographicRegionMembership
 type DescribeGeographicRegionMembershipResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
 	RegionIds  RegionIds `json:"RegionIds" xml:"RegionIds"`
 }
 
@@ -95,7 +95,7 @@ func CreateDescribeGeographicRegionMembershipRequest() (request *DescribeGeograp
 	request = &DescribeGeographicRegionMembershipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "", "")
 	request.Method = requests.POST
 	return
 }

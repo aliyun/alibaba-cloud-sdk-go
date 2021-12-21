@@ -87,10 +87,10 @@ type ListTransitRouterRouteEntriesRequest struct {
 // ListTransitRouterRouteEntriesResponse is the response struct for api ListTransitRouterRouteEntries
 type ListTransitRouterRouteEntriesResponse struct {
 	*responses.BaseResponse
-	MaxResults                int                       `json:"MaxResults" xml:"MaxResults"`
 	NextToken                 string                    `json:"NextToken" xml:"NextToken"`
 	RequestId                 string                    `json:"RequestId" xml:"RequestId"`
 	TotalCount                int                       `json:"TotalCount" xml:"TotalCount"`
+	MaxResults                int                       `json:"MaxResults" xml:"MaxResults"`
 	TransitRouterRouteEntries []TransitRouterRouteEntry `json:"TransitRouterRouteEntries" xml:"TransitRouterRouteEntries"`
 }
 
@@ -99,7 +99,7 @@ func CreateListTransitRouterRouteEntriesRequest() (request *ListTransitRouterRou
 	request = &ListTransitRouterRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterRouteEntries", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterRouteEntries", "", "")
 	request.Method = requests.POST
 	return
 }

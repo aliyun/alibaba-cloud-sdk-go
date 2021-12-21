@@ -98,7 +98,7 @@ func CreateCreateFlowlogRequest() (request *CreateFlowlogRequest) {
 	request = &CreateFlowlogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateFlowlog", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateFlowlog", "", "")
 	request.Method = requests.POST
 	return
 }

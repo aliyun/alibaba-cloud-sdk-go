@@ -83,8 +83,8 @@ type ActiveFlowLogRequest struct {
 // ActiveFlowLogResponse is the response struct for api ActiveFlowLog
 type ActiveFlowLogResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   string `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateActiveFlowLogRequest creates a request to invoke ActiveFlowLog API
@@ -92,7 +92,7 @@ func CreateActiveFlowLogRequest() (request *ActiveFlowLogRequest) {
 	request = &ActiveFlowLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ActiveFlowLog", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ActiveFlowLog", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateDissociateTransitRouterAttachmentFromRouteTableRequest() (request *Di
 	request = &DissociateTransitRouterAttachmentFromRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DissociateTransitRouterAttachmentFromRouteTable", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DissociateTransitRouterAttachmentFromRouteTable", "", "")
 	request.Method = requests.POST
 	return
 }

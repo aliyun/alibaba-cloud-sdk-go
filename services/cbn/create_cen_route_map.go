@@ -76,8 +76,8 @@ type CreateCenRouteMapRequest struct {
 	MapResult                          string           `position:"Query" name:"MapResult"`
 	DestinationRegionIds               *[]string        `position:"Query" name:"DestinationRegionIds"  type:"Repeated"`
 	NextPriority                       requests.Integer `position:"Query" name:"NextPriority"`
-	DestinationCidrBlocks              *[]string        `position:"Query" name:"DestinationCidrBlocks"  type:"Repeated"`
 	SystemPolicy                       requests.Boolean `position:"Query" name:"SystemPolicy"`
+	DestinationCidrBlocks              *[]string        `position:"Query" name:"DestinationCidrBlocks"  type:"Repeated"`
 	OriginalRouteTableIds              *[]string        `position:"Query" name:"OriginalRouteTableIds"  type:"Repeated"`
 	TransitRouterRouteTableId          string           `position:"Query" name:"TransitRouterRouteTableId"`
 	SourceInstanceIds                  *[]string        `position:"Query" name:"SourceInstanceIds"  type:"Repeated"`
@@ -114,8 +114,8 @@ type CreateCenRouteMapRequest struct {
 // CreateCenRouteMapResponse is the response struct for api CreateCenRouteMap
 type CreateCenRouteMapResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	RouteMapId string `json:"RouteMapId" xml:"RouteMapId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateCenRouteMapRequest creates a request to invoke CreateCenRouteMap API
@@ -123,7 +123,7 @@ func CreateCreateCenRouteMapRequest() (request *CreateCenRouteMapRequest) {
 	request = &CreateCenRouteMapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenRouteMap", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenRouteMap", "", "")
 	request.Method = requests.POST
 	return
 }

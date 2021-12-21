@@ -94,7 +94,7 @@ func CreateCreateCenChildInstanceRouteEntryToAttachmentRequest() (request *Creat
 	request = &CreateCenChildInstanceRouteEntryToAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

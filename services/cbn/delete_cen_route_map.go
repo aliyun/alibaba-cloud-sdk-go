@@ -91,7 +91,7 @@ func CreateDeleteCenRouteMapRequest() (request *DeleteCenRouteMapRequest) {
 	request = &DeleteCenRouteMapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenRouteMap", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenRouteMap", "", "")
 	request.Method = requests.POST
 	return
 }

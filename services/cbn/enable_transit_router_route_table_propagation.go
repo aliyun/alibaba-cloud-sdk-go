@@ -92,7 +92,7 @@ func CreateEnableTransitRouterRouteTablePropagationRequest() (request *EnableTra
 	request = &EnableTransitRouterRouteTablePropagationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableTransitRouterRouteTablePropagation", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableTransitRouterRouteTablePropagation", "", "")
 	request.Method = requests.POST
 	return
 }

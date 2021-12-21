@@ -18,9 +18,9 @@ package cbn
 // TransitRouterRouteTable is a nested struct in cbn response
 type TransitRouterRouteTable struct {
 	TransitRouterRouteTableStatus      string `json:"TransitRouterRouteTableStatus" xml:"TransitRouterRouteTableStatus"`
-	TransitRouterRouteTableName        string `json:"TransitRouterRouteTableName" xml:"TransitRouterRouteTableName"`
-	TransitRouterRouteTableId          string `json:"TransitRouterRouteTableId" xml:"TransitRouterRouteTableId"`
-	TransitRouterRouteTableDescription string `json:"TransitRouterRouteTableDescription" xml:"TransitRouterRouteTableDescription"`
 	TransitRouterRouteTableType        string `json:"TransitRouterRouteTableType" xml:"TransitRouterRouteTableType"`
 	CreateTime                         string `json:"CreateTime" xml:"CreateTime"`
+	TransitRouterRouteTableId          string `json:"TransitRouterRouteTableId" xml:"TransitRouterRouteTableId"`
+	TransitRouterRouteTableName        string `json:"TransitRouterRouteTableName" xml:"TransitRouterRouteTableName"`
+	TransitRouterRouteTableDescription string `json:"TransitRouterRouteTableDescription" xml:"TransitRouterRouteTableDescription"`
 }

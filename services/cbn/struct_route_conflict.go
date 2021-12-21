@@ -17,9 +17,9 @@ package cbn
 
 // RouteConflict is a nested struct in cbn response
 type RouteConflict struct {
+	Status               string `json:"Status" xml:"Status"`
 	DestinationCidrBlock string `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
-	RegionId             string `json:"RegionId" xml:"RegionId"`
 	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
 	InstanceType         string `json:"InstanceType" xml:"InstanceType"`
-	Status               string `json:"Status" xml:"Status"`
+	RegionId             string `json:"RegionId" xml:"RegionId"`
 }

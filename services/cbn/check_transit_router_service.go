@@ -90,7 +90,7 @@ func CreateCheckTransitRouterServiceRequest() (request *CheckTransitRouterServic
 	request = &CheckTransitRouterServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CheckTransitRouterService", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CheckTransitRouterService", "", "")
 	request.Method = requests.POST
 	return
 }

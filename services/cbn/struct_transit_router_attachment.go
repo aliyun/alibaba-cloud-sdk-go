@@ -30,15 +30,15 @@ type TransitRouterAttachment struct {
 	ResourceType                       string        `json:"ResourceType" xml:"ResourceType"`
 	RegionId                           string        `json:"RegionId" xml:"RegionId"`
 	TransitRouterAttachmentId          string        `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
-	GeographicSpanId                   string        `json:"GeographicSpanId" xml:"GeographicSpanId"`
 	BandwidthType                      string        `json:"BandwidthType" xml:"BandwidthType"`
+	GeographicSpanId                   string        `json:"GeographicSpanId" xml:"GeographicSpanId"`
 	VpcRegionId                        string        `json:"VpcRegionId" xml:"VpcRegionId"`
 	TransitRouterAttachmentDescription string        `json:"TransitRouterAttachmentDescription" xml:"TransitRouterAttachmentDescription"`
 	BandwidthPackageId                 string        `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 	TransitRouterId                    string        `json:"TransitRouterId" xml:"TransitRouterId"`
 	TransitRouterAttachmentName        string        `json:"TransitRouterAttachmentName" xml:"TransitRouterAttachmentName"`
-	PeerTransitRouterId                string        `json:"PeerTransitRouterId" xml:"PeerTransitRouterId"`
 	Status                             string        `json:"Status" xml:"Status"`
+	PeerTransitRouterId                string        `json:"PeerTransitRouterId" xml:"PeerTransitRouterId"`
 	VpcId                              string        `json:"VpcId" xml:"VpcId"`
 	ZoneMappings                       []ZoneMapping `json:"ZoneMappings" xml:"ZoneMappings"`
 }

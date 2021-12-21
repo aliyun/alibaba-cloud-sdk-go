@@ -90,7 +90,7 @@ func CreateUnroutePrivateZoneInCenToVpcRequest() (request *UnroutePrivateZoneInC
 	request = &UnroutePrivateZoneInCenToVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UnroutePrivateZoneInCenToVpc", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UnroutePrivateZoneInCenToVpc", "", "")
 	request.Method = requests.POST
 	return
 }

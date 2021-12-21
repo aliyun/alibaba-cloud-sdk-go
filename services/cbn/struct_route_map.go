@@ -17,39 +17,39 @@ package cbn
 
 // RouteMap is a nested struct in cbn response
 type RouteMap struct {
-	Status                             string                        `json:"Status" xml:"Status"`
 	RouteMapId                         string                        `json:"RouteMapId" xml:"RouteMapId"`
-	CenId                              string                        `json:"CenId" xml:"CenId"`
-	CenRegionId                        string                        `json:"CenRegionId" xml:"CenRegionId"`
-	Description                        string                        `json:"Description" xml:"Description"`
-	MapResult                          string                        `json:"MapResult" xml:"MapResult"`
-	Priority                           int                           `json:"Priority" xml:"Priority"`
-	NextPriority                       int                           `json:"NextPriority" xml:"NextPriority"`
-	CidrMatchMode                      string                        `json:"CidrMatchMode" xml:"CidrMatchMode"`
-	AsPathMatchMode                    string                        `json:"AsPathMatchMode" xml:"AsPathMatchMode"`
-	CommunityMatchMode                 string                        `json:"CommunityMatchMode" xml:"CommunityMatchMode"`
-	CommunityOperateMode               string                        `json:"CommunityOperateMode" xml:"CommunityOperateMode"`
-	Preference                         int                           `json:"Preference" xml:"Preference"`
+	Status                             string                        `json:"Status" xml:"Status"`
 	TransmitDirection                  string                        `json:"TransmitDirection" xml:"TransmitDirection"`
 	SourceInstanceIdsReverseMatch      bool                          `json:"SourceInstanceIdsReverseMatch" xml:"SourceInstanceIdsReverseMatch"`
-	DestinationInstanceIdsReverseMatch bool                          `json:"DestinationInstanceIdsReverseMatch" xml:"DestinationInstanceIdsReverseMatch"`
-	GatewayZoneId                      string                        `json:"GatewayZoneId" xml:"GatewayZoneId"`
-	MatchAddressType                   string                        `json:"MatchAddressType" xml:"MatchAddressType"`
+	CenRegionId                        string                        `json:"CenRegionId" xml:"CenRegionId"`
+	CenId                              string                        `json:"CenId" xml:"CenId"`
+	Priority                           int                           `json:"Priority" xml:"Priority"`
 	TransitRouterRouteTableId          string                        `json:"TransitRouterRouteTableId" xml:"TransitRouterRouteTableId"`
-	SourceInstanceIds                  SourceInstanceIds             `json:"SourceInstanceIds" xml:"SourceInstanceIds"`
-	DestinationInstanceIds             DestinationInstanceIds        `json:"DestinationInstanceIds" xml:"DestinationInstanceIds"`
-	SourceRouteTableIds                SourceRouteTableIds           `json:"SourceRouteTableIds" xml:"SourceRouteTableIds"`
-	DestinationRouteTableIds           DestinationRouteTableIds      `json:"DestinationRouteTableIds" xml:"DestinationRouteTableIds"`
+	CommunityOperateMode               string                        `json:"CommunityOperateMode" xml:"CommunityOperateMode"`
+	MapResult                          string                        `json:"MapResult" xml:"MapResult"`
+	CommunityMatchMode                 string                        `json:"CommunityMatchMode" xml:"CommunityMatchMode"`
+	Description                        string                        `json:"Description" xml:"Description"`
+	AsPathMatchMode                    string                        `json:"AsPathMatchMode" xml:"AsPathMatchMode"`
+	Preference                         int                           `json:"Preference" xml:"Preference"`
+	DestinationInstanceIdsReverseMatch bool                          `json:"DestinationInstanceIdsReverseMatch" xml:"DestinationInstanceIdsReverseMatch"`
+	CidrMatchMode                      string                        `json:"CidrMatchMode" xml:"CidrMatchMode"`
+	NextPriority                       int                           `json:"NextPriority" xml:"NextPriority"`
+	MatchAddressType                   string                        `json:"MatchAddressType" xml:"MatchAddressType"`
+	GatewayZoneId                      string                        `json:"GatewayZoneId" xml:"GatewayZoneId"`
 	SourceRegionIds                    SourceRegionIds               `json:"SourceRegionIds" xml:"SourceRegionIds"`
 	SourceChildInstanceTypes           SourceChildInstanceTypes      `json:"SourceChildInstanceTypes" xml:"SourceChildInstanceTypes"`
-	DestinationChildInstanceTypes      DestinationChildInstanceTypes `json:"DestinationChildInstanceTypes" xml:"DestinationChildInstanceTypes"`
+	DestinationRouteTableIds           DestinationRouteTableIds      `json:"DestinationRouteTableIds" xml:"DestinationRouteTableIds"`
+	SourceInstanceIds                  SourceInstanceIds             `json:"SourceInstanceIds" xml:"SourceInstanceIds"`
 	DestinationCidrBlocks              DestinationCidrBlocks         `json:"DestinationCidrBlocks" xml:"DestinationCidrBlocks"`
-	RouteTypes                         RouteTypes                    `json:"RouteTypes" xml:"RouteTypes"`
-	MatchAsns                          MatchAsns                     `json:"MatchAsns" xml:"MatchAsns"`
-	MatchCommunitySet                  MatchCommunitySet             `json:"MatchCommunitySet" xml:"MatchCommunitySet"`
-	OperateCommunitySet                OperateCommunitySet           `json:"OperateCommunitySet" xml:"OperateCommunitySet"`
-	PrependAsPath                      PrependAsPath                 `json:"PrependAsPath" xml:"PrependAsPath"`
 	DestinationRegionIds               DestinationRegionIds          `json:"DestinationRegionIds" xml:"DestinationRegionIds"`
+	SourceRouteTableIds                SourceRouteTableIds           `json:"SourceRouteTableIds" xml:"SourceRouteTableIds"`
+	MatchCommunitySet                  MatchCommunitySet             `json:"MatchCommunitySet" xml:"MatchCommunitySet"`
+	PrependAsPath                      PrependAsPath                 `json:"PrependAsPath" xml:"PrependAsPath"`
+	RouteTypes                         RouteTypes                    `json:"RouteTypes" xml:"RouteTypes"`
 	OriginalRouteTableIds              OriginalRouteTableIds         `json:"OriginalRouteTableIds" xml:"OriginalRouteTableIds"`
+	DestinationChildInstanceTypes      DestinationChildInstanceTypes `json:"DestinationChildInstanceTypes" xml:"DestinationChildInstanceTypes"`
+	DestinationInstanceIds             DestinationInstanceIds        `json:"DestinationInstanceIds" xml:"DestinationInstanceIds"`
+	MatchAsns                          MatchAsns                     `json:"MatchAsns" xml:"MatchAsns"`
+	OperateCommunitySet                OperateCommunitySet           `json:"OperateCommunitySet" xml:"OperateCommunitySet"`
 	SrcZoneIds                         SrcZoneIds                    `json:"SrcZoneIds" xml:"SrcZoneIds"`
 }

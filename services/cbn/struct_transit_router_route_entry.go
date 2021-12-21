@@ -17,13 +17,13 @@ package cbn
 
 // TransitRouterRouteEntry is a nested struct in cbn response
 type TransitRouterRouteEntry struct {
-	TransitRouterRouteEntryDescription          string `json:"TransitRouterRouteEntryDescription" xml:"TransitRouterRouteEntryDescription"`
-	TransitRouterRouteEntryDestinationCidrBlock string `json:"TransitRouterRouteEntryDestinationCidrBlock" xml:"TransitRouterRouteEntryDestinationCidrBlock"`
 	TransitRouterRouteEntryId                   string `json:"TransitRouterRouteEntryId" xml:"TransitRouterRouteEntryId"`
-	TransitRouterRouteEntryName                 string `json:"TransitRouterRouteEntryName" xml:"TransitRouterRouteEntryName"`
-	TransitRouterRouteEntryNextHopId            string `json:"TransitRouterRouteEntryNextHopId" xml:"TransitRouterRouteEntryNextHopId"`
-	TransitRouterRouteEntryNextHopType          string `json:"TransitRouterRouteEntryNextHopType" xml:"TransitRouterRouteEntryNextHopType"`
-	TransitRouterRouteEntryStatus               string `json:"TransitRouterRouteEntryStatus" xml:"TransitRouterRouteEntryStatus"`
+	TransitRouterRouteEntryDestinationCidrBlock string `json:"TransitRouterRouteEntryDestinationCidrBlock" xml:"TransitRouterRouteEntryDestinationCidrBlock"`
 	TransitRouterRouteEntryType                 string `json:"TransitRouterRouteEntryType" xml:"TransitRouterRouteEntryType"`
 	CreateTime                                  string `json:"CreateTime" xml:"CreateTime"`
+	TransitRouterRouteEntryName                 string `json:"TransitRouterRouteEntryName" xml:"TransitRouterRouteEntryName"`
+	TransitRouterRouteEntryStatus               string `json:"TransitRouterRouteEntryStatus" xml:"TransitRouterRouteEntryStatus"`
+	TransitRouterRouteEntryNextHopType          string `json:"TransitRouterRouteEntryNextHopType" xml:"TransitRouterRouteEntryNextHopType"`
+	TransitRouterRouteEntryNextHopId            string `json:"TransitRouterRouteEntryNextHopId" xml:"TransitRouterRouteEntryNextHopId"`
+	TransitRouterRouteEntryDescription          string `json:"TransitRouterRouteEntryDescription" xml:"TransitRouterRouteEntryDescription"`
 }

@@ -87,10 +87,10 @@ type DescribeRouteConflictRequest struct {
 // DescribeRouteConflictResponse is the response struct for api DescribeRouteConflict
 type DescribeRouteConflictResponse struct {
 	*responses.BaseResponse
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
 	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
 	RouteConflicts RouteConflicts `json:"RouteConflicts" xml:"RouteConflicts"`
 }
 
@@ -99,7 +99,7 @@ func CreateDescribeRouteConflictRequest() (request *DescribeRouteConflictRequest
 	request = &DescribeRouteConflictRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteConflict", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteConflict", "", "")
 	request.Method = requests.POST
 	return
 }

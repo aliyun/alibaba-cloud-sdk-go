@@ -25,12 +25,12 @@ type CenRouteEntry struct {
 	ToOtherRegionStatus   string                                                   `json:"ToOtherRegionStatus" xml:"ToOtherRegionStatus"`
 	NextHopInstanceId     string                                                   `json:"NextHopInstanceId" xml:"NextHopInstanceId"`
 	Status                string                                                   `json:"Status" xml:"Status"`
-	DestinationCidrBlock  string                                                   `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
 	NextHopRegionId       string                                                   `json:"NextHopRegionId" xml:"NextHopRegionId"`
+	DestinationCidrBlock  string                                                   `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
 	Type                  string                                                   `json:"Type" xml:"Type"`
 	AsPaths               AsPathsInDescribeCenChildInstanceRouteEntries            `json:"AsPaths" xml:"AsPaths"`
 	Communities           CommunitiesInDescribeCenChildInstanceRouteEntries        `json:"Communities" xml:"Communities"`
 	Conflicts             ConflictsInDescribeCenChildInstanceRouteEntries          `json:"Conflicts" xml:"Conflicts"`
-	CenOutRouteMapRecords CenOutRouteMapRecords                                    `json:"CenOutRouteMapRecords" xml:"CenOutRouteMapRecords"`
 	CenRouteMapRecords    CenRouteMapRecordsInDescribeCenChildInstanceRouteEntries `json:"CenRouteMapRecords" xml:"CenRouteMapRecords"`
+	CenOutRouteMapRecords CenOutRouteMapRecords                                    `json:"CenOutRouteMapRecords" xml:"CenOutRouteMapRecords"`
 }

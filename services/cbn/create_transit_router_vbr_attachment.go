@@ -92,8 +92,8 @@ type CreateTransitRouterVbrAttachmentRequest struct {
 // CreateTransitRouterVbrAttachmentResponse is the response struct for api CreateTransitRouterVbrAttachment
 type CreateTransitRouterVbrAttachmentResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
 	TransitRouterAttachmentId string `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
+	RequestId                 string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateTransitRouterVbrAttachmentRequest creates a request to invoke CreateTransitRouterVbrAttachment API
@@ -101,7 +101,7 @@ func CreateCreateTransitRouterVbrAttachmentRequest() (request *CreateTransitRout
 	request = &CreateTransitRouterVbrAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterVbrAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterVbrAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

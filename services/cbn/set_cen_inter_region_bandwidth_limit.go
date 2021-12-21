@@ -93,7 +93,7 @@ func CreateSetCenInterRegionBandwidthLimitRequest() (request *SetCenInterRegionB
 	request = &SetCenInterRegionBandwidthLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -1,3 +1,7 @@
+2021-12-21 Version: v1.61.1397
+- Generated 2017-09-12 for `Cbn`.
+- Support Darabonba API.
+
 2021-12-21 Version: v1.61.1396
 - Generated 2020-07-01 for `CCC`.
 - Add RAM ID in resonse of listUsers API.

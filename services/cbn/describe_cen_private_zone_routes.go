@@ -84,11 +84,11 @@ type DescribeCenPrivateZoneRoutesRequest struct {
 type DescribeCenPrivateZoneRoutesResponse struct {
 	*responses.BaseResponse
 	RequestId             string           `json:"RequestId" xml:"RequestId"`
-	CenId                 string           `json:"CenId" xml:"CenId"`
 	PrivateZoneDnsServers string           `json:"PrivateZoneDnsServers" xml:"PrivateZoneDnsServers"`
+	CenId                 string           `json:"CenId" xml:"CenId"`
 	PageNumber            int              `json:"PageNumber" xml:"PageNumber"`
-	TotalCount            int              `json:"TotalCount" xml:"TotalCount"`
 	PageSize              int              `json:"PageSize" xml:"PageSize"`
+	TotalCount            int              `json:"TotalCount" xml:"TotalCount"`
 	PrivateZoneInfos      PrivateZoneInfos `json:"PrivateZoneInfos" xml:"PrivateZoneInfos"`
 }
 
@@ -97,7 +97,7 @@ func CreateDescribeCenPrivateZoneRoutesRequest() (request *DescribeCenPrivateZon
 	request = &DescribeCenPrivateZoneRoutesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "", "")
 	request.Method = requests.POST
 	return
 }

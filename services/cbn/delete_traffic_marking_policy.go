@@ -91,7 +91,7 @@ func CreateDeleteTrafficMarkingPolicyRequest() (request *DeleteTrafficMarkingPol
 	request = &DeleteTrafficMarkingPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTrafficMarkingPolicy", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTrafficMarkingPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

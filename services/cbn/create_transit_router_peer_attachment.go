@@ -95,8 +95,8 @@ type CreateTransitRouterPeerAttachmentRequest struct {
 // CreateTransitRouterPeerAttachmentResponse is the response struct for api CreateTransitRouterPeerAttachment
 type CreateTransitRouterPeerAttachmentResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
 	TransitRouterAttachmentId string `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
+	RequestId                 string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateTransitRouterPeerAttachmentRequest creates a request to invoke CreateTransitRouterPeerAttachment API
@@ -104,7 +104,7 @@ func CreateCreateTransitRouterPeerAttachmentRequest() (request *CreateTransitRou
 	request = &CreateTransitRouterPeerAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

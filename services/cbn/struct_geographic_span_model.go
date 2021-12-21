@@ -17,7 +17,7 @@ package cbn
 
 // GeographicSpanModel is a nested struct in cbn response
 type GeographicSpanModel struct {
-	GeographicSpanId    string `json:"GeographicSpanId" xml:"GeographicSpanId"`
 	LocalGeoRegionId    string `json:"LocalGeoRegionId" xml:"LocalGeoRegionId"`
+	GeographicSpanId    string `json:"GeographicSpanId" xml:"GeographicSpanId"`
 	OppositeGeoRegionId string `json:"OppositeGeoRegionId" xml:"OppositeGeoRegionId"`
 }

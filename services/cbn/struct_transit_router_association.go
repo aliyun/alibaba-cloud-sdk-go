@@ -17,9 +17,9 @@ package cbn
 
 // TransitRouterAssociation is a nested struct in cbn response
 type TransitRouterAssociation struct {
-	Status                    string `json:"Status" xml:"Status"`
 	TransitRouterAttachmentId string `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
-	TransitRouterRouteTableId string `json:"TransitRouterRouteTableId" xml:"TransitRouterRouteTableId"`
-	ResourceId                string `json:"ResourceId" xml:"ResourceId"`
+	Status                    string `json:"Status" xml:"Status"`
 	ResourceType              string `json:"ResourceType" xml:"ResourceType"`
+	ResourceId                string `json:"ResourceId" xml:"ResourceId"`
+	TransitRouterRouteTableId string `json:"TransitRouterRouteTableId" xml:"TransitRouterRouteTableId"`
 }

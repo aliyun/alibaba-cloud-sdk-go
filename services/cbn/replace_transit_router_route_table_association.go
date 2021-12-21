@@ -92,7 +92,7 @@ func CreateReplaceTransitRouterRouteTableAssociationRequest() (request *ReplaceT
 	request = &ReplaceTransitRouterRouteTableAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ReplaceTransitRouterRouteTableAssociation", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ReplaceTransitRouterRouteTableAssociation", "", "")
 	request.Method = requests.POST
 	return
 }

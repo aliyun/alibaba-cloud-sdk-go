@@ -91,7 +91,7 @@ func CreateDescribeChildInstanceRegionsRequest() (request *DescribeChildInstance
 	request = &DescribeChildInstanceRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "", "")
 	request.Method = requests.POST
 	return
 }

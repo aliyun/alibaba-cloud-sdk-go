@@ -88,8 +88,8 @@ type CreateTransitRouterRouteEntryRequest struct {
 // CreateTransitRouterRouteEntryResponse is the response struct for api CreateTransitRouterRouteEntry
 type CreateTransitRouterRouteEntryResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
 	TransitRouterRouteEntryId string `json:"TransitRouterRouteEntryId" xml:"TransitRouterRouteEntryId"`
+	RequestId                 string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateTransitRouterRouteEntryRequest creates a request to invoke CreateTransitRouterRouteEntry API
@@ -97,7 +97,7 @@ func CreateCreateTransitRouterRouteEntryRequest() (request *CreateTransitRouterR
 	request = &CreateTransitRouterRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterRouteEntry", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterRouteEntry", "", "")
 	request.Method = requests.POST
 	return
 }
