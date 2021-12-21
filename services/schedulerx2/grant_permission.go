@@ -82,10 +82,10 @@ type GrantPermissionRequest struct {
 // GrantPermissionResponse is the response struct for api GrantPermission
 type GrantPermissionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateGrantPermissionRequest creates a request to invoke GrantPermission API

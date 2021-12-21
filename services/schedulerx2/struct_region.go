@@ -17,7 +17,7 @@ package schedulerx2
 
 // Region is a nested struct in schedulerx2 response
 type Region struct {
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	LocalName      string `json:"LocalName" xml:"LocalName"`
 	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	LocalName      string `json:"LocalName" xml:"LocalName"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 }

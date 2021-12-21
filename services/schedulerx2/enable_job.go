@@ -80,10 +80,10 @@ type EnableJobRequest struct {
 // EnableJobResponse is the response struct for api EnableJob
 type EnableJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEnableJobRequest creates a request to invoke EnableJob API

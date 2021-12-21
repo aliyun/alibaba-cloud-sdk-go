@@ -80,10 +80,10 @@ type RevokePermissionRequest struct {
 // RevokePermissionResponse is the response struct for api RevokePermission
 type RevokePermissionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateRevokePermissionRequest creates a request to invoke RevokePermission API

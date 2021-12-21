@@ -80,10 +80,10 @@ type DisableJobRequest struct {
 // DisableJobResponse is the response struct for api DisableJob
 type DisableJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDisableJobRequest creates a request to invoke DisableJob API

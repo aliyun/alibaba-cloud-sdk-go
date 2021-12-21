@@ -71,9 +71,10 @@ func (client *Client) ExecuteJobWithCallback(request *ExecuteJobRequest, callbac
 // ExecuteJobRequest is the request struct for api ExecuteJob
 type ExecuteJobRequest struct {
 	*requests.RpcRequest
-	JobId              requests.Integer `position:"Query" name:"JobId"`
 	NamespaceSource    string           `position:"Query" name:"NamespaceSource"`
+	CheckJobStatus     requests.Boolean `position:"Query" name:"CheckJobStatus"`
 	GroupId            string           `position:"Query" name:"GroupId"`
+	JobId              requests.Integer `position:"Query" name:"JobId"`
 	Namespace          string           `position:"Query" name:"Namespace"`
 	InstanceParameters string           `position:"Query" name:"InstanceParameters"`
 }
@@ -81,9 +82,9 @@ type ExecuteJobRequest struct {
 // ExecuteJobResponse is the response struct for api ExecuteJob
 type ExecuteJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }

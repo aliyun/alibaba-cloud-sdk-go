@@ -18,6 +18,6 @@ package schedulerx2
 // Namespace is a nested struct in schedulerx2 response
 type Namespace struct {
 	Name        string `json:"Name" xml:"Name"`
-	UId         string `json:"UId" xml:"UId"`
 	Description string `json:"Description" xml:"Description"`
+	UId         string `json:"UId" xml:"UId"`
 }

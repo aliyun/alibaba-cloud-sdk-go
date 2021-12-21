@@ -1,3 +1,8 @@
+2021-12-21 Version: v1.61.1394
+- Generated 2019-04-30 for `schedulerx2`.
+- Supported Designate Workers.
+- Supported Get WorkFlow.
+
 2021-12-20 Version: v1.61.1393
 - Generated 2014-05-26 for `Ecs`.
 - Add Request Param Ipv6AddressCount For API CreateLaunchTemplate AND CreateLaunchTemplateVersion.

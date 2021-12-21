@@ -17,18 +17,18 @@ package schedulerx2
 
 // Job is a nested struct in schedulerx2 response
 type Job struct {
-	ClassName       string         `json:"ClassName" xml:"ClassName"`
-	JarUrl          string         `json:"JarUrl" xml:"JarUrl"`
-	Content         string         `json:"Content" xml:"Content"`
-	Name            string         `json:"Name" xml:"Name"`
-	Description     string         `json:"Description" xml:"Description"`
 	Status          int            `json:"Status" xml:"Status"`
-	ExecuteMode     string         `json:"ExecuteMode" xml:"ExecuteMode"`
-	Parameters      string         `json:"Parameters" xml:"Parameters"`
-	MaxConcurrency  string         `json:"MaxConcurrency" xml:"MaxConcurrency"`
+	JarUrl          string         `json:"JarUrl" xml:"JarUrl"`
 	MaxAttempt      int            `json:"MaxAttempt" xml:"MaxAttempt"`
-	AttemptInterval int            `json:"AttemptInterval" xml:"AttemptInterval"`
+	Parameters      string         `json:"Parameters" xml:"Parameters"`
+	Description     string         `json:"Description" xml:"Description"`
 	JobId           int64          `json:"JobId" xml:"JobId"`
+	ExecuteMode     string         `json:"ExecuteMode" xml:"ExecuteMode"`
+	MaxConcurrency  string         `json:"MaxConcurrency" xml:"MaxConcurrency"`
+	Name            string         `json:"Name" xml:"Name"`
+	ClassName       string         `json:"ClassName" xml:"ClassName"`
+	Content         string         `json:"Content" xml:"Content"`
+	AttemptInterval int            `json:"AttemptInterval" xml:"AttemptInterval"`
 	MapTaskXAttrs   MapTaskXAttrs  `json:"MapTaskXAttrs" xml:"MapTaskXAttrs"`
 	TimeConfig      TimeConfig     `json:"TimeConfig" xml:"TimeConfig"`
 	JobMonitorInfo  JobMonitorInfo `json:"JobMonitorInfo" xml:"JobMonitorInfo"`

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteJob invokes the schedulerx2.DeleteJob API synchronously
-func (client *Client) DeleteJob(request *DeleteJobRequest) (response *DeleteJobResponse, err error) {
-	response = CreateDeleteJobResponse()
+// DesignateWorkers invokes the schedulerx2.DesignateWorkers API synchronously
+func (client *Client) DesignateWorkers(request *DesignateWorkersRequest) (response *DesignateWorkersResponse, err error) {
+	response = CreateDesignateWorkersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteJobWithChan invokes the schedulerx2.DeleteJob API asynchronously
-func (client *Client) DeleteJobWithChan(request *DeleteJobRequest) (<-chan *DeleteJobResponse, <-chan error) {
-	responseChan := make(chan *DeleteJobResponse, 1)
+// DesignateWorkersWithChan invokes the schedulerx2.DesignateWorkers API asynchronously
+func (client *Client) DesignateWorkersWithChan(request *DesignateWorkersRequest) (<-chan *DesignateWorkersResponse, <-chan error) {
+	responseChan := make(chan *DesignateWorkersResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteJob(request)
+		response, err := client.DesignateWorkers(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteJobWithChan(request *DeleteJobRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
-// DeleteJobWithCallback invokes the schedulerx2.DeleteJob API asynchronously
-func (client *Client) DeleteJobWithCallback(request *DeleteJobRequest, callback func(response *DeleteJobResponse, err error)) <-chan int {
+// DesignateWorkersWithCallback invokes the schedulerx2.DesignateWorkers API asynchronously
+func (client *Client) DesignateWorkersWithCallback(request *DesignateWorkersRequest, callback func(response *DesignateWorkersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteJobResponse
+		var response *DesignateWorkersResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteJob(request)
+		response, err = client.DesignateWorkers(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,41 @@ func (client *Client) DeleteJobWithCallback(request *DeleteJobRequest, callback 
 	return result
 }
 
-// DeleteJobRequest is the request struct for api DeleteJob
-type DeleteJobRequest struct {
+// DesignateWorkersRequest is the request struct for api DesignateWorkers
+type DesignateWorkersRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string           `position:"Query" name:"NamespaceSource"`
 	GroupId         string           `position:"Query" name:"GroupId"`
+	Transferable    requests.Boolean `position:"Query" name:"Transferable"`
+	Labels          string           `position:"Query" name:"Labels"`
+	DesignateType   requests.Integer `position:"Query" name:"DesignateType"`
 	JobId           requests.Integer `position:"Query" name:"JobId"`
 	Namespace       string           `position:"Query" name:"Namespace"`
+	Workers         string           `position:"Query" name:"Workers"`
 }
 
-// DeleteJobResponse is the response struct for api DeleteJob
-type DeleteJobResponse struct {
+// DesignateWorkersResponse is the response struct for api DesignateWorkers
+type DesignateWorkersResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	Code      int    `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateDeleteJobRequest creates a request to invoke DeleteJob API
-func CreateDeleteJobRequest() (request *DeleteJobRequest) {
-	request = &DeleteJobRequest{
+// CreateDesignateWorkersRequest creates a request to invoke DesignateWorkers API
+func CreateDesignateWorkersRequest() (request *DesignateWorkersRequest) {
+	request = &DesignateWorkersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DeleteJob", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DesignateWorkers", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateDeleteJobResponse creates a response to parse from DeleteJob response
-func CreateDeleteJobResponse() (response *DeleteJobResponse) {
-	response = &DeleteJobResponse{
+// CreateDesignateWorkersResponse creates a response to parse from DesignateWorkers response
+func CreateDesignateWorkersResponse() (response *DesignateWorkersResponse) {
+	response = &DesignateWorkersResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

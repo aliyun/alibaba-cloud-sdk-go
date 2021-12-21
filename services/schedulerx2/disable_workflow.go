@@ -80,10 +80,10 @@ type DisableWorkflowRequest struct {
 // DisableWorkflowResponse is the response struct for api DisableWorkflow
 type DisableWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDisableWorkflowRequest creates a request to invoke DisableWorkflow API

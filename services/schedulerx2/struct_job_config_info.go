@@ -17,16 +17,16 @@ package schedulerx2
 
 // JobConfigInfo is a nested struct in schedulerx2 response
 type JobConfigInfo struct {
-	ClassName       string         `json:"ClassName" xml:"ClassName"`
-	JarUrl          string         `json:"JarUrl" xml:"JarUrl"`
-	Content         string         `json:"Content" xml:"Content"`
-	Name            string         `json:"Name" xml:"Name"`
-	Description     string         `json:"Description" xml:"Description"`
 	Status          int            `json:"Status" xml:"Status"`
-	ExecuteMode     string         `json:"ExecuteMode" xml:"ExecuteMode"`
 	Parameters      string         `json:"Parameters" xml:"Parameters"`
+	Description     string         `json:"Description" xml:"Description"`
+	ExecuteMode     string         `json:"ExecuteMode" xml:"ExecuteMode"`
 	MaxConcurrency  string         `json:"MaxConcurrency" xml:"MaxConcurrency"`
+	Name            string         `json:"Name" xml:"Name"`
 	MaxAttempt      int            `json:"MaxAttempt" xml:"MaxAttempt"`
+	Content         string         `json:"Content" xml:"Content"`
+	JarUrl          string         `json:"JarUrl" xml:"JarUrl"`
+	ClassName       string         `json:"ClassName" xml:"ClassName"`
 	AttemptInterval int            `json:"AttemptInterval" xml:"AttemptInterval"`
 	MapTaskXAttrs   MapTaskXAttrs  `json:"MapTaskXAttrs" xml:"MapTaskXAttrs"`
 	TimeConfig      TimeConfig     `json:"TimeConfig" xml:"TimeConfig"`

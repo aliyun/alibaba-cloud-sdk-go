@@ -18,7 +18,7 @@ package schedulerx2
 // AppGroup is a nested struct in schedulerx2 response
 type AppGroup struct {
 	AppName     string `json:"AppName" xml:"AppName"`
-	GroupId     string `json:"GroupId" xml:"GroupId"`
 	AppKey      string `json:"AppKey" xml:"AppKey"`
 	Description string `json:"Description" xml:"Description"`
+	GroupId     string `json:"GroupId" xml:"GroupId"`
 }

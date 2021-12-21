@@ -80,10 +80,10 @@ type EnableWorkflowRequest struct {
 // EnableWorkflowResponse is the response struct for api EnableWorkflow
 type EnableWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEnableWorkflowRequest creates a request to invoke EnableWorkflow API

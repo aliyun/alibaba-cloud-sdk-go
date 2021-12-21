@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetJobInfo invokes the schedulerx2.GetJobInfo API synchronously
-func (client *Client) GetJobInfo(request *GetJobInfoRequest) (response *GetJobInfoResponse, err error) {
-	response = CreateGetJobInfoResponse()
+// GetWorkFlow invokes the schedulerx2.GetWorkFlow API synchronously
+func (client *Client) GetWorkFlow(request *GetWorkFlowRequest) (response *GetWorkFlowResponse, err error) {
+	response = CreateGetWorkFlowResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetJobInfoWithChan invokes the schedulerx2.GetJobInfo API asynchronously
-func (client *Client) GetJobInfoWithChan(request *GetJobInfoRequest) (<-chan *GetJobInfoResponse, <-chan error) {
-	responseChan := make(chan *GetJobInfoResponse, 1)
+// GetWorkFlowWithChan invokes the schedulerx2.GetWorkFlow API asynchronously
+func (client *Client) GetWorkFlowWithChan(request *GetWorkFlowRequest) (<-chan *GetWorkFlowResponse, <-chan error) {
+	responseChan := make(chan *GetWorkFlowResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetJobInfo(request)
+		response, err := client.GetWorkFlow(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetJobInfoWithChan(request *GetJobInfoRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
-// GetJobInfoWithCallback invokes the schedulerx2.GetJobInfo API asynchronously
-func (client *Client) GetJobInfoWithCallback(request *GetJobInfoRequest, callback func(response *GetJobInfoResponse, err error)) <-chan int {
+// GetWorkFlowWithCallback invokes the schedulerx2.GetWorkFlow API asynchronously
+func (client *Client) GetWorkFlowWithCallback(request *GetWorkFlowRequest, callback func(response *GetWorkFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetJobInfoResponse
+		var response *GetWorkFlowResponse
 		var err error
 		defer close(result)
-		response, err = client.GetJobInfo(request)
+		response, err = client.GetWorkFlow(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,38 @@ func (client *Client) GetJobInfoWithCallback(request *GetJobInfoRequest, callbac
 	return result
 }
 
-// GetJobInfoRequest is the request struct for api GetJobInfo
-type GetJobInfoRequest struct {
+// GetWorkFlowRequest is the request struct for api GetWorkFlow
+type GetWorkFlowRequest struct {
 	*requests.RpcRequest
-	JobId           requests.Integer `position:"Query" name:"JobId"`
 	NamespaceSource string           `position:"Query" name:"NamespaceSource"`
 	GroupId         string           `position:"Query" name:"GroupId"`
 	Namespace       string           `position:"Query" name:"Namespace"`
+	WorkflowId      requests.Integer `position:"Query" name:"WorkflowId"`
 }
 
-// GetJobInfoResponse is the response struct for api GetJobInfo
-type GetJobInfoResponse struct {
+// GetWorkFlowResponse is the response struct for api GetWorkFlow
+type GetWorkFlowResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateGetJobInfoRequest creates a request to invoke GetJobInfo API
-func CreateGetJobInfoRequest() (request *GetJobInfoRequest) {
-	request = &GetJobInfoRequest{
+// CreateGetWorkFlowRequest creates a request to invoke GetWorkFlow API
+func CreateGetWorkFlowRequest() (request *GetWorkFlowRequest) {
+	request = &GetWorkFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetJobInfo", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetWorkFlow", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateGetJobInfoResponse creates a response to parse from GetJobInfo response
-func CreateGetJobInfoResponse() (response *GetJobInfoResponse) {
-	response = &GetJobInfoResponse{
+// CreateGetWorkFlowResponse creates a response to parse from GetWorkFlow response
+func CreateGetWorkFlowResponse() (response *GetWorkFlowResponse) {
+	response = &GetWorkFlowResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

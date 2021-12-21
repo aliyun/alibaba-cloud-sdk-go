@@ -80,10 +80,10 @@ type BatchEnableJobsRequest struct {
 // BatchEnableJobsResponse is the response struct for api BatchEnableJobs
 type BatchEnableJobsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateBatchEnableJobsRequest creates a request to invoke BatchEnableJobs API

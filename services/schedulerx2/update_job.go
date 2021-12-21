@@ -112,10 +112,10 @@ type UpdateJobContactInfo struct {
 // UpdateJobResponse is the response struct for api UpdateJob
 type UpdateJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateJobRequest creates a request to invoke UpdateJob API
