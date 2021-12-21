@@ -93,7 +93,7 @@ func CreateChangeWorkModeRequest() (request *ChangeWorkModeRequest) {
 	request = &ChangeWorkModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ChangeWorkMode", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ChangeWorkMode", "", "")
 	request.Method = requests.POST
 	return
 }

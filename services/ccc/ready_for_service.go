@@ -93,7 +93,7 @@ func CreateReadyForServiceRequest() (request *ReadyForServiceRequest) {
 	request = &ReadyForServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ReadyForService", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ReadyForService", "", "")
 	request.Method = requests.POST
 	return
 }

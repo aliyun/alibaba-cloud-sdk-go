@@ -24,12 +24,12 @@ type UserContext struct {
 	Mobile                 string   `json:"Mobile" xml:"Mobile"`
 	OutboundScenario       bool     `json:"OutboundScenario" xml:"OutboundScenario"`
 	UserState              string   `json:"UserState" xml:"UserState"`
-	InstanceId             string   `json:"InstanceId" xml:"InstanceId"`
 	UserId                 string   `json:"UserId" xml:"UserId"`
+	InstanceId             string   `json:"InstanceId" xml:"InstanceId"`
 	DeviceId               string   `json:"DeviceId" xml:"DeviceId"`
 	Reserved               int64    `json:"Reserved" xml:"Reserved"`
-	BreakCode              string   `json:"BreakCode" xml:"BreakCode"`
 	Extension              string   `json:"Extension" xml:"Extension"`
+	BreakCode              string   `json:"BreakCode" xml:"BreakCode"`
 	Uri                    string   `json:"Uri" xml:"Uri"`
 	SignedSkillGroupIdList []string `json:"SignedSkillGroupIdList" xml:"SignedSkillGroupIdList"`
 }

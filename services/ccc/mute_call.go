@@ -94,7 +94,7 @@ func CreateMuteCallRequest() (request *MuteCallRequest) {
 	request = &MuteCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "MuteCall", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "MuteCall", "", "")
 	request.Method = requests.POST
 	return
 }

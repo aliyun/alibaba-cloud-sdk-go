@@ -96,7 +96,7 @@ func CreateInitiateAttendedTransferRequest() (request *InitiateAttendedTransferR
 	request = &InitiateAttendedTransferRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "InitiateAttendedTransfer", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "InitiateAttendedTransfer", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateListRealtimeAgentStatesRequest() (request *ListRealtimeAgentStatesReq
 	request = &ListRealtimeAgentStatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListRealtimeAgentStates", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListRealtimeAgentStates", "", "")
 	request.Method = requests.POST
 	return
 }

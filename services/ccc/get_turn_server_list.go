@@ -90,7 +90,7 @@ func CreateGetTurnServerListRequest() (request *GetTurnServerListRequest) {
 	request = &GetTurnServerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "", "")
 	request.Method = requests.POST
 	return
 }

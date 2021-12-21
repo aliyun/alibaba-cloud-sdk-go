@@ -27,6 +27,7 @@ type UserDetail struct {
 	RoleName                   string                      `json:"RoleName" xml:"RoleName"`
 	RoleId                     string                      `json:"RoleId" xml:"RoleId"`
 	PrimaryAccount             bool                        `json:"PrimaryAccount" xml:"PrimaryAccount"`
+	RamId                      int64                       `json:"RamId" xml:"RamId"`
 	PersonalOutboundNumberList []PhoneNumber               `json:"PersonalOutboundNumberList" xml:"PersonalOutboundNumberList"`
 	SkillLevelList             []UserSkillLevelInListUsers `json:"SkillLevelList" xml:"SkillLevelList"`
 }

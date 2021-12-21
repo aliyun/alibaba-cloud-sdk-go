@@ -26,8 +26,8 @@ type ChannelContext struct {
 	Index            int                    `json:"Index" xml:"Index"`
 	ReleaseReason    string                 `json:"ReleaseReason" xml:"ReleaseReason"`
 	UserExtension    string                 `json:"UserExtension" xml:"UserExtension"`
-	Originator       string                 `json:"Originator" xml:"Originator"`
 	SkillGroupId     string                 `json:"SkillGroupId" xml:"SkillGroupId"`
+	Originator       string                 `json:"Originator" xml:"Originator"`
 	ChannelId        string                 `json:"ChannelId" xml:"ChannelId"`
 	UserId           string                 `json:"UserId" xml:"UserId"`
 	ChannelVariables string                 `json:"ChannelVariables" xml:"ChannelVariables"`

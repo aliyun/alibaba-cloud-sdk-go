@@ -91,7 +91,7 @@ func CreateGetTurnCredentialsRequest() (request *GetTurnCredentialsRequest) {
 	request = &GetTurnCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnCredentials", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnCredentials", "", "")
 	request.Method = requests.POST
 	return
 }

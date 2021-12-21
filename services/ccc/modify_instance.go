@@ -91,7 +91,7 @@ func CreateModifyInstanceRequest() (request *ModifyInstanceRequest) {
 	request = &ModifyInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyInstance", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyInstance", "", "")
 	request.Method = requests.POST
 	return
 }

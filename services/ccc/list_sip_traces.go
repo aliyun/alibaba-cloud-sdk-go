@@ -90,7 +90,7 @@ func CreateListSipTracesRequest() (request *ListSipTracesRequest) {
 	request = &ListSipTracesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListSipTraces", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListSipTraces", "", "")
 	request.Method = requests.POST
 	return
 }

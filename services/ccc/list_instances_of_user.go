@@ -91,7 +91,7 @@ func CreateListInstancesOfUserRequest() (request *ListInstancesOfUserRequest) {
 	request = &ListInstancesOfUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListInstancesOfUser", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListInstancesOfUser", "", "")
 	request.Method = requests.POST
 	return
 }

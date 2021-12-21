@@ -92,7 +92,7 @@ func CreateGetHistoricalCallerReportRequest() (request *GetHistoricalCallerRepor
 	request = &GetHistoricalCallerReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetHistoricalCallerReport", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetHistoricalCallerReport", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateInterceptCallRequest() (request *InterceptCallRequest) {
 	request = &InterceptCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "InterceptCall", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "InterceptCall", "", "")
 	request.Method = requests.POST
 	return
 }

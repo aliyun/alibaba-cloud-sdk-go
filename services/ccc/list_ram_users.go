@@ -93,7 +93,7 @@ func CreateListRamUsersRequest() (request *ListRamUsersRequest) {
 	request = &ListRamUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListRamUsers", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListRamUsers", "", "")
 	request.Method = requests.POST
 	return
 }

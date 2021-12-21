@@ -90,7 +90,7 @@ func CreateGetMonoRecordingRequest() (request *GetMonoRecordingRequest) {
 	request = &GetMonoRecordingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetMonoRecording", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetMonoRecording", "", "")
 	request.Method = requests.POST
 	return
 }

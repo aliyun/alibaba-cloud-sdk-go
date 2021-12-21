@@ -95,7 +95,7 @@ func CreateSendDtmfSignalingRequest() (request *SendDtmfSignalingRequest) {
 	request = &SendDtmfSignalingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "SendDtmfSignaling", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "SendDtmfSignaling", "", "")
 	request.Method = requests.POST
 	return
 }

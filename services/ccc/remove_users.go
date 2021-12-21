@@ -90,7 +90,7 @@ func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {
 	request = &RemoveUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveUsers", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveUsers", "", "")
 	request.Method = requests.POST
 	return
 }

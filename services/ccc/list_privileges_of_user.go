@@ -89,7 +89,7 @@ func CreateListPrivilegesOfUserRequest() (request *ListPrivilegesOfUserRequest) 
 	request = &ListPrivilegesOfUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListPrivilegesOfUser", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListPrivilegesOfUser", "", "")
 	request.Method = requests.POST
 	return
 }

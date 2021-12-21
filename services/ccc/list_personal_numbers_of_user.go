@@ -94,7 +94,7 @@ func CreateListPersonalNumbersOfUserRequest() (request *ListPersonalNumbersOfUse
 	request = &ListPersonalNumbersOfUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListPersonalNumbersOfUser", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListPersonalNumbersOfUser", "", "")
 	request.Method = requests.POST
 	return
 }

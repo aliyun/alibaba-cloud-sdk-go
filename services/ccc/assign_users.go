@@ -95,7 +95,7 @@ func CreateAssignUsersRequest() (request *AssignUsersRequest) {
 	request = &AssignUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "AssignUsers", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "AssignUsers", "", "")
 	request.Method = requests.POST
 	return
 }

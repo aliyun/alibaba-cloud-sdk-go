@@ -94,7 +94,7 @@ func CreateListUserLevelsOfSkillGroupRequest() (request *ListUserLevelsOfSkillGr
 	request = &ListUserLevelsOfSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListUserLevelsOfSkillGroup", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListUserLevelsOfSkillGroup", "", "")
 	request.Method = requests.POST
 	return
 }

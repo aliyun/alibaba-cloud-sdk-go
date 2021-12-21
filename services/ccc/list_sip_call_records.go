@@ -90,7 +90,7 @@ func CreateListSipCallRecordsRequest() (request *ListSipCallRecordsRequest) {
 	request = &ListSipCallRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListSipCallRecords", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListSipCallRecords", "", "")
 	request.Method = requests.POST
 	return
 }

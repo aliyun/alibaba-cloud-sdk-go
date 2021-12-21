@@ -92,7 +92,7 @@ func CreateListConfigItemsRequest() (request *ListConfigItemsRequest) {
 	request = &ListConfigItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListConfigItems", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListConfigItems", "", "")
 	request.Method = requests.POST
 	return
 }

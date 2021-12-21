@@ -92,7 +92,7 @@ func CreateUpdateConfigItemsRequest() (request *UpdateConfigItemsRequest) {
 	request = &UpdateConfigItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "UpdateConfigItems", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "UpdateConfigItems", "", "")
 	request.Method = requests.POST
 	return
 }

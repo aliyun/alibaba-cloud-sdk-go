@@ -91,7 +91,7 @@ func CreateModifySkillLevelsOfUserRequest() (request *ModifySkillLevelsOfUserReq
 	request = &ModifySkillLevelsOfUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ModifySkillLevelsOfUser", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ModifySkillLevelsOfUser", "", "")
 	request.Method = requests.POST
 	return
 }

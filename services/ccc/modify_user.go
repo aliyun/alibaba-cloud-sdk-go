@@ -94,7 +94,7 @@ func CreateModifyUserRequest() (request *ModifyUserRequest) {
 	request = &ModifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyUser", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyUser", "", "")
 	request.Method = requests.POST
 	return
 }

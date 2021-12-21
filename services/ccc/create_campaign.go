@@ -103,7 +103,7 @@ func CreateCreateCampaignRequest() (request *CreateCampaignRequest) {
 	request = &CreateCampaignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "CreateCampaign", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CreateCampaign", "", "")
 	request.Method = requests.POST
 	return
 }

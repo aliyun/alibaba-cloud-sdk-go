@@ -91,7 +91,7 @@ func CreateListInstancesRequest() (request *ListInstancesRequest) {
 	request = &ListInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListInstances", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListInstances", "", "")
 	request.Method = requests.POST
 	return
 }

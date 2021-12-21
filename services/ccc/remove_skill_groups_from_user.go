@@ -79,10 +79,10 @@ type RemoveSkillGroupsFromUserRequest struct {
 // RemoveSkillGroupsFromUserResponse is the response struct for api RemoveSkillGroupsFromUser
 type RemoveSkillGroupsFromUserResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	Data           string `json:"Data" xml:"Data"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
+	Data           string `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -91,7 +91,7 @@ func CreateRemoveSkillGroupsFromUserRequest() (request *RemoveSkillGroupsFromUse
 	request = &RemoveSkillGroupsFromUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveSkillGroupsFromUser", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveSkillGroupsFromUser", "", "")
 	request.Method = requests.POST
 	return
 }

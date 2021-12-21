@@ -91,7 +91,7 @@ func CreateAddSkillGroupsToUserRequest() (request *AddSkillGroupsToUserRequest) 
 	request = &AddSkillGroupsToUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "AddSkillGroupsToUser", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "AddSkillGroupsToUser", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateHoldCallRequest() (request *HoldCallRequest) {
 	request = &HoldCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "HoldCall", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "HoldCall", "", "")
 	request.Method = requests.POST
 	return
 }

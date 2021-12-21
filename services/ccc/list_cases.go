@@ -94,7 +94,7 @@ func CreateListCasesRequest() (request *ListCasesRequest) {
 	request = &ListCasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListCases", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListCases", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateBargeInCallRequest() (request *BargeInCallRequest) {
 	request = &BargeInCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "BargeInCall", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "BargeInCall", "", "")
 	request.Method = requests.POST
 	return
 }

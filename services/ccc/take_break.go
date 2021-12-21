@@ -93,7 +93,7 @@ func CreateTakeBreakRequest() (request *TakeBreakRequest) {
 	request = &TakeBreakRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "TakeBreak", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "TakeBreak", "", "")
 	request.Method = requests.POST
 	return
 }

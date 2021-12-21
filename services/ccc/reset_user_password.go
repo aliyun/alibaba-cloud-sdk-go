@@ -90,7 +90,7 @@ func CreateResetUserPasswordRequest() (request *ResetUserPasswordRequest) {
 	request = &ResetUserPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ResetUserPassword", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ResetUserPassword", "", "")
 	request.Method = requests.POST
 	return
 }

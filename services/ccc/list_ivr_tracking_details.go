@@ -92,7 +92,7 @@ func CreateListIvrTrackingDetailsRequest() (request *ListIvrTrackingDetailsReque
 	request = &ListIvrTrackingDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListIvrTrackingDetails", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListIvrTrackingDetails", "", "")
 	request.Method = requests.POST
 	return
 }

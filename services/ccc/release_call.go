@@ -94,7 +94,7 @@ func CreateReleaseCallRequest() (request *ReleaseCallRequest) {
 	request = &ReleaseCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ReleaseCall", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ReleaseCall", "", "")
 	request.Method = requests.POST
 	return
 }

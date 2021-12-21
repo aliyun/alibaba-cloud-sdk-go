@@ -96,7 +96,7 @@ func CreateSaveWebRTCStatsRequest() (request *SaveWebRTCStatsRequest) {
 	request = &SaveWebRTCStatsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "SaveWebRTCStats", "CCC", "openAPI")
+	request.InitWithApiInfo("CCC", "2020-07-01", "SaveWebRTCStats", "", "")
 	request.Method = requests.POST
 	return
 }
