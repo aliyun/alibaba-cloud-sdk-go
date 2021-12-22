@@ -72,7 +72,9 @@ func (client *Client) RescaleDeviceServiceWithCallback(request *RescaleDeviceSer
 type RescaleDeviceServiceRequest struct {
 	*requests.RpcRequest
 	ResourceSelector string           `position:"Body" name:"ResourceSelector"`
+	ResourceInfo     string           `position:"Body" name:"ResourceInfo"`
 	RescaleType      string           `position:"Query" name:"RescaleType"`
+	ImageId          string           `position:"Query" name:"ImageId"`
 	Timeout          requests.Integer `position:"Query" name:"Timeout"`
 	RescaleLevel     string           `position:"Query" name:"RescaleLevel"`
 	ResourceSpec     string           `position:"Query" name:"ResourceSpec"`
@@ -85,6 +87,7 @@ type RescaleDeviceServiceRequest struct {
 type RescaleDeviceServiceResponse struct {
 	*responses.BaseResponse
 	RequestId           string               `json:"RequestId" xml:"RequestId"`
+	OrderId             string               `json:"OrderId" xml:"OrderId"`
 	DeviceIds           []string             `json:"DeviceIds" xml:"DeviceIds"`
 	ResourceDetailInfos []ResourceDetailInfo `json:"ResourceDetailInfos" xml:"ResourceDetailInfos"`
 }

@@ -98,6 +98,7 @@ type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	HealthCheckType           string `json:"HealthCheckType" xml:"HealthCheckType"`
 	BackendServerPort         int    `json:"BackendServerPort" xml:"BackendServerPort"`
 	HealthCheckConnectPort    int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	EipTransmit               string `json:"EipTransmit" xml:"EipTransmit"`
 }
 
 // CreateDescribeLoadBalancerTCPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerTCPListenerAttribute API

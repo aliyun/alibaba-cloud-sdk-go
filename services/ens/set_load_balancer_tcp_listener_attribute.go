@@ -83,6 +83,7 @@ type SetLoadBalancerTCPListenerAttributeRequest struct {
 	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
 	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
 	Scheduler                 string           `position:"Query" name:"Scheduler"`
+	EipTransmit               string           `position:"Query" name:"EipTransmit"`
 	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
 	HealthCheckType           string           `position:"Query" name:"HealthCheckType"`
 	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`

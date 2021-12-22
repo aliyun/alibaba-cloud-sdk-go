@@ -79,8 +79,8 @@ type DeleteDeviceInternetPortRequest struct {
 // DeleteDeviceInternetPortResponse is the response struct for api DeleteDeviceInternetPort
 type DeleteDeviceInternetPortResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	RuleId    string `json:"RuleId" xml:"RuleId"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	RuleIds   []string `json:"RuleIds" xml:"RuleIds"`
 }
 
 // CreateDeleteDeviceInternetPortRequest creates a request to invoke DeleteDeviceInternetPort API

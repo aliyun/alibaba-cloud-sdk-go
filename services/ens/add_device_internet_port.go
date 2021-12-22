@@ -81,8 +81,8 @@ type AddDeviceInternetPortRequest struct {
 // AddDeviceInternetPortResponse is the response struct for api AddDeviceInternetPort
 type AddDeviceInternetPortResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	RuleId    string `json:"RuleId" xml:"RuleId"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	RuleIds   []string `json:"RuleIds" xml:"RuleIds"`
 }
 
 // CreateAddDeviceInternetPortRequest creates a request to invoke AddDeviceInternetPort API

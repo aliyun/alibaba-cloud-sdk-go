@@ -71,10 +71,12 @@ func (client *Client) GetVmListWithCallback(request *GetVmListRequest, callback 
 // GetVmListRequest is the request struct for api GetVmList
 type GetVmListRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	GroupUuid  string           `position:"Query" name:"GroupUuid"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	AliUid     requests.Integer `position:"Query" name:"AliUid"`
+	InstanceUuid string           `position:"Query" name:"InstanceUuid"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	GroupUuid    string           `position:"Query" name:"GroupUuid"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	AliUid       requests.Integer `position:"Query" name:"AliUid"`
+	WorkloadUuid string           `position:"Query" name:"WorkloadUuid"`
 }
 
 // GetVmListResponse is the response struct for api GetVmList
