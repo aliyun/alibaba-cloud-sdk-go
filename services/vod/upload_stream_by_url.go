@@ -84,6 +84,8 @@ type UploadStreamByURLResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	StreamJobId string `json:"StreamJobId" xml:"StreamJobId"`
+	FileURL     string `json:"FileURL" xml:"FileURL"`
+	SourceURL   string `json:"SourceURL" xml:"SourceURL"`
 }
 
 // CreateUploadStreamByURLRequest creates a request to invoke UploadStreamByURL API

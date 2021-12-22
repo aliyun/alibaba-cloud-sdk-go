@@ -1,3 +1,8 @@
+2021-12-22 Version: v1.61.1399
+- Generated 2017-03-21 for `vod`.
+- Add return fields to UploadStreamByURL.
+- Set DescribeVodDomainSrcTrafficData pulic.
+
 2021-12-22 Version: v1.61.1398
 - Generated 2017-11-10 for `Ens`.
 - Support cloud disk.
