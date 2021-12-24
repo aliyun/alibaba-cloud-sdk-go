@@ -71,8 +71,22 @@ func (client *Client) PutHybridMonitorMetricDataWithCallback(request *PutHybridM
 // PutHybridMonitorMetricDataRequest is the request struct for api PutHybridMonitorMetricData
 type PutHybridMonitorMetricDataRequest struct {
 	*requests.RpcRequest
-	MetricList string `position:"Query" name:"MetricList"`
-	Namespace  string `position:"Query" name:"Namespace"`
+	MetricList *[]PutHybridMonitorMetricDataMetricList `position:"Query" name:"MetricList"  type:"Repeated"`
+	Namespace  string                                  `position:"Query" name:"Namespace"`
+}
+
+// PutHybridMonitorMetricDataMetricList is a repeated param struct in PutHybridMonitorMetricDataRequest
+type PutHybridMonitorMetricDataMetricList struct {
+	Name   string                              `name:"Name"`
+	Value  string                              `name:"Value"`
+	Labels *[]PutHybridMonitorMetricDataLabels `name:"Labels" type:"Repeated"`
+	TS     string                              `name:"TS"`
+}
+
+// PutHybridMonitorMetricDataLabels is a repeated param struct in PutHybridMonitorMetricDataRequest
+type PutHybridMonitorMetricDataLabels struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // PutHybridMonitorMetricDataResponse is the response struct for api PutHybridMonitorMetricData
