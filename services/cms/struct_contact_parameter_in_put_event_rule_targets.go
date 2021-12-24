@@ -17,7 +17,7 @@ package cms
 
 // ContactParameterInPutEventRuleTargets is a nested struct in cms response
 type ContactParameterInPutEventRuleTargets struct {
-	Id               int    `json:"Id" xml:"Id"`
 	ContactGroupName string `json:"ContactGroupName" xml:"ContactGroupName"`
+	Id               int    `json:"Id" xml:"Id"`
 	Level            string `json:"Level" xml:"Level"`
 }

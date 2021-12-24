@@ -76,6 +76,7 @@ type PutEventRuleRequest struct {
 	RuleName     string                      `position:"Query" name:"RuleName"`
 	EventPattern *[]PutEventRuleEventPattern `position:"Query" name:"EventPattern"  type:"Repeated"`
 	EventType    string                      `position:"Query" name:"EventType"`
+	SilenceTime  requests.Integer            `position:"Query" name:"SilenceTime"`
 	State        string                      `position:"Query" name:"State"`
 }
 

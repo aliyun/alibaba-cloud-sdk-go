@@ -17,7 +17,7 @@ package cms
 
 // MnsParameterInPutEventRuleTargets is a nested struct in cms response
 type MnsParameterInPutEventRuleTargets struct {
+	Queue  string `json:"Queue" xml:"Queue"`
 	Id     int    `json:"Id" xml:"Id"`
 	Region string `json:"Region" xml:"Region"`
-	Queue  string `json:"Queue" xml:"Queue"`
 }

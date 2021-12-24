@@ -17,8 +17,8 @@ package cms
 
 // WebhookParameter is a nested struct in cms response
 type WebhookParameter struct {
-	Id       string `json:"Id" xml:"Id"`
-	Protocol string `json:"Protocol" xml:"Protocol"`
-	Method   string `json:"Method" xml:"Method"`
 	Url      string `json:"Url" xml:"Url"`
+	Method   string `json:"Method" xml:"Method"`
+	Protocol string `json:"Protocol" xml:"Protocol"`
+	Id       string `json:"Id" xml:"Id"`
 }

@@ -73,6 +73,7 @@ type PutEventRuleTargetsRequest struct {
 	*requests.RpcRequest
 	WebhookParameters *[]PutEventRuleTargetsWebhookParameters `position:"Query" name:"WebhookParameters"  type:"Repeated"`
 	ContactParameters *[]PutEventRuleTargetsContactParameters `position:"Query" name:"ContactParameters"  type:"Repeated"`
+	OpenApiParameters *[]PutEventRuleTargetsOpenApiParameters `position:"Query" name:"OpenApiParameters"  type:"Repeated"`
 	SlsParameters     *[]PutEventRuleTargetsSlsParameters     `position:"Query" name:"SlsParameters"  type:"Repeated"`
 	RuleName          string                                  `position:"Query" name:"RuleName"`
 	MnsParameters     *[]PutEventRuleTargetsMnsParameters     `position:"Query" name:"MnsParameters"  type:"Repeated"`
@@ -92,6 +93,17 @@ type PutEventRuleTargetsContactParameters struct {
 	Level            string `name:"Level"`
 	Id               string `name:"Id"`
 	ContactGroupName string `name:"ContactGroupName"`
+}
+
+// PutEventRuleTargetsOpenApiParameters is a repeated param struct in PutEventRuleTargetsRequest
+type PutEventRuleTargetsOpenApiParameters struct {
+	Product string `name:"Product"`
+	Role    string `name:"Role"`
+	Action  string `name:"Action"`
+	Id      string `name:"Id"`
+	Arn     string `name:"Arn"`
+	Region  string `name:"Region"`
+	Version string `name:"Version"`
 }
 
 // PutEventRuleTargetsSlsParameters is a repeated param struct in PutEventRuleTargetsRequest
@@ -120,10 +132,10 @@ type PutEventRuleTargetsFcParameters struct {
 // PutEventRuleTargetsResponse is the response struct for api PutEventRuleTargets
 type PutEventRuleTargetsResponse struct {
 	*responses.BaseResponse
-	Success                 bool                    `json:"Success" xml:"Success"`
 	Code                    string                  `json:"Code" xml:"Code"`
 	Message                 string                  `json:"Message" xml:"Message"`
 	RequestId               string                  `json:"RequestId" xml:"RequestId"`
+	Success                 bool                    `json:"Success" xml:"Success"`
 	FailedParameterCount    string                  `json:"FailedParameterCount" xml:"FailedParameterCount"`
 	FailedContactParameters FailedContactParameters `json:"FailedContactParameters" xml:"FailedContactParameters"`
 	FailedMnsParameters     FailedMnsParameters     `json:"FailedMnsParameters" xml:"FailedMnsParameters"`

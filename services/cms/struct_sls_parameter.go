@@ -17,9 +17,9 @@ package cms
 
 // SlsParameter is a nested struct in cms response
 type SlsParameter struct {
-	Id       string `json:"Id" xml:"Id"`
-	Region   string `json:"Region" xml:"Region"`
 	Project  string `json:"Project" xml:"Project"`
 	LogStore string `json:"LogStore" xml:"LogStore"`
 	Arn      string `json:"Arn" xml:"Arn"`
+	Region   string `json:"Region" xml:"Region"`
+	Id       string `json:"Id" xml:"Id"`
 }

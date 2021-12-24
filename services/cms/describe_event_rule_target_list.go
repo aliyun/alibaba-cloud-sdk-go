@@ -85,6 +85,7 @@ type DescribeEventRuleTargetListResponse struct {
 	MnsParameters     MnsParameters     `json:"MnsParameters" xml:"MnsParameters"`
 	WebhookParameters WebhookParameters `json:"WebhookParameters" xml:"WebhookParameters"`
 	SlsParameters     SlsParameters     `json:"SlsParameters" xml:"SlsParameters"`
+	OpenApiParameters OpenApiParameters `json:"OpenApiParameters" xml:"OpenApiParameters"`
 }
 
 // CreateDescribeEventRuleTargetListRequest creates a request to invoke DescribeEventRuleTargetList API

@@ -76,13 +76,13 @@ type DescribeMonitoringAgentConfigRequest struct {
 // DescribeMonitoringAgentConfigResponse is the response struct for api DescribeMonitoringAgentConfig
 type DescribeMonitoringAgentConfigResponse struct {
 	*responses.BaseResponse
-	Code                     string `json:"Code" xml:"Code"`
-	Message                  string `json:"Message" xml:"Message"`
-	Success                  bool   `json:"Success" xml:"Success"`
+	EnableActiveAlert        string `json:"EnableActiveAlert" xml:"EnableActiveAlert"`
 	RequestId                string `json:"RequestId" xml:"RequestId"`
 	AutoInstall              bool   `json:"AutoInstall" xml:"AutoInstall"`
+	Success                  bool   `json:"Success" xml:"Success"`
 	EnableInstallAgentNewECS bool   `json:"EnableInstallAgentNewECS" xml:"EnableInstallAgentNewECS"`
-	EnableActiveAlert        string `json:"EnableActiveAlert" xml:"EnableActiveAlert"`
+	Code                     string `json:"Code" xml:"Code"`
+	Message                  string `json:"Message" xml:"Message"`
 }
 
 // CreateDescribeMonitoringAgentConfigRequest creates a request to invoke DescribeMonitoringAgentConfig API
