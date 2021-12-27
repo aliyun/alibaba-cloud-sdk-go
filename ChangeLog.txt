@@ -1,3 +1,7 @@
+2021-12-27 Version: v1.61.1404
+- Generated 2018-01-15 for `dcdn`.
+- Add CreateDcdnSubTask.
+
 2021-12-27 Version: v1.61.1403
 - Generated 2017-11-15 for `scdn`.
 - Add DescribeScdnDomainCcInfo.

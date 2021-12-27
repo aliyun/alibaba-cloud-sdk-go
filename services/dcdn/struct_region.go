@@ -17,18 +17,6 @@ package dcdn
 
 // Region is a nested struct in dcdn response
 type Region struct {
-	IsOverseas    string `json:"IsOverseas" xml:"IsOverseas"`
-	DlaTableName  string `json:"DlaTableName" xml:"DlaTableName"`
-	OssBucketName string `json:"OssBucketName" xml:"OssBucketName"`
-	RegionName    string `json:"RegionName" xml:"RegionName"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	NameEn        string `json:"NameEn" xml:"NameEn"`
-	OssPathPrefix string `json:"OssPathPrefix" xml:"OssPathPrefix"`
-	DlaVcName     string `json:"DlaVcName" xml:"DlaVcName"`
-	AreaName      string `json:"AreaName" xml:"AreaName"`
-	DlaDbName     string `json:"DlaDbName" xml:"DlaDbName"`
-	OssEndpoint   string `json:"OssEndpoint" xml:"OssEndpoint"`
-	NameZh        string `json:"NameZh" xml:"NameZh"`
-	OssId         int    `json:"OssId" xml:"OssId"`
-	AreaId        string `json:"AreaId" xml:"AreaId"`
+	NameZh string `json:"NameZh" xml:"NameZh"`
+	NameEn string `json:"NameEn" xml:"NameEn"`
 }

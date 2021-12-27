@@ -78,9 +78,9 @@ type DescribeDcdnRegionAndIspRequest struct {
 // DescribeDcdnRegionAndIspResponse is the response struct for api DescribeDcdnRegionAndIsp
 type DescribeDcdnRegionAndIspResponse struct {
 	*responses.BaseResponse
-	RequestId string                            `json:"RequestId" xml:"RequestId"`
-	Regions   RegionsInDescribeDcdnRegionAndIsp `json:"Regions" xml:"Regions"`
-	Isps      Isps                              `json:"Isps" xml:"Isps"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Regions   Regions `json:"Regions" xml:"Regions"`
+	Isps      Isps    `json:"Isps" xml:"Isps"`
 }
 
 // CreateDescribeDcdnRegionAndIspRequest creates a request to invoke DescribeDcdnRegionAndIsp API

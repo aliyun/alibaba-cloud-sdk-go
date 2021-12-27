@@ -86,7 +86,9 @@ type DescribeDcdnRefreshQuotaResponse struct {
 	PreloadQuota  string `json:"PreloadQuota" xml:"PreloadQuota"`
 	BlockQuota    string `json:"BlockQuota" xml:"BlockQuota"`
 	PreloadRemain string `json:"PreloadRemain" xml:"PreloadRemain"`
-	BlockRemain   string `json:"blockRemain" xml:"blockRemain"`
+	BlockRemain   string `json:"BlockRemain" xml:"BlockRemain"`
+	RegexQuota    string `json:"RegexQuota" xml:"RegexQuota"`
+	RegexRemain   string `json:"RegexRemain" xml:"RegexRemain"`
 }
 
 // CreateDescribeDcdnRefreshQuotaRequest creates a request to invoke DescribeDcdnRefreshQuota API
