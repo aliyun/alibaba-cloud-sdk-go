@@ -17,7 +17,6 @@ package cdn
 
 // Configs is a nested struct in cdn response
 type Configs struct {
-	GreenManagerConfig GreenManagerConfig `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
-	WafConfig          WafConfig          `json:"WafConfig" xml:"WafConfig"`
-	OssLogConfig       OssLogConfig       `json:"OssLogConfig" xml:"OssLogConfig"`
+	WafConfig    WafConfig    `json:"WafConfig" xml:"WafConfig"`
+	OssLogConfig OssLogConfig `json:"OssLogConfig" xml:"OssLogConfig"`
 }

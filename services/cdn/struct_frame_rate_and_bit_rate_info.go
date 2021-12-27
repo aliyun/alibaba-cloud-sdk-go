@@ -17,9 +17,9 @@ package cdn
 
 // FrameRateAndBitRateInfo is a nested struct in cdn response
 type FrameRateAndBitRateInfo struct {
-	BitRate        float64 `json:"BitRate" xml:"BitRate"`
-	Time           string  `json:"Time" xml:"Time"`
+	StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
 	VideoFrameRate float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
 	AudioFrameRate float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
-	StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
+	BitRate        float64 `json:"BitRate" xml:"BitRate"`
+	Time           string  `json:"Time" xml:"Time"`
 }

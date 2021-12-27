@@ -83,8 +83,8 @@ type DescribeLiveStreamsFrameRateAndBitRateDataRequest struct {
 // DescribeLiveStreamsFrameRateAndBitRateDataResponse is the response struct for api DescribeLiveStreamsFrameRateAndBitRateData
 type DescribeLiveStreamsFrameRateAndBitRateDataResponse struct {
 	*responses.BaseResponse
-	RequestId                string                                                               `json:"RequestId" xml:"RequestId"`
-	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamsFrameRateAndBitRateData `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
+	RequestId                string                   `json:"RequestId" xml:"RequestId"`
+	FrameRateAndBitRateInfos FrameRateAndBitRateInfos `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
 // CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest creates a request to invoke DescribeLiveStreamsFrameRateAndBitRateData API
