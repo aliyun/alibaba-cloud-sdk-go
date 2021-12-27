@@ -92,8 +92,8 @@ type SearchTracesByPageExclusionFilters struct {
 // SearchTracesByPageResponse is the response struct for api SearchTracesByPage
 type SearchTracesByPageResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	PageBean  PageBean `json:"PageBean" xml:"PageBean"`
+	RequestId string                       `json:"RequestId" xml:"RequestId"`
+	PageBean  PageBeanInSearchTracesByPage `json:"PageBean" xml:"PageBean"`
 }
 
 // CreateSearchTracesByPageRequest creates a request to invoke SearchTracesByPage API

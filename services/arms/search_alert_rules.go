@@ -71,20 +71,21 @@ func (client *Client) SearchAlertRulesWithCallback(request *SearchAlertRulesRequ
 // SearchAlertRulesRequest is the request struct for api SearchAlertRules
 type SearchAlertRulesRequest struct {
 	*requests.RpcRequest
-	AppType     string           `position:"Query" name:"AppType"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	Pid         string           `position:"Query" name:"Pid"`
-	ProxyUserId string           `position:"Query" name:"ProxyUserId"`
-	Title       string           `position:"Query" name:"Title"`
-	Type        string           `position:"Query" name:"Type"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	AppType        string           `position:"Query" name:"AppType"`
+	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`
+	Pid            string           `position:"Query" name:"Pid"`
+	SystemRegionId string           `position:"Query" name:"SystemRegionId"`
+	ProxyUserId    string           `position:"Query" name:"ProxyUserId"`
+	Title          string           `position:"Query" name:"Title"`
+	Type           string           `position:"Query" name:"Type"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // SearchAlertRulesResponse is the response struct for api SearchAlertRules
 type SearchAlertRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	PageBean  PageBean `json:"PageBean" xml:"PageBean"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	PageBean  PageBeanInSearchAlertRules `json:"PageBean" xml:"PageBean"`
 }
 
 // CreateSearchAlertRulesRequest creates a request to invoke SearchAlertRules API

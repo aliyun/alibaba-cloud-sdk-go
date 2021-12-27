@@ -17,23 +17,23 @@ package arms
 
 // AlertRuleEntity is a nested struct in arms response
 type AlertRuleEntity struct {
-	AlertTitle         string       `json:"AlertTitle" xml:"AlertTitle"`
-	AlertLevel         string       `json:"AlertLevel" xml:"AlertLevel"`
-	AlertType          int          `json:"AlertType" xml:"AlertType"`
-	AlertVersion       int          `json:"AlertVersion" xml:"AlertVersion"`
-	Config             string       `json:"Config" xml:"Config"`
+	Status             string       `json:"Status" xml:"Status"`
+	UpdateTime         int64        `json:"UpdateTime" xml:"UpdateTime"`
 	ContactGroupIdList string       `json:"ContactGroupIdList" xml:"ContactGroupIdList"`
 	CreateTime         int64        `json:"CreateTime" xml:"CreateTime"`
-	Id                 int64        `json:"Id" xml:"Id"`
-	RegionId           string       `json:"RegionId" xml:"RegionId"`
-	Status             string       `json:"Status" xml:"Status"`
-	TaskId             int64        `json:"TaskId" xml:"TaskId"`
-	TaskStatus         string       `json:"TaskStatus" xml:"TaskStatus"`
-	UpdateTime         int64        `json:"UpdateTime" xml:"UpdateTime"`
+	AlertTitle         string       `json:"AlertTitle" xml:"AlertTitle"`
 	UserId             string       `json:"UserId" xml:"UserId"`
-	Title              string       `json:"Title" xml:"Title"`
-	ContactGroupIds    string       `json:"ContactGroupIds" xml:"ContactGroupIds"`
+	AlertVersion       int          `json:"AlertVersion" xml:"AlertVersion"`
 	HostByAlertManager bool         `json:"HostByAlertManager" xml:"HostByAlertManager"`
+	AlertType          int          `json:"AlertType" xml:"AlertType"`
+	ContactGroupIds    string       `json:"ContactGroupIds" xml:"ContactGroupIds"`
+	Config             string       `json:"Config" xml:"Config"`
+	RegionId           string       `json:"RegionId" xml:"RegionId"`
+	AlertLevel         string       `json:"AlertLevel" xml:"AlertLevel"`
+	TaskStatus         string       `json:"TaskStatus" xml:"TaskStatus"`
+	Title              string       `json:"Title" xml:"Title"`
+	TaskId             int64        `json:"TaskId" xml:"TaskId"`
+	Id                 int64        `json:"Id" xml:"Id"`
 	AlertWays          []string     `json:"AlertWays" xml:"AlertWays"`
 	AlertWay           []string     `json:"AlertWay" xml:"AlertWay"`
 	AlarmContext       AlarmContext `json:"AlarmContext" xml:"AlarmContext"`

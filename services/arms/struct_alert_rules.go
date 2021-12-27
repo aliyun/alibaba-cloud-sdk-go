@@ -17,5 +17,28 @@ package arms
 
 // AlertRules is a nested struct in arms response
 type AlertRules struct {
-	AlertRuleEntity []AlertRuleEntity `json:"AlertRuleEntity" xml:"AlertRuleEntity"`
+	NotifyStrategy        string           `json:"NotifyStrategy" xml:"NotifyStrategy"`
+	ClusterId             string           `json:"ClusterId" xml:"ClusterId"`
+	Extend                string           `json:"Extend" xml:"Extend"`
+	Message               string           `json:"Message" xml:"Message"`
+	AlertStatus           string           `json:"AlertStatus" xml:"AlertStatus"`
+	Level                 string           `json:"Level" xml:"Level"`
+	AlertId               float64          `json:"AlertId" xml:"AlertId"`
+	AutoAddNewApplication bool             `json:"AutoAddNewApplication" xml:"AutoAddNewApplication"`
+	AlertGroup            int64            `json:"AlertGroup" xml:"AlertGroup"`
+	MetricsType           string           `json:"MetricsType" xml:"MetricsType"`
+	RegionId              string           `json:"RegionId" xml:"RegionId"`
+	CreatedTime           int64            `json:"CreatedTime" xml:"CreatedTime"`
+	Duration              string           `json:"Duration" xml:"Duration"`
+	UserId                string           `json:"UserId" xml:"UserId"`
+	UpdatedTime           int64            `json:"UpdatedTime" xml:"UpdatedTime"`
+	PromQL                string           `json:"PromQL" xml:"PromQL"`
+	AlertType             string           `json:"AlertType" xml:"AlertType"`
+	AlertCheckType        string           `json:"AlertCheckType" xml:"AlertCheckType"`
+	AlertName             string           `json:"AlertName" xml:"AlertName"`
+	Pids                  []string         `json:"Pids" xml:"Pids"`
+	AlertRuleContent      AlertRuleContent `json:"AlertRuleContent" xml:"AlertRuleContent"`
+	Filters               Filters          `json:"Filters" xml:"Filters"`
+	Labels                []Labels         `json:"Labels" xml:"Labels"`
+	Annotations           []Annotations    `json:"Annotations" xml:"Annotations"`
 }

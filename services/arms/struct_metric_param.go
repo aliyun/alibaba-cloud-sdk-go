@@ -17,9 +17,9 @@ package arms
 
 // MetricParam is a nested struct in arms response
 type MetricParam struct {
+	Type       string      `json:"Type" xml:"Type"`
 	AppGroupId string      `json:"AppGroupId" xml:"AppGroupId"`
 	AppId      string      `json:"AppId" xml:"AppId"`
 	Pid        string      `json:"Pid" xml:"Pid"`
-	Type       string      `json:"Type" xml:"Type"`
 	Dimensions []Dimension `json:"Dimensions" xml:"Dimensions"`
 }

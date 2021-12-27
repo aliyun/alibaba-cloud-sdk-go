@@ -17,15 +17,16 @@ package arms
 
 // PageBean is a nested struct in arms response
 type PageBean struct {
-	Total          int               `json:"Total" xml:"Total"`
-	TotalCount     int               `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int               `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int               `json:"PageSize" xml:"PageSize"`
-	Event          []EventItem       `json:"Event" xml:"Event"`
-	TraceApps      []TraceApp        `json:"TraceApps" xml:"TraceApps"`
-	Contacts       []Contact         `json:"Contacts" xml:"Contacts"`
-	AlertRules     []AlertRuleEntity `json:"AlertRules" xml:"AlertRules"`
-	RetcodeApps    []RetcodeApp      `json:"RetcodeApps" xml:"RetcodeApps"`
-	AlarmHistories []AlarmHistory    `json:"AlarmHistories" xml:"AlarmHistories"`
-	TraceInfos     []TraceInfo       `json:"TraceInfos" xml:"TraceInfos"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	Size           int64          `json:"Size" xml:"Size"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	Total          int64          `json:"Total" xml:"Total"`
+	Page           int64          `json:"Page" xml:"Page"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	AlertRules     []AlertRules   `json:"AlertRules" xml:"AlertRules"`
+	Event          []EventItem    `json:"Event" xml:"Event"`
+	TraceApps      []TraceApp     `json:"TraceApps" xml:"TraceApps"`
+	Contacts       []Contact      `json:"Contacts" xml:"Contacts"`
+	RetcodeApps    []RetcodeApp   `json:"RetcodeApps" xml:"RetcodeApps"`
+	AlarmHistories []AlarmHistory `json:"AlarmHistories" xml:"AlarmHistories"`
 }

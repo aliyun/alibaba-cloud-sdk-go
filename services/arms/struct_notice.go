@@ -19,6 +19,6 @@ package arms
 type Notice struct {
 	EndTime         int64 `json:"EndTime" xml:"EndTime"`
 	NoticeEndTime   int64 `json:"NoticeEndTime" xml:"NoticeEndTime"`
-	NoticeStartTime int64 `json:"NoticeStartTime" xml:"NoticeStartTime"`
 	StartTime       int64 `json:"StartTime" xml:"StartTime"`
+	NoticeStartTime int64 `json:"NoticeStartTime" xml:"NoticeStartTime"`
 }

@@ -17,6 +17,30 @@ package arms
 
 // AlertRule is a nested struct in arms response
 type AlertRule struct {
-	Operator string `json:"Operator" xml:"Operator"`
-	Rules    []Rule `json:"Rules" xml:"Rules"`
+	Extend                string           `json:"Extend" xml:"Extend"`
+	AlertId               float64          `json:"AlertId" xml:"AlertId"`
+	AlertGroup            int64            `json:"AlertGroup" xml:"AlertGroup"`
+	Operator              string           `json:"Operator" xml:"Operator"`
+	RegionId              string           `json:"RegionId" xml:"RegionId"`
+	CreatedTime           int64            `json:"CreatedTime" xml:"CreatedTime"`
+	UserId                string           `json:"UserId" xml:"UserId"`
+	AlertType             string           `json:"AlertType" xml:"AlertType"`
+	AlertName             string           `json:"AlertName" xml:"AlertName"`
+	NotifyStrategy        string           `json:"NotifyStrategy" xml:"NotifyStrategy"`
+	ClusterId             string           `json:"ClusterId" xml:"ClusterId"`
+	Message               string           `json:"Message" xml:"Message"`
+	AlertStatus           string           `json:"AlertStatus" xml:"AlertStatus"`
+	Level                 string           `json:"Level" xml:"Level"`
+	AutoAddNewApplication bool             `json:"AutoAddNewApplication" xml:"AutoAddNewApplication"`
+	MetricsType           string           `json:"MetricsType" xml:"MetricsType"`
+	Duration              string           `json:"Duration" xml:"Duration"`
+	UpdatedTime           int64            `json:"UpdatedTime" xml:"UpdatedTime"`
+	PromQL                string           `json:"PromQL" xml:"PromQL"`
+	AlertCheckType        string           `json:"AlertCheckType" xml:"AlertCheckType"`
+	Pids                  []string         `json:"Pids" xml:"Pids"`
+	AlertRuleContent      AlertRuleContent `json:"AlertRuleContent" xml:"AlertRuleContent"`
+	Filters               Filters          `json:"Filters" xml:"Filters"`
+	Annotations           []Annotations    `json:"Annotations" xml:"Annotations"`
+	Labels                []Labels         `json:"Labels" xml:"Labels"`
+	Rules                 []Rule           `json:"Rules" xml:"Rules"`
 }

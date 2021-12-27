@@ -77,8 +77,8 @@ type OpenArmsServiceSecondVersionRequest struct {
 // OpenArmsServiceSecondVersionResponse is the response struct for api OpenArmsServiceSecondVersion
 type OpenArmsServiceSecondVersionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenArmsServiceSecondVersionRequest creates a request to invoke OpenArmsServiceSecondVersion API
