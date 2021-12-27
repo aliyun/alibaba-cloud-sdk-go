@@ -1,3 +1,7 @@
+2021-12-27 Version: v1.61.1407
+- Generated 2019-05-06 for `sae`.
+- Support ACR EE, OSS, EIP for deploy.
+
 2021-12-27 Version: v1.61.1406
 - Generated 2015-12-01 for `Dds`.
 - DescribeDBInstances Add CapacityUnit.
