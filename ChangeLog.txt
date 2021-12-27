@@ -1,3 +1,7 @@
+2021-12-27 Version: v1.61.1403
+- Generated 2017-11-15 for `scdn`.
+- Add DescribeScdnDomainCcInfo.
+
 2021-12-24 Version: v1.61.1402
 - Generated 2019-01-01 for `Cms`.
 - Add Event Rule Target.

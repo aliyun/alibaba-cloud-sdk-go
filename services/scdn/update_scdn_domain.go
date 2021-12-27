@@ -72,10 +72,10 @@ func (client *Client) UpdateScdnDomainWithCallback(request *UpdateScdnDomainRequ
 type UpdateScdnDomainRequest struct {
 	*requests.RpcRequest
 	Sources         string           `position:"Query" name:"Sources"`
-	DomainName      string           `position:"Query" name:"DomainName"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // UpdateScdnDomainResponse is the response struct for api UpdateScdnDomain

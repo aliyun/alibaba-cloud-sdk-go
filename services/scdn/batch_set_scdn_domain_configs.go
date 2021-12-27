@@ -73,9 +73,9 @@ type BatchSetScdnDomainConfigsRequest struct {
 	*requests.RpcRequest
 	Functions     string           `position:"Query" name:"Functions"`
 	DomainNames   string           `position:"Query" name:"DomainNames"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // BatchSetScdnDomainConfigsResponse is the response struct for api BatchSetScdnDomainConfigs
