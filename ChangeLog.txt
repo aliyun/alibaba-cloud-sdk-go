@@ -1,3 +1,7 @@
+2021-12-27 Version: v1.61.1406
+- Generated 2015-12-01 for `Dds`.
+- DescribeDBInstances Add CapacityUnit.
+
 2021-12-27 Version: v1.61.1405
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update DeleteFCTrigger.

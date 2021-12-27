@@ -30,6 +30,7 @@ type DBInstance struct {
 	RegionId                    string                                   `json:"RegionId" xml:"RegionId"`
 	MaxConnections              int                                      `json:"MaxConnections" xml:"MaxConnections"`
 	ResourceGroupId             string                                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CloudType                   string                                   `json:"CloudType" xml:"CloudType"`
 	DBInstanceType              string                                   `json:"DBInstanceType" xml:"DBInstanceType"`
 	MaintainEndTime             string                                   `json:"MaintainEndTime" xml:"MaintainEndTime"`
 	ExpireTime                  string                                   `json:"ExpireTime" xml:"ExpireTime"`
