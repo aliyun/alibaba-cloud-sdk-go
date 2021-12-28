@@ -89,7 +89,7 @@ func CreateGetAggregateResourceComplianceByConfigRuleRequest() (request *GetAggr
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Config", "2020-09-07", "GetAggregateResourceComplianceByConfigRule", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

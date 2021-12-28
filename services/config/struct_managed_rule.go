@@ -18,9 +18,14 @@ package config
 // ManagedRule is a nested struct in config response
 type ManagedRule struct {
 	CompulsoryInputParameterDetails map[string]interface{} `json:"CompulsoryInputParameterDetails" xml:"CompulsoryInputParameterDetails"`
+	RiskLevel                       int                    `json:"RiskLevel" xml:"RiskLevel"`
 	HelpUrl                         string                 `json:"HelpUrl" xml:"HelpUrl"`
 	OptionalInputParameterDetails   map[string]interface{} `json:"OptionalInputParameterDetails" xml:"OptionalInputParameterDetails"`
+	UseCases                        string                 `json:"UseCases" xml:"UseCases"`
+	ConfigRuleName                  string                 `json:"ConfigRuleName" xml:"ConfigRuleName"`
+	HelpUrls                        string                 `json:"HelpUrls" xml:"HelpUrls"`
 	Identifier                      string                 `json:"Identifier" xml:"Identifier"`
+	ReferenceCount                  int                    `json:"ReferenceCount" xml:"ReferenceCount"`
 	Description                     string                 `json:"Description" xml:"Description"`
 	ManagedRuleName                 string                 `json:"ManagedRuleName" xml:"ManagedRuleName"`
 	Labels                          []string               `json:"Labels" xml:"Labels"`

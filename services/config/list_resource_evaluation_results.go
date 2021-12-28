@@ -92,7 +92,7 @@ func CreateListResourceEvaluationResultsRequest() (request *ListResourceEvaluati
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Config", "2020-09-07", "ListResourceEvaluationResults", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

@@ -71,6 +71,7 @@ func (client *Client) GetAggregateConfigRulesReportWithCallback(request *GetAggr
 // GetAggregateConfigRulesReportRequest is the request struct for api GetAggregateConfigRulesReport
 type GetAggregateConfigRulesReportRequest struct {
 	*requests.RpcRequest
+	ReportId     string `position:"Query" name:"ReportId"`
 	AggregatorId string `position:"Query" name:"AggregatorId"`
 }
 
@@ -87,7 +88,7 @@ func CreateGetAggregateConfigRulesReportRequest() (request *GetAggregateConfigRu
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Config", "2020-09-07", "GetAggregateConfigRulesReport", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

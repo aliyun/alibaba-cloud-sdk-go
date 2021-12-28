@@ -35,6 +35,7 @@ type ConfigRule struct {
 	ConfigRuleId               string                     `json:"ConfigRuleId" xml:"ConfigRuleId"`
 	ConfigRuleArn              string                     `json:"ConfigRuleArn" xml:"ConfigRuleArn"`
 	InputParameters            map[string]interface{}     `json:"InputParameters" xml:"InputParameters"`
+	TagKeyLogicScope           string                     `json:"TagKeyLogicScope" xml:"TagKeyLogicScope"`
 	AccountId                  int64                      `json:"AccountId" xml:"AccountId"`
 	SourceIdentifier           string                     `json:"SourceIdentifier" xml:"SourceIdentifier"`
 	ResourceTypesScope         string                     `json:"ResourceTypesScope" xml:"ResourceTypesScope"`

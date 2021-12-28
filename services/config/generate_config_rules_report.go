@@ -71,13 +71,15 @@ func (client *Client) GenerateConfigRulesReportWithCallback(request *GenerateCon
 // GenerateConfigRulesReportRequest is the request struct for api GenerateConfigRulesReport
 type GenerateConfigRulesReportRequest struct {
 	*requests.RpcRequest
-	ClientToken string `position:"Body" name:"ClientToken"`
+	ClientToken   string `position:"Body" name:"ClientToken"`
+	ConfigRuleIds string `position:"Body" name:"ConfigRuleIds"`
 }
 
 // GenerateConfigRulesReportResponse is the response struct for api GenerateConfigRulesReport
 type GenerateConfigRulesReportResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ReportId  string `json:"ReportId" xml:"ReportId"`
 }
 
 // CreateGenerateConfigRulesReportRequest creates a request to invoke GenerateConfigRulesReport API

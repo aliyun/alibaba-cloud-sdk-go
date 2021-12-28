@@ -71,8 +71,9 @@ func (client *Client) GenerateAggregateConfigRulesReportWithCallback(request *Ge
 // GenerateAggregateConfigRulesReportRequest is the request struct for api GenerateAggregateConfigRulesReport
 type GenerateAggregateConfigRulesReportRequest struct {
 	*requests.RpcRequest
-	ClientToken  string `position:"Body" name:"ClientToken"`
-	AggregatorId string `position:"Body" name:"AggregatorId"`
+	ClientToken   string `position:"Body" name:"ClientToken"`
+	ConfigRuleIds string `position:"Body" name:"ConfigRuleIds"`
+	AggregatorId  string `position:"Body" name:"AggregatorId"`
 }
 
 // GenerateAggregateConfigRulesReportResponse is the response struct for api GenerateAggregateConfigRulesReport
@@ -80,6 +81,7 @@ type GenerateAggregateConfigRulesReportResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	AggregatorId string `json:"AggregatorId" xml:"AggregatorId"`
+	ReportId     string `json:"ReportId" xml:"ReportId"`
 }
 
 // CreateGenerateAggregateConfigRulesReportRequest creates a request to invoke GenerateAggregateConfigRulesReport API

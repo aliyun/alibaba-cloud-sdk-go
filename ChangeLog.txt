@@ -1,3 +1,7 @@
+2021-12-28 Version: v1.61.1409
+- Generated 2020-09-07 for `Config`.
+- Support managed rule query.
+
 2021-12-27 Version: v1.61.1408
 - Generated 2019-08-08 for `ARMS`.
 - New alert create api.

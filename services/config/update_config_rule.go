@@ -83,6 +83,7 @@ type UpdateConfigRuleRequest struct {
 	ResourceGroupIdsScope     string           `position:"Body" name:"ResourceGroupIdsScope"`
 	InputParameters           string           `position:"Body" name:"InputParameters"`
 	ConfigRuleName            string           `position:"Body" name:"ConfigRuleName"`
+	TagKeyLogicScope          string           `position:"Body" name:"TagKeyLogicScope"`
 	MaximumExecutionFrequency string           `position:"Body" name:"MaximumExecutionFrequency"`
 	ExcludeResourceIdsScope   string           `position:"Body" name:"ExcludeResourceIdsScope"`
 }

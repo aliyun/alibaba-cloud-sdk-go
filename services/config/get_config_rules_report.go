@@ -71,6 +71,7 @@ func (client *Client) GetConfigRulesReportWithCallback(request *GetConfigRulesRe
 // GetConfigRulesReportRequest is the request struct for api GetConfigRulesReport
 type GetConfigRulesReportRequest struct {
 	*requests.RpcRequest
+	ReportId string `position:"Query" name:"ReportId"`
 }
 
 // GetConfigRulesReportResponse is the response struct for api GetConfigRulesReport
@@ -86,7 +87,7 @@ func CreateGetConfigRulesReportRequest() (request *GetConfigRulesReportRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Config", "2020-09-07", "GetConfigRulesReport", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 
