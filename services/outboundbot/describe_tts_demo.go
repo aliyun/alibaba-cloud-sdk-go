@@ -82,11 +82,11 @@ type DescribeTTSDemoRequest struct {
 // DescribeTTSDemoResponse is the response struct for api DescribeTTSDemo
 type DescribeTTSDemoResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	AuditionUrl    string `json:"AuditionUrl" xml:"AuditionUrl"`
 }
 

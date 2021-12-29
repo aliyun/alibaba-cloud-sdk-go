@@ -71,6 +71,7 @@ func (client *Client) CreateJobGroupWithCallback(request *CreateJobGroupRequest,
 // CreateJobGroupRequest is the request struct for api CreateJobGroup
 type CreateJobGroupRequest struct {
 	*requests.RpcRequest
+	RecallStrategyJson  string    `position:"Query" name:"RecallStrategyJson"`
 	JobGroupDescription string    `position:"Query" name:"JobGroupDescription"`
 	JobGroupName        string    `position:"Query" name:"JobGroupName"`
 	ScriptId            string    `position:"Query" name:"ScriptId"`
@@ -83,8 +84,8 @@ type CreateJobGroupRequest struct {
 // CreateJobGroupResponse is the response struct for api CreateJobGroup
 type CreateJobGroupResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string   `json:"Code" xml:"Code"`
 	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`

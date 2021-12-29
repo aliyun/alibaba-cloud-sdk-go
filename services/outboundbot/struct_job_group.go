@@ -21,19 +21,20 @@ type JobGroup struct {
 	JobGroupId           string         `json:"JobGroupId" xml:"JobGroupId"`
 	ModifyTime           string         `json:"ModifyTime" xml:"ModifyTime"`
 	JobGroupName         string         `json:"JobGroupName" xml:"JobGroupName"`
+	TotalCallNum         int            `json:"TotalCallNum" xml:"TotalCallNum"`
+	JobGroupDescription  string         `json:"JobGroupDescription" xml:"JobGroupDescription"`
+	Id                   string         `json:"Id" xml:"Id"`
 	CreationTime         int64          `json:"CreationTime" xml:"CreationTime"`
 	ScenarioId           string         `json:"ScenarioId" xml:"ScenarioId"`
-	TotalCallNum         int            `json:"TotalCallNum" xml:"TotalCallNum"`
 	ScriptVersion        string         `json:"ScriptVersion" xml:"ScriptVersion"`
 	ScriptId             string         `json:"ScriptId" xml:"ScriptId"`
 	JobDataParsingTaskId string         `json:"JobDataParsingTaskId" xml:"JobDataParsingTaskId"`
-	JobGroupDescription  string         `json:"JobGroupDescription" xml:"JobGroupDescription"`
 	JobFilePath          string         `json:"JobFilePath" xml:"JobFilePath"`
-	Id                   string         `json:"Id" xml:"Id"`
 	Status               string         `json:"Status" xml:"Status"`
 	CallingNumbers       []string       `json:"CallingNumbers" xml:"CallingNumbers"`
-	Progress             Progress       `json:"Progress" xml:"Progress"`
-	Strategy             Strategy       `json:"Strategy" xml:"Strategy"`
 	ExportProgress       ExportProgress `json:"ExportProgress" xml:"ExportProgress"`
+	RecallStrategy       RecallStrategy `json:"RecallStrategy" xml:"RecallStrategy"`
+	Strategy             Strategy       `json:"Strategy" xml:"Strategy"`
+	Progress             Progress       `json:"Progress" xml:"Progress"`
 	Result               Result         `json:"Result" xml:"Result"`
 }

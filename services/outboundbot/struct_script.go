@@ -31,9 +31,10 @@ type Script struct {
 	ChatbotId                 string `json:"ChatbotId" xml:"ChatbotId"`
 	TtsConfig                 string `json:"TtsConfig" xml:"TtsConfig"`
 	Status                    string `json:"Status" xml:"Status"`
-	IsDebugDrafted            bool   `json:"IsDebugDrafted" xml:"IsDebugDrafted"`
 	ScriptDescription         string `json:"ScriptDescription" xml:"ScriptDescription"`
+	IsDebugDrafted            bool   `json:"IsDebugDrafted" xml:"IsDebugDrafted"`
 	AsrConfig                 string `json:"AsrConfig" xml:"AsrConfig"`
 	AppliedVersion            string `json:"AppliedVersion" xml:"AppliedVersion"`
+	NewBargeInEnable          bool   `json:"NewBargeInEnable" xml:"NewBargeInEnable"`
 	DebugVersion              string `json:"DebugVersion" xml:"DebugVersion"`
 }

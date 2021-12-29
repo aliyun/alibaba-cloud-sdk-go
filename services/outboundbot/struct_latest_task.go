@@ -17,17 +17,18 @@ package outboundbot
 
 // LatestTask is a nested struct in outboundbot response
 type LatestTask struct {
-	Status               string          `json:"Status" xml:"Status"`
-	TaskEndReason        string          `json:"TaskEndReason" xml:"TaskEndReason"`
-	HasAnswered          bool            `json:"HasAnswered" xml:"HasAnswered"`
-	CallDuration         int             `json:"CallDuration" xml:"CallDuration"`
-	HasReachedEndOfFlow  bool            `json:"HasReachedEndOfFlow" xml:"HasReachedEndOfFlow"`
-	StatusName           string          `json:"StatusName" xml:"StatusName"`
-	CallTime             int64           `json:"CallTime" xml:"CallTime"`
-	CallDurationDisplay  string          `json:"CallDurationDisplay" xml:"CallDurationDisplay"`
-	HasHangUpByRejection bool            `json:"HasHangUpByRejection" xml:"HasHangUpByRejection"`
-	Contact              Contact         `json:"Contact" xml:"Contact"`
-	Extras               []Extra         `json:"Extras" xml:"Extras"`
-	TagHits              []TagHit        `json:"TagHits" xml:"TagHits"`
-	DialExceptionCodes   []ExceptionCode `json:"DialExceptionCodes" xml:"DialExceptionCodes"`
+	Status                   string          `json:"Status" xml:"Status"`
+	TaskEndReason            string          `json:"TaskEndReason" xml:"TaskEndReason"`
+	HasAnswered              bool            `json:"HasAnswered" xml:"HasAnswered"`
+	CallDuration             int             `json:"CallDuration" xml:"CallDuration"`
+	HasReachedEndOfFlow      bool            `json:"HasReachedEndOfFlow" xml:"HasReachedEndOfFlow"`
+	StatusName               string          `json:"StatusName" xml:"StatusName"`
+	CallTime                 int64           `json:"CallTime" xml:"CallTime"`
+	CallDurationDisplay      string          `json:"CallDurationDisplay" xml:"CallDurationDisplay"`
+	HasHangUpByRejection     bool            `json:"HasHangUpByRejection" xml:"HasHangUpByRejection"`
+	HasLastPlaybackCompleted bool            `json:"HasLastPlaybackCompleted" xml:"HasLastPlaybackCompleted"`
+	Contact                  Contact         `json:"Contact" xml:"Contact"`
+	Extras                   []Extra         `json:"Extras" xml:"Extras"`
+	TagHits                  []TagHit        `json:"TagHits" xml:"TagHits"`
+	DialExceptionCodes       []ExceptionCode `json:"DialExceptionCodes" xml:"DialExceptionCodes"`
 }

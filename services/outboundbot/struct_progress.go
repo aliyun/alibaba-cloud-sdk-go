@@ -27,8 +27,8 @@ type Progress struct {
 	FailReason       string         `json:"FailReason" xml:"FailReason"`
 	TotalNotAnswered int            `json:"TotalNotAnswered" xml:"TotalNotAnswered"`
 	CancelledNum     int            `json:"CancelledNum" xml:"CancelledNum"`
-	Failed           int            `json:"Failed" xml:"Failed"`
 	StartTime        int64          `json:"StartTime" xml:"StartTime"`
+	Failed           int            `json:"Failed" xml:"Failed"`
 	ExecutingNum     int            `json:"ExecutingNum" xml:"ExecutingNum"`
 	Duration         int            `json:"Duration" xml:"Duration"`
 	FailedNum        int            `json:"FailedNum" xml:"FailedNum"`

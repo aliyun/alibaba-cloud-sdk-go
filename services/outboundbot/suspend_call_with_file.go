@@ -79,11 +79,11 @@ type SuspendCallWithFileRequest struct {
 // SuspendCallWithFileResponse is the response struct for api SuspendCallWithFile
 type SuspendCallWithFileResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSuspendCallWithFileRequest creates a request to invoke SuspendCallWithFile API

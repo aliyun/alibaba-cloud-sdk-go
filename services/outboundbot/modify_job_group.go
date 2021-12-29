@@ -71,21 +71,22 @@ func (client *Client) ModifyJobGroupWithCallback(request *ModifyJobGroupRequest,
 // ModifyJobGroupRequest is the request struct for api ModifyJobGroup
 type ModifyJobGroupRequest struct {
 	*requests.RpcRequest
-	Description   string    `position:"Query" name:"Description"`
-	CallingNumber *[]string `position:"Query" name:"CallingNumber"  type:"Repeated"`
-	ScriptId      string    `position:"Query" name:"ScriptId"`
-	InstanceId    string    `position:"Query" name:"InstanceId"`
-	StrategyJson  string    `position:"Query" name:"StrategyJson"`
-	JobGroupId    string    `position:"Query" name:"JobGroupId"`
-	Name          string    `position:"Query" name:"Name"`
-	ScenarioId    string    `position:"Query" name:"ScenarioId"`
+	RecallStrategyJson string    `position:"Query" name:"RecallStrategyJson"`
+	Description        string    `position:"Query" name:"Description"`
+	ScriptId           string    `position:"Query" name:"ScriptId"`
+	CallingNumber      *[]string `position:"Query" name:"CallingNumber"  type:"Repeated"`
+	InstanceId         string    `position:"Query" name:"InstanceId"`
+	StrategyJson       string    `position:"Query" name:"StrategyJson"`
+	JobGroupId         string    `position:"Query" name:"JobGroupId"`
+	Name               string    `position:"Query" name:"Name"`
+	ScenarioId         string    `position:"Query" name:"ScenarioId"`
 }
 
 // ModifyJobGroupResponse is the response struct for api ModifyJobGroup
 type ModifyJobGroupResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string   `json:"Code" xml:"Code"`
 	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`

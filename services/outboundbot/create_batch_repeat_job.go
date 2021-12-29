@@ -71,24 +71,25 @@ func (client *Client) CreateBatchRepeatJobWithCallback(request *CreateBatchRepea
 // CreateBatchRepeatJobRequest is the request struct for api CreateBatchRepeatJob
 type CreateBatchRepeatJobRequest struct {
 	*requests.RpcRequest
-	Description   string    `position:"Query" name:"Description"`
-	ScriptId      string    `position:"Query" name:"ScriptId"`
-	CallingNumber *[]string `position:"Query" name:"CallingNumber"  type:"Repeated"`
-	InstanceId    string    `position:"Query" name:"InstanceId"`
-	FilterStatus  string    `position:"Query" name:"FilterStatus"`
-	StrategyJson  string    `position:"Query" name:"StrategyJson"`
-	Name          string    `position:"Query" name:"Name"`
-	SourceGroupId string    `position:"Query" name:"SourceGroupId"`
+	RecallStrategyJson string    `position:"Query" name:"RecallStrategyJson"`
+	Description        string    `position:"Query" name:"Description"`
+	ScriptId           string    `position:"Query" name:"ScriptId"`
+	CallingNumber      *[]string `position:"Query" name:"CallingNumber"  type:"Repeated"`
+	InstanceId         string    `position:"Query" name:"InstanceId"`
+	FilterStatus       string    `position:"Query" name:"FilterStatus"`
+	StrategyJson       string    `position:"Query" name:"StrategyJson"`
+	Name               string    `position:"Query" name:"Name"`
+	SourceGroupId      string    `position:"Query" name:"SourceGroupId"`
 }
 
 // CreateBatchRepeatJobResponse is the response struct for api CreateBatchRepeatJob
 type CreateBatchRepeatJobResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Success        bool     `json:"Success" xml:"Success"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string   `json:"Code" xml:"Code"`
 	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string   `json:"RequestId" xml:"RequestId"`
+	Success        bool     `json:"Success" xml:"Success"`
 	JobGroup       JobGroup `json:"JobGroup" xml:"JobGroup"`
 }
 
