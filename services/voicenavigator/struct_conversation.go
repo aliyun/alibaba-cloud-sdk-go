@@ -17,17 +17,18 @@ package voicenavigator
 
 // Conversation is a nested struct in voicenavigator response
 type Conversation struct {
-	EffectiveAnswerCount int    `json:"EffectiveAnswerCount" xml:"EffectiveAnswerCount"`
-	SkillGroup           string `json:"SkillGroup" xml:"SkillGroup"`
-	TransferredToAgent   bool   `json:"TransferredToAgent" xml:"TransferredToAgent"`
-	EndReason            int    `json:"EndReason" xml:"EndReason"`
-	EndTime              int64  `json:"EndTime" xml:"EndTime"`
-	StartTime            int64  `json:"StartTime" xml:"StartTime"`
-	CallingNumber        string `json:"CallingNumber" xml:"CallingNumber"`
-	BeginTime            int64  `json:"BeginTime" xml:"BeginTime"`
-	SkillGroupId         string `json:"SkillGroupId" xml:"SkillGroupId"`
-	UserUtteranceCount   int    `json:"UserUtteranceCount" xml:"UserUtteranceCount"`
-	HasToAgent           bool   `json:"HasToAgent" xml:"HasToAgent"`
-	ConversationId       string `json:"ConversationId" xml:"ConversationId"`
-	Rounds               int    `json:"Rounds" xml:"Rounds"`
+	EffectiveAnswerCount     int    `json:"EffectiveAnswerCount" xml:"EffectiveAnswerCount"`
+	SkillGroup               string `json:"SkillGroup" xml:"SkillGroup"`
+	TransferredToAgent       bool   `json:"TransferredToAgent" xml:"TransferredToAgent"`
+	EndReason                int    `json:"EndReason" xml:"EndReason"`
+	EndTime                  int64  `json:"EndTime" xml:"EndTime"`
+	StartTime                int64  `json:"StartTime" xml:"StartTime"`
+	CallingNumber            string `json:"CallingNumber" xml:"CallingNumber"`
+	BeginTime                int64  `json:"BeginTime" xml:"BeginTime"`
+	SkillGroupId             string `json:"SkillGroupId" xml:"SkillGroupId"`
+	UserUtteranceCount       int    `json:"UserUtteranceCount" xml:"UserUtteranceCount"`
+	HasLastPlaybackCompleted bool   `json:"HasLastPlaybackCompleted" xml:"HasLastPlaybackCompleted"`
+	HasToAgent               bool   `json:"HasToAgent" xml:"HasToAgent"`
+	ConversationId           string `json:"ConversationId" xml:"ConversationId"`
+	Rounds                   int    `json:"Rounds" xml:"Rounds"`
 }

@@ -72,6 +72,7 @@ func (client *Client) EndDialogueWithCallback(request *EndDialogueRequest, callb
 type EndDialogueRequest struct {
 	*requests.RpcRequest
 	ConversationId  string           `position:"Query" name:"ConversationId"`
+	HangUpParams    string           `position:"Query" name:"HangUpParams"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
 	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 }
