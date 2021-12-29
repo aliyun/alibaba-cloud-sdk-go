@@ -1,3 +1,7 @@
+2021-12-29 Version: v1.61.1411
+- Generated 2018-01-15 for `dcdn`.
+- Add ListDcdnEsTemplateInfo.
+
 2021-12-29 Version: v1.61.1410
 - Generated 2018-01-15 for `dcdn`.
 - Add ListDcdnEsTemplateInfo.
