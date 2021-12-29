@@ -17,32 +17,32 @@ package slb
 
 // HTTPListenerConfig is a nested struct in slb response
 type HTTPListenerConfig struct {
-	Cookie                     string `json:"Cookie" xml:"Cookie"`
-	CookieTimeout              int    `json:"CookieTimeout" xml:"CookieTimeout"`
-	ForwardCode                int    `json:"ForwardCode" xml:"ForwardCode"`
-	ForwardPort                int    `json:"ForwardPort" xml:"ForwardPort"`
-	Gzip                       string `json:"Gzip" xml:"Gzip"`
-	HealthCheck                string `json:"HealthCheck" xml:"HealthCheck"`
-	HealthCheckConnectPort     int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	HealthCheckDomain          string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
-	HealthCheckHttpCode        string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
 	HealthCheckHttpVersion     string `json:"HealthCheckHttpVersion" xml:"HealthCheckHttpVersion"`
-	HealthCheckInterval        int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthCheckMethod          string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	XForwardedForClientSrcPort string `json:"XForwardedFor_ClientSrcPort" xml:"XForwardedFor_ClientSrcPort"`
+	Cookie                     string `json:"Cookie" xml:"Cookie"`
+	Gzip                       string `json:"Gzip" xml:"Gzip"`
+	ForwardCode                int    `json:"ForwardCode" xml:"ForwardCode"`
+	HealthCheckConnectPort     int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
 	HealthCheckTimeout         int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
 	HealthCheckType            string `json:"HealthCheckType" xml:"HealthCheckType"`
-	HealthCheckURI             string `json:"HealthCheckURI" xml:"HealthCheckURI"`
-	HealthyThreshold           int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	IdleTimeout                int    `json:"IdleTimeout" xml:"IdleTimeout"`
-	ListenerForward            string `json:"ListenerForward" xml:"ListenerForward"`
-	RequestTimeout             int    `json:"RequestTimeout" xml:"RequestTimeout"`
-	StickySession              string `json:"StickySession" xml:"StickySession"`
-	StickySessionType          string `json:"StickySessionType" xml:"StickySessionType"`
+	CookieTimeout              int    `json:"CookieTimeout" xml:"CookieTimeout"`
+	HealthCheckDomain          string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	UnhealthyThreshold         int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
-	XForwardedFor              string `json:"XForwardedFor" xml:"XForwardedFor"`
-	XForwardedForClientSrcPort string `json:"XForwardedFor_ClientSrcPort" xml:"XForwardedFor_ClientSrcPort"`
 	XForwardedForSLBID         string `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
-	XForwardedForSLBIP         string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
+	ForwardPort                int    `json:"ForwardPort" xml:"ForwardPort"`
+	HealthCheckHttpCode        string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+	ListenerForward            string `json:"ListenerForward" xml:"ListenerForward"`
+	XForwardedFor              string `json:"XForwardedFor" xml:"XForwardedFor"`
+	IdleTimeout                int    `json:"IdleTimeout" xml:"IdleTimeout"`
+	RequestTimeout             int    `json:"RequestTimeout" xml:"RequestTimeout"`
+	HealthCheckInterval        int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
 	XForwardedForSLBPORT       string `json:"XForwardedFor_SLBPORT" xml:"XForwardedFor_SLBPORT"`
+	HealthCheckURI             string `json:"HealthCheckURI" xml:"HealthCheckURI"`
+	StickySessionType          string `json:"StickySessionType" xml:"StickySessionType"`
+	HealthyThreshold           int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
 	XForwardedForProto         string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
+	XForwardedForSLBIP         string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
+	StickySession              string `json:"StickySession" xml:"StickySession"`
+	HealthCheckMethod          string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	HealthCheck                string `json:"HealthCheck" xml:"HealthCheck"`
 }

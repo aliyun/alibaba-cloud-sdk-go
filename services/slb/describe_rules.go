@@ -94,7 +94,7 @@ func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
 	request = &DescribeRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRules", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRules", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

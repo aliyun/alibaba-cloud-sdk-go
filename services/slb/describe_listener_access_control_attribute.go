@@ -85,9 +85,9 @@ type DescribeListenerAccessControlAttributeRequest struct {
 // DescribeListenerAccessControlAttributeResponse is the response struct for api DescribeListenerAccessControlAttribute
 type DescribeListenerAccessControlAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	AccessControlStatus string `json:"AccessControlStatus" xml:"AccessControlStatus"`
 	SourceItems         string `json:"SourceItems" xml:"SourceItems"`
+	AccessControlStatus string `json:"AccessControlStatus" xml:"AccessControlStatus"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeListenerAccessControlAttributeRequest creates a request to invoke DescribeListenerAccessControlAttribute API
@@ -95,7 +95,7 @@ func CreateDescribeListenerAccessControlAttributeRequest() (request *DescribeLis
 	request = &DescribeListenerAccessControlAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

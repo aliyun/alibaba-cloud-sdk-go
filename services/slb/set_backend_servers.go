@@ -84,8 +84,8 @@ type SetBackendServersRequest struct {
 // SetBackendServersResponse is the response struct for api SetBackendServers
 type SetBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string                            `json:"RequestId" xml:"RequestId"`
 	LoadBalancerId string                            `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	RequestId      string                            `json:"RequestId" xml:"RequestId"`
 	BackendServers BackendServersInSetBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
@@ -94,7 +94,7 @@ func CreateSetBackendServersRequest() (request *SetBackendServersRequest) {
 	request = &SetBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetBackendServers", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetBackendServers", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

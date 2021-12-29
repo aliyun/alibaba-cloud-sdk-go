@@ -99,7 +99,7 @@ func CreateDescribeCACertificatesRequest() (request *DescribeCACertificatesReque
 	request = &DescribeCACertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeCACertificates", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeCACertificates", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

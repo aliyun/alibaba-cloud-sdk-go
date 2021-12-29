@@ -85,8 +85,8 @@ type ModifyLoadBalancerInstanceSpecRequest struct {
 // ModifyLoadBalancerInstanceSpecResponse is the response struct for api ModifyLoadBalancerInstanceSpec
 type ModifyLoadBalancerInstanceSpecResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   int64  `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyLoadBalancerInstanceSpecRequest creates a request to invoke ModifyLoadBalancerInstanceSpec API
@@ -94,7 +94,7 @@ func CreateModifyLoadBalancerInstanceSpecRequest() (request *ModifyLoadBalancerI
 	request = &ModifyLoadBalancerInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

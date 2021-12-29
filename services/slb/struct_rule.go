@@ -21,8 +21,9 @@ type Rule struct {
 	HealthCheckTimeout     int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
 	RuleName               string `json:"RuleName" xml:"RuleName"`
 	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
-	StickySession          string `json:"StickySession" xml:"StickySession"`
 	HealthCheckInterval    int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	ServiceManagedMode     string `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	StickySession          string `json:"StickySession" xml:"StickySession"`
 	ListenerSync           string `json:"ListenerSync" xml:"ListenerSync"`
 	RuleId                 string `json:"RuleId" xml:"RuleId"`
 	HealthCheckDomain      string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`

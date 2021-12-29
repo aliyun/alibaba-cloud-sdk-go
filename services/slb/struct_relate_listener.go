@@ -17,7 +17,7 @@ package slb
 
 // RelateListener is a nested struct in slb response
 type RelateListener struct {
-	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	Port           int    `json:"Port" xml:"Port"`
 	Protocol       string `json:"Protocol" xml:"Protocol"`
+	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
 }

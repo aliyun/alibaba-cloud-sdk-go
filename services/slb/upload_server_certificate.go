@@ -90,21 +90,21 @@ type UploadServerCertificateRequest struct {
 // UploadServerCertificateResponse is the response struct for api UploadServerCertificate
 type UploadServerCertificateResponse struct {
 	*responses.BaseResponse
-	RequestId               string                                           `json:"RequestId" xml:"RequestId"`
-	ServerCertificateId     string                                           `json:"ServerCertificateId" xml:"ServerCertificateId"`
-	Fingerprint             string                                           `json:"Fingerprint" xml:"Fingerprint"`
-	ServerCertificateName   string                                           `json:"ServerCertificateName" xml:"ServerCertificateName"`
-	RegionId                string                                           `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias           string                                           `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	AliCloudCertificateId   string                                           `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
 	AliCloudCertificateName string                                           `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
-	IsAliCloudCertificate   int                                              `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
-	ResourceGroupId         string                                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime              string                                           `json:"CreateTime" xml:"CreateTime"`
 	CreateTimeStamp         int64                                            `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 	ExpireTime              string                                           `json:"ExpireTime" xml:"ExpireTime"`
+	CreateTime              string                                           `json:"CreateTime" xml:"CreateTime"`
+	ServerCertificateId     string                                           `json:"ServerCertificateId" xml:"ServerCertificateId"`
 	ExpireTimeStamp         int64                                            `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	RegionId                string                                           `json:"RegionId" xml:"RegionId"`
+	RequestId               string                                           `json:"RequestId" xml:"RequestId"`
+	Fingerprint             string                                           `json:"Fingerprint" xml:"Fingerprint"`
+	ServerCertificateName   string                                           `json:"ServerCertificateName" xml:"ServerCertificateName"`
 	CommonName              string                                           `json:"CommonName" xml:"CommonName"`
+	ResourceGroupId         string                                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	RegionIdAlias           string                                           `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	AliCloudCertificateId   string                                           `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
+	IsAliCloudCertificate   int                                              `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
 	SubjectAlternativeNames SubjectAlternativeNamesInUploadServerCertificate `json:"SubjectAlternativeNames" xml:"SubjectAlternativeNames"`
 }
 
@@ -113,7 +113,7 @@ func CreateUploadServerCertificateRequest() (request *UploadServerCertificateReq
 	request = &UploadServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "UploadServerCertificate", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "UploadServerCertificate", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

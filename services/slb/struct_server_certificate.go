@@ -21,8 +21,8 @@ type ServerCertificate struct {
 	EncryptionKeyLength     int                                                 `json:"EncryptionKeyLength" xml:"EncryptionKeyLength"`
 	Fingerprint             string                                              `json:"Fingerprint" xml:"Fingerprint"`
 	AliCloudCertificateName string                                              `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
-	RegionIdAlias           string                                              `json:"RegionIdAlias" xml:"RegionIdAlias"`
 	CreateTime              string                                              `json:"CreateTime" xml:"CreateTime"`
+	RegionIdAlias           string                                              `json:"RegionIdAlias" xml:"RegionIdAlias"`
 	BindingType             string                                              `json:"BindingType" xml:"BindingType"`
 	ServerCertificateId     string                                              `json:"ServerCertificateId" xml:"ServerCertificateId"`
 	ExpireTimeStamp         int64                                               `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`

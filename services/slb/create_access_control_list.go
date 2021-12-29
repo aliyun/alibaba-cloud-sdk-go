@@ -85,8 +85,8 @@ type CreateAccessControlListRequest struct {
 // CreateAccessControlListResponse is the response struct for api CreateAccessControlList
 type CreateAccessControlListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	AclId     string `json:"AclId" xml:"AclId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateAccessControlListRequest creates a request to invoke CreateAccessControlList API
@@ -94,7 +94,7 @@ func CreateCreateAccessControlListRequest() (request *CreateAccessControlListReq
 	request = &CreateAccessControlListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateAccessControlList", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateAccessControlList", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

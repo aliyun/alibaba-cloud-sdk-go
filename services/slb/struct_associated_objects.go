@@ -17,6 +17,6 @@ package slb
 
 // AssociatedObjects is a nested struct in slb response
 type AssociatedObjects struct {
-	Rules     RulesInDescribeVServerGroups               `json:"Rules" xml:"Rules"`
 	Listeners ListenersInDescribeMasterSlaveServerGroups `json:"Listeners" xml:"Listeners"`
+	Rules     RulesInDescribeVServerGroups               `json:"Rules" xml:"Rules"`
 }

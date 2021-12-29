@@ -85,8 +85,8 @@ type ModifyVServerGroupBackendServersRequest struct {
 // ModifyVServerGroupBackendServersResponse is the response struct for api ModifyVServerGroupBackendServers
 type ModifyVServerGroupBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string                                           `json:"RequestId" xml:"RequestId"`
 	VServerGroupId string                                           `json:"VServerGroupId" xml:"VServerGroupId"`
+	RequestId      string                                           `json:"RequestId" xml:"RequestId"`
 	BackendServers BackendServersInModifyVServerGroupBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
@@ -95,7 +95,7 @@ func CreateModifyVServerGroupBackendServersRequest() (request *ModifyVServerGrou
 	request = &ModifyVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

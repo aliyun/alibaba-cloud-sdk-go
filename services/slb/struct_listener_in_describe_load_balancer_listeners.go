@@ -17,18 +17,19 @@ package slb
 
 // ListenerInDescribeLoadBalancerListeners is a nested struct in slb response
 type ListenerInDescribeLoadBalancerListeners struct {
-	AclId               string              `json:"AclId" xml:"AclId"`
-	AclStatus           string              `json:"AclStatus" xml:"AclStatus"`
 	AclType             string              `json:"AclType" xml:"AclType"`
-	BackendServerPort   int                 `json:"BackendServerPort" xml:"BackendServerPort"`
-	Bandwidth           int                 `json:"Bandwidth" xml:"Bandwidth"`
-	Description         string              `json:"Description" xml:"Description"`
-	ListenerPort        int                 `json:"ListenerPort" xml:"ListenerPort"`
-	ListenerProtocol    string              `json:"ListenerProtocol" xml:"ListenerProtocol"`
-	LoadBalancerId      string              `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	Scheduler           string              `json:"Scheduler" xml:"Scheduler"`
 	Status              string              `json:"Status" xml:"Status"`
 	VServerGroupId      string              `json:"VServerGroupId" xml:"VServerGroupId"`
+	ListenerProtocol    string              `json:"ListenerProtocol" xml:"ListenerProtocol"`
+	LoadBalancerId      string              `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ListenerPort        int                 `json:"ListenerPort" xml:"ListenerPort"`
+	ServiceManagedMode  string              `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	AclId               string              `json:"AclId" xml:"AclId"`
+	Scheduler           string              `json:"Scheduler" xml:"Scheduler"`
+	Bandwidth           int                 `json:"Bandwidth" xml:"Bandwidth"`
+	Description         string              `json:"Description" xml:"Description"`
+	AclStatus           string              `json:"AclStatus" xml:"AclStatus"`
+	BackendServerPort   int                 `json:"BackendServerPort" xml:"BackendServerPort"`
 	AclIds              []string            `json:"AclIds" xml:"AclIds"`
 	HTTPListenerConfig  HTTPListenerConfig  `json:"HTTPListenerConfig" xml:"HTTPListenerConfig"`
 	HTTPSListenerConfig HTTPSListenerConfig `json:"HTTPSListenerConfig" xml:"HTTPSListenerConfig"`

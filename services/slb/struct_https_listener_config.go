@@ -17,41 +17,41 @@ package slb
 
 // HTTPSListenerConfig is a nested struct in slb response
 type HTTPSListenerConfig struct {
-	CACertificateId                          string `json:"CACertificateId" xml:"CACertificateId"`
-	Cookie                                   string `json:"Cookie" xml:"Cookie"`
-	CookieTimeout                            int    `json:"CookieTimeout" xml:"CookieTimeout"`
-	EnableHttp2                              string `json:"EnableHttp2" xml:"EnableHttp2"`
-	Gzip                                     string `json:"Gzip" xml:"Gzip"`
-	HealthCheck                              string `json:"HealthCheck" xml:"HealthCheck"`
-	HealthCheckConnectPort                   int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	HealthCheckDomain                        string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
-	HealthCheckHttpCode                      string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+	XForwardedForClientCertClientVerify      string `json:"XForwardedFor_ClientCertClientVerify" xml:"XForwardedFor_ClientCertClientVerify"`
 	HealthCheckHttpVersion                   string `json:"HealthCheckHttpVersion" xml:"HealthCheckHttpVersion"`
-	HealthCheckInterval                      int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthCheckMethod                        string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	XForwardedForClientSrcPort               string `json:"XForwardedFor_ClientSrcPort" xml:"XForwardedFor_ClientSrcPort"`
+	Cookie                                   string `json:"Cookie" xml:"Cookie"`
+	Gzip                                     string `json:"Gzip" xml:"Gzip"`
+	EnableHttp2                              string `json:"EnableHttp2" xml:"EnableHttp2"`
+	CACertificateId                          string `json:"CACertificateId" xml:"CACertificateId"`
+	XForwardedForClientCertClientVerifyAlias string `json:"XForwardedFor_ClientCertClientVerifyAlias" xml:"XForwardedFor_ClientCertClientVerifyAlias"`
+	HealthCheckConnectPort                   int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
 	HealthCheckTimeout                       int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
 	HealthCheckType                          string `json:"HealthCheckType" xml:"HealthCheckType"`
-	HealthCheckURI                           string `json:"HealthCheckURI" xml:"HealthCheckURI"`
-	HealthyThreshold                         int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	IdleTimeout                              int    `json:"IdleTimeout" xml:"IdleTimeout"`
-	RequestTimeout                           int    `json:"RequestTimeout" xml:"RequestTimeout"`
-	ServerCertificateId                      string `json:"ServerCertificateId" xml:"ServerCertificateId"`
-	StickySession                            string `json:"StickySession" xml:"StickySession"`
-	StickySessionType                        string `json:"StickySessionType" xml:"StickySessionType"`
-	TLSCipherPolicy                          string `json:"TLSCipherPolicy" xml:"TLSCipherPolicy"`
+	CookieTimeout                            int    `json:"CookieTimeout" xml:"CookieTimeout"`
+	HealthCheckDomain                        string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	UnhealthyThreshold                       int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
-	XForwardedFor                            string `json:"XForwardedFor" xml:"XForwardedFor"`
-	XForwardedForClientCertClientVerify      string `json:"XForwardedFor_ClientCertClientVerify" xml:"XForwardedFor_ClientCertClientVerify"`
-	XForwardedForClientCertClientVerifyAlias string `json:"XForwardedFor_ClientCertClientVerifyAlias" xml:"XForwardedFor_ClientCertClientVerifyAlias"`
-	XForwardedForClientCertFingerprint       string `json:"XForwardedFor_ClientCertFingerprint" xml:"XForwardedFor_ClientCertFingerprint"`
-	XForwardedForClientCertFingerprintAlias  string `json:"XForwardedFor_ClientCertFingerprintAlias" xml:"XForwardedFor_ClientCertFingerprintAlias"`
-	XForwardedForClientCertIssuerDN          string `json:"XForwardedFor_ClientCertIssuerDN" xml:"XForwardedFor_ClientCertIssuerDN"`
-	XForwardedForClientCertIssuerDNAlias     string `json:"XForwardedFor_ClientCertIssuerDNAlias" xml:"XForwardedFor_ClientCertIssuerDNAlias"`
-	XForwardedForClientCertSubjectDN         string `json:"XForwardedFor_ClientCertSubjectDN" xml:"XForwardedFor_ClientCertSubjectDN"`
-	XForwardedForClientCertSubjectDNAlias    string `json:"XForwardedFor_ClientCertSubjectDNAlias" xml:"XForwardedFor_ClientCertSubjectDNAlias"`
-	XForwardedForClientSrcPort               string `json:"XForwardedFor_ClientSrcPort" xml:"XForwardedFor_ClientSrcPort"`
 	XForwardedForSLBID                       string `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
-	XForwardedForSLBIP                       string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
+	XForwardedForClientCertSubjectDN         string `json:"XForwardedFor_ClientCertSubjectDN" xml:"XForwardedFor_ClientCertSubjectDN"`
+	HealthCheckHttpCode                      string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+	XForwardedForClientCertFingerprintAlias  string `json:"XForwardedFor_ClientCertFingerprintAlias" xml:"XForwardedFor_ClientCertFingerprintAlias"`
+	XForwardedForClientCertSubjectDNAlias    string `json:"XForwardedFor_ClientCertSubjectDNAlias" xml:"XForwardedFor_ClientCertSubjectDNAlias"`
+	XForwardedForClientCertIssuerDNAlias     string `json:"XForwardedFor_ClientCertIssuerDNAlias" xml:"XForwardedFor_ClientCertIssuerDNAlias"`
+	XForwardedForClientCertFingerprint       string `json:"XForwardedFor_ClientCertFingerprint" xml:"XForwardedFor_ClientCertFingerprint"`
+	XForwardedFor                            string `json:"XForwardedFor" xml:"XForwardedFor"`
+	RequestTimeout                           int    `json:"RequestTimeout" xml:"RequestTimeout"`
+	IdleTimeout                              int    `json:"IdleTimeout" xml:"IdleTimeout"`
+	ServerCertificateId                      string `json:"ServerCertificateId" xml:"ServerCertificateId"`
+	HealthCheckInterval                      int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
 	XForwardedForSLBPORT                     string `json:"XForwardedFor_SLBPORT" xml:"XForwardedFor_SLBPORT"`
+	HealthCheckURI                           string `json:"HealthCheckURI" xml:"HealthCheckURI"`
+	StickySessionType                        string `json:"StickySessionType" xml:"StickySessionType"`
+	XForwardedForClientCertIssuerDN          string `json:"XForwardedFor_ClientCertIssuerDN" xml:"XForwardedFor_ClientCertIssuerDN"`
+	HealthyThreshold                         int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
 	XForwardedForProto                       string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
+	XForwardedForSLBIP                       string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
+	StickySession                            string `json:"StickySession" xml:"StickySession"`
+	HealthCheckMethod                        string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	TLSCipherPolicy                          string `json:"TLSCipherPolicy" xml:"TLSCipherPolicy"`
+	HealthCheck                              string `json:"HealthCheck" xml:"HealthCheck"`
 }

@@ -91,7 +91,7 @@ func CreateSetLoadBalancerModificationProtectionRequest() (request *SetLoadBalan
 	request = &SetLoadBalancerModificationProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerModificationProtection", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerModificationProtection", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

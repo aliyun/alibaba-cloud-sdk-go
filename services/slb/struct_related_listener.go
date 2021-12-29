@@ -17,8 +17,8 @@ package slb
 
 // RelatedListener is a nested struct in slb response
 type RelatedListener struct {
-	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	ListenerPort   int    `json:"ListenerPort" xml:"ListenerPort"`
 	AclType        string `json:"AclType" xml:"AclType"`
 	Protocol       string `json:"Protocol" xml:"Protocol"`
+	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
 }

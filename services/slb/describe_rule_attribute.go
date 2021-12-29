@@ -83,29 +83,30 @@ type DescribeRuleAttributeRequest struct {
 // DescribeRuleAttributeResponse is the response struct for api DescribeRuleAttribute
 type DescribeRuleAttributeResponse struct {
 	*responses.BaseResponse
-	RuleId                 string `json:"RuleId" xml:"RuleId"`
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	RuleName               string `json:"RuleName" xml:"RuleName"`
-	LoadBalancerId         string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ListenerPort           string `json:"ListenerPort" xml:"ListenerPort"`
-	Domain                 string `json:"Domain" xml:"Domain"`
-	Url                    string `json:"Url" xml:"Url"`
 	VServerGroupId         string `json:"VServerGroupId" xml:"VServerGroupId"`
-	ListenerSync           string `json:"ListenerSync" xml:"ListenerSync"`
-	Scheduler              string `json:"Scheduler" xml:"Scheduler"`
-	StickySession          string `json:"StickySession" xml:"StickySession"`
-	StickySessionType      string `json:"StickySessionType" xml:"StickySessionType"`
-	CookieTimeout          int    `json:"CookieTimeout" xml:"CookieTimeout"`
 	Cookie                 string `json:"Cookie" xml:"Cookie"`
-	HealthCheck            string `json:"HealthCheck" xml:"HealthCheck"`
-	HealthCheckDomain      string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
-	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
-	HealthyThreshold       int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	UnhealthyThreshold     int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
-	HealthCheckTimeout     int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
-	HealthCheckInterval    int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	LoadBalancerId         string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	RuleId                 string `json:"RuleId" xml:"RuleId"`
+	ServiceManagedMode     string `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
 	HealthCheckConnectPort int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	HealthCheckTimeout     int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
+	CookieTimeout          int    `json:"CookieTimeout" xml:"CookieTimeout"`
+	HealthCheckDomain      string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
+	UnhealthyThreshold     int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
 	HealthCheckHttpCode    string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+	Domain                 string `json:"Domain" xml:"Domain"`
+	ListenerPort           string `json:"ListenerPort" xml:"ListenerPort"`
+	Url                    string `json:"Url" xml:"Url"`
+	HealthCheckInterval    int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
+	RuleName               string `json:"RuleName" xml:"RuleName"`
+	StickySessionType      string `json:"StickySessionType" xml:"StickySessionType"`
+	Scheduler              string `json:"Scheduler" xml:"Scheduler"`
+	ListenerSync           string `json:"ListenerSync" xml:"ListenerSync"`
+	HealthyThreshold       int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	StickySession          string `json:"StickySession" xml:"StickySession"`
+	HealthCheck            string `json:"HealthCheck" xml:"HealthCheck"`
 }
 
 // CreateDescribeRuleAttributeRequest creates a request to invoke DescribeRuleAttribute API
@@ -113,7 +114,7 @@ func CreateDescribeRuleAttributeRequest() (request *DescribeRuleAttributeRequest
 	request = &DescribeRuleAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRuleAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRuleAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

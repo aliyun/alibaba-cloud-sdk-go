@@ -83,10 +83,11 @@ type DescribeMasterSlaveServerGroupAttributeRequest struct {
 // DescribeMasterSlaveServerGroupAttributeResponse is the response struct for api DescribeMasterSlaveServerGroupAttribute
 type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	*responses.BaseResponse
+	ServiceManagedMode         string                                                             `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
 	RequestId                  string                                                             `json:"RequestId" xml:"RequestId"`
 	LoadBalancerId             string                                                             `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	MasterSlaveServerGroupId   string                                                             `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
 	MasterSlaveServerGroupName string                                                             `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
+	MasterSlaveServerGroupId   string                                                             `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
 	MasterSlaveBackendServers  MasterSlaveBackendServersInDescribeMasterSlaveServerGroupAttribute `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 
@@ -95,7 +96,7 @@ func CreateDescribeMasterSlaveServerGroupAttributeRequest() (request *DescribeMa
 	request = &DescribeMasterSlaveServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveServerGroupAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveServerGroupAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

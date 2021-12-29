@@ -17,6 +17,6 @@ package slb
 
 // AclEntry is a nested struct in slb response
 type AclEntry struct {
-	AclEntryIP      string `json:"AclEntryIP" xml:"AclEntryIP"`
 	AclEntryComment string `json:"AclEntryComment" xml:"AclEntryComment"`
+	AclEntryIP      string `json:"AclEntryIP" xml:"AclEntryIP"`
 }

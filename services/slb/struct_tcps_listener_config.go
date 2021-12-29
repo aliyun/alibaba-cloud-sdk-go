@@ -17,23 +17,23 @@ package slb
 
 // TCPSListenerConfig is a nested struct in slb response
 type TCPSListenerConfig struct {
-	CACertificateId        string `json:"CACertificateId" xml:"CACertificateId"`
-	Cookie                 string `json:"Cookie" xml:"Cookie"`
-	CookieTimeout          int    `json:"CookieTimeout" xml:"CookieTimeout"`
-	HealthCheck            string `json:"HealthCheck" xml:"HealthCheck"`
-	HealthCheckConnectPort int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	HealthCheckDomain      string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	HealthCheckHttpCode    string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
-	HealthCheckInterval    int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthCheckMethod      string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
-	HealthCheckTimeout     int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
-	HealthCheckType        string `json:"HealthCheckType" xml:"HealthCheckType"`
-	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
-	HealthyThreshold       int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	Cookie                 string `json:"Cookie" xml:"Cookie"`
 	IdleTimeout            int    `json:"IdleTimeout" xml:"IdleTimeout"`
 	ServerCertificateId    string `json:"ServerCertificateId" xml:"ServerCertificateId"`
-	StickySession          string `json:"StickySession" xml:"StickySession"`
+	HealthCheckInterval    int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
+	CACertificateId        string `json:"CACertificateId" xml:"CACertificateId"`
 	StickySessionType      string `json:"StickySessionType" xml:"StickySessionType"`
-	TLSCipherPolicy        string `json:"TLSCipherPolicy" xml:"TLSCipherPolicy"`
+	HealthCheckConnectPort int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	HealthCheckTimeout     int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
+	HealthCheckType        string `json:"HealthCheckType" xml:"HealthCheckType"`
+	HealthyThreshold       int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	CookieTimeout          int    `json:"CookieTimeout" xml:"CookieTimeout"`
+	HealthCheckDomain      string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	UnhealthyThreshold     int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	StickySession          string `json:"StickySession" xml:"StickySession"`
+	HealthCheckMethod      string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	TLSCipherPolicy        string `json:"TLSCipherPolicy" xml:"TLSCipherPolicy"`
+	HealthCheck            string `json:"HealthCheck" xml:"HealthCheck"`
 }

@@ -84,8 +84,8 @@ type RemoveVServerGroupBackendServersRequest struct {
 // RemoveVServerGroupBackendServersResponse is the response struct for api RemoveVServerGroupBackendServers
 type RemoveVServerGroupBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string                                           `json:"RequestId" xml:"RequestId"`
 	VServerGroupId string                                           `json:"VServerGroupId" xml:"VServerGroupId"`
+	RequestId      string                                           `json:"RequestId" xml:"RequestId"`
 	BackendServers BackendServersInRemoveVServerGroupBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
@@ -94,7 +94,7 @@ func CreateRemoveVServerGroupBackendServersRequest() (request *RemoveVServerGrou
 	request = &RemoveVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

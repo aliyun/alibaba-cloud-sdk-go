@@ -84,54 +84,55 @@ type DescribeLoadBalancerAttributeRequest struct {
 // DescribeLoadBalancerAttributeResponse is the response struct for api DescribeLoadBalancerAttribute
 type DescribeLoadBalancerAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                      string                                        `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId                 string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ResourceGroupId                string                                        `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	LoadBalancerName               string                                        `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	LoadBalancerStatus             string                                        `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	RegionId                       string                                        `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias                  string                                        `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	Address                        string                                        `json:"Address" xml:"Address"`
-	AddressType                    string                                        `json:"AddressType" xml:"AddressType"`
 	VpcId                          string                                        `json:"VpcId" xml:"VpcId"`
-	VSwitchId                      string                                        `json:"VSwitchId" xml:"VSwitchId"`
-	NetworkType                    string                                        `json:"NetworkType" xml:"NetworkType"`
-	InternetChargeType             string                                        `json:"InternetChargeType" xml:"InternetChargeType"`
-	AutoReleaseTime                int64                                         `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
-	Bandwidth                      int                                           `json:"Bandwidth" xml:"Bandwidth"`
-	LoadBalancerSpec               string                                        `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
-	CreateTime                     string                                        `json:"CreateTime" xml:"CreateTime"`
 	CreateTimeStamp                int64                                         `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	EndTime                        string                                        `json:"EndTime" xml:"EndTime"`
-	EndTimeStamp                   int64                                         `json:"EndTimeStamp" xml:"EndTimeStamp"`
-	PayType                        string                                        `json:"PayType" xml:"PayType"`
-	MasterZoneId                   string                                        `json:"MasterZoneId" xml:"MasterZoneId"`
-	SlaveZoneId                    string                                        `json:"SlaveZoneId" xml:"SlaveZoneId"`
-	AddressIPVersion               string                                        `json:"AddressIPVersion" xml:"AddressIPVersion"`
-	CloudType                      string                                        `json:"CloudType" xml:"CloudType"`
-	RenewalDuration                int                                           `json:"RenewalDuration" xml:"RenewalDuration"`
-	RenewalStatus                  string                                        `json:"RenewalStatus" xml:"RenewalStatus"`
-	RenewalCycUnit                 string                                        `json:"RenewalCycUnit" xml:"RenewalCycUnit"`
-	HasReservedInfo                string                                        `json:"HasReservedInfo" xml:"HasReservedInfo"`
-	ReservedInfoOrderType          string                                        `json:"ReservedInfoOrderType" xml:"ReservedInfoOrderType"`
-	ReservedInfoInternetChargeType string                                        `json:"ReservedInfoInternetChargeType" xml:"ReservedInfoInternetChargeType"`
 	ReservedInfoBandwidth          string                                        `json:"ReservedInfoBandwidth" xml:"ReservedInfoBandwidth"`
-	ReservedInfoActiveTime         string                                        `json:"ReservedInfoActiveTime" xml:"ReservedInfoActiveTime"`
-	DeleteProtection               string                                        `json:"DeleteProtection" xml:"DeleteProtection"`
-	AssociatedCenId                string                                        `json:"AssociatedCenId" xml:"AssociatedCenId"`
-	AssociatedCenStatus            string                                        `json:"AssociatedCenStatus" xml:"AssociatedCenStatus"`
-	CloudInstanceType              string                                        `json:"CloudInstanceType" xml:"CloudInstanceType"`
 	CloudInstanceId                string                                        `json:"CloudInstanceId" xml:"CloudInstanceId"`
+	HasReservedInfo                string                                        `json:"HasReservedInfo" xml:"HasReservedInfo"`
+	CreateTime                     string                                        `json:"CreateTime" xml:"CreateTime"`
+	LoadBalancerId                 string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	TunnelType                     string                                        `json:"TunnelType" xml:"TunnelType"`
-	CloudInstanceUid               int64                                         `json:"CloudInstanceUid" xml:"CloudInstanceUid"`
+	PayType                        string                                        `json:"PayType" xml:"PayType"`
+	ReservedInfoOrderType          string                                        `json:"ReservedInfoOrderType" xml:"ReservedInfoOrderType"`
+	AddressType                    string                                        `json:"AddressType" xml:"AddressType"`
 	SupportPrivateLink             bool                                          `json:"SupportPrivateLink" xml:"SupportPrivateLink"`
-	BusinessStatus                 string                                        `json:"BusinessStatus" xml:"BusinessStatus"`
-	ModificationProtectionStatus   string                                        `json:"ModificationProtectionStatus" xml:"ModificationProtectionStatus"`
-	ModificationProtectionReason   string                                        `json:"ModificationProtectionReason" xml:"ModificationProtectionReason"`
+	NetworkType                    string                                        `json:"NetworkType" xml:"NetworkType"`
+	ServiceManagedMode             string                                        `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
 	SpecBpsFlag                    bool                                          `json:"SpecBpsFlag" xml:"SpecBpsFlag"`
+	AddressIPVersion               string                                        `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	RenewalCycUnit                 string                                        `json:"RenewalCycUnit" xml:"RenewalCycUnit"`
+	RequestId                      string                                        `json:"RequestId" xml:"RequestId"`
+	Bandwidth                      int                                           `json:"Bandwidth" xml:"Bandwidth"`
+	LoadBalancerName               string                                        `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	Address                        string                                        `json:"Address" xml:"Address"`
+	AssociatedCenStatus            string                                        `json:"AssociatedCenStatus" xml:"AssociatedCenStatus"`
+	SlaveZoneId                    string                                        `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	CloudInstanceType              string                                        `json:"CloudInstanceType" xml:"CloudInstanceType"`
+	EndTimeStamp                   int64                                         `json:"EndTimeStamp" xml:"EndTimeStamp"`
+	ReservedInfoActiveTime         string                                        `json:"ReservedInfoActiveTime" xml:"ReservedInfoActiveTime"`
+	MasterZoneId                   string                                        `json:"MasterZoneId" xml:"MasterZoneId"`
+	ReservedInfoInternetChargeType string                                        `json:"ReservedInfoInternetChargeType" xml:"ReservedInfoInternetChargeType"`
+	LoadBalancerSpec               string                                        `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
 	SpecType                       string                                        `json:"SpecType" xml:"SpecType"`
-	ListenerPorts                  ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
+	CloudType                      string                                        `json:"CloudType" xml:"CloudType"`
+	AutoReleaseTime                int64                                         `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	ModificationProtectionReason   string                                        `json:"ModificationProtectionReason" xml:"ModificationProtectionReason"`
+	RegionId                       string                                        `json:"RegionId" xml:"RegionId"`
+	ModificationProtectionStatus   string                                        `json:"ModificationProtectionStatus" xml:"ModificationProtectionStatus"`
+	EndTime                        string                                        `json:"EndTime" xml:"EndTime"`
+	VSwitchId                      string                                        `json:"VSwitchId" xml:"VSwitchId"`
+	LoadBalancerStatus             string                                        `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	ResourceGroupId                string                                        `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	InternetChargeType             string                                        `json:"InternetChargeType" xml:"InternetChargeType"`
+	BusinessStatus                 string                                        `json:"BusinessStatus" xml:"BusinessStatus"`
+	AssociatedCenId                string                                        `json:"AssociatedCenId" xml:"AssociatedCenId"`
+	DeleteProtection               string                                        `json:"DeleteProtection" xml:"DeleteProtection"`
+	RegionIdAlias                  string                                        `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	RenewalStatus                  string                                        `json:"RenewalStatus" xml:"RenewalStatus"`
+	RenewalDuration                int                                           `json:"RenewalDuration" xml:"RenewalDuration"`
+	CloudInstanceUid               int64                                         `json:"CloudInstanceUid" xml:"CloudInstanceUid"`
 	Labels                         Labels                                        `json:"Labels" xml:"Labels"`
+	ListenerPorts                  ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
 	ListenerPortsAndProtocal       ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
 	ListenerPortsAndProtocol       ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`
 	BackendServers                 BackendServersInDescribeLoadBalancerAttribute `json:"BackendServers" xml:"BackendServers"`
@@ -142,7 +143,7 @@ func CreateDescribeLoadBalancerAttributeRequest() (request *DescribeLoadBalancer
 	request = &DescribeLoadBalancerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

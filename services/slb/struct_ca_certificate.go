@@ -17,18 +17,18 @@ package slb
 
 // CACertificate is a nested struct in slb response
 type CACertificate struct {
-	RegionId            string                       `json:"RegionId" xml:"RegionId"`
+	CreateTimeStamp     int64                        `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	StandardType        string                       `json:"StandardType" xml:"StandardType"`
+	ExpireTime          string                       `json:"ExpireTime" xml:"ExpireTime"`
+	CreateTime          string                       `json:"CreateTime" xml:"CreateTime"`
+	EncryptionKeyLength int                          `json:"EncryptionKeyLength" xml:"EncryptionKeyLength"`
+	ExpireTimeStamp     int64                        `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
 	CACertificateId     string                       `json:"CACertificateId" xml:"CACertificateId"`
-	CACertificateName   string                       `json:"CACertificateName" xml:"CACertificateName"`
+	RegionId            string                       `json:"RegionId" xml:"RegionId"`
+	EncryptionAlgorithm string                       `json:"EncryptionAlgorithm" xml:"EncryptionAlgorithm"`
 	Fingerprint         string                       `json:"Fingerprint" xml:"Fingerprint"`
 	ResourceGroupId     string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime          string                       `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp     int64                        `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	ExpireTime          string                       `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimeStamp     int64                        `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
 	CommonName          string                       `json:"CommonName" xml:"CommonName"`
-	EncryptionAlgorithm string                       `json:"EncryptionAlgorithm" xml:"EncryptionAlgorithm"`
-	EncryptionKeyLength int                          `json:"EncryptionKeyLength" xml:"EncryptionKeyLength"`
-	StandardType        string                       `json:"StandardType" xml:"StandardType"`
+	CACertificateName   string                       `json:"CACertificateName" xml:"CACertificateName"`
 	Tags                TagsInDescribeCACertificates `json:"Tags" xml:"Tags"`
 }

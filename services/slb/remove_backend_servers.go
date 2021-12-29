@@ -84,8 +84,8 @@ type RemoveBackendServersRequest struct {
 // RemoveBackendServersResponse is the response struct for api RemoveBackendServers
 type RemoveBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string                               `json:"RequestId" xml:"RequestId"`
 	LoadBalancerId string                               `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	RequestId      string                               `json:"RequestId" xml:"RequestId"`
 	BackendServers BackendServersInRemoveBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
@@ -94,7 +94,7 @@ func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) 
 	request = &RemoveBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveBackendServers", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveBackendServers", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,22 +17,23 @@ package slb
 
 // TCPListenerConfig is a nested struct in slb response
 type TCPListenerConfig struct {
-	ConnectionDrain           string      `json:"ConnectionDrain" xml:"ConnectionDrain"`
-	ConnectionDrainTimeout    int         `json:"ConnectionDrainTimeout" xml:"ConnectionDrainTimeout"`
-	EstablishedTimeout        int         `json:"EstablishedTimeout" xml:"EstablishedTimeout"`
-	HealthCheck               string      `json:"HealthCheck" xml:"HealthCheck"`
-	HealthCheckConnectPort    int         `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	HealthCheckConnectTimeout int         `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
-	HealthCheckDomain         string      `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	HealthCheckHttpCode       string      `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
-	HealthCheckInterval       int         `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthCheckMethod         string      `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
-	HealthCheckType           string      `json:"HealthCheckType" xml:"HealthCheckType"`
-	HealthCheckURI            string      `json:"HealthCheckURI" xml:"HealthCheckURI"`
-	HealthyThreshold          int         `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	MasterSlaveServerGroupId  string      `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	ConnectionDrainTimeout    int         `json:"ConnectionDrainTimeout" xml:"ConnectionDrainTimeout"`
 	PersistenceTimeout        int         `json:"PersistenceTimeout" xml:"PersistenceTimeout"`
-	UnhealthyThreshold        int         `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	HealthCheckInterval       int         `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	HealthCheckURI            string      `json:"HealthCheckURI" xml:"HealthCheckURI"`
 	HealthCheckSwitch         string      `json:"HealthCheckSwitch" xml:"HealthCheckSwitch"`
+	FullNatEnabled            string      `json:"FullNatEnabled" xml:"FullNatEnabled"`
+	HealthCheckConnectPort    int         `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	EstablishedTimeout        int         `json:"EstablishedTimeout" xml:"EstablishedTimeout"`
+	HealthCheckType           string      `json:"HealthCheckType" xml:"HealthCheckType"`
+	HealthCheckConnectTimeout int         `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
+	MasterSlaveServerGroupId  string      `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	HealthyThreshold          int         `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	HealthCheckDomain         string      `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
+	UnhealthyThreshold        int         `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	ConnectionDrain           string      `json:"ConnectionDrain" xml:"ConnectionDrain"`
+	HealthCheckMethod         string      `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	HealthCheck               string      `json:"HealthCheck" xml:"HealthCheck"`
 	PortRanges                []PortRange `json:"PortRanges" xml:"PortRanges"`
 }

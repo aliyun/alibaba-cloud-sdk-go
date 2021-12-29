@@ -74,6 +74,7 @@ type CreateLoadBalancerUDPListenerRequest struct {
 	ResourceOwnerId           requests.Integer                          `position:"Query" name:"ResourceOwnerId"`
 	HealthCheckURI            string                                    `position:"Query" name:"HealthCheckURI"`
 	AclStatus                 string                                    `position:"Query" name:"AclStatus"`
+	FullNatEnabled            requests.Boolean                          `position:"Query" name:"FullNatEnabled"`
 	AclType                   string                                    `position:"Query" name:"AclType"`
 	FailoverStrategy          string                                    `position:"Query" name:"FailoverStrategy"`
 	PersistenceTimeout        requests.Integer                          `position:"Query" name:"PersistenceTimeout"`
@@ -133,7 +134,7 @@ func CreateCreateLoadBalancerUDPListenerRequest() (request *CreateLoadBalancerUD
 	request = &CreateLoadBalancerUDPListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerUDPListener", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerUDPListener", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateDeleteCACertificateRequest() (request *DeleteCACertificateRequest) {
 	request = &DeleteCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteCACertificate", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteCACertificate", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

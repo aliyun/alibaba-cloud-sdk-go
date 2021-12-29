@@ -101,7 +101,7 @@ func CreateSetDomainExtensionAttributeRequest() (request *SetDomainExtensionAttr
 	request = &SetDomainExtensionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetDomainExtensionAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetDomainExtensionAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

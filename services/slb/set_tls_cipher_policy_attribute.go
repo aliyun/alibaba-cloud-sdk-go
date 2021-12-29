@@ -85,8 +85,8 @@ type SetTLSCipherPolicyAttributeRequest struct {
 // SetTLSCipherPolicyAttributeResponse is the response struct for api SetTLSCipherPolicyAttribute
 type SetTLSCipherPolicyAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetTLSCipherPolicyAttributeRequest creates a request to invoke SetTLSCipherPolicyAttribute API
@@ -94,7 +94,7 @@ func CreateSetTLSCipherPolicyAttributeRequest() (request *SetTLSCipherPolicyAttr
 	request = &SetTLSCipherPolicyAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetTLSCipherPolicyAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetTLSCipherPolicyAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

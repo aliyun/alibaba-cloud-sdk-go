@@ -94,7 +94,7 @@ func CreateDescribeDomainExtensionsRequest() (request *DescribeDomainExtensionsR
 	request = &DescribeDomainExtensionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeDomainExtensions", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeDomainExtensions", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

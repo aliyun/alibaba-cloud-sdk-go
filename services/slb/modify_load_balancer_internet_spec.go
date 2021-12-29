@@ -87,8 +87,8 @@ type ModifyLoadBalancerInternetSpecRequest struct {
 // ModifyLoadBalancerInternetSpecResponse is the response struct for api ModifyLoadBalancerInternetSpec
 type ModifyLoadBalancerInternetSpecResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   int64  `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyLoadBalancerInternetSpecRequest creates a request to invoke ModifyLoadBalancerInternetSpec API
@@ -96,7 +96,7 @@ func CreateModifyLoadBalancerInternetSpecRequest() (request *ModifyLoadBalancerI
 	request = &ModifyLoadBalancerInternetSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

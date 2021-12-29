@@ -17,7 +17,9 @@ package slb
 
 // VServerGroup is a nested struct in slb response
 type VServerGroup struct {
-	VServerGroupId    string            `json:"VServerGroupId" xml:"VServerGroupId"`
-	VServerGroupName  string            `json:"VServerGroupName" xml:"VServerGroupName"`
-	AssociatedObjects AssociatedObjects `json:"AssociatedObjects" xml:"AssociatedObjects"`
+	VServerGroupId     string            `json:"VServerGroupId" xml:"VServerGroupId"`
+	ServiceManagedMode string            `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	VServerGroupName   string            `json:"VServerGroupName" xml:"VServerGroupName"`
+	ServerCount        int64             `json:"ServerCount" xml:"ServerCount"`
+	AssociatedObjects  AssociatedObjects `json:"AssociatedObjects" xml:"AssociatedObjects"`
 }

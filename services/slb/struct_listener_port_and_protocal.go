@@ -17,6 +17,6 @@ package slb
 
 // ListenerPortAndProtocal is a nested struct in slb response
 type ListenerPortAndProtocal struct {
-	ListenerPort     int    `json:"ListenerPort" xml:"ListenerPort"`
 	ListenerProtocal string `json:"ListenerProtocal" xml:"ListenerProtocal"`
+	ListenerPort     int    `json:"ListenerPort" xml:"ListenerPort"`
 }

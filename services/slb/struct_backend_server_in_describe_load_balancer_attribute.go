@@ -17,10 +17,10 @@ package slb
 
 // BackendServerInDescribeLoadBalancerAttribute is a nested struct in slb response
 type BackendServerInDescribeLoadBalancerAttribute struct {
-	ServerId    string `json:"ServerId" xml:"ServerId"`
-	Weight      int    `json:"Weight" xml:"Weight"`
 	Type        string `json:"Type" xml:"Type"`
-	ServerIp    string `json:"ServerIp" xml:"ServerIp"`
 	VpcId       string `json:"VpcId" xml:"VpcId"`
+	Weight      int    `json:"Weight" xml:"Weight"`
 	Description string `json:"Description" xml:"Description"`
+	ServerIp    string `json:"ServerIp" xml:"ServerIp"`
+	ServerId    string `json:"ServerId" xml:"ServerId"`
 }

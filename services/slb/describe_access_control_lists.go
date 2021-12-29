@@ -94,11 +94,11 @@ type DescribeAccessControlListsTag struct {
 // DescribeAccessControlListsResponse is the response struct for api DescribeAccessControlLists
 type DescribeAccessControlListsResponse struct {
 	*responses.BaseResponse
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	Count      int    `json:"Count" xml:"Count"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	Acls       Acls   `json:"Acls" xml:"Acls"`
 }
 
@@ -107,7 +107,7 @@ func CreateDescribeAccessControlListsRequest() (request *DescribeAccessControlLi
 	request = &DescribeAccessControlListsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeAccessControlLists", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeAccessControlLists", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -74,6 +74,7 @@ type CreateLoadBalancerTCPListenerRequest struct {
 	ResourceOwnerId                requests.Integer                          `position:"Query" name:"ResourceOwnerId"`
 	HealthCheckURI                 string                                    `position:"Query" name:"HealthCheckURI"`
 	AclStatus                      string                                    `position:"Query" name:"AclStatus"`
+	FullNatEnabled                 requests.Boolean                          `position:"Query" name:"FullNatEnabled"`
 	HealthCheckTcpFastCloseEnabled requests.Boolean                          `position:"Query" name:"HealthCheckTcpFastCloseEnabled"`
 	AclType                        string                                    `position:"Query" name:"AclType"`
 	EstablishedTimeout             requests.Integer                          `position:"Query" name:"EstablishedTimeout"`
@@ -132,7 +133,7 @@ func CreateCreateLoadBalancerTCPListenerRequest() (request *CreateLoadBalancerTC
 	request = &CreateLoadBalancerTCPListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerTCPListener", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerTCPListener", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

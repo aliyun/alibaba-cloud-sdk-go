@@ -85,16 +85,16 @@ type UploadCACertificateRequest struct {
 // UploadCACertificateResponse is the response struct for api UploadCACertificate
 type UploadCACertificateResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
-	CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
-	Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
-	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
 	CreateTimeStamp   int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ExpireTime        string `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimeStamp   int64  `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
+	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
 	CommonName        string `json:"CommonName" xml:"CommonName"`
+	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
+	ExpireTimeStamp   int64  `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
 }
 
 // CreateUploadCACertificateRequest creates a request to invoke UploadCACertificate API
@@ -102,7 +102,7 @@ func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
 	request = &UploadCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "UploadCACertificate", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "UploadCACertificate", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

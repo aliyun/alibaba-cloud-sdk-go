@@ -17,9 +17,10 @@ package slb
 
 // Acl is a nested struct in slb response
 type Acl struct {
-	AclId            string                           `json:"AclId" xml:"AclId"`
-	AclName          string                           `json:"AclName" xml:"AclName"`
-	AddressIPVersion string                           `json:"AddressIPVersion" xml:"AddressIPVersion"`
-	ResourceGroupId  string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Tags             TagsInDescribeAccessControlLists `json:"Tags" xml:"Tags"`
+	ServiceManagedMode string                           `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	AclId              string                           `json:"AclId" xml:"AclId"`
+	AddressIPVersion   string                           `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	AclName            string                           `json:"AclName" xml:"AclName"`
+	ResourceGroupId    string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Tags               TagsInDescribeAccessControlLists `json:"Tags" xml:"Tags"`
 }

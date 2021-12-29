@@ -17,7 +17,7 @@ package slb
 
 // TagSet is a nested struct in slb response
 type TagSet struct {
-	TagKey        string `json:"TagKey" xml:"TagKey"`
 	TagValue      string `json:"TagValue" xml:"TagValue"`
 	InstanceCount int    `json:"InstanceCount" xml:"InstanceCount"`
+	TagKey        string `json:"TagKey" xml:"TagKey"`
 }

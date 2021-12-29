@@ -92,7 +92,7 @@ func CreateSetServerCertificateNameRequest() (request *SetServerCertificateNameR
 	request = &SetServerCertificateNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetServerCertificateName", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetServerCertificateName", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

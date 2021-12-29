@@ -20,8 +20,8 @@ type MasterSlaveBackendServer struct {
 	Port        int    `json:"Port" xml:"Port"`
 	ServerIp    string `json:"ServerIp" xml:"ServerIp"`
 	ServerId    string `json:"ServerId" xml:"ServerId"`
-	ServerType  string `json:"ServerType" xml:"ServerType"`
 	VpcId       string `json:"VpcId" xml:"VpcId"`
+	ServerType  string `json:"ServerType" xml:"ServerType"`
 	Weight      int    `json:"Weight" xml:"Weight"`
 	Description string `json:"Description" xml:"Description"`
 	Type        string `json:"Type" xml:"Type"`

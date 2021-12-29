@@ -17,11 +17,12 @@ package slb
 
 // TLSCipherPolicy is a nested struct in slb response
 type TLSCipherPolicy struct {
-	CreateTime      int64            `json:"CreateTime" xml:"CreateTime"`
-	InstanceId      string           `json:"InstanceId" xml:"InstanceId"`
-	Name            string           `json:"Name" xml:"Name"`
-	Status          string           `json:"Status" xml:"Status"`
-	TLSVersions     []string         `json:"TLSVersions" xml:"TLSVersions"`
-	Ciphers         []string         `json:"Ciphers" xml:"Ciphers"`
-	RelateListeners []RelateListener `json:"RelateListeners" xml:"RelateListeners"`
+	ServiceManagedMode string           `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	Status             string           `json:"Status" xml:"Status"`
+	InstanceId         string           `json:"InstanceId" xml:"InstanceId"`
+	Name               string           `json:"Name" xml:"Name"`
+	CreateTime         int64            `json:"CreateTime" xml:"CreateTime"`
+	TLSVersions        []string         `json:"TLSVersions" xml:"TLSVersions"`
+	Ciphers            []string         `json:"Ciphers" xml:"Ciphers"`
+	RelateListeners    []RelateListener `json:"RelateListeners" xml:"RelateListeners"`
 }

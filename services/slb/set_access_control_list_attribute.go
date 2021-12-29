@@ -84,8 +84,8 @@ type SetAccessControlListAttributeRequest struct {
 // SetAccessControlListAttributeResponse is the response struct for api SetAccessControlListAttribute
 type SetAccessControlListAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	AclId     string `json:"AclId" xml:"AclId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetAccessControlListAttributeRequest creates a request to invoke SetAccessControlListAttribute API
@@ -93,7 +93,7 @@ func CreateSetAccessControlListAttributeRequest() (request *SetAccessControlList
 	request = &SetAccessControlListAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetAccessControlListAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetAccessControlListAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

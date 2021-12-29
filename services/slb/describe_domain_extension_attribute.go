@@ -83,12 +83,12 @@ type DescribeDomainExtensionAttributeRequest struct {
 // DescribeDomainExtensionAttributeResponse is the response struct for api DescribeDomainExtensionAttribute
 type DescribeDomainExtensionAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId           string                                               `json:"RequestId" xml:"RequestId"`
-	DomainExtensionId   string                                               `json:"DomainExtensionId" xml:"DomainExtensionId"`
 	Domain              string                                               `json:"Domain" xml:"Domain"`
-	ServerCertificateId string                                               `json:"ServerCertificateId" xml:"ServerCertificateId"`
+	RequestId           string                                               `json:"RequestId" xml:"RequestId"`
 	LoadBalancerId      string                                               `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	ListenerPort        int                                                  `json:"ListenerPort" xml:"ListenerPort"`
+	ServerCertificateId string                                               `json:"ServerCertificateId" xml:"ServerCertificateId"`
+	DomainExtensionId   string                                               `json:"DomainExtensionId" xml:"DomainExtensionId"`
 	Certificates        CertificatesInDescribeDomainExtensionAttribute       `json:"Certificates" xml:"Certificates"`
 	ServerCertificates  ServerCertificatesInDescribeDomainExtensionAttribute `json:"ServerCertificates" xml:"ServerCertificates"`
 }
@@ -98,7 +98,7 @@ func CreateDescribeDomainExtensionAttributeRequest() (request *DescribeDomainExt
 	request = &DescribeDomainExtensionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeDomainExtensionAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeDomainExtensionAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

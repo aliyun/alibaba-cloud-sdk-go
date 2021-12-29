@@ -17,7 +17,7 @@ package slb
 
 // AvailableResource is a nested struct in slb response
 type AvailableResource struct {
-	MasterZoneId     string           `json:"MasterZoneId" xml:"MasterZoneId"`
 	SlaveZoneId      string           `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	MasterZoneId     string           `json:"MasterZoneId" xml:"MasterZoneId"`
 	SupportResources SupportResources `json:"SupportResources" xml:"SupportResources"`
 }

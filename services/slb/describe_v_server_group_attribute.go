@@ -83,11 +83,12 @@ type DescribeVServerGroupAttributeRequest struct {
 // DescribeVServerGroupAttributeResponse is the response struct for api DescribeVServerGroupAttribute
 type DescribeVServerGroupAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string                                        `json:"RequestId" xml:"RequestId"`
-	VServerGroupId   string                                        `json:"VServerGroupId" xml:"VServerGroupId"`
-	VServerGroupName string                                        `json:"VServerGroupName" xml:"VServerGroupName"`
-	LoadBalancerId   string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	BackendServers   BackendServersInDescribeVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
+	ServiceManagedMode string                                        `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	VServerGroupId     string                                        `json:"VServerGroupId" xml:"VServerGroupId"`
+	VServerGroupName   string                                        `json:"VServerGroupName" xml:"VServerGroupName"`
+	RequestId          string                                        `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId     string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	BackendServers     BackendServersInDescribeVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
 // CreateDescribeVServerGroupAttributeRequest creates a request to invoke DescribeVServerGroupAttribute API
@@ -95,7 +96,7 @@ func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroup
 	request = &DescribeVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeVServerGroupAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeVServerGroupAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

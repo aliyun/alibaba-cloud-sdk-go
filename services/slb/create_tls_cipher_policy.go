@@ -84,8 +84,8 @@ type CreateTLSCipherPolicyRequest struct {
 // CreateTLSCipherPolicyResponse is the response struct for api CreateTLSCipherPolicy
 type CreateTLSCipherPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	TLSCipherPolicyId string `json:"TLSCipherPolicyId" xml:"TLSCipherPolicyId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateTLSCipherPolicyRequest creates a request to invoke CreateTLSCipherPolicy API
@@ -93,7 +93,7 @@ func CreateCreateTLSCipherPolicyRequest() (request *CreateTLSCipherPolicyRequest
 	request = &CreateTLSCipherPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateTLSCipherPolicy", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateTLSCipherPolicy", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

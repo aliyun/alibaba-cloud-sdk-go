@@ -85,9 +85,9 @@ type SetVServerGroupAttributeRequest struct {
 // SetVServerGroupAttributeResponse is the response struct for api SetVServerGroupAttribute
 type SetVServerGroupAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string                                   `json:"RequestId" xml:"RequestId"`
 	VServerGroupId   string                                   `json:"VServerGroupId" xml:"VServerGroupId"`
 	VServerGroupName string                                   `json:"VServerGroupName" xml:"VServerGroupName"`
+	RequestId        string                                   `json:"RequestId" xml:"RequestId"`
 	BackendServers   BackendServersInSetVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
@@ -96,7 +96,7 @@ func CreateSetVServerGroupAttributeRequest() (request *SetVServerGroupAttributeR
 	request = &SetVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetVServerGroupAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetVServerGroupAttribute", "Slb", "openAPI")
 	request.Method = requests.POST
 	return
 }
