@@ -71,21 +71,22 @@ func (client *Client) UpdateSmarttagTemplateWithCallback(request *UpdateSmarttag
 // UpdateSmarttagTemplateRequest is the request struct for api UpdateSmarttagTemplate
 type UpdateSmarttagTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	KnowledgeConfig      string           `position:"Query" name:"KnowledgeConfig"`
-	Industry             string           `position:"Query" name:"Industry"`
-	LabelVersion         string           `position:"Query" name:"LabelVersion"`
-	Scene                string           `position:"Query" name:"Scene"`
-	TemplateName         string           `position:"Query" name:"TemplateName"`
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
-	FaceCategoryIds      string           `position:"Query" name:"FaceCategoryIds"`
-	KeywordConfig        string           `position:"Query" name:"KeywordConfig"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TemplateId           string           `position:"Query" name:"TemplateId"`
-	AnalyseTypes         string           `position:"Query" name:"AnalyseTypes"`
-	LabelType            string           `position:"Query" name:"LabelType"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KnowledgeConfig        string           `position:"Query" name:"KnowledgeConfig"`
+	Industry               string           `position:"Query" name:"Industry"`
+	LabelVersion           string           `position:"Query" name:"LabelVersion"`
+	Scene                  string           `position:"Query" name:"Scene"`
+	FaceCustomParamsConfig string           `position:"Query" name:"FaceCustomParamsConfig"`
+	TemplateName           string           `position:"Query" name:"TemplateName"`
+	IsDefault              requests.Boolean `position:"Query" name:"IsDefault"`
+	FaceCategoryIds        string           `position:"Query" name:"FaceCategoryIds"`
+	KeywordConfig          string           `position:"Query" name:"KeywordConfig"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateId             string           `position:"Query" name:"TemplateId"`
+	AnalyseTypes           string           `position:"Query" name:"AnalyseTypes"`
+	LabelType              string           `position:"Query" name:"LabelType"`
 }
 
 // UpdateSmarttagTemplateResponse is the response struct for api UpdateSmarttagTemplate

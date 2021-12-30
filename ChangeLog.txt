@@ -1,3 +1,7 @@
+2021-12-30 Version: v1.61.1421
+- Generated 2014-06-18 for `Mts`.
+- Add faceCustomParamsConfig params for AddSmarttagTemplate,UpdateSmarttagTemplate,QuerySmarttagTemplateList interface.
+
 2021-12-30 Version: v1.61.1420
 - Generated 2019-04-30 for `schedulerx2`.
 - Supported Get Worker List.
