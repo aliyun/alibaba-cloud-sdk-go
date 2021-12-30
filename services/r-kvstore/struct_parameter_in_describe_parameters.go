@@ -17,10 +17,10 @@ package r_kvstore
 
 // ParameterInDescribeParameters is a nested struct in r_kvstore response
 type ParameterInDescribeParameters struct {
+	CheckingCode         string `json:"CheckingCode" xml:"CheckingCode"`
 	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
 	ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
-	ModifiableStatus     string `json:"ModifiableStatus" xml:"ModifiableStatus"`
 	ForceRestart         string `json:"ForceRestart" xml:"ForceRestart"`
-	CheckingCode         string `json:"CheckingCode" xml:"CheckingCode"`
 	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
+	ModifiableStatus     string `json:"ModifiableStatus" xml:"ModifiableStatus"`
 }

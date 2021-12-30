@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SwitchNetwork invokes the r_kvstore.SwitchNetwork API synchronously
-func (client *Client) SwitchNetwork(request *SwitchNetworkRequest) (response *SwitchNetworkResponse, err error) {
-	response = CreateSwitchNetworkResponse()
+// ModifyInstanceTDE invokes the r_kvstore.ModifyInstanceTDE API synchronously
+func (client *Client) ModifyInstanceTDE(request *ModifyInstanceTDERequest) (response *ModifyInstanceTDEResponse, err error) {
+	response = CreateModifyInstanceTDEResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SwitchNetworkWithChan invokes the r_kvstore.SwitchNetwork API asynchronously
-func (client *Client) SwitchNetworkWithChan(request *SwitchNetworkRequest) (<-chan *SwitchNetworkResponse, <-chan error) {
-	responseChan := make(chan *SwitchNetworkResponse, 1)
+// ModifyInstanceTDEWithChan invokes the r_kvstore.ModifyInstanceTDE API asynchronously
+func (client *Client) ModifyInstanceTDEWithChan(request *ModifyInstanceTDERequest) (<-chan *ModifyInstanceTDEResponse, <-chan error) {
+	responseChan := make(chan *ModifyInstanceTDEResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SwitchNetwork(request)
+		response, err := client.ModifyInstanceTDE(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SwitchNetworkWithChan(request *SwitchNetworkRequest) (<-ch
 	return responseChan, errChan
 }
 
-// SwitchNetworkWithCallback invokes the r_kvstore.SwitchNetwork API asynchronously
-func (client *Client) SwitchNetworkWithCallback(request *SwitchNetworkRequest, callback func(response *SwitchNetworkResponse, err error)) <-chan int {
+// ModifyInstanceTDEWithCallback invokes the r_kvstore.ModifyInstanceTDE API asynchronously
+func (client *Client) ModifyInstanceTDEWithCallback(request *ModifyInstanceTDERequest, callback func(response *ModifyInstanceTDEResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SwitchNetworkResponse
+		var response *ModifyInstanceTDEResponse
 		var err error
 		defer close(result)
-		response, err = client.SwitchNetwork(request)
+		response, err = client.ModifyInstanceTDE(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,42 +68,42 @@ func (client *Client) SwitchNetworkWithCallback(request *SwitchNetworkRequest, c
 	return result
 }
 
-// SwitchNetworkRequest is the request struct for api SwitchNetwork
-type SwitchNetworkRequest struct {
+// ModifyInstanceTDERequest is the request struct for api ModifyInstanceTDE
+type ModifyInstanceTDERequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ClassicExpiredDays   string           `position:"Query" name:"ClassicExpiredDays"`
+	Product              string           `position:"Query" name:"Product"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EncryptionKey        string           `position:"Query" name:"EncryptionKey"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	EncryptionName       string           `position:"Query" name:"EncryptionName"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	TargetNetworkType    string           `position:"Query" name:"TargetNetworkType"`
-	RetainClassic        string           `position:"Query" name:"RetainClassic"`
-	VpcId                string           `position:"Query" name:"VpcId"`
+	RoleArn              string           `position:"Query" name:"RoleArn"`
+	Category             string           `position:"Query" name:"Category"`
+	TDEStatus            string           `position:"Query" name:"TDEStatus"`
 }
 
-// SwitchNetworkResponse is the response struct for api SwitchNetwork
-type SwitchNetworkResponse struct {
+// ModifyInstanceTDEResponse is the response struct for api ModifyInstanceTDE
+type ModifyInstanceTDEResponse struct {
 	*responses.BaseResponse
-	TaskId    string `json:"TaskId" xml:"TaskId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateSwitchNetworkRequest creates a request to invoke SwitchNetwork API
-func CreateSwitchNetworkRequest() (request *SwitchNetworkRequest) {
-	request = &SwitchNetworkRequest{
+// CreateModifyInstanceTDERequest creates a request to invoke ModifyInstanceTDE API
+func CreateModifyInstanceTDERequest() (request *ModifyInstanceTDERequest) {
+	request = &ModifyInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "SwitchNetwork", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceTDE", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSwitchNetworkResponse creates a response to parse from SwitchNetwork response
-func CreateSwitchNetworkResponse() (response *SwitchNetworkResponse) {
-	response = &SwitchNetworkResponse{
+// CreateModifyInstanceTDEResponse creates a response to parse from ModifyInstanceTDE response
+func CreateModifyInstanceTDEResponse() (response *ModifyInstanceTDEResponse) {
+	response = &ModifyInstanceTDEResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -17,9 +17,9 @@ package r_kvstore
 
 // KVStoreRegion is a nested struct in r_kvstore response
 type KVStoreRegion struct {
+	RegionEndpoint string     `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	LocalName      string     `json:"LocalName" xml:"LocalName"`
 	RegionId       string     `json:"RegionId" xml:"RegionId"`
 	ZoneIds        string     `json:"ZoneIds" xml:"ZoneIds"`
-	LocalName      string     `json:"LocalName" xml:"LocalName"`
-	RegionEndpoint string     `json:"RegionEndpoint" xml:"RegionEndpoint"`
 	ZoneIdList     ZoneIdList `json:"ZoneIdList" xml:"ZoneIdList"`
 }

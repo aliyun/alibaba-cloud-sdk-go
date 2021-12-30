@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SwitchNetwork invokes the r_kvstore.SwitchNetwork API synchronously
-func (client *Client) SwitchNetwork(request *SwitchNetworkRequest) (response *SwitchNetworkResponse, err error) {
-	response = CreateSwitchNetworkResponse()
+// DescribeEncryptionKeyList invokes the r_kvstore.DescribeEncryptionKeyList API synchronously
+func (client *Client) DescribeEncryptionKeyList(request *DescribeEncryptionKeyListRequest) (response *DescribeEncryptionKeyListResponse, err error) {
+	response = CreateDescribeEncryptionKeyListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SwitchNetworkWithChan invokes the r_kvstore.SwitchNetwork API asynchronously
-func (client *Client) SwitchNetworkWithChan(request *SwitchNetworkRequest) (<-chan *SwitchNetworkResponse, <-chan error) {
-	responseChan := make(chan *SwitchNetworkResponse, 1)
+// DescribeEncryptionKeyListWithChan invokes the r_kvstore.DescribeEncryptionKeyList API asynchronously
+func (client *Client) DescribeEncryptionKeyListWithChan(request *DescribeEncryptionKeyListRequest) (<-chan *DescribeEncryptionKeyListResponse, <-chan error) {
+	responseChan := make(chan *DescribeEncryptionKeyListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SwitchNetwork(request)
+		response, err := client.DescribeEncryptionKeyList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SwitchNetworkWithChan(request *SwitchNetworkRequest) (<-ch
 	return responseChan, errChan
 }
 
-// SwitchNetworkWithCallback invokes the r_kvstore.SwitchNetwork API asynchronously
-func (client *Client) SwitchNetworkWithCallback(request *SwitchNetworkRequest, callback func(response *SwitchNetworkResponse, err error)) <-chan int {
+// DescribeEncryptionKeyListWithCallback invokes the r_kvstore.DescribeEncryptionKeyList API asynchronously
+func (client *Client) DescribeEncryptionKeyListWithCallback(request *DescribeEncryptionKeyListRequest, callback func(response *DescribeEncryptionKeyListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SwitchNetworkResponse
+		var response *DescribeEncryptionKeyListResponse
 		var err error
 		defer close(result)
-		response, err = client.SwitchNetwork(request)
+		response, err = client.DescribeEncryptionKeyList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,42 +68,37 @@ func (client *Client) SwitchNetworkWithCallback(request *SwitchNetworkRequest, c
 	return result
 }
 
-// SwitchNetworkRequest is the request struct for api SwitchNetwork
-type SwitchNetworkRequest struct {
+// DescribeEncryptionKeyListRequest is the request struct for api DescribeEncryptionKeyList
+type DescribeEncryptionKeyListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ClassicExpiredDays   string           `position:"Query" name:"ClassicExpiredDays"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	TargetNetworkType    string           `position:"Query" name:"TargetNetworkType"`
-	RetainClassic        string           `position:"Query" name:"RetainClassic"`
-	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
-// SwitchNetworkResponse is the response struct for api SwitchNetwork
-type SwitchNetworkResponse struct {
+// DescribeEncryptionKeyListResponse is the response struct for api DescribeEncryptionKeyList
+type DescribeEncryptionKeyListResponse struct {
 	*responses.BaseResponse
-	TaskId    string `json:"TaskId" xml:"TaskId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	KeyIds    KeyIds `json:"KeyIds" xml:"KeyIds"`
 }
 
-// CreateSwitchNetworkRequest creates a request to invoke SwitchNetwork API
-func CreateSwitchNetworkRequest() (request *SwitchNetworkRequest) {
-	request = &SwitchNetworkRequest{
+// CreateDescribeEncryptionKeyListRequest creates a request to invoke DescribeEncryptionKeyList API
+func CreateDescribeEncryptionKeyListRequest() (request *DescribeEncryptionKeyListRequest) {
+	request = &DescribeEncryptionKeyListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "SwitchNetwork", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeEncryptionKeyList", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSwitchNetworkResponse creates a response to parse from SwitchNetwork response
-func CreateSwitchNetworkResponse() (response *SwitchNetworkResponse) {
-	response = &SwitchNetworkResponse{
+// CreateDescribeEncryptionKeyListResponse creates a response to parse from DescribeEncryptionKeyList response
+func CreateDescribeEncryptionKeyListResponse() (response *DescribeEncryptionKeyListResponse) {
+	response = &DescribeEncryptionKeyListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

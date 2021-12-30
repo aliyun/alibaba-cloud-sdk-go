@@ -93,8 +93,8 @@ type ModifyInstanceSpecRequest struct {
 // ModifyInstanceSpecResponse is the response struct for api ModifyInstanceSpec
 type ModifyInstanceSpecResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyInstanceSpecRequest creates a request to invoke ModifyInstanceSpec API

@@ -17,12 +17,12 @@ package r_kvstore
 
 // InstanceNodes is a nested struct in r_kvstore response
 type InstanceNodes struct {
-	NodeId            int    `json:"NodeId" xml:"NodeId"`
 	NodeIp            string `json:"NodeIp" xml:"NodeIp"`
+	DedicatedHostName string `json:"DedicatedHostName" xml:"DedicatedHostName"`
 	NodeType          string `json:"NodeType" xml:"NodeType"`
-	Port              int    `json:"Port" xml:"Port"`
-	Role              string `json:"Role" xml:"Role"`
 	ZoneId            string `json:"ZoneId" xml:"ZoneId"`
 	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
-	DedicatedHostName string `json:"DedicatedHostName" xml:"DedicatedHostName"`
+	Port              int    `json:"Port" xml:"Port"`
+	Role              string `json:"Role" xml:"Role"`
+	NodeId            int    `json:"NodeId" xml:"NodeId"`
 }

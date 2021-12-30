@@ -75,6 +75,7 @@ type CreateInstancesRequest struct {
 	Instances            string           `position:"Query" name:"Instances"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	RebuildInstance      requests.Boolean `position:"Query" name:"RebuildInstance"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
@@ -92,8 +93,8 @@ type CreateInstancesRequest struct {
 // CreateInstancesResponse is the response struct for api CreateInstances
 type CreateInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	OrderId     string      `json:"OrderId" xml:"OrderId"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	InstanceIds InstanceIds `json:"InstanceIds" xml:"InstanceIds"`
 }
 

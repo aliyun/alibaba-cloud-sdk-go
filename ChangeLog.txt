@@ -1,3 +1,7 @@
+2021-12-30 Version: v1.61.1416
+- Generated 2015-01-01 for `R-kvstore`.
+- Update by sdk platform.
+
 2021-12-30 Version: v1.61.1415
 - Generated 2017-07-05 for `CCC`.
 - Add new interface.

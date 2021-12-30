@@ -17,28 +17,28 @@ package r_kvstore
 
 // InstancesItem is a nested struct in r_kvstore response
 type InstancesItem struct {
-	CharacterType     string          `json:"CharacterType" xml:"CharacterType"`
-	ClusterId         string          `json:"ClusterId" xml:"ClusterId"`
-	ClusterName       string          `json:"ClusterName" xml:"ClusterName"`
-	EngineVersion     string          `json:"EngineVersion" xml:"EngineVersion"`
-	InstanceId        string          `json:"InstanceId" xml:"InstanceId"`
-	InstanceStatus    string          `json:"InstanceStatus" xml:"InstanceStatus"`
-	MaintainEndTime   string          `json:"MaintainEndTime" xml:"MaintainEndTime"`
-	MaintainStartTime string          `json:"MaintainStartTime" xml:"MaintainStartTime"`
-	RegionId          string          `json:"RegionId" xml:"RegionId"`
 	VpcId             string          `json:"VpcId" xml:"VpcId"`
+	CharacterType     string          `json:"CharacterType" xml:"CharacterType"`
 	VswitchId         string          `json:"VswitchId" xml:"VswitchId"`
-	ZoneId            string          `json:"ZoneId" xml:"ZoneId"`
-	InstanceName      string          `json:"InstanceName" xml:"InstanceName"`
-	CustomId          string          `json:"CustomId" xml:"CustomId"`
 	InstanceClass     string          `json:"InstanceClass" xml:"InstanceClass"`
-	Engine            string          `json:"Engine" xml:"Engine"`
-	StorageType       string          `json:"StorageType" xml:"StorageType"`
-	ConnectionDomain  string          `json:"ConnectionDomain" xml:"ConnectionDomain"`
+	MaintainStartTime string          `json:"MaintainStartTime" xml:"MaintainStartTime"`
 	CreateTime        string          `json:"CreateTime" xml:"CreateTime"`
-	ShardCount        int             `json:"ShardCount" xml:"ShardCount"`
-	CurrentBandWidth  int64           `json:"CurrentBandWidth" xml:"CurrentBandWidth"`
+	ConnectionDomain  string          `json:"ConnectionDomain" xml:"ConnectionDomain"`
+	MaintainEndTime   string          `json:"MaintainEndTime" xml:"MaintainEndTime"`
+	StorageType       string          `json:"StorageType" xml:"StorageType"`
+	InstanceId        string          `json:"InstanceId" xml:"InstanceId"`
 	BandWidth         int64           `json:"BandWidth" xml:"BandWidth"`
+	CurrentBandWidth  int64           `json:"CurrentBandWidth" xml:"CurrentBandWidth"`
+	EngineVersion     string          `json:"EngineVersion" xml:"EngineVersion"`
+	RegionId          string          `json:"RegionId" xml:"RegionId"`
+	InstanceName      string          `json:"InstanceName" xml:"InstanceName"`
+	ZoneId            string          `json:"ZoneId" xml:"ZoneId"`
+	ClusterName       string          `json:"ClusterName" xml:"ClusterName"`
+	InstanceStatus    string          `json:"InstanceStatus" xml:"InstanceStatus"`
+	Engine            string          `json:"Engine" xml:"Engine"`
+	ShardCount        int             `json:"ShardCount" xml:"ShardCount"`
+	CustomId          string          `json:"CustomId" xml:"CustomId"`
 	ProxyCount        int             `json:"ProxyCount" xml:"ProxyCount"`
+	ClusterId         string          `json:"ClusterId" xml:"ClusterId"`
 	InstanceNodeList  []InstanceNodes `json:"InstanceNodeList" xml:"InstanceNodeList"`
 }

@@ -17,5 +17,5 @@ package r_kvstore
 
 // InstancesInDescribeInstances is a nested struct in r_kvstore response
 type InstancesInDescribeInstances struct {
-	KVStoreInstance []KVStoreInstance `json:"KVStoreInstance" xml:"KVStoreInstance"`
+	KVStoreInstance []KVStoreInstanceInDescribeInstances `json:"KVStoreInstance" xml:"KVStoreInstance"`
 }

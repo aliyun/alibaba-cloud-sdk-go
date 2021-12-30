@@ -76,7 +76,7 @@ type CreateTairInstanceRequest struct {
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	StorageType          string           `position:"Query" name:"StorageType"`
-	ResourceGroupId      requests.Integer `position:"Query" name:"ResourceGroupId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Password             string           `position:"Query" name:"Password"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
@@ -108,20 +108,20 @@ type CreateTairInstanceRequest struct {
 // CreateTairInstanceResponse is the response struct for api CreateTairInstance
 type CreateTairInstanceResponse struct {
 	*responses.BaseResponse
-	Bandwidth        int64  `json:"Bandwidth" xml:"Bandwidth"`
-	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
-	Config           string `json:"Config" xml:"Config"`
-	ConnectionDomain string `json:"ConnectionDomain" xml:"ConnectionDomain"`
-	Connections      int64  `json:"Connections" xml:"Connections"`
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName     string `json:"InstanceName" xml:"InstanceName"`
-	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
-	Port             int    `json:"Port" xml:"Port"`
 	QPS              int64  `json:"QPS" xml:"QPS"`
+	ConnectionDomain string `json:"ConnectionDomain" xml:"ConnectionDomain"`
+	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+	Port             int    `json:"Port" xml:"Port"`
+	Config           string `json:"Config" xml:"Config"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
 	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TaskId           string `json:"TaskId" xml:"TaskId"`
+	Bandwidth        int64  `json:"Bandwidth" xml:"Bandwidth"`
+	Connections      int64  `json:"Connections" xml:"Connections"`
+	InstanceName     string `json:"InstanceName" xml:"InstanceName"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
+	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
+	TaskId           string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateCreateTairInstanceRequest creates a request to invoke CreateTairInstance API

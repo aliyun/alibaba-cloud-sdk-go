@@ -17,11 +17,11 @@ package r_kvstore
 
 // BackupJob is a nested struct in r_kvstore response
 type BackupJob struct {
+	StartTime            string `json:"StartTime" xml:"StartTime"`
+	Process              string `json:"Process" xml:"Process"`
+	JobMode              string `json:"JobMode" xml:"JobMode"`
 	BackupJobID          int    `json:"BackupJobID" xml:"BackupJobID"`
 	BackupProgressStatus string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
-	JobMode              string `json:"JobMode" xml:"JobMode"`
-	Process              string `json:"Process" xml:"Process"`
-	StartTime            string `json:"StartTime" xml:"StartTime"`
-	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
 	NodeId               string `json:"NodeId" xml:"NodeId"`
+	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
 }

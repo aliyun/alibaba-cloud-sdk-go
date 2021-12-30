@@ -120,27 +120,27 @@ type CreateInstanceTag struct {
 // CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName     string `json:"InstanceName" xml:"InstanceName"`
-	ConnectionDomain string `json:"ConnectionDomain" xml:"ConnectionDomain"`
-	Port             int    `json:"Port" xml:"Port"`
-	UserName         string `json:"UserName" xml:"UserName"`
-	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
-	RegionId         string `json:"RegionId" xml:"RegionId"`
-	Capacity         int64  `json:"Capacity" xml:"Capacity"`
-	QPS              int64  `json:"QPS" xml:"QPS"`
-	Bandwidth        int64  `json:"Bandwidth" xml:"Bandwidth"`
-	Connections      int64  `json:"Connections" xml:"Connections"`
-	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
-	Config           string `json:"Config" xml:"Config"`
-	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	NodeType         string `json:"NodeType" xml:"NodeType"`
-	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
 	VpcId            string `json:"VpcId" xml:"VpcId"`
+	QPS              int64  `json:"QPS" xml:"QPS"`
+	Capacity         int64  `json:"Capacity" xml:"Capacity"`
+	ConnectionDomain string `json:"ConnectionDomain" xml:"ConnectionDomain"`
+	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
+	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+	Port             int    `json:"Port" xml:"Port"`
+	Config           string `json:"Config" xml:"Config"`
+	RegionId         string `json:"RegionId" xml:"RegionId"`
+	EndTime          string `json:"EndTime" xml:"EndTime"`
 	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	NodeType         string `json:"NodeType" xml:"NodeType"`
+	Connections      int64  `json:"Connections" xml:"Connections"`
+	Bandwidth        int64  `json:"Bandwidth" xml:"Bandwidth"`
+	InstanceName     string `json:"InstanceName" xml:"InstanceName"`
+	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
+	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
 	PrivateIpAddr    string `json:"PrivateIpAddr" xml:"PrivateIpAddr"`
+	UserName         string `json:"UserName" xml:"UserName"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API
