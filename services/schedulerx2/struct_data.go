@@ -22,9 +22,10 @@ type Data struct {
 	WfInstanceId       int64                    `json:"WfInstanceId" xml:"WfInstanceId"`
 	AppGroupId         int64                    `json:"AppGroupId" xml:"AppGroupId"`
 	JobInstanceDetail  JobInstanceDetail        `json:"JobInstanceDetail" xml:"JobInstanceDetail"`
-	WorkFlowInfo       WorkFlowInfo             `json:"WorkFlowInfo" xml:"WorkFlowInfo"`
 	JobConfigInfo      JobConfigInfo            `json:"JobConfigInfo" xml:"JobConfigInfo"`
+	WorkFlowInfo       WorkFlowInfo             `json:"WorkFlowInfo" xml:"WorkFlowInfo"`
 	WorkFlowNodeInfo   WorkFlowNodeInfo         `json:"WorkFlowNodeInfo" xml:"WorkFlowNodeInfo"`
+	WorkerInfos        []WorkerInfo             `json:"WorkerInfos" xml:"WorkerInfos"`
 	Jobs               []Job                    `json:"Jobs" xml:"Jobs"`
 	Namespaces         []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	JobInstanceDetails []JobInstanceDetailsItem `json:"JobInstanceDetails" xml:"JobInstanceDetails"`
