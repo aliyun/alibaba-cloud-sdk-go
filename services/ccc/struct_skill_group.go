@@ -17,12 +17,14 @@ package ccc
 
 // SkillGroup is a nested struct in ccc response
 type SkillGroup struct {
-	Name             string `json:"Name" xml:"Name"`
-	SkillGroupName   string `json:"SkillGroupName" xml:"SkillGroupName"`
-	PhoneNumberCount int    `json:"PhoneNumberCount" xml:"PhoneNumberCount"`
-	SkillGroupId     string `json:"SkillGroupId" xml:"SkillGroupId"`
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	UserCount        int    `json:"UserCount" xml:"UserCount"`
-	Description      string `json:"Description" xml:"Description"`
-	DisplayName      string `json:"DisplayName" xml:"DisplayName"`
+	SkillGroupName             string                                `json:"SkillGroupName" xml:"SkillGroupName"`
+	AccQueueName               string                                `json:"AccQueueName" xml:"AccQueueName"`
+	SkillGroupId               string                                `json:"SkillGroupId" xml:"SkillGroupId"`
+	SkillGroupDescription      string                                `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
+	RoutingStrategy            string                                `json:"RoutingStrategy" xml:"RoutingStrategy"`
+	InstanceId                 string                                `json:"InstanceId" xml:"InstanceId"`
+	AllowPrivateOutboundNumber bool                                  `json:"AllowPrivateOutboundNumber" xml:"AllowPrivateOutboundNumber"`
+	AccSkillGroupName          string                                `json:"AccSkillGroupName" xml:"AccSkillGroupName"`
+	UserCount                  int                                   `json:"UserCount" xml:"UserCount"`
+	OutboundPhoneNumbers       OutboundPhoneNumbersInListSkillGroups `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
 }

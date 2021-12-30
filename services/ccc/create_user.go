@@ -71,26 +71,26 @@ func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callbac
 // CreateUserRequest is the request struct for api CreateUser
 type CreateUserRequest struct {
 	*requests.RpcRequest
-	LoginName      string           `position:"Query" name:"LoginName"`
-	RoleId         string           `position:"Query" name:"RoleId"`
-	Mobile         string           `position:"Query" name:"Mobile"`
-	WorkMode       string           `position:"Query" name:"WorkMode"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
-	DisplayName    string           `position:"Query" name:"DisplayName"`
-	ResetPassword  requests.Boolean `position:"Query" name:"ResetPassword"`
-	SkillLevelList string           `position:"Query" name:"SkillLevelList"`
-	Email          string           `position:"Query" name:"Email"`
+	PrivateOutboundNumberId string    `position:"Query" name:"PrivateOutboundNumberId"`
+	LoginName               string    `position:"Query" name:"LoginName"`
+	RoleId                  *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
+	SkillLevel              *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
+	InstanceId              string    `position:"Query" name:"InstanceId"`
+	Phone                   string    `position:"Query" name:"Phone"`
+	DisplayName             string    `position:"Query" name:"DisplayName"`
+	SkillGroupId            *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
+	Email                   string    `position:"Query" name:"Email"`
 }
 
 // CreateUserResponse is the response struct for api CreateUser
 type CreateUserResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
-	Data           Data     `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	UserId         string `json:"UserId" xml:"UserId"`
 }
 
 // CreateCreateUserRequest creates a request to invoke CreateUser API
@@ -98,7 +98,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 	request = &CreateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "CreateUser", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "CreateUser", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,5 +17,5 @@ package ccc
 
 // ListInListUsers is a nested struct in ccc response
 type ListInListUsers struct {
-	UserDetail []UserDetail `json:"UserDetail" xml:"UserDetail"`
+	User []User `json:"User" xml:"User"`
 }

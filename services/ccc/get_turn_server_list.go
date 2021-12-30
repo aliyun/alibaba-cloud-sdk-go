@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTurnServerList invokes the ccc.GetTurnServerList API synchronously
-func (client *Client) GetTurnServerList(request *GetTurnServerListRequest) (response *GetTurnServerListResponse, err error) {
-	response = CreateGetTurnServerListResponse()
+// GetTURNServerList invokes the ccc.GetTURNServerList API synchronously
+func (client *Client) GetTURNServerList(request *GetTURNServerListRequest) (response *GetTURNServerListResponse, err error) {
+	response = CreateGetTURNServerListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTurnServerListWithChan invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListRequest) (<-chan *GetTurnServerListResponse, <-chan error) {
-	responseChan := make(chan *GetTurnServerListResponse, 1)
+// GetTURNServerListWithChan invokes the ccc.GetTURNServerList API asynchronously
+func (client *Client) GetTURNServerListWithChan(request *GetTURNServerListRequest) (<-chan *GetTURNServerListResponse, <-chan error) {
+	responseChan := make(chan *GetTURNServerListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTurnServerList(request)
+		response, err := client.GetTURNServerList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTurnServerListWithChan(request *GetTurnServerListReques
 	return responseChan, errChan
 }
 
-// GetTurnServerListWithCallback invokes the ccc.GetTurnServerList API asynchronously
-func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRequest, callback func(response *GetTurnServerListResponse, err error)) <-chan int {
+// GetTURNServerListWithCallback invokes the ccc.GetTURNServerList API asynchronously
+func (client *Client) GetTURNServerListWithCallback(request *GetTURNServerListRequest, callback func(response *GetTURNServerListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTurnServerListResponse
+		var response *GetTURNServerListResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTurnServerList(request)
+		response, err = client.GetTURNServerList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,36 @@ func (client *Client) GetTurnServerListWithCallback(request *GetTurnServerListRe
 	return result
 }
 
-// GetTurnServerListRequest is the request struct for api GetTurnServerList
-type GetTurnServerListRequest struct {
+// GetTURNServerListRequest is the request struct for api GetTURNServerList
+type GetTURNServerListRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// GetTurnServerListResponse is the response struct for api GetTurnServerList
-type GetTurnServerListResponse struct {
+// GetTURNServerListResponse is the response struct for api GetTURNServerList
+type GetTURNServerListResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	Data           string   `json:"Data" xml:"Data"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	Success              bool   `json:"Success" xml:"Success"`
+	Code                 string `json:"Code" xml:"Code"`
+	Message              string `json:"Message" xml:"Message"`
+	HttpStatusCode       int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	TurnServerListConfig string `json:"TurnServerListConfig" xml:"TurnServerListConfig"`
 }
 
-// CreateGetTurnServerListRequest creates a request to invoke GetTurnServerList API
-func CreateGetTurnServerListRequest() (request *GetTurnServerListRequest) {
-	request = &GetTurnServerListRequest{
+// CreateGetTURNServerListRequest creates a request to invoke GetTURNServerList API
+func CreateGetTURNServerListRequest() (request *GetTURNServerListRequest) {
+	request = &GetTURNServerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "GetTURNServerList", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTurnServerListResponse creates a response to parse from GetTurnServerList response
-func CreateGetTurnServerListResponse() (response *GetTurnServerListResponse) {
-	response = &GetTurnServerListResponse{
+// CreateGetTURNServerListResponse creates a response to parse from GetTURNServerList response
+func CreateGetTURNServerListResponse() (response *GetTURNServerListResponse) {
+	response = &GetTURNServerListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

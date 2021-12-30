@@ -17,6 +17,10 @@ package ccc
 
 // Role is a nested struct in ccc response
 type Role struct {
-	Name   string `json:"Name" xml:"Name"`
-	RoleId string `json:"RoleId" xml:"RoleId"`
+	RoleId          string     `json:"RoleId" xml:"RoleId"`
+	InstanceId      string     `json:"InstanceId" xml:"InstanceId"`
+	UserCount       int        `json:"UserCount" xml:"UserCount"`
+	RoleName        string     `json:"RoleName" xml:"RoleName"`
+	RoleDescription string     `json:"RoleDescription" xml:"RoleDescription"`
+	Privileges      Privileges `json:"Privileges" xml:"Privileges"`
 }
