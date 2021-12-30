@@ -1,3 +1,7 @@
+2021-12-30 Version: v1.61.1418
+- Generated 2018-01-11 for `rtc`.
+- Support AUTH for CreateEventSubscribe.
+
 2021-12-30 Version: v1.61.1417
 - Generated 2021-05-20 for `idaas-doraemon`.
 - Support Sms Auth.

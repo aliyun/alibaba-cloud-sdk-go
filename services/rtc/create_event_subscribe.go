@@ -71,14 +71,15 @@ func (client *Client) CreateEventSubscribeWithCallback(request *CreateEventSubsc
 // CreateEventSubscribeRequest is the request struct for api CreateEventSubscribe
 type CreateEventSubscribeRequest struct {
 	*requests.RpcRequest
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	Events      *[]string        `position:"Query" name:"Events"  type:"Repeated"`
-	ShowLog     string           `position:"Query" name:"ShowLog"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-	Users       *[]string        `position:"Query" name:"Users"  type:"Repeated"`
-	AppId       string           `position:"Query" name:"AppId"`
-	CallbackUrl string           `position:"Query" name:"CallbackUrl"`
-	ChannelId   string           `position:"Query" name:"ChannelId"`
+	ClientToken      string           `position:"Query" name:"ClientToken"`
+	NeedCallbackAuth requests.Boolean `position:"Query" name:"NeedCallbackAuth"`
+	Events           *[]string        `position:"Query" name:"Events"  type:"Repeated"`
+	ShowLog          string           `position:"Query" name:"ShowLog"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	Users            *[]string        `position:"Query" name:"Users"  type:"Repeated"`
+	AppId            string           `position:"Query" name:"AppId"`
+	CallbackUrl      string           `position:"Query" name:"CallbackUrl"`
+	ChannelId        string           `position:"Query" name:"ChannelId"`
 }
 
 // CreateEventSubscribeResponse is the response struct for api CreateEventSubscribe

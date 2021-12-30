@@ -17,5 +17,5 @@ package rtc
 
 // LayoutIds is a nested struct in rtc response
 type LayoutIds struct {
-	LayoutId []int `json:"LayoutId" xml:"LayoutId"`
+	LayoutId []int64 `json:"LayoutId" xml:"LayoutId"`
 }

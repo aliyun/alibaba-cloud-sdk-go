@@ -30,7 +30,7 @@ type Template struct {
 	Name               string       `json:"Name" xml:"Name"`
 	TemplateId         string       `json:"TemplateId" xml:"TemplateId"`
 	TaskProfile        string       `json:"TaskProfile" xml:"TaskProfile"`
-	LayoutIds          []int        `json:"LayoutIds" xml:"LayoutIds"`
+	LayoutIds          []int64      `json:"LayoutIds" xml:"LayoutIds"`
 	Formats            []string     `json:"Formats" xml:"Formats"`
 	Backgrounds        []Background `json:"Backgrounds" xml:"Backgrounds"`
 	Watermarks         []Watermark  `json:"Watermarks" xml:"Watermarks"`
