@@ -1,3 +1,7 @@
+2021-12-31 Version: v1.61.1422
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update ErrorCode.
+
 2021-12-30 Version: v1.61.1421
 - Generated 2014-06-18 for `Mts`.
 - Add faceCustomParamsConfig params for AddSmarttagTemplate,UpdateSmarttagTemplate,QuerySmarttagTemplateList interface.
