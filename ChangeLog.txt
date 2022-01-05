@@ -1,3 +1,6 @@
+2022-01-05 Version: v1.61.1424
+- Fix response header of error.
+
 2022-01-05 Version: v1.61.1423
 - Generated 2014-08-28 for `Ess`.
 - AttachInstances and DetachInstances support lifecyclehook option.
