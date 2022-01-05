@@ -82,8 +82,8 @@ type ListTagValuesRequest struct {
 // ListTagValuesResponse is the response struct for api ListTagValues
 type ListTagValuesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	NextToken string `json:"NextToken" xml:"NextToken"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	PageSize  int    `json:"PageSize" xml:"PageSize"`
 	Values    Values `json:"Values" xml:"Values"`
 }

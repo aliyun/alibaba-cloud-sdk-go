@@ -77,8 +77,9 @@ type DetachInstancesRequest struct {
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId              *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 	DetachOption            string           `position:"Query" name:"DetachOption"`
+	InstanceId              *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	LifecycleHook           requests.Boolean `position:"Query" name:"LifecycleHook"`
 }
 
 // DetachInstancesResponse is the response struct for api DetachInstances

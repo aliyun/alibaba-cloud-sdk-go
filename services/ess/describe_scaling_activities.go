@@ -85,10 +85,10 @@ type DescribeScalingActivitiesRequest struct {
 // DescribeScalingActivitiesResponse is the response struct for api DescribeScalingActivities
 type DescribeScalingActivitiesResponse struct {
 	*responses.BaseResponse
-	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
 	PageSize          int               `json:"PageSize" xml:"PageSize"`
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
 	ScalingActivities ScalingActivities `json:"ScalingActivities" xml:"ScalingActivities"`
 }
 

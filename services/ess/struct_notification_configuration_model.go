@@ -17,7 +17,7 @@ package ess
 
 // NotificationConfigurationModel is a nested struct in ess response
 type NotificationConfigurationModel struct {
-	ScalingGroupId    string                                                `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	NotificationArn   string                                                `json:"NotificationArn" xml:"NotificationArn"`
+	ScalingGroupId    string                                                `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	NotificationTypes NotificationTypesInDescribeNotificationConfigurations `json:"NotificationTypes" xml:"NotificationTypes"`
 }

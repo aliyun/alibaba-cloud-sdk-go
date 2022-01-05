@@ -81,12 +81,12 @@ type AttachVServerGroupsRequest struct {
 
 // AttachVServerGroupsVServerGroup is a repeated param struct in AttachVServerGroupsRequest
 type AttachVServerGroupsVServerGroup struct {
-	LoadBalancerId        string                                      `name:"LoadBalancerId"`
-	VServerGroupAttribute *[]AttachVServerGroupsVServerGroupAttribute `name:"VServerGroupAttribute" type:"Repeated"`
+	LoadBalancerId        string                                                  `name:"LoadBalancerId"`
+	VServerGroupAttribute *[]AttachVServerGroupsVServerGroupVServerGroupAttribute `name:"VServerGroupAttribute" type:"Repeated"`
 }
 
-// AttachVServerGroupsVServerGroupAttribute is a repeated param struct in AttachVServerGroupsRequest
-type AttachVServerGroupsVServerGroupAttribute struct {
+// AttachVServerGroupsVServerGroupVServerGroupAttribute is a repeated param struct in AttachVServerGroupsRequest
+type AttachVServerGroupsVServerGroupVServerGroupAttribute struct {
 	VServerGroupId string `name:"VServerGroupId"`
 	Port           string `name:"Port"`
 	Weight         string `name:"Weight"`

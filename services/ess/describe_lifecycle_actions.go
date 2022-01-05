@@ -82,10 +82,10 @@ type DescribeLifecycleActionsRequest struct {
 // DescribeLifecycleActionsResponse is the response struct for api DescribeLifecycleActions
 type DescribeLifecycleActionsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	NextToken        string           `json:"NextToken" xml:"NextToken"`
-	MaxResults       int              `json:"MaxResults" xml:"MaxResults"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
+	MaxResults       int              `json:"MaxResults" xml:"MaxResults"`
 	LifecycleActions LifecycleActions `json:"LifecycleActions" xml:"LifecycleActions"`
 }
 

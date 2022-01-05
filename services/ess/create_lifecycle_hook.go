@@ -86,8 +86,8 @@ type CreateLifecycleHookRequest struct {
 // CreateLifecycleHookResponse is the response struct for api CreateLifecycleHook
 type CreateLifecycleHookResponse struct {
 	*responses.BaseResponse
-	LifecycleHookId string `json:"LifecycleHookId" xml:"LifecycleHookId"`
 	RequestId       string `json:"RequestId" xml:"RequestId"`
+	LifecycleHookId string `json:"LifecycleHookId" xml:"LifecycleHookId"`
 }
 
 // CreateCreateLifecycleHookRequest creates a request to invoke CreateLifecycleHook API

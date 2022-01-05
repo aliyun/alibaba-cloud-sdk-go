@@ -88,10 +88,10 @@ type DescribeScalingRulesRequest struct {
 // DescribeScalingRulesResponse is the response struct for api DescribeScalingRules
 type DescribeScalingRulesResponse struct {
 	*responses.BaseResponse
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
 	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
 	ScalingRules ScalingRules `json:"ScalingRules" xml:"ScalingRules"`
 }
 

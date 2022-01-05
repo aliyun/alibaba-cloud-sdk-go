@@ -17,21 +17,21 @@ package ess
 
 // ScalingInstance is a nested struct in ess response
 type ScalingInstance struct {
-	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-	ScalingConfigurationId string `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
-	ScalingGroupId         string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-	HealthStatus           string `json:"HealthStatus" xml:"HealthStatus"`
-	LoadBalancerWeight     int    `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
-	LifecycleState         string `json:"LifecycleState" xml:"LifecycleState"`
 	CreationTime           string `json:"CreationTime" xml:"CreationTime"`
-	CreationType           string `json:"CreationType" xml:"CreationType"`
+	LoadBalancerWeight     int    `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
 	LaunchTemplateId       string `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
+	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+	SpotStrategy           string `json:"SpotStrategy" xml:"SpotStrategy"`
 	LaunchTemplateVersion  string `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
+	HealthStatus           string `json:"HealthStatus" xml:"HealthStatus"`
+	ScalingGroupId         string `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	WarmupState            string `json:"WarmupState" xml:"WarmupState"`
+	LifecycleState         string `json:"LifecycleState" xml:"LifecycleState"`
+	CreationType           string `json:"CreationType" xml:"CreationType"`
+	ZoneId                 string `json:"ZoneId" xml:"ZoneId"`
+	ScalingConfigurationId string `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
 	Entrusted              bool   `json:"Entrusted" xml:"Entrusted"`
 	WeightedCapacity       int    `json:"WeightedCapacity" xml:"WeightedCapacity"`
 	CreatedTime            string `json:"CreatedTime" xml:"CreatedTime"`
-	SpotStrategy           string `json:"SpotStrategy" xml:"SpotStrategy"`
-	ZoneId                 string `json:"ZoneId" xml:"ZoneId"`
 	ScalingActivityId      string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 }

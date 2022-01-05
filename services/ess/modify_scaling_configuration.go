@@ -115,8 +115,8 @@ type ModifyScalingConfigurationRequest struct {
 	RamRoleName                     string                                            `position:"Query" name:"RamRoleName"`
 	DedicatedHostId                 string                                            `position:"Query" name:"DedicatedHostId"`
 	CreditSpecification             string                                            `position:"Query" name:"CreditSpecification"`
-	SecurityGroupIds                *[]string                                         `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	SpotDuration                    requests.Integer                                  `position:"Query" name:"SpotDuration"`
+	SecurityGroupIds                *[]string                                         `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	DataDisk                        *[]ModifyScalingConfigurationDataDisk             `position:"Query" name:"DataDisk"  type:"Repeated"`
 	InstanceTypeOverride            *[]ModifyScalingConfigurationInstanceTypeOverride `position:"Query" name:"InstanceTypeOverride"  type:"Repeated"`
 	LoadBalancerWeight              requests.Integer                                  `position:"Query" name:"LoadBalancerWeight"`
@@ -134,8 +134,8 @@ type ModifyScalingConfigurationSpotPriceLimit struct {
 // ModifyScalingConfigurationInstancePatternInfo is a repeated param struct in ModifyScalingConfigurationRequest
 type ModifyScalingConfigurationInstancePatternInfo struct {
 	Cores               string `name:"Cores"`
-	Memory              string `name:"Memory"`
 	InstanceFamilyLevel string `name:"InstanceFamilyLevel"`
+	Memory              string `name:"Memory"`
 	MaxPrice            string `name:"MaxPrice"`
 }
 
@@ -143,8 +143,8 @@ type ModifyScalingConfigurationInstancePatternInfo struct {
 type ModifyScalingConfigurationDataDisk struct {
 	DiskName             string    `name:"DiskName"`
 	SnapshotId           string    `name:"SnapshotId"`
-	Size                 string    `name:"Size"`
 	Encrypted            string    `name:"Encrypted"`
+	Size                 string    `name:"Size"`
 	PerformanceLevel     string    `name:"PerformanceLevel"`
 	AutoSnapshotPolicyId string    `name:"AutoSnapshotPolicyId"`
 	Description          string    `name:"Description"`

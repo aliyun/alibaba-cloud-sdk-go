@@ -83,8 +83,8 @@ type AttachLoadBalancersRequest struct {
 // AttachLoadBalancersResponse is the response struct for api AttachLoadBalancers
 type AttachLoadBalancersResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAttachLoadBalancersRequest creates a request to invoke AttachLoadBalancers API

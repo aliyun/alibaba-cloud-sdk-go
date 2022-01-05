@@ -100,8 +100,8 @@ type CreateScalingConfigurationRequest struct {
 	ClientToken                     string                                            `position:"Query" name:"ClientToken"`
 	SpotInterruptionBehavior        string                                            `position:"Query" name:"SpotInterruptionBehavior"`
 	ScalingGroupId                  string                                            `position:"Query" name:"ScalingGroupId"`
-	InstanceTypes                   *[]string                                         `position:"Query" name:"InstanceTypes"  type:"Repeated"`
 	IoOptimized                     string                                            `position:"Query" name:"IoOptimized"`
+	InstanceTypes                   *[]string                                         `position:"Query" name:"InstanceTypes"  type:"Repeated"`
 	SecurityGroupId                 string                                            `position:"Query" name:"SecurityGroupId"`
 	InternetMaxBandwidthOut         requests.Integer                                  `position:"Query" name:"InternetMaxBandwidthOut"`
 	SystemDiskCategory              string                                            `position:"Query" name:"SystemDisk.Category"`
@@ -119,8 +119,8 @@ type CreateScalingConfigurationRequest struct {
 	RamRoleName                     string                                            `position:"Query" name:"RamRoleName"`
 	DedicatedHostId                 string                                            `position:"Query" name:"DedicatedHostId"`
 	CreditSpecification             string                                            `position:"Query" name:"CreditSpecification"`
-	SecurityGroupIds                *[]string                                         `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	SpotDuration                    requests.Integer                                  `position:"Query" name:"SpotDuration"`
+	SecurityGroupIds                *[]string                                         `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	DataDisk                        *[]CreateScalingConfigurationDataDisk             `position:"Query" name:"DataDisk"  type:"Repeated"`
 	InstanceTypeOverride            *[]CreateScalingConfigurationInstanceTypeOverride `position:"Query" name:"InstanceTypeOverride"  type:"Repeated"`
 	LoadBalancerWeight              requests.Integer                                  `position:"Query" name:"LoadBalancerWeight"`
@@ -138,8 +138,8 @@ type CreateScalingConfigurationSpotPriceLimit struct {
 // CreateScalingConfigurationInstancePatternInfo is a repeated param struct in CreateScalingConfigurationRequest
 type CreateScalingConfigurationInstancePatternInfo struct {
 	Cores               string `name:"Cores"`
-	Memory              string `name:"Memory"`
 	InstanceFamilyLevel string `name:"InstanceFamilyLevel"`
+	Memory              string `name:"Memory"`
 	MaxPrice            string `name:"MaxPrice"`
 }
 
@@ -147,8 +147,8 @@ type CreateScalingConfigurationInstancePatternInfo struct {
 type CreateScalingConfigurationDataDisk struct {
 	DiskName             string    `name:"DiskName"`
 	SnapshotId           string    `name:"SnapshotId"`
-	Size                 string    `name:"Size"`
 	Encrypted            string    `name:"Encrypted"`
+	Size                 string    `name:"Size"`
 	PerformanceLevel     string    `name:"PerformanceLevel"`
 	AutoSnapshotPolicyId string    `name:"AutoSnapshotPolicyId"`
 	Description          string    `name:"Description"`

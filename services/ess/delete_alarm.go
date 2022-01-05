@@ -79,8 +79,8 @@ type DeleteAlarmRequest struct {
 // DeleteAlarmResponse is the response struct for api DeleteAlarm
 type DeleteAlarmResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	AlarmTaskId string `json:"AlarmTaskId" xml:"AlarmTaskId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteAlarmRequest creates a request to invoke DeleteAlarm API

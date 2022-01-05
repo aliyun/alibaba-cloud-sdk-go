@@ -17,56 +17,56 @@ package ess
 
 // ScalingConfiguration is a nested struct in ess response
 type ScalingConfiguration struct {
-	ScalingConfigurationId          string               `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
-	ScalingConfigurationName        string               `json:"ScalingConfigurationName" xml:"ScalingConfigurationName"`
-	ScalingGroupId                  string               `json:"ScalingGroupId" xml:"ScalingGroupId"`
-	InstanceName                    string               `json:"InstanceName" xml:"InstanceName"`
-	ImageId                         string               `json:"ImageId" xml:"ImageId"`
-	ImageName                       string               `json:"ImageName" xml:"ImageName"`
-	HostName                        string               `json:"HostName" xml:"HostName"`
-	InstanceType                    string               `json:"InstanceType" xml:"InstanceType"`
-	Cpu                             int                  `json:"Cpu" xml:"Cpu"`
-	Memory                          int                  `json:"Memory" xml:"Memory"`
-	InstanceGeneration              string               `json:"InstanceGeneration" xml:"InstanceGeneration"`
-	SecurityGroupId                 string               `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	IoOptimized                     string               `json:"IoOptimized" xml:"IoOptimized"`
-	InternetChargeType              string               `json:"InternetChargeType" xml:"InternetChargeType"`
-	InternetMaxBandwidthIn          int                  `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-	InternetMaxBandwidthOut         int                  `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-	SystemDiskCategory              string               `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
-	SystemDiskSize                  int                  `json:"SystemDiskSize" xml:"SystemDiskSize"`
-	SystemDiskName                  string               `json:"SystemDiskName" xml:"SystemDiskName"`
-	SystemDiskDescription           string               `json:"SystemDiskDescription" xml:"SystemDiskDescription"`
-	SystemDiskAutoSnapshotPolicyId  string               `json:"SystemDiskAutoSnapshotPolicyId" xml:"SystemDiskAutoSnapshotPolicyId"`
-	SystemDiskPerformanceLevel      string               `json:"SystemDiskPerformanceLevel" xml:"SystemDiskPerformanceLevel"`
-	LifecycleState                  string               `json:"LifecycleState" xml:"LifecycleState"`
-	CreationTime                    string               `json:"CreationTime" xml:"CreationTime"`
-	LoadBalancerWeight              int                  `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
-	UserData                        string               `json:"UserData" xml:"UserData"`
-	KeyPairName                     string               `json:"KeyPairName" xml:"KeyPairName"`
-	RamRoleName                     string               `json:"RamRoleName" xml:"RamRoleName"`
 	DeploymentSetId                 string               `json:"DeploymentSetId" xml:"DeploymentSetId"`
-	SecurityEnhancementStrategy     string               `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
+	CreationTime                    string               `json:"CreationTime" xml:"CreationTime"`
+	ScalingConfigurationName        string               `json:"ScalingConfigurationName" xml:"ScalingConfigurationName"`
+	SystemDiskDescription           string               `json:"SystemDiskDescription" xml:"SystemDiskDescription"`
+	KeyPairName                     string               `json:"KeyPairName" xml:"KeyPairName"`
+	SecurityGroupId                 string               `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	PrivatePoolOptionsId            string               `json:"PrivatePoolOptions.Id" xml:"PrivatePoolOptions.Id"`
+	SystemDiskAutoSnapshotPolicyId  string               `json:"SystemDiskAutoSnapshotPolicyId" xml:"SystemDiskAutoSnapshotPolicyId"`
 	SpotStrategy                    string               `json:"SpotStrategy" xml:"SpotStrategy"`
-	PasswordInherit                 bool                 `json:"PasswordInherit" xml:"PasswordInherit"`
-	ResourceGroupId                 string               `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	HpcClusterId                    string               `json:"HpcClusterId" xml:"HpcClusterId"`
-	InstanceDescription             string               `json:"InstanceDescription" xml:"InstanceDescription"`
-	CreditSpecification             string               `json:"CreditSpecification" xml:"CreditSpecification"`
-	ImageFamily                     string               `json:"ImageFamily" xml:"ImageFamily"`
-	ZoneId                          string               `json:"ZoneId" xml:"ZoneId"`
-	DedicatedHostId                 string               `json:"DedicatedHostId" xml:"DedicatedHostId"`
+	ScalingGroupId                  string               `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	Affinity                        string               `json:"Affinity" xml:"Affinity"`
 	Tenancy                         string               `json:"Tenancy" xml:"Tenancy"`
-	PrivatePoolOptionsMatchCriteria string               `json:"PrivatePoolOptions.MatchCriteria" xml:"PrivatePoolOptions.MatchCriteria"`
-	PrivatePoolOptionsId            string               `json:"PrivatePoolOptions.Id" xml:"PrivatePoolOptions.Id"`
-	SpotInterruptionBehavior        string               `json:"SpotInterruptionBehavior" xml:"SpotInterruptionBehavior"`
-	SpotDuration                    int                  `json:"SpotDuration" xml:"SpotDuration"`
+	SystemDiskSize                  int                  `json:"SystemDiskSize" xml:"SystemDiskSize"`
 	Ipv6AddressCount                int                  `json:"Ipv6AddressCount" xml:"Ipv6AddressCount"`
-	InstanceTypes                   InstanceTypes        `json:"InstanceTypes" xml:"InstanceTypes"`
-	WeightedCapacities              WeightedCapacities   `json:"WeightedCapacities" xml:"WeightedCapacities"`
-	SecurityGroupIds                SecurityGroupIds     `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	SpotDuration                    int                  `json:"SpotDuration" xml:"SpotDuration"`
+	LifecycleState                  string               `json:"LifecycleState" xml:"LifecycleState"`
+	InstanceName                    string               `json:"InstanceName" xml:"InstanceName"`
+	SecurityEnhancementStrategy     string               `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
+	UserData                        string               `json:"UserData" xml:"UserData"`
+	PrivatePoolOptionsMatchCriteria string               `json:"PrivatePoolOptions.MatchCriteria" xml:"PrivatePoolOptions.MatchCriteria"`
+	DedicatedHostId                 string               `json:"DedicatedHostId" xml:"DedicatedHostId"`
+	InstanceGeneration              string               `json:"InstanceGeneration" xml:"InstanceGeneration"`
+	HpcClusterId                    string               `json:"HpcClusterId" xml:"HpcClusterId"`
+	PasswordInherit                 bool                 `json:"PasswordInherit" xml:"PasswordInherit"`
+	Memory                          int                  `json:"Memory" xml:"Memory"`
+	ImageId                         string               `json:"ImageId" xml:"ImageId"`
+	ImageFamily                     string               `json:"ImageFamily" xml:"ImageFamily"`
+	LoadBalancerWeight              int                  `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
+	SystemDiskCategory              string               `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
+	HostName                        string               `json:"HostName" xml:"HostName"`
+	SystemDiskName                  string               `json:"SystemDiskName" xml:"SystemDiskName"`
+	InternetMaxBandwidthOut         int                  `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+	InternetMaxBandwidthIn          int                  `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
+	InstanceType                    string               `json:"InstanceType" xml:"InstanceType"`
+	InstanceDescription             string               `json:"InstanceDescription" xml:"InstanceDescription"`
+	IoOptimized                     string               `json:"IoOptimized" xml:"IoOptimized"`
+	RamRoleName                     string               `json:"RamRoleName" xml:"RamRoleName"`
+	SystemDiskPerformanceLevel      string               `json:"SystemDiskPerformanceLevel" xml:"SystemDiskPerformanceLevel"`
+	Cpu                             int                  `json:"Cpu" xml:"Cpu"`
+	ResourceGroupId                 string               `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ZoneId                          string               `json:"ZoneId" xml:"ZoneId"`
+	InternetChargeType              string               `json:"InternetChargeType" xml:"InternetChargeType"`
+	ImageName                       string               `json:"ImageName" xml:"ImageName"`
+	ScalingConfigurationId          string               `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
+	CreditSpecification             string               `json:"CreditSpecification" xml:"CreditSpecification"`
+	SpotInterruptionBehavior        string               `json:"SpotInterruptionBehavior" xml:"SpotInterruptionBehavior"`
 	SystemDiskCategories            SystemDiskCategories `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
+	WeightedCapacities              WeightedCapacities   `json:"WeightedCapacities" xml:"WeightedCapacities"`
+	InstanceTypes                   InstanceTypes        `json:"InstanceTypes" xml:"InstanceTypes"`
+	SecurityGroupIds                SecurityGroupIds     `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	SchedulerOptions                SchedulerOptions     `json:"SchedulerOptions" xml:"SchedulerOptions"`
 	DataDisks                       DataDisks            `json:"DataDisks" xml:"DataDisks"`
 	Tags                            Tags                 `json:"Tags" xml:"Tags"`

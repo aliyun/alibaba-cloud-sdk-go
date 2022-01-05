@@ -83,8 +83,8 @@ type DetachLoadBalancersRequest struct {
 // DetachLoadBalancersResponse is the response struct for api DetachLoadBalancers
 type DetachLoadBalancersResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDetachLoadBalancersRequest creates a request to invoke DetachLoadBalancers API

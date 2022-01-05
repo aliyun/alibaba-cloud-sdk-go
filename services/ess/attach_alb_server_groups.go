@@ -89,8 +89,8 @@ type AttachAlbServerGroupsAlbServerGroup struct {
 // AttachAlbServerGroupsResponse is the response struct for api AttachAlbServerGroups
 type AttachAlbServerGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAttachAlbServerGroupsRequest creates a request to invoke AttachAlbServerGroups API

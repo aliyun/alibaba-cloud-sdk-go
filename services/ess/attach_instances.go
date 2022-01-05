@@ -79,6 +79,7 @@ type AttachInstancesRequest struct {
 	Entrusted            requests.Boolean `position:"Query" name:"Entrusted"`
 	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 	LoadBalancerWeight   *[]string        `position:"Query" name:"LoadBalancerWeight"  type:"Repeated"`
+	LifecycleHook        requests.Boolean `position:"Query" name:"LifecycleHook"`
 }
 
 // AttachInstancesResponse is the response struct for api AttachInstances

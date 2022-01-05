@@ -17,12 +17,12 @@ package ess
 
 // LifecycleHook is a nested struct in ess response
 type LifecycleHook struct {
-	ScalingGroupId       string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	DefaultResult        string `json:"DefaultResult" xml:"DefaultResult"`
 	LifecycleHookId      string `json:"LifecycleHookId" xml:"LifecycleHookId"`
 	LifecycleHookName    string `json:"LifecycleHookName" xml:"LifecycleHookName"`
-	DefaultResult        string `json:"DefaultResult" xml:"DefaultResult"`
-	HeartbeatTimeout     int    `json:"HeartbeatTimeout" xml:"HeartbeatTimeout"`
 	LifecycleTransition  string `json:"LifecycleTransition" xml:"LifecycleTransition"`
 	NotificationMetadata string `json:"NotificationMetadata" xml:"NotificationMetadata"`
 	NotificationArn      string `json:"NotificationArn" xml:"NotificationArn"`
+	HeartbeatTimeout     int    `json:"HeartbeatTimeout" xml:"HeartbeatTimeout"`
+	ScalingGroupId       string `json:"ScalingGroupId" xml:"ScalingGroupId"`
 }

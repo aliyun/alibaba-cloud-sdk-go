@@ -97,8 +97,8 @@ type ModifyScalingRuleRequest struct {
 
 // ModifyScalingRuleStepAdjustment is a repeated param struct in ModifyScalingRuleRequest
 type ModifyScalingRuleStepAdjustment struct {
-	MetricIntervalLowerBound string `name:"MetricIntervalLowerBound"`
 	MetricIntervalUpperBound string `name:"MetricIntervalUpperBound"`
+	MetricIntervalLowerBound string `name:"MetricIntervalLowerBound"`
 	ScalingAdjustment        string `name:"ScalingAdjustment"`
 }
 

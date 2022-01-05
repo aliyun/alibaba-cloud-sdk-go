@@ -88,8 +88,8 @@ type DetachAlbServerGroupsAlbServerGroup struct {
 // DetachAlbServerGroupsResponse is the response struct for api DetachAlbServerGroups
 type DetachAlbServerGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDetachAlbServerGroupsRequest creates a request to invoke DetachAlbServerGroups API

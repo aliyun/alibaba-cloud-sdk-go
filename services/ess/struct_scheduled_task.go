@@ -17,18 +17,18 @@ package ess
 
 // ScheduledTask is a nested struct in ess response
 type ScheduledTask struct {
-	ScheduledTaskId      string `json:"ScheduledTaskId" xml:"ScheduledTaskId"`
+	TaskEnabled          bool   `json:"TaskEnabled" xml:"TaskEnabled"`
+	RecurrenceValue      string `json:"RecurrenceValue" xml:"RecurrenceValue"`
+	RecurrenceType       string `json:"RecurrenceType" xml:"RecurrenceType"`
+	MaxValue             int    `json:"MaxValue" xml:"MaxValue"`
 	ScheduledTaskName    string `json:"ScheduledTaskName" xml:"ScheduledTaskName"`
+	RecurrenceEndTime    string `json:"RecurrenceEndTime" xml:"RecurrenceEndTime"`
+	DesiredCapacity      int    `json:"DesiredCapacity" xml:"DesiredCapacity"`
+	ScheduledTaskId      string `json:"ScheduledTaskId" xml:"ScheduledTaskId"`
+	MinValue             int    `json:"MinValue" xml:"MinValue"`
+	ScalingGroupId       string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	LaunchExpirationTime int    `json:"LaunchExpirationTime" xml:"LaunchExpirationTime"`
 	Description          string `json:"Description" xml:"Description"`
 	ScheduledAction      string `json:"ScheduledAction" xml:"ScheduledAction"`
-	RecurrenceEndTime    string `json:"RecurrenceEndTime" xml:"RecurrenceEndTime"`
 	LaunchTime           string `json:"LaunchTime" xml:"LaunchTime"`
-	RecurrenceType       string `json:"RecurrenceType" xml:"RecurrenceType"`
-	RecurrenceValue      string `json:"RecurrenceValue" xml:"RecurrenceValue"`
-	LaunchExpirationTime int    `json:"LaunchExpirationTime" xml:"LaunchExpirationTime"`
-	TaskEnabled          bool   `json:"TaskEnabled" xml:"TaskEnabled"`
-	MaxValue             int    `json:"MaxValue" xml:"MaxValue"`
-	MinValue             int    `json:"MinValue" xml:"MinValue"`
-	DesiredCapacity      int    `json:"DesiredCapacity" xml:"DesiredCapacity"`
-	ScalingGroupId       string `json:"ScalingGroupId" xml:"ScalingGroupId"`
 }

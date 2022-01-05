@@ -78,20 +78,20 @@ type DescribeLimitationRequest struct {
 // DescribeLimitationResponse is the response struct for api DescribeLimitation
 type DescribeLimitationResponse struct {
 	*responses.BaseResponse
-	MaxNumberOfScalingGroups              int    `json:"MaxNumberOfScalingGroups" xml:"MaxNumberOfScalingGroups"`
-	MaxNumberOfScalingConfigurations      int    `json:"MaxNumberOfScalingConfigurations" xml:"MaxNumberOfScalingConfigurations"`
-	MaxNumberOfScalingRules               int    `json:"MaxNumberOfScalingRules" xml:"MaxNumberOfScalingRules"`
 	MaxNumberOfScheduledTasks             int    `json:"MaxNumberOfScheduledTasks" xml:"MaxNumberOfScheduledTasks"`
-	MaxNumberOfScalingInstances           int    `json:"MaxNumberOfScalingInstances" xml:"MaxNumberOfScalingInstances"`
-	MaxNumberOfDBInstances                int    `json:"MaxNumberOfDBInstances" xml:"MaxNumberOfDBInstances"`
 	MaxNumberOfLoadBalancers              int    `json:"MaxNumberOfLoadBalancers" xml:"MaxNumberOfLoadBalancers"`
-	MaxNumberOfMinSize                    int    `json:"MaxNumberOfMinSize" xml:"MaxNumberOfMinSize"`
 	MaxNumberOfMaxSize                    int    `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
-	MaxNumberOfVServerGroups              int    `json:"MaxNumberOfVServerGroups" xml:"MaxNumberOfVServerGroups"`
-	MaxNumberOfLifecycleHooks             int    `json:"MaxNumberOfLifecycleHooks" xml:"MaxNumberOfLifecycleHooks"`
-	MaxNumberOfNotificationConfigurations int    `json:"MaxNumberOfNotificationConfigurations" xml:"MaxNumberOfNotificationConfigurations"`
 	MaxNumberOfAlbServerGroup             int    `json:"MaxNumberOfAlbServerGroup" xml:"MaxNumberOfAlbServerGroup"`
+	MaxNumberOfDBInstances                int    `json:"MaxNumberOfDBInstances" xml:"MaxNumberOfDBInstances"`
+	MaxNumberOfScalingConfigurations      int    `json:"MaxNumberOfScalingConfigurations" xml:"MaxNumberOfScalingConfigurations"`
+	MaxNumberOfMinSize                    int    `json:"MaxNumberOfMinSize" xml:"MaxNumberOfMinSize"`
+	MaxNumberOfLifecycleHooks             int    `json:"MaxNumberOfLifecycleHooks" xml:"MaxNumberOfLifecycleHooks"`
+	MaxNumberOfScalingInstances           int    `json:"MaxNumberOfScalingInstances" xml:"MaxNumberOfScalingInstances"`
+	MaxNumberOfScalingGroups              int    `json:"MaxNumberOfScalingGroups" xml:"MaxNumberOfScalingGroups"`
 	RequestId                             string `json:"RequestId" xml:"RequestId"`
+	MaxNumberOfNotificationConfigurations int    `json:"MaxNumberOfNotificationConfigurations" xml:"MaxNumberOfNotificationConfigurations"`
+	MaxNumberOfVServerGroups              int    `json:"MaxNumberOfVServerGroups" xml:"MaxNumberOfVServerGroups"`
+	MaxNumberOfScalingRules               int    `json:"MaxNumberOfScalingRules" xml:"MaxNumberOfScalingRules"`
 }
 
 // CreateDescribeLimitationRequest creates a request to invoke DescribeLimitation API

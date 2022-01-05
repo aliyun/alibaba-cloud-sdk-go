@@ -17,9 +17,9 @@ package ess
 
 // LifecycleAction is a nested struct in ess response
 type LifecycleAction struct {
+	LifecycleHookId       string      `json:"LifecycleHookId" xml:"LifecycleHookId"`
 	LifecycleActionToken  string      `json:"LifecycleActionToken" xml:"LifecycleActionToken"`
 	LifecycleActionStatus string      `json:"LifecycleActionStatus" xml:"LifecycleActionStatus"`
 	LifecycleActionResult string      `json:"LifecycleActionResult" xml:"LifecycleActionResult"`
-	LifecycleHookId       string      `json:"LifecycleHookId" xml:"LifecycleHookId"`
 	InstanceIds           InstanceIds `json:"InstanceIds" xml:"InstanceIds"`
 }

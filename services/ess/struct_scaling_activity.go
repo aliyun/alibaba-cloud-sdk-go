@@ -17,17 +17,17 @@ package ess
 
 // ScalingActivity is a nested struct in ess response
 type ScalingActivity struct {
-	ScalingActivityId     string `json:"ScalingActivityId" xml:"ScalingActivityId"`
-	ScalingGroupId        string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-	Description           string `json:"Description" xml:"Description"`
-	Cause                 string `json:"Cause" xml:"Cause"`
-	StartTime             string `json:"StartTime" xml:"StartTime"`
-	EndTime               string `json:"EndTime" xml:"EndTime"`
 	Progress              int    `json:"Progress" xml:"Progress"`
-	StatusCode            string `json:"StatusCode" xml:"StatusCode"`
-	StatusMessage         string `json:"StatusMessage" xml:"StatusMessage"`
-	TotalCapacity         string `json:"TotalCapacity" xml:"TotalCapacity"`
-	AttachedCapacity      string `json:"AttachedCapacity" xml:"AttachedCapacity"`
-	AutoCreatedCapacity   string `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
 	ScalingInstanceNumber int    `json:"ScalingInstanceNumber" xml:"ScalingInstanceNumber"`
+	AttachedCapacity      string `json:"AttachedCapacity" xml:"AttachedCapacity"`
+	TotalCapacity         string `json:"TotalCapacity" xml:"TotalCapacity"`
+	ScalingGroupId        string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	AutoCreatedCapacity   string `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
+	EndTime               string `json:"EndTime" xml:"EndTime"`
+	StartTime             string `json:"StartTime" xml:"StartTime"`
+	Description           string `json:"Description" xml:"Description"`
+	StatusCode            string `json:"StatusCode" xml:"StatusCode"`
+	Cause                 string `json:"Cause" xml:"Cause"`
+	ScalingActivityId     string `json:"ScalingActivityId" xml:"ScalingActivityId"`
+	StatusMessage         string `json:"StatusMessage" xml:"StatusMessage"`
 }

@@ -86,10 +86,10 @@ type DescribeScheduledTasksRequest struct {
 // DescribeScheduledTasksResponse is the response struct for api DescribeScheduledTasks
 type DescribeScheduledTasksResponse struct {
 	*responses.BaseResponse
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
 	PageSize       int            `json:"PageSize" xml:"PageSize"`
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
 	ScheduledTasks ScheduledTasks `json:"ScheduledTasks" xml:"ScheduledTasks"`
 }
 

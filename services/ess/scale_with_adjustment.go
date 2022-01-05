@@ -83,8 +83,8 @@ type ScaleWithAdjustmentRequest struct {
 // ScaleWithAdjustmentResponse is the response struct for api ScaleWithAdjustment
 type ScaleWithAdjustmentResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateScaleWithAdjustmentRequest creates a request to invoke ScaleWithAdjustment API

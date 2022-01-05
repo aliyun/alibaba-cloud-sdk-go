@@ -17,7 +17,7 @@ package ess
 
 // StepAdjustment is a nested struct in ess response
 type StepAdjustment struct {
-	MetricIntervalLowerBound float64 `json:"MetricIntervalLowerBound" xml:"MetricIntervalLowerBound"`
 	MetricIntervalUpperBound float64 `json:"MetricIntervalUpperBound" xml:"MetricIntervalUpperBound"`
 	ScalingAdjustment        int     `json:"ScalingAdjustment" xml:"ScalingAdjustment"`
+	MetricIntervalLowerBound float64 `json:"MetricIntervalLowerBound" xml:"MetricIntervalLowerBound"`
 }

@@ -17,9 +17,9 @@ package ess
 
 // Region is a nested struct in ess response
 type Region struct {
-	RegionId           string `json:"RegionId" xml:"RegionId"`
 	ClassicUnavailable bool   `json:"ClassicUnavailable" xml:"ClassicUnavailable"`
-	VpcUnavailable     bool   `json:"VpcUnavailable" xml:"VpcUnavailable"`
 	RegionEndpoint     string `json:"RegionEndpoint" xml:"RegionEndpoint"`
 	LocalName          string `json:"LocalName" xml:"LocalName"`
+	VpcUnavailable     bool   `json:"VpcUnavailable" xml:"VpcUnavailable"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
 }

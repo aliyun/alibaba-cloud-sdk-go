@@ -1,3 +1,7 @@
+2022-01-05 Version: v1.61.1423
+- Generated 2014-08-28 for `Ess`.
+- AttachInstances and DetachInstances support lifecyclehook option.
+
 2021-12-31 Version: v1.61.1422
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update ErrorCode.

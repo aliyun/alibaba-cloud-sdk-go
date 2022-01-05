@@ -89,11 +89,11 @@ type DescribeScalingInstancesRequest struct {
 // DescribeScalingInstancesResponse is the response struct for api DescribeScalingInstances
 type DescribeScalingInstancesResponse struct {
 	*responses.BaseResponse
-	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
-	TotalSpotCount   int              `json:"TotalSpotCount" xml:"TotalSpotCount"`
-	PageNumber       int              `json:"PageNumber" xml:"PageNumber"`
-	PageSize         int              `json:"PageSize" xml:"PageSize"`
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	PageSize         int              `json:"PageSize" xml:"PageSize"`
+	PageNumber       int              `json:"PageNumber" xml:"PageNumber"`
+	TotalSpotCount   int              `json:"TotalSpotCount" xml:"TotalSpotCount"`
+	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
 	ScalingInstances ScalingInstances `json:"ScalingInstances" xml:"ScalingInstances"`
 }
 

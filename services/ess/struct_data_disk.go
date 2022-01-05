@@ -17,16 +17,16 @@ package ess
 
 // DataDisk is a nested struct in ess response
 type DataDisk struct {
-	Size                 int        `json:"Size" xml:"Size"`
-	Category             string     `json:"Category" xml:"Category"`
+	PerformanceLevel     string     `json:"PerformanceLevel" xml:"PerformanceLevel"`
+	Description          string     `json:"Description" xml:"Description"`
 	SnapshotId           string     `json:"SnapshotId" xml:"SnapshotId"`
 	Device               string     `json:"Device" xml:"Device"`
+	Size                 int        `json:"Size" xml:"Size"`
+	DiskName             string     `json:"DiskName" xml:"DiskName"`
+	AutoSnapshotPolicyId string     `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+	Category             string     `json:"Category" xml:"Category"`
+	KMSKeyId             string     `json:"KMSKeyId" xml:"KMSKeyId"`
 	DeleteWithInstance   bool       `json:"DeleteWithInstance" xml:"DeleteWithInstance"`
 	Encrypted            string     `json:"Encrypted" xml:"Encrypted"`
-	KMSKeyId             string     `json:"KMSKeyId" xml:"KMSKeyId"`
-	DiskName             string     `json:"DiskName" xml:"DiskName"`
-	Description          string     `json:"Description" xml:"Description"`
-	AutoSnapshotPolicyId string     `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-	PerformanceLevel     string     `json:"PerformanceLevel" xml:"PerformanceLevel"`
 	Categories           Categories `json:"Categories" xml:"Categories"`
 }

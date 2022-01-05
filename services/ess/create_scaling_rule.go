@@ -97,17 +97,17 @@ type CreateScalingRuleRequest struct {
 
 // CreateScalingRuleStepAdjustment is a repeated param struct in CreateScalingRuleRequest
 type CreateScalingRuleStepAdjustment struct {
-	MetricIntervalLowerBound string `name:"MetricIntervalLowerBound"`
 	MetricIntervalUpperBound string `name:"MetricIntervalUpperBound"`
+	MetricIntervalLowerBound string `name:"MetricIntervalLowerBound"`
 	ScalingAdjustment        string `name:"ScalingAdjustment"`
 }
 
 // CreateScalingRuleResponse is the response struct for api CreateScalingRule
 type CreateScalingRuleResponse struct {
 	*responses.BaseResponse
-	ScalingRuleId  string `json:"ScalingRuleId" xml:"ScalingRuleId"`
 	ScalingRuleAri string `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ScalingRuleId  string `json:"ScalingRuleId" xml:"ScalingRuleId"`
 }
 
 // CreateCreateScalingRuleRequest creates a request to invoke CreateScalingRule API
