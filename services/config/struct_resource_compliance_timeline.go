@@ -18,6 +18,7 @@ package config
 // ResourceComplianceTimeline is a nested struct in config response
 type ResourceComplianceTimeline struct {
 	NextToken      string               `json:"NextToken" xml:"NextToken"`
-	MaxResults     int                  `json:"MaxResults" xml:"MaxResults"`
+	Limit          int                  `json:"Limit" xml:"Limit"`
+	TotalCount     int64                `json:"TotalCount" xml:"TotalCount"`
 	ComplianceList []ComplianceListItem `json:"ComplianceList" xml:"ComplianceList"`
 }

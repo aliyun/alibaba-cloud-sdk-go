@@ -17,32 +17,26 @@ package config
 
 // ConfigRule is a nested struct in config response
 type ConfigRule struct {
+	CompliancePackId           string                     `json:"CompliancePackId" xml:"CompliancePackId"`
 	RiskLevel                  int                        `json:"RiskLevel" xml:"RiskLevel"`
-	ExcludeResourceIdsScope    string                     `json:"ExcludeResourceIdsScope" xml:"ExcludeResourceIdsScope"`
 	CreateTimestamp            int64                      `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	ResourceGroupIdsScope      string                     `json:"ResourceGroupIdsScope" xml:"ResourceGroupIdsScope"`
 	SourceOwner                string                     `json:"SourceOwner" xml:"SourceOwner"`
 	ModifiedTimestamp          int64                      `json:"ModifiedTimestamp" xml:"ModifiedTimestamp"`
-	TagValueScope              string                     `json:"TagValueScope" xml:"TagValueScope"`
-	AutomationType             string                     `json:"AutomationType" xml:"AutomationType"`
-	TagKeyScope                string                     `json:"TagKeyScope" xml:"TagKeyScope"`
-	RegionIdsScope             string                     `json:"RegionIdsScope" xml:"RegionIdsScope"`
-	ConfigRuleState            string                     `json:"ConfigRuleState" xml:"ConfigRuleState"`
-	Description                string                     `json:"Description" xml:"Description"`
-	ConfigRuleTriggerTypes     string                     `json:"ConfigRuleTriggerTypes" xml:"ConfigRuleTriggerTypes"`
-	MaximumExecutionFrequency  string                     `json:"MaximumExecutionFrequency" xml:"MaximumExecutionFrequency"`
 	ConfigRuleName             string                     `json:"ConfigRuleName" xml:"ConfigRuleName"`
 	ConfigRuleId               string                     `json:"ConfigRuleId" xml:"ConfigRuleId"`
+	AutomationType             string                     `json:"AutomationType" xml:"AutomationType"`
 	ConfigRuleArn              string                     `json:"ConfigRuleArn" xml:"ConfigRuleArn"`
 	InputParameters            map[string]interface{}     `json:"InputParameters" xml:"InputParameters"`
-	TagKeyLogicScope           string                     `json:"TagKeyLogicScope" xml:"TagKeyLogicScope"`
+	ConfigRuleState            string                     `json:"ConfigRuleState" xml:"ConfigRuleState"`
 	AccountId                  int64                      `json:"AccountId" xml:"AccountId"`
 	SourceIdentifier           string                     `json:"SourceIdentifier" xml:"SourceIdentifier"`
-	ResourceTypesScope         string                     `json:"ResourceTypesScope" xml:"ResourceTypesScope"`
+	Description                string                     `json:"Description" xml:"Description"`
+	MaximumExecutionFrequency  string                     `json:"MaximumExecutionFrequency" xml:"MaximumExecutionFrequency"`
+	OrganizationRule           bool                       `json:"OrganizationRule" xml:"OrganizationRule"`
 	CreateBy                   CreateBy                   `json:"CreateBy" xml:"CreateBy"`
 	ConfigRuleEvaluationStatus ConfigRuleEvaluationStatus `json:"ConfigRuleEvaluationStatus" xml:"ConfigRuleEvaluationStatus"`
 	Source                     Source                     `json:"Source" xml:"Source"`
-	Compliance                 Compliance                 `json:"Compliance" xml:"Compliance"`
 	Scope                      Scope                      `json:"Scope" xml:"Scope"`
 	ManagedRule                ManagedRule                `json:"ManagedRule" xml:"ManagedRule"`
+	Compliance                 Compliance                 `json:"Compliance" xml:"Compliance"`
 }
