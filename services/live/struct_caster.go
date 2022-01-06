@@ -28,4 +28,7 @@ type Caster struct {
 	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
 	CasterTemplate string `json:"CasterTemplate" xml:"CasterTemplate"`
 	ChannelEnable  int    `json:"ChannelEnable" xml:"ChannelEnable"`
+	LastModified   string `json:"LastModified" xml:"LastModified"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	RoomId         int    `json:"RoomId" xml:"RoomId"`
 }

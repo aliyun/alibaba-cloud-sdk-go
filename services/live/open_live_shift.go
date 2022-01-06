@@ -71,12 +71,13 @@ func (client *Client) OpenLiveShiftWithCallback(request *OpenLiveShiftRequest, c
 // OpenLiveShiftRequest is the request struct for api OpenLiveShift
 type OpenLiveShiftRequest struct {
 	*requests.RpcRequest
-	Duration   requests.Integer `position:"Query" name:"Duration"`
-	AppName    string           `position:"Query" name:"AppName"`
-	StreamName string           `position:"Query" name:"StreamName"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Vision     requests.Integer `position:"Query" name:"Vision"`
+	Duration        requests.Integer `position:"Query" name:"Duration"`
+	AppName         string           `position:"Query" name:"AppName"`
+	StreamName      string           `position:"Query" name:"StreamName"`
+	IgnoreTranscode requests.Boolean `position:"Query" name:"IgnoreTranscode"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	Vision          requests.Integer `position:"Query" name:"Vision"`
 }
 
 // OpenLiveShiftResponse is the response struct for api OpenLiveShift

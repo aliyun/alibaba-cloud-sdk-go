@@ -78,6 +78,7 @@ type CreateCasterRequest struct {
 	NormType       requests.Integer `position:"Query" name:"NormType"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	PurchaseTime   string           `position:"Query" name:"PurchaseTime"`
+	MicMode        requests.Integer `position:"Query" name:"MicMode"`
 	ChargeType     string           `position:"Query" name:"ChargeType"`
 }
 
