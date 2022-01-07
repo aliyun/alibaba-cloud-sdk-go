@@ -17,10 +17,17 @@ package dypnsapi
 
 // Data is a nested struct in dypnsapi response
 type Data struct {
-	BizToken           string `json:"BizToken" xml:"BizToken"`
-	ExpireTime         int64  `json:"ExpireTime" xml:"ExpireTime"`
-	AuthorizationUrl   string `json:"AuthorizationUrl" xml:"AuthorizationUrl"`
-	StsAccessKeySecret string `json:"StsAccessKeySecret" xml:"StsAccessKeySecret"`
-	StsToken           string `json:"StsToken" xml:"StsToken"`
-	StsAccessKeyId     string `json:"StsAccessKeyId" xml:"StsAccessKeyId"`
+	AmountSum          string                 `json:"AmountSum" xml:"AmountSum"`
+	BizToken           string                 `json:"BizToken" xml:"BizToken"`
+	TotalSuccess       int64                  `json:"TotalSuccess" xml:"TotalSuccess"`
+	StsAccessKeyId     string                 `json:"StsAccessKeyId" xml:"StsAccessKeyId"`
+	TotalUnknown       int64                  `json:"TotalUnknown" xml:"TotalUnknown"`
+	ExpireTime         int64                  `json:"ExpireTime" xml:"ExpireTime"`
+	AuthorizationUrl   string                 `json:"AuthorizationUrl" xml:"AuthorizationUrl"`
+	StsAccessKeySecret string                 `json:"StsAccessKeySecret" xml:"StsAccessKeySecret"`
+	StsToken           string                 `json:"StsToken" xml:"StsToken"`
+	TotalFail          int64                  `json:"TotalFail" xml:"TotalFail"`
+	Total              int64                  `json:"Total" xml:"Total"`
+	DayStatistic       []DayStatisticItem     `json:"DayStatistic" xml:"DayStatistic"`
+	SceneBillingList   []SceneBillingListItem `json:"SceneBillingList" xml:"SceneBillingList"`
 }

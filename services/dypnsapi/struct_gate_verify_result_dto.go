@@ -17,6 +17,6 @@ package dypnsapi
 
 // GateVerifyResultDTO is a nested struct in dypnsapi response
 type GateVerifyResultDTO struct {
-	VerifyResult string `json:"VerifyResult" xml:"VerifyResult"`
 	VerifyId     string `json:"VerifyId" xml:"VerifyId"`
+	VerifyResult string `json:"VerifyResult" xml:"VerifyResult"`
 }

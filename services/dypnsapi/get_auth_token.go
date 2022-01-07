@@ -81,9 +81,9 @@ type GetAuthTokenRequest struct {
 // GetAuthTokenResponse is the response struct for api GetAuthToken
 type GetAuthTokenResponse struct {
 	*responses.BaseResponse
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Code      string    `json:"Code" xml:"Code"`
 	Message   string    `json:"Message" xml:"Message"`
-	RequestId string    `json:"RequestId" xml:"RequestId"`
 	TokenInfo TokenInfo `json:"TokenInfo" xml:"TokenInfo"`
 }
 
