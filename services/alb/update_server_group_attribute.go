@@ -77,6 +77,7 @@ type UpdateServerGroupAttributeRequest struct {
 	Scheduler                string                                        `position:"Query" name:"Scheduler"`
 	ServerGroupId            string                                        `position:"Query" name:"ServerGroupId"`
 	UpstreamKeepaliveEnabled requests.Boolean                              `position:"Query" name:"UpstreamKeepaliveEnabled"`
+	ServiceName              string                                        `position:"Query" name:"ServiceName"`
 	StickySessionConfig      UpdateServerGroupAttributeStickySessionConfig `position:"Query" name:"StickySessionConfig"  type:"Struct"`
 	DryRun                   requests.Boolean                              `position:"Query" name:"DryRun"`
 }

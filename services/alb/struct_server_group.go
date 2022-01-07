@@ -31,6 +31,7 @@ type ServerGroup struct {
 	UpstreamKeepaliveEnabled bool                `json:"UpstreamKeepaliveEnabled" xml:"UpstreamKeepaliveEnabled"`
 	Ipv6Enabled              bool                `json:"Ipv6Enabled" xml:"Ipv6Enabled"`
 	ServerCount              int                 `json:"ServerCount" xml:"ServerCount"`
+	ServiceName              string              `json:"ServiceName" xml:"ServiceName"`
 	RelatedLoadBalancerIds   []string            `json:"RelatedLoadBalancerIds" xml:"RelatedLoadBalancerIds"`
 	HealthCheckConfig        HealthCheckConfig   `json:"HealthCheckConfig" xml:"HealthCheckConfig"`
 	StickySessionConfig      StickySessionConfig `json:"StickySessionConfig" xml:"StickySessionConfig"`
