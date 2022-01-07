@@ -1,3 +1,7 @@
+2022-01-07 Version: v1.61.1430
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported GetSparkJobDetail,GetSparkJobExecutorLogs,KillSparkJob,GetSparkJobDriverLog,GetSparkJobLog,SubmitSparkJob API.
+
 2022-01-07 Version: v1.61.1429
 - Generated 2019-05-06 for `sae`.
 - Supported minReadyInstanceRatio parameter for deploy.
