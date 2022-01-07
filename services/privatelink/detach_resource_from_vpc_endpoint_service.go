@@ -75,6 +75,7 @@ type DetachResourceFromVpcEndpointServiceRequest struct {
 	ResourceId   string           `position:"Query" name:"ResourceId"`
 	DryRun       requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceType string           `position:"Query" name:"ResourceType"`
+	ZoneId       string           `position:"Query" name:"ZoneId"`
 	ServiceId    string           `position:"Query" name:"ServiceId"`
 }
 

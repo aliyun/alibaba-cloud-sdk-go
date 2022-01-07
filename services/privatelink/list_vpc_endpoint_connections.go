@@ -79,6 +79,7 @@ type ListVpcEndpointConnectionsRequest struct {
 	ConnectionStatus   string           `position:"Query" name:"ConnectionStatus"`
 	MaxResults         requests.Integer `position:"Query" name:"MaxResults"`
 	EniId              string           `position:"Query" name:"EniId"`
+	ZoneId             string           `position:"Query" name:"ZoneId"`
 	ServiceId          string           `position:"Query" name:"ServiceId"`
 }
 

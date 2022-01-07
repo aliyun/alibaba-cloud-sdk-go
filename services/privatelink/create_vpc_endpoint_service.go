@@ -87,6 +87,7 @@ type CreateVpcEndpointServiceRequest struct {
 type CreateVpcEndpointServiceResource struct {
 	ResourceType string `name:"ResourceType"`
 	ResourceId   string `name:"ResourceId"`
+	ZoneId       string `name:"ZoneId"`
 }
 
 // CreateVpcEndpointServiceResponse is the response struct for api CreateVpcEndpointService
