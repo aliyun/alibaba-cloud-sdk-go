@@ -56,6 +56,7 @@ type Data struct {
 	OssAkId                       string                   `json:"OssAkId" xml:"OssAkId"`
 	PackageVersion                string                   `json:"PackageVersion" xml:"PackageVersion"`
 	PageSize                      int                      `json:"PageSize" xml:"PageSize"`
+	MinReadyInstanceRatio         int                      `json:"MinReadyInstanceRatio" xml:"MinReadyInstanceRatio"`
 	EnableGreyTagRoute            bool                     `json:"EnableGreyTagRoute" xml:"EnableGreyTagRoute"`
 	Replicas                      int                      `json:"Replicas" xml:"Replicas"`
 	PhpConfigLocation             string                   `json:"PhpConfigLocation" xml:"PhpConfigLocation"`

@@ -74,6 +74,7 @@ type RescaleApplicationRequest struct {
 	MinReadyInstances                requests.Integer `position:"Query" name:"MinReadyInstances"`
 	Replicas                         requests.Integer `position:"Query" name:"Replicas"`
 	AppId                            string           `position:"Query" name:"AppId"`
+	MinReadyInstanceRatio            requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
 	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
 }
 

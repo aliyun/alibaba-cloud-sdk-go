@@ -110,6 +110,7 @@ type DeployApplicationRequest struct {
 	AcrInstanceId                    string           `position:"Body" name:"AcrInstanceId"`
 	AppId                            string           `position:"Query" name:"AppId"`
 	ImageUrl                         string           `position:"Query" name:"ImageUrl"`
+	MinReadyInstanceRatio            requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
 	Php                              string           `position:"Body" name:"Php"`
 	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
 	PhpConfigLocation                string           `position:"Query" name:"PhpConfigLocation"`

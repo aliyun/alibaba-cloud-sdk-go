@@ -1,3 +1,7 @@
+2022-01-07 Version: v1.61.1429
+- Generated 2019-05-06 for `sae`.
+- Supported minReadyInstanceRatio parameter for deploy.
+
 2022-01-07 Version: v1.61.1428
 - Generated 2017-05-25 for `Dypnsapi`.
 - Support New API for Dypnsapi.

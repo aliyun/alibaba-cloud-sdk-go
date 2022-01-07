@@ -71,8 +71,9 @@ func (client *Client) RestartApplicationWithCallback(request *RestartApplication
 // RestartApplicationRequest is the request struct for api RestartApplication
 type RestartApplicationRequest struct {
 	*requests.RoaRequest
-	MinReadyInstances requests.Integer `position:"Query" name:"MinReadyInstances"`
-	AppId             string           `position:"Query" name:"AppId"`
+	MinReadyInstances     requests.Integer `position:"Query" name:"MinReadyInstances"`
+	AppId                 string           `position:"Query" name:"AppId"`
+	MinReadyInstanceRatio requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
 }
 
 // RestartApplicationResponse is the response struct for api RestartApplication

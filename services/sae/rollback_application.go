@@ -75,6 +75,7 @@ type RollbackApplicationRequest struct {
 	VersionId                        string           `position:"Query" name:"VersionId"`
 	AppId                            string           `position:"Query" name:"AppId"`
 	BatchWaitTime                    requests.Integer `position:"Query" name:"BatchWaitTime"`
+	MinReadyInstanceRatio            requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
 	AutoEnableApplicationScalingRule string           `position:"Query" name:"AutoEnableApplicationScalingRule"`
 	UpdateStrategy                   string           `position:"Query" name:"UpdateStrategy"`
 }

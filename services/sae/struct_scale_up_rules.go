@@ -17,7 +17,7 @@ package sae
 
 // ScaleUpRules is a nested struct in sae response
 type ScaleUpRules struct {
-	Step                       int64 `json:"Step" xml:"Step"`
 	StabilizationWindowSeconds int64 `json:"StabilizationWindowSeconds" xml:"StabilizationWindowSeconds"`
 	Disabled                   bool  `json:"Disabled" xml:"Disabled"`
+	Step                       int64 `json:"Step" xml:"Step"`
 }

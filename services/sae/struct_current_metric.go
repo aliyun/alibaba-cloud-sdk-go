@@ -17,7 +17,7 @@ package sae
 
 // CurrentMetric is a nested struct in sae response
 type CurrentMetric struct {
-	Type         string `json:"Type" xml:"Type"`
-	CurrentValue int64  `json:"CurrentValue" xml:"CurrentValue"`
 	Name         string `json:"Name" xml:"Name"`
+	CurrentValue int64  `json:"CurrentValue" xml:"CurrentValue"`
+	Type         string `json:"Type" xml:"Type"`
 }
