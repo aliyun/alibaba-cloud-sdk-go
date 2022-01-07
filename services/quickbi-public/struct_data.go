@@ -17,21 +17,7 @@ package quickbi_public
 
 // Data is a nested struct in quickbi_public response
 type Data struct {
-	Name                 string `json:"Name" xml:"Name"`
-	ParentUserGroupId    string `json:"ParentUserGroupId" xml:"ParentUserGroupId"`
-	ModifyUser           string `json:"ModifyUser" xml:"ModifyUser"`
-	UserGroupId          string `json:"UserGroupId" xml:"UserGroupId"`
-	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
-	IdentifiedPath       string `json:"IdentifiedPath" xml:"IdentifiedPath"`
-	UsergroupDesc        string `json:"UsergroupDesc" xml:"UsergroupDesc"`
-	ParentUserGroupName  string `json:"ParentUserGroupName" xml:"ParentUserGroupName"`
-	UsergroupId          string `json:"UsergroupId" xml:"UsergroupId"`
-	ParentUsergroupId    string `json:"ParentUsergroupId" xml:"ParentUsergroupId"`
-	UsergroupName        string `json:"UsergroupName" xml:"UsergroupName"`
-	ModifiedTime         string `json:"ModifiedTime" xml:"ModifiedTime"`
-	UserGroupName        string `json:"UserGroupName" xml:"UserGroupName"`
-	CreateUser           string `json:"CreateUser" xml:"CreateUser"`
-	UserGroupDescription string `json:"UserGroupDescription" xml:"UserGroupDescription"`
-	Id                   string `json:"Id" xml:"Id"`
-	IsUserGroup          bool   `json:"IsUserGroup" xml:"IsUserGroup"`
+	MenuId             string          `json:"MenuId" xml:"MenuId"`
+	ShowOnlyWithAccess bool            `json:"ShowOnlyWithAccess" xml:"ShowOnlyWithAccess"`
+	Receivers          []ReceiversItem `json:"Receivers" xml:"Receivers"`
 }

@@ -17,25 +17,13 @@ package quickbi_public
 
 // DataItem is a nested struct in quickbi_public response
 type DataItem struct {
-	CreateUserAccountName string `json:"CreateUserAccountName" xml:"CreateUserAccountName"`
-	Email                 string `json:"Email" xml:"Email"`
-	ModifyUser            string `json:"ModifyUser" xml:"ModifyUser"`
-	WorkspaceName         string `json:"WorkspaceName" xml:"WorkspaceName"`
-	CreateTime            string `json:"CreateTime" xml:"CreateTime"`
-	Owner                 string `json:"Owner" xml:"Owner"`
-	ModifyUserAccountName string `json:"ModifyUserAccountName" xml:"ModifyUserAccountName"`
-	ModifiedTime          string `json:"ModifiedTime" xml:"ModifiedTime"`
-	AllowPublishOperation bool   `json:"AllowPublishOperation" xml:"AllowPublishOperation"`
-	AccountId             string `json:"AccountId" xml:"AccountId"`
-	AccountName           string `json:"AccountName" xml:"AccountName"`
-	UserId                string `json:"UserId" xml:"UserId"`
-	NickName              string `json:"NickName" xml:"NickName"`
-	CreateUser            string `json:"CreateUser" xml:"CreateUser"`
-	AllowShareOperation   bool   `json:"AllowShareOperation" xml:"AllowShareOperation"`
-	WorkspaceId           string `json:"WorkspaceId" xml:"WorkspaceId"`
-	OwnerAccountName      string `json:"OwnerAccountName" xml:"OwnerAccountName"`
-	WorkspaceDescription  string `json:"WorkspaceDescription" xml:"WorkspaceDescription"`
-	OrganizationId        string `json:"OrganizationId" xml:"OrganizationId"`
-	Phone                 string `json:"Phone" xml:"Phone"`
-	Role                  Role   `json:"Role" xml:"Role"`
+	AccountId     string `json:"AccountId" xml:"AccountId"`
+	AccountName   string `json:"AccountName" xml:"AccountName"`
+	AdminUser     bool   `json:"AdminUser" xml:"AdminUser"`
+	AuthAdminUser bool   `json:"AuthAdminUser" xml:"AuthAdminUser"`
+	Email         string `json:"Email" xml:"Email"`
+	NickName      string `json:"NickName" xml:"NickName"`
+	Phone         string `json:"Phone" xml:"Phone"`
+	UserId        string `json:"UserId" xml:"UserId"`
+	UserType      int    `json:"UserType" xml:"UserType"`
 }

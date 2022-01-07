@@ -17,6 +17,5 @@ package quickbi_public
 
 // Result is a nested struct in quickbi_public response
 type Result struct {
-	FailedUserGroupIds []string              `json:"FailedUserGroupIds" xml:"FailedUserGroupIds"`
-	UserGroupModels    []UserGroupModelsItem `json:"UserGroupModels" xml:"UserGroupModels"`
+	Data []Data `json:"Data" xml:"Data"`
 }
