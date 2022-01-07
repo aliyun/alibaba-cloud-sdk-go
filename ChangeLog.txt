@@ -1,3 +1,7 @@
+2022-01-07 Version: v1.61.1432
+- Generated 2021-03-25, 2020-08-04, 2020-08-06, 2020-08-07, 2020-08-08, 2020-08-09, 2020-11-11, 2020-08-01, 2020-08-02, 2020-08-03, 2020-07-30, 2020-07-31 for `quickbi-public`.
+- Add or modify APIs, include, QueryEmbeddedStaus, QueryWorks, QueryWorksByWorkspace.
+
 2022-01-07 Version: v1.61.1431
 - Generated 2020-06-16 for `Alb`.
 - Support Service name.

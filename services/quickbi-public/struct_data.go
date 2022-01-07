@@ -17,27 +17,21 @@ package quickbi_public
 
 // Data is a nested struct in quickbi_public response
 type Data struct {
-	ExpireDate        int64     `json:"ExpireDate" xml:"ExpireDate"`
-	ShareToId         string    `json:"ShareToId" xml:"ShareToId"`
-	ModifyTime        string    `json:"ModifyTime" xml:"ModifyTime"`
-	Status            int       `json:"Status" xml:"Status"`
-	ShareId           string    `json:"ShareId" xml:"ShareId"`
-	ModifyName        string    `json:"ModifyName" xml:"ModifyName"`
-	OwnerName         string    `json:"OwnerName" xml:"OwnerName"`
-	ReportId          string    `json:"ReportId" xml:"ReportId"`
-	WorkspaceName     string    `json:"WorkspaceName" xml:"WorkspaceName"`
-	CreateTime        string    `json:"CreateTime" xml:"CreateTime"`
-	ShareToName       string    `json:"ShareToName" xml:"ShareToName"`
-	ShareToType       int       `json:"ShareToType" xml:"ShareToType"`
-	WorksId           string    `json:"WorksId" xml:"WorksId"`
-	WorkName          string    `json:"WorkName" xml:"WorkName"`
-	AuthPoint         int       `json:"AuthPoint" xml:"AuthPoint"`
-	SecurityLevel     string    `json:"SecurityLevel" xml:"SecurityLevel"`
-	ThirdPartAuthFlag int       `json:"ThirdPartAuthFlag" xml:"ThirdPartAuthFlag"`
-	OwnerId           string    `json:"OwnerId" xml:"OwnerId"`
-	WorkType          string    `json:"WorkType" xml:"WorkType"`
-	WorkspaceId       string    `json:"WorkspaceId" xml:"WorkspaceId"`
-	Description       string    `json:"Description" xml:"Description"`
-	ShareType         string    `json:"ShareType" xml:"ShareType"`
-	Directory         Directory `json:"Directory" xml:"Directory"`
+	Name                 string `json:"Name" xml:"Name"`
+	ParentUserGroupId    string `json:"ParentUserGroupId" xml:"ParentUserGroupId"`
+	ModifyUser           string `json:"ModifyUser" xml:"ModifyUser"`
+	UserGroupId          string `json:"UserGroupId" xml:"UserGroupId"`
+	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
+	IdentifiedPath       string `json:"IdentifiedPath" xml:"IdentifiedPath"`
+	UsergroupDesc        string `json:"UsergroupDesc" xml:"UsergroupDesc"`
+	ParentUserGroupName  string `json:"ParentUserGroupName" xml:"ParentUserGroupName"`
+	UsergroupId          string `json:"UsergroupId" xml:"UsergroupId"`
+	ParentUsergroupId    string `json:"ParentUsergroupId" xml:"ParentUsergroupId"`
+	UsergroupName        string `json:"UsergroupName" xml:"UsergroupName"`
+	ModifiedTime         string `json:"ModifiedTime" xml:"ModifiedTime"`
+	UserGroupName        string `json:"UserGroupName" xml:"UserGroupName"`
+	CreateUser           string `json:"CreateUser" xml:"CreateUser"`
+	UserGroupDescription string `json:"UserGroupDescription" xml:"UserGroupDescription"`
+	Id                   string `json:"Id" xml:"Id"`
+	IsUserGroup          bool   `json:"IsUserGroup" xml:"IsUserGroup"`
 }

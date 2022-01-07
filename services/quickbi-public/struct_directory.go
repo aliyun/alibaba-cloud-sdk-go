@@ -17,8 +17,8 @@ package quickbi_public
 
 // Directory is a nested struct in quickbi_public response
 type Directory struct {
-	Id       string `json:"Id" xml:"Id"`
 	Name     string `json:"Name" xml:"Name"`
 	PathId   string `json:"PathId" xml:"PathId"`
+	Id       string `json:"Id" xml:"Id"`
 	PathName string `json:"PathName" xml:"PathName"`
 }

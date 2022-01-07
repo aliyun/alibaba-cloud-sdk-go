@@ -17,16 +17,25 @@ package quickbi_public
 
 // DataItem is a nested struct in quickbi_public response
 type DataItem struct {
-	DatasetId     string     `json:"DatasetId" xml:"DatasetId"`
-	DatasetName   string     `json:"DatasetName" xml:"DatasetName"`
-	Description   string     `json:"Description" xml:"Description"`
-	CreateTime    string     `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime    string     `json:"ModifyTime" xml:"ModifyTime"`
-	OwnerId       string     `json:"OwnerId" xml:"OwnerId"`
-	OwnerName     string     `json:"OwnerName" xml:"OwnerName"`
-	RowLevel      bool       `json:"RowLevel" xml:"RowLevel"`
-	WorkspaceId   string     `json:"WorkspaceId" xml:"WorkspaceId"`
-	WorkspaceName string     `json:"WorkspaceName" xml:"WorkspaceName"`
-	DataSource    DataSource `json:"DataSource" xml:"DataSource"`
-	Directory     Directory  `json:"Directory" xml:"Directory"`
+	CreateUserAccountName string `json:"CreateUserAccountName" xml:"CreateUserAccountName"`
+	Email                 string `json:"Email" xml:"Email"`
+	ModifyUser            string `json:"ModifyUser" xml:"ModifyUser"`
+	WorkspaceName         string `json:"WorkspaceName" xml:"WorkspaceName"`
+	CreateTime            string `json:"CreateTime" xml:"CreateTime"`
+	Owner                 string `json:"Owner" xml:"Owner"`
+	ModifyUserAccountName string `json:"ModifyUserAccountName" xml:"ModifyUserAccountName"`
+	ModifiedTime          string `json:"ModifiedTime" xml:"ModifiedTime"`
+	AllowPublishOperation bool   `json:"AllowPublishOperation" xml:"AllowPublishOperation"`
+	AccountId             string `json:"AccountId" xml:"AccountId"`
+	AccountName           string `json:"AccountName" xml:"AccountName"`
+	UserId                string `json:"UserId" xml:"UserId"`
+	NickName              string `json:"NickName" xml:"NickName"`
+	CreateUser            string `json:"CreateUser" xml:"CreateUser"`
+	AllowShareOperation   bool   `json:"AllowShareOperation" xml:"AllowShareOperation"`
+	WorkspaceId           string `json:"WorkspaceId" xml:"WorkspaceId"`
+	OwnerAccountName      string `json:"OwnerAccountName" xml:"OwnerAccountName"`
+	WorkspaceDescription  string `json:"WorkspaceDescription" xml:"WorkspaceDescription"`
+	OrganizationId        string `json:"OrganizationId" xml:"OrganizationId"`
+	Phone                 string `json:"Phone" xml:"Phone"`
+	Role                  Role   `json:"Role" xml:"Role"`
 }

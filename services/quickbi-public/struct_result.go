@@ -17,8 +17,6 @@ package quickbi_public
 
 // Result is a nested struct in quickbi_public response
 type Result struct {
-	TokeType     int64  `json:"TokeType" xml:"TokeType"`
-	InvalidTime  string `json:"InvalidTime" xml:"InvalidTime"`
-	RegisterTime string `json:"RegisterTime" xml:"RegisterTime"`
-	AccessToken  string `json:"AccessToken" xml:"AccessToken"`
+	FailedUserGroupIds []string              `json:"FailedUserGroupIds" xml:"FailedUserGroupIds"`
+	UserGroupModels    []UserGroupModelsItem `json:"UserGroupModels" xml:"UserGroupModels"`
 }

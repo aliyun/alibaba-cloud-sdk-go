@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryEmbeddedStaus invokes the quickbi_public.QueryEmbeddedStaus API synchronously
-func (client *Client) QueryEmbeddedStaus(request *QueryEmbeddedStausRequest) (response *QueryEmbeddedStausResponse, err error) {
-	response = CreateQueryEmbeddedStausResponse()
+// QueryWorks invokes the quickbi_public.QueryWorks API synchronously
+func (client *Client) QueryWorks(request *QueryWorksRequest) (response *QueryWorksResponse, err error) {
+	response = CreateQueryWorksResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryEmbeddedStausWithChan invokes the quickbi_public.QueryEmbeddedStaus API asynchronously
-func (client *Client) QueryEmbeddedStausWithChan(request *QueryEmbeddedStausRequest) (<-chan *QueryEmbeddedStausResponse, <-chan error) {
-	responseChan := make(chan *QueryEmbeddedStausResponse, 1)
+// QueryWorksWithChan invokes the quickbi_public.QueryWorks API asynchronously
+func (client *Client) QueryWorksWithChan(request *QueryWorksRequest) (<-chan *QueryWorksResponse, <-chan error) {
+	responseChan := make(chan *QueryWorksResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryEmbeddedStaus(request)
+		response, err := client.QueryWorks(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) QueryEmbeddedStausWithChan(request *QueryEmbeddedStausRequ
 	return responseChan, errChan
 }
 
-// QueryEmbeddedStausWithCallback invokes the quickbi_public.QueryEmbeddedStaus API asynchronously
-func (client *Client) QueryEmbeddedStausWithCallback(request *QueryEmbeddedStausRequest, callback func(response *QueryEmbeddedStausResponse, err error)) <-chan int {
+// QueryWorksWithCallback invokes the quickbi_public.QueryWorks API asynchronously
+func (client *Client) QueryWorksWithCallback(request *QueryWorksRequest, callback func(response *QueryWorksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryEmbeddedStausResponse
+		var response *QueryWorksResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryEmbeddedStaus(request)
+		response, err = client.QueryWorks(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,36 @@ func (client *Client) QueryEmbeddedStausWithCallback(request *QueryEmbeddedStaus
 	return result
 }
 
-// QueryEmbeddedStausRequest is the request struct for api QueryEmbeddedStaus
-type QueryEmbeddedStausRequest struct {
+// QueryWorksRequest is the request struct for api QueryWorks
+type QueryWorksRequest struct {
 	*requests.RpcRequest
+	ApiLevel    string `position:"Query" name:"ApiLevel"`
 	WorksId     string `position:"Query" name:"WorksId"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
 }
 
-// QueryEmbeddedStausResponse is the response struct for api QueryEmbeddedStaus
-type QueryEmbeddedStausResponse struct {
+// QueryWorksResponse is the response struct for api QueryWorks
+type QueryWorksResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    bool   `json:"Result" xml:"Result"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
-// CreateQueryEmbeddedStausRequest creates a request to invoke QueryEmbeddedStaus API
-func CreateQueryEmbeddedStausRequest() (request *QueryEmbeddedStausRequest) {
-	request = &QueryEmbeddedStausRequest{
+// CreateQueryWorksRequest creates a request to invoke QueryWorks API
+func CreateQueryWorksRequest() (request *QueryWorksRequest) {
+	request = &QueryWorksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-07", "QueryEmbeddedStaus", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2020-08-07", "QueryWorks", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQueryEmbeddedStausResponse creates a response to parse from QueryEmbeddedStaus response
-func CreateQueryEmbeddedStausResponse() (response *QueryEmbeddedStausResponse) {
-	response = &QueryEmbeddedStausResponse{
+// CreateQueryWorksResponse creates a response to parse from QueryWorks response
+func CreateQueryWorksResponse() (response *QueryWorksResponse) {
+	response = &QueryWorksResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
