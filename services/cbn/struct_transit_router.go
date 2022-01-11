@@ -26,4 +26,5 @@ type TransitRouter struct {
 	CenId                    string `json:"CenId" xml:"CenId"`
 	AliUid                   int64  `json:"AliUid" xml:"AliUid"`
 	RegionId                 string `json:"RegionId" xml:"RegionId"`
+	ServiceMode              string `json:"ServiceMode" xml:"ServiceMode"`
 }

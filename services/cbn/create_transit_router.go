@@ -73,6 +73,7 @@ type CreateTransitRouterRequest struct {
 	*requests.RpcRequest
 	TransitRouterName        string           `position:"Query" name:"TransitRouterName"`
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServiceMode              string           `position:"Query" name:"ServiceMode"`
 	ClientToken              string           `position:"Query" name:"ClientToken"`
 	CenId                    string           `position:"Query" name:"CenId"`
 	Type                     string           `position:"Query" name:"Type"`

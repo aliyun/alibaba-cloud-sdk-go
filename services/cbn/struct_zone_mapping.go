@@ -17,6 +17,7 @@ package cbn
 
 // ZoneMapping is a nested struct in cbn response
 type ZoneMapping struct {
-	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
-	VSwitchId string `json:"VSwitchId" xml:"VSwitchId"`
+	ZoneId             string `json:"ZoneId" xml:"ZoneId"`
+	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkInterfaceId string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
 }

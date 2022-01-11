@@ -17,28 +17,29 @@ package cbn
 
 // TransitRouterAttachment is a nested struct in cbn response
 type TransitRouterAttachment struct {
-	PeerTransitRouterRegionId          string        `json:"PeerTransitRouterRegionId" xml:"PeerTransitRouterRegionId"`
 	PeerTransitRouterOwnerId           int64         `json:"PeerTransitRouterOwnerId" xml:"PeerTransitRouterOwnerId"`
 	VbrRegionId                        string        `json:"VbrRegionId" xml:"VbrRegionId"`
-	CreationTime                       string        `json:"CreationTime" xml:"CreationTime"`
 	CenBandwidthPackageId              string        `json:"CenBandwidthPackageId" xml:"CenBandwidthPackageId"`
 	VbrOwnerId                         int64         `json:"VbrOwnerId" xml:"VbrOwnerId"`
-	AutoPublishRouteEnabled            bool          `json:"AutoPublishRouteEnabled" xml:"AutoPublishRouteEnabled"`
 	VpcOwnerId                         int64         `json:"VpcOwnerId" xml:"VpcOwnerId"`
 	VbrId                              string        `json:"VbrId" xml:"VbrId"`
 	Bandwidth                          int           `json:"Bandwidth" xml:"Bandwidth"`
-	ResourceType                       string        `json:"ResourceType" xml:"ResourceType"`
 	RegionId                           string        `json:"RegionId" xml:"RegionId"`
-	TransitRouterAttachmentId          string        `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
-	BandwidthType                      string        `json:"BandwidthType" xml:"BandwidthType"`
 	GeographicSpanId                   string        `json:"GeographicSpanId" xml:"GeographicSpanId"`
 	VpcRegionId                        string        `json:"VpcRegionId" xml:"VpcRegionId"`
 	TransitRouterAttachmentDescription string        `json:"TransitRouterAttachmentDescription" xml:"TransitRouterAttachmentDescription"`
-	BandwidthPackageId                 string        `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 	TransitRouterId                    string        `json:"TransitRouterId" xml:"TransitRouterId"`
 	TransitRouterAttachmentName        string        `json:"TransitRouterAttachmentName" xml:"TransitRouterAttachmentName"`
+	VpcId                              string        `json:"VpcId" xml:"VpcId"`
+	PeerTransitRouterRegionId          string        `json:"PeerTransitRouterRegionId" xml:"PeerTransitRouterRegionId"`
+	CreationTime                       string        `json:"CreationTime" xml:"CreationTime"`
+	AutoPublishRouteEnabled            bool          `json:"AutoPublishRouteEnabled" xml:"AutoPublishRouteEnabled"`
+	ServiceMode                        string        `json:"ServiceMode" xml:"ServiceMode"`
+	ResourceType                       string        `json:"ResourceType" xml:"ResourceType"`
+	TransitRouterAttachmentId          string        `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
+	BandwidthType                      string        `json:"BandwidthType" xml:"BandwidthType"`
+	BandwidthPackageId                 string        `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 	Status                             string        `json:"Status" xml:"Status"`
 	PeerTransitRouterId                string        `json:"PeerTransitRouterId" xml:"PeerTransitRouterId"`
-	VpcId                              string        `json:"VpcId" xml:"VpcId"`
 	ZoneMappings                       []ZoneMapping `json:"ZoneMappings" xml:"ZoneMappings"`
 }

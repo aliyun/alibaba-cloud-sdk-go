@@ -72,6 +72,7 @@ func (client *Client) CreateTransitRouterVpcAttachmentWithCallback(request *Crea
 type CreateTransitRouterVpcAttachmentRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                    requests.Integer                                `position:"Query" name:"ResourceOwnerId"`
+	ServiceMode                        string                                          `position:"Query" name:"ServiceMode"`
 	VpcOwnerId                         requests.Integer                                `position:"Query" name:"VpcOwnerId"`
 	ClientToken                        string                                          `position:"Query" name:"ClientToken"`
 	CenId                              string                                          `position:"Query" name:"CenId"`

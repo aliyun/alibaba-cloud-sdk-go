@@ -1,3 +1,7 @@
+2022-01-11 Version: v1.61.1438
+- Generated 2017-09-12 for `Cbn`.
+- Support  DeleteTransitRouter API.
+
 2022-01-11 Version: v1.61.1437
 - Generated 2019-01-08 for `Config`.
 - Fix bugs.
