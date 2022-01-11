@@ -88,7 +88,7 @@ func CreateSaveSingleTaskForDisassociatingEnsRequest() (request *SaveSingleTaskF
 	request = &SaveSingleTaskForDisassociatingEnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDisassociatingEns", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDisassociatingEns", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateSubmitOperationAuditInfoRequest() (request *SubmitOperationAuditInfoR
 	request = &SubmitOperationAuditInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitOperationAuditInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitOperationAuditInfo", "", "")
 	request.Method = requests.POST
 	return
 }

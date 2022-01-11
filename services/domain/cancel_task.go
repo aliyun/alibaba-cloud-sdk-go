@@ -87,7 +87,7 @@ func CreateCancelTaskRequest() (request *CancelTaskRequest) {
 	request = &CancelTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CancelTask", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CancelTask", "", "")
 	request.Method = requests.POST
 	return
 }

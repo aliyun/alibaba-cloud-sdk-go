@@ -87,7 +87,7 @@ func CreateQueryDomainSuffixRequest() (request *QueryDomainSuffixRequest) {
 	request = &QueryDomainSuffixRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainSuffix", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainSuffix", "", "")
 	request.Method = requests.POST
 	return
 }

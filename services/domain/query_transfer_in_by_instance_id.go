@@ -108,7 +108,7 @@ func CreateQueryTransferInByInstanceIdRequest() (request *QueryTransferInByInsta
 	request = &QueryTransferInByInstanceIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInByInstanceId", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInByInstanceId", "", "")
 	request.Method = requests.POST
 	return
 }

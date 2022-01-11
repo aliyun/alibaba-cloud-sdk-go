@@ -91,7 +91,7 @@ func CreateSubmitEmailVerificationRequest() (request *SubmitEmailVerificationReq
 	request = &SubmitEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitEmailVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitEmailVerification", "", "")
 	request.Method = requests.POST
 	return
 }

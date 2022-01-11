@@ -87,7 +87,7 @@ func CreateQueryDomainAdminDivisionRequest() (request *QueryDomainAdminDivisionR
 	request = &QueryDomainAdminDivisionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainAdminDivision", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainAdminDivision", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateAcknowledgeTaskResultRequest() (request *AcknowledgeTaskResultRequest
 	request = &AcknowledgeTaskResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "AcknowledgeTaskResult", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "AcknowledgeTaskResult", "", "")
 	request.Method = requests.POST
 	return
 }

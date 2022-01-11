@@ -93,7 +93,7 @@ func CreateGetQualificationUploadPolicyRequest() (request *GetQualificationUploa
 	request = &GetQualificationUploadPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "GetQualificationUploadPolicy", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "GetQualificationUploadPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

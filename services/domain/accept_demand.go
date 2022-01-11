@@ -87,7 +87,7 @@ func CreateAcceptDemandRequest() (request *AcceptDemandRequest) {
 	request = &AcceptDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "AcceptDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "AcceptDemand", "", "")
 	request.Method = requests.POST
 	return
 }

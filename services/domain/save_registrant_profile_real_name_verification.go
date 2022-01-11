@@ -109,7 +109,7 @@ func CreateSaveRegistrantProfileRealNameVerificationRequest() (request *SaveRegi
 	request = &SaveRegistrantProfileRealNameVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveRegistrantProfileRealNameVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveRegistrantProfileRealNameVerification", "", "")
 	request.Method = requests.POST
 	return
 }

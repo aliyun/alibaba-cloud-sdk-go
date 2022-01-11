@@ -89,7 +89,7 @@ func CreateQueryDomainGroupListRequest() (request *QueryDomainGroupListRequest) 
 	request = &QueryDomainGroupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainGroupList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainGroupList", "", "")
 	request.Method = requests.POST
 	return
 }

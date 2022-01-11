@@ -90,7 +90,7 @@ func CreateConfirmTransferInEmailRequest() (request *ConfirmTransferInEmailReque
 	request = &ConfirmTransferInEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ConfirmTransferInEmail", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ConfirmTransferInEmail", "", "")
 	request.Method = requests.POST
 	return
 }

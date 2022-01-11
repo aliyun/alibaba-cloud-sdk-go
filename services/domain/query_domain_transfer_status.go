@@ -86,7 +86,7 @@ func CreateQueryDomainTransferStatusRequest() (request *QueryDomainTransferStatu
 	request = &QueryDomainTransferStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryDomainTransferStatus", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryDomainTransferStatus", "", "")
 	request.Method = requests.POST
 	return
 }

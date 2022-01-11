@@ -89,7 +89,7 @@ func CreateSaveBatchTaskForUpdateProhibitionLockRequest() (request *SaveBatchTas
 	request = &SaveBatchTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdateProhibitionLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdateProhibitionLock", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateResendEmailVerificationRequest() (request *ResendEmailVerificationReq
 	request = &ResendEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ResendEmailVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ResendEmailVerification", "", "")
 	request.Method = requests.POST
 	return
 }

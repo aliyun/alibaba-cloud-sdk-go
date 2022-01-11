@@ -89,7 +89,7 @@ func CreateTransferInCheckMailTokenRequest() (request *TransferInCheckMailTokenR
 	request = &TransferInCheckMailTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInCheckMailToken", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInCheckMailToken", "", "")
 	request.Method = requests.POST
 	return
 }

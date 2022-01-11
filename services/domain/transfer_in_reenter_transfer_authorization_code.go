@@ -88,7 +88,7 @@ func CreateTransferInReenterTransferAuthorizationCodeRequest() (request *Transfe
 	request = &TransferInReenterTransferAuthorizationCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode", "", "")
 	request.Method = requests.POST
 	return
 }

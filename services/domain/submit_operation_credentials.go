@@ -89,7 +89,7 @@ func CreateSubmitOperationCredentialsRequest() (request *SubmitOperationCredenti
 	request = &SubmitOperationCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitOperationCredentials", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SubmitOperationCredentials", "", "")
 	request.Method = requests.POST
 	return
 }

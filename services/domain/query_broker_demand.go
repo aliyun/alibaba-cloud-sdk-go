@@ -80,11 +80,11 @@ type QueryBrokerDemandRequest struct {
 // QueryBrokerDemandResponse is the response struct for api QueryBrokerDemand
 type QueryBrokerDemandResponse struct {
 	*responses.BaseResponse
+	CurrentPageNum int      `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int      `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int      `json:"PageSize" xml:"PageSize"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	TotalItemNum   int      `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int      `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	PageSize       int      `json:"PageSize" xml:"PageSize"`
-	TotalPageNum   int      `json:"TotalPageNum" xml:"TotalPageNum"`
 	Data           []Demand `json:"Data" xml:"Data"`
 }
 
@@ -93,7 +93,7 @@ func CreateQueryBrokerDemandRequest() (request *QueryBrokerDemandRequest) {
 	request = &QueryBrokerDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBrokerDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBrokerDemand", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateQueryTransferOutInfoRequest() (request *QueryTransferOutInfoRequest) 
 	request = &QueryTransferOutInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferOutInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferOutInfo", "", "")
 	request.Method = requests.POST
 	return
 }

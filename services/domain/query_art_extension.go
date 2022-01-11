@@ -97,7 +97,7 @@ func CreateQueryArtExtensionRequest() (request *QueryArtExtensionRequest) {
 	request = &QueryArtExtensionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryArtExtension", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryArtExtension", "", "")
 	request.Method = requests.POST
 	return
 }

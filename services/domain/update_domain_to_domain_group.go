@@ -91,7 +91,7 @@ func CreateUpdateDomainToDomainGroupRequest() (request *UpdateDomainToDomainGrou
 	request = &UpdateDomainToDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "UpdateDomainToDomainGroup", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "UpdateDomainToDomainGroup", "", "")
 	request.Method = requests.POST
 	return
 }

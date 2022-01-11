@@ -99,7 +99,7 @@ func CreateQueryTransferInListRequest() (request *QueryTransferInListRequest) {
 	request = &QueryTransferInListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInList", "", "")
 	request.Method = requests.POST
 	return
 }

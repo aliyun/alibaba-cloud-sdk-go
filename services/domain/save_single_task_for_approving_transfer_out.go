@@ -88,7 +88,7 @@ func CreateSaveSingleTaskForApprovingTransferOutRequest() (request *SaveSingleTa
 	request = &SaveSingleTaskForApprovingTransferOutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForApprovingTransferOut", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForApprovingTransferOut", "", "")
 	request.Method = requests.POST
 	return
 }

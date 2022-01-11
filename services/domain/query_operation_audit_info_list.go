@@ -97,7 +97,7 @@ func CreateQueryOperationAuditInfoListRequest() (request *QueryOperationAuditInf
 	request = &QueryOperationAuditInfoListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryOperationAuditInfoList", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryOperationAuditInfoList", "", "")
 	request.Method = requests.POST
 	return
 }

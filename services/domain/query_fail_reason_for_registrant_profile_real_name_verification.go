@@ -88,7 +88,7 @@ func CreateQueryFailReasonForRegistrantProfileRealNameVerificationRequest() (req
 	request = &QueryFailReasonForRegistrantProfileRealNameVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification", "", "")
 	request.Method = requests.POST
 	return
 }

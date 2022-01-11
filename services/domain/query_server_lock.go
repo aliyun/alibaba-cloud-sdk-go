@@ -97,7 +97,7 @@ func CreateQueryServerLockRequest() (request *QueryServerLockRequest) {
 	request = &QueryServerLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryServerLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryServerLock", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateQueryBidRecordsRequest() (request *QueryBidRecordsRequest) {
 	request = &QueryBidRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBidRecords", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBidRecords", "", "")
 	request.Method = requests.POST
 	return
 }

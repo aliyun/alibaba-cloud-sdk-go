@@ -87,7 +87,7 @@ func CreateVerifyEmailRequest() (request *VerifyEmailRequest) {
 	request = &VerifyEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyEmail", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyEmail", "", "")
 	request.Method = requests.POST
 	return
 }

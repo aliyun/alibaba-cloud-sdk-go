@@ -99,7 +99,7 @@ func CreatePollTaskResultRequest() (request *PollTaskResultRequest) {
 	request = &PollTaskResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "PollTaskResult", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "PollTaskResult", "", "")
 	request.Method = requests.POST
 	return
 }

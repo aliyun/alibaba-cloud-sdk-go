@@ -90,7 +90,7 @@ func CreateQueryFailingReasonListForQualificationRequest() (request *QueryFailin
 	request = &QueryFailingReasonListForQualificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailingReasonListForQualification", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailingReasonListForQualification", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {
 	request = &QueryDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDnsHost", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDnsHost", "", "")
 	request.Method = requests.POST
 	return
 }

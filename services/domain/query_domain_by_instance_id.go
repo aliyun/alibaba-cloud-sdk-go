@@ -111,7 +111,7 @@ func CreateQueryDomainByInstanceIdRequest() (request *QueryDomainByInstanceIdReq
 	request = &QueryDomainByInstanceIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainByInstanceId", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainByInstanceId", "", "")
 	request.Method = requests.POST
 	return
 }

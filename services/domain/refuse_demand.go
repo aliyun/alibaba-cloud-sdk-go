@@ -86,7 +86,7 @@ func CreateRefuseDemandRequest() (request *RefuseDemandRequest) {
 	request = &RefuseDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "RefuseDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "RefuseDemand", "", "")
 	request.Method = requests.POST
 	return
 }

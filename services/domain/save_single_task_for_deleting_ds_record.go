@@ -89,7 +89,7 @@ func CreateSaveSingleTaskForDeletingDSRecordRequest() (request *SaveSingleTaskFo
 	request = &SaveSingleTaskForDeletingDSRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDeletingDSRecord", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDeletingDSRecord", "", "")
 	request.Method = requests.POST
 	return
 }

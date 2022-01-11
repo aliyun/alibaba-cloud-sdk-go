@@ -86,7 +86,7 @@ func CreateDeleteContactTemplatesRequest() (request *DeleteContactTemplatesReque
 	request = &DeleteContactTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteContactTemplates", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteContactTemplates", "", "")
 	request.Method = requests.POST
 	return
 }

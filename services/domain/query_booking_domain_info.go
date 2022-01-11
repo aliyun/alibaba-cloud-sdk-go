@@ -91,7 +91,7 @@ func CreateQueryBookingDomainInfoRequest() (request *QueryBookingDomainInfoReque
 	request = &QueryBookingDomainInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBookingDomainInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryBookingDomainInfo", "", "")
 	request.Method = requests.POST
 	return
 }

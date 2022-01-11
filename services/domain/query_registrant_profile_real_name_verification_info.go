@@ -95,7 +95,7 @@ func CreateQueryRegistrantProfileRealNameVerificationInfoRequest() (request *Que
 	request = &QueryRegistrantProfileRealNameVerificationInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo", "", "")
 	request.Method = requests.POST
 	return
 }

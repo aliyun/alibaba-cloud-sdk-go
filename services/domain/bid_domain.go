@@ -79,8 +79,8 @@ type BidDomainRequest struct {
 // BidDomainResponse is the response struct for api BidDomain
 type BidDomainResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	AuctionId string `json:"AuctionId" xml:"AuctionId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateBidDomainRequest creates a request to invoke BidDomain API
@@ -88,7 +88,7 @@ func CreateBidDomainRequest() (request *BidDomainRequest) {
 	request = &BidDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "BidDomain", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "BidDomain", "", "")
 	request.Method = requests.POST
 	return
 }

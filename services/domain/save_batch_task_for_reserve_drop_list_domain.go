@@ -92,7 +92,7 @@ func CreateSaveBatchTaskForReserveDropListDomainRequest() (request *SaveBatchTas
 	request = &SaveBatchTaskForReserveDropListDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForReserveDropListDomain", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForReserveDropListDomain", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -106,7 +106,7 @@ func CreateChangeAuctionRequest() (request *ChangeAuctionRequest) {
 	request = &ChangeAuctionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "ChangeAuction", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "ChangeAuction", "", "")
 	request.Method = requests.POST
 	return
 }

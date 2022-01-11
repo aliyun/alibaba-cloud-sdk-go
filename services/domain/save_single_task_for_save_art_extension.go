@@ -97,7 +97,7 @@ func CreateSaveSingleTaskForSaveArtExtensionRequest() (request *SaveSingleTaskFo
 	request = &SaveSingleTaskForSaveArtExtensionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateSaveBatchDomainRemarkRequest() (request *SaveBatchDomainRemarkRequest
 	request = &SaveBatchDomainRemarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchDomainRemark", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchDomainRemark", "", "")
 	request.Method = requests.POST
 	return
 }

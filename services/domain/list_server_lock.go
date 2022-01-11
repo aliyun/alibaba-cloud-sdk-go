@@ -102,7 +102,7 @@ func CreateListServerLockRequest() (request *ListServerLockRequest) {
 	request = &ListServerLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ListServerLock", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ListServerLock", "", "")
 	request.Method = requests.POST
 	return
 }

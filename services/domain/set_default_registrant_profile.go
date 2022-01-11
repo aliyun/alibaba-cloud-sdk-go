@@ -86,7 +86,7 @@ func CreateSetDefaultRegistrantProfileRequest() (request *SetDefaultRegistrantPr
 	request = &SetDefaultRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SetDefaultRegistrantProfile", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SetDefaultRegistrantProfile", "", "")
 	request.Method = requests.POST
 	return
 }

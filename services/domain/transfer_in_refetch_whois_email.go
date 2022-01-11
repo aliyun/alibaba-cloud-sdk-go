@@ -87,7 +87,7 @@ func CreateTransferInRefetchWhoisEmailRequest() (request *TransferInRefetchWhois
 	request = &TransferInRefetchWhoisEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInRefetchWhoisEmail", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "TransferInRefetchWhoisEmail", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateQueryDSRecordRequest() (request *QueryDSRecordRequest) {
 	request = &QueryDSRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDSRecord", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDSRecord", "", "")
 	request.Method = requests.POST
 	return
 }

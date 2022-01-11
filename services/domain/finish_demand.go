@@ -86,7 +86,7 @@ func CreateFinishDemandRequest() (request *FinishDemandRequest) {
 	request = &FinishDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "FinishDemand", "domain", "openAPI")
+	request.InitWithApiInfo("Domain", "2018-02-08", "FinishDemand", "", "")
 	request.Method = requests.POST
 	return
 }
