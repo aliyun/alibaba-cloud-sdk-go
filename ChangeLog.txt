@@ -1,3 +1,7 @@
+2022-01-12 Version: v1.61.1440
+- Generated 2020-09-07 for `Config`.
+- Support folder for rule.
+
 2022-01-11 Version: v1.61.1439
 - Generated 2016-04-28 for `Vpc`.
 - Support new region cn-beijing-finance-1.
