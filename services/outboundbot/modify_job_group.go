@@ -71,15 +71,17 @@ func (client *Client) ModifyJobGroupWithCallback(request *ModifyJobGroupRequest,
 // ModifyJobGroupRequest is the request struct for api ModifyJobGroup
 type ModifyJobGroupRequest struct {
 	*requests.RpcRequest
-	RecallStrategyJson string    `position:"Query" name:"RecallStrategyJson"`
-	Description        string    `position:"Query" name:"Description"`
-	ScriptId           string    `position:"Query" name:"ScriptId"`
-	CallingNumber      *[]string `position:"Query" name:"CallingNumber"  type:"Repeated"`
-	InstanceId         string    `position:"Query" name:"InstanceId"`
-	StrategyJson       string    `position:"Query" name:"StrategyJson"`
-	JobGroupId         string    `position:"Query" name:"JobGroupId"`
-	Name               string    `position:"Query" name:"Name"`
-	ScenarioId         string    `position:"Query" name:"ScenarioId"`
+	RecallStrategyJson string           `position:"Query" name:"RecallStrategyJson"`
+	Description        string           `position:"Query" name:"Description"`
+	ScriptId           string           `position:"Query" name:"ScriptId"`
+	StrategyJson       string           `position:"Query" name:"StrategyJson"`
+	RingingDuration    requests.Integer `position:"Query" name:"RingingDuration"`
+	ScenarioId         string           `position:"Query" name:"ScenarioId"`
+	JobGroupStatus     string           `position:"Query" name:"JobGroupStatus"`
+	CallingNumber      *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
+	InstanceId         string           `position:"Query" name:"InstanceId"`
+	JobGroupId         string           `position:"Query" name:"JobGroupId"`
+	Name               string           `position:"Query" name:"Name"`
 }
 
 // ModifyJobGroupResponse is the response struct for api ModifyJobGroup

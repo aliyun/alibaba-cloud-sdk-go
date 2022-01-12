@@ -79,11 +79,11 @@ type SaveAfterAnswerDelayPlaybackRequest struct {
 // SaveAfterAnswerDelayPlaybackResponse is the response struct for api SaveAfterAnswerDelayPlayback
 type SaveAfterAnswerDelayPlaybackResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSaveAfterAnswerDelayPlaybackRequest creates a request to invoke SaveAfterAnswerDelayPlayback API

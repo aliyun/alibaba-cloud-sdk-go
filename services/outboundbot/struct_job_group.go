@@ -24,6 +24,7 @@ type JobGroup struct {
 	TotalCallNum         int            `json:"TotalCallNum" xml:"TotalCallNum"`
 	JobGroupDescription  string         `json:"JobGroupDescription" xml:"JobGroupDescription"`
 	Id                   string         `json:"Id" xml:"Id"`
+	RingingDuration      int64          `json:"RingingDuration" xml:"RingingDuration"`
 	CreationTime         int64          `json:"CreationTime" xml:"CreationTime"`
 	ScenarioId           string         `json:"ScenarioId" xml:"ScenarioId"`
 	ScriptVersion        string         `json:"ScriptVersion" xml:"ScriptVersion"`

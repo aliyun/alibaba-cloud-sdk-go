@@ -20,6 +20,7 @@ type Progress struct {
 	FailErrorCode    string         `json:"FailErrorCode" xml:"FailErrorCode"`
 	TotalJobs        int            `json:"TotalJobs" xml:"TotalJobs"`
 	PausedNum        int            `json:"PausedNum" xml:"PausedNum"`
+	FeedbackUrl      string         `json:"FeedbackUrl" xml:"FeedbackUrl"`
 	Scheduling       int            `json:"Scheduling" xml:"Scheduling"`
 	Cancelled        int            `json:"Cancelled" xml:"Cancelled"`
 	Executing        int            `json:"Executing" xml:"Executing"`

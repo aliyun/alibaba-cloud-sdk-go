@@ -1,3 +1,7 @@
+2022-01-12 Version: v1.61.1442
+- Generated 2019-12-26 for `OutboundBot`.
+- Supported new features for outbound.
+
 2022-01-12 Version: v1.61.1441
 - Generated 2020-01-01 for `Dts`.
 - DTS SDK.

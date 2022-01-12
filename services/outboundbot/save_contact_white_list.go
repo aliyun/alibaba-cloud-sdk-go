@@ -79,12 +79,12 @@ type SaveContactWhiteListRequest struct {
 // SaveContactWhiteListResponse is the response struct for api SaveContactWhiteList
 type SaveContactWhiteListResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	AffectedRows   int    `json:"AffectedRows" xml:"AffectedRows"`
 	Success        bool   `json:"Success" xml:"Success"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	AffectedRows   int    `json:"AffectedRows" xml:"AffectedRows"`
 }
 
 // CreateSaveContactWhiteListRequest creates a request to invoke SaveContactWhiteList API
