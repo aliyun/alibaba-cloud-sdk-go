@@ -74,7 +74,9 @@ type ModifyDtsJobRequest struct {
 	DbList                     string `position:"Body" name:"DbList"`
 	ClientToken                string `position:"Query" name:"ClientToken"`
 	OwnerId                    string `position:"Query" name:"OwnerId"`
+	ModifyTypeEnum             string `position:"Body" name:"ModifyTypeEnum"`
 	EtlOperatorColumnReference string `position:"Body" name:"EtlOperatorColumnReference"`
+	Reserved                   string `position:"Body" name:"Reserved"`
 	DtsInstanceId              string `position:"Query" name:"DtsInstanceId"`
 	SynchronizationDirection   string `position:"Query" name:"SynchronizationDirection"`
 }

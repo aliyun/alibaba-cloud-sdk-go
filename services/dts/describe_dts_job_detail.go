@@ -112,6 +112,7 @@ type DescribeDtsJobDetailResponse struct {
 	GroupId                  string               `json:"GroupId" xml:"GroupId"`
 	SynchronizationDirection string               `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
 	DtsJobDirection          string               `json:"DtsJobDirection" xml:"DtsJobDirection"`
+	DemoJob                  bool                 `json:"DemoJob" xml:"DemoJob"`
 	SourceEndpoint           SourceEndpoint       `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	DestinationEndpoint      DestinationEndpoint  `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
 	MigrationMode            MigrationMode        `json:"MigrationMode" xml:"MigrationMode"`
