@@ -79,8 +79,8 @@ type ListAccountsRequest struct {
 type ListAccountsResponse struct {
 	*responses.BaseResponse
 	TotalCount int                    `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                    `json:"PageSize" xml:"PageSize"`
 	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	PageSize   int                    `json:"PageSize" xml:"PageSize"`
 	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
 	Accounts   AccountsInListAccounts `json:"Accounts" xml:"Accounts"`
 }

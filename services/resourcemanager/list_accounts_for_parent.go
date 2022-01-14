@@ -81,8 +81,8 @@ type ListAccountsForParentRequest struct {
 type ListAccountsForParentResponse struct {
 	*responses.BaseResponse
 	TotalCount int                             `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                             `json:"PageSize" xml:"PageSize"`
 	RequestId  string                          `json:"RequestId" xml:"RequestId"`
+	PageSize   int                             `json:"PageSize" xml:"PageSize"`
 	PageNumber int                             `json:"PageNumber" xml:"PageNumber"`
 	Accounts   AccountsInListAccountsForParent `json:"Accounts" xml:"Accounts"`
 }

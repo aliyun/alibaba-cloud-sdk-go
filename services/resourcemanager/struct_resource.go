@@ -17,10 +17,10 @@ package resourcemanager
 
 // Resource is a nested struct in resourcemanager response
 type Resource struct {
-	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ResourceId      string `json:"ResourceId" xml:"ResourceId"`
 	Service         string `json:"Service" xml:"Service"`
 	ResourceType    string `json:"ResourceType" xml:"ResourceType"`
-	RegionId        string `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ResourceId      string `json:"ResourceId" xml:"ResourceId"`
 	CreateDate      string `json:"CreateDate" xml:"CreateDate"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
 }

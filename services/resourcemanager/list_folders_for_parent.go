@@ -81,8 +81,8 @@ type ListFoldersForParentRequest struct {
 type ListFoldersForParentResponse struct {
 	*responses.BaseResponse
 	TotalCount int                           `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                           `json:"PageSize" xml:"PageSize"`
 	RequestId  string                        `json:"RequestId" xml:"RequestId"`
+	PageSize   int                           `json:"PageSize" xml:"PageSize"`
 	PageNumber int                           `json:"PageNumber" xml:"PageNumber"`
 	Folders    FoldersInListFoldersForParent `json:"Folders" xml:"Folders"`
 }

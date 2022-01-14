@@ -71,14 +71,19 @@ func (client *Client) ListDelegatedAdministratorsWithCallback(request *ListDeleg
 // ListDelegatedAdministratorsRequest is the request struct for api ListDelegatedAdministrators
 type ListDelegatedAdministratorsRequest struct {
 	*requests.RpcRequest
-	ServicePrincipal string `position:"Query" name:"ServicePrincipal"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	ServicePrincipal string           `position:"Query" name:"ServicePrincipal"`
 }
 
 // ListDelegatedAdministratorsResponse is the response struct for api ListDelegatedAdministrators
 type ListDelegatedAdministratorsResponse struct {
 	*responses.BaseResponse
-	RequestId string                                `json:"RequestId" xml:"RequestId"`
-	Accounts  AccountsInListDelegatedAdministrators `json:"Accounts" xml:"Accounts"`
+	RequestId  string                                `json:"RequestId" xml:"RequestId"`
+	TotalCount int64                                 `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int64                                 `json:"PageSize" xml:"PageSize"`
+	PageNumber int64                                 `json:"PageNumber" xml:"PageNumber"`
+	Accounts   AccountsInListDelegatedAdministrators `json:"Accounts" xml:"Accounts"`
 }
 
 // CreateListDelegatedAdministratorsRequest creates a request to invoke ListDelegatedAdministrators API

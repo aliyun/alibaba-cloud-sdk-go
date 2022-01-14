@@ -1,3 +1,7 @@
+2022-01-14 Version: v1.61.1444
+- Generated 2020-03-31 for `ResourceManager`.
+- Supported more query conditions when searching resource group.
+
 2022-01-13 Version: v1.61.1443
 - Generated 2017-05-25 for `Dypnsapi`.
 - Supported New Features.

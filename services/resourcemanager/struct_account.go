@@ -20,6 +20,7 @@ type Account struct {
 	ModifyTime            string `json:"ModifyTime" xml:"ModifyTime"`
 	DelegationEnabledTime string `json:"DelegationEnabledTime" xml:"DelegationEnabledTime"`
 	JoinTime              string `json:"JoinTime" xml:"JoinTime"`
+	ResourceDirectoryPath string `json:"ResourceDirectoryPath" xml:"ResourceDirectoryPath"`
 	FolderId              string `json:"FolderId" xml:"FolderId"`
 	DisplayName           string `json:"DisplayName" xml:"DisplayName"`
 	AccountId             string `json:"AccountId" xml:"AccountId"`
@@ -29,6 +30,6 @@ type Account struct {
 	RecordId              string `json:"RecordId" xml:"RecordId"`
 	Status                string `json:"Status" xml:"Status"`
 	JoinMethod            string `json:"JoinMethod" xml:"JoinMethod"`
-	ResourceDirectoryId   string `json:"ResourceDirectoryId" xml:"ResourceDirectoryId"`
 	Type                  string `json:"Type" xml:"Type"`
+	ResourceDirectoryId   string `json:"ResourceDirectoryId" xml:"ResourceDirectoryId"`
 }

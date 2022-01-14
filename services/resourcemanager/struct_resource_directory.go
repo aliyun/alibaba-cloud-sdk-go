@@ -17,11 +17,12 @@ package resourcemanager
 
 // ResourceDirectory is a nested struct in resourcemanager response
 type ResourceDirectory struct {
-	MasterAccountName   string `json:"MasterAccountName" xml:"MasterAccountName"`
-	MasterAccountId     string `json:"MasterAccountId" xml:"MasterAccountId"`
-	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
-	ControlPolicyStatus string `json:"ControlPolicyStatus" xml:"ControlPolicyStatus"`
-	ScpStatus           string `json:"ScpStatus" xml:"ScpStatus"`
-	RootFolderId        string `json:"RootFolderId" xml:"RootFolderId"`
-	ResourceDirectoryId string `json:"ResourceDirectoryId" xml:"ResourceDirectoryId"`
+	MasterAccountName    string `json:"MasterAccountName" xml:"MasterAccountName"`
+	MasterAccountId      string `json:"MasterAccountId" xml:"MasterAccountId"`
+	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
+	ControlPolicyStatus  string `json:"ControlPolicyStatus" xml:"ControlPolicyStatus"`
+	MemberDeletionStatus string `json:"MemberDeletionStatus" xml:"MemberDeletionStatus"`
+	RootFolderId         string `json:"RootFolderId" xml:"RootFolderId"`
+	ScpStatus            string `json:"ScpStatus" xml:"ScpStatus"`
+	ResourceDirectoryId  string `json:"ResourceDirectoryId" xml:"ResourceDirectoryId"`
 }

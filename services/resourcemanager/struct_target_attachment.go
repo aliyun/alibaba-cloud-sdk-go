@@ -17,8 +17,8 @@ package resourcemanager
 
 // TargetAttachment is a nested struct in resourcemanager response
 type TargetAttachment struct {
+	TargetId   string `json:"TargetId" xml:"TargetId"`
+	TargetName string `json:"TargetName" xml:"TargetName"`
 	AttachDate string `json:"AttachDate" xml:"AttachDate"`
 	TargetType string `json:"TargetType" xml:"TargetType"`
-	TargetName string `json:"TargetName" xml:"TargetName"`
-	TargetId   string `json:"TargetId" xml:"TargetId"`
 }

@@ -17,10 +17,10 @@ package resourcemanager
 
 // ControlPolicyAttachment is a nested struct in resourcemanager response
 type ControlPolicyAttachment struct {
-	PolicyType  string `json:"PolicyType" xml:"PolicyType"`
 	Description string `json:"Description" xml:"Description"`
-	AttachDate  string `json:"AttachDate" xml:"AttachDate"`
+	EffectScope string `json:"EffectScope" xml:"EffectScope"`
 	PolicyName  string `json:"PolicyName" xml:"PolicyName"`
 	PolicyId    string `json:"PolicyId" xml:"PolicyId"`
-	EffectScope string `json:"EffectScope" xml:"EffectScope"`
+	AttachDate  string `json:"AttachDate" xml:"AttachDate"`
+	PolicyType  string `json:"PolicyType" xml:"PolicyType"`
 }
