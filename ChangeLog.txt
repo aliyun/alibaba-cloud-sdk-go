@@ -1,3 +1,7 @@
+2022-01-14 Version: v1.61.1446
+- Generated 2019-11-11 for `clickhouse`.
+- Clickhouse go sdk.
+
 2022-01-14 Version: v1.61.1445
 - Generated 2020-03-31 for `ResourceManager`.
 - Supported more query conditions when searching resource group.
