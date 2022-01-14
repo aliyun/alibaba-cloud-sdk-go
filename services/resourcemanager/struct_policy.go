@@ -22,7 +22,7 @@ type Policy struct {
 	PolicyType      string `json:"PolicyType" xml:"PolicyType"`
 	UpdateDate      string `json:"UpdateDate" xml:"UpdateDate"`
 	AttachmentCount int    `json:"AttachmentCount" xml:"AttachmentCount"`
-	PolicyName      string `json:"PolicyName" xml:"PolicyName"`
 	DefaultVersion  string `json:"DefaultVersion" xml:"DefaultVersion"`
+	PolicyName      string `json:"PolicyName" xml:"PolicyName"`
 	Description     string `json:"Description" xml:"Description"`
 }

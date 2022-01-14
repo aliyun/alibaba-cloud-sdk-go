@@ -71,8 +71,16 @@ func (client *Client) MoveResourcesWithCallback(request *MoveResourcesRequest, c
 // MoveResourcesRequest is the request struct for api MoveResources
 type MoveResourcesRequest struct {
 	*requests.RpcRequest
-	Resources       string `position:"Query" name:"Resources"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Resources       *[]MoveResourcesResources `position:"Query" name:"Resources"  type:"Repeated"`
+	ResourceGroupId string                    `position:"Query" name:"ResourceGroupId"`
+}
+
+// MoveResourcesResources is a repeated param struct in MoveResourcesRequest
+type MoveResourcesResources struct {
+	ResourceId   string `name:"ResourceId"`
+	RegionId     string `name:"RegionId"`
+	Service      string `name:"Service"`
+	ResourceType string `name:"ResourceType"`
 }
 
 // MoveResourcesResponse is the response struct for api MoveResources
