@@ -93,7 +93,7 @@ func CreateGetOssStsRequest() (request *GetOssStsRequest) {
 	request = &GetOssStsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetOssSts", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetOssSts", "", "")
 	request.Method = requests.GET
 	return
 }

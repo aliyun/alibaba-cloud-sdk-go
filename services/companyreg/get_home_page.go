@@ -86,7 +86,7 @@ func CreateGetHomePageRequest() (request *GetHomePageRequest) {
 	request = &GetHomePageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetHomePage", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetHomePage", "", "")
 	request.Method = requests.GET
 	return
 }

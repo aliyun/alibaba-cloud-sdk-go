@@ -96,7 +96,7 @@ func CreateQueryIntentionListRequest() (request *QueryIntentionListRequest) {
 	request = &QueryIntentionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "QueryIntentionList", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "QueryIntentionList", "", "")
 	request.Method = requests.POST
 	return
 }

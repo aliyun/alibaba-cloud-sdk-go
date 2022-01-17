@@ -97,7 +97,7 @@ func CreateListBookkeepingStatisticsesRequest() (request *ListBookkeepingStatist
 	request = &ListBookkeepingStatisticsesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ListBookkeepingStatisticses", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ListBookkeepingStatisticses", "", "")
 	request.Method = requests.POST
 	return
 }

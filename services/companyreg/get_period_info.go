@@ -90,7 +90,7 @@ func CreateGetPeriodInfoRequest() (request *GetPeriodInfoRequest) {
 	request = &GetPeriodInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetPeriodInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetPeriodInfo", "", "")
 	request.Method = requests.GET
 	return
 }

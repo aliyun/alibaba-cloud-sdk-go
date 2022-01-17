@@ -98,7 +98,7 @@ func CreateListCompanyRegConsultationsRequest() (request *ListCompanyRegConsulta
 	request = &ListCompanyRegConsultationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ListCompanyRegConsultations", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ListCompanyRegConsultations", "", "")
 	request.Method = requests.POST
 	return
 }

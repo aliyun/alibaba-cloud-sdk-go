@@ -88,7 +88,7 @@ func CreateGetTaxationInfoRequest() (request *GetTaxationInfoRequest) {
 	request = &GetTaxationInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetTaxationInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetTaxationInfo", "", "")
 	request.Method = requests.GET
 	return
 }

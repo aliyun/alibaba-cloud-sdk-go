@@ -90,7 +90,7 @@ func CreatePrintAcctgTransRequest() (request *PrintAcctgTransRequest) {
 	request = &PrintAcctgTransRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "PrintAcctgTrans", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "PrintAcctgTrans", "", "")
 	request.Method = requests.GET
 	return
 }

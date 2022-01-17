@@ -87,7 +87,7 @@ func CreateAcceptBookkeepingDetailStatusChangeRequest() (request *AcceptBookkeep
 	request = &AcceptBookkeepingDetailStatusChangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "AcceptBookkeepingDetailStatusChange", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "AcceptBookkeepingDetailStatusChange", "", "")
 	request.Method = requests.POST
 	return
 }

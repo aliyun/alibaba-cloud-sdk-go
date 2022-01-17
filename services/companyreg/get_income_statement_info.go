@@ -87,7 +87,7 @@ func CreateGetIncomeStatementInfoRequest() (request *GetIncomeStatementInfoReque
 	request = &GetIncomeStatementInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetIncomeStatementInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetIncomeStatementInfo", "", "")
 	request.Method = requests.GET
 	return
 }

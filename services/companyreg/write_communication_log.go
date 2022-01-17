@@ -90,7 +90,7 @@ func CreateWriteCommunicationLogRequest() (request *WriteCommunicationLogRequest
 	request = &WriteCommunicationLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "WriteCommunicationLog", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "WriteCommunicationLog", "", "")
 	request.Method = requests.POST
 	return
 }

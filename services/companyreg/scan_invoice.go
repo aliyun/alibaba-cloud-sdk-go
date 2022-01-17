@@ -95,7 +95,7 @@ func CreateScanInvoiceRequest() (request *ScanInvoiceRequest) {
 	request = &ScanInvoiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "ScanInvoice", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "ScanInvoice", "", "")
 	request.Method = requests.POST
 	return
 }

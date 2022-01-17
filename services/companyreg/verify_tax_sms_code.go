@@ -87,7 +87,7 @@ func CreateVerifyTaxSmsCodeRequest() (request *VerifyTaxSmsCodeRequest) {
 	request = &VerifyTaxSmsCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "VerifyTaxSmsCode", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "VerifyTaxSmsCode", "", "")
 	request.Method = requests.GET
 	return
 }

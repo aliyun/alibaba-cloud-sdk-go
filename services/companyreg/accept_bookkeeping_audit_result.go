@@ -92,7 +92,7 @@ func CreateAcceptBookkeepingAuditResultRequest() (request *AcceptBookkeepingAudi
 	request = &AcceptBookkeepingAuditResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "AcceptBookkeepingAuditResult", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "AcceptBookkeepingAuditResult", "", "")
 	request.Method = requests.POST
 	return
 }

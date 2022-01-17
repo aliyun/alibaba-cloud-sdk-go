@@ -94,7 +94,7 @@ func CreateListVoucherRequest() (request *ListVoucherRequest) {
 	request = &ListVoucherRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "ListVoucher", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "ListVoucher", "", "")
 	request.Method = requests.GET
 	return
 }

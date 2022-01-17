@@ -86,7 +86,7 @@ func CreateConfirmMaterialRequest() (request *ConfirmMaterialRequest) {
 	request = &ConfirmMaterialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ConfirmMaterial", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ConfirmMaterial", "", "")
 	request.Method = requests.POST
 	return
 }

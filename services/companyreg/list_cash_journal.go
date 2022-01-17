@@ -89,7 +89,7 @@ func CreateListCashJournalRequest() (request *ListCashJournalRequest) {
 	request = &ListCashJournalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "ListCashJournal", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "ListCashJournal", "", "")
 	request.Method = requests.GET
 	return
 }

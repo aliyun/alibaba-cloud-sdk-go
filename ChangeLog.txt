@@ -1,3 +1,7 @@
+2022-01-17 Version: v1.61.1447
+- Generated 2020-03-06, 2019-05-08, 2020-10-22 for `companyreg`.
+- Supported esp for partner.
+
 2022-01-14 Version: v1.61.1446
 - Generated 2019-11-11 for `clickhouse`.
 - Clickhouse go sdk.

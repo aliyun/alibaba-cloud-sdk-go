@@ -91,7 +91,7 @@ func CreatePhotoInvoiceRequest() (request *PhotoInvoiceRequest) {
 	request = &PhotoInvoiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "PhotoInvoice", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "PhotoInvoice", "", "")
 	request.Method = requests.GET
 	return
 }

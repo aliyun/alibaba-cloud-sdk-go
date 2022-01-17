@@ -89,7 +89,7 @@ func CreateDescribePartnerConfigRequest() (request *DescribePartnerConfigRequest
 	request = &DescribePartnerConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "DescribePartnerConfig", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "DescribePartnerConfig", "", "")
 	request.Method = requests.POST
 	return
 }

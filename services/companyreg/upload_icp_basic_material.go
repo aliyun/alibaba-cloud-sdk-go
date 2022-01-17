@@ -92,7 +92,7 @@ func CreateUploadIcpBasicMaterialRequest() (request *UploadIcpBasicMaterialReque
 	request = &UploadIcpBasicMaterialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "UploadIcpBasicMaterial", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "UploadIcpBasicMaterial", "", "")
 	request.Method = requests.POST
 	return
 }

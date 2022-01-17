@@ -91,7 +91,7 @@ func CreateCreateBookkeepingIntentionRequest() (request *CreateBookkeepingIntent
 	request = &CreateBookkeepingIntentionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "CreateBookkeepingIntention", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "CreateBookkeepingIntention", "", "")
 	request.Method = requests.POST
 	return
 }

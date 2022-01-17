@@ -93,7 +93,7 @@ func CreateSubmitSolutionRequest() (request *SubmitSolutionRequest) {
 	request = &SubmitSolutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "SubmitSolution", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "SubmitSolution", "", "")
 	request.Method = requests.POST
 	return
 }

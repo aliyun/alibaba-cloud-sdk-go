@@ -91,7 +91,7 @@ func CreateConvertFeeRequest() (request *ConvertFeeRequest) {
 	request = &ConvertFeeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "ConvertFee", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "ConvertFee", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateCopyPayrollRequest() (request *CopyPayrollRequest) {
 	request = &CopyPayrollRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "CopyPayroll", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "CopyPayroll", "", "")
 	request.Method = requests.POST
 	return
 }

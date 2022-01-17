@@ -90,7 +90,7 @@ func CreateBindProduceAuthorizationRequest() (request *BindProduceAuthorizationR
 	request = &BindProduceAuthorizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "BindProduceAuthorization", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "BindProduceAuthorization", "", "")
 	request.Method = requests.POST
 	return
 }

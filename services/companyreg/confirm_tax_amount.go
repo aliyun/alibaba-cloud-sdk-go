@@ -86,7 +86,7 @@ func CreateConfirmTaxAmountRequest() (request *ConfirmTaxAmountRequest) {
 	request = &ConfirmTaxAmountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ConfirmTaxAmount", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ConfirmTaxAmount", "", "")
 	request.Method = requests.POST
 	return
 }

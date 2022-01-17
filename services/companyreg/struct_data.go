@@ -17,15 +17,7 @@ package companyreg
 
 // Data is a nested struct in companyreg response
 type Data struct {
-	StartingPrice      string                   `json:"StartingPrice" xml:"StartingPrice"`
-	Message            string                   `json:"Message" xml:"Message"`
-	Success            bool                     `json:"Success" xml:"Success"`
-	ProductLine        string                   `json:"ProductLine" xml:"ProductLine"`
-	IconUrl            string                   `json:"IconUrl" xml:"IconUrl"`
-	CommodityCode      string                   `json:"CommodityCode" xml:"CommodityCode"`
-	Description        string                   `json:"Description" xml:"Description"`
-	ProtocolUrl        string                   `json:"ProtocolUrl" xml:"ProtocolUrl"`
-	Type               int                      `json:"Type" xml:"Type"`
-	CommodityModules   []CommodityModulesItem   `json:"CommodityModules" xml:"CommodityModules"`
-	AuthorizedUserList []AuthorizedUserListItem `json:"AuthorizedUserList" xml:"AuthorizedUserList"`
+	BizId  string `json:"BizId" xml:"BizId"`
+	Mobile string `json:"Mobile" xml:"Mobile"`
+	Type   int64  `json:"Type" xml:"Type"`
 }

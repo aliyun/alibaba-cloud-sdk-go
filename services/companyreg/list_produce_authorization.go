@@ -94,7 +94,7 @@ func CreateListProduceAuthorizationRequest() (request *ListProduceAuthorizationR
 	request = &ListProduceAuthorizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "ListProduceAuthorization", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "ListProduceAuthorization", "", "")
 	request.Method = requests.POST
 	return
 }

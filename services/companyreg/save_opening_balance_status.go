@@ -87,7 +87,7 @@ func CreateSaveOpeningBalanceStatusRequest() (request *SaveOpeningBalanceStatusR
 	request = &SaveOpeningBalanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "SaveOpeningBalanceStatus", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "SaveOpeningBalanceStatus", "", "")
 	request.Method = requests.POST
 	return
 }

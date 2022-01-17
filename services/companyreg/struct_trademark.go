@@ -17,15 +17,15 @@ package companyreg
 
 // Trademark is a nested struct in companyreg response
 type Trademark struct {
+	BizId          string `json:"BizId" xml:"BizId"`
+	Status         int    `json:"Status" xml:"Status"`
+	Mobile         string `json:"Mobile" xml:"Mobile"`
+	UpdateTime     int64  `json:"UpdateTime" xml:"UpdateTime"`
 	RegisterNumber string `json:"RegisterNumber" xml:"RegisterNumber"`
 	Classification string `json:"Classification" xml:"Classification"`
-	Mobile         string `json:"Mobile" xml:"Mobile"`
 	UserName       string `json:"UserName" xml:"UserName"`
-	BizId          string `json:"BizId" xml:"BizId"`
-	Description    string `json:"Description" xml:"Description"`
-	Status         int    `json:"Status" xml:"Status"`
-	Area           int    `json:"Area" xml:"Area"`
-	Type           int    `json:"Type" xml:"Type"`
 	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime     int64  `json:"UpdateTime" xml:"UpdateTime"`
+	Area           int    `json:"Area" xml:"Area"`
+	Description    string `json:"Description" xml:"Description"`
+	Type           int    `json:"Type" xml:"Type"`
 }

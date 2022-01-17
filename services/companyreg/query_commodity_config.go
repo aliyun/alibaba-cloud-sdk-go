@@ -88,7 +88,7 @@ func CreateQueryCommodityConfigRequest() (request *QueryCommodityConfigRequest) 
 	request = &QueryCommodityConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryCommodityConfig", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryCommodityConfig", "", "")
 	request.Method = requests.POST
 	return
 }

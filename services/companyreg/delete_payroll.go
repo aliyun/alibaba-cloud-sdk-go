@@ -87,7 +87,7 @@ func CreateDeletePayrollRequest() (request *DeletePayrollRequest) {
 	request = &DeletePayrollRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "DeletePayroll", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "DeletePayroll", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateQueryUserNeedAuthRequest() (request *QueryUserNeedAuthRequest) {
 	request = &QueryUserNeedAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryUserNeedAuth", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryUserNeedAuth", "", "")
 	request.Method = requests.POST
 	return
 }

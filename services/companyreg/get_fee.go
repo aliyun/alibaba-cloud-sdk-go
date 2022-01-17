@@ -101,7 +101,7 @@ func CreateGetFeeRequest() (request *GetFeeRequest) {
 	request = &GetFeeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetFee", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetFee", "", "")
 	request.Method = requests.GET
 	return
 }

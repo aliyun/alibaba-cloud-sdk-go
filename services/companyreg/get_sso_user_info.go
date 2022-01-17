@@ -93,7 +93,7 @@ func CreateGetSsoUserInfoRequest() (request *GetSsoUserInfoRequest) {
 	request = &GetSsoUserInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetSsoUserInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetSsoUserInfo", "", "")
 	request.Method = requests.GET
 	return
 }

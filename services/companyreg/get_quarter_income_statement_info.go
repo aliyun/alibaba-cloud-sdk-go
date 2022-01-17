@@ -88,7 +88,7 @@ func CreateGetQuarterIncomeStatementInfoRequest() (request *GetQuarterIncomeStat
 	request = &GetQuarterIncomeStatementInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetQuarterIncomeStatementInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetQuarterIncomeStatementInfo", "", "")
 	request.Method = requests.GET
 	return
 }

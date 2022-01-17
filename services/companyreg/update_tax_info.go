@@ -87,7 +87,7 @@ func CreateUpdateTaxInfoRequest() (request *UpdateTaxInfoRequest) {
 	request = &UpdateTaxInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "UpdateTaxInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "UpdateTaxInfo", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateListIcpApplicationsRequest() (request *ListIcpApplicationsRequest) {
 	request = &ListIcpApplicationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ListIcpApplications", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ListIcpApplications", "", "")
 	request.Method = requests.POST
 	return
 }

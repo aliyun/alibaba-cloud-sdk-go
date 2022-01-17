@@ -86,7 +86,7 @@ func CreateClearTrailDataRequest() (request *ClearTrailDataRequest) {
 	request = &ClearTrailDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "ClearTrailData", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "ClearTrailData", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -97,7 +97,7 @@ func CreateSavePayrollRequest() (request *SavePayrollRequest) {
 	request = &SavePayrollRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "SavePayroll", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "SavePayroll", "", "")
 	request.Method = requests.POST
 	return
 }

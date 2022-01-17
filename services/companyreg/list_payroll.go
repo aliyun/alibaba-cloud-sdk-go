@@ -89,7 +89,7 @@ func CreateListPayrollRequest() (request *ListPayrollRequest) {
 	request = &ListPayrollRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "ListPayroll", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "ListPayroll", "", "")
 	request.Method = requests.GET
 	return
 }

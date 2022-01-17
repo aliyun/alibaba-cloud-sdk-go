@@ -88,7 +88,7 @@ func CreateUpdateBookkeepingOrgRequest() (request *UpdateBookkeepingOrgRequest) 
 	request = &UpdateBookkeepingOrgRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "UpdateBookkeepingOrg", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "UpdateBookkeepingOrg", "", "")
 	request.Method = requests.POST
 	return
 }

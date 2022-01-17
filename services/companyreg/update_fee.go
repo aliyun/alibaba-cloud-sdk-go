@@ -95,7 +95,7 @@ func CreateUpdateFeeRequest() (request *UpdateFeeRequest) {
 	request = &UpdateFeeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "UpdateFee", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "UpdateFee", "", "")
 	request.Method = requests.POST
 	return
 }

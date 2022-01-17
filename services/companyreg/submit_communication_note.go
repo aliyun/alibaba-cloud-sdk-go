@@ -90,7 +90,7 @@ func CreateSubmitCommunicationNoteRequest() (request *SubmitCommunicationNoteReq
 	request = &SubmitCommunicationNoteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "SubmitCommunicationNote", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "SubmitCommunicationNote", "", "")
 	request.Method = requests.POST
 	return
 }

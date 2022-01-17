@@ -103,7 +103,7 @@ func CreateRefreshCustomerInfoRequest() (request *RefreshCustomerInfoRequest) {
 	request = &RefreshCustomerInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "RefreshCustomerInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "RefreshCustomerInfo", "", "")
 	request.Method = requests.POST
 	return
 }

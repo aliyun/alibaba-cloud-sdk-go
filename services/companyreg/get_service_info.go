@@ -83,6 +83,7 @@ type GetServiceInfoResponse struct {
 	CurrentPeriod              string                     `json:"CurrentPeriod" xml:"CurrentPeriod"`
 	SystemTime                 int64                      `json:"SystemTime" xml:"SystemTime"`
 	IsClearedTrialData         bool                       `json:"IsClearedTrialData" xml:"IsClearedTrialData"`
+	OrderVersion               string                     `json:"OrderVersion" xml:"OrderVersion"`
 	Name                       string                     `json:"Name" xml:"Name"`
 	OpeningBalanceStatus       string                     `json:"OpeningBalanceStatus" xml:"OpeningBalanceStatus"`
 	InvoiceCheckControlledInfo InvoiceCheckControlledInfo `json:"InvoiceCheckControlledInfo" xml:"InvoiceCheckControlledInfo"`
@@ -93,7 +94,7 @@ func CreateGetServiceInfoRequest() (request *GetServiceInfoRequest) {
 	request = &GetServiceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetServiceInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetServiceInfo", "", "")
 	request.Method = requests.GET
 	return
 }

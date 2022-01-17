@@ -93,7 +93,7 @@ func CreateAcceptPartnerNotificationRequest() (request *AcceptPartnerNotificatio
 	request = &AcceptPartnerNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "AcceptPartnerNotification", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "AcceptPartnerNotification", "", "")
 	request.Method = requests.POST
 	return
 }

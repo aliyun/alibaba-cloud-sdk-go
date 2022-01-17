@@ -92,7 +92,7 @@ func CreateListInvoiceRequest() (request *ListInvoiceRequest) {
 	request = &ListInvoiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "ListInvoice", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "ListInvoice", "", "")
 	request.Method = requests.GET
 	return
 }

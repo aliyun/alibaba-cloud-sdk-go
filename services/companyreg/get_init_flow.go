@@ -87,7 +87,7 @@ func CreateGetInitFlowRequest() (request *GetInitFlowRequest) {
 	request = &GetInitFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetInitFlow", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetInitFlow", "", "")
 	request.Method = requests.GET
 	return
 }

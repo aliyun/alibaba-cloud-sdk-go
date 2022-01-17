@@ -90,7 +90,7 @@ func CreateReleaseProduceAuthorizationRequest() (request *ReleaseProduceAuthoriz
 	request = &ReleaseProduceAuthorizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "ReleaseProduceAuthorization", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "ReleaseProduceAuthorization", "", "")
 	request.Method = requests.POST
 	return
 }

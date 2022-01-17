@@ -87,7 +87,7 @@ func CreateDeleteFeeRequest() (request *DeleteFeeRequest) {
 	request = &DeleteFeeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "DeleteFee", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "DeleteFee", "", "")
 	request.Method = requests.POST
 	return
 }

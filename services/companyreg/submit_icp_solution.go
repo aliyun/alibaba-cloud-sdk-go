@@ -95,7 +95,7 @@ func CreateSubmitIcpSolutionRequest() (request *SubmitIcpSolutionRequest) {
 	request = &SubmitIcpSolutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "SubmitIcpSolution", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "SubmitIcpSolution", "", "")
 	request.Method = requests.POST
 	return
 }

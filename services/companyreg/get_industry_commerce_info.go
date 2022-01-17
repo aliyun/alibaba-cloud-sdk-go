@@ -95,7 +95,7 @@ func CreateGetIndustryCommerceInfoRequest() (request *GetIndustryCommerceInfoReq
 	request = &GetIndustryCommerceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetIndustryCommerceInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetIndustryCommerceInfo", "", "")
 	request.Method = requests.GET
 	return
 }

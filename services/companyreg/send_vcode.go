@@ -86,7 +86,7 @@ func CreateSendVcodeRequest() (request *SendVcodeRequest) {
 	request = &SendVcodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "SendVcode", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "SendVcode", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,11 +84,11 @@ type QueryTradeIntentionUserListRequest struct {
 // QueryTradeIntentionUserListResponse is the response struct for api QueryTradeIntentionUserList
 type QueryTradeIntentionUserListResponse struct {
 	*responses.BaseResponse
+	CurrentPageNum int         `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int         `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int         `json:"PageSize" xml:"PageSize"`
 	RequestId      string      `json:"RequestId" xml:"RequestId"`
 	TotalItemNum   int         `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int         `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	PageSize       int         `json:"PageSize" xml:"PageSize"`
-	TotalPageNum   int         `json:"TotalPageNum" xml:"TotalPageNum"`
 	Data           []Trademark `json:"Data" xml:"Data"`
 }
 
@@ -97,7 +97,7 @@ func CreateQueryTradeIntentionUserListRequest() (request *QueryTradeIntentionUse
 	request = &QueryTradeIntentionUserListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "QueryTradeIntentionUserList", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "QueryTradeIntentionUserList", "", "")
 	request.Method = requests.POST
 	return
 }

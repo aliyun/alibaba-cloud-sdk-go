@@ -93,7 +93,7 @@ func CreateUploadUserMaterialRequest() (request *UploadUserMaterialRequest) {
 	request = &UploadUserMaterialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "UploadUserMaterial", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "UploadUserMaterial", "", "")
 	request.Method = requests.POST
 	return
 }

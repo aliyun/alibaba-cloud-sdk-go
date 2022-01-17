@@ -90,7 +90,7 @@ func CreateSubmitPartnerCompanyInformationRequest() (request *SubmitPartnerCompa
 	request = &SubmitPartnerCompanyInformationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "SubmitPartnerCompanyInformation", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "SubmitPartnerCompanyInformation", "", "")
 	request.Method = requests.POST
 	return
 }

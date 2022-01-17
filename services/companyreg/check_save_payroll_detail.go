@@ -107,7 +107,7 @@ func CreateCheckSavePayrollDetailRequest() (request *CheckSavePayrollDetailReque
 	request = &CheckSavePayrollDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "CheckSavePayrollDetail", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "CheckSavePayrollDetail", "", "")
 	request.Method = requests.POST
 	return
 }

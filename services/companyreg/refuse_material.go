@@ -86,7 +86,7 @@ func CreateRefuseMaterialRequest() (request *RefuseMaterialRequest) {
 	request = &RefuseMaterialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "RefuseMaterial", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "RefuseMaterial", "", "")
 	request.Method = requests.POST
 	return
 }

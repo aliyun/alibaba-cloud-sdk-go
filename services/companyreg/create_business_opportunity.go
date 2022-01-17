@@ -92,7 +92,7 @@ func CreateCreateBusinessOpportunityRequest() (request *CreateBusinessOpportunit
 	request = &CreateBusinessOpportunityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "CreateBusinessOpportunity", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "CreateBusinessOpportunity", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateDeleteInvoiceRequest() (request *DeleteInvoiceRequest) {
 	request = &DeleteInvoiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "DeleteInvoice", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "DeleteInvoice", "", "")
 	request.Method = requests.POST
 	return
 }

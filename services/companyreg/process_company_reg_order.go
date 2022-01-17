@@ -92,7 +92,7 @@ func CreateProcessCompanyRegOrderRequest() (request *ProcessCompanyRegOrderReque
 	request = &ProcessCompanyRegOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ProcessCompanyRegOrder", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ProcessCompanyRegOrder", "", "")
 	request.Method = requests.POST
 	return
 }

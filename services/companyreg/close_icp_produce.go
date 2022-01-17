@@ -89,7 +89,7 @@ func CreateCloseIcpProduceRequest() (request *CloseIcpProduceRequest) {
 	request = &CloseIcpProduceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "CloseIcpProduce", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "CloseIcpProduce", "", "")
 	request.Method = requests.POST
 	return
 }

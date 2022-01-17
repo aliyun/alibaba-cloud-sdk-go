@@ -89,7 +89,7 @@ func CreateRejectIcpIntentionRequest() (request *RejectIcpIntentionRequest) {
 	request = &RejectIcpIntentionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "RejectIcpIntention", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "RejectIcpIntention", "", "")
 	request.Method = requests.POST
 	return
 }

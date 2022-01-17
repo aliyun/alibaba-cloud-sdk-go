@@ -87,7 +87,7 @@ func CreateGetLastMonthInvoiceCountRequest() (request *GetLastMonthInvoiceCountR
 	request = &GetLastMonthInvoiceCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetLastMonthInvoiceCount", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetLastMonthInvoiceCount", "", "")
 	request.Method = requests.GET
 	return
 }

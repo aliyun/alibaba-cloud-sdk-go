@@ -87,7 +87,7 @@ func CreateQueryInstanceRequest() (request *QueryInstanceRequest) {
 	request = &QueryInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryInstance", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryInstance", "", "")
 	request.Method = requests.POST
 	return
 }

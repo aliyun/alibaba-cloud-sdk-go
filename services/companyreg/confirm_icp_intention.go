@@ -88,7 +88,7 @@ func CreateConfirmIcpIntentionRequest() (request *ConfirmIcpIntentionRequest) {
 	request = &ConfirmIcpIntentionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ConfirmIcpIntention", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ConfirmIcpIntention", "", "")
 	request.Method = requests.POST
 	return
 }

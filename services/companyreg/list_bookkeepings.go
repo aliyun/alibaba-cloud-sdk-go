@@ -91,7 +91,7 @@ func CreateListBookkeepingsRequest() (request *ListBookkeepingsRequest) {
 	request = &ListBookkeepingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ListBookkeepings", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ListBookkeepings", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateListUserIntentionNotesRequest() (request *ListUserIntentionNotesReque
 	request = &ListUserIntentionNotesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "ListUserIntentionNotes", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "ListUserIntentionNotes", "", "")
 	request.Method = requests.POST
 	return
 }

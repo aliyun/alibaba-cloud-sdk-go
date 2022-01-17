@@ -93,7 +93,7 @@ func CreateGenerateUploadFilePolicyRequest() (request *GenerateUploadFilePolicyR
 	request = &GenerateUploadFilePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "GenerateUploadFilePolicy", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "GenerateUploadFilePolicy", "", "")
 	request.Method = requests.POST
 	return
 }

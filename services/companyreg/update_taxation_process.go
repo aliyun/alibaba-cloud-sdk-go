@@ -89,7 +89,7 @@ func CreateUpdateTaxationProcessRequest() (request *UpdateTaxationProcessRequest
 	request = &UpdateTaxationProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "UpdateTaxationProcess", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "UpdateTaxationProcess", "", "")
 	request.Method = requests.POST
 	return
 }

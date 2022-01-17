@@ -88,7 +88,7 @@ func CreateGetVoucherCountRequest() (request *GetVoucherCountRequest) {
 	request = &GetVoucherCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetVoucherCount", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetVoucherCount", "", "")
 	request.Method = requests.GET
 	return
 }

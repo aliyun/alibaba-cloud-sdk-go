@@ -18,12 +18,13 @@ package companyreg
 // CalendarListItem is a nested struct in companyreg response
 type CalendarListItem struct {
 	DeclareEndDate       string `json:"DeclareEndDate" xml:"DeclareEndDate"`
-	DeclareProgress      string `json:"DeclareProgress" xml:"DeclareProgress"`
-	DeclareStartDate     string `json:"DeclareStartDate" xml:"DeclareStartDate"`
-	Period               string `json:"Period" xml:"Period"`
-	UserTaxStartDate     string `json:"UserTaxStartDate" xml:"UserTaxStartDate"`
-	UserTaxEndDate       string `json:"UserTaxEndDate" xml:"UserTaxEndDate"`
-	BookkeepingStartDate string `json:"BookkeepingStartDate" xml:"BookkeepingStartDate"`
-	BookkeepingEndDate   string `json:"BookkeepingEndDate" xml:"BookkeepingEndDate"`
 	IsCanBookkeeping     bool   `json:"IsCanBookkeeping" xml:"IsCanBookkeeping"`
+	BookkeepingStartDate string `json:"BookkeepingStartDate" xml:"BookkeepingStartDate"`
+	DeclareProgress      string `json:"DeclareProgress" xml:"DeclareProgress"`
+	BookkeepingEndDate   string `json:"BookkeepingEndDate" xml:"BookkeepingEndDate"`
+	UserTaxStartDate     string `json:"UserTaxStartDate" xml:"UserTaxStartDate"`
+	DeclareStartDate     string `json:"DeclareStartDate" xml:"DeclareStartDate"`
+	UserTaxEndDate       string `json:"UserTaxEndDate" xml:"UserTaxEndDate"`
+	Period               string `json:"Period" xml:"Period"`
+	ErrorMessage         string `json:"ErrorMessage" xml:"ErrorMessage"`
 }

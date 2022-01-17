@@ -86,7 +86,7 @@ func CreateListApplicationLogsRequest() (request *ListApplicationLogsRequest) {
 	request = &ListApplicationLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ListApplicationLogs", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ListApplicationLogs", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateSubmitConsultationRequest() (request *SubmitConsultationRequest) {
 	request = &SubmitConsultationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "SubmitConsultation", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "SubmitConsultation", "", "")
 	request.Method = requests.POST
 	return
 }

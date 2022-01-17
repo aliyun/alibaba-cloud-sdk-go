@@ -87,7 +87,7 @@ func CreateGetPayrollSettingRequest() (request *GetPayrollSettingRequest) {
 	request = &GetPayrollSettingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetPayrollSetting", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetPayrollSetting", "", "")
 	request.Method = requests.GET
 	return
 }

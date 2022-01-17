@@ -85,7 +85,7 @@ func CreateQueryBookkeepingCommodityModulesRequest() (request *QueryBookkeepingC
 	request = &QueryBookkeepingCommodityModulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "QueryBookkeepingCommodityModules", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "QueryBookkeepingCommodityModules", "", "")
 	request.Method = requests.POST
 	return
 }

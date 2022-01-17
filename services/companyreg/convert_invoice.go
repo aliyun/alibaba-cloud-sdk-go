@@ -99,7 +99,7 @@ func CreateConvertInvoiceRequest() (request *ConvertInvoiceRequest) {
 	request = &ConvertInvoiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "ConvertInvoice", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "ConvertInvoice", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateListUserSolutionsRequest() (request *ListUserSolutionsRequest) {
 	request = &ListUserSolutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "ListUserSolutions", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "ListUserSolutions", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateQueryCommunicationLogsRequest() (request *QueryCommunicationLogsReque
 	request = &QueryCommunicationLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "QueryCommunicationLogs", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "QueryCommunicationLogs", "", "")
 	request.Method = requests.POST
 	return
 }

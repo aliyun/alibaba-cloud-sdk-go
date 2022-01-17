@@ -88,7 +88,7 @@ func CreateGetTypeListRequest() (request *GetTypeListRequest) {
 	request = &GetTypeListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetTypeList", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetTypeList", "", "")
 	request.Method = requests.GET
 	return
 }

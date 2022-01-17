@@ -88,7 +88,7 @@ func CreateGetBalanceSheetInfoRequest() (request *GetBalanceSheetInfoRequest) {
 	request = &GetBalanceSheetInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetBalanceSheetInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetBalanceSheetInfo", "", "")
 	request.Method = requests.GET
 	return
 }

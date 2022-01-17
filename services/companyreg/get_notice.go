@@ -88,7 +88,7 @@ func CreateGetNoticeRequest() (request *GetNoticeRequest) {
 	request = &GetNoticeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetNotice", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetNotice", "", "")
 	request.Method = requests.GET
 	return
 }

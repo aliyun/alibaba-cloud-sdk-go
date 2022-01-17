@@ -17,10 +17,18 @@ package companyreg
 
 // DataItem is a nested struct in companyreg response
 type DataItem struct {
-	BizId         string `json:"BizId" xml:"BizId"`
-	Note          string `json:"Note" xml:"Note"`
-	OperateType   int    `json:"OperateType" xml:"OperateType"`
-	OperateTime   int64  `json:"OperateTime" xml:"OperateTime"`
-	BizStatus     int    `json:"BizStatus" xml:"BizStatus"`
-	ExtendContent string `json:"ExtendContent" xml:"ExtendContent"`
+	ProductName   string `json:"ProductName" xml:"ProductName"`
+	Count         int    `json:"Count" xml:"Count"`
+	IsSaveVoucher bool   `json:"IsSaveVoucher" xml:"IsSaveVoucher"`
+	Date          string `json:"Date" xml:"Date"`
+	Id            int64  `json:"Id" xml:"Id"`
+	Amount        string `json:"Amount" xml:"Amount"`
+	TaxAndAmount  string `json:"TaxAndAmount" xml:"TaxAndAmount"`
+	Period        string `json:"Period" xml:"Period"`
+	Url           string `json:"Url" xml:"Url"`
+	Use           bool   `json:"Use" xml:"Use"`
+	Tax           string `json:"Tax" xml:"Tax"`
+	InvoiceNo     string `json:"InvoiceNo" xml:"InvoiceNo"`
+	OrgName       string `json:"OrgName" xml:"OrgName"`
+	Type          string `json:"Type" xml:"Type"`
 }

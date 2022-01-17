@@ -96,7 +96,7 @@ func CreateGenerateCompanyRegUploadPolicyRequest() (request *GenerateCompanyRegU
 	request = &GenerateCompanyRegUploadPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "GenerateCompanyRegUploadPolicy", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "GenerateCompanyRegUploadPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

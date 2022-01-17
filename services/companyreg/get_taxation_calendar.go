@@ -86,7 +86,7 @@ func CreateGetTaxationCalendarRequest() (request *GetTaxationCalendarRequest) {
 	request = &GetTaxationCalendarRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetTaxationCalendar", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetTaxationCalendar", "", "")
 	request.Method = requests.GET
 	return
 }

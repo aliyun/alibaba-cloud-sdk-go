@@ -87,7 +87,7 @@ func CreateGetCashFlowInfoRequest() (request *GetCashFlowInfoRequest) {
 	request = &GetCashFlowInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetCashFlowInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetCashFlowInfo", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -95,7 +95,7 @@ func CreateListBookkeepingSubjectBalancesRequest() (request *ListBookkeepingSubj
 	request = &ListBookkeepingSubjectBalancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "ListBookkeepingSubjectBalances", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "ListBookkeepingSubjectBalances", "", "")
 	request.Method = requests.POST
 	return
 }

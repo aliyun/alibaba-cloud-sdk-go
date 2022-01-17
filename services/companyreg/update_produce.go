@@ -86,7 +86,7 @@ func CreateUpdateProduceRequest() (request *UpdateProduceRequest) {
 	request = &UpdateProduceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "UpdateProduce", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "UpdateProduce", "", "")
 	request.Method = requests.POST
 	return
 }

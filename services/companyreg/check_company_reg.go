@@ -94,7 +94,7 @@ func CreateCheckCompanyRegRequest() (request *CheckCompanyRegRequest) {
 	request = &CheckCompanyRegRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2019-05-08", "CheckCompanyReg", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "CheckCompanyReg", "", "")
 	request.Method = requests.POST
 	return
 }

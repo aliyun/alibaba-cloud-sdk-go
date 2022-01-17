@@ -120,7 +120,7 @@ func CreateGetInvoiceInfoRequest() (request *GetInvoiceInfoRequest) {
 	request = &GetInvoiceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-10-22", "GetInvoiceInfo", "companyreg", "openAPI")
+	request.InitWithApiInfo("companyreg", "2020-10-22", "GetInvoiceInfo", "", "")
 	request.Method = requests.GET
 	return
 }
