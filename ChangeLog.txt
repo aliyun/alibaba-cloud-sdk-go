@@ -1,3 +1,7 @@
+2022-01-18 Version: v1.61.1448
+- Generated 2019-05-06 for `sae`.
+- Support describe price.
+
 2022-01-17 Version: v1.61.1447
 - Generated 2020-03-06, 2019-05-08, 2020-10-22 for `companyreg`.
 - Supported esp for partner.

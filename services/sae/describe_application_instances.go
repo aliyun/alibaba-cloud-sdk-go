@@ -71,6 +71,7 @@ func (client *Client) DescribeApplicationInstancesWithCallback(request *Describe
 // DescribeApplicationInstancesRequest is the request struct for api DescribeApplicationInstances
 type DescribeApplicationInstancesRequest struct {
 	*requests.RoaRequest
+	JobId       string           `position:"Query" name:"JobId"`
 	AppId       string           `position:"Query" name:"AppId"`
 	GroupId     string           `position:"Query" name:"GroupId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`

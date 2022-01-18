@@ -79,13 +79,13 @@ type TagResourcesRequest struct {
 // TagResourcesResponse is the response struct for api TagResources
 type TagResourcesResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	TraceId   string `json:"TraceId" xml:"TraceId"`
 	Data      bool   `json:"Data" xml:"Data"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
-	TraceId   string `json:"TraceId" xml:"TraceId"`
 }
 
 // CreateTagResourcesRequest creates a request to invoke TagResources API

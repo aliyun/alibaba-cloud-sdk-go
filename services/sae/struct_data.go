@@ -122,6 +122,7 @@ type Data struct {
 	PipelineId                    string                   `json:"PipelineId" xml:"PipelineId"`
 	WarStartOptions               string                   `json:"WarStartOptions" xml:"WarStartOptions"`
 	UserId                        string                   `json:"UserId" xml:"UserId"`
+	Workload                      string                   `json:"Workload" xml:"Workload"`
 	Description                   string                   `json:"Description" xml:"Description"`
 	ScaleRuleEnabled              bool                     `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
 	InternetIp                    string                   `json:"InternetIp" xml:"InternetIp"`
@@ -134,15 +135,18 @@ type Data struct {
 	NamespaceId                   string                   `json:"NamespaceId" xml:"NamespaceId"`
 	Data                          map[string]interface{}   `json:"Data" xml:"Data"`
 	Timer                         Timer                    `json:"Timer" xml:"Timer"`
+	Order                         Order                    `json:"Order" xml:"Order"`
 	DefaultRule                   DefaultRule              `json:"DefaultRule" xml:"DefaultRule"`
 	RealTimeRes                   RealTimeRes              `json:"RealTimeRes" xml:"RealTimeRes"`
 	Metric                        Metric                   `json:"Metric" xml:"Metric"`
+	BagUsage                      BagUsage                 `json:"BagUsage" xml:"BagUsage"`
 	Summary                       Summary                  `json:"Summary" xml:"Summary"`
 	OssMountDescs                 []OssMountDesc           `json:"OssMountDescs" xml:"OssMountDescs"`
 	MountDesc                     []MountDescItem          `json:"MountDesc" xml:"MountDesc"`
 	ScRules                       []ScRule                 `json:"ScRules" xml:"ScRules"`
 	Intranet                      []IntranetItem           `json:"Intranet" xml:"Intranet"`
 	RelateApps                    []RelateApp              `json:"RelateApps" xml:"RelateApps"`
+	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
 	Namespaces                    []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	Instances                     []Instance               `json:"Instances" xml:"Instances"`
 	Internet                      []InternetItem           `json:"Internet" xml:"Internet"`
@@ -159,5 +163,4 @@ type Data struct {
 	DubboRules                    []DubboRule              `json:"DubboRules" xml:"DubboRules"`
 	StageList                     []Stage                  `json:"StageList" xml:"StageList"`
 	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
-	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
 }
