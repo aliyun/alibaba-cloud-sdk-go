@@ -17,6 +17,6 @@ package waf_openapi
 
 // InstanceSpecInfo is a nested struct in waf_openapi response
 type InstanceSpecInfo struct {
-	Value string `json:"Value" xml:"Value"`
 	Code  string `json:"Code" xml:"Code"`
+	Value string `json:"Value" xml:"Value"`
 }

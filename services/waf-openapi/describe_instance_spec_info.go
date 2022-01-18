@@ -82,8 +82,8 @@ type DescribeInstanceSpecInfoResponse struct {
 	*responses.BaseResponse
 	RequestId         string             `json:"RequestId" xml:"RequestId"`
 	InstanceId        string             `json:"InstanceId" xml:"InstanceId"`
-	Version           string             `json:"Version" xml:"Version"`
 	ExpireTime        int64              `json:"ExpireTime" xml:"ExpireTime"`
+	Version           string             `json:"Version" xml:"Version"`
 	InstanceSpecInfos []InstanceSpecInfo `json:"InstanceSpecInfos" xml:"InstanceSpecInfos"`
 }
 

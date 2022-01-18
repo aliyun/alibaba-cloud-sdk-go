@@ -85,8 +85,8 @@ type DescribeDomainBasicConfigsRequest struct {
 // DescribeDomainBasicConfigsResponse is the response struct for api DescribeDomainBasicConfigs
 type DescribeDomainBasicConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	TotalCount    int            `json:"TotalCount" xml:"TotalCount"`
+	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	DomainConfigs []DomainConfig `json:"DomainConfigs" xml:"DomainConfigs"`
 }
 

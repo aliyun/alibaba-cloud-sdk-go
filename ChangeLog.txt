@@ -1,3 +1,7 @@
+2022-01-18 Version: v1.61.1449
+- Generated 2019-09-10 for `waf-openapi`.
+- Upgrade SDK.
+
 2022-01-18 Version: v1.61.1448
 - Generated 2019-05-06 for `sae`.
 - Support describe price.

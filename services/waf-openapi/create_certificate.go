@@ -83,8 +83,8 @@ type CreateCertificateRequest struct {
 // CreateCertificateResponse is the response struct for api CreateCertificate
 type CreateCertificateResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	CertificateId int64  `json:"CertificateId" xml:"CertificateId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateCertificateRequest creates a request to invoke CreateCertificate API

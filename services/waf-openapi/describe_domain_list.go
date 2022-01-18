@@ -84,8 +84,8 @@ type DescribeDomainListRequest struct {
 // DescribeDomainListResponse is the response struct for api DescribeDomainList
 type DescribeDomainListResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId" xml:"RequestId"`
 	TotalCount  int      `json:"TotalCount" xml:"TotalCount"`
+	RequestId   string   `json:"RequestId" xml:"RequestId"`
 	DomainNames []string `json:"DomainNames" xml:"DomainNames"`
 }
 

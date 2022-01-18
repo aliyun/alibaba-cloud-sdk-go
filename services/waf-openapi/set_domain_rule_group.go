@@ -72,6 +72,7 @@ func (client *Client) SetDomainRuleGroupWithCallback(request *SetDomainRuleGroup
 type SetDomainRuleGroupRequest struct {
 	*requests.RpcRequest
 	WafVersion      requests.Integer `position:"Query" name:"WafVersion"`
+	WafAiStatus     requests.Integer `position:"Query" name:"WafAiStatus"`
 	RuleGroupId     requests.Integer `position:"Query" name:"RuleGroupId"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`

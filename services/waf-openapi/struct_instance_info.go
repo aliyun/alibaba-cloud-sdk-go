@@ -17,14 +17,14 @@ package waf_openapi
 
 // InstanceInfo is a nested struct in waf_openapi response
 type InstanceInfo struct {
-	InDebt           int    `json:"InDebt" xml:"InDebt"`
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	PayType          int    `json:"PayType" xml:"PayType"`
+	Status           int    `json:"Status" xml:"Status"`
 	EndDate          int64  `json:"EndDate" xml:"EndDate"`
+	Version          string `json:"Version" xml:"Version"`
 	RemainDay        int    `json:"RemainDay" xml:"RemainDay"`
 	Region           string `json:"Region" xml:"Region"`
-	Trial            int    `json:"Trial" xml:"Trial"`
-	Status           int    `json:"Status" xml:"Status"`
+	PayType          int    `json:"PayType" xml:"PayType"`
+	InDebt           int    `json:"InDebt" xml:"InDebt"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
 	SubscriptionType string `json:"SubscriptionType" xml:"SubscriptionType"`
-	Version          string `json:"Version" xml:"Version"`
+	Trial            int    `json:"Trial" xml:"Trial"`
 }

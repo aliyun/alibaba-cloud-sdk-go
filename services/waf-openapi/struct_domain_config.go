@@ -18,11 +18,11 @@ package waf_openapi
 // DomainConfig is a nested struct in waf_openapi response
 type DomainConfig struct {
 	Domain     string  `json:"Domain" xml:"Domain"`
-	Version    int64   `json:"Version" xml:"Version"`
 	Status     int     `json:"Status" xml:"Status"`
+	Version    int64   `json:"Version" xml:"Version"`
 	AclStatus  int     `json:"AclStatus" xml:"AclStatus"`
-	WafMode    int     `json:"WafMode" xml:"WafMode"`
 	AccessType string  `json:"AccessType" xml:"AccessType"`
+	WafMode    int     `json:"WafMode" xml:"WafMode"`
 	WafStatus  int     `json:"WafStatus" xml:"WafStatus"`
 	Owner      string  `json:"Owner" xml:"Owner"`
 	CcMode     int     `json:"CcMode" xml:"CcMode"`

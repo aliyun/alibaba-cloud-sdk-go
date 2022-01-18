@@ -85,8 +85,8 @@ type DescribeProtectionModuleRulesRequest struct {
 // DescribeProtectionModuleRulesResponse is the response struct for api DescribeProtectionModuleRules
 type DescribeProtectionModuleRulesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Rules      []Rule `json:"Rules" xml:"Rules"`
 }
 

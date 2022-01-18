@@ -80,8 +80,9 @@ type DescribeDomainRuleGroupRequest struct {
 // DescribeDomainRuleGroupResponse is the response struct for api DescribeDomainRuleGroup
 type DescribeDomainRuleGroupResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	RuleGroupId int64  `json:"RuleGroupId" xml:"RuleGroupId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	WafAiStatus int    `json:"WafAiStatus" xml:"WafAiStatus"`
 }
 
 // CreateDescribeDomainRuleGroupRequest creates a request to invoke DescribeDomainRuleGroup API

@@ -101,8 +101,8 @@ type CreateDomainRequest struct {
 // CreateDomainResponse is the response struct for api CreateDomain
 type CreateDomainResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Cname     string `json:"Cname" xml:"Cname"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateDomainRequest creates a request to invoke CreateDomain API

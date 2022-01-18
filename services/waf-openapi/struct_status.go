@@ -17,6 +17,6 @@ package waf_openapi
 
 // Status is a nested struct in waf_openapi response
 type Status struct {
-	SlsLogActive int    `json:"SlsLogActive" xml:"SlsLogActive"`
 	Domain       string `json:"Domain" xml:"Domain"`
+	SlsLogActive int    `json:"SlsLogActive" xml:"SlsLogActive"`
 }

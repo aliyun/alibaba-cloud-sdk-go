@@ -83,8 +83,8 @@ type DescribeLogServiceStatusRequest struct {
 // DescribeLogServiceStatusResponse is the response struct for api DescribeLogServiceStatus
 type DescribeLogServiceStatusResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
 	TotalCount   int      `json:"TotalCount" xml:"TotalCount"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
 	DomainStatus []Status `json:"DomainStatus" xml:"DomainStatus"`
 }
 

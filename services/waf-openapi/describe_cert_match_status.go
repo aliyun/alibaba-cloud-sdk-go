@@ -82,8 +82,8 @@ type DescribeCertMatchStatusRequest struct {
 // DescribeCertMatchStatusResponse is the response struct for api DescribeCertMatchStatus
 type DescribeCertMatchStatusResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	MatchStatus bool   `json:"MatchStatus" xml:"MatchStatus"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeCertMatchStatusRequest creates a request to invoke DescribeCertMatchStatus API

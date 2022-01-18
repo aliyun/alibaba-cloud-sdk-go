@@ -17,6 +17,6 @@ package waf_openapi
 
 // LogHeader is a nested struct in waf_openapi response
 type LogHeader struct {
-	V string `json:"v" xml:"v"`
 	K string `json:"k" xml:"k"`
+	V string `json:"v" xml:"v"`
 }
