@@ -71,6 +71,7 @@ func (client *Client) GetMseFeatureSwitchWithCallback(request *GetMseFeatureSwit
 // GetMseFeatureSwitchRequest is the request struct for api GetMseFeatureSwitch
 type GetMseFeatureSwitchRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // GetMseFeatureSwitchResponse is the response struct for api GetMseFeatureSwitch
@@ -88,7 +89,7 @@ func CreateGetMseFeatureSwitchRequest() (request *GetMseFeatureSwitchRequest) {
 	request = &GetMseFeatureSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetMseFeatureSwitch", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetMseFeatureSwitch", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

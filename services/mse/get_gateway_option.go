@@ -71,7 +71,9 @@ func (client *Client) GetGatewayOptionWithCallback(request *GetGatewayOptionRequ
 // GetGatewayOptionRequest is the request struct for api GetGatewayOption
 type GetGatewayOptionRequest struct {
 	*requests.RpcRequest
-	GatewayId requests.Integer `position:"Query" name:"GatewayId"`
+	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
+	GatewayId       requests.Integer `position:"Query" name:"GatewayId"`
 }
 
 // GetGatewayOptionResponse is the response struct for api GetGatewayOption
@@ -90,7 +92,7 @@ func CreateGetGatewayOptionRequest() (request *GetGatewayOptionRequest) {
 	request = &GetGatewayOptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetGatewayOption", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetGatewayOption", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

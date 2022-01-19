@@ -71,11 +71,12 @@ func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRe
 // CreateApplicationRequest is the request struct for api CreateApplication
 type CreateApplicationRequest struct {
 	*requests.RpcRequest
-	Language  string `position:"Query" name:"Language"`
-	Source    string `position:"Query" name:"Source"`
-	ExtraInfo string `position:"Query" name:"ExtraInfo"`
-	AppName   string `position:"Query" name:"AppName"`
-	Region    string `position:"Query" name:"Region"`
+	Language       string `position:"Query" name:"Language"`
+	Source         string `position:"Query" name:"Source"`
+	ExtraInfo      string `position:"Query" name:"ExtraInfo"`
+	AppName        string `position:"Query" name:"AppName"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	Region         string `position:"Query" name:"Region"`
 }
 
 // CreateApplicationResponse is the response struct for api CreateApplication
@@ -94,7 +95,7 @@ func CreateCreateApplicationRequest() (request *CreateApplicationRequest) {
 	request = &CreateApplicationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateApplication", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateApplication", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

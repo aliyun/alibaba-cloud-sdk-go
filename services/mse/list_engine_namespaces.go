@@ -71,10 +71,11 @@ func (client *Client) ListEngineNamespacesWithCallback(request *ListEngineNamesp
 // ListEngineNamespacesRequest is the request struct for api ListEngineNamespaces
 type ListEngineNamespacesRequest struct {
 	*requests.RpcRequest
-	ClusterId  string           `position:"Query" name:"ClusterId"`
-	PageNum    requests.Integer `position:"Query" name:"PageNum"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListEngineNamespacesResponse is the response struct for api ListEngineNamespaces
@@ -96,7 +97,7 @@ func CreateListEngineNamespacesRequest() (request *ListEngineNamespacesRequest) 
 	request = &ListEngineNamespacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListEngineNamespaces", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListEngineNamespaces", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

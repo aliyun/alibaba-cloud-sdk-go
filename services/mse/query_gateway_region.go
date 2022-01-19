@@ -71,6 +71,7 @@ func (client *Client) QueryGatewayRegionWithCallback(request *QueryGatewayRegion
 // QueryGatewayRegionRequest is the request struct for api QueryGatewayRegion
 type QueryGatewayRegionRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // QueryGatewayRegionResponse is the response struct for api QueryGatewayRegion
@@ -89,7 +90,7 @@ func CreateQueryGatewayRegionRequest() (request *QueryGatewayRegionRequest) {
 	request = &QueryGatewayRegionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryGatewayRegion", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryGatewayRegion", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

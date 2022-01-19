@@ -71,9 +71,10 @@ func (client *Client) DeleteEngineNamespaceWithCallback(request *DeleteEngineNam
 // DeleteEngineNamespaceRequest is the request struct for api DeleteEngineNamespace
 type DeleteEngineNamespaceRequest struct {
 	*requests.RpcRequest
-	ClusterId  string `position:"Query" name:"ClusterId"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	Id         string `position:"Query" name:"Id"`
+	ClusterId      string `position:"Query" name:"ClusterId"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	Id             string `position:"Query" name:"Id"`
 }
 
 // DeleteEngineNamespaceResponse is the response struct for api DeleteEngineNamespace
@@ -91,7 +92,7 @@ func CreateDeleteEngineNamespaceRequest() (request *DeleteEngineNamespaceRequest
 	request = &DeleteEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteEngineNamespace", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteEngineNamespace", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

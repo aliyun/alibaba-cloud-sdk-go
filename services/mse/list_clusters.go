@@ -75,6 +75,7 @@ type ListClustersRequest struct {
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	RequestPars      string           `position:"Query" name:"RequestPars"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	AcceptLanguage   string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListClustersResponse is the response struct for api ListClusters
@@ -96,7 +97,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

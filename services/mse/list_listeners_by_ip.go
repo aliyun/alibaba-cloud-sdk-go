@@ -71,10 +71,11 @@ func (client *Client) ListListenersByIpWithCallback(request *ListListenersByIpRe
 // ListListenersByIpRequest is the request struct for api ListListenersByIp
 type ListListenersByIpRequest struct {
 	*requests.RpcRequest
-	Ip          string `position:"Query" name:"Ip"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	NamespaceId string `position:"Query" name:"NamespaceId"`
-	RequestPars string `position:"Query" name:"RequestPars"`
+	Ip             string `position:"Query" name:"Ip"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListListenersByIpResponse is the response struct for api ListListenersByIp
@@ -96,7 +97,7 @@ func CreateListListenersByIpRequest() (request *ListListenersByIpRequest) {
 	request = &ListListenersByIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByIp", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByIp", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

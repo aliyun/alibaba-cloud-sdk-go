@@ -71,11 +71,12 @@ func (client *Client) ListListenersByConfigWithCallback(request *ListListenersBy
 // ListListenersByConfigRequest is the request struct for api ListListenersByConfig
 type ListListenersByConfigRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	DataId      string `position:"Query" name:"DataId"`
-	NamespaceId string `position:"Query" name:"NamespaceId"`
-	RequestPars string `position:"Query" name:"RequestPars"`
-	Group       string `position:"Query" name:"Group"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	DataId         string `position:"Query" name:"DataId"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	Group          string `position:"Query" name:"Group"`
 }
 
 // ListListenersByConfigResponse is the response struct for api ListListenersByConfig
@@ -97,7 +98,7 @@ func CreateListListenersByConfigRequest() (request *ListListenersByConfigRequest
 	request = &ListListenersByConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByConfig", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListListenersByConfig", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,6 +71,7 @@ func (client *Client) ListClusterConnectionTypesWithCallback(request *ListCluste
 // ListClusterConnectionTypesRequest is the request struct for api ListClusterConnectionTypes
 type ListClusterConnectionTypesRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListClusterConnectionTypesResponse is the response struct for api ListClusterConnectionTypes
@@ -91,7 +92,7 @@ func CreateListClusterConnectionTypesRequest() (request *ListClusterConnectionTy
 	request = &ListClusterConnectionTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterConnectionTypes", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterConnectionTypes", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

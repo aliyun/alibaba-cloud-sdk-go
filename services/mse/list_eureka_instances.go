@@ -71,11 +71,12 @@ func (client *Client) ListEurekaInstancesWithCallback(request *ListEurekaInstanc
 // ListEurekaInstancesRequest is the request struct for api ListEurekaInstances
 type ListEurekaInstancesRequest struct {
 	*requests.RpcRequest
-	ClusterId   string           `position:"Query" name:"ClusterId"`
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
-	RequestPars string           `position:"Query" name:"RequestPars"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	ServiceName string           `position:"Query" name:"ServiceName"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	RequestPars    string           `position:"Query" name:"RequestPars"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
+	ServiceName    string           `position:"Query" name:"ServiceName"`
 }
 
 // ListEurekaInstancesResponse is the response struct for api ListEurekaInstances
@@ -97,7 +98,7 @@ func CreateListEurekaInstancesRequest() (request *ListEurekaInstancesRequest) {
 	request = &ListEurekaInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListEurekaInstances", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListEurekaInstances", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

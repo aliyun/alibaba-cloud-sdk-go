@@ -71,14 +71,16 @@ func (client *Client) ListAnsInstancesWithCallback(request *ListAnsInstancesRequ
 // ListAnsInstancesRequest is the request struct for api ListAnsInstances
 type ListAnsInstancesRequest struct {
 	*requests.RpcRequest
-	ClusterName string           `position:"Query" name:"ClusterName"`
-	ClusterId   string           `position:"Query" name:"ClusterId"`
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
-	GroupName   string           `position:"Query" name:"GroupName"`
-	NamespaceId string           `position:"Query" name:"NamespaceId"`
-	RequestPars string           `position:"Query" name:"RequestPars"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	ServiceName string           `position:"Query" name:"ServiceName"`
+	ClusterName    string           `position:"Query" name:"ClusterName"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	GroupName      string           `position:"Query" name:"GroupName"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	NamespaceId    string           `position:"Query" name:"NamespaceId"`
+	RequestPars    string           `position:"Query" name:"RequestPars"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
+	ServiceName    string           `position:"Query" name:"ServiceName"`
 }
 
 // ListAnsInstancesResponse is the response struct for api ListAnsInstances
@@ -100,7 +102,7 @@ func CreateListAnsInstancesRequest() (request *ListAnsInstancesRequest) {
 	request = &ListAnsInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsInstances", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsInstances", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

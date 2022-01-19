@@ -74,11 +74,13 @@ type UpdateConfigRequest struct {
 	OpenSuperAcl             string           `position:"Body" name:"OpenSuperAcl"`
 	ConfigAuthEnabled        requests.Boolean `position:"Query" name:"ConfigAuthEnabled"`
 	PassWord                 string           `position:"Query" name:"PassWord"`
+	MinSessionTimeout        string           `position:"Query" name:"MinSessionTimeout"`
 	MaxClientCnxns           string           `position:"Query" name:"MaxClientCnxns"`
 	RequestPars              string           `position:"Query" name:"RequestPars"`
 	JuteMaxbuffer            string           `position:"Query" name:"JuteMaxbuffer"`
 	ConfigType               string           `position:"Query" name:"ConfigType"`
 	AutopurgeSnapRetainCount string           `position:"Query" name:"AutopurgeSnapRetainCount"`
+	MaxSessionTimeout        string           `position:"Query" name:"MaxSessionTimeout"`
 	ConfigSecretEnabled      requests.Boolean `position:"Query" name:"ConfigSecretEnabled"`
 	MCPEnabled               requests.Boolean `position:"Query" name:"MCPEnabled"`
 	TickTime                 string           `position:"Query" name:"TickTime"`
@@ -86,6 +88,7 @@ type UpdateConfigRequest struct {
 	SyncLimit                string           `position:"Query" name:"SyncLimit"`
 	InstanceId               string           `position:"Query" name:"InstanceId"`
 	AutopurgePurgeInterval   string           `position:"Query" name:"AutopurgePurgeInterval"`
+	AcceptLanguage           string           `position:"Query" name:"AcceptLanguage"`
 	InitLimit                string           `position:"Query" name:"InitLimit"`
 	UserName                 string           `position:"Query" name:"UserName"`
 }
@@ -105,7 +108,7 @@ func CreateUpdateConfigRequest() (request *UpdateConfigRequest) {
 	request = &UpdateConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateConfig", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateConfig", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

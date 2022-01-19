@@ -71,7 +71,8 @@ func (client *Client) ListAlarmItemsWithCallback(request *ListAlarmItemsRequest,
 // ListAlarmItemsRequest is the request struct for api ListAlarmItems
 type ListAlarmItemsRequest struct {
 	*requests.RpcRequest
-	RequestPars string `position:"Query" name:"RequestPars"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListAlarmItemsResponse is the response struct for api ListAlarmItems
@@ -93,7 +94,7 @@ func CreateListAlarmItemsRequest() (request *ListAlarmItemsRequest) {
 	request = &ListAlarmItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmItems", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmItems", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

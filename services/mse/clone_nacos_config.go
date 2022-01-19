@@ -73,6 +73,7 @@ type CloneNacosConfigRequest struct {
 	*requests.RpcRequest
 	TargetNamespaceId string `position:"Query" name:"TargetNamespaceId"`
 	InstanceId        string `position:"Query" name:"InstanceId"`
+	AcceptLanguage    string `position:"Query" name:"AcceptLanguage"`
 	Ids               string `position:"Query" name:"Ids"`
 	OriginNamespaceId string `position:"Query" name:"OriginNamespaceId"`
 	Policy            string `position:"Query" name:"Policy"`
@@ -96,7 +97,7 @@ func CreateCloneNacosConfigRequest() (request *CloneNacosConfigRequest) {
 	request = &CloneNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CloneNacosConfig", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "CloneNacosConfig", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

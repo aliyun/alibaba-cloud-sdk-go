@@ -71,6 +71,7 @@ func (client *Client) ListClusterTypesWithCallback(request *ListClusterTypesRequ
 // ListClusterTypesRequest is the request struct for api ListClusterTypes
 type ListClusterTypesRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListClusterTypesResponse is the response struct for api ListClusterTypes
@@ -91,7 +92,7 @@ func CreateListClusterTypesRequest() (request *ListClusterTypesRequest) {
 	request = &ListClusterTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterTypes", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListClusterTypes", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

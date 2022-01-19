@@ -77,6 +77,7 @@ type ScalingClusterRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	MemoryCapacity       requests.Integer `position:"Query" name:"MemoryCapacity"`
 	InstanceCount        requests.Integer `position:"Query" name:"InstanceCount"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ScalingClusterResponse is the response struct for api ScalingCluster
@@ -93,7 +94,7 @@ func CreateScalingClusterRequest() (request *ScalingClusterRequest) {
 	request = &ScalingClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ScalingCluster", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ScalingCluster", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

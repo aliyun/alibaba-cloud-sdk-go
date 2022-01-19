@@ -71,13 +71,14 @@ func (client *Client) QueryMonitorWithCallback(request *QueryMonitorRequest, cal
 // QueryMonitorRequest is the request struct for api QueryMonitor
 type QueryMonitorRequest struct {
 	*requests.RpcRequest
-	MonitorType string           `position:"Query" name:"MonitorType"`
-	EndTime     requests.Integer `position:"Query" name:"EndTime"`
-	ClusterId   string           `position:"Query" name:"ClusterId"`
-	StartTime   requests.Integer `position:"Query" name:"StartTime"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	RequestPars string           `position:"Query" name:"RequestPars"`
-	Step        requests.Integer `position:"Query" name:"Step"`
+	MonitorType    string           `position:"Query" name:"MonitorType"`
+	EndTime        requests.Integer `position:"Query" name:"EndTime"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	StartTime      requests.Integer `position:"Query" name:"StartTime"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	RequestPars    string           `position:"Query" name:"RequestPars"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
+	Step           requests.Integer `position:"Query" name:"Step"`
 }
 
 // QueryMonitorResponse is the response struct for api QueryMonitor
@@ -95,7 +96,7 @@ func CreateQueryMonitorRequest() (request *QueryMonitorRequest) {
 	request = &QueryMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryMonitor", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryMonitor", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

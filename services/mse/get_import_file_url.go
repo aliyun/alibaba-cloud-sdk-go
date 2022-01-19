@@ -71,9 +71,10 @@ func (client *Client) GetImportFileUrlWithCallback(request *GetImportFileUrlRequ
 // GetImportFileUrlRequest is the request struct for api GetImportFileUrl
 type GetImportFileUrlRequest struct {
 	*requests.RpcRequest
-	ContentType string `position:"Query" name:"ContentType"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	NamespaceId string `position:"Query" name:"NamespaceId"`
+	ContentType    string `position:"Query" name:"ContentType"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // GetImportFileUrlResponse is the response struct for api GetImportFileUrl
@@ -94,7 +95,7 @@ func CreateGetImportFileUrlRequest() (request *GetImportFileUrlRequest) {
 	request = &GetImportFileUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetImportFileUrl", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetImportFileUrl", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

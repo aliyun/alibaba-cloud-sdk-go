@@ -73,6 +73,7 @@ type UpdateGatewayNameRequest struct {
 	*requests.RpcRequest
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	Name            string `position:"Query" name:"Name"`
+	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateGatewayNameResponse is the response struct for api UpdateGatewayName
@@ -91,7 +92,7 @@ func CreateUpdateGatewayNameRequest() (request *UpdateGatewayNameRequest) {
 	request = &UpdateGatewayNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayName", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayName", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

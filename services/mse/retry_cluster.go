@@ -71,9 +71,10 @@ func (client *Client) RetryClusterWithCallback(request *RetryClusterRequest, cal
 // RetryClusterRequest is the request struct for api RetryCluster
 type RetryClusterRequest struct {
 	*requests.RpcRequest
-	ClusterId   string `position:"Query" name:"ClusterId"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	RequestPars string `position:"Query" name:"RequestPars"`
+	ClusterId      string `position:"Query" name:"ClusterId"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // RetryClusterResponse is the response struct for api RetryCluster
@@ -90,7 +91,7 @@ func CreateRetryClusterRequest() (request *RetryClusterRequest) {
 	request = &RetryClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "RetryCluster", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "RetryCluster", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

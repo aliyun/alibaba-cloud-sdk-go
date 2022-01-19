@@ -71,10 +71,11 @@ func (client *Client) ImportNacosConfigWithCallback(request *ImportNacosConfigRe
 // ImportNacosConfigRequest is the request struct for api ImportNacosConfig
 type ImportNacosConfigRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	NamespaceId string `position:"Query" name:"NamespaceId"`
-	FileUrl     string `position:"Query" name:"FileUrl"`
-	Policy      string `position:"Query" name:"Policy"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	FileUrl        string `position:"Query" name:"FileUrl"`
+	Policy         string `position:"Query" name:"Policy"`
 }
 
 // ImportNacosConfigResponse is the response struct for api ImportNacosConfig
@@ -95,7 +96,7 @@ func CreateImportNacosConfigRequest() (request *ImportNacosConfigRequest) {
 	request = &ImportNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ImportNacosConfig", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ImportNacosConfig", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

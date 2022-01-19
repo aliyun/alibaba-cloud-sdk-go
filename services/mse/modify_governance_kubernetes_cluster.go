@@ -73,6 +73,7 @@ type ModifyGovernanceKubernetesClusterRequest struct {
 	*requests.RpcRequest
 	NamespaceInfos string `position:"Query" name:"NamespaceInfos"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // ModifyGovernanceKubernetesClusterResponse is the response struct for api ModifyGovernanceKubernetesCluster
@@ -91,7 +92,7 @@ func CreateModifyGovernanceKubernetesClusterRequest() (request *ModifyGovernance
 	request = &ModifyGovernanceKubernetesClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ModifyGovernanceKubernetesCluster", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ModifyGovernanceKubernetesCluster", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

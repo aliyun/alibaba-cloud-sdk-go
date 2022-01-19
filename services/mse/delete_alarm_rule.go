@@ -71,8 +71,9 @@ func (client *Client) DeleteAlarmRuleWithCallback(request *DeleteAlarmRuleReques
 // DeleteAlarmRuleRequest is the request struct for api DeleteAlarmRule
 type DeleteAlarmRuleRequest struct {
 	*requests.RpcRequest
-	AlarmRuleId string `position:"Query" name:"AlarmRuleId"`
-	RequestPars string `position:"Query" name:"RequestPars"`
+	AlarmRuleId    string `position:"Query" name:"AlarmRuleId"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // DeleteAlarmRuleResponse is the response struct for api DeleteAlarmRule
@@ -90,7 +91,7 @@ func CreateDeleteAlarmRuleRequest() (request *DeleteAlarmRuleRequest) {
 	request = &DeleteAlarmRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAlarmRule", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAlarmRule", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

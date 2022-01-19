@@ -86,6 +86,7 @@ type CreateClusterRequest struct {
 	VpcId                   string           `position:"Query" name:"VpcId"`
 	NetType                 string           `position:"Query" name:"NetType"`
 	MseVersion              string           `position:"Query" name:"MseVersion"`
+	AcceptLanguage          string           `position:"Query" name:"AcceptLanguage"`
 	Region                  string           `position:"Query" name:"Region"`
 }
 
@@ -105,7 +106,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateCluster", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateCluster", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

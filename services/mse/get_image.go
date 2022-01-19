@@ -71,7 +71,8 @@ func (client *Client) GetImageWithCallback(request *GetImageRequest, callback fu
 // GetImageRequest is the request struct for api GetImage
 type GetImageRequest struct {
 	*requests.RpcRequest
-	VersionCode string `position:"Query" name:"VersionCode"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	VersionCode    string `position:"Query" name:"VersionCode"`
 }
 
 // GetImageResponse is the response struct for api GetImage
@@ -90,7 +91,7 @@ func CreateGetImageRequest() (request *GetImageRequest) {
 	request = &GetImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetImage", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetImage", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

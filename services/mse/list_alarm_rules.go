@@ -71,10 +71,11 @@ func (client *Client) ListAlarmRulesWithCallback(request *ListAlarmRulesRequest,
 // ListAlarmRulesRequest is the request struct for api ListAlarmRules
 type ListAlarmRulesRequest struct {
 	*requests.RpcRequest
-	AlarmMseType string           `position:"Query" name:"AlarmMseType"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
-	RequestPars  string           `position:"Query" name:"RequestPars"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	AlarmMseType   string           `position:"Query" name:"AlarmMseType"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	RequestPars    string           `position:"Query" name:"RequestPars"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListAlarmRulesResponse is the response struct for api ListAlarmRules
@@ -96,7 +97,7 @@ func CreateListAlarmRulesRequest() (request *ListAlarmRulesRequest) {
 	request = &ListAlarmRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmRules", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmRules", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

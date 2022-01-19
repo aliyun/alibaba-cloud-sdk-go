@@ -78,6 +78,7 @@ type CreateAlarmRuleRequest struct {
 	AlarmAliasName  string           `position:"Query" name:"AlarmAliasName"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
 	ContactGroupIds string           `position:"Query" name:"ContactGroupIds"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 	AlertWay        string           `position:"Query" name:"AlertWay"`
 	Aggregates      string           `position:"Query" name:"Aggregates"`
 	Value           requests.Float   `position:"Query" name:"Value"`
@@ -97,7 +98,7 @@ func CreateCreateAlarmRuleRequest() (request *CreateAlarmRuleRequest) {
 	request = &CreateAlarmRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateAlarmRule", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateAlarmRule", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,6 +71,7 @@ func (client *Client) QueryBusinessLocationsWithCallback(request *QueryBusinessL
 // QueryBusinessLocationsRequest is the request struct for api QueryBusinessLocations
 type QueryBusinessLocationsRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // QueryBusinessLocationsResponse is the response struct for api QueryBusinessLocations
@@ -88,7 +89,7 @@ func CreateQueryBusinessLocationsRequest() (request *QueryBusinessLocationsReque
 	request = &QueryBusinessLocationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryBusinessLocations", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryBusinessLocations", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

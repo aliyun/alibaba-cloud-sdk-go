@@ -71,9 +71,10 @@ func (client *Client) UpdateAclWithCallback(request *UpdateAclRequest, callback 
 // UpdateAclRequest is the request struct for api UpdateAcl
 type UpdateAclRequest struct {
 	*requests.RpcRequest
-	ClusterId    string `position:"Query" name:"ClusterId"`
-	AclEntryList string `position:"Query" name:"AclEntryList"`
-	InstanceId   string `position:"Query" name:"InstanceId"`
+	ClusterId      string `position:"Query" name:"ClusterId"`
+	AclEntryList   string `position:"Query" name:"AclEntryList"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateAclResponse is the response struct for api UpdateAcl
@@ -90,7 +91,7 @@ func CreateUpdateAclRequest() (request *UpdateAclRequest) {
 	request = &UpdateAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateAcl", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateAcl", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

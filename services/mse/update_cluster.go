@@ -75,6 +75,7 @@ type UpdateClusterRequest struct {
 	ClusterId        string `position:"Query" name:"ClusterId"`
 	InstanceId       string `position:"Query" name:"InstanceId"`
 	RequestPars      string `position:"Query" name:"RequestPars"`
+	AcceptLanguage   string `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateClusterResponse is the response struct for api UpdateCluster
@@ -91,7 +92,7 @@ func CreateUpdateClusterRequest() (request *UpdateClusterRequest) {
 	request = &UpdateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateCluster", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateCluster", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

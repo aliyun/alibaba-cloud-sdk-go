@@ -72,6 +72,7 @@ func (client *Client) GetGatewayWithCallback(request *GetGatewayRequest, callbac
 type GetGatewayRequest struct {
 	*requests.RpcRequest
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
+	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 
 // GetGatewayResponse is the response struct for api GetGateway
@@ -90,7 +91,7 @@ func CreateGetGatewayRequest() (request *GetGatewayRequest) {
 	request = &GetGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetGateway", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetGateway", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

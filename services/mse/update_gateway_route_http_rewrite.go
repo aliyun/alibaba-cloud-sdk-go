@@ -71,7 +71,9 @@ func (client *Client) UpdateGatewayRouteHTTPRewriteWithCallback(request *UpdateG
 // UpdateGatewayRouteHTTPRewriteRequest is the request struct for api UpdateGatewayRouteHTTPRewrite
 type UpdateGatewayRouteHTTPRewriteRequest struct {
 	*requests.RpcRequest
+	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	HttpRewriteJSON string           `position:"Query" name:"HttpRewriteJSON"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 	Id              requests.Integer `position:"Query" name:"Id"`
 	GatewayId       requests.Integer `position:"Query" name:"GatewayId"`
 }
@@ -92,7 +94,7 @@ func CreateUpdateGatewayRouteHTTPRewriteRequest() (request *UpdateGatewayRouteHT
 	request = &UpdateGatewayRouteHTTPRewriteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

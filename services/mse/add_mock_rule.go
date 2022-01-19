@@ -80,6 +80,7 @@ type AddMockRuleRequest struct {
 	ConsumerAppIds  string           `position:"Query" name:"ConsumerAppIds"`
 	DubboMockItems  string           `position:"Query" name:"DubboMockItems"`
 	Name            string           `position:"Query" name:"Name"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 	MockType        requests.Integer `position:"Query" name:"MockType"`
 	Region          string           `position:"Query" name:"Region"`
 }
@@ -100,7 +101,7 @@ func CreateAddMockRuleRequest() (request *AddMockRuleRequest) {
 	request = &AddMockRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddMockRule", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddMockRule", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

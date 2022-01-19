@@ -71,6 +71,7 @@ func (client *Client) QueryClusterSpecificationWithCallback(request *QueryCluste
 // QueryClusterSpecificationRequest is the request struct for api QueryClusterSpecification
 type QueryClusterSpecificationRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // QueryClusterSpecificationResponse is the response struct for api QueryClusterSpecification
@@ -90,7 +91,7 @@ func CreateQueryClusterSpecificationRequest() (request *QueryClusterSpecificatio
 	request = &QueryClusterSpecificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterSpecification", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterSpecification", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

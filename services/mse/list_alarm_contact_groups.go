@@ -71,9 +71,10 @@ func (client *Client) ListAlarmContactGroupsWithCallback(request *ListAlarmConta
 // ListAlarmContactGroupsRequest is the request struct for api ListAlarmContactGroups
 type ListAlarmContactGroupsRequest struct {
 	*requests.RpcRequest
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
-	RequestPars string           `position:"Query" name:"RequestPars"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	RequestPars    string           `position:"Query" name:"RequestPars"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListAlarmContactGroupsResponse is the response struct for api ListAlarmContactGroups
@@ -95,7 +96,7 @@ func CreateListAlarmContactGroupsRequest() (request *ListAlarmContactGroupsReque
 	request = &ListAlarmContactGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmContactGroups", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmContactGroups", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

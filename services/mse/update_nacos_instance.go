@@ -71,17 +71,18 @@ func (client *Client) UpdateNacosInstanceWithCallback(request *UpdateNacosInstan
 // UpdateNacosInstanceRequest is the request struct for api UpdateNacosInstance
 type UpdateNacosInstanceRequest struct {
 	*requests.RpcRequest
-	Metadata    string           `position:"Body" name:"Metadata"`
-	ClusterName string           `position:"Query" name:"ClusterName"`
-	Ip          string           `position:"Query" name:"Ip"`
-	Ephemeral   requests.Boolean `position:"Query" name:"Ephemeral"`
-	Weight      string           `position:"Query" name:"Weight"`
-	GroupName   string           `position:"Query" name:"GroupName"`
-	Enabled     requests.Boolean `position:"Query" name:"Enabled"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	NamespaceId string           `position:"Query" name:"NamespaceId"`
-	Port        requests.Integer `position:"Query" name:"Port"`
-	ServiceName string           `position:"Query" name:"ServiceName"`
+	Metadata       string           `position:"Body" name:"Metadata"`
+	ClusterName    string           `position:"Query" name:"ClusterName"`
+	Ephemeral      requests.Boolean `position:"Query" name:"Ephemeral"`
+	Enabled        requests.Boolean `position:"Query" name:"Enabled"`
+	NamespaceId    string           `position:"Query" name:"NamespaceId"`
+	ServiceName    string           `position:"Query" name:"ServiceName"`
+	Ip             string           `position:"Query" name:"Ip"`
+	Weight         string           `position:"Query" name:"Weight"`
+	GroupName      string           `position:"Query" name:"GroupName"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	Port           requests.Integer `position:"Query" name:"Port"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateNacosInstanceResponse is the response struct for api UpdateNacosInstance
@@ -100,7 +101,7 @@ func CreateUpdateNacosInstanceRequest() (request *UpdateNacosInstanceRequest) {
 	request = &UpdateNacosInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosInstance", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosInstance", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

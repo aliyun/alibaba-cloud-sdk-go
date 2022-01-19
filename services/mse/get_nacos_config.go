@@ -71,11 +71,12 @@ func (client *Client) GetNacosConfigWithCallback(request *GetNacosConfigRequest,
 // GetNacosConfigRequest is the request struct for api GetNacosConfig
 type GetNacosConfigRequest struct {
 	*requests.RpcRequest
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	DataId      string           `position:"Query" name:"DataId"`
-	NamespaceId string           `position:"Query" name:"NamespaceId"`
-	Beta        requests.Boolean `position:"Query" name:"Beta"`
-	Group       string           `position:"Query" name:"Group"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	DataId         string           `position:"Query" name:"DataId"`
+	NamespaceId    string           `position:"Query" name:"NamespaceId"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
+	Beta           requests.Boolean `position:"Query" name:"Beta"`
+	Group          string           `position:"Query" name:"Group"`
 }
 
 // GetNacosConfigResponse is the response struct for api GetNacosConfig
@@ -93,7 +94,7 @@ func CreateGetNacosConfigRequest() (request *GetNacosConfigRequest) {
 	request = &GetNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetNacosConfig", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetNacosConfig", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

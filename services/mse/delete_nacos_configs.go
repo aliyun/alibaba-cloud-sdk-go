@@ -71,9 +71,10 @@ func (client *Client) DeleteNacosConfigsWithCallback(request *DeleteNacosConfigs
 // DeleteNacosConfigsRequest is the request struct for api DeleteNacosConfigs
 type DeleteNacosConfigsRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	NamespaceId string `position:"Query" name:"NamespaceId"`
-	Ids         string `position:"Query" name:"Ids"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	Ids            string `position:"Query" name:"Ids"`
 }
 
 // DeleteNacosConfigsResponse is the response struct for api DeleteNacosConfigs
@@ -92,7 +93,7 @@ func CreateDeleteNacosConfigsRequest() (request *DeleteNacosConfigsRequest) {
 	request = &DeleteNacosConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosConfigs", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosConfigs", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,8 +71,10 @@ func (client *Client) UpdateGatewayOptionWithCallback(request *UpdateGatewayOpti
 // UpdateGatewayOptionRequest is the request struct for api UpdateGatewayOption
 type UpdateGatewayOptionRequest struct {
 	*requests.RpcRequest
-	GatewayOption UpdateGatewayOptionGatewayOption `position:"Query" name:"GatewayOption"  type:"Struct"`
-	GatewayId     requests.Integer                 `position:"Query" name:"GatewayId"`
+	GatewayUniqueId string                           `position:"Query" name:"GatewayUniqueId"`
+	GatewayOption   UpdateGatewayOptionGatewayOption `position:"Query" name:"GatewayOption"  type:"Struct"`
+	GatewayId       requests.Integer                 `position:"Query" name:"GatewayId"`
+	AcceptLanguage  string                           `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateGatewayOptionGatewayOption is a repeated param struct in UpdateGatewayOptionRequest
@@ -110,7 +112,7 @@ func CreateUpdateGatewayOptionRequest() (request *UpdateGatewayOptionRequest) {
 	request = &UpdateGatewayOptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayOption", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayOption", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

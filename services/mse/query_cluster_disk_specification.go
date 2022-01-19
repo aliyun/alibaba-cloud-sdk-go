@@ -71,7 +71,8 @@ func (client *Client) QueryClusterDiskSpecificationWithCallback(request *QueryCl
 // QueryClusterDiskSpecificationRequest is the request struct for api QueryClusterDiskSpecification
 type QueryClusterDiskSpecificationRequest struct {
 	*requests.RpcRequest
-	ClusterType string `position:"Query" name:"ClusterType"`
+	ClusterType    string `position:"Query" name:"ClusterType"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // QueryClusterDiskSpecificationResponse is the response struct for api QueryClusterDiskSpecification
@@ -92,7 +93,7 @@ func CreateQueryClusterDiskSpecificationRequest() (request *QueryClusterDiskSpec
 	request = &QueryClusterDiskSpecificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterDiskSpecification", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryClusterDiskSpecification", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

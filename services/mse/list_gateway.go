@@ -71,11 +71,12 @@ func (client *Client) ListGatewayWithCallback(request *ListGatewayRequest, callb
 // ListGatewayRequest is the request struct for api ListGateway
 type ListGatewayRequest struct {
 	*requests.RpcRequest
-	FilterParams ListGatewayFilterParams `position:"Query" name:"FilterParams"  type:"Struct"`
-	PageNumber   requests.Integer        `position:"Query" name:"PageNumber"`
-	OrderItem    string                  `position:"Query" name:"OrderItem"`
-	PageSize     requests.Integer        `position:"Query" name:"PageSize"`
-	DescSort     requests.Boolean        `position:"Query" name:"DescSort"`
+	PageNumber     requests.Integer        `position:"Query" name:"PageNumber"`
+	OrderItem      string                  `position:"Query" name:"OrderItem"`
+	PageSize       requests.Integer        `position:"Query" name:"PageSize"`
+	DescSort       requests.Boolean        `position:"Query" name:"DescSort"`
+	FilterParams   ListGatewayFilterParams `position:"Query" name:"FilterParams"  type:"Struct"`
+	AcceptLanguage string                  `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListGatewayFilterParams is a repeated param struct in ListGatewayRequest
@@ -103,7 +104,7 @@ func CreateListGatewayRequest() (request *ListGatewayRequest) {
 	request = &ListGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListGateway", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListGateway", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

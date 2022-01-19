@@ -71,11 +71,12 @@ func (client *Client) CreateEngineNamespaceWithCallback(request *CreateEngineNam
 // CreateEngineNamespaceRequest is the request struct for api CreateEngineNamespace
 type CreateEngineNamespaceRequest struct {
 	*requests.RpcRequest
-	ClusterId    string           `position:"Query" name:"ClusterId"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	ServiceCount requests.Integer `position:"Query" name:"ServiceCount"`
-	Name         string           `position:"Query" name:"Name"`
-	Desc         string           `position:"Query" name:"Desc"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	ServiceCount   requests.Integer `position:"Query" name:"ServiceCount"`
+	Name           string           `position:"Query" name:"Name"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
+	Desc           string           `position:"Query" name:"Desc"`
 }
 
 // CreateEngineNamespaceResponse is the response struct for api CreateEngineNamespace
@@ -94,7 +95,7 @@ func CreateCreateEngineNamespaceRequest() (request *CreateEngineNamespaceRequest
 	request = &CreateEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateEngineNamespace", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateEngineNamespace", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

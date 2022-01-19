@@ -71,13 +71,14 @@ func (client *Client) ListAlarmHistoriesWithCallback(request *ListAlarmHistories
 // ListAlarmHistoriesRequest is the request struct for api ListAlarmHistories
 type ListAlarmHistoriesRequest struct {
 	*requests.RpcRequest
-	EndTime      requests.Integer `position:"Query" name:"EndTime"`
-	AlarmMseType string           `position:"Query" name:"AlarmMseType"`
-	StartTime    requests.Integer `position:"Query" name:"StartTime"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
-	RequestPars  string           `position:"Query" name:"RequestPars"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	AlarmName    string           `position:"Query" name:"AlarmName"`
+	EndTime        requests.Integer `position:"Query" name:"EndTime"`
+	AlarmMseType   string           `position:"Query" name:"AlarmMseType"`
+	StartTime      requests.Integer `position:"Query" name:"StartTime"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	RequestPars    string           `position:"Query" name:"RequestPars"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
+	AlarmName      string           `position:"Query" name:"AlarmName"`
 }
 
 // ListAlarmHistoriesResponse is the response struct for api ListAlarmHistories
@@ -99,7 +100,7 @@ func CreateListAlarmHistoriesRequest() (request *ListAlarmHistoriesRequest) {
 	request = &ListAlarmHistoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmHistories", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmHistories", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

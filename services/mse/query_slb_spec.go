@@ -71,6 +71,7 @@ func (client *Client) QuerySlbSpecWithCallback(request *QuerySlbSpecRequest, cal
 // QuerySlbSpecRequest is the request struct for api QuerySlbSpec
 type QuerySlbSpecRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // QuerySlbSpecResponse is the response struct for api QuerySlbSpec
@@ -89,7 +90,7 @@ func CreateQuerySlbSpecRequest() (request *QuerySlbSpecRequest) {
 	request = &QuerySlbSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QuerySlbSpec", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QuerySlbSpec", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

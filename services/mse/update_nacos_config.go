@@ -81,6 +81,7 @@ type UpdateNacosConfigRequest struct {
 	BetaIps          string `position:"Query" name:"BetaIps"`
 	InstanceId       string `position:"Query" name:"InstanceId"`
 	DataId           string `position:"Query" name:"DataId"`
+	AcceptLanguage   string `position:"Query" name:"AcceptLanguage"`
 	Desc             string `position:"Query" name:"Desc"`
 	Md5              string `position:"Query" name:"Md5"`
 }
@@ -100,7 +101,7 @@ func CreateUpdateNacosConfigRequest() (request *UpdateNacosConfigRequest) {
 	request = &UpdateNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosConfig", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosConfig", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }
