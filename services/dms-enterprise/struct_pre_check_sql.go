@@ -23,4 +23,5 @@ type PreCheckSQL struct {
 	SQLReviewQueryKey string `json:"SQLReviewQueryKey" xml:"SQLReviewQueryKey"`
 	SqlReviewStatus   string `json:"SqlReviewStatus" xml:"SqlReviewStatus"`
 	SqlType           string `json:"SqlType" xml:"SqlType"`
+	TableNames        string `json:"TableNames" xml:"TableNames"`
 }

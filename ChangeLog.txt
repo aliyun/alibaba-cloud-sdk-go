@@ -1,3 +1,8 @@
+2022-01-21 Version: v1.61.1454
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported RestartDataCorrectSQLJob,PauseDataCorrectSQLJob API.
+- Supported ListDataCorrectPreCheckSQL to return tableNames information.
+
 2022-01-19 Version: v1.61.1453
 - Generated 2017-05-25 for `Dysmsapi`.
 - Upgrade Service for SMS.
