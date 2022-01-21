@@ -78,8 +78,8 @@ type CreateMetricRuleTemplateRequest struct {
 
 // CreateMetricRuleTemplateAlertTemplates is a repeated param struct in CreateMetricRuleTemplateRequest
 type CreateMetricRuleTemplateAlertTemplates struct {
-	Period                                string `name:"Period"`
 	EscalationsWarnThreshold              string `name:"Escalations.Warn.Threshold"`
+	Period                                string `name:"Period"`
 	Webhook                               string `name:"Webhook"`
 	EscalationsWarnComparisonOperator     string `name:"Escalations.Warn.ComparisonOperator"`
 	EscalationsCriticalStatistics         string `name:"Escalations.Critical.Statistics"`
@@ -88,24 +88,24 @@ type CreateMetricRuleTemplateAlertTemplates struct {
 	EscalationsInfoStatistics             string `name:"Escalations.Info.Statistics"`
 	EscalationsCriticalTimes              string `name:"Escalations.Critical.Times"`
 	EscalationsInfoComparisonOperator     string `name:"Escalations.Info.ComparisonOperator"`
-	EscalationsWarnStatistics             string `name:"Escalations.Warn.Statistics"`
 	EscalationsInfoThreshold              string `name:"Escalations.Info.Threshold"`
+	EscalationsWarnStatistics             string `name:"Escalations.Warn.Statistics"`
 	Namespace                             string `name:"Namespace"`
 	Selector                              string `name:"Selector"`
 	MetricName                            string `name:"MetricName"`
+	EscalationsWarnTimes                  string `name:"Escalations.Warn.Times"`
 	Category                              string `name:"Category"`
 	EscalationsCriticalComparisonOperator string `name:"Escalations.Critical.ComparisonOperator"`
-	EscalationsWarnTimes                  string `name:"Escalations.Warn.Times"`
 	EscalationsCriticalThreshold          string `name:"Escalations.Critical.Threshold"`
 }
 
 // CreateMetricRuleTemplateResponse is the response struct for api CreateMetricRuleTemplate
 type CreateMetricRuleTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Id        int64  `json:"Id" xml:"Id"`
 }
 
@@ -114,7 +114,7 @@ func CreateCreateMetricRuleTemplateRequest() (request *CreateMetricRuleTemplateR
 	request = &CreateMetricRuleTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMetricRuleTemplate", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMetricRuleTemplate", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

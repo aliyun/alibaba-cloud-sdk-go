@@ -90,7 +90,7 @@ func CreateDeleteCustomMetricRequest() (request *DeleteCustomMetricRequest) {
 	request = &DeleteCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteCustomMetric", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteCustomMetric", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

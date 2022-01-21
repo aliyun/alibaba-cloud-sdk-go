@@ -71,23 +71,31 @@ func (client *Client) PutEventRuleWithCallback(request *PutEventRuleRequest, cal
 // PutEventRuleRequest is the request struct for api PutEventRule
 type PutEventRuleRequest struct {
 	*requests.RpcRequest
-	GroupId      string                      `position:"Query" name:"GroupId"`
 	Description  string                      `position:"Query" name:"Description"`
 	RuleName     string                      `position:"Query" name:"RuleName"`
-	EventPattern *[]PutEventRuleEventPattern `position:"Query" name:"EventPattern"  type:"Repeated"`
-	EventType    string                      `position:"Query" name:"EventType"`
 	SilenceTime  requests.Integer            `position:"Query" name:"SilenceTime"`
 	State        string                      `position:"Query" name:"State"`
+	GroupId      string                      `position:"Query" name:"GroupId"`
+	EventPattern *[]PutEventRuleEventPattern `position:"Query" name:"EventPattern"  type:"Repeated"`
+	EventType    string                      `position:"Query" name:"EventType"`
 }
 
 // PutEventRuleEventPattern is a repeated param struct in PutEventRuleRequest
 type PutEventRuleEventPattern struct {
-	LevelList     *[]string `name:"LevelList" type:"Repeated"`
-	KeywordFilter string    `name:"KeywordFilter"`
-	Product       string    `name:"Product"`
-	StatusList    *[]string `name:"StatusList" type:"Repeated"`
-	NameList      *[]string `name:"NameList" type:"Repeated"`
-	EventTypeList *[]string `name:"EventTypeList" type:"Repeated"`
+	LevelList     *[]string                             `name:"LevelList" type:"Repeated"`
+	KeywordFilter PutEventRuleEventPatternKeywordFilter `name:"KeywordFilter" type:"Struct"`
+	Product       string                                `name:"Product"`
+	StatusList    *[]string                             `name:"StatusList" type:"Repeated"`
+	NameList      *[]string                             `name:"NameList" type:"Repeated"`
+	CustomFilters string                                `name:"CustomFilters"`
+	EventTypeList *[]string                             `name:"EventTypeList" type:"Repeated"`
+	SQLFilter     string                                `name:"SQLFilter"`
+}
+
+// PutEventRuleEventPatternKeywordFilter is a repeated param struct in PutEventRuleRequest
+type PutEventRuleEventPatternKeywordFilter struct {
+	Keywords *[]string `name:"Keywords" type:"Repeated"`
+	Relation string    `name:"Relation"`
 }
 
 // PutEventRuleResponse is the response struct for api PutEventRule
@@ -105,7 +113,7 @@ func CreatePutEventRuleRequest() (request *PutEventRuleRequest) {
 	request = &PutEventRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutEventRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutEventRule", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

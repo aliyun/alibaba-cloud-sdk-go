@@ -17,18 +17,18 @@ package cms
 
 // Host is a nested struct in cms response
 type Host struct {
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
 	SerialNumber       string `json:"SerialNumber" xml:"SerialNumber"`
+	NatIp              string `json:"NatIp" xml:"NatIp"`
 	HostName           string `json:"HostName" xml:"HostName"`
 	AliUid             int64  `json:"AliUid" xml:"AliUid"`
-	OperatingSystem    string `json:"OperatingSystem" xml:"OperatingSystem"`
-	IpGroup            string `json:"IpGroup" xml:"IpGroup"`
-	Region             string `json:"Region" xml:"Region"`
-	AgentVersion       string `json:"AgentVersion" xml:"AgentVersion"`
-	EipAddress         string `json:"EipAddress" xml:"EipAddress"`
-	EipId              string `json:"EipId" xml:"EipId"`
-	IsAliyunHost       bool   `json:"isAliyunHost" xml:"isAliyunHost"`
-	NatIp              string `json:"NatIp" xml:"NatIp"`
 	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	IsAliyunHost       bool   `json:"isAliyunHost" xml:"isAliyunHost"`
+	EipAddress         string `json:"EipAddress" xml:"EipAddress"`
+	AgentVersion       string `json:"AgentVersion" xml:"AgentVersion"`
+	IpGroup            string `json:"IpGroup" xml:"IpGroup"`
+	EipId              string `json:"EipId" xml:"EipId"`
+	Region             string `json:"Region" xml:"Region"`
 	InstanceTypeFamily string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+	OperatingSystem    string `json:"OperatingSystem" xml:"OperatingSystem"`
 }

@@ -77,10 +77,10 @@ type DeleteMonitorGroupRequest struct {
 // DeleteMonitorGroupResponse is the response struct for api DeleteMonitorGroup
 type DeleteMonitorGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Group     Group  `json:"Group" xml:"Group"`
 }
 
@@ -89,7 +89,7 @@ func CreateDeleteMonitorGroupRequest() (request *DeleteMonitorGroupRequest) {
 	request = &DeleteMonitorGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMonitorGroup", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMonitorGroup", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

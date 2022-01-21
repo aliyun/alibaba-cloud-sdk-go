@@ -82,11 +82,11 @@ type DescribeAlertingMetricRuleResourcesRequest struct {
 // DescribeAlertingMetricRuleResourcesResponse is the response struct for api DescribeAlertingMetricRuleResources
 type DescribeAlertingMetricRuleResourcesResponse struct {
 	*responses.BaseResponse
-	RequestId string                                         `json:"RequestId" xml:"RequestId"`
-	Success   bool                                           `json:"Success" xml:"Success"`
 	Code      int                                            `json:"Code" xml:"Code"`
 	Message   string                                         `json:"Message" xml:"Message"`
+	RequestId string                                         `json:"RequestId" xml:"RequestId"`
 	Total     int                                            `json:"Total" xml:"Total"`
+	Success   bool                                           `json:"Success" xml:"Success"`
 	Resources ResourcesInDescribeAlertingMetricRuleResources `json:"Resources" xml:"Resources"`
 }
 
@@ -95,7 +95,7 @@ func CreateDescribeAlertingMetricRuleResourcesRequest() (request *DescribeAlerti
 	request = &DescribeAlertingMetricRuleResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertingMetricRuleResources", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertingMetricRuleResources", "Cms", "openAPI")
 	request.Method = requests.GET
 	return
 }

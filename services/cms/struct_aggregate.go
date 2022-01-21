@@ -17,9 +17,9 @@ package cms
 
 // Aggregate is a nested struct in cms response
 type Aggregate struct {
+	Max       string `json:"Max" xml:"Max"`
+	Min       string `json:"Min" xml:"Min"`
+	Function  string `json:"Function" xml:"Function"`
 	Alias     string `json:"Alias" xml:"Alias"`
 	FieldName string `json:"FieldName" xml:"FieldName"`
-	Function  string `json:"Function" xml:"Function"`
-	Min       string `json:"Min" xml:"Min"`
-	Max       string `json:"Max" xml:"Max"`
 }

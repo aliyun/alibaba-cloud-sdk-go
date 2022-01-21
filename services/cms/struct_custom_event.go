@@ -17,9 +17,9 @@ package cms
 
 // CustomEvent is a nested struct in cms response
 type CustomEvent struct {
-	Id      string `json:"Id" xml:"Id"`
-	Content string `json:"Content" xml:"Content"`
-	GroupId string `json:"GroupId" xml:"GroupId"`
-	Name    string `json:"Name" xml:"Name"`
 	Time    string `json:"Time" xml:"Time"`
+	Name    string `json:"Name" xml:"Name"`
+	GroupId string `json:"GroupId" xml:"GroupId"`
+	Content string `json:"Content" xml:"Content"`
+	Id      string `json:"Id" xml:"Id"`
 }

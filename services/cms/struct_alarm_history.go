@@ -17,26 +17,26 @@ package cms
 
 // AlarmHistory is a nested struct in cms response
 type AlarmHistory struct {
-	RuleId          string                                  `json:"RuleId" xml:"RuleId"`
-	GroupId         string                                  `json:"GroupId" xml:"GroupId"`
-	Namespace       string                                  `json:"Namespace" xml:"Namespace"`
-	MetricName      string                                  `json:"MetricName" xml:"MetricName"`
-	Dimensions      string                                  `json:"Dimensions" xml:"Dimensions"`
-	Expression      string                                  `json:"Expression" xml:"Expression"`
-	EvaluationCount int                                     `json:"EvaluationCount" xml:"EvaluationCount"`
-	Value           string                                  `json:"Value" xml:"Value"`
-	AlertTime       int64                                   `json:"AlertTime" xml:"AlertTime"`
-	LastTime        int64                                   `json:"LastTime" xml:"LastTime"`
-	Level           string                                  `json:"Level" xml:"Level"`
-	PreLevel        string                                  `json:"PreLevel" xml:"PreLevel"`
-	RuleName        string                                  `json:"RuleName" xml:"RuleName"`
-	State           string                                  `json:"State" xml:"State"`
 	Status          int                                     `json:"Status" xml:"Status"`
+	MetricName      string                                  `json:"MetricName" xml:"MetricName"`
+	EvaluationCount int                                     `json:"EvaluationCount" xml:"EvaluationCount"`
+	State           string                                  `json:"State" xml:"State"`
+	PreLevel        string                                  `json:"PreLevel" xml:"PreLevel"`
+	Namespace       string                                  `json:"Namespace" xml:"Namespace"`
 	Webhooks        string                                  `json:"Webhooks" xml:"Webhooks"`
+	RuleName        string                                  `json:"RuleName" xml:"RuleName"`
+	RuleId          string                                  `json:"RuleId" xml:"RuleId"`
+	LastTime        int64                                   `json:"LastTime" xml:"LastTime"`
+	Value           string                                  `json:"Value" xml:"Value"`
+	Expression      string                                  `json:"Expression" xml:"Expression"`
+	GroupId         string                                  `json:"GroupId" xml:"GroupId"`
+	AlertTime       int64                                   `json:"AlertTime" xml:"AlertTime"`
 	InstanceName    string                                  `json:"InstanceName" xml:"InstanceName"`
-	ContactGroups   ContactGroupsInDescribeAlertHistoryList `json:"ContactGroups" xml:"ContactGroups"`
+	Dimensions      string                                  `json:"Dimensions" xml:"Dimensions"`
+	Level           string                                  `json:"Level" xml:"Level"`
 	Contacts        ContactsInDescribeAlertHistoryList      `json:"Contacts" xml:"Contacts"`
 	ContactALIIMs   ContactALIIMs                           `json:"ContactALIIMs" xml:"ContactALIIMs"`
-	ContactSmses    ContactSmses                            `json:"ContactSmses" xml:"ContactSmses"`
 	ContactMails    ContactMails                            `json:"ContactMails" xml:"ContactMails"`
+	ContactSmses    ContactSmses                            `json:"ContactSmses" xml:"ContactSmses"`
+	ContactGroups   ContactGroupsInDescribeAlertHistoryList `json:"ContactGroups" xml:"ContactGroups"`
 }

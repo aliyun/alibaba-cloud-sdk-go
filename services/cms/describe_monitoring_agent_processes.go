@@ -79,8 +79,8 @@ type DescribeMonitoringAgentProcessesResponse struct {
 	*responses.BaseResponse
 	Code          string        `json:"Code" xml:"Code"`
 	Message       string        `json:"Message" xml:"Message"`
-	Success       bool          `json:"Success" xml:"Success"`
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	Success       bool          `json:"Success" xml:"Success"`
 	NodeProcesses NodeProcesses `json:"NodeProcesses" xml:"NodeProcesses"`
 }
 
@@ -89,7 +89,7 @@ func CreateDescribeMonitoringAgentProcessesRequest() (request *DescribeMonitorin
 	request = &DescribeMonitoringAgentProcessesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringAgentProcesses", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringAgentProcesses", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

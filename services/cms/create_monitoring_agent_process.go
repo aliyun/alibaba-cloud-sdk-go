@@ -81,8 +81,8 @@ type CreateMonitoringAgentProcessResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Id        int64  `json:"Id" xml:"Id"`
 }
 
@@ -91,7 +91,7 @@ func CreateCreateMonitoringAgentProcessRequest() (request *CreateMonitoringAgent
 	request = &CreateMonitoringAgentProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitoringAgentProcess", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitoringAgentProcess", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

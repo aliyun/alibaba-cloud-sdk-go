@@ -80,8 +80,8 @@ type PutMonitoringConfigResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreatePutMonitoringConfigRequest creates a request to invoke PutMonitoringConfig API
@@ -89,7 +89,7 @@ func CreatePutMonitoringConfigRequest() (request *PutMonitoringConfigRequest) {
 	request = &PutMonitoringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutMonitoringConfig", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutMonitoringConfig", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

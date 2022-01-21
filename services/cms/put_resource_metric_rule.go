@@ -71,45 +71,78 @@ func (client *Client) PutResourceMetricRuleWithCallback(request *PutResourceMetr
 // PutResourceMetricRuleRequest is the request struct for api PutResourceMetricRule
 type PutResourceMetricRuleRequest struct {
 	*requests.RpcRequest
-	Webhook                               string                         `position:"Query" name:"Webhook"`
-	EscalationsWarnComparisonOperator     string                         `position:"Query" name:"Escalations.Warn.ComparisonOperator"`
-	RuleName                              string                         `position:"Query" name:"RuleName"`
-	EffectiveInterval                     string                         `position:"Query" name:"EffectiveInterval"`
-	NoDataPolicy                          string                         `position:"Query" name:"NoDataPolicy"`
-	NoEffectiveInterval                   string                         `position:"Query" name:"NoEffectiveInterval"`
-	EmailSubject                          string                         `position:"Query" name:"EmailSubject"`
-	Options                               string                         `position:"Query" name:"Options"`
-	MetricName                            string                         `position:"Query" name:"MetricName"`
-	EscalationsWarnTimes                  requests.Integer               `position:"Query" name:"Escalations.Warn.Times"`
-	Period                                string                         `position:"Query" name:"Period"`
-	EscalationsWarnThreshold              string                         `position:"Query" name:"Escalations.Warn.Threshold"`
-	ContactGroups                         string                         `position:"Query" name:"ContactGroups"`
-	EscalationsCriticalStatistics         string                         `position:"Query" name:"Escalations.Critical.Statistics"`
-	GroupId                               string                         `position:"Query" name:"GroupId"`
-	GroupName                             string                         `position:"Query" name:"GroupName"`
-	Labels                                *[]PutResourceMetricRuleLabels `position:"Query" name:"Labels"  type:"Repeated"`
-	Interval                              string                         `position:"Query" name:"Interval"`
-	RuleId                                string                         `position:"Query" name:"RuleId"`
-	EscalationsCriticalThreshold          string                         `position:"Query" name:"Escalations.Critical.Threshold"`
-	EscalationsInfoStatistics             string                         `position:"Query" name:"Escalations.Info.Statistics"`
-	EscalationsInfoComparisonOperator     string                         `position:"Query" name:"Escalations.Info.ComparisonOperator"`
-	SilenceTime                           requests.Integer               `position:"Query" name:"SilenceTime"`
-	Prometheus                            string                         `position:"Query" name:"Prometheus"`
-	CompositeExpression                   string                         `position:"Query" name:"CompositeExpression"`
-	Resources                             string                         `position:"Query" name:"Resources"`
-	EscalationsInfoTimes                  requests.Integer               `position:"Query" name:"Escalations.Info.Times"`
-	GroupBy                               string                         `position:"Query" name:"GroupBy"`
-	EscalationsCriticalTimes              requests.Integer               `position:"Query" name:"Escalations.Critical.Times"`
-	EscalationsWarnStatistics             string                         `position:"Query" name:"Escalations.Warn.Statistics"`
-	EscalationsInfoThreshold              string                         `position:"Query" name:"Escalations.Info.Threshold"`
-	Namespace                             string                         `position:"Query" name:"Namespace"`
-	EscalationsCriticalComparisonOperator string                         `position:"Query" name:"Escalations.Critical.ComparisonOperator"`
+	Webhook                               string                                   `position:"Query" name:"Webhook"`
+	EscalationsWarnComparisonOperator     string                                   `position:"Query" name:"Escalations.Warn.ComparisonOperator"`
+	RuleName                              string                                   `position:"Query" name:"RuleName"`
+	EffectiveInterval                     string                                   `position:"Query" name:"EffectiveInterval"`
+	NoDataPolicy                          string                                   `position:"Query" name:"NoDataPolicy"`
+	NoEffectiveInterval                   string                                   `position:"Query" name:"NoEffectiveInterval"`
+	EmailSubject                          string                                   `position:"Query" name:"EmailSubject"`
+	Options                               string                                   `position:"Query" name:"Options"`
+	MetricName                            string                                   `position:"Query" name:"MetricName"`
+	EscalationsWarnTimes                  requests.Integer                         `position:"Query" name:"Escalations.Warn.Times"`
+	Period                                string                                   `position:"Query" name:"Period"`
+	EscalationsWarnThreshold              string                                   `position:"Query" name:"Escalations.Warn.Threshold"`
+	ContactGroups                         string                                   `position:"Query" name:"ContactGroups"`
+	EscalationsCriticalStatistics         string                                   `position:"Query" name:"Escalations.Critical.Statistics"`
+	GroupId                               string                                   `position:"Query" name:"GroupId"`
+	GroupName                             string                                   `position:"Query" name:"GroupName"`
+	Labels                                *[]PutResourceMetricRuleLabels           `position:"Query" name:"Labels"  type:"Repeated"`
+	Interval                              string                                   `position:"Query" name:"Interval"`
+	RuleId                                string                                   `position:"Query" name:"RuleId"`
+	EscalationsCriticalThreshold          string                                   `position:"Query" name:"Escalations.Critical.Threshold"`
+	EscalationsInfoStatistics             string                                   `position:"Query" name:"Escalations.Info.Statistics"`
+	EscalationsInfoComparisonOperator     string                                   `position:"Query" name:"Escalations.Info.ComparisonOperator"`
+	SilenceTime                           requests.Integer                         `position:"Query" name:"SilenceTime"`
+	Prometheus                            PutResourceMetricRulePrometheus          `position:"Query" name:"Prometheus"  type:"Struct"`
+	CompositeExpression                   PutResourceMetricRuleCompositeExpression `position:"Query" name:"CompositeExpression"  type:"Struct"`
+	Resources                             string                                   `position:"Query" name:"Resources"`
+	EscalationsInfoTimes                  requests.Integer                         `position:"Query" name:"Escalations.Info.Times"`
+	GroupBy                               string                                   `position:"Query" name:"GroupBy"`
+	EscalationsCriticalTimes              requests.Integer                         `position:"Query" name:"Escalations.Critical.Times"`
+	EscalationsWarnStatistics             string                                   `position:"Query" name:"Escalations.Warn.Statistics"`
+	EscalationsInfoThreshold              string                                   `position:"Query" name:"Escalations.Info.Threshold"`
+	Namespace                             string                                   `position:"Query" name:"Namespace"`
+	EscalationsCriticalComparisonOperator string                                   `position:"Query" name:"Escalations.Critical.ComparisonOperator"`
 }
 
 // PutResourceMetricRuleLabels is a repeated param struct in PutResourceMetricRuleRequest
 type PutResourceMetricRuleLabels struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
+}
+
+// PutResourceMetricRulePrometheus is a repeated param struct in PutResourceMetricRuleRequest
+type PutResourceMetricRulePrometheus struct {
+	PromQL      string                                            `name:"PromQL"`
+	Times       string                                            `name:"Times"`
+	Level       string                                            `name:"Level"`
+	Annotations *[]PutResourceMetricRulePrometheusAnnotationsItem `name:"Annotations" type:"Repeated"`
+}
+
+// PutResourceMetricRuleCompositeExpression is a repeated param struct in PutResourceMetricRuleRequest
+type PutResourceMetricRuleCompositeExpression struct {
+	Times              string                                                        `name:"Times"`
+	ExpressionList     *[]PutResourceMetricRuleCompositeExpressionExpressionListItem `name:"ExpressionList" type:"Repeated"`
+	Level              string                                                        `name:"Level"`
+	ExpressionRaw      string                                                        `name:"ExpressionRaw"`
+	ExpressionListJoin string                                                        `name:"ExpressionListJoin"`
+}
+
+// PutResourceMetricRulePrometheusAnnotationsItem is a repeated param struct in PutResourceMetricRuleRequest
+type PutResourceMetricRulePrometheusAnnotationsItem struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
+}
+
+// PutResourceMetricRuleCompositeExpressionExpressionListItem is a repeated param struct in PutResourceMetricRuleRequest
+type PutResourceMetricRuleCompositeExpressionExpressionListItem struct {
+	Period             string `name:"Period"`
+	Threshold          string `name:"Threshold"`
+	Id                 string `name:"Id"`
+	MetricName         string `name:"MetricName"`
+	ComparisonOperator string `name:"ComparisonOperator"`
+	Statistics         string `name:"Statistics"`
 }
 
 // PutResourceMetricRuleResponse is the response struct for api PutResourceMetricRule
@@ -126,7 +159,7 @@ func CreatePutResourceMetricRuleRequest() (request *PutResourceMetricRuleRequest
 	request = &PutResourceMetricRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutResourceMetricRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutResourceMetricRule", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,6 +17,6 @@ package cms
 
 // Vpc is a nested struct in cms response
 type Vpc struct {
-	VpcInstanceId     string `json:"VpcInstanceId" xml:"VpcInstanceId"`
 	VswitchInstanceId string `json:"VswitchInstanceId" xml:"VswitchInstanceId"`
+	VpcInstanceId     string `json:"VpcInstanceId" xml:"VpcInstanceId"`
 }

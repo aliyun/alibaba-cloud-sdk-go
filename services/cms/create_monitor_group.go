@@ -82,11 +82,11 @@ type CreateMonitorGroupRequest struct {
 // CreateMonitorGroupResponse is the response struct for api CreateMonitorGroup
 type CreateMonitorGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	GroupId   int64  `json:"GroupId" xml:"GroupId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateMonitorGroupRequest creates a request to invoke CreateMonitorGroup API
@@ -94,7 +94,7 @@ func CreateCreateMonitorGroupRequest() (request *CreateMonitorGroupRequest) {
 	request = &CreateMonitorGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitorGroup", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitorGroup", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

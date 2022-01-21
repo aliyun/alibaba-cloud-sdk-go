@@ -88,7 +88,7 @@ func CreateDeleteExporterRuleRequest() (request *DeleteExporterRuleRequest) {
 	request = &DeleteExporterRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteExporterRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteExporterRule", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

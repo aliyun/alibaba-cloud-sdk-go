@@ -84,12 +84,12 @@ type DescribeSiteMonitorDataRequest struct {
 // DescribeSiteMonitorDataResponse is the response struct for api DescribeSiteMonitorData
 type DescribeSiteMonitorDataResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   string `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	NextToken string `json:"NextToken" xml:"NextToken"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateDescribeSiteMonitorDataRequest creates a request to invoke DescribeSiteMonitorData API
@@ -97,7 +97,7 @@ func CreateDescribeSiteMonitorDataRequest() (request *DescribeSiteMonitorDataReq
 	request = &DescribeSiteMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSiteMonitorData", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSiteMonitorData", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

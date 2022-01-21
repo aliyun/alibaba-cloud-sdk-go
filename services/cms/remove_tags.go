@@ -86,8 +86,8 @@ type RemoveTagsResponse struct {
 	*responses.BaseResponse
 	Code      string          `json:"Code" xml:"Code"`
 	Message   string          `json:"Message" xml:"Message"`
-	Success   bool            `json:"Success" xml:"Success"`
 	RequestId string          `json:"RequestId" xml:"RequestId"`
+	Success   bool            `json:"Success" xml:"Success"`
 	Tag       TagInRemoveTags `json:"Tag" xml:"Tag"`
 }
 
@@ -96,7 +96,7 @@ func CreateRemoveTagsRequest() (request *RemoveTagsRequest) {
 	request = &RemoveTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "RemoveTags", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "RemoveTags", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

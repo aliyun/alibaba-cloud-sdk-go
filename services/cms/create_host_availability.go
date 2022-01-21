@@ -107,9 +107,9 @@ type CreateHostAvailabilityResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    int64  `json:"TaskId" xml:"TaskId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateHostAvailabilityRequest creates a request to invoke CreateHostAvailability API
@@ -117,7 +117,7 @@ func CreateCreateHostAvailabilityRequest() (request *CreateHostAvailabilityReque
 	request = &CreateHostAvailabilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateHostAvailability", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateHostAvailability", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -79,8 +79,8 @@ type DescribeUnhealthyHostAvailabilityResponse struct {
 	*responses.BaseResponse
 	Code          string        `json:"Code" xml:"Code"`
 	Message       string        `json:"Message" xml:"Message"`
-	Success       bool          `json:"Success" xml:"Success"`
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	Success       bool          `json:"Success" xml:"Success"`
 	UnhealthyList UnhealthyList `json:"UnhealthyList" xml:"UnhealthyList"`
 }
 
@@ -89,7 +89,7 @@ func CreateDescribeUnhealthyHostAvailabilityRequest() (request *DescribeUnhealth
 	request = &DescribeUnhealthyHostAvailabilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeUnhealthyHostAvailability", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeUnhealthyHostAvailability", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

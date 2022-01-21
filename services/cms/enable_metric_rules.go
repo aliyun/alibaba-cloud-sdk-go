@@ -77,10 +77,10 @@ type EnableMetricRulesRequest struct {
 // EnableMetricRulesResponse is the response struct for api EnableMetricRules
 type EnableMetricRulesResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEnableMetricRulesRequest creates a request to invoke EnableMetricRules API
@@ -88,7 +88,7 @@ func CreateEnableMetricRulesRequest() (request *EnableMetricRulesRequest) {
 	request = &EnableMetricRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "EnableMetricRules", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "EnableMetricRules", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

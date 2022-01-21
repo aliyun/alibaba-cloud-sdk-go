@@ -77,8 +77,8 @@ type ModifyMonitorGroupInstancesRequest struct {
 
 // ModifyMonitorGroupInstancesInstances is a repeated param struct in ModifyMonitorGroupInstancesRequest
 type ModifyMonitorGroupInstancesInstances struct {
-	InstanceId   string `name:"InstanceId"`
 	InstanceName string `name:"InstanceName"`
+	InstanceId   string `name:"InstanceId"`
 	RegionId     string `name:"RegionId"`
 	Category     string `name:"Category"`
 }
@@ -86,10 +86,10 @@ type ModifyMonitorGroupInstancesInstances struct {
 // ModifyMonitorGroupInstancesResponse is the response struct for api ModifyMonitorGroupInstances
 type ModifyMonitorGroupInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateModifyMonitorGroupInstancesRequest creates a request to invoke ModifyMonitorGroupInstances API
@@ -97,7 +97,7 @@ func CreateModifyMonitorGroupInstancesRequest() (request *ModifyMonitorGroupInst
 	request = &ModifyMonitorGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "ModifyMonitorGroupInstances", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "ModifyMonitorGroupInstances", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

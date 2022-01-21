@@ -17,6 +17,6 @@ package cms
 
 // CategoryItem is a nested struct in cms response
 type CategoryItem struct {
-	Category string `json:"Category" xml:"Category"`
 	Count    int    `json:"Count" xml:"Count"`
+	Category string `json:"Category" xml:"Category"`
 }

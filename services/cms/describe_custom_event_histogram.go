@@ -95,7 +95,7 @@ func CreateDescribeCustomEventHistogramRequest() (request *DescribeCustomEventHi
 	request = &DescribeCustomEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeCustomEventHistogram", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeCustomEventHistogram", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

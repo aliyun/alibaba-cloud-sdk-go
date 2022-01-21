@@ -83,9 +83,9 @@ type DescribeProjectMetaResponse struct {
 	Success    bool                           `json:"Success" xml:"Success"`
 	Code       string                         `json:"Code" xml:"Code"`
 	Message    string                         `json:"Message" xml:"Message"`
-	Total      string                         `json:"Total" xml:"Total"`
-	PageNumber string                         `json:"PageNumber" xml:"PageNumber"`
 	PageSize   string                         `json:"PageSize" xml:"PageSize"`
+	PageNumber string                         `json:"PageNumber" xml:"PageNumber"`
+	Total      string                         `json:"Total" xml:"Total"`
 	Resources  ResourcesInDescribeProjectMeta `json:"Resources" xml:"Resources"`
 }
 
@@ -94,7 +94,7 @@ func CreateDescribeProjectMetaRequest() (request *DescribeProjectMetaRequest) {
 	request = &DescribeProjectMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeProjectMeta", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeProjectMeta", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

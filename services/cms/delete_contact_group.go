@@ -77,10 +77,10 @@ type DeleteContactGroupRequest struct {
 // DeleteContactGroupResponse is the response struct for api DeleteContactGroup
 type DeleteContactGroupResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteContactGroupRequest creates a request to invoke DeleteContactGroup API
@@ -88,7 +88,7 @@ func CreateDeleteContactGroupRequest() (request *DeleteContactGroupRequest) {
 	request = &DeleteContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteContactGroup", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteContactGroup", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,14 +17,14 @@ package cms
 
 // SystemEvent is a nested struct in cms response
 type SystemEvent struct {
-	Content      string `json:"Content" xml:"Content"`
-	Product      string `json:"Product" xml:"Product"`
-	Name         string `json:"Name" xml:"Name"`
-	GroupId      string `json:"GroupId" xml:"GroupId"`
-	Level        string `json:"Level" xml:"Level"`
 	Status       string `json:"Status" xml:"Status"`
-	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
-	InstanceName string `json:"InstanceName" xml:"InstanceName"`
 	Time         int64  `json:"Time" xml:"Time"`
+	GroupId      string `json:"GroupId" xml:"GroupId"`
+	Product      string `json:"Product" xml:"Product"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
+	Name         string `json:"Name" xml:"Name"`
+	Content      string `json:"Content" xml:"Content"`
+	Level        string `json:"Level" xml:"Level"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
 }

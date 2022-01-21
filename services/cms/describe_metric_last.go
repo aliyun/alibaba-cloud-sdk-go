@@ -85,13 +85,13 @@ type DescribeMetricLastRequest struct {
 // DescribeMetricLastResponse is the response struct for api DescribeMetricLast
 type DescribeMetricLastResponse struct {
 	*responses.BaseResponse
+	NextToken  string `json:"NextToken" xml:"NextToken"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Success    bool   `json:"Success" xml:"Success"`
+	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 	Code       string `json:"Code" xml:"Code"`
 	Message    string `json:"Message" xml:"Message"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	NextToken  string `json:"NextToken" xml:"NextToken"`
-	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 	Period     string `json:"Period" xml:"Period"`
-	Success    bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDescribeMetricLastRequest creates a request to invoke DescribeMetricLast API
@@ -99,7 +99,7 @@ func CreateDescribeMetricLastRequest() (request *DescribeMetricLastRequest) {
 	request = &DescribeMetricLastRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricLast", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricLast", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

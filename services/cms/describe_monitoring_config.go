@@ -76,12 +76,12 @@ type DescribeMonitoringConfigRequest struct {
 // DescribeMonitoringConfigResponse is the response struct for api DescribeMonitoringConfig
 type DescribeMonitoringConfigResponse struct {
 	*responses.BaseResponse
-	Code                     string `json:"Code" xml:"Code"`
-	Message                  string `json:"Message" xml:"Message"`
-	Success                  bool   `json:"Success" xml:"Success"`
 	RequestId                string `json:"RequestId" xml:"RequestId"`
 	AutoInstall              bool   `json:"AutoInstall" xml:"AutoInstall"`
+	Success                  bool   `json:"Success" xml:"Success"`
 	EnableInstallAgentNewECS bool   `json:"EnableInstallAgentNewECS" xml:"EnableInstallAgentNewECS"`
+	Code                     string `json:"Code" xml:"Code"`
+	Message                  string `json:"Message" xml:"Message"`
 }
 
 // CreateDescribeMonitoringConfigRequest creates a request to invoke DescribeMonitoringConfig API
@@ -89,7 +89,7 @@ func CreateDescribeMonitoringConfigRequest() (request *DescribeMonitoringConfigR
 	request = &DescribeMonitoringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringConfig", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringConfig", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

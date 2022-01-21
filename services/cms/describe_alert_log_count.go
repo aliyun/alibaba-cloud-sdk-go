@@ -93,8 +93,8 @@ type DescribeAlertLogCountResponse struct {
 	*responses.BaseResponse
 	Code          string              `json:"Code" xml:"Code"`
 	Message       string              `json:"Message" xml:"Message"`
-	Success       bool                `json:"Success" xml:"Success"`
 	RequestId     string              `json:"RequestId" xml:"RequestId"`
+	Success       bool                `json:"Success" xml:"Success"`
 	AlertLogCount []AlertLogCountItem `json:"AlertLogCount" xml:"AlertLogCount"`
 }
 
@@ -103,7 +103,7 @@ func CreateDescribeAlertLogCountRequest() (request *DescribeAlertLogCountRequest
 	request = &DescribeAlertLogCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogCount", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogCount", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

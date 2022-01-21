@@ -82,11 +82,11 @@ type DescribeMetricRuleTemplateListRequest struct {
 // DescribeMetricRuleTemplateListResponse is the response struct for api DescribeMetricRuleTemplateList
 type DescribeMetricRuleTemplateListResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Success   bool      `json:"Success" xml:"Success"`
 	Code      int       `json:"Code" xml:"Code"`
 	Message   string    `json:"Message" xml:"Message"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Total     int64     `json:"Total" xml:"Total"`
+	Success   bool      `json:"Success" xml:"Success"`
 	Templates Templates `json:"Templates" xml:"Templates"`
 }
 
@@ -95,7 +95,7 @@ func CreateDescribeMetricRuleTemplateListRequest() (request *DescribeMetricRuleT
 	request = &DescribeMetricRuleTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricRuleTemplateList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

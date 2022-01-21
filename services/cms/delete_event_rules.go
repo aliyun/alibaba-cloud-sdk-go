@@ -77,10 +77,10 @@ type DeleteEventRulesRequest struct {
 // DeleteEventRulesResponse is the response struct for api DeleteEventRules
 type DeleteEventRulesResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteEventRulesRequest creates a request to invoke DeleteEventRules API
@@ -88,7 +88,7 @@ func CreateDeleteEventRulesRequest() (request *DeleteEventRulesRequest) {
 	request = &DeleteEventRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteEventRules", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteEventRules", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

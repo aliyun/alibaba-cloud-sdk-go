@@ -84,10 +84,10 @@ type ApplyMetricRuleTemplateRequest struct {
 // ApplyMetricRuleTemplateResponse is the response struct for api ApplyMetricRuleTemplate
 type ApplyMetricRuleTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string                            `json:"RequestId" xml:"RequestId"`
-	Success   bool                              `json:"Success" xml:"Success"`
 	Code      int                               `json:"Code" xml:"Code"`
 	Message   string                            `json:"Message" xml:"Message"`
+	RequestId string                            `json:"RequestId" xml:"RequestId"`
+	Success   bool                              `json:"Success" xml:"Success"`
 	Resource  ResourceInApplyMetricRuleTemplate `json:"Resource" xml:"Resource"`
 }
 
@@ -96,7 +96,7 @@ func CreateApplyMetricRuleTemplateRequest() (request *ApplyMetricRuleTemplateReq
 	request = &ApplyMetricRuleTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "ApplyMetricRuleTemplate", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "ApplyMetricRuleTemplate", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

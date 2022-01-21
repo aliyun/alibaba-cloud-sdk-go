@@ -77,10 +77,10 @@ type DeleteMetricRulesRequest struct {
 // DeleteMetricRulesResponse is the response struct for api DeleteMetricRules
 type DeleteMetricRulesResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteMetricRulesRequest creates a request to invoke DeleteMetricRules API
@@ -88,7 +88,7 @@ func CreateDeleteMetricRulesRequest() (request *DeleteMetricRulesRequest) {
 	request = &DeleteMetricRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMetricRules", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMetricRules", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

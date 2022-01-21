@@ -17,12 +17,12 @@ package cms
 
 // ResourceInDescribeSystemEventMetaList is a nested struct in cms response
 type ResourceInDescribeSystemEventMetaList struct {
+	Status     string `json:"Status" xml:"Status"`
+	EventType  string `json:"EventType" xml:"EventType"`
 	Product    string `json:"Product" xml:"Product"`
-	Name       string `json:"Name" xml:"Name"`
 	NameDesc   string `json:"NameDesc" xml:"NameDesc"`
 	NameDescEn string `json:"NameDesc.En" xml:"NameDesc.En"`
-	Level      string `json:"Level" xml:"Level"`
-	Status     string `json:"Status" xml:"Status"`
+	Name       string `json:"Name" xml:"Name"`
 	StatusDesc string `json:"StatusDesc" xml:"StatusDesc"`
-	EventType  string `json:"EventType" xml:"EventType"`
+	Level      string `json:"Level" xml:"Level"`
 }

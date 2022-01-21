@@ -77,10 +77,10 @@ type EnableActiveMetricRuleRequest struct {
 // EnableActiveMetricRuleResponse is the response struct for api EnableActiveMetricRule
 type EnableActiveMetricRuleResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEnableActiveMetricRuleRequest creates a request to invoke EnableActiveMetricRule API
@@ -88,7 +88,7 @@ func CreateEnableActiveMetricRuleRequest() (request *EnableActiveMetricRuleReque
 	request = &EnableActiveMetricRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "EnableActiveMetricRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "EnableActiveMetricRule", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

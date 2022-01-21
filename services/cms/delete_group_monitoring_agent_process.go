@@ -80,8 +80,8 @@ type DeleteGroupMonitoringAgentProcessResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteGroupMonitoringAgentProcessRequest creates a request to invoke DeleteGroupMonitoringAgentProcess API
@@ -89,7 +89,7 @@ func CreateDeleteGroupMonitoringAgentProcessRequest() (request *DeleteGroupMonit
 	request = &DeleteGroupMonitoringAgentProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteGroupMonitoringAgentProcess", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteGroupMonitoringAgentProcess", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

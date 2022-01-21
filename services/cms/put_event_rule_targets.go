@@ -73,9 +73,9 @@ type PutEventRuleTargetsRequest struct {
 	*requests.RpcRequest
 	WebhookParameters *[]PutEventRuleTargetsWebhookParameters `position:"Query" name:"WebhookParameters"  type:"Repeated"`
 	ContactParameters *[]PutEventRuleTargetsContactParameters `position:"Query" name:"ContactParameters"  type:"Repeated"`
-	OpenApiParameters *[]PutEventRuleTargetsOpenApiParameters `position:"Query" name:"OpenApiParameters"  type:"Repeated"`
 	SlsParameters     *[]PutEventRuleTargetsSlsParameters     `position:"Query" name:"SlsParameters"  type:"Repeated"`
 	RuleName          string                                  `position:"Query" name:"RuleName"`
+	OpenApiParameters *[]PutEventRuleTargetsOpenApiParameters `position:"Query" name:"OpenApiParameters"  type:"Repeated"`
 	MnsParameters     *[]PutEventRuleTargetsMnsParameters     `position:"Query" name:"MnsParameters"  type:"Repeated"`
 	FcParameters      *[]PutEventRuleTargetsFcParameters      `position:"Query" name:"FcParameters"  type:"Repeated"`
 }
@@ -95,6 +95,14 @@ type PutEventRuleTargetsContactParameters struct {
 	ContactGroupName string `name:"ContactGroupName"`
 }
 
+// PutEventRuleTargetsSlsParameters is a repeated param struct in PutEventRuleTargetsRequest
+type PutEventRuleTargetsSlsParameters struct {
+	Project  string `name:"Project"`
+	Id       string `name:"Id"`
+	Region   string `name:"Region"`
+	LogStore string `name:"LogStore"`
+}
+
 // PutEventRuleTargetsOpenApiParameters is a repeated param struct in PutEventRuleTargetsRequest
 type PutEventRuleTargetsOpenApiParameters struct {
 	Product string `name:"Product"`
@@ -104,14 +112,6 @@ type PutEventRuleTargetsOpenApiParameters struct {
 	Arn     string `name:"Arn"`
 	Region  string `name:"Region"`
 	Version string `name:"Version"`
-}
-
-// PutEventRuleTargetsSlsParameters is a repeated param struct in PutEventRuleTargetsRequest
-type PutEventRuleTargetsSlsParameters struct {
-	Project  string `name:"Project"`
-	Id       string `name:"Id"`
-	Region   string `name:"Region"`
-	LogStore string `name:"LogStore"`
 }
 
 // PutEventRuleTargetsMnsParameters is a repeated param struct in PutEventRuleTargetsRequest
@@ -147,7 +147,7 @@ func CreatePutEventRuleTargetsRequest() (request *PutEventRuleTargetsRequest) {
 	request = &PutEventRuleTargetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutEventRuleTargets", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutEventRuleTargets", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

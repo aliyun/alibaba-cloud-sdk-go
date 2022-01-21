@@ -79,9 +79,9 @@ type DescribeProductResourceTagKeyListResponse struct {
 	*responses.BaseResponse
 	Code      string                                     `json:"Code" xml:"Code"`
 	Message   string                                     `json:"Message" xml:"Message"`
-	Success   bool                                       `json:"Success" xml:"Success"`
-	RequestId string                                     `json:"RequestId" xml:"RequestId"`
 	NextToken string                                     `json:"NextToken" xml:"NextToken"`
+	RequestId string                                     `json:"RequestId" xml:"RequestId"`
+	Success   bool                                       `json:"Success" xml:"Success"`
 	TagKeys   TagKeysInDescribeProductResourceTagKeyList `json:"TagKeys" xml:"TagKeys"`
 }
 
@@ -90,7 +90,7 @@ func CreateDescribeProductResourceTagKeyListRequest() (request *DescribeProductR
 	request = &DescribeProductResourceTagKeyListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeProductResourceTagKeyList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeProductResourceTagKeyList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

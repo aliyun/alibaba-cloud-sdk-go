@@ -77,10 +77,10 @@ type DescribeEventRuleAttributeRequest struct {
 // DescribeEventRuleAttributeResponse is the response struct for api DescribeEventRuleAttribute
 type DescribeEventRuleAttributeResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateDescribeEventRuleAttributeRequest() (request *DescribeEventRuleAttrib
 	request = &DescribeEventRuleAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeEventRuleAttribute", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeEventRuleAttribute", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

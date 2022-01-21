@@ -17,9 +17,9 @@ package cms
 
 // MetricRuleCount is a nested struct in cms response
 type MetricRuleCount struct {
-	Alarm   int `json:"Alarm" xml:"Alarm"`
-	Disable int `json:"Disable" xml:"Disable"`
-	Nodata  int `json:"Nodata" xml:"Nodata"`
 	Ok      int `json:"Ok" xml:"Ok"`
+	Nodata  int `json:"Nodata" xml:"Nodata"`
+	Disable int `json:"Disable" xml:"Disable"`
 	Total   int `json:"Total" xml:"Total"`
+	Alarm   int `json:"Alarm" xml:"Alarm"`
 }

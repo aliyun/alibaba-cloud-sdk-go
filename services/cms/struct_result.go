@@ -19,8 +19,8 @@ package cms
 type Result struct {
 	Name             string           `json:"Name" xml:"Name"`
 	Message          string           `json:"Message" xml:"Message"`
-	RuleName         string           `json:"RuleName" xml:"RuleName"`
 	Code             string           `json:"Code" xml:"Code"`
+	RuleName         string           `json:"RuleName" xml:"RuleName"`
 	Detail           string           `json:"Detail" xml:"Detail"`
 	RuleId           string           `json:"RuleId" xml:"RuleId"`
 	State            string           `json:"State" xml:"State"`

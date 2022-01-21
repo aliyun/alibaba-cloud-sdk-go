@@ -93,8 +93,8 @@ type CreateCmsOrderRequest struct {
 // CreateCmsOrderResponse is the response struct for api CreateCmsOrder
 type CreateCmsOrderResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateCmsOrderRequest creates a request to invoke CreateCmsOrder API
@@ -102,7 +102,7 @@ func CreateCreateCmsOrderRequest() (request *CreateCmsOrderRequest) {
 	request = &CreateCmsOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsOrder", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsOrder", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

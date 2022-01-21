@@ -85,14 +85,14 @@ type DescribeMonitoringAgentHostsRequest struct {
 // DescribeMonitoringAgentHostsResponse is the response struct for api DescribeMonitoringAgentHosts
 type DescribeMonitoringAgentHostsResponse struct {
 	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Success    bool   `json:"Success" xml:"Success"`
 	Code       string `json:"Code" xml:"Code"`
 	Message    string `json:"Message" xml:"Message"`
-	Success    bool   `json:"Success" xml:"Success"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	PageTotal  int    `json:"PageTotal" xml:"PageTotal"`
 	Total      int    `json:"Total" xml:"Total"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	Hosts      Hosts  `json:"Hosts" xml:"Hosts"`
 }
 
@@ -101,7 +101,7 @@ func CreateDescribeMonitoringAgentHostsRequest() (request *DescribeMonitoringAge
 	request = &DescribeMonitoringAgentHostsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringAgentHosts", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringAgentHosts", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateDeleteExporterOutputRequest() (request *DeleteExporterOutputRequest) 
 	request = &DeleteExporterOutputRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteExporterOutput", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteExporterOutput", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

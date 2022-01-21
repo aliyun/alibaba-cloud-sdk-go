@@ -82,9 +82,9 @@ type DescribeMonitorGroupNotifyPolicyListResponse struct {
 	*responses.BaseResponse
 	Code             string           `json:"Code" xml:"Code"`
 	Message          string           `json:"Message" xml:"Message"`
-	Success          string           `json:"Success" xml:"Success"`
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	Total            int              `json:"Total" xml:"Total"`
+	Success          string           `json:"Success" xml:"Success"`
 	NotifyPolicyList NotifyPolicyList `json:"NotifyPolicyList" xml:"NotifyPolicyList"`
 }
 
@@ -93,7 +93,7 @@ func CreateDescribeMonitorGroupNotifyPolicyListRequest() (request *DescribeMonit
 	request = &DescribeMonitorGroupNotifyPolicyListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitorGroupNotifyPolicyList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitorGroupNotifyPolicyList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -102,7 +102,7 @@ func CreateCreateDynamicTagGroupRequest() (request *CreateDynamicTagGroupRequest
 	request = &CreateDynamicTagGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateDynamicTagGroup", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateDynamicTagGroup", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

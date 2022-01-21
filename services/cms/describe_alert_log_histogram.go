@@ -93,8 +93,8 @@ type DescribeAlertLogHistogramResponse struct {
 	*responses.BaseResponse
 	Code                  string                      `json:"Code" xml:"Code"`
 	Message               string                      `json:"Message" xml:"Message"`
-	Success               bool                        `json:"Success" xml:"Success"`
 	RequestId             string                      `json:"RequestId" xml:"RequestId"`
+	Success               bool                        `json:"Success" xml:"Success"`
 	AlertLogHistogramList []AlertLogHistogramListItem `json:"AlertLogHistogramList" xml:"AlertLogHistogramList"`
 }
 
@@ -103,7 +103,7 @@ func CreateDescribeAlertLogHistogramRequest() (request *DescribeAlertLogHistogra
 	request = &DescribeAlertLogHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogHistogram", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogHistogram", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

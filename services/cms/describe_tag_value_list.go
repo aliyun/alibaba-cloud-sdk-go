@@ -81,8 +81,8 @@ type DescribeTagValueListResponse struct {
 	*responses.BaseResponse
 	Code      string    `json:"Code" xml:"Code"`
 	Message   string    `json:"Message" xml:"Message"`
-	Success   bool      `json:"Success" xml:"Success"`
 	RequestId string    `json:"RequestId" xml:"RequestId"`
+	Success   bool      `json:"Success" xml:"Success"`
 	TagValues TagValues `json:"TagValues" xml:"TagValues"`
 }
 
@@ -91,7 +91,7 @@ func CreateDescribeTagValueListRequest() (request *DescribeTagValueListRequest) 
 	request = &DescribeTagValueListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeTagValueList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeTagValueList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

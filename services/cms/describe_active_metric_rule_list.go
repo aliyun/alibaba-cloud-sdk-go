@@ -90,7 +90,7 @@ func CreateDescribeActiveMetricRuleListRequest() (request *DescribeActiveMetricR
 	request = &DescribeActiveMetricRuleListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeActiveMetricRuleList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeActiveMetricRuleList", "Cms", "openAPI")
 	request.Method = requests.GET
 	return
 }

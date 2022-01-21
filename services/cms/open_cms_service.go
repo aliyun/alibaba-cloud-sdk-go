@@ -76,8 +76,8 @@ type OpenCmsServiceRequest struct {
 // OpenCmsServiceResponse is the response struct for api OpenCmsService
 type OpenCmsServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenCmsServiceRequest creates a request to invoke OpenCmsService API
@@ -85,7 +85,7 @@ func CreateOpenCmsServiceRequest() (request *OpenCmsServiceRequest) {
 	request = &OpenCmsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "OpenCmsService", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "OpenCmsService", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

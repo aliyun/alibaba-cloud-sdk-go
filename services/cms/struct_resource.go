@@ -57,8 +57,8 @@ type Resource struct {
 	ProcessMonitorTemplates   string                                      `json:"ProcessMonitorTemplates" xml:"ProcessMonitorTemplates"`
 	Statistics                string                                      `json:"Statistics" xml:"Statistics"`
 	TemplateIds               TemplateIds                                 `json:"TemplateIds" xml:"TemplateIds"`
-	Vpc                       Vpc                                         `json:"Vpc" xml:"Vpc"`
 	Region                    Region                                      `json:"Region" xml:"Region"`
+	Vpc                       Vpc                                         `json:"Vpc" xml:"Vpc"`
 	AlertResults              []Result                                    `json:"AlertResults" xml:"AlertResults"`
 	Tags                      TagsInDescribeMonitorGroupInstanceAttribute `json:"Tags" xml:"Tags"`
 	ContactGroups             ContactGroupsInDescribeMonitorGroups        `json:"ContactGroups" xml:"ContactGroups"`

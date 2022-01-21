@@ -85,9 +85,9 @@ type PutCustomEventEventInfo struct {
 // PutCustomEventResponse is the response struct for api PutCustomEvent
 type PutCustomEventResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePutCustomEventRequest creates a request to invoke PutCustomEvent API
@@ -95,7 +95,7 @@ func CreatePutCustomEventRequest() (request *PutCustomEventRequest) {
 	request = &PutCustomEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutCustomEvent", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutCustomEvent", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

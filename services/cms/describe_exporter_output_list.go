@@ -78,12 +78,12 @@ type DescribeExporterOutputListRequest struct {
 // DescribeExporterOutputListResponse is the response struct for api DescribeExporterOutputList
 type DescribeExporterOutputListResponse struct {
 	*responses.BaseResponse
+	RequestId  string                                 `json:"RequestId" xml:"RequestId"`
+	Success    bool                                   `json:"Success" xml:"Success"`
 	Code       string                                 `json:"Code" xml:"Code"`
 	Message    string                                 `json:"Message" xml:"Message"`
-	RequestId  string                                 `json:"RequestId" xml:"RequestId"`
-	Total      int                                    `json:"Total" xml:"Total"`
 	PageNumber int                                    `json:"PageNumber" xml:"PageNumber"`
-	Success    bool                                   `json:"Success" xml:"Success"`
+	Total      int                                    `json:"Total" xml:"Total"`
 	Datapoints DatapointsInDescribeExporterOutputList `json:"Datapoints" xml:"Datapoints"`
 }
 
@@ -92,7 +92,7 @@ func CreateDescribeExporterOutputListRequest() (request *DescribeExporterOutputL
 	request = &DescribeExporterOutputListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeExporterOutputList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeExporterOutputList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -76,11 +76,11 @@ type DescribeProductsOfActiveMetricRuleRequest struct {
 // DescribeProductsOfActiveMetricRuleResponse is the response struct for api DescribeProductsOfActiveMetricRule
 type DescribeProductsOfActiveMetricRuleResponse struct {
 	*responses.BaseResponse
-	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
-	Success                      bool                         `json:"Success" xml:"Success"`
 	Code                         int                          `json:"Code" xml:"Code"`
 	Message                      string                       `json:"Message" xml:"Message"`
+	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
 	Datapoints                   string                       `json:"Datapoints" xml:"Datapoints"`
+	Success                      bool                         `json:"Success" xml:"Success"`
 	AllProductInitMetricRuleList AllProductInitMetricRuleList `json:"AllProductInitMetricRuleList" xml:"AllProductInitMetricRuleList"`
 }
 
@@ -89,7 +89,7 @@ func CreateDescribeProductsOfActiveMetricRuleRequest() (request *DescribeProduct
 	request = &DescribeProductsOfActiveMetricRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeProductsOfActiveMetricRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeProductsOfActiveMetricRule", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

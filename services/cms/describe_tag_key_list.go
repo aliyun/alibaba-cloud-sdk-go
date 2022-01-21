@@ -80,8 +80,8 @@ type DescribeTagKeyListResponse struct {
 	*responses.BaseResponse
 	Code      string                      `json:"Code" xml:"Code"`
 	Message   string                      `json:"Message" xml:"Message"`
-	Success   bool                        `json:"Success" xml:"Success"`
 	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Success   bool                        `json:"Success" xml:"Success"`
 	TagKeys   TagKeysInDescribeTagKeyList `json:"TagKeys" xml:"TagKeys"`
 }
 
@@ -90,7 +90,7 @@ func CreateDescribeTagKeyListRequest() (request *DescribeTagKeyListRequest) {
 	request = &DescribeTagKeyListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeTagKeyList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeTagKeyList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

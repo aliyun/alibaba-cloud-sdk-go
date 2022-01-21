@@ -82,8 +82,8 @@ type CreateCmsSmspackageOrderRequest struct {
 // CreateCmsSmspackageOrderResponse is the response struct for api CreateCmsSmspackageOrder
 type CreateCmsSmspackageOrderResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateCmsSmspackageOrderRequest creates a request to invoke CreateCmsSmspackageOrder API
@@ -91,7 +91,7 @@ func CreateCreateCmsSmspackageOrderRequest() (request *CreateCmsSmspackageOrderR
 	request = &CreateCmsSmspackageOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsSmspackageOrder", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsSmspackageOrder", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

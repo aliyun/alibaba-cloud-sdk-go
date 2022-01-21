@@ -78,12 +78,12 @@ type DescribeExporterRuleListRequest struct {
 // DescribeExporterRuleListResponse is the response struct for api DescribeExporterRuleList
 type DescribeExporterRuleListResponse struct {
 	*responses.BaseResponse
+	RequestId  string                               `json:"RequestId" xml:"RequestId"`
+	Success    bool                                 `json:"Success" xml:"Success"`
 	Code       string                               `json:"Code" xml:"Code"`
 	Message    string                               `json:"Message" xml:"Message"`
-	RequestId  string                               `json:"RequestId" xml:"RequestId"`
-	Total      int                                  `json:"Total" xml:"Total"`
 	PageNumber int                                  `json:"PageNumber" xml:"PageNumber"`
-	Success    bool                                 `json:"Success" xml:"Success"`
+	Total      int                                  `json:"Total" xml:"Total"`
 	Datapoints DatapointsInDescribeExporterRuleList `json:"Datapoints" xml:"Datapoints"`
 }
 
@@ -92,7 +92,7 @@ func CreateDescribeExporterRuleListRequest() (request *DescribeExporterRuleListR
 	request = &DescribeExporterRuleListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeExporterRuleList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeExporterRuleList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

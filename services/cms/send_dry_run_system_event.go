@@ -91,7 +91,7 @@ func CreateSendDryRunSystemEventRequest() (request *SendDryRunSystemEventRequest
 	request = &SendDryRunSystemEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "SendDryRunSystemEvent", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "SendDryRunSystemEvent", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

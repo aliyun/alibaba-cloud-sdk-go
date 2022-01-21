@@ -78,11 +78,11 @@ type DescribeContactGroupListRequest struct {
 // DescribeContactGroupListResponse is the response struct for api DescribeContactGroupList
 type DescribeContactGroupListResponse struct {
 	*responses.BaseResponse
-	Success          bool                                       `json:"Success" xml:"Success"`
 	Code             string                                     `json:"Code" xml:"Code"`
 	Message          string                                     `json:"Message" xml:"Message"`
-	Total            int                                        `json:"Total" xml:"Total"`
 	RequestId        string                                     `json:"RequestId" xml:"RequestId"`
+	Total            int                                        `json:"Total" xml:"Total"`
+	Success          bool                                       `json:"Success" xml:"Success"`
 	ContactGroups    ContactGroupsInDescribeContactGroupList    `json:"ContactGroups" xml:"ContactGroups"`
 	ContactGroupList ContactGroupListInDescribeContactGroupList `json:"ContactGroupList" xml:"ContactGroupList"`
 }
@@ -92,7 +92,7 @@ func CreateDescribeContactGroupListRequest() (request *DescribeContactGroupListR
 	request = &DescribeContactGroupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeContactGroupList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeContactGroupList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

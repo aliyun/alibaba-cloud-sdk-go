@@ -86,8 +86,8 @@ type ModifySiteMonitorResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   string `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -96,7 +96,7 @@ func CreateModifySiteMonitorRequest() (request *ModifySiteMonitorRequest) {
 	request = &ModifySiteMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "ModifySiteMonitor", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "ModifySiteMonitor", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

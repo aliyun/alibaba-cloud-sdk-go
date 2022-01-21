@@ -91,7 +91,7 @@ func CreatePutExporterOutputRequest() (request *PutExporterOutputRequest) {
 	request = &PutExporterOutputRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutExporterOutput", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutExporterOutput", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

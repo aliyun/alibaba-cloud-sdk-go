@@ -17,6 +17,6 @@ package cms
 
 // Region is a nested struct in cms response
 type Region struct {
-	RegionId         string `json:"RegionId" xml:"RegionId"`
 	AvailabilityZone string `json:"AvailabilityZone" xml:"AvailabilityZone"`
+	RegionId         string `json:"RegionId" xml:"RegionId"`
 }

@@ -98,7 +98,7 @@ func CreateDescribeMetricTopRequest() (request *DescribeMetricTopRequest) {
 	request = &DescribeMetricTopRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricTop", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricTop", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

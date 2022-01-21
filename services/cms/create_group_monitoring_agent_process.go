@@ -81,12 +81,12 @@ type CreateGroupMonitoringAgentProcessRequest struct {
 // CreateGroupMonitoringAgentProcessAlertConfig is a repeated param struct in CreateGroupMonitoringAgentProcessRequest
 type CreateGroupMonitoringAgentProcessAlertConfig struct {
 	Times               string `name:"Times"`
-	NoEffectiveInterval string `name:"NoEffectiveInterval"`
 	Webhook             string `name:"Webhook"`
+	NoEffectiveInterval string `name:"NoEffectiveInterval"`
 	SilenceTime         string `name:"SilenceTime"`
 	Threshold           string `name:"Threshold"`
-	EffectiveInterval   string `name:"EffectiveInterval"`
 	ComparisonOperator  string `name:"ComparisonOperator"`
+	EffectiveInterval   string `name:"EffectiveInterval"`
 	EscalationsLevel    string `name:"EscalationsLevel"`
 	Statistics          string `name:"Statistics"`
 }
@@ -103,8 +103,8 @@ type CreateGroupMonitoringAgentProcessResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateGroupMonitoringAgentProcessRequest creates a request to invoke CreateGroupMonitoringAgentProcess API
@@ -112,7 +112,7 @@ func CreateCreateGroupMonitoringAgentProcessRequest() (request *CreateGroupMonit
 	request = &CreateGroupMonitoringAgentProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateGroupMonitoringAgentProcess", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateGroupMonitoringAgentProcess", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

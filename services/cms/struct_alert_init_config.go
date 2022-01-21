@@ -17,10 +17,10 @@ package cms
 
 // AlertInitConfig is a nested struct in cms response
 type AlertInitConfig struct {
-	Namespace       string `json:"Namespace" xml:"Namespace"`
 	MetricName      string `json:"MetricName" xml:"MetricName"`
-	Statistics      string `json:"Statistics" xml:"Statistics"`
 	EvaluationCount string `json:"EvaluationCount" xml:"EvaluationCount"`
+	Namespace       string `json:"Namespace" xml:"Namespace"`
 	Threshold       string `json:"Threshold" xml:"Threshold"`
+	Statistics      string `json:"Statistics" xml:"Statistics"`
 	Period          string `json:"Period" xml:"Period"`
 }

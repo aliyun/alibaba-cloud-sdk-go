@@ -18,8 +18,8 @@ package cms
 // Datapoint is a nested struct in cms response
 type Datapoint struct {
 	DestType      string     `json:"DestType" xml:"DestType"`
-	RuleName      string     `json:"RuleName" xml:"RuleName"`
 	Describe      string     `json:"Describe" xml:"Describe"`
+	RuleName      string     `json:"RuleName" xml:"RuleName"`
 	Namespace     string     `json:"Namespace" xml:"Namespace"`
 	Enabled       bool       `json:"Enabled" xml:"Enabled"`
 	DestName      string     `json:"DestName" xml:"DestName"`

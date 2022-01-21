@@ -17,7 +17,7 @@ package cms
 
 // AlertLogHistogramListItem is a nested struct in cms response
 type AlertLogHistogramListItem struct {
-	Count int   `json:"Count" xml:"Count"`
 	From  int64 `json:"From" xml:"From"`
 	To    int64 `json:"To" xml:"To"`
+	Count int   `json:"Count" xml:"Count"`
 }

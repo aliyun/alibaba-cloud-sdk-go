@@ -17,8 +17,8 @@ package cms
 
 // ChannelsState is a nested struct in cms response
 type ChannelsState struct {
-	SMS         string `json:"SMS" xml:"SMS"`
 	Mail        string `json:"Mail" xml:"Mail"`
 	AliIM       string `json:"AliIM" xml:"AliIM"`
 	DingWebHook string `json:"DingWebHook" xml:"DingWebHook"`
+	SMS         string `json:"SMS" xml:"SMS"`
 }

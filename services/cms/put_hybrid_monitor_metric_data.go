@@ -77,14 +77,14 @@ type PutHybridMonitorMetricDataRequest struct {
 
 // PutHybridMonitorMetricDataMetricList is a repeated param struct in PutHybridMonitorMetricDataRequest
 type PutHybridMonitorMetricDataMetricList struct {
-	Name   string                              `name:"Name"`
-	Value  string                              `name:"Value"`
-	Labels *[]PutHybridMonitorMetricDataLabels `name:"Labels" type:"Repeated"`
-	TS     string                              `name:"TS"`
+	Name   string                                        `name:"Name"`
+	Value  string                                        `name:"Value"`
+	Labels *[]PutHybridMonitorMetricDataMetricListLabels `name:"Labels" type:"Repeated"`
+	TS     string                                        `name:"TS"`
 }
 
-// PutHybridMonitorMetricDataLabels is a repeated param struct in PutHybridMonitorMetricDataRequest
-type PutHybridMonitorMetricDataLabels struct {
+// PutHybridMonitorMetricDataMetricListLabels is a repeated param struct in PutHybridMonitorMetricDataRequest
+type PutHybridMonitorMetricDataMetricListLabels struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
 }
@@ -92,10 +92,9 @@ type PutHybridMonitorMetricDataLabels struct {
 // PutHybridMonitorMetricDataResponse is the response struct for api PutHybridMonitorMetricData
 type PutHybridMonitorMetricDataResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
+	Code        string   `json:"Code" xml:"Code"`
+	RequestId   string   `json:"RequestId" xml:"RequestId"`
+	ErrorDetail []Detail `json:"ErrorDetail" xml:"ErrorDetail"`
 }
 
 // CreatePutHybridMonitorMetricDataRequest creates a request to invoke PutHybridMonitorMetricData API
@@ -103,7 +102,7 @@ func CreatePutHybridMonitorMetricDataRequest() (request *PutHybridMonitorMetricD
 	request = &PutHybridMonitorMetricDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutHybridMonitorMetricData", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutHybridMonitorMetricData", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

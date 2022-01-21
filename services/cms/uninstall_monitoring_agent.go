@@ -79,8 +79,8 @@ type UninstallMonitoringAgentResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUninstallMonitoringAgentRequest creates a request to invoke UninstallMonitoringAgent API
@@ -88,7 +88,7 @@ func CreateUninstallMonitoringAgentRequest() (request *UninstallMonitoringAgentR
 	request = &UninstallMonitoringAgentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "UninstallMonitoringAgent", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "UninstallMonitoringAgent", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

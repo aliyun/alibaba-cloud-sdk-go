@@ -99,7 +99,7 @@ func CreateDescribeSystemEventAttributeRequest() (request *DescribeSystemEventAt
 	request = &DescribeSystemEventAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSystemEventAttribute", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSystemEventAttribute", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

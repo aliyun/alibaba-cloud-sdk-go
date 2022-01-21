@@ -17,13 +17,13 @@ package cms
 
 // AlertConfigItem is a nested struct in cms response
 type AlertConfigItem struct {
-	EffectiveInterval   string `json:"EffectiveInterval" xml:"EffectiveInterval"`
-	NoEffectiveInterval string `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
+	ComparisonOperator  string `json:"ComparisonOperator" xml:"ComparisonOperator"`
 	SilenceTime         string `json:"SilenceTime" xml:"SilenceTime"`
 	Webhook             string `json:"Webhook" xml:"Webhook"`
-	EscalationsLevel    string `json:"EscalationsLevel" xml:"EscalationsLevel"`
-	ComparisonOperator  string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	Statistics          string `json:"Statistics" xml:"Statistics"`
-	Threshold           string `json:"Threshold" xml:"Threshold"`
 	Times               string `json:"Times" xml:"Times"`
+	EscalationsLevel    string `json:"EscalationsLevel" xml:"EscalationsLevel"`
+	NoEffectiveInterval string `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
+	EffectiveInterval   string `json:"EffectiveInterval" xml:"EffectiveInterval"`
+	Threshold           string `json:"Threshold" xml:"Threshold"`
+	Statistics          string `json:"Statistics" xml:"Statistics"`
 }

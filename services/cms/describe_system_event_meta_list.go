@@ -76,10 +76,10 @@ type DescribeSystemEventMetaListRequest struct {
 // DescribeSystemEventMetaListResponse is the response struct for api DescribeSystemEventMetaList
 type DescribeSystemEventMetaListResponse struct {
 	*responses.BaseResponse
-	RequestId string                            `json:"RequestId" xml:"RequestId"`
-	Success   bool                              `json:"Success" xml:"Success"`
 	Code      int                               `json:"Code" xml:"Code"`
 	Message   string                            `json:"Message" xml:"Message"`
+	RequestId string                            `json:"RequestId" xml:"RequestId"`
+	Success   bool                              `json:"Success" xml:"Success"`
 	Data      DataInDescribeSystemEventMetaList `json:"Data" xml:"Data"`
 }
 
@@ -88,7 +88,7 @@ func CreateDescribeSystemEventMetaListRequest() (request *DescribeSystemEventMet
 	request = &DescribeSystemEventMetaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSystemEventMetaList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSystemEventMetaList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -77,10 +77,10 @@ type DescribeMonitorGroupCategoriesRequest struct {
 // DescribeMonitorGroupCategoriesResponse is the response struct for api DescribeMonitorGroupCategories
 type DescribeMonitorGroupCategoriesResponse struct {
 	*responses.BaseResponse
-	RequestId              string                 `json:"RequestId" xml:"RequestId"`
-	Success                bool                   `json:"Success" xml:"Success"`
 	Code                   int                    `json:"Code" xml:"Code"`
 	Message                string                 `json:"Message" xml:"Message"`
+	RequestId              string                 `json:"RequestId" xml:"RequestId"`
+	Success                bool                   `json:"Success" xml:"Success"`
 	MonitorGroupCategories MonitorGroupCategories `json:"MonitorGroupCategories" xml:"MonitorGroupCategories"`
 }
 
@@ -89,7 +89,7 @@ func CreateDescribeMonitorGroupCategoriesRequest() (request *DescribeMonitorGrou
 	request = &DescribeMonitorGroupCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitorGroupCategories", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitorGroupCategories", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

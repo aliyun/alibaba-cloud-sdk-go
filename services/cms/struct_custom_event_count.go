@@ -17,7 +17,7 @@ package cms
 
 // CustomEventCount is a nested struct in cms response
 type CustomEventCount struct {
-	Name string `json:"Name" xml:"Name"`
-	Num  int    `json:"Num" xml:"Num"`
 	Time int64  `json:"Time" xml:"Time"`
+	Num  int    `json:"Num" xml:"Num"`
+	Name string `json:"Name" xml:"Name"`
 }

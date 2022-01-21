@@ -94,7 +94,7 @@ func CreateDescribeCustomEventCountRequest() (request *DescribeCustomEventCountR
 	request = &DescribeCustomEventCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeCustomEventCount", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeCustomEventCount", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

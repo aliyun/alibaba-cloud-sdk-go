@@ -93,7 +93,7 @@ func CreatePutExporterRuleRequest() (request *PutExporterRuleRequest) {
 	request = &PutExporterRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutExporterRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutExporterRule", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

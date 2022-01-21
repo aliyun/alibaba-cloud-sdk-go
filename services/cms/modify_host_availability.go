@@ -107,8 +107,8 @@ type ModifyHostAvailabilityResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateModifyHostAvailabilityRequest creates a request to invoke ModifyHostAvailability API
@@ -116,7 +116,7 @@ func CreateModifyHostAvailabilityRequest() (request *ModifyHostAvailabilityReque
 	request = &ModifyHostAvailabilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "ModifyHostAvailability", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "ModifyHostAvailability", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

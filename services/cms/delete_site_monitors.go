@@ -80,8 +80,8 @@ type DeleteSiteMonitorsResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   string `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -90,7 +90,7 @@ func CreateDeleteSiteMonitorsRequest() (request *DeleteSiteMonitorsRequest) {
 	request = &DeleteSiteMonitorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteSiteMonitors", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteSiteMonitors", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,36 +71,55 @@ func (client *Client) PutGroupMetricRuleWithCallback(request *PutGroupMetricRule
 // PutGroupMetricRuleRequest is the request struct for api PutGroupMetricRule
 type PutGroupMetricRuleRequest struct {
 	*requests.RpcRequest
-	Webhook                               string           `position:"Query" name:"Webhook"`
-	EscalationsWarnComparisonOperator     string           `position:"Query" name:"Escalations.Warn.ComparisonOperator"`
-	RuleName                              string           `position:"Query" name:"RuleName"`
-	EscalationsInfoStatistics             string           `position:"Query" name:"Escalations.Info.Statistics"`
-	EffectiveInterval                     string           `position:"Query" name:"EffectiveInterval"`
-	EscalationsInfoComparisonOperator     string           `position:"Query" name:"Escalations.Info.ComparisonOperator"`
-	NoDataPolicy                          string           `position:"Query" name:"NoDataPolicy"`
-	NoEffectiveInterval                   string           `position:"Query" name:"NoEffectiveInterval"`
-	EmailSubject                          string           `position:"Query" name:"EmailSubject"`
-	SilenceTime                           requests.Integer `position:"Query" name:"SilenceTime"`
-	MetricName                            string           `position:"Query" name:"MetricName"`
-	EscalationsWarnTimes                  requests.Integer `position:"Query" name:"Escalations.Warn.Times"`
-	CompositeExpression                   string           `position:"Query" name:"CompositeExpression"`
-	Period                                string           `position:"Query" name:"Period"`
-	EscalationsWarnThreshold              string           `position:"Query" name:"Escalations.Warn.Threshold"`
-	ContactGroups                         string           `position:"Query" name:"ContactGroups"`
-	EscalationsCriticalStatistics         string           `position:"Query" name:"Escalations.Critical.Statistics"`
-	GroupId                               string           `position:"Query" name:"GroupId"`
-	EscalationsInfoTimes                  requests.Integer `position:"Query" name:"Escalations.Info.Times"`
-	ExtraDimensionJson                    string           `position:"Query" name:"ExtraDimensionJson"`
-	EscalationsCriticalTimes              requests.Integer `position:"Query" name:"Escalations.Critical.Times"`
-	EscalationsWarnStatistics             string           `position:"Query" name:"Escalations.Warn.Statistics"`
-	EscalationsInfoThreshold              string           `position:"Query" name:"Escalations.Info.Threshold"`
-	Namespace                             string           `position:"Query" name:"Namespace"`
-	Interval                              string           `position:"Query" name:"Interval"`
-	RuleId                                string           `position:"Query" name:"RuleId"`
-	Category                              string           `position:"Query" name:"Category"`
-	EscalationsCriticalComparisonOperator string           `position:"Query" name:"Escalations.Critical.ComparisonOperator"`
-	EscalationsCriticalThreshold          string           `position:"Query" name:"Escalations.Critical.Threshold"`
-	Dimensions                            string           `position:"Query" name:"Dimensions"`
+	Webhook                               string                                `position:"Query" name:"Webhook"`
+	EscalationsWarnComparisonOperator     string                                `position:"Query" name:"Escalations.Warn.ComparisonOperator"`
+	RuleName                              string                                `position:"Query" name:"RuleName"`
+	EscalationsInfoStatistics             string                                `position:"Query" name:"Escalations.Info.Statistics"`
+	EffectiveInterval                     string                                `position:"Query" name:"EffectiveInterval"`
+	EscalationsInfoComparisonOperator     string                                `position:"Query" name:"Escalations.Info.ComparisonOperator"`
+	NoDataPolicy                          string                                `position:"Query" name:"NoDataPolicy"`
+	NoEffectiveInterval                   string                                `position:"Query" name:"NoEffectiveInterval"`
+	EmailSubject                          string                                `position:"Query" name:"EmailSubject"`
+	SilenceTime                           requests.Integer                      `position:"Query" name:"SilenceTime"`
+	MetricName                            string                                `position:"Query" name:"MetricName"`
+	EscalationsWarnTimes                  requests.Integer                      `position:"Query" name:"Escalations.Warn.Times"`
+	CompositeExpression                   PutGroupMetricRuleCompositeExpression `position:"Query" name:"CompositeExpression"  type:"Struct"`
+	Period                                string                                `position:"Query" name:"Period"`
+	EscalationsWarnThreshold              string                                `position:"Query" name:"Escalations.Warn.Threshold"`
+	ContactGroups                         string                                `position:"Query" name:"ContactGroups"`
+	EscalationsCriticalStatistics         string                                `position:"Query" name:"Escalations.Critical.Statistics"`
+	GroupId                               string                                `position:"Query" name:"GroupId"`
+	EscalationsInfoTimes                  requests.Integer                      `position:"Query" name:"Escalations.Info.Times"`
+	ExtraDimensionJson                    string                                `position:"Query" name:"ExtraDimensionJson"`
+	EscalationsCriticalTimes              requests.Integer                      `position:"Query" name:"Escalations.Critical.Times"`
+	EscalationsWarnStatistics             string                                `position:"Query" name:"Escalations.Warn.Statistics"`
+	EscalationsInfoThreshold              string                                `position:"Query" name:"Escalations.Info.Threshold"`
+	Namespace                             string                                `position:"Query" name:"Namespace"`
+	Interval                              string                                `position:"Query" name:"Interval"`
+	RuleId                                string                                `position:"Query" name:"RuleId"`
+	Category                              string                                `position:"Query" name:"Category"`
+	EscalationsCriticalComparisonOperator string                                `position:"Query" name:"Escalations.Critical.ComparisonOperator"`
+	EscalationsCriticalThreshold          string                                `position:"Query" name:"Escalations.Critical.Threshold"`
+	Dimensions                            string                                `position:"Query" name:"Dimensions"`
+}
+
+// PutGroupMetricRuleCompositeExpression is a repeated param struct in PutGroupMetricRuleRequest
+type PutGroupMetricRuleCompositeExpression struct {
+	Times              string                                                     `name:"Times"`
+	ExpressionList     *[]PutGroupMetricRuleCompositeExpressionExpressionListItem `name:"ExpressionList" type:"Repeated"`
+	Level              string                                                     `name:"Level"`
+	ExpressionRaw      string                                                     `name:"ExpressionRaw"`
+	ExpressionListJoin string                                                     `name:"ExpressionListJoin"`
+}
+
+// PutGroupMetricRuleCompositeExpressionExpressionListItem is a repeated param struct in PutGroupMetricRuleRequest
+type PutGroupMetricRuleCompositeExpressionExpressionListItem struct {
+	Period             string `name:"Period"`
+	Threshold          string `name:"Threshold"`
+	Id                 string `name:"Id"`
+	MetricName         string `name:"MetricName"`
+	ComparisonOperator string `name:"ComparisonOperator"`
+	Statistics         string `name:"Statistics"`
 }
 
 // PutGroupMetricRuleResponse is the response struct for api PutGroupMetricRule
@@ -118,7 +137,7 @@ func CreatePutGroupMetricRuleRequest() (request *PutGroupMetricRuleRequest) {
 	request = &PutGroupMetricRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutGroupMetricRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutGroupMetricRule", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

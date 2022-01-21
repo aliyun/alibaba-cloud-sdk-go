@@ -79,8 +79,8 @@ type DeleteHostAvailabilityResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteHostAvailabilityRequest creates a request to invoke DeleteHostAvailability API
@@ -88,7 +88,7 @@ func CreateDeleteHostAvailabilityRequest() (request *DeleteHostAvailabilityReque
 	request = &DeleteHostAvailabilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteHostAvailability", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteHostAvailability", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

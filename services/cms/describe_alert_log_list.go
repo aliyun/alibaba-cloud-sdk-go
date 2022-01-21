@@ -86,6 +86,7 @@ type DescribeAlertLogListRequest struct {
 	EndTime      requests.Integer `position:"Query" name:"EndTime"`
 	GroupBy      string           `position:"Query" name:"GroupBy"`
 	Namespace    string           `position:"Query" name:"Namespace"`
+	RuleId       string           `position:"Query" name:"RuleId"`
 }
 
 // DescribeAlertLogListResponse is the response struct for api DescribeAlertLogList
@@ -105,7 +106,7 @@ func CreateDescribeAlertLogListRequest() (request *DescribeAlertLogListRequest) 
 	request = &DescribeAlertLogListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogList", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

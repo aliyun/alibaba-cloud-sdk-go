@@ -77,13 +77,13 @@ type PutMonitorGroupDynamicRuleRequest struct {
 
 // PutMonitorGroupDynamicRuleGroupRules is a repeated param struct in PutMonitorGroupDynamicRuleRequest
 type PutMonitorGroupDynamicRuleGroupRules struct {
-	FilterRelation string                               `name:"FilterRelation"`
-	Filters        *[]PutMonitorGroupDynamicRuleFilters `name:"Filters" type:"Repeated"`
-	Category       string                               `name:"Category"`
+	FilterRelation string                                         `name:"FilterRelation"`
+	Filters        *[]PutMonitorGroupDynamicRuleGroupRulesFilters `name:"Filters" type:"Repeated"`
+	Category       string                                         `name:"Category"`
 }
 
-// PutMonitorGroupDynamicRuleFilters is a repeated param struct in PutMonitorGroupDynamicRuleRequest
-type PutMonitorGroupDynamicRuleFilters struct {
+// PutMonitorGroupDynamicRuleGroupRulesFilters is a repeated param struct in PutMonitorGroupDynamicRuleRequest
+type PutMonitorGroupDynamicRuleGroupRulesFilters struct {
 	Function string `name:"Function"`
 	Name     string `name:"Name"`
 	Value    string `name:"Value"`
@@ -92,10 +92,10 @@ type PutMonitorGroupDynamicRuleFilters struct {
 // PutMonitorGroupDynamicRuleResponse is the response struct for api PutMonitorGroupDynamicRule
 type PutMonitorGroupDynamicRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreatePutMonitorGroupDynamicRuleRequest creates a request to invoke PutMonitorGroupDynamicRule API
@@ -103,7 +103,7 @@ func CreatePutMonitorGroupDynamicRuleRequest() (request *PutMonitorGroupDynamicR
 	request = &PutMonitorGroupDynamicRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutMonitorGroupDynamicRule", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

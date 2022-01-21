@@ -78,8 +78,8 @@ type DescribeSiteMonitorQuotaResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   string `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -88,7 +88,7 @@ func CreateDescribeSiteMonitorQuotaRequest() (request *DescribeSiteMonitorQuotaR
 	request = &DescribeSiteMonitorQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSiteMonitorQuota", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSiteMonitorQuota", "Cms", "openAPI")
 	request.Method = requests.POST
 	return
 }
