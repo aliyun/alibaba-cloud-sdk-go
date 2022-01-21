@@ -75,6 +75,7 @@ type ExportConversationDetailsRequest struct {
 	CallingNumber       string           `position:"Query" name:"CallingNumber"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
 	BeginTimeRightRange requests.Integer `position:"Query" name:"BeginTimeRightRange"`
+	Options             *[]string        `position:"Query" name:"Options"  type:"Repeated"`
 }
 
 // ExportConversationDetailsResponse is the response struct for api ExportConversationDetails
