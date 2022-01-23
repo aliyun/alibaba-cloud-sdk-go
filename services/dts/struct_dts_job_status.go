@@ -30,6 +30,7 @@ type DtsJobStatus struct {
 	Delay                         int64                         `json:"Delay" xml:"Delay"`
 	ExpireTime                    string                        `json:"ExpireTime" xml:"ExpireTime"`
 	DtsJobName                    string                        `json:"DtsJobName" xml:"DtsJobName"`
+	JobType                       string                        `json:"JobType" xml:"JobType"`
 	Checkpoint                    string                        `json:"Checkpoint" xml:"Checkpoint"`
 	PayType                       string                        `json:"PayType" xml:"PayType"`
 	DtsJobClass                   string                        `json:"DtsJobClass" xml:"DtsJobClass"`

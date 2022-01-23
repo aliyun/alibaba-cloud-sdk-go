@@ -78,7 +78,7 @@ type ConfigureDtsJobRequest struct {
 	ErrorPhone                      string           `position:"Query" name:"ErrorPhone"`
 	DestinationEndpointUserName     string           `position:"Query" name:"DestinationEndpointUserName"`
 	DtsJobId                        string           `position:"Query" name:"DtsJobId"`
-	DbList                          string           `position:"Query" name:"DbList"`
+	DbList                          string           `position:"Body" name:"DbList"`
 	DestinationEndpointOracleSID    string           `position:"Query" name:"DestinationEndpointOracleSID"`
 	DestinationEndpointPort         string           `position:"Query" name:"DestinationEndpointPort"`
 	SourceEndpointPassword          string           `position:"Query" name:"SourceEndpointPassword"`
@@ -99,7 +99,7 @@ type ConfigureDtsJobRequest struct {
 	SourceEndpointOwnerID           string           `position:"Query" name:"SourceEndpointOwnerID"`
 	SourceEndpointDatabaseName      string           `position:"Query" name:"SourceEndpointDatabaseName"`
 	DestinationEndpointRegion       string           `position:"Query" name:"DestinationEndpointRegion"`
-	Reserve                         string           `position:"Query" name:"Reserve"`
+	Reserve                         string           `position:"Body" name:"Reserve"`
 	DataSynchronization             requests.Boolean `position:"Query" name:"DataSynchronization"`
 	DestinationEndpointEngineName   string           `position:"Query" name:"DestinationEndpointEngineName"`
 	DestinationEndpointInstanceID   string           `position:"Query" name:"DestinationEndpointInstanceID"`

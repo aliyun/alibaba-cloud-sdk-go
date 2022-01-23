@@ -98,7 +98,6 @@ type DescribeDtsJobsResponse struct {
 	DynamicMessage   string         `json:"DynamicMessage" xml:"DynamicMessage"`
 	PageNumber       int            `json:"PageNumber" xml:"PageNumber"`
 	DynamicCode      string         `json:"DynamicCode" xml:"DynamicCode"`
-	JobType          string         `json:"JobType" xml:"JobType"`
 	DtsJobList       []DtsJobStatus `json:"DtsJobList" xml:"DtsJobList"`
 	EtlDemoList      []DtsJobStatus `json:"EtlDemoList" xml:"EtlDemoList"`
 }
