@@ -17,5 +17,7 @@ package quickbi_public
 
 // Result is a nested struct in quickbi_public response
 type Result struct {
-	Data []Data `json:"Data" xml:"Data"`
+	Sql     string                   `json:"Sql" xml:"Sql"`
+	Values  []map[string]interface{} `json:"Values" xml:"Values"`
+	Headers []HeadersItem            `json:"Headers" xml:"Headers"`
 }

@@ -17,13 +17,19 @@ package quickbi_public
 
 // DataItem is a nested struct in quickbi_public response
 type DataItem struct {
-	AccountId     string `json:"AccountId" xml:"AccountId"`
-	AccountName   string `json:"AccountName" xml:"AccountName"`
-	AdminUser     bool   `json:"AdminUser" xml:"AdminUser"`
-	AuthAdminUser bool   `json:"AuthAdminUser" xml:"AuthAdminUser"`
-	Email         string `json:"Email" xml:"Email"`
-	NickName      string `json:"NickName" xml:"NickName"`
-	Phone         string `json:"Phone" xml:"Phone"`
-	UserId        string `json:"UserId" xml:"UserId"`
-	UserType      int    `json:"UserType" xml:"UserType"`
+	Name           string `json:"Name" xml:"Name"`
+	PublishStatus  int    `json:"PublishStatus" xml:"PublishStatus"`
+	OwnerNum       string `json:"OwnerNum" xml:"OwnerNum"`
+	OwnerName      string `json:"OwnerName" xml:"OwnerName"`
+	GmtModified    string `json:"GmtModified" xml:"GmtModified"`
+	WorkspaceName  string `json:"WorkspaceName" xml:"WorkspaceName"`
+	TreeId         string `json:"TreeId" xml:"TreeId"`
+	ViewCount      int64  `json:"ViewCount" xml:"ViewCount"`
+	GmtCreate      string `json:"GmtCreate" xml:"GmtCreate"`
+	LatestViewTime string `json:"LatestViewTime" xml:"LatestViewTime"`
+	HasEditAuth    bool   `json:"HasEditAuth" xml:"HasEditAuth"`
+	WorkspaceId    string `json:"WorkspaceId" xml:"WorkspaceId"`
+	Favorite       bool   `json:"Favorite" xml:"Favorite"`
+	HasViewAuth    bool   `json:"HasViewAuth" xml:"HasViewAuth"`
+	Type           string `json:"Type" xml:"Type"`
 }
