@@ -84,6 +84,7 @@ type CreateServerGroupRequest struct {
 	Ipv6Enabled              requests.Boolean                     `position:"Query" name:"Ipv6Enabled"`
 	ServerGroupType          string                               `position:"Query" name:"ServerGroupType"`
 	VpcId                    string                               `position:"Query" name:"VpcId"`
+	UchConfig                CreateServerGroupUchConfig           `position:"Query" name:"UchConfig"  type:"Struct"`
 }
 
 // CreateServerGroupHealthCheckConfig is a repeated param struct in CreateServerGroupRequest
@@ -110,6 +111,12 @@ type CreateServerGroupStickySessionConfig struct {
 	Cookie               string `name:"Cookie"`
 	CookieTimeout        string `name:"CookieTimeout"`
 	StickySessionType    string `name:"StickySessionType"`
+}
+
+// CreateServerGroupUchConfig is a repeated param struct in CreateServerGroupRequest
+type CreateServerGroupUchConfig struct {
+	Type  string `name:"Type"`
+	Value string `name:"Value"`
 }
 
 // CreateServerGroupResponse is the response struct for api CreateServerGroup

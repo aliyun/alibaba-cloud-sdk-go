@@ -35,5 +35,6 @@ type ServerGroup struct {
 	RelatedLoadBalancerIds   []string            `json:"RelatedLoadBalancerIds" xml:"RelatedLoadBalancerIds"`
 	HealthCheckConfig        HealthCheckConfig   `json:"HealthCheckConfig" xml:"HealthCheckConfig"`
 	StickySessionConfig      StickySessionConfig `json:"StickySessionConfig" xml:"StickySessionConfig"`
+	UchConfig                UchConfig           `json:"UchConfig" xml:"UchConfig"`
 	Tags                     []Tag               `json:"Tags" xml:"Tags"`
 }

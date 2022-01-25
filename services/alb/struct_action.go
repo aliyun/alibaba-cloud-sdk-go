@@ -27,4 +27,5 @@ type Action struct {
 	RewriteConfig       RewriteConfig                 `json:"RewriteConfig" xml:"RewriteConfig"`
 	TrafficMirrorConfig TrafficMirrorConfig           `json:"TrafficMirrorConfig" xml:"TrafficMirrorConfig"`
 	TrafficLimitConfig  TrafficLimitConfig            `json:"TrafficLimitConfig" xml:"TrafficLimitConfig"`
+	CorsConfig          CorsConfig                    `json:"CorsConfig" xml:"CorsConfig"`
 }

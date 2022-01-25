@@ -73,6 +73,7 @@ type ListLoadBalancersRequest struct {
 	*requests.RpcRequest
 	LoadBalancerNames           *[]string               `position:"Query" name:"LoadBalancerNames"  type:"Repeated"`
 	LoadBalancerIds             *[]string               `position:"Query" name:"LoadBalancerIds"  type:"Repeated"`
+	LoadBalancerEditions        *[]string               `position:"Query" name:"LoadBalancerEditions"  type:"Repeated"`
 	AddressIpVersion            string                  `position:"Query" name:"AddressIpVersion"`
 	ResourceGroupId             string                  `position:"Query" name:"ResourceGroupId"`
 	NextToken                   string                  `position:"Query" name:"NextToken"`

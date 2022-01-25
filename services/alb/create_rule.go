@@ -89,6 +89,7 @@ type CreateRuleRuleActions struct {
 	RemoveHeaderConfig  CreateRuleRuleActionsRemoveHeaderConfig  `name:"RemoveHeaderConfig" type:"Struct"`
 	InsertHeaderConfig  CreateRuleRuleActionsInsertHeaderConfig  `name:"InsertHeaderConfig" type:"Struct"`
 	TrafficLimitConfig  CreateRuleRuleActionsTrafficLimitConfig  `name:"TrafficLimitConfig" type:"Struct"`
+	CorsConfig          CreateRuleRuleActionsCorsConfig          `name:"CorsConfig" type:"Struct"`
 	RedirectConfig      CreateRuleRuleActionsRedirectConfig      `name:"RedirectConfig" type:"Struct"`
 	Type                string                                   `name:"Type"`
 	Order               string                                   `name:"Order"`
@@ -144,6 +145,16 @@ type CreateRuleRuleActionsInsertHeaderConfig struct {
 // CreateRuleRuleActionsTrafficLimitConfig is a repeated param struct in CreateRuleRequest
 type CreateRuleRuleActionsTrafficLimitConfig struct {
 	QPS string `name:"QPS"`
+}
+
+// CreateRuleRuleActionsCorsConfig is a repeated param struct in CreateRuleRequest
+type CreateRuleRuleActionsCorsConfig struct {
+	AllowCredentials string    `name:"AllowCredentials"`
+	AllowOrigin      *[]string `name:"AllowOrigin" type:"Repeated"`
+	MaxAge           string    `name:"MaxAge"`
+	AllowMethods     *[]string `name:"AllowMethods" type:"Repeated"`
+	AllowHeaders     *[]string `name:"AllowHeaders" type:"Repeated"`
+	ExposeHeaders    *[]string `name:"ExposeHeaders" type:"Repeated"`
 }
 
 // CreateRuleRuleActionsRedirectConfig is a repeated param struct in CreateRuleRequest

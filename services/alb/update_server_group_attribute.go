@@ -80,6 +80,7 @@ type UpdateServerGroupAttributeRequest struct {
 	ServiceName              string                                        `position:"Query" name:"ServiceName"`
 	StickySessionConfig      UpdateServerGroupAttributeStickySessionConfig `position:"Query" name:"StickySessionConfig"  type:"Struct"`
 	DryRun                   requests.Boolean                              `position:"Query" name:"DryRun"`
+	UchConfig                UpdateServerGroupAttributeUchConfig           `position:"Query" name:"UchConfig"  type:"Struct"`
 }
 
 // UpdateServerGroupAttributeHealthCheckConfig is a repeated param struct in UpdateServerGroupAttributeRequest
@@ -106,6 +107,12 @@ type UpdateServerGroupAttributeStickySessionConfig struct {
 	Cookie               string `name:"Cookie"`
 	CookieTimeout        string `name:"CookieTimeout"`
 	StickySessionType    string `name:"StickySessionType"`
+}
+
+// UpdateServerGroupAttributeUchConfig is a repeated param struct in UpdateServerGroupAttributeRequest
+type UpdateServerGroupAttributeUchConfig struct {
+	Type  string `name:"Type"`
+	Value string `name:"Value"`
 }
 
 // UpdateServerGroupAttributeResponse is the response struct for api UpdateServerGroupAttribute
