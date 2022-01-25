@@ -1,3 +1,7 @@
+2022-01-25 Version: v1.61.1465
+- Generated 2020-06-15 for `hitsdb`.
+- Create Lindorm Open api.
+
 2022-01-25 Version: v1.61.1464
 - Generated 2019-12-26 for `OutboundBot`.
 - Supported new features for outbound.
