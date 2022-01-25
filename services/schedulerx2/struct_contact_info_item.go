@@ -17,6 +17,8 @@ package schedulerx2
 
 // ContactInfoItem is a nested struct in schedulerx2 response
 type ContactInfoItem struct {
+	UserMail  string `json:"UserMail" xml:"UserMail"`
 	UserPhone string `json:"UserPhone" xml:"UserPhone"`
 	UserName  string `json:"UserName" xml:"UserName"`
+	Ding      string `json:"Ding" xml:"Ding"`
 }

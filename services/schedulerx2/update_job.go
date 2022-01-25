@@ -88,6 +88,7 @@ type UpdateJobRequest struct {
 	GroupId             string                  `position:"Body" name:"GroupId"`
 	TaskMaxAttempt      requests.Integer        `position:"Body" name:"TaskMaxAttempt"`
 	MaxAttempt          requests.Integer        `position:"Body" name:"MaxAttempt"`
+	MissWorkerEnable    requests.Boolean        `position:"Body" name:"MissWorkerEnable"`
 	DispatcherSize      requests.Integer        `position:"Body" name:"DispatcherSize"`
 	TaskAttemptInterval requests.Integer        `position:"Body" name:"TaskAttemptInterval"`
 	ExecuteMode         string                  `position:"Body" name:"ExecuteMode"`
@@ -105,7 +106,9 @@ type UpdateJobRequest struct {
 
 // UpdateJobContactInfo is a repeated param struct in UpdateJobRequest
 type UpdateJobContactInfo struct {
+	Ding      string `name:"Ding"`
 	UserPhone string `name:"UserPhone"`
+	UserMail  string `name:"UserMail"`
 	UserName  string `name:"UserName"`
 }
 

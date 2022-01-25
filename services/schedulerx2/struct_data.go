@@ -26,8 +26,8 @@ type Data struct {
 	WorkFlowInfo       WorkFlowInfo             `json:"WorkFlowInfo" xml:"WorkFlowInfo"`
 	WorkFlowNodeInfo   WorkFlowNodeInfo         `json:"WorkFlowNodeInfo" xml:"WorkFlowNodeInfo"`
 	WorkerInfos        []WorkerInfo             `json:"WorkerInfos" xml:"WorkerInfos"`
-	Jobs               []Job                    `json:"Jobs" xml:"Jobs"`
 	Namespaces         []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	JobInstanceDetails []JobInstanceDetailsItem `json:"JobInstanceDetails" xml:"JobInstanceDetails"`
 	AppGroups          []AppGroup               `json:"AppGroups" xml:"AppGroups"`
+	Jobs               []Job                    `json:"Jobs" xml:"Jobs"`
 }

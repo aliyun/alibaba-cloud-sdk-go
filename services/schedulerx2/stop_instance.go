@@ -71,10 +71,10 @@ func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, cal
 // StopInstanceRequest is the request struct for api StopInstance
 type StopInstanceRequest struct {
 	*requests.RpcRequest
-	JobId           requests.Integer `position:"Query" name:"JobId"`
 	NamespaceSource string           `position:"Query" name:"NamespaceSource"`
-	InstanceId      requests.Integer `position:"Query" name:"InstanceId"`
 	GroupId         string           `position:"Query" name:"GroupId"`
+	JobId           requests.Integer `position:"Query" name:"JobId"`
+	InstanceId      requests.Integer `position:"Query" name:"InstanceId"`
 	Namespace       string           `position:"Query" name:"Namespace"`
 }
 

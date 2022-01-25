@@ -73,8 +73,8 @@ type BatchDisableJobsRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string    `position:"Query" name:"NamespaceSource"`
 	GroupId         string    `position:"Query" name:"GroupId"`
-	Namespace       string    `position:"Query" name:"Namespace"`
 	JobIdList       *[]string `position:"Body" name:"JobIdList"  type:"Repeated"`
+	Namespace       string    `position:"Query" name:"Namespace"`
 }
 
 // BatchDisableJobsResponse is the response struct for api BatchDisableJobs

@@ -1,3 +1,9 @@
+2022-01-25 Version: v1.61.1460
+- Generated 2019-04-30 for `schedulerx2`.
+- Supported Get Worker List.
+- Execute Job Support Designate Machine.
+- Job Interface Add Config.
+
 2022-01-25 Version: v1.61.1459
 - Generated 2019-12-30 for `facebody`.
 - Update DetectFace.

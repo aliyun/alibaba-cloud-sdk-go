@@ -87,6 +87,7 @@ type CreateJobRequest struct {
 	GroupId             string                  `position:"Body" name:"GroupId"`
 	TaskMaxAttempt      requests.Integer        `position:"Body" name:"TaskMaxAttempt"`
 	MaxAttempt          requests.Integer        `position:"Body" name:"MaxAttempt"`
+	MissWorkerEnable    requests.Boolean        `position:"Body" name:"MissWorkerEnable"`
 	DispatcherSize      requests.Integer        `position:"Body" name:"DispatcherSize"`
 	JobType             string                  `position:"Body" name:"JobType"`
 	TaskAttemptInterval requests.Integer        `position:"Body" name:"TaskAttemptInterval"`
@@ -105,7 +106,9 @@ type CreateJobRequest struct {
 
 // CreateJobContactInfo is a repeated param struct in CreateJobRequest
 type CreateJobContactInfo struct {
+	Ding      string `name:"Ding"`
 	UserPhone string `name:"UserPhone"`
+	UserMail  string `name:"UserMail"`
 	UserName  string `name:"UserName"`
 }
 

@@ -73,8 +73,8 @@ type RevokePermissionRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string `position:"Query" name:"NamespaceSource"`
 	GroupId         string `position:"Query" name:"GroupId"`
-	Namespace       string `position:"Query" name:"Namespace"`
 	UserId          string `position:"Query" name:"UserId"`
+	Namespace       string `position:"Query" name:"Namespace"`
 }
 
 // RevokePermissionResponse is the response struct for api RevokePermission

@@ -19,6 +19,7 @@ package schedulerx2
 type MonitorConfig struct {
 	Timeout           int64  `json:"Timeout" xml:"Timeout"`
 	FailEnable        bool   `json:"FailEnable" xml:"FailEnable"`
+	MissWorkerEnable  bool   `json:"MissWorkerEnable" xml:"MissWorkerEnable"`
 	TimeoutEnable     bool   `json:"TimeoutEnable" xml:"TimeoutEnable"`
 	SendChannel       string `json:"SendChannel" xml:"SendChannel"`
 	TimeoutKillEnable bool   `json:"TimeoutKillEnable" xml:"TimeoutKillEnable"`
