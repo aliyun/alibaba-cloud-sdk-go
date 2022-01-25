@@ -17,18 +17,15 @@ package live
 
 // ContentItem is a nested struct in live response
 type ContentItem struct {
-	Name       string   `json:"Name" xml:"Name"`
-	App        string   `json:"App" xml:"App"`
-	Domain     string   `json:"Domain" xml:"Domain"`
-	Timestamp  int64    `json:"Timestamp" xml:"Timestamp"`
-	Fps        float64  `json:"Fps" xml:"Fps"`
-	StreamName string   `json:"StreamName" xml:"StreamName"`
-	CdnName    string   `json:"CdnName" xml:"CdnName"`
-	Flr        float64  `json:"Flr" xml:"Flr"`
-	Bandwidth  float64  `json:"Bandwidth" xml:"Bandwidth"`
-	Bitrate    float64  `json:"Bitrate" xml:"Bitrate"`
-	PlayNum    int64    `json:"PlayNum" xml:"PlayNum"`
-	BwDiff     float64  `json:"BwDiff" xml:"BwDiff"`
-	Columns    []string `json:"Columns" xml:"Columns"`
-	Points     []string `json:"Points" xml:"Points"`
+	App        string  `json:"App" xml:"App"`
+	Domain     string  `json:"Domain" xml:"Domain"`
+	Flr        float64 `json:"Flr" xml:"Flr"`
+	Timestamp  int64   `json:"Timestamp" xml:"Timestamp"`
+	Bandwidth  float64 `json:"Bandwidth" xml:"Bandwidth"`
+	Bitrate    float64 `json:"Bitrate" xml:"Bitrate"`
+	Fps        float64 `json:"Fps" xml:"Fps"`
+	PlayNum    int64   `json:"PlayNum" xml:"PlayNum"`
+	StreamName string  `json:"StreamName" xml:"StreamName"`
+	CdnName    string  `json:"CdnName" xml:"CdnName"`
+	BwDiff     float64 `json:"BwDiff" xml:"BwDiff"`
 }

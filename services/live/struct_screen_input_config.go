@@ -17,13 +17,15 @@ package live
 
 // ScreenInputConfig is a nested struct in live response
 type ScreenInputConfig struct {
-	Id               string  `json:"Id" xml:"Id"`
-	Index            int     `json:"Index" xml:"Index"`
-	ChannelId        string  `json:"ChannelId" xml:"ChannelId"`
-	VideoResourceId  string  `json:"VideoResourceId" xml:"VideoResourceId"`
-	Color            string  `json:"Color" xml:"Color"`
-	PositionX        string  `json:"PositionX" xml:"PositionX"`
-	PositionY        string  `json:"PositionY" xml:"PositionY"`
-	HeightNormalized float64 `json:"HeightNormalized" xml:"HeightNormalized"`
-	PortraitType     int     `json:"PortraitType" xml:"PortraitType"`
+	Id               string      `json:"Id" xml:"Id"`
+	Index            int         `json:"Index" xml:"Index"`
+	ChannelId        string      `json:"ChannelId" xml:"ChannelId"`
+	VideoResourceId  string      `json:"VideoResourceId" xml:"VideoResourceId"`
+	Color            string      `json:"Color" xml:"Color"`
+	PositionX        string      `json:"PositionX" xml:"PositionX"`
+	PositionY        string      `json:"PositionY" xml:"PositionY"`
+	HeightNormalized float64     `json:"HeightNormalized" xml:"HeightNormalized"`
+	PortraitType     int         `json:"PortraitType" xml:"PortraitType"`
+	OnlyAudio        bool        `json:"OnlyAudio" xml:"OnlyAudio"`
+	AudioConfig      AudioConfig `json:"AudioConfig" xml:"AudioConfig"`
 }

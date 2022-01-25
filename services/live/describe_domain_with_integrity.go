@@ -80,8 +80,8 @@ type DescribeDomainWithIntegrityRequest struct {
 // DescribeDomainWithIntegrityResponse is the response struct for api DescribeDomainWithIntegrity
 type DescribeDomainWithIntegrityResponse struct {
 	*responses.BaseResponse
-	RequestId string                               `json:"RequestId" xml:"RequestId"`
-	Content   ContentInDescribeDomainWithIntegrity `json:"Content" xml:"Content"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	Content   []Content `json:"Content" xml:"Content"`
 }
 
 // CreateDescribeDomainWithIntegrityRequest creates a request to invoke DescribeDomainWithIntegrity API
