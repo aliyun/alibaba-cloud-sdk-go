@@ -71,8 +71,11 @@ func (client *Client) ExtractFingerPrintWithCallback(request *ExtractFingerPrint
 // ExtractFingerPrintRequest is the request struct for api ExtractFingerPrint
 type ExtractFingerPrintRequest struct {
 	*requests.RpcRequest
-	ImageData string `position:"Body" name:"ImageData"`
-	ImageURL  string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	ImageData          string           `position:"Body" name:"ImageData"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // ExtractFingerPrintResponse is the response struct for api ExtractFingerPrint

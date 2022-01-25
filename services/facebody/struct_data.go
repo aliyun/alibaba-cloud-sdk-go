@@ -21,7 +21,6 @@ type Data struct {
 	Age                  string                `json:"Age" xml:"Age"`
 	VerificationToken    string                `json:"VerificationToken" xml:"VerificationToken"`
 	HairScore            float64               `json:"HairScore" xml:"HairScore"`
-	FaceProbability      float64               `json:"FaceProbability" xml:"FaceProbability"`
 	QualityScoreA        float64               `json:"QualityScoreA" xml:"QualityScoreA"`
 	ObjTypeScore         float64               `json:"ObjTypeScore" xml:"ObjTypeScore"`
 	QualityScoreB        float64               `json:"QualityScoreB" xml:"QualityScoreB"`

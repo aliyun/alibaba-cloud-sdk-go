@@ -71,7 +71,10 @@ func (client *Client) DetectLivingFaceWithCallback(request *DetectLivingFaceRequ
 // DetectLivingFaceRequest is the request struct for api DetectLivingFace
 type DetectLivingFaceRequest struct {
 	*requests.RpcRequest
-	Tasks *[]DetectLivingFaceTasks `position:"Body" name:"Tasks"  type:"Repeated"`
+	FormatResultToJson requests.Boolean         `position:"Query" name:"FormatResultToJson"`
+	OssFile            string                   `position:"Query" name:"OssFile"`
+	Tasks              *[]DetectLivingFaceTasks `position:"Body" name:"Tasks"  type:"Repeated"`
+	RequestProxyBy     string                   `position:"Query" name:"RequestProxyBy"`
 }
 
 // DetectLivingFaceTasks is a repeated param struct in DetectLivingFaceRequest
