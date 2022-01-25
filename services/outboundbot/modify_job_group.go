@@ -78,10 +78,12 @@ type ModifyJobGroupRequest struct {
 	RingingDuration    requests.Integer `position:"Query" name:"RingingDuration"`
 	ScenarioId         string           `position:"Query" name:"ScenarioId"`
 	JobGroupStatus     string           `position:"Query" name:"JobGroupStatus"`
+	Priority           string           `position:"Query" name:"Priority"`
 	CallingNumber      *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	InstanceId         string           `position:"Query" name:"InstanceId"`
 	JobGroupId         string           `position:"Query" name:"JobGroupId"`
 	Name               string           `position:"Query" name:"Name"`
+	MinConcurrency     requests.Integer `position:"Query" name:"MinConcurrency"`
 }
 
 // ModifyJobGroupResponse is the response struct for api ModifyJobGroup

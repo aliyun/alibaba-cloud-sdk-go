@@ -74,13 +74,15 @@ type CreateBatchRepeatJobRequest struct {
 	RecallStrategyJson string           `position:"Query" name:"RecallStrategyJson"`
 	Description        string           `position:"Query" name:"Description"`
 	ScriptId           string           `position:"Query" name:"ScriptId"`
-	CallingNumber      *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
-	InstanceId         string           `position:"Query" name:"InstanceId"`
 	FilterStatus       string           `position:"Query" name:"FilterStatus"`
 	StrategyJson       string           `position:"Query" name:"StrategyJson"`
+	RingingDuration    requests.Integer `position:"Query" name:"RingingDuration"`
+	Priority           string           `position:"Query" name:"Priority"`
+	CallingNumber      *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
+	InstanceId         string           `position:"Query" name:"InstanceId"`
 	Name               string           `position:"Query" name:"Name"`
 	SourceGroupId      string           `position:"Query" name:"SourceGroupId"`
-	RingingDuration    requests.Integer `position:"Query" name:"RingingDuration"`
+	MinConcurrency     requests.Integer `position:"Query" name:"MinConcurrency"`
 }
 
 // CreateBatchRepeatJobResponse is the response struct for api CreateBatchRepeatJob

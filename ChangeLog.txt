@@ -1,3 +1,7 @@
+2022-01-25 Version: v1.61.1464
+- Generated 2019-12-26 for `OutboundBot`.
+- Supported new features for outbound.
+
 2022-01-25 Version: v1.61.1463
 - Generated 2020-06-16 for `Alb`.
 - Support Latest APIs.

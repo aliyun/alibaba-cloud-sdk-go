@@ -20,12 +20,14 @@ type JobGroup struct {
 	ScriptName           string         `json:"ScriptName" xml:"ScriptName"`
 	JobGroupId           string         `json:"JobGroupId" xml:"JobGroupId"`
 	ModifyTime           string         `json:"ModifyTime" xml:"ModifyTime"`
+	MinConcurrency       int64          `json:"MinConcurrency" xml:"MinConcurrency"`
 	JobGroupName         string         `json:"JobGroupName" xml:"JobGroupName"`
 	TotalCallNum         int            `json:"TotalCallNum" xml:"TotalCallNum"`
 	JobGroupDescription  string         `json:"JobGroupDescription" xml:"JobGroupDescription"`
 	Id                   string         `json:"Id" xml:"Id"`
 	RingingDuration      int64          `json:"RingingDuration" xml:"RingingDuration"`
 	CreationTime         int64          `json:"CreationTime" xml:"CreationTime"`
+	Priority             string         `json:"Priority" xml:"Priority"`
 	ScenarioId           string         `json:"ScenarioId" xml:"ScenarioId"`
 	ScriptVersion        string         `json:"ScriptVersion" xml:"ScriptVersion"`
 	ScriptId             string         `json:"ScriptId" xml:"ScriptId"`

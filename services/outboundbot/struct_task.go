@@ -32,6 +32,7 @@ type Task struct {
 	ChatbotId       string               `json:"ChatbotId" xml:"ChatbotId"`
 	ActualTime      int64                `json:"ActualTime" xml:"ActualTime"`
 	Status          string               `json:"Status" xml:"Status"`
+	RingingDuration int64                `json:"RingingDuration" xml:"RingingDuration"`
 	Contact         Contact              `json:"Contact" xml:"Contact"`
 	Conversation    []ConversationDetail `json:"Conversation" xml:"Conversation"`
 }

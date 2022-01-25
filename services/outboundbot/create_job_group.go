@@ -72,14 +72,16 @@ func (client *Client) CreateJobGroupWithCallback(request *CreateJobGroupRequest,
 type CreateJobGroupRequest struct {
 	*requests.RpcRequest
 	RecallStrategyJson  string           `position:"Query" name:"RecallStrategyJson"`
-	JobGroupDescription string           `position:"Query" name:"JobGroupDescription"`
 	JobGroupName        string           `position:"Query" name:"JobGroupName"`
 	ScriptId            string           `position:"Query" name:"ScriptId"`
-	CallingNumber       *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
-	InstanceId          string           `position:"Query" name:"InstanceId"`
 	StrategyJson        string           `position:"Query" name:"StrategyJson"`
 	RingingDuration     requests.Integer `position:"Query" name:"RingingDuration"`
 	ScenarioId          string           `position:"Query" name:"ScenarioId"`
+	Priority            string           `position:"Query" name:"Priority"`
+	JobGroupDescription string           `position:"Query" name:"JobGroupDescription"`
+	CallingNumber       *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
+	InstanceId          string           `position:"Query" name:"InstanceId"`
+	MinConcurrency      requests.Integer `position:"Query" name:"MinConcurrency"`
 }
 
 // CreateJobGroupResponse is the response struct for api CreateJobGroup
