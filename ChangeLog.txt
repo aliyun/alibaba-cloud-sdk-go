@@ -1,3 +1,7 @@
+2022-01-26 Version: v1.61.1467
+- Generated 2017-08-01 for `polardb`.
+- Fix some bugs.
+
 2022-01-26 Version: v1.61.1466
 - Generated 2014-05-15 for `Slb`.
 - Support Latest APIs.

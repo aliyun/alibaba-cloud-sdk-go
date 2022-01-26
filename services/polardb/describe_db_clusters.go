@@ -75,6 +75,7 @@ type DescribeDBClustersRequest struct {
 	DBClusterDescription string                   `position:"Query" name:"DBClusterDescription"`
 	DBClusterStatus      string                   `position:"Query" name:"DBClusterStatus"`
 	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
+	DBNodeIds            string                   `position:"Query" name:"DBNodeIds"`
 	ResourceGroupId      string                   `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer         `position:"Query" name:"PageSize"`
 	Tag                  *[]DescribeDBClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
@@ -82,6 +83,7 @@ type DescribeDBClustersRequest struct {
 	OwnerAccount         string                   `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer         `position:"Query" name:"OwnerId"`
 	DBType               string                   `position:"Query" name:"DBType"`
+	PayType              string                   `position:"Query" name:"PayType"`
 	DBClusterIds         string                   `position:"Query" name:"DBClusterIds"`
 }
 

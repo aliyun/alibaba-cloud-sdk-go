@@ -110,6 +110,10 @@ type DescribeDBClusterAttributeResponse struct {
 	ExpireTime                string   `json:"ExpireTime" xml:"ExpireTime"`
 	SubCategory               string   `json:"SubCategory" xml:"SubCategory"`
 	IsProxyLatestVersion      bool     `json:"IsProxyLatestVersion" xml:"IsProxyLatestVersion"`
+	StorageType               string   `json:"StorageType" xml:"StorageType"`
+	ProxyCpuCores             string   `json:"ProxyCpuCores" xml:"ProxyCpuCores"`
+	ProxyType                 string   `json:"ProxyType" xml:"ProxyType"`
+	ProxyStatus               string   `json:"ProxyStatus" xml:"ProxyStatus"`
 	DBNodes                   []DBNode `json:"DBNodes" xml:"DBNodes"`
 	Tags                      []Tag    `json:"Tags" xml:"Tags"`
 }

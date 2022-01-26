@@ -81,6 +81,7 @@ type CreateDBNodesRequest struct {
 	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
 	PlannedStartTime     string                 `position:"Query" name:"PlannedStartTime"`
 	DBNode               *[]CreateDBNodesDBNode `position:"Query" name:"DBNode"  type:"Repeated"`
+	ImciSwitch           string                 `position:"Query" name:"ImciSwitch"`
 }
 
 // CreateDBNodesDBNode is a repeated param struct in CreateDBNodesRequest

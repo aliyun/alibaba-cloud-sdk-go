@@ -27,4 +27,6 @@ type DBNode struct {
 	DBNodeStatus     string `json:"DBNodeStatus" xml:"DBNodeStatus"`
 	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
 	DBNodeId         string `json:"DBNodeId" xml:"DBNodeId"`
+	ImciSwitch       string `json:"ImciSwitch" xml:"ImciSwitch"`
+	HotReplicaMode   string `json:"HotReplicaMode" xml:"HotReplicaMode"`
 }

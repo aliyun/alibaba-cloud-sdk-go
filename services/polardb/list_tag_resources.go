@@ -90,9 +90,9 @@ type ListTagResourcesTag struct {
 // ListTagResourcesResponse is the response struct for api ListTagResources
 type ListTagResourcesResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	NextToken    string       `json:"NextToken" xml:"NextToken"`
-	TagResources TagResources `json:"TagResources" xml:"TagResources"`
+	RequestId    string                         `json:"RequestId" xml:"RequestId"`
+	NextToken    string                         `json:"NextToken" xml:"NextToken"`
+	TagResources TagResourcesInListTagResources `json:"TagResources" xml:"TagResources"`
 }
 
 // CreateListTagResourcesRequest creates a request to invoke ListTagResources API
