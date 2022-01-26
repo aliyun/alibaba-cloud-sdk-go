@@ -92,6 +92,7 @@ type CreateGroupMetricRulesGroupMetricRules struct {
 	CompositeExpression                   string `name:"CompositeExpression"`
 	EscalationsWarnThreshold              string `name:"Escalations.Warn.Threshold"`
 	Period                                string `name:"Period"`
+	ContactGroups                         string `name:"ContactGroups"`
 	EscalationsCriticalStatistics         string `name:"Escalations.Critical.Statistics"`
 	EscalationsInfoTimes                  string `name:"Escalations.Info.Times"`
 	EscalationsCriticalTimes              string `name:"Escalations.Critical.Times"`

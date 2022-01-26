@@ -76,6 +76,7 @@ type DescribeMetricRuleListRequest struct {
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	MetricName  string           `position:"Query" name:"MetricName"`
 	GroupId     string           `position:"Query" name:"GroupId"`
+	GroupBy     string           `position:"Query" name:"GroupBy"`
 	RuleIds     string           `position:"Query" name:"RuleIds"`
 	Namespace   string           `position:"Query" name:"Namespace"`
 	AlertState  string           `position:"Query" name:"AlertState"`
