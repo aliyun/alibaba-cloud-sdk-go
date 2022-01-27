@@ -23,8 +23,8 @@ type App struct {
 	CreateTime             int64                      `json:"CreateTime" xml:"CreateTime"`
 	DeployType             string                     `json:"DeployType" xml:"DeployType"`
 	Dockerize              bool                       `json:"Dockerize" xml:"Dockerize"`
-	EdasContainerVersion   string                     `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
 	RegionId               string                     `json:"RegionId" xml:"RegionId"`
+	EdasContainerVersion   string                     `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
 	SlbPort                int                        `json:"SlbPort" xml:"SlbPort"`
 	RequestMem             int                        `json:"RequestMem" xml:"RequestMem"`
 	UserId                 string                     `json:"UserId" xml:"UserId"`
@@ -32,8 +32,8 @@ type App struct {
 	TomcatVersion          string                     `json:"TomcatVersion" xml:"TomcatVersion"`
 	Description            string                     `json:"Description" xml:"Description"`
 	LimitMem               int                        `json:"LimitMem" xml:"LimitMem"`
-	ClusterId              string                     `json:"ClusterId" xml:"ClusterId"`
 	LimitCpuM              int                        `json:"LimitCpuM" xml:"LimitCpuM"`
+	ClusterId              string                     `json:"ClusterId" xml:"ClusterId"`
 	Port                   int                        `json:"Port" xml:"Port"`
 	ApplicationName        string                     `json:"ApplicationName" xml:"ApplicationName"`
 	ExtSlbIp               string                     `json:"ExtSlbIp" xml:"ExtSlbIp"`

@@ -88,7 +88,7 @@ func CreateDeleteServiceTimeConfigRequest() (request *DeleteServiceTimeConfigReq
 	request = &DeleteServiceTimeConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteServiceTimeConfig", "/pop/sp/api/timeout/remove", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteServiceTimeConfig", "/pop/sp/api/timeout/remove", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

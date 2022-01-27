@@ -21,5 +21,6 @@ type CertDetail struct {
 	Status      string   `json:"Status" xml:"Status"`
 	StartTime   string   `json:"StartTime" xml:"StartTime"`
 	Issuer      string   `json:"Issuer" xml:"Issuer"`
+	KeySize     int      `json:"KeySize" xml:"KeySize"`
 	DomainNames []string `json:"DomainNames" xml:"DomainNames"`
 }

@@ -17,8 +17,8 @@ package edas
 
 // DataInGetServiceListPage is a nested struct in edas response
 type DataInGetServiceListPage struct {
-	Size          int                  `json:"Size" xml:"Size"`
-	TotalElements int                  `json:"TotalElements" xml:"TotalElements"`
 	TotalPages    int                  `json:"TotalPages" xml:"TotalPages"`
+	TotalElements int                  `json:"TotalElements" xml:"TotalElements"`
+	Size          int                  `json:"Size" xml:"Size"`
 	Content       []MseServiceResponse `json:"Content" xml:"Content"`
 }

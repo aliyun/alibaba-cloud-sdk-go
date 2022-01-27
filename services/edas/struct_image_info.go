@@ -17,11 +17,11 @@ package edas
 
 // ImageInfo is a nested struct in edas response
 type ImageInfo struct {
-	ImageUrl       string `json:"ImageUrl" xml:"ImageUrl"`
-	RepoName       string `json:"RepoName" xml:"RepoName"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
 	RepoId         string `json:"RepoId" xml:"RepoId"`
-	RepoNamespace  string `json:"RepoNamespace" xml:"RepoNamespace"`
+	ImageUrl       string `json:"ImageUrl" xml:"ImageUrl"`
 	RepoOriginType string `json:"RepoOriginType" xml:"RepoOriginType"`
 	Tag            string `json:"Tag" xml:"Tag"`
+	RepoName       string `json:"RepoName" xml:"RepoName"`
+	RepoNamespace  string `json:"RepoNamespace" xml:"RepoNamespace"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 }

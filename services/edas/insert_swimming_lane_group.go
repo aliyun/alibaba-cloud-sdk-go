@@ -91,7 +91,7 @@ func CreateInsertSwimmingLaneGroupRequest() (request *InsertSwimmingLaneGroupReq
 	request = &InsertSwimmingLaneGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertSwimmingLaneGroup", "/pop/v5/trafficmgnt/swimming_lane_groups", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertSwimmingLaneGroup", "/pop/v5/trafficmgnt/swimming_lane_groups", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

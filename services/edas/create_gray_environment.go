@@ -91,7 +91,7 @@ func CreateCreateGrayEnvironmentRequest() (request *CreateGrayEnvironmentRequest
 	request = &CreateGrayEnvironmentRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "CreateGrayEnvironment", "/pop/v5/gray/env", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "CreateGrayEnvironment", "/pop/v5/gray/env", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

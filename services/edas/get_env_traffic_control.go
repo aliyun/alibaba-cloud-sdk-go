@@ -88,7 +88,7 @@ func CreateGetEnvTrafficControlRequest() (request *GetEnvTrafficControlRequest) 
 	request = &GetEnvTrafficControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetEnvTrafficControl", "/pop/v5/gray/env_traffic_control_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetEnvTrafficControl", "/pop/v5/gray/env_traffic_control_list", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

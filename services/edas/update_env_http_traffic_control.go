@@ -92,7 +92,7 @@ func CreateUpdateEnvHttpTrafficControlRequest() (request *UpdateEnvHttpTrafficCo
 	request = &UpdateEnvHttpTrafficControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateEnvHttpTrafficControl", "/pop/v5/gray/env_http_traffic_control", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateEnvHttpTrafficControl", "/pop/v5/gray/env_http_traffic_control", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

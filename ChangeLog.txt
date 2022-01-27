@@ -1,3 +1,7 @@
+2022-01-27 Version: v1.61.1469
+- Generated 2017-08-01 for `Edas`.
+- Update params for k8s application custom affinity and tolerations.
+
 2022-01-26 Version: v1.61.1468
 - Generated 2019-01-01 for `Cms`.
 - CreateContact API Add ContactGroupName.

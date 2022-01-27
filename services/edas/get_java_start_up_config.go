@@ -88,7 +88,7 @@ func CreateGetJavaStartUpConfigRequest() (request *GetJavaStartUpConfigRequest) 
 	request = &GetJavaStartUpConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetJavaStartUpConfig", "/pop/v5/oam/java_start_up_config", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetJavaStartUpConfig", "/pop/v5/oam/java_start_up_config", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

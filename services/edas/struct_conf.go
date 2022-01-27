@@ -17,19 +17,21 @@ package edas
 
 // Conf is a nested struct in edas response
 type Conf struct {
-	JarStartArgs       string `json:"JarStartArgs" xml:"JarStartArgs"`
-	JarStartOptions    string `json:"JarStartOptions" xml:"JarStartOptions"`
-	K8sCmd             string `json:"K8sCmd" xml:"K8sCmd"`
-	K8sCmdArgs         string `json:"K8sCmdArgs" xml:"K8sCmdArgs"`
-	K8sLocalvolumeInfo string `json:"K8sLocalvolumeInfo" xml:"K8sLocalvolumeInfo"`
-	K8sNasInfo         string `json:"K8sNasInfo" xml:"K8sNasInfo"`
-	K8sVolumeInfo      string `json:"K8sVolumeInfo" xml:"K8sVolumeInfo"`
-	Liveness           string `json:"Liveness" xml:"Liveness"`
 	PostStart          string `json:"PostStart" xml:"PostStart"`
-	PreStop            string `json:"PreStop" xml:"PreStop"`
 	Readiness          string `json:"Readiness" xml:"Readiness"`
-	RuntimeClassName   string `json:"RuntimeClassName" xml:"RuntimeClassName"`
-	DeployAcrossZones  string `json:"DeployAcrossZones" xml:"DeployAcrossZones"`
 	AhasEnabled        bool   `json:"AhasEnabled" xml:"AhasEnabled"`
+	K8sCmdArgs         string `json:"K8sCmdArgs" xml:"K8sCmdArgs"`
+	Liveness           string `json:"Liveness" xml:"Liveness"`
 	DeployAcrossNodes  string `json:"DeployAcrossNodes" xml:"DeployAcrossNodes"`
+	K8sCmd             string `json:"K8sCmd" xml:"K8sCmd"`
+	PreStop            string `json:"PreStop" xml:"PreStop"`
+	DeployAcrossZones  string `json:"DeployAcrossZones" xml:"DeployAcrossZones"`
+	JarStartArgs       string `json:"JarStartArgs" xml:"JarStartArgs"`
+	K8sNasInfo         string `json:"K8sNasInfo" xml:"K8sNasInfo"`
+	JarStartOptions    string `json:"JarStartOptions" xml:"JarStartOptions"`
+	RuntimeClassName   string `json:"RuntimeClassName" xml:"RuntimeClassName"`
+	K8sLocalvolumeInfo string `json:"K8sLocalvolumeInfo" xml:"K8sLocalvolumeInfo"`
+	K8sVolumeInfo      string `json:"K8sVolumeInfo" xml:"K8sVolumeInfo"`
+	Affinity           string `json:"Affinity" xml:"Affinity"`
+	Tolerations        string `json:"Tolerations" xml:"Tolerations"`
 }

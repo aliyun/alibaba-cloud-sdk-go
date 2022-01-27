@@ -17,7 +17,7 @@ package edas
 
 // LatestVersion is a nested struct in edas response
 type LatestVersion struct {
-	PackageVersion string `json:"PackageVersion" xml:"PackageVersion"`
 	Url            string `json:"Url" xml:"Url"`
 	WarUrl         string `json:"WarUrl" xml:"WarUrl"`
+	PackageVersion string `json:"PackageVersion" xml:"PackageVersion"`
 }

@@ -88,7 +88,7 @@ func CreateDeleteK8sIngressRuleRequest() (request *DeleteK8sIngressRuleRequest) 
 	request = &DeleteK8sIngressRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sIngressRule", "/pop/v5/k8s/acs/k8s_ingress", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sIngressRule", "/pop/v5/k8s/acs/k8s_ingress", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

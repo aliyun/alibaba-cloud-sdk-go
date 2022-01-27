@@ -88,7 +88,7 @@ func CreateGetK8sServicesRequest() (request *GetK8sServicesRequest) {
 	request = &GetK8sServicesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sServices", "/pop/v5/k8s/acs/k8s_service", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sServices", "/pop/v5/k8s/acs/k8s_service", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

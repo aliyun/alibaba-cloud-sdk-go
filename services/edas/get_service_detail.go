@@ -99,7 +99,7 @@ func CreateGetServiceDetailRequest() (request *GetServiceDetailRequest) {
 	request = &GetServiceDetailRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceDetail", "/pop/sp/api/mseForOam/getServiceDetail", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceDetail", "/pop/sp/api/mseForOam/getServiceDetail", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

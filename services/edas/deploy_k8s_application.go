@@ -72,21 +72,12 @@ func (client *Client) DeployK8sApplicationWithCallback(request *DeployK8sApplica
 type DeployK8sApplicationRequest struct {
 	*requests.RoaRequest
 	NasId                  string           `position:"Query" name:"NasId"`
-	WebContainer           string           `position:"Query" name:"WebContainer"`
-	EnableAhas             requests.Boolean `position:"Query" name:"EnableAhas"`
-	SlsConfigs             string           `position:"Query" name:"SlsConfigs"`
-	Readiness              string           `position:"Query" name:"Readiness"`
 	PackageVersionId       string           `position:"Query" name:"PackageVersionId"`
 	BatchWaitTime          requests.Integer `position:"Query" name:"BatchWaitTime"`
-	Liveness               string           `position:"Query" name:"Liveness"`
 	Envs                   string           `position:"Query" name:"Envs"`
 	CpuLimit               requests.Integer `position:"Query" name:"CpuLimit"`
-	PackageVersion         string           `position:"Query" name:"PackageVersion"`
 	StorageType            string           `position:"Query" name:"StorageType"`
-	EnvFroms               string           `position:"Query" name:"EnvFroms"`
 	ConfigMountDescs       string           `position:"Query" name:"ConfigMountDescs"`
-	EdasContainerVersion   string           `position:"Query" name:"EdasContainerVersion"`
-	PackageUrl             string           `position:"Query" name:"PackageUrl"`
 	MemoryLimit            requests.Integer `position:"Query" name:"MemoryLimit"`
 	ImageTag               string           `position:"Query" name:"ImageTag"`
 	DeployAcrossZones      string           `position:"Query" name:"DeployAcrossZones"`
@@ -94,38 +85,49 @@ type DeployK8sApplicationRequest struct {
 	MemoryRequest          requests.Integer `position:"Query" name:"MemoryRequest"`
 	Image                  string           `position:"Query" name:"Image"`
 	PreStop                string           `position:"Query" name:"PreStop"`
-	MountDescs             string           `position:"Query" name:"MountDescs"`
-	Replicas               requests.Integer `position:"Query" name:"Replicas"`
-	CpuRequest             requests.Integer `position:"Query" name:"CpuRequest"`
-	WebContainerConfig     string           `position:"Query" name:"WebContainerConfig"`
 	LocalVolume            string           `position:"Query" name:"LocalVolume"`
-	Command                string           `position:"Query" name:"Command"`
 	UpdateStrategy         string           `position:"Query" name:"UpdateStrategy"`
-	Args                   string           `position:"Query" name:"Args"`
-	JDK                    string           `position:"Query" name:"JDK"`
 	UseBodyEncoding        requests.Boolean `position:"Query" name:"UseBodyEncoding"`
 	ChangeOrderDesc        string           `position:"Query" name:"ChangeOrderDesc"`
+	EmptyDirs              string           `position:"Query" name:"EmptyDirs"`
+	McpuLimit              requests.Integer `position:"Query" name:"McpuLimit"`
+	RuntimeClassName       string           `position:"Query" name:"RuntimeClassName"`
+	TrafficControlStrategy string           `position:"Query" name:"TrafficControlStrategy"`
+	PostStart              string           `position:"Query" name:"PostStart"`
+	CustomAffinity         string           `position:"Query" name:"CustomAffinity"`
+	WebContainer           string           `position:"Query" name:"WebContainer"`
+	EnableAhas             requests.Boolean `position:"Query" name:"EnableAhas"`
+	SlsConfigs             string           `position:"Query" name:"SlsConfigs"`
+	Readiness              string           `position:"Query" name:"Readiness"`
+	Liveness               string           `position:"Query" name:"Liveness"`
+	PackageVersion         string           `position:"Query" name:"PackageVersion"`
+	EnvFroms               string           `position:"Query" name:"EnvFroms"`
+	EdasContainerVersion   string           `position:"Query" name:"EdasContainerVersion"`
+	PackageUrl             string           `position:"Query" name:"PackageUrl"`
+	MountDescs             string           `position:"Query" name:"MountDescs"`
+	Replicas               requests.Integer `position:"Query" name:"Replicas"`
+	CustomTolerations      string           `position:"Query" name:"CustomTolerations"`
+	CpuRequest             requests.Integer `position:"Query" name:"CpuRequest"`
+	WebContainerConfig     string           `position:"Query" name:"WebContainerConfig"`
+	Command                string           `position:"Query" name:"Command"`
+	Args                   string           `position:"Query" name:"Args"`
+	JDK                    string           `position:"Query" name:"JDK"`
 	UriEncoding            string           `position:"Query" name:"UriEncoding"`
 	AppId                  string           `position:"Query" name:"AppId"`
 	BatchTimeout           requests.Integer `position:"Query" name:"BatchTimeout"`
 	PvcMountDescs          string           `position:"Query" name:"PvcMountDescs"`
-	EmptyDirs              string           `position:"Query" name:"EmptyDirs"`
 	McpuRequest            requests.Integer `position:"Query" name:"McpuRequest"`
-	McpuLimit              requests.Integer `position:"Query" name:"McpuLimit"`
 	VolumesStr             string           `position:"Query" name:"VolumesStr"`
-	RuntimeClassName       string           `position:"Query" name:"RuntimeClassName"`
-	TrafficControlStrategy string           `position:"Query" name:"TrafficControlStrategy"`
-	PostStart              string           `position:"Query" name:"PostStart"`
 	JavaStartUpConfig      string           `position:"Query" name:"JavaStartUpConfig"`
 }
 
 // DeployK8sApplicationResponse is the response struct for api DeployK8sApplication
 type DeployK8sApplicationResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeployK8sApplicationRequest creates a request to invoke DeployK8sApplication API
@@ -133,7 +135,7 @@ func CreateDeployK8sApplicationRequest() (request *DeployK8sApplicationRequest) 
 	request = &DeployK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateDescribeApplicationScalingRulesRequest() (request *DescribeApplicatio
 	request = &DescribeApplicationScalingRulesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DescribeApplicationScalingRules", "/pop/v1/eam/scale/application_scaling_rules", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DescribeApplicationScalingRules", "/pop/v1/eam/scale/application_scaling_rules", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -89,7 +89,7 @@ func CreateDeleteK8sConfigMapRequest() (request *DeleteK8sConfigMapRequest) {
 	request = &DeleteK8sConfigMapRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sConfigMap", "/pop/v5/k8s/acs/k8s_config_map", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sConfigMap", "/pop/v5/k8s/acs/k8s_config_map", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

@@ -90,6 +90,7 @@ type InsertK8sApplicationRequest struct {
 	PackageType            string           `position:"Query" name:"PackageType"`
 	RuntimeClassName       string           `position:"Query" name:"RuntimeClassName"`
 	PostStart              string           `position:"Query" name:"PostStart"`
+	CustomAffinity         string           `position:"Query" name:"CustomAffinity"`
 	RepoId                 string           `position:"Query" name:"RepoId"`
 	InternetTargetPort     requests.Integer `position:"Query" name:"InternetTargetPort"`
 	WebContainer           string           `position:"Query" name:"WebContainer"`
@@ -114,6 +115,7 @@ type InsertK8sApplicationRequest struct {
 	MountDescs             string           `position:"Query" name:"MountDescs"`
 	Replicas               requests.Integer `position:"Query" name:"Replicas"`
 	LimitCpu               requests.Integer `position:"Query" name:"LimitCpu"`
+	CustomTolerations      string           `position:"Query" name:"CustomTolerations"`
 	WebContainerConfig     string           `position:"Query" name:"WebContainerConfig"`
 	IsMultilingualApp      requests.Boolean `position:"Query" name:"IsMultilingualApp"`
 	ClusterId              string           `position:"Query" name:"ClusterId"`
@@ -144,7 +146,7 @@ func CreateInsertK8sApplicationRequest() (request *InsertK8sApplicationRequest) 
 	request = &InsertK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

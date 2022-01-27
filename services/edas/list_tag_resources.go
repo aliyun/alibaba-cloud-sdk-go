@@ -91,7 +91,7 @@ func CreateListTagResourcesRequest() (request *ListTagResourcesRequest) {
 	request = &ListTagResourcesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListTagResources", "/pop/v5/tag/tags", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListTagResources", "/pop/v5/tag/tags", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }
