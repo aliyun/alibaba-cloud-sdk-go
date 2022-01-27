@@ -71,15 +71,9 @@ func (client *Client) AddHDMInstanceWithCallback(request *AddHDMInstanceRequest,
 // AddHDMInstanceRequest is the request struct for api AddHDMInstance
 type AddHDMInstanceRequest struct {
 	*requests.RpcRequest
-	SkipAuth      string `position:"Query" name:"skipAuth"`
-	Signature     string `position:"Query" name:"signature"`
 	NetworkType   string `position:"Query" name:"NetworkType"`
-	UserId        string `position:"Query" name:"UserId"`
-	Uid           string `position:"Query" name:"Uid"`
 	Password      string `position:"Query" name:"Password"`
-	AccessKey     string `position:"Query" name:"accessKey"`
 	Engine        string `position:"Query" name:"Engine"`
-	Timestamp     string `position:"Query" name:"timestamp"`
 	Context       string `position:"Query" name:"__context"`
 	Ip            string `position:"Query" name:"Ip"`
 	InstanceAlias string `position:"Query" name:"InstanceAlias"`

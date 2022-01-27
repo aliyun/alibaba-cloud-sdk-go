@@ -73,6 +73,8 @@ type GetResourceOptimizeHistoryListRequest struct {
 	*requests.RpcRequest
 	Context    string           `position:"Query" name:"__context"`
 	Signature  string           `position:"Query" name:"Signature"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	StartTime  string           `position:"Query" name:"StartTime"`
 	UserId     string           `position:"Query" name:"UserId"`
 	Uid        string           `position:"Query" name:"Uid"`
 	InstanceId string           `position:"Query" name:"InstanceId"`

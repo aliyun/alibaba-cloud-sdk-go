@@ -17,14 +17,17 @@ package das
 
 // Rules is a nested struct in das response
 type Rules struct {
-	ItemId                 int64  `json:"ItemId" xml:"ItemId"`
+	Name                   string `json:"Name" xml:"Name"`
+	KeywordsHash           string `json:"KeywordsHash" xml:"KeywordsHash"`
+	RuleId                 string `json:"RuleId" xml:"RuleId"`
+	StartTime              int64  `json:"StartTime" xml:"StartTime"`
 	SqlType                string `json:"SqlType" xml:"SqlType"`
 	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-	SqlKeywords            string `json:"SqlKeywords" xml:"SqlKeywords"`
-	StartTime              int64  `json:"StartTime" xml:"StartTime"`
-	KeywordsHash           string `json:"KeywordsHash" xml:"KeywordsHash"`
-	ConcurrencyControlTime int64  `json:"ConcurrencyControlTime" xml:"ConcurrencyControlTime"`
 	UserId                 string `json:"UserId" xml:"UserId"`
+	ConcurrencyControlTime int64  `json:"ConcurrencyControlTime" xml:"ConcurrencyControlTime"`
 	MaxConcurrency         int64  `json:"MaxConcurrency" xml:"MaxConcurrency"`
 	Status                 string `json:"Status" xml:"Status"`
+	ItemId                 int64  `json:"ItemId" xml:"ItemId"`
+	Type                   string `json:"Type" xml:"Type"`
+	SqlKeywords            string `json:"SqlKeywords" xml:"SqlKeywords"`
 }

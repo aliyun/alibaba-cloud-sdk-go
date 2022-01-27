@@ -71,16 +71,9 @@ func (client *Client) CreateDiagnosticReportWithCallback(request *CreateDiagnost
 // CreateDiagnosticReportRequest is the request struct for api CreateDiagnosticReport
 type CreateDiagnosticReportRequest struct {
 	*requests.RpcRequest
-	SkipAuth     string `position:"Query" name:"skipAuth"`
-	Context      string `position:"Query" name:"__context"`
-	Signature    string `position:"Query" name:"signature"`
 	EndTime      string `position:"Query" name:"EndTime"`
 	StartTime    string `position:"Query" name:"StartTime"`
-	UserId       string `position:"Query" name:"UserId"`
-	Uid          string `position:"Query" name:"Uid"`
-	AccessKey    string `position:"Query" name:"accessKey"`
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
-	Timestamp    string `position:"Query" name:"timestamp"`
 }
 
 // CreateDiagnosticReportResponse is the response struct for api CreateDiagnosticReport
@@ -88,7 +81,6 @@ type CreateDiagnosticReportResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
-	Synchro   string `json:"Synchro" xml:"Synchro"`
 	Data      string `json:"Data" xml:"Data"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   string `json:"Success" xml:"Success"`
