@@ -17,11 +17,11 @@ package dds
 
 // CompatibleConnection is a nested struct in dds response
 type CompatibleConnection struct {
-	NetworkAddress string `json:"NetworkAddress" xml:"NetworkAddress"`
-	IPAddress      string `json:"IPAddress" xml:"IPAddress"`
-	NetworkType    string `json:"NetworkType" xml:"NetworkType"`
-	Port           string `json:"Port" xml:"Port"`
-	VPCId          string `json:"VPCId" xml:"VPCId"`
 	VswitchId      string `json:"VswitchId" xml:"VswitchId"`
 	ExpiredTime    string `json:"ExpiredTime" xml:"ExpiredTime"`
+	NetworkType    string `json:"NetworkType" xml:"NetworkType"`
+	Port           string `json:"Port" xml:"Port"`
+	NetworkAddress string `json:"NetworkAddress" xml:"NetworkAddress"`
+	VPCId          string `json:"VPCId" xml:"VPCId"`
+	IPAddress      string `json:"IPAddress" xml:"IPAddress"`
 }

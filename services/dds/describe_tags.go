@@ -83,9 +83,9 @@ type DescribeTagsRequest struct {
 // DescribeTagsResponse is the response struct for api DescribeTags
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
-	NextToken string              `json:"NextToken" xml:"NextToken"`
-	Tags      []TagInDescribeTags `json:"Tags" xml:"Tags"`
+	NextToken string `json:"NextToken" xml:"NextToken"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Tags      []Tag  `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeTagsRequest creates a request to invoke DescribeTags API

@@ -82,10 +82,18 @@ type DescribeMongoDBLogConfigRequest struct {
 // DescribeMongoDBLogConfigResponse is the response struct for api DescribeMongoDBLogConfig
 type DescribeMongoDBLogConfigResponse struct {
 	*responses.BaseResponse
-	RequestId                  string `json:"RequestId" xml:"RequestId"`
 	UserProjectName            string `json:"UserProjectName" xml:"UserProjectName"`
+	RequestId                  string `json:"RequestId" xml:"RequestId"`
 	IsUserProjectLogstoreExist int    `json:"IsUserProjectLogstoreExist" xml:"IsUserProjectLogstoreExist"`
 	IsEtlMetaExist             int    `json:"IsEtlMetaExist" xml:"IsEtlMetaExist"`
+	ServiceType                string `json:"ServiceType" xml:"ServiceType"`
+	EnableAudit                bool   `json:"EnableAudit" xml:"EnableAudit"`
+	TtlForTrail                int64  `json:"TtlForTrail" xml:"TtlForTrail"`
+	UsedStorageForTrail        int64  `json:"UsedStorageForTrail" xml:"UsedStorageForTrail"`
+	PreserveStorageForTrail    int64  `json:"PreserveStorageForTrail" xml:"PreserveStorageForTrail"`
+	TtlForStandard             int64  `json:"TtlForStandard" xml:"TtlForStandard"`
+	UsedStorageForStandard     int64  `json:"UsedStorageForStandard" xml:"UsedStorageForStandard"`
+	PreserveStorageForStandard int64  `json:"PreserveStorageForStandard" xml:"PreserveStorageForStandard"`
 }
 
 // CreateDescribeMongoDBLogConfigRequest creates a request to invoke DescribeMongoDBLogConfig API

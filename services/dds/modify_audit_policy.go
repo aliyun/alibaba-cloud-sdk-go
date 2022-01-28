@@ -74,11 +74,13 @@ type ModifyAuditPolicyRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StoragePeriod        requests.Integer `position:"Query" name:"StoragePeriod"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	AuditLogSwitchSource string           `position:"Query" name:"AuditLogSwitchSource"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	AuditStatus          string           `position:"Query" name:"AuditStatus"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ServiceType          string           `position:"Query" name:"ServiceType"`
 }
 
 // ModifyAuditPolicyResponse is the response struct for api ModifyAuditPolicy

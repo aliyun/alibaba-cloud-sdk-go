@@ -86,8 +86,8 @@ type DescribeRenewalPriceResponse struct {
 	*responses.BaseResponse
 	RequestId string                          `json:"RequestId" xml:"RequestId"`
 	Order     OrderInDescribeRenewalPrice     `json:"Order" xml:"Order"`
-	Rules     RulesInDescribeRenewalPrice     `json:"Rules" xml:"Rules"`
 	SubOrders SubOrdersInDescribeRenewalPrice `json:"SubOrders" xml:"SubOrders"`
+	Rules     RulesInDescribeRenewalPrice     `json:"Rules" xml:"Rules"`
 }
 
 // CreateDescribeRenewalPriceRequest creates a request to invoke DescribeRenewalPrice API

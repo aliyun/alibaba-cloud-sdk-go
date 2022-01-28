@@ -17,8 +17,8 @@ package dds
 
 // Tag is a nested struct in dds response
 type Tag struct {
-	Key       string    `json:"Key" xml:"Key"`
-	Value     string    `json:"Value" xml:"Value"`
-	TagKey    string    `json:"TagKey" xml:"TagKey"`
-	TagValues TagValues `json:"TagValues" xml:"TagValues"`
+	Key       string   `json:"Key" xml:"Key"`
+	Value     string   `json:"Value" xml:"Value"`
+	TagKey    string   `json:"TagKey" xml:"TagKey"`
+	TagValues []string `json:"TagValues" xml:"TagValues"`
 }

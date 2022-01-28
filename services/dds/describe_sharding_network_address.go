@@ -84,8 +84,8 @@ type DescribeShardingNetworkAddressRequest struct {
 type DescribeShardingNetworkAddressResponse struct {
 	*responses.BaseResponse
 	RequestId             string                `json:"RequestId" xml:"RequestId"`
-	NetworkAddresses      NetworkAddresses      `json:"NetworkAddresses" xml:"NetworkAddresses"`
 	CompatibleConnections CompatibleConnections `json:"CompatibleConnections" xml:"CompatibleConnections"`
+	NetworkAddresses      NetworkAddresses      `json:"NetworkAddresses" xml:"NetworkAddresses"`
 }
 
 // CreateDescribeShardingNetworkAddressRequest creates a request to invoke DescribeShardingNetworkAddress API

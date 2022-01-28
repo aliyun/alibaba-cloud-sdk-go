@@ -18,8 +18,8 @@ package dds
 // OrderInDescribeRenewalPrice is a nested struct in dds response
 type OrderInDescribeRenewalPrice struct {
 	OriginalAmount float64                       `json:"OriginalAmount" xml:"OriginalAmount"`
-	TradeAmount    float64                       `json:"TradeAmount" xml:"TradeAmount"`
 	DiscountAmount float64                       `json:"DiscountAmount" xml:"DiscountAmount"`
+	TradeAmount    float64                       `json:"TradeAmount" xml:"TradeAmount"`
 	Currency       string                        `json:"Currency" xml:"Currency"`
 	RuleIds        RuleIdsInDescribeRenewalPrice `json:"RuleIds" xml:"RuleIds"`
 	Coupons        CouponsInDescribeRenewalPrice `json:"Coupons" xml:"Coupons"`
