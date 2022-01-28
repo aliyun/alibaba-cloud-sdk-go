@@ -71,20 +71,21 @@ func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback 
 // ListUsersRequest is the request struct for api ListUsers
 type ListUsersRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SearchPattern string           `position:"Query" name:"SearchPattern"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListUsersResponse is the response struct for api ListUsers
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Users          Users  `json:"Users" xml:"Users"`
+	Code           string          `json:"Code" xml:"Code"`
+	HttpStatusCode int             `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string          `json:"Message" xml:"Message"`
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	Params         []string        `json:"Params" xml:"Params"`
+	Data           DataInListUsers `json:"Data" xml:"Data"`
 }
 
 // CreateListUsersRequest creates a request to invoke ListUsers API
@@ -92,7 +93,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListUsers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListUsers", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -71,19 +71,24 @@ func (client *Client) ListPhoneNumbersWithCallback(request *ListPhoneNumbersRequ
 // ListPhoneNumbersRequest is the request struct for api ListPhoneNumbers
 type ListPhoneNumbersRequest struct {
 	*requests.RpcRequest
-	OutboundOnly requests.Boolean `position:"Query" name:"OutboundOnly"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
+	Usage         string           `position:"Query" name:"Usage"`
+	Active        requests.Boolean `position:"Query" name:"Active"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SearchPattern string           `position:"Query" name:"SearchPattern"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListPhoneNumbersResponse is the response struct for api ListPhoneNumbers
 type ListPhoneNumbersResponse struct {
 	*responses.BaseResponse
-	RequestId      string                         `json:"RequestId" xml:"RequestId"`
-	Success        bool                           `json:"Success" xml:"Success"`
-	Code           string                         `json:"Code" xml:"Code"`
-	Message        string                         `json:"Message" xml:"Message"`
-	HttpStatusCode int                            `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	PhoneNumbers   PhoneNumbersInListPhoneNumbers `json:"PhoneNumbers" xml:"PhoneNumbers"`
+	HttpStatusCode int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string                 `json:"RequestId" xml:"RequestId"`
+	Code           string                 `json:"Code" xml:"Code"`
+	Message        string                 `json:"Message" xml:"Message"`
+	PageNumber     int                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int                    `json:"PageSize" xml:"PageSize"`
+	Data           DataInListPhoneNumbers `json:"Data" xml:"Data"`
 }
 
 // CreateListPhoneNumbersRequest creates a request to invoke ListPhoneNumbers API
@@ -91,7 +96,7 @@ func CreateListPhoneNumbersRequest() (request *ListPhoneNumbersRequest) {
 	request = &ListPhoneNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListPhoneNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListPhoneNumbers", "", "")
 	request.Method = requests.POST
 	return
 }

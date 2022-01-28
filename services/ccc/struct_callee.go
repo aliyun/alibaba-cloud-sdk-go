@@ -17,7 +17,7 @@ package ccc
 
 // Callee is a nested struct in ccc response
 type Callee struct {
-	City     string `json:"City" xml:"City"`
 	Number   string `json:"Number" xml:"Number"`
+	City     string `json:"City" xml:"City"`
 	Province string `json:"Province" xml:"Province"`
 }

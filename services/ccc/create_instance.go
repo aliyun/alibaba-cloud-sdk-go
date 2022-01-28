@@ -71,27 +71,22 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	PhoneNumbers   *[]string        `position:"Query" name:"PhoneNumbers"  type:"Repeated"`
-	UserObject     *[]string        `position:"Query" name:"UserObject"  type:"Repeated"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	PhoneNumber    string           `position:"Query" name:"PhoneNumber"`
-	Description    string           `position:"Query" name:"Description"`
-	StorageMaxDays requests.Integer `position:"Query" name:"StorageMaxDays"`
-	AdminRamId     *[]string        `position:"Query" name:"AdminRamId"  type:"Repeated"`
-	Name           string           `position:"Query" name:"Name"`
-	StorageMaxSize requests.Integer `position:"Query" name:"StorageMaxSize"`
-	DirectoryId    string           `position:"Query" name:"DirectoryId"`
+	AdminRamIdList string `position:"Query" name:"AdminRamIdList"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	Description    string `position:"Query" name:"Description"`
+	NumberList     string `position:"Query" name:"NumberList"`
+	Name           string `position:"Query" name:"Name"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId      string                   `json:"RequestId" xml:"RequestId"`
-	Success        bool                     `json:"Success" xml:"Success"`
-	Code           string                   `json:"Code" xml:"Code"`
-	Message        string                   `json:"Message" xml:"Message"`
-	HttpStatusCode int                      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Instance       InstanceInCreateInstance `json:"Instance" xml:"Instance"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string   `json:"Code" xml:"Code"`
+	Message        string   `json:"Message" xml:"Message"`
+	Data           string   `json:"Data" xml:"Data"`
+	RequestId      string   `json:"RequestId" xml:"RequestId"`
+	Params         []string `json:"Params" xml:"Params"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API
@@ -99,7 +94,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "CreateInstance", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CreateInstance", "", "")
 	request.Method = requests.POST
 	return
 }

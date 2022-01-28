@@ -77,12 +77,11 @@ type ListRolesRequest struct {
 // ListRolesResponse is the response struct for api ListRoles
 type ListRolesResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	Success        bool             `json:"Success" xml:"Success"`
-	Code           string           `json:"Code" xml:"Code"`
-	Message        string           `json:"Message" xml:"Message"`
-	HttpStatusCode int              `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Roles          RolesInListRoles `json:"Roles" xml:"Roles"`
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           []Role `json:"Data" xml:"Data"`
 }
 
 // CreateListRolesRequest creates a request to invoke ListRoles API
@@ -90,7 +89,7 @@ func CreateListRolesRequest() (request *ListRolesRequest) {
 	request = &ListRolesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListRoles", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListRoles", "", "")
 	request.Method = requests.POST
 	return
 }

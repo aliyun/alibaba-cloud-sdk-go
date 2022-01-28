@@ -71,22 +71,19 @@ func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRe
 // ModifyPhoneNumberRequest is the request struct for api ModifyPhoneNumber
 type ModifyPhoneNumberRequest struct {
 	*requests.RpcRequest
-	ContactFlowId string    `position:"Query" name:"ContactFlowId"`
-	Usage         string    `position:"Query" name:"Usage"`
-	InstanceId    string    `position:"Query" name:"InstanceId"`
-	PhoneNumberId string    `position:"Query" name:"PhoneNumberId"`
-	SkillGroupId  *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
+	ContactFlowId string `position:"Query" name:"ContactFlowId"`
+	Usage         string `position:"Query" name:"Usage"`
+	Number        string `position:"Query" name:"Number"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
 }
 
 // ModifyPhoneNumberResponse is the response struct for api ModifyPhoneNumber
 type ModifyPhoneNumberResponse struct {
 	*responses.BaseResponse
-	RequestId      string      `json:"RequestId" xml:"RequestId"`
-	Success        bool        `json:"Success" xml:"Success"`
-	Code           string      `json:"Code" xml:"Code"`
-	Message        string      `json:"Message" xml:"Message"`
-	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	PhoneNumber    PhoneNumber `json:"PhoneNumber" xml:"PhoneNumber"`
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyPhoneNumberRequest creates a request to invoke ModifyPhoneNumber API
@@ -94,7 +91,7 @@ func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
 	request = &ModifyPhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyPhoneNumber", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyPhoneNumber", "", "")
 	request.Method = requests.POST
 	return
 }

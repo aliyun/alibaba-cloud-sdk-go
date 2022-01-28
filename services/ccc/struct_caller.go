@@ -17,7 +17,7 @@ package ccc
 
 // Caller is a nested struct in ccc response
 type Caller struct {
-	City     string `json:"City" xml:"City"`
 	Number   string `json:"Number" xml:"Number"`
+	City     string `json:"City" xml:"City"`
 	Province string `json:"Province" xml:"Province"`
 }

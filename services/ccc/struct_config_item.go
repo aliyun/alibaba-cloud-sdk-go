@@ -17,6 +17,9 @@ package ccc
 
 // ConfigItem is a nested struct in ccc response
 type ConfigItem struct {
-	Name  string `json:"Name" xml:"Name"`
-	Value string `json:"Value" xml:"Value"`
+	ObjectId   string `json:"ObjectId" xml:"ObjectId"`
+	Value      string `json:"Value" xml:"Value"`
+	ObjectType string `json:"ObjectType" xml:"ObjectType"`
+	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	Name       string `json:"Name" xml:"Name"`
 }

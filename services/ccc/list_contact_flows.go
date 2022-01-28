@@ -71,18 +71,20 @@ func (client *Client) ListContactFlowsWithCallback(request *ListContactFlowsRequ
 // ListContactFlowsRequest is the request struct for api ListContactFlows
 type ListContactFlowsRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
+	Type       string           `position:"Query" name:"Type"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListContactFlowsResponse is the response struct for api ListContactFlows
 type ListContactFlowsResponse struct {
 	*responses.BaseResponse
-	RequestId      string       `json:"RequestId" xml:"RequestId"`
-	Success        bool         `json:"Success" xml:"Success"`
-	Code           string       `json:"Code" xml:"Code"`
-	Message        string       `json:"Message" xml:"Message"`
-	HttpStatusCode int          `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	ContactFlows   ContactFlows `json:"ContactFlows" xml:"ContactFlows"`
+	Code           string                 `json:"Code" xml:"Code"`
+	HttpStatusCode int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                 `json:"Message" xml:"Message"`
+	RequestId      string                 `json:"RequestId" xml:"RequestId"`
+	Data           DataInListContactFlows `json:"Data" xml:"Data"`
 }
 
 // CreateListContactFlowsRequest creates a request to invoke ListContactFlows API
@@ -90,7 +92,7 @@ func CreateListContactFlowsRequest() (request *ListContactFlowsRequest) {
 	request = &ListContactFlowsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListContactFlows", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListContactFlows", "", "")
 	request.Method = requests.POST
 	return
 }

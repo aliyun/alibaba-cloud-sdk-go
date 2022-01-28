@@ -71,23 +71,20 @@ func (client *Client) ListAgentStateLogsWithCallback(request *ListAgentStateLogs
 // ListAgentStateLogsRequest is the request struct for api ListAgentStateLogs
 type ListAgentStateLogsRequest struct {
 	*requests.RpcRequest
+	AgentId    string           `position:"Query" name:"AgentId"`
 	EndTime    requests.Integer `position:"Query" name:"EndTime"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
-	RamId      requests.Integer `position:"Query" name:"RamId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListAgentStateLogsResponse is the response struct for api ListAgentStateLogs
 type ListAgentStateLogsResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	Success           bool              `json:"Success" xml:"Success"`
-	Code              string            `json:"Code" xml:"Code"`
-	Message           string            `json:"Message" xml:"Message"`
-	HttpStatusCode    int               `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	AgentStateLogPage AgentStateLogPage `json:"AgentStateLogPage" xml:"AgentStateLogPage"`
+	Code           string     `json:"Code" xml:"Code"`
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string     `json:"Message" xml:"Message"`
+	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	Data           []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateListAgentStateLogsRequest creates a request to invoke ListAgentStateLogs API
@@ -95,7 +92,7 @@ func CreateListAgentStateLogsRequest() (request *ListAgentStateLogsRequest) {
 	request = &ListAgentStateLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListAgentStateLogs", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListAgentStateLogs", "", "")
 	request.Method = requests.POST
 	return
 }
