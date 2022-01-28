@@ -26,4 +26,5 @@ type LoadBalancer struct {
 	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
 	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
 	AddressIPVersion   string `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	PayType            string `json:"PayType" xml:"PayType"`
 }

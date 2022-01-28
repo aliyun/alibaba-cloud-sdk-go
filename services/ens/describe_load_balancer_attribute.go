@@ -90,6 +90,7 @@ type DescribeLoadBalancerAttributeResponse struct {
 	CreateTime                string     `json:"CreateTime" xml:"CreateTime"`
 	EndTime                   string     `json:"EndTime" xml:"EndTime"`
 	AddressIPVersion          string     `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	PayType                   string     `json:"PayType" xml:"PayType"`
 	ListenerPorts             []string   `json:"ListenerPorts" xml:"ListenerPorts"`
 	BackendServers            []Rs       `json:"BackendServers" xml:"BackendServers"`
 	ListenerPortsAndProtocols []Listener `json:"ListenerPortsAndProtocols" xml:"ListenerPortsAndProtocols"`
@@ -101,7 +102,7 @@ func CreateDescribeLoadBalancerAttributeRequest() (request *DescribeLoadBalancer
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribeLoadBalancerAttribute", "ens", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

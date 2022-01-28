@@ -26,4 +26,5 @@ type DeviceInfo struct {
 	Mac        string `json:"Mac" xml:"Mac"`
 	ISP        string `json:"ISP" xml:"ISP"`
 	DeviceName string `json:"DeviceName" xml:"DeviceName"`
+	ImageID    string `json:"ImageID" xml:"ImageID"`
 }
