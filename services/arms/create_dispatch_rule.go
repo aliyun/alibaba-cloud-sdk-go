@@ -87,7 +87,7 @@ func CreateCreateDispatchRuleRequest() (request *CreateDispatchRuleRequest) {
 	request = &CreateDispatchRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateDispatchRule", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateDispatchRule", "", "")
 	request.Method = requests.POST
 	return
 }

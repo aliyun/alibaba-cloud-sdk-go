@@ -94,7 +94,7 @@ func CreateGetAppApiByPageRequest() (request *GetAppApiByPageRequest) {
 	request = &GetAppApiByPageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetAppApiByPage", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetAppApiByPage", "", "")
 	request.Method = requests.POST
 	return
 }

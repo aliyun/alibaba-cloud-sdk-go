@@ -86,7 +86,7 @@ func CreateUninstallPromClusterRequest() (request *UninstallPromClusterRequest) 
 	request = &UninstallPromClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "UninstallPromCluster", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "UninstallPromCluster", "", "")
 	request.Method = requests.POST
 	return
 }

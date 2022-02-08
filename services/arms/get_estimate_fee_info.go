@@ -88,7 +88,7 @@ func CreateGetEstimateFeeInfoRequest() (request *GetEstimateFeeInfoRequest) {
 	request = &GetEstimateFeeInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetEstimateFeeInfo", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetEstimateFeeInfo", "", "")
 	request.Method = requests.GET
 	return
 }

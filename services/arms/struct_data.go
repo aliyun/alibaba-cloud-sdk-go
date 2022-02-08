@@ -17,9 +17,20 @@ package arms
 
 // Data is a nested struct in arms response
 type Data struct {
-	IsControllerInstalled bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
-	Page                  int                      `json:"Page" xml:"Page"`
-	Total                 string                   `json:"Total" xml:"Total"`
-	PageSize              int                      `json:"PageSize" xml:"PageSize"`
-	Items                 []map[string]interface{} `json:"Items" xml:"Items"`
+	ArmsDBNotExist          bool                     `json:"ArmsDBNotExist" xml:"ArmsDBNotExist"`
+	IsControllerInstalled   bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
+	PodIsNotRestart         bool                     `json:"PodIsNotRestart" xml:"PodIsNotRestart"`
+	NeedIntervention        bool                     `json:"NeedIntervention" xml:"NeedIntervention"`
+	IsFlink                 bool                     `json:"IsFlink" xml:"IsFlink"`
+	PageSize                int                      `json:"PageSize" xml:"PageSize"`
+	CheckType               string                   `json:"CheckType" xml:"CheckType"`
+	AgentServiceNotExist    bool                     `json:"AgentServiceNotExist" xml:"AgentServiceNotExist"`
+	NodeSizeIsZero          bool                     `json:"NodeSizeIsZero" xml:"NodeSizeIsZero"`
+	AckNotRunning           bool                     `json:"AckNotRunning" xml:"AckNotRunning"`
+	Page                    int                      `json:"Page" xml:"Page"`
+	Total                   string                   `json:"Total" xml:"Total"`
+	HaveAgentNodeIsNotReady bool                     `json:"HaveAgentNodeIsNotReady" xml:"HaveAgentNodeIsNotReady"`
+	AgentHelmNotExist       bool                     `json:"AgentHelmNotExist" xml:"AgentHelmNotExist"`
+	GetClusterInfo          string                   `json:"GetClusterInfo" xml:"GetClusterInfo"`
+	Items                   []map[string]interface{} `json:"Items" xml:"Items"`
 }

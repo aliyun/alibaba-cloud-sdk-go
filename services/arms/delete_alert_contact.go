@@ -87,7 +87,7 @@ func CreateDeleteAlertContactRequest() (request *DeleteAlertContactRequest) {
 	request = &DeleteAlertContactRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteAlertContact", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteAlertContact", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateGetRetcodeShareUrlRequest() (request *GetRetcodeShareUrlRequest) {
 	request = &GetRetcodeShareUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetRetcodeShareUrl", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetRetcodeShareUrl", "", "")
 	request.Method = requests.POST
 	return
 }

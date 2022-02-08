@@ -1,3 +1,7 @@
+2022-02-08 Version: v1.61.1474
+- Generated 2019-08-08 for `ARMS`.
+- New add DeleteIntegration and GetIntegrationState api.
+
 2022-01-28 Version: v1.61.1473
 - Generated 2017-11-10 for `Ens`.
 - Support cloud disk.
