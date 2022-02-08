@@ -1,3 +1,7 @@
+2022-02-08 Version: v1.61.1477
+- Generated 2017-05-25 for `Dypnsapi`.
+- Supported New Features.
+
 2022-02-08 Version: v1.61.1476
 - Generated 2018-01-20 for `Iot`.
 - Iot_20180120 oldversion sdk.
