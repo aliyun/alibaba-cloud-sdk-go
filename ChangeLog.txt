@@ -1,3 +1,7 @@
+2022-02-08 Version: v1.61.1475
+- Generated 2016-04-28 for `Vpc`.
+- Support ListEnhanhcedNatGatewayAvailableZones.
+
 2022-02-08 Version: v1.61.1474
 - Generated 2019-08-08 for `ARMS`.
 - New add DeleteIntegration and GetIntegrationState api.
