@@ -1,3 +1,7 @@
+2022-02-08 Version: v1.61.1476
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 oldversion sdk.
+
 2022-02-08 Version: v1.61.1475
 - Generated 2016-04-28 for `Vpc`.
 - Support ListEnhanhcedNatGatewayAvailableZones.

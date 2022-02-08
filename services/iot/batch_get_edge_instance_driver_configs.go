@@ -93,7 +93,7 @@ func CreateBatchGetEdgeInstanceDriverConfigsRequest() (request *BatchGetEdgeInst
 	request = &BatchGetEdgeInstanceDriverConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetEdgeInstanceDriverConfigs", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetEdgeInstanceDriverConfigs", "", "")
 	request.Method = requests.POST
 	return
 }

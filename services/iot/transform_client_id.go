@@ -93,7 +93,7 @@ func CreateTransformClientIdRequest() (request *TransformClientIdRequest) {
 	request = &TransformClientIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "TransformClientId", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "TransformClientId", "", "")
 	request.Method = requests.POST
 	return
 }

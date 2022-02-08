@@ -94,7 +94,7 @@ func CreateQuerySceneRuleRequest() (request *QuerySceneRuleRequest) {
 	request = &QuerySceneRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySceneRule", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySceneRule", "", "")
 	request.Method = requests.POST
 	return
 }

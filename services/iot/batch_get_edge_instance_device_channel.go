@@ -94,7 +94,7 @@ func CreateBatchGetEdgeInstanceDeviceChannelRequest() (request *BatchGetEdgeInst
 	request = &BatchGetEdgeInstanceDeviceChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetEdgeInstanceDeviceChannel", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetEdgeInstanceDeviceChannel", "", "")
 	request.Method = requests.POST
 	return
 }

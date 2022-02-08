@@ -93,7 +93,7 @@ func CreateAddDataForApiSourceRequest() (request *AddDataForApiSourceRequest) {
 	request = &AddDataForApiSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "AddDataForApiSource", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "AddDataForApiSource", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateDeleteSceneRuleRequest() (request *DeleteSceneRuleRequest) {
 	request = &DeleteSceneRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSceneRule", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSceneRule", "", "")
 	request.Method = requests.POST
 	return
 }

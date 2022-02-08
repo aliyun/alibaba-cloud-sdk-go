@@ -92,7 +92,7 @@ func CreateGetSpeechDeviceDetailRequest() (request *GetSpeechDeviceDetailRequest
 	request = &GetSpeechDeviceDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetSpeechDeviceDetail", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetSpeechDeviceDetail", "", "")
 	request.Method = requests.POST
 	return
 }

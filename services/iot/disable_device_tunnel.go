@@ -92,7 +92,7 @@ func CreateDisableDeviceTunnelRequest() (request *DisableDeviceTunnelRequest) {
 	request = &DisableDeviceTunnelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DisableDeviceTunnel", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DisableDeviceTunnel", "", "")
 	request.Method = requests.POST
 	return
 }

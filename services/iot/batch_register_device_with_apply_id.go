@@ -95,7 +95,7 @@ func CreateBatchRegisterDeviceWithApplyIdRequest() (request *BatchRegisterDevice
 	request = &BatchRegisterDeviceWithApplyIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchRegisterDeviceWithApplyId", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchRegisterDeviceWithApplyId", "", "")
 	request.Method = requests.POST
 	return
 }

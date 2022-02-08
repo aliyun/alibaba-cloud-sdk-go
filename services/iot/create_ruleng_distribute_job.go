@@ -92,7 +92,7 @@ func CreateCreateRulengDistributeJobRequest() (request *CreateRulengDistributeJo
 	request = &CreateRulengDistributeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateRulengDistributeJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateRulengDistributeJob", "", "")
 	request.Method = requests.POST
 	return
 }

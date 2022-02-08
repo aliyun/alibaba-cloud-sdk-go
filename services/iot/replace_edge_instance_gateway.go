@@ -93,7 +93,7 @@ func CreateReplaceEdgeInstanceGatewayRequest() (request *ReplaceEdgeInstanceGate
 	request = &ReplaceEdgeInstanceGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ReplaceEdgeInstanceGateway", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ReplaceEdgeInstanceGateway", "", "")
 	request.Method = requests.POST
 	return
 }

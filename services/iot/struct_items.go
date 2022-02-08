@@ -25,6 +25,8 @@ type Items struct {
 	SourceInstanceName    string                                         `json:"SourceInstanceName" xml:"SourceInstanceName"`
 	SourceRegion          string                                         `json:"SourceRegion" xml:"SourceRegion"`
 	TargetAliyunId        string                                         `json:"TargetAliyunId" xml:"TargetAliyunId"`
+	SoundCodeContent      string                                         `json:"SoundCodeContent" xml:"SoundCodeContent"`
+	Duration              int                                            `json:"Duration" xml:"Duration"`
 	Size                  float64                                        `json:"Size" xml:"Size"`
 	TargetUid             string                                         `json:"TargetUid" xml:"TargetUid"`
 	TargetRegion          string                                         `json:"TargetRegion" xml:"TargetRegion"`
@@ -34,6 +36,7 @@ type Items struct {
 	Status                int                                            `json:"Status" xml:"Status"`
 	Label                 string                                         `json:"Label" xml:"Label"`
 	ProductKey            string                                         `json:"ProductKey" xml:"ProductKey"`
+	SoundCode             string                                         `json:"SoundCode" xml:"SoundCode"`
 	TargetInstanceId      string                                         `json:"TargetInstanceId" xml:"TargetInstanceId"`
 	GmtCreate             int64                                          `json:"GmtCreate" xml:"GmtCreate"`
 	SourceUid             string                                         `json:"SourceUid" xml:"SourceUid"`

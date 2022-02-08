@@ -99,7 +99,7 @@ func CreateSpeechBySynthesisRequest() (request *SpeechBySynthesisRequest) {
 	request = &SpeechBySynthesisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SpeechBySynthesis", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SpeechBySynthesis", "", "")
 	request.Method = requests.POST
 	return
 }

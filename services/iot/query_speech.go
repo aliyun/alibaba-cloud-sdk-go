@@ -92,7 +92,7 @@ func CreateQuerySpeechRequest() (request *QuerySpeechRequest) {
 	request = &QuerySpeechRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeech", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeech", "", "")
 	request.Method = requests.POST
 	return
 }

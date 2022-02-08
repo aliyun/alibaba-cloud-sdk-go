@@ -94,7 +94,7 @@ func CreateSetupStudioAppAuthModeOpenRequest() (request *SetupStudioAppAuthModeO
 	request = &SetupStudioAppAuthModeOpenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SetupStudioAppAuthModeOpen", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SetupStudioAppAuthModeOpen", "", "")
 	request.Method = requests.POST
 	return
 }

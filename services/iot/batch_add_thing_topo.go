@@ -104,7 +104,7 @@ func CreateBatchAddThingTopoRequest() (request *BatchAddThingTopoRequest) {
 	request = &BatchAddThingTopoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchAddThingTopo", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchAddThingTopo", "", "")
 	request.Method = requests.POST
 	return
 }

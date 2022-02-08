@@ -75,6 +75,8 @@ type ListDeviceDistributeJobRequest struct {
 	NextToken   string           `position:"Query" name:"NextToken"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	ProductKey  string           `position:"Query" name:"ProductKey"`
+	JobType     string           `position:"Query" name:"JobType"`
 	ApiProduct  string           `position:"Body" name:"ApiProduct"`
 	ApiRevision string           `position:"Body" name:"ApiRevision"`
 	TargetUid   string           `position:"Query" name:"TargetUid"`
@@ -96,7 +98,7 @@ func CreateListDeviceDistributeJobRequest() (request *ListDeviceDistributeJobReq
 	request = &ListDeviceDistributeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListDeviceDistributeJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListDeviceDistributeJob", "", "")
 	request.Method = requests.POST
 	return
 }

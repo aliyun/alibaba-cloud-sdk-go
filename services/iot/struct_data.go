@@ -55,6 +55,7 @@ type Data struct {
 	Udi                       string                    `json:"Udi" xml:"Udi"`
 	IsOpen                    bool                      `json:"IsOpen" xml:"IsOpen"`
 	SourceURI                 string                    `json:"SourceURI" xml:"SourceURI"`
+	TotalSize                 int                       `json:"TotalSize" xml:"TotalSize"`
 	ProductName               string                    `json:"ProductName" xml:"ProductName"`
 	Name                      string                    `json:"Name" xml:"Name"`
 	GmtCreateTimestamp        int64                     `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
