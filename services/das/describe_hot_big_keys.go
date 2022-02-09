@@ -91,7 +91,7 @@ func CreateDescribeHotBigKeysRequest() (request *DescribeHotBigKeysRequest) {
 	request = &DescribeHotBigKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeHotBigKeys", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeHotBigKeys", "", "")
 	request.Method = requests.POST
 	return
 }

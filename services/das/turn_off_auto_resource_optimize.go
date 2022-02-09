@@ -95,7 +95,7 @@ func CreateTurnOffAutoResourceOptimizeRequest() (request *TurnOffAutoResourceOpt
 	request = &TurnOffAutoResourceOptimizeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "TurnOffAutoResourceOptimize", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "TurnOffAutoResourceOptimize", "", "")
 	request.Method = requests.POST
 	return
 }

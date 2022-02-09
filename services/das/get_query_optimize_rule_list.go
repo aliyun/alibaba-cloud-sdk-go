@@ -92,7 +92,7 @@ func CreateGetQueryOptimizeRuleListRequest() (request *GetQueryOptimizeRuleListR
 	request = &GetQueryOptimizeRuleListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeRuleList", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeRuleList", "", "")
 	request.Method = requests.GET
 	return
 }

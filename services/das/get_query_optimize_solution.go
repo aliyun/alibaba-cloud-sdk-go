@@ -92,7 +92,7 @@ func CreateGetQueryOptimizeSolutionRequest() (request *GetQueryOptimizeSolutionR
 	request = &GetQueryOptimizeSolutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeSolution", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeSolution", "", "")
 	request.Method = requests.GET
 	return
 }

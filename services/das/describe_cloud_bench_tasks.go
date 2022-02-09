@@ -94,7 +94,7 @@ func CreateDescribeCloudBenchTasksRequest() (request *DescribeCloudBenchTasksReq
 	request = &DescribeCloudBenchTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeCloudBenchTasks", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeCloudBenchTasks", "", "")
 	request.Method = requests.POST
 	return
 }

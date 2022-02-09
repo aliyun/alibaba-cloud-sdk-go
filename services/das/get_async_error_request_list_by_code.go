@@ -94,7 +94,7 @@ func CreateGetAsyncErrorRequestListByCodeRequest() (request *GetAsyncErrorReques
 	request = &GetAsyncErrorRequestListByCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetAsyncErrorRequestListByCode", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetAsyncErrorRequestListByCode", "", "")
 	request.Method = requests.POST
 	return
 }

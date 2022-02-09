@@ -99,7 +99,7 @@ func CreateGetQueryOptimizeExecErrorStatsRequest() (request *GetQueryOptimizeExe
 	request = &GetQueryOptimizeExecErrorStatsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeExecErrorStats", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeExecErrorStats", "", "")
 	request.Method = requests.GET
 	return
 }

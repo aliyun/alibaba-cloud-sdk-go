@@ -100,7 +100,7 @@ func CreateCreateAdamBenchTaskRequest() (request *CreateAdamBenchTaskRequest) {
 	request = &CreateAdamBenchTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "CreateAdamBenchTask", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "CreateAdamBenchTask", "", "")
 	request.Method = requests.POST
 	return
 }

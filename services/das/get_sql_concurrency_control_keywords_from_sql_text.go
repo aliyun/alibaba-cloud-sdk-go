@@ -91,7 +91,7 @@ func CreateGetSqlConcurrencyControlKeywordsFromSqlTextRequest() (request *GetSql
 	request = &GetSqlConcurrencyControlKeywordsFromSqlTextRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetSqlConcurrencyControlKeywordsFromSqlText", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetSqlConcurrencyControlKeywordsFromSqlText", "", "")
 	request.Method = requests.POST
 	return
 }

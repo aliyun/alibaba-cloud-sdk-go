@@ -98,7 +98,7 @@ func CreateStopOrRollbackOptimizeTaskRequest() (request *StopOrRollbackOptimizeT
 	request = &StopOrRollbackOptimizeTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "StopOrRollbackOptimizeTask", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "StopOrRollbackOptimizeTask", "", "")
 	request.Method = requests.POST
 	return
 }

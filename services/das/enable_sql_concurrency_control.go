@@ -94,7 +94,7 @@ func CreateEnableSqlConcurrencyControlRequest() (request *EnableSqlConcurrencyCo
 	request = &EnableSqlConcurrencyControlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "EnableSqlConcurrencyControl", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "EnableSqlConcurrencyControl", "", "")
 	request.Method = requests.POST
 	return
 }

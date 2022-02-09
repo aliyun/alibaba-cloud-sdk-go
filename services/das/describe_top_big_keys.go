@@ -93,7 +93,7 @@ func CreateDescribeTopBigKeysRequest() (request *DescribeTopBigKeysRequest) {
 	request = &DescribeTopBigKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeTopBigKeys", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeTopBigKeys", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -96,7 +96,7 @@ func CreateGetErrorRequestSampleRequest() (request *GetErrorRequestSampleRequest
 	request = &GetErrorRequestSampleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetErrorRequestSample", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetErrorRequestSample", "", "")
 	request.Method = requests.POST
 	return
 }

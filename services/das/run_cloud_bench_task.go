@@ -89,7 +89,7 @@ func CreateRunCloudBenchTaskRequest() (request *RunCloudBenchTaskRequest) {
 	request = &RunCloudBenchTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "RunCloudBenchTask", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "RunCloudBenchTask", "", "")
 	request.Method = requests.POST
 	return
 }

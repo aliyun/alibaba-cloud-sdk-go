@@ -103,8 +103,8 @@ func CreateGetQueryOptimizeDataStatsRequest() (request *GetQueryOptimizeDataStat
 	request = &GetQueryOptimizeDataStatsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeDataStats", "das", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeDataStats", "", "")
+	request.Method = requests.GET
 	return
 }
 

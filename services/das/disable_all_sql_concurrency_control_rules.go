@@ -90,7 +90,7 @@ func CreateDisableAllSqlConcurrencyControlRulesRequest() (request *DisableAllSql
 	request = &DisableAllSqlConcurrencyControlRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "DisableAllSqlConcurrencyControlRules", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "DisableAllSqlConcurrencyControlRules", "", "")
 	request.Method = requests.POST
 	return
 }

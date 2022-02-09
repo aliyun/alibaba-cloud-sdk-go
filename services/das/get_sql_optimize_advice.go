@@ -93,7 +93,7 @@ func CreateGetSqlOptimizeAdviceRequest() (request *GetSqlOptimizeAdviceRequest) 
 	request = &GetSqlOptimizeAdviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetSqlOptimizeAdvice", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetSqlOptimizeAdvice", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateGetRunningSqlConcurrencyControlRulesRequest() (request *GetRunningSql
 	request = &GetRunningSqlConcurrencyControlRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetRunningSqlConcurrencyControlRules", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetRunningSqlConcurrencyControlRules", "", "")
 	request.Method = requests.POST
 	return
 }

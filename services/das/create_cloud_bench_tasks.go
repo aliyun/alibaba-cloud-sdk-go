@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateCloudbenchTasks invokes the das.CreateCloudbenchTasks API synchronously
-func (client *Client) CreateCloudbenchTasks(request *CreateCloudbenchTasksRequest) (response *CreateCloudbenchTasksResponse, err error) {
-	response = CreateCreateCloudbenchTasksResponse()
+// CreateCloudBenchTasks invokes the das.CreateCloudBenchTasks API synchronously
+func (client *Client) CreateCloudBenchTasks(request *CreateCloudBenchTasksRequest) (response *CreateCloudBenchTasksResponse, err error) {
+	response = CreateCreateCloudBenchTasksResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateCloudbenchTasksWithChan invokes the das.CreateCloudbenchTasks API asynchronously
-func (client *Client) CreateCloudbenchTasksWithChan(request *CreateCloudbenchTasksRequest) (<-chan *CreateCloudbenchTasksResponse, <-chan error) {
-	responseChan := make(chan *CreateCloudbenchTasksResponse, 1)
+// CreateCloudBenchTasksWithChan invokes the das.CreateCloudBenchTasks API asynchronously
+func (client *Client) CreateCloudBenchTasksWithChan(request *CreateCloudBenchTasksRequest) (<-chan *CreateCloudBenchTasksResponse, <-chan error) {
+	responseChan := make(chan *CreateCloudBenchTasksResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateCloudbenchTasks(request)
+		response, err := client.CreateCloudBenchTasks(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateCloudbenchTasksWithChan(request *CreateCloudbenchTas
 	return responseChan, errChan
 }
 
-// CreateCloudbenchTasksWithCallback invokes the das.CreateCloudbenchTasks API asynchronously
-func (client *Client) CreateCloudbenchTasksWithCallback(request *CreateCloudbenchTasksRequest, callback func(response *CreateCloudbenchTasksResponse, err error)) <-chan int {
+// CreateCloudBenchTasksWithCallback invokes the das.CreateCloudBenchTasks API asynchronously
+func (client *Client) CreateCloudBenchTasksWithCallback(request *CreateCloudBenchTasksRequest, callback func(response *CreateCloudBenchTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateCloudbenchTasksResponse
+		var response *CreateCloudBenchTasksResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateCloudbenchTasks(request)
+		response, err = client.CreateCloudBenchTasks(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) CreateCloudbenchTasksWithCallback(request *CreateCloudbenc
 	return result
 }
 
-// CreateCloudbenchTasksRequest is the request struct for api CreateCloudbenchTasks
-type CreateCloudbenchTasksRequest struct {
+// CreateCloudBenchTasksRequest is the request struct for api CreateCloudBenchTasks
+type CreateCloudBenchTasksRequest struct {
 	*requests.RpcRequest
 	ClientType          string `position:"Query" name:"ClientType"`
 	DstPort             string `position:"Query" name:"DstPort"`
@@ -100,29 +100,29 @@ type CreateCloudbenchTasksRequest struct {
 	SmartPressureTime   string `position:"Query" name:"SmartPressureTime"`
 }
 
-// CreateCloudbenchTasksResponse is the response struct for api CreateCloudbenchTasks
-type CreateCloudbenchTasksResponse struct {
+// CreateCloudBenchTasksResponse is the response struct for api CreateCloudBenchTasks
+type CreateCloudBenchTasksResponse struct {
 	*responses.BaseResponse
 	Code      string                      `json:"Code" xml:"Code"`
 	Message   string                      `json:"Message" xml:"Message"`
 	RequestId string                      `json:"RequestId" xml:"RequestId"`
 	Success   string                      `json:"Success" xml:"Success"`
-	Data      DataInCreateCloudbenchTasks `json:"Data" xml:"Data"`
+	Data      DataInCreateCloudBenchTasks `json:"Data" xml:"Data"`
 }
 
-// CreateCreateCloudbenchTasksRequest creates a request to invoke CreateCloudbenchTasks API
-func CreateCreateCloudbenchTasksRequest() (request *CreateCloudbenchTasksRequest) {
-	request = &CreateCloudbenchTasksRequest{
+// CreateCreateCloudBenchTasksRequest creates a request to invoke CreateCloudBenchTasks API
+func CreateCreateCloudBenchTasksRequest() (request *CreateCloudBenchTasksRequest) {
+	request = &CreateCloudBenchTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "CreateCloudbenchTasks", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "CreateCloudBenchTasks", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateCloudbenchTasksResponse creates a response to parse from CreateCloudbenchTasks response
-func CreateCreateCloudbenchTasksResponse() (response *CreateCloudbenchTasksResponse) {
-	response = &CreateCloudbenchTasksResponse{
+// CreateCreateCloudBenchTasksResponse creates a response to parse from CreateCloudBenchTasks response
+func CreateCreateCloudBenchTasksResponse() (response *CreateCloudBenchTasksResponse) {
+	response = &CreateCloudBenchTasksResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -94,7 +94,7 @@ func CreateGetRequestDiagnosisPageRequest() (request *GetRequestDiagnosisPageReq
 	request = &GetRequestDiagnosisPageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetRequestDiagnosisPage", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetRequestDiagnosisPage", "", "")
 	request.Method = requests.POST
 	return
 }

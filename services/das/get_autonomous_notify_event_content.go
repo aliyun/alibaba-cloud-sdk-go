@@ -91,7 +91,7 @@ func CreateGetAutonomousNotifyEventContentRequest() (request *GetAutonomousNotif
 	request = &GetAutonomousNotifyEventContentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetAutonomousNotifyEventContent", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetAutonomousNotifyEventContent", "", "")
 	request.Method = requests.POST
 	return
 }

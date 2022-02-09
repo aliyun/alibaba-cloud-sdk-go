@@ -89,7 +89,7 @@ func CreateStopCloudBenchTaskRequest() (request *StopCloudBenchTaskRequest) {
 	request = &StopCloudBenchTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "StopCloudBenchTask", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "StopCloudBenchTask", "", "")
 	request.Method = requests.POST
 	return
 }

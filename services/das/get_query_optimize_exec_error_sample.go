@@ -93,7 +93,7 @@ func CreateGetQueryOptimizeExecErrorSampleRequest() (request *GetQueryOptimizeEx
 	request = &GetQueryOptimizeExecErrorSampleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeExecErrorSample", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeExecErrorSample", "", "")
 	request.Method = requests.GET
 	return
 }

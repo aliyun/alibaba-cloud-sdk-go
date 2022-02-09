@@ -99,7 +99,7 @@ func CreateUpdateAutoResourceOptimizeConfigRequest() (request *UpdateAutoResourc
 	request = &UpdateAutoResourceOptimizeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "UpdateAutoResourceOptimizeConfig", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "UpdateAutoResourceOptimizeConfig", "", "")
 	request.Method = requests.POST
 	return
 }

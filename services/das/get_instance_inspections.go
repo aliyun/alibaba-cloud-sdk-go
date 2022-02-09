@@ -95,7 +95,7 @@ func CreateGetInstanceInspectionsRequest() (request *GetInstanceInspectionsReque
 	request = &GetInstanceInspectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetInstanceInspections", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetInstanceInspections", "", "")
 	request.Method = requests.POST
 	return
 }

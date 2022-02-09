@@ -96,7 +96,7 @@ func CreateGetHDMLastAliyunResourceSyncResultRequest() (request *GetHDMLastAliyu
 	request = &GetHDMLastAliyunResourceSyncResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetHDMLastAliyunResourceSyncResult", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetHDMLastAliyunResourceSyncResult", "", "")
 	request.Method = requests.POST
 	return
 }

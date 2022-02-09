@@ -93,7 +93,7 @@ func CreateDescribeTopHotKeysRequest() (request *DescribeTopHotKeysRequest) {
 	request = &DescribeTopHotKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeTopHotKeys", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeTopHotKeys", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,8 +94,8 @@ func CreateGetQueryOptimizeDataTopRequest() (request *GetQueryOptimizeDataTopReq
 	request = &GetQueryOptimizeDataTopRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeDataTop", "das", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetQueryOptimizeDataTop", "", "")
+	request.Method = requests.GET
 	return
 }
 

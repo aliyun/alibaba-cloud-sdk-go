@@ -99,7 +99,7 @@ func CreateGetResourceOptimizeHistoryListRequest() (request *GetResourceOptimize
 	request = &GetResourceOptimizeHistoryListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetResourceOptimizeHistoryList", "das", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetResourceOptimizeHistoryList", "", "")
 	request.Method = requests.POST
 	return
 }
