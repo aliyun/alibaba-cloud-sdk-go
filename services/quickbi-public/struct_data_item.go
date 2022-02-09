@@ -17,19 +17,25 @@ package quickbi_public
 
 // DataItem is a nested struct in quickbi_public response
 type DataItem struct {
-	Name           string `json:"Name" xml:"Name"`
-	PublishStatus  int    `json:"PublishStatus" xml:"PublishStatus"`
-	OwnerNum       string `json:"OwnerNum" xml:"OwnerNum"`
-	OwnerName      string `json:"OwnerName" xml:"OwnerName"`
-	GmtModified    string `json:"GmtModified" xml:"GmtModified"`
-	WorkspaceName  string `json:"WorkspaceName" xml:"WorkspaceName"`
-	TreeId         string `json:"TreeId" xml:"TreeId"`
-	ViewCount      int64  `json:"ViewCount" xml:"ViewCount"`
-	GmtCreate      string `json:"GmtCreate" xml:"GmtCreate"`
-	LatestViewTime string `json:"LatestViewTime" xml:"LatestViewTime"`
-	HasEditAuth    bool   `json:"HasEditAuth" xml:"HasEditAuth"`
-	WorkspaceId    string `json:"WorkspaceId" xml:"WorkspaceId"`
-	Favorite       bool   `json:"Favorite" xml:"Favorite"`
-	HasViewAuth    bool   `json:"HasViewAuth" xml:"HasViewAuth"`
-	Type           string `json:"Type" xml:"Type"`
+	CreateUserAccountName string `json:"CreateUserAccountName" xml:"CreateUserAccountName"`
+	Email                 string `json:"Email" xml:"Email"`
+	ModifyUser            string `json:"ModifyUser" xml:"ModifyUser"`
+	WorkspaceName         string `json:"WorkspaceName" xml:"WorkspaceName"`
+	CreateTime            string `json:"CreateTime" xml:"CreateTime"`
+	Owner                 string `json:"Owner" xml:"Owner"`
+	ModifyUserAccountName string `json:"ModifyUserAccountName" xml:"ModifyUserAccountName"`
+	ModifiedTime          string `json:"ModifiedTime" xml:"ModifiedTime"`
+	AllowPublishOperation bool   `json:"AllowPublishOperation" xml:"AllowPublishOperation"`
+	AccountId             string `json:"AccountId" xml:"AccountId"`
+	AccountName           string `json:"AccountName" xml:"AccountName"`
+	UserId                string `json:"UserId" xml:"UserId"`
+	NickName              string `json:"NickName" xml:"NickName"`
+	CreateUser            string `json:"CreateUser" xml:"CreateUser"`
+	AllowShareOperation   bool   `json:"AllowShareOperation" xml:"AllowShareOperation"`
+	WorkspaceId           string `json:"WorkspaceId" xml:"WorkspaceId"`
+	OwnerAccountName      string `json:"OwnerAccountName" xml:"OwnerAccountName"`
+	WorkspaceDescription  string `json:"WorkspaceDescription" xml:"WorkspaceDescription"`
+	OrganizationId        string `json:"OrganizationId" xml:"OrganizationId"`
+	Phone                 string `json:"Phone" xml:"Phone"`
+	Role                  Role   `json:"Role" xml:"Role"`
 }
