@@ -71,53 +71,58 @@ func (client *Client) DescribeDtsJobDetailWithCallback(request *DescribeDtsJobDe
 // DescribeDtsJobDetailRequest is the request struct for api DescribeDtsJobDetail
 type DescribeDtsJobDetailRequest struct {
 	*requests.RpcRequest
-	DtsJobId                 string `position:"Query" name:"DtsJobId"`
-	DtsInstanceID            string `position:"Query" name:"DtsInstanceID"`
-	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
+	SyncSubJobHistory        requests.Boolean `position:"Query" name:"SyncSubJobHistory"`
+	DtsJobId                 string           `position:"Query" name:"DtsJobId"`
+	DtsInstanceID            string           `position:"Query" name:"DtsInstanceID"`
+	SynchronizationDirection string           `position:"Query" name:"SynchronizationDirection"`
 }
 
 // DescribeDtsJobDetailResponse is the response struct for api DescribeDtsJobDetail
 type DescribeDtsJobDetailResponse struct {
 	*responses.BaseResponse
-	Status                   string               `json:"Status" xml:"Status"`
-	DtsJobName               string               `json:"DtsJobName" xml:"DtsJobName"`
-	FinishTime               string               `json:"FinishTime" xml:"FinishTime"`
-	ErrorMessage             string               `json:"ErrorMessage" xml:"ErrorMessage"`
-	DtsJobId                 string               `json:"DtsJobId" xml:"DtsJobId"`
-	CreateTime               string               `json:"CreateTime" xml:"CreateTime"`
-	PayType                  string               `json:"PayType" xml:"PayType"`
-	Reserved                 string               `json:"Reserved" xml:"Reserved"`
-	DatabaseCount            int                  `json:"DatabaseCount" xml:"DatabaseCount"`
-	DtsJobClass              string               `json:"DtsJobClass" xml:"DtsJobClass"`
-	EndTimestamp             string               `json:"EndTimestamp" xml:"EndTimestamp"`
-	AppName                  string               `json:"AppName" xml:"AppName"`
-	DestNetType              string               `json:"DestNetType" xml:"DestNetType"`
-	SubscribeTopic           string               `json:"SubscribeTopic" xml:"SubscribeTopic"`
-	DtsInstanceID            string               `json:"DtsInstanceID" xml:"DtsInstanceID"`
-	RequestId                string               `json:"RequestId" xml:"RequestId"`
-	Code                     int                  `json:"Code" xml:"Code"`
-	Checkpoint               int64                `json:"Checkpoint" xml:"Checkpoint"`
-	Delay                    int64                `json:"Delay" xml:"Delay"`
-	ExpireTime               string               `json:"ExpireTime" xml:"ExpireTime"`
-	ErrCode                  string               `json:"ErrCode" xml:"ErrCode"`
-	Success                  bool                 `json:"Success" xml:"Success"`
-	ErrMessage               string               `json:"ErrMessage" xml:"ErrMessage"`
-	ConsumptionClient        string               `json:"ConsumptionClient" xml:"ConsumptionClient"`
-	DbObject                 string               `json:"DbObject" xml:"DbObject"`
-	DynamicMessage           string               `json:"DynamicMessage" xml:"DynamicMessage"`
-	ConsumptionCheckpoint    string               `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
-	EtlCalculator            string               `json:"EtlCalculator" xml:"EtlCalculator"`
-	HttpStatusCode           int                  `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	BeginTimestamp           string               `json:"BeginTimestamp" xml:"BeginTimestamp"`
-	GroupId                  string               `json:"GroupId" xml:"GroupId"`
-	SynchronizationDirection string               `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
-	DtsJobDirection          string               `json:"DtsJobDirection" xml:"DtsJobDirection"`
-	DemoJob                  bool                 `json:"DemoJob" xml:"DemoJob"`
-	SourceEndpoint           SourceEndpoint       `json:"SourceEndpoint" xml:"SourceEndpoint"`
-	DestinationEndpoint      DestinationEndpoint  `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
-	MigrationMode            MigrationMode        `json:"MigrationMode" xml:"MigrationMode"`
-	SubscriptionHost         SubscriptionHost     `json:"SubscriptionHost" xml:"SubscriptionHost"`
-	SubscriptionDataType     SubscriptionDataType `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
+	Status                   string                  `json:"Status" xml:"Status"`
+	DtsJobName               string                  `json:"DtsJobName" xml:"DtsJobName"`
+	FinishTime               string                  `json:"FinishTime" xml:"FinishTime"`
+	ErrorMessage             string                  `json:"ErrorMessage" xml:"ErrorMessage"`
+	DtsJobId                 string                  `json:"DtsJobId" xml:"DtsJobId"`
+	CreateTime               string                  `json:"CreateTime" xml:"CreateTime"`
+	PayType                  string                  `json:"PayType" xml:"PayType"`
+	Reserved                 string                  `json:"Reserved" xml:"Reserved"`
+	DatabaseCount            int                     `json:"DatabaseCount" xml:"DatabaseCount"`
+	DtsJobClass              string                  `json:"DtsJobClass" xml:"DtsJobClass"`
+	EndTimestamp             string                  `json:"EndTimestamp" xml:"EndTimestamp"`
+	AppName                  string                  `json:"AppName" xml:"AppName"`
+	DestNetType              string                  `json:"DestNetType" xml:"DestNetType"`
+	SubscribeTopic           string                  `json:"SubscribeTopic" xml:"SubscribeTopic"`
+	DtsInstanceID            string                  `json:"DtsInstanceID" xml:"DtsInstanceID"`
+	RequestId                string                  `json:"RequestId" xml:"RequestId"`
+	Code                     int                     `json:"Code" xml:"Code"`
+	Checkpoint               int64                   `json:"Checkpoint" xml:"Checkpoint"`
+	Delay                    int64                   `json:"Delay" xml:"Delay"`
+	ExpireTime               string                  `json:"ExpireTime" xml:"ExpireTime"`
+	ErrCode                  string                  `json:"ErrCode" xml:"ErrCode"`
+	Success                  bool                    `json:"Success" xml:"Success"`
+	ErrMessage               string                  `json:"ErrMessage" xml:"ErrMessage"`
+	ConsumptionClient        string                  `json:"ConsumptionClient" xml:"ConsumptionClient"`
+	DbObject                 string                  `json:"DbObject" xml:"DbObject"`
+	DynamicMessage           string                  `json:"DynamicMessage" xml:"DynamicMessage"`
+	ConsumptionCheckpoint    string                  `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
+	EtlCalculator            string                  `json:"EtlCalculator" xml:"EtlCalculator"`
+	HttpStatusCode           int                     `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	BeginTimestamp           string                  `json:"BeginTimestamp" xml:"BeginTimestamp"`
+	GroupId                  string                  `json:"GroupId" xml:"GroupId"`
+	SynchronizationDirection string                  `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
+	DtsJobDirection          string                  `json:"DtsJobDirection" xml:"DtsJobDirection"`
+	DemoJob                  bool                    `json:"DemoJob" xml:"DemoJob"`
+	JobType                  string                  `json:"JobType" xml:"JobType"`
+	TaskType                 string                  `json:"TaskType" xml:"TaskType"`
+	SourceEndpoint           SourceEndpoint          `json:"SourceEndpoint" xml:"SourceEndpoint"`
+	DestinationEndpoint      DestinationEndpoint     `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
+	MigrationMode            MigrationMode           `json:"MigrationMode" xml:"MigrationMode"`
+	SubscriptionHost         SubscriptionHost        `json:"SubscriptionHost" xml:"SubscriptionHost"`
+	SubscriptionDataType     SubscriptionDataType    `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
+	SubDistributedJob        []SubDistributedJobItem `json:"SubDistributedJob" xml:"SubDistributedJob"`
+	SubSyncJob               []SubSyncJobItem        `json:"SubSyncJob" xml:"SubSyncJob"`
 }
 
 // CreateDescribeDtsJobDetailRequest creates a request to invoke DescribeDtsJobDetail API

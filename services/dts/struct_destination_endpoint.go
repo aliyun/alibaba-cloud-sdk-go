@@ -24,9 +24,11 @@ type DestinationEndpoint struct {
 	IP              string `json:"IP" xml:"IP"`
 	OracleSID       string `json:"OracleSID" xml:"OracleSID"`
 	InstanceType    string `json:"InstanceType" xml:"InstanceType"`
+	RoleName        string `json:"RoleName" xml:"RoleName"`
 	EngineName      string `json:"EngineName" xml:"EngineName"`
 	InstanceID      string `json:"InstanceID" xml:"InstanceID"`
 	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	AliyunUid       string `json:"AliyunUid" xml:"AliyunUid"`
 	UserName        string `json:"UserName" xml:"UserName"`
 	DatabaseName    string `json:"DatabaseName" xml:"DatabaseName"`
 }

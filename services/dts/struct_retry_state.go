@@ -17,9 +17,13 @@ package dts
 
 // RetryState is a nested struct in dts response
 type RetryState struct {
+	JobId        string `json:"JobId" xml:"JobId"`
 	RetryTarget  string `json:"RetryTarget" xml:"RetryTarget"`
+	ErrMsg       string `json:"ErrMsg" xml:"ErrMsg"`
 	RetryTime    int    `json:"RetryTime" xml:"RetryTime"`
+	Retrying     bool   `json:"Retrying" xml:"Retrying"`
 	ErrMessage   string `json:"ErrMessage" xml:"ErrMessage"`
-	RetryCount   int    `json:"RetryCount" xml:"RetryCount"`
+	Module       string `json:"Module" xml:"Module"`
 	MaxRetryTime int    `json:"MaxRetryTime" xml:"MaxRetryTime"`
+	RetryCount   int    `json:"RetryCount" xml:"RetryCount"`
 }
