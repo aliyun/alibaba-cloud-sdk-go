@@ -100,7 +100,7 @@ func CreateCreateNacosConfigRequest() (request *CreateNacosConfigRequest) {
 	request = &CreateNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateNacosConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateNacosConfig", "", "")
 	request.Method = requests.POST
 	return
 }

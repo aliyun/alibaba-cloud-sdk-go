@@ -93,7 +93,7 @@ func CreateUpdateSSLCertRequest() (request *UpdateSSLCertRequest) {
 	request = &UpdateSSLCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateSSLCert", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateSSLCert", "", "")
 	request.Method = requests.GET
 	return
 }

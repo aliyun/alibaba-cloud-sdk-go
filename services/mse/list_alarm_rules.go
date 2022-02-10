@@ -97,7 +97,7 @@ func CreateListAlarmRulesRequest() (request *ListAlarmRulesRequest) {
 	request = &ListAlarmRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmRules", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAlarmRules", "", "")
 	request.Method = requests.GET
 	return
 }

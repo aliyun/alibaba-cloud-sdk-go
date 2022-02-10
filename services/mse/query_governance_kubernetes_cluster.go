@@ -94,7 +94,7 @@ func CreateQueryGovernanceKubernetesClusterRequest() (request *QueryGovernanceKu
 	request = &QueryGovernanceKubernetesClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryGovernanceKubernetesCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryGovernanceKubernetesCluster", "", "")
 	request.Method = requests.GET
 	return
 }

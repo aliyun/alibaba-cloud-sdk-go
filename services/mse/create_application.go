@@ -95,7 +95,7 @@ func CreateCreateApplicationRequest() (request *CreateApplicationRequest) {
 	request = &CreateApplicationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateApplication", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateApplication", "", "")
 	request.Method = requests.POST
 	return
 }

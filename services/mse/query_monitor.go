@@ -96,7 +96,7 @@ func CreateQueryMonitorRequest() (request *QueryMonitorRequest) {
 	request = &QueryMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryMonitor", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryMonitor", "", "")
 	request.Method = requests.GET
 	return
 }

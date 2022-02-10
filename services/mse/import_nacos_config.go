@@ -96,7 +96,7 @@ func CreateImportNacosConfigRequest() (request *ImportNacosConfigRequest) {
 	request = &ImportNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ImportNacosConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ImportNacosConfig", "", "")
 	request.Method = requests.POST
 	return
 }

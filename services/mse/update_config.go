@@ -108,7 +108,7 @@ func CreateUpdateConfigRequest() (request *UpdateConfigRequest) {
 	request = &UpdateConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateConfig", "", "")
 	request.Method = requests.POST
 	return
 }

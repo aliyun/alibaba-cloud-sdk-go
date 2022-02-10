@@ -91,7 +91,7 @@ func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
 	request = &DeleteClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteCluster", "", "")
 	request.Method = requests.POST
 	return
 }

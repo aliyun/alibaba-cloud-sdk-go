@@ -91,7 +91,7 @@ func CreateListServiceSourceRequest() (request *ListServiceSourceRequest) {
 	request = &ListServiceSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListServiceSource", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListServiceSource", "", "")
 	request.Method = requests.GET
 	return
 }

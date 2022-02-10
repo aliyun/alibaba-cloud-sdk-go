@@ -93,7 +93,7 @@ func CreateUpdateGatewayServiceVersionRequest() (request *UpdateGatewayServiceVe
 	request = &UpdateGatewayServiceVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayServiceVersion", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayServiceVersion", "", "")
 	request.Method = requests.POST
 	return
 }

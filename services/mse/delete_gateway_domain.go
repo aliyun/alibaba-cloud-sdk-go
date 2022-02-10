@@ -92,7 +92,7 @@ func CreateDeleteGatewayDomainRequest() (request *DeleteGatewayDomainRequest) {
 	request = &DeleteGatewayDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteGatewayDomain", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteGatewayDomain", "", "")
 	request.Method = requests.GET
 	return
 }

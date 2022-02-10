@@ -91,7 +91,7 @@ func CreateDeleteServiceSourceRequest() (request *DeleteServiceSourceRequest) {
 	request = &DeleteServiceSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteServiceSource", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteServiceSource", "", "")
 	request.Method = requests.GET
 	return
 }

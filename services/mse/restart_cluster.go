@@ -92,7 +92,7 @@ func CreateRestartClusterRequest() (request *RestartClusterRequest) {
 	request = &RestartClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "RestartCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "RestartCluster", "", "")
 	request.Method = requests.POST
 	return
 }

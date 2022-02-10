@@ -91,7 +91,7 @@ func CreateListGatewayDomainRequest() (request *ListGatewayDomainRequest) {
 	request = &ListGatewayDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListGatewayDomain", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListGatewayDomain", "", "")
 	request.Method = requests.GET
 	return
 }

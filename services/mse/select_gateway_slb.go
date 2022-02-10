@@ -93,7 +93,7 @@ func CreateSelectGatewaySlbRequest() (request *SelectGatewaySlbRequest) {
 	request = &SelectGatewaySlbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "SelectGatewaySlb", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "SelectGatewaySlb", "", "")
 	request.Method = requests.GET
 	return
 }

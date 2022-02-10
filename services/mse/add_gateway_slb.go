@@ -93,7 +93,7 @@ func CreateAddGatewaySlbRequest() (request *AddGatewaySlbRequest) {
 	request = &AddGatewaySlbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddGatewaySlb", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddGatewaySlb", "", "")
 	request.Method = requests.POST
 	return
 }

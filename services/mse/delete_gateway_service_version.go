@@ -93,7 +93,7 @@ func CreateDeleteGatewayServiceVersionRequest() (request *DeleteGatewayServiceVe
 	request = &DeleteGatewayServiceVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteGatewayServiceVersion", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteGatewayServiceVersion", "", "")
 	request.Method = requests.POST
 	return
 }

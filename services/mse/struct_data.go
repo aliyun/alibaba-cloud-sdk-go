@@ -38,6 +38,7 @@ type Data struct {
 	BeforeDate                   int64                  `json:"BeforeDate" xml:"BeforeDate"`
 	AccountId                    string                 `json:"AccountId" xml:"AccountId"`
 	SuccCount                    int                    `json:"SuccCount" xml:"SuccCount"`
+	DisableHttp2Alpn             bool                   `json:"DisableHttp2Alpn" xml:"DisableHttp2Alpn"`
 	AutopurgePurgeInterval       string                 `json:"AutopurgePurgeInterval" xml:"AutopurgePurgeInterval"`
 	TotalSize                    int                    `json:"TotalSize" xml:"TotalSize"`
 	SelectorType                 string                 `json:"SelectorType" xml:"SelectorType"`
@@ -60,6 +61,7 @@ type Data struct {
 	Quota                        int                    `json:"Quota" xml:"Quota"`
 	MaxVersionCode               string                 `json:"MaxVersionCode" xml:"MaxVersionCode"`
 	GatewayUniqueId              string                 `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
+	EnableHardwareAcceleration   bool                   `json:"EnableHardwareAcceleration" xml:"EnableHardwareAcceleration"`
 	ScMockItemJson               string                 `json:"ScMockItemJson" xml:"ScMockItemJson"`
 	ProviderAppId                string                 `json:"ProviderAppId" xml:"ProviderAppId"`
 	AppName                      string                 `json:"AppName" xml:"AppName"`

@@ -94,7 +94,7 @@ func CreateUpdateGatewayRouteHTTPRewriteRequest() (request *UpdateGatewayRouteHT
 	request = &UpdateGatewayRouteHTTPRewriteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteHTTPRewrite", "", "")
 	request.Method = requests.POST
 	return
 }

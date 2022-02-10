@@ -94,7 +94,7 @@ func CreateAddAuthResourceRequest() (request *AddAuthResourceRequest) {
 	request = &AddAuthResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddAuthResource", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddAuthResource", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreatePullServicesRequest() (request *PullServicesRequest) {
 	request = &PullServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "PullServices", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "PullServices", "", "")
 	request.Method = requests.GET
 	return
 }

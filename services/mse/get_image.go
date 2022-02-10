@@ -91,7 +91,7 @@ func CreateGetImageRequest() (request *GetImageRequest) {
 	request = &GetImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetImage", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetImage", "", "")
 	request.Method = requests.POST
 	return
 }

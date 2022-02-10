@@ -95,7 +95,7 @@ func CreateAddServiceSourceRequest() (request *AddServiceSourceRequest) {
 	request = &AddServiceSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddServiceSource", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddServiceSource", "", "")
 	request.Method = requests.POST
 	return
 }

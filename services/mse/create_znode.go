@@ -93,7 +93,7 @@ func CreateCreateZnodeRequest() (request *CreateZnodeRequest) {
 	request = &CreateZnodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateZnode", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateZnode", "", "")
 	request.Method = requests.POST
 	return
 }

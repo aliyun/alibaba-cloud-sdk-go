@@ -92,7 +92,7 @@ func CreateGetGatewayServiceDetailRequest() (request *GetGatewayServiceDetailReq
 	request = &GetGatewayServiceDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetGatewayServiceDetail", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetGatewayServiceDetail", "", "")
 	request.Method = requests.GET
 	return
 }

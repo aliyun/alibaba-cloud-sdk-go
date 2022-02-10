@@ -89,7 +89,7 @@ func CreateGetMseFeatureSwitchRequest() (request *GetMseFeatureSwitchRequest) {
 	request = &GetMseFeatureSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetMseFeatureSwitch", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetMseFeatureSwitch", "", "")
 	request.Method = requests.POST
 	return
 }

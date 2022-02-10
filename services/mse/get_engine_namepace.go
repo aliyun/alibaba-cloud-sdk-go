@@ -98,7 +98,7 @@ func CreateGetEngineNamepaceRequest() (request *GetEngineNamepaceRequest) {
 	request = &GetEngineNamepaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetEngineNamepace", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetEngineNamepace", "", "")
 	request.Method = requests.POST
 	return
 }

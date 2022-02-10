@@ -98,7 +98,7 @@ func CreateUpdateNacosClusterRequest() (request *UpdateNacosClusterRequest) {
 	request = &UpdateNacosClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosCluster", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateNacosCluster", "", "")
 	request.Method = requests.POST
 	return
 }

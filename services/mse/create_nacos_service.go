@@ -97,7 +97,7 @@ func CreateCreateNacosServiceRequest() (request *CreateNacosServiceRequest) {
 	request = &CreateNacosServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateNacosService", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateNacosService", "", "")
 	request.Method = requests.POST
 	return
 }

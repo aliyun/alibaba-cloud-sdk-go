@@ -90,7 +90,7 @@ func CreateQueryGatewayRegionRequest() (request *QueryGatewayRegionRequest) {
 	request = &QueryGatewayRegionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryGatewayRegion", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryGatewayRegion", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -79,8 +79,10 @@ type UpdateGatewayOptionRequest struct {
 
 // UpdateGatewayOptionGatewayOption is a repeated param struct in UpdateGatewayOptionRequest
 type UpdateGatewayOptionGatewayOption struct {
-	LogConfigDetails UpdateGatewayOptionGatewayOptionLogConfigDetails `name:"LogConfigDetails" type:"Struct"`
-	TraceDetails     UpdateGatewayOptionGatewayOptionTraceDetails     `name:"TraceDetails" type:"Struct"`
+	EnableHardwareAcceleration string                                           `name:"EnableHardwareAcceleration"`
+	DisableHttp2Alpn           string                                           `name:"DisableHttp2Alpn"`
+	LogConfigDetails           UpdateGatewayOptionGatewayOptionLogConfigDetails `name:"LogConfigDetails" type:"Struct"`
+	TraceDetails               UpdateGatewayOptionGatewayOptionTraceDetails     `name:"TraceDetails" type:"Struct"`
 }
 
 // UpdateGatewayOptionGatewayOptionLogConfigDetails is a repeated param struct in UpdateGatewayOptionRequest
@@ -112,7 +114,7 @@ func CreateUpdateGatewayOptionRequest() (request *UpdateGatewayOptionRequest) {
 	request = &UpdateGatewayOptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayOption", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayOption", "", "")
 	request.Method = requests.POST
 	return
 }

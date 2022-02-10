@@ -94,7 +94,7 @@ func CreateQueryConfigRequest() (request *QueryConfigRequest) {
 	request = &QueryConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryConfig", "", "")
 	request.Method = requests.GET
 	return
 }

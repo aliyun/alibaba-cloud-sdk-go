@@ -97,7 +97,7 @@ func CreateCloneNacosConfigRequest() (request *CloneNacosConfigRequest) {
 	request = &CloneNacosConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CloneNacosConfig", "mse", "openAPI")
+	request.InitWithApiInfo("mse", "2019-05-31", "CloneNacosConfig", "", "")
 	request.Method = requests.POST
 	return
 }
