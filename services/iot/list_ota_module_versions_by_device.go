@@ -100,7 +100,7 @@ func CreateListOTAModuleVersionsByDeviceRequest() (request *ListOTAModuleVersion
 	request = &ListOTAModuleVersionsByDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAModuleVersionsByDevice", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAModuleVersionsByDevice", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

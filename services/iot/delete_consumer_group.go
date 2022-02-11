@@ -91,7 +91,7 @@ func CreateDeleteConsumerGroupRequest() (request *DeleteConsumerGroupRequest) {
 	request = &DeleteConsumerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteConsumerGroup", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteConsumerGroup", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

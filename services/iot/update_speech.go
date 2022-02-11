@@ -97,7 +97,7 @@ func CreateUpdateSpeechRequest() (request *UpdateSpeechRequest) {
 	request = &UpdateSpeechRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateSpeech", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateSpeech", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

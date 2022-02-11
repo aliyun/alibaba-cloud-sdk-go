@@ -95,7 +95,7 @@ func CreateBatchPubRequest() (request *BatchPubRequest) {
 	request = &BatchPubRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchPub", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchPub", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

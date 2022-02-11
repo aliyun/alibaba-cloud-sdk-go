@@ -93,7 +93,7 @@ func CreateBatchBindDeviceToEdgeInstanceWithDriverRequest() (request *BatchBindD
 	request = &BatchBindDeviceToEdgeInstanceWithDriverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchBindDeviceToEdgeInstanceWithDriver", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchBindDeviceToEdgeInstanceWithDriver", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

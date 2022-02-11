@@ -91,7 +91,7 @@ func CreateStartAIBoxForceSyncRequest() (request *StartAIBoxForceSyncRequest) {
 	request = &StartAIBoxForceSyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "StartAIBoxForceSync", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "StartAIBoxForceSync", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

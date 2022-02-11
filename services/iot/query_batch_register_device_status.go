@@ -95,7 +95,7 @@ func CreateQueryBatchRegisterDeviceStatusRequest() (request *QueryBatchRegisterD
 	request = &QueryBatchRegisterDeviceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryBatchRegisterDeviceStatus", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryBatchRegisterDeviceStatus", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

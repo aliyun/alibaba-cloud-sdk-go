@@ -102,7 +102,7 @@ func CreateListTaskByPageRequest() (request *ListTaskByPageRequest) {
 	request = &ListTaskByPageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListTaskByPage", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListTaskByPage", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateDeleteStudioAppDomainOpenRequest() (request *DeleteStudioAppDomainOpe
 	request = &DeleteStudioAppDomainOpenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteStudioAppDomainOpen", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteStudioAppDomainOpen", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

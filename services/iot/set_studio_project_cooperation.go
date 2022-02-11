@@ -92,7 +92,7 @@ func CreateSetStudioProjectCooperationRequest() (request *SetStudioProjectCooper
 	request = &SetStudioProjectCooperationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SetStudioProjectCooperation", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SetStudioProjectCooperation", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

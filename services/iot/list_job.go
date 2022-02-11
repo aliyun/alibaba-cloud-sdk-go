@@ -97,7 +97,7 @@ func CreateListJobRequest() (request *ListJobRequest) {
 	request = &ListJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

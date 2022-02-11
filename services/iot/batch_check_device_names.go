@@ -102,7 +102,7 @@ func CreateBatchCheckDeviceNamesRequest() (request *BatchCheckDeviceNamesRequest
 	request = &BatchCheckDeviceNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchCheckDeviceNames", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchCheckDeviceNames", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

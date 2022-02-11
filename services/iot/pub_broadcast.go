@@ -94,7 +94,7 @@ func CreatePubBroadcastRequest() (request *PubBroadcastRequest) {
 	request = &PubBroadcastRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "PubBroadcast", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "PubBroadcast", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -100,7 +100,7 @@ func CreateQueryPageByApplyIdRequest() (request *QueryPageByApplyIdRequest) {
 	request = &QueryPageByApplyIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryPageByApplyId", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryPageByApplyId", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

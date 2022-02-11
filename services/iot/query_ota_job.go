@@ -92,7 +92,7 @@ func CreateQueryOTAJobRequest() (request *QueryOTAJobRequest) {
 	request = &QueryOTAJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryOTAJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryOTAJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

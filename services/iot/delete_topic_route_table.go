@@ -94,7 +94,7 @@ func CreateDeleteTopicRouteTableRequest() (request *DeleteTopicRouteTableRequest
 	request = &DeleteTopicRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteTopicRouteTable", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteTopicRouteTable", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateConfirmOTATaskRequest() (request *ConfirmOTATaskRequest) {
 	request = &ConfirmOTATaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ConfirmOTATask", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ConfirmOTATask", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateRefreshDeviceTunnelSharePasswordRequest() (request *RefreshDeviceTunn
 	request = &RefreshDeviceTunnelSharePasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "RefreshDeviceTunnelSharePassword", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "RefreshDeviceTunnelSharePassword", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

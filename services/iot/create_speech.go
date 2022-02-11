@@ -101,7 +101,7 @@ func CreateCreateSpeechRequest() (request *CreateSpeechRequest) {
 	request = &CreateSpeechRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateSpeech", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateSpeech", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateQueryProductTopicRequest() (request *QueryProductTopicRequest) {
 	request = &QueryProductTopicRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryProductTopic", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryProductTopic", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

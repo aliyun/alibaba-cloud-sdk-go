@@ -93,7 +93,7 @@ func CreateUpdateRuleActionRequest() (request *UpdateRuleActionRequest) {
 	request = &UpdateRuleActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateRuleAction", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateRuleAction", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateQueryJobRequest() (request *QueryJobRequest) {
 	request = &QueryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

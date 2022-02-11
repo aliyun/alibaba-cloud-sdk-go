@@ -95,7 +95,7 @@ func CreateQueryDeviceBySQLRequest() (request *QueryDeviceBySQLRequest) {
 	request = &QueryDeviceBySQLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceBySQL", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceBySQL", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

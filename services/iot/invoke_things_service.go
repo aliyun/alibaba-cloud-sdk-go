@@ -94,7 +94,7 @@ func CreateInvokeThingsServiceRequest() (request *InvokeThingsServiceRequest) {
 	request = &InvokeThingsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "InvokeThingsService", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "InvokeThingsService", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

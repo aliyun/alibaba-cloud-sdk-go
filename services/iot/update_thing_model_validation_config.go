@@ -92,7 +92,7 @@ func CreateUpdateThingModelValidationConfigRequest() (request *UpdateThingModelV
 	request = &UpdateThingModelValidationConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateThingModelValidationConfig", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateThingModelValidationConfig", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }
