@@ -74,6 +74,7 @@ type UpdateBlackWhiteListRequest struct {
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	Type            string           `position:"Query" name:"Type"`
 	Content         string           `position:"Query" name:"Content"`
+	IsWhite         requests.Boolean `position:"Query" name:"IsWhite"`
 	Id              requests.Integer `position:"Query" name:"Id"`
 	ResourceType    string           `position:"Query" name:"ResourceType"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`

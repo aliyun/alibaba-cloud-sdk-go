@@ -71,6 +71,7 @@ func (client *Client) ListClusterTypesWithCallback(request *ListClusterTypesRequ
 // ListClusterTypesRequest is the request struct for api ListClusterTypes
 type ListClusterTypesRequest struct {
 	*requests.RpcRequest
+	ConnectType    string `position:"Query" name:"ConnectType"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

@@ -1,3 +1,7 @@
+2022-02-16 Version: v1.61.1484
+- Generated 2019-05-31 for `mse`.
+- Fix normandy query api.
+
 2022-02-11 Version: v1.61.1483
 - Generated 2018-01-20 for `Iot`.
 - Add OTA API, including ReupgradeOTATask.

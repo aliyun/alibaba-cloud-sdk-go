@@ -71,6 +71,7 @@ func (client *Client) QueryClusterSpecificationWithCallback(request *QueryCluste
 // QueryClusterSpecificationRequest is the request struct for api QueryClusterSpecification
 type QueryClusterSpecificationRequest struct {
 	*requests.RpcRequest
+	ConnectType    string `position:"Query" name:"ConnectType"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
