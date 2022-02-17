@@ -26,5 +26,6 @@ type PublishInfoDo struct {
 	CreateTime        int64              `json:"CreateTime" xml:"CreateTime"`
 	Topic             string             `json:"Topic" xml:"Topic"`
 	InstanceId        string             `json:"InstanceId" xml:"InstanceId"`
+	ServiceStatus     int                `json:"ServiceStatus" xml:"ServiceStatus"`
 	Tags              TagsInOnsTopicList `json:"Tags" xml:"Tags"`
 }

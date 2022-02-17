@@ -54,7 +54,7 @@ type Data struct {
 	SubscriptionDataList       SubscriptionDataListInOnsTopicSubDetail  `json:"SubscriptionDataList" xml:"SubscriptionDataList"`
 	ConnectionSet              ConnectionSet                            `json:"ConnectionSet" xml:"ConnectionSet"`
 	PropertyList               PropertyListInOnsDLQMessageGetById       `json:"PropertyList" xml:"PropertyList"`
-	Records                    RecordsInOnsMqttQueryHistoryOnline       `json:"Records" xml:"Records"`
+	Records                    RecordsInOnsTrendGroupOutputTps          `json:"Records" xml:"Records"`
 	ConnectionList             ConnectionList                           `json:"ConnectionList" xml:"ConnectionList"`
 	ConsumerConnectionInfoList ConsumerConnectionInfoList               `json:"ConsumerConnectionInfoList" xml:"ConsumerConnectionInfoList"`
 }
