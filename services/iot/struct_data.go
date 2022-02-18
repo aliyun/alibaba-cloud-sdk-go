@@ -33,6 +33,7 @@ type Data struct {
 	GroupId                   string                    `json:"GroupId" xml:"GroupId"`
 	TunnelId                  string                    `json:"TunnelId" xml:"TunnelId"`
 	LatestDeploymentType      string                    `json:"LatestDeploymentType" xml:"LatestDeploymentType"`
+	CoordinateSystem          int                       `json:"CoordinateSystem" xml:"CoordinateSystem"`
 	OssPreSignedAddress       string                    `json:"OssPreSignedAddress" xml:"OssPreSignedAddress"`
 	Type                      string                    `json:"Type" xml:"Type"`
 	DeviceConnState           string                    `json:"DeviceConnState" xml:"DeviceConnState"`
@@ -80,6 +81,7 @@ type Data struct {
 	JobId                     string                    `json:"JobId" xml:"JobId"`
 	Id                        int                       `json:"Id" xml:"Id"`
 	ProductSecret             string                    `json:"ProductSecret" xml:"ProductSecret"`
+	Ip                        string                    `json:"Ip" xml:"Ip"`
 	ScriptType                string                    `json:"ScriptType" xml:"ScriptType"`
 	PageNum                   int                       `json:"PageNum" xml:"PageNum"`
 	AccessKeyId               string                    `json:"AccessKeyId" xml:"AccessKeyId"`
@@ -88,6 +90,7 @@ type Data struct {
 	DriverId                  string                    `json:"DriverId" xml:"DriverId"`
 	CurrentPage               int                       `json:"CurrentPage" xml:"CurrentPage"`
 	Signature                 string                    `json:"Signature" xml:"Signature"`
+	Adcode                    int64                     `json:"Adcode" xml:"Adcode"`
 	ObjectStorage             string                    `json:"ObjectStorage" xml:"ObjectStorage"`
 	DeviceCount               int                       `json:"DeviceCount" xml:"DeviceCount"`
 	ProtocolType              string                    `json:"ProtocolType" xml:"ProtocolType"`
@@ -98,6 +101,7 @@ type Data struct {
 	BizEnable                 bool                      `json:"BizEnable" xml:"BizEnable"`
 	GmtCompleted              string                    `json:"GmtCompleted" xml:"GmtCompleted"`
 	UtcCreate                 string                    `json:"UtcCreate" xml:"UtcCreate"`
+	Latitude                  float64                   `json:"Latitude" xml:"Latitude"`
 	HasNext                   bool                      `json:"HasNext" xml:"HasNext"`
 	TargetType                string                    `json:"TargetType" xml:"TargetType"`
 	DeviceActive              int                       `json:"DeviceActive" xml:"DeviceActive"`
@@ -114,6 +118,8 @@ type Data struct {
 	Configuration             string                    `json:"Configuration" xml:"Configuration"`
 	AuthMode                  int                       `json:"AuthMode" xml:"AuthMode"`
 	UtcCreatedOn              string                    `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
+	Longitude                 float64                   `json:"Longitude" xml:"Longitude"`
+	Province                  string                    `json:"Province" xml:"Province"`
 	AppId                     string                    `json:"AppId" xml:"AppId"`
 	MessageId                 string                    `json:"MessageId" xml:"MessageId"`
 	FileUrl                   string                    `json:"FileUrl" xml:"FileUrl"`
@@ -140,6 +146,7 @@ type Data struct {
 	Description               string                    `json:"Description" xml:"Description"`
 	GmtModifiedTimestamp      int64                     `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
 	ApiPath                   string                    `json:"ApiPath" xml:"ApiPath"`
+	Country                   string                    `json:"Country" xml:"Country"`
 	Status                    int                       `json:"Status" xml:"Status"`
 	Protocol                  string                    `json:"Protocol" xml:"Protocol"`
 	TopicFilter               string                    `json:"TopicFilter" xml:"TopicFilter"`
@@ -147,6 +154,7 @@ type Data struct {
 	DeviceSecret              string                    `json:"DeviceSecret" xml:"DeviceSecret"`
 	ProductKey                string                    `json:"ProductKey" xml:"ProductKey"`
 	GmtModified               string                    `json:"GmtModified" xml:"GmtModified"`
+	City                      string                    `json:"City" xml:"City"`
 	DisplayName               string                    `json:"DisplayName" xml:"DisplayName"`
 	VersionState              string                    `json:"VersionState" xml:"VersionState"`
 	IotId                     string                    `json:"IotId" xml:"IotId"`
@@ -164,6 +172,7 @@ type Data struct {
 	SoundCodeConfig           SoundCodeConfig           `json:"SoundCodeConfig" xml:"SoundCodeConfig"`
 	TaskList                  []Task                    `json:"TaskList" xml:"TaskList"`
 	ModelVersions             []ModelVersion            `json:"ModelVersions" xml:"ModelVersions"`
+	Points                    []PointsItem              `json:"Points" xml:"Points"`
 	List                      ListInGetThingTopo        `json:"List" xml:"List"`
 	DynamicRegClientIds       []DynamicRegClientId      `json:"DynamicRegClientIds" xml:"DynamicRegClientIds"`
 }
