@@ -95,7 +95,7 @@ func CreateQuerySpeechListRequest() (request *QuerySpeechListRequest) {
 	request = &QuerySpeechListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeechList", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeechList", "", "")
 	request.Method = requests.POST
 	return
 }

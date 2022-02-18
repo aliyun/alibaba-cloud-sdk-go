@@ -1,3 +1,7 @@
+2022-02-18 Version: v1.61.1487
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 build sdk.
+
 2022-02-18 Version: v1.61.1486
 - Generated 2018-01-20 for `Iot`.
 - Add Gis open service add data api.

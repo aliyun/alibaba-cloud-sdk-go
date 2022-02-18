@@ -92,7 +92,7 @@ func CreateCreateConsumerGroupSubscribeRelationRequest() (request *CreateConsume
 	request = &CreateConsumerGroupSubscribeRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateConsumerGroupSubscribeRelation", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateConsumerGroupSubscribeRelation", "", "")
 	request.Method = requests.POST
 	return
 }

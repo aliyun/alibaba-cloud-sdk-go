@@ -92,7 +92,7 @@ func CreateGenerateOTAUploadURLRequest() (request *GenerateOTAUploadURLRequest) 
 	request = &GenerateOTAUploadURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GenerateOTAUploadURL", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GenerateOTAUploadURL", "", "")
 	request.Method = requests.POST
 	return
 }

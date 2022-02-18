@@ -94,7 +94,7 @@ func CreatePublishStudioAppRequest() (request *PublishStudioAppRequest) {
 	request = &PublishStudioAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "PublishStudioApp", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "PublishStudioApp", "", "")
 	request.Method = requests.POST
 	return
 }

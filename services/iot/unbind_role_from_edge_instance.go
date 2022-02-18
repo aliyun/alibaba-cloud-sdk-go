@@ -91,7 +91,7 @@ func CreateUnbindRoleFromEdgeInstanceRequest() (request *UnbindRoleFromEdgeInsta
 	request = &UnbindRoleFromEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindRoleFromEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindRoleFromEdgeInstance", "", "")
 	request.Method = requests.POST
 	return
 }

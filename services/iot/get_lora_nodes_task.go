@@ -80,15 +80,15 @@ type GetLoraNodesTaskRequest struct {
 // GetLoraNodesTaskResponse is the response struct for api GetLoraNodesTask
 type GetLoraNodesTaskResponse struct {
 	*responses.BaseResponse
-	RequestId      string                           `json:"RequestId" xml:"RequestId"`
-	Success        bool                             `json:"Success" xml:"Success"`
-	Code           string                           `json:"Code" xml:"Code"`
-	ErrorMessage   string                           `json:"ErrorMessage" xml:"ErrorMessage"`
-	TaskId         string                           `json:"TaskId" xml:"TaskId"`
-	TaskState      string                           `json:"TaskState" xml:"TaskState"`
-	TotalCount     int64                            `json:"TotalCount" xml:"TotalCount"`
-	SuccessCount   int64                            `json:"SuccessCount" xml:"SuccessCount"`
-	SuccessDevEuis SuccessDevEuisInGetLoraNodesTask `json:"SuccessDevEuis" xml:"SuccessDevEuis"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	Success        bool           `json:"Success" xml:"Success"`
+	Code           string         `json:"Code" xml:"Code"`
+	ErrorMessage   string         `json:"ErrorMessage" xml:"ErrorMessage"`
+	TaskId         string         `json:"TaskId" xml:"TaskId"`
+	TaskState      string         `json:"TaskState" xml:"TaskState"`
+	TotalCount     int64          `json:"TotalCount" xml:"TotalCount"`
+	SuccessCount   int64          `json:"SuccessCount" xml:"SuccessCount"`
+	SuccessDevEuis SuccessDevEuis `json:"SuccessDevEuis" xml:"SuccessDevEuis"`
 }
 
 // CreateGetLoraNodesTaskRequest creates a request to invoke GetLoraNodesTask API
@@ -96,7 +96,7 @@ func CreateGetLoraNodesTaskRequest() (request *GetLoraNodesTaskRequest) {
 	request = &GetLoraNodesTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetLoraNodesTask", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetLoraNodesTask", "", "")
 	request.Method = requests.POST
 	return
 }

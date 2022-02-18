@@ -93,7 +93,7 @@ func CreateBindApplicationToEdgeInstanceRequest() (request *BindApplicationToEdg
 	request = &BindApplicationToEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindApplicationToEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BindApplicationToEdgeInstance", "", "")
 	request.Method = requests.POST
 	return
 }

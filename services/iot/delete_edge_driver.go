@@ -91,7 +91,7 @@ func CreateDeleteEdgeDriverRequest() (request *DeleteEdgeDriverRequest) {
 	request = &DeleteEdgeDriverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteEdgeDriver", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteEdgeDriver", "", "")
 	request.Method = requests.POST
 	return
 }

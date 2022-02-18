@@ -94,7 +94,7 @@ func CreateCancelReleaseProductRequest() (request *CancelReleaseProductRequest) 
 	request = &CancelReleaseProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CancelReleaseProduct", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CancelReleaseProduct", "", "")
 	request.Method = requests.POST
 	return
 }

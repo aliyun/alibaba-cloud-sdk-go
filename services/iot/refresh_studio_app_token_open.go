@@ -93,7 +93,7 @@ func CreateRefreshStudioAppTokenOpenRequest() (request *RefreshStudioAppTokenOpe
 	request = &RefreshStudioAppTokenOpenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "RefreshStudioAppTokenOpen", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "RefreshStudioAppTokenOpen", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -96,7 +96,7 @@ func CreateQueryEdgeInstanceChannelRequest() (request *QueryEdgeInstanceChannelR
 	request = &QueryEdgeInstanceChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceChannel", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceChannel", "", "")
 	request.Method = requests.POST
 	return
 }

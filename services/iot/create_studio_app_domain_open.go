@@ -95,7 +95,7 @@ func CreateCreateStudioAppDomainOpenRequest() (request *CreateStudioAppDomainOpe
 	request = &CreateStudioAppDomainOpenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateStudioAppDomainOpen", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateStudioAppDomainOpen", "", "")
 	request.Method = requests.POST
 	return
 }

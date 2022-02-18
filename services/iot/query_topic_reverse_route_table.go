@@ -92,7 +92,7 @@ func CreateQueryTopicReverseRouteTableRequest() (request *QueryTopicReverseRoute
 	request = &QueryTopicReverseRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryTopicReverseRouteTable", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryTopicReverseRouteTable", "", "")
 	request.Method = requests.POST
 	return
 }

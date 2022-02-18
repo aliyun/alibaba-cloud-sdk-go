@@ -91,7 +91,7 @@ func CreateDeleteDeviceTunnelRequest() (request *DeleteDeviceTunnelRequest) {
 	request = &DeleteDeviceTunnelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceTunnel", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceTunnel", "", "")
 	request.Method = requests.POST
 	return
 }

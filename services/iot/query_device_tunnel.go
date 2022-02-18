@@ -92,7 +92,7 @@ func CreateQueryDeviceTunnelRequest() (request *QueryDeviceTunnelRequest) {
 	request = &QueryDeviceTunnelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceTunnel", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceTunnel", "", "")
 	request.Method = requests.POST
 	return
 }

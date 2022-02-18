@@ -97,7 +97,7 @@ func CreateReleaseProductRequest() (request *ReleaseProductRequest) {
 	request = &ReleaseProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ReleaseProduct", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ReleaseProduct", "", "")
 	request.Method = requests.POST
 	return
 }

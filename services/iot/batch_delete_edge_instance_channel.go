@@ -93,7 +93,7 @@ func CreateBatchDeleteEdgeInstanceChannelRequest() (request *BatchDeleteEdgeInst
 	request = &BatchDeleteEdgeInstanceChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchDeleteEdgeInstanceChannel", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchDeleteEdgeInstanceChannel", "", "")
 	request.Method = requests.POST
 	return
 }

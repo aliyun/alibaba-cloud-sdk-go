@@ -93,7 +93,7 @@ func CreateQueryStudioAppDomainListOpenRequest() (request *QueryStudioAppDomainL
 	request = &QueryStudioAppDomainListOpenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryStudioAppDomainListOpen", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryStudioAppDomainListOpen", "", "")
 	request.Method = requests.POST
 	return
 }

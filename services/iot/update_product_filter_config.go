@@ -93,7 +93,7 @@ func CreateUpdateProductFilterConfigRequest() (request *UpdateProductFilterConfi
 	request = &UpdateProductFilterConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateProductFilterConfig", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateProductFilterConfig", "", "")
 	request.Method = requests.POST
 	return
 }

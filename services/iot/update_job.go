@@ -94,7 +94,7 @@ func CreateUpdateJobRequest() (request *UpdateJobRequest) {
 	request = &UpdateJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateJob", "", "")
 	request.Method = requests.POST
 	return
 }

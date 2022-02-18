@@ -97,7 +97,7 @@ func CreateListTaskRequest() (request *ListTaskRequest) {
 	request = &ListTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListTask", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListTask", "", "")
 	request.Method = requests.POST
 	return
 }

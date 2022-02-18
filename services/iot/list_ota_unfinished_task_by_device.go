@@ -96,7 +96,7 @@ func CreateListOTAUnfinishedTaskByDeviceRequest() (request *ListOTAUnfinishedTas
 	request = &ListOTAUnfinishedTaskByDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice", "", "")
 	request.Method = requests.POST
 	return
 }

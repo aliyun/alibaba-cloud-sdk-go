@@ -92,7 +92,7 @@ func CreateDeleteClientIdsRequest() (request *DeleteClientIdsRequest) {
 	request = &DeleteClientIdsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteClientIds", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteClientIds", "", "")
 	request.Method = requests.POST
 	return
 }

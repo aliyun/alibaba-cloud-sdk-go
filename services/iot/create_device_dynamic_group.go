@@ -94,7 +94,7 @@ func CreateCreateDeviceDynamicGroupRequest() (request *CreateDeviceDynamicGroupR
 	request = &CreateDeviceDynamicGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDeviceDynamicGroup", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDeviceDynamicGroup", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateQuerySolutionDeviceGroupPageRequest() (request *QuerySolutionDeviceGr
 	request = &QuerySolutionDeviceGroupPageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySolutionDeviceGroupPage", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySolutionDeviceGroupPage", "", "")
 	request.Method = requests.POST
 	return
 }

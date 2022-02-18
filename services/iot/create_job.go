@@ -100,7 +100,7 @@ func CreateCreateJobRequest() (request *CreateJobRequest) {
 	request = &CreateJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateJob", "", "")
 	request.Method = requests.POST
 	return
 }
