@@ -1,3 +1,9 @@
+2022-02-21 Version: v1.61.1488
+- Generated 2019-05-31 for `mse`.
+- Add DleteNacosInstance.
+- Change CreateCluster parameter.
+- Change UpdateNacosInstance errorCode.
+
 2022-02-18 Version: v1.61.1487
 - Generated 2018-01-20 for `Iot`.
 - Iot_20180120 build sdk.

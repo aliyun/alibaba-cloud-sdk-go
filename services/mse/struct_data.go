@@ -19,6 +19,7 @@ package mse
 type Data struct {
 	CurrentVersionFullShowName   string                 `json:"CurrentVersionFullShowName" xml:"CurrentVersionFullShowName"`
 	Source                       string                 `json:"Source" xml:"Source"`
+	Predicates                   string                 `json:"Predicates" xml:"Predicates"`
 	Ephemeral                    bool                   `json:"Ephemeral" xml:"Ephemeral"`
 	AfterDate                    int64                  `json:"AfterDate" xml:"AfterDate"`
 	MockType                     int64                  `json:"MockType" xml:"MockType"`
@@ -30,6 +31,7 @@ type Data struct {
 	SyncLimit                    string                 `json:"SyncLimit" xml:"SyncLimit"`
 	UpdateTime                   int64                  `json:"UpdateTime" xml:"UpdateTime"`
 	DomainName                   string                 `json:"DomainName" xml:"DomainName"`
+	Services                     string                 `json:"Services" xml:"Services"`
 	MetaInfo                     string                 `json:"MetaInfo" xml:"MetaInfo"`
 	ProviderAppName              string                 `json:"ProviderAppName" xml:"ProviderAppName"`
 	Id                           int64                  `json:"Id" xml:"Id"`
@@ -74,8 +76,10 @@ type Data struct {
 	ConfigSecretSupported        bool                   `json:"ConfigSecretSupported" xml:"ConfigSecretSupported"`
 	Dir                          bool                   `json:"Dir" xml:"Dir"`
 	ConfigAuthEnabled            bool                   `json:"ConfigAuthEnabled" xml:"ConfigAuthEnabled"`
+	DefaultServiceId             int64                  `json:"DefaultServiceId" xml:"DefaultServiceId"`
 	JuteMaxbuffer                string                 `json:"JuteMaxbuffer" xml:"JuteMaxbuffer"`
 	MaxVersionFullShowName       string                 `json:"MaxVersionFullShowName" xml:"MaxVersionFullShowName"`
+	RouteOrder                   int                    `json:"RouteOrder" xml:"RouteOrder"`
 	ConsumerAppName              string                 `json:"ConsumerAppName" xml:"ConsumerAppName"`
 	IsWhite                      bool                   `json:"IsWhite" xml:"IsWhite"`
 	InitLimit                    string                 `json:"InitLimit" xml:"InitLimit"`
@@ -102,6 +106,7 @@ type Data struct {
 	GroupName                    string                 `json:"GroupName" xml:"GroupName"`
 	CreateTime                   int64                  `json:"CreateTime" xml:"CreateTime"`
 	AuthId                       int64                  `json:"AuthId" xml:"AuthId"`
+	DefaultServiceName           string                 `json:"DefaultServiceName" xml:"DefaultServiceName"`
 	MaxClientCnxns               string                 `json:"MaxClientCnxns" xml:"MaxClientCnxns"`
 	ExtraInfo                    string                 `json:"ExtraInfo" xml:"ExtraInfo"`
 	MCPEnabled                   bool                   `json:"MCPEnabled" xml:"MCPEnabled"`
@@ -114,6 +119,7 @@ type Data struct {
 	PageNumber                   int                    `json:"PageNumber" xml:"PageNumber"`
 	ClusterName                  string                 `json:"ClusterName" xml:"ClusterName"`
 	NamespaceShowName            string                 `json:"NamespaceShowName" xml:"NamespaceShowName"`
+	DestinationType              string                 `json:"DestinationType" xml:"DestinationType"`
 	Vswitch                      string                 `json:"Vswitch" xml:"Vswitch"`
 	OpenSuperAcl                 bool                   `json:"OpenSuperAcl" xml:"OpenSuperAcl"`
 	Status                       int                    `json:"Status" xml:"Status"`
@@ -128,12 +134,23 @@ type Data struct {
 	NamespaceId                  string                 `json:"NamespaceId" xml:"NamespaceId"`
 	UserName                     string                 `json:"UserName" xml:"UserName"`
 	Ips                          []string               `json:"Ips" xml:"Ips"`
+	DomainNameList               []string               `json:"DomainNameList" xml:"DomainNameList"`
+	DomainIdList                 []int64                `json:"DomainIdList" xml:"DomainIdList"`
+	Redirect                     Redirect               `json:"Redirect" xml:"Redirect"`
+	HTTPRewrite                  HTTPRewrite            `json:"HTTPRewrite" xml:"HTTPRewrite"`
 	GatewayTrafficPolicy         GatewayTrafficPolicy   `json:"GatewayTrafficPolicy" xml:"GatewayTrafficPolicy"`
 	TraceDetails                 TraceDetails           `json:"TraceDetails" xml:"TraceDetails"`
+	DirectResponse               DirectResponse         `json:"DirectResponse" xml:"DirectResponse"`
+	Retry                        Retry                  `json:"Retry" xml:"Retry"`
 	XtraceDetails                XtraceDetails          `json:"XtraceDetails" xml:"XtraceDetails"`
+	Cors                         Cors                   `json:"Cors" xml:"Cors"`
+	HeaderOp                     HeaderOp               `json:"HeaderOp" xml:"HeaderOp"`
+	RoutePredicates              RoutePredicates        `json:"RoutePredicates" xml:"RoutePredicates"`
 	LogConfigDetails             LogConfigDetails       `json:"LogConfigDetails" xml:"LogConfigDetails"`
+	Timeout                      Timeout                `json:"Timeout" xml:"Timeout"`
 	Result                       []ClusterList          `json:"Result" xml:"Result"`
 	VersionDetails               []VersionDetailsItem   `json:"VersionDetails" xml:"VersionDetails"`
+	RouteServices                []RouteServicesItem    `json:"RouteServices" xml:"RouteServices"`
 	FailData                     []FailDataItem         `json:"FailData" xml:"FailData"`
 	SkipData                     []SkipDataItem         `json:"SkipData" xml:"SkipData"`
 	LabelDetails                 []LabelDetailsItem     `json:"LabelDetails" xml:"LabelDetails"`
