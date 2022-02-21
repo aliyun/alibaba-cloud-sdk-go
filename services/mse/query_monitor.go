@@ -86,9 +86,9 @@ type QueryMonitorResponse struct {
 	*responses.BaseResponse
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      string `json:"Data" xml:"Data"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Success   bool   `json:"Success" xml:"Success"`
+	Data      []Data `json:"Data" xml:"Data"`
 }
 
 // CreateQueryMonitorRequest creates a request to invoke QueryMonitor API
