@@ -1,3 +1,8 @@
+2022-02-21 Version: v1.61.1490
+- Generated 2019-01-01 for `HBase`.
+- Add event tasks.
+- DescribeInstance taskProgress.
+
 2022-02-21 Version: v1.61.1489
 - Generated 2019-05-31 for `mse`.
 - Bugfix QueryMoniter.
