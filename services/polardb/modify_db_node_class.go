@@ -81,6 +81,7 @@ type ModifyDBNodeClassRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
 	ModifyType           string           `position:"Query" name:"ModifyType"`
+	SubCategory          string           `position:"Query" name:"SubCategory"`
 }
 
 // ModifyDBNodeClassResponse is the response struct for api ModifyDBNodeClass
@@ -96,7 +97,7 @@ func CreateModifyDBNodeClassRequest() (request *ModifyDBNodeClassRequest) {
 	request = &ModifyDBNodeClassRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodeClass", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodeClass", "", "")
 	request.Method = requests.POST
 	return
 }

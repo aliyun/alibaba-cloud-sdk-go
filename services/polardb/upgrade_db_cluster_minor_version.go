@@ -92,7 +92,7 @@ func CreateUpgradeDBClusterMinorVersionRequest() (request *UpgradeDBClusterMinor
 	request = &UpgradeDBClusterMinorVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "UpgradeDBClusterMinorVersion", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "UpgradeDBClusterMinorVersion", "", "")
 	request.Method = requests.POST
 	return
 }

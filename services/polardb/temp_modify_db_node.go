@@ -103,7 +103,7 @@ func CreateTempModifyDBNodeRequest() (request *TempModifyDBNodeRequest) {
 	request = &TempModifyDBNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "TempModifyDBNode", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "TempModifyDBNode", "", "")
 	request.Method = requests.POST
 	return
 }

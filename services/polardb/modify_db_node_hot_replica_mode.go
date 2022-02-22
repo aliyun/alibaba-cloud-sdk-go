@@ -93,7 +93,7 @@ func CreateModifyDBNodeHotReplicaModeRequest() (request *ModifyDBNodeHotReplicaM
 	request = &ModifyDBNodeHotReplicaModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodeHotReplicaMode", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodeHotReplicaMode", "", "")
 	request.Method = requests.POST
 	return
 }

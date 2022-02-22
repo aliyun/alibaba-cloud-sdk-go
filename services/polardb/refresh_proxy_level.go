@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RestoreTable invokes the polardb.RestoreTable API synchronously
-func (client *Client) RestoreTable(request *RestoreTableRequest) (response *RestoreTableResponse, err error) {
-	response = CreateRestoreTableResponse()
+// RefreshProxyLevel invokes the polardb.RefreshProxyLevel API synchronously
+func (client *Client) RefreshProxyLevel(request *RefreshProxyLevelRequest) (response *RefreshProxyLevelResponse, err error) {
+	response = CreateRefreshProxyLevelResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RestoreTableWithChan invokes the polardb.RestoreTable API asynchronously
-func (client *Client) RestoreTableWithChan(request *RestoreTableRequest) (<-chan *RestoreTableResponse, <-chan error) {
-	responseChan := make(chan *RestoreTableResponse, 1)
+// RefreshProxyLevelWithChan invokes the polardb.RefreshProxyLevel API asynchronously
+func (client *Client) RefreshProxyLevelWithChan(request *RefreshProxyLevelRequest) (<-chan *RefreshProxyLevelResponse, <-chan error) {
+	responseChan := make(chan *RefreshProxyLevelResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RestoreTable(request)
+		response, err := client.RefreshProxyLevel(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RestoreTableWithChan(request *RestoreTableRequest) (<-chan
 	return responseChan, errChan
 }
 
-// RestoreTableWithCallback invokes the polardb.RestoreTable API asynchronously
-func (client *Client) RestoreTableWithCallback(request *RestoreTableRequest, callback func(response *RestoreTableResponse, err error)) <-chan int {
+// RefreshProxyLevelWithCallback invokes the polardb.RefreshProxyLevel API asynchronously
+func (client *Client) RefreshProxyLevelWithCallback(request *RefreshProxyLevelRequest, callback func(response *RefreshProxyLevelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RestoreTableResponse
+		var response *RefreshProxyLevelResponse
 		var err error
 		defer close(result)
-		response, err = client.RestoreTable(request)
+		response, err = client.RefreshProxyLevel(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,39 @@ func (client *Client) RestoreTableWithCallback(request *RestoreTableRequest, cal
 	return result
 }
 
-// RestoreTableRequest is the request struct for api RestoreTable
-type RestoreTableRequest struct {
+// RefreshProxyLevelRequest is the request struct for api RefreshProxyLevel
+type RefreshProxyLevelRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	TableMeta            string           `position:"Query" name:"TableMeta"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
+	ProxyTargetClass     string           `position:"Query" name:"ProxyTargetClass"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
+	FromTimeService      requests.Boolean `position:"Query" name:"FromTimeService"`
 }
 
-// RestoreTableResponse is the response struct for api RestoreTable
-type RestoreTableResponse struct {
+// RefreshProxyLevelResponse is the response struct for api RefreshProxyLevel
+type RefreshProxyLevelResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRestoreTableRequest creates a request to invoke RestoreTable API
-func CreateRestoreTableRequest() (request *RestoreTableRequest) {
-	request = &RestoreTableRequest{
+// CreateRefreshProxyLevelRequest creates a request to invoke RefreshProxyLevel API
+func CreateRefreshProxyLevelRequest() (request *RefreshProxyLevelRequest) {
+	request = &RefreshProxyLevelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "RestoreTable", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "RefreshProxyLevel", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRestoreTableResponse creates a response to parse from RestoreTable response
-func CreateRestoreTableResponse() (response *RestoreTableResponse) {
-	response = &RestoreTableResponse{
+// CreateRefreshProxyLevelResponse creates a response to parse from RefreshProxyLevel response
+func CreateRefreshProxyLevelResponse() (response *RefreshProxyLevelResponse) {
+	response = &RefreshProxyLevelResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

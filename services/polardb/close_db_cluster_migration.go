@@ -90,7 +90,7 @@ func CreateCloseDBClusterMigrationRequest() (request *CloseDBClusterMigrationReq
 	request = &CloseDBClusterMigrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CloseDBClusterMigration", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CloseDBClusterMigration", "", "")
 	request.Method = requests.POST
 	return
 }

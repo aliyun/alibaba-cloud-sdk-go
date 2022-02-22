@@ -91,7 +91,7 @@ func CreateDescribeDBClusterSSLRequest() (request *DescribeDBClusterSSLRequest) 
 	request = &DescribeDBClusterSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterSSL", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterSSL", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateDescribeStoragePlanRequest() (request *DescribeStoragePlanRequest) {
 	request = &DescribeStoragePlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeStoragePlan", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeStoragePlan", "", "")
 	request.Method = requests.POST
 	return
 }

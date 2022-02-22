@@ -1,3 +1,7 @@
+2022-02-22 Version: v1.61.1491
+- Generated 2017-08-01 for `polardb`.
+- Support RefreshProxyLevel.
+
 2022-02-21 Version: v1.61.1490
 - Generated 2019-01-01 for `HBase`.
 - Add event tasks.

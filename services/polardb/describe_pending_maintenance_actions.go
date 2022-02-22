@@ -91,7 +91,7 @@ func CreateDescribePendingMaintenanceActionsRequest() (request *DescribePendingM
 	request = &DescribePendingMaintenanceActionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePendingMaintenanceActions", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePendingMaintenanceActions", "", "")
 	request.Method = requests.POST
 	return
 }

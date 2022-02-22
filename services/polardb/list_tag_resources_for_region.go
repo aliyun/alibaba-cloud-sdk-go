@@ -91,7 +91,7 @@ func CreateListTagResourcesForRegionRequest() (request *ListTagResourcesForRegio
 	request = &ListTagResourcesForRegionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ListTagResourcesForRegion", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ListTagResourcesForRegion", "", "")
 	request.Method = requests.POST
 	return
 }
