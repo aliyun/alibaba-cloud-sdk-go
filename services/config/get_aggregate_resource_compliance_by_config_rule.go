@@ -71,9 +71,10 @@ func (client *Client) GetAggregateResourceComplianceByConfigRuleWithCallback(req
 // GetAggregateResourceComplianceByConfigRuleRequest is the request struct for api GetAggregateResourceComplianceByConfigRule
 type GetAggregateResourceComplianceByConfigRuleRequest struct {
 	*requests.RpcRequest
-	ConfigRuleId   string `position:"Query" name:"ConfigRuleId"`
-	AggregatorId   string `position:"Query" name:"AggregatorId"`
-	ComplianceType string `position:"Query" name:"ComplianceType"`
+	ConfigRuleId    string           `position:"Query" name:"ConfigRuleId"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AggregatorId    string           `position:"Query" name:"AggregatorId"`
+	ComplianceType  string           `position:"Query" name:"ComplianceType"`
 }
 
 // GetAggregateResourceComplianceByConfigRuleResponse is the response struct for api GetAggregateResourceComplianceByConfigRule
