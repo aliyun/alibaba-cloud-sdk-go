@@ -1,3 +1,7 @@
+2022-02-23 Version: v1.61.1494
+- Generated 2019-03-07 for `Cloudauth`.
+- Add AuthId.
+
 2022-02-23 Version: v1.61.1493
 - Generated 2020-09-07 for `Config`.
 - Support remediation.

@@ -85,6 +85,7 @@ type InitFaceVerifyRequest struct {
 	CertName               string           `position:"Query" name:"CertName"`
 	Ip                     string           `position:"Query" name:"Ip"`
 	Mobile                 string           `position:"Query" name:"Mobile"`
+	AuthId                 string           `position:"Body" name:"AuthId"`
 	SceneId                requests.Integer `position:"Query" name:"SceneId"`
 	OssBucketName          string           `position:"Query" name:"OssBucketName"`
 	CallbackToken          string           `position:"Query" name:"CallbackToken"`

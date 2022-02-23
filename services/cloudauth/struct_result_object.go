@@ -17,19 +17,12 @@ package cloudauth
 
 // ResultObject is a nested struct in cloudauth response
 type ResultObject struct {
-	Score                     float64                  `json:"Score" xml:"Score"`
-	VerifyStatus              int                      `json:"VerifyStatus" xml:"VerifyStatus"`
-	FaceComparisonScore       float64                  `json:"FaceComparisonScore" xml:"FaceComparisonScore"`
-	SimilarityScore           float64                  `json:"SimilarityScore" xml:"SimilarityScore"`
-	Passed                    string                   `json:"Passed" xml:"Passed"`
-	AuthorityComparisionScore float64                  `json:"AuthorityComparisionScore" xml:"AuthorityComparisionScore"`
-	VerifyPageUrl             string                   `json:"VerifyPageUrl" xml:"VerifyPageUrl"`
-	ImgWidth                  int                      `json:"ImgWidth" xml:"ImgWidth"`
-	ImgHeight                 int                      `json:"ImgHeight" xml:"ImgHeight"`
-	IdCardFaceComparisonScore float64                  `json:"IdCardFaceComparisonScore" xml:"IdCardFaceComparisonScore"`
-	VerifyToken               string                   `json:"VerifyToken" xml:"VerifyToken"`
-	FrameUrl                  string                   `json:"FrameUrl" xml:"FrameUrl"`
-	ConfidenceThresholds      string                   `json:"ConfidenceThresholds" xml:"ConfidenceThresholds"`
-	Material                  MaterialInVerifyMaterial `json:"Material" xml:"Material"`
-	FaceInfos                 FaceInfos                `json:"FaceInfos" xml:"FaceInfos"`
+	VerifyScore  float64 `json:"VerifyScore" xml:"VerifyScore"`
+	IdentityInfo string  `json:"IdentityInfo" xml:"IdentityInfo"`
+	CertifyId    string  `json:"CertifyId" xml:"CertifyId"`
+	SubCode      string  `json:"SubCode" xml:"SubCode"`
+	CertifyUrl   string  `json:"CertifyUrl" xml:"CertifyUrl"`
+	DeviceToken  string  `json:"DeviceToken" xml:"DeviceToken"`
+	Passed       string  `json:"Passed" xml:"Passed"`
+	MaterialInfo string  `json:"MaterialInfo" xml:"MaterialInfo"`
 }

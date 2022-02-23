@@ -71,22 +71,21 @@ func (client *Client) CompareFacesWithCallback(request *CompareFacesRequest, cal
 // CompareFacesRequest is the request struct for api CompareFaces
 type CompareFacesRequest struct {
 	*requests.RpcRequest
-	TargetImageUrl    string `position:"Body" name:"TargetImageUrl"`
-	SourceImageUrl    string `position:"Body" name:"SourceImageUrl"`
-	TargetImageBase64 string `position:"Body" name:"TargetImageBase64"`
-	BizType           string `position:"Body" name:"BizType"`
-	BizId             string `position:"Body" name:"BizId"`
-	SourceImageBase64 string `position:"Body" name:"SourceImageBase64"`
+	SourceImageType  string `position:"Body" name:"SourceImageType"`
+	TargetImageType  string `position:"Body" name:"TargetImageType"`
+	TargetImageValue string `position:"Body" name:"TargetImageValue"`
+	BizType          string `position:"Body" name:"BizType"`
+	SourceImageValue string `position:"Body" name:"SourceImageValue"`
 }
 
 // CompareFacesResponse is the response struct for api CompareFaces
 type CompareFacesResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Code         string       `json:"Code" xml:"Code"`
-	Message      string       `json:"Message" xml:"Message"`
-	Success      bool         `json:"Success" xml:"Success"`
-	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateCompareFacesRequest creates a request to invoke CompareFaces API
@@ -94,7 +93,7 @@ func CreateCompareFacesRequest() (request *CompareFacesRequest) {
 	request = &CompareFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2020-11-12", "CompareFaces", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CompareFaces", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

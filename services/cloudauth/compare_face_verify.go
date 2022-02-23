@@ -71,19 +71,19 @@ func (client *Client) CompareFaceVerifyWithCallback(request *CompareFaceVerifyRe
 // CompareFaceVerifyRequest is the request struct for api CompareFaceVerify
 type CompareFaceVerifyRequest struct {
 	*requests.RpcRequest
-	TargetFaceContrastPictureUrl string           `position:"Body" name:"TargetFaceContrastPictureUrl"`
 	ProductCode                  string           `position:"Body" name:"ProductCode"`
 	TargetCertifyId              string           `position:"Body" name:"TargetCertifyId"`
-	SourceOssObjectName          string           `position:"Body" name:"SourceOssObjectName"`
 	TargetFaceContrastPicture    string           `position:"Body" name:"TargetFaceContrastPicture"`
 	TargetOssBucketName          string           `position:"Body" name:"TargetOssBucketName"`
-	SourceOssBucketName          string           `position:"Body" name:"SourceOssBucketName"`
 	OuterOrderNo                 string           `position:"Body" name:"OuterOrderNo"`
-	TargetOssObjectName          string           `position:"Body" name:"TargetOssObjectName"`
 	SourceFaceContrastPicture    string           `position:"Body" name:"SourceFaceContrastPicture"`
+	SourceCertifyId              string           `position:"Body" name:"SourceCertifyId"`
+	TargetFaceContrastPictureUrl string           `position:"Body" name:"TargetFaceContrastPictureUrl"`
+	SourceOssObjectName          string           `position:"Body" name:"SourceOssObjectName"`
+	SourceOssBucketName          string           `position:"Body" name:"SourceOssBucketName"`
+	TargetOssObjectName          string           `position:"Body" name:"TargetOssObjectName"`
 	SceneId                      requests.Integer `position:"Body" name:"SceneId"`
 	SourceFaceContrastPictureUrl string           `position:"Body" name:"SourceFaceContrastPictureUrl"`
-	SourceCertifyId              string           `position:"Body" name:"SourceCertifyId"`
 	Crop                         string           `position:"Body" name:"Crop"`
 }
 

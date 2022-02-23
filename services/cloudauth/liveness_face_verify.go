@@ -72,18 +72,18 @@ func (client *Client) LivenessFaceVerifyWithCallback(request *LivenessFaceVerify
 type LivenessFaceVerifyRequest struct {
 	*requests.RpcRequest
 	ProductCode            string           `position:"Body" name:"ProductCode"`
-	OssObjectName          string           `position:"Body" name:"OssObjectName"`
 	FaceContrastPicture    string           `position:"Body" name:"FaceContrastPicture"`
-	Ip                     string           `position:"Body" name:"Ip"`
-	Mobile                 string           `position:"Body" name:"Mobile"`
 	DeviceToken            string           `position:"Body" name:"DeviceToken"`
 	UserId                 string           `position:"Body" name:"UserId"`
 	CertifyId              string           `position:"Body" name:"CertifyId"`
 	OuterOrderNo           string           `position:"Body" name:"OuterOrderNo"`
 	FaceContrastPictureUrl string           `position:"Body" name:"FaceContrastPictureUrl"`
+	Model                  string           `position:"Query" name:"Model"`
+	OssObjectName          string           `position:"Body" name:"OssObjectName"`
+	Ip                     string           `position:"Body" name:"Ip"`
+	Mobile                 string           `position:"Body" name:"Mobile"`
 	SceneId                requests.Integer `position:"Body" name:"SceneId"`
 	OssBucketName          string           `position:"Body" name:"OssBucketName"`
-	Model                  string           `position:"Query" name:"Model"`
 	Crop                   string           `position:"Body" name:"Crop"`
 }
 
