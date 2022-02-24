@@ -17,8 +17,12 @@ package eipanycast
 
 // AnycastEipBindInfo is a nested struct in eipanycast response
 type AnycastEipBindInfo struct {
-	BindInstanceType     string `json:"BindInstanceType" xml:"BindInstanceType"`
-	BindTime             string `json:"BindTime" xml:"BindTime"`
-	BindInstanceId       string `json:"BindInstanceId" xml:"BindInstanceId"`
-	BindInstanceRegionId string `json:"BindInstanceRegionId" xml:"BindInstanceRegionId"`
+	PrivateIpAddress     string        `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	BindInstanceType     string        `json:"BindInstanceType" xml:"BindInstanceType"`
+	AssociationMode      string        `json:"AssociationMode" xml:"AssociationMode"`
+	BindTime             string        `json:"BindTime" xml:"BindTime"`
+	BindInstanceId       string        `json:"BindInstanceId" xml:"BindInstanceId"`
+	Status               string        `json:"Status" xml:"Status"`
+	BindInstanceRegionId string        `json:"BindInstanceRegionId" xml:"BindInstanceRegionId"`
+	PopLocations         []PopLocation `json:"PopLocations" xml:"PopLocations"`
 }

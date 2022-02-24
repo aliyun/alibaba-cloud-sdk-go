@@ -72,9 +72,12 @@ func (client *Client) AssociateAnycastEipAddressWithCallback(request *AssociateA
 type AssociateAnycastEipAddressRequest struct {
 	*requests.RpcRequest
 	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	AssociationMode      string           `position:"Query" name:"AssociationMode"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	PopLocations         string           `position:"Query" name:"PopLocations"`
 	BindInstanceType     string           `position:"Query" name:"BindInstanceType"`
 	BindInstanceRegionId string           `position:"Query" name:"BindInstanceRegionId"`
+	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
 	AnycastId            string           `position:"Query" name:"AnycastId"`
 	BindInstanceId       string           `position:"Query" name:"BindInstanceId"`
 }

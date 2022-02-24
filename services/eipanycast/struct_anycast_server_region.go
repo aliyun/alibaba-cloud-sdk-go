@@ -17,6 +17,6 @@ package eipanycast
 
 // AnycastServerRegion is a nested struct in eipanycast response
 type AnycastServerRegion struct {
-	RegionId   string `json:"RegionId" xml:"RegionId"`
 	RegionName string `json:"RegionName" xml:"RegionName"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
 }

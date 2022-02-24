@@ -71,25 +71,25 @@ func (client *Client) ListAnycastEipAddressesWithCallback(request *ListAnycastEi
 // ListAnycastEipAddressesRequest is the request struct for api ListAnycastEipAddresses
 type ListAnycastEipAddressesRequest struct {
 	*requests.RpcRequest
+	NextToken          string           `position:"Query" name:"NextToken"`
+	InstanceChargeType string           `position:"Query" name:"InstanceChargeType"`
 	BusinessStatus     string           `position:"Query" name:"BusinessStatus"`
 	ServiceLocation    string           `position:"Query" name:"ServiceLocation"`
 	AnycastEipAddress  string           `position:"Query" name:"AnycastEipAddress"`
-	NextToken          string           `position:"Query" name:"NextToken"`
 	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
 	AnycastId          string           `position:"Query" name:"AnycastId"`
 	Name               string           `position:"Query" name:"Name"`
 	BindInstanceIds    *[]string        `position:"Query" name:"BindInstanceIds"  type:"Repeated"`
 	MaxResults         requests.Integer `position:"Query" name:"MaxResults"`
-	InstanceChargeType string           `position:"Query" name:"InstanceChargeType"`
 	Status             string           `position:"Query" name:"Status"`
 }
 
 // ListAnycastEipAddressesResponse is the response struct for api ListAnycastEipAddresses
 type ListAnycastEipAddressesResponse struct {
 	*responses.BaseResponse
-	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	TotalCount  int       `json:"TotalCount" xml:"TotalCount"`
 	NextToken   string    `json:"NextToken" xml:"NextToken"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	AnycastList []Anycast `json:"AnycastList" xml:"AnycastList"`
 }
 

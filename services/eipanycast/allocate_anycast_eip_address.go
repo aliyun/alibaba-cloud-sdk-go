@@ -83,9 +83,9 @@ type AllocateAnycastEipAddressRequest struct {
 // AllocateAnycastEipAddressResponse is the response struct for api AllocateAnycastEipAddress
 type AllocateAnycastEipAddressResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	AnycastId string `json:"AnycastId" xml:"AnycastId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAllocateAnycastEipAddressRequest creates a request to invoke AllocateAnycastEipAddress API

@@ -71,6 +71,7 @@ func (client *Client) DescribeAnycastEipAddressWithCallback(request *DescribeAny
 // DescribeAnycastEipAddressRequest is the request struct for api DescribeAnycastEipAddress
 type DescribeAnycastEipAddressRequest struct {
 	*requests.RpcRequest
+	Ip             string `position:"Query" name:"Ip"`
 	AnycastId      string `position:"Query" name:"AnycastId"`
 	BindInstanceId string `position:"Query" name:"BindInstanceId"`
 }
@@ -78,20 +79,20 @@ type DescribeAnycastEipAddressRequest struct {
 // DescribeAnycastEipAddressResponse is the response struct for api DescribeAnycastEipAddress
 type DescribeAnycastEipAddressResponse struct {
 	*responses.BaseResponse
-	RequestId              string               `json:"RequestId" xml:"RequestId"`
-	AnycastId              string               `json:"AnycastId" xml:"AnycastId"`
-	IpAddress              string               `json:"IpAddress" xml:"IpAddress"`
-	Name                   string               `json:"Name" xml:"Name"`
-	Description            string               `json:"Description" xml:"Description"`
-	Bandwidth              int                  `json:"Bandwidth" xml:"Bandwidth"`
-	InstanceChargeType     string               `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	InternetChargeType     string               `json:"InternetChargeType" xml:"InternetChargeType"`
-	CreateTime             string               `json:"CreateTime" xml:"CreateTime"`
 	Status                 string               `json:"Status" xml:"Status"`
-	ServiceLocation        string               `json:"ServiceLocation" xml:"ServiceLocation"`
-	AliUid                 int64                `json:"AliUid" xml:"AliUid"`
-	Bid                    string               `json:"Bid" xml:"Bid"`
+	Description            string               `json:"Description" xml:"Description"`
+	RequestId              string               `json:"RequestId" xml:"RequestId"`
+	InstanceChargeType     string               `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	CreateTime             string               `json:"CreateTime" xml:"CreateTime"`
 	BusinessStatus         string               `json:"BusinessStatus" xml:"BusinessStatus"`
+	InternetChargeType     string               `json:"InternetChargeType" xml:"InternetChargeType"`
+	Name                   string               `json:"Name" xml:"Name"`
+	AnycastId              string               `json:"AnycastId" xml:"AnycastId"`
+	ServiceLocation        string               `json:"ServiceLocation" xml:"ServiceLocation"`
+	Bandwidth              int                  `json:"Bandwidth" xml:"Bandwidth"`
+	IpAddress              string               `json:"IpAddress" xml:"IpAddress"`
+	Bid                    string               `json:"Bid" xml:"Bid"`
+	AliUid                 int64                `json:"AliUid" xml:"AliUid"`
 	AnycastEipBindInfoList []AnycastEipBindInfo `json:"AnycastEipBindInfoList" xml:"AnycastEipBindInfoList"`
 }
 

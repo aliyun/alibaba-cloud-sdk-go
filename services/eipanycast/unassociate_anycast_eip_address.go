@@ -75,6 +75,7 @@ type UnassociateAnycastEipAddressRequest struct {
 	ClientToken          string `position:"Query" name:"ClientToken"`
 	BindInstanceType     string `position:"Query" name:"BindInstanceType"`
 	BindInstanceRegionId string `position:"Query" name:"BindInstanceRegionId"`
+	PrivateIpAddress     string `position:"Query" name:"PrivateIpAddress"`
 	AnycastId            string `position:"Query" name:"AnycastId"`
 	BindInstanceId       string `position:"Query" name:"BindInstanceId"`
 }

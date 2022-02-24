@@ -17,18 +17,18 @@ package eipanycast
 
 // Anycast is a nested struct in eipanycast response
 type Anycast struct {
-	AnycastId              string               `json:"AnycastId" xml:"AnycastId"`
-	IpAddress              string               `json:"IpAddress" xml:"IpAddress"`
-	Name                   string               `json:"Name" xml:"Name"`
-	Description            string               `json:"Description" xml:"Description"`
-	Bandwidth              int                  `json:"Bandwidth" xml:"Bandwidth"`
-	InstanceChargeType     string               `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	InternetChargeType     string               `json:"InternetChargeType" xml:"InternetChargeType"`
-	CreateTime             string               `json:"CreateTime" xml:"CreateTime"`
 	Status                 string               `json:"Status" xml:"Status"`
-	ServiceLocation        string               `json:"ServiceLocation" xml:"ServiceLocation"`
+	CreateTime             string               `json:"CreateTime" xml:"CreateTime"`
+	AnycastId              string               `json:"AnycastId" xml:"AnycastId"`
 	AliUid                 int64                `json:"AliUid" xml:"AliUid"`
 	Bid                    string               `json:"Bid" xml:"Bid"`
+	ServiceLocation        string               `json:"ServiceLocation" xml:"ServiceLocation"`
+	InstanceChargeType     string               `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	IpAddress              string               `json:"IpAddress" xml:"IpAddress"`
+	Bandwidth              int                  `json:"Bandwidth" xml:"Bandwidth"`
+	Description            string               `json:"Description" xml:"Description"`
+	InternetChargeType     string               `json:"InternetChargeType" xml:"InternetChargeType"`
 	BusinessStatus         string               `json:"BusinessStatus" xml:"BusinessStatus"`
+	Name                   string               `json:"Name" xml:"Name"`
 	AnycastEipBindInfoList []AnycastEipBindInfo `json:"AnycastEipBindInfoList" xml:"AnycastEipBindInfoList"`
 }

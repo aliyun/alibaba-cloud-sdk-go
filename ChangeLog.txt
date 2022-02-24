@@ -1,3 +1,7 @@
+2022-02-24 Version: v1.61.1496
+- Generated 2020-03-09 for `Eipanycast`.
+- Add UpdateAnycastEipAddressAssociations Interface.
+
 2022-02-23 Version: v1.61.1495
 - Generated 2019-04-03 for `Cloudauth-console`.
 - SDK.
