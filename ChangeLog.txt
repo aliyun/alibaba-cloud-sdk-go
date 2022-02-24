@@ -1,3 +1,7 @@
+2022-02-24 Version: v1.61.1497
+- Generated 2019-05-31 for `mse`.
+- Add UpdateGatewayServiceTrafficPolicy api.
+
 2022-02-24 Version: v1.61.1496
 - Generated 2020-03-09 for `Eipanycast`.
 - Add UpdateAnycastEipAddressAssociations Interface.

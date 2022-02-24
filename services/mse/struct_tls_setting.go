@@ -17,8 +17,8 @@ package mse
 
 // TlsSetting is a nested struct in mse response
 type TlsSetting struct {
+	Sni           string `json:"Sni" xml:"Sni"`
+	CaCertContent string `json:"CaCertContent" xml:"CaCertContent"`
 	TlsMode       string `json:"TlsMode" xml:"TlsMode"`
 	CertId        string `json:"CertId" xml:"CertId"`
-	CaCertContent string `json:"CaCertContent" xml:"CaCertContent"`
-	Sni           string `json:"Sni" xml:"Sni"`
 }

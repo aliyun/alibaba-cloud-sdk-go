@@ -17,6 +17,6 @@ package mse
 
 // GatewayTrafficPolicy is a nested struct in mse response
 type GatewayTrafficPolicy struct {
-	TlsSetting           TlsSetting           `json:"TlsSetting" xml:"TlsSetting"`
 	LoadBalancerSettings LoadBalancerSettings `json:"LoadBalancerSettings" xml:"LoadBalancerSettings"`
+	TlsSetting           TlsSetting           `json:"TlsSetting" xml:"TlsSetting"`
 }
