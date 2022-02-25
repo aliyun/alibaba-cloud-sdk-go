@@ -17,7 +17,9 @@ package das
 
 // Data is a nested struct in das response
 type Data struct {
+	Fail                bool                                       `json:"Fail" xml:"Fail"`
 	PageSize            int64                                      `json:"PageSize" xml:"PageSize"`
+	IsFinish            bool                                       `json:"IsFinish" xml:"IsFinish"`
 	TaskState           string                                     `json:"TaskState" xml:"TaskState"`
 	BenchStep           string                                     `json:"BenchStep" xml:"BenchStep"`
 	DtsJobStatus        string                                     `json:"DtsJobStatus" xml:"DtsJobStatus"`
@@ -40,6 +42,7 @@ type Data struct {
 	CallerUid           string                                     `json:"CallerUid" xml:"CallerUid"`
 	ErrorMsg            string                                     `json:"ErrorMsg" xml:"ErrorMsg"`
 	DbLinkId            int64                                      `json:"DbLinkId" xml:"DbLinkId"`
+	Timestamp           int64                                      `json:"Timestamp" xml:"Timestamp"`
 	TableSchema         string                                     `json:"TableSchema" xml:"TableSchema"`
 	DtsJobClass         string                                     `json:"DtsJobClass" xml:"DtsJobClass"`
 	SrcInstanceUuid     string                                     `json:"SrcInstanceUuid" xml:"SrcInstanceUuid"`
@@ -94,6 +97,7 @@ type Data struct {
 	ParseFilePath       string                                     `json:"ParseFilePath" xml:"ParseFilePath"`
 	ClientType          string                                     `json:"ClientType" xml:"ClientType"`
 	ClientGatewayId     string                                     `json:"ClientGatewayId" xml:"ClientGatewayId"`
+	ResultId            string                                     `json:"ResultId" xml:"ResultId"`
 	StatusCode          string                                     `json:"StatusCode" xml:"StatusCode"`
 	State               string                                     `json:"State" xml:"State"`
 	ParseCmd            string                                     `json:"ParseCmd" xml:"ParseCmd"`
@@ -103,6 +107,7 @@ type Data struct {
 	Code                int                                        `json:"Code" xml:"Code"`
 	Total               int64                                      `json:"Total" xml:"Total"`
 	DstIp               string                                     `json:"DstIp" xml:"DstIp"`
+	Result              Result                                     `json:"Result" xml:"Result"`
 	SubResults          SubResultsInGetHDMAliyunResourceSyncResult `json:"SubResults" xml:"SubResults"`
 	KeyPrefixes         KeyPrefixes                                `json:"KeyPrefixes" xml:"KeyPrefixes"`
 	BigKeys             BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`

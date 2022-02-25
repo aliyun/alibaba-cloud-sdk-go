@@ -71,12 +71,12 @@ func (client *Client) GetRequestDiagnosisPageWithCallback(request *GetRequestDia
 // GetRequestDiagnosisPageRequest is the request struct for api GetRequestDiagnosisPage
 type GetRequestDiagnosisPageRequest struct {
 	*requests.RpcRequest
-	EndTime    string `position:"Query" name:"EndTime"`
-	StartTime  string `position:"Query" name:"StartTime"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	PageNo     string `position:"Query" name:"PageNo"`
-	PageSize   string `position:"Query" name:"PageSize"`
-	NodeId     string `position:"Query" name:"NodeId"`
+	EndTime    requests.Integer `position:"Query" name:"EndTime"`
+	StartTime  requests.Integer `position:"Query" name:"StartTime"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	PageNo     requests.Integer `position:"Query" name:"PageNo"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	NodeId     string           `position:"Query" name:"NodeId"`
 }
 
 // GetRequestDiagnosisPageResponse is the response struct for api GetRequestDiagnosisPage

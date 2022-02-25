@@ -71,14 +71,12 @@ func (client *Client) GetAsyncErrorRequestStatResultWithCallback(request *GetAsy
 // GetAsyncErrorRequestStatResultRequest is the request struct for api GetAsyncErrorRequestStatResult
 type GetAsyncErrorRequestStatResultRequest struct {
 	*requests.RpcRequest
-	SqlIdList      string `position:"Query" name:"SqlIdList"`
-	Role           string `position:"Query" name:"Role"`
-	Start          string `position:"Query" name:"Start"`
-	ConsoleContext string `position:"Query" name:"ConsoleContext"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	DbName         string `position:"Query" name:"DbName"`
-	End            string `position:"Query" name:"End"`
-	NodeId         string `position:"Query" name:"NodeId"`
+	SqlIdList  string           `position:"Query" name:"SqlIdList"`
+	Start      requests.Integer `position:"Query" name:"Start"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	DbName     string           `position:"Query" name:"DbName"`
+	End        requests.Integer `position:"Query" name:"End"`
+	NodeId     string           `position:"Query" name:"NodeId"`
 }
 
 // GetAsyncErrorRequestStatResultResponse is the response struct for api GetAsyncErrorRequestStatResult

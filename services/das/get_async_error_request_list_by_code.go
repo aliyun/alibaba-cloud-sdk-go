@@ -71,12 +71,11 @@ func (client *Client) GetAsyncErrorRequestListByCodeWithCallback(request *GetAsy
 // GetAsyncErrorRequestListByCodeRequest is the request struct for api GetAsyncErrorRequestListByCode
 type GetAsyncErrorRequestListByCodeRequest struct {
 	*requests.RpcRequest
-	Start          string `position:"Query" name:"Start"`
-	ConsoleContext string `position:"Query" name:"ConsoleContext"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	End            string `position:"Query" name:"End"`
-	NodeId         string `position:"Query" name:"NodeId"`
-	ErrorCode      string `position:"Query" name:"ErrorCode"`
+	Start      requests.Integer `position:"Query" name:"Start"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	End        requests.Integer `position:"Query" name:"End"`
+	NodeId     string           `position:"Query" name:"NodeId"`
+	ErrorCode  string           `position:"Query" name:"ErrorCode"`
 }
 
 // GetAsyncErrorRequestListByCodeResponse is the response struct for api GetAsyncErrorRequestListByCode

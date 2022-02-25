@@ -1,3 +1,8 @@
+2022-02-25 Version: v1.61.1498
+- Generated 2020-01-16 for `DAS`.
+- FIX GetRequestDiagnosisPage PARAM TYPE.
+
+
 2022-02-24 Version: v1.61.1497
 - Generated 2019-05-31 for `mse`.
 - Add UpdateGatewayServiceTrafficPolicy api.

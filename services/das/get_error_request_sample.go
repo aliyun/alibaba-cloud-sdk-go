@@ -71,14 +71,12 @@ func (client *Client) GetErrorRequestSampleWithCallback(request *GetErrorRequest
 // GetErrorRequestSampleRequest is the request struct for api GetErrorRequestSample
 type GetErrorRequestSampleRequest struct {
 	*requests.RpcRequest
-	SqlId          string `position:"Query" name:"SqlId"`
-	Role           string `position:"Query" name:"Role"`
-	Start          string `position:"Query" name:"Start"`
-	ConsoleContext string `position:"Query" name:"ConsoleContext"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	DbName         string `position:"Query" name:"DbName"`
-	End            string `position:"Query" name:"End"`
-	NodeId         string `position:"Query" name:"NodeId"`
+	SqlId      string           `position:"Query" name:"SqlId"`
+	Start      requests.Integer `position:"Query" name:"Start"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	DbName     string           `position:"Query" name:"DbName"`
+	End        requests.Integer `position:"Query" name:"End"`
+	NodeId     string           `position:"Query" name:"NodeId"`
 }
 
 // GetErrorRequestSampleResponse is the response struct for api GetErrorRequestSample
