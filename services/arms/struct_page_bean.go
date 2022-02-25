@@ -17,21 +17,25 @@ package arms
 
 // PageBean is a nested struct in arms response
 type PageBean struct {
-	Page               int64             `json:"Page" xml:"Page"`
-	PageSize           int               `json:"PageSize" xml:"PageSize"`
-	TotalCount         int               `json:"TotalCount" xml:"TotalCount"`
-	Size               int64             `json:"Size" xml:"Size"`
-	PageNumber         int               `json:"PageNumber" xml:"PageNumber"`
-	Total              int64             `json:"Total" xml:"Total"`
-	ListAlerts         []ListAlerts      `json:"ListAlerts" xml:"ListAlerts"`
-	WebhookContacts    []WebhookContacts `json:"WebhookContacts" xml:"WebhookContacts"`
-	Contacts           []Contact         `json:"Contacts" xml:"Contacts"`
-	AlertRules         []AlertRules      `json:"AlertRules" xml:"AlertRules"`
-	Event              []EventItem       `json:"Event" xml:"Event"`
-	AlertContactGroups []ContactGroups   `json:"AlertContactGroups" xml:"AlertContactGroups"`
-	TraceApps          []TraceApp        `json:"TraceApps" xml:"TraceApps"`
-	AlertIMRobots      []IMRobots        `json:"AlertIMRobots" xml:"AlertIMRobots"`
-	RetcodeApps        []RetcodeApp      `json:"RetcodeApps" xml:"RetcodeApps"`
-	AlertContacts      []Contacts        `json:"AlertContacts" xml:"AlertContacts"`
-	AlarmHistories     []AlarmHistory    `json:"AlarmHistories" xml:"AlarmHistories"`
+	Page                 int64                `json:"Page" xml:"Page"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	Size                 int64                `json:"Size" xml:"Size"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	Total                int64                `json:"Total" xml:"Total"`
+	ListAlerts           []ListAlerts         `json:"ListAlerts" xml:"ListAlerts"`
+	EscalationPolicies   []EscalationPolicies `json:"EscalationPolicies" xml:"EscalationPolicies"`
+	WebhookContacts      []WebhookContacts    `json:"WebhookContacts" xml:"WebhookContacts"`
+	Contacts             []Contact            `json:"Contacts" xml:"Contacts"`
+	AlertRules           []AlertRules         `json:"AlertRules" xml:"AlertRules"`
+	SilencePolicies      []Policies           `json:"SilencePolicies" xml:"SilencePolicies"`
+	NotificationPolicies []Policies           `json:"NotificationPolicies" xml:"NotificationPolicies"`
+	OnCallSchedules      []OnCallSchedules    `json:"OnCallSchedules" xml:"OnCallSchedules"`
+	Event                []EventItem          `json:"Event" xml:"Event"`
+	AlertContactGroups   []ContactGroups      `json:"AlertContactGroups" xml:"AlertContactGroups"`
+	TraceApps            []TraceApp           `json:"TraceApps" xml:"TraceApps"`
+	AlertIMRobots        []IMRobots           `json:"AlertIMRobots" xml:"AlertIMRobots"`
+	RetcodeApps          []RetcodeApp         `json:"RetcodeApps" xml:"RetcodeApps"`
+	AlertContacts        []Contacts           `json:"AlertContacts" xml:"AlertContacts"`
+	AlarmHistories       []AlarmHistory       `json:"AlarmHistories" xml:"AlarmHistories"`
 }

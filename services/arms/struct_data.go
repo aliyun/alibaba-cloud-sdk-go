@@ -28,6 +28,7 @@ type Data struct {
 	NodeSizeIsZero          bool                     `json:"NodeSizeIsZero" xml:"NodeSizeIsZero"`
 	AckNotRunning           bool                     `json:"AckNotRunning" xml:"AckNotRunning"`
 	Page                    int                      `json:"Page" xml:"Page"`
+	NeedRetry               bool                     `json:"NeedRetry" xml:"NeedRetry"`
 	Total                   string                   `json:"Total" xml:"Total"`
 	HaveAgentNodeIsNotReady bool                     `json:"HaveAgentNodeIsNotReady" xml:"HaveAgentNodeIsNotReady"`
 	AgentHelmNotExist       bool                     `json:"AgentHelmNotExist" xml:"AgentHelmNotExist"`

@@ -1,3 +1,8 @@
+2022-02-25 Version: v1.61.1499
+- Generated 2019-08-08 for `ARMS`.
+- New add GetAuthToken api.
+- New add ManageRecordingRule api.
+
 2022-02-25 Version: v1.61.1498
 - Generated 2020-01-16 for `DAS`.
 - FIX GetRequestDiagnosisPage PARAM TYPE.

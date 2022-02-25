@@ -17,9 +17,10 @@ package arms
 
 // GroupRule is a nested struct in arms response
 type GroupRule struct {
-	GroupId        int64    `json:"GroupId" xml:"GroupId"`
-	GroupWaitTime  int64    `json:"GroupWaitTime" xml:"GroupWaitTime"`
 	GroupInterval  int64    `json:"GroupInterval" xml:"GroupInterval"`
+	GroupWaitTime  int64    `json:"GroupWaitTime" xml:"GroupWaitTime"`
 	RepeatInterval int64    `json:"RepeatInterval" xml:"RepeatInterval"`
+	GroupId        int64    `json:"GroupId" xml:"GroupId"`
+	GroupWait      int64    `json:"GroupWait" xml:"GroupWait"`
 	GroupingFields []string `json:"GroupingFields" xml:"GroupingFields"`
 }
