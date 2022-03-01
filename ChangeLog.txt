@@ -1,3 +1,7 @@
+2022-03-01 Version: v1.61.1501
+- Generated 2020-03-06 for `companyreg`.
+- Supported partner for ESP.
+
 2022-03-01 Version: v1.61.1500
 - Generated 2020-03-06 for `companyreg`.
 - Supported partner for ESP.
