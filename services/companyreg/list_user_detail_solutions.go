@@ -81,10 +81,10 @@ type ListUserDetailSolutionsRequest struct {
 type ListUserDetailSolutionsResponse struct {
 	*responses.BaseResponse
 	CurrentPageNum int        `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	PageSize       int        `json:"PageSize" xml:"PageSize"`
-	RequestId      string     `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int        `json:"TotalItemNum" xml:"TotalItemNum"`
 	TotalPageNum   int        `json:"TotalPageNum" xml:"TotalPageNum"`
+	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	PageSize       int        `json:"PageSize" xml:"PageSize"`
+	TotalItemNum   int        `json:"TotalItemNum" xml:"TotalItemNum"`
 	Data           []Solution `json:"Data" xml:"Data"`
 }
 

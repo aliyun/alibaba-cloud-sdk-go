@@ -78,8 +78,8 @@ type QueryInstanceRequest struct {
 // QueryInstanceResponse is the response struct for api QueryInstance
 type QueryInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateQueryInstanceRequest creates a request to invoke QueryInstance API

@@ -81,8 +81,8 @@ type PutMeasureDataRequest struct {
 // PutMeasureDataResponse is the response struct for api PutMeasureData
 type PutMeasureDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePutMeasureDataRequest creates a request to invoke PutMeasureData API

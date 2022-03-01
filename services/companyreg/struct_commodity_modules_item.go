@@ -17,13 +17,13 @@ package companyreg
 
 // CommodityModulesItem is a nested struct in companyreg response
 type CommodityModulesItem struct {
-	ModuleCode        string `json:"ModuleCode" xml:"ModuleCode"`
 	ModuleName        string `json:"ModuleName" xml:"ModuleName"`
-	ModuleDescription string `json:"ModuleDescription" xml:"ModuleDescription"`
-	ModuleType        string `json:"ModuleType" xml:"ModuleType"`
-	ModuleTip         string `json:"ModuleTip" xml:"ModuleTip"`
 	LxModuleCode      string `json:"LxModuleCode" xml:"LxModuleCode"`
-	ModuleValue       string `json:"ModuleValue" xml:"ModuleValue"`
+	ModuleTip         string `json:"ModuleTip" xml:"ModuleTip"`
+	ModuleDescription string `json:"ModuleDescription" xml:"ModuleDescription"`
 	ModuleUrl         string `json:"ModuleUrl" xml:"ModuleUrl"`
+	ModuleCode        string `json:"ModuleCode" xml:"ModuleCode"`
+	ModuleType        string `json:"ModuleType" xml:"ModuleType"`
 	SortNumber        int    `json:"SortNumber" xml:"SortNumber"`
+	ModuleValue       string `json:"ModuleValue" xml:"ModuleValue"`
 }

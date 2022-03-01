@@ -19,10 +19,10 @@ package companyreg
 type Solution struct {
 	BizId                string `json:"BizId" xml:"BizId"`
 	Reason               string `json:"Reason" xml:"Reason"`
-	BizType              string `json:"BizType" xml:"BizType"`
 	PartnerCode          string `json:"PartnerCode" xml:"PartnerCode"`
-	ExtInfo              string `json:"ExtInfo" xml:"ExtInfo"`
+	BizType              string `json:"BizType" xml:"BizType"`
 	Status               int    `json:"Status" xml:"Status"`
+	ExtInfo              string `json:"ExtInfo" xml:"ExtInfo"`
 	DeliveryOrderBizId   string `json:"DeliveryOrderBizId" xml:"DeliveryOrderBizId"`
 	UpdateTime           int64  `json:"UpdateTime" xml:"UpdateTime"`
 	UserId               string `json:"UserId" xml:"UserId"`

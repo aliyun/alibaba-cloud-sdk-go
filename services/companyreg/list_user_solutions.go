@@ -72,6 +72,7 @@ func (client *Client) ListUserSolutionsWithCallback(request *ListUserSolutionsRe
 type ListUserSolutionsRequest struct {
 	*requests.RpcRequest
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	ExistStatus    *[]string        `position:"Query" name:"ExistStatus"  type:"Json"`
 	IntentionBizId string           `position:"Query" name:"IntentionBizId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 }
@@ -79,11 +80,11 @@ type ListUserSolutionsRequest struct {
 // ListUserSolutionsResponse is the response struct for api ListUserSolutions
 type ListUserSolutionsResponse struct {
 	*responses.BaseResponse
+	CurrentPageNum int        `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int        `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int        `json:"PageSize" xml:"PageSize"`
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
 	TotalItemNum   int        `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int        `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	PageSize       int        `json:"PageSize" xml:"PageSize"`
-	TotalPageNum   int        `json:"TotalPageNum" xml:"TotalPageNum"`
 	Data           []Solution `json:"Data" xml:"Data"`
 }
 

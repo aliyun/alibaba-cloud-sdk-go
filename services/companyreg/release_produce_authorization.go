@@ -79,10 +79,10 @@ type ReleaseProduceAuthorizationRequest struct {
 // ReleaseProduceAuthorizationResponse is the response struct for api ReleaseProduceAuthorization
 type ReleaseProduceAuthorizationResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	ErrorMsg  string `json:"ErrorMsg" xml:"ErrorMsg"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateReleaseProduceAuthorizationRequest creates a request to invoke ReleaseProduceAuthorization API

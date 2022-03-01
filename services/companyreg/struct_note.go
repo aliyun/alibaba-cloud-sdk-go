@@ -17,9 +17,9 @@ package companyreg
 
 // Note is a nested struct in companyreg response
 type Note struct {
-	IntentionBizId string `json:"IntentionBizId" xml:"IntentionBizId"`
+	Type           string `json:"Type" xml:"Type"`
 	Note           string `json:"Note" xml:"Note"`
 	Source         int    `json:"Source" xml:"Source"`
 	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-	Type           string `json:"Type" xml:"Type"`
+	IntentionBizId string `json:"IntentionBizId" xml:"IntentionBizId"`
 }

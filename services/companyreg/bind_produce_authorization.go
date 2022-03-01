@@ -79,8 +79,8 @@ type BindProduceAuthorizationRequest struct {
 // BindProduceAuthorizationResponse is the response struct for api BindProduceAuthorization
 type BindProduceAuthorizationResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorMsg  string `json:"ErrorMsg" xml:"ErrorMsg"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Data      Data   `json:"Data" xml:"Data"`
 }

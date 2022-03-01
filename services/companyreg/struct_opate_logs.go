@@ -19,8 +19,8 @@ package companyreg
 type OpateLogs struct {
 	BizId           string `json:"BizId" xml:"BizId"`
 	ToBizStatus     int    `json:"ToBizStatus" xml:"ToBizStatus"`
-	BizType         string `json:"BizType" xml:"BizType"`
 	OperateName     string `json:"OperateName" xml:"OperateName"`
+	BizType         string `json:"BizType" xml:"BizType"`
 	OperateUserType string `json:"OperateUserType" xml:"OperateUserType"`
 	BizStatus       int    `json:"BizStatus" xml:"BizStatus"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`

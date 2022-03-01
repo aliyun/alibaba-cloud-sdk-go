@@ -79,11 +79,11 @@ type CreateProduceForPartnerRequest struct {
 // CreateProduceForPartnerResponse is the response struct for api CreateProduceForPartner
 type CreateProduceForPartnerResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	BizId     string `json:"BizId" xml:"BizId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	ErrorMsg  string `json:"ErrorMsg" xml:"ErrorMsg"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateProduceForPartnerRequest creates a request to invoke CreateProduceForPartner API

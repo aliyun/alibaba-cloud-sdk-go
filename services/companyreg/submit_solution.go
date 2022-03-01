@@ -80,11 +80,11 @@ type SubmitSolutionRequest struct {
 // SubmitSolutionResponse is the response struct for api SubmitSolution
 type SubmitSolutionResponse struct {
 	*responses.BaseResponse
+	SolutionBizId string `json:"SolutionBizId" xml:"SolutionBizId"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	Success       bool   `json:"Success" xml:"Success"`
-	ErrorMsg      string `json:"ErrorMsg" xml:"ErrorMsg"`
 	ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
-	SolutionBizId string `json:"SolutionBizId" xml:"SolutionBizId"`
+	ErrorMsg      string `json:"ErrorMsg" xml:"ErrorMsg"`
 	ConfirmUrl    string `json:"ConfirmUrl" xml:"ConfirmUrl"`
 }
 

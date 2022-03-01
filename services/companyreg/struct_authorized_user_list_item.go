@@ -17,7 +17,7 @@ package companyreg
 
 // AuthorizedUserListItem is a nested struct in companyreg response
 type AuthorizedUserListItem struct {
-	UserId           string `json:"UserId" xml:"UserId"`
 	UserName         string `json:"UserName" xml:"UserName"`
+	UserId           string `json:"UserId" xml:"UserId"`
 	AccountValidType int    `json:"AccountValidType" xml:"AccountValidType"`
 }

@@ -82,9 +82,9 @@ type CreateBusinessOpportunityRequest struct {
 type CreateBusinessOpportunityResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	Success      bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateBusinessOpportunityRequest creates a request to invoke CreateBusinessOpportunity API

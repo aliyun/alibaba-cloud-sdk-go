@@ -77,8 +77,8 @@ type QueryBagRemainingRequest struct {
 // QueryBagRemainingResponse is the response struct for api QueryBagRemaining
 type QueryBagRemainingResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      int64  `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateQueryBagRemainingRequest creates a request to invoke QueryBagRemaining API

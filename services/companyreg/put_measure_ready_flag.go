@@ -81,8 +81,8 @@ type PutMeasureReadyFlagRequest struct {
 // PutMeasureReadyFlagResponse is the response struct for api PutMeasureReadyFlag
 type PutMeasureReadyFlagResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePutMeasureReadyFlagRequest creates a request to invoke PutMeasureReadyFlag API

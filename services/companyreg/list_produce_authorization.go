@@ -80,12 +80,12 @@ type ListProduceAuthorizationRequest struct {
 // ListProduceAuthorizationResponse is the response struct for api ListProduceAuthorization
 type ListProduceAuthorizationResponse struct {
 	*responses.BaseResponse
+	RequestId      string                  `json:"RequestId" xml:"RequestId"`
+	Success        bool                    `json:"Success" xml:"Success"`
+	TotalItemNum   int                     `json:"TotalItemNum" xml:"TotalItemNum"`
 	CurrentPageNum int                     `json:"CurrentPageNum" xml:"CurrentPageNum"`
 	PageSize       int                     `json:"PageSize" xml:"PageSize"`
-	RequestId      string                  `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int                     `json:"TotalItemNum" xml:"TotalItemNum"`
 	TotalPageNum   int                     `json:"TotalPageNum" xml:"TotalPageNum"`
-	Success        bool                    `json:"Success" xml:"Success"`
 	Data           []ProduceAuthorizations `json:"Data" xml:"Data"`
 }
 

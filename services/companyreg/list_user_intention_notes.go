@@ -81,10 +81,10 @@ type ListUserIntentionNotesRequest struct {
 type ListUserIntentionNotesResponse struct {
 	*responses.BaseResponse
 	PageNum      int         `json:"PageNum" xml:"PageNum"`
-	PageSize     int         `json:"PageSize" xml:"PageSize"`
 	RequestId    string      `json:"RequestId" xml:"RequestId"`
 	Success      bool        `json:"Success" xml:"Success"`
 	TotalItemNum int         `json:"TotalItemNum" xml:"TotalItemNum"`
+	PageSize     int         `json:"PageSize" xml:"PageSize"`
 	TotalPageNum int         `json:"TotalPageNum" xml:"TotalPageNum"`
 	Data         []OpateLogs `json:"Data" xml:"Data"`
 }

@@ -78,10 +78,10 @@ type SubmitIntentionNoteRequest struct {
 // SubmitIntentionNoteResponse is the response struct for api SubmitIntentionNote
 type SubmitIntentionNoteResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	ErrorMsg  string `json:"ErrorMsg" xml:"ErrorMsg"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSubmitIntentionNoteRequest creates a request to invoke SubmitIntentionNote API

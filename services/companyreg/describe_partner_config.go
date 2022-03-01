@@ -78,10 +78,10 @@ type DescribePartnerConfigRequest struct {
 // DescribePartnerConfigResponse is the response struct for api DescribePartnerConfig
 type DescribePartnerConfigResponse struct {
 	*responses.BaseResponse
-	Contact     string `json:"Contact" xml:"Contact"`
-	PartnerCode string `json:"PartnerCode" xml:"PartnerCode"`
 	PartnerName string `json:"PartnerName" xml:"PartnerName"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
+	PartnerCode string `json:"PartnerCode" xml:"PartnerCode"`
+	Contact     string `json:"Contact" xml:"Contact"`
 }
 
 // CreateDescribePartnerConfigRequest creates a request to invoke DescribePartnerConfig API

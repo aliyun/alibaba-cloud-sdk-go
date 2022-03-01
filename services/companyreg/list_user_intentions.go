@@ -85,11 +85,11 @@ type ListUserIntentionsRequest struct {
 // ListUserIntentionsResponse is the response struct for api ListUserIntentions
 type ListUserIntentionsResponse struct {
 	*responses.BaseResponse
+	CurrentPageNum int         `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int         `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int         `json:"PageSize" xml:"PageSize"`
 	RequestId      string      `json:"RequestId" xml:"RequestId"`
 	TotalItemNum   int         `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int         `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	PageSize       int         `json:"PageSize" xml:"PageSize"`
-	TotalPageNum   int         `json:"TotalPageNum" xml:"TotalPageNum"`
 	Data           []Intention `json:"Data" xml:"Data"`
 }
 

@@ -78,10 +78,10 @@ type RejectSolutionRequest struct {
 // RejectSolutionResponse is the response struct for api RejectSolution
 type RejectSolutionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	ErrorMsg  string `json:"ErrorMsg" xml:"ErrorMsg"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateRejectSolutionRequest creates a request to invoke RejectSolution API

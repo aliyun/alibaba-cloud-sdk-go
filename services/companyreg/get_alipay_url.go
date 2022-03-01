@@ -80,8 +80,8 @@ type GetAlipayUrlRequest struct {
 // GetAlipayUrlResponse is the response struct for api GetAlipayUrl
 type GetAlipayUrlResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetAlipayUrlRequest creates a request to invoke GetAlipayUrl API

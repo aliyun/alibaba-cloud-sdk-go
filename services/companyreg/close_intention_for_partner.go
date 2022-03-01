@@ -79,10 +79,10 @@ type CloseIntentionForPartnerRequest struct {
 // CloseIntentionForPartnerResponse is the response struct for api CloseIntentionForPartner
 type CloseIntentionForPartnerResponse struct {
 	*responses.BaseResponse
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMsg  string `json:"ErrorMsg" xml:"ErrorMsg"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
 // CreateCloseIntentionForPartnerRequest creates a request to invoke CloseIntentionForPartner API
