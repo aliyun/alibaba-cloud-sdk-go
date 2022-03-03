@@ -71,11 +71,8 @@ func (client *Client) RecognizeVideoCharacterWithCallback(request *RecognizeVide
 // RecognizeVideoCharacterRequest is the request struct for api RecognizeVideoCharacter
 type RecognizeVideoCharacterRequest struct {
 	*requests.RpcRequest
-	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
-	OssFile            string           `position:"Query" name:"OssFile"`
-	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
-	Async              requests.Boolean `position:"Body" name:"Async"`
-	VideoURL           string           `position:"Body" name:"VideoURL"`
+	Async    requests.Boolean `position:"Body" name:"Async"`
+	VideoURL string           `position:"Body" name:"VideoURL"`
 }
 
 // RecognizeVideoCharacterResponse is the response struct for api RecognizeVideoCharacter

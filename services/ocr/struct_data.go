@@ -69,6 +69,7 @@ type Data struct {
 	Address             string               `json:"Address" xml:"Address"`
 	IsCard              bool                 `json:"IsCard" xml:"IsCard"`
 	Number              string               `json:"Number" xml:"Number"`
+	InputFile           string               `json:"InputFile" xml:"InputFile"`
 	Width               int64                `json:"Width" xml:"Width"`
 	BirthDate           string               `json:"BirthDate" xml:"BirthDate"`
 	LineZero            string               `json:"LineZero" xml:"LineZero"`
