@@ -72,7 +72,6 @@ func (client *Client) GenerateUploadFilePolicyWithCallback(request *GenerateUplo
 type GenerateUploadFilePolicyRequest struct {
 	*requests.RpcRequest
 	FileType string `position:"Query" name:"FileType"`
-	BizType  string `position:"Query" name:"BizType"`
 	FileName string `position:"Query" name:"FileName"`
 }
 
@@ -83,7 +82,7 @@ type GenerateUploadFilePolicyResponse struct {
 	FileUrl       string `json:"FileUrl" xml:"FileUrl"`
 	Host          string `json:"Host" xml:"Host"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
-	ExpireTime    string `json:"ExpireTime" xml:"ExpireTime"`
+	ExpireTime    int64  `json:"ExpireTime" xml:"ExpireTime"`
 	EncodedPolicy string `json:"EncodedPolicy" xml:"EncodedPolicy"`
 	FileDir       string `json:"FileDir" xml:"FileDir"`
 	AccessId      string `json:"AccessId" xml:"AccessId"`
@@ -94,7 +93,7 @@ func CreateGenerateUploadFilePolicyRequest() (request *GenerateUploadFilePolicyR
 	request = &GenerateUploadFilePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "GenerateUploadFilePolicy", "", "")
+	request.InitWithApiInfo("companyreg", "2019-05-08", "GenerateUploadFilePolicy", "", "")
 	request.Method = requests.POST
 	return
 }

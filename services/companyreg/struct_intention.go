@@ -17,15 +17,14 @@ package companyreg
 
 // Intention is a nested struct in companyreg response
 type Intention struct {
-	ContactName string `json:"ContactName" xml:"ContactName"`
-	BizId       string `json:"BizId" xml:"BizId"`
-	Reason      string `json:"Reason" xml:"Reason"`
-	BizType     string `json:"BizType" xml:"BizType"`
-	Status      int    `json:"Status" xml:"Status"`
-	Mobile      string `json:"Mobile" xml:"Mobile"`
-	Area        string `json:"Area" xml:"Area"`
-	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
-	UserId      string `json:"UserId" xml:"UserId"`
-	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
-	Description string `json:"Description" xml:"Description"`
+	Status         int    `json:"Status" xml:"Status"`
+	Type           int    `json:"Type" xml:"Type"`
+	UpdateTime     int64  `json:"UpdateTime" xml:"UpdateTime"`
+	Description    string `json:"Description" xml:"Description"`
+	RegisterNumber string `json:"RegisterNumber" xml:"RegisterNumber"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
+	UserId         string `json:"UserId" xml:"UserId"`
+	BizId          string `json:"BizId" xml:"BizId"`
+	Area           int    `json:"Area" xml:"Area"`
+	Classification string `json:"Classification" xml:"Classification"`
 }
