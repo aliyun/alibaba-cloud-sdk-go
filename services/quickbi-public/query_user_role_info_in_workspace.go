@@ -80,8 +80,8 @@ type QueryUserRoleInfoInWorkspaceRequest struct {
 // QueryUserRoleInfoInWorkspaceResponse is the response struct for api QueryUserRoleInfoInWorkspace
 type QueryUserRoleInfoInWorkspaceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -90,7 +90,7 @@ func CreateQueryUserRoleInfoInWorkspaceRequest() (request *QueryUserRoleInfoInWo
 	request = &QueryUserRoleInfoInWorkspaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-03", "QueryUserRoleInfoInWorkspace", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserRoleInfoInWorkspace", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,7 +17,7 @@ package quickbi_public
 
 // Role is a nested struct in quickbi_public response
 type Role struct {
+	RoleCode string `json:"RoleCode" xml:"RoleCode"`
 	RoleName string `json:"RoleName" xml:"RoleName"`
 	RoleId   int64  `json:"RoleId" xml:"RoleId"`
-	RoleCode string `json:"RoleCode" xml:"RoleCode"`
 }

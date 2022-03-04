@@ -72,20 +72,20 @@ func (client *Client) QueryDatasetListWithCallback(request *QueryDatasetListRequ
 type QueryDatasetListRequest struct {
 	*requests.RpcRequest
 	AccessPoint  string           `position:"Query" name:"AccessPoint"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	SignType     string           `position:"Query" name:"SignType"`
+	PageNum      requests.Integer `position:"Query" name:"PageNum"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	DirectoryId  string           `position:"Query" name:"DirectoryId"`
 	WithChildren requests.Boolean `position:"Query" name:"WithChildren"`
 	Keyword      string           `position:"Query" name:"Keyword"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	WorkspaceId  string           `position:"Query" name:"WorkspaceId"`
 }
 
 // QueryDatasetListResponse is the response struct for api QueryDatasetList
 type QueryDatasetListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -94,7 +94,7 @@ func CreateQueryDatasetListRequest() (request *QueryDatasetListRequest) {
 	request = &QueryDatasetListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-06", "QueryDatasetList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryDatasetList", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

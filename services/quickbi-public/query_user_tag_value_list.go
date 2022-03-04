@@ -79,8 +79,8 @@ type QueryUserTagValueListRequest struct {
 // QueryUserTagValueListResponse is the response struct for api QueryUserTagValueList
 type QueryUserTagValueListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateQueryUserTagValueListRequest() (request *QueryUserTagValueListRequest
 	request = &QueryUserTagValueListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-02", "QueryUserTagValueList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserTagValueList", "quickbi", "openAPI")
 	request.Method = requests.GET
 	return
 }

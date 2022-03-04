@@ -17,10 +17,10 @@ package quickbi_public
 
 // HeadersItem is a nested struct in quickbi_public response
 type HeadersItem struct {
-	Label       string `json:"Label" xml:"Label"`
 	Type        string `json:"Type" xml:"Type"`
 	DataType    string `json:"DataType" xml:"DataType"`
+	Granularity string `json:"Granularity" xml:"Granularity"`
+	Label       string `json:"Label" xml:"Label"`
 	Column      string `json:"Column" xml:"Column"`
 	Aggregator  string `json:"Aggregator" xml:"Aggregator"`
-	Granularity string `json:"Granularity" xml:"Granularity"`
 }

@@ -1,3 +1,7 @@
+2022-03-04 Version: v1.61.1505
+- Generated 2022-01-01 for `quickbi-public`.
+- Initialize APIs.
+
 2022-03-04 Version: v1.61.1504
 - Generated 2020-03-06, 2020-10-22, 2019-05-08 for `companyreg`.
 - Supported partner for ESP.

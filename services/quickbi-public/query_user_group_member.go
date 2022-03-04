@@ -80,8 +80,8 @@ type QueryUserGroupMemberRequest struct {
 // QueryUserGroupMemberResponse is the response struct for api QueryUserGroupMember
 type QueryUserGroupMemberResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 
@@ -90,7 +90,7 @@ func CreateQueryUserGroupMemberRequest() (request *QueryUserGroupMemberRequest) 
 	request = &QueryUserGroupMemberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-07-31", "QueryUserGroupMember", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserGroupMember", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

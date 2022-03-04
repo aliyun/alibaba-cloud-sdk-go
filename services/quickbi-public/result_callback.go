@@ -91,7 +91,7 @@ func CreateResultCallbackRequest() (request *ResultCallbackRequest) {
 	request = &ResultCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-04", "ResultCallback", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ResultCallback", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,14 +71,14 @@ func (client *Client) ListRecentViewReportsWithCallback(request *ListRecentViewR
 // ListRecentViewReportsRequest is the request struct for api ListRecentViewReports
 type ListRecentViewReportsRequest struct {
 	*requests.RpcRequest
-	QueryMode   string           `position:"Query" name:"QueryMode"`
-	TreeType    string           `position:"Query" name:"TreeType"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	SignType    string           `position:"Query" name:"SignType"`
 	OffsetDay   requests.Integer `position:"Query" name:"OffsetDay"`
-	Keyword     string           `position:"Query" name:"Keyword"`
 	UserId      string           `position:"Query" name:"UserId"`
+	QueryMode   string           `position:"Query" name:"QueryMode"`
+	TreeType    string           `position:"Query" name:"TreeType"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Keyword     string           `position:"Query" name:"Keyword"`
 }
 
 // ListRecentViewReportsResponse is the response struct for api ListRecentViewReports
@@ -94,7 +94,7 @@ func CreateListRecentViewReportsRequest() (request *ListRecentViewReportsRequest
 	request = &ListRecentViewReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-09", "ListRecentViewReports", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListRecentViewReports", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateCreateTicketRequest() (request *CreateTicketRequest) {
 	request = &CreateTicketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2021-03-25", "CreateTicket", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CreateTicket", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

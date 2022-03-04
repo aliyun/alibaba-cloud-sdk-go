@@ -82,8 +82,8 @@ type QueryOrganizationWorkspaceListRequest struct {
 // QueryOrganizationWorkspaceListResponse is the response struct for api QueryOrganizationWorkspaceList
 type QueryOrganizationWorkspaceListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -92,7 +92,7 @@ func CreateQueryOrganizationWorkspaceListRequest() (request *QueryOrganizationWo
 	request = &QueryOrganizationWorkspaceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-03", "QueryOrganizationWorkspaceList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryOrganizationWorkspaceList", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

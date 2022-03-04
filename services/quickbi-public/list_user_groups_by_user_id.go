@@ -79,8 +79,8 @@ type ListUserGroupsByUserIdRequest struct {
 // ListUserGroupsByUserIdResponse is the response struct for api ListUserGroupsByUserId
 type ListUserGroupsByUserIdResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateListUserGroupsByUserIdRequest() (request *ListUserGroupsByUserIdReque
 	request = &ListUserGroupsByUserIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-07-31", "ListUserGroupsByUserId", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListUserGroupsByUserId", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -81,8 +81,8 @@ type CancelCollectionRequest struct {
 type CancelCollectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCancelCollectionRequest creates a request to invoke CancelCollection API
@@ -90,7 +90,7 @@ func CreateCancelCollectionRequest() (request *CancelCollectionRequest) {
 	request = &CancelCollectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-09", "CancelCollection", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CancelCollection", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -81,8 +81,8 @@ type UpdateEmbeddedStatusRequest struct {
 type UpdateEmbeddedStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    int    `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateEmbeddedStatusRequest creates a request to invoke UpdateEmbeddedStatus API
@@ -90,7 +90,7 @@ func CreateUpdateEmbeddedStatusRequest() (request *UpdateEmbeddedStatusRequest) 
 	request = &UpdateEmbeddedStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-07", "UpdateEmbeddedStatus", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

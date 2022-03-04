@@ -89,7 +89,7 @@ func CreateQueryEmbeddedStausRequest() (request *QueryEmbeddedStausRequest) {
 	request = &QueryEmbeddedStausRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-07", "QueryEmbeddedStaus", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryEmbeddedStaus", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

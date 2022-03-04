@@ -93,7 +93,7 @@ func CreateAuthorizeMenuRequest() (request *AuthorizeMenuRequest) {
 	request = &AuthorizeMenuRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-08", "AuthorizeMenu", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AuthorizeMenu", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

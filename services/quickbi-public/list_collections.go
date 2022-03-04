@@ -79,8 +79,8 @@ type ListCollectionsRequest struct {
 // ListCollectionsResponse is the response struct for api ListCollections
 type ListCollectionsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateListCollectionsRequest() (request *ListCollectionsRequest) {
 	request = &ListCollectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-09", "ListCollections", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListCollections", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

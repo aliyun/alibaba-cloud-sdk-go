@@ -80,8 +80,8 @@ type WithdrawAllUserGroupsRequest struct {
 type WithdrawAllUserGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateWithdrawAllUserGroupsRequest creates a request to invoke WithdrawAllUserGroups API
@@ -89,7 +89,7 @@ func CreateWithdrawAllUserGroupsRequest() (request *WithdrawAllUserGroupsRequest
 	request = &WithdrawAllUserGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-07-31", "WithdrawAllUserGroups", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

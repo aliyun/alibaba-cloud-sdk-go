@@ -78,8 +78,8 @@ type QueryEmbeddedInfoRequest struct {
 // QueryEmbeddedInfoResponse is the response struct for api QueryEmbeddedInfo
 type QueryEmbeddedInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -88,7 +88,7 @@ func CreateQueryEmbeddedInfoRequest() (request *QueryEmbeddedInfoRequest) {
 	request = &QueryEmbeddedInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-07", "QueryEmbeddedInfo", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryEmbeddedInfo", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

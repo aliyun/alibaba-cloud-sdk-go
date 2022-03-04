@@ -98,7 +98,7 @@ func CreateAddUserRequest() (request *AddUserRequest) {
 	request = &AddUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-01", "AddUser", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AddUser", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

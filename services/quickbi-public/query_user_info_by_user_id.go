@@ -79,8 +79,8 @@ type QueryUserInfoByUserIdRequest struct {
 // QueryUserInfoByUserIdResponse is the response struct for api QueryUserInfoByUserId
 type QueryUserInfoByUserIdResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateQueryUserInfoByUserIdRequest() (request *QueryUserInfoByUserIdRequest
 	request = &QueryUserInfoByUserIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-01", "QueryUserInfoByUserId", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserInfoByUserId", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

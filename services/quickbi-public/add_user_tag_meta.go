@@ -92,7 +92,7 @@ func CreateAddUserTagMetaRequest() (request *AddUserTagMetaRequest) {
 	request = &AddUserTagMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-02", "AddUserTagMeta", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AddUserTagMeta", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -79,8 +79,8 @@ type GetUserGroupInfoRequest struct {
 // GetUserGroupInfoResponse is the response struct for api GetUserGroupInfo
 type GetUserGroupInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateGetUserGroupInfoRequest() (request *GetUserGroupInfoRequest) {
 	request = &GetUserGroupInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-07-31", "GetUserGroupInfo", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "GetUserGroupInfo", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

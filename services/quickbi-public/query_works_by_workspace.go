@@ -74,9 +74,9 @@ type QueryWorksByWorkspaceRequest struct {
 	WorksType         string           `position:"Query" name:"WorksType"`
 	ThirdPartAuthFlag requests.Integer `position:"Query" name:"ThirdPartAuthFlag"`
 	AccessPoint       string           `position:"Query" name:"AccessPoint"`
-	PageSize          requests.Integer `position:"Query" name:"PageSize"`
 	SignType          string           `position:"Query" name:"SignType"`
 	PageNum           requests.Integer `position:"Query" name:"PageNum"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
 	WorkspaceId       string           `position:"Query" name:"WorkspaceId"`
 	Status            requests.Integer `position:"Query" name:"Status"`
 }
@@ -94,7 +94,7 @@ func CreateQueryWorksByWorkspaceRequest() (request *QueryWorksByWorkspaceRequest
 	request = &QueryWorksByWorkspaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-07", "QueryWorksByWorkspace", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorksByWorkspace", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

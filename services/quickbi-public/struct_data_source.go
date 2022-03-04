@@ -17,7 +17,7 @@ package quickbi_public
 
 // DataSource is a nested struct in quickbi_public response
 type DataSource struct {
-	DsId   string `json:"DsId" xml:"DsId"`
-	DsName string `json:"DsName" xml:"DsName"`
 	DsType string `json:"DsType" xml:"DsType"`
+	DsName string `json:"DsName" xml:"DsName"`
+	DsId   string `json:"DsId" xml:"DsId"`
 }

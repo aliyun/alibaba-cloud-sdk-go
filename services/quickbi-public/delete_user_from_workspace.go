@@ -81,8 +81,8 @@ type DeleteUserFromWorkspaceRequest struct {
 type DeleteUserFromWorkspaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteUserFromWorkspaceRequest creates a request to invoke DeleteUserFromWorkspace API
@@ -90,7 +90,7 @@ func CreateDeleteUserFromWorkspaceRequest() (request *DeleteUserFromWorkspaceReq
 	request = &DeleteUserFromWorkspaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-03", "DeleteUserFromWorkspace", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteUserFromWorkspace", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

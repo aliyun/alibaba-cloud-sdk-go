@@ -89,7 +89,7 @@ func CreateQueryDatasetInfoRequest() (request *QueryDatasetInfoRequest) {
 	request = &QueryDatasetInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-06", "QueryDatasetInfo", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryDatasetInfo", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,7 +17,7 @@ package quickbi_public
 
 // ResultItem is a nested struct in quickbi_public response
 type ResultItem struct {
-	TagId          string `json:"TagId" xml:"TagId"`
 	TagName        string `json:"TagName" xml:"TagName"`
 	TagDescription string `json:"TagDescription" xml:"TagDescription"`
+	TagId          string `json:"TagId" xml:"TagId"`
 }

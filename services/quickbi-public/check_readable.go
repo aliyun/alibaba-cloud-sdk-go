@@ -81,8 +81,8 @@ type CheckReadableRequest struct {
 type CheckReadableResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCheckReadableRequest creates a request to invoke CheckReadable API
@@ -90,7 +90,7 @@ func CreateCheckReadableRequest() (request *CheckReadableRequest) {
 	request = &CheckReadableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-07", "CheckReadable", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CheckReadable", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

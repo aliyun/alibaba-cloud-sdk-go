@@ -81,8 +81,8 @@ type AddWorkspaceUsersRequest struct {
 // AddWorkspaceUsersResponse is the response struct for api AddWorkspaceUsers
 type AddWorkspaceUsersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -91,7 +91,7 @@ func CreateAddWorkspaceUsersRequest() (request *AddWorkspaceUsersRequest) {
 	request = &AddWorkspaceUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-03", "AddWorkspaceUsers", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AddWorkspaceUsers", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

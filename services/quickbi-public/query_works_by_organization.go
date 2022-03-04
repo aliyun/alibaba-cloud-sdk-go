@@ -83,8 +83,8 @@ type QueryWorksByOrganizationRequest struct {
 // QueryWorksByOrganizationResponse is the response struct for api QueryWorksByOrganization
 type QueryWorksByOrganizationResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -93,7 +93,7 @@ func CreateQueryWorksByOrganizationRequest() (request *QueryWorksByOrganizationR
 	request = &QueryWorksByOrganizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-07", "QueryWorksByOrganization", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorksByOrganization", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

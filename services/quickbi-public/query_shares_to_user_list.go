@@ -79,8 +79,8 @@ type QuerySharesToUserListRequest struct {
 // QuerySharesToUserListResponse is the response struct for api QuerySharesToUserList
 type QuerySharesToUserListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateQuerySharesToUserListRequest() (request *QuerySharesToUserListRequest
 	request = &QuerySharesToUserListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-04", "QuerySharesToUserList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QuerySharesToUserList", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

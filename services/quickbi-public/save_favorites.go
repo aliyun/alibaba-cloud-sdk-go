@@ -82,8 +82,8 @@ type SaveFavoritesRequest struct {
 type SaveFavoritesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSaveFavoritesRequest creates a request to invoke SaveFavorites API
@@ -91,7 +91,7 @@ func CreateSaveFavoritesRequest() (request *SaveFavoritesRequest) {
 	request = &SaveFavoritesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-09", "SaveFavorites", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "SaveFavorites", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

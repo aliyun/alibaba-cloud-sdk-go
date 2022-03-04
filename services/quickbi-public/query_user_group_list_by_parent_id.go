@@ -79,8 +79,8 @@ type QueryUserGroupListByParentIdRequest struct {
 // QueryUserGroupListByParentIdResponse is the response struct for api QueryUserGroupListByParentId
 type QueryUserGroupListByParentIdResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateQueryUserGroupListByParentIdRequest() (request *QueryUserGroupListByP
 	request = &QueryUserGroupListByParentIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-07-31", "QueryUserGroupListByParentId", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserGroupListByParentId", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

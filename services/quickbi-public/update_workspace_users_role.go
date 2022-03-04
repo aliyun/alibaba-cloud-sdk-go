@@ -81,8 +81,8 @@ type UpdateWorkspaceUsersRoleRequest struct {
 // UpdateWorkspaceUsersRoleResponse is the response struct for api UpdateWorkspaceUsersRole
 type UpdateWorkspaceUsersRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -91,7 +91,7 @@ func CreateUpdateWorkspaceUsersRoleRequest() (request *UpdateWorkspaceUsersRoleR
 	request = &UpdateWorkspaceUsersRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-03", "UpdateWorkspaceUsersRole", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateWorkspaceUsersRole", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

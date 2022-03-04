@@ -71,22 +71,22 @@ func (client *Client) AddShareReportWithCallback(request *AddShareReportRequest,
 // AddShareReportRequest is the request struct for api AddShareReport
 type AddShareReportRequest struct {
 	*requests.RpcRequest
-	ShareToType requests.Integer `position:"Query" name:"ShareToType"`
-	WorksId     string           `position:"Query" name:"WorksId"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
-	ShareToId   string           `position:"Query" name:"ShareToId"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
 	AuthPoint   requests.Integer `position:"Query" name:"AuthPoint"`
 	SignType    string           `position:"Query" name:"SignType"`
 	ExpireDate  requests.Integer `position:"Query" name:"ExpireDate"`
+	ShareToType requests.Integer `position:"Query" name:"ShareToType"`
+	WorksId     string           `position:"Query" name:"WorksId"`
+	ShareToId   string           `position:"Query" name:"ShareToId"`
 }
 
 // AddShareReportResponse is the response struct for api AddShareReport
 type AddShareReportResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateAddShareReportRequest creates a request to invoke AddShareReport API
@@ -94,7 +94,7 @@ func CreateAddShareReportRequest() (request *AddShareReportRequest) {
 	request = &AddShareReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-04", "AddShareReport", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AddShareReport", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

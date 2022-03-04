@@ -91,7 +91,7 @@ func CreateSetDataLevelPermissionExtraConfigRequest() (request *SetDataLevelPerm
 	request = &SetDataLevelPermissionExtraConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-11-11", "SetDataLevelPermissionExtraConfig", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "SetDataLevelPermissionExtraConfig", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

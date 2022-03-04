@@ -91,7 +91,7 @@ func CreateUpdateDataLevelPermissionStatusRequest() (request *UpdateDataLevelPer
 	request = &UpdateDataLevelPermissionStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-11-11", "UpdateDataLevelPermissionStatus", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -79,8 +79,8 @@ type QueryShareListRequest struct {
 // QueryShareListResponse is the response struct for api QueryShareList
 type QueryShareListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 
@@ -89,7 +89,7 @@ func CreateQueryShareListRequest() (request *QueryShareListRequest) {
 	request = &QueryShareListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-04", "QueryShareList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryShareList", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

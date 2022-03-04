@@ -81,8 +81,8 @@ type QueryDataServiceRequest struct {
 // QueryDataServiceResponse is the response struct for api QueryDataService
 type QueryDataServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -91,7 +91,7 @@ func CreateQueryDataServiceRequest() (request *QueryDataServiceRequest) {
 	request = &QueryDataServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-07-30", "QueryDataService", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryDataService", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

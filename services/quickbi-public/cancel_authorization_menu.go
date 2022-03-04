@@ -83,8 +83,8 @@ type CancelAuthorizationMenuRequest struct {
 type CancelAuthorizationMenuResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    int    `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCancelAuthorizationMenuRequest creates a request to invoke CancelAuthorizationMenu API
@@ -92,7 +92,7 @@ func CreateCancelAuthorizationMenuRequest() (request *CancelAuthorizationMenuReq
 	request = &CancelAuthorizationMenuRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-08", "CancelAuthorizationMenu", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CancelAuthorizationMenu", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

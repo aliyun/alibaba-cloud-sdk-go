@@ -82,8 +82,8 @@ type QueryUserListRequest struct {
 // QueryUserListResponse is the response struct for api QueryUserList
 type QueryUserListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
@@ -92,7 +92,7 @@ func CreateQueryUserListRequest() (request *QueryUserListRequest) {
 	request = &QueryUserListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-01", "QueryUserList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserList", "quickbi", "openAPI")
 	request.Method = requests.GET
 	return
 }

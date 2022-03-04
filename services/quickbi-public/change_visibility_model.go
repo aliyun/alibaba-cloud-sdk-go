@@ -82,8 +82,8 @@ type ChangeVisibilityModelRequest struct {
 type ChangeVisibilityModelResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    int    `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateChangeVisibilityModelRequest creates a request to invoke ChangeVisibilityModel API
@@ -91,7 +91,7 @@ func CreateChangeVisibilityModelRequest() (request *ChangeVisibilityModelRequest
 	request = &ChangeVisibilityModelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-08-08", "ChangeVisibilityModel", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ChangeVisibilityModel", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

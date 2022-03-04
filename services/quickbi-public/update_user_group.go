@@ -91,7 +91,7 @@ func CreateUpdateUserGroupRequest() (request *UpdateUserGroupRequest) {
 	request = &UpdateUserGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2020-07-31", "UpdateUserGroup", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateUserGroup", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }
