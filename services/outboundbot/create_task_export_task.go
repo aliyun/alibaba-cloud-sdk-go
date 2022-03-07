@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SearchTask invokes the outboundbot.SearchTask API synchronously
-func (client *Client) SearchTask(request *SearchTaskRequest) (response *SearchTaskResponse, err error) {
-	response = CreateSearchTaskResponse()
+// CreateTaskExportTask invokes the outboundbot.CreateTaskExportTask API synchronously
+func (client *Client) CreateTaskExportTask(request *CreateTaskExportTaskRequest) (response *CreateTaskExportTaskResponse, err error) {
+	response = CreateCreateTaskExportTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SearchTaskWithChan invokes the outboundbot.SearchTask API asynchronously
-func (client *Client) SearchTaskWithChan(request *SearchTaskRequest) (<-chan *SearchTaskResponse, <-chan error) {
-	responseChan := make(chan *SearchTaskResponse, 1)
+// CreateTaskExportTaskWithChan invokes the outboundbot.CreateTaskExportTask API asynchronously
+func (client *Client) CreateTaskExportTaskWithChan(request *CreateTaskExportTaskRequest) (<-chan *CreateTaskExportTaskResponse, <-chan error) {
+	responseChan := make(chan *CreateTaskExportTaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SearchTask(request)
+		response, err := client.CreateTaskExportTask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SearchTaskWithChan(request *SearchTaskRequest) (<-chan *Se
 	return responseChan, errChan
 }
 
-// SearchTaskWithCallback invokes the outboundbot.SearchTask API asynchronously
-func (client *Client) SearchTaskWithCallback(request *SearchTaskRequest, callback func(response *SearchTaskResponse, err error)) <-chan int {
+// CreateTaskExportTaskWithCallback invokes the outboundbot.CreateTaskExportTask API asynchronously
+func (client *Client) CreateTaskExportTaskWithCallback(request *CreateTaskExportTaskRequest, callback func(response *CreateTaskExportTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SearchTaskResponse
+		var response *CreateTaskExportTaskResponse
 		var err error
 		defer close(result)
-		response, err = client.SearchTask(request)
+		response, err = client.CreateTaskExportTask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,9 +68,10 @@ func (client *Client) SearchTaskWithCallback(request *SearchTaskRequest, callbac
 	return result
 }
 
-// SearchTaskRequest is the request struct for api SearchTask
-type SearchTaskRequest struct {
+// CreateTaskExportTaskRequest is the request struct for api CreateTaskExportTask
+type CreateTaskExportTaskRequest struct {
 	*requests.RpcRequest
+	HasAnswered          requests.Boolean `position:"Query" name:"HasAnswered"`
 	ActualTimeLte        requests.Integer `position:"Query" name:"ActualTimeLte"`
 	OtherId              string           `position:"Query" name:"OtherId"`
 	TaskCreateTimeLte    requests.Integer `position:"Query" name:"TaskCreateTimeLte"`
@@ -85,6 +86,8 @@ type SearchTaskRequest struct {
 	TaskStatusStringList string           `position:"Query" name:"TaskStatusStringList"`
 	JobGroupNameQuery    string           `position:"Query" name:"JobGroupNameQuery"`
 	TaskId               string           `position:"Query" name:"TaskId"`
+	HasHangUpByRejection requests.Boolean `position:"Query" name:"HasHangUpByRejection"`
+	HasReachedEndOfFlow  requests.Boolean `position:"Query" name:"HasReachedEndOfFlow"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	RecordingDurationGte requests.Integer `position:"Query" name:"RecordingDurationGte"`
 	CallDurationLte      requests.Integer `position:"Query" name:"CallDurationLte"`
@@ -96,33 +99,30 @@ type SearchTaskRequest struct {
 	RecordingDurationLte requests.Integer `position:"Query" name:"RecordingDurationLte"`
 }
 
-// SearchTaskResponse is the response struct for api SearchTask
-type SearchTaskResponse struct {
+// CreateTaskExportTaskResponse is the response struct for api CreateTaskExportTask
+type CreateTaskExportTaskResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode     int              `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	PageIndex          int              `json:"PageIndex" xml:"PageIndex"`
-	RequestId          string           `json:"RequestId" xml:"RequestId"`
-	Success            bool             `json:"Success" xml:"Success"`
-	Code               string           `json:"Code" xml:"Code"`
-	Message            string           `json:"Message" xml:"Message"`
-	PageSize           int              `json:"PageSize" xml:"PageSize"`
-	Total              int64            `json:"Total" xml:"Total"`
-	SearchTaskInfoList []SearchTaskInfo `json:"SearchTaskInfoList" xml:"SearchTaskInfoList"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	TaskId         string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateSearchTaskRequest creates a request to invoke SearchTask API
-func CreateSearchTaskRequest() (request *SearchTaskRequest) {
-	request = &SearchTaskRequest{
+// CreateCreateTaskExportTaskRequest creates a request to invoke CreateTaskExportTask API
+func CreateCreateTaskExportTaskRequest() (request *CreateTaskExportTaskRequest) {
+	request = &CreateTaskExportTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SearchTask", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateTaskExportTask", "outboundbot", "openAPI")
 	request.Method = requests.GET
 	return
 }
 
-// CreateSearchTaskResponse creates a response to parse from SearchTask response
-func CreateSearchTaskResponse() (response *SearchTaskResponse) {
-	response = &SearchTaskResponse{
+// CreateCreateTaskExportTaskResponse creates a response to parse from CreateTaskExportTask response
+func CreateCreateTaskExportTaskResponse() (response *CreateTaskExportTaskResponse) {
+	response = &CreateTaskExportTaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

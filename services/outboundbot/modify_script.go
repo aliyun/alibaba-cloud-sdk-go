@@ -78,6 +78,7 @@ type ModifyScriptRequest struct {
 	ScriptId            string           `position:"Query" name:"ScriptId"`
 	ScriptWaveform      *[]string        `position:"Query" name:"ScriptWaveform"  type:"Repeated"`
 	AsrConfig           string           `position:"Query" name:"AsrConfig"`
+	NlsConfig           string           `position:"Query" name:"NlsConfig"`
 	MiniPlaybackEnabled requests.Boolean `position:"Query" name:"MiniPlaybackEnabled"`
 	ChatbotId           string           `position:"Query" name:"ChatbotId"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
@@ -88,12 +89,12 @@ type ModifyScriptRequest struct {
 // ModifyScriptResponse is the response struct for api ModifyScript
 type ModifyScriptResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ChatbotId      string `json:"ChatbotId" xml:"ChatbotId"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
 	Script         Script `json:"Script" xml:"Script"`
 }
 

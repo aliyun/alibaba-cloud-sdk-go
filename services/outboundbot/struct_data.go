@@ -18,4 +18,5 @@ package outboundbot
 // Data is a nested struct in outboundbot response
 type Data struct {
 	InstanceConfig InstanceConfig `json:"InstanceConfig" xml:"InstanceConfig"`
+	List           []ListItem     `json:"List" xml:"List"`
 }

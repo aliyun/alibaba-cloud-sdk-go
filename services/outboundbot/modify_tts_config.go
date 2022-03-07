@@ -71,18 +71,20 @@ func (client *Client) ModifyTTSConfigWithCallback(request *ModifyTTSConfigReques
 // ModifyTTSConfigRequest is the request struct for api ModifyTTSConfig
 type ModifyTTSConfigRequest struct {
 	*requests.RpcRequest
-	Voice      string `position:"Query" name:"Voice"`
-	Volume     string `position:"Query" name:"Volume"`
-	ScriptId   string `position:"Query" name:"ScriptId"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	SpeechRate string `position:"Query" name:"SpeechRate"`
+	Voice          string `position:"Query" name:"Voice"`
+	NlsServiceType string `position:"Query" name:"NlsServiceType"`
+	Volume         string `position:"Query" name:"Volume"`
+	ScriptId       string `position:"Query" name:"ScriptId"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	AppKey         string `position:"Query" name:"AppKey"`
+	SpeechRate     string `position:"Query" name:"SpeechRate"`
 }
 
 // ModifyTTSConfigResponse is the response struct for api ModifyTTSConfig
 type ModifyTTSConfigResponse struct {
 	*responses.BaseResponse
-	Code           string    `json:"Code" xml:"Code"`
 	HttpStatusCode int       `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string    `json:"Code" xml:"Code"`
 	Message        string    `json:"Message" xml:"Message"`
 	RequestId      string    `json:"RequestId" xml:"RequestId"`
 	Success        bool      `json:"Success" xml:"Success"`

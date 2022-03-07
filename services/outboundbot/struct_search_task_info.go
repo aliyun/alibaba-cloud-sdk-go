@@ -43,5 +43,6 @@ type SearchTaskInfo struct {
 	TaskId                   string   `json:"TaskId" xml:"TaskId"`
 	DialExceptionOld         string   `json:"DialExceptionOld" xml:"DialExceptionOld"`
 	HasLastPlaybackCompleted bool     `json:"HasLastPlaybackCompleted" xml:"HasLastPlaybackCompleted"`
+	ScriptName               string   `json:"ScriptName" xml:"ScriptName"`
 	DialExceptionCodes       []string `json:"DialExceptionCodes" xml:"DialExceptionCodes"`
 }

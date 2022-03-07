@@ -78,14 +78,15 @@ type DescribeScriptRequest struct {
 // DescribeScriptResponse is the response struct for api DescribeScript
 type DescribeScriptResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ChatbotId      string `json:"ChatbotId" xml:"ChatbotId"`
-	AsrConfig      string `json:"AsrConfig" xml:"AsrConfig"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
 	TtsConfig      string `json:"TtsConfig" xml:"TtsConfig"`
+	AsrConfig      string `json:"AsrConfig" xml:"AsrConfig"`
+	NlsConfig      string `json:"NlsConfig" xml:"NlsConfig"`
 	Script         Script `json:"Script" xml:"Script"`
 }
 
