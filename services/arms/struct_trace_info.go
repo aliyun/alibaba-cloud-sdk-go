@@ -20,7 +20,7 @@ type TraceInfo struct {
 	Timestamp     int64  `json:"Timestamp" xml:"Timestamp"`
 	TraceID       string `json:"TraceID" xml:"TraceID"`
 	OperationName string `json:"OperationName" xml:"OperationName"`
-	ServiceName   string `json:"ServiceName" xml:"ServiceName"`
 	Duration      int64  `json:"Duration" xml:"Duration"`
+	ServiceName   string `json:"ServiceName" xml:"ServiceName"`
 	ServiceIp     string `json:"ServiceIp" xml:"ServiceIp"`
 }

@@ -93,7 +93,7 @@ func CreateCreateOrUpdateWebhookContactRequest() (request *CreateOrUpdateWebhook
 	request = &CreateOrUpdateWebhookContactRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateWebhookContact", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateWebhookContact", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

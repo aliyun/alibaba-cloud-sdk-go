@@ -87,7 +87,7 @@ func CreateGetIntegrationStateRequest() (request *GetIntegrationStateRequest) {
 	request = &GetIntegrationStateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetIntegrationState", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetIntegrationState", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

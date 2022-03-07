@@ -88,7 +88,7 @@ func CreateGetUserCommercialStatusRequest() (request *GetUserCommercialStatusReq
 	request = &GetUserCommercialStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetUserCommercialStatus", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetUserCommercialStatus", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

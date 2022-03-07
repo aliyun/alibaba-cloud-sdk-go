@@ -94,7 +94,7 @@ func CreateUpdateWebhookRequest() (request *UpdateWebhookRequest) {
 	request = &UpdateWebhookRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateWebhook", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateWebhook", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

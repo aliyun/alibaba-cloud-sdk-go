@@ -89,7 +89,7 @@ func CreateOpenVClusterRequest() (request *OpenVClusterRequest) {
 	request = &OpenVClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "OpenVCluster", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "OpenVCluster", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateCreateOrUpdateNotificationPolicyRequest() (request *CreateOrUpdateNot
 	request = &CreateOrUpdateNotificationPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateNotificationPolicy", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateNotificationPolicy", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

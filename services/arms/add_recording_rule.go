@@ -87,7 +87,7 @@ func CreateAddRecordingRuleRequest() (request *AddRecordingRuleRequest) {
 	request = &AddRecordingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "AddRecordingRule", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "AddRecordingRule", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

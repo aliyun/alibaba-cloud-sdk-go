@@ -1,3 +1,7 @@
+2022-03-07 Version: v1.61.1506
+- Generated 2019-08-08 for `ARMS`.
+- Fixed bugs for SearchTraces and SearchTracesByPage.
+
 2022-03-04 Version: v1.61.1505
 - Generated 2022-01-01 for `quickbi-public`.
 - Initialize APIs.

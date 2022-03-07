@@ -89,7 +89,7 @@ func CreateUpdateAlertContactGroupRequest() (request *UpdateAlertContactGroupReq
 	request = &UpdateAlertContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateAlertContactGroup", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateAlertContactGroup", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

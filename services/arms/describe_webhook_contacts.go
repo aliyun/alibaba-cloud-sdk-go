@@ -88,7 +88,7 @@ func CreateDescribeWebhookContactsRequest() (request *DescribeWebhookContactsReq
 	request = &DescribeWebhookContactsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DescribeWebhookContacts", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DescribeWebhookContacts", "arms", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -88,7 +88,7 @@ func CreateCreateOrUpdateContactGroupRequest() (request *CreateOrUpdateContactGr
 	request = &CreateOrUpdateContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateContactGroup", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateContactGroup", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }
