@@ -1,3 +1,7 @@
+2022-03-07 Version: v1.61.1509
+- Generated 2020-06-15 for `hitsdb`.
+- Create Lindorm Open api.
+
 2022-03-07 Version: v1.61.1508
 - Generated 2018-06-12 for `VoiceNavigator`.
 - Supported new features etc.

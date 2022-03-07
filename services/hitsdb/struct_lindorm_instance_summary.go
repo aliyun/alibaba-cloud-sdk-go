@@ -17,20 +17,21 @@ package hitsdb
 
 // LindormInstanceSummary is a nested struct in hitsdb response
 type LindormInstanceSummary struct {
+	VpcId               string `json:"VpcId" xml:"VpcId"`
+	EngineType          string `json:"EngineType" xml:"EngineType"`
+	ExpireTime          string `json:"ExpireTime" xml:"ExpireTime"`
+	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
+	PayType             string `json:"PayType" xml:"PayType"`
+	AliUid              int64  `json:"AliUid" xml:"AliUid"`
+	InstanceStorage     string `json:"InstanceStorage" xml:"InstanceStorage"`
 	InstanceId          string `json:"InstanceId" xml:"InstanceId"`
-	InstanceAlias       string `json:"InstanceAlias" xml:"InstanceAlias"`
+	NetworkType         string `json:"NetworkType" xml:"NetworkType"`
+	ServiceType         string `json:"ServiceType" xml:"ServiceType"`
 	RegionId            string `json:"RegionId" xml:"RegionId"`
+	CreateMilliseconds  int64  `json:"CreateMilliseconds" xml:"CreateMilliseconds"`
+	InstanceAlias       string `json:"InstanceAlias" xml:"InstanceAlias"`
 	ZoneId              string `json:"ZoneId" xml:"ZoneId"`
 	InstanceStatus      string `json:"InstanceStatus" xml:"InstanceStatus"`
-	PayType             string `json:"PayType" xml:"PayType"`
-	NetworkType         string `json:"NetworkType" xml:"NetworkType"`
-	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
-	ExpireTime          string `json:"ExpireTime" xml:"ExpireTime"`
-	InstanceStorage     string `json:"InstanceStorage" xml:"InstanceStorage"`
-	ServiceType         string `json:"ServiceType" xml:"ServiceType"`
-	EngineType          string `json:"EngineType" xml:"EngineType"`
-	AliUid              int64  `json:"AliUid" xml:"AliUid"`
-	VpcId               string `json:"VpcId" xml:"VpcId"`
-	CreateMilliseconds  int64  `json:"CreateMilliseconds" xml:"CreateMilliseconds"`
 	ExpiredMilliseconds int64  `json:"ExpiredMilliseconds" xml:"ExpiredMilliseconds"`
+	EnableStream        bool   `json:"EnableStream" xml:"EnableStream"`
 }

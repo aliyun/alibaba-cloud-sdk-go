@@ -113,6 +113,7 @@ type GetLindormInstanceResponse struct {
 	EnableCompute       bool     `json:"EnableCompute" xml:"EnableCompute"`
 	EnableSSL           bool     `json:"EnableSSL" xml:"EnableSSL"`
 	EnableCdc           bool     `json:"EnableCdc" xml:"EnableCdc"`
+	EnableStream        bool     `json:"EnableStream" xml:"EnableStream"`
 	EngineList          []Engine `json:"EngineList" xml:"EngineList"`
 }
 
