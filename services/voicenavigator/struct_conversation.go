@@ -18,6 +18,7 @@ package voicenavigator
 // Conversation is a nested struct in voicenavigator response
 type Conversation struct {
 	EffectiveAnswerCount     int    `json:"EffectiveAnswerCount" xml:"EffectiveAnswerCount"`
+	SandBox                  bool   `json:"SandBox" xml:"SandBox"`
 	SkillGroup               string `json:"SkillGroup" xml:"SkillGroup"`
 	TransferredToAgent       bool   `json:"TransferredToAgent" xml:"TransferredToAgent"`
 	EndReason                int    `json:"EndReason" xml:"EndReason"`

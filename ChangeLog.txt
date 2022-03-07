@@ -1,3 +1,7 @@
+2022-03-07 Version: v1.61.1508
+- Generated 2018-06-12 for `VoiceNavigator`.
+- Supported new features etc.
+
 2022-03-07 Version: v1.61.1507
 - Generated 2019-12-26 for `OutboundBot`.
 - Supported new features for outbound.

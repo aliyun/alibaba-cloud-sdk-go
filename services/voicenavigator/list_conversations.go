@@ -78,6 +78,7 @@ type ListConversationsRequest struct {
 	CallingNumber       string           `position:"Query" name:"CallingNumber"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
 	BeginTimeRightRange requests.Integer `position:"Query" name:"BeginTimeRightRange"`
+	IsSandBox           string           `position:"Query" name:"IsSandBox"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 }
 
