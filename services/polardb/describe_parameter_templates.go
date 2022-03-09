@@ -95,7 +95,7 @@ func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTempla
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeParameterTemplates", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeParameterTemplates", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

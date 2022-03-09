@@ -112,6 +112,7 @@ type DescribeDBClusterAttributeResponse struct {
 	IsProxyLatestVersion      bool     `json:"IsProxyLatestVersion" xml:"IsProxyLatestVersion"`
 	StorageType               string   `json:"StorageType" xml:"StorageType"`
 	ProxyCpuCores             string   `json:"ProxyCpuCores" xml:"ProxyCpuCores"`
+	ProxyStandardCpuCores     string   `json:"ProxyStandardCpuCores" xml:"ProxyStandardCpuCores"`
 	ProxyType                 string   `json:"ProxyType" xml:"ProxyType"`
 	ProxyStatus               string   `json:"ProxyStatus" xml:"ProxyStatus"`
 	DBNodes                   []DBNode `json:"DBNodes" xml:"DBNodes"`
@@ -123,7 +124,7 @@ func CreateDescribeDBClusterAttributeRequest() (request *DescribeDBClusterAttrib
 	request = &DescribeDBClusterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAttribute", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAttribute", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

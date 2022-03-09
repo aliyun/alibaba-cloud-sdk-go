@@ -93,7 +93,7 @@ func CreateModifyDBClusterTDERequest() (request *ModifyDBClusterTDERequest) {
 	request = &ModifyDBClusterTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterTDE", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterTDE", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

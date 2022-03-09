@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyDBClusterParameters invokes the polardb.ModifyDBClusterParameters API synchronously
-func (client *Client) ModifyDBClusterParameters(request *ModifyDBClusterParametersRequest) (response *ModifyDBClusterParametersResponse, err error) {
-	response = CreateModifyDBClusterParametersResponse()
+// ModifyDBNodesParameters invokes the polardb.ModifyDBNodesParameters API synchronously
+func (client *Client) ModifyDBNodesParameters(request *ModifyDBNodesParametersRequest) (response *ModifyDBNodesParametersResponse, err error) {
+	response = CreateModifyDBNodesParametersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyDBClusterParametersWithChan invokes the polardb.ModifyDBClusterParameters API asynchronously
-func (client *Client) ModifyDBClusterParametersWithChan(request *ModifyDBClusterParametersRequest) (<-chan *ModifyDBClusterParametersResponse, <-chan error) {
-	responseChan := make(chan *ModifyDBClusterParametersResponse, 1)
+// ModifyDBNodesParametersWithChan invokes the polardb.ModifyDBNodesParameters API asynchronously
+func (client *Client) ModifyDBNodesParametersWithChan(request *ModifyDBNodesParametersRequest) (<-chan *ModifyDBNodesParametersResponse, <-chan error) {
+	responseChan := make(chan *ModifyDBNodesParametersResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyDBClusterParameters(request)
+		response, err := client.ModifyDBNodesParameters(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ModifyDBClusterParametersWithChan(request *ModifyDBCluster
 	return responseChan, errChan
 }
 
-// ModifyDBClusterParametersWithCallback invokes the polardb.ModifyDBClusterParameters API asynchronously
-func (client *Client) ModifyDBClusterParametersWithCallback(request *ModifyDBClusterParametersRequest, callback func(response *ModifyDBClusterParametersResponse, err error)) <-chan int {
+// ModifyDBNodesParametersWithCallback invokes the polardb.ModifyDBNodesParameters API asynchronously
+func (client *Client) ModifyDBNodesParametersWithCallback(request *ModifyDBNodesParametersRequest, callback func(response *ModifyDBNodesParametersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyDBClusterParametersResponse
+		var response *ModifyDBNodesParametersResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyDBClusterParameters(request)
+		response, err = client.ModifyDBNodesParameters(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,10 +68,11 @@ func (client *Client) ModifyDBClusterParametersWithCallback(request *ModifyDBClu
 	return result
 }
 
-// ModifyDBClusterParametersRequest is the request struct for api ModifyDBClusterParameters
-type ModifyDBClusterParametersRequest struct {
+// ModifyDBNodesParametersRequest is the request struct for api ModifyDBNodesParameters
+type ModifyDBNodesParametersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBNodeIds            string           `position:"Query" name:"DBNodeIds"`
 	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
@@ -80,25 +81,25 @@ type ModifyDBClusterParametersRequest struct {
 	Parameters           string           `position:"Query" name:"Parameters"`
 }
 
-// ModifyDBClusterParametersResponse is the response struct for api ModifyDBClusterParameters
-type ModifyDBClusterParametersResponse struct {
+// ModifyDBNodesParametersResponse is the response struct for api ModifyDBNodesParameters
+type ModifyDBNodesParametersResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateModifyDBClusterParametersRequest creates a request to invoke ModifyDBClusterParameters API
-func CreateModifyDBClusterParametersRequest() (request *ModifyDBClusterParametersRequest) {
-	request = &ModifyDBClusterParametersRequest{
+// CreateModifyDBNodesParametersRequest creates a request to invoke ModifyDBNodesParameters API
+func CreateModifyDBNodesParametersRequest() (request *ModifyDBNodesParametersRequest) {
+	request = &ModifyDBNodesParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterParameters", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodesParameters", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateModifyDBClusterParametersResponse creates a response to parse from ModifyDBClusterParameters response
-func CreateModifyDBClusterParametersResponse() (response *ModifyDBClusterParametersResponse) {
-	response = &ModifyDBClusterParametersResponse{
+// CreateModifyDBNodesParametersResponse creates a response to parse from ModifyDBNodesParameters response
+func CreateModifyDBNodesParametersResponse() (response *ModifyDBNodesParametersResponse) {
+	response = &ModifyDBNodesParametersResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

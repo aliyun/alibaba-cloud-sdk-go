@@ -100,7 +100,7 @@ func CreateDescribeDetachedBackupsRequest() (request *DescribeDetachedBackupsReq
 	request = &DescribeDetachedBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDetachedBackups", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDetachedBackups", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

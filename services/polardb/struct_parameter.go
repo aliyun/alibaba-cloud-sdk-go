@@ -17,13 +17,15 @@ package polardb
 
 // Parameter is a nested struct in polardb response
 type Parameter struct {
-	ParameterName         string `json:"ParameterName" xml:"ParameterName"`
-	DataType              string `json:"DataType" xml:"DataType"`
-	DefaultParameterValue string `json:"DefaultParameterValue" xml:"DefaultParameterValue"`
-	ParameterValue        string `json:"ParameterValue" xml:"ParameterValue"`
-	IsModifiable          bool   `json:"IsModifiable" xml:"IsModifiable"`
-	ForceRestart          bool   `json:"ForceRestart" xml:"ForceRestart"`
-	ParameterStatus       string `json:"ParameterStatus" xml:"ParameterStatus"`
 	CheckingCode          string `json:"CheckingCode" xml:"CheckingCode"`
+	DataType              string `json:"DataType" xml:"DataType"`
+	ParameterName         string `json:"ParameterName" xml:"ParameterName"`
+	ParameterValue        string `json:"ParameterValue" xml:"ParameterValue"`
+	ForceRestart          bool   `json:"ForceRestart" xml:"ForceRestart"`
 	ParameterDescription  string `json:"ParameterDescription" xml:"ParameterDescription"`
+	ParameterStatus       string `json:"ParameterStatus" xml:"ParameterStatus"`
+	DefaultParameterValue string `json:"DefaultParameterValue" xml:"DefaultParameterValue"`
+	IsModifiable          bool   `json:"IsModifiable" xml:"IsModifiable"`
+	IsNodeAvailable       string `json:"IsNodeAvailable" xml:"IsNodeAvailable"`
+	ParamRelyRule         string `json:"ParamRelyRule" xml:"ParamRelyRule"`
 }

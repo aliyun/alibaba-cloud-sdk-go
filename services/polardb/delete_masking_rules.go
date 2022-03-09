@@ -88,7 +88,7 @@ func CreateDeleteMaskingRulesRequest() (request *DeleteMaskingRulesRequest) {
 	request = &DeleteMaskingRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteMaskingRules", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteMaskingRules", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

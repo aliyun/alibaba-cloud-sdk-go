@@ -17,10 +17,12 @@ package polardb
 
 // TemplateRecord is a nested struct in polardb response
 type TemplateRecord struct {
-	ForceModify          string `json:"ForceModify" xml:"ForceModify"`
 	CheckingCode         string `json:"CheckingCode" xml:"CheckingCode"`
-	ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
-	ForceRestart         string `json:"ForceRestart" xml:"ForceRestart"`
 	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
+	ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
+	ForceModify          string `json:"ForceModify" xml:"ForceModify"`
+	ForceRestart         string `json:"ForceRestart" xml:"ForceRestart"`
 	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
+	IsNodeAvailable      string `json:"IsNodeAvailable" xml:"IsNodeAvailable"`
+	ParamRelyRule        string `json:"ParamRelyRule" xml:"ParamRelyRule"`
 }

@@ -93,7 +93,7 @@ func CreateDescribeDBClusterTDERequest() (request *DescribeDBClusterTDERequest) 
 	request = &DescribeDBClusterTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterTDE", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterTDE", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }
