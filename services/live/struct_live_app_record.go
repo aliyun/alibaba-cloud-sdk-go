@@ -25,6 +25,7 @@ type LiveAppRecord struct {
 	OssBucket                 string                    `json:"OssBucket" xml:"OssBucket"`
 	StartTime                 string                    `json:"StartTime" xml:"StartTime"`
 	EndTime                   string                    `json:"EndTime" xml:"EndTime"`
+	Always                    string                    `json:"Always" xml:"Always"`
 	OnDemond                  int                       `json:"OnDemond" xml:"OnDemond"`
 	OssEndpoint               string                    `json:"OssEndpoint" xml:"OssEndpoint"`
 	AppName                   string                    `json:"AppName" xml:"AppName"`
