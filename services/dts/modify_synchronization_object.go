@@ -71,7 +71,7 @@ func (client *Client) ModifySynchronizationObjectWithCallback(request *ModifySyn
 // ModifySynchronizationObjectRequest is the request struct for api ModifySynchronizationObject
 type ModifySynchronizationObjectRequest struct {
 	*requests.RpcRequest
-	SynchronizationObjects   string `position:"Query" name:"SynchronizationObjects"`
+	SynchronizationObjects   string `position:"Body" name:"SynchronizationObjects"`
 	OwnerId                  string `position:"Query" name:"OwnerId"`
 	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
 	AccountId                string `position:"Query" name:"AccountId"`

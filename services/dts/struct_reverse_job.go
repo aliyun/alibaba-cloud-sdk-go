@@ -17,6 +17,7 @@ package dts
 
 // ReverseJob is a nested struct in dts response
 type ReverseJob struct {
+	DedicatedClusterId            string                          `json:"DedicatedClusterId" xml:"DedicatedClusterId"`
 	OriginType                    string                          `json:"OriginType" xml:"OriginType"`
 	IsDemoJob                     bool                            `json:"IsDemoJob" xml:"IsDemoJob"`
 	BeginTimestamp                string                          `json:"BeginTimestamp" xml:"BeginTimestamp"`
@@ -28,10 +29,12 @@ type ReverseJob struct {
 	PayType                       string                          `json:"PayType" xml:"PayType"`
 	DtsJobClass                   string                          `json:"DtsJobClass" xml:"DtsJobClass"`
 	FinishTime                    string                          `json:"FinishTime" xml:"FinishTime"`
+	CpuUsage                      string                          `json:"CpuUsage" xml:"CpuUsage"`
 	Status                        string                          `json:"Status" xml:"Status"`
 	ConsumptionCheckpoint         string                          `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
 	TaskType                      string                          `json:"TaskType" xml:"TaskType"`
 	DtsJobDirection               string                          `json:"DtsJobDirection" xml:"DtsJobDirection"`
+	MemUsage                      string                          `json:"MemUsage" xml:"MemUsage"`
 	ErrorMessage                  string                          `json:"ErrorMessage" xml:"ErrorMessage"`
 	CreateTime                    string                          `json:"CreateTime" xml:"CreateTime"`
 	EndTimestamp                  string                          `json:"EndTimestamp" xml:"EndTimestamp"`
@@ -42,6 +45,7 @@ type ReverseJob struct {
 	Delay                         int64                           `json:"Delay" xml:"Delay"`
 	ExpireTime                    string                          `json:"ExpireTime" xml:"ExpireTime"`
 	DtsJobName                    string                          `json:"DtsJobName" xml:"DtsJobName"`
+	DuUsage                       int64                           `json:"DuUsage" xml:"DuUsage"`
 	EtlCalculator                 string                          `json:"EtlCalculator" xml:"EtlCalculator"`
 	ReverseJob                    string                          `json:"ReverseJob" xml:"ReverseJob"`
 	DestNetType                   string                          `json:"DestNetType" xml:"DestNetType"`

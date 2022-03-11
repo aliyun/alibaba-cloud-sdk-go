@@ -116,6 +116,7 @@ type DescribeDtsJobDetailResponse struct {
 	DemoJob                  bool                    `json:"DemoJob" xml:"DemoJob"`
 	JobType                  string                  `json:"JobType" xml:"JobType"`
 	TaskType                 string                  `json:"TaskType" xml:"TaskType"`
+	DedicatedClusterId       string                  `json:"DedicatedClusterId" xml:"DedicatedClusterId"`
 	SourceEndpoint           SourceEndpoint          `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	DestinationEndpoint      DestinationEndpoint     `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
 	MigrationMode            MigrationMode           `json:"MigrationMode" xml:"MigrationMode"`

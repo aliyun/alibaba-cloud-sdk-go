@@ -78,6 +78,7 @@ type ConfigureSubscriptionRequest struct {
 	SourceEndpointInstanceID        string           `position:"Query" name:"SourceEndpointInstanceID"`
 	SourceEndpointUserName          string           `position:"Query" name:"SourceEndpointUserName"`
 	SourceEndpointOwnerID           string           `position:"Query" name:"SourceEndpointOwnerID"`
+	DedicatedClusterId              string           `position:"Query" name:"DedicatedClusterId"`
 	DelayPhone                      string           `position:"Query" name:"DelayPhone"`
 	SubscriptionDataTypeDML         requests.Boolean `position:"Query" name:"SubscriptionDataTypeDML"`
 	SourceEndpointDatabaseName      string           `position:"Query" name:"SourceEndpointDatabaseName"`

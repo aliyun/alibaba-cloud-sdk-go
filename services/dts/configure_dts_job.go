@@ -97,6 +97,7 @@ type ConfigureDtsJobRequest struct {
 	SourceEndpointInstanceID        string           `position:"Query" name:"SourceEndpointInstanceID"`
 	StructureInitialization         requests.Boolean `position:"Query" name:"StructureInitialization"`
 	SourceEndpointOwnerID           string           `position:"Query" name:"SourceEndpointOwnerID"`
+	DedicatedClusterId              string           `position:"Query" name:"DedicatedClusterId"`
 	SourceEndpointDatabaseName      string           `position:"Query" name:"SourceEndpointDatabaseName"`
 	DestinationEndpointRegion       string           `position:"Query" name:"DestinationEndpointRegion"`
 	Reserve                         string           `position:"Body" name:"Reserve"`

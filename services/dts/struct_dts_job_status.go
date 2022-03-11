@@ -18,6 +18,8 @@ package dts
 // DtsJobStatus is a nested struct in dts response
 type DtsJobStatus struct {
 	DtsJobDirection               string                          `json:"DtsJobDirection" xml:"DtsJobDirection"`
+	DedicatedClusterId            string                          `json:"DedicatedClusterId" xml:"DedicatedClusterId"`
+	MemUsage                      string                          `json:"MemUsage" xml:"MemUsage"`
 	ErrorMessage                  string                          `json:"ErrorMessage" xml:"ErrorMessage"`
 	OriginType                    string                          `json:"OriginType" xml:"OriginType"`
 	CreateTime                    string                          `json:"CreateTime" xml:"CreateTime"`
@@ -31,9 +33,11 @@ type DtsJobStatus struct {
 	ExpireTime                    string                          `json:"ExpireTime" xml:"ExpireTime"`
 	DtsJobName                    string                          `json:"DtsJobName" xml:"DtsJobName"`
 	JobType                       string                          `json:"JobType" xml:"JobType"`
+	DuUsage                       int64                           `json:"DuUsage" xml:"DuUsage"`
 	Checkpoint                    string                          `json:"Checkpoint" xml:"Checkpoint"`
 	PayType                       string                          `json:"PayType" xml:"PayType"`
 	DtsJobClass                   string                          `json:"DtsJobClass" xml:"DtsJobClass"`
+	CpuUsage                      string                          `json:"CpuUsage" xml:"CpuUsage"`
 	Status                        string                          `json:"Status" xml:"Status"`
 	ConsumptionCheckpoint         string                          `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
 	AppName                       string                          `json:"AppName" xml:"AppName"`
