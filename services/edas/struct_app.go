@@ -35,6 +35,7 @@ type App struct {
 	EdasContainerVersion   string  `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
 	LimitCpuM              int     `json:"LimitCpuM" xml:"LimitCpuM"`
 	ClusterId              string  `json:"ClusterId" xml:"ClusterId"`
+	DevelopType            string  `json:"DevelopType" xml:"DevelopType"`
 	CmdArgs                CmdArgs `json:"CmdArgs" xml:"CmdArgs"`
 	EnvList                EnvList `json:"EnvList" xml:"EnvList"`
 }
