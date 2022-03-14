@@ -17,8 +17,5 @@ package edas
 
 // RuleList is a nested struct in edas response
 type RuleList struct {
-	CurrentPage    int                                 `json:"CurrentPage" xml:"CurrentPage"`
-	PageSize       int                                 `json:"pageSize" xml:"pageSize"`
-	TotalSize      int                                 `json:"TotalSize" xml:"TotalSize"`
-	RuleResultList RuleResultListInListDegradeControls `json:"RuleResultList" xml:"RuleResultList"`
+	Rule []Rule `json:"Rule" xml:"Rule"`
 }

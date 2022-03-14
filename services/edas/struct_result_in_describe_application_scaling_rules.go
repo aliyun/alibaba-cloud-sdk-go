@@ -17,5 +17,5 @@ package edas
 
 // ResultInDescribeApplicationScalingRules is a nested struct in edas response
 type ResultInDescribeApplicationScalingRules struct {
-	Rule []RuleInDescribeApplicationScalingRules `json:"Rule" xml:"Rule"`
+	Rule []Rule `json:"Rule" xml:"Rule"`
 }

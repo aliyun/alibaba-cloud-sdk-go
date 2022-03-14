@@ -17,18 +17,12 @@ package edas
 
 // MseServiceResponse is a nested struct in edas response
 type MseServiceResponse struct {
-	InstanceNum           int      `json:"InstanceNum" xml:"InstanceNum"`
-	Group                 string   `json:"Group" xml:"Group"`
-	Version               string   `json:"Version" xml:"Version"`
-	EdasAppName           string   `json:"EdasAppName" xml:"EdasAppName"`
-	ServiceId             string   `json:"ServiceId" xml:"ServiceId"`
-	RegistryType          string   `json:"RegistryType" xml:"RegistryType"`
-	EdasAppId             string   `json:"EdasAppId" xml:"EdasAppId"`
-	Metadata              string   `json:"Metadata" xml:"Metadata"`
-	SpringApplicationName string   `json:"SpringApplicationName" xml:"SpringApplicationName"`
-	RegisterType          string   `json:"RegisterType" xml:"RegisterType"`
-	ServiceType           string   `json:"ServiceType" xml:"ServiceType"`
-	ServiceName           string   `json:"ServiceName" xml:"ServiceName"`
-	DubboApplicationName  string   `json:"DubboApplicationName" xml:"DubboApplicationName"`
-	Methods               []Method `json:"Methods" xml:"Methods"`
+	EdasAppName  string `json:"EdasAppName" xml:"EdasAppName"`
+	InstanceNum  int    `json:"InstanceNum" xml:"InstanceNum"`
+	Version      string `json:"Version" xml:"Version"`
+	ServiceId    string `json:"ServiceId" xml:"ServiceId"`
+	EdasAppId    string `json:"EdasAppId" xml:"EdasAppId"`
+	ServiceName  string `json:"ServiceName" xml:"ServiceName"`
+	RegisterType string `json:"RegisterType" xml:"RegisterType"`
+	Group        string `json:"Group" xml:"Group"`
 }

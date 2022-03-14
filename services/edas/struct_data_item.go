@@ -17,22 +17,10 @@ package edas
 
 // DataItem is a nested struct in edas response
 type DataItem struct {
-	ClusterId     string             `json:"ClusterId" xml:"ClusterId"`
-	EnvName       string             `json:"EnvName" xml:"EnvName"`
-	LabelAdviceId int64              `json:"LabelAdviceId" xml:"LabelAdviceId"`
-	RegionName    string             `json:"RegionName" xml:"RegionName"`
-	PointcutId    int64              `json:"PointcutId" xml:"PointcutId"`
-	Key           string             `json:"Key" xml:"Key"`
-	AppId         string             `json:"AppId" xml:"AppId"`
-	Value         string             `json:"Value" xml:"Value"`
-	RegionId      string             `json:"RegionId" xml:"RegionId"`
-	LabelType     string             `json:"LabelType" xml:"LabelType"`
-	ClusterName   string             `json:"ClusterName" xml:"ClusterName"`
-	Id            string             `json:"Id" xml:"Id"`
-	AppName       string             `json:"AppName" xml:"AppName"`
-	Kind          string             `json:"Kind" xml:"Kind"`
-	Spec          Spec               `json:"Spec" xml:"Spec"`
-	Metadata      Metadata           `json:"Metadata" xml:"Metadata"`
-	GroupList     []GroupListItem    `json:"GroupList" xml:"GroupList"`
-	IngressConfs  []IngressConfsItem `json:"IngressConfs" xml:"IngressConfs"`
+	Key          string             `json:"Key" xml:"Key"`
+	Value        string             `json:"Value" xml:"Value"`
+	ClusterId    string             `json:"ClusterId" xml:"ClusterId"`
+	RegionId     string             `json:"RegionId" xml:"RegionId"`
+	ClusterName  string             `json:"ClusterName" xml:"ClusterName"`
+	IngressConfs []IngressConfsItem `json:"IngressConfs" xml:"IngressConfs"`
 }

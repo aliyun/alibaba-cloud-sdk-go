@@ -43,7 +43,6 @@ type Application struct {
 	HealthCheckUrl       string `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
 	SlbId                string `json:"SlbId" xml:"SlbId"`
 	Cpu                  int    `json:"Cpu" xml:"Cpu"`
-	AppName              string `json:"AppName" xml:"AppName"`
 	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
 	SlbIp                string `json:"SlbIp" xml:"SlbIp"`
 }

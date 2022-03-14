@@ -17,8 +17,8 @@ package edas
 
 // AppScalingRules is a nested struct in edas response
 type AppScalingRules struct {
-	CurrentPage int                                     `json:"CurrentPage" xml:"CurrentPage"`
-	PageSize    int                                     `json:"PageSize" xml:"PageSize"`
-	TotalSize   int64                                   `json:"TotalSize" xml:"TotalSize"`
-	Result      []RuleInDescribeApplicationScalingRules `json:"Result" xml:"Result"`
+	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize    int    `json:"PageSize" xml:"PageSize"`
+	TotalSize   int64  `json:"TotalSize" xml:"TotalSize"`
+	Result      []Rule `json:"Result" xml:"Result"`
 }

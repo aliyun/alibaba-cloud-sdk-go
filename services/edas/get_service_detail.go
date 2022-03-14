@@ -88,10 +88,10 @@ type GetServiceDetailRequest struct {
 // GetServiceDetailResponse is the response struct for api GetServiceDetail
 type GetServiceDetailResponse struct {
 	*responses.BaseResponse
-	Code    int                    `json:"Code" xml:"Code"`
-	Message string                 `json:"Message" xml:"Message"`
-	Success bool                   `json:"Success" xml:"Success"`
-	Data    DataInGetServiceDetail `json:"Data" xml:"Data"`
+	Code    int    `json:"Code" xml:"Code"`
+	Message string `json:"Message" xml:"Message"`
+	Success bool   `json:"Success" xml:"Success"`
+	Data    Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetServiceDetailRequest creates a request to invoke GetServiceDetail API

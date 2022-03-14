@@ -1,3 +1,10 @@
+2022-03-14 Version: v1.61.1516
+- Generated 2017-08-01 for `Edas`.
+- Modify API ListConfigTemplates.
+- Modify API CreateConfigTemplate.
+- Modify API UpdateConfigTemplate.
+- Modify API DeleteConfigTemplate.
+
 2022-03-11 Version: v1.61.1515
 - Generated 2020-01-01 for `Dts`.
 - DTS SDK.
