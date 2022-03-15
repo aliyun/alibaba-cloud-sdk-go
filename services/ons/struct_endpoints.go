@@ -21,4 +21,5 @@ type Endpoints struct {
 	HttpInternetEndpoint       string `json:"HttpInternetEndpoint" xml:"HttpInternetEndpoint"`
 	HttpInternalEndpoint       string `json:"HttpInternalEndpoint" xml:"HttpInternalEndpoint"`
 	HttpInternetSecureEndpoint string `json:"HttpInternetSecureEndpoint" xml:"HttpInternetSecureEndpoint"`
+	TcpInternetEndpoint        string `json:"TcpInternetEndpoint" xml:"TcpInternetEndpoint"`
 }
