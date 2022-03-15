@@ -17,7 +17,7 @@ package vod
 
 // RegisteredMedia is a nested struct in vod response
 type RegisteredMedia struct {
-	MediaId     string `json:"MediaId" xml:"MediaId"`
-	FileURL     string `json:"FileURL" xml:"FileURL"`
 	NewRegister bool   `json:"NewRegister" xml:"NewRegister"`
+	FileURL     string `json:"FileURL" xml:"FileURL"`
+	MediaId     string `json:"MediaId" xml:"MediaId"`
 }

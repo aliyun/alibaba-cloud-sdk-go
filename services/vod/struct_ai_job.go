@@ -19,7 +19,6 @@ package vod
 type AIJob struct {
 	JobId        string `json:"JobId" xml:"JobId"`
 	Message      string `json:"Message" xml:"Message"`
-	FpDBId       string `json:"FpDBId" xml:"FpDBId"`
 	Code         string `json:"Code" xml:"Code"`
 	Data         string `json:"Data" xml:"Data"`
 	CreationTime string `json:"CreationTime" xml:"CreationTime"`

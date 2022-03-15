@@ -17,14 +17,14 @@ package vod
 
 // UrlUploadJobInfoDTO is a nested struct in vod response
 type UrlUploadJobInfoDTO struct {
+	CreationTime string `json:"CreationTime" xml:"CreationTime"`
+	Status       string `json:"Status" xml:"Status"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	CompleteTime string `json:"CompleteTime" xml:"CompleteTime"`
 	JobId        string `json:"JobId" xml:"JobId"`
+	UserData     string `json:"UserData" xml:"UserData"`
 	UploadURL    string `json:"UploadURL" xml:"UploadURL"`
 	MediaId      string `json:"MediaId" xml:"MediaId"`
 	FileSize     string `json:"FileSize" xml:"FileSize"`
-	Status       string `json:"Status" xml:"Status"`
-	UserData     string `json:"UserData" xml:"UserData"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	CompleteTime string `json:"CompleteTime" xml:"CompleteTime"`
 }

@@ -81,9 +81,9 @@ type ListAIJobRequest struct {
 // ListAIJobResponse is the response struct for api ListAIJob
 type ListAIJobResponse struct {
 	*responses.BaseResponse
-	RequestId        string                      `json:"RequestId" xml:"RequestId"`
-	NonExistAIJobIds NonExistAIJobIdsInListAIJob `json:"NonExistAIJobIds" xml:"NonExistAIJobIds"`
-	AIJobList        AIJobListInListAIJob        `json:"AIJobList" xml:"AIJobList"`
+	RequestId        string               `json:"RequestId" xml:"RequestId"`
+	NonExistAIJobIds NonExistAIJobIds     `json:"NonExistAIJobIds" xml:"NonExistAIJobIds"`
+	AIJobList        AIJobListInListAIJob `json:"AIJobList" xml:"AIJobList"`
 }
 
 // CreateListAIJobRequest creates a request to invoke ListAIJob API

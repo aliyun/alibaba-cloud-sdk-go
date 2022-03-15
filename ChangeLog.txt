@@ -1,3 +1,7 @@
+2022-03-15 Version: v1.61.1519
+- Generated 2017-03-21 for `vod`.
+- Set multiple apis to private.
+
 2022-03-14 Version: v1.61.1518
 - Generated 2017-08-01 for `Edas`.
 - Add developType in GetK8sApplication.

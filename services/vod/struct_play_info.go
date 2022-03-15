@@ -17,28 +17,29 @@ package vod
 
 // PlayInfo is a nested struct in vod response
 type PlayInfo struct {
-	JobId            string `json:"JobId" xml:"JobId"`
 	Format           string `json:"Format" xml:"Format"`
-	EncryptType      string `json:"EncryptType" xml:"EncryptType"`
-	PreprocessStatus string `json:"PreprocessStatus" xml:"PreprocessStatus"`
+	BitDepth         int    `json:"BitDepth" xml:"BitDepth"`
 	NarrowBandType   string `json:"NarrowBandType" xml:"NarrowBandType"`
-	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
 	Fps              string `json:"Fps" xml:"Fps"`
-	Bitrate          string `json:"Bitrate" xml:"Bitrate"`
 	Encrypt          int64  `json:"Encrypt" xml:"Encrypt"`
 	Rand             string `json:"Rand" xml:"Rand"`
-	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
 	StreamType       string `json:"StreamType" xml:"StreamType"`
-	Height           int64  `json:"Height" xml:"Height"`
 	WatermarkId      string `json:"WatermarkId" xml:"WatermarkId"`
+	Size             int64  `json:"Size" xml:"Size"`
+	Definition       string `json:"Definition" xml:"Definition"`
+	Plaintext        string `json:"Plaintext" xml:"Plaintext"`
+	JobId            string `json:"JobId" xml:"JobId"`
+	EncryptType      string `json:"EncryptType" xml:"EncryptType"`
+	PreprocessStatus string `json:"PreprocessStatus" xml:"PreprocessStatus"`
+	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
+	Bitrate          string `json:"Bitrate" xml:"Bitrate"`
+	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+	Height           int64  `json:"Height" xml:"Height"`
 	Complexity       string `json:"Complexity" xml:"Complexity"`
 	Duration         string `json:"Duration" xml:"Duration"`
 	HDRType          string `json:"HDRType" xml:"HDRType"`
 	Width            int64  `json:"Width" xml:"Width"`
-	Size             int64  `json:"Size" xml:"Size"`
 	Status           string `json:"Status" xml:"Status"`
-	Definition       string `json:"Definition" xml:"Definition"`
-	Plaintext        string `json:"Plaintext" xml:"Plaintext"`
 	Specification    string `json:"Specification" xml:"Specification"`
 	PlayURL          string `json:"PlayURL" xml:"PlayURL"`
 }

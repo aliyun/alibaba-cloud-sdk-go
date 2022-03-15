@@ -94,11 +94,11 @@ type DescribeVodUserDomainsTag struct {
 // DescribeVodUserDomainsResponse is the response struct for api DescribeVodUserDomains
 type DescribeVodUserDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                          `json:"RequestId" xml:"RequestId"`
-	PageNumber int64                           `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64                           `json:"PageSize" xml:"PageSize"`
-	TotalCount int64                           `json:"TotalCount" xml:"TotalCount"`
-	Domains    DomainsInDescribeVodUserDomains `json:"Domains" xml:"Domains"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	PageNumber int64   `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64   `json:"PageSize" xml:"PageSize"`
+	TotalCount int64   `json:"TotalCount" xml:"TotalCount"`
+	Domains    Domains `json:"Domains" xml:"Domains"`
 }
 
 // CreateDescribeVodUserDomainsRequest creates a request to invoke DescribeVodUserDomains API
