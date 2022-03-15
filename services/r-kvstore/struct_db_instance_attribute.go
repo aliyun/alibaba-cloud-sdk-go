@@ -17,51 +17,52 @@ package r_kvstore
 
 // DBInstanceAttribute is a nested struct in r_kvstore response
 type DBInstanceAttribute struct {
-	InstanceId                string                          `json:"InstanceId" xml:"InstanceId"`
-	InstanceName              string                          `json:"InstanceName" xml:"InstanceName"`
-	ConnectionDomain          string                          `json:"ConnectionDomain" xml:"ConnectionDomain"`
-	Port                      int64                           `json:"Port" xml:"Port"`
-	InstanceStatus            string                          `json:"InstanceStatus" xml:"InstanceStatus"`
-	RegionId                  string                          `json:"RegionId" xml:"RegionId"`
-	Capacity                  int64                           `json:"Capacity" xml:"Capacity"`
-	InstanceClass             string                          `json:"InstanceClass" xml:"InstanceClass"`
-	QPS                       int64                           `json:"QPS" xml:"QPS"`
-	Bandwidth                 int64                           `json:"Bandwidth" xml:"Bandwidth"`
-	Connections               int64                           `json:"Connections" xml:"Connections"`
-	ZoneId                    string                          `json:"ZoneId" xml:"ZoneId"`
-	Config                    string                          `json:"Config" xml:"Config"`
-	ChargeType                string                          `json:"ChargeType" xml:"ChargeType"`
-	NodeType                  string                          `json:"NodeType" xml:"NodeType"`
-	NetworkType               string                          `json:"NetworkType" xml:"NetworkType"`
 	VpcId                     string                          `json:"VpcId" xml:"VpcId"`
-	VSwitchId                 string                          `json:"VSwitchId" xml:"VSwitchId"`
 	PrivateIp                 string                          `json:"PrivateIp" xml:"PrivateIp"`
+	Capacity                  int64                           `json:"Capacity" xml:"Capacity"`
 	CreateTime                string                          `json:"CreateTime" xml:"CreateTime"`
-	EndTime                   string                          `json:"EndTime" xml:"EndTime"`
-	HasRenewChangeOrder       string                          `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
+	ConnectionDomain          string                          `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	IsRds                     bool                            `json:"IsRds" xml:"IsRds"`
-	Engine                    string                          `json:"Engine" xml:"Engine"`
-	EngineVersion             string                          `json:"EngineVersion" xml:"EngineVersion"`
-	MaintainStartTime         string                          `json:"MaintainStartTime" xml:"MaintainStartTime"`
-	MaintainEndTime           string                          `json:"MaintainEndTime" xml:"MaintainEndTime"`
-	AvailabilityValue         string                          `json:"AvailabilityValue" xml:"AvailabilityValue"`
-	SecurityIPList            string                          `json:"SecurityIPList" xml:"SecurityIPList"`
-	InstanceType              string                          `json:"InstanceType" xml:"InstanceType"`
-	ArchitectureType          string                          `json:"ArchitectureType" xml:"ArchitectureType"`
-	PackageType               string                          `json:"PackageType" xml:"PackageType"`
-	ReplicaId                 string                          `json:"ReplicaId" xml:"ReplicaId"`
-	VpcAuthMode               string                          `json:"VpcAuthMode" xml:"VpcAuthMode"`
-	AuditLogRetention         string                          `json:"AuditLogRetention" xml:"AuditLogRetention"`
-	ReplicationMode           string                          `json:"ReplicationMode" xml:"ReplicationMode"`
-	VpcCloudInstanceId        string                          `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-	InstanceReleaseProtection bool                            `json:"InstanceReleaseProtection" xml:"InstanceReleaseProtection"`
-	ResourceGroupId           string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ShardCount                int                             `json:"ShardCount" xml:"ShardCount"`
-	Storage                   string                          `json:"Storage" xml:"Storage"`
+	ChargeType                string                          `json:"ChargeType" xml:"ChargeType"`
 	StorageType               string                          `json:"StorageType" xml:"StorageType"`
-	GlobalInstanceId          string                          `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
+	VpcAuthMode               string                          `json:"VpcAuthMode" xml:"VpcAuthMode"`
+	ArchitectureType          string                          `json:"ArchitectureType" xml:"ArchitectureType"`
+	AvailabilityValue         string                          `json:"AvailabilityValue" xml:"AvailabilityValue"`
+	NetworkType               string                          `json:"NetworkType" xml:"NetworkType"`
+	Port                      int64                           `json:"Port" xml:"Port"`
 	SecondaryZoneId           string                          `json:"SecondaryZoneId" xml:"SecondaryZoneId"`
+	PackageType               string                          `json:"PackageType" xml:"PackageType"`
+	EngineVersion             string                          `json:"EngineVersion" xml:"EngineVersion"`
+	Config                    string                          `json:"Config" xml:"Config"`
+	VpcCloudInstanceId        string                          `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	Bandwidth                 int64                           `json:"Bandwidth" xml:"Bandwidth"`
+	InstanceName              string                          `json:"InstanceName" xml:"InstanceName"`
+	SecurityIPList            string                          `json:"SecurityIPList" xml:"SecurityIPList"`
+	ShardCount                int                             `json:"ShardCount" xml:"ShardCount"`
+	GlobalInstanceId          string                          `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
+	QPS                       int64                           `json:"QPS" xml:"QPS"`
+	AuditLogRetention         string                          `json:"AuditLogRetention" xml:"AuditLogRetention"`
 	ZoneType                  string                          `json:"ZoneType" xml:"ZoneType"`
+	MaintainStartTime         string                          `json:"MaintainStartTime" xml:"MaintainStartTime"`
+	InstanceClass             string                          `json:"InstanceClass" xml:"InstanceClass"`
+	MaintainEndTime           string                          `json:"MaintainEndTime" xml:"MaintainEndTime"`
+	InstanceId                string                          `json:"InstanceId" xml:"InstanceId"`
+	InstanceType              string                          `json:"InstanceType" xml:"InstanceType"`
+	HasRenewChangeOrder       string                          `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
+	InstanceReleaseProtection bool                            `json:"InstanceReleaseProtection" xml:"InstanceReleaseProtection"`
+	ReplicationMode           string                          `json:"ReplicationMode" xml:"ReplicationMode"`
+	RegionId                  string                          `json:"RegionId" xml:"RegionId"`
+	EndTime                   string                          `json:"EndTime" xml:"EndTime"`
+	VSwitchId                 string                          `json:"VSwitchId" xml:"VSwitchId"`
+	ReplicaId                 string                          `json:"ReplicaId" xml:"ReplicaId"`
+	NodeType                  string                          `json:"NodeType" xml:"NodeType"`
+	Connections               int64                           `json:"Connections" xml:"Connections"`
 	BackupLogStartTime        string                          `json:"BackupLogStartTime" xml:"BackupLogStartTime"`
+	ResourceGroupId           string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ZoneId                    string                          `json:"ZoneId" xml:"ZoneId"`
+	InstanceStatus            string                          `json:"InstanceStatus" xml:"InstanceStatus"`
+	Engine                    string                          `json:"Engine" xml:"Engine"`
+	Storage                   string                          `json:"Storage" xml:"Storage"`
+	CloudType                 string                          `json:"CloudType" xml:"CloudType"`
 	Tags                      TagsInDescribeInstanceAttribute `json:"Tags" xml:"Tags"`
 }
