@@ -17,12 +17,10 @@ package sae
 
 // MscAgentServiceResponse is a nested struct in sae response
 type MscAgentServiceResponse struct {
-	EdasAppName   string `json:"EdasAppName" xml:"EdasAppName"`
-	Version       string `json:"Version" xml:"Version"`
-	InstanceNum   int64  `json:"InstanceNum" xml:"InstanceNum"`
-	EdasAppId     string `json:"EdasAppId" xml:"EdasAppId"`
-	GmtModifyTime string `json:"GmtModifyTime" xml:"GmtModifyTime"`
-	ServiceName   string `json:"ServiceName" xml:"ServiceName"`
-	Group         string `json:"Group" xml:"Group"`
-	ClusterName   string `json:"ClusterName" xml:"ClusterName"`
+	EdasAppName string `json:"EdasAppName" xml:"EdasAppName"`
+	Version     string `json:"Version" xml:"Version"`
+	InstanceNum int64  `json:"InstanceNum" xml:"InstanceNum"`
+	EdasAppId   string `json:"EdasAppId" xml:"EdasAppId"`
+	ServiceName string `json:"ServiceName" xml:"ServiceName"`
+	Group       string `json:"Group" xml:"Group"`
 }

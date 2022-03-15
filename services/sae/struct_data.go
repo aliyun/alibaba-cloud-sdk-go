@@ -83,6 +83,7 @@ type Data struct {
 	DubboApplicationName          string                   `json:"DubboApplicationName" xml:"DubboApplicationName"`
 	PackageType                   string                   `json:"PackageType" xml:"PackageType"`
 	LastChangeOrderRunning        bool                     `json:"LastChangeOrderRunning" xml:"LastChangeOrderRunning"`
+	KafkaConfigs                  string                   `json:"KafkaConfigs" xml:"KafkaConfigs"`
 	MountHost                     string                   `json:"MountHost" xml:"MountHost"`
 	SlbType                       string                   `json:"SlbType" xml:"SlbType"`
 	EdasAppName                   string                   `json:"EdasAppName" xml:"EdasAppName"`
@@ -143,24 +144,24 @@ type Data struct {
 	Summary                       Summary                  `json:"Summary" xml:"Summary"`
 	OssMountDescs                 []OssMountDesc           `json:"OssMountDescs" xml:"OssMountDescs"`
 	MountDesc                     []MountDescItem          `json:"MountDesc" xml:"MountDesc"`
-	ScRules                       []ScRule                 `json:"ScRules" xml:"ScRules"`
+	Instances                     []Instance               `json:"Instances" xml:"Instances"`
 	Intranet                      []IntranetItem           `json:"Intranet" xml:"Intranet"`
 	RelateApps                    []RelateApp              `json:"RelateApps" xml:"RelateApps"`
 	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
-	Namespaces                    []Namespace              `json:"Namespaces" xml:"Namespaces"`
-	Instances                     []Instance               `json:"Instances" xml:"Instances"`
 	Internet                      []InternetItem           `json:"Internet" xml:"Internet"`
 	ChangeOrderList               []ChangeOrder            `json:"ChangeOrderList" xml:"ChangeOrderList"`
 	Rules                         []Rule                   `json:"Rules" xml:"Rules"`
 	LogConfigs                    []LogConfig              `json:"LogConfigs" xml:"LogConfigs"`
 	ConfigMapMountDesc            []ConfigMapMountDescItem `json:"ConfigMapMountDesc" xml:"ConfigMapMountDesc"`
 	ConfigMaps                    []ConfigMap              `json:"ConfigMaps" xml:"ConfigMaps"`
+	DubboRules                    []DubboRule              `json:"DubboRules" xml:"DubboRules"`
 	Applications                  []Application            `json:"Applications" xml:"Applications"`
 	Tags                          []Tag                    `json:"Tags" xml:"Tags"`
 	Methods                       []Method                 `json:"Methods" xml:"Methods"`
 	AppEventEntity                []AppEventEntityItem     `json:"AppEventEntity" xml:"AppEventEntity"`
 	ApplicationScalingRules       []ApplicationScalingRule `json:"ApplicationScalingRules" xml:"ApplicationScalingRules"`
-	DubboRules                    []DubboRule              `json:"DubboRules" xml:"DubboRules"`
+	ScRules                       []ScRule                 `json:"ScRules" xml:"ScRules"`
 	StageList                     []Stage                  `json:"StageList" xml:"StageList"`
 	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
+	Namespaces                    []Namespace              `json:"Namespaces" xml:"Namespaces"`
 }

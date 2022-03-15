@@ -77,6 +77,7 @@ type CreateApplicationRequest struct {
 	MountHost                     string           `position:"Query" name:"MountHost"`
 	AutoConfig                    requests.Boolean `position:"Query" name:"AutoConfig"`
 	Envs                          string           `position:"Query" name:"Envs"`
+	KafkaInstanceId               string           `position:"Query" name:"KafkaInstanceId"`
 	PhpPECLExtensions             string           `position:"Body" name:"PhpPECLExtensions"`
 	PhpArmsConfigLocation         string           `position:"Query" name:"PhpArmsConfigLocation"`
 	CustomHostAlias               string           `position:"Query" name:"CustomHostAlias"`
@@ -86,6 +87,7 @@ type CreateApplicationRequest struct {
 	NamespaceId                   string           `position:"Query" name:"NamespaceId"`
 	ConfigMapMountDesc            string           `position:"Body" name:"ConfigMapMountDesc"`
 	OssMountDescs                 string           `position:"Body" name:"OssMountDescs"`
+	KafkaEndpoint                 string           `position:"Query" name:"KafkaEndpoint"`
 	PreStop                       string           `position:"Query" name:"PreStop"`
 	Cpu                           requests.Integer `position:"Query" name:"Cpu"`
 	VSwitchId                     string           `position:"Query" name:"VSwitchId"`
@@ -96,6 +98,7 @@ type CreateApplicationRequest struct {
 	WebContainer                  string           `position:"Query" name:"WebContainer"`
 	Memory                        requests.Integer `position:"Query" name:"Memory"`
 	SlsConfigs                    string           `position:"Query" name:"SlsConfigs"`
+	OpenCollectToKafka            requests.Boolean `position:"Query" name:"OpenCollectToKafka"`
 	CommandArgs                   string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn              string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                     string           `position:"Query" name:"Readiness"`
@@ -115,6 +118,7 @@ type CreateApplicationRequest struct {
 	MountDesc                     string           `position:"Query" name:"MountDesc"`
 	Jdk                           string           `position:"Query" name:"Jdk"`
 	AppDescription                string           `position:"Query" name:"AppDescription"`
+	KafkaLogfileConfig            string           `position:"Query" name:"KafkaLogfileConfig"`
 	AcrInstanceId                 string           `position:"Body" name:"AcrInstanceId"`
 	VpcId                         string           `position:"Query" name:"VpcId"`
 	ImageUrl                      string           `position:"Query" name:"ImageUrl"`

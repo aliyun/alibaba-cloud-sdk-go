@@ -34,6 +34,7 @@ type DataInDescribeChangeOrder struct {
 	CoType             string     `json:"CoType" xml:"CoType"`
 	Auto               bool       `json:"Auto" xml:"Auto"`
 	CurrentPipelineId  string     `json:"CurrentPipelineId" xml:"CurrentPipelineId"`
+	AppId              string     `json:"AppId" xml:"AppId"`
 	CoTargets          []string   `json:"CoTargets" xml:"CoTargets"`
 	Pipelines          []Pipeline `json:"Pipelines" xml:"Pipelines"`
 }

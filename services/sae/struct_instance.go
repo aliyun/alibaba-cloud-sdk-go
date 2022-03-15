@@ -28,4 +28,5 @@ type Instance struct {
 	ImageUrl                  string `json:"ImageUrl" xml:"ImageUrl"`
 	PackageVersion            string `json:"PackageVersion" xml:"PackageVersion"`
 	Eip                       string `json:"Eip" xml:"Eip"`
+	FinishTimeStamp           int64  `json:"FinishTimeStamp" xml:"FinishTimeStamp"`
 }

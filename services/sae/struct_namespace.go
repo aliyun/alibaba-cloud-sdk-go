@@ -17,12 +17,12 @@ package sae
 
 // Namespace is a nested struct in sae response
 type Namespace struct {
+	NamespaceDescription string `json:"NamespaceDescription" xml:"NamespaceDescription"`
 	AccessKey            string `json:"AccessKey" xml:"AccessKey"`
-	AddressServerHost    string `json:"AddressServerHost" xml:"AddressServerHost"`
 	SecretKey            string `json:"SecretKey" xml:"SecretKey"`
+	NamespaceId          string `json:"NamespaceId" xml:"NamespaceId"`
+	AddressServerHost    string `json:"AddressServerHost" xml:"AddressServerHost"`
+	NamespaceName        string `json:"NamespaceName" xml:"NamespaceName"`
 	TenantId             string `json:"TenantId" xml:"TenantId"`
 	RegionId             string `json:"RegionId" xml:"RegionId"`
-	NamespaceId          string `json:"NamespaceId" xml:"NamespaceId"`
-	NamespaceName        string `json:"NamespaceName" xml:"NamespaceName"`
-	NamespaceDescription string `json:"NamespaceDescription" xml:"NamespaceDescription"`
 }

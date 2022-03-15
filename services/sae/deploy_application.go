@@ -72,51 +72,55 @@ func (client *Client) DeployApplicationWithCallback(request *DeployApplicationRe
 type DeployApplicationRequest struct {
 	*requests.RoaRequest
 	NasId                            string           `position:"Query" name:"NasId"`
-	WebContainer                     string           `position:"Query" name:"WebContainer"`
 	JarStartArgs                     string           `position:"Query" name:"JarStartArgs"`
+	OssAkSecret                      string           `position:"Body" name:"OssAkSecret"`
+	MountHost                        string           `position:"Query" name:"MountHost"`
+	BatchWaitTime                    requests.Integer `position:"Query" name:"BatchWaitTime"`
+	Envs                             string           `position:"Query" name:"Envs"`
+	KafkaInstanceId                  string           `position:"Query" name:"KafkaInstanceId"`
+	PhpPECLExtensions                string           `position:"Body" name:"PhpPECLExtensions"`
+	PhpArmsConfigLocation            string           `position:"Query" name:"PhpArmsConfigLocation"`
+	CustomHostAlias                  string           `position:"Query" name:"CustomHostAlias"`
+	JarStartOptions                  string           `position:"Query" name:"JarStartOptions"`
+	ConfigMapMountDesc               string           `position:"Body" name:"ConfigMapMountDesc"`
+	OssMountDescs                    string           `position:"Body" name:"OssMountDescs"`
+	KafkaEndpoint                    string           `position:"Query" name:"KafkaEndpoint"`
+	PreStop                          string           `position:"Query" name:"PreStop"`
+	UpdateStrategy                   string           `position:"Query" name:"UpdateStrategy"`
+	ChangeOrderDesc                  string           `position:"Query" name:"ChangeOrderDesc"`
+	MinReadyInstanceRatio            requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
+	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
+	PostStart                        string           `position:"Query" name:"PostStart"`
+	PhpExtensions                    string           `position:"Body" name:"PhpExtensions"`
+	AssociateEip                     requests.Boolean `position:"Body" name:"AssociateEip"`
+	WebContainer                     string           `position:"Query" name:"WebContainer"`
 	EnableAhas                       string           `position:"Query" name:"EnableAhas"`
 	SlsConfigs                       string           `position:"Query" name:"SlsConfigs"`
-	OssAkSecret                      string           `position:"Body" name:"OssAkSecret"`
+	OpenCollectToKafka               requests.Boolean `position:"Query" name:"OpenCollectToKafka"`
 	CommandArgs                      string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn                 string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                        string           `position:"Query" name:"Readiness"`
 	Timezone                         string           `position:"Query" name:"Timezone"`
-	MountHost                        string           `position:"Query" name:"MountHost"`
-	BatchWaitTime                    requests.Integer `position:"Query" name:"BatchWaitTime"`
 	OssAkId                          string           `position:"Body" name:"OssAkId"`
 	Liveness                         string           `position:"Query" name:"Liveness"`
-	Envs                             string           `position:"Query" name:"Envs"`
-	PhpPECLExtensions                string           `position:"Body" name:"PhpPECLExtensions"`
-	PhpArmsConfigLocation            string           `position:"Query" name:"PhpArmsConfigLocation"`
 	PackageVersion                   string           `position:"Query" name:"PackageVersion"`
 	TomcatConfig                     string           `position:"Query" name:"TomcatConfig"`
-	CustomHostAlias                  string           `position:"Query" name:"CustomHostAlias"`
 	WarStartOptions                  string           `position:"Query" name:"WarStartOptions"`
-	JarStartOptions                  string           `position:"Query" name:"JarStartOptions"`
 	EdasContainerVersion             string           `position:"Query" name:"EdasContainerVersion"`
 	PackageUrl                       string           `position:"Query" name:"PackageUrl"`
 	TerminationGracePeriodSeconds    requests.Integer `position:"Query" name:"TerminationGracePeriodSeconds"`
-	ConfigMapMountDesc               string           `position:"Body" name:"ConfigMapMountDesc"`
-	OssMountDescs                    string           `position:"Body" name:"OssMountDescs"`
 	PhpConfig                        string           `position:"Body" name:"PhpConfig"`
-	PreStop                          string           `position:"Query" name:"PreStop"`
 	EnableGreyTagRoute               requests.Boolean `position:"Query" name:"EnableGreyTagRoute"`
 	Command                          string           `position:"Query" name:"Command"`
-	UpdateStrategy                   string           `position:"Query" name:"UpdateStrategy"`
 	MountDesc                        string           `position:"Query" name:"MountDesc"`
 	Jdk                              string           `position:"Query" name:"Jdk"`
 	MinReadyInstances                requests.Integer `position:"Query" name:"MinReadyInstances"`
-	ChangeOrderDesc                  string           `position:"Query" name:"ChangeOrderDesc"`
+	KafkaLogfileConfig               string           `position:"Query" name:"KafkaLogfileConfig"`
 	AcrInstanceId                    string           `position:"Body" name:"AcrInstanceId"`
 	AppId                            string           `position:"Query" name:"AppId"`
 	ImageUrl                         string           `position:"Query" name:"ImageUrl"`
-	MinReadyInstanceRatio            requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
 	Php                              string           `position:"Body" name:"Php"`
-	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
 	PhpConfigLocation                string           `position:"Query" name:"PhpConfigLocation"`
-	PostStart                        string           `position:"Query" name:"PostStart"`
-	PhpExtensions                    string           `position:"Body" name:"PhpExtensions"`
-	AssociateEip                     requests.Boolean `position:"Body" name:"AssociateEip"`
 }
 
 // DeployApplicationResponse is the response struct for api DeployApplication

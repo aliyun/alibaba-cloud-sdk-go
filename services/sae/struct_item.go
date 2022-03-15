@@ -20,8 +20,8 @@ type Item struct {
 	Type     string `json:"type" xml:"type"`
 	Expr     string `json:"expr" xml:"expr"`
 	Value    string `json:"value" xml:"value"`
-	Name     string `json:"name" xml:"name"`
 	Index    int    `json:"index" xml:"index"`
+	Name     string `json:"name" xml:"name"`
 	Operator string `json:"operator" xml:"operator"`
 	Cond     string `json:"cond" xml:"cond"`
 }
