@@ -19,6 +19,7 @@ package alb
 type Listener struct {
 	GzipEnabled           bool                `json:"GzipEnabled" xml:"GzipEnabled"`
 	Http2Enabled          bool                `json:"Http2Enabled" xml:"Http2Enabled"`
+	CaEnabled             string              `json:"CaEnabled" xml:"CaEnabled"`
 	IdleTimeout           int                 `json:"IdleTimeout" xml:"IdleTimeout"`
 	ListenerDescription   string              `json:"ListenerDescription" xml:"ListenerDescription"`
 	ListenerId            string              `json:"ListenerId" xml:"ListenerId"`
