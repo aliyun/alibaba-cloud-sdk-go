@@ -82,11 +82,11 @@ type GetErrorRequestSampleRequest struct {
 // GetErrorRequestSampleResponse is the response struct for api GetErrorRequestSample
 type GetErrorRequestSampleResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
+	Code      int64    `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Success   bool     `json:"Success" xml:"Success"`
+	Data      []Sample `json:"Data" xml:"Data"`
 }
 
 // CreateGetErrorRequestSampleRequest creates a request to invoke GetErrorRequestSample API

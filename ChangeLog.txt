@@ -1,3 +1,8 @@
+2022-03-18 Version: v1.61.1526
+- Generated 2020-01-16 for `DAS`.
+- FIX GetRequestDiagnosisPage PARAM TYPE.
+
+
 2022-03-18 Version: v1.61.1525
 - Generated 2018-11-01 for `dms-enterprise`.
 - Supported CreateStandardGroup, ListStandardGroups API.

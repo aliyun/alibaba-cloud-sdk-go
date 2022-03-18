@@ -84,9 +84,9 @@ type GetDasProServiceUsageResponse struct {
 	*responses.BaseResponse
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      string `json:"Data" xml:"Data"`
-	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
+	Code      int64  `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      []Unit `json:"Data" xml:"Data"`
 }
 
 // CreateGetDasProServiceUsageRequest creates a request to invoke GetDasProServiceUsage API

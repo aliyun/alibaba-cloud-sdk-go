@@ -17,99 +17,100 @@ package das
 
 // Data is a nested struct in das response
 type Data struct {
-	Fail                bool                                       `json:"Fail" xml:"Fail"`
 	PageSize            int64                                      `json:"PageSize" xml:"PageSize"`
-	IsFinish            bool                                       `json:"IsFinish" xml:"IsFinish"`
+	Timestamp           int64                                      `json:"timestamp" xml:"timestamp"`
 	TaskState           string                                     `json:"TaskState" xml:"TaskState"`
 	BenchStep           string                                     `json:"BenchStep" xml:"BenchStep"`
-	DtsJobStatus        string                                     `json:"DtsJobStatus" xml:"DtsJobStatus"`
 	Source              string                                     `json:"Source" xml:"Source"`
 	ErrMsg              string                                     `json:"ErrMsg" xml:"ErrMsg"`
 	TaskId              string                                     `json:"TaskId" xml:"TaskId"`
 	Role                string                                     `json:"Role" xml:"Role"`
 	SqlCompleteReuse    string                                     `json:"SqlCompleteReuse" xml:"SqlCompleteReuse"`
-	DstType             string                                     `json:"DstType" xml:"DstType"`
 	DtsJobId            string                                     `json:"DtsJobId" xml:"DtsJobId"`
 	EndState            string                                     `json:"EndState" xml:"EndState"`
-	VpcId               string                                     `json:"VpcId" xml:"VpcId"`
-	Topic               string                                     `json:"Topic" xml:"Topic"`
 	SqlFileOnOss        string                                     `json:"SqlFileOnOss" xml:"SqlFileOnOss"`
-	Token               string                                     `json:"Token" xml:"Token"`
 	Port                int                                        `json:"Port" xml:"Port"`
 	Error               string                                     `json:"Error" xml:"Error"`
 	Message             string                                     `json:"Message" xml:"Message"`
-	DstInstanceUuid     string                                     `json:"DstInstanceUuid" xml:"DstInstanceUuid"`
 	CallerUid           string                                     `json:"CallerUid" xml:"CallerUid"`
 	ErrorMsg            string                                     `json:"ErrorMsg" xml:"ErrorMsg"`
-	DbLinkId            int64                                      `json:"DbLinkId" xml:"DbLinkId"`
-	Timestamp           int64                                      `json:"Timestamp" xml:"Timestamp"`
 	TableSchema         string                                     `json:"TableSchema" xml:"TableSchema"`
 	DtsJobClass         string                                     `json:"DtsJobClass" xml:"DtsJobClass"`
-	SrcInstanceUuid     string                                     `json:"SrcInstanceUuid" xml:"SrcInstanceUuid"`
-	ArchiveFolder       string                                     `json:"ArchiveFolder" xml:"ArchiveFolder"`
 	PageNo              int64                                      `json:"PageNo" xml:"PageNo"`
 	Extra               string                                     `json:"Extra" xml:"Extra"`
-	EcsInstanceId       string                                     `json:"EcsInstanceId" xml:"EcsInstanceId"`
-	ArchiveOssTableName string                                     `json:"ArchiveOssTableName" xml:"ArchiveOssTableName"`
 	OriUuid             string                                     `json:"OriUuid" xml:"OriUuid"`
 	AccountId           string                                     `json:"AccountId" xml:"AccountId"`
-	MetaFileOnOss       string                                     `json:"MetaFileOnOss" xml:"MetaFileOnOss"`
 	ArchiveState        int                                        `json:"ArchiveState" xml:"ArchiveState"`
+	Complete            bool                                       `json:"complete" xml:"complete"`
 	TaskType            string                                     `json:"TaskType" xml:"TaskType"`
-	BackupId            string                                     `json:"BackupId" xml:"BackupId"`
 	Status              string                                     `json:"Status" xml:"Status"`
 	Rate                int64                                      `json:"Rate" xml:"Rate"`
+	ResultId            string                                     `json:"resultId" xml:"resultId"`
 	WorkDir             string                                     `json:"WorkDir" xml:"WorkDir"`
 	ArchiveJobId        string                                     `json:"ArchiveJobId" xml:"ArchiveJobId"`
-	ErrorMessage        string                                     `json:"ErrorMessage" xml:"ErrorMessage"`
+	State               string                                     `json:"state" xml:"state"`
 	External            string                                     `json:"External" xml:"External"`
 	CreateTime          string                                     `json:"CreateTime" xml:"CreateTime"`
 	DownloadUrl         string                                     `json:"DownloadUrl" xml:"DownloadUrl"`
 	JarOnOss            string                                     `json:"JarOnOss" xml:"JarOnOss"`
 	SqlFilePath         string                                     `json:"SqlFilePath" xml:"SqlFilePath"`
-	Uuid                string                                     `json:"Uuid" xml:"Uuid"`
-	NodeId              string                                     `json:"NodeId" xml:"NodeId"`
-	DtsJobState         int                                        `json:"DtsJobState" xml:"DtsJobState"`
 	InstanceId          string                                     `json:"InstanceId" xml:"InstanceId"`
-	UserId              string                                     `json:"UserId" xml:"UserId"`
 	SrcPublicIp         string                                     `json:"SrcPublicIp" xml:"SrcPublicIp"`
 	ExpireTime          string                                     `json:"ExpireTime" xml:"ExpireTime"`
-	SrcInstanceArea     string                                     `json:"SrcInstanceArea" xml:"SrcInstanceArea"`
-	MetaFileName        string                                     `json:"MetaFileName" xml:"MetaFileName"`
 	DtsJobName          string                                     `json:"DtsJobName" xml:"DtsJobName"`
 	ClientJarPath       string                                     `json:"ClientJarPath" xml:"ClientJarPath"`
-	Description         string                                     `json:"Description" xml:"Description"`
-	ErrorCode           string                                     `json:"ErrorCode" xml:"ErrorCode"`
-	BenchStepStatus     string                                     `json:"BenchStepStatus" xml:"BenchStepStatus"`
 	BenchCmd            string                                     `json:"BenchCmd" xml:"BenchCmd"`
-	SmartPressureTime   int                                        `json:"SmartPressureTime" xml:"SmartPressureTime"`
 	TenantId            string                                     `json:"TenantId" xml:"TenantId"`
-	Results             string                                     `json:"Results" xml:"Results"`
 	JobId               string                                     `json:"JobId" xml:"JobId"`
-	SqlFileName         string                                     `json:"SqlFileName" xml:"SqlFileName"`
 	Ip                  string                                     `json:"Ip" xml:"Ip"`
 	Version             string                                     `json:"Version" xml:"Version"`
 	RocksDbPath         string                                     `json:"RocksDbPath" xml:"RocksDbPath"`
 	BackupType          string                                     `json:"BackupType" xml:"BackupType"`
-	SyncStatus          string                                     `json:"SyncStatus" xml:"SyncStatus"`
-	DstPort             int                                        `json:"DstPort" xml:"DstPort"`
 	RequestDuration     int64                                      `json:"RequestDuration" xml:"RequestDuration"`
 	ParseFilePath       string                                     `json:"ParseFilePath" xml:"ParseFilePath"`
 	ClientType          string                                     `json:"ClientType" xml:"ClientType"`
 	ClientGatewayId     string                                     `json:"ClientGatewayId" xml:"ClientGatewayId"`
-	ResultId            string                                     `json:"ResultId" xml:"ResultId"`
-	StatusCode          string                                     `json:"StatusCode" xml:"StatusCode"`
-	State               string                                     `json:"State" xml:"State"`
 	ParseCmd            string                                     `json:"ParseCmd" xml:"ParseCmd"`
 	OwnerId             string                                     `json:"OwnerId" xml:"OwnerId"`
 	MetaFilePath        string                                     `json:"MetaFilePath" xml:"MetaFilePath"`
-	LoadCmd             string                                     `json:"LoadCmd" xml:"LoadCmd"`
 	Code                int                                        `json:"Code" xml:"Code"`
 	Total               int64                                      `json:"Total" xml:"Total"`
 	DstIp               string                                     `json:"DstIp" xml:"DstIp"`
-	Result              Result                                     `json:"Result" xml:"Result"`
+	DtsJobStatus        string                                     `json:"DtsJobStatus" xml:"DtsJobStatus"`
+	DstType             string                                     `json:"DstType" xml:"DstType"`
+	IsFinish            bool                                       `json:"isFinish" xml:"isFinish"`
+	VpcId               string                                     `json:"VpcId" xml:"VpcId"`
+	Topic               string                                     `json:"Topic" xml:"Topic"`
+	Token               string                                     `json:"Token" xml:"Token"`
+	DstInstanceUuid     string                                     `json:"DstInstanceUuid" xml:"DstInstanceUuid"`
+	DbLinkId            int64                                      `json:"DbLinkId" xml:"DbLinkId"`
+	SrcInstanceUuid     string                                     `json:"SrcInstanceUuid" xml:"SrcInstanceUuid"`
+	ArchiveFolder       string                                     `json:"ArchiveFolder" xml:"ArchiveFolder"`
+	EcsInstanceId       string                                     `json:"EcsInstanceId" xml:"EcsInstanceId"`
+	ArchiveOssTableName string                                     `json:"ArchiveOssTableName" xml:"ArchiveOssTableName"`
+	MetaFileOnOss       string                                     `json:"MetaFileOnOss" xml:"MetaFileOnOss"`
+	Fail                bool                                       `json:"fail" xml:"fail"`
+	BackupId            string                                     `json:"BackupId" xml:"BackupId"`
+	ErrorMessage        string                                     `json:"ErrorMessage" xml:"ErrorMessage"`
+	Uuid                string                                     `json:"Uuid" xml:"Uuid"`
+	NodeId              string                                     `json:"NodeId" xml:"NodeId"`
+	DtsJobState         int                                        `json:"DtsJobState" xml:"DtsJobState"`
+	UserId              string                                     `json:"UserId" xml:"UserId"`
+	SrcInstanceArea     string                                     `json:"SrcInstanceArea" xml:"SrcInstanceArea"`
+	MetaFileName        string                                     `json:"MetaFileName" xml:"MetaFileName"`
+	Description         string                                     `json:"Description" xml:"Description"`
+	ErrorCode           string                                     `json:"ErrorCode" xml:"ErrorCode"`
+	BenchStepStatus     string                                     `json:"BenchStepStatus" xml:"BenchStepStatus"`
+	SmartPressureTime   int                                        `json:"SmartPressureTime" xml:"SmartPressureTime"`
+	Results             string                                     `json:"Results" xml:"Results"`
+	SqlFileName         string                                     `json:"SqlFileName" xml:"SqlFileName"`
+	SyncStatus          string                                     `json:"SyncStatus" xml:"SyncStatus"`
+	DstPort             int                                        `json:"DstPort" xml:"DstPort"`
+	StatusCode          string                                     `json:"StatusCode" xml:"StatusCode"`
+	LoadCmd             string                                     `json:"LoadCmd" xml:"LoadCmd"`
 	SubResults          SubResultsInGetHDMAliyunResourceSyncResult `json:"SubResults" xml:"SubResults"`
 	KeyPrefixes         KeyPrefixes                                `json:"KeyPrefixes" xml:"KeyPrefixes"`
-	BigKeys             BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
 	List                ListInDescribeCacheAnalysisJobs            `json:"List" xml:"List"`
+	BigKeys             BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
+	Result              []List                                     `json:"result" xml:"result"`
 }

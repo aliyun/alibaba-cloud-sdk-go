@@ -72,7 +72,6 @@ func (client *Client) GetSqlAnalysisReportWithCallback(request *GetSqlAnalysisRe
 type GetSqlAnalysisReportRequest struct {
 	*requests.RpcRequest
 	ModuleNameList string `position:"Query" name:"ModuleNameList"`
-	ConsoleContext string `position:"Query" name:"ConsoleContext"`
 	TaskId         string `position:"Body" name:"TaskId"`
 }
 

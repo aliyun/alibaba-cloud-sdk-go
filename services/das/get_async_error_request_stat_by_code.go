@@ -71,23 +71,21 @@ func (client *Client) GetAsyncErrorRequestStatByCodeWithCallback(request *GetAsy
 // GetAsyncErrorRequestStatByCodeRequest is the request struct for api GetAsyncErrorRequestStatByCode
 type GetAsyncErrorRequestStatByCodeRequest struct {
 	*requests.RpcRequest
-	Role           string `position:"Query" name:"Role"`
-	Start          string `position:"Query" name:"Start"`
-	ConsoleContext string `position:"Query" name:"ConsoleContext"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	DbName         string `position:"Query" name:"DbName"`
-	End            string `position:"Query" name:"End"`
-	NodeId         string `position:"Query" name:"NodeId"`
+	Start      requests.Integer `position:"Query" name:"Start"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	DbName     string           `position:"Query" name:"DbName"`
+	End        requests.Integer `position:"Query" name:"End"`
+	NodeId     string           `position:"Query" name:"NodeId"`
 }
 
 // GetAsyncErrorRequestStatByCodeResponse is the response struct for api GetAsyncErrorRequestStatByCode
 type GetAsyncErrorRequestStatByCodeResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
+	Code      int64                                `json:"Code" xml:"Code"`
+	Message   string                               `json:"Message" xml:"Message"`
+	RequestId string                               `json:"RequestId" xml:"RequestId"`
+	Success   bool                                 `json:"Success" xml:"Success"`
+	Data      DataInGetAsyncErrorRequestStatByCode `json:"Data" xml:"Data"`
 }
 
 // CreateGetAsyncErrorRequestStatByCodeRequest creates a request to invoke GetAsyncErrorRequestStatByCode API

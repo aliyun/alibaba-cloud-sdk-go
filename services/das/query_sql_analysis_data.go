@@ -71,7 +71,6 @@ func (client *Client) QuerySqlAnalysisDataWithCallback(request *QuerySqlAnalysis
 // QuerySqlAnalysisDataRequest is the request struct for api QuerySqlAnalysisData
 type QuerySqlAnalysisDataRequest struct {
 	*requests.RpcRequest
-	ConsoleContext string           `position:"Query" name:"ConsoleContext"`
 	TaskId         string           `position:"Body" name:"TaskId"`
 	SqlIdList      string           `position:"Body" name:"SqlIdList"`
 	Type           string           `position:"Body" name:"Type"`

@@ -81,11 +81,11 @@ type GetAsyncErrorRequestListByCodeRequest struct {
 // GetAsyncErrorRequestListByCodeResponse is the response struct for api GetAsyncErrorRequestListByCode
 type GetAsyncErrorRequestListByCodeResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
+	Code      int64                                `json:"Code" xml:"Code"`
+	Message   string                               `json:"Message" xml:"Message"`
+	RequestId string                               `json:"RequestId" xml:"RequestId"`
+	Success   bool                                 `json:"Success" xml:"Success"`
+	Data      DataInGetAsyncErrorRequestListByCode `json:"Data" xml:"Data"`
 }
 
 // CreateGetAsyncErrorRequestListByCodeRequest creates a request to invoke GetAsyncErrorRequestListByCode API

@@ -82,11 +82,11 @@ type GetAsyncErrorRequestStatResultRequest struct {
 // GetAsyncErrorRequestStatResultResponse is the response struct for api GetAsyncErrorRequestStatResult
 type GetAsyncErrorRequestStatResultResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
+	Code      int64                                `json:"Code" xml:"Code"`
+	Message   string                               `json:"Message" xml:"Message"`
+	RequestId string                               `json:"RequestId" xml:"RequestId"`
+	Success   bool                                 `json:"Success" xml:"Success"`
+	Data      DataInGetAsyncErrorRequestStatResult `json:"Data" xml:"Data"`
 }
 
 // CreateGetAsyncErrorRequestStatResultRequest creates a request to invoke GetAsyncErrorRequestStatResult API
