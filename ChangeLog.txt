@@ -1,3 +1,7 @@
+2022-03-18 Version: v1.61.1525
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported CreateStandardGroup, ListStandardGroups API.
+
 2022-03-17 Version: v1.61.1524
 - Generated 2020-06-16 for `Alb`.
 - Support Latest APIs.
