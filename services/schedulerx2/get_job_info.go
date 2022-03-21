@@ -75,6 +75,7 @@ type GetJobInfoRequest struct {
 	GroupId         string           `position:"Query" name:"GroupId"`
 	JobId           requests.Integer `position:"Query" name:"JobId"`
 	Namespace       string           `position:"Query" name:"Namespace"`
+	JobName         string           `position:"Query" name:"JobName"`
 }
 
 // GetJobInfoResponse is the response struct for api GetJobInfo

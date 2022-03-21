@@ -19,12 +19,14 @@ package schedulerx2
 type Data struct {
 	JobId              int64                    `json:"JobId" xml:"JobId"`
 	JobInstanceId      int64                    `json:"JobInstanceId" xml:"JobInstanceId"`
+	AppKey             string                   `json:"AppKey" xml:"AppKey"`
 	WfInstanceId       int64                    `json:"WfInstanceId" xml:"WfInstanceId"`
 	AppGroupId         int64                    `json:"AppGroupId" xml:"AppGroupId"`
+	NamespaceUid       string                   `json:"NamespaceUid" xml:"NamespaceUid"`
 	JobInstanceDetail  JobInstanceDetail        `json:"JobInstanceDetail" xml:"JobInstanceDetail"`
-	JobConfigInfo      JobConfigInfo            `json:"JobConfigInfo" xml:"JobConfigInfo"`
 	WorkFlowInfo       WorkFlowInfo             `json:"WorkFlowInfo" xml:"WorkFlowInfo"`
 	WorkFlowNodeInfo   WorkFlowNodeInfo         `json:"WorkFlowNodeInfo" xml:"WorkFlowNodeInfo"`
+	JobConfigInfo      JobConfigInfo            `json:"JobConfigInfo" xml:"JobConfigInfo"`
 	WorkerInfos        []WorkerInfo             `json:"WorkerInfos" xml:"WorkerInfos"`
 	Namespaces         []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	JobInstanceDetails []JobInstanceDetailsItem `json:"JobInstanceDetails" xml:"JobInstanceDetails"`

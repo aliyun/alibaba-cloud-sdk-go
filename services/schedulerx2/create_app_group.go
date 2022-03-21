@@ -77,9 +77,12 @@ type CreateAppGroupRequest struct {
 	MetricsThresholdJson string           `position:"Query" name:"MetricsThresholdJson"`
 	GroupId              string           `position:"Query" name:"GroupId"`
 	Description          string           `position:"Query" name:"Description"`
+	MonitorConfigJson    string           `position:"Query" name:"MonitorConfigJson"`
 	AppName              string           `position:"Query" name:"AppName"`
 	Namespace            string           `position:"Query" name:"Namespace"`
 	AlarmJson            string           `position:"Query" name:"AlarmJson"`
+	AppKey               string           `position:"Query" name:"AppKey"`
+	MonitorContactsJson  string           `position:"Query" name:"MonitorContactsJson"`
 }
 
 // CreateAppGroupResponse is the response struct for api CreateAppGroup

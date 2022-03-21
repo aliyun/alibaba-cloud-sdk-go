@@ -1,3 +1,9 @@
+2022-03-21 Version: v1.61.1529
+- Generated 2019-04-30 for `schedulerx2`.
+- Get Job Support Query By Job Name.
+- Add Api Create Namespace.
+- Create App Support Set User Defined App Key.
+
 2022-03-21 Version: v1.61.1528
 - Generated 2019-01-01 for `Cms`.
 - The alarm target callback adds parameter writing.

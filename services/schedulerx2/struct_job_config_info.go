@@ -17,6 +17,7 @@ package schedulerx2
 
 // JobConfigInfo is a nested struct in schedulerx2 response
 type JobConfigInfo struct {
+	JobId           int64          `json:"JobId" xml:"JobId"`
 	Status          int            `json:"Status" xml:"Status"`
 	Parameters      string         `json:"Parameters" xml:"Parameters"`
 	Description     string         `json:"Description" xml:"Description"`
