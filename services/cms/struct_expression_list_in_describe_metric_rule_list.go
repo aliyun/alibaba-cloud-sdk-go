@@ -17,5 +17,5 @@ package cms
 
 // ExpressionListInDescribeMetricRuleList is a nested struct in cms response
 type ExpressionListInDescribeMetricRuleList struct {
-	ExpressionListItem []ExpressionListItem `json:"ExpressionList" xml:"ExpressionList"`
+	ExpressionListItem []ExpressionListItemInDescribeMetricRuleList `json:"ExpressionList" xml:"ExpressionList"`
 }

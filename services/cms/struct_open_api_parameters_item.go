@@ -17,11 +17,12 @@ package cms
 
 // OpenApiParametersItem is a nested struct in cms response
 type OpenApiParametersItem struct {
-	Action  string `json:"Action" xml:"Action"`
-	Arn     string `json:"Arn" xml:"Arn"`
-	Id      string `json:"Id" xml:"Id"`
-	Product string `json:"Product" xml:"Product"`
-	Region  string `json:"Region" xml:"Region"`
-	Role    string `json:"Role" xml:"Role"`
-	Version string `json:"Version" xml:"Version"`
+	Action     string `json:"Action" xml:"Action"`
+	Arn        string `json:"Arn" xml:"Arn"`
+	Id         string `json:"Id" xml:"Id"`
+	Product    string `json:"Product" xml:"Product"`
+	Region     string `json:"Region" xml:"Region"`
+	Role       string `json:"Role" xml:"Role"`
+	Version    string `json:"Version" xml:"Version"`
+	JsonParams string `json:"JsonParams" xml:"JsonParams"`
 }

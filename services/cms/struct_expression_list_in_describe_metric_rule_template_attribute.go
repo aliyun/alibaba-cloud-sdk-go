@@ -17,5 +17,5 @@ package cms
 
 // ExpressionListInDescribeMetricRuleTemplateAttribute is a nested struct in cms response
 type ExpressionListInDescribeMetricRuleTemplateAttribute struct {
-	ExpressionListItem []ExpressionListItem `json:"ExpressionList" xml:"ExpressionList"`
+	ExpressionListItem []ExpressionListItemInDescribeMetricRuleTemplateAttribute `json:"ExpressionList" xml:"ExpressionList"`
 }

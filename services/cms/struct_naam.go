@@ -20,4 +20,5 @@ type NAAM struct {
 	EffectTime string `json:"EffectTime" xml:"EffectTime"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 	SuitInfo   string `json:"SuitInfo" xml:"SuitInfo"`
+	Status     string `json:"Status" xml:"Status"`
 }

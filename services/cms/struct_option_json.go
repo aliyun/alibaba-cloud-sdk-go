@@ -45,4 +45,5 @@ type OptionJson struct {
 	EnableOperatorDns      bool    `json:"enable_operator_dns" xml:"enable_operator_dns"`
 	Attempts               int64   `json:"attempts" xml:"attempts"`
 	Protocol               string  `json:"protocol" xml:"protocol"`
+	IsBase64Encode         string  `json:"isBase64Encode" xml:"isBase64Encode"`
 }

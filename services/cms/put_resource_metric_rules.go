@@ -78,14 +78,18 @@ type PutResourceMetricRulesRequest struct {
 type PutResourceMetricRulesRules struct {
 	Webhook                               string `name:"Webhook"`
 	EscalationsWarnComparisonOperator     string `name:"Escalations.Warn.ComparisonOperator"`
+	DynamicAlertSensitivity               string `name:"DynamicAlertSensitivity"`
 	RuleName                              string `name:"RuleName"`
 	EscalationsInfoStatistics             string `name:"Escalations.Info.Statistics"`
 	EffectiveInterval                     string `name:"EffectiveInterval"`
+	DynamicAlertHistoryDataRange          string `name:"DynamicAlertHistoryDataRange"`
 	EscalationsInfoComparisonOperator     string `name:"Escalations.Info.ComparisonOperator"`
 	NoDataPolicy                          string `name:"NoDataPolicy"`
 	NoEffectiveInterval                   string `name:"NoEffectiveInterval"`
 	EmailSubject                          string `name:"EmailSubject"`
+	Options                               string `name:"Options"`
 	SilenceTime                           string `name:"SilenceTime"`
+	Prometheus                            string `name:"Prometheus"`
 	MetricName                            string `name:"MetricName"`
 	EscalationsWarnTimes                  string `name:"Escalations.Warn.Times"`
 	CompositeExpression                   string `name:"CompositeExpression"`
@@ -93,6 +97,7 @@ type PutResourceMetricRulesRules struct {
 	Period                                string `name:"Period"`
 	ContactGroups                         string `name:"ContactGroups"`
 	EscalationsCriticalStatistics         string `name:"Escalations.Critical.Statistics"`
+	RuleType                              string `name:"RuleType"`
 	GroupId                               string `name:"GroupId"`
 	EscalationsInfoTimes                  string `name:"Escalations.Info.Times"`
 	Resources                             string `name:"Resources"`

@@ -105,13 +105,14 @@ type PutEventRuleTargetsSlsParameters struct {
 
 // PutEventRuleTargetsOpenApiParameters is a repeated param struct in PutEventRuleTargetsRequest
 type PutEventRuleTargetsOpenApiParameters struct {
-	Product string `name:"Product"`
-	Role    string `name:"Role"`
-	Action  string `name:"Action"`
-	Id      string `name:"Id"`
-	Arn     string `name:"Arn"`
-	Region  string `name:"Region"`
-	Version string `name:"Version"`
+	Product    string `name:"Product"`
+	Role       string `name:"Role"`
+	Action     string `name:"Action"`
+	Id         string `name:"Id"`
+	Arn        string `name:"Arn"`
+	Region     string `name:"Region"`
+	Version    string `name:"Version"`
+	JsonParams string `name:"JsonParams"`
 }
 
 // PutEventRuleTargetsMnsParameters is a repeated param struct in PutEventRuleTargetsRequest

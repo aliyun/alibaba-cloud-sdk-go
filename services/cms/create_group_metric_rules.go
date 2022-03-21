@@ -79,9 +79,11 @@ type CreateGroupMetricRulesRequest struct {
 type CreateGroupMetricRulesGroupMetricRules struct {
 	Webhook                               string `name:"Webhook"`
 	EscalationsWarnComparisonOperator     string `name:"Escalations.Warn.ComparisonOperator"`
+	DynamicAlertSensitivity               string `name:"DynamicAlertSensitivity"`
 	RuleName                              string `name:"RuleName"`
 	EscalationsInfoStatistics             string `name:"Escalations.Info.Statistics"`
 	EffectiveInterval                     string `name:"EffectiveInterval"`
+	DynamicAlertHistoryDataRange          string `name:"DynamicAlertHistoryDataRange"`
 	EscalationsInfoComparisonOperator     string `name:"Escalations.Info.ComparisonOperator"`
 	NoDataPolicy                          string `name:"NoDataPolicy"`
 	NoEffectiveInterval                   string `name:"NoEffectiveInterval"`
@@ -94,7 +96,9 @@ type CreateGroupMetricRulesGroupMetricRules struct {
 	Period                                string `name:"Period"`
 	ContactGroups                         string `name:"ContactGroups"`
 	EscalationsCriticalStatistics         string `name:"Escalations.Critical.Statistics"`
+	RuleType                              string `name:"RuleType"`
 	EscalationsInfoTimes                  string `name:"Escalations.Info.Times"`
+	ExtraDimensionJson                    string `name:"ExtraDimensionJson"`
 	EscalationsCriticalTimes              string `name:"Escalations.Critical.Times"`
 	EscalationsInfoThreshold              string `name:"Escalations.Info.Threshold"`
 	EscalationsWarnStatistics             string `name:"Escalations.Warn.Statistics"`

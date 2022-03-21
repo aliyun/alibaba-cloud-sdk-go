@@ -77,9 +77,10 @@ type PutMetricRuleTargetsRequest struct {
 
 // PutMetricRuleTargetsTargets is a repeated param struct in PutMetricRuleTargetsRequest
 type PutMetricRuleTargetsTargets struct {
-	Level string `name:"Level"`
-	Id    string `name:"Id"`
-	Arn   string `name:"Arn"`
+	Level      string `name:"Level"`
+	Id         string `name:"Id"`
+	Arn        string `name:"Arn"`
+	JsonParams string `name:"JsonParams"`
 }
 
 // PutMetricRuleTargetsResponse is the response struct for api PutMetricRuleTargets

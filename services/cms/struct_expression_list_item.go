@@ -18,9 +18,8 @@ package cms
 // ExpressionListItem is a nested struct in cms response
 type ExpressionListItem struct {
 	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	Period             int    `json:"Period" xml:"Period"`
 	MetricName         string `json:"MetricName" xml:"MetricName"`
-	Id                 string `json:"Id" xml:"Id"`
 	Statistics         string `json:"Statistics" xml:"Statistics"`
 	Threshold          string `json:"Threshold" xml:"Threshold"`
+	Period             string `json:"Period" xml:"Period"`
 }
