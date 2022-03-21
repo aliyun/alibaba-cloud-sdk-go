@@ -1,3 +1,7 @@
+2022-03-21 Version: v1.61.1527
+- Generated 2020-09-30 for `ecd`.
+- Update getDesktopGroupDetail.
+
 2022-03-18 Version: v1.61.1526
 - Generated 2020-01-16 for `DAS`.
 - FIX GetRequestDiagnosisPage PARAM TYPE.
