@@ -1,3 +1,7 @@
+2022-03-23 Version: v1.61.1532
+- Generated 2019-11-11 for `clickhouse`.
+- Clickhouse add restore.
+
 2022-03-23 Version: v1.61.1531
 - Generated 2014-05-15 for `Slb`.
 - Support Latest APIs.

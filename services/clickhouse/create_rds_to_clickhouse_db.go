@@ -86,6 +86,7 @@ type CreateRDSToClickhouseDbRequest struct {
 	LimitUpper           requests.Integer `position:"Query" name:"LimitUpper"`
 	RdsPort              requests.Integer `position:"Query" name:"RdsPort"`
 	SkipUnsupported      requests.Boolean `position:"Query" name:"SkipUnsupported"`
+	RdsVpcUrl            string           `position:"Query" name:"RdsVpcUrl"`
 	RdsUserName          string           `position:"Query" name:"RdsUserName"`
 }
 

@@ -28,6 +28,7 @@ type DBCluster struct {
 	PublicPort             string                           `json:"PublicPort" xml:"PublicPort"`
 	DbClusterId            string                           `json:"dbClusterId" xml:"dbClusterId"`
 	VpcCloudInstanceId     string                           `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	VpcIpAddr              string                           `json:"VpcIpAddr" xml:"VpcIpAddr"`
 	RegionId               string                           `json:"RegionId" xml:"RegionId"`
 	ExpireTime             string                           `json:"ExpireTime" xml:"ExpireTime"`
 	CommodityCode          string                           `json:"CommodityCode" xml:"CommodityCode"`
@@ -47,6 +48,7 @@ type DBCluster struct {
 	ControlVersion         string                           `json:"ControlVersion" xml:"ControlVersion"`
 	DBClusterId            string                           `json:"DBClusterId" xml:"DBClusterId"`
 	DBClusterStatus        string                           `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	PublicIpAddr           string                           `json:"PublicIpAddr" xml:"PublicIpAddr"`
 	SupportHttpsPort       bool                             `json:"SupportHttpsPort" xml:"SupportHttpsPort"`
 	StorageType            string                           `json:"StorageType" xml:"StorageType"`
 	ZoneId                 string                           `json:"ZoneId" xml:"ZoneId"`

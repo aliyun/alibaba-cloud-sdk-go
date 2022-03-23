@@ -80,6 +80,7 @@ type DescribeRDSTablesRequest struct {
 	RdsId                string           `position:"Query" name:"RdsId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RdsPort              requests.Integer `position:"Query" name:"RdsPort"`
+	RdsVpcUrl            string           `position:"Query" name:"RdsVpcUrl"`
 	RdsUserName          string           `position:"Query" name:"RdsUserName"`
 }
 

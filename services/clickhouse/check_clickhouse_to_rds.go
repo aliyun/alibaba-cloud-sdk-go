@@ -83,6 +83,7 @@ type CheckClickhouseToRDSRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ClickhousePort       requests.Integer `position:"Query" name:"ClickhousePort"`
 	RdsPort              requests.Integer `position:"Query" name:"RdsPort"`
+	RdsVpcUrl            string           `position:"Query" name:"RdsVpcUrl"`
 	RdsUserName          string           `position:"Query" name:"RdsUserName"`
 }
 

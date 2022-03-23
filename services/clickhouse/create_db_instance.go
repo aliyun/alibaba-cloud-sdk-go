@@ -83,6 +83,7 @@ type CreateDBInstanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBClusterVersion     string           `position:"Query" name:"DBClusterVersion"`
 	DBClusterClass       string           `position:"Query" name:"DBClusterClass"`
+	BackupSetID          string           `position:"Query" name:"BackupSetID"`
 	EncryptionKey        string           `position:"Query" name:"EncryptionKey"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBNodeGroupCount     string           `position:"Query" name:"DBNodeGroupCount"`

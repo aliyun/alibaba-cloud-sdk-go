@@ -23,4 +23,5 @@ type SynDb struct {
 	ErrorMsg    string `json:"ErrorMsg" xml:"ErrorMsg"`
 	RdsUserName string `json:"RdsUserName" xml:"RdsUserName"`
 	RdsPassword string `json:"RdsPassword" xml:"RdsPassword"`
+	RdsVpcUrl   string `json:"RdsVpcUrl" xml:"RdsVpcUrl"`
 }
