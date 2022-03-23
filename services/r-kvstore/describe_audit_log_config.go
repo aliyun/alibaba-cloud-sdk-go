@@ -82,9 +82,9 @@ type DescribeAuditLogConfigRequest struct {
 // DescribeAuditLogConfigResponse is the response struct for api DescribeAuditLogConfig
 type DescribeAuditLogConfigResponse struct {
 	*responses.BaseResponse
+	Retention string `json:"Retention" xml:"Retention"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	DbAudit   string `json:"DbAudit" xml:"DbAudit"`
-	Retention string `json:"Retention" xml:"Retention"`
 }
 
 // CreateDescribeAuditLogConfigRequest creates a request to invoke DescribeAuditLogConfig API

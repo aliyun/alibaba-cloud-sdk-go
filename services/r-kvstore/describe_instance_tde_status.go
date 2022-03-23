@@ -82,8 +82,8 @@ type DescribeInstanceTDEStatusRequest struct {
 // DescribeInstanceTDEStatusResponse is the response struct for api DescribeInstanceTDEStatus
 type DescribeInstanceTDEStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TDEStatus string `json:"TDEStatus" xml:"TDEStatus"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeInstanceTDEStatusRequest creates a request to invoke DescribeInstanceTDEStatus API

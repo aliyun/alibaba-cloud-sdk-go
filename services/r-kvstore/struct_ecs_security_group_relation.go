@@ -17,7 +17,7 @@ package r_kvstore
 
 // EcsSecurityGroupRelation is a nested struct in r_kvstore response
 type EcsSecurityGroupRelation struct {
-	RegionId        string `json:"RegionId" xml:"RegionId"`
 	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
 	NetType         string `json:"NetType" xml:"NetType"`
 }

@@ -91,13 +91,13 @@ type DescribeAuditRecordsRequest struct {
 // DescribeAuditRecordsResponse is the response struct for api DescribeAuditRecords
 type DescribeAuditRecordsResponse struct {
 	*responses.BaseResponse
+	EndTime          string                      `json:"EndTime" xml:"EndTime"`
+	StartTime        string                      `json:"StartTime" xml:"StartTime"`
 	RequestId        string                      `json:"RequestId" xml:"RequestId"`
+	InstanceName     string                      `json:"InstanceName" xml:"InstanceName"`
+	TotalRecordCount int                         `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                         `json:"PageNumber" xml:"PageNumber"`
 	PageSize         int                         `json:"PageSize" xml:"PageSize"`
-	TotalRecordCount int                         `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	InstanceName     string                      `json:"InstanceName" xml:"InstanceName"`
-	StartTime        string                      `json:"StartTime" xml:"StartTime"`
-	EndTime          string                      `json:"EndTime" xml:"EndTime"`
 	Items            ItemsInDescribeAuditRecords `json:"Items" xml:"Items"`
 }
 

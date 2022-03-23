@@ -91,8 +91,8 @@ type DescribeHistoryMonitorValuesRequest struct {
 // DescribeHistoryMonitorValuesResponse is the response struct for api DescribeHistoryMonitorValues
 type DescribeHistoryMonitorValuesResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	MonitorHistory string `json:"MonitorHistory" xml:"MonitorHistory"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeHistoryMonitorValuesRequest creates a request to invoke DescribeHistoryMonitorValues API

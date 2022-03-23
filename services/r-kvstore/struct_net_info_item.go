@@ -17,9 +17,9 @@ package r_kvstore
 
 // NetInfoItem is a nested struct in r_kvstore response
 type NetInfoItem struct {
-	DBInstanceNetType string `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
 	Port              string `json:"Port" xml:"Port"`
-	ExpiredTime       string `json:"ExpiredTime" xml:"ExpiredTime"`
+	DBInstanceNetType string `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
 	ConnectionString  string `json:"ConnectionString" xml:"ConnectionString"`
+	ExpiredTime       string `json:"ExpiredTime" xml:"ExpiredTime"`
 	IPAddress         string `json:"IPAddress" xml:"IPAddress"`
 }

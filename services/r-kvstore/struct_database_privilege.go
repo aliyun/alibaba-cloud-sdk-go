@@ -17,6 +17,6 @@ package r_kvstore
 
 // DatabasePrivilege is a nested struct in r_kvstore response
 type DatabasePrivilege struct {
-	AccountPrivilege       string `json:"AccountPrivilege" xml:"AccountPrivilege"`
 	AccountPrivilegeDetail string `json:"AccountPrivilegeDetail" xml:"AccountPrivilegeDetail"`
+	AccountPrivilege       string `json:"AccountPrivilege" xml:"AccountPrivilege"`
 }

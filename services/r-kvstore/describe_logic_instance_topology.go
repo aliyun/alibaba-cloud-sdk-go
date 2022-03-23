@@ -82,8 +82,8 @@ type DescribeLogicInstanceTopologyRequest struct {
 // DescribeLogicInstanceTopologyResponse is the response struct for api DescribeLogicInstanceTopology
 type DescribeLogicInstanceTopologyResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	InstanceId     string         `json:"InstanceId" xml:"InstanceId"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	RedisProxyList RedisProxyList `json:"RedisProxyList" xml:"RedisProxyList"`
 	RedisShardList RedisShardList `json:"RedisShardList" xml:"RedisShardList"`
 }

@@ -17,8 +17,8 @@ package r_kvstore
 
 // Task is a nested struct in r_kvstore response
 type Task struct {
+	Status    string `json:"Status" xml:"Status"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 	NodeId    string `json:"NodeId" xml:"NodeId"`
-	StartTime string `json:"StartTime" xml:"StartTime"`
-	Status    string `json:"Status" xml:"Status"`
 }

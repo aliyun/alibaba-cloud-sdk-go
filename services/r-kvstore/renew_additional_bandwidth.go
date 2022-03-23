@@ -88,8 +88,8 @@ type RenewAdditionalBandwidthRequest struct {
 // RenewAdditionalBandwidthResponse is the response struct for api RenewAdditionalBandwidth
 type RenewAdditionalBandwidthResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRenewAdditionalBandwidthRequest creates a request to invoke RenewAdditionalBandwidth API

@@ -17,8 +17,8 @@ package r_kvstore
 
 // GlobalDistributeCache is a nested struct in r_kvstore response
 type GlobalDistributeCache struct {
-	GlobalInstanceId   string        `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
-	GlobalInstanceName string        `json:"GlobalInstanceName" xml:"GlobalInstanceName"`
 	Status             string        `json:"Status" xml:"Status"`
+	GlobalInstanceName string        `json:"GlobalInstanceName" xml:"GlobalInstanceName"`
+	GlobalInstanceId   string        `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
 	SubInstances       []SubInstance `json:"SubInstances" xml:"SubInstances"`
 }

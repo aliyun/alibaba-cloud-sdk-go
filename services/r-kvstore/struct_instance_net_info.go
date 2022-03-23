@@ -17,15 +17,15 @@ package r_kvstore
 
 // InstanceNetInfo is a nested struct in r_kvstore response
 type InstanceNetInfo struct {
-	ConnectionString  string `json:"ConnectionString" xml:"ConnectionString"`
-	IPAddress         string `json:"IPAddress" xml:"IPAddress"`
-	Port              string `json:"Port" xml:"Port"`
-	VPCId             string `json:"VPCId" xml:"VPCId"`
+	DirectConnection  int    `json:"DirectConnection" xml:"DirectConnection"`
 	VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
 	DBInstanceNetType string `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
-	VPCInstanceId     string `json:"VPCInstanceId" xml:"VPCInstanceId"`
-	IPType            string `json:"IPType" xml:"IPType"`
-	ExpiredTime       string `json:"ExpiredTime" xml:"ExpiredTime"`
 	Upgradeable       string `json:"Upgradeable" xml:"Upgradeable"`
-	DirectConnection  int    `json:"DirectConnection" xml:"DirectConnection"`
+	ExpiredTime       string `json:"ExpiredTime" xml:"ExpiredTime"`
+	ConnectionString  string `json:"ConnectionString" xml:"ConnectionString"`
+	IPType            string `json:"IPType" xml:"IPType"`
+	VPCInstanceId     string `json:"VPCInstanceId" xml:"VPCInstanceId"`
+	Port              string `json:"Port" xml:"Port"`
+	VPCId             string `json:"VPCId" xml:"VPCId"`
+	IPAddress         string `json:"IPAddress" xml:"IPAddress"`
 }

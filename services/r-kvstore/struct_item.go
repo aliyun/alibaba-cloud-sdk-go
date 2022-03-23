@@ -19,8 +19,8 @@ package r_kvstore
 type Item struct {
 	Id           int    `json:"Id" xml:"Id"`
 	RegionId     string `json:"RegionId" xml:"RegionId"`
-	Role         string `json:"Role" xml:"Role"`
 	ZoneId       string `json:"ZoneId" xml:"ZoneId"`
+	Role         string `json:"Role" xml:"Role"`
 	Duration     int    `json:"Duration" xml:"Duration"`
 	Ip           string `json:"Ip" xml:"Ip"`
 	HostName     string `json:"HostName" xml:"HostName"`

@@ -82,8 +82,8 @@ type CreateBackupRequest struct {
 // CreateBackupResponse is the response struct for api CreateBackup
 type CreateBackupResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	BackupJobID string `json:"BackupJobID" xml:"BackupJobID"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateBackupRequest creates a request to invoke CreateBackup API

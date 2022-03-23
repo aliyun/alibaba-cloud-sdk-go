@@ -83,15 +83,15 @@ type DescribeEncryptionKeyRequest struct {
 // DescribeEncryptionKeyResponse is the response struct for api DescribeEncryptionKey
 type DescribeEncryptionKeyResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	EncryptionKey       string `json:"EncryptionKey" xml:"EncryptionKey"`
-	Description         string `json:"Description" xml:"Description"`
-	KeyUsage            string `json:"KeyUsage" xml:"KeyUsage"`
 	DeleteDate          string `json:"DeleteDate" xml:"DeleteDate"`
-	Creator             string `json:"Creator" xml:"Creator"`
-	EncryptionKeyStatus string `json:"EncryptionKeyStatus" xml:"EncryptionKeyStatus"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	Description         string `json:"Description" xml:"Description"`
 	Origin              string `json:"Origin" xml:"Origin"`
 	MaterialExpireTime  string `json:"MaterialExpireTime" xml:"MaterialExpireTime"`
+	EncryptionKeyStatus string `json:"EncryptionKeyStatus" xml:"EncryptionKeyStatus"`
+	KeyUsage            string `json:"KeyUsage" xml:"KeyUsage"`
+	EncryptionKey       string `json:"EncryptionKey" xml:"EncryptionKey"`
+	Creator             string `json:"Creator" xml:"Creator"`
 }
 
 // CreateDescribeEncryptionKeyRequest creates a request to invoke DescribeEncryptionKey API

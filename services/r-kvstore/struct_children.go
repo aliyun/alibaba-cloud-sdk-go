@@ -17,26 +17,26 @@ package r_kvstore
 
 // Children is a nested struct in r_kvstore response
 type Children struct {
-	Id                  int64  `json:"Id" xml:"Id"`
-	Name                string `json:"Name" xml:"Name"`
-	BizType             string `json:"BizType" xml:"BizType"`
-	ReplicaSize         int    `json:"ReplicaSize" xml:"ReplicaSize"`
-	Modifier            int    `json:"Modifier" xml:"Modifier"`
-	ServiceVersion      string `json:"ServiceVersion" xml:"ServiceVersion"`
-	DiskSizeMB          int    `json:"DiskSizeMB" xml:"DiskSizeMB"`
-	Nickname            string `json:"Nickname" xml:"Nickname"`
-	PrimaryInsName      string `json:"PrimaryInsName" xml:"PrimaryInsName"`
-	ClassCode           string `json:"ClassCode" xml:"ClassCode"`
-	Creator             int    `json:"Creator" xml:"Creator"`
-	ResourceGroupName   string `json:"ResourceGroupName" xml:"ResourceGroupName"`
-	Health              string `json:"Health" xml:"Health"`
-	BinlogRetentionDays int    `json:"BinlogRetentionDays" xml:"BinlogRetentionDays"`
+	Capacity            int64  `json:"Capacity" xml:"Capacity"`
 	UserId              string `json:"UserId" xml:"UserId"`
 	LockReason          string `json:"LockReason" xml:"LockReason"`
-	Service             string `json:"Service" xml:"Service"`
-	Capacity            int64  `json:"Capacity" xml:"Capacity"`
+	DiskSizeMB          int    `json:"DiskSizeMB" xml:"DiskSizeMB"`
 	BandWidth           int64  `json:"BandWidth" xml:"BandWidth"`
-	Connections         int64  `json:"Connections" xml:"Connections"`
 	CurrentBandWidth    int64  `json:"CurrentBandWidth" xml:"CurrentBandWidth"`
+	ClassCode           string `json:"ClassCode" xml:"ClassCode"`
+	Creator             int    `json:"Creator" xml:"Creator"`
+	BizType             string `json:"BizType" xml:"BizType"`
+	Service             string `json:"Service" xml:"Service"`
+	BinlogRetentionDays int    `json:"BinlogRetentionDays" xml:"BinlogRetentionDays"`
+	PrimaryInsName      string `json:"PrimaryInsName" xml:"PrimaryInsName"`
+	Modifier            int    `json:"Modifier" xml:"Modifier"`
+	Connections         int64  `json:"Connections" xml:"Connections"`
+	Health              string `json:"Health" xml:"Health"`
+	ResourceGroupName   string `json:"ResourceGroupName" xml:"ResourceGroupName"`
+	Nickname            string `json:"Nickname" xml:"Nickname"`
+	ServiceVersion      string `json:"ServiceVersion" xml:"ServiceVersion"`
+	ReplicaSize         int    `json:"ReplicaSize" xml:"ReplicaSize"`
+	Name                string `json:"Name" xml:"Name"`
+	Id                  int64  `json:"Id" xml:"Id"`
 	Items               []Item `json:"Items" xml:"Items"`
 }

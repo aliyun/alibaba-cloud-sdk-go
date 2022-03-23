@@ -82,8 +82,8 @@ type DescribeDBInstanceNetInfoRequest struct {
 // DescribeDBInstanceNetInfoResponse is the response struct for api DescribeDBInstanceNetInfo
 type DescribeDBInstanceNetInfoResponse struct {
 	*responses.BaseResponse
-	RequestId           string                                  `json:"RequestId" xml:"RequestId"`
 	InstanceNetworkType string                                  `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	RequestId           string                                  `json:"RequestId" xml:"RequestId"`
 	NetInfoItems        NetInfoItemsInDescribeDBInstanceNetInfo `json:"NetInfoItems" xml:"NetInfoItems"`
 }
 

@@ -85,10 +85,10 @@ type DescribeGlobalDistributeCacheRequest struct {
 // DescribeGlobalDistributeCacheResponse is the response struct for api DescribeGlobalDistributeCache
 type DescribeGlobalDistributeCacheResponse struct {
 	*responses.BaseResponse
-	RequestId              string                  `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount       int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber             int                     `json:"PageNumber" xml:"PageNumber"`
 	PageSize               int                     `json:"PageSize" xml:"PageSize"`
+	RequestId              string                  `json:"RequestId" xml:"RequestId"`
+	PageNumber             int                     `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount       int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	GlobalDistributeCaches []GlobalDistributeCache `json:"GlobalDistributeCaches" xml:"GlobalDistributeCaches"`
 }
 

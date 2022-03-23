@@ -87,10 +87,10 @@ type DescribeActiveOperationTaskRequest struct {
 // DescribeActiveOperationTaskResponse is the response struct for api DescribeActiveOperationTask
 type DescribeActiveOperationTaskResponse struct {
 	*responses.BaseResponse
-	RequestId        string      `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int         `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageSize         int         `json:"PageSize" xml:"PageSize"`
 	PageNumber       int         `json:"PageNumber" xml:"PageNumber"`
+	RequestId        string      `json:"RequestId" xml:"RequestId"`
+	PageSize         int         `json:"PageSize" xml:"PageSize"`
+	TotalRecordCount int         `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            []ItemsItem `json:"Items" xml:"Items"`
 }
 

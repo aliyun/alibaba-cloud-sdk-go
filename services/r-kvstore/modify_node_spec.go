@@ -89,8 +89,8 @@ type ModifyNodeSpecRequest struct {
 // ModifyNodeSpecResponse is the response struct for api ModifyNodeSpec
 type ModifyNodeSpecResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   int64  `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyNodeSpecRequest creates a request to invoke ModifyNodeSpec API

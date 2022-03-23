@@ -18,9 +18,9 @@ package r_kvstore
 // TemplateRecord is a nested struct in r_kvstore response
 type TemplateRecord struct {
 	CheckingCode         string `json:"CheckingCode" xml:"CheckingCode"`
+	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
+	ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
 	ForceModify          bool   `json:"ForceModify" xml:"ForceModify"`
 	ForceRestart         bool   `json:"ForceRestart" xml:"ForceRestart"`
 	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
-	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
-	ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
 }

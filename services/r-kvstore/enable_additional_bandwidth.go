@@ -92,8 +92,8 @@ type EnableAdditionalBandwidthRequest struct {
 // EnableAdditionalBandwidthResponse is the response struct for api EnableAdditionalBandwidth
 type EnableAdditionalBandwidthResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateEnableAdditionalBandwidthRequest creates a request to invoke EnableAdditionalBandwidth API

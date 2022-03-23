@@ -17,9 +17,9 @@ package r_kvstore
 
 // SubInstance is a nested struct in r_kvstore response
 type SubInstance struct {
-	GlobalInstanceId string `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
-	InstanceID       string `json:"InstanceID" xml:"InstanceID"`
-	RegionId         string `json:"RegionId" xml:"RegionId"`
 	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
+	InstanceID       string `json:"InstanceID" xml:"InstanceID"`
 	InstanceClass    string `json:"InstanceClass" xml:"InstanceClass"`
+	GlobalInstanceId string `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
+	RegionId         string `json:"RegionId" xml:"RegionId"`
 }

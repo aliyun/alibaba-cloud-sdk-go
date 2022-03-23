@@ -17,8 +17,8 @@ package r_kvstore
 
 // Coupon is a nested struct in r_kvstore response
 type Coupon struct {
+	IsSelected  string `json:"IsSelected" xml:"IsSelected"`
 	CouponNo    string `json:"CouponNo" xml:"CouponNo"`
 	Name        string `json:"Name" xml:"Name"`
 	Description string `json:"Description" xml:"Description"`
-	IsSelected  string `json:"IsSelected" xml:"IsSelected"`
 }

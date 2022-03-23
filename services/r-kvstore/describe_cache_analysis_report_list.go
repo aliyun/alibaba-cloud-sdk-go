@@ -87,11 +87,11 @@ type DescribeCacheAnalysisReportListRequest struct {
 // DescribeCacheAnalysisReportListResponse is the response struct for api DescribeCacheAnalysisReportList
 type DescribeCacheAnalysisReportListResponse struct {
 	*responses.BaseResponse
-	RequestId        string     `json:"RequestId" xml:"RequestId"`
 	InstanceId       string     `json:"InstanceId" xml:"InstanceId"`
-	TotalRecordCount int        `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumbers      int        `json:"PageNumbers" xml:"PageNumbers"`
+	RequestId        string     `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int        `json:"PageRecordCount" xml:"PageRecordCount"`
+	PageNumbers      int        `json:"PageNumbers" xml:"PageNumbers"`
+	TotalRecordCount int        `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	DailyTasks       DailyTasks `json:"DailyTasks" xml:"DailyTasks"`
 }
 

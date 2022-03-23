@@ -17,10 +17,10 @@ package r_kvstore
 
 // KVStoreZone is a nested struct in r_kvstore response
 type KVStoreZone struct {
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
-	ZoneName      string `json:"ZoneName" xml:"ZoneName"`
-	SwitchNetwork bool   `json:"SwitchNetwork" xml:"SwitchNetwork"`
 	IsRds         bool   `json:"IsRds" xml:"IsRds"`
+	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
 	Disabled      bool   `json:"Disabled" xml:"Disabled"`
+	SwitchNetwork bool   `json:"SwitchNetwork" xml:"SwitchNetwork"`
+	ZoneName      string `json:"ZoneName" xml:"ZoneName"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
 }

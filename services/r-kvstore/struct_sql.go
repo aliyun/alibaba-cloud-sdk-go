@@ -18,12 +18,12 @@ package r_kvstore
 // SQL is a nested struct in r_kvstore response
 type SQL struct {
 	HostAddress         string `json:"HostAddress" xml:"HostAddress"`
-	DatabaseName        string `json:"DatabaseName" xml:"DatabaseName"`
-	IPAddress           string `json:"IPAddress" xml:"IPAddress"`
 	SQLText             string `json:"SQLText" xml:"SQLText"`
+	DatabaseName        string `json:"DatabaseName" xml:"DatabaseName"`
 	SQLType             string `json:"SQLType" xml:"SQLType"`
-	TotalExecutionTimes string `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
 	ExecuteTime         string `json:"ExecuteTime" xml:"ExecuteTime"`
-	AccountName         string `json:"AccountName" xml:"AccountName"`
+	TotalExecutionTimes string `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
 	NodeId              string `json:"NodeId" xml:"NodeId"`
+	AccountName         string `json:"AccountName" xml:"AccountName"`
+	IPAddress           string `json:"IPAddress" xml:"IPAddress"`
 }

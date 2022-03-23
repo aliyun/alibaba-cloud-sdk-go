@@ -87,13 +87,13 @@ type DescribeCacheAnalysisReportRequest struct {
 // DescribeCacheAnalysisReportResponse is the response struct for api DescribeCacheAnalysisReport
 type DescribeCacheAnalysisReportResponse struct {
 	*responses.BaseResponse
-	RequestId        string                   `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                      `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageSize         int                      `json:"PageSize" xml:"PageSize"`
 	PageNumber       int                      `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int                      `json:"PageSize" xml:"PageSize"`
+	RequestId        string                   `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int                      `json:"PageRecordCount" xml:"PageRecordCount"`
-	HotKeys          []map[string]interface{} `json:"HotKeys" xml:"HotKeys"`
+	TotalRecordCount int                      `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	BigKeys          []map[string]interface{} `json:"BigKeys" xml:"BigKeys"`
+	HotKeys          []map[string]interface{} `json:"HotKeys" xml:"HotKeys"`
 }
 
 // CreateDescribeCacheAnalysisReportRequest creates a request to invoke DescribeCacheAnalysisReport API

@@ -18,8 +18,8 @@ package r_kvstore
 // SubOrder is a nested struct in r_kvstore response
 type SubOrder struct {
 	OriginalAmount string                 `json:"OriginalAmount" xml:"OriginalAmount"`
-	TradeAmount    string                 `json:"TradeAmount" xml:"TradeAmount"`
-	DiscountAmount string                 `json:"DiscountAmount" xml:"DiscountAmount"`
 	InstanceId     string                 `json:"InstanceId" xml:"InstanceId"`
+	DiscountAmount string                 `json:"DiscountAmount" xml:"DiscountAmount"`
+	TradeAmount    string                 `json:"TradeAmount" xml:"TradeAmount"`
 	RuleIds        RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
 }

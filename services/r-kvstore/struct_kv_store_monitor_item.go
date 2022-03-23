@@ -17,6 +17,6 @@ package r_kvstore
 
 // KVStoreMonitorItem is a nested struct in r_kvstore response
 type KVStoreMonitorItem struct {
-	MonitorKey string `json:"MonitorKey" xml:"MonitorKey"`
 	Unit       string `json:"Unit" xml:"Unit"`
+	MonitorKey string `json:"MonitorKey" xml:"MonitorKey"`
 }

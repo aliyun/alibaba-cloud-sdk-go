@@ -86,9 +86,9 @@ type TransformInstanceChargeTypeRequest struct {
 // TransformInstanceChargeTypeResponse is the response struct for api TransformInstanceChargeType
 type TransformInstanceChargeTypeResponse struct {
 	*responses.BaseResponse
+	EndTime   string `json:"EndTime" xml:"EndTime"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
-	EndTime   string `json:"EndTime" xml:"EndTime"`
 }
 
 // CreateTransformInstanceChargeTypeRequest creates a request to invoke TransformInstanceChargeType API

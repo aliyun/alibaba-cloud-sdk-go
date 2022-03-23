@@ -18,6 +18,6 @@ package r_kvstore
 // Rule is a nested struct in r_kvstore response
 type Rule struct {
 	RuleDescId int64  `json:"RuleDescId" xml:"RuleDescId"`
-	Name       string `json:"Name" xml:"Name"`
 	Title      string `json:"Title" xml:"Title"`
+	Name       string `json:"Name" xml:"Name"`
 }

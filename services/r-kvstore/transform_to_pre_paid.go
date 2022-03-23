@@ -86,9 +86,9 @@ type TransformToPrePaidRequest struct {
 // TransformToPrePaidResponse is the response struct for api TransformToPrePaid
 type TransformToPrePaidResponse struct {
 	*responses.BaseResponse
+	EndTime   string `json:"EndTime" xml:"EndTime"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
-	EndTime   string `json:"EndTime" xml:"EndTime"`
 }
 
 // CreateTransformToPrePaidRequest creates a request to invoke TransformToPrePaid API

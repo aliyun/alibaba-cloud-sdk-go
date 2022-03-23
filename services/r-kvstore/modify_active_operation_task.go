@@ -83,8 +83,8 @@ type ModifyActiveOperationTaskRequest struct {
 // ModifyActiveOperationTaskResponse is the response struct for api ModifyActiveOperationTask
 type ModifyActiveOperationTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Ids       string `json:"Ids" xml:"Ids"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyActiveOperationTaskRequest creates a request to invoke ModifyActiveOperationTask API

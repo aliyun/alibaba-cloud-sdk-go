@@ -17,18 +17,18 @@ package r_kvstore
 
 // ItemsItem is a nested struct in r_kvstore response
 type ItemsItem struct {
-	Id              int    `json:"Id" xml:"Id"`
-	InsName         string `json:"InsName" xml:"InsName"`
-	DbType          string `json:"DbType" xml:"DbType"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	SwitchTime      string `json:"SwitchTime" xml:"SwitchTime"`
-	Deadline        string `json:"Deadline" xml:"Deadline"`
 	Status          int    `json:"Status" xml:"Status"`
-	CreatedTime     string `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
-	ResultInfo      string `json:"ResultInfo" xml:"ResultInfo"`
+	Deadline        string `json:"Deadline" xml:"Deadline"`
 	PrepareInterval string `json:"PrepareInterval" xml:"PrepareInterval"`
 	TaskParams      string `json:"TaskParams" xml:"TaskParams"`
 	TaskType        string `json:"TaskType" xml:"TaskType"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
+	InsName         string `json:"InsName" xml:"InsName"`
+	DbType          string `json:"DbType" xml:"DbType"`
 	Region          string `json:"Region" xml:"Region"`
+	ResultInfo      string `json:"ResultInfo" xml:"ResultInfo"`
+	CreatedTime     string `json:"CreatedTime" xml:"CreatedTime"`
+	Id              int    `json:"Id" xml:"Id"`
+	SwitchTime      string `json:"SwitchTime" xml:"SwitchTime"`
 }

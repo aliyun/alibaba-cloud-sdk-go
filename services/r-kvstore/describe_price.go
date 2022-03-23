@@ -97,8 +97,8 @@ type DescribePriceRequest struct {
 // DescribePriceResponse is the response struct for api DescribePrice
 type DescribePriceResponse struct {
 	*responses.BaseResponse
-	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	OrderParams string    `json:"OrderParams" xml:"OrderParams"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	Order       Order     `json:"Order" xml:"Order"`
 	Rules       Rules     `json:"Rules" xml:"Rules"`
 	SubOrders   SubOrders `json:"SubOrders" xml:"SubOrders"`

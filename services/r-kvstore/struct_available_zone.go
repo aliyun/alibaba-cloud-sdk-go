@@ -17,10 +17,10 @@ package r_kvstore
 
 // AvailableZone is a nested struct in r_kvstore response
 type AvailableZone struct {
-	RegionId         string           `json:"RegionId" xml:"RegionId"`
-	ZoneId           string           `json:"ZoneId" xml:"ZoneId"`
 	Status           string           `json:"Status" xml:"Status"`
-	NetworkTypes     string           `json:"NetworkTypes" xml:"NetworkTypes"`
+	ZoneId           string           `json:"ZoneId" xml:"ZoneId"`
 	ZoneName         string           `json:"ZoneName" xml:"ZoneName"`
+	NetworkTypes     string           `json:"NetworkTypes" xml:"NetworkTypes"`
+	RegionId         string           `json:"RegionId" xml:"RegionId"`
 	SupportedEngines SupportedEngines `json:"SupportedEngines" xml:"SupportedEngines"`
 }

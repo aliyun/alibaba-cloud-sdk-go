@@ -83,8 +83,8 @@ type CreateGlobalDistributeCacheRequest struct {
 // CreateGlobalDistributeCacheResponse is the response struct for api CreateGlobalDistributeCache
 type CreateGlobalDistributeCacheResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	GlobalInstanceId string `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateGlobalDistributeCacheRequest creates a request to invoke CreateGlobalDistributeCache API

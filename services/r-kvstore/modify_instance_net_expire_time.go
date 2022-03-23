@@ -84,8 +84,8 @@ type ModifyInstanceNetExpireTimeRequest struct {
 // ModifyInstanceNetExpireTimeResponse is the response struct for api ModifyInstanceNetExpireTime
 type ModifyInstanceNetExpireTimeResponse struct {
 	*responses.BaseResponse
-	RequestId    string                                    `json:"RequestId" xml:"RequestId"`
 	InstanceId   string                                    `json:"InstanceId" xml:"InstanceId"`
+	RequestId    string                                    `json:"RequestId" xml:"RequestId"`
 	NetInfoItems NetInfoItemsInModifyInstanceNetExpireTime `json:"NetInfoItems" xml:"NetInfoItems"`
 }
 

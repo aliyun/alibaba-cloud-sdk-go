@@ -17,7 +17,7 @@ package r_kvstore
 
 // SecurityIpGroup is a nested struct in r_kvstore response
 type SecurityIpGroup struct {
-	SecurityIpGroupName      string `json:"SecurityIpGroupName" xml:"SecurityIpGroupName"`
 	SecurityIpGroupAttribute string `json:"SecurityIpGroupAttribute" xml:"SecurityIpGroupAttribute"`
 	SecurityIpList           string `json:"SecurityIpList" xml:"SecurityIpList"`
+	SecurityIpGroupName      string `json:"SecurityIpGroupName" xml:"SecurityIpGroupName"`
 }

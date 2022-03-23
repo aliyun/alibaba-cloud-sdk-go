@@ -17,14 +17,14 @@ package r_kvstore
 
 // TaskProgressInfo is a nested struct in r_kvstore response
 type TaskProgressInfo struct {
-	TaskId           string  `json:"TaskId" xml:"TaskId"`
-	TaskAction       string  `json:"TaskAction" xml:"TaskAction"`
 	Status           string  `json:"Status" xml:"Status"`
-	Progress         float64 `json:"Progress" xml:"Progress"`
-	BeginTime        string  `json:"BeginTime" xml:"BeginTime"`
 	FinishTime       string  `json:"FinishTime" xml:"FinishTime"`
 	StepsInfo        string  `json:"StepsInfo" xml:"StepsInfo"`
+	Progress         float64 `json:"Progress" xml:"Progress"`
+	BeginTime        string  `json:"BeginTime" xml:"BeginTime"`
 	Remain           int     `json:"Remain" xml:"Remain"`
-	StepProgressInfo string  `json:"StepProgressInfo" xml:"StepProgressInfo"`
 	CurrentStepName  string  `json:"CurrentStepName" xml:"CurrentStepName"`
+	StepProgressInfo string  `json:"StepProgressInfo" xml:"StepProgressInfo"`
+	TaskId           string  `json:"TaskId" xml:"TaskId"`
+	TaskAction       string  `json:"TaskAction" xml:"TaskAction"`
 }

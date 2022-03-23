@@ -82,11 +82,11 @@ type DescribeBackupPolicyRequest struct {
 // DescribeBackupPolicyResponse is the response struct for api DescribeBackupPolicy
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
 	BackupRetentionPeriod   string `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	PreferredBackupTime     string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
 	PreferredBackupPeriod   string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
 	PreferredNextBackupTime string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
+	PreferredBackupTime     string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
 	EnableBackupLog         int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
 }
 
