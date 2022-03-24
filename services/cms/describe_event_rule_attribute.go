@@ -71,7 +71,8 @@ func (client *Client) DescribeEventRuleAttributeWithCallback(request *DescribeEv
 // DescribeEventRuleAttributeRequest is the request struct for api DescribeEventRuleAttribute
 type DescribeEventRuleAttributeRequest struct {
 	*requests.RpcRequest
-	RuleName string `position:"Query" name:"RuleName"`
+	RuleName    string `position:"Query" name:"RuleName"`
+	SilenceTime string `position:"Query" name:"SilenceTime"`
 }
 
 // DescribeEventRuleAttributeResponse is the response struct for api DescribeEventRuleAttribute
