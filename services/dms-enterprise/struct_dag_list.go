@@ -17,5 +17,5 @@ package dms_enterprise
 
 // DagList is a nested struct in dms_enterprise response
 type DagList struct {
-	Dag []Dag `json:"dag" xml:"dag"`
+	Dag []Dag `json:"Dag" xml:"Dag"`
 }

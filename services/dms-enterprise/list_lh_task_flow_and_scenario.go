@@ -83,8 +83,8 @@ type ListLhTaskFlowAndScenarioResponse struct {
 	ErrorCode       string          `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage    string          `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success         bool            `json:"Success" xml:"Success"`
-	ScenarioDAGList ScenarioDAGList `json:"ScenarioDAGList" xml:"ScenarioDAGList"`
 	RawDAGList      RawDAGList      `json:"RawDAGList" xml:"RawDAGList"`
+	ScenarioDAGList ScenarioDAGList `json:"ScenarioDAGList" xml:"ScenarioDAGList"`
 }
 
 // CreateListLhTaskFlowAndScenarioRequest creates a request to invoke ListLhTaskFlowAndScenario API

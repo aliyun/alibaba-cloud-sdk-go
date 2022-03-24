@@ -17,6 +17,5 @@ package dms_enterprise
 
 // ScenarioDAGList is a nested struct in dms_enterprise response
 type ScenarioDAGList struct {
-	Scenario Scenario `json:"Scenario" xml:"Scenario"`
-	DagList  DagList  `json:"DagList" xml:"DagList"`
+	ScenarioDAG []ScenarioDAG `json:"ScenarioDAG" xml:"ScenarioDAG"`
 }
