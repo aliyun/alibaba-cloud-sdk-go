@@ -1,3 +1,7 @@
+2022-03-28 Version: v1.61.1537
+- Generated 2018-01-11 for `rtc`.
+- Support more params in text, clockWidget.
+
 2022-03-25 Version: v1.61.1536
 - Generated 2018-01-20 for `Iot`.
 - Iot_20180120 old version sdk.

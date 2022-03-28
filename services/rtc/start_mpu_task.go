@@ -118,12 +118,18 @@ type StartMPUTaskUserPanes struct {
 
 // StartMPUTaskClockWidgets is a repeated param struct in StartMPUTaskRequest
 type StartMPUTaskClockWidgets struct {
-	FontType  string `name:"FontType"`
-	FontColor string `name:"FontColor"`
-	Y         string `name:"Y"`
-	ZOrder    string `name:"ZOrder"`
-	X         string `name:"X"`
-	FontSize  string `name:"FontSize"`
+	FontType       string `name:"FontType"`
+	FontColor      string `name:"FontColor"`
+	Y              string `name:"Y"`
+	ZOrder         string `name:"ZOrder"`
+	X              string `name:"X"`
+	FontSize       string `name:"FontSize"`
+	BorderWidth    string `name:"BorderWidth"`
+	BorderColor    string `name:"BorderColor"`
+	Box            string `name:"Box"`
+	BoxColor       string `name:"BoxColor"`
+	BoxBorderWidth string `name:"BoxBorderWidth"`
+	Alpha          string `name:"Alpha"`
 }
 
 // StartMPUTaskWatermarks is a repeated param struct in StartMPUTaskRequest
@@ -177,13 +183,19 @@ type StartMPUTaskUserPanesImages struct {
 
 // StartMPUTaskUserPanesTexts is a repeated param struct in StartMPUTaskRequest
 type StartMPUTaskUserPanesTexts struct {
-	FontType  string `name:"FontType"`
-	FontColor string `name:"FontColor"`
-	Y         string `name:"Y"`
-	Text      string `name:"Text"`
-	ZOrder    string `name:"ZOrder"`
-	X         string `name:"X"`
-	FontSize  string `name:"FontSize"`
+	FontType       string `name:"FontType"`
+	FontColor      string `name:"FontColor"`
+	Y              string `name:"Y"`
+	Text           string `name:"Text"`
+	ZOrder         string `name:"ZOrder"`
+	X              string `name:"X"`
+	FontSize       string `name:"FontSize"`
+	BorderWidth    string `name:"BorderWidth"`
+	BorderColor    string `name:"BorderColor"`
+	Box            string `name:"Box"`
+	BoxColor       string `name:"BoxColor"`
+	BoxBorderWidth string `name:"BoxBorderWidth"`
+	Alpha          string `name:"Alpha"`
 }
 
 // StartMPUTaskResponse is the response struct for api StartMPUTask
