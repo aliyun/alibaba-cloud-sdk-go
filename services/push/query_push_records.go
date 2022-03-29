@@ -86,11 +86,11 @@ type QueryPushRecordsRequest struct {
 // QueryPushRecordsResponse is the response struct for api QueryPushRecords
 type QueryPushRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
 	NextToken string    `json:"NextToken" xml:"NextToken"`
 	PageSize  int       `json:"PageSize" xml:"PageSize"`
-	Page      int       `json:"Page" xml:"Page"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Total     int       `json:"Total" xml:"Total"`
+	Page      int       `json:"Page" xml:"Page"`
 	PushInfos PushInfos `json:"PushInfos" xml:"PushInfos"`
 }
 

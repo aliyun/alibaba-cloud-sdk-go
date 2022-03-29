@@ -83,8 +83,8 @@ type PushNoticeToAndroidRequest struct {
 // PushNoticeToAndroidResponse is the response struct for api PushNoticeToAndroid
 type PushNoticeToAndroidResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePushNoticeToAndroidRequest creates a request to invoke PushNoticeToAndroid API

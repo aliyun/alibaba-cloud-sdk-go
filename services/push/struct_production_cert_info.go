@@ -17,6 +17,6 @@ package push
 
 // ProductionCertInfo is a nested struct in push response
 type ProductionCertInfo struct {
-	ExipreTime int64  `json:"ExipreTime" xml:"ExipreTime"`
 	Status     string `json:"Status" xml:"Status"`
+	ExipreTime int64  `json:"ExipreTime" xml:"ExipreTime"`
 }

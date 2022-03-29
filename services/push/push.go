@@ -80,6 +80,7 @@ type PushRequest struct {
 	AndroidNotificationHuaweiChannel string           `position:"Query" name:"AndroidNotificationHuaweiChannel"`
 	AndroidPopupActivity             string           `position:"Query" name:"AndroidPopupActivity"`
 	IOSRemindBody                    string           `position:"Query" name:"iOSRemindBody"`
+	Trim                             requests.Boolean `position:"Query" name:"Trim"`
 	AndroidNotifyType                string           `position:"Query" name:"AndroidNotifyType"`
 	AndroidPopupTitle                string           `position:"Query" name:"AndroidPopupTitle"`
 	AndroidMessageHuaweiCategory     string           `position:"Query" name:"AndroidMessageHuaweiCategory"`
@@ -94,6 +95,8 @@ type PushRequest struct {
 	AndroidNotificationXiaomiChannel string           `position:"Query" name:"AndroidNotificationXiaomiChannel"`
 	StoreOffline                     requests.Boolean `position:"Query" name:"StoreOffline"`
 	SmsParams                        string           `position:"Query" name:"SmsParams"`
+	IOSRelevanceScore                string           `position:"Query" name:"iOSRelevanceScore"`
+	AndroidVivoPushMode              requests.Integer `position:"Query" name:"AndroidVivoPushMode"`
 	AndroidInboxBody                 string           `position:"Query" name:"AndroidInboxBody"`
 	JobKey                           string           `position:"Query" name:"JobKey"`
 	AndroidOpenUrl                   string           `position:"Query" name:"AndroidOpenUrl"`
@@ -106,6 +109,7 @@ type PushRequest struct {
 	IOSNotificationCollapseId        string           `position:"Query" name:"iOSNotificationCollapseId"`
 	AndroidMessageHuaweiUrgency      string           `position:"Query" name:"AndroidMessageHuaweiUrgency"`
 	PushType                         string           `position:"Query" name:"PushType"`
+	IOSInterruptionLevel             string           `position:"Query" name:"iOSInterruptionLevel"`
 	AndroidExtParameters             string           `position:"Query" name:"AndroidExtParameters"`
 	IOSBadge                         requests.Integer `position:"Query" name:"iOSBadge"`
 	AndroidBigBody                   string           `position:"Query" name:"AndroidBigBody"`

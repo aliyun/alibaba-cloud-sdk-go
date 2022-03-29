@@ -85,6 +85,7 @@ type MassPushPushTask struct {
 	AndroidNotificationHuaweiChannel string `name:"AndroidNotificationHuaweiChannel"`
 	AndroidPopupActivity             string `name:"AndroidPopupActivity"`
 	IOSRemindBody                    string `name:"iOSRemindBody"`
+	Trim                             string `name:"Trim"`
 	AndroidNotifyType                string `name:"AndroidNotifyType"`
 	AndroidPopupTitle                string `name:"AndroidPopupTitle"`
 	AndroidMessageHuaweiCategory     string `name:"AndroidMessageHuaweiCategory"`
@@ -98,6 +99,8 @@ type MassPushPushTask struct {
 	IOSNotificationCategory          string `name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string `name:"AndroidNotificationXiaomiChannel"`
 	StoreOffline                     string `name:"StoreOffline"`
+	IOSRelevanceScore                string `name:"iOSRelevanceScore"`
+	AndroidVivoPushMode              string `name:"AndroidVivoPushMode"`
 	AndroidInboxBody                 string `name:"AndroidInboxBody"`
 	JobKey                           string `name:"JobKey"`
 	AndroidOpenUrl                   string `name:"AndroidOpenUrl"`
@@ -110,6 +113,7 @@ type MassPushPushTask struct {
 	IOSNotificationCollapseId        string `name:"iOSNotificationCollapseId"`
 	AndroidMessageHuaweiUrgency      string `name:"AndroidMessageHuaweiUrgency"`
 	PushType                         string `name:"PushType"`
+	IOSInterruptionLevel             string `name:"iOSInterruptionLevel"`
 	AndroidExtParameters             string `name:"AndroidExtParameters"`
 	IOSBadge                         string `name:"iOSBadge"`
 	AndroidBigBody                   string `name:"AndroidBigBody"`

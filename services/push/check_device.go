@@ -78,8 +78,8 @@ type CheckDeviceRequest struct {
 // CheckDeviceResponse is the response struct for api CheckDevice
 type CheckDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Available bool   `json:"Available" xml:"Available"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCheckDeviceRequest creates a request to invoke CheckDevice API

@@ -80,8 +80,8 @@ type ContinuouslyPushRequest struct {
 // ContinuouslyPushResponse is the response struct for api ContinuouslyPush
 type ContinuouslyPushResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateContinuouslyPushRequest creates a request to invoke ContinuouslyPush API

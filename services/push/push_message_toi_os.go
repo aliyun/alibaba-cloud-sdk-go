@@ -82,8 +82,8 @@ type PushMessageToiOSRequest struct {
 // PushMessageToiOSResponse is the response struct for api PushMessageToiOS
 type PushMessageToiOSResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePushMessageToiOSRequest creates a request to invoke PushMessageToiOS API

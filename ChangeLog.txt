@@ -1,3 +1,7 @@
+2022-03-29 Version: v1.61.1539
+- Generated 2016-08-01 for `Push`.
+- Supported Trim, AndroidVivoPushMode, iOSInterruptionLevel, iOSRelevanceScore for Push and MassPush.
+
 2022-03-29 Version: v1.61.1538
 - Generated 2018-07-13 for `Ft`.
 - AMP version.

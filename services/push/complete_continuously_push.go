@@ -78,8 +78,8 @@ type CompleteContinuouslyPushRequest struct {
 // CompleteContinuouslyPushResponse is the response struct for api CompleteContinuouslyPush
 type CompleteContinuouslyPushResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCompleteContinuouslyPushRequest creates a request to invoke CompleteContinuouslyPush API

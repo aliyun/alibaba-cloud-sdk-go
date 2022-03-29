@@ -79,8 +79,8 @@ type QueryDeviceCountRequest struct {
 // QueryDeviceCountResponse is the response struct for api QueryDeviceCount
 type QueryDeviceCountResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DeviceCount int64  `json:"DeviceCount" xml:"DeviceCount"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateQueryDeviceCountRequest creates a request to invoke QueryDeviceCount API

@@ -82,8 +82,8 @@ type PushMessageToAndroidRequest struct {
 // PushMessageToAndroidResponse is the response struct for api PushMessageToAndroid
 type PushMessageToAndroidResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePushMessageToAndroidRequest creates a request to invoke PushMessageToAndroid API
