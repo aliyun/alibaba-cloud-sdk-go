@@ -1,3 +1,7 @@
+2022-03-29 Version: v1.61.1538
+- Generated 2018-07-13 for `Ft`.
+- AMP version.
+
 2022-03-28 Version: v1.61.1537
 - Generated 2018-01-11 for `rtc`.
 - Support more params in text, clockWidget.
