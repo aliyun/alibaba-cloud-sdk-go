@@ -85,11 +85,11 @@ type DescribeScalingConfigurationsRequest struct {
 // DescribeScalingConfigurationsResponse is the response struct for api DescribeScalingConfigurations
 type DescribeScalingConfigurationsResponse struct {
 	*responses.BaseResponse
-	RequestId             string                `json:"RequestId" xml:"RequestId"`
-	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
-	PageSize              int                   `json:"PageSize" xml:"PageSize"`
-	TotalCount            int                   `json:"TotalCount" xml:"TotalCount"`
-	ScalingConfigurations ScalingConfigurations `json:"ScalingConfigurations" xml:"ScalingConfigurations"`
+	RequestId             string                                               `json:"RequestId" xml:"RequestId"`
+	PageNumber            int                                                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize              int                                                  `json:"PageSize" xml:"PageSize"`
+	TotalCount            int                                                  `json:"TotalCount" xml:"TotalCount"`
+	ScalingConfigurations ScalingConfigurationsInDescribeScalingConfigurations `json:"ScalingConfigurations" xml:"ScalingConfigurations"`
 }
 
 // CreateDescribeScalingConfigurationsRequest creates a request to invoke DescribeScalingConfigurations API

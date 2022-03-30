@@ -56,6 +56,8 @@ type ScalingGroup struct {
 	ScaleOutAmountCheck                 bool                    `json:"ScaleOutAmountCheck" xml:"ScaleOutAmountCheck"`
 	DefaultCooldown                     int                     `json:"DefaultCooldown" xml:"DefaultCooldown"`
 	SystemSuspended                     bool                    `json:"SystemSuspended" xml:"SystemSuspended"`
+	IsElasticStrengthInAlarm            bool                    `json:"IsElasticStrengthInAlarm" xml:"IsElasticStrengthInAlarm"`
+	MonitorGroupId                      string                  `json:"MonitorGroupId" xml:"MonitorGroupId"`
 	RemovalPolicies                     RemovalPolicies         `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                       DBInstanceIds           `json:"DBInstanceIds" xml:"DBInstanceIds"`
 	LoadBalancerIds                     LoadBalancerIds         `json:"LoadBalancerIds" xml:"LoadBalancerIds"`

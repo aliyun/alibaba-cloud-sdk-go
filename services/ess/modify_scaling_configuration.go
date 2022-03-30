@@ -77,6 +77,7 @@ type ModifyScalingConfigurationRequest struct {
 	ResourceGroupId                 string                                            `position:"Query" name:"ResourceGroupId"`
 	PrivatePoolOptionsMatchCriteria string                                            `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
 	HostName                        string                                            `position:"Query" name:"HostName"`
+	Password                        string                                            `position:"Query" name:"Password"`
 	InstanceDescription             string                                            `position:"Query" name:"InstanceDescription"`
 	SystemDiskAutoSnapshotPolicyId  string                                            `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
 	PrivatePoolOptionsId            string                                            `position:"Query" name:"PrivatePoolOptions.Id"`
