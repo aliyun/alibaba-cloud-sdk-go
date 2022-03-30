@@ -77,8 +77,8 @@ type DeleteRetcodeAppRequest struct {
 // DeleteRetcodeAppResponse is the response struct for api DeleteRetcodeApp
 type DeleteRetcodeAppResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteRetcodeAppRequest creates a request to invoke DeleteRetcodeApp API

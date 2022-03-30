@@ -77,8 +77,8 @@ type GetRetcodeShareUrlRequest struct {
 // GetRetcodeShareUrlResponse is the response struct for api GetRetcodeShareUrl
 type GetRetcodeShareUrlResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Url       string `json:"Url" xml:"Url"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetRetcodeShareUrlRequest creates a request to invoke GetRetcodeShareUrl API

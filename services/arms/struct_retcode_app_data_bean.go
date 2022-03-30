@@ -17,6 +17,6 @@ package arms
 
 // RetcodeAppDataBean is a nested struct in arms response
 type RetcodeAppDataBean struct {
-	AppId int64  `json:"AppId" xml:"AppId"`
 	Pid   string `json:"Pid" xml:"Pid"`
+	AppId int64  `json:"AppId" xml:"AppId"`
 }

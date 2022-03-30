@@ -17,15 +17,15 @@ package arms
 
 // AlarmHistory is a nested struct in arms response
 type AlarmHistory struct {
-	Id                int64  `json:"Id" xml:"Id"`
-	StrategyId        string `json:"StrategyId" xml:"StrategyId"`
-	UserId            string `json:"UserId" xml:"UserId"`
-	Target            string `json:"Target" xml:"Target"`
-	Phones            string `json:"Phones" xml:"Phones"`
-	Emails            string `json:"Emails" xml:"Emails"`
 	AlarmTime         int64  `json:"AlarmTime" xml:"AlarmTime"`
-	AlarmType         int    `json:"AlarmType" xml:"AlarmType"`
+	StrategyId        string `json:"StrategyId" xml:"StrategyId"`
 	AlarmResponseCode int    `json:"AlarmResponseCode" xml:"AlarmResponseCode"`
-	AlarmContent      string `json:"AlarmContent" xml:"AlarmContent"`
+	Emails            string `json:"Emails" xml:"Emails"`
+	UserId            string `json:"UserId" xml:"UserId"`
 	AlarmSources      string `json:"AlarmSources" xml:"AlarmSources"`
+	AlarmContent      string `json:"AlarmContent" xml:"AlarmContent"`
+	Phones            string `json:"Phones" xml:"Phones"`
+	AlarmType         int    `json:"AlarmType" xml:"AlarmType"`
+	Target            string `json:"Target" xml:"Target"`
+	Id                int64  `json:"Id" xml:"Id"`
 }

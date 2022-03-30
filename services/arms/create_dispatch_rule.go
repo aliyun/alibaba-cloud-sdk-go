@@ -78,8 +78,8 @@ type CreateDispatchRuleRequest struct {
 // CreateDispatchRuleResponse is the response struct for api CreateDispatchRule
 type CreateDispatchRuleResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DispatchRuleId int64  `json:"DispatchRuleId" xml:"DispatchRuleId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateDispatchRuleRequest creates a request to invoke CreateDispatchRule API

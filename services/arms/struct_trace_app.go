@@ -17,8 +17,8 @@ package arms
 
 // TraceApp is a nested struct in arms response
 type TraceApp struct {
-	AppId      int64    `json:"AppId" xml:"AppId"`
 	Show       bool     `json:"Show" xml:"Show"`
+	AppId      int64    `json:"AppId" xml:"AppId"`
 	RegionId   string   `json:"RegionId" xml:"RegionId"`
 	UpdateTime int64    `json:"UpdateTime" xml:"UpdateTime"`
 	Pid        string   `json:"Pid" xml:"Pid"`

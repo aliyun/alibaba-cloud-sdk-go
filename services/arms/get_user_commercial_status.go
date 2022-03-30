@@ -79,8 +79,8 @@ type GetUserCommercialStatusRequest struct {
 // GetUserCommercialStatusResponse is the response struct for api GetUserCommercialStatus
 type GetUserCommercialStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetUserCommercialStatusRequest creates a request to invoke GetUserCommercialStatus API

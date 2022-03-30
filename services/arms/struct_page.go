@@ -17,8 +17,8 @@ package arms
 
 // Page is a nested struct in arms response
 type Page struct {
-	Page     int     `json:"Page" xml:"Page"`
 	PageSize int     `json:"PageSize" xml:"PageSize"`
 	Total    int     `json:"Total" xml:"Total"`
+	Page     int     `json:"Page" xml:"Page"`
 	Alerts   []Alert `json:"Alerts" xml:"Alerts"`
 }

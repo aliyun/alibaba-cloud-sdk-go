@@ -112,8 +112,8 @@ type QueryDatasetDimensions struct {
 // QueryDatasetResponse is the response struct for api QueryDataset
 type QueryDatasetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateQueryDatasetRequest creates a request to invoke QueryDataset API

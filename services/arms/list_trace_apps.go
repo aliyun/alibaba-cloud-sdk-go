@@ -76,10 +76,10 @@ type ListTraceAppsRequest struct {
 // ListTraceAppsResponse is the response struct for api ListTraceApps
 type ListTraceAppsResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Success   bool       `json:"Success" xml:"Success"`
 	Code      int        `json:"Code" xml:"Code"`
 	Message   string     `json:"Message" xml:"Message"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Success   bool       `json:"Success" xml:"Success"`
 	TraceApps []TraceApp `json:"TraceApps" xml:"TraceApps"`
 }
 

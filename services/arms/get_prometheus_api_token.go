@@ -76,8 +76,8 @@ type GetPrometheusApiTokenRequest struct {
 // GetPrometheusApiTokenResponse is the response struct for api GetPrometheusApiToken
 type GetPrometheusApiTokenResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Token     string `json:"Token" xml:"Token"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetPrometheusApiTokenRequest creates a request to invoke GetPrometheusApiToken API

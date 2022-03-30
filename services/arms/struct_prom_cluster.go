@@ -17,22 +17,22 @@ package arms
 
 // PromCluster is a nested struct in arms response
 type PromCluster struct {
+	UpdateTime            int64  `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime            int64  `json:"CreateTime" xml:"CreateTime"`
+	UserId                string `json:"UserId" xml:"UserId"`
+	Options               string `json:"Options" xml:"Options"`
+	IsControllerInstalled bool   `json:"IsControllerInstalled" xml:"IsControllerInstalled"`
+	AgentStatus           string `json:"AgentStatus" xml:"AgentStatus"`
+	Extra                 string `json:"Extra" xml:"Extra"`
+	InstallTime           int64  `json:"InstallTime" xml:"InstallTime"`
+	RegionId              string `json:"RegionId" xml:"RegionId"`
+	ControllerId          string `json:"ControllerId" xml:"ControllerId"`
+	PluginsJsonArray      string `json:"PluginsJsonArray" xml:"PluginsJsonArray"`
+	ClusterType           string `json:"ClusterType" xml:"ClusterType"`
+	ClusterName           string `json:"ClusterName" xml:"ClusterName"`
+	StateJson             string `json:"StateJson" xml:"StateJson"`
+	LastHeartBeatTime     int64  `json:"LastHeartBeatTime" xml:"LastHeartBeatTime"`
+	NodeNum               int    `json:"NodeNum" xml:"NodeNum"`
 	Id                    int64  `json:"Id" xml:"Id"`
 	ClusterId             string `json:"ClusterId" xml:"ClusterId"`
-	ClusterName           string `json:"ClusterName" xml:"ClusterName"`
-	AgentStatus           string `json:"AgentStatus" xml:"AgentStatus"`
-	ClusterType           string `json:"ClusterType" xml:"ClusterType"`
-	ControllerId          string `json:"ControllerId" xml:"ControllerId"`
-	IsControllerInstalled bool   `json:"IsControllerInstalled" xml:"IsControllerInstalled"`
-	UserId                string `json:"UserId" xml:"UserId"`
-	RegionId              string `json:"RegionId" xml:"RegionId"`
-	PluginsJsonArray      string `json:"PluginsJsonArray" xml:"PluginsJsonArray"`
-	StateJson             string `json:"StateJson" xml:"StateJson"`
-	NodeNum               int    `json:"NodeNum" xml:"NodeNum"`
-	CreateTime            int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime            int64  `json:"UpdateTime" xml:"UpdateTime"`
-	LastHeartBeatTime     int64  `json:"LastHeartBeatTime" xml:"LastHeartBeatTime"`
-	InstallTime           int64  `json:"InstallTime" xml:"InstallTime"`
-	Extra                 string `json:"Extra" xml:"Extra"`
-	Options               string `json:"Options" xml:"Options"`
 }

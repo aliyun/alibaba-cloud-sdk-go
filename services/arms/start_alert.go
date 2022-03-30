@@ -78,8 +78,8 @@ type StartAlertRequest struct {
 // StartAlertResponse is the response struct for api StartAlert
 type StartAlertResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
 	StartAlertIsSuccess bool   `json:"IsSuccess" xml:"IsSuccess"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStartAlertRequest creates a request to invoke StartAlert API

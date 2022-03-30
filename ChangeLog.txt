@@ -1,3 +1,7 @@
+2022-03-30 Version: v1.61.1542
+- Generated 2019-08-08 for `ARMS`.
+- Add TagResources.
+
 2022-03-30 Version: v1.61.1541
 - Generated 2014-08-28 for `Ess`.
 - AttachInstances and DetachInstances support lifecyclehook option.

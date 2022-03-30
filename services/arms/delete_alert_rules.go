@@ -78,8 +78,8 @@ type DeleteAlertRulesRequest struct {
 // DeleteAlertRulesResponse is the response struct for api DeleteAlertRules
 type DeleteAlertRulesResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
 	DeleteAlertRulesIsSuccess bool   `json:"IsSuccess" xml:"IsSuccess"`
+	RequestId                 string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteAlertRulesRequest creates a request to invoke DeleteAlertRules API

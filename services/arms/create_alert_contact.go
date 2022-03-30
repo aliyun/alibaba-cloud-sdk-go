@@ -82,8 +82,8 @@ type CreateAlertContactRequest struct {
 // CreateAlertContactResponse is the response struct for api CreateAlertContact
 type CreateAlertContactResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ContactId string `json:"ContactId" xml:"ContactId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateAlertContactRequest creates a request to invoke CreateAlertContact API

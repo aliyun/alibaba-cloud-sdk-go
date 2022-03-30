@@ -17,20 +17,20 @@ package arms
 
 // Alert is a nested struct in arms response
 type Alert struct {
-	AlertName          string                              `json:"AlertName" xml:"AlertName"`
-	AlertType          string                              `json:"AlertType" xml:"AlertType"`
-	Count              int                                 `json:"Count" xml:"Count"`
-	CreateTime         int64                               `json:"CreateTime" xml:"CreateTime"`
-	EndsAt             int64                               `json:"EndsAt" xml:"EndsAt"`
-	ExpandFields       map[string]interface{}              `json:"ExpandFields" xml:"ExpandFields"`
-	AlertId            string                              `json:"AlertId" xml:"AlertId"`
-	IntegrationName    string                              `json:"IntegrationName" xml:"IntegrationName"`
-	IntegrationType    string                              `json:"IntegrationType" xml:"IntegrationType"`
-	InvolvedObjectKind string                              `json:"InvolvedObjectKind" xml:"InvolvedObjectKind"`
-	InvolvedObjectName string                              `json:"InvolvedObjectName" xml:"InvolvedObjectName"`
-	Message            string                              `json:"Message" xml:"Message"`
-	Severity           string                              `json:"Severity" xml:"Severity"`
-	StartsAt           int64                               `json:"StartsAt" xml:"StartsAt"`
 	Status             string                              `json:"Status" xml:"Status"`
+	Severity           string                              `json:"Severity" xml:"Severity"`
+	IntegrationName    string                              `json:"IntegrationName" xml:"IntegrationName"`
+	CreateTime         int64                               `json:"CreateTime" xml:"CreateTime"`
+	Message            string                              `json:"Message" xml:"Message"`
+	AlertType          string                              `json:"AlertType" xml:"AlertType"`
+	InvolvedObjectName string                              `json:"InvolvedObjectName" xml:"InvolvedObjectName"`
+	AlertName          string                              `json:"AlertName" xml:"AlertName"`
+	Count              int                                 `json:"Count" xml:"Count"`
+	ExpandFields       map[string]interface{}              `json:"ExpandFields" xml:"ExpandFields"`
+	EndsAt             int64                               `json:"EndsAt" xml:"EndsAt"`
+	InvolvedObjectKind string                              `json:"InvolvedObjectKind" xml:"InvolvedObjectKind"`
+	IntegrationType    string                              `json:"IntegrationType" xml:"IntegrationType"`
+	StartsAt           int64                               `json:"StartsAt" xml:"StartsAt"`
+	AlertId            string                              `json:"AlertId" xml:"AlertId"`
 	DispatchRules      []DispatchRuleInListActivatedAlerts `json:"DispatchRules" xml:"DispatchRules"`
 }

@@ -17,12 +17,12 @@ package arms
 
 // PrometheusAlertTemplate is a nested struct in arms response
 type PrometheusAlertTemplate struct {
-	AlertName   string       `json:"AlertName" xml:"AlertName"`
-	Description string       `json:"Description" xml:"Description"`
 	Type        string       `json:"Type" xml:"Type"`
+	Description string       `json:"Description" xml:"Description"`
 	Expression  string       `json:"Expression" xml:"Expression"`
-	Duration    string       `json:"Duration" xml:"Duration"`
 	Version     string       `json:"Version" xml:"Version"`
+	Duration    string       `json:"Duration" xml:"Duration"`
+	AlertName   string       `json:"AlertName" xml:"AlertName"`
 	Labels      []Label      `json:"Labels" xml:"Labels"`
 	Annotations []Annotation `json:"Annotations" xml:"Annotations"`
 }

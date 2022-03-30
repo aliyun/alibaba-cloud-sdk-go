@@ -86,8 +86,8 @@ type SearchEventsRequest struct {
 // SearchEventsResponse is the response struct for api SearchEvents
 type SearchEventsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	IsTrigger int      `json:"IsTrigger" xml:"IsTrigger"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	PageBean  PageBean `json:"PageBean" xml:"PageBean"`
 }
 

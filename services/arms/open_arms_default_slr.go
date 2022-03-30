@@ -76,8 +76,8 @@ type OpenArmsDefaultSLRRequest struct {
 // OpenArmsDefaultSLRResponse is the response struct for api OpenArmsDefaultSLR
 type OpenArmsDefaultSLRResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenArmsDefaultSLRRequest creates a request to invoke OpenArmsDefaultSLR API

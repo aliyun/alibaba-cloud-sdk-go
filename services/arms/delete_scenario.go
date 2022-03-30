@@ -77,8 +77,8 @@ type DeleteScenarioRequest struct {
 // DeleteScenarioResponse is the response struct for api DeleteScenario
 type DeleteScenarioResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteScenarioRequest creates a request to invoke DeleteScenario API

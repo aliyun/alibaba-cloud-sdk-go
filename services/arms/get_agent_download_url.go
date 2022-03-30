@@ -76,8 +76,8 @@ type GetAgentDownloadUrlRequest struct {
 // GetAgentDownloadUrlResponse is the response struct for api GetAgentDownloadUrl
 type GetAgentDownloadUrlResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
 	ArmsAgentDownloadUrl string `json:"ArmsAgentDownloadUrl" xml:"ArmsAgentDownloadUrl"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetAgentDownloadUrlRequest creates a request to invoke GetAgentDownloadUrl API

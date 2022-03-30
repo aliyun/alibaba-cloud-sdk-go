@@ -78,8 +78,8 @@ type AddGrafanaRequest struct {
 // AddGrafanaResponse is the response struct for api AddGrafana
 type AddGrafanaResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddGrafanaRequest creates a request to invoke AddGrafana API

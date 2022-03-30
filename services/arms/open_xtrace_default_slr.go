@@ -76,8 +76,8 @@ type OpenXtraceDefaultSLRRequest struct {
 // OpenXtraceDefaultSLRResponse is the response struct for api OpenXtraceDefaultSLR
 type OpenXtraceDefaultSLRResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenXtraceDefaultSLRRequest creates a request to invoke OpenXtraceDefaultSLR API

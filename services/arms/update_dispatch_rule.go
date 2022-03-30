@@ -78,8 +78,8 @@ type UpdateDispatchRuleRequest struct {
 // UpdateDispatchRuleResponse is the response struct for api UpdateDispatchRule
 type UpdateDispatchRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateDispatchRuleRequest creates a request to invoke UpdateDispatchRule API

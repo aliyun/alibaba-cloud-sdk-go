@@ -76,6 +76,7 @@ type CreateOrUpdateWebhookContactRequest struct {
 	WebhookName string           `position:"Body" name:"WebhookName"`
 	BizParams   string           `position:"Body" name:"BizParams"`
 	Body        string           `position:"Body" name:"Body"`
+	ProxyUserId string           `position:"Body" name:"ProxyUserId"`
 	Url         string           `position:"Body" name:"Url"`
 	BizHeaders  string           `position:"Body" name:"BizHeaders"`
 	RecoverBody string           `position:"Body" name:"RecoverBody"`

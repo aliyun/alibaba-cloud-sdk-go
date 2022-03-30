@@ -83,8 +83,8 @@ type UpdateAlertContactRequest struct {
 // UpdateAlertContactResponse is the response struct for api UpdateAlertContact
 type UpdateAlertContactResponse struct {
 	*responses.BaseResponse
-	RequestId                   string `json:"RequestId" xml:"RequestId"`
 	UpdateAlertContactIsSuccess bool   `json:"IsSuccess" xml:"IsSuccess"`
+	RequestId                   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateAlertContactRequest creates a request to invoke UpdateAlertContact API

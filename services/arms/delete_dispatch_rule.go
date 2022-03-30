@@ -78,8 +78,8 @@ type DeleteDispatchRuleRequest struct {
 // DeleteDispatchRuleResponse is the response struct for api DeleteDispatchRule
 type DeleteDispatchRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteDispatchRuleRequest creates a request to invoke DeleteDispatchRule API

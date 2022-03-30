@@ -17,13 +17,13 @@ package arms
 
 // ArmsScenariosItem is a nested struct in arms response
 type ArmsScenariosItem struct {
-	Id         int64  `json:"Id" xml:"Id"`
-	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime string `json:"UpdateTime" xml:"UpdateTime"`
-	Name       string `json:"Name" xml:"Name"`
-	Sign       string `json:"Sign" xml:"Sign"`
-	UserId     string `json:"UserId" xml:"UserId"`
-	RegionId   string `json:"RegionId" xml:"RegionId"`
 	AppId      string `json:"AppId" xml:"AppId"`
+	Sign       string `json:"Sign" xml:"Sign"`
+	CreateTime string `json:"CreateTime" xml:"CreateTime"`
+	UserId     string `json:"UserId" xml:"UserId"`
 	Extensions string `json:"Extensions" xml:"Extensions"`
+	Name       string `json:"Name" xml:"Name"`
+	Id         int64  `json:"Id" xml:"Id"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
 }

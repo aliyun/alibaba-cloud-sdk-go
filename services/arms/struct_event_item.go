@@ -17,13 +17,13 @@ package arms
 
 // EventItem is a nested struct in arms response
 type EventItem struct {
-	Id         int64    `json:"Id" xml:"Id"`
 	EventTime  int64    `json:"EventTime" xml:"EventTime"`
-	AlertType  int      `json:"AlertType" xml:"AlertType"`
 	EventLevel string   `json:"EventLevel" xml:"EventLevel"`
-	Message    string   `json:"Message" xml:"Message"`
-	AlertId    int64    `json:"AlertId" xml:"AlertId"`
-	AlertName  string   `json:"AlertName" xml:"AlertName"`
 	AlertRule  string   `json:"AlertRule" xml:"AlertRule"`
+	Message    string   `json:"Message" xml:"Message"`
+	AlertType  int      `json:"AlertType" xml:"AlertType"`
+	AlertName  string   `json:"AlertName" xml:"AlertName"`
+	Id         int64    `json:"Id" xml:"Id"`
+	AlertId    int64    `json:"AlertId" xml:"AlertId"`
 	Links      []string `json:"Links" xml:"Links"`
 }

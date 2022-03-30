@@ -78,8 +78,8 @@ type OpenArmsServiceRequest struct {
 // OpenArmsServiceResponse is the response struct for api OpenArmsService
 type OpenArmsServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenArmsServiceRequest creates a request to invoke OpenArmsService API

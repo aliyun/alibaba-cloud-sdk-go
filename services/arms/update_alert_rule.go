@@ -81,8 +81,8 @@ type UpdateAlertRuleRequest struct {
 // UpdateAlertRuleResponse is the response struct for api UpdateAlertRule
 type UpdateAlertRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	AlertId   int64  `json:"AlertId" xml:"AlertId"`
 }
 

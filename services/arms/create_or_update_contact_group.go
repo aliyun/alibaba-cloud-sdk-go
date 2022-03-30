@@ -73,6 +73,7 @@ type CreateOrUpdateContactGroupRequest struct {
 	*requests.RpcRequest
 	ContactGroupId   requests.Integer `position:"Body" name:"ContactGroupId"`
 	ContactGroupName string           `position:"Body" name:"ContactGroupName"`
+	ProxyUserId      string           `position:"Body" name:"ProxyUserId"`
 	ContactIds       string           `position:"Body" name:"ContactIds"`
 }
 

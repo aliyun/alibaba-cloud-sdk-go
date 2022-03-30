@@ -73,9 +73,11 @@ type CreateOrUpdateIMRobotRequest struct {
 	*requests.RpcRequest
 	DailyNoc     requests.Boolean `position:"Body" name:"DailyNoc"`
 	RobotAddress string           `position:"Body" name:"RobotAddress"`
+	DingSignKey  string           `position:"Body" name:"DingSignKey"`
 	RobotName    string           `position:"Body" name:"RobotName"`
 	RobotId      requests.Integer `position:"Body" name:"RobotId"`
 	Type         string           `position:"Body" name:"Type"`
+	ProxyUserId  string           `position:"Body" name:"ProxyUserId"`
 	DailyNocTime string           `position:"Body" name:"DailyNocTime"`
 }
 

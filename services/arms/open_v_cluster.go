@@ -80,8 +80,8 @@ type OpenVClusterRequest struct {
 // OpenVClusterResponse is the response struct for api OpenVCluster
 type OpenVClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenVClusterRequest creates a request to invoke OpenVCluster API

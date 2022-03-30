@@ -17,10 +17,10 @@ package arms
 
 // ContactGroup is a nested struct in arms response
 type ContactGroup struct {
-	ContactGroupId   int64     `json:"ContactGroupId" xml:"ContactGroupId"`
-	ContactGroupName string    `json:"ContactGroupName" xml:"ContactGroupName"`
-	UserId           string    `json:"UserId" xml:"UserId"`
-	CreateTime       int64     `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime       int64     `json:"UpdateTime" xml:"UpdateTime"`
+	ContactGroupName string    `json:"ContactGroupName" xml:"ContactGroupName"`
+	ContactGroupId   int64     `json:"ContactGroupId" xml:"ContactGroupId"`
+	CreateTime       int64     `json:"CreateTime" xml:"CreateTime"`
+	UserId           string    `json:"UserId" xml:"UserId"`
 	Contacts         []Contact `json:"Contacts" xml:"Contacts"`
 }

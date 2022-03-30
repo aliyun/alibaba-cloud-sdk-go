@@ -77,8 +77,8 @@ type CheckServiceStatusRequest struct {
 // CheckServiceStatusResponse is the response struct for api CheckServiceStatus
 type CheckServiceStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCheckServiceStatusRequest creates a request to invoke CheckServiceStatus API

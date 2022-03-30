@@ -79,8 +79,8 @@ type GetExploreUrlRequest struct {
 // GetExploreUrlResponse is the response struct for api GetExploreUrl
 type GetExploreUrlResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetExploreUrlRequest creates a request to invoke GetExploreUrl API

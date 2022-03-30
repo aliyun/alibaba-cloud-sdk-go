@@ -78,8 +78,8 @@ type ConfigAppRequest struct {
 // ConfigAppResponse is the response struct for api ConfigApp
 type ConfigAppResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateConfigAppRequest creates a request to invoke ConfigApp API

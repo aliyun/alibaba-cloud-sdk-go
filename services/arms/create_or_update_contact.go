@@ -74,6 +74,8 @@ type CreateOrUpdateContactRequest struct {
 	ContactName string           `position:"Body" name:"ContactName"`
 	ContactId   requests.Integer `position:"Body" name:"ContactId"`
 	Phone       string           `position:"Body" name:"Phone"`
+	IsVerify    requests.Boolean `position:"Body" name:"IsVerify"`
+	ProxyUserId string           `position:"Body" name:"ProxyUserId"`
 	Email       string           `position:"Body" name:"Email"`
 }
 

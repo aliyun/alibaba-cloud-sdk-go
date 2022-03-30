@@ -17,6 +17,6 @@ package arms
 
 // DispatchRuleInListActivatedAlerts is a nested struct in arms response
 type DispatchRuleInListActivatedAlerts struct {
-	RuleName string `json:"RuleName" xml:"RuleName"`
 	RuleId   int    `json:"RuleId" xml:"RuleId"`
+	RuleName string `json:"RuleName" xml:"RuleName"`
 }

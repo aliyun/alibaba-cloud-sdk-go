@@ -78,8 +78,8 @@ type DeleteAlertContactGroupRequest struct {
 // DeleteAlertContactGroupResponse is the response struct for api DeleteAlertContactGroup
 type DeleteAlertContactGroupResponse struct {
 	*responses.BaseResponse
-	RequestId                        string `json:"RequestId" xml:"RequestId"`
 	DeleteAlertContactGroupIsSuccess bool   `json:"IsSuccess" xml:"IsSuccess"`
+	RequestId                        string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteAlertContactGroupRequest creates a request to invoke DeleteAlertContactGroup API

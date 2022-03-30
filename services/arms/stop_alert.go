@@ -78,8 +78,8 @@ type StopAlertRequest struct {
 // StopAlertResponse is the response struct for api StopAlert
 type StopAlertResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
 	StopAlertIsSuccess bool   `json:"IsSuccess" xml:"IsSuccess"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopAlertRequest creates a request to invoke StopAlert API

@@ -84,8 +84,8 @@ type SaveTraceAppConfigSettings struct {
 // SaveTraceAppConfigResponse is the response struct for api SaveTraceAppConfig
 type SaveTraceAppConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSaveTraceAppConfigRequest creates a request to invoke SaveTraceAppConfig API

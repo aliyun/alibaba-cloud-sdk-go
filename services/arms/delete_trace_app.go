@@ -79,8 +79,8 @@ type DeleteTraceAppRequest struct {
 // DeleteTraceAppResponse is the response struct for api DeleteTraceApp
 type DeleteTraceAppResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteTraceAppRequest creates a request to invoke DeleteTraceApp API

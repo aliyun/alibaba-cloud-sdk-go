@@ -82,8 +82,8 @@ type ImportAppAlertRulesRequest struct {
 // ImportAppAlertRulesResponse is the response struct for api ImportAppAlertRules
 type ImportAppAlertRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateImportAppAlertRulesRequest creates a request to invoke ImportAppAlertRules API

@@ -78,8 +78,8 @@ type SetRetcodeShareStatusRequest struct {
 // SetRetcodeShareStatusResponse is the response struct for api SetRetcodeShareStatus
 type SetRetcodeShareStatusResponse struct {
 	*responses.BaseResponse
-	RequestId                      string `json:"RequestId" xml:"RequestId"`
 	SetRetcodeShareStatusIsSuccess bool   `json:"IsSuccess" xml:"IsSuccess"`
+	RequestId                      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetRetcodeShareStatusRequest creates a request to invoke SetRetcodeShareStatus API

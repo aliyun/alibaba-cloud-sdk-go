@@ -77,8 +77,8 @@ type UninstallPromClusterRequest struct {
 // UninstallPromClusterResponse is the response struct for api UninstallPromCluster
 type UninstallPromClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUninstallPromClusterRequest creates a request to invoke UninstallPromCluster API

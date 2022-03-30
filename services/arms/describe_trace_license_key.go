@@ -76,8 +76,8 @@ type DescribeTraceLicenseKeyRequest struct {
 // DescribeTraceLicenseKeyResponse is the response struct for api DescribeTraceLicenseKey
 type DescribeTraceLicenseKeyResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	LicenseKey string `json:"LicenseKey" xml:"LicenseKey"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeTraceLicenseKeyRequest creates a request to invoke DescribeTraceLicenseKey API

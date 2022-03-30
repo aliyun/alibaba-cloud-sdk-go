@@ -86,8 +86,8 @@ type ApplyScenarioRequest struct {
 // ApplyScenarioResponse is the response struct for api ApplyScenario
 type ApplyScenarioResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    string `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateApplyScenarioRequest creates a request to invoke ApplyScenario API
