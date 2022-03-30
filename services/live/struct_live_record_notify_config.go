@@ -17,8 +17,8 @@ package live
 
 // LiveRecordNotifyConfig is a nested struct in live response
 type LiveRecordNotifyConfig struct {
+	NeedStatusNotify bool   `json:"NeedStatusNotify" xml:"NeedStatusNotify"`
+	OnDemandUrl      string `json:"OnDemandUrl" xml:"OnDemandUrl"`
 	DomainName       string `json:"DomainName" xml:"DomainName"`
 	NotifyUrl        string `json:"NotifyUrl" xml:"NotifyUrl"`
-	OnDemandUrl      string `json:"OnDemandUrl" xml:"OnDemandUrl"`
-	NeedStatusNotify bool   `json:"NeedStatusNotify" xml:"NeedStatusNotify"`
 }

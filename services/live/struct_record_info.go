@@ -17,18 +17,18 @@ package live
 
 // RecordInfo is a nested struct in live response
 type RecordInfo struct {
-	RecordId    string  `json:"RecordId" xml:"RecordId"`
 	RecordUrl   string  `json:"RecordUrl" xml:"RecordUrl"`
-	DomainName  string  `json:"DomainName" xml:"DomainName"`
-	AppName     string  `json:"AppName" xml:"AppName"`
 	StreamName  string  `json:"StreamName" xml:"StreamName"`
-	OssBucket   string  `json:"OssBucket" xml:"OssBucket"`
-	OssEndpoint string  `json:"OssEndpoint" xml:"OssEndpoint"`
-	OssObject   string  `json:"OssObject" xml:"OssObject"`
-	StartTime   string  `json:"StartTime" xml:"StartTime"`
-	EndTime     string  `json:"EndTime" xml:"EndTime"`
-	Duration    float64 `json:"Duration" xml:"Duration"`
-	Height      int     `json:"Height" xml:"Height"`
-	Width       int     `json:"Width" xml:"Width"`
 	CreateTime  string  `json:"CreateTime" xml:"CreateTime"`
+	RecordId    string  `json:"RecordId" xml:"RecordId"`
+	Height      int     `json:"Height" xml:"Height"`
+	OssBucket   string  `json:"OssBucket" xml:"OssBucket"`
+	DomainName  string  `json:"DomainName" xml:"DomainName"`
+	OssObject   string  `json:"OssObject" xml:"OssObject"`
+	EndTime     string  `json:"EndTime" xml:"EndTime"`
+	AppName     string  `json:"AppName" xml:"AppName"`
+	StartTime   string  `json:"StartTime" xml:"StartTime"`
+	Width       int     `json:"Width" xml:"Width"`
+	Duration    float64 `json:"Duration" xml:"Duration"`
+	OssEndpoint string  `json:"OssEndpoint" xml:"OssEndpoint"`
 }

@@ -81,8 +81,8 @@ type UpdateMixStreamRequest struct {
 // UpdateMixStreamResponse is the response struct for api UpdateMixStream
 type UpdateMixStreamResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	MixStreamId string `json:"MixStreamId" xml:"MixStreamId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateMixStreamRequest creates a request to invoke UpdateMixStream API

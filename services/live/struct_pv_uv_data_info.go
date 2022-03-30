@@ -18,6 +18,6 @@ package live
 // PvUvDataInfo is a nested struct in live response
 type PvUvDataInfo struct {
 	PV        string `json:"PV" xml:"PV"`
-	UV        string `json:"UV" xml:"UV"`
 	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
+	UV        string `json:"UV" xml:"UV"`
 }

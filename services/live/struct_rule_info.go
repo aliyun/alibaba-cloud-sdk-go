@@ -17,11 +17,11 @@ package live
 
 // RuleInfo is a nested struct in live response
 type RuleInfo struct {
-	RuleId      string `json:"RuleId" xml:"RuleId"`
-	Name        string `json:"Name" xml:"Name"`
 	Domain      string `json:"Domain" xml:"Domain"`
+	Description string `json:"Description" xml:"Description"`
 	App         string `json:"App" xml:"App"`
 	Stream      string `json:"Stream" xml:"Stream"`
+	Name        string `json:"Name" xml:"Name"`
 	TemplateId  string `json:"TemplateId" xml:"TemplateId"`
-	Description string `json:"Description" xml:"Description"`
+	RuleId      string `json:"RuleId" xml:"RuleId"`
 }

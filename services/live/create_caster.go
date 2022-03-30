@@ -85,8 +85,8 @@ type CreateCasterRequest struct {
 // CreateCasterResponse is the response struct for api CreateCaster
 type CreateCasterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	CasterId  string `json:"CasterId" xml:"CasterId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateCasterRequest creates a request to invoke CreateCaster API

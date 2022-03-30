@@ -87,8 +87,8 @@ type StartLiveIndexRequest struct {
 // StartLiveIndexResponse is the response struct for api StartLiveIndex
 type StartLiveIndexResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStartLiveIndexRequest creates a request to invoke StartLiveIndex API

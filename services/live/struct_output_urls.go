@@ -17,6 +17,6 @@ package live
 
 // OutputUrls is a nested struct in live response
 type OutputUrls struct {
-	RtmpUrl string `json:"RtmpUrl" xml:"RtmpUrl"`
 	FlvUrl  string `json:"FlvUrl" xml:"FlvUrl"`
+	RtmpUrl string `json:"RtmpUrl" xml:"RtmpUrl"`
 }

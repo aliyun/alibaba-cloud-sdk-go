@@ -17,8 +17,8 @@ package live
 
 // DescribeUpBpsPeakOfLine is a nested struct in live response
 type DescribeUpBpsPeakOfLine struct {
-	BandWidth float64 `json:"BandWidth" xml:"BandWidth"`
-	PeakTime  string  `json:"PeakTime" xml:"PeakTime"`
 	QueryTime string  `json:"QueryTime" xml:"QueryTime"`
 	StatName  string  `json:"StatName" xml:"StatName"`
+	BandWidth float64 `json:"BandWidth" xml:"BandWidth"`
+	PeakTime  string  `json:"PeakTime" xml:"PeakTime"`
 }

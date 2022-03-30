@@ -85,8 +85,8 @@ type DescribeLiveStreamSnapshotInfoRequest struct {
 // DescribeLiveStreamSnapshotInfoResponse is the response struct for api DescribeLiveStreamSnapshotInfo
 type DescribeLiveStreamSnapshotInfoResponse struct {
 	*responses.BaseResponse
-	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
 	NextStartTime              string                     `json:"NextStartTime" xml:"NextStartTime"`
+	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
 	LiveStreamSnapshotInfoList LiveStreamSnapshotInfoList `json:"LiveStreamSnapshotInfoList" xml:"LiveStreamSnapshotInfoList"`
 }
 

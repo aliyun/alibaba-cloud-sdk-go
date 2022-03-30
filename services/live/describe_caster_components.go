@@ -79,8 +79,8 @@ type DescribeCasterComponentsRequest struct {
 // DescribeCasterComponentsResponse is the response struct for api DescribeCasterComponents
 type DescribeCasterComponentsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Total      int        `json:"Total" xml:"Total"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Components Components `json:"Components" xml:"Components"`
 }
 

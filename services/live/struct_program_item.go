@@ -17,10 +17,10 @@ package live
 
 // ProgramItem is a nested struct in live response
 type ProgramItem struct {
-	ProgramId       string `json:"ProgramId" xml:"ProgramId"`
-	ProgramItemId   string `json:"ProgramItemId" xml:"ProgramItemId"`
-	ProgramItemName string `json:"ProgramItemName" xml:"ProgramItemName"`
-	ResourceType    string `json:"ResourceType" xml:"ResourceType"`
-	ResourceValue   string `json:"ResourceValue" xml:"ResourceValue"`
 	Index           int    `json:"Index" xml:"Index"`
+	ResourceType    string `json:"ResourceType" xml:"ResourceType"`
+	ProgramItemId   string `json:"ProgramItemId" xml:"ProgramItemId"`
+	ProgramId       string `json:"ProgramId" xml:"ProgramId"`
+	ProgramItemName string `json:"ProgramItemName" xml:"ProgramItemName"`
+	ResourceValue   string `json:"ResourceValue" xml:"ResourceValue"`
 }

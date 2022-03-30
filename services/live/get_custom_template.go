@@ -79,8 +79,8 @@ type GetCustomTemplateRequest struct {
 type GetCustomTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Template       string `json:"Template" xml:"Template"`
 	CustomTemplate string `json:"CustomTemplate" xml:"CustomTemplate"`
+	Template       string `json:"Template" xml:"Template"`
 }
 
 // CreateGetCustomTemplateRequest creates a request to invoke GetCustomTemplate API

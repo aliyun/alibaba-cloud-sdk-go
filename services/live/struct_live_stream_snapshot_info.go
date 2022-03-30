@@ -17,8 +17,8 @@ package live
 
 // LiveStreamSnapshotInfo is a nested struct in live response
 type LiveStreamSnapshotInfo struct {
-	OssEndpoint string `json:"OssEndpoint" xml:"OssEndpoint"`
-	OssBucket   string `json:"OssBucket" xml:"OssBucket"`
 	OssObject   string `json:"OssObject" xml:"OssObject"`
+	OssBucket   string `json:"OssBucket" xml:"OssBucket"`
 	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	OssEndpoint string `json:"OssEndpoint" xml:"OssEndpoint"`
 }

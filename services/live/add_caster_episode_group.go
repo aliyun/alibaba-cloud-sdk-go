@@ -90,8 +90,8 @@ type AddCasterEpisodeGroupItem struct {
 // AddCasterEpisodeGroupResponse is the response struct for api AddCasterEpisodeGroup
 type AddCasterEpisodeGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string                         `json:"RequestId" xml:"RequestId"`
 	ProgramId string                         `json:"ProgramId" xml:"ProgramId"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
 	ItemIds   ItemIdsInAddCasterEpisodeGroup `json:"ItemIds" xml:"ItemIds"`
 }
 

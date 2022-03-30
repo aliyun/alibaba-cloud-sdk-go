@@ -81,8 +81,8 @@ type StartPlaylistRequest struct {
 // StartPlaylistResponse is the response struct for api StartPlaylist
 type StartPlaylistResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	ProgramId  string     `json:"ProgramId" xml:"ProgramId"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	StreamInfo StreamInfo `json:"StreamInfo" xml:"StreamInfo"`
 }
 

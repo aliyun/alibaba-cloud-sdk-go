@@ -86,8 +86,8 @@ type ModifyCasterComponentRequest struct {
 // ModifyCasterComponentResponse is the response struct for api ModifyCasterComponent
 type ModifyCasterComponentResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	ComponentId string `json:"ComponentId" xml:"ComponentId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyCasterComponentRequest creates a request to invoke ModifyCasterComponent API

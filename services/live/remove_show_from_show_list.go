@@ -79,8 +79,8 @@ type RemoveShowFromShowListRequest struct {
 // RemoveShowFromShowListResponse is the response struct for api RemoveShowFromShowList
 type RemoveShowFromShowListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ShowId    string `json:"ShowId" xml:"ShowId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRemoveShowFromShowListRequest creates a request to invoke RemoveShowFromShowList API

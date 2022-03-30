@@ -78,11 +78,11 @@ type DescribeLiveStreamTranscodeStreamNumRequest struct {
 // DescribeLiveStreamTranscodeStreamNumResponse is the response struct for api DescribeLiveStreamTranscodeStreamNum
 type DescribeLiveStreamTranscodeStreamNumResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	Total                int64  `json:"Total" xml:"Total"`
-	TranscodedNumber     int64  `json:"TranscodedNumber" xml:"TranscodedNumber"`
 	UntranscodeNumber    int64  `json:"UntranscodeNumber" xml:"UntranscodeNumber"`
 	LazyTranscodedNumber int64  `json:"LazyTranscodedNumber" xml:"LazyTranscodedNumber"`
+	TranscodedNumber     int64  `json:"TranscodedNumber" xml:"TranscodedNumber"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	Total                int64  `json:"Total" xml:"Total"`
 }
 
 // CreateDescribeLiveStreamTranscodeStreamNumRequest creates a request to invoke DescribeLiveStreamTranscodeStreamNum API

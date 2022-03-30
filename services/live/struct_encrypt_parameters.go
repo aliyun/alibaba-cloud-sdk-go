@@ -18,6 +18,6 @@ package live
 // EncryptParameters is a nested struct in live response
 type EncryptParameters struct {
 	EncryptType          string `json:"EncryptType" xml:"EncryptType"`
-	KmsKeyExpireInterval string `json:"KmsKeyExpireInterval" xml:"KmsKeyExpireInterval"`
 	KmsKeyID             string `json:"KmsKeyID" xml:"KmsKeyID"`
+	KmsKeyExpireInterval string `json:"KmsKeyExpireInterval" xml:"KmsKeyExpireInterval"`
 }

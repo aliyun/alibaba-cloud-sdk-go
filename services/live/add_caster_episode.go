@@ -85,8 +85,8 @@ type AddCasterEpisodeRequest struct {
 // AddCasterEpisodeResponse is the response struct for api AddCasterEpisode
 type AddCasterEpisodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	EpisodeId string `json:"EpisodeId" xml:"EpisodeId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddCasterEpisodeRequest creates a request to invoke AddCasterEpisode API

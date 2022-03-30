@@ -17,6 +17,6 @@ package live
 
 // LiveStreamFlvDelayConfig is a nested struct in live response
 type LiveStreamFlvDelayConfig struct {
-	Level string `json:"Level" xml:"Level"`
 	Delay int    `json:"Delay" xml:"Delay"`
+	Level string `json:"Level" xml:"Level"`
 }

@@ -80,9 +80,9 @@ type DescribeLiveStreamStateRequest struct {
 // DescribeLiveStreamStateResponse is the response struct for api DescribeLiveStreamState
 type DescribeLiveStreamStateResponse struct {
 	*responses.BaseResponse
+	Type        string `json:"Type" xml:"Type"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	StreamState string `json:"StreamState" xml:"StreamState"`
-	Type        string `json:"Type" xml:"Type"`
 }
 
 // CreateDescribeLiveStreamStateRequest creates a request to invoke DescribeLiveStreamState API

@@ -81,9 +81,9 @@ type DescribeForbidPushStreamRoomListRequest struct {
 // DescribeForbidPushStreamRoomListResponse is the response struct for api DescribeForbidPushStreamRoomList
 type DescribeForbidPushStreamRoomListResponse struct {
 	*responses.BaseResponse
+	TotalPage int    `json:"TotalPage" xml:"TotalPage"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TotalNum  int    `json:"TotalNum" xml:"TotalNum"`
-	TotalPage int    `json:"TotalPage" xml:"TotalPage"`
 	RoomList  []Room `json:"RoomList" xml:"RoomList"`
 }
 

@@ -78,12 +78,12 @@ type AddCasterProgramRequest struct {
 
 // AddCasterProgramEpisode is a repeated param struct in AddCasterProgramRequest
 type AddCasterProgramEpisode struct {
-	EpisodeType string    `name:"EpisodeType"`
+	EndTime     string    `name:"EndTime"`
+	StartTime   string    `name:"StartTime"`
 	EpisodeName string    `name:"EpisodeName"`
+	EpisodeType string    `name:"EpisodeType"`
 	ResourceId  string    `name:"ResourceId"`
 	ComponentId *[]string `name:"ComponentId" type:"Repeated"`
-	StartTime   string    `name:"StartTime"`
-	EndTime     string    `name:"EndTime"`
 	SwitchType  string    `name:"SwitchType"`
 }
 

@@ -78,9 +78,9 @@ type GetMultiRateConfigListRequest struct {
 // GetMultiRateConfigListResponse is the response struct for api GetMultiRateConfigList
 type GetMultiRateConfigListResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Message   string    `json:"Message" xml:"Message"`
 	Code      int       `json:"Code" xml:"Code"`
+	Message   string    `json:"Message" xml:"Message"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	GroupInfo GroupInfo `json:"GroupInfo" xml:"GroupInfo"`
 }
 

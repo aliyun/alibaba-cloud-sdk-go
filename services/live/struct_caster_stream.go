@@ -17,10 +17,10 @@ package live
 
 // CasterStream is a nested struct in live response
 type CasterStream struct {
-	SceneId     string                               `json:"SceneId" xml:"SceneId"`
-	StreamUrl   string                               `json:"StreamUrl" xml:"StreamUrl"`
-	RtmpUrl     string                               `json:"RtmpUrl" xml:"RtmpUrl"`
 	RtsUrl      string                               `json:"RtsUrl" xml:"RtsUrl"`
+	RtmpUrl     string                               `json:"RtmpUrl" xml:"RtmpUrl"`
+	SceneId     string                               `json:"SceneId" xml:"SceneId"`
 	OutputType  int                                  `json:"OutputType" xml:"OutputType"`
+	StreamUrl   string                               `json:"StreamUrl" xml:"StreamUrl"`
 	StreamInfos StreamInfosInDescribeCasterStreamUrl `json:"StreamInfos" xml:"StreamInfos"`
 }

@@ -18,17 +18,17 @@ package live
 // Caster is a nested struct in live response
 type Caster struct {
 	Status         int    `json:"Status" xml:"Status"`
-	NormType       int    `json:"NormType" xml:"NormType"`
-	CasterId       string `json:"CasterId" xml:"CasterId"`
-	CasterName     string `json:"CasterName" xml:"CasterName"`
-	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
 	PurchaseTime   string `json:"PurchaseTime" xml:"PurchaseTime"`
 	ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
+	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+	CasterName     string `json:"CasterName" xml:"CasterName"`
 	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
 	CasterTemplate string `json:"CasterTemplate" xml:"CasterTemplate"`
+	RoomId         int    `json:"RoomId" xml:"RoomId"`
+	CasterId       string `json:"CasterId" xml:"CasterId"`
 	ChannelEnable  int    `json:"ChannelEnable" xml:"ChannelEnable"`
 	LastModified   string `json:"LastModified" xml:"LastModified"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	NormType       int    `json:"NormType" xml:"NormType"`
 	Duration       string `json:"Duration" xml:"Duration"`
-	RoomId         int    `json:"RoomId" xml:"RoomId"`
 }

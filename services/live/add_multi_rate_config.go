@@ -84,9 +84,9 @@ type AddMultiRateConfigRequest struct {
 // AddMultiRateConfigResponse is the response struct for api AddMultiRateConfig
 type AddMultiRateConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
 	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Body      Body   `json:"Body" xml:"Body"`
 }
 

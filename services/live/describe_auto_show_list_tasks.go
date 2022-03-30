@@ -78,8 +78,8 @@ type DescribeAutoShowListTasksRequest struct {
 // DescribeAutoShowListTasksResponse is the response struct for api DescribeAutoShowListTasks
 type DescribeAutoShowListTasksResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	AutoShowListTasks string `json:"AutoShowListTasks" xml:"AutoShowListTasks"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeAutoShowListTasksRequest creates a request to invoke DescribeAutoShowListTasks API

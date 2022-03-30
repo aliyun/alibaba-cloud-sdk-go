@@ -81,8 +81,8 @@ type CheckServiceForRoleRequest struct {
 // CheckServiceForRoleResponse is the response struct for api CheckServiceForRole
 type CheckServiceForRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Deletable bool   `json:"Deletable" xml:"Deletable"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCheckServiceForRoleRequest creates a request to invoke CheckServiceForRole API

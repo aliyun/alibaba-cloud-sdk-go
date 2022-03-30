@@ -82,9 +82,9 @@ type DeleteMultiRateConfigRequest struct {
 // DeleteMultiRateConfigResponse is the response struct for api DeleteMultiRateConfig
 type DeleteMultiRateConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
 	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteMultiRateConfigRequest creates a request to invoke DeleteMultiRateConfig API

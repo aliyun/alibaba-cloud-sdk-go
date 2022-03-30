@@ -17,9 +17,9 @@ package live
 
 // LiveDomainWaterLevel is a nested struct in live response
 type LiveDomainWaterLevel struct {
-	DomainName           string `json:"DomainName" xml:"DomainName"`
+	DomainRawLimit       int    `json:"DomainRawLimit" xml:"DomainRawLimit"`
 	DomainRawCount       int    `json:"DomainRawCount" xml:"DomainRawCount"`
 	DomainTranscodeCount int    `json:"DomainTranscodeCount" xml:"DomainTranscodeCount"`
-	DomainRawLimit       int    `json:"DomainRawLimit" xml:"DomainRawLimit"`
+	DomainName           string `json:"DomainName" xml:"DomainName"`
 	DomainTranscodeLimit int    `json:"DomainTranscodeLimit" xml:"DomainTranscodeLimit"`
 }

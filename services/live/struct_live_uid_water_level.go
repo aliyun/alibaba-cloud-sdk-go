@@ -17,9 +17,9 @@ package live
 
 // LiveUidWaterLevel is a nested struct in live response
 type LiveUidWaterLevel struct {
+	UidTranscodeLimit int    `json:"UidTranscodeLimit" xml:"UidTranscodeLimit"`
 	AliUid            string `json:"AliUid" xml:"AliUid"`
-	UidRawCount       int    `json:"UidRawCount" xml:"UidRawCount"`
 	UidTranscodeCount int    `json:"UidTranscodeCount" xml:"UidTranscodeCount"`
 	UidRawLimit       int    `json:"UidRawLimit" xml:"UidRawLimit"`
-	UidTranscodeLimit int    `json:"UidTranscodeLimit" xml:"UidTranscodeLimit"`
+	UidRawCount       int    `json:"UidRawCount" xml:"UidRawCount"`
 }

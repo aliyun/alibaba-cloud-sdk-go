@@ -83,8 +83,8 @@ type CreateLiveStreamMonitorRequest struct {
 // CreateLiveStreamMonitorResponse is the response struct for api CreateLiveStreamMonitor
 type CreateLiveStreamMonitorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	MonitorId string `json:"MonitorId" xml:"MonitorId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateLiveStreamMonitorRequest creates a request to invoke CreateLiveStreamMonitor API

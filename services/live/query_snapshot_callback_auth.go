@@ -79,9 +79,9 @@ type QuerySnapshotCallbackAuthRequest struct {
 type QuerySnapshotCallbackAuthResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
+	CallbackAuthKey string `json:"CallbackAuthKey" xml:"CallbackAuthKey"`
 	DomainName      string `json:"DomainName" xml:"DomainName"`
 	CallbackReqAuth string `json:"CallbackReqAuth" xml:"CallbackReqAuth"`
-	CallbackAuthKey string `json:"CallbackAuthKey" xml:"CallbackAuthKey"`
 }
 
 // CreateQuerySnapshotCallbackAuthRequest creates a request to invoke QuerySnapshotCallbackAuth API

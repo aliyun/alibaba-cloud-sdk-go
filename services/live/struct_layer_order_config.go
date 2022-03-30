@@ -17,6 +17,6 @@ package live
 
 // LayerOrderConfig is a nested struct in live response
 type LayerOrderConfig struct {
-	Id   string `json:"Id" xml:"Id"`
 	Type string `json:"Type" xml:"Type"`
+	Id   string `json:"Id" xml:"Id"`
 }
