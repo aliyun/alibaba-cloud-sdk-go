@@ -1,3 +1,8 @@
+2022-03-31 Version: v1.61.1543
+- Generated 2018-01-20 for `Iot`.
+- CreateDataSourceItem.
+- ListDataSourceItem.
+
 2022-03-30 Version: v1.61.1542
 - Generated 2019-08-08 for `ARMS`.
 - Add TagResources.
