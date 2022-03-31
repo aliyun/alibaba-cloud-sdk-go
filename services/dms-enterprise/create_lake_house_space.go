@@ -73,7 +73,6 @@ type CreateLakeHouseSpaceRequest struct {
 	*requests.RpcRequest
 	SpaceName   string           `position:"Query" name:"SpaceName"`
 	Description string           `position:"Query" name:"Description"`
-	UserId      requests.Integer `position:"Query" name:"UserId"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
 	Mode        string           `position:"Query" name:"Mode"`
 	DwDbType    string           `position:"Query" name:"DwDbType"`
