@@ -1,3 +1,8 @@
+2022-04-01 Version: v1.61.1545
+- Generated 2020-01-16 for `DAS`.
+- FIX GetAsyncErrorRequestStatResult PARAM TYPE.
+
+
 2022-03-31 Version: v1.61.1544
 - Generated 2018-11-01 for `dms-enterprise`.
 - Supported ListTaskFlow, ListTaskFlowInstance, GetTaskInstanceRelation, GetLhSpaceByName, DeleteLakeHouseSpace, DeleteTaskFlow API.

@@ -21,48 +21,32 @@ type ListItem struct {
 	SumUpdatedRows              int64  `json:"SumUpdatedRows" xml:"SumUpdatedRows"`
 	AvgRows                     int64  `json:"AvgRows" xml:"AvgRows"`
 	ErrorCount                  int64  `json:"ErrorCount" xml:"ErrorCount"`
-	AvgRowsExamined             int64  `json:"AvgRowsExamined" xml:"AvgRowsExamined"`
 	Rows                        int64  `json:"Rows" xml:"Rows"`
 	AvgRt                       string `json:"AvgRt" xml:"AvgRt"`
 	LockWaitTime                string `json:"LockWaitTime" xml:"LockWaitTime"`
 	ExaminedRows                int64  `json:"ExaminedRows" xml:"ExaminedRows"`
 	AvgExaminedRows             string `json:"AvgExaminedRows" xml:"AvgExaminedRows"`
-	TableList                   string `json:"TableList" xml:"TableList"`
 	RtRate                      string `json:"RtRate" xml:"RtRate"`
 	OriginHost                  string `json:"OriginHost" xml:"OriginHost"`
 	Key                         string `json:"Key" xml:"Key"`
 	AvgSqlCount                 int64  `json:"AvgSqlCount" xml:"AvgSqlCount"`
 	PhysicalSyncRead            int64  `json:"PhysicalSyncRead" xml:"PhysicalSyncRead"`
-	ErrorCnt                    int64  `json:"ErrorCnt" xml:"ErrorCnt"`
-	TaskId                      string `json:"TaskId" xml:"TaskId"`
-	FirstTime                   int64  `json:"FirstTime" xml:"FirstTime"`
-	InstanceId                  string `json:"InstanceId" xml:"InstanceId"`
-	UserId                      string `json:"UserId" xml:"UserId"`
-	Cnt                         int64  `json:"Cnt" xml:"Cnt"`
 	VpcId                       string `json:"VpcId" xml:"VpcId"`
 	AvgReturnedRows             string `json:"AvgReturnedRows" xml:"AvgReturnedRows"`
 	PhysicalAsyncRead           int64  `json:"PhysicalAsyncRead" xml:"PhysicalAsyncRead"`
 	FetchRows                   int64  `json:"FetchRows" xml:"FetchRows"`
-	Type                        string `json:"Type" xml:"Type"`
 	Version                     int64  `json:"Version" xml:"Version"`
 	AvgPhysicalSyncRead         string `json:"AvgPhysicalSyncRead" xml:"AvgPhysicalSyncRead"`
 	Ip                          string `json:"Ip" xml:"Ip"`
-	SqlId                       string `json:"SqlId" xml:"SqlId"`
 	AvgPhysicalAsyncRead        int64  `json:"AvgPhysicalAsyncRead" xml:"AvgPhysicalAsyncRead"`
-	Sql                         string `json:"Sql" xml:"Sql"`
 	CountRate                   string `json:"CountRate" xml:"CountRate"`
-	DbName                      string `json:"DbName" xml:"DbName"`
 	AvgLockWaitTime             string `json:"AvgLockWaitTime" xml:"AvgLockWaitTime"`
 	LogicalRead                 int64  `json:"LogicalRead" xml:"LogicalRead"`
 	RtGreaterThanOneSecondCount int64  `json:"RtGreaterThanOneSecondCount" xml:"RtGreaterThanOneSecondCount"`
-	SqlTextFeature              string `json:"SqlTextFeature" xml:"SqlTextFeature"`
 	Port                        int64  `json:"Port" xml:"Port"`
-	SumRt                       string `json:"SumRt" xml:"SumRt"`
-	SqlType                     string `json:"SqlType" xml:"SqlType"`
 	AvgUpdatedRows              string `json:"AvgUpdatedRows" xml:"AvgUpdatedRows"`
 	Count                       int64  `json:"Count" xml:"Count"`
 	AvgFetchRows                int64  `json:"AvgFetchRows" xml:"AvgFetchRows"`
 	Database                    string `json:"Database" xml:"Database"`
-	CntRate                     string `json:"CntRate" xml:"CntRate"`
 	AvgLogicalRead              string `json:"AvgLogicalRead" xml:"AvgLogicalRead"`
 }
