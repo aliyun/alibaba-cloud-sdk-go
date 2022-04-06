@@ -17,7 +17,7 @@ package imageprocess
 
 // Vertebra is a nested struct in imageprocess response
 type Vertebra struct {
-	Disease        string    `json:"Disease" xml:"Disease"`
 	Identification string    `json:"Identification" xml:"Identification"`
+	Disease        string    `json:"Disease" xml:"Disease"`
 	Location       []float64 `json:"Location" xml:"Location"`
 }

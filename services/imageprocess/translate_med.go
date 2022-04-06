@@ -71,9 +71,9 @@ func (client *Client) TranslateMedWithCallback(request *TranslateMedRequest, cal
 // TranslateMedRequest is the request struct for api TranslateMed
 type TranslateMedRequest struct {
 	*requests.RpcRequest
-	FromLanguage string `position:"Body" name:"FromLanguage"`
 	ToLanguage   string `position:"Body" name:"ToLanguage"`
 	Text         string `position:"Body" name:"Text"`
+	FromLanguage string `position:"Body" name:"FromLanguage"`
 }
 
 // TranslateMedResponse is the response struct for api TranslateMed

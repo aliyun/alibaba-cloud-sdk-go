@@ -71,9 +71,9 @@ func (client *Client) DetectSkinDiseaseWithCallback(request *DetectSkinDiseaseRe
 // DetectSkinDiseaseRequest is the request struct for api DetectSkinDisease
 type DetectSkinDiseaseRequest struct {
 	*requests.RpcRequest
+	OrgName string `position:"Body" name:"OrgName"`
 	Url     string `position:"Body" name:"Url"`
 	OrgId   string `position:"Body" name:"OrgId"`
-	OrgName string `position:"Body" name:"OrgName"`
 }
 
 // DetectSkinDiseaseResponse is the response struct for api DetectSkinDisease

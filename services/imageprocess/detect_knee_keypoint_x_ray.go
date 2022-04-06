@@ -71,11 +71,11 @@ func (client *Client) DetectKneeKeypointXRayWithCallback(request *DetectKneeKeyp
 // DetectKneeKeypointXRayRequest is the request struct for api DetectKneeKeypointXRay
 type DetectKneeKeypointXRayRequest struct {
 	*requests.RpcRequest
+	OrgName    string `position:"Body" name:"OrgName"`
+	TracerId   string `position:"Body" name:"TracerId"`
 	DataFormat string `position:"Body" name:"DataFormat"`
 	OrgId      string `position:"Body" name:"OrgId"`
-	OrgName    string `position:"Body" name:"OrgName"`
 	ImageUrl   string `position:"Body" name:"ImageUrl"`
-	TracerId   string `position:"Body" name:"TracerId"`
 }
 
 // DetectKneeKeypointXRayResponse is the response struct for api DetectKneeKeypointXRay

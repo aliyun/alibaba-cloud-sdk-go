@@ -17,5 +17,5 @@ package imageprocess
 
 // CoordinatesInScreenChestCT is a nested struct in imageprocess response
 type CoordinatesInScreenChestCT struct {
-	Coordinates []int64 `json:"coordinates" xml:"coordinates"`
+	Coordinates []int64 `json:"Coordinates" xml:"Coordinates"`
 }

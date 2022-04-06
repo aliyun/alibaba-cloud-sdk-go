@@ -99,9 +99,9 @@ type RunMedQAAnswerImageURLList struct {
 // RunMedQAResponse is the response struct for api RunMedQA
 type RunMedQAResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

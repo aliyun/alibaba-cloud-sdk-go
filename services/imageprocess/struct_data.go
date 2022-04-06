@@ -54,10 +54,10 @@ type Data struct {
 	CACS               CACS                   `json:"CACS" xml:"CACS"`
 	AortaInfo          AortaInfo              `json:"AortaInfo" xml:"AortaInfo"`
 	Fractures          []FracturesItem        `json:"Fractures" xml:"Fractures"`
-	KeyPoints          []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
-	Detections         []DetectionsItem       `json:"Detections" xml:"Detections"`
-	Discs              []Disc                 `json:"Discs" xml:"Discs"`
-	Series             []Serie                `json:"Series" xml:"Series"`
 	Vertebras          []Vertebra             `json:"Vertebras" xml:"Vertebras"`
+	Detections         []DetectionsItem       `json:"Detections" xml:"Detections"`
+	Series             []Serie                `json:"Series" xml:"Series"`
 	KLDetections       []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
+	KeyPoints          []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
+	Discs              []Disc                 `json:"Discs" xml:"Discs"`
 }

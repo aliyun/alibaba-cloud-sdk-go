@@ -71,10 +71,10 @@ func (client *Client) DetectSpineMRIWithCallback(request *DetectSpineMRIRequest,
 // DetectSpineMRIRequest is the request struct for api DetectSpineMRI
 type DetectSpineMRIRequest struct {
 	*requests.RpcRequest
+	OrgName    string                   `position:"Body" name:"OrgName"`
 	DataFormat string                   `position:"Body" name:"DataFormat"`
 	URLList    *[]DetectSpineMRIURLList `position:"Body" name:"URLList"  type:"Repeated"`
 	OrgId      string                   `position:"Body" name:"OrgId"`
-	OrgName    string                   `position:"Body" name:"OrgName"`
 }
 
 // DetectSpineMRIURLList is a repeated param struct in DetectSpineMRIRequest
