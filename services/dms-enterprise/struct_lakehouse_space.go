@@ -23,7 +23,7 @@ type LakehouseSpace struct {
 	TenantId    string `json:"TenantId" xml:"TenantId"`
 	Description string `json:"Description" xml:"Description"`
 	Mode        int    `json:"Mode" xml:"Mode"`
-	DbType      string `json:"DbType" xml:"DbType"`
+	DwDbType    string `json:"DwDbType" xml:"DwDbType"`
 	SpaceConfig string `json:"SpaceConfig" xml:"SpaceConfig"`
 	DevDbId     int    `json:"DevDbId" xml:"DevDbId"`
 	ProdDbId    int    `json:"ProdDbId" xml:"ProdDbId"`

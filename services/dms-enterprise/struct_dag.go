@@ -22,6 +22,7 @@ type Dag struct {
 	LatestInstanceStatus int    `json:"LatestInstanceStatus" xml:"LatestInstanceStatus"`
 	LatestInstanceTime   int    `json:"LatestInstanceTime" xml:"LatestInstanceTime"`
 	DemoId               string `json:"DemoId" xml:"DemoId"`
+	DagOwnerId           string `json:"DagOwnerId" xml:"DagOwnerId"`
 	Id                   int64  `json:"Id" xml:"Id"`
 	SpaceId              int64  `json:"SpaceId" xml:"SpaceId"`
 	CreatorNickName      string `json:"CreatorNickName" xml:"CreatorNickName"`
@@ -31,4 +32,5 @@ type Dag struct {
 	IsDeleted            bool   `json:"IsDeleted" xml:"IsDeleted"`
 	ScenarioId           int64  `json:"ScenarioId" xml:"ScenarioId"`
 	DagOwnerNickName     string `json:"DagOwnerNickName" xml:"DagOwnerNickName"`
+	DagName              string `json:"DagName" xml:"DagName"`
 }
