@@ -34,4 +34,5 @@ type LindormInstanceSummary struct {
 	InstanceStatus      string `json:"InstanceStatus" xml:"InstanceStatus"`
 	ExpiredMilliseconds int64  `json:"ExpiredMilliseconds" xml:"ExpiredMilliseconds"`
 	EnableStream        bool   `json:"EnableStream" xml:"EnableStream"`
+	Tags                []Tag  `json:"Tags" xml:"Tags"`
 }

@@ -1,3 +1,9 @@
+2022-04-06 Version: v1.61.1547
+- Generated 2020-06-15 for `hitsdb`.
+- Add ListTagResources api.
+- Add TagResources api.
+- Add UntagResources api.
+
 2022-04-06 Version: v1.61.1546
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support output dagName, dagOwnerId for api listTaskFlowAndScenario.

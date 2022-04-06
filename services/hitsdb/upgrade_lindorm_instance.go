@@ -101,8 +101,8 @@ type UpgradeLindormInstanceRequest struct {
 // UpgradeLindormInstanceResponse is the response struct for api UpgradeLindormInstance
 type UpgradeLindormInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   int64  `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpgradeLindormInstanceRequest creates a request to invoke UpgradeLindormInstance API

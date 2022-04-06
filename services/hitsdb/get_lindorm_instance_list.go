@@ -71,16 +71,23 @@ func (client *Client) GetLindormInstanceListWithCallback(request *GetLindormInst
 // GetLindormInstanceListRequest is the request struct for api GetLindormInstanceList
 type GetLindormInstanceListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SupportEngine        requests.Integer `position:"Query" name:"SupportEngine"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	QueryStr             string           `position:"Query" name:"QueryStr"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ServiceType          string           `position:"Query" name:"ServiceType"`
+	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
+	SupportEngine        requests.Integer             `position:"Query" name:"SupportEngine"`
+	PageNumber           requests.Integer             `position:"Query" name:"PageNumber"`
+	SecurityToken        string                       `position:"Query" name:"SecurityToken"`
+	PageSize             requests.Integer             `position:"Query" name:"PageSize"`
+	Tag                  *[]GetLindormInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`
+	QueryStr             string                       `position:"Query" name:"QueryStr"`
+	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
+	ServiceType          string                       `position:"Query" name:"ServiceType"`
+}
+
+// GetLindormInstanceListTag is a repeated param struct in GetLindormInstanceListRequest
+type GetLindormInstanceListTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // GetLindormInstanceListResponse is the response struct for api GetLindormInstanceList

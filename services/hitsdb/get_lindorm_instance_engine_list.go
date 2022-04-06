@@ -82,8 +82,8 @@ type GetLindormInstanceEngineListRequest struct {
 // GetLindormInstanceEngineListResponse is the response struct for api GetLindormInstanceEngineList
 type GetLindormInstanceEngineListResponse struct {
 	*responses.BaseResponse
-	RequestId  string       `json:"RequestId" xml:"RequestId"`
 	InstanceId string       `json:"InstanceId" xml:"InstanceId"`
+	RequestId  string       `json:"RequestId" xml:"RequestId"`
 	EngineList []EngineInfo `json:"EngineList" xml:"EngineList"`
 }
 
