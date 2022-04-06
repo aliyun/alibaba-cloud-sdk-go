@@ -1,3 +1,7 @@
+2022-04-06 Version: v1.61.1549
+- Generated 2019-11-11 for `clickhouse`.
+- Clickhouse add restore.
+
 2022-04-06 Version: v1.61.1548
 - Generated 2019-04-30 for `schedulerx2`.
 - Create App Group Support Schedule Busy Workers.

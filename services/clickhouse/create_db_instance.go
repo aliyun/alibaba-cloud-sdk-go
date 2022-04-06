@@ -74,6 +74,7 @@ type CreateDBInstanceRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SourceDBClusterId    string           `position:"Query" name:"SourceDBClusterId"`
 	DbNodeStorageType    string           `position:"Query" name:"DbNodeStorageType"`
 	DBClusterCategory    string           `position:"Query" name:"DBClusterCategory"`
 	EncryptionType       string           `position:"Query" name:"EncryptionType"`

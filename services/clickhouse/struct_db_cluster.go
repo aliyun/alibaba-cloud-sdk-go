@@ -54,6 +54,7 @@ type DBCluster struct {
 	ZoneId                 string                           `json:"ZoneId" xml:"ZoneId"`
 	DBClusterDescription   string                           `json:"DBClusterDescription" xml:"DBClusterDescription"`
 	ConnectionString       string                           `json:"ConnectionString" xml:"ConnectionString"`
+	SupportOss             int                              `json:"SupportOss" xml:"SupportOss"`
 	OrderId                string                           `json:"orderId" xml:"orderId"`
 	SupportBackup          int                              `json:"SupportBackup" xml:"SupportBackup"`
 	EncryptionType         string                           `json:"EncryptionType" xml:"EncryptionType"`
