@@ -74,6 +74,7 @@ type CreateAppGroupRequest struct {
 	MaxJobs              requests.Integer `position:"Query" name:"MaxJobs"`
 	NamespaceName        string           `position:"Query" name:"NamespaceName"`
 	NamespaceSource      string           `position:"Query" name:"NamespaceSource"`
+	ScheduleBusyWorkers  requests.Boolean `position:"Query" name:"ScheduleBusyWorkers"`
 	MetricsThresholdJson string           `position:"Query" name:"MetricsThresholdJson"`
 	GroupId              string           `position:"Query" name:"GroupId"`
 	Description          string           `position:"Query" name:"Description"`

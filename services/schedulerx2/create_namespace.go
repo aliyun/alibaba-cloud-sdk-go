@@ -71,9 +71,10 @@ func (client *Client) CreateNamespaceWithCallback(request *CreateNamespaceReques
 // CreateNamespaceRequest is the request struct for api CreateNamespace
 type CreateNamespaceRequest struct {
 	*requests.RpcRequest
+	Description string `position:"Query" name:"Description"`
+	Source      string `position:"Query" name:"Source"`
 	Uid         string `position:"Query" name:"Uid"`
 	Name        string `position:"Query" name:"Name"`
-	Description string `position:"Query" name:"Description"`
 }
 
 // CreateNamespaceResponse is the response struct for api CreateNamespace
