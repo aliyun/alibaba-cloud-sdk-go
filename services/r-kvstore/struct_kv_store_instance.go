@@ -23,6 +23,7 @@ type KVStoreInstance struct {
 	ConnectionDomain    string                  `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	SearchKey           string                  `json:"SearchKey" xml:"SearchKey"`
 	CreateTime          string                  `json:"CreateTime" xml:"CreateTime"`
+	EditionType         string                  `json:"EditionType" xml:"EditionType"`
 	InstanceType        string                  `json:"InstanceType" xml:"InstanceType"`
 	VpcCloudInstanceId  string                  `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	GlobalInstanceId    string                  `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
