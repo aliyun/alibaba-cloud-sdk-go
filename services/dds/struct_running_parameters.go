@@ -17,5 +17,5 @@ package dds
 
 // RunningParameters is a nested struct in dds response
 type RunningParameters struct {
-	Parameter []ParameterInDescribeParameters `json:"Parameter" xml:"Parameter"`
+	Parameter []Parameter `json:"Parameter" xml:"Parameter"`
 }

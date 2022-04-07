@@ -82,8 +82,8 @@ type DescribeDBInstanceTDEInfoRequest struct {
 // DescribeDBInstanceTDEInfoResponse is the response struct for api DescribeDBInstanceTDEInfo
 type DescribeDBInstanceTDEInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TDEStatus string `json:"TDEStatus" xml:"TDEStatus"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeDBInstanceTDEInfoRequest creates a request to invoke DescribeDBInstanceTDEInfo API

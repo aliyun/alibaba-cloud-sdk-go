@@ -17,9 +17,9 @@ package dds
 
 // ZoneInfo is a nested struct in dds response
 type ZoneInfo struct {
+	InsName  string `json:"InsName" xml:"InsName"`
 	NodeType string `json:"NodeType" xml:"NodeType"`
 	RoleType string `json:"RoleType" xml:"RoleType"`
 	ZoneId   string `json:"ZoneId" xml:"ZoneId"`
 	RoleId   string `json:"RoleId" xml:"RoleId"`
-	InsName  string `json:"InsName" xml:"InsName"`
 }

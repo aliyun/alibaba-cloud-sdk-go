@@ -17,9 +17,9 @@ package dds
 
 // Account is a nested struct in dds response
 type Account struct {
-	DBInstanceId       string `json:"DBInstanceId" xml:"DBInstanceId"`
-	AccountName        string `json:"AccountName" xml:"AccountName"`
+	CharacterType      string `json:"CharacterType" xml:"CharacterType"`
 	AccountStatus      string `json:"AccountStatus" xml:"AccountStatus"`
 	AccountDescription string `json:"AccountDescription" xml:"AccountDescription"`
-	CharacterType      string `json:"CharacterType" xml:"CharacterType"`
+	DBInstanceId       string `json:"DBInstanceId" xml:"DBInstanceId"`
+	AccountName        string `json:"AccountName" xml:"AccountName"`
 }

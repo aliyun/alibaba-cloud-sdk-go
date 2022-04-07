@@ -88,11 +88,11 @@ type DescribeDBInstancePerformanceRequest struct {
 // DescribeDBInstancePerformanceResponse is the response struct for api DescribeDBInstancePerformance
 type DescribeDBInstancePerformanceResponse struct {
 	*responses.BaseResponse
+	EndTime         string          `json:"EndTime" xml:"EndTime"`
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	DBInstanceId    string          `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine          string          `json:"Engine" xml:"Engine"`
 	StartTime       string          `json:"StartTime" xml:"StartTime"`
-	EndTime         string          `json:"EndTime" xml:"EndTime"`
+	Engine          string          `json:"Engine" xml:"Engine"`
 	PerformanceKeys PerformanceKeys `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 

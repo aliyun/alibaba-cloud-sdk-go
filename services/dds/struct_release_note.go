@@ -17,6 +17,6 @@ package dds
 
 // ReleaseNote is a nested struct in dds response
 type ReleaseNote struct {
-	KernelVersion string `json:"KernelVersion" xml:"KernelVersion"`
 	ReleaseNote   string `json:"ReleaseNote" xml:"ReleaseNote"`
+	KernelVersion string `json:"KernelVersion" xml:"KernelVersion"`
 }

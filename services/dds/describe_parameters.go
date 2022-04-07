@@ -84,11 +84,11 @@ type DescribeParametersRequest struct {
 // DescribeParametersResponse is the response struct for api DescribeParameters
 type DescribeParametersResponse struct {
 	*responses.BaseResponse
+	EngineVersion     string            `json:"EngineVersion" xml:"EngineVersion"`
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	Engine            string            `json:"Engine" xml:"Engine"`
-	EngineVersion     string            `json:"EngineVersion" xml:"EngineVersion"`
-	ConfigParameters  ConfigParameters  `json:"ConfigParameters" xml:"ConfigParameters"`
 	RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
+	ConfigParameters  ConfigParameters  `json:"ConfigParameters" xml:"ConfigParameters"`
 }
 
 // CreateDescribeParametersRequest creates a request to invoke DescribeParameters API

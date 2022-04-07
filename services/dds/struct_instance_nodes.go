@@ -17,12 +17,12 @@ package dds
 
 // InstanceNodes is a nested struct in dds response
 type InstanceNodes struct {
-	InsName           string `json:"InsName" xml:"InsName"`
-	Role              string `json:"Role" xml:"Role"`
-	NodeId            int    `json:"NodeId" xml:"NodeId"`
-	NodeType          string `json:"NodeType" xml:"NodeType"`
 	NodeIp            string `json:"NodeIp" xml:"NodeIp"`
-	Port              int    `json:"Port" xml:"Port"`
-	ZoneId            string `json:"ZoneId" xml:"ZoneId"`
 	DedicatedHostName string `json:"DedicatedHostName" xml:"DedicatedHostName"`
+	InsName           string `json:"InsName" xml:"InsName"`
+	NodeType          string `json:"NodeType" xml:"NodeType"`
+	ZoneId            string `json:"ZoneId" xml:"ZoneId"`
+	Role              string `json:"Role" xml:"Role"`
+	Port              int    `json:"Port" xml:"Port"`
+	NodeId            int    `json:"NodeId" xml:"NodeId"`
 }

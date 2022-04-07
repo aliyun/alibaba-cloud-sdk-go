@@ -84,8 +84,8 @@ type DeleteNodeRequest struct {
 // DeleteNodeResponse is the response struct for api DeleteNode
 type DeleteNodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    int    `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 

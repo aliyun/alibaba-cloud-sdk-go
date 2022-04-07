@@ -17,7 +17,7 @@ package dds
 
 // RdsEcsSecurityGroupRel is a nested struct in dds response
 type RdsEcsSecurityGroupRel struct {
-	RegionId        string `json:"RegionId" xml:"RegionId"`
 	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	NetType         string `json:"NetType" xml:"NetType"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
 }

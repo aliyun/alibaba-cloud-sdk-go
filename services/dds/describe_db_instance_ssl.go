@@ -82,10 +82,10 @@ type DescribeDBInstanceSSLRequest struct {
 // DescribeDBInstanceSSLResponse is the response struct for api DescribeDBInstanceSSL
 type DescribeDBInstanceSSLResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	SSLExpiredTime string `json:"SSLExpiredTime" xml:"SSLExpiredTime"`
-	CertCommonName string `json:"CertCommonName" xml:"CertCommonName"`
 	SSLStatus      string `json:"SSLStatus" xml:"SSLStatus"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	CertCommonName string `json:"CertCommonName" xml:"CertCommonName"`
 }
 
 // CreateDescribeDBInstanceSSLRequest creates a request to invoke DescribeDBInstanceSSL API

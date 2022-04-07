@@ -18,7 +18,7 @@ package dds
 // HistoricalParameter is a nested struct in dds response
 type HistoricalParameter struct {
 	ParameterName     string `json:"ParameterName" xml:"ParameterName"`
-	ModifyTime        string `json:"ModifyTime" xml:"ModifyTime"`
 	OldParameterValue string `json:"OldParameterValue" xml:"OldParameterValue"`
 	NewParameterValue string `json:"NewParameterValue" xml:"NewParameterValue"`
+	ModifyTime        string `json:"ModifyTime" xml:"ModifyTime"`
 }

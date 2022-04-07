@@ -17,25 +17,25 @@ package dds
 
 // DbInstance is a nested struct in dds response
 type DbInstance struct {
-	Region            string           `json:"Region" xml:"Region"`
-	ClusterId         string           `json:"ClusterId" xml:"ClusterId"`
-	ClusterName       string           `json:"ClusterName" xml:"ClusterName"`
-	InstanceId        string           `json:"InstanceId" xml:"InstanceId"`
-	InstanceName      string           `json:"InstanceName" xml:"InstanceName"`
-	InstanceStatus    string           `json:"InstanceStatus" xml:"InstanceStatus"`
-	EngineVersion     string           `json:"EngineVersion" xml:"EngineVersion"`
-	CharacterType     string           `json:"CharacterType" xml:"CharacterType"`
-	MaintainStartTime string           `json:"MaintainStartTime" xml:"MaintainStartTime"`
-	MaintainEndTime   string           `json:"MaintainEndTime" xml:"MaintainEndTime"`
-	RegionId          string           `json:"RegionId" xml:"RegionId"`
 	VpcId             string           `json:"VpcId" xml:"VpcId"`
+	CharacterType     string           `json:"CharacterType" xml:"CharacterType"`
 	VswitchId         string           `json:"VswitchId" xml:"VswitchId"`
-	ZoneId            string           `json:"ZoneId" xml:"ZoneId"`
-	CustomId          string           `json:"CustomId" xml:"CustomId"`
+	MaintainStartTime string           `json:"MaintainStartTime" xml:"MaintainStartTime"`
 	InstanceClass     string           `json:"InstanceClass" xml:"InstanceClass"`
-	Engine            string           `json:"Engine" xml:"Engine"`
-	StorageType       string           `json:"StorageType" xml:"StorageType"`
 	ConnectionDomain  string           `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	CreateTime        string           `json:"CreateTime" xml:"CreateTime"`
+	MaintainEndTime   string           `json:"MaintainEndTime" xml:"MaintainEndTime"`
+	StorageType       string           `json:"StorageType" xml:"StorageType"`
+	InstanceId        string           `json:"InstanceId" xml:"InstanceId"`
+	EngineVersion     string           `json:"EngineVersion" xml:"EngineVersion"`
+	RegionId          string           `json:"RegionId" xml:"RegionId"`
+	InstanceName      string           `json:"InstanceName" xml:"InstanceName"`
+	Region            string           `json:"Region" xml:"Region"`
+	ZoneId            string           `json:"ZoneId" xml:"ZoneId"`
+	ClusterName       string           `json:"ClusterName" xml:"ClusterName"`
+	InstanceStatus    string           `json:"InstanceStatus" xml:"InstanceStatus"`
+	Engine            string           `json:"Engine" xml:"Engine"`
+	CustomId          string           `json:"CustomId" xml:"CustomId"`
+	ClusterId         string           `json:"ClusterId" xml:"ClusterId"`
 	InstanceNodeList  InstanceNodeList `json:"InstanceNodeList" xml:"InstanceNodeList"`
 }

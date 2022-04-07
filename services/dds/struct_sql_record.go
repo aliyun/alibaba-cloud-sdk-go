@@ -17,13 +17,13 @@ package dds
 
 // SQLRecord is a nested struct in dds response
 type SQLRecord struct {
-	DBName              string `json:"DBName" xml:"DBName"`
-	AccountName         string `json:"AccountName" xml:"AccountName"`
 	HostAddress         string `json:"HostAddress" xml:"HostAddress"`
-	Syntax              string `json:"Syntax" xml:"Syntax"`
-	TotalExecutionTimes int64  `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
+	TableName           string `json:"TableName" xml:"TableName"`
 	ReturnRowCounts     int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	DBName              string `json:"DBName" xml:"DBName"`
 	ExecuteTime         string `json:"ExecuteTime" xml:"ExecuteTime"`
 	ThreadID            string `json:"ThreadID" xml:"ThreadID"`
-	TableName           string `json:"TableName" xml:"TableName"`
+	TotalExecutionTimes int64  `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
+	Syntax              string `json:"Syntax" xml:"Syntax"`
+	AccountName         string `json:"AccountName" xml:"AccountName"`
 }
