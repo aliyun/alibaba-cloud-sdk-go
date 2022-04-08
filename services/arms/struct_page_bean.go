@@ -17,25 +17,26 @@ package arms
 
 // PageBean is a nested struct in arms response
 type PageBean struct {
-	Page                 int64                `json:"Page" xml:"Page"`
-	PageSize             int                  `json:"PageSize" xml:"PageSize"`
-	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
-	Size                 int64                `json:"Size" xml:"Size"`
-	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
-	Total                int64                `json:"Total" xml:"Total"`
-	ListAlerts           []ListAlerts         `json:"ListAlerts" xml:"ListAlerts"`
-	EscalationPolicies   []EscalationPolicies `json:"EscalationPolicies" xml:"EscalationPolicies"`
-	RetcodeApps          []RetcodeApp         `json:"RetcodeApps" xml:"RetcodeApps"`
-	Event                []EventItem          `json:"Event" xml:"Event"`
-	WebhookContacts      []WebhookContacts    `json:"WebhookContacts" xml:"WebhookContacts"`
-	AlertRules           []AlertRules         `json:"AlertRules" xml:"AlertRules"`
-	SilencePolicies      []Policies           `json:"SilencePolicies" xml:"SilencePolicies"`
-	NotificationPolicies []Policies           `json:"NotificationPolicies" xml:"NotificationPolicies"`
-	AlarmHistories       []AlarmHistory       `json:"AlarmHistories" xml:"AlarmHistories"`
-	OnCallSchedules      []OnCallSchedules    `json:"OnCallSchedules" xml:"OnCallSchedules"`
-	AlertContactGroups   []ContactGroups      `json:"AlertContactGroups" xml:"AlertContactGroups"`
-	TraceApps            []TraceApp           `json:"TraceApps" xml:"TraceApps"`
-	AlertIMRobots        []IMRobots           `json:"AlertIMRobots" xml:"AlertIMRobots"`
-	AlertContacts        []Contacts           `json:"AlertContacts" xml:"AlertContacts"`
-	Contacts             []Contact            `json:"Contacts" xml:"Contacts"`
+	Page                    int64                `json:"Page" xml:"Page"`
+	PageSize                int                  `json:"PageSize" xml:"PageSize"`
+	TotalCount              int                  `json:"TotalCount" xml:"TotalCount"`
+	Size                    int64                `json:"Size" xml:"Size"`
+	PageNumber              int                  `json:"PageNumber" xml:"PageNumber"`
+	Total                   int64                `json:"Total" xml:"Total"`
+	EscalationPolicies      []EscalationPolicies `json:"EscalationPolicies" xml:"EscalationPolicies"`
+	RetcodeApps             []RetcodeApp         `json:"RetcodeApps" xml:"RetcodeApps"`
+	ListAlerts              []ListAlerts         `json:"ListAlerts" xml:"ListAlerts"`
+	Event                   []EventItem          `json:"Event" xml:"Event"`
+	WebhookContacts         []WebhookContacts    `json:"WebhookContacts" xml:"WebhookContacts"`
+	NotificationPolicies    []Policies           `json:"NotificationPolicies" xml:"NotificationPolicies"`
+	AlertRules              []AlertRules         `json:"AlertRules" xml:"AlertRules"`
+	SilencePolicies         []Policies           `json:"SilencePolicies" xml:"SilencePolicies"`
+	AlarmHistories          []AlarmHistory       `json:"AlarmHistories" xml:"AlarmHistories"`
+	EventBridgeIntegrations []Integrations       `json:"EventBridgeIntegrations" xml:"EventBridgeIntegrations"`
+	OnCallSchedules         []OnCallSchedules    `json:"OnCallSchedules" xml:"OnCallSchedules"`
+	AlertContactGroups      []ContactGroups      `json:"AlertContactGroups" xml:"AlertContactGroups"`
+	TraceApps               []TraceApp           `json:"TraceApps" xml:"TraceApps"`
+	AlertIMRobots           []IMRobots           `json:"AlertIMRobots" xml:"AlertIMRobots"`
+	AlertContacts           []Contacts           `json:"AlertContacts" xml:"AlertContacts"`
+	Contacts                []Contact            `json:"Contacts" xml:"Contacts"`
 }

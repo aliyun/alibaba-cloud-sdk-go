@@ -23,6 +23,7 @@ type NotificationPolicy struct {
 	EscalationPolicyId int64           `json:"EscalationPolicyId" xml:"EscalationPolicyId"`
 	Repeat             bool            `json:"Repeat" xml:"Repeat"`
 	RepeatInterval     int64           `json:"RepeatInterval" xml:"RepeatInterval"`
+	IntegrationId      int64           `json:"IntegrationId" xml:"IntegrationId"`
 	GroupRule          GroupRule       `json:"GroupRule" xml:"GroupRule"`
 	NotifyRule         NotifyRule      `json:"NotifyRule" xml:"NotifyRule"`
 	NotifyTemplate     NotifyTemplate  `json:"NotifyTemplate" xml:"NotifyTemplate"`

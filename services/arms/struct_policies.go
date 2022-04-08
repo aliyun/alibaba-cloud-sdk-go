@@ -18,6 +18,7 @@ package arms
 // Policies is a nested struct in arms response
 type Policies struct {
 	Name               string          `json:"Name" xml:"Name"`
+	IntegrationId      int64           `json:"IntegrationId" xml:"IntegrationId"`
 	EscalationPolicyId int64           `json:"EscalationPolicyId" xml:"EscalationPolicyId"`
 	Repeat             bool            `json:"Repeat" xml:"Repeat"`
 	RepeatInterval     int64           `json:"RepeatInterval" xml:"RepeatInterval"`

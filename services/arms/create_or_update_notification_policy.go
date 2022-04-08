@@ -73,6 +73,7 @@ type CreateOrUpdateNotificationPolicyRequest struct {
 	*requests.RpcRequest
 	EscalationPolicyId requests.Integer `position:"Body" name:"EscalationPolicyId"`
 	SendRecoverMessage requests.Boolean `position:"Body" name:"SendRecoverMessage"`
+	IntegrationId      requests.Integer `position:"Body" name:"IntegrationId"`
 	MatchingRules      string           `position:"Body" name:"MatchingRules"`
 	GroupRule          string           `position:"Body" name:"GroupRule"`
 	Repeat             requests.Boolean `position:"Body" name:"Repeat"`
