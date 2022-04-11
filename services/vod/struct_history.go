@@ -17,9 +17,9 @@ package vod
 
 // History is a nested struct in vod response
 type History struct {
-	CreationTime string `json:"CreationTime" xml:"CreationTime"`
 	Status       string `json:"Status" xml:"Status"`
-	Reason       string `json:"Reason" xml:"Reason"`
+	CreationTime string `json:"CreationTime" xml:"CreationTime"`
 	Comment      string `json:"Comment" xml:"Comment"`
+	Reason       string `json:"Reason" xml:"Reason"`
 	Auditor      string `json:"Auditor" xml:"Auditor"`
 }

@@ -84,8 +84,8 @@ type SubmitTranscodeJobsRequest struct {
 // SubmitTranscodeJobsResponse is the response struct for api SubmitTranscodeJobs
 type SubmitTranscodeJobsResponse struct {
 	*responses.BaseResponse
-	RequestId       string        `json:"RequestId" xml:"RequestId"`
 	TranscodeTaskId string        `json:"TranscodeTaskId" xml:"TranscodeTaskId"`
+	RequestId       string        `json:"RequestId" xml:"RequestId"`
 	TranscodeJobs   TranscodeJobs `json:"TranscodeJobs" xml:"TranscodeJobs"`
 }
 

@@ -17,11 +17,11 @@ package vod
 
 // AppPolicy is a nested struct in vod response
 type AppPolicy struct {
-	AppId            string `json:"AppId" xml:"AppId"`
 	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-	PolicyName       string `json:"PolicyName" xml:"PolicyName"`
-	PolicyType       string `json:"PolicyType" xml:"PolicyType"`
-	PolicyValue      string `json:"PolicyValue" xml:"PolicyValue"`
 	Description      string `json:"Description" xml:"Description"`
+	AppId            string `json:"AppId" xml:"AppId"`
+	PolicyValue      string `json:"PolicyValue" xml:"PolicyValue"`
+	PolicyName       string `json:"PolicyName" xml:"PolicyName"`
 	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
+	PolicyType       string `json:"PolicyType" xml:"PolicyType"`
 }

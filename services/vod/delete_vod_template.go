@@ -77,8 +77,8 @@ type DeleteVodTemplateRequest struct {
 // DeleteVodTemplateResponse is the response struct for api DeleteVodTemplate
 type DeleteVodTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	VodTemplateId string `json:"VodTemplateId" xml:"VodTemplateId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteVodTemplateRequest creates a request to invoke DeleteVodTemplate API

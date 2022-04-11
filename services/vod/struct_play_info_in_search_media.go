@@ -17,19 +17,19 @@ package vod
 
 // PlayInfoInSearchMedia is a nested struct in vod response
 type PlayInfoInSearchMedia struct {
-	Width      string `json:"Width" xml:"Width"`
-	Height     string `json:"Height" xml:"Height"`
-	Size       string `json:"Size" xml:"Size"`
-	PlayURL    string `json:"PlayURL" xml:"PlayURL"`
-	Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-	Definition string `json:"Definition" xml:"Definition"`
-	Duration   string `json:"Duration" xml:"Duration"`
-	Format     string `json:"Format" xml:"Format"`
-	Fps        string `json:"Fps" xml:"Fps"`
-	Encrypt    int64  `json:"Encrypt" xml:"Encrypt"`
-	Plaintext  string `json:"Plaintext" xml:"Plaintext"`
 	Complexity string `json:"Complexity" xml:"Complexity"`
-	StreamType string `json:"StreamType" xml:"StreamType"`
+	Height     string `json:"Height" xml:"Height"`
+	Bitrate    string `json:"Bitrate" xml:"Bitrate"`
+	Encrypt    int64  `json:"Encrypt" xml:"Encrypt"`
+	Definition string `json:"Definition" xml:"Definition"`
 	Rand       string `json:"Rand" xml:"Rand"`
+	StreamType string `json:"StreamType" xml:"StreamType"`
 	JobId      string `json:"JobId" xml:"JobId"`
+	Width      string `json:"Width" xml:"Width"`
+	Size       string `json:"Size" xml:"Size"`
+	Plaintext  string `json:"Plaintext" xml:"Plaintext"`
+	PlayURL    string `json:"PlayURL" xml:"PlayURL"`
+	Duration   string `json:"Duration" xml:"Duration"`
+	Fps        string `json:"Fps" xml:"Fps"`
+	Format     string `json:"Format" xml:"Format"`
 }

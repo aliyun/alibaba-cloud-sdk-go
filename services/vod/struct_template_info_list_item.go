@@ -17,12 +17,12 @@ package vod
 
 // TemplateInfoListItem is a nested struct in vod response
 type TemplateInfoListItem struct {
-	TemplateId     string `json:"TemplateId" xml:"TemplateId"`
-	TemplateType   string `json:"TemplateType" xml:"TemplateType"`
-	TemplateName   string `json:"TemplateName" xml:"TemplateName"`
-	TemplateConfig string `json:"TemplateConfig" xml:"TemplateConfig"`
-	Source         string `json:"Source" xml:"Source"`
-	IsDefault      string `json:"IsDefault" xml:"IsDefault"`
 	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
+	IsDefault      string `json:"IsDefault" xml:"IsDefault"`
+	TemplateType   string `json:"TemplateType" xml:"TemplateType"`
+	TemplateConfig string `json:"TemplateConfig" xml:"TemplateConfig"`
+	TemplateName   string `json:"TemplateName" xml:"TemplateName"`
+	Source         string `json:"Source" xml:"Source"`
+	TemplateId     string `json:"TemplateId" xml:"TemplateId"`
 	ModifyTime     string `json:"ModifyTime" xml:"ModifyTime"`
 }

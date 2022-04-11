@@ -80,8 +80,8 @@ type GetUploadDetailsRequest struct {
 type GetUploadDetailsResponse struct {
 	*responses.BaseResponse
 	RequestId         string         `json:"RequestId" xml:"RequestId"`
-	NonExistMediaIds  []string       `json:"NonExistMediaIds" xml:"NonExistMediaIds"`
 	ForbiddenMediaIds []string       `json:"ForbiddenMediaIds" xml:"ForbiddenMediaIds"`
+	NonExistMediaIds  []string       `json:"NonExistMediaIds" xml:"NonExistMediaIds"`
 	UploadDetails     []UploadDetail `json:"UploadDetails" xml:"UploadDetails"`
 }
 

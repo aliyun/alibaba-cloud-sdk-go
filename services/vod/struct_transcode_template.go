@@ -17,23 +17,23 @@ package vod
 
 // TranscodeTemplate is a nested struct in vod response
 type TranscodeTemplate struct {
-	TranscodeTemplateId  string   `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
-	Video                string   `json:"Video" xml:"Video"`
-	Audio                string   `json:"Audio" xml:"Audio"`
-	Container            string   `json:"Container" xml:"Container"`
-	MuxConfig            string   `json:"MuxConfig" xml:"MuxConfig"`
-	TransConfig          string   `json:"TransConfig" xml:"TransConfig"`
-	Definition           string   `json:"Definition" xml:"Definition"`
-	EncryptSetting       string   `json:"EncryptSetting" xml:"EncryptSetting"`
-	PackageSetting       string   `json:"PackageSetting" xml:"PackageSetting"`
-	SubtitleList         string   `json:"SubtitleList" xml:"SubtitleList"`
-	OpeningList          string   `json:"OpeningList" xml:"OpeningList"`
-	TailSlateList        string   `json:"TailSlateList" xml:"TailSlateList"`
-	TemplateName         string   `json:"TemplateName" xml:"TemplateName"`
-	TranscodeFileRegular string   `json:"TranscodeFileRegular" xml:"TranscodeFileRegular"`
-	Clip                 string   `json:"Clip" xml:"Clip"`
-	Rotate               string   `json:"Rotate" xml:"Rotate"`
 	Type                 string   `json:"Type" xml:"Type"`
+	Video                string   `json:"Video" xml:"Video"`
+	TransConfig          string   `json:"TransConfig" xml:"TransConfig"`
+	Rotate               string   `json:"Rotate" xml:"Rotate"`
+	TranscodeTemplateId  string   `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
+	TemplateName         string   `json:"TemplateName" xml:"TemplateName"`
+	EncryptSetting       string   `json:"EncryptSetting" xml:"EncryptSetting"`
+	Audio                string   `json:"Audio" xml:"Audio"`
+	TranscodeFileRegular string   `json:"TranscodeFileRegular" xml:"TranscodeFileRegular"`
+	Container            string   `json:"Container" xml:"Container"`
+	Clip                 string   `json:"Clip" xml:"Clip"`
+	Definition           string   `json:"Definition" xml:"Definition"`
+	PackageSetting       string   `json:"PackageSetting" xml:"PackageSetting"`
+	OpeningList          string   `json:"OpeningList" xml:"OpeningList"`
 	UserData             string   `json:"UserData" xml:"UserData"`
+	SubtitleList         string   `json:"SubtitleList" xml:"SubtitleList"`
+	MuxConfig            string   `json:"MuxConfig" xml:"MuxConfig"`
+	TailSlateList        string   `json:"TailSlateList" xml:"TailSlateList"`
 	WatermarkIds         []string `json:"WatermarkIds" xml:"WatermarkIds"`
 }

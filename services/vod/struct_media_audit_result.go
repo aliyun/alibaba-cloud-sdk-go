@@ -17,9 +17,9 @@ package vod
 
 // MediaAuditResult is a nested struct in vod response
 type MediaAuditResult struct {
+	Suggestion      string            `json:"Suggestion" xml:"Suggestion"`
 	AbnormalModules string            `json:"AbnormalModules" xml:"AbnormalModules"`
 	Label           string            `json:"Label" xml:"Label"`
-	Suggestion      string            `json:"Suggestion" xml:"Suggestion"`
 	VideoResult     VideoResult       `json:"VideoResult" xml:"VideoResult"`
 	AudioResult     []AudioResultItem `json:"AudioResult" xml:"AudioResult"`
 	ImageResult     []ImageResultItem `json:"ImageResult" xml:"ImageResult"`

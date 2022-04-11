@@ -78,8 +78,8 @@ type UpdateVideoInfosRequest struct {
 type UpdateVideoInfosResponse struct {
 	*responses.BaseResponse
 	RequestId         string   `json:"RequestId" xml:"RequestId"`
-	NonExistVideoIds  []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
 	ForbiddenVideoIds []string `json:"ForbiddenVideoIds" xml:"ForbiddenVideoIds"`
+	NonExistVideoIds  []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
 }
 
 // CreateUpdateVideoInfosRequest creates a request to invoke UpdateVideoInfos API

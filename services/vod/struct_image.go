@@ -17,19 +17,19 @@ package vod
 
 // Image is a nested struct in vod response
 type Image struct {
-	Title            string `json:"Title" xml:"Title"`
-	ImageId          string `json:"ImageId" xml:"ImageId"`
-	CateId           int64  `json:"CateId" xml:"CateId"`
-	CateName         string `json:"CateName" xml:"CateName"`
-	Ext              string `json:"Ext" xml:"Ext"`
-	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
-	Tags             string `json:"Tags" xml:"Tags"`
-	Type             string `json:"Type" xml:"Type"`
-	URL              string `json:"URL" xml:"URL"`
-	Status           string `json:"Status" xml:"Status"`
-	Description      string `json:"Description" xml:"Description"`
 	StorageLocation  string `json:"StorageLocation" xml:"StorageLocation"`
+	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+	Type             string `json:"Type" xml:"Type"`
+	Status           string `json:"Status" xml:"Status"`
+	CateId           int64  `json:"CateId" xml:"CateId"`
+	Tags             string `json:"Tags" xml:"Tags"`
+	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
+	CateName         string `json:"CateName" xml:"CateName"`
+	Description      string `json:"Description" xml:"Description"`
 	AppId            string `json:"AppId" xml:"AppId"`
+	URL              string `json:"URL" xml:"URL"`
+	Title            string `json:"Title" xml:"Title"`
+	Ext              string `json:"Ext" xml:"Ext"`
+	ImageId          string `json:"ImageId" xml:"ImageId"`
 }

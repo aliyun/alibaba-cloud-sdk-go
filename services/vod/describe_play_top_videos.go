@@ -80,8 +80,8 @@ type DescribePlayTopVideosRequest struct {
 // DescribePlayTopVideosResponse is the response struct for api DescribePlayTopVideos
 type DescribePlayTopVideosResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	PageNo        int64         `json:"PageNo" xml:"PageNo"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	PageSize      int64         `json:"PageSize" xml:"PageSize"`
 	TotalNum      int64         `json:"TotalNum" xml:"TotalNum"`
 	TopPlayVideos TopPlayVideos `json:"TopPlayVideos" xml:"TopPlayVideos"`

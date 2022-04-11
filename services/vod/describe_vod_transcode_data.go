@@ -83,8 +83,8 @@ type DescribeVodTranscodeDataRequest struct {
 // DescribeVodTranscodeDataResponse is the response struct for api DescribeVodTranscodeData
 type DescribeVodTranscodeDataResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	DataInterval  string        `json:"DataInterval" xml:"DataInterval"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	TranscodeData TranscodeData `json:"TranscodeData" xml:"TranscodeData"`
 }
 

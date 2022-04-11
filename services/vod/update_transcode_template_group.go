@@ -80,8 +80,8 @@ type UpdateTranscodeTemplateGroupRequest struct {
 // UpdateTranscodeTemplateGroupResponse is the response struct for api UpdateTranscodeTemplateGroup
 type UpdateTranscodeTemplateGroupResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
 	TranscodeTemplateGroupId string `json:"TranscodeTemplateGroupId" xml:"TranscodeTemplateGroupId"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateTranscodeTemplateGroupRequest creates a request to invoke UpdateTranscodeTemplateGroup API

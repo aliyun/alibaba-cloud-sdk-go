@@ -77,8 +77,8 @@ type DeleteAITemplateRequest struct {
 // DeleteAITemplateResponse is the response struct for api DeleteAITemplate
 type DeleteAITemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteAITemplateRequest creates a request to invoke DeleteAITemplate API

@@ -25,9 +25,9 @@ type ListItem struct {
 	Url            string `json:"Url" xml:"Url"`
 	StartTime      int64  `json:"StartTime" xml:"StartTime"`
 	PornScore      string `json:"PornScore" xml:"PornScore"`
-	TerrorismLabel string `json:"TerrorismLabel" xml:"TerrorismLabel"`
 	TerrorismScore string `json:"TerrorismScore" xml:"TerrorismScore"`
 	LogoScore      string `json:"LogoScore" xml:"LogoScore"`
+	TerrorismLabel string `json:"TerrorismLabel" xml:"TerrorismLabel"`
 	LiveLabel      string `json:"LiveLabel" xml:"LiveLabel"`
 	LiveScore      string `json:"LiveScore" xml:"LiveScore"`
 	LogoLabel      string `json:"LogoLabel" xml:"LogoLabel"`

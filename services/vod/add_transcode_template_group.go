@@ -80,8 +80,8 @@ type AddTranscodeTemplateGroupRequest struct {
 // AddTranscodeTemplateGroupResponse is the response struct for api AddTranscodeTemplateGroup
 type AddTranscodeTemplateGroupResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
 	TranscodeTemplateGroupId string `json:"TranscodeTemplateGroupId" xml:"TranscodeTemplateGroupId"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddTranscodeTemplateGroupRequest creates a request to invoke AddTranscodeTemplateGroup API

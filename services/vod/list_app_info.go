@@ -80,8 +80,8 @@ type ListAppInfoRequest struct {
 // ListAppInfoResponse is the response struct for api ListAppInfo
 type ListAppInfoResponse struct {
 	*responses.BaseResponse
-	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	Total       int       `json:"Total" xml:"Total"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	AppInfoList []AppInfo `json:"AppInfoList" xml:"AppInfoList"`
 }
 

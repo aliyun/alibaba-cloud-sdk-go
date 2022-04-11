@@ -21,6 +21,6 @@ type Category struct {
 	Level    int64  `json:"Level" xml:"Level"`
 	SubTotal int64  `json:"SubTotal" xml:"SubTotal"`
 	ParentId int64  `json:"ParentId" xml:"ParentId"`
-	CateId   int64  `json:"CateId" xml:"CateId"`
 	Type     string `json:"Type" xml:"Type"`
+	CateId   int64  `json:"CateId" xml:"CateId"`
 }

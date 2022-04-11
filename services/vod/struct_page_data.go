@@ -17,13 +17,13 @@ package vod
 
 // PageData is a nested struct in vod response
 type PageData struct {
-	DomainName   string                          `json:"DomainName" xml:"DomainName"`
+	GmtCreated   string                          `json:"GmtCreated" xml:"GmtCreated"`
+	SslProtocol  string                          `json:"SslProtocol" xml:"SslProtocol"`
+	Description  string                          `json:"Description" xml:"Description"`
+	Sandbox      string                          `json:"Sandbox" xml:"Sandbox"`
 	Cname        string                          `json:"Cname" xml:"Cname"`
 	DomainStatus string                          `json:"DomainStatus" xml:"DomainStatus"`
-	GmtCreated   string                          `json:"GmtCreated" xml:"GmtCreated"`
 	GmtModified  string                          `json:"GmtModified" xml:"GmtModified"`
-	Description  string                          `json:"Description" xml:"Description"`
-	SslProtocol  string                          `json:"SslProtocol" xml:"SslProtocol"`
-	Sandbox      string                          `json:"Sandbox" xml:"Sandbox"`
+	DomainName   string                          `json:"DomainName" xml:"DomainName"`
 	Sources      SourcesInDescribeVodUserDomains `json:"Sources" xml:"Sources"`
 }

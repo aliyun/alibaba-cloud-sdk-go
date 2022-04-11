@@ -83,8 +83,8 @@ type SubmitAIImageAuditJobRequest struct {
 // SubmitAIImageAuditJobResponse is the response struct for api SubmitAIImageAuditJob
 type SubmitAIImageAuditJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSubmitAIImageAuditJobRequest creates a request to invoke SubmitAIImageAuditJob API

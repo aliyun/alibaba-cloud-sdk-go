@@ -17,17 +17,17 @@ package vod
 
 // UploadDetail is a nested struct in vod response
 type UploadDetail struct {
-	MediaId          string  `json:"MediaId" xml:"MediaId"`
-	Title            string  `json:"Title" xml:"Title"`
-	FileSize         int64   `json:"FileSize" xml:"FileSize"`
 	Status           string  `json:"Status" xml:"Status"`
-	UploadStatus     string  `json:"UploadStatus" xml:"UploadStatus"`
 	CreationTime     string  `json:"CreationTime" xml:"CreationTime"`
+	UploadSource     string  `json:"UploadSource" xml:"UploadSource"`
+	UploadIP         string  `json:"UploadIP" xml:"UploadIP"`
+	DeviceModel      string  `json:"DeviceModel" xml:"DeviceModel"`
 	ModificationTime string  `json:"ModificationTime" xml:"ModificationTime"`
 	CompletionTime   string  `json:"CompletionTime" xml:"CompletionTime"`
+	MediaId          string  `json:"MediaId" xml:"MediaId"`
 	UploadSize       int64   `json:"UploadSize" xml:"UploadSize"`
 	UploadRatio      float64 `json:"UploadRatio" xml:"UploadRatio"`
-	UploadIP         string  `json:"UploadIP" xml:"UploadIP"`
-	UploadSource     string  `json:"UploadSource" xml:"UploadSource"`
-	DeviceModel      string  `json:"DeviceModel" xml:"DeviceModel"`
+	UploadStatus     string  `json:"UploadStatus" xml:"UploadStatus"`
+	Title            string  `json:"Title" xml:"Title"`
+	FileSize         int64   `json:"FileSize" xml:"FileSize"`
 }

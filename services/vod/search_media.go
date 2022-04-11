@@ -86,8 +86,8 @@ type SearchMediaRequest struct {
 type SearchMediaResponse struct {
 	*responses.BaseResponse
 	RequestId   string  `json:"RequestId" xml:"RequestId"`
-	ScrollToken string  `json:"ScrollToken" xml:"ScrollToken"`
 	Total       int64   `json:"Total" xml:"Total"`
+	ScrollToken string  `json:"ScrollToken" xml:"ScrollToken"`
 	MediaList   []Media `json:"MediaList" xml:"MediaList"`
 }
 

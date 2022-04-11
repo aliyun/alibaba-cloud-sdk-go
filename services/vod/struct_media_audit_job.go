@@ -17,13 +17,13 @@ package vod
 
 // MediaAuditJob is a nested struct in vod response
 type MediaAuditJob struct {
-	JobId        string `json:"JobId" xml:"JobId"`
-	MediaId      string `json:"MediaId" xml:"MediaId"`
+	CreationTime string `json:"CreationTime" xml:"CreationTime"`
 	Type         string `json:"Type" xml:"Type"`
 	Status       string `json:"Status" xml:"Status"`
+	CompleteTime string `json:"CompleteTime" xml:"CompleteTime"`
+	JobId        string `json:"JobId" xml:"JobId"`
 	Code         string `json:"Code" xml:"Code"`
 	Message      string `json:"Message" xml:"Message"`
-	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	CompleteTime string `json:"CompleteTime" xml:"CompleteTime"`
+	MediaId      string `json:"MediaId" xml:"MediaId"`
 	Data         Data   `json:"Data" xml:"Data"`
 }

@@ -18,15 +18,15 @@ package vod
 // DomainDetail is a nested struct in vod response
 type DomainDetail struct {
 	GmtCreated   string                           `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified  string                           `json:"GmtModified" xml:"GmtModified"`
-	DomainStatus string                           `json:"DomainStatus" xml:"DomainStatus"`
-	Cname        string                           `json:"Cname" xml:"Cname"`
-	DomainName   string                           `json:"DomainName" xml:"DomainName"`
+	Weight       string                           `json:"Weight" xml:"Weight"`
+	SSLPub       string                           `json:"SSLPub" xml:"SSLPub"`
 	Description  string                           `json:"Description" xml:"Description"`
 	SSLProtocol  string                           `json:"SSLProtocol" xml:"SSLProtocol"`
-	SSLPub       string                           `json:"SSLPub" xml:"SSLPub"`
-	Scope        string                           `json:"Scope" xml:"Scope"`
 	CertName     string                           `json:"CertName" xml:"CertName"`
-	Weight       string                           `json:"Weight" xml:"Weight"`
+	Scope        string                           `json:"Scope" xml:"Scope"`
+	Cname        string                           `json:"Cname" xml:"Cname"`
+	DomainStatus string                           `json:"DomainStatus" xml:"DomainStatus"`
+	GmtModified  string                           `json:"GmtModified" xml:"GmtModified"`
+	DomainName   string                           `json:"DomainName" xml:"DomainName"`
 	Sources      SourcesInDescribeVodDomainDetail `json:"Sources" xml:"Sources"`
 }

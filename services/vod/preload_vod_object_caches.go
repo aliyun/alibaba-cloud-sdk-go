@@ -79,8 +79,8 @@ type PreloadVodObjectCachesRequest struct {
 // PreloadVodObjectCachesResponse is the response struct for api PreloadVodObjectCaches
 type PreloadVodObjectCachesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	PreloadTaskId string `json:"PreloadTaskId" xml:"PreloadTaskId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePreloadVodObjectCachesRequest creates a request to invoke PreloadVodObjectCaches API

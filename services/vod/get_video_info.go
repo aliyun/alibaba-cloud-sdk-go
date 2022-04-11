@@ -79,8 +79,8 @@ type GetVideoInfoRequest struct {
 // GetVideoInfoResponse is the response struct for api GetVideoInfo
 type GetVideoInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
 	AI        string              `json:"AI" xml:"AI"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
 	Video     VideoInGetVideoInfo `json:"Video" xml:"Video"`
 }
 

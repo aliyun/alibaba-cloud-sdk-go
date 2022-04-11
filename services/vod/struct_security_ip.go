@@ -17,8 +17,8 @@ package vod
 
 // SecurityIp is a nested struct in vod response
 type SecurityIp struct {
-	SecurityGroupName string `json:"SecurityGroupName" xml:"SecurityGroupName"`
-	Ips               string `json:"Ips" xml:"Ips"`
 	CreationTime      string `json:"CreationTime" xml:"CreationTime"`
+	Ips               string `json:"Ips" xml:"Ips"`
 	ModificationTime  string `json:"ModificationTime" xml:"ModificationTime"`
+	SecurityGroupName string `json:"SecurityGroupName" xml:"SecurityGroupName"`
 }

@@ -92,8 +92,8 @@ type CreateUploadVideoRequest struct {
 type CreateUploadVideoResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
-	VideoId       string `json:"VideoId" xml:"VideoId"`
 	UploadAddress string `json:"UploadAddress" xml:"UploadAddress"`
+	VideoId       string `json:"VideoId" xml:"VideoId"`
 	UploadAuth    string `json:"UploadAuth" xml:"UploadAuth"`
 }
 

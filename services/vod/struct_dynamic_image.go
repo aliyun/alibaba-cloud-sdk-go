@@ -17,15 +17,15 @@ package vod
 
 // DynamicImage is a nested struct in vod response
 type DynamicImage struct {
-	VideoId        string `json:"VideoId" xml:"VideoId"`
-	DynamicImageId string `json:"DynamicImageId" xml:"DynamicImageId"`
-	JobId          string `json:"JobId" xml:"JobId"`
+	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
 	FileURL        string `json:"FileURL" xml:"FileURL"`
+	VideoId        string `json:"VideoId" xml:"VideoId"`
 	Width          string `json:"Width" xml:"Width"`
+	JobId          string `json:"JobId" xml:"JobId"`
 	Height         string `json:"Height" xml:"Height"`
+	Fps            string `json:"Fps" xml:"Fps"`
 	Duration       string `json:"Duration" xml:"Duration"`
 	Format         string `json:"Format" xml:"Format"`
+	DynamicImageId string `json:"DynamicImageId" xml:"DynamicImageId"`
 	FileSize       string `json:"FileSize" xml:"FileSize"`
-	Fps            string `json:"Fps" xml:"Fps"`
-	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
 }

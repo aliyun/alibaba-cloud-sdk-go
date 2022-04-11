@@ -79,8 +79,8 @@ type AddAITemplateRequest struct {
 // AddAITemplateResponse is the response struct for api AddAITemplate
 type AddAITemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddAITemplateRequest creates a request to invoke AddAITemplate API

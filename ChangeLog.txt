@@ -1,3 +1,7 @@
+2022-04-11 Version: v1.61.1554
+- Generated 2017-03-21 for `vod`.
+- Set multiple apis to public.
+
 2022-04-08 Version: v1.61.1553
 - Generated 2019-08-08 for `ARMS`.
 - Add ListEventBridgeIntegrations.

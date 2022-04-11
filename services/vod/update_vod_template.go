@@ -79,8 +79,8 @@ type UpdateVodTemplateRequest struct {
 // UpdateVodTemplateResponse is the response struct for api UpdateVodTemplate
 type UpdateVodTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	VodTemplateId string `json:"VodTemplateId" xml:"VodTemplateId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateVodTemplateRequest creates a request to invoke UpdateVodTemplate API

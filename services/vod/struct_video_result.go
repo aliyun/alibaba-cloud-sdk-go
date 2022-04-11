@@ -17,11 +17,11 @@ package vod
 
 // VideoResult is a nested struct in vod response
 type VideoResult struct {
-	Suggestion      string          `json:"Suggestion" xml:"Suggestion"`
 	Label           string          `json:"Label" xml:"Label"`
-	LogoResult      LogoResult      `json:"LogoResult" xml:"LogoResult"`
+	Suggestion      string          `json:"Suggestion" xml:"Suggestion"`
 	AdResult        AdResult        `json:"AdResult" xml:"AdResult"`
-	LiveResult      LiveResult      `json:"LiveResult" xml:"LiveResult"`
+	LogoResult      LogoResult      `json:"LogoResult" xml:"LogoResult"`
 	PornResult      PornResult      `json:"PornResult" xml:"PornResult"`
 	TerrorismResult TerrorismResult `json:"TerrorismResult" xml:"TerrorismResult"`
+	LiveResult      LiveResult      `json:"LiveResult" xml:"LiveResult"`
 }

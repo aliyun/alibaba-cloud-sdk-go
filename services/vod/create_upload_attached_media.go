@@ -89,12 +89,12 @@ type CreateUploadAttachedMediaRequest struct {
 // CreateUploadAttachedMediaResponse is the response struct for api CreateUploadAttachedMedia
 type CreateUploadAttachedMediaResponse struct {
 	*responses.BaseResponse
+	FileURL       string `json:"FileURL" xml:"FileURL"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
+	UploadAddress string `json:"UploadAddress" xml:"UploadAddress"`
 	MediaId       string `json:"MediaId" xml:"MediaId"`
 	MediaURL      string `json:"MediaURL" xml:"MediaURL"`
-	UploadAddress string `json:"UploadAddress" xml:"UploadAddress"`
 	UploadAuth    string `json:"UploadAuth" xml:"UploadAuth"`
-	FileURL       string `json:"FileURL" xml:"FileURL"`
 }
 
 // CreateCreateUploadAttachedMediaRequest creates a request to invoke CreateUploadAttachedMedia API

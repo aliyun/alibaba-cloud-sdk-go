@@ -17,10 +17,10 @@ package vod
 
 // VideoPlayStatisDetail is a nested struct in vod response
 type VideoPlayStatisDetail struct {
-	Date         string `json:"Date" xml:"Date"`
 	PlayDuration string `json:"PlayDuration" xml:"PlayDuration"`
+	Date         string `json:"Date" xml:"Date"`
 	VV           string `json:"VV" xml:"VV"`
+	Title        string `json:"Title" xml:"Title"`
 	UV           string `json:"UV" xml:"UV"`
 	PlayRange    string `json:"PlayRange" xml:"PlayRange"`
-	Title        string `json:"Title" xml:"Title"`
 }

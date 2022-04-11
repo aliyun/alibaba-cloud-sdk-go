@@ -17,21 +17,21 @@ package vod
 
 // VideoInGetVideoList is a nested struct in vod response
 type VideoInGetVideoList struct {
-	VideoId          string                  `json:"VideoId" xml:"VideoId"`
-	Title            string                  `json:"Title" xml:"Title"`
-	Tags             string                  `json:"Tags" xml:"Tags"`
-	Status           string                  `json:"Status" xml:"Status"`
-	Size             int64                   `json:"Size" xml:"Size"`
-	Duration         float64                 `json:"Duration" xml:"Duration"`
-	Description      string                  `json:"Description" xml:"Description"`
-	CreateTime       string                  `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime       string                  `json:"ModifyTime" xml:"ModifyTime"`
-	ModificationTime string                  `json:"ModificationTime" xml:"ModificationTime"`
-	CreationTime     string                  `json:"CreationTime" xml:"CreationTime"`
-	CoverURL         string                  `json:"CoverURL" xml:"CoverURL"`
-	CateId           int64                   `json:"CateId" xml:"CateId"`
-	CateName         string                  `json:"CateName" xml:"CateName"`
 	StorageLocation  string                  `json:"StorageLocation" xml:"StorageLocation"`
+	Status           string                  `json:"Status" xml:"Status"`
+	CreationTime     string                  `json:"CreationTime" xml:"CreationTime"`
+	CateId           int64                   `json:"CateId" xml:"CateId"`
+	VideoId          string                  `json:"VideoId" xml:"VideoId"`
+	CreateTime       string                  `json:"CreateTime" xml:"CreateTime"`
+	Tags             string                  `json:"Tags" xml:"Tags"`
+	ModificationTime string                  `json:"ModificationTime" xml:"ModificationTime"`
+	CateName         string                  `json:"CateName" xml:"CateName"`
+	Description      string                  `json:"Description" xml:"Description"`
 	AppId            string                  `json:"AppId" xml:"AppId"`
+	Size             int64                   `json:"Size" xml:"Size"`
+	CoverURL         string                  `json:"CoverURL" xml:"CoverURL"`
+	Duration         float64                 `json:"Duration" xml:"Duration"`
+	Title            string                  `json:"Title" xml:"Title"`
+	ModifyTime       string                  `json:"ModifyTime" xml:"ModifyTime"`
 	Snapshots        SnapshotsInGetVideoList `json:"Snapshots" xml:"Snapshots"`
 }

@@ -17,21 +17,21 @@ package vod
 
 // TranscodeJobInfoSummary is a nested struct in vod response
 type TranscodeJobInfoSummary struct {
-	TranscodeTemplateId string   `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
-	TranscodeJobStatus  string   `json:"TranscodeJobStatus" xml:"TranscodeJobStatus"`
 	CreationTime        string   `json:"CreationTime" xml:"CreationTime"`
-	CompleteTime        string   `json:"CompleteTime" xml:"CompleteTime"`
-	TranscodeProgress   int64    `json:"TranscodeProgress" xml:"TranscodeProgress"`
-	ErrorCode           string   `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage        string   `json:"ErrorMessage" xml:"ErrorMessage"`
-	Definition          string   `json:"Definition" xml:"Definition"`
 	Encryption          string   `json:"Encryption" xml:"Encryption"`
-	Width               string   `json:"Width" xml:"Width"`
 	Height              string   `json:"Height" xml:"Height"`
+	TranscodeProgress   int64    `json:"TranscodeProgress" xml:"TranscodeProgress"`
+	TranscodeTemplateId string   `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
 	Bitrate             string   `json:"Bitrate" xml:"Bitrate"`
-	Fps                 string   `json:"Fps" xml:"Fps"`
-	Format              string   `json:"Format" xml:"Format"`
+	Definition          string   `json:"Definition" xml:"Definition"`
+	ErrorCode           string   `json:"ErrorCode" xml:"ErrorCode"`
+	CompleteTime        string   `json:"CompleteTime" xml:"CompleteTime"`
+	Width               string   `json:"Width" xml:"Width"`
 	Duration            string   `json:"Duration" xml:"Duration"`
+	Fps                 string   `json:"Fps" xml:"Fps"`
+	TranscodeJobStatus  string   `json:"TranscodeJobStatus" xml:"TranscodeJobStatus"`
 	Filesize            int64    `json:"Filesize" xml:"Filesize"`
+	Format              string   `json:"Format" xml:"Format"`
 	WatermarkIdList     []string `json:"WatermarkIdList" xml:"WatermarkIdList"`
 }

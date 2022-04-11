@@ -17,32 +17,32 @@ package vod
 
 // Audio is a nested struct in vod response
 type Audio struct {
-	AudioId           string                  `json:"AudioId" xml:"AudioId"`
-	MediaSource       string                  `json:"MediaSource" xml:"MediaSource"`
-	Title             string                  `json:"Title" xml:"Title"`
-	Tags              string                  `json:"Tags" xml:"Tags"`
 	Status            string                  `json:"Status" xml:"Status"`
-	Size              int64                   `json:"Size" xml:"Size"`
-	Duration          float64                 `json:"Duration" xml:"Duration"`
-	Description       string                  `json:"Description" xml:"Description"`
-	ModificationTime  string                  `json:"ModificationTime" xml:"ModificationTime"`
 	CreationTime      string                  `json:"CreationTime" xml:"CreationTime"`
-	CoverURL          string                  `json:"CoverURL" xml:"CoverURL"`
-	CateId            int64                   `json:"CateId" xml:"CateId"`
-	CateName          string                  `json:"CateName" xml:"CateName"`
-	DownloadSwitch    string                  `json:"DownloadSwitch" xml:"DownloadSwitch"`
-	PreprocessStatus  string                  `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	StorageLocation   string                  `json:"StorageLocation" xml:"StorageLocation"`
-	RegionId          string                  `json:"RegionId" xml:"RegionId"`
-	TranscodeMode     string                  `json:"TranscodeMode" xml:"TranscodeMode"`
+	CateId            int64                   `json:"CateId" xml:"CateId"`
+	AuditTemplateId   string                  `json:"AuditTemplateId" xml:"AuditTemplateId"`
+	Tags              string                  `json:"Tags" xml:"Tags"`
+	ModificationTime  string                  `json:"ModificationTime" xml:"ModificationTime"`
+	AuditManualStatus string                  `json:"AuditManualStatus" xml:"AuditManualStatus"`
+	MediaSource       string                  `json:"MediaSource" xml:"MediaSource"`
+	Description       string                  `json:"Description" xml:"Description"`
+	AppId             string                  `json:"AppId" xml:"AppId"`
+	CoverURL          string                  `json:"CoverURL" xml:"CoverURL"`
+	AudioId           string                  `json:"AudioId" xml:"AudioId"`
 	AuditStatus       string                  `json:"AuditStatus" xml:"AuditStatus"`
 	AuditAIStatus     string                  `json:"AuditAIStatus" xml:"AuditAIStatus"`
-	AuditManualStatus string                  `json:"AuditManualStatus" xml:"AuditManualStatus"`
-	AuditAIResult     string                  `json:"AuditAIResult" xml:"AuditAIResult"`
-	AuditTemplateId   string                  `json:"AuditTemplateId" xml:"AuditTemplateId"`
+	DownloadSwitch    string                  `json:"DownloadSwitch" xml:"DownloadSwitch"`
+	RegionId          string                  `json:"RegionId" xml:"RegionId"`
+	CateName          string                  `json:"CateName" xml:"CateName"`
+	TranscodeMode     string                  `json:"TranscodeMode" xml:"TranscodeMode"`
 	CustomMediaInfo   string                  `json:"CustomMediaInfo" xml:"CustomMediaInfo"`
-	AppId             string                  `json:"AppId" xml:"AppId"`
-	Snapshots         []string                `json:"Snapshots" xml:"Snapshots"`
+	AuditAIResult     string                  `json:"AuditAIResult" xml:"AuditAIResult"`
+	PreprocessStatus  string                  `json:"PreprocessStatus" xml:"PreprocessStatus"`
+	Size              int64                   `json:"Size" xml:"Size"`
+	Duration          float64                 `json:"Duration" xml:"Duration"`
+	Title             string                  `json:"Title" xml:"Title"`
 	SpriteSnapshots   []string                `json:"SpriteSnapshots" xml:"SpriteSnapshots"`
+	Snapshots         []string                `json:"Snapshots" xml:"Snapshots"`
 	PlayInfoList      []PlayInfoInSearchMedia `json:"PlayInfoList" xml:"PlayInfoList"`
 }

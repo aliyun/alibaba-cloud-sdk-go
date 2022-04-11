@@ -81,9 +81,9 @@ type RefreshUploadVideoRequest struct {
 type RefreshUploadVideoResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
-	UploadAuth    string `json:"UploadAuth" xml:"UploadAuth"`
 	UploadAddress string `json:"UploadAddress" xml:"UploadAddress"`
 	VideoId       string `json:"VideoId" xml:"VideoId"`
+	UploadAuth    string `json:"UploadAuth" xml:"UploadAuth"`
 }
 
 // CreateRefreshUploadVideoRequest creates a request to invoke RefreshUploadVideo API

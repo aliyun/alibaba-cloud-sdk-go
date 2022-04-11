@@ -17,21 +17,21 @@ package vod
 
 // Material is a nested struct in vod response
 type Material struct {
-	MaterialId   string                                `json:"MaterialId" xml:"MaterialId"`
-	Title        string                                `json:"Title" xml:"Title"`
-	Tags         string                                `json:"Tags" xml:"Tags"`
 	Status       string                                `json:"Status" xml:"Status"`
-	Size         int64                                 `json:"Size" xml:"Size"`
-	Duration     float64                               `json:"Duration" xml:"Duration"`
-	Description  string                                `json:"Description" xml:"Description"`
 	CreationTime string                                `json:"CreationTime" xml:"CreationTime"`
-	ModifiedTime string                                `json:"ModifiedTime" xml:"ModifiedTime"`
-	CoverURL     string                                `json:"CoverURL" xml:"CoverURL"`
 	CateId       int                                   `json:"CateId" xml:"CateId"`
-	CateName     string                                `json:"CateName" xml:"CateName"`
-	Source       string                                `json:"Source" xml:"Source"`
-	SpriteConfig string                                `json:"SpriteConfig" xml:"SpriteConfig"`
 	MaterialType string                                `json:"MaterialType" xml:"MaterialType"`
-	Snapshots    SnapshotsInGetEditingProjectMaterials `json:"Snapshots" xml:"Snapshots"`
+	Tags         string                                `json:"Tags" xml:"Tags"`
+	SpriteConfig string                                `json:"SpriteConfig" xml:"SpriteConfig"`
+	Source       string                                `json:"Source" xml:"Source"`
+	CateName     string                                `json:"CateName" xml:"CateName"`
+	ModifiedTime string                                `json:"ModifiedTime" xml:"ModifiedTime"`
+	Description  string                                `json:"Description" xml:"Description"`
+	MaterialId   string                                `json:"MaterialId" xml:"MaterialId"`
+	Size         int64                                 `json:"Size" xml:"Size"`
+	CoverURL     string                                `json:"CoverURL" xml:"CoverURL"`
+	Duration     float64                               `json:"Duration" xml:"Duration"`
+	Title        string                                `json:"Title" xml:"Title"`
 	Sprites      Sprites                               `json:"Sprites" xml:"Sprites"`
+	Snapshots    SnapshotsInGetEditingProjectMaterials `json:"Snapshots" xml:"Snapshots"`
 }

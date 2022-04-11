@@ -81,8 +81,8 @@ type GetCategoriesRequest struct {
 // GetCategoriesResponse is the response struct for api GetCategories
 type GetCategoriesResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	SubTotal      int64         `json:"SubTotal" xml:"SubTotal"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	Category      Category      `json:"Category" xml:"Category"`
 	SubCategories SubCategories `json:"SubCategories" xml:"SubCategories"`
 }

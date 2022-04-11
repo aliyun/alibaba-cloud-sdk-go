@@ -17,7 +17,7 @@ package vod
 
 // LogoItem is a nested struct in vod response
 type LogoItem struct {
-	Label     string `json:"Label" xml:"Label"`
 	Score     string `json:"Score" xml:"Score"`
 	Timestamp string `json:"Timestamp" xml:"Timestamp"`
+	Label     string `json:"Label" xml:"Label"`
 }

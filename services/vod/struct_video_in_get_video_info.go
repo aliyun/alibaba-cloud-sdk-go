@@ -17,28 +17,28 @@ package vod
 
 // VideoInGetVideoInfo is a nested struct in vod response
 type VideoInGetVideoInfo struct {
-	VideoId          string                      `json:"VideoId" xml:"VideoId"`
-	Title            string                      `json:"Title" xml:"Title"`
-	Tags             string                      `json:"Tags" xml:"Tags"`
-	Status           string                      `json:"Status" xml:"Status"`
-	Size             int64                       `json:"Size" xml:"Size"`
-	Duration         float64                     `json:"Duration" xml:"Duration"`
-	Description      string                      `json:"Description" xml:"Description"`
-	CreateTime       string                      `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime       string                      `json:"ModifyTime" xml:"ModifyTime"`
-	ModificationTime string                      `json:"ModificationTime" xml:"ModificationTime"`
-	CreationTime     string                      `json:"CreationTime" xml:"CreationTime"`
-	CoverURL         string                      `json:"CoverURL" xml:"CoverURL"`
-	CateId           int64                       `json:"CateId" xml:"CateId"`
-	CateName         string                      `json:"CateName" xml:"CateName"`
-	DownloadSwitch   string                      `json:"DownloadSwitch" xml:"DownloadSwitch"`
-	TemplateGroupId  string                      `json:"TemplateGroupId" xml:"TemplateGroupId"`
-	PreprocessStatus string                      `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	StorageLocation  string                      `json:"StorageLocation" xml:"StorageLocation"`
+	CreationTime     string                      `json:"CreationTime" xml:"CreationTime"`
+	Status           string                      `json:"Status" xml:"Status"`
+	CateId           int64                       `json:"CateId" xml:"CateId"`
+	VideoId          string                      `json:"VideoId" xml:"VideoId"`
+	CreateTime       string                      `json:"CreateTime" xml:"CreateTime"`
+	DownloadSwitch   string                      `json:"DownloadSwitch" xml:"DownloadSwitch"`
+	Tags             string                      `json:"Tags" xml:"Tags"`
+	ModificationTime string                      `json:"ModificationTime" xml:"ModificationTime"`
 	RegionId         string                      `json:"RegionId" xml:"RegionId"`
 	CustomMediaInfo  string                      `json:"CustomMediaInfo" xml:"CustomMediaInfo"`
-	AuditStatus      string                      `json:"AuditStatus" xml:"AuditStatus"`
+	CateName         string                      `json:"CateName" xml:"CateName"`
+	Description      string                      `json:"Description" xml:"Description"`
+	PreprocessStatus string                      `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	AppId            string                      `json:"AppId" xml:"AppId"`
+	Size             int64                       `json:"Size" xml:"Size"`
+	CoverURL         string                      `json:"CoverURL" xml:"CoverURL"`
+	TemplateGroupId  string                      `json:"TemplateGroupId" xml:"TemplateGroupId"`
+	Duration         float64                     `json:"Duration" xml:"Duration"`
+	Title            string                      `json:"Title" xml:"Title"`
+	AuditStatus      string                      `json:"AuditStatus" xml:"AuditStatus"`
+	ModifyTime       string                      `json:"ModifyTime" xml:"ModifyTime"`
 	Snapshots        SnapshotsInGetVideoInfo     `json:"Snapshots" xml:"Snapshots"`
 	ThumbnailList    ThumbnailListInGetVideoInfo `json:"ThumbnailList" xml:"ThumbnailList"`
 }

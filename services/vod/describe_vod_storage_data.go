@@ -83,8 +83,8 @@ type DescribeVodStorageDataRequest struct {
 // DescribeVodStorageDataResponse is the response struct for api DescribeVodStorageData
 type DescribeVodStorageDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string      `json:"RequestId" xml:"RequestId"`
 	DataInterval string      `json:"DataInterval" xml:"DataInterval"`
+	RequestId    string      `json:"RequestId" xml:"RequestId"`
 	StorageData  StorageData `json:"StorageData" xml:"StorageData"`
 }
 

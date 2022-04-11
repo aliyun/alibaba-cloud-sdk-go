@@ -17,8 +17,8 @@ package vod
 
 // Video is a nested struct in vod response
 type Video struct {
-	MediaSource          string                      `json:"MediaSource" xml:"MediaSource"`
 	AuditManualStatus    string                      `json:"AuditManualStatus" xml:"AuditManualStatus"`
+	MediaSource          string                      `json:"MediaSource" xml:"MediaSource"`
 	ModifyTime           string                      `json:"ModifyTime" xml:"ModifyTime"`
 	Title                string                      `json:"Title" xml:"Title"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`

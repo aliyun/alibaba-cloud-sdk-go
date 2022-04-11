@@ -86,12 +86,12 @@ type CreateUploadImageRequest struct {
 // CreateUploadImageResponse is the response struct for api CreateUploadImage
 type CreateUploadImageResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	ImageId       string `json:"ImageId" xml:"ImageId"`
-	ImageURL      string `json:"ImageURL" xml:"ImageURL"`
-	UploadAddress string `json:"UploadAddress" xml:"UploadAddress"`
-	UploadAuth    string `json:"UploadAuth" xml:"UploadAuth"`
 	FileURL       string `json:"FileURL" xml:"FileURL"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	UploadAddress string `json:"UploadAddress" xml:"UploadAddress"`
+	ImageURL      string `json:"ImageURL" xml:"ImageURL"`
+	ImageId       string `json:"ImageId" xml:"ImageId"`
+	UploadAuth    string `json:"UploadAuth" xml:"UploadAuth"`
 }
 
 // CreateCreateUploadImageRequest creates a request to invoke CreateUploadImage API

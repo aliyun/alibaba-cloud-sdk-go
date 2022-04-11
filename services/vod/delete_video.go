@@ -78,8 +78,8 @@ type DeleteVideoRequest struct {
 type DeleteVideoResponse struct {
 	*responses.BaseResponse
 	RequestId         string   `json:"RequestId" xml:"RequestId"`
-	NonExistVideoIds  []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
 	ForbiddenVideoIds []string `json:"ForbiddenVideoIds" xml:"ForbiddenVideoIds"`
+	NonExistVideoIds  []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
 }
 
 // CreateDeleteVideoRequest creates a request to invoke DeleteVideo API

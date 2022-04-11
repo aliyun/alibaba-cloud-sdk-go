@@ -17,13 +17,13 @@ package vod
 
 // AIImageInfo is a nested struct in vod response
 type AIImageInfo struct {
-	VideoId       string `json:"VideoId" xml:"VideoId"`
-	AIImageInfoId string `json:"AIImageInfoId" xml:"AIImageInfoId"`
-	JobId         string `json:"JobId" xml:"JobId"`
-	FileURL       string `json:"FileURL" xml:"FileURL"`
-	Score         string `json:"Score" xml:"Score"`
-	Time          string `json:"Time" xml:"Time"`
-	Format        string `json:"Format" xml:"Format"`
 	CreationTime  string `json:"CreationTime" xml:"CreationTime"`
+	AIImageInfoId string `json:"AIImageInfoId" xml:"AIImageInfoId"`
+	Time          string `json:"Time" xml:"Time"`
+	FileURL       string `json:"FileURL" xml:"FileURL"`
 	Version       string `json:"Version" xml:"Version"`
+	VideoId       string `json:"VideoId" xml:"VideoId"`
+	JobId         string `json:"JobId" xml:"JobId"`
+	Score         string `json:"Score" xml:"Score"`
+	Format        string `json:"Format" xml:"Format"`
 }

@@ -17,16 +17,16 @@ package vod
 
 // TranscodeJobInfo is a nested struct in vod response
 type TranscodeJobInfo struct {
-	TranscodeJobId      string     `json:"TranscodeJobId" xml:"TranscodeJobId"`
-	TranscodeTemplateId string     `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
-	TranscodeJobStatus  string     `json:"TranscodeJobStatus" xml:"TranscodeJobStatus"`
+	Definition          string     `json:"Definition" xml:"Definition"`
 	CreationTime        string     `json:"CreationTime" xml:"CreationTime"`
+	InputFileUrl        string     `json:"InputFileUrl" xml:"InputFileUrl"`
+	ErrorMessage        string     `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode           string     `json:"ErrorCode" xml:"ErrorCode"`
 	CompleteTime        string     `json:"CompleteTime" xml:"CompleteTime"`
 	TranscodeProgress   int64      `json:"TranscodeProgress" xml:"TranscodeProgress"`
-	InputFileUrl        string     `json:"InputFileUrl" xml:"InputFileUrl"`
 	Priority            string     `json:"Priority" xml:"Priority"`
-	ErrorCode           string     `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage        string     `json:"ErrorMessage" xml:"ErrorMessage"`
-	Definition          string     `json:"Definition" xml:"Definition"`
+	TranscodeJobStatus  string     `json:"TranscodeJobStatus" xml:"TranscodeJobStatus"`
+	TranscodeTemplateId string     `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
+	TranscodeJobId      string     `json:"TranscodeJobId" xml:"TranscodeJobId"`
 	OutputFile          OutputFile `json:"OutputFile" xml:"OutputFile"`
 }

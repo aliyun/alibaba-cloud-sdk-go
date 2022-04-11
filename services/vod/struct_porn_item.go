@@ -17,7 +17,7 @@ package vod
 
 // PornItem is a nested struct in vod response
 type PornItem struct {
-	Label     string `json:"Label" xml:"Label"`
 	Score     string `json:"Score" xml:"Score"`
 	Timestamp string `json:"Timestamp" xml:"Timestamp"`
+	Label     string `json:"Label" xml:"Label"`
 }

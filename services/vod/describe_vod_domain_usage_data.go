@@ -83,12 +83,12 @@ type DescribeVodDomainUsageDataRequest struct {
 // DescribeVodDomainUsageDataResponse is the response struct for api DescribeVodDomainUsageData
 type DescribeVodDomainUsageDataResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	DomainName           string               `json:"DomainName" xml:"DomainName"`
-	StartTime            string               `json:"StartTime" xml:"StartTime"`
 	EndTime              string               `json:"EndTime" xml:"EndTime"`
 	Type                 string               `json:"Type" xml:"Type"`
+	StartTime            string               `json:"StartTime" xml:"StartTime"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	Area                 string               `json:"Area" xml:"Area"`
+	DomainName           string               `json:"DomainName" xml:"DomainName"`
 	DataInterval         string               `json:"DataInterval" xml:"DataInterval"`
 	UsageDataPerInterval UsageDataPerInterval `json:"UsageDataPerInterval" xml:"UsageDataPerInterval"`
 }

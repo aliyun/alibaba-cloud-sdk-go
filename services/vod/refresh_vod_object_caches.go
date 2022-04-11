@@ -80,8 +80,8 @@ type RefreshVodObjectCachesRequest struct {
 // RefreshVodObjectCachesResponse is the response struct for api RefreshVodObjectCaches
 type RefreshVodObjectCachesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	RefreshTaskId string `json:"RefreshTaskId" xml:"RefreshTaskId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRefreshVodObjectCachesRequest creates a request to invoke RefreshVodObjectCaches API

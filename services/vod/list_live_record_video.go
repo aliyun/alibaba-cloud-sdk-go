@@ -85,8 +85,8 @@ type ListLiveRecordVideoRequest struct {
 // ListLiveRecordVideoResponse is the response struct for api ListLiveRecordVideo
 type ListLiveRecordVideoResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Total               int                 `json:"Total" xml:"Total"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	LiveRecordVideoList LiveRecordVideoList `json:"LiveRecordVideoList" xml:"LiveRecordVideoList"`
 }
 

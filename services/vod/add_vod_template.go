@@ -81,8 +81,8 @@ type AddVodTemplateRequest struct {
 // AddVodTemplateResponse is the response struct for api AddVodTemplate
 type AddVodTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	VodTemplateId string `json:"VodTemplateId" xml:"VodTemplateId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddVodTemplateRequest creates a request to invoke AddVodTemplate API

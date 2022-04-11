@@ -17,11 +17,11 @@ package vod
 
 // TranscodeSummary is a nested struct in vod response
 type TranscodeSummary struct {
-	VideoId                     string                    `json:"VideoId" xml:"VideoId"`
-	TranscodeStatus             string                    `json:"TranscodeStatus" xml:"TranscodeStatus"`
 	CreationTime                string                    `json:"CreationTime" xml:"CreationTime"`
-	CompleteTime                string                    `json:"CompleteTime" xml:"CompleteTime"`
 	Trigger                     string                    `json:"Trigger" xml:"Trigger"`
+	VideoId                     string                    `json:"VideoId" xml:"VideoId"`
+	CompleteTime                string                    `json:"CompleteTime" xml:"CompleteTime"`
+	TranscodeStatus             string                    `json:"TranscodeStatus" xml:"TranscodeStatus"`
 	TranscodeTemplateGroupId    string                    `json:"TranscodeTemplateGroupId" xml:"TranscodeTemplateGroupId"`
 	TranscodeJobInfoSummaryList []TranscodeJobInfoSummary `json:"TranscodeJobInfoSummaryList" xml:"TranscodeJobInfoSummaryList"`
 }

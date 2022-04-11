@@ -21,8 +21,8 @@ type TemplateInfo struct {
 	ModifyTime     string `json:"ModifyTime" xml:"ModifyTime"`
 	TemplateName   string `json:"TemplateName" xml:"TemplateName"`
 	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-	TemplateConfig string `json:"TemplateConfig" xml:"TemplateConfig"`
 	IsDefault      string `json:"IsDefault" xml:"IsDefault"`
+	TemplateConfig string `json:"TemplateConfig" xml:"TemplateConfig"`
 	TemplateType   string `json:"TemplateType" xml:"TemplateType"`
 	Source         string `json:"Source" xml:"Source"`
 }

@@ -81,8 +81,8 @@ type DescribeVodAIDataRequest struct {
 // DescribeVodAIDataResponse is the response struct for api DescribeVodAIData
 type DescribeVodAIDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DataInterval string `json:"DataInterval" xml:"DataInterval"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	AIData       AIData `json:"AIData" xml:"AIData"`
 }
 

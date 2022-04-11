@@ -79,8 +79,8 @@ type DeleteMezzaninesRequest struct {
 type DeleteMezzaninesResponse struct {
 	*responses.BaseResponse
 	RequestId            string   `json:"RequestId" xml:"RequestId"`
-	NonExistVideoIds     []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
 	UnRemoveableVideoIds []string `json:"UnRemoveableVideoIds" xml:"UnRemoveableVideoIds"`
+	NonExistVideoIds     []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
 }
 
 // CreateDeleteMezzaninesRequest creates a request to invoke DeleteMezzanines API

@@ -17,10 +17,10 @@ package vod
 
 // Cert is a nested struct in vod response
 type Cert struct {
-	CertName    string `json:"CertName" xml:"CertName"`
-	CertId      int64  `json:"CertId" xml:"CertId"`
-	Fingerprint string `json:"Fingerprint" xml:"Fingerprint"`
-	Common      string `json:"Common" xml:"Common"`
-	Issuer      string `json:"Issuer" xml:"Issuer"`
 	LastTime    int64  `json:"LastTime" xml:"LastTime"`
+	Fingerprint string `json:"Fingerprint" xml:"Fingerprint"`
+	CertName    string `json:"CertName" xml:"CertName"`
+	Issuer      string `json:"Issuer" xml:"Issuer"`
+	CertId      int64  `json:"CertId" xml:"CertId"`
+	Common      string `json:"Common" xml:"Common"`
 }

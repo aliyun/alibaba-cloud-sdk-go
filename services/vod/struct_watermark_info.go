@@ -19,8 +19,8 @@ package vod
 type WatermarkInfo struct {
 	Name            string `json:"Name" xml:"Name"`
 	AppId           string `json:"AppId" xml:"AppId"`
-	WatermarkId     string `json:"WatermarkId" xml:"WatermarkId"`
 	FileUrl         string `json:"FileUrl" xml:"FileUrl"`
+	WatermarkId     string `json:"WatermarkId" xml:"WatermarkId"`
 	WatermarkConfig string `json:"WatermarkConfig" xml:"WatermarkConfig"`
 	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
 	IsDefault       string `json:"IsDefault" xml:"IsDefault"`

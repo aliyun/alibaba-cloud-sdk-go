@@ -78,15 +78,15 @@ type DescribeVodRefreshQuotaRequest struct {
 // DescribeVodRefreshQuotaResponse is the response struct for api DescribeVodRefreshQuota
 type DescribeVodRefreshQuotaResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	UrlQuota      string `json:"UrlQuota" xml:"UrlQuota"`
-	DirQuota      string `json:"DirQuota" xml:"DirQuota"`
-	UrlRemain     string `json:"UrlRemain" xml:"UrlRemain"`
-	DirRemain     string `json:"DirRemain" xml:"DirRemain"`
-	PreloadQuota  string `json:"PreloadQuota" xml:"PreloadQuota"`
 	BlockQuota    string `json:"BlockQuota" xml:"BlockQuota"`
 	PreloadRemain string `json:"PreloadRemain" xml:"PreloadRemain"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	BlockRemain   string `json:"blockRemain" xml:"blockRemain"`
+	DirRemain     string `json:"DirRemain" xml:"DirRemain"`
+	UrlRemain     string `json:"UrlRemain" xml:"UrlRemain"`
+	DirQuota      string `json:"DirQuota" xml:"DirQuota"`
+	UrlQuota      string `json:"UrlQuota" xml:"UrlQuota"`
+	PreloadQuota  string `json:"PreloadQuota" xml:"PreloadQuota"`
 }
 
 // CreateDescribeVodRefreshQuotaRequest creates a request to invoke DescribeVodRefreshQuota API

@@ -17,9 +17,9 @@ package vod
 
 // TopPlayVideoStatis is a nested struct in vod response
 type TopPlayVideoStatis struct {
-	PlayDuration string `json:"PlayDuration" xml:"PlayDuration"`
-	VV           string `json:"VV" xml:"VV"`
-	UV           string `json:"UV" xml:"UV"`
-	VideoId      string `json:"VideoId" xml:"VideoId"`
 	Title        string `json:"Title" xml:"Title"`
+	VV           string `json:"VV" xml:"VV"`
+	PlayDuration string `json:"PlayDuration" xml:"PlayDuration"`
+	VideoId      string `json:"VideoId" xml:"VideoId"`
+	UV           string `json:"UV" xml:"UV"`
 }

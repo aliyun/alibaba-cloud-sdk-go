@@ -17,8 +17,8 @@ package vod
 
 // UV is a nested struct in vod response
 type UV struct {
-	Android string `json:"Android" xml:"Android"`
-	IOS     string `json:"iOS" xml:"iOS"`
 	Flash   string `json:"Flash" xml:"Flash"`
+	IOS     string `json:"iOS" xml:"iOS"`
 	HTML5   string `json:"HTML5" xml:"HTML5"`
+	Android string `json:"Android" xml:"Android"`
 }

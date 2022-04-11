@@ -79,8 +79,8 @@ type UpdateAITemplateRequest struct {
 // UpdateAITemplateResponse is the response struct for api UpdateAITemplate
 type UpdateAITemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateAITemplateRequest creates a request to invoke UpdateAITemplate API

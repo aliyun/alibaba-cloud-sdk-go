@@ -17,12 +17,12 @@ package vod
 
 // LiveRecordVideo is a nested struct in vod response
 type LiveRecordVideo struct {
-	StreamName      string                            `json:"StreamName" xml:"StreamName"`
-	DomainName      string                            `json:"DomainName" xml:"DomainName"`
 	AppName         string                            `json:"AppName" xml:"AppName"`
 	PlaylistId      string                            `json:"PlaylistId" xml:"PlaylistId"`
-	RecordStartTime string                            `json:"RecordStartTime" xml:"RecordStartTime"`
+	StreamName      string                            `json:"StreamName" xml:"StreamName"`
 	RecordEndTime   string                            `json:"RecordEndTime" xml:"RecordEndTime"`
+	RecordStartTime string                            `json:"RecordStartTime" xml:"RecordStartTime"`
+	DomainName      string                            `json:"DomainName" xml:"DomainName"`
 	Video           VideoInListLiveRecordVideo        `json:"Video" xml:"Video"`
 	PlayInfoList    PlayInfoListInListLiveRecordVideo `json:"PlayInfoList" xml:"PlayInfoList"`
 }

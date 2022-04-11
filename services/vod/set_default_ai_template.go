@@ -77,8 +77,8 @@ type SetDefaultAITemplateRequest struct {
 // SetDefaultAITemplateResponse is the response struct for api SetDefaultAITemplate
 type SetDefaultAITemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetDefaultAITemplateRequest creates a request to invoke SetDefaultAITemplate API

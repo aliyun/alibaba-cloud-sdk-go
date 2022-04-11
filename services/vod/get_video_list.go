@@ -84,8 +84,8 @@ type GetVideoListRequest struct {
 // GetVideoListResponse is the response struct for api GetVideoList
 type GetVideoListResponse struct {
 	*responses.BaseResponse
-	RequestId string                  `json:"RequestId" xml:"RequestId"`
 	Total     int                     `json:"Total" xml:"Total"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
 	VideoList VideoListInGetVideoList `json:"VideoList" xml:"VideoList"`
 }
 
