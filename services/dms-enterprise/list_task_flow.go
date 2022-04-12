@@ -71,9 +71,7 @@ func (client *Client) ListTaskFlowWithCallback(request *ListTaskFlowRequest, cal
 // ListTaskFlowRequest is the request struct for api ListTaskFlow
 type ListTaskFlowRequest struct {
 	*requests.RpcRequest
-	DagId         requests.Integer `position:"Query" name:"DagId"`
-	Tid           requests.Integer `position:"Query" name:"Tid"`
-	DagInstanceId requests.Integer `position:"Query" name:"DagInstanceId"`
+	Tid requests.Integer `position:"Query" name:"Tid"`
 }
 
 // ListTaskFlowResponse is the response struct for api ListTaskFlow
