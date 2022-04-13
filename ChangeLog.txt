@@ -1,3 +1,8 @@
+2022-04-13 Version: v1.61.1556
+- Generated 2014-05-26 for `Ecs`.
+- Support throughput for API DescribeDisks.
+
+
 2022-04-12 Version: v1.61.1555
 - Generated 2018-11-01 for `dms-enterprise`.
 - Remove redundant input for API ListTaskFlow.
