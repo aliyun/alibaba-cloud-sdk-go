@@ -71,8 +71,8 @@ func (client *Client) SetGroupDeletionProtectionWithCallback(request *SetGroupDe
 // SetGroupDeletionProtectionRequest is the request struct for api SetGroupDeletionProtection
 type SetGroupDeletionProtectionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	GroupDeletionProtection requests.Boolean `position:"Query" name:"GroupDeletionProtection"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 }

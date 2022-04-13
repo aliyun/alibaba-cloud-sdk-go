@@ -71,10 +71,10 @@ func (client *Client) DeleteScalingRuleWithCallback(request *DeleteScalingRuleRe
 // DeleteScalingRuleRequest is the request struct for api DeleteScalingRule
 type DeleteScalingRuleRequest struct {
 	*requests.RpcRequest
+	ScalingRuleId        string           `position:"Query" name:"ScalingRuleId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ScalingRuleId        string           `position:"Query" name:"ScalingRuleId"`
 }
 
 // DeleteScalingRuleResponse is the response struct for api DeleteScalingRule

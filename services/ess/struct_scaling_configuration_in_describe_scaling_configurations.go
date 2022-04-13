@@ -63,6 +63,9 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	ScalingConfigurationId          string                              `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
 	CreditSpecification             string                              `json:"CreditSpecification" xml:"CreditSpecification"`
 	SpotInterruptionBehavior        string                              `json:"SpotInterruptionBehavior" xml:"SpotInterruptionBehavior"`
+	SystemDiskEncrypted             bool                                `json:"SystemDisk.Encrypted" xml:"SystemDisk.Encrypted"`
+	SystemDiskKMSKeyId              string                              `json:"SystemDisk.KMSKeyId" xml:"SystemDisk.KMSKeyId"`
+	SystemDiskEncryptAlgorithm      string                              `json:"SystemDisk.EncryptAlgorithm" xml:"SystemDisk.EncryptAlgorithm"`
 	SystemDiskCategories            SystemDiskCategories                `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
 	WeightedCapacities              WeightedCapacities                  `json:"WeightedCapacities" xml:"WeightedCapacities"`
 	InstanceTypes                   InstanceTypes                       `json:"InstanceTypes" xml:"InstanceTypes"`

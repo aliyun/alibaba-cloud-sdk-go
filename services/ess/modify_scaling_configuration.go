@@ -101,6 +101,7 @@ type ModifyScalingConfigurationRequest struct {
 	InstanceTypes                   *[]string                                         `position:"Query" name:"InstanceTypes"  type:"Repeated"`
 	InternetMaxBandwidthOut         requests.Integer                                  `position:"Query" name:"InternetMaxBandwidthOut"`
 	SecurityGroupId                 string                                            `position:"Query" name:"SecurityGroupId"`
+	SystemDiskKMSKeyId              string                                            `position:"Query" name:"SystemDisk.KMSKeyId"`
 	SystemDiskCategory              string                                            `position:"Query" name:"SystemDisk.Category"`
 	SystemDiskPerformanceLevel      string                                            `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	UserData                        string                                            `position:"Query" name:"UserData"`
@@ -114,6 +115,7 @@ type ModifyScalingConfigurationRequest struct {
 	Tenancy                         string                                            `position:"Query" name:"Tenancy"`
 	SystemDiskDiskName              string                                            `position:"Query" name:"SystemDisk.DiskName"`
 	RamRoleName                     string                                            `position:"Query" name:"RamRoleName"`
+	SystemDiskEncryptAlgorithm      string                                            `position:"Query" name:"SystemDisk.EncryptAlgorithm"`
 	DedicatedHostId                 string                                            `position:"Query" name:"DedicatedHostId"`
 	CreditSpecification             string                                            `position:"Query" name:"CreditSpecification"`
 	SpotDuration                    requests.Integer                                  `position:"Query" name:"SpotDuration"`
@@ -124,6 +126,7 @@ type ModifyScalingConfigurationRequest struct {
 	SystemDiskSize                  requests.Integer                                  `position:"Query" name:"SystemDisk.Size"`
 	ImageFamily                     string                                            `position:"Query" name:"ImageFamily"`
 	SystemDiskDescription           string                                            `position:"Query" name:"SystemDisk.Description"`
+	SystemDiskEncrypted             requests.Boolean                                  `position:"Query" name:"SystemDisk.Encrypted"`
 }
 
 // ModifyScalingConfigurationSpotPriceLimit is a repeated param struct in ModifyScalingConfigurationRequest
