@@ -77,10 +77,10 @@ type CreateIDCImportCommandRequest struct {
 // CreateIDCImportCommandResponse is the response struct for api CreateIDCImportCommand
 type CreateIDCImportCommandResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateIDCImportCommandRequest creates a request to invoke CreateIDCImportCommand API

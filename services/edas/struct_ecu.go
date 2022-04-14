@@ -17,20 +17,20 @@ package edas
 
 // Ecu is a nested struct in edas response
 type Ecu struct {
-	EcuId         string `json:"EcuId" xml:"EcuId"`
-	Online        bool   `json:"Online" xml:"Online"`
-	DockerEnv     bool   `json:"DockerEnv" xml:"DockerEnv"`
-	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
+	VpcId         string `json:"VpcId" xml:"VpcId"`
 	UpdateTime    int64  `json:"UpdateTime" xml:"UpdateTime"`
 	IpAddr        string `json:"IpAddr" xml:"IpAddr"`
-	HeartbeatTime int64  `json:"HeartbeatTime" xml:"HeartbeatTime"`
-	UserId        string `json:"UserId" xml:"UserId"`
-	GroupId       string `json:"GroupId" xml:"GroupId"`
-	Name          string `json:"Name" xml:"Name"`
-	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-	VpcId         string `json:"VpcId" xml:"VpcId"`
 	AvailableCpu  int    `json:"AvailableCpu" xml:"AvailableCpu"`
+	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
+	UserId        string `json:"UserId" xml:"UserId"`
+	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
+	EcuId         string `json:"EcuId" xml:"EcuId"`
+	GroupId       string `json:"GroupId" xml:"GroupId"`
+	DockerEnv     bool   `json:"DockerEnv" xml:"DockerEnv"`
+	Online        bool   `json:"Online" xml:"Online"`
 	AvailableMem  int    `json:"AvailableMem" xml:"AvailableMem"`
+	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
+	Name          string `json:"Name" xml:"Name"`
+	HeartbeatTime int64  `json:"HeartbeatTime" xml:"HeartbeatTime"`
 }

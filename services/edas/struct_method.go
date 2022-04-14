@@ -19,8 +19,8 @@ package edas
 type Method struct {
 	Name                 string           `json:"Name" xml:"Name"`
 	ReturnDetails        string           `json:"ReturnDetails" xml:"ReturnDetails"`
-	ReturnType           string           `json:"ReturnType" xml:"ReturnType"`
 	ParameterTypes       string           `json:"ParameterTypes" xml:"ParameterTypes"`
+	ReturnType           string           `json:"ReturnType" xml:"ReturnType"`
 	MethodController     string           `json:"MethodController" xml:"MethodController"`
 	ParameterNames       string           `json:"ParameterNames" xml:"ParameterNames"`
 	ParameterDefinitions string           `json:"ParameterDefinitions" xml:"ParameterDefinitions"`

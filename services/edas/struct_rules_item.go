@@ -19,5 +19,6 @@ package edas
 type RulesItem struct {
 	SecretName string      `json:"SecretName" xml:"SecretName"`
 	Host       string      `json:"Host" xml:"Host"`
+	EnableTls  bool        `json:"EnableTls" xml:"EnableTls"`
 	Paths      []PathsItem `json:"Paths" xml:"Paths"`
 }

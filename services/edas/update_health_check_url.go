@@ -79,9 +79,9 @@ type UpdateHealthCheckUrlRequest struct {
 type UpdateHealthCheckUrlResponse struct {
 	*responses.BaseResponse
 	Code           int    `json:"Code" xml:"Code"`
-	HealthCheckURL string `json:"HealthCheckURL" xml:"HealthCheckURL"`
 	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	HealthCheckURL string `json:"HealthCheckURL" xml:"HealthCheckURL"`
 }
 
 // CreateUpdateHealthCheckUrlRequest creates a request to invoke UpdateHealthCheckUrl API

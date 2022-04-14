@@ -17,9 +17,9 @@ package edas
 
 // ExecutionResult is a nested struct in edas response
 type ExecutionResult struct {
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
 	Status             string `json:"Status" xml:"Status"`
 	FinishedTime       string `json:"FinishedTime" xml:"FinishedTime"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
 	InvokeRecordStatus string `json:"InvokeRecordStatus" xml:"InvokeRecordStatus"`
 	Success            bool   `json:"Success" xml:"Success"`
 }

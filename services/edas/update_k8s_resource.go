@@ -79,9 +79,9 @@ type UpdateK8sResourceRequest struct {
 // UpdateK8sResourceResponse is the response struct for api UpdateK8sResource
 type UpdateK8sResourceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateK8sResourceRequest creates a request to invoke UpdateK8sResource API

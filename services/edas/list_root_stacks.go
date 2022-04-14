@@ -78,9 +78,9 @@ type ListRootStacksRequest struct {
 // ListRootStacksResponse is the response struct for api ListRootStacks
 type ListRootStacksResponse struct {
 	*responses.BaseResponse
-	RequestId string               `json:"RequestId" xml:"RequestId"`
-	Message   string               `json:"Message" xml:"Message"`
 	Code      int                  `json:"Code" xml:"Code"`
+	Message   string               `json:"Message" xml:"Message"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
 	Data      DataInListRootStacks `json:"Data" xml:"Data"`
 }
 

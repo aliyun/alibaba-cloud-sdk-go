@@ -79,9 +79,9 @@ type DeleteK8sSecretRequest struct {
 // DeleteK8sSecretResponse is the response struct for api DeleteK8sSecret
 type DeleteK8sSecretResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteK8sSecretRequest creates a request to invoke DeleteK8sSecret API

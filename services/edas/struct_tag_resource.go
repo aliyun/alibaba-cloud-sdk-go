@@ -17,8 +17,8 @@ package edas
 
 // TagResource is a nested struct in edas response
 type TagResource struct {
-	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
-	ResourceType string `json:"ResourceType" xml:"ResourceType"`
-	TagKey       string `json:"TagKey" xml:"TagKey"`
 	TagValue     string `json:"TagValue" xml:"TagValue"`
+	ResourceType string `json:"ResourceType" xml:"ResourceType"`
+	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
+	TagKey       string `json:"TagKey" xml:"TagKey"`
 }

@@ -17,8 +17,8 @@ package edas
 
 // ServicesItem is a nested struct in edas response
 type ServicesItem struct {
-	Name         string             `json:"Name" xml:"Name"`
 	Type         string             `json:"Type" xml:"Type"`
+	Name         string             `json:"Name" xml:"Name"`
 	ClusterIP    string             `json:"ClusterIP" xml:"ClusterIP"`
 	ServicePorts []ServicePortsItem `json:"ServicePorts" xml:"ServicePorts"`
 }

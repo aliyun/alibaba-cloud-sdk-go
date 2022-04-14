@@ -17,10 +17,10 @@ package edas
 
 // SlsLog is a nested struct in edas response
 type SlsLog struct {
-	Logstore     string `json:"Logstore" xml:"Logstore"`
-	Project      string `json:"Project" xml:"Project"`
 	Link         string `json:"Link" xml:"Link"`
-	ConsumerSide string `json:"ConsumerSide" xml:"ConsumerSide"`
 	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
+	Logstore     string `json:"Logstore" xml:"Logstore"`
+	ConsumerSide string `json:"ConsumerSide" xml:"ConsumerSide"`
+	Project      string `json:"Project" xml:"Project"`
 	Source       string `json:"Source" xml:"Source"`
 }

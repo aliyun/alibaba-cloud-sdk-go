@@ -17,15 +17,15 @@ package edas
 
 // Ecc is a nested struct in edas response
 type Ecc struct {
-	EccId           string `json:"EccId" xml:"EccId"`
+	VpcId           string `json:"VpcId" xml:"VpcId"`
+	UpdateTime      int64  `json:"UpdateTime" xml:"UpdateTime"`
 	EcuId           string `json:"EcuId" xml:"EcuId"`
-	AppId           string `json:"AppId" xml:"AppId"`
+	EccId           string `json:"EccId" xml:"EccId"`
+	GroupId         string `json:"GroupId" xml:"GroupId"`
 	AppState        int    `json:"AppState" xml:"AppState"`
 	TaskState       int    `json:"TaskState" xml:"TaskState"`
 	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime      int64  `json:"UpdateTime" xml:"UpdateTime"`
-	Ip              string `json:"Ip" xml:"Ip"`
-	VpcId           string `json:"VpcId" xml:"VpcId"`
-	GroupId         string `json:"GroupId" xml:"GroupId"`
+	AppId           string `json:"AppId" xml:"AppId"`
 	ContainerStatus string `json:"ContainerStatus" xml:"ContainerStatus"`
+	Ip              string `json:"Ip" xml:"Ip"`
 }

@@ -78,9 +78,9 @@ type DisableApplicationScalingRuleRequest struct {
 // DisableApplicationScalingRuleResponse is the response struct for api DisableApplicationScalingRule
 type DisableApplicationScalingRuleResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Code           int            `json:"Code" xml:"Code"`
 	Message        string         `json:"Message" xml:"Message"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	AppScalingRule AppScalingRule `json:"AppScalingRule" xml:"AppScalingRule"`
 }
 

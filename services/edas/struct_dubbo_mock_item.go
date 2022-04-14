@@ -19,11 +19,11 @@ package edas
 type DubboMockItem struct {
 	MethodName         string   `json:"MethodName" xml:"MethodName"`
 	Value              string   `json:"Value" xml:"Value"`
-	ExceptionClassName string   `json:"ExceptionClassName" xml:"ExceptionClassName"`
-	ExecuteCondition   string   `json:"ExecuteCondition" xml:"ExecuteCondition"`
-	Group              string   `json:"Group" xml:"Group"`
-	Version            string   `json:"Version" xml:"Version"`
 	Oper               string   `json:"Oper" xml:"Oper"`
+	ExecuteCondition   string   `json:"ExecuteCondition" xml:"ExecuteCondition"`
+	Version            string   `json:"Version" xml:"Version"`
+	ExceptionClassName string   `json:"ExceptionClassName" xml:"ExceptionClassName"`
 	ServiceName        string   `json:"ServiceName" xml:"ServiceName"`
+	Group              string   `json:"Group" xml:"Group"`
 	ParamTypes         []string `json:"ParamTypes" xml:"ParamTypes"`
 }

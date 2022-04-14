@@ -17,8 +17,8 @@ package edas
 
 // ChildStack is a nested struct in edas response
 type ChildStack struct {
-	Id      int64  `json:"Id" xml:"Id"`
-	Name    string `json:"Name" xml:"Name"`
 	Icon    string `json:"Icon" xml:"Icon"`
 	Comment string `json:"Comment" xml:"Comment"`
+	Name    string `json:"Name" xml:"Name"`
+	Id      int64  `json:"Id" xml:"Id"`
 }

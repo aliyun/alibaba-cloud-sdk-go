@@ -31,8 +31,8 @@ type EcsEntity struct {
 	Eip          string    `json:"Eip" xml:"Eip"`
 	InnerIp      string    `json:"InnerIp" xml:"InnerIp"`
 	HostName     string    `json:"HostName" xml:"HostName"`
-	SerialNum    string    `json:"SerialNum" xml:"SerialNum"`
 	GroupId      string    `json:"GroupId" xml:"GroupId"`
+	SerialNum    string    `json:"SerialNum" xml:"SerialNum"`
 	VpcId        string    `json:"VpcId" xml:"VpcId"`
 	Status       string    `json:"Status" xml:"Status"`
 	Cpu          int       `json:"Cpu" xml:"Cpu"`

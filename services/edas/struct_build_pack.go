@@ -17,24 +17,24 @@ package edas
 
 // BuildPack is a nested struct in edas response
 type BuildPack struct {
-	ConfigId           int64  `json:"ConfigId" xml:"ConfigId"`
-	PackVersion        string `json:"PackVersion" xml:"PackVersion"`
-	TomcatDesc         string `json:"TomcatDesc" xml:"TomcatDesc"`
-	TomcatVersion      string `json:"TomcatVersion" xml:"TomcatVersion"`
-	TomcatDownloadUrl  string `json:"TomcatDownloadUrl" xml:"TomcatDownloadUrl"`
 	PandoraVersion     string `json:"PandoraVersion" xml:"PandoraVersion"`
-	PandoraDownloadUrl string `json:"PandoraDownloadUrl" xml:"PandoraDownloadUrl"`
+	ConfigId           int64  `json:"ConfigId" xml:"ConfigId"`
+	Feature            string `json:"Feature" xml:"Feature"`
 	PandoraDesc        string `json:"PandoraDesc" xml:"PandoraDesc"`
 	PluginInfo         string `json:"PluginInfo" xml:"PluginInfo"`
-	TomcatPath         string `json:"TomcatPath" xml:"TomcatPath"`
-	ImageId            string `json:"ImageId" xml:"ImageId"`
-	TengineImageId     string `json:"TengineImageId" xml:"TengineImageId"`
-	MultipleTenant     bool   `json:"MultipleTenant" xml:"MultipleTenant"`
-	WithTengine        bool   `json:"WithTengine" xml:"WithTengine"`
+	Disabled           bool   `json:"Disabled" xml:"Disabled"`
 	TengineDownloadUrl string `json:"TengineDownloadUrl" xml:"TengineDownloadUrl"`
+	TomcatPath         string `json:"TomcatPath" xml:"TomcatPath"`
+	TomcatDesc         string `json:"TomcatDesc" xml:"TomcatDesc"`
+	SupportFeatures    string `json:"SupportFeatures" xml:"SupportFeatures"`
+	TomcatDownloadUrl  string `json:"TomcatDownloadUrl" xml:"TomcatDownloadUrl"`
+	TomcatVersion      string `json:"TomcatVersion" xml:"TomcatVersion"`
+	PandoraDownloadUrl string `json:"PandoraDownloadUrl" xml:"PandoraDownloadUrl"`
+	PackVersion        string `json:"PackVersion" xml:"PackVersion"`
+	MultipleTenant     bool   `json:"MultipleTenant" xml:"MultipleTenant"`
+	TengineImageId     string `json:"TengineImageId" xml:"TengineImageId"`
+	WithTengine        bool   `json:"WithTengine" xml:"WithTengine"`
+	ImageId            string `json:"ImageId" xml:"ImageId"`
 	ScriptName         string `json:"ScriptName" xml:"ScriptName"`
 	ScriptVersion      string `json:"ScriptVersion" xml:"ScriptVersion"`
-	Feature            string `json:"Feature" xml:"Feature"`
-	SupportFeatures    string `json:"SupportFeatures" xml:"SupportFeatures"`
-	Disabled           bool   `json:"Disabled" xml:"Disabled"`
 }

@@ -79,9 +79,9 @@ type UpdateHookConfigurationRequest struct {
 // UpdateHookConfigurationResponse is the response struct for api UpdateHookConfiguration
 type UpdateHookConfigurationResponse struct {
 	*responses.BaseResponse
-	RequestId          string          `json:"RequestId" xml:"RequestId"`
 	Code               int             `json:"Code" xml:"Code"`
 	Message            string          `json:"Message" xml:"Message"`
+	RequestId          string          `json:"RequestId" xml:"RequestId"`
 	HooksConfiguration []Configuration `json:"HooksConfiguration" xml:"HooksConfiguration"`
 }
 

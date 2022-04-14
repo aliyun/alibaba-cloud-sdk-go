@@ -77,10 +77,10 @@ type GetAppDeploymentRequest struct {
 // GetAppDeploymentResponse is the response struct for api GetAppDeployment
 type GetAppDeploymentResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetAppDeploymentRequest creates a request to invoke GetAppDeployment API

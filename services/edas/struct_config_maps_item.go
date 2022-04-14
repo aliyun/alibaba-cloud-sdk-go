@@ -17,11 +17,11 @@ package edas
 
 // ConfigMapsItem is a nested struct in edas response
 type ConfigMapsItem struct {
-	Name         string            `json:"Name" xml:"Name"`
-	Namespace    string            `json:"Namespace" xml:"Namespace"`
-	ClusterId    string            `json:"ClusterId" xml:"ClusterId"`
-	ClusterName  string            `json:"ClusterName" xml:"ClusterName"`
 	CreationTime string            `json:"CreationTime" xml:"CreationTime"`
+	ClusterName  string            `json:"ClusterName" xml:"ClusterName"`
+	Namespace    string            `json:"Namespace" xml:"Namespace"`
+	Name         string            `json:"Name" xml:"Name"`
+	ClusterId    string            `json:"ClusterId" xml:"ClusterId"`
 	Data         []DataItem        `json:"Data" xml:"Data"`
 	RelatedApps  []RelatedAppsItem `json:"RelatedApps" xml:"RelatedApps"`
 }

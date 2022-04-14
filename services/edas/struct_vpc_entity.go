@@ -18,12 +18,12 @@ package edas
 // VpcEntity is a nested struct in edas response
 type VpcEntity struct {
 	Expired     bool   `json:"Expired" xml:"Expired"`
-	RegionId    string `json:"RegionId" xml:"RegionId"`
 	EcsNum      int    `json:"EcsNum" xml:"EcsNum"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
 	VpcName     string `json:"VpcName" xml:"VpcName"`
 	UserId      string `json:"UserId" xml:"UserId"`
-	VpcId       string `json:"VpcId" xml:"VpcId"`
 	Status      string `json:"Status" xml:"Status"`
+	VpcId       string `json:"VpcId" xml:"VpcId"`
 	Description string `json:"Description" xml:"Description"`
 	Cidrblock   string `json:"Cidrblock" xml:"Cidrblock"`
 }

@@ -1,3 +1,7 @@
+2022-04-14 Version: v1.61.1558
+- Generated 2017-08-01 for `Edas`.
+- Supported BuildPackId configurations for K8s Applications.
+
 2022-04-13 Version: v1.61.1557
 - Generated 2014-08-28 for `Ess`.
 - Support Ecs system disk encrypted options.

@@ -85,6 +85,7 @@ type DeployK8sApplicationRequest struct {
 	MemoryRequest          requests.Integer `position:"Query" name:"MemoryRequest"`
 	Image                  string           `position:"Query" name:"Image"`
 	PreStop                string           `position:"Query" name:"PreStop"`
+	BuildPackId            string           `position:"Query" name:"BuildPackId"`
 	LocalVolume            string           `position:"Query" name:"LocalVolume"`
 	UpdateStrategy         string           `position:"Query" name:"UpdateStrategy"`
 	UseBodyEncoding        requests.Boolean `position:"Query" name:"UseBodyEncoding"`

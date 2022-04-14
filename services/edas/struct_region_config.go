@@ -17,13 +17,13 @@ package edas
 
 // RegionConfig is a nested struct in edas response
 type RegionConfig struct {
+	No                 int              `json:"No" xml:"No"`
 	AddressServerHost  string           `json:"AddressServerHost" xml:"AddressServerHost"`
+	Tag                string           `json:"Tag" xml:"Tag"`
 	AgentInstallScript string           `json:"AgentInstallScript" xml:"AgentInstallScript"`
 	FileServerType     string           `json:"FileServerType" xml:"FileServerType"`
-	Id                 string           `json:"Id" xml:"Id"`
-	ImageId            string           `json:"ImageId" xml:"ImageId"`
 	Name               string           `json:"Name" xml:"Name"`
-	No                 int              `json:"No" xml:"No"`
-	Tag                string           `json:"Tag" xml:"Tag"`
+	ImageId            string           `json:"ImageId" xml:"ImageId"`
+	Id                 string           `json:"Id" xml:"Id"`
 	FileServerConfig   FileServerConfig `json:"FileServerConfig" xml:"FileServerConfig"`
 }

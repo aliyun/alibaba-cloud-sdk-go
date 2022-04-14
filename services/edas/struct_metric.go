@@ -18,8 +18,8 @@ package edas
 // Metric is a nested struct in edas response
 type Metric struct {
 	MinReplicas                    int      `json:"MinReplicas" xml:"MinReplicas"`
-	MetricType                     string   `json:"MetricType" xml:"MetricType"`
 	MetricTargetAverageUtilization int      `json:"MetricTargetAverageUtilization" xml:"MetricTargetAverageUtilization"`
+	MetricType                     string   `json:"MetricType" xml:"MetricType"`
 	MaxReplicas                    int      `json:"MaxReplicas" xml:"MaxReplicas"`
 	Metrics                        []Metric `json:"Metrics" xml:"Metrics"`
 }

@@ -17,13 +17,13 @@ package edas
 
 // Group is a nested struct in edas response
 type Group struct {
-	GroupId          string `json:"GroupId" xml:"GroupId"`
+	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
 	GroupName        string `json:"GroupName" xml:"GroupName"`
+	GroupId          string `json:"GroupId" xml:"GroupId"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	AppVersionId     string `json:"AppVersionId" xml:"AppVersionId"`
 	AppId            string `json:"AppId" xml:"AppId"`
 	PackageVersionId string `json:"PackageVersionId" xml:"PackageVersionId"`
-	AppVersionId     string `json:"AppVersionId" xml:"AppVersionId"`
 	GroupType        int    `json:"GroupType" xml:"GroupType"`
 	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
-	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
 }

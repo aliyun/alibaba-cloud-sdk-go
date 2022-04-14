@@ -19,21 +19,21 @@ package edas
 type DeployGroup struct {
 	CsClusterId           string     `json:"CsClusterId" xml:"CsClusterId"`
 	Reversion             string     `json:"Reversion" xml:"Reversion"`
-	GroupName             string     `json:"GroupName" xml:"GroupName"`
 	DeploymentName        string     `json:"DeploymentName" xml:"DeploymentName"`
 	MemoryLimit           string     `json:"MemoryLimit" xml:"MemoryLimit"`
+	GroupName             string     `json:"GroupName" xml:"GroupName"`
 	CreateTime            int64      `json:"CreateTime" xml:"CreateTime"`
-	PackageVersion        string     `json:"PackageVersion" xml:"PackageVersion"`
 	MemoryRequest         string     `json:"MemoryRequest" xml:"MemoryRequest"`
+	PackageVersion        string     `json:"PackageVersion" xml:"PackageVersion"`
 	PackagePublicUrl      string     `json:"PackagePublicUrl" xml:"PackagePublicUrl"`
 	Selector              string     `json:"Selector" xml:"Selector"`
 	VExtServerGroupId     string     `json:"VExtServerGroupId" xml:"VExtServerGroupId"`
 	Strategy              string     `json:"Strategy" xml:"Strategy"`
-	PackageVersionId      string     `json:"PackageVersionId" xml:"PackageVersionId"`
-	ClusterName           string     `json:"ClusterName" xml:"ClusterName"`
 	PreStop               string     `json:"PreStop" xml:"PreStop"`
-	Env                   string     `json:"Env" xml:"Env"`
 	BaseComponentMetaName string     `json:"BaseComponentMetaName" xml:"BaseComponentMetaName"`
+	Env                   string     `json:"Env" xml:"Env"`
+	ClusterName           string     `json:"ClusterName" xml:"ClusterName"`
+	PackageVersionId      string     `json:"PackageVersionId" xml:"PackageVersionId"`
 	GroupId               string     `json:"GroupId" xml:"GroupId"`
 	AppVersionId          string     `json:"AppVersionId" xml:"AppVersionId"`
 	ClusterId             string     `json:"ClusterId" xml:"ClusterId"`
@@ -46,8 +46,8 @@ type DeployGroup struct {
 	AppId                 string     `json:"AppId" xml:"AppId"`
 	CpuLimit              string     `json:"CpuLimit" xml:"CpuLimit"`
 	CpuRequest            string     `json:"CpuRequest" xml:"CpuRequest"`
-	Labels                string     `json:"Labels" xml:"Labels"`
 	Status                string     `json:"Status" xml:"Status"`
+	Labels                string     `json:"Labels" xml:"Labels"`
 	PackageUrl            string     `json:"PackageUrl" xml:"PackageUrl"`
 	Components            Components `json:"Components" xml:"Components"`
 }

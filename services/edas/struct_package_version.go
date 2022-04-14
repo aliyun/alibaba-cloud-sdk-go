@@ -17,13 +17,13 @@ package edas
 
 // PackageVersion is a nested struct in edas response
 type PackageVersion struct {
-	Id             string `json:"Id" xml:"Id"`
-	PackageVersion string `json:"PackageVersion" xml:"PackageVersion"`
-	AppId          string `json:"AppId" xml:"AppId"`
-	Description    string `json:"Description" xml:"Description"`
-	WarUrl         string `json:"WarUrl" xml:"WarUrl"`
-	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime     int64  `json:"UpdateTime" xml:"UpdateTime"`
 	Type           string `json:"Type" xml:"Type"`
 	PublicUrl      string `json:"PublicUrl" xml:"PublicUrl"`
+	UpdateTime     int64  `json:"UpdateTime" xml:"UpdateTime"`
+	Description    string `json:"Description" xml:"Description"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
+	AppId          string `json:"AppId" xml:"AppId"`
+	WarUrl         string `json:"WarUrl" xml:"WarUrl"`
+	Id             string `json:"Id" xml:"Id"`
+	PackageVersion string `json:"PackageVersion" xml:"PackageVersion"`
 }

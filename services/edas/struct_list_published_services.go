@@ -17,12 +17,12 @@ package edas
 
 // ListPublishedServices is a nested struct in edas response
 type ListPublishedServices struct {
-	AppId             string                        `json:"AppId" xml:"AppId"`
 	DockerApplication bool                          `json:"DockerApplication" xml:"DockerApplication"`
-	Group2Ip          string                        `json:"Group2Ip" xml:"Group2Ip"`
-	Name              string                        `json:"Name" xml:"Name"`
 	Type              string                        `json:"Type" xml:"Type"`
 	Version           string                        `json:"Version" xml:"Version"`
-	Groups            GroupsInListPublishedServices `json:"Groups" xml:"Groups"`
+	AppId             string                        `json:"AppId" xml:"AppId"`
+	Group2Ip          string                        `json:"Group2Ip" xml:"Group2Ip"`
+	Name              string                        `json:"Name" xml:"Name"`
 	Ips               IpsInListPublishedServices    `json:"Ips" xml:"Ips"`
+	Groups            GroupsInListPublishedServices `json:"Groups" xml:"Groups"`
 }

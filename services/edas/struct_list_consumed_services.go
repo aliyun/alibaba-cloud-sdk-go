@@ -17,12 +17,12 @@ package edas
 
 // ListConsumedServices is a nested struct in edas response
 type ListConsumedServices struct {
-	AppId             string                       `json:"AppId" xml:"AppId"`
 	DockerApplication bool                         `json:"DockerApplication" xml:"DockerApplication"`
-	Group2Ip          string                       `json:"Group2Ip" xml:"Group2Ip"`
-	Name              string                       `json:"Name" xml:"Name"`
 	Type              string                       `json:"Type" xml:"Type"`
 	Version           string                       `json:"Version" xml:"Version"`
-	Groups            GroupsInListConsumedServices `json:"Groups" xml:"Groups"`
+	AppId             string                       `json:"AppId" xml:"AppId"`
+	Group2Ip          string                       `json:"Group2Ip" xml:"Group2Ip"`
+	Name              string                       `json:"Name" xml:"Name"`
 	Ips               IpsInListConsumedServices    `json:"Ips" xml:"Ips"`
+	Groups            GroupsInListConsumedServices `json:"Groups" xml:"Groups"`
 }

@@ -31,8 +31,8 @@ type Rule struct {
 	Rt               int     `json:"Rt" xml:"Rt"`
 	MetricType       string  `json:"MetricType" xml:"MetricType"`
 	ScaleRuleEnabled bool    `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
-	MaxReplicas      int     `json:"MaxReplicas" xml:"MaxReplicas"`
 	UpdateTime       int64   `json:"UpdateTime" xml:"UpdateTime"`
+	MaxReplicas      int     `json:"MaxReplicas" xml:"MaxReplicas"`
 	SpecId           string  `json:"SpecId" xml:"SpecId"`
 	VSwitchIds       string  `json:"VSwitchIds" xml:"VSwitchIds"`
 	AppId            string  `json:"AppId" xml:"AppId"`
@@ -44,6 +44,6 @@ type Rule struct {
 	Cond             string  `json:"Cond" xml:"Cond"`
 	Cpu              int     `json:"Cpu" xml:"Cpu"`
 	MultiAzPolicy    string  `json:"MultiAzPolicy" xml:"MultiAzPolicy"`
-	Trigger          Trigger `json:"Trigger" xml:"Trigger"`
 	Metric           Metric  `json:"Metric" xml:"Metric"`
+	Trigger          Trigger `json:"Trigger" xml:"Trigger"`
 }

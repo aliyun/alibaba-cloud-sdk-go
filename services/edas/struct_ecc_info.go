@@ -17,12 +17,12 @@ package edas
 
 // EccInfo is a nested struct in edas response
 type EccInfo struct {
-	AppId          string `json:"AppId" xml:"AppId"`
+	VpcId          string `json:"VpcId" xml:"VpcId"`
 	EccId          string `json:"EccId" xml:"EccId"`
 	EcuId          string `json:"EcuId" xml:"EcuId"`
 	GroupId        string `json:"GroupId" xml:"GroupId"`
 	GroupName      string `json:"GroupName" xml:"GroupName"`
 	PackageMd5     string `json:"PackageMd5" xml:"PackageMd5"`
+	AppId          string `json:"AppId" xml:"AppId"`
 	PackageVersion string `json:"PackageVersion" xml:"PackageVersion"`
-	VpcId          string `json:"VpcId" xml:"VpcId"`
 }

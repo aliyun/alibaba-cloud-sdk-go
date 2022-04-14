@@ -80,9 +80,9 @@ type ConvertK8sResourceRequest struct {
 // ConvertK8sResourceResponse is the response struct for api ConvertK8sResource
 type ConvertK8sResourceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
 	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateConvertK8sResourceRequest creates a request to invoke ConvertK8sResource API

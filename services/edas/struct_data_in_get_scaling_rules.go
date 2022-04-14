@@ -17,9 +17,9 @@ package edas
 
 // DataInGetScalingRules is a nested struct in edas response
 type DataInGetScalingRules struct {
-	ClusterType    int      `json:"ClusterType" xml:"ClusterType"`
 	OversoldFactor int      `json:"OversoldFactor" xml:"OversoldFactor"`
 	VpcId          string   `json:"VpcId" xml:"VpcId"`
 	UpdateTime     int64    `json:"UpdateTime" xml:"UpdateTime"`
+	ClusterType    int      `json:"ClusterType" xml:"ClusterType"`
 	RuleList       RuleList `json:"RuleList" xml:"RuleList"`
 }

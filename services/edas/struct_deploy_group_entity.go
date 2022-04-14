@@ -17,13 +17,13 @@ package edas
 
 // DeployGroupEntity is a nested struct in edas response
 type DeployGroupEntity struct {
-	Id               string `json:"Id" xml:"Id"`
-	GroupName        string `json:"GroupName" xml:"GroupName"`
-	GroupType        int    `json:"GroupType" xml:"GroupType"`
-	AppId            string `json:"AppId" xml:"AppId"`
-	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
-	PackageVersionId string `json:"PackageVersionId" xml:"PackageVersionId"`
-	AppVersionId     string `json:"AppVersionId" xml:"AppVersionId"`
-	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
+	GroupName        string `json:"GroupName" xml:"GroupName"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	AppVersionId     string `json:"AppVersionId" xml:"AppVersionId"`
+	AppId            string `json:"AppId" xml:"AppId"`
+	PackageVersionId string `json:"PackageVersionId" xml:"PackageVersionId"`
+	GroupType        int    `json:"GroupType" xml:"GroupType"`
+	Id               string `json:"Id" xml:"Id"`
+	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
 }

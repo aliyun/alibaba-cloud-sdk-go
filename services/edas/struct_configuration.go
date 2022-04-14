@@ -17,7 +17,7 @@ package edas
 
 // Configuration is a nested struct in edas response
 type Configuration struct {
+	IgnoreFail bool   `json:"IgnoreFail" xml:"IgnoreFail"`
 	Name       string `json:"Name" xml:"Name"`
 	Script     string `json:"Script" xml:"Script"`
-	IgnoreFail bool   `json:"IgnoreFail" xml:"IgnoreFail"`
 }

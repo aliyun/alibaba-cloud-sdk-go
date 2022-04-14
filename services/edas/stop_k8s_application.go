@@ -78,10 +78,10 @@ type StopK8sApplicationRequest struct {
 // StopK8sApplicationResponse is the response struct for api StopK8sApplication
 type StopK8sApplicationResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopK8sApplicationRequest creates a request to invoke StopK8sApplication API

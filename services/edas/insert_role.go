@@ -80,8 +80,8 @@ type InsertRoleResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	RoleId    int    `json:"RoleId" xml:"RoleId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	RoleId    int    `json:"RoleId" xml:"RoleId"`
 }
 
 // CreateInsertRoleRequest creates a request to invoke InsertRole API

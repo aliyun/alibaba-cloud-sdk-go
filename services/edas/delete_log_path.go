@@ -78,9 +78,9 @@ type DeleteLogPathRequest struct {
 // DeleteLogPathResponse is the response struct for api DeleteLogPath
 type DeleteLogPathResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteLogPathRequest creates a request to invoke DeleteLogPath API

@@ -17,6 +17,6 @@ package edas
 
 // JavaStartUpConfig is a nested struct in edas response
 type JavaStartUpConfig struct {
-	OriginalConfigs string `json:"OriginalConfigs" xml:"OriginalConfigs"`
 	StartUpArgs     string `json:"StartUpArgs" xml:"StartUpArgs"`
+	OriginalConfigs string `json:"OriginalConfigs" xml:"OriginalConfigs"`
 }

@@ -17,10 +17,10 @@ package edas
 
 // DeployRecord is a nested struct in edas response
 type DeployRecord struct {
-	DeployRecordId   string `json:"DeployRecordId" xml:"DeployRecordId"`
 	EccId            string `json:"EccId" xml:"EccId"`
 	EcuId            string `json:"EcuId" xml:"EcuId"`
-	PackageVersionId string `json:"PackageVersionId" xml:"PackageVersionId"`
 	PackageMd5       string `json:"PackageMd5" xml:"PackageMd5"`
 	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	PackageVersionId string `json:"PackageVersionId" xml:"PackageVersionId"`
+	DeployRecordId   string `json:"DeployRecordId" xml:"DeployRecordId"`
 }

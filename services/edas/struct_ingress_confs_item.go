@@ -23,5 +23,7 @@ type IngressConfsItem struct {
 	Namespace    string      `json:"Namespace" xml:"Namespace"`
 	Name         string      `json:"Name" xml:"Name"`
 	DashboardUrl string      `json:"DashboardUrl" xml:"DashboardUrl"`
+	AlbId        string      `json:"AlbId" xml:"AlbId"`
+	IngressType  string      `json:"IngressType" xml:"IngressType"`
 	Rules        []RulesItem `json:"Rules" xml:"Rules"`
 }

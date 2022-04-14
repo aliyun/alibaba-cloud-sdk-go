@@ -24,8 +24,8 @@ type SlbEntity struct {
 	VswitchId   string `json:"VswitchId" xml:"VswitchId"`
 	SlbStatus   string `json:"SlbStatus" xml:"SlbStatus"`
 	SlbId       string `json:"SlbId" xml:"SlbId"`
-	AddressType string `json:"AddressType" xml:"AddressType"`
 	VpcId       string `json:"VpcId" xml:"VpcId"`
+	AddressType string `json:"AddressType" xml:"AddressType"`
 	NetworkType string `json:"NetworkType" xml:"NetworkType"`
 	Address     string `json:"Address" xml:"Address"`
 	SlbName     string `json:"SlbName" xml:"SlbName"`

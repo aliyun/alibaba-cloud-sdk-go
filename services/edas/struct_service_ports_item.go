@@ -17,8 +17,8 @@ package edas
 
 // ServicePortsItem is a nested struct in edas response
 type ServicePortsItem struct {
-	Protocol   string `json:"Protocol" xml:"Protocol"`
-	Port       int    `json:"Port" xml:"Port"`
 	TargetPort string `json:"TargetPort" xml:"TargetPort"`
 	NodePort   int    `json:"NodePort" xml:"NodePort"`
+	Port       int    `json:"Port" xml:"Port"`
+	Protocol   string `json:"Protocol" xml:"Protocol"`
 }

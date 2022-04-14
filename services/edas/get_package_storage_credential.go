@@ -76,9 +76,9 @@ type GetPackageStorageCredentialRequest struct {
 // GetPackageStorageCredentialResponse is the response struct for api GetPackageStorageCredential
 type GetPackageStorageCredentialResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Code       int        `json:"Code" xml:"Code"`
 	Message    string     `json:"Message" xml:"Message"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Credential Credential `json:"Credential" xml:"Credential"`
 }
 

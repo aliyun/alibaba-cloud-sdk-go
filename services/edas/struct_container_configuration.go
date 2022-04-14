@@ -18,8 +18,8 @@ package edas
 // ContainerConfiguration is a nested struct in edas response
 type ContainerConfiguration struct {
 	MaxThreads      int    `json:"MaxThreads" xml:"MaxThreads"`
-	URIEncoding     string `json:"URIEncoding" xml:"URIEncoding"`
 	UseBodyEncoding bool   `json:"UseBodyEncoding" xml:"UseBodyEncoding"`
+	URIEncoding     string `json:"URIEncoding" xml:"URIEncoding"`
 	HttpPort        int    `json:"HttpPort" xml:"HttpPort"`
 	ContextPath     string `json:"ContextPath" xml:"ContextPath"`
 }

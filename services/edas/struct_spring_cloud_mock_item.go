@@ -17,14 +17,11 @@ package edas
 
 // SpringCloudMockItem is a nested struct in edas response
 type SpringCloudMockItem struct {
-	Value              string             `json:"Value" xml:"Value"`
-	Path               string             `json:"Path" xml:"Path"`
-	ExceptionClassName string             `json:"ExceptionClassName" xml:"ExceptionClassName"`
-	Timeout            int64              `json:"Timeout" xml:"Timeout"`
-	ExecuteCondition   string             `json:"ExecuteCondition" xml:"ExecuteCondition"`
-	Condition          string             `json:"Condition" xml:"Condition"`
-	Method             string             `json:"Method" xml:"Method"`
-	Oper               string             `json:"Oper" xml:"Oper"`
-	ServiceName        string             `json:"ServiceName" xml:"ServiceName"`
-	ArgumentMockItems  []ArgumentMockItem `json:"ArgumentMockItems" xml:"ArgumentMockItems"`
+	Value              string `json:"Value" xml:"Value"`
+	Oper               string `json:"Oper" xml:"Oper"`
+	ExecuteCondition   string `json:"ExecuteCondition" xml:"ExecuteCondition"`
+	Path               string `json:"Path" xml:"Path"`
+	Method             string `json:"Method" xml:"Method"`
+	ExceptionClassName string `json:"ExceptionClassName" xml:"ExceptionClassName"`
+	ServiceName        string `json:"ServiceName" xml:"ServiceName"`
 }

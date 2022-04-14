@@ -17,6 +17,6 @@ package edas
 
 // Root is a nested struct in edas response
 type Root struct {
-	Id   int64  `json:"Id" xml:"Id"`
 	Name string `json:"Name" xml:"Name"`
+	Id   int64  `json:"Id" xml:"Id"`
 }

@@ -18,7 +18,7 @@ package edas
 // DataInGetServiceMethodPage is a nested struct in edas response
 type DataInGetServiceMethodPage struct {
 	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
-	TotalSize  int      `json:"TotalSize" xml:"TotalSize"`
 	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	TotalSize  int      `json:"TotalSize" xml:"TotalSize"`
 	Result     []Method `json:"Result" xml:"Result"`
 }

@@ -78,9 +78,9 @@ type DescribeAppInstanceListRequest struct {
 // DescribeAppInstanceListResponse is the response struct for api DescribeAppInstanceList
 type DescribeAppInstanceListResponse struct {
 	*responses.BaseResponse
-	RequestId    string     `json:"RequestId" xml:"RequestId"`
 	Code         int        `json:"Code" xml:"Code"`
 	Message      string     `json:"Message" xml:"Message"`
+	RequestId    string     `json:"RequestId" xml:"RequestId"`
 	InstanceList []Instance `json:"InstanceList" xml:"InstanceList"`
 }
 

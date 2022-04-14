@@ -77,10 +77,10 @@ type DeleteK8sApplicationRequest struct {
 // DeleteK8sApplicationResponse is the response struct for api DeleteK8sApplication
 type DeleteK8sApplicationResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteK8sApplicationRequest creates a request to invoke DeleteK8sApplication API

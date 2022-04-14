@@ -78,9 +78,9 @@ type UpdateSlsLogStoreRequest struct {
 // UpdateSlsLogStoreResponse is the response struct for api UpdateSlsLogStore
 type UpdateSlsLogStoreResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
 	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateSlsLogStoreRequest creates a request to invoke UpdateSlsLogStore API

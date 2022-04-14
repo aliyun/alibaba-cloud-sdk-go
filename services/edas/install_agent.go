@@ -79,9 +79,9 @@ type InstallAgentRequest struct {
 // InstallAgentResponse is the response struct for api InstallAgent
 type InstallAgentResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Code                int                 `json:"Code" xml:"Code"`
 	Message             string              `json:"Message" xml:"Message"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	ExecutionResultList ExecutionResultList `json:"ExecutionResultList" xml:"ExecutionResultList"`
 }
 

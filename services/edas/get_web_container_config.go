@@ -77,9 +77,9 @@ type GetWebContainerConfigRequest struct {
 // GetWebContainerConfigResponse is the response struct for api GetWebContainerConfig
 type GetWebContainerConfigResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	Message            string             `json:"Message" xml:"Message"`
 	Code               int                `json:"Code" xml:"Code"`
+	Message            string             `json:"Message" xml:"Message"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	WebContainerConfig WebContainerConfig `json:"WebContainerConfig" xml:"WebContainerConfig"`
 }
 

@@ -76,9 +76,9 @@ type QueryRegionConfigRequest struct {
 // QueryRegionConfigResponse is the response struct for api QueryRegionConfig
 type QueryRegionConfigResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Code         int          `json:"Code" xml:"Code"`
 	Message      string       `json:"Message" xml:"Message"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	RegionConfig RegionConfig `json:"RegionConfig" xml:"RegionConfig"`
 }
 

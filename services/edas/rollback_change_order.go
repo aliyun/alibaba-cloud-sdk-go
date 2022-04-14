@@ -78,10 +78,10 @@ type RollbackChangeOrderRequest struct {
 type RollbackChangeOrderResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

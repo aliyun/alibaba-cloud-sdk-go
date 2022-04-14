@@ -17,12 +17,12 @@ package edas
 
 // SubAccount is a nested struct in edas response
 type SubAccount struct {
-	AdminUserId string `json:"AdminUserId" xml:"AdminUserId"`
+	SubEdasId   string `json:"SubEdasId" xml:"SubEdasId"`
 	SubUserId   string `json:"SubUserId" xml:"SubUserId"`
 	Email       string `json:"Email" xml:"Email"`
-	Phone       string `json:"Phone" xml:"Phone"`
+	AdminUserId string `json:"AdminUserId" xml:"AdminUserId"`
 	AdminUserKp string `json:"AdminUserKp" xml:"AdminUserKp"`
-	SubUserKp   string `json:"SubUserKp" xml:"SubUserKp"`
 	AdminEdasId string `json:"AdminEdasId" xml:"AdminEdasId"`
-	SubEdasId   string `json:"SubEdasId" xml:"SubEdasId"`
+	SubUserKp   string `json:"SubUserKp" xml:"SubUserKp"`
+	Phone       string `json:"Phone" xml:"Phone"`
 }

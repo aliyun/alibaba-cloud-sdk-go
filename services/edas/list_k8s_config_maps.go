@@ -82,10 +82,10 @@ type ListK8sConfigMapsRequest struct {
 // ListK8sConfigMapsResponse is the response struct for api ListK8sConfigMaps
 type ListK8sConfigMapsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      int          `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateListK8sConfigMapsRequest creates a request to invoke ListK8sConfigMaps API

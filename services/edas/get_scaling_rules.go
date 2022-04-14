@@ -79,10 +79,10 @@ type GetScalingRulesRequest struct {
 // GetScalingRulesResponse is the response struct for api GetScalingRules
 type GetScalingRulesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                `json:"RequestId" xml:"RequestId"`
 	Code       int                   `json:"Code" xml:"Code"`
 	Message    string                `json:"Message" xml:"Message"`
 	UpdateTime int64                 `json:"UpdateTime" xml:"UpdateTime"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
 	Data       DataInGetScalingRules `json:"Data" xml:"Data"`
 }
 

@@ -17,7 +17,7 @@ package edas
 
 // ListServiceGroups is a nested struct in edas response
 type ListServiceGroups struct {
-	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 	GroupId    string `json:"GroupId" xml:"GroupId"`
 	GroupName  string `json:"GroupName" xml:"GroupName"`
+	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 }

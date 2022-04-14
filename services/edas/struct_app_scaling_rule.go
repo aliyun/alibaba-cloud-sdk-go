@@ -20,12 +20,12 @@ type AppScalingRule struct {
 	AppId            string  `json:"AppId" xml:"AppId"`
 	ScaleRuleType    string  `json:"ScaleRuleType" xml:"ScaleRuleType"`
 	MinReplicas      int     `json:"MinReplicas" xml:"MinReplicas"`
-	ScaleRuleEnabled bool    `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
 	LastDisableTime  int64   `json:"LastDisableTime" xml:"LastDisableTime"`
-	MaxReplicas      int     `json:"MaxReplicas" xml:"MaxReplicas"`
+	ScaleRuleEnabled bool    `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
 	UpdateTime       int64   `json:"UpdateTime" xml:"UpdateTime"`
+	MaxReplicas      int     `json:"MaxReplicas" xml:"MaxReplicas"`
 	ScaleRuleName    string  `json:"ScaleRuleName" xml:"ScaleRuleName"`
 	CreateTime       int64   `json:"CreateTime" xml:"CreateTime"`
-	Metric           Metric  `json:"Metric" xml:"Metric"`
 	Trigger          Trigger `json:"Trigger" xml:"Trigger"`
+	Metric           Metric  `json:"Metric" xml:"Metric"`
 }

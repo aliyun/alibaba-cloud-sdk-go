@@ -78,9 +78,9 @@ type AddLogPathRequest struct {
 // AddLogPathResponse is the response struct for api AddLogPath
 type AddLogPathResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddLogPathRequest creates a request to invoke AddLogPath API

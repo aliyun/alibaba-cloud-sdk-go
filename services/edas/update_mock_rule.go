@@ -83,9 +83,9 @@ type UpdateMockRuleRequest struct {
 type UpdateMockRuleResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
-	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }

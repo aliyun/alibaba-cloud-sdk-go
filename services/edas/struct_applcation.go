@@ -41,8 +41,8 @@ type Applcation struct {
 	InstanceCount        int           `json:"InstanceCount" xml:"InstanceCount"`
 	HealthCheckUrl       string        `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
 	SlbId                string        `json:"SlbId" xml:"SlbId"`
-	ClusterType          int           `json:"ClusterType" xml:"ClusterType"`
 	Cpu                  int           `json:"Cpu" xml:"Cpu"`
+	ClusterType          int           `json:"ClusterType" xml:"ClusterType"`
 	RunningInstanceCount int           `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
 	SlbIp                string        `json:"SlbIp" xml:"SlbIp"`
 	App                  App           `json:"App" xml:"App"`

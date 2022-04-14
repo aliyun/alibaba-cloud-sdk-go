@@ -83,9 +83,9 @@ type UpdateApplicationScalingRuleRequest struct {
 // UpdateApplicationScalingRuleResponse is the response struct for api UpdateApplicationScalingRule
 type UpdateApplicationScalingRuleResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Code           int            `json:"Code" xml:"Code"`
 	Message        string         `json:"Message" xml:"Message"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	AppScalingRule AppScalingRule `json:"AppScalingRule" xml:"AppScalingRule"`
 }
 

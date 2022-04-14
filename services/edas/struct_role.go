@@ -17,10 +17,10 @@ package edas
 
 // Role is a nested struct in edas response
 type Role struct {
-	Id          int    `json:"Id" xml:"Id"`
-	AdminUserId string `json:"AdminUserId" xml:"AdminUserId"`
-	Name        string `json:"Name" xml:"Name"`
-	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
 	IsDefault   bool   `json:"IsDefault" xml:"IsDefault"`
+	AdminUserId string `json:"AdminUserId" xml:"AdminUserId"`
+	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
+	Name        string `json:"Name" xml:"Name"`
+	Id          int    `json:"Id" xml:"Id"`
 }

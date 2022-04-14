@@ -17,10 +17,10 @@ package edas
 
 // RegionDefine is a nested struct in edas response
 type RegionDefine struct {
-	Id           int64  `json:"Id" xml:"Id"`
-	UserId       string `json:"UserId" xml:"UserId"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
+	BelongRegion string `json:"BelongRegion" xml:"BelongRegion"`
 	RegionName   string `json:"RegionName" xml:"RegionName"`
 	Description  string `json:"Description" xml:"Description"`
-	BelongRegion string `json:"BelongRegion" xml:"BelongRegion"`
+	UserId       string `json:"UserId" xml:"UserId"`
+	Id           int64  `json:"Id" xml:"Id"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
 }

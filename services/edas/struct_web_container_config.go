@@ -17,13 +17,13 @@ package edas
 
 // WebContainerConfig is a nested struct in edas response
 type WebContainerConfig struct {
-	ContextInputType     string `json:"ContextInputType" xml:"ContextInputType"`
 	ContextPath          string `json:"ContextPath" xml:"ContextPath"`
+	UseAdvancedServerXml bool   `json:"UseAdvancedServerXml" xml:"UseAdvancedServerXml"`
+	UseDefaultConfig     bool   `json:"UseDefaultConfig" xml:"UseDefaultConfig"`
 	HttpPort             int    `json:"HttpPort" xml:"HttpPort"`
+	ContextInputType     string `json:"ContextInputType" xml:"ContextInputType"`
+	UseBodyEncoding      bool   `json:"UseBodyEncoding" xml:"UseBodyEncoding"`
+	UriEncoding          string `json:"UriEncoding" xml:"UriEncoding"`
 	MaxThreads           int    `json:"MaxThreads" xml:"MaxThreads"`
 	ServerXml            string `json:"ServerXml" xml:"ServerXml"`
-	UriEncoding          string `json:"UriEncoding" xml:"UriEncoding"`
-	UseAdvancedServerXml bool   `json:"UseAdvancedServerXml" xml:"UseAdvancedServerXml"`
-	UseBodyEncoding      bool   `json:"UseBodyEncoding" xml:"UseBodyEncoding"`
-	UseDefaultConfig     bool   `json:"UseDefaultConfig" xml:"UseDefaultConfig"`
 }

@@ -78,9 +78,9 @@ type SwitchAdvancedMonitoringRequest struct {
 // SwitchAdvancedMonitoringResponse is the response struct for api SwitchAdvancedMonitoring
 type SwitchAdvancedMonitoringResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
 	Code                      int    `json:"Code" xml:"Code"`
 	Message                   string `json:"Message" xml:"Message"`
+	RequestId                 string `json:"RequestId" xml:"RequestId"`
 	AdvancedMonitoringEnabled bool   `json:"AdvancedMonitoringEnabled" xml:"AdvancedMonitoringEnabled"`
 }
 

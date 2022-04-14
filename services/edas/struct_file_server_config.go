@@ -17,8 +17,8 @@ package edas
 
 // FileServerConfig is a nested struct in edas response
 type FileServerConfig struct {
-	Bucket      string `json:"Bucket" xml:"Bucket"`
 	InternalUrl string `json:"InternalUrl" xml:"InternalUrl"`
 	PublicUrl   string `json:"PublicUrl" xml:"PublicUrl"`
 	VpcUrl      string `json:"VpcUrl" xml:"VpcUrl"`
+	Bucket      string `json:"Bucket" xml:"Bucket"`
 }

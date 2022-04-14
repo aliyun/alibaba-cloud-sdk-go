@@ -79,10 +79,10 @@ type StartK8sApplicationRequest struct {
 // StartK8sApplicationResponse is the response struct for api StartK8sApplication
 type StartK8sApplicationResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStartK8sApplicationRequest creates a request to invoke StartK8sApplication API

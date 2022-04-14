@@ -17,11 +17,11 @@ package edas
 
 // ClusterMember is a nested struct in edas response
 type ClusterMember struct {
-	ClusterMemberId string `json:"ClusterMemberId" xml:"ClusterMemberId"`
-	ClusterId       string `json:"ClusterId" xml:"ClusterId"`
+	Status          int    `json:"Status" xml:"Status"`
+	UpdateTime      int64  `json:"UpdateTime" xml:"UpdateTime"`
 	EcuId           string `json:"EcuId" xml:"EcuId"`
 	EcsId           string `json:"EcsId" xml:"EcsId"`
-	Status          int    `json:"Status" xml:"Status"`
 	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime      int64  `json:"UpdateTime" xml:"UpdateTime"`
+	ClusterMemberId string `json:"ClusterMemberId" xml:"ClusterMemberId"`
+	ClusterId       string `json:"ClusterId" xml:"ClusterId"`
 }

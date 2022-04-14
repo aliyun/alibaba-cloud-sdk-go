@@ -81,9 +81,9 @@ type UpdateK8sApplicationBaseInfoRequest struct {
 // UpdateK8sApplicationBaseInfoResponse is the response struct for api UpdateK8sApplicationBaseInfo
 type UpdateK8sApplicationBaseInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    string `json:"Result" xml:"Result"`
 }
 

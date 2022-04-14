@@ -17,22 +17,22 @@ package edas
 
 // ApplicationInQueryApplicationStatus is a nested struct in edas response
 type ApplicationInQueryApplicationStatus struct {
-	ApplicationId        string `json:"ApplicationId" xml:"ApplicationId"`
-	BuildPackageId       int    `json:"BuildPackageId" xml:"BuildPackageId"`
-	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
-	Cpu                  int    `json:"Cpu" xml:"Cpu"`
+	HealthCheckUrl       string `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
+	Owner                string `json:"Owner" xml:"Owner"`
 	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
+	UserId               string `json:"UserId" xml:"UserId"`
+	Port                 int    `json:"Port" xml:"Port"`
+	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
+	Phone                string `json:"Phone" xml:"Phone"`
+	RegionId             string `json:"RegionId" xml:"RegionId"`
+	BuildPackageId       int    `json:"BuildPackageId" xml:"BuildPackageId"`
 	Dockerize            bool   `json:"Dockerize" xml:"Dockerize"`
 	Email                string `json:"Email" xml:"Email"`
-	HealthCheckUrl       string `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
+	Cpu                  int    `json:"Cpu" xml:"Cpu"`
 	InstanceCount        int    `json:"InstanceCount" xml:"InstanceCount"`
 	LaunchTime           int64  `json:"LaunchTime" xml:"LaunchTime"`
 	Memory               int    `json:"Memory" xml:"Memory"`
 	Name                 string `json:"Name" xml:"Name"`
-	Owner                string `json:"Owner" xml:"Owner"`
-	Phone                string `json:"Phone" xml:"Phone"`
-	Port                 int    `json:"Port" xml:"Port"`
-	RegionId             string `json:"RegionId" xml:"RegionId"`
-	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
-	UserId               string `json:"UserId" xml:"UserId"`
+	ApplicationId        string `json:"ApplicationId" xml:"ApplicationId"`
+	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
 }
