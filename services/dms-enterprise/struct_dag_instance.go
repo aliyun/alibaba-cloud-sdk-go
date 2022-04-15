@@ -17,20 +17,14 @@ package dms_enterprise
 
 // DAGInstance is a nested struct in dms_enterprise response
 type DAGInstance struct {
-	DagId                string `json:"DagId" xml:"DagId"`
-	Status               int    `json:"Status" xml:"Status"`
-	Message              string `json:"Message" xml:"Message"`
-	LatestInstanceStatus int    `json:"LatestInstanceStatus" xml:"LatestInstanceStatus"`
-	OwnerName            string `json:"OwnerName" xml:"OwnerName"`
-	BusinessTime         string `json:"BusinessTime" xml:"BusinessTime"`
-	Id                   int64  `json:"Id" xml:"Id"`
-	CreatorNickName      string `json:"CreatorNickName" xml:"CreatorNickName"`
-	DeployId             int64  `json:"DeployId" xml:"DeployId"`
-	EndTime              string `json:"EndTime" xml:"EndTime"`
-	CreatorId            string `json:"CreatorId" xml:"CreatorId"`
-	LatestInstanceTime   string `json:"LatestInstanceTime" xml:"LatestInstanceTime"`
-	DagOwnerNickName     string `json:"DagOwnerNickName" xml:"DagOwnerNickName"`
-	DagName              string `json:"DagName" xml:"DagName"`
-	TriggerType          int    `json:"TriggerType" xml:"TriggerType"`
-	HistoryDagId         int64  `json:"HistoryDagId" xml:"HistoryDagId"`
+	Id           int64  `json:"Id" xml:"Id"`
+	BusinessTime string `json:"BusinessTime" xml:"BusinessTime"`
+	EndTime      string `json:"EndTime" xml:"EndTime"`
+	DagId        string `json:"DagId" xml:"DagId"`
+	TriggerType  int    `json:"TriggerType" xml:"TriggerType"`
+	Status       int    `json:"Status" xml:"Status"`
+	Message      string `json:"Message" xml:"Message"`
+	HistoryDagId int64  `json:"HistoryDagId" xml:"HistoryDagId"`
+	DagName      string `json:"DagName" xml:"DagName"`
+	OwnerName    string `json:"OwnerName" xml:"OwnerName"`
 }
