@@ -1,3 +1,7 @@
+2022-04-18 Version: v1.61.1562
+- Generated 2019-08-08 for `ARMS`.
+- Update CreateOrUpdateEventBridgeIntegration.
+
 2022-04-18 Version: v1.61.1561
 - Generated 2019-01-03 for `Sddp`.
 - Change DescribeEventDetail Data.

@@ -71,9 +71,9 @@ func (client *Client) CreateOrUpdateEventBridgeIntegrationWithCallback(request *
 // CreateOrUpdateEventBridgeIntegrationRequest is the request struct for api CreateOrUpdateEventBridgeIntegration
 type CreateOrUpdateEventBridgeIntegrationRequest struct {
 	*requests.RpcRequest
+	AccessSecret     string           `position:"Body" name:"AccessSecret"`
 	EventBusRegionId string           `position:"Body" name:"EventBusRegionId"`
 	Description      string           `position:"Body" name:"Description"`
-	AccessKeySecret  string           `position:"Body" name:"AccessKeySecret"`
 	Source           string           `position:"Body" name:"Source"`
 	EventBusName     string           `position:"Body" name:"EventBusName"`
 	Endpoint         string           `position:"Body" name:"Endpoint"`

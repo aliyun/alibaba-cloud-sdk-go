@@ -22,7 +22,7 @@ type EventBridgeIntegration struct {
 	Description      string `json:"Description" xml:"Description"`
 	Endpoint         string `json:"Endpoint" xml:"Endpoint"`
 	AccessKey        string `json:"AccessKey" xml:"AccessKey"`
-	AccessKeySecret  string `json:"AccessKeySecret" xml:"AccessKeySecret"`
+	AccessSecret     string `json:"AccessSecret" xml:"AccessSecret"`
 	EventBusName     string `json:"EventBusName" xml:"EventBusName"`
 	Source           string `json:"Source" xml:"Source"`
 	EventBusRegionId string `json:"EventBusRegionId" xml:"EventBusRegionId"`
