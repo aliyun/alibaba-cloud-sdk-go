@@ -88,7 +88,7 @@ func CreateDescribeRiskLevelsRequest() (request *DescribeRiskLevelsRequest) {
 	request = &DescribeRiskLevelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeRiskLevels", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeRiskLevels", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

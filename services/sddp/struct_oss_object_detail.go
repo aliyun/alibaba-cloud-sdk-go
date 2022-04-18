@@ -17,10 +17,10 @@ package sddp
 
 // OssObjectDetail is a nested struct in sddp response
 type OssObjectDetail struct {
-	Name          string `json:"Name" xml:"Name"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	RiskLevelName string `json:"RiskLevelName" xml:"RiskLevelName"`
-	BucketName    string `json:"BucketName" xml:"BucketName"`
 	CategoryName  string `json:"CategoryName" xml:"CategoryName"`
+	Name          string `json:"Name" xml:"Name"`
+	BucketName    string `json:"BucketName" xml:"BucketName"`
+	RiskLevelName string `json:"RiskLevelName" xml:"RiskLevelName"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
 	RuleList      []Rule `json:"RuleList" xml:"RuleList"`
 }

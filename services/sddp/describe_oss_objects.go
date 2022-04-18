@@ -94,11 +94,11 @@ type DescribeOssObjectsRequest struct {
 // DescribeOssObjectsResponse is the response struct for api DescribeOssObjects
 type DescribeOssObjectsResponse struct {
 	*responses.BaseResponse
-	RequestId   string                       `json:"RequestId" xml:"RequestId"`
-	PageSize    int                          `json:"PageSize" xml:"PageSize"`
-	CurrentPage int                          `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int                          `json:"TotalCount" xml:"TotalCount"`
-	Items       []ColumnInDescribeOssObjects `json:"Items" xml:"Items"`
+	CurrentPage int      `json:"CurrentPage" xml:"CurrentPage"`
+	RequestId   string   `json:"RequestId" xml:"RequestId"`
+	PageSize    int      `json:"PageSize" xml:"PageSize"`
+	TotalCount  int      `json:"TotalCount" xml:"TotalCount"`
+	Items       []Column `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeOssObjectsRequest creates a request to invoke DescribeOssObjects API
@@ -106,7 +106,7 @@ func CreateDescribeOssObjectsRequest() (request *DescribeOssObjectsRequest) {
 	request = &DescribeOssObjectsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeOssObjects", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeOssObjects", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

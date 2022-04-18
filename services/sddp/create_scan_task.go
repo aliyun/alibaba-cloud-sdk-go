@@ -79,6 +79,7 @@ type CreateScanTaskRequest struct {
 	SourceIp         string           `position:"Query" name:"SourceIp"`
 	IntervalDay      requests.Integer `position:"Query" name:"IntervalDay"`
 	ScanRange        requests.Integer `position:"Query" name:"ScanRange"`
+	Lang             string           `position:"Query" name:"Lang"`
 	OssScanPath      string           `position:"Query" name:"OssScanPath"`
 	ResourceType     requests.Integer `position:"Query" name:"ResourceType"`
 	TaskUserName     string           `position:"Query" name:"TaskUserName"`
@@ -87,8 +88,8 @@ type CreateScanTaskRequest struct {
 // CreateScanTaskResponse is the response struct for api CreateScanTask
 type CreateScanTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        int    `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateScanTaskRequest creates a request to invoke CreateScanTask API
@@ -96,7 +97,7 @@ func CreateCreateScanTaskRequest() (request *CreateScanTaskRequest) {
 	request = &CreateScanTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateScanTask", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateScanTask", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

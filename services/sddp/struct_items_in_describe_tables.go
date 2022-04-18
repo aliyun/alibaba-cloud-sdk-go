@@ -17,5 +17,5 @@ package sddp
 
 // ItemsInDescribeTables is a nested struct in sddp response
 type ItemsInDescribeTables struct {
-	Table []TableInDescribeTables `json:"Table" xml:"Table"`
+	Table []Table `json:"Table" xml:"Table"`
 }

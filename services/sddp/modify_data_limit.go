@@ -98,7 +98,7 @@ func CreateModifyDataLimitRequest() (request *ModifyDataLimitRequest) {
 	request = &ModifyDataLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyDataLimit", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyDataLimit", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

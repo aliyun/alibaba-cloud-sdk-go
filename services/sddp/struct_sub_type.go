@@ -17,15 +17,15 @@ package sddp
 
 // SubType is a nested struct in sddp response
 type SubType struct {
-	Id                int64  `json:"Id" xml:"Id"`
-	Name              string `json:"Name" xml:"Name"`
-	Code              string `json:"Code" xml:"Code"`
-	Description       string `json:"Description" xml:"Description"`
 	Status            int    `json:"Status" xml:"Status"`
-	EventHitCount     int    `json:"EventHitCount" xml:"EventHitCount"`
-	AdaptedProduct    string `json:"AdaptedProduct" xml:"AdaptedProduct"`
-	ConfigCode        string `json:"ConfigCode" xml:"ConfigCode"`
+	Description       string `json:"Description" xml:"Description"`
 	ConfigContentType int    `json:"ConfigContentType" xml:"ConfigContentType"`
-	ConfigDescription string `json:"ConfigDescription" xml:"ConfigDescription"`
+	EventHitCount     int    `json:"EventHitCount" xml:"EventHitCount"`
 	ConfigValue       string `json:"ConfigValue" xml:"ConfigValue"`
+	ConfigCode        string `json:"ConfigCode" xml:"ConfigCode"`
+	Code              string `json:"Code" xml:"Code"`
+	ConfigDescription string `json:"ConfigDescription" xml:"ConfigDescription"`
+	Name              string `json:"Name" xml:"Name"`
+	AdaptedProduct    string `json:"AdaptedProduct" xml:"AdaptedProduct"`
+	Id                int64  `json:"Id" xml:"Id"`
 }

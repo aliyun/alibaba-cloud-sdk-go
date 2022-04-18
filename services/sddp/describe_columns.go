@@ -106,7 +106,7 @@ func CreateDescribeColumnsRequest() (request *DescribeColumnsRequest) {
 	request = &DescribeColumnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeColumns", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeColumns", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

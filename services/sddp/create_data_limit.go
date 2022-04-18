@@ -93,8 +93,8 @@ type CreateDataLimitRequest struct {
 // CreateDataLimitResponse is the response struct for api CreateDataLimit
 type CreateDataLimitResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        int    `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateDataLimitRequest creates a request to invoke CreateDataLimit API
@@ -102,7 +102,7 @@ func CreateCreateDataLimitRequest() (request *CreateDataLimitRequest) {
 	request = &CreateDataLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateDataLimit", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateDataLimit", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

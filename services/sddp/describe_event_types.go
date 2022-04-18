@@ -90,7 +90,7 @@ func CreateDescribeEventTypesRequest() (request *DescribeEventTypesRequest) {
 	request = &DescribeEventTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEventTypes", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEventTypes", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

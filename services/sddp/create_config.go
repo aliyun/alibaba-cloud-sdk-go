@@ -83,8 +83,8 @@ type CreateConfigRequest struct {
 // CreateConfigResponse is the response struct for api CreateConfig
 type CreateConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        int64  `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateConfigRequest creates a request to invoke CreateConfig API
@@ -92,7 +92,7 @@ func CreateCreateConfigRequest() (request *CreateConfigRequest) {
 	request = &CreateConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateConfig", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "CreateConfig", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

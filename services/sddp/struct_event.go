@@ -18,8 +18,8 @@ package sddp
 // Event is a nested struct in sddp response
 type Event struct {
 	EventTime         int64        `json:"EventTime" xml:"EventTime"`
-	TypeName          string       `json:"TypeName" xml:"TypeName"`
 	DealUserIdValue   string       `json:"dealUserIdValue" xml:"dealUserIdValue"`
+	TypeName          string       `json:"TypeName" xml:"TypeName"`
 	SubTypeCode       string       `json:"SubTypeCode" xml:"SubTypeCode"`
 	AlertTime         int64        `json:"AlertTime" xml:"AlertTime"`
 	DealReason        string       `json:"DealReason" xml:"DealReason"`
@@ -28,9 +28,9 @@ type Event struct {
 	Backed            bool         `json:"Backed" xml:"Backed"`
 	UserIdValue       string       `json:"UserIdValue" xml:"UserIdValue"`
 	DealLoginName     string       `json:"DealLoginName" xml:"DealLoginName"`
-	TypeCode          string       `json:"TypeCode" xml:"TypeCode"`
 	DataInstance      string       `json:"DataInstance" xml:"DataInstance"`
 	LogDetail         string       `json:"LogDetail" xml:"LogDetail"`
+	TypeCode          string       `json:"TypeCode" xml:"TypeCode"`
 	Status            int          `json:"Status" xml:"Status"`
 	DealTime          int64        `json:"DealTime" xml:"DealTime"`
 	DealUserId        int64        `json:"DealUserId" xml:"DealUserId"`

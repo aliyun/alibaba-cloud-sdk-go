@@ -17,9 +17,9 @@ package sddp
 
 // RiskLevel is a nested struct in sddp response
 type RiskLevel struct {
-	Id           int64  `json:"Id" xml:"Id"`
-	Description  string `json:"Description" xml:"Description"`
 	Name         string `json:"Name" xml:"Name"`
+	Description  string `json:"Description" xml:"Description"`
 	Alias        string `json:"Alias" xml:"Alias"`
+	Id           int64  `json:"Id" xml:"Id"`
 	ReferenceNum int    `json:"ReferenceNum" xml:"ReferenceNum"`
 }

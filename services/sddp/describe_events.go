@@ -94,9 +94,9 @@ type DescribeEventsRequest struct {
 // DescribeEventsResponse is the response struct for api DescribeEvents
 type DescribeEventsResponse struct {
 	*responses.BaseResponse
+	CurrentPage int     `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string  `json:"RequestId" xml:"RequestId"`
 	PageSize    int     `json:"PageSize" xml:"PageSize"`
-	CurrentPage int     `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int     `json:"TotalCount" xml:"TotalCount"`
 	Items       []Event `json:"Items" xml:"Items"`
 }
@@ -106,7 +106,7 @@ func CreateDescribeEventsRequest() (request *DescribeEventsRequest) {
 	request = &DescribeEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEvents", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeEvents", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

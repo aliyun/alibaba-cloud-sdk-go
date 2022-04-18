@@ -89,7 +89,7 @@ func CreateDescribeOssObjectDetailRequest() (request *DescribeOssObjectDetailReq
 	request = &DescribeOssObjectDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeOssObjectDetail", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeOssObjectDetail", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

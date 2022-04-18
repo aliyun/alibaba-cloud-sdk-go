@@ -87,7 +87,7 @@ func CreateDisableUserConfigRequest() (request *DisableUserConfigRequest) {
 	request = &DisableUserConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DisableUserConfig", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DisableUserConfig", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

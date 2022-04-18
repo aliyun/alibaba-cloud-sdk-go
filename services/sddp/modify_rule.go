@@ -101,7 +101,7 @@ func CreateModifyRuleRequest() (request *ModifyRuleRequest) {
 	request = &ModifyRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyRule", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyRule", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

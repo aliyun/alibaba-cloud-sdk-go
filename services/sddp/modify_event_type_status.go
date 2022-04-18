@@ -87,7 +87,7 @@ func CreateModifyEventTypeStatusRequest() (request *ModifyEventTypeStatusRequest
 	request = &ModifyEventTypeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyEventTypeStatus", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyEventTypeStatus", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -83,6 +83,7 @@ type DescribeInstancesRequest struct {
 	SensLevelName       string           `position:"Query" name:"SensLevelName"`
 	SourceIp            string           `position:"Query" name:"SourceIp"`
 	LastFinishTimeStart requests.Integer `position:"Query" name:"LastFinishTimeStart"`
+	DataType            requests.Integer `position:"Query" name:"DataType"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	CheckStatus         requests.Integer `position:"Query" name:"CheckStatus"`
 	Lang                string           `position:"Query" name:"Lang"`
@@ -102,11 +103,11 @@ type DescribeInstancesRequest struct {
 // DescribeInstancesResponse is the response struct for api DescribeInstances
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId   string                        `json:"RequestId" xml:"RequestId"`
-	PageSize    int                           `json:"PageSize" xml:"PageSize"`
-	CurrentPage int                           `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int                           `json:"TotalCount" xml:"TotalCount"`
-	Items       []InstanceInDescribeInstances `json:"Items" xml:"Items"`
+	CurrentPage int        `json:"CurrentPage" xml:"CurrentPage"`
+	RequestId   string     `json:"RequestId" xml:"RequestId"`
+	PageSize    int        `json:"PageSize" xml:"PageSize"`
+	TotalCount  int        `json:"TotalCount" xml:"TotalCount"`
+	Items       []Instance `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeInstancesRequest creates a request to invoke DescribeInstances API
@@ -114,7 +115,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeInstances", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeInstances", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

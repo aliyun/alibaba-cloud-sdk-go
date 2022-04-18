@@ -85,9 +85,9 @@ type DescribeDataAssetsRequest struct {
 // DescribeDataAssetsResponse is the response struct for api DescribeDataAssets
 type DescribeDataAssetsResponse struct {
 	*responses.BaseResponse
+	CurrentPage int     `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string  `json:"RequestId" xml:"RequestId"`
 	PageSize    int     `json:"PageSize" xml:"PageSize"`
-	CurrentPage int     `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int     `json:"TotalCount" xml:"TotalCount"`
 	Items       []Asset `json:"Items" xml:"Items"`
 }
@@ -97,7 +97,7 @@ func CreateDescribeDataAssetsRequest() (request *DescribeDataAssetsRequest) {
 	request = &DescribeDataAssetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataAssets", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataAssets", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

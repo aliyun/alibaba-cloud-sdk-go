@@ -88,7 +88,7 @@ func CreateManualTriggerMaskingProcessRequest() (request *ManualTriggerMaskingPr
 	request = &ManualTriggerMaskingProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ManualTriggerMaskingProcess", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ManualTriggerMaskingProcess", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

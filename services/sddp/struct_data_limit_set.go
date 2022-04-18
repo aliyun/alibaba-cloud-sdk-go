@@ -17,8 +17,8 @@ package sddp
 
 // DataLimitSet is a nested struct in sddp response
 type DataLimitSet struct {
-	ResourceType     int64       `json:"ResourceType" xml:"ResourceType"`
 	ResourceTypeCode string      `json:"ResourceTypeCode" xml:"ResourceTypeCode"`
+	ResourceType     int64       `json:"ResourceType" xml:"ResourceType"`
 	TotalCount       int         `json:"TotalCount" xml:"TotalCount"`
 	DataLimitList    []DataLimit `json:"DataLimitList" xml:"DataLimitList"`
 	OssBucketList    []OssBucket `json:"OssBucketList" xml:"OssBucketList"`

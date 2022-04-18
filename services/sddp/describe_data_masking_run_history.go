@@ -89,9 +89,9 @@ type DescribeDataMaskingRunHistoryRequest struct {
 // DescribeDataMaskingRunHistoryResponse is the response struct for api DescribeDataMaskingRunHistory
 type DescribeDataMaskingRunHistoryResponse struct {
 	*responses.BaseResponse
+	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
 	Items       []Task `json:"Items" xml:"Items"`
 }
@@ -101,7 +101,7 @@ func CreateDescribeDataMaskingRunHistoryRequest() (request *DescribeDataMaskingR
 	request = &DescribeDataMaskingRunHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataMaskingRunHistory", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataMaskingRunHistory", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

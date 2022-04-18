@@ -17,6 +17,6 @@ package sddp
 
 // OssBucket is a nested struct in sddp response
 type OssBucket struct {
-	BucketName string `json:"BucketName" xml:"BucketName"`
 	RegionId   string `json:"RegionId" xml:"RegionId"`
+	BucketName string `json:"BucketName" xml:"BucketName"`
 }

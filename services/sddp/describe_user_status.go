@@ -87,7 +87,7 @@ func CreateDescribeUserStatusRequest() (request *DescribeUserStatusRequest) {
 	request = &DescribeUserStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeUserStatus", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeUserStatus", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

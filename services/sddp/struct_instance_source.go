@@ -17,26 +17,30 @@ package sddp
 
 // InstanceSource is a nested struct in sddp response
 type InstanceSource struct {
-	RegionId            string `json:"RegionId" xml:"RegionId"`
-	RegionName          string `json:"RegionName" xml:"RegionName"`
-	InstanceId          string `json:"InstanceId" xml:"InstanceId"`
-	Id                  int64  `json:"Id" xml:"Id"`
-	UserName            string `json:"UserName" xml:"UserName"`
-	DbName              string `json:"DbName" xml:"DbName"`
-	DataLimitId         int64  `json:"DataLimitId" xml:"DataLimitId"`
-	GmtCreate           int64  `json:"GmtCreate" xml:"GmtCreate"`
-	ProductId           int64  `json:"ProductId" xml:"ProductId"`
-	AuditStatus         int    `json:"AuditStatus" xml:"AuditStatus"`
-	LogStoreDay         int    `json:"LogStoreDay" xml:"LogStoreDay"`
-	Enable              int    `json:"Enable" xml:"Enable"`
-	AutoScan            int    `json:"AutoScan" xml:"AutoScan"`
-	EngineType          string `json:"EngineType" xml:"EngineType"`
-	InstanceSize        int64  `json:"InstanceSize" xml:"InstanceSize"`
-	PasswordStatus      int    `json:"PasswordStatus" xml:"PasswordStatus"`
 	LastModifyUserId    string `json:"LastModifyUserId" xml:"LastModifyUserId"`
-	LastModifyTime      int64  `json:"LastModifyTime" xml:"LastModifyTime"`
-	TenantId            string `json:"TenantId" xml:"TenantId"`
+	PasswordStatus      int    `json:"PasswordStatus" xml:"PasswordStatus"`
+	EngineType          string `json:"EngineType" xml:"EngineType"`
 	TenantName          string `json:"TenantName" xml:"TenantName"`
+	InstanceId          string `json:"InstanceId" xml:"InstanceId"`
 	InstanceDescription string `json:"InstanceDescription" xml:"InstanceDescription"`
+	DataLimitId         int64  `json:"DataLimitId" xml:"DataLimitId"`
+	RegionId            string `json:"RegionId" xml:"RegionId"`
+	DbName              string `json:"DbName" xml:"DbName"`
+	LastModifyTime      int64  `json:"LastModifyTime" xml:"LastModifyTime"`
+	RegionName          string `json:"RegionName" xml:"RegionName"`
 	CanModifyUserName   bool   `json:"CanModifyUserName" xml:"CanModifyUserName"`
+	LogStoreDay         int    `json:"LogStoreDay" xml:"LogStoreDay"`
+	GmtCreate           int64  `json:"GmtCreate" xml:"GmtCreate"`
+	AutoScan            int    `json:"AutoScan" xml:"AutoScan"`
+	ProductId           int64  `json:"ProductId" xml:"ProductId"`
+	InstanceSize        int64  `json:"InstanceSize" xml:"InstanceSize"`
+	UserName            string `json:"UserName" xml:"UserName"`
+	AuditStatus         int    `json:"AuditStatus" xml:"AuditStatus"`
+	Id                  int64  `json:"Id" xml:"Id"`
+	TenantId            string `json:"TenantId" xml:"TenantId"`
+	Enable              int    `json:"Enable" xml:"Enable"`
+	CheckStatus         int    `json:"CheckStatus" xml:"CheckStatus"`
+	DatamaskStatus      int    `json:"DatamaskStatus" xml:"DatamaskStatus"`
+	ErrorMessage        string `json:"ErrorMessage" xml:"ErrorMessage"`
+	SamplingSize        int    `json:"SamplingSize" xml:"SamplingSize"`
 }

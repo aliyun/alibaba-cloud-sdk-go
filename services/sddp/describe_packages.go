@@ -90,11 +90,11 @@ type DescribePackagesRequest struct {
 // DescribePackagesResponse is the response struct for api DescribePackages
 type DescribePackagesResponse struct {
 	*responses.BaseResponse
-	RequestId   string                      `json:"RequestId" xml:"RequestId"`
-	PageSize    int                         `json:"PageSize" xml:"PageSize"`
-	CurrentPage int                         `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int                         `json:"TotalCount" xml:"TotalCount"`
-	Items       []PackageInDescribePackages `json:"Items" xml:"Items"`
+	CurrentPage int       `json:"CurrentPage" xml:"CurrentPage"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
+	PageSize    int       `json:"PageSize" xml:"PageSize"`
+	TotalCount  int       `json:"TotalCount" xml:"TotalCount"`
+	Items       []Package `json:"Items" xml:"Items"`
 }
 
 // CreateDescribePackagesRequest creates a request to invoke DescribePackages API
@@ -102,7 +102,7 @@ func CreateDescribePackagesRequest() (request *DescribePackagesRequest) {
 	request = &DescribePackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribePackages", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribePackages", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

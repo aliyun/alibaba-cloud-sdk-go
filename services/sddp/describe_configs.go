@@ -88,7 +88,7 @@ func CreateDescribeConfigsRequest() (request *DescribeConfigsRequest) {
 	request = &DescribeConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeConfigs", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeConfigs", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

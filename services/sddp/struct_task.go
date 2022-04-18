@@ -24,8 +24,8 @@ type Task struct {
 	OriginalTable      bool   `json:"OriginalTable" xml:"OriginalTable"`
 	FailCode           string `json:"FailCode" xml:"FailCode"`
 	SrcPath            string `json:"SrcPath" xml:"SrcPath"`
-	EndTime            int64  `json:"EndTime" xml:"EndTime"`
 	SrcTableName       string `json:"SrcTableName" xml:"SrcTableName"`
+	EndTime            int64  `json:"EndTime" xml:"EndTime"`
 	StartTime          int64  `json:"StartTime" xml:"StartTime"`
 	TaskId             string `json:"TaskId" xml:"TaskId"`
 	ConflictCount      int64  `json:"ConflictCount" xml:"ConflictCount"`
@@ -34,8 +34,8 @@ type Task struct {
 	DstPath            string `json:"DstPath" xml:"DstPath"`
 	Id                 int64  `json:"Id" xml:"Id"`
 	Owner              string `json:"Owner" xml:"Owner"`
-	Percentage         int    `json:"Percentage" xml:"Percentage"`
 	SrcType            int    `json:"SrcType" xml:"SrcType"`
+	Percentage         int    `json:"Percentage" xml:"Percentage"`
 	HasSubProcess      int    `json:"HasSubProcess" xml:"HasSubProcess"`
 	FailMsg            string `json:"FailMsg" xml:"FailMsg"`
 	GmtCreate          int64  `json:"GmtCreate" xml:"GmtCreate"`

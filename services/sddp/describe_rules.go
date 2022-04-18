@@ -92,9 +92,9 @@ type DescribeRulesRequest struct {
 // DescribeRulesResponse is the response struct for api DescribeRules
 type DescribeRulesResponse struct {
 	*responses.BaseResponse
+	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
 	Items       []Rule `json:"Items" xml:"Items"`
 }
@@ -104,7 +104,7 @@ func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
 	request = &DescribeRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeRules", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeRules", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

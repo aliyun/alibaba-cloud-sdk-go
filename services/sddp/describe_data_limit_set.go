@@ -89,7 +89,7 @@ func CreateDescribeDataLimitSetRequest() (request *DescribeDataLimitSetRequest) 
 	request = &DescribeDataLimitSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataLimitSet", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataLimitSet", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

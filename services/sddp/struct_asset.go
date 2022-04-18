@@ -17,24 +17,24 @@ package sddp
 
 // Asset is a nested struct in sddp response
 type Asset struct {
-	Id                string `json:"Id" xml:"Id"`
-	Name              string `json:"Name" xml:"Name"`
-	Owner             string `json:"Owner" xml:"Owner"`
-	CreationTime      int64  `json:"CreationTime" xml:"CreationTime"`
-	ProductId         string `json:"ProductId" xml:"ProductId"`
-	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
-	Protection        bool   `json:"Protection" xml:"Protection"`
-	Labelsec          bool   `json:"Labelsec" xml:"Labelsec"`
-	OdpsRiskLevelName string `json:"OdpsRiskLevelName" xml:"OdpsRiskLevelName"`
-	Sensitive         bool   `json:"Sensitive" xml:"Sensitive"`
-	RiskLevelId       int64  `json:"RiskLevelId" xml:"RiskLevelId"`
-	RiskLevelName     string `json:"RiskLevelName" xml:"RiskLevelName"`
-	RuleName          string `json:"RuleName" xml:"RuleName"`
-	DepartName        string `json:"DepartName" xml:"DepartName"`
-	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
-	SensitiveCount    int    `json:"SensitiveCount" xml:"SensitiveCount"`
 	Acl               string `json:"Acl" xml:"Acl"`
-	SensitiveRatio    string `json:"SensitiveRatio" xml:"SensitiveRatio"`
+	CreationTime      int64  `json:"CreationTime" xml:"CreationTime"`
 	DataType          string `json:"DataType" xml:"DataType"`
+	Owner             string `json:"Owner" xml:"Owner"`
+	SensitiveRatio    string `json:"SensitiveRatio" xml:"SensitiveRatio"`
+	Protection        bool   `json:"Protection" xml:"Protection"`
+	DepartName        string `json:"DepartName" xml:"DepartName"`
+	Labelsec          bool   `json:"Labelsec" xml:"Labelsec"`
+	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
+	RiskLevelId       int64  `json:"RiskLevelId" xml:"RiskLevelId"`
+	RuleName          string `json:"RuleName" xml:"RuleName"`
+	Sensitive         bool   `json:"Sensitive" xml:"Sensitive"`
 	ObjectKey         string `json:"ObjectKey" xml:"ObjectKey"`
+	RiskLevelName     string `json:"RiskLevelName" xml:"RiskLevelName"`
+	OdpsRiskLevelName string `json:"OdpsRiskLevelName" xml:"OdpsRiskLevelName"`
+	ProductId         string `json:"ProductId" xml:"ProductId"`
+	Name              string `json:"Name" xml:"Name"`
+	SensitiveCount    int    `json:"SensitiveCount" xml:"SensitiveCount"`
+	Id                string `json:"Id" xml:"Id"`
+	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
 }

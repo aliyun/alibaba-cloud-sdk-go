@@ -71,12 +71,17 @@ func (client *Client) DescribeInstanceSourcesWithCallback(request *DescribeInsta
 // DescribeInstanceSourcesRequest is the request struct for api DescribeInstanceSources
 type DescribeInstanceSourcesRequest struct {
 	*requests.RpcRequest
+	ProductCode     string           `position:"Query" name:"ProductCode"`
 	ProductId       requests.Integer `position:"Query" name:"ProductId"`
+	SearchKey       string           `position:"Query" name:"SearchKey"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	SearchType      string           `position:"Query" name:"SearchType"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	Lang            string           `position:"Query" name:"Lang"`
 	ServiceRegionId string           `position:"Query" name:"ServiceRegionId"`
 	EngineType      string           `position:"Query" name:"EngineType"`
+	AuditStatus     requests.Integer `position:"Query" name:"AuditStatus"`
+	AuthStatus      requests.Integer `position:"Query" name:"AuthStatus"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	Authed          requests.Boolean `position:"Query" name:"Authed"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
@@ -86,9 +91,9 @@ type DescribeInstanceSourcesRequest struct {
 // DescribeInstanceSourcesResponse is the response struct for api DescribeInstanceSources
 type DescribeInstanceSourcesResponse struct {
 	*responses.BaseResponse
+	CurrentPage int              `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string           `json:"RequestId" xml:"RequestId"`
 	PageSize    int              `json:"PageSize" xml:"PageSize"`
-	CurrentPage int              `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int              `json:"TotalCount" xml:"TotalCount"`
 	Items       []InstanceSource `json:"Items" xml:"Items"`
 }
@@ -98,7 +103,7 @@ func CreateDescribeInstanceSourcesRequest() (request *DescribeInstanceSourcesReq
 	request = &DescribeInstanceSourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeInstanceSources", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeInstanceSources", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

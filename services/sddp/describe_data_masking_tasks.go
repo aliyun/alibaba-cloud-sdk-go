@@ -85,9 +85,9 @@ type DescribeDataMaskingTasksRequest struct {
 // DescribeDataMaskingTasksResponse is the response struct for api DescribeDataMaskingTasks
 type DescribeDataMaskingTasksResponse struct {
 	*responses.BaseResponse
+	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
 	Items       []Task `json:"Items" xml:"Items"`
 }
@@ -97,7 +97,7 @@ func CreateDescribeDataMaskingTasksRequest() (request *DescribeDataMaskingTasksR
 	request = &DescribeDataMaskingTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataMaskingTasks", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataMaskingTasks", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

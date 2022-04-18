@@ -17,6 +17,6 @@ package sddp
 
 // Data is a nested struct in sddp response
 type Data struct {
-	X string `json:"X" xml:"X"`
-	Y string `json:"Y" xml:"Y"`
+	Y []string `json:"Y" xml:"Y"`
+	X []string `json:"X" xml:"X"`
 }

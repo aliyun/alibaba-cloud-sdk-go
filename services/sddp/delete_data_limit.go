@@ -88,7 +88,7 @@ func CreateDeleteDataLimitRequest() (request *DeleteDataLimitRequest) {
 	request = &DeleteDataLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DeleteDataLimit", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DeleteDataLimit", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -82,8 +82,8 @@ type ModifyRuleStatusRequest struct {
 // ModifyRuleStatusResponse is the response struct for api ModifyRuleStatus
 type ModifyRuleStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	FailedIds string `json:"FailedIds" xml:"FailedIds"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyRuleStatusRequest creates a request to invoke ModifyRuleStatus API
@@ -91,7 +91,7 @@ func CreateModifyRuleStatusRequest() (request *ModifyRuleStatusRequest) {
 	request = &ModifyRuleStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyRuleStatus", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "ModifyRuleStatus", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

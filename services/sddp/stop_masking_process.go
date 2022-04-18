@@ -88,7 +88,7 @@ func CreateStopMaskingProcessRequest() (request *StopMaskingProcessRequest) {
 	request = &StopMaskingProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "StopMaskingProcess", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "StopMaskingProcess", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }

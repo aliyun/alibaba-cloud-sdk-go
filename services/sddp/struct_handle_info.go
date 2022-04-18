@@ -17,12 +17,12 @@ package sddp
 
 // HandleInfo is a nested struct in sddp response
 type HandleInfo struct {
-	HandlerType  string `json:"HandlerType" xml:"HandlerType"`
-	HandlerName  string `json:"HandlerName" xml:"HandlerName"`
-	HandlerValue int    `json:"HandlerValue" xml:"HandlerValue"`
-	CurrentValue string `json:"CurrentValue" xml:"CurrentValue"`
-	DisableTime  int64  `json:"DisableTime" xml:"DisableTime"`
-	EnableTime   int64  `json:"EnableTime" xml:"EnableTime"`
 	Status       int    `json:"Status" xml:"Status"`
+	EnableTime   int64  `json:"EnableTime" xml:"EnableTime"`
+	HandlerValue int    `json:"HandlerValue" xml:"HandlerValue"`
+	DisableTime  int64  `json:"DisableTime" xml:"DisableTime"`
+	HandlerName  string `json:"HandlerName" xml:"HandlerName"`
+	HandlerType  string `json:"HandlerType" xml:"HandlerType"`
+	CurrentValue string `json:"CurrentValue" xml:"CurrentValue"`
 	Id           int64  `json:"Id" xml:"Id"`
 }

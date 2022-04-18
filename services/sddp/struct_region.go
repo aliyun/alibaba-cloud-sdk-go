@@ -17,6 +17,6 @@ package sddp
 
 // Region is a nested struct in sddp response
 type Region struct {
-	LocalName string `json:"LocalName" xml:"LocalName"`
 	RegionId  string `json:"RegionId" xml:"RegionId"`
+	LocalName string `json:"LocalName" xml:"LocalName"`
 }

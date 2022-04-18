@@ -17,5 +17,5 @@ package sddp
 
 // ItemsInDescribeInstances is a nested struct in sddp response
 type ItemsInDescribeInstances struct {
-	Instance []InstanceInDescribeInstances `json:"Instance" xml:"Instance"`
+	Instance []Instance `json:"Instance" xml:"Instance"`
 }

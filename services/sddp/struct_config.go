@@ -17,9 +17,9 @@ package sddp
 
 // Config is a nested struct in sddp response
 type Config struct {
-	Id           int64  `json:"Id" xml:"Id"`
-	Code         int    `json:"Code" xml:"Code"`
-	Description  string `json:"Description" xml:"Description"`
-	Value        int64  `json:"Value" xml:"Value"`
+	Code         string `json:"Code" xml:"Code"`
+	Value        string `json:"Value" xml:"Value"`
 	DefaultValue string `json:"DefaultValue" xml:"DefaultValue"`
+	Description  string `json:"Description" xml:"Description"`
+	Id           int64  `json:"Id" xml:"Id"`
 }

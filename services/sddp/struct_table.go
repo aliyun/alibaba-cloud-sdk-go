@@ -17,10 +17,32 @@ package sddp
 
 // Table is a nested struct in sddp response
 type Table struct {
-	TotalCount         int64       `json:"TotalCount" xml:"TotalCount"`
-	SensitiveCount     int64       `json:"SensitiveCount" xml:"SensitiveCount"`
-	LastCount          int64       `json:"LastCount" xml:"LastCount"`
-	Count              int64       `json:"Count" xml:"Count"`
-	LastSensitiveCount int64       `json:"LastSensitiveCount" xml:"LastSensitiveCount"`
-	RiskCountList      []RiskCount `json:"RiskCountList" xml:"RiskCountList"`
+	CreationTime        int64  `json:"CreationTime" xml:"CreationTime"`
+	Owner               string `json:"Owner" xml:"Owner"`
+	CountDetails        string `json:"CountDetails" xml:"CountDetails"`
+	SensitiveRatio      string `json:"SensitiveRatio" xml:"SensitiveRatio"`
+	TenantName          string `json:"TenantName" xml:"TenantName"`
+	DepartName          string `json:"DepartName" xml:"DepartName"`
+	RiskLevelId         int64  `json:"RiskLevelId" xml:"RiskLevelId"`
+	InstanceName        string `json:"InstanceName" xml:"InstanceName"`
+	S3Count             int    `json:"S3Count" xml:"S3Count"`
+	S1Count             int    `json:"S1Count" xml:"S1Count"`
+	ProductId           string `json:"ProductId" xml:"ProductId"`
+	Name                string `json:"Name" xml:"Name"`
+	S2Count             int    `json:"S2Count" xml:"S2Count"`
+	InstanceId          int64  `json:"InstanceId" xml:"InstanceId"`
+	TotalCount          int    `json:"TotalCount" xml:"TotalCount"`
+	InstanceDescription string `json:"InstanceDescription" xml:"InstanceDescription"`
+	Sensitive           bool   `json:"Sensitive" xml:"Sensitive"`
+	SensLevelName       string `json:"SensLevelName" xml:"SensLevelName"`
+	LastScanTime        int64  `json:"LastScanTime" xml:"LastScanTime"`
+	RegionName          string `json:"RegionName" xml:"RegionName"`
+	RiskLevelName       string `json:"RiskLevelName" xml:"RiskLevelName"`
+	TotalRows           int    `json:"TotalRows" xml:"TotalRows"`
+	SensitiveCount      int    `json:"SensitiveCount" xml:"SensitiveCount"`
+	Id                  int64  `json:"Id" xml:"Id"`
+	ProductCode         string `json:"ProductCode" xml:"ProductCode"`
+	ObjectHex           string `json:"ObjectHex" xml:"ObjectHex"`
+	DataType            int    `json:"DataType" xml:"DataType"`
+	RuleList            []Rule `json:"RuleList" xml:"RuleList"`
 }

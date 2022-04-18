@@ -90,9 +90,9 @@ type DescribeDataLimitsRequest struct {
 // DescribeDataLimitsResponse is the response struct for api DescribeDataLimits
 type DescribeDataLimitsResponse struct {
 	*responses.BaseResponse
+	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	PageSize    int         `json:"PageSize" xml:"PageSize"`
-	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
 	Items       []DataLimit `json:"Items" xml:"Items"`
 }
@@ -102,7 +102,7 @@ func CreateDescribeDataLimitsRequest() (request *DescribeDataLimitsRequest) {
 	request = &DescribeDataLimitsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataLimits", "", "")
+	request.InitWithApiInfo("Sddp", "2019-01-03", "DescribeDataLimits", "sddp", "openAPI")
 	request.Method = requests.POST
 	return
 }
