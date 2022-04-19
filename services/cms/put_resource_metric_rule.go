@@ -79,6 +79,7 @@ type PutResourceMetricRuleRequest struct {
 	NoEffectiveInterval                   string                                   `position:"Query" name:"NoEffectiveInterval"`
 	EmailSubject                          string                                   `position:"Query" name:"EmailSubject"`
 	Options                               string                                   `position:"Query" name:"Options"`
+	EscalationsInfoPreCondition           string                                   `position:"Query" name:"Escalations.Info.PreCondition"`
 	MetricName                            string                                   `position:"Query" name:"MetricName"`
 	EscalationsWarnTimes                  requests.Integer                         `position:"Query" name:"Escalations.Warn.Times"`
 	Period                                string                                   `position:"Query" name:"Period"`
@@ -92,6 +93,7 @@ type PutResourceMetricRuleRequest struct {
 	RuleId                                string                                   `position:"Query" name:"RuleId"`
 	EscalationsCriticalThreshold          string                                   `position:"Query" name:"Escalations.Critical.Threshold"`
 	EscalationsInfoStatistics             string                                   `position:"Query" name:"Escalations.Info.Statistics"`
+	EscalationsWarnPreCondition           string                                   `position:"Query" name:"Escalations.Warn.PreCondition"`
 	EscalationsInfoComparisonOperator     string                                   `position:"Query" name:"Escalations.Info.ComparisonOperator"`
 	SilenceTime                           requests.Integer                         `position:"Query" name:"SilenceTime"`
 	Prometheus                            PutResourceMetricRulePrometheus          `position:"Query" name:"Prometheus"  type:"Struct"`
@@ -104,6 +106,7 @@ type PutResourceMetricRuleRequest struct {
 	EscalationsInfoThreshold              string                                   `position:"Query" name:"Escalations.Info.Threshold"`
 	Namespace                             string                                   `position:"Query" name:"Namespace"`
 	EscalationsCriticalComparisonOperator string                                   `position:"Query" name:"Escalations.Critical.ComparisonOperator"`
+	EscalationsCriticalPreCondition       string                                   `position:"Query" name:"Escalations.Critical.PreCondition"`
 }
 
 // PutResourceMetricRuleLabels is a repeated param struct in PutResourceMetricRuleRequest

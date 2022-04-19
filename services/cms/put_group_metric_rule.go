@@ -79,6 +79,7 @@ type PutGroupMetricRuleRequest struct {
 	NoDataPolicy                          string                                `position:"Query" name:"NoDataPolicy"`
 	NoEffectiveInterval                   string                                `position:"Query" name:"NoEffectiveInterval"`
 	EmailSubject                          string                                `position:"Query" name:"EmailSubject"`
+	EscalationsInfoPreCondition           string                                `position:"Query" name:"Escalations.Info.PreCondition"`
 	MetricName                            string                                `position:"Query" name:"MetricName"`
 	EscalationsWarnTimes                  requests.Integer                      `position:"Query" name:"Escalations.Warn.Times"`
 	Period                                string                                `position:"Query" name:"Period"`
@@ -88,11 +89,13 @@ type PutGroupMetricRuleRequest struct {
 	RuleType                              string                                `position:"Query" name:"RuleType"`
 	GroupId                               string                                `position:"Query" name:"GroupId"`
 	ExtraDimensionJson                    string                                `position:"Query" name:"ExtraDimensionJson"`
+	Labels                                *[]PutGroupMetricRuleLabels           `position:"Query" name:"Labels"  type:"Repeated"`
 	Interval                              string                                `position:"Query" name:"Interval"`
 	RuleId                                string                                `position:"Query" name:"RuleId"`
 	EscalationsCriticalThreshold          string                                `position:"Query" name:"Escalations.Critical.Threshold"`
 	EscalationsInfoStatistics             string                                `position:"Query" name:"Escalations.Info.Statistics"`
 	DynamicAlertHistoryDataRange          string                                `position:"Query" name:"DynamicAlertHistoryDataRange"`
+	EscalationsWarnPreCondition           string                                `position:"Query" name:"Escalations.Warn.PreCondition"`
 	EscalationsInfoComparisonOperator     string                                `position:"Query" name:"Escalations.Info.ComparisonOperator"`
 	SilenceTime                           requests.Integer                      `position:"Query" name:"SilenceTime"`
 	CompositeExpression                   PutGroupMetricRuleCompositeExpression `position:"Query" name:"CompositeExpression"  type:"Struct"`
@@ -103,7 +106,14 @@ type PutGroupMetricRuleRequest struct {
 	Namespace                             string                                `position:"Query" name:"Namespace"`
 	Category                              string                                `position:"Query" name:"Category"`
 	EscalationsCriticalComparisonOperator string                                `position:"Query" name:"Escalations.Critical.ComparisonOperator"`
+	EscalationsCriticalPreCondition       string                                `position:"Query" name:"Escalations.Critical.PreCondition"`
 	Dimensions                            string                                `position:"Query" name:"Dimensions"`
+}
+
+// PutGroupMetricRuleLabels is a repeated param struct in PutGroupMetricRuleRequest
+type PutGroupMetricRuleLabels struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // PutGroupMetricRuleCompositeExpression is a repeated param struct in PutGroupMetricRuleRequest

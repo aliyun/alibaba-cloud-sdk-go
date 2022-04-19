@@ -76,39 +76,49 @@ type PutResourceMetricRulesRequest struct {
 
 // PutResourceMetricRulesRules is a repeated param struct in PutResourceMetricRulesRequest
 type PutResourceMetricRulesRules struct {
-	Webhook                               string `name:"Webhook"`
-	EscalationsWarnComparisonOperator     string `name:"Escalations.Warn.ComparisonOperator"`
-	DynamicAlertSensitivity               string `name:"DynamicAlertSensitivity"`
-	RuleName                              string `name:"RuleName"`
-	EscalationsInfoStatistics             string `name:"Escalations.Info.Statistics"`
-	EffectiveInterval                     string `name:"EffectiveInterval"`
-	DynamicAlertHistoryDataRange          string `name:"DynamicAlertHistoryDataRange"`
-	EscalationsInfoComparisonOperator     string `name:"Escalations.Info.ComparisonOperator"`
-	NoDataPolicy                          string `name:"NoDataPolicy"`
-	NoEffectiveInterval                   string `name:"NoEffectiveInterval"`
-	EmailSubject                          string `name:"EmailSubject"`
-	Options                               string `name:"Options"`
-	SilenceTime                           string `name:"SilenceTime"`
-	Prometheus                            string `name:"Prometheus"`
-	MetricName                            string `name:"MetricName"`
-	EscalationsWarnTimes                  string `name:"Escalations.Warn.Times"`
-	CompositeExpression                   string `name:"CompositeExpression"`
-	EscalationsWarnThreshold              string `name:"Escalations.Warn.Threshold"`
-	Period                                string `name:"Period"`
-	ContactGroups                         string `name:"ContactGroups"`
-	EscalationsCriticalStatistics         string `name:"Escalations.Critical.Statistics"`
-	RuleType                              string `name:"RuleType"`
-	GroupId                               string `name:"GroupId"`
-	EscalationsInfoTimes                  string `name:"Escalations.Info.Times"`
-	Resources                             string `name:"Resources"`
-	EscalationsCriticalTimes              string `name:"Escalations.Critical.Times"`
-	EscalationsInfoThreshold              string `name:"Escalations.Info.Threshold"`
-	EscalationsWarnStatistics             string `name:"Escalations.Warn.Statistics"`
-	Namespace                             string `name:"Namespace"`
-	Interval                              string `name:"Interval"`
-	RuleId                                string `name:"RuleId"`
-	EscalationsCriticalComparisonOperator string `name:"Escalations.Critical.ComparisonOperator"`
-	EscalationsCriticalThreshold          string `name:"Escalations.Critical.Threshold"`
+	Webhook                               string                               `name:"Webhook"`
+	EscalationsWarnComparisonOperator     string                               `name:"Escalations.Warn.ComparisonOperator"`
+	DynamicAlertSensitivity               string                               `name:"DynamicAlertSensitivity"`
+	RuleName                              string                               `name:"RuleName"`
+	EscalationsInfoStatistics             string                               `name:"Escalations.Info.Statistics"`
+	EffectiveInterval                     string                               `name:"EffectiveInterval"`
+	DynamicAlertHistoryDataRange          string                               `name:"DynamicAlertHistoryDataRange"`
+	EscalationsWarnPreCondition           string                               `name:"Escalations.Warn.PreCondition"`
+	EscalationsInfoComparisonOperator     string                               `name:"Escalations.Info.ComparisonOperator"`
+	NoDataPolicy                          string                               `name:"NoDataPolicy"`
+	NoEffectiveInterval                   string                               `name:"NoEffectiveInterval"`
+	EmailSubject                          string                               `name:"EmailSubject"`
+	Options                               string                               `name:"Options"`
+	SilenceTime                           string                               `name:"SilenceTime"`
+	Prometheus                            string                               `name:"Prometheus"`
+	EscalationsInfoPreCondition           string                               `name:"Escalations.Info.PreCondition"`
+	MetricName                            string                               `name:"MetricName"`
+	EscalationsWarnTimes                  string                               `name:"Escalations.Warn.Times"`
+	CompositeExpression                   string                               `name:"CompositeExpression"`
+	EscalationsWarnThreshold              string                               `name:"Escalations.Warn.Threshold"`
+	Period                                string                               `name:"Period"`
+	ContactGroups                         string                               `name:"ContactGroups"`
+	EscalationsCriticalStatistics         string                               `name:"Escalations.Critical.Statistics"`
+	RuleType                              string                               `name:"RuleType"`
+	GroupId                               string                               `name:"GroupId"`
+	EscalationsInfoTimes                  string                               `name:"Escalations.Info.Times"`
+	Resources                             string                               `name:"Resources"`
+	Labels                                *[]PutResourceMetricRulesRulesLabels `name:"Labels" type:"Repeated"`
+	EscalationsCriticalTimes              string                               `name:"Escalations.Critical.Times"`
+	EscalationsInfoThreshold              string                               `name:"Escalations.Info.Threshold"`
+	EscalationsWarnStatistics             string                               `name:"Escalations.Warn.Statistics"`
+	Namespace                             string                               `name:"Namespace"`
+	Interval                              string                               `name:"Interval"`
+	RuleId                                string                               `name:"RuleId"`
+	EscalationsCriticalComparisonOperator string                               `name:"Escalations.Critical.ComparisonOperator"`
+	EscalationsCriticalPreCondition       string                               `name:"Escalations.Critical.PreCondition"`
+	EscalationsCriticalThreshold          string                               `name:"Escalations.Critical.Threshold"`
+}
+
+// PutResourceMetricRulesRulesLabels is a repeated param struct in PutResourceMetricRulesRequest
+type PutResourceMetricRulesRulesLabels struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // PutResourceMetricRulesResponse is the response struct for api PutResourceMetricRules

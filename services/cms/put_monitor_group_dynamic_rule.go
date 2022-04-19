@@ -73,6 +73,7 @@ type PutMonitorGroupDynamicRuleRequest struct {
 	*requests.RpcRequest
 	GroupRules *[]PutMonitorGroupDynamicRuleGroupRules `position:"Query" name:"GroupRules"  type:"Repeated"`
 	GroupId    requests.Integer                        `position:"Query" name:"GroupId"`
+	IsAsync    requests.Boolean                        `position:"Query" name:"IsAsync"`
 }
 
 // PutMonitorGroupDynamicRuleGroupRules is a repeated param struct in PutMonitorGroupDynamicRuleRequest

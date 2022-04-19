@@ -21,4 +21,5 @@ type MnsParameter struct {
 	Queue  string `json:"Queue" xml:"Queue"`
 	Arn    string `json:"Arn" xml:"Arn"`
 	Id     string `json:"Id" xml:"Id"`
+	Topic  string `json:"Topic" xml:"Topic"`
 }

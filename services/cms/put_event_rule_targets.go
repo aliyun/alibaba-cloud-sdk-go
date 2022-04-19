@@ -117,6 +117,7 @@ type PutEventRuleTargetsOpenApiParameters struct {
 
 // PutEventRuleTargetsMnsParameters is a repeated param struct in PutEventRuleTargetsRequest
 type PutEventRuleTargetsMnsParameters struct {
+	Topic  string `name:"Topic"`
 	Id     string `name:"Id"`
 	Region string `name:"Region"`
 	Queue  string `name:"Queue"`
