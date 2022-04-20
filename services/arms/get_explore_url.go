@@ -88,7 +88,7 @@ func CreateGetExploreUrlRequest() (request *GetExploreUrlRequest) {
 	request = &GetExploreUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetExploreUrl", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetExploreUrl", "", "")
 	request.Method = requests.POST
 	return
 }

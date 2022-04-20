@@ -87,7 +87,7 @@ func CreateGetClusterStateRequest() (request *GetClusterStateRequest) {
 	request = &GetClusterStateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetClusterState", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetClusterState", "", "")
 	request.Method = requests.POST
 	return
 }

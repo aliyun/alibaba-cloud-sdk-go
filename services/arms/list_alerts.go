@@ -96,7 +96,7 @@ func CreateListAlertsRequest() (request *ListAlertsRequest) {
 	request = &ListAlertsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListAlerts", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListAlerts", "", "")
 	request.Method = requests.POST
 	return
 }

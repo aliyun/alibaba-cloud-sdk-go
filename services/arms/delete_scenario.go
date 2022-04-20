@@ -86,7 +86,7 @@ func CreateDeleteScenarioRequest() (request *DeleteScenarioRequest) {
 	request = &DeleteScenarioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteScenario", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteScenario", "", "")
 	request.Method = requests.POST
 	return
 }

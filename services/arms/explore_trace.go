@@ -106,7 +106,7 @@ func CreateExploreTraceRequest() (request *ExploreTraceRequest) {
 	request = &ExploreTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ExploreTrace", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ExploreTrace", "", "")
 	request.Method = requests.POST
 	return
 }

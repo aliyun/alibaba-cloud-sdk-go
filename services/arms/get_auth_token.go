@@ -86,7 +86,7 @@ func CreateGetAuthTokenRequest() (request *GetAuthTokenRequest) {
 	request = &GetAuthTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetAuthToken", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetAuthToken", "", "")
 	request.Method = requests.POST
 	return
 }

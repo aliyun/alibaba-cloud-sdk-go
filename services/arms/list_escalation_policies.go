@@ -88,7 +88,7 @@ func CreateListEscalationPoliciesRequest() (request *ListEscalationPoliciesReque
 	request = &ListEscalationPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListEscalationPolicies", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListEscalationPolicies", "", "")
 	request.Method = requests.GET
 	return
 }

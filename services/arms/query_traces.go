@@ -88,7 +88,7 @@ func CreateQueryTracesRequest() (request *QueryTracesRequest) {
 	request = &QueryTracesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryTraces", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryTraces", "", "")
 	request.Method = requests.POST
 	return
 }

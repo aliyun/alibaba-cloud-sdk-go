@@ -105,7 +105,7 @@ func CreateCreateOrUpdateAlertRuleRequest() (request *CreateOrUpdateAlertRuleReq
 	request = &CreateOrUpdateAlertRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateAlertRule", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateAlertRule", "", "")
 	request.Method = requests.POST
 	return
 }

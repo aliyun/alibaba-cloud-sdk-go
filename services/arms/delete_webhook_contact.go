@@ -86,7 +86,7 @@ func CreateDeleteWebhookContactRequest() (request *DeleteWebhookContactRequest) 
 	request = &DeleteWebhookContactRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteWebhookContact", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteWebhookContact", "", "")
 	request.Method = requests.POST
 	return
 }

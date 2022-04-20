@@ -91,7 +91,7 @@ func CreateUninstallManagedPrometheusRequest() (request *UninstallManagedPrometh
 	request = &UninstallManagedPrometheusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "UninstallManagedPrometheus", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "UninstallManagedPrometheus", "", "")
 	request.Method = requests.POST
 	return
 }

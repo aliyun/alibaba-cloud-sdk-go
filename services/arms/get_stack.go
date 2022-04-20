@@ -88,7 +88,7 @@ func CreateGetStackRequest() (request *GetStackRequest) {
 	request = &GetStackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetStack", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetStack", "", "")
 	request.Method = requests.POST
 	return
 }

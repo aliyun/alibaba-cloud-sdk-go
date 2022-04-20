@@ -86,7 +86,7 @@ func CreateDeleteSilencePolicyRequest() (request *DeleteSilencePolicyRequest) {
 	request = &DeleteSilencePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteSilencePolicy", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteSilencePolicy", "", "")
 	request.Method = requests.POST
 	return
 }

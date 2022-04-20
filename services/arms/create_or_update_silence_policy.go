@@ -88,7 +88,7 @@ func CreateCreateOrUpdateSilencePolicyRequest() (request *CreateOrUpdateSilenceP
 	request = &CreateOrUpdateSilencePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateSilencePolicy", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateOrUpdateSilencePolicy", "", "")
 	request.Method = requests.POST
 	return
 }

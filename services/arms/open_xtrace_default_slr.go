@@ -85,7 +85,7 @@ func CreateOpenXtraceDefaultSLRRequest() (request *OpenXtraceDefaultSLRRequest) 
 	request = &OpenXtraceDefaultSLRRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "OpenXtraceDefaultSLR", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "OpenXtraceDefaultSLR", "", "")
 	request.Method = requests.POST
 	return
 }

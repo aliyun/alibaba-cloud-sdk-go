@@ -94,7 +94,7 @@ func CreateInstallManagedPrometheusRequest() (request *InstallManagedPrometheusR
 	request = &InstallManagedPrometheusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "InstallManagedPrometheus", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "InstallManagedPrometheus", "", "")
 	request.Method = requests.POST
 	return
 }

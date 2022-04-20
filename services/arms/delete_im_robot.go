@@ -86,7 +86,7 @@ func CreateDeleteIMRobotRequest() (request *DeleteIMRobotRequest) {
 	request = &DeleteIMRobotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteIMRobot", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteIMRobot", "", "")
 	request.Method = requests.POST
 	return
 }

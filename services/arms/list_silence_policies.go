@@ -89,7 +89,7 @@ func CreateListSilencePoliciesRequest() (request *ListSilencePoliciesRequest) {
 	request = &ListSilencePoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListSilencePolicies", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListSilencePolicies", "", "")
 	request.Method = requests.POST
 	return
 }

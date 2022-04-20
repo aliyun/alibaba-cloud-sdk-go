@@ -19,6 +19,7 @@ package arms
 type Data struct {
 	ArmsDBNotExist          bool                     `json:"ArmsDBNotExist" xml:"ArmsDBNotExist"`
 	IsControllerInstalled   bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
+	Info                    string                   `json:"Info" xml:"Info"`
 	PodIsNotRestart         bool                     `json:"PodIsNotRestart" xml:"PodIsNotRestart"`
 	NeedIntervention        bool                     `json:"NeedIntervention" xml:"NeedIntervention"`
 	IsFlink                 bool                     `json:"IsFlink" xml:"IsFlink"`
@@ -27,10 +28,12 @@ type Data struct {
 	AgentServiceNotExist    bool                     `json:"AgentServiceNotExist" xml:"AgentServiceNotExist"`
 	NodeSizeIsZero          bool                     `json:"NodeSizeIsZero" xml:"NodeSizeIsZero"`
 	AckNotRunning           bool                     `json:"AckNotRunning" xml:"AckNotRunning"`
+	Success                 bool                     `json:"Success" xml:"Success"`
 	Page                    int                      `json:"Page" xml:"Page"`
 	NeedRetry               bool                     `json:"NeedRetry" xml:"NeedRetry"`
 	Total                   string                   `json:"Total" xml:"Total"`
 	HaveAgentNodeIsNotReady bool                     `json:"HaveAgentNodeIsNotReady" xml:"HaveAgentNodeIsNotReady"`
+	Msg                     string                   `json:"Msg" xml:"Msg"`
 	AgentHelmNotExist       bool                     `json:"AgentHelmNotExist" xml:"AgentHelmNotExist"`
 	GetClusterInfo          string                   `json:"GetClusterInfo" xml:"GetClusterInfo"`
 	Items                   []map[string]interface{} `json:"Items" xml:"Items"`
