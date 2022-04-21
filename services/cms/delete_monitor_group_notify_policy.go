@@ -90,7 +90,7 @@ func CreateDeleteMonitorGroupNotifyPolicyRequest() (request *DeleteMonitorGroupN
 	request = &DeleteMonitorGroupNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMonitorGroupNotifyPolicy", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMonitorGroupNotifyPolicy", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -106,7 +106,7 @@ func CreateDescribeAlertLogListRequest() (request *DescribeAlertLogListRequest) 
 	request = &DescribeAlertLogListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

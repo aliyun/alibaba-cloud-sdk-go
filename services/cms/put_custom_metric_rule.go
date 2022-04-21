@@ -103,7 +103,7 @@ func CreatePutCustomMetricRuleRequest() (request *PutCustomMetricRuleRequest) {
 	request = &PutCustomMetricRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutCustomMetricRule", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutCustomMetricRule", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

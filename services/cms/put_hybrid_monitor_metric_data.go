@@ -102,7 +102,7 @@ func CreatePutHybridMonitorMetricDataRequest() (request *PutHybridMonitorMetricD
 	request = &PutHybridMonitorMetricDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutHybridMonitorMetricData", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutHybridMonitorMetricData", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

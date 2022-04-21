@@ -91,7 +91,7 @@ func CreateCreateMonitorAgentProcessRequest() (request *CreateMonitorAgentProces
 	request = &CreateMonitorAgentProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitorAgentProcess", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitorAgentProcess", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

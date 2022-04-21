@@ -89,7 +89,7 @@ func CreateDeleteMonitorGroupRequest() (request *DeleteMonitorGroupRequest) {
 	request = &DeleteMonitorGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMonitorGroup", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMonitorGroup", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

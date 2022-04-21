@@ -88,7 +88,7 @@ func CreateDeleteLogMonitorRequest() (request *DeleteLogMonitorRequest) {
 	request = &DeleteLogMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteLogMonitor", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteLogMonitor", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

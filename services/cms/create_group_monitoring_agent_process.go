@@ -112,7 +112,7 @@ func CreateCreateGroupMonitoringAgentProcessRequest() (request *CreateGroupMonit
 	request = &CreateGroupMonitoringAgentProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateGroupMonitoringAgentProcess", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateGroupMonitoringAgentProcess", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

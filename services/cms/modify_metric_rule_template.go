@@ -115,7 +115,7 @@ func CreateModifyMetricRuleTemplateRequest() (request *ModifyMetricRuleTemplateR
 	request = &ModifyMetricRuleTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "ModifyMetricRuleTemplate", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "ModifyMetricRuleTemplate", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

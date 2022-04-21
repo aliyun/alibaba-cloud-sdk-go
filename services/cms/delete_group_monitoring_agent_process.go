@@ -89,7 +89,7 @@ func CreateDeleteGroupMonitoringAgentProcessRequest() (request *DeleteGroupMonit
 	request = &DeleteGroupMonitoringAgentProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteGroupMonitoringAgentProcess", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteGroupMonitoringAgentProcess", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateOpenCmsServiceRequest() (request *OpenCmsServiceRequest) {
 	request = &OpenCmsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "OpenCmsService", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "OpenCmsService", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

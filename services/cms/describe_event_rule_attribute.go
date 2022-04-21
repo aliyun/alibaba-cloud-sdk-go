@@ -90,7 +90,7 @@ func CreateDescribeEventRuleAttributeRequest() (request *DescribeEventRuleAttrib
 	request = &DescribeEventRuleAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeEventRuleAttribute", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeEventRuleAttribute", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

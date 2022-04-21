@@ -88,7 +88,7 @@ func CreateDeleteContactGroupRequest() (request *DeleteContactGroupRequest) {
 	request = &DeleteContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteContactGroup", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteContactGroup", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateCreateCmsSmspackageOrderRequest() (request *CreateCmsSmspackageOrderR
 	request = &CreateCmsSmspackageOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsSmspackageOrder", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsSmspackageOrder", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

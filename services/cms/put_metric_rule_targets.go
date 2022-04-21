@@ -98,7 +98,7 @@ func CreatePutMetricRuleTargetsRequest() (request *PutMetricRuleTargetsRequest) 
 	request = &PutMetricRuleTargetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutMetricRuleTargets", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutMetricRuleTargets", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreatePutMonitoringConfigRequest() (request *PutMonitoringConfigRequest) {
 	request = &PutMonitoringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutMonitoringConfig", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutMonitoringConfig", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

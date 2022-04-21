@@ -90,7 +90,7 @@ func CreateCreateMetricRuleResourcesRequest() (request *CreateMetricRuleResource
 	request = &CreateMetricRuleResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMetricRuleResources", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMetricRuleResources", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

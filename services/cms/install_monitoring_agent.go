@@ -90,7 +90,7 @@ func CreateInstallMonitoringAgentRequest() (request *InstallMonitoringAgentReque
 	request = &InstallMonitoringAgentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "InstallMonitoringAgent", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "InstallMonitoringAgent", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateDescribeMonitoringAgentConfigRequest() (request *DescribeMonitoringAg
 	request = &DescribeMonitoringAgentConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringAgentConfig", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringAgentConfig", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateDescribeExporterRuleListRequest() (request *DescribeExporterRuleListR
 	request = &DescribeExporterRuleListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeExporterRuleList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeExporterRuleList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

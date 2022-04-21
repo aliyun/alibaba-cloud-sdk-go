@@ -96,7 +96,7 @@ func CreateRemoveTagsRequest() (request *RemoveTagsRequest) {
 	request = &RemoveTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "RemoveTags", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "RemoveTags", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

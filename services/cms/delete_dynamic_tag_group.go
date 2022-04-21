@@ -88,7 +88,7 @@ func CreateDeleteDynamicTagGroupRequest() (request *DeleteDynamicTagGroupRequest
 	request = &DeleteDynamicTagGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteDynamicTagGroup", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteDynamicTagGroup", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

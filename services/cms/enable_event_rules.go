@@ -88,7 +88,7 @@ func CreateEnableEventRulesRequest() (request *EnableEventRulesRequest) {
 	request = &EnableEventRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "EnableEventRules", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "EnableEventRules", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

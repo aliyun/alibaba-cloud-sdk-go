@@ -136,7 +136,7 @@ func CreateCreateGroupMetricRulesRequest() (request *CreateGroupMetricRulesReque
 	request = &CreateGroupMetricRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateGroupMetricRules", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateGroupMetricRules", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

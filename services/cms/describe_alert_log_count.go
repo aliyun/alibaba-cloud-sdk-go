@@ -103,7 +103,7 @@ func CreateDescribeAlertLogCountRequest() (request *DescribeAlertLogCountRequest
 	request = &DescribeAlertLogCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogCount", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertLogCount", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

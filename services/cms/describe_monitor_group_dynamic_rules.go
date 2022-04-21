@@ -89,7 +89,7 @@ func CreateDescribeMonitorGroupDynamicRulesRequest() (request *DescribeMonitorGr
 	request = &DescribeMonitorGroupDynamicRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitorGroupDynamicRules", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitorGroupDynamicRules", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

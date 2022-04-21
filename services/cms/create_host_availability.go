@@ -117,7 +117,7 @@ func CreateCreateHostAvailabilityRequest() (request *CreateHostAvailabilityReque
 	request = &CreateHostAvailabilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateHostAvailability", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateHostAvailability", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

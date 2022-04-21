@@ -88,7 +88,7 @@ func CreateDescribeSystemEventMetaListRequest() (request *DescribeSystemEventMet
 	request = &DescribeSystemEventMetaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSystemEventMetaList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSystemEventMetaList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

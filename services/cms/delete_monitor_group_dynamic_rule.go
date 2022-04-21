@@ -89,7 +89,7 @@ func CreateDeleteMonitorGroupDynamicRuleRequest() (request *DeleteMonitorGroupDy
 	request = &DeleteMonitorGroupDynamicRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMonitorGroupDynamicRule", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMonitorGroupDynamicRule", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

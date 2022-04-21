@@ -90,7 +90,7 @@ func CreateDescribeProductResourceTagKeyListRequest() (request *DescribeProductR
 	request = &DescribeProductResourceTagKeyListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeProductResourceTagKeyList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeProductResourceTagKeyList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDescribeLogMonitorAttributeRequest() (request *DescribeLogMonitorAttr
 	request = &DescribeLogMonitorAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeLogMonitorAttribute", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeLogMonitorAttribute", "cms", "openAPI")
 	request.Method = requests.GET
 	return
 }

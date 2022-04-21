@@ -88,7 +88,7 @@ func CreateDescribeSiteMonitorQuotaRequest() (request *DescribeSiteMonitorQuotaR
 	request = &DescribeSiteMonitorQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSiteMonitorQuota", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSiteMonitorQuota", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

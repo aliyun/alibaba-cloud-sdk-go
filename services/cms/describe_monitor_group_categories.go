@@ -89,7 +89,7 @@ func CreateDescribeMonitorGroupCategoriesRequest() (request *DescribeMonitorGrou
 	request = &DescribeMonitorGroupCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitorGroupCategories", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitorGroupCategories", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

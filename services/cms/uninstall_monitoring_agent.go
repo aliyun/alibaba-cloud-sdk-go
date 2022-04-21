@@ -88,7 +88,7 @@ func CreateUninstallMonitoringAgentRequest() (request *UninstallMonitoringAgentR
 	request = &UninstallMonitoringAgentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "UninstallMonitoringAgent", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "UninstallMonitoringAgent", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

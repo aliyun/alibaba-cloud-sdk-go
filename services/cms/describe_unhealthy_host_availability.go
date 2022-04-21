@@ -89,7 +89,7 @@ func CreateDescribeUnhealthyHostAvailabilityRequest() (request *DescribeUnhealth
 	request = &DescribeUnhealthyHostAvailabilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeUnhealthyHostAvailability", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeUnhealthyHostAvailability", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

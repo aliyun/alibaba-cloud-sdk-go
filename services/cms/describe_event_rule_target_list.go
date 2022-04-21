@@ -93,7 +93,7 @@ func CreateDescribeEventRuleTargetListRequest() (request *DescribeEventRuleTarge
 	request = &DescribeEventRuleTargetListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeEventRuleTargetList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeEventRuleTargetList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

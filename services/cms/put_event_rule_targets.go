@@ -149,7 +149,7 @@ func CreatePutEventRuleTargetsRequest() (request *PutEventRuleTargetsRequest) {
 	request = &PutEventRuleTargetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutEventRuleTargets", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutEventRuleTargets", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

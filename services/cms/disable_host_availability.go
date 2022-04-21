@@ -88,7 +88,7 @@ func CreateDisableHostAvailabilityRequest() (request *DisableHostAvailabilityReq
 	request = &DisableHostAvailabilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DisableHostAvailability", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DisableHostAvailability", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

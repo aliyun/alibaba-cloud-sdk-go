@@ -93,7 +93,7 @@ func CreateDescribeEventRuleListRequest() (request *DescribeEventRuleListRequest
 	request = &DescribeEventRuleListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeEventRuleList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeEventRuleList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

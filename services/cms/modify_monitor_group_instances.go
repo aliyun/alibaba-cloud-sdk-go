@@ -97,7 +97,7 @@ func CreateModifyMonitorGroupInstancesRequest() (request *ModifyMonitorGroupInst
 	request = &ModifyMonitorGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "ModifyMonitorGroupInstances", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "ModifyMonitorGroupInstances", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -99,7 +99,7 @@ func CreatePutCustomEventRuleRequest() (request *PutCustomEventRuleRequest) {
 	request = &PutCustomEventRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "PutCustomEventRule", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutCustomEventRule", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

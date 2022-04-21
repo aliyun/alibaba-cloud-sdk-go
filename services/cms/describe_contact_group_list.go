@@ -92,7 +92,7 @@ func CreateDescribeContactGroupListRequest() (request *DescribeContactGroupListR
 	request = &DescribeContactGroupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeContactGroupList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeContactGroupList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

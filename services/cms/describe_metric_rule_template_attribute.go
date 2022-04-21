@@ -90,7 +90,7 @@ func CreateDescribeMetricRuleTemplateAttributeRequest() (request *DescribeMetric
 	request = &DescribeMetricRuleTemplateAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricRuleTemplateAttribute", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricRuleTemplateAttribute", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

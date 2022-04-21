@@ -102,7 +102,7 @@ func CreateCreateCmsOrderRequest() (request *CreateCmsOrderRequest) {
 	request = &CreateCmsOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsOrder", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsOrder", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

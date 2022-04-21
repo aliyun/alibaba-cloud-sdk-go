@@ -91,7 +91,7 @@ func CreateCreateCmsCallNumOrderRequest() (request *CreateCmsCallNumOrderRequest
 	request = &CreateCmsCallNumOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsCallNumOrder", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateCmsCallNumOrder", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateDescribeTagValueListRequest() (request *DescribeTagValueListRequest) 
 	request = &DescribeTagValueListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeTagValueList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeTagValueList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

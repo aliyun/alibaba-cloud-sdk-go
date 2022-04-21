@@ -98,7 +98,7 @@ func CreateBatchCreateOnceSiteMonitorRequest() (request *BatchCreateOnceSiteMoni
 	request = &BatchCreateOnceSiteMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "BatchCreateOnceSiteMonitor", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "BatchCreateOnceSiteMonitor", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

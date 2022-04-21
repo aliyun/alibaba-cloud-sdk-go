@@ -89,7 +89,7 @@ func CreateDescribeMonitoringAgentAccessKeyRequest() (request *DescribeMonitorin
 	request = &DescribeMonitoringAgentAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringAgentAccessKey", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMonitoringAgentAccessKey", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

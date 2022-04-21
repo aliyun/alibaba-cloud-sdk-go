@@ -93,7 +93,7 @@ func CreateCreateMonitorGroupByResourceGroupIdRequest() (request *CreateMonitorG
 	request = &CreateMonitorGroupByResourceGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitorGroupByResourceGroupId", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitorGroupByResourceGroupId", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

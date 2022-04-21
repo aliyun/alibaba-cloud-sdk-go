@@ -88,7 +88,7 @@ func CreateEnableActiveMetricRuleRequest() (request *EnableActiveMetricRuleReque
 	request = &EnableActiveMetricRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "EnableActiveMetricRule", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "EnableActiveMetricRule", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

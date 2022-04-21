@@ -89,7 +89,7 @@ func CreateDescribeMetricRuleTargetsRequest() (request *DescribeMetricRuleTarget
 	request = &DescribeMetricRuleTargetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricRuleTargets", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricRuleTargets", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }

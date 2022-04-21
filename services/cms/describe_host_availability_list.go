@@ -95,7 +95,7 @@ func CreateDescribeHostAvailabilityListRequest() (request *DescribeHostAvailabil
 	request = &DescribeHostAvailabilityListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeHostAvailabilityList", "Cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeHostAvailabilityList", "cms", "openAPI")
 	request.Method = requests.POST
 	return
 }
