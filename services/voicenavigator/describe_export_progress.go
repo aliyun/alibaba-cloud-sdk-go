@@ -78,8 +78,8 @@ type DescribeExportProgressRequest struct {
 // DescribeExportProgressResponse is the response struct for api DescribeExportProgress
 type DescribeExportProgressResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Status      string `json:"Status" xml:"Status"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	FileHttpUrl string `json:"FileHttpUrl" xml:"FileHttpUrl"`
 }
 

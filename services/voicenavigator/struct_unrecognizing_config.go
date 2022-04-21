@@ -17,9 +17,9 @@ package voicenavigator
 
 // UnrecognizingConfig is a nested struct in voicenavigator response
 type UnrecognizingConfig struct {
-	Prompt            string `json:"Prompt" xml:"Prompt"`
-	Threshold         int    `json:"Threshold" xml:"Threshold"`
 	FinalPrompt       string `json:"FinalPrompt" xml:"FinalPrompt"`
 	FinalAction       string `json:"FinalAction" xml:"FinalAction"`
 	FinalActionParams string `json:"FinalActionParams" xml:"FinalActionParams"`
+	Threshold         int    `json:"Threshold" xml:"Threshold"`
+	Prompt            string `json:"Prompt" xml:"Prompt"`
 }

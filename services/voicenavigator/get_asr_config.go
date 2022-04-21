@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetNewBargeInSwitch invokes the voicenavigator.GetNewBargeInSwitch API synchronously
-func (client *Client) GetNewBargeInSwitch(request *GetNewBargeInSwitchRequest) (response *GetNewBargeInSwitchResponse, err error) {
-	response = CreateGetNewBargeInSwitchResponse()
+// GetAsrConfig invokes the voicenavigator.GetAsrConfig API synchronously
+func (client *Client) GetAsrConfig(request *GetAsrConfigRequest) (response *GetAsrConfigResponse, err error) {
+	response = CreateGetAsrConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetNewBargeInSwitchWithChan invokes the voicenavigator.GetNewBargeInSwitch API asynchronously
-func (client *Client) GetNewBargeInSwitchWithChan(request *GetNewBargeInSwitchRequest) (<-chan *GetNewBargeInSwitchResponse, <-chan error) {
-	responseChan := make(chan *GetNewBargeInSwitchResponse, 1)
+// GetAsrConfigWithChan invokes the voicenavigator.GetAsrConfig API asynchronously
+func (client *Client) GetAsrConfigWithChan(request *GetAsrConfigRequest) (<-chan *GetAsrConfigResponse, <-chan error) {
+	responseChan := make(chan *GetAsrConfigResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetNewBargeInSwitch(request)
+		response, err := client.GetAsrConfig(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetNewBargeInSwitchWithChan(request *GetNewBargeInSwitchRe
 	return responseChan, errChan
 }
 
-// GetNewBargeInSwitchWithCallback invokes the voicenavigator.GetNewBargeInSwitch API asynchronously
-func (client *Client) GetNewBargeInSwitchWithCallback(request *GetNewBargeInSwitchRequest, callback func(response *GetNewBargeInSwitchResponse, err error)) <-chan int {
+// GetAsrConfigWithCallback invokes the voicenavigator.GetAsrConfig API asynchronously
+func (client *Client) GetAsrConfigWithCallback(request *GetAsrConfigRequest, callback func(response *GetAsrConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetNewBargeInSwitchResponse
+		var response *GetAsrConfigResponse
 		var err error
 		defer close(result)
-		response, err = client.GetNewBargeInSwitch(request)
+		response, err = client.GetAsrConfig(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,37 @@ func (client *Client) GetNewBargeInSwitchWithCallback(request *GetNewBargeInSwit
 	return result
 }
 
-// GetNewBargeInSwitchRequest is the request struct for api GetNewBargeInSwitch
-type GetNewBargeInSwitchRequest struct {
+// GetAsrConfigRequest is the request struct for api GetAsrConfig
+type GetAsrConfigRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
+	EntryId     string           `position:"Query" name:"EntryId"`
+	ConfigLevel requests.Integer `position:"Query" name:"ConfigLevel"`
 }
 
-// GetNewBargeInSwitchResponse is the response struct for api GetNewBargeInSwitch
-type GetNewBargeInSwitchResponse struct {
+// GetAsrConfigResponse is the response struct for api GetAsrConfig
+type GetAsrConfigResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
 	ErrorMsg       string `json:"ErrorMsg" xml:"ErrorMsg"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
 
-// CreateGetNewBargeInSwitchRequest creates a request to invoke GetNewBargeInSwitch API
-func CreateGetNewBargeInSwitchRequest() (request *GetNewBargeInSwitchRequest) {
-	request = &GetNewBargeInSwitchRequest{
+// CreateGetAsrConfigRequest creates a request to invoke GetAsrConfig API
+func CreateGetAsrConfigRequest() (request *GetAsrConfigRequest) {
+	request = &GetAsrConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "GetNewBargeInSwitch", "voicebot", "openAPI")
+	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "GetAsrConfig", "voicebot", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetNewBargeInSwitchResponse creates a response to parse from GetNewBargeInSwitch response
-func CreateGetNewBargeInSwitchResponse() (response *GetNewBargeInSwitchResponse) {
-	response = &GetNewBargeInSwitchResponse{
+// CreateGetAsrConfigResponse creates a response to parse from GetAsrConfig response
+func CreateGetAsrConfigResponse() (response *GetAsrConfigResponse) {
+	response = &GetAsrConfigResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

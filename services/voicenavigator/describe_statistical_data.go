@@ -80,13 +80,13 @@ type DescribeStatisticalDataRequest struct {
 // DescribeStatisticalDataResponse is the response struct for api DescribeStatisticalData
 type DescribeStatisticalDataResponse struct {
 	*responses.BaseResponse
+	TotalDialoguePassRate    string                  `json:"TotalDialoguePassRate" xml:"TotalDialoguePassRate"`
+	TotalKnowledgeHitRate    string                  `json:"TotalKnowledgeHitRate" xml:"TotalKnowledgeHitRate"`
+	TotalResolutionRate      string                  `json:"TotalResolutionRate" xml:"TotalResolutionRate"`
+	TotalValidAnswerRate     string                  `json:"TotalValidAnswerRate" xml:"TotalValidAnswerRate"`
 	RequestId                string                  `json:"RequestId" xml:"RequestId"`
 	ResolvedQuestionTotalNum int64                   `json:"ResolvedQuestionTotalNum" xml:"ResolvedQuestionTotalNum"`
 	ConversationTotalNum     int64                   `json:"ConversationTotalNum" xml:"ConversationTotalNum"`
-	TotalResolutionRate      string                  `json:"TotalResolutionRate" xml:"TotalResolutionRate"`
-	TotalValidAnswerRate     string                  `json:"TotalValidAnswerRate" xml:"TotalValidAnswerRate"`
-	TotalDialoguePassRate    string                  `json:"TotalDialoguePassRate" xml:"TotalDialoguePassRate"`
-	TotalKnowledgeHitRate    string                  `json:"TotalKnowledgeHitRate" xml:"TotalKnowledgeHitRate"`
 	StatisticalDataReports   []StatisticalDataReport `json:"StatisticalDataReports" xml:"StatisticalDataReports"`
 }
 

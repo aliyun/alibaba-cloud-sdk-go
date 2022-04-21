@@ -17,11 +17,11 @@ package voicenavigator
 
 // StatisticalDataReport is a nested struct in voicenavigator response
 type StatisticalDataReport struct {
-	StatisticalDate      string `json:"StatisticalDate" xml:"StatisticalDate"`
+	KnowledgeHitRate     string `json:"KnowledgeHitRate" xml:"KnowledgeHitRate"`
 	ResolvedQuestionNum  int    `json:"ResolvedQuestionNum" xml:"ResolvedQuestionNum"`
-	TotalConversationNum int    `json:"TotalConversationNum" xml:"TotalConversationNum"`
 	ResolutionRate       string `json:"ResolutionRate" xml:"ResolutionRate"`
+	StatisticalDate      string `json:"StatisticalDate" xml:"StatisticalDate"`
+	TotalConversationNum int    `json:"TotalConversationNum" xml:"TotalConversationNum"`
 	ValidAnswerRate      string `json:"ValidAnswerRate" xml:"ValidAnswerRate"`
 	DialoguePassRate     string `json:"DialoguePassRate" xml:"DialoguePassRate"`
-	KnowledgeHitRate     string `json:"KnowledgeHitRate" xml:"KnowledgeHitRate"`
 }

@@ -71,17 +71,18 @@ func (client *Client) ListInstancesWithCallback(request *ListInstancesRequest, c
 // ListInstancesRequest is the request struct for api ListInstances
 type ListInstancesRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber                   requests.Integer `position:"Query" name:"PageNumber"`
+	NluServiceTypeListJsonString string           `position:"Query" name:"NluServiceTypeListJsonString"`
+	PageSize                     requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListInstancesResponse is the response struct for api ListInstances
 type ListInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
 	Instances  []Instance `json:"Instances" xml:"Instances"`
 }
 

@@ -17,13 +17,13 @@ package voicenavigator
 
 // Instance is a nested struct in voicenavigator response
 type Instance struct {
+	Status               string   `json:"Status" xml:"Status"`
+	NluServiceType       string   `json:"NluServiceType" xml:"NluServiceType"`
+	ModifyUserName       string   `json:"ModifyUserName" xml:"ModifyUserName"`
+	Description          string   `json:"Description" xml:"Description"`
 	InstanceId           string   `json:"InstanceId" xml:"InstanceId"`
 	Name                 string   `json:"Name" xml:"Name"`
-	Description          string   `json:"Description" xml:"Description"`
-	Status               string   `json:"Status" xml:"Status"`
 	Concurrency          int64    `json:"Concurrency" xml:"Concurrency"`
 	ModifyTime           int64    `json:"ModifyTime" xml:"ModifyTime"`
-	ModifyUserName       string   `json:"ModifyUserName" xml:"ModifyUserName"`
-	NluServiceType       string   `json:"NluServiceType" xml:"NluServiceType"`
 	ApplicableOperations []string `json:"ApplicableOperations" xml:"ApplicableOperations"`
 }

@@ -17,11 +17,11 @@ package voicenavigator
 
 // ConversationDetail is a nested struct in voicenavigator response
 type ConversationDetail struct {
-	ConversationId string `json:"ConversationId" xml:"ConversationId"`
-	Speaker        string `json:"Speaker" xml:"Speaker"`
-	Utterance      string `json:"Utterance" xml:"Utterance"`
 	Action         string `json:"Action" xml:"Action"`
-	ActionParams   string `json:"ActionParams" xml:"ActionParams"`
+	Speaker        string `json:"Speaker" xml:"Speaker"`
 	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
+	ConversationId string `json:"ConversationId" xml:"ConversationId"`
+	ActionParams   string `json:"ActionParams" xml:"ActionParams"`
 	SequenceId     string `json:"SequenceId" xml:"SequenceId"`
+	Utterance      string `json:"Utterance" xml:"Utterance"`
 }

@@ -77,15 +77,15 @@ type DescribeInstanceRequest struct {
 // DescribeInstanceResponse is the response struct for api DescribeInstance
 type DescribeInstanceResponse struct {
 	*responses.BaseResponse
+	Status               string   `json:"Status" xml:"Status"`
+	ModifyTime           int64    `json:"ModifyTime" xml:"ModifyTime"`
+	Description          string   `json:"Description" xml:"Description"`
 	RequestId            string   `json:"RequestId" xml:"RequestId"`
 	InstanceId           string   `json:"InstanceId" xml:"InstanceId"`
-	Name                 string   `json:"Name" xml:"Name"`
-	Description          string   `json:"Description" xml:"Description"`
-	Status               string   `json:"Status" xml:"Status"`
 	Concurrency          int64    `json:"Concurrency" xml:"Concurrency"`
-	ModifyTime           int64    `json:"ModifyTime" xml:"ModifyTime"`
 	ModifyUserName       string   `json:"ModifyUserName" xml:"ModifyUserName"`
 	NluServiceType       string   `json:"NluServiceType" xml:"NluServiceType"`
+	Name                 string   `json:"Name" xml:"Name"`
 	ApplicableOperations []string `json:"ApplicableOperations" xml:"ApplicableOperations"`
 }
 

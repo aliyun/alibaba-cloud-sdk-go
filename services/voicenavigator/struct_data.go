@@ -17,6 +17,17 @@ package voicenavigator
 
 // Data is a nested struct in voicenavigator response
 type Data struct {
-	Enable         bool           `json:"Enable" xml:"Enable"`
-	InstanceConfig InstanceConfig `json:"InstanceConfig" xml:"InstanceConfig"`
+	AffectedRows         int    `json:"AffectedRows" xml:"AffectedRows"`
+	Message              string `json:"Message" xml:"Message"`
+	Folder               string `json:"Folder" xml:"Folder"`
+	AsrClassVocabularyId string `json:"AsrClassVocabularyId" xml:"AsrClassVocabularyId"`
+	AccessId             string `json:"AccessId" xml:"AccessId"`
+	AsrCustomizationId   string `json:"AsrCustomizationId" xml:"AsrCustomizationId"`
+	Host                 string `json:"Host" xml:"Host"`
+	Signature            string `json:"Signature" xml:"Signature"`
+	AsrVocabularyId      string `json:"AsrVocabularyId" xml:"AsrVocabularyId"`
+	Expire               int    `json:"Expire" xml:"Expire"`
+	Success              bool   `json:"Success" xml:"Success"`
+	Policy               string `json:"Policy" xml:"Policy"`
+	AsrAcousticModelId   string `json:"AsrAcousticModelId" xml:"AsrAcousticModelId"`
 }

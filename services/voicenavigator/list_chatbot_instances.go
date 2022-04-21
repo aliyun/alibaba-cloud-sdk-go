@@ -79,10 +79,10 @@ type ListChatbotInstancesRequest struct {
 // ListChatbotInstancesResponse is the response struct for api ListChatbotInstances
 type ListChatbotInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
 	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	Bots       []Bot  `json:"Bots" xml:"Bots"`
 }
 

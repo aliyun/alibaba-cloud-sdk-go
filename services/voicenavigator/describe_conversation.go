@@ -78,15 +78,15 @@ type DescribeConversationRequest struct {
 // DescribeConversationResponse is the response struct for api DescribeConversation
 type DescribeConversationResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	CallingNumber        string `json:"CallingNumber" xml:"CallingNumber"`
-	BeginTime            int64  `json:"BeginTime" xml:"BeginTime"`
-	EndTime              int64  `json:"EndTime" xml:"EndTime"`
-	TransferredToAgent   bool   `json:"TransferredToAgent" xml:"TransferredToAgent"`
-	SkillGroupId         string `json:"SkillGroupId" xml:"SkillGroupId"`
-	UserUtteranceCount   int    `json:"UserUtteranceCount" xml:"UserUtteranceCount"`
 	EffectiveAnswerCount int    `json:"EffectiveAnswerCount" xml:"EffectiveAnswerCount"`
 	ConversationId       string `json:"ConversationId" xml:"ConversationId"`
+	TransferredToAgent   bool   `json:"TransferredToAgent" xml:"TransferredToAgent"`
+	EndTime              int64  `json:"EndTime" xml:"EndTime"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	BeginTime            int64  `json:"BeginTime" xml:"BeginTime"`
+	SkillGroupId         string `json:"SkillGroupId" xml:"SkillGroupId"`
+	CallingNumber        string `json:"CallingNumber" xml:"CallingNumber"`
+	UserUtteranceCount   int    `json:"UserUtteranceCount" xml:"UserUtteranceCount"`
 }
 
 // CreateDescribeConversationRequest creates a request to invoke DescribeConversation API

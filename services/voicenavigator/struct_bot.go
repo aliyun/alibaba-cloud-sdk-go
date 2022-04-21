@@ -17,11 +17,11 @@ package voicenavigator
 
 // Bot is a nested struct in voicenavigator response
 type Bot struct {
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	TimeZone     string `json:"TimeZone" xml:"TimeZone"`
-	Avatar       string `json:"Avatar" xml:"Avatar"`
-	LanguageCode string `json:"LanguageCode" xml:"LanguageCode"`
-	Name         string `json:"Name" xml:"Name"`
 	Introduction string `json:"Introduction" xml:"Introduction"`
+	Avatar       string `json:"Avatar" xml:"Avatar"`
+	TimeZone     string `json:"TimeZone" xml:"TimeZone"`
 	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
+	LanguageCode string `json:"LanguageCode" xml:"LanguageCode"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	Name         string `json:"Name" xml:"Name"`
 }

@@ -17,12 +17,12 @@ package voicenavigator
 
 // SilenceTimeoutConfig is a nested struct in voicenavigator response
 type SilenceTimeoutConfig struct {
-	Prompt            string `json:"Prompt" xml:"Prompt"`
 	Timeout           int64  `json:"Timeout" xml:"Timeout"`
-	Threshold         int    `json:"Threshold" xml:"Threshold"`
-	FinalPrompt       string `json:"FinalPrompt" xml:"FinalPrompt"`
-	FinalAction       string `json:"FinalAction" xml:"FinalAction"`
-	FinalActionParams string `json:"FinalActionParams" xml:"FinalActionParams"`
-	SourceType        string `json:"SourceType" xml:"SourceType"`
 	IntentTrigger     string `json:"IntentTrigger" xml:"IntentTrigger"`
+	FinalPrompt       string `json:"FinalPrompt" xml:"FinalPrompt"`
+	SourceType        string `json:"SourceType" xml:"SourceType"`
+	FinalAction       string `json:"FinalAction" xml:"FinalAction"`
+	Prompt            string `json:"Prompt" xml:"Prompt"`
+	Threshold         int    `json:"Threshold" xml:"Threshold"`
+	FinalActionParams string `json:"FinalActionParams" xml:"FinalActionParams"`
 }

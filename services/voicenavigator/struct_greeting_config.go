@@ -17,7 +17,7 @@ package voicenavigator
 
 // GreetingConfig is a nested struct in voicenavigator response
 type GreetingConfig struct {
+	IntentTrigger string `json:"IntentTrigger" xml:"IntentTrigger"`
 	GreetingWords string `json:"GreetingWords" xml:"GreetingWords"`
 	SourceType    string `json:"SourceType" xml:"SourceType"`
-	IntentTrigger string `json:"IntentTrigger" xml:"IntentTrigger"`
 }

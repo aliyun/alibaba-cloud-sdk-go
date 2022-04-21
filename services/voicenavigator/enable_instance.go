@@ -77,8 +77,8 @@ type EnableInstanceRequest struct {
 // EnableInstanceResponse is the response struct for api EnableInstance
 type EnableInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Status    string `json:"Status" xml:"Status"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateEnableInstanceRequest creates a request to invoke EnableInstance API

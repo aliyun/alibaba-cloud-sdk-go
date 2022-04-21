@@ -82,9 +82,9 @@ type DebugBeginDialogueRequest struct {
 type DebugBeginDialogueResponse struct {
 	*responses.BaseResponse
 	Action        string `json:"Action" xml:"Action"`
-	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
 	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
+	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
 	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
 }
 

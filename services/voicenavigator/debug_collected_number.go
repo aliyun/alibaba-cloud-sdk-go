@@ -79,11 +79,11 @@ type DebugCollectedNumberRequest struct {
 // DebugCollectedNumberResponse is the response struct for api DebugCollectedNumber
 type DebugCollectedNumberResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
-	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 	Action        string `json:"Action" xml:"Action"`
+	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
+	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
 }
 
 // CreateDebugCollectedNumberRequest creates a request to invoke DebugCollectedNumber API

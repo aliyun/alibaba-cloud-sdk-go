@@ -78,12 +78,12 @@ type DescribeNavigationConfigRequest struct {
 type DescribeNavigationConfigResponse struct {
 	*responses.BaseResponse
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	GreetingConfig       GreetingConfig       `json:"GreetingConfig" xml:"GreetingConfig"`
-	UnrecognizingConfig  UnrecognizingConfig  `json:"UnrecognizingConfig" xml:"UnrecognizingConfig"`
 	RepeatingConfig      RepeatingConfig      `json:"RepeatingConfig" xml:"RepeatingConfig"`
 	AskingBackConfig     AskingBackConfig     `json:"AskingBackConfig" xml:"AskingBackConfig"`
-	ComplainingConfig    ComplainingConfig    `json:"ComplainingConfig" xml:"ComplainingConfig"`
 	SilenceTimeoutConfig SilenceTimeoutConfig `json:"SilenceTimeoutConfig" xml:"SilenceTimeoutConfig"`
+	GreetingConfig       GreetingConfig       `json:"GreetingConfig" xml:"GreetingConfig"`
+	UnrecognizingConfig  UnrecognizingConfig  `json:"UnrecognizingConfig" xml:"UnrecognizingConfig"`
+	ComplainingConfig    ComplainingConfig    `json:"ComplainingConfig" xml:"ComplainingConfig"`
 }
 
 // CreateDescribeNavigationConfigRequest creates a request to invoke DescribeNavigationConfig API

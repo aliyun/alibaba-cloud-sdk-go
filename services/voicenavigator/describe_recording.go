@@ -78,9 +78,9 @@ type DescribeRecordingRequest struct {
 // DescribeRecordingResponse is the response struct for api DescribeRecording
 type DescribeRecordingResponse struct {
 	*responses.BaseResponse
+	FilePath  string `json:"FilePath" xml:"FilePath"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	FileName  string `json:"FileName" xml:"FileName"`
-	FilePath  string `json:"FilePath" xml:"FilePath"`
 }
 
 // CreateDescribeRecordingRequest creates a request to invoke DescribeRecording API

@@ -17,8 +17,8 @@ package voicenavigator
 
 // ComplainingConfig is a nested struct in voicenavigator response
 type ComplainingConfig struct {
-	Prompt            string   `json:"Prompt" xml:"Prompt"`
 	FinalAction       string   `json:"FinalAction" xml:"FinalAction"`
+	Prompt            string   `json:"Prompt" xml:"Prompt"`
 	FinalActionParams string   `json:"FinalActionParams" xml:"FinalActionParams"`
 	Utterances        []string `json:"Utterances" xml:"Utterances"`
 }

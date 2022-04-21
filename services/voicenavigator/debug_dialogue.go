@@ -80,11 +80,11 @@ type DebugDialogueRequest struct {
 // DebugDialogueResponse is the response struct for api DebugDialogue
 type DebugDialogueResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
-	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 	Action        string `json:"Action" xml:"Action"`
+	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
+	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
 }
 
 // CreateDebugDialogueRequest creates a request to invoke DebugDialogue API

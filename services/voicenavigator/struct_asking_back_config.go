@@ -17,11 +17,11 @@ package voicenavigator
 
 // AskingBackConfig is a nested struct in voicenavigator response
 type AskingBackConfig struct {
-	Enabled                      bool     `json:"Enabled" xml:"Enabled"`
-	Prompt                       string   `json:"Prompt" xml:"Prompt"`
-	EnableNegativeFeedback       bool     `json:"EnableNegativeFeedback" xml:"EnableNegativeFeedback"`
 	NegativeFeedbackPrompt       string   `json:"NegativeFeedbackPrompt" xml:"NegativeFeedbackPrompt"`
 	NegativeFeedbackAction       string   `json:"NegativeFeedbackAction" xml:"NegativeFeedbackAction"`
 	NegativeFeedbackActionParams string   `json:"NegativeFeedbackActionParams" xml:"NegativeFeedbackActionParams"`
+	EnableNegativeFeedback       bool     `json:"EnableNegativeFeedback" xml:"EnableNegativeFeedback"`
+	Enabled                      bool     `json:"Enabled" xml:"Enabled"`
+	Prompt                       string   `json:"Prompt" xml:"Prompt"`
 	NegativeFeedbackUtterances   []string `json:"NegativeFeedbackUtterances" xml:"NegativeFeedbackUtterances"`
 }

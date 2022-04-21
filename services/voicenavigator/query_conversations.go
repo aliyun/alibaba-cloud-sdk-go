@@ -82,10 +82,10 @@ type QueryConversationsRequest struct {
 // QueryConversationsResponse is the response struct for api QueryConversations
 type QueryConversationsResponse struct {
 	*responses.BaseResponse
-	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	TotalCount    int64          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int            `json:"PageNumber" xml:"PageNumber"`
 	PageSize      int            `json:"PageSize" xml:"PageSize"`
+	RequestId     string         `json:"RequestId" xml:"RequestId"`
+	PageNumber    int            `json:"PageNumber" xml:"PageNumber"`
 	Conversations []Conversation `json:"Conversations" xml:"Conversations"`
 }
 

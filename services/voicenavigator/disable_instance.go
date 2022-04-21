@@ -77,8 +77,8 @@ type DisableInstanceRequest struct {
 // DisableInstanceResponse is the response struct for api DisableInstance
 type DisableInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Status    string `json:"Status" xml:"Status"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDisableInstanceRequest creates a request to invoke DisableInstance API
