@@ -17,14 +17,14 @@ package outboundbot
 
 // ExecutingInfo is a nested struct in outboundbot response
 type ExecutingInfo struct {
-	StartTime           int64        `json:"StartTime" xml:"StartTime"`
 	EndTime             int64        `json:"EndTime" xml:"EndTime"`
-	CallFailedNum       int          `json:"CallFailedNum" xml:"CallFailedNum"`
-	CallNum             int          `json:"CallNum" xml:"CallNum"`
-	CreatorName         string       `json:"CreatorName" xml:"CreatorName"`
-	FinishedNum         int          `json:"FinishedNum" xml:"FinishedNum"`
+	StartTime           int64        `json:"StartTime" xml:"StartTime"`
 	HangUpByClientNum   int          `json:"HangUpByClientNum" xml:"HangUpByClientNum"`
-	TransferByIntentNum int          `json:"TransferByIntentNum" xml:"TransferByIntentNum"`
+	CreatorName         string       `json:"CreatorName" xml:"CreatorName"`
 	TransferByNoAnswer  int          `json:"TransferByNoAnswer" xml:"TransferByNoAnswer"`
+	FinishedNum         int          `json:"FinishedNum" xml:"FinishedNum"`
+	TransferByIntentNum int          `json:"TransferByIntentNum" xml:"TransferByIntentNum"`
+	CallNum             int          `json:"CallNum" xml:"CallNum"`
+	CallFailedNum       int          `json:"CallFailedNum" xml:"CallFailedNum"`
 	JobsProgress        JobsProgress `json:"JobsProgress" xml:"JobsProgress"`
 }

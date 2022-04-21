@@ -77,13 +77,13 @@ type GetCurrentConcurrencyRequest struct {
 // GetCurrentConcurrencyResponse is the response struct for api GetCurrentConcurrency
 type GetCurrentConcurrencyResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode            int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId                 string `json:"RequestId" xml:"RequestId"`
 	Success                   bool   `json:"Success" xml:"Success"`
+	CurrentConcurrency        int    `json:"CurrentConcurrency" xml:"CurrentConcurrency"`
 	Code                      string `json:"Code" xml:"Code"`
 	Message                   string `json:"Message" xml:"Message"`
-	HttpStatusCode            int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	MaxConcurrentConversation int    `json:"MaxConcurrentConversation" xml:"MaxConcurrentConversation"`
-	CurrentConcurrency        int    `json:"CurrentConcurrency" xml:"CurrentConcurrency"`
 	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
 }
 

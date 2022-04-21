@@ -20,6 +20,6 @@ type Tag struct {
 	TagName  string `json:"TagName" xml:"TagName"`
 	TagGroup string `json:"TagGroup" xml:"TagGroup"`
 	ScriptId string `json:"ScriptId" xml:"ScriptId"`
-	TagId    string `json:"TagId" xml:"TagId"`
 	TagIndex int    `json:"TagIndex" xml:"TagIndex"`
+	TagId    string `json:"TagId" xml:"TagId"`
 }

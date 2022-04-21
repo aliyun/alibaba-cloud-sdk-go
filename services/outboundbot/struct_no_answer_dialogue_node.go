@@ -17,12 +17,12 @@ package outboundbot
 
 // NoAnswerDialogueNode is a nested struct in outboundbot response
 type NoAnswerDialogueNode struct {
-	Id          string `json:"Id" xml:"Id"`
-	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
-	GroupId     string `json:"GroupId" xml:"GroupId"`
-	NodeId      string `json:"NodeId" xml:"NodeId"`
-	NodeName    string `json:"NodeName" xml:"NodeName"`
-	HitNum      int    `json:"HitNum" xml:"HitNum"`
-	HangUpNum   int    `json:"HangUpNum" xml:"HangUpNum"`
 	NoAnswerNum int    `json:"NoAnswerNum" xml:"NoAnswerNum"`
+	GroupId     string `json:"GroupId" xml:"GroupId"`
+	NodeName    string `json:"NodeName" xml:"NodeName"`
+	HangUpNum   int    `json:"HangUpNum" xml:"HangUpNum"`
+	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
+	HitNum      int    `json:"HitNum" xml:"HitNum"`
+	Id          string `json:"Id" xml:"Id"`
+	NodeId      string `json:"NodeId" xml:"NodeId"`
 }

@@ -78,12 +78,12 @@ type GetEmptyNumberNoMoreCallsInfoRequest struct {
 // GetEmptyNumberNoMoreCallsInfoResponse is the response struct for api GetEmptyNumberNoMoreCallsInfo
 type GetEmptyNumberNoMoreCallsInfoResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode         int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId              string `json:"RequestId" xml:"RequestId"`
+	EmptyNumberNoMoreCalls bool   `json:"EmptyNumberNoMoreCalls" xml:"EmptyNumberNoMoreCalls"`
 	Success                bool   `json:"Success" xml:"Success"`
 	Code                   string `json:"Code" xml:"Code"`
 	Message                string `json:"Message" xml:"Message"`
-	HttpStatusCode         int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	EmptyNumberNoMoreCalls bool   `json:"EmptyNumberNoMoreCalls" xml:"EmptyNumberNoMoreCalls"`
 }
 
 // CreateGetEmptyNumberNoMoreCallsInfoRequest creates a request to invoke GetEmptyNumberNoMoreCallsInfo API

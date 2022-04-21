@@ -22,6 +22,6 @@ type IntentStatisticsItem struct {
 	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
 	IntentName       string `json:"IntentName" xml:"IntentName"`
 	GroupId          string `json:"GroupId" xml:"GroupId"`
-	IntentId         string `json:"IntentId" xml:"IntentId"`
 	Type             string `json:"Type" xml:"Type"`
+	IntentId         string `json:"IntentId" xml:"IntentId"`
 }

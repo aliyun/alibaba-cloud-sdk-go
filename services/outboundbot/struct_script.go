@@ -19,6 +19,7 @@ package outboundbot
 type Script struct {
 	IsDrafted                 bool   `json:"IsDrafted" xml:"IsDrafted"`
 	ScriptName                string `json:"ScriptName" xml:"ScriptName"`
+	Name                      string `json:"Name" xml:"Name"`
 	UpdateTime                int64  `json:"UpdateTime" xml:"UpdateTime"`
 	MiniPlaybackConfigEnabled bool   `json:"MiniPlaybackConfigEnabled" xml:"MiniPlaybackConfigEnabled"`
 	Industry                  string `json:"Industry" xml:"Industry"`

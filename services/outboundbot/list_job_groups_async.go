@@ -77,16 +77,16 @@ type ListJobGroupsAsyncRequest struct {
 // ListJobGroupsAsyncResponse is the response struct for api ListJobGroupsAsync
 type ListJobGroupsAsyncResponse struct {
 	*responses.BaseResponse
+	Timeout        bool       `json:"Timeout" xml:"Timeout"`
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
 	Success        bool       `json:"Success" xml:"Success"`
+	Vaild          bool       `json:"Vaild" xml:"Vaild"`
 	Code           string     `json:"Code" xml:"Code"`
 	Message        string     `json:"Message" xml:"Message"`
-	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	TotalCount     int        `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int        `json:"PageNumber" xml:"PageNumber"`
 	PageSize       int        `json:"PageSize" xml:"PageSize"`
-	Vaild          bool       `json:"Vaild" xml:"Vaild"`
-	Timeout        bool       `json:"Timeout" xml:"Timeout"`
+	PageNumber     int        `json:"PageNumber" xml:"PageNumber"`
+	TotalCount     int        `json:"TotalCount" xml:"TotalCount"`
 	JobGroups      []JobGroup `json:"JobGroups" xml:"JobGroups"`
 }
 

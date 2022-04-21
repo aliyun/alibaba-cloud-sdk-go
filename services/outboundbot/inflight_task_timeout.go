@@ -79,11 +79,11 @@ type InflightTaskTimeoutRequest struct {
 // InflightTaskTimeoutResponse is the response struct for api InflightTaskTimeout
 type InflightTaskTimeoutResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateInflightTaskTimeoutRequest creates a request to invoke InflightTaskTimeout API

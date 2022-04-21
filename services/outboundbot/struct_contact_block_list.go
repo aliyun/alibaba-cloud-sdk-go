@@ -18,11 +18,11 @@ package outboundbot
 // ContactBlockList is a nested struct in outboundbot response
 type ContactBlockList struct {
 	ContactBlockListId string `json:"ContactBlockListId" xml:"ContactBlockListId"`
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
 	CreationTime       int64  `json:"CreationTime" xml:"CreationTime"`
+	Remark             string `json:"Remark" xml:"Remark"`
 	PhoneNumber        string `json:"PhoneNumber" xml:"PhoneNumber"`
+	Operator           string `json:"Operator" xml:"Operator"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
 	Name               string `json:"Name" xml:"Name"`
 	Creator            string `json:"Creator" xml:"Creator"`
-	Operator           string `json:"Operator" xml:"Operator"`
-	Remark             string `json:"Remark" xml:"Remark"`
 }

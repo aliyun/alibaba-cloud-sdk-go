@@ -76,13 +76,13 @@ type GetConcurrentConversationQuotaRequest struct {
 // GetConcurrentConversationQuotaResponse is the response struct for api GetConcurrentConversationQuota
 type GetConcurrentConversationQuotaResponse struct {
 	*responses.BaseResponse
-	Code                string `json:"Code" xml:"Code"`
 	HttpStatusCode      int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	MaxConcurrent       int    `json:"MaxConcurrent" xml:"MaxConcurrent"`
-	Message             string `json:"Message" xml:"Message"`
-	RemainingConcurrent int    `json:"RemainingConcurrent" xml:"RemainingConcurrent"`
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	Success             bool   `json:"Success" xml:"Success"`
+	Code                string `json:"Code" xml:"Code"`
+	Message             string `json:"Message" xml:"Message"`
+	RemainingConcurrent int    `json:"RemainingConcurrent" xml:"RemainingConcurrent"`
+	MaxConcurrent       int    `json:"MaxConcurrent" xml:"MaxConcurrent"`
 }
 
 // CreateGetConcurrentConversationQuotaRequest creates a request to invoke GetConcurrentConversationQuota API

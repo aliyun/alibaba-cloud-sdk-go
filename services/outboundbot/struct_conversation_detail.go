@@ -22,5 +22,6 @@ type ConversationDetail struct {
 	Script       string        `json:"Script" xml:"Script"`
 	Speaker      string        `json:"Speaker" xml:"Speaker"`
 	ActionParams string        `json:"ActionParams" xml:"ActionParams"`
+	SequenceId   string        `json:"SequenceId" xml:"SequenceId"`
 	Summary      []SummaryItem `json:"Summary" xml:"Summary"`
 }

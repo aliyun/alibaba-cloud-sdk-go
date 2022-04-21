@@ -17,12 +17,12 @@ package outboundbot
 
 // JobsProgress is a nested struct in outboundbot response
 type JobsProgress struct {
-	TotalJobs           int `json:"TotalJobs" xml:"TotalJobs"`
+	SchedulingNum       int `json:"SchedulingNum" xml:"SchedulingNum"`
 	TotalCompletedNum   int `json:"TotalCompletedNum" xml:"TotalCompletedNum"`
 	FailedNum           int `json:"FailedNum" xml:"FailedNum"`
+	PausedNum           int `json:"PausedNum" xml:"PausedNum"`
 	CancelledNum        int `json:"CancelledNum" xml:"CancelledNum"`
+	TotalJobs           int `json:"TotalJobs" xml:"TotalJobs"`
 	TotalNotAnsweredNum int `json:"TotalNotAnsweredNum" xml:"TotalNotAnsweredNum"`
 	ExecutingNum        int `json:"ExecutingNum" xml:"ExecutingNum"`
-	PausedNum           int `json:"PausedNum" xml:"PausedNum"`
-	SchedulingNum       int `json:"SchedulingNum" xml:"SchedulingNum"`
 }

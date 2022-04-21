@@ -17,15 +17,15 @@ package outboundbot
 
 // TaskInGetTaskByUuid is a nested struct in outboundbot response
 type TaskInGetTaskByUuid struct {
-	Id            string `json:"Id" xml:"Id"`
-	JobId         string `json:"JobId" xml:"JobId"`
-	PlannedTime   int64  `json:"PlannedTime" xml:"PlannedTime"`
-	ActualTime    int64  `json:"ActualTime" xml:"ActualTime"`
-	EndTime       int64  `json:"EndTime" xml:"EndTime"`
-	CallingNumber string `json:"CallingNumber" xml:"CallingNumber"`
-	CalledNumber  string `json:"CalledNumber" xml:"CalledNumber"`
-	CallId        string `json:"CallId" xml:"CallId"`
-	EndReason     int    `json:"EndReason" xml:"EndReason"`
-	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
 	JobGroupId    string `json:"JobGroupId" xml:"JobGroupId"`
+	EndTime       int64  `json:"EndTime" xml:"EndTime"`
+	EndReason     int    `json:"EndReason" xml:"EndReason"`
+	PlannedTime   int64  `json:"PlannedTime" xml:"PlannedTime"`
+	JobId         string `json:"JobId" xml:"JobId"`
+	CallId        string `json:"CallId" xml:"CallId"`
+	CallingNumber string `json:"CallingNumber" xml:"CallingNumber"`
+	ActualTime    int64  `json:"ActualTime" xml:"ActualTime"`
+	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
+	CalledNumber  string `json:"CalledNumber" xml:"CalledNumber"`
+	Id            string `json:"Id" xml:"Id"`
 }

@@ -80,12 +80,12 @@ type CreateOutboundCallNumberRequest struct {
 // CreateOutboundCallNumberResponse is the response struct for api CreateOutboundCallNumber
 type CreateOutboundCallNumberResponse struct {
 	*responses.BaseResponse
-	Code                 string `json:"Code" xml:"Code"`
 	HttpStatusCode       int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message              string `json:"Message" xml:"Message"`
-	OutboundCallNumberId string `json:"OutboundCallNumberId" xml:"OutboundCallNumberId"`
 	RequestId            string `json:"RequestId" xml:"RequestId"`
 	Success              bool   `json:"Success" xml:"Success"`
+	Code                 string `json:"Code" xml:"Code"`
+	Message              string `json:"Message" xml:"Message"`
+	OutboundCallNumberId string `json:"OutboundCallNumberId" xml:"OutboundCallNumberId"`
 }
 
 // CreateCreateOutboundCallNumberRequest creates a request to invoke CreateOutboundCallNumber API

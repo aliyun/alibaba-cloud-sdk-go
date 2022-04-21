@@ -17,6 +17,14 @@ package outboundbot
 
 // Data is a nested struct in outboundbot response
 type Data struct {
+	Host           string         `json:"Host" xml:"Host"`
+	Signature      string         `json:"Signature" xml:"Signature"`
+	Message        string         `json:"Message" xml:"Message"`
+	Expire         int            `json:"Expire" xml:"Expire"`
+	Success        bool           `json:"Success" xml:"Success"`
+	Folder         string         `json:"Folder" xml:"Folder"`
+	AccessId       string         `json:"AccessId" xml:"AccessId"`
+	Policy         string         `json:"Policy" xml:"Policy"`
 	InstanceConfig InstanceConfig `json:"InstanceConfig" xml:"InstanceConfig"`
 	List           []ListItem     `json:"List" xml:"List"`
 }

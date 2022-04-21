@@ -21,8 +21,8 @@ type SummaryItem struct {
 	JobId                string `json:"JobId" xml:"JobId"`
 	SummaryId            string `json:"SummaryId" xml:"SummaryId"`
 	JobGroupId           string `json:"JobGroupId" xml:"JobGroupId"`
-	ConversationDetailId string `json:"ConversationDetailId" xml:"ConversationDetailId"`
 	TaskId               string `json:"TaskId" xml:"TaskId"`
+	ConversationDetailId string `json:"ConversationDetailId" xml:"ConversationDetailId"`
 	Content              string `json:"Content" xml:"Content"`
 	SummaryName          string `json:"SummaryName" xml:"SummaryName"`
 	GroupId              string `json:"GroupId" xml:"GroupId"`

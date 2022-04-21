@@ -72,8 +72,8 @@ func (client *Client) StartJobWithCallback(request *StartJobRequest, callback fu
 type StartJobRequest struct {
 	*requests.RpcRequest
 	JobJson              string           `position:"Query" name:"JobJson"`
-	CallingNumber        *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	ScriptId             string           `position:"Query" name:"ScriptId"`
+	CallingNumber        *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	JobGroupId           string           `position:"Query" name:"JobGroupId"`
 	SelfHostedCallCenter requests.Boolean `position:"Query" name:"SelfHostedCallCenter"`
@@ -83,8 +83,8 @@ type StartJobRequest struct {
 // StartJobResponse is the response struct for api StartJob
 type StartJobResponse struct {
 	*responses.BaseResponse
-	Code           string         `json:"Code" xml:"Code"`
 	HttpStatusCode int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string         `json:"Code" xml:"Code"`
 	Message        string         `json:"Message" xml:"Message"`
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Success        bool           `json:"Success" xml:"Success"`

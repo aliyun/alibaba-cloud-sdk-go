@@ -17,7 +17,8 @@ package outboundbot
 
 // InstanceConfig is a nested struct in outboundbot response
 type InstanceConfig struct {
-	MiniPlaybackSystemSwitch bool `json:"MiniPlaybackSystemSwitch" xml:"MiniPlaybackSystemSwitch"`
-	NewBargeInSystemSwitch   bool `json:"NewBargeInSystemSwitch" xml:"NewBargeInSystemSwitch"`
-	SearchTaskFunctionSwitch bool `json:"SearchTaskFunctionSwitch" xml:"SearchTaskFunctionSwitch"`
+	MiniPlaybackSystemSwitch bool  `json:"MiniPlaybackSystemSwitch" xml:"MiniPlaybackSystemSwitch"`
+	NewBargeInSystemSwitch   bool  `json:"NewBargeInSystemSwitch" xml:"NewBargeInSystemSwitch"`
+	SearchTaskFunctionSwitch bool  `json:"SearchTaskFunctionSwitch" xml:"SearchTaskFunctionSwitch"`
+	EsAllDataKeepDay         int64 `json:"EsAllDataKeepDay" xml:"EsAllDataKeepDay"`
 }

@@ -78,12 +78,12 @@ type GetBaseStrategyPeriodRequest struct {
 // GetBaseStrategyPeriodResponse is the response struct for api GetBaseStrategyPeriod
 type GetBaseStrategyPeriodResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	OnlyWeekdays   bool        `json:"OnlyWeekdays" xml:"OnlyWeekdays"`
 	RequestId      string      `json:"RequestId" xml:"RequestId"`
 	Success        bool        `json:"Success" xml:"Success"`
 	Code           string      `json:"Code" xml:"Code"`
 	Message        string      `json:"Message" xml:"Message"`
-	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	OnlyWeekdays   bool        `json:"OnlyWeekdays" xml:"OnlyWeekdays"`
 	WorkingTime    []TimeFrame `json:"WorkingTime" xml:"WorkingTime"`
 }
 

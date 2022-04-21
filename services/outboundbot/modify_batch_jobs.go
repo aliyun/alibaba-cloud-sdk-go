@@ -73,8 +73,8 @@ type ModifyBatchJobsRequest struct {
 	*requests.RpcRequest
 	Description   string           `position:"Query" name:"Description"`
 	JobFilePath   string           `position:"Query" name:"JobFilePath"`
-	CallingNumber *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	ScriptId      string           `position:"Query" name:"ScriptId"`
+	CallingNumber *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	InstanceId    string           `position:"Query" name:"InstanceId"`
 	Submitted     requests.Boolean `position:"Query" name:"Submitted"`
 	BatchJobName  string           `position:"Query" name:"BatchJobName"`
@@ -86,8 +86,8 @@ type ModifyBatchJobsRequest struct {
 // ModifyBatchJobsResponse is the response struct for api ModifyBatchJobs
 type ModifyBatchJobsResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
 	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string   `json:"Code" xml:"Code"`
 	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`

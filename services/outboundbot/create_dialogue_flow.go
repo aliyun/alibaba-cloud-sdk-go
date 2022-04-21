@@ -80,12 +80,12 @@ type CreateDialogueFlowRequest struct {
 // CreateDialogueFlowResponse is the response struct for api CreateDialogueFlow
 type CreateDialogueFlowResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	DialogueFlowId string `json:"DialogueFlowId" xml:"DialogueFlowId"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	DialogueFlowId string `json:"DialogueFlowId" xml:"DialogueFlowId"`
 	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
 }
 
 // CreateCreateDialogueFlowRequest creates a request to invoke CreateDialogueFlow API

@@ -78,11 +78,11 @@ type GetAfterAnswerDelayPlaybackRequest struct {
 // GetAfterAnswerDelayPlaybackResponse is the response struct for api GetAfterAnswerDelayPlayback
 type GetAfterAnswerDelayPlaybackResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode           int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId                string `json:"RequestId" xml:"RequestId"`
 	Success                  bool   `json:"Success" xml:"Success"`
 	Code                     string `json:"Code" xml:"Code"`
 	Message                  string `json:"Message" xml:"Message"`
-	HttpStatusCode           int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	AfterAnswerDelayPlayback int    `json:"AfterAnswerDelayPlayback" xml:"AfterAnswerDelayPlayback"`
 }
 

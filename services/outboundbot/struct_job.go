@@ -36,9 +36,10 @@ type Job struct {
 	ActualTime        int64          `json:"ActualTime" xml:"ActualTime"`
 	Status            string         `json:"Status" xml:"Status"`
 	CallingNumbers    []string       `json:"CallingNumbers" xml:"CallingNumbers"`
+	Script            Script         `json:"Script" xml:"Script"`
 	LatestTask        LatestTask     `json:"LatestTask" xml:"LatestTask"`
 	Extras            []KeyValuePair `json:"Extras" xml:"Extras"`
-	Summary           []SummaryItem  `json:"Summary" xml:"Summary"`
 	Tasks             []Task         `json:"Tasks" xml:"Tasks"`
+	Summary           []SummaryItem  `json:"Summary" xml:"Summary"`
 	Contacts          []Contact      `json:"Contacts" xml:"Contacts"`
 }

@@ -80,8 +80,8 @@ type ListScriptPublishHistoriesRequest struct {
 // ListScriptPublishHistoriesResponse is the response struct for api ListScriptPublishHistories
 type ListScriptPublishHistoriesResponse struct {
 	*responses.BaseResponse
-	Code                   string                 `json:"Code" xml:"Code"`
 	HttpStatusCode         int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code                   string                 `json:"Code" xml:"Code"`
 	Message                string                 `json:"Message" xml:"Message"`
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
 	Success                bool                   `json:"Success" xml:"Success"`

@@ -80,11 +80,11 @@ type GetContactWhiteListRequest struct {
 // GetContactWhiteListResponse is the response struct for api GetContactWhiteList
 type GetContactWhiteListResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	Success              bool                 `json:"Success" xml:"Success"`
+	HttpStatusCode       int                  `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code                 string               `json:"Code" xml:"Code"`
 	Message              string               `json:"Message" xml:"Message"`
-	HttpStatusCode       int                  `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	Success              bool                 `json:"Success" xml:"Success"`
 	ContactWhitelistList ContactWhitelistList `json:"ContactWhitelistList" xml:"ContactWhitelistList"`
 }
 

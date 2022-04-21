@@ -20,16 +20,16 @@ type Instance struct {
 	CreatorName               string        `json:"CreatorName" xml:"CreatorName"`
 	OwnerName                 string        `json:"OwnerName" xml:"OwnerName"`
 	InstanceName              string        `json:"InstanceName" xml:"InstanceName"`
-	CallCenterInstanceId      string        `json:"CallCenterInstanceId" xml:"CallCenterInstanceId"`
 	CreationTime              int64         `json:"CreationTime" xml:"CreationTime"`
+	CallCenterInstanceId      string        `json:"CallCenterInstanceId" xml:"CallCenterInstanceId"`
 	Owner                     string        `json:"Owner" xml:"Owner"`
 	InstanceDescription       string        `json:"InstanceDescription" xml:"InstanceDescription"`
 	IsTemplateContainer       bool          `json:"IsTemplateContainer" xml:"IsTemplateContainer"`
 	ResourceGroupId           string        `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	NluServiceType            string        `json:"NluServiceType" xml:"NluServiceType"`
 	InstanceId                string        `json:"InstanceId" xml:"InstanceId"`
-	MaxConcurrentConversation int           `json:"MaxConcurrentConversation" xml:"MaxConcurrentConversation"`
 	CreatorId                 int64         `json:"CreatorId" xml:"CreatorId"`
+	MaxConcurrentConversation int           `json:"MaxConcurrentConversation" xml:"MaxConcurrentConversation"`
 	NluProfile                NluProfile    `json:"NluProfile" xml:"NluProfile"`
 	ResourceTags              []ResourceTag `json:"ResourceTags" xml:"ResourceTags"`
 }

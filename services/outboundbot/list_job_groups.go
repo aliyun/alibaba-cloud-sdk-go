@@ -84,11 +84,11 @@ type ListJobGroupsRequest struct {
 // ListJobGroupsResponse is the response struct for api ListJobGroups
 type ListJobGroupsResponse struct {
 	*responses.BaseResponse
-	Code           string    `json:"Code" xml:"Code"`
 	HttpStatusCode int       `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string    `json:"Message" xml:"Message"`
 	RequestId      string    `json:"RequestId" xml:"RequestId"`
 	Success        bool      `json:"Success" xml:"Success"`
+	Code           string    `json:"Code" xml:"Code"`
+	Message        string    `json:"Message" xml:"Message"`
 	AsyncTaskId    string    `json:"AsyncTaskId" xml:"AsyncTaskId"`
 	JobGroups      JobGroups `json:"JobGroups" xml:"JobGroups"`
 }

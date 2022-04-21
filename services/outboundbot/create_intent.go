@@ -82,12 +82,12 @@ type CreateIntentRequest struct {
 // CreateIntentResponse is the response struct for api CreateIntent
 type CreateIntentResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	IntentId       string `json:"IntentId" xml:"IntentId"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	IntentId       string `json:"IntentId" xml:"IntentId"`
 }
 
 // CreateCreateIntentRequest creates a request to invoke CreateIntent API

@@ -17,9 +17,9 @@ package outboundbot
 
 // PublishHistory is a nested struct in outboundbot response
 type PublishHistory struct {
-	Description   string `json:"Description" xml:"Description"`
-	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
 	PublishTime   int64  `json:"PublishTime" xml:"PublishTime"`
+	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
 	ScriptId      string `json:"ScriptId" xml:"ScriptId"`
+	Description   string `json:"Description" xml:"Description"`
 	ScriptVersion string `json:"ScriptVersion" xml:"ScriptVersion"`
 }

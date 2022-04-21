@@ -79,11 +79,11 @@ type ModifyEmptyNumberNoMoreCallsInfoRequest struct {
 // ModifyEmptyNumberNoMoreCallsInfoResponse is the response struct for api ModifyEmptyNumberNoMoreCallsInfo
 type ModifyEmptyNumberNoMoreCallsInfoResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateModifyEmptyNumberNoMoreCallsInfoRequest creates a request to invoke ModifyEmptyNumberNoMoreCallsInfo API

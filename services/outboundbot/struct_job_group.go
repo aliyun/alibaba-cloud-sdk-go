@@ -35,9 +35,9 @@ type JobGroup struct {
 	JobFilePath          string         `json:"JobFilePath" xml:"JobFilePath"`
 	Status               string         `json:"Status" xml:"Status"`
 	CallingNumbers       []string       `json:"CallingNumbers" xml:"CallingNumbers"`
+	Progress             Progress       `json:"Progress" xml:"Progress"`
 	ExportProgress       ExportProgress `json:"ExportProgress" xml:"ExportProgress"`
 	RecallStrategy       RecallStrategy `json:"RecallStrategy" xml:"RecallStrategy"`
 	Strategy             Strategy       `json:"Strategy" xml:"Strategy"`
-	Progress             Progress       `json:"Progress" xml:"Progress"`
 	Result               Result         `json:"Result" xml:"Result"`
 }

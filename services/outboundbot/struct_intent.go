@@ -19,8 +19,8 @@ package outboundbot
 type Intent struct {
 	Utterances        string `json:"Utterances" xml:"Utterances"`
 	Keywords          string `json:"Keywords" xml:"Keywords"`
-	ScriptId          string `json:"ScriptId" xml:"ScriptId"`
 	UpdateTime        int64  `json:"UpdateTime" xml:"UpdateTime"`
+	ScriptId          string `json:"ScriptId" xml:"ScriptId"`
 	IntentDescription string `json:"IntentDescription" xml:"IntentDescription"`
 	IntentName        string `json:"IntentName" xml:"IntentName"`
 	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`

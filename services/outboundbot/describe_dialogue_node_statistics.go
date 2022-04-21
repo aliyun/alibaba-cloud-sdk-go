@@ -79,14 +79,14 @@ type DescribeDialogueNodeStatisticsRequest struct {
 // DescribeDialogueNodeStatisticsResponse is the response struct for api DescribeDialogueNodeStatistics
 type DescribeDialogueNodeStatisticsResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode        int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId             string                 `json:"RequestId" xml:"RequestId"`
+	GroupId               string                 `json:"GroupId" xml:"GroupId"`
 	Success               bool                   `json:"Success" xml:"Success"`
+	TotalCompleted        int                    `json:"TotalCompleted" xml:"TotalCompleted"`
 	Code                  string                 `json:"Code" xml:"Code"`
 	Message               string                 `json:"Message" xml:"Message"`
-	HttpStatusCode        int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	GroupId               string                 `json:"GroupId" xml:"GroupId"`
 	InstanceId            string                 `json:"InstanceId" xml:"InstanceId"`
-	TotalCompleted        int                    `json:"TotalCompleted" xml:"TotalCompleted"`
 	NoAnswerDialogueNodes []NoAnswerDialogueNode `json:"NoAnswerDialogueNodes" xml:"NoAnswerDialogueNodes"`
 }
 

@@ -17,9 +17,9 @@ package outboundbot
 
 // SchedulerInstance is a nested struct in outboundbot response
 type SchedulerInstance struct {
-	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 	Business       string `json:"Business" xml:"Business"`
 	MaxConcurrency int    `json:"MaxConcurrency" xml:"MaxConcurrency"`
+	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 	BaseStrategy   string `json:"BaseStrategy" xml:"BaseStrategy"`
+	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
 }

@@ -17,8 +17,8 @@ package outboundbot
 
 // AgentBotInstanceSummary is a nested struct in outboundbot response
 type AgentBotInstanceSummary struct {
-	TotalCallTime             int64  `json:"TotalCallTime" xml:"TotalCallTime"`
 	TotalCallCount            int64  `json:"TotalCallCount" xml:"TotalCallCount"`
-	UsedRecordingStorageSpace int    `json:"UsedRecordingStorageSpace" xml:"UsedRecordingStorageSpace"`
 	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
+	TotalCallTime             int64  `json:"TotalCallTime" xml:"TotalCallTime"`
+	UsedRecordingStorageSpace int    `json:"UsedRecordingStorageSpace" xml:"UsedRecordingStorageSpace"`
 }

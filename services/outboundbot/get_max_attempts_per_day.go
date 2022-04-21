@@ -78,12 +78,12 @@ type GetMaxAttemptsPerDayRequest struct {
 // GetMaxAttemptsPerDayResponse is the response struct for api GetMaxAttemptsPerDay
 type GetMaxAttemptsPerDayResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode    int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	Success           bool   `json:"Success" xml:"Success"`
+	MaxAttemptsPerDay int    `json:"MaxAttemptsPerDay" xml:"MaxAttemptsPerDay"`
 	Code              string `json:"Code" xml:"Code"`
 	Message           string `json:"Message" xml:"Message"`
-	HttpStatusCode    int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	MaxAttemptsPerDay int    `json:"MaxAttemptsPerDay" xml:"MaxAttemptsPerDay"`
 }
 
 // CreateGetMaxAttemptsPerDayRequest creates a request to invoke GetMaxAttemptsPerDay API
