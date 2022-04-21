@@ -71,15 +71,18 @@ func (client *Client) ResetRenderingDevicesWithCallback(request *ResetRenderingD
 // ResetRenderingDevicesRequest is the request struct for api ResetRenderingDevices
 type ResetRenderingDevicesRequest struct {
 	*requests.RpcRequest
+	ImageId     string           `position:"Query" name:"ImageId"`
 	ShowLog     string           `position:"Query" name:"ShowLog"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceIds string           `position:"Query" name:"InstanceIds"`
+	PodId       string           `position:"Query" name:"PodId"`
 }
 
 // ResetRenderingDevicesResponse is the response struct for api ResetRenderingDevices
 type ResetRenderingDevicesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	FailedIds []string `json:"FailedIds" xml:"FailedIds"`
 }
 
 // CreateResetRenderingDevicesRequest creates a request to invoke ResetRenderingDevices API

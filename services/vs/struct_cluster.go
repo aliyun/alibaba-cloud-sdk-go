@@ -17,10 +17,10 @@ package vs
 
 // Cluster is a nested struct in vs response
 type Cluster struct {
-	ClusterId     string         `json:"ClusterId" xml:"ClusterId"`
-	Name          string         `json:"Name" xml:"Name"`
-	Description   string         `json:"Description" xml:"Description"`
-	MaintainTime  string         `json:"MaintainTime" xml:"MaintainTime"`
 	Status        string         `json:"Status" xml:"Status"`
+	Description   string         `json:"Description" xml:"Description"`
+	Name          string         `json:"Name" xml:"Name"`
+	MaintainTime  string         `json:"MaintainTime" xml:"MaintainTime"`
+	ClusterId     string         `json:"ClusterId" xml:"ClusterId"`
 	InternalPorts []InternalPort `json:"InternalPorts" xml:"InternalPorts"`
 }

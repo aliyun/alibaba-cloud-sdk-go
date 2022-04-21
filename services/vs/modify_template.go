@@ -71,37 +71,37 @@ func (client *Client) ModifyTemplateWithCallback(request *ModifyTemplateRequest,
 // ModifyTemplateRequest is the request struct for api ModifyTemplate
 type ModifyTemplateRequest struct {
 	*requests.RpcRequest
-	HlsTs            string           `position:"Query" name:"HlsTs"`
 	OssEndpoint      string           `position:"Query" name:"OssEndpoint"`
-	Description      string           `position:"Query" name:"Description"`
-	OssFilePrefix    string           `position:"Query" name:"OssFilePrefix"`
 	JpgOverwrite     string           `position:"Query" name:"JpgOverwrite"`
 	StartTime        string           `position:"Query" name:"StartTime"`
 	JpgOnDemand      string           `position:"Query" name:"JpgOnDemand"`
 	Id               string           `position:"Query" name:"Id"`
-	Retention        requests.Integer `position:"Query" name:"Retention"`
 	ShowLog          string           `position:"Query" name:"ShowLog"`
-	HlsM3u8          string           `position:"Query" name:"HlsM3u8"`
 	OssBucket        string           `position:"Query" name:"OssBucket"`
 	TransConfigsJSON string           `position:"Query" name:"TransConfigsJSON"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	Name             string           `position:"Query" name:"Name"`
+	Interval         requests.Integer `position:"Query" name:"Interval"`
+	Region           string           `position:"Query" name:"Region"`
+	HlsTs            string           `position:"Query" name:"HlsTs"`
+	Description      string           `position:"Query" name:"Description"`
+	OssFilePrefix    string           `position:"Query" name:"OssFilePrefix"`
+	Retention        requests.Integer `position:"Query" name:"Retention"`
+	HlsM3u8          string           `position:"Query" name:"HlsM3u8"`
 	EndTime          string           `position:"Query" name:"EndTime"`
 	Trigger          string           `position:"Query" name:"Trigger"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	JpgSequence      string           `position:"Query" name:"JpgSequence"`
 	Mp4              string           `position:"Query" name:"Mp4"`
 	Flv              string           `position:"Query" name:"Flv"`
-	Name             string           `position:"Query" name:"Name"`
 	Callback         string           `position:"Query" name:"Callback"`
-	Interval         requests.Integer `position:"Query" name:"Interval"`
 	FileFormat       string           `position:"Query" name:"FileFormat"`
-	Region           string           `position:"Query" name:"Region"`
 }
 
 // ModifyTemplateResponse is the response struct for api ModifyTemplate
 type ModifyTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyTemplateRequest creates a request to invoke ModifyTemplate API

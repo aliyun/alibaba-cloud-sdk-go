@@ -19,8 +19,8 @@ package vs
 type IpInfo struct {
 	IpProtocol   string `json:"IpProtocol" xml:"IpProtocol"`
 	InternalIp   string `json:"InternalIp" xml:"InternalIp"`
-	ExternalIp   string `json:"ExternalIp" xml:"ExternalIp"`
 	InternalPort string `json:"InternalPort" xml:"InternalPort"`
+	ExternalIp   string `json:"ExternalIp" xml:"ExternalIp"`
 	NatType      string `json:"NatType" xml:"NatType"`
 	ExternalPort string `json:"ExternalPort" xml:"ExternalPort"`
 	ISP          string `json:"ISP" xml:"ISP"`

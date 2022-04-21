@@ -79,13 +79,13 @@ type DescribeDirectoryRequest struct {
 // DescribeDirectoryResponse is the response struct for api DescribeDirectory
 type DescribeDirectoryResponse struct {
 	*responses.BaseResponse
+	ParentId    string `json:"ParentId" xml:"ParentId"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Id          string `json:"Id" xml:"Id"`
-	Name        string `json:"Name" xml:"Name"`
 	Description string `json:"Description" xml:"Description"`
 	GroupId     string `json:"GroupId" xml:"GroupId"`
-	ParentId    string `json:"ParentId" xml:"ParentId"`
+	Name        string `json:"Name" xml:"Name"`
 	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
+	Id          string `json:"Id" xml:"Id"`
 }
 
 // CreateDescribeDirectoryRequest creates a request to invoke DescribeDirectory API

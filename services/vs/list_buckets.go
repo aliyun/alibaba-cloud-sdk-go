@@ -83,8 +83,8 @@ type ListBucketsRequest struct {
 // ListBucketsResponse is the response struct for api ListBuckets
 type ListBucketsResponse struct {
 	*responses.BaseResponse
-	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	TotalCount  int64        `json:"TotalCount" xml:"TotalCount"`
+	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	BucketInfos []BucketInfo `json:"BucketInfos" xml:"BucketInfos"`
 }
 

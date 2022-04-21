@@ -18,7 +18,7 @@ package vs
 // ResumeResultInfo is a nested struct in vs response
 type ResumeResultInfo struct {
 	Result   string                        `json:"Result" xml:"Result"`
-	Detail   string                        `json:"Detail" xml:"Detail"`
 	Count    int                           `json:"Count" xml:"Count"`
+	Detail   string                        `json:"Detail" xml:"Detail"`
 	Channels ChannelsInBatchResumeVsStream `json:"Channels" xml:"Channels"`
 }

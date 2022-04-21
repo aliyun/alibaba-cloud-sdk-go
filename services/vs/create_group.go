@@ -93,11 +93,11 @@ type CreateGroupRequest struct {
 // CreateGroupResponse is the response struct for api CreateGroup
 type CreateGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Id        string `json:"Id" xml:"Id"`
 	GbId      string `json:"GbId" xml:"GbId"`
 	GbIp      string `json:"GbIp" xml:"GbIp"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	GbPort    int64  `json:"GbPort" xml:"GbPort"`
+	Id        string `json:"Id" xml:"Id"`
 }
 
 // CreateCreateGroupRequest creates a request to invoke CreateGroup API

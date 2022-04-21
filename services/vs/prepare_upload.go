@@ -82,9 +82,9 @@ type PrepareUploadRequest struct {
 type PrepareUploadResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
+	AdditionInfo string `json:"AdditionInfo" xml:"AdditionInfo"`
 	BucketName   string `json:"BucketName" xml:"BucketName"`
 	Endpoint     string `json:"Endpoint" xml:"Endpoint"`
-	AdditionInfo string `json:"AdditionInfo" xml:"AdditionInfo"`
 }
 
 // CreatePrepareUploadRequest creates a request to invoke PrepareUpload API

@@ -79,11 +79,11 @@ type DescribeVsCertificateDetailRequest struct {
 // DescribeVsCertificateDetailResponse is the response struct for api DescribeVsCertificateDetail
 type DescribeVsCertificateDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Cert      string `json:"Cert" xml:"Cert"`
-	Key       string `json:"Key" xml:"Key"`
-	CertId    int64  `json:"CertId" xml:"CertId"`
 	CertName  string `json:"CertName" xml:"CertName"`
+	Key       string `json:"Key" xml:"Key"`
+	Cert      string `json:"Cert" xml:"Cert"`
+	CertId    int64  `json:"CertId" xml:"CertId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeVsCertificateDetailRequest creates a request to invoke DescribeVsCertificateDetail API

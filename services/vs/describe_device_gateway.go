@@ -81,11 +81,11 @@ type DescribeDeviceGatewayRequest struct {
 // DescribeDeviceGatewayResponse is the response struct for api DescribeDeviceGateway
 type DescribeDeviceGatewayResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Host      string `json:"Host" xml:"Host"`
+	Token     string `json:"Token" xml:"Token"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Port      int64  `json:"Port" xml:"Port"`
 	Protocol  string `json:"Protocol" xml:"Protocol"`
-	Token     string `json:"Token" xml:"Token"`
 }
 
 // CreateDescribeDeviceGatewayRequest creates a request to invoke DescribeDeviceGateway API

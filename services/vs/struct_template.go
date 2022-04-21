@@ -17,28 +17,28 @@ package vs
 
 // Template is a nested struct in vs response
 type Template struct {
-	Id            string        `json:"Id" xml:"Id"`
-	Name          string        `json:"Name" xml:"Name"`
-	Description   string        `json:"Description" xml:"Description"`
 	Type          string        `json:"Type" xml:"Type"`
-	Region        string        `json:"Region" xml:"Region"`
-	OssBucket     string        `json:"OssBucket" xml:"OssBucket"`
-	OssEndpoint   string        `json:"OssEndpoint" xml:"OssEndpoint"`
-	OssFilePrefix string        `json:"OssFilePrefix" xml:"OssFilePrefix"`
 	Trigger       string        `json:"Trigger" xml:"Trigger"`
-	StartTime     string        `json:"StartTime" xml:"StartTime"`
-	EndTime       string        `json:"EndTime" xml:"EndTime"`
-	Interval      int64         `json:"Interval" xml:"Interval"`
-	Retention     int64         `json:"Retention" xml:"Retention"`
-	FileFormat    string        `json:"FileFormat" xml:"FileFormat"`
-	JpgOverwrite  string        `json:"JpgOverwrite" xml:"JpgOverwrite"`
-	JpgSequence   string        `json:"JpgSequence" xml:"JpgSequence"`
-	JpgOnDemand   string        `json:"JpgOnDemand" xml:"JpgOnDemand"`
-	Mp4           string        `json:"Mp4" xml:"Mp4"`
-	Flv           string        `json:"Flv" xml:"Flv"`
-	HlsM3u8       string        `json:"HlsM3u8" xml:"HlsM3u8"`
+	OssFilePrefix string        `json:"OssFilePrefix" xml:"OssFilePrefix"`
 	HlsTs         string        `json:"HlsTs" xml:"HlsTs"`
+	Mp4           string        `json:"Mp4" xml:"Mp4"`
+	JpgOnDemand   string        `json:"JpgOnDemand" xml:"JpgOnDemand"`
+	OssBucket     string        `json:"OssBucket" xml:"OssBucket"`
+	JpgSequence   string        `json:"JpgSequence" xml:"JpgSequence"`
+	JpgOverwrite  string        `json:"JpgOverwrite" xml:"JpgOverwrite"`
+	FileFormat    string        `json:"FileFormat" xml:"FileFormat"`
 	Callback      string        `json:"Callback" xml:"Callback"`
+	EndTime       string        `json:"EndTime" xml:"EndTime"`
+	StartTime     string        `json:"StartTime" xml:"StartTime"`
+	Interval      int64         `json:"Interval" xml:"Interval"`
+	Description   string        `json:"Description" xml:"Description"`
+	Region        string        `json:"Region" xml:"Region"`
+	Retention     int64         `json:"Retention" xml:"Retention"`
+	HlsM3u8       string        `json:"HlsM3u8" xml:"HlsM3u8"`
+	Flv           string        `json:"Flv" xml:"Flv"`
+	Name          string        `json:"Name" xml:"Name"`
 	CreatedTime   string        `json:"CreatedTime" xml:"CreatedTime"`
+	OssEndpoint   string        `json:"OssEndpoint" xml:"OssEndpoint"`
+	Id            string        `json:"Id" xml:"Id"`
 	TransConfigs  []TransConfig `json:"TransConfigs" xml:"TransConfigs"`
 }

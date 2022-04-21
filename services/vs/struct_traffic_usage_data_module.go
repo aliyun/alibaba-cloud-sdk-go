@@ -17,14 +17,14 @@ package vs
 
 // TrafficUsageDataModule is a nested struct in vs response
 type TrafficUsageDataModule struct {
-	TimeStamp                string  `json:"TimeStamp" xml:"TimeStamp"`
-	Bucket                   string  `json:"Bucket" xml:"Bucket"`
-	LanTrafficInDataValue    int64   `json:"LanTrafficInDataValue" xml:"LanTrafficInDataValue"`
-	LanTrafficOutDataValue   int64   `json:"LanTrafficOutDataValue" xml:"LanTrafficOutDataValue"`
-	WanTrafficInDataValue    int64   `json:"WanTrafficInDataValue" xml:"WanTrafficInDataValue"`
-	WanTrafficOutDataValue   int64   `json:"WanTrafficOutDataValue" xml:"WanTrafficOutDataValue"`
-	LanBandwidthInDataValue  float64 `json:"LanBandwidthInDataValue" xml:"LanBandwidthInDataValue"`
 	LanBandwidthOutDataValue float64 `json:"LanBandwidthOutDataValue" xml:"LanBandwidthOutDataValue"`
-	WanBandwidthInDataValue  float64 `json:"WanBandwidthInDataValue" xml:"WanBandwidthInDataValue"`
 	WanBandwidthOutDataValue float64 `json:"WanBandwidthOutDataValue" xml:"WanBandwidthOutDataValue"`
+	LanBandwidthInDataValue  float64 `json:"LanBandwidthInDataValue" xml:"LanBandwidthInDataValue"`
+	LanTrafficInDataValue    int64   `json:"LanTrafficInDataValue" xml:"LanTrafficInDataValue"`
+	WanTrafficOutDataValue   int64   `json:"WanTrafficOutDataValue" xml:"WanTrafficOutDataValue"`
+	TimeStamp                string  `json:"TimeStamp" xml:"TimeStamp"`
+	WanTrafficInDataValue    int64   `json:"WanTrafficInDataValue" xml:"WanTrafficInDataValue"`
+	LanTrafficOutDataValue   int64   `json:"LanTrafficOutDataValue" xml:"LanTrafficOutDataValue"`
+	WanBandwidthInDataValue  float64 `json:"WanBandwidthInDataValue" xml:"WanBandwidthInDataValue"`
+	Bucket                   string  `json:"Bucket" xml:"Bucket"`
 }

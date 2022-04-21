@@ -79,8 +79,8 @@ type StartDeviceRequest struct {
 // StartDeviceResponse is the response struct for api StartDevice
 type StartDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStartDeviceRequest creates a request to invoke StartDevice API

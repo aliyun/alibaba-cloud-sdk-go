@@ -83,8 +83,8 @@ type StopMoveRequest struct {
 // StopMoveResponse is the response struct for api StopMove
 type StopMoveResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopMoveRequest creates a request to invoke StopMove API

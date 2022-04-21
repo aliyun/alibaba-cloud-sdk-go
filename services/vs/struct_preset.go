@@ -17,6 +17,6 @@ package vs
 
 // Preset is a nested struct in vs response
 type Preset struct {
-	Id   string `json:"Id" xml:"Id"`
 	Name string `json:"Name" xml:"Name"`
+	Id   string `json:"Id" xml:"Id"`
 }

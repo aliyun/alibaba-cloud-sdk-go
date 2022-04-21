@@ -80,8 +80,8 @@ type DescribePresetsRequest struct {
 // DescribePresetsResponse is the response struct for api DescribePresets
 type DescribePresetsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Id        string   `json:"Id" xml:"Id"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Presets   []Preset `json:"Presets" xml:"Presets"`
 }
 

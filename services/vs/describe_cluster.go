@@ -79,12 +79,12 @@ type DescribeClusterRequest struct {
 // DescribeClusterResponse is the response struct for api DescribeCluster
 type DescribeClusterResponse struct {
 	*responses.BaseResponse
+	Status        string         `json:"Status" xml:"Status"`
 	RequestId     string         `json:"RequestId" xml:"RequestId"`
-	ClusterId     string         `json:"ClusterId" xml:"ClusterId"`
-	Name          string         `json:"Name" xml:"Name"`
 	Description   string         `json:"Description" xml:"Description"`
 	MaintainTime  string         `json:"MaintainTime" xml:"MaintainTime"`
-	Status        string         `json:"Status" xml:"Status"`
+	Name          string         `json:"Name" xml:"Name"`
+	ClusterId     string         `json:"ClusterId" xml:"ClusterId"`
 	InternalPorts []InternalPort `json:"InternalPorts" xml:"InternalPorts"`
 }
 

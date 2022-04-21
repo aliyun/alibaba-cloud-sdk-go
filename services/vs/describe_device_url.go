@@ -85,8 +85,8 @@ type DescribeDeviceURLRequest struct {
 // DescribeDeviceURLResponse is the response struct for api DescribeDeviceURL
 type DescribeDeviceURLResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Url        string `json:"Url" xml:"Url"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 	ExpireTime int64  `json:"ExpireTime" xml:"ExpireTime"`
 }
 

@@ -81,11 +81,11 @@ type DescribeVsTopDomainsByFlowRequest struct {
 // DescribeVsTopDomainsByFlowResponse is the response struct for api DescribeVsTopDomainsByFlow
 type DescribeVsTopDomainsByFlowResponse struct {
 	*responses.BaseResponse
-	RequestId         string     `json:"RequestId" xml:"RequestId"`
-	StartTime         string     `json:"StartTime" xml:"StartTime"`
-	EndTime           string     `json:"EndTime" xml:"EndTime"`
-	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
 	DomainOnlineCount int64      `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
+	EndTime           string     `json:"EndTime" xml:"EndTime"`
+	StartTime         string     `json:"StartTime" xml:"StartTime"`
+	RequestId         string     `json:"RequestId" xml:"RequestId"`
+	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 

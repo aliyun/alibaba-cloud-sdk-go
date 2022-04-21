@@ -20,7 +20,7 @@ type Directory struct {
 	Name        string `json:"Name" xml:"Name"`
 	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
 	ParentId    string `json:"ParentId" xml:"ParentId"`
-	Id          string `json:"Id" xml:"Id"`
 	GroupId     string `json:"GroupId" xml:"GroupId"`
+	Id          string `json:"Id" xml:"Id"`
 	Description string `json:"Description" xml:"Description"`
 }

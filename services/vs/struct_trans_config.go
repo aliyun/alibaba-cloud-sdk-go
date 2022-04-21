@@ -17,8 +17,8 @@ package vs
 
 // TransConfig is a nested struct in vs response
 type TransConfig struct {
-	Name         string `json:"Name" xml:"Name"`
 	Gop          int64  `json:"Gop" xml:"Gop"`
+	Name         string `json:"Name" xml:"Name"`
 	Width        int64  `json:"Width" xml:"Width"`
 	Id           string `json:"Id" xml:"Id"`
 	VideoCodec   string `json:"VideoCodec" xml:"VideoCodec"`

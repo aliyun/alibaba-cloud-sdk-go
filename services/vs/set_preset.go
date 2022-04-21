@@ -81,8 +81,8 @@ type SetPresetRequest struct {
 // SetPresetResponse is the response struct for api SetPreset
 type SetPresetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetPresetRequest creates a request to invoke SetPreset API

@@ -82,8 +82,8 @@ type ContinuousAdjustRequest struct {
 // ContinuousAdjustResponse is the response struct for api ContinuousAdjust
 type ContinuousAdjustResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateContinuousAdjustRequest creates a request to invoke ContinuousAdjust API

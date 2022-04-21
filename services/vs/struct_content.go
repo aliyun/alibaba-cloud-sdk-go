@@ -17,9 +17,9 @@ package vs
 
 // Content is a nested struct in vs response
 type Content struct {
-	Key          string `json:"Key" xml:"Key"`
+	StorageClass string `json:"StorageClass" xml:"StorageClass"`
 	LastModified string `json:"LastModified" xml:"LastModified"`
+	Key          string `json:"Key" xml:"Key"`
 	ETag         string `json:"ETag" xml:"ETag"`
 	Size         int64  `json:"Size" xml:"Size"`
-	StorageClass string `json:"StorageClass" xml:"StorageClass"`
 }

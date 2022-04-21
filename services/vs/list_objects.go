@@ -86,18 +86,18 @@ type ListObjectsRequest struct {
 // ListObjectsResponse is the response struct for api ListObjects
 type ListObjectsResponse struct {
 	*responses.BaseResponse
-	RequestId             string    `json:"RequestId" xml:"RequestId"`
-	BucketName            string    `json:"BucketName" xml:"BucketName"`
-	Prefix                string    `json:"Prefix" xml:"Prefix"`
+	Marker                string    `json:"Marker" xml:"Marker"`
 	MaxKeys               int       `json:"MaxKeys" xml:"MaxKeys"`
-	KeyCount              int       `json:"KeyCount" xml:"KeyCount"`
-	Delimiter             string    `json:"Delimiter" xml:"Delimiter"`
-	EncodingType          string    `json:"EncodingType" xml:"EncodingType"`
-	IsTruncated           bool      `json:"IsTruncated" xml:"IsTruncated"`
+	Prefix                string    `json:"Prefix" xml:"Prefix"`
 	ContinuationToken     string    `json:"ContinuationToken" xml:"ContinuationToken"`
 	NextContinuationToken string    `json:"NextContinuationToken" xml:"NextContinuationToken"`
-	Marker                string    `json:"Marker" xml:"Marker"`
+	EncodingType          string    `json:"EncodingType" xml:"EncodingType"`
 	NextMarker            string    `json:"NextMarker" xml:"NextMarker"`
+	Delimiter             string    `json:"Delimiter" xml:"Delimiter"`
+	RequestId             string    `json:"RequestId" xml:"RequestId"`
+	BucketName            string    `json:"BucketName" xml:"BucketName"`
+	IsTruncated           bool      `json:"IsTruncated" xml:"IsTruncated"`
+	KeyCount              int       `json:"KeyCount" xml:"KeyCount"`
 	CommonPrefixes        []string  `json:"CommonPrefixes" xml:"CommonPrefixes"`
 	Contents              []Content `json:"Contents" xml:"Contents"`
 }

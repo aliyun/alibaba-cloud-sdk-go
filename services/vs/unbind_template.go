@@ -82,11 +82,11 @@ type UnbindTemplateRequest struct {
 // UnbindTemplateResponse is the response struct for api UnbindTemplate
 type UnbindTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TemplateId   string `json:"TemplateId" xml:"TemplateId"`
 	TemplateType string `json:"TemplateType" xml:"TemplateType"`
 	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	InstanceType string `json:"InstanceType" xml:"InstanceType"`
+	TemplateId   string `json:"TemplateId" xml:"TemplateId"`
 }
 
 // CreateUnbindTemplateRequest creates a request to invoke UnbindTemplate API

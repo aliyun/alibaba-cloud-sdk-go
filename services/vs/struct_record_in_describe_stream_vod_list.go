@@ -17,6 +17,6 @@ package vs
 
 // RecordInDescribeStreamVodList is a nested struct in vs response
 type RecordInDescribeStreamVodList struct {
-	StartTime int64 `json:"StartTime" xml:"StartTime"`
 	EndTime   int64 `json:"EndTime" xml:"EndTime"`
+	StartTime int64 `json:"StartTime" xml:"StartTime"`
 }

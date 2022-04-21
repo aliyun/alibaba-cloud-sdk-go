@@ -76,15 +76,13 @@ type DescribeVsDomainRecordDataRequest struct {
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Region     string           `position:"Query" name:"Region"`
 }
 
 // DescribeVsDomainRecordDataResponse is the response struct for api DescribeVsDomainRecordData
 type DescribeVsDomainRecordDataResponse struct {
 	*responses.BaseResponse
 	RequestId             string                `json:"RequestId" xml:"RequestId"`
-	DomainName            string                `json:"DomainName" xml:"DomainName"`
-	StartTime             string                `json:"StartTime" xml:"StartTime"`
-	EndTime               string                `json:"EndTime" xml:"EndTime"`
 	RecordDataPerInterval RecordDataPerInterval `json:"RecordDataPerInterval" xml:"RecordDataPerInterval"`
 }
 

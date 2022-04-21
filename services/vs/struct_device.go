@@ -17,20 +17,23 @@ package vs
 
 // Device is a nested struct in vs response
 type Device struct {
+	ImageId            string    `json:"ImageId" xml:"ImageId"`
 	PosInterval        int64     `json:"PosInterval" xml:"PosInterval"`
 	OrderId            string    `json:"OrderId" xml:"OrderId"`
 	Password           string    `json:"Password" xml:"Password"`
 	AutoStart          bool      `json:"AutoStart" xml:"AutoStart"`
-	Id                 string    `json:"Id" xml:"Id"`
 	GroupId            string    `json:"GroupId" xml:"GroupId"`
+	Id                 string    `json:"Id" xml:"Id"`
 	Vendor             string    `json:"Vendor" xml:"Vendor"`
 	InstanceChargeType string    `json:"InstanceChargeType" xml:"InstanceChargeType"`
 	Params             string    `json:"Params" xml:"Params"`
 	Type               string    `json:"Type" xml:"Type"`
+	AutoDirectory      bool      `json:"AutoDirectory" xml:"AutoDirectory"`
 	DirectoryId        string    `json:"DirectoryId" xml:"DirectoryId"`
 	ClusterId          string    `json:"ClusterId" xml:"ClusterId"`
 	SubType            string    `json:"SubType" xml:"SubType"`
 	ParentId           string    `json:"ParentId" xml:"ParentId"`
+	InstanceName       string    `json:"InstanceName" xml:"InstanceName"`
 	GbId               string    `json:"GbId" xml:"GbId"`
 	Enabled            bool      `json:"Enabled" xml:"Enabled"`
 	Status             string    `json:"Status" xml:"Status"`
@@ -63,7 +66,8 @@ type Device struct {
 	ChannelSyncTime    string    `json:"ChannelSyncTime" xml:"ChannelSyncTime"`
 	AutoPos            bool      `json:"AutoPos" xml:"AutoPos"`
 	Specification      string    `json:"Specification" xml:"Specification"`
-	Stats              Stats     `json:"Stats" xml:"Stats"`
 	Directory          Directory `json:"Directory" xml:"Directory"`
+	Stats              Stats     `json:"Stats" xml:"Stats"`
 	IpInfos            []IpInfo  `json:"IpInfos" xml:"IpInfos"`
+	PodInfos           []PodInfo `json:"PodInfos" xml:"PodInfos"`
 }

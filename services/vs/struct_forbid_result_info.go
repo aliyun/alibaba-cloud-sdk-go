@@ -18,7 +18,7 @@ package vs
 // ForbidResultInfo is a nested struct in vs response
 type ForbidResultInfo struct {
 	Result   string                        `json:"Result" xml:"Result"`
-	Detail   string                        `json:"Detail" xml:"Detail"`
 	Count    int                           `json:"Count" xml:"Count"`
+	Detail   string                        `json:"Detail" xml:"Detail"`
 	Channels ChannelsInBatchForbidVsStream `json:"Channels" xml:"Channels"`
 }

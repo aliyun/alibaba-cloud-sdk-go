@@ -81,8 +81,8 @@ type StopStreamRequest struct {
 // StopStreamResponse is the response struct for api StopStream
 type StopStreamResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopStreamRequest creates a request to invoke StopStream API

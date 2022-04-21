@@ -17,13 +17,13 @@ package vs
 
 // LiveStreamOnlineInfo is a nested struct in vs response
 type LiveStreamOnlineInfo struct {
-	DomainName    string `json:"DomainName" xml:"DomainName"`
-	AppName       string `json:"AppName" xml:"AppName"`
-	StreamName    string `json:"StreamName" xml:"StreamName"`
 	PublishTime   string `json:"PublishTime" xml:"PublishTime"`
-	PublishUrl    string `json:"PublishUrl" xml:"PublishUrl"`
-	PublishDomain string `json:"PublishDomain" xml:"PublishDomain"`
+	AppName       string `json:"AppName" xml:"AppName"`
 	PublishType   string `json:"PublishType" xml:"PublishType"`
+	PublishUrl    string `json:"PublishUrl" xml:"PublishUrl"`
 	Transcoded    string `json:"Transcoded" xml:"Transcoded"`
+	StreamName    string `json:"StreamName" xml:"StreamName"`
+	DomainName    string `json:"DomainName" xml:"DomainName"`
 	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
+	PublishDomain string `json:"PublishDomain" xml:"PublishDomain"`
 }

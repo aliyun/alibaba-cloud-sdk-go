@@ -99,8 +99,8 @@ type ModifyDeviceRequest struct {
 // ModifyDeviceResponse is the response struct for api ModifyDevice
 type ModifyDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDeviceRequest creates a request to invoke ModifyDevice API

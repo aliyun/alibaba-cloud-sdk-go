@@ -17,10 +17,10 @@ package vs
 
 // LiveAppRecord is a nested struct in vs response
 type LiveAppRecord struct {
-	DomainName string `json:"DomainName" xml:"DomainName"`
+	EndTime    string `json:"EndTime" xml:"EndTime"`
 	AppName    string `json:"AppName" xml:"AppName"`
-	StreamName string `json:"StreamName" xml:"StreamName"`
 	SourceUrl  string `json:"SourceUrl" xml:"SourceUrl"`
 	StartTime  string `json:"StartTime" xml:"StartTime"`
-	EndTime    string `json:"EndTime" xml:"EndTime"`
+	StreamName string `json:"StreamName" xml:"StreamName"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
 }

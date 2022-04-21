@@ -89,8 +89,8 @@ type DescribeStreamURLRequest struct {
 // DescribeStreamURLResponse is the response struct for api DescribeStreamURL
 type DescribeStreamURLResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Url        string `json:"Url" xml:"Url"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 	ExpireTime int64  `json:"ExpireTime" xml:"ExpireTime"`
 }
 

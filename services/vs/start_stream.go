@@ -82,8 +82,8 @@ type StartStreamRequest struct {
 type StartStreamResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Id        string `json:"Id" xml:"Id"`
 	Name      string `json:"Name" xml:"Name"`
+	Id        string `json:"Id" xml:"Id"`
 }
 
 // CreateStartStreamRequest creates a request to invoke StartStream API

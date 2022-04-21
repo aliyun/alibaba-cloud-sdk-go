@@ -94,8 +94,8 @@ type ModifyGroupRequest struct {
 // ModifyGroupResponse is the response struct for api ModifyGroup
 type ModifyGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyGroupRequest creates a request to invoke ModifyGroup API

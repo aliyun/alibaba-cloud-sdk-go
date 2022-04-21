@@ -79,8 +79,8 @@ type SyncCatalogsRequest struct {
 // SyncCatalogsResponse is the response struct for api SyncCatalogs
 type SyncCatalogsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSyncCatalogsRequest creates a request to invoke SyncCatalogs API

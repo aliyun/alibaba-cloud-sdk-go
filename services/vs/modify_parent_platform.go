@@ -88,8 +88,8 @@ type ModifyParentPlatformRequest struct {
 // ModifyParentPlatformResponse is the response struct for api ModifyParentPlatform
 type ModifyParentPlatformResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyParentPlatformRequest creates a request to invoke ModifyParentPlatform API

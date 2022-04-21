@@ -76,8 +76,8 @@ type OpenVsServiceRequest struct {
 // OpenVsServiceResponse is the response struct for api OpenVsService
 type OpenVsServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenVsServiceRequest creates a request to invoke OpenVsService API

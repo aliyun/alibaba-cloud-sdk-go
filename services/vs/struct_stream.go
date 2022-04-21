@@ -23,9 +23,9 @@ type Stream struct {
 	Protocol    string `json:"Protocol" xml:"Protocol"`
 	PlayDomain  string `json:"PlayDomain" xml:"PlayDomain"`
 	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
-	PushDomain  string `json:"PushDomain" xml:"PushDomain"`
 	DeviceId    string `json:"DeviceId" xml:"DeviceId"`
 	Enabled     bool   `json:"Enabled" xml:"Enabled"`
+	PushDomain  string `json:"PushDomain" xml:"PushDomain"`
 	Id          string `json:"Id" xml:"Id"`
 	GroupId     string `json:"GroupId" xml:"GroupId"`
 	Status      string `json:"Status" xml:"Status"`

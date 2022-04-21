@@ -79,19 +79,19 @@ type DescribePurchasedDeviceRequest struct {
 // DescribePurchasedDeviceResponse is the response struct for api DescribePurchasedDevice
 type DescribePurchasedDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Id           string `json:"Id" xml:"Id"`
-	Name         string `json:"Name" xml:"Name"`
-	Description  string `json:"Description" xml:"Description"`
 	Type         string `json:"Type" xml:"Type"`
 	SubType      string `json:"SubType" xml:"SubType"`
-	RegisterCode string `json:"RegisterCode" xml:"RegisterCode"`
 	Vendor       string `json:"Vendor" xml:"Vendor"`
-	OrderId      string `json:"OrderId" xml:"OrderId"`
-	Region       string `json:"Region" xml:"Region"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Description  string `json:"Description" xml:"Description"`
+	RegisterCode string `json:"RegisterCode" xml:"RegisterCode"`
 	GroupId      string `json:"GroupId" xml:"GroupId"`
 	GroupName    string `json:"GroupName" xml:"GroupName"`
+	Region       string `json:"Region" xml:"Region"`
+	Name         string `json:"Name" xml:"Name"`
 	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
+	Id           string `json:"Id" xml:"Id"`
+	OrderId      string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateDescribePurchasedDeviceRequest creates a request to invoke DescribePurchasedDevice API

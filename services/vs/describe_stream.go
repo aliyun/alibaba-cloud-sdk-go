@@ -79,20 +79,20 @@ type DescribeStreamRequest struct {
 // DescribeStreamResponse is the response struct for api DescribeStream
 type DescribeStreamResponse struct {
 	*responses.BaseResponse
+	Status      string `json:"Status" xml:"Status"`
+	PlayDomain  string `json:"PlayDomain" xml:"PlayDomain"`
+	Protocol    string `json:"Protocol" xml:"Protocol"`
+	DeviceId    string `json:"DeviceId" xml:"DeviceId"`
+	Height      int    `json:"Height" xml:"Height"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Id          string `json:"Id" xml:"Id"`
+	GroupId     string `json:"GroupId" xml:"GroupId"`
+	Width       int    `json:"Width" xml:"Width"`
+	App         string `json:"App" xml:"App"`
+	Enabled     bool   `json:"Enabled" xml:"Enabled"`
 	Name        string `json:"Name" xml:"Name"`
 	PushDomain  string `json:"PushDomain" xml:"PushDomain"`
-	PlayDomain  string `json:"PlayDomain" xml:"PlayDomain"`
-	App         string `json:"App" xml:"App"`
-	Protocol    string `json:"Protocol" xml:"Protocol"`
-	GroupId     string `json:"GroupId" xml:"GroupId"`
-	DeviceId    string `json:"DeviceId" xml:"DeviceId"`
-	Enabled     bool   `json:"Enabled" xml:"Enabled"`
-	Status      string `json:"Status" xml:"Status"`
-	Height      int    `json:"Height" xml:"Height"`
-	Width       int    `json:"Width" xml:"Width"`
 	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
+	Id          string `json:"Id" xml:"Id"`
 }
 
 // CreateDescribeStreamRequest creates a request to invoke DescribeStream API

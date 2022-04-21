@@ -88,11 +88,11 @@ type DescribeVsStreamsPublishListRequest struct {
 // DescribeVsStreamsPublishListResponse is the response struct for api DescribeVsStreamsPublishList
 type DescribeVsStreamsPublishListResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalPage   int         `json:"TotalPage" xml:"TotalPage"`
 	PageNum     int         `json:"PageNum" xml:"PageNum"`
 	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	TotalNum    int         `json:"TotalNum" xml:"TotalNum"`
-	TotalPage   int         `json:"TotalPage" xml:"TotalPage"`
 	PublishInfo PublishInfo `json:"PublishInfo" xml:"PublishInfo"`
 }
 

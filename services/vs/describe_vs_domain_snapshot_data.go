@@ -82,9 +82,6 @@ type DescribeVsDomainSnapshotDataRequest struct {
 type DescribeVsDomainSnapshotDataResponse struct {
 	*responses.BaseResponse
 	RequestId               string                  `json:"RequestId" xml:"RequestId"`
-	DomainName              string                  `json:"DomainName" xml:"DomainName"`
-	StartTime               string                  `json:"StartTime" xml:"StartTime"`
-	EndTime                 string                  `json:"EndTime" xml:"EndTime"`
 	SnapshotDataPerInterval SnapshotDataPerInterval `json:"SnapshotDataPerInterval" xml:"SnapshotDataPerInterval"`
 }
 

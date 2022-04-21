@@ -81,10 +81,10 @@ type DescribeVsDomainUvDataRequest struct {
 // DescribeVsDomainUvDataResponse is the response struct for api DescribeVsDomainUvData
 type DescribeVsDomainUvDataResponse struct {
 	*responses.BaseResponse
+	EndTime        string         `json:"EndTime" xml:"EndTime"`
+	StartTime      string         `json:"StartTime" xml:"StartTime"`
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	DomainName     string         `json:"DomainName" xml:"DomainName"`
-	StartTime      string         `json:"StartTime" xml:"StartTime"`
-	EndTime        string         `json:"EndTime" xml:"EndTime"`
 	DataInterval   string         `json:"DataInterval" xml:"DataInterval"`
 	UvDataInterval UvDataInterval `json:"UvDataInterval" xml:"UvDataInterval"`
 }

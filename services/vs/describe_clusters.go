@@ -80,8 +80,8 @@ type DescribeClustersRequest struct {
 // DescribeClustersResponse is the response struct for api DescribeClusters
 type DescribeClustersResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Total     int64     `json:"Total" xml:"Total"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Clusters  []Cluster `json:"Clusters" xml:"Clusters"`
 }
 

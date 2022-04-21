@@ -79,7 +79,8 @@ type DeleteRenderingDevicesRequest struct {
 // DeleteRenderingDevicesResponse is the response struct for api DeleteRenderingDevices
 type DeleteRenderingDevicesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	FailedIds []string `json:"FailedIds" xml:"FailedIds"`
 }
 
 // CreateDeleteRenderingDevicesRequest creates a request to invoke DeleteRenderingDevices API

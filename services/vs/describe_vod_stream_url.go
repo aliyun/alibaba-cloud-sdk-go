@@ -80,9 +80,9 @@ type DescribeVodStreamURLRequest struct {
 // DescribeVodStreamURLResponse is the response struct for api DescribeVodStreamURL
 type DescribeVodStreamURLResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Url         string `json:"Url" xml:"Url"`
 	OutProtocol string `json:"OutProtocol" xml:"OutProtocol"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Port        int64  `json:"Port" xml:"Port"`
 	TxId        string `json:"TxId" xml:"TxId"`
 }

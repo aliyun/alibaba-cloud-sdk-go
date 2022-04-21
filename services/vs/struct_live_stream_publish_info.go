@@ -17,17 +17,17 @@ package vs
 
 // LiveStreamPublishInfo is a nested struct in vs response
 type LiveStreamPublishInfo struct {
-	DomainName    string `json:"DomainName" xml:"DomainName"`
-	AppName       string `json:"AppName" xml:"AppName"`
-	StreamName    string `json:"StreamName" xml:"StreamName"`
-	StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
-	PublishTime   string `json:"PublishTime" xml:"PublishTime"`
-	StopTime      string `json:"StopTime" xml:"StopTime"`
-	PublishUrl    string `json:"PublishUrl" xml:"PublishUrl"`
-	ClientAddr    string `json:"ClientAddr" xml:"ClientAddr"`
 	EdgeNodeAddr  string `json:"EdgeNodeAddr" xml:"EdgeNodeAddr"`
+	PublishUrl    string `json:"PublishUrl" xml:"PublishUrl"`
+	StreamName    string `json:"StreamName" xml:"StreamName"`
+	DomainName    string `json:"DomainName" xml:"DomainName"`
+	StopTime      string `json:"StopTime" xml:"StopTime"`
+	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
 	PublishDomain string `json:"PublishDomain" xml:"PublishDomain"`
+	AppName       string `json:"AppName" xml:"AppName"`
+	PublishTime   string `json:"PublishTime" xml:"PublishTime"`
 	PublishType   string `json:"PublishType" xml:"PublishType"`
 	Transcoded    string `json:"Transcoded" xml:"Transcoded"`
-	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
+	ClientAddr    string `json:"ClientAddr" xml:"ClientAddr"`
+	StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
 }

@@ -80,16 +80,16 @@ type CreateStreamSnapshotRequest struct {
 // CreateStreamSnapshotResponse is the response struct for api CreateStreamSnapshot
 type CreateStreamSnapshotResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Id          string `json:"Id" xml:"Id"`
-	Url         string `json:"Url" xml:"Url"`
-	OssBucket   string `json:"OssBucket" xml:"OssBucket"`
 	OssObject   string `json:"OssObject" xml:"OssObject"`
-	OssEndpoint string `json:"OssEndpoint" xml:"OssEndpoint"`
-	Height      int64  `json:"Height" xml:"Height"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Width       int64  `json:"Width" xml:"Width"`
-	Format      string `json:"Format" xml:"Format"`
+	Height      int64  `json:"Height" xml:"Height"`
+	Url         string `json:"Url" xml:"Url"`
 	Timestamp   int64  `json:"Timestamp" xml:"Timestamp"`
+	OssBucket   string `json:"OssBucket" xml:"OssBucket"`
+	Format      string `json:"Format" xml:"Format"`
+	OssEndpoint string `json:"OssEndpoint" xml:"OssEndpoint"`
+	Id          string `json:"Id" xml:"Id"`
 }
 
 // CreateCreateStreamSnapshotRequest creates a request to invoke CreateStreamSnapshot API

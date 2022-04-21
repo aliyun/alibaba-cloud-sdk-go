@@ -81,8 +81,8 @@ type ModifyDirectoryRequest struct {
 // ModifyDirectoryResponse is the response struct for api ModifyDirectory
 type ModifyDirectoryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDirectoryRequest creates a request to invoke ModifyDirectory API

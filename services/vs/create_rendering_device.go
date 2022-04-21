@@ -72,8 +72,10 @@ func (client *Client) CreateRenderingDeviceWithCallback(request *CreateRendering
 type CreateRenderingDeviceRequest struct {
 	*requests.RpcRequest
 	ImageId            string           `position:"Query" name:"ImageId"`
+	ISP                string           `position:"Query" name:"ISP"`
 	SecurityGroupId    string           `position:"Query" name:"SecurityGroupId"`
 	Description        string           `position:"Query" name:"Description"`
+	Password           string           `position:"Query" name:"Password"`
 	InstanceChargeType string           `position:"Query" name:"InstanceChargeType"`
 	ShowLog            string           `position:"Query" name:"ShowLog"`
 	AutoRenewPeriod    requests.Integer `position:"Query" name:"AutoRenewPeriod"`
@@ -83,6 +85,7 @@ type CreateRenderingDeviceRequest struct {
 	ClusterId          string           `position:"Query" name:"ClusterId"`
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 	PeriodUnit         string           `position:"Query" name:"PeriodUnit"`
+	InstanceName       string           `position:"Query" name:"InstanceName"`
 	AutoRenew          requests.Boolean `position:"Query" name:"AutoRenew"`
 	EdgeNodeName       string           `position:"Query" name:"EdgeNodeName"`
 }

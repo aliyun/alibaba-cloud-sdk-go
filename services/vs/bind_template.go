@@ -85,9 +85,9 @@ type BindTemplateRequest struct {
 type BindTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TemplateId   string `json:"TemplateId" xml:"TemplateId"`
 	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
 	InstanceType string `json:"InstanceType" xml:"InstanceType"`
+	TemplateId   string `json:"TemplateId" xml:"TemplateId"`
 }
 
 // CreateBindTemplateRequest creates a request to invoke BindTemplate API

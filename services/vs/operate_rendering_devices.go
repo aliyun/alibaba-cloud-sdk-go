@@ -71,17 +71,18 @@ func (client *Client) OperateRenderingDevicesWithCallback(request *OperateRender
 // OperateRenderingDevicesRequest is the request struct for api OperateRenderingDevices
 type OperateRenderingDevicesRequest struct {
 	*requests.RpcRequest
-	ForceStop   requests.Boolean `position:"Query" name:"ForceStop"`
 	ShowLog     string           `position:"Query" name:"ShowLog"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceIds string           `position:"Query" name:"InstanceIds"`
 	Operation   string           `position:"Query" name:"Operation"`
+	PodId       string           `position:"Query" name:"PodId"`
 }
 
 // OperateRenderingDevicesResponse is the response struct for api OperateRenderingDevices
 type OperateRenderingDevicesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	FailedIds []string `json:"FailedIds" xml:"FailedIds"`
 }
 
 // CreateOperateRenderingDevicesRequest creates a request to invoke OperateRenderingDevices API

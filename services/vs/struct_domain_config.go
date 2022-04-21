@@ -17,8 +17,8 @@ package vs
 
 // DomainConfig is a nested struct in vs response
 type DomainConfig struct {
-	Cname        string        `json:"Cname" xml:"Cname"`
 	Region       string        `json:"Region" xml:"Region"`
+	Cname        string        `json:"Cname" xml:"Cname"`
 	DomainStatus string        `json:"DomainStatus" xml:"DomainStatus"`
 	DomainType   string        `json:"DomainType" xml:"DomainType"`
 	DomainName   string        `json:"DomainName" xml:"DomainName"`

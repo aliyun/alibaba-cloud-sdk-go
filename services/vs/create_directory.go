@@ -82,8 +82,8 @@ type CreateDirectoryRequest struct {
 // CreateDirectoryResponse is the response struct for api CreateDirectory
 type CreateDirectoryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateDirectoryRequest creates a request to invoke CreateDirectory API

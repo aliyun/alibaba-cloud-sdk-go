@@ -17,14 +17,14 @@ package vs
 
 // CertInfo is a nested struct in vs response
 type CertInfo struct {
-	DomainName              string `json:"DomainName" xml:"DomainName"`
-	CertName                string `json:"CertName" xml:"CertName"`
-	CertDomainName          string `json:"CertDomainName" xml:"CertDomainName"`
-	CertExpireTime          string `json:"CertExpireTime" xml:"CertExpireTime"`
+	Status                  string `json:"Status" xml:"Status"`
 	CertLife                string `json:"CertLife" xml:"CertLife"`
-	CertOrg                 string `json:"CertOrg" xml:"CertOrg"`
+	CertExpireTime          string `json:"CertExpireTime" xml:"CertExpireTime"`
+	SSLPub                  string `json:"SSLPub" xml:"SSLPub"`
 	CertType                string `json:"CertType" xml:"CertType"`
 	ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
-	Status                  string `json:"Status" xml:"Status"`
-	SSLPub                  string `json:"SSLPub" xml:"SSLPub"`
+	CertDomainName          string `json:"CertDomainName" xml:"CertDomainName"`
+	CertName                string `json:"CertName" xml:"CertName"`
+	CertOrg                 string `json:"CertOrg" xml:"CertOrg"`
+	DomainName              string `json:"DomainName" xml:"DomainName"`
 }

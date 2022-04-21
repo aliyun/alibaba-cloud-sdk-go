@@ -17,11 +17,13 @@ package vs
 
 // DataModule is a nested struct in vs response
 type DataModule struct {
-	ReqBpsValue     string `json:"ReqBpsValue" xml:"ReqBpsValue"`
-	SnapshotValue   string `json:"SnapshotValue" xml:"SnapshotValue"`
-	TrafficValue    string `json:"TrafficValue" xml:"TrafficValue"`
-	BpsValue        string `json:"BpsValue" xml:"BpsValue"`
-	ReqTrafficValue string `json:"ReqTrafficValue" xml:"ReqTrafficValue"`
-	TimeStamp       string `json:"TimeStamp" xml:"TimeStamp"`
-	RecordValue     string `json:"RecordValue" xml:"RecordValue"`
+	ReqBpsValue      string `json:"ReqBpsValue" xml:"ReqBpsValue"`
+	SnapshotValue    string `json:"SnapshotValue" xml:"SnapshotValue"`
+	TrafficValue     string `json:"TrafficValue" xml:"TrafficValue"`
+	BpsValue         string `json:"BpsValue" xml:"BpsValue"`
+	ReqTrafficValue  string `json:"ReqTrafficValue" xml:"ReqTrafficValue"`
+	TimeStamp        string `json:"TimeStamp" xml:"TimeStamp"`
+	StreamCountValue string `json:"StreamCountValue" xml:"StreamCountValue"`
+	DevicesDataValue string `json:"DevicesDataValue" xml:"DevicesDataValue"`
+	RecordValue      string `json:"RecordValue" xml:"RecordValue"`
 }

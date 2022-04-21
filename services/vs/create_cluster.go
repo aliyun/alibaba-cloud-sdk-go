@@ -83,8 +83,8 @@ type CreateClusterRequest struct {
 // CreateClusterResponse is the response struct for api CreateCluster
 type CreateClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ClusterId string `json:"ClusterId" xml:"ClusterId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateClusterRequest creates a request to invoke CreateCluster API

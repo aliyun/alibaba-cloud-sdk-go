@@ -81,8 +81,8 @@ type GotoPresetRequest struct {
 // GotoPresetResponse is the response struct for api GotoPreset
 type GotoPresetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGotoPresetRequest creates a request to invoke GotoPreset API

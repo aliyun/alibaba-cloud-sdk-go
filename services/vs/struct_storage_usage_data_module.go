@@ -17,7 +17,7 @@ package vs
 
 // StorageUsageDataModule is a nested struct in vs response
 type StorageUsageDataModule struct {
+	StorageDataValue int    `json:"StorageDataValue" xml:"StorageDataValue"`
 	TimeStamp        string `json:"TimeStamp" xml:"TimeStamp"`
 	Bucket           string `json:"Bucket" xml:"Bucket"`
-	StorageDataValue int    `json:"StorageDataValue" xml:"StorageDataValue"`
 }

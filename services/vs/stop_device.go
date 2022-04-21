@@ -80,8 +80,8 @@ type StopDeviceRequest struct {
 // StopDeviceResponse is the response struct for api StopDevice
 type StopDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopDeviceRequest creates a request to invoke StopDevice API

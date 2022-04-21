@@ -82,17 +82,18 @@ type DescribeRecordsRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SortBy        string           `position:"Query" name:"SortBy"`
+	FileFormat    string           `position:"Query" name:"FileFormat"`
 }
 
 // DescribeRecordsResponse is the response struct for api DescribeRecords
 type DescribeRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId     string   `json:"RequestId" xml:"RequestId"`
-	PageSize      int64    `json:"PageSize" xml:"PageSize"`
 	PageNum       int64    `json:"PageNum" xml:"PageNum"`
-	PageCount     int64    `json:"PageCount" xml:"PageCount"`
-	TotalCount    int64    `json:"TotalCount" xml:"TotalCount"`
+	RequestId     string   `json:"RequestId" xml:"RequestId"`
 	NextStartTime string   `json:"NextStartTime" xml:"NextStartTime"`
+	PageSize      int64    `json:"PageSize" xml:"PageSize"`
+	TotalCount    int64    `json:"TotalCount" xml:"TotalCount"`
+	PageCount     int64    `json:"PageCount" xml:"PageCount"`
 	Records       []Record `json:"Records" xml:"Records"`
 }
 

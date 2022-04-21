@@ -87,17 +87,18 @@ type DescribeDevicesRequest struct {
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	Name             string           `position:"Query" name:"Name"`
 	SortBy           string           `position:"Query" name:"SortBy"`
+	Dsn              string           `position:"Query" name:"Dsn"`
 	Status           string           `position:"Query" name:"Status"`
 }
 
 // DescribeDevicesResponse is the response struct for api DescribeDevices
 type DescribeDevicesResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	PageSize   int64    `json:"PageSize" xml:"PageSize"`
 	PageNum    int64    `json:"PageNum" xml:"PageNum"`
-	PageCount  int64    `json:"PageCount" xml:"PageCount"`
+	PageSize   int64    `json:"PageSize" xml:"PageSize"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	TotalCount int64    `json:"TotalCount" xml:"TotalCount"`
+	PageCount  int64    `json:"PageCount" xml:"PageCount"`
 	Devices    []Device `json:"Devices" xml:"Devices"`
 }
 

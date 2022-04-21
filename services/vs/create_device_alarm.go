@@ -86,10 +86,10 @@ type CreateDeviceAlarmRequest struct {
 // CreateDeviceAlarmResponse is the response struct for api CreateDeviceAlarm
 type CreateDeviceAlarmResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Url        string `json:"Url" xml:"Url"`
-	Expire     int64  `json:"Expire" xml:"Expire"`
 	AlarmId    string `json:"AlarmId" xml:"AlarmId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Expire     int64  `json:"Expire" xml:"Expire"`
 	AlarmDelay int64  `json:"AlarmDelay" xml:"AlarmDelay"`
 }
 

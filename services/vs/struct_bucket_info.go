@@ -18,8 +18,8 @@ package vs
 // BucketInfo is a nested struct in vs response
 type BucketInfo struct {
 	BucketAcl          string `json:"BucketAcl" xml:"BucketAcl"`
-	Comment            string `json:"Comment" xml:"Comment"`
 	ResourceType       string `json:"ResourceType" xml:"ResourceType"`
+	Comment            string `json:"Comment" xml:"Comment"`
 	Endpoint           string `json:"Endpoint" xml:"Endpoint"`
 	ModifyTime         string `json:"ModifyTime" xml:"ModifyTime"`
 	CreateTime         string `json:"CreateTime" xml:"CreateTime"`

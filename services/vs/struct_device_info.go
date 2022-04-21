@@ -17,8 +17,8 @@ package vs
 
 // DeviceInfo is a nested struct in vs response
 type DeviceInfo struct {
+	Server     string `json:"Server" xml:"Server"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 	Name       string `json:"Name" xml:"Name"`
 	IP         string `json:"IP" xml:"IP"`
-	Server     string `json:"Server" xml:"Server"`
 }

@@ -81,35 +81,35 @@ type DescribeDeviceRequest struct {
 // DescribeDeviceResponse is the response struct for api DescribeDevice
 type DescribeDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId       string    `json:"RequestId" xml:"RequestId"`
-	Id              string    `json:"Id" xml:"Id"`
-	Name            string    `json:"Name" xml:"Name"`
-	Description     string    `json:"Description" xml:"Description"`
-	GroupId         string    `json:"GroupId" xml:"GroupId"`
-	ParentId        string    `json:"ParentId" xml:"ParentId"`
-	DirectoryId     string    `json:"DirectoryId" xml:"DirectoryId"`
 	Type            string    `json:"Type" xml:"Type"`
-	AutoStart       bool      `json:"AutoStart" xml:"AutoStart"`
-	Enabled         bool      `json:"Enabled" xml:"Enabled"`
-	Protocol        string    `json:"Protocol" xml:"Protocol"`
 	Status          string    `json:"Status" xml:"Status"`
-	GbId            string    `json:"GbId" xml:"GbId"`
-	Ip              string    `json:"Ip" xml:"Ip"`
-	Port            int64     `json:"Port" xml:"Port"`
-	Url             string    `json:"Url" xml:"Url"`
-	Username        string    `json:"Username" xml:"Username"`
-	Password        string    `json:"Password" xml:"Password"`
-	Vendor          string    `json:"Vendor" xml:"Vendor"`
+	AlarmMethod     string    `json:"AlarmMethod" xml:"AlarmMethod"`
 	Dsn             string    `json:"Dsn" xml:"Dsn"`
+	Port            int64     `json:"Port" xml:"Port"`
+	PosInterval     int64     `json:"PosInterval" xml:"PosInterval"`
+	ParentId        string    `json:"ParentId" xml:"ParentId"`
+	Password        string    `json:"Password" xml:"Password"`
+	AutoPos         bool      `json:"AutoPos" xml:"AutoPos"`
+	Params          string    `json:"Params" xml:"Params"`
+	RequestId       string    `json:"RequestId" xml:"RequestId"`
+	Description     string    `json:"Description" xml:"Description"`
+	Enabled         bool      `json:"Enabled" xml:"Enabled"`
+	Name            string    `json:"Name" xml:"Name"`
+	ChannelSyncTime string    `json:"ChannelSyncTime" xml:"ChannelSyncTime"`
+	CreatedTime     string    `json:"CreatedTime" xml:"CreatedTime"`
+	DirectoryId     string    `json:"DirectoryId" xml:"DirectoryId"`
+	RegisteredTime  string    `json:"RegisteredTime" xml:"RegisteredTime"`
+	Protocol        string    `json:"Protocol" xml:"Protocol"`
+	Ip              string    `json:"Ip" xml:"Ip"`
+	Url             string    `json:"Url" xml:"Url"`
+	AutoStart       bool      `json:"AutoStart" xml:"AutoStart"`
+	Vendor          string    `json:"Vendor" xml:"Vendor"`
+	GbId            string    `json:"GbId" xml:"GbId"`
+	GroupId         string    `json:"GroupId" xml:"GroupId"`
 	Longitude       string    `json:"Longitude" xml:"Longitude"`
 	Latitude        string    `json:"Latitude" xml:"Latitude"`
-	AutoPos         bool      `json:"AutoPos" xml:"AutoPos"`
-	PosInterval     int64     `json:"PosInterval" xml:"PosInterval"`
-	AlarmMethod     string    `json:"AlarmMethod" xml:"AlarmMethod"`
-	CreatedTime     string    `json:"CreatedTime" xml:"CreatedTime"`
-	RegisteredTime  string    `json:"RegisteredTime" xml:"RegisteredTime"`
-	ChannelSyncTime string    `json:"ChannelSyncTime" xml:"ChannelSyncTime"`
-	Params          string    `json:"Params" xml:"Params"`
+	Id              string    `json:"Id" xml:"Id"`
+	Username        string    `json:"Username" xml:"Username"`
 	Stats           Stats     `json:"Stats" xml:"Stats"`
 	Directory       Directory `json:"Directory" xml:"Directory"`
 }

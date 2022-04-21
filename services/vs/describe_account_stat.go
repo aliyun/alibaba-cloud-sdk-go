@@ -79,12 +79,12 @@ type DescribeAccountStatRequest struct {
 // DescribeAccountStatResponse is the response struct for api DescribeAccountStat
 type DescribeAccountStatResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	Id            string `json:"Id" xml:"Id"`
-	GroupNum      int64  `json:"GroupNum" xml:"GroupNum"`
-	GroupLimit    int64  `json:"GroupLimit" xml:"GroupLimit"`
 	TemplateNum   int64  `json:"TemplateNum" xml:"TemplateNum"`
+	GroupLimit    int64  `json:"GroupLimit" xml:"GroupLimit"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	TemplateLimit int64  `json:"TemplateLimit" xml:"TemplateLimit"`
+	GroupNum      int64  `json:"GroupNum" xml:"GroupNum"`
+	Id            string `json:"Id" xml:"Id"`
 }
 
 // CreateDescribeAccountStatRequest creates a request to invoke DescribeAccountStat API

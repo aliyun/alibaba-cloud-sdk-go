@@ -83,8 +83,8 @@ type ContinuousMoveRequest struct {
 // ContinuousMoveResponse is the response struct for api ContinuousMove
 type ContinuousMoveResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateContinuousMoveRequest creates a request to invoke ContinuousMove API

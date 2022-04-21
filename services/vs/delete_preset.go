@@ -81,8 +81,8 @@ type DeletePresetRequest struct {
 // DeletePresetResponse is the response struct for api DeletePreset
 type DeletePresetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeletePresetRequest creates a request to invoke DeletePreset API

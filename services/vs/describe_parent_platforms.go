@@ -84,11 +84,11 @@ type DescribeParentPlatformsRequest struct {
 // DescribeParentPlatformsResponse is the response struct for api DescribeParentPlatforms
 type DescribeParentPlatformsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	PageSize   int64      `json:"PageSize" xml:"PageSize"`
 	PageNum    int64      `json:"PageNum" xml:"PageNum"`
-	PageCount  int64      `json:"PageCount" xml:"PageCount"`
+	PageSize   int64      `json:"PageSize" xml:"PageSize"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	TotalCount int64      `json:"TotalCount" xml:"TotalCount"`
+	PageCount  int64      `json:"PageCount" xml:"PageCount"`
 	Platforms  []Platform `json:"Platforms" xml:"Platforms"`
 }
 

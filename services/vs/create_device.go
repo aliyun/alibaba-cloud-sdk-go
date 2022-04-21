@@ -99,8 +99,8 @@ type CreateDeviceRequest struct {
 // CreateDeviceResponse is the response struct for api CreateDevice
 type CreateDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateDeviceRequest creates a request to invoke CreateDevice API

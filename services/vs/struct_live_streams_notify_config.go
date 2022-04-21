@@ -17,8 +17,8 @@ package vs
 
 // LiveStreamsNotifyConfig is a nested struct in vs response
 type LiveStreamsNotifyConfig struct {
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	NotifyUrl  string `json:"NotifyUrl" xml:"NotifyUrl"`
 	AuthType   string `json:"AuthType" xml:"AuthType"`
 	AuthKey    string `json:"AuthKey" xml:"AuthKey"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	NotifyUrl  string `json:"NotifyUrl" xml:"NotifyUrl"`
 }

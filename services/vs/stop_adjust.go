@@ -82,8 +82,8 @@ type StopAdjustRequest struct {
 // StopAdjustResponse is the response struct for api StopAdjust
 type StopAdjustResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopAdjustRequest creates a request to invoke StopAdjust API

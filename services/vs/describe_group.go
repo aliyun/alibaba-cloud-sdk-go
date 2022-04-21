@@ -80,32 +80,32 @@ type DescribeGroupRequest struct {
 // DescribeGroupResponse is the response struct for api DescribeGroup
 type DescribeGroupResponse struct {
 	*responses.BaseResponse
+	Status           string   `json:"Status" xml:"Status"`
+	LazyPull         bool     `json:"LazyPull" xml:"LazyPull"`
+	Callback         string   `json:"Callback" xml:"Callback"`
 	RequestId        string   `json:"RequestId" xml:"RequestId"`
-	Id               string   `json:"Id" xml:"Id"`
-	AliasId          string   `json:"AliasId" xml:"AliasId"`
-	Name             string   `json:"Name" xml:"Name"`
 	Description      string   `json:"Description" xml:"Description"`
 	App              string   `json:"App" xml:"App"`
 	Region           string   `json:"Region" xml:"Region"`
+	Enabled          bool     `json:"Enabled" xml:"Enabled"`
 	InProtocol       string   `json:"InProtocol" xml:"InProtocol"`
 	OutProtocol      string   `json:"OutProtocol" xml:"OutProtocol"`
-	Enabled          bool     `json:"Enabled" xml:"Enabled"`
-	Status           string   `json:"Status" xml:"Status"`
-	CreatedTime      string   `json:"CreatedTime" xml:"CreatedTime"`
+	Name             string   `json:"Name" xml:"Name"`
 	PushDomain       string   `json:"PushDomain" xml:"PushDomain"`
-	PlayDomain       string   `json:"PlayDomain" xml:"PlayDomain"`
-	LazyPull         bool     `json:"LazyPull" xml:"LazyPull"`
-	Callback         string   `json:"Callback" xml:"Callback"`
-	CaptureInterval  int      `json:"CaptureInterval" xml:"CaptureInterval"`
-	CaptureImage     int      `json:"CaptureImage" xml:"CaptureImage"`
+	CreatedTime      string   `json:"CreatedTime" xml:"CreatedTime"`
 	CaptureVideo     int      `json:"CaptureVideo" xml:"CaptureVideo"`
-	CaptureOssBucket string   `json:"CaptureOssBucket" xml:"CaptureOssBucket"`
-	CaptureOssPath   string   `json:"CaptureOssPath" xml:"CaptureOssPath"`
+	PlayDomain       string   `json:"PlayDomain" xml:"PlayDomain"`
+	CaptureInterval  int      `json:"CaptureInterval" xml:"CaptureInterval"`
+	GbPort           int64    `json:"GbPort" xml:"GbPort"`
 	GbId             string   `json:"GbId" xml:"GbId"`
 	GbIp             string   `json:"GbIp" xml:"GbIp"`
-	GbPort           int64    `json:"GbPort" xml:"GbPort"`
-	GbUdpPorts       []string `json:"GbUdpPorts" xml:"GbUdpPorts"`
+	CaptureImage     int      `json:"CaptureImage" xml:"CaptureImage"`
+	AliasId          string   `json:"AliasId" xml:"AliasId"`
+	CaptureOssBucket string   `json:"CaptureOssBucket" xml:"CaptureOssBucket"`
+	CaptureOssPath   string   `json:"CaptureOssPath" xml:"CaptureOssPath"`
+	Id               string   `json:"Id" xml:"Id"`
 	GbTcpPorts       []string `json:"GbTcpPorts" xml:"GbTcpPorts"`
+	GbUdpPorts       []string `json:"GbUdpPorts" xml:"GbUdpPorts"`
 	Stats            Stats    `json:"Stats" xml:"Stats"`
 }
 

@@ -79,8 +79,8 @@ type DescribeRenderingDevicesRequest struct {
 // DescribeRenderingDevicesResponse is the response struct for api DescribeRenderingDevices
 type DescribeRenderingDevicesResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Total     int64    `json:"Total" xml:"Total"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Devices   []Device `json:"Devices" xml:"Devices"`
 }
 

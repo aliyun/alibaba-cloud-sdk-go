@@ -79,23 +79,23 @@ type DescribeParentPlatformRequest struct {
 // DescribeParentPlatformResponse is the response struct for api DescribeParentPlatform
 type DescribeParentPlatformResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Id             string `json:"Id" xml:"Id"`
-	Name           string `json:"Name" xml:"Name"`
-	Description    string `json:"Description" xml:"Description"`
-	Protocol       string `json:"Protocol" xml:"Protocol"`
 	Status         string `json:"Status" xml:"Status"`
-	GbId           string `json:"GbId" xml:"GbId"`
+	ClientPort     int64  `json:"ClientPort" xml:"ClientPort"`
+	ClientGbId     string `json:"ClientGbId" xml:"ClientGbId"`
+	Protocol       string `json:"Protocol" xml:"Protocol"`
 	Ip             string `json:"Ip" xml:"Ip"`
 	Port           int64  `json:"Port" xml:"Port"`
-	ClientGbId     string `json:"ClientGbId" xml:"ClientGbId"`
-	ClientAuth     bool   `json:"ClientAuth" xml:"ClientAuth"`
-	ClientUsername string `json:"ClientUsername" xml:"ClientUsername"`
 	ClientPassword string `json:"ClientPassword" xml:"ClientPassword"`
-	ClientIp       string `json:"ClientIp" xml:"ClientIp"`
-	ClientPort     int64  `json:"ClientPort" xml:"ClientPort"`
+	ClientUsername string `json:"ClientUsername" xml:"ClientUsername"`
 	AutoStart      bool   `json:"AutoStart" xml:"AutoStart"`
+	ClientAuth     bool   `json:"ClientAuth" xml:"ClientAuth"`
+	GbId           string `json:"GbId" xml:"GbId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Description    string `json:"Description" xml:"Description"`
+	ClientIp       string `json:"ClientIp" xml:"ClientIp"`
+	Name           string `json:"Name" xml:"Name"`
 	CreatedTime    string `json:"CreatedTime" xml:"CreatedTime"`
+	Id             string `json:"Id" xml:"Id"`
 }
 
 // CreateDescribeParentPlatformRequest creates a request to invoke DescribeParentPlatform API

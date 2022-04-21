@@ -17,12 +17,12 @@ package vs
 
 // Channel is a nested struct in vs response
 type Channel struct {
-	Name         string `json:"Name" xml:"Name"`
-	GbId         string `json:"GbId" xml:"GbId"`
-	ChannelId    int64  `json:"ChannelId" xml:"ChannelId"`
-	StreamId     string `json:"StreamId" xml:"StreamId"`
 	StreamStatus string `json:"StreamStatus" xml:"StreamStatus"`
-	DeviceId     string `json:"DeviceId" xml:"DeviceId"`
-	DeviceStatus string `json:"DeviceStatus" xml:"DeviceStatus"`
+	GbId         string `json:"GbId" xml:"GbId"`
 	Params       string `json:"Params" xml:"Params"`
+	DeviceId     string `json:"DeviceId" xml:"DeviceId"`
+	ChannelId    int64  `json:"ChannelId" xml:"ChannelId"`
+	DeviceStatus string `json:"DeviceStatus" xml:"DeviceStatus"`
+	Name         string `json:"Name" xml:"Name"`
+	StreamId     string `json:"StreamId" xml:"StreamId"`
 }

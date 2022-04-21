@@ -79,8 +79,8 @@ type UnlockDeviceRequest struct {
 // UnlockDeviceResponse is the response struct for api UnlockDevice
 type UnlockDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUnlockDeviceRequest creates a request to invoke UnlockDevice API

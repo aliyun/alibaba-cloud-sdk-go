@@ -72,19 +72,21 @@ func (client *Client) DescribeClusterDevicesWithCallback(request *DescribeCluste
 type DescribeClusterDevicesRequest struct {
 	*requests.RpcRequest
 	Description   string           `position:"Query" name:"Description"`
+	Platform      string           `position:"Query" name:"Platform"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	ShowLog       string           `position:"Query" name:"ShowLog"`
 	Specification string           `position:"Query" name:"Specification"`
 	ClusterId     string           `position:"Query" name:"ClusterId"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	PageNo        requests.Integer `position:"Query" name:"PageNo"`
+	EdgeNodeName  string           `position:"Query" name:"EdgeNodeName"`
 }
 
 // DescribeClusterDevicesResponse is the response struct for api DescribeClusterDevices
 type DescribeClusterDevicesResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Total     int64    `json:"Total" xml:"Total"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Devices   []Device `json:"Devices" xml:"Devices"`
 }
 

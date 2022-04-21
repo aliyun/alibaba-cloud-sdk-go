@@ -79,8 +79,8 @@ type StartParentPlatformRequest struct {
 // StartParentPlatformResponse is the response struct for api StartParentPlatform
 type StartParentPlatformResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Id        string `json:"Id" xml:"Id"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStartParentPlatformRequest creates a request to invoke StartParentPlatform API
