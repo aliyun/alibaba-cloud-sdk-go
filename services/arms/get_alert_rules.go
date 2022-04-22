@@ -92,7 +92,7 @@ func CreateGetAlertRulesRequest() (request *GetAlertRulesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ARMS", "2019-08-08", "GetAlertRules", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 
