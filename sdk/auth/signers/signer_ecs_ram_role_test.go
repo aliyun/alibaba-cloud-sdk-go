@@ -70,7 +70,7 @@ func Test_EcsRamRoleSigner_GetAccessKeyId2(t *testing.T) {
 		securityCredURL = originalSecurityCredURL
 	}()
 	accessKeyId, err := s.GetAccessKeyId()
-	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: \nRequestId: \nMessage: {}", err.Error())
+	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: \nRequestId: \nMessage: {}\nRespHeaders: map[]", err.Error())
 	assert.Equal(t, "", accessKeyId)
 }
 

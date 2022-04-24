@@ -58,7 +58,7 @@ func Test_CommonResponse_Unmarshal(t *testing.T) {
 	res := makeHTTPResponse(400, "")
 	err := Unmarshal(r, res, "JSON")
 	assert.NotNil(t, err)
-	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: \nRequestId: \nMessage: ", err.Error())
+	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: \nRequestId: \nMessage: \nRespHeaders: map[]", err.Error())
 }
 
 func Test_CommonResponse_Unmarshal_CommonResponse(t *testing.T) {
