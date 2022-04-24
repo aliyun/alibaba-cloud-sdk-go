@@ -73,6 +73,8 @@ type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DataLevel2BackupRetentionPeriod        string           `position:"Query" name:"DataLevel2BackupRetentionPeriod"`
+	DataLevel1BackupPeriod                 string           `position:"Query" name:"DataLevel1BackupPeriod"`
+	DataLevel2BackupPeriod                 string           `position:"Query" name:"DataLevel2BackupPeriod"`
 	PreferredBackupPeriod                  string           `position:"Query" name:"PreferredBackupPeriod"`
 	DataLevel1BackupRetentionPeriod        string           `position:"Query" name:"DataLevel1BackupRetentionPeriod"`
 	BackupRetentionPolicyOnClusterDeletion string           `position:"Query" name:"BackupRetentionPolicyOnClusterDeletion"`
@@ -83,6 +85,8 @@ type ModifyBackupPolicyRequest struct {
 	PreferredBackupTime                    string           `position:"Query" name:"PreferredBackupTime"`
 	BackupRetentionPeriod                  string           `position:"Query" name:"BackupRetentionPeriod"`
 	BackupFrequency                        string           `position:"Query" name:"BackupFrequency"`
+	DataLevel1BackupFrequency              string           `position:"Query" name:"DataLevel1BackupFrequency"`
+	DataLevel1BackupTime                   string           `position:"Query" name:"DataLevel1BackupTime"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy
@@ -96,7 +100,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyBackupPolicy", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyBackupPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

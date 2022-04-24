@@ -88,10 +88,10 @@ type DescribeBackupsRequest struct {
 // DescribeBackupsResponse is the response struct for api DescribeBackups
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                 `json:"RequestId" xml:"RequestId"`
 	TotalRecordCount string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       string                 `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  string                 `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                 `json:"RequestId" xml:"RequestId"`
+	PageNumber       string                 `json:"PageNumber" xml:"PageNumber"`
 	Items            ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
@@ -100,7 +100,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeBackups", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeBackups", "", "")
 	request.Method = requests.POST
 	return
 }

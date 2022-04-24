@@ -17,10 +17,10 @@ package polardb
 
 // DBLinkInfosItem is a nested struct in polardb response
 type DBLinkInfosItem struct {
-	TargetDBInstanceName string `json:"TargetDBInstanceName" xml:"TargetDBInstanceName"`
 	DBInstanceName       string `json:"DBInstanceName" xml:"DBInstanceName"`
-	TargetDBName         string `json:"TargetDBName" xml:"TargetDBName"`
-	TargetAccount        string `json:"TargetAccount" xml:"TargetAccount"`
 	DBLinkName           string `json:"DBLinkName" xml:"DBLinkName"`
 	SourceDBName         string `json:"SourceDBName" xml:"SourceDBName"`
+	TargetDBName         string `json:"TargetDBName" xml:"TargetDBName"`
+	TargetDBInstanceName string `json:"TargetDBInstanceName" xml:"TargetDBInstanceName"`
+	TargetAccount        string `json:"TargetAccount" xml:"TargetAccount"`
 }

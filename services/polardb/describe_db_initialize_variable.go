@@ -81,9 +81,9 @@ type DescribeDBInitializeVariableRequest struct {
 // DescribeDBInitializeVariableResponse is the response struct for api DescribeDBInitializeVariable
 type DescribeDBInitializeVariableResponse struct {
 	*responses.BaseResponse
+	DBVersion string    `json:"DBVersion" xml:"DBVersion"`
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	DBType    string    `json:"DBType" xml:"DBType"`
-	DBVersion string    `json:"DBVersion" xml:"DBVersion"`
 	Variables Variables `json:"Variables" xml:"Variables"`
 }
 
@@ -92,7 +92,7 @@ func CreateDescribeDBInitializeVariableRequest() (request *DescribeDBInitializeV
 	request = &DescribeDBInitializeVariableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBInitializeVariable", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBInitializeVariable", "", "")
 	request.Method = requests.POST
 	return
 }

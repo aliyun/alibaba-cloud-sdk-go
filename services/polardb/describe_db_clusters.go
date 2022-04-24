@@ -108,7 +108,7 @@ func CreateDescribeDBClustersRequest() (request *DescribeDBClustersRequest) {
 	request = &DescribeDBClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusters", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusters", "", "")
 	request.Method = requests.POST
 	return
 }

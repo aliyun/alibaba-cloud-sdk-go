@@ -90,7 +90,7 @@ func CreateCheckAccountNameRequest() (request *CheckAccountNameRequest) {
 	request = &CheckAccountNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CheckAccountName", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CheckAccountName", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -82,6 +82,11 @@ type DescribeDBNodesParametersRequest struct {
 // DescribeDBNodesParametersResponse is the response struct for api DescribeDBNodesParameters
 type DescribeDBNodesParametersResponse struct {
 	*responses.BaseResponse
+	DBVersion string            `json:"DBVersion" xml:"DBVersion"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	DBType    string            `json:"DBType" xml:"DBType"`
+	Engine    string            `json:"Engine" xml:"Engine"`
+	DBNodeIds []DBNodeParameter `json:"DBNodeIds" xml:"DBNodeIds"`
 }
 
 // CreateDescribeDBNodesParametersRequest creates a request to invoke DescribeDBNodesParameters API
@@ -89,7 +94,7 @@ func CreateDescribeDBNodesParametersRequest() (request *DescribeDBNodesParameter
 	request = &DescribeDBNodesParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBNodesParameters", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBNodesParameters", "", "")
 	request.Method = requests.POST
 	return
 }

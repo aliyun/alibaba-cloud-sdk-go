@@ -81,11 +81,11 @@ type DescribeDBClusterParametersRequest struct {
 // DescribeDBClusterParametersResponse is the response struct for api DescribeDBClusterParameters
 type DescribeDBClusterParametersResponse struct {
 	*responses.BaseResponse
-	DBVersion         string            `json:"DBVersion" xml:"DBVersion"`
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	DBType            string            `json:"DBType" xml:"DBType"`
-	Engine            string            `json:"Engine" xml:"Engine"`
-	RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
+	DBVersion         string                                         `json:"DBVersion" xml:"DBVersion"`
+	RequestId         string                                         `json:"RequestId" xml:"RequestId"`
+	DBType            string                                         `json:"DBType" xml:"DBType"`
+	Engine            string                                         `json:"Engine" xml:"Engine"`
+	RunningParameters RunningParametersInDescribeDBClusterParameters `json:"RunningParameters" xml:"RunningParameters"`
 }
 
 // CreateDescribeDBClusterParametersRequest creates a request to invoke DescribeDBClusterParameters API
@@ -93,7 +93,7 @@ func CreateDescribeDBClusterParametersRequest() (request *DescribeDBClusterParam
 	request = &DescribeDBClusterParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterParameters", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterParameters", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -18,11 +18,11 @@ package polardb
 // BackupLog is a nested struct in polardb response
 type BackupLog struct {
 	BackupLogId          string `json:"BackupLogId" xml:"BackupLogId"`
-	BackupLogName        string `json:"BackupLogName" xml:"BackupLogName"`
-	BackupLogStartTime   string `json:"BackupLogStartTime" xml:"BackupLogStartTime"`
-	BackupLogEndTime     string `json:"BackupLogEndTime" xml:"BackupLogEndTime"`
-	BackupLogSize        string `json:"BackupLogSize" xml:"BackupLogSize"`
-	DownloadLink         string `json:"DownloadLink" xml:"DownloadLink"`
 	IntranetDownloadLink string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
 	LinkExpiredTime      string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
+	BackupLogStartTime   string `json:"BackupLogStartTime" xml:"BackupLogStartTime"`
+	BackupLogEndTime     string `json:"BackupLogEndTime" xml:"BackupLogEndTime"`
+	DownloadLink         string `json:"DownloadLink" xml:"DownloadLink"`
+	BackupLogSize        string `json:"BackupLogSize" xml:"BackupLogSize"`
+	BackupLogName        string `json:"BackupLogName" xml:"BackupLogName"`
 }

@@ -90,7 +90,7 @@ func CreateDeleteGlobalDatabaseNetworkRequest() (request *DeleteGlobalDatabaseNe
 	request = &DeleteGlobalDatabaseNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteGlobalDatabaseNetwork", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteGlobalDatabaseNetwork", "", "")
 	request.Method = requests.POST
 	return
 }

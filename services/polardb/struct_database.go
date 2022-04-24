@@ -17,10 +17,10 @@ package polardb
 
 // Database is a nested struct in polardb response
 type Database struct {
-	DBName           string                      `json:"DBName" xml:"DBName"`
-	DBStatus         string                      `json:"DBStatus" xml:"DBStatus"`
 	DBDescription    string                      `json:"DBDescription" xml:"DBDescription"`
-	CharacterSetName string                      `json:"CharacterSetName" xml:"CharacterSetName"`
+	DBStatus         string                      `json:"DBStatus" xml:"DBStatus"`
+	DBName           string                      `json:"DBName" xml:"DBName"`
 	Engine           string                      `json:"Engine" xml:"Engine"`
+	CharacterSetName string                      `json:"CharacterSetName" xml:"CharacterSetName"`
 	Accounts         AccountsInDescribeDatabases `json:"Accounts" xml:"Accounts"`
 }

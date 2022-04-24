@@ -18,7 +18,7 @@ package polardb
 // TagResource is a nested struct in polardb response
 type TagResource struct {
 	ResourceType string `json:"ResourceType" xml:"ResourceType"`
-	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
 	TagValue     string `json:"TagValue" xml:"TagValue"`
+	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
 	TagKey       string `json:"TagKey" xml:"TagKey"`
 }

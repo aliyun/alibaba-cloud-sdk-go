@@ -21,12 +21,14 @@ type DBNode struct {
 	DBNodeClass      string `json:"DBNodeClass" xml:"DBNodeClass"`
 	FailoverPriority int    `json:"FailoverPriority" xml:"FailoverPriority"`
 	DBNodeRole       string `json:"DBNodeRole" xml:"DBNodeRole"`
+	DBNodeStatus     string `json:"DBNodeStatus" xml:"DBNodeStatus"`
+	MasterId         string `json:"MasterId" xml:"MasterId"`
+	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+	HotReplicaMode   string `json:"HotReplicaMode" xml:"HotReplicaMode"`
 	MaxConnections   int    `json:"MaxConnections" xml:"MaxConnections"`
+	AddedCpuCores    string `json:"AddedCpuCores" xml:"AddedCpuCores"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
-	DBNodeStatus     string `json:"DBNodeStatus" xml:"DBNodeStatus"`
-	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
 	DBNodeId         string `json:"DBNodeId" xml:"DBNodeId"`
 	ImciSwitch       string `json:"ImciSwitch" xml:"ImciSwitch"`
-	HotReplicaMode   string `json:"HotReplicaMode" xml:"HotReplicaMode"`
 }

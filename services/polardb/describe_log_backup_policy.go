@@ -81,9 +81,9 @@ type DescribeLogBackupPolicyRequest struct {
 // DescribeLogBackupPolicyResponse is the response struct for api DescribeLogBackupPolicy
 type DescribeLogBackupPolicyResponse struct {
 	*responses.BaseResponse
+	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
 	RequestId                string `json:"RequestId" xml:"RequestId"`
 	EnableBackupLog          int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
-	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
 }
 
 // CreateDescribeLogBackupPolicyRequest creates a request to invoke DescribeLogBackupPolicy API
@@ -91,7 +91,7 @@ func CreateDescribeLogBackupPolicyRequest() (request *DescribeLogBackupPolicyReq
 	request = &DescribeLogBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeLogBackupPolicy", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeLogBackupPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

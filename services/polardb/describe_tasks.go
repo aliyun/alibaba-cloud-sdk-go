@@ -87,12 +87,12 @@ type DescribeTasksRequest struct {
 // DescribeTasksResponse is the response struct for api DescribeTasks
 type DescribeTasksResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	EndTime          string `json:"EndTime" xml:"EndTime"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	StartTime        string `json:"StartTime" xml:"StartTime"`
 	DBClusterId      string `json:"DBClusterId" xml:"DBClusterId"`
 	Tasks            Tasks  `json:"Tasks" xml:"Tasks"`
 }
@@ -102,7 +102,7 @@ func CreateDescribeTasksRequest() (request *DescribeTasksRequest) {
 	request = &DescribeTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeTasks", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeTasks", "", "")
 	request.Method = requests.POST
 	return
 }

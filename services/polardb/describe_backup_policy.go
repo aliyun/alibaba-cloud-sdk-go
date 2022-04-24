@@ -84,12 +84,16 @@ type DescribeBackupPolicyResponse struct {
 	PreferredBackupPeriod                  string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
 	DataLevel1BackupRetentionPeriod        string `json:"DataLevel1BackupRetentionPeriod" xml:"DataLevel1BackupRetentionPeriod"`
 	RequestId                              string `json:"RequestId" xml:"RequestId"`
-	BackupRetentionPolicyOnClusterDeletion string `json:"BackupRetentionPolicyOnClusterDeletion" xml:"BackupRetentionPolicyOnClusterDeletion"`
 	PreferredBackupTime                    string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
-	BackupFrequency                        string `json:"BackupFrequency" xml:"BackupFrequency"`
-	PreferredNextBackupTime                string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
+	BackupRetentionPolicyOnClusterDeletion string `json:"BackupRetentionPolicyOnClusterDeletion" xml:"BackupRetentionPolicyOnClusterDeletion"`
 	BackupRetentionPeriod                  int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	PreferredNextBackupTime                string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
 	DataLevel2BackupRetentionPeriod        string `json:"DataLevel2BackupRetentionPeriod" xml:"DataLevel2BackupRetentionPeriod"`
+	BackupFrequency                        string `json:"BackupFrequency" xml:"BackupFrequency"`
+	DataLevel1BackupFrequency              string `json:"DataLevel1BackupFrequency" xml:"DataLevel1BackupFrequency"`
+	DataLevel1BackupPeriod                 string `json:"DataLevel1BackupPeriod" xml:"DataLevel1BackupPeriod"`
+	DataLevel1BackupTime                   string `json:"DataLevel1BackupTime" xml:"DataLevel1BackupTime"`
+	DataLevel2BackupPeriod                 string `json:"DataLevel2BackupPeriod" xml:"DataLevel2BackupPeriod"`
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API
@@ -97,7 +101,7 @@ func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) 
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeBackupPolicy", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeBackupPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

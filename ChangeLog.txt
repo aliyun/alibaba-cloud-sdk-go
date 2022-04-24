@@ -1,3 +1,7 @@
+2022-04-24 Version: v1.61.1574
+- Generated 2017-08-01 for `polardb`.
+- Support new feature.
+
 2022-04-22 Version: v1.61.1573
 - Generated 2019-08-08 for `ARMS`.
 - New add ManageGetRecordingRule api.

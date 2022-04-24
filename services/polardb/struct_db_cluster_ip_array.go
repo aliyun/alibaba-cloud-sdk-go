@@ -17,7 +17,7 @@ package polardb
 
 // DBClusterIPArray is a nested struct in polardb response
 type DBClusterIPArray struct {
-	DBClusterIPArrayName      string `json:"DBClusterIPArrayName" xml:"DBClusterIPArrayName"`
 	DBClusterIPArrayAttribute string `json:"DBClusterIPArrayAttribute" xml:"DBClusterIPArrayAttribute"`
+	DBClusterIPArrayName      string `json:"DBClusterIPArrayName" xml:"DBClusterIPArrayName"`
 	SecurityIps               string `json:"SecurityIps" xml:"SecurityIps"`
 }

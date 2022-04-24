@@ -17,10 +17,10 @@ package polardb
 
 // BackupJob is a nested struct in polardb response
 type BackupJob struct {
-	BackupJobId          string `json:"BackupJobId" xml:"BackupJobId"`
-	BackupProgressStatus string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
-	JobMode              string `json:"JobMode" xml:"JobMode"`
 	StartTime            string `json:"StartTime" xml:"StartTime"`
 	Process              string `json:"Process" xml:"Process"`
+	BackupJobId          string `json:"BackupJobId" xml:"BackupJobId"`
+	JobMode              string `json:"JobMode" xml:"JobMode"`
+	BackupProgressStatus string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
 	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
 }

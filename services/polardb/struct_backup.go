@@ -17,15 +17,15 @@ package polardb
 
 // Backup is a nested struct in polardb response
 type Backup struct {
-	BackupMode      string `json:"BackupMode" xml:"BackupMode"`
 	IsAvail         string `json:"IsAvail" xml:"IsAvail"`
+	BackupMode      string `json:"BackupMode" xml:"BackupMode"`
 	BackupSetSize   string `json:"BackupSetSize" xml:"BackupSetSize"`
 	BackupEndTime   string `json:"BackupEndTime" xml:"BackupEndTime"`
 	BackupMethod    string `json:"BackupMethod" xml:"BackupMethod"`
-	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
 	BackupType      string `json:"BackupType" xml:"BackupType"`
-	BackupStatus    string `json:"BackupStatus" xml:"BackupStatus"`
+	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
 	StoreStatus     string `json:"StoreStatus" xml:"StoreStatus"`
+	BackupStatus    string `json:"BackupStatus" xml:"BackupStatus"`
 	BackupStartTime string `json:"BackupStartTime" xml:"BackupStartTime"`
 	ConsistentTime  string `json:"ConsistentTime" xml:"ConsistentTime"`
 	BackupsLevel    string `json:"BackupsLevel" xml:"BackupsLevel"`

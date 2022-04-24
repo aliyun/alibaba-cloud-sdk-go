@@ -91,7 +91,7 @@ func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameR
 	request = &DescribeCharacterSetNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeCharacterSetName", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeCharacterSetName", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -85,13 +85,13 @@ type DescribeDBClusterPerformanceRequest struct {
 // DescribeDBClusterPerformanceResponse is the response struct for api DescribeDBClusterPerformance
 type DescribeDBClusterPerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                        `json:"RequestId" xml:"RequestId"`
-	DBClusterId     string                                        `json:"DBClusterId" xml:"DBClusterId"`
-	Engine          string                                        `json:"Engine" xml:"Engine"`
-	DBType          string                                        `json:"DBType" xml:"DBType"`
 	DBVersion       string                                        `json:"DBVersion" xml:"DBVersion"`
-	StartTime       string                                        `json:"StartTime" xml:"StartTime"`
 	EndTime         string                                        `json:"EndTime" xml:"EndTime"`
+	RequestId       string                                        `json:"RequestId" xml:"RequestId"`
+	StartTime       string                                        `json:"StartTime" xml:"StartTime"`
+	DBClusterId     string                                        `json:"DBClusterId" xml:"DBClusterId"`
+	DBType          string                                        `json:"DBType" xml:"DBType"`
+	Engine          string                                        `json:"Engine" xml:"Engine"`
 	PerformanceKeys PerformanceKeysInDescribeDBClusterPerformance `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
@@ -100,7 +100,7 @@ func CreateDescribeDBClusterPerformanceRequest() (request *DescribeDBClusterPerf
 	request = &DescribeDBClusterPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterPerformance", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterPerformance", "", "")
 	request.Method = requests.POST
 	return
 }

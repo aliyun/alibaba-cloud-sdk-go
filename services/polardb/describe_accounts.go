@@ -84,9 +84,9 @@ type DescribeAccountsRequest struct {
 // DescribeAccountsResponse is the response struct for api DescribeAccounts
 type DescribeAccountsResponse struct {
 	*responses.BaseResponse
+	PageRecordCount int         `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId       string      `json:"RequestId" xml:"RequestId"`
 	PageNumber      int         `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount int         `json:"PageRecordCount" xml:"PageRecordCount"`
 	Accounts        []DBAccount `json:"Accounts" xml:"Accounts"`
 }
 
@@ -95,7 +95,7 @@ func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	request = &DescribeAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeAccounts", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeAccounts", "", "")
 	request.Method = requests.POST
 	return
 }

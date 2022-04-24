@@ -92,7 +92,7 @@ func CreateDescribeDBLinksRequest() (request *DescribeDBLinksRequest) {
 	request = &DescribeDBLinksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBLinks", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBLinks", "", "")
 	request.Method = requests.POST
 	return
 }

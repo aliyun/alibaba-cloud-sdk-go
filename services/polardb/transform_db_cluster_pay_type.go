@@ -98,7 +98,7 @@ func CreateTransformDBClusterPayTypeRequest() (request *TransformDBClusterPayTyp
 	request = &TransformDBClusterPayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "TransformDBClusterPayType", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "TransformDBClusterPayType", "", "")
 	request.Method = requests.POST
 	return
 }

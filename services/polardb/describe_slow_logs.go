@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeGlobalDatabaseNetworks invokes the polardb.DescribeGlobalDatabaseNetworks API synchronously
-func (client *Client) DescribeGlobalDatabaseNetworks(request *DescribeGlobalDatabaseNetworksRequest) (response *DescribeGlobalDatabaseNetworksResponse, err error) {
-	response = CreateDescribeGlobalDatabaseNetworksResponse()
+// DescribeSlowLogs invokes the polardb.DescribeSlowLogs API synchronously
+func (client *Client) DescribeSlowLogs(request *DescribeSlowLogsRequest) (response *DescribeSlowLogsResponse, err error) {
+	response = CreateDescribeSlowLogsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeGlobalDatabaseNetworksWithChan invokes the polardb.DescribeGlobalDatabaseNetworks API asynchronously
-func (client *Client) DescribeGlobalDatabaseNetworksWithChan(request *DescribeGlobalDatabaseNetworksRequest) (<-chan *DescribeGlobalDatabaseNetworksResponse, <-chan error) {
-	responseChan := make(chan *DescribeGlobalDatabaseNetworksResponse, 1)
+// DescribeSlowLogsWithChan invokes the polardb.DescribeSlowLogs API asynchronously
+func (client *Client) DescribeSlowLogsWithChan(request *DescribeSlowLogsRequest) (<-chan *DescribeSlowLogsResponse, <-chan error) {
+	responseChan := make(chan *DescribeSlowLogsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeGlobalDatabaseNetworks(request)
+		response, err := client.DescribeSlowLogs(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeGlobalDatabaseNetworksWithChan(request *DescribeGl
 	return responseChan, errChan
 }
 
-// DescribeGlobalDatabaseNetworksWithCallback invokes the polardb.DescribeGlobalDatabaseNetworks API asynchronously
-func (client *Client) DescribeGlobalDatabaseNetworksWithCallback(request *DescribeGlobalDatabaseNetworksRequest, callback func(response *DescribeGlobalDatabaseNetworksResponse, err error)) <-chan int {
+// DescribeSlowLogsWithCallback invokes the polardb.DescribeSlowLogs API asynchronously
+func (client *Client) DescribeSlowLogsWithCallback(request *DescribeSlowLogsRequest, callback func(response *DescribeSlowLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeGlobalDatabaseNetworksResponse
+		var response *DescribeSlowLogsResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeGlobalDatabaseNetworks(request)
+		response, err = client.DescribeSlowLogs(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,42 +68,48 @@ func (client *Client) DescribeGlobalDatabaseNetworksWithCallback(request *Descri
 	return result
 }
 
-// DescribeGlobalDatabaseNetworksRequest is the request struct for api DescribeGlobalDatabaseNetworks
-type DescribeGlobalDatabaseNetworksRequest struct {
+// DescribeSlowLogsRequest is the request struct for api DescribeSlowLogs
+type DescribeSlowLogsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBName               string           `position:"Query" name:"DBName"`
 }
 
-// DescribeGlobalDatabaseNetworksResponse is the response struct for api DescribeGlobalDatabaseNetworks
-type DescribeGlobalDatabaseNetworksResponse struct {
+// DescribeSlowLogsResponse is the response struct for api DescribeSlowLogs
+type DescribeSlowLogsResponse struct {
 	*responses.BaseResponse
 	TotalRecordCount int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	EndTime          string                  `json:"EndTime" xml:"EndTime"`
 	RequestId        string                  `json:"RequestId" xml:"RequestId"`
 	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
-	Items            []GlobalDatabaseNetwork `json:"Items" xml:"Items"`
+	StartTime        string                  `json:"StartTime" xml:"StartTime"`
+	DBClusterId      string                  `json:"DBClusterId" xml:"DBClusterId"`
+	Engine           string                  `json:"Engine" xml:"Engine"`
+	Items            ItemsInDescribeSlowLogs `json:"Items" xml:"Items"`
 }
 
-// CreateDescribeGlobalDatabaseNetworksRequest creates a request to invoke DescribeGlobalDatabaseNetworks API
-func CreateDescribeGlobalDatabaseNetworksRequest() (request *DescribeGlobalDatabaseNetworksRequest) {
-	request = &DescribeGlobalDatabaseNetworksRequest{
+// CreateDescribeSlowLogsRequest creates a request to invoke DescribeSlowLogs API
+func CreateDescribeSlowLogsRequest() (request *DescribeSlowLogsRequest) {
+	request = &DescribeSlowLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeSlowLogs", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeGlobalDatabaseNetworksResponse creates a response to parse from DescribeGlobalDatabaseNetworks response
-func CreateDescribeGlobalDatabaseNetworksResponse() (response *DescribeGlobalDatabaseNetworksResponse) {
-	response = &DescribeGlobalDatabaseNetworksResponse{
+// CreateDescribeSlowLogsResponse creates a response to parse from DescribeSlowLogs response
+func CreateDescribeSlowLogsResponse() (response *DescribeSlowLogsResponse) {
+	response = &DescribeSlowLogsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

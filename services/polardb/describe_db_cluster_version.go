@@ -81,17 +81,17 @@ type DescribeDBClusterVersionRequest struct {
 // DescribeDBClusterVersionResponse is the response struct for api DescribeDBClusterVersion
 type DescribeDBClusterVersionResponse struct {
 	*responses.BaseResponse
-	ProxyVersionStatus   string `json:"ProxyVersionStatus" xml:"ProxyVersionStatus"`
 	IsLatestVersion      string `json:"IsLatestVersion" xml:"IsLatestVersion"`
 	DBVersion            string `json:"DBVersion" xml:"DBVersion"`
-	RequestId            string `json:"RequestId" xml:"RequestId"`
 	DBRevisionVersion    string `json:"DBRevisionVersion" xml:"DBRevisionVersion"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
 	DBVersionStatus      string `json:"DBVersionStatus" xml:"DBVersionStatus"`
 	DBClusterId          string `json:"DBClusterId" xml:"DBClusterId"`
-	DBLatestVersion      string `json:"DBLatestVersion" xml:"DBLatestVersion"`
-	ProxyRevisionVersion string `json:"ProxyRevisionVersion" xml:"ProxyRevisionVersion"`
 	DBMinorVersion       string `json:"DBMinorVersion" xml:"DBMinorVersion"`
+	ProxyRevisionVersion string `json:"ProxyRevisionVersion" xml:"ProxyRevisionVersion"`
+	ProxyVersionStatus   string `json:"ProxyVersionStatus" xml:"ProxyVersionStatus"`
 	ProxyLatestVersion   string `json:"ProxyLatestVersion" xml:"ProxyLatestVersion"`
+	DBLatestVersion      string `json:"DBLatestVersion" xml:"DBLatestVersion"`
 }
 
 // CreateDescribeDBClusterVersionRequest creates a request to invoke DescribeDBClusterVersion API
@@ -99,7 +99,7 @@ func CreateDescribeDBClusterVersionRequest() (request *DescribeDBClusterVersionR
 	request = &DescribeDBClusterVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterVersion", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterVersion", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,8 +17,8 @@ package polardb
 
 // Account is a nested struct in polardb response
 type Account struct {
-	AccountName      string `json:"AccountName" xml:"AccountName"`
+	PrivilegeStatus  string `json:"PrivilegeStatus" xml:"PrivilegeStatus"`
 	AccountStatus    string `json:"AccountStatus" xml:"AccountStatus"`
 	AccountPrivilege string `json:"AccountPrivilege" xml:"AccountPrivilege"`
-	PrivilegeStatus  string `json:"PrivilegeStatus" xml:"PrivilegeStatus"`
+	AccountName      string `json:"AccountName" xml:"AccountName"`
 }

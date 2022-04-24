@@ -84,10 +84,10 @@ type DescribeAutoRenewAttributeRequest struct {
 // DescribeAutoRenewAttributeResponse is the response struct for api DescribeAutoRenewAttribute
 type DescribeAutoRenewAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string                            `json:"RequestId" xml:"RequestId"`
-	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
 	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
 	Items            ItemsInDescribeAutoRenewAttribute `json:"Items" xml:"Items"`
 }
 
@@ -96,7 +96,7 @@ func CreateDescribeAutoRenewAttributeRequest() (request *DescribeAutoRenewAttrib
 	request = &DescribeAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeAutoRenewAttribute", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeAutoRenewAttribute", "", "")
 	request.Method = requests.POST
 	return
 }
