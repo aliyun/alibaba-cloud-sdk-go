@@ -78,7 +78,7 @@ func TestGetAccessKeyId2(t *testing.T) {
 	assert.NotNil(t, s)
 	// s.lastUpdateTimestamp = time.Now().Unix() - 1000
 	accessKeyId, err := s.GetAccessKeyId()
-	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: refresh session AccessKey failed\nRequestId: \nMessage: ", err.Error())
+	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: refresh session AccessKey failed\nRequestId: \nMessage: \nRespHeaders: map[]", err.Error())
 	assert.Equal(t, "", accessKeyId)
 }
 

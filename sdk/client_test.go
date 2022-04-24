@@ -107,21 +107,48 @@ func Test_NewClientWithPolicy(t *testing.T) {
 }
 
 func Test_ClientWithSouceIp(t *testing.T) {
-	client, err := NewClientWithAccessKey("regionid", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 	client.SourceIp = "192.168.0.1"
 	client.SecureTransport = "true"
+	// rpc test
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
-	// 因为是RPC接口，因此需指定ApiName(Action)
 	request.ApiName = "DescribeInstanceStatus"
 	request.QueryParams["PageNumber"] = "1"
 	request.QueryParams["PageSize"] = "30"
-	resp, err := client.ProcessCommonRequest(request)
-	fmt.Println(resp)
+	request.TransToAcsRequest()
+	response := responses.NewCommonResponse()
+	origTestHookDo := hookDo
+	defer func() { hookDo = origTestHookDo }()
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(200, "", nil)
+		}
+	}
+	err = client.DoAction(request, response)
 	assert.Nil(t, err)
+	assert.Equal(t, request.QueryParams["SourceIp"], "192.168.0.1")
+	assert.Equal(t, request.QueryParams["SecureTransport"], "true")
+	assert.Equal(t, request.Headers["x-acs-proxy-source-ip"], "")
+	assert.Equal(t, request.Headers["x-acs-proxy-secure-transport"], "")
+	// roa test
+	roaRequest := requests.NewCommonRequest()
+	roaRequest.PathPattern = "/test"
+	roaRequest.Domain = "ecs.aliyuncs.com"
+	roaRequest.Version = "2014-05-26"
+	roaRequest.ApiName = "DescribeInstanceStatus"
+	roaRequest.QueryParams["PageNumber"] = "1"
+	roaRequest.QueryParams["PageSize"] = "30"
+	roaRequest.TransToAcsRequest()
+	err = client.DoAction(roaRequest, response)
+	assert.Nil(t, err)
+	assert.Equal(t, roaRequest.QueryParams["SourceIp"], "")
+	assert.Equal(t, roaRequest.QueryParams["SecureTransport"], "")
+	assert.Equal(t, roaRequest.Headers["x-acs-proxy-source-ip"], "192.168.0.1")
+	assert.Equal(t, roaRequest.Headers["x-acs-proxy-secure-transport"], "true")
 }
 
 func Test_NewClientWithAccessKey(t *testing.T) {

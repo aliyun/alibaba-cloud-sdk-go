@@ -19,7 +19,7 @@ func TestServerError(t *testing.T) {
 	assert.Equal(t, "", serverError.HostId())
 	assert.Equal(t, "comment", serverError.Comment())
 	assert.Equal(t, "content", serverError.Message())
-	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: comment\nRequestId: \nMessage: content", serverError.Error())
+	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: comment\nRequestId: \nMessage: content\nRespHeaders: map[]", serverError.Error())
 }
 
 func TestServerErrorWithContent(t *testing.T) {
@@ -35,7 +35,7 @@ func TestServerErrorWithContent(t *testing.T) {
 	assert.Equal(t, "recommend", serverError.Recommend())
 	assert.Equal(t, "comment", serverError.Comment())
 	assert.Equal(t, "message", serverError.Message())
-	assert.Equal(t, "SDK.ServerError\nErrorCode: InvalidAK\nRecommend: commentrecommend\nRequestId: request id\nMessage: message", serverError.Error())
+	assert.Equal(t, "SDK.ServerError\nErrorCode: InvalidAK\nRecommend: commentrecommend\nRequestId: request id\nMessage: message\nRespHeaders: map[]", serverError.Error())
 }
 
 func TestWrapServerError(t *testing.T) {
