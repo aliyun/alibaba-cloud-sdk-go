@@ -77,6 +77,7 @@ type ConfirmRelationRequest struct {
 	ChildUserId     requests.Integer `position:"Query" name:"ChildUserId"`
 	RequestId       string           `position:"Query" name:"RequestId"`
 	PermissionCodes *[]string        `position:"Query" name:"PermissionCodes"  type:"Repeated"`
+	RelationId      requests.Integer `position:"Query" name:"RelationId"`
 }
 
 // ConfirmRelationResponse is the response struct for api ConfirmRelation

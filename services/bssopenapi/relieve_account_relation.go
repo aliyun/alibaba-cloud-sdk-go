@@ -75,6 +75,7 @@ type RelieveAccountRelationRequest struct {
 	ParentUserId requests.Integer `position:"Query" name:"ParentUserId"`
 	ChildUserId  requests.Integer `position:"Query" name:"ChildUserId"`
 	RequestId    string           `position:"Query" name:"RequestId"`
+	RelationId   requests.Integer `position:"Query" name:"RelationId"`
 }
 
 // RelieveAccountRelationResponse is the response struct for api RelieveAccountRelation

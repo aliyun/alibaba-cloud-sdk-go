@@ -66,8 +66,10 @@ type Item struct {
 	SavedCost                 string  `json:"SavedCost" xml:"SavedCost"`
 	DeductQuantity            float64 `json:"DeductQuantity" xml:"DeductQuantity"`
 	PayerAccount              string  `json:"PayerAccount" xml:"PayerAccount"`
+	ItemName                  string  `json:"ItemName" xml:"ItemName"`
 	TotalQuantity             float64 `json:"TotalQuantity" xml:"TotalQuantity"`
 	BizType                   string  `json:"BizType" xml:"BizType"`
+	BillingItemCode           string  `json:"BillingItemCode" xml:"BillingItemCode"`
 	UsageStartTime            string  `json:"UsageStartTime" xml:"UsageStartTime"`
 	SolutionCode              string  `json:"SolutionCode" xml:"SolutionCode"`
 	ProductDetail             string  `json:"ProductDetail" xml:"ProductDetail"`
