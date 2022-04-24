@@ -1,0 +1,33 @@
+name: Go
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        go-version: ['1.10', '1.11', '1.12', '1.13', '1.14', '1.15', '1.16', '1.17', '1.18', '1.19', '1.20']
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: ${{ matrix.go-version }}
+
+    - name: Test
+      env:
+        ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+        ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+      run: |
+        go test -race -coverprofile=coverage.txt -covermode=atomic ./sdk/...
+        test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET || go test -v -timeout 120s ./integration/...
