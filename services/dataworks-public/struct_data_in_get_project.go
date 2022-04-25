@@ -17,32 +17,32 @@ package dataworks_public
 
 // DataInGetProject is a nested struct in dataworks_public response
 type DataInGetProject struct {
-	GmtModified                      string   `json:"GmtModified" xml:"GmtModified"`
+	Status                           int      `json:"Status" xml:"Status"`
 	MaxFlowNode                      int      `json:"MaxFlowNode" xml:"MaxFlowNode"`
-	DefaultDiResourceGroupIdentifier string   `json:"DefaultDiResourceGroupIdentifier" xml:"DefaultDiResourceGroupIdentifier"`
-	Destination                      int      `json:"Destination" xml:"Destination"`
+	ProjectId                        int      `json:"ProjectId" xml:"ProjectId"`
 	IsAllowDownload                  int      `json:"IsAllowDownload" xml:"IsAllowDownload"`
-	ProdStorageQuota                 string   `json:"ProdStorageQuota" xml:"ProdStorageQuota"`
-	SchedulerRetryInterval           int      `json:"SchedulerRetryInterval" xml:"SchedulerRetryInterval"`
-	ResidentArea                     string   `json:"ResidentArea" xml:"ResidentArea"`
-	TablePrivacyMode                 int      `json:"TablePrivacyMode" xml:"TablePrivacyMode"`
-	ProjectOwnerBaseId               string   `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
-	UseProxyOdpsAccount              bool     `json:"UseProxyOdpsAccount" xml:"UseProxyOdpsAccount"`
-	DisableDevelopment               bool     `json:"DisableDevelopment" xml:"DisableDevelopment"`
 	ProjectMode                      int      `json:"ProjectMode" xml:"ProjectMode"`
-	GmtCreate                        string   `json:"GmtCreate" xml:"GmtCreate"`
-	DevStorageQuota                  string   `json:"DevStorageQuota" xml:"DevStorageQuota"`
-	IsDefault                        int      `json:"IsDefault" xml:"IsDefault"`
-	ProtectedMode                    int      `json:"ProtectedMode" xml:"ProtectedMode"`
-	BaseProject                      bool     `json:"BaseProject" xml:"BaseProject"`
-	TenantId                         int64    `json:"TenantId" xml:"TenantId"`
+	GmtModified                      string   `json:"GmtModified" xml:"GmtModified"`
+	ProdStorageQuota                 string   `json:"ProdStorageQuota" xml:"ProdStorageQuota"`
 	ProjectDescription               string   `json:"ProjectDescription" xml:"ProjectDescription"`
-	Appkey                           string   `json:"Appkey" xml:"Appkey"`
+	DevelopmentType                  int      `json:"DevelopmentType" xml:"DevelopmentType"`
+	TablePrivacyMode                 int      `json:"TablePrivacyMode" xml:"TablePrivacyMode"`
+	DefaultDiResourceGroupIdentifier string   `json:"DefaultDiResourceGroupIdentifier" xml:"DefaultDiResourceGroupIdentifier"`
 	SchedulerMaxRetryTimes           int      `json:"SchedulerMaxRetryTimes" xml:"SchedulerMaxRetryTimes"`
+	ProtectedMode                    int      `json:"ProtectedMode" xml:"ProtectedMode"`
+	SchedulerRetryInterval           int      `json:"SchedulerRetryInterval" xml:"SchedulerRetryInterval"`
+	Appkey                           string   `json:"Appkey" xml:"Appkey"`
+	DevStorageQuota                  string   `json:"DevStorageQuota" xml:"DevStorageQuota"`
+	ResidentArea                     string   `json:"ResidentArea" xml:"ResidentArea"`
+	IsDefault                        int      `json:"IsDefault" xml:"IsDefault"`
+	Destination                      int      `json:"Destination" xml:"Destination"`
 	ProjectName                      string   `json:"ProjectName" xml:"ProjectName"`
 	ProjectIdentifier                string   `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
-	ProjectId                        int      `json:"ProjectId" xml:"ProjectId"`
-	Status                           int      `json:"Status" xml:"Status"`
-	DevelopmentType                  int      `json:"DevelopmentType" xml:"DevelopmentType"`
+	DisableDevelopment               bool     `json:"DisableDevelopment" xml:"DisableDevelopment"`
+	ProjectOwnerBaseId               string   `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
+	BaseProject                      bool     `json:"BaseProject" xml:"BaseProject"`
+	UseProxyOdpsAccount              bool     `json:"UseProxyOdpsAccount" xml:"UseProxyOdpsAccount"`
+	GmtCreate                        string   `json:"GmtCreate" xml:"GmtCreate"`
+	TenantId                         int64    `json:"TenantId" xml:"TenantId"`
 	EnvTypes                         []string `json:"EnvTypes" xml:"EnvTypes"`
 }

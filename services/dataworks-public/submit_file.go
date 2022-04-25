@@ -80,12 +80,12 @@ type SubmitFileRequest struct {
 // SubmitFileResponse is the response struct for api SubmitFile
 type SubmitFileResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           int64  `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data           int64  `json:"Data" xml:"Data"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateSubmitFileRequest creates a request to invoke SubmitFile API

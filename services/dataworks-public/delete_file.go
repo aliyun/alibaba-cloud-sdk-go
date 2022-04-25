@@ -79,12 +79,12 @@ type DeleteFileRequest struct {
 // DeleteFileResponse is the response struct for api DeleteFile
 type DeleteFileResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	DeploymentId   int64  `json:"DeploymentId" xml:"DeploymentId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
 // CreateDeleteFileRequest creates a request to invoke DeleteFile API

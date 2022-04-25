@@ -78,8 +78,8 @@ type ImportDataSourcesRequest struct {
 // ImportDataSourcesResponse is the response struct for api ImportDataSources
 type ImportDataSourcesResponse struct {
 	*responses.BaseResponse
-	RequestId string                  `json:"RequestId" xml:"RequestId"`
 	Success   bool                    `json:"Success" xml:"Success"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
 	Data      DataInImportDataSources `json:"Data" xml:"Data"`
 }
 

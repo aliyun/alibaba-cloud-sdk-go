@@ -17,17 +17,17 @@ package dataworks_public
 
 // FileVersion is a nested struct in dataworks_public response
 type FileVersion struct {
-	FileVersion         int    `json:"FileVersion" xml:"FileVersion"`
 	FileContent         string `json:"FileContent" xml:"FileContent"`
-	CommitTime          int64  `json:"CommitTime" xml:"CommitTime"`
-	CommitUser          string `json:"CommitUser" xml:"CommitUser"`
-	FileName            string `json:"FileName" xml:"FileName"`
 	Status              string `json:"Status" xml:"Status"`
-	ChangeType          string `json:"ChangeType" xml:"ChangeType"`
 	IsCurrentProd       bool   `json:"IsCurrentProd" xml:"IsCurrentProd"`
-	NodeId              int64  `json:"NodeId" xml:"NodeId"`
-	Comment             string `json:"Comment" xml:"Comment"`
+	CommitUser          string `json:"CommitUser" xml:"CommitUser"`
 	NodeContent         string `json:"NodeContent" xml:"NodeContent"`
+	Comment             string `json:"Comment" xml:"Comment"`
 	FilePropertyContent string `json:"FilePropertyContent" xml:"FilePropertyContent"`
+	FileName            string `json:"FileName" xml:"FileName"`
 	UseType             string `json:"UseType" xml:"UseType"`
+	ChangeType          string `json:"ChangeType" xml:"ChangeType"`
+	FileVersion         int    `json:"FileVersion" xml:"FileVersion"`
+	CommitTime          int64  `json:"CommitTime" xml:"CommitTime"`
+	NodeId              int64  `json:"NodeId" xml:"NodeId"`
 }

@@ -17,11 +17,11 @@ package dataworks_public
 
 // ThemeListItem is a nested struct in dataworks_public response
 type ThemeListItem struct {
+	CreateTimeStamp int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	ParentId        int64  `json:"ParentId" xml:"ParentId"`
 	ThemeId         int64  `json:"ThemeId" xml:"ThemeId"`
+	ProjectId       int64  `json:"ProjectId" xml:"ProjectId"`
 	Name            string `json:"Name" xml:"Name"`
 	Level           int    `json:"Level" xml:"Level"`
-	ParentId        int64  `json:"ParentId" xml:"ParentId"`
-	ProjectId       int64  `json:"ProjectId" xml:"ProjectId"`
 	Creator         string `json:"Creator" xml:"Creator"`
-	CreateTimeStamp int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 }

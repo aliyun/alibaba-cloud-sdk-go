@@ -17,13 +17,13 @@ package dataworks_public
 
 // InfluencesItem is a nested struct in dataworks_public response
 type InfluencesItem struct {
+	Status       string `json:"Status" xml:"Status"`
+	Owner        string `json:"Owner" xml:"Owner"`
+	BaselineName string `json:"BaselineName" xml:"BaselineName"`
 	BaselineId   int64  `json:"BaselineId" xml:"BaselineId"`
 	Bizdate      int64  `json:"Bizdate" xml:"Bizdate"`
-	InGroupId    int    `json:"InGroupId" xml:"InGroupId"`
-	BaselineName string `json:"BaselineName" xml:"BaselineName"`
-	Owner        string `json:"Owner" xml:"Owner"`
-	Status       string `json:"Status" xml:"Status"`
+	Buffer       int64  `json:"Buffer" xml:"Buffer"`
 	ProjectId    int64  `json:"ProjectId" xml:"ProjectId"`
 	Priority     int    `json:"Priority" xml:"Priority"`
-	Buffer       int64  `json:"Buffer" xml:"Buffer"`
+	InGroupId    int    `json:"InGroupId" xml:"InGroupId"`
 }

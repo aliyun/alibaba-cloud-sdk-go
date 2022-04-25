@@ -17,16 +17,16 @@ package dataworks_public
 
 // TopicsItemInListTopics is a nested struct in dataworks_public response
 type TopicsItemInListTopics struct {
-	TopicId     int64  `json:"TopicId" xml:"TopicId"`
 	TopicName   string `json:"TopicName" xml:"TopicName"`
-	TopicStatus string `json:"TopicStatus" xml:"TopicStatus"`
-	TopicType   string `json:"TopicType" xml:"TopicType"`
-	AddTime     int64  `json:"AddTime" xml:"AddTime"`
-	HappenTime  int64  `json:"HappenTime" xml:"HappenTime"`
-	FixTime     int64  `json:"FixTime" xml:"FixTime"`
-	InstanceId  int64  `json:"InstanceId" xml:"InstanceId"`
-	NodeId      int64  `json:"NodeId" xml:"NodeId"`
-	NodeName    string `json:"NodeName" xml:"NodeName"`
-	NodeOwner   string `json:"NodeOwner" xml:"NodeOwner"`
 	ProjectId   int64  `json:"ProjectId" xml:"ProjectId"`
+	NodeOwner   string `json:"NodeOwner" xml:"NodeOwner"`
+	InstanceId  int64  `json:"InstanceId" xml:"InstanceId"`
+	FixTime     int64  `json:"FixTime" xml:"FixTime"`
+	TopicType   string `json:"TopicType" xml:"TopicType"`
+	TopicStatus string `json:"TopicStatus" xml:"TopicStatus"`
+	HappenTime  int64  `json:"HappenTime" xml:"HappenTime"`
+	NodeName    string `json:"NodeName" xml:"NodeName"`
+	TopicId     int64  `json:"TopicId" xml:"TopicId"`
+	AddTime     int64  `json:"AddTime" xml:"AddTime"`
+	NodeId      int64  `json:"NodeId" xml:"NodeId"`
 }

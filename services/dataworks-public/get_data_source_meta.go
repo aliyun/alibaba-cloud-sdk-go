@@ -81,8 +81,8 @@ type GetDataSourceMetaRequest struct {
 // GetDataSourceMetaResponse is the response struct for api GetDataSourceMeta
 type GetDataSourceMetaResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

@@ -17,15 +17,15 @@ package dataworks_public
 
 // SolutionDetail is a nested struct in dataworks_public response
 type SolutionDetail struct {
-	Id             int64  `json:"Id" xml:"Id"`
-	Type           string `json:"Type" xml:"Type"`
-	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
 	Status         string `json:"Status" xml:"Status"`
-	ProcessContent string `json:"ProcessContent" xml:"ProcessContent"`
+	Type           string `json:"Type" xml:"Type"`
 	StartTime      string `json:"StartTime" xml:"StartTime"`
-	Name           string `json:"Name" xml:"Name"`
 	CreatorName    string `json:"CreatorName" xml:"CreatorName"`
+	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
 	SourceType     string `json:"SourceType" xml:"SourceType"`
-	SubmitTime     string `json:"SubmitTime" xml:"SubmitTime"`
+	ProcessContent string `json:"ProcessContent" xml:"ProcessContent"`
+	Name           string `json:"Name" xml:"Name"`
 	ProcessExtra   string `json:"ProcessExtra" xml:"ProcessExtra"`
+	SubmitTime     string `json:"SubmitTime" xml:"SubmitTime"`
+	Id             int64  `json:"Id" xml:"Id"`
 }

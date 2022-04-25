@@ -17,19 +17,19 @@ package dataworks_public
 
 // RemindsItem is a nested struct in dataworks_public response
 type RemindsItem struct {
-	RemindId      int64    `json:"RemindId" xml:"RemindId"`
-	RemindName    string   `json:"RemindName" xml:"RemindName"`
-	DndStart      string   `json:"DndStart" xml:"DndStart"`
-	DndEnd        string   `json:"DndEnd" xml:"DndEnd"`
-	RemindUnit    string   `json:"RemindUnit" xml:"RemindUnit"`
-	RemindType    string   `json:"RemindType" xml:"RemindType"`
-	AlertUnit     string   `json:"AlertUnit" xml:"AlertUnit"`
-	Useflag       bool     `json:"Useflag" xml:"Useflag"`
 	Founder       string   `json:"Founder" xml:"Founder"`
-	NodeIds       []int64  `json:"NodeIds" xml:"NodeIds"`
-	BaselineIds   []int64  `json:"BaselineIds" xml:"BaselineIds"`
-	ProjectIds    []int64  `json:"ProjectIds" xml:"ProjectIds"`
-	BizProcessIds []int64  `json:"BizProcessIds" xml:"BizProcessIds"`
-	AlertMethods  []string `json:"AlertMethods" xml:"AlertMethods"`
+	RemindId      int64    `json:"RemindId" xml:"RemindId"`
+	AlertUnit     string   `json:"AlertUnit" xml:"AlertUnit"`
+	RemindType    string   `json:"RemindType" xml:"RemindType"`
+	DndEnd        string   `json:"DndEnd" xml:"DndEnd"`
+	DndStart      string   `json:"DndStart" xml:"DndStart"`
+	RemindUnit    string   `json:"RemindUnit" xml:"RemindUnit"`
+	Useflag       bool     `json:"Useflag" xml:"Useflag"`
+	RemindName    string   `json:"RemindName" xml:"RemindName"`
 	AlertTargets  []string `json:"AlertTargets" xml:"AlertTargets"`
+	NodeIds       []int64  `json:"NodeIds" xml:"NodeIds"`
+	BizProcessIds []int64  `json:"BizProcessIds" xml:"BizProcessIds"`
+	ProjectIds    []int64  `json:"ProjectIds" xml:"ProjectIds"`
+	BaselineIds   []int64  `json:"BaselineIds" xml:"BaselineIds"`
+	AlertMethods  []string `json:"AlertMethods" xml:"AlertMethods"`
 }

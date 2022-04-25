@@ -86,8 +86,8 @@ type UpdateMetaTableRequest struct {
 // UpdateMetaTableResponse is the response struct for api UpdateMetaTable
 type UpdateMetaTableResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	UpdateResult bool   `json:"UpdateResult" xml:"UpdateResult"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateMetaTableRequest creates a request to invoke UpdateMetaTable API

@@ -17,15 +17,15 @@ package dataworks_public
 
 // AlertMessagesItem is a nested struct in dataworks_public response
 type AlertMessagesItem struct {
-	AlertId            int64                           `json:"AlertId" xml:"AlertId"`
-	AlertTime          int64                           `json:"AlertTime" xml:"AlertTime"`
-	Source             string                          `json:"Source" xml:"Source"`
 	RemindId           int64                           `json:"RemindId" xml:"RemindId"`
-	RemindName         string                          `json:"RemindName" xml:"RemindName"`
-	AlertUser          string                          `json:"AlertUser" xml:"AlertUser"`
-	AlertMethod        string                          `json:"AlertMethod" xml:"AlertMethod"`
 	AlertMessageStatus string                          `json:"AlertMessageStatus" xml:"AlertMessageStatus"`
+	AlertUser          string                          `json:"AlertUser" xml:"AlertUser"`
+	AlertTime          int64                           `json:"AlertTime" xml:"AlertTime"`
+	AlertMethod        string                          `json:"AlertMethod" xml:"AlertMethod"`
+	Source             string                          `json:"Source" xml:"Source"`
 	Content            string                          `json:"Content" xml:"Content"`
+	RemindName         string                          `json:"RemindName" xml:"RemindName"`
+	AlertId            int64                           `json:"AlertId" xml:"AlertId"`
 	SlaAlert           SlaAlert                        `json:"SlaAlert" xml:"SlaAlert"`
 	Instances          []InstancesItem                 `json:"Instances" xml:"Instances"`
 	Topics             []TopicsItemInListAlertMessages `json:"Topics" xml:"Topics"`

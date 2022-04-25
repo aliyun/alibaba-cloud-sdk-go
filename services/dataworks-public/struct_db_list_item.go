@@ -17,11 +17,11 @@ package dataworks_public
 
 // DbListItem is a nested struct in dataworks_public response
 type DbListItem struct {
-	Name              string `json:"Name" xml:"Name"`
 	Type              string `json:"Type" xml:"Type"`
+	CreateTimeStamp   int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	UUID              string `json:"UUID" xml:"UUID"`
+	ModifiedTimeStamp int64  `json:"ModifiedTimeStamp" xml:"ModifiedTimeStamp"`
+	Name              string `json:"Name" xml:"Name"`
 	OwnerId           string `json:"OwnerId" xml:"OwnerId"`
 	Location          string `json:"Location" xml:"Location"`
-	CreateTimeStamp   int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	ModifiedTimeStamp int64  `json:"ModifiedTimeStamp" xml:"ModifiedTimeStamp"`
-	UUID              string `json:"UUID" xml:"UUID"`
 }

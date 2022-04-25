@@ -81,10 +81,10 @@ type UpdateConnectionRequest struct {
 // UpdateConnectionResponse is the response struct for api UpdateConnection
 type UpdateConnectionResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           bool   `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateConnectionRequest creates a request to invoke UpdateConnection API

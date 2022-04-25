@@ -77,12 +77,12 @@ type DeleteRemindRequest struct {
 // DeleteRemindResponse is the response struct for api DeleteRemind
 type DeleteRemindResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           bool   `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Data           bool   `json:"Data" xml:"Data"`
 }
 
 // CreateDeleteRemindRequest creates a request to invoke DeleteRemind API

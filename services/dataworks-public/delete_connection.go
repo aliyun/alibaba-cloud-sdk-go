@@ -77,10 +77,10 @@ type DeleteConnectionRequest struct {
 // DeleteConnectionResponse is the response struct for api DeleteConnection
 type DeleteConnectionResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           bool   `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteConnectionRequest creates a request to invoke DeleteConnection API

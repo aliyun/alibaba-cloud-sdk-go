@@ -17,8 +17,8 @@ package dataworks_public
 
 // SolutionInfo is a nested struct in dataworks_public response
 type SolutionInfo struct {
-	Id          int64            `json:"Id" xml:"Id"`
 	Status      string           `json:"Status" xml:"Status"`
+	Id          int64            `json:"Id" xml:"Id"`
 	CreatorName string           `json:"CreatorName" xml:"CreatorName"`
 	StepDetail  []StepDetailItem `json:"StepDetail" xml:"StepDetail"`
 }

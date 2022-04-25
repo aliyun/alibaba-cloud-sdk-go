@@ -78,12 +78,12 @@ type DeleteQualityRuleRequest struct {
 // DeleteQualityRuleResponse is the response struct for api DeleteQualityRule
 type DeleteQualityRuleResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           bool   `json:"Data" xml:"Data"`
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success        bool   `json:"Success" xml:"Success"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteQualityRuleRequest creates a request to invoke DeleteQualityRule API

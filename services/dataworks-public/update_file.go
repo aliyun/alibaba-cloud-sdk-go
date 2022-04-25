@@ -75,7 +75,9 @@ type UpdateFileRequest struct {
 	DependentNodeIdList     string           `position:"Body" name:"DependentNodeIdList"`
 	Content                 string           `position:"Body" name:"Content"`
 	ProjectIdentifier       string           `position:"Body" name:"ProjectIdentifier"`
+	StartImmediately        requests.Boolean `position:"Body" name:"StartImmediately"`
 	ProjectId               requests.Integer `position:"Body" name:"ProjectId"`
+	AdvancedSettings        string           `position:"Body" name:"AdvancedSettings"`
 	StartEffectDate         requests.Integer `position:"Body" name:"StartEffectDate"`
 	CycleType               string           `position:"Body" name:"CycleType"`
 	FileId                  requests.Integer `position:"Body" name:"FileId"`
@@ -84,12 +86,14 @@ type UpdateFileRequest struct {
 	InputList               string           `position:"Body" name:"InputList"`
 	RerunMode               string           `position:"Body" name:"RerunMode"`
 	ConnectionName          string           `position:"Body" name:"ConnectionName"`
+	OutputParameters        string           `position:"Body" name:"OutputParameters"`
 	ParaValue               string           `position:"Body" name:"ParaValue"`
 	ResourceGroupIdentifier string           `position:"Body" name:"ResourceGroupIdentifier"`
 	AutoRerunTimes          requests.Integer `position:"Body" name:"AutoRerunTimes"`
 	CronExpress             string           `position:"Body" name:"CronExpress"`
 	EndEffectDate           requests.Integer `position:"Body" name:"EndEffectDate"`
 	FileName                string           `position:"Body" name:"FileName"`
+	InputParameters         string           `position:"Body" name:"InputParameters"`
 	Stop                    requests.Boolean `position:"Body" name:"Stop"`
 	DependentType           string           `position:"Body" name:"DependentType"`
 	FileFolderPath          string           `position:"Body" name:"FileFolderPath"`

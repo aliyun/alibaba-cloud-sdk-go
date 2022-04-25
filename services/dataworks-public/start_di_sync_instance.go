@@ -80,8 +80,8 @@ type StartDISyncInstanceRequest struct {
 // StartDISyncInstanceResponse is the response struct for api StartDISyncInstance
 type StartDISyncInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

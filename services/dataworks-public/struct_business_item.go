@@ -17,10 +17,10 @@ package dataworks_public
 
 // BusinessItem is a nested struct in dataworks_public response
 type BusinessItem struct {
-	BusinessId   int64  `json:"BusinessId" xml:"BusinessId"`
-	BusinessName string `json:"BusinessName" xml:"BusinessName"`
-	ProjectId    int64  `json:"ProjectId" xml:"ProjectId"`
 	Owner        string `json:"Owner" xml:"Owner"`
 	Description  string `json:"Description" xml:"Description"`
+	ProjectId    int64  `json:"ProjectId" xml:"ProjectId"`
+	BusinessId   int64  `json:"BusinessId" xml:"BusinessId"`
+	BusinessName string `json:"BusinessName" xml:"BusinessName"`
 	UseType      string `json:"UseType" xml:"UseType"`
 }

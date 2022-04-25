@@ -77,12 +77,12 @@ type DeleteMetaCategoryRequest struct {
 // DeleteMetaCategoryResponse is the response struct for api DeleteMetaCategory
 type DeleteMetaCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Data           bool   `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteMetaCategoryRequest creates a request to invoke DeleteMetaCategory API

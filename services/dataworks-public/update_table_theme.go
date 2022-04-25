@@ -79,12 +79,12 @@ type UpdateTableThemeRequest struct {
 // UpdateTableThemeResponse is the response struct for api UpdateTableTheme
 type UpdateTableThemeResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	UpdateResult   bool   `json:"UpdateResult" xml:"UpdateResult"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateTableThemeRequest creates a request to invoke UpdateTableTheme API

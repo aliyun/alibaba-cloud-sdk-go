@@ -24,8 +24,8 @@ type Data struct {
 	ViewCount            int64                    `json:"ViewCount" xml:"ViewCount"`
 	TaskId               string                   `json:"TaskId" xml:"TaskId"`
 	Content              string                   `json:"Content" xml:"Content"`
-	EnvType              int                      `json:"EnvType" xml:"EnvType"`
 	ProjectName          string                   `json:"ProjectName" xml:"ProjectName"`
+	EnvType              int                      `json:"EnvType" xml:"EnvType"`
 	Message              string                   `json:"Message" xml:"Message"`
 	IsView               bool                     `json:"IsView" xml:"IsView"`
 	FinishTime           int64                    `json:"FinishTime" xml:"FinishTime"`
@@ -67,8 +67,8 @@ type Data struct {
 	Version              int64                    `json:"Version" xml:"Version"`
 	IsCurrentProd        bool                     `json:"IsCurrentProd" xml:"IsCurrentProd"`
 	GmtCreate            int64                    `json:"GmtCreate" xml:"GmtCreate"`
-	Caption              string                   `json:"Caption" xml:"Caption"`
 	ColumnCount          int                      `json:"ColumnCount" xml:"ColumnCount"`
+	Caption              string                   `json:"Caption" xml:"Caption"`
 	AppGuid              string                   `json:"AppGuid" xml:"AppGuid"`
 	NodeId               int64                    `json:"NodeId" xml:"NodeId"`
 	ClusterBizId         string                   `json:"ClusterBizId" xml:"ClusterBizId"`
@@ -105,7 +105,6 @@ type Data struct {
 	TableName            string                   `json:"TableName" xml:"TableName"`
 	CategoryId           int64                    `json:"CategoryId" xml:"CategoryId"`
 	Trend                string                   `json:"Trend" xml:"Trend"`
-	RealTimeSolution     string                   `json:"realTimeSolution" xml:"realTimeSolution"`
 	InstanceId           int64                    `json:"InstanceId" xml:"InstanceId"`
 	TaskType             string                   `json:"TaskType" xml:"TaskType"`
 	RemindUnit           string                   `json:"RemindUnit" xml:"RemindUnit"`
@@ -178,37 +177,37 @@ type Data struct {
 	SlaHour              int                      `json:"SlaHour" xml:"SlaHour"`
 	AlertMethods         []string                 `json:"AlertMethods" xml:"AlertMethods"`
 	AlertTargets         []string                 `json:"AlertTargets" xml:"AlertTargets"`
-	NodeConfiguration    NodeConfiguration        `json:"NodeConfiguration" xml:"NodeConfiguration"`
-	SolutionInfo         SolutionInfo             `json:"SolutionInfo" xml:"SolutionInfo"`
 	Deployment           Deployment               `json:"Deployment" xml:"Deployment"`
-	SolutionDetail       SolutionDetail           `json:"SolutionDetail" xml:"SolutionDetail"`
-	BlockInstance        BlockInstance            `json:"BlockInstance" xml:"BlockInstance"`
-	File                 File                     `json:"File" xml:"File"`
 	LastInstance         LastInstance             `json:"LastInstance" xml:"LastInstance"`
+	BlockInstance        BlockInstance            `json:"BlockInstance" xml:"BlockInstance"`
+	SolutionInfo         SolutionInfo             `json:"SolutionInfo" xml:"SolutionInfo"`
+	SolutionDetail       SolutionDetail           `json:"SolutionDetail" xml:"SolutionDetail"`
+	NodeConfiguration    NodeConfiguration        `json:"NodeConfiguration" xml:"NodeConfiguration"`
+	File                 File                     `json:"File" xml:"File"`
+	ColumnList           []ColumnListItem         `json:"ColumnList" xml:"ColumnList"`
 	ApiAuthorizationList []ApiAuthorization       `json:"ApiAuthorizationList" xml:"ApiAuthorizationList"`
 	Apis                 []Api                    `json:"Apis" xml:"Apis"`
-	Reminds              []RemindsItem            `json:"Reminds" xml:"Reminds"`
-	CalcEngines          []CalcEnginesItem        `json:"CalcEngines" xml:"CalcEngines"`
-	Instances            []Instance               `json:"Instances" xml:"Instances"`
-	DataEntityList       []DataEntityListItem     `json:"DataEntityList" xml:"DataEntityList"`
-	Folders              []FoldersItem            `json:"Folders" xml:"Folders"`
-	Projects             []ProjectsItem           `json:"Projects" xml:"Projects"`
-	Nodes                []NodesItem              `json:"Nodes" xml:"Nodes"`
 	DataSources          []DataSourcesItem        `json:"DataSources" xml:"DataSources"`
-	Influences           []InfluencesItem         `json:"Influences" xml:"Influences"`
+	Nodes                []NodesItem              `json:"Nodes" xml:"Nodes"`
+	FileVersions         []FileVersion            `json:"FileVersions" xml:"FileVersions"`
+	Files                []File                   `json:"Files" xml:"Files"`
 	Baselines            []BaselinesItem          `json:"Baselines" xml:"Baselines"`
-	BaselineStatuses     []BaselineStatusesItem   `json:"BaselineStatuses" xml:"BaselineStatuses"`
 	Connections          []ConnectionsItem        `json:"Connections" xml:"Connections"`
 	DISyncTasks          []DISyncTasksItem        `json:"DISyncTasks" xml:"DISyncTasks"`
+	Instances            []Instance               `json:"Instances" xml:"Instances"`
+	BaselineStatuses     []BaselineStatusesItem   `json:"BaselineStatuses" xml:"BaselineStatuses"`
+	DataEntityList       []DataEntityListItem     `json:"DataEntityList" xml:"DataEntityList"`
+	Projects             []ProjectsItem           `json:"Projects" xml:"Projects"`
+	Folders              []FoldersItem            `json:"Folders" xml:"Folders"`
 	Dags                 []Dag                    `json:"Dags" xml:"Dags"`
 	Robots               []RobotsItem             `json:"Robots" xml:"Robots"`
-	Business             []BusinessItem           `json:"Business" xml:"Business"`
 	BizProcesses         []BizProcessesItem       `json:"BizProcesses" xml:"BizProcesses"`
-	Topics               []TopicsItemInListTopics `json:"Topics" xml:"Topics"`
-	ColumnList           []ColumnListItem         `json:"ColumnList" xml:"ColumnList"`
-	FileVersions         []FileVersion            `json:"FileVersions" xml:"FileVersions"`
+	Influences           []InfluencesItem         `json:"Influences" xml:"Influences"`
+	CalcEngines          []CalcEnginesItem        `json:"CalcEngines" xml:"CalcEngines"`
+	Reminds              []RemindsItem            `json:"Reminds" xml:"Reminds"`
 	Applications         []Application            `json:"Applications" xml:"Applications"`
-	Files                []File                   `json:"Files" xml:"Files"`
 	ProjectMemberList    []ProjectMember          `json:"ProjectMemberList" xml:"ProjectMemberList"`
+	Topics               []TopicsItemInListTopics `json:"Topics" xml:"Topics"`
+	Business             []BusinessItem           `json:"Business" xml:"Business"`
 	ApiAuthorizedList    []ApiAuthorized          `json:"ApiAuthorizedList" xml:"ApiAuthorizedList"`
 }

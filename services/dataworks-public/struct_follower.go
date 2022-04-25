@@ -17,11 +17,11 @@ package dataworks_public
 
 // Follower is a nested struct in dataworks_public response
 type Follower struct {
-	ProjectName         string `json:"ProjectName" xml:"ProjectName"`
-	TableName           string `json:"TableName" xml:"TableName"`
-	Id                  int64  `json:"Id" xml:"Id"`
-	EntityId            string `json:"EntityId" xml:"EntityId"`
-	Follower            string `json:"Follower" xml:"Follower"`
-	AlarmMode           int    `json:"AlarmMode" xml:"AlarmMode"`
 	FollowerAccountName string `json:"FollowerAccountName" xml:"FollowerAccountName"`
+	TableName           string `json:"TableName" xml:"TableName"`
+	AlarmMode           int    `json:"AlarmMode" xml:"AlarmMode"`
+	EntityId            string `json:"EntityId" xml:"EntityId"`
+	ProjectName         string `json:"ProjectName" xml:"ProjectName"`
+	Id                  int64  `json:"Id" xml:"Id"`
+	Follower            string `json:"Follower" xml:"Follower"`
 }

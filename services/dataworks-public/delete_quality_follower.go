@@ -78,12 +78,12 @@ type DeleteQualityFollowerRequest struct {
 // DeleteQualityFollowerResponse is the response struct for api DeleteQualityFollower
 type DeleteQualityFollowerResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Data           bool   `json:"Data" xml:"Data"`
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           bool   `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteQualityFollowerRequest creates a request to invoke DeleteQualityFollower API

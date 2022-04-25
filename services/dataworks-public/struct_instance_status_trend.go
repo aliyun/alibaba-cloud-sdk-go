@@ -17,7 +17,7 @@ package dataworks_public
 
 // InstanceStatusTrend is a nested struct in dataworks_public response
 type InstanceStatusTrend struct {
+	TodayTrend     []TodayTrendItem     `json:"TodayTrend" xml:"TodayTrend"`
 	AvgTrend       []AvgTrendItem       `json:"AvgTrend" xml:"AvgTrend"`
 	YesterdayTrend []YesterdayTrendItem `json:"YesterdayTrend" xml:"YesterdayTrend"`
-	TodayTrend     []TodayTrendItem     `json:"TodayTrend" xml:"TodayTrend"`
 }

@@ -88,6 +88,7 @@ type UpdateQualityRuleRequest struct {
 	ExpectValue       string           `position:"Body" name:"ExpectValue"`
 	WhereCondition    string           `position:"Body" name:"WhereCondition"`
 	CriticalThreshold string           `position:"Body" name:"CriticalThreshold"`
+	OpenSwitch        requests.Boolean `position:"Body" name:"OpenSwitch"`
 	Comment           string           `position:"Body" name:"Comment"`
 	PredictType       requests.Integer `position:"Body" name:"PredictType"`
 }

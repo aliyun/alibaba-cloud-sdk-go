@@ -79,11 +79,11 @@ type CreateMetaCategoryRequest struct {
 // CreateMetaCategoryResponse is the response struct for api CreateMetaCategory
 type CreateMetaCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
 

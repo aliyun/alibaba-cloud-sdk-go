@@ -81,8 +81,8 @@ type UpdateTableModelInfoRequest struct {
 // UpdateTableModelInfoResponse is the response struct for api UpdateTableModelInfo
 type UpdateTableModelInfoResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	UpdateResult bool   `json:"UpdateResult" xml:"UpdateResult"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateTableModelInfoRequest creates a request to invoke UpdateTableModelInfo API

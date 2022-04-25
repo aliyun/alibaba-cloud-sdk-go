@@ -77,11 +77,11 @@ type GetNodeOnBaselineRequest struct {
 // GetNodeOnBaselineResponse is the response struct for api GetNodeOnBaseline
 type GetNodeOnBaselineResponse struct {
 	*responses.BaseResponse
-	Success        string     `json:"Success" xml:"Success"`
-	ErrorCode      string     `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string     `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string     `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string     `json:"ErrorCode" xml:"ErrorCode"`
+	Success        string     `json:"Success" xml:"Success"`
 	Data           []DataItem `json:"Data" xml:"Data"`
 }
 

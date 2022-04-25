@@ -17,12 +17,12 @@ package dataworks_public
 
 // BlockInstance is a nested struct in dataworks_public response
 type BlockInstance struct {
-	InstanceId int64  `json:"InstanceId" xml:"InstanceId"`
 	Status     string `json:"Status" xml:"Status"`
-	ProjectId  int64  `json:"ProjectId" xml:"ProjectId"`
 	Owner      string `json:"Owner" xml:"Owner"`
-	NodeId     int64  `json:"NodeId" xml:"NodeId"`
 	FinishTime int64  `json:"FinishTime" xml:"FinishTime"`
-	EndCast    int64  `json:"EndCast" xml:"EndCast"`
 	NodeName   string `json:"NodeName" xml:"NodeName"`
+	ProjectId  int64  `json:"ProjectId" xml:"ProjectId"`
+	InstanceId int64  `json:"InstanceId" xml:"InstanceId"`
+	EndCast    int64  `json:"EndCast" xml:"EndCast"`
+	NodeId     int64  `json:"NodeId" xml:"NodeId"`
 }

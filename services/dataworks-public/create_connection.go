@@ -83,10 +83,10 @@ type CreateConnectionRequest struct {
 // CreateConnectionResponse is the response struct for api CreateConnection
 type CreateConnectionResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           int64  `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateConnectionRequest creates a request to invoke CreateConnection API

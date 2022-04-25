@@ -17,8 +17,8 @@ package dataworks_public
 
 // LevelItem is a nested struct in dataworks_public response
 type LevelItem struct {
-	LevelId     int64  `json:"LevelId" xml:"LevelId"`
-	Name        string `json:"Name" xml:"Name"`
 	Type        int    `json:"Type" xml:"Type"`
 	Description string `json:"Description" xml:"Description"`
+	Name        string `json:"Name" xml:"Name"`
+	LevelId     int64  `json:"LevelId" xml:"LevelId"`
 }

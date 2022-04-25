@@ -17,18 +17,18 @@ package dataworks_public
 
 // BaselineStatusesItem is a nested struct in dataworks_public response
 type BaselineStatusesItem struct {
+	Status       string `json:"Status" xml:"Status"`
+	Owner        string `json:"Owner" xml:"Owner"`
+	FinishTime   int64  `json:"FinishTime" xml:"FinishTime"`
+	ProjectId    int64  `json:"ProjectId" xml:"ProjectId"`
+	Priority     int    `json:"Priority" xml:"Priority"`
+	EndCast      int64  `json:"EndCast" xml:"EndCast"`
+	InGroupId    int    `json:"InGroupId" xml:"InGroupId"`
 	BaselineName string `json:"BaselineName" xml:"BaselineName"`
 	BaselineId   int64  `json:"BaselineId" xml:"BaselineId"`
-	Bizdate      int64  `json:"Bizdate" xml:"Bizdate"`
-	Owner        string `json:"Owner" xml:"Owner"`
-	ExpTime      int64  `json:"ExpTime" xml:"ExpTime"`
-	FinishTime   int64  `json:"FinishTime" xml:"FinishTime"`
-	EndCast      int64  `json:"EndCast" xml:"EndCast"`
-	SlaTime      int64  `json:"SlaTime" xml:"SlaTime"`
-	Priority     int    `json:"Priority" xml:"Priority"`
-	ProjectId    int64  `json:"ProjectId" xml:"ProjectId"`
-	Buffer       int64  `json:"Buffer" xml:"Buffer"`
-	Status       string `json:"Status" xml:"Status"`
 	FinishStatus string `json:"FinishStatus" xml:"FinishStatus"`
-	InGroupId    int    `json:"InGroupId" xml:"InGroupId"`
+	Bizdate      int64  `json:"Bizdate" xml:"Bizdate"`
+	Buffer       int64  `json:"Buffer" xml:"Buffer"`
+	SlaTime      int64  `json:"SlaTime" xml:"SlaTime"`
+	ExpTime      int64  `json:"ExpTime" xml:"ExpTime"`
 }

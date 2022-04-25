@@ -17,11 +17,11 @@ package dataworks_public
 
 // SlaAlert is a nested struct in dataworks_public response
 type SlaAlert struct {
+	Status        string `json:"Status" xml:"Status"`
+	BaselineOwner string `json:"BaselineOwner" xml:"BaselineOwner"`
 	BaselineId    int64  `json:"BaselineId" xml:"BaselineId"`
 	BaselineName  string `json:"BaselineName" xml:"BaselineName"`
-	BaselineOwner string `json:"BaselineOwner" xml:"BaselineOwner"`
 	Bizdate       int64  `json:"Bizdate" xml:"Bizdate"`
-	InGroupId     int    `json:"InGroupId" xml:"InGroupId"`
 	ProjectId     int64  `json:"ProjectId" xml:"ProjectId"`
-	Status        string `json:"Status" xml:"Status"`
+	InGroupId     int    `json:"InGroupId" xml:"InGroupId"`
 }

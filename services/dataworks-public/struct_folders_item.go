@@ -17,6 +17,6 @@ package dataworks_public
 
 // FoldersItem is a nested struct in dataworks_public response
 type FoldersItem struct {
-	FolderId   string `json:"FolderId" xml:"FolderId"`
 	FolderPath string `json:"FolderPath" xml:"FolderPath"`
+	FolderId   string `json:"FolderId" xml:"FolderId"`
 }

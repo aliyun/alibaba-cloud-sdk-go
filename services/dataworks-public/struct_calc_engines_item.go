@@ -17,17 +17,17 @@ package dataworks_public
 
 // CalcEnginesItem is a nested struct in dataworks_public response
 type CalcEnginesItem struct {
-	CalcEngineType     string                 `json:"CalcEngineType" xml:"CalcEngineType"`
-	GmtCreate          string                 `json:"GmtCreate" xml:"GmtCreate"`
-	DwRegion           string                 `json:"DwRegion" xml:"DwRegion"`
-	IsDefault          bool                   `json:"IsDefault" xml:"IsDefault"`
-	BindingProjectId   int                    `json:"BindingProjectId" xml:"BindingProjectId"`
-	EnvType            string                 `json:"EnvType" xml:"EnvType"`
-	TenantId           int64                  `json:"TenantId" xml:"TenantId"`
-	Name               string                 `json:"Name" xml:"Name"`
 	BindingProjectName string                 `json:"BindingProjectName" xml:"BindingProjectName"`
-	Region             string                 `json:"Region" xml:"Region"`
+	IsDefault          bool                   `json:"IsDefault" xml:"IsDefault"`
 	EngineId           int                    `json:"EngineId" xml:"EngineId"`
-	EngineInfo         map[string]interface{} `json:"EngineInfo" xml:"EngineInfo"`
+	DwRegion           string                 `json:"DwRegion" xml:"DwRegion"`
 	TaskAuthType       string                 `json:"TaskAuthType" xml:"TaskAuthType"`
+	CalcEngineType     string                 `json:"CalcEngineType" xml:"CalcEngineType"`
+	EngineInfo         map[string]interface{} `json:"EngineInfo" xml:"EngineInfo"`
+	EnvType            string                 `json:"EnvType" xml:"EnvType"`
+	Region             string                 `json:"Region" xml:"Region"`
+	GmtCreate          string                 `json:"GmtCreate" xml:"GmtCreate"`
+	BindingProjectId   int                    `json:"BindingProjectId" xml:"BindingProjectId"`
+	Name               string                 `json:"Name" xml:"Name"`
+	TenantId           int64                  `json:"TenantId" xml:"TenantId"`
 }

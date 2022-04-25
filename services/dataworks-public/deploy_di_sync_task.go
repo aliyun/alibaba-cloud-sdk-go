@@ -79,8 +79,8 @@ type DeployDISyncTaskRequest struct {
 // DeployDISyncTaskResponse is the response struct for api DeployDISyncTask
 type DeployDISyncTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

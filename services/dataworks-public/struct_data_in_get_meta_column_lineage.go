@@ -17,8 +17,8 @@ package dataworks_public
 
 // DataInGetMetaColumnLineage is a nested struct in dataworks_public response
 type DataInGetMetaColumnLineage struct {
-	TotalCount     int64                `json:"TotalCount" xml:"TotalCount"`
 	PageNum        int                  `json:"PageNum" xml:"PageNum"`
 	PageSize       int                  `json:"PageSize" xml:"PageSize"`
+	TotalCount     int64                `json:"TotalCount" xml:"TotalCount"`
 	DataEntityList []DataEntityListItem `json:"DataEntityList" xml:"DataEntityList"`
 }

@@ -84,8 +84,8 @@ type CreateManualDagRequest struct {
 // CreateManualDagResponse is the response struct for api CreateManualDag
 type CreateManualDagResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	DagId     int64  `json:"DagId" xml:"DagId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateManualDagRequest creates a request to invoke CreateManualDag API

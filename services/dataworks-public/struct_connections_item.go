@@ -17,22 +17,22 @@ package dataworks_public
 
 // ConnectionsItem is a nested struct in dataworks_public response
 type ConnectionsItem struct {
-	Shared              bool   `json:"Shared" xml:"Shared"`
-	GmtModified         string `json:"GmtModified" xml:"GmtModified"`
-	ConnectStatus       int    `json:"ConnectStatus" xml:"ConnectStatus"`
-	BindingCalcEngineId int    `json:"BindingCalcEngineId" xml:"BindingCalcEngineId"`
-	Description         string `json:"Description" xml:"Description"`
+	Status              int    `json:"Status" xml:"Status"`
 	ConnectionType      string `json:"ConnectionType" xml:"ConnectionType"`
+	ProjectId           int    `json:"ProjectId" xml:"ProjectId"`
+	SubType             string `json:"SubType" xml:"SubType"`
+	GmtModified         string `json:"GmtModified" xml:"GmtModified"`
+	EnvType             int    `json:"EnvType" xml:"EnvType"`
+	ConnectStatus       int    `json:"ConnectStatus" xml:"ConnectStatus"`
+	Sequence            int    `json:"Sequence" xml:"Sequence"`
+	Description         string `json:"Description" xml:"Description"`
 	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
 	DefaultEngine       bool   `json:"DefaultEngine" xml:"DefaultEngine"`
+	Shared              bool   `json:"Shared" xml:"Shared"`
 	Operator            string `json:"Operator" xml:"Operator"`
-	Sequence            int    `json:"Sequence" xml:"Sequence"`
-	EnvType             int    `json:"EnvType" xml:"EnvType"`
-	TenantId            int64  `json:"TenantId" xml:"TenantId"`
 	Name                string `json:"Name" xml:"Name"`
-	SubType             string `json:"SubType" xml:"SubType"`
-	Id                  int    `json:"Id" xml:"Id"`
-	ProjectId           int    `json:"ProjectId" xml:"ProjectId"`
-	Status              int    `json:"Status" xml:"Status"`
 	Content             string `json:"Content" xml:"Content"`
+	Id                  int    `json:"Id" xml:"Id"`
+	BindingCalcEngineId int    `json:"BindingCalcEngineId" xml:"BindingCalcEngineId"`
+	TenantId            int64  `json:"TenantId" xml:"TenantId"`
 }

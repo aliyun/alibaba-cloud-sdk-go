@@ -81,8 +81,8 @@ type CheckMetaTableRequest struct {
 // CheckMetaTableResponse is the response struct for api CheckMetaTable
 type CheckMetaTableResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCheckMetaTableRequest creates a request to invoke CheckMetaTable API

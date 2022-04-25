@@ -42,6 +42,6 @@ type DataItem struct {
 	NodeId            int64                  `json:"NodeId" xml:"NodeId"`
 	Identifier        string                 `json:"Identifier" xml:"Identifier"`
 	ProjectId         int64                  `json:"ProjectId" xml:"ProjectId"`
-	Topics            []TopicsItem           `json:"Topics" xml:"Topics"`
 	Runs              []RunsItem             `json:"Runs" xml:"Runs"`
+	Topics            []TopicsItem           `json:"Topics" xml:"Topics"`
 }

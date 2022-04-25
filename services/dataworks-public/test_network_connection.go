@@ -80,8 +80,8 @@ type TestNetworkConnectionRequest struct {
 // TestNetworkConnectionResponse is the response struct for api TestNetworkConnection
 type TestNetworkConnectionResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Success   bool     `json:"Success" xml:"Success"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	TaskList  TaskList `json:"TaskList" xml:"TaskList"`
 }
 

@@ -78,8 +78,8 @@ type UpdateMetaTableIntroWikiRequest struct {
 // UpdateMetaTableIntroWikiResponse is the response struct for api UpdateMetaTableIntroWiki
 type UpdateMetaTableIntroWikiResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	UpdateResult bool   `json:"UpdateResult" xml:"UpdateResult"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateMetaTableIntroWikiRequest creates a request to invoke UpdateMetaTableIntroWiki API

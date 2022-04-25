@@ -17,22 +17,22 @@ package dataworks_public
 
 // DataInGetProjectDetail is a nested struct in dataworks_public response
 type DataInGetProjectDetail struct {
-	GmtModified                      string   `json:"GmtModified" xml:"GmtModified"`
-	DefaultDiResourceGroupIdentifier string   `json:"DefaultDiResourceGroupIdentifier" xml:"DefaultDiResourceGroupIdentifier"`
-	IsAllowDownload                  int      `json:"IsAllowDownload" xml:"IsAllowDownload"`
-	SchedulerRetryInterval           int      `json:"SchedulerRetryInterval" xml:"SchedulerRetryInterval"`
+	Status                           int      `json:"Status" xml:"Status"`
 	ResidentArea                     string   `json:"ResidentArea" xml:"ResidentArea"`
-	ProjectOwnerBaseId               string   `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
+	ProjectId                        int      `json:"ProjectId" xml:"ProjectId"`
+	ProjectIdentifier                string   `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
+	ProjectName                      string   `json:"ProjectName" xml:"ProjectName"`
+	IsAllowDownload                  int      `json:"IsAllowDownload" xml:"IsAllowDownload"`
 	ProjectMode                      int      `json:"ProjectMode" xml:"ProjectMode"`
+	ProjectDescription               string   `json:"ProjectDescription" xml:"ProjectDescription"`
+	GmtModified                      string   `json:"GmtModified" xml:"GmtModified"`
+	ProjectOwnerBaseId               string   `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
+	DevelopmentType                  int      `json:"DevelopmentType" xml:"DevelopmentType"`
+	DefaultDiResourceGroupIdentifier string   `json:"DefaultDiResourceGroupIdentifier" xml:"DefaultDiResourceGroupIdentifier"`
 	GmtCreate                        string   `json:"GmtCreate" xml:"GmtCreate"`
+	SchedulerMaxRetryTimes           int      `json:"SchedulerMaxRetryTimes" xml:"SchedulerMaxRetryTimes"`
 	ProtectedMode                    int      `json:"ProtectedMode" xml:"ProtectedMode"`
 	TenantId                         int64    `json:"TenantId" xml:"TenantId"`
-	ProjectDescription               string   `json:"ProjectDescription" xml:"ProjectDescription"`
-	SchedulerMaxRetryTimes           int      `json:"SchedulerMaxRetryTimes" xml:"SchedulerMaxRetryTimes"`
-	ProjectName                      string   `json:"ProjectName" xml:"ProjectName"`
-	ProjectIdentifier                string   `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
-	ProjectId                        int      `json:"ProjectId" xml:"ProjectId"`
-	Status                           int      `json:"Status" xml:"Status"`
-	DevelopmentType                  int      `json:"DevelopmentType" xml:"DevelopmentType"`
+	SchedulerRetryInterval           int      `json:"SchedulerRetryInterval" xml:"SchedulerRetryInterval"`
 	EnvTypes                         []string `json:"EnvTypes" xml:"EnvTypes"`
 }

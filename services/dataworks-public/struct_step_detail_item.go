@@ -17,7 +17,7 @@ package dataworks_public
 
 // StepDetailItem is a nested struct in dataworks_public response
 type StepDetailItem struct {
-	StepName string `json:"StepName" xml:"StepName"`
-	StepId   int64  `json:"StepId" xml:"StepId"`
 	Status   string `json:"Status" xml:"Status"`
+	StepId   int64  `json:"StepId" xml:"StepId"`
+	StepName string `json:"StepName" xml:"StepName"`
 }

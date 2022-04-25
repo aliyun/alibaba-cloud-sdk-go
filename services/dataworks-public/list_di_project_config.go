@@ -79,8 +79,8 @@ type ListDIProjectConfigRequest struct {
 // ListDIProjectConfigResponse is the response struct for api ListDIProjectConfig
 type ListDIProjectConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

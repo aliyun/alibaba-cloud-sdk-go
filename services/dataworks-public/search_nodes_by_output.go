@@ -78,12 +78,12 @@ type SearchNodesByOutputRequest struct {
 // SearchNodesByOutputResponse is the response struct for api SearchNodesByOutput
 type SearchNodesByOutputResponse struct {
 	*responses.BaseResponse
-	Success        bool                   `json:"Success" xml:"Success"`
 	HttpStatusCode int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	ErrorCode      string                 `json:"ErrorCode" xml:"ErrorCode"`
+	Data           map[string]interface{} `json:"Data" xml:"Data"`
 	ErrorMessage   string                 `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId      string                 `json:"RequestId" xml:"RequestId"`
-	Data           map[string]interface{} `json:"Data" xml:"Data"`
+	Success        bool                   `json:"Success" xml:"Success"`
+	ErrorCode      string                 `json:"ErrorCode" xml:"ErrorCode"`
 }
 
 // CreateSearchNodesByOutputRequest creates a request to invoke SearchNodesByOutput API

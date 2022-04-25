@@ -17,10 +17,10 @@ package dataworks_public
 
 // TopicsItemInListAlertMessages is a nested struct in dataworks_public response
 type TopicsItemInListAlertMessages struct {
-	NodeId      int64  `json:"NodeId" xml:"NodeId"`
+	TopicName   string `json:"TopicName" xml:"TopicName"`
 	InstanceId  int64  `json:"InstanceId" xml:"InstanceId"`
 	TopicId     int64  `json:"TopicId" xml:"TopicId"`
-	TopicName   string `json:"TopicName" xml:"TopicName"`
 	TopicOwner  string `json:"TopicOwner" xml:"TopicOwner"`
+	NodeId      int64  `json:"NodeId" xml:"NodeId"`
 	TopicStatus string `json:"TopicStatus" xml:"TopicStatus"`
 }

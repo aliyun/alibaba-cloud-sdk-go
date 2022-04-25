@@ -84,8 +84,8 @@ type ExportDataSourcesRequest struct {
 type ExportDataSourcesResponse struct {
 	*responses.BaseResponse
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
 

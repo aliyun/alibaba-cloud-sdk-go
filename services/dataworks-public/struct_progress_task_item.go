@@ -17,6 +17,6 @@ package dataworks_public
 
 // ProgressTaskItem is a nested struct in dataworks_public response
 type ProgressTaskItem struct {
-	TaskName   string `json:"TaskName" xml:"TaskName"`
 	TaskStatus string `json:"TaskStatus" xml:"TaskStatus"`
+	TaskName   string `json:"TaskName" xml:"TaskName"`
 }

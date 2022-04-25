@@ -17,27 +17,27 @@ package dataworks_public
 
 // DataInGetTopic is a nested struct in dataworks_public response
 type DataInGetTopic struct {
-	TopicId           int64  `json:"TopicId" xml:"TopicId"`
+	Owner             string `json:"Owner" xml:"Owner"`
 	TopicName         string `json:"TopicName" xml:"TopicName"`
-	TopicStatus       string `json:"TopicStatus" xml:"TopicStatus"`
-	TopicType         string `json:"TopicType" xml:"TopicType"`
-	AddTime           int64  `json:"AddTime" xml:"AddTime"`
-	AlertTime         int64  `json:"AlertTime" xml:"AlertTime"`
-	Assigner          string `json:"Assigner" xml:"Assigner"`
-	BaselineId        int64  `json:"BaselineId" xml:"BaselineId"`
-	BaselineName      string `json:"BaselineName" xml:"BaselineName"`
-	BaselineInGroupId int    `json:"BaselineInGroupId" xml:"BaselineInGroupId"`
 	BaselineStatus    string `json:"BaselineStatus" xml:"BaselineStatus"`
+	ProjectId         int64  `json:"ProjectId" xml:"ProjectId"`
+	NextAlertTime     int64  `json:"NextAlertTime" xml:"NextAlertTime"`
+	InstanceId        int64  `json:"InstanceId" xml:"InstanceId"`
+	FixTime           int64  `json:"FixTime" xml:"FixTime"`
+	BaselineInGroupId int    `json:"BaselineInGroupId" xml:"BaselineInGroupId"`
 	BaselineBuffer    int64  `json:"BaselineBuffer" xml:"BaselineBuffer"`
-	Buffer            int64  `json:"Buffer" xml:"Buffer"`
+	TopicType         string `json:"TopicType" xml:"TopicType"`
+	TopicStatus       string `json:"TopicStatus" xml:"TopicStatus"`
+	HappenTime        int64  `json:"HappenTime" xml:"HappenTime"`
 	DealTime          int64  `json:"DealTime" xml:"DealTime"`
 	DealUser          string `json:"DealUser" xml:"DealUser"`
-	FixTime           int64  `json:"FixTime" xml:"FixTime"`
-	HappenTime        int64  `json:"HappenTime" xml:"HappenTime"`
-	InstanceId        int64  `json:"InstanceId" xml:"InstanceId"`
-	NextAlertTime     int64  `json:"NextAlertTime" xml:"NextAlertTime"`
-	NodeId            int64  `json:"NodeId" xml:"NodeId"`
+	BaselineName      string `json:"BaselineName" xml:"BaselineName"`
+	BaselineId        int64  `json:"BaselineId" xml:"BaselineId"`
 	NodeName          string `json:"NodeName" xml:"NodeName"`
-	Owner             string `json:"Owner" xml:"Owner"`
-	ProjectId         int64  `json:"ProjectId" xml:"ProjectId"`
+	AlertTime         int64  `json:"AlertTime" xml:"AlertTime"`
+	Buffer            int64  `json:"Buffer" xml:"Buffer"`
+	Assigner          string `json:"Assigner" xml:"Assigner"`
+	TopicId           int64  `json:"TopicId" xml:"TopicId"`
+	AddTime           int64  `json:"AddTime" xml:"AddTime"`
+	NodeId            int64  `json:"NodeId" xml:"NodeId"`
 }

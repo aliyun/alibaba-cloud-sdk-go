@@ -17,8 +17,8 @@ package dataworks_public
 
 // ThemeItem is a nested struct in dataworks_public response
 type ThemeItem struct {
-	ThemeId  int64  `json:"ThemeId" xml:"ThemeId"`
-	Name     string `json:"Name" xml:"Name"`
-	Level    int    `json:"Level" xml:"Level"`
 	ParentId int64  `json:"ParentId" xml:"ParentId"`
+	Name     string `json:"Name" xml:"Name"`
+	ThemeId  int64  `json:"ThemeId" xml:"ThemeId"`
+	Level    int    `json:"Level" xml:"Level"`
 }

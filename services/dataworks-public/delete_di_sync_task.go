@@ -79,8 +79,8 @@ type DeleteDISyncTaskRequest struct {
 // DeleteDISyncTaskResponse is the response struct for api DeleteDISyncTask
 type DeleteDISyncTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

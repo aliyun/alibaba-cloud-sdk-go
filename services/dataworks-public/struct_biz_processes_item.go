@@ -17,6 +17,6 @@ package dataworks_public
 
 // BizProcessesItem is a nested struct in dataworks_public response
 type BizProcessesItem struct {
-	BizId          int64  `json:"BizId" xml:"BizId"`
 	BizProcessName string `json:"BizProcessName" xml:"BizProcessName"`
+	BizId          int64  `json:"BizId" xml:"BizId"`
 }

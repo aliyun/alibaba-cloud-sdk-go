@@ -78,8 +78,8 @@ type GetProjectDetailRequest struct {
 type GetProjectDetailResponse struct {
 	*responses.BaseResponse
 	HttpStatusCode int                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool                   `json:"Success" xml:"Success"`
 	RequestId      string                 `json:"RequestId" xml:"RequestId"`
+	Success        bool                   `json:"Success" xml:"Success"`
 	Data           DataInGetProjectDetail `json:"Data" xml:"Data"`
 }
 

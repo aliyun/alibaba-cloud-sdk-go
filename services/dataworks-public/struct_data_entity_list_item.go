@@ -32,8 +32,8 @@ type DataEntityListItem struct {
 	TaskId            string `json:"TaskId" xml:"TaskId"`
 	ColumnName        string `json:"ColumnName" xml:"ColumnName"`
 	ParentCategoryId  int64  `json:"ParentCategoryId" xml:"ParentCategoryId"`
-	EnvType           int    `json:"EnvType" xml:"EnvType"`
 	ProjectName       string `json:"ProjectName" xml:"ProjectName"`
+	EnvType           int    `json:"EnvType" xml:"EnvType"`
 	PartitionGuid     string `json:"PartitionGuid" xml:"PartitionGuid"`
 	Depth             int    `json:"Depth" xml:"Depth"`
 	TableGuid         string `json:"TableGuid" xml:"TableGuid"`

@@ -79,12 +79,12 @@ type UpdateMetaCategoryRequest struct {
 // UpdateMetaCategoryResponse is the response struct for api UpdateMetaCategory
 type UpdateMetaCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Data           bool   `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateMetaCategoryRequest creates a request to invoke UpdateMetaCategory API

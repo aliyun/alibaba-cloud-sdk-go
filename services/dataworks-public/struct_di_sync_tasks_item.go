@@ -17,9 +17,9 @@ package dataworks_public
 
 // DISyncTasksItem is a nested struct in dataworks_public response
 type DISyncTasksItem struct {
-	NodeName                string `json:"NodeName" xml:"NodeName"`
-	NodeId                  int64  `json:"NodeId" xml:"NodeId"`
+	DiSourceDatasource      string `json:"DiSourceDatasource" xml:"DiSourceDatasource"`
 	TaskType                string `json:"TaskType" xml:"TaskType"`
 	DiDestinationDatasource string `json:"DiDestinationDatasource" xml:"DiDestinationDatasource"`
-	DiSourceDatasource      string `json:"DiSourceDatasource" xml:"DiSourceDatasource"`
+	NodeName                string `json:"NodeName" xml:"NodeName"`
+	NodeId                  int64  `json:"NodeId" xml:"NodeId"`
 }

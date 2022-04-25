@@ -79,8 +79,8 @@ type GetDISyncInstanceInfoRequest struct {
 // GetDISyncInstanceInfoResponse is the response struct for api GetDISyncInstanceInfo
 type GetDISyncInstanceInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

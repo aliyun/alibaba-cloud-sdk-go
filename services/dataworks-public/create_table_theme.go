@@ -80,10 +80,10 @@ type CreateTableThemeRequest struct {
 // CreateTableThemeResponse is the response struct for api CreateTableTheme
 type CreateTableThemeResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ThemeId        int64  `json:"ThemeId" xml:"ThemeId"`
 }

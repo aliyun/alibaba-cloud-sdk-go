@@ -17,11 +17,11 @@ package dataworks_public
 
 // Project is a nested struct in dataworks_public response
 type Project struct {
+	ProjectStatusCode  string `json:"ProjectStatusCode" xml:"ProjectStatusCode"`
+	ProjectStatus      int    `json:"ProjectStatus" xml:"ProjectStatus"`
 	ProjectName        string `json:"ProjectName" xml:"ProjectName"`
 	ProjectIdentifier  string `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
-	ProjectDescription string `json:"ProjectDescription" xml:"ProjectDescription"`
-	ProjectStatus      int    `json:"ProjectStatus" xml:"ProjectStatus"`
 	ProjectId          int64  `json:"ProjectId" xml:"ProjectId"`
+	ProjectDescription string `json:"ProjectDescription" xml:"ProjectDescription"`
 	ProjectOwnerBaseId string `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
-	ProjectStatusCode  string `json:"ProjectStatusCode" xml:"ProjectStatusCode"`
 }

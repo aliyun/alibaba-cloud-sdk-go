@@ -78,8 +78,8 @@ type DeleteTableLevelRequest struct {
 // DeleteTableLevelResponse is the response struct for api DeleteTableLevel
 type DeleteTableLevelResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DeleteResult bool   `json:"DeleteResult" xml:"DeleteResult"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteTableLevelRequest creates a request to invoke DeleteTableLevel API

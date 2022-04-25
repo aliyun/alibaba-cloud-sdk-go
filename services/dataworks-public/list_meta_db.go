@@ -73,6 +73,7 @@ type ListMetaDBRequest struct {
 	*requests.RpcRequest
 	DataSourceType string           `position:"Query" name:"DataSourceType"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	ProjectId      requests.Integer `position:"Query" name:"ProjectId"`
 }

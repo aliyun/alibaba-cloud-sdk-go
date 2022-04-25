@@ -79,12 +79,12 @@ type CreateFolderRequest struct {
 // CreateFolderResponse is the response struct for api CreateFolder
 type CreateFolderResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           string `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data           string `json:"Data" xml:"Data"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateCreateFolderRequest creates a request to invoke CreateFolder API

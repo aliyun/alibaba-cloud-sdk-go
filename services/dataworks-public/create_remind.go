@@ -91,12 +91,12 @@ type CreateRemindRequest struct {
 // CreateRemindResponse is the response struct for api CreateRemind
 type CreateRemindResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           int64  `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Data           int64  `json:"Data" xml:"Data"`
 }
 
 // CreateCreateRemindRequest creates a request to invoke CreateRemind API
