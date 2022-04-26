@@ -76,6 +76,7 @@ type ModifyUserRequest struct {
 	WorkMode   string `position:"Query" name:"WorkMode"`
 	UserId     string `position:"Query" name:"UserId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	DisplayId  string `position:"Query" name:"DisplayId"`
 }
 
 // ModifyUserResponse is the response struct for api ModifyUser

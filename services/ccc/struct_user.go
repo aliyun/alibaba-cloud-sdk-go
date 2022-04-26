@@ -27,4 +27,5 @@ type User struct {
 	Extension   string `json:"Extension" xml:"Extension"`
 	DisplayName string `json:"DisplayName" xml:"DisplayName"`
 	RoleName    string `json:"RoleName" xml:"RoleName"`
+	RamId       string `json:"RamId" xml:"RamId"`
 }

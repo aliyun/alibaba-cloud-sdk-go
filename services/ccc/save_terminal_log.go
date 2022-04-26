@@ -85,11 +85,11 @@ type SaveTerminalLogRequest struct {
 // SaveTerminalLogResponse is the response struct for api SaveTerminalLog
 type SaveTerminalLogResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
 	HttpStatusCode int64  `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
 	TimeStamp      int64  `json:"TimeStamp" xml:"TimeStamp"`
 }
 

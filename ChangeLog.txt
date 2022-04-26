@@ -1,3 +1,7 @@
+2022-04-26 Version: v1.61.1577
+- Generated 2020-07-01 for `CCC`.
+- Support to pass variables to authentication IVR.
+
 2022-04-25 Version: v1.61.1576
 - Generated 2020-05-18 for `dataworks-public`.
 

@@ -71,11 +71,12 @@ func (client *Client) LaunchAuthenticationWithCallback(request *LaunchAuthentica
 // LaunchAuthenticationRequest is the request struct for api LaunchAuthentication
 type LaunchAuthenticationRequest struct {
 	*requests.RpcRequest
-	ContactFlowId string `position:"Query" name:"ContactFlowId"`
-	UserId        string `position:"Query" name:"UserId"`
-	DeviceId      string `position:"Query" name:"DeviceId"`
-	JobId         string `position:"Query" name:"JobId"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
+	ContactFlowId        string `position:"Query" name:"ContactFlowId"`
+	ContactFlowVariables string `position:"Query" name:"ContactFlowVariables"`
+	UserId               string `position:"Query" name:"UserId"`
+	DeviceId             string `position:"Query" name:"DeviceId"`
+	JobId                string `position:"Query" name:"JobId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
 }
 
 // LaunchAuthenticationResponse is the response struct for api LaunchAuthentication

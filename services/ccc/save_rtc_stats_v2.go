@@ -82,13 +82,13 @@ type SaveRTCStatsV2Request struct {
 // SaveRTCStatsV2Response is the response struct for api SaveRTCStatsV2
 type SaveRTCStatsV2Response struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
 	HttpStatusCode int64  `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	RowCount       int64  `json:"RowCount" xml:"RowCount"`
 	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
 	TimeStamp      int64  `json:"TimeStamp" xml:"TimeStamp"`
+	RowCount       int64  `json:"RowCount" xml:"RowCount"`
 }
 
 // CreateSaveRTCStatsV2Request creates a request to invoke SaveRTCStatsV2 API

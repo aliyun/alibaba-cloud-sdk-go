@@ -17,15 +17,16 @@ package ccc
 
 // DataItem is a nested struct in ccc response
 type DataItem struct {
-	Name       string                            `json:"Name" xml:"Name"`
-	StateCode  string                            `json:"StateCode" xml:"StateCode"`
-	StartTime  int64                             `json:"StartTime" xml:"StartTime"`
-	State      string                            `json:"State" xml:"State"`
-	InstanceId string                            `json:"InstanceId" xml:"InstanceId"`
-	Scope      string                            `json:"Scope" xml:"Scope"`
-	StatsTime  int64                             `json:"StatsTime" xml:"StatsTime"`
-	Duration   int64                             `json:"Duration" xml:"Duration"`
-	Outbound   OutboundInListIntervalAgentReport `json:"Outbound" xml:"Outbound"`
-	Inbound    Inbound                           `json:"Inbound" xml:"Inbound"`
-	Overall    Overall                           `json:"Overall" xml:"Overall"`
+	Name             string                            `json:"Name" xml:"Name"`
+	StateCode        string                            `json:"StateCode" xml:"StateCode"`
+	StartTime        int64                             `json:"StartTime" xml:"StartTime"`
+	State            string                            `json:"State" xml:"State"`
+	OutboundScenario bool                              `json:"OutboundScenario" xml:"OutboundScenario"`
+	InstanceId       string                            `json:"InstanceId" xml:"InstanceId"`
+	Scope            string                            `json:"Scope" xml:"Scope"`
+	StatsTime        int64                             `json:"StatsTime" xml:"StatsTime"`
+	Duration         int64                             `json:"Duration" xml:"Duration"`
+	Outbound         OutboundInListIntervalAgentReport `json:"Outbound" xml:"Outbound"`
+	Inbound          Inbound                           `json:"Inbound" xml:"Inbound"`
+	Overall          Overall                           `json:"Overall" xml:"Overall"`
 }

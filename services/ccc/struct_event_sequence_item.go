@@ -19,4 +19,5 @@ package ccc
 type EventSequenceItem struct {
 	Event     string `json:"Event" xml:"Event"`
 	EventTime int64  `json:"EventTime" xml:"EventTime"`
+	Duration  int64  `json:"Duration" xml:"Duration"`
 }

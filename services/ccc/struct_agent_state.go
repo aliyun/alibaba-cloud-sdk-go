@@ -17,13 +17,14 @@ package ccc
 
 // AgentState is a nested struct in ccc response
 type AgentState struct {
-	Extension        string   `json:"Extension" xml:"Extension"`
-	StateCode        string   `json:"StateCode" xml:"StateCode"`
-	State            string   `json:"State" xml:"State"`
-	AgentId          string   `json:"AgentId" xml:"AgentId"`
-	StateTime        int64    `json:"StateTime" xml:"StateTime"`
-	AgentName        string   `json:"AgentName" xml:"AgentName"`
-	InstanceId       string   `json:"InstanceId" xml:"InstanceId"`
-	CounterParty     string   `json:"CounterParty" xml:"CounterParty"`
-	SkillGroupIdList []string `json:"SkillGroupIdList" xml:"SkillGroupIdList"`
+	Extension          string   `json:"Extension" xml:"Extension"`
+	StateCode          string   `json:"StateCode" xml:"StateCode"`
+	State              string   `json:"State" xml:"State"`
+	AgentId            string   `json:"AgentId" xml:"AgentId"`
+	StateTime          int64    `json:"StateTime" xml:"StateTime"`
+	AgentName          string   `json:"AgentName" xml:"AgentName"`
+	InstanceId         string   `json:"InstanceId" xml:"InstanceId"`
+	CounterParty       string   `json:"CounterParty" xml:"CounterParty"`
+	SkillGroupIdList   []string `json:"SkillGroupIdList" xml:"SkillGroupIdList"`
+	SkillGroupNameList []string `json:"SkillGroupNameList" xml:"SkillGroupNameList"`
 }

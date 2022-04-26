@@ -18,5 +18,6 @@ package ccc
 // IvrEventsItem is a nested struct in ccc response
 type IvrEventsItem struct {
 	FlowId        string              `json:"FlowId" xml:"FlowId"`
+	FlowType      string              `json:"FlowType" xml:"FlowType"`
 	EventSequence []EventSequenceItem `json:"EventSequence" xml:"EventSequence"`
 }

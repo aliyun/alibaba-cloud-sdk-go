@@ -71,11 +71,14 @@ func (client *Client) LaunchSurveyWithCallback(request *LaunchSurveyRequest, cal
 // LaunchSurveyRequest is the request struct for api LaunchSurvey
 type LaunchSurveyRequest struct {
 	*requests.RpcRequest
-	ContactFlowId string `position:"Query" name:"ContactFlowId"`
-	UserId        string `position:"Query" name:"UserId"`
-	DeviceId      string `position:"Query" name:"DeviceId"`
-	JobId         string `position:"Query" name:"JobId"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
+	ContactFlowId        string `position:"Query" name:"ContactFlowId"`
+	ContactFlowVariables string `position:"Query" name:"ContactFlowVariables"`
+	UserId               string `position:"Query" name:"UserId"`
+	DeviceId             string `position:"Query" name:"DeviceId"`
+	JobId                string `position:"Query" name:"JobId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
+	SmsMetadataId        string `position:"Query" name:"SmsMetadataId"`
+	SurveyChannel        string `position:"Query" name:"SurveyChannel"`
 }
 
 // LaunchSurveyResponse is the response struct for api LaunchSurvey

@@ -81,13 +81,13 @@ type SaveWebRtcInfoRequest struct {
 // SaveWebRtcInfoResponse is the response struct for api SaveWebRtcInfo
 type SaveWebRtcInfoResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
 	HttpStatusCode int64  `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	RowCount       int64  `json:"RowCount" xml:"RowCount"`
 	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
 	TimeStamp      int64  `json:"TimeStamp" xml:"TimeStamp"`
+	RowCount       int64  `json:"RowCount" xml:"RowCount"`
 }
 
 // CreateSaveWebRtcInfoRequest creates a request to invoke SaveWebRtcInfo API

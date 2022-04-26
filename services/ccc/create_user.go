@@ -78,6 +78,7 @@ type CreateUserRequest struct {
 	InstanceId     string           `position:"Query" name:"InstanceId"`
 	DisplayName    string           `position:"Query" name:"DisplayName"`
 	ResetPassword  requests.Boolean `position:"Query" name:"ResetPassword"`
+	DisplayId      string           `position:"Query" name:"DisplayId"`
 	SkillLevelList string           `position:"Query" name:"SkillLevelList"`
 	Email          string           `position:"Query" name:"Email"`
 }
