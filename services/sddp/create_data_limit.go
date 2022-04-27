@@ -76,6 +76,7 @@ type CreateDataLimitRequest struct {
 	Password        string           `position:"Query" name:"Password"`
 	BatchCreate     requests.Boolean `position:"Query" name:"BatchCreate"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Enable          requests.Integer `position:"Query" name:"Enable"`
 	DataLimitList   string           `position:"Query" name:"DataLimitList"`
 	Lang            string           `position:"Query" name:"Lang"`
 	ServiceRegionId string           `position:"Query" name:"ServiceRegionId"`
