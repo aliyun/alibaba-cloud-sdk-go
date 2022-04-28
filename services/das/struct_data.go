@@ -112,5 +112,5 @@ type Data struct {
 	KeyPrefixes         KeyPrefixes                                `json:"KeyPrefixes" xml:"KeyPrefixes"`
 	List                ListInDescribeCacheAnalysisJobs            `json:"List" xml:"List"`
 	BigKeys             BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
-	Result              []ResultItem                               `json:"result" xml:"result"`
+	Result              []List                                     `json:"result" xml:"result"`
 }
