@@ -17,12 +17,12 @@ package mse
 
 // Cors is a nested struct in mse response
 type Cors struct {
-	Status           string `json:"Status" xml:"Status"`
+	ExposeHeaders    string `json:"ExposeHeaders" xml:"ExposeHeaders"`
+	AllowCredentials bool   `json:"AllowCredentials" xml:"AllowCredentials"`
 	AllowOrigins     string `json:"AllowOrigins" xml:"AllowOrigins"`
 	AllowMethods     string `json:"AllowMethods" xml:"AllowMethods"`
 	AllowHeaders     string `json:"AllowHeaders" xml:"AllowHeaders"`
-	ExposeHeaders    string `json:"ExposeHeaders" xml:"ExposeHeaders"`
-	TimeUnit         string `json:"TimeUnit" xml:"TimeUnit"`
+	Status           string `json:"Status" xml:"Status"`
 	UnitNum          int64  `json:"UnitNum" xml:"UnitNum"`
-	AllowCredentials bool   `json:"AllowCredentials" xml:"AllowCredentials"`
+	TimeUnit         string `json:"TimeUnit" xml:"TimeUnit"`
 }

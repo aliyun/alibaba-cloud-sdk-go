@@ -17,7 +17,8 @@ package mse
 
 // PullServices is a nested struct in mse response
 type PullServices struct {
-	Namespace string         `json:"Namespace" xml:"Namespace"`
-	GroupName string         `json:"GroupName" xml:"GroupName"`
-	Services  []ServicesItem `json:"Services" xml:"Services"`
+	Namespace         string         `json:"Namespace" xml:"Namespace"`
+	GroupName         string         `json:"GroupName" xml:"GroupName"`
+	NamespaceShowName string         `json:"NamespaceShowName" xml:"NamespaceShowName"`
+	Services          []ServicesItem `json:"Services" xml:"Services"`
 }

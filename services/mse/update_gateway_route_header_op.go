@@ -94,7 +94,7 @@ func CreateUpdateGatewayRouteHeaderOpRequest() (request *UpdateGatewayRouteHeade
 	request = &UpdateGatewayRouteHeaderOpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteHeaderOp", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteHeaderOp", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

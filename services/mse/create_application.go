@@ -75,7 +75,9 @@ type CreateApplicationRequest struct {
 	Source         string `position:"Query" name:"Source"`
 	ExtraInfo      string `position:"Query" name:"ExtraInfo"`
 	AppName        string `position:"Query" name:"AppName"`
+	SwitchEnable   string `position:"Query" name:"SwitchEnable"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	SentinelEnable string `position:"Query" name:"SentinelEnable"`
 	Region         string `position:"Query" name:"Region"`
 }
 
@@ -95,7 +97,7 @@ func CreateCreateApplicationRequest() (request *CreateApplicationRequest) {
 	request = &CreateApplicationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateApplication", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateApplication", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,8 +90,8 @@ func CreateQueryGatewayTypeRequest() (request *QueryGatewayTypeRequest) {
 	request = &QueryGatewayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryGatewayType", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryGatewayType", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

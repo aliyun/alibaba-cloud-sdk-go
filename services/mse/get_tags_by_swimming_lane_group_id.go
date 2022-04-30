@@ -85,7 +85,7 @@ func CreateGetTagsBySwimmingLaneGroupIdRequest() (request *GetTagsBySwimmingLane
 	request = &GetTagsBySwimmingLaneGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetTagsBySwimmingLaneGroupId", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetTagsBySwimmingLaneGroupId", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

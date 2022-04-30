@@ -17,22 +17,25 @@ package mse
 
 // Domains is a nested struct in mse response
 type Domains struct {
-	Name           string `json:"Name" xml:"Name"`
-	CommonName     string `json:"CommonName" xml:"CommonName"`
-	CertName       string `json:"CertName" xml:"CertName"`
-	CertBeforeDate string `json:"CertBeforeDate" xml:"CertBeforeDate"`
-	Protocol       string `json:"Protocol" xml:"Protocol"`
-	Issuer         string `json:"Issuer" xml:"Issuer"`
-	GmtBefore      string `json:"GmtBefore" xml:"GmtBefore"`
-	GatewayId      int64  `json:"GatewayId" xml:"GatewayId"`
-	Algorithm      string `json:"Algorithm" xml:"Algorithm"`
-	GmtModified    string `json:"GmtModified" xml:"GmtModified"`
-	Id             int64  `json:"Id" xml:"Id"`
-	CertIdentifier string `json:"CertIdentifier" xml:"CertIdentifier"`
-	GmtAfter       string `json:"GmtAfter" xml:"GmtAfter"`
-	GmtCreate      string `json:"GmtCreate" xml:"GmtCreate"`
-	AfterDate      string `json:"AfterDate" xml:"AfterDate"`
-	BeforeDate     string `json:"BeforeDate" xml:"BeforeDate"`
-	MustHttps      bool   `json:"MustHttps" xml:"MustHttps"`
-	Sans           string `json:"Sans" xml:"Sans"`
+	Name           string  `json:"Name" xml:"Name"`
+	CommonName     string  `json:"CommonName" xml:"CommonName"`
+	CertName       string  `json:"CertName" xml:"CertName"`
+	CertBeforeDate string  `json:"CertBeforeDate" xml:"CertBeforeDate"`
+	Status         int     `json:"Status" xml:"Status"`
+	Protocol       string  `json:"Protocol" xml:"Protocol"`
+	Issuer         string  `json:"Issuer" xml:"Issuer"`
+	GmtBefore      string  `json:"GmtBefore" xml:"GmtBefore"`
+	GatewayId      int64   `json:"GatewayId" xml:"GatewayId"`
+	Algorithm      string  `json:"Algorithm" xml:"Algorithm"`
+	GmtModified    string  `json:"GmtModified" xml:"GmtModified"`
+	Id             int64   `json:"Id" xml:"Id"`
+	CertIdentifier string  `json:"CertIdentifier" xml:"CertIdentifier"`
+	GmtAfter       string  `json:"GmtAfter" xml:"GmtAfter"`
+	GmtCreate      string  `json:"GmtCreate" xml:"GmtCreate"`
+	AfterDate      string  `json:"AfterDate" xml:"AfterDate"`
+	BeforeDate     string  `json:"BeforeDate" xml:"BeforeDate"`
+	MustHttps      bool    `json:"MustHttps" xml:"MustHttps"`
+	Sans           string  `json:"Sans" xml:"Sans"`
+	Type           string  `json:"Type" xml:"Type"`
+	Comment        Comment `json:"Comment" xml:"Comment"`
 }

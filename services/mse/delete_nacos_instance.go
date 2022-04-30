@@ -100,7 +100,7 @@ func CreateDeleteNacosInstanceRequest() (request *DeleteNacosInstanceRequest) {
 	request = &DeleteNacosInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosInstance", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteNacosInstance", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

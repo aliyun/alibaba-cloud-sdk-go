@@ -17,10 +17,10 @@ package mse
 
 // HTTPRewrite is a nested struct in mse response
 type HTTPRewrite struct {
-	Status       string `json:"Status" xml:"Status"`
 	Path         string `json:"Path" xml:"Path"`
 	Host         string `json:"Host" xml:"Host"`
 	PathType     string `json:"PathType" xml:"PathType"`
 	Pattern      string `json:"Pattern" xml:"Pattern"`
+	Status       string `json:"Status" xml:"Status"`
 	Substitution string `json:"Substitution" xml:"Substitution"`
 }

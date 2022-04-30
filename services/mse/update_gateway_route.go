@@ -77,6 +77,7 @@ type UpdateGatewayRouteRequest struct {
 	Id                 requests.Integer                     `position:"Query" name:"Id"`
 	GatewayId          requests.Integer                     `position:"Query" name:"GatewayId"`
 	RouteOrder         requests.Integer                     `position:"Query" name:"RouteOrder"`
+	EnableWaf          requests.Boolean                     `position:"Query" name:"EnableWaf"`
 	Services           *[]UpdateGatewayRouteServices        `position:"Query" name:"Services"  type:"Json"`
 	Predicates         UpdateGatewayRoutePredicates         `position:"Query" name:"Predicates"  type:"Struct"`
 	RedirectJSON       UpdateGatewayRouteRedirectJSON       `position:"Query" name:"RedirectJSON"  type:"Struct"`
@@ -154,7 +155,7 @@ func CreateUpdateGatewayRouteRequest() (request *UpdateGatewayRouteRequest) {
 	request = &UpdateGatewayRouteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRoute", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRoute", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

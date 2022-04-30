@@ -17,14 +17,15 @@ package mse
 
 // SourcesInListServiceSource is a nested struct in mse response
 type SourcesInListServiceSource struct {
-	Id                 int64  `json:"Id" xml:"Id"`
-	Name               string `json:"Name" xml:"Name"`
-	Address            string `json:"Address" xml:"Address"`
-	Type               string `json:"Type" xml:"Type"`
-	Source             string `json:"Source" xml:"Source"`
-	BindingWithGateway int    `json:"BindingWithGateway" xml:"BindingWithGateway"`
-	GatewayId          int64  `json:"GatewayId" xml:"GatewayId"`
-	GmtCreate          string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified        string `json:"GmtModified" xml:"GmtModified"`
-	SourceUniqueId     string `json:"SourceUniqueId" xml:"SourceUniqueId"`
+	Id                 int64          `json:"Id" xml:"Id"`
+	Name               string         `json:"Name" xml:"Name"`
+	Address            string         `json:"Address" xml:"Address"`
+	Type               string         `json:"Type" xml:"Type"`
+	Source             string         `json:"Source" xml:"Source"`
+	BindingWithGateway int            `json:"BindingWithGateway" xml:"BindingWithGateway"`
+	GatewayId          int64          `json:"GatewayId" xml:"GatewayId"`
+	GmtCreate          string         `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified        string         `json:"GmtModified" xml:"GmtModified"`
+	SourceUniqueId     string         `json:"SourceUniqueId" xml:"SourceUniqueId"`
+	IngressOptions     IngressOptions `json:"IngressOptions" xml:"IngressOptions"`
 }

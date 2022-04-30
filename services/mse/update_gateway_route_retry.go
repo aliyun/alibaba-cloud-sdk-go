@@ -102,7 +102,7 @@ func CreateUpdateGatewayRouteRetryRequest() (request *UpdateGatewayRouteRetryReq
 	request = &UpdateGatewayRouteRetryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteRetry", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteRetry", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

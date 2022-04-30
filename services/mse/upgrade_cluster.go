@@ -92,7 +92,7 @@ func CreateUpgradeClusterRequest() (request *UpgradeClusterRequest) {
 	request = &UpgradeClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpgradeCluster", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpgradeCluster", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

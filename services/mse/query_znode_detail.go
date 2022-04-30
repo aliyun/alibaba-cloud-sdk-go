@@ -73,6 +73,7 @@ type QueryZnodeDetailRequest struct {
 	*requests.RpcRequest
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
 	RequestPars    string `position:"Query" name:"RequestPars"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
@@ -92,7 +93,7 @@ func CreateQueryZnodeDetailRequest() (request *QueryZnodeDetailRequest) {
 	request = &QueryZnodeDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryZnodeDetail", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryZnodeDetail", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

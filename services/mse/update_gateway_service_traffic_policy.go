@@ -128,7 +128,7 @@ func CreateUpdateGatewayServiceTrafficPolicyRequest() (request *UpdateGatewaySer
 	request = &UpdateGatewayServiceTrafficPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayServiceTrafficPolicy", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayServiceTrafficPolicy", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateDeleteSwimmingLaneRequest() (request *DeleteSwimmingLaneRequest) {
 	request = &DeleteSwimmingLaneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteSwimmingLane", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteSwimmingLane", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

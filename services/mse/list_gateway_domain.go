@@ -72,6 +72,7 @@ func (client *Client) ListGatewayDomainWithCallback(request *ListGatewayDomainRe
 type ListGatewayDomainRequest struct {
 	*requests.RpcRequest
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
+	Type            string `position:"Query" name:"Type"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 
@@ -91,8 +92,8 @@ func CreateListGatewayDomainRequest() (request *ListGatewayDomainRequest) {
 	request = &ListGatewayDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListGatewayDomain", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "ListGatewayDomain", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

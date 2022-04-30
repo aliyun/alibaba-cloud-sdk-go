@@ -91,8 +91,8 @@ func CreateListGatewaySlbRequest() (request *ListGatewaySlbRequest) {
 	request = &ListGatewaySlbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListGatewaySlb", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "ListGatewaySlb", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

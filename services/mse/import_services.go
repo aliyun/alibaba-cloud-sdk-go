@@ -104,7 +104,7 @@ func CreateImportServicesRequest() (request *ImportServicesRequest) {
 	request = &ImportServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ImportServices", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ImportServices", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

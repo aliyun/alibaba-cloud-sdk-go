@@ -96,7 +96,7 @@ func CreateApplyTagPoliciesRequest() (request *ApplyTagPoliciesRequest) {
 	request = &ApplyTagPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ApplyTagPolicies", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ApplyTagPolicies", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

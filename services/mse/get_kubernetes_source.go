@@ -91,8 +91,8 @@ func CreateGetKubernetesSourceRequest() (request *GetKubernetesSourceRequest) {
 	request = &GetKubernetesSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetKubernetesSource", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "GetKubernetesSource", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

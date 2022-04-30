@@ -76,6 +76,7 @@ type CreateEngineNamespaceRequest struct {
 	ServiceCount   requests.Integer `position:"Query" name:"ServiceCount"`
 	Name           string           `position:"Query" name:"Name"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
+	Id             string           `position:"Query" name:"Id"`
 	Desc           string           `position:"Query" name:"Desc"`
 }
 
@@ -95,7 +96,7 @@ func CreateCreateEngineNamespaceRequest() (request *CreateEngineNamespaceRequest
 	request = &CreateEngineNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateEngineNamespace", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateEngineNamespace", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

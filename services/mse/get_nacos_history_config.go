@@ -94,7 +94,7 @@ func CreateGetNacosHistoryConfigRequest() (request *GetNacosHistoryConfigRequest
 	request = &GetNacosHistoryConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetNacosHistoryConfig", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetNacosHistoryConfig", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

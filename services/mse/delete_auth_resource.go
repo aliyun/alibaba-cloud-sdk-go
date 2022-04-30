@@ -92,8 +92,8 @@ func CreateDeleteAuthResourceRequest() (request *DeleteAuthResourceRequest) {
 	request = &DeleteAuthResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAuthResource", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteAuthResource", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

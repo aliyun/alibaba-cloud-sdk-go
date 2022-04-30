@@ -95,7 +95,7 @@ func CreateGetServiceListRequest() (request *GetServiceListRequest) {
 	request = &GetServiceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetServiceList", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetServiceList", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

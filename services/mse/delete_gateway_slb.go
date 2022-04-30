@@ -93,8 +93,8 @@ func CreateDeleteGatewaySlbRequest() (request *DeleteGatewaySlbRequest) {
 	request = &DeleteGatewaySlbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteGatewaySlb", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteGatewaySlb", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

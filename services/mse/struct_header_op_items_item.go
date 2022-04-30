@@ -17,8 +17,8 @@ package mse
 
 // HeaderOpItemsItem is a nested struct in mse response
 type HeaderOpItemsItem struct {
-	DirectionType string `json:"DirectionType" xml:"DirectionType"`
-	OpType        string `json:"OpType" xml:"OpType"`
 	Key           string `json:"Key" xml:"Key"`
 	Value         string `json:"Value" xml:"Value"`
+	DirectionType string `json:"DirectionType" xml:"DirectionType"`
+	OpType        string `json:"OpType" xml:"OpType"`
 }

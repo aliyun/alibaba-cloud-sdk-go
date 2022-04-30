@@ -90,7 +90,7 @@ func CreateQuerySlbSpecRequest() (request *QuerySlbSpecRequest) {
 	request = &QuerySlbSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QuerySlbSpec", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QuerySlbSpec", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

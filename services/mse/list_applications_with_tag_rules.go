@@ -83,12 +83,12 @@ type ListApplicationsWithTagRulesRequest struct {
 // ListApplicationsWithTagRulesResponse is the response struct for api ListApplicationsWithTagRules
 type ListApplicationsWithTagRulesResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int                                `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string                             `json:"Message" xml:"Message"`
-	RequestId      string                             `json:"RequestId" xml:"RequestId"`
-	Code           int                                `json:"Code" xml:"Code"`
-	Success        bool                               `json:"Success" xml:"Success"`
-	Data           DataInListApplicationsWithTagRules `json:"Data" xml:"Data"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Code           int    `json:"Code" xml:"Code"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListApplicationsWithTagRulesRequest creates a request to invoke ListApplicationsWithTagRules API
@@ -96,7 +96,7 @@ func CreateListApplicationsWithTagRulesRequest() (request *ListApplicationsWithT
 	request = &ListApplicationsWithTagRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListApplicationsWithTagRules", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListApplicationsWithTagRules", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

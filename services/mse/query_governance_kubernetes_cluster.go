@@ -81,12 +81,12 @@ type QueryGovernanceKubernetesClusterRequest struct {
 // QueryGovernanceKubernetesClusterResponse is the response struct for api QueryGovernanceKubernetesCluster
 type QueryGovernanceKubernetesClusterResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	HttpStatusCode int                                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                                 `json:"Message" xml:"Message"`
+	RequestId      string                                 `json:"RequestId" xml:"RequestId"`
+	Code           int                                    `json:"Code" xml:"Code"`
+	Success        bool                                   `json:"Success" xml:"Success"`
+	Data           DataInQueryGovernanceKubernetesCluster `json:"Data" xml:"Data"`
 }
 
 // CreateQueryGovernanceKubernetesClusterRequest creates a request to invoke QueryGovernanceKubernetesCluster API
@@ -94,7 +94,7 @@ func CreateQueryGovernanceKubernetesClusterRequest() (request *QueryGovernanceKu
 	request = &QueryGovernanceKubernetesClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryGovernanceKubernetesCluster", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryGovernanceKubernetesCluster", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

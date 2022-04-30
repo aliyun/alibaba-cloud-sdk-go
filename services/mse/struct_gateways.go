@@ -33,13 +33,16 @@ type Gateways struct {
 	StatusDesc      string        `json:"StatusDesc" xml:"StatusDesc"`
 	Upgrade         bool          `json:"Upgrade" xml:"Upgrade"`
 	MustUpgrade     bool          `json:"MustUpgrade" xml:"MustUpgrade"`
+	SupportWasm     bool          `json:"SupportWasm" xml:"SupportWasm"`
 	CurrentVersion  string        `json:"CurrentVersion" xml:"CurrentVersion"`
+	AppVersion      string        `json:"AppVersion" xml:"AppVersion"`
 	LatestVersion   string        `json:"LatestVersion" xml:"LatestVersion"`
 	Vswitch2        string        `json:"Vswitch2" xml:"Vswitch2"`
 	InstanceId      string        `json:"InstanceId" xml:"InstanceId"`
 	ChargeType      string        `json:"ChargeType" xml:"ChargeType"`
 	EndDate         string        `json:"EndDate" xml:"EndDate"`
 	Tag             string        `json:"Tag" xml:"Tag"`
+	InitConfig      InitConfig    `json:"InitConfig" xml:"InitConfig"`
 	Slb             []Slb         `json:"Slb" xml:"Slb"`
 	InternetSlb     []InternetSlb `json:"InternetSlb" xml:"InternetSlb"`
 }

@@ -97,7 +97,7 @@ func CreateUpdateBlackWhiteListRequest() (request *UpdateBlackWhiteListRequest) 
 	request = &UpdateBlackWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateBlackWhiteList", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateBlackWhiteList", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,7 +17,7 @@ package mse
 
 // Timeout is a nested struct in mse response
 type Timeout struct {
-	UnitNum  int    `json:"UnitNum" xml:"UnitNum"`
-	TimeUnit string `json:"TimeUnit" xml:"TimeUnit"`
 	Status   string `json:"Status" xml:"Status"`
+	TimeUnit string `json:"TimeUnit" xml:"TimeUnit"`
+	UnitNum  int    `json:"UnitNum" xml:"UnitNum"`
 }

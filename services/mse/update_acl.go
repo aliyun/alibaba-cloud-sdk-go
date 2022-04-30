@@ -91,7 +91,7 @@ func CreateUpdateAclRequest() (request *UpdateAclRequest) {
 	request = &UpdateAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateAcl", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateAcl", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

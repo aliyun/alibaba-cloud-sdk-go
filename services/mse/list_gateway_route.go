@@ -85,6 +85,7 @@ type ListGatewayRouteFilterParams struct {
 	RouteOrder       string `name:"RouteOrder"`
 	GatewayUniqueId  string `name:"GatewayUniqueId"`
 	Name             string `name:"Name"`
+	DomainName       string `name:"DomainName"`
 	GatewayId        string `name:"GatewayId"`
 	DomainId         string `name:"DomainId"`
 	Status           string `name:"Status"`
@@ -106,7 +107,7 @@ func CreateListGatewayRouteRequest() (request *ListGatewayRouteRequest) {
 	request = &ListGatewayRouteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListGatewayRoute", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListGatewayRoute", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

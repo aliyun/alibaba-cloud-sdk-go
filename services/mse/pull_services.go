@@ -71,7 +71,6 @@ func (client *Client) PullServicesWithCallback(request *PullServicesRequest, cal
 // PullServicesRequest is the request struct for api PullServices
 type PullServicesRequest struct {
 	*requests.RpcRequest
-	SourceId        string `position:"Query" name:"SourceId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 	SourceType      string `position:"Query" name:"SourceType"`
@@ -93,8 +92,8 @@ func CreatePullServicesRequest() (request *PullServicesRequest) {
 	request = &PullServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "PullServices", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "PullServices", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

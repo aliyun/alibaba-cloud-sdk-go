@@ -106,7 +106,7 @@ func CreateUpdateGatewayRouteCORSRequest() (request *UpdateGatewayRouteCORSReque
 	request = &UpdateGatewayRouteCORSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteCORS", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteCORS", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

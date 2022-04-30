@@ -101,7 +101,7 @@ func CreateUpdateGatewayRouteTimeoutRequest() (request *UpdateGatewayRouteTimeou
 	request = &UpdateGatewayRouteTimeoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteTimeout", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayRouteTimeout", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

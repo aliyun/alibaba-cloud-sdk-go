@@ -71,12 +71,20 @@ func (client *Client) AddServiceSourceWithCallback(request *AddServiceSourceRequ
 // AddServiceSourceRequest is the request struct for api AddServiceSource
 type AddServiceSourceRequest struct {
 	*requests.RpcRequest
-	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
-	Source          string `position:"Query" name:"Source"`
-	Type            string `position:"Query" name:"Type"`
-	Address         string `position:"Query" name:"Address"`
-	Name            string `position:"Query" name:"Name"`
-	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
+	IngressOptionsRequest AddServiceSourceIngressOptionsRequest `position:"Query" name:"IngressOptionsRequest"  type:"Struct"`
+	GatewayUniqueId       string                                `position:"Query" name:"GatewayUniqueId"`
+	Source                string                                `position:"Query" name:"Source"`
+	Type                  string                                `position:"Query" name:"Type"`
+	Address               string                                `position:"Query" name:"Address"`
+	Name                  string                                `position:"Query" name:"Name"`
+	AcceptLanguage        string                                `position:"Query" name:"AcceptLanguage"`
+}
+
+// AddServiceSourceIngressOptionsRequest is a repeated param struct in AddServiceSourceRequest
+type AddServiceSourceIngressOptionsRequest struct {
+	EnableIngress  string `name:"EnableIngress"`
+	WatchNamespace string `name:"WatchNamespace"`
+	IngressClass   string `name:"IngressClass"`
 }
 
 // AddServiceSourceResponse is the response struct for api AddServiceSource
@@ -95,7 +103,7 @@ func CreateAddServiceSourceRequest() (request *AddServiceSourceRequest) {
 	request = &AddServiceSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddServiceSource", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddServiceSource", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

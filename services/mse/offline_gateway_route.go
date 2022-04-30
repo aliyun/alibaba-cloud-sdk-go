@@ -92,8 +92,8 @@ func CreateOfflineGatewayRouteRequest() (request *OfflineGatewayRouteRequest) {
 	request = &OfflineGatewayRouteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "OfflineGatewayRoute", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "OfflineGatewayRoute", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

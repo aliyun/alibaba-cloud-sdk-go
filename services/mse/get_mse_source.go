@@ -91,7 +91,7 @@ func CreateGetMseSourceRequest() (request *GetMseSourceRequest) {
 	request = &GetMseSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetMseSource", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetMseSource", "mse", "openAPI")
 	request.Method = requests.GET
 	return
 }

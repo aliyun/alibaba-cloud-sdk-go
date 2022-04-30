@@ -92,8 +92,8 @@ func CreateDeleteGatewayRouteRequest() (request *DeleteGatewayRouteRequest) {
 	request = &DeleteGatewayRouteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "DeleteGatewayRoute", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "DeleteGatewayRoute", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -101,7 +101,7 @@ func CreateAddMockRuleRequest() (request *AddMockRuleRequest) {
 	request = &AddMockRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddMockRule", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddMockRule", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

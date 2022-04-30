@@ -96,7 +96,7 @@ func CreateCreateOrUpdateSwimmingLaneGroupRequest() (request *CreateOrUpdateSwim
 	request = &CreateOrUpdateSwimmingLaneGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "CreateOrUpdateSwimmingLaneGroup", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "CreateOrUpdateSwimmingLaneGroup", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

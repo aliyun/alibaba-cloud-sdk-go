@@ -86,7 +86,7 @@ func CreateListAppBySwimmingLaneGroupTagRequest() (request *ListAppBySwimmingLan
 	request = &ListAppBySwimmingLaneGroupTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "ListAppBySwimmingLaneGroupTag", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "ListAppBySwimmingLaneGroupTag", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

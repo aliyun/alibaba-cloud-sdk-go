@@ -17,8 +17,16 @@ package mse
 
 // ApplicationList is a nested struct in mse response
 type ApplicationList struct {
-	AppName     string      `json:"AppName" xml:"AppName"`
-	AppId       string      `json:"AppId" xml:"AppId"`
-	RouteStatus int64       `json:"RouteStatus" xml:"RouteStatus"`
-	RouteRules  []RouteRule `json:"RouteRules" xml:"RouteRules"`
+	AppId           string      `json:"AppId" xml:"AppId"`
+	LicenseKey      string      `json:"LicenseKey" xml:"LicenseKey"`
+	RegionId        string      `json:"RegionId" xml:"RegionId"`
+	Status          int64       `json:"Status" xml:"Status"`
+	UserId          string      `json:"UserId" xml:"UserId"`
+	Language        string      `json:"Language" xml:"Language"`
+	RouteStatus     int64       `json:"RouteStatus" xml:"RouteStatus"`
+	AppName         string      `json:"AppName" xml:"AppName"`
+	InstancesNumber int         `json:"InstancesNumber" xml:"InstancesNumber"`
+	Source          string      `json:"Source" xml:"Source"`
+	ExtraInfo       string      `json:"ExtraInfo" xml:"ExtraInfo"`
+	RouteRules      []RouteRule `json:"RouteRules" xml:"RouteRules"`
 }

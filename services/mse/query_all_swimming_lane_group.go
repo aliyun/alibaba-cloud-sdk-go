@@ -84,7 +84,7 @@ func CreateQueryAllSwimmingLaneGroupRequest() (request *QueryAllSwimmingLaneGrou
 	request = &QueryAllSwimmingLaneGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "QueryAllSwimmingLaneGroup", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "QueryAllSwimmingLaneGroup", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

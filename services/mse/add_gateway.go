@@ -100,7 +100,7 @@ func CreateAddGatewayRequest() (request *AddGatewayRequest) {
 	request = &AddGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddGateway", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddGateway", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

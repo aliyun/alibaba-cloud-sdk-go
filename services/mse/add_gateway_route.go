@@ -77,6 +77,7 @@ type AddGatewayRouteRequest struct {
 	DomainId           requests.Integer                  `position:"Query" name:"DomainId"`
 	GatewayId          requests.Integer                  `position:"Query" name:"GatewayId"`
 	RouteOrder         requests.Integer                  `position:"Query" name:"RouteOrder"`
+	EnableWaf          requests.Boolean                  `position:"Query" name:"EnableWaf"`
 	Services           *[]AddGatewayRouteServices        `position:"Query" name:"Services"  type:"Json"`
 	Predicates         AddGatewayRoutePredicates         `position:"Query" name:"Predicates"  type:"Struct"`
 	RedirectJSON       AddGatewayRouteRedirectJSON       `position:"Query" name:"RedirectJSON"  type:"Struct"`
@@ -154,7 +155,7 @@ func CreateAddGatewayRouteRequest() (request *AddGatewayRouteRequest) {
 	request = &AddGatewayRouteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "AddGatewayRoute", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "AddGatewayRoute", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

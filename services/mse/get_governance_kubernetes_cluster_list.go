@@ -81,12 +81,12 @@ type GetGovernanceKubernetesClusterListRequest struct {
 // GetGovernanceKubernetesClusterListResponse is the response struct for api GetGovernanceKubernetesClusterList
 type GetGovernanceKubernetesClusterListResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	HttpStatusCode int                                      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                                   `json:"Message" xml:"Message"`
+	RequestId      string                                   `json:"RequestId" xml:"RequestId"`
+	Code           int                                      `json:"Code" xml:"Code"`
+	Success        bool                                     `json:"Success" xml:"Success"`
+	Data           DataInGetGovernanceKubernetesClusterList `json:"Data" xml:"Data"`
 }
 
 // CreateGetGovernanceKubernetesClusterListRequest creates a request to invoke GetGovernanceKubernetesClusterList API
@@ -94,7 +94,7 @@ func CreateGetGovernanceKubernetesClusterListRequest() (request *GetGovernanceKu
 	request = &GetGovernanceKubernetesClusterListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetGovernanceKubernetesClusterList", "", "")
+	request.InitWithApiInfo("mse", "2019-05-31", "GetGovernanceKubernetesClusterList", "mse", "openAPI")
 	request.Method = requests.POST
 	return
 }

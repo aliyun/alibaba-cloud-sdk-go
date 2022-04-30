@@ -21,6 +21,7 @@ type Services struct {
 	ServiceNameInRegistry string         `json:"ServiceNameInRegistry" xml:"ServiceNameInRegistry"`
 	GatewayId             int64          `json:"GatewayId" xml:"GatewayId"`
 	MetaInfo              string         `json:"MetaInfo" xml:"MetaInfo"`
+	HealehStatus          string         `json:"HealehStatus" xml:"HealehStatus"`
 	GmtModified           string         `json:"GmtModified" xml:"GmtModified"`
 	ServicePort           int64          `json:"ServicePort" xml:"ServicePort"`
 	Id                    int64          `json:"Id" xml:"Id"`

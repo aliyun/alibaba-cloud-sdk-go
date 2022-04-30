@@ -32,10 +32,13 @@ type Routes struct {
 	DomainId           int64               `json:"DomainId" xml:"DomainId"`
 	DomainName         string              `json:"DomainName" xml:"DomainName"`
 	DestinationType    string              `json:"DestinationType" xml:"DestinationType"`
+	Type               string              `json:"Type" xml:"Type"`
+	EnableWaf          string              `json:"EnableWaf" xml:"EnableWaf"`
 	DomainIdList       []int64             `json:"DomainIdList" xml:"DomainIdList"`
 	DomainNameList     []string            `json:"DomainNameList" xml:"DomainNameList"`
 	RoutePredicates    RoutePredicates     `json:"RoutePredicates" xml:"RoutePredicates"`
 	DirectResponse     DirectResponse      `json:"DirectResponse" xml:"DirectResponse"`
 	Redirect           Redirect            `json:"Redirect" xml:"Redirect"`
+	Comment            Comment             `json:"Comment" xml:"Comment"`
 	RouteServices      []RouteServicesItem `json:"RouteServices" xml:"RouteServices"`
 }

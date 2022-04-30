@@ -92,8 +92,8 @@ func CreateGetGatewayRouteDetailRequest() (request *GetGatewayRouteDetailRequest
 	request = &GetGatewayRouteDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "GetGatewayRouteDetail", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "GetGatewayRouteDetail", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

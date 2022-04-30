@@ -92,8 +92,8 @@ func CreateUpdateGatewayNameRequest() (request *UpdateGatewayNameRequest) {
 	request = &UpdateGatewayNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayName", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("mse", "2019-05-31", "UpdateGatewayName", "mse", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

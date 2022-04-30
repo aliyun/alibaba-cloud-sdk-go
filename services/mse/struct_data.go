@@ -17,7 +17,9 @@ package mse
 
 // Data is a nested struct in mse response
 type Data struct {
+	IpProtocol                   string                   `json:"IpProtocol" xml:"IpProtocol"`
 	CurrentVersionFullShowName   string                   `json:"CurrentVersionFullShowName" xml:"CurrentVersionFullShowName"`
+	CertIdentifier               string                   `json:"CertIdentifier" xml:"CertIdentifier"`
 	Source                       string                   `json:"Source" xml:"Source"`
 	Predicates                   string                   `json:"Predicates" xml:"Predicates"`
 	Ephemeral                    bool                     `json:"Ephemeral" xml:"Ephemeral"`
@@ -27,6 +29,7 @@ type Data struct {
 	Sans                         string                   `json:"Sans" xml:"Sans"`
 	ServiceNameInRegistry        string                   `json:"ServiceNameInRegistry" xml:"ServiceNameInRegistry"`
 	PodName                      string                   `json:"podName" xml:"podName"`
+	PortRange                    string                   `json:"PortRange" xml:"PortRange"`
 	LicenseKey                   string                   `json:"LicenseKey" xml:"LicenseKey"`
 	Issuer                       string                   `json:"Issuer" xml:"Issuer"`
 	SyncLimit                    string                   `json:"SyncLimit" xml:"SyncLimit"`
@@ -47,11 +50,11 @@ type Data struct {
 	SelectorType                 string                   `json:"SelectorType" xml:"SelectorType"`
 	Name                         string                   `json:"Name" xml:"Name"`
 	CertName                     string                   `json:"CertName" xml:"CertName"`
+	SecurityGroupId              string                   `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	Language                     string                   `json:"Language" xml:"Language"`
 	MaxVersionChangelogUrl       string                   `json:"MaxVersionChangelogUrl" xml:"MaxVersionChangelogUrl"`
 	Vpc                          string                   `json:"Vpc" xml:"Vpc"`
 	PageSize                     int                      `json:"PageSize" xml:"PageSize"`
-	CertIdentifier               int                      `json:"CertIdentifier" xml:"CertIdentifier"`
 	GmtCreate                    string                   `json:"GmtCreate" xml:"GmtCreate"`
 	SourceType                   string                   `json:"SourceType" xml:"SourceType"`
 	InstanceId                   string                   `json:"InstanceId" xml:"InstanceId"`
@@ -92,6 +95,7 @@ type Data struct {
 	Data                         string                   `json:"Data" xml:"Data"`
 	ProtectThreshold             float64                  `json:"ProtectThreshold" xml:"ProtectThreshold"`
 	MCPSupported                 bool                     `json:"MCPSupported" xml:"MCPSupported"`
+	EnableWaf                    bool                     `json:"EnableWaf" xml:"EnableWaf"`
 	JvmFlagsCustom               string                   `json:"JvmFlagsCustom" xml:"JvmFlagsCustom"`
 	AppId                        string                   `json:"AppId" xml:"AppId"`
 	Metadata                     map[string]interface{}   `json:"Metadata" xml:"Metadata"`
@@ -123,6 +127,7 @@ type Data struct {
 	NamespaceShowName            string                   `json:"NamespaceShowName" xml:"NamespaceShowName"`
 	DestinationType              string                   `json:"DestinationType" xml:"DestinationType"`
 	Vswitch                      string                   `json:"Vswitch" xml:"Vswitch"`
+	Description                  string                   `json:"Description" xml:"Description"`
 	OpenSuperAcl                 bool                     `json:"OpenSuperAcl" xml:"OpenSuperAcl"`
 	Status                       int                      `json:"Status" xml:"Status"`
 	Protocol                     string                   `json:"Protocol" xml:"Protocol"`
@@ -135,6 +140,7 @@ type Data struct {
 	Namespace                    string                   `json:"Namespace" xml:"Namespace"`
 	NamespaceId                  string                   `json:"NamespaceId" xml:"NamespaceId"`
 	UserName                     string                   `json:"UserName" xml:"UserName"`
+	Tags                         []string                 `json:"Tags" xml:"Tags"`
 	Values                       []map[string]interface{} `json:"values" xml:"values"`
 	Ips                          []string                 `json:"Ips" xml:"Ips"`
 	DomainNameList               []string                 `json:"DomainNameList" xml:"DomainNameList"`
@@ -151,8 +157,8 @@ type Data struct {
 	RoutePredicates              RoutePredicates          `json:"RoutePredicates" xml:"RoutePredicates"`
 	LogConfigDetails             LogConfigDetails         `json:"LogConfigDetails" xml:"LogConfigDetails"`
 	Timeout                      Timeout                  `json:"Timeout" xml:"Timeout"`
-	Result                       []ClusterList            `json:"Result" xml:"Result"`
 	VersionDetails               []VersionDetailsItem     `json:"VersionDetails" xml:"VersionDetails"`
+	Result                       []ApplicationList        `json:"Result" xml:"Result"`
 	RouteServices                []RouteServicesItem      `json:"RouteServices" xml:"RouteServices"`
 	FailData                     []FailDataItem           `json:"FailData" xml:"FailData"`
 	SkipData                     []SkipDataItem           `json:"SkipData" xml:"SkipData"`
