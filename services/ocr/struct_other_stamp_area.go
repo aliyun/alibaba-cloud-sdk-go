@@ -17,8 +17,8 @@ package ocr
 
 // OtherStampArea is a nested struct in ocr response
 type OtherStampArea struct {
-	Left   int `json:"Left" xml:"Left"`
 	Top    int `json:"Top" xml:"Top"`
-	Height int `json:"Height" xml:"Height"`
 	Width  int `json:"Width" xml:"Width"`
+	Height int `json:"Height" xml:"Height"`
+	Left   int `json:"Left" xml:"Left"`
 }

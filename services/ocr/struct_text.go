@@ -17,6 +17,6 @@ package ocr
 
 // Text is a nested struct in ocr response
 type Text struct {
-	Content    string  `json:"Content" xml:"Content"`
 	Confidence float64 `json:"Confidence" xml:"Confidence"`
+	Content    string  `json:"Content" xml:"Content"`
 }

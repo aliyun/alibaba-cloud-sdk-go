@@ -71,13 +71,13 @@ func (client *Client) RecognizeTableWithCallback(request *RecognizeTableRequest,
 // RecognizeTableRequest is the request struct for api RecognizeTable
 type RecognizeTableRequest struct {
 	*requests.RpcRequest
-	ImageType       requests.Integer `position:"Body" name:"ImageType"`
 	UseFinanceModel requests.Boolean `position:"Body" name:"UseFinanceModel"`
 	SkipDetection   requests.Boolean `position:"Body" name:"SkipDetection"`
-	ImageURL        string           `position:"Body" name:"ImageURL"`
 	OutputFormat    string           `position:"Body" name:"OutputFormat"`
 	AssureDirection requests.Boolean `position:"Body" name:"AssureDirection"`
 	HasLine         requests.Boolean `position:"Body" name:"HasLine"`
+	ImageType       requests.Integer `position:"Body" name:"ImageType"`
+	ImageURL        string           `position:"Body" name:"ImageURL"`
 }
 
 // RecognizeTableResponse is the response struct for api RecognizeTable

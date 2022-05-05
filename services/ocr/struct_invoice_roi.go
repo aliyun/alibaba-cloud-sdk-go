@@ -17,8 +17,8 @@ package ocr
 
 // InvoiceRoi is a nested struct in ocr response
 type InvoiceRoi struct {
-	H float64 `json:"H" xml:"H"`
 	W float64 `json:"W" xml:"W"`
-	X float64 `json:"X" xml:"X"`
+	H float64 `json:"H" xml:"H"`
 	Y float64 `json:"Y" xml:"Y"`
+	X float64 `json:"X" xml:"X"`
 }

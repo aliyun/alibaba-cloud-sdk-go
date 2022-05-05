@@ -17,9 +17,9 @@ package ocr
 
 // TextsItem is a nested struct in ocr response
 type TextsItem struct {
-	Label  string  `json:"Label" xml:"Label"`
+	Type   string  `json:"Type" xml:"Type"`
 	Score  float64 `json:"Score" xml:"Score"`
 	Tag    string  `json:"Tag" xml:"Tag"`
-	Type   string  `json:"Type" xml:"Type"`
+	Label  string  `json:"Label" xml:"Label"`
 	Points []int   `json:"Points" xml:"Points"`
 }

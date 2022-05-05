@@ -71,10 +71,7 @@ func (client *Client) RecognizeQrCodeWithCallback(request *RecognizeQrCodeReques
 // RecognizeQrCodeRequest is the request struct for api RecognizeQrCode
 type RecognizeQrCodeRequest struct {
 	*requests.RpcRequest
-	FormatResultToJson requests.Boolean        `position:"Query" name:"FormatResultToJson"`
-	OssFile            string                  `position:"Query" name:"OssFile"`
-	Tasks              *[]RecognizeQrCodeTasks `position:"Body" name:"Tasks"  type:"Repeated"`
-	RequestProxyBy     string                  `position:"Query" name:"RequestProxyBy"`
+	Tasks *[]RecognizeQrCodeTasks `position:"Body" name:"Tasks"  type:"Repeated"`
 }
 
 // RecognizeQrCodeTasks is a repeated param struct in RecognizeQrCodeRequest

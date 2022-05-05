@@ -17,9 +17,9 @@ package ocr
 
 // Region is a nested struct in ocr response
 type Region struct {
-	Name             string    `json:"Name" xml:"Name"`
 	RecognitionScore float64   `json:"RecognitionScore" xml:"RecognitionScore"`
-	Content          string    `json:"Content" xml:"Content"`
 	DetectionScore   float64   `json:"DetectionScore" xml:"DetectionScore"`
+	Name             string    `json:"Name" xml:"Name"`
+	Content          string    `json:"Content" xml:"Content"`
 	BandBoxes        []float64 `json:"BandBoxes" xml:"BandBoxes"`
 }

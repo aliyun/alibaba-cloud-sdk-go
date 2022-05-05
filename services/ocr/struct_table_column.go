@@ -17,11 +17,11 @@ package ocr
 
 // TableColumn is a nested struct in ocr response
 type TableColumn struct {
-	StartColumn int      `json:"StartColumn" xml:"StartColumn"`
-	StartRow    int      `json:"StartRow" xml:"StartRow"`
-	EndColumn   int      `json:"EndColumn" xml:"EndColumn"`
 	EndRow      int      `json:"EndRow" xml:"EndRow"`
-	Height      int      `json:"Height" xml:"Height"`
+	EndColumn   int      `json:"EndColumn" xml:"EndColumn"`
 	Width       int      `json:"Width" xml:"Width"`
+	Height      int      `json:"Height" xml:"Height"`
+	StartRow    int      `json:"StartRow" xml:"StartRow"`
+	StartColumn int      `json:"StartColumn" xml:"StartColumn"`
 	Texts       []string `json:"Texts" xml:"Texts"`
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RecognizePDF invokes the ocr.RecognizePDF API synchronously
-func (client *Client) RecognizePDF(request *RecognizePDFRequest) (response *RecognizePDFResponse, err error) {
-	response = CreateRecognizePDFResponse()
+// RecognizePdf invokes the ocr.RecognizePdf API synchronously
+func (client *Client) RecognizePdf(request *RecognizePdfRequest) (response *RecognizePdfResponse, err error) {
+	response = CreateRecognizePdfResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RecognizePDFWithChan invokes the ocr.RecognizePDF API asynchronously
-func (client *Client) RecognizePDFWithChan(request *RecognizePDFRequest) (<-chan *RecognizePDFResponse, <-chan error) {
-	responseChan := make(chan *RecognizePDFResponse, 1)
+// RecognizePdfWithChan invokes the ocr.RecognizePdf API asynchronously
+func (client *Client) RecognizePdfWithChan(request *RecognizePdfRequest) (<-chan *RecognizePdfResponse, <-chan error) {
+	responseChan := make(chan *RecognizePdfResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RecognizePDF(request)
+		response, err := client.RecognizePdf(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RecognizePDFWithChan(request *RecognizePDFRequest) (<-chan
 	return responseChan, errChan
 }
 
-// RecognizePDFWithCallback invokes the ocr.RecognizePDF API asynchronously
-func (client *Client) RecognizePDFWithCallback(request *RecognizePDFRequest, callback func(response *RecognizePDFResponse, err error)) <-chan int {
+// RecognizePdfWithCallback invokes the ocr.RecognizePdf API asynchronously
+func (client *Client) RecognizePdfWithCallback(request *RecognizePdfRequest, callback func(response *RecognizePdfResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RecognizePDFResponse
+		var response *RecognizePdfResponse
 		var err error
 		defer close(result)
-		response, err = client.RecognizePDF(request)
+		response, err = client.RecognizePdf(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,34 @@ func (client *Client) RecognizePDFWithCallback(request *RecognizePDFRequest, cal
 	return result
 }
 
-// RecognizePDFRequest is the request struct for api RecognizePDF
-type RecognizePDFRequest struct {
+// RecognizePdfRequest is the request struct for api RecognizePdf
+type RecognizePdfRequest struct {
 	*requests.RpcRequest
 	FileURL string `position:"Body" name:"FileURL"`
 }
 
-// RecognizePDFResponse is the response struct for api RecognizePDF
-type RecognizePDFResponse struct {
+// RecognizePdfResponse is the response struct for api RecognizePdf
+type RecognizePdfResponse struct {
 	*responses.BaseResponse
 	RequestId string             `json:"RequestId" xml:"RequestId"`
 	Code      string             `json:"Code" xml:"Code"`
 	Message   string             `json:"Message" xml:"Message"`
-	Data      DataInRecognizePDF `json:"Data" xml:"Data"`
+	Data      DataInRecognizePdf `json:"Data" xml:"Data"`
 }
 
-// CreateRecognizePDFRequest creates a request to invoke RecognizePDF API
-func CreateRecognizePDFRequest() (request *RecognizePDFRequest) {
-	request = &RecognizePDFRequest{
+// CreateRecognizePdfRequest creates a request to invoke RecognizePdf API
+func CreateRecognizePdfRequest() (request *RecognizePdfRequest) {
+	request = &RecognizePdfRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizePDF", "ocr", "openAPI")
+	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizePdf", "ocr", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRecognizePDFResponse creates a response to parse from RecognizePDF response
-func CreateRecognizePDFResponse() (response *RecognizePDFResponse) {
-	response = &RecognizePDFResponse{
+// CreateRecognizePdfResponse creates a response to parse from RecognizePdf response
+func CreateRecognizePdfResponse() (response *RecognizePdfResponse) {
+	response = &RecognizePdfResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

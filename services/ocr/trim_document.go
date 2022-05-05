@@ -72,9 +72,9 @@ func (client *Client) TrimDocumentWithCallback(request *TrimDocumentRequest, cal
 type TrimDocumentRequest struct {
 	*requests.RpcRequest
 	FileType   string           `position:"Body" name:"FileType"`
+	OutputType string           `position:"Body" name:"OutputType"`
 	Async      requests.Boolean `position:"Body" name:"Async"`
 	FileURL    string           `position:"Body" name:"FileURL"`
-	OutputType string           `position:"Body" name:"OutputType"`
 }
 
 // TrimDocumentResponse is the response struct for api TrimDocument

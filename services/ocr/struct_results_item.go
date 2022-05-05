@@ -17,7 +17,7 @@ package ocr
 
 // ResultsItem is a nested struct in ocr response
 type ResultsItem struct {
-	Roi         Roi               `json:"Roi" xml:"Roi"`
 	Text        Text              `json:"Text" xml:"Text"`
+	Roi         Roi               `json:"Roi" xml:"Roi"`
 	GeneralText []GeneralTextItem `json:"GeneralText" xml:"GeneralText"`
 }
