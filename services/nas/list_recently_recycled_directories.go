@@ -89,7 +89,7 @@ func CreateListRecentlyRecycledDirectoriesRequest() (request *ListRecentlyRecycl
 	request = &ListRecentlyRecycledDirectoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ListRecentlyRecycledDirectories", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ListRecentlyRecycledDirectories", "nas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -86,7 +86,7 @@ func CreateResetFileSystemRequest() (request *ResetFileSystemRequest) {
 	request = &ResetFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ResetFileSystem", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ResetFileSystem", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

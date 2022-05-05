@@ -92,7 +92,7 @@ func CreateSetDirQuotaRequest() (request *SetDirQuotaRequest) {
 	request = &SetDirQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "SetDirQuota", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "SetDirQuota", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateCancelRecycleBinJobRequest() (request *CancelRecycleBinJobRequest) {
 	request = &CancelRecycleBinJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CancelRecycleBinJob", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CancelRecycleBinJob", "nas", "openAPI")
 	request.Method = requests.GET
 	return
 }

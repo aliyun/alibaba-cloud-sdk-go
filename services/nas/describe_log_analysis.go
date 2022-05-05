@@ -91,7 +91,7 @@ func CreateDescribeLogAnalysisRequest() (request *DescribeLogAnalysisRequest) {
 	request = &DescribeLogAnalysisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeLogAnalysis", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeLogAnalysis", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

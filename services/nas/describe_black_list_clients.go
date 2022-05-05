@@ -87,7 +87,7 @@ func CreateDescribeBlackListClientsRequest() (request *DescribeBlackListClientsR
 	request = &DescribeBlackListClientsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeBlackListClients", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeBlackListClients", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

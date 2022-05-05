@@ -88,7 +88,7 @@ func CreateCreateRecycleBinDeleteJobRequest() (request *CreateRecycleBinDeleteJo
 	request = &CreateRecycleBinDeleteJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CreateRecycleBinDeleteJob", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateRecycleBinDeleteJob", "nas", "openAPI")
 	request.Method = requests.GET
 	return
 }

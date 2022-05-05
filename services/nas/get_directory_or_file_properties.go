@@ -87,7 +87,7 @@ func CreateGetDirectoryOrFilePropertiesRequest() (request *GetDirectoryOrFilePro
 	request = &GetDirectoryOrFilePropertiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "GetDirectoryOrFileProperties", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "GetDirectoryOrFileProperties", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

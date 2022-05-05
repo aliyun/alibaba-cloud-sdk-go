@@ -90,7 +90,7 @@ func CreateListRecycledDirectoriesAndFilesRequest() (request *ListRecycledDirect
 	request = &ListRecycledDirectoriesAndFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ListRecycledDirectoriesAndFiles", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ListRecycledDirectoriesAndFiles", "nas", "openAPI")
 	request.Method = requests.GET
 	return
 }

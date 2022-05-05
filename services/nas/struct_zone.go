@@ -17,7 +17,8 @@ package nas
 
 // Zone is a nested struct in nas response
 type Zone struct {
-	ZoneId      string      `json:"ZoneId" xml:"ZoneId"`
-	Capacity    Capacity    `json:"Capacity" xml:"Capacity"`
-	Performance Performance `json:"Performance" xml:"Performance"`
+	ZoneId        string        `json:"ZoneId" xml:"ZoneId"`
+	Performance   Performance   `json:"Performance" xml:"Performance"`
+	Capacity      Capacity      `json:"Capacity" xml:"Capacity"`
+	InstanceTypes InstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }
