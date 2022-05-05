@@ -33,6 +33,8 @@ type ServerGroup struct {
 	ServerCount              int                 `json:"ServerCount" xml:"ServerCount"`
 	ServiceName              string              `json:"ServiceName" xml:"ServiceName"`
 	RelatedLoadBalancerIds   []string            `json:"RelatedLoadBalancerIds" xml:"RelatedLoadBalancerIds"`
+	RelatedListenerIds       []string            `json:"RelatedListenerIds" xml:"RelatedListenerIds"`
+	RelatedRuleIds           []string            `json:"RelatedRuleIds" xml:"RelatedRuleIds"`
 	HealthCheckConfig        HealthCheckConfig   `json:"HealthCheckConfig" xml:"HealthCheckConfig"`
 	StickySessionConfig      StickySessionConfig `json:"StickySessionConfig" xml:"StickySessionConfig"`
 	UchConfig                UchConfig           `json:"UchConfig" xml:"UchConfig"`

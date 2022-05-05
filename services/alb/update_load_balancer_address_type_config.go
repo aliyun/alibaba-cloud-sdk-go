@@ -81,6 +81,7 @@ type UpdateLoadBalancerAddressTypeConfigRequest struct {
 // UpdateLoadBalancerAddressTypeConfigZoneMappings is a repeated param struct in UpdateLoadBalancerAddressTypeConfigRequest
 type UpdateLoadBalancerAddressTypeConfigZoneMappings struct {
 	VSwitchId    string `name:"VSwitchId"`
+	EipType      string `name:"EipType"`
 	ZoneId       string `name:"ZoneId"`
 	AllocationId string `name:"AllocationId"`
 }

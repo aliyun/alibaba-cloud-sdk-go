@@ -72,6 +72,7 @@ func (client *Client) UnTagResourcesWithCallback(request *UnTagResourcesRequest,
 type UnTagResourcesRequest struct {
 	*requests.RpcRequest
 	Tag          *[]UnTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	All          requests.Boolean     `position:"Query" name:"All"`
 	ResourceId   *[]string            `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceType string               `position:"Query" name:"ResourceType"`
 	TagKey       *[]string            `position:"Query" name:"TagKey"  type:"Repeated"`

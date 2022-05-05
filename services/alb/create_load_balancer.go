@@ -89,6 +89,7 @@ type CreateLoadBalancerRequest struct {
 // CreateLoadBalancerZoneMappings is a repeated param struct in CreateLoadBalancerRequest
 type CreateLoadBalancerZoneMappings struct {
 	VSwitchId    string `name:"VSwitchId"`
+	EipType      string `name:"EipType"`
 	ZoneId       string `name:"ZoneId"`
 	AllocationId string `name:"AllocationId"`
 }
