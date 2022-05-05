@@ -85,7 +85,7 @@ func CreateRetryLifecycleRetrieveJobRequest() (request *RetryLifecycleRetrieveJo
 	request = &RetryLifecycleRetrieveJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "RetryLifecycleRetrieveJob", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "RetryLifecycleRetrieveJob", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

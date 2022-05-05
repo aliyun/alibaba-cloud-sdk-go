@@ -86,7 +86,7 @@ func CreateGetRecycleBinAttributeRequest() (request *GetRecycleBinAttributeReque
 	request = &GetRecycleBinAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "GetRecycleBinAttribute", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "GetRecycleBinAttribute", "nas", "openAPI")
 	request.Method = requests.GET
 	return
 }

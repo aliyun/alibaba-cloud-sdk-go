@@ -92,7 +92,7 @@ func CreateDescribeDirQuotasRequest() (request *DescribeDirQuotasRequest) {
 	request = &DescribeDirQuotasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeDirQuotas", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeDirQuotas", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

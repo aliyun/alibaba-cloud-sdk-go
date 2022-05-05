@@ -98,7 +98,7 @@ func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeTags", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeTags", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

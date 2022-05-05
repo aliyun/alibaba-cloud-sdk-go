@@ -87,7 +87,7 @@ func CreateAddClientToBlackListRequest() (request *AddClientToBlackListRequest) 
 	request = &AddClientToBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "AddClientToBlackList", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "AddClientToBlackList", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

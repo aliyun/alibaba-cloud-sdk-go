@@ -108,7 +108,7 @@ func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
 	request = &DescribeFileSystemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystems", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystems", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

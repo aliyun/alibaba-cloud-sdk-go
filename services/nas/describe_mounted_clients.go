@@ -93,7 +93,7 @@ func CreateDescribeMountedClientsRequest() (request *DescribeMountedClientsReque
 	request = &DescribeMountedClientsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeMountedClients", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeMountedClients", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

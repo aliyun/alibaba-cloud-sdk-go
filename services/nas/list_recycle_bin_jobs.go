@@ -93,7 +93,7 @@ func CreateListRecycleBinJobsRequest() (request *ListRecycleBinJobsRequest) {
 	request = &ListRecycleBinJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ListRecycleBinJobs", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ListRecycleBinJobs", "nas", "openAPI")
 	request.Method = requests.GET
 	return
 }

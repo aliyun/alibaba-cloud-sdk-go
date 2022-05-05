@@ -96,7 +96,7 @@ func CreateDescribeSnapshotsRequest() (request *DescribeSnapshotsRequest) {
 	request = &DescribeSnapshotsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeSnapshots", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeSnapshots", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

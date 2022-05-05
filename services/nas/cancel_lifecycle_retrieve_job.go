@@ -85,7 +85,7 @@ func CreateCancelLifecycleRetrieveJobRequest() (request *CancelLifecycleRetrieve
 	request = &CancelLifecycleRetrieveJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CancelLifecycleRetrieveJob", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CancelLifecycleRetrieveJob", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

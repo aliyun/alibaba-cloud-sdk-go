@@ -86,7 +86,7 @@ func CreateEnableRecycleBinRequest() (request *EnableRecycleBinRequest) {
 	request = &EnableRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "EnableRecycleBin", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "EnableRecycleBin", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

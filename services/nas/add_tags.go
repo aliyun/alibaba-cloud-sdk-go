@@ -92,7 +92,7 @@ func CreateAddTagsRequest() (request *AddTagsRequest) {
 	request = &AddTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "AddTags", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "AddTags", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,6 +71,7 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 // DescribeZonesRequest is the request struct for api DescribeZones
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
+	FileSystemType string `position:"Query" name:"FileSystemType"`
 }
 
 // DescribeZonesResponse is the response struct for api DescribeZones
@@ -85,7 +86,7 @@ func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeZones", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeZones", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

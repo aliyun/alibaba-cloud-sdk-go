@@ -85,7 +85,7 @@ func CreateDisableAndCleanRecycleBinRequest() (request *DisableAndCleanRecycleBi
 	request = &DisableAndCleanRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DisableAndCleanRecycleBin", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DisableAndCleanRecycleBin", "nas", "openAPI")
 	request.Method = requests.GET
 	return
 }

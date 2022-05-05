@@ -89,7 +89,7 @@ func CreateCancelDirQuotaRequest() (request *CancelDirQuotaRequest) {
 	request = &CancelDirQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CancelDirQuota", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CancelDirQuota", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }

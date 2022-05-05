@@ -92,7 +92,7 @@ func CreateDescribeAutoSnapshotPoliciesRequest() (request *DescribeAutoSnapshotP
 	request = &DescribeAutoSnapshotPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeAutoSnapshotPolicies", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeAutoSnapshotPolicies", "nas", "openAPI")
 	request.Method = requests.POST
 	return
 }
