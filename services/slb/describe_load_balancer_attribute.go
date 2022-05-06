@@ -131,6 +131,7 @@ type DescribeLoadBalancerAttributeResponse struct {
 	RenewalStatus                  string                                        `json:"RenewalStatus" xml:"RenewalStatus"`
 	RenewalDuration                int                                           `json:"RenewalDuration" xml:"RenewalDuration"`
 	CloudInstanceUid               int64                                         `json:"CloudInstanceUid" xml:"CloudInstanceUid"`
+	InstanceChargeType             string                                        `json:"InstanceChargeType" xml:"InstanceChargeType"`
 	Labels                         Labels                                        `json:"Labels" xml:"Labels"`
 	ListenerPorts                  ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
 	ListenerPortsAndProtocal       ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`

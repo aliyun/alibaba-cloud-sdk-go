@@ -1,3 +1,7 @@
+2022-05-06 Version: v1.61.1585
+- Generated 2014-05-15 for `Slb`.
+- Support Latest APIs.
+
 2022-05-06 Version: v1.61.1584
 - Generated 2018-01-11 for `rtc`.
 - Add DescribeAppKey interface.

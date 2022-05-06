@@ -91,6 +91,7 @@ type DescribeLoadBalancersRequest struct {
 	PageNumber            requests.Integer            `position:"Query" name:"PageNumber"`
 	PageSize              requests.Integer            `position:"Query" name:"PageSize"`
 	AddressType           string                      `position:"Query" name:"AddressType"`
+	InstanceChargeType    string                      `position:"Query" name:"InstanceChargeType"`
 	Fuzzy                 string                      `position:"Query" name:"Fuzzy"`
 	BusinessStatus        string                      `position:"Query" name:"BusinessStatus"`
 	Address               string                      `position:"Query" name:"Address"`
