@@ -1,3 +1,7 @@
+2022-05-06 Version: v1.61.1584
+- Generated 2018-01-11 for `rtc`.
+- Add DescribeAppKey interface.
+
 2022-05-05 Version: v1.61.1583
 - Generated 2019-12-30 for `ocr`.
 - Release RecognizeUkraineIdentityCard.

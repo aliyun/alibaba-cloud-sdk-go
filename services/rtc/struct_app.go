@@ -23,5 +23,6 @@ type App struct {
 	CreateTime   string       `json:"CreateTime" xml:"CreateTime"`
 	BillType     string       `json:"BillType" xml:"BillType"`
 	AppType      string       `json:"AppType" xml:"AppType"`
+	Region       string       `json:"Region" xml:"Region"`
 	ServiceAreas ServiceAreas `json:"ServiceAreas" xml:"ServiceAreas"`
 }
