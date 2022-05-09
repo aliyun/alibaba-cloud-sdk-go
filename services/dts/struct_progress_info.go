@@ -17,28 +17,29 @@ package dts
 
 // ProgressInfo is a nested struct in dts response
 type ProgressInfo struct {
-	RepairMethod string   `json:"RepairMethod" xml:"RepairMethod"`
-	JobId        string   `json:"JobId" xml:"JobId"`
-	Skip         bool     `json:"Skip" xml:"Skip"`
 	DdlSql       string   `json:"DdlSql" xml:"DdlSql"`
 	DestSchema   string   `json:"DestSchema" xml:"DestSchema"`
-	SourceSchema string   `json:"SourceSchema" xml:"SourceSchema"`
-	FinishTime   string   `json:"FinishTime" xml:"FinishTime"`
+	Current      string   `json:"Current" xml:"Current"`
 	ErrDetail    string   `json:"ErrDetail" xml:"ErrDetail"`
-	BootTime     string   `json:"BootTime" xml:"BootTime"`
 	DiffRow      int64    `json:"DiffRow" xml:"DiffRow"`
 	OrderNum     int      `json:"OrderNum" xml:"OrderNum"`
 	DelaySeconds int      `json:"DelaySeconds" xml:"DelaySeconds"`
 	ErrMsg       string   `json:"ErrMsg" xml:"ErrMsg"`
+	Sub          string   `json:"Sub" xml:"Sub"`
+	Names        string   `json:"Names" xml:"Names"`
+	Id           string   `json:"Id" xml:"Id"`
+	RepairMethod string   `json:"RepairMethod" xml:"RepairMethod"`
+	JobId        string   `json:"JobId" xml:"JobId"`
+	Skip         bool     `json:"Skip" xml:"Skip"`
+	SourceSchema string   `json:"SourceSchema" xml:"SourceSchema"`
+	FinishTime   string   `json:"FinishTime" xml:"FinishTime"`
+	BootTime     string   `json:"BootTime" xml:"BootTime"`
 	TargetNames  string   `json:"TargetNames" xml:"TargetNames"`
 	State        string   `json:"State" xml:"State"`
-	Sub          string   `json:"Sub" xml:"Sub"`
 	ParentObj    string   `json:"ParentObj" xml:"ParentObj"`
 	Total        int      `json:"Total" xml:"Total"`
 	IgnoreFlag   string   `json:"IgnoreFlag" xml:"IgnoreFlag"`
-	Names        string   `json:"Names" xml:"Names"`
 	CanSkip      bool     `json:"CanSkip" xml:"CanSkip"`
-	Id           string   `json:"Id" xml:"Id"`
 	Item         string   `json:"Item" xml:"Item"`
 	Logs         []JobLog `json:"Logs" xml:"Logs"`
 }

@@ -72,6 +72,7 @@ func (client *Client) ModifyDtsJobWithCallback(request *ModifyDtsJobRequest, cal
 type ModifyDtsJobRequest struct {
 	*requests.RpcRequest
 	DbList                     string `position:"Body" name:"DbList"`
+	FileOssUrl                 string `position:"Query" name:"FileOssUrl"`
 	ClientToken                string `position:"Query" name:"ClientToken"`
 	OwnerId                    string `position:"Query" name:"OwnerId"`
 	ModifyTypeEnum             string `position:"Body" name:"ModifyTypeEnum"`
