@@ -86,11 +86,11 @@ type ListClusterHostComponentRequest struct {
 // ListClusterHostComponentResponse is the response struct for api ListClusterHostComponent
 type ListClusterHostComponentResponse struct {
 	*responses.BaseResponse
-	RequestId     string                                  `json:"RequestId" xml:"RequestId"`
-	PageNumber    int                                     `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int                                     `json:"PageSize" xml:"PageSize"`
-	Total         int                                     `json:"Total" xml:"Total"`
-	ComponentList ComponentListInListClusterHostComponent `json:"ComponentList" xml:"ComponentList"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	Total         int           `json:"Total" xml:"Total"`
+	ComponentList ComponentList `json:"ComponentList" xml:"ComponentList"`
 }
 
 // CreateListClusterHostComponentRequest creates a request to invoke ListClusterHostComponent API
