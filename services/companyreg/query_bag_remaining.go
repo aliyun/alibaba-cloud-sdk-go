@@ -86,7 +86,7 @@ func CreateQueryBagRemainingRequest() (request *QueryBagRemainingRequest) {
 	request = &QueryBagRemainingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryBagRemaining", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryBagRemaining", "companyreg", "openAPI")
 	request.Method = requests.GET
 	return
 }

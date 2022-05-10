@@ -92,7 +92,7 @@ func CreateTransferProduceOwnerRequest() (request *TransferProduceOwnerRequest) 
 	request = &TransferProduceOwnerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "TransferProduceOwner", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "TransferProduceOwner", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

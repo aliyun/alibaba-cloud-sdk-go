@@ -92,7 +92,7 @@ func CreateTransferIntentionOwnerRequest() (request *TransferIntentionOwnerReque
 	request = &TransferIntentionOwnerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "TransferIntentionOwner", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "TransferIntentionOwner", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

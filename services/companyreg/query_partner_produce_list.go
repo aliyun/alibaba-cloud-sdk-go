@@ -93,7 +93,7 @@ func CreateQueryPartnerProduceListRequest() (request *QueryPartnerProduceListReq
 	request = &QueryPartnerProduceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryPartnerProduceList", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryPartnerProduceList", "companyreg", "openAPI")
 	request.Method = requests.GET
 	return
 }

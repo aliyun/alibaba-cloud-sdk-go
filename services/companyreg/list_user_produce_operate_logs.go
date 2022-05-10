@@ -94,7 +94,7 @@ func CreateListUserProduceOperateLogsRequest() (request *ListUserProduceOperateL
 	request = &ListUserProduceOperateLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "ListUserProduceOperateLogs", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "ListUserProduceOperateLogs", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

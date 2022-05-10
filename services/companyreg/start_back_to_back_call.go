@@ -71,9 +71,10 @@ func (client *Client) StartBackToBackCallWithCallback(request *StartBackToBackCa
 // StartBackToBackCallRequest is the request struct for api StartBackToBackCall
 type StartBackToBackCallRequest struct {
 	*requests.RpcRequest
+	CallCenterNumber string           `position:"Query" name:"CallCenterNumber"`
+	MobileKey        string           `position:"Query" name:"MobileKey"`
 	BizType          string           `position:"Query" name:"BizType"`
 	Caller           string           `position:"Query" name:"Caller"`
-	CallCenterNumber string           `position:"Query" name:"CallCenterNumber"`
 	SkillType        requests.Integer `position:"Query" name:"SkillType"`
 	BizId            string           `position:"Query" name:"BizId"`
 }
@@ -93,7 +94,7 @@ func CreateStartBackToBackCallRequest() (request *StartBackToBackCallRequest) {
 	request = &StartBackToBackCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "StartBackToBackCall", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "StartBackToBackCall", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

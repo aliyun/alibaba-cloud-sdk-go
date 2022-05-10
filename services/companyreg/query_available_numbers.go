@@ -89,7 +89,7 @@ func CreateQueryAvailableNumbersRequest() (request *QueryAvailableNumbersRequest
 	request = &QueryAvailableNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryAvailableNumbers", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryAvailableNumbers", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateRejectSolutionRequest() (request *RejectSolutionRequest) {
 	request = &RejectSolutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "RejectSolution", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "RejectSolution", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

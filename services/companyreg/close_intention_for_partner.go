@@ -90,7 +90,7 @@ func CreateCloseIntentionForPartnerRequest() (request *CloseIntentionForPartnerR
 	request = &CloseIntentionForPartnerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "CloseIntentionForPartner", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "CloseIntentionForPartner", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

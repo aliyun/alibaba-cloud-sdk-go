@@ -89,7 +89,7 @@ func CreateGetAlipayUrlRequest() (request *GetAlipayUrlRequest) {
 	request = &GetAlipayUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "GetAlipayUrl", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "GetAlipayUrl", "companyreg", "openAPI")
 	request.Method = requests.GET
 	return
 }

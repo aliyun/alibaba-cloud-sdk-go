@@ -93,7 +93,7 @@ func CreateQueryPartnerIntentionListRequest() (request *QueryPartnerIntentionLis
 	request = &QueryPartnerIntentionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryPartnerIntentionList", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "QueryPartnerIntentionList", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

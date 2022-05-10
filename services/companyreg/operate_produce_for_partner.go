@@ -91,7 +91,7 @@ func CreateOperateProduceForPartnerRequest() (request *OperateProduceForPartnerR
 	request = &OperateProduceForPartnerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "OperateProduceForPartner", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "OperateProduceForPartner", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

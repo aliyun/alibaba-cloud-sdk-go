@@ -90,7 +90,7 @@ func CreatePutMeasureDataRequest() (request *PutMeasureDataRequest) {
 	request = &PutMeasureDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "PutMeasureData", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "PutMeasureData", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }

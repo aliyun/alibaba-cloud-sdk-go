@@ -90,7 +90,7 @@ func CreatePutMeasureReadyFlagRequest() (request *PutMeasureReadyFlagRequest) {
 	request = &PutMeasureReadyFlagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("companyreg", "2020-03-06", "PutMeasureReadyFlag", "", "")
+	request.InitWithApiInfo("companyreg", "2020-03-06", "PutMeasureReadyFlag", "companyreg", "openAPI")
 	request.Method = requests.POST
 	return
 }
