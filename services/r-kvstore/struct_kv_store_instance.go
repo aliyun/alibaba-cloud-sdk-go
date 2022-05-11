@@ -21,7 +21,6 @@ type KVStoreInstance struct {
 	PackageType         string                  `json:"PackageType" xml:"PackageType"`
 	ChargeType          string                  `json:"ChargeType" xml:"ChargeType"`
 	ConnectionDomain    string                  `json:"ConnectionDomain" xml:"ConnectionDomain"`
-	SearchKey           string                  `json:"SearchKey" xml:"SearchKey"`
 	CreateTime          string                  `json:"CreateTime" xml:"CreateTime"`
 	EditionType         string                  `json:"EditionType" xml:"EditionType"`
 	InstanceType        string                  `json:"InstanceType" xml:"InstanceType"`

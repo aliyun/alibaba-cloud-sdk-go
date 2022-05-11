@@ -46,7 +46,6 @@ type KVStoreInstanceInDescribeInstances struct {
 	InstanceType        string                  `json:"InstanceType" xml:"InstanceType"`
 	HasRenewChangeOrder bool                    `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
 	RegionId            string                  `json:"RegionId" xml:"RegionId"`
-	SearchKey           string                  `json:"SearchKey" xml:"SearchKey"`
 	EndTime             string                  `json:"EndTime" xml:"EndTime"`
 	VSwitchId           string                  `json:"VSwitchId" xml:"VSwitchId"`
 	NodeType            string                  `json:"NodeType" xml:"NodeType"`

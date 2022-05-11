@@ -107,6 +107,7 @@ type CreateInstanceRequest struct {
 	Token                string               `position:"Query" name:"Token"`
 	GlobalInstanceId     string               `position:"Query" name:"GlobalInstanceId"`
 	VpcId                string               `position:"Query" name:"VpcId"`
+	ReadOnlyCount        requests.Integer     `position:"Query" name:"ReadOnlyCount"`
 	ChargeType           string               `position:"Query" name:"ChargeType"`
 	Config               string               `position:"Query" name:"Config"`
 }

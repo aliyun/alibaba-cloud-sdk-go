@@ -84,6 +84,7 @@ type DescribeInstancesRequest struct {
 	InstanceType         string                  `position:"Query" name:"InstanceType"`
 	EditionType          string                  `position:"Query" name:"EditionType"`
 	Tag                  *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	WithoutTair          requests.Boolean        `position:"Query" name:"WithoutTair"`
 	InstanceStatus       string                  `position:"Query" name:"InstanceStatus"`
 	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
