@@ -71,13 +71,21 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 // DescribePriceRequest is the request struct for api DescribePrice
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
-	Period             requests.Integer `position:"Query" name:"Period"`
-	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
-	InstanceType       string           `position:"Query" name:"InstanceType"`
-	DataDisk1Size      requests.Integer `position:"Query" name:"DataDisk.1.Size"`
-	Quantity           requests.Integer `position:"Query" name:"Quantity"`
-	SystemDiskSize     requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	DataDisks          *[]DescribePriceDataDisks `position:"Query" name:"DataDisks"  type:"Json"`
+	EnsRegionId        string                    `position:"Query" name:"EnsRegionId"`
+	Period             requests.Integer          `position:"Query" name:"Period"`
+	PeriodUnit         string                    `position:"Query" name:"PeriodUnit"`
+	InternetChargeType string                    `position:"Query" name:"InternetChargeType"`
+	InstanceType       string                    `position:"Query" name:"InstanceType"`
+	DataDisk1Size      requests.Integer          `position:"Query" name:"DataDisk.1.Size"`
+	Quantity           requests.Integer          `position:"Query" name:"Quantity"`
+	SystemDiskSize     requests.Integer          `position:"Query" name:"SystemDisk.Size"`
+}
+
+// DescribePriceDataDisks is a repeated param struct in DescribePriceRequest
+type DescribePriceDataDisks struct {
+	Size     string `name:"Size"`
+	Category string `name:"Category"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice

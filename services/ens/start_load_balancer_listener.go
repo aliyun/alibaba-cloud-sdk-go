@@ -71,8 +71,9 @@ func (client *Client) StartLoadBalancerListenerWithCallback(request *StartLoadBa
 // StartLoadBalancerListenerRequest is the request struct for api StartLoadBalancerListener
 type StartLoadBalancerListenerRequest struct {
 	*requests.RpcRequest
-	ListenerPort   requests.Integer `position:"Query" name:"ListenerPort"`
-	LoadBalancerId string           `position:"Query" name:"LoadBalancerId"`
+	ListenerPort     requests.Integer `position:"Query" name:"ListenerPort"`
+	ListenerProtocol string           `position:"Query" name:"ListenerProtocol"`
+	LoadBalancerId   string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // StartLoadBalancerListenerResponse is the response struct for api StartLoadBalancerListener

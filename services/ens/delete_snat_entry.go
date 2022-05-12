@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteVm invokes the ens.DeleteVm API synchronously
-func (client *Client) DeleteVm(request *DeleteVmRequest) (response *DeleteVmResponse, err error) {
-	response = CreateDeleteVmResponse()
+// DeleteSnatEntry invokes the ens.DeleteSnatEntry API synchronously
+func (client *Client) DeleteSnatEntry(request *DeleteSnatEntryRequest) (response *DeleteSnatEntryResponse, err error) {
+	response = CreateDeleteSnatEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteVmWithChan invokes the ens.DeleteVm API asynchronously
-func (client *Client) DeleteVmWithChan(request *DeleteVmRequest) (<-chan *DeleteVmResponse, <-chan error) {
-	responseChan := make(chan *DeleteVmResponse, 1)
+// DeleteSnatEntryWithChan invokes the ens.DeleteSnatEntry API asynchronously
+func (client *Client) DeleteSnatEntryWithChan(request *DeleteSnatEntryRequest) (<-chan *DeleteSnatEntryResponse, <-chan error) {
+	responseChan := make(chan *DeleteSnatEntryResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteVm(request)
+		response, err := client.DeleteSnatEntry(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteVmWithChan(request *DeleteVmRequest) (<-chan *Delete
 	return responseChan, errChan
 }
 
-// DeleteVmWithCallback invokes the ens.DeleteVm API asynchronously
-func (client *Client) DeleteVmWithCallback(request *DeleteVmRequest, callback func(response *DeleteVmResponse, err error)) <-chan int {
+// DeleteSnatEntryWithCallback invokes the ens.DeleteSnatEntry API asynchronously
+func (client *Client) DeleteSnatEntryWithCallback(request *DeleteSnatEntryRequest, callback func(response *DeleteSnatEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteVmResponse
+		var response *DeleteSnatEntryResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteVm(request)
+		response, err = client.DeleteSnatEntry(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,31 @@ func (client *Client) DeleteVmWithCallback(request *DeleteVmRequest, callback fu
 	return result
 }
 
-// DeleteVmRequest is the request struct for api DeleteVm
-type DeleteVmRequest struct {
+// DeleteSnatEntryRequest is the request struct for api DeleteSnatEntry
+type DeleteSnatEntryRequest struct {
 	*requests.RpcRequest
-	AliUid       requests.Integer `position:"Query" name:"AliUid"`
-	WorkloadUuid string           `position:"Query" name:"WorkloadUuid"`
+	SnatEntryId string `position:"Query" name:"SnatEntryId"`
 }
 
-// DeleteVmResponse is the response struct for api DeleteVm
-type DeleteVmResponse struct {
+// DeleteSnatEntryResponse is the response struct for api DeleteSnatEntry
+type DeleteSnatEntryResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Msg       string `json:"Msg" xml:"Msg"`
-	Desc      string `json:"Desc" xml:"Desc"`
-	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteVmRequest creates a request to invoke DeleteVm API
-func CreateDeleteVmRequest() (request *DeleteVmRequest) {
-	request = &DeleteVmRequest{
+// CreateDeleteSnatEntryRequest creates a request to invoke DeleteSnatEntry API
+func CreateDeleteSnatEntryRequest() (request *DeleteSnatEntryRequest) {
+	request = &DeleteSnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ens", "2017-11-10", "DeleteVm", "ens", "openAPI")
+	request.InitWithApiInfo("Ens", "2017-11-10", "DeleteSnatEntry", "ens", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteVmResponse creates a response to parse from DeleteVm response
-func CreateDeleteVmResponse() (response *DeleteVmResponse) {
-	response = &DeleteVmResponse{
+// CreateDeleteSnatEntryResponse creates a response to parse from DeleteSnatEntry response
+func CreateDeleteSnatEntryResponse() (response *DeleteSnatEntryResponse) {
+	response = &DeleteSnatEntryResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

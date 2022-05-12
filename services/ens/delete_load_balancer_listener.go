@@ -71,8 +71,9 @@ func (client *Client) DeleteLoadBalancerListenerWithCallback(request *DeleteLoad
 // DeleteLoadBalancerListenerRequest is the request struct for api DeleteLoadBalancerListener
 type DeleteLoadBalancerListenerRequest struct {
 	*requests.RpcRequest
-	ListenerPort   requests.Integer `position:"Query" name:"ListenerPort"`
-	LoadBalancerId string           `position:"Query" name:"LoadBalancerId"`
+	ListenerPort     requests.Integer `position:"Query" name:"ListenerPort"`
+	ListenerProtocol string           `position:"Query" name:"ListenerProtocol"`
+	LoadBalancerId   string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // DeleteLoadBalancerListenerResponse is the response struct for api DeleteLoadBalancerListener

@@ -71,8 +71,9 @@ func (client *Client) StopLoadBalancerListenerWithCallback(request *StopLoadBala
 // StopLoadBalancerListenerRequest is the request struct for api StopLoadBalancerListener
 type StopLoadBalancerListenerRequest struct {
 	*requests.RpcRequest
-	ListenerPort   requests.Integer `position:"Query" name:"ListenerPort"`
-	LoadBalancerId string           `position:"Query" name:"LoadBalancerId"`
+	ListenerPort     requests.Integer `position:"Query" name:"ListenerPort"`
+	ListenerProtocol string           `position:"Query" name:"ListenerProtocol"`
+	LoadBalancerId   string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // StopLoadBalancerListenerResponse is the response struct for api StopLoadBalancerListener

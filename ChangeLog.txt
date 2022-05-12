@@ -1,3 +1,7 @@
+2022-05-12 Version: v1.61.1591
+- Generated 2017-11-10 for `Ens`.
+- Support API DeleteImage.
+
 2022-05-12 Version: v1.61.1590
 - Generated 2014-05-15 for `Slb`.
 - Support Latest APIs.

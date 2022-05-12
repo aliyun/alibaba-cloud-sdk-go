@@ -85,6 +85,7 @@ type DescribeNetworkAttributeResponse struct {
 	Status         string                               `json:"Status" xml:"Status"`
 	Description    string                               `json:"Description" xml:"Description"`
 	CreatedTime    string                               `json:"CreatedTime" xml:"CreatedTime"`
+	RouterTableId  string                               `json:"RouterTableId" xml:"RouterTableId"`
 	VSwitchIds     VSwitchIdsInDescribeNetworkAttribute `json:"VSwitchIds" xml:"VSwitchIds"`
 	CloudResources CloudResources                       `json:"CloudResources" xml:"CloudResources"`
 }

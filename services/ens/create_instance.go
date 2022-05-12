@@ -87,6 +87,7 @@ type CreateInstanceRequest struct {
 	InternetChargeType     string           `position:"Query" name:"InternetChargeType"`
 	ImageId                string           `position:"Query" name:"ImageId"`
 	UserData               string           `position:"Query" name:"UserData"`
+	PasswordInherit        requests.Boolean `position:"Query" name:"PasswordInherit"`
 	InstanceType           string           `position:"Query" name:"InstanceType"`
 	DataDisk1Size          string           `position:"Query" name:"DataDisk.1.Size"`
 	Quantity               string           `position:"Query" name:"Quantity"`

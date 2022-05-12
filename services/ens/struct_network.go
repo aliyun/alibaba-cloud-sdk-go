@@ -17,12 +17,13 @@ package ens
 
 // Network is a nested struct in ens response
 type Network struct {
-	NetworkName string                       `json:"NetworkName" xml:"NetworkName"`
-	CreatedTime string                       `json:"CreatedTime" xml:"CreatedTime"`
-	EnsRegionId string                       `json:"EnsRegionId" xml:"EnsRegionId"`
-	NetworkId   string                       `json:"NetworkId" xml:"NetworkId"`
-	Status      string                       `json:"Status" xml:"Status"`
-	CidrBlock   string                       `json:"CidrBlock" xml:"CidrBlock"`
-	Description string                       `json:"Description" xml:"Description"`
-	VSwitchIds  VSwitchIdsInDescribeNetworks `json:"VSwitchIds" xml:"VSwitchIds"`
+	NetworkName   string                       `json:"NetworkName" xml:"NetworkName"`
+	CreatedTime   string                       `json:"CreatedTime" xml:"CreatedTime"`
+	EnsRegionId   string                       `json:"EnsRegionId" xml:"EnsRegionId"`
+	NetworkId     string                       `json:"NetworkId" xml:"NetworkId"`
+	Status        string                       `json:"Status" xml:"Status"`
+	CidrBlock     string                       `json:"CidrBlock" xml:"CidrBlock"`
+	Description   string                       `json:"Description" xml:"Description"`
+	RouterTableId string                       `json:"RouterTableId" xml:"RouterTableId"`
+	VSwitchIds    VSwitchIdsInDescribeNetworks `json:"VSwitchIds" xml:"VSwitchIds"`
 }

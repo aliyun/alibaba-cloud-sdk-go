@@ -83,6 +83,7 @@ type RunInstancesRequest struct {
 	Period                  requests.Integer        `position:"Query" name:"Period"`
 	VSwitchId               string                  `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress        string                  `position:"Query" name:"PrivateIpAddress"`
+	PeriodUnit              string                  `position:"Query" name:"PeriodUnit"`
 	InstanceName            string                  `position:"Query" name:"InstanceName"`
 	AutoRenew               requests.Boolean        `position:"Query" name:"AutoRenew"`
 	InternetChargeType      string                  `position:"Query" name:"InternetChargeType"`
