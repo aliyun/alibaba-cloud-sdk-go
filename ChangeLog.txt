@@ -1,3 +1,7 @@
+2022-05-12 Version: v1.61.1590
+- Generated 2014-05-15 for `Slb`.
+- Support Latest APIs.
+
 2022-05-11 Version: v1.61.1589
 - Generated 2015-01-01 for `R-kvstore`.
 - Update by sdk platform.
