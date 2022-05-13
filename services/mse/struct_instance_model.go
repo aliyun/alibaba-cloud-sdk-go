@@ -24,4 +24,5 @@ type InstanceModel struct {
 	Role              string `json:"Role" xml:"Role"`
 	HealthStatus      string `json:"HealthStatus" xml:"HealthStatus"`
 	CreationTimestamp string `json:"CreationTimestamp" xml:"CreationTimestamp"`
+	Zone              string `json:"Zone" xml:"Zone"`
 }

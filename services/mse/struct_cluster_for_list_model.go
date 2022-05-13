@@ -34,4 +34,5 @@ type ClusterForListModel struct {
 	VersionCode      string `json:"VersionCode" xml:"VersionCode"`
 	InstanceCount    int64  `json:"InstanceCount" xml:"InstanceCount"`
 	ClusterName      string `json:"ClusterName" xml:"ClusterName"`
+	MseVersion       string `json:"MseVersion" xml:"MseVersion"`
 }

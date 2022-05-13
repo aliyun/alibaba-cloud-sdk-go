@@ -17,31 +17,31 @@ package mse
 
 // Gateways is a nested struct in mse response
 type Gateways struct {
-	Id              int64         `json:"Id" xml:"Id"`
 	Name            string        `json:"Name" xml:"Name"`
-	GatewayUniqueId string        `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
-	GatewayType     string        `json:"GatewayType" xml:"GatewayType"`
 	Region          string        `json:"Region" xml:"Region"`
-	PrimaryUser     string        `json:"PrimaryUser" xml:"PrimaryUser"`
-	Status          int           `json:"Status" xml:"Status"`
-	AhasOn          bool          `json:"AhasOn" xml:"AhasOn"`
-	ArmsOn          bool          `json:"ArmsOn" xml:"ArmsOn"`
-	Spec            string        `json:"Spec" xml:"Spec"`
-	Replica         int           `json:"Replica" xml:"Replica"`
-	GmtCreate       string        `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified     string        `json:"GmtModified" xml:"GmtModified"`
-	StatusDesc      string        `json:"StatusDesc" xml:"StatusDesc"`
-	Upgrade         bool          `json:"Upgrade" xml:"Upgrade"`
-	MustUpgrade     bool          `json:"MustUpgrade" xml:"MustUpgrade"`
-	SupportWasm     bool          `json:"SupportWasm" xml:"SupportWasm"`
-	CurrentVersion  string        `json:"CurrentVersion" xml:"CurrentVersion"`
-	AppVersion      string        `json:"AppVersion" xml:"AppVersion"`
-	LatestVersion   string        `json:"LatestVersion" xml:"LatestVersion"`
 	Vswitch2        string        `json:"Vswitch2" xml:"Vswitch2"`
-	InstanceId      string        `json:"InstanceId" xml:"InstanceId"`
 	ChargeType      string        `json:"ChargeType" xml:"ChargeType"`
-	EndDate         string        `json:"EndDate" xml:"EndDate"`
+	GmtCreate       string        `json:"GmtCreate" xml:"GmtCreate"`
 	Tag             string        `json:"Tag" xml:"Tag"`
+	InstanceId      string        `json:"InstanceId" xml:"InstanceId"`
+	SupportWasm     bool          `json:"SupportWasm" xml:"SupportWasm"`
+	Replica         int           `json:"Replica" xml:"Replica"`
+	ArmsOn          bool          `json:"ArmsOn" xml:"ArmsOn"`
+	Status          int           `json:"Status" xml:"Status"`
+	EndDate         string        `json:"EndDate" xml:"EndDate"`
+	GatewayType     string        `json:"GatewayType" xml:"GatewayType"`
+	GmtModified     string        `json:"GmtModified" xml:"GmtModified"`
+	Id              int64         `json:"Id" xml:"Id"`
+	CurrentVersion  string        `json:"CurrentVersion" xml:"CurrentVersion"`
+	Spec            string        `json:"Spec" xml:"Spec"`
+	Upgrade         bool          `json:"Upgrade" xml:"Upgrade"`
+	GatewayUniqueId string        `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
+	PrimaryUser     string        `json:"PrimaryUser" xml:"PrimaryUser"`
+	AhasOn          bool          `json:"AhasOn" xml:"AhasOn"`
+	MustUpgrade     bool          `json:"MustUpgrade" xml:"MustUpgrade"`
+	AppVersion      string        `json:"AppVersion" xml:"AppVersion"`
+	StatusDesc      string        `json:"StatusDesc" xml:"StatusDesc"`
+	LatestVersion   string        `json:"LatestVersion" xml:"LatestVersion"`
 	InitConfig      InitConfig    `json:"InitConfig" xml:"InitConfig"`
 	Slb             []Slb         `json:"Slb" xml:"Slb"`
 	InternetSlb     []InternetSlb `json:"InternetSlb" xml:"InternetSlb"`
