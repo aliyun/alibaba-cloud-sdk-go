@@ -29,6 +29,10 @@ import (
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
+	"github.com/opentracing/opentracing-go"
+	"github.com/uber/jaeger-client-go"
+	jaegercfg "github.com/uber/jaeger-client-go/config"
+	jaegerlog "github.com/uber/jaeger-client-go/log"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
@@ -474,6 +478,53 @@ func Test_DoAction_Timeout(t *testing.T) {
 	assert.Equal(t, "", response.GetHttpContentString())
 
 	client.Shutdown()
+}
+
+func Test_DoAction_Tracer(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.Product = "ecs"
+	request.ApiName = "DescribeRegions"
+
+	var cfg = jaegercfg.Configuration{
+		ServiceName: "client test",
+		Sampler: &jaegercfg.SamplerConfig{
+			Type:  jaeger.SamplerTypeConst,
+			Param: 1,
+		},
+		Reporter: &jaegercfg.ReporterConfig{
+			LogSpans:          true,
+			CollectorEndpoint: "http://127.0.0.1:8000",
+		},
+	}
+	jLogger := jaegerlog.StdLogger
+	tracer, closer, _ := cfg.NewTracer(
+		jaegercfg.Logger(jLogger),
+	)
+	parentSpan := tracer.StartSpan("root")
+	fmt.Println(parentSpan)
+	opentracing.InitGlobalTracer(tracer)
+	request.SetTracerSpan(parentSpan)
+	request.TransToAcsRequest()
+	response := responses.NewCommonResponse()
+	client.SetCloseTrace(true)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Equal(t, 404, response.GetHttpStatus())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	client.SetCloseTrace(false)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Equal(t, 404, response.GetHttpStatus())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	parentSpan.Finish()
+	closer.Close()
 }
 
 func Test_ProcessCommonRequest(t *testing.T) {
