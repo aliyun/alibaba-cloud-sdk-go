@@ -71,12 +71,14 @@ func (client *Client) UpdateIngressWithCallback(request *UpdateIngressRequest, c
 // UpdateIngressRequest is the request struct for api UpdateIngress
 type UpdateIngressRequest struct {
 	*requests.RoaRequest
-	IngressId    requests.Integer `position:"Query" name:"IngressId"`
-	ListenerPort string           `position:"Query" name:"ListenerPort"`
-	Description  string           `position:"Query" name:"Description"`
-	Rules        string           `position:"Body" name:"Rules"`
-	CertId       string           `position:"Query" name:"CertId"`
-	DefaultRule  string           `position:"Query" name:"DefaultRule"`
+	IngressId        requests.Integer `position:"Query" name:"IngressId"`
+	ListenerPort     string           `position:"Query" name:"ListenerPort"`
+	Description      string           `position:"Query" name:"Description"`
+	LoadBalanceType  string           `position:"Query" name:"LoadBalanceType"`
+	Rules            string           `position:"Body" name:"Rules"`
+	CertId           string           `position:"Query" name:"CertId"`
+	ListenerProtocol string           `position:"Query" name:"ListenerProtocol"`
+	DefaultRule      string           `position:"Query" name:"DefaultRule"`
 }
 
 // UpdateIngressResponse is the response struct for api UpdateIngress

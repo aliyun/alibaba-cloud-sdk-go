@@ -1,3 +1,7 @@
+2022-05-16 Version: v1.61.1594
+- Generated 2019-05-06 for `sae`.
+- Support UpdateApplicationVswitches and DescribeComponents.
+
 2022-05-16 Version: v1.61.1593
 - Generated 2016-11-01 for `live`.
 

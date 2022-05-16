@@ -79,9 +79,9 @@ type DeleteConfigMapResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
-	Code      string `json:"Code" xml:"Code"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }

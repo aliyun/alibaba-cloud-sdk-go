@@ -79,12 +79,12 @@ type UnbindSlbRequest struct {
 // UnbindSlbResponse is the response struct for api UnbindSlb
 type UnbindSlbResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	Success   bool   `json:"Success" xml:"Success"`
-	TraceId   string `json:"TraceId" xml:"TraceId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	TraceId   string `json:"TraceId" xml:"TraceId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

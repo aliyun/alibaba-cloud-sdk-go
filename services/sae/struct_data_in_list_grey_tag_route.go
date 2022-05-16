@@ -17,8 +17,8 @@ package sae
 
 // DataInListGreyTagRoute is a nested struct in sae response
 type DataInListGreyTagRoute struct {
-	PageSize    int      `json:"PageSize" xml:"PageSize"`
 	CurrentPage int      `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize    int      `json:"PageSize" xml:"PageSize"`
 	TotalSize   int64    `json:"TotalSize" xml:"TotalSize"`
 	Result      []Result `json:"Result" xml:"Result"`
 }

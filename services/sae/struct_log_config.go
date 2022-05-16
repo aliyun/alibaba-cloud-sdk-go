@@ -19,10 +19,10 @@ package sae
 type LogConfig struct {
 	ConfigName  string `json:"ConfigName" xml:"ConfigName"`
 	LogDir      string `json:"LogDir" xml:"LogDir"`
-	SlsProject  string `json:"SlsProject" xml:"SlsProject"`
 	SlsLogStore string `json:"SlsLogStore" xml:"SlsLogStore"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	StoreType   string `json:"StoreType" xml:"StoreType"`
+	SlsProject  string `json:"SlsProject" xml:"SlsProject"`
 	LogType     string `json:"LogType" xml:"LogType"`
 	RegionId    string `json:"RegionId" xml:"RegionId"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 }

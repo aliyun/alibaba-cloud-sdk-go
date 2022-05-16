@@ -83,11 +83,11 @@ type ListNamespaceChangeOrdersRequest struct {
 type ListNamespaceChangeOrdersResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

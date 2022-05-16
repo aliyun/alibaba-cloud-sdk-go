@@ -17,5 +17,5 @@ package sae
 
 // ItemsInDescribeGreyTagRoute is a nested struct in sae response
 type ItemsInDescribeGreyTagRoute struct {
-	Item []Item `json:"item" xml:"item"`
+	Scrulesitem []Scrulesitem `json:"Scrulesitem" xml:"Scrulesitem"`
 }

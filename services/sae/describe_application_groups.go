@@ -79,12 +79,12 @@ type DescribeApplicationGroupsRequest struct {
 // DescribeApplicationGroupsResponse is the response struct for api DescribeApplicationGroups
 type DescribeApplicationGroupsResponse struct {
 	*responses.BaseResponse
-	Code      string             `json:"Code" xml:"Code"`
+	RequestId string             `json:"RequestId" xml:"RequestId"`
 	Message   string             `json:"Message" xml:"Message"`
 	TraceId   string             `json:"TraceId" xml:"TraceId"`
-	RequestId string             `json:"RequestId" xml:"RequestId"`
-	Success   bool               `json:"Success" xml:"Success"`
 	ErrorCode string             `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string             `json:"Code" xml:"Code"`
+	Success   bool               `json:"Success" xml:"Success"`
 	Data      []ApplicationGroup `json:"Data" xml:"Data"`
 }
 

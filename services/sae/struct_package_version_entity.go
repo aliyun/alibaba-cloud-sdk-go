@@ -17,9 +17,9 @@ package sae
 
 // PackageVersionEntity is a nested struct in sae response
 type PackageVersionEntity struct {
-	Id              string `json:"Id" xml:"Id"`
-	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-	WarUrl          string `json:"WarUrl" xml:"WarUrl"`
 	Type            string `json:"Type" xml:"Type"`
+	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
 	BuildPackageUrl string `json:"BuildPackageUrl" xml:"BuildPackageUrl"`
+	WarUrl          string `json:"WarUrl" xml:"WarUrl"`
+	Id              string `json:"Id" xml:"Id"`
 }

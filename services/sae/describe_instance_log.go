@@ -78,12 +78,12 @@ type DescribeInstanceLogRequest struct {
 type DescribeInstanceLogResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 	Data      string `json:"Data" xml:"Data"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDescribeInstanceLogRequest creates a request to invoke DescribeInstanceLog API

@@ -77,12 +77,12 @@ type DeleteApplicationRequest struct {
 // DeleteApplicationResponse is the response struct for api DeleteApplication
 type DeleteApplicationResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Message   string `json:"Message" xml:"Message"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

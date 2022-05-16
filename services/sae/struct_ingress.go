@@ -17,12 +17,14 @@ package sae
 
 // Ingress is a nested struct in sae response
 type Ingress struct {
-	Id           int64  `json:"Id" xml:"Id"`
-	Name         string `json:"Name" xml:"Name"`
-	NamespaceId  string `json:"NamespaceId" xml:"NamespaceId"`
-	SlbId        string `json:"SlbId" xml:"SlbId"`
-	ListenerPort string `json:"ListenerPort" xml:"ListenerPort"`
-	CertId       string `json:"CertId" xml:"CertId"`
-	Description  string `json:"Description" xml:"Description"`
-	SlbType      string `json:"SlbType" xml:"SlbType"`
+	SlbId            string `json:"SlbId" xml:"SlbId"`
+	NamespaceId      string `json:"NamespaceId" xml:"NamespaceId"`
+	Description      string `json:"Description" xml:"Description"`
+	ListenerPort     string `json:"ListenerPort" xml:"ListenerPort"`
+	SlbType          string `json:"SlbType" xml:"SlbType"`
+	CertId           string `json:"CertId" xml:"CertId"`
+	Name             string `json:"Name" xml:"Name"`
+	Id               int64  `json:"Id" xml:"Id"`
+	LoadBalanceType  string `json:"LoadBalanceType" xml:"LoadBalanceType"`
+	ListenerProtocol string `json:"ListenerProtocol" xml:"ListenerProtocol"`
 }

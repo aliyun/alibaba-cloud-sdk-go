@@ -17,5 +17,5 @@ package sae
 
 // ScRulesInListGreyTagRoute is a nested struct in sae response
 type ScRulesInListGreyTagRoute struct {
-	ScRule []ScRule `json:"scRule" xml:"scRule"`
+	ScRule []ScRuleInListGreyTagRoute `json:"scRule" xml:"scRule"`
 }

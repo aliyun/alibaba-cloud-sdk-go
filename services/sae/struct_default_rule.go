@@ -17,7 +17,7 @@ package sae
 
 // DefaultRule is a nested struct in sae response
 type DefaultRule struct {
-	AppId         string `json:"AppId" xml:"AppId"`
 	ContainerPort int    `json:"ContainerPort" xml:"ContainerPort"`
 	AppName       string `json:"AppName" xml:"AppName"`
+	AppId         string `json:"AppId" xml:"AppId"`
 }

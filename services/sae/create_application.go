@@ -80,11 +80,13 @@ type CreateApplicationRequest struct {
 	KafkaInstanceId               string           `position:"Query" name:"KafkaInstanceId"`
 	PhpPECLExtensions             string           `position:"Body" name:"PhpPECLExtensions"`
 	PhpArmsConfigLocation         string           `position:"Query" name:"PhpArmsConfigLocation"`
+	ProgrammingLanguage           string           `position:"Query" name:"ProgrammingLanguage"`
 	CustomHostAlias               string           `position:"Query" name:"CustomHostAlias"`
 	Deploy                        requests.Boolean `position:"Query" name:"Deploy"`
 	JarStartOptions               string           `position:"Query" name:"JarStartOptions"`
 	AppName                       string           `position:"Query" name:"AppName"`
 	NamespaceId                   string           `position:"Query" name:"NamespaceId"`
+	PurchaseEip                   requests.Boolean `position:"Query" name:"PurchaseEip"`
 	ConfigMapMountDesc            string           `position:"Body" name:"ConfigMapMountDesc"`
 	OssMountDescs                 string           `position:"Body" name:"OssMountDescs"`
 	KafkaEndpoint                 string           `position:"Query" name:"KafkaEndpoint"`
@@ -98,6 +100,7 @@ type CreateApplicationRequest struct {
 	WebContainer                  string           `position:"Query" name:"WebContainer"`
 	Memory                        requests.Integer `position:"Query" name:"Memory"`
 	SlsConfigs                    string           `position:"Query" name:"SlsConfigs"`
+	KafkaConfigs                  string           `position:"Query" name:"KafkaConfigs"`
 	OpenCollectToKafka            requests.Boolean `position:"Query" name:"OpenCollectToKafka"`
 	CommandArgs                   string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn              string           `position:"Query" name:"AcrAssumeRoleArn"`

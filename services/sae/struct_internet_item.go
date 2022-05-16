@@ -17,8 +17,8 @@ package sae
 
 // InternetItem is a nested struct in sae response
 type InternetItem struct {
-	Port        int    `json:"Port" xml:"Port"`
+	HttpsCertId string `json:"HttpsCertId" xml:"HttpsCertId"`
 	Protocol    string `json:"Protocol" xml:"Protocol"`
 	TargetPort  int    `json:"TargetPort" xml:"TargetPort"`
-	HttpsCertId string `json:"HttpsCertId" xml:"HttpsCertId"`
+	Port        int    `json:"Port" xml:"Port"`
 }

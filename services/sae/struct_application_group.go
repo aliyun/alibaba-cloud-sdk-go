@@ -17,16 +17,16 @@ package sae
 
 // ApplicationGroup is a nested struct in sae response
 type ApplicationGroup struct {
-	GroupId              string `json:"GroupId" xml:"GroupId"`
-	GroupName            string `json:"GroupName" xml:"GroupName"`
-	GroupType            int    `json:"GroupType" xml:"GroupType"`
-	PackageType          string `json:"PackageType" xml:"PackageType"`
-	PackageVersion       string `json:"PackageVersion" xml:"PackageVersion"`
+	Jdk                  string `json:"Jdk" xml:"Jdk"`
 	ImageUrl             string `json:"ImageUrl" xml:"ImageUrl"`
 	PackageUrl           string `json:"PackageUrl" xml:"PackageUrl"`
-	Jdk                  string `json:"Jdk" xml:"Jdk"`
+	PackageType          string `json:"PackageType" xml:"PackageType"`
+	PackageVersion       string `json:"PackageVersion" xml:"PackageVersion"`
+	GroupName            string `json:"GroupName" xml:"GroupName"`
+	GroupId              string `json:"GroupId" xml:"GroupId"`
 	WebContainer         string `json:"WebContainer" xml:"WebContainer"`
-	EdasContainerVersion string `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
 	Replicas             int    `json:"Replicas" xml:"Replicas"`
+	EdasContainerVersion string `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
 	RunningInstances     int    `json:"RunningInstances" xml:"RunningInstances"`
+	GroupType            int    `json:"GroupType" xml:"GroupType"`
 }

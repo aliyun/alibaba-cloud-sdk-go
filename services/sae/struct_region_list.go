@@ -17,14 +17,14 @@ package sae
 
 // RegionList is a nested struct in sae response
 type RegionList struct {
-	NamespaceName     string `json:"NamespaceName" xml:"NamespaceName"`
-	NamespaceId       string `json:"NamespaceId" xml:"NamespaceId"`
-	AgentInstall      string `json:"AgentInstall" xml:"AgentInstall"`
-	Current           bool   `json:"Current" xml:"Current"`
-	Custom            bool   `json:"Custom" xml:"Custom"`
-	RegionId          string `json:"RegionId" xml:"RegionId"`
-	HybridCloudEnable bool   `json:"HybridCloudEnable" xml:"HybridCloudEnable"`
 	VpcId             string `json:"VpcId" xml:"VpcId"`
 	VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
+	Custom            bool   `json:"Custom" xml:"Custom"`
+	AgentInstall      string `json:"AgentInstall" xml:"AgentInstall"`
+	NamespaceId       string `json:"NamespaceId" xml:"NamespaceId"`
+	HybridCloudEnable bool   `json:"HybridCloudEnable" xml:"HybridCloudEnable"`
 	SecurityGroupId   string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	Current           bool   `json:"Current" xml:"Current"`
+	NamespaceName     string `json:"NamespaceName" xml:"NamespaceName"`
+	RegionId          string `json:"RegionId" xml:"RegionId"`
 }

@@ -17,7 +17,7 @@ package sae
 
 // ScRule is a nested struct in sae response
 type ScRule struct {
-	Condition string `json:"condition" xml:"condition"`
-	Path      string `json:"path" xml:"path"`
-	Items     []Item `json:"items" xml:"items"`
+	Condition string        `json:"condition" xml:"condition"`
+	Path      string        `json:"path" xml:"path"`
+	Items     []Scrulesitem `json:"items" xml:"items"`
 }

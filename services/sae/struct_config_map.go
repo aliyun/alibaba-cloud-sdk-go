@@ -17,12 +17,12 @@ package sae
 
 // ConfigMap is a nested struct in sae response
 type ConfigMap struct {
-	ConfigMapId int64                  `json:"ConfigMapId" xml:"ConfigMapId"`
-	Name        string                 `json:"Name" xml:"Name"`
+	UpdateTime  int64                  `json:"UpdateTime" xml:"UpdateTime"`
+	Data        map[string]interface{} `json:"Data" xml:"Data"`
 	NamespaceId string                 `json:"NamespaceId" xml:"NamespaceId"`
 	Description string                 `json:"Description" xml:"Description"`
-	Data        map[string]interface{} `json:"Data" xml:"Data"`
 	CreateTime  int64                  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime  int64                  `json:"UpdateTime" xml:"UpdateTime"`
+	ConfigMapId int64                  `json:"ConfigMapId" xml:"ConfigMapId"`
+	Name        string                 `json:"Name" xml:"Name"`
 	RelateApps  []RelateApp            `json:"RelateApps" xml:"RelateApps"`
 }

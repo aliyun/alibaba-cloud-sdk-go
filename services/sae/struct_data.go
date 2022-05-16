@@ -17,6 +17,7 @@ package sae
 
 // Data is a nested struct in sae response
 type Data struct {
+	LoadBalanceType               string                   `json:"LoadBalanceType" xml:"LoadBalanceType"`
 	LastDisableTime               int64                    `json:"LastDisableTime" xml:"LastDisableTime"`
 	VpcName                       string                   `json:"VpcName" xml:"VpcName"`
 	TomcatConfig                  string                   `json:"TomcatConfig" xml:"TomcatConfig"`
@@ -41,8 +42,8 @@ type Data struct {
 	PhpExtensions                 string                   `json:"PhpExtensions" xml:"PhpExtensions"`
 	PhpConfig                     string                   `json:"PhpConfig" xml:"PhpConfig"`
 	Envs                          string                   `json:"Envs" xml:"Envs"`
-	RepoType                      string                   `json:"RepoType" xml:"RepoType"`
 	RepoTag                       string                   `json:"RepoTag" xml:"RepoTag"`
+	RepoType                      string                   `json:"RepoType" xml:"RepoType"`
 	SlbId                         string                   `json:"SlbId" xml:"SlbId"`
 	TotalSize                     int                      `json:"TotalSize" xml:"TotalSize"`
 	NotificationExpired           bool                     `json:"NotificationExpired" xml:"NotificationExpired"`
@@ -72,6 +73,7 @@ type Data struct {
 	PostStart                     string                   `json:"PostStart" xml:"PostStart"`
 	RepoNamespace                 string                   `json:"RepoNamespace" xml:"RepoNamespace"`
 	Liveness                      string                   `json:"Liveness" xml:"Liveness"`
+	ListenerProtocol              string                   `json:"ListenerProtocol" xml:"ListenerProtocol"`
 	RepoName                      string                   `json:"RepoName" xml:"RepoName"`
 	EnableAhas                    string                   `json:"EnableAhas" xml:"EnableAhas"`
 	CurrentPage                   int                      `json:"CurrentPage" xml:"CurrentPage"`
@@ -107,6 +109,7 @@ type Data struct {
 	Php                           string                   `json:"Php" xml:"Php"`
 	ScaleRuleName                 string                   `json:"ScaleRuleName" xml:"ScaleRuleName"`
 	AcrAssumeRoleArn              string                   `json:"AcrAssumeRoleArn" xml:"AcrAssumeRoleArn"`
+	JumpServerAppId               string                   `json:"JumpServerAppId" xml:"JumpServerAppId"`
 	Cpu                           int                      `json:"Cpu" xml:"Cpu"`
 	TerminationGracePeriodSeconds int                      `json:"TerminationGracePeriodSeconds" xml:"TerminationGracePeriodSeconds"`
 	WebContainer                  string                   `json:"WebContainer" xml:"WebContainer"`
@@ -124,6 +127,7 @@ type Data struct {
 	WarStartOptions               string                   `json:"WarStartOptions" xml:"WarStartOptions"`
 	UserId                        string                   `json:"UserId" xml:"UserId"`
 	Workload                      string                   `json:"Workload" xml:"Workload"`
+	ProgrammingLanguage           string                   `json:"ProgrammingLanguage" xml:"ProgrammingLanguage"`
 	Description                   string                   `json:"Description" xml:"Description"`
 	ScaleRuleEnabled              bool                     `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
 	InternetIp                    string                   `json:"InternetIp" xml:"InternetIp"`
@@ -145,23 +149,23 @@ type Data struct {
 	OssMountDescs                 []OssMountDesc           `json:"OssMountDescs" xml:"OssMountDescs"`
 	MountDesc                     []MountDescItem          `json:"MountDesc" xml:"MountDesc"`
 	Instances                     []Instance               `json:"Instances" xml:"Instances"`
-	Intranet                      []IntranetItem           `json:"Intranet" xml:"Intranet"`
-	RelateApps                    []RelateApp              `json:"RelateApps" xml:"RelateApps"`
-	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
-	Internet                      []InternetItem           `json:"Internet" xml:"Internet"`
-	ChangeOrderList               []ChangeOrder            `json:"ChangeOrderList" xml:"ChangeOrderList"`
-	Rules                         []Rule                   `json:"Rules" xml:"Rules"`
-	LogConfigs                    []LogConfig              `json:"LogConfigs" xml:"LogConfigs"`
-	ConfigMapMountDesc            []ConfigMapMountDescItem `json:"ConfigMapMountDesc" xml:"ConfigMapMountDesc"`
 	ConfigMaps                    []ConfigMap              `json:"ConfigMaps" xml:"ConfigMaps"`
+	RelateApps                    []RelateApp              `json:"RelateApps" xml:"RelateApps"`
+	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
+	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
+	LogConfigs                    []LogConfig              `json:"LogConfigs" xml:"LogConfigs"`
+	Intranet                      []IntranetItem           `json:"Intranet" xml:"Intranet"`
+	ScRules                       []ScRule                 `json:"ScRules" xml:"ScRules"`
+	Rules                         []Rule                   `json:"Rules" xml:"Rules"`
+	ChangeOrderList               []ChangeOrder            `json:"ChangeOrderList" xml:"ChangeOrderList"`
+	ConfigMapMountDesc            []ConfigMapMountDescItem `json:"ConfigMapMountDesc" xml:"ConfigMapMountDesc"`
 	DubboRules                    []DubboRule              `json:"DubboRules" xml:"DubboRules"`
 	Applications                  []Application            `json:"Applications" xml:"Applications"`
 	Tags                          []Tag                    `json:"Tags" xml:"Tags"`
 	Methods                       []Method                 `json:"Methods" xml:"Methods"`
-	AppEventEntity                []AppEventEntityItem     `json:"AppEventEntity" xml:"AppEventEntity"`
 	ApplicationScalingRules       []ApplicationScalingRule `json:"ApplicationScalingRules" xml:"ApplicationScalingRules"`
-	ScRules                       []ScRule                 `json:"ScRules" xml:"ScRules"`
+	Internet                      []InternetItem           `json:"Internet" xml:"Internet"`
+	AppEventEntity                []AppEventEntityItem     `json:"AppEventEntity" xml:"AppEventEntity"`
 	StageList                     []Stage                  `json:"StageList" xml:"StageList"`
-	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
 	Namespaces                    []Namespace              `json:"Namespaces" xml:"Namespaces"`
 }

@@ -96,6 +96,7 @@ type DeployApplicationRequest struct {
 	WebContainer                     string           `position:"Query" name:"WebContainer"`
 	EnableAhas                       string           `position:"Query" name:"EnableAhas"`
 	SlsConfigs                       string           `position:"Query" name:"SlsConfigs"`
+	KafkaConfigs                     string           `position:"Query" name:"KafkaConfigs"`
 	OpenCollectToKafka               requests.Boolean `position:"Query" name:"OpenCollectToKafka"`
 	CommandArgs                      string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn                 string           `position:"Query" name:"AcrAssumeRoleArn"`

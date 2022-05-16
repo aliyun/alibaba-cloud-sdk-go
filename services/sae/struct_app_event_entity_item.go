@@ -18,10 +18,10 @@ package sae
 // AppEventEntityItem is a nested struct in sae response
 type AppEventEntityItem struct {
 	ObjectKind     string `json:"ObjectKind" xml:"ObjectKind"`
-	ObjectName     string `json:"ObjectName" xml:"ObjectName"`
 	EventType      string `json:"EventType" xml:"EventType"`
-	Message        string `json:"Message" xml:"Message"`
-	FirstTimestamp string `json:"FirstTimestamp" xml:"FirstTimestamp"`
 	LastTimestamp  string `json:"LastTimestamp" xml:"LastTimestamp"`
+	Message        string `json:"Message" xml:"Message"`
+	ObjectName     string `json:"ObjectName" xml:"ObjectName"`
 	Reason         string `json:"Reason" xml:"Reason"`
+	FirstTimestamp string `json:"FirstTimestamp" xml:"FirstTimestamp"`
 }

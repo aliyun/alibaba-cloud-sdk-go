@@ -77,11 +77,11 @@ type ListAppVersionsRequest struct {
 // ListAppVersionsResponse is the response struct for api ListAppVersions
 type ListAppVersionsResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
-	Code      string                 `json:"Code" xml:"Code"`
 	Message   string                 `json:"Message" xml:"Message"`
-	Success   bool                   `json:"Success" xml:"Success"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	ErrorCode string                 `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string                 `json:"Code" xml:"Code"`
+	Success   bool                   `json:"Success" xml:"Success"`
 	Data      []PackageVersionEntity `json:"Data" xml:"Data"`
 }
 
