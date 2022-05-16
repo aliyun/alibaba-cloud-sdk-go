@@ -78,8 +78,9 @@ type DescribeShowListRequest struct {
 // DescribeShowListResponse is the response struct for api DescribeShowList
 type DescribeShowListResponse struct {
 	*responses.BaseResponse
-	ShowList  string `json:"ShowList" xml:"ShowList"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	ShowList     string       `json:"ShowList" xml:"ShowList"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	ShowListInfo ShowListInfo `json:"ShowListInfo" xml:"ShowListInfo"`
 }
 
 // CreateDescribeShowListRequest creates a request to invoke DescribeShowList API

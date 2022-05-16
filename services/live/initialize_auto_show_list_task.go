@@ -76,6 +76,7 @@ type InitializeAutoShowListTaskRequest struct {
 	DomainName   string           `position:"Query" name:"DomainName"`
 	EndTime      requests.Integer `position:"Query" name:"EndTime"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	CallBackUrl  string           `position:"Query" name:"CallBackUrl"`
 	ResourceIds  string           `position:"Query" name:"ResourceIds"`
 }
 
