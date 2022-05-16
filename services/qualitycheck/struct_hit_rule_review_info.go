@@ -17,19 +17,18 @@ package qualitycheck
 
 // HitRuleReviewInfo is a nested struct in qualitycheck response
 type HitRuleReviewInfo struct {
-	Comments             string                               `json:"Comments" xml:"Comments"`
-	AutoReview           int                                  `json:"AutoReview" xml:"AutoReview"`
-	RuleName             string                               `json:"RuleName" xml:"RuleName"`
-	Complainable         bool                                 `json:"Complainable" xml:"Complainable"`
+	RuleScoreType        int                                  `json:"RuleScoreType" xml:"RuleScoreType"`
 	RuleType             int                                  `json:"RuleType" xml:"RuleType"`
 	ScoreSubName         string                               `json:"ScoreSubName" xml:"ScoreSubName"`
-	ScoreSubId           int64                                `json:"ScoreSubId" xml:"ScoreSubId"`
-	ScoreId              int64                                `json:"ScoreId" xml:"ScoreId"`
 	ScoreNum             int                                  `json:"ScoreNum" xml:"ScoreNum"`
-	Rid                  int64                                `json:"Rid" xml:"Rid"`
+	AutoReview           int                                  `json:"AutoReview" xml:"AutoReview"`
+	ScoreSubId           int64                                `json:"ScoreSubId" xml:"ScoreSubId"`
+	Complainable         bool                                 `json:"Complainable" xml:"Complainable"`
 	TotalNumber          int                                  `json:"TotalNumber" xml:"TotalNumber"`
-	RuleScoreType        int                                  `json:"RuleScoreType" xml:"RuleScoreType"`
+	ScoreId              int64                                `json:"ScoreId" xml:"ScoreId"`
+	RuleName             string                               `json:"RuleName" xml:"RuleName"`
+	Rid                  int64                                `json:"Rid" xml:"Rid"`
 	ReviewInfo           ReviewInfo                           `json:"ReviewInfo" xml:"ReviewInfo"`
+	ConditionHitInfoList ConditionHitInfoList                 `json:"ConditionHitInfoList" xml:"ConditionHitInfoList"`
 	ComplainHistories    ComplainHistoriesInGetResultToReview `json:"ComplainHistories" xml:"ComplainHistories"`
-	ConditionHitInfoList ConditionHitInfoListInTestRule       `json:"ConditionHitInfoList" xml:"ConditionHitInfoList"`
 }

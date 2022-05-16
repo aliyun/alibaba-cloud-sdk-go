@@ -1,3 +1,7 @@
+2022-05-16 Version: v1.61.1595
+- Generated 2019-01-15 for `Qualitycheck`.
+- Add Api ListQualityCheckScheme.
+
 2022-05-16 Version: v1.61.1594
 - Generated 2019-05-06 for `sae`.
 - Support UpdateApplicationVswitches and DescribeComponents.

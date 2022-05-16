@@ -17,9 +17,9 @@ package qualitycheck
 
 // ReviewInfo is a nested struct in qualitycheck response
 type ReviewInfo struct {
+	ReviewResult int    `json:"ReviewResult" xml:"ReviewResult"`
 	ReviewTime   string `json:"ReviewTime" xml:"ReviewTime"`
-	Rid          int64  `json:"Rid" xml:"Rid"`
 	HitId        string `json:"HitId" xml:"HitId"`
 	Reviewer     string `json:"Reviewer" xml:"Reviewer"`
-	ReviewResult int    `json:"ReviewResult" xml:"ReviewResult"`
+	Rid          int64  `json:"Rid" xml:"Rid"`
 }
