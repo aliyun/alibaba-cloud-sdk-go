@@ -98,7 +98,7 @@ func CreateListTLSCipherPoliciesRequest() (request *ListTLSCipherPoliciesRequest
 	request = &ListTLSCipherPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "ListTLSCipherPolicies", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "ListTLSCipherPolicies", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

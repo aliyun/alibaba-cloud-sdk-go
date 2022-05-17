@@ -133,7 +133,7 @@ func CreateCreateLoadBalancerTCPListenerRequest() (request *CreateLoadBalancerTC
 	request = &CreateLoadBalancerTCPListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerTCPListener", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerTCPListener", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

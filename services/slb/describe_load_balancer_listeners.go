@@ -96,7 +96,7 @@ func CreateDescribeLoadBalancerListenersRequest() (request *DescribeLoadBalancer
 	request = &DescribeLoadBalancerListenersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerListeners", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerListeners", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateModifyLoadBalancerInstanceChargeTypeRequest() (request *ModifyLoadBal
 	request = &ModifyLoadBalancerInstanceChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInstanceChargeType", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInstanceChargeType", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

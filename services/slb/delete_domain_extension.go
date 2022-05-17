@@ -91,7 +91,7 @@ func CreateDeleteDomainExtensionRequest() (request *DeleteDomainExtensionRequest
 	request = &DeleteDomainExtensionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteDomainExtension", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteDomainExtension", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

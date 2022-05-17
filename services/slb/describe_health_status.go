@@ -94,7 +94,7 @@ func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) 
 	request = &DescribeHealthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeHealthStatus", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeHealthStatus", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -127,7 +127,7 @@ func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {
 	request = &CreateLoadBalancerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancer", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancer", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

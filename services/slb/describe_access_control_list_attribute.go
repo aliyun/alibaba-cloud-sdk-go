@@ -99,7 +99,7 @@ func CreateDescribeAccessControlListAttributeRequest() (request *DescribeAccessC
 	request = &DescribeAccessControlListAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeAccessControlListAttribute", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeAccessControlListAttribute", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

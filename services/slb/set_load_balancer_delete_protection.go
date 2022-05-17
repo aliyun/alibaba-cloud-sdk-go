@@ -92,7 +92,7 @@ func CreateSetLoadBalancerDeleteProtectionRequest() (request *SetLoadBalancerDel
 	request = &SetLoadBalancerDeleteProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerDeleteProtection", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerDeleteProtection", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

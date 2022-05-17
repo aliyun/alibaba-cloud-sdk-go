@@ -94,7 +94,7 @@ func CreateCreateAccessControlListRequest() (request *CreateAccessControlListReq
 	request = &CreateAccessControlListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateAccessControlList", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateAccessControlList", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

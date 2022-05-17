@@ -94,7 +94,7 @@ func CreateSetListenerAccessControlStatusRequest() (request *SetListenerAccessCo
 	request = &SetListenerAccessControlStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetListenerAccessControlStatus", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetListenerAccessControlStatus", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

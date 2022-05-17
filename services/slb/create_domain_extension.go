@@ -105,7 +105,7 @@ func CreateCreateDomainExtensionRequest() (request *CreateDomainExtensionRequest
 	request = &CreateDomainExtensionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateDomainExtension", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateDomainExtension", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

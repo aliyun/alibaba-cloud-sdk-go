@@ -95,7 +95,7 @@ func CreateDescribeListenerAccessControlAttributeRequest() (request *DescribeLis
 	request = &DescribeListenerAccessControlAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "Slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }
