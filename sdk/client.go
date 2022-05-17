@@ -81,6 +81,7 @@ type Client struct {
 	Domain          string
 	isOpenAsync     bool
 	isCloseTrace    bool
+	rootSpan        opentracing.Span
 }
 
 func (client *Client) Init() (err error) {
@@ -138,6 +139,14 @@ func (client *Client) SetCloseTrace(isCloseTrace bool) {
 
 func (client *Client) GetCloseTrace() bool {
 	return client.isCloseTrace
+}
+
+func (client *Client) SetTracerRootSpan(rootSpan opentracing.Span) {
+	client.rootSpan = rootSpan
+}
+
+func (client *Client) GetTracerRootSpan() opentracing.Span {
+	return client.rootSpan
 }
 
 // InitWithProviderChain will get credential from the providerChain,
@@ -613,8 +622,11 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	if ok := opentracing.IsGlobalTracerRegistered(); ok && !client.isCloseTrace {
 		tracer := opentracing.GlobalTracer()
 		var rootCtx opentracing.SpanContext
+		var rootSpan opentracing.Span
 
-		if rootSpan := request.GetTracerSpan(); rootSpan != nil {
+		if rootSpan = client.rootSpan; rootSpan != nil {
+			rootCtx = rootSpan.Context()
+		} else if rootSpan = request.GetTracerSpan(); rootSpan != nil {
 			rootCtx = rootSpan.Context()
 		}
 
