@@ -87,6 +87,7 @@ type InsertApplicationRequest struct {
 	EnablePortCheck requests.Boolean `position:"Query" name:"EnablePortCheck"`
 	ApplicationName string           `position:"Query" name:"ApplicationName"`
 	Jdk             string           `position:"Query" name:"Jdk"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Mem             requests.Integer `position:"Query" name:"Mem"`
 	LogicalRegionId string           `position:"Query" name:"LogicalRegionId"`
 	EnableUrlCheck  requests.Boolean `position:"Query" name:"EnableUrlCheck"`

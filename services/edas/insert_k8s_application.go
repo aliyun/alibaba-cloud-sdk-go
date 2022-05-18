@@ -74,8 +74,10 @@ type InsertK8sApplicationRequest struct {
 	NasId                  string           `position:"Query" name:"NasId"`
 	IntranetSlbId          string           `position:"Query" name:"IntranetSlbId"`
 	Envs                   string           `position:"Query" name:"Envs"`
+	Annotations            string           `position:"Query" name:"Annotations"`
 	RequestsMem            requests.Integer `position:"Query" name:"RequestsMem"`
 	StorageType            string           `position:"Query" name:"StorageType"`
+	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
 	ConfigMountDescs       string           `position:"Query" name:"ConfigMountDescs"`
 	AppName                string           `position:"Query" name:"AppName"`
 	RequestsmCpu           requests.Integer `position:"Query" name:"RequestsmCpu"`
@@ -84,13 +86,19 @@ type InsertK8sApplicationRequest struct {
 	DeployAcrossNodes      string           `position:"Query" name:"DeployAcrossNodes"`
 	PreStop                string           `position:"Query" name:"PreStop"`
 	BuildPackId            string           `position:"Query" name:"BuildPackId"`
+	EnableEmptyPushReject  requests.Boolean `position:"Query" name:"EnableEmptyPushReject"`
 	LocalVolume            string           `position:"Query" name:"LocalVolume"`
+	Labels                 string           `position:"Query" name:"Labels"`
 	UseBodyEncoding        requests.Boolean `position:"Query" name:"UseBodyEncoding"`
+	LosslessRuleFuncType   requests.Integer `position:"Query" name:"LosslessRuleFuncType"`
 	EmptyDirs              string           `position:"Query" name:"EmptyDirs"`
 	PackageType            string           `position:"Query" name:"PackageType"`
+	LosslessRuleRelated    requests.Boolean `position:"Query" name:"LosslessRuleRelated"`
 	RuntimeClassName       string           `position:"Query" name:"RuntimeClassName"`
 	PostStart              string           `position:"Query" name:"PostStart"`
 	CustomAffinity         string           `position:"Query" name:"CustomAffinity"`
+	EnableLosslessRule     requests.Boolean `position:"Query" name:"EnableLosslessRule"`
+	LosslessRuleWarmupTime requests.Integer `position:"Query" name:"LosslessRuleWarmupTime"`
 	RepoId                 string           `position:"Query" name:"RepoId"`
 	InternetTargetPort     requests.Integer `position:"Query" name:"InternetTargetPort"`
 	WebContainer           string           `position:"Query" name:"WebContainer"`
@@ -112,6 +120,7 @@ type InsertK8sApplicationRequest struct {
 	LogicalRegionId        string           `position:"Query" name:"LogicalRegionId"`
 	PackageUrl             string           `position:"Query" name:"PackageUrl"`
 	InternetSlbProtocol    string           `position:"Query" name:"InternetSlbProtocol"`
+	LosslessRuleDelayTime  requests.Integer `position:"Query" name:"LosslessRuleDelayTime"`
 	MountDescs             string           `position:"Query" name:"MountDescs"`
 	Replicas               requests.Integer `position:"Query" name:"Replicas"`
 	LimitCpu               requests.Integer `position:"Query" name:"LimitCpu"`
@@ -128,6 +137,7 @@ type InsertK8sApplicationRequest struct {
 	PvcMountDescs          string           `position:"Query" name:"PvcMountDescs"`
 	Namespace              string           `position:"Query" name:"Namespace"`
 	ApplicationDescription string           `position:"Query" name:"ApplicationDescription"`
+	LosslessRuleAligned    requests.Boolean `position:"Query" name:"LosslessRuleAligned"`
 	RequestsCpu            requests.Integer `position:"Query" name:"RequestsCpu"`
 	JavaStartUpConfig      string           `position:"Query" name:"JavaStartUpConfig"`
 }
