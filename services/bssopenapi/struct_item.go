@@ -70,6 +70,7 @@ type Item struct {
 	TotalQuantity             float64 `json:"TotalQuantity" xml:"TotalQuantity"`
 	BizType                   string  `json:"BizType" xml:"BizType"`
 	BillingItemCode           string  `json:"BillingItemCode" xml:"BillingItemCode"`
+	BucketPath                string  `json:"BucketPath" xml:"BucketPath"`
 	UsageStartTime            string  `json:"UsageStartTime" xml:"UsageStartTime"`
 	SolutionCode              string  `json:"SolutionCode" xml:"SolutionCode"`
 	ProductDetail             string  `json:"ProductDetail" xml:"ProductDetail"`
