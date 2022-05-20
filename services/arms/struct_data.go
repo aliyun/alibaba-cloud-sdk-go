@@ -18,6 +18,7 @@ package arms
 // Data is a nested struct in arms response
 type Data struct {
 	ArmsDBNotExist          bool                     `json:"ArmsDBNotExist" xml:"ArmsDBNotExist"`
+	EnableTag               bool                     `json:"EnableTag" xml:"EnableTag"`
 	IsControllerInstalled   bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
 	Info                    string                   `json:"Info" xml:"Info"`
 	PodIsNotRestart         bool                     `json:"PodIsNotRestart" xml:"PodIsNotRestart"`
@@ -37,4 +38,5 @@ type Data struct {
 	AgentHelmNotExist       bool                     `json:"AgentHelmNotExist" xml:"AgentHelmNotExist"`
 	GetClusterInfo          string                   `json:"GetClusterInfo" xml:"GetClusterInfo"`
 	Items                   []map[string]interface{} `json:"Items" xml:"Items"`
+	Products                []ProductsItem           `json:"Products" xml:"Products"`
 }

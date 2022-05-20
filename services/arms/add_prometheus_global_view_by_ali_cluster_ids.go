@@ -71,8 +71,9 @@ func (client *Client) AddPrometheusGlobalViewByAliClusterIdsWithCallback(request
 // AddPrometheusGlobalViewByAliClusterIdsRequest is the request struct for api AddPrometheusGlobalViewByAliClusterIds
 type AddPrometheusGlobalViewByAliClusterIdsRequest struct {
 	*requests.RpcRequest
-	ClusterIds string `position:"Query" name:"ClusterIds"`
-	GroupName  string `position:"Query" name:"GroupName"`
+	ProductCode string `position:"Query" name:"ProductCode"`
+	ClusterIds  string `position:"Query" name:"ClusterIds"`
+	GroupName   string `position:"Query" name:"GroupName"`
 }
 
 // AddPrometheusGlobalViewByAliClusterIdsResponse is the response struct for api AddPrometheusGlobalViewByAliClusterIds
