@@ -1,3 +1,8 @@
+2022-05-20 Version: v1.61.1601
+- Generated 2020-01-16 for `DAS`.
+- Dbgateway support delete api.
+
+
 2022-05-20 Version: v1.61.1600
 - Generated 2019-08-08 for `ARMS`.
 - Update ListDashBoards and AddPrometheusGlobalViewByAliClusterIds api.

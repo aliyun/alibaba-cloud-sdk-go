@@ -17,11 +17,11 @@ package das
 
 // DataInGetAsyncErrorRequestListByCode is a nested struct in das response
 type DataInGetAsyncErrorRequestListByCode struct {
-	Fail      bool   `json:"fail" xml:"fail"`
-	ResultId  string `json:"resultId" xml:"resultId"`
-	IsFinish  bool   `json:"isFinish" xml:"isFinish"`
-	State     string `json:"state" xml:"state"`
-	Complete  bool   `json:"complete" xml:"complete"`
-	Timestamp int64  `json:"timestamp" xml:"timestamp"`
-	Result    []List `json:"result" xml:"result"`
+	Fail      bool         `json:"fail" xml:"fail"`
+	ResultId  string       `json:"resultId" xml:"resultId"`
+	IsFinish  bool         `json:"isFinish" xml:"isFinish"`
+	State     string       `json:"state" xml:"state"`
+	Complete  bool         `json:"complete" xml:"complete"`
+	Timestamp int64        `json:"timestamp" xml:"timestamp"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
