@@ -92,7 +92,7 @@ func CreateUploadRequest() (request *UploadRequest) {
 	request = &UploadRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "Upload", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "Upload", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

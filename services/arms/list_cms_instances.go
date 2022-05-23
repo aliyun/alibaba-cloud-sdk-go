@@ -86,7 +86,7 @@ func CreateListCmsInstancesRequest() (request *ListCmsInstancesRequest) {
 	request = &ListCmsInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListCmsInstances", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListCmsInstances", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

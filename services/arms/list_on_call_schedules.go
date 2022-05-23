@@ -88,7 +88,7 @@ func CreateListOnCallSchedulesRequest() (request *ListOnCallSchedulesRequest) {
 	request = &ListOnCallSchedulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListOnCallSchedules", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListOnCallSchedules", "arms", "openAPI")
 	request.Method = requests.GET
 	return
 }

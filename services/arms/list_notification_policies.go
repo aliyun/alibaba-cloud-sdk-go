@@ -89,7 +89,7 @@ func CreateListNotificationPoliciesRequest() (request *ListNotificationPoliciesR
 	request = &ListNotificationPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListNotificationPolicies", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListNotificationPolicies", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

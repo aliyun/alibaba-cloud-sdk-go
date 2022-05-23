@@ -88,7 +88,7 @@ func CreateSearchRetcodeAppByPageRequest() (request *SearchRetcodeAppByPageReque
 	request = &SearchRetcodeAppByPageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchRetcodeAppByPage", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchRetcodeAppByPage", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

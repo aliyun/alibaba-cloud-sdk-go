@@ -88,7 +88,7 @@ func CreateAppendInstancesToPrometheusGlobalViewRequest() (request *AppendInstan
 	request = &AppendInstancesToPrometheusGlobalViewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "AppendInstancesToPrometheusGlobalView", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "AppendInstancesToPrometheusGlobalView", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

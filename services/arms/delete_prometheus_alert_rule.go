@@ -86,7 +86,7 @@ func CreateDeletePrometheusAlertRuleRequest() (request *DeletePrometheusAlertRul
 	request = &DeletePrometheusAlertRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeletePrometheusAlertRule", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeletePrometheusAlertRule", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

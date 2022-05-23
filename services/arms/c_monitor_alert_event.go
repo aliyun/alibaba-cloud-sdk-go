@@ -92,7 +92,7 @@ func CreateCMonitorAlertEventRequest() (request *CMonitorAlertEventRequest) {
 	request = &CMonitorAlertEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CMonitorAlertEvent", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CMonitorAlertEvent", "arms", "openAPI")
 	request.Method = requests.GET
 	return
 }

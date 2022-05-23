@@ -87,7 +87,7 @@ func CreateDeleteIntegrationRequest() (request *DeleteIntegrationRequest) {
 	request = &DeleteIntegrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteIntegration", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteIntegration", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

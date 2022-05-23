@@ -86,7 +86,7 @@ func CreateDeleteEventBridgeIntegrationRequest() (request *DeleteEventBridgeInte
 	request = &DeleteEventBridgeIntegrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteEventBridgeIntegration", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteEventBridgeIntegration", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

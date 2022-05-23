@@ -89,7 +89,7 @@ func CreateListScenarioRequest() (request *ListScenarioRequest) {
 	request = &ListScenarioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListScenario", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListScenario", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

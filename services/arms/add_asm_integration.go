@@ -86,7 +86,7 @@ func CreateAddASMIntegrationRequest() (request *AddASMIntegrationRequest) {
 	request = &AddASMIntegrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "AddASMIntegration", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "AddASMIntegration", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

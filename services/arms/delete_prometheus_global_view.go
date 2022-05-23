@@ -86,7 +86,7 @@ func CreateDeletePrometheusGlobalViewRequest() (request *DeletePrometheusGlobalV
 	request = &DeletePrometheusGlobalViewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeletePrometheusGlobalView", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeletePrometheusGlobalView", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

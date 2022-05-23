@@ -93,7 +93,7 @@ func CreateQueryReleaseMetricRequest() (request *QueryReleaseMetricRequest) {
 	request = &QueryReleaseMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryReleaseMetric", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryReleaseMetric", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

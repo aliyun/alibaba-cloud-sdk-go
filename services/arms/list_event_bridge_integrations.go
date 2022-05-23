@@ -88,7 +88,7 @@ func CreateListEventBridgeIntegrationsRequest() (request *ListEventBridgeIntegra
 	request = &ListEventBridgeIntegrationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListEventBridgeIntegrations", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListEventBridgeIntegrations", "arms", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -88,7 +88,7 @@ func CreateSearchTagNamesRequest() (request *SearchTagNamesRequest) {
 	request = &SearchTagNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchTagNames", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchTagNames", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

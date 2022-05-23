@@ -88,7 +88,7 @@ func CreateInstallCmsExporterRequest() (request *InstallCmsExporterRequest) {
 	request = &InstallCmsExporterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "InstallCmsExporter", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "InstallCmsExporter", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

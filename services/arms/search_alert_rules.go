@@ -93,7 +93,7 @@ func CreateSearchAlertRulesRequest() (request *SearchAlertRulesRequest) {
 	request = &SearchAlertRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchAlertRules", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchAlertRules", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }
