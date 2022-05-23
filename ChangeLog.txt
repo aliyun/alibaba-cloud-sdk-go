@@ -1,3 +1,7 @@
+2022-05-23 Version: v1.61.1605
+- Generated 2022-05-17 for `btripOpen`.
+- Api init.
+
 2022-05-23 Version: v1.61.1604
 - Generated 2014-05-26 for `Ecs`.
 - Support systemdisk encrypt and arns.
