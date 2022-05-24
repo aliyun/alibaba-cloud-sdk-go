@@ -77,6 +77,7 @@ type ListTransitRouterAvailableResourceRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SupportMulticast     requests.Boolean `position:"Query" name:"SupportMulticast"`
 }
 
 // ListTransitRouterAvailableResourceResponse is the response struct for api ListTransitRouterAvailableResource

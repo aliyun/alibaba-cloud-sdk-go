@@ -82,6 +82,7 @@ type CreateTransitRouterRequest struct {
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterDescription string           `position:"Query" name:"TransitRouterDescription"`
+	SupportMulticast         requests.Boolean `position:"Query" name:"SupportMulticast"`
 }
 
 // CreateTransitRouterResponse is the response struct for api CreateTransitRouter

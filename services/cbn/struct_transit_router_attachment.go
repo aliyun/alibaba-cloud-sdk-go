@@ -19,6 +19,7 @@ package cbn
 type TransitRouterAttachment struct {
 	PeerTransitRouterOwnerId           int64         `json:"PeerTransitRouterOwnerId" xml:"PeerTransitRouterOwnerId"`
 	VbrRegionId                        string        `json:"VbrRegionId" xml:"VbrRegionId"`
+	ChargeType                         string        `json:"ChargeType" xml:"ChargeType"`
 	CenBandwidthPackageId              string        `json:"CenBandwidthPackageId" xml:"CenBandwidthPackageId"`
 	VbrOwnerId                         int64         `json:"VbrOwnerId" xml:"VbrOwnerId"`
 	VpcOwnerId                         int64         `json:"VpcOwnerId" xml:"VpcOwnerId"`

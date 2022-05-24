@@ -27,4 +27,5 @@ type TransitRouter struct {
 	AliUid                   int64  `json:"AliUid" xml:"AliUid"`
 	RegionId                 string `json:"RegionId" xml:"RegionId"`
 	ServiceMode              string `json:"ServiceMode" xml:"ServiceMode"`
+	SupportMulticast         bool   `json:"SupportMulticast" xml:"SupportMulticast"`
 }
