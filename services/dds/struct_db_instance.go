@@ -50,6 +50,7 @@ type DBInstance struct {
 	StorageEngine               string                                   `json:"StorageEngine" xml:"StorageEngine"`
 	DBInstanceStatus            string                                   `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
 	CurrentKernelVersion        string                                   `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
+	StorageType                 string                                   `json:"StorageType" xml:"StorageType"`
 	ZoneId                      string                                   `json:"ZoneId" xml:"ZoneId"`
 	ProtocolType                string                                   `json:"ProtocolType" xml:"ProtocolType"`
 	KindCode                    string                                   `json:"KindCode" xml:"KindCode"`

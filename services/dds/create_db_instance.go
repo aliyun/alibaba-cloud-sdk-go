@@ -76,6 +76,7 @@ type CreateDBInstanceRequest struct {
 	CouponNo              string           `position:"Query" name:"CouponNo"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	NetworkType           string           `position:"Query" name:"NetworkType"`
+	StorageType           string           `position:"Query" name:"StorageType"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
