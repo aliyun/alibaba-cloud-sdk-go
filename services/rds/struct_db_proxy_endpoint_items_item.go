@@ -17,8 +17,8 @@ package rds
 
 // DbProxyEndpointItemsItem is a nested struct in rds response
 type DbProxyEndpointItemsItem struct {
+	DbProxyEndpointAliases string `json:"DbProxyEndpointAliases" xml:"DbProxyEndpointAliases"`
 	DbProxyEndpointName    string `json:"DbProxyEndpointName" xml:"DbProxyEndpointName"`
 	DbProxyEndpointType    string `json:"DbProxyEndpointType" xml:"DbProxyEndpointType"`
 	DbProxyReadWriteMode   string `json:"DbProxyReadWriteMode" xml:"DbProxyReadWriteMode"`
-	DbProxyEndpointAliases string `json:"DbProxyEndpointAliases" xml:"DbProxyEndpointAliases"`
 }

@@ -81,10 +81,10 @@ type ModifyReadonlyInstanceDelayReplicationTimeRequest struct {
 // ModifyReadonlyInstanceDelayReplicationTimeResponse is the response struct for api ModifyReadonlyInstanceDelayReplicationTime
 type ModifyReadonlyInstanceDelayReplicationTimeResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId           string `json:"DBInstanceId" xml:"DBInstanceId"`
-	ReadSQLReplicationTime string `json:"ReadSQLReplicationTime" xml:"ReadSQLReplicationTime"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
 	TaskId                 string `json:"TaskId" xml:"TaskId"`
+	ReadSQLReplicationTime string `json:"ReadSQLReplicationTime" xml:"ReadSQLReplicationTime"`
 }
 
 // CreateModifyReadonlyInstanceDelayReplicationTimeRequest creates a request to invoke ModifyReadonlyInstanceDelayReplicationTime API

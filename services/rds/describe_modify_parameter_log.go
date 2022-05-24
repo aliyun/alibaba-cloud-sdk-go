@@ -86,12 +86,12 @@ type DescribeModifyParameterLogRequest struct {
 type DescribeModifyParameterLogResponse struct {
 	*responses.BaseResponse
 	RequestId        string                            `json:"RequestId" xml:"RequestId"`
-	Engine           string                            `json:"Engine" xml:"Engine"`
-	DBInstanceId     string                            `json:"DBInstanceId" xml:"DBInstanceId"`
-	EngineVersion    string                            `json:"EngineVersion" xml:"EngineVersion"`
-	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	DBInstanceId     string                            `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine           string                            `json:"Engine" xml:"Engine"`
+	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
+	EngineVersion    string                            `json:"EngineVersion" xml:"EngineVersion"`
 	Items            ItemsInDescribeModifyParameterLog `json:"Items" xml:"Items"`
 }
 

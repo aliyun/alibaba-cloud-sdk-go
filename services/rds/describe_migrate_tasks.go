@@ -84,11 +84,11 @@ type DescribeMigrateTasksRequest struct {
 // DescribeMigrateTasksResponse is the response struct for api DescribeMigrateTasks
 type DescribeMigrateTasksResponse struct {
 	*responses.BaseResponse
-	RequestId        string                      `json:"RequestId" xml:"RequestId"`
 	DBInstanceId     string                      `json:"DBInstanceId" xml:"DBInstanceId"`
-	TotalRecordCount int                         `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                         `json:"PageNumber" xml:"PageNumber"`
+	RequestId        string                      `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int                         `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                         `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeMigrateTasks `json:"Items" xml:"Items"`
 }
 

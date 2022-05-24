@@ -65,5 +65,6 @@ type DBInstance struct {
 	ConnectionString             string                                     `json:"ConnectionString" xml:"ConnectionString"`
 	DedicatedHostNameForMaster   string                                     `json:"DedicatedHostNameForMaster" xml:"DedicatedHostNameForMaster"`
 	AutoUpgradeMinorVersion      string                                     `json:"AutoUpgradeMinorVersion" xml:"AutoUpgradeMinorVersion"`
+	DeletionProtection           bool                                       `json:"DeletionProtection" xml:"DeletionProtection"`
 	ReadOnlyDBInstanceIds        ReadOnlyDBInstanceIdsInDescribeDBInstances `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 }

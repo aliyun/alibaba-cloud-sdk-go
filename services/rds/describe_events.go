@@ -83,10 +83,10 @@ type DescribeEventsRequest struct {
 // DescribeEventsResponse is the response struct for api DescribeEvents
 type DescribeEventsResponse struct {
 	*responses.BaseResponse
-	RequestId        string     `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int        `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageSize         int        `json:"PageSize" xml:"PageSize"`
 	PageNumber       int        `json:"PageNumber" xml:"PageNumber"`
+	RequestId        string     `json:"RequestId" xml:"RequestId"`
+	PageSize         int        `json:"PageSize" xml:"PageSize"`
+	TotalRecordCount int        `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	EventItems       EventItems `json:"EventItems" xml:"EventItems"`
 }
 

@@ -82,21 +82,21 @@ type DescribeResourceUsageRequest struct {
 // DescribeResourceUsageResponse is the response struct for api DescribeResourceUsage
 type DescribeResourceUsageResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine            string `json:"Engine" xml:"Engine"`
+	BackupOssDataSize int64  `json:"BackupOssDataSize" xml:"BackupOssDataSize"`
 	DiskUsed          int64  `json:"DiskUsed" xml:"DiskUsed"`
+	ArchiveBackupSize int64  `json:"ArchiveBackupSize" xml:"ArchiveBackupSize"`
+	BackupOssLogSize  int64  `json:"BackupOssLogSize" xml:"BackupOssLogSize"`
+	BackupLogSize     int64  `json:"BackupLogSize" xml:"BackupLogSize"`
+	BackupDataSize    int64  `json:"BackupDataSize" xml:"BackupDataSize"`
+	ColdBackupSize    int64  `json:"ColdBackupSize" xml:"ColdBackupSize"`
 	DataSize          int64  `json:"DataSize" xml:"DataSize"`
+	PaidBackupSize    int64  `json:"PaidBackupSize" xml:"PaidBackupSize"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 	LogSize           int64  `json:"LogSize" xml:"LogSize"`
 	BackupSize        int64  `json:"BackupSize" xml:"BackupSize"`
-	BackupOssDataSize int64  `json:"BackupOssDataSize" xml:"BackupOssDataSize"`
-	BackupOssLogSize  int64  `json:"BackupOssLogSize" xml:"BackupOssLogSize"`
+	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine            string `json:"Engine" xml:"Engine"`
 	SQLSize           int64  `json:"SQLSize" xml:"SQLSize"`
-	ColdBackupSize    int64  `json:"ColdBackupSize" xml:"ColdBackupSize"`
-	BackupDataSize    int64  `json:"BackupDataSize" xml:"BackupDataSize"`
-	BackupLogSize     int64  `json:"BackupLogSize" xml:"BackupLogSize"`
-	PaidBackupSize    int64  `json:"PaidBackupSize" xml:"PaidBackupSize"`
-	ArchiveBackupSize int64  `json:"ArchiveBackupSize" xml:"ArchiveBackupSize"`
 }
 
 // CreateDescribeResourceUsageRequest creates a request to invoke DescribeResourceUsage API

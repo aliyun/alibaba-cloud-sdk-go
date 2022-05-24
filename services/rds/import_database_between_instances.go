@@ -83,8 +83,8 @@ type ImportDatabaseBetweenInstancesRequest struct {
 // ImportDatabaseBetweenInstancesResponse is the response struct for api ImportDatabaseBetweenInstances
 type ImportDatabaseBetweenInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ImportId  string `json:"ImportId" xml:"ImportId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateImportDatabaseBetweenInstancesRequest creates a request to invoke ImportDatabaseBetweenInstances API

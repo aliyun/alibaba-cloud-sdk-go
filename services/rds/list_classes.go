@@ -83,8 +83,8 @@ type ListClassesRequest struct {
 // ListClassesResponse is the response struct for api ListClasses
 type ListClassesResponse struct {
 	*responses.BaseResponse
-	RegionId  string      `json:"RegionId" xml:"RegionId"`
 	RequestId string      `json:"RequestId" xml:"RequestId"`
+	RegionId  string      `json:"RegionId" xml:"RegionId"`
 	Items     []ClassList `json:"Items" xml:"Items"`
 }
 

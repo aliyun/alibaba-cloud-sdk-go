@@ -81,8 +81,8 @@ type DescribeInstanceKeywordsRequest struct {
 // DescribeInstanceKeywordsResponse is the response struct for api DescribeInstanceKeywords
 type DescribeInstanceKeywordsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Key       string `json:"Key" xml:"Key"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Words     Words  `json:"Words" xml:"Words"`
 }
 

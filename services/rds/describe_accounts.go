@@ -84,10 +84,10 @@ type DescribeAccountsRequest struct {
 // DescribeAccountsResponse is the response struct for api DescribeAccounts
 type DescribeAccountsResponse struct {
 	*responses.BaseResponse
-	RequestId                             string                     `json:"RequestId" xml:"RequestId"`
 	SystemAdminAccountStatus              string                     `json:"SystemAdminAccountStatus" xml:"SystemAdminAccountStatus"`
 	SystemAdminAccountFirstActivationTime string                     `json:"SystemAdminAccountFirstActivationTime" xml:"SystemAdminAccountFirstActivationTime"`
 	PageNumber                            int                        `json:"PageNumber" xml:"PageNumber"`
+	RequestId                             string                     `json:"RequestId" xml:"RequestId"`
 	TotalRecordCount                      int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Accounts                              AccountsInDescribeAccounts `json:"Accounts" xml:"Accounts"`
 }

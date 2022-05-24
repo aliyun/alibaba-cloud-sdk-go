@@ -17,11 +17,11 @@ package rds
 
 // DBInstanceAccount is a nested struct in rds response
 type DBInstanceAccount struct {
-	DBInstanceId       string             `json:"DBInstanceId" xml:"DBInstanceId"`
-	AccountName        string             `json:"AccountName" xml:"AccountName"`
 	AccountStatus      string             `json:"AccountStatus" xml:"AccountStatus"`
-	AccountType        string             `json:"AccountType" xml:"AccountType"`
 	AccountDescription string             `json:"AccountDescription" xml:"AccountDescription"`
+	DBInstanceId       string             `json:"DBInstanceId" xml:"DBInstanceId"`
 	PrivExceeded       string             `json:"PrivExceeded" xml:"PrivExceeded"`
+	AccountType        string             `json:"AccountType" xml:"AccountType"`
+	AccountName        string             `json:"AccountName" xml:"AccountName"`
 	DatabasePrivileges DatabasePrivileges `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
 }

@@ -114,11 +114,11 @@ type CreateDdrInstanceRequest struct {
 // CreateDdrInstanceResponse is the response struct for api CreateDdrInstance
 type CreateDdrInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	OrderId          string `json:"OrderId" xml:"OrderId"`
-	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	Port             string `json:"Port" xml:"Port"`
+	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	OrderId          string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateDdrInstanceRequest creates a request to invoke CreateDdrInstance API

@@ -81,8 +81,8 @@ type DescribeCharacterSetNameRequest struct {
 // DescribeCharacterSetNameResponse is the response struct for api DescribeCharacterSetName
 type DescribeCharacterSetNameResponse struct {
 	*responses.BaseResponse
-	RequestId             string                `json:"RequestId" xml:"RequestId"`
 	Engine                string                `json:"Engine" xml:"Engine"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
 	CharacterSetNameItems CharacterSetNameItems `json:"CharacterSetNameItems" xml:"CharacterSetNameItems"`
 }
 

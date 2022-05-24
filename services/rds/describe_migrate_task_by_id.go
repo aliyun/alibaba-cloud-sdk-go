@@ -81,16 +81,16 @@ type DescribeMigrateTaskByIdRequest struct {
 // DescribeMigrateTaskByIdResponse is the response struct for api DescribeMigrateTaskById
 type DescribeMigrateTaskByIdResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	DBName         string `json:"DBName" xml:"DBName"`
-	MigrateTaskId  string `json:"MigrateTaskId" xml:"MigrateTaskId"`
-	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-	EndTime        string `json:"EndTime" xml:"EndTime"`
-	BackupMode     string `json:"BackupMode" xml:"BackupMode"`
 	Status         string `json:"Status" xml:"Status"`
-	IsDBReplaced   string `json:"IsDBReplaced" xml:"IsDBReplaced"`
+	EndTime        string `json:"EndTime" xml:"EndTime"`
+	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Description    string `json:"Description" xml:"Description"`
+	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+	DBName         string `json:"DBName" xml:"DBName"`
+	BackupMode     string `json:"BackupMode" xml:"BackupMode"`
+	MigrateTaskId  string `json:"MigrateTaskId" xml:"MigrateTaskId"`
+	IsDBReplaced   string `json:"IsDBReplaced" xml:"IsDBReplaced"`
 }
 
 // CreateDescribeMigrateTaskByIdRequest creates a request to invoke DescribeMigrateTaskById API

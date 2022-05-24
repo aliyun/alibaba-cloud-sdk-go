@@ -81,24 +81,24 @@ type DescribeDBInstanceSSLRequest struct {
 // DescribeDBInstanceSSLResponse is the response struct for api DescribeDBInstanceSSL
 type DescribeDBInstanceSSLResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	ConnectionString         string `json:"ConnectionString" xml:"ConnectionString"`
-	SSLExpireTime            string `json:"SSLExpireTime" xml:"SSLExpireTime"`
-	SSLEnabled               string `json:"SSLEnabled" xml:"SSLEnabled"`
-	RequireUpdateReason      string `json:"RequireUpdateReason" xml:"RequireUpdateReason"`
-	CAType                   string `json:"CAType" xml:"CAType"`
 	ServerCert               string `json:"ServerCert" xml:"ServerCert"`
-	ServerKey                string `json:"ServerKey" xml:"ServerKey"`
-	SSLCreateTime            string `json:"SSLCreateTime" xml:"SSLCreateTime"`
-	ClientCACert             string `json:"ClientCACert" xml:"ClientCACert"`
 	ClientCACertExpireTime   string `json:"ClientCACertExpireTime" xml:"ClientCACertExpireTime"`
-	ClientCertRevocationList string `json:"ClientCertRevocationList" xml:"ClientCertRevocationList"`
-	ACL                      string `json:"ACL" xml:"ACL"`
-	ReplicationACL           string `json:"ReplicationACL" xml:"ReplicationACL"`
+	RequireUpdateItem        string `json:"RequireUpdateItem" xml:"RequireUpdateItem"`
 	ServerCAUrl              string `json:"ServerCAUrl" xml:"ServerCAUrl"`
 	RequireUpdate            string `json:"RequireUpdate" xml:"RequireUpdate"`
-	RequireUpdateItem        string `json:"RequireUpdateItem" xml:"RequireUpdateItem"`
+	ClientCertRevocationList string `json:"ClientCertRevocationList" xml:"ClientCertRevocationList"`
+	SSLExpireTime            string `json:"SSLExpireTime" xml:"SSLExpireTime"`
+	CAType                   string `json:"CAType" xml:"CAType"`
+	SSLCreateTime            string `json:"SSLCreateTime" xml:"SSLCreateTime"`
+	ReplicationACL           string `json:"ReplicationACL" xml:"ReplicationACL"`
+	ACL                      string `json:"ACL" xml:"ACL"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
 	LastModifyStatus         string `json:"LastModifyStatus" xml:"LastModifyStatus"`
+	SSLEnabled               string `json:"SSLEnabled" xml:"SSLEnabled"`
+	ConnectionString         string `json:"ConnectionString" xml:"ConnectionString"`
+	RequireUpdateReason      string `json:"RequireUpdateReason" xml:"RequireUpdateReason"`
+	ClientCACert             string `json:"ClientCACert" xml:"ClientCACert"`
+	ServerKey                string `json:"ServerKey" xml:"ServerKey"`
 	ModifyStatusReason       string `json:"ModifyStatusReason" xml:"ModifyStatusReason"`
 }
 

@@ -78,6 +78,7 @@ type DescribeAvailableZonesRequest struct {
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	DispenseMode         string           `position:"Query" name:"DispenseMode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CachedAsync          requests.Boolean `position:"Query" name:"CachedAsync"`
 	CommodityCode        string           `position:"Query" name:"CommodityCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	EvaluateResource     requests.Boolean `position:"Query" name:"EvaluateResource"`

@@ -17,12 +17,12 @@ package rds
 
 // ReadonlyInstanceDelayItem is a nested struct in rds response
 type ReadonlyInstanceDelayItem struct {
-	ReplayLatency      string `json:"ReplayLatency" xml:"ReplayLatency"`
-	FlushLag           string `json:"FlushLag" xml:"FlushLag"`
-	FlushLatency       string `json:"FlushLatency" xml:"FlushLatency"`
-	SendLatency        string `json:"SendLatency" xml:"SendLatency"`
-	WriteLag           string `json:"WriteLag" xml:"WriteLag"`
-	ReplayLag          string `json:"ReplayLag" xml:"ReplayLag"`
 	WriteLatency       string `json:"WriteLatency" xml:"WriteLatency"`
+	FlushLatency       string `json:"FlushLatency" xml:"FlushLatency"`
 	ReadDBInstanceName string `json:"ReadDBInstanceName" xml:"ReadDBInstanceName"`
+	WriteLag           string `json:"WriteLag" xml:"WriteLag"`
+	FlushLag           string `json:"FlushLag" xml:"FlushLag"`
+	SendLatency        string `json:"SendLatency" xml:"SendLatency"`
+	ReplayLag          string `json:"ReplayLag" xml:"ReplayLag"`
+	ReplayLatency      string `json:"ReplayLatency" xml:"ReplayLatency"`
 }

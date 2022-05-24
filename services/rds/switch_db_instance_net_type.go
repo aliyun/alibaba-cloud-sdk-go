@@ -85,9 +85,9 @@ type SwitchDBInstanceNetTypeRequest struct {
 // SwitchDBInstanceNetTypeResponse is the response struct for api SwitchDBInstanceNetType
 type SwitchDBInstanceNetTypeResponse struct {
 	*responses.BaseResponse
+	NewConnectionString string `json:"NewConnectionString" xml:"NewConnectionString"`
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	OldConnectionString string `json:"OldConnectionString" xml:"OldConnectionString"`
-	NewConnectionString string `json:"NewConnectionString" xml:"NewConnectionString"`
 }
 
 // CreateSwitchDBInstanceNetTypeRequest creates a request to invoke SwitchDBInstanceNetType API

@@ -17,17 +17,18 @@ package rds
 
 // DBInstanceNetInfo is a nested struct in rds response
 type DBInstanceNetInfo struct {
-	Upgradeable          string            `json:"Upgradeable" xml:"Upgradeable"`
-	ExpiredTime          string            `json:"ExpiredTime" xml:"ExpiredTime"`
-	ConnectionString     string            `json:"ConnectionString" xml:"ConnectionString"`
-	IPAddress            string            `json:"IPAddress" xml:"IPAddress"`
-	IPType               string            `json:"IPType" xml:"IPType"`
-	Port                 string            `json:"Port" xml:"Port"`
-	VPCId                string            `json:"VPCId" xml:"VPCId"`
 	VSwitchId            string            `json:"VSwitchId" xml:"VSwitchId"`
 	ConnectionStringType string            `json:"ConnectionStringType" xml:"ConnectionStringType"`
+	ConnectionString     string            `json:"ConnectionString" xml:"ConnectionString"`
+	ExpiredTime          string            `json:"ExpiredTime" xml:"ExpiredTime"`
+	Upgradeable          string            `json:"Upgradeable" xml:"Upgradeable"`
 	MaxDelayTime         string            `json:"MaxDelayTime" xml:"MaxDelayTime"`
+	IPType               string            `json:"IPType" xml:"IPType"`
+	Port                 string            `json:"Port" xml:"Port"`
+	BabelfishPort        string            `json:"BabelfishPort" xml:"BabelfishPort"`
+	VPCId                string            `json:"VPCId" xml:"VPCId"`
 	DistributionType     string            `json:"DistributionType" xml:"DistributionType"`
+	IPAddress            string            `json:"IPAddress" xml:"IPAddress"`
 	SecurityIPGroups     SecurityIPGroups  `json:"SecurityIPGroups" xml:"SecurityIPGroups"`
 	DBInstanceWeights    DBInstanceWeights `json:"DBInstanceWeights" xml:"DBInstanceWeights"`
 }

@@ -18,7 +18,7 @@ package rds
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
 	DBInstanceId          string                `json:"DBInstanceId" xml:"DBInstanceId"`
-	ReadDBInstanceNames   ReadDBInstanceNames   `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
 	ReadDelayTimes        ReadDelayTimes        `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
+	ReadDBInstanceNames   ReadDBInstanceNames   `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
 	ReadonlyInstanceDelay ReadonlyInstanceDelay `json:"ReadonlyInstanceDelay" xml:"ReadonlyInstanceDelay"`
 }

@@ -79,8 +79,8 @@ type DescribeParameterGroupsRequest struct {
 // DescribeParameterGroupsResponse is the response struct for api DescribeParameterGroups
 type DescribeParameterGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId               string          `json:"RequestId" xml:"RequestId"`
 	SignalForOptimizeParams bool            `json:"SignalForOptimizeParams" xml:"SignalForOptimizeParams"`
+	RequestId               string          `json:"RequestId" xml:"RequestId"`
 	ParameterGroups         ParameterGroups `json:"ParameterGroups" xml:"ParameterGroups"`
 }
 

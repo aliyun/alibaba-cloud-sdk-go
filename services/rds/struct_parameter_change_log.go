@@ -17,9 +17,9 @@ package rds
 
 // ParameterChangeLog is a nested struct in rds response
 type ParameterChangeLog struct {
-	ModifyTime        string `json:"ModifyTime" xml:"ModifyTime"`
-	OldParameterValue string `json:"OldParameterValue" xml:"OldParameterValue"`
-	NewParameterValue string `json:"NewParameterValue" xml:"NewParameterValue"`
-	ParameterName     string `json:"ParameterName" xml:"ParameterName"`
 	Status            string `json:"Status" xml:"Status"`
+	OldParameterValue string `json:"OldParameterValue" xml:"OldParameterValue"`
+	ParameterName     string `json:"ParameterName" xml:"ParameterName"`
+	NewParameterValue string `json:"NewParameterValue" xml:"NewParameterValue"`
+	ModifyTime        string `json:"ModifyTime" xml:"ModifyTime"`
 }

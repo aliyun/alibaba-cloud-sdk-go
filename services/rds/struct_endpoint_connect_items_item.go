@@ -17,7 +17,7 @@ package rds
 
 // EndpointConnectItemsItem is a nested struct in rds response
 type EndpointConnectItemsItem struct {
-	DbProxyEndpointConnectString string `json:"DbProxyEndpointConnectString" xml:"DbProxyEndpointConnectString"`
 	DbProxyEndpointPort          string `json:"DbProxyEndpointPort" xml:"DbProxyEndpointPort"`
+	DbProxyEndpointConnectString string `json:"DbProxyEndpointConnectString" xml:"DbProxyEndpointConnectString"`
 	DbProxyEndpointNetType       string `json:"DbProxyEndpointNetType" xml:"DbProxyEndpointNetType"`
 }

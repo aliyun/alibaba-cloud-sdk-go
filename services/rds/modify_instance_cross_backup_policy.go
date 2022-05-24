@@ -90,18 +90,18 @@ type ModifyInstanceCrossBackupPolicyRequest struct {
 // ModifyInstanceCrossBackupPolicyResponse is the response struct for api ModifyInstanceCrossBackupPolicy
 type ModifyInstanceCrossBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
+	StorageOwner      string `json:"StorageOwner" xml:"StorageOwner"`
+	BackupEnabled     string `json:"BackupEnabled" xml:"BackupEnabled"`
+	StorageType       string `json:"StorageType" xml:"StorageType"`
 	RegionId          string `json:"RegionId" xml:"RegionId"`
+	LogBackupEnabled  string `json:"LogBackupEnabled" xml:"LogBackupEnabled"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	RetentType        int    `json:"RetentType" xml:"RetentType"`
+	Endpoint          string `json:"Endpoint" xml:"Endpoint"`
 	CrossBackupRegion string `json:"CrossBackupRegion" xml:"CrossBackupRegion"`
 	CrossBackupType   string `json:"CrossBackupType" xml:"CrossBackupType"`
-	BackupEnabled     string `json:"BackupEnabled" xml:"BackupEnabled"`
-	LogBackupEnabled  string `json:"LogBackupEnabled" xml:"LogBackupEnabled"`
-	StorageOwner      string `json:"StorageOwner" xml:"StorageOwner"`
-	StorageType       string `json:"StorageType" xml:"StorageType"`
-	Endpoint          string `json:"Endpoint" xml:"Endpoint"`
-	RetentType        int    `json:"RetentType" xml:"RetentType"`
 	Retention         int    `json:"Retention" xml:"Retention"`
+	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
 }
 
 // CreateModifyInstanceCrossBackupPolicyRequest creates a request to invoke ModifyInstanceCrossBackupPolicy API

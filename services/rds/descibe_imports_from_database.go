@@ -89,9 +89,9 @@ type DescibeImportsFromDatabaseRequest struct {
 type DescibeImportsFromDatabaseResponse struct {
 	*responses.BaseResponse
 	RequestId        string                            `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescibeImportsFromDatabase `json:"Items" xml:"Items"`
 }
 

@@ -83,8 +83,8 @@ type CreateTempDBInstanceRequest struct {
 // CreateTempDBInstanceResponse is the response struct for api CreateTempDBInstance
 type CreateTempDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	TempDBInstanceId string `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateTempDBInstanceRequest creates a request to invoke CreateTempDBInstance API

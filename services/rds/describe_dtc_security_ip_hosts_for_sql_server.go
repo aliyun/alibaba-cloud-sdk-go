@@ -82,8 +82,8 @@ type DescribeDTCSecurityIpHostsForSQLServerRequest struct {
 // DescribeDTCSecurityIpHostsForSQLServerResponse is the response struct for api DescribeDTCSecurityIpHostsForSQLServer
 type DescribeDTCSecurityIpHostsForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId     string                                        `json:"RequestId" xml:"RequestId"`
 	DBInstanceId  string                                        `json:"DBInstanceId" xml:"DBInstanceId"`
+	RequestId     string                                        `json:"RequestId" xml:"RequestId"`
 	IpHostPairNum string                                        `json:"IpHostPairNum" xml:"IpHostPairNum"`
 	Items         ItemsInDescribeDTCSecurityIpHostsForSQLServer `json:"Items" xml:"Items"`
 }

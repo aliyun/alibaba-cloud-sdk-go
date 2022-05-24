@@ -81,8 +81,8 @@ type DescribeHASwitchConfigRequest struct {
 type DescribeHASwitchConfigResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	HAConfig     string `json:"HAConfig" xml:"HAConfig"`
 	ManualHATime string `json:"ManualHATime" xml:"ManualHATime"`
+	HAConfig     string `json:"HAConfig" xml:"HAConfig"`
 }
 
 // CreateDescribeHASwitchConfigRequest creates a request to invoke DescribeHASwitchConfig API

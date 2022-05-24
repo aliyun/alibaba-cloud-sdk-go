@@ -80,8 +80,8 @@ type CreateDiagnosticReportRequest struct {
 // CreateDiagnosticReportResponse is the response struct for api CreateDiagnosticReport
 type CreateDiagnosticReportResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ReportId  string `json:"ReportId" xml:"ReportId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateDiagnosticReportRequest creates a request to invoke CreateDiagnosticReport API

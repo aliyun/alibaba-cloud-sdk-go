@@ -86,8 +86,8 @@ type DescribeErrorLogsRequest struct {
 type DescribeErrorLogsResponse struct {
 	*responses.BaseResponse
 	PageNumber       int                      `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int                      `json:"PageRecordCount" xml:"PageRecordCount"`
 	RequestId        string                   `json:"RequestId" xml:"RequestId"`
+	PageRecordCount  int                      `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalRecordCount int                      `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeErrorLogs `json:"Items" xml:"Items"`
 }

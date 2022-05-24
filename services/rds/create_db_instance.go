@@ -71,61 +71,70 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 // CreateDBInstanceRequest is the request struct for api CreateDBInstance
 type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
-	DBParamGroupId                 string                 `position:"Query" name:"DBParamGroupId"`
-	ResourceOwnerId                requests.Integer       `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage              requests.Integer       `position:"Query" name:"DBInstanceStorage"`
-	SystemDBCharset                string                 `position:"Query" name:"SystemDBCharset"`
-	EngineVersion                  string                 `position:"Query" name:"EngineVersion"`
-	ResourceGroupId                string                 `position:"Query" name:"ResourceGroupId"`
-	TargetDedicatedHostIdForMaster string                 `position:"Query" name:"TargetDedicatedHostIdForMaster"`
-	DBInstanceDescription          string                 `position:"Query" name:"DBInstanceDescription"`
-	Tag                            *[]CreateDBInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
-	BusinessInfo                   string                 `position:"Query" name:"BusinessInfo"`
-	Period                         string                 `position:"Query" name:"Period"`
-	DryRun                         requests.Boolean       `position:"Query" name:"DryRun"`
-	BackupId                       string                 `position:"Query" name:"BackupId"`
-	EncryptionKey                  string                 `position:"Query" name:"EncryptionKey"`
-	OwnerId                        requests.Integer       `position:"Query" name:"OwnerId"`
-	DBInstanceClass                string                 `position:"Query" name:"DBInstanceClass"`
-	SecurityIPList                 string                 `position:"Query" name:"SecurityIPList"`
-	VSwitchId                      string                 `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress               string                 `position:"Query" name:"PrivateIpAddress"`
-	TargetDedicatedHostIdForLog    string                 `position:"Query" name:"TargetDedicatedHostIdForLog"`
-	AutoRenew                      string                 `position:"Query" name:"AutoRenew"`
-	RoleARN                        string                 `position:"Query" name:"RoleARN"`
-	TunnelId                       string                 `position:"Query" name:"TunnelId"`
-	ZoneId                         string                 `position:"Query" name:"ZoneId"`
-	StorageAutoScale               string                 `position:"Query" name:"StorageAutoScale"`
-	InstanceNetworkType            string                 `position:"Query" name:"InstanceNetworkType"`
-	ConnectionMode                 string                 `position:"Query" name:"ConnectionMode"`
-	ClientToken                    string                 `position:"Query" name:"ClientToken"`
-	TargetDedicatedHostIdForSlave  string                 `position:"Query" name:"TargetDedicatedHostIdForSlave"`
-	ZoneIdSlave1                   string                 `position:"Query" name:"ZoneIdSlave1"`
-	ZoneIdSlave2                   string                 `position:"Query" name:"ZoneIdSlave2"`
-	DBIsIgnoreCase                 string                 `position:"Query" name:"DBIsIgnoreCase"`
-	Engine                         string                 `position:"Query" name:"Engine"`
-	DBTimeZone                     string                 `position:"Query" name:"DBTimeZone"`
-	DBInstanceStorageType          string                 `position:"Query" name:"DBInstanceStorageType"`
-	DedicatedHostGroupId           string                 `position:"Query" name:"DedicatedHostGroupId"`
-	CreateStrategy                 string                 `position:"Query" name:"CreateStrategy"`
-	DBInstanceNetType              string                 `position:"Query" name:"DBInstanceNetType"`
-	Amount                         requests.Integer       `position:"Query" name:"Amount"`
-	ResourceOwnerAccount           string                 `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                   string                 `position:"Query" name:"OwnerAccount"`
-	UsedTime                       string                 `position:"Query" name:"UsedTime"`
-	TargetMinorVersion             string                 `position:"Query" name:"TargetMinorVersion"`
-	UserBackupId                   string                 `position:"Query" name:"UserBackupId"`
-	StorageUpperBound              requests.Integer       `position:"Query" name:"StorageUpperBound"`
-	StorageThreshold               requests.Integer       `position:"Query" name:"StorageThreshold"`
-	VPCId                          string                 `position:"Query" name:"VPCId"`
-	Category                       string                 `position:"Query" name:"Category"`
-	PayType                        string                 `position:"Query" name:"PayType"`
+	DBParamGroupId                 string                           `position:"Query" name:"DBParamGroupId"`
+	BabelfishConfig                string                           `position:"Query" name:"BabelfishConfig"`
+	ResourceOwnerId                requests.Integer                 `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage              requests.Integer                 `position:"Query" name:"DBInstanceStorage"`
+	SystemDBCharset                string                           `position:"Query" name:"SystemDBCharset"`
+	EngineVersion                  string                           `position:"Query" name:"EngineVersion"`
+	DeletionProtection             requests.Boolean                 `position:"Query" name:"DeletionProtection"`
+	ResourceGroupId                string                           `position:"Query" name:"ResourceGroupId"`
+	TargetDedicatedHostIdForMaster string                           `position:"Query" name:"TargetDedicatedHostIdForMaster"`
+	DBInstanceDescription          string                           `position:"Query" name:"DBInstanceDescription"`
+	Tag                            *[]CreateDBInstanceTag           `position:"Query" name:"Tag"  type:"Repeated"`
+	BusinessInfo                   string                           `position:"Query" name:"BusinessInfo"`
+	Period                         string                           `position:"Query" name:"Period"`
+	DryRun                         requests.Boolean                 `position:"Query" name:"DryRun"`
+	BackupId                       string                           `position:"Query" name:"BackupId"`
+	EncryptionKey                  string                           `position:"Query" name:"EncryptionKey"`
+	OwnerId                        requests.Integer                 `position:"Query" name:"OwnerId"`
+	DBInstanceClass                string                           `position:"Query" name:"DBInstanceClass"`
+	SecurityIPList                 string                           `position:"Query" name:"SecurityIPList"`
+	VSwitchId                      string                           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress               string                           `position:"Query" name:"PrivateIpAddress"`
+	TargetDedicatedHostIdForLog    string                           `position:"Query" name:"TargetDedicatedHostIdForLog"`
+	AutoRenew                      string                           `position:"Query" name:"AutoRenew"`
+	RoleARN                        string                           `position:"Query" name:"RoleARN"`
+	TunnelId                       string                           `position:"Query" name:"TunnelId"`
+	ZoneId                         string                           `position:"Query" name:"ZoneId"`
+	StorageAutoScale               string                           `position:"Query" name:"StorageAutoScale"`
+	InstanceNetworkType            string                           `position:"Query" name:"InstanceNetworkType"`
+	ConnectionMode                 string                           `position:"Query" name:"ConnectionMode"`
+	ClientToken                    string                           `position:"Query" name:"ClientToken"`
+	TargetDedicatedHostIdForSlave  string                           `position:"Query" name:"TargetDedicatedHostIdForSlave"`
+	ZoneIdSlave1                   string                           `position:"Query" name:"ZoneIdSlave1"`
+	ZoneIdSlave2                   string                           `position:"Query" name:"ZoneIdSlave2"`
+	DBIsIgnoreCase                 string                           `position:"Query" name:"DBIsIgnoreCase"`
+	Engine                         string                           `position:"Query" name:"Engine"`
+	DBTimeZone                     string                           `position:"Query" name:"DBTimeZone"`
+	DBInstanceStorageType          string                           `position:"Query" name:"DBInstanceStorageType"`
+	DedicatedHostGroupId           string                           `position:"Query" name:"DedicatedHostGroupId"`
+	CreateStrategy                 string                           `position:"Query" name:"CreateStrategy"`
+	DBInstanceNetType              string                           `position:"Query" name:"DBInstanceNetType"`
+	Amount                         requests.Integer                 `position:"Query" name:"Amount"`
+	ServerlessConfig               CreateDBInstanceServerlessConfig `position:"Query" name:"ServerlessConfig"  type:"Struct"`
+	ResourceOwnerAccount           string                           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                   string                           `position:"Query" name:"OwnerAccount"`
+	UsedTime                       string                           `position:"Query" name:"UsedTime"`
+	TargetMinorVersion             string                           `position:"Query" name:"TargetMinorVersion"`
+	UserBackupId                   string                           `position:"Query" name:"UserBackupId"`
+	StorageUpperBound              requests.Integer                 `position:"Query" name:"StorageUpperBound"`
+	StorageThreshold               requests.Integer                 `position:"Query" name:"StorageThreshold"`
+	VPCId                          string                           `position:"Query" name:"VPCId"`
+	Category                       string                           `position:"Query" name:"Category"`
+	PayType                        string                           `position:"Query" name:"PayType"`
 }
 
 // CreateDBInstanceTag is a repeated param struct in CreateDBInstanceRequest
 type CreateDBInstanceTag struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
+}
+
+// CreateDBInstanceServerlessConfig is a repeated param struct in CreateDBInstanceRequest
+type CreateDBInstanceServerlessConfig struct {
+	MinCapacity string `name:"MinCapacity"`
+	MaxCapacity string `name:"MaxCapacity"`
 }
 
 // CreateDBInstanceResponse is the response struct for api CreateDBInstance

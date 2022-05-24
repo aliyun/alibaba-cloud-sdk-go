@@ -72,13 +72,17 @@ func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZone
 type MigrateToOtherZoneRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	IsModifySpec         string           `position:"Query" name:"IsModifySpec"`
 	ZoneIdSlave1         string           `position:"Query" name:"ZoneIdSlave1"`
 	ZoneIdSlave2         string           `position:"Query" name:"ZoneIdSlave2"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SwitchTime           string           `position:"Query" name:"SwitchTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
@@ -88,7 +92,9 @@ type MigrateToOtherZoneRequest struct {
 // MigrateToOtherZoneResponse is the response struct for api MigrateToOtherZone
 type MigrateToOtherZoneResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId      int64  `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateMigrateToOtherZoneRequest creates a request to invoke MigrateToOtherZone API

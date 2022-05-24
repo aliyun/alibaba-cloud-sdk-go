@@ -84,8 +84,8 @@ type CheckCloudResourceAuthorizedRequest struct {
 type CheckCloudResourceAuthorizedResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
-	AuthorizationState int    `json:"AuthorizationState" xml:"AuthorizationState"`
 	RoleArn            string `json:"RoleArn" xml:"RoleArn"`
+	AuthorizationState int    `json:"AuthorizationState" xml:"AuthorizationState"`
 }
 
 // CreateCheckCloudResourceAuthorizedRequest creates a request to invoke CheckCloudResourceAuthorized API

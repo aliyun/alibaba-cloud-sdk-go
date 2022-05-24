@@ -82,8 +82,8 @@ type UpgradeDBProxyInstanceKernelVersionRequest struct {
 // UpgradeDBProxyInstanceKernelVersionResponse is the response struct for api UpgradeDBProxyInstanceKernelVersion
 type UpgradeDBProxyInstanceKernelVersionResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	TaskId         string `json:"TaskId" xml:"TaskId"`
 }
 

@@ -71,25 +71,33 @@ func (client *Client) ModifyDBInstanceSpecWithCallback(request *ModifyDBInstance
 // ModifyDBInstanceSpecRequest is the request struct for api ModifyDBInstanceSpec
 type ModifyDBInstanceSpecRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	SwitchTime            string           `position:"Query" name:"SwitchTime"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
-	SourceBiz             string           `position:"Query" name:"SourceBiz"`
-	DedicatedHostGroupId  string           `position:"Query" name:"DedicatedHostGroupId"`
-	Direction             string           `position:"Query" name:"Direction"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime              requests.Integer `position:"Query" name:"UsedTime"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	PayType               string           `position:"Query" name:"PayType"`
+	ResourceOwnerId         requests.Integer                            `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage       requests.Integer                            `position:"Query" name:"DBInstanceStorage"`
+	ClientToken             string                                      `position:"Query" name:"ClientToken"`
+	EngineVersion           string                                      `position:"Query" name:"EngineVersion"`
+	ResourceGroupId         string                                      `position:"Query" name:"ResourceGroupId"`
+	ServerlessConfiguration ModifyDBInstanceSpecServerlessConfiguration `position:"Query" name:"ServerlessConfiguration"  type:"Struct"`
+	EffectiveTime           string                                      `position:"Query" name:"EffectiveTime"`
+	DBInstanceId            string                                      `position:"Query" name:"DBInstanceId"`
+	SwitchTime              string                                      `position:"Query" name:"SwitchTime"`
+	DBInstanceStorageType   string                                      `position:"Query" name:"DBInstanceStorageType"`
+	SourceBiz               string                                      `position:"Query" name:"SourceBiz"`
+	DedicatedHostGroupId    string                                      `position:"Query" name:"DedicatedHostGroupId"`
+	Direction               string                                      `position:"Query" name:"Direction"`
+	ResourceOwnerAccount    string                                      `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string                                      `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer                            `position:"Query" name:"OwnerId"`
+	UsedTime                requests.Integer                            `position:"Query" name:"UsedTime"`
+	DBInstanceClass         string                                      `position:"Query" name:"DBInstanceClass"`
+	ZoneId                  string                                      `position:"Query" name:"ZoneId"`
+	Category                string                                      `position:"Query" name:"Category"`
+	PayType                 string                                      `position:"Query" name:"PayType"`
+}
+
+// ModifyDBInstanceSpecServerlessConfiguration is a repeated param struct in ModifyDBInstanceSpecRequest
+type ModifyDBInstanceSpecServerlessConfiguration struct {
+	MinCapacity string `name:"MinCapacity"`
+	MaxCapacity string `name:"MaxCapacity"`
 }
 
 // ModifyDBInstanceSpecResponse is the response struct for api ModifyDBInstanceSpec

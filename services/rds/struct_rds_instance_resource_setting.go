@@ -17,13 +17,13 @@ package rds
 
 // RdsInstanceResourceSetting is a nested struct in rds response
 type RdsInstanceResourceSetting struct {
-	StartDate          string `json:"StartDate" xml:"StartDate"`
-	EndDate            string `json:"EndDate" xml:"EndDate"`
-	ResourceNiche      string `json:"ResourceNiche" xml:"ResourceNiche"`
-	NoticeBarContent   string `json:"NoticeBarContent" xml:"NoticeBarContent"`
-	PoppedUpButtonText string `json:"PoppedUpButtonText" xml:"PoppedUpButtonText"`
 	PoppedUpButtonType string `json:"PoppedUpButtonType" xml:"PoppedUpButtonType"`
-	PoppedUpButtonUrl  string `json:"PoppedUpButtonUrl" xml:"PoppedUpButtonUrl"`
+	NoticeBarContent   string `json:"NoticeBarContent" xml:"NoticeBarContent"`
+	EndDate            string `json:"EndDate" xml:"EndDate"`
 	PoppedUpContent    string `json:"PoppedUpContent" xml:"PoppedUpContent"`
+	StartDate          string `json:"StartDate" xml:"StartDate"`
+	PoppedUpButtonText string `json:"PoppedUpButtonText" xml:"PoppedUpButtonText"`
 	IsTop              string `json:"IsTop" xml:"IsTop"`
+	ResourceNiche      string `json:"ResourceNiche" xml:"ResourceNiche"`
+	PoppedUpButtonUrl  string `json:"PoppedUpButtonUrl" xml:"PoppedUpButtonUrl"`
 }

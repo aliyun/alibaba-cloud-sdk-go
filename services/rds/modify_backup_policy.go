@@ -105,13 +105,13 @@ type ModifyBackupPolicyRequest struct {
 type ModifyBackupPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId                     string `json:"RequestId" xml:"RequestId"`
+	CompressType                  string `json:"CompressType" xml:"CompressType"`
+	LocalLogRetentionSpace        string `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
+	LogBackupLocalRetentionNumber int    `json:"LogBackupLocalRetentionNumber" xml:"LogBackupLocalRetentionNumber"`
 	DBInstanceID                  string `json:"DBInstanceID" xml:"DBInstanceID"`
 	EnableBackupLog               string `json:"EnableBackupLog" xml:"EnableBackupLog"`
 	LocalLogRetentionHours        int    `json:"LocalLogRetentionHours" xml:"LocalLogRetentionHours"`
-	LocalLogRetentionSpace        string `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
 	HighSpaceUsageProtection      string `json:"HighSpaceUsageProtection" xml:"HighSpaceUsageProtection"`
-	CompressType                  string `json:"CompressType" xml:"CompressType"`
-	LogBackupLocalRetentionNumber int    `json:"LogBackupLocalRetentionNumber" xml:"LogBackupLocalRetentionNumber"`
 }
 
 // CreateModifyBackupPolicyRequest creates a request to invoke ModifyBackupPolicy API

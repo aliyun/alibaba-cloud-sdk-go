@@ -84,10 +84,10 @@ type DescribeDBProxyPerformanceRequest struct {
 // DescribeDBProxyPerformanceResponse is the response struct for api DescribeDBProxyPerformance
 type DescribeDBProxyPerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                      `json:"RequestId" xml:"RequestId"`
-	DBInstanceId    string                                      `json:"DBInstanceId" xml:"DBInstanceId"`
-	StartTime       string                                      `json:"StartTime" xml:"StartTime"`
 	EndTime         string                                      `json:"EndTime" xml:"EndTime"`
+	StartTime       string                                      `json:"StartTime" xml:"StartTime"`
+	DBInstanceId    string                                      `json:"DBInstanceId" xml:"DBInstanceId"`
+	RequestId       string                                      `json:"RequestId" xml:"RequestId"`
 	PerformanceKeys PerformanceKeysInDescribeDBProxyPerformance `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 

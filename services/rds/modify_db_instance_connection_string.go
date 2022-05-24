@@ -78,6 +78,7 @@ type ModifyDBInstanceConnectionStringRequest struct {
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	BabelfishPort           string           `position:"Query" name:"BabelfishPort"`
 	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
 	Port                    string           `position:"Query" name:"Port"`
 }

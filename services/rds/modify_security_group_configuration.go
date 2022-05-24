@@ -81,8 +81,8 @@ type ModifySecurityGroupConfigurationRequest struct {
 // ModifySecurityGroupConfigurationResponse is the response struct for api ModifySecurityGroupConfiguration
 type ModifySecurityGroupConfigurationResponse struct {
 	*responses.BaseResponse
-	RequestId      string                                  `json:"RequestId" xml:"RequestId"`
 	DBInstanceName string                                  `json:"DBInstanceName" xml:"DBInstanceName"`
+	RequestId      string                                  `json:"RequestId" xml:"RequestId"`
 	Items          ItemsInModifySecurityGroupConfiguration `json:"Items" xml:"Items"`
 }
 

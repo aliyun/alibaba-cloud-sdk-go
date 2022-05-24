@@ -81,8 +81,8 @@ type DescribeOssDownloadsRequest struct {
 // DescribeOssDownloadsResponse is the response struct for api DescribeOssDownloads
 type DescribeOssDownloadsResponse struct {
 	*responses.BaseResponse
-	RequestId     string                      `json:"RequestId" xml:"RequestId"`
 	DBInstanceId  string                      `json:"DBInstanceId" xml:"DBInstanceId"`
+	RequestId     string                      `json:"RequestId" xml:"RequestId"`
 	MigrateTaskId string                      `json:"MigrateTaskId" xml:"MigrateTaskId"`
 	Items         ItemsInDescribeOssDownloads `json:"Items" xml:"Items"`
 }

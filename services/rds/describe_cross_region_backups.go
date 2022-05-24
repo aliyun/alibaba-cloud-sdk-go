@@ -87,13 +87,13 @@ type DescribeCrossRegionBackupsRequest struct {
 // DescribeCrossRegionBackupsResponse is the response struct for api DescribeCrossRegionBackups
 type DescribeCrossRegionBackupsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                            `json:"RequestId" xml:"RequestId"`
-	RegionId         string                            `json:"RegionId" xml:"RegionId"`
-	StartTime        string                            `json:"StartTime" xml:"StartTime"`
 	EndTime          string                            `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	StartTime        string                            `json:"StartTime" xml:"StartTime"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
+	RegionId         string                            `json:"RegionId" xml:"RegionId"`
 	Items            ItemsInDescribeCrossRegionBackups `json:"Items" xml:"Items"`
 }
 

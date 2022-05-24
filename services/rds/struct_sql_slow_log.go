@@ -17,49 +17,49 @@ package rds
 
 // SQLSlowLog is a nested struct in rds response
 type SQLSlowLog struct {
-	SlowLogId                     int64  `json:"SlowLogId" xml:"SlowLogId"`
-	SQLHASH                       string `json:"SQLHASH" xml:"SQLHASH"`
-	SQLIdStr                      string `json:"SQLIdStr" xml:"SQLIdStr"`
-	DBName                        string `json:"DBName" xml:"DBName"`
-	SQLText                       string `json:"SQLText" xml:"SQLText"`
-	MySQLTotalExecutionCounts     int64  `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
-	MySQLTotalExecutionTimes      int64  `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
-	TotalLockTimes                int64  `json:"TotalLockTimes" xml:"TotalLockTimes"`
-	MaxLockTime                   int64  `json:"MaxLockTime" xml:"MaxLockTime"`
-	ParseTotalRowCounts           int64  `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
-	ParseMaxRowCount              int64  `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
-	ReturnTotalRowCounts          int64  `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
+	MaxLastRowsAffectedCounts     int64  `json:"MaxLastRowsAffectedCounts" xml:"MaxLastRowsAffectedCounts"`
 	ReturnMaxRowCount             int64  `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
+	SQLText                       string `json:"SQLText" xml:"SQLText"`
+	SQLServerMaxCpuTime           int64  `json:"SQLServerMaxCpuTime" xml:"SQLServerMaxCpuTime"`
 	CreateTime                    string `json:"CreateTime" xml:"CreateTime"`
+	AvgLastRowsAffectedCounts     int64  `json:"AvgLastRowsAffectedCounts" xml:"AvgLastRowsAffectedCounts"`
+	MinLastRowsAffectedCounts     int64  `json:"MinLastRowsAffectedCounts" xml:"MinLastRowsAffectedCounts"`
+	ParseTotalRowCounts           int64  `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
+	TotalLockTimes                int64  `json:"TotalLockTimes" xml:"TotalLockTimes"`
+	MySQLTotalExecutionCounts     int64  `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
+	SQLServerMinCpuTime           int64  `json:"SQLServerMinCpuTime" xml:"SQLServerMinCpuTime"`
+	SQLHASH                       string `json:"SQLHASH" xml:"SQLHASH"`
+	MinIOWriteCounts              int64  `json:"MinIOWriteCounts" xml:"MinIOWriteCounts"`
+	ParseMaxRowCount              int64  `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
+	MaxLogicalReadCounts          int64  `json:"MaxLogicalReadCounts" xml:"MaxLogicalReadCounts"`
+	MySQLTotalExecutionTimes      int64  `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
 	SQLServerTotalExecutionCounts int64  `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
-	SQLServerTotalExecutionTimes  int64  `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
+	ReturnTotalRowCounts          int64  `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
+	MaxLockTime                   int64  `json:"MaxLockTime" xml:"MaxLockTime"`
+	DBName                        string `json:"DBName" xml:"DBName"`
+	MinRowsAffectedCounts         int64  `json:"MinRowsAffectedCounts" xml:"MinRowsAffectedCounts"`
 	TotalLogicalReadCounts        int64  `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
 	TotalPhysicalReadCounts       int64  `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
 	ReportTime                    string `json:"ReportTime" xml:"ReportTime"`
+	MaxPhysicalReadCounts         int64  `json:"MaxPhysicalReadCounts" xml:"MaxPhysicalReadCounts"`
+	SQLServerTotalCpuTime         int64  `json:"SQLServerTotalCpuTime" xml:"SQLServerTotalCpuTime"`
+	TotalIOWriteCounts            int64  `json:"TotalIOWriteCounts" xml:"TotalIOWriteCounts"`
+	MaxRowsAffectedCounts         int64  `json:"MaxRowsAffectedCounts" xml:"MaxRowsAffectedCounts"`
+	AvgIOWriteCounts              int64  `json:"AvgIOWriteCounts" xml:"AvgIOWriteCounts"`
+	MinPhysicalReadCounts         int64  `json:"MinPhysicalReadCounts" xml:"MinPhysicalReadCounts"`
+	SlowLogId                     int64  `json:"SlowLogId" xml:"SlowLogId"`
 	MaxExecutionTime              int64  `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
 	AvgExecutionTime              int64  `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
-	AvgPhysicalReadCounts         int64  `json:"AvgPhysicalReadCounts" xml:"AvgPhysicalReadCounts"`
-	MaxPhysicalReadCounts         int64  `json:"MaxPhysicalReadCounts" xml:"MaxPhysicalReadCounts"`
-	MinPhysicalReadCounts         int64  `json:"MinPhysicalReadCounts" xml:"MinPhysicalReadCounts"`
-	AvgLogicalReadCounts          int64  `json:"AvgLogicalReadCounts" xml:"AvgLogicalReadCounts"`
-	MaxLogicalReadCounts          int64  `json:"MaxLogicalReadCounts" xml:"MaxLogicalReadCounts"`
-	MinLogicalReadCounts          int64  `json:"MinLogicalReadCounts" xml:"MinLogicalReadCounts"`
-	TotalIOWriteCounts            int64  `json:"TotalIOWriteCounts" xml:"TotalIOWriteCounts"`
-	AvgIOWriteCounts              int64  `json:"AvgIOWriteCounts" xml:"AvgIOWriteCounts"`
-	MaxIOWriteCounts              int64  `json:"MaxIOWriteCounts" xml:"MaxIOWriteCounts"`
-	MinIOWriteCounts              int64  `json:"MinIOWriteCounts" xml:"MinIOWriteCounts"`
-	TotalRowsAffectedCounts       int64  `json:"TotalRowsAffectedCounts" xml:"TotalRowsAffectedCounts"`
-	AvgRowsAffectedCounts         int64  `json:"AvgRowsAffectedCounts" xml:"AvgRowsAffectedCounts"`
-	MaxRowsAffectedCounts         int64  `json:"MaxRowsAffectedCounts" xml:"MaxRowsAffectedCounts"`
-	MinRowsAffectedCounts         int64  `json:"MinRowsAffectedCounts" xml:"MinRowsAffectedCounts"`
-	TotalLastRowsAffectedCounts   int64  `json:"TotalLastRowsAffectedCounts" xml:"TotalLastRowsAffectedCounts"`
-	AvgLastRowsAffectedCounts     int64  `json:"AvgLastRowsAffectedCounts" xml:"AvgLastRowsAffectedCounts"`
-	MaxLastRowsAffectedCounts     int64  `json:"MaxLastRowsAffectedCounts" xml:"MaxLastRowsAffectedCounts"`
-	MinLastRowsAffectedCounts     int64  `json:"MinLastRowsAffectedCounts" xml:"MinLastRowsAffectedCounts"`
-	SQLServerMinExecutionTime     int64  `json:"SQLServerMinExecutionTime" xml:"SQLServerMinExecutionTime"`
 	SQLServerAvgExecutionTime     int64  `json:"SQLServerAvgExecutionTime" xml:"SQLServerAvgExecutionTime"`
-	SQLServerTotalCpuTime         int64  `json:"SQLServerTotalCpuTime" xml:"SQLServerTotalCpuTime"`
+	MaxIOWriteCounts              int64  `json:"MaxIOWriteCounts" xml:"MaxIOWriteCounts"`
 	SQLServerAvgCpuTime           int64  `json:"SQLServerAvgCpuTime" xml:"SQLServerAvgCpuTime"`
-	SQLServerMaxCpuTime           int64  `json:"SQLServerMaxCpuTime" xml:"SQLServerMaxCpuTime"`
-	SQLServerMinCpuTime           int64  `json:"SQLServerMinCpuTime" xml:"SQLServerMinCpuTime"`
+	TotalLastRowsAffectedCounts   int64  `json:"TotalLastRowsAffectedCounts" xml:"TotalLastRowsAffectedCounts"`
+	AvgLogicalReadCounts          int64  `json:"AvgLogicalReadCounts" xml:"AvgLogicalReadCounts"`
+	SQLServerMinExecutionTime     int64  `json:"SQLServerMinExecutionTime" xml:"SQLServerMinExecutionTime"`
+	SQLIdStr                      string `json:"SQLIdStr" xml:"SQLIdStr"`
+	SQLServerTotalExecutionTimes  int64  `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
+	AvgRowsAffectedCounts         int64  `json:"AvgRowsAffectedCounts" xml:"AvgRowsAffectedCounts"`
+	TotalRowsAffectedCounts       int64  `json:"TotalRowsAffectedCounts" xml:"TotalRowsAffectedCounts"`
+	AvgPhysicalReadCounts         int64  `json:"AvgPhysicalReadCounts" xml:"AvgPhysicalReadCounts"`
+	MinLogicalReadCounts          int64  `json:"MinLogicalReadCounts" xml:"MinLogicalReadCounts"`
 }

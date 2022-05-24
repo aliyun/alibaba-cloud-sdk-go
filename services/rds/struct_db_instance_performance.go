@@ -18,9 +18,9 @@ package rds
 // DBInstancePerformance is a nested struct in rds response
 type DBInstancePerformance struct {
 	CPUUsage              string `json:"CPUUsage" xml:"CPUUsage"`
-	IOPSUsage             string `json:"IOPSUsage" xml:"IOPSUsage"`
-	DiskUsage             string `json:"DiskUsage" xml:"DiskUsage"`
 	SessionUsage          string `json:"SessionUsage" xml:"SessionUsage"`
 	DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
 	DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	IOPSUsage             string `json:"IOPSUsage" xml:"IOPSUsage"`
+	DiskUsage             string `json:"DiskUsage" xml:"DiskUsage"`
 }

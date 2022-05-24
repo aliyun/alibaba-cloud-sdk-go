@@ -74,6 +74,7 @@ type DescribeDBInstanceNetInfoRequest struct {
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Flag                     requests.Integer `position:"Query" name:"Flag"`
 	ClientToken              string           `position:"Query" name:"ClientToken"`
+	GeneralGroupName         string           `position:"Query" name:"GeneralGroupName"`
 	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
@@ -84,9 +85,9 @@ type DescribeDBInstanceNetInfoRequest struct {
 // DescribeDBInstanceNetInfoResponse is the response struct for api DescribeDBInstanceNetInfo
 type DescribeDBInstanceNetInfoResponse struct {
 	*responses.BaseResponse
+	SecurityIPMode      string             `json:"SecurityIPMode" xml:"SecurityIPMode"`
 	RequestId           string             `json:"RequestId" xml:"RequestId"`
 	InstanceNetworkType string             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	SecurityIPMode      string             `json:"SecurityIPMode" xml:"SecurityIPMode"`
 	DBInstanceNetInfos  DBInstanceNetInfos `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
 }
 

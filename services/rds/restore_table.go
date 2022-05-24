@@ -74,6 +74,7 @@ type RestoreTableRequest struct {
 	RestoreTableMode     string           `position:"Query" name:"RestoreTableMode"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	InstantRecovery      requests.Boolean `position:"Query" name:"InstantRecovery"`
 	TableMeta            string           `position:"Query" name:"TableMeta"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	RestoreTime          string           `position:"Query" name:"RestoreTime"`

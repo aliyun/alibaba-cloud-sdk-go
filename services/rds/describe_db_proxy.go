@@ -80,14 +80,15 @@ type DescribeDBProxyRequest struct {
 // DescribeDBProxyResponse is the response struct for api DescribeDBProxy
 type DescribeDBProxyResponse struct {
 	*responses.BaseResponse
-	RequestId                          string                    `json:"RequestId" xml:"RequestId"`
-	DBProxyServiceStatus               string                    `json:"DBProxyServiceStatus" xml:"DBProxyServiceStatus"`
-	DBProxyInstanceType                string                    `json:"DBProxyInstanceType" xml:"DBProxyInstanceType"`
-	DBProxyInstanceNum                 int                       `json:"DBProxyInstanceNum" xml:"DBProxyInstanceNum"`
-	DBProxyInstanceStatus              string                    `json:"DBProxyInstanceStatus" xml:"DBProxyInstanceStatus"`
-	DBProxyInstanceCurrentMinorVersion string                    `json:"DBProxyInstanceCurrentMinorVersion" xml:"DBProxyInstanceCurrentMinorVersion"`
 	DBProxyInstanceLatestMinorVersion  string                    `json:"DBProxyInstanceLatestMinorVersion" xml:"DBProxyInstanceLatestMinorVersion"`
+	RequestId                          string                    `json:"RequestId" xml:"RequestId"`
+	DBProxyInstanceCurrentMinorVersion string                    `json:"DBProxyInstanceCurrentMinorVersion" xml:"DBProxyInstanceCurrentMinorVersion"`
+	DBProxyInstanceNum                 int                       `json:"DBProxyInstanceNum" xml:"DBProxyInstanceNum"`
+	DBProxyInstanceType                string                    `json:"DBProxyInstanceType" xml:"DBProxyInstanceType"`
+	DBProxyInstanceStatus              string                    `json:"DBProxyInstanceStatus" xml:"DBProxyInstanceStatus"`
+	DBProxyServiceStatus               string                    `json:"DBProxyServiceStatus" xml:"DBProxyServiceStatus"`
 	DBProxyInstanceName                string                    `json:"DBProxyInstanceName" xml:"DBProxyInstanceName"`
+	DBProxyInstanceSize                string                    `json:"DBProxyInstanceSize" xml:"DBProxyInstanceSize"`
 	DBProxyConnectStringItems          DBProxyConnectStringItems `json:"DBProxyConnectStringItems" xml:"DBProxyConnectStringItems"`
 	DbProxyEndpointItems               DbProxyEndpointItems      `json:"DbProxyEndpointItems" xml:"DbProxyEndpointItems"`
 }

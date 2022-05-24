@@ -34,6 +34,7 @@ type Backup struct {
 	BackupDownloadURL         string                 `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
 	SlaveStatus               string                 `json:"SlaveStatus" xml:"SlaveStatus"`
 	BackupExtractionStatus    string                 `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
+	DBInstanceComment         string                 `json:"DBInstanceComment" xml:"DBInstanceComment"`
 	BackupIntranetDownloadURL string                 `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
 	BackupEndTime             string                 `json:"BackupEndTime" xml:"BackupEndTime"`
 	BackupMethod              string                 `json:"BackupMethod" xml:"BackupMethod"`

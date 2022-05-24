@@ -17,7 +17,7 @@ package rds
 
 // EcsSecurityGroupRelation is a nested struct in rds response
 type EcsSecurityGroupRelation struct {
-	RegionId        string `json:"RegionId" xml:"RegionId"`
 	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
 	NetworkType     string `json:"NetworkType" xml:"NetworkType"`
 }

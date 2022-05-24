@@ -85,11 +85,11 @@ type DescribeLogBackupFilesRequest struct {
 // DescribeLogBackupFilesResponse is the response struct for api DescribeLogBackupFiles
 type DescribeLogBackupFilesResponse struct {
 	*responses.BaseResponse
-	RequestId        string                        `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalFileSize    int64                         `json:"TotalFileSize" xml:"TotalFileSize"`
+	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
+	RequestId        string                        `json:"RequestId" xml:"RequestId"`
+	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeLogBackupFiles `json:"Items" xml:"Items"`
 }
 

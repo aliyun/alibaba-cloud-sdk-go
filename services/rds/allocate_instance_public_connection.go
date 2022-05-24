@@ -78,15 +78,16 @@ type AllocateInstancePublicConnectionRequest struct {
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	BabelfishPort          string           `position:"Query" name:"BabelfishPort"`
 	Port                   string           `position:"Query" name:"Port"`
 }
 
 // AllocateInstancePublicConnectionResponse is the response struct for api AllocateInstancePublicConnection
 type AllocateInstancePublicConnectionResponse struct {
 	*responses.BaseResponse
+	DbInstanceName   string `json:"DbInstanceName" xml:"DbInstanceName"`
 	RequestId        string `json:"RequestId" xml:"RequestId"`
 	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
-	DbInstanceName   string `json:"DbInstanceName" xml:"DbInstanceName"`
 }
 
 // CreateAllocateInstancePublicConnectionRequest creates a request to invoke AllocateInstancePublicConnection API
