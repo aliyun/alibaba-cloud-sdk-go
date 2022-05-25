@@ -1,3 +1,7 @@
+2022-05-25 Version: v1.61.1609
+- Generated 2019-01-01 for `Cms`.
+- Add Hybrid Monitor API.
+
 2022-05-24 Version: v1.61.1608
 - Generated 2014-08-15 for `Rds`.
 - StartDBInstance parameter change.

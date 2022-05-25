@@ -25,4 +25,5 @@ type TaskOption struct {
 	HttpPostContent     string `json:"HttpPostContent" xml:"HttpPostContent"`
 	HttpNegative        bool   `json:"HttpNegative" xml:"HttpNegative"`
 	HttpKeyword         string `json:"HttpKeyword" xml:"HttpKeyword"`
+	HttpHeader          string `json:"HttpHeader" xml:"HttpHeader"`
 }
