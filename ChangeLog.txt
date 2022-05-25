@@ -1,3 +1,7 @@
+2022-05-25 Version: v1.61.1610
+- Generated 2019-12-30 for `ocr`.
+- Release RecognizeTurkeyIdentityCard RecognizeMalaysiaIdentityCard RecognizeRussiaIdentityCard RecognizeIndonesiaIdentityCard RecognizeIndonesiaIdentityCard.
+
 2022-05-25 Version: v1.61.1609
 - Generated 2019-01-01 for `Cms`.
 - Add Hybrid Monitor API.
