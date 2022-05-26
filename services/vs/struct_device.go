@@ -43,6 +43,7 @@ type Device struct {
 	AutoRenew          bool      `json:"AutoRenew" xml:"AutoRenew"`
 	Server             string    `json:"Server" xml:"Server"`
 	GroupName          string    `json:"GroupName" xml:"GroupName"`
+	HostRom            string    `json:"HostRom" xml:"HostRom"`
 	AlarmMethod        string    `json:"AlarmMethod" xml:"AlarmMethod"`
 	Latitude           string    `json:"Latitude" xml:"Latitude"`
 	CreatedTime        string    `json:"CreatedTime" xml:"CreatedTime"`
@@ -68,6 +69,6 @@ type Device struct {
 	Specification      string    `json:"Specification" xml:"Specification"`
 	Directory          Directory `json:"Directory" xml:"Directory"`
 	Stats              Stats     `json:"Stats" xml:"Stats"`
-	IpInfos            []IpInfo  `json:"IpInfos" xml:"IpInfos"`
 	PodInfos           []PodInfo `json:"PodInfos" xml:"PodInfos"`
+	IpInfos            []IpInfo  `json:"IpInfos" xml:"IpInfos"`
 }

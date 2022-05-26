@@ -18,6 +18,7 @@ package vs
 // PodInfo is a nested struct in vs response
 type PodInfo struct {
 	PodId   string        `json:"PodId" xml:"PodId"`
+	PodIp   string        `json:"PodIp" xml:"PodIp"`
 	Status  string        `json:"Status" xml:"Status"`
 	Network []NetworkItem `json:"Network" xml:"Network"`
 }

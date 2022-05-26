@@ -1,3 +1,7 @@
+2022-05-26 Version: v1.61.1612
+- Generated 2018-12-12 for `vs`.
+- Add PodIp for DescribeRenderingDevices and DescribeClusterDevices.
+
 2022-05-25 Version: v1.61.1611
 - Generated 2020-01-16 for `DAS`.
 - Kill Redis instance all sessions api.
