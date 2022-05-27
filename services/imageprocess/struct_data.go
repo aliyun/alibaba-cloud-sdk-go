@@ -28,8 +28,10 @@ type Data struct {
 	ImageUrl           string                 `json:"ImageUrl" xml:"ImageUrl"`
 	Mask               string                 `json:"Mask" xml:"Mask"`
 	ErrorCode          string                 `json:"ErrorCode" xml:"ErrorCode"`
+	VolumeScore        string                 `json:"VolumeScore" xml:"VolumeScore"`
 	JobId              string                 `json:"JobId" xml:"JobId"`
 	OrgId              string                 `json:"OrgId" xml:"OrgId"`
+	Data               string                 `json:"Data" xml:"Data"`
 	Result             string                 `json:"Result" xml:"Result"`
 	Question           string                 `json:"Question" xml:"Question"`
 	OtherProbability   string                 `json:"OtherProbability" xml:"OtherProbability"`
@@ -43,10 +45,9 @@ type Data struct {
 	ResultURL          string                 `json:"ResultURL" xml:"ResultURL"`
 	OrgName            string                 `json:"OrgName" xml:"OrgName"`
 	ResultUrl          string                 `json:"ResultUrl" xml:"ResultUrl"`
-	Spacing            []float64              `json:"Spacing" xml:"Spacing"`
 	Options            []string               `json:"Options" xml:"Options"`
-	Origin             []float64              `json:"Origin" xml:"Origin"`
 	DetectRibFracture  DetectRibFracture      `json:"DetectRibFracture" xml:"DetectRibFracture"`
+	Lesion             Lesion                 `json:"Lesion" xml:"Lesion"`
 	Covid              Covid                  `json:"Covid" xml:"Covid"`
 	AnalyzeChestVessel AnalyzeChestVessel     `json:"AnalyzeChestVessel" xml:"AnalyzeChestVessel"`
 	PulmonaryInfo      PulmonaryInfo          `json:"PulmonaryInfo" xml:"PulmonaryInfo"`
@@ -55,7 +56,7 @@ type Data struct {
 	AortaInfo          AortaInfo              `json:"AortaInfo" xml:"AortaInfo"`
 	Fractures          []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	Vertebras          []Vertebra             `json:"Vertebras" xml:"Vertebras"`
-	Detections         []DetectionsItem       `json:"Detections" xml:"Detections"`
+	Detections         []Detections           `json:"Detections" xml:"Detections"`
 	Series             []Serie                `json:"Series" xml:"Series"`
 	KLDetections       []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
 	KeyPoints          []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
