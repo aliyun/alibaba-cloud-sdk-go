@@ -76,21 +76,21 @@ func (client *Client) SingleSendMailWithCallback(request *SingleSendMailRequest,
 // SingleSendMailRequest is the request struct for api SingleSendMail
 type SingleSendMailRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
-	AddressType          requests.Integer `position:"Query" name:"AddressType"`
-	TagName              string           `position:"Query" name:"TagName"`
-	ReplyToAddress       requests.Boolean `position:"Query" name:"ReplyToAddress"`
-	ToAddress            string           `position:"Query" name:"ToAddress"`
-	Subject              string           `position:"Query" name:"Subject"`
-	HtmlBody             string           `position:"Query" name:"HtmlBody"`
-	TextBody             string           `position:"Query" name:"TextBody"`
-	FromAlias            string           `position:"Query" name:"FromAlias"`
-	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
-	ReplyAddressAlias    string           `position:"Query" name:"ReplyAddressAlias"`
-	ClickTrace           string           `position:"Query" name:"ClickTrace"`
+	OwnerId              requests.Integer `position:"Body" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Body" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Body" name:"ResourceOwnerId"`
+	AccountName          string           `position:"Body" name:"AccountName"`
+	AddressType          requests.Integer `position:"Body" name:"AddressType"`
+	TagName              string           `position:"Body" name:"TagName"`
+	ReplyToAddress       requests.Boolean `position:"Body" name:"ReplyToAddress"`
+	ToAddress            string           `position:"Body" name:"ToAddress"`
+	Subject              string           `position:"Body" name:"Subject"`
+	HtmlBody             string           `position:"Body" name:"HtmlBody"`
+	TextBody             string           `position:"Body" name:"TextBody"`
+	FromAlias            string           `position:"Body" name:"FromAlias"`
+	ReplyAddress         string           `position:"Body" name:"ReplyAddress"`
+	ReplyAddressAlias    string           `position:"Body" name:"ReplyAddressAlias"`
+	ClickTrace           string           `position:"Body" name:"ClickTrace"`
 }
 
 // SingleSendMailResponse is the response struct for api SingleSendMail
