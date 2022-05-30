@@ -71,9 +71,11 @@ func (client *Client) GetStackWithCallback(request *GetStackRequest, callback fu
 // GetStackRequest is the request struct for api GetStack
 type GetStackRequest struct {
 	*requests.RpcRequest
-	TraceID string `position:"Query" name:"TraceID"`
-	RpcID   string `position:"Query" name:"RpcID"`
-	Pid     string `position:"Query" name:"Pid"`
+	TraceID   string           `position:"Query" name:"TraceID"`
+	EndTime   requests.Integer `position:"Query" name:"EndTime"`
+	RpcID     string           `position:"Query" name:"RpcID"`
+	Pid       string           `position:"Query" name:"Pid"`
+	StartTime requests.Integer `position:"Query" name:"StartTime"`
 }
 
 // GetStackResponse is the response struct for api GetStack
