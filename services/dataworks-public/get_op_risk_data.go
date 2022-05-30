@@ -81,8 +81,8 @@ type GetOpRiskDataRequest struct {
 // GetOpRiskDataResponse is the response struct for api GetOpRiskData
 type GetOpRiskDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	RiskData  string `json:"RiskData" xml:"RiskData"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetOpRiskDataRequest creates a request to invoke GetOpRiskData API

@@ -83,10 +83,10 @@ type CreateDataSourceRequest struct {
 // CreateDataSourceResponse is the response struct for api CreateDataSource
 type CreateDataSourceResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           int64  `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateDataSourceRequest creates a request to invoke CreateDataSource API

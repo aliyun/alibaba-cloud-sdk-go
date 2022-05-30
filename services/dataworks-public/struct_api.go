@@ -22,21 +22,21 @@ type Api struct {
 	ModifiedTime        string              `json:"ModifiedTime" xml:"ModifiedTime"`
 	CreatedTime         string              `json:"CreatedTime" xml:"CreatedTime"`
 	CreatorId           string              `json:"CreatorId" xml:"CreatorId"`
-	GroupId             string              `json:"GroupId" xml:"GroupId"`
-	OperatorId          string              `json:"OperatorId" xml:"OperatorId"`
 	ResponseContentType int                 `json:"ResponseContentType" xml:"ResponseContentType"`
+	OperatorId          string              `json:"OperatorId" xml:"OperatorId"`
+	GroupId             string              `json:"GroupId" xml:"GroupId"`
 	Description         string              `json:"Description" xml:"Description"`
 	Timeout             int                 `json:"Timeout" xml:"Timeout"`
 	ApiPath             string              `json:"ApiPath" xml:"ApiPath"`
 	Status              int                 `json:"Status" xml:"Status"`
 	ApiMode             int                 `json:"ApiMode" xml:"ApiMode"`
 	ApiId               int64               `json:"ApiId" xml:"ApiId"`
-	ApiName             string              `json:"ApiName" xml:"ApiName"`
 	ProjectId           int64               `json:"ProjectId" xml:"ProjectId"`
 	RequestMethod       int                 `json:"RequestMethod" xml:"RequestMethod"`
+	ApiName             string              `json:"ApiName" xml:"ApiName"`
 	VisibleRange        int                 `json:"VisibleRange" xml:"VisibleRange"`
 	Protocols           []int               `json:"Protocols" xml:"Protocols"`
 	WizardDetails       WizardDetails       `json:"WizardDetails" xml:"WizardDetails"`
-	ScriptDetails       ScriptDetails       `json:"ScriptDetails" xml:"ScriptDetails"`
 	RegistrationDetails RegistrationDetails `json:"RegistrationDetails" xml:"RegistrationDetails"`
+	ScriptDetails       ScriptDetails       `json:"ScriptDetails" xml:"ScriptDetails"`
 }

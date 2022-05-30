@@ -79,8 +79,8 @@ type UpdateNodeOwnerRequest struct {
 // UpdateNodeOwnerResponse is the response struct for api UpdateNodeOwner
 type UpdateNodeOwnerResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateNodeOwnerRequest creates a request to invoke UpdateNodeOwner API

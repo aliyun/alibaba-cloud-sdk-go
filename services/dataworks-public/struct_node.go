@@ -17,23 +17,23 @@ package dataworks_public
 
 // Node is a nested struct in dataworks_public response
 type Node struct {
-	NodeId         int64  `json:"NodeId" xml:"NodeId"`
-	NodeName       string `json:"NodeName" xml:"NodeName"`
-	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
-	Description    string `json:"Description" xml:"Description"`
-	ResGroupName   string `json:"ResGroupName" xml:"ResGroupName"`
-	CronExpress    string `json:"CronExpress" xml:"CronExpress"`
-	Repeatability  bool   `json:"Repeatability" xml:"Repeatability"`
-	ProgramType    string `json:"ProgramType" xml:"ProgramType"`
-	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
 	SchedulerType  string `json:"SchedulerType" xml:"SchedulerType"`
-	ParamValues    string `json:"ParamValues" xml:"ParamValues"`
-	Priority       int    `json:"Priority" xml:"Priority"`
-	BaselineId     int64  `json:"BaselineId" xml:"BaselineId"`
 	RepeatInterval int    `json:"RepeatInterval" xml:"RepeatInterval"`
-	Connection     string `json:"Connection" xml:"Connection"`
-	DqcType        int    `json:"DqcType" xml:"DqcType"`
-	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
-	RelatedFlowId  int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
+	Repeatability  bool   `json:"Repeatability" xml:"Repeatability"`
 	FileType       string `json:"FileType" xml:"FileType"`
+	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
+	ProgramType    string `json:"ProgramType" xml:"ProgramType"`
+	Priority       int    `json:"Priority" xml:"Priority"`
+	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
+	Connection     string `json:"Connection" xml:"Connection"`
+	ParamValues    string `json:"ParamValues" xml:"ParamValues"`
+	RelatedFlowId  int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
+	DqcType        int    `json:"DqcType" xml:"DqcType"`
+	BaselineId     int64  `json:"BaselineId" xml:"BaselineId"`
+	Description    string `json:"Description" xml:"Description"`
+	NodeName       string `json:"NodeName" xml:"NodeName"`
+	ResGroupName   string `json:"ResGroupName" xml:"ResGroupName"`
+	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
+	CronExpress    string `json:"CronExpress" xml:"CronExpress"`
+	NodeId         int64  `json:"NodeId" xml:"NodeId"`
 }

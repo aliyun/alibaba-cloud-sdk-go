@@ -81,10 +81,10 @@ type UpdateDataSourceRequest struct {
 // UpdateDataSourceResponse is the response struct for api UpdateDataSource
 type UpdateDataSourceResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           bool   `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateDataSourceRequest creates a request to invoke UpdateDataSource API

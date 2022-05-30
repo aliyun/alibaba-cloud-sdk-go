@@ -77,10 +77,10 @@ type DeleteDataSourceRequest struct {
 // DeleteDataSourceResponse is the response struct for api DeleteDataSource
 type DeleteDataSourceResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           bool   `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteDataSourceRequest creates a request to invoke DeleteDataSource API

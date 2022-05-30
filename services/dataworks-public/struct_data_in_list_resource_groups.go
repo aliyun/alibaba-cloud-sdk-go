@@ -17,5 +17,5 @@ package dataworks_public
 
 // DataInListResourceGroups is a nested struct in dataworks_public response
 type DataInListResourceGroups struct {
-	DataItem []DataItem `json:"Data" xml:"Data"`
+	DataItem []DataItemInListResourceGroups `json:"Data" xml:"Data"`
 }

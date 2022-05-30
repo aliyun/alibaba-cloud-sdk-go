@@ -17,7 +17,7 @@ package dataworks_public
 
 // Application is a nested struct in dataworks_public response
 type Application struct {
-	ApplicationId   int64  `json:"ApplicationId" xml:"ApplicationId"`
 	ApplicationName string `json:"ApplicationName" xml:"ApplicationName"`
+	ApplicationId   int64  `json:"ApplicationId" xml:"ApplicationId"`
 	ProjectId       int64  `json:"ProjectId" xml:"ProjectId"`
 }

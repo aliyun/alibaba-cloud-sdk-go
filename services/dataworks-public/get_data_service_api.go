@@ -79,11 +79,11 @@ type GetDataServiceApiRequest struct {
 // GetDataServiceApiResponse is the response struct for api GetDataServiceApi
 type GetDataServiceApiResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string                  `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string                  `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int                     `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string                  `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string                  `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success        bool                    `json:"Success" xml:"Success"`
+	ErrorCode      string                  `json:"ErrorCode" xml:"ErrorCode"`
 	Data           DataInGetDataServiceApi `json:"Data" xml:"Data"`
 }
 

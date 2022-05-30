@@ -79,8 +79,8 @@ type UpdateNodeRunModeRequest struct {
 // UpdateNodeRunModeResponse is the response struct for api UpdateNodeRunMode
 type UpdateNodeRunModeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateNodeRunModeRequest creates a request to invoke UpdateNodeRunMode API

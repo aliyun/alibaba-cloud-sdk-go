@@ -17,8 +17,8 @@ package dataworks_public
 
 // WizardResponseParameter is a nested struct in dataworks_public response
 type WizardResponseParameter struct {
-	ParameterDataType    int    `json:"ParameterDataType" xml:"ParameterDataType"`
 	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
+	ParameterDataType    int    `json:"ParameterDataType" xml:"ParameterDataType"`
 	ColumnName           string `json:"ColumnName" xml:"ColumnName"`
 	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
 	ExampleValue         string `json:"ExampleValue" xml:"ExampleValue"`

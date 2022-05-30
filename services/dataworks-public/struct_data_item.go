@@ -17,31 +17,24 @@ package dataworks_public
 
 // DataItem is a nested struct in dataworks_public response
 type DataItem struct {
-	Name              string                 `json:"Name" xml:"Name"`
-	InGroupId         int                    `json:"InGroupId" xml:"InGroupId"`
-	PrgType           int                    `json:"PrgType" xml:"PrgType"`
-	CreateTime        string                 `json:"CreateTime" xml:"CreateTime"`
-	TenantId          int64                  `json:"TenantId" xml:"TenantId"`
-	Sequence          int                    `json:"Sequence" xml:"Sequence"`
-	Mode              string                 `json:"Mode" xml:"Mode"`
-	NodeName          string                 `json:"NodeName" xml:"NodeName"`
-	IsDefault         bool                   `json:"IsDefault" xml:"IsDefault"`
-	Specs             map[string]interface{} `json:"Specs" xml:"Specs"`
-	Bizdate           int64                  `json:"Bizdate" xml:"Bizdate"`
-	BizExtKey         string                 `json:"BizExtKey" xml:"BizExtKey"`
-	Status            int                    `json:"Status" xml:"Status"`
-	UpdateTime        string                 `json:"UpdateTime" xml:"UpdateTime"`
-	Data              string                 `json:"Data" xml:"Data"`
-	Owner             string                 `json:"Owner" xml:"Owner"`
-	Id                int64                  `json:"Id" xml:"Id"`
-	ResourceGroupType string                 `json:"ResourceGroupType" xml:"ResourceGroupType"`
-	TableName         string                 `json:"TableName" xml:"TableName"`
-	Cluster           string                 `json:"Cluster" xml:"Cluster"`
-	InstanceId        int64                  `json:"InstanceId" xml:"InstanceId"`
-	EnableKp          bool                   `json:"EnableKp" xml:"EnableKp"`
-	NodeId            int64                  `json:"NodeId" xml:"NodeId"`
-	Identifier        string                 `json:"Identifier" xml:"Identifier"`
-	ProjectId         int64                  `json:"ProjectId" xml:"ProjectId"`
-	Runs              []RunsItem             `json:"Runs" xml:"Runs"`
-	Topics            []TopicsItem           `json:"Topics" xml:"Topics"`
+	InGroupId  int          `json:"InGroupId" xml:"InGroupId"`
+	Data       string       `json:"Data" xml:"Data"`
+	PrgType    int          `json:"PrgType" xml:"PrgType"`
+	Owner      string       `json:"Owner" xml:"Owner"`
+	RetResult  string       `json:"RetResult" xml:"RetResult"`
+	CreateTime int64        `json:"CreateTime" xml:"CreateTime"`
+	TableName  string       `json:"TableName" xml:"TableName"`
+	ParamMap   string       `json:"ParamMap" xml:"ParamMap"`
+	CostTime   int          `json:"CostTime" xml:"CostTime"`
+	InstanceId int64        `json:"InstanceId" xml:"InstanceId"`
+	NodeName   string       `json:"NodeName" xml:"NodeName"`
+	ApiId      int64        `json:"ApiId" xml:"ApiId"`
+	NodeId     int64        `json:"NodeId" xml:"NodeId"`
+	TestId     int64        `json:"TestId" xml:"TestId"`
+	RetCode    int64        `json:"RetCode" xml:"RetCode"`
+	ProjectId  int64        `json:"ProjectId" xml:"ProjectId"`
+	Status     string       `json:"Status" xml:"Status"`
+	Bizdate    int64        `json:"Bizdate" xml:"Bizdate"`
+	Runs       []RunsItem   `json:"Runs" xml:"Runs"`
+	Topics     []TopicsItem `json:"Topics" xml:"Topics"`
 }

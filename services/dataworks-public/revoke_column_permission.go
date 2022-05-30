@@ -82,8 +82,8 @@ type RevokeColumnPermissionRequest struct {
 // RevokeColumnPermissionResponse is the response struct for api RevokeColumnPermission
 type RevokeColumnPermissionResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	RevokeSuccess bool   `json:"RevokeSuccess" xml:"RevokeSuccess"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRevokeColumnPermissionRequest creates a request to invoke RevokeColumnPermission API

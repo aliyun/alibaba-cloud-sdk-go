@@ -79,10 +79,10 @@ type ListResourceGroupsRequest struct {
 // ListResourceGroupsResponse is the response struct for api ListResourceGroups
 type ListResourceGroupsResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool       `json:"Success" xml:"Success"`
-	RequestId      string     `json:"RequestId" xml:"RequestId"`
-	Data           []DataItem `json:"Data" xml:"Data"`
+	HttpStatusCode int                            `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string                         `json:"RequestId" xml:"RequestId"`
+	Success        bool                           `json:"Success" xml:"Success"`
+	Data           []DataItemInListResourceGroups `json:"Data" xml:"Data"`
 }
 
 // CreateListResourceGroupsRequest creates a request to invoke ListResourceGroups API

@@ -34,7 +34,7 @@ type NodesItem struct {
 	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
 	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
 	DqcType        int    `json:"DqcType" xml:"DqcType"`
-	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
 	BusinessId     int64  `json:"BusinessId" xml:"BusinessId"`
+	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
 	Description    string `json:"Description" xml:"Description"`
 }

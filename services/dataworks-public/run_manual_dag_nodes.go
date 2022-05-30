@@ -85,8 +85,8 @@ type RunManualDagNodesRequest struct {
 // RunManualDagNodesResponse is the response struct for api RunManualDagNodes
 type RunManualDagNodesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	DagId     int64  `json:"DagId" xml:"DagId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRunManualDagNodesRequest creates a request to invoke RunManualDagNodes API

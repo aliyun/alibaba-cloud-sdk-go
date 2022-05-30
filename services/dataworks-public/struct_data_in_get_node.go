@@ -17,23 +17,23 @@ package dataworks_public
 
 // DataInGetNode is a nested struct in dataworks_public response
 type DataInGetNode struct {
-	NodeId         int64  `json:"NodeId" xml:"NodeId"`
-	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
-	Description    string `json:"Description" xml:"Description"`
-	ResGroupName   string `json:"ResGroupName" xml:"ResGroupName"`
-	NodeName       string `json:"NodeName" xml:"NodeName"`
-	CronExpress    string `json:"CronExpress" xml:"CronExpress"`
-	Repeatability  string `json:"Repeatability" xml:"Repeatability"`
-	ProgramType    string `json:"ProgramType" xml:"ProgramType"`
-	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
 	SchedulerType  string `json:"SchedulerType" xml:"SchedulerType"`
-	ParamValues    string `json:"ParamValues" xml:"ParamValues"`
-	Priority       int    `json:"Priority" xml:"Priority"`
-	BaselineId     int64  `json:"BaselineId" xml:"BaselineId"`
 	RepeatInterval int64  `json:"RepeatInterval" xml:"RepeatInterval"`
+	Repeatability  string `json:"Repeatability" xml:"Repeatability"`
+	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
+	ProgramType    string `json:"ProgramType" xml:"ProgramType"`
+	Priority       int    `json:"Priority" xml:"Priority"`
+	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
 	Connection     string `json:"Connection" xml:"Connection"`
-	DqcType        int    `json:"DqcType" xml:"DqcType"`
-	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
+	ParamValues    string `json:"ParamValues" xml:"ParamValues"`
 	RelatedFlowId  int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
+	DqcType        int    `json:"DqcType" xml:"DqcType"`
+	BaselineId     int64  `json:"BaselineId" xml:"BaselineId"`
+	Description    string `json:"Description" xml:"Description"`
+	NodeName       string `json:"NodeName" xml:"NodeName"`
+	ResGroupName   string `json:"ResGroupName" xml:"ResGroupName"`
 	BusinessId     int64  `json:"BusinessId" xml:"BusinessId"`
+	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
+	CronExpress    string `json:"CronExpress" xml:"CronExpress"`
+	NodeId         int64  `json:"NodeId" xml:"NodeId"`
 }

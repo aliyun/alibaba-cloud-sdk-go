@@ -22,7 +22,7 @@ type Folder struct {
 	FolderId     int64  `json:"FolderId" xml:"FolderId"`
 	TenantId     int64  `json:"TenantId" xml:"TenantId"`
 	FolderName   string `json:"FolderName" xml:"FolderName"`
-	ProjectId    int64  `json:"ProjectId" xml:"ProjectId"`
 	GroupId      string `json:"GroupId" xml:"GroupId"`
+	ProjectId    int64  `json:"ProjectId" xml:"ProjectId"`
 	ParentId     int64  `json:"ParentId" xml:"ParentId"`
 }
