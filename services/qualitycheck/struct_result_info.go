@@ -36,6 +36,8 @@ type ResultInfo struct {
 	Score           int                   `json:"Score" xml:"Score"`
 	AssignmentTime  string                `json:"AssignmentTime" xml:"AssignmentTime"`
 	ReviewType      int                   `json:"ReviewType" xml:"ReviewType"`
+	SchemeIdList    SchemeIdList          `json:"SchemeIdList" xml:"SchemeIdList"`
+	SchemeNameList  SchemeNameList        `json:"SchemeNameList" xml:"SchemeNameList"`
 	HandScoreIdList HandScoreIdList       `json:"HandScoreIdList" xml:"HandScoreIdList"`
 	Agent           Agent                 `json:"Agent" xml:"Agent"`
 	Recording       Recording             `json:"Recording" xml:"Recording"`
