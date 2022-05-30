@@ -29,9 +29,9 @@ type DeployGroup struct {
 	Selector              string     `json:"Selector" xml:"Selector"`
 	VExtServerGroupId     string     `json:"VExtServerGroupId" xml:"VExtServerGroupId"`
 	Strategy              string     `json:"Strategy" xml:"Strategy"`
+	Env                   string     `json:"Env" xml:"Env"`
 	PreStop               string     `json:"PreStop" xml:"PreStop"`
 	BaseComponentMetaName string     `json:"BaseComponentMetaName" xml:"BaseComponentMetaName"`
-	Env                   string     `json:"Env" xml:"Env"`
 	ClusterName           string     `json:"ClusterName" xml:"ClusterName"`
 	PackageVersionId      string     `json:"PackageVersionId" xml:"PackageVersionId"`
 	GroupId               string     `json:"GroupId" xml:"GroupId"`

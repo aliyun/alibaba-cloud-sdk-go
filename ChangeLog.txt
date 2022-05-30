@@ -1,3 +1,7 @@
+2022-05-30 Version: v1.61.1616
+- Generated 2017-08-01 for `Edas`.
+- Add output field deployGroup env in GetK8sApplication.
+
 2022-05-30 Version: v1.61.1615
 - Generated 2020-05-18 for `dataworks-public`.
 
