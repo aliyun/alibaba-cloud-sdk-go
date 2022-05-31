@@ -93,7 +93,7 @@ func CreateDeleteUserRequest() (request *DeleteUserRequest) {
 	request = &DeleteUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteUser", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteUser", "", "")
 	request.Method = requests.POST
 	return
 }

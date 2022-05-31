@@ -102,7 +102,7 @@ func CreateDescribeBindersRequest() (request *DescribeBindersRequest) {
 	request = &DescribeBindersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeBinders", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeBinders", "", "")
 	request.Method = requests.POST
 	return
 }

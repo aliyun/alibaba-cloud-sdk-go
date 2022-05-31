@@ -101,7 +101,7 @@ func CreateDescribeUsersRequest() (request *DescribeUsersRequest) {
 	request = &DescribeUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeUsers", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeUsers", "", "")
 	request.Method = requests.POST
 	return
 }

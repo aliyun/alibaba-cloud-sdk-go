@@ -1,3 +1,7 @@
+2022-05-31 Version: v1.61.1619
+- Generated 2020-02-01 for `cloudesl`.
+- Add Template API Support.
+
 2022-05-30 Version: v1.61.1618
 - Generated 2019-01-15 for `Qualitycheck`.
 - Add Api.

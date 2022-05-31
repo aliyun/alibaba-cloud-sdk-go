@@ -93,7 +93,7 @@ func CreateDeleteStoreRequest() (request *DeleteStoreRequest) {
 	request = &DeleteStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteStore", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteStore", "", "")
 	request.Method = requests.POST
 	return
 }

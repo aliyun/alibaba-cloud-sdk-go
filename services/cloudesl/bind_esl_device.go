@@ -83,14 +83,14 @@ type BindEslDeviceRequest struct {
 // BindEslDeviceResponse is the response struct for api BindEslDevice
 type BindEslDeviceResponse struct {
 	*responses.BaseResponse
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Message        string `json:"Message" xml:"Message"`
-	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
-	Code           string `json:"Code" xml:"Code"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
 }
 
 // CreateBindEslDeviceRequest creates a request to invoke BindEslDevice API
@@ -98,7 +98,7 @@ func CreateBindEslDeviceRequest() (request *BindEslDeviceRequest) {
 	request = &BindEslDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "BindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "BindEslDevice", "", "")
 	request.Method = requests.POST
 	return
 }

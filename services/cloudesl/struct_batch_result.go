@@ -17,8 +17,8 @@ package cloudesl
 
 // BatchResult is a nested struct in cloudesl response
 type BatchResult struct {
-	Message   string `json:"Message" xml:"Message"`
 	Index     int    `json:"Index" xml:"Index"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 }

@@ -98,7 +98,7 @@ func CreateUnbindEslDeviceRequest() (request *UnbindEslDeviceRequest) {
 	request = &UnbindEslDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "", "")
 	request.Method = requests.POST
 	return
 }

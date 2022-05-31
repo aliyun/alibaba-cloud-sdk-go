@@ -101,7 +101,7 @@ func CreateUpdateEslDeviceLightRequest() (request *UpdateEslDeviceLightRequest) 
 	request = &UpdateEslDeviceLightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateEslDeviceLight", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateEslDeviceLight", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -104,7 +104,7 @@ func CreateDescribeStoresRequest() (request *DescribeStoresRequest) {
 	request = &DescribeStoresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeStores", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeStores", "", "")
 	request.Method = requests.POST
 	return
 }

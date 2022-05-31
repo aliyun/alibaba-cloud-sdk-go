@@ -77,6 +77,7 @@ type DescribeEslDevicesRequest struct {
 	PageNumber       requests.Integer `position:"Body" name:"PageNumber"`
 	EslBarCode       string           `position:"Body" name:"EslBarCode"`
 	PageSize         requests.Integer `position:"Body" name:"PageSize"`
+	TypeEncode       string           `position:"Body" name:"TypeEncode"`
 	EslStatus        string           `position:"Body" name:"EslStatus"`
 	ToBatteryLevel   requests.Integer `position:"Body" name:"ToBatteryLevel"`
 	FromBatteryLevel requests.Integer `position:"Body" name:"FromBatteryLevel"`
@@ -85,17 +86,17 @@ type DescribeEslDevicesRequest struct {
 // DescribeEslDevicesResponse is the response struct for api DescribeEslDevices
 type DescribeEslDevicesResponse struct {
 	*responses.BaseResponse
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
 	ErrorMessage   string          `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success        bool            `json:"Success" xml:"Success"`
 	ErrorCode      string          `json:"ErrorCode" xml:"ErrorCode"`
-	PageSize       int             `json:"PageSize" xml:"PageSize"`
+	Code           string          `json:"Code" xml:"Code"`
 	Message        string          `json:"Message" xml:"Message"`
+	DynamicMessage string          `json:"DynamicMessage" xml:"DynamicMessage"`
+	PageNumber     int             `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int             `json:"PageSize" xml:"PageSize"`
 	TotalCount     int             `json:"TotalCount" xml:"TotalCount"`
 	DynamicCode    string          `json:"DynamicCode" xml:"DynamicCode"`
-	Code           string          `json:"Code" xml:"Code"`
-	PageNumber     int             `json:"PageNumber" xml:"PageNumber"`
-	DynamicMessage string          `json:"DynamicMessage" xml:"DynamicMessage"`
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	Success        bool            `json:"Success" xml:"Success"`
 	EslDevices     []EslDeviceInfo `json:"EslDevices" xml:"EslDevices"`
 }
 
@@ -104,7 +105,7 @@ func CreateDescribeEslDevicesRequest() (request *DescribeEslDevicesRequest) {
 	request = &DescribeEslDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeEslDevices", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeEslDevices", "", "")
 	request.Method = requests.POST
 	return
 }

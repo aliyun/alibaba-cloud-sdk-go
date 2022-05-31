@@ -94,7 +94,7 @@ func CreateDeleteApDeviceRequest() (request *DeleteApDeviceRequest) {
 	request = &DeleteApDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteApDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteApDevice", "", "")
 	request.Method = requests.POST
 	return
 }
