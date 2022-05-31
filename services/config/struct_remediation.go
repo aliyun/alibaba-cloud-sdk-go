@@ -18,6 +18,7 @@ package config
 // Remediation is a nested struct in config response
 type Remediation struct {
 	LastSuccessfulInvocationTime int64  `json:"LastSuccessfulInvocationTime" xml:"LastSuccessfulInvocationTime"`
+	RemediaitonOriginParams      string `json:"RemediaitonOriginParams" xml:"RemediaitonOriginParams"`
 	RemediationTemplateId        string `json:"RemediationTemplateId" xml:"RemediationTemplateId"`
 	AggregatorId                 string `json:"AggregatorId" xml:"AggregatorId"`
 	RemediationType              string `json:"RemediationType" xml:"RemediationType"`

@@ -73,6 +73,7 @@ type IgnoreEvaluationResultsRequest struct {
 	*requests.RpcRequest
 	ConfigRuleId string                              `position:"Body" name:"ConfigRuleId"`
 	Reason       string                              `position:"Body" name:"Reason"`
+	IgnoreDate   string                              `position:"Body" name:"IgnoreDate"`
 	Resources    *[]IgnoreEvaluationResultsResources `position:"Body" name:"Resources"  type:"Json"`
 }
 

@@ -1,3 +1,7 @@
+2022-05-31 Version: v1.61.1620
+- Generated 2020-09-07 for `Config`.
+- Support aggregator delivery.
+
 2022-05-31 Version: v1.61.1619
 - Generated 2020-02-01 for `cloudesl`.
 - Add Template API Support.

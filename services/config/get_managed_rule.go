@@ -77,8 +77,8 @@ type GetManagedRuleRequest struct {
 // GetManagedRuleResponse is the response struct for api GetManagedRule
 type GetManagedRuleResponse struct {
 	*responses.BaseResponse
-	RequestId   string                      `json:"RequestId" xml:"RequestId"`
-	ManagedRule ManagedRuleInGetManagedRule `json:"ManagedRule" xml:"ManagedRule"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	ManagedRule ManagedRule `json:"ManagedRule" xml:"ManagedRule"`
 }
 
 // CreateGetManagedRuleRequest creates a request to invoke GetManagedRule API
