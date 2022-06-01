@@ -1,3 +1,7 @@
+2022-06-01 Version: v1.61.1621
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
 2022-05-31 Version: v1.61.1620
 - Generated 2020-09-07 for `Config`.
 - Support aggregator delivery.
