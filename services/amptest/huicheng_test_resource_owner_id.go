@@ -84,7 +84,7 @@ func CreateHuichengTestResourceOwnerIdRequest() (request *HuichengTestResourceOw
 	request = &HuichengTestResourceOwnerIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("AmpTest", "2020-12-30", "HuichengTestResourceOwnerId", "AmpTest", "openAPI")
+	request.InitWithApiInfo("AmpTest", "2020-12-30", "HuichengTestResourceOwnerId", "", "")
 	request.Method = requests.GET
 	return
 }

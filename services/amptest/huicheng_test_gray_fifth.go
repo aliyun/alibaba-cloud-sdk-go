@@ -138,7 +138,7 @@ func CreateHuichengTestGrayFifthRequest() (request *HuichengTestGrayFifthRequest
 	request = &HuichengTestGrayFifthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("AmpTest", "2020-12-30", "HuichengTestGrayFifth", "AmpTest", "openAPI")
+	request.InitWithApiInfo("AmpTest", "2020-12-30", "HuichengTestGrayFifth", "", "")
 	request.Method = requests.POST
 	return
 }
