@@ -94,6 +94,7 @@ type UpdateGatewayServiceTrafficPolicyGatewayTrafficPolicyTlsSetting struct {
 
 // UpdateGatewayServiceTrafficPolicyGatewayTrafficPolicyLoadBalancerSettings is a repeated param struct in UpdateGatewayServiceTrafficPolicyRequest
 type UpdateGatewayServiceTrafficPolicyGatewayTrafficPolicyLoadBalancerSettings struct {
+	WarmupDuration         string                                                                                          `name:"WarmupDuration"`
 	LoadbalancerType       string                                                                                          `name:"LoadbalancerType"`
 	ConsistentHashLBConfig UpdateGatewayServiceTrafficPolicyGatewayTrafficPolicyLoadBalancerSettingsConsistentHashLBConfig `name:"ConsistentHashLBConfig" type:"Struct"`
 }

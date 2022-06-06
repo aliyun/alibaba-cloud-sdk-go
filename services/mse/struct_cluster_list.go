@@ -17,10 +17,10 @@ package mse
 
 // ClusterList is a nested struct in mse response
 type ClusterList struct {
-	Region         string `json:"Region" xml:"Region"`
+	ClusterName    string `json:"ClusterName" xml:"ClusterName"`
 	ClusterId      string `json:"ClusterId" xml:"ClusterId"`
+	Region         string `json:"Region" xml:"Region"`
+	K8sVersion     string `json:"K8sVersion" xml:"K8sVersion"`
 	NamespaceInfos string `json:"NamespaceInfos" xml:"NamespaceInfos"`
 	PilotStartTime string `json:"PilotStartTime" xml:"PilotStartTime"`
-	ClusterName    string `json:"ClusterName" xml:"ClusterName"`
-	K8sVersion     string `json:"K8sVersion" xml:"K8sVersion"`
 }

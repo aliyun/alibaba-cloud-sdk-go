@@ -1,3 +1,7 @@
+2022-06-06 Version: v1.61.1624
+- Generated 2019-05-31 for `mse`.
+- Expose global settings for api AddGateway.
+
 2022-06-02 Version: v1.61.1623
 - Generated 2020-12-30 for `AmpTest`.
 - Fix.
