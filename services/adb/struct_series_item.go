@@ -17,6 +17,6 @@ package adb
 
 // SeriesItem is a nested struct in adb response
 type SeriesItem struct {
-	Name   string   `json:"Name" xml:"Name"`
-	Values []string `json:"Values" xml:"Values"`
+	Name   string `json:"Name" xml:"Name"`
+	Values string `json:"Values" xml:"Values"`
 }

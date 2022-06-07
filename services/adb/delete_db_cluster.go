@@ -81,8 +81,8 @@ type DeleteDBClusterRequest struct {
 // DeleteDBClusterResponse is the response struct for api DeleteDBCluster
 type DeleteDBClusterResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	TaskId      int    `json:"TaskId" xml:"TaskId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
 }
 

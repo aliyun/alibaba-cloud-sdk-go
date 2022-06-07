@@ -17,12 +17,12 @@ package adb
 
 // LoadTaskRecord is a nested struct in adb response
 type LoadTaskRecord struct {
-	ProcessRows int64  `json:"ProcessRows" xml:"ProcessRows"`
+	Sql         string `json:"Sql" xml:"Sql"`
 	State       string `json:"State" xml:"State"`
 	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-	JobName     string `json:"JobName" xml:"JobName"`
-	UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
 	DBName      string `json:"DBName" xml:"DBName"`
 	ProcessID   string `json:"ProcessID" xml:"ProcessID"`
-	Sql         string `json:"Sql" xml:"Sql"`
+	UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
+	JobName     string `json:"JobName" xml:"JobName"`
+	ProcessRows int64  `json:"ProcessRows" xml:"ProcessRows"`
 }

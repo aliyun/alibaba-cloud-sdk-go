@@ -84,9 +84,9 @@ type DescribeAllDataSourceRequest struct {
 type DescribeAllDataSourceResponse struct {
 	*responses.BaseResponse
 	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Schemas   Schemas `json:"Schemas" xml:"Schemas"`
 	Tables    Tables  `json:"Tables" xml:"Tables"`
 	Columns   Columns `json:"Columns" xml:"Columns"`
+	Schemas   Schemas `json:"Schemas" xml:"Schemas"`
 }
 
 // CreateDescribeAllDataSourceRequest creates a request to invoke DescribeAllDataSource API

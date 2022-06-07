@@ -17,12 +17,12 @@ package adb
 
 // TableStatisticRecords is a nested struct in adb response
 type TableStatisticRecords struct {
-	TableName           string `json:"TableName" xml:"TableName"`
-	ColdDataSize        int64  `json:"ColdDataSize" xml:"ColdDataSize"`
-	DataSize            int64  `json:"DataSize" xml:"DataSize"`
-	PrimaryKeyIndexSize int64  `json:"PrimaryKeyIndexSize" xml:"PrimaryKeyIndexSize"`
-	IndexSize           int64  `json:"IndexSize" xml:"IndexSize"`
-	RowCount            int64  `json:"RowCount" xml:"RowCount"`
-	PartitionCount      int64  `json:"PartitionCount" xml:"PartitionCount"`
 	SchemaName          string `json:"SchemaName" xml:"SchemaName"`
+	TableName           string `json:"TableName" xml:"TableName"`
+	RowCount            int64  `json:"RowCount" xml:"RowCount"`
+	DataSize            int64  `json:"DataSize" xml:"DataSize"`
+	IndexSize           int64  `json:"IndexSize" xml:"IndexSize"`
+	PrimaryKeyIndexSize int64  `json:"PrimaryKeyIndexSize" xml:"PrimaryKeyIndexSize"`
+	PartitionCount      int64  `json:"PartitionCount" xml:"PartitionCount"`
+	ColdDataSize        int64  `json:"ColdDataSize" xml:"ColdDataSize"`
 }

@@ -83,8 +83,8 @@ type DescribeTableDetailRequest struct {
 // DescribeTableDetailResponse is the response struct for api DescribeTableDetail
 type DescribeTableDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	AvgSize   int64                      `json:"AvgSize" xml:"AvgSize"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Items     ItemsInDescribeTableDetail `json:"Items" xml:"Items"`
 }
 

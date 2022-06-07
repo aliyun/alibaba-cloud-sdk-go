@@ -85,10 +85,10 @@ type DescribeInclinedTablesRequest struct {
 // DescribeInclinedTablesResponse is the response struct for api DescribeInclinedTables
 type DescribeInclinedTablesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                        `json:"RequestId" xml:"RequestId"`
 	TotalCount string                        `json:"TotalCount" xml:"TotalCount"`
-	PageNumber string                        `json:"PageNumber" xml:"PageNumber"`
 	PageSize   string                        `json:"PageSize" xml:"PageSize"`
+	RequestId  string                        `json:"RequestId" xml:"RequestId"`
+	PageNumber string                        `json:"PageNumber" xml:"PageNumber"`
 	Items      ItemsInDescribeInclinedTables `json:"Items" xml:"Items"`
 }
 

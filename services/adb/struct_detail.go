@@ -18,18 +18,18 @@ package adb
 // Detail is a nested struct in adb response
 type Detail struct {
 	SQL          string `json:"SQL" xml:"SQL"`
-	State        string `json:"State" xml:"State"`
-	User         string `json:"User" xml:"User"`
-	ClientIP     string `json:"ClientIP" xml:"ClientIP"`
-	Database     string `json:"Database" xml:"Database"`
-	TotalStage   int64  `json:"TotalStage" xml:"TotalStage"`
-	TotalTask    int64  `json:"TotalTask" xml:"TotalTask"`
-	OutputRows   int64  `json:"OutputRows" xml:"OutputRows"`
 	OutputSize   int64  `json:"OutputSize" xml:"OutputSize"`
+	State        string `json:"State" xml:"State"`
+	OutputRows   int64  `json:"OutputRows" xml:"OutputRows"`
+	User         string `json:"User" xml:"User"`
 	StartTime    string `json:"StartTime" xml:"StartTime"`
-	TotalTime    int64  `json:"TotalTime" xml:"TotalTime"`
+	TotalStage   int64  `json:"TotalStage" xml:"TotalStage"`
 	QueuedTime   int64  `json:"QueuedTime" xml:"QueuedTime"`
+	TotalTime    int64  `json:"TotalTime" xml:"TotalTime"`
+	TotalTask    int64  `json:"TotalTask" xml:"TotalTask"`
+	Database     string `json:"Database" xml:"Database"`
+	PeakMemory   int64  `json:"PeakMemory" xml:"PeakMemory"`
+	ClientIP     string `json:"ClientIP" xml:"ClientIP"`
 	PlanningTime int64  `json:"PlanningTime" xml:"PlanningTime"`
 	CPUTime      int64  `json:"CPUTime" xml:"CPUTime"`
-	PeakMemory   int64  `json:"PeakMemory" xml:"PeakMemory"`
 }

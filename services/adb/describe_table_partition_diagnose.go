@@ -84,8 +84,8 @@ type DescribeTablePartitionDiagnoseRequest struct {
 type DescribeTablePartitionDiagnoseResponse struct {
 	*responses.BaseResponse
 	TotalCount                    int                      `json:"TotalCount" xml:"TotalCount"`
-	PageSize                      int                      `json:"PageSize" xml:"PageSize"`
 	RequestId                     string                   `json:"RequestId" xml:"RequestId"`
+	PageSize                      int                      `json:"PageSize" xml:"PageSize"`
 	PageNumber                    int                      `json:"PageNumber" xml:"PageNumber"`
 	DBClusterId                   string                   `json:"DBClusterId" xml:"DBClusterId"`
 	SuggestMaxRecordsPerPartition int64                    `json:"SuggestMaxRecordsPerPartition" xml:"SuggestMaxRecordsPerPartition"`

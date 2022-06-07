@@ -20,8 +20,8 @@ type Column struct {
 	ColumnName          string `json:"ColumnName" xml:"ColumnName"`
 	SchemaName          string `json:"SchemaName" xml:"SchemaName"`
 	TableName           string `json:"TableName" xml:"TableName"`
-	DBClusterId         string `json:"DBClusterId" xml:"DBClusterId"`
 	AutoIncrementColumn bool   `json:"AutoIncrementColumn" xml:"AutoIncrementColumn"`
+	DBClusterId         string `json:"DBClusterId" xml:"DBClusterId"`
 	PrimaryKey          bool   `json:"PrimaryKey" xml:"PrimaryKey"`
 	Type                string `json:"Type" xml:"Type"`
 }

@@ -83,6 +83,7 @@ type CreateDBClusterRequest struct {
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	ComputeResource      string           `position:"Query" name:"ComputeResource"`
+	ElasticIOResource    string           `position:"Query" name:"ElasticIOResource"`
 	SourceDBInstanceName string           `position:"Query" name:"SourceDBInstanceName"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	StorageResource      string           `position:"Query" name:"StorageResource"`
@@ -105,9 +106,9 @@ type CreateDBClusterRequest struct {
 type CreateDBClusterResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
 	OrderId         string `json:"OrderId" xml:"OrderId"`
-	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 // CreateCreateDBClusterRequest creates a request to invoke CreateDBCluster API

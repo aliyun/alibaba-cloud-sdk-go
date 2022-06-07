@@ -85,9 +85,9 @@ type CreateAccountRequest struct {
 // CreateAccountResponse is the response struct for api CreateAccount
 type CreateAccountResponse struct {
 	*responses.BaseResponse
+	TaskId      int    `json:"TaskId" xml:"TaskId"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
-	TaskId      int    `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateCreateAccountRequest creates a request to invoke CreateAccount API

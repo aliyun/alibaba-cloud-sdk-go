@@ -17,5 +17,5 @@ package adb
 
 // SeriesInDescribeDBClusterPerformance is a nested struct in adb response
 type SeriesInDescribeDBClusterPerformance struct {
-	SeriesItem []SeriesItem `json:"SeriesItem" xml:"SeriesItem"`
+	SeriesItem []SeriesItemInDescribeDBClusterPerformance `json:"SeriesItem" xml:"SeriesItem"`
 }

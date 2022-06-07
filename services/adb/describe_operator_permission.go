@@ -81,9 +81,9 @@ type DescribeOperatorPermissionRequest struct {
 // DescribeOperatorPermissionResponse is the response struct for api DescribeOperatorPermission
 type DescribeOperatorPermissionResponse struct {
 	*responses.BaseResponse
+	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Privileges  string `json:"Privileges" xml:"Privileges"`
-	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
 	ExpiredTime string `json:"ExpiredTime" xml:"ExpiredTime"`
 	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
 }

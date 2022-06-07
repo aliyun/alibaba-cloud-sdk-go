@@ -91,8 +91,8 @@ type DescribeSlowLogRecordsRequest struct {
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
 	TotalCount  string                        `json:"TotalCount" xml:"TotalCount"`
-	RequestId   string                        `json:"RequestId" xml:"RequestId"`
 	PageSize    string                        `json:"PageSize" xml:"PageSize"`
+	RequestId   string                        `json:"RequestId" xml:"RequestId"`
 	PageNumber  string                        `json:"PageNumber" xml:"PageNumber"`
 	DBClusterId string                        `json:"DBClusterId" xml:"DBClusterId"`
 	Items       ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`

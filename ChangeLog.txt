@@ -1,3 +1,7 @@
+2022-06-07 Version: v1.61.1628
+- Generated 2019-03-15 for `adb`.
+- Support ModifyDBClusterPayType.
+
 2022-06-07 Version: v1.61.1627
 - Generated 2020-12-30 for `AmpTest`.
 - Automatically generate sdk tasks.

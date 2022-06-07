@@ -81,12 +81,12 @@ type DescribeBackupPolicyRequest struct {
 // DescribeBackupPolicyResponse is the response struct for api DescribeBackupPolicy
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	BackupRetentionPeriod    int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	PreferredBackupTime      string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
 	PreferredBackupPeriod    string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
-	EnableBackupLog          string `json:"EnableBackupLog" xml:"EnableBackupLog"`
 	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	PreferredBackupTime      string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
+	EnableBackupLog          string `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	BackupRetentionPeriod    int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API

@@ -84,10 +84,10 @@ type DescribeAutoRenewAttributeRequest struct {
 // DescribeAutoRenewAttributeResponse is the response struct for api DescribeAutoRenewAttribute
 type DescribeAutoRenewAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string                            `json:"RequestId" xml:"RequestId"`
-	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
 	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
 	Items            ItemsInDescribeAutoRenewAttribute `json:"Items" xml:"Items"`
 }
 

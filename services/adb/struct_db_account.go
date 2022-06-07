@@ -17,8 +17,8 @@ package adb
 
 // DBAccount is a nested struct in adb response
 type DBAccount struct {
-	AccountName        string `json:"AccountName" xml:"AccountName"`
 	AccountStatus      string `json:"AccountStatus" xml:"AccountStatus"`
 	AccountDescription string `json:"AccountDescription" xml:"AccountDescription"`
 	AccountType        string `json:"AccountType" xml:"AccountType"`
+	AccountName        string `json:"AccountName" xml:"AccountName"`
 }

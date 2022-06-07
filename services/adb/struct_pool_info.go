@@ -17,10 +17,13 @@ package adb
 
 // PoolInfo is a nested struct in adb response
 type PoolInfo struct {
+	GroupType  string `json:"GroupType" xml:"GroupType"`
+	NodeNum    int    `json:"NodeNum" xml:"NodeNum"`
+	UpdateTime string `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime string `json:"CreateTime" xml:"CreateTime"`
+	GroupName  string `json:"GroupName" xml:"GroupName"`
+	GroupUsers string `json:"GroupUsers" xml:"GroupUsers"`
+	PoolUsers  string `json:"PoolUsers" xml:"PoolUsers"`
 	PoolName   string `json:"PoolName" xml:"PoolName"`
 	QueryType  string `json:"QueryType" xml:"QueryType"`
-	NodeNum    int    `json:"NodeNum" xml:"NodeNum"`
-	PoolUsers  string `json:"PoolUsers" xml:"PoolUsers"`
-	CreateTime string `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime string `json:"UpdateTime" xml:"UpdateTime"`
 }
