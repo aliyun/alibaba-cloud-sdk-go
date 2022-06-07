@@ -138,7 +138,7 @@ func CreateCreateRulesRequest() (request *CreateRulesRequest) {
 	request = &CreateRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("AmpTest", "2020-12-30", "CreateRules", "", "")
+	request.InitWithApiInfo("AmpTest", "2020-12-30", "CreateRules", "AmpTest", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -84,7 +84,7 @@ func CreateHuichengetestRequest() (request *HuichengetestRequest) {
 	request = &HuichengetestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("AmpTest", "2020-12-30", "Huichengetest", "", "")
+	request.InitWithApiInfo("AmpTest", "2020-12-30", "Huichengetest", "AmpTest", "openAPI")
 	request.Method = requests.POST
 	return
 }
