@@ -78,6 +78,7 @@ type ScaleWithAdjustmentRequest struct {
 	AdjustmentType         string           `position:"Query" name:"AdjustmentType"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	MinAdjustmentMagnitude requests.Integer `position:"Query" name:"MinAdjustmentMagnitude"`
+	SyncActivity           requests.Boolean `position:"Query" name:"SyncActivity"`
 }
 
 // ScaleWithAdjustmentResponse is the response struct for api ScaleWithAdjustment
