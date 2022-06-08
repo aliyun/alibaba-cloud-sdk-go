@@ -332,7 +332,7 @@ func (client *Client) DoAction(request requests.AcsRequest, response responses.A
 				request.GetHeaders()["x-acs-proxy-source-ip"] = client.SourceIp
 				request.GetHeaders()["x-acs-proxy-secure-transport"] = client.SecureTransport
 				return client.DoActionWithSigner(request, response, nil)
-			} else if t.Field(i).Name == "PathPattern" && !value.IsZero() {
+			} else if t.Field(i).Name == "PathPattern" && value.Len() != 0 {
 				request.GetHeaders()["x-acs-proxy-source-ip"] = client.SourceIp
 				request.GetHeaders()["x-acs-proxy-secure-transport"] = client.SecureTransport
 				return client.DoActionWithSigner(request, response, nil)
