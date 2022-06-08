@@ -1,3 +1,9 @@
+2022-06-08 Version: v1.61.1630
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support GetDataCorrectOrderDetail API to return execMode type.
+- Support CreateDataCorrectOrder, CreateFreeLockCorrectOrder API submit with execMode type.
+
+
 2022-06-08 Version: v1.61.1629
 - Generated 2020-12-30 for `AmpTest`.
 - Automatically generate sdk tasks.
