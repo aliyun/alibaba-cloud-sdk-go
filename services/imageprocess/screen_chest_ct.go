@@ -76,6 +76,7 @@ type ScreenChestCTRequest struct {
 	DataFormat string                  `position:"Body" name:"DataFormat"`
 	URLList    *[]ScreenChestCTURLList `position:"Body" name:"URLList"  type:"Repeated"`
 	OrgId      string                  `position:"Body" name:"OrgId"`
+	Verbose    requests.Integer        `position:"Body" name:"Verbose"`
 	Async      requests.Boolean        `position:"Body" name:"Async"`
 }
 
@@ -87,10 +88,6 @@ type ScreenChestCTURLList struct {
 // ScreenChestCTResponse is the response struct for api ScreenChestCT
 type ScreenChestCTResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateScreenChestCTRequest creates a request to invoke ScreenChestCT API

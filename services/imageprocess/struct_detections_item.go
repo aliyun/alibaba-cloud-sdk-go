@@ -17,11 +17,11 @@ package imageprocess
 
 // DetectionsItem is a nested struct in imageprocess response
 type DetectionsItem struct {
-	FractureLocation   string  `json:"FractureLocation" xml:"FractureLocation"`
+	FractureId         int     `json:"FractureId" xml:"FractureId"`
 	FractureConfidence float64 `json:"FractureConfidence" xml:"FractureConfidence"`
 	FractureCategory   string  `json:"FractureCategory" xml:"FractureCategory"`
+	FractureLocation   string  `json:"FractureLocation" xml:"FractureLocation"`
 	FractureSegment    int64   `json:"FractureSegment" xml:"FractureSegment"`
-	FractureId         int     `json:"FractureId" xml:"FractureId"`
-	CoordinateImage    []int   `json:"CoordinateImage" xml:"CoordinateImage"`
 	Coordinates        []int   `json:"Coordinates" xml:"Coordinates"`
+	CoordinateImage    []int   `json:"CoordinateImage" xml:"CoordinateImage"`
 }
