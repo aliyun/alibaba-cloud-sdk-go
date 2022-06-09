@@ -1,3 +1,7 @@
+2022-06-09 Version: v1.61.1632
+- Generated 2021-05-20 for `idaas-doraemon`.
+- Add ListCostUnitOrders Open API.
+
 2022-06-09 Version: v1.61.1631
 - Generated 2020-03-20 for `imageprocess`.
 - Update ScreenChestCT.
