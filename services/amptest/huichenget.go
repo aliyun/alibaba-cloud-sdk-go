@@ -85,6 +85,7 @@ type HuichengetResponse struct {
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	InstanceId4 string `json:"InstanceId4" xml:"InstanceId4"`
 	Message     string `json:"Message" xml:"Message"`
+	Code        string `json:"Code" xml:"Code"`
 }
 
 // CreateHuichengetRequest creates a request to invoke Huichenget API
