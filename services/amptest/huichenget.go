@@ -71,12 +71,20 @@ func (client *Client) HuichengetWithCallback(request *HuichengetRequest, callbac
 // HuichengetRequest is the request struct for api Huichenget
 type HuichengetRequest struct {
 	*requests.RpcRequest
+	Add     string `position:"Query" name:"Add"`
+	Apple   string `position:"Query" name:"Apple"`
+	Tea     string `position:"Query" name:"Tea"`
+	Address string `position:"Query" name:"Address"`
+	NewName string `position:"Query" name:"NewName"`
+	Two     string `position:"Query" name:"Two"`
 }
 
 // HuichengetResponse is the response struct for api Huichenget
 type HuichengetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	InstanceId4 string `json:"InstanceId4" xml:"InstanceId4"`
+	Message     string `json:"Message" xml:"Message"`
 }
 
 // CreateHuichengetRequest creates a request to invoke Huichenget API

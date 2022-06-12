@@ -1,3 +1,7 @@
+2022-06-12 Version: v1.61.1634
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
 2022-06-10 Version: v1.61.1633
 - Generated 2014-05-26 for `Ecs`.
 - Support removing a instance from a deployment set
