@@ -1,3 +1,7 @@
+2022-06-13 Version: v1.61.1637
+- Generated 2019-04-30 for `schedulerx2`.
+- Create Job Support Setting Status.
+
 2022-06-12 Version: v1.61.1636
 - Generated 2020-12-30 for `AmpTest`.
 - Automatically generate sdk tasks.

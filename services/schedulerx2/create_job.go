@@ -102,6 +102,7 @@ type CreateJobRequest struct {
 	MaxConcurrency      requests.Integer        `position:"Body" name:"MaxConcurrency"`
 	TimeType            requests.Integer        `position:"Body" name:"TimeType"`
 	Parameters          string                  `position:"Body" name:"Parameters"`
+	Status              requests.Integer        `position:"Body" name:"Status"`
 }
 
 // CreateJobContactInfo is a repeated param struct in CreateJobRequest
