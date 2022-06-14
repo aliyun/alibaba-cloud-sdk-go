@@ -72,7 +72,7 @@ func (client *Client) UploadWithCallback(request *UploadRequest, callback func(r
 type UploadRequest struct {
 	*requests.RpcRequest
 	FileName string `position:"Query" name:"FileName"`
-	File     string `position:"Query" name:"File"`
+	File     string `position:"Body" name:"File"`
 	Pid      string `position:"Query" name:"Pid"`
 	Version  string `position:"Query" name:"Version"`
 }

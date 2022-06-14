@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetClusterState invokes the arms.GetClusterState API synchronously
-func (client *Client) GetClusterState(request *GetClusterStateRequest) (response *GetClusterStateResponse, err error) {
-	response = CreateGetClusterStateResponse()
+// DelAuthToken invokes the arms.DelAuthToken API synchronously
+func (client *Client) DelAuthToken(request *DelAuthTokenRequest) (response *DelAuthTokenResponse, err error) {
+	response = CreateDelAuthTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetClusterStateWithChan invokes the arms.GetClusterState API asynchronously
-func (client *Client) GetClusterStateWithChan(request *GetClusterStateRequest) (<-chan *GetClusterStateResponse, <-chan error) {
-	responseChan := make(chan *GetClusterStateResponse, 1)
+// DelAuthTokenWithChan invokes the arms.DelAuthToken API asynchronously
+func (client *Client) DelAuthTokenWithChan(request *DelAuthTokenRequest) (<-chan *DelAuthTokenResponse, <-chan error) {
+	responseChan := make(chan *DelAuthTokenResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetClusterState(request)
+		response, err := client.DelAuthToken(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetClusterStateWithChan(request *GetClusterStateRequest) (
 	return responseChan, errChan
 }
 
-// GetClusterStateWithCallback invokes the arms.GetClusterState API asynchronously
-func (client *Client) GetClusterStateWithCallback(request *GetClusterStateRequest, callback func(response *GetClusterStateResponse, err error)) <-chan int {
+// DelAuthTokenWithCallback invokes the arms.DelAuthToken API asynchronously
+func (client *Client) DelAuthTokenWithCallback(request *DelAuthTokenRequest, callback func(response *DelAuthTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetClusterStateResponse
+		var response *DelAuthTokenResponse
 		var err error
 		defer close(result)
-		response, err = client.GetClusterState(request)
+		response, err = client.DelAuthToken(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,32 @@ func (client *Client) GetClusterStateWithCallback(request *GetClusterStateReques
 	return result
 }
 
-// GetClusterStateRequest is the request struct for api GetClusterState
-type GetClusterStateRequest struct {
+// DelAuthTokenRequest is the request struct for api DelAuthToken
+type DelAuthTokenRequest struct {
 	*requests.RpcRequest
-	PuserId   string `position:"Query" name:"PuserId"`
 	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
-// GetClusterStateResponse is the response struct for api GetClusterState
-type GetClusterStateResponse struct {
+// DelAuthTokenResponse is the response struct for api DelAuthToken
+type DelAuthTokenResponse struct {
 	*responses.BaseResponse
+	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"result" xml:"result"`
 }
 
-// CreateGetClusterStateRequest creates a request to invoke GetClusterState API
-func CreateGetClusterStateRequest() (request *GetClusterStateRequest) {
-	request = &GetClusterStateRequest{
+// CreateDelAuthTokenRequest creates a request to invoke DelAuthToken API
+func CreateDelAuthTokenRequest() (request *DelAuthTokenRequest) {
+	request = &DelAuthTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetClusterState", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DelAuthToken", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetClusterStateResponse creates a response to parse from GetClusterState response
-func CreateGetClusterStateResponse() (response *GetClusterStateResponse) {
-	response = &GetClusterStateResponse{
+// CreateDelAuthTokenResponse creates a response to parse from DelAuthToken response
+func CreateDelAuthTokenResponse() (response *DelAuthTokenResponse) {
+	response = &DelAuthTokenResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
