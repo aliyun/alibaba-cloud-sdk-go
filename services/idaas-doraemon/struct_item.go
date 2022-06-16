@@ -17,12 +17,18 @@ package idaas_doraemon
 
 // Item is a nested struct in idaas_doraemon response
 type Item struct {
-	AliOrderCode       string `json:"AliOrderCode" xml:"AliOrderCode"`
-	AliOrderInstanceId string `json:"AliOrderInstanceId" xml:"AliOrderInstanceId"`
-	TotalCostUnit      int64  `json:"TotalCostUnit" xml:"TotalCostUnit"`
-	UsedCostUnit       int64  `json:"UsedCostUnit" xml:"UsedCostUnit"`
-	OrderStatus        string `json:"OrderStatus" xml:"OrderStatus"`
-	CreateTime         int64  `json:"CreateTime" xml:"CreateTime"`
-	ExpiredTime        int64  `json:"ExpiredTime" xml:"ExpiredTime"`
-	RefundTime         int64  `json:"RefundTime" xml:"RefundTime"`
+	AliOrderInstanceId    string `json:"AliOrderInstanceId" xml:"AliOrderInstanceId"`
+	CreateTime            int64  `json:"CreateTime" xml:"CreateTime"`
+	StatisticTime         int64  `json:"StatisticTime" xml:"StatisticTime"`
+	RefundTime            int64  `json:"RefundTime" xml:"RefundTime"`
+	ServiceCode           string `json:"ServiceCode" xml:"ServiceCode"`
+	ChargedCount          int64  `json:"ChargedCount" xml:"ChargedCount"`
+	UsedCostUnit          int64  `json:"UsedCostUnit" xml:"UsedCostUnit"`
+	TotalCostUnit         int64  `json:"TotalCostUnit" xml:"TotalCostUnit"`
+	OrderStatus           string `json:"OrderStatus" xml:"OrderStatus"`
+	UnitPrice             int64  `json:"UnitPrice" xml:"UnitPrice"`
+	AliOrderCode          string `json:"AliOrderCode" xml:"AliOrderCode"`
+	TotalPrice            int64  `json:"TotalPrice" xml:"TotalPrice"`
+	ExpiredTime           int64  `json:"ExpiredTime" xml:"ExpiredTime"`
+	ApplicationExternalId string `json:"ApplicationExternalId" xml:"ApplicationExternalId"`
 }

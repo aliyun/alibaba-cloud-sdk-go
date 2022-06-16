@@ -1,3 +1,7 @@
+2022-06-16 Version: v1.61.1641
+- Generated 2021-05-20 for `idaas-doraemon`.
+- Add ListOrderConsumeStatisticRecords Open API.
+
 2022-06-16 Version: v1.61.1640
 - Generated 2017-08-01 for `Edas`.
 - Supported ExternalTrafficPolicy for CreateK8sService.
