@@ -71,20 +71,20 @@ func (client *Client) GetServiceProvidersPageWithCallback(request *GetServicePro
 // GetServiceProvidersPageRequest is the request struct for api GetServiceProvidersPage
 type GetServiceProvidersPageRequest struct {
 	*requests.RoaRequest
-	RegistryType   string           `position:"Query" name:"registryType"`
-	Origin         string           `position:"Query" name:"origin"`
-	Ip             string           `position:"Query" name:"ip"`
-	Source         string           `position:"Query" name:"source"`
-	ServiceType    string           `position:"Query" name:"serviceType"`
-	Size           requests.Integer `position:"Query" name:"size"`
-	AppId          string           `position:"Query" name:"appId"`
-	Namespace      string           `position:"Query" name:"namespace"`
-	ServiceVersion string           `position:"Query" name:"serviceVersion"`
-	ServiceName    string           `position:"Query" name:"serviceName"`
-	Page           requests.Integer `position:"Query" name:"page"`
-	Region         string           `position:"Query" name:"region"`
-	ServiceId      string           `position:"Query" name:"serviceId"`
-	Group          string           `position:"Query" name:"group"`
+	RegistryType   string `position:"Query" name:"registryType"`
+	Origin         string `position:"Query" name:"origin"`
+	Ip             string `position:"Query" name:"ip"`
+	Source         string `position:"Query" name:"source"`
+	ServiceType    string `position:"Query" name:"serviceType"`
+	Size           string `position:"Query" name:"size"`
+	AppId          string `position:"Query" name:"appId"`
+	Namespace      string `position:"Query" name:"namespace"`
+	ServiceVersion string `position:"Query" name:"serviceVersion"`
+	ServiceName    string `position:"Query" name:"serviceName"`
+	Page           string `position:"Query" name:"page"`
+	Region         string `position:"Query" name:"region"`
+	ServiceId      string `position:"Query" name:"serviceId"`
+	Group          string `position:"Query" name:"group"`
 }
 
 // GetServiceProvidersPageResponse is the response struct for api GetServiceProvidersPage

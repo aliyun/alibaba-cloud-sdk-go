@@ -71,10 +71,10 @@ func (client *Client) GetK8sClusterWithCallback(request *GetK8sClusterRequest, c
 // GetK8sClusterRequest is the request struct for api GetK8sCluster
 type GetK8sClusterRequest struct {
 	*requests.RoaRequest
-	ClusterType requests.Integer `position:"Query" name:"ClusterType"`
-	RegionTag   string           `position:"Query" name:"RegionTag"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterType string `position:"Query" name:"ClusterType"`
+	RegionTag   string `position:"Query" name:"RegionTag"`
+	PageSize    string `position:"Query" name:"PageSize"`
+	CurrentPage string `position:"Query" name:"CurrentPage"`
 }
 
 // GetK8sClusterResponse is the response struct for api GetK8sCluster

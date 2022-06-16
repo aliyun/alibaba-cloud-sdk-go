@@ -71,13 +71,13 @@ func (client *Client) UpdateContainerConfigurationWithCallback(request *UpdateCo
 // UpdateContainerConfigurationRequest is the request struct for api UpdateContainerConfiguration
 type UpdateContainerConfigurationRequest struct {
 	*requests.RoaRequest
-	UseBodyEncoding requests.Boolean `position:"Query" name:"UseBodyEncoding"`
-	MaxThreads      requests.Integer `position:"Query" name:"MaxThreads"`
-	URIEncoding     string           `position:"Query" name:"URIEncoding"`
-	AppId           string           `position:"Query" name:"AppId"`
-	GroupId         string           `position:"Query" name:"GroupId"`
-	HttpPort        requests.Integer `position:"Query" name:"HttpPort"`
-	ContextPath     string           `position:"Query" name:"ContextPath"`
+	UseBodyEncoding string `position:"Query" name:"UseBodyEncoding"`
+	MaxThreads      string `position:"Query" name:"MaxThreads"`
+	URIEncoding     string `position:"Query" name:"URIEncoding"`
+	AppId           string `position:"Query" name:"AppId"`
+	GroupId         string `position:"Query" name:"GroupId"`
+	HttpPort        string `position:"Query" name:"HttpPort"`
+	ContextPath     string `position:"Query" name:"ContextPath"`
 }
 
 // UpdateContainerConfigurationResponse is the response struct for api UpdateContainerConfiguration

@@ -71,11 +71,11 @@ func (client *Client) InsertOrUpdateRegionWithCallback(request *InsertOrUpdateRe
 // InsertOrUpdateRegionRequest is the request struct for api InsertOrUpdateRegion
 type InsertOrUpdateRegionRequest struct {
 	*requests.RoaRequest
-	DebugEnable requests.Boolean `position:"Query" name:"DebugEnable"`
-	RegionTag   string           `position:"Query" name:"RegionTag"`
-	RegionName  string           `position:"Query" name:"RegionName"`
-	Description string           `position:"Query" name:"Description"`
-	Id          requests.Integer `position:"Query" name:"Id"`
+	DebugEnable string `position:"Query" name:"DebugEnable"`
+	RegionTag   string `position:"Query" name:"RegionTag"`
+	RegionName  string `position:"Query" name:"RegionName"`
+	Description string `position:"Query" name:"Description"`
+	Id          string `position:"Query" name:"Id"`
 }
 
 // InsertOrUpdateRegionResponse is the response struct for api InsertOrUpdateRegion

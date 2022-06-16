@@ -32,6 +32,7 @@ type Cluster struct {
 	ClusterStatus       int    `json:"ClusterStatus" xml:"ClusterStatus"`
 	RegionId            string `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	SubClusterType      string `json:"SubClusterType" xml:"SubClusterType"`
 	VswitchId           string `json:"VswitchId" xml:"VswitchId"`
 	ClusterName         string `json:"ClusterName" xml:"ClusterName"`
 	IaasProvider        string `json:"IaasProvider" xml:"IaasProvider"`

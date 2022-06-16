@@ -71,13 +71,13 @@ func (client *Client) InsertClusterWithCallback(request *InsertClusterRequest, c
 // InsertClusterRequest is the request struct for api InsertCluster
 type InsertClusterRequest struct {
 	*requests.RoaRequest
-	ClusterType     requests.Integer `position:"Query" name:"ClusterType"`
-	IaasProvider    string           `position:"Query" name:"IaasProvider"`
-	LogicalRegionId string           `position:"Query" name:"LogicalRegionId"`
-	ClusterName     string           `position:"Query" name:"ClusterName"`
-	VpcId           string           `position:"Query" name:"VpcId"`
-	NetworkMode     requests.Integer `position:"Query" name:"NetworkMode"`
-	OversoldFactor  requests.Integer `position:"Query" name:"OversoldFactor"`
+	ClusterType     string `position:"Query" name:"ClusterType"`
+	IaasProvider    string `position:"Query" name:"IaasProvider"`
+	LogicalRegionId string `position:"Query" name:"LogicalRegionId"`
+	ClusterName     string `position:"Query" name:"ClusterName"`
+	VpcId           string `position:"Query" name:"VpcId"`
+	NetworkMode     string `position:"Query" name:"NetworkMode"`
+	OversoldFactor  string `position:"Query" name:"OversoldFactor"`
 }
 
 // InsertClusterResponse is the response struct for api InsertCluster

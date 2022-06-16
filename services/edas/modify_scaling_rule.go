@@ -71,36 +71,36 @@ func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRe
 // ModifyScalingRuleRequest is the request struct for api ModifyScalingRule
 type ModifyScalingRuleRequest struct {
 	*requests.RoaRequest
-	InStep               requests.Integer `position:"Query" name:"InStep"`
-	OutInstanceNum       requests.Integer `position:"Query" name:"OutInstanceNum"`
-	OutRT                requests.Integer `position:"Query" name:"OutRT"`
-	InInstanceNum        requests.Integer `position:"Query" name:"InInstanceNum"`
-	VSwitchIds           string           `position:"Query" name:"VSwitchIds"`
-	TemplateInstanceId   string           `position:"Query" name:"TemplateInstanceId"`
-	AcceptEULA           requests.Boolean `position:"Query" name:"AcceptEULA"`
-	OutStep              requests.Integer `position:"Query" name:"OutStep"`
-	OutCPU               requests.Integer `position:"Query" name:"OutCPU"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
-	Password             string           `position:"Query" name:"Password"`
-	TemplateVersion      requests.Integer `position:"Query" name:"TemplateVersion"`
-	InCondition          string           `position:"Query" name:"InCondition"`
-	InRT                 requests.Integer `position:"Query" name:"InRT"`
-	InCpu                requests.Integer `position:"Query" name:"InCpu"`
-	OutDuration          requests.Integer `position:"Query" name:"OutDuration"`
-	MultiAzPolicy        string           `position:"Query" name:"MultiAzPolicy"`
-	OutLoad              requests.Integer `position:"Query" name:"OutLoad"`
-	InLoad               requests.Integer `position:"Query" name:"InLoad"`
-	GroupId              string           `position:"Query" name:"GroupId"`
-	ResourceFrom         string           `position:"Query" name:"ResourceFrom"`
-	OutEnable            requests.Boolean `position:"Query" name:"OutEnable"`
-	TemplateId           string           `position:"Query" name:"TemplateId"`
-	ScalingPolicy        string           `position:"Query" name:"ScalingPolicy"`
-	OutCondition         string           `position:"Query" name:"OutCondition"`
-	InDuration           requests.Integer `position:"Query" name:"InDuration"`
-	InEnable             requests.Boolean `position:"Query" name:"InEnable"`
-	AppId                string           `position:"Query" name:"AppId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	TemplateInstanceName string           `position:"Query" name:"TemplateInstanceName"`
+	InStep               string `position:"Query" name:"InStep"`
+	OutInstanceNum       string `position:"Query" name:"OutInstanceNum"`
+	OutRT                string `position:"Query" name:"OutRT"`
+	InInstanceNum        string `position:"Query" name:"InInstanceNum"`
+	VSwitchIds           string `position:"Query" name:"VSwitchIds"`
+	TemplateInstanceId   string `position:"Query" name:"TemplateInstanceId"`
+	AcceptEULA           string `position:"Query" name:"AcceptEULA"`
+	OutStep              string `position:"Query" name:"OutStep"`
+	OutCPU               string `position:"Query" name:"OutCPU"`
+	KeyPairName          string `position:"Query" name:"KeyPairName"`
+	Password             string `position:"Query" name:"Password"`
+	TemplateVersion      string `position:"Query" name:"TemplateVersion"`
+	InCondition          string `position:"Query" name:"InCondition"`
+	InRT                 string `position:"Query" name:"InRT"`
+	InCpu                string `position:"Query" name:"InCpu"`
+	OutDuration          string `position:"Query" name:"OutDuration"`
+	MultiAzPolicy        string `position:"Query" name:"MultiAzPolicy"`
+	OutLoad              string `position:"Query" name:"OutLoad"`
+	InLoad               string `position:"Query" name:"InLoad"`
+	GroupId              string `position:"Query" name:"GroupId"`
+	ResourceFrom         string `position:"Query" name:"ResourceFrom"`
+	OutEnable            string `position:"Query" name:"OutEnable"`
+	TemplateId           string `position:"Query" name:"TemplateId"`
+	ScalingPolicy        string `position:"Query" name:"ScalingPolicy"`
+	OutCondition         string `position:"Query" name:"OutCondition"`
+	InDuration           string `position:"Query" name:"InDuration"`
+	InEnable             string `position:"Query" name:"InEnable"`
+	AppId                string `position:"Query" name:"AppId"`
+	VpcId                string `position:"Query" name:"VpcId"`
+	TemplateInstanceName string `position:"Query" name:"TemplateInstanceName"`
 }
 
 // ModifyScalingRuleResponse is the response struct for api ModifyScalingRule

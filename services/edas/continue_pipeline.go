@@ -71,8 +71,8 @@ func (client *Client) ContinuePipelineWithCallback(request *ContinuePipelineRequ
 // ContinuePipelineRequest is the request struct for api ContinuePipeline
 type ContinuePipelineRequest struct {
 	*requests.RoaRequest
-	Confirm    requests.Boolean `position:"Query" name:"Confirm"`
-	PipelineId string           `position:"Query" name:"PipelineId"`
+	Confirm    string `position:"Query" name:"Confirm"`
+	PipelineId string `position:"Query" name:"PipelineId"`
 }
 
 // ContinuePipelineResponse is the response struct for api ContinuePipeline

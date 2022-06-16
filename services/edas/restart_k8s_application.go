@@ -71,8 +71,8 @@ func (client *Client) RestartK8sApplicationWithCallback(request *RestartK8sAppli
 // RestartK8sApplicationRequest is the request struct for api RestartK8sApplication
 type RestartK8sApplicationRequest struct {
 	*requests.RoaRequest
-	AppId   string           `position:"Query" name:"AppId"`
-	Timeout requests.Integer `position:"Query" name:"Timeout"`
+	AppId   string `position:"Query" name:"AppId"`
+	Timeout string `position:"Query" name:"Timeout"`
 }
 
 // RestartK8sApplicationResponse is the response struct for api RestartK8sApplication

@@ -71,7 +71,7 @@ func (client *Client) ListUserDefineRegionWithCallback(request *ListUserDefineRe
 // ListUserDefineRegionRequest is the request struct for api ListUserDefineRegion
 type ListUserDefineRegionRequest struct {
 	*requests.RoaRequest
-	DebugEnable requests.Boolean `position:"Query" name:"DebugEnable"`
+	DebugEnable string `position:"Query" name:"DebugEnable"`
 }
 
 // ListUserDefineRegionResponse is the response struct for api ListUserDefineRegion

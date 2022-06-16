@@ -71,13 +71,13 @@ func (client *Client) UpdateApplicationScalingRuleWithCallback(request *UpdateAp
 // UpdateApplicationScalingRuleRequest is the request struct for api UpdateApplicationScalingRule
 type UpdateApplicationScalingRuleRequest struct {
 	*requests.RoaRequest
-	ScalingRuleName    string           `position:"Query" name:"ScalingRuleName"`
-	ScalingRuleEnable  requests.Boolean `position:"Query" name:"ScalingRuleEnable"`
-	ScalingRuleTimer   string           `position:"Query" name:"ScalingRuleTimer"`
-	ScalingRuleMetric  string           `position:"Query" name:"ScalingRuleMetric"`
-	AppId              string           `position:"Query" name:"AppId"`
-	ScalingRuleTrigger string           `position:"Query" name:"ScalingRuleTrigger"`
-	ScalingRuleType    string           `position:"Query" name:"ScalingRuleType"`
+	ScalingRuleName    string `position:"Query" name:"ScalingRuleName"`
+	ScalingRuleEnable  string `position:"Query" name:"ScalingRuleEnable"`
+	ScalingRuleTimer   string `position:"Query" name:"ScalingRuleTimer"`
+	ScalingRuleMetric  string `position:"Query" name:"ScalingRuleMetric"`
+	AppId              string `position:"Query" name:"AppId"`
+	ScalingRuleTrigger string `position:"Query" name:"ScalingRuleTrigger"`
+	ScalingRuleType    string `position:"Query" name:"ScalingRuleType"`
 }
 
 // UpdateApplicationScalingRuleResponse is the response struct for api UpdateApplicationScalingRule

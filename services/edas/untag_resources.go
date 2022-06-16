@@ -71,11 +71,11 @@ func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest,
 // UntagResourcesRequest is the request struct for api UntagResources
 type UntagResourcesRequest struct {
 	*requests.RoaRequest
-	TagKeys          string           `position:"Query" name:"TagKeys"`
-	DeleteAll        requests.Boolean `position:"Query" name:"DeleteAll"`
-	ResourceRegionId string           `position:"Query" name:"ResourceRegionId"`
-	ResourceType     string           `position:"Query" name:"ResourceType"`
-	ResourceIds      string           `position:"Query" name:"ResourceIds"`
+	TagKeys          string `position:"Query" name:"TagKeys"`
+	DeleteAll        string `position:"Query" name:"DeleteAll"`
+	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
+	ResourceType     string `position:"Query" name:"ResourceType"`
+	ResourceIds      string `position:"Query" name:"ResourceIds"`
 }
 
 // UntagResourcesResponse is the response struct for api UntagResources

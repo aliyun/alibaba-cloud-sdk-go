@@ -71,8 +71,8 @@ func (client *Client) ListRootStacksWithCallback(request *ListRootStacksRequest,
 // ListRootStacksRequest is the request struct for api ListRootStacks
 type ListRootStacksRequest struct {
 	*requests.RoaRequest
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	PageSize    string `position:"Query" name:"PageSize"`
+	CurrentPage string `position:"Query" name:"CurrentPage"`
 }
 
 // ListRootStacksResponse is the response struct for api ListRootStacks

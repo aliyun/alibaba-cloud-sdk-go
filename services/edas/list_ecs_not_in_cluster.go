@@ -71,8 +71,8 @@ func (client *Client) ListEcsNotInClusterWithCallback(request *ListEcsNotInClust
 // ListEcsNotInClusterRequest is the request struct for api ListEcsNotInCluster
 type ListEcsNotInClusterRequest struct {
 	*requests.RoaRequest
-	VpcId       string           `position:"Query" name:"VpcId"`
-	NetworkMode requests.Integer `position:"Query" name:"NetworkMode"`
+	VpcId       string `position:"Query" name:"VpcId"`
+	NetworkMode string `position:"Query" name:"NetworkMode"`
 }
 
 // ListEcsNotInClusterResponse is the response struct for api ListEcsNotInCluster

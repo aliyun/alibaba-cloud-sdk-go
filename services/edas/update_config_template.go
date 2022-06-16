@@ -71,11 +71,11 @@ func (client *Client) UpdateConfigTemplateWithCallback(request *UpdateConfigTemp
 // UpdateConfigTemplateRequest is the request struct for api UpdateConfigTemplate
 type UpdateConfigTemplateRequest struct {
 	*requests.RoaRequest
-	Name        string           `position:"Body" name:"Name"`
-	Format      string           `position:"Body" name:"Format"`
-	Description string           `position:"Body" name:"Description"`
-	Id          requests.Integer `position:"Body" name:"Id"`
-	Content     string           `position:"Body" name:"Content"`
+	Name        string `position:"Body" name:"Name"`
+	Format      string `position:"Body" name:"Format"`
+	Description string `position:"Body" name:"Description"`
+	Id          string `position:"Body" name:"Id"`
+	Content     string `position:"Body" name:"Content"`
 }
 
 // UpdateConfigTemplateResponse is the response struct for api UpdateConfigTemplate

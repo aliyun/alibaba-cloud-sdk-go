@@ -71,9 +71,9 @@ func (client *Client) ScaleInApplicationWithCallback(request *ScaleInApplication
 // ScaleInApplicationRequest is the request struct for api ScaleInApplication
 type ScaleInApplicationRequest struct {
 	*requests.RoaRequest
-	ForceStatus requests.Boolean `position:"Query" name:"ForceStatus"`
-	AppId       string           `position:"Query" name:"AppId"`
-	EccInfo     string           `position:"Query" name:"EccInfo"`
+	ForceStatus string `position:"Query" name:"ForceStatus"`
+	AppId       string `position:"Query" name:"AppId"`
+	EccInfo     string `position:"Query" name:"EccInfo"`
 }
 
 // ScaleInApplicationResponse is the response struct for api ScaleInApplication

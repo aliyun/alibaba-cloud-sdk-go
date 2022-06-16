@@ -71,10 +71,10 @@ func (client *Client) ImportK8sClusterWithCallback(request *ImportK8sClusterRequ
 // ImportK8sClusterRequest is the request struct for api ImportK8sCluster
 type ImportK8sClusterRequest struct {
 	*requests.RoaRequest
-	Mode        requests.Integer `position:"Query" name:"Mode"`
-	EnableAsm   requests.Boolean `position:"Query" name:"EnableAsm"`
-	NamespaceId string           `position:"Query" name:"NamespaceId"`
-	ClusterId   string           `position:"Query" name:"ClusterId"`
+	Mode        string `position:"Query" name:"Mode"`
+	EnableAsm   string `position:"Query" name:"EnableAsm"`
+	NamespaceId string `position:"Query" name:"NamespaceId"`
+	ClusterId   string `position:"Query" name:"ClusterId"`
 }
 
 // ImportK8sClusterResponse is the response struct for api ImportK8sCluster

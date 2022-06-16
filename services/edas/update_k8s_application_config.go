@@ -71,15 +71,15 @@ func (client *Client) UpdateK8sApplicationConfigWithCallback(request *UpdateK8sA
 // UpdateK8sApplicationConfigRequest is the request struct for api UpdateK8sApplicationConfig
 type UpdateK8sApplicationConfigRequest struct {
 	*requests.RoaRequest
-	MemoryRequest string           `position:"Query" name:"MemoryRequest"`
-	AppId         string           `position:"Query" name:"AppId"`
-	CpuRequest    string           `position:"Query" name:"CpuRequest"`
-	MemoryLimit   string           `position:"Query" name:"MemoryLimit"`
-	ClusterId     string           `position:"Query" name:"ClusterId"`
-	CpuLimit      string           `position:"Query" name:"CpuLimit"`
-	McpuLimit     string           `position:"Query" name:"McpuLimit"`
-	McpuRequest   string           `position:"Query" name:"McpuRequest"`
-	Timeout       requests.Integer `position:"Query" name:"Timeout"`
+	MemoryRequest string `position:"Query" name:"MemoryRequest"`
+	AppId         string `position:"Query" name:"AppId"`
+	CpuRequest    string `position:"Query" name:"CpuRequest"`
+	MemoryLimit   string `position:"Query" name:"MemoryLimit"`
+	ClusterId     string `position:"Query" name:"ClusterId"`
+	CpuLimit      string `position:"Query" name:"CpuLimit"`
+	McpuLimit     string `position:"Query" name:"McpuLimit"`
+	McpuRequest   string `position:"Query" name:"McpuRequest"`
+	Timeout       string `position:"Query" name:"Timeout"`
 }
 
 // UpdateK8sApplicationConfigResponse is the response struct for api UpdateK8sApplicationConfig

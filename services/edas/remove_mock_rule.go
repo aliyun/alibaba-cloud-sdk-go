@@ -71,7 +71,7 @@ func (client *Client) RemoveMockRuleWithCallback(request *RemoveMockRuleRequest,
 // RemoveMockRuleRequest is the request struct for api RemoveMockRule
 type RemoveMockRuleRequest struct {
 	*requests.RoaRequest
-	Id requests.Integer `position:"Query" name:"Id"`
+	Id string `position:"Query" name:"Id"`
 }
 
 // RemoveMockRuleResponse is the response struct for api RemoveMockRule

@@ -71,10 +71,10 @@ func (client *Client) ListConfigTemplatesWithCallback(request *ListConfigTemplat
 // ListConfigTemplatesRequest is the request struct for api ListConfigTemplates
 type ListConfigTemplatesRequest struct {
 	*requests.RoaRequest
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	Name        string           `position:"Query" name:"Name"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	Id          requests.Integer `position:"Query" name:"Id"`
+	PageSize    string `position:"Query" name:"PageSize"`
+	Name        string `position:"Query" name:"Name"`
+	CurrentPage string `position:"Query" name:"CurrentPage"`
+	Id          string `position:"Query" name:"Id"`
 }
 
 // ListConfigTemplatesResponse is the response struct for api ListConfigTemplates

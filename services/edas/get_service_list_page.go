@@ -71,15 +71,15 @@ func (client *Client) GetServiceListPageWithCallback(request *GetServiceListPage
 // GetServiceListPageRequest is the request struct for api GetServiceListPage
 type GetServiceListPageRequest struct {
 	*requests.RoaRequest
-	ServiceType string           `position:"Query" name:"serviceType"`
-	Side        string           `position:"Query" name:"side"`
-	Size        requests.Integer `position:"Query" name:"size"`
-	Origin      string           `position:"Query" name:"origin"`
-	SearchType  string           `position:"Query" name:"searchType"`
-	Namespace   string           `position:"Query" name:"namespace"`
-	Page        requests.Integer `position:"Query" name:"page"`
-	Region      string           `position:"Query" name:"region"`
-	SearchValue string           `position:"Query" name:"searchValue"`
+	ServiceType string `position:"Query" name:"serviceType"`
+	Side        string `position:"Query" name:"side"`
+	Size        string `position:"Query" name:"size"`
+	Origin      string `position:"Query" name:"origin"`
+	SearchType  string `position:"Query" name:"searchType"`
+	Namespace   string `position:"Query" name:"namespace"`
+	Page        string `position:"Query" name:"page"`
+	Region      string `position:"Query" name:"region"`
+	SearchValue string `position:"Query" name:"searchValue"`
 }
 
 // GetServiceListPageResponse is the response struct for api GetServiceListPage

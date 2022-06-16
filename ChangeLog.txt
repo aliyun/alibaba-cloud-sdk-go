@@ -1,3 +1,8 @@
+2022-06-16 Version: v1.61.1640
+- Generated 2017-08-01 for `Edas`.
+- Supported ExternalTrafficPolicy for CreateK8sService.
+- Supported ExternalTrafficPolicy for UpdateK8sService.
+
 2022-06-14 Version: v1.61.1639
 - Generated 2019-08-08 for `ARMS`.
 

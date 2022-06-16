@@ -71,18 +71,18 @@ func (client *Client) AddMockRuleWithCallback(request *AddMockRuleRequest, callb
 // AddMockRuleRequest is the request struct for api AddMockRule
 type AddMockRuleRequest struct {
 	*requests.RoaRequest
-	ScMockItemJson    string           `position:"Query" name:"ScMockItemJson"`
-	DubboMockItemJson string           `position:"Query" name:"DubboMockItemJson"`
-	ExtraJson         string           `position:"Query" name:"ExtraJson"`
-	ProviderAppId     string           `position:"Query" name:"ProviderAppId"`
-	Source            string           `position:"Query" name:"Source"`
-	Enable            requests.Boolean `position:"Query" name:"Enable"`
-	ProviderAppName   string           `position:"Query" name:"ProviderAppName"`
-	Name              string           `position:"Query" name:"Name"`
-	Namespace         string           `position:"Query" name:"Namespace"`
-	ConsumerAppsJson  string           `position:"Query" name:"ConsumerAppsJson"`
-	MockType          requests.Integer `position:"Query" name:"MockType"`
-	Region            string           `position:"Query" name:"Region"`
+	ScMockItemJson    string `position:"Query" name:"ScMockItemJson"`
+	DubboMockItemJson string `position:"Query" name:"DubboMockItemJson"`
+	ExtraJson         string `position:"Query" name:"ExtraJson"`
+	ProviderAppId     string `position:"Query" name:"ProviderAppId"`
+	Source            string `position:"Query" name:"Source"`
+	Enable            string `position:"Query" name:"Enable"`
+	ProviderAppName   string `position:"Query" name:"ProviderAppName"`
+	Name              string `position:"Query" name:"Name"`
+	Namespace         string `position:"Query" name:"Namespace"`
+	ConsumerAppsJson  string `position:"Query" name:"ConsumerAppsJson"`
+	MockType          string `position:"Query" name:"MockType"`
+	Region            string `position:"Query" name:"Region"`
 }
 
 // AddMockRuleResponse is the response struct for api AddMockRule

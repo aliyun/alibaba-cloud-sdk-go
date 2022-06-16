@@ -71,12 +71,12 @@ func (client *Client) UpdateJvmConfigurationWithCallback(request *UpdateJvmConfi
 // UpdateJvmConfigurationRequest is the request struct for api UpdateJvmConfiguration
 type UpdateJvmConfigurationRequest struct {
 	*requests.RoaRequest
-	MinHeapSize requests.Integer `position:"Query" name:"MinHeapSize"`
-	AppId       string           `position:"Query" name:"AppId"`
-	GroupId     string           `position:"Query" name:"GroupId"`
-	Options     string           `position:"Query" name:"Options"`
-	MaxPermSize requests.Integer `position:"Query" name:"MaxPermSize"`
-	MaxHeapSize requests.Integer `position:"Query" name:"MaxHeapSize"`
+	MinHeapSize string `position:"Query" name:"MinHeapSize"`
+	AppId       string `position:"Query" name:"AppId"`
+	GroupId     string `position:"Query" name:"GroupId"`
+	Options     string `position:"Query" name:"Options"`
+	MaxPermSize string `position:"Query" name:"MaxPermSize"`
+	MaxHeapSize string `position:"Query" name:"MaxHeapSize"`
 }
 
 // UpdateJvmConfigurationResponse is the response struct for api UpdateJvmConfiguration

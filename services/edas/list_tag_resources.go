@@ -71,10 +71,10 @@ func (client *Client) ListTagResourcesWithCallback(request *ListTagResourcesRequ
 // ListTagResourcesRequest is the request struct for api ListTagResources
 type ListTagResourcesRequest struct {
 	*requests.RoaRequest
-	ResourceType     string                 `position:"Query" name:"ResourceType"`
-	ResourceRegionId string                 `position:"Query" name:"ResourceRegionId"`
-	ResourceIds      map[string]interface{} `position:"Query" name:"ResourceIds"`
-	Tags             map[string]interface{} `position:"Query" name:"Tags"`
+	ResourceType     string `position:"Query" name:"ResourceType"`
+	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
+	ResourceIds      string `position:"Query" name:"ResourceIds"`
+	Tags             string `position:"Query" name:"Tags"`
 }
 
 // ListTagResourcesResponse is the response struct for api ListTagResources

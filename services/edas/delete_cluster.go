@@ -71,8 +71,8 @@ func (client *Client) DeleteClusterWithCallback(request *DeleteClusterRequest, c
 // DeleteClusterRequest is the request struct for api DeleteCluster
 type DeleteClusterRequest struct {
 	*requests.RoaRequest
-	Mode      requests.Integer `position:"Query" name:"Mode"`
-	ClusterId string           `position:"Query" name:"ClusterId"`
+	Mode      string `position:"Query" name:"Mode"`
+	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
 // DeleteClusterResponse is the response struct for api DeleteCluster

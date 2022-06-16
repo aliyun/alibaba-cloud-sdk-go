@@ -71,7 +71,7 @@ func (client *Client) EnableMockRuleWithCallback(request *EnableMockRuleRequest,
 // EnableMockRuleRequest is the request struct for api EnableMockRule
 type EnableMockRuleRequest struct {
 	*requests.RoaRequest
-	Id requests.Integer `position:"Query" name:"Id"`
+	Id string `position:"Query" name:"Id"`
 }
 
 // EnableMockRuleResponse is the response struct for api EnableMockRule

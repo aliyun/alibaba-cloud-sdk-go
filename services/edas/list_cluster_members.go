@@ -71,10 +71,10 @@ func (client *Client) ListClusterMembersWithCallback(request *ListClusterMembers
 // ListClusterMembersRequest is the request struct for api ListClusterMembers
 type ListClusterMembersRequest struct {
 	*requests.RoaRequest
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	ClusterId   string           `position:"Query" name:"ClusterId"`
-	EcsList     string           `position:"Query" name:"EcsList"`
+	PageSize    string `position:"Query" name:"PageSize"`
+	CurrentPage string `position:"Query" name:"CurrentPage"`
+	ClusterId   string `position:"Query" name:"ClusterId"`
+	EcsList     string `position:"Query" name:"EcsList"`
 }
 
 // ListClusterMembersResponse is the response struct for api ListClusterMembers
