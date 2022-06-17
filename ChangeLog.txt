@@ -1,3 +1,7 @@
+2022-06-17 Version: v1.61.1642
+- Generated 2021-05-20 for `idaas-doraemon`.
+- ListOrderConsumeStatisticRecords add AliOrderCode.
+
 2022-06-16 Version: v1.61.1641
 - Generated 2021-05-20 for `idaas-doraemon`.
 - Add ListOrderConsumeStatisticRecords Open API.

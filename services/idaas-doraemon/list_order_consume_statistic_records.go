@@ -72,6 +72,7 @@ func (client *Client) ListOrderConsumeStatisticRecordsWithCallback(request *List
 type ListOrderConsumeStatisticRecordsRequest struct {
 	*requests.RpcRequest
 	StatisticTimeMin string           `position:"Query" name:"StatisticTimeMin"`
+	AliOrderCode     string           `position:"Query" name:"AliOrderCode"`
 	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	StatisticTimeMax string           `position:"Query" name:"StatisticTimeMax"`
