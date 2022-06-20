@@ -41,7 +41,7 @@ func Test_EcsRamRoleSigner_GetAccessKeyId(t *testing.T) {
 	}()
 
 	accessKeyId, err := s.GetAccessKeyId()
-	assert.True(t, strings.HasSuffix(err.Error(), "no such host"))
+	assert.True(t, strings.HasSuffix(err.Error(), "no such host") || strings.HasSuffix(err.Error(), "Temporary failure in name resolution"))
 	assert.Equal(t, "", accessKeyId)
 }
 

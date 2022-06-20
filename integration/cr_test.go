@@ -10,7 +10,7 @@ import (
 	"testing"
 )
 
-var crTestKey = "crtestkey" + travisValue[len(travisValue)-1]
+var crTestKey = "crtestkey" + jobIndex
 
 func Test_CR_CreateNamespace(t *testing.T) {
 	client, err := cr.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))

@@ -111,7 +111,7 @@ func Test_DescribeRegionsWithCommonRequestWithIncompleteSignature(t *testing.T) 
 	_, err = client.ProcessCommonRequest(request)
 	realerr := err.(*errors.ServerError)
 	assert.Equal(t, "IncompleteSignature", realerr.ErrorCode())
-	assert.Equal(t, "InvalidAccessKeySecret: Please check you AccessKeySecret", realerr.Recommend())
+	assert.Equal(t, "https://next.api.aliyun.com/troubleshoot?q=IncompleteSignature&product=Ecs", realerr.Recommend())
 }
 
 func Test_DescribeClustersWithCommonRequestWithROA(t *testing.T) {
@@ -131,7 +131,7 @@ func Test_DescribeClustersWithCommonRequestWithROA(t *testing.T) {
 
 }
 
-func Test_DescribeClustersWithCommonRequestWithSignatureDostNotMatch(t *testing.T) {
+func Test_DescribeClustersWithCommonRequestWithInvalidUrl(t *testing.T) {
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), strings.ToUpper(os.Getenv("ACCESS_KEY_SECRET")))
 	assert.Nil(t, err)
 	request := requests.NewCommonRequest()
@@ -144,8 +144,8 @@ func Test_DescribeClustersWithCommonRequestWithSignatureDostNotMatch(t *testing.
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	real, _ := err.(*errors.ServerError)
-	assert.Contains(t, real.Recommend(), "InvalidAccessKeySecret: Please check you AccessKeySecret")
-	assert.Equal(t, real.ErrorCode(), "SignatureDoesNotMatch")
+	assert.Contains(t, real.Recommend(), "https://next.api.aliyun.com/troubleshoot?q=InvalidUrl")
+	assert.Equal(t, real.ErrorCode(), "InvalidUrl")
 }
 
 func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {

@@ -67,7 +67,7 @@ func TestInstanceMetadataProvider_Retrieve_Fail1(t *testing.T) {
 	_, err := NewInstanceMetadataProvider().Retrieve()
 	assert.NotNil(t, err)
 	message := err.Error()
-	assert.True(t, strings.HasSuffix(message, "no such host"))
+	assert.True(t, strings.HasSuffix(message, "no such host") || strings.HasSuffix(message, "Temporary failure in name resolution"))
 }
 
 func TestInstanceMetadataProvider_Retrieve_Fail2(t *testing.T) {
