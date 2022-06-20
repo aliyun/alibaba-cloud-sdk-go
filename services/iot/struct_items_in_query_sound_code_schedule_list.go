@@ -26,4 +26,5 @@ type ItemsInQuerySoundCodeScheduleList struct {
 	EndTime      string `json:"EndTime" xml:"EndTime"`
 	StartDate    string `json:"StartDate" xml:"StartDate"`
 	EndDate      string `json:"EndDate" xml:"EndDate"`
+	OpenType     string `json:"OpenType" xml:"OpenType"`
 }

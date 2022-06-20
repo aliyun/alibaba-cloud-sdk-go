@@ -72,7 +72,7 @@ func (client *Client) PubWithCallback(request *PubRequest, callback func(respons
 type PubRequest struct {
 	*requests.RpcRequest
 	UserProp        *[]PubUserProp   `position:"Query" name:"UserProp"  type:"Repeated"`
-	MessageContent  string           `position:"Query" name:"MessageContent"`
+	MessageContent  string           `position:"Body" name:"MessageContent"`
 	Qos             requests.Integer `position:"Query" name:"Qos"`
 	CorrelationData string           `position:"Query" name:"CorrelationData"`
 	IotInstanceId   string           `position:"Query" name:"IotInstanceId"`
@@ -81,6 +81,7 @@ type PubRequest struct {
 	ProductKey      string           `position:"Query" name:"ProductKey"`
 	ApiProduct      string           `position:"Body" name:"ApiProduct"`
 	ApiRevision     string           `position:"Body" name:"ApiRevision"`
+	DeviceName      string           `position:"Query" name:"DeviceName"`
 }
 
 // PubUserProp is a repeated param struct in PubRequest

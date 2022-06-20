@@ -1,3 +1,7 @@
+2022-06-20 Version: v1.61.1643
+- Generated 2018-01-20 for `Iot`.
+- Support Easy Connect New API.
+
 2022-06-17 Version: v1.61.1642
 - Generated 2021-05-20 for `idaas-doraemon`.
 - ListOrderConsumeStatisticRecords add AliOrderCode.

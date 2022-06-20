@@ -17,6 +17,7 @@ package iot
 
 // Items is a nested struct in iot response
 type Items struct {
+	Name                  string                                         `json:"Name" xml:"Name"`
 	ResultCode            string                                         `json:"ResultCode" xml:"ResultCode"`
 	Text                  string                                         `json:"Text" xml:"Text"`
 	AudioFormat           string                                         `json:"AudioFormat" xml:"AudioFormat"`
@@ -25,6 +26,7 @@ type Items struct {
 	ErrorMessage          string                                         `json:"ErrorMessage" xml:"ErrorMessage"`
 	Strategy              int                                            `json:"Strategy" xml:"Strategy"`
 	SourceInstanceName    string                                         `json:"SourceInstanceName" xml:"SourceInstanceName"`
+	OpenType              string                                         `json:"OpenType" xml:"OpenType"`
 	PeriodCode            string                                         `json:"PeriodCode" xml:"PeriodCode"`
 	SourceRegion          string                                         `json:"SourceRegion" xml:"SourceRegion"`
 	TargetAliyunId        string                                         `json:"TargetAliyunId" xml:"TargetAliyunId"`

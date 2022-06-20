@@ -78,6 +78,7 @@ type CreateSoundCodeScheduleRequest struct {
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	Name          string `position:"Body" name:"Name"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	OpenType      string `position:"Body" name:"OpenType"`
 }
 
 // CreateSoundCodeScheduleResponse is the response struct for api CreateSoundCodeSchedule

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateSoundCode invokes the iot.CreateSoundCode API synchronously
-func (client *Client) CreateSoundCode(request *CreateSoundCodeRequest) (response *CreateSoundCodeResponse, err error) {
-	response = CreateCreateSoundCodeResponse()
+// UpdateSoundCode invokes the iot.UpdateSoundCode API synchronously
+func (client *Client) UpdateSoundCode(request *UpdateSoundCodeRequest) (response *UpdateSoundCodeResponse, err error) {
+	response = CreateUpdateSoundCodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateSoundCodeWithChan invokes the iot.CreateSoundCode API asynchronously
-func (client *Client) CreateSoundCodeWithChan(request *CreateSoundCodeRequest) (<-chan *CreateSoundCodeResponse, <-chan error) {
-	responseChan := make(chan *CreateSoundCodeResponse, 1)
+// UpdateSoundCodeWithChan invokes the iot.UpdateSoundCode API asynchronously
+func (client *Client) UpdateSoundCodeWithChan(request *UpdateSoundCodeRequest) (<-chan *UpdateSoundCodeResponse, <-chan error) {
+	responseChan := make(chan *UpdateSoundCodeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateSoundCode(request)
+		response, err := client.UpdateSoundCode(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateSoundCodeWithChan(request *CreateSoundCodeRequest) (
 	return responseChan, errChan
 }
 
-// CreateSoundCodeWithCallback invokes the iot.CreateSoundCode API asynchronously
-func (client *Client) CreateSoundCodeWithCallback(request *CreateSoundCodeRequest, callback func(response *CreateSoundCodeResponse, err error)) <-chan int {
+// UpdateSoundCodeWithCallback invokes the iot.UpdateSoundCode API asynchronously
+func (client *Client) UpdateSoundCodeWithCallback(request *UpdateSoundCodeRequest, callback func(response *UpdateSoundCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateSoundCodeResponse
+		var response *UpdateSoundCodeResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateSoundCode(request)
+		response, err = client.UpdateSoundCode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,41 +68,40 @@ func (client *Client) CreateSoundCodeWithCallback(request *CreateSoundCodeReques
 	return result
 }
 
-// CreateSoundCodeRequest is the request struct for api CreateSoundCode
-type CreateSoundCodeRequest struct {
+// UpdateSoundCodeRequest is the request struct for api UpdateSoundCode
+type UpdateSoundCodeRequest struct {
 	*requests.RpcRequest
+	SoundCode        string           `position:"Body" name:"SoundCode"`
 	Duration         requests.Integer `position:"Body" name:"Duration"`
 	IotInstanceId    string           `position:"Body" name:"IotInstanceId"`
 	SoundCodeContent string           `position:"Body" name:"SoundCodeContent"`
 	ApiProduct       string           `position:"Body" name:"ApiProduct"`
 	Name             string           `position:"Body" name:"Name"`
 	ApiRevision      string           `position:"Body" name:"ApiRevision"`
-	OpenType         string           `position:"Body" name:"OpenType"`
 }
 
-// CreateSoundCodeResponse is the response struct for api CreateSoundCode
-type CreateSoundCodeResponse struct {
+// UpdateSoundCodeResponse is the response struct for api UpdateSoundCode
+type UpdateSoundCodeResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         string `json:"Data" xml:"Data"`
 }
 
-// CreateCreateSoundCodeRequest creates a request to invoke CreateSoundCode API
-func CreateCreateSoundCodeRequest() (request *CreateSoundCodeRequest) {
-	request = &CreateSoundCodeRequest{
+// CreateUpdateSoundCodeRequest creates a request to invoke UpdateSoundCode API
+func CreateUpdateSoundCodeRequest() (request *UpdateSoundCodeRequest) {
+	request = &UpdateSoundCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateSoundCode", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateSoundCode", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateSoundCodeResponse creates a response to parse from CreateSoundCode response
-func CreateCreateSoundCodeResponse() (response *CreateSoundCodeResponse) {
-	response = &CreateSoundCodeResponse{
+// CreateUpdateSoundCodeResponse creates a response to parse from UpdateSoundCode response
+func CreateUpdateSoundCodeResponse() (response *UpdateSoundCodeResponse) {
+	response = &UpdateSoundCodeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
