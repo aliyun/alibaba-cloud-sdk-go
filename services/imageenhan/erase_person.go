@@ -71,8 +71,8 @@ func (client *Client) ErasePersonWithCallback(request *ErasePersonRequest, callb
 // ErasePersonRequest is the request struct for api ErasePerson
 type ErasePersonRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
 	UserMask string `position:"Body" name:"UserMask"`
+	ImageURL string `position:"Body" name:"ImageURL"`
 }
 
 // ErasePersonResponse is the response struct for api ErasePerson

@@ -72,11 +72,11 @@ func (client *Client) ImageBlindCharacterWatermarkWithCallback(request *ImageBli
 type ImageBlindCharacterWatermarkRequest struct {
 	*requests.RpcRequest
 	WatermarkImageURL string           `position:"Body" name:"WatermarkImageURL"`
+	OutputFileType    string           `position:"Body" name:"OutputFileType"`
+	Text              string           `position:"Body" name:"Text"`
 	QualityFactor     requests.Integer `position:"Body" name:"QualityFactor"`
 	FunctionType      string           `position:"Body" name:"FunctionType"`
-	OutputFileType    string           `position:"Body" name:"OutputFileType"`
 	OriginImageURL    string           `position:"Body" name:"OriginImageURL"`
-	Text              string           `position:"Body" name:"Text"`
 }
 
 // ImageBlindCharacterWatermarkResponse is the response struct for api ImageBlindCharacterWatermark

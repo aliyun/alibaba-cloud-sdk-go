@@ -17,8 +17,8 @@ package imageenhan
 
 // RetainLocation is a nested struct in imageenhan response
 type RetainLocation struct {
-	X      int `json:"X" xml:"X"`
-	Y      int `json:"Y" xml:"Y"`
 	Width  int `json:"Width" xml:"Width"`
 	Height int `json:"Height" xml:"Height"`
+	Y      int `json:"Y" xml:"Y"`
+	X      int `json:"X" xml:"X"`
 }

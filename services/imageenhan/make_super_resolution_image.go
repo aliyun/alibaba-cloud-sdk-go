@@ -73,7 +73,9 @@ type MakeSuperResolutionImageRequest struct {
 	*requests.RpcRequest
 	UpscaleFactor requests.Integer `position:"Body" name:"UpscaleFactor"`
 	Mode          string           `position:"Body" name:"Mode"`
+	OutputFormat  string           `position:"Body" name:"OutputFormat"`
 	Url           string           `position:"Body" name:"Url"`
+	OutputQuality requests.Integer `position:"Body" name:"OutputQuality"`
 }
 
 // MakeSuperResolutionImageResponse is the response struct for api MakeSuperResolutionImage

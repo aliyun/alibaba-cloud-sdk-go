@@ -1,3 +1,7 @@
+2022-06-20 Version: v1.61.1644
+- Generated 2019-09-30 for `imageenhan`.
+- Update MakeSuperResolutionImage.
+
 2022-06-20 Version: v1.61.1643
 - Generated 2018-01-20 for `Iot`.
 - Support Easy Connect New API.
