@@ -79,8 +79,8 @@ type ListPlaylistItemsRequest struct {
 // ListPlaylistItemsResponse is the response struct for api ListPlaylistItems
 type ListPlaylistItemsResponse struct {
 	*responses.BaseResponse
-	Total        int           `json:"Total" xml:"Total"`
 	RequestId    string        `json:"RequestId" xml:"RequestId"`
+	Total        int           `json:"Total" xml:"Total"`
 	ProgramItems []ProgramItem `json:"ProgramItems" xml:"ProgramItems"`
 }
 

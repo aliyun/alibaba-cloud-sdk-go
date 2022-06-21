@@ -17,9 +17,9 @@ package live
 
 // StudioLayout is a nested struct in live response
 type StudioLayout struct {
-	LayoutType            string              `json:"LayoutType" xml:"LayoutType"`
 	LayoutId              string              `json:"LayoutId" xml:"LayoutId"`
 	LayoutName            string              `json:"LayoutName" xml:"LayoutName"`
+	LayoutType            string              `json:"LayoutType" xml:"LayoutType"`
 	CommonConfig          CommonConfig        `json:"CommonConfig" xml:"CommonConfig"`
 	BgImageConfig         BgImageConfig       `json:"BgImageConfig" xml:"BgImageConfig"`
 	ScreenInputConfigList []ScreenInputConfig `json:"ScreenInputConfigList" xml:"ScreenInputConfigList"`

@@ -17,8 +17,8 @@ package live
 
 // DomainConfigInDescribeLiveDomainConfigs is a nested struct in live response
 type DomainConfigInDescribeLiveDomainConfigs struct {
-	Status       string                                  `json:"Status" xml:"Status"`
-	ConfigId     string                                  `json:"ConfigId" xml:"ConfigId"`
 	FunctionName string                                  `json:"FunctionName" xml:"FunctionName"`
+	ConfigId     string                                  `json:"ConfigId" xml:"ConfigId"`
+	Status       string                                  `json:"Status" xml:"Status"`
 	FunctionArgs FunctionArgsInDescribeLiveDomainConfigs `json:"FunctionArgs" xml:"FunctionArgs"`
 }

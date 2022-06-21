@@ -17,10 +17,10 @@ package live
 
 // ProgramInfo is a nested struct in live response
 type ProgramInfo struct {
-	Status       int    `json:"Status" xml:"Status"`
-	RepeatNumber int    `json:"RepeatNumber" xml:"RepeatNumber"`
-	ProgramName  string `json:"ProgramName" xml:"ProgramName"`
 	ProgramId    string `json:"ProgramId" xml:"ProgramId"`
+	ProgramName  string `json:"ProgramName" xml:"ProgramName"`
 	CasterId     string `json:"CasterId" xml:"CasterId"`
 	DomainName   string `json:"DomainName" xml:"DomainName"`
+	RepeatNumber int    `json:"RepeatNumber" xml:"RepeatNumber"`
+	Status       int    `json:"Status" xml:"Status"`
 }

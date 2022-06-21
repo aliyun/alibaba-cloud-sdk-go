@@ -86,9 +86,9 @@ type DescribeRoomListRequest struct {
 // DescribeRoomListResponse is the response struct for api DescribeRoomList
 type DescribeRoomListResponse struct {
 	*responses.BaseResponse
-	TotalPage int    `json:"TotalPage" xml:"TotalPage"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TotalNum  int    `json:"TotalNum" xml:"TotalNum"`
+	TotalPage int    `json:"TotalPage" xml:"TotalPage"`
 	RoomList  []Room `json:"RoomList" xml:"RoomList"`
 }
 

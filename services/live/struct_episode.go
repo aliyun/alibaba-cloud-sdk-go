@@ -17,13 +17,13 @@ package live
 
 // Episode is a nested struct in live response
 type Episode struct {
-	Status       int                                 `json:"Status" xml:"Status"`
-	EndTime      string                              `json:"EndTime" xml:"EndTime"`
-	StartTime    string                              `json:"StartTime" xml:"StartTime"`
-	EpisodeName  string                              `json:"EpisodeName" xml:"EpisodeName"`
-	EpisodeType  string                              `json:"EpisodeType" xml:"EpisodeType"`
 	EpisodeId    string                              `json:"EpisodeId" xml:"EpisodeId"`
+	EpisodeType  string                              `json:"EpisodeType" xml:"EpisodeType"`
+	EpisodeName  string                              `json:"EpisodeName" xml:"EpisodeName"`
 	ResourceId   string                              `json:"ResourceId" xml:"ResourceId"`
+	StartTime    string                              `json:"StartTime" xml:"StartTime"`
+	EndTime      string                              `json:"EndTime" xml:"EndTime"`
 	SwitchType   string                              `json:"SwitchType" xml:"SwitchType"`
+	Status       int                                 `json:"Status" xml:"Status"`
 	ComponentIds ComponentIdsInDescribeCasterProgram `json:"ComponentIds" xml:"ComponentIds"`
 }

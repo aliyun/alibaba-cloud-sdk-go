@@ -17,11 +17,11 @@ package live
 
 // LiveSnapshotDetectPornConfig is a nested struct in live response
 type LiveSnapshotDetectPornConfig struct {
-	OssObject   string                                       `json:"OssObject" xml:"OssObject"`
-	AppName     string                                       `json:"AppName" xml:"AppName"`
-	Interval    int                                          `json:"Interval" xml:"Interval"`
-	OssBucket   string                                       `json:"OssBucket" xml:"OssBucket"`
 	DomainName  string                                       `json:"DomainName" xml:"DomainName"`
+	AppName     string                                       `json:"AppName" xml:"AppName"`
 	OssEndpoint string                                       `json:"OssEndpoint" xml:"OssEndpoint"`
+	OssBucket   string                                       `json:"OssBucket" xml:"OssBucket"`
+	OssObject   string                                       `json:"OssObject" xml:"OssObject"`
+	Interval    int                                          `json:"Interval" xml:"Interval"`
 	Scenes      ScenesInDescribeLiveSnapshotDetectPornConfig `json:"Scenes" xml:"Scenes"`
 }

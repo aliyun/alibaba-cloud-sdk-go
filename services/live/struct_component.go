@@ -17,11 +17,11 @@ package live
 
 // Component is a nested struct in live response
 type Component struct {
-	Effect              string              `json:"Effect" xml:"Effect"`
-	ComponentName       string              `json:"ComponentName" xml:"ComponentName"`
 	ComponentId         string              `json:"ComponentId" xml:"ComponentId"`
-	ComponentType       string              `json:"ComponentType" xml:"ComponentType"`
+	ComponentName       string              `json:"ComponentName" xml:"ComponentName"`
 	LocationId          string              `json:"LocationId" xml:"LocationId"`
+	ComponentType       string              `json:"ComponentType" xml:"ComponentType"`
+	Effect              string              `json:"Effect" xml:"Effect"`
 	ComponentLayer      ComponentLayer      `json:"ComponentLayer" xml:"ComponentLayer"`
 	TextLayerContent    TextLayerContent    `json:"TextLayerContent" xml:"TextLayerContent"`
 	ImageLayerContent   ImageLayerContent   `json:"ImageLayerContent" xml:"ImageLayerContent"`

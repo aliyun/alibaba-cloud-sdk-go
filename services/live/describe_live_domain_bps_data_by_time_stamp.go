@@ -81,9 +81,9 @@ type DescribeLiveDomainBpsDataByTimeStampRequest struct {
 // DescribeLiveDomainBpsDataByTimeStampResponse is the response struct for api DescribeLiveDomainBpsDataByTimeStamp
 type DescribeLiveDomainBpsDataByTimeStampResponse struct {
 	*responses.BaseResponse
-	TimeStamp   string      `json:"TimeStamp" xml:"TimeStamp"`
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	DomainName  string      `json:"DomainName" xml:"DomainName"`
+	TimeStamp   string      `json:"TimeStamp" xml:"TimeStamp"`
 	BpsDataList BpsDataList `json:"BpsDataList" xml:"BpsDataList"`
 }
 

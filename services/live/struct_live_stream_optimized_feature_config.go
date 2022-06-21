@@ -17,8 +17,8 @@ package live
 
 // LiveStreamOptimizedFeatureConfig is a nested struct in live response
 type LiveStreamOptimizedFeatureConfig struct {
+	DomainName   string `json:"DomainName" xml:"DomainName"`
 	ConfigName   string `json:"ConfigName" xml:"ConfigName"`
 	ConfigStatus string `json:"ConfigStatus" xml:"ConfigStatus"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
 	ConfigValue  string `json:"ConfigValue" xml:"ConfigValue"`
 }

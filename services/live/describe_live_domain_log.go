@@ -82,8 +82,8 @@ type DescribeLiveDomainLogRequest struct {
 // DescribeLiveDomainLogResponse is the response struct for api DescribeLiveDomainLog
 type DescribeLiveDomainLogResponse struct {
 	*responses.BaseResponse
-	DomainName       string           `json:"DomainName" xml:"DomainName"`
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	DomainName       string           `json:"DomainName" xml:"DomainName"`
 	DomainLogDetails DomainLogDetails `json:"DomainLogDetails" xml:"DomainLogDetails"`
 }
 

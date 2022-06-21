@@ -79,8 +79,8 @@ type DescribeRoomStatusRequest struct {
 // DescribeRoomStatusResponse is the response struct for api DescribeRoomStatus
 type DescribeRoomStatusResponse struct {
 	*responses.BaseResponse
-	RoomStatus int    `json:"RoomStatus" xml:"RoomStatus"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	RoomStatus int    `json:"RoomStatus" xml:"RoomStatus"`
 }
 
 // CreateDescribeRoomStatusRequest creates a request to invoke DescribeRoomStatus API

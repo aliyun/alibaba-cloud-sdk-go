@@ -17,7 +17,7 @@ package live
 
 // User is a nested struct in live response
 type User struct {
+	AppUid      string `json:"AppUid" xml:"AppUid"`
 	OpStartTime string `json:"OpStartTime" xml:"OpStartTime"`
 	OpEndTime   string `json:"OpEndTime" xml:"OpEndTime"`
-	AppUid      string `json:"AppUid" xml:"AppUid"`
 }

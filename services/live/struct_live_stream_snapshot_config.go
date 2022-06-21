@@ -17,13 +17,13 @@ package live
 
 // LiveStreamSnapshotConfig is a nested struct in live response
 type LiveStreamSnapshotConfig struct {
-	OverwriteOssObject string `json:"OverwriteOssObject" xml:"OverwriteOssObject"`
-	TimeInterval       int    `json:"TimeInterval" xml:"TimeInterval"`
-	AppName            string `json:"AppName" xml:"AppName"`
-	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
-	OssBucket          string `json:"OssBucket" xml:"OssBucket"`
 	DomainName         string `json:"DomainName" xml:"DomainName"`
-	Callback           string `json:"Callback" xml:"Callback"`
-	SequenceOssObject  string `json:"SequenceOssObject" xml:"SequenceOssObject"`
+	AppName            string `json:"AppName" xml:"AppName"`
+	TimeInterval       int    `json:"TimeInterval" xml:"TimeInterval"`
 	OssEndpoint        string `json:"OssEndpoint" xml:"OssEndpoint"`
+	OssBucket          string `json:"OssBucket" xml:"OssBucket"`
+	OverwriteOssObject string `json:"OverwriteOssObject" xml:"OverwriteOssObject"`
+	SequenceOssObject  string `json:"SequenceOssObject" xml:"SequenceOssObject"`
+	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
+	Callback           string `json:"Callback" xml:"Callback"`
 }

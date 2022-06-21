@@ -81,8 +81,8 @@ type EditPlaylistRequest struct {
 type EditPlaylistResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	CasterId  string `json:"CasterId" xml:"CasterId"`
 	ProgramId string `json:"ProgramId" xml:"ProgramId"`
+	CasterId  string `json:"CasterId" xml:"CasterId"`
 	Items     Items  `json:"Items" xml:"Items"`
 }
 

@@ -82,25 +82,25 @@ type AddCasterLayoutRequest struct {
 // AddCasterLayoutAudioLayer is a repeated param struct in AddCasterLayoutRequest
 type AddCasterLayoutAudioLayer struct {
 	VolumeRate         string `name:"VolumeRate"`
-	FixedDelayDuration string `name:"FixedDelayDuration"`
 	ValidChannel       string `name:"ValidChannel"`
+	FixedDelayDuration string `name:"FixedDelayDuration"`
 }
 
 // AddCasterLayoutVideoLayer is a repeated param struct in AddCasterLayoutRequest
 type AddCasterLayoutVideoLayer struct {
-	FixedDelayDuration string    `name:"FixedDelayDuration"`
 	FillMode           string    `name:"FillMode"`
 	HeightNormalized   string    `name:"HeightNormalized"`
+	WidthNormalized    string    `name:"WidthNormalized"`
 	PositionRefer      string    `name:"PositionRefer"`
 	PositionNormalized *[]string `name:"PositionNormalized" type:"Repeated"`
-	WidthNormalized    string    `name:"WidthNormalized"`
+	FixedDelayDuration string    `name:"FixedDelayDuration"`
 }
 
 // AddCasterLayoutResponse is the response struct for api AddCasterLayout
 type AddCasterLayoutResponse struct {
 	*responses.BaseResponse
-	LayoutId  string `json:"LayoutId" xml:"LayoutId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	LayoutId  string `json:"LayoutId" xml:"LayoutId"`
 }
 
 // CreateAddCasterLayoutRequest creates a request to invoke AddCasterLayout API

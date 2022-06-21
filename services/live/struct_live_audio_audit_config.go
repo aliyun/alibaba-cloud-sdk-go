@@ -17,8 +17,8 @@ package live
 
 // LiveAudioAuditConfig is a nested struct in live response
 type LiveAudioAuditConfig struct {
-	AppName    string                               `json:"AppName" xml:"AppName"`
 	DomainName string                               `json:"DomainName" xml:"DomainName"`
+	AppName    string                               `json:"AppName" xml:"AppName"`
 	StreamName string                               `json:"StreamName" xml:"StreamName"`
 	BizType    string                               `json:"BizType" xml:"BizType"`
 	Scenes     ScenesInDescribeLiveAudioAuditConfig `json:"Scenes" xml:"Scenes"`

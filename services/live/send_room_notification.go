@@ -82,8 +82,8 @@ type SendRoomNotificationRequest struct {
 // SendRoomNotificationResponse is the response struct for api SendRoomNotification
 type SendRoomNotificationResponse struct {
 	*responses.BaseResponse
-	MessageId string `json:"MessageId" xml:"MessageId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
 // CreateSendRoomNotificationRequest creates a request to invoke SendRoomNotification API

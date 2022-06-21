@@ -82,8 +82,8 @@ type UpdateCasterSceneAudioRequest struct {
 // UpdateCasterSceneAudioAudioLayer is a repeated param struct in UpdateCasterSceneAudioRequest
 type UpdateCasterSceneAudioAudioLayer struct {
 	VolumeRate         string `name:"VolumeRate"`
-	FixedDelayDuration string `name:"FixedDelayDuration"`
 	ValidChannel       string `name:"ValidChannel"`
+	FixedDelayDuration string `name:"FixedDelayDuration"`
 }
 
 // UpdateCasterSceneAudioResponse is the response struct for api UpdateCasterSceneAudio

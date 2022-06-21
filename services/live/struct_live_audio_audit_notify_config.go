@@ -17,7 +17,7 @@ package live
 
 // LiveAudioAuditNotifyConfig is a nested struct in live response
 type LiveAudioAuditNotifyConfig struct {
-	CallbackTemplate string `json:"CallbackTemplate" xml:"CallbackTemplate"`
 	DomainName       string `json:"DomainName" xml:"DomainName"`
 	Callback         string `json:"Callback" xml:"Callback"`
+	CallbackTemplate string `json:"CallbackTemplate" xml:"CallbackTemplate"`
 }

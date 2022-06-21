@@ -18,6 +18,6 @@ package live
 // BillPredictionDataItem is a nested struct in live response
 type BillPredictionDataItem struct {
 	Value   float64 `json:"Value" xml:"Value"`
-	TimeStp string  `json:"TimeStp" xml:"TimeStp"`
 	Area    string  `json:"Area" xml:"Area"`
+	TimeStp string  `json:"TimeStp" xml:"TimeStp"`
 }

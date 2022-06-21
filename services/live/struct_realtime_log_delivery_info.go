@@ -17,10 +17,10 @@ package live
 
 // RealtimeLogDeliveryInfo is a nested struct in live response
 type RealtimeLogDeliveryInfo struct {
-	Status     string `json:"Status" xml:"Status"`
-	DmId       int    `json:"DmId" xml:"DmId"`
-	Region     string `json:"Region" xml:"Region"`
-	Logstore   string `json:"Logstore" xml:"Logstore"`
 	Project    string `json:"Project" xml:"Project"`
+	Logstore   string `json:"Logstore" xml:"Logstore"`
+	Region     string `json:"Region" xml:"Region"`
 	DomainName string `json:"DomainName" xml:"DomainName"`
+	DmId       int    `json:"DmId" xml:"DmId"`
+	Status     string `json:"Status" xml:"Status"`
 }

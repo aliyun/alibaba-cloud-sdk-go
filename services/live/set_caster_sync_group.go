@@ -78,11 +78,11 @@ type SetCasterSyncGroupRequest struct {
 
 // SetCasterSyncGroupSyncGroup is a repeated param struct in SetCasterSyncGroupRequest
 type SetCasterSyncGroupSyncGroup struct {
+	Mode               string    `name:"Mode"`
+	SyncDelayThreshold string    `name:"SyncDelayThreshold"`
 	HostResourceId     string    `name:"HostResourceId"`
 	ResourceIds        *[]string `name:"ResourceIds" type:"Repeated"`
 	SyncOffsets        *[]string `name:"SyncOffsets" type:"Repeated"`
-	SyncDelayThreshold string    `name:"SyncDelayThreshold"`
-	Mode               string    `name:"Mode"`
 }
 
 // SetCasterSyncGroupResponse is the response struct for api SetCasterSyncGroup

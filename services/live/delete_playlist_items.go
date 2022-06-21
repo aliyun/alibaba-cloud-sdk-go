@@ -79,8 +79,8 @@ type DeletePlaylistItemsRequest struct {
 // DeletePlaylistItemsResponse is the response struct for api DeletePlaylistItems
 type DeletePlaylistItemsResponse struct {
 	*responses.BaseResponse
-	ProgramId string `json:"ProgramId" xml:"ProgramId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ProgramId string `json:"ProgramId" xml:"ProgramId"`
 }
 
 // CreateDeletePlaylistItemsRequest creates a request to invoke DeletePlaylistItems API

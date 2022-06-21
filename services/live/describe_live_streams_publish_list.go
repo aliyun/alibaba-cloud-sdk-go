@@ -87,11 +87,11 @@ type DescribeLiveStreamsPublishListRequest struct {
 // DescribeLiveStreamsPublishListResponse is the response struct for api DescribeLiveStreamsPublishList
 type DescribeLiveStreamsPublishListResponse struct {
 	*responses.BaseResponse
-	TotalPage   int         `json:"TotalPage" xml:"TotalPage"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	PageNum     int         `json:"PageNum" xml:"PageNum"`
 	PageSize    int         `json:"PageSize" xml:"PageSize"`
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	TotalNum    int         `json:"TotalNum" xml:"TotalNum"`
+	TotalPage   int         `json:"TotalPage" xml:"TotalPage"`
 	PublishInfo PublishInfo `json:"PublishInfo" xml:"PublishInfo"`
 }
 

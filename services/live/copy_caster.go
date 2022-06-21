@@ -80,8 +80,8 @@ type CopyCasterRequest struct {
 // CopyCasterResponse is the response struct for api CopyCaster
 type CopyCasterResponse struct {
 	*responses.BaseResponse
-	CasterId  string `json:"CasterId" xml:"CasterId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	CasterId  string `json:"CasterId" xml:"CasterId"`
 }
 
 // CreateCopyCasterRequest creates a request to invoke CopyCaster API

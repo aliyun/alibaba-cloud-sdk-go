@@ -17,9 +17,9 @@ package live
 
 // ComponentLayer is a nested struct in live response
 type ComponentLayer struct {
-	Transparency        int                                           `json:"Transparency" xml:"Transparency"`
-	WidthNormalized     float64                                       `json:"WidthNormalized" xml:"WidthNormalized"`
 	HeightNormalized    float64                                       `json:"HeightNormalized" xml:"HeightNormalized"`
+	WidthNormalized     float64                                       `json:"WidthNormalized" xml:"WidthNormalized"`
 	PositionRefer       string                                        `json:"PositionRefer" xml:"PositionRefer"`
+	Transparency        int                                           `json:"Transparency" xml:"Transparency"`
 	PositionNormalizeds PositionNormalizedsInDescribeCasterComponents `json:"PositionNormalizeds" xml:"PositionNormalizeds"`
 }

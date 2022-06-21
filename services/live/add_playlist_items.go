@@ -81,8 +81,8 @@ type AddPlaylistItemsRequest struct {
 // AddPlaylistItemsResponse is the response struct for api AddPlaylistItems
 type AddPlaylistItemsResponse struct {
 	*responses.BaseResponse
-	ProgramId string `json:"ProgramId" xml:"ProgramId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ProgramId string `json:"ProgramId" xml:"ProgramId"`
 	Items     Items  `json:"Items" xml:"Items"`
 }
 

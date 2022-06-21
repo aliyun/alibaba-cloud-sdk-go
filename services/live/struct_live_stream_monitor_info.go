@@ -17,14 +17,14 @@ package live
 
 // LiveStreamMonitorInfo is a nested struct in live response
 type LiveStreamMonitorInfo struct {
-	Status         int           `json:"Status" xml:"Status"`
-	StartTime      string        `json:"StartTime" xml:"StartTime"`
 	MonitorId      string        `json:"MonitorId" xml:"MonitorId"`
+	MonitorName    string        `json:"MonitorName" xml:"MonitorName"`
 	Domain         string        `json:"Domain" xml:"Domain"`
 	OutputTemplate string        `json:"OutputTemplate" xml:"OutputTemplate"`
+	Status         int           `json:"Status" xml:"Status"`
 	Region         string        `json:"Region" xml:"Region"`
 	AudioFrom      int           `json:"AudioFrom" xml:"AudioFrom"`
-	MonitorName    string        `json:"MonitorName" xml:"MonitorName"`
+	StartTime      string        `json:"StartTime" xml:"StartTime"`
 	StopTime       string        `json:"StopTime" xml:"StopTime"`
 	OutputUrls     OutputUrls    `json:"OutputUrls" xml:"OutputUrls"`
 	InputList      []InputConfig `json:"InputList" xml:"InputList"`

@@ -79,10 +79,10 @@ type DescribeLiveCertificateDetailRequest struct {
 // DescribeLiveCertificateDetailResponse is the response struct for api DescribeLiveCertificateDetail
 type DescribeLiveCertificateDetailResponse struct {
 	*responses.BaseResponse
-	CertName  string `json:"CertName" xml:"CertName"`
-	Cert      string `json:"Cert" xml:"Cert"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Cert      string `json:"Cert" xml:"Cert"`
 	CertId    int64  `json:"CertId" xml:"CertId"`
+	CertName  string `json:"CertName" xml:"CertName"`
 }
 
 // CreateDescribeLiveCertificateDetailRequest creates a request to invoke DescribeLiveCertificateDetail API

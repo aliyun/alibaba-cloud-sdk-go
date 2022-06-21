@@ -17,8 +17,8 @@ package live
 
 // Stream is a nested struct in live response
 type Stream struct {
-	Quality     string `json:"Quality" xml:"Quality"`
 	PullFlvUrl  string `json:"PullFlvUrl" xml:"PullFlvUrl"`
-	PullM3U8Url string `json:"PullM3U8Url" xml:"PullM3U8Url"`
 	PullRtmpUrl string `json:"PullRtmpUrl" xml:"PullRtmpUrl"`
+	PullM3U8Url string `json:"PullM3U8Url" xml:"PullM3U8Url"`
+	Quality     string `json:"Quality" xml:"Quality"`
 }

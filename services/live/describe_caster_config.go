@@ -78,18 +78,18 @@ type DescribeCasterConfigRequest struct {
 // DescribeCasterConfigResponse is the response struct for api DescribeCasterConfig
 type DescribeCasterConfigResponse struct {
 	*responses.BaseResponse
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	CasterId          string           `json:"CasterId" xml:"CasterId"`
+	CasterName        string           `json:"CasterName" xml:"CasterName"`
+	DomainName        string           `json:"DomainName" xml:"DomainName"`
+	SideOutputUrlList string           `json:"SideOutputUrlList" xml:"SideOutputUrlList"`
 	Delay             float64          `json:"Delay" xml:"Delay"`
 	UrgentMaterialId  string           `json:"UrgentMaterialId" xml:"UrgentMaterialId"`
+	SideOutputUrl     string           `json:"SideOutputUrl" xml:"SideOutputUrl"`
 	CallbackUrl       string           `json:"CallbackUrl" xml:"CallbackUrl"`
 	ProgramName       string           `json:"ProgramName" xml:"ProgramName"`
-	CasterName        string           `json:"CasterName" xml:"CasterName"`
-	CasterId          string           `json:"CasterId" xml:"CasterId"`
 	ProgramEffect     int              `json:"ProgramEffect" xml:"ProgramEffect"`
-	DomainName        string           `json:"DomainName" xml:"DomainName"`
 	ChannelEnable     int              `json:"ChannelEnable" xml:"ChannelEnable"`
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	SideOutputUrlList string           `json:"SideOutputUrlList" xml:"SideOutputUrlList"`
-	SideOutputUrl     string           `json:"SideOutputUrl" xml:"SideOutputUrl"`
 	TranscodeConfig   TranscodeConfig  `json:"TranscodeConfig" xml:"TranscodeConfig"`
 	RecordConfig      RecordConfig     `json:"RecordConfig" xml:"RecordConfig"`
 	SyncGroupsConfig  SyncGroupsConfig `json:"SyncGroupsConfig" xml:"SyncGroupsConfig"`

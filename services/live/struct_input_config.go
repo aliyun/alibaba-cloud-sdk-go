@@ -18,9 +18,9 @@ package live
 // InputConfig is a nested struct in live response
 type InputConfig struct {
 	Index        int          `json:"Index" xml:"Index"`
-	InputUrl     string       `json:"InputUrl" xml:"InputUrl"`
 	LayoutId     int          `json:"LayoutId" xml:"LayoutId"`
 	StreamName   string       `json:"StreamName" xml:"StreamName"`
+	InputUrl     string       `json:"InputUrl" xml:"InputUrl"`
 	LayoutConfig LayoutConfig `json:"LayoutConfig" xml:"LayoutConfig"`
 	PlayConfig   PlayConfig   `json:"PlayConfig" xml:"PlayConfig"`
 }

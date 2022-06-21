@@ -18,8 +18,8 @@ package live
 // DomainTranscodeInfo is a nested struct in live response
 type DomainTranscodeInfo struct {
 	TranscodeApp              string                    `json:"TranscodeApp" xml:"TranscodeApp"`
-	TranscodeTemplate         string                    `json:"TranscodeTemplate" xml:"TranscodeTemplate"`
 	TranscodeName             string                    `json:"TranscodeName" xml:"TranscodeName"`
+	TranscodeTemplate         string                    `json:"TranscodeTemplate" xml:"TranscodeTemplate"`
 	CustomTranscodeParameters CustomTranscodeParameters `json:"CustomTranscodeParameters" xml:"CustomTranscodeParameters"`
 	EncryptParameters         EncryptParameters         `json:"EncryptParameters" xml:"EncryptParameters"`
 }

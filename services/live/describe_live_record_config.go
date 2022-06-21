@@ -84,12 +84,12 @@ type DescribeLiveRecordConfigRequest struct {
 // DescribeLiveRecordConfigResponse is the response struct for api DescribeLiveRecordConfig
 type DescribeLiveRecordConfigResponse struct {
 	*responses.BaseResponse
-	PageNum           int                                         `json:"PageNum" xml:"PageNum"`
 	RequestId         string                                      `json:"RequestId" xml:"RequestId"`
-	Order             string                                      `json:"Order" xml:"Order"`
-	TotalPage         int                                         `json:"TotalPage" xml:"TotalPage"`
+	PageNum           int                                         `json:"PageNum" xml:"PageNum"`
 	PageSize          int                                         `json:"PageSize" xml:"PageSize"`
+	Order             string                                      `json:"Order" xml:"Order"`
 	TotalNum          int                                         `json:"TotalNum" xml:"TotalNum"`
+	TotalPage         int                                         `json:"TotalPage" xml:"TotalPage"`
 	LiveAppRecordList LiveAppRecordListInDescribeLiveRecordConfig `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 

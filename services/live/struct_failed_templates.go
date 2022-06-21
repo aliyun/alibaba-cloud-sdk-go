@@ -17,18 +17,18 @@ package live
 
 // FailedTemplates is a nested struct in live response
 type FailedTemplates struct {
-	AudioBitrate    int    `json:"AudioBitrate" xml:"AudioBitrate"`
 	Template        string `json:"Template" xml:"Template"`
-	Height          int    `json:"Height" xml:"Height"`
 	TemplateType    string `json:"TemplateType" xml:"TemplateType"`
-	BandWidth       int    `json:"BandWidth" xml:"BandWidth"`
-	Profile         int    `json:"Profile" xml:"Profile"`
-	AudioRate       int    `json:"AudioRate" xml:"AudioRate"`
-	AudioCodec      string `json:"AudioCodec" xml:"AudioCodec"`
-	Gop             string `json:"Gop" xml:"Gop"`
+	Height          int    `json:"Height" xml:"Height"`
 	Width           int    `json:"Width" xml:"Width"`
-	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
-	AudioChannelNum int    `json:"AudioChannelNum" xml:"AudioChannelNum"`
 	Fps             int    `json:"Fps" xml:"Fps"`
+	Gop             string `json:"Gop" xml:"Gop"`
+	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
+	Profile         int    `json:"Profile" xml:"Profile"`
 	AudioProfile    string `json:"AudioProfile" xml:"AudioProfile"`
+	AudioCodec      string `json:"AudioCodec" xml:"AudioCodec"`
+	AudioRate       int    `json:"AudioRate" xml:"AudioRate"`
+	AudioBitrate    int    `json:"AudioBitrate" xml:"AudioBitrate"`
+	AudioChannelNum int    `json:"AudioChannelNum" xml:"AudioChannelNum"`
+	BandWidth       int    `json:"BandWidth" xml:"BandWidth"`
 }

@@ -78,8 +78,8 @@ type DescribeLiveRealtimeLogAuthorizedRequest struct {
 // DescribeLiveRealtimeLogAuthorizedResponse is the response struct for api DescribeLiveRealtimeLogAuthorized
 type DescribeLiveRealtimeLogAuthorizedResponse struct {
 	*responses.BaseResponse
-	AuthorizedStatus string `json:"AuthorizedStatus" xml:"AuthorizedStatus"`
 	RequestId        string `json:"RequestId" xml:"RequestId"`
+	AuthorizedStatus string `json:"AuthorizedStatus" xml:"AuthorizedStatus"`
 }
 
 // CreateDescribeLiveRealtimeLogAuthorizedRequest creates a request to invoke DescribeLiveRealtimeLogAuthorized API

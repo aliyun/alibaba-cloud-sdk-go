@@ -17,8 +17,8 @@ package live
 
 // ContentItem is a nested struct in live response
 type ContentItem struct {
-	Domain     string  `json:"Domain" xml:"Domain"`
 	App        string  `json:"App" xml:"App"`
+	Domain     string  `json:"Domain" xml:"Domain"`
 	Flr        float64 `json:"Flr" xml:"Flr"`
 	Timestamp  int64   `json:"Timestamp" xml:"Timestamp"`
 	Bandwidth  float64 `json:"Bandwidth" xml:"Bandwidth"`

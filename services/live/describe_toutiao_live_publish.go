@@ -82,8 +82,8 @@ type DescribeToutiaoLivePublishRequest struct {
 // DescribeToutiaoLivePublishResponse is the response struct for api DescribeToutiaoLivePublish
 type DescribeToutiaoLivePublishResponse struct {
 	*responses.BaseResponse
-	Description string        `json:"Description" xml:"Description"`
 	RequestId   string        `json:"RequestId" xml:"RequestId"`
+	Description string        `json:"Description" xml:"Description"`
 	Content     []ContentItem `json:"Content" xml:"Content"`
 }
 

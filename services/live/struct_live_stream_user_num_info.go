@@ -17,6 +17,6 @@ package live
 
 // LiveStreamUserNumInfo is a nested struct in live response
 type LiveStreamUserNumInfo struct {
-	UserNum    string `json:"UserNum" xml:"UserNum"`
 	StreamTime string `json:"StreamTime" xml:"StreamTime"`
+	UserNum    string `json:"UserNum" xml:"UserNum"`
 }

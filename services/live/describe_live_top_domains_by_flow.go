@@ -80,11 +80,11 @@ type DescribeLiveTopDomainsByFlowRequest struct {
 // DescribeLiveTopDomainsByFlowResponse is the response struct for api DescribeLiveTopDomainsByFlow
 type DescribeLiveTopDomainsByFlowResponse struct {
 	*responses.BaseResponse
-	DomainOnlineCount int64      `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
-	EndTime           string     `json:"EndTime" xml:"EndTime"`
-	StartTime         string     `json:"StartTime" xml:"StartTime"`
 	RequestId         string     `json:"RequestId" xml:"RequestId"`
+	StartTime         string     `json:"StartTime" xml:"StartTime"`
+	EndTime           string     `json:"EndTime" xml:"EndTime"`
 	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
+	DomainOnlineCount int64      `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 

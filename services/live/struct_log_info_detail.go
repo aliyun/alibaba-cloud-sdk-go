@@ -17,9 +17,9 @@ package live
 
 // LogInfoDetail is a nested struct in live response
 type LogInfoDetail struct {
-	EndTime   string `json:"EndTime" xml:"EndTime"`
-	LogSize   int64  `json:"LogSize" xml:"LogSize"`
-	StartTime string `json:"StartTime" xml:"StartTime"`
 	LogName   string `json:"LogName" xml:"LogName"`
 	LogPath   string `json:"LogPath" xml:"LogPath"`
+	LogSize   int64  `json:"LogSize" xml:"LogSize"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
+	EndTime   string `json:"EndTime" xml:"EndTime"`
 }

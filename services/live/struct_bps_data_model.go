@@ -17,8 +17,8 @@ package live
 
 // BpsDataModel is a nested struct in live response
 type BpsDataModel struct {
-	LocationName string `json:"LocationName" xml:"LocationName"`
 	TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
+	LocationName string `json:"LocationName" xml:"LocationName"`
 	IspName      string `json:"IspName" xml:"IspName"`
 	Bps          int64  `json:"Bps" xml:"Bps"`
 }

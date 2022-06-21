@@ -17,10 +17,10 @@ package live
 
 // ShowListInfo is a nested struct in live response
 type ShowListInfo struct {
-	HighPriorityShowStartTime string   `json:"HighPriorityShowStartTime" xml:"HighPriorityShowStartTime"`
-	TotalShowListRepeatTimes  int      `json:"TotalShowListRepeatTimes" xml:"TotalShowListRepeatTimes"`
 	ShowListRepeatTimes       int      `json:"ShowListRepeatTimes" xml:"ShowListRepeatTimes"`
-	CurrentShowId             string   `json:"CurrentShowId" xml:"CurrentShowId"`
+	TotalShowListRepeatTimes  int      `json:"TotalShowListRepeatTimes" xml:"TotalShowListRepeatTimes"`
 	HighPriorityShowId        string   `json:"HighPriorityShowId" xml:"HighPriorityShowId"`
+	HighPriorityShowStartTime string   `json:"HighPriorityShowStartTime" xml:"HighPriorityShowStartTime"`
+	CurrentShowId             string   `json:"CurrentShowId" xml:"CurrentShowId"`
 	ShowList                  ShowList `json:"ShowList" xml:"ShowList"`
 }

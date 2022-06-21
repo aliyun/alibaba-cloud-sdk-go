@@ -17,8 +17,8 @@ package live
 
 // LiveStreamControlInfo is a nested struct in live response
 type LiveStreamControlInfo struct {
-	ClientIP   string `json:"ClientIP" xml:"ClientIP"`
-	TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
-	Action     string `json:"Action" xml:"Action"`
 	StreamName string `json:"StreamName" xml:"StreamName"`
+	ClientIP   string `json:"ClientIP" xml:"ClientIP"`
+	Action     string `json:"Action" xml:"Action"`
+	TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
 }

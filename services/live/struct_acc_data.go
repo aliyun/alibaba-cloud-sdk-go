@@ -18,6 +18,6 @@ package live
 // AccData is a nested struct in live response
 type AccData struct {
 	TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
-	FailedNum  int    `json:"FailedNum" xml:"FailedNum"`
 	SuccessNum int    `json:"SuccessNum" xml:"SuccessNum"`
+	FailedNum  int    `json:"FailedNum" xml:"FailedNum"`
 }

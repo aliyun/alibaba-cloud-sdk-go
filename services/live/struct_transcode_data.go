@@ -17,11 +17,11 @@ package live
 
 // TranscodeData is a nested struct in live response
 type TranscodeData struct {
-	TanscodeType string `json:"TanscodeType" xml:"TanscodeType"`
+	TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
 	Domain       string `json:"Domain" xml:"Domain"`
 	Region       string `json:"Region" xml:"Region"`
-	Duration     int    `json:"Duration" xml:"Duration"`
-	TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
-	Fps          string `json:"Fps" xml:"Fps"`
+	TanscodeType string `json:"TanscodeType" xml:"TanscodeType"`
 	Resolution   string `json:"Resolution" xml:"Resolution"`
+	Fps          string `json:"Fps" xml:"Fps"`
+	Duration     int    `json:"Duration" xml:"Duration"`
 }

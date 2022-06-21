@@ -17,11 +17,11 @@ package live
 
 // TopDomain is a nested struct in live response
 type TopDomain struct {
-	MaxBps         int64  `json:"MaxBps" xml:"MaxBps"`
-	Rank           int64  `json:"Rank" xml:"Rank"`
-	TotalAccess    int64  `json:"TotalAccess" xml:"TotalAccess"`
-	TrafficPercent string `json:"TrafficPercent" xml:"TrafficPercent"`
 	DomainName     string `json:"DomainName" xml:"DomainName"`
+	Rank           int64  `json:"Rank" xml:"Rank"`
 	TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
+	TrafficPercent string `json:"TrafficPercent" xml:"TrafficPercent"`
+	MaxBps         int64  `json:"MaxBps" xml:"MaxBps"`
 	MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
+	TotalAccess    int64  `json:"TotalAccess" xml:"TotalAccess"`
 }

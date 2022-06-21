@@ -17,14 +17,14 @@ package live
 
 // CertInfo is a nested struct in live response
 type CertInfo struct {
-	Status         string `json:"Status" xml:"Status"`
-	CertLife       string `json:"CertLife" xml:"CertLife"`
-	CertExpireTime string `json:"CertExpireTime" xml:"CertExpireTime"`
-	SSLPub         string `json:"SSLPub" xml:"SSLPub"`
-	SSLProtocol    string `json:"SSLProtocol" xml:"SSLProtocol"`
-	CertType       string `json:"CertType" xml:"CertType"`
-	CertDomainName string `json:"CertDomainName" xml:"CertDomainName"`
-	CertName       string `json:"CertName" xml:"CertName"`
-	CertOrg        string `json:"CertOrg" xml:"CertOrg"`
 	DomainName     string `json:"DomainName" xml:"DomainName"`
+	CertName       string `json:"CertName" xml:"CertName"`
+	CertDomainName string `json:"CertDomainName" xml:"CertDomainName"`
+	CertExpireTime string `json:"CertExpireTime" xml:"CertExpireTime"`
+	CertLife       string `json:"CertLife" xml:"CertLife"`
+	CertOrg        string `json:"CertOrg" xml:"CertOrg"`
+	CertType       string `json:"CertType" xml:"CertType"`
+	SSLProtocol    string `json:"SSLProtocol" xml:"SSLProtocol"`
+	Status         string `json:"Status" xml:"Status"`
+	SSLPub         string `json:"SSLPub" xml:"SSLPub"`
 }

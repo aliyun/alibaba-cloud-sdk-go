@@ -90,8 +90,8 @@ type AddLiveAppRecordConfigRequest struct {
 type AddLiveAppRecordConfigTranscodeRecordFormat struct {
 	SliceOssObjectPrefix string `name:"SliceOssObjectPrefix"`
 	SliceDuration        string `name:"SliceDuration"`
-	OssObjectPrefix      string `name:"OssObjectPrefix"`
 	Format               string `name:"Format"`
+	OssObjectPrefix      string `name:"OssObjectPrefix"`
 	CycleDuration        string `name:"CycleDuration"`
 }
 
@@ -99,8 +99,8 @@ type AddLiveAppRecordConfigTranscodeRecordFormat struct {
 type AddLiveAppRecordConfigRecordFormat struct {
 	SliceOssObjectPrefix string `name:"SliceOssObjectPrefix"`
 	SliceDuration        string `name:"SliceDuration"`
-	OssObjectPrefix      string `name:"OssObjectPrefix"`
 	Format               string `name:"Format"`
+	OssObjectPrefix      string `name:"OssObjectPrefix"`
 	CycleDuration        string `name:"CycleDuration"`
 }
 

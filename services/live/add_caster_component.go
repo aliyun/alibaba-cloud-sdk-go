@@ -88,8 +88,8 @@ type AddCasterComponentRequest struct {
 // AddCasterComponentResponse is the response struct for api AddCasterComponent
 type AddCasterComponentResponse struct {
 	*responses.BaseResponse
-	ComponentId string `json:"ComponentId" xml:"ComponentId"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
+	ComponentId string `json:"ComponentId" xml:"ComponentId"`
 }
 
 // CreateAddCasterComponentRequest creates a request to invoke AddCasterComponent API

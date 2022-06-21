@@ -17,17 +17,17 @@ package live
 
 // LiveStreamPublishInfo is a nested struct in live response
 type LiveStreamPublishInfo struct {
-	EdgeNodeAddr  string `json:"EdgeNodeAddr" xml:"EdgeNodeAddr"`
-	PublishUrl    string `json:"PublishUrl" xml:"PublishUrl"`
-	StreamName    string `json:"StreamName" xml:"StreamName"`
 	DomainName    string `json:"DomainName" xml:"DomainName"`
-	StopTime      string `json:"StopTime" xml:"StopTime"`
-	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
-	PublishDomain string `json:"PublishDomain" xml:"PublishDomain"`
 	AppName       string `json:"AppName" xml:"AppName"`
+	StreamName    string `json:"StreamName" xml:"StreamName"`
+	StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
 	PublishTime   string `json:"PublishTime" xml:"PublishTime"`
+	StopTime      string `json:"StopTime" xml:"StopTime"`
+	PublishUrl    string `json:"PublishUrl" xml:"PublishUrl"`
+	ClientAddr    string `json:"ClientAddr" xml:"ClientAddr"`
+	EdgeNodeAddr  string `json:"EdgeNodeAddr" xml:"EdgeNodeAddr"`
+	PublishDomain string `json:"PublishDomain" xml:"PublishDomain"`
 	PublishType   string `json:"PublishType" xml:"PublishType"`
 	Transcoded    string `json:"Transcoded" xml:"Transcoded"`
-	ClientAddr    string `json:"ClientAddr" xml:"ClientAddr"`
-	StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
+	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
 }

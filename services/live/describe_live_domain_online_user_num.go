@@ -80,8 +80,8 @@ type DescribeLiveDomainOnlineUserNumRequest struct {
 type DescribeLiveDomainOnlineUserNumResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	UserCount      int            `json:"UserCount" xml:"UserCount"`
 	StreamCount    int            `json:"StreamCount" xml:"StreamCount"`
+	UserCount      int            `json:"UserCount" xml:"UserCount"`
 	OnlineUserInfo OnlineUserInfo `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 

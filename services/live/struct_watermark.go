@@ -17,16 +17,16 @@ package live
 
 // Watermark is a nested struct in live response
 type Watermark struct {
+	TemplateId   string  `json:"TemplateId" xml:"TemplateId"`
+	Name         string  `json:"Name" xml:"Name"`
 	Type         int     `json:"Type" xml:"Type"`
-	XOffset      float64 `json:"XOffset" xml:"XOffset"`
+	Description  string  `json:"Description" xml:"Description"`
 	RefWidth     int     `json:"RefWidth" xml:"RefWidth"`
+	RefHeight    int     `json:"RefHeight" xml:"RefHeight"`
+	XOffset      float64 `json:"XOffset" xml:"XOffset"`
 	YOffset      float64 `json:"YOffset" xml:"YOffset"`
 	Height       int     `json:"Height" xml:"Height"`
-	RefHeight    int     `json:"RefHeight" xml:"RefHeight"`
-	PictureUrl   string  `json:"PictureUrl" xml:"PictureUrl"`
 	Transparency int     `json:"Transparency" xml:"Transparency"`
-	Description  string  `json:"Description" xml:"Description"`
 	OffsetCorner string  `json:"OffsetCorner" xml:"OffsetCorner"`
-	Name         string  `json:"Name" xml:"Name"`
-	TemplateId   string  `json:"TemplateId" xml:"TemplateId"`
+	PictureUrl   string  `json:"PictureUrl" xml:"PictureUrl"`
 }

@@ -17,7 +17,7 @@ package live
 
 // RealtimeLogDeliveryInfos is a nested struct in live response
 type RealtimeLogDeliveryInfos struct {
-	Logstore string `json:"Logstore" xml:"Logstore"`
 	Project  string `json:"Project" xml:"Project"`
+	Logstore string `json:"Logstore" xml:"Logstore"`
 	Region   string `json:"Region" xml:"Region"`
 }

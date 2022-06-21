@@ -82,8 +82,8 @@ type DescribeLiveRecordVodConfigsRequest struct {
 // DescribeLiveRecordVodConfigsResponse is the response struct for api DescribeLiveRecordVodConfigs
 type DescribeLiveRecordVodConfigsResponse struct {
 	*responses.BaseResponse
-	PageNum              int                  `json:"PageNum" xml:"PageNum"`
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	PageNum              int                  `json:"PageNum" xml:"PageNum"`
 	PageSize             int                  `json:"PageSize" xml:"PageSize"`
 	Total                string               `json:"Total" xml:"Total"`
 	LiveRecordVodConfigs LiveRecordVodConfigs `json:"LiveRecordVodConfigs" xml:"LiveRecordVodConfigs"`

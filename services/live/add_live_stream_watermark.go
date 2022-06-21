@@ -88,8 +88,8 @@ type AddLiveStreamWatermarkRequest struct {
 // AddLiveStreamWatermarkResponse is the response struct for api AddLiveStreamWatermark
 type AddLiveStreamWatermarkResponse struct {
 	*responses.BaseResponse
-	TemplateId string `json:"TemplateId" xml:"TemplateId"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TemplateId string `json:"TemplateId" xml:"TemplateId"`
 }
 
 // CreateAddLiveStreamWatermarkRequest creates a request to invoke AddLiveStreamWatermark API

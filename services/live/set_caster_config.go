@@ -91,8 +91,8 @@ type SetCasterConfigRequest struct {
 // SetCasterConfigResponse is the response struct for api SetCasterConfig
 type SetCasterConfigResponse struct {
 	*responses.BaseResponse
-	CasterId  string `json:"CasterId" xml:"CasterId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	CasterId  string `json:"CasterId" xml:"CasterId"`
 }
 
 // CreateSetCasterConfigRequest creates a request to invoke SetCasterConfig API

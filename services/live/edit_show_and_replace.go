@@ -83,8 +83,8 @@ type EditShowAndReplaceRequest struct {
 // EditShowAndReplaceResponse is the response struct for api EditShowAndReplace
 type EditShowAndReplaceResponse struct {
 	*responses.BaseResponse
-	JobInfo   string `json:"JobInfo" xml:"JobInfo"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobInfo   string `json:"JobInfo" xml:"JobInfo"`
 }
 
 // CreateEditShowAndReplaceRequest creates a request to invoke EditShowAndReplace API

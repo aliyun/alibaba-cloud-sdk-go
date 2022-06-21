@@ -79,8 +79,8 @@ type VerifyLiveDomainOwnerRequest struct {
 // VerifyLiveDomainOwnerResponse is the response struct for api VerifyLiveDomainOwner
 type VerifyLiveDomainOwnerResponse struct {
 	*responses.BaseResponse
-	Content   string `json:"Content" xml:"Content"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Content   string `json:"Content" xml:"Content"`
 }
 
 // CreateVerifyLiveDomainOwnerRequest creates a request to invoke VerifyLiveDomainOwner API

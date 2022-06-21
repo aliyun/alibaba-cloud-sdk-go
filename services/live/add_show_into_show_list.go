@@ -86,8 +86,8 @@ type AddShowIntoShowListRequest struct {
 // AddShowIntoShowListResponse is the response struct for api AddShowIntoShowList
 type AddShowIntoShowListResponse struct {
 	*responses.BaseResponse
-	ShowId    string `json:"ShowId" xml:"ShowId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ShowId    string `json:"ShowId" xml:"ShowId"`
 }
 
 // CreateAddShowIntoShowListRequest creates a request to invoke AddShowIntoShowList API

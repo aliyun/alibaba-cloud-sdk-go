@@ -85,8 +85,8 @@ type AddStudioLayoutRequest struct {
 // AddStudioLayoutResponse is the response struct for api AddStudioLayout
 type AddStudioLayoutResponse struct {
 	*responses.BaseResponse
-	LayoutId  string `json:"LayoutId" xml:"LayoutId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	LayoutId  string `json:"LayoutId" xml:"LayoutId"`
 }
 
 // CreateAddStudioLayoutRequest creates a request to invoke AddStudioLayout API

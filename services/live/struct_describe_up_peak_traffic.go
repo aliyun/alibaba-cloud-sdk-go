@@ -17,8 +17,8 @@ package live
 
 // DescribeUpPeakTraffic is a nested struct in live response
 type DescribeUpPeakTraffic struct {
-	QueryTime string `json:"QueryTime" xml:"QueryTime"`
-	BandWidth string `json:"BandWidth" xml:"BandWidth"`
-	StatName  string `json:"StatName" xml:"StatName"`
 	PeakTime  string `json:"PeakTime" xml:"PeakTime"`
+	QueryTime string `json:"QueryTime" xml:"QueryTime"`
+	StatName  string `json:"StatName" xml:"StatName"`
+	BandWidth string `json:"BandWidth" xml:"BandWidth"`
 }

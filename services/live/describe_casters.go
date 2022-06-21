@@ -86,8 +86,8 @@ type DescribeCastersRequest struct {
 // DescribeCastersResponse is the response struct for api DescribeCasters
 type DescribeCastersResponse struct {
 	*responses.BaseResponse
-	Total      int        `json:"Total" xml:"Total"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Total      int        `json:"Total" xml:"Total"`
 	CasterList CasterList `json:"CasterList" xml:"CasterList"`
 }
 

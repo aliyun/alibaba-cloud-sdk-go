@@ -78,21 +78,21 @@ type ModifyCasterProgramRequest struct {
 
 // ModifyCasterProgramEpisode is a repeated param struct in ModifyCasterProgramRequest
 type ModifyCasterProgramEpisode struct {
-	EndTime     string    `name:"EndTime"`
-	StartTime   string    `name:"StartTime"`
-	EpisodeName string    `name:"EpisodeName"`
-	EpisodeType string    `name:"EpisodeType"`
 	EpisodeId   string    `name:"EpisodeId"`
+	EpisodeType string    `name:"EpisodeType"`
+	EpisodeName string    `name:"EpisodeName"`
 	ResourceId  string    `name:"ResourceId"`
 	ComponentId *[]string `name:"ComponentId" type:"Repeated"`
+	StartTime   string    `name:"StartTime"`
+	EndTime     string    `name:"EndTime"`
 	SwitchType  string    `name:"SwitchType"`
 }
 
 // ModifyCasterProgramResponse is the response struct for api ModifyCasterProgram
 type ModifyCasterProgramResponse struct {
 	*responses.BaseResponse
-	CasterId  string `json:"CasterId" xml:"CasterId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	CasterId  string `json:"CasterId" xml:"CasterId"`
 }
 
 // CreateModifyCasterProgramRequest creates a request to invoke ModifyCasterProgram API

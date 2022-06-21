@@ -17,14 +17,14 @@ package live
 
 // MediaInputConfig is a nested struct in live response
 type MediaInputConfig struct {
+	Id                 string    `json:"Id" xml:"Id"`
 	Index              int       `json:"Index" xml:"Index"`
-	HeightNormalized   float64   `json:"HeightNormalized" xml:"HeightNormalized"`
-	FillMode           string    `json:"FillMode" xml:"FillMode"`
-	PositionRefer      string    `json:"PositionRefer" xml:"PositionRefer"`
 	ChannelId          string    `json:"ChannelId" xml:"ChannelId"`
 	VideoResourceId    string    `json:"VideoResourceId" xml:"VideoResourceId"`
-	WidthNormalized    float64   `json:"WidthNormalized" xml:"WidthNormalized"`
 	ImageMaterialId    string    `json:"ImageMaterialId" xml:"ImageMaterialId"`
-	Id                 string    `json:"Id" xml:"Id"`
+	FillMode           string    `json:"FillMode" xml:"FillMode"`
+	PositionRefer      string    `json:"PositionRefer" xml:"PositionRefer"`
+	WidthNormalized    float64   `json:"WidthNormalized" xml:"WidthNormalized"`
+	HeightNormalized   float64   `json:"HeightNormalized" xml:"HeightNormalized"`
 	PositionNormalized []float64 `json:"PositionNormalized" xml:"PositionNormalized"`
 }
