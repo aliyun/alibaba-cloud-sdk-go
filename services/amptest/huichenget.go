@@ -72,11 +72,23 @@ func (client *Client) HuichengetWithCallback(request *HuichengetRequest, callbac
 type HuichengetRequest struct {
 	*requests.RpcRequest
 	Add     string `position:"Query" name:"Add"`
+	Address string `position:"Query" name:"Address"`
+	Six     string `position:"Query" name:"Six"`
+	Enight  string `position:"Query" name:"Enight"`
+	NewName string `position:"Query" name:"NewName"`
+	List    string `position:"Query" name:"List"`
+	Two     string `position:"Query" name:"Two"`
+	Three   string `position:"Query" name:"Three"`
+	Nigh    string `position:"Query" name:"Nigh"`
+	Red     string `position:"Query" name:"Red"`
 	Apple   string `position:"Query" name:"Apple"`
 	Tea     string `position:"Query" name:"Tea"`
-	Address string `position:"Query" name:"Address"`
-	NewName string `position:"Query" name:"NewName"`
-	Two     string `position:"Query" name:"Two"`
+	Blue    string `position:"Query" name:"Blue"`
+	White   string `position:"Query" name:"White"`
+	Four    string `position:"Query" name:"Four"`
+	Now     string `position:"Query" name:"Now"`
+	Ten     string `position:"Query" name:"Ten"`
+	Five    string `position:"Query" name:"Five"`
 }
 
 // HuichengetResponse is the response struct for api Huichenget
@@ -86,7 +98,11 @@ type HuichengetResponse struct {
 	InstanceId4 string `json:"InstanceId4" xml:"InstanceId4"`
 	Message     string `json:"Message" xml:"Message"`
 	Code        string `json:"Code" xml:"Code"`
-	Context     string `json:"Context" xml:"Context"`
+	Age         string `json:"Age" xml:"Age"`
+	Apple       string `json:"Apple" xml:"Apple"`
+	Five        string `json:"Five" xml:"Five"`
+	Six         string `json:"Six" xml:"Six"`
+	Seven       string `json:"Seven" xml:"Seven"`
 }
 
 // CreateHuichengetRequest creates a request to invoke Huichenget API
