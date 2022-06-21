@@ -1,3 +1,7 @@
+2022-06-21 Version: v1.61.1647
+- Generated 2020-06-16 for `Alb`.
+- Support Latest APIs.
+
 2022-06-21 Version: v1.61.1646
 - Generated 2019-12-30 for `ocr`.
 - Release RecognizeTurkeyIdentityCard RecognizeMalaysiaIdentityCard RecognizeRussiaIdentityCard RecognizeIndonesiaIdentityCard RecognizeUkraineIdentityCard RecognizeVietnamIdentityCard.
