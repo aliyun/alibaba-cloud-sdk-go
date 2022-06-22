@@ -1,3 +1,7 @@
+2022-06-22 Version: v1.61.1651
+- Generated 2019-01-01 for `Cms`.
+- Release Go api.
+
 2022-06-22 Version: v1.61.1650
 - Generated 2020-09-07 for `Config`.
 - Fix bugs.

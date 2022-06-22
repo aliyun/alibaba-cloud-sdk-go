@@ -161,6 +161,7 @@ type CreateHybridMonitorTaskResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   string `json:"Success" xml:"Success"`
+	TaskId    int64  `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateCreateHybridMonitorTaskRequest creates a request to invoke CreateHybridMonitorTask API

@@ -18,7 +18,6 @@ package cms
 // Data is a nested struct in cms response
 type Data struct {
 	UpdateTime                    string            `json:"UpdateTime" xml:"UpdateTime"`
-	SLSGroupName                  int64             `json:"SLSGroupName" xml:"SLSGroupName"`
 	CreateTime                    string            `json:"CreateTime" xml:"CreateTime"`
 	SiteMonitorOperatorQuotaQuota int               `json:"SiteMonitorOperatorQuotaQuota" xml:"SiteMonitorOperatorQuotaQuota"`
 	Count                         int               `json:"count" xml:"count"`
@@ -28,6 +27,7 @@ type Data struct {
 	SiteMonitorTaskQuota          int               `json:"SiteMonitorTaskQuota" xml:"SiteMonitorTaskQuota"`
 	SiteMonitorQuotaTaskUsed      int               `json:"SiteMonitorQuotaTaskUsed" xml:"SiteMonitorQuotaTaskUsed"`
 	SLSGroupDescription           string            `json:"SLSGroupDescription" xml:"SLSGroupDescription"`
+	SLSGroupName                  string            `json:"SLSGroupName" xml:"SLSGroupName"`
 	SLSGroupConfig                []SLS             `json:"SLSGroupConfig" xml:"SLSGroupConfig"`
 	AttachAlertResult             AttachAlertResult `json:"AttachAlertResult" xml:"AttachAlertResult"`
 }

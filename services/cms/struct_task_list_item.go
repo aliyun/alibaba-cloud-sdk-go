@@ -41,6 +41,7 @@ type TaskListItem struct {
 	LogSample             string             `json:"LogSample" xml:"LogSample"`
 	SLSProcess            string             `json:"SLSProcess" xml:"SLSProcess"`
 	Instances             []string           `json:"Instances" xml:"Instances"`
+	SLSProcessConfig      SLSProcessConfig   `json:"SLSProcessConfig" xml:"SLSProcessConfig"`
 	AttachLabels          []AttachLabelsItem `json:"AttachLabels" xml:"AttachLabels"`
 	MatchExpress          []MatchExpressItem `json:"MatchExpress" xml:"MatchExpress"`
 }
