@@ -1,3 +1,8 @@
+2022-06-23 Version: v1.61.1652
+- Generated 2017-09-12 for `Cbn`.
+- Support Vpn-Attachment.
+- Support Sys-Flowlog.
+
 2022-06-22 Version: v1.61.1651
 - Generated 2019-01-01 for `Cms`.
 - Release Go api.
