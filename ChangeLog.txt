@@ -1,3 +1,7 @@
+2022-06-24 Version: v1.61.1653
+- Generated 2019-12-26 for `OutboundBot`.
+- Supported new features for outbound.
+
 2022-06-23 Version: v1.61.1652
 - Generated 2017-09-12 for `Cbn`.
 - Support Vpn-Attachment.

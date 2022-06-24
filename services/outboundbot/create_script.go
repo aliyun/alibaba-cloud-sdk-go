@@ -82,6 +82,7 @@ type CreateScriptRequest struct {
 	ChatbotId          string           `position:"Query" name:"ChatbotId"`
 	InstanceId         string           `position:"Query" name:"InstanceId"`
 	ScriptDescription  string           `position:"Query" name:"ScriptDescription"`
+	LongWaitEnable     requests.Boolean `position:"Query" name:"LongWaitEnable"`
 	ScriptContent      *[]string        `position:"Query" name:"ScriptContent"  type:"Repeated"`
 }
 
