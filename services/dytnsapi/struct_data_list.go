@@ -17,6 +17,7 @@ package dytnsapi
 
 // DataList is a nested struct in dytnsapi response
 type DataList struct {
-	Number string `json:"Number" xml:"Number"`
+	Code   string `json:"Code" xml:"Code"`
 	Status string `json:"Status" xml:"Status"`
+	Number string `json:"Number" xml:"Number"`
 }
