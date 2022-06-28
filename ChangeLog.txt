@@ -1,3 +1,7 @@
+2022-06-28 Version: v1.61.1657
+- Generated 2020-03-20 for `videorecog`.
+- Update RecognizeVideoCastCrewList.
+
 2022-06-28 Version: v1.61.1656
 - Generated 2020-02-17 for `Dytnsapi`.
 - Support Service of number analysis.
