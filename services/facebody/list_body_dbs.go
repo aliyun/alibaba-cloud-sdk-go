@@ -71,16 +71,19 @@ func (client *Client) ListBodyDbsWithCallback(request *ListBodyDbsRequest, callb
 // ListBodyDbsRequest is the request struct for api ListBodyDbs
 type ListBodyDbsRequest struct {
 	*requests.RpcRequest
-	Limit  requests.Integer `position:"Query" name:"Limit"`
-	Offset requests.Integer `position:"Query" name:"Offset"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Limit              requests.Integer `position:"Query" name:"Limit"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	Offset             requests.Integer `position:"Query" name:"Offset"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
 }
 
 // ListBodyDbsResponse is the response struct for api ListBodyDbs
 type ListBodyDbsResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

@@ -17,23 +17,23 @@ package facebody
 
 // DataInExtractPedestrianFeatureAttribute is a nested struct in facebody response
 type DataInExtractPedestrianFeatureAttribute struct {
-	ObjType         string    `json:"ObjType" xml:"ObjType"`
-	ObjTypeScore    float64   `json:"ObjTypeScore" xml:"ObjTypeScore"`
-	Feature         string    `json:"Feature" xml:"Feature"`
 	QualityScore    float64   `json:"QualityScore" xml:"QualityScore"`
-	UpperColor      string    `json:"UpperColor" xml:"UpperColor"`
-	UpperColorScore float64   `json:"UpperColorScore" xml:"UpperColorScore"`
-	UpperType       string    `json:"UpperType" xml:"UpperType"`
-	UpperTypeScore  float64   `json:"UpperTypeScore" xml:"UpperTypeScore"`
-	LowerColor      string    `json:"LowerColor" xml:"LowerColor"`
-	LowerColorScore float64   `json:"LowerColorScore" xml:"LowerColorScore"`
-	LowerType       string    `json:"LowerType" xml:"LowerType"`
-	LowerTypeScore  float64   `json:"LowerTypeScore" xml:"LowerTypeScore"`
+	ObjType         string    `json:"ObjType" xml:"ObjType"`
+	Feature         string    `json:"Feature" xml:"Feature"`
 	Gender          string    `json:"Gender" xml:"Gender"`
-	GenderScore     float64   `json:"GenderScore" xml:"GenderScore"`
-	Hair            string    `json:"Hair" xml:"Hair"`
-	HairScore       float64   `json:"HairScore" xml:"HairScore"`
+	LowerColorScore float64   `json:"LowerColorScore" xml:"LowerColorScore"`
+	ObjTypeScore    float64   `json:"ObjTypeScore" xml:"ObjTypeScore"`
 	Age             string    `json:"Age" xml:"Age"`
 	AgeScore        float64   `json:"AgeScore" xml:"AgeScore"`
+	UpperTypeScore  float64   `json:"UpperTypeScore" xml:"UpperTypeScore"`
+	LowerTypeScore  float64   `json:"LowerTypeScore" xml:"LowerTypeScore"`
+	LowerColor      string    `json:"LowerColor" xml:"LowerColor"`
+	Hair            string    `json:"Hair" xml:"Hair"`
+	UpperColor      string    `json:"UpperColor" xml:"UpperColor"`
+	GenderScore     float64   `json:"GenderScore" xml:"GenderScore"`
+	UpperType       string    `json:"UpperType" xml:"UpperType"`
+	HairScore       float64   `json:"HairScore" xml:"HairScore"`
+	LowerType       string    `json:"LowerType" xml:"LowerType"`
+	UpperColorScore float64   `json:"UpperColorScore" xml:"UpperColorScore"`
 	Elements        []Element `json:"Elements" xml:"Elements"`
 }

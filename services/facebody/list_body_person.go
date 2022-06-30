@@ -71,17 +71,20 @@ func (client *Client) ListBodyPersonWithCallback(request *ListBodyPersonRequest,
 // ListBodyPersonRequest is the request struct for api ListBodyPerson
 type ListBodyPersonRequest struct {
 	*requests.RpcRequest
-	Limit  requests.Integer `position:"Query" name:"Limit"`
-	Offset requests.Integer `position:"Query" name:"Offset"`
-	DbId   requests.Integer `position:"Query" name:"DbId"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Limit              requests.Integer `position:"Query" name:"Limit"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	Offset             requests.Integer `position:"Query" name:"Offset"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	DbId               requests.Integer `position:"Query" name:"DbId"`
 }
 
 // ListBodyPersonResponse is the response struct for api ListBodyPerson
 type ListBodyPersonResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

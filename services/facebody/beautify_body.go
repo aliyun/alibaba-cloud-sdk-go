@@ -71,18 +71,62 @@ func (client *Client) BeautifyBodyWithCallback(request *BeautifyBodyRequest, cal
 // BeautifyBodyRequest is the request struct for api BeautifyBody
 type BeautifyBodyRequest struct {
 	*requests.RpcRequest
-	BodyBoxes           string           `position:"Body" name:"BodyBoxes"`
-	LengthenDegree      requests.Float   `position:"Body" name:"LengthenDegree"`
-	MaleLiquifyDegree   requests.Float   `position:"Body" name:"MaleLiquifyDegree"`
-	OriginalWidth       requests.Integer `position:"Body" name:"OriginalWidth"`
-	IsPregnant          requests.Boolean `position:"Body" name:"IsPregnant"`
-	FaceList            string           `position:"Body" name:"FaceList"`
-	AgeRange            string           `position:"Body" name:"AgeRange"`
-	Custom              requests.Integer `position:"Body" name:"Custom"`
-	OriginalHeight      requests.Integer `position:"Body" name:"OriginalHeight"`
-	ImageURL            string           `position:"Body" name:"ImageURL"`
-	FemaleLiquifyDegree requests.Float   `position:"Body" name:"FemaleLiquifyDegree"`
-	PoseList            string           `position:"Body" name:"PoseList"`
+	BodyBoxes           *[]BeautifyBodyBodyBoxes `position:"Body" name:"BodyBoxes"  type:"Json"`
+	LengthenDegree      requests.Float           `position:"Body" name:"LengthenDegree"`
+	MaleLiquifyDegree   requests.Float           `position:"Body" name:"MaleLiquifyDegree"`
+	FormatResultToJson  requests.Boolean         `position:"Query" name:"FormatResultToJson"`
+	OriginalWidth       requests.Integer         `position:"Body" name:"OriginalWidth"`
+	IsPregnant          requests.Boolean         `position:"Body" name:"IsPregnant"`
+	FaceList            *[]BeautifyBodyFaceList  `position:"Body" name:"FaceList"  type:"Json"`
+	OssFile             string                   `position:"Query" name:"OssFile"`
+	AgeRange            BeautifyBodyAgeRange     `position:"Body" name:"AgeRange"  type:"Struct"`
+	Custom              requests.Integer         `position:"Body" name:"Custom"`
+	RequestProxyBy      string                   `position:"Query" name:"RequestProxyBy"`
+	OriginalHeight      requests.Integer         `position:"Body" name:"OriginalHeight"`
+	ImageURL            string                   `position:"Body" name:"ImageURL"`
+	FemaleLiquifyDegree requests.Float           `position:"Body" name:"FemaleLiquifyDegree"`
+	PoseList            *[]BeautifyBodyPoseList  `position:"Body" name:"PoseList"  type:"Json"`
+}
+
+// BeautifyBodyBodyBoxes is a repeated param struct in BeautifyBodyRequest
+type BeautifyBodyBodyBoxes struct {
+	X      string `name:"X"`
+	Width  string `name:"Width"`
+	Y      string `name:"Y"`
+	Height string `name:"Height"`
+}
+
+// BeautifyBodyFaceList is a repeated param struct in BeautifyBodyRequest
+type BeautifyBodyFaceList struct {
+	Gender  string                      `name:"Gender"`
+	FaceBox BeautifyBodyFaceListFaceBox `name:"FaceBox" type:"Struct"`
+	Age     string                      `name:"Age"`
+}
+
+// BeautifyBodyPoseList is a repeated param struct in BeautifyBodyRequest
+type BeautifyBodyPoseList struct {
+	Pose *[]BeautifyBodyPoseListPoseItem `name:"Pose" type:"Repeated"`
+}
+
+// BeautifyBodyFaceListFaceBox is a repeated param struct in BeautifyBodyRequest
+type BeautifyBodyFaceListFaceBox struct {
+	X      string `name:"X"`
+	Width  string `name:"Width"`
+	Y      string `name:"Y"`
+	Height string `name:"Height"`
+}
+
+// BeautifyBodyPoseListPoseItem is a repeated param struct in BeautifyBodyRequest
+type BeautifyBodyPoseListPoseItem struct {
+	Score string `name:"Score"`
+	X     string `name:"X"`
+	Y     string `name:"Y"`
+}
+
+// BeautifyBodyAgeRange is a repeated param struct in BeautifyBodyRequest
+type BeautifyBodyAgeRange struct {
+	AgeMax     string `name:"AgeMax"`
+	AgeMinimum string `name:"AgeMinimum"`
 }
 
 // BeautifyBodyResponse is the response struct for api BeautifyBody

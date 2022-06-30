@@ -71,9 +71,12 @@ func (client *Client) FaceFilterWithCallback(request *FaceFilterRequest, callbac
 // FaceFilterRequest is the request struct for api FaceFilter
 type FaceFilterRequest struct {
 	*requests.RpcRequest
-	Strength     requests.Float `position:"Body" name:"Strength"`
-	ResourceType string         `position:"Body" name:"ResourceType"`
-	ImageURL     string         `position:"Body" name:"ImageURL"`
+	Strength           requests.Float   `position:"Body" name:"Strength"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	ResourceType       string           `position:"Body" name:"ResourceType"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // FaceFilterResponse is the response struct for api FaceFilter

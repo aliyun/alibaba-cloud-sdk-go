@@ -1,3 +1,7 @@
+2022-06-30 Version: v1.61.1659
+- Generated 2019-12-30 for `facebody`.
+- Update ListFaceDbs.
+
 2022-06-28 Version: v1.61.1658
 - Generated 2017-12-14 for `BssOpenApi`.
 - Update QuerySavingsPlansDeductLog add field OwnerId.

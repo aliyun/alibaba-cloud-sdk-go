@@ -71,7 +71,10 @@ func (client *Client) CreateFaceDbWithCallback(request *CreateFaceDbRequest, cal
 // CreateFaceDbRequest is the request struct for api CreateFaceDb
 type CreateFaceDbRequest struct {
 	*requests.RpcRequest
-	Name string `position:"Body" name:"Name"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Name               string           `position:"Body" name:"Name"`
 }
 
 // CreateFaceDbResponse is the response struct for api CreateFaceDb

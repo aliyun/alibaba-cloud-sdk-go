@@ -71,7 +71,10 @@ func (client *Client) DetectBodyCountWithCallback(request *DetectBodyCountReques
 // DetectBodyCountRequest is the request struct for api DetectBodyCount
 type DetectBodyCountRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // DetectBodyCountResponse is the response struct for api DetectBodyCount

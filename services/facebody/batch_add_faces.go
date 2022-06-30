@@ -71,12 +71,21 @@ func (client *Client) BatchAddFacesWithCallback(request *BatchAddFacesRequest, c
 // BatchAddFacesRequest is the request struct for api BatchAddFaces
 type BatchAddFacesRequest struct {
 	*requests.RpcRequest
-	EntityId                              string         `position:"Body" name:"EntityId"`
-	QualityScoreThreshold                 requests.Float `position:"Body" name:"QualityScoreThreshold"`
-	SimilarityScoreThresholdBetweenEntity requests.Float `position:"Body" name:"SimilarityScoreThresholdBetweenEntity"`
-	SimilarityScoreThresholdInEntity      requests.Float `position:"Body" name:"SimilarityScoreThresholdInEntity"`
-	DbName                                string         `position:"Body" name:"DbName"`
-	Faces                                 string         `position:"Body" name:"Faces"`
+	EntityId                              string                `position:"Body" name:"EntityId"`
+	FormatResultToJson                    requests.Boolean      `position:"Query" name:"FormatResultToJson"`
+	QualityScoreThreshold                 requests.Float        `position:"Body" name:"QualityScoreThreshold"`
+	SimilarityScoreThresholdBetweenEntity requests.Float        `position:"Body" name:"SimilarityScoreThresholdBetweenEntity"`
+	OssFile                               string                `position:"Query" name:"OssFile"`
+	SimilarityScoreThresholdInEntity      requests.Float        `position:"Body" name:"SimilarityScoreThresholdInEntity"`
+	RequestProxyBy                        string                `position:"Query" name:"RequestProxyBy"`
+	DbName                                string                `position:"Body" name:"DbName"`
+	Faces                                 *[]BatchAddFacesFaces `position:"Body" name:"Faces"  type:"Json"`
+}
+
+// BatchAddFacesFaces is a repeated param struct in BatchAddFacesRequest
+type BatchAddFacesFaces struct {
+	ExtraData string `name:"ExtraData"`
+	ImageURL  string `name:"ImageURL"`
 }
 
 // BatchAddFacesResponse is the response struct for api BatchAddFaces

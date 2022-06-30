@@ -71,7 +71,10 @@ func (client *Client) DetectCelebrityWithCallback(request *DetectCelebrityReques
 // DetectCelebrityRequest is the request struct for api DetectCelebrity
 type DetectCelebrityRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // DetectCelebrityResponse is the response struct for api DetectCelebrity

@@ -71,8 +71,11 @@ func (client *Client) DeleteFaceEntityWithCallback(request *DeleteFaceEntityRequ
 // DeleteFaceEntityRequest is the request struct for api DeleteFaceEntity
 type DeleteFaceEntityRequest struct {
 	*requests.RpcRequest
-	EntityId string `position:"Body" name:"EntityId"`
-	DbName   string `position:"Body" name:"DbName"`
+	EntityId           string           `position:"Body" name:"EntityId"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	DbName             string           `position:"Body" name:"DbName"`
 }
 
 // DeleteFaceEntityResponse is the response struct for api DeleteFaceEntity

@@ -71,7 +71,10 @@ func (client *Client) DetectVideoLivingFaceWithCallback(request *DetectVideoLivi
 // DetectVideoLivingFaceRequest is the request struct for api DetectVideoLivingFace
 type DetectVideoLivingFaceRequest struct {
 	*requests.RpcRequest
-	VideoUrl string `position:"Body" name:"VideoUrl"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	VideoUrl           string           `position:"Body" name:"VideoUrl"`
 }
 
 // DetectVideoLivingFaceResponse is the response struct for api DetectVideoLivingFace

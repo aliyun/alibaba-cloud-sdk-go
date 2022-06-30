@@ -71,9 +71,12 @@ func (client *Client) RecognizeHandGestureWithCallback(request *RecognizeHandGes
 // RecognizeHandGestureRequest is the request struct for api RecognizeHandGesture
 type RecognizeHandGestureRequest struct {
 	*requests.RpcRequest
-	GestureType string `position:"Body" name:"GestureType"`
-	AppId       string `position:"Body" name:"AppId"`
-	ImageURL    string `position:"Body" name:"ImageURL"`
+	GestureType        string           `position:"Body" name:"GestureType"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	AppId              string           `position:"Body" name:"AppId"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // RecognizeHandGestureResponse is the response struct for api RecognizeHandGesture

@@ -71,16 +71,19 @@ func (client *Client) DeleteBodyPersonWithCallback(request *DeleteBodyPersonRequ
 // DeleteBodyPersonRequest is the request struct for api DeleteBodyPerson
 type DeleteBodyPersonRequest struct {
 	*requests.RpcRequest
-	PersonId requests.Integer `position:"Body" name:"PersonId"`
-	DbId     requests.Integer `position:"Body" name:"DbId"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	PersonId           requests.Integer `position:"Body" name:"PersonId"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	DbId               requests.Integer `position:"Body" name:"DbId"`
 }
 
 // DeleteBodyPersonResponse is the response struct for api DeleteBodyPerson
 type DeleteBodyPersonResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateDeleteBodyPersonRequest creates a request to invoke DeleteBodyPerson API

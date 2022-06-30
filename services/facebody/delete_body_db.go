@@ -71,15 +71,18 @@ func (client *Client) DeleteBodyDbWithCallback(request *DeleteBodyDbRequest, cal
 // DeleteBodyDbRequest is the request struct for api DeleteBodyDb
 type DeleteBodyDbRequest struct {
 	*requests.RpcRequest
-	Id requests.Integer `position:"Body" name:"Id"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Id                 requests.Integer `position:"Body" name:"Id"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
 }
 
 // DeleteBodyDbResponse is the response struct for api DeleteBodyDb
 type DeleteBodyDbResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateDeleteBodyDbRequest creates a request to invoke DeleteBodyDb API
