@@ -1,3 +1,7 @@
+2022-06-30 Version: v1.61.1661
+- Generated 2018-08-28 for `Tag`.
+- Add Policy APIs.
+
 2022-06-30 Version: v1.61.1660
 - Generated 2022-03-31 for `apds`.
 - CreateMigrationJob SDK.
