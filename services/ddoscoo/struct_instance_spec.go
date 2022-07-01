@@ -17,14 +17,15 @@ package ddoscoo
 
 // InstanceSpec is a nested struct in ddoscoo response
 type InstanceSpec struct {
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
 	BaseBandwidth    int    `json:"BaseBandwidth" xml:"BaseBandwidth"`
-	ElasticBandwidth int    `json:"ElasticBandwidth" xml:"ElasticBandwidth"`
-	PortLimit        int    `json:"PortLimit" xml:"PortLimit"`
-	SiteLimit        int    `json:"SiteLimit" xml:"SiteLimit"`
-	DomainLimit      int    `json:"DomainLimit" xml:"DomainLimit"`
-	BandwidthMbps    int    `json:"BandwidthMbps" xml:"BandwidthMbps"`
-	DefenseCount     int    `json:"DefenseCount" xml:"DefenseCount"`
-	FunctionVersion  string `json:"FunctionVersion" xml:"FunctionVersion"`
 	QpsLimit         int    `json:"QpsLimit" xml:"QpsLimit"`
+	BandwidthMbps    int    `json:"BandwidthMbps" xml:"BandwidthMbps"`
+	ElasticBw        int    `json:"ElasticBw" xml:"ElasticBw"`
+	DefenseCount     int    `json:"DefenseCount" xml:"DefenseCount"`
+	SiteLimit        int    `json:"SiteLimit" xml:"SiteLimit"`
+	PortLimit        int    `json:"PortLimit" xml:"PortLimit"`
+	ElasticBandwidth int    `json:"ElasticBandwidth" xml:"ElasticBandwidth"`
+	FunctionVersion  string `json:"FunctionVersion" xml:"FunctionVersion"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+	DomainLimit      int    `json:"DomainLimit" xml:"DomainLimit"`
 }

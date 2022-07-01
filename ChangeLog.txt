@@ -1,3 +1,7 @@
+2022-07-01 Version: v1.61.1662
+- Generated 2020-01-01 for `ddoscoo`.
+- Update sdk.
+
 2022-06-30 Version: v1.61.1661
 - Generated 2018-08-28 for `Tag`.
 - Add Policy APIs.

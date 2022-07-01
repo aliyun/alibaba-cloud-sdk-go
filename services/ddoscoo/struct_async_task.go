@@ -17,11 +17,11 @@ package ddoscoo
 
 // AsyncTask is a nested struct in ddoscoo response
 type AsyncTask struct {
-	TaskId     int64  `json:"TaskId" xml:"TaskId"`
 	EndTime    int64  `json:"EndTime" xml:"EndTime"`
+	TaskType   int    `json:"TaskType" xml:"TaskType"`
 	StartTime  int64  `json:"StartTime" xml:"StartTime"`
+	TaskParams string `json:"TaskParams" xml:"TaskParams"`
 	TaskStatus int    `json:"TaskStatus" xml:"TaskStatus"`
 	TaskResult string `json:"TaskResult" xml:"TaskResult"`
-	TaskParams string `json:"TaskParams" xml:"TaskParams"`
-	TaskType   int    `json:"TaskType" xml:"TaskType"`
+	TaskId     int64  `json:"TaskId" xml:"TaskId"`
 }

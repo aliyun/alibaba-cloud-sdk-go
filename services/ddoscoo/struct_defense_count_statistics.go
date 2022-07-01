@@ -17,7 +17,8 @@ package ddoscoo
 
 // DefenseCountStatistics is a nested struct in ddoscoo response
 type DefenseCountStatistics struct {
-	DefenseCountTotalUsageOfCurrentMonth int `json:"DefenseCountTotalUsageOfCurrentMonth" xml:"DefenseCountTotalUsageOfCurrentMonth"`
 	FlowPackCountRemain                  int `json:"FlowPackCountRemain" xml:"FlowPackCountRemain"`
 	MaxUsableDefenseCountCurrentMonth    int `json:"MaxUsableDefenseCountCurrentMonth" xml:"MaxUsableDefenseCountCurrentMonth"`
+	DefenseCountTotalUsageOfCurrentMonth int `json:"DefenseCountTotalUsageOfCurrentMonth" xml:"DefenseCountTotalUsageOfCurrentMonth"`
+	SecHighSpeedCountRemain              int `json:"SecHighSpeedCountRemain" xml:"SecHighSpeedCountRemain"`
 }

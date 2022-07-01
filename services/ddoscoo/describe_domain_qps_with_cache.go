@@ -81,18 +81,18 @@ type DescribeDomainQpsWithCacheRequest struct {
 // DescribeDomainQpsWithCacheResponse is the response struct for api DescribeDomainQpsWithCache
 type DescribeDomainQpsWithCacheResponse struct {
 	*responses.BaseResponse
+	StartTime     int64    `json:"StartTime" xml:"StartTime"`
 	RequestId     string   `json:"RequestId" xml:"RequestId"`
 	Interval      int      `json:"Interval" xml:"Interval"`
-	StartTime     int64    `json:"StartTime" xml:"StartTime"`
-	Totals        []string `json:"Totals" xml:"Totals"`
 	Blocks        []string `json:"Blocks" xml:"Blocks"`
-	CacheHits     []string `json:"CacheHits" xml:"CacheHits"`
-	PreciseBlocks []string `json:"PreciseBlocks" xml:"PreciseBlocks"`
-	RegionBlocks  []string `json:"RegionBlocks" xml:"RegionBlocks"`
-	IpBlockQps    []string `json:"IpBlockQps" xml:"IpBlockQps"`
-	CcJsQps       []string `json:"CcJsQps" xml:"CcJsQps"`
-	PreciseJsQps  []string `json:"PreciseJsQps" xml:"PreciseJsQps"`
 	CcBlockQps    []string `json:"CcBlockQps" xml:"CcBlockQps"`
+	PreciseJsQps  []string `json:"PreciseJsQps" xml:"PreciseJsQps"`
+	CcJsQps       []string `json:"CcJsQps" xml:"CcJsQps"`
+	RegionBlocks  []string `json:"RegionBlocks" xml:"RegionBlocks"`
+	PreciseBlocks []string `json:"PreciseBlocks" xml:"PreciseBlocks"`
+	CacheHits     []string `json:"CacheHits" xml:"CacheHits"`
+	Totals        []string `json:"Totals" xml:"Totals"`
+	IpBlockQps    []string `json:"IpBlockQps" xml:"IpBlockQps"`
 }
 
 // CreateDescribeDomainQpsWithCacheRequest creates a request to invoke DescribeDomainQpsWithCache API
@@ -100,7 +100,7 @@ func CreateDescribeDomainQpsWithCacheRequest() (request *DescribeDomainQpsWithCa
 	request = &DescribeDomainQpsWithCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeDomainQpsWithCache", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainQpsWithCache", "", "")
 	request.Method = requests.POST
 	return
 }

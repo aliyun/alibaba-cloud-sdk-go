@@ -79,12 +79,12 @@ type DescribeSlsLogstoreInfoRequest struct {
 // DescribeSlsLogstoreInfoResponse is the response struct for api DescribeSlsLogstoreInfo
 type DescribeSlsLogstoreInfoResponse struct {
 	*responses.BaseResponse
+	Ttl       int    `json:"Ttl" xml:"Ttl"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Quota     int64  `json:"Quota" xml:"Quota"`
 	LogStore  string `json:"LogStore" xml:"LogStore"`
 	Used      int64  `json:"Used" xml:"Used"`
 	Project   string `json:"Project" xml:"Project"`
-	Ttl       int    `json:"Ttl" xml:"Ttl"`
 }
 
 // CreateDescribeSlsLogstoreInfoRequest creates a request to invoke DescribeSlsLogstoreInfo API
@@ -92,7 +92,7 @@ func CreateDescribeSlsLogstoreInfoRequest() (request *DescribeSlsLogstoreInfoReq
 	request = &DescribeSlsLogstoreInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeSlsLogstoreInfo", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSlsLogstoreInfo", "", "")
 	request.Method = requests.POST
 	return
 }
