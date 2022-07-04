@@ -1,3 +1,9 @@
+2022-07-04 Version: v1.61.1663
+- Generated 2017-09-12 for `Cbn`.
+- Support autoPulibshRoute for UpdateTransitRouterVpnAttachment.
+- Support Vpn-Attachment.
+- Support Sys-Flowlog.
+
 2022-07-01 Version: v1.61.1662
 - Generated 2020-01-01 for `ddoscoo`.
 - Update sdk.
