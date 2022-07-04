@@ -89,7 +89,7 @@ func CreateQueryUserGroupListByParentIdRequest() (request *QueryUserGroupListByP
 	request = &QueryUserGroupListByParentIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserGroupListByParentId", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserGroupListByParentId", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateCancelAuthorizationMenuRequest() (request *CancelAuthorizationMenuReq
 	request = &CancelAuthorizationMenuRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CancelAuthorizationMenu", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CancelAuthorizationMenu", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

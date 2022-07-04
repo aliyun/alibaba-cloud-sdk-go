@@ -92,7 +92,7 @@ func CreateListFavoriteReportsRequest() (request *ListFavoriteReportsRequest) {
 	request = &ListFavoriteReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListFavoriteReports", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListFavoriteReports", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

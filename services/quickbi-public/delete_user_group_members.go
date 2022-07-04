@@ -90,7 +90,7 @@ func CreateDeleteUserGroupMembersRequest() (request *DeleteUserGroupMembersReque
 	request = &DeleteUserGroupMembersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteUserGroupMembers", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteUserGroupMembers", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateAddWorkspaceUsersRequest() (request *AddWorkspaceUsersRequest) {
 	request = &AddWorkspaceUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AddWorkspaceUsers", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AddWorkspaceUsers", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

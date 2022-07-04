@@ -89,7 +89,7 @@ func CreateWithdrawAllUserGroupsRequest() (request *WithdrawAllUserGroupsRequest
 	request = &WithdrawAllUserGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateQueryUserInfoByUserIdRequest() (request *QueryUserInfoByUserIdRequest
 	request = &QueryUserInfoByUserIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserInfoByUserId", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserInfoByUserId", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

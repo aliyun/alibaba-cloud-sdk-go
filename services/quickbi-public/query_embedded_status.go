@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateUserTagValue invokes the quickbi_public.UpdateUserTagValue API synchronously
-func (client *Client) UpdateUserTagValue(request *UpdateUserTagValueRequest) (response *UpdateUserTagValueResponse, err error) {
-	response = CreateUpdateUserTagValueResponse()
+// QueryEmbeddedStatus invokes the quickbi_public.QueryEmbeddedStatus API synchronously
+func (client *Client) QueryEmbeddedStatus(request *QueryEmbeddedStatusRequest) (response *QueryEmbeddedStatusResponse, err error) {
+	response = CreateQueryEmbeddedStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateUserTagValueWithChan invokes the quickbi_public.UpdateUserTagValue API asynchronously
-func (client *Client) UpdateUserTagValueWithChan(request *UpdateUserTagValueRequest) (<-chan *UpdateUserTagValueResponse, <-chan error) {
-	responseChan := make(chan *UpdateUserTagValueResponse, 1)
+// QueryEmbeddedStatusWithChan invokes the quickbi_public.QueryEmbeddedStatus API asynchronously
+func (client *Client) QueryEmbeddedStatusWithChan(request *QueryEmbeddedStatusRequest) (<-chan *QueryEmbeddedStatusResponse, <-chan error) {
+	responseChan := make(chan *QueryEmbeddedStatusResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateUserTagValue(request)
+		response, err := client.QueryEmbeddedStatus(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateUserTagValueWithChan(request *UpdateUserTagValueRequ
 	return responseChan, errChan
 }
 
-// UpdateUserTagValueWithCallback invokes the quickbi_public.UpdateUserTagValue API asynchronously
-func (client *Client) UpdateUserTagValueWithCallback(request *UpdateUserTagValueRequest, callback func(response *UpdateUserTagValueResponse, err error)) <-chan int {
+// QueryEmbeddedStatusWithCallback invokes the quickbi_public.QueryEmbeddedStatus API asynchronously
+func (client *Client) QueryEmbeddedStatusWithCallback(request *QueryEmbeddedStatusRequest, callback func(response *QueryEmbeddedStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateUserTagValueResponse
+		var response *QueryEmbeddedStatusResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateUserTagValue(request)
+		response, err = client.QueryEmbeddedStatus(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,35 @@ func (client *Client) UpdateUserTagValueWithCallback(request *UpdateUserTagValue
 	return result
 }
 
-// UpdateUserTagValueRequest is the request struct for api UpdateUserTagValue
-type UpdateUserTagValueRequest struct {
+// QueryEmbeddedStatusRequest is the request struct for api QueryEmbeddedStatus
+type QueryEmbeddedStatusRequest struct {
 	*requests.RpcRequest
-	TagValue    string `position:"Query" name:"TagValue"`
-	TagId       string `position:"Query" name:"TagId"`
+	WorksId     string `position:"Query" name:"WorksId"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
-	UserId      string `position:"Query" name:"UserId"`
 }
 
-// UpdateUserTagValueResponse is the response struct for api UpdateUserTagValue
-type UpdateUserTagValueResponse struct {
+// QueryEmbeddedStatusResponse is the response struct for api QueryEmbeddedStatus
+type QueryEmbeddedStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateUpdateUserTagValueRequest creates a request to invoke UpdateUserTagValue API
-func CreateUpdateUserTagValueRequest() (request *UpdateUserTagValueRequest) {
-	request = &UpdateUserTagValueRequest{
+// CreateQueryEmbeddedStatusRequest creates a request to invoke QueryEmbeddedStatus API
+func CreateQueryEmbeddedStatusRequest() (request *QueryEmbeddedStatusRequest) {
+	request = &QueryEmbeddedStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateUserTagValue", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryEmbeddedStatus", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateUpdateUserTagValueResponse creates a response to parse from UpdateUserTagValue response
-func CreateUpdateUserTagValueResponse() (response *UpdateUserTagValueResponse) {
-	response = &UpdateUserTagValueResponse{
+// CreateQueryEmbeddedStatusResponse creates a response to parse from QueryEmbeddedStatus response
+func CreateQueryEmbeddedStatusResponse() (response *QueryEmbeddedStatusResponse) {
+	response = &QueryEmbeddedStatusResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -92,7 +92,7 @@ func CreateQueryUserListRequest() (request *QueryUserListRequest) {
 	request = &QueryUserListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserList", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserList", "quickbi", "openAPI")
 	request.Method = requests.GET
 	return
 }

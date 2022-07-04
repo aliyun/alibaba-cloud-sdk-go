@@ -90,7 +90,7 @@ func CreateCheckReadableRequest() (request *CheckReadableRequest) {
 	request = &CheckReadableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CheckReadable", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CheckReadable", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

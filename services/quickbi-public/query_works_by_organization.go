@@ -93,7 +93,7 @@ func CreateQueryWorksByOrganizationRequest() (request *QueryWorksByOrganizationR
 	request = &QueryWorksByOrganizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorksByOrganization", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorksByOrganization", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

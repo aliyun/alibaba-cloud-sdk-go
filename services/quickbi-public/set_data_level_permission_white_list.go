@@ -89,7 +89,7 @@ func CreateSetDataLevelPermissionWhiteListRequest() (request *SetDataLevelPermis
 	request = &SetDataLevelPermissionWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "SetDataLevelPermissionWhiteList", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "SetDataLevelPermissionWhiteList", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }

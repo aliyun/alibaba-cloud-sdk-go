@@ -89,7 +89,7 @@ func CreateQueryReadableResourcesListByUserIdRequest() (request *QueryReadableRe
 	request = &QueryReadableResourcesListByUserIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserId", "quick", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserId", "quickbi", "openAPI")
 	request.Method = requests.POST
 	return
 }
