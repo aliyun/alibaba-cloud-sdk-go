@@ -89,7 +89,7 @@ func CreateDeleteDataLevelPermissionRuleUsersRequest() (request *DeleteDataLevel
 	request = &DeleteDataLevelPermissionRuleUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteDataLevelPermissionRuleUsers", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteDataLevelPermissionRuleUsers", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

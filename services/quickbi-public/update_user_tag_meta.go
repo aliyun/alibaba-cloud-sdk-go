@@ -91,7 +91,7 @@ func CreateUpdateUserTagMetaRequest() (request *UpdateUserTagMetaRequest) {
 	request = &UpdateUserTagMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateUserTagMeta", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateUserTagMeta", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateQueryWorksBloodRelationshipRequest() (request *QueryWorksBloodRelatio
 	request = &QueryWorksBloodRelationshipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorksBloodRelationship", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorksBloodRelationship", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateUpdateEmbeddedStatusRequest() (request *UpdateEmbeddedStatusRequest) 
 	request = &UpdateEmbeddedStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

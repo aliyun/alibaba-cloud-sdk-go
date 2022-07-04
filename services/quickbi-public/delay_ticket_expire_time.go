@@ -90,7 +90,7 @@ func CreateDelayTicketExpireTimeRequest() (request *DelayTicketExpireTimeRequest
 	request = &DelayTicketExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DelayTicketExpireTime", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DelayTicketExpireTime", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateUpdateWorkspaceUserRoleRequest() (request *UpdateWorkspaceUserRoleReq
 	request = &UpdateWorkspaceUserRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "UpdateWorkspaceUserRole", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

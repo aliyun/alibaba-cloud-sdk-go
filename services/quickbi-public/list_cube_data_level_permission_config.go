@@ -90,7 +90,7 @@ func CreateListCubeDataLevelPermissionConfigRequest() (request *ListCubeDataLeve
 	request = &ListCubeDataLevelPermissionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListCubeDataLevelPermissionConfig", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListCubeDataLevelPermissionConfig", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

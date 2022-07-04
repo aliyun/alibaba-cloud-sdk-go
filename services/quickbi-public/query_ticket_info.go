@@ -89,7 +89,7 @@ func CreateQueryTicketInfoRequest() (request *QueryTicketInfoRequest) {
 	request = &QueryTicketInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryTicketInfo", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryTicketInfo", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

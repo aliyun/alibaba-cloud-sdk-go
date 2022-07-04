@@ -89,7 +89,7 @@ func CreateGetUserGroupInfoRequest() (request *GetUserGroupInfoRequest) {
 	request = &GetUserGroupInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "GetUserGroupInfo", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "GetUserGroupInfo", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

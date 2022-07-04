@@ -90,7 +90,7 @@ func CreateQueryUserRoleInfoInWorkspaceRequest() (request *QueryUserRoleInfoInWo
 	request = &QueryUserRoleInfoInWorkspaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserRoleInfoInWorkspace", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserRoleInfoInWorkspace", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

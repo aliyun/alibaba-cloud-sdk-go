@@ -90,7 +90,7 @@ func CreateAddDataLevelPermissionRuleUsersRequest() (request *AddDataLevelPermis
 	request = &AddDataLevelPermissionRuleUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AddDataLevelPermissionRuleUsers", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "AddDataLevelPermissionRuleUsers", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

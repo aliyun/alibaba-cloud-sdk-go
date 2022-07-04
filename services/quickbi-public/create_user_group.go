@@ -93,7 +93,7 @@ func CreateCreateUserGroupRequest() (request *CreateUserGroupRequest) {
 	request = &CreateUserGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CreateUserGroup", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CreateUserGroup", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

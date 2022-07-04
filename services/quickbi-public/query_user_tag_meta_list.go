@@ -88,7 +88,7 @@ func CreateQueryUserTagMetaListRequest() (request *QueryUserTagMetaListRequest) 
 	request = &QueryUserTagMetaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserTagMetaList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserTagMetaList", "quick", "openAPI")
 	request.Method = requests.GET
 	return
 }

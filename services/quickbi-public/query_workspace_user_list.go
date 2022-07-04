@@ -92,7 +92,7 @@ func CreateQueryWorkspaceUserListRequest() (request *QueryWorkspaceUserListReque
 	request = &QueryWorkspaceUserListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorkspaceUserList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorkspaceUserList", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }

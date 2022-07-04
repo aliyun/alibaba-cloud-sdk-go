@@ -89,7 +89,7 @@ func CreateQueryUserTagValueListRequest() (request *QueryUserTagValueListRequest
 	request = &QueryUserTagValueListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserTagValueList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserTagValueList", "quick", "openAPI")
 	request.Method = requests.GET
 	return
 }

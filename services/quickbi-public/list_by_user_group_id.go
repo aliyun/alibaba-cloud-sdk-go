@@ -89,7 +89,7 @@ func CreateListByUserGroupIdRequest() (request *ListByUserGroupIdRequest) {
 	request = &ListByUserGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListByUserGroupId", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListByUserGroupId", "quick", "openAPI")
 	request.Method = requests.POST
 	return
 }
