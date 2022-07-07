@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateUserTags invokes the ecd.CreateUserTags API synchronously
-func (client *Client) CreateUserTags(request *CreateUserTagsRequest) (response *CreateUserTagsResponse, err error) {
-	response = CreateCreateUserTagsResponse()
+// CancelCopyImage invokes the ecd.CancelCopyImage API synchronously
+func (client *Client) CancelCopyImage(request *CancelCopyImageRequest) (response *CancelCopyImageResponse, err error) {
+	response = CreateCancelCopyImageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateUserTagsWithChan invokes the ecd.CreateUserTags API asynchronously
-func (client *Client) CreateUserTagsWithChan(request *CreateUserTagsRequest) (<-chan *CreateUserTagsResponse, <-chan error) {
-	responseChan := make(chan *CreateUserTagsResponse, 1)
+// CancelCopyImageWithChan invokes the ecd.CancelCopyImage API asynchronously
+func (client *Client) CancelCopyImageWithChan(request *CancelCopyImageRequest) (<-chan *CancelCopyImageResponse, <-chan error) {
+	responseChan := make(chan *CancelCopyImageResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateUserTags(request)
+		response, err := client.CancelCopyImage(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateUserTagsWithChan(request *CreateUserTagsRequest) (<-
 	return responseChan, errChan
 }
 
-// CreateUserTagsWithCallback invokes the ecd.CreateUserTags API asynchronously
-func (client *Client) CreateUserTagsWithCallback(request *CreateUserTagsRequest, callback func(response *CreateUserTagsResponse, err error)) <-chan int {
+// CancelCopyImageWithCallback invokes the ecd.CancelCopyImage API asynchronously
+func (client *Client) CancelCopyImageWithCallback(request *CancelCopyImageRequest, callback func(response *CancelCopyImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateUserTagsResponse
+		var response *CancelCopyImageResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateUserTags(request)
+		response, err = client.CancelCopyImage(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,31 +68,31 @@ func (client *Client) CreateUserTagsWithCallback(request *CreateUserTagsRequest,
 	return result
 }
 
-// CreateUserTagsRequest is the request struct for api CreateUserTags
-type CreateUserTagsRequest struct {
+// CancelCopyImageRequest is the request struct for api CancelCopyImage
+type CancelCopyImageRequest struct {
 	*requests.RpcRequest
-	Tags *[]string `position:"Query" name:"Tags"  type:"Repeated"`
+	ImageId string `position:"Query" name:"ImageId"`
 }
 
-// CreateUserTagsResponse is the response struct for api CreateUserTags
-type CreateUserTagsResponse struct {
+// CancelCopyImageResponse is the response struct for api CancelCopyImage
+type CancelCopyImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateCreateUserTagsRequest creates a request to invoke CreateUserTags API
-func CreateCreateUserTagsRequest() (request *CreateUserTagsRequest) {
-	request = &CreateUserTagsRequest{
+// CreateCancelCopyImageRequest creates a request to invoke CancelCopyImage API
+func CreateCancelCopyImageRequest() (request *CancelCopyImageRequest) {
+	request = &CancelCopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateUserTags", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CancelCopyImage", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateUserTagsResponse creates a response to parse from CreateUserTags response
-func CreateCreateUserTagsResponse() (response *CreateUserTagsResponse) {
-	response = &CreateUserTagsResponse{
+// CreateCancelCopyImageResponse creates a response to parse from CancelCopyImage response
+func CreateCancelCopyImageResponse() (response *CancelCopyImageResponse) {
+	response = &CancelCopyImageResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

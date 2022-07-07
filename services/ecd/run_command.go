@@ -75,6 +75,7 @@ type RunCommandRequest struct {
 	CommandContent  string           `position:"Query" name:"CommandContent"`
 	Timeout         requests.Integer `position:"Query" name:"Timeout"`
 	ContentEncoding string           `position:"Query" name:"ContentEncoding"`
+	EndUserId       string           `position:"Query" name:"EndUserId"`
 	DesktopId       *[]string        `position:"Query" name:"DesktopId"  type:"Repeated"`
 }
 

@@ -34,5 +34,7 @@ type VulRecord struct {
 	OsVersion         string            `json:"OsVersion" xml:"OsVersion"`
 	AliasName         string            `json:"AliasName" xml:"AliasName"`
 	Name              string            `json:"Name" xml:"Name"`
+	Progress          int               `json:"Progress" xml:"Progress"`
+	DesktopGroupId    string            `json:"DesktopGroupId" xml:"DesktopGroupId"`
 	ExtendContentJson ExtendContentJson `json:"ExtendContentJson" xml:"ExtendContentJson"`
 }

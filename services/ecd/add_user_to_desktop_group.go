@@ -71,9 +71,10 @@ func (client *Client) AddUserToDesktopGroupWithCallback(request *AddUserToDeskto
 // AddUserToDesktopGroupRequest is the request struct for api AddUserToDesktopGroup
 type AddUserToDesktopGroupRequest struct {
 	*requests.RpcRequest
-	EndUserIds     *[]string `position:"Query" name:"EndUserIds"  type:"Repeated"`
-	ClientToken    string    `position:"Query" name:"ClientToken"`
-	DesktopGroupId string    `position:"Query" name:"DesktopGroupId"`
+	EndUserIds      *[]string `position:"Query" name:"EndUserIds"  type:"Repeated"`
+	ClientToken     string    `position:"Query" name:"ClientToken"`
+	DesktopGroupId  string    `position:"Query" name:"DesktopGroupId"`
+	DesktopGroupIds *[]string `position:"Query" name:"DesktopGroupIds"  type:"Repeated"`
 }
 
 // AddUserToDesktopGroupResponse is the response struct for api AddUserToDesktopGroup

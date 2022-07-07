@@ -71,30 +71,32 @@ func (client *Client) CreateDesktopsWithCallback(request *CreateDesktopsRequest,
 // CreateDesktopsRequest is the request struct for api CreateDesktops
 type CreateDesktopsRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId      string               `position:"Query" name:"OfficeSiteId"`
-	ImageId           string               `position:"Query" name:"ImageId"`
-	BundleId          string               `position:"Query" name:"BundleId"`
-	UserAssignMode    string               `position:"Query" name:"UserAssignMode"`
-	Hostname          string               `position:"Query" name:"Hostname"`
-	DesktopNameSuffix requests.Boolean     `position:"Query" name:"DesktopNameSuffix"`
-	SystemDiskSize    string               `position:"Query" name:"SystemDiskSize"`
-	DirectoryId       string               `position:"Query" name:"DirectoryId"`
-	EndUserId         *[]string            `position:"Query" name:"EndUserId"  type:"Repeated"`
-	Tag               *[]CreateDesktopsTag `position:"Query" name:"Tag"  type:"Repeated"`
-	DesktopName       string               `position:"Query" name:"DesktopName"`
-	Amount            requests.Integer     `position:"Query" name:"Amount"`
-	Period            requests.Integer     `position:"Query" name:"Period"`
-	AutoPay           requests.Boolean     `position:"Query" name:"AutoPay"`
-	GroupId           string               `position:"Query" name:"GroupId"`
-	EcsInstanceType   string               `position:"Query" name:"EcsInstanceType"`
-	PromotionId       string               `position:"Query" name:"PromotionId"`
-	PeriodUnit        string               `position:"Query" name:"PeriodUnit"`
-	AutoRenew         requests.Boolean     `position:"Query" name:"AutoRenew"`
-	DataDiskSize      string               `position:"Query" name:"DataDiskSize"`
-	VpcId             string               `position:"Query" name:"VpcId"`
-	ChargeType        string               `position:"Query" name:"ChargeType"`
-	PolicyGroupId     string               `position:"Query" name:"PolicyGroupId"`
-	UserName          string               `position:"Query" name:"UserName"`
+	VolumeEncryptionKey     string               `position:"Query" name:"VolumeEncryptionKey"`
+	OfficeSiteId            string               `position:"Query" name:"OfficeSiteId"`
+	ImageId                 string               `position:"Query" name:"ImageId"`
+	BundleId                string               `position:"Query" name:"BundleId"`
+	UserAssignMode          string               `position:"Query" name:"UserAssignMode"`
+	Hostname                string               `position:"Query" name:"Hostname"`
+	DesktopNameSuffix       requests.Boolean     `position:"Query" name:"DesktopNameSuffix"`
+	SystemDiskSize          string               `position:"Query" name:"SystemDiskSize"`
+	DirectoryId             string               `position:"Query" name:"DirectoryId"`
+	EndUserId               *[]string            `position:"Query" name:"EndUserId"  type:"Repeated"`
+	Tag                     *[]CreateDesktopsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	VolumeEncryptionEnabled requests.Boolean     `position:"Query" name:"VolumeEncryptionEnabled"`
+	DesktopName             string               `position:"Query" name:"DesktopName"`
+	Amount                  requests.Integer     `position:"Query" name:"Amount"`
+	Period                  requests.Integer     `position:"Query" name:"Period"`
+	AutoPay                 requests.Boolean     `position:"Query" name:"AutoPay"`
+	GroupId                 string               `position:"Query" name:"GroupId"`
+	EcsInstanceType         string               `position:"Query" name:"EcsInstanceType"`
+	PromotionId             string               `position:"Query" name:"PromotionId"`
+	PeriodUnit              string               `position:"Query" name:"PeriodUnit"`
+	AutoRenew               requests.Boolean     `position:"Query" name:"AutoRenew"`
+	DataDiskSize            string               `position:"Query" name:"DataDiskSize"`
+	VpcId                   string               `position:"Query" name:"VpcId"`
+	ChargeType              string               `position:"Query" name:"ChargeType"`
+	PolicyGroupId           string               `position:"Query" name:"PolicyGroupId"`
+	UserName                string               `position:"Query" name:"UserName"`
 }
 
 // CreateDesktopsTag is a repeated param struct in CreateDesktopsRequest

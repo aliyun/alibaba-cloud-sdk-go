@@ -71,14 +71,15 @@ func (client *Client) DescribeInvocationsWithCallback(request *DescribeInvocatio
 // DescribeInvocationsRequest is the request struct for api DescribeInvocations
 type DescribeInvocationsRequest struct {
 	*requests.RpcRequest
-	InvokeId        string           `position:"Query" name:"InvokeId"`
 	InvokeStatus    string           `position:"Query" name:"InvokeStatus"`
 	IncludeOutput   requests.Boolean `position:"Query" name:"IncludeOutput"`
-	CommandType     string           `position:"Query" name:"CommandType"`
 	NextToken       string           `position:"Query" name:"NextToken"`
 	ContentEncoding string           `position:"Query" name:"ContentEncoding"`
-	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
+	EndUserId       string           `position:"Query" name:"EndUserId"`
 	DesktopId       string           `position:"Query" name:"DesktopId"`
+	InvokeId        string           `position:"Query" name:"InvokeId"`
+	CommandType     string           `position:"Query" name:"CommandType"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // DescribeInvocationsResponse is the response struct for api DescribeInvocations

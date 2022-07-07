@@ -17,19 +17,23 @@ package ecd
 
 // Image is a nested struct in ecd response
 type Image struct {
-	CreationTime       string   `json:"CreationTime" xml:"CreationTime"`
-	Status             string   `json:"Status" xml:"Status"`
-	Progress           string   `json:"Progress" xml:"Progress"`
-	DataDiskSize       int      `json:"DataDiskSize" xml:"DataDiskSize"`
-	ImageType          string   `json:"ImageType" xml:"ImageType"`
-	Description        string   `json:"Description" xml:"Description"`
-	Size               int      `json:"Size" xml:"Size"`
-	OsType             string   `json:"OsType" xml:"OsType"`
-	ProtocolType       string   `json:"ProtocolType" xml:"ProtocolType"`
-	Name               string   `json:"Name" xml:"Name"`
-	ImageId            string   `json:"ImageId" xml:"ImageId"`
-	GpuCategory        bool     `json:"GpuCategory" xml:"GpuCategory"`
-	GpuDriverVersion   string   `json:"GpuDriverVersion" xml:"GpuDriverVersion"`
-	AppVersion         string   `json:"AppVersion" xml:"AppVersion"`
-	SupportedLanguages []string `json:"SupportedLanguages" xml:"SupportedLanguages"`
+	CreationTime            string   `json:"CreationTime" xml:"CreationTime"`
+	Status                  string   `json:"Status" xml:"Status"`
+	Progress                string   `json:"Progress" xml:"Progress"`
+	DataDiskSize            int      `json:"DataDiskSize" xml:"DataDiskSize"`
+	ImageType               string   `json:"ImageType" xml:"ImageType"`
+	Description             string   `json:"Description" xml:"Description"`
+	Size                    int      `json:"Size" xml:"Size"`
+	OsType                  string   `json:"OsType" xml:"OsType"`
+	ProtocolType            string   `json:"ProtocolType" xml:"ProtocolType"`
+	Name                    string   `json:"Name" xml:"Name"`
+	ImageId                 string   `json:"ImageId" xml:"ImageId"`
+	GpuCategory             bool     `json:"GpuCategory" xml:"GpuCategory"`
+	GpuDriverVersion        string   `json:"GpuDriverVersion" xml:"GpuDriverVersion"`
+	AppVersion              string   `json:"AppVersion" xml:"AppVersion"`
+	VolumeEncryptionEnabled bool     `json:"VolumeEncryptionEnabled" xml:"VolumeEncryptionEnabled"`
+	VolumeEncryptionKey     string   `json:"VolumeEncryptionKey" xml:"VolumeEncryptionKey"`
+	SharedCount             int      `json:"SharedCount" xml:"SharedCount"`
+	SessionType             string   `json:"SessionType" xml:"SessionType"`
+	SupportedLanguages      []string `json:"SupportedLanguages" xml:"SupportedLanguages"`
 }

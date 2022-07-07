@@ -1,3 +1,7 @@
+2022-07-07 Version: v1.61.1666
+- Generated 2020-09-30 for `ecd`.
+- Support asp remote coordinate
+
 2022-07-04 Version: v1.61.1665
 - Generated 2022-01-01 for `quickbi-public`.
 - Add API QueryEmbeddedStaus.

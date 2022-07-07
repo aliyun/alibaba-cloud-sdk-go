@@ -17,15 +17,17 @@ package ecd
 
 // Snapshot is a nested struct in ecd response
 type Snapshot struct {
-	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-	Status         string `json:"Status" xml:"Status"`
-	SnapshotType   string `json:"SnapshotType" xml:"SnapshotType"`
-	SnapshotName   string `json:"SnapshotName" xml:"SnapshotName"`
-	Progress       string `json:"Progress" xml:"Progress"`
-	Description    string `json:"Description" xml:"Description"`
-	SnapshotId     string `json:"SnapshotId" xml:"SnapshotId"`
-	RemainTime     int    `json:"RemainTime" xml:"RemainTime"`
-	SourceDiskSize string `json:"SourceDiskSize" xml:"SourceDiskSize"`
-	SourceDiskType string `json:"SourceDiskType" xml:"SourceDiskType"`
-	DesktopId      string `json:"DesktopId" xml:"DesktopId"`
+	CreationTime            string `json:"CreationTime" xml:"CreationTime"`
+	Status                  string `json:"Status" xml:"Status"`
+	SnapshotType            string `json:"SnapshotType" xml:"SnapshotType"`
+	SnapshotName            string `json:"SnapshotName" xml:"SnapshotName"`
+	Progress                string `json:"Progress" xml:"Progress"`
+	Description             string `json:"Description" xml:"Description"`
+	SnapshotId              string `json:"SnapshotId" xml:"SnapshotId"`
+	RemainTime              int    `json:"RemainTime" xml:"RemainTime"`
+	SourceDiskSize          string `json:"SourceDiskSize" xml:"SourceDiskSize"`
+	SourceDiskType          string `json:"SourceDiskType" xml:"SourceDiskType"`
+	DesktopId               string `json:"DesktopId" xml:"DesktopId"`
+	VolumeEncryptionEnabled bool   `json:"VolumeEncryptionEnabled" xml:"VolumeEncryptionEnabled"`
+	VolumeEncryptionKey     string `json:"VolumeEncryptionKey" xml:"VolumeEncryptionKey"`
 }
