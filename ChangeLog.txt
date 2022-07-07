@@ -1,3 +1,7 @@
+2022-07-07 Version: v1.61.1667
+- Generated 2022-02-12 for `Wfts`.
+- Automatically generate sdk tasks.
+
 2022-07-07 Version: v1.61.1666
 - Generated 2020-09-30 for `ecd`.
 - Support asp remote coordinate
