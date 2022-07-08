@@ -17,23 +17,24 @@ package actiontrail
 
 // Trail is a nested struct in actiontrail response
 type Trail struct {
-	Status              string `json:"Status" xml:"Status"`
-	HomeRegion          string `json:"HomeRegion" xml:"HomeRegion"`
-	StartLoggingTime    string `json:"StartLoggingTime" xml:"StartLoggingTime"`
-	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
-	StopLoggingTime     string `json:"StopLoggingTime" xml:"StopLoggingTime"`
-	OrganizationId      string `json:"OrganizationId" xml:"OrganizationId"`
-	SlsWriteRoleArn     string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
-	OssBucketLocation   string `json:"OssBucketLocation" xml:"OssBucketLocation"`
 	TrailRegion         string `json:"TrailRegion" xml:"TrailRegion"`
-	Name                string `json:"Name" xml:"Name"`
-	IsOrganizationTrail bool   `json:"IsOrganizationTrail" xml:"IsOrganizationTrail"`
-	SlsProjectArn       string `json:"SlsProjectArn" xml:"SlsProjectArn"`
-	EventRW             string `json:"EventRW" xml:"EventRW"`
-	OssKeyPrefix        string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
+	Status              string `json:"Status" xml:"Status"`
 	UpdateTime          string `json:"UpdateTime" xml:"UpdateTime"`
-	Region              string `json:"Region" xml:"Region"`
-	OssBucketName       string `json:"OssBucketName" xml:"OssBucketName"`
+	HomeRegion          string `json:"HomeRegion" xml:"HomeRegion"`
+	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
+	OssKeyPrefix        string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
+	EventRW             string `json:"EventRW" xml:"EventRW"`
+	StartLoggingTime    string `json:"StartLoggingTime" xml:"StartLoggingTime"`
 	OssWriteRoleArn     string `json:"OssWriteRoleArn" xml:"OssWriteRoleArn"`
+	SlsProjectArn       string `json:"SlsProjectArn" xml:"SlsProjectArn"`
+	IsOrganizationTrail bool   `json:"IsOrganizationTrail" xml:"IsOrganizationTrail"`
+	SlsWriteRoleArn     string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
+	StopLoggingTime     string `json:"StopLoggingTime" xml:"StopLoggingTime"`
+	Name                string `json:"Name" xml:"Name"`
+	OssBucketName       string `json:"OssBucketName" xml:"OssBucketName"`
+	Region              string `json:"Region" xml:"Region"`
+	OrganizationId      string `json:"OrganizationId" xml:"OrganizationId"`
+	OssBucketLocation   string `json:"OssBucketLocation" xml:"OssBucketLocation"`
 	IsShadowTrail       int64  `json:"IsShadowTrail" xml:"IsShadowTrail"`
+	TrailArn            string `json:"TrailArn" xml:"TrailArn"`
 }

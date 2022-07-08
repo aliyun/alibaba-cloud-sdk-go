@@ -85,13 +85,13 @@ type UpdateTrailRequest struct {
 type UpdateTrailResponse struct {
 	*responses.BaseResponse
 	SlsProjectArn   string `json:"SlsProjectArn" xml:"SlsProjectArn"`
+	OssWriteRoleArn string `json:"OssWriteRoleArn" xml:"OssWriteRoleArn"`
 	EventRW         string `json:"EventRW" xml:"EventRW"`
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	HomeRegion      string `json:"HomeRegion" xml:"HomeRegion"`
 	OssKeyPrefix    string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
 	OssBucketName   string `json:"OssBucketName" xml:"OssBucketName"`
 	SlsWriteRoleArn string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
-	OssWriteRoleArn string `json:"OssWriteRoleArn" xml:"OssWriteRoleArn"`
 	TrailRegion     string `json:"TrailRegion" xml:"TrailRegion"`
 	Name            string `json:"Name" xml:"Name"`
 }
@@ -101,7 +101,7 @@ func CreateUpdateTrailRequest() (request *UpdateTrailRequest) {
 	request = &UpdateTrailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2020-07-06", "UpdateTrail", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "UpdateTrail", "", "")
 	request.Method = requests.POST
 	return
 }

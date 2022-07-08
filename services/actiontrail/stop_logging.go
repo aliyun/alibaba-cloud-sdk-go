@@ -85,7 +85,7 @@ func CreateStopLoggingRequest() (request *StopLoggingRequest) {
 	request = &StopLoggingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2020-07-06", "StopLogging", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "StopLogging", "", "")
 	request.Method = requests.GET
 	return
 }

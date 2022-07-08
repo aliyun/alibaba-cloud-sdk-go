@@ -78,10 +78,10 @@ type ListDeliveryHistoryJobsRequest struct {
 // ListDeliveryHistoryJobsResponse is the response struct for api ListDeliveryHistoryJobs
 type ListDeliveryHistoryJobsResponse struct {
 	*responses.BaseResponse
-	RequestId           string               `json:"RequestId" xml:"RequestId"`
 	TotalCount          int                  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber          int                  `json:"PageNumber" xml:"PageNumber"`
 	PageSize            int                  `json:"PageSize" xml:"PageSize"`
+	RequestId           string               `json:"RequestId" xml:"RequestId"`
+	PageNumber          int                  `json:"PageNumber" xml:"PageNumber"`
 	DeliveryHistoryJobs []DeliveryHistoryJob `json:"DeliveryHistoryJobs" xml:"DeliveryHistoryJobs"`
 }
 
@@ -90,7 +90,7 @@ func CreateListDeliveryHistoryJobsRequest() (request *ListDeliveryHistoryJobsReq
 	request = &ListDeliveryHistoryJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2020-07-06", "ListDeliveryHistoryJobs", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "ListDeliveryHistoryJobs", "", "")
 	request.Method = requests.POST
 	return
 }
