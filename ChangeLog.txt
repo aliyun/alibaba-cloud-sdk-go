@@ -1,3 +1,7 @@
+2022-07-08 Version: v1.61.1669
+- Generated 2022-02-12 for `Wfts`.
+- Automatically generate sdk tasks.
+
 2022-07-08 Version: v1.61.1668
 - Generated 2020-07-06 for `Actiontrail`.
 - Support AK Audit API.
