@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDataSourceItem invokes the iot.CreateDataSourceItem API synchronously
-func (client *Client) CreateDataSourceItem(request *CreateDataSourceItemRequest) (response *CreateDataSourceItemResponse, err error) {
-	response = CreateCreateDataSourceItemResponse()
+// DeleteParserDataSource invokes the iot.DeleteParserDataSource API synchronously
+func (client *Client) DeleteParserDataSource(request *DeleteParserDataSourceRequest) (response *DeleteParserDataSourceResponse, err error) {
+	response = CreateDeleteParserDataSourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDataSourceItemWithChan invokes the iot.CreateDataSourceItem API asynchronously
-func (client *Client) CreateDataSourceItemWithChan(request *CreateDataSourceItemRequest) (<-chan *CreateDataSourceItemResponse, <-chan error) {
-	responseChan := make(chan *CreateDataSourceItemResponse, 1)
+// DeleteParserDataSourceWithChan invokes the iot.DeleteParserDataSource API asynchronously
+func (client *Client) DeleteParserDataSourceWithChan(request *DeleteParserDataSourceRequest) (<-chan *DeleteParserDataSourceResponse, <-chan error) {
+	responseChan := make(chan *DeleteParserDataSourceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDataSourceItem(request)
+		response, err := client.DeleteParserDataSource(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateDataSourceItemWithChan(request *CreateDataSourceItem
 	return responseChan, errChan
 }
 
-// CreateDataSourceItemWithCallback invokes the iot.CreateDataSourceItem API asynchronously
-func (client *Client) CreateDataSourceItemWithCallback(request *CreateDataSourceItemRequest, callback func(response *CreateDataSourceItemResponse, err error)) <-chan int {
+// DeleteParserDataSourceWithCallback invokes the iot.DeleteParserDataSource API asynchronously
+func (client *Client) DeleteParserDataSourceWithCallback(request *DeleteParserDataSourceRequest, callback func(response *DeleteParserDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDataSourceItemResponse
+		var response *DeleteParserDataSourceResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDataSourceItem(request)
+		response, err = client.DeleteParserDataSource(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,21 +68,17 @@ func (client *Client) CreateDataSourceItemWithCallback(request *CreateDataSource
 	return result
 }
 
-// CreateDataSourceItemRequest is the request struct for api CreateDataSourceItem
-type CreateDataSourceItemRequest struct {
+// DeleteParserDataSourceRequest is the request struct for api DeleteParserDataSource
+type DeleteParserDataSourceRequest struct {
 	*requests.RpcRequest
-	ScopeType     string           `position:"Query" name:"ScopeType"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 	ApiProduct    string           `position:"Body" name:"ApiProduct"`
 	DataSourceId  requests.Integer `position:"Query" name:"DataSourceId"`
-	Topic         string           `position:"Query" name:"Topic"`
 	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	DeviceName    string           `position:"Query" name:"DeviceName"`
 }
 
-// CreateDataSourceItemResponse is the response struct for api CreateDataSourceItem
-type CreateDataSourceItemResponse struct {
+// DeleteParserDataSourceResponse is the response struct for api DeleteParserDataSource
+type DeleteParserDataSourceResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
@@ -90,19 +86,19 @@ type CreateDataSourceItemResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-// CreateCreateDataSourceItemRequest creates a request to invoke CreateDataSourceItem API
-func CreateCreateDataSourceItemRequest() (request *CreateDataSourceItemRequest) {
-	request = &CreateDataSourceItemRequest{
+// CreateDeleteParserDataSourceRequest creates a request to invoke DeleteParserDataSource API
+func CreateDeleteParserDataSourceRequest() (request *DeleteParserDataSourceRequest) {
+	request = &DeleteParserDataSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDataSourceItem", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteParserDataSource", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateDataSourceItemResponse creates a response to parse from CreateDataSourceItem response
-func CreateCreateDataSourceItemResponse() (response *CreateDataSourceItemResponse) {
-	response = &CreateDataSourceItemResponse{
+// CreateDeleteParserDataSourceResponse creates a response to parse from DeleteParserDataSource response
+func CreateDeleteParserDataSourceResponse() (response *DeleteParserDataSourceResponse) {
+	response = &DeleteParserDataSourceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

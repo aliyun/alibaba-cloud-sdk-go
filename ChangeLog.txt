@@ -1,3 +1,7 @@
+2022-07-11 Version: v1.61.1671
+- Generated 2018-01-20 for `Iot`.
+- Add new api for rule.
+
 2022-07-08 Version: v1.61.1670
 - Generated 2022-02-12 for `Wfts`.
 - Automatically generate sdk tasks.
