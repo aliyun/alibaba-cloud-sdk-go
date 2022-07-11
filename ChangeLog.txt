@@ -1,3 +1,7 @@
+2022-07-11 Version: v1.61.1672
+- Generated 2014-05-26 for `Ecs`.
+- Support Storage And Network Features For LaunchTemplate.
+
 2022-07-11 Version: v1.61.1671
 - Generated 2018-01-20 for `Iot`.
 - Add new api for rule.
