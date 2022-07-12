@@ -1,3 +1,7 @@
+2022-07-12 Version: v1.61.1673
+- Generated 2017-05-18 for `antiddos-public`.
+- Automatically generate sdk tasks.
+
 2022-07-11 Version: v1.61.1672
 - Generated 2014-05-26 for `Ecs`.
 - Support Storage And Network Features For LaunchTemplate.
