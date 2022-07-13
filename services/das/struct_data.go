@@ -70,6 +70,7 @@ type Data struct {
 	ParseFilePath       string                                     `json:"ParseFilePath" xml:"ParseFilePath"`
 	ClientType          string                                     `json:"ClientType" xml:"ClientType"`
 	ClientGatewayId     string                                     `json:"ClientGatewayId" xml:"ClientGatewayId"`
+	Success             string                                     `json:"Success" xml:"Success"`
 	ParseCmd            string                                     `json:"ParseCmd" xml:"ParseCmd"`
 	OwnerId             string                                     `json:"OwnerId" xml:"OwnerId"`
 	MetaFilePath        string                                     `json:"MetaFilePath" xml:"MetaFilePath"`
@@ -112,5 +113,5 @@ type Data struct {
 	KeyPrefixes         KeyPrefixes                                `json:"KeyPrefixes" xml:"KeyPrefixes"`
 	List                ListInDescribeCacheAnalysisJobs            `json:"List" xml:"List"`
 	BigKeys             BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
-	Result              []ResultItem                               `json:"result" xml:"result"`
+	Result              []List                                     `json:"result" xml:"result"`
 }

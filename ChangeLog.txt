@@ -1,3 +1,7 @@
+2022-07-13 Version: v1.61.1674
+- Generated 2020-01-16 for `DAS`.
+- Add UpdateAutoSqlOptimizeStatus API.
+
 2022-07-12 Version: v1.61.1673
 - Generated 2017-05-18 for `antiddos-public`.
 - Automatically generate sdk tasks.
