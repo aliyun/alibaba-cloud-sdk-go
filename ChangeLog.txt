@@ -1,3 +1,7 @@
+2022-07-15 Version: v1.61.1675
+- Generated 2014-05-26 for `Ecs`.
+- Support Security Group Batch Manager Rules.
+
 2022-07-13 Version: v1.61.1674
 - Generated 2020-01-16 for `DAS`.
 - Add UpdateAutoSqlOptimizeStatus API.
