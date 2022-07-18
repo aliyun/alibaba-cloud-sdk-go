@@ -1,3 +1,7 @@
+2022-07-18 Version: v1.61.1676
+- Generated 2022-05-20 for `btripOpen`.
+- Test.
+
 2022-07-15 Version: v1.61.1675
 - Generated 2014-05-26 for `Ecs`.
 - Support Security Group Batch Manager Rules.

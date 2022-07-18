@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// TakeAccessToken invokes the btripopen.TakeAccessToken API synchronously
-func (client *Client) TakeAccessToken(request *TakeAccessTokenRequest) (response *TakeAccessTokenResponse, err error) {
-	response = CreateTakeAccessTokenResponse()
+// AccessToken invokes the btripopen.AccessToken API synchronously
+func (client *Client) AccessToken(request *AccessTokenRequest) (response *AccessTokenResponse, err error) {
+	response = CreateAccessTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TakeAccessTokenWithChan invokes the btripopen.TakeAccessToken API asynchronously
-func (client *Client) TakeAccessTokenWithChan(request *TakeAccessTokenRequest) (<-chan *TakeAccessTokenResponse, <-chan error) {
-	responseChan := make(chan *TakeAccessTokenResponse, 1)
+// AccessTokenWithChan invokes the btripopen.AccessToken API asynchronously
+func (client *Client) AccessTokenWithChan(request *AccessTokenRequest) (<-chan *AccessTokenResponse, <-chan error) {
+	responseChan := make(chan *AccessTokenResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.TakeAccessToken(request)
+		response, err := client.AccessToken(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) TakeAccessTokenWithChan(request *TakeAccessTokenRequest) (
 	return responseChan, errChan
 }
 
-// TakeAccessTokenWithCallback invokes the btripopen.TakeAccessToken API asynchronously
-func (client *Client) TakeAccessTokenWithCallback(request *TakeAccessTokenRequest, callback func(response *TakeAccessTokenResponse, err error)) <-chan int {
+// AccessTokenWithCallback invokes the btripopen.AccessToken API asynchronously
+func (client *Client) AccessTokenWithCallback(request *AccessTokenRequest, callback func(response *AccessTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TakeAccessTokenResponse
+		var response *AccessTokenResponse
 		var err error
 		defer close(result)
-		response, err = client.TakeAccessToken(request)
+		response, err = client.AccessToken(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,36 @@ func (client *Client) TakeAccessTokenWithCallback(request *TakeAccessTokenReques
 	return result
 }
 
-// TakeAccessTokenRequest is the request struct for api TakeAccessToken
-type TakeAccessTokenRequest struct {
+// AccessTokenRequest is the request struct for api AccessToken
+type AccessTokenRequest struct {
 	*requests.RoaRequest
 	AppKey    string `position:"Query" name:"app_key"`
 	AppSecret string `position:"Query" name:"app_secret"`
 }
 
-// TakeAccessTokenResponse is the response struct for api TakeAccessToken
-type TakeAccessTokenResponse struct {
+// AccessTokenResponse is the response struct for api AccessToken
+type AccessTokenResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
-	Code      string `json:"code" xml:"code"`
+	TraceId   string `json:"traceId" xml:"traceId"`
 	Message   string `json:"message" xml:"message"`
-	Success   string `json:"success" xml:"success"`
+	Code      string `json:"code" xml:"code"`
 	Data      Data   `json:"data" xml:"data"`
 }
 
-// CreateTakeAccessTokenRequest creates a request to invoke TakeAccessToken API
-func CreateTakeAccessTokenRequest() (request *TakeAccessTokenRequest) {
-	request = &TakeAccessTokenRequest{
+// CreateAccessTokenRequest creates a request to invoke AccessToken API
+func CreateAccessTokenRequest() (request *AccessTokenRequest) {
+	request = &AccessTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("btripOpen", "2022-05-17", "TakeAccessToken", "/btrip/open/access-token/take", "", "")
+	request.InitWithApiInfo("btripOpen", "2022-05-20", "AccessToken", "/btrip-open-auth/v1/access-token/action/take", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateTakeAccessTokenResponse creates a response to parse from TakeAccessToken response
-func CreateTakeAccessTokenResponse() (response *TakeAccessTokenResponse) {
-	response = &TakeAccessTokenResponse{
+// CreateAccessTokenResponse creates a response to parse from AccessToken response
+func CreateAccessTokenResponse() (response *AccessTokenResponse) {
+	response = &AccessTokenResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

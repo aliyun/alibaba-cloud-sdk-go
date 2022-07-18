@@ -17,6 +17,6 @@ package btripopen
 
 // Data is a nested struct in btripopen response
 type Data struct {
-	AccessToken string `json:"access_token" xml:"access_token"`
-	Expire      int64  `json:"expire" xml:"expire"`
+	Token  string `json:"token" xml:"token"`
+	Expire int64  `json:"expire" xml:"expire"`
 }
