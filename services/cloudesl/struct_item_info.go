@@ -82,4 +82,5 @@ type ItemInfo struct {
 	ItemInfoIndex     int    `json:"ItemInfoIndex" xml:"ItemInfoIndex"`
 	PromotionEnd      string `json:"PromotionEnd" xml:"PromotionEnd"`
 	ItemBarCode       string `json:"ItemBarCode" xml:"ItemBarCode"`
+	BeClearance       bool   `json:"BeClearance" xml:"BeClearance"`
 }

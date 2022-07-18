@@ -29,4 +29,6 @@ type EslDeviceInfo struct {
 	EslStatus           string `json:"EslStatus" xml:"EslStatus"`
 	Mac                 string `json:"Mac" xml:"Mac"`
 	TypeEncode          string `json:"TypeEncode" xml:"TypeEncode"`
+	LayoutId            string `json:"LayoutId" xml:"LayoutId"`
+	LayoutName          string `json:"LayoutName" xml:"LayoutName"`
 }

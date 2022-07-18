@@ -71,13 +71,17 @@ func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, c
 // BindEslDeviceRequest is the request struct for api BindEslDevice
 type BindEslDeviceRequest struct {
 	*requests.RpcRequest
-	ExtraParams string           `position:"Body" name:"ExtraParams"`
-	StoreId     string           `position:"Body" name:"StoreId"`
-	Layer       requests.Integer `position:"Body" name:"Layer"`
-	EslBarCode  string           `position:"Body" name:"EslBarCode"`
-	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
-	Column      string           `position:"Body" name:"Column"`
-	Shelf       string           `position:"Body" name:"Shelf"`
+	ExtraParams   string           `position:"Body" name:"ExtraParams"`
+	ContainerName string           `position:"Body" name:"ContainerName"`
+	StoreId       string           `position:"Body" name:"StoreId"`
+	LayoutId      string           `position:"Body" name:"LayoutId"`
+	Layer         requests.Integer `position:"Body" name:"Layer"`
+	EslBarCode    string           `position:"Body" name:"EslBarCode"`
+	LayoutName    string           `position:"Body" name:"LayoutName"`
+	ItemBarCode   string           `position:"Body" name:"ItemBarCode"`
+	Column        string           `position:"Body" name:"Column"`
+	Shelf         string           `position:"Body" name:"Shelf"`
+	ContainerId   string           `position:"Body" name:"ContainerId"`
 }
 
 // BindEslDeviceResponse is the response struct for api BindEslDevice

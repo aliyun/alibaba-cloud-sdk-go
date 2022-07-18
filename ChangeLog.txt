@@ -1,3 +1,7 @@
+2022-07-18 Version: v1.61.1677
+- Generated 2020-02-01 for `cloudesl`.
+- Add Mutimedia Screen API Support.
+
 2022-07-18 Version: v1.61.1676
 - Generated 2022-05-20 for `btripOpen`.
 - Test.

@@ -134,6 +134,7 @@ type BatchInsertItemsItemInfo struct {
 	ItemPicUrl        string `name:"ItemPicUrl"`
 	ForestSecondId    string `name:"ForestSecondId"`
 	SupplierName      string `name:"SupplierName"`
+	BeClearance       string `name:"BeClearance"`
 	Material          string `name:"Material"`
 	ModelNumber       string `name:"ModelNumber"`
 	SaleSpec          string `name:"SaleSpec"`

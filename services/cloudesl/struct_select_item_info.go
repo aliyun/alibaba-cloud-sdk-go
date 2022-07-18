@@ -23,6 +23,7 @@ type SelectItemInfo struct {
 	TemplateName    string `json:"TemplateName" xml:"TemplateName"`
 	DeviceType      string `json:"DeviceType" xml:"DeviceType"`
 	StoreName       string `json:"StoreName" xml:"StoreName"`
+	TemplateSceneId string `json:"TemplateSceneId" xml:"TemplateSceneId"`
 	TemplateVersion string `json:"TemplateVersion" xml:"TemplateVersion"`
 	BasePicture     string `json:"BasePicture" xml:"BasePicture"`
 	EslPhysicalSize string `json:"EslPhysicalSize" xml:"EslPhysicalSize"`
