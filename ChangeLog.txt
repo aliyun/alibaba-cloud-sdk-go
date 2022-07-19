@@ -1,3 +1,7 @@
+2022-07-19 Version: v1.61.1678
+- Generated 2017-09-12 for `Cbn`.
+- Support MatchAddressType in RouteMap API.
+
 2022-07-18 Version: v1.61.1677
 - Generated 2020-02-01 for `cloudesl`.
 - Add Mutimedia Screen API Support.
