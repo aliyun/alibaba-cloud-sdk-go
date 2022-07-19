@@ -39,6 +39,7 @@ type DataEntityListItem struct {
 	TableGuid         string `json:"TableGuid" xml:"TableGuid"`
 	DatabaseName      string `json:"DatabaseName" xml:"DatabaseName"`
 	ClusterId         string `json:"ClusterId" xml:"ClusterId"`
+	Schema            string `json:"Schema" xml:"Schema"`
 	ChangeContent     string `json:"ChangeContent" xml:"ChangeContent"`
 	TableName         string `json:"TableName" xml:"TableName"`
 	PartitionPath     string `json:"PartitionPath" xml:"PartitionPath"`

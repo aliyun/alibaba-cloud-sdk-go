@@ -68,6 +68,7 @@ type Data struct {
 	LifeCycle            int                                                             `json:"LifeCycle" xml:"LifeCycle"`
 	OnDutyAccountName    string                                                          `json:"OnDutyAccountName" xml:"OnDutyAccountName"`
 	Checker              int                                                             `json:"Checker" xml:"Checker"`
+	Schema               string                                                          `json:"Schema" xml:"Schema"`
 	Version              int64                                                           `json:"Version" xml:"Version"`
 	IsCurrentProd        bool                                                            `json:"IsCurrentProd" xml:"IsCurrentProd"`
 	GmtCreate            int64                                                           `json:"GmtCreate" xml:"GmtCreate"`
