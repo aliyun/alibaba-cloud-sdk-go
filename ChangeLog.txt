@@ -1,3 +1,7 @@
+2022-07-21 Version: v1.61.1682
+- Generated 2021-04-07 for `MscCommonQuery`.
+- Support Msc Common Query.
+
 2022-07-20 Version: v1.61.1681
 - Generated 2020-07-06 for `Actiontrail`.
 - Support AK Audit API.
