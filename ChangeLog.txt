@@ -1,3 +1,7 @@
+2022-07-21 Version: v1.61.1684
+- Generated 2017-03-21 for `vod`.
+- Add kms apis.
+
 2022-07-21 Version: v1.61.1683
 - Generated 2018-01-29 for `Domain`.
 - Ram action config.
