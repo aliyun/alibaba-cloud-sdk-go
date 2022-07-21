@@ -48,4 +48,5 @@ type ConfigRule struct {
 	Compliance                 Compliance                 `json:"Compliance" xml:"Compliance"`
 	Scope                      Scope                      `json:"Scope" xml:"Scope"`
 	ManagedRule                ManagedRule                `json:"ManagedRule" xml:"ManagedRule"`
+	Tags                       []Tag                      `json:"Tags" xml:"Tags"`
 }

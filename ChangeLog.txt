@@ -1,3 +1,7 @@
+2022-07-21 Version: v1.61.1685
+- Generated 2020-09-07 for `Config`.
+- Support PreConfigRule.
+
 2022-07-21 Version: v1.61.1684
 - Generated 2017-03-21 for `vod`.
 - Add kms apis.
