@@ -17,14 +17,14 @@ package domain
 
 // EmailVerification is a nested struct in domain response
 type EmailVerification struct {
-	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified         string `json:"GmtModified" xml:"GmtModified"`
-	Email               string `json:"Email" xml:"Email"`
-	UserId              string `json:"UserId" xml:"UserId"`
-	EmailVerificationNo string `json:"EmailVerificationNo" xml:"EmailVerificationNo"`
-	TokenSendTime       string `json:"TokenSendTime" xml:"TokenSendTime"`
-	VerificationStatus  int    `json:"VerificationStatus" xml:"VerificationStatus"`
 	VerificationTime    string `json:"VerificationTime" xml:"VerificationTime"`
+	Email               string `json:"Email" xml:"Email"`
+	EmailVerificationNo string `json:"EmailVerificationNo" xml:"EmailVerificationNo"`
+	UserId              string `json:"UserId" xml:"UserId"`
+	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
+	VerificationStatus  int    `json:"VerificationStatus" xml:"VerificationStatus"`
+	TokenSendTime       string `json:"TokenSendTime" xml:"TokenSendTime"`
 	SendIp              string `json:"SendIp" xml:"SendIp"`
+	GmtModified         string `json:"GmtModified" xml:"GmtModified"`
 	ConfirmIp           string `json:"ConfirmIp" xml:"ConfirmIp"`
 }

@@ -17,11 +17,11 @@ package domain
 
 // DomainGroup is a nested struct in domain response
 type DomainGroup struct {
+	BeingDeleted      bool   `json:"BeingDeleted" xml:"BeingDeleted"`
+	DomainGroupStatus string `json:"DomainGroupStatus" xml:"DomainGroupStatus"`
 	DomainGroupId     string `json:"DomainGroupId" xml:"DomainGroupId"`
 	DomainGroupName   string `json:"DomainGroupName" xml:"DomainGroupName"`
+	ModificationDate  string `json:"ModificationDate" xml:"ModificationDate"`
 	TotalNumber       int    `json:"TotalNumber" xml:"TotalNumber"`
 	CreationDate      string `json:"CreationDate" xml:"CreationDate"`
-	ModificationDate  string `json:"ModificationDate" xml:"ModificationDate"`
-	DomainGroupStatus string `json:"DomainGroupStatus" xml:"DomainGroupStatus"`
-	BeingDeleted      bool   `json:"BeingDeleted" xml:"BeingDeleted"`
 }

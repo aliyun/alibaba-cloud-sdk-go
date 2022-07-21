@@ -18,12 +18,12 @@ package domain
 // TaskInfoHistory is a nested struct in domain response
 type TaskInfoHistory struct {
 	TaskType            string `json:"TaskType" xml:"TaskType"`
-	TaskNum             int    `json:"TaskNum" xml:"TaskNum"`
-	TaskStatus          string `json:"TaskStatus" xml:"TaskStatus"`
-	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
-	Clientip            string `json:"Clientip" xml:"Clientip"`
 	TaskNo              string `json:"TaskNo" xml:"TaskNo"`
-	CreateTimeLong      int64  `json:"CreateTimeLong" xml:"CreateTimeLong"`
 	TaskStatusCode      int    `json:"TaskStatusCode" xml:"TaskStatusCode"`
+	TaskStatus          string `json:"TaskStatus" xml:"TaskStatus"`
 	TaskTypeDescription string `json:"TaskTypeDescription" xml:"TaskTypeDescription"`
+	TaskNum             int    `json:"TaskNum" xml:"TaskNum"`
+	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeLong      int64  `json:"CreateTimeLong" xml:"CreateTimeLong"`
+	Clientip            string `json:"Clientip" xml:"Clientip"`
 }

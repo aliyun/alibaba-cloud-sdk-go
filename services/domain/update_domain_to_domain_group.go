@@ -72,8 +72,8 @@ func (client *Client) UpdateDomainToDomainGroupWithCallback(request *UpdateDomai
 type UpdateDomainToDomainGroupRequest struct {
 	*requests.RpcRequest
 	FileToUpload  string           `position:"Body" name:"FileToUpload"`
-	DomainName    *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
 	Replace       requests.Boolean `position:"Query" name:"Replace"`
+	DomainName    *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
 	DomainGroupId requests.Integer `position:"Query" name:"DomainGroupId"`
 	DataSource    requests.Integer `position:"Query" name:"DataSource"`
 	UserClientIp  string           `position:"Query" name:"UserClientIp"`

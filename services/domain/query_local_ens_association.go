@@ -79,8 +79,8 @@ type QueryLocalEnsAssociationRequest struct {
 // QueryLocalEnsAssociationResponse is the response struct for api QueryLocalEnsAssociation
 type QueryLocalEnsAssociationResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Address   string `json:"Address" xml:"Address"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateQueryLocalEnsAssociationRequest creates a request to invoke QueryLocalEnsAssociation API

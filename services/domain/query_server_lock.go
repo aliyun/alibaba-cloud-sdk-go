@@ -79,17 +79,17 @@ type QueryServerLockRequest struct {
 // QueryServerLockResponse is the response struct for api QueryServerLock
 type QueryServerLockResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	GmtCreate        string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified      string `json:"GmtModified" xml:"GmtModified"`
-	UserId           string `json:"UserId" xml:"UserId"`
-	DomainName       string `json:"DomainName" xml:"DomainName"`
-	DomainInstanceId string `json:"DomainInstanceId" xml:"DomainInstanceId"`
-	LockProductId    string `json:"LockProductId" xml:"LockProductId"`
 	StartDate        string `json:"StartDate" xml:"StartDate"`
+	GmtCreate        string `json:"GmtCreate" xml:"GmtCreate"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	ExpireDate       string `json:"ExpireDate" xml:"ExpireDate"`
+	DomainName       string `json:"DomainName" xml:"DomainName"`
+	UserId           string `json:"UserId" xml:"UserId"`
+	GmtModified      string `json:"GmtModified" xml:"GmtModified"`
+	DomainInstanceId string `json:"DomainInstanceId" xml:"DomainInstanceId"`
 	LockInstanceId   string `json:"LockInstanceId" xml:"LockInstanceId"`
 	ServerLockStatus int    `json:"ServerLockStatus" xml:"ServerLockStatus"`
+	LockProductId    string `json:"LockProductId" xml:"LockProductId"`
 }
 
 // CreateQueryServerLockRequest creates a request to invoke QueryServerLock API

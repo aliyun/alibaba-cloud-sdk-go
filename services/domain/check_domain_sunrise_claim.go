@@ -79,9 +79,9 @@ type CheckDomainSunriseClaimRequest struct {
 // CheckDomainSunriseClaimResponse is the response struct for api CheckDomainSunriseClaim
 type CheckDomainSunriseClaimResponse struct {
 	*responses.BaseResponse
+	ClaimKey  string `json:"ClaimKey" xml:"ClaimKey"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    int    `json:"Result" xml:"Result"`
-	ClaimKey  string `json:"ClaimKey" xml:"ClaimKey"`
 }
 
 // CreateCheckDomainSunriseClaimRequest creates a request to invoke CheckDomainSunriseClaim API

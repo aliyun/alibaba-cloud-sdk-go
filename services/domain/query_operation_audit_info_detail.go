@@ -78,15 +78,15 @@ type QueryOperationAuditInfoDetailRequest struct {
 // QueryOperationAuditInfoDetailResponse is the response struct for api QueryOperationAuditInfoDetail
 type QueryOperationAuditInfoDetailResponse struct {
 	*responses.BaseResponse
+	AuditInfo    string `json:"AuditInfo" xml:"AuditInfo"`
+	AuditStatus  int    `json:"AuditStatus" xml:"AuditStatus"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Id           string `json:"Id" xml:"Id"`
+	BusinessName string `json:"BusinessName" xml:"BusinessName"`
+	AuditType    int    `json:"AuditType" xml:"AuditType"`
+	DomainName   string `json:"DomainName" xml:"DomainName"`
 	CreateTime   int64  `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime   int64  `json:"UpdateTime" xml:"UpdateTime"`
-	BusinessName string `json:"BusinessName" xml:"BusinessName"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	AuditType    int    `json:"AuditType" xml:"AuditType"`
-	AuditStatus  int    `json:"AuditStatus" xml:"AuditStatus"`
-	AuditInfo    string `json:"AuditInfo" xml:"AuditInfo"`
+	Id           string `json:"Id" xml:"Id"`
 	Remark       string `json:"Remark" xml:"Remark"`
 }
 

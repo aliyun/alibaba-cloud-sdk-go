@@ -17,13 +17,13 @@ package domain
 
 // OperationAuditRecord is a nested struct in domain response
 type OperationAuditRecord struct {
-	Id           int64  `json:"Id" xml:"Id"`
-	CreateTime   int64  `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime   int64  `json:"UpdateTime" xml:"UpdateTime"`
-	BusinessName string `json:"BusinessName" xml:"BusinessName"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	AuditType    int    `json:"AuditType" xml:"AuditType"`
-	AuditStatus  int    `json:"AuditStatus" xml:"AuditStatus"`
-	AuditInfo    string `json:"AuditInfo" xml:"AuditInfo"`
 	Remark       string `json:"Remark" xml:"Remark"`
+	CreateTime   int64  `json:"CreateTime" xml:"CreateTime"`
+	AuditType    int    `json:"AuditType" xml:"AuditType"`
+	BusinessName string `json:"BusinessName" xml:"BusinessName"`
+	AuditInfo    string `json:"AuditInfo" xml:"AuditInfo"`
+	DomainName   string `json:"DomainName" xml:"DomainName"`
+	AuditStatus  int    `json:"AuditStatus" xml:"AuditStatus"`
+	Id           int64  `json:"Id" xml:"Id"`
 }

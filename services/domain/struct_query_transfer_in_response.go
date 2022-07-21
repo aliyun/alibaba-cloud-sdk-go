@@ -17,14 +17,14 @@ package domain
 
 // QueryTransferInResponse is a nested struct in domain response
 type QueryTransferInResponse struct {
-	GmtCreate        string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified      string `json:"GmtModified" xml:"GmtModified"`
-	UserId           string `json:"UserId" xml:"UserId"`
-	DomainName       string `json:"DomainName" xml:"DomainName"`
-	DomainInstanceId string `json:"DomainInstanceId" xml:"DomainInstanceId"`
-	LockProductId    string `json:"LockProductId" xml:"LockProductId"`
-	StartDate        string `json:"StartDate" xml:"StartDate"`
-	ExpireDate       string `json:"ExpireDate" xml:"ExpireDate"`
-	LockInstanceId   string `json:"LockInstanceId" xml:"LockInstanceId"`
 	ServerLockStatus string `json:"ServerLockStatus" xml:"ServerLockStatus"`
+	LockInstanceId   string `json:"LockInstanceId" xml:"LockInstanceId"`
+	UserId           string `json:"UserId" xml:"UserId"`
+	GmtCreate        string `json:"GmtCreate" xml:"GmtCreate"`
+	ExpireDate       string `json:"ExpireDate" xml:"ExpireDate"`
+	StartDate        string `json:"StartDate" xml:"StartDate"`
+	LockProductId    string `json:"LockProductId" xml:"LockProductId"`
+	DomainInstanceId string `json:"DomainInstanceId" xml:"DomainInstanceId"`
+	GmtModified      string `json:"GmtModified" xml:"GmtModified"`
+	DomainName       string `json:"DomainName" xml:"DomainName"`
 }

@@ -80,14 +80,14 @@ type SaveDomainGroupRequest struct {
 // SaveDomainGroupResponse is the response struct for api SaveDomainGroup
 type SaveDomainGroupResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DomainGroupId     int64  `json:"DomainGroupId" xml:"DomainGroupId"`
-	DomainGroupName   string `json:"DomainGroupName" xml:"DomainGroupName"`
-	TotalNumber       int    `json:"TotalNumber" xml:"TotalNumber"`
+	BeingDeleted      bool   `json:"BeingDeleted" xml:"BeingDeleted"`
 	CreationDate      string `json:"CreationDate" xml:"CreationDate"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	DomainGroupName   string `json:"DomainGroupName" xml:"DomainGroupName"`
 	ModificationDate  string `json:"ModificationDate" xml:"ModificationDate"`
 	DomainGroupStatus string `json:"DomainGroupStatus" xml:"DomainGroupStatus"`
-	BeingDeleted      bool   `json:"BeingDeleted" xml:"BeingDeleted"`
+	DomainGroupId     int64  `json:"DomainGroupId" xml:"DomainGroupId"`
+	TotalNumber       int    `json:"TotalNumber" xml:"TotalNumber"`
 }
 
 // CreateSaveDomainGroupRequest creates a request to invoke SaveDomainGroup API

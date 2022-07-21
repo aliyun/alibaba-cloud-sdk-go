@@ -80,10 +80,10 @@ type LookupTmchNoticeRequest struct {
 type LookupTmchNoticeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Label     string `json:"Label" xml:"Label"`
 	Id        int64  `json:"Id" xml:"Id"`
 	NotBefore string `json:"NotBefore" xml:"NotBefore"`
 	NotAfter  string `json:"NotAfter" xml:"NotAfter"`
-	Label     string `json:"Label" xml:"Label"`
 	Claims    Claims `json:"Claims" xml:"Claims"`
 }
 

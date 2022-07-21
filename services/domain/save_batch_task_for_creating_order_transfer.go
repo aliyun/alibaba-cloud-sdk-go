@@ -84,8 +84,8 @@ type SaveBatchTaskForCreatingOrderTransferRequest struct {
 type SaveBatchTaskForCreatingOrderTransferOrderTransferParam struct {
 	PermitPremiumTransfer string `name:"PermitPremiumTransfer"`
 	AuthorizationCode     string `name:"AuthorizationCode"`
-	DomainName            string `name:"DomainName"`
 	RegistrantProfileId   string `name:"RegistrantProfileId"`
+	DomainName            string `name:"DomainName"`
 }
 
 // SaveBatchTaskForCreatingOrderTransferResponse is the response struct for api SaveBatchTaskForCreatingOrderTransfer

@@ -81,9 +81,9 @@ type SubmitEmailVerificationRequest struct {
 type SubmitEmailVerificationResponse struct {
 	*responses.BaseResponse
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
+	ExistList   []SendResult `json:"ExistList" xml:"ExistList"`
 	SuccessList []SendResult `json:"SuccessList" xml:"SuccessList"`
 	FailList    []SendResult `json:"FailList" xml:"FailList"`
-	ExistList   []SendResult `json:"ExistList" xml:"ExistList"`
 }
 
 // CreateSubmitEmailVerificationRequest creates a request to invoke SubmitEmailVerification API

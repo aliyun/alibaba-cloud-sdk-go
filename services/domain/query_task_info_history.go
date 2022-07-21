@@ -83,11 +83,11 @@ type QueryTaskInfoHistoryRequest struct {
 // QueryTaskInfoHistoryResponse is the response struct for api QueryTaskInfoHistory
 type QueryTaskInfoHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	CurrentPageCursor CurrentPageCursor `json:"CurrentPageCursor" xml:"CurrentPageCursor"`
-	NextPageCursor    NextPageCursor    `json:"NextPageCursor" xml:"NextPageCursor"`
 	PrePageCursor     PrePageCursor     `json:"PrePageCursor" xml:"PrePageCursor"`
+	NextPageCursor    NextPageCursor    `json:"NextPageCursor" xml:"NextPageCursor"`
 	Objects           []TaskInfoHistory `json:"Objects" xml:"Objects"`
 }
 

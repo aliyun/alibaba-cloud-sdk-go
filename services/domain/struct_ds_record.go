@@ -17,8 +17,8 @@ package domain
 
 // DSRecord is a nested struct in domain response
 type DSRecord struct {
-	KeyTag     int    `json:"KeyTag" xml:"KeyTag"`
-	Algorithm  int    `json:"Algorithm" xml:"Algorithm"`
 	DigestType int    `json:"DigestType" xml:"DigestType"`
 	Digest     string `json:"Digest" xml:"Digest"`
+	Algorithm  int    `json:"Algorithm" xml:"Algorithm"`
+	KeyTag     int    `json:"KeyTag" xml:"KeyTag"`
 }

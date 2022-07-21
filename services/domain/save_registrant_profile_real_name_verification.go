@@ -100,8 +100,8 @@ type SaveRegistrantProfileRealNameVerificationRequest struct {
 // SaveRegistrantProfileRealNameVerificationResponse is the response struct for api SaveRegistrantProfileRealNameVerification
 type SaveRegistrantProfileRealNameVerificationResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
 	RegistrantProfileId int64  `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSaveRegistrantProfileRealNameVerificationRequest creates a request to invoke SaveRegistrantProfileRealNameVerification API

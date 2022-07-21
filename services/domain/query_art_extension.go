@@ -79,17 +79,17 @@ type QueryArtExtensionRequest struct {
 // QueryArtExtensionResponse is the response struct for api QueryArtExtension
 type QueryArtExtensionResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
 	ObjectType              string `json:"ObjectType" xml:"ObjectType"`
 	MaterialsAndTechniques  string `json:"MaterialsAndTechniques" xml:"MaterialsAndTechniques"`
+	InscriptionsAndMarkings string `json:"InscriptionsAndMarkings" xml:"InscriptionsAndMarkings"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	Reference               string `json:"Reference" xml:"Reference"`
+	DateOrPeriod            string `json:"DateOrPeriod" xml:"DateOrPeriod"`
 	Dimensions              string `json:"Dimensions" xml:"Dimensions"`
 	Title                   string `json:"Title" xml:"Title"`
-	DateOrPeriod            string `json:"DateOrPeriod" xml:"DateOrPeriod"`
-	Maker                   string `json:"Maker" xml:"Maker"`
-	InscriptionsAndMarkings string `json:"InscriptionsAndMarkings" xml:"InscriptionsAndMarkings"`
-	Subject                 string `json:"Subject" xml:"Subject"`
 	Features                string `json:"Features" xml:"Features"`
-	Reference               string `json:"Reference" xml:"Reference"`
+	Subject                 string `json:"Subject" xml:"Subject"`
+	Maker                   string `json:"Maker" xml:"Maker"`
 }
 
 // CreateQueryArtExtensionRequest creates a request to invoke QueryArtExtension API

@@ -79,28 +79,28 @@ type QueryTransferInByInstanceIdRequest struct {
 // QueryTransferInByInstanceIdResponse is the response struct for api QueryTransferInByInstanceId
 type QueryTransferInByInstanceIdResponse struct {
 	*responses.BaseResponse
+	Status                                      int    `json:"Status" xml:"Status"`
+	TransferAuthorizationCodeSubmissionDate     string `json:"TransferAuthorizationCodeSubmissionDate" xml:"TransferAuthorizationCodeSubmissionDate"`
+	Email                                       string `json:"Email" xml:"Email"`
+	ProgressBarType                             int    `json:"ProgressBarType" xml:"ProgressBarType"`
 	RequestId                                   string `json:"RequestId" xml:"RequestId"`
-	SubmissionDate                              string `json:"SubmissionDate" xml:"SubmissionDate"`
-	ModificationDate                            string `json:"ModificationDate" xml:"ModificationDate"`
-	UserId                                      string `json:"UserId" xml:"UserId"`
 	InstanceId                                  string `json:"InstanceId" xml:"InstanceId"`
 	DomainName                                  string `json:"DomainName" xml:"DomainName"`
-	Status                                      int    `json:"Status" xml:"Status"`
+	SubmissionDateLong                          int64  `json:"SubmissionDateLong" xml:"SubmissionDateLong"`
+	SubmissionDate                              string `json:"SubmissionDate" xml:"SubmissionDate"`
 	SimpleTransferInStatus                      string `json:"SimpleTransferInStatus" xml:"SimpleTransferInStatus"`
+	TransferAuthorizationCodeSubmissionDateLong int64  `json:"TransferAuthorizationCodeSubmissionDateLong" xml:"TransferAuthorizationCodeSubmissionDateLong"`
+	ExpirationDateLong                          int64  `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
+	ExpirationDate                              string `json:"ExpirationDate" xml:"ExpirationDate"`
+	NeedMailCheck                               bool   `json:"NeedMailCheck" xml:"NeedMailCheck"`
+	UserId                                      string `json:"UserId" xml:"UserId"`
+	ModificationDate                            string `json:"ModificationDate" xml:"ModificationDate"`
+	ResultDateLong                              int64  `json:"ResultDateLong" xml:"ResultDateLong"`
+	ResultMsg                                   string `json:"ResultMsg" xml:"ResultMsg"`
+	WhoisMailStatus                             bool   `json:"WhoisMailStatus" xml:"WhoisMailStatus"`
+	ModificationDateLong                        int64  `json:"ModificationDateLong" xml:"ModificationDateLong"`
 	ResultCode                                  string `json:"ResultCode" xml:"ResultCode"`
 	ResultDate                                  string `json:"ResultDate" xml:"ResultDate"`
-	ResultMsg                                   string `json:"ResultMsg" xml:"ResultMsg"`
-	TransferAuthorizationCodeSubmissionDate     string `json:"TransferAuthorizationCodeSubmissionDate" xml:"TransferAuthorizationCodeSubmissionDate"`
-	NeedMailCheck                               bool   `json:"NeedMailCheck" xml:"NeedMailCheck"`
-	Email                                       string `json:"Email" xml:"Email"`
-	WhoisMailStatus                             bool   `json:"WhoisMailStatus" xml:"WhoisMailStatus"`
-	ExpirationDate                              string `json:"ExpirationDate" xml:"ExpirationDate"`
-	ProgressBarType                             int    `json:"ProgressBarType" xml:"ProgressBarType"`
-	SubmissionDateLong                          int64  `json:"SubmissionDateLong" xml:"SubmissionDateLong"`
-	ModificationDateLong                        int64  `json:"ModificationDateLong" xml:"ModificationDateLong"`
-	ResultDateLong                              int64  `json:"ResultDateLong" xml:"ResultDateLong"`
-	ExpirationDateLong                          int64  `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
-	TransferAuthorizationCodeSubmissionDateLong int64  `json:"TransferAuthorizationCodeSubmissionDateLong" xml:"TransferAuthorizationCodeSubmissionDateLong"`
 }
 
 // CreateQueryTransferInByInstanceIdRequest creates a request to invoke QueryTransferInByInstanceId API

@@ -99,9 +99,9 @@ type ScrollDomainListRequest struct {
 type ScrollDomainListResponse struct {
 	*responses.BaseResponse
 	RequestId    string                 `json:"RequestId" xml:"RequestId"`
-	TotalItemNum int                    `json:"TotalItemNum" xml:"TotalItemNum"`
 	PageSize     int                    `json:"PageSize" xml:"PageSize"`
 	ScrollId     string                 `json:"ScrollId" xml:"ScrollId"`
+	TotalItemNum int                    `json:"TotalItemNum" xml:"TotalItemNum"`
 	Data         DataInScrollDomainList `json:"Data" xml:"Data"`
 }
 

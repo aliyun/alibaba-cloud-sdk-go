@@ -80,13 +80,13 @@ type QueryRegistrantProfileRealNameVerificationInfoRequest struct {
 // QueryRegistrantProfileRealNameVerificationInfoResponse is the response struct for api QueryRegistrantProfileRealNameVerificationInfo
 type QueryRegistrantProfileRealNameVerificationInfoResponse struct {
 	*responses.BaseResponse
+	IdentityCredentialType string `json:"IdentityCredentialType" xml:"IdentityCredentialType"`
 	RequestId              string `json:"RequestId" xml:"RequestId"`
-	SubmissionDate         string `json:"SubmissionDate" xml:"SubmissionDate"`
 	ModificationDate       string `json:"ModificationDate" xml:"ModificationDate"`
 	IdentityCredential     string `json:"IdentityCredential" xml:"IdentityCredential"`
-	RegistrantProfileId    int64  `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
+	SubmissionDate         string `json:"SubmissionDate" xml:"SubmissionDate"`
 	IdentityCredentialNo   string `json:"IdentityCredentialNo" xml:"IdentityCredentialNo"`
-	IdentityCredentialType string `json:"IdentityCredentialType" xml:"IdentityCredentialType"`
+	RegistrantProfileId    int64  `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
 	IdentityCredentialUrl  string `json:"IdentityCredentialUrl" xml:"IdentityCredentialUrl"`
 }
 

@@ -80,11 +80,11 @@ type CheckTransferInFeasibilityRequest struct {
 // CheckTransferInFeasibilityResponse is the response struct for api CheckTransferInFeasibility
 type CheckTransferInFeasibilityResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	CanTransfer bool   `json:"CanTransfer" xml:"CanTransfer"`
-	Code        string `json:"Code" xml:"Code"`
 	Message     string `json:"Message" xml:"Message"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	ProductId   string `json:"ProductId" xml:"ProductId"`
+	Code        string `json:"Code" xml:"Code"`
 }
 
 // CreateCheckTransferInFeasibilityRequest creates a request to invoke CheckTransferInFeasibility API

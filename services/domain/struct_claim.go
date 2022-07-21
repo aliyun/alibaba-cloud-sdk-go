@@ -17,10 +17,10 @@ package domain
 
 // Claim is a nested struct in domain response
 type Claim struct {
-	MarkName         string     `json:"MarkName" xml:"MarkName"`
 	GoodsAndServices string     `json:"GoodsAndServices" xml:"GoodsAndServices"`
+	MarkName         string     `json:"MarkName" xml:"MarkName"`
 	JurDesc          JurDesc    `json:"JurDesc" xml:"JurDesc"`
-	Holders          Holders    `json:"Holders" xml:"Holders"`
 	Contacts         Contacts   `json:"Contacts" xml:"Contacts"`
 	ClassDescs       ClassDescs `json:"ClassDescs" xml:"ClassDescs"`
+	Holders          Holders    `json:"Holders" xml:"Holders"`
 }

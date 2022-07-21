@@ -79,9 +79,9 @@ type FuzzyMatchDomainSensitiveWordRequest struct {
 // FuzzyMatchDomainSensitiveWordResponse is the response struct for api FuzzyMatchDomainSensitiveWord
 type FuzzyMatchDomainSensitiveWordResponse struct {
 	*responses.BaseResponse
+	Exist               bool                                               `json:"Exist" xml:"Exist"`
 	RequestId           string                                             `json:"RequestId" xml:"RequestId"`
 	Keyword             string                                             `json:"Keyword" xml:"Keyword"`
-	Exist               bool                                               `json:"Exist" xml:"Exist"`
 	MatchedSentiveWords MatchedSentiveWordsInFuzzyMatchDomainSensitiveWord `json:"MatchedSentiveWords" xml:"MatchedSentiveWords"`
 }
 

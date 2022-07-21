@@ -78,14 +78,14 @@ type GetQualificationUploadPolicyRequest struct {
 // GetQualificationUploadPolicyResponse is the response struct for api GetQualificationUploadPolicy
 type GetQualificationUploadPolicyResponse struct {
 	*responses.BaseResponse
+	Policy    string `json:"Policy" xml:"Policy"`
+	Expire    string `json:"Expire" xml:"Expire"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Accessid  string `json:"Accessid" xml:"Accessid"`
-	Policy    string `json:"Policy" xml:"Policy"`
 	Signature string `json:"Signature" xml:"Signature"`
-	Dir       string `json:"Dir" xml:"Dir"`
-	Prefix    string `json:"Prefix" xml:"Prefix"`
 	Host      string `json:"Host" xml:"Host"`
-	Expire    string `json:"Expire" xml:"Expire"`
+	Prefix    string `json:"Prefix" xml:"Prefix"`
+	Dir       string `json:"Dir" xml:"Dir"`
 }
 
 // CreateGetQualificationUploadPolicyRequest creates a request to invoke GetQualificationUploadPolicy API

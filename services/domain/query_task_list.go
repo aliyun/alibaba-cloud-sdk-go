@@ -82,12 +82,12 @@ type QueryTaskListRequest struct {
 // QueryTaskListResponse is the response struct for api QueryTaskList
 type QueryTaskListResponse struct {
 	*responses.BaseResponse
-	RequestId      string              `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int                 `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int                 `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   int                 `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       int                 `json:"PageSize" xml:"PageSize"`
 	PrePage        bool                `json:"PrePage" xml:"PrePage"`
+	CurrentPageNum int                 `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	RequestId      string              `json:"RequestId" xml:"RequestId"`
+	PageSize       int                 `json:"PageSize" xml:"PageSize"`
+	TotalPageNum   int                 `json:"TotalPageNum" xml:"TotalPageNum"`
+	TotalItemNum   int                 `json:"TotalItemNum" xml:"TotalItemNum"`
 	NextPage       bool                `json:"NextPage" xml:"NextPage"`
 	Data           DataInQueryTaskList `json:"Data" xml:"Data"`
 }

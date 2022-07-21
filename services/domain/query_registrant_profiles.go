@@ -88,13 +88,13 @@ type QueryRegistrantProfilesRequest struct {
 // QueryRegistrantProfilesResponse is the response struct for api QueryRegistrantProfiles
 type QueryRegistrantProfilesResponse struct {
 	*responses.BaseResponse
+	NextPage           bool               `json:"NextPage" xml:"NextPage"`
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	TotalItemNum       int                `json:"TotalItemNum" xml:"TotalItemNum"`
+	PrePage            bool               `json:"PrePage" xml:"PrePage"`
 	CurrentPageNum     int                `json:"CurrentPageNum" xml:"CurrentPageNum"`
 	TotalPageNum       int                `json:"TotalPageNum" xml:"TotalPageNum"`
 	PageSize           int                `json:"PageSize" xml:"PageSize"`
-	PrePage            bool               `json:"PrePage" xml:"PrePage"`
-	NextPage           bool               `json:"NextPage" xml:"NextPage"`
 	RegistrantProfiles RegistrantProfiles `json:"RegistrantProfiles" xml:"RegistrantProfiles"`
 }
 

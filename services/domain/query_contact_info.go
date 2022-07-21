@@ -80,23 +80,23 @@ type QueryContactInfoRequest struct {
 // QueryContactInfoResponse is the response struct for api QueryContactInfo
 type QueryContactInfoResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	CreateDate               string `json:"CreateDate" xml:"CreateDate"`
-	RegistrantName           string `json:"RegistrantName" xml:"RegistrantName"`
-	RegistrantOrganization   string `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
-	Country                  string `json:"Country" xml:"Country"`
-	Province                 string `json:"Province" xml:"Province"`
-	City                     string `json:"City" xml:"City"`
-	Address                  string `json:"Address" xml:"Address"`
-	Email                    string `json:"Email" xml:"Email"`
-	PostalCode               string `json:"PostalCode" xml:"PostalCode"`
-	TelArea                  string `json:"TelArea" xml:"TelArea"`
-	Telephone                string `json:"Telephone" xml:"Telephone"`
-	TelExt                   string `json:"TelExt" xml:"TelExt"`
-	ZhRegistrantName         string `json:"ZhRegistrantName" xml:"ZhRegistrantName"`
-	ZhRegistrantOrganization string `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
 	ZhProvince               string `json:"ZhProvince" xml:"ZhProvince"`
+	Email                    string `json:"Email" xml:"Email"`
+	Telephone                string `json:"Telephone" xml:"Telephone"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	Address                  string `json:"Address" xml:"Address"`
+	PostalCode               string `json:"PostalCode" xml:"PostalCode"`
+	ZhRegistrantName         string `json:"ZhRegistrantName" xml:"ZhRegistrantName"`
+	City                     string `json:"City" xml:"City"`
+	CreateDate               string `json:"CreateDate" xml:"CreateDate"`
+	Province                 string `json:"Province" xml:"Province"`
 	ZhCity                   string `json:"ZhCity" xml:"ZhCity"`
+	RegistrantName           string `json:"RegistrantName" xml:"RegistrantName"`
+	ZhRegistrantOrganization string `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
+	Country                  string `json:"Country" xml:"Country"`
+	RegistrantOrganization   string `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
+	TelExt                   string `json:"TelExt" xml:"TelExt"`
+	TelArea                  string `json:"TelArea" xml:"TelArea"`
 	ZhAddress                string `json:"ZhAddress" xml:"ZhAddress"`
 }
 

@@ -100,8 +100,8 @@ type SaveBatchTaskForCreatingOrderActivateOrderActivateParam struct {
 	Address                   string `name:"Address"`
 	TelArea                   string `name:"TelArea"`
 	DomainName                string `name:"DomainName"`
-	ZhAddress                 string `name:"ZhAddress"`
 	RegistrantType            string `name:"RegistrantType"`
+	ZhAddress                 string `name:"ZhAddress"`
 	Telephone                 string `name:"Telephone"`
 	TrademarkDomainActivation string `name:"TrademarkDomainActivation"`
 	ZhProvince                string `name:"ZhProvince"`

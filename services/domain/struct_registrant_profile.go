@@ -17,28 +17,28 @@ package domain
 
 // RegistrantProfile is a nested struct in domain response
 type RegistrantProfile struct {
-	RegistrantProfileId      int64  `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
-	CreateTime               string `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime               string `json:"UpdateTime" xml:"UpdateTime"`
-	DefaultRegistrantProfile bool   `json:"DefaultRegistrantProfile" xml:"DefaultRegistrantProfile"`
-	RegistrantName           string `json:"RegistrantName" xml:"RegistrantName"`
-	RegistrantOrganization   string `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
-	Country                  string `json:"Country" xml:"Country"`
-	Province                 string `json:"Province" xml:"Province"`
-	City                     string `json:"City" xml:"City"`
-	Address                  string `json:"Address" xml:"Address"`
-	Email                    string `json:"Email" xml:"Email"`
-	PostalCode               string `json:"PostalCode" xml:"PostalCode"`
-	TelArea                  string `json:"TelArea" xml:"TelArea"`
-	Telephone                string `json:"Telephone" xml:"Telephone"`
 	TelExt                   string `json:"TelExt" xml:"TelExt"`
-	EmailVerificationStatus  int    `json:"EmailVerificationStatus" xml:"EmailVerificationStatus"`
-	ZhRegistrantName         string `json:"ZhRegistrantName" xml:"ZhRegistrantName"`
-	ZhRegistrantOrganization string `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
+	UpdateTime               string `json:"UpdateTime" xml:"UpdateTime"`
 	ZhProvince               string `json:"ZhProvince" xml:"ZhProvince"`
+	CreateTime               string `json:"CreateTime" xml:"CreateTime"`
+	Telephone                string `json:"Telephone" xml:"Telephone"`
+	RegistrantOrganization   string `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
+	City                     string `json:"City" xml:"City"`
 	ZhCity                   string `json:"ZhCity" xml:"ZhCity"`
-	ZhAddress                string `json:"ZhAddress" xml:"ZhAddress"`
-	RegistrantType           string `json:"RegistrantType" xml:"RegistrantType"`
+	TelArea                  string `json:"TelArea" xml:"TelArea"`
+	Address                  string `json:"Address" xml:"Address"`
 	RealNameStatus           string `json:"RealNameStatus" xml:"RealNameStatus"`
+	PostalCode               string `json:"PostalCode" xml:"PostalCode"`
 	RegistrantProfileType    string `json:"RegistrantProfileType" xml:"RegistrantProfileType"`
+	RegistrantProfileId      int64  `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
+	ZhRegistrantOrganization string `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
+	DefaultRegistrantProfile bool   `json:"DefaultRegistrantProfile" xml:"DefaultRegistrantProfile"`
+	Email                    string `json:"Email" xml:"Email"`
+	ZhRegistrantName         string `json:"ZhRegistrantName" xml:"ZhRegistrantName"`
+	RegistrantType           string `json:"RegistrantType" xml:"RegistrantType"`
+	Country                  string `json:"Country" xml:"Country"`
+	RegistrantName           string `json:"RegistrantName" xml:"RegistrantName"`
+	EmailVerificationStatus  int    `json:"EmailVerificationStatus" xml:"EmailVerificationStatus"`
+	ZhAddress                string `json:"ZhAddress" xml:"ZhAddress"`
+	Province                 string `json:"Province" xml:"Province"`
 }

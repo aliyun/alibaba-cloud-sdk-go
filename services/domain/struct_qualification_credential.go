@@ -17,7 +17,7 @@ package domain
 
 // QualificationCredential is a nested struct in domain response
 type QualificationCredential struct {
-	CredentialNo   string `json:"CredentialNo" xml:"CredentialNo"`
 	CredentialType string `json:"CredentialType" xml:"CredentialType"`
+	CredentialNo   string `json:"CredentialNo" xml:"CredentialNo"`
 	CredentialUrl  string `json:"CredentialUrl" xml:"CredentialUrl"`
 }

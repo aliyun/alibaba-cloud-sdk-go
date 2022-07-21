@@ -18,10 +18,10 @@ package domain
 // Contact is a nested struct in domain response
 type Contact struct {
 	Type  string `json:"Type" xml:"Type"`
-	Name  string `json:"Name" xml:"Name"`
-	Org   string `json:"Org" xml:"Org"`
 	Voice string `json:"Voice" xml:"Voice"`
-	Fax   string `json:"Fax" xml:"Fax"`
 	Email string `json:"Email" xml:"Email"`
+	Fax   string `json:"Fax" xml:"Fax"`
+	Org   string `json:"Org" xml:"Org"`
+	Name  string `json:"Name" xml:"Name"`
 	Addr  Addr   `json:"Addr" xml:"Addr"`
 }

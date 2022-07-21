@@ -17,25 +17,25 @@ package domain
 
 // TransferInInfo is a nested struct in domain response
 type TransferInInfo struct {
-	SubmissionDate                              string `json:"SubmissionDate" xml:"SubmissionDate"`
-	ModificationDate                            string `json:"ModificationDate" xml:"ModificationDate"`
+	Status                                      int    `json:"Status" xml:"Status"`
 	UserId                                      string `json:"UserId" xml:"UserId"`
+	ModificationDate                            string `json:"ModificationDate" xml:"ModificationDate"`
+	TransferAuthorizationCodeSubmissionDateLong int64  `json:"TransferAuthorizationCodeSubmissionDateLong" xml:"TransferAuthorizationCodeSubmissionDateLong"`
+	SubmissionDateLong                          int64  `json:"SubmissionDateLong" xml:"SubmissionDateLong"`
+	ResultCode                                  string `json:"ResultCode" xml:"ResultCode"`
+	NeedMailCheck                               bool   `json:"NeedMailCheck" xml:"NeedMailCheck"`
+	ModificationDateLong                        int64  `json:"ModificationDateLong" xml:"ModificationDateLong"`
 	InstanceId                                  string `json:"InstanceId" xml:"InstanceId"`
 	DomainName                                  string `json:"DomainName" xml:"DomainName"`
-	Status                                      int    `json:"Status" xml:"Status"`
-	SimpleTransferInStatus                      string `json:"SimpleTransferInStatus" xml:"SimpleTransferInStatus"`
-	ResultCode                                  string `json:"ResultCode" xml:"ResultCode"`
-	ResultDate                                  string `json:"ResultDate" xml:"ResultDate"`
+	ProgressBarType                             int    `json:"ProgressBarType" xml:"ProgressBarType"`
 	ResultMsg                                   string `json:"ResultMsg" xml:"ResultMsg"`
-	TransferAuthorizationCodeSubmissionDate     string `json:"TransferAuthorizationCodeSubmissionDate" xml:"TransferAuthorizationCodeSubmissionDate"`
-	NeedMailCheck                               bool   `json:"NeedMailCheck" xml:"NeedMailCheck"`
+	ResultDateLong                              int64  `json:"ResultDateLong" xml:"ResultDateLong"`
+	ExpirationDate                              string `json:"ExpirationDate" xml:"ExpirationDate"`
 	Email                                       string `json:"Email" xml:"Email"`
 	WhoisMailStatus                             bool   `json:"WhoisMailStatus" xml:"WhoisMailStatus"`
-	ExpirationDate                              string `json:"ExpirationDate" xml:"ExpirationDate"`
-	ProgressBarType                             int    `json:"ProgressBarType" xml:"ProgressBarType"`
-	SubmissionDateLong                          int64  `json:"SubmissionDateLong" xml:"SubmissionDateLong"`
-	ModificationDateLong                        int64  `json:"ModificationDateLong" xml:"ModificationDateLong"`
-	ResultDateLong                              int64  `json:"ResultDateLong" xml:"ResultDateLong"`
+	TransferAuthorizationCodeSubmissionDate     string `json:"TransferAuthorizationCodeSubmissionDate" xml:"TransferAuthorizationCodeSubmissionDate"`
+	SubmissionDate                              string `json:"SubmissionDate" xml:"SubmissionDate"`
 	ExpirationDateLong                          int64  `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
-	TransferAuthorizationCodeSubmissionDateLong int64  `json:"TransferAuthorizationCodeSubmissionDateLong" xml:"TransferAuthorizationCodeSubmissionDateLong"`
+	SimpleTransferInStatus                      string `json:"SimpleTransferInStatus" xml:"SimpleTransferInStatus"`
+	ResultDate                                  string `json:"ResultDate" xml:"ResultDate"`
 }

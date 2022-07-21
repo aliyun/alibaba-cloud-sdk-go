@@ -78,11 +78,11 @@ type GetOperationOssUploadPolicyRequest struct {
 // GetOperationOssUploadPolicyResponse is the response struct for api GetOperationOssUploadPolicy
 type GetOperationOssUploadPolicyResponse struct {
 	*responses.BaseResponse
+	FileDir       string `json:"FileDir" xml:"FileDir"`
+	EncodedPolicy string `json:"EncodedPolicy" xml:"EncodedPolicy"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	Accessid      string `json:"Accessid" xml:"Accessid"`
-	EncodedPolicy string `json:"EncodedPolicy" xml:"EncodedPolicy"`
 	Signature     string `json:"Signature" xml:"Signature"`
-	FileDir       string `json:"FileDir" xml:"FileDir"`
 	Host          string `json:"Host" xml:"Host"`
 	ExpireTime    string `json:"ExpireTime" xml:"ExpireTime"`
 }

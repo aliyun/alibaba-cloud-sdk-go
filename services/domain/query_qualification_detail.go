@@ -80,9 +80,9 @@ type QueryQualificationDetailRequest struct {
 // QueryQualificationDetailResponse is the response struct for api QueryQualificationDetail
 type QueryQualificationDetailResponse struct {
 	*responses.BaseResponse
-	TrackId     string      `json:"TrackId" xml:"TrackId"`
 	AuditStatus int         `json:"AuditStatus" xml:"AuditStatus"`
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TrackId     string      `json:"TrackId" xml:"TrackId"`
 	Credentials Credentials `json:"Credentials" xml:"Credentials"`
 }
 

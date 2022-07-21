@@ -83,14 +83,14 @@ type QueryChangeLogListRequest struct {
 // QueryChangeLogListResponse is the response struct for api QueryChangeLogList
 type QueryChangeLogListResponse struct {
 	*responses.BaseResponse
-	RequestId      string                   `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int                      `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int                      `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   int                      `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       int                      `json:"PageSize" xml:"PageSize"`
 	PrePage        bool                     `json:"PrePage" xml:"PrePage"`
-	NextPage       bool                     `json:"NextPage" xml:"NextPage"`
+	CurrentPageNum int                      `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	RequestId      string                   `json:"RequestId" xml:"RequestId"`
+	PageSize       int                      `json:"PageSize" xml:"PageSize"`
+	TotalPageNum   int                      `json:"TotalPageNum" xml:"TotalPageNum"`
 	ResultLimit    bool                     `json:"ResultLimit" xml:"ResultLimit"`
+	TotalItemNum   int                      `json:"TotalItemNum" xml:"TotalItemNum"`
+	NextPage       bool                     `json:"NextPage" xml:"NextPage"`
 	Data           DataInQueryChangeLogList `json:"Data" xml:"Data"`
 }
 

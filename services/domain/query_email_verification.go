@@ -79,17 +79,17 @@ type QueryEmailVerificationRequest struct {
 // QueryEmailVerificationResponse is the response struct for api QueryEmailVerification
 type QueryEmailVerificationResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified         string `json:"GmtModified" xml:"GmtModified"`
-	Email               string `json:"Email" xml:"Email"`
-	UserId              string `json:"UserId" xml:"UserId"`
-	EmailVerificationNo string `json:"EmailVerificationNo" xml:"EmailVerificationNo"`
-	TokenSendTime       string `json:"TokenSendTime" xml:"TokenSendTime"`
 	VerificationStatus  int    `json:"VerificationStatus" xml:"VerificationStatus"`
-	VerificationTime    string `json:"VerificationTime" xml:"VerificationTime"`
-	SendIp              string `json:"SendIp" xml:"SendIp"`
+	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
+	Email               string `json:"Email" xml:"Email"`
+	EmailVerificationNo string `json:"EmailVerificationNo" xml:"EmailVerificationNo"`
 	ConfirmIp           string `json:"ConfirmIp" xml:"ConfirmIp"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	UserId              string `json:"UserId" xml:"UserId"`
+	GmtModified         string `json:"GmtModified" xml:"GmtModified"`
+	SendIp              string `json:"SendIp" xml:"SendIp"`
+	VerificationTime    string `json:"VerificationTime" xml:"VerificationTime"`
+	TokenSendTime       string `json:"TokenSendTime" xml:"TokenSendTime"`
 }
 
 // CreateQueryEmailVerificationRequest creates a request to invoke QueryEmailVerification API

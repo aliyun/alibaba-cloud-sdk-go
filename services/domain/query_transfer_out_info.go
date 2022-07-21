@@ -79,14 +79,14 @@ type QueryTransferOutInfoRequest struct {
 // QueryTransferOutInfoResponse is the response struct for api QueryTransferOutInfo
 type QueryTransferOutInfoResponse struct {
 	*responses.BaseResponse
-	RequestId                         string `json:"RequestId" xml:"RequestId"`
 	Status                            int    `json:"Status" xml:"Status"`
 	Email                             string `json:"Email" xml:"Email"`
-	TransferAuthorizationCodeSendDate string `json:"TransferAuthorizationCodeSendDate" xml:"TransferAuthorizationCodeSendDate"`
 	ExpirationDate                    string `json:"ExpirationDate" xml:"ExpirationDate"`
+	RequestId                         string `json:"RequestId" xml:"RequestId"`
+	ResultMsg                         string `json:"ResultMsg" xml:"ResultMsg"`
 	PendingRequestDate                string `json:"PendingRequestDate" xml:"PendingRequestDate"`
 	ResultCode                        string `json:"ResultCode" xml:"ResultCode"`
-	ResultMsg                         string `json:"ResultMsg" xml:"ResultMsg"`
+	TransferAuthorizationCodeSendDate string `json:"TransferAuthorizationCodeSendDate" xml:"TransferAuthorizationCodeSendDate"`
 }
 
 // CreateQueryTransferOutInfoRequest creates a request to invoke QueryTransferOutInfo API

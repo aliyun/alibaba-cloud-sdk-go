@@ -80,13 +80,13 @@ type QueryDomainRealNameVerificationInfoRequest struct {
 // QueryDomainRealNameVerificationInfoResponse is the response struct for api QueryDomainRealNameVerificationInfo
 type QueryDomainRealNameVerificationInfoResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	SubmissionDate         string `json:"SubmissionDate" xml:"SubmissionDate"`
-	IdentityCredential     string `json:"IdentityCredential" xml:"IdentityCredential"`
-	IdentityCredentialNo   string `json:"IdentityCredentialNo" xml:"IdentityCredentialNo"`
 	IdentityCredentialType string `json:"IdentityCredentialType" xml:"IdentityCredentialType"`
-	DomainName             string `json:"DomainName" xml:"DomainName"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
 	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+	DomainName             string `json:"DomainName" xml:"DomainName"`
+	IdentityCredential     string `json:"IdentityCredential" xml:"IdentityCredential"`
+	SubmissionDate         string `json:"SubmissionDate" xml:"SubmissionDate"`
+	IdentityCredentialNo   string `json:"IdentityCredentialNo" xml:"IdentityCredentialNo"`
 	IdentityCredentialUrl  string `json:"IdentityCredentialUrl" xml:"IdentityCredentialUrl"`
 }
 

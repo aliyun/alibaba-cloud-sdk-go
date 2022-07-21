@@ -98,8 +98,8 @@ type SaveRegistrantProfileRequest struct {
 // SaveRegistrantProfileResponse is the response struct for api SaveRegistrantProfile
 type SaveRegistrantProfileResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
 	RegistrantProfileId int64  `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSaveRegistrantProfileRequest creates a request to invoke SaveRegistrantProfile API

@@ -17,10 +17,10 @@ package domain
 
 // ChangeLog is a nested struct in domain response
 type ChangeLog struct {
-	DomainName         string `json:"DomainName" xml:"DomainName"`
-	Result             string `json:"Result" xml:"Result"`
 	Operation          string `json:"Operation" xml:"Operation"`
+	Time               string `json:"Time" xml:"Time"`
+	Result             string `json:"Result" xml:"Result"`
+	DomainName         string `json:"DomainName" xml:"DomainName"`
 	OperationIPAddress string `json:"OperationIPAddress" xml:"OperationIPAddress"`
 	Details            string `json:"Details" xml:"Details"`
-	Time               string `json:"Time" xml:"Time"`
 }
