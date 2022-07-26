@@ -23,6 +23,8 @@ type Data struct {
 	Carrier             string `json:"Carrier" xml:"Carrier"`
 	VerifyResult        string `json:"VerifyResult" xml:"VerifyResult"`
 	BasicCarrier        string `json:"BasicCarrier" xml:"BasicCarrier"`
+	IsPrivacyNumber     bool   `json:"IsPrivacyNumber" xml:"IsPrivacyNumber"`
+	Status              string `json:"Status" xml:"Status"`
 	City                string `json:"City" xml:"City"`
 	Province            string `json:"Province" xml:"Province"`
 }

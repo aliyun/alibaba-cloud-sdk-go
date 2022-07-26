@@ -1,3 +1,7 @@
+2022-07-26 Version: v1.61.1692
+- Generated 2020-02-17 for `Dytnsapi`.
+- Support Service of number analysis.
+
 2022-07-26 Version: v1.61.1691
 - Generated 2017-11-10 for `Ens`.
 - Support API ARMInstance.
