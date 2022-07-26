@@ -80,9 +80,10 @@ type GetInventorySchemaRequest struct {
 // GetInventorySchemaResponse is the response struct for api GetInventorySchema
 type GetInventorySchemaResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	NextToken string   `json:"NextToken" xml:"NextToken"`
-	Schemas   []Schema `json:"Schemas" xml:"Schemas"`
+	NextToken  string   `json:"NextToken" xml:"NextToken"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	MaxResults string   `json:"MaxResults" xml:"MaxResults"`
+	Schemas    []Schema `json:"Schemas" xml:"Schemas"`
 }
 
 // CreateGetInventorySchemaRequest creates a request to invoke GetInventorySchema API
@@ -90,7 +91,7 @@ func CreateGetInventorySchemaRequest() (request *GetInventorySchemaRequest) {
 	request = &GetInventorySchemaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetInventorySchema", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetInventorySchema", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,17 +71,18 @@ func (client *Client) ListInstancePatchesWithCallback(request *ListInstancePatch
 // ListInstancePatchesRequest is the request struct for api ListInstancePatches
 type ListInstancePatchesRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	NextToken  string           `position:"Query" name:"NextToken"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	NextToken     string           `position:"Query" name:"NextToken"`
+	MaxResults    requests.Integer `position:"Query" name:"MaxResults"`
+	PatchStatuses string           `position:"Query" name:"PatchStatuses"`
 }
 
 // ListInstancePatchesResponse is the response struct for api ListInstancePatches
 type ListInstancePatchesResponse struct {
 	*responses.BaseResponse
-	MaxResults int     `json:"MaxResults" xml:"MaxResults"`
 	NextToken  string  `json:"NextToken" xml:"NextToken"`
 	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	MaxResults int     `json:"MaxResults" xml:"MaxResults"`
 	Patches    []Patch `json:"Patches" xml:"Patches"`
 }
 
@@ -90,7 +91,7 @@ func CreateListInstancePatchesRequest() (request *ListInstancePatchesRequest) {
 	request = &ListInstancePatchesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListInstancePatches", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListInstancePatches", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,23 +17,23 @@ package oos
 
 // TaskExecution is a nested struct in oos response
 type TaskExecution struct {
-	ExecutionId           string                 `json:"ExecutionId" xml:"ExecutionId"`
-	TaskExecutionId       string                 `json:"TaskExecutionId" xml:"TaskExecutionId"`
-	TemplateId            string                 `json:"TemplateId" xml:"TemplateId"`
-	StartDate             string                 `json:"StartDate" xml:"StartDate"`
-	EndDate               string                 `json:"EndDate" xml:"EndDate"`
-	CreateDate            string                 `json:"CreateDate" xml:"CreateDate"`
-	UpdateDate            string                 `json:"UpdateDate" xml:"UpdateDate"`
-	Status                string                 `json:"Status" xml:"Status"`
-	Properties            string                 `json:"Properties" xml:"Properties"`
-	Outputs               string                 `json:"Outputs" xml:"Outputs"`
-	TaskAction            string                 `json:"TaskAction" xml:"TaskAction"`
-	TaskName              string                 `json:"TaskName" xml:"TaskName"`
-	StatusMessage         string                 `json:"StatusMessage" xml:"StatusMessage"`
 	ChildExecutionId      string                 `json:"ChildExecutionId" xml:"ChildExecutionId"`
+	Outputs               string                 `json:"Outputs" xml:"Outputs"`
+	Status                string                 `json:"Status" xml:"Status"`
+	EndDate               string                 `json:"EndDate" xml:"EndDate"`
 	ParentTaskExecutionId string                 `json:"ParentTaskExecutionId" xml:"ParentTaskExecutionId"`
+	TaskName              string                 `json:"TaskName" xml:"TaskName"`
+	StartDate             string                 `json:"StartDate" xml:"StartDate"`
 	LoopItem              string                 `json:"LoopItem" xml:"LoopItem"`
+	CreateDate            string                 `json:"CreateDate" xml:"CreateDate"`
+	ExecutionId           string                 `json:"ExecutionId" xml:"ExecutionId"`
+	TaskAction            string                 `json:"TaskAction" xml:"TaskAction"`
+	TaskExecutionId       string                 `json:"TaskExecutionId" xml:"TaskExecutionId"`
+	UpdateDate            string                 `json:"UpdateDate" xml:"UpdateDate"`
 	Loop                  map[string]interface{} `json:"Loop" xml:"Loop"`
-	ExtraData             map[string]interface{} `json:"ExtraData" xml:"ExtraData"`
+	TemplateId            string                 `json:"TemplateId" xml:"TemplateId"`
 	LoopBatchNumber       int                    `json:"LoopBatchNumber" xml:"LoopBatchNumber"`
+	StatusMessage         string                 `json:"StatusMessage" xml:"StatusMessage"`
+	ExtraData             map[string]interface{} `json:"ExtraData" xml:"ExtraData"`
+	Properties            string                 `json:"Properties" xml:"Properties"`
 }

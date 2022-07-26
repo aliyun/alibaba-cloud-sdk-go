@@ -71,12 +71,13 @@ func (client *Client) ListStateConfigurationsWithCallback(request *ListStateConf
 // ListStateConfigurationsRequest is the request struct for api ListStateConfigurations
 type ListStateConfigurationsRequest struct {
 	*requests.RpcRequest
-	StateConfigurationIds string `position:"Query" name:"StateConfigurationIds"`
-	Tags                  string `position:"Query" name:"Tags"`
-	TemplateVersion       string `position:"Query" name:"TemplateVersion"`
-	NextToken             string `position:"Query" name:"NextToken"`
-	MaxResults            string `position:"Query" name:"MaxResults"`
-	TemplateName          string `position:"Query" name:"TemplateName"`
+	StateConfigurationIds string           `position:"Query" name:"StateConfigurationIds"`
+	Tags                  string           `position:"Query" name:"Tags"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	TemplateVersion       string           `position:"Query" name:"TemplateVersion"`
+	NextToken             string           `position:"Query" name:"NextToken"`
+	MaxResults            requests.Integer `position:"Query" name:"MaxResults"`
+	TemplateName          string           `position:"Query" name:"TemplateName"`
 }
 
 // ListStateConfigurationsResponse is the response struct for api ListStateConfigurations
@@ -91,7 +92,7 @@ func CreateListStateConfigurationsRequest() (request *ListStateConfigurationsReq
 	request = &ListStateConfigurationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListStateConfigurations", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListStateConfigurations", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

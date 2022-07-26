@@ -79,9 +79,9 @@ type ListResourceExecutionStatusRequest struct {
 // ListResourceExecutionStatusResponse is the response struct for api ListResourceExecutionStatus
 type ListResourceExecutionStatusResponse struct {
 	*responses.BaseResponse
+	NextToken               string   `json:"NextToken" xml:"NextToken"`
 	RequestId               string   `json:"RequestId" xml:"RequestId"`
 	MaxResults              int      `json:"MaxResults" xml:"MaxResults"`
-	NextToken               string   `json:"NextToken" xml:"NextToken"`
 	ResourceExecutionStatus []Status `json:"ResourceExecutionStatus" xml:"ResourceExecutionStatus"`
 }
 
@@ -90,7 +90,7 @@ func CreateListResourceExecutionStatusRequest() (request *ListResourceExecutionS
 	request = &ListResourceExecutionStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListResourceExecutionStatus", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListResourceExecutionStatus", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

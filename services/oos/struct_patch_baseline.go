@@ -25,7 +25,7 @@ type PatchBaseline struct {
 	CreatedDate     string `json:"CreatedDate" xml:"CreatedDate"`
 	Id              string `json:"Id" xml:"Id"`
 	Description     string `json:"Description" xml:"Description"`
-	CreatedBy       string `json:"CreatedBy" xml:"CreatedBy"`
 	UpdatedDate     string `json:"UpdatedDate" xml:"UpdatedDate"`
+	CreatedBy       string `json:"CreatedBy" xml:"CreatedBy"`
 	ShareType       string `json:"ShareType" xml:"ShareType"`
 }

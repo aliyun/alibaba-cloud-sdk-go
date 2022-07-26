@@ -17,9 +17,9 @@ package oos
 
 // Status is a nested struct in oos response
 type Status struct {
-	ResourceId    string `json:"ResourceId" xml:"ResourceId"`
-	ExecutionTime string `json:"ExecutionTime" xml:"ExecutionTime"`
-	Status        string `json:"Status" xml:"Status"`
 	Outputs       string `json:"Outputs" xml:"Outputs"`
+	Status        string `json:"Status" xml:"Status"`
+	ExecutionTime string `json:"ExecutionTime" xml:"ExecutionTime"`
+	ResourceId    string `json:"ResourceId" xml:"ResourceId"`
 	ExecutionId   string `json:"ExecutionId" xml:"ExecutionId"`
 }

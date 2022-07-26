@@ -17,27 +17,28 @@ package oos
 
 // ExecutionInStartExecution is a nested struct in oos response
 type ExecutionInStartExecution struct {
-	ExecutionId       string                 `json:"ExecutionId" xml:"ExecutionId"`
-	TemplateName      string                 `json:"TemplateName" xml:"TemplateName"`
-	TemplateId        string                 `json:"TemplateId" xml:"TemplateId"`
-	TemplateVersion   string                 `json:"TemplateVersion" xml:"TemplateVersion"`
-	Mode              string                 `json:"Mode" xml:"Mode"`
-	LoopMode          string                 `json:"LoopMode" xml:"LoopMode"`
-	ExecutedBy        string                 `json:"ExecutedBy" xml:"ExecutedBy"`
-	StartDate         string                 `json:"StartDate" xml:"StartDate"`
-	EndDate           string                 `json:"EndDate" xml:"EndDate"`
-	CreateDate        string                 `json:"CreateDate" xml:"CreateDate"`
-	UpdateDate        string                 `json:"UpdateDate" xml:"UpdateDate"`
-	Status            string                 `json:"Status" xml:"Status"`
-	StatusMessage     string                 `json:"StatusMessage" xml:"StatusMessage"`
-	ParentExecutionId string                 `json:"ParentExecutionId" xml:"ParentExecutionId"`
-	Parameters        string                 `json:"Parameters" xml:"Parameters"`
 	Outputs           string                 `json:"Outputs" xml:"Outputs"`
-	SafetyCheck       string                 `json:"SafetyCheck" xml:"SafetyCheck"`
+	Status            string                 `json:"Status" xml:"Status"`
+	EndDate           string                 `json:"EndDate" xml:"EndDate"`
+	ExecutedBy        string                 `json:"ExecutedBy" xml:"ExecutedBy"`
 	IsParent          bool                   `json:"IsParent" xml:"IsParent"`
-	Counters          map[string]interface{} `json:"Counters" xml:"Counters"`
-	RamRole           string                 `json:"RamRole" xml:"RamRole"`
 	Tags              map[string]interface{} `json:"Tags" xml:"Tags"`
+	StartDate         string                 `json:"StartDate" xml:"StartDate"`
+	SafetyCheck       string                 `json:"SafetyCheck" xml:"SafetyCheck"`
+	Mode              string                 `json:"Mode" xml:"Mode"`
+	TemplateName      string                 `json:"TemplateName" xml:"TemplateName"`
+	CreateDate        string                 `json:"CreateDate" xml:"CreateDate"`
+	TemplateVersion   string                 `json:"TemplateVersion" xml:"TemplateVersion"`
+	ExecutionId       string                 `json:"ExecutionId" xml:"ExecutionId"`
+	Parameters        string                 `json:"Parameters" xml:"Parameters"`
 	Description       string                 `json:"Description" xml:"Description"`
+	Counters          map[string]interface{} `json:"Counters" xml:"Counters"`
+	UpdateDate        string                 `json:"UpdateDate" xml:"UpdateDate"`
+	ResourceGroupId   string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ParentExecutionId string                 `json:"ParentExecutionId" xml:"ParentExecutionId"`
+	RamRole           string                 `json:"RamRole" xml:"RamRole"`
+	TemplateId        string                 `json:"TemplateId" xml:"TemplateId"`
+	StatusMessage     string                 `json:"StatusMessage" xml:"StatusMessage"`
+	LoopMode          string                 `json:"LoopMode" xml:"LoopMode"`
 	CurrentTasks      []CurrentTask          `json:"CurrentTasks" xml:"CurrentTasks"`
 }

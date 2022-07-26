@@ -17,17 +17,18 @@ package oos
 
 // StateConfigurationInListStateConfigurations is a nested struct in oos response
 type StateConfigurationInListStateConfigurations struct {
+	UpdateTime           string                 `json:"UpdateTime" xml:"UpdateTime"`
 	CreateTime           string                 `json:"CreateTime" xml:"CreateTime"`
-	Description          string                 `json:"Description" xml:"Description"`
+	Targets              string                 `json:"Targets" xml:"Targets"`
+	Tags                 map[string]interface{} `json:"Tags" xml:"Tags"`
 	StateConfigurationId string                 `json:"StateConfigurationId" xml:"StateConfigurationId"`
-	TemplateId           string                 `json:"TemplateId" xml:"TemplateId"`
+	ScheduleExpression   string                 `json:"ScheduleExpression" xml:"ScheduleExpression"`
 	TemplateName         string                 `json:"TemplateName" xml:"TemplateName"`
 	TemplateVersion      string                 `json:"TemplateVersion" xml:"TemplateVersion"`
-	Parameters           string                 `json:"Parameters" xml:"Parameters"`
 	ConfigureMode        string                 `json:"ConfigureMode" xml:"ConfigureMode"`
 	ScheduleType         string                 `json:"ScheduleType" xml:"ScheduleType"`
-	ScheduleExpression   string                 `json:"ScheduleExpression" xml:"ScheduleExpression"`
-	Targets              string                 `json:"Targets" xml:"Targets"`
-	UpdateTime           string                 `json:"UpdateTime" xml:"UpdateTime"`
-	Tags                 map[string]interface{} `json:"Tags" xml:"Tags"`
+	Parameters           string                 `json:"Parameters" xml:"Parameters"`
+	Description          string                 `json:"Description" xml:"Description"`
+	ResourceGroupId      string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	TemplateId           string                 `json:"TemplateId" xml:"TemplateId"`
 }

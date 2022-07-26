@@ -17,17 +17,18 @@ package oos
 
 // ParameterInCreateSecretParameter is a nested struct in oos response
 type ParameterInCreateSecretParameter struct {
-	Id               string `json:"Id" xml:"Id"`
-	Name             string `json:"Name" xml:"Name"`
-	CreatedDate      string `json:"CreatedDate" xml:"CreatedDate"`
-	CreatedBy        string `json:"CreatedBy" xml:"CreatedBy"`
+	Type             string `json:"Type" xml:"Type"`
 	UpdatedDate      string `json:"UpdatedDate" xml:"UpdatedDate"`
 	UpdatedBy        string `json:"UpdatedBy" xml:"UpdatedBy"`
-	Description      string `json:"Description" xml:"Description"`
-	ShareType        string `json:"ShareType" xml:"ShareType"`
-	ParameterVersion int    `json:"ParameterVersion" xml:"ParameterVersion"`
-	Type             string `json:"Type" xml:"Type"`
-	Constraints      string `json:"Constraints" xml:"Constraints"`
 	KeyId            string `json:"KeyId" xml:"KeyId"`
 	Tags             string `json:"Tags" xml:"Tags"`
+	Description      string `json:"Description" xml:"Description"`
+	Constraints      string `json:"Constraints" xml:"Constraints"`
+	ResourceGroupId  string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreatedBy        string `json:"CreatedBy" xml:"CreatedBy"`
+	CreatedDate      string `json:"CreatedDate" xml:"CreatedDate"`
+	ParameterVersion int    `json:"ParameterVersion" xml:"ParameterVersion"`
+	Name             string `json:"Name" xml:"Name"`
+	Id               string `json:"Id" xml:"Id"`
+	ShareType        string `json:"ShareType" xml:"ShareType"`
 }

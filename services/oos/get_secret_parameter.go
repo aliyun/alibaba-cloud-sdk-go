@@ -88,7 +88,7 @@ func CreateGetSecretParameterRequest() (request *GetSecretParameterRequest) {
 	request = &GetSecretParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetSecretParameter", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetSecretParameter", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

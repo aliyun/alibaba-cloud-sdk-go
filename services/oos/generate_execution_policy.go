@@ -78,8 +78,8 @@ type GenerateExecutionPolicyRequest struct {
 // GenerateExecutionPolicyResponse is the response struct for api GenerateExecutionPolicy
 type GenerateExecutionPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Policy    string `json:"Policy" xml:"Policy"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGenerateExecutionPolicyRequest creates a request to invoke GenerateExecutionPolicy API
@@ -87,7 +87,7 @@ func CreateGenerateExecutionPolicyRequest() (request *GenerateExecutionPolicyReq
 	request = &GenerateExecutionPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GenerateExecutionPolicy", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GenerateExecutionPolicy", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

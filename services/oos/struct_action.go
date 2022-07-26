@@ -17,10 +17,11 @@ package oos
 
 // Action is a nested struct in oos response
 type Action struct {
-	OOSActionName   string `json:"OOSActionName" xml:"OOSActionName"`
-	Description     string `json:"Description" xml:"Description"`
+	Popularity      int    `json:"Popularity" xml:"Popularity"`
 	ActionType      string `json:"ActionType" xml:"ActionType"`
+	Description     string `json:"Description" xml:"Description"`
 	CreatedDate     string `json:"CreatedDate" xml:"CreatedDate"`
-	Properties      string `json:"Properties" xml:"Properties"`
 	TemplateVersion string `json:"TemplateVersion" xml:"TemplateVersion"`
+	OOSActionName   string `json:"OOSActionName" xml:"OOSActionName"`
+	Properties      string `json:"Properties" xml:"Properties"`
 }

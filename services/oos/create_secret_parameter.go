@@ -71,14 +71,15 @@ func (client *Client) CreateSecretParameterWithCallback(request *CreateSecretPar
 // CreateSecretParameterRequest is the request struct for api CreateSecretParameter
 type CreateSecretParameterRequest struct {
 	*requests.RpcRequest
-	ClientToken string `position:"Query" name:"ClientToken"`
-	Description string `position:"Query" name:"Description"`
-	Type        string `position:"Query" name:"Type"`
-	Constraints string `position:"Query" name:"Constraints"`
-	Value       string `position:"Query" name:"Value"`
-	KeyId       string `position:"Query" name:"KeyId"`
-	Tags        string `position:"Query" name:"Tags"`
-	Name        string `position:"Query" name:"Name"`
+	ClientToken     string `position:"Query" name:"ClientToken"`
+	Description     string `position:"Query" name:"Description"`
+	Type            string `position:"Query" name:"Type"`
+	Constraints     string `position:"Query" name:"Constraints"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Value           string `position:"Query" name:"Value"`
+	KeyId           string `position:"Query" name:"KeyId"`
+	Tags            string `position:"Query" name:"Tags"`
+	Name            string `position:"Query" name:"Name"`
 }
 
 // CreateSecretParameterResponse is the response struct for api CreateSecretParameter
@@ -93,7 +94,7 @@ func CreateCreateSecretParameterRequest() (request *CreateSecretParameterRequest
 	request = &CreateSecretParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "CreateSecretParameter", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "CreateSecretParameter", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,10 +71,11 @@ func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest,
 // UpdateTemplateRequest is the request struct for api UpdateTemplate
 type UpdateTemplateRequest struct {
 	*requests.RpcRequest
-	Content      string                 `position:"Query" name:"Content"`
-	Tags         map[string]interface{} `position:"Query" name:"Tags"`
-	TemplateName string                 `position:"Query" name:"TemplateName"`
-	VersionName  string                 `position:"Query" name:"VersionName"`
+	Content         string                 `position:"Query" name:"Content"`
+	Tags            map[string]interface{} `position:"Query" name:"Tags"`
+	ResourceGroupId string                 `position:"Query" name:"ResourceGroupId"`
+	TemplateName    string                 `position:"Query" name:"TemplateName"`
+	VersionName     string                 `position:"Query" name:"VersionName"`
 }
 
 // UpdateTemplateResponse is the response struct for api UpdateTemplate
@@ -89,7 +90,7 @@ func CreateUpdateTemplateRequest() (request *UpdateTemplateRequest) {
 	request = &UpdateTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "UpdateTemplate", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdateTemplate", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

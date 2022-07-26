@@ -87,9 +87,9 @@ type SearchInventoryFilter struct {
 // SearchInventoryResponse is the response struct for api SearchInventory
 type SearchInventoryResponse struct {
 	*responses.BaseResponse
+	NextToken  string                   `json:"NextToken" xml:"NextToken"`
 	RequestId  string                   `json:"RequestId" xml:"RequestId"`
 	MaxResults int                      `json:"MaxResults" xml:"MaxResults"`
-	NextToken  string                   `json:"NextToken" xml:"NextToken"`
 	Entities   []map[string]interface{} `json:"Entities" xml:"Entities"`
 }
 
@@ -98,7 +98,7 @@ func CreateSearchInventoryRequest() (request *SearchInventoryRequest) {
 	request = &SearchInventoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "SearchInventory", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "SearchInventory", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -81,9 +81,9 @@ type ListPatchBaselinesRequest struct {
 // ListPatchBaselinesResponse is the response struct for api ListPatchBaselines
 type ListPatchBaselinesResponse struct {
 	*responses.BaseResponse
+	NextToken      string          `json:"NextToken" xml:"NextToken"`
 	RequestId      string          `json:"RequestId" xml:"RequestId"`
 	MaxResults     int             `json:"MaxResults" xml:"MaxResults"`
-	NextToken      string          `json:"NextToken" xml:"NextToken"`
 	PatchBaselines []PatchBaseline `json:"PatchBaselines" xml:"PatchBaselines"`
 }
 
@@ -92,7 +92,7 @@ func CreateListPatchBaselinesRequest() (request *ListPatchBaselinesRequest) {
 	request = &ListPatchBaselinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListPatchBaselines", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListPatchBaselines", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

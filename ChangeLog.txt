@@ -1,3 +1,7 @@
+2022-07-26 Version: v1.61.1690
+- Generated 2019-06-01 for `oos`.
+- Add cmsGroupId parameter to CreateApplicationGroupRequest.
+
 2022-07-25 Version: v1.61.1689
 - Generated 2019-12-30 for `facebody`.
 - Update MonitorExamination.

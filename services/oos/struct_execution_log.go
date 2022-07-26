@@ -17,8 +17,8 @@ package oos
 
 // ExecutionLog is a nested struct in oos response
 type ExecutionLog struct {
-	Timestamp       string `json:"Timestamp" xml:"Timestamp"`
-	Message         string `json:"Message" xml:"Message"`
 	TaskExecutionId string `json:"TaskExecutionId" xml:"TaskExecutionId"`
+	Message         string `json:"Message" xml:"Message"`
 	LogType         string `json:"LogType" xml:"LogType"`
+	Timestamp       string `json:"Timestamp" xml:"Timestamp"`
 }
