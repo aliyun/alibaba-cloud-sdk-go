@@ -17,13 +17,14 @@ package ens
 
 // NetworkInterfaceSet is a nested struct in ens response
 type NetworkInterfaceSet struct {
-	CreationTime       string `json:"CreationTime" xml:"CreationTime"`
-	EnsRegionId        string `json:"EnsRegionId" xml:"EnsRegionId"`
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-	MacAddress         string `json:"MacAddress" xml:"MacAddress"`
-	NetworkInterfaceId string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
-	PrimaryIp          string `json:"PrimaryIp" xml:"PrimaryIp"`
-	PrimaryIpType      string `json:"PrimaryIpType" xml:"PrimaryIpType"`
-	Status             string `json:"Status" xml:"Status"`
-	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
+	CreationTime       string        `json:"CreationTime" xml:"CreationTime"`
+	EnsRegionId        string        `json:"EnsRegionId" xml:"EnsRegionId"`
+	InstanceId         string        `json:"InstanceId" xml:"InstanceId"`
+	MacAddress         string        `json:"MacAddress" xml:"MacAddress"`
+	NetworkInterfaceId string        `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	PrimaryIp          string        `json:"PrimaryIp" xml:"PrimaryIp"`
+	PrimaryIpType      string        `json:"PrimaryIpType" xml:"PrimaryIpType"`
+	Status             string        `json:"Status" xml:"Status"`
+	VSwitchId          string        `json:"VSwitchId" xml:"VSwitchId"`
+	PrivateIpSets      PrivateIpSets `json:"PrivateIpSets" xml:"PrivateIpSets"`
 }
