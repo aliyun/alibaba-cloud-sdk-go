@@ -25,6 +25,7 @@ type ProxyListItem struct {
 	PrivateHost   string `json:"PrivateHost" xml:"PrivateHost"`
 	PublicEnable  bool   `json:"PublicEnable" xml:"PublicEnable"`
 	PublicHost    string `json:"PublicHost" xml:"PublicHost"`
-	MysqlPort     int    `json:"MysqlPort" xml:"MysqlPort"`
 	HttpsPort     int    `json:"HttpsPort" xml:"HttpsPort"`
+	ProtocolType  string `json:"ProtocolType" xml:"ProtocolType"`
+	ProtocolPort  int    `json:"ProtocolPort" xml:"ProtocolPort"`
 }
