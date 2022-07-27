@@ -78,10 +78,10 @@ type DeleteTopicRequest struct {
 // DeleteTopicResponse is the response struct for api DeleteTopic
 type DeleteTopicResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteTopicRequest creates a request to invoke DeleteTopic API

@@ -17,7 +17,7 @@ package alikafka
 
 // ConsumerProgress is a nested struct in alikafka response
 type ConsumerProgress struct {
-	TotalDiff     int64                          `json:"TotalDiff" xml:"TotalDiff"`
 	LastTimestamp int64                          `json:"LastTimestamp" xml:"LastTimestamp"`
+	TotalDiff     int64                          `json:"TotalDiff" xml:"TotalDiff"`
 	TopicList     TopicListInGetConsumerProgress `json:"TopicList" xml:"TopicList"`
 }

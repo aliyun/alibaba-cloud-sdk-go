@@ -77,10 +77,10 @@ type DescribeNodeStatusRequest struct {
 // DescribeNodeStatusResponse is the response struct for api DescribeNodeStatus
 type DescribeNodeStatusResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Success    bool       `json:"Success" xml:"Success"`
 	Code       int        `json:"Code" xml:"Code"`
 	Message    string     `json:"Message" xml:"Message"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Success    bool       `json:"Success" xml:"Success"`
 	StatusList StatusList `json:"StatusList" xml:"StatusList"`
 }
 

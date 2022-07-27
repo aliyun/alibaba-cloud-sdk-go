@@ -78,10 +78,10 @@ type GetTopicStatusRequest struct {
 // GetTopicStatusResponse is the response struct for api GetTopicStatus
 type GetTopicStatusResponse struct {
 	*responses.BaseResponse
-	Success     bool        `json:"Success" xml:"Success"`
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	Code        int         `json:"Code" xml:"Code"`
 	Message     string      `json:"Message" xml:"Message"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	Success     bool        `json:"Success" xml:"Success"`
 	TopicStatus TopicStatus `json:"TopicStatus" xml:"TopicStatus"`
 }
 

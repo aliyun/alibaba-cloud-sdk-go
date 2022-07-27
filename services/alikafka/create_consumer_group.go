@@ -79,10 +79,10 @@ type CreateConsumerGroupRequest struct {
 // CreateConsumerGroupResponse is the response struct for api CreateConsumerGroup
 type CreateConsumerGroupResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateConsumerGroupRequest creates a request to invoke CreateConsumerGroup API

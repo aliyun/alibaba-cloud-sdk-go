@@ -78,10 +78,10 @@ type ModifyInstanceNameRequest struct {
 // ModifyInstanceNameResponse is the response struct for api ModifyInstanceName
 type ModifyInstanceNameResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateModifyInstanceNameRequest creates a request to invoke ModifyInstanceName API

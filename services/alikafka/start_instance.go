@@ -71,18 +71,23 @@ func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, c
 // StartInstanceRequest is the request struct for api StartInstance
 type StartInstanceRequest struct {
 	*requests.RpcRequest
+	SelectedZones        string           `position:"Query" name:"SelectedZones"`
 	IsEipInner           requests.Boolean `position:"Query" name:"IsEipInner"`
 	SecurityGroup        string           `position:"Query" name:"SecurityGroup"`
 	DeployModule         string           `position:"Query" name:"DeployModule"`
 	IsSetUserAndPassword requests.Boolean `position:"Query" name:"IsSetUserAndPassword"`
 	Password             string           `position:"Query" name:"Password"`
+	Notifier             string           `position:"Query" name:"Notifier"`
+	IsForceSelectedZones requests.Boolean `position:"Query" name:"IsForceSelectedZones"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	UserPhoneNum         string           `position:"Query" name:"UserPhoneNum"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	CrossZone            requests.Boolean `position:"Query" name:"CrossZone"`
 	Name                 string           `position:"Query" name:"Name"`
 	ServiceVersion       string           `position:"Query" name:"ServiceVersion"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	KMSKeyId             string           `position:"Query" name:"KMSKeyId"`
 	Config               string           `position:"Query" name:"Config"`
 	Username             string           `position:"Query" name:"Username"`
 }
@@ -90,10 +95,10 @@ type StartInstanceRequest struct {
 // StartInstanceResponse is the response struct for api StartInstance
 type StartInstanceResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateStartInstanceRequest creates a request to invoke StartInstance API

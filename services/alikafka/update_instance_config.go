@@ -78,10 +78,10 @@ type UpdateInstanceConfigRequest struct {
 // UpdateInstanceConfigResponse is the response struct for api UpdateInstanceConfig
 type UpdateInstanceConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateInstanceConfigRequest creates a request to invoke UpdateInstanceConfig API
