@@ -1,3 +1,7 @@
+2022-07-27 Version: v1.61.1693
+- Generated 2019-06-01 for `oos`.
+ - Update.
+
 2022-07-26 Version: v1.61.1692
 - Generated 2020-02-17 for `Dytnsapi`.
 - Support Service of number analysis.
