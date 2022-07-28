@@ -1,3 +1,7 @@
+2022-07-28 Version: v1.61.1696
+- Generated 2017-03-21 for `vod`.
+- Add GetImageInfos api.
+
 2022-07-27 Version: v1.61.1695
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support ListProxies API to return protocolType, protocolPort and remove mysqlPort.

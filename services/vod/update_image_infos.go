@@ -78,8 +78,8 @@ type UpdateImageInfosRequest struct {
 // UpdateImageInfosResponse is the response struct for api UpdateImageInfos
 type UpdateImageInfosResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	NonExistImageIds NonExistImageIds `json:"NonExistImageIds" xml:"NonExistImageIds"`
+	RequestId        string                             `json:"RequestId" xml:"RequestId"`
+	NonExistImageIds NonExistImageIdsInUpdateImageInfos `json:"NonExistImageIds" xml:"NonExistImageIds"`
 }
 
 // CreateUpdateImageInfosRequest creates a request to invoke UpdateImageInfos API
