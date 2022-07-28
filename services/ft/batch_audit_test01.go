@@ -80,8 +80,8 @@ type BatchAuditTest01Request struct {
 // BatchAuditTest01Response is the response struct for api BatchAuditTest01
 type BatchAuditTest01Response struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Name      string `json:"Name" xml:"Name"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Demo01    Demo01 `json:"Demo01" xml:"Demo01"`
 }
 

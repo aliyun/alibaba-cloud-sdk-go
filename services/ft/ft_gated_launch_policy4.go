@@ -77,8 +77,8 @@ type FtGatedLaunchPolicy4Request struct {
 // FtGatedLaunchPolicy4Response is the response struct for api FtGatedLaunchPolicy4
 type FtGatedLaunchPolicy4Response struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	IsGatedLaunch string `json:"IsGatedLaunch" xml:"IsGatedLaunch"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateFtGatedLaunchPolicy4Request creates a request to invoke FtGatedLaunchPolicy4 API

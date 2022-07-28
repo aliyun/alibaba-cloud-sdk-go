@@ -81,8 +81,8 @@ type FtDynamicAddressHttpVpcRequest struct {
 // FtDynamicAddressHttpVpcResponse is the response struct for api FtDynamicAddressHttpVpc
 type FtDynamicAddressHttpVpcResponse struct {
 	*responses.BaseResponse
-	Params         string `json:"Params" xml:"Params"`
 	ServiceRpcSign string `json:"ServiceRpcSign" xml:"ServiceRpcSign"`
+	Params         string `json:"Params" xml:"Params"`
 }
 
 // CreateFtDynamicAddressHttpVpcRequest creates a request to invoke FtDynamicAddressHttpVpc API

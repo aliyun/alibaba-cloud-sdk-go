@@ -80,8 +80,8 @@ type TestHttpApiRequest struct {
 // TestHttpApiResponse is the response struct for api TestHttpApi
 type TestHttpApiResponse struct {
 	*responses.BaseResponse
-	Params         string `json:"Params" xml:"Params"`
 	ServiceRpcSign string `json:"ServiceRpcSign" xml:"ServiceRpcSign"`
+	Params         string `json:"Params" xml:"Params"`
 }
 
 // CreateTestHttpApiRequest creates a request to invoke TestHttpApi API
