@@ -17,29 +17,29 @@ package dbs
 
 // RestoreTaskDetail is a nested struct in dbs response
 type RestoreTaskDetail struct {
+	RestoreStatus                   string `json:"RestoreStatus" xml:"RestoreStatus"`
+	FullStruAfterRestoreProgress    int    `json:"FullStruAfterRestoreProgress" xml:"FullStruAfterRestoreProgress"`
+	CrossRoleName                   string `json:"CrossRoleName" xml:"CrossRoleName"`
+	RestoreDir                      string `json:"RestoreDir" xml:"RestoreDir"`
+	CrossAliyunId                   string `json:"CrossAliyunId" xml:"CrossAliyunId"`
+	RestoreObjects                  string `json:"RestoreObjects" xml:"RestoreObjects"`
 	BackupPlanId                    string `json:"BackupPlanId" xml:"BackupPlanId"`
-	DestinationEndpointInstanceType string `json:"DestinationEndpointInstanceType" xml:"DestinationEndpointInstanceType"`
 	DestinationEndpointRegion       string `json:"DestinationEndpointRegion" xml:"DestinationEndpointRegion"`
-	DestinationEndpointInstanceID   string `json:"DestinationEndpointInstanceID" xml:"DestinationEndpointInstanceID"`
+	RestoreTaskCreateTime           int64  `json:"RestoreTaskCreateTime" xml:"RestoreTaskCreateTime"`
+	DestinationEndpointUserName     string `json:"DestinationEndpointUserName" xml:"DestinationEndpointUserName"`
+	RestoreTaskFinishTime           int64  `json:"RestoreTaskFinishTime" xml:"RestoreTaskFinishTime"`
 	DestinationEndpointIpPort       string `json:"DestinationEndpointIpPort" xml:"DestinationEndpointIpPort"`
 	DestinationEndpointDatabaseName string `json:"DestinationEndpointDatabaseName" xml:"DestinationEndpointDatabaseName"`
-	DestinationEndpointUserName     string `json:"DestinationEndpointUserName" xml:"DestinationEndpointUserName"`
+	DestinationEndpointInstanceType string `json:"DestinationEndpointInstanceType" xml:"DestinationEndpointInstanceType"`
 	DestinationEndpointOracleSID    string `json:"DestinationEndpointOracleSID" xml:"DestinationEndpointOracleSID"`
-	RestoreObjects                  string `json:"RestoreObjects" xml:"RestoreObjects"`
-	BackupGatewayId                 int64  `json:"BackupGatewayId" xml:"BackupGatewayId"`
-	RestoreDir                      string `json:"RestoreDir" xml:"RestoreDir"`
-	RestoreTaskName                 string `json:"RestoreTaskName" xml:"RestoreTaskName"`
-	BackupSetId                     string `json:"BackupSetId" xml:"BackupSetId"`
-	RestoreTime                     int64  `json:"RestoreTime" xml:"RestoreTime"`
-	RestoreTaskCreateTime           int64  `json:"RestoreTaskCreateTime" xml:"RestoreTaskCreateTime"`
-	RestoreTaskFinishTime           int64  `json:"RestoreTaskFinishTime" xml:"RestoreTaskFinishTime"`
-	RestoreStatus                   string `json:"RestoreStatus" xml:"RestoreStatus"`
-	RestoreTaskId                   string `json:"RestoreTaskId" xml:"RestoreTaskId"`
 	FullStruforeRestoreProgress     int    `json:"FullStruforeRestoreProgress" xml:"FullStruforeRestoreProgress"`
+	ErrMessage                      string `json:"ErrMessage" xml:"ErrMessage"`
+	RestoreTaskId                   string `json:"RestoreTaskId" xml:"RestoreTaskId"`
 	FullDataRestoreProgress         int    `json:"FullDataRestoreProgress" xml:"FullDataRestoreProgress"`
 	ContinuousRestoreProgress       int    `json:"ContinuousRestoreProgress" xml:"ContinuousRestoreProgress"`
-	FullStruAfterRestoreProgress    int    `json:"FullStruAfterRestoreProgress" xml:"FullStruAfterRestoreProgress"`
-	CrossAliyunId                   string `json:"CrossAliyunId" xml:"CrossAliyunId"`
-	CrossRoleName                   string `json:"CrossRoleName" xml:"CrossRoleName"`
-	ErrMessage                      string `json:"ErrMessage" xml:"ErrMessage"`
+	DestinationEndpointInstanceID   string `json:"DestinationEndpointInstanceID" xml:"DestinationEndpointInstanceID"`
+	BackupSetId                     string `json:"BackupSetId" xml:"BackupSetId"`
+	BackupGatewayId                 int64  `json:"BackupGatewayId" xml:"BackupGatewayId"`
+	RestoreTaskName                 string `json:"RestoreTaskName" xml:"RestoreTaskName"`
+	RestoreTime                     int64  `json:"RestoreTime" xml:"RestoreTime"`
 }

@@ -17,14 +17,14 @@ package dbs
 
 // BackupGateway is a nested struct in dbs response
 type BackupGateway struct {
-	BackupGatewayId          string `json:"BackupGatewayId" xml:"BackupGatewayId"`
-	SourceEndpointInternetIP string `json:"SourceEndpointInternetIP" xml:"SourceEndpointInternetIP"`
-	SourceEndpointIntranetIP string `json:"SourceEndpointIntranetIP" xml:"SourceEndpointIntranetIP"`
-	SourceEndpointHostname   string `json:"SourceEndpointHostname" xml:"SourceEndpointHostname"`
-	BackupGatewayStatus      string `json:"BackupGatewayStatus" xml:"BackupGatewayStatus"`
-	LastHeartbeatTime        int64  `json:"LastHeartbeatTime" xml:"LastHeartbeatTime"`
-	BackupGatewayCreateTime  int64  `json:"BackupGatewayCreateTime" xml:"BackupGatewayCreateTime"`
-	Region                   string `json:"Region" xml:"Region"`
 	DisplayName              string `json:"DisplayName" xml:"DisplayName"`
+	BackupGatewayCreateTime  int64  `json:"BackupGatewayCreateTime" xml:"BackupGatewayCreateTime"`
+	BackupGatewayId          string `json:"BackupGatewayId" xml:"BackupGatewayId"`
+	Region                   string `json:"Region" xml:"Region"`
 	Identifier               string `json:"Identifier" xml:"Identifier"`
+	SourceEndpointInternetIP string `json:"SourceEndpointInternetIP" xml:"SourceEndpointInternetIP"`
+	BackupGatewayStatus      string `json:"BackupGatewayStatus" xml:"BackupGatewayStatus"`
+	SourceEndpointIntranetIP string `json:"SourceEndpointIntranetIP" xml:"SourceEndpointIntranetIP"`
+	LastHeartbeatTime        int64  `json:"LastHeartbeatTime" xml:"LastHeartbeatTime"`
+	SourceEndpointHostname   string `json:"SourceEndpointHostname" xml:"SourceEndpointHostname"`
 }

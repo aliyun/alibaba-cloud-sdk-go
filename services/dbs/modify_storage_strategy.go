@@ -82,11 +82,11 @@ type ModifyStorageStrategyRequest struct {
 // ModifyStorageStrategyResponse is the response struct for api ModifyStorageStrategy
 type ModifyStorageStrategyResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 	NeedPrecheck   bool   `json:"NeedPrecheck" xml:"NeedPrecheck"`
 }
@@ -96,7 +96,7 @@ func CreateModifyStorageStrategyRequest() (request *ModifyStorageStrategyRequest
 	request = &ModifyStorageStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyStorageStrategy", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyStorageStrategy", "", "")
 	request.Method = requests.POST
 	return
 }

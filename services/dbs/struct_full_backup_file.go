@@ -17,16 +17,16 @@ package dbs
 
 // FullBackupFile is a nested struct in dbs response
 type FullBackupFile struct {
-	BackupSetId          string `json:"BackupSetId" xml:"BackupSetId"`
-	SourceEndpointIpPort string `json:"SourceEndpointIpPort" xml:"SourceEndpointIpPort"`
-	StartTime            int64  `json:"StartTime" xml:"StartTime"`
-	EndTime              int64  `json:"EndTime" xml:"EndTime"`
+	FinishTime           int64  `json:"FinishTime" xml:"FinishTime"`
 	BackupStatus         string `json:"BackupStatus" xml:"BackupStatus"`
-	BackupSetExpiredTime int64  `json:"BackupSetExpiredTime" xml:"BackupSetExpiredTime"`
-	BackupSize           int64  `json:"BackupSize" xml:"BackupSize"`
-	StorageMethod        string `json:"StorageMethod" xml:"StorageMethod"`
+	SourceEndpointIpPort string `json:"SourceEndpointIpPort" xml:"SourceEndpointIpPort"`
+	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
 	ErrMessage           string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupObjects        string `json:"BackupObjects" xml:"BackupObjects"`
-	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
-	FinishTime           int64  `json:"FinishTime" xml:"FinishTime"`
+	EndTime              int64  `json:"EndTime" xml:"EndTime"`
+	StartTime            int64  `json:"StartTime" xml:"StartTime"`
+	BackupSetExpiredTime int64  `json:"BackupSetExpiredTime" xml:"BackupSetExpiredTime"`
+	StorageMethod        string `json:"StorageMethod" xml:"StorageMethod"`
+	BackupSetId          string `json:"BackupSetId" xml:"BackupSetId"`
+	BackupSize           int64  `json:"BackupSize" xml:"BackupSize"`
 }

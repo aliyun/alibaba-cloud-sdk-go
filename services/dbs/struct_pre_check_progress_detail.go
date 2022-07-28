@@ -17,12 +17,12 @@ package dbs
 
 // PreCheckProgressDetail is a nested struct in dbs response
 type PreCheckProgressDetail struct {
-	JobId      string `json:"JobId" xml:"JobId"`
-	State      string `json:"State" xml:"State"`
-	OrderNum   string `json:"OrderNum" xml:"OrderNum"`
-	ErrMsg     string `json:"ErrMsg" xml:"ErrMsg"`
-	Names      string `json:"Names" xml:"Names"`
-	Item       string `json:"Item" xml:"Item"`
-	BootTime   int64  `json:"BootTime" xml:"BootTime"`
 	FinishTime int64  `json:"FinishTime" xml:"FinishTime"`
+	State      string `json:"State" xml:"State"`
+	BootTime   int64  `json:"BootTime" xml:"BootTime"`
+	JobId      string `json:"JobId" xml:"JobId"`
+	Item       string `json:"Item" xml:"Item"`
+	ErrMsg     string `json:"ErrMsg" xml:"ErrMsg"`
+	OrderNum   string `json:"OrderNum" xml:"OrderNum"`
+	Names      string `json:"Names" xml:"Names"`
 }

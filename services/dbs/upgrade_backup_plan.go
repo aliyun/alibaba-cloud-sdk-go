@@ -80,11 +80,11 @@ type UpgradeBackupPlanRequest struct {
 // UpgradeBackupPlanResponse is the response struct for api UpgradeBackupPlan
 type UpgradeBackupPlanResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 	OrderId        string `json:"OrderId" xml:"OrderId"`
 }
@@ -94,7 +94,7 @@ func CreateUpgradeBackupPlanRequest() (request *UpgradeBackupPlanRequest) {
 	request = &UpgradeBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "UpgradeBackupPlan", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "UpgradeBackupPlan", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -79,11 +79,11 @@ type ReleaseBackupPlanRequest struct {
 // ReleaseBackupPlanResponse is the response struct for api ReleaseBackupPlan
 type ReleaseBackupPlanResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 }
 
@@ -92,7 +92,7 @@ func CreateReleaseBackupPlanRequest() (request *ReleaseBackupPlanRequest) {
 	request = &ReleaseBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ReleaseBackupPlan", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ReleaseBackupPlan", "", "")
 	request.Method = requests.POST
 	return
 }
