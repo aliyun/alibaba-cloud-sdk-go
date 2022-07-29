@@ -28,6 +28,7 @@ type PageBean struct {
 	ListAlerts              []ListAlerts         `json:"ListAlerts" xml:"ListAlerts"`
 	Event                   []EventItem          `json:"Event" xml:"Event"`
 	NotificationPolicies    []Policies           `json:"NotificationPolicies" xml:"NotificationPolicies"`
+	AlertContacts           []Contacts           `json:"AlertContacts" xml:"AlertContacts"`
 	AlertRules              []AlertRules         `json:"AlertRules" xml:"AlertRules"`
 	SilencePolicies         []Policies           `json:"SilencePolicies" xml:"SilencePolicies"`
 	AlarmHistories          []AlarmHistory       `json:"AlarmHistories" xml:"AlarmHistories"`
@@ -37,6 +38,5 @@ type PageBean struct {
 	AlertContactGroups      []ContactGroups      `json:"AlertContactGroups" xml:"AlertContactGroups"`
 	TraceApps               []TraceApp           `json:"TraceApps" xml:"TraceApps"`
 	AlertIMRobots           []IMRobots           `json:"AlertIMRobots" xml:"AlertIMRobots"`
-	AlertContacts           []Contacts           `json:"AlertContacts" xml:"AlertContacts"`
 	Contacts                []Contact            `json:"Contacts" xml:"Contacts"`
 }

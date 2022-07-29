@@ -71,9 +71,10 @@ func (client *Client) InstallCmsExporterWithCallback(request *InstallCmsExporter
 // InstallCmsExporterRequest is the request struct for api InstallCmsExporter
 type InstallCmsExporterRequest struct {
 	*requests.RpcRequest
-	ClusterId string           `position:"Query" name:"ClusterId"`
-	CmsArgs   string           `position:"Query" name:"CmsArgs"`
-	EnableTag requests.Boolean `position:"Query" name:"EnableTag"`
+	ClusterId  string           `position:"Query" name:"ClusterId"`
+	DirectArgs string           `position:"Query" name:"DirectArgs"`
+	CmsArgs    string           `position:"Query" name:"CmsArgs"`
+	EnableTag  requests.Boolean `position:"Query" name:"EnableTag"`
 }
 
 // InstallCmsExporterResponse is the response struct for api InstallCmsExporter

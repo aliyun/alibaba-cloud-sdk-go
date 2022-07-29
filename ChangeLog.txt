@@ -1,3 +1,7 @@
+2022-07-29 Version: v1.61.1701
+- Generated 2019-08-08 for `ARMS`.
+- Add AddPrometheusInstance api.
+
 2022-07-29 Version: v1.61.1700
 - Generated 2020-01-16 for `DAS`.
 - Del GetGeneralAbnormalEventsCount.

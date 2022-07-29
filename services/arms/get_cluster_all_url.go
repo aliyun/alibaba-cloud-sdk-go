@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateApp invokes the arms.CreateApp API synchronously
-func (client *Client) CreateApp(request *CreateAppRequest) (response *CreateAppResponse, err error) {
-	response = CreateCreateAppResponse()
+// GetClusterAllUrl invokes the arms.GetClusterAllUrl API synchronously
+func (client *Client) GetClusterAllUrl(request *GetClusterAllUrlRequest) (response *GetClusterAllUrlResponse, err error) {
+	response = CreateGetClusterAllUrlResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateAppWithChan invokes the arms.CreateApp API asynchronously
-func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *CreateAppResponse, <-chan error) {
-	responseChan := make(chan *CreateAppResponse, 1)
+// GetClusterAllUrlWithChan invokes the arms.GetClusterAllUrl API asynchronously
+func (client *Client) GetClusterAllUrlWithChan(request *GetClusterAllUrlRequest) (<-chan *GetClusterAllUrlResponse, <-chan error) {
+	responseChan := make(chan *GetClusterAllUrlResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateApp(request)
+		response, err := client.GetClusterAllUrl(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
-// CreateAppWithCallback invokes the arms.CreateApp API asynchronously
-func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback func(response *CreateAppResponse, err error)) <-chan int {
+// GetClusterAllUrlWithCallback invokes the arms.GetClusterAllUrl API asynchronously
+func (client *Client) GetClusterAllUrlWithCallback(request *GetClusterAllUrlRequest, callback func(response *GetClusterAllUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateAppResponse
+		var response *GetClusterAllUrlResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateApp(request)
+		response, err = client.GetClusterAllUrl(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,32 @@ func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback 
 	return result
 }
 
-// CreateAppRequest is the request struct for api CreateApp
-type CreateAppRequest struct {
+// GetClusterAllUrlRequest is the request struct for api GetClusterAllUrl
+type GetClusterAllUrlRequest struct {
 	*requests.RpcRequest
-	Language string `position:"Query" name:"Language"`
-	Source   string `position:"Query" name:"Source"`
-	Type     string `position:"Query" name:"Type"`
-	AppName  string `position:"Query" name:"AppName"`
-	AppId    string `position:"Query" name:"AppId"`
-	Config   string `position:"Query" name:"Config"`
+	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
-// CreateAppResponse is the response struct for api CreateApp
-type CreateAppResponse struct {
+// GetClusterAllUrlResponse is the response struct for api GetClusterAllUrl
+type GetClusterAllUrlResponse struct {
 	*responses.BaseResponse
 	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateCreateAppRequest creates a request to invoke CreateApp API
-func CreateCreateAppRequest() (request *CreateAppRequest) {
-	request = &CreateAppRequest{
+// CreateGetClusterAllUrlRequest creates a request to invoke GetClusterAllUrl API
+func CreateGetClusterAllUrlRequest() (request *GetClusterAllUrlRequest) {
+	request = &GetClusterAllUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateApp", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetClusterAllUrl", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateAppResponse creates a response to parse from CreateApp response
-func CreateCreateAppResponse() (response *CreateAppResponse) {
-	response = &CreateAppResponse{
+// CreateGetClusterAllUrlResponse creates a response to parse from GetClusterAllUrl response
+func CreateGetClusterAllUrlResponse() (response *GetClusterAllUrlResponse) {
+	response = &GetClusterAllUrlResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

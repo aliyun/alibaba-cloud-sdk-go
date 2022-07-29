@@ -17,7 +17,16 @@ package arms
 
 // Integrations is a nested struct in arms response
 type Integrations struct {
-	Id          int64  `json:"Id" xml:"Id"`
-	Name        string `json:"Name" xml:"Name"`
-	Description string `json:"Description" xml:"Description"`
+	Name                   string            `json:"Name" xml:"Name"`
+	ApiEndpoint            string            `json:"ApiEndpoint" xml:"ApiEndpoint"`
+	State                  bool              `json:"State" xml:"State"`
+	IntegrationId          int64             `json:"IntegrationId" xml:"IntegrationId"`
+	IntegrationProductType string            `json:"IntegrationProductType" xml:"IntegrationProductType"`
+	CreateTime             string            `json:"CreateTime" xml:"CreateTime"`
+	Id                     int64             `json:"Id" xml:"Id"`
+	Liveness               string            `json:"Liveness" xml:"Liveness"`
+	IntegrationName        string            `json:"IntegrationName" xml:"IntegrationName"`
+	Description            string            `json:"Description" xml:"Description"`
+	ShortToken             string            `json:"ShortToken" xml:"ShortToken"`
+	IntegrationDetail      IntegrationDetail `json:"IntegrationDetail" xml:"IntegrationDetail"`
 }

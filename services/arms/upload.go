@@ -73,6 +73,7 @@ type UploadRequest struct {
 	*requests.RpcRequest
 	FileName string `position:"Query" name:"FileName"`
 	File     string `position:"Body" name:"File"`
+	Edition  string `position:"Query" name:"Edition"`
 	Pid      string `position:"Query" name:"Pid"`
 	Version  string `position:"Query" name:"Version"`
 }
@@ -80,11 +81,8 @@ type UploadRequest struct {
 // UploadResponse is the response struct for api Upload
 type UploadResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Fid        string `json:"Fid" xml:"Fid"`
-	FileName   string `json:"FileName" xml:"FileName"`
-	Version    string `json:"Version" xml:"Version"`
-	UploadTime string `json:"UploadTime" xml:"UploadTime"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	UploadResult UploadResult `json:"UploadResult" xml:"UploadResult"`
 }
 
 // CreateUploadRequest creates a request to invoke Upload API

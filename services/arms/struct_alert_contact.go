@@ -17,9 +17,10 @@ package arms
 
 // AlertContact is a nested struct in arms response
 type AlertContact struct {
-	ContactId   float64 `json:"ContactId" xml:"ContactId"`
-	ContactName string  `json:"ContactName" xml:"ContactName"`
-	Phone       string  `json:"Phone" xml:"Phone"`
-	Email       string  `json:"Email" xml:"Email"`
-	IsVerify    bool    `json:"IsVerify" xml:"IsVerify"`
+	ContactId         float64 `json:"ContactId" xml:"ContactId"`
+	ContactName       string  `json:"ContactName" xml:"ContactName"`
+	Phone             string  `json:"Phone" xml:"Phone"`
+	Email             string  `json:"Email" xml:"Email"`
+	IsVerify          bool    `json:"IsVerify" xml:"IsVerify"`
+	ReissueSendNotice int64   `json:"ReissueSendNotice" xml:"ReissueSendNotice"`
 }

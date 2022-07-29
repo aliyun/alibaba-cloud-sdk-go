@@ -17,9 +17,10 @@ package arms
 
 // Contacts is a nested struct in arms response
 type Contacts struct {
-	ContactName string  `json:"ContactName" xml:"ContactName"`
-	Email       string  `json:"Email" xml:"Email"`
-	ContactId   float64 `json:"ContactId" xml:"ContactId"`
-	IsVerify    bool    `json:"IsVerify" xml:"IsVerify"`
-	Phone       string  `json:"Phone" xml:"Phone"`
+	ContactName       string  `json:"ContactName" xml:"ContactName"`
+	Email             string  `json:"Email" xml:"Email"`
+	ContactId         float64 `json:"ContactId" xml:"ContactId"`
+	IsVerify          bool    `json:"IsVerify" xml:"IsVerify"`
+	ReissueSendNotice int64   `json:"ReissueSendNotice" xml:"ReissueSendNotice"`
+	Phone             string  `json:"Phone" xml:"Phone"`
 }
