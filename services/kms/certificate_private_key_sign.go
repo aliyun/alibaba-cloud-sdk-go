@@ -80,9 +80,9 @@ type CertificatePrivateKeySignRequest struct {
 // CertificatePrivateKeySignResponse is the response struct for api CertificatePrivateKeySign
 type CertificatePrivateKeySignResponse struct {
 	*responses.BaseResponse
+	SignatureValue string `json:"SignatureValue" xml:"SignatureValue"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	CertificateId  string `json:"CertificateId" xml:"CertificateId"`
-	SignatureValue string `json:"SignatureValue" xml:"SignatureValue"`
 }
 
 // CreateCertificatePrivateKeySignRequest creates a request to invoke CertificatePrivateKeySign API

@@ -80,10 +80,10 @@ type AsymmetricDecryptRequest struct {
 // AsymmetricDecryptResponse is the response struct for api AsymmetricDecrypt
 type AsymmetricDecryptResponse struct {
 	*responses.BaseResponse
-	Plaintext    string `json:"Plaintext" xml:"Plaintext"`
+	KeyVersionId string `json:"KeyVersionId" xml:"KeyVersionId"`
 	KeyId        string `json:"KeyId" xml:"KeyId"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	KeyVersionId string `json:"KeyVersionId" xml:"KeyVersionId"`
+	Plaintext    string `json:"Plaintext" xml:"Plaintext"`
 }
 
 // CreateAsymmetricDecryptRequest creates a request to invoke AsymmetricDecrypt API

@@ -83,11 +83,11 @@ type GenerateAndExportDataKeyRequest struct {
 // GenerateAndExportDataKeyResponse is the response struct for api GenerateAndExportDataKey
 type GenerateAndExportDataKeyResponse struct {
 	*responses.BaseResponse
-	CiphertextBlob  string `json:"CiphertextBlob" xml:"CiphertextBlob"`
-	KeyId           string `json:"KeyId" xml:"KeyId"`
-	ExportedDataKey string `json:"ExportedDataKey" xml:"ExportedDataKey"`
-	RequestId       string `json:"RequestId" xml:"RequestId"`
 	KeyVersionId    string `json:"KeyVersionId" xml:"KeyVersionId"`
+	KeyId           string `json:"KeyId" xml:"KeyId"`
+	CiphertextBlob  string `json:"CiphertextBlob" xml:"CiphertextBlob"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	ExportedDataKey string `json:"ExportedDataKey" xml:"ExportedDataKey"`
 }
 
 // CreateGenerateAndExportDataKeyRequest creates a request to invoke GenerateAndExportDataKey API

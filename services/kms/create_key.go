@@ -74,6 +74,7 @@ type CreateKeyRequest struct {
 	ProtectionLevel         string           `position:"Query" name:"ProtectionLevel"`
 	KeyUsage                string           `position:"Query" name:"KeyUsage"`
 	Origin                  string           `position:"Query" name:"Origin"`
+	DKMSInstanceId          string           `position:"Query" name:"DKMSInstanceId"`
 	Description             string           `position:"Query" name:"Description"`
 	KeySpec                 string           `position:"Query" name:"KeySpec"`
 	RotationInterval        string           `position:"Query" name:"RotationInterval"`

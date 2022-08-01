@@ -79,9 +79,9 @@ type CertificatePublicKeyEncryptRequest struct {
 // CertificatePublicKeyEncryptResponse is the response struct for api CertificatePublicKeyEncrypt
 type CertificatePublicKeyEncryptResponse struct {
 	*responses.BaseResponse
+	CiphertextBlob string `json:"CiphertextBlob" xml:"CiphertextBlob"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	CertificateId  string `json:"CertificateId" xml:"CertificateId"`
-	CiphertextBlob string `json:"CiphertextBlob" xml:"CiphertextBlob"`
 }
 
 // CreateCertificatePublicKeyEncryptRequest creates a request to invoke CertificatePublicKeyEncrypt API

@@ -1,3 +1,7 @@
+2022-08-01 Version: v1.61.1706
+- Generated 2016-01-20 for `Kms`.
+- Update CreateKey and CreateSecret.
+
 2022-08-01 Version: v1.61.1705
 - Generated 2017-08-01 for `polardb`.
 - Support new feature.

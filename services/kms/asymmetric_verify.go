@@ -81,10 +81,10 @@ type AsymmetricVerifyRequest struct {
 // AsymmetricVerifyResponse is the response struct for api AsymmetricVerify
 type AsymmetricVerifyResponse struct {
 	*responses.BaseResponse
-	Value        bool   `json:"Value" xml:"Value"`
-	KeyId        string `json:"KeyId" xml:"KeyId"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	KeyVersionId string `json:"KeyVersionId" xml:"KeyVersionId"`
+	KeyId        string `json:"KeyId" xml:"KeyId"`
+	Value        bool   `json:"Value" xml:"Value"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAsymmetricVerifyRequest creates a request to invoke AsymmetricVerify API

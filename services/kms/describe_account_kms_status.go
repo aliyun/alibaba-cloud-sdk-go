@@ -76,8 +76,8 @@ type DescribeAccountKmsStatusRequest struct {
 // DescribeAccountKmsStatusResponse is the response struct for api DescribeAccountKmsStatus
 type DescribeAccountKmsStatusResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	AccountStatus string `json:"AccountStatus" xml:"AccountStatus"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeAccountKmsStatusRequest creates a request to invoke DescribeAccountKmsStatus API
