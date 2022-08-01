@@ -92,6 +92,7 @@ type DescribeMetaListResponse struct {
 	PageSize         string     `json:"PageSize" xml:"PageSize"`
 	RequestId        string     `json:"RequestId" xml:"RequestId"`
 	PageNumber       string     `json:"PageNumber" xml:"PageNumber"`
+	DBClusterId      string     `json:"DBClusterId" xml:"DBClusterId"`
 	Items            []MetaItem `json:"Items" xml:"Items"`
 }
 

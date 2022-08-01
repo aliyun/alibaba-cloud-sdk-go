@@ -72,13 +72,16 @@ func (client *Client) ModifyDBClusterAndNodesParametersWithCallback(request *Mod
 type ModifyDBClusterAndNodesParametersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
 	DBNodeIds            string           `position:"Query" name:"DBNodeIds"`
 	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
 	Parameters           string           `position:"Query" name:"Parameters"`
+	FromTimeService      requests.Boolean `position:"Query" name:"FromTimeService"`
 }
 
 // ModifyDBClusterAndNodesParametersResponse is the response struct for api ModifyDBClusterAndNodesParameters

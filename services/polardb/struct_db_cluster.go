@@ -21,6 +21,7 @@ type DBCluster struct {
 	Category             string                      `json:"Category" xml:"Category"`
 	DBType               string                      `json:"DBType" xml:"DBType"`
 	Engine               string                      `json:"Engine" xml:"Engine"`
+	StoragePayType       string                      `json:"StoragePayType" xml:"StoragePayType"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
 	DBClusterNetworkType string                      `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
 	RegionId             string                      `json:"RegionId" xml:"RegionId"`
@@ -38,6 +39,7 @@ type DBCluster struct {
 	DBClusterStatus      string                      `json:"DBClusterStatus" xml:"DBClusterStatus"`
 	ZoneId               string                      `json:"ZoneId" xml:"ZoneId"`
 	StorageUsed          int64                       `json:"StorageUsed" xml:"StorageUsed"`
+	StorageSpace         int64                       `json:"StorageSpace" xml:"StorageSpace"`
 	IsDeleted            int                         `json:"IsDeleted" xml:"IsDeleted"`
 	DBClusterDescription string                      `json:"DBClusterDescription" xml:"DBClusterDescription"`
 	LockMode             string                      `json:"LockMode" xml:"LockMode"`

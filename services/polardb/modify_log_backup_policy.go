@@ -71,12 +71,14 @@ func (client *Client) ModifyLogBackupPolicyWithCallback(request *ModifyLogBackup
 // ModifyLogBackupPolicyRequest is the request struct for api ModifyLogBackupPolicy
 type ModifyLogBackupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId              string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	LogBackupRetentionPeriod string           `position:"Query" name:"LogBackupRetentionPeriod"`
+	ResourceOwnerId                       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LogBackupAnotherRegionRegion          string           `position:"Query" name:"LogBackupAnotherRegionRegion"`
+	ResourceOwnerAccount                  string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId                           string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount                          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                               requests.Integer `position:"Query" name:"OwnerId"`
+	LogBackupAnotherRegionRetentionPeriod string           `position:"Query" name:"LogBackupAnotherRegionRetentionPeriod"`
+	LogBackupRetentionPeriod              string           `position:"Query" name:"LogBackupRetentionPeriod"`
 }
 
 // ModifyLogBackupPolicyResponse is the response struct for api ModifyLogBackupPolicy

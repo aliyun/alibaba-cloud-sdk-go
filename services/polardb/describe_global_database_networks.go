@@ -74,7 +74,9 @@ type DescribeGlobalDatabaseNetworksRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	GDNId                string           `position:"Query" name:"GDNId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	GDNDescription       string           `position:"Query" name:"GDNDescription"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

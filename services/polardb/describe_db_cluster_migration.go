@@ -91,6 +91,7 @@ type DescribeDBClusterMigrationResponse struct {
 	DBClusterReadWriteMode string              `json:"DBClusterReadWriteMode" xml:"DBClusterReadWriteMode"`
 	DelayedSeconds         int                 `json:"DelayedSeconds" xml:"DelayedSeconds"`
 	MigrationStatus        string              `json:"MigrationStatus" xml:"MigrationStatus"`
+	DtsInstanceId          string              `json:"DtsInstanceId" xml:"DtsInstanceId"`
 	DBClusterEndpointList  []DBClusterEndpoint `json:"DBClusterEndpointList" xml:"DBClusterEndpointList"`
 	RdsEndpointList        []RdsEndpoint       `json:"RdsEndpointList" xml:"RdsEndpointList"`
 }

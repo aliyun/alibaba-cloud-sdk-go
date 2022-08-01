@@ -72,6 +72,7 @@ func (client *Client) ModifyDBClusterMigrationWithCallback(request *ModifyDBClus
 type ModifyDBClusterMigrationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ConnectionStrings     string           `position:"Query" name:"ConnectionStrings"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	NewMasterInstanceId   string           `position:"Query" name:"NewMasterInstanceId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`

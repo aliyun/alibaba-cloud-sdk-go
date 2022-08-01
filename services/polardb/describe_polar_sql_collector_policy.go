@@ -83,6 +83,7 @@ type DescribePolarSQLCollectorPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
 	SQLCollectorStatus string `json:"SQLCollectorStatus" xml:"SQLCollectorStatus"`
+	DBClusterId        string `json:"DBClusterId" xml:"DBClusterId"`
 }
 
 // CreateDescribePolarSQLCollectorPolicyRequest creates a request to invoke DescribePolarSQLCollectorPolicy API

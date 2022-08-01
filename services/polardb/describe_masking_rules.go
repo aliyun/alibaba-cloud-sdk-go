@@ -78,10 +78,11 @@ type DescribeMaskingRulesRequest struct {
 // DescribeMaskingRulesResponse is the response struct for api DescribeMaskingRules
 type DescribeMaskingRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Message     string `json:"Message" xml:"Message"`
+	Success     bool   `json:"Success" xml:"Success"`
+	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
+	Data        Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeMaskingRulesRequest creates a request to invoke DescribeMaskingRules API

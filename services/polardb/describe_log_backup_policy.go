@@ -81,9 +81,11 @@ type DescribeLogBackupPolicyRequest struct {
 // DescribeLogBackupPolicyResponse is the response struct for api DescribeLogBackupPolicy
 type DescribeLogBackupPolicyResponse struct {
 	*responses.BaseResponse
-	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	EnableBackupLog          int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	LogBackupRetentionPeriod              int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
+	RequestId                             string `json:"RequestId" xml:"RequestId"`
+	LogBackupAnotherRegionRetentionPeriod string `json:"LogBackupAnotherRegionRetentionPeriod" xml:"LogBackupAnotherRegionRetentionPeriod"`
+	LogBackupAnotherRegionRegion          string `json:"LogBackupAnotherRegionRegion" xml:"LogBackupAnotherRegionRegion"`
+	EnableBackupLog                       int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
 }
 
 // CreateDescribeLogBackupPolicyRequest creates a request to invoke DescribeLogBackupPolicy API

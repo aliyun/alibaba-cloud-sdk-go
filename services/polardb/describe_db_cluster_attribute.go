@@ -101,11 +101,17 @@ type DescribeDBClusterAttributeResponse struct {
 	DBClusterDescription      string   `json:"DBClusterDescription" xml:"DBClusterDescription"`
 	Expired                   string   `json:"Expired" xml:"Expired"`
 	PayType                   string   `json:"PayType" xml:"PayType"`
+	StoragePayType            string   `json:"StoragePayType" xml:"StoragePayType"`
 	LockMode                  string   `json:"LockMode" xml:"LockMode"`
 	StorageUsed               int64    `json:"StorageUsed" xml:"StorageUsed"`
+	StorageSpace              int64    `json:"StorageSpace" xml:"StorageSpace"`
 	DBVersionStatus           string   `json:"DBVersionStatus" xml:"DBVersionStatus"`
 	CreationTime              string   `json:"CreationTime" xml:"CreationTime"`
 	SQLSize                   int64    `json:"SQLSize" xml:"SQLSize"`
+	InodeTotal                int64    `json:"InodeTotal" xml:"InodeTotal"`
+	InodeUsed                 int64    `json:"InodeUsed" xml:"InodeUsed"`
+	BlktagTotal               int64    `json:"BlktagTotal" xml:"BlktagTotal"`
+	BlktagUsed                int64    `json:"BlktagUsed" xml:"BlktagUsed"`
 	RegionId                  string   `json:"RegionId" xml:"RegionId"`
 	ExpireTime                string   `json:"ExpireTime" xml:"ExpireTime"`
 	SubCategory               string   `json:"SubCategory" xml:"SubCategory"`

@@ -73,6 +73,7 @@ type DescribeScheduleTasksRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
+	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -80,6 +81,7 @@ type DescribeScheduleTasksRequest struct {
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
 	TaskAction           string           `position:"Query" name:"TaskAction"`
 	Status               string           `position:"Query" name:"Status"`
 }
