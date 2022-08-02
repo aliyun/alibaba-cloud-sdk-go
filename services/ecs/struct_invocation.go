@@ -47,5 +47,6 @@ type Invocation struct {
 	CommandDescription string                                   `json:"CommandDescription" xml:"CommandDescription"`
 	CommandType        string                                   `json:"CommandType" xml:"CommandType"`
 	InvocationResults  InvocationResults                        `json:"InvocationResults" xml:"InvocationResults"`
+	Tags               TagsInDescribeInvocations                `json:"Tags" xml:"Tags"`
 	InvokeInstances    InvokeInstancesInDescribeSendFileResults `json:"InvokeInstances" xml:"InvokeInstances"`
 }

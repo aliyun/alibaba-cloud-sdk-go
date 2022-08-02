@@ -1,3 +1,7 @@
+2022-08-02 Version: v1.61.1707
+- Generated 2014-05-26 for `Ecs`.
+- Support ecs instance diagnostic features.
+
 2022-08-01 Version: v1.61.1706
 - Generated 2016-01-20 for `Kms`.
 - Update CreateKey and CreateSecret.
