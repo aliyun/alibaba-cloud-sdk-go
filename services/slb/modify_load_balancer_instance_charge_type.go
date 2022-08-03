@@ -73,7 +73,9 @@ type ModifyLoadBalancerInstanceChargeTypeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
