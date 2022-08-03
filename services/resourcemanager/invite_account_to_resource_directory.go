@@ -71,9 +71,16 @@ func (client *Client) InviteAccountToResourceDirectoryWithCallback(request *Invi
 // InviteAccountToResourceDirectoryRequest is the request struct for api InviteAccountToResourceDirectory
 type InviteAccountToResourceDirectoryRequest struct {
 	*requests.RpcRequest
-	Note         string `position:"Query" name:"Note"`
-	TargetType   string `position:"Query" name:"TargetType"`
-	TargetEntity string `position:"Query" name:"TargetEntity"`
+	Note         string                                 `position:"Query" name:"Note"`
+	TargetType   string                                 `position:"Query" name:"TargetType"`
+	Tag          *[]InviteAccountToResourceDirectoryTag `position:"Query" name:"Tag"  type:"Repeated"`
+	TargetEntity string                                 `position:"Query" name:"TargetEntity"`
+}
+
+// InviteAccountToResourceDirectoryTag is a repeated param struct in InviteAccountToResourceDirectoryRequest
+type InviteAccountToResourceDirectoryTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // InviteAccountToResourceDirectoryResponse is the response struct for api InviteAccountToResourceDirectory

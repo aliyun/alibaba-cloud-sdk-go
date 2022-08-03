@@ -71,22 +71,32 @@ func (client *Client) ListResourceGroupsWithCallback(request *ListResourceGroups
 // ListResourceGroupsRequest is the request struct for api ListResourceGroups
 type ListResourceGroupsRequest struct {
 	*requests.RpcRequest
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	DisplayName     string           `position:"Query" name:"DisplayName"`
-	Name            string           `position:"Query" name:"Name"`
-	Status          string           `position:"Query" name:"Status"`
+	PageNumber       requests.Integer         `position:"Query" name:"PageNumber"`
+	ResourceGroupId  string                   `position:"Query" name:"ResourceGroupId"`
+	PageSize         requests.Integer         `position:"Query" name:"PageSize"`
+	Tag              *[]ListResourceGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceGroupIds *[]string                `position:"Query" name:"ResourceGroupIds"  type:"Repeated"`
+	IncludeTags      requests.Boolean         `position:"Query" name:"IncludeTags"`
+	DisplayName      string                   `position:"Query" name:"DisplayName"`
+	Name             string                   `position:"Query" name:"Name"`
+	Status           string                   `position:"Query" name:"Status"`
+}
+
+// ListResourceGroupsTag is a repeated param struct in ListResourceGroupsRequest
+type ListResourceGroupsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListResourceGroupsResponse is the response struct for api ListResourceGroups
 type ListResourceGroupsResponse struct {
 	*responses.BaseResponse
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
-	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
-	ResourceGroups ResourceGroups `json:"ResourceGroups" xml:"ResourceGroups"`
+	TotalCount               int            `json:"TotalCount" xml:"TotalCount"`
+	RequestId                string         `json:"RequestId" xml:"RequestId"`
+	PageSize                 int            `json:"PageSize" xml:"PageSize"`
+	PageNumber               int            `json:"PageNumber" xml:"PageNumber"`
+	ResourceGroupListAclMode string         `json:"ResourceGroupListAclMode" xml:"ResourceGroupListAclMode"`
+	ResourceGroups           ResourceGroups `json:"ResourceGroups" xml:"ResourceGroups"`
 }
 
 // CreateListResourceGroupsRequest creates a request to invoke ListResourceGroups API

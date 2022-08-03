@@ -23,6 +23,7 @@ type Account struct {
 	ResourceDirectoryPath string `json:"ResourceDirectoryPath" xml:"ResourceDirectoryPath"`
 	FolderId              string `json:"FolderId" xml:"FolderId"`
 	DisplayName           string `json:"DisplayName" xml:"DisplayName"`
+	Location              string `json:"Location" xml:"Location"`
 	AccountId             string `json:"AccountId" xml:"AccountId"`
 	ServicePrincipal      string `json:"ServicePrincipal" xml:"ServicePrincipal"`
 	AccountName           string `json:"AccountName" xml:"AccountName"`
@@ -32,4 +33,5 @@ type Account struct {
 	JoinMethod            string `json:"JoinMethod" xml:"JoinMethod"`
 	Type                  string `json:"Type" xml:"Type"`
 	ResourceDirectoryId   string `json:"ResourceDirectoryId" xml:"ResourceDirectoryId"`
+	Tags                  []Tag  `json:"Tags" xml:"Tags"`
 }

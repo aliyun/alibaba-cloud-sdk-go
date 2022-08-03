@@ -1,3 +1,7 @@
+2022-08-03 Version: v1.61.1708
+- Generated 2020-03-31 for `ResourceManager`.
+- Supported more query conditions when searching resource group.
+
 2022-08-02 Version: v1.61.1707
 - Generated 2014-05-26 for `Ecs`.
 - Support ecs instance diagnostic features.
