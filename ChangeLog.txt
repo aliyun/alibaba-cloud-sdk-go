@@ -1,3 +1,7 @@
+2022-08-08 Version: v1.61.1714
+- Generated 2021-05-20 for `idaas-doraemon`.
+- ListOrderConsumeStatisticRecords add AliOrderCode.
+
 2022-08-08 Version: v1.61.1713
 - Generated 2022-04-30 for `Nlb`.
 - Nlb init.
