@@ -1,3 +1,8 @@
+2022-08-09 Version: v1.61.1715
+- Generated 2017-11-10 for `Ens`.
+- Support API ARMInstance.
+- Support Control ARM API.
+
 2022-08-08 Version: v1.61.1714
 - Generated 2021-05-20 for `idaas-doraemon`.
 - ListOrderConsumeStatisticRecords add AliOrderCode.
