@@ -1,3 +1,7 @@
+2022-08-10 Version: v1.61.1716
+- Generated 2022-04-30 for `Nlb`.
+- Nlb endpoint config.
+
 2022-08-09 Version: v1.61.1715
 - Generated 2017-11-10 for `Ens`.
 - Support API ARMInstance.
