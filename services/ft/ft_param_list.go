@@ -84,8 +84,8 @@ type FtParamListDisk struct {
 // FtParamListResponse is the response struct for api FtParamList
 type FtParamListResponse struct {
 	*responses.BaseResponse
-	Name      string `json:"Name" xml:"Name"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Name      string `json:"Name" xml:"Name"`
 }
 
 // CreateFtParamListRequest creates a request to invoke FtParamList API

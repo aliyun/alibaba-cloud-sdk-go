@@ -77,8 +77,8 @@ type FTApiAliasApiRequest struct {
 // FTApiAliasApiResponse is the response struct for api FTApiAliasApi
 type FTApiAliasApiResponse struct {
 	*responses.BaseResponse
-	Name      string `json:"Name" xml:"Name"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Name      string `json:"Name" xml:"Name"`
 }
 
 // CreateFTApiAliasApiRequest creates a request to invoke FTApiAliasApi API

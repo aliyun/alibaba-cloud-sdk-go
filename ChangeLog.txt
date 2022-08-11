@@ -1,3 +1,7 @@
+2022-08-11 Version: v1.61.1719
+- Generated 2018-07-13 for `Ft`.
+- AMP version.
+
 2022-08-11 Version: v1.61.1718
 - Generated 2019-01-08 for `Config`.
 - Fix ListManagedRules bugs.

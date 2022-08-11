@@ -77,8 +77,8 @@ type FtIpFlowControlRequest struct {
 // FtIpFlowControlResponse is the response struct for api FtIpFlowControl
 type FtIpFlowControlResponse struct {
 	*responses.BaseResponse
-	Name      string `json:"Name" xml:"Name"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Name      string `json:"Name" xml:"Name"`
 }
 
 // CreateFtIpFlowControlRequest creates a request to invoke FtIpFlowControl API

@@ -77,8 +77,8 @@ type FtFlowSpecialRequest struct {
 // FtFlowSpecialResponse is the response struct for api FtFlowSpecial
 type FtFlowSpecialResponse struct {
 	*responses.BaseResponse
-	Name      string `json:"Name" xml:"Name"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Name      string `json:"Name" xml:"Name"`
 }
 
 // CreateFtFlowSpecialRequest creates a request to invoke FtFlowSpecial API
