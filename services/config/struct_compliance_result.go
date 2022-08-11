@@ -17,7 +17,6 @@ package config
 
 // ComplianceResult is a nested struct in config response
 type ComplianceResult struct {
-	TotalCount           int64                      `json:"TotalCount" xml:"TotalCount"`
-	Compliances          []CompliancesItem          `json:"Compliances" xml:"Compliances"`
-	ComplianceResultList []ComplianceResultListItem `json:"ComplianceResultList" xml:"ComplianceResultList"`
+	TotalCount  int64             `json:"TotalCount" xml:"TotalCount"`
+	Compliances []CompliancesItem `json:"Compliances" xml:"Compliances"`
 }

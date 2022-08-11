@@ -1,3 +1,7 @@
+2022-08-11 Version: v1.61.1718
+- Generated 2019-01-08 for `Config`.
+- Fix ListManagedRules bugs.
+
 2022-08-11 Version: v1.61.1717
 - Generated 2020-05-18 for `dataworks-public`.
 
