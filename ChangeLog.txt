@@ -1,3 +1,7 @@
+2022-08-12 Version: v1.61.1721
+- Generated 2020-09-07 for `Config`.
+- Fix ListManagedRules bugs.
+
 2022-08-12 Version: v1.61.1720
 - Generated 2020-09-07 for `Config`.
 - Fix ListManagedRules bugs.
