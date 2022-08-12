@@ -18,15 +18,17 @@ package config
 // DeliveryChannel is a nested struct in config response
 type DeliveryChannel struct {
 	Status                              int    `json:"Status" xml:"Status"`
-	DeliveryChannelName                 string `json:"DeliveryChannelName" xml:"DeliveryChannelName"`
-	DeliveryChannelId                   string `json:"DeliveryChannelId" xml:"DeliveryChannelId"`
-	DeliveryChannelType                 string `json:"DeliveryChannelType" xml:"DeliveryChannelType"`
-	DeliveryChannelAssumeRoleArn        string `json:"DeliveryChannelAssumeRoleArn" xml:"DeliveryChannelAssumeRoleArn"`
-	Description                         string `json:"Description" xml:"Description"`
-	DeliveryChannelCondition            string `json:"DeliveryChannelCondition" xml:"DeliveryChannelCondition"`
-	DeliveryChannelTargetArn            string `json:"DeliveryChannelTargetArn" xml:"DeliveryChannelTargetArn"`
-	ConfigurationSnapshot               bool   `json:"ConfigurationSnapshot" xml:"ConfigurationSnapshot"`
 	ConfigurationItemChangeNotification bool   `json:"ConfigurationItemChangeNotification" xml:"ConfigurationItemChangeNotification"`
 	NonCompliantNotification            bool   `json:"NonCompliantNotification" xml:"NonCompliantNotification"`
+	DeliveryChannelName                 string `json:"DeliveryChannelName" xml:"DeliveryChannelName"`
+	AggregatorId                        string `json:"AggregatorId" xml:"AggregatorId"`
+	DeliveryChannelId                   string `json:"DeliveryChannelId" xml:"DeliveryChannelId"`
+	DeliveryChannelAssumeRoleArn        string `json:"DeliveryChannelAssumeRoleArn" xml:"DeliveryChannelAssumeRoleArn"`
+	AccountId                           string `json:"AccountId" xml:"AccountId"`
+	DeliveryChannelType                 string `json:"DeliveryChannelType" xml:"DeliveryChannelType"`
+	ConfigurationSnapshot               bool   `json:"ConfigurationSnapshot" xml:"ConfigurationSnapshot"`
 	OversizedDataOSSTargetArn           string `json:"OversizedDataOSSTargetArn" xml:"OversizedDataOSSTargetArn"`
+	DeliveryChannelTargetArn            string `json:"DeliveryChannelTargetArn" xml:"DeliveryChannelTargetArn"`
+	Description                         string `json:"Description" xml:"Description"`
+	DeliveryChannelCondition            string `json:"DeliveryChannelCondition" xml:"DeliveryChannelCondition"`
 }

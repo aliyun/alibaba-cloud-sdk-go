@@ -87,7 +87,7 @@ func CreateListRemediationTemplatesRequest() (request *ListRemediationTemplatesR
 	request = &ListRemediationTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "ListRemediationTemplates", "", "")
+	request.InitWithApiInfo("Config", "2020-09-07", "ListRemediationTemplates", "", "")
 	request.Method = requests.POST
 	return
 }

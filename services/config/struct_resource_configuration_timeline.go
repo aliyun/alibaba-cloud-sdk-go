@@ -18,7 +18,6 @@ package config
 // ResourceConfigurationTimeline is a nested struct in config response
 type ResourceConfigurationTimeline struct {
 	NextToken         string                  `json:"NextToken" xml:"NextToken"`
-	Limit             int                     `json:"Limit" xml:"Limit"`
-	TotalCount        int64                   `json:"TotalCount" xml:"TotalCount"`
+	MaxResults        int                     `json:"MaxResults" xml:"MaxResults"`
 	ConfigurationList []ConfigurationListItem `json:"ConfigurationList" xml:"ConfigurationList"`
 }
