@@ -76,6 +76,7 @@ type CreateLindormInstanceRequest struct {
 	TsdbSpec             string           `position:"Query" name:"TsdbSpec"`
 	FilestoreSpec        string           `position:"Query" name:"FilestoreSpec"`
 	Duration             string           `position:"Query" name:"Duration"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	TsdbNum              requests.Integer `position:"Query" name:"TsdbNum"`
 	DiskCategory         string           `position:"Query" name:"DiskCategory"`
