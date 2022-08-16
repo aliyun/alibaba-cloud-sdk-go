@@ -22,6 +22,8 @@ type InstancesItem struct {
 	DagId             int64  `json:"DagId" xml:"DagId"`
 	FinishTime        int64  `json:"FinishTime" xml:"FinishTime"`
 	DagType           string `json:"DagType" xml:"DagType"`
+	InstanceHistoryId int64  `json:"InstanceHistoryId" xml:"InstanceHistoryId"`
+	ErrorMessage      string `json:"ErrorMessage" xml:"ErrorMessage"`
 	BeginRunningTime  int64  `json:"BeginRunningTime" xml:"BeginRunningTime"`
 	CycTime           int64  `json:"CycTime" xml:"CycTime"`
 	BeginWaitResTime  int64  `json:"BeginWaitResTime" xml:"BeginWaitResTime"`
@@ -35,4 +37,5 @@ type InstancesItem struct {
 	ProjectId         int64  `json:"ProjectId" xml:"ProjectId"`
 	Status            string `json:"Status" xml:"Status"`
 	TaskType          string `json:"TaskType" xml:"TaskType"`
+	Bizdate           int64  `json:"Bizdate" xml:"Bizdate"`
 }

@@ -17,5 +17,5 @@ package dataworks_public
 
 // NodesInListNodes is a nested struct in dataworks_public response
 type NodesInListNodes struct {
-	NodesItem []NodesItem `json:"Nodes" xml:"Nodes"`
+	NodesItem []NodesItemInListNodes `json:"Nodes" xml:"Nodes"`
 }
