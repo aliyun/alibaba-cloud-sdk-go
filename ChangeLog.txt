@@ -1,3 +1,7 @@
+2022-08-16 Version: v1.61.1725
+- Generated 2020-04-18 for `DBFS`.
+- The new parameter AdvancedFeatures is added to the CreateDbfs interface.
+
 2022-08-15 Version: v1.61.1724
 - Generated 2020-06-15 for `hitsdb`.
 - update Lindorm OpenAPI.

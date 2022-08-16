@@ -87,10 +87,10 @@ type ListSnapshotRequest struct {
 // ListSnapshotResponse is the response struct for api ListSnapshot
 type ListSnapshotResponse struct {
 	*responses.BaseResponse
-	RequestId  string          `json:"RequestId" xml:"RequestId"`
 	TotalCount int             `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int             `json:"PageSize" xml:"PageSize"`
+	RequestId  string          `json:"RequestId" xml:"RequestId"`
+	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
 	Snapshots  []SnapshotsItem `json:"Snapshots" xml:"Snapshots"`
 }
 

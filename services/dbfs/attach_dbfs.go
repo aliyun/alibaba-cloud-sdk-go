@@ -72,8 +72,10 @@ func (client *Client) AttachDbfsWithCallback(request *AttachDbfsRequest, callbac
 type AttachDbfsRequest struct {
 	*requests.RpcRequest
 	ECSInstanceId string `position:"Query" name:"ECSInstanceId"`
+	AttachPoint   string `position:"Query" name:"AttachPoint"`
 	ServerUrl     string `position:"Query" name:"ServerUrl"`
 	FsId          string `position:"Query" name:"FsId"`
+	AttachMode    string `position:"Query" name:"AttachMode"`
 }
 
 // AttachDbfsResponse is the response struct for api AttachDbfs

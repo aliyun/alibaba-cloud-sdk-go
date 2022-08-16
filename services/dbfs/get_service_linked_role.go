@@ -76,10 +76,10 @@ type GetServiceLinkedRoleRequest struct {
 // GetServiceLinkedRoleResponse is the response struct for api GetServiceLinkedRole
 type GetServiceLinkedRoleResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	AccountId      string `json:"AccountId" xml:"AccountId"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DbfsLinkedRole bool   `json:"DbfsLinkedRole" xml:"DbfsLinkedRole"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 }
 
 // CreateGetServiceLinkedRoleRequest creates a request to invoke GetServiceLinkedRole API

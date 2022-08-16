@@ -81,8 +81,8 @@ type CreateSnapshotRequest struct {
 // CreateSnapshotResponse is the response struct for api CreateSnapshot
 type CreateSnapshotResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	SnapshotId string `json:"SnapshotId" xml:"SnapshotId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateSnapshotRequest creates a request to invoke CreateSnapshot API

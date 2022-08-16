@@ -78,6 +78,8 @@ type CreateDbfsRequest struct {
 	FsName               string           `position:"Query" name:"FsName"`
 	RaidStripeUnitNumber requests.Integer `position:"Query" name:"RaidStripeUnitNumber"`
 	Encryption           requests.Boolean `position:"Query" name:"Encryption"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	AdvancedFeatures     string           `position:"Query" name:"AdvancedFeatures"`
 	PerformanceLevel     string           `position:"Query" name:"PerformanceLevel"`
 	EnableRaid           requests.Boolean `position:"Query" name:"EnableRaid"`
 	DeleteSnapshot       requests.Boolean `position:"Query" name:"DeleteSnapshot"`
