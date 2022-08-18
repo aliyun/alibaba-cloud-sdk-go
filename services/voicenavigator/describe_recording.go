@@ -71,16 +71,18 @@ func (client *Client) DescribeRecordingWithCallback(request *DescribeRecordingRe
 // DescribeRecordingRequest is the request struct for api DescribeRecording
 type DescribeRecordingRequest struct {
 	*requests.RpcRequest
-	ConversationId string `position:"Query" name:"ConversationId"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
+	NeedVoiceSliceRecording requests.Boolean `position:"Query" name:"NeedVoiceSliceRecording"`
+	ConversationId          string           `position:"Query" name:"ConversationId"`
+	InstanceId              string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeRecordingResponse is the response struct for api DescribeRecording
 type DescribeRecordingResponse struct {
 	*responses.BaseResponse
-	FilePath  string `json:"FilePath" xml:"FilePath"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	FileName  string `json:"FileName" xml:"FileName"`
+	FilePath                    string `json:"FilePath" xml:"FilePath"`
+	RequestId                   string `json:"RequestId" xml:"RequestId"`
+	FileName                    string `json:"FileName" xml:"FileName"`
+	VoiceSliceRecordingListJson string `json:"VoiceSliceRecordingListJson" xml:"VoiceSliceRecordingListJson"`
 }
 
 // CreateDescribeRecordingRequest creates a request to invoke DescribeRecording API
