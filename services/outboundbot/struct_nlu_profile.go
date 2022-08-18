@@ -18,6 +18,7 @@ package outboundbot
 // NluProfile is a nested struct in outboundbot response
 type NluProfile struct {
 	Endpoint  string `json:"Endpoint" xml:"Endpoint"`
+	AgentId   string `json:"AgentId" xml:"AgentId"`
 	SecretKey string `json:"SecretKey" xml:"SecretKey"`
 	AccessKey string `json:"AccessKey" xml:"AccessKey"`
 }
