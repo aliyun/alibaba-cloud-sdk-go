@@ -72,13 +72,13 @@ func (client *Client) ListDedicatedClusterWithCallback(request *ListDedicatedClu
 type ListDedicatedClusterRequest struct {
 	*requests.RpcRequest
 	OrderDirection string           `position:"Query" name:"OrderDirection"`
-	OwnerId        string           `position:"Query" name:"OwnerId"`
 	Type           string           `position:"Query" name:"Type"`
-	Params         string           `position:"Query" name:"Params"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	OrderColumn    string           `position:"Query" name:"OrderColumn"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	State          string           `position:"Query" name:"State"`
+	OwnerId        string           `position:"Query" name:"OwnerId"`
+	Params         string           `position:"Query" name:"Params"`
 }
 
 // ListDedicatedClusterResponse is the response struct for api ListDedicatedCluster

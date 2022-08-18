@@ -72,13 +72,13 @@ func (client *Client) DescribeSynchronizationJobsWithCallback(request *DescribeS
 type DescribeSynchronizationJobsRequest struct {
 	*requests.RpcRequest
 	ClientToken            string                            `position:"Query" name:"ClientToken"`
-	InstFilterRegion       string                            `position:"Query" name:"InstFilterRegion"`
 	PageNum                requests.Integer                  `position:"Query" name:"PageNum"`
-	OwnerId                string                            `position:"Query" name:"OwnerId"`
 	SynchronizationJobName string                            `position:"Query" name:"SynchronizationJobName"`
 	AccountId              string                            `position:"Query" name:"AccountId"`
 	PageSize               requests.Integer                  `position:"Query" name:"PageSize"`
 	Tag                    *[]DescribeSynchronizationJobsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	InstFilterRegion       string                            `position:"Query" name:"InstFilterRegion"`
+	OwnerId                string                            `position:"Query" name:"OwnerId"`
 }
 
 // DescribeSynchronizationJobsTag is a repeated param struct in DescribeSynchronizationJobsRequest

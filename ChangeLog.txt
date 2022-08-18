@@ -1,3 +1,7 @@
+2022-08-18 Version: v1.61.1729
+- Generated 2020-01-01 for `Dts`.
+- DTS SDK.
+
 2022-08-17 Version: v1.61.1728
 - Generated 2020-01-16 for `DAS`.
 - ADD GetFullRequestSampleByInstanceId.

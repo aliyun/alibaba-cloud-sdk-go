@@ -85,6 +85,7 @@ type DescribeDtsJobsRequest struct {
 	JobType            string           `position:"Query" name:"JobType"`
 	Tags               string           `position:"Query" name:"Tags"`
 	Region             string           `position:"Query" name:"Region"`
+	DtsInstanceId      string           `position:"Query" name:"DtsInstanceId"`
 	Status             string           `position:"Query" name:"Status"`
 }
 

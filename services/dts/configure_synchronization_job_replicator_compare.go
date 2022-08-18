@@ -72,9 +72,9 @@ func (client *Client) ConfigureSynchronizationJobReplicatorCompareWithCallback(r
 type ConfigureSynchronizationJobReplicatorCompareRequest struct {
 	*requests.RpcRequest
 	ClientToken                            string           `position:"Query" name:"ClientToken"`
-	OwnerId                                string           `position:"Query" name:"OwnerId"`
 	SynchronizationJobId                   string           `position:"Query" name:"SynchronizationJobId"`
 	AccountId                              string           `position:"Query" name:"AccountId"`
+	OwnerId                                string           `position:"Query" name:"OwnerId"`
 	SynchronizationReplicatorCompareEnable requests.Boolean `position:"Query" name:"SynchronizationReplicatorCompareEnable"`
 	SynchronizationDirection               string           `position:"Query" name:"SynchronizationDirection"`
 }

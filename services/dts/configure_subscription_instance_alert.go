@@ -71,13 +71,13 @@ func (client *Client) ConfigureSubscriptionInstanceAlertWithCallback(request *Co
 // ConfigureSubscriptionInstanceAlertRequest is the request struct for api ConfigureSubscriptionInstanceAlert
 type ConfigureSubscriptionInstanceAlertRequest struct {
 	*requests.RpcRequest
+	AccountId              string `position:"Query" name:"AccountId"`
+	DelayAlertPhone        string `position:"Query" name:"DelayAlertPhone"`
 	DelayOverSeconds       string `position:"Query" name:"DelayOverSeconds"`
 	DelayAlertStatus       string `position:"Query" name:"DelayAlertStatus"`
 	SubscriptionInstanceId string `position:"Query" name:"SubscriptionInstanceId"`
 	OwnerId                string `position:"Query" name:"OwnerId"`
-	AccountId              string `position:"Query" name:"AccountId"`
 	ErrorAlertPhone        string `position:"Query" name:"ErrorAlertPhone"`
-	DelayAlertPhone        string `position:"Query" name:"DelayAlertPhone"`
 	ErrorAlertStatus       string `position:"Query" name:"ErrorAlertStatus"`
 }
 
