@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DetachDbfs invokes the dbfs.DetachDbfs API synchronously
-func (client *Client) DetachDbfs(request *DetachDbfsRequest) (response *DetachDbfsResponse, err error) {
-	response = CreateDetachDbfsResponse()
+// UpdateDbfs invokes the dbfs.UpdateDbfs API synchronously
+func (client *Client) UpdateDbfs(request *UpdateDbfsRequest) (response *UpdateDbfsResponse, err error) {
+	response = CreateUpdateDbfsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DetachDbfsWithChan invokes the dbfs.DetachDbfs API asynchronously
-func (client *Client) DetachDbfsWithChan(request *DetachDbfsRequest) (<-chan *DetachDbfsResponse, <-chan error) {
-	responseChan := make(chan *DetachDbfsResponse, 1)
+// UpdateDbfsWithChan invokes the dbfs.UpdateDbfs API asynchronously
+func (client *Client) UpdateDbfsWithChan(request *UpdateDbfsRequest) (<-chan *UpdateDbfsResponse, <-chan error) {
+	responseChan := make(chan *UpdateDbfsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DetachDbfs(request)
+		response, err := client.UpdateDbfs(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DetachDbfsWithChan(request *DetachDbfsRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// DetachDbfsWithCallback invokes the dbfs.DetachDbfs API asynchronously
-func (client *Client) DetachDbfsWithCallback(request *DetachDbfsRequest, callback func(response *DetachDbfsResponse, err error)) <-chan int {
+// UpdateDbfsWithCallback invokes the dbfs.UpdateDbfs API asynchronously
+func (client *Client) UpdateDbfsWithCallback(request *UpdateDbfsRequest, callback func(response *UpdateDbfsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DetachDbfsResponse
+		var response *UpdateDbfsResponse
 		var err error
 		defer close(result)
-		response, err = client.DetachDbfs(request)
+		response, err = client.UpdateDbfs(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,34 @@ func (client *Client) DetachDbfsWithCallback(request *DetachDbfsRequest, callbac
 	return result
 }
 
-// DetachDbfsRequest is the request struct for api DetachDbfs
-type DetachDbfsRequest struct {
+// UpdateDbfsRequest is the request struct for api UpdateDbfs
+type UpdateDbfsRequest struct {
 	*requests.RpcRequest
-	ECSInstanceId string `position:"Query" name:"ECSInstanceId"`
-	FsId          string `position:"Query" name:"FsId"`
+	UsedScene        string `position:"Query" name:"UsedScene"`
+	FsId             string `position:"Query" name:"FsId"`
+	InstanceType     string `position:"Query" name:"InstanceType"`
+	AdvancedFeatures string `position:"Query" name:"AdvancedFeatures"`
 }
 
-// DetachDbfsResponse is the response struct for api DetachDbfs
-type DetachDbfsResponse struct {
+// UpdateDbfsResponse is the response struct for api UpdateDbfs
+type UpdateDbfsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDetachDbfsRequest creates a request to invoke DetachDbfs API
-func CreateDetachDbfsRequest() (request *DetachDbfsRequest) {
-	request = &DetachDbfsRequest{
+// CreateUpdateDbfsRequest creates a request to invoke UpdateDbfs API
+func CreateUpdateDbfsRequest() (request *UpdateDbfsRequest) {
+	request = &UpdateDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "DetachDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "UpdateDbfs", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDetachDbfsResponse creates a response to parse from DetachDbfs response
-func CreateDetachDbfsResponse() (response *DetachDbfsResponse) {
-	response = &DetachDbfsResponse{
+// CreateUpdateDbfsResponse creates a response to parse from UpdateDbfs response
+func CreateUpdateDbfsResponse() (response *UpdateDbfsResponse) {
+	response = &UpdateDbfsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

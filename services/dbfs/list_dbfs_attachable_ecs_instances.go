@@ -71,12 +71,15 @@ func (client *Client) ListDbfsAttachableEcsInstancesWithCallback(request *ListDb
 // ListDbfsAttachableEcsInstancesRequest is the request struct for api ListDbfsAttachableEcsInstances
 type ListDbfsAttachableEcsInstancesRequest struct {
 	*requests.RpcRequest
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListDbfsAttachableEcsInstancesResponse is the response struct for api ListDbfsAttachableEcsInstances
 type ListDbfsAttachableEcsInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId    string      `json:"RequestId" xml:"RequestId"`
+	TotalCount   int         `json:"TotalCount" xml:"TotalCount"`
 	EcsLabelInfo []LabelInfo `json:"EcsLabelInfo" xml:"EcsLabelInfo"`
 }
 
@@ -85,7 +88,7 @@ func CreateListDbfsAttachableEcsInstancesRequest() (request *ListDbfsAttachableE
 	request = &ListDbfsAttachableEcsInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListDbfsAttachableEcsInstances", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListDbfsAttachableEcsInstances", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }
