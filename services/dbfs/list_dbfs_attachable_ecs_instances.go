@@ -71,8 +71,10 @@ func (client *Client) ListDbfsAttachableEcsInstancesWithCallback(request *ListDb
 // ListDbfsAttachableEcsInstancesRequest is the request struct for api ListDbfsAttachableEcsInstances
 type ListDbfsAttachableEcsInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	FilterKey   string           `position:"Query" name:"FilterKey"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	FilterValue string           `position:"Query" name:"FilterValue"`
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListDbfsAttachableEcsInstancesResponse is the response struct for api ListDbfsAttachableEcsInstances
