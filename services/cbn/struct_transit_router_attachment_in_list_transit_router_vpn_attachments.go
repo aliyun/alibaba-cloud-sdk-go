@@ -17,16 +17,16 @@ package cbn
 
 // TransitRouterAttachmentInListTransitRouterVpnAttachments is a nested struct in cbn response
 type TransitRouterAttachmentInListTransitRouterVpnAttachments struct {
-	CreationTime                       string `json:"CreationTime" xml:"CreationTime"`
-	Status                             string `json:"Status" xml:"Status"`
-	TransitRouterAttachmentId          string `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
-	TransitRouterId                    string `json:"TransitRouterId" xml:"TransitRouterId"`
-	ResourceType                       int    `json:"ResourceType" xml:"ResourceType"`
-	VpnOwnerId                         int64  `json:"VpnOwnerId" xml:"VpnOwnerId"`
-	VpnId                              string `json:"VpnId" xml:"VpnId"`
-	TransitRouterAttachmentDescription string `json:"TransitRouterAttachmentDescription" xml:"TransitRouterAttachmentDescription"`
-	VpnRegionId                        string `json:"VpnRegionId" xml:"VpnRegionId"`
-	AutoPublishRouteEnabled            bool   `json:"AutoPublishRouteEnabled" xml:"AutoPublishRouteEnabled"`
-	TransitRouterAttachmentName        string `json:"TransitRouterAttachmentName" xml:"TransitRouterAttachmentName"`
-	Zones                              []Zone `json:"Zones" xml:"Zones"`
+	CreationTime                       string        `json:"CreationTime" xml:"CreationTime"`
+	Status                             string        `json:"Status" xml:"Status"`
+	TransitRouterAttachmentId          string        `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
+	TransitRouterId                    string        `json:"TransitRouterId" xml:"TransitRouterId"`
+	ResourceType                       int           `json:"ResourceType" xml:"ResourceType"`
+	VpnOwnerId                         int64         `json:"VpnOwnerId" xml:"VpnOwnerId"`
+	VpnId                              string        `json:"VpnId" xml:"VpnId"`
+	TransitRouterAttachmentDescription string        `json:"TransitRouterAttachmentDescription" xml:"TransitRouterAttachmentDescription"`
+	VpnRegionId                        string        `json:"VpnRegionId" xml:"VpnRegionId"`
+	AutoPublishRouteEnabled            bool          `json:"AutoPublishRouteEnabled" xml:"AutoPublishRouteEnabled"`
+	TransitRouterAttachmentName        string        `json:"TransitRouterAttachmentName" xml:"TransitRouterAttachmentName"`
+	Zones                              []ZoneMapping `json:"Zones" xml:"Zones"`
 }

@@ -17,5 +17,5 @@ package cbn
 
 // Zones is a nested struct in cbn response
 type Zones struct {
-	Zone []Zone `json:"Zone" xml:"Zone"`
+	ZoneMapping []ZoneMapping `json:"ZoneMapping" xml:"ZoneMapping"`
 }

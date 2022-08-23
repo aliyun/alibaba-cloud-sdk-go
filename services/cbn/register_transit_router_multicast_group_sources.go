@@ -80,6 +80,7 @@ type RegisterTransitRouterMulticastGroupSourcesRequest struct {
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
+	VpcId                          string           `position:"Query" name:"VpcId"`
 }
 
 // RegisterTransitRouterMulticastGroupSourcesResponse is the response struct for api RegisterTransitRouterMulticastGroupSources

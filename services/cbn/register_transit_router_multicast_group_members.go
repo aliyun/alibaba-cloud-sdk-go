@@ -81,6 +81,7 @@ type RegisterTransitRouterMulticastGroupMembersRequest struct {
 	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
 	PeerTransitRouterMulticastDomains *[]string        `position:"Query" name:"PeerTransitRouterMulticastDomains"  type:"Repeated"`
 	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
+	VpcId                             string           `position:"Query" name:"VpcId"`
 }
 
 // RegisterTransitRouterMulticastGroupMembersResponse is the response struct for api RegisterTransitRouterMulticastGroupMembers

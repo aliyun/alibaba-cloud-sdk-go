@@ -1,3 +1,8 @@
+2022-08-23 Version: v1.61.1735
+- Generated 2017-09-12 for `Cbn`.
+- The action parameter is required for some APIs.
+- RegisterTransitRouterMulticastGroupSources and RegisterTransitRouterMulticastGroupMembers add parameter VpcId.
+
 2022-08-22 Version: v1.61.1734
 - Generated 2020-04-18 for `DBFS`.
 - Automatically generate sdk tasks.
