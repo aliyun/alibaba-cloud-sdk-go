@@ -1,3 +1,7 @@
+2022-08-24 Version: v1.61.1736
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT.
+
 2022-08-23 Version: v1.61.1735
 - Generated 2017-09-12 for `Cbn`.
 - The action parameter is required for some APIs.
