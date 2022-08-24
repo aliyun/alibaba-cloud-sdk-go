@@ -1,3 +1,10 @@
+2022-08-24 Version: v1.61.1737
+- Generated 2017-09-12 for `Cbn`.
+- Add ErrorCode for CreateTransitRouterPrefixListAssociation .
+- Add ErrorCode for DeleteTransitRouterPrefixListAssociation .
+- Update Requried params for CreateTransitRouterPrefixListAssociation .
+- Update Requried params for DeleteTransitRouterPrefixListAssociation .
+
 2022-08-24 Version: v1.61.1736
 - Generated 2020-03-20 for `imageprocess`.
 - Update ScreenChestCT.
