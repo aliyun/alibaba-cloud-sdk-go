@@ -1,3 +1,7 @@
+2022-08-25 Version: v1.61.1739
+- Generated 2017-03-21 for `vod`.
+- Add kms apis.
+
 2022-08-25 Version: v1.61.1738
 - Generated 2020-01-01 for `Dts`.
 - DTS SDK.
