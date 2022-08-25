@@ -1,3 +1,7 @@
+2022-08-25 Version: v1.61.1741
+- Generated 2017-09-12 for `Cbn`.
+- Add AvailableZones for ListTransitRouterAvailableResource.
+
 2022-08-25 Version: v1.61.1740
 - Generated 2018-01-20 for `Iot`.
 - Iot_20180120 Old sdk.

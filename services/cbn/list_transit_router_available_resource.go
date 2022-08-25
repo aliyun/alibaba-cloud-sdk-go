@@ -83,9 +83,10 @@ type ListTransitRouterAvailableResourceRequest struct {
 // ListTransitRouterAvailableResourceResponse is the response struct for api ListTransitRouterAvailableResource
 type ListTransitRouterAvailableResourceResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId" xml:"RequestId"`
-	SlaveZones  []string `json:"SlaveZones" xml:"SlaveZones"`
-	MasterZones []string `json:"MasterZones" xml:"MasterZones"`
+	RequestId      string   `json:"RequestId" xml:"RequestId"`
+	SlaveZones     []string `json:"SlaveZones" xml:"SlaveZones"`
+	MasterZones    []string `json:"MasterZones" xml:"MasterZones"`
+	AvailableZones []string `json:"AvailableZones" xml:"AvailableZones"`
 }
 
 // CreateListTransitRouterAvailableResourceRequest creates a request to invoke ListTransitRouterAvailableResource API
