@@ -54,4 +54,5 @@ type DtsJobStatus struct {
 	StructureInitializationStatus StructureInitializationStatus   `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
 	RetryState                    RetryState                      `json:"RetryState" xml:"RetryState"`
 	TagList                       []DtsTag                        `json:"TagList" xml:"TagList"`
+	ErrorDetails                  []ErrorDetail                   `json:"ErrorDetails" xml:"ErrorDetails"`
 }

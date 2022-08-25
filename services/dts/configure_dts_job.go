@@ -85,6 +85,7 @@ type ConfigureDtsJobRequest struct {
 	OwnerId                         string           `position:"Query" name:"OwnerId"`
 	JobType                         string           `position:"Query" name:"JobType"`
 	DelayRuleTime                   requests.Integer `position:"Query" name:"DelayRuleTime"`
+	DisasterRecoveryJob             requests.Boolean `position:"Query" name:"DisasterRecoveryJob"`
 	DestinationEndpointIP           string           `position:"Query" name:"DestinationEndpointIP"`
 	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpointInstanceType"`
 	DtsJobName                      string           `position:"Query" name:"DtsJobName"`

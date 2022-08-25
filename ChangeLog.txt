@@ -1,3 +1,7 @@
+2022-08-25 Version: v1.61.1738
+- Generated 2020-01-01 for `Dts`.
+- DTS SDK.
+
 2022-08-24 Version: v1.61.1737
 - Generated 2017-09-12 for `Cbn`.
 - Add ErrorCode for CreateTransitRouterPrefixListAssociation .
