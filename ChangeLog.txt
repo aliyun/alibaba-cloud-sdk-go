@@ -1,3 +1,7 @@
+2022-08-25 Version: v1.61.1740
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 Old sdk.
+
 2022-08-25 Version: v1.61.1739
 - Generated 2017-03-21 for `vod`.
 - Add kms apis.
