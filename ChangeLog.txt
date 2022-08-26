@@ -1,3 +1,7 @@
+2022-08-26 Version: v1.61.1742
+- Generated 2017-09-12 for `Cbn`.
+- Update param NextHopType visibility for DeleteTransitRouterPrefixListAssociation .
+
 2022-08-25 Version: v1.61.1741
 - Generated 2017-09-12 for `Cbn`.
 - Add AvailableZones for ListTransitRouterAvailableResource.
