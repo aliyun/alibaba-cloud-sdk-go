@@ -71,13 +71,14 @@ func (client *Client) GetInstanceInspectionsWithCallback(request *GetInstanceIns
 // GetInstanceInspectionsRequest is the request struct for api GetInstanceInspections
 type GetInstanceInspectionsRequest struct {
 	*requests.RpcRequest
-	EndTime      string `position:"Query" name:"EndTime"`
-	SearchMap    string `position:"Query" name:"SearchMap"`
-	StartTime    string `position:"Query" name:"StartTime"`
-	InstanceArea string `position:"Query" name:"InstanceArea"`
-	Engine       string `position:"Query" name:"Engine"`
-	PageNo       string `position:"Query" name:"PageNo"`
-	PageSize     string `position:"Query" name:"PageSize"`
+	EndTime         string `position:"Query" name:"EndTime"`
+	SearchMap       string `position:"Query" name:"SearchMap"`
+	StartTime       string `position:"Query" name:"StartTime"`
+	InstanceArea    string `position:"Query" name:"InstanceArea"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Engine          string `position:"Query" name:"Engine"`
+	PageNo          string `position:"Query" name:"PageNo"`
+	PageSize        string `position:"Query" name:"PageSize"`
 }
 
 // GetInstanceInspectionsResponse is the response struct for api GetInstanceInspections
