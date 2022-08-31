@@ -78,15 +78,15 @@ type DescribeDcdnServiceRequest struct {
 // DescribeDcdnServiceResponse is the response struct for api DescribeDcdnService
 type DescribeDcdnServiceResponse struct {
 	*responses.BaseResponse
-	RequestId             string                              `json:"RequestId" xml:"RequestId"`
-	InstanceId            string                              `json:"InstanceId" xml:"InstanceId"`
-	InternetChargeType    string                              `json:"InternetChargeType" xml:"InternetChargeType"`
-	OpeningTime           string                              `json:"OpeningTime" xml:"OpeningTime"`
-	ChangingChargeType    string                              `json:"ChangingChargeType" xml:"ChangingChargeType"`
-	ChangingAffectTime    string                              `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
-	WebsocketChangingType string                              `json:"WebsocketChangingType" xml:"WebsocketChangingType"`
-	WebsocketType         string                              `json:"WebsocketType" xml:"WebsocketType"`
 	WebsocketChangingTime string                              `json:"WebsocketChangingTime" xml:"WebsocketChangingTime"`
+	WebsocketChangingType string                              `json:"WebsocketChangingType" xml:"WebsocketChangingType"`
+	ChangingAffectTime    string                              `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
+	ChangingChargeType    string                              `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	RequestId             string                              `json:"RequestId" xml:"RequestId"`
+	OpeningTime           string                              `json:"OpeningTime" xml:"OpeningTime"`
+	InternetChargeType    string                              `json:"InternetChargeType" xml:"InternetChargeType"`
+	WebsocketType         string                              `json:"WebsocketType" xml:"WebsocketType"`
+	InstanceId            string                              `json:"InstanceId" xml:"InstanceId"`
 	OperationLocks        OperationLocksInDescribeDcdnService `json:"OperationLocks" xml:"OperationLocks"`
 }
 

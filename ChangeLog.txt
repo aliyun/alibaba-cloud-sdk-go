@@ -1,3 +1,7 @@
+2022-08-31 Version: v1.61.1745
+- Generated 2018-01-15 for `dcdn`.
+- Add API.
+
 2022-08-31 Version: v1.61.1744
 - Generated 2018-06-12 for `VoiceNavigator`.
 - Supported new features etc.

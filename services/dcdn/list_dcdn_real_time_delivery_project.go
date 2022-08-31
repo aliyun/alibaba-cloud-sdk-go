@@ -81,8 +81,8 @@ type ListDcdnRealTimeDeliveryProjectRequest struct {
 // ListDcdnRealTimeDeliveryProjectResponse is the response struct for api ListDcdnRealTimeDeliveryProject
 type ListDcdnRealTimeDeliveryProjectResponse struct {
 	*responses.BaseResponse
-	RequestId  string                                   `json:"RequestId" xml:"RequestId"`
 	TotalCount int                                      `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string                                   `json:"RequestId" xml:"RequestId"`
 	Content    ContentInListDcdnRealTimeDeliveryProject `json:"Content" xml:"Content"`
 }
 

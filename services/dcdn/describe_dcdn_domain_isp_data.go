@@ -80,11 +80,11 @@ type DescribeDcdnDomainIspDataRequest struct {
 // DescribeDcdnDomainIspDataResponse is the response struct for api DescribeDcdnDomainIspData
 type DescribeDcdnDomainIspDataResponse struct {
 	*responses.BaseResponse
+	EndTime      string                           `json:"EndTime" xml:"EndTime"`
+	StartTime    string                           `json:"StartTime" xml:"StartTime"`
 	RequestId    string                           `json:"RequestId" xml:"RequestId"`
 	DomainName   string                           `json:"DomainName" xml:"DomainName"`
 	DataInterval string                           `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string                           `json:"StartTime" xml:"StartTime"`
-	EndTime      string                           `json:"EndTime" xml:"EndTime"`
 	Value        ValueInDescribeDcdnDomainIspData `json:"Value" xml:"Value"`
 }
 

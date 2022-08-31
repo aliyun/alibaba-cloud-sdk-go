@@ -71,9 +71,8 @@ func (client *Client) DescribeDcdnSLSRealtimeLogDeliveryWithCallback(request *De
 // DescribeDcdnSLSRealtimeLogDeliveryRequest is the request struct for api DescribeDcdnSLSRealtimeLogDelivery
 type DescribeDcdnSLSRealtimeLogDeliveryRequest struct {
 	*requests.RpcRequest
-	BusinessType string           `position:"Query" name:"BusinessType"`
-	ProjectName  string           `position:"Query" name:"ProjectName"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	ProjectName string           `position:"Query" name:"ProjectName"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnSLSRealtimeLogDeliveryResponse is the response struct for api DescribeDcdnSLSRealtimeLogDelivery

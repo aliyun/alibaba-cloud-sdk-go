@@ -71,9 +71,9 @@ func (client *Client) DescribeDcdnIpaDomainDetailWithCallback(request *DescribeD
 // DescribeDcdnIpaDomainDetailRequest is the request struct for api DescribeDcdnIpaDomainDetail
 type DescribeDcdnIpaDomainDetailRequest struct {
 	*requests.RpcRequest
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeDcdnIpaDomainDetailResponse is the response struct for api DescribeDcdnIpaDomainDetail

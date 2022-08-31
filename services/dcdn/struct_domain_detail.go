@@ -20,13 +20,14 @@ type DomainDetail struct {
 	Cname           string                            `json:"Cname" xml:"Cname"`
 	CertName        string                            `json:"CertName" xml:"CertName"`
 	DomainStatus    string                            `json:"DomainStatus" xml:"DomainStatus"`
-	ResourceGroupId string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DomainName      string                            `json:"DomainName" xml:"DomainName"`
 	GmtModified     string                            `json:"GmtModified" xml:"GmtModified"`
-	SSLProtocol     string                            `json:"SSLProtocol" xml:"SSLProtocol"`
 	SSLPub          string                            `json:"SSLPub" xml:"SSLPub"`
-	Scope           string                            `json:"Scope" xml:"Scope"`
+	SSLProtocol     string                            `json:"SSLProtocol" xml:"SSLProtocol"`
 	GmtCreated      string                            `json:"GmtCreated" xml:"GmtCreated"`
+	ResourceGroupId string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Scope           string                            `json:"Scope" xml:"Scope"`
 	Description     string                            `json:"Description" xml:"Description"`
+	TenantID        string                            `json:"TenantID" xml:"TenantID"`
 	Sources         SourcesInDescribeDcdnDomainDetail `json:"Sources" xml:"Sources"`
 }

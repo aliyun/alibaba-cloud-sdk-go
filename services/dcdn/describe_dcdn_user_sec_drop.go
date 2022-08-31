@@ -80,9 +80,9 @@ type DescribeDcdnUserSecDropRequest struct {
 // DescribeDcdnUserSecDropResponse is the response struct for api DescribeDcdnUserSecDrop
 type DescribeDcdnUserSecDropResponse struct {
 	*responses.BaseResponse
+	Msg       string `json:"Msg" xml:"Msg"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Drops     int    `json:"Drops" xml:"Drops"`
-	Msg       string `json:"Msg" xml:"Msg"`
 	UuidStr   string `json:"UuidStr" xml:"UuidStr"`
 }
 

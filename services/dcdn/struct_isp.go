@@ -17,6 +17,6 @@ package dcdn
 
 // Isp is a nested struct in dcdn response
 type Isp struct {
-	NameZh string `json:"NameZh" xml:"NameZh"`
 	NameEn string `json:"NameEn" xml:"NameEn"`
+	NameZh string `json:"NameZh" xml:"NameZh"`
 }

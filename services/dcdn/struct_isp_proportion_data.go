@@ -17,15 +17,15 @@ package dcdn
 
 // IspProportionData is a nested struct in dcdn response
 type IspProportionData struct {
-	Isp             string `json:"Isp" xml:"Isp"`
-	Proportion      string `json:"Proportion" xml:"Proportion"`
-	IspEname        string `json:"IspEname" xml:"IspEname"`
-	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
-	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
-	Bps             string `json:"Bps" xml:"Bps"`
 	Qps             string `json:"Qps" xml:"Qps"`
-	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
-	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
-	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
 	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
+	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
+	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
+	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
+	Proportion      string `json:"Proportion" xml:"Proportion"`
+	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
+	IspEname        string `json:"IspEname" xml:"IspEname"`
+	Bps             string `json:"Bps" xml:"Bps"`
+	Isp             string `json:"Isp" xml:"Isp"`
+	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
 }

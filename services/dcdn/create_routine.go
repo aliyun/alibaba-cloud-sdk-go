@@ -80,8 +80,8 @@ type CreateRoutineRequest struct {
 // CreateRoutineResponse is the response struct for api CreateRoutine
 type CreateRoutineResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateRoutineRequest creates a request to invoke CreateRoutine API

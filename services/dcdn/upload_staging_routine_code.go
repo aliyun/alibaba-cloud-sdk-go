@@ -79,8 +79,8 @@ type UploadStagingRoutineCodeRequest struct {
 // UploadStagingRoutineCodeResponse is the response struct for api UploadStagingRoutineCode
 type UploadStagingRoutineCodeResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUploadStagingRoutineCodeRequest creates a request to invoke UploadStagingRoutineCode API

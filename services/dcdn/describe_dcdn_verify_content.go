@@ -78,8 +78,8 @@ type DescribeDcdnVerifyContentRequest struct {
 // DescribeDcdnVerifyContentResponse is the response struct for api DescribeDcdnVerifyContent
 type DescribeDcdnVerifyContentResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Content   string `json:"Content" xml:"Content"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeDcdnVerifyContentRequest creates a request to invoke DescribeDcdnVerifyContent API

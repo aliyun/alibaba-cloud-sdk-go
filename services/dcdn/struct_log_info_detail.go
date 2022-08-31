@@ -17,9 +17,9 @@ package dcdn
 
 // LogInfoDetail is a nested struct in dcdn response
 type LogInfoDetail struct {
-	LogName   string `json:"LogName" xml:"LogName"`
-	LogPath   string `json:"LogPath" xml:"LogPath"`
+	EndTime   string `json:"EndTime" xml:"EndTime"`
 	LogSize   int64  `json:"LogSize" xml:"LogSize"`
 	StartTime string `json:"StartTime" xml:"StartTime"`
-	EndTime   string `json:"EndTime" xml:"EndTime"`
+	LogName   string `json:"LogName" xml:"LogName"`
+	LogPath   string `json:"LogPath" xml:"LogPath"`
 }

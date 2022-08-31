@@ -85,10 +85,10 @@ type DescribeDcdnDomainIpaTrafficDataRequest struct {
 // DescribeDcdnDomainIpaTrafficDataResponse is the response struct for api DescribeDcdnDomainIpaTrafficData
 type DescribeDcdnDomainIpaTrafficDataResponse struct {
 	*responses.BaseResponse
+	EndTime                string                                                   `json:"EndTime" xml:"EndTime"`
+	StartTime              string                                                   `json:"StartTime" xml:"StartTime"`
 	RequestId              string                                                   `json:"RequestId" xml:"RequestId"`
 	DomainName             string                                                   `json:"DomainName" xml:"DomainName"`
-	StartTime              string                                                   `json:"StartTime" xml:"StartTime"`
-	EndTime                string                                                   `json:"EndTime" xml:"EndTime"`
 	DataInterval           string                                                   `json:"DataInterval" xml:"DataInterval"`
 	TrafficDataPerInterval TrafficDataPerIntervalInDescribeDcdnDomainIpaTrafficData `json:"TrafficDataPerInterval" xml:"TrafficDataPerInterval"`
 }

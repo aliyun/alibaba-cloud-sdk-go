@@ -80,8 +80,8 @@ type EditRoutineConfRequest struct {
 // EditRoutineConfResponse is the response struct for api EditRoutineConf
 type EditRoutineConfResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateEditRoutineConfRequest creates a request to invoke EditRoutineConf API

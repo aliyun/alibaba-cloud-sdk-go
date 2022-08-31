@@ -78,8 +78,8 @@ type DescribeDcdnDeliverListRequest struct {
 // DescribeDcdnDeliverListResponse is the response struct for api DescribeDcdnDeliverList
 type DescribeDcdnDeliverListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Content   string `json:"Content" xml:"Content"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeDcdnDeliverListRequest creates a request to invoke DescribeDcdnDeliverList API

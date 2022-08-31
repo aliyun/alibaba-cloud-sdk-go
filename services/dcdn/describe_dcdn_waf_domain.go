@@ -79,8 +79,8 @@ type DescribeDcdnWafDomainRequest struct {
 // DescribeDcdnWafDomainResponse is the response struct for api DescribeDcdnWafDomain
 type DescribeDcdnWafDomainResponse struct {
 	*responses.BaseResponse
-	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	TotalCount    int            `json:"TotalCount" xml:"TotalCount"`
+	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	OutPutDomains []OutPutDomain `json:"OutPutDomains" xml:"OutPutDomains"`
 }
 

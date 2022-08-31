@@ -78,12 +78,12 @@ type DescribeDcdnIpaServiceRequest struct {
 // DescribeDcdnIpaServiceResponse is the response struct for api DescribeDcdnIpaService
 type DescribeDcdnIpaServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string                                 `json:"RequestId" xml:"RequestId"`
-	InstanceId         string                                 `json:"InstanceId" xml:"InstanceId"`
-	InternetChargeType string                                 `json:"InternetChargeType" xml:"InternetChargeType"`
-	OpeningTime        string                                 `json:"OpeningTime" xml:"OpeningTime"`
-	ChangingChargeType string                                 `json:"ChangingChargeType" xml:"ChangingChargeType"`
 	ChangingAffectTime string                                 `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
+	RequestId          string                                 `json:"RequestId" xml:"RequestId"`
+	ChangingChargeType string                                 `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	OpeningTime        string                                 `json:"OpeningTime" xml:"OpeningTime"`
+	InternetChargeType string                                 `json:"InternetChargeType" xml:"InternetChargeType"`
+	InstanceId         string                                 `json:"InstanceId" xml:"InstanceId"`
 	OperationLocks     OperationLocksInDescribeDcdnIpaService `json:"OperationLocks" xml:"OperationLocks"`
 }
 

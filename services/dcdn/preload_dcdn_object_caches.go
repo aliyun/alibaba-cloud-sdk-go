@@ -71,17 +71,18 @@ func (client *Client) PreloadDcdnObjectCachesWithCallback(request *PreloadDcdnOb
 // PreloadDcdnObjectCachesRequest is the request struct for api PreloadDcdnObjectCaches
 type PreloadDcdnObjectCachesRequest struct {
 	*requests.RpcRequest
-	Area          string           `position:"Query" name:"Area"`
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	L2Preload     requests.Boolean `position:"Query" name:"L2Preload"`
+	Area          string           `position:"Query" name:"Area"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // PreloadDcdnObjectCachesResponse is the response struct for api PreloadDcdnObjectCaches
 type PreloadDcdnObjectCachesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	PreloadTaskId string `json:"PreloadTaskId" xml:"PreloadTaskId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePreloadDcdnObjectCachesRequest creates a request to invoke PreloadDcdnObjectCaches API

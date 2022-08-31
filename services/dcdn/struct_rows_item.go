@@ -17,10 +17,10 @@ package dcdn
 
 // RowsItem is a nested struct in dcdn response
 type RowsItem struct {
-	RuleName string `json:"RuleName" xml:"RuleName"`
-	Object   string `json:"Object" xml:"Object"`
 	Domain   string `json:"Domain" xml:"Domain"`
-	SecFunc  string `json:"SecFunc" xml:"SecFunc"`
 	TmStr    string `json:"TmStr" xml:"TmStr"`
 	Drops    int    `json:"Drops" xml:"Drops"`
+	Object   string `json:"Object" xml:"Object"`
+	SecFunc  string `json:"SecFunc" xml:"SecFunc"`
+	RuleName string `json:"RuleName" xml:"RuleName"`
 }

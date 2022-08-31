@@ -78,8 +78,8 @@ type DeleteRoutineRequest struct {
 // DeleteRoutineResponse is the response struct for api DeleteRoutine
 type DeleteRoutineResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteRoutineRequest creates a request to invoke DeleteRoutine API

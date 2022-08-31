@@ -71,23 +71,23 @@ func (client *Client) DescribeDcdnSMCertificateDetailWithCallback(request *Descr
 // DescribeDcdnSMCertificateDetailRequest is the request struct for api DescribeDcdnSMCertificateDetail
 type DescribeDcdnSMCertificateDetailRequest struct {
 	*requests.RpcRequest
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	CertIdentifier string           `position:"Query" name:"CertIdentifier"`
 }
 
 // DescribeDcdnSMCertificateDetailResponse is the response struct for api DescribeDcdnSMCertificateDetail
 type DescribeDcdnSMCertificateDetailResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	SignCertificate    string `json:"SignCertificate" xml:"SignCertificate"`
-	EncryptCertificate string `json:"EncryptCertificate" xml:"EncryptCertificate"`
-	CertIdentifier     string `json:"CertIdentifier" xml:"CertIdentifier"`
-	CertName           string `json:"CertName" xml:"CertName"`
-	CommonName         string `json:"CommonName" xml:"CommonName"`
-	Sans               string `json:"Sans" xml:"Sans"`
-	CertOrg            string `json:"CertOrg" xml:"CertOrg"`
 	CertExpireTime     string `json:"CertExpireTime" xml:"CertExpireTime"`
+	CertIdentifier     string `json:"CertIdentifier" xml:"CertIdentifier"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	CommonName         string `json:"CommonName" xml:"CommonName"`
+	CertName           string `json:"CertName" xml:"CertName"`
+	Sans               string `json:"Sans" xml:"Sans"`
+	SignCertificate    string `json:"SignCertificate" xml:"SignCertificate"`
+	CertOrg            string `json:"CertOrg" xml:"CertOrg"`
+	EncryptCertificate string `json:"EncryptCertificate" xml:"EncryptCertificate"`
 }
 
 // CreateDescribeDcdnSMCertificateDetailRequest creates a request to invoke DescribeDcdnSMCertificateDetail API

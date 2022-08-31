@@ -85,8 +85,8 @@ type DescribeDcdnDomainRealTimeDetailDataRequest struct {
 // DescribeDcdnDomainRealTimeDetailDataResponse is the response struct for api DescribeDcdnDomainRealTimeDetailData
 type DescribeDcdnDomainRealTimeDetailDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeDcdnDomainRealTimeDetailDataRequest creates a request to invoke DescribeDcdnDomainRealTimeDetailData API
