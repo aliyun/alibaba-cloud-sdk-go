@@ -72,11 +72,12 @@ func (client *Client) DescribePGHbaConfigWithCallback(request *DescribePGHbaConf
 type DescribePGHbaConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribePGHbaConfigResponse is the response struct for api DescribePGHbaConfig
@@ -86,6 +87,7 @@ type DescribePGHbaConfigResponse struct {
 	ModifyStatusReason string          `json:"ModifyStatusReason" xml:"ModifyStatusReason"`
 	RequestId          string          `json:"RequestId" xml:"RequestId"`
 	LastModifyStatus   string          `json:"LastModifyStatus" xml:"LastModifyStatus"`
+	DBInstanceId       string          `json:"DBInstanceId" xml:"DBInstanceId"`
 	DefaultHbaItems    DefaultHbaItems `json:"DefaultHbaItems" xml:"DefaultHbaItems"`
 	RunningHbaItems    RunningHbaItems `json:"RunningHbaItems" xml:"RunningHbaItems"`
 }

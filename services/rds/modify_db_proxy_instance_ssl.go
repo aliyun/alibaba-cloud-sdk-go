@@ -74,6 +74,7 @@ type ModifyDbProxyInstanceSslRequest struct {
 	DbProxySslEnabled    string `position:"Query" name:"DbProxySslEnabled"`
 	DbProxyConnectString string `position:"Query" name:"DbProxyConnectString"`
 	DbInstanceId         string `position:"Query" name:"DbInstanceId"`
+	DBProxyEngineType    string `position:"Query" name:"DBProxyEngineType"`
 	DbProxyEndpointId    string `position:"Query" name:"DbProxyEndpointId"`
 }
 

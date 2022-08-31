@@ -79,6 +79,7 @@ type RenewInstanceRequest struct {
 	AutoPay              string           `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AutoRenew            string           `position:"Query" name:"AutoRenew"`
 }
 
 // RenewInstanceResponse is the response struct for api RenewInstance

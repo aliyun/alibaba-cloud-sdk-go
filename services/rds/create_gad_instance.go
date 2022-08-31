@@ -71,13 +71,21 @@ func (client *Client) CreateGADInstanceWithCallback(request *CreateGADInstanceRe
 // CreateGADInstanceRequest is the request struct for api CreateGADInstance
 type CreateGADInstanceRequest struct {
 	*requests.RpcRequest
-	DBList                     string                       `position:"Query" name:"DBList"`
-	CentralDBInstanceId        string                       `position:"Query" name:"CentralDBInstanceId"`
-	CentralRdsDtsAdminPassword string                       `position:"Query" name:"CentralRdsDtsAdminPassword"`
 	Description                string                       `position:"Query" name:"Description"`
 	CentralRdsDtsAdminAccount  string                       `position:"Query" name:"CentralRdsDtsAdminAccount"`
 	CentralRegionId            string                       `position:"Query" name:"CentralRegionId"`
+	ResourceGroupId            string                       `position:"Query" name:"ResourceGroupId"`
+	Tag                        *[]CreateGADInstanceTag      `position:"Query" name:"Tag"  type:"Repeated"`
 	UnitNode                   *[]CreateGADInstanceUnitNode `position:"Query" name:"UnitNode"  type:"Repeated"`
+	DBList                     string                       `position:"Query" name:"DBList"`
+	CentralDBInstanceId        string                       `position:"Query" name:"CentralDBInstanceId"`
+	CentralRdsDtsAdminPassword string                       `position:"Query" name:"CentralRdsDtsAdminPassword"`
+}
+
+// CreateGADInstanceTag is a repeated param struct in CreateGADInstanceRequest
+type CreateGADInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateGADInstanceUnitNode is a repeated param struct in CreateGADInstanceRequest

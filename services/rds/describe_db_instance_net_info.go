@@ -85,10 +85,10 @@ type DescribeDBInstanceNetInfoRequest struct {
 // DescribeDBInstanceNetInfoResponse is the response struct for api DescribeDBInstanceNetInfo
 type DescribeDBInstanceNetInfoResponse struct {
 	*responses.BaseResponse
-	SecurityIPMode      string             `json:"SecurityIPMode" xml:"SecurityIPMode"`
-	RequestId           string             `json:"RequestId" xml:"RequestId"`
-	InstanceNetworkType string             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	DBInstanceNetInfos  DBInstanceNetInfos `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
+	SecurityIPMode      string                                        `json:"SecurityIPMode" xml:"SecurityIPMode"`
+	RequestId           string                                        `json:"RequestId" xml:"RequestId"`
+	InstanceNetworkType string                                        `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	DBInstanceNetInfos  DBInstanceNetInfosInDescribeDBInstanceNetInfo `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
 }
 
 // CreateDescribeDBInstanceNetInfoRequest creates a request to invoke DescribeDBInstanceNetInfo API

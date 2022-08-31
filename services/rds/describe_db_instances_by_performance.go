@@ -78,6 +78,7 @@ type DescribeDBInstancesByPerformanceRequest struct {
 	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SortKey              string           `position:"Query" name:"SortKey"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`

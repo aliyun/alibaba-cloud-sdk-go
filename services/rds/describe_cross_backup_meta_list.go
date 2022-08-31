@@ -73,6 +73,7 @@ type DescribeCrossBackupMetaListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Pattern              string           `position:"Query" name:"Pattern"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             string           `position:"Query" name:"PageSize"`
 	PageIndex            string           `position:"Query" name:"PageIndex"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

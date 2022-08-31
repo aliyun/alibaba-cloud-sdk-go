@@ -75,6 +75,7 @@ type DescribeOssDownloadsRequest struct {
 	MigrateTaskId        string           `position:"Query" name:"MigrateTaskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 

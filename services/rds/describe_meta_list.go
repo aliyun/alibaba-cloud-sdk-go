@@ -74,6 +74,7 @@ type DescribeMetaListRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Pattern              string           `position:"Query" name:"Pattern"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	PageIndex            requests.Integer `position:"Query" name:"PageIndex"`

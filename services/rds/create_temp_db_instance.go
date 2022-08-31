@@ -72,6 +72,7 @@ func (client *Client) CreateTempDBInstanceWithCallback(request *CreateTempDBInst
 type CreateTempDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	RestoreTime          string           `position:"Query" name:"RestoreTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

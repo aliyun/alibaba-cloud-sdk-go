@@ -76,6 +76,7 @@ type ModifyDBProxyEndpointAddressRequest struct {
 	DBInstanceId                string           `position:"Query" name:"DBInstanceId"`
 	DBProxyNewConnectStringPort string           `position:"Query" name:"DBProxyNewConnectStringPort"`
 	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBProxyEngineType           string           `position:"Query" name:"DBProxyEngineType"`
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
 	DBProxyEndpointId           string           `position:"Query" name:"DBProxyEndpointId"`
 	DBProxyNewConnectString     string           `position:"Query" name:"DBProxyNewConnectString"`

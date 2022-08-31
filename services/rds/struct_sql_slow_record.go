@@ -35,4 +35,5 @@ type SQLSlowRecord struct {
 	ClientHostName        string `json:"ClientHostName" xml:"ClientHostName"`
 	UserName              string `json:"UserName" xml:"UserName"`
 	LastRowsAffectedCount int64  `json:"LastRowsAffectedCount" xml:"LastRowsAffectedCount"`
+	SQLHash               string `json:"SQLHash" xml:"SQLHash"`
 }

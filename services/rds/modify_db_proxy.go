@@ -72,12 +72,16 @@ func (client *Client) ModifyDBProxyWithCallback(request *ModifyDBProxyRequest, c
 type ModifyDBProxyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	AccountName          string           `position:"Query" name:"AccountName"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBProxyEngineType    string           `position:"Query" name:"DBProxyEngineType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBProxyInstanceNum   string           `position:"Query" name:"DBProxyInstanceNum"`
 	ConfigDBProxyService string           `position:"Query" name:"ConfigDBProxyService"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
 }

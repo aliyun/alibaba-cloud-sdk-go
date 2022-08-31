@@ -75,6 +75,7 @@ type DescribeAvailableMetricsRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // DescribeAvailableMetricsResponse is the response struct for api DescribeAvailableMetrics
@@ -82,6 +83,7 @@ type DescribeAvailableMetricsResponse struct {
 	*responses.BaseResponse
 	TotalRecordCount int       `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	RequestId        string    `json:"RequestId" xml:"RequestId"`
+	DBInstanceName   string    `json:"DBInstanceName" xml:"DBInstanceName"`
 	Items            []Metrics `json:"Items" xml:"Items"`
 }
 

@@ -26,6 +26,7 @@ type Backup struct {
 	StorageClass              string                 `json:"StorageClass" xml:"StorageClass"`
 	Encryption                string                 `json:"Encryption" xml:"Encryption"`
 	BackupSize                int64                  `json:"BackupSize" xml:"BackupSize"`
+	ResourceGroupId           string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	BackupStartTime           string                 `json:"BackupStartTime" xml:"BackupStartTime"`
 	Checksum                  string                 `json:"Checksum" xml:"Checksum"`
 	ConsistentTime            int64                  `json:"ConsistentTime" xml:"ConsistentTime"`

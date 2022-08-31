@@ -135,6 +135,8 @@ type CreateDBInstanceTag struct {
 type CreateDBInstanceServerlessConfig struct {
 	MinCapacity string `name:"MinCapacity"`
 	MaxCapacity string `name:"MaxCapacity"`
+	AutoPause   string `name:"AutoPause"`
+	SwitchForce string `name:"SwitchForce"`
 }
 
 // CreateDBInstanceResponse is the response struct for api CreateDBInstance

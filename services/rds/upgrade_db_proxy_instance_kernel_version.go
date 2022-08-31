@@ -72,11 +72,12 @@ func (client *Client) UpgradeDBProxyInstanceKernelVersionWithCallback(request *U
 type UpgradeDBProxyInstanceKernelVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	UpgradeTime          string           `position:"Query" name:"UpgradeTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	SwitchTime           string           `position:"Query" name:"SwitchTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBProxyEngineType    string           `position:"Query" name:"DBProxyEngineType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UpgradeTime          string           `position:"Query" name:"UpgradeTime"`
 }
 
 // UpgradeDBProxyInstanceKernelVersionResponse is the response struct for api UpgradeDBProxyInstanceKernelVersion

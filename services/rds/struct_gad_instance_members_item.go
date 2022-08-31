@@ -17,11 +17,12 @@ package rds
 
 // GadInstanceMembersItem is a nested struct in rds response
 type GadInstanceMembersItem struct {
-	DBInstanceID  string `json:"DBInstanceID" xml:"DBInstanceID"`
-	Engine        string `json:"Engine" xml:"Engine"`
-	EngineVersion string `json:"EngineVersion" xml:"EngineVersion"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	Role          string `json:"Role" xml:"Role"`
-	Status        string `json:"Status" xml:"Status"`
-	DtsInstance   string `json:"DtsInstance" xml:"DtsInstance"`
+	DBInstanceID    string `json:"DBInstanceID" xml:"DBInstanceID"`
+	Engine          string `json:"Engine" xml:"Engine"`
+	EngineVersion   string `json:"EngineVersion" xml:"EngineVersion"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
+	Role            string `json:"Role" xml:"Role"`
+	Status          string `json:"Status" xml:"Status"`
+	DtsInstance     string `json:"DtsInstance" xml:"DtsInstance"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

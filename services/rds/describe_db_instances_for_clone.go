@@ -78,6 +78,7 @@ type DescribeDBInstancesForCloneRequest struct {
 	SearchKey            string           `position:"Query" name:"SearchKey"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Expired              string           `position:"Query" name:"Expired"`
 	Engine               string           `position:"Query" name:"Engine"`
 	CurrentInstanceId    string           `position:"Query" name:"CurrentInstanceId"`

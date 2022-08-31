@@ -17,6 +17,8 @@ package rds
 
 // ServerlessConfig is a nested struct in rds response
 type ServerlessConfig struct {
-	ScaleMin string `json:"ScaleMin" xml:"ScaleMin"`
-	ScaleMax string `json:"ScaleMax" xml:"ScaleMax"`
+	ScaleMin    string `json:"ScaleMin" xml:"ScaleMin"`
+	ScaleMax    string `json:"ScaleMax" xml:"ScaleMax"`
+	AutoPause   bool   `json:"AutoPause" xml:"AutoPause"`
+	SwitchForce bool   `json:"SwitchForce" xml:"SwitchForce"`
 }
