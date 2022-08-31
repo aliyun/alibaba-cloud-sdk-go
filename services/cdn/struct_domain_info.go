@@ -19,7 +19,8 @@ package cdn
 type DomainInfo struct {
 	Status      string `json:"Status" xml:"Status"`
 	UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
-	DomainCname string `json:"DomainCname" xml:"DomainCname"`
-	DomainName  string `json:"DomainName" xml:"DomainName"`
 	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	DomainCname string `json:"DomainCname" xml:"DomainCname"`
+	CdnType     string `json:"CdnType" xml:"CdnType"`
+	DomainName  string `json:"DomainName" xml:"DomainName"`
 }

@@ -71,25 +71,22 @@ func (client *Client) DescribeDomainHttpCodeDataWithCallback(request *DescribeDo
 // DescribeDomainHttpCodeDataRequest is the request struct for api DescribeDomainHttpCodeData
 type DescribeDomainHttpCodeDataRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	TimeMerge      string           `position:"Query" name:"TimeMerge"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Interval       string           `position:"Query" name:"Interval"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDomainHttpCodeDataResponse is the response struct for api DescribeDomainHttpCodeData
 type DescribeDomainHttpCodeDataResponse struct {
 	*responses.BaseResponse
-	EndTime      string       `json:"EndTime" xml:"EndTime"`
-	StartTime    string       `json:"StartTime" xml:"StartTime"`
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	DomainName   string       `json:"DomainName" xml:"DomainName"`
-	DataInterval string       `json:"DataInterval" xml:"DataInterval"`
-	HttpCodeData HttpCodeData `json:"HttpCodeData" xml:"HttpCodeData"`
+	EndTime      string                                   `json:"EndTime" xml:"EndTime"`
+	StartTime    string                                   `json:"StartTime" xml:"StartTime"`
+	RequestId    string                                   `json:"RequestId" xml:"RequestId"`
+	DomainName   string                                   `json:"DomainName" xml:"DomainName"`
+	DataInterval string                                   `json:"DataInterval" xml:"DataInterval"`
+	HttpCodeData HttpCodeDataInDescribeDomainHttpCodeData `json:"HttpCodeData" xml:"HttpCodeData"`
 }
 
 // CreateDescribeDomainHttpCodeDataRequest creates a request to invoke DescribeDomainHttpCodeData API
@@ -97,7 +94,7 @@ func CreateDescribeDomainHttpCodeDataRequest() (request *DescribeDomainHttpCodeD
 	request = &DescribeDomainHttpCodeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainHttpCodeData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainHttpCodeData", "", "")
 	request.Method = requests.POST
 	return
 }

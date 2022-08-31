@@ -17,20 +17,31 @@ package cdn
 
 // DataModule is a nested struct in cdn response
 type DataModule struct {
-	OverseasValue        string `json:"OverseasValue" xml:"OverseasValue"`
-	DynamicValue         string `json:"DynamicValue" xml:"DynamicValue"`
-	L2Value              string `json:"L2Value" xml:"L2Value"`
-	StaticOverseasValue  string `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
-	DynamicOverseasValue string `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
-	DomesticValue        string `json:"DomesticValue" xml:"DomesticValue"`
-	AccValue             string `json:"AccValue" xml:"AccValue"`
-	Value                string `json:"Value" xml:"Value"`
-	StaticValue          string `json:"StaticValue" xml:"StaticValue"`
-	AccDomesticValue     string `json:"AccDomesticValue" xml:"AccDomesticValue"`
-	DynamicDomesticValue string `json:"DynamicDomesticValue" xml:"DynamicDomesticValue"`
-	TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
-	StaticDomesticValue  string `json:"StaticDomesticValue" xml:"StaticDomesticValue"`
-	DomesticL2Value      string `json:"DomesticL2Value" xml:"DomesticL2Value"`
-	OverseasL2Value      string `json:"OverseasL2Value" xml:"OverseasL2Value"`
-	AccOverseasValue     string `json:"AccOverseasValue" xml:"AccOverseasValue"`
+	PeakTime              string  `json:"PeakTime" xml:"PeakTime"`
+	Acc                   int64   `json:"Acc" xml:"Acc"`
+	Ipv6Qps               float64 `json:"Ipv6Qps" xml:"Ipv6Qps"`
+	HttpsAccOverseasValue string  `json:"HttpsAccOverseasValue" xml:"HttpsAccOverseasValue"`
+	HttpsOverseasValue    string  `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
+	TotalValue            string  `json:"TotalValue" xml:"TotalValue"`
+	TimeStamp             string  `json:"TimeStamp" xml:"TimeStamp"`
+	Ipv6Acc               int64   `json:"Ipv6Acc" xml:"Ipv6Acc"`
+	HttpsValue            string  `json:"HttpsValue" xml:"HttpsValue"`
+	Traf                  int64   `json:"Traf" xml:"Traf"`
+	Ipv6Bps               float64 `json:"Ipv6Bps" xml:"Ipv6Bps"`
+	OverseasValue         string  `json:"OverseasValue" xml:"OverseasValue"`
+	SpecialValue          string  `json:"SpecialValue" xml:"SpecialValue"`
+	DomainName            string  `json:"DomainName" xml:"DomainName"`
+	Ipv6Traf              int64   `json:"Ipv6Traf" xml:"Ipv6Traf"`
+	Bps                   float64 `json:"Bps" xml:"Bps"`
+	DomesticValue         string  `json:"DomesticValue" xml:"DomesticValue"`
+	AccValue              string  `json:"AccValue" xml:"AccValue"`
+	Value                 string  `json:"Value" xml:"Value"`
+	Qps                   float64 `json:"Qps" xml:"Qps"`
+	HttpCode              string  `json:"HttpCode" xml:"HttpCode"`
+	AccDomesticValue      string  `json:"AccDomesticValue" xml:"AccDomesticValue"`
+	TrafficValue          string  `json:"TrafficValue" xml:"TrafficValue"`
+	HttpsDomesticValue    string  `json:"HttpsDomesticValue" xml:"HttpsDomesticValue"`
+	HttpsAccValue         string  `json:"HttpsAccValue" xml:"HttpsAccValue"`
+	AccOverseasValue      string  `json:"AccOverseasValue" xml:"AccOverseasValue"`
+	HttpsAccDomesticValue string  `json:"HttpsAccDomesticValue" xml:"HttpsAccDomesticValue"`
 }

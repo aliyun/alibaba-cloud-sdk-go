@@ -78,15 +78,19 @@ type DescribeRefreshQuotaRequest struct {
 // DescribeRefreshQuotaResponse is the response struct for api DescribeRefreshQuota
 type DescribeRefreshQuotaResponse struct {
 	*responses.BaseResponse
-	BlockQuota    string `json:"BlockQuota" xml:"BlockQuota"`
-	BlockRemain   string `json:"BlockRemain" xml:"BlockRemain"`
-	PreloadRemain string `json:"PreloadRemain" xml:"PreloadRemain"`
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	DirRemain     string `json:"DirRemain" xml:"DirRemain"`
-	UrlRemain     string `json:"UrlRemain" xml:"UrlRemain"`
-	DirQuota      string `json:"DirQuota" xml:"DirQuota"`
-	UrlQuota      string `json:"UrlQuota" xml:"UrlQuota"`
-	PreloadQuota  string `json:"PreloadQuota" xml:"PreloadQuota"`
+	PreloadRemain     string `json:"PreloadRemain" xml:"PreloadRemain"`
+	BlockRemain       string `json:"BlockRemain" xml:"BlockRemain"`
+	RegexRemain       string `json:"RegexRemain" xml:"RegexRemain"`
+	UrlRemain         string `json:"UrlRemain" xml:"UrlRemain"`
+	DirRemain         string `json:"DirRemain" xml:"DirRemain"`
+	UrlQuota          string `json:"UrlQuota" xml:"UrlQuota"`
+	BlockQuota        string `json:"BlockQuota" xml:"BlockQuota"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	DirQuota          string `json:"DirQuota" xml:"DirQuota"`
+	PreloadEdgeQuota  string `json:"PreloadEdgeQuota" xml:"PreloadEdgeQuota"`
+	PreloadEdgeRemain string `json:"PreloadEdgeRemain" xml:"PreloadEdgeRemain"`
+	PreloadQuota      string `json:"PreloadQuota" xml:"PreloadQuota"`
+	RegexQuota        string `json:"RegexQuota" xml:"RegexQuota"`
 }
 
 // CreateDescribeRefreshQuotaRequest creates a request to invoke DescribeRefreshQuota API
@@ -94,7 +98,7 @@ func CreateDescribeRefreshQuotaRequest() (request *DescribeRefreshQuotaRequest) 
 	request = &DescribeRefreshQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRefreshQuota", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeRefreshQuota", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -74,8 +74,6 @@ type DescribeDomainBpsDataRequest struct {
 	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
 	StartTime      string           `position:"Query" name:"StartTime"`
 	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	DomainType     string           `position:"Query" name:"DomainType"`
-	TimeMerge      string           `position:"Query" name:"TimeMerge"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	EndTime        string           `position:"Query" name:"EndTime"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,16 +83,14 @@ type DescribeDomainBpsDataRequest struct {
 // DescribeDomainBpsDataResponse is the response struct for api DescribeDomainBpsData
 type DescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	EndTime            string                                    `json:"EndTime" xml:"EndTime"`
-	StartTime          string                                    `json:"StartTime" xml:"StartTime"`
-	IspNameEn          string                                    `json:"IspNameEn" xml:"IspNameEn"`
-	RequestId          string                                    `json:"RequestId" xml:"RequestId"`
-	LocationNameEn     string                                    `json:"LocationNameEn" xml:"LocationNameEn"`
-	LocationName       string                                    `json:"LocationName" xml:"LocationName"`
-	IspName            string                                    `json:"IspName" xml:"IspName"`
-	DomainName         string                                    `json:"DomainName" xml:"DomainName"`
-	DataInterval       string                                    `json:"DataInterval" xml:"DataInterval"`
-	BpsDataPerInterval BpsDataPerIntervalInDescribeDomainBpsData `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
+	EndTime            string             `json:"EndTime" xml:"EndTime"`
+	StartTime          string             `json:"StartTime" xml:"StartTime"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	IspNameEn          string             `json:"IspNameEn" xml:"IspNameEn"`
+	LocationNameEn     string             `json:"LocationNameEn" xml:"LocationNameEn"`
+	DomainName         string             `json:"DomainName" xml:"DomainName"`
+	DataInterval       string             `json:"DataInterval" xml:"DataInterval"`
+	BpsDataPerInterval BpsDataPerInterval `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
 }
 
 // CreateDescribeDomainBpsDataRequest creates a request to invoke DescribeDomainBpsData API
@@ -102,7 +98,7 @@ func CreateDescribeDomainBpsDataRequest() (request *DescribeDomainBpsDataRequest
 	request = &DescribeDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainBpsData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainBpsData", "", "")
 	request.Method = requests.POST
 	return
 }

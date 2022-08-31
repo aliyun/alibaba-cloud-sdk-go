@@ -73,7 +73,6 @@ type DescribeTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
 	StartTime string           `position:"Query" name:"StartTime"`
 	Limit     requests.Integer `position:"Query" name:"Limit"`
-	Product   string           `position:"Query" name:"Product"`
 	EndTime   string           `position:"Query" name:"EndTime"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -94,7 +93,7 @@ func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowR
 	request = &DescribeTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeTopDomainsByFlow", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeTopDomainsByFlow", "", "")
 	request.Method = requests.POST
 	return
 }
