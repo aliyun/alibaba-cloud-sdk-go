@@ -71,21 +71,21 @@ func (client *Client) DescribeDomainFileSizeProportionDataWithCallback(request *
 // DescribeDomainFileSizeProportionDataRequest is the request struct for api DescribeDomainFileSizeProportionData
 type DescribeDomainFileSizeProportionDataRequest struct {
 	*requests.RpcRequest
-	StartTime     string           `position:"Query" name:"StartTime"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeDomainFileSizeProportionDataResponse is the response struct for api DescribeDomainFileSizeProportionData
 type DescribeDomainFileSizeProportionDataResponse struct {
 	*responses.BaseResponse
+	EndTime                        string                         `json:"EndTime" xml:"EndTime"`
+	StartTime                      string                         `json:"StartTime" xml:"StartTime"`
 	RequestId                      string                         `json:"RequestId" xml:"RequestId"`
 	DomainName                     string                         `json:"DomainName" xml:"DomainName"`
 	DataInterval                   string                         `json:"DataInterval" xml:"DataInterval"`
-	StartTime                      string                         `json:"StartTime" xml:"StartTime"`
-	EndTime                        string                         `json:"EndTime" xml:"EndTime"`
 	FileSizeProportionDataInterval FileSizeProportionDataInterval `json:"FileSizeProportionDataInterval" xml:"FileSizeProportionDataInterval"`
 }
 
@@ -94,7 +94,7 @@ func CreateDescribeDomainFileSizeProportionDataRequest() (request *DescribeDomai
 	request = &DescribeDomainFileSizeProportionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainFileSizeProportionData", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainFileSizeProportionData", "", "")
 	request.Method = requests.POST
 	return
 }

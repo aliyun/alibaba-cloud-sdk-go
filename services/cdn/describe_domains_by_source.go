@@ -79,8 +79,8 @@ type DescribeDomainsBySourceRequest struct {
 // DescribeDomainsBySourceResponse is the response struct for api DescribeDomainsBySource
 type DescribeDomainsBySourceResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	Sources     string      `json:"Sources" xml:"Sources"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	DomainsList DomainsList `json:"DomainsList" xml:"DomainsList"`
 }
 
@@ -89,7 +89,7 @@ func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceReq
 	request = &DescribeDomainsBySourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainsBySource", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainsBySource", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,10 +17,9 @@ package cdn
 
 // DomainInfo is a nested struct in cdn response
 type DomainInfo struct {
-	DomainName  string `json:"DomainName" xml:"DomainName"`
-	DomainCname string `json:"DomainCname" xml:"DomainCname"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
 	Status      string `json:"Status" xml:"Status"`
-	CdnType     string `json:"CdnType" xml:"CdnType"`
+	UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
+	DomainCname string `json:"DomainCname" xml:"DomainCname"`
+	DomainName  string `json:"DomainName" xml:"DomainName"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 }

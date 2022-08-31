@@ -17,16 +17,18 @@ package cdn
 
 // ISPProportionData is a nested struct in cdn response
 type ISPProportionData struct {
-	ISP             string `json:"ISP" xml:"ISP"`
-	Proportion      string `json:"Proportion" xml:"Proportion"`
-	IspEname        string `json:"IspEname" xml:"IspEname"`
-	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
+	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
+	ByteHitRate     string `json:"ByteHitRate" xml:"ByteHitRate"`
+	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
+	ReqHitRate      string `json:"ReqHitRate" xml:"ReqHitRate"`
+	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
 	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
+	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
+	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
 	Bps             string `json:"Bps" xml:"Bps"`
 	Qps             string `json:"Qps" xml:"Qps"`
-	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
-	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
-	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
+	Proportion      string `json:"Proportion" xml:"Proportion"`
+	IspEname        string `json:"IspEname" xml:"IspEname"`
+	ISP             string `json:"ISP" xml:"ISP"`
 	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
-	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
 }

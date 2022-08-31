@@ -81,10 +81,10 @@ type DescribeDomainHitRateDataRequest struct {
 // DescribeDomainHitRateDataResponse is the response struct for api DescribeDomainHitRateData
 type DescribeDomainHitRateDataResponse struct {
 	*responses.BaseResponse
+	EndTime         string          `json:"EndTime" xml:"EndTime"`
+	StartTime       string          `json:"StartTime" xml:"StartTime"`
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	DomainName      string          `json:"DomainName" xml:"DomainName"`
-	StartTime       string          `json:"StartTime" xml:"StartTime"`
-	EndTime         string          `json:"EndTime" xml:"EndTime"`
 	DataInterval    string          `json:"DataInterval" xml:"DataInterval"`
 	HitRateInterval HitRateInterval `json:"HitRateInterval" xml:"HitRateInterval"`
 }
@@ -94,7 +94,7 @@ func CreateDescribeDomainHitRateDataRequest() (request *DescribeDomainHitRateDat
 	request = &DescribeDomainHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainHitRateData", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainHitRateData", "", "")
 	request.Method = requests.POST
 	return
 }

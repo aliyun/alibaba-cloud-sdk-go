@@ -17,8 +17,9 @@ package cdn
 
 // DomainLogDetail is a nested struct in cdn response
 type DomainLogDetail struct {
-	DomainName string    `json:"DomainName" xml:"DomainName"`
-	LogCount   int64     `json:"LogCount" xml:"LogCount"`
-	PageInfos  PageInfos `json:"PageInfos" xml:"PageInfos"`
-	LogInfos   LogInfos  `json:"LogInfos" xml:"LogInfos"`
+	EndTime   string `json:"EndTime" xml:"EndTime"`
+	LogSize   int64  `json:"LogSize" xml:"LogSize"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
+	LogName   string `json:"LogName" xml:"LogName"`
+	LogPath   string `json:"LogPath" xml:"LogPath"`
 }

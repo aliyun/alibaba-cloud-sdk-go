@@ -80,11 +80,11 @@ type DescribeDomainISPDataRequest struct {
 // DescribeDomainISPDataResponse is the response struct for api DescribeDomainISPData
 type DescribeDomainISPDataResponse struct {
 	*responses.BaseResponse
+	EndTime      string                       `json:"EndTime" xml:"EndTime"`
+	StartTime    string                       `json:"StartTime" xml:"StartTime"`
 	RequestId    string                       `json:"RequestId" xml:"RequestId"`
 	DomainName   string                       `json:"DomainName" xml:"DomainName"`
 	DataInterval string                       `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string                       `json:"StartTime" xml:"StartTime"`
-	EndTime      string                       `json:"EndTime" xml:"EndTime"`
 	Value        ValueInDescribeDomainISPData `json:"Value" xml:"Value"`
 }
 
@@ -93,7 +93,7 @@ func CreateDescribeDomainISPDataRequest() (request *DescribeDomainISPDataRequest
 	request = &DescribeDomainISPDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainISPData", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainISPData", "", "")
 	request.Method = requests.POST
 	return
 }

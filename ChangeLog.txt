@@ -1,3 +1,7 @@
+2022-08-31 Version: v1.61.1747
+- Generated 2014-11-11 for `Cdn`.
+- Init.
+
 2022-08-31 Version: v1.61.1746
 - Generated 2014-05-26 for `Ecs`.
 - Support create image with boot mode.

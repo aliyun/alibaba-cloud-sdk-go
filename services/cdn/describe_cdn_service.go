@@ -78,12 +78,12 @@ type DescribeCdnServiceRequest struct {
 // DescribeCdnServiceResponse is the response struct for api DescribeCdnService
 type DescribeCdnServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string         `json:"RequestId" xml:"RequestId"`
-	InstanceId         string         `json:"InstanceId" xml:"InstanceId"`
-	InternetChargeType string         `json:"InternetChargeType" xml:"InternetChargeType"`
-	OpeningTime        string         `json:"OpeningTime" xml:"OpeningTime"`
-	ChangingChargeType string         `json:"ChangingChargeType" xml:"ChangingChargeType"`
 	ChangingAffectTime string         `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
+	RequestId          string         `json:"RequestId" xml:"RequestId"`
+	ChangingChargeType string         `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	OpeningTime        string         `json:"OpeningTime" xml:"OpeningTime"`
+	InternetChargeType string         `json:"InternetChargeType" xml:"InternetChargeType"`
+	InstanceId         string         `json:"InstanceId" xml:"InstanceId"`
 	OperationLocks     OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
 }
 
@@ -92,7 +92,7 @@ func CreateDescribeCdnServiceRequest() (request *DescribeCdnServiceRequest) {
 	request = &DescribeCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnService", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnService", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -85,10 +85,10 @@ type DescribeDomainFlowDataRequest struct {
 // DescribeDomainFlowDataResponse is the response struct for api DescribeDomainFlowData
 type DescribeDomainFlowDataResponse struct {
 	*responses.BaseResponse
+	EndTime             string              `json:"EndTime" xml:"EndTime"`
+	StartTime           string              `json:"StartTime" xml:"StartTime"`
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	DomainName          string              `json:"DomainName" xml:"DomainName"`
-	StartTime           string              `json:"StartTime" xml:"StartTime"`
-	EndTime             string              `json:"EndTime" xml:"EndTime"`
 	DataInterval        string              `json:"DataInterval" xml:"DataInterval"`
 	FlowDataPerInterval FlowDataPerInterval `json:"FlowDataPerInterval" xml:"FlowDataPerInterval"`
 }

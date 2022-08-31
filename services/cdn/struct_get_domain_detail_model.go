@@ -17,16 +17,20 @@ package cdn
 
 // GetDomainDetailModel is a nested struct in cdn response
 type GetDomainDetailModel struct {
-	DomainName              string       `json:"DomainName" xml:"DomainName"`
-	Cname                   string       `json:"Cname" xml:"Cname"`
-	HttpsCname              string       `json:"HttpsCname" xml:"HttpsCname"`
-	DomainStatus            string       `json:"DomainStatus" xml:"DomainStatus"`
-	CdnType                 string       `json:"CdnType" xml:"CdnType"`
-	ServerCertificateStatus string       `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
-	GmtCreated              string       `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified             string       `json:"GmtModified" xml:"GmtModified"`
-	ResourceGroupId         string       `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Description             string       `json:"Description" xml:"Description"`
-	Scope                   string       `json:"Scope" xml:"Scope"`
-	SourceModels            SourceModels `json:"SourceModels" xml:"SourceModels"`
+	SourcePort              int                              `json:"SourcePort" xml:"SourcePort"`
+	HttpsCname              string                           `json:"HttpsCname" xml:"HttpsCname"`
+	SourceType              string                           `json:"SourceType" xml:"SourceType"`
+	ServerCertificateStatus string                           `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
+	GmtModified             string                           `json:"GmtModified" xml:"GmtModified"`
+	DomainName              string                           `json:"DomainName" xml:"DomainName"`
+	GmtCreated              string                           `json:"GmtCreated" xml:"GmtCreated"`
+	Description             string                           `json:"Description" xml:"Description"`
+	Region                  string                           `json:"Region" xml:"Region"`
+	ResourceGroupId         string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Scope                   string                           `json:"Scope" xml:"Scope"`
+	DomainStatus            string                           `json:"DomainStatus" xml:"DomainStatus"`
+	Cname                   string                           `json:"Cname" xml:"Cname"`
+	CdnType                 string                           `json:"CdnType" xml:"CdnType"`
+	Sources                 SourcesInDescribeCdnDomainDetail `json:"Sources" xml:"Sources"`
+	SourceModels            SourceModels                     `json:"SourceModels" xml:"SourceModels"`
 }

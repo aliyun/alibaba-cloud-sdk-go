@@ -81,9 +81,9 @@ type DescribeDomainBpsDataByTimeStampRequest struct {
 // DescribeDomainBpsDataByTimeStampResponse is the response struct for api DescribeDomainBpsDataByTimeStamp
 type DescribeDomainBpsDataByTimeStampResponse struct {
 	*responses.BaseResponse
+	TimeStamp   string      `json:"TimeStamp" xml:"TimeStamp"`
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	DomainName  string      `json:"DomainName" xml:"DomainName"`
-	TimeStamp   string      `json:"TimeStamp" xml:"TimeStamp"`
 	BpsDataList BpsDataList `json:"BpsDataList" xml:"BpsDataList"`
 }
 
@@ -92,7 +92,7 @@ func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBps
 	request = &DescribeDomainBpsDataByTimeStampRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainBpsDataByTimeStamp", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp", "", "")
 	request.Method = requests.POST
 	return
 }

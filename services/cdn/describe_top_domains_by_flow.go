@@ -73,6 +73,7 @@ type DescribeTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
 	StartTime string           `position:"Query" name:"StartTime"`
 	Limit     requests.Integer `position:"Query" name:"Limit"`
+	Product   string           `position:"Query" name:"Product"`
 	EndTime   string           `position:"Query" name:"EndTime"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -80,11 +81,11 @@ type DescribeTopDomainsByFlowRequest struct {
 // DescribeTopDomainsByFlowResponse is the response struct for api DescribeTopDomainsByFlow
 type DescribeTopDomainsByFlowResponse struct {
 	*responses.BaseResponse
-	RequestId         string     `json:"RequestId" xml:"RequestId"`
-	StartTime         string     `json:"StartTime" xml:"StartTime"`
-	EndTime           string     `json:"EndTime" xml:"EndTime"`
-	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
 	DomainOnlineCount int64      `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
+	EndTime           string     `json:"EndTime" xml:"EndTime"`
+	StartTime         string     `json:"StartTime" xml:"StartTime"`
+	RequestId         string     `json:"RequestId" xml:"RequestId"`
+	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 
@@ -93,7 +94,7 @@ func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowR
 	request = &DescribeTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeTopDomainsByFlow", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeTopDomainsByFlow", "", "")
 	request.Method = requests.POST
 	return
 }
