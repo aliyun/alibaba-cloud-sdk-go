@@ -89,6 +89,7 @@ type RunCommandRequest struct {
 	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
 	InstanceId           *[]string              `position:"Query" name:"InstanceId"  type:"Repeated"`
 	Name                 string                 `position:"Query" name:"Name"`
+	ContainerId          string                 `position:"Query" name:"ContainerId"`
 	Parameters           map[string]interface{} `position:"Query" name:"Parameters"`
 	EnableParameter      requests.Boolean       `position:"Query" name:"EnableParameter"`
 	Username             string                 `position:"Query" name:"Username"`

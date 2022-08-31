@@ -1,3 +1,8 @@
+2022-08-31 Version: v1.61.1746
+- Generated 2014-05-26 for `Ecs`.
+- Support create image with boot mode.
+- Provide image boot mode info in DescribeImages.
+
 2022-08-31 Version: v1.61.1745
 - Generated 2018-01-15 for `dcdn`.
 - Add API.
