@@ -71,9 +71,9 @@ func (client *Client) DescribeScdnCertificateListWithCallback(request *DescribeS
 // DescribeScdnCertificateListRequest is the request struct for api DescribeScdnCertificateList
 type DescribeScdnCertificateListRequest struct {
 	*requests.RpcRequest
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeScdnCertificateListResponse is the response struct for api DescribeScdnCertificateList

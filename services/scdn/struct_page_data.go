@@ -17,14 +17,14 @@ package scdn
 
 // PageData is a nested struct in scdn response
 type PageData struct {
-	DomainName      string                           `json:"DomainName" xml:"DomainName"`
-	Cname           string                           `json:"Cname" xml:"Cname"`
-	DomainStatus    string                           `json:"DomainStatus" xml:"DomainStatus"`
 	GmtCreated      string                           `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified     string                           `json:"GmtModified" xml:"GmtModified"`
 	Description     string                           `json:"Description" xml:"Description"`
 	SSLProtocol     string                           `json:"SSLProtocol" xml:"SSLProtocol"`
 	ResourceGroupId string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Sandbox         string                           `json:"Sandbox" xml:"Sandbox"`
+	DomainStatus    string                           `json:"DomainStatus" xml:"DomainStatus"`
+	Cname           string                           `json:"Cname" xml:"Cname"`
+	GmtModified     string                           `json:"GmtModified" xml:"GmtModified"`
+	DomainName      string                           `json:"DomainName" xml:"DomainName"`
 	Sources         SourcesInDescribeScdnUserDomains `json:"Sources" xml:"Sources"`
 }

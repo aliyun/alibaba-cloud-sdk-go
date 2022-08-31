@@ -17,6 +17,6 @@ package scdn
 
 // AttackUrlDatas is a nested struct in scdn response
 type AttackUrlDatas struct {
-	Url         string `json:"Url" xml:"Url"`
 	AttackCount string `json:"AttackCount" xml:"AttackCount"`
+	Url         string `json:"Url" xml:"Url"`
 }

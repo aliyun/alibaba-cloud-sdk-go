@@ -17,16 +17,16 @@ package scdn
 
 // ISPProportionData is a nested struct in scdn response
 type ISPProportionData struct {
-	ISP             string `json:"ISP" xml:"ISP"`
-	Proportion      string `json:"Proportion" xml:"Proportion"`
-	IspEname        string `json:"IspEname" xml:"IspEname"`
 	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
-	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
-	Bps             string `json:"Bps" xml:"Bps"`
-	Qps             string `json:"Qps" xml:"Qps"`
 	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
-	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
-	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
-	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
+	Bps             string `json:"Bps" xml:"Bps"`
+	IspEname        string `json:"IspEname" xml:"IspEname"`
+	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
+	Qps             string `json:"Qps" xml:"Qps"`
+	Proportion      string `json:"Proportion" xml:"Proportion"`
 	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
+	ISP             string `json:"ISP" xml:"ISP"`
+	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
+	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
+	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
 }

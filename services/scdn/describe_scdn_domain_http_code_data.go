@@ -71,22 +71,21 @@ func (client *Client) DescribeScdnDomainHttpCodeDataWithCallback(request *Descri
 // DescribeScdnDomainHttpCodeDataRequest is the request struct for api DescribeScdnDomainHttpCodeData
 type DescribeScdnDomainHttpCodeDataRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Interval       string           `position:"Query" name:"Interval"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	Interval       string `position:"Query" name:"Interval"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
 }
 
 // DescribeScdnDomainHttpCodeDataResponse is the response struct for api DescribeScdnDomainHttpCodeData
 type DescribeScdnDomainHttpCodeDataResponse struct {
 	*responses.BaseResponse
+	EndTime         string          `json:"EndTime" xml:"EndTime"`
+	StartTime       string          `json:"StartTime" xml:"StartTime"`
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	DomainName      string          `json:"DomainName" xml:"DomainName"`
-	StartTime       string          `json:"StartTime" xml:"StartTime"`
-	EndTime         string          `json:"EndTime" xml:"EndTime"`
 	DataInterval    string          `json:"DataInterval" xml:"DataInterval"`
 	DataPerInterval DataPerInterval `json:"DataPerInterval" xml:"DataPerInterval"`
 }

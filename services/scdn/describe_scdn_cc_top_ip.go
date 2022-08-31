@@ -71,12 +71,11 @@ func (client *Client) DescribeScdnCcTopIpWithCallback(request *DescribeScdnCcTop
 // DescribeScdnCcTopIpRequest is the request struct for api DescribeScdnCcTopIp
 type DescribeScdnCcTopIpRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	PageNumber string           `position:"Query" name:"PageNumber"`
-	PageSize   string           `position:"Query" name:"PageSize"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
+	PageSize   string `position:"Query" name:"PageSize"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	StartTime  string `position:"Query" name:"StartTime"`
+	PageNumber string `position:"Query" name:"PageNumber"`
 }
 
 // DescribeScdnCcTopIpResponse is the response struct for api DescribeScdnCcTopIp

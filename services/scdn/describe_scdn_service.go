@@ -78,39 +78,39 @@ type DescribeScdnServiceRequest struct {
 // DescribeScdnServiceResponse is the response struct for api DescribeScdnService
 type DescribeScdnServiceResponse struct {
 	*responses.BaseResponse
-	RequestId                     string         `json:"RequestId" xml:"RequestId"`
-	ChangingAffectTime            string         `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
-	InternetChargeType            string         `json:"InternetChargeType" xml:"InternetChargeType"`
-	ChangingChargeType            string         `json:"ChangingChargeType" xml:"ChangingChargeType"`
-	InstanceId                    string         `json:"InstanceId" xml:"InstanceId"`
-	OpenTime                      string         `json:"OpenTime" xml:"OpenTime"`
-	EndTime                       string         `json:"EndTime" xml:"EndTime"`
-	ProtectType                   string         `json:"ProtectType" xml:"ProtectType"`
-	ProtectTypeValue              string         `json:"ProtectTypeValue" xml:"ProtectTypeValue"`
-	Bandwidth                     string         `json:"Bandwidth" xml:"Bandwidth"`
-	CcProtection                  string         `json:"CcProtection" xml:"CcProtection"`
-	DDoSBasic                     string         `json:"DDoSBasic" xml:"DDoSBasic"`
-	DomainCount                   string         `json:"DomainCount" xml:"DomainCount"`
-	ElasticProtection             string         `json:"ElasticProtection" xml:"ElasticProtection"`
-	BandwidthValue                string         `json:"BandwidthValue" xml:"BandwidthValue"`
-	CcProtectionValue             string         `json:"CcProtectionValue" xml:"CcProtectionValue"`
-	DDoSBasicValue                string         `json:"DDoSBasicValue" xml:"DDoSBasicValue"`
 	DomainCountValue              string         `json:"DomainCountValue" xml:"DomainCountValue"`
-	ElasticProtectionValue        string         `json:"ElasticProtectionValue" xml:"ElasticProtectionValue"`
-	CurrentProtectType            string         `json:"CurrentProtectType" xml:"CurrentProtectType"`
-	CurrentProtectTypeValue       string         `json:"CurrentProtectTypeValue" xml:"CurrentProtectTypeValue"`
-	CurrentBandwidth              string         `json:"CurrentBandwidth" xml:"CurrentBandwidth"`
-	CurrentCcProtection           string         `json:"CurrentCcProtection" xml:"CurrentCcProtection"`
-	CurrentDDoSBasic              string         `json:"CurrentDDoSBasic" xml:"CurrentDDoSBasic"`
+	DDoSBasicValue                string         `json:"DDoSBasicValue" xml:"DDoSBasicValue"`
+	ChangingAffectTime            string         `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
+	CcProtection                  string         `json:"CcProtection" xml:"CcProtection"`
 	CurrentDomainCount            string         `json:"CurrentDomainCount" xml:"CurrentDomainCount"`
-	CurrentElasticProtection      string         `json:"CurrentElasticProtection" xml:"CurrentElasticProtection"`
-	CurrentBandwidthValue         string         `json:"CurrentBandwidthValue" xml:"CurrentBandwidthValue"`
-	CurrentCcProtectionValue      string         `json:"CurrentCcProtectionValue" xml:"CurrentCcProtectionValue"`
-	CurrentDDoSBasicValue         string         `json:"CurrentDDoSBasicValue" xml:"CurrentDDoSBasicValue"`
-	CurrentDomainCountValue       string         `json:"CurrentDomainCountValue" xml:"CurrentDomainCountValue"`
-	CurrentElasticProtectionValue string         `json:"CurrentElasticProtectionValue" xml:"CurrentElasticProtectionValue"`
-	PriceType                     string         `json:"PriceType" xml:"PriceType"`
 	PricingCycle                  string         `json:"PricingCycle" xml:"PricingCycle"`
+	OpenTime                      string         `json:"OpenTime" xml:"OpenTime"`
+	ChangingChargeType            string         `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	RequestId                     string         `json:"RequestId" xml:"RequestId"`
+	CurrentBandwidthValue         string         `json:"CurrentBandwidthValue" xml:"CurrentBandwidthValue"`
+	Bandwidth                     string         `json:"Bandwidth" xml:"Bandwidth"`
+	DomainCount                   string         `json:"DomainCount" xml:"DomainCount"`
+	ProtectTypeValue              string         `json:"ProtectTypeValue" xml:"ProtectTypeValue"`
+	CurrentBandwidth              string         `json:"CurrentBandwidth" xml:"CurrentBandwidth"`
+	PriceType                     string         `json:"PriceType" xml:"PriceType"`
+	CcProtectionValue             string         `json:"CcProtectionValue" xml:"CcProtectionValue"`
+	CurrentDDoSBasic              string         `json:"CurrentDDoSBasic" xml:"CurrentDDoSBasic"`
+	ProtectType                   string         `json:"ProtectType" xml:"ProtectType"`
+	CurrentElasticProtection      string         `json:"CurrentElasticProtection" xml:"CurrentElasticProtection"`
+	CurrentElasticProtectionValue string         `json:"CurrentElasticProtectionValue" xml:"CurrentElasticProtectionValue"`
+	InstanceId                    string         `json:"InstanceId" xml:"InstanceId"`
+	CurrentProtectType            string         `json:"CurrentProtectType" xml:"CurrentProtectType"`
+	ElasticProtection             string         `json:"ElasticProtection" xml:"ElasticProtection"`
+	EndTime                       string         `json:"EndTime" xml:"EndTime"`
+	CurrentDDoSBasicValue         string         `json:"CurrentDDoSBasicValue" xml:"CurrentDDoSBasicValue"`
+	BandwidthValue                string         `json:"BandwidthValue" xml:"BandwidthValue"`
+	DDoSBasic                     string         `json:"DDoSBasic" xml:"DDoSBasic"`
+	CurrentDomainCountValue       string         `json:"CurrentDomainCountValue" xml:"CurrentDomainCountValue"`
+	ElasticProtectionValue        string         `json:"ElasticProtectionValue" xml:"ElasticProtectionValue"`
+	CurrentCcProtection           string         `json:"CurrentCcProtection" xml:"CurrentCcProtection"`
+	InternetChargeType            string         `json:"InternetChargeType" xml:"InternetChargeType"`
+	CurrentProtectTypeValue       string         `json:"CurrentProtectTypeValue" xml:"CurrentProtectTypeValue"`
+	CurrentCcProtectionValue      string         `json:"CurrentCcProtectionValue" xml:"CurrentCcProtectionValue"`
 	OperationLocks                OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
 }
 

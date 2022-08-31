@@ -17,7 +17,7 @@ package scdn
 
 // DomainConfigModel is a nested struct in scdn response
 type DomainConfigModel struct {
-	DomainName   string `json:"DomainName" xml:"DomainName"`
 	ConfigId     int64  `json:"ConfigId" xml:"ConfigId"`
+	DomainName   string `json:"DomainName" xml:"DomainName"`
 	FunctionName string `json:"FunctionName" xml:"FunctionName"`
 }

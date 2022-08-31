@@ -71,8 +71,7 @@ func (client *Client) DescribeScdnDomainCertificateInfoWithCallback(request *Des
 // DescribeScdnDomainCertificateInfoRequest is the request struct for api DescribeScdnDomainCertificateInfo
 type DescribeScdnDomainCertificateInfoRequest struct {
 	*requests.RpcRequest
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
 }
 
 // DescribeScdnDomainCertificateInfoResponse is the response struct for api DescribeScdnDomainCertificateInfo

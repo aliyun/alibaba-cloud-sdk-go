@@ -71,14 +71,13 @@ func (client *Client) DescribeScdnCcInfoWithCallback(request *DescribeScdnCcInfo
 // DescribeScdnCcInfoRequest is the request struct for api DescribeScdnCcInfo
 type DescribeScdnCcInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeScdnCcInfoResponse is the response struct for api DescribeScdnCcInfo
 type DescribeScdnCcInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Status    string `json:"Status" xml:"Status"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeScdnCcInfoRequest creates a request to invoke DescribeScdnCcInfo API

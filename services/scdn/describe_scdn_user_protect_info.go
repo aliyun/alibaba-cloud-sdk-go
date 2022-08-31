@@ -71,14 +71,13 @@ func (client *Client) DescribeScdnUserProtectInfoWithCallback(request *DescribeS
 // DescribeScdnUserProtectInfoRequest is the request struct for api DescribeScdnUserProtectInfo
 type DescribeScdnUserProtectInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeScdnUserProtectInfoResponse is the response struct for api DescribeScdnUserProtectInfo
 type DescribeScdnUserProtectInfoResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	ServiceDDoS int    `json:"ServiceDDoS" xml:"ServiceDDoS"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeScdnUserProtectInfoRequest creates a request to invoke DescribeScdnUserProtectInfo API

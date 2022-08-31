@@ -71,18 +71,17 @@ func (client *Client) DescribeScdnCcQpsInfoWithCallback(request *DescribeScdnCcQ
 // DescribeScdnCcQpsInfoRequest is the request struct for api DescribeScdnCcQpsInfo
 type DescribeScdnCcQpsInfoRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeScdnCcQpsInfoResponse is the response struct for api DescribeScdnCcQpsInfo
 type DescribeScdnCcQpsInfoResponse struct {
 	*responses.BaseResponse
 	RequestId  string                            `json:"RequestId" xml:"RequestId"`
-	Totals     Totals                            `json:"Totals" xml:"Totals"`
 	Attacks    Attacks                           `json:"Attacks" xml:"Attacks"`
+	Totals     Totals                            `json:"Totals" xml:"Totals"`
 	TimeScopes TimeScopesInDescribeScdnCcQpsInfo `json:"TimeScopes" xml:"TimeScopes"`
 }
 

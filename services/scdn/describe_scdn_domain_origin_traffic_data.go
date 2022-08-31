@@ -71,20 +71,19 @@ func (client *Client) DescribeScdnDomainOriginTrafficDataWithCallback(request *D
 // DescribeScdnDomainOriginTrafficDataRequest is the request struct for api DescribeScdnDomainOriginTrafficData
 type DescribeScdnDomainOriginTrafficDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Interval   string           `position:"Query" name:"Interval"`
+	DomainName string `position:"Query" name:"DomainName"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	Interval   string `position:"Query" name:"Interval"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeScdnDomainOriginTrafficDataResponse is the response struct for api DescribeScdnDomainOriginTrafficData
 type DescribeScdnDomainOriginTrafficDataResponse struct {
 	*responses.BaseResponse
+	EndTime                      string                       `json:"EndTime" xml:"EndTime"`
+	StartTime                    string                       `json:"StartTime" xml:"StartTime"`
 	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
 	DomainName                   string                       `json:"DomainName" xml:"DomainName"`
-	StartTime                    string                       `json:"StartTime" xml:"StartTime"`
-	EndTime                      string                       `json:"EndTime" xml:"EndTime"`
 	DataInterval                 string                       `json:"DataInterval" xml:"DataInterval"`
 	OriginTrafficDataPerInterval OriginTrafficDataPerInterval `json:"OriginTrafficDataPerInterval" xml:"OriginTrafficDataPerInterval"`
 }
