@@ -84,6 +84,7 @@ type ListInstancesRequest struct {
 	PageSize     requests.Integer `position:"Body" name:"PageSize"`
 	NodeId       requests.Integer `position:"Body" name:"NodeId"`
 	ProjectId    requests.Integer `position:"Body" name:"ProjectId"`
+	Status       string           `position:"Body" name:"Status"`
 }
 
 // ListInstancesResponse is the response struct for api ListInstances
