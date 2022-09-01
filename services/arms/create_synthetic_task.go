@@ -73,6 +73,7 @@ type CreateSyntheticTaskRequest struct {
 	*requests.RpcRequest
 	TaskType       requests.Integer                  `position:"Query" name:"TaskType"`
 	IntervalType   string                            `position:"Query" name:"IntervalType"`
+	UpdateTask     requests.Boolean                  `position:"Query" name:"UpdateTask"`
 	TaskName       string                            `position:"Query" name:"TaskName"`
 	MonitorList    *[]CreateSyntheticTaskMonitorList `position:"Query" name:"MonitorList"  type:"Json"`
 	IpType         requests.Integer                  `position:"Query" name:"IpType"`
@@ -80,6 +81,9 @@ type CreateSyntheticTaskRequest struct {
 	IntervalTime   string                            `position:"Query" name:"IntervalTime"`
 	CommonParam    CreateSyntheticTaskCommonParam    `position:"Query" name:"CommonParam"  type:"Struct"`
 	ExtendInterval CreateSyntheticTaskExtendInterval `position:"Query" name:"ExtendInterval"  type:"Struct"`
+	Navigation     CreateSyntheticTaskNavigation     `position:"Query" name:"Navigation"  type:"Struct"`
+	Download       CreateSyntheticTaskDownload       `position:"Query" name:"Download"  type:"Struct"`
+	Protocol       CreateSyntheticTaskProtocol       `position:"Query" name:"Protocol"  type:"Struct"`
 	Net            CreateSyntheticTaskNet            `position:"Query" name:"Net"  type:"Struct"`
 }
 
@@ -111,10 +115,76 @@ type CreateSyntheticTaskExtendInterval struct {
 	StartTime   string    `name:"StartTime"`
 }
 
+// CreateSyntheticTaskNavigation is a repeated param struct in CreateSyntheticTaskRequest
+type CreateSyntheticTaskNavigation struct {
+	ExecuteActiveX            string `name:"ExecuteActiveX"`
+	NavCustomHostIp           string `name:"NavCustomHostIp"`
+	NavReturnElement          string `name:"NavReturnElement"`
+	QUICVersion               string `name:"QUICVersion"`
+	SlowElementThreshold      string `name:"SlowElementThreshold"`
+	WaitCompletionTime        string `name:"WaitCompletionTime"`
+	QUICDomain                string `name:"QUICDomain"`
+	NavCustomHeaderContent    string `name:"NavCustomHeaderContent"`
+	ResponseHeader            string `name:"ResponseHeader"`
+	VerifyStringWhiteList     string `name:"VerifyStringWhiteList"`
+	MonitorTimeout            string `name:"MonitorTimeout"`
+	FilterInvalidIP           string `name:"FilterInvalidIP"`
+	FlowHijackLogo            string `name:"FlowHijackLogo"`
+	NavDisableCache           string `name:"NavDisableCache"`
+	ElementBlacklist          string `name:"ElementBlacklist"`
+	FlowHijackJumpTimes       string `name:"FlowHijackJumpTimes"`
+	ExecuteScript             string `name:"ExecuteScript"`
+	NavDisableCompression     string `name:"NavDisableCompression"`
+	DNSHijackWhiteList        string `name:"DNSHijackWhiteList"`
+	ProcessName               string `name:"ProcessName"`
+	VerifyStringBlacklist     string `name:"VerifyStringBlacklist"`
+	NavAutomaticScrolling     string `name:"NavAutomaticScrolling"`
+	NavRedirection            string `name:"NavRedirection"`
+	NavCustomHeader           string `name:"NavCustomHeader"`
+	ExecuteApplication        string `name:"ExecuteApplication"`
+	NavCustomHost             string `name:"NavCustomHost"`
+	NavIgnoreCertificateError string `name:"NavIgnoreCertificateError"`
+	PageTamper                string `name:"PageTamper"`
+	RequestHeader             string `name:"RequestHeader"`
+}
+
+// CreateSyntheticTaskDownload is a repeated param struct in CreateSyntheticTaskRequest
+type CreateSyntheticTaskDownload struct {
+	DownloadIgnoreCertificateError string `name:"DownloadIgnoreCertificateError"`
+	DownloadCustomHost             string `name:"DownloadCustomHost"`
+	ConnectionTimeout              string `name:"ConnectionTimeout"`
+	DownloadKernel                 string `name:"DownloadKernel"`
+	WhiteList                      string `name:"WhiteList"`
+	DownloadRedirection            string `name:"DownloadRedirection"`
+	MonitorTimeout                 string `name:"MonitorTimeout"`
+	ValidateKeywords               string `name:"ValidateKeywords"`
+	DownloadTransmissionSize       string `name:"DownloadTransmissionSize"`
+	QuickProtocol                  string `name:"QuickProtocol"`
+	DownloadCustomHeaderContent    string `name:"DownloadCustomHeaderContent"`
+	VerifyWay                      string `name:"VerifyWay"`
+	DownloadCustomHostIp           string `name:"DownloadCustomHostIp"`
+}
+
+// CreateSyntheticTaskProtocol is a repeated param struct in CreateSyntheticTaskRequest
+type CreateSyntheticTaskProtocol struct {
+	ReceivedDataSize          string                                    `name:"ReceivedDataSize"`
+	ProtocolMonitorTimeout    string                                    `name:"ProtocolMonitorTimeout"`
+	RequestContent            CreateSyntheticTaskProtocolRequestContent `name:"RequestContent" type:"Struct"`
+	ProtocolConnectionTime    string                                    `name:"ProtocolConnectionTime"`
+	CharacterEncoding         string                                    `name:"CharacterEncoding"`
+	VerifyContent             string                                    `name:"VerifyContent"`
+	CustomHost                string                                    `name:"CustomHost"`
+	ProtocolConnectionTimeout string                                    `name:"ProtocolConnectionTimeout"`
+	CustomHostIp              string                                    `name:"CustomHostIp"`
+	VerifyWay                 string                                    `name:"VerifyWay"`
+}
+
 // CreateSyntheticTaskNet is a repeated param struct in CreateSyntheticTaskRequest
 type CreateSyntheticTaskNet struct {
+	NetICMPTimeout       string `name:"NetICMPTimeout"`
 	NetTraceRouteTimeout string `name:"NetTraceRouteTimeout"`
 	NetICMPActive        string `name:"NetICMPActive"`
+	NetICMPDataCut       string `name:"NetICMPDataCut"`
 	NetICMPNum           string `name:"NetICMPNum"`
 	NetDNSTimeout        string `name:"NetDNSTimeout"`
 	NetDNSQueryMethod    string `name:"NetDNSQueryMethod"`
@@ -137,6 +207,40 @@ type CreateSyntheticTaskCommonParamAlertListItem struct {
 	SeriousAlert string `name:"SeriousAlert"`
 	GeneralAlert string `name:"GeneralAlert"`
 	Symbols      string `name:"Symbols"`
+}
+
+// CreateSyntheticTaskProtocolRequestContent is a repeated param struct in CreateSyntheticTaskRequest
+type CreateSyntheticTaskProtocolRequestContent struct {
+	Method string                                                 `name:"Method"`
+	Header *[]CreateSyntheticTaskProtocolRequestContentHeaderItem `name:"Header" type:"Repeated"`
+	Body   CreateSyntheticTaskProtocolRequestContentBody          `name:"Body" type:"Struct"`
+}
+
+// CreateSyntheticTaskProtocolRequestContentHeaderItem is a repeated param struct in CreateSyntheticTaskRequest
+type CreateSyntheticTaskProtocolRequestContentHeaderItem struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
+}
+
+// CreateSyntheticTaskProtocolRequestContentBody is a repeated param struct in CreateSyntheticTaskRequest
+type CreateSyntheticTaskProtocolRequestContentBody struct {
+	Mode        string                                                          `name:"Mode"`
+	Raw         string                                                          `name:"Raw"`
+	UrlEncoding *[]CreateSyntheticTaskProtocolRequestContentBodyUrlEncodingItem `name:"UrlEncoding" type:"Repeated"`
+	Language    string                                                          `name:"Language"`
+	FormData    *[]CreateSyntheticTaskProtocolRequestContentBodyFormDataItem    `name:"FormData" type:"Repeated"`
+}
+
+// CreateSyntheticTaskProtocolRequestContentBodyUrlEncodingItem is a repeated param struct in CreateSyntheticTaskRequest
+type CreateSyntheticTaskProtocolRequestContentBodyUrlEncodingItem struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
+}
+
+// CreateSyntheticTaskProtocolRequestContentBodyFormDataItem is a repeated param struct in CreateSyntheticTaskRequest
+type CreateSyntheticTaskProtocolRequestContentBodyFormDataItem struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateSyntheticTaskResponse is the response struct for api CreateSyntheticTask

@@ -74,6 +74,7 @@ type UpdateIntegrationRequest struct {
 	ShortToken                 string           `position:"Body" name:"ShortToken"`
 	FieldRedefineRules         string           `position:"Body" name:"FieldRedefineRules"`
 	Stat                       string           `position:"Body" name:"Stat"`
+	InitiativeRecoverValue     string           `position:"Body" name:"InitiativeRecoverValue"`
 	Liveness                   string           `position:"Body" name:"Liveness"`
 	IntegrationId              requests.Integer `position:"Body" name:"IntegrationId"`
 	Description                string           `position:"Body" name:"Description"`
@@ -84,6 +85,7 @@ type UpdateIntegrationRequest struct {
 	IntegrationName            string           `position:"Body" name:"IntegrationName"`
 	State                      requests.Boolean `position:"Body" name:"State"`
 	ExtendedFieldRedefineRules string           `position:"Body" name:"ExtendedFieldRedefineRules"`
+	InitiativeRecoverField     string           `position:"Body" name:"InitiativeRecoverField"`
 	IntegrationProductType     string           `position:"Body" name:"IntegrationProductType"`
 }
 

@@ -19,10 +19,12 @@ package arms
 type Integration struct {
 	IntegrationId              int64                    `json:"IntegrationId" xml:"IntegrationId"`
 	DuplicateKey               string                   `json:"DuplicateKey" xml:"DuplicateKey"`
+	InitiativeRecoverValue     string                   `json:"InitiativeRecoverValue" xml:"InitiativeRecoverValue"`
 	Liveness                   string                   `json:"Liveness" xml:"Liveness"`
 	IntegrationName            string                   `json:"IntegrationName" xml:"IntegrationName"`
 	RecoverTime                int64                    `json:"RecoverTime" xml:"RecoverTime"`
 	ShortToken                 string                   `json:"ShortToken" xml:"ShortToken"`
+	InitiativeRecoverField     string                   `json:"InitiativeRecoverField" xml:"InitiativeRecoverField"`
 	ApiEndpoint                string                   `json:"ApiEndpoint" xml:"ApiEndpoint"`
 	State                      bool                     `json:"State" xml:"State"`
 	AutoRecover                bool                     `json:"AutoRecover" xml:"AutoRecover"`

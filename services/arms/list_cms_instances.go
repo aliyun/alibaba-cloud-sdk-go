@@ -71,7 +71,8 @@ func (client *Client) ListCmsInstancesWithCallback(request *ListCmsInstancesRequ
 // ListCmsInstancesRequest is the request struct for api ListCmsInstances
 type ListCmsInstancesRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	TypeFilter string `position:"Query" name:"TypeFilter"`
+	ClusterId  string `position:"Query" name:"ClusterId"`
 }
 
 // ListCmsInstancesResponse is the response struct for api ListCmsInstances

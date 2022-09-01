@@ -21,6 +21,8 @@ type IntegrationDetail struct {
 	DuplicateKey               string                   `json:"DuplicateKey" xml:"DuplicateKey"`
 	AutoRecover                bool                     `json:"AutoRecover" xml:"AutoRecover"`
 	RecoverTime                int64                    `json:"RecoverTime" xml:"RecoverTime"`
+	InitiativeRecoverField     string                   `json:"InitiativeRecoverField" xml:"InitiativeRecoverField"`
+	InitiativeRecoverValue     string                   `json:"InitiativeRecoverValue" xml:"InitiativeRecoverValue"`
 	Stat                       []int64                  `json:"Stat" xml:"Stat"`
 	FieldRedefineRules         []map[string]interface{} `json:"FieldRedefineRules" xml:"FieldRedefineRules"`
 	ExtendedFieldRedefineRules []map[string]interface{} `json:"ExtendedFieldRedefineRules" xml:"ExtendedFieldRedefineRules"`

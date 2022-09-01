@@ -38,5 +38,6 @@ type PageBean struct {
 	AlertContactGroups      []ContactGroups      `json:"AlertContactGroups" xml:"AlertContactGroups"`
 	TraceApps               []TraceApp           `json:"TraceApps" xml:"TraceApps"`
 	AlertIMRobots           []IMRobots           `json:"AlertIMRobots" xml:"AlertIMRobots"`
+	Events                  []Events             `json:"Events" xml:"Events"`
 	Contacts                []Contact            `json:"Contacts" xml:"Contacts"`
 }
