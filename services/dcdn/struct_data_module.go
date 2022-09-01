@@ -45,7 +45,6 @@ type DataModule struct {
 	StaticHttpBps             float64                                                 `json:"StaticHttpBps" xml:"StaticHttpBps"`
 	DynamicHttpOriginBps      float64                                                 `json:"DynamicHttpOriginBps" xml:"DynamicHttpOriginBps"`
 	StaticHttpsOriginTraffic  float64                                                 `json:"StaticHttpsOriginTraffic" xml:"StaticHttpsOriginTraffic"`
-	TotalValue                string                                                  `json:"TotalValue" xml:"TotalValue"`
 	StaticHttpAcc             float64                                                 `json:"StaticHttpAcc" xml:"StaticHttpAcc"`
 	OriginTraffic             float64                                                 `json:"OriginTraffic" xml:"OriginTraffic"`
 	DynamicHttpAcc            float64                                                 `json:"DynamicHttpAcc" xml:"DynamicHttpAcc"`
