@@ -72,6 +72,7 @@ func (client *Client) GetAlertRulesWithCallback(request *GetAlertRulesRequest, c
 type GetAlertRulesRequest struct {
 	*requests.RpcRequest
 	AlertStatus string           `position:"Query" name:"AlertStatus"`
+	ClusterId   string           `position:"Query" name:"ClusterId"`
 	AlertNames  string           `position:"Query" name:"AlertNames"`
 	AlertType   string           `position:"Query" name:"AlertType"`
 	Size        requests.Integer `position:"Query" name:"Size"`
