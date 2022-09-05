@@ -1,3 +1,7 @@
+2022-09-05 Version: v1.61.1757
+- Generated 2018-05-10 for `Cdn`.
+- Support STS.
+
 2022-09-05 Version: v1.61.1756
 - Generated 2014-11-11 for `Cdn`.
 - Init.

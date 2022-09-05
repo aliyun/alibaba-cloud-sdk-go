@@ -72,8 +72,6 @@ func (client *Client) DescribeDomainSrcBpsDataWithCallback(request *DescribeDoma
 type DescribeDomainSrcBpsDataRequest struct {
 	*requests.RpcRequest
 	StartTime  string           `position:"Query" name:"StartTime"`
-	FixTimeGap string           `position:"Query" name:"FixTimeGap"`
-	TimeMerge  string           `position:"Query" name:"TimeMerge"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
@@ -96,7 +94,7 @@ func CreateDescribeDomainSrcBpsDataRequest() (request *DescribeDomainSrcBpsDataR
 	request = &DescribeDomainSrcBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainSrcBpsData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainSrcBpsData", "", "")
 	request.Method = requests.POST
 	return
 }
