@@ -17,10 +17,10 @@ package sas
 
 // SimpleSecurityEvent is a nested struct in sas response
 type SimpleSecurityEvent struct {
-	SecurityEventId int64  `json:"SecurityEventId" xml:"SecurityEventId"`
-	Uuid            string `json:"Uuid" xml:"Uuid"`
-	EventType       string `json:"EventType" xml:"EventType"`
-	EventName       string `json:"EventName" xml:"EventName"`
-	OccurrenceTime  int64  `json:"OccurrenceTime" xml:"OccurrenceTime"`
 	LastTime        int64  `json:"LastTime" xml:"LastTime"`
+	Uuid            string `json:"Uuid" xml:"Uuid"`
+	EventName       string `json:"EventName" xml:"EventName"`
+	EventType       string `json:"EventType" xml:"EventType"`
+	SecurityEventId int64  `json:"SecurityEventId" xml:"SecurityEventId"`
+	OccurrenceTime  int64  `json:"OccurrenceTime" xml:"OccurrenceTime"`
 }

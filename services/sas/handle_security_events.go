@@ -77,6 +77,7 @@ type HandleSecurityEventsRequest struct {
 	SourceIp         string           `position:"Query" name:"SourceIp"`
 	OperationCode    string           `position:"Query" name:"OperationCode"`
 	OperationParams  string           `position:"Query" name:"OperationParams"`
+	MarkBatch        string           `position:"Query" name:"MarkBatch"`
 }
 
 // HandleSecurityEventsResponse is the response struct for api HandleSecurityEvents
@@ -91,7 +92,7 @@ func CreateHandleSecurityEventsRequest() (request *HandleSecurityEventsRequest) 
 	request = &HandleSecurityEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "HandleSecurityEvents", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "HandleSecurityEvents", "", "")
 	request.Method = requests.POST
 	return
 }

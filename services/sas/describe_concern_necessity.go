@@ -71,8 +71,9 @@ func (client *Client) DescribeConcernNecessityWithCallback(request *DescribeConc
 // DescribeConcernNecessityRequest is the request struct for api DescribeConcernNecessity
 type DescribeConcernNecessityRequest struct {
 	*requests.RpcRequest
-	SourceIp string `position:"Query" name:"SourceIp"`
-	Lang     string `position:"Query" name:"Lang"`
+	SourceIp                   string `position:"Query" name:"SourceIp"`
+	Lang                       string `position:"Query" name:"Lang"`
+	ResourceDirectoryAccountId string `position:"Query" name:"ResourceDirectoryAccountId"`
 }
 
 // DescribeConcernNecessityResponse is the response struct for api DescribeConcernNecessity
@@ -87,7 +88,7 @@ func CreateDescribeConcernNecessityRequest() (request *DescribeConcernNecessityR
 	request = &DescribeConcernNecessityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeConcernNecessity", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeConcernNecessity", "", "")
 	request.Method = requests.POST
 	return
 }

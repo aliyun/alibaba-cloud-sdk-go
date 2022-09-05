@@ -71,9 +71,10 @@ func (client *Client) ModifyCreateVulWhitelistWithCallback(request *ModifyCreate
 // ModifyCreateVulWhitelistRequest is the request struct for api ModifyCreateVulWhitelist
 type ModifyCreateVulWhitelistRequest struct {
 	*requests.RpcRequest
-	Reason    string `position:"Query" name:"Reason"`
-	Whitelist string `position:"Query" name:"Whitelist"`
-	SourceIp  string `position:"Query" name:"SourceIp"`
+	Reason     string `position:"Query" name:"Reason"`
+	SourceIp   string `position:"Query" name:"SourceIp"`
+	Whitelist  string `position:"Query" name:"Whitelist"`
+	TargetInfo string `position:"Query" name:"TargetInfo"`
 }
 
 // ModifyCreateVulWhitelistResponse is the response struct for api ModifyCreateVulWhitelist
@@ -87,7 +88,7 @@ func CreateModifyCreateVulWhitelistRequest() (request *ModifyCreateVulWhitelistR
 	request = &ModifyCreateVulWhitelistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyCreateVulWhitelist", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyCreateVulWhitelist", "", "")
 	request.Method = requests.POST
 	return
 }

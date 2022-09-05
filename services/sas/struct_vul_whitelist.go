@@ -17,8 +17,10 @@ package sas
 
 // VulWhitelist is a nested struct in sas response
 type VulWhitelist struct {
-	Name      string `json:"Name" xml:"Name"`
-	Type      string `json:"Type" xml:"Type"`
-	AliasName string `json:"AliasName" xml:"AliasName"`
-	Reason    string `json:"Reason" xml:"Reason"`
+	Type       string `json:"Type" xml:"Type"`
+	TargetInfo string `json:"TargetInfo" xml:"TargetInfo"`
+	AliasName  string `json:"AliasName" xml:"AliasName"`
+	Name       string `json:"Name" xml:"Name"`
+	Reason     string `json:"Reason" xml:"Reason"`
+	Id         string `json:"Id" xml:"Id"`
 }

@@ -88,7 +88,7 @@ func CreateModifyWebLockStatusRequest() (request *ModifyWebLockStatusRequest) {
 	request = &ModifyWebLockStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyWebLockStatus", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyWebLockStatus", "", "")
 	request.Method = requests.POST
 	return
 }

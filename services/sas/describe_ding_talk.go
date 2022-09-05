@@ -90,7 +90,7 @@ func CreateDescribeDingTalkRequest() (request *DescribeDingTalkRequest) {
 	request = &DescribeDingTalkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeDingTalk", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeDingTalk", "", "")
 	request.Method = requests.POST
 	return
 }

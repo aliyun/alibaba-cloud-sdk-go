@@ -17,11 +17,15 @@ package sas
 
 // RpmEntity is a nested struct in sas response
 type RpmEntity struct {
-	Name        string `json:"Name" xml:"Name"`
-	Path        string `json:"Path" xml:"Path"`
-	FullVersion string `json:"FullVersion" xml:"FullVersion"`
-	MatchDetail string `json:"MatchDetail" xml:"MatchDetail"`
-	Version     string `json:"Version" xml:"Version"`
-	Layer       string `json:"Layer" xml:"Layer"`
-	UpdateCmd   string `json:"UpdateCmd" xml:"UpdateCmd"`
+	Name          string   `json:"Name" xml:"Name"`
+	Path          string   `json:"Path" xml:"Path"`
+	FullVersion   string   `json:"FullVersion" xml:"FullVersion"`
+	Pid           string   `json:"Pid" xml:"Pid"`
+	Version       string   `json:"Version" xml:"Version"`
+	MatchDetail   string   `json:"MatchDetail" xml:"MatchDetail"`
+	ContainerName string   `json:"ContainerName" xml:"ContainerName"`
+	Layer         string   `json:"Layer" xml:"Layer"`
+	UpdateCmd     string   `json:"UpdateCmd" xml:"UpdateCmd"`
+	ImageName     string   `json:"ImageName" xml:"ImageName"`
+	MatchList     []string `json:"MatchList" xml:"MatchList"`
 }

@@ -78,8 +78,8 @@ type DescribeSecureSuggestionRequest struct {
 // DescribeSecureSuggestionResponse is the response struct for api DescribeSecureSuggestion
 type DescribeSecureSuggestionResponse struct {
 	*responses.BaseResponse
-	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	TotalCount  int          `json:"TotalCount" xml:"TotalCount"`
+	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	Suggestions []Suggestion `json:"Suggestions" xml:"Suggestions"`
 }
 
@@ -88,7 +88,7 @@ func CreateDescribeSecureSuggestionRequest() (request *DescribeSecureSuggestionR
 	request = &DescribeSecureSuggestionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecureSuggestion", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecureSuggestion", "", "")
 	request.Method = requests.POST
 	return
 }

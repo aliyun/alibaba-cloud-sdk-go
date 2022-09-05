@@ -94,7 +94,7 @@ func CreateCreateAntiBruteForceRuleRequest() (request *CreateAntiBruteForceRuleR
 	request = &CreateAntiBruteForceRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateAntiBruteForceRule", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateAntiBruteForceRule", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateModifyRiskCheckStatusRequest() (request *ModifyRiskCheckStatusRequest
 	request = &ModifyRiskCheckStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyRiskCheckStatus", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyRiskCheckStatus", "", "")
 	request.Method = requests.POST
 	return
 }

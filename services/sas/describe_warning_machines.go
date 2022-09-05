@@ -71,24 +71,29 @@ func (client *Client) DescribeWarningMachinesWithCallback(request *DescribeWarni
 // DescribeWarningMachinesRequest is the request struct for api DescribeWarningMachines
 type DescribeWarningMachinesRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	MachineName string           `position:"Query" name:"MachineName"`
-	Lang        string           `position:"Query" name:"Lang"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	RiskId      requests.Integer `position:"Query" name:"RiskId"`
-	StrategyId  requests.Integer `position:"Query" name:"StrategyId"`
-	Uuids       string           `position:"Query" name:"Uuids"`
+	TargetType          string           `position:"Query" name:"TargetType"`
+	ContainerFieldName  string           `position:"Query" name:"ContainerFieldName"`
+	SourceIp            string           `position:"Query" name:"SourceIp"`
+	ContainerFieldValue string           `position:"Query" name:"ContainerFieldValue"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	MachineName         string           `position:"Query" name:"MachineName"`
+	Lang                string           `position:"Query" name:"Lang"`
+	HaveRisk            requests.Integer `position:"Query" name:"HaveRisk"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterId           string           `position:"Query" name:"ClusterId"`
+	RiskId              requests.Integer `position:"Query" name:"RiskId"`
+	StrategyId          requests.Integer `position:"Query" name:"StrategyId"`
+	Uuids               string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeWarningMachinesResponse is the response struct for api DescribeWarningMachines
 type DescribeWarningMachinesResponse struct {
 	*responses.BaseResponse
-	RequestId       string           `json:"RequestId" xml:"RequestId"`
-	Count           int              `json:"Count" xml:"Count"`
-	PageSize        int              `json:"PageSize" xml:"PageSize"`
-	TotalCount      int              `json:"TotalCount" xml:"TotalCount"`
 	CurrentPage     int              `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize        int              `json:"PageSize" xml:"PageSize"`
+	RequestId       string           `json:"RequestId" xml:"RequestId"`
+	TotalCount      int              `json:"TotalCount" xml:"TotalCount"`
+	Count           int              `json:"Count" xml:"Count"`
 	WarningMachines []WarningMachine `json:"WarningMachines" xml:"WarningMachines"`
 }
 
@@ -97,7 +102,7 @@ func CreateDescribeWarningMachinesRequest() (request *DescribeWarningMachinesReq
 	request = &DescribeWarningMachinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWarningMachines", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWarningMachines", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -77,9 +77,10 @@ type DescribeDomainCountRequest struct {
 // DescribeDomainCountResponse is the response struct for api DescribeDomainCount
 type DescribeDomainCountResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalDomainsCount int    `json:"TotalDomainsCount" xml:"TotalDomainsCount"`
 	RootDomainsCount  int    `json:"RootDomainsCount" xml:"RootDomainsCount"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	SubDomainsCount   int    `json:"SubDomainsCount" xml:"SubDomainsCount"`
+	TotalDomainsCount int    `json:"TotalDomainsCount" xml:"TotalDomainsCount"`
 }
 
 // CreateDescribeDomainCountRequest creates a request to invoke DescribeDomainCount API
@@ -87,7 +88,7 @@ func CreateDescribeDomainCountRequest() (request *DescribeDomainCountRequest) {
 	request = &DescribeDomainCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeDomainCount", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeDomainCount", "", "")
 	request.Method = requests.POST
 	return
 }

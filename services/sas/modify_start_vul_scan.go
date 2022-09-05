@@ -87,7 +87,7 @@ func CreateModifyStartVulScanRequest() (request *ModifyStartVulScanRequest) {
 	request = &ModifyStartVulScanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyStartVulScan", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyStartVulScan", "", "")
 	request.Method = requests.POST
 	return
 }

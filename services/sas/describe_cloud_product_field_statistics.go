@@ -86,7 +86,7 @@ func CreateDescribeCloudProductFieldStatisticsRequest() (request *DescribeCloudP
 	request = &DescribeCloudProductFieldStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCloudProductFieldStatistics", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCloudProductFieldStatistics", "", "")
 	request.Method = requests.POST
 	return
 }

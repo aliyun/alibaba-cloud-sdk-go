@@ -17,15 +17,15 @@ package sas
 
 // ActionListArr is a nested struct in sas response
 type ActionListArr struct {
-	GmtModified  int64  `json:"GmtModified" xml:"GmtModified"`
-	Id           int    `json:"Id" xml:"Id"`
-	AliUid       int64  `json:"AliUid" xml:"AliUid"`
-	GmtCreate    int64  `json:"GmtCreate" xml:"GmtCreate"`
-	Url          string `json:"Url" xml:"Url"`
-	IntervalTime int    `json:"IntervalTime" xml:"IntervalTime"`
-	ActionName   string `json:"ActionName" xml:"ActionName"`
 	Status       int    `json:"Status" xml:"Status"`
 	ConfigList   string `json:"ConfigList" xml:"ConfigList"`
-	GroupIdList  string `json:"GroupIdList" xml:"GroupIdList"`
+	GmtCreate    int64  `json:"GmtCreate" xml:"GmtCreate"`
+	ActionName   string `json:"ActionName" xml:"ActionName"`
+	Url          string `json:"Url" xml:"Url"`
+	AliUid       int64  `json:"AliUid" xml:"AliUid"`
 	DingTalkLang string `json:"DingTalkLang" xml:"DingTalkLang"`
+	IntervalTime int    `json:"IntervalTime" xml:"IntervalTime"`
+	GmtModified  int64  `json:"GmtModified" xml:"GmtModified"`
+	GroupIdList  string `json:"GroupIdList" xml:"GroupIdList"`
+	Id           int    `json:"Id" xml:"Id"`
 }

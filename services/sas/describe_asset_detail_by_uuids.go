@@ -87,7 +87,7 @@ func CreateDescribeAssetDetailByUuidsRequest() (request *DescribeAssetDetailByUu
 	request = &DescribeAssetDetailByUuidsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAssetDetailByUuids", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAssetDetailByUuids", "", "")
 	request.Method = requests.POST
 	return
 }

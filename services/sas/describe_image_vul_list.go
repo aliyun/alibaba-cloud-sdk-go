@@ -71,41 +71,48 @@ func (client *Client) DescribeImageVulListWithCallback(request *DescribeImageVul
 // DescribeImageVulListRequest is the request struct for api DescribeImageVulList
 type DescribeImageVulListRequest struct {
 	*requests.RpcRequest
-	RepoId        string           `position:"Query" name:"RepoId"`
-	StatusList    string           `position:"Query" name:"StatusList"`
-	CveId         string           `position:"Query" name:"CveId"`
-	Remark        string           `position:"Query" name:"Remark"`
-	Type          string           `position:"Query" name:"Type"`
-	CreateTsStart requests.Integer `position:"Query" name:"CreateTsStart"`
-	SourceIp      string           `position:"Query" name:"SourceIp"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Digest        string           `position:"Query" name:"Digest"`
-	ModifyTsStart requests.Integer `position:"Query" name:"ModifyTsStart"`
-	Tag           string           `position:"Query" name:"Tag"`
-	Lang          string           `position:"Query" name:"Lang"`
-	ModifyTsEnd   requests.Integer `position:"Query" name:"ModifyTsEnd"`
-	Level         string           `position:"Query" name:"Level"`
-	Resource      string           `position:"Query" name:"Resource"`
-	GroupId       string           `position:"Query" name:"GroupId"`
-	Dealed        string           `position:"Query" name:"Dealed"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	BatchName     string           `position:"Query" name:"BatchName"`
-	AliasName     string           `position:"Query" name:"AliasName"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
-	RepoName      string           `position:"Query" name:"RepoName"`
-	Name          string           `position:"Query" name:"Name"`
-	Ids           string           `position:"Query" name:"Ids"`
-	CreateTsEnd   requests.Integer `position:"Query" name:"CreateTsEnd"`
-	Necessity     string           `position:"Query" name:"Necessity"`
-	Uuids         string           `position:"Query" name:"Uuids"`
+	Type                string           `position:"Query" name:"Type"`
+	CreateTsStart       requests.Integer `position:"Query" name:"CreateTsStart"`
+	ContainerFieldName  string           `position:"Query" name:"ContainerFieldName"`
+	SourceIp            string           `position:"Query" name:"SourceIp"`
+	Tag                 string           `position:"Query" name:"Tag"`
+	ModifyTsEnd         requests.Integer `position:"Query" name:"ModifyTsEnd"`
+	Level               string           `position:"Query" name:"Level"`
+	Resource            string           `position:"Query" name:"Resource"`
+	GroupId             string           `position:"Query" name:"GroupId"`
+	AliasName           string           `position:"Query" name:"AliasName"`
+	InstanceId          string           `position:"Query" name:"InstanceId"`
+	Name                string           `position:"Query" name:"Name"`
+	Ids                 string           `position:"Query" name:"Ids"`
+	CreateTsEnd         requests.Integer `position:"Query" name:"CreateTsEnd"`
+	Necessity           string           `position:"Query" name:"Necessity"`
+	Uuids               string           `position:"Query" name:"Uuids"`
+	RepoId              string           `position:"Query" name:"RepoId"`
+	StatusList          string           `position:"Query" name:"StatusList"`
+	TargetType          string           `position:"Query" name:"TargetType"`
+	CveId               string           `position:"Query" name:"CveId"`
+	Remark              string           `position:"Query" name:"Remark"`
+	RepoNamespace       string           `position:"Query" name:"RepoNamespace"`
+	ContainerFieldValue string           `position:"Query" name:"ContainerFieldValue"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	Digest              string           `position:"Query" name:"Digest"`
+	ModifyTsStart       requests.Integer `position:"Query" name:"ModifyTsStart"`
+	Lang                string           `position:"Query" name:"Lang"`
+	Dealed              string           `position:"Query" name:"Dealed"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterId           string           `position:"Query" name:"ClusterId"`
+	BatchName           string           `position:"Query" name:"BatchName"`
+	RepoName            string           `position:"Query" name:"RepoName"`
+	RepoInstanceId      string           `position:"Query" name:"RepoInstanceId"`
+	RepoRegionId        string           `position:"Query" name:"RepoRegionId"`
 }
 
 // DescribeImageVulListResponse is the response struct for api DescribeImageVulList
 type DescribeImageVulListResponse struct {
 	*responses.BaseResponse
+	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	PageSize    int         `json:"PageSize" xml:"PageSize"`
-	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
 	VulRecords  []VulRecord `json:"VulRecords" xml:"VulRecords"`
 }
@@ -115,7 +122,7 @@ func CreateDescribeImageVulListRequest() (request *DescribeImageVulListRequest) 
 	request = &DescribeImageVulListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageVulList", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageVulList", "", "")
 	request.Method = requests.POST
 	return
 }

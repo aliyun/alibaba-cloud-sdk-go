@@ -17,12 +17,12 @@ package sas
 
 // Necessity is a nested struct in sas response
 type Necessity struct {
-	CvssFactor       string `json:"Cvss_factor" xml:"Cvss_factor"`
-	GmtCreate        string `json:"Gmt_create" xml:"Gmt_create"`
 	Status           string `json:"Status" xml:"Status"`
+	GmtCreate        string `json:"Gmt_create" xml:"Gmt_create"`
+	TimeFactor       string `json:"Time_factor" xml:"Time_factor"`
 	EnviromentFactor string `json:"Enviroment_factor" xml:"Enviroment_factor"`
-	AssetsFactor     string `json:"Assets_factor" xml:"Assets_factor"`
 	IsCalc           string `json:"Is_calc" xml:"Is_calc"`
 	TotalScore       string `json:"Total_score" xml:"Total_score"`
-	TimeFactor       string `json:"Time_factor" xml:"Time_factor"`
+	CvssFactor       string `json:"Cvss_factor" xml:"Cvss_factor"`
+	AssetsFactor     string `json:"Assets_factor" xml:"Assets_factor"`
 }

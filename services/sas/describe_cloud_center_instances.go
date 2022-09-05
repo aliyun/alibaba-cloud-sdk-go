@@ -71,21 +71,23 @@ func (client *Client) DescribeCloudCenterInstancesWithCallback(request *Describe
 // DescribeCloudCenterInstancesRequest is the request struct for api DescribeCloudCenterInstances
 type DescribeCloudCenterInstancesRequest struct {
 	*requests.RpcRequest
-	Criteria     string           `position:"Query" name:"Criteria"`
-	Importance   requests.Integer `position:"Query" name:"Importance"`
-	SourceIp     string           `position:"Query" name:"SourceIp"`
-	NoPage       requests.Boolean `position:"Query" name:"NoPage"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	LogicalExp   string           `position:"Query" name:"LogicalExp"`
-	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
-	MachineTypes string           `position:"Query" name:"MachineTypes"`
+	Criteria                   string           `position:"Query" name:"Criteria"`
+	Importance                 requests.Integer `position:"Query" name:"Importance"`
+	SourceIp                   string           `position:"Query" name:"SourceIp"`
+	NoPage                     requests.Boolean `position:"Query" name:"NoPage"`
+	PageSize                   requests.Integer `position:"Query" name:"PageSize"`
+	LogicalExp                 string           `position:"Query" name:"LogicalExp"`
+	ResourceDirectoryAccountId string           `position:"Query" name:"ResourceDirectoryAccountId"`
+	CurrentPage                requests.Integer `position:"Query" name:"CurrentPage"`
+	MachineTypes               string           `position:"Query" name:"MachineTypes"`
+	NoGroupTrace               requests.Boolean `position:"Query" name:"NoGroupTrace"`
 }
 
 // DescribeCloudCenterInstancesResponse is the response struct for api DescribeCloudCenterInstances
 type DescribeCloudCenterInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Success   bool       `json:"Success" xml:"Success"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
 	PageInfo  PageInfo   `json:"PageInfo" xml:"PageInfo"`
 	Instances []Instance `json:"Instances" xml:"Instances"`
 }
@@ -95,7 +97,7 @@ func CreateDescribeCloudCenterInstancesRequest() (request *DescribeCloudCenterIn
 	request = &DescribeCloudCenterInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCloudCenterInstances", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCloudCenterInstances", "", "")
 	request.Method = requests.POST
 	return
 }

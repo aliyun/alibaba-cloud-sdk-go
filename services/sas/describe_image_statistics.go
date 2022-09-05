@@ -87,7 +87,7 @@ func CreateDescribeImageStatisticsRequest() (request *DescribeImageStatisticsReq
 	request = &DescribeImageStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageStatistics", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageStatistics", "", "")
 	request.Method = requests.POST
 	return
 }

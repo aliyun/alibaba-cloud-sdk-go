@@ -79,9 +79,9 @@ type DescribeVulWhitelistRequest struct {
 // DescribeVulWhitelistResponse is the response struct for api DescribeVulWhitelist
 type DescribeVulWhitelistResponse struct {
 	*responses.BaseResponse
+	CurrentPage   int            `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	PageSize      int            `json:"PageSize" xml:"PageSize"`
-	CurrentPage   int            `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount    int            `json:"TotalCount" xml:"TotalCount"`
 	VulWhitelists []VulWhitelist `json:"VulWhitelists" xml:"VulWhitelists"`
 }
@@ -91,7 +91,7 @@ func CreateDescribeVulWhitelistRequest() (request *DescribeVulWhitelistRequest) 
 	request = &DescribeVulWhitelistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVulWhitelist", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVulWhitelist", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateModifyLoginBaseConfigRequest() (request *ModifyLoginBaseConfigRequest
 	request = &ModifyLoginBaseConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyLoginBaseConfig", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyLoginBaseConfig", "", "")
 	request.Method = requests.POST
 	return
 }

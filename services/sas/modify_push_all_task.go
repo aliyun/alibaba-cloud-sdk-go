@@ -88,7 +88,7 @@ func CreateModifyPushAllTaskRequest() (request *ModifyPushAllTaskRequest) {
 	request = &ModifyPushAllTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyPushAllTask", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyPushAllTask", "", "")
 	request.Method = requests.POST
 	return
 }

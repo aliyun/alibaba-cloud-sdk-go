@@ -83,8 +83,8 @@ type OperationSuspEventsRequest struct {
 type OperationSuspEventsResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Success    bool   `json:"Success" xml:"Success"`
 	AccessCode string `json:"AccessCode" xml:"AccessCode"`
+	Success    bool   `json:"Success" xml:"Success"`
 }
 
 // CreateOperationSuspEventsRequest creates a request to invoke OperationSuspEvents API
@@ -92,7 +92,7 @@ func CreateOperationSuspEventsRequest() (request *OperationSuspEventsRequest) {
 	request = &OperationSuspEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "OperationSuspEvents", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "OperationSuspEvents", "", "")
 	request.Method = requests.POST
 	return
 }

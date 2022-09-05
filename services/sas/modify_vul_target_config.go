@@ -88,7 +88,7 @@ func CreateModifyVulTargetConfigRequest() (request *ModifyVulTargetConfigRequest
 	request = &ModifyVulTargetConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyVulTargetConfig", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyVulTargetConfig", "", "")
 	request.Method = requests.POST
 	return
 }

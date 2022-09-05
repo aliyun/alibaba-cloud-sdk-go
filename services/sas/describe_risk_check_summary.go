@@ -89,7 +89,7 @@ func CreateDescribeRiskCheckSummaryRequest() (request *DescribeRiskCheckSummaryR
 	request = &DescribeRiskCheckSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskCheckSummary", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskCheckSummary", "", "")
 	request.Method = requests.POST
 	return
 }

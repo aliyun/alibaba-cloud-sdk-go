@@ -74,6 +74,7 @@ type DescribeGroupedVulRequest struct {
 	StatusList          string           `position:"Query" name:"StatusList"`
 	TargetType          string           `position:"Query" name:"TargetType"`
 	MinScore            requests.Integer `position:"Query" name:"MinScore"`
+	AttachTypes         string           `position:"Query" name:"AttachTypes"`
 	Type                string           `position:"Query" name:"Type"`
 	ContainerFieldName  string           `position:"Query" name:"ContainerFieldName"`
 	SourceIp            string           `position:"Query" name:"SourceIp"`
@@ -85,6 +86,7 @@ type DescribeGroupedVulRequest struct {
 	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
 	ClusterId           string           `position:"Query" name:"ClusterId"`
 	AliasName           string           `position:"Query" name:"AliasName"`
+	SearchTags          string           `position:"Query" name:"SearchTags"`
 	Necessity           string           `position:"Query" name:"Necessity"`
 	Uuids               string           `position:"Query" name:"Uuids"`
 }
@@ -92,9 +94,9 @@ type DescribeGroupedVulRequest struct {
 // DescribeGroupedVulResponse is the response struct for api DescribeGroupedVul
 type DescribeGroupedVulResponse struct {
 	*responses.BaseResponse
+	CurrentPage     int              `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId       string           `json:"RequestId" xml:"RequestId"`
 	PageSize        int              `json:"PageSize" xml:"PageSize"`
-	CurrentPage     int              `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount      int              `json:"TotalCount" xml:"TotalCount"`
 	GroupedVulItems []GroupedVulItem `json:"GroupedVulItems" xml:"GroupedVulItems"`
 }
@@ -104,7 +106,7 @@ func CreateDescribeGroupedVulRequest() (request *DescribeGroupedVulRequest) {
 	request = &DescribeGroupedVulRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedVul", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedVul", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -26,12 +26,14 @@ type QuaraFile struct {
 	Ip           string `json:"Ip" xml:"Ip"`
 	InstanceName string `json:"InstanceName" xml:"InstanceName"`
 	EventName    string `json:"EventName" xml:"EventName"`
+	Link         string `json:"Link" xml:"Link"`
 	Uuid         string `json:"Uuid" xml:"Uuid"`
 	Value        string `json:"Value" xml:"Value"`
 	NameDisplay  string `json:"NameDisplay" xml:"NameDisplay"`
 	EventType    string `json:"EventType" xml:"EventType"`
 	ValueDisplay string `json:"ValueDisplay" xml:"ValueDisplay"`
 	Tag          string `json:"Tag" xml:"Tag"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
 	Md5          string `json:"Md5" xml:"Md5"`
 	Status       string `json:"Status" xml:"Status"`
 	Type         string `json:"Type" xml:"Type"`

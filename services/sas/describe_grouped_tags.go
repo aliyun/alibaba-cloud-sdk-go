@@ -78,10 +78,10 @@ type DescribeGroupedTagsRequest struct {
 // DescribeGroupedTagsResponse is the response struct for api DescribeGroupedTags
 type DescribeGroupedTagsResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Success        bool           `json:"Success" xml:"Success"`
 	Count          int            `json:"Count" xml:"Count"`
-	HttpStatusCode int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	GroupedFileds  []GroupedFiled `json:"GroupedFileds" xml:"GroupedFileds"`
 }
 
@@ -90,7 +90,7 @@ func CreateDescribeGroupedTagsRequest() (request *DescribeGroupedTagsRequest) {
 	request = &DescribeGroupedTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedTags", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedTags", "", "")
 	request.Method = requests.POST
 	return
 }

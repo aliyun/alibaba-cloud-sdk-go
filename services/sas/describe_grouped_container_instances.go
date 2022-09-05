@@ -93,7 +93,7 @@ func CreateDescribeGroupedContainerInstancesRequest() (request *DescribeGroupedC
 	request = &DescribeGroupedContainerInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedContainerInstances", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedContainerInstances", "", "")
 	request.Method = requests.POST
 	return
 }

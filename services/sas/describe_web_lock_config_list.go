@@ -79,8 +79,8 @@ type DescribeWebLockConfigListRequest struct {
 // DescribeWebLockConfigListResponse is the response struct for api DescribeWebLockConfigList
 type DescribeWebLockConfigListResponse struct {
 	*responses.BaseResponse
-	RequestId  string       `json:"RequestId" xml:"RequestId"`
 	TotalCount int          `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string       `json:"RequestId" xml:"RequestId"`
 	ConfigList []ConfigInfo `json:"ConfigList" xml:"ConfigList"`
 }
 
@@ -89,7 +89,7 @@ func CreateDescribeWebLockConfigListRequest() (request *DescribeWebLockConfigLis
 	request = &DescribeWebLockConfigListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWebLockConfigList", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWebLockConfigList", "", "")
 	request.Method = requests.POST
 	return
 }

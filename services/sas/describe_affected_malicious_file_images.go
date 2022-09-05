@@ -80,11 +80,12 @@ type DescribeAffectedMaliciousFileImagesRequest struct {
 	ImageTag       string           `position:"Query" name:"ImageTag"`
 	MaliciousMd5   string           `position:"Query" name:"MaliciousMd5"`
 	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
 	RepoName       string           `position:"Query" name:"RepoName"`
 	RepoInstanceId string           `position:"Query" name:"RepoInstanceId"`
 	ImageLayer     string           `position:"Query" name:"ImageLayer"`
-	Uuids          *[]string        `position:"Query" name:"Uuids"  type:"Repeated"`
 	RepoRegionId   string           `position:"Query" name:"RepoRegionId"`
+	Uuids          *[]string        `position:"Query" name:"Uuids"  type:"Repeated"`
 }
 
 // DescribeAffectedMaliciousFileImagesResponse is the response struct for api DescribeAffectedMaliciousFileImages
@@ -100,7 +101,7 @@ func CreateDescribeAffectedMaliciousFileImagesRequest() (request *DescribeAffect
 	request = &DescribeAffectedMaliciousFileImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAffectedMaliciousFileImages", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAffectedMaliciousFileImages", "", "")
 	request.Method = requests.POST
 	return
 }

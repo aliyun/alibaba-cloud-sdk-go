@@ -17,17 +17,16 @@ package sas
 
 // PropertyCron is a nested struct in sas response
 type PropertyCron struct {
-	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
-	Ip              string `json:"Ip" xml:"Ip"`
-	Create          string `json:"Create" xml:"Create"`
-	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	Uuid            string `json:"Uuid" xml:"Uuid"`
-	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-	IntranetIp      string `json:"IntranetIp" xml:"IntranetIp"`
 	InternetIp      string `json:"InternetIp" xml:"InternetIp"`
-	Period          string `json:"Period" xml:"Period"`
-	Source          string `json:"Source" xml:"Source"`
-	Cmd             string `json:"Cmd" xml:"Cmd"`
+	Ip              string `json:"Ip" xml:"Ip"`
 	User            string `json:"User" xml:"User"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	Source          string `json:"Source" xml:"Source"`
+	IntranetIp      string `json:"IntranetIp" xml:"IntranetIp"`
+	Cmd             string `json:"Cmd" xml:"Cmd"`
+	Period          string `json:"Period" xml:"Period"`
+	Uuid            string `json:"Uuid" xml:"Uuid"`
+	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
 	Md5             string `json:"Md5" xml:"Md5"`
+	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 }

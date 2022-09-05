@@ -83,8 +83,6 @@ type DescribeRiskCheckItemResultRequest struct {
 // DescribeRiskCheckItemResultResponse is the response struct for api DescribeRiskCheckItemResult
 type DescribeRiskCheckItemResultResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	PageContentResource PageContentResource `json:"PageContentResource" xml:"PageContentResource"`
 }
 
 // CreateDescribeRiskCheckItemResultRequest creates a request to invoke DescribeRiskCheckItemResult API
@@ -92,7 +90,7 @@ func CreateDescribeRiskCheckItemResultRequest() (request *DescribeRiskCheckItemR
 	request = &DescribeRiskCheckItemResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskCheckItemResult", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskCheckItemResult", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,7 +17,7 @@ package sas
 
 // ModuleConfig is a nested struct in sas response
 type ModuleConfig struct {
-	ConfigName string `json:"ConfigName" xml:"ConfigName"`
 	ModuleName string `json:"ModuleName" xml:"ModuleName"`
+	ConfigName string `json:"ConfigName" xml:"ConfigName"`
 	Items      []Item `json:"Items" xml:"Items"`
 }

@@ -87,7 +87,7 @@ func CreateDescribeBruteForceSummaryRequest() (request *DescribeBruteForceSummar
 	request = &DescribeBruteForceSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeBruteForceSummary", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeBruteForceSummary", "", "")
 	request.Method = requests.POST
 	return
 }
