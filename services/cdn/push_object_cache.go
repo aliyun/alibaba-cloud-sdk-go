@@ -73,7 +73,6 @@ type PushObjectCacheRequest struct {
 	*requests.RpcRequest
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	L2Preload     requests.Boolean `position:"Query" name:"L2Preload"`
 	Area          string           `position:"Query" name:"Area"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -90,7 +89,7 @@ func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
 	request = &PushObjectCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "PushObjectCache", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "PushObjectCache", "", "")
 	request.Method = requests.POST
 	return
 }

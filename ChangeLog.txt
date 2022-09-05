@@ -1,3 +1,7 @@
+2022-09-05 Version: v1.61.1756
+- Generated 2014-11-11 for `Cdn`.
+- Init.
+
 2022-09-02 Version: v1.61.1755
 - Generated 2019-08-08 for `ARMS`.
 - Add SyncRecordingRules api.

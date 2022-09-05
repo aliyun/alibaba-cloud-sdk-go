@@ -71,10 +71,11 @@ func (client *Client) DescribeDomainUvDataWithCallback(request *DescribeDomainUv
 // DescribeDomainUvDataRequest is the request struct for api DescribeDomainUvData
 type DescribeDomainUvDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainUvDataResponse is the response struct for api DescribeDomainUvData
@@ -93,7 +94,7 @@ func CreateDescribeDomainUvDataRequest() (request *DescribeDomainUvDataRequest) 
 	request = &DescribeDomainUvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainUvData", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainUvData", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -18,7 +18,9 @@ package cdn
 // RegionProportionData is a nested struct in cdn response
 type RegionProportionData struct {
 	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
+	ByteHitRate     string `json:"ByteHitRate" xml:"ByteHitRate"`
 	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
+	ReqHitRate      string `json:"ReqHitRate" xml:"ReqHitRate"`
 	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
 	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
 	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`

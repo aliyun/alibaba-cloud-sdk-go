@@ -71,19 +71,24 @@ func (client *Client) DescribeCdnDomainLogsWithCallback(request *DescribeCdnDoma
 // DescribeCdnDomainLogsRequest is the request struct for api DescribeCdnDomainLogs
 type DescribeCdnDomainLogsRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	LogDay        string           `position:"Query" name:"LogDay"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnDomainLogsResponse is the response struct for api DescribeCdnDomainLogs
 type DescribeCdnDomainLogsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	DomainLogDetails DomainLogDetails `json:"DomainLogDetails" xml:"DomainLogDetails"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageNumber     int64          `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int64          `json:"PageSize" xml:"PageSize"`
+	TotalCount     int64          `json:"TotalCount" xml:"TotalCount"`
+	DomainLogModel DomainLogModel `json:"DomainLogModel" xml:"DomainLogModel"`
 }
 
 // CreateDescribeCdnDomainLogsRequest creates a request to invoke DescribeCdnDomainLogs API
@@ -91,7 +96,7 @@ func CreateDescribeCdnDomainLogsRequest() (request *DescribeCdnDomainLogsRequest
 	request = &DescribeCdnDomainLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnDomainLogs", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnDomainLogs", "", "")
 	request.Method = requests.POST
 	return
 }

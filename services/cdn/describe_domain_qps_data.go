@@ -74,6 +74,8 @@ type DescribeDomainQpsDataRequest struct {
 	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
 	StartTime      string           `position:"Query" name:"StartTime"`
 	IspNameEn      string           `position:"Query" name:"IspNameEn"`
+	DomainType     string           `position:"Query" name:"DomainType"`
+	TimeMerge      string           `position:"Query" name:"TimeMerge"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	EndTime        string           `position:"Query" name:"EndTime"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,12 +85,12 @@ type DescribeDomainQpsDataRequest struct {
 // DescribeDomainQpsDataResponse is the response struct for api DescribeDomainQpsData
 type DescribeDomainQpsDataResponse struct {
 	*responses.BaseResponse
-	EndTime         string                                 `json:"EndTime" xml:"EndTime"`
-	StartTime       string                                 `json:"StartTime" xml:"StartTime"`
-	RequestId       string                                 `json:"RequestId" xml:"RequestId"`
-	DomainName      string                                 `json:"DomainName" xml:"DomainName"`
-	DataInterval    string                                 `json:"DataInterval" xml:"DataInterval"`
-	QpsDataInterval QpsDataIntervalInDescribeDomainQpsData `json:"QpsDataInterval" xml:"QpsDataInterval"`
+	EndTime         string          `json:"EndTime" xml:"EndTime"`
+	StartTime       string          `json:"StartTime" xml:"StartTime"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	DomainName      string          `json:"DomainName" xml:"DomainName"`
+	DataInterval    string          `json:"DataInterval" xml:"DataInterval"`
+	QpsDataInterval QpsDataInterval `json:"QpsDataInterval" xml:"QpsDataInterval"`
 }
 
 // CreateDescribeDomainQpsDataRequest creates a request to invoke DescribeDomainQpsData API
@@ -96,7 +98,7 @@ func CreateDescribeDomainQpsDataRequest() (request *DescribeDomainQpsDataRequest
 	request = &DescribeDomainQpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainQpsData", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainQpsData", "", "")
 	request.Method = requests.POST
 	return
 }
