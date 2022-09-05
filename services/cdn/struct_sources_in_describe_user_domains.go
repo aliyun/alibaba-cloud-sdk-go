@@ -17,5 +17,5 @@ package cdn
 
 // SourcesInDescribeUserDomains is a nested struct in cdn response
 type SourcesInDescribeUserDomains struct {
-	Source []Source `json:"Source" xml:"Source"`
+	Source []string `json:"Source" xml:"Source"`
 }

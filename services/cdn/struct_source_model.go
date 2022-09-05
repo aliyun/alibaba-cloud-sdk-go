@@ -18,9 +18,8 @@ package cdn
 // SourceModel is a nested struct in cdn response
 type SourceModel struct {
 	Type     string `json:"Type" xml:"Type"`
-	Weight   string `json:"Weight" xml:"Weight"`
-	Enabled  string `json:"Enabled" xml:"Enabled"`
 	Priority string `json:"Priority" xml:"Priority"`
 	Port     int    `json:"Port" xml:"Port"`
 	Content  string `json:"Content" xml:"Content"`
+	Enabled  string `json:"Enabled" xml:"Enabled"`
 }

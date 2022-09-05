@@ -17,17 +17,16 @@ package cdn
 
 // PageData is a nested struct in cdn response
 type PageData struct {
-	Cname           string                                `json:"Cname" xml:"Cname"`
-	DomainStatus    string                                `json:"DomainStatus" xml:"DomainStatus"`
-	DomainId        int64                                 `json:"DomainId" xml:"DomainId"`
-	DomainName      string                                `json:"DomainName" xml:"DomainName"`
-	Coverage        string                                `json:"Coverage" xml:"Coverage"`
-	GmtModified     string                                `json:"GmtModified" xml:"GmtModified"`
-	GmtCreated      string                                `json:"GmtCreated" xml:"GmtCreated"`
-	CdnType         string                                `json:"CdnType" xml:"CdnType"`
-	Sandbox         string                                `json:"Sandbox" xml:"Sandbox"`
-	ResourceGroupId string                                `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Description     string                                `json:"Description" xml:"Description"`
-	SslProtocol     string                                `json:"SslProtocol" xml:"SslProtocol"`
-	Sources         SourcesInDescribeCdnUserDomainsByFunc `json:"Sources" xml:"Sources"`
+	GmtCreated      string                       `json:"GmtCreated" xml:"GmtCreated"`
+	SslProtocol     string                       `json:"SslProtocol" xml:"SslProtocol"`
+	Description     string                       `json:"Description" xml:"Description"`
+	ResourceGroupId string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	SourceType      string                       `json:"SourceType" xml:"SourceType"`
+	Sandbox         string                       `json:"Sandbox" xml:"Sandbox"`
+	DomainStatus    string                       `json:"DomainStatus" xml:"DomainStatus"`
+	Cname           string                       `json:"Cname" xml:"Cname"`
+	GmtModified     string                       `json:"GmtModified" xml:"GmtModified"`
+	CdnType         string                       `json:"CdnType" xml:"CdnType"`
+	DomainName      string                       `json:"DomainName" xml:"DomainName"`
+	Sources         SourcesInDescribeUserDomains `json:"Sources" xml:"Sources"`
 }

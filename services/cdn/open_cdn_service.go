@@ -87,7 +87,7 @@ func CreateOpenCdnServiceRequest() (request *OpenCdnServiceRequest) {
 	request = &OpenCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "OpenCdnService", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "OpenCdnService", "", "")
 	request.Method = requests.POST
 	return
 }
