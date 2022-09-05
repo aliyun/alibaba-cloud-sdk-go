@@ -71,37 +71,44 @@ func (client *Client) DescribeSuspEventsWithCallback(request *DescribeSuspEvents
 // DescribeSuspEventsRequest is the request struct for api DescribeSuspEvents
 type DescribeSuspEventsRequest struct {
 	*requests.RpcRequest
-	TargetType           string           `position:"Query" name:"TargetType"`
-	Remark               string           `position:"Query" name:"Remark"`
 	Source               string           `position:"Query" name:"Source"`
 	ContainerFieldName   string           `position:"Query" name:"ContainerFieldName"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
-	ContainerFieldValue  string           `position:"Query" name:"ContainerFieldValue"`
-	PageSize             string           `position:"Query" name:"PageSize"`
+	EventNames           string           `position:"Query" name:"EventNames"`
 	From                 string           `position:"Query" name:"From"`
-	Lang                 string           `position:"Query" name:"Lang"`
+	Id                   requests.Integer `position:"Query" name:"Id"`
+	TacticId             string           `position:"Body" name:"TacticId"`
 	AlarmUniqueInfo      string           `position:"Query" name:"AlarmUniqueInfo"`
 	UniqueInfo           string           `position:"Query" name:"UniqueInfo"`
 	GroupId              requests.Integer `position:"Query" name:"GroupId"`
+	OperateTimeEnd       string           `position:"Query" name:"OperateTimeEnd"`
+	Name                 string           `position:"Query" name:"Name"`
+	Status               string           `position:"Query" name:"Status"`
+	Uuids                string           `position:"Query" name:"Uuids"`
+	TimeEnd              string           `position:"Query" name:"TimeEnd"`
+	TargetType           string           `position:"Query" name:"TargetType"`
+	Remark               string           `position:"Query" name:"Remark"`
+	ContainerFieldValue  string           `position:"Query" name:"ContainerFieldValue"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	Lang                 string           `position:"Query" name:"Lang"`
 	Dealed               string           `position:"Query" name:"Dealed"`
 	CurrentPage          string           `position:"Query" name:"CurrentPage"`
 	ClusterId            string           `position:"Query" name:"ClusterId"`
 	OperateErrorCodeList *[]string        `position:"Query" name:"OperateErrorCodeList"  type:"Repeated"`
-	Name                 string           `position:"Query" name:"Name"`
+	OperateTimeStart     string           `position:"Query" name:"OperateTimeStart"`
+	TimeStart            string           `position:"Query" name:"TimeStart"`
 	Levels               string           `position:"Query" name:"Levels"`
 	ParentEventTypes     string           `position:"Query" name:"ParentEventTypes"`
-	Status               string           `position:"Query" name:"Status"`
-	Uuids                string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeSuspEventsResponse is the response struct for api DescribeSuspEvents
 type DescribeSuspEventsResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	Count       int              `json:"Count" xml:"Count"`
-	PageSize    int              `json:"PageSize" xml:"PageSize"`
-	TotalCount  int              `json:"TotalCount" xml:"TotalCount"`
 	CurrentPage int              `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize    int              `json:"PageSize" xml:"PageSize"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	TotalCount  int              `json:"TotalCount" xml:"TotalCount"`
+	Count       int              `json:"Count" xml:"Count"`
 	SuspEvents  []WarningSummary `json:"SuspEvents" xml:"SuspEvents"`
 }
 
@@ -110,7 +117,7 @@ func CreateDescribeSuspEventsRequest() (request *DescribeSuspEventsRequest) {
 	request = &DescribeSuspEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSuspEvents", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSuspEvents", "", "")
 	request.Method = requests.POST
 	return
 }

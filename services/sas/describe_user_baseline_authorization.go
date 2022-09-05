@@ -88,7 +88,7 @@ func CreateDescribeUserBaselineAuthorizationRequest() (request *DescribeUserBase
 	request = &DescribeUserBaselineAuthorizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeUserBaselineAuthorization", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeUserBaselineAuthorization", "", "")
 	request.Method = requests.POST
 	return
 }

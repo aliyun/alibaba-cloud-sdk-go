@@ -80,10 +80,10 @@ type DescribeSummaryInfoRequest struct {
 type DescribeSummaryInfoResponse struct {
 	*responses.BaseResponse
 	RequestId               string `json:"RequestId" xml:"RequestId"`
-	AegisClientOfflineCount int    `json:"AegisClientOfflineCount" xml:"AegisClientOfflineCount"`
-	SecurityScore           int    `json:"SecurityScore" xml:"SecurityScore"`
-	AegisClientOnlineCount  int    `json:"AegisClientOnlineCount" xml:"AegisClientOnlineCount"`
 	Success                 bool   `json:"Success" xml:"Success"`
+	AegisClientOfflineCount int    `json:"AegisClientOfflineCount" xml:"AegisClientOfflineCount"`
+	AegisClientOnlineCount  int    `json:"AegisClientOnlineCount" xml:"AegisClientOnlineCount"`
+	SecurityScore           int    `json:"SecurityScore" xml:"SecurityScore"`
 }
 
 // CreateDescribeSummaryInfoRequest creates a request to invoke DescribeSummaryInfo API
@@ -91,7 +91,7 @@ func CreateDescribeSummaryInfoRequest() (request *DescribeSummaryInfoRequest) {
 	request = &DescribeSummaryInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSummaryInfo", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSummaryInfo", "", "")
 	request.Method = requests.POST
 	return
 }

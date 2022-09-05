@@ -71,42 +71,42 @@ func (client *Client) DescribeVulListWithCallback(request *DescribeVulListReques
 // DescribeVulListRequest is the request struct for api DescribeVulList
 type DescribeVulListRequest struct {
 	*requests.RpcRequest
-	StatusList          string           `position:"Query" name:"StatusList"`
-	TargetType          string           `position:"Query" name:"TargetType"`
 	MinScore            requests.Integer `position:"Query" name:"MinScore"`
-	Remark              string           `position:"Query" name:"Remark"`
 	AttachTypes         string           `position:"Query" name:"AttachTypes"`
 	Type                string           `position:"Query" name:"Type"`
 	VpcInstanceIds      string           `position:"Query" name:"VpcInstanceIds"`
 	CreateTsStart       requests.Integer `position:"Query" name:"CreateTsStart"`
 	ContainerFieldName  string           `position:"Query" name:"ContainerFieldName"`
 	SourceIp            string           `position:"Query" name:"SourceIp"`
-	ContainerFieldValue string           `position:"Query" name:"ContainerFieldValue"`
-	PageSize            requests.Integer `position:"Query" name:"PageSize"`
-	ModifyTsStart       requests.Integer `position:"Query" name:"ModifyTsStart"`
-	Lang                string           `position:"Query" name:"Lang"`
 	ModifyTsEnd         requests.Integer `position:"Query" name:"ModifyTsEnd"`
 	Level               string           `position:"Query" name:"Level"`
 	Resource            string           `position:"Query" name:"Resource"`
 	GroupId             string           `position:"Query" name:"GroupId"`
-	Dealed              string           `position:"Query" name:"Dealed"`
-	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
-	ClusterId           string           `position:"Query" name:"ClusterId"`
-	BatchName           string           `position:"Query" name:"BatchName"`
 	AliasName           string           `position:"Query" name:"AliasName"`
 	Name                string           `position:"Query" name:"Name"`
 	Ids                 string           `position:"Query" name:"Ids"`
 	CreateTsEnd         requests.Integer `position:"Query" name:"CreateTsEnd"`
 	Necessity           string           `position:"Query" name:"Necessity"`
 	Uuids               string           `position:"Query" name:"Uuids"`
+	StatusList          string           `position:"Query" name:"StatusList"`
+	TargetType          string           `position:"Query" name:"TargetType"`
+	Remark              string           `position:"Query" name:"Remark"`
+	ContainerFieldValue string           `position:"Query" name:"ContainerFieldValue"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	ModifyTsStart       requests.Integer `position:"Query" name:"ModifyTsStart"`
+	Lang                string           `position:"Query" name:"Lang"`
+	Dealed              string           `position:"Query" name:"Dealed"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterId           string           `position:"Query" name:"ClusterId"`
+	BatchName           string           `position:"Query" name:"BatchName"`
 }
 
 // DescribeVulListResponse is the response struct for api DescribeVulList
 type DescribeVulListResponse struct {
 	*responses.BaseResponse
+	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	PageSize    int         `json:"PageSize" xml:"PageSize"`
-	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
 	VulRecords  []VulRecord `json:"VulRecords" xml:"VulRecords"`
 }
@@ -116,7 +116,7 @@ func CreateDescribeVulListRequest() (request *DescribeVulListRequest) {
 	request = &DescribeVulListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVulList", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVulList", "", "")
 	request.Method = requests.POST
 	return
 }

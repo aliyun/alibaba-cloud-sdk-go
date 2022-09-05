@@ -17,14 +17,15 @@ package sas
 
 // HealthCheck is a nested struct in sas response
 type HealthCheck struct {
-	MediumCount int      `json:"MediumCount" xml:"MediumCount"`
 	HighCount   int      `json:"HighCount" xml:"HighCount"`
 	LowCount    int      `json:"LowCount" xml:"LowCount"`
 	TotalCount  int      `json:"TotalCount" xml:"TotalCount"`
-	DateArray   []string `json:"DateArray" xml:"DateArray"`
+	MediumCount int      `json:"MediumCount" xml:"MediumCount"`
 	ValueArray  []string `json:"ValueArray" xml:"ValueArray"`
+	TimeArray   []string `json:"TimeArray" xml:"TimeArray"`
 	LevelsOn    []string `json:"LevelsOn" xml:"LevelsOn"`
-	HighList    []string `json:"HighList" xml:"HighList"`
-	MediumList  []string `json:"MediumList" xml:"MediumList"`
 	LowList     []string `json:"LowList" xml:"LowList"`
+	MediumList  []string `json:"MediumList" xml:"MediumList"`
+	DateArray   []string `json:"DateArray" xml:"DateArray"`
+	HighList    []string `json:"HighList" xml:"HighList"`
 }

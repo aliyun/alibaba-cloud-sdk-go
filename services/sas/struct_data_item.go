@@ -17,16 +17,17 @@ package sas
 
 // DataItem is a nested struct in sas response
 type DataItem struct {
-	Uuid       string `json:"Uuid" xml:"Uuid"`
 	Account    int    `json:"Account" xml:"Account"`
-	Health     int    `json:"Health" xml:"Health"`
-	Trojan     int    `json:"Trojan" xml:"Trojan"`
-	Suspicious int    `json:"Suspicious" xml:"Suspicious"`
-	Vul        int    `json:"Vul" xml:"Vul"`
-	CveNum     int    `json:"CveNum" xml:"CveNum"`
-	EmgNum     int    `json:"EmgNum" xml:"EmgNum"`
-	SysNum     int    `json:"SysNum" xml:"SysNum"`
-	CmsNum     int    `json:"CmsNum" xml:"CmsNum"`
 	AppNum     int    `json:"AppNum" xml:"AppNum"`
 	ScaNum     int    `json:"ScaNum" xml:"ScaNum"`
+	Trojan     int    `json:"Trojan" xml:"Trojan"`
+	CveNum     int    `json:"CveNum" xml:"CveNum"`
+	EmgNum     int    `json:"EmgNum" xml:"EmgNum"`
+	Suspicious int    `json:"Suspicious" xml:"Suspicious"`
+	CmsNum     int    `json:"CmsNum" xml:"CmsNum"`
+	Uuid       string `json:"Uuid" xml:"Uuid"`
+	Vul        int    `json:"Vul" xml:"Vul"`
+	Health     int    `json:"Health" xml:"Health"`
+	SysNum     int    `json:"SysNum" xml:"SysNum"`
+	WeakPWNum  int    `json:"WeakPWNum" xml:"WeakPWNum"`
 }

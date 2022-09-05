@@ -79,14 +79,14 @@ type DescribeCheckWarningDetailRequest struct {
 // DescribeCheckWarningDetailResponse is the response struct for api DescribeCheckWarningDetail
 type DescribeCheckWarningDetailResponse struct {
 	*responses.BaseResponse
+	Advice      string `json:"Advice" xml:"Advice"`
+	Type        string `json:"Type" xml:"Type"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Description string `json:"Description" xml:"Description"`
+	Item        string `json:"Item" xml:"Item"`
 	CheckId     int64  `json:"CheckId" xml:"CheckId"`
 	Level       string `json:"Level" xml:"Level"`
-	Item        string `json:"Item" xml:"Item"`
 	Prompt      string `json:"Prompt" xml:"Prompt"`
-	Type        string `json:"Type" xml:"Type"`
-	Advice      string `json:"Advice" xml:"Advice"`
-	Description string `json:"Description" xml:"Description"`
 }
 
 // CreateDescribeCheckWarningDetailRequest creates a request to invoke DescribeCheckWarningDetail API
@@ -94,7 +94,7 @@ func CreateDescribeCheckWarningDetailRequest() (request *DescribeCheckWarningDet
 	request = &DescribeCheckWarningDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckWarningDetail", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckWarningDetail", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -80,6 +80,7 @@ type CreateOrUpdateAssetGroupRequest struct {
 // CreateOrUpdateAssetGroupResponse is the response struct for api CreateOrUpdateAssetGroup
 type CreateOrUpdateAssetGroupResponse struct {
 	*responses.BaseResponse
+	GroupId   int64  `json:"GroupId" xml:"GroupId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -88,7 +89,7 @@ func CreateCreateOrUpdateAssetGroupRequest() (request *CreateOrUpdateAssetGroupR
 	request = &CreateOrUpdateAssetGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateOrUpdateAssetGroup", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateOrUpdateAssetGroup", "", "")
 	request.Method = requests.POST
 	return
 }

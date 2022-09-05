@@ -78,9 +78,9 @@ type DescribePropertyUsageNewestRequest struct {
 // DescribePropertyUsageNewestResponse is the response struct for api DescribePropertyUsageNewest
 type DescribePropertyUsageNewestResponse struct {
 	*responses.BaseResponse
-	RequestId            string                `json:"RequestId" xml:"RequestId"`
-	ItemCount            int                   `json:"ItemCount" xml:"ItemCount"`
 	Type                 string                `json:"Type" xml:"Type"`
+	ItemCount            int                   `json:"ItemCount" xml:"ItemCount"`
+	RequestId            string                `json:"RequestId" xml:"RequestId"`
 	NewestStatisticItems []NewestStatisticItem `json:"NewestStatisticItems" xml:"NewestStatisticItems"`
 }
 
@@ -89,7 +89,7 @@ func CreateDescribePropertyUsageNewestRequest() (request *DescribePropertyUsageN
 	request = &DescribePropertyUsageNewestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyUsageNewest", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyUsageNewest", "", "")
 	request.Method = requests.POST
 	return
 }

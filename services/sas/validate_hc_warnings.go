@@ -87,7 +87,7 @@ func CreateValidateHcWarningsRequest() (request *ValidateHcWarningsRequest) {
 	request = &ValidateHcWarningsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ValidateHcWarnings", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ValidateHcWarnings", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,7 +17,7 @@ package sas
 
 // Classify is a nested struct in sas response
 type Classify struct {
-	Classify     string `json:"Classify" xml:"Classify"`
 	Description  string `json:"Description" xml:"Description"`
+	Classify     string `json:"Classify" xml:"Classify"`
 	DemoVideoUrl string `json:"DemoVideoUrl" xml:"DemoVideoUrl"`
 }

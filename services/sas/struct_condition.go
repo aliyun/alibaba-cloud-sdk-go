@@ -17,8 +17,8 @@ package sas
 
 // Condition is a nested struct in sas response
 type Condition struct {
+	ConditionType    string `json:"ConditionType" xml:"ConditionType"`
+	NameKey          string `json:"NameKey" xml:"NameKey"`
 	Name             string `json:"Name" xml:"Name"`
 	FilterConditions string `json:"FilterConditions" xml:"FilterConditions"`
-	NameKey          string `json:"NameKey" xml:"NameKey"`
-	ConditionType    string `json:"ConditionType" xml:"ConditionType"`
 }

@@ -81,8 +81,8 @@ type ExportRecordRequest struct {
 type ExportRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Id        int64  `json:"Id" xml:"Id"`
 	FileName  string `json:"FileName" xml:"FileName"`
+	Id        int64  `json:"Id" xml:"Id"`
 }
 
 // CreateExportRecordRequest creates a request to invoke ExportRecord API
@@ -90,7 +90,7 @@ func CreateExportRecordRequest() (request *ExportRecordRequest) {
 	request = &ExportRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ExportRecord", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ExportRecord", "", "")
 	request.Method = requests.POST
 	return
 }

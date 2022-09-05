@@ -17,7 +17,7 @@ package sas
 
 // Suggestion is a nested struct in sas response
 type Suggestion struct {
-	SuggestType string       `json:"SuggestType" xml:"SuggestType"`
 	Points      int          `json:"Points" xml:"Points"`
+	SuggestType string       `json:"SuggestType" xml:"SuggestType"`
 	Detail      []DetailItem `json:"Detail" xml:"Detail"`
 }

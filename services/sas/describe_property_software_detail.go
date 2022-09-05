@@ -71,14 +71,17 @@ func (client *Client) DescribePropertySoftwareDetailWithCallback(request *Descri
 // DescribePropertySoftwareDetailRequest is the request struct for api DescribePropertySoftwareDetail
 type DescribePropertySoftwareDetailRequest struct {
 	*requests.RpcRequest
-	SoftwareVersion string           `position:"Query" name:"SoftwareVersion"`
-	Remark          string           `position:"Query" name:"Remark"`
-	Uuid            string           `position:"Query" name:"Uuid"`
-	Path            string           `position:"Query" name:"Path"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
-	Name            string           `position:"Query" name:"Name"`
+	SoftwareVersion  string           `position:"Query" name:"SoftwareVersion"`
+	Remark           string           `position:"Query" name:"Remark"`
+	Uuid             string           `position:"Query" name:"Uuid"`
+	Path             string           `position:"Query" name:"Path"`
+	SourceIp         string           `position:"Query" name:"SourceIp"`
+	InstallTimeStart requests.Integer `position:"Query" name:"InstallTimeStart"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	InstallTimeEnd   requests.Integer `position:"Query" name:"InstallTimeEnd"`
+	CurrentPage      requests.Integer `position:"Query" name:"CurrentPage"`
+	Extend           string           `position:"Query" name:"Extend"`
+	Name             string           `position:"Query" name:"Name"`
 }
 
 // DescribePropertySoftwareDetailResponse is the response struct for api DescribePropertySoftwareDetail
@@ -94,7 +97,7 @@ func CreateDescribePropertySoftwareDetailRequest() (request *DescribePropertySof
 	request = &DescribePropertySoftwareDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertySoftwareDetail", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertySoftwareDetail", "", "")
 	request.Method = requests.POST
 	return
 }

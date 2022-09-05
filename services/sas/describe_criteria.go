@@ -71,9 +71,10 @@ func (client *Client) DescribeCriteriaWithCallback(request *DescribeCriteriaRequ
 // DescribeCriteriaRequest is the request struct for api DescribeCriteria
 type DescribeCriteriaRequest struct {
 	*requests.RpcRequest
-	MachineTypes string `position:"Query" name:"MachineTypes"`
-	SourceIp     string `position:"Query" name:"SourceIp"`
-	Value        string `position:"Query" name:"Value"`
+	SupportAutoTag requests.Boolean `position:"Query" name:"SupportAutoTag"`
+	SourceIp       string           `position:"Query" name:"SourceIp"`
+	Value          string           `position:"Query" name:"Value"`
+	MachineTypes   string           `position:"Query" name:"MachineTypes"`
 }
 
 // DescribeCriteriaResponse is the response struct for api DescribeCriteria
@@ -88,7 +89,7 @@ func CreateDescribeCriteriaRequest() (request *DescribeCriteriaRequest) {
 	request = &DescribeCriteriaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCriteria", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCriteria", "", "")
 	request.Method = requests.POST
 	return
 }

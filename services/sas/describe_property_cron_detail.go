@@ -77,6 +77,7 @@ type DescribePropertyCronDetailRequest struct {
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Extend      string           `position:"Query" name:"Extend"`
 	User        string           `position:"Query" name:"User"`
 }
 
@@ -93,7 +94,7 @@ func CreateDescribePropertyCronDetailRequest() (request *DescribePropertyCronDet
 	request = &DescribePropertyCronDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyCronDetail", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyCronDetail", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateModifySecurityCheckScheduleConfigRequest() (request *ModifySecurityCh
 	request = &ModifySecurityCheckScheduleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifySecurityCheckScheduleConfig", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifySecurityCheckScheduleConfig", "", "")
 	request.Method = requests.POST
 	return
 }

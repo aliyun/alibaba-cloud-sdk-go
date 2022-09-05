@@ -18,6 +18,6 @@ package sas
 // ConfigTarget is a nested struct in sas response
 type ConfigTarget struct {
 	Flag       string `json:"Flag" xml:"Flag"`
-	TargetType string `json:"TargetType" xml:"TargetType"`
 	Target     string `json:"Target" xml:"Target"`
+	TargetType string `json:"TargetType" xml:"TargetType"`
 }

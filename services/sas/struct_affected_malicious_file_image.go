@@ -17,20 +17,22 @@ package sas
 
 // AffectedMaliciousFileImage is a nested struct in sas response
 type AffectedMaliciousFileImage struct {
-	Layer                 string `json:"Layer" xml:"Layer"`
-	FirstScanTimestamp    int64  `json:"FirstScanTimestamp" xml:"FirstScanTimestamp"`
-	LatestScanTimestamp   int64  `json:"LatestScanTimestamp" xml:"LatestScanTimestamp"`
-	LatestVerifyTimestamp int64  `json:"LatestVerifyTimestamp" xml:"LatestVerifyTimestamp"`
-	MaliciousMd5          string `json:"MaliciousMd5" xml:"MaliciousMd5"`
 	Status                int    `json:"Status" xml:"Status"`
-	Level                 string `json:"Level" xml:"Level"`
-	ImageUuid             string `json:"ImageUuid" xml:"ImageUuid"`
-	FilePath              string `json:"FilePath" xml:"FilePath"`
 	Digest                string `json:"Digest" xml:"Digest"`
-	RepoRegionId          string `json:"RepoRegionId" xml:"RepoRegionId"`
+	LatestVerifyTimestamp int64  `json:"LatestVerifyTimestamp" xml:"LatestVerifyTimestamp"`
 	RepoInstanceId        string `json:"RepoInstanceId" xml:"RepoInstanceId"`
-	RepoId                string `json:"RepoId" xml:"RepoId"`
-	RepoName              string `json:"RepoName" xml:"RepoName"`
 	Namespace             string `json:"Namespace" xml:"Namespace"`
 	Tag                   string `json:"Tag" xml:"Tag"`
+	RepoRegionId          string `json:"RepoRegionId" xml:"RepoRegionId"`
+	ImageUuid             string `json:"ImageUuid" xml:"ImageUuid"`
+	FirstScanTimestamp    int64  `json:"FirstScanTimestamp" xml:"FirstScanTimestamp"`
+	MaliciousMd5          string `json:"MaliciousMd5" xml:"MaliciousMd5"`
+	FilePath              string `json:"FilePath" xml:"FilePath"`
+	RepoId                string `json:"RepoId" xml:"RepoId"`
+	Layer                 string `json:"Layer" xml:"Layer"`
+	LatestScanTimestamp   int64  `json:"LatestScanTimestamp" xml:"LatestScanTimestamp"`
+	RepoName              string `json:"RepoName" xml:"RepoName"`
+	Level                 string `json:"Level" xml:"Level"`
+	DownloadUrl           string `json:"DownloadUrl" xml:"DownloadUrl"`
+	HighLight             string `json:"HighLight" xml:"HighLight"`
 }

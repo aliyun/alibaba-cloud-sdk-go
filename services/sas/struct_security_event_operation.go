@@ -24,6 +24,6 @@ type SecurityEventOperation struct {
 	OperationParams  string                   `json:"OperationParams" xml:"OperationParams"`
 	MarkMisValue     string                   `json:"MarkMisValue" xml:"MarkMisValue"`
 	SupportedMisType []string                 `json:"SupportedMisType" xml:"SupportedMisType"`
-	MarkFieldsSource []SecurityEventOperation `json:"MarkFieldsSource" xml:"MarkFieldsSource"`
 	MarkField        []MarkFieldItem          `json:"MarkField" xml:"MarkField"`
+	MarkFieldsSource []SecurityEventOperation `json:"MarkFieldsSource" xml:"MarkFieldsSource"`
 }

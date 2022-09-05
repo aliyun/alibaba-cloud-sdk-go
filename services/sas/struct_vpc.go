@@ -17,11 +17,11 @@ package sas
 
 // Vpc is a nested struct in sas response
 type Vpc struct {
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	MiddleStatus int    `json:"MiddleStatus" xml:"MiddleStatus"`
-	InstanceName string `json:"InstanceName" xml:"InstanceName"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
-	InstanceDesc string `json:"InstanceDesc" xml:"InstanceDesc"`
-	EcsCount     int    `json:"EcsCount" xml:"EcsCount"`
 	Status       int    `json:"Status" xml:"Status"`
+	InstanceDesc string `json:"InstanceDesc" xml:"InstanceDesc"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	EcsCount     int    `json:"EcsCount" xml:"EcsCount"`
+	MiddleStatus int    `json:"MiddleStatus" xml:"MiddleStatus"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
 }

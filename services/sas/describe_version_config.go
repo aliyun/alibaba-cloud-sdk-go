@@ -78,28 +78,40 @@ type DescribeVersionConfigRequest struct {
 // DescribeVersionConfigResponse is the response struct for api DescribeVersionConfig
 type DescribeVersionConfigResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	AssetLevel            int    `json:"AssetLevel" xml:"AssetLevel"`
-	AvdsFlag              int    `json:"AvdsFlag" xml:"AvdsFlag"`
-	CreateTime            int64  `json:"CreateTime" xml:"CreateTime"`
-	Flag                  int    `json:"Flag" xml:"Flag"`
-	InstanceId            string `json:"InstanceId" xml:"InstanceId"`
-	IsSasOpening          bool   `json:"IsSasOpening" xml:"IsSasOpening"`
-	IsTrialVersion        int    `json:"IsTrialVersion" xml:"IsTrialVersion"`
-	LogCapacity           int    `json:"LogCapacity" xml:"LogCapacity"`
-	LogTime               int    `json:"LogTime" xml:"LogTime"`
-	ReleaseTime           int64  `json:"ReleaseTime" xml:"ReleaseTime"`
-	SasLog                int    `json:"SasLog" xml:"SasLog"`
-	SasScreen             int    `json:"SasScreen" xml:"SasScreen"`
-	Version               int    `json:"Version" xml:"Version"`
-	UserDefinedAlarms     int    `json:"UserDefinedAlarms" xml:"UserDefinedAlarms"`
-	WebLock               int    `json:"WebLock" xml:"WebLock"`
-	WebLockAuthCount      int64  `json:"WebLockAuthCount" xml:"WebLockAuthCount"`
-	AppWhiteListAuthCount int64  `json:"AppWhiteListAuthCount" xml:"AppWhiteListAuthCount"`
-	AppWhiteList          int    `json:"AppWhiteList" xml:"AppWhiteList"`
-	SlsCapacity           int64  `json:"SlsCapacity" xml:"SlsCapacity"`
-	IsOverBalance         bool   `json:"IsOverBalance" xml:"IsOverBalance"`
-	LastTrailEndTime      int64  `json:"LastTrailEndTime" xml:"LastTrailEndTime"`
+	MVAuthCount             int    `json:"MVAuthCount" xml:"MVAuthCount"`
+	SasLog                  int    `json:"SasLog" xml:"SasLog"`
+	LogCapacity             int    `json:"LogCapacity" xml:"LogCapacity"`
+	SasScreen               int    `json:"SasScreen" xml:"SasScreen"`
+	HoneypotCapacity        int64  `json:"HoneypotCapacity" xml:"HoneypotCapacity"`
+	CreateTime              int64  `json:"CreateTime" xml:"CreateTime"`
+	MVUnusedAuthCount       int    `json:"MVUnusedAuthCount" xml:"MVUnusedAuthCount"`
+	WebLock                 int    `json:"WebLock" xml:"WebLock"`
+	AppWhiteListAuthCount   int64  `json:"AppWhiteListAuthCount" xml:"AppWhiteListAuthCount"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	LogTime                 int    `json:"LogTime" xml:"LogTime"`
+	Flag                    int    `json:"Flag" xml:"Flag"`
+	LastInstanceReleaseTime int64  `json:"LastInstanceReleaseTime" xml:"LastInstanceReleaseTime"`
+	LastTrailEndTime        int64  `json:"LastTrailEndTime" xml:"LastTrailEndTime"`
+	Version                 int    `json:"Version" xml:"Version"`
+	WebLockAuthCount        int64  `json:"WebLockAuthCount" xml:"WebLockAuthCount"`
+	ReleaseTime             int64  `json:"ReleaseTime" xml:"ReleaseTime"`
+	HighestVersion          int    `json:"HighestVersion" xml:"HighestVersion"`
+	AssetLevel              int    `json:"AssetLevel" xml:"AssetLevel"`
+	AvdsFlag                int    `json:"AvdsFlag" xml:"AvdsFlag"`
+	IsPaidUser              bool   `json:"IsPaidUser" xml:"IsPaidUser"`
+	IsOverBalance           bool   `json:"IsOverBalance" xml:"IsOverBalance"`
+	InstanceId              string `json:"InstanceId" xml:"InstanceId"`
+	SlsCapacity             int64  `json:"SlsCapacity" xml:"SlsCapacity"`
+	VmCores                 int    `json:"VmCores" xml:"VmCores"`
+	AllowPartialBuy         int    `json:"AllowPartialBuy" xml:"AllowPartialBuy"`
+	AppWhiteList            int    `json:"AppWhiteList" xml:"AppWhiteList"`
+	IsSasOpening            bool   `json:"IsSasOpening" xml:"IsSasOpening"`
+	GmtCreate               int64  `json:"GmtCreate" xml:"GmtCreate"`
+	ImageScanCapacity       int64  `json:"ImageScanCapacity" xml:"ImageScanCapacity"`
+	IsTrialVersion          int    `json:"IsTrialVersion" xml:"IsTrialVersion"`
+	UserDefinedAlarms       int    `json:"UserDefinedAlarms" xml:"UserDefinedAlarms"`
+	OpenTime                int64  `json:"OpenTime" xml:"OpenTime"`
+	IsNewContainerVersion   bool   `json:"IsNewContainerVersion" xml:"IsNewContainerVersion"`
 }
 
 // CreateDescribeVersionConfigRequest creates a request to invoke DescribeVersionConfig API
@@ -107,7 +119,7 @@ func CreateDescribeVersionConfigRequest() (request *DescribeVersionConfigRequest
 	request = &DescribeVersionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVersionConfig", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVersionConfig", "", "")
 	request.Method = requests.POST
 	return
 }

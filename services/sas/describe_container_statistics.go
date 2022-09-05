@@ -87,7 +87,7 @@ func CreateDescribeContainerStatisticsRequest() (request *DescribeContainerStati
 	request = &DescribeContainerStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeContainerStatistics", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeContainerStatistics", "", "")
 	request.Method = requests.POST
 	return
 }

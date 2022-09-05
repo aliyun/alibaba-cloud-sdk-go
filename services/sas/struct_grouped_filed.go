@@ -18,6 +18,6 @@ package sas
 // GroupedFiled is a nested struct in sas response
 type GroupedFiled struct {
 	Name  string `json:"Name" xml:"Name"`
-	TagId int    `json:"TagId" xml:"TagId"`
 	Count string `json:"Count" xml:"Count"`
+	TagId int    `json:"TagId" xml:"TagId"`
 }

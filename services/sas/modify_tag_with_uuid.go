@@ -89,7 +89,7 @@ func CreateModifyTagWithUuidRequest() (request *ModifyTagWithUuidRequest) {
 	request = &ModifyTagWithUuidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyTagWithUuid", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyTagWithUuid", "", "")
 	request.Method = requests.POST
 	return
 }

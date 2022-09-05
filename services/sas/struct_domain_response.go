@@ -17,6 +17,6 @@ package sas
 
 // DomainResponse is a nested struct in sas response
 type DomainResponse struct {
-	Domain string `json:"Domain" xml:"Domain"`
 	IpList string `json:"IpList" xml:"IpList"`
+	Domain string `json:"Domain" xml:"Domain"`
 }

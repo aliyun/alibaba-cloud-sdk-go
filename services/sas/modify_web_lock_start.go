@@ -80,6 +80,7 @@ type ModifyWebLockStartRequest struct {
 	SourceIp          string `position:"Query" name:"SourceIp"`
 	ExclusiveDir      string `position:"Query" name:"ExclusiveDir"`
 	InclusiveFileType string `position:"Query" name:"InclusiveFileType"`
+	DefenceMode       string `position:"Query" name:"DefenceMode"`
 }
 
 // ModifyWebLockStartResponse is the response struct for api ModifyWebLockStart
@@ -93,7 +94,7 @@ func CreateModifyWebLockStartRequest() (request *ModifyWebLockStartRequest) {
 	request = &ModifyWebLockStartRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyWebLockStart", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyWebLockStart", "", "")
 	request.Method = requests.POST
 	return
 }

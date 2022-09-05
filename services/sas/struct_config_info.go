@@ -17,14 +17,15 @@ package sas
 
 // ConfigInfo is a nested struct in sas response
 type ConfigInfo struct {
-	Id                string `json:"Id" xml:"Id"`
-	Uuid              string `json:"Uuid" xml:"Uuid"`
-	Dir               string `json:"Dir" xml:"Dir"`
 	ExclusiveDir      string `json:"ExclusiveDir" xml:"ExclusiveDir"`
-	ExclusiveFileType string `json:"ExclusiveFileType" xml:"ExclusiveFileType"`
-	LocalBackupDir    string `json:"LocalBackupDir" xml:"LocalBackupDir"`
-	Mode              string `json:"Mode" xml:"Mode"`
+	Uuid              string `json:"Uuid" xml:"Uuid"`
 	InclusiveFileType string `json:"InclusiveFileType" xml:"InclusiveFileType"`
-	ExclusiveFile     string `json:"ExclusiveFile" xml:"ExclusiveFile"`
+	DefenceMode       string `json:"DefenceMode" xml:"DefenceMode"`
+	ExclusiveFileType string `json:"ExclusiveFileType" xml:"ExclusiveFileType"`
 	InclusiveFile     string `json:"InclusiveFile" xml:"InclusiveFile"`
+	Mode              string `json:"Mode" xml:"Mode"`
+	Dir               string `json:"Dir" xml:"Dir"`
+	ExclusiveFile     string `json:"ExclusiveFile" xml:"ExclusiveFile"`
+	Id                string `json:"Id" xml:"Id"`
+	LocalBackupDir    string `json:"LocalBackupDir" xml:"LocalBackupDir"`
 }

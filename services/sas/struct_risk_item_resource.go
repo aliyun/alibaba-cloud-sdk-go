@@ -17,6 +17,6 @@ package sas
 
 // RiskItemResource is a nested struct in sas response
 type RiskItemResource struct {
-	ResourceName    string `json:"ResourceName" xml:"ResourceName"`
-	ContentResource string `json:"ContentResource" xml:"ContentResource"`
+	ContentResource map[string]interface{} `json:"ContentResource" xml:"ContentResource"`
+	ResourceName    string                 `json:"ResourceName" xml:"ResourceName"`
 }

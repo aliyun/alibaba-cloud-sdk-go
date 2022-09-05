@@ -29,16 +29,16 @@ type ExtendContentJson struct {
 	AliasName     string      `json:"AliasName" xml:"AliasName"`
 	Description   string      `json:"Description" xml:"Description"`
 	Solution      string      `json:"Solution" xml:"Solution"`
-	Status        int         `json:"Status" xml:"Status"`
 	AbsolutePath  string      `json:"AbsolutePath" xml:"AbsolutePath"`
 	Ip            string      `json:"Ip" xml:"Ip"`
 	Proof         string      `json:"Proof" xml:"Proof"`
 	Cwe           string      `json:"Cwe" xml:"Cwe"`
 	LastTs        int64       `json:"LastTs" xml:"LastTs"`
 	OsRelease     string      `json:"OsRelease" xml:"OsRelease"`
-	Target        string      `json:"Target" xml:"Target"`
 	Reference     string      `json:"Reference" xml:"Reference"`
+	Target        string      `json:"Target" xml:"Target"`
 	PrimaryId     int64       `json:"PrimaryId" xml:"PrimaryId"`
+	Status        string      `json:"Status" xml:"Status"`
 	CveList       []string    `json:"cveList" xml:"cveList"`
 	Necessity     Necessity   `json:"Necessity" xml:"Necessity"`
 	RpmEntityList []RpmEntity `json:"RpmEntityList" xml:"RpmEntityList"`

@@ -71,22 +71,25 @@ func (client *Client) DescribeCheckWarningsWithCallback(request *DescribeCheckWa
 // DescribeCheckWarningsRequest is the request struct for api DescribeCheckWarnings
 type DescribeCheckWarningsRequest struct {
 	*requests.RpcRequest
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	RiskId      requests.Integer `position:"Query" name:"RiskId"`
 	Uuid        string           `position:"Query" name:"Uuid"`
+	CheckType   string           `position:"Query" name:"CheckType"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Lang        string           `position:"Query" name:"Lang"`
+	CheckId     requests.Integer `position:"Query" name:"CheckId"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	RiskId      requests.Integer `position:"Query" name:"RiskId"`
+	RiskStatus  requests.Integer `position:"Query" name:"RiskStatus"`
 }
 
 // DescribeCheckWarningsResponse is the response struct for api DescribeCheckWarnings
 type DescribeCheckWarningsResponse struct {
 	*responses.BaseResponse
-	RequestId     string         `json:"RequestId" xml:"RequestId"`
-	Count         int            `json:"Count" xml:"Count"`
-	PageSize      int            `json:"PageSize" xml:"PageSize"`
-	TotalCount    int            `json:"TotalCount" xml:"TotalCount"`
 	CurrentPage   int            `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize      int            `json:"PageSize" xml:"PageSize"`
+	RequestId     string         `json:"RequestId" xml:"RequestId"`
+	TotalCount    int            `json:"TotalCount" xml:"TotalCount"`
+	Count         int            `json:"Count" xml:"Count"`
 	CheckWarnings []CheckWarning `json:"CheckWarnings" xml:"CheckWarnings"`
 }
 
@@ -95,7 +98,7 @@ func CreateDescribeCheckWarningsRequest() (request *DescribeCheckWarningsRequest
 	request = &DescribeCheckWarningsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckWarnings", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckWarnings", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -73,6 +73,7 @@ type DescribeSecurityEventOperationsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Lang            string           `position:"Query" name:"Lang"`
 	SecurityEventId requests.Integer `position:"Query" name:"SecurityEventId"`
 }
 
@@ -88,7 +89,7 @@ func CreateDescribeSecurityEventOperationsRequest() (request *DescribeSecurityEv
 	request = &DescribeSecurityEventOperationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecurityEventOperations", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecurityEventOperations", "", "")
 	request.Method = requests.POST
 	return
 }

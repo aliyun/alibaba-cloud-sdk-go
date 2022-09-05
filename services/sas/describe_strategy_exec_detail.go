@@ -71,21 +71,23 @@ func (client *Client) DescribeStrategyExecDetailWithCallback(request *DescribeSt
 // DescribeStrategyExecDetailRequest is the request struct for api DescribeStrategyExecDetail
 type DescribeStrategyExecDetailRequest struct {
 	*requests.RpcRequest
-	SourceIp   string           `position:"Query" name:"SourceIp"`
-	StrategyId requests.Integer `position:"Query" name:"StrategyId"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	StrategyId  requests.Integer `position:"Query" name:"StrategyId"`
 }
 
 // DescribeStrategyExecDetailResponse is the response struct for api DescribeStrategyExecDetail
 type DescribeStrategyExecDetailResponse struct {
 	*responses.BaseResponse
-	RequestId      string      `json:"RequestId" xml:"RequestId"`
-	StartTime      string      `json:"StartTime" xml:"StartTime"`
-	EndTime        string      `json:"EndTime" xml:"EndTime"`
-	Source         string      `json:"Source" xml:"Source"`
-	Percent        string      `json:"Percent" xml:"Percent"`
-	SuccessCount   int         `json:"SuccessCount" xml:"SuccessCount"`
-	FailCount      int         `json:"FailCount" xml:"FailCount"`
 	InProcessCount int         `json:"InProcessCount" xml:"InProcessCount"`
+	EndTime        string      `json:"EndTime" xml:"EndTime"`
+	StartTime      string      `json:"StartTime" xml:"StartTime"`
+	Percent        string      `json:"Percent" xml:"Percent"`
+	RequestId      string      `json:"RequestId" xml:"RequestId"`
+	FailCount      int         `json:"FailCount" xml:"FailCount"`
+	Source         string      `json:"Source" xml:"Source"`
+	SuccessCount   int         `json:"SuccessCount" xml:"SuccessCount"`
 	FailedEcsList  []FailedEcs `json:"FailedEcsList" xml:"FailedEcsList"`
 }
 
@@ -94,7 +96,7 @@ func CreateDescribeStrategyExecDetailRequest() (request *DescribeStrategyExecDet
 	request = &DescribeStrategyExecDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeStrategyExecDetail", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeStrategyExecDetail", "", "")
 	request.Method = requests.POST
 	return
 }

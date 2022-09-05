@@ -83,6 +83,7 @@ type ModifyWebLockUpdateConfigRequest struct {
 	InclusiveFile     string           `position:"Query" name:"InclusiveFile"`
 	ExclusiveDir      string           `position:"Query" name:"ExclusiveDir"`
 	InclusiveFileType string           `position:"Query" name:"InclusiveFileType"`
+	DefenceMode       string           `position:"Query" name:"DefenceMode"`
 }
 
 // ModifyWebLockUpdateConfigResponse is the response struct for api ModifyWebLockUpdateConfig
@@ -96,7 +97,7 @@ func CreateModifyWebLockUpdateConfigRequest() (request *ModifyWebLockUpdateConfi
 	request = &ModifyWebLockUpdateConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyWebLockUpdateConfig", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyWebLockUpdateConfig", "", "")
 	request.Method = requests.POST
 	return
 }

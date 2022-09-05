@@ -17,23 +17,24 @@ package sas
 
 // Cve is a nested struct in sas response
 type Cve struct {
+	Summary           string     `json:"Summary" xml:"Summary"`
+	Complexity        string     `json:"Complexity" xml:"Complexity"`
+	Product           string     `json:"Product" xml:"Product"`
+	PocCreateTime     int64      `json:"PocCreateTime" xml:"PocCreateTime"`
 	CveId             string     `json:"CveId" xml:"CveId"`
 	CnvdId            string     `json:"CnvdId" xml:"CnvdId"`
-	Title             string     `json:"Title" xml:"Title"`
+	Reference         string     `json:"Reference" xml:"Reference"`
 	CvssScore         string     `json:"CvssScore" xml:"CvssScore"`
-	CvssVector        string     `json:"CvssVector" xml:"CvssVector"`
-	ReleaseTime       int64      `json:"ReleaseTime" xml:"ReleaseTime"`
-	Complexity        string     `json:"Complexity" xml:"Complexity"`
-	Poc               string     `json:"Poc" xml:"Poc"`
-	PocCreateTime     int64      `json:"PocCreateTime" xml:"PocCreateTime"`
+	Vendor            string     `json:"Vendor" xml:"Vendor"`
 	PocDisclosureTime int64      `json:"PocDisclosureTime" xml:"PocDisclosureTime"`
-	Summary           string     `json:"Summary" xml:"Summary"`
+	Classify          string     `json:"Classify" xml:"Classify"`
+	CvssVector        string     `json:"CvssVector" xml:"CvssVector"`
+	VulLevel          string     `json:"VulLevel" xml:"VulLevel"`
+	ReleaseTime       int64      `json:"ReleaseTime" xml:"ReleaseTime"`
+	Title             string     `json:"Title" xml:"Title"`
 	Solution          string     `json:"Solution" xml:"Solution"`
 	Content           string     `json:"Content" xml:"Content"`
-	Vendor            string     `json:"Vendor" xml:"Vendor"`
-	Product           string     `json:"Product" xml:"Product"`
-	VulLevel          string     `json:"VulLevel" xml:"VulLevel"`
-	Reference         string     `json:"Reference" xml:"Reference"`
-	Classify          string     `json:"Classify" xml:"Classify"`
+	Poc               string     `json:"Poc" xml:"Poc"`
+	OtherId           string     `json:"OtherId" xml:"OtherId"`
 	Classifys         []Classify `json:"Classifys" xml:"Classifys"`
 }

@@ -71,11 +71,12 @@ func (client *Client) OperateSuspiciousTargetConfigWithCallback(request *Operate
 // OperateSuspiciousTargetConfigRequest is the request struct for api OperateSuspiciousTargetConfig
 type OperateSuspiciousTargetConfigRequest struct {
 	*requests.RpcRequest
-	TargetType       string `position:"Query" name:"TargetType"`
-	Type             string `position:"Query" name:"Type"`
-	TargetOperations string `position:"Query" name:"TargetOperations"`
-	SourceIp         string `position:"Query" name:"SourceIp"`
-	Lang             string `position:"Query" name:"Lang"`
+	TargetType                 string `position:"Query" name:"TargetType"`
+	Type                       string `position:"Query" name:"Type"`
+	TargetOperations           string `position:"Query" name:"TargetOperations"`
+	SourceIp                   string `position:"Query" name:"SourceIp"`
+	Lang                       string `position:"Query" name:"Lang"`
+	ResourceDirectoryAccountId string `position:"Query" name:"ResourceDirectoryAccountId"`
 }
 
 // OperateSuspiciousTargetConfigResponse is the response struct for api OperateSuspiciousTargetConfig
@@ -89,7 +90,7 @@ func CreateOperateSuspiciousTargetConfigRequest() (request *OperateSuspiciousTar
 	request = &OperateSuspiciousTargetConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "OperateSuspiciousTargetConfig", "sas", "openAPI")
+	request.InitWithApiInfo("Sas", "2018-12-03", "OperateSuspiciousTargetConfig", "", "")
 	request.Method = requests.POST
 	return
 }
