@@ -94,7 +94,7 @@ func CreateDescribePropertyCronDetailRequest() (request *DescribePropertyCronDet
 	request = &DescribePropertyCronDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyCronDetail", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyCronDetail", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateDescribeVpcListRequest() (request *DescribeVpcListRequest) {
 	request = &DescribeVpcListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVpcList", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVpcList", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

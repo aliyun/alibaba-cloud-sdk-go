@@ -94,7 +94,7 @@ func CreateDescribeImageBaselineCheckSummaryRequest() (request *DescribeImageBas
 	request = &DescribeImageBaselineCheckSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageBaselineCheckSummary", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageBaselineCheckSummary", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

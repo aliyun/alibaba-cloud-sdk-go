@@ -89,7 +89,7 @@ func CreateDescribeHoneyPotSuspStatisticsRequest() (request *DescribeHoneyPotSus
 	request = &DescribeHoneyPotSuspStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeHoneyPotSuspStatistics", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeHoneyPotSuspStatistics", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDescribeInstallCaptchaRequest() (request *DescribeInstallCaptchaReque
 	request = &DescribeInstallCaptchaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeInstallCaptcha", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeInstallCaptcha", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

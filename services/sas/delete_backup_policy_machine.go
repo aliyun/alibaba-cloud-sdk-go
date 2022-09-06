@@ -90,7 +90,7 @@ func CreateDeleteBackupPolicyMachineRequest() (request *DeleteBackupPolicyMachin
 	request = &DeleteBackupPolicyMachineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DeleteBackupPolicyMachine", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DeleteBackupPolicyMachine", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

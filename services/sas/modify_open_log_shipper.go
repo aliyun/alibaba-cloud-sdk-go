@@ -98,7 +98,7 @@ func CreateModifyOpenLogShipperRequest() (request *ModifyOpenLogShipperRequest) 
 	request = &ModifyOpenLogShipperRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyOpenLogShipper", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyOpenLogShipper", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

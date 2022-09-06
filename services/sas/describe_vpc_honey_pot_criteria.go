@@ -86,7 +86,7 @@ func CreateDescribeVpcHoneyPotCriteriaRequest() (request *DescribeVpcHoneyPotCri
 	request = &DescribeVpcHoneyPotCriteriaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVpcHoneyPotCriteria", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVpcHoneyPotCriteria", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

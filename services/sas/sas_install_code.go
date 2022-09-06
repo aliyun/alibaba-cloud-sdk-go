@@ -86,7 +86,7 @@ func CreateSasInstallCodeRequest() (request *SasInstallCodeRequest) {
 	request = &SasInstallCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "SasInstallCode", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "SasInstallCode", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

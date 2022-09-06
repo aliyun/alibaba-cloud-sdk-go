@@ -89,7 +89,7 @@ func CreateDescribePropertyUsageNewestRequest() (request *DescribePropertyUsageN
 	request = &DescribePropertyUsageNewestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyUsageNewest", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyUsageNewest", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

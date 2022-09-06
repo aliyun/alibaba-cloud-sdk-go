@@ -98,7 +98,7 @@ func CreateDescribePropertyCountRequest() (request *DescribePropertyCountRequest
 	request = &DescribePropertyCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyCount", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyCount", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDescribeAllGroupsRequest() (request *DescribeAllGroupsRequest) {
 	request = &DescribeAllGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAllGroups", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAllGroups", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

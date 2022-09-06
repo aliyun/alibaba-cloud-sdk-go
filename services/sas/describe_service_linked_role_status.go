@@ -86,7 +86,7 @@ func CreateDescribeServiceLinkedRoleStatusRequest() (request *DescribeServiceLin
 	request = &DescribeServiceLinkedRoleStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeServiceLinkedRoleStatus", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeServiceLinkedRoleStatus", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

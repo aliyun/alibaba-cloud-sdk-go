@@ -91,7 +91,7 @@ func CreateGetSuspiciousStatisticsRequest() (request *GetSuspiciousStatisticsReq
 	request = &GetSuspiciousStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "GetSuspiciousStatistics", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "GetSuspiciousStatistics", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

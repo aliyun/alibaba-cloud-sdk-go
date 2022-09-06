@@ -88,7 +88,7 @@ func CreateDescribeScanTaskProgressRequest() (request *DescribeScanTaskProgressR
 	request = &DescribeScanTaskProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeScanTaskProgress", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeScanTaskProgress", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

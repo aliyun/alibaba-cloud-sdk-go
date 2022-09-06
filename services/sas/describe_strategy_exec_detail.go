@@ -96,7 +96,7 @@ func CreateDescribeStrategyExecDetailRequest() (request *DescribeStrategyExecDet
 	request = &DescribeStrategyExecDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeStrategyExecDetail", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeStrategyExecDetail", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

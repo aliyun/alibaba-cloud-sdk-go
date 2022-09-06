@@ -86,7 +86,7 @@ func CreateRefreshAssetsRequest() (request *RefreshAssetsRequest) {
 	request = &RefreshAssetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "RefreshAssets", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "RefreshAssets", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

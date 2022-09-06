@@ -90,7 +90,7 @@ func CreateDescribeModuleConfigRequest() (request *DescribeModuleConfigRequest) 
 	request = &DescribeModuleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeModuleConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeModuleConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

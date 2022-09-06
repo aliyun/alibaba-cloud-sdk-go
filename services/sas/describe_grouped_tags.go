@@ -90,7 +90,7 @@ func CreateDescribeGroupedTagsRequest() (request *DescribeGroupedTagsRequest) {
 	request = &DescribeGroupedTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedTags", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedTags", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

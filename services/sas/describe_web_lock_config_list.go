@@ -89,7 +89,7 @@ func CreateDescribeWebLockConfigListRequest() (request *DescribeWebLockConfigLis
 	request = &DescribeWebLockConfigListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWebLockConfigList", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWebLockConfigList", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

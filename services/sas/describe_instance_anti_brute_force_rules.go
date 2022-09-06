@@ -89,7 +89,7 @@ func CreateDescribeInstanceAntiBruteForceRulesRequest() (request *DescribeInstan
 	request = &DescribeInstanceAntiBruteForceRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeInstanceAntiBruteForceRules", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeInstanceAntiBruteForceRules", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

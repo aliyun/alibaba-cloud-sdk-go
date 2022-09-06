@@ -86,7 +86,7 @@ func CreateRefreshContainerAssetsRequest() (request *RefreshContainerAssetsReque
 	request = &RefreshContainerAssetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "RefreshContainerAssets", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "RefreshContainerAssets", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

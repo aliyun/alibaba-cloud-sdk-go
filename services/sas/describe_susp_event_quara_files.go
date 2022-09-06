@@ -97,7 +97,7 @@ func CreateDescribeSuspEventQuaraFilesRequest() (request *DescribeSuspEventQuara
 	request = &DescribeSuspEventQuaraFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSuspEventQuaraFiles", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSuspEventQuaraFiles", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateStartBaselineSecurityCheckRequest() (request *StartBaselineSecurityCh
 	request = &StartBaselineSecurityCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "StartBaselineSecurityCheck", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "StartBaselineSecurityCheck", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

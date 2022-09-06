@@ -87,7 +87,7 @@ func CreateDescribeExposedInstanceDetailRequest() (request *DescribeExposedInsta
 	request = &DescribeExposedInstanceDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeExposedInstanceDetail", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeExposedInstanceDetail", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

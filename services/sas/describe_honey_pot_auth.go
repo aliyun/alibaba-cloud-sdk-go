@@ -87,7 +87,7 @@ func CreateDescribeHoneyPotAuthRequest() (request *DescribeHoneyPotAuthRequest) 
 	request = &DescribeHoneyPotAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeHoneyPotAuth", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeHoneyPotAuth", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

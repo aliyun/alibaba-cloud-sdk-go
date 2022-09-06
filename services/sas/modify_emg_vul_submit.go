@@ -88,7 +88,7 @@ func CreateModifyEmgVulSubmitRequest() (request *ModifyEmgVulSubmitRequest) {
 	request = &ModifyEmgVulSubmitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyEmgVulSubmit", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyEmgVulSubmit", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

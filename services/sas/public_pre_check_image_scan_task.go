@@ -94,7 +94,7 @@ func CreatePublicPreCheckImageScanTaskRequest() (request *PublicPreCheckImageSca
 	request = &PublicPreCheckImageScanTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "PublicPreCheckImageScanTask", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "PublicPreCheckImageScanTask", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

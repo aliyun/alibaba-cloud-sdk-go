@@ -121,7 +121,7 @@ func CreateDescribeImageGroupedVulListRequest() (request *DescribeImageGroupedVu
 	request = &DescribeImageGroupedVulListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageGroupedVulList", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageGroupedVulList", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

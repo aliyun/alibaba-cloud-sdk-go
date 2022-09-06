@@ -86,7 +86,7 @@ func CreateRebootMachineRequest() (request *RebootMachineRequest) {
 	request = &RebootMachineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "RebootMachine", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "RebootMachine", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

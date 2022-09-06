@@ -103,7 +103,7 @@ func CreateDescribeCheckWarningSummaryRequest() (request *DescribeCheckWarningSu
 	request = &DescribeCheckWarningSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckWarningSummary", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckWarningSummary", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

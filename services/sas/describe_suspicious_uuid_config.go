@@ -90,7 +90,7 @@ func CreateDescribeSuspiciousUUIDConfigRequest() (request *DescribeSuspiciousUUI
 	request = &DescribeSuspiciousUUIDConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSuspiciousUUIDConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSuspiciousUUIDConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

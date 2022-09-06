@@ -88,7 +88,7 @@ func CreateDescribeSecurityCheckScheduleConfigRequest() (request *DescribeSecuri
 	request = &DescribeSecurityCheckScheduleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecurityCheckScheduleConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecurityCheckScheduleConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

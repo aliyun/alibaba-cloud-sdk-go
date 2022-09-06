@@ -90,7 +90,7 @@ func CreateFixCheckWarningsRequest() (request *FixCheckWarningsRequest) {
 	request = &FixCheckWarningsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "FixCheckWarnings", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "FixCheckWarnings", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

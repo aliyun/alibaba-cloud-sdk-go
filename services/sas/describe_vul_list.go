@@ -116,7 +116,7 @@ func CreateDescribeVulListRequest() (request *DescribeVulListRequest) {
 	request = &DescribeVulListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVulList", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVulList", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

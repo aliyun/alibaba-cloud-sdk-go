@@ -88,7 +88,7 @@ func CreateCheckSecurityEventIdRequest() (request *CheckSecurityEventIdRequest) 
 	request = &CheckSecurityEventIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CheckSecurityEventId", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CheckSecurityEventId", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

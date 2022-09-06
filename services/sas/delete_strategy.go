@@ -88,7 +88,7 @@ func CreateDeleteStrategyRequest() (request *DeleteStrategyRequest) {
 	request = &DeleteStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DeleteStrategy", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DeleteStrategy", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

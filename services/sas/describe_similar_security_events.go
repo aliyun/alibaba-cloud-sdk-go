@@ -92,7 +92,7 @@ func CreateDescribeSimilarSecurityEventsRequest() (request *DescribeSimilarSecur
 	request = &DescribeSimilarSecurityEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSimilarSecurityEvents", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSimilarSecurityEvents", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateDescribeLogstoreStorageRequest() (request *DescribeLogstoreStorageReq
 	request = &DescribeLogstoreStorageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeLogstoreStorage", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeLogstoreStorage", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

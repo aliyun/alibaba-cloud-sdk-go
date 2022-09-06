@@ -93,7 +93,7 @@ func CreateDescribeVpcHoneyPotListRequest() (request *DescribeVpcHoneyPotListReq
 	request = &DescribeVpcHoneyPotListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVpcHoneyPotList", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVpcHoneyPotList", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

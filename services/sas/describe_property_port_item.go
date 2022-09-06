@@ -91,7 +91,7 @@ func CreateDescribePropertyPortItemRequest() (request *DescribePropertyPortItemR
 	request = &DescribePropertyPortItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyPortItem", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyPortItem", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -96,7 +96,7 @@ func CreateDescribeWebLockFileEventsRequest() (request *DescribeWebLockFileEvent
 	request = &DescribeWebLockFileEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWebLockFileEvents", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWebLockFileEvents", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateDescribeEmgVulItemRequest() (request *DescribeEmgVulItemRequest) {
 	request = &DescribeEmgVulItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeEmgVulItem", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeEmgVulItem", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

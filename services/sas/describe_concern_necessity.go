@@ -88,7 +88,7 @@ func CreateDescribeConcernNecessityRequest() (request *DescribeConcernNecessityR
 	request = &DescribeConcernNecessityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeConcernNecessity", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeConcernNecessity", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

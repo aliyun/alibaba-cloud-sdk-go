@@ -91,7 +91,7 @@ func CreateCheckUserHasEcsRequest() (request *CheckUserHasEcsRequest) {
 	request = &CheckUserHasEcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CheckUserHasEcs", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CheckUserHasEcs", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }
