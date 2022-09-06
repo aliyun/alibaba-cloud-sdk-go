@@ -117,6 +117,11 @@ type DescribeDtsJobDetailResponse struct {
 	JobType                   string                    `json:"JobType" xml:"JobType"`
 	TaskType                  string                    `json:"TaskType" xml:"TaskType"`
 	DedicatedClusterId        string                    `json:"DedicatedClusterId" xml:"DedicatedClusterId"`
+	BootTime                  string                    `json:"BootTime" xml:"BootTime"`
+	Binlog                    string                    `json:"Binlog" xml:"Binlog"`
+	BinlogSite                string                    `json:"BinlogSite" xml:"BinlogSite"`
+	BinlogTime                string                    `json:"BinlogTime" xml:"BinlogTime"`
+	LastUpdateTime            string                    `json:"LastUpdateTime" xml:"LastUpdateTime"`
 	SourceEndpoint            SourceEndpoint            `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	DestinationEndpoint       DestinationEndpoint       `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
 	MigrationMode             MigrationMode             `json:"MigrationMode" xml:"MigrationMode"`

@@ -76,6 +76,7 @@ type DescribeDtsJobsRequest struct {
 	Type               string           `position:"Query" name:"Type"`
 	PageNumber         requests.Integer `position:"Query" name:"PageNumber"`
 	OrderColumn        string           `position:"Query" name:"OrderColumn"`
+	ResourceGroupId    string           `position:"Query" name:"ResourceGroupId"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 	DtsJobId           string           `position:"Query" name:"DtsJobId"`
 	OriginType         string           `position:"Query" name:"OriginType"`

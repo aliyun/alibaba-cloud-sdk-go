@@ -28,6 +28,7 @@ type DtsJobStatus struct {
 	ConsumptionClient             string                          `json:"ConsumptionClient" xml:"ConsumptionClient"`
 	Reserved                      string                          `json:"Reserved" xml:"Reserved"`
 	DbObject                      string                          `json:"DbObject" xml:"DbObject"`
+	ResourceGroupId               string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DtsJobId                      string                          `json:"DtsJobId" xml:"DtsJobId"`
 	Delay                         int64                           `json:"Delay" xml:"Delay"`
 	ExpireTime                    string                          `json:"ExpireTime" xml:"ExpireTime"`
