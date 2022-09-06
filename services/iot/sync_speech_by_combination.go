@@ -71,15 +71,16 @@ func (client *Client) SyncSpeechByCombinationWithCallback(request *SyncSpeechByC
 // SyncSpeechByCombinationRequest is the request struct for api SyncSpeechByCombination
 type SyncSpeechByCombinationRequest struct {
 	*requests.RpcRequest
-	SpeechId        string    `position:"Body" name:"SpeechId"`
-	AudioFormat     string    `position:"Body" name:"AudioFormat"`
-	IotId           string    `position:"Body" name:"IotId"`
-	CombinationList *[]string `position:"Body" name:"CombinationList"  type:"Repeated"`
-	IotInstanceId   string    `position:"Body" name:"IotInstanceId"`
-	ProductKey      string    `position:"Body" name:"ProductKey"`
-	ApiProduct      string    `position:"Body" name:"ApiProduct"`
-	ApiRevision     string    `position:"Body" name:"ApiRevision"`
-	DeviceName      string    `position:"Body" name:"DeviceName"`
+	SpeechId        string           `position:"Body" name:"SpeechId"`
+	AudioFormat     string           `position:"Body" name:"AudioFormat"`
+	IotId           string           `position:"Body" name:"IotId"`
+	CombinationList *[]string        `position:"Body" name:"CombinationList"  type:"Repeated"`
+	IotInstanceId   string           `position:"Body" name:"IotInstanceId"`
+	EnforceFlag     requests.Boolean `position:"Body" name:"EnforceFlag"`
+	ProductKey      string           `position:"Body" name:"ProductKey"`
+	ApiProduct      string           `position:"Body" name:"ApiProduct"`
+	ApiRevision     string           `position:"Body" name:"ApiRevision"`
+	DeviceName      string           `position:"Body" name:"DeviceName"`
 }
 
 // SyncSpeechByCombinationResponse is the response struct for api SyncSpeechByCombination

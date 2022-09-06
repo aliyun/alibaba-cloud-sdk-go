@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BindLicenseDevice invokes the iot.BindLicenseDevice API synchronously
-func (client *Client) BindLicenseDevice(request *BindLicenseDeviceRequest) (response *BindLicenseDeviceResponse, err error) {
-	response = CreateBindLicenseDeviceResponse()
+// ReBindLicenseDevice invokes the iot.ReBindLicenseDevice API synchronously
+func (client *Client) ReBindLicenseDevice(request *ReBindLicenseDeviceRequest) (response *ReBindLicenseDeviceResponse, err error) {
+	response = CreateReBindLicenseDeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BindLicenseDeviceWithChan invokes the iot.BindLicenseDevice API asynchronously
-func (client *Client) BindLicenseDeviceWithChan(request *BindLicenseDeviceRequest) (<-chan *BindLicenseDeviceResponse, <-chan error) {
-	responseChan := make(chan *BindLicenseDeviceResponse, 1)
+// ReBindLicenseDeviceWithChan invokes the iot.ReBindLicenseDevice API asynchronously
+func (client *Client) ReBindLicenseDeviceWithChan(request *ReBindLicenseDeviceRequest) (<-chan *ReBindLicenseDeviceResponse, <-chan error) {
+	responseChan := make(chan *ReBindLicenseDeviceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BindLicenseDevice(request)
+		response, err := client.ReBindLicenseDevice(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) BindLicenseDeviceWithChan(request *BindLicenseDeviceReques
 	return responseChan, errChan
 }
 
-// BindLicenseDeviceWithCallback invokes the iot.BindLicenseDevice API asynchronously
-func (client *Client) BindLicenseDeviceWithCallback(request *BindLicenseDeviceRequest, callback func(response *BindLicenseDeviceResponse, err error)) <-chan int {
+// ReBindLicenseDeviceWithCallback invokes the iot.ReBindLicenseDevice API asynchronously
+func (client *Client) ReBindLicenseDeviceWithCallback(request *ReBindLicenseDeviceRequest, callback func(response *ReBindLicenseDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BindLicenseDeviceResponse
+		var response *ReBindLicenseDeviceResponse
 		var err error
 		defer close(result)
-		response, err = client.BindLicenseDevice(request)
+		response, err = client.ReBindLicenseDevice(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,20 +68,19 @@ func (client *Client) BindLicenseDeviceWithCallback(request *BindLicenseDeviceRe
 	return result
 }
 
-// BindLicenseDeviceRequest is the request struct for api BindLicenseDevice
-type BindLicenseDeviceRequest struct {
+// ReBindLicenseDeviceRequest is the request struct for api ReBindLicenseDevice
+type ReBindLicenseDeviceRequest struct {
 	*requests.RpcRequest
 	DeviceNameList *[]string `position:"Body" name:"DeviceNameList"  type:"Repeated"`
 	IotInstanceId  string    `position:"Query" name:"IotInstanceId"`
-	IotIdList      *[]string `position:"Body" name:"IotIdList"  type:"Repeated"`
 	ProductKey     string    `position:"Query" name:"ProductKey"`
 	ApiProduct     string    `position:"Body" name:"ApiProduct"`
 	ApiRevision    string    `position:"Body" name:"ApiRevision"`
 	LicenseCode    string    `position:"Query" name:"LicenseCode"`
 }
 
-// BindLicenseDeviceResponse is the response struct for api BindLicenseDevice
-type BindLicenseDeviceResponse struct {
+// ReBindLicenseDeviceResponse is the response struct for api ReBindLicenseDevice
+type ReBindLicenseDeviceResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
@@ -90,19 +89,19 @@ type BindLicenseDeviceResponse struct {
 	Data         Data   `json:"Data" xml:"Data"`
 }
 
-// CreateBindLicenseDeviceRequest creates a request to invoke BindLicenseDevice API
-func CreateBindLicenseDeviceRequest() (request *BindLicenseDeviceRequest) {
-	request = &BindLicenseDeviceRequest{
+// CreateReBindLicenseDeviceRequest creates a request to invoke ReBindLicenseDevice API
+func CreateReBindLicenseDeviceRequest() (request *ReBindLicenseDeviceRequest) {
+	request = &ReBindLicenseDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindLicenseDevice", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ReBindLicenseDevice", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateBindLicenseDeviceResponse creates a response to parse from BindLicenseDevice response
-func CreateBindLicenseDeviceResponse() (response *BindLicenseDeviceResponse) {
-	response = &BindLicenseDeviceResponse{
+// CreateReBindLicenseDeviceResponse creates a response to parse from ReBindLicenseDevice response
+func CreateReBindLicenseDeviceResponse() (response *ReBindLicenseDeviceResponse) {
+	response = &ReBindLicenseDeviceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

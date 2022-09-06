@@ -1,3 +1,7 @@
+2022-09-06 Version: v1.61.1762
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 old version sdk.
+
 2022-09-06 Version: v1.61.1761
 - Generated 2020-01-01 for `Dts`.
 - DTS SDK.

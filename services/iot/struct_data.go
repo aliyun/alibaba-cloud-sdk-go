@@ -44,6 +44,7 @@ type Data struct {
 	Versions                  string                                          `json:"Versions" xml:"Versions"`
 	TotalCount                int64                                           `json:"TotalCount" xml:"TotalCount"`
 	TslUri                    string                                          `json:"TslUri" xml:"TslUri"`
+	Code                      string                                          `json:"Code" xml:"Code"`
 	CsvUrl                    string                                          `json:"CsvUrl" xml:"CsvUrl"`
 	OssAddress                string                                          `json:"OssAddress" xml:"OssAddress"`
 	FirmwareId                string                                          `json:"FirmwareId" xml:"FirmwareId"`
@@ -91,6 +92,7 @@ type Data struct {
 	Ip                        string                                          `json:"Ip" xml:"Ip"`
 	ScriptType                string                                          `json:"ScriptType" xml:"ScriptType"`
 	PageNum                   int                                             `json:"PageNum" xml:"PageNum"`
+	AvailableQuota            int                                             `json:"AvailableQuota" xml:"AvailableQuota"`
 	AccessKeyId               string                                          `json:"AccessKeyId" xml:"AccessKeyId"`
 	EdgeVersion               string                                          `json:"EdgeVersion" xml:"EdgeVersion"`
 	JoinEui                   string                                          `json:"JoinEui" xml:"JoinEui"`
@@ -107,6 +109,7 @@ type Data struct {
 	DataFormat                int                                             `json:"DataFormat" xml:"DataFormat"`
 	BizEnable                 bool                                            `json:"BizEnable" xml:"BizEnable"`
 	GmtCompleted              string                                          `json:"GmtCompleted" xml:"GmtCompleted"`
+	ProgressId                string                                          `json:"ProgressId" xml:"ProgressId"`
 	UtcCreate                 string                                          `json:"UtcCreate" xml:"UtcCreate"`
 	Latitude                  float64                                         `json:"Latitude" xml:"Latitude"`
 	EndTime                   int64                                           `json:"EndTime" xml:"EndTime"`
@@ -129,6 +132,7 @@ type Data struct {
 	ResultCsvFile             string                                          `json:"ResultCsvFile" xml:"ResultCsvFile"`
 	AuthMode                  int                                             `json:"AuthMode" xml:"AuthMode"`
 	UtcCreatedOn              string                                          `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
+	ExpiredQuota              int                                             `json:"ExpiredQuota" xml:"ExpiredQuota"`
 	Longitude                 float64                                         `json:"Longitude" xml:"Longitude"`
 	Province                  string                                          `json:"Province" xml:"Province"`
 	AppId                     string                                          `json:"AppId" xml:"AppId"`
@@ -176,6 +180,7 @@ type Data struct {
 	GroupDesc                 string                                          `json:"GroupDesc" xml:"GroupDesc"`
 	Argument                  string                                          `json:"Argument" xml:"Argument"`
 	SpeechRate                int                                             `json:"SpeechRate" xml:"SpeechRate"`
+	ExpiringQuota             int                                             `json:"ExpiringQuota" xml:"ExpiringQuota"`
 	TunnelState               string                                          `json:"TunnelState" xml:"TunnelState"`
 	InvalidDeviceNameList     InvalidDeviceNameListInBatchCheckDeviceNames    `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
 	InvalidSnList             InvalidSnListInBatchCheckImportDevice           `json:"InvalidSnList" xml:"InvalidSnList"`
