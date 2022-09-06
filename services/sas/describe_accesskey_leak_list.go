@@ -96,7 +96,7 @@ func CreateDescribeAccesskeyLeakListRequest() (request *DescribeAccesskeyLeakLis
 	request = &DescribeAccesskeyLeakListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAccesskeyLeakList", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAccesskeyLeakList", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

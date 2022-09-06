@@ -86,7 +86,7 @@ func CreateDescribeAssetSummaryRequest() (request *DescribeAssetSummaryRequest) 
 	request = &DescribeAssetSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAssetSummary", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAssetSummary", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

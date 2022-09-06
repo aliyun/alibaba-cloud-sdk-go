@@ -85,7 +85,7 @@ func CreateCreateServiceLinkedRoleRequest() (request *CreateServiceLinkedRoleReq
 	request = &CreateServiceLinkedRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateServiceLinkedRole", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateServiceLinkedRole", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

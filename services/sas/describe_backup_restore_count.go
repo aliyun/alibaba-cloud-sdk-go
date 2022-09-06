@@ -87,7 +87,7 @@ func CreateDescribeBackupRestoreCountRequest() (request *DescribeBackupRestoreCo
 	request = &DescribeBackupRestoreCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeBackupRestoreCount", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeBackupRestoreCount", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

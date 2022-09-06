@@ -88,7 +88,7 @@ func CreatePauseClientRequest() (request *PauseClientRequest) {
 	request = &PauseClientRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "PauseClient", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "PauseClient", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

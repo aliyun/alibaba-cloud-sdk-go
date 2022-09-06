@@ -86,7 +86,7 @@ func CreateDescribeImageScanAuthCountRequest() (request *DescribeImageScanAuthCo
 	request = &DescribeImageScanAuthCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageScanAuthCount", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageScanAuthCount", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

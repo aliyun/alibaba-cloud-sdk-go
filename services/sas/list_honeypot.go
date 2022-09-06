@@ -97,7 +97,7 @@ func CreateListHoneypotRequest() (request *ListHoneypotRequest) {
 	request = &ListHoneypotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ListHoneypot", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ListHoneypot", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

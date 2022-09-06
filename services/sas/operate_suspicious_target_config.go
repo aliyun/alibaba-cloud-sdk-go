@@ -90,7 +90,7 @@ func CreateOperateSuspiciousTargetConfigRequest() (request *OperateSuspiciousTar
 	request = &OperateSuspiciousTargetConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "OperateSuspiciousTargetConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "OperateSuspiciousTargetConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

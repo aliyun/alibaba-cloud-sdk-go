@@ -92,7 +92,7 @@ func CreateHandleSecurityEventsRequest() (request *HandleSecurityEventsRequest) 
 	request = &HandleSecurityEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "HandleSecurityEvents", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "HandleSecurityEvents", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

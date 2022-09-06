@@ -102,7 +102,7 @@ func CreateDescribeWarningMachinesRequest() (request *DescribeWarningMachinesReq
 	request = &DescribeWarningMachinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWarningMachines", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWarningMachines", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

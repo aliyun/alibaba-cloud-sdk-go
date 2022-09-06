@@ -102,7 +102,7 @@ func CreateDescribeGroupedMaliciousFilesRequest() (request *DescribeGroupedMalic
 	request = &DescribeGroupedMaliciousFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedMaliciousFiles", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedMaliciousFiles", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

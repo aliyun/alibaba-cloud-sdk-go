@@ -98,7 +98,7 @@ func CreateDescribeImageListWithBaselineNameRequest() (request *DescribeImageLis
 	request = &DescribeImageListWithBaselineNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageListWithBaselineName", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeImageListWithBaselineName", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateOperateSuspiciousOverallConfigRequest() (request *OperateSuspiciousOv
 	request = &OperateSuspiciousOverallConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "OperateSuspiciousOverallConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "OperateSuspiciousOverallConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

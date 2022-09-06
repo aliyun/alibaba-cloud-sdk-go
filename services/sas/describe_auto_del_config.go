@@ -87,7 +87,7 @@ func CreateDescribeAutoDelConfigRequest() (request *DescribeAutoDelConfigRequest
 	request = &DescribeAutoDelConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAutoDelConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAutoDelConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

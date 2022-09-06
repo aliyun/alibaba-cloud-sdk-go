@@ -96,7 +96,7 @@ func CreateDescribePropertyUserDetailRequest() (request *DescribePropertyUserDet
 	request = &DescribePropertyUserDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyUserDetail", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyUserDetail", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

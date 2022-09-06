@@ -88,7 +88,7 @@ func CreateModifyPropertyScheduleConfigRequest() (request *ModifyPropertySchedul
 	request = &ModifyPropertyScheduleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyPropertyScheduleConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyPropertyScheduleConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

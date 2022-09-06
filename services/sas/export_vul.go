@@ -114,7 +114,7 @@ func CreateExportVulRequest() (request *ExportVulRequest) {
 	request = &ExportVulRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ExportVul", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ExportVul", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

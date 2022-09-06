@@ -93,7 +93,7 @@ func CreateCreateHoneypotNodeRequest() (request *CreateHoneypotNodeRequest) {
 	request = &CreateHoneypotNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateHoneypotNode", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateHoneypotNode", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

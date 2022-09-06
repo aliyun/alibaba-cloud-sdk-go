@@ -89,7 +89,7 @@ func CreateCreateFileDetectRequest() (request *CreateFileDetectRequest) {
 	request = &CreateFileDetectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateFileDetect", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateFileDetect", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

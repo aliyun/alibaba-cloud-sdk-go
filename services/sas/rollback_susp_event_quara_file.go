@@ -87,7 +87,7 @@ func CreateRollbackSuspEventQuaraFileRequest() (request *RollbackSuspEventQuaraF
 	request = &RollbackSuspEventQuaraFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "RollbackSuspEventQuaraFile", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "RollbackSuspEventQuaraFile", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

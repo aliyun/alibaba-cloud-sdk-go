@@ -87,7 +87,7 @@ func CreateGetBackupStorageCountRequest() (request *GetBackupStorageCountRequest
 	request = &GetBackupStorageCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "GetBackupStorageCount", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "GetBackupStorageCount", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

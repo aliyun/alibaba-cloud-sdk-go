@@ -89,7 +89,7 @@ func CreateModifyOperateVulRequest() (request *ModifyOperateVulRequest) {
 	request = &ModifyOperateVulRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyOperateVul", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyOperateVul", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

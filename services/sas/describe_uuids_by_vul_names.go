@@ -101,7 +101,7 @@ func CreateDescribeUuidsByVulNamesRequest() (request *DescribeUuidsByVulNamesReq
 	request = &DescribeUuidsByVulNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeUuidsByVulNames", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeUuidsByVulNames", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

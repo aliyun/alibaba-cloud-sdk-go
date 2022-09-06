@@ -101,7 +101,7 @@ func CreateExportWarningRequest() (request *ExportWarningRequest) {
 	request = &ExportWarningRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ExportWarning", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ExportWarning", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

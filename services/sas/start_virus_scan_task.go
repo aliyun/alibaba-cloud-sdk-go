@@ -87,7 +87,7 @@ func CreateStartVirusScanTaskRequest() (request *StartVirusScanTaskRequest) {
 	request = &StartVirusScanTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "StartVirusScanTask", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "StartVirusScanTask", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

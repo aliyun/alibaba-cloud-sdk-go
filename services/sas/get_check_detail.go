@@ -90,7 +90,7 @@ func CreateGetCheckDetailRequest() (request *GetCheckDetailRequest) {
 	request = &GetCheckDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "GetCheckDetail", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "GetCheckDetail", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

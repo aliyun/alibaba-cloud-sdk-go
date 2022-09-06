@@ -90,7 +90,7 @@ func CreateDescribeRiskTypeRequest() (request *DescribeRiskTypeRequest) {
 	request = &DescribeRiskTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskType", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskType", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

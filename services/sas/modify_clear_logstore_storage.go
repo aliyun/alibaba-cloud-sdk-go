@@ -89,7 +89,7 @@ func CreateModifyClearLogstoreStorageRequest() (request *ModifyClearLogstoreStor
 	request = &ModifyClearLogstoreStorageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyClearLogstoreStorage", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyClearLogstoreStorage", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

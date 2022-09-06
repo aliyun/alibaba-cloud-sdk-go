@@ -98,7 +98,7 @@ func CreateCreateVulAutoRepairConfigRequest() (request *CreateVulAutoRepairConfi
 	request = &CreateVulAutoRepairConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateVulAutoRepairConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateVulAutoRepairConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateModifyRiskSingleResultStatusRequest() (request *ModifyRiskSingleResul
 	request = &ModifyRiskSingleResultStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyRiskSingleResultStatus", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyRiskSingleResultStatus", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

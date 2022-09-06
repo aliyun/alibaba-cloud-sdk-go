@@ -91,7 +91,7 @@ func CreateCreateBackupPolicyRequest() (request *CreateBackupPolicyRequest) {
 	request = &CreateBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateBackupPolicy", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateBackupPolicy", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

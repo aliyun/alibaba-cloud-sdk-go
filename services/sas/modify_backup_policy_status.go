@@ -89,7 +89,7 @@ func CreateModifyBackupPolicyStatusRequest() (request *ModifyBackupPolicyStatusR
 	request = &ModifyBackupPolicyStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyBackupPolicyStatus", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyBackupPolicyStatus", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

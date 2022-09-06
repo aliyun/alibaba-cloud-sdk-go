@@ -89,7 +89,7 @@ func CreateUninstallBackupClientRequest() (request *UninstallBackupClientRequest
 	request = &UninstallBackupClientRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "UninstallBackupClient", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "UninstallBackupClient", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

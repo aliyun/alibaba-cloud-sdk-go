@@ -97,7 +97,7 @@ func CreateDescribeOnceTaskRequest() (request *DescribeOnceTaskRequest) {
 	request = &DescribeOnceTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeOnceTask", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeOnceTask", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

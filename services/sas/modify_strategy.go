@@ -97,7 +97,7 @@ func CreateModifyStrategyRequest() (request *ModifyStrategyRequest) {
 	request = &ModifyStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyStrategy", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyStrategy", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

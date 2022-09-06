@@ -89,7 +89,7 @@ func CreateInstallBackupClientRequest() (request *InstallBackupClientRequest) {
 	request = &InstallBackupClientRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "InstallBackupClient", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "InstallBackupClient", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateDescribeWebLockBindListRequest() (request *DescribeWebLockBindListReq
 	request = &DescribeWebLockBindListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWebLockBindList", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWebLockBindList", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

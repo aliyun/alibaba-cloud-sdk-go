@@ -97,7 +97,7 @@ func CreateDescribePropertyProcDetailRequest() (request *DescribePropertyProcDet
 	request = &DescribePropertyProcDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyProcDetail", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyProcDetail", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

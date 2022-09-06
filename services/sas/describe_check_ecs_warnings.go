@@ -88,7 +88,7 @@ func CreateDescribeCheckEcsWarningsRequest() (request *DescribeCheckEcsWarningsR
 	request = &DescribeCheckEcsWarningsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckEcsWarnings", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckEcsWarnings", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

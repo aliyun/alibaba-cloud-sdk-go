@@ -90,7 +90,7 @@ func CreateIgnoreHcCheckWarningsRequest() (request *IgnoreHcCheckWarningsRequest
 	request = &IgnoreHcCheckWarningsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "IgnoreHcCheckWarnings", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "IgnoreHcCheckWarnings", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

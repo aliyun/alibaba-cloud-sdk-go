@@ -90,7 +90,7 @@ func CreateOperationCancelIgnoreSuspEventRequest() (request *OperationCancelIgno
 	request = &OperationCancelIgnoreSuspEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "OperationCancelIgnoreSuspEvent", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "OperationCancelIgnoreSuspEvent", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

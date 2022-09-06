@@ -87,7 +87,7 @@ func CreateDeleteTagWithUuidRequest() (request *DeleteTagWithUuidRequest) {
 	request = &DeleteTagWithUuidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DeleteTagWithUuid", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DeleteTagWithUuid", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

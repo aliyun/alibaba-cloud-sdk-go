@@ -92,7 +92,7 @@ func CreateDescribeExposedStatisticsDetailRequest() (request *DescribeExposedSta
 	request = &DescribeExposedStatisticsDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeExposedStatisticsDetail", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeExposedStatisticsDetail", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

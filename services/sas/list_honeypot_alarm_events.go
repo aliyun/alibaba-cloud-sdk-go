@@ -93,7 +93,7 @@ func CreateListHoneypotAlarmEventsRequest() (request *ListHoneypotAlarmEventsReq
 	request = &ListHoneypotAlarmEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ListHoneypotAlarmEvents", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ListHoneypotAlarmEvents", "sas", "openAPI")
 	request.Method = requests.GET
 	return
 }

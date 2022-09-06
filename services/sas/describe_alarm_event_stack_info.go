@@ -90,7 +90,7 @@ func CreateDescribeAlarmEventStackInfoRequest() (request *DescribeAlarmEventStac
 	request = &DescribeAlarmEventStackInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAlarmEventStackInfo", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAlarmEventStackInfo", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

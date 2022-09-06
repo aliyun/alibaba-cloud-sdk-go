@@ -97,7 +97,7 @@ func CreateDescribeAttackAnalysisDataRequest() (request *DescribeAttackAnalysisD
 	request = &DescribeAttackAnalysisDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAttackAnalysisData", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAttackAnalysisData", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

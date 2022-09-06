@@ -88,7 +88,7 @@ func CreateOperateCommonOverallConfigRequest() (request *OperateCommonOverallCon
 	request = &OperateCommonOverallConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "OperateCommonOverallConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "OperateCommonOverallConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

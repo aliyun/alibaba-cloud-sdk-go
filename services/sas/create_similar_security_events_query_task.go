@@ -89,7 +89,7 @@ func CreateCreateSimilarSecurityEventsQueryTaskRequest() (request *CreateSimilar
 	request = &CreateSimilarSecurityEventsQueryTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateSimilarSecurityEventsQueryTask", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateSimilarSecurityEventsQueryTask", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

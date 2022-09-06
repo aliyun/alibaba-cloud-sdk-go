@@ -90,7 +90,7 @@ func CreateCreateSuspEventNoteRequest() (request *CreateSuspEventNoteRequest) {
 	request = &CreateSuspEventNoteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateSuspEventNote", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateSuspEventNote", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

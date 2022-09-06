@@ -101,7 +101,7 @@ func CreateDescribeAffectedMaliciousFileImagesRequest() (request *DescribeAffect
 	request = &DescribeAffectedMaliciousFileImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAffectedMaliciousFileImages", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAffectedMaliciousFileImages", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

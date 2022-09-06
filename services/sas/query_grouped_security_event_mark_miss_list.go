@@ -100,7 +100,7 @@ func CreateQueryGroupedSecurityEventMarkMissListRequest() (request *QueryGrouped
 	request = &QueryGroupedSecurityEventMarkMissListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "QueryGroupedSecurityEventMarkMissList", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "QueryGroupedSecurityEventMarkMissList", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

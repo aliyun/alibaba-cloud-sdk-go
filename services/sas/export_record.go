@@ -90,7 +90,7 @@ func CreateExportRecordRequest() (request *ExportRecordRequest) {
 	request = &ExportRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ExportRecord", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ExportRecord", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

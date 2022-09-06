@@ -89,7 +89,7 @@ func CreateCreateOrUpdateAssetGroupRequest() (request *CreateOrUpdateAssetGroupR
 	request = &CreateOrUpdateAssetGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "CreateOrUpdateAssetGroup", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "CreateOrUpdateAssetGroup", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

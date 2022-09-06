@@ -88,7 +88,7 @@ func CreateDescribeUserLayoutAuthorizationRequest() (request *DescribeUserLayout
 	request = &DescribeUserLayoutAuthorizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeUserLayoutAuthorization", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeUserLayoutAuthorization", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateModifyWebLockUpdateConfigRequest() (request *ModifyWebLockUpdateConfi
 	request = &ModifyWebLockUpdateConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyWebLockUpdateConfig", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyWebLockUpdateConfig", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }

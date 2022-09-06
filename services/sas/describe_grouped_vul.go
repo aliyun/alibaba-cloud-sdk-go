@@ -106,7 +106,7 @@ func CreateDescribeGroupedVulRequest() (request *DescribeGroupedVulRequest) {
 	request = &DescribeGroupedVulRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedVul", "", "")
+	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedVul", "sas", "openAPI")
 	request.Method = requests.POST
 	return
 }
