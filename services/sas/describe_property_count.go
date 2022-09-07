@@ -79,18 +79,14 @@ type DescribePropertyCountRequest struct {
 // DescribePropertyCountResponse is the response struct for api DescribePropertyCount
 type DescribePropertyCountResponse struct {
 	*responses.BaseResponse
-	Process   int    `json:"Process" xml:"Process"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	User      int    `json:"User" xml:"User"`
-	Software  int    `json:"Software" xml:"Software"`
-	Cron      int    `json:"Cron" xml:"Cron"`
 	Port      int    `json:"Port" xml:"Port"`
+	Process   int    `json:"Process" xml:"Process"`
+	Software  int    `json:"Software" xml:"Software"`
+	User      int    `json:"User" xml:"User"`
+	Cron      int    `json:"Cron" xml:"Cron"`
 	Sca       int    `json:"Sca" xml:"Sca"`
-	Web       int    `json:"Web" xml:"Web"`
-	Database  int    `json:"Database" xml:"Database"`
-	Lkm       int    `json:"Lkm" xml:"Lkm"`
-	Autorun   int    `json:"Autorun" xml:"Autorun"`
-	Webserver int    `json:"Webserver" xml:"Webserver"`
+	AutoRun   int    `json:"AutoRun" xml:"AutoRun"`
 }
 
 // CreateDescribePropertyCountRequest creates a request to invoke DescribePropertyCount API

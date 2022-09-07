@@ -17,16 +17,16 @@ package sas
 
 // PropertyPort is a nested struct in sas response
 type PropertyPort struct {
-	InternetIp      string `json:"InternetIp" xml:"InternetIp"`
-	Pid             string `json:"Pid" xml:"Pid"`
 	BindIp          string `json:"BindIp" xml:"BindIp"`
-	Ip              string `json:"Ip" xml:"Ip"`
-	ProcName        string `json:"ProcName" xml:"ProcName"`
-	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
 	Port            string `json:"Port" xml:"Port"`
-	IntranetIp      string `json:"IntranetIp" xml:"IntranetIp"`
-	Uuid            string `json:"Uuid" xml:"Uuid"`
 	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
 	Proto           string `json:"Proto" xml:"Proto"`
+	Ip              string `json:"Ip" xml:"Ip"`
+	Create          string `json:"Create" xml:"Create"`
 	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	ProcName        string `json:"ProcName" xml:"ProcName"`
+	Uuid            string `json:"Uuid" xml:"Uuid"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	IntranetIp      string `json:"IntranetIp" xml:"IntranetIp"`
+	InternetIp      string `json:"InternetIp" xml:"InternetIp"`
 }

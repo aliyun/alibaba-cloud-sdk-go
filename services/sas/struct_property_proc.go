@@ -17,22 +17,20 @@ package sas
 
 // PropertyProc is a nested struct in sas response
 type PropertyProc struct {
-	InternetIp      string `json:"InternetIp" xml:"InternetIp"`
-	Pid             string `json:"Pid" xml:"Pid"`
-	User            string `json:"User" xml:"User"`
-	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-	Cmdline         string `json:"Cmdline" xml:"Cmdline"`
-	IntranetIp      string `json:"IntranetIp" xml:"IntranetIp"`
-	EuidName        string `json:"EuidName" xml:"EuidName"`
-	Uuid            string `json:"Uuid" xml:"Uuid"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
 	Pname           string `json:"Pname" xml:"Pname"`
+	EuidName        string `json:"EuidName" xml:"EuidName"`
 	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
+	Pid             string `json:"Pid" xml:"Pid"`
 	Path            string `json:"Path" xml:"Path"`
-	Md5             string `json:"Md5" xml:"Md5"`
+	Cmdline         string `json:"Cmdline" xml:"Cmdline"`
 	Name            string `json:"Name" xml:"Name"`
+	User            string `json:"User" xml:"User"`
+	Md5             string `json:"Md5" xml:"Md5"`
+	Create          string `json:"Create" xml:"Create"`
 	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	StartTimeDt     int64  `json:"StartTimeDt" xml:"StartTimeDt"`
-	IsPackage       int    `json:"IsPackage" xml:"IsPackage"`
-	State           string `json:"State" xml:"State"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	Uuid            string `json:"Uuid" xml:"Uuid"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	IntranetIp      string `json:"IntranetIp" xml:"IntranetIp"`
+	InternetIp      string `json:"InternetIp" xml:"InternetIp"`
 }

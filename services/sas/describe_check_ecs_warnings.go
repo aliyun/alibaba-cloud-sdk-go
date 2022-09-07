@@ -72,15 +72,16 @@ func (client *Client) DescribeCheckEcsWarningsWithCallback(request *DescribeChec
 type DescribeCheckEcsWarningsRequest struct {
 	*requests.RpcRequest
 	SourceIp string `position:"Query" name:"SourceIp"`
+	UuidList string `position:"Query" name:"UuidList"`
 }
 
 // DescribeCheckEcsWarningsResponse is the response struct for api DescribeCheckEcsWarnings
 type DescribeCheckEcsWarningsResponse struct {
 	*responses.BaseResponse
-	SasVersion        string `json:"SasVersion" xml:"SasVersion"`
-	CanTry            string `json:"CanTry" xml:"CanTry"`
-	WeakPasswordCount string `json:"WeakPasswordCount" xml:"WeakPasswordCount"`
 	RequestId         string `json:"RequestId" xml:"RequestId"`
+	CanTry            string `json:"CanTry" xml:"CanTry"`
+	SasVersion        string `json:"SasVersion" xml:"SasVersion"`
+	WeakPasswordCount string `json:"WeakPasswordCount" xml:"WeakPasswordCount"`
 }
 
 // CreateDescribeCheckEcsWarningsRequest creates a request to invoke DescribeCheckEcsWarnings API

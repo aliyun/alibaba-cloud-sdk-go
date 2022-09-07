@@ -17,16 +17,16 @@ package sas
 
 // PropertySoftware is a nested struct in sas response
 type PropertySoftware struct {
-	InternetIp      string `json:"InternetIp" xml:"InternetIp"`
+	Name            string `json:"Name" xml:"Name"`
+	Path            string `json:"Path" xml:"Path"`
+	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
 	Ip              string `json:"Ip" xml:"Ip"`
+	Create          int64  `json:"Create" xml:"Create"`
+	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	InstallTime     string `json:"InstallTime" xml:"InstallTime"`
+	Version         string `json:"Version" xml:"Version"`
+	Uuid            string `json:"Uuid" xml:"Uuid"`
 	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
 	IntranetIp      string `json:"IntranetIp" xml:"IntranetIp"`
-	InstallTime     string `json:"InstallTime" xml:"InstallTime"`
-	Uuid            string `json:"Uuid" xml:"Uuid"`
-	Version         string `json:"Version" xml:"Version"`
-	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
-	Path            string `json:"Path" xml:"Path"`
-	Name            string `json:"Name" xml:"Name"`
-	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	InstallTimeDt   int64  `json:"InstallTimeDt" xml:"InstallTimeDt"`
+	InternetIp      string `json:"InternetIp" xml:"InternetIp"`
 }
