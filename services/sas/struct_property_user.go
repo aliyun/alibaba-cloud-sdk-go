@@ -17,26 +17,21 @@ package sas
 
 // PropertyUser is a nested struct in sas response
 type PropertyUser struct {
-	Status                 string   `json:"Status" xml:"Status"`
-	LastLoginIp            string   `json:"LastLoginIp" xml:"LastLoginIp"`
-	InternetIp             string   `json:"InternetIp" xml:"InternetIp"`
 	LastLoginTime          string   `json:"LastLoginTime" xml:"LastLoginTime"`
-	IsRoot                 string   `json:"IsRoot" xml:"IsRoot"`
-	Ip                     string   `json:"Ip" xml:"Ip"`
-	User                   string   `json:"User" xml:"User"`
-	InstanceId             string   `json:"InstanceId" xml:"InstanceId"`
-	IntranetIp             string   `json:"IntranetIp" xml:"IntranetIp"`
-	PasswordExpirationDate string   `json:"PasswordExpirationDate" xml:"PasswordExpirationDate"`
-	Uuid                   string   `json:"Uuid" xml:"Uuid"`
 	LastLoginTimestamp     int64    `json:"LastLoginTimestamp" xml:"LastLoginTimestamp"`
+	IsRoot                 string   `json:"IsRoot" xml:"IsRoot"`
 	InstanceName           string   `json:"InstanceName" xml:"InstanceName"`
 	AccountsExpirationDate string   `json:"AccountsExpirationDate" xml:"AccountsExpirationDate"`
+	PasswordExpirationDate string   `json:"PasswordExpirationDate" xml:"PasswordExpirationDate"`
+	Ip                     string   `json:"Ip" xml:"Ip"`
+	Create                 string   `json:"Create" xml:"Create"`
 	CreateTimestamp        int64    `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	LastLoginTimeDt        int64    `json:"LastLoginTimeDt" xml:"LastLoginTimeDt"`
-	IsPasswdExpired        int      `json:"IsPasswdExpired" xml:"IsPasswdExpired"`
-	IsPasswdLocked         int      `json:"IsPasswdLocked" xml:"IsPasswdLocked"`
-	IsUserExpired          int      `json:"IsUserExpired" xml:"IsUserExpired"`
-	IsCouldLogin           int      `json:"IsCouldLogin" xml:"IsCouldLogin"`
-	IsSudoer               int      `json:"IsSudoer" xml:"IsSudoer"`
+	User                   string   `json:"User" xml:"User"`
+	Uuid                   string   `json:"Uuid" xml:"Uuid"`
+	LastLoginIp            string   `json:"LastLoginIp" xml:"LastLoginIp"`
+	InstanceId             string   `json:"InstanceId" xml:"InstanceId"`
+	IntranetIp             string   `json:"IntranetIp" xml:"IntranetIp"`
+	InternetIp             string   `json:"InternetIp" xml:"InternetIp"`
+	Status                 string   `json:"Status" xml:"Status"`
 	GroupNames             []string `json:"GroupNames" xml:"GroupNames"`
 }

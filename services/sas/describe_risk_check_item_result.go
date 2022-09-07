@@ -83,6 +83,8 @@ type DescribeRiskCheckItemResultRequest struct {
 // DescribeRiskCheckItemResultResponse is the response struct for api DescribeRiskCheckItemResult
 type DescribeRiskCheckItemResultResponse struct {
 	*responses.BaseResponse
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	PageContentResource PageContentResource `json:"PageContentResource" xml:"PageContentResource"`
 }
 
 // CreateDescribeRiskCheckItemResultRequest creates a request to invoke DescribeRiskCheckItemResult API

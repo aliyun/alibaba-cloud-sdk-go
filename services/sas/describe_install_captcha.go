@@ -79,9 +79,9 @@ type DescribeInstallCaptchaRequest struct {
 // DescribeInstallCaptchaResponse is the response struct for api DescribeInstallCaptcha
 type DescribeInstallCaptchaResponse struct {
 	*responses.BaseResponse
-	Deadline    string `json:"Deadline" xml:"Deadline"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	CaptchaCode string `json:"CaptchaCode" xml:"CaptchaCode"`
+	Deadline    int    `json:"Deadline" xml:"Deadline"`
 }
 
 // CreateDescribeInstallCaptchaRequest creates a request to invoke DescribeInstallCaptcha API
