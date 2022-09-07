@@ -1,3 +1,8 @@
+2022-09-07 Version: v1.61.1763
+- Generated 2014-05-26 for `Ecs`.
+- Support attribute filtering for DescribeInstanceTypes.
+- Provide cpuArchitecture and insatnceCategory attribute in DescribeInstanceTypes.
+
 2022-09-06 Version: v1.61.1762
 - Generated 2018-01-20 for `Iot`.
 - Iot_20180120 old version sdk.
