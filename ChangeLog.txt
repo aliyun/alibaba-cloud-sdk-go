@@ -1,3 +1,7 @@
+2022-09-07 Version: v1.61.1764
+- Generated 2022-08-18 for `SmartSales`.
+- SmartSales-OpenAPI.
+
 2022-09-07 Version: v1.61.1763
 - Generated 2014-05-26 for `Ecs`.
 - Support attribute filtering for DescribeInstanceTypes.
