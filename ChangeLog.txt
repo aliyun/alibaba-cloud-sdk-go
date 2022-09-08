@@ -1,3 +1,8 @@
+2022-09-08 Version: v1.61.1765
+- Generated 2022-01-01 for `quickbi-public`.
+- Update API Error Code And Some Parameters Checks.
+- Update API CreateTicket QPS.
+
 2022-09-07 Version: v1.61.1764
 - Generated 2022-08-18 for `SmartSales`.
 - SmartSales-OpenAPI.
