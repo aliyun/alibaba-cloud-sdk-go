@@ -72,6 +72,7 @@ func (client *Client) ModifyGlobalDatabaseNetworkWithCallback(request *ModifyGlo
 type ModifyGlobalDatabaseNetworkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	GDNId                string           `position:"Query" name:"GDNId"`
 	GDNDescription       string           `position:"Query" name:"GDNDescription"`

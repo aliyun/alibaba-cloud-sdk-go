@@ -83,6 +83,7 @@ type CheckDBNameRequest struct {
 type CheckDBNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	DBName    string `json:"DBName" xml:"DBName"`
 }
 
 // CreateCheckDBNameRequest creates a request to invoke CheckDBName API

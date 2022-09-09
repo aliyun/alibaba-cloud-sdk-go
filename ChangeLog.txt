@@ -1,3 +1,7 @@
+2022-09-09 Version: v1.61.1767
+- Generated 2017-08-01 for `polardb`.
+- Support new feature.
+
 2022-09-08 Version: v1.61.1766
 - Generated 2022-01-01 for `quickbi-public`.
 - Add API BatchAddFeishuUsers.

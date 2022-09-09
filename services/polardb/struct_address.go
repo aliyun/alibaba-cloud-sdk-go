@@ -22,6 +22,7 @@ type Address struct {
 	VPCId                       string `json:"VPCId" xml:"VPCId"`
 	Port                        string `json:"Port" xml:"Port"`
 	VSwitchId                   string `json:"VSwitchId" xml:"VSwitchId"`
+	SSLEnabled                  string `json:"SSLEnabled" xml:"SSLEnabled"`
 	ConnectionString            string `json:"ConnectionString" xml:"ConnectionString"`
 	IPAddress                   string `json:"IPAddress" xml:"IPAddress"`
 	NetType                     string `json:"NetType" xml:"NetType"`

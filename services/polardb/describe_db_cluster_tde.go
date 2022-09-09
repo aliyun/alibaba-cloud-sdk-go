@@ -86,6 +86,7 @@ type DescribeDBClusterTDEResponse struct {
 	DBClusterId      string `json:"DBClusterId" xml:"DBClusterId"`
 	EncryptionKey    string `json:"EncryptionKey" xml:"EncryptionKey"`
 	EncryptNewTables string `json:"EncryptNewTables" xml:"EncryptNewTables"`
+	TDERegion        string `json:"TDERegion" xml:"TDERegion"`
 }
 
 // CreateDescribeDBClusterTDERequest creates a request to invoke DescribeDBClusterTDE API

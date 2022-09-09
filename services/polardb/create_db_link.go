@@ -76,6 +76,7 @@ type CreateDBLinkRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	TargetDBName         string           `position:"Query" name:"TargetDBName"`
 	TargetIp             string           `position:"Query" name:"TargetIp"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBLinkName           string           `position:"Query" name:"DBLinkName"`
 	TargetPort           string           `position:"Query" name:"TargetPort"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

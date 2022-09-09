@@ -17,18 +17,26 @@ package polardb
 
 // ItemsItem is a nested struct in polardb response
 type ItemsItem struct {
-	Status          int    `json:"Status" xml:"Status"`
-	PrepareInterval string `json:"PrepareInterval" xml:"PrepareInterval"`
-	Deadline        string `json:"Deadline" xml:"Deadline"`
-	DBType          string `json:"DBType" xml:"DBType"`
-	TaskType        string `json:"TaskType" xml:"TaskType"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	DBVersion       string `json:"DBVersion" xml:"DBVersion"`
-	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
-	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
+	MemoryClass     string `json:"MemoryClass" xml:"MemoryClass"`
 	Region          string `json:"Region" xml:"Region"`
-	ResultInfo      string `json:"ResultInfo" xml:"ResultInfo"`
-	CreatedTime     string `json:"CreatedTime" xml:"CreatedTime"`
 	Id              int    `json:"Id" xml:"Id"`
+	Status          int    `json:"Status" xml:"Status"`
+	DBType          string `json:"DBType" xml:"DBType"`
+	DBVersion       string `json:"DBVersion" xml:"DBVersion"`
+	ResultInfo      string `json:"ResultInfo" xml:"ResultInfo"`
+	Cpu             string `json:"Cpu" xml:"Cpu"`
+	ClassGroup      string `json:"ClassGroup" xml:"ClassGroup"`
+	ClassCode       string `json:"ClassCode" xml:"ClassCode"`
+	Deadline        string `json:"Deadline" xml:"Deadline"`
+	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
+	ReferencePrice  string `json:"ReferencePrice" xml:"ReferencePrice"`
+	MaxIOPS         string `json:"MaxIOPS" xml:"MaxIOPS"`
+	PrepareInterval string `json:"PrepareInterval" xml:"PrepareInterval"`
+	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	CreatedTime     string `json:"CreatedTime" xml:"CreatedTime"`
+	MaxConnections  string `json:"MaxConnections" xml:"MaxConnections"`
 	SwitchTime      string `json:"SwitchTime" xml:"SwitchTime"`
+	ClassTypeLevel  string `json:"ClassTypeLevel" xml:"ClassTypeLevel"`
+	TaskType        string `json:"TaskType" xml:"TaskType"`
 }

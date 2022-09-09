@@ -81,10 +81,7 @@ type RefreshDBClusterStorageUsageRequest struct {
 // RefreshDBClusterStorageUsageResponse is the response struct for api RefreshDBClusterStorageUsage
 type RefreshDBClusterStorageUsageResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	UsedStorage         string `json:"UsedStorage" xml:"UsedStorage"`
-	DBClusterId         string `json:"DBClusterId" xml:"DBClusterId"`
-	UsedStorageModified string `json:"UsedStorageModified" xml:"UsedStorageModified"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRefreshDBClusterStorageUsageRequest creates a request to invoke RefreshDBClusterStorageUsage API

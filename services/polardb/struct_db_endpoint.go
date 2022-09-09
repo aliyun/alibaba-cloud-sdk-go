@@ -25,5 +25,6 @@ type DBEndpoint struct {
 	DBEndpointDescription string    `json:"DBEndpointDescription" xml:"DBEndpointDescription"`
 	EndpointType          string    `json:"EndpointType" xml:"EndpointType"`
 	AutoAddNewNodes       string    `json:"AutoAddNewNodes" xml:"AutoAddNewNodes"`
+	DBClusterId           string    `json:"DBClusterId" xml:"DBClusterId"`
 	AddressItems          []Address `json:"AddressItems" xml:"AddressItems"`
 }

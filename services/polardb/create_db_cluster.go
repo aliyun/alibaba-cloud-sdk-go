@@ -71,37 +71,44 @@ func (client *Client) CreateDBClusterWithCallback(request *CreateDBClusterReques
 // CreateDBClusterRequest is the request struct for api CreateDBCluster
 type CreateDBClusterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBClusterDescription                   string           `position:"Query" name:"DBClusterDescription"`
-	CreationCategory                       string           `position:"Query" name:"CreationCategory"`
-	ResourceGroupId                        string           `position:"Query" name:"ResourceGroupId"`
-	DBNodeClass                            string           `position:"Query" name:"DBNodeClass"`
-	CreationOption                         string           `position:"Query" name:"CreationOption"`
-	SourceResourceId                       string           `position:"Query" name:"SourceResourceId"`
-	BackupRetentionPolicyOnClusterDeletion string           `position:"Query" name:"BackupRetentionPolicyOnClusterDeletion"`
-	Period                                 string           `position:"Query" name:"Period"`
-	OwnerId                                requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId                              string           `position:"Query" name:"VSwitchId"`
-	SecurityIPList                         string           `position:"Query" name:"SecurityIPList"`
-	DBMinorVersion                         string           `position:"Query" name:"DBMinorVersion"`
-	AutoRenew                              requests.Boolean `position:"Query" name:"AutoRenew"`
-	ZoneId                                 string           `position:"Query" name:"ZoneId"`
-	TDEStatus                              requests.Boolean `position:"Query" name:"TDEStatus"`
-	LowerCaseTableNames                    string           `position:"Query" name:"LowerCaseTableNames"`
-	ClientToken                            string           `position:"Query" name:"ClientToken"`
-	DefaultTimeZone                        string           `position:"Query" name:"DefaultTimeZone"`
-	ClusterNetworkType                     string           `position:"Query" name:"ClusterNetworkType"`
-	ParameterGroupId                       string           `position:"Query" name:"ParameterGroupId"`
-	Engine                                 string           `position:"Query" name:"Engine"`
-	GDNId                                  string           `position:"Query" name:"GDNId"`
-	ResourceOwnerAccount                   string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                           string           `position:"Query" name:"OwnerAccount"`
-	UsedTime                               string           `position:"Query" name:"UsedTime"`
-	VPCId                                  string           `position:"Query" name:"VPCId"`
-	DBType                                 string           `position:"Query" name:"DBType"`
-	DBVersion                              string           `position:"Query" name:"DBVersion"`
-	CloneDataPoint                         string           `position:"Query" name:"CloneDataPoint"`
-	PayType                                string           `position:"Query" name:"PayType"`
+	ResourceOwnerId                        requests.Integer      `position:"Query" name:"ResourceOwnerId"`
+	DBClusterDescription                   string                `position:"Query" name:"DBClusterDescription"`
+	CreationCategory                       string                `position:"Query" name:"CreationCategory"`
+	ResourceGroupId                        string                `position:"Query" name:"ResourceGroupId"`
+	DBNodeClass                            string                `position:"Query" name:"DBNodeClass"`
+	CreationOption                         string                `position:"Query" name:"CreationOption"`
+	Tag                                    *[]CreateDBClusterTag `position:"Query" name:"Tag"  type:"Repeated"`
+	SourceResourceId                       string                `position:"Query" name:"SourceResourceId"`
+	BackupRetentionPolicyOnClusterDeletion string                `position:"Query" name:"BackupRetentionPolicyOnClusterDeletion"`
+	Period                                 string                `position:"Query" name:"Period"`
+	OwnerId                                requests.Integer      `position:"Query" name:"OwnerId"`
+	VSwitchId                              string                `position:"Query" name:"VSwitchId"`
+	SecurityIPList                         string                `position:"Query" name:"SecurityIPList"`
+	DBMinorVersion                         string                `position:"Query" name:"DBMinorVersion"`
+	AutoRenew                              requests.Boolean      `position:"Query" name:"AutoRenew"`
+	ZoneId                                 string                `position:"Query" name:"ZoneId"`
+	TDEStatus                              requests.Boolean      `position:"Query" name:"TDEStatus"`
+	LowerCaseTableNames                    string                `position:"Query" name:"LowerCaseTableNames"`
+	ClientToken                            string                `position:"Query" name:"ClientToken"`
+	DefaultTimeZone                        string                `position:"Query" name:"DefaultTimeZone"`
+	ClusterNetworkType                     string                `position:"Query" name:"ClusterNetworkType"`
+	ParameterGroupId                       string                `position:"Query" name:"ParameterGroupId"`
+	Engine                                 string                `position:"Query" name:"Engine"`
+	GDNId                                  string                `position:"Query" name:"GDNId"`
+	ResourceOwnerAccount                   string                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                           string                `position:"Query" name:"OwnerAccount"`
+	UsedTime                               string                `position:"Query" name:"UsedTime"`
+	VPCId                                  string                `position:"Query" name:"VPCId"`
+	DBType                                 string                `position:"Query" name:"DBType"`
+	DBVersion                              string                `position:"Query" name:"DBVersion"`
+	CloneDataPoint                         string                `position:"Query" name:"CloneDataPoint"`
+	PayType                                string                `position:"Query" name:"PayType"`
+}
+
+// CreateDBClusterTag is a repeated param struct in CreateDBClusterRequest
+type CreateDBClusterTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateDBClusterResponse is the response struct for api CreateDBCluster

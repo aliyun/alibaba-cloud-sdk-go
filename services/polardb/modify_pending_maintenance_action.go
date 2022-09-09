@@ -72,6 +72,7 @@ func (client *Client) ModifyPendingMaintenanceActionWithCallback(request *Modify
 type ModifyPendingMaintenanceActionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	SwitchTime           string           `position:"Query" name:"SwitchTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// OpenAITask invokes the polardb.OpenAITask API synchronously
-func (client *Client) OpenAITask(request *OpenAITaskRequest) (response *OpenAITaskResponse, err error) {
-	response = CreateOpenAITaskResponse()
+// DescribeClassList invokes the polardb.DescribeClassList API synchronously
+func (client *Client) DescribeClassList(request *DescribeClassListRequest) (response *DescribeClassListResponse, err error) {
+	response = CreateDescribeClassListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// OpenAITaskWithChan invokes the polardb.OpenAITask API asynchronously
-func (client *Client) OpenAITaskWithChan(request *OpenAITaskRequest) (<-chan *OpenAITaskResponse, <-chan error) {
-	responseChan := make(chan *OpenAITaskResponse, 1)
+// DescribeClassListWithChan invokes the polardb.DescribeClassList API asynchronously
+func (client *Client) DescribeClassListWithChan(request *DescribeClassListRequest) (<-chan *DescribeClassListResponse, <-chan error) {
+	responseChan := make(chan *DescribeClassListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.OpenAITask(request)
+		response, err := client.DescribeClassList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) OpenAITaskWithChan(request *OpenAITaskRequest) (<-chan *Op
 	return responseChan, errChan
 }
 
-// OpenAITaskWithCallback invokes the polardb.OpenAITask API asynchronously
-func (client *Client) OpenAITaskWithCallback(request *OpenAITaskRequest, callback func(response *OpenAITaskResponse, err error)) <-chan int {
+// DescribeClassListWithCallback invokes the polardb.DescribeClassList API asynchronously
+func (client *Client) DescribeClassListWithCallback(request *DescribeClassListRequest, callback func(response *DescribeClassListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *OpenAITaskResponse
+		var response *DescribeClassListResponse
 		var err error
 		defer close(result)
-		response, err = client.OpenAITask(request)
+		response, err = client.DescribeClassList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,39 @@ func (client *Client) OpenAITaskWithCallback(request *OpenAITaskRequest, callbac
 	return result
 }
 
-// OpenAITaskRequest is the request struct for api OpenAITask
-type OpenAITaskRequest struct {
+// DescribeClassListRequest is the request struct for api DescribeClassList
+type DescribeClassListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	Password             string           `position:"Query" name:"Password"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	CommodityCode        string           `position:"Query" name:"CommodityCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Username             string           `position:"Query" name:"Username"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
-// OpenAITaskResponse is the response struct for api OpenAITask
-type OpenAITaskResponse struct {
+// DescribeClassListResponse is the response struct for api DescribeClassList
+type DescribeClassListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string      `json:"RequestId" xml:"RequestId"`
+	RegionId  string      `json:"RegionId" xml:"RegionId"`
+	Items     []ItemsItem `json:"Items" xml:"Items"`
 }
 
-// CreateOpenAITaskRequest creates a request to invoke OpenAITask API
-func CreateOpenAITaskRequest() (request *OpenAITaskRequest) {
-	request = &OpenAITaskRequest{
+// CreateDescribeClassListRequest creates a request to invoke DescribeClassList API
+func CreateDescribeClassListRequest() (request *DescribeClassListRequest) {
+	request = &DescribeClassListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "OpenAITask", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeClassList", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateOpenAITaskResponse creates a response to parse from OpenAITask response
-func CreateOpenAITaskResponse() (response *OpenAITaskResponse) {
-	response = &OpenAITaskResponse{
+// CreateDescribeClassListResponse creates a response to parse from DescribeClassList response
+func CreateDescribeClassListResponse() (response *DescribeClassListResponse) {
+	response = &DescribeClassListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

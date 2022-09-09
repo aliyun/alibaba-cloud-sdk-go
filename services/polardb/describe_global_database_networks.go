@@ -73,6 +73,7 @@ type DescribeGlobalDatabaseNetworksRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	GDNId                string           `position:"Query" name:"GDNId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`

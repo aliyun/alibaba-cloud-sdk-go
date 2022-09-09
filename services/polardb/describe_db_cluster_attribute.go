@@ -117,6 +117,7 @@ type DescribeDBClusterAttributeResponse struct {
 	SubCategory               string   `json:"SubCategory" xml:"SubCategory"`
 	IsProxyLatestVersion      bool     `json:"IsProxyLatestVersion" xml:"IsProxyLatestVersion"`
 	StorageType               string   `json:"StorageType" xml:"StorageType"`
+	ServerlessType            string   `json:"ServerlessType" xml:"ServerlessType"`
 	ProxyCpuCores             string   `json:"ProxyCpuCores" xml:"ProxyCpuCores"`
 	ProxyStandardCpuCores     string   `json:"ProxyStandardCpuCores" xml:"ProxyStandardCpuCores"`
 	ProxyType                 string   `json:"ProxyType" xml:"ProxyType"`

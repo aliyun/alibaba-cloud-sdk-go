@@ -72,6 +72,7 @@ func (client *Client) DescribePendingMaintenanceActionsWithCallback(request *Des
 type DescribePendingMaintenanceActionsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	IsHistory            requests.Integer `position:"Query" name:"IsHistory"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

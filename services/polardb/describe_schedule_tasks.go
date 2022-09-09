@@ -75,6 +75,7 @@ type DescribeScheduleTasksRequest struct {
 	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
 	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OrderId              string           `position:"Query" name:"OrderId"`

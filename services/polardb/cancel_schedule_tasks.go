@@ -72,6 +72,7 @@ func (client *Client) CancelScheduleTasksWithCallback(request *CancelScheduleTas
 type CancelScheduleTasksRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	TaskId               string           `position:"Query" name:"TaskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
