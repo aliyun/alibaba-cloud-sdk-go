@@ -78,11 +78,11 @@ type ListClustersRequest struct {
 // ListClustersResponse is the response struct for api ListClusters
 type ListClustersResponse struct {
 	*responses.BaseResponse
-	RequestId  string                 `json:"RequestId" xml:"RequestId"`
-	TotalCount int                    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                    `json:"PageSize" xml:"PageSize"`
-	Clusters   ClustersInListClusters `json:"Clusters" xml:"Clusters"`
+	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
+	Clusters   Clusters `json:"Clusters" xml:"Clusters"`
 }
 
 // CreateListClustersRequest creates a request to invoke ListClusters API
@@ -90,7 +90,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListClusters", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListClusters", "", "")
 	request.Method = requests.GET
 	return
 }

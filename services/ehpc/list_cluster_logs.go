@@ -79,12 +79,12 @@ type ListClusterLogsRequest struct {
 // ListClusterLogsResponse is the response struct for api ListClusterLogs
 type ListClusterLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                `json:"RequestId" xml:"RequestId"`
-	TotalCount int                   `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                   `json:"PageSize" xml:"PageSize"`
-	ClusterId  string                `json:"ClusterId" xml:"ClusterId"`
-	Logs       LogsInListClusterLogs `json:"Logs" xml:"Logs"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	ClusterId  string `json:"ClusterId" xml:"ClusterId"`
+	Logs       Logs   `json:"Logs" xml:"Logs"`
 }
 
 // CreateListClusterLogsRequest creates a request to invoke ListClusterLogs API
@@ -92,7 +92,7 @@ func CreateListClusterLogsRequest() (request *ListClusterLogsRequest) {
 	request = &ListClusterLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListClusterLogs", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListClusterLogs", "", "")
 	request.Method = requests.GET
 	return
 }

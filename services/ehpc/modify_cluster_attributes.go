@@ -71,11 +71,9 @@ func (client *Client) ModifyClusterAttributesWithCallback(request *ModifyCluster
 // ModifyClusterAttributesRequest is the request struct for api ModifyClusterAttributes
 type ModifyClusterAttributesRequest struct {
 	*requests.RpcRequest
-	ImageId         string `position:"Query" name:"ImageId"`
-	Description     string `position:"Query" name:"Description"`
-	ClusterId       string `position:"Query" name:"ClusterId"`
-	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
-	Name            string `position:"Query" name:"Name"`
+	Description string `position:"Query" name:"Description"`
+	ClusterId   string `position:"Query" name:"ClusterId"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // ModifyClusterAttributesResponse is the response struct for api ModifyClusterAttributes
@@ -89,7 +87,7 @@ func CreateModifyClusterAttributesRequest() (request *ModifyClusterAttributesReq
 	request = &ModifyClusterAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyClusterAttributes", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ModifyClusterAttributes", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -73,7 +73,6 @@ type ListNodesNoPagingRequest struct {
 	*requests.RpcRequest
 	Role         string           `position:"Query" name:"Role"`
 	ClusterId    string           `position:"Query" name:"ClusterId"`
-	Sequence     string           `position:"Query" name:"Sequence"`
 	HostName     string           `position:"Query" name:"HostName"`
 	OnlyDetached requests.Boolean `position:"Query" name:"OnlyDetached"`
 }
@@ -81,8 +80,11 @@ type ListNodesNoPagingRequest struct {
 // ListNodesNoPagingResponse is the response struct for api ListNodesNoPaging
 type ListNodesNoPagingResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Nodes     NodesInListNodesNoPaging `json:"Nodes" xml:"Nodes"`
+	PageSize   int                      `json:"PageSize" xml:"PageSize"`
+	RequestId  string                   `json:"RequestId" xml:"RequestId"`
+	PageNumber int                      `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int                      `json:"TotalCount" xml:"TotalCount"`
+	Nodes      NodesInListNodesNoPaging `json:"Nodes" xml:"Nodes"`
 }
 
 // CreateListNodesNoPagingRequest creates a request to invoke ListNodesNoPaging API
@@ -90,7 +92,7 @@ func CreateListNodesNoPagingRequest() (request *ListNodesNoPagingRequest) {
 	request = &ListNodesNoPagingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListNodesNoPaging", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListNodesNoPaging", "", "")
 	request.Method = requests.GET
 	return
 }

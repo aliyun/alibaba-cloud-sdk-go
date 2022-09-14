@@ -18,6 +18,6 @@ package ehpc
 // UserInfo is a nested struct in ehpc response
 type UserInfo struct {
 	Name    string `json:"Name" xml:"Name"`
-	Group   string `json:"Group" xml:"Group"`
 	AddTime string `json:"AddTime" xml:"AddTime"`
+	Group   string `json:"Group" xml:"Group"`
 }

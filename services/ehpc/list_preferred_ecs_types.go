@@ -71,16 +71,15 @@ func (client *Client) ListPreferredEcsTypesWithCallback(request *ListPreferredEc
 // ListPreferredEcsTypesRequest is the request struct for api ListPreferredEcsTypes
 type ListPreferredEcsTypesRequest struct {
 	*requests.RpcRequest
-	SpotStrategy       string `position:"Query" name:"SpotStrategy"`
-	ZoneId             string `position:"Query" name:"ZoneId"`
-	InstanceChargeType string `position:"Query" name:"InstanceChargeType"`
+	SpotStrategy string `position:"Query" name:"SpotStrategy"`
+	ZoneId       string `position:"Query" name:"ZoneId"`
 }
 
 // ListPreferredEcsTypesResponse is the response struct for api ListPreferredEcsTypes
 type ListPreferredEcsTypesResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
 	SupportSpotInstance bool   `json:"SupportSpotInstance" xml:"SupportSpotInstance"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
 	Series              Series `json:"Series" xml:"Series"`
 }
 
@@ -89,7 +88,7 @@ func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest
 	request = &ListPreferredEcsTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListPreferredEcsTypes", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListPreferredEcsTypes", "", "")
 	request.Method = requests.GET
 	return
 }

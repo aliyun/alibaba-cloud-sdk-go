@@ -79,7 +79,6 @@ type DeleteClusterRequest struct {
 type DeleteClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateDeleteClusterRequest creates a request to invoke DeleteCluster API
@@ -87,7 +86,7 @@ func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
 	request = &DeleteClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteCluster", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "DeleteCluster", "", "")
 	request.Method = requests.GET
 	return
 }

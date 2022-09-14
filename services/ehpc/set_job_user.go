@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// InitializeEHPC invokes the ehpc.InitializeEHPC API synchronously
-func (client *Client) InitializeEHPC(request *InitializeEHPCRequest) (response *InitializeEHPCResponse, err error) {
-	response = CreateInitializeEHPCResponse()
+// SetJobUser invokes the ehpc.SetJobUser API synchronously
+func (client *Client) SetJobUser(request *SetJobUserRequest) (response *SetJobUserResponse, err error) {
+	response = CreateSetJobUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// InitializeEHPCWithChan invokes the ehpc.InitializeEHPC API asynchronously
-func (client *Client) InitializeEHPCWithChan(request *InitializeEHPCRequest) (<-chan *InitializeEHPCResponse, <-chan error) {
-	responseChan := make(chan *InitializeEHPCResponse, 1)
+// SetJobUserWithChan invokes the ehpc.SetJobUser API asynchronously
+func (client *Client) SetJobUserWithChan(request *SetJobUserRequest) (<-chan *SetJobUserResponse, <-chan error) {
+	responseChan := make(chan *SetJobUserResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.InitializeEHPC(request)
+		response, err := client.SetJobUser(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) InitializeEHPCWithChan(request *InitializeEHPCRequest) (<-
 	return responseChan, errChan
 }
 
-// InitializeEHPCWithCallback invokes the ehpc.InitializeEHPC API asynchronously
-func (client *Client) InitializeEHPCWithCallback(request *InitializeEHPCRequest, callback func(response *InitializeEHPCResponse, err error)) <-chan int {
+// SetJobUserWithCallback invokes the ehpc.SetJobUser API asynchronously
+func (client *Client) SetJobUserWithCallback(request *SetJobUserRequest, callback func(response *SetJobUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *InitializeEHPCResponse
+		var response *SetJobUserResponse
 		var err error
 		defer close(result)
-		response, err = client.InitializeEHPC(request)
+		response, err = client.SetJobUser(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,30 +68,33 @@ func (client *Client) InitializeEHPCWithCallback(request *InitializeEHPCRequest,
 	return result
 }
 
-// InitializeEHPCRequest is the request struct for api InitializeEHPC
-type InitializeEHPCRequest struct {
+// SetJobUserRequest is the request struct for api SetJobUser
+type SetJobUserRequest struct {
 	*requests.RpcRequest
+	RunasUserPassword string `position:"Query" name:"RunasUserPassword"`
+	RunasUser         string `position:"Query" name:"RunasUser"`
+	ClusterId         string `position:"Query" name:"ClusterId"`
 }
 
-// InitializeEHPCResponse is the response struct for api InitializeEHPC
-type InitializeEHPCResponse struct {
+// SetJobUserResponse is the response struct for api SetJobUser
+type SetJobUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateInitializeEHPCRequest creates a request to invoke InitializeEHPC API
-func CreateInitializeEHPCRequest() (request *InitializeEHPCRequest) {
-	request = &InitializeEHPCRequest{
+// CreateSetJobUserRequest creates a request to invoke SetJobUser API
+func CreateSetJobUserRequest() (request *SetJobUserRequest) {
+	request = &SetJobUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "InitializeEHPC", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "SetJobUser", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateInitializeEHPCResponse creates a response to parse from InitializeEHPC response
-func CreateInitializeEHPCResponse() (response *InitializeEHPCResponse) {
-	response = &InitializeEHPCResponse{
+// CreateSetJobUserResponse creates a response to parse from SetJobUser response
+func CreateSetJobUserResponse() (response *SetJobUserResponse) {
+	response = &SetJobUserResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

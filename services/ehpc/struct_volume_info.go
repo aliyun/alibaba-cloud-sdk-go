@@ -17,19 +17,12 @@ package ehpc
 
 // VolumeInfo is a nested struct in ehpc response
 type VolumeInfo struct {
-	ClusterId         string                   `json:"ClusterId" xml:"ClusterId"`
-	VolumeId          string                   `json:"VolumeId" xml:"VolumeId"`
-	VolumeProtocol    string                   `json:"VolumeProtocol" xml:"VolumeProtocol"`
-	VolumeType        string                   `json:"VolumeType" xml:"VolumeType"`
-	RemoteDirectory   string                   `json:"RemoteDirectory" xml:"RemoteDirectory"`
-	Location          string                   `json:"Location" xml:"Location"`
-	LocalDirectory    string                   `json:"LocalDirectory" xml:"LocalDirectory"`
-	VolumeMountpoint  string                   `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
-	RegionId          string                   `json:"RegionId" xml:"RegionId"`
-	Role              string                   `json:"Role" xml:"Role"`
-	JobQueue          string                   `json:"JobQueue" xml:"JobQueue"`
-	ClusterName       string                   `json:"ClusterName" xml:"ClusterName"`
-	MustKeep          bool                     `json:"MustKeep" xml:"MustKeep"`
-	Roles             RolesInGetClusterVolumes `json:"Roles" xml:"Roles"`
-	AdditionalVolumes AdditionalVolumes        `json:"AdditionalVolumes" xml:"AdditionalVolumes"`
+	VolumeId         string `json:"VolumeId" xml:"VolumeId"`
+	ClusterName      string `json:"ClusterName" xml:"ClusterName"`
+	RemoteDirectory  string `json:"RemoteDirectory" xml:"RemoteDirectory"`
+	VolumeMountpoint string `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
+	VolumeType       string `json:"VolumeType" xml:"VolumeType"`
+	VolumeProtocol   string `json:"VolumeProtocol" xml:"VolumeProtocol"`
+	RegionId         string `json:"RegionId" xml:"RegionId"`
+	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
 }

@@ -79,10 +79,10 @@ type ListJobTemplatesRequest struct {
 // ListJobTemplatesResponse is the response struct for api ListJobTemplates
 type ListJobTemplatesResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
 	Templates  Templates `json:"Templates" xml:"Templates"`
 }
 
@@ -91,7 +91,7 @@ func CreateListJobTemplatesRequest() (request *ListJobTemplatesRequest) {
 	request = &ListJobTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListJobTemplates", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListJobTemplates", "", "")
 	request.Method = requests.GET
 	return
 }

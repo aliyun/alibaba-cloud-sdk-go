@@ -17,6 +17,6 @@ package ehpc
 
 // RegionInfo is a nested struct in ehpc response
 type RegionInfo struct {
-	RegionId  string `json:"RegionId" xml:"RegionId"`
 	LocalName string `json:"LocalName" xml:"LocalName"`
+	RegionId  string `json:"RegionId" xml:"RegionId"`
 }

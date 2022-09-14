@@ -71,7 +71,6 @@ func (client *Client) ListSoftwaresWithCallback(request *ListSoftwaresRequest, c
 // ListSoftwaresRequest is the request struct for api ListSoftwares
 type ListSoftwaresRequest struct {
 	*requests.RpcRequest
-	OsTag       string `position:"Query" name:"OsTag"`
 	EhpcVersion string `position:"Query" name:"EhpcVersion"`
 }
 
@@ -87,7 +86,7 @@ func CreateListSoftwaresRequest() (request *ListSoftwaresRequest) {
 	request = &ListSoftwaresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListSoftwares", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListSoftwares", "", "")
 	request.Method = requests.GET
 	return
 }

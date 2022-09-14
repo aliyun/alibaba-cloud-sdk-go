@@ -76,8 +76,8 @@ type ListCurrentClientVersionRequest struct {
 // ListCurrentClientVersionResponse is the response struct for api ListCurrentClientVersion
 type ListCurrentClientVersionResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ClientVersion string `json:"ClientVersion" xml:"ClientVersion"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateListCurrentClientVersionRequest creates a request to invoke ListCurrentClientVersion API
@@ -85,7 +85,7 @@ func CreateListCurrentClientVersionRequest() (request *ListCurrentClientVersionR
 	request = &ListCurrentClientVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListCurrentClientVersion", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListCurrentClientVersion", "", "")
 	request.Method = requests.GET
 	return
 }

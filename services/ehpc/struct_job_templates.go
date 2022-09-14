@@ -17,22 +17,15 @@ package ehpc
 
 // JobTemplates is a nested struct in ehpc response
 type JobTemplates struct {
-	Id                 string `json:"Id" xml:"Id"`
-	Name               string `json:"Name" xml:"Name"`
-	CommandLine        string `json:"CommandLine" xml:"CommandLine"`
-	RunasUser          string `json:"RunasUser" xml:"RunasUser"`
-	Priority           int    `json:"Priority" xml:"Priority"`
-	PackagePath        string `json:"PackagePath" xml:"PackagePath"`
 	StdoutRedirectPath string `json:"StdoutRedirectPath" xml:"StdoutRedirectPath"`
-	StderrRedirectPath string `json:"StderrRedirectPath" xml:"StderrRedirectPath"`
-	ReRunable          bool   `json:"ReRunable" xml:"ReRunable"`
-	ArrayRequest       string `json:"ArrayRequest" xml:"ArrayRequest"`
 	Variables          string `json:"Variables" xml:"Variables"`
-	Queue              string `json:"Queue" xml:"Queue"`
-	ClockTime          string `json:"ClockTime" xml:"ClockTime"`
-	Node               int    `json:"Node" xml:"Node"`
-	Task               int    `json:"Task" xml:"Task"`
-	Thread             int    `json:"Thread" xml:"Thread"`
-	Mem                string `json:"Mem" xml:"Mem"`
-	Gpu                int    `json:"Gpu" xml:"Gpu"`
+	CommandLine        string `json:"CommandLine" xml:"CommandLine"`
+	PackagePath        string `json:"PackagePath" xml:"PackagePath"`
+	Priority           int    `json:"Priority" xml:"Priority"`
+	ReRunable          bool   `json:"ReRunable" xml:"ReRunable"`
+	Name               string `json:"Name" xml:"Name"`
+	ArrayRequest       string `json:"ArrayRequest" xml:"ArrayRequest"`
+	Id                 string `json:"Id" xml:"Id"`
+	StderrRedirectPath string `json:"StderrRedirectPath" xml:"StderrRedirectPath"`
+	RunasUser          string `json:"RunasUser" xml:"RunasUser"`
 }

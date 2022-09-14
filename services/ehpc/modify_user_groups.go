@@ -92,7 +92,7 @@ func CreateModifyUserGroupsRequest() (request *ModifyUserGroupsRequest) {
 	request = &ModifyUserGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyUserGroups", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ModifyUserGroups", "", "")
 	request.Method = requests.GET
 	return
 }

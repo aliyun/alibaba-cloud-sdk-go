@@ -17,19 +17,18 @@ package ehpc
 
 // JobInfo is a nested struct in ehpc response
 type JobInfo struct {
-	Id             string    `json:"Id" xml:"Id"`
-	Name           string    `json:"Name" xml:"Name"`
 	Owner          string    `json:"Owner" xml:"Owner"`
-	NodeList       string    `json:"NodeList" xml:"NodeList"`
-	Priority       string    `json:"Priority" xml:"Priority"`
+	Comment        string    `json:"Comment" xml:"Comment"`
 	State          string    `json:"State" xml:"State"`
-	SubmitTime     string    `json:"SubmitTime" xml:"SubmitTime"`
+	Stderr         string    `json:"Stderr" xml:"Stderr"`
+	Priority       int       `json:"Priority" xml:"Priority"`
+	ShellPath      string    `json:"ShellPath" xml:"ShellPath"`
+	Stdout         string    `json:"Stdout" xml:"Stdout"`
+	ArrayRequest   string    `json:"ArrayRequest" xml:"ArrayRequest"`
 	StartTime      string    `json:"StartTime" xml:"StartTime"`
 	LastModifyTime string    `json:"LastModifyTime" xml:"LastModifyTime"`
-	Stdout         string    `json:"Stdout" xml:"Stdout"`
-	Stderr         string    `json:"Stderr" xml:"Stderr"`
-	ShellPath      string    `json:"ShellPath" xml:"ShellPath"`
-	Comment        string    `json:"Comment" xml:"Comment"`
-	ArrayRequest   string    `json:"ArrayRequest" xml:"ArrayRequest"`
+	Name           string    `json:"Name" xml:"Name"`
+	Id             string    `json:"Id" xml:"Id"`
+	SubmitTime     string    `json:"SubmitTime" xml:"SubmitTime"`
 	Resources      Resources `json:"Resources" xml:"Resources"`
 }

@@ -17,9 +17,7 @@ package ehpc
 
 // Managers is a nested struct in ehpc response
 type Managers struct {
+	ExceptionCount int `json:"ExceptionCount" xml:"ExceptionCount"`
 	Total          int `json:"Total" xml:"Total"`
 	NormalCount    int `json:"NormalCount" xml:"NormalCount"`
-	OperatingCount int `json:"OperatingCount" xml:"OperatingCount"`
-	StoppedCount   int `json:"StoppedCount" xml:"StoppedCount"`
-	ExceptionCount int `json:"ExceptionCount" xml:"ExceptionCount"`
 }

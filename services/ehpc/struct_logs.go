@@ -17,14 +17,5 @@ package ehpc
 
 // Logs is a nested struct in ehpc response
 type Logs struct {
-	HealthId         string    `json:"HealthId" xml:"HealthId"`
-	SceneDescription string    `json:"SceneDescription" xml:"SceneDescription"`
-	SceneName        string    `json:"SceneName" xml:"SceneName"`
-	InstanceId       string    `json:"InstanceId" xml:"InstanceId"`
-	Time             int       `json:"Time" xml:"Time"`
-	Level            string    `json:"Level" xml:"Level"`
-	HostName         string    `json:"HostName" xml:"HostName"`
-	ItemDescription  string    `json:"ItemDescription" xml:"ItemDescription"`
-	ItemName         string    `json:"ItemName" xml:"ItemName"`
-	CheckList        CheckList `json:"CheckList" xml:"CheckList"`
+	LogInfo []LogInfo `json:"LogInfo" xml:"LogInfo"`
 }

@@ -71,17 +71,15 @@ func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequ
 // ListCustomImagesRequest is the request struct for api ListCustomImages
 type ListCustomImagesRequest struct {
 	*requests.RpcRequest
-	ClusterId       string `position:"Query" name:"ClusterId"`
 	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
 	BaseOsTag       string `position:"Query" name:"BaseOsTag"`
-	InstanceType    string `position:"Query" name:"InstanceType"`
 }
 
 // ListCustomImagesResponse is the response struct for api ListCustomImages
 type ListCustomImagesResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Images    ImagesInListCustomImages `json:"Images" xml:"Images"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Images    Images `json:"Images" xml:"Images"`
 }
 
 // CreateListCustomImagesRequest creates a request to invoke ListCustomImages API
@@ -89,7 +87,7 @@ func CreateListCustomImagesRequest() (request *ListCustomImagesRequest) {
 	request = &ListCustomImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListCustomImages", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListCustomImages", "", "")
 	request.Method = requests.GET
 	return
 }

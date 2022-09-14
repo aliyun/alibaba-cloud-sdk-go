@@ -71,8 +71,6 @@ func (client *Client) ListImagesWithCallback(request *ListImagesRequest, callbac
 // ListImagesRequest is the request struct for api ListImages
 type ListImagesRequest struct {
 	*requests.RpcRequest
-	BaseOsTag    string `position:"Query" name:"BaseOsTag"`
-	InstanceType string `position:"Query" name:"InstanceType"`
 }
 
 // ListImagesResponse is the response struct for api ListImages
@@ -87,7 +85,7 @@ func CreateListImagesRequest() (request *ListImagesRequest) {
 	request = &ListImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListImages", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListImages", "", "")
 	request.Method = requests.GET
 	return
 }
