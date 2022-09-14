@@ -1,3 +1,7 @@
+2022-09-14 Version: v1.61.1771
+- Generated 2019-02-14 for `Ons`.
+- Add spInstanceId and spInstanceType for api OnsInstanceBaseInfo.
+
 2022-09-14 Version: v1.61.1770
 - Generated 2017-07-14 for `EHPC`.
 undefined

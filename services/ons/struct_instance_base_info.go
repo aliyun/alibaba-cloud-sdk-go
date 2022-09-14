@@ -26,5 +26,8 @@ type InstanceBaseInfo struct {
 	InstanceStatus    int       `json:"InstanceStatus" xml:"InstanceStatus"`
 	InstanceId        string    `json:"InstanceId" xml:"InstanceId"`
 	InstanceType      int       `json:"InstanceType" xml:"InstanceType"`
+	CreateTime        string    `json:"CreateTime" xml:"CreateTime"`
+	SpInstanceId      string    `json:"spInstanceId" xml:"spInstanceId"`
+	SpInstanceType    int       `json:"spInstanceType" xml:"spInstanceType"`
 	Endpoints         Endpoints `json:"Endpoints" xml:"Endpoints"`
 }

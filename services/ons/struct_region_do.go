@@ -17,11 +17,11 @@ package ons
 
 // RegionDo is a nested struct in ons response
 type RegionDo struct {
-	Id          int64  `json:"Id" xml:"Id"`
-	OnsRegionId string `json:"OnsRegionId" xml:"OnsRegionId"`
+	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
 	RegionName  string `json:"RegionName" xml:"RegionName"`
-	ChannelId   int    `json:"ChannelId" xml:"ChannelId"`
 	ChannelName string `json:"ChannelName" xml:"ChannelName"`
 	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
+	ChannelId   int    `json:"ChannelId" xml:"ChannelId"`
+	Id          int64  `json:"Id" xml:"Id"`
+	OnsRegionId string `json:"OnsRegionId" xml:"OnsRegionId"`
 }
