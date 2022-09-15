@@ -39,6 +39,7 @@ type DtsJobStatus struct {
 	PayType                       string                          `json:"PayType" xml:"PayType"`
 	DtsJobClass                   string                          `json:"DtsJobClass" xml:"DtsJobClass"`
 	CpuUsage                      string                          `json:"CpuUsage" xml:"CpuUsage"`
+	ResourceGroupDisplayName      string                          `json:"ResourceGroupDisplayName" xml:"ResourceGroupDisplayName"`
 	Status                        string                          `json:"Status" xml:"Status"`
 	ConsumptionCheckpoint         string                          `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
 	AppName                       string                          `json:"AppName" xml:"AppName"`
