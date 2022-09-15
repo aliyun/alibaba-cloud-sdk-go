@@ -78,13 +78,13 @@ type DescribeLiveEdgeTransferRequest struct {
 // DescribeLiveEdgeTransferResponse is the response struct for api DescribeLiveEdgeTransfer
 type DescribeLiveEdgeTransferResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DomainName       string `json:"DomainName" xml:"DomainName"`
+	HttpDns          string `json:"HttpDns" xml:"HttpDns"`
 	AppName          string `json:"AppName" xml:"AppName"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TransferArgs     string `json:"TransferArgs" xml:"TransferArgs"`
 	StreamName       string `json:"StreamName" xml:"StreamName"`
 	TargetDomainList string `json:"TargetDomainList" xml:"TargetDomainList"`
-	TransferArgs     string `json:"TransferArgs" xml:"TransferArgs"`
-	HttpDns          string `json:"HttpDns" xml:"HttpDns"`
+	DomainName       string `json:"DomainName" xml:"DomainName"`
 }
 
 // CreateDescribeLiveEdgeTransferRequest creates a request to invoke DescribeLiveEdgeTransfer API

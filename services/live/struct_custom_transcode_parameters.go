@@ -17,18 +17,18 @@ package live
 
 // CustomTranscodeParameters is a nested struct in live response
 type CustomTranscodeParameters struct {
-	RtsFlag         string `json:"RtsFlag" xml:"RtsFlag"`
-	Bframes         string `json:"Bframes" xml:"Bframes"`
-	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
-	FPS             int    `json:"FPS" xml:"FPS"`
-	Height          int    `json:"Height" xml:"Height"`
-	Width           int    `json:"Width" xml:"Width"`
-	TemplateType    string `json:"TemplateType" xml:"TemplateType"`
 	VideoProfile    string `json:"VideoProfile" xml:"VideoProfile"`
-	Gop             string `json:"Gop" xml:"Gop"`
 	AudioBitrate    int    `json:"AudioBitrate" xml:"AudioBitrate"`
-	AudioProfile    string `json:"AudioProfile" xml:"AudioProfile"`
-	AudioCodec      string `json:"AudioCodec" xml:"AudioCodec"`
+	RtsFlag         string `json:"RtsFlag" xml:"RtsFlag"`
+	Height          int    `json:"Height" xml:"Height"`
+	TemplateType    string `json:"TemplateType" xml:"TemplateType"`
+	Bframes         string `json:"Bframes" xml:"Bframes"`
 	AudioRate       int    `json:"AudioRate" xml:"AudioRate"`
+	FPS             int    `json:"FPS" xml:"FPS"`
+	AudioCodec      string `json:"AudioCodec" xml:"AudioCodec"`
+	Gop             string `json:"Gop" xml:"Gop"`
+	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
+	Width           int    `json:"Width" xml:"Width"`
 	AudioChannelNum int    `json:"AudioChannelNum" xml:"AudioChannelNum"`
+	AudioProfile    string `json:"AudioProfile" xml:"AudioProfile"`
 }

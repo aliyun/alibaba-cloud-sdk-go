@@ -82,8 +82,8 @@ type CreateMixStreamRequest struct {
 // CreateMixStreamResponse is the response struct for api CreateMixStream
 type CreateMixStreamResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	MixStreamId string `json:"MixStreamId" xml:"MixStreamId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateMixStreamRequest creates a request to invoke CreateMixStream API

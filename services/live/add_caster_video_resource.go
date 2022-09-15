@@ -91,8 +91,8 @@ type AddCasterVideoResourceRequest struct {
 // AddCasterVideoResourceResponse is the response struct for api AddCasterVideoResource
 type AddCasterVideoResourceResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	ResourceId string `json:"ResourceId" xml:"ResourceId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddCasterVideoResourceRequest creates a request to invoke AddCasterVideoResource API

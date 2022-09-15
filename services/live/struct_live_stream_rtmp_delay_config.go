@@ -17,6 +17,6 @@ package live
 
 // LiveStreamRtmpDelayConfig is a nested struct in live response
 type LiveStreamRtmpDelayConfig struct {
-	Level string `json:"Level" xml:"Level"`
 	Delay int    `json:"Delay" xml:"Delay"`
+	Level string `json:"Level" xml:"Level"`
 }

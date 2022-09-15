@@ -81,12 +81,12 @@ type DescribeLiveStreamsBlockListRequest struct {
 // DescribeLiveStreamsBlockListResponse is the response struct for api DescribeLiveStreamsBlockList
 type DescribeLiveStreamsBlockListResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	DomainName string     `json:"DomainName" xml:"DomainName"`
 	PageNum    int        `json:"PageNum" xml:"PageNum"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	TotalPage  int        `json:"TotalPage" xml:"TotalPage"`
 	PageSize   int        `json:"PageSize" xml:"PageSize"`
 	TotalNum   int        `json:"TotalNum" xml:"TotalNum"`
-	TotalPage  int        `json:"TotalPage" xml:"TotalPage"`
+	DomainName string     `json:"DomainName" xml:"DomainName"`
 	StreamUrls StreamUrls `json:"StreamUrls" xml:"StreamUrls"`
 }
 

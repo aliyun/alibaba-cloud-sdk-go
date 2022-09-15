@@ -17,16 +17,16 @@ package live
 
 // DomainDetail is a nested struct in live response
 type DomainDetail struct {
-	GmtCreated     string `json:"GmtCreated" xml:"GmtCreated"`
+	SSLPub         string `json:"SSLPub" xml:"SSLPub"`
 	GmtModified    string `json:"GmtModified" xml:"GmtModified"`
+	DomainName     string `json:"DomainName" xml:"DomainName"`
+	GmtCreated     string `json:"GmtCreated" xml:"GmtCreated"`
+	LiveDomainType string `json:"LiveDomainType" xml:"LiveDomainType"`
+	Description    string `json:"Description" xml:"Description"`
+	Region         string `json:"Region" xml:"Region"`
+	SSLProtocol    string `json:"SSLProtocol" xml:"SSLProtocol"`
+	CertName       string `json:"CertName" xml:"CertName"`
 	DomainStatus   string `json:"DomainStatus" xml:"DomainStatus"`
 	Cname          string `json:"Cname" xml:"Cname"`
-	DomainName     string `json:"DomainName" xml:"DomainName"`
-	LiveDomainType string `json:"LiveDomainType" xml:"LiveDomainType"`
-	Region         string `json:"Region" xml:"Region"`
-	Description    string `json:"Description" xml:"Description"`
-	SSLProtocol    string `json:"SSLProtocol" xml:"SSLProtocol"`
-	SSLPub         string `json:"SSLPub" xml:"SSLPub"`
 	Scope          string `json:"Scope" xml:"Scope"`
-	CertName       string `json:"CertName" xml:"CertName"`
 }

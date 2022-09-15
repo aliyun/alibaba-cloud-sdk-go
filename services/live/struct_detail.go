@@ -19,8 +19,8 @@ package live
 type Detail struct {
 	Gop             string `json:"Gop" xml:"Gop"`
 	FLV             int    `json:"FLV" xml:"FLV"`
-	Fps             int    `json:"Fps" xml:"Fps"`
 	Profile         int    `json:"Profile" xml:"Profile"`
+	Fps             int    `json:"Fps" xml:"Fps"`
 	MP4             int    `json:"MP4" xml:"MP4"`
 	AudioCodec      string `json:"AudioCodec" xml:"AudioCodec"`
 	TS              int    `json:"TS" xml:"TS"`
@@ -30,8 +30,8 @@ type Detail struct {
 	Height          int    `json:"Height" xml:"Height"`
 	Width           int    `json:"Width" xml:"Width"`
 	TemplateType    string `json:"TemplateType" xml:"TemplateType"`
-	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
 	BandWidth       int    `json:"BandWidth" xml:"BandWidth"`
+	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
 	AudioBitrate    int    `json:"AudioBitrate" xml:"AudioBitrate"`
 	AudioChannelNum int    `json:"AudioChannelNum" xml:"AudioChannelNum"`
 }

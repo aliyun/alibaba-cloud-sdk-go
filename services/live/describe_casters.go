@@ -75,6 +75,7 @@ type DescribeCastersRequest struct {
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	CasterName       string           `position:"Query" name:"CasterName"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	NormType         string           `position:"Query" name:"NormType"`
 	CasterId         string           `position:"Query" name:"CasterId"`
 	EndTime          string           `position:"Query" name:"EndTime"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,8 +87,8 @@ type DescribeCastersRequest struct {
 // DescribeCastersResponse is the response struct for api DescribeCasters
 type DescribeCastersResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Total      int        `json:"Total" xml:"Total"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	CasterList CasterList `json:"CasterList" xml:"CasterList"`
 }
 

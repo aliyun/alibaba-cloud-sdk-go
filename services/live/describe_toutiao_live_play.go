@@ -82,8 +82,8 @@ type DescribeToutiaoLivePlayRequest struct {
 // DescribeToutiaoLivePlayResponse is the response struct for api DescribeToutiaoLivePlay
 type DescribeToutiaoLivePlayResponse struct {
 	*responses.BaseResponse
-	RequestId   string        `json:"RequestId" xml:"RequestId"`
 	Description string        `json:"Description" xml:"Description"`
+	RequestId   string        `json:"RequestId" xml:"RequestId"`
 	Content     []ContentItem `json:"Content" xml:"Content"`
 }
 

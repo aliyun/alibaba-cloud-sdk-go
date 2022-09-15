@@ -82,9 +82,9 @@ type DeleteSnapshotFilesRequest struct {
 // DeleteSnapshotFilesResponse is the response struct for api DeleteSnapshotFiles
 type DeleteSnapshotFilesResponse struct {
 	*responses.BaseResponse
+	FailureCount           int                    `json:"FailureCount" xml:"FailureCount"`
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
 	SuccessCount           int                    `json:"SuccessCount" xml:"SuccessCount"`
-	FailureCount           int                    `json:"FailureCount" xml:"FailureCount"`
 	SnapshotDeleteInfoList SnapshotDeleteInfoList `json:"SnapshotDeleteInfoList" xml:"SnapshotDeleteInfoList"`
 }
 

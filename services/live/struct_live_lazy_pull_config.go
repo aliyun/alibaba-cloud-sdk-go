@@ -17,12 +17,12 @@ package live
 
 // LiveLazyPullConfig is a nested struct in live response
 type LiveLazyPullConfig struct {
-	DomainName     string `json:"DomainName" xml:"DomainName"`
 	AppName        string `json:"AppName" xml:"AppName"`
-	PullDomainName string `json:"PullDomainName" xml:"PullDomainName"`
+	PullArgs       string `json:"PullArgs" xml:"PullArgs"`
 	PullAppName    string `json:"PullAppName" xml:"PullAppName"`
 	PullProtocol   string `json:"PullProtocol" xml:"PullProtocol"`
-	PullAuthType   string `json:"PullAuthType" xml:"PullAuthType"`
 	PullAuthKey    string `json:"PullAuthKey" xml:"PullAuthKey"`
-	PullArgs       string `json:"PullArgs" xml:"PullArgs"`
+	PullDomainName string `json:"PullDomainName" xml:"PullDomainName"`
+	DomainName     string `json:"DomainName" xml:"DomainName"`
+	PullAuthType   string `json:"PullAuthType" xml:"PullAuthType"`
 }

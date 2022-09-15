@@ -17,6 +17,6 @@ package live
 
 // Items is a nested struct in live response
 type Items struct {
-	SuccessItems []SuccessItem `json:"SuccessItems" xml:"SuccessItems"`
 	FailedItems  []FailedItem  `json:"FailedItems" xml:"FailedItems"`
+	SuccessItems []SuccessItem `json:"SuccessItems" xml:"SuccessItems"`
 }

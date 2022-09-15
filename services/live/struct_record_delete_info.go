@@ -17,6 +17,6 @@ package live
 
 // RecordDeleteInfo is a nested struct in live response
 type RecordDeleteInfo struct {
-	RecordId string `json:"RecordId" xml:"RecordId"`
 	Message  string `json:"Message" xml:"Message"`
+	RecordId string `json:"RecordId" xml:"RecordId"`
 }

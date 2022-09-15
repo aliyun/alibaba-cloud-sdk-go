@@ -17,15 +17,15 @@ package live
 
 // VideoResource is a nested struct in live response
 type VideoResource struct {
+	EndOffset           int    `json:"EndOffset" xml:"EndOffset"`
+	FlvUrl              string `json:"FlvUrl" xml:"FlvUrl"`
+	BeginOffset         int    `json:"BeginOffset" xml:"BeginOffset"`
+	PtsCallbackInterval int    `json:"PtsCallbackInterval" xml:"PtsCallbackInterval"`
 	MaterialId          string `json:"MaterialId" xml:"MaterialId"`
-	ResourceId          string `json:"ResourceId" xml:"ResourceId"`
-	ResourceName        string `json:"ResourceName" xml:"ResourceName"`
 	LocationId          string `json:"LocationId" xml:"LocationId"`
 	LiveStreamUrl       string `json:"LiveStreamUrl" xml:"LiveStreamUrl"`
-	FlvUrl              string `json:"FlvUrl" xml:"FlvUrl"`
-	RepeatNum           int    `json:"RepeatNum" xml:"RepeatNum"`
 	VodUrl              string `json:"VodUrl" xml:"VodUrl"`
-	BeginOffset         int    `json:"BeginOffset" xml:"BeginOffset"`
-	EndOffset           int    `json:"EndOffset" xml:"EndOffset"`
-	PtsCallbackInterval int    `json:"PtsCallbackInterval" xml:"PtsCallbackInterval"`
+	ResourceId          string `json:"ResourceId" xml:"ResourceId"`
+	RepeatNum           int    `json:"RepeatNum" xml:"RepeatNum"`
+	ResourceName        string `json:"ResourceName" xml:"ResourceName"`
 }

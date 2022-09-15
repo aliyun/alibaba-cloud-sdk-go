@@ -78,8 +78,8 @@ type StopPlaylistRequest struct {
 // StopPlaylistResponse is the response struct for api StopPlaylist
 type StopPlaylistResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ProgramId string `json:"ProgramId" xml:"ProgramId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopPlaylistRequest creates a request to invoke StopPlaylist API

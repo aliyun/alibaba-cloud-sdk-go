@@ -17,24 +17,24 @@ package live
 
 // LiveStreamOnlineInfo is a nested struct in live response
 type LiveStreamOnlineInfo struct {
-	DomainName    string `json:"DomainName" xml:"DomainName"`
-	AppName       string `json:"AppName" xml:"AppName"`
-	StreamName    string `json:"StreamName" xml:"StreamName"`
-	PublishTime   string `json:"PublishTime" xml:"PublishTime"`
+	AudioDataRate int    `json:"AudioDataRate" xml:"AudioDataRate"`
+	FrameRate     int    `json:"FrameRate" xml:"FrameRate"`
 	PublishUrl    string `json:"PublishUrl" xml:"PublishUrl"`
-	PublishDomain string `json:"PublishDomain" xml:"PublishDomain"`
-	StreamUrlArgs string `json:"StreamUrlArgs" xml:"StreamUrlArgs"`
-	PublishType   string `json:"PublishType" xml:"PublishType"`
-	Transcoded    string `json:"Transcoded" xml:"Transcoded"`
+	StreamName    string `json:"StreamName" xml:"StreamName"`
+	AudioCodecId  int    `json:"AudioCodecId" xml:"AudioCodecId"`
+	Height        int    `json:"Height" xml:"Height"`
+	VideoDataRate int    `json:"VideoDataRate" xml:"VideoDataRate"`
+	DomainName    string `json:"DomainName" xml:"DomainName"`
 	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
 	TranscodeDrm  string `json:"TranscodeDrm" xml:"TranscodeDrm"`
-	ServerIp      string `json:"ServerIp" xml:"ServerIp"`
-	ClientIp      string `json:"ClientIp" xml:"ClientIp"`
+	PublishDomain string `json:"PublishDomain" xml:"PublishDomain"`
+	PublishTime   string `json:"PublishTime" xml:"PublishTime"`
+	AppName       string `json:"AppName" xml:"AppName"`
+	PublishType   string `json:"PublishType" xml:"PublishType"`
 	VideoCodecId  int    `json:"VideoCodecId" xml:"VideoCodecId"`
-	VideoDataRate int    `json:"VideoDataRate" xml:"VideoDataRate"`
-	FrameRate     int    `json:"FrameRate" xml:"FrameRate"`
+	Transcoded    string `json:"Transcoded" xml:"Transcoded"`
 	Width         int    `json:"Width" xml:"Width"`
-	Height        int    `json:"Height" xml:"Height"`
-	AudioCodecId  int    `json:"AudioCodecId" xml:"AudioCodecId"`
-	AudioDataRate int    `json:"AudioDataRate" xml:"AudioDataRate"`
+	ClientIp      string `json:"ClientIp" xml:"ClientIp"`
+	ServerIp      string `json:"ServerIp" xml:"ServerIp"`
+	StreamUrlArgs string `json:"StreamUrlArgs" xml:"StreamUrlArgs"`
 }

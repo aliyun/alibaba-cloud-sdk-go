@@ -17,7 +17,11 @@ package live
 
 // LiveDomainLimit is a nested struct in live response
 type LiveDomainLimit struct {
-	DomainName        string `json:"DomainName" xml:"DomainName"`
-	LimitNum          int    `json:"LimitNum" xml:"LimitNum"`
-	LimitTranscodeNum int    `json:"LimitTranscodeNum" xml:"LimitTranscodeNum"`
+	LimitTranscodeNum   int    `json:"LimitTranscodeNum" xml:"LimitTranscodeNum"`
+	CurrentTranscodeNum int    `json:"CurrentTranscodeNum" xml:"CurrentTranscodeNum"`
+	LimitNum            int    `json:"LimitNum" xml:"LimitNum"`
+	LimitTransferNum    int    `json:"LimitTransferNum" xml:"LimitTransferNum"`
+	CurrentNum          int    `json:"CurrentNum" xml:"CurrentNum"`
+	CurrentTransferNum  int    `json:"CurrentTransferNum" xml:"CurrentTransferNum"`
+	DomainName          string `json:"DomainName" xml:"DomainName"`
 }

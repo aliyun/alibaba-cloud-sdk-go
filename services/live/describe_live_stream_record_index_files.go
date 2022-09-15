@@ -86,12 +86,12 @@ type DescribeLiveStreamRecordIndexFilesRequest struct {
 // DescribeLiveStreamRecordIndexFilesResponse is the response struct for api DescribeLiveStreamRecordIndexFiles
 type DescribeLiveStreamRecordIndexFilesResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	PageNum             int                 `json:"PageNum" xml:"PageNum"`
-	PageSize            int                 `json:"PageSize" xml:"PageSize"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Order               string              `json:"Order" xml:"Order"`
-	TotalNum            int                 `json:"TotalNum" xml:"TotalNum"`
 	TotalPage           int                 `json:"TotalPage" xml:"TotalPage"`
+	PageSize            int                 `json:"PageSize" xml:"PageSize"`
+	TotalNum            int                 `json:"TotalNum" xml:"TotalNum"`
 	RecordIndexInfoList RecordIndexInfoList `json:"RecordIndexInfoList" xml:"RecordIndexInfoList"`
 }
 

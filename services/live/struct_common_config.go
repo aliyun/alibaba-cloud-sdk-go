@@ -17,6 +17,6 @@ package live
 
 // CommonConfig is a nested struct in live response
 type CommonConfig struct {
-	VideoResourceId string `json:"VideoResourceId" xml:"VideoResourceId"`
 	ChannelId       string `json:"ChannelId" xml:"ChannelId"`
+	VideoResourceId string `json:"VideoResourceId" xml:"VideoResourceId"`
 }

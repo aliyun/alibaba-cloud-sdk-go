@@ -78,8 +78,8 @@ type DeleteCasterRequest struct {
 // DeleteCasterResponse is the response struct for api DeleteCaster
 type DeleteCasterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	CasterId  string `json:"CasterId" xml:"CasterId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteCasterRequest creates a request to invoke DeleteCaster API

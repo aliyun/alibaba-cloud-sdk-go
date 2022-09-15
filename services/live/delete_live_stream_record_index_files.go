@@ -82,9 +82,9 @@ type DeleteLiveStreamRecordIndexFilesRequest struct {
 // DeleteLiveStreamRecordIndexFilesResponse is the response struct for api DeleteLiveStreamRecordIndexFiles
 type DeleteLiveStreamRecordIndexFilesResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	Message              string               `json:"Message" xml:"Message"`
 	Code                 string               `json:"Code" xml:"Code"`
+	Message              string               `json:"Message" xml:"Message"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	RecordDeleteInfoList RecordDeleteInfoList `json:"RecordDeleteInfoList" xml:"RecordDeleteInfoList"`
 }
 

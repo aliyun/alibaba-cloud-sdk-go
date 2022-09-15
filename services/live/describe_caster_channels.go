@@ -78,8 +78,8 @@ type DescribeCasterChannelsRequest struct {
 // DescribeCasterChannelsResponse is the response struct for api DescribeCasterChannels
 type DescribeCasterChannelsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Total     int      `json:"Total" xml:"Total"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Channels  Channels `json:"Channels" xml:"Channels"`
 }
 

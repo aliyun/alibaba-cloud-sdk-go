@@ -17,12 +17,12 @@ package live
 
 // PageData is a nested struct in live response
 type PageData struct {
-	DomainName       string `json:"DomainName" xml:"DomainName"`
-	Cname            string `json:"Cname" xml:"Cname"`
-	LiveDomainType   string `json:"LiveDomainType" xml:"LiveDomainType"`
 	GmtCreated       string `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified      string `json:"GmtModified" xml:"GmtModified"`
-	Description      string `json:"Description" xml:"Description"`
+	LiveDomainType   string `json:"LiveDomainType" xml:"LiveDomainType"`
 	LiveDomainStatus string `json:"LiveDomainStatus" xml:"LiveDomainStatus"`
 	RegionName       string `json:"RegionName" xml:"RegionName"`
+	Description      string `json:"Description" xml:"Description"`
+	Cname            string `json:"Cname" xml:"Cname"`
+	GmtModified      string `json:"GmtModified" xml:"GmtModified"`
+	DomainName       string `json:"DomainName" xml:"DomainName"`
 }

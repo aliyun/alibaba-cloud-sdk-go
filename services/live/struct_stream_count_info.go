@@ -17,8 +17,8 @@ package live
 
 // StreamCountInfo is a nested struct in live response
 type StreamCountInfo struct {
+	Type               string             `json:"Type" xml:"Type"`
 	Count              int64              `json:"Count" xml:"Count"`
 	Limit              int64              `json:"Limit" xml:"Limit"`
-	Type               string             `json:"Type" xml:"Type"`
 	StreamCountDetails StreamCountDetails `json:"StreamCountDetails" xml:"StreamCountDetails"`
 }

@@ -81,8 +81,8 @@ type DeleteMixStreamRequest struct {
 // DeleteMixStreamResponse is the response struct for api DeleteMixStream
 type DeleteMixStreamResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	MixStreamId string `json:"MixStreamId" xml:"MixStreamId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteMixStreamRequest creates a request to invoke DeleteMixStream API

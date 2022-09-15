@@ -17,6 +17,6 @@ package live
 
 // SnapshotDeleteInfo is a nested struct in live response
 type SnapshotDeleteInfo struct {
-	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	Message         string `json:"Message" xml:"Message"`
+	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 }

@@ -80,14 +80,14 @@ type GetMultiRateConfigRequest struct {
 // GetMultiRateConfigResponse is the response struct for api GetMultiRateConfig
 type GetMultiRateConfigResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	Message       string        `json:"Message" xml:"Message"`
-	Code          int           `json:"Code" xml:"Code"`
 	Domain        string        `json:"Domain" xml:"Domain"`
-	App           string        `json:"App" xml:"App"`
-	Stream        string        `json:"Stream" xml:"Stream"`
-	AvFormat      string        `json:"AvFormat" xml:"AvFormat"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	GroupId       string        `json:"GroupId" xml:"GroupId"`
+	App           string        `json:"App" xml:"App"`
+	AvFormat      string        `json:"AvFormat" xml:"AvFormat"`
+	Stream        string        `json:"Stream" xml:"Stream"`
+	Code          int           `json:"Code" xml:"Code"`
+	Message       string        `json:"Message" xml:"Message"`
 	IsLazy        string        `json:"IsLazy" xml:"IsLazy"`
 	IsTimeAlign   string        `json:"IsTimeAlign" xml:"IsTimeAlign"`
 	TemplatesInfo TemplatesInfo `json:"TemplatesInfo" xml:"TemplatesInfo"`

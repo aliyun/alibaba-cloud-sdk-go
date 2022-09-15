@@ -84,12 +84,12 @@ type DescribeDomainUsageDataRequest struct {
 // DescribeDomainUsageDataResponse is the response struct for api DescribeDomainUsageData
 type DescribeDomainUsageDataResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	DomainName           string               `json:"DomainName" xml:"DomainName"`
-	StartTime            string               `json:"StartTime" xml:"StartTime"`
 	EndTime              string               `json:"EndTime" xml:"EndTime"`
-	Field                string               `json:"Field" xml:"Field"`
+	StartTime            string               `json:"StartTime" xml:"StartTime"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	Area                 string               `json:"Area" xml:"Area"`
+	Field                string               `json:"Field" xml:"Field"`
+	DomainName           string               `json:"DomainName" xml:"DomainName"`
 	DataInterval         string               `json:"DataInterval" xml:"DataInterval"`
 	UsageDataPerInterval UsageDataPerInterval `json:"UsageDataPerInterval" xml:"UsageDataPerInterval"`
 }

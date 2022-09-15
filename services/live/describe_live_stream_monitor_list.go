@@ -82,8 +82,8 @@ type DescribeLiveStreamMonitorListRequest struct {
 // DescribeLiveStreamMonitorListResponse is the response struct for api DescribeLiveStreamMonitorList
 type DescribeLiveStreamMonitorListResponse struct {
 	*responses.BaseResponse
-	RequestId             string                  `json:"RequestId" xml:"RequestId"`
 	Total                 int                     `json:"Total" xml:"Total"`
+	RequestId             string                  `json:"RequestId" xml:"RequestId"`
 	LiveStreamMonitorList []LiveStreamMonitorInfo `json:"LiveStreamMonitorList" xml:"LiveStreamMonitorList"`
 }
 

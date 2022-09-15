@@ -17,10 +17,10 @@ package live
 
 // RecordContentInfo is a nested struct in live response
 type RecordContentInfo struct {
-	OssEndpoint     string  `json:"OssEndpoint" xml:"OssEndpoint"`
+	EndTime         string  `json:"EndTime" xml:"EndTime"`
+	StartTime       string  `json:"StartTime" xml:"StartTime"`
+	Duration        float64 `json:"Duration" xml:"Duration"`
 	OssBucket       string  `json:"OssBucket" xml:"OssBucket"`
 	OssObjectPrefix string  `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
-	StartTime       string  `json:"StartTime" xml:"StartTime"`
-	EndTime         string  `json:"EndTime" xml:"EndTime"`
-	Duration        float64 `json:"Duration" xml:"Duration"`
+	OssEndpoint     string  `json:"OssEndpoint" xml:"OssEndpoint"`
 }

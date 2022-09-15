@@ -81,9 +81,9 @@ type DescribeLiveUserBillPredictionRequest struct {
 // DescribeLiveUserBillPredictionResponse is the response struct for api DescribeLiveUserBillPrediction
 type DescribeLiveUserBillPredictionResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	StartTime          string             `json:"StartTime" xml:"StartTime"`
 	EndTime            string             `json:"EndTime" xml:"EndTime"`
+	StartTime          string             `json:"StartTime" xml:"StartTime"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	BillType           string             `json:"BillType" xml:"BillType"`
 	BillPredictionData BillPredictionData `json:"BillPredictionData" xml:"BillPredictionData"`
 }

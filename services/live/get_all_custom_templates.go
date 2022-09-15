@@ -78,8 +78,8 @@ type GetAllCustomTemplatesRequest struct {
 // GetAllCustomTemplatesResponse is the response struct for api GetAllCustomTemplates
 type GetAllCustomTemplatesResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
 	CustomTemplates string `json:"CustomTemplates" xml:"CustomTemplates"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetAllCustomTemplatesRequest creates a request to invoke GetAllCustomTemplates API

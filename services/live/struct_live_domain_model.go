@@ -17,6 +17,6 @@ package live
 
 // LiveDomainModel is a nested struct in live response
 type LiveDomainModel struct {
-	DomainName string `json:"DomainName" xml:"DomainName"`
 	Type       string `json:"Type" xml:"Type"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
 }
