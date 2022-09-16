@@ -1,3 +1,7 @@
+2022-09-16 Version: v1.61.1779
+- Generated 2017-05-18 for `antiddos-public`.
+- Init amp.
+
 2022-09-16 Version: v1.61.1778
 - Generated 2017-05-18 for `antiddos-public`.
 - Init amp.

@@ -91,7 +91,7 @@ func CreateDescribeBgpPackByIpRequest() (request *DescribeBgpPackByIpRequest) {
 	request = &DescribeBgpPackByIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeBgpPackByIp", "", "")
+	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeBgpPackByIp", "ddosbasic", "openAPI")
 	request.Method = requests.POST
 	return
 }

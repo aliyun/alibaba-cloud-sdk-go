@@ -92,7 +92,7 @@ func CreateDescribeCapRequest() (request *DescribeCapRequest) {
 	request = &DescribeCapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeCap", "", "")
+	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeCap", "ddosbasic", "openAPI")
 	request.Method = requests.POST
 	return
 }

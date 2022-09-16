@@ -87,7 +87,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeRegions", "", "")
+	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeRegions", "ddosbasic", "openAPI")
 	request.Method = requests.POST
 	return
 }

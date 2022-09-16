@@ -99,7 +99,7 @@ func CreateDescribeInstanceRequest() (request *DescribeInstanceRequest) {
 	request = &DescribeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeInstance", "", "")
+	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeInstance", "ddosbasic", "openAPI")
 	request.Method = requests.POST
 	return
 }

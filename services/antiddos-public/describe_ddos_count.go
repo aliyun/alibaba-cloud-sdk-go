@@ -89,7 +89,7 @@ func CreateDescribeDdosCountRequest() (request *DescribeDdosCountRequest) {
 	request = &DescribeDdosCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeDdosCount", "", "")
+	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeDdosCount", "ddosbasic", "openAPI")
 	request.Method = requests.POST
 	return
 }

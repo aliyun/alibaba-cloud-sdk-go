@@ -91,7 +91,7 @@ func CreateDescribeIpLocationServiceRequest() (request *DescribeIpLocationServic
 	request = &DescribeIpLocationServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeIpLocationService", "", "")
+	request.InitWithApiInfo("antiddos-public", "2017-05-18", "DescribeIpLocationService", "ddosbasic", "openAPI")
 	request.Method = requests.POST
 	return
 }

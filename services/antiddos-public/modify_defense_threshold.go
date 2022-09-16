@@ -93,7 +93,7 @@ func CreateModifyDefenseThresholdRequest() (request *ModifyDefenseThresholdReque
 	request = &ModifyDefenseThresholdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("antiddos-public", "2017-05-18", "ModifyDefenseThreshold", "", "")
+	request.InitWithApiInfo("antiddos-public", "2017-05-18", "ModifyDefenseThreshold", "ddosbasic", "openAPI")
 	request.Method = requests.POST
 	return
 }

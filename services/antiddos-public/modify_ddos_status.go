@@ -90,7 +90,7 @@ func CreateModifyDdosStatusRequest() (request *ModifyDdosStatusRequest) {
 	request = &ModifyDdosStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("antiddos-public", "2017-05-18", "ModifyDdosStatus", "", "")
+	request.InitWithApiInfo("antiddos-public", "2017-05-18", "ModifyDdosStatus", "ddosbasic", "openAPI")
 	request.Method = requests.POST
 	return
 }
