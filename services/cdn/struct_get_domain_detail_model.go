@@ -17,20 +17,16 @@ package cdn
 
 // GetDomainDetailModel is a nested struct in cdn response
 type GetDomainDetailModel struct {
-	SourcePort              int                              `json:"SourcePort" xml:"SourcePort"`
-	HttpsCname              string                           `json:"HttpsCname" xml:"HttpsCname"`
-	SourceType              string                           `json:"SourceType" xml:"SourceType"`
-	ServerCertificateStatus string                           `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
-	GmtModified             string                           `json:"GmtModified" xml:"GmtModified"`
-	DomainName              string                           `json:"DomainName" xml:"DomainName"`
-	GmtCreated              string                           `json:"GmtCreated" xml:"GmtCreated"`
-	Description             string                           `json:"Description" xml:"Description"`
-	Region                  string                           `json:"Region" xml:"Region"`
-	ResourceGroupId         string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Scope                   string                           `json:"Scope" xml:"Scope"`
-	DomainStatus            string                           `json:"DomainStatus" xml:"DomainStatus"`
-	Cname                   string                           `json:"Cname" xml:"Cname"`
-	CdnType                 string                           `json:"CdnType" xml:"CdnType"`
-	Sources                 SourcesInDescribeCdnDomainDetail `json:"Sources" xml:"Sources"`
-	SourceModels            SourceModels                     `json:"SourceModels" xml:"SourceModels"`
+	GmtCreated              string       `json:"GmtCreated" xml:"GmtCreated"`
+	Description             string       `json:"Description" xml:"Description"`
+	HttpsCname              string       `json:"HttpsCname" xml:"HttpsCname"`
+	ResourceGroupId         string       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ServerCertificateStatus string       `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
+	Scope                   string       `json:"Scope" xml:"Scope"`
+	DomainStatus            string       `json:"DomainStatus" xml:"DomainStatus"`
+	Cname                   string       `json:"Cname" xml:"Cname"`
+	GmtModified             string       `json:"GmtModified" xml:"GmtModified"`
+	CdnType                 string       `json:"CdnType" xml:"CdnType"`
+	DomainName              string       `json:"DomainName" xml:"DomainName"`
+	SourceModels            SourceModels `json:"SourceModels" xml:"SourceModels"`
 }

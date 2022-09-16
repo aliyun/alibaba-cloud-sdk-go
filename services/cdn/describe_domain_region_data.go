@@ -93,7 +93,7 @@ func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataR
 	request = &DescribeDomainRegionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainRegionData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRegionData", "", "")
 	request.Method = requests.POST
 	return
 }
