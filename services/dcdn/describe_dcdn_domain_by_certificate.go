@@ -71,8 +71,9 @@ func (client *Client) DescribeDcdnDomainByCertificateWithCallback(request *Descr
 // DescribeDcdnDomainByCertificateRequest is the request struct for api DescribeDcdnDomainByCertificate
 type DescribeDcdnDomainByCertificateRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	SSLPub  string           `position:"Query" name:"SSLPub"`
+	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
+	SSLStatus requests.Boolean `position:"Query" name:"SSLStatus"`
+	SSLPub    string           `position:"Query" name:"SSLPub"`
 }
 
 // DescribeDcdnDomainByCertificateResponse is the response struct for api DescribeDcdnDomainByCertificate

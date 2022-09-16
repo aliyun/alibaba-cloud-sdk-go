@@ -1,3 +1,7 @@
+2022-09-16 Version: v1.61.1777
+- Generated 2018-01-15 for `dcdn`.
+- Update DescribeDcdnReport.
+
 2022-09-16 Version: v1.61.1776
 - Generated 2018-05-10 for `Cdn`.
 - Update DescribeCdnReport.
