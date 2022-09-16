@@ -17,8 +17,8 @@ package iot
 
 // DataInPageQuerySharedSpeechOpen is a nested struct in iot response
 type DataInPageQuerySharedSpeechOpen struct {
-	PageId     int        `json:"PageId" xml:"PageId"`
-	PageSize   int        `json:"PageSize" xml:"PageSize"`
-	Total      int        `json:"Total" xml:"Total"`
-	ResultData ResultData `json:"ResultData" xml:"ResultData"`
+	PageId     int                                   `json:"PageId" xml:"PageId"`
+	PageSize   int                                   `json:"PageSize" xml:"PageSize"`
+	Total      int                                   `json:"Total" xml:"Total"`
+	ResultData ResultDataInPageQuerySharedSpeechOpen `json:"ResultData" xml:"ResultData"`
 }

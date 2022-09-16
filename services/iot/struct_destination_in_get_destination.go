@@ -23,4 +23,5 @@ type DestinationInGetDestination struct {
 	Configuration string `json:"Configuration" xml:"Configuration"`
 	IsFailover    bool   `json:"IsFailover" xml:"IsFailover"`
 	UtcCreated    string `json:"UtcCreated" xml:"UtcCreated"`
+	Status        string `json:"Status" xml:"Status"`
 }
