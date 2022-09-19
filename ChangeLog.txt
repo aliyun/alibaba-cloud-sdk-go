@@ -1,3 +1,7 @@
+2022-09-19 Version: v1.61.1782
+- Generated 2019-06-01 for `oos`.
+- Add ops item APIs.
+
 2022-09-16 Version: v1.61.1781
 - Generated 2017-05-18 for `antiddos-public`.
 - Add location endpoint.
