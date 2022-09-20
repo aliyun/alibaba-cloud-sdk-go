@@ -1,3 +1,7 @@
+2022-09-20 Version: v1.61.1784
+- Generated 2022-01-19 for `Mns-open`.
+- Remove useless Agent parameters.
+
 2022-09-19 Version: v1.61.1783
 - Generated 2021-01-31 for `threedvision`.
 - Release EstimateMonocularVideoDepth.
