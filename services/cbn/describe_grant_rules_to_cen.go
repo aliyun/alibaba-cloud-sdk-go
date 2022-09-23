@@ -74,16 +74,21 @@ type DescribeGrantRulesToCenRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CenId                string           `position:"Query" name:"CenId"`
 	ProductType          string           `position:"Query" name:"ProductType"`
+	NextToken            string           `position:"Query" name:"NextToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MaxResults           requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // DescribeGrantRulesToCenResponse is the response struct for api DescribeGrantRulesToCen
 type DescribeGrantRulesToCenResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	GrantRules GrantRules `json:"GrantRules" xml:"GrantRules"`
+	RequestId  string                              `json:"RequestId" xml:"RequestId"`
+	TotalCount int64                               `json:"TotalCount" xml:"TotalCount"`
+	MaxResults int64                               `json:"MaxResults" xml:"MaxResults"`
+	NextToken  string                              `json:"NextToken" xml:"NextToken"`
+	GrantRules GrantRulesInDescribeGrantRulesToCen `json:"GrantRules" xml:"GrantRules"`
 }
 
 // CreateDescribeGrantRulesToCenRequest creates a request to invoke DescribeGrantRulesToCen API

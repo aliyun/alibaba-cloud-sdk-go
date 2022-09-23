@@ -1,3 +1,9 @@
+2022-09-23 Version: v1.61.1790
+- Generated 2017-09-12 for `Cbn`.
+- Add new API DescribeGrantRulesToResource .
+- Update DescribeGrantRulesToCen support MaxResult and nextToken .
+- Update ListTransitRouterPrefixlistAssociation return TransitRouterId and TransitRouterTableId .
+
 2022-09-23 Version: v1.61.1789
 - Generated 2017-11-10 for `Ens`.
 - Support ipv4-network.

@@ -24,4 +24,5 @@ type PrefixList struct {
 	NextHopInstanceId    string `json:"NextHopInstanceId" xml:"NextHopInstanceId"`
 	NextHopType          string `json:"NextHopType" xml:"NextHopType"`
 	TransitRouterTableId string `json:"TransitRouterTableId" xml:"TransitRouterTableId"`
+	TransitRouterId      string `json:"TransitRouterId" xml:"TransitRouterId"`
 }
