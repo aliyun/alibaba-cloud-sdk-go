@@ -81,6 +81,7 @@ type DescribeInstancesRequest struct {
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 	NetworkId            string           `position:"Query" name:"NetworkId"`
 	Status               string           `position:"Query" name:"Status"`
+	IntranetIp           string           `position:"Query" name:"IntranetIp"`
 	ImageId              string           `position:"Query" name:"ImageId"`
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	SearchKey            string           `position:"Query" name:"SearchKey"`

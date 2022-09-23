@@ -22,6 +22,7 @@ type Instance struct {
 	ImageId                 string                               `json:"ImageId" xml:"ImageId"`
 	OSName                  string                               `json:"OSName" xml:"OSName"`
 	InternetMaxBandwidthOut int                                  `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+	InstanceTypeFamily      string                               `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 	InstanceId              string                               `json:"InstanceId" xml:"InstanceId"`
 	StatusDescrip           string                               `json:"StatusDescrip" xml:"StatusDescrip"`
 	Cpu                     string                               `json:"Cpu" xml:"Cpu"`
