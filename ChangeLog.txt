@@ -1,3 +1,7 @@
+2022-09-26 Version: v1.61.1791
+- Generated 2021-11-19 for `viapi-regen`.
+- Release CustomizeClassifyImage.
+
 2022-09-23 Version: v1.61.1790
 - Generated 2017-09-12 for `Cbn`.
 - Add new API DescribeGrantRulesToResource .
