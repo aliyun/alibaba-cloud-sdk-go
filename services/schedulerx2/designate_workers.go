@@ -72,13 +72,13 @@ func (client *Client) DesignateWorkersWithCallback(request *DesignateWorkersRequ
 type DesignateWorkersRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string           `position:"Query" name:"NamespaceSource"`
-	GroupId         string           `position:"Query" name:"GroupId"`
 	Transferable    requests.Boolean `position:"Query" name:"Transferable"`
-	Labels          string           `position:"Query" name:"Labels"`
 	DesignateType   requests.Integer `position:"Query" name:"DesignateType"`
 	JobId           requests.Integer `position:"Query" name:"JobId"`
-	Namespace       string           `position:"Query" name:"Namespace"`
 	Workers         string           `position:"Query" name:"Workers"`
+	GroupId         string           `position:"Query" name:"GroupId"`
+	Labels          string           `position:"Query" name:"Labels"`
+	Namespace       string           `position:"Query" name:"Namespace"`
 }
 
 // DesignateWorkersResponse is the response struct for api DesignateWorkers

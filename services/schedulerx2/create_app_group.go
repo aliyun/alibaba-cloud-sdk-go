@@ -81,6 +81,7 @@ type CreateAppGroupRequest struct {
 	MaxJobs              requests.Integer `position:"Query" name:"MaxJobs"`
 	MetricsThresholdJson string           `position:"Query" name:"MetricsThresholdJson"`
 	GroupId              string           `position:"Query" name:"GroupId"`
+	AppType              requests.Integer `position:"Query" name:"AppType"`
 	MonitorConfigJson    string           `position:"Query" name:"MonitorConfigJson"`
 	Namespace            string           `position:"Query" name:"Namespace"`
 	AppKey               string           `position:"Query" name:"AppKey"`
