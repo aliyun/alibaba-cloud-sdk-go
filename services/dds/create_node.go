@@ -77,6 +77,8 @@ type CreateNodeRequest struct {
 	ReadonlyReplicas     requests.Integer `position:"Query" name:"ReadonlyReplicas"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	NodeClass            string           `position:"Query" name:"NodeClass"`
+	ShardDirect          requests.Boolean `position:"Query" name:"ShardDirect"`
+	AccountName          string           `position:"Query" name:"AccountName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
@@ -86,6 +88,7 @@ type CreateNodeRequest struct {
 	NodeStorage          requests.Integer `position:"Query" name:"NodeStorage"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 }
 
 // CreateNodeResponse is the response struct for api CreateNode

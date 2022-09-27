@@ -71,38 +71,47 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 // CreateDBInstanceRequest is the request struct for api CreateDBInstance
 type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	CouponNo              string           `position:"Query" name:"CouponNo"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	NetworkType           string           `position:"Query" name:"NetworkType"`
-	StorageType           string           `position:"Query" name:"StorageType"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken         string           `position:"Query" name:"SecurityToken"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
-	Period                requests.Integer `position:"Query" name:"Period"`
-	BackupId              string           `position:"Query" name:"BackupId"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	AutoRenew             string           `position:"Query" name:"AutoRenew"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	ReadonlyReplicas      string           `position:"Query" name:"ReadonlyReplicas"`
-	ReplicationFactor     string           `position:"Query" name:"ReplicationFactor"`
-	StorageEngine         string           `position:"Query" name:"StorageEngine"`
-	DatabaseNames         string           `position:"Query" name:"DatabaseNames"`
-	Engine                string           `position:"Query" name:"Engine"`
-	RestoreTime           string           `position:"Query" name:"RestoreTime"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	SrcDBInstanceId       string           `position:"Query" name:"SrcDBInstanceId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	ClusterId             string           `position:"Query" name:"ClusterId"`
-	AccountPassword       string           `position:"Query" name:"AccountPassword"`
-	VpcId                 string           `position:"Query" name:"VpcId"`
-	ChargeType            string           `position:"Query" name:"ChargeType"`
+	ResourceOwnerId       requests.Integer       `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage     requests.Integer       `position:"Query" name:"DBInstanceStorage"`
+	SecondaryZoneId       string                 `position:"Query" name:"SecondaryZoneId"`
+	CouponNo              string                 `position:"Query" name:"CouponNo"`
+	EngineVersion         string                 `position:"Query" name:"EngineVersion"`
+	NetworkType           string                 `position:"Query" name:"NetworkType"`
+	StorageType           string                 `position:"Query" name:"StorageType"`
+	ResourceGroupId       string                 `position:"Query" name:"ResourceGroupId"`
+	SecurityToken         string                 `position:"Query" name:"SecurityToken"`
+	DBInstanceDescription string                 `position:"Query" name:"DBInstanceDescription"`
+	Tag                   *[]CreateDBInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	BusinessInfo          string                 `position:"Query" name:"BusinessInfo"`
+	Period                requests.Integer       `position:"Query" name:"Period"`
+	BackupId              string                 `position:"Query" name:"BackupId"`
+	OwnerId               requests.Integer       `position:"Query" name:"OwnerId"`
+	DBInstanceClass       string                 `position:"Query" name:"DBInstanceClass"`
+	SecurityIPList        string                 `position:"Query" name:"SecurityIPList"`
+	VSwitchId             string                 `position:"Query" name:"VSwitchId"`
+	AutoRenew             string                 `position:"Query" name:"AutoRenew"`
+	ZoneId                string                 `position:"Query" name:"ZoneId"`
+	ClientToken           string                 `position:"Query" name:"ClientToken"`
+	ReadonlyReplicas      string                 `position:"Query" name:"ReadonlyReplicas"`
+	ReplicationFactor     string                 `position:"Query" name:"ReplicationFactor"`
+	StorageEngine         string                 `position:"Query" name:"StorageEngine"`
+	DatabaseNames         string                 `position:"Query" name:"DatabaseNames"`
+	Engine                string                 `position:"Query" name:"Engine"`
+	HiddenZoneId          string                 `position:"Query" name:"HiddenZoneId"`
+	RestoreTime           string                 `position:"Query" name:"RestoreTime"`
+	ResourceOwnerAccount  string                 `position:"Query" name:"ResourceOwnerAccount"`
+	SrcDBInstanceId       string                 `position:"Query" name:"SrcDBInstanceId"`
+	OwnerAccount          string                 `position:"Query" name:"OwnerAccount"`
+	ClusterId             string                 `position:"Query" name:"ClusterId"`
+	AccountPassword       string                 `position:"Query" name:"AccountPassword"`
+	VpcId                 string                 `position:"Query" name:"VpcId"`
+	ChargeType            string                 `position:"Query" name:"ChargeType"`
+}
+
+// CreateDBInstanceTag is a repeated param struct in CreateDBInstanceRequest
+type CreateDBInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateDBInstanceResponse is the response struct for api CreateDBInstance

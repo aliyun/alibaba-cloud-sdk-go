@@ -89,6 +89,8 @@ type DescribeBackupPolicyResponse struct {
 	PreferredNextBackupTime  string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
 	EnableBackupLog          int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
 	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
+	SnapshotBackupType       string `json:"SnapshotBackupType" xml:"SnapshotBackupType"`
+	BackupInterval           int    `json:"BackupInterval" xml:"BackupInterval"`
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API
