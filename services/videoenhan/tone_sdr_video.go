@@ -71,8 +71,8 @@ func (client *Client) ToneSdrVideoWithCallback(request *ToneSdrVideoRequest, cal
 // ToneSdrVideoRequest is the request struct for api ToneSdrVideo
 type ToneSdrVideoRequest struct {
 	*requests.RpcRequest
-	RecolorModel string           `position:"Body" name:"RecolorModel"`
 	Bitrate      requests.Integer `position:"Body" name:"Bitrate"`
+	RecolorModel string           `position:"Body" name:"RecolorModel"`
 	Async        requests.Boolean `position:"Body" name:"Async"`
 	VideoURL     string           `position:"Body" name:"VideoURL"`
 }

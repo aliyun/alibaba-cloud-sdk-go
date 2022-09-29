@@ -71,8 +71,8 @@ func (client *Client) MergeVideoFaceWithCallback(request *MergeVideoFaceRequest,
 // MergeVideoFaceRequest is the request struct for api MergeVideoFace
 type MergeVideoFaceRequest struct {
 	*requests.RpcRequest
-	PostURL      string           `position:"Body" name:"PostURL"`
 	ReferenceURL string           `position:"Body" name:"ReferenceURL"`
+	PostURL      string           `position:"Body" name:"PostURL"`
 	Async        requests.Boolean `position:"Body" name:"Async"`
 	VideoURL     string           `position:"Body" name:"VideoURL"`
 }
