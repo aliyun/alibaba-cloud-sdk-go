@@ -71,8 +71,10 @@ func (client *Client) SegmentHeadWithCallback(request *SegmentHeadRequest, callb
 // SegmentHeadRequest is the request struct for api SegmentHead
 type SegmentHeadRequest struct {
 	*requests.RpcRequest
-	ReturnForm string `position:"Query" name:"ReturnForm"`
-	ImageURL   string `position:"Query" name:"ImageURL"`
+	ReturnForm     string `position:"Query" name:"ReturnForm"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentHeadResponse is the response struct for api SegmentHead
@@ -87,7 +89,7 @@ func CreateSegmentHeadRequest() (request *SegmentHeadRequest) {
 	request = &SegmentHeadRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHead", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHead", "", "")
 	request.Method = requests.POST
 	return
 }

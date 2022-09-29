@@ -71,7 +71,9 @@ func (client *Client) SegmentClothWithCallback(request *SegmentClothRequest, cal
 // SegmentClothRequest is the request struct for api SegmentCloth
 type SegmentClothRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentClothResponse is the response struct for api SegmentCloth
@@ -86,7 +88,7 @@ func CreateSegmentClothRequest() (request *SegmentClothRequest) {
 	request = &SegmentClothRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentCloth", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentCloth", "", "")
 	request.Method = requests.POST
 	return
 }

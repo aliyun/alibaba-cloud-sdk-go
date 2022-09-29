@@ -1,3 +1,7 @@
+2022-09-29 Version: v1.61.1797
+- Generated 2019-12-30 for `imageseg`.
+- Update RefineMask.
+
 2022-09-29 Version: v1.61.1796
 - Generated 2019-12-30 for `facebody`.
 - Update CompareFace.

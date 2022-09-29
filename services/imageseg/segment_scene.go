@@ -71,7 +71,9 @@ func (client *Client) SegmentSceneWithCallback(request *SegmentSceneRequest, cal
 // SegmentSceneRequest is the request struct for api SegmentScene
 type SegmentSceneRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentSceneResponse is the response struct for api SegmentScene
@@ -86,7 +88,7 @@ func CreateSegmentSceneRequest() (request *SegmentSceneRequest) {
 	request = &SegmentSceneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentScene", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentScene", "", "")
 	request.Method = requests.POST
 	return
 }
