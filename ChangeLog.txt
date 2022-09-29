@@ -1,3 +1,7 @@
+2022-09-29 Version: v1.61.1795
+- Generated 2020-03-20 for `videorecog`.
+- Update RecognizeVideoCastCrewList.
+
 2022-09-29 Version: v1.61.1794
 - Generated 2019-04-30 for `schedulerx2`.
 - Update Job Support Incremental Updating.
