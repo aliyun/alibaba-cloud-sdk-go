@@ -1,3 +1,7 @@
+2022-10-08 Version: v1.61.1800
+- Generated 2015-12-01 for `Dds`.
+- Update by SDK platform.
+
 2022-09-29 Version: v1.61.1799
 - Generated 2019-09-30 for `imageenhan`.
 - Update MakeSuperResolutionImage.
