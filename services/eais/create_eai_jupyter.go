@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateEai invokes the eais.CreateEai API synchronously
-func (client *Client) CreateEai(request *CreateEaiRequest) (response *CreateEaiResponse, err error) {
-	response = CreateCreateEaiResponse()
+// CreateEaiJupyter invokes the eais.CreateEaiJupyter API synchronously
+func (client *Client) CreateEaiJupyter(request *CreateEaiJupyterRequest) (response *CreateEaiJupyterResponse, err error) {
+	response = CreateCreateEaiJupyterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateEaiWithChan invokes the eais.CreateEai API asynchronously
-func (client *Client) CreateEaiWithChan(request *CreateEaiRequest) (<-chan *CreateEaiResponse, <-chan error) {
-	responseChan := make(chan *CreateEaiResponse, 1)
+// CreateEaiJupyterWithChan invokes the eais.CreateEaiJupyter API asynchronously
+func (client *Client) CreateEaiJupyterWithChan(request *CreateEaiJupyterRequest) (<-chan *CreateEaiJupyterResponse, <-chan error) {
+	responseChan := make(chan *CreateEaiJupyterResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateEai(request)
+		response, err := client.CreateEaiJupyter(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateEaiWithChan(request *CreateEaiRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
-// CreateEaiWithCallback invokes the eais.CreateEai API asynchronously
-func (client *Client) CreateEaiWithCallback(request *CreateEaiRequest, callback func(response *CreateEaiResponse, err error)) <-chan int {
+// CreateEaiJupyterWithCallback invokes the eais.CreateEaiJupyter API asynchronously
+func (client *Client) CreateEaiJupyterWithCallback(request *CreateEaiJupyterRequest, callback func(response *CreateEaiJupyterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateEaiResponse
+		var response *CreateEaiJupyterResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateEai(request)
+		response, err = client.CreateEaiJupyter(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,35 @@ func (client *Client) CreateEaiWithCallback(request *CreateEaiRequest, callback 
 	return result
 }
 
-// CreateEaiRequest is the request struct for api CreateEai
-type CreateEaiRequest struct {
+// CreateEaiJupyterRequest is the request struct for api CreateEaiJupyter
+type CreateEaiJupyterRequest struct {
 	*requests.RpcRequest
 	ClientToken     string `position:"Query" name:"ClientToken"`
 	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
+	EaisType        string `position:"Query" name:"EaisType"`
 	VSwitchId       string `position:"Query" name:"VSwitchId"`
-	InstanceName    string `position:"Query" name:"InstanceName"`
-	InstanceType    string `position:"Query" name:"InstanceType"`
 }
 
-// CreateEaiResponse is the response struct for api CreateEai
-type CreateEaiResponse struct {
+// CreateEaiJupyterResponse is the response struct for api CreateEaiJupyter
+type CreateEaiJupyterResponse struct {
 	*responses.BaseResponse
-	ElasticAcceleratedInstanceId string `json:"ElasticAcceleratedInstanceId" xml:"ElasticAcceleratedInstanceId"`
 	RequestId                    string `json:"RequestId" xml:"RequestId"`
+	ElasticAcceleratedInstanceId string `json:"ElasticAcceleratedInstanceId" xml:"ElasticAcceleratedInstanceId"`
 }
 
-// CreateCreateEaiRequest creates a request to invoke CreateEai API
-func CreateCreateEaiRequest() (request *CreateEaiRequest) {
-	request = &CreateEaiRequest{
+// CreateCreateEaiJupyterRequest creates a request to invoke CreateEaiJupyter API
+func CreateCreateEaiJupyterRequest() (request *CreateEaiJupyterRequest) {
+	request = &CreateEaiJupyterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("eais", "2019-06-24", "CreateEai", "eais", "openAPI")
+	request.InitWithApiInfo("eais", "2019-06-24", "CreateEaiJupyter", "eais", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateEaiResponse creates a response to parse from CreateEai response
-func CreateCreateEaiResponse() (response *CreateEaiResponse) {
-	response = &CreateEaiResponse{
+// CreateCreateEaiJupyterResponse creates a response to parse from CreateEaiJupyter response
+func CreateCreateEaiJupyterResponse() (response *CreateEaiJupyterResponse) {
+	response = &CreateEaiJupyterResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
