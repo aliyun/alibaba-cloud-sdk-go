@@ -99,7 +99,7 @@ func CreateDescribeGlobalDatabaseNetworkRequest() (request *DescribeGlobalDataba
 	request = &DescribeGlobalDatabaseNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeGlobalDatabaseNetwork", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeGlobalDatabaseNetwork", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

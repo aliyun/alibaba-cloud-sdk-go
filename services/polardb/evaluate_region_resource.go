@@ -100,7 +100,7 @@ func CreateEvaluateRegionResourceRequest() (request *EvaluateRegionResourceReque
 	request = &EvaluateRegionResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "EvaluateRegionResource", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "EvaluateRegionResource", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateCancelScheduleTasksRequest() (request *CancelScheduleTasksRequest) {
 	request = &CancelScheduleTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CancelScheduleTasks", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CancelScheduleTasks", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

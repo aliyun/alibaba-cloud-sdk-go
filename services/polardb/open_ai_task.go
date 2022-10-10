@@ -93,7 +93,7 @@ func CreateOpenAITaskRequest() (request *OpenAITaskRequest) {
 	request = &OpenAITaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "OpenAITask", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "OpenAITask", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

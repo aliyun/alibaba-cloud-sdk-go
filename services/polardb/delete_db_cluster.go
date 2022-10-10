@@ -90,7 +90,7 @@ func CreateDeleteDBClusterRequest() (request *DeleteDBClusterRequest) {
 	request = &DeleteDBClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteDBCluster", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteDBCluster", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

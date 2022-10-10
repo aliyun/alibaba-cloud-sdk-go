@@ -95,7 +95,7 @@ func CreateModifyDBNodesParametersRequest() (request *ModifyDBNodesParametersReq
 	request = &ModifyDBNodesParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodesParameters", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodesParameters", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

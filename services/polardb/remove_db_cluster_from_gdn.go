@@ -91,7 +91,7 @@ func CreateRemoveDBClusterFromGDNRequest() (request *RemoveDBClusterFromGDNReque
 	request = &RemoveDBClusterFromGDNRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "RemoveDBClusterFromGDN", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "RemoveDBClusterFromGDN", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

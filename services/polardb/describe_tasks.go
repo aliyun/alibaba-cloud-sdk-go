@@ -102,7 +102,7 @@ func CreateDescribeTasksRequest() (request *DescribeTasksRequest) {
 	request = &DescribeTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeTasks", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeTasks", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

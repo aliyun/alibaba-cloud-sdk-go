@@ -95,7 +95,7 @@ func CreateCreateParameterGroupRequest() (request *CreateParameterGroupRequest) 
 	request = &CreateParameterGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CreateParameterGroup", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CreateParameterGroup", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

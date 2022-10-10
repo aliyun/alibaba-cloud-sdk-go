@@ -93,7 +93,7 @@ func CreateDescribeClassListRequest() (request *DescribeClassListRequest) {
 	request = &DescribeClassListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeClassList", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeClassList", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

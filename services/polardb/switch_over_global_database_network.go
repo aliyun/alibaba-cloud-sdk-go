@@ -92,7 +92,7 @@ func CreateSwitchOverGlobalDatabaseNetworkRequest() (request *SwitchOverGlobalDa
 	request = &SwitchOverGlobalDatabaseNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "SwitchOverGlobalDatabaseNetwork", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "SwitchOverGlobalDatabaseNetwork", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

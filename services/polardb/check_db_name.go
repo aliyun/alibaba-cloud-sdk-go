@@ -91,7 +91,7 @@ func CreateCheckDBNameRequest() (request *CheckDBNameRequest) {
 	request = &CheckDBNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CheckDBName", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CheckDBName", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

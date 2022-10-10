@@ -91,7 +91,7 @@ func CreateModifyMaskingRulesRequest() (request *ModifyMaskingRulesRequest) {
 	request = &ModifyMaskingRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyMaskingRules", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyMaskingRules", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

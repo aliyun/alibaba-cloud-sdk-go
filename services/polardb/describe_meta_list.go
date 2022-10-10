@@ -101,7 +101,7 @@ func CreateDescribeMetaListRequest() (request *DescribeMetaListRequest) {
 	request = &DescribeMetaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeMetaList", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeMetaList", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

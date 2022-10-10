@@ -92,7 +92,7 @@ func CreateDescribeParameterGroupsRequest() (request *DescribeParameterGroupsReq
 	request = &DescribeParameterGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeParameterGroups", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeParameterGroups", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

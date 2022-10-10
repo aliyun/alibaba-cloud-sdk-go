@@ -95,7 +95,7 @@ func CreateUpgradeDBClusterVersionRequest() (request *UpgradeDBClusterVersionReq
 	request = &UpgradeDBClusterVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "UpgradeDBClusterVersion", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "UpgradeDBClusterVersion", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

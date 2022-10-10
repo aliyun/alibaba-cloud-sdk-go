@@ -101,7 +101,7 @@ func CreateDescribeDBClusterMigrationRequest() (request *DescribeDBClusterMigrat
 	request = &DescribeDBClusterMigrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterMigration", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterMigration", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

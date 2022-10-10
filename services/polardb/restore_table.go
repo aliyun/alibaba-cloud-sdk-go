@@ -93,7 +93,7 @@ func CreateRestoreTableRequest() (request *RestoreTableRequest) {
 	request = &RestoreTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "RestoreTable", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "RestoreTable", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

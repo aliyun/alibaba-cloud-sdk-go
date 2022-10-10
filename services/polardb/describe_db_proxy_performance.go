@@ -100,7 +100,7 @@ func CreateDescribeDBProxyPerformanceRequest() (request *DescribeDBProxyPerforma
 	request = &DescribeDBProxyPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBProxyPerformance", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBProxyPerformance", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

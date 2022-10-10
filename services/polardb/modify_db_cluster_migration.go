@@ -94,7 +94,7 @@ func CreateModifyDBClusterMigrationRequest() (request *ModifyDBClusterMigrationR
 	request = &ModifyDBClusterMigrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterMigration", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterMigration", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

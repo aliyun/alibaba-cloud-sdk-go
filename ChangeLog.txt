@@ -1,3 +1,7 @@
+2022-10-10 Version: v1.61.1802
+- Generated 2017-08-01 for `polardb`.
+- Support serverless feature.
+
 2022-10-10 Version: v1.61.1801
 - Generated 2019-06-24 for `eais`.
 - Add OpenAPI CreateEaiJupyter.

@@ -24,6 +24,7 @@ type DBCluster struct {
 	StoragePayType       string                      `json:"StoragePayType" xml:"StoragePayType"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
 	DBClusterNetworkType string                      `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
+	ServerlessType       string                      `json:"ServerlessType" xml:"ServerlessType"`
 	RegionId             string                      `json:"RegionId" xml:"RegionId"`
 	DeletedTime          string                      `json:"DeletedTime" xml:"DeletedTime"`
 	DBNodeNumber         int                         `json:"DBNodeNumber" xml:"DBNodeNumber"`

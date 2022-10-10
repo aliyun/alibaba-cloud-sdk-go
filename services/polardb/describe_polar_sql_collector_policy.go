@@ -91,7 +91,7 @@ func CreateDescribePolarSQLCollectorPolicyRequest() (request *DescribePolarSQLCo
 	request = &DescribePolarSQLCollectorPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePolarSQLCollectorPolicy", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePolarSQLCollectorPolicy", "polardb", "openAPI")
 	request.Method = requests.GET
 	return
 }

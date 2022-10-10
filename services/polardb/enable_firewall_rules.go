@@ -93,7 +93,7 @@ func CreateEnableFirewallRulesRequest() (request *EnableFirewallRulesRequest) {
 	request = &EnableFirewallRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "EnableFirewallRules", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "EnableFirewallRules", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

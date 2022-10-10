@@ -90,7 +90,7 @@ func CreateCloseAITaskRequest() (request *CloseAITaskRequest) {
 	request = &CloseAITaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CloseAITask", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CloseAITask", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }
