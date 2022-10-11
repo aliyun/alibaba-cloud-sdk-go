@@ -1,3 +1,7 @@
+2022-10-11 Version: v1.61.1803
+- Generated 2021-02-04 for `AIWorkSpace`.
+- Fix CodeSourceItem spec.
+
 2022-10-10 Version: v1.61.1802
 - Generated 2017-08-01 for `polardb`.
 - Support serverless feature.
