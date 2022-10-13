@@ -71,8 +71,8 @@ func (client *Client) ListProjectsWithCallback(request *ListProjectsRequest, cal
 // ListProjectsRequest is the request struct for api ListProjects
 type ListProjectsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListProjectsResponse is the response struct for api ListProjects

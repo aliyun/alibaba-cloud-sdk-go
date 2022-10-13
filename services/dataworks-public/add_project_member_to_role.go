@@ -73,8 +73,8 @@ type AddProjectMemberToRoleRequest struct {
 	*requests.RpcRequest
 	RoleCode    string           `position:"Query" name:"RoleCode"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
-	ProjectId   requests.Integer `position:"Query" name:"ProjectId"`
 	UserId      string           `position:"Query" name:"UserId"`
+	ProjectId   requests.Integer `position:"Query" name:"ProjectId"`
 }
 
 // AddProjectMemberToRoleResponse is the response struct for api AddProjectMemberToRole
