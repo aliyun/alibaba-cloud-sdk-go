@@ -17,10 +17,10 @@ package ens
 
 // MountTargetsItem is a nested struct in ens response
 type MountTargetsItem struct {
+	FileSystemId      string `json:"FileSystemId" xml:"FileSystemId"`
 	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
 	MountTargetName   string `json:"MountTargetName" xml:"MountTargetName"`
 	NetWorkId         string `json:"NetWorkId" xml:"NetWorkId"`
-	Status            string `json:"Status" xml:"Status"`
 	EnsRegionId       string `json:"EnsRegionId" xml:"EnsRegionId"`
-	FileSystemId      string `json:"FileSystemId" xml:"FileSystemId"`
+	Status            string `json:"Status" xml:"Status"`
 }
