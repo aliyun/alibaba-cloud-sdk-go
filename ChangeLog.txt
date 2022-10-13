@@ -1,3 +1,8 @@
+2022-10-13 Version: v1.61.1805
+- Generated 2016-08-01 for `Push`.
+- Supported AndroidNotificationGroup for Push and MassPush.
+- Add Honor channel support.
+
 2022-10-13 Version: v1.61.1804
 - Generated 2020-05-18 for `dataworks-public`.
 
