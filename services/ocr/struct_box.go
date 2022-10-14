@@ -36,4 +36,5 @@ type Box struct {
 	WithoutTaxAmounts []float64 `json:"WithoutTaxAmounts" xml:"WithoutTaxAmounts"`
 	PayerAddresses    []float64 `json:"PayerAddresses" xml:"PayerAddresses"`
 	PayeeRegisterNoes []float64 `json:"PayeeRegisterNoes" xml:"PayeeRegisterNoes"`
+	ItemNames         []int     `json:"ItemNames" xml:"ItemNames"`
 }

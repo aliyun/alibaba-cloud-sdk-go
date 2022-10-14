@@ -86,11 +86,11 @@ type Data struct {
 	FaceResult          FaceResult           `json:"FaceResult" xml:"FaceResult"`
 	Summary             Summary              `json:"Summary" xml:"Summary"`
 	Box                 Box                  `json:"Box" xml:"Box"`
+	Content             Content              `json:"Content" xml:"Content"`
 	TitleArea           TitleArea            `json:"TitleArea" xml:"TitleArea"`
 	Stamp               Stamp                `json:"Stamp" xml:"Stamp"`
 	Emblem              Emblem               `json:"Emblem" xml:"Emblem"`
 	FrontResult         FrontResult          `json:"FrontResult" xml:"FrontResult"`
-	Content             Content              `json:"Content" xml:"Content"`
 	Title               Title                `json:"Title" xml:"Title"`
 	QRCode              QRCode               `json:"QRCode" xml:"QRCode"`
 	Elements            []Element            `json:"Elements" xml:"Elements"`
