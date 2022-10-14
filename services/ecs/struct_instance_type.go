@@ -50,6 +50,7 @@ type InstanceType struct {
 	BaselineCredit              int     `json:"BaselineCredit" xml:"BaselineCredit"`
 	EniTrunkSupported           bool    `json:"EniTrunkSupported" xml:"EniTrunkSupported"`
 	GPUAmount                   int     `json:"GPUAmount" xml:"GPUAmount"`
+	GPUMemorySize               float64 `json:"GPUMemorySize" xml:"GPUMemorySize"`
 	NvmeSupport                 string  `json:"NvmeSupport" xml:"NvmeSupport"`
 	InstanceCategory            string  `json:"InstanceCategory" xml:"InstanceCategory"`
 	EniIpv6AddressQuantity      int     `json:"EniIpv6AddressQuantity" xml:"EniIpv6AddressQuantity"`

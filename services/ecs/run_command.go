@@ -72,6 +72,7 @@ func (client *Client) RunCommandWithCallback(request *RunCommandRequest, callbac
 type RunCommandRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
+	ContainerName        string                 `position:"Query" name:"ContainerName"`
 	WorkingDir           string                 `position:"Query" name:"WorkingDir"`
 	Description          string                 `position:"Query" name:"Description"`
 	Type                 string                 `position:"Query" name:"Type"`

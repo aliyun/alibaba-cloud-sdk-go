@@ -44,10 +44,11 @@ type Invocation struct {
 	InvokeId           string                                   `json:"InvokeId" xml:"InvokeId"`
 	RepeatMode         string                                   `json:"RepeatMode" xml:"RepeatMode"`
 	InvokeStatus       string                                   `json:"InvokeStatus" xml:"InvokeStatus"`
+	ContainerName      string                                   `json:"ContainerName" xml:"ContainerName"`
 	FileOwner          string                                   `json:"FileOwner" xml:"FileOwner"`
 	CommandDescription string                                   `json:"CommandDescription" xml:"CommandDescription"`
 	CommandType        string                                   `json:"CommandType" xml:"CommandType"`
 	Tags               TagsInDescribeInvocations                `json:"Tags" xml:"Tags"`
-	InvokeInstances    InvokeInstancesInDescribeSendFileResults `json:"InvokeInstances" xml:"InvokeInstances"`
 	InvocationResults  InvocationResults                        `json:"InvocationResults" xml:"InvocationResults"`
+	InvokeInstances    InvokeInstancesInDescribeSendFileResults `json:"InvokeInstances" xml:"InvokeInstances"`
 }
