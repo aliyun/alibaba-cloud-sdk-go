@@ -1,3 +1,7 @@
+2022-10-17 Version: v1.61.1813
+- Generated 2020-03-20 for `videorecog`.
+- Update RecognizeVideoCastCrewList.
+
 2022-10-17 Version: v1.61.1812
 - Generated 2020-03-20 for `videoseg`.
 - Update videoseg.
