@@ -1,3 +1,7 @@
+2022-10-17 Version: v1.61.1815
+- Generated 2020-03-20 for `videoenhan`.
+- Release MergeVideoModelFace.
+
 2022-10-17 Version: v1.61.1814
 - Generated 2021-01-31 for `threedvision`.
 - Release EstimateMonocularVideoDepth.
