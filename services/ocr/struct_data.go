@@ -30,8 +30,8 @@ type Data struct {
 	LegalPerson         string               `json:"LegalPerson" xml:"LegalPerson"`
 	RegisterNumber      string               `json:"RegisterNumber" xml:"RegisterNumber"`
 	IssuePlaceRaw       string               `json:"IssuePlaceRaw" xml:"IssuePlaceRaw"`
-	Price               float64              `json:"Price" xml:"Price"`
 	Destination         string               `json:"Destination" xml:"Destination"`
+	Price               float64              `json:"Price" xml:"Price"`
 	Relation            string               `json:"Relation" xml:"Relation"`
 	Height              int64                `json:"Height" xml:"Height"`
 	BirthPlaceRaw       string               `json:"BirthPlaceRaw" xml:"BirthPlaceRaw"`

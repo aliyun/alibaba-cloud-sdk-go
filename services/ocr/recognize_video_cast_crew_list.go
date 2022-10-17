@@ -71,15 +71,10 @@ func (client *Client) RecognizeVideoCastCrewListWithCallback(request *RecognizeV
 // RecognizeVideoCastCrewListRequest is the request struct for api RecognizeVideoCastCrewList
 type RecognizeVideoCastCrewListRequest struct {
 	*requests.RpcRequest
-	Params      *[]RecognizeVideoCastCrewListParams `position:"Body" name:"Params"  type:"Json"`
-	Async       requests.Boolean                    `position:"Body" name:"Async"`
-	RegisterUrl string                              `position:"Body" name:"RegisterUrl"`
-	VideoUrl    string                              `position:"Body" name:"VideoUrl"`
-}
-
-// RecognizeVideoCastCrewListParams is a repeated param struct in RecognizeVideoCastCrewListRequest
-type RecognizeVideoCastCrewListParams struct {
-	Type string `name:"Type"`
+	Params      string           `position:"Body" name:"Params"`
+	Async       requests.Boolean `position:"Body" name:"Async"`
+	RegisterUrl string           `position:"Body" name:"RegisterUrl"`
+	VideoUrl    string           `position:"Body" name:"VideoUrl"`
 }
 
 // RecognizeVideoCastCrewListResponse is the response struct for api RecognizeVideoCastCrewList
