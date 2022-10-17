@@ -87,10 +87,6 @@ type AnalyzeChestVesselURLList struct {
 // AnalyzeChestVesselResponse is the response struct for api AnalyzeChestVessel
 type AnalyzeChestVesselResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateAnalyzeChestVesselRequest creates a request to invoke AnalyzeChestVessel API

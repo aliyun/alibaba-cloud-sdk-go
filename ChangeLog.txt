@@ -1,3 +1,7 @@
+2022-10-17 Version: v1.61.1810
+- Generated 2020-03-20 for `imageprocess`.
+- Release ScreenEC.
+
 2022-10-17 Version: v1.61.1809
 - Generated 2019-09-01 for `ahas-openapi`.
 - Support thresholdMode in flow rule api.

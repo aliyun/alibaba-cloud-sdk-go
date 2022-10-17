@@ -42,13 +42,11 @@ type Data struct {
 	NUrl              string                 `json:"NUrl" xml:"NUrl"`
 	Status            string                 `json:"Status" xml:"Status"`
 	Results           map[string]interface{} `json:"Results" xml:"Results"`
-	ResultURL         string                 `json:"ResultURL" xml:"ResultURL"`
 	OrgName           string                 `json:"OrgName" xml:"OrgName"`
+	ResultURL         string                 `json:"ResultURL" xml:"ResultURL"`
 	ResultUrl         string                 `json:"ResultUrl" xml:"ResultUrl"`
 	Options           []string               `json:"Options" xml:"Options"`
 	Lesion            Lesion                 `json:"Lesion" xml:"Lesion"`
-	PulmonaryInfo     PulmonaryInfo          `json:"PulmonaryInfo" xml:"PulmonaryInfo"`
-	AortaInfo         AortaInfo              `json:"AortaInfo" xml:"AortaInfo"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
 	Detections        []Detections           `json:"Detections" xml:"Detections"`
