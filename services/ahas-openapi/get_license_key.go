@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeRegions invokes the ahas_openapi.DescribeRegions API synchronously
-func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
-	response = CreateDescribeRegionsResponse()
+// GetLicenseKey invokes the ahas_openapi.GetLicenseKey API synchronously
+func (client *Client) GetLicenseKey(request *GetLicenseKeyRequest) (response *GetLicenseKeyResponse, err error) {
+	response = CreateGetLicenseKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeRegionsWithChan invokes the ahas_openapi.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeRegionsResponse, 1)
+// GetLicenseKeyWithChan invokes the ahas_openapi.GetLicenseKey API asynchronously
+func (client *Client) GetLicenseKeyWithChan(request *GetLicenseKeyRequest) (<-chan *GetLicenseKeyResponse, <-chan error) {
+	responseChan := make(chan *GetLicenseKeyResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeRegions(request)
+		response, err := client.GetLicenseKey(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// DescribeRegionsWithCallback invokes the ahas_openapi.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
+// GetLicenseKeyWithCallback invokes the ahas_openapi.GetLicenseKey API asynchronously
+func (client *Client) GetLicenseKeyWithCallback(request *GetLicenseKeyRequest, callback func(response *GetLicenseKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeRegionsResponse
+		var response *GetLicenseKeyResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeRegions(request)
+		response, err = client.GetLicenseKey(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,36 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
-// DescribeRegionsRequest is the request struct for api DescribeRegions
-type DescribeRegionsRequest struct {
+// GetLicenseKeyRequest is the request struct for api GetLicenseKey
+type GetLicenseKeyRequest struct {
 	*requests.RpcRequest
-	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	AhasRegionId string `position:"Query" name:"AhasRegionId"`
+	Namespace    string `position:"Query" name:"Namespace"`
 }
 
-// DescribeRegionsResponse is the response struct for api DescribeRegions
-type DescribeRegionsResponse struct {
+// GetLicenseKeyResponse is the response struct for api GetLicenseKey
+type GetLicenseKeyResponse struct {
 	*responses.BaseResponse
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      string `json:"Data" xml:"Data"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Regions   []Data `json:"Regions" xml:"Regions"`
 }
 
-// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
-	request = &DescribeRegionsRequest{
+// CreateGetLicenseKeyRequest creates a request to invoke GetLicenseKey API
+func CreateGetLicenseKeyRequest() (request *GetLicenseKeyRequest) {
+	request = &GetLicenseKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ahas-openapi", "2019-09-01", "DescribeRegions", "ahas", "openAPI")
+	request.InitWithApiInfo("ahas-openapi", "2019-09-01", "GetLicenseKey", "ahas", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
-func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
-	response = &DescribeRegionsResponse{
+// CreateGetLicenseKeyResponse creates a response to parse from GetLicenseKey response
+func CreateGetLicenseKeyResponse() (response *GetLicenseKeyResponse) {
+	response = &GetLicenseKeyResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

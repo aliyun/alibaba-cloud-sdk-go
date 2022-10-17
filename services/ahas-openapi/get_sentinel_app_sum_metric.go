@@ -21,7 +21,6 @@ import (
 )
 
 // GetSentinelAppSumMetric invokes the ahas_openapi.GetSentinelAppSumMetric API synchronously
-// api document: https://help.aliyun.com/api/ahas-openapi/getsentinelappsummetric.html
 func (client *Client) GetSentinelAppSumMetric(request *GetSentinelAppSumMetricRequest) (response *GetSentinelAppSumMetricResponse, err error) {
 	response = CreateGetSentinelAppSumMetricResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSentinelAppSumMetric(request *GetSentinelAppSumMetricRe
 }
 
 // GetSentinelAppSumMetricWithChan invokes the ahas_openapi.GetSentinelAppSumMetric API asynchronously
-// api document: https://help.aliyun.com/api/ahas-openapi/getsentinelappsummetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSentinelAppSumMetricWithChan(request *GetSentinelAppSumMetricRequest) (<-chan *GetSentinelAppSumMetricResponse, <-chan error) {
 	responseChan := make(chan *GetSentinelAppSumMetricResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSentinelAppSumMetricWithChan(request *GetSentinelAppSum
 }
 
 // GetSentinelAppSumMetricWithCallback invokes the ahas_openapi.GetSentinelAppSumMetric API asynchronously
-// api document: https://help.aliyun.com/api/ahas-openapi/getsentinelappsummetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSentinelAppSumMetricWithCallback(request *GetSentinelAppSumMetricRequest, callback func(response *GetSentinelAppSumMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type GetSentinelAppSumMetricRequest struct {
 	*requests.RpcRequest
 	EndTime        string `position:"Query" name:"EndTime"`
 	StartTime      string `position:"Query" name:"StartTime"`
+	AhasRegionId   string `position:"Query" name:"AhasRegionId"`
 	AppName        string `position:"Query" name:"AppName"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	Namespace      string `position:"Query" name:"Namespace"`
@@ -86,10 +82,10 @@ type GetSentinelAppSumMetricRequest struct {
 // GetSentinelAppSumMetricResponse is the response struct for api GetSentinelAppSumMetric
 type GetSentinelAppSumMetricResponse struct {
 	*responses.BaseResponse
+	Message    string     `json:"Message" xml:"Message"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Code       string     `json:"Code" xml:"Code"`
 	Success    bool       `json:"Success" xml:"Success"`
-	Message    string     `json:"Message" xml:"Message"`
 	MetricData MetricData `json:"MetricData" xml:"MetricData"`
 }
 
@@ -99,6 +95,7 @@ func CreateGetSentinelAppSumMetricRequest() (request *GetSentinelAppSumMetricReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ahas-openapi", "2019-09-01", "GetSentinelAppSumMetric", "ahas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

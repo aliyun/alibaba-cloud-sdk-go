@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeRegions invokes the ahas_openapi.DescribeRegions API synchronously
-func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
-	response = CreateDescribeRegionsResponse()
+// DeleteSystemRule invokes the ahas_openapi.DeleteSystemRule API synchronously
+func (client *Client) DeleteSystemRule(request *DeleteSystemRuleRequest) (response *DeleteSystemRuleResponse, err error) {
+	response = CreateDeleteSystemRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeRegionsWithChan invokes the ahas_openapi.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeRegionsResponse, 1)
+// DeleteSystemRuleWithChan invokes the ahas_openapi.DeleteSystemRule API asynchronously
+func (client *Client) DeleteSystemRuleWithChan(request *DeleteSystemRuleRequest) (<-chan *DeleteSystemRuleResponse, <-chan error) {
+	responseChan := make(chan *DeleteSystemRuleResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeRegions(request)
+		response, err := client.DeleteSystemRule(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// DescribeRegionsWithCallback invokes the ahas_openapi.DescribeRegions API asynchronously
-func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
+// DeleteSystemRuleWithCallback invokes the ahas_openapi.DeleteSystemRule API asynchronously
+func (client *Client) DeleteSystemRuleWithCallback(request *DeleteSystemRuleRequest, callback func(response *DeleteSystemRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeRegionsResponse
+		var response *DeleteSystemRuleResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeRegions(request)
+		response, err = client.DeleteSystemRule(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,36 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
-// DescribeRegionsRequest is the request struct for api DescribeRegions
-type DescribeRegionsRequest struct {
+// DeleteSystemRuleRequest is the request struct for api DeleteSystemRule
+type DeleteSystemRuleRequest struct {
 	*requests.RpcRequest
-	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	AhasRegionId string           `position:"Query" name:"AhasRegionId"`
+	RuleId       requests.Integer `position:"Query" name:"RuleId"`
 }
 
-// DescribeRegionsResponse is the response struct for api DescribeRegions
-type DescribeRegionsResponse struct {
+// DeleteSystemRuleResponse is the response struct for api DeleteSystemRule
+type DeleteSystemRuleResponse struct {
 	*responses.BaseResponse
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Regions   []Data `json:"Regions" xml:"Regions"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
-	request = &DescribeRegionsRequest{
+// CreateDeleteSystemRuleRequest creates a request to invoke DeleteSystemRule API
+func CreateDeleteSystemRuleRequest() (request *DeleteSystemRuleRequest) {
+	request = &DeleteSystemRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ahas-openapi", "2019-09-01", "DescribeRegions", "ahas", "openAPI")
+	request.InitWithApiInfo("ahas-openapi", "2019-09-01", "DeleteSystemRule", "ahas", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
-func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
-	response = &DescribeRegionsResponse{
+// CreateDeleteSystemRuleResponse creates a response to parse from DeleteSystemRule response
+func CreateDeleteSystemRuleResponse() (response *DeleteSystemRuleResponse) {
+	response = &DeleteSystemRuleResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
