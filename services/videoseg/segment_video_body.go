@@ -79,6 +79,8 @@ type SegmentVideoBodyRequest struct {
 type SegmentVideoBodyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -87,7 +89,7 @@ func CreateSegmentVideoBodyRequest() (request *SegmentVideoBodyRequest) {
 	request = &SegmentVideoBodyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("videoseg", "2020-03-20", "SegmentVideoBody", "videoseg", "openAPI")
+	request.InitWithApiInfo("videoseg", "2020-03-20", "SegmentVideoBody", "", "")
 	request.Method = requests.POST
 	return
 }

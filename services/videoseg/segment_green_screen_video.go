@@ -78,9 +78,9 @@ type SegmentGreenScreenVideoRequest struct {
 // SegmentGreenScreenVideoResponse is the response struct for api SegmentGreenScreenVideo
 type SegmentGreenScreenVideoResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -89,7 +89,7 @@ func CreateSegmentGreenScreenVideoRequest() (request *SegmentGreenScreenVideoReq
 	request = &SegmentGreenScreenVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("videoseg", "2020-03-20", "SegmentGreenScreenVideo", "videoseg", "openAPI")
+	request.InitWithApiInfo("videoseg", "2020-03-20", "SegmentGreenScreenVideo", "", "")
 	request.Method = requests.POST
 	return
 }
