@@ -1,3 +1,7 @@
+2022-10-17 Version: v1.61.1817
+- Generated 2019-12-30 for `imageseg`.
+
+
 2022-10-17 Version: v1.61.1816
 - Generated 2019-09-30 for `imagerecog`.
 - Update TaggingAdImage.
