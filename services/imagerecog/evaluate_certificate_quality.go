@@ -71,8 +71,11 @@ func (client *Client) EvaluateCertificateQualityWithCallback(request *EvaluateCe
 // EvaluateCertificateQualityRequest is the request struct for api EvaluateCertificateQuality
 type EvaluateCertificateQualityRequest struct {
 	*requests.RpcRequest
-	Type     string `position:"Body" name:"Type"`
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Type               string           `position:"Body" name:"Type"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // EvaluateCertificateQualityResponse is the response struct for api EvaluateCertificateQuality
@@ -87,7 +90,7 @@ func CreateEvaluateCertificateQualityRequest() (request *EvaluateCertificateQual
 	request = &EvaluateCertificateQualityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "EvaluateCertificateQuality", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "EvaluateCertificateQuality", "", "")
 	request.Method = requests.POST
 	return
 }

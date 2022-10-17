@@ -71,7 +71,10 @@ func (client *Client) RecognizeLogoWithCallback(request *RecognizeLogoRequest, c
 // RecognizeLogoRequest is the request struct for api RecognizeLogo
 type RecognizeLogoRequest struct {
 	*requests.RpcRequest
-	Tasks *[]RecognizeLogoTasks `position:"Body" name:"Tasks"  type:"Repeated"`
+	FormatResultToJson requests.Boolean      `position:"Query" name:"FormatResultToJson"`
+	OssFile            string                `position:"Query" name:"OssFile"`
+	Tasks              *[]RecognizeLogoTasks `position:"Body" name:"Tasks"  type:"Repeated"`
+	RequestProxyBy     string                `position:"Query" name:"RequestProxyBy"`
 }
 
 // RecognizeLogoTasks is a repeated param struct in RecognizeLogoRequest
@@ -91,7 +94,7 @@ func CreateRecognizeLogoRequest() (request *RecognizeLogoRequest) {
 	request = &RecognizeLogoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeLogo", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeLogo", "", "")
 	request.Method = requests.POST
 	return
 }

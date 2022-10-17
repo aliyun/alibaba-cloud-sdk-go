@@ -17,10 +17,10 @@ package imagerecog
 
 // LogoData is a nested struct in imagerecog response
 type LogoData struct {
-	Name string  `json:"Name" xml:"Name"`
 	Type string  `json:"Type" xml:"Type"`
-	X    float64 `json:"X" xml:"X"`
-	Y    float64 `json:"Y" xml:"Y"`
-	H    float64 `json:"H" xml:"H"`
 	W    float64 `json:"W" xml:"W"`
+	H    float64 `json:"H" xml:"H"`
+	Y    float64 `json:"Y" xml:"Y"`
+	Name string  `json:"Name" xml:"Name"`
+	X    float64 `json:"X" xml:"X"`
 }

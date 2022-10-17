@@ -71,8 +71,11 @@ func (client *Client) RecognizeImageColorWithCallback(request *RecognizeImageCol
 // RecognizeImageColorRequest is the request struct for api RecognizeImageColor
 type RecognizeImageColorRequest struct {
 	*requests.RpcRequest
-	Url        string           `position:"Body" name:"Url"`
-	ColorCount requests.Integer `position:"Body" name:"ColorCount"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	ColorCount         requests.Integer `position:"Body" name:"ColorCount"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Url                string           `position:"Body" name:"Url"`
 }
 
 // RecognizeImageColorResponse is the response struct for api RecognizeImageColor
@@ -87,7 +90,7 @@ func CreateRecognizeImageColorRequest() (request *RecognizeImageColorRequest) {
 	request = &RecognizeImageColorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeImageColor", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeImageColor", "", "")
 	request.Method = requests.POST
 	return
 }
