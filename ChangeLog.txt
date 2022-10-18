@@ -1,3 +1,7 @@
+2022-10-18 Version: v1.61.1818
+- Generated 2019-09-30 for `imageenhan`.
+- Update MakeSuperResolutionImage.
+
 2022-10-17 Version: v1.61.1817
 - Generated 2019-12-30 for `imageseg`.
 
