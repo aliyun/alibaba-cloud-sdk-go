@@ -1,3 +1,7 @@
+2022-10-19 Version: v1.61.1821
+- Generated 2015-12-01 for `Dds`.
+- Update by SDK platform.
+
 2022-10-19 Version: v1.61.1820
 - Generated 2020-03-31 for `ResourceManager`.
 - Supported more language for resourcemanager.
