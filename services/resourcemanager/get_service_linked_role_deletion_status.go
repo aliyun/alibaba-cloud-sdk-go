@@ -77,9 +77,9 @@ type GetServiceLinkedRoleDeletionStatusRequest struct {
 // GetServiceLinkedRoleDeletionStatusResponse is the response struct for api GetServiceLinkedRoleDeletionStatus
 type GetServiceLinkedRoleDeletionStatusResponse struct {
 	*responses.BaseResponse
-	Status    string `json:"Status" xml:"Status"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Reason    Reason `json:"Reason" xml:"Reason"`
+	Status    string                                     `json:"Status" xml:"Status"`
+	RequestId string                                     `json:"RequestId" xml:"RequestId"`
+	Reason    ReasonInGetServiceLinkedRoleDeletionStatus `json:"Reason" xml:"Reason"`
 }
 
 // CreateGetServiceLinkedRoleDeletionStatusRequest creates a request to invoke GetServiceLinkedRoleDeletionStatus API
