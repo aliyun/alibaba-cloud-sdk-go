@@ -1,3 +1,7 @@
+2022-10-19 Version: v1.61.1819
+- Generated 2020-06-15 for `hitsdb`.
+- Update Lindorm OpenAPI.
+
 2022-10-18 Version: v1.61.1818
 - Generated 2019-09-30 for `imageenhan`.
 - Update MakeSuperResolutionImage.
