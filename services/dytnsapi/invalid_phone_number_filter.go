@@ -73,6 +73,7 @@ type InvalidPhoneNumberFilterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Mask                 string           `position:"Query" name:"Mask"`
+	OfferType            string           `position:"Query" name:"OfferType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AuthCode             string           `position:"Query" name:"AuthCode"`

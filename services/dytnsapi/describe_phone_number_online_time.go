@@ -72,8 +72,10 @@ func (client *Client) DescribePhoneNumberOnlineTimeWithCallback(request *Describ
 type DescribePhoneNumberOnlineTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouteName            string           `position:"Query" name:"RouteName"`
 	Mask                 string           `position:"Query" name:"Mask"`
 	OfferType            string           `position:"Query" name:"OfferType"`
+	ResultCount          requests.Integer `position:"Query" name:"ResultCount"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AuthCode             string           `position:"Query" name:"AuthCode"`
