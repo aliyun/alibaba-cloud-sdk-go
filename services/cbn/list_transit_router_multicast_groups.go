@@ -75,6 +75,7 @@ type ListTransitRouterMulticastGroupsRequest struct {
 	ClientToken                       string           `position:"Query" name:"ClientToken"`
 	VSwitchIds                        *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 	TransitRouterMulticastDomainId    string           `position:"Query" name:"TransitRouterMulticastDomainId"`
+	ConnectPeerIds                    *[]string        `position:"Query" name:"ConnectPeerIds"  type:"Repeated"`
 	NextToken                         string           `position:"Query" name:"NextToken"`
 	GroupIpAddress                    string           `position:"Query" name:"GroupIpAddress"`
 	ResourceId                        string           `position:"Query" name:"ResourceId"`

@@ -75,6 +75,7 @@ type RegisterTransitRouterMulticastGroupMembersRequest struct {
 	ClientToken                       string           `position:"Query" name:"ClientToken"`
 	NetworkInterfaceIds               *[]string        `position:"Query" name:"NetworkInterfaceIds"  type:"Repeated"`
 	TransitRouterMulticastDomainId    string           `position:"Query" name:"TransitRouterMulticastDomainId"`
+	ConnectPeerIds                    *[]string        `position:"Query" name:"ConnectPeerIds"  type:"Repeated"`
 	GroupIpAddress                    string           `position:"Query" name:"GroupIpAddress"`
 	DryRun                            requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`

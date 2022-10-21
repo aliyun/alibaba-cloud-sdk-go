@@ -36,6 +36,7 @@ type RouteMap struct {
 	NextPriority                       int                           `json:"NextPriority" xml:"NextPriority"`
 	MatchAddressType                   string                        `json:"MatchAddressType" xml:"MatchAddressType"`
 	GatewayZoneId                      string                        `json:"GatewayZoneId" xml:"GatewayZoneId"`
+	GatewayRegionId                    string                        `json:"GatewayRegionId" xml:"GatewayRegionId"`
 	SourceRegionIds                    SourceRegionIds               `json:"SourceRegionIds" xml:"SourceRegionIds"`
 	SourceChildInstanceTypes           SourceChildInstanceTypes      `json:"SourceChildInstanceTypes" xml:"SourceChildInstanceTypes"`
 	DestinationRouteTableIds           DestinationRouteTableIds      `json:"DestinationRouteTableIds" xml:"DestinationRouteTableIds"`

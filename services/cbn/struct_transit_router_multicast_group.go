@@ -30,4 +30,5 @@ type TransitRouterMulticastGroup struct {
 	ResourceType                       string `json:"ResourceType" xml:"ResourceType"`
 	ResourceOwnerId                    int64  `json:"ResourceOwnerId" xml:"ResourceOwnerId"`
 	ResourceId                         string `json:"ResourceId" xml:"ResourceId"`
+	ConnectPeerId                      string `json:"ConnectPeerId" xml:"ConnectPeerId"`
 }

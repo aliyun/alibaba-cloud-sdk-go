@@ -86,11 +86,11 @@ type ListTransitRouterVpnAttachmentsRequest struct {
 // ListTransitRouterVpnAttachmentsResponse is the response struct for api ListTransitRouterVpnAttachments
 type ListTransitRouterVpnAttachmentsResponse struct {
 	*responses.BaseResponse
-	NextToken                string                                                     `json:"NextToken" xml:"NextToken"`
-	RequestId                string                                                     `json:"RequestId" xml:"RequestId"`
-	TotalCount               int                                                        `json:"TotalCount" xml:"TotalCount"`
-	MaxResults               int                                                        `json:"MaxResults" xml:"MaxResults"`
-	TransitRouterAttachments []TransitRouterAttachmentInListTransitRouterVpnAttachments `json:"TransitRouterAttachments" xml:"TransitRouterAttachments"`
+	NextToken                string                    `json:"NextToken" xml:"NextToken"`
+	RequestId                string                    `json:"RequestId" xml:"RequestId"`
+	TotalCount               int                       `json:"TotalCount" xml:"TotalCount"`
+	MaxResults               int                       `json:"MaxResults" xml:"MaxResults"`
+	TransitRouterAttachments []TransitRouterAttachment `json:"TransitRouterAttachments" xml:"TransitRouterAttachments"`
 }
 
 // CreateListTransitRouterVpnAttachmentsRequest creates a request to invoke ListTransitRouterVpnAttachments API

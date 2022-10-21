@@ -74,6 +74,7 @@ type UpdateTransitRouterVpcAttachmentAttributeRequest struct {
 	ResourceOwnerId                    requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken                        string           `position:"Query" name:"ClientToken"`
 	TransitRouterAttachmentName        string           `position:"Query" name:"TransitRouterAttachmentName"`
+	AutoPublishRouteEnabled            requests.Boolean `position:"Query" name:"AutoPublishRouteEnabled"`
 	DryRun                             requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount               string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                       string           `position:"Query" name:"OwnerAccount"`

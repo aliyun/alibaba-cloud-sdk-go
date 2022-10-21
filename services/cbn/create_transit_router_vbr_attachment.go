@@ -86,6 +86,7 @@ type CreateTransitRouterVbrAttachmentRequest struct {
 	TransitRouterId                    string           `position:"Query" name:"TransitRouterId"`
 	ResourceType                       string           `position:"Query" name:"ResourceType"`
 	TransitRouterAttachmentDescription string           `position:"Query" name:"TransitRouterAttachmentDescription"`
+	AssociateRouteTableId              string           `position:"Query" name:"AssociateRouteTableId"`
 	VbrOwnerId                         requests.Integer `position:"Query" name:"VbrOwnerId"`
 }
 

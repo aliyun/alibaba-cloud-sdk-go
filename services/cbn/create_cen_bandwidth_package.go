@@ -85,6 +85,7 @@ type CreateCenBandwidthPackageRequest struct {
 	Bandwidth                  requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	ServiceType                string           `position:"Query" name:"ServiceType"`
 	AutoRenew                  requests.Boolean `position:"Query" name:"AutoRenew"`
 	Name                       string           `position:"Query" name:"Name"`
 	PricingCycle               string           `position:"Query" name:"PricingCycle"`

@@ -1,3 +1,11 @@
+2022-10-21 Version: v1.61.1823
+- Generated 2017-09-12 for `Cbn`.
+- Update ListTransitRouterVpnAttachments fix ResourceType .
+- Update CreateCenBandwidthPackage support service type .
+- Update DescribeCenBandwidthPackages support service type .
+- Update ModifyCenBandwidthpackageSpec support service type .
+- Update CreateTransitRouterVpcAttachment support  at most 10 avaliable zones.
+
 2022-10-20 Version: v1.61.1822
 - Generated 2020-02-17 for `Dytnsapi`.
 - Support Service of number analysis.

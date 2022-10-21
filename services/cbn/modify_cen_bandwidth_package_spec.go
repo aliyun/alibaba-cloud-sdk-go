@@ -76,6 +76,7 @@ type ModifyCenBandwidthPackageSpecRequest struct {
 	Bandwidth             requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ServiceType           string           `position:"Query" name:"ServiceType"`
 	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 }
 

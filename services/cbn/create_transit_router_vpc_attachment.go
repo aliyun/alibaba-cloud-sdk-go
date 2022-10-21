@@ -79,6 +79,7 @@ type CreateTransitRouterVpcAttachmentRequest struct {
 	RouteTableAssociationEnabled       requests.Boolean                                `position:"Query" name:"RouteTableAssociationEnabled"`
 	TransitRouterAttachmentName        string                                          `position:"Query" name:"TransitRouterAttachmentName"`
 	AutoCreateVpcRoute                 requests.Boolean                                `position:"Query" name:"AutoCreateVpcRoute"`
+	AutoPublishRouteEnabled            requests.Boolean                                `position:"Query" name:"AutoPublishRouteEnabled"`
 	RouteTablePropagationEnabled       requests.Boolean                                `position:"Query" name:"RouteTablePropagationEnabled"`
 	DryRun                             requests.Boolean                                `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount               string                                          `position:"Query" name:"ResourceOwnerAccount"`
@@ -88,6 +89,7 @@ type CreateTransitRouterVpcAttachmentRequest struct {
 	TransitRouterId                    string                                          `position:"Query" name:"TransitRouterId"`
 	ResourceType                       string                                          `position:"Query" name:"ResourceType"`
 	TransitRouterAttachmentDescription string                                          `position:"Query" name:"TransitRouterAttachmentDescription"`
+	AssociateRouteTableId              string                                          `position:"Query" name:"AssociateRouteTableId"`
 	VpcId                              string                                          `position:"Query" name:"VpcId"`
 	ChargeType                         string                                          `position:"Query" name:"ChargeType"`
 }

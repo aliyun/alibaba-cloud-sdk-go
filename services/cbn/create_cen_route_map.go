@@ -98,6 +98,7 @@ type CreateCenRouteMapRequest struct {
 	CenId                              string           `position:"Query" name:"CenId"`
 	Description                        string           `position:"Query" name:"Description"`
 	SourceInstanceIdsReverseMatch      requests.Boolean `position:"Query" name:"SourceInstanceIdsReverseMatch"`
+	GatewayRegionId                    string           `position:"Query" name:"GatewayRegionId"`
 	DestinationRouteTableIds           *[]string        `position:"Query" name:"DestinationRouteTableIds"  type:"Repeated"`
 	SourceZoneIds                      *[]string        `position:"Query" name:"SourceZoneIds"  type:"Repeated"`
 	TransmitDirection                  string           `position:"Query" name:"TransmitDirection"`
