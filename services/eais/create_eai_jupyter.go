@@ -71,10 +71,17 @@ func (client *Client) CreateEaiJupyterWithCallback(request *CreateEaiJupyterRequ
 // CreateEaiJupyterRequest is the request struct for api CreateEaiJupyter
 type CreateEaiJupyterRequest struct {
 	*requests.RpcRequest
-	ClientToken     string `position:"Query" name:"ClientToken"`
-	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
-	EaisType        string `position:"Query" name:"EaisType"`
-	VSwitchId       string `position:"Query" name:"VSwitchId"`
+	ClientToken     string                            `position:"Query" name:"ClientToken"`
+	SecurityGroupId string                            `position:"Query" name:"SecurityGroupId"`
+	EaisType        string                            `position:"Query" name:"EaisType"`
+	VSwitchId       string                            `position:"Query" name:"VSwitchId"`
+	EnvironmentVar  *[]CreateEaiJupyterEnvironmentVar `position:"Query" name:"EnvironmentVar"  type:"Json"`
+}
+
+// CreateEaiJupyterEnvironmentVar is a repeated param struct in CreateEaiJupyterRequest
+type CreateEaiJupyterEnvironmentVar struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateEaiJupyterResponse is the response struct for api CreateEaiJupyter
