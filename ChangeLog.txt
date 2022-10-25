@@ -1,3 +1,7 @@
+2022-10-25 Version: v1.61.1825
+- Generated 2018-01-31 for `Edas`.
+- Update GetK8sApplication.
+
 2022-10-25 Version: v1.61.1824
 - Generated 2019-06-24 for `eais`.
 - OpenAPI CreateEaiJupyter add optional parameter `EnvironmentVar`.
