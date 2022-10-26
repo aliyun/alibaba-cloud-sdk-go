@@ -73,12 +73,14 @@ type CreateDBClusterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                        requests.Integer      `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription                   string                `position:"Query" name:"DBClusterDescription"`
+	ScaleMax                               string                `position:"Query" name:"ScaleMax"`
 	CreationCategory                       string                `position:"Query" name:"CreationCategory"`
 	ResourceGroupId                        string                `position:"Query" name:"ResourceGroupId"`
 	DBNodeClass                            string                `position:"Query" name:"DBNodeClass"`
 	CreationOption                         string                `position:"Query" name:"CreationOption"`
 	Tag                                    *[]CreateDBClusterTag `position:"Query" name:"Tag"  type:"Repeated"`
 	SourceResourceId                       string                `position:"Query" name:"SourceResourceId"`
+	ScaleMin                               string                `position:"Query" name:"ScaleMin"`
 	BackupRetentionPolicyOnClusterDeletion string                `position:"Query" name:"BackupRetentionPolicyOnClusterDeletion"`
 	Period                                 string                `position:"Query" name:"Period"`
 	OwnerId                                requests.Integer      `position:"Query" name:"OwnerId"`
@@ -88,7 +90,9 @@ type CreateDBClusterRequest struct {
 	AutoRenew                              requests.Boolean      `position:"Query" name:"AutoRenew"`
 	ZoneId                                 string                `position:"Query" name:"ZoneId"`
 	TDEStatus                              requests.Boolean      `position:"Query" name:"TDEStatus"`
+	AllowShutDown                          string                `position:"Query" name:"AllowShutDown"`
 	LowerCaseTableNames                    string                `position:"Query" name:"LowerCaseTableNames"`
+	ScaleRoNumMax                          string                `position:"Query" name:"ScaleRoNumMax"`
 	ClientToken                            string                `position:"Query" name:"ClientToken"`
 	DefaultTimeZone                        string                `position:"Query" name:"DefaultTimeZone"`
 	ClusterNetworkType                     string                `position:"Query" name:"ClusterNetworkType"`
@@ -99,10 +103,12 @@ type CreateDBClusterRequest struct {
 	OwnerAccount                           string                `position:"Query" name:"OwnerAccount"`
 	UsedTime                               string                `position:"Query" name:"UsedTime"`
 	VPCId                                  string                `position:"Query" name:"VPCId"`
+	ScaleRoNumMin                          string                `position:"Query" name:"ScaleRoNumMin"`
 	DBType                                 string                `position:"Query" name:"DBType"`
 	DBVersion                              string                `position:"Query" name:"DBVersion"`
 	CloneDataPoint                         string                `position:"Query" name:"CloneDataPoint"`
 	PayType                                string                `position:"Query" name:"PayType"`
+	ServerlessType                         string                `position:"Query" name:"ServerlessType"`
 }
 
 // CreateDBClusterTag is a repeated param struct in CreateDBClusterRequest

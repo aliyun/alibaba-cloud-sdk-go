@@ -74,6 +74,7 @@ type DescribeDBClustersRequest struct {
 	ResourceOwnerId          requests.Integer         `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription     string                   `position:"Query" name:"DBClusterDescription"`
 	DBClusterStatus          string                   `position:"Query" name:"DBClusterStatus"`
+	ConnectionString         string                   `position:"Query" name:"ConnectionString"`
 	RecentExpirationInterval requests.Integer         `position:"Query" name:"RecentExpirationInterval"`
 	PageNumber               requests.Integer         `position:"Query" name:"PageNumber"`
 	DBNodeIds                string                   `position:"Query" name:"DBNodeIds"`
@@ -86,6 +87,7 @@ type DescribeDBClustersRequest struct {
 	OwnerAccount             string                   `position:"Query" name:"OwnerAccount"`
 	OwnerId                  requests.Integer         `position:"Query" name:"OwnerId"`
 	DBType                   string                   `position:"Query" name:"DBType"`
+	DBVersion                string                   `position:"Query" name:"DBVersion"`
 	PayType                  string                   `position:"Query" name:"PayType"`
 	DBClusterIds             string                   `position:"Query" name:"DBClusterIds"`
 }

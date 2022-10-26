@@ -1,3 +1,7 @@
+2022-10-26 Version: v1.61.1826
+- Generated 2017-08-01 for `polardb`.
+- Support serverless feature.
+
 2022-10-25 Version: v1.61.1825
 - Generated 2018-01-31 for `Edas`.
 - Update GetK8sApplication.

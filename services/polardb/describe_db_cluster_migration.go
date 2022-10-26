@@ -92,6 +92,7 @@ type DescribeDBClusterMigrationResponse struct {
 	DelayedSeconds         int                 `json:"DelayedSeconds" xml:"DelayedSeconds"`
 	MigrationStatus        string              `json:"MigrationStatus" xml:"MigrationStatus"`
 	DtsInstanceId          string              `json:"DtsInstanceId" xml:"DtsInstanceId"`
+	SrcDbType              string              `json:"SrcDbType" xml:"SrcDbType"`
 	DBClusterEndpointList  []DBClusterEndpoint `json:"DBClusterEndpointList" xml:"DBClusterEndpointList"`
 	RdsEndpointList        []RdsEndpoint       `json:"RdsEndpointList" xml:"RdsEndpointList"`
 }
