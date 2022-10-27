@@ -1,3 +1,7 @@
+2022-10-27 Version: v1.61.1831
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 Old sdk.
+
 2022-10-27 Version: v1.61.1830
 - Generated 2018-05-10 for `Cdn`.
 - Add DescribeWildcardDomainDetailData.
