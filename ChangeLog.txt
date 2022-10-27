@@ -1,3 +1,7 @@
+2022-10-27 Version: v1.61.1832
+- Generated 2018-01-15 for `dcdn`.
+- Update BatchAddDcdnDomain,add error code.
+
 2022-10-27 Version: v1.61.1831
 - Generated 2018-01-20 for `Iot`.
 - Iot_20180120 Old sdk.

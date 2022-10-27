@@ -79,7 +79,8 @@ type BatchCreateDcdnWafRulesRequest struct {
 // BatchCreateDcdnWafRulesResponse is the response struct for api BatchCreateDcdnWafRules
 type BatchCreateDcdnWafRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	RuleIds   RuleIds `json:"RuleIds" xml:"RuleIds"`
 }
 
 // CreateBatchCreateDcdnWafRulesRequest creates a request to invoke BatchCreateDcdnWafRules API

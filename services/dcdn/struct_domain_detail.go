@@ -19,15 +19,14 @@ package dcdn
 type DomainDetail struct {
 	Cname           string                            `json:"Cname" xml:"Cname"`
 	CertName        string                            `json:"CertName" xml:"CertName"`
+	ResourceGroupId string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DomainStatus    string                            `json:"DomainStatus" xml:"DomainStatus"`
 	DomainName      string                            `json:"DomainName" xml:"DomainName"`
 	GmtModified     string                            `json:"GmtModified" xml:"GmtModified"`
 	SSLPub          string                            `json:"SSLPub" xml:"SSLPub"`
 	SSLProtocol     string                            `json:"SSLProtocol" xml:"SSLProtocol"`
-	GmtCreated      string                            `json:"GmtCreated" xml:"GmtCreated"`
-	ResourceGroupId string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Scope           string                            `json:"Scope" xml:"Scope"`
+	GmtCreated      string                            `json:"GmtCreated" xml:"GmtCreated"`
 	Description     string                            `json:"Description" xml:"Description"`
-	TenantID        string                            `json:"TenantID" xml:"TenantID"`
 	Sources         SourcesInDescribeDcdnDomainDetail `json:"Sources" xml:"Sources"`
 }

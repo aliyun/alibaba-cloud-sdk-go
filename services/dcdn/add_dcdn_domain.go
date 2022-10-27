@@ -71,15 +71,22 @@ func (client *Client) AddDcdnDomainWithCallback(request *AddDcdnDomainRequest, c
 // AddDcdnDomainRequest is the request struct for api AddDcdnDomain
 type AddDcdnDomainRequest struct {
 	*requests.RpcRequest
-	Sources         string           `position:"Query" name:"Sources"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
-	Scope           string           `position:"Query" name:"Scope"`
-	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
-	DomainName      string           `position:"Query" name:"DomainName"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	CheckUrl        string           `position:"Query" name:"CheckUrl"`
+	Sources         string              `position:"Query" name:"Sources"`
+	ResourceGroupId string              `position:"Query" name:"ResourceGroupId"`
+	SecurityToken   string              `position:"Query" name:"SecurityToken"`
+	Scope           string              `position:"Query" name:"Scope"`
+	Tag             *[]AddDcdnDomainTag `position:"Query" name:"Tag"  type:"Repeated"`
+	TopLevelDomain  string              `position:"Query" name:"TopLevelDomain"`
+	OwnerAccount    string              `position:"Query" name:"OwnerAccount"`
+	DomainName      string              `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer    `position:"Query" name:"OwnerId"`
+	CheckUrl        string              `position:"Query" name:"CheckUrl"`
+}
+
+// AddDcdnDomainTag is a repeated param struct in AddDcdnDomainRequest
+type AddDcdnDomainTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // AddDcdnDomainResponse is the response struct for api AddDcdnDomain

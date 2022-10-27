@@ -20,6 +20,7 @@ type Policy struct {
 	PolicyStatus string `json:"PolicyStatus" xml:"PolicyStatus"`
 	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`
 	DomainCount  int    `json:"DomainCount" xml:"DomainCount"`
+	RuleConfigs  string `json:"RuleConfigs" xml:"RuleConfigs"`
 	PolicyName   string `json:"PolicyName" xml:"PolicyName"`
 	PolicyId     int64  `json:"PolicyId" xml:"PolicyId"`
 	RuleCount    int64  `json:"RuleCount" xml:"RuleCount"`

@@ -80,11 +80,11 @@ type DescribeDcdnDomainMultiUsageDataRequest struct {
 // DescribeDcdnDomainMultiUsageDataResponse is the response struct for api DescribeDcdnDomainMultiUsageData
 type DescribeDcdnDomainMultiUsageDataResponse struct {
 	*responses.BaseResponse
-	EndTime            string                                               `json:"EndTime" xml:"EndTime"`
-	StartTime          string                                               `json:"StartTime" xml:"StartTime"`
-	RequestId          string                                               `json:"RequestId" xml:"RequestId"`
-	RequestPerInterval RequestPerInterval                                   `json:"RequestPerInterval" xml:"RequestPerInterval"`
-	TrafficPerInterval TrafficPerIntervalInDescribeDcdnDomainMultiUsageData `json:"TrafficPerInterval" xml:"TrafficPerInterval"`
+	EndTime            string             `json:"EndTime" xml:"EndTime"`
+	StartTime          string             `json:"StartTime" xml:"StartTime"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	RequestPerInterval RequestPerInterval `json:"RequestPerInterval" xml:"RequestPerInterval"`
+	TrafficPerInterval TrafficPerInterval `json:"TrafficPerInterval" xml:"TrafficPerInterval"`
 }
 
 // CreateDescribeDcdnDomainMultiUsageDataRequest creates a request to invoke DescribeDcdnDomainMultiUsageData API

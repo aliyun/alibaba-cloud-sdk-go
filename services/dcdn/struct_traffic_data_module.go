@@ -17,9 +17,9 @@ package dcdn
 
 // TrafficDataModule is a nested struct in dcdn response
 type TrafficDataModule struct {
-	Domain    string  `json:"Domain" xml:"Domain"`
-	Area      string  `json:"Area" xml:"Area"`
-	TimeStamp string  `json:"TimeStamp" xml:"TimeStamp"`
-	Bps       float64 `json:"Bps" xml:"Bps"`
 	Type      string  `json:"Type" xml:"Type"`
+	Domain    string  `json:"Domain" xml:"Domain"`
+	TimeStamp string  `json:"TimeStamp" xml:"TimeStamp"`
+	Area      string  `json:"Area" xml:"Area"`
+	Bps       float64 `json:"Bps" xml:"Bps"`
 }
