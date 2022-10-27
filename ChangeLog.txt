@@ -1,3 +1,7 @@
+2022-10-27 Version: v1.61.1830
+- Generated 2018-05-10 for `Cdn`.
+- Add DescribeWildcardDomainDetailData.
+
 2022-10-27 Version: v1.61.1829
 - Generated 2018-04-12 for `EHPC`.
 - ListNodesByQueue and ListJobsWithFilters add Async.

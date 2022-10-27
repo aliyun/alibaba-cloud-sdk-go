@@ -79,7 +79,8 @@ type SetCdnDomainStagingConfigRequest struct {
 // SetCdnDomainStagingConfigResponse is the response struct for api SetCdnDomainStagingConfig
 type SetCdnDomainStagingConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId        string              `json:"RequestId" xml:"RequestId"`
+	DomainConfigList []DomainConfigModel `json:"DomainConfigList" xml:"DomainConfigList"`
 }
 
 // CreateSetCdnDomainStagingConfigRequest creates a request to invoke SetCdnDomainStagingConfig API
