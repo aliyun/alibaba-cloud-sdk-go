@@ -82,11 +82,11 @@ type ListJobsRequest struct {
 // ListJobsResponse is the response struct for api ListJobs
 type ListJobsResponse struct {
 	*responses.BaseResponse
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Jobs       Jobs   `json:"Jobs" xml:"Jobs"`
+	PageSize   int            `json:"PageSize" xml:"PageSize"`
+	RequestId  string         `json:"RequestId" xml:"RequestId"`
+	PageNumber int            `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int            `json:"TotalCount" xml:"TotalCount"`
+	Jobs       JobsInListJobs `json:"Jobs" xml:"Jobs"`
 }
 
 // CreateListJobsRequest creates a request to invoke ListJobs API
@@ -94,7 +94,7 @@ func CreateListJobsRequest() (request *ListJobsRequest) {
 	request = &ListJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListJobs", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListJobs", "", "")
 	request.Method = requests.GET
 	return
 }

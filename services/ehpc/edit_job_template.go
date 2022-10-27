@@ -72,16 +72,26 @@ func (client *Client) EditJobTemplateWithCallback(request *EditJobTemplateReques
 type EditJobTemplateRequest struct {
 	*requests.RpcRequest
 	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
+	ClockTime          string           `position:"Query" name:"ClockTime"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
 	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	UnzipCmd           string           `position:"Query" name:"UnzipCmd"`
 	PackagePath        string           `position:"Query" name:"PackagePath"`
+	Mem                string           `position:"Query" name:"Mem"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
 	Variables          string           `position:"Query" name:"Variables"`
 	RunasUser          string           `position:"Query" name:"RunasUser"`
 	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
+	Thread             requests.Integer `position:"Query" name:"Thread"`
 	TemplateId         string           `position:"Query" name:"TemplateId"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
+	Gpu                requests.Integer `position:"Query" name:"Gpu"`
+	WithUnzipCmd       requests.Boolean `position:"Query" name:"WithUnzipCmd"`
+	Node               requests.Integer `position:"Query" name:"Node"`
+	Task               requests.Integer `position:"Query" name:"Task"`
+	InputFileUrl       string           `position:"Query" name:"InputFileUrl"`
 	Name               string           `position:"Query" name:"Name"`
+	Queue              string           `position:"Query" name:"Queue"`
 }
 
 // EditJobTemplateResponse is the response struct for api EditJobTemplate
@@ -96,7 +106,7 @@ func CreateEditJobTemplateRequest() (request *EditJobTemplateRequest) {
 	request = &EditJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "EditJobTemplate", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "EditJobTemplate", "", "")
 	request.Method = requests.GET
 	return
 }

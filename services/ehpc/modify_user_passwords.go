@@ -92,7 +92,7 @@ func CreateModifyUserPasswordsRequest() (request *ModifyUserPasswordsRequest) {
 	request = &ModifyUserPasswordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ModifyUserPasswords", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyUserPasswords", "", "")
 	request.Method = requests.GET
 	return
 }

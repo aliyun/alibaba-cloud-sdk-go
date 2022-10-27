@@ -86,7 +86,7 @@ func CreateRerunJobsRequest() (request *RerunJobsRequest) {
 	request = &RerunJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "RerunJobs", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "RerunJobs", "", "")
 	request.Method = requests.GET
 	return
 }

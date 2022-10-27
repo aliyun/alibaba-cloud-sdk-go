@@ -73,6 +73,7 @@ type DeleteNodesRequest struct {
 	*requests.RpcRequest
 	Instance        *[]DeleteNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
 	ClusterId       string                 `position:"Query" name:"ClusterId"`
+	Sync            requests.Boolean       `position:"Query" name:"Sync"`
 	ReleaseInstance requests.Boolean       `position:"Query" name:"ReleaseInstance"`
 }
 
@@ -84,6 +85,7 @@ type DeleteNodesInstance struct {
 // DeleteNodesResponse is the response struct for api DeleteNodes
 type DeleteNodesResponse struct {
 	*responses.BaseResponse
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -92,7 +94,7 @@ func CreateDeleteNodesRequest() (request *DeleteNodesRequest) {
 	request = &DeleteNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "DeleteNodes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteNodes", "", "")
 	request.Method = requests.GET
 	return
 }

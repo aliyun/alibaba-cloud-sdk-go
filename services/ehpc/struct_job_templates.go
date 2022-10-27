@@ -17,15 +17,25 @@ package ehpc
 
 // JobTemplates is a nested struct in ehpc response
 type JobTemplates struct {
-	StdoutRedirectPath string `json:"StdoutRedirectPath" xml:"StdoutRedirectPath"`
+	Task               int    `json:"Task" xml:"Task"`
 	Variables          string `json:"Variables" xml:"Variables"`
 	CommandLine        string `json:"CommandLine" xml:"CommandLine"`
-	PackagePath        string `json:"PackagePath" xml:"PackagePath"`
+	Queue              string `json:"Queue" xml:"Queue"`
 	Priority           int    `json:"Priority" xml:"Priority"`
+	Mem                string `json:"Mem" xml:"Mem"`
+	Thread             int    `json:"Thread" xml:"Thread"`
+	ArrayRequest       string `json:"ArrayRequest" xml:"ArrayRequest"`
+	StderrRedirectPath string `json:"StderrRedirectPath" xml:"StderrRedirectPath"`
+	Node               int    `json:"Node" xml:"Node"`
+	StdoutRedirectPath string `json:"StdoutRedirectPath" xml:"StdoutRedirectPath"`
+	Gpu                int    `json:"Gpu" xml:"Gpu"`
+	PackagePath        string `json:"PackagePath" xml:"PackagePath"`
+	ClockTime          string `json:"ClockTime" xml:"ClockTime"`
 	ReRunable          bool   `json:"ReRunable" xml:"ReRunable"`
 	Name               string `json:"Name" xml:"Name"`
-	ArrayRequest       string `json:"ArrayRequest" xml:"ArrayRequest"`
 	Id                 string `json:"Id" xml:"Id"`
-	StderrRedirectPath string `json:"StderrRedirectPath" xml:"StderrRedirectPath"`
 	RunasUser          string `json:"RunasUser" xml:"RunasUser"`
+	InputFileUrl       string `json:"InputFileUrl" xml:"InputFileUrl"`
+	WithUnzipCmd       bool   `json:"WithUnzipCmd" xml:"WithUnzipCmd"`
+	UnzipCmd           string `json:"UnzipCmd" xml:"UnzipCmd"`
 }

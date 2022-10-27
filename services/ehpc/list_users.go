@@ -79,11 +79,11 @@ type ListUsersRequest struct {
 // ListUsersResponse is the response struct for api ListUsers
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Users      Users  `json:"Users" xml:"Users"`
+	PageSize   int              `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	PageNumber int              `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int              `json:"TotalCount" xml:"TotalCount"`
+	Users      UsersInListUsers `json:"Users" xml:"Users"`
 }
 
 // CreateListUsersRequest creates a request to invoke ListUsers API
@@ -91,7 +91,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListUsers", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListUsers", "", "")
 	request.Method = requests.GET
 	return
 }

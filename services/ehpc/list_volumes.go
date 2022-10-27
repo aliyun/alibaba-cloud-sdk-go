@@ -78,11 +78,11 @@ type ListVolumesRequest struct {
 // ListVolumesResponse is the response struct for api ListVolumes
 type ListVolumesResponse struct {
 	*responses.BaseResponse
-	PageSize   int     `json:"PageSize" xml:"PageSize"`
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
-	Volumes    Volumes `json:"Volumes" xml:"Volumes"`
+	PageSize   int                  `json:"PageSize" xml:"PageSize"`
+	RequestId  string               `json:"RequestId" xml:"RequestId"`
+	PageNumber int                  `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int                  `json:"TotalCount" xml:"TotalCount"`
+	Volumes    VolumesInListVolumes `json:"Volumes" xml:"Volumes"`
 }
 
 // CreateListVolumesRequest creates a request to invoke ListVolumes API
@@ -90,7 +90,7 @@ func CreateListVolumesRequest() (request *ListVolumesRequest) {
 	request = &ListVolumesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListVolumes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListVolumes", "", "")
 	request.Method = requests.GET
 	return
 }

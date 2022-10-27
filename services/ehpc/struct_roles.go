@@ -18,6 +18,6 @@ package ehpc
 // Roles is a nested struct in ehpc response
 type Roles struct {
 	Manager ManagerInListPreferredEcsTypes `json:"Manager" xml:"Manager"`
-	Compute ComputeInListPreferredEcsTypes `json:"Compute" xml:"Compute"`
 	Login   LoginInListPreferredEcsTypes   `json:"Login" xml:"Login"`
+	Compute ComputeInListPreferredEcsTypes `json:"Compute" xml:"Compute"`
 }

@@ -71,11 +71,17 @@ func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback 
 // ListNodesRequest is the request struct for api ListNodes
 type ListNodesRequest struct {
 	*requests.RpcRequest
-	Role       string           `position:"Query" name:"Role"`
-	ClusterId  string           `position:"Query" name:"ClusterId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	HostName   string           `position:"Query" name:"HostName"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Role             string           `position:"Query" name:"Role"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	HostName         string           `position:"Query" name:"HostName"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	HostNamePrefix   string           `position:"Query" name:"HostNamePrefix"`
+	ClusterId        string           `position:"Query" name:"ClusterId"`
+	HostNameSuffix   string           `position:"Query" name:"HostNameSuffix"`
+	Filter           string           `position:"Query" name:"Filter"`
+	PrivateIpAddress string           `position:"Query" name:"PrivateIpAddress"`
+	Sequence         string           `position:"Query" name:"Sequence"`
+	SortBy           string           `position:"Query" name:"SortBy"`
 }
 
 // ListNodesResponse is the response struct for api ListNodes
@@ -93,7 +99,7 @@ func CreateListNodesRequest() (request *ListNodesRequest) {
 	request = &ListNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListNodes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListNodes", "", "")
 	request.Method = requests.GET
 	return
 }

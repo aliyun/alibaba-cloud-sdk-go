@@ -17,8 +17,10 @@ package ehpc
 
 // OsInfo is a nested struct in ehpc response
 type OsInfo struct {
+	Version      string `json:"Version" xml:"Version"`
+	BaseOsTag    string `json:"BaseOsTag" xml:"BaseOsTag"`
 	Platform     string `json:"Platform" xml:"Platform"`
 	OsTag        string `json:"OsTag" xml:"OsTag"`
-	Version      string `json:"Version" xml:"Version"`
+	ImageId      string `json:"ImageId" xml:"ImageId"`
 	Architecture string `json:"Architecture" xml:"Architecture"`
 }

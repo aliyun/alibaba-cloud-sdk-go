@@ -17,23 +17,37 @@ package ehpc
 
 // ClusterInfoSimple is a nested struct in ehpc response
 type ClusterInfoSimple struct {
-	Status          string         `json:"Status" xml:"Status"`
-	SchedulerType   string         `json:"SchedulerType" xml:"SchedulerType"`
-	CreateTime      string         `json:"CreateTime" xml:"CreateTime"`
-	ImageOwnerAlias string         `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-	OsTag           string         `json:"OsTag" xml:"OsTag"`
-	InstanceType    string         `json:"InstanceType" xml:"InstanceType"`
-	AccountType     string         `json:"AccountType" xml:"AccountType"`
-	Count           int            `json:"Count" xml:"Count"`
-	RegionId        string         `json:"RegionId" xml:"RegionId"`
-	Description     string         `json:"Description" xml:"Description"`
-	ZoneId          string         `json:"ZoneId" xml:"ZoneId"`
-	LoginNodes      string         `json:"LoginNodes" xml:"LoginNodes"`
-	Name            string         `json:"Name" xml:"Name"`
-	ImageId         string         `json:"ImageId" xml:"ImageId"`
-	Id              string         `json:"Id" xml:"Id"`
-	Managers        Managers       `json:"Managers" xml:"Managers"`
-	Computes        Computes       `json:"Computes" xml:"Computes"`
-	TotalResources  TotalResources `json:"TotalResources" xml:"TotalResources"`
-	UsedResources   UsedResources  `json:"UsedResources" xml:"UsedResources"`
+	Name                  string         `json:"Name" xml:"Name"`
+	AccountType           string         `json:"AccountType" xml:"AccountType"`
+	ImageId               string         `json:"ImageId" xml:"ImageId"`
+	ImageOwnerAlias       string         `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	CreateTime            string         `json:"CreateTime" xml:"CreateTime"`
+	NodePrefix            string         `json:"NodePrefix" xml:"NodePrefix"`
+	InstanceType          string         `json:"InstanceType" xml:"InstanceType"`
+	LoginNodes            string         `json:"LoginNodes" xml:"LoginNodes"`
+	NodeSuffix            string         `json:"NodeSuffix" xml:"NodeSuffix"`
+	IsComputeEss          bool           `json:"IsComputeEss" xml:"IsComputeEss"`
+	RegionId              string         `json:"RegionId" xml:"RegionId"`
+	EhpcVersion           string         `json:"EhpcVersion" xml:"EhpcVersion"`
+	SchedulerType         string         `json:"SchedulerType" xml:"SchedulerType"`
+	BaseOsTag             string         `json:"BaseOsTag" xml:"BaseOsTag"`
+	Id                    string         `json:"Id" xml:"Id"`
+	VpcId                 string         `json:"VpcId" xml:"VpcId"`
+	DeployMode            string         `json:"DeployMode" xml:"DeployMode"`
+	Description           string         `json:"Description" xml:"Description"`
+	InstanceChargeType    string         `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	ClientVersion         string         `json:"ClientVersion" xml:"ClientVersion"`
+	ComputeSpotPriceLimit float64        `json:"ComputeSpotPriceLimit" xml:"ComputeSpotPriceLimit"`
+	Count                 int            `json:"Count" xml:"Count"`
+	VSwitchId             string         `json:"VSwitchId" xml:"VSwitchId"`
+	ComputeSpotStrategy   string         `json:"ComputeSpotStrategy" xml:"ComputeSpotStrategy"`
+	Location              string         `json:"Location" xml:"Location"`
+	ZoneId                string         `json:"ZoneId" xml:"ZoneId"`
+	OsTag                 string         `json:"OsTag" xml:"OsTag"`
+	Status                string         `json:"Status" xml:"Status"`
+	HasPlugin             bool           `json:"HasPlugin" xml:"HasPlugin"`
+	UsedResources         UsedResources  `json:"UsedResources" xml:"UsedResources"`
+	Managers              Managers       `json:"Managers" xml:"Managers"`
+	Computes              Computes       `json:"Computes" xml:"Computes"`
+	TotalResources        TotalResources `json:"TotalResources" xml:"TotalResources"`
 }

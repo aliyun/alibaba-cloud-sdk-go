@@ -77,20 +77,24 @@ type GetAutoScaleConfigRequest struct {
 // GetAutoScaleConfigResponse is the response struct for api GetAutoScaleConfig
 type GetAutoScaleConfigResponse struct {
 	*responses.BaseResponse
-	MaxNodesInCluster       int    `json:"MaxNodesInCluster" xml:"MaxNodesInCluster"`
-	GrowTimeoutInMinutes    int    `json:"GrowTimeoutInMinutes" xml:"GrowTimeoutInMinutes"`
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	EnableAutoShrink        bool   `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
-	ClusterType             string `json:"ClusterType" xml:"ClusterType"`
-	EnableAutoGrow          bool   `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
-	ExcludeNodes            string `json:"ExcludeNodes" xml:"ExcludeNodes"`
-	GrowIntervalInMinutes   int    `json:"GrowIntervalInMinutes" xml:"GrowIntervalInMinutes"`
-	ShrinkIntervalInMinutes int    `json:"ShrinkIntervalInMinutes" xml:"ShrinkIntervalInMinutes"`
-	ShrinkIdleTimes         int    `json:"ShrinkIdleTimes" xml:"ShrinkIdleTimes"`
-	ExtraNodesGrowRatio     int    `json:"ExtraNodesGrowRatio" xml:"ExtraNodesGrowRatio"`
-	GrowRatio               int    `json:"GrowRatio" xml:"GrowRatio"`
-	Uid                     string `json:"Uid" xml:"Uid"`
-	ClusterId               string `json:"ClusterId" xml:"ClusterId"`
+	MaxNodesInCluster       int                        `json:"MaxNodesInCluster" xml:"MaxNodesInCluster"`
+	GrowTimeoutInMinutes    int                        `json:"GrowTimeoutInMinutes" xml:"GrowTimeoutInMinutes"`
+	SpotStrategy            string                     `json:"SpotStrategy" xml:"SpotStrategy"`
+	EnableAutoShrink        bool                       `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
+	RequestId               string                     `json:"RequestId" xml:"RequestId"`
+	EnableAutoGrow          bool                       `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
+	ClusterType             string                     `json:"ClusterType" xml:"ClusterType"`
+	ExcludeNodes            string                     `json:"ExcludeNodes" xml:"ExcludeNodes"`
+	ShrinkIntervalInMinutes int                        `json:"ShrinkIntervalInMinutes" xml:"ShrinkIntervalInMinutes"`
+	GrowIntervalInMinutes   int                        `json:"GrowIntervalInMinutes" xml:"GrowIntervalInMinutes"`
+	SpotPriceLimit          float64                    `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	ExtraNodesGrowRatio     int                        `json:"ExtraNodesGrowRatio" xml:"ExtraNodesGrowRatio"`
+	ShrinkIdleTimes         int                        `json:"ShrinkIdleTimes" xml:"ShrinkIdleTimes"`
+	ImageId                 string                     `json:"ImageId" xml:"ImageId"`
+	GrowRatio               int                        `json:"GrowRatio" xml:"GrowRatio"`
+	ClusterId               string                     `json:"ClusterId" xml:"ClusterId"`
+	Uid                     string                     `json:"Uid" xml:"Uid"`
+	Queues                  QueuesInGetAutoScaleConfig `json:"Queues" xml:"Queues"`
 }
 
 // CreateGetAutoScaleConfigRequest creates a request to invoke GetAutoScaleConfig API
@@ -98,7 +102,7 @@ func CreateGetAutoScaleConfigRequest() (request *GetAutoScaleConfigRequest) {
 	request = &GetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "GetAutoScaleConfig", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetAutoScaleConfig", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -72,15 +72,25 @@ func (client *Client) CreateJobTemplateWithCallback(request *CreateJobTemplateRe
 type CreateJobTemplateRequest struct {
 	*requests.RpcRequest
 	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
+	ClockTime          string           `position:"Query" name:"ClockTime"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
 	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	UnzipCmd           string           `position:"Query" name:"UnzipCmd"`
 	PackagePath        string           `position:"Query" name:"PackagePath"`
+	Mem                string           `position:"Query" name:"Mem"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
 	Variables          string           `position:"Query" name:"Variables"`
 	RunasUser          string           `position:"Query" name:"RunasUser"`
 	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
+	Thread             requests.Integer `position:"Query" name:"Thread"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
+	Gpu                requests.Integer `position:"Query" name:"Gpu"`
+	WithUnzipCmd       requests.Boolean `position:"Query" name:"WithUnzipCmd"`
+	Node               requests.Integer `position:"Query" name:"Node"`
+	Task               requests.Integer `position:"Query" name:"Task"`
+	InputFileUrl       string           `position:"Query" name:"InputFileUrl"`
 	Name               string           `position:"Query" name:"Name"`
+	Queue              string           `position:"Query" name:"Queue"`
 }
 
 // CreateJobTemplateResponse is the response struct for api CreateJobTemplate
@@ -95,7 +105,7 @@ func CreateCreateJobTemplateRequest() (request *CreateJobTemplateRequest) {
 	request = &CreateJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "CreateJobTemplate", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateJobTemplate", "", "")
 	request.Method = requests.GET
 	return
 }

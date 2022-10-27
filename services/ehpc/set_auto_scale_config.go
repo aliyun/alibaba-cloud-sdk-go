@@ -71,17 +71,62 @@ func (client *Client) SetAutoScaleConfigWithCallback(request *SetAutoScaleConfig
 // SetAutoScaleConfigRequest is the request struct for api SetAutoScaleConfig
 type SetAutoScaleConfigRequest struct {
 	*requests.RpcRequest
-	ExcludeNodes            string           `position:"Query" name:"ExcludeNodes"`
-	ExtraNodesGrowRatio     requests.Integer `position:"Query" name:"ExtraNodesGrowRatio"`
-	ShrinkIdleTimes         requests.Integer `position:"Query" name:"ShrinkIdleTimes"`
-	GrowTimeoutInMinutes    requests.Integer `position:"Query" name:"GrowTimeoutInMinutes"`
-	ClusterId               string           `position:"Query" name:"ClusterId"`
-	EnableAutoGrow          requests.Boolean `position:"Query" name:"EnableAutoGrow"`
-	EnableAutoShrink        requests.Boolean `position:"Query" name:"EnableAutoShrink"`
-	MaxNodesInCluster       requests.Integer `position:"Query" name:"MaxNodesInCluster"`
-	ShrinkIntervalInMinutes requests.Integer `position:"Query" name:"ShrinkIntervalInMinutes"`
-	GrowIntervalInMinutes   requests.Integer `position:"Query" name:"GrowIntervalInMinutes"`
-	GrowRatio               requests.Integer `position:"Query" name:"GrowRatio"`
+	ImageId                 string                      `position:"Query" name:"ImageId"`
+	SpotPriceLimit          requests.Float              `position:"Query" name:"SpotPriceLimit"`
+	ExcludeNodes            string                      `position:"Query" name:"ExcludeNodes"`
+	ExtraNodesGrowRatio     requests.Integer            `position:"Query" name:"ExtraNodesGrowRatio"`
+	ShrinkIdleTimes         requests.Integer            `position:"Query" name:"ShrinkIdleTimes"`
+	GrowTimeoutInMinutes    requests.Integer            `position:"Query" name:"GrowTimeoutInMinutes"`
+	ClusterId               string                      `position:"Query" name:"ClusterId"`
+	EnableAutoGrow          requests.Boolean            `position:"Query" name:"EnableAutoGrow"`
+	EnableAutoShrink        requests.Boolean            `position:"Query" name:"EnableAutoShrink"`
+	SpotStrategy            string                      `position:"Query" name:"SpotStrategy"`
+	MaxNodesInCluster       requests.Integer            `position:"Query" name:"MaxNodesInCluster"`
+	ShrinkIntervalInMinutes requests.Integer            `position:"Query" name:"ShrinkIntervalInMinutes"`
+	Queues                  *[]SetAutoScaleConfigQueues `position:"Query" name:"Queues"  type:"Repeated"`
+	GrowIntervalInMinutes   requests.Integer            `position:"Query" name:"GrowIntervalInMinutes"`
+	GrowRatio               requests.Integer            `position:"Query" name:"GrowRatio"`
+}
+
+// SetAutoScaleConfigQueues is a repeated param struct in SetAutoScaleConfigRequest
+type SetAutoScaleConfigQueues struct {
+	QueueName          string                                   `name:"QueueName"`
+	SystemDiskLevel    string                                   `name:"SystemDiskLevel"`
+	InstanceTypes      *[]SetAutoScaleConfigQueuesInstanceTypes `name:"InstanceTypes" type:"Repeated"`
+	EnableAutoGrow     string                                   `name:"EnableAutoGrow"`
+	HostNameSuffix     string                                   `name:"HostNameSuffix"`
+	SpotPriceLimit     string                                   `name:"SpotPriceLimit"`
+	EnableAutoShrink   string                                   `name:"EnableAutoShrink"`
+	SpotStrategy       string                                   `name:"SpotStrategy"`
+	DataDisks          *[]SetAutoScaleConfigQueuesDataDisks     `name:"DataDisks" type:"Repeated"`
+	MinNodesInQueue    string                                   `name:"MinNodesInQueue"`
+	MaxNodesPerCycle   string                                   `name:"MaxNodesPerCycle"`
+	SystemDiskCategory string                                   `name:"SystemDiskCategory"`
+	MaxNodesInQueue    string                                   `name:"MaxNodesInQueue"`
+	SystemDiskSize     string                                   `name:"SystemDiskSize"`
+	QueueImageId       string                                   `name:"QueueImageId"`
+	InstanceType       string                                   `name:"InstanceType"`
+	HostNamePrefix     string                                   `name:"HostNamePrefix"`
+	MinNodesPerCycle   string                                   `name:"MinNodesPerCycle"`
+}
+
+// SetAutoScaleConfigQueuesInstanceTypes is a repeated param struct in SetAutoScaleConfigRequest
+type SetAutoScaleConfigQueuesInstanceTypes struct {
+	VSwitchId      string `name:"VSwitchId"`
+	SpotStrategy   string `name:"SpotStrategy"`
+	ZoneId         string `name:"ZoneId"`
+	InstanceType   string `name:"InstanceType"`
+	SpotPriceLimit string `name:"SpotPriceLimit"`
+}
+
+// SetAutoScaleConfigQueuesDataDisks is a repeated param struct in SetAutoScaleConfigRequest
+type SetAutoScaleConfigQueuesDataDisks struct {
+	DataDiskDeleteWithInstance string `name:"DataDiskDeleteWithInstance"`
+	DataDiskEncrypted          string `name:"DataDiskEncrypted"`
+	DataDiskKMSKeyId           string `name:"DataDiskKMSKeyId"`
+	DataDiskSize               string `name:"DataDiskSize"`
+	DataDiskCategory           string `name:"DataDiskCategory"`
+	DataDiskPerformanceLevel   string `name:"DataDiskPerformanceLevel"`
 }
 
 // SetAutoScaleConfigResponse is the response struct for api SetAutoScaleConfig
@@ -95,7 +140,7 @@ func CreateSetAutoScaleConfigRequest() (request *SetAutoScaleConfigRequest) {
 	request = &SetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "SetAutoScaleConfig", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SetAutoScaleConfig", "", "")
 	request.Method = requests.GET
 	return
 }

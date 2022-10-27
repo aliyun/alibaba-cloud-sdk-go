@@ -83,6 +83,7 @@ type ResetNodesInstance struct {
 // ResetNodesResponse is the response struct for api ResetNodes
 type ResetNodesResponse struct {
 	*responses.BaseResponse
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -91,7 +92,7 @@ func CreateResetNodesRequest() (request *ResetNodesRequest) {
 	request = &ResetNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ResetNodes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ResetNodes", "", "")
 	request.Method = requests.GET
 	return
 }
