@@ -1,3 +1,8 @@
+2022-10-28 Version: v1.61.1835
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support BuyPayAsYouGoOrder, RefundPayAsYouGoOrder, ListEffectiveOrders, ListClassificationTemplates.
+- Modify RegisterInstance, UpdateInstance, ListInstances, GetInstance, GetApprovalDetail.
+
 2022-10-28 Version: v1.61.1834
 - Generated 2020-06-16 for `Alb`.
 - Support Latest APIs.

@@ -71,8 +71,8 @@ func (client *Client) EnableUserWithCallback(request *EnableUserRequest, callbac
 // EnableUserRequest is the request struct for api EnableUser
 type EnableUserRequest struct {
 	*requests.RpcRequest
-	Uid string           `position:"Query" name:"Uid"`
 	Tid requests.Integer `position:"Query" name:"Tid"`
+	Uid string           `position:"Query" name:"Uid"`
 }
 
 // EnableUserResponse is the response struct for api EnableUser

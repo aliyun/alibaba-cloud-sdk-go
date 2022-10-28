@@ -71,8 +71,8 @@ func (client *Client) GetDBTaskSQLJobLogWithCallback(request *GetDBTaskSQLJobLog
 // GetDBTaskSQLJobLogRequest is the request struct for api GetDBTaskSQLJobLog
 type GetDBTaskSQLJobLogRequest struct {
 	*requests.RpcRequest
-	JobId requests.Integer `position:"Query" name:"JobId"`
 	Tid   requests.Integer `position:"Query" name:"Tid"`
+	JobId requests.Integer `position:"Query" name:"JobId"`
 }
 
 // GetDBTaskSQLJobLogResponse is the response struct for api GetDBTaskSQLJobLog

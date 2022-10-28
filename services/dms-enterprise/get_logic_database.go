@@ -71,8 +71,8 @@ func (client *Client) GetLogicDatabaseWithCallback(request *GetLogicDatabaseRequ
 // GetLogicDatabaseRequest is the request struct for api GetLogicDatabase
 type GetLogicDatabaseRequest struct {
 	*requests.RpcRequest
-	DbId string           `position:"Query" name:"DbId"`
 	Tid  requests.Integer `position:"Query" name:"Tid"`
+	DbId string           `position:"Query" name:"DbId"`
 }
 
 // GetLogicDatabaseResponse is the response struct for api GetLogicDatabase

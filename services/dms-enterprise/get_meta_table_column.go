@@ -71,8 +71,8 @@ func (client *Client) GetMetaTableColumnWithCallback(request *GetMetaTableColumn
 // GetMetaTableColumnRequest is the request struct for api GetMetaTableColumn
 type GetMetaTableColumnRequest struct {
 	*requests.RpcRequest
-	TableGuid string           `position:"Query" name:"TableGuid"`
 	Tid       requests.Integer `position:"Query" name:"Tid"`
+	TableGuid string           `position:"Query" name:"TableGuid"`
 }
 
 // GetMetaTableColumnResponse is the response struct for api GetMetaTableColumn

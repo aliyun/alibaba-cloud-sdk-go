@@ -77,7 +77,9 @@ type RegisterInstanceRequest struct {
 	NetworkType      string           `position:"Query" name:"NetworkType"`
 	Tid              requests.Integer `position:"Query" name:"Tid"`
 	Sid              string           `position:"Query" name:"Sid"`
+	EnableSellSitd   string           `position:"Query" name:"EnableSellSitd"`
 	DataLinkName     string           `position:"Query" name:"DataLinkName"`
+	TemplateType     string           `position:"Query" name:"TemplateType"`
 	InstanceSource   string           `position:"Query" name:"InstanceSource"`
 	EnvType          string           `position:"Query" name:"EnvType"`
 	Host             string           `position:"Query" name:"Host"`
@@ -87,6 +89,7 @@ type RegisterInstanceRequest struct {
 	ExportTimeout    requests.Integer `position:"Query" name:"ExportTimeout"`
 	DatabasePassword string           `position:"Query" name:"DatabasePassword"`
 	InstanceAlias    string           `position:"Query" name:"InstanceAlias"`
+	TemplateId       requests.Integer `position:"Query" name:"TemplateId"`
 	DatabaseUser     string           `position:"Query" name:"DatabaseUser"`
 	Port             requests.Integer `position:"Query" name:"Port"`
 	VpcId            string           `position:"Query" name:"VpcId"`

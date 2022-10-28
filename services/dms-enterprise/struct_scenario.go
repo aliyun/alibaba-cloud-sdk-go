@@ -17,7 +17,8 @@ package dms_enterprise
 
 // Scenario is a nested struct in dms_enterprise response
 type Scenario struct {
-	ScenarioName string `json:"ScenarioName" xml:"ScenarioName"`
 	CreatorId    string `json:"CreatorId" xml:"CreatorId"`
+	Id           int64  `json:"Id" xml:"Id"`
 	Description  string `json:"Description" xml:"Description"`
+	ScenarioName string `json:"ScenarioName" xml:"ScenarioName"`
 }

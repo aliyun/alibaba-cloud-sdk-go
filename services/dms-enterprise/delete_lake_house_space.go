@@ -71,8 +71,8 @@ func (client *Client) DeleteLakeHouseSpaceWithCallback(request *DeleteLakeHouseS
 // DeleteLakeHouseSpaceRequest is the request struct for api DeleteLakeHouseSpace
 type DeleteLakeHouseSpaceRequest struct {
 	*requests.RpcRequest
-	SpaceId requests.Integer `position:"Query" name:"SpaceId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	SpaceId requests.Integer `position:"Query" name:"SpaceId"`
 }
 
 // DeleteLakeHouseSpaceResponse is the response struct for api DeleteLakeHouseSpace

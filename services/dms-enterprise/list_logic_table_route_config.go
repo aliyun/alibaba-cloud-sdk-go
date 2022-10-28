@@ -71,8 +71,8 @@ func (client *Client) ListLogicTableRouteConfigWithCallback(request *ListLogicTa
 // ListLogicTableRouteConfigRequest is the request struct for api ListLogicTableRouteConfig
 type ListLogicTableRouteConfigRequest struct {
 	*requests.RpcRequest
-	TableId requests.Integer `position:"Query" name:"TableId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	TableId requests.Integer `position:"Query" name:"TableId"`
 }
 
 // ListLogicTableRouteConfigResponse is the response struct for api ListLogicTableRouteConfig

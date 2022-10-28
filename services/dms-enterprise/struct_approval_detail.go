@@ -24,6 +24,7 @@ type ApprovalDetail struct {
 	AuditId         int64                            `json:"AuditId" xml:"AuditId"`
 	OrderId         int64                            `json:"OrderId" xml:"OrderId"`
 	WorkflowInsCode string                           `json:"WorkflowInsCode" xml:"WorkflowInsCode"`
+	TemplateId      int64                            `json:"TemplateId" xml:"TemplateId"`
 	ReasonList      ReasonList                       `json:"ReasonList" xml:"ReasonList"`
 	WorkflowNodes   WorkflowNodesInGetApprovalDetail `json:"WorkflowNodes" xml:"WorkflowNodes"`
 	CurrentHandlers CurrentHandlers                  `json:"CurrentHandlers" xml:"CurrentHandlers"`
