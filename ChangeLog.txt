@@ -1,3 +1,7 @@
+2022-10-28 Version: v1.61.1834
+- Generated 2020-06-16 for `Alb`.
+- Support Latest APIs.
+
 2022-10-27 Version: v1.61.1833
 - Generated 2018-05-10 for `Cdn`.
 - Add BatchDescribeCdnIpInfo.
