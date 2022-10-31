@@ -18,12 +18,12 @@ package live
 // Result is a nested struct in live response
 type Result struct {
 	Status                 int                    `json:"Status" xml:"Status"`
-	AppConfig              map[string]interface{} `json:"AppConfig" xml:"AppConfig"`
+	HasOrderedIM           bool                   `json:"HasOrderedIM" xml:"HasOrderedIM"`
 	CreateTime             int64                  `json:"CreateTime" xml:"CreateTime"`
+	IsNewIMUser            bool                   `json:"IsNewIMUser" xml:"IsNewIMUser"`
+	IsMuteAll              bool                   `json:"IsMuteAll" xml:"IsMuteAll"`
 	RefreshToken           string                 `json:"RefreshToken" xml:"RefreshToken"`
 	HasMore                bool                   `json:"HasMore" xml:"HasMore"`
-	AppId                  string                 `json:"AppId" xml:"AppId"`
-	MessageId              string                 `json:"MessageId" xml:"MessageId"`
 	AccessTokenExpiredTime int64                  `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 	Success                bool                   `json:"Success" xml:"Success"`
 	Total                  int                    `json:"Total" xml:"Total"`
@@ -31,7 +31,6 @@ type Result struct {
 	CreatorId              string                 `json:"CreatorId" xml:"CreatorId"`
 	AccessToken            string                 `json:"AccessToken" xml:"AccessToken"`
 	GroupId                string                 `json:"GroupId" xml:"GroupId"`
-	AppList                []AppList              `json:"AppList" xml:"AppList"`
 	UserList               []UserList             `json:"UserList" xml:"UserList"`
 	MessageList            []MessageList          `json:"MessageList" xml:"MessageList"`
 	GroupList              []GroupList            `json:"GroupList" xml:"GroupList"`

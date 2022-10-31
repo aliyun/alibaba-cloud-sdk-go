@@ -71,9 +71,11 @@ func (client *Client) LeaveMessageGroupWithCallback(request *LeaveMessageGroupRe
 // LeaveMessageGroupRequest is the request struct for api LeaveMessageGroup
 type LeaveMessageGroupRequest struct {
 	*requests.RpcRequest
-	GroupId string `position:"Body" name:"GroupId"`
-	UserId  string `position:"Body" name:"UserId"`
-	AppId   string `position:"Body" name:"AppId"`
+	BroadCastStatistics requests.Boolean `position:"Body" name:"BroadCastStatistics"`
+	GroupId             string           `position:"Body" name:"GroupId"`
+	UserId              string           `position:"Body" name:"UserId"`
+	AppId               string           `position:"Body" name:"AppId"`
+	BroadCastType       requests.Integer `position:"Body" name:"BroadCastType"`
 }
 
 // LeaveMessageGroupResponse is the response struct for api LeaveMessageGroup
