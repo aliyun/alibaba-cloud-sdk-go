@@ -1,3 +1,7 @@
+2022-11-01 Version: v1.61.1837
+- Generated 2019-12-30 for `imageseg`.
+- Update RefineMask.
+
 2022-10-31 Version: v1.61.1836
 - Generated 2016-11-01 for `live`.
 - Live pre sdk test.
