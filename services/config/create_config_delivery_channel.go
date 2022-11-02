@@ -79,6 +79,7 @@ type CreateConfigDeliveryChannelRequest struct {
 	DeliveryChannelCondition            string           `position:"Query" name:"DeliveryChannelCondition"`
 	ConfigurationItemChangeNotification requests.Boolean `position:"Query" name:"ConfigurationItemChangeNotification"`
 	DeliveryChannelName                 string           `position:"Query" name:"DeliveryChannelName"`
+	DeliverySnapshotTime                string           `position:"Query" name:"DeliverySnapshotTime"`
 	OversizedDataOSSTargetArn           string           `position:"Query" name:"OversizedDataOSSTargetArn"`
 	DeliveryChannelType                 string           `position:"Query" name:"DeliveryChannelType"`
 }

@@ -80,6 +80,7 @@ type ListAggregateConfigRulesRequest struct {
 	PageSize                         requests.Integer            `position:"Query" name:"PageSize"`
 	CompliancePackId                 string                      `position:"Query" name:"CompliancePackId"`
 	Tag                              ListAggregateConfigRulesTag `position:"Query" name:"Tag"  type:"Struct"`
+	Keyword                          string                      `position:"Query" name:"Keyword"`
 	ComplianceType                   string                      `position:"Query" name:"ComplianceType"`
 	RiskLevel                        requests.Integer            `position:"Query" name:"RiskLevel"`
 	ConfigRuleName                   string                      `position:"Query" name:"ConfigRuleName"`
