@@ -28,7 +28,9 @@ type Job struct {
 	Name            string         `json:"Name" xml:"Name"`
 	ClassName       string         `json:"ClassName" xml:"ClassName"`
 	Content         string         `json:"Content" xml:"Content"`
+	JobType         string         `json:"JobType" xml:"JobType"`
 	AttemptInterval int            `json:"AttemptInterval" xml:"AttemptInterval"`
+	XAttrs          string         `json:"XAttrs" xml:"XAttrs"`
 	MapTaskXAttrs   MapTaskXAttrs  `json:"MapTaskXAttrs" xml:"MapTaskXAttrs"`
 	TimeConfig      TimeConfig     `json:"TimeConfig" xml:"TimeConfig"`
 	JobMonitorInfo  JobMonitorInfo `json:"JobMonitorInfo" xml:"JobMonitorInfo"`

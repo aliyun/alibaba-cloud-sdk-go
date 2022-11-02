@@ -1,3 +1,8 @@
+2022-11-02 Version: v1.61.1838
+- Generated 2019-04-30 for `schedulerx2`.
+- ListJobs return JobType and XAttrs.
+- GetJobInfo return JobType and XAttrs.
+
 2022-11-01 Version: v1.61.1837
 - Generated 2019-12-30 for `imageseg`.
 - Update RefineMask.
