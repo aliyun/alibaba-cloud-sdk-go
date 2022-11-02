@@ -103,7 +103,7 @@ func CreateDescribeCenAttachedChildInstanceAttributeRequest() (request *Describe
 	request = &DescribeCenAttachedChildInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

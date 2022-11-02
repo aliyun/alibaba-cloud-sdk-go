@@ -76,11 +76,13 @@ type ListTransitRouterPrefixListAssociationRequest struct {
 	PrefixListId         string           `position:"Query" name:"PrefixListId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerUid             requests.Integer `position:"Query" name:"OwnerUid"`
+	NextHopType          string           `position:"Query" name:"NextHopType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
 	TransitRouterTableId string           `position:"Query" name:"TransitRouterTableId"`
+	NextHop              string           `position:"Query" name:"NextHop"`
 }
 
 // ListTransitRouterPrefixListAssociationResponse is the response struct for api ListTransitRouterPrefixListAssociation
@@ -98,7 +100,7 @@ func CreateListTransitRouterPrefixListAssociationRequest() (request *ListTransit
 	request = &ListTransitRouterPrefixListAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

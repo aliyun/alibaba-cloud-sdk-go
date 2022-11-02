@@ -93,7 +93,7 @@ func CreateGrantInstanceToTransitRouterRequest() (request *GrantInstanceToTransi
 	request = &GrantInstanceToTransitRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "GrantInstanceToTransitRouter", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "GrantInstanceToTransitRouter", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

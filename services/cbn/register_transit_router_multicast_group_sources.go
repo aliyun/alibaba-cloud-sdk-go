@@ -95,7 +95,7 @@ func CreateRegisterTransitRouterMulticastGroupSourcesRequest() (request *Registe
 	request = &RegisterTransitRouterMulticastGroupSourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupSources", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupSources", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateDetachCenChildInstanceRequest() (request *DetachCenChildInstanceReque
 	request = &DetachCenChildInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DetachCenChildInstance", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DetachCenChildInstance", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

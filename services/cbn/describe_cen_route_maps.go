@@ -106,7 +106,7 @@ func CreateDescribeCenRouteMapsRequest() (request *DescribeCenRouteMapsRequest) 
 	request = &DescribeCenRouteMapsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRouteMaps", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRouteMaps", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateEnableCenVpcFlowStatisticRequest() (request *EnableCenVpcFlowStatisti
 	request = &EnableCenVpcFlowStatisticRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableCenVpcFlowStatistic", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableCenVpcFlowStatistic", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

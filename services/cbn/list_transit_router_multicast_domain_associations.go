@@ -100,7 +100,7 @@ func CreateListTransitRouterMulticastDomainAssociationsRequest() (request *ListT
 	request = &ListTransitRouterMulticastDomainAssociationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainAssociations", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainAssociations", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

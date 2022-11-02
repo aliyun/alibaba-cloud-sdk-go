@@ -98,7 +98,7 @@ func CreateListTrafficMarkingPoliciesRequest() (request *ListTrafficMarkingPolic
 	request = &ListTrafficMarkingPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTrafficMarkingPolicies", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTrafficMarkingPolicies", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

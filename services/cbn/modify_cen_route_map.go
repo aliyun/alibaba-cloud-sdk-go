@@ -121,7 +121,7 @@ func CreateModifyCenRouteMapRequest() (request *ModifyCenRouteMapRequest) {
 	request = &ModifyCenRouteMapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenRouteMap", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenRouteMap", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

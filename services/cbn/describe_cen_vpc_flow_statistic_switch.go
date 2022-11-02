@@ -93,7 +93,7 @@ func CreateDescribeCenVpcFlowStatisticSwitchRequest() (request *DescribeCenVpcFl
 	request = &DescribeCenVpcFlowStatisticSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenVpcFlowStatisticSwitch", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenVpcFlowStatisticSwitch", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

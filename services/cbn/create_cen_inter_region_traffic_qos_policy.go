@@ -104,7 +104,7 @@ func CreateCreateCenInterRegionTrafficQosPolicyRequest() (request *CreateCenInte
 	request = &CreateCenInterRegionTrafficQosPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

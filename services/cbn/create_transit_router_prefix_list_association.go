@@ -96,7 +96,7 @@ func CreateCreateTransitRouterPrefixListAssociationRequest() (request *CreateTra
 	request = &CreateTransitRouterPrefixListAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterPrefixListAssociation", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterPrefixListAssociation", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

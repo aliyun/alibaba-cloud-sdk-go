@@ -96,7 +96,7 @@ func CreateDescribeGrantRulesToCenRequest() (request *DescribeGrantRulesToCenReq
 	request = &DescribeGrantRulesToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

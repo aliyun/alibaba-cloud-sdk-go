@@ -95,7 +95,7 @@ func CreateDeregisterTransitRouterMulticastGroupMembersRequest() (request *Dereg
 	request = &DeregisterTransitRouterMulticastGroupMembersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeregisterTransitRouterMulticastGroupMembers", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeregisterTransitRouterMulticastGroupMembers", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

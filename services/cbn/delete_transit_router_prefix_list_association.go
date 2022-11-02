@@ -95,7 +95,7 @@ func CreateDeleteTransitRouterPrefixListAssociationRequest() (request *DeleteTra
 	request = &DeleteTransitRouterPrefixListAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterPrefixListAssociation", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterPrefixListAssociation", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

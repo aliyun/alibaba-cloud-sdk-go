@@ -96,7 +96,7 @@ func CreateDescribeGrantRulesToResourceRequest() (request *DescribeGrantRulesToR
 	request = &DescribeGrantRulesToResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToResource", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToResource", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }
