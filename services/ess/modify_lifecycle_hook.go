@@ -77,6 +77,7 @@ type ModifyLifecycleHookRequest struct {
 	LifecycleTransition  string           `position:"Query" name:"LifecycleTransition"`
 	LifecycleHookName    string           `position:"Query" name:"LifecycleHookName"`
 	NotificationArn      string           `position:"Query" name:"NotificationArn"`
+	LifecycleHookStatus  string           `position:"Query" name:"LifecycleHookStatus"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	LifecycleHookId      string           `position:"Query" name:"LifecycleHookId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

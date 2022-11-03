@@ -28,5 +28,7 @@ type DataDisk struct {
 	KMSKeyId             string     `json:"KMSKeyId" xml:"KMSKeyId"`
 	DeleteWithInstance   bool       `json:"DeleteWithInstance" xml:"DeleteWithInstance"`
 	Encrypted            string     `json:"Encrypted" xml:"Encrypted"`
+	ProvisionedIops      int64      `json:"ProvisionedIops" xml:"ProvisionedIops"`
+	BurstingEnabled      bool       `json:"BurstingEnabled" xml:"BurstingEnabled"`
 	Categories           Categories `json:"Categories" xml:"Categories"`
 }

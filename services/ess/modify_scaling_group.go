@@ -72,31 +72,37 @@ func (client *Client) ModifyScalingGroupWithCallback(request *ModifyScalingGroup
 type ModifyScalingGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                     requests.Integer                            `position:"Query" name:"ResourceOwnerId"`
-	ScalingGroupId                      string                                      `position:"Query" name:"ScalingGroupId"`
+	AzBalance                           requests.Boolean                            `position:"Query" name:"AzBalance"`
 	VSwitchIds                          *[]string                                   `position:"Query" name:"VSwitchIds"  type:"Repeated"`
+	MaxInstanceLifetime                 requests.Integer                            `position:"Query" name:"MaxInstanceLifetime"`
 	ActiveScalingConfigurationId        string                                      `position:"Query" name:"ActiveScalingConfigurationId"`
-	OnDemandBaseCapacity                requests.Integer                            `position:"Query" name:"OnDemandBaseCapacity"`
-	OnDemandPercentageAboveBaseCapacity requests.Integer                            `position:"Query" name:"OnDemandPercentageAboveBaseCapacity"`
 	SpotInstanceRemedy                  requests.Boolean                            `position:"Query" name:"SpotInstanceRemedy"`
 	ScaleOutAmountCheck                 requests.Boolean                            `position:"Query" name:"ScaleOutAmountCheck"`
+	CustomPolicyARN                     string                                      `position:"Query" name:"CustomPolicyARN"`
 	DefaultCooldown                     requests.Integer                            `position:"Query" name:"DefaultCooldown"`
-	RemovalPolicy1                      string                                      `position:"Query" name:"RemovalPolicy.1"`
-	RemovalPolicy2                      string                                      `position:"Query" name:"RemovalPolicy.2"`
 	MultiAZPolicy                       string                                      `position:"Query" name:"MultiAZPolicy"`
-	HealthCheckType                     string                                      `position:"Query" name:"HealthCheckType"`
 	LaunchTemplateId                    string                                      `position:"Query" name:"LaunchTemplateId"`
 	DesiredCapacity                     requests.Integer                            `position:"Query" name:"DesiredCapacity"`
+	LaunchTemplateOverride              *[]ModifyScalingGroupLaunchTemplateOverride `position:"Query" name:"LaunchTemplateOverride"  type:"Repeated"`
+	CompensateWithOnDemand              requests.Boolean                            `position:"Query" name:"CompensateWithOnDemand"`
+	MinSize                             requests.Integer                            `position:"Query" name:"MinSize"`
+	OwnerId                             requests.Integer                            `position:"Query" name:"OwnerId"`
+	MaxSize                             requests.Integer                            `position:"Query" name:"MaxSize"`
+	ScalingGroupId                      string                                      `position:"Query" name:"ScalingGroupId"`
+	OnDemandBaseCapacity                requests.Integer                            `position:"Query" name:"OnDemandBaseCapacity"`
+	OnDemandPercentageAboveBaseCapacity requests.Integer                            `position:"Query" name:"OnDemandPercentageAboveBaseCapacity"`
+	SpotAllocationStrategy              string                                      `position:"Query" name:"SpotAllocationStrategy"`
+	RemovalPolicy1                      string                                      `position:"Query" name:"RemovalPolicy.1"`
+	RemovalPolicy2                      string                                      `position:"Query" name:"RemovalPolicy.2"`
+	RemovalPolicy3                      string                                      `position:"Query" name:"RemovalPolicy.3"`
+	HealthCheckType                     string                                      `position:"Query" name:"HealthCheckType"`
 	ResourceOwnerAccount                string                                      `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupName                    string                                      `position:"Query" name:"ScalingGroupName"`
-	LaunchTemplateOverride              *[]ModifyScalingGroupLaunchTemplateOverride `position:"Query" name:"LaunchTemplateOverride"  type:"Repeated"`
 	OwnerAccount                        string                                      `position:"Query" name:"OwnerAccount"`
-	CompensateWithOnDemand              requests.Boolean                            `position:"Query" name:"CompensateWithOnDemand"`
 	SpotInstancePools                   requests.Integer                            `position:"Query" name:"SpotInstancePools"`
-	MinSize                             requests.Integer                            `position:"Query" name:"MinSize"`
 	GroupDeletionProtection             requests.Boolean                            `position:"Query" name:"GroupDeletionProtection"`
-	OwnerId                             requests.Integer                            `position:"Query" name:"OwnerId"`
 	LaunchTemplateVersion               string                                      `position:"Query" name:"LaunchTemplateVersion"`
-	MaxSize                             requests.Integer                            `position:"Query" name:"MaxSize"`
+	AllocationStrategy                  string                                      `position:"Query" name:"AllocationStrategy"`
 }
 
 // ModifyScalingGroupLaunchTemplateOverride is a repeated param struct in ModifyScalingGroupRequest

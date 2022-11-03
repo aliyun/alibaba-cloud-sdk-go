@@ -28,10 +28,12 @@ type ScalingConfiguration struct {
 	AutoMatchImageCache           bool                      `json:"AutoMatchImageCache" xml:"AutoMatchImageCache"`
 	RegionId                      string                    `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId               string                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	InstanceFamilyLevel           string                    `json:"InstanceFamilyLevel" xml:"InstanceFamilyLevel"`
 	ActiveDeadlineSeconds         int                       `json:"ActiveDeadlineSeconds" xml:"ActiveDeadlineSeconds"`
 	CpuOptionsCore                int                       `json:"CpuOptionsCore" xml:"CpuOptionsCore"`
 	Description                   string                    `json:"Description" xml:"Description"`
 	DnsPolicy                     string                    `json:"DnsPolicy" xml:"DnsPolicy"`
+	CostOptimization              bool                      `json:"CostOptimization" xml:"CostOptimization"`
 	EgressBandwidth               int64                     `json:"EgressBandwidth" xml:"EgressBandwidth"`
 	AutoCreateEip                 bool                      `json:"AutoCreateEip" xml:"AutoCreateEip"`
 	Memory                        float64                   `json:"Memory" xml:"Memory"`
