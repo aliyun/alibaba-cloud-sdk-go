@@ -1,3 +1,7 @@
+2022-11-03 Version: v1.61.1842
+- Generated 2020-04-07 for `cas`.
+- Support encrypt and decrypt.
+
 2022-11-03 Version: v1.61.1841
 - Generated 2014-08-28 for `Ess`.
 - ScaleWithAdjustment API support desiredCapacity scalinggroup concurrent scaling.
