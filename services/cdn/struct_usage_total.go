@@ -17,12 +17,12 @@ package cdn
 
 // UsageTotal is a nested struct in cdn response
 type UsageTotal struct {
-	BytesHitRate   string `json:"BytesHitRate" xml:"BytesHitRate"`
+	MaxSrcBpsTime  string `json:"MaxSrcBpsTime" xml:"MaxSrcBpsTime"`
 	RequestHitRate string `json:"RequestHitRate" xml:"RequestHitRate"`
 	MaxBps         string `json:"MaxBps" xml:"MaxBps"`
+	TotalAccess    string `json:"TotalAccess" xml:"TotalAccess"`
+	BytesHitRate   string `json:"BytesHitRate" xml:"BytesHitRate"`
+	TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
 	MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
 	MaxSrcBps      string `json:"MaxSrcBps" xml:"MaxSrcBps"`
-	MaxSrcBpsTime  string `json:"MaxSrcBpsTime" xml:"MaxSrcBpsTime"`
-	TotalAccess    string `json:"TotalAccess" xml:"TotalAccess"`
-	TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
 }

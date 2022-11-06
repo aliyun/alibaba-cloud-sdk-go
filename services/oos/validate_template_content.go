@@ -77,10 +77,10 @@ type ValidateTemplateContentRequest struct {
 // ValidateTemplateContentResponse is the response struct for api ValidateTemplateContent
 type ValidateTemplateContentResponse struct {
 	*responses.BaseResponse
+	Outputs    string `json:"Outputs" xml:"Outputs"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Parameters string `json:"Parameters" xml:"Parameters"`
 	RamRole    string `json:"RamRole" xml:"RamRole"`
-	Outputs    string `json:"Outputs" xml:"Outputs"`
 	Tasks      []Task `json:"Tasks" xml:"Tasks"`
 }
 
@@ -89,7 +89,7 @@ func CreateValidateTemplateContentRequest() (request *ValidateTemplateContentReq
 	request = &ValidateTemplateContentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ValidateTemplateContent", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ValidateTemplateContent", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

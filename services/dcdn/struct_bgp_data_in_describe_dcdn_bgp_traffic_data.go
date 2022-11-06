@@ -17,7 +17,7 @@ package dcdn
 
 // BgpDataInDescribeDcdnBgpTrafficData is a nested struct in dcdn response
 type BgpDataInDescribeDcdnBgpTrafficData struct {
-	In        int64  `json:"In" xml:"In"`
 	Out       int64  `json:"Out" xml:"Out"`
+	In        int64  `json:"In" xml:"In"`
 	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
 }

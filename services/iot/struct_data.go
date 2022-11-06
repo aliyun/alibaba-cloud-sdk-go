@@ -42,30 +42,37 @@ type Data struct {
 	ThingModelJson            string                                          `json:"ThingModelJson" xml:"ThingModelJson"`
 	LastUpdateTime            int64                                           `json:"LastUpdateTime" xml:"LastUpdateTime"`
 	Versions                  string                                          `json:"Versions" xml:"Versions"`
+	TotalCount                int64                                           `json:"TotalCount" xml:"TotalCount"`
 	TslUri                    string                                          `json:"TslUri" xml:"TslUri"`
+	Code                      string                                          `json:"Code" xml:"Code"`
+	CsvUrl                    string                                          `json:"CsvUrl" xml:"CsvUrl"`
 	OssAddress                string                                          `json:"OssAddress" xml:"OssAddress"`
 	FirmwareId                string                                          `json:"FirmwareId" xml:"FirmwareId"`
 	AliyunCommodityCode       string                                          `json:"AliyunCommodityCode" xml:"AliyunCommodityCode"`
 	OssAccessKeyId            string                                          `json:"OssAccessKeyId" xml:"OssAccessKeyId"`
 	ApplyId                   int64                                           `json:"ApplyId" xml:"ApplyId"`
 	UtcCreated                string                                          `json:"UtcCreated" xml:"UtcCreated"`
+	LongJobId                 string                                          `json:"LongJobId" xml:"LongJobId"`
 	Host                      string                                          `json:"Host" xml:"Host"`
 	DeviceName                string                                          `json:"DeviceName" xml:"DeviceName"`
 	PageCount                 int64                                           `json:"PageCount" xml:"PageCount"`
 	Count                     int64                                           `json:"Count" xml:"Count"`
 	Size                      string                                          `json:"Size" xml:"Size"`
 	Udi                       string                                          `json:"Udi" xml:"Udi"`
+	CsvFileName               string                                          `json:"CsvFileName" xml:"CsvFileName"`
 	IsOpen                    bool                                            `json:"IsOpen" xml:"IsOpen"`
 	SourceURI                 string                                          `json:"SourceURI" xml:"SourceURI"`
 	TotalSize                 int                                             `json:"TotalSize" xml:"TotalSize"`
 	ProductName               string                                          `json:"ProductName" xml:"ProductName"`
 	Name                      string                                          `json:"Name" xml:"Name"`
+	DatasetId                 string                                          `json:"DatasetId" xml:"DatasetId"`
 	GmtCreateTimestamp        int64                                           `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
 	SpeechCode                string                                          `json:"SpeechCode" xml:"SpeechCode"`
 	SpeechType                string                                          `json:"SpeechType" xml:"SpeechType"`
 	DownloadUrl               string                                          `json:"DownloadUrl" xml:"DownloadUrl"`
 	PageSize                  int                                             `json:"PageSize" xml:"PageSize"`
 	Key                       string                                          `json:"Key" xml:"Key"`
+	ResultDataInString        string                                          `json:"ResultDataInString" xml:"ResultDataInString"`
 	GmtCreate                 string                                          `json:"GmtCreate" xml:"GmtCreate"`
 	SourceType                string                                          `json:"SourceType" xml:"SourceType"`
 	EnableSoundCode           bool                                            `json:"EnableSoundCode" xml:"EnableSoundCode"`
@@ -85,6 +92,7 @@ type Data struct {
 	Ip                        string                                          `json:"Ip" xml:"Ip"`
 	ScriptType                string                                          `json:"ScriptType" xml:"ScriptType"`
 	PageNum                   int                                             `json:"PageNum" xml:"PageNum"`
+	AvailableQuota            int                                             `json:"AvailableQuota" xml:"AvailableQuota"`
 	AccessKeyId               string                                          `json:"AccessKeyId" xml:"AccessKeyId"`
 	EdgeVersion               string                                          `json:"EdgeVersion" xml:"EdgeVersion"`
 	JoinEui                   string                                          `json:"JoinEui" xml:"JoinEui"`
@@ -101,17 +109,20 @@ type Data struct {
 	DataFormat                int                                             `json:"DataFormat" xml:"DataFormat"`
 	BizEnable                 bool                                            `json:"BizEnable" xml:"BizEnable"`
 	GmtCompleted              string                                          `json:"GmtCompleted" xml:"GmtCompleted"`
+	ProgressId                string                                          `json:"ProgressId" xml:"ProgressId"`
 	UtcCreate                 string                                          `json:"UtcCreate" xml:"UtcCreate"`
 	Latitude                  float64                                         `json:"Latitude" xml:"Latitude"`
+	EndTime                   int64                                           `json:"EndTime" xml:"EndTime"`
 	HasNext                   bool                                            `json:"HasNext" xml:"HasNext"`
 	TargetType                string                                          `json:"TargetType" xml:"TargetType"`
 	DeviceActive              int                                             `json:"DeviceActive" xml:"DeviceActive"`
 	DriverVersion             string                                          `json:"DriverVersion" xml:"DriverVersion"`
 	BizType                   string                                          `json:"BizType" xml:"BizType"`
 	Password                  string                                          `json:"Password" xml:"Password"`
-	GmtCompletedTimestamp     int64                                           `json:"GmtCompletedTimestamp" xml:"GmtCompletedTimestamp"`
 	PageNo                    int                                             `json:"PageNo" xml:"PageNo"`
+	GmtCompletedTimestamp     int64                                           `json:"GmtCompletedTimestamp" xml:"GmtCompletedTimestamp"`
 	Progress                  int                                             `json:"Progress" xml:"Progress"`
+	PreviewSize               int                                             `json:"PreviewSize" xml:"PreviewSize"`
 	DriverConfig              string                                          `json:"DriverConfig" xml:"DriverConfig"`
 	BizCode                   string                                          `json:"BizCode" xml:"BizCode"`
 	RoleArn                   string                                          `json:"RoleArn" xml:"RoleArn"`
@@ -121,11 +132,13 @@ type Data struct {
 	ResultCsvFile             string                                          `json:"ResultCsvFile" xml:"ResultCsvFile"`
 	AuthMode                  int                                             `json:"AuthMode" xml:"AuthMode"`
 	UtcCreatedOn              string                                          `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
+	ExpiredQuota              int                                             `json:"ExpiredQuota" xml:"ExpiredQuota"`
 	Longitude                 float64                                         `json:"Longitude" xml:"Longitude"`
 	Province                  string                                          `json:"Province" xml:"Province"`
 	AppId                     string                                          `json:"AppId" xml:"AppId"`
 	MessageId                 string                                          `json:"MessageId" xml:"MessageId"`
 	FileUrl                   string                                          `json:"FileUrl" xml:"FileUrl"`
+	BeginTime                 int64                                           `json:"BeginTime" xml:"BeginTime"`
 	Id2                       bool                                            `json:"Id2" xml:"Id2"`
 	NodeType                  int                                             `json:"NodeType" xml:"NodeType"`
 	ConfigCheckRule           string                                          `json:"ConfigCheckRule" xml:"ConfigCheckRule"`
@@ -156,7 +169,7 @@ type Data struct {
 	Protocol                  string                                          `json:"Protocol" xml:"Protocol"`
 	TopicFilter               string                                          `json:"TopicFilter" xml:"TopicFilter"`
 	DeviceSecret              string                                          `json:"DeviceSecret" xml:"DeviceSecret"`
-	Result                    string                                          `json:"Result" xml:"Result"`
+	AsyncExecute              bool                                            `json:"AsyncExecute" xml:"AsyncExecute"`
 	ProductKey                string                                          `json:"ProductKey" xml:"ProductKey"`
 	GmtModified               string                                          `json:"GmtModified" xml:"GmtModified"`
 	City                      string                                          `json:"City" xml:"City"`
@@ -167,18 +180,22 @@ type Data struct {
 	GroupDesc                 string                                          `json:"GroupDesc" xml:"GroupDesc"`
 	Argument                  string                                          `json:"Argument" xml:"Argument"`
 	SpeechRate                int                                             `json:"SpeechRate" xml:"SpeechRate"`
+	ExpiringQuota             int                                             `json:"ExpiringQuota" xml:"ExpiringQuota"`
 	TunnelState               string                                          `json:"TunnelState" xml:"TunnelState"`
 	InvalidDeviceNameList     InvalidDeviceNameListInBatchCheckDeviceNames    `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
 	InvalidSnList             InvalidSnListInBatchCheckImportDevice           `json:"InvalidSnList" xml:"InvalidSnList"`
 	ResultList                ResultList                                      `json:"ResultList" xml:"ResultList"`
 	FieldNameList             FieldNameList                                   `json:"FieldNameList" xml:"FieldNameList"`
+	Result                    Result                                          `json:"Result" xml:"Result"`
 	InvalidDeviceSecretList   InvalidDeviceSecretListInBatchCheckImportDevice `json:"InvalidDeviceSecretList" xml:"InvalidDeviceSecretList"`
 	InvalidDeviceNicknameList InvalidDeviceNicknameList                       `json:"InvalidDeviceNicknameList" xml:"InvalidDeviceNicknameList"`
 	RepeatedDeviceNameList    RepeatedDeviceNameListInBatchCheckImportDevice  `json:"RepeatedDeviceNameList" xml:"RepeatedDeviceNameList"`
 	RouteContext              RouteContext                                    `json:"RouteContext" xml:"RouteContext"`
+	QuerySetting              QuerySetting                                    `json:"QuerySetting" xml:"QuerySetting"`
 	SqlTemplateDTO            SqlTemplateDTO                                  `json:"SqlTemplateDTO" xml:"SqlTemplateDTO"`
 	TokenInfo                 TokenInfo                                       `json:"TokenInfo" xml:"TokenInfo"`
 	SoundCodeConfig           SoundCodeConfig                                 `json:"SoundCodeConfig" xml:"SoundCodeConfig"`
+	Header                    []HeaderItem                                    `json:"Header" xml:"Header"`
 	TaskList                  []Task                                          `json:"TaskList" xml:"TaskList"`
 	ModelVersions             []ModelVersion                                  `json:"ModelVersions" xml:"ModelVersions"`
 	Points                    []PointsItem                                    `json:"Points" xml:"Points"`

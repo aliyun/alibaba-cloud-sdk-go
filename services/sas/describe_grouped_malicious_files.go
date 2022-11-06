@@ -80,12 +80,13 @@ type DescribeGroupedMaliciousFilesRequest struct {
 	Lang               string           `position:"Query" name:"Lang"`
 	ImageTag           string           `position:"Query" name:"ImageTag"`
 	CurrentPage        requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterId          string           `position:"Query" name:"ClusterId"`
 	RepoName           string           `position:"Query" name:"RepoName"`
 	RepoInstanceId     string           `position:"Query" name:"RepoInstanceId"`
 	ImageLayer         string           `position:"Query" name:"ImageLayer"`
 	Levels             string           `position:"Query" name:"Levels"`
-	Uuids              *[]string        `position:"Query" name:"Uuids"  type:"Repeated"`
 	RepoRegionId       string           `position:"Query" name:"RepoRegionId"`
+	Uuids              *[]string        `position:"Query" name:"Uuids"  type:"Repeated"`
 }
 
 // DescribeGroupedMaliciousFilesResponse is the response struct for api DescribeGroupedMaliciousFiles

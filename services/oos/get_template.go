@@ -78,8 +78,8 @@ type GetTemplateRequest struct {
 // GetTemplateResponse is the response struct for api GetTemplate
 type GetTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Content   string   `json:"Content" xml:"Content"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Template  Template `json:"Template" xml:"Template"`
 }
 
@@ -88,7 +88,7 @@ func CreateGetTemplateRequest() (request *GetTemplateRequest) {
 	request = &GetTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetTemplate", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetTemplate", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

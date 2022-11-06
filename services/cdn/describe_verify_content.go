@@ -78,8 +78,8 @@ type DescribeVerifyContentRequest struct {
 // DescribeVerifyContentResponse is the response struct for api DescribeVerifyContent
 type DescribeVerifyContentResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Content   string `json:"Content" xml:"Content"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeVerifyContentRequest creates a request to invoke DescribeVerifyContent API

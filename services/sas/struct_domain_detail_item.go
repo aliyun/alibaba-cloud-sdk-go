@@ -17,11 +17,11 @@ package sas
 
 // DomainDetailItem is a nested struct in sas response
 type DomainDetailItem struct {
-	InternetIp   string `json:"InternetIp" xml:"InternetIp"`
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
 	Uuid         string `json:"Uuid" xml:"Uuid"`
-	AssetType    string `json:"AssetType" xml:"AssetType"`
-	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	InternetIp   string `json:"InternetIp" xml:"InternetIp"`
 	MachineIp    string `json:"MachineIp" xml:"MachineIp"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
 	IntranetIp   string `json:"IntranetIp" xml:"IntranetIp"`
+	AssetType    string `json:"AssetType" xml:"AssetType"`
 }

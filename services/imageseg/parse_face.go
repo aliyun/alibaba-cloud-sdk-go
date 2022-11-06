@@ -71,7 +71,9 @@ func (client *Client) ParseFaceWithCallback(request *ParseFaceRequest, callback 
 // ParseFaceRequest is the request struct for api ParseFace
 type ParseFaceRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Query" name:"ImageURL"`
 }
 
 // ParseFaceResponse is the response struct for api ParseFace
@@ -86,7 +88,7 @@ func CreateParseFaceRequest() (request *ParseFaceRequest) {
 	request = &ParseFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "ParseFace", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "ParseFace", "", "")
 	request.Method = requests.POST
 	return
 }

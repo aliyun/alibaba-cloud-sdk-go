@@ -17,9 +17,9 @@ package ddoscoo
 
 // InstanceStatistic is a nested struct in ddoscoo response
 type InstanceStatistic struct {
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
-	PortUsage         int    `json:"PortUsage" xml:"PortUsage"`
 	DomainUsage       int    `json:"DomainUsage" xml:"DomainUsage"`
-	SiteUsage         int    `json:"SiteUsage" xml:"SiteUsage"`
 	DefenseCountUsage int    `json:"DefenseCountUsage" xml:"DefenseCountUsage"`
+	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
+	SiteUsage         int    `json:"SiteUsage" xml:"SiteUsage"`
+	PortUsage         int    `json:"PortUsage" xml:"PortUsage"`
 }

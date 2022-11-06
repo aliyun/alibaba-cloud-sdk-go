@@ -71,6 +71,7 @@ func (client *Client) RealTimeSnapshotCommandWithCallback(request *RealTimeSnaps
 // RealTimeSnapshotCommandRequest is the request struct for api RealTimeSnapshotCommand
 type RealTimeSnapshotCommandRequest struct {
 	*requests.RpcRequest
+	Source     requests.Integer `position:"Query" name:"Source"`
 	Mode       requests.Integer `position:"Query" name:"Mode"`
 	AppName    string           `position:"Query" name:"AppName"`
 	StreamName string           `position:"Query" name:"StreamName"`

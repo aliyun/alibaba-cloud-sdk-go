@@ -80,8 +80,9 @@ type TagResourcesRequest struct {
 
 // TagResourcesTag is a repeated param struct in TagResourcesRequest
 type TagResourcesTag struct {
-	Value string `name:"Value"`
-	Key   string `name:"Key"`
+	Propagate string `name:"Propagate"`
+	Value     string `name:"Value"`
+	Key       string `name:"Key"`
 }
 
 // TagResourcesResponse is the response struct for api TagResources

@@ -79,8 +79,8 @@ type DescribeSecurityStatInfoRequest struct {
 // DescribeSecurityStatInfoResponse is the response struct for api DescribeSecurityStatInfo
 type DescribeSecurityStatInfoResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	Success       bool          `json:"Success" xml:"Success"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	SecurityEvent SecurityEvent `json:"SecurityEvent" xml:"SecurityEvent"`
 	AttackEvent   AttackEvent   `json:"AttackEvent" xml:"AttackEvent"`
 	HealthCheck   HealthCheck   `json:"HealthCheck" xml:"HealthCheck"`

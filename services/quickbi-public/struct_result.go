@@ -30,6 +30,7 @@ type Result struct {
 	Success                     int                      `json:"Success" xml:"Success"`
 	WorkType                    string                   `json:"WorkType" xml:"WorkType"`
 	OrganizationId              string                   `json:"OrganizationId" xml:"OrganizationId"`
+	FailCount                   int                      `json:"FailCount" xml:"FailCount"`
 	RuleType                    string                   `json:"RuleType" xml:"RuleType"`
 	Email                       string                   `json:"Email" xml:"Email"`
 	OwnerName                   string                   `json:"OwnerName" xml:"OwnerName"`
@@ -60,6 +61,7 @@ type Result struct {
 	Phone                       string                   `json:"Phone" xml:"Phone"`
 	Description                 string                   `json:"Description" xml:"Description"`
 	DsId                        string                   `json:"DsId" xml:"DsId"`
+	OkCount                     int                      `json:"OkCount" xml:"OkCount"`
 	UsedTicketNum               int                      `json:"UsedTicketNum" xml:"UsedTicketNum"`
 	RegisterTime                string                   `json:"RegisterTime" xml:"RegisterTime"`
 	Status                      int                      `json:"Status" xml:"Status"`
@@ -80,6 +82,7 @@ type Result struct {
 	Detail                      Detail                   `json:"Detail" xml:"Detail"`
 	Directory                   Directory                `json:"Directory" xml:"Directory"`
 	Data                        []DataItem               `json:"Data" xml:"Data"`
+	FailResults                 []FailResultsItem        `json:"FailResults" xml:"FailResults"`
 	CubeTableList               []CubeTableListItem      `json:"CubeTableList" xml:"CubeTableList"`
 	UserGroupModels             []UserGroupModelsItem    `json:"UserGroupModels" xml:"UserGroupModels"`
 	MeasureList                 []MeasureListItem        `json:"MeasureList" xml:"MeasureList"`

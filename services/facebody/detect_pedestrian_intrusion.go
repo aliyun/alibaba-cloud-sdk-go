@@ -71,9 +71,34 @@ func (client *Client) DetectPedestrianIntrusionWithCallback(request *DetectPedes
 // DetectPedestrianIntrusionRequest is the request struct for api DetectPedestrianIntrusion
 type DetectPedestrianIntrusionRequest struct {
 	*requests.RpcRequest
-	DetectRegion string `position:"Body" name:"DetectRegion"`
-	RegionType   string `position:"Body" name:"RegionType"`
-	ImageURL     string `position:"Body" name:"ImageURL"`
+	DetectRegion       *[]DetectPedestrianIntrusionDetectRegion `position:"Body" name:"DetectRegion"  type:"Json"`
+	RegionType         string                                   `position:"Body" name:"RegionType"`
+	FormatResultToJson requests.Boolean                         `position:"Query" name:"FormatResultToJson"`
+	OssFile            string                                   `position:"Query" name:"OssFile"`
+	RequestProxyBy     string                                   `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string                                   `position:"Body" name:"ImageURL"`
+}
+
+// DetectPedestrianIntrusionDetectRegion is a repeated param struct in DetectPedestrianIntrusionRequest
+type DetectPedestrianIntrusionDetectRegion struct {
+	Rect DetectPedestrianIntrusionDetectRegionRect `name:"Rect" type:"Struct"`
+	Line DetectPedestrianIntrusionDetectRegionLine `name:"Line" type:"Struct"`
+}
+
+// DetectPedestrianIntrusionDetectRegionRect is a repeated param struct in DetectPedestrianIntrusionRequest
+type DetectPedestrianIntrusionDetectRegionRect struct {
+	Top    string `name:"Top"`
+	Left   string `name:"Left"`
+	Bottom string `name:"Bottom"`
+	Right  string `name:"Right"`
+}
+
+// DetectPedestrianIntrusionDetectRegionLine is a repeated param struct in DetectPedestrianIntrusionRequest
+type DetectPedestrianIntrusionDetectRegionLine struct {
+	Y1 string `name:"Y1"`
+	X1 string `name:"X1"`
+	Y2 string `name:"Y2"`
+	X2 string `name:"X2"`
 }
 
 // DetectPedestrianIntrusionResponse is the response struct for api DetectPedestrianIntrusion

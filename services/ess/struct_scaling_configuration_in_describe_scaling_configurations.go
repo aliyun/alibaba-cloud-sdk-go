@@ -66,6 +66,8 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	SystemDiskEncrypted             bool                                `json:"SystemDisk.Encrypted" xml:"SystemDisk.Encrypted"`
 	SystemDiskKMSKeyId              string                              `json:"SystemDisk.KMSKeyId" xml:"SystemDisk.KMSKeyId"`
 	SystemDiskEncryptAlgorithm      string                              `json:"SystemDisk.EncryptAlgorithm" xml:"SystemDisk.EncryptAlgorithm"`
+	SystemDiskProvisionedIops       int64                               `json:"SystemDisk.ProvisionedIops" xml:"SystemDisk.ProvisionedIops"`
+	SystemDiskBurstingEnabled       bool                                `json:"SystemDisk.BurstingEnabled" xml:"SystemDisk.BurstingEnabled"`
 	SystemDiskCategories            SystemDiskCategories                `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
 	WeightedCapacities              WeightedCapacities                  `json:"WeightedCapacities" xml:"WeightedCapacities"`
 	InstanceTypes                   InstanceTypes                       `json:"InstanceTypes" xml:"InstanceTypes"`

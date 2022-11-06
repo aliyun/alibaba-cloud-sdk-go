@@ -89,7 +89,7 @@ func CreateUpdateContainerRequest() (request *UpdateContainerRequest) {
 	request = &UpdateContainerRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateContainer", "/pop/v5/changeorder/co_update_container", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateContainer", "/pop/v5/changeorder/co_update_container", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

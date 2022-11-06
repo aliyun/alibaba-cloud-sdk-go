@@ -72,6 +72,7 @@ func (client *Client) OnsGroupListWithCallback(request *OnsGroupListRequest, cal
 type OnsGroupListRequest struct {
 	*requests.RpcRequest
 	GroupId    string             `position:"Query" name:"GroupId"`
+	UserId     string             `position:"Query" name:"UserId"`
 	InstanceId string             `position:"Query" name:"InstanceId"`
 	GroupType  string             `position:"Query" name:"GroupType"`
 	Tag        *[]OnsGroupListTag `position:"Query" name:"Tag"  type:"Repeated"`

@@ -78,10 +78,10 @@ type DescribeGroupedTagsRequest struct {
 // DescribeGroupedTagsResponse is the response struct for api DescribeGroupedTags
 type DescribeGroupedTagsResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Success        bool           `json:"Success" xml:"Success"`
 	Count          int            `json:"Count" xml:"Count"`
-	HttpStatusCode int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	GroupedFileds  []GroupedFiled `json:"GroupedFileds" xml:"GroupedFileds"`
 }
 

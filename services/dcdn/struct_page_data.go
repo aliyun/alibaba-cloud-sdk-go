@@ -19,8 +19,9 @@ package dcdn
 type PageData struct {
 	Cname           string                              `json:"Cname" xml:"Cname"`
 	Sandbox         string                              `json:"Sandbox" xml:"Sandbox"`
-	DomainStatus    string                              `json:"DomainStatus" xml:"DomainStatus"`
 	ResourceGroupId string                              `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DomainStatus    string                              `json:"DomainStatus" xml:"DomainStatus"`
+	DomainId        int64                               `json:"DomainId" xml:"DomainId"`
 	DomainName      string                              `json:"DomainName" xml:"DomainName"`
 	GmtModified     string                              `json:"GmtModified" xml:"GmtModified"`
 	SSLProtocol     string                              `json:"SSLProtocol" xml:"SSLProtocol"`

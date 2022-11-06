@@ -93,7 +93,7 @@ func CreateModifyCenAttributeRequest() (request *ModifyCenAttributeRequest) {
 	request = &ModifyCenAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenAttribute", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenAttribute", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,6 +17,6 @@ package domain
 
 // DomainTransferStatusItem is a nested struct in domain response
 type DomainTransferStatusItem struct {
-	DomainStatusDescription string `json:"DomainStatusDescription" xml:"DomainStatusDescription"`
 	DomainName              string `json:"DomainName" xml:"DomainName"`
+	DomainStatusDescription string `json:"DomainStatusDescription" xml:"DomainStatusDescription"`
 }

@@ -17,7 +17,7 @@ package sas
 
 // SecurityEventOperationStatus is a nested struct in sas response
 type SecurityEventOperationStatus struct {
-	SecurityEventId string `json:"SecurityEventId" xml:"SecurityEventId"`
 	Status          string `json:"Status" xml:"Status"`
+	SecurityEventId string `json:"SecurityEventId" xml:"SecurityEventId"`
 	ErrorCode       string `json:"ErrorCode" xml:"ErrorCode"`
 }

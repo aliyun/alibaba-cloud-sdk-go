@@ -21,7 +21,7 @@ type CDNTask struct {
 	TaskId       string `json:"TaskId" xml:"TaskId"`
 	ObjectType   string `json:"ObjectType" xml:"ObjectType"`
 	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	Process      string `json:"Process" xml:"Process"`
 	Status       string `json:"Status" xml:"Status"`
+	Process      string `json:"Process" xml:"Process"`
 	Description  string `json:"Description" xml:"Description"`
 }

@@ -83,8 +83,8 @@ type RecoverClusterRequest struct {
 // RecoverClusterResponse is the response struct for api RecoverCluster
 type RecoverClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRecoverClusterRequest creates a request to invoke RecoverCluster API

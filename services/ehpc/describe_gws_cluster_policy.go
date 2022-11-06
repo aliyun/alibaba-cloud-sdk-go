@@ -79,10 +79,10 @@ type DescribeGWSClusterPolicyRequest struct {
 // DescribeGWSClusterPolicyResponse is the response struct for api DescribeGWSClusterPolicy
 type DescribeGWSClusterPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Clipboard   string `json:"Clipboard" xml:"Clipboard"`
-	UsbRedirect string `json:"UsbRedirect" xml:"UsbRedirect"`
 	Watermark   string `json:"Watermark" xml:"Watermark"`
+	Clipboard   string `json:"Clipboard" xml:"Clipboard"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	UsbRedirect string `json:"UsbRedirect" xml:"UsbRedirect"`
 	LocalDrive  string `json:"LocalDrive" xml:"LocalDrive"`
 }
 

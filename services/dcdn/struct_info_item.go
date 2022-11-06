@@ -18,6 +18,6 @@ package dcdn
 // InfoItem is a nested struct in dcdn response
 type InfoItem struct {
 	CountriesAndRegions     string `json:"CountriesAndRegions" xml:"CountriesAndRegions"`
-	CountriesAndRegionsName string `json:"CountriesAndRegionsName" xml:"CountriesAndRegionsName"`
 	Continent               string `json:"Continent" xml:"Continent"`
+	CountriesAndRegionsName string `json:"CountriesAndRegionsName" xml:"CountriesAndRegionsName"`
 }

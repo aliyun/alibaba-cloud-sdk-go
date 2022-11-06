@@ -71,6 +71,7 @@ func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *Describ
 // DescribeLiveStreamsOnlineListRequest is the request struct for api DescribeLiveStreamsOnlineList
 type DescribeLiveStreamsOnlineListRequest struct {
 	*requests.RpcRequest
+	OnlyStream string           `position:"Query" name:"OnlyStream"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	PageNum    requests.Integer `position:"Query" name:"PageNum"`
 	AppName    string           `position:"Query" name:"AppName"`

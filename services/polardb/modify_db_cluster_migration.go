@@ -72,6 +72,7 @@ func (client *Client) ModifyDBClusterMigrationWithCallback(request *ModifyDBClus
 type ModifyDBClusterMigrationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ConnectionStrings     string           `position:"Query" name:"ConnectionStrings"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	NewMasterInstanceId   string           `position:"Query" name:"NewMasterInstanceId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -93,7 +94,7 @@ func CreateModifyDBClusterMigrationRequest() (request *ModifyDBClusterMigrationR
 	request = &ModifyDBClusterMigrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterMigration", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterMigration", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

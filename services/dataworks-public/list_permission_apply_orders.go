@@ -71,17 +71,17 @@ func (client *Client) ListPermissionApplyOrdersWithCallback(request *ListPermiss
 // ListPermissionApplyOrdersRequest is the request struct for api ListPermissionApplyOrders
 type ListPermissionApplyOrdersRequest struct {
 	*requests.RpcRequest
-	MaxComputeProjectName string           `position:"Query" name:"MaxComputeProjectName"`
-	EndTime               requests.Integer `position:"Query" name:"EndTime"`
 	StartTime             requests.Integer `position:"Query" name:"StartTime"`
 	PageNum               requests.Integer `position:"Query" name:"PageNum"`
-	FlowStatus            requests.Integer `position:"Query" name:"FlowStatus"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 	TableName             string           `position:"Query" name:"TableName"`
 	QueryType             requests.Integer `position:"Query" name:"QueryType"`
+	EngineType            string           `position:"Query" name:"EngineType"`
+	MaxComputeProjectName string           `position:"Query" name:"MaxComputeProjectName"`
+	EndTime               requests.Integer `position:"Query" name:"EndTime"`
+	FlowStatus            requests.Integer `position:"Query" name:"FlowStatus"`
 	WorkspaceId           requests.Integer `position:"Query" name:"WorkspaceId"`
 	OrderType             requests.Integer `position:"Query" name:"OrderType"`
-	EngineType            string           `position:"Query" name:"EngineType"`
 }
 
 // ListPermissionApplyOrdersResponse is the response struct for api ListPermissionApplyOrders

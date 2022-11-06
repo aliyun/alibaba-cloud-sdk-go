@@ -81,8 +81,8 @@ type FixCheckWarningsRequest struct {
 // FixCheckWarningsResponse is the response struct for api FixCheckWarnings
 type FixCheckWarningsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	BatchId   int64  `json:"BatchId" xml:"BatchId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateFixCheckWarningsRequest creates a request to invoke FixCheckWarnings API

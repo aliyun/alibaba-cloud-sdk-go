@@ -81,10 +81,10 @@ type DescribeDcdnDomainHitRateDataRequest struct {
 // DescribeDcdnDomainHitRateDataResponse is the response struct for api DescribeDcdnDomainHitRateData
 type DescribeDcdnDomainHitRateDataResponse struct {
 	*responses.BaseResponse
+	EndTime            string             `json:"EndTime" xml:"EndTime"`
+	StartTime          string             `json:"StartTime" xml:"StartTime"`
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	DomainName         string             `json:"DomainName" xml:"DomainName"`
-	StartTime          string             `json:"StartTime" xml:"StartTime"`
-	EndTime            string             `json:"EndTime" xml:"EndTime"`
 	DataInterval       string             `json:"DataInterval" xml:"DataInterval"`
 	HitRatePerInterval HitRatePerInterval `json:"HitRatePerInterval" xml:"HitRatePerInterval"`
 }

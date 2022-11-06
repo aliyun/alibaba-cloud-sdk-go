@@ -71,13 +71,14 @@ func (client *Client) ListAggregateResourceEvaluationResultsWithCallback(request
 // ListAggregateResourceEvaluationResultsRequest is the request struct for api ListAggregateResourceEvaluationResults
 type ListAggregateResourceEvaluationResultsRequest struct {
 	*requests.RpcRequest
-	ResourceId     string           `position:"Query" name:"ResourceId"`
+	ConfigRuleId   string           `position:"Query" name:"ConfigRuleId"`
 	AggregatorId   string           `position:"Query" name:"AggregatorId"`
-	ResourceType   string           `position:"Query" name:"ResourceType"`
 	NextToken      string           `position:"Query" name:"NextToken"`
+	ComplianceType string           `position:"Query" name:"ComplianceType"`
+	ResourceId     string           `position:"Query" name:"ResourceId"`
+	ResourceType   string           `position:"Query" name:"ResourceType"`
 	MaxResults     requests.Integer `position:"Query" name:"MaxResults"`
 	Region         string           `position:"Query" name:"Region"`
-	ComplianceType string           `position:"Query" name:"ComplianceType"`
 }
 
 // ListAggregateResourceEvaluationResultsResponse is the response struct for api ListAggregateResourceEvaluationResults

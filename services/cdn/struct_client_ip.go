@@ -19,6 +19,6 @@ package cdn
 type ClientIp struct {
 	Rank     int    `json:"Rank" xml:"Rank"`
 	ClientIp string `json:"ClientIp" xml:"ClientIp"`
-	Traffic  int64  `json:"Traffic" xml:"Traffic"`
 	Acc      int64  `json:"Acc" xml:"Acc"`
+	Traffic  int64  `json:"Traffic" xml:"Traffic"`
 }

@@ -17,8 +17,8 @@ package ddoscoo
 
 // TagResource is a nested struct in ddoscoo response
 type TagResource struct {
+	TagValue     string `json:"TagValue" xml:"TagValue"`
 	ResourceType string `json:"ResourceType" xml:"ResourceType"`
 	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
 	TagKey       string `json:"TagKey" xml:"TagKey"`
-	TagValue     string `json:"TagValue" xml:"TagValue"`
 }

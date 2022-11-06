@@ -87,10 +87,10 @@ type ListInvocationResultsInstance struct {
 // ListInvocationResultsResponse is the response struct for api ListInvocationResults
 type ListInvocationResultsResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
 	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
 	InvocationResults InvocationResults `json:"InvocationResults" xml:"InvocationResults"`
 }
 

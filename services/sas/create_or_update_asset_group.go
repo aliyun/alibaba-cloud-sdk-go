@@ -80,6 +80,7 @@ type CreateOrUpdateAssetGroupRequest struct {
 // CreateOrUpdateAssetGroupResponse is the response struct for api CreateOrUpdateAssetGroup
 type CreateOrUpdateAssetGroupResponse struct {
 	*responses.BaseResponse
+	GroupId   int64  `json:"GroupId" xml:"GroupId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 

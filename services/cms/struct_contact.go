@@ -27,6 +27,7 @@ type Contact struct {
 	Lang          string                             `json:"Lang" xml:"Lang"`
 	Success       string                             `json:"Success" xml:"Success"`
 	RequestId     string                             `json:"RequestId" xml:"RequestId"`
+	ContactId     int64                              `json:"ContactId" xml:"ContactId"`
 	ContactGroups ContactGroupsInDescribeContactList `json:"ContactGroups" xml:"ContactGroups"`
 	ChannelsState ChannelsState                      `json:"ChannelsState" xml:"ChannelsState"`
 	Channels      Channels                           `json:"Channels" xml:"Channels"`

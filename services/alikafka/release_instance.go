@@ -79,10 +79,10 @@ type ReleaseInstanceRequest struct {
 // ReleaseInstanceResponse is the response struct for api ReleaseInstance
 type ReleaseInstanceResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateReleaseInstanceRequest creates a request to invoke ReleaseInstance API

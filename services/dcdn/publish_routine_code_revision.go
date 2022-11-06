@@ -80,8 +80,8 @@ type PublishRoutineCodeRevisionRequest struct {
 // PublishRoutineCodeRevisionResponse is the response struct for api PublishRoutineCodeRevision
 type PublishRoutineCodeRevisionResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePublishRoutineCodeRevisionRequest creates a request to invoke PublishRoutineCodeRevision API

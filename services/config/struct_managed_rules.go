@@ -17,5 +17,8 @@ package config
 
 // ManagedRules is a nested struct in config response
 type ManagedRules struct {
-	Data []Data `json:"Data" xml:"Data"`
+	PageSize        int           `json:"PageSize" xml:"PageSize"`
+	PageNumber      int           `json:"PageNumber" xml:"PageNumber"`
+	TotalCount      int64         `json:"TotalCount" xml:"TotalCount"`
+	ManagedRuleList []ManagedRule `json:"ManagedRuleList" xml:"ManagedRuleList"`
 }

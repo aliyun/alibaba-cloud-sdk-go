@@ -71,10 +71,10 @@ func (client *Client) DeleteDcdnIpaDomainWithCallback(request *DeleteDcdnIpaDoma
 // DeleteDcdnIpaDomainRequest is the request struct for api DeleteDcdnIpaDomain
 type DeleteDcdnIpaDomainRequest struct {
 	*requests.RpcRequest
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DeleteDcdnIpaDomainResponse is the response struct for api DeleteDcdnIpaDomain

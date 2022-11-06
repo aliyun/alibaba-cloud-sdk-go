@@ -71,8 +71,8 @@ func (client *Client) GetPhysicalDatabaseWithCallback(request *GetPhysicalDataba
 // GetPhysicalDatabaseRequest is the request struct for api GetPhysicalDatabase
 type GetPhysicalDatabaseRequest struct {
 	*requests.RpcRequest
-	DbId requests.Integer `position:"Query" name:"DbId"`
 	Tid  requests.Integer `position:"Query" name:"Tid"`
+	DbId requests.Integer `position:"Query" name:"DbId"`
 }
 
 // GetPhysicalDatabaseResponse is the response struct for api GetPhysicalDatabase

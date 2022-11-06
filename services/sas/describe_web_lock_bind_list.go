@@ -82,9 +82,9 @@ type DescribeWebLockBindListRequest struct {
 // DescribeWebLockBindListResponse is the response struct for api DescribeWebLockBindList
 type DescribeWebLockBindListResponse struct {
 	*responses.BaseResponse
+	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
 	BindList    []Bind `json:"BindList" xml:"BindList"`
 }

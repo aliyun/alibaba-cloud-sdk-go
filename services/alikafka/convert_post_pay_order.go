@@ -78,10 +78,10 @@ type ConvertPostPayOrderRequest struct {
 // ConvertPostPayOrderResponse is the response struct for api ConvertPostPayOrder
 type ConvertPostPayOrderResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 

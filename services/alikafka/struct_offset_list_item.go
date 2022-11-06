@@ -17,8 +17,8 @@ package alikafka
 
 // OffsetListItem is a nested struct in alikafka response
 type OffsetListItem struct {
+	Partition      int   `json:"Partition" xml:"Partition"`
 	BrokerOffset   int64 `json:"BrokerOffset" xml:"BrokerOffset"`
 	ConsumerOffset int64 `json:"ConsumerOffset" xml:"ConsumerOffset"`
 	LastTimestamp  int64 `json:"LastTimestamp" xml:"LastTimestamp"`
-	Partition      int   `json:"Partition" xml:"Partition"`
 }

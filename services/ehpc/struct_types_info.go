@@ -17,16 +17,16 @@ package ehpc
 
 // TypesInfo is a nested struct in ehpc response
 type TypesInfo struct {
-	CpuCoreCount        int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
-	MemorySize          int     `json:"MemorySize" xml:"MemorySize"`
-	GPUAmount           int     `json:"GPUAmount" xml:"GPUAmount"`
+	Status              string  `json:"Status" xml:"Status"`
+	InstanceTypeId      string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
 	InstanceBandwidthRx int     `json:"InstanceBandwidthRx" xml:"InstanceBandwidthRx"`
+	GPUSpec             string  `json:"GPUSpec" xml:"GPUSpec"`
+	InstanceBandwidthTx int     `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
 	InstancePpsRx       int     `json:"InstancePpsRx" xml:"InstancePpsRx"`
 	InstancePpsTx       int     `json:"InstancePpsTx" xml:"InstancePpsTx"`
+	GPUAmount           int     `json:"GPUAmount" xml:"GPUAmount"`
+	CpuCoreCount        int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
+	MemorySize          int     `json:"MemorySize" xml:"MemorySize"`
 	EniQuantity         int     `json:"EniQuantity" xml:"EniQuantity"`
-	InstanceBandwidthTx int     `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
-	InstanceTypeId      string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
-	GPUSpec             string  `json:"GPUSpec" xml:"GPUSpec"`
-	Status              string  `json:"Status" xml:"Status"`
 	ZoneIds             ZoneIds `json:"ZoneIds" xml:"ZoneIds"`
 }

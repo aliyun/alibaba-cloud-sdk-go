@@ -71,8 +71,11 @@ func (client *Client) GenerateHumanSketchStyleWithCallback(request *GenerateHuma
 // GenerateHumanSketchStyleRequest is the request struct for api GenerateHumanSketchStyle
 type GenerateHumanSketchStyleRequest struct {
 	*requests.RpcRequest
-	ReturnType string `position:"Body" name:"ReturnType"`
-	ImageURL   string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	ReturnType         string           `position:"Body" name:"ReturnType"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // GenerateHumanSketchStyleResponse is the response struct for api GenerateHumanSketchStyle

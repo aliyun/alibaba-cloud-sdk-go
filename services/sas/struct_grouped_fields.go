@@ -19,15 +19,24 @@ package sas
 type GroupedFields struct {
 	RegionCount              int    `json:"RegionCount" xml:"RegionCount"`
 	ImportantAssetCount      int    `json:"ImportantAssetCount" xml:"ImportantAssetCount"`
+	AliYunInstanceCount      int    `json:"AliYunInstanceCount" xml:"AliYunInstanceCount"`
 	NewInstanceCount         int    `json:"NewInstanceCount" xml:"NewInstanceCount"`
 	OfflineInstanceCount     int    `json:"OfflineInstanceCount" xml:"OfflineInstanceCount"`
-	UnprotectedInstanceCount int    `json:"UnprotectedInstanceCount" xml:"UnprotectedInstanceCount"`
+	InstanceSyncTaskCount    int    `json:"InstanceSyncTaskCount" xml:"InstanceSyncTaskCount"`
+	AwsInstanceCount         int    `json:"AwsInstanceCount" xml:"AwsInstanceCount"`
+	OutMachineInstanceCount  int    `json:"OutMachineInstanceCount" xml:"OutMachineInstanceCount"`
 	GeneralAssetCount        int    `json:"GeneralAssetCount" xml:"GeneralAssetCount"`
+	UnprotectedInstanceCount int    `json:"UnprotectedInstanceCount" xml:"UnprotectedInstanceCount"`
+	PauseInstanceCount       int    `json:"PauseInstanceCount" xml:"PauseInstanceCount"`
+	HuaweiInstanceCount      int    `json:"HuaweiInstanceCount" xml:"HuaweiInstanceCount"`
+	IdcInstanceCount         int    `json:"IdcInstanceCount" xml:"IdcInstanceCount"`
 	TestAssetCount           int    `json:"TestAssetCount" xml:"TestAssetCount"`
 	CategoryCount            string `json:"CategoryCount" xml:"CategoryCount"`
 	InstanceCount            int    `json:"InstanceCount" xml:"InstanceCount"`
 	VpcCount                 int    `json:"VpcCount" xml:"VpcCount"`
 	GroupCount               int    `json:"GroupCount" xml:"GroupCount"`
+	TencentInstanceCount     int    `json:"TencentInstanceCount" xml:"TencentInstanceCount"`
 	NotRunningStatusCount    int    `json:"NotRunningStatusCount" xml:"NotRunningStatusCount"`
 	RiskInstanceCount        int    `json:"RiskInstanceCount" xml:"RiskInstanceCount"`
+	ExposedInstanceCount     int    `json:"ExposedInstanceCount" xml:"ExposedInstanceCount"`
 }

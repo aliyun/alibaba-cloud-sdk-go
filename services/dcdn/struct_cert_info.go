@@ -26,15 +26,15 @@ type CertInfo struct {
 	CertStatus            string `json:"CertStatus" xml:"CertStatus"`
 	CertType              string `json:"CertType" xml:"CertType"`
 	DomainName            string `json:"DomainName" xml:"DomainName"`
-	SSLProtocol           string `json:"SSLProtocol" xml:"SSLProtocol"`
 	SSLPub                string `json:"SSLPub" xml:"SSLPub"`
+	SSLProtocol           string `json:"SSLProtocol" xml:"SSLProtocol"`
 	CertUpdateTime        string `json:"CertUpdateTime" xml:"CertUpdateTime"`
 	CertSubjectCommonName string `json:"CertSubjectCommonName" xml:"CertSubjectCommonName"`
 	CertCaIsLegacy        string `json:"CertCaIsLegacy" xml:"CertCaIsLegacy"`
 	CertCommonName        string `json:"CertCommonName" xml:"CertCommonName"`
 	Status                string `json:"Status" xml:"Status"`
 	CertExpired           string `json:"CertExpired" xml:"CertExpired"`
-	CertDomainName        string `json:"CertDomainName" xml:"CertDomainName"`
 	CertLife              string `json:"CertLife" xml:"CertLife"`
+	CertDomainName        string `json:"CertDomainName" xml:"CertDomainName"`
 	CertStartTime         string `json:"CertStartTime" xml:"CertStartTime"`
 }

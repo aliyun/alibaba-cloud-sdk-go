@@ -80,10 +80,10 @@ type GenerateDataKeyWithoutPlaintextRequest struct {
 // GenerateDataKeyWithoutPlaintextResponse is the response struct for api GenerateDataKeyWithoutPlaintext
 type GenerateDataKeyWithoutPlaintextResponse struct {
 	*responses.BaseResponse
-	CiphertextBlob string `json:"CiphertextBlob" xml:"CiphertextBlob"`
-	KeyId          string `json:"KeyId" xml:"KeyId"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	KeyVersionId   string `json:"KeyVersionId" xml:"KeyVersionId"`
+	KeyId          string `json:"KeyId" xml:"KeyId"`
+	CiphertextBlob string `json:"CiphertextBlob" xml:"CiphertextBlob"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGenerateDataKeyWithoutPlaintextRequest creates a request to invoke GenerateDataKeyWithoutPlaintext API

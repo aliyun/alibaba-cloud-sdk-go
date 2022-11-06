@@ -17,44 +17,52 @@ package dcdn
 
 // DataModule is a nested struct in dcdn response
 type DataModule struct {
+	Domain                    string                                                  `json:"Domain" xml:"Domain"`
 	StaticHttpTraffic         float64                                                 `json:"StaticHttpTraffic" xml:"StaticHttpTraffic"`
 	PeakTime                  string                                                  `json:"PeakTime" xml:"PeakTime"`
-	StaticHttpBps             float64                                                 `json:"StaticHttpBps" xml:"StaticHttpBps"`
 	DynamicHttpsAcc           float64                                                 `json:"DynamicHttpsAcc" xml:"DynamicHttpsAcc"`
-	DynamicHttpOriginBps      float64                                                 `json:"DynamicHttpOriginBps" xml:"DynamicHttpOriginBps"`
 	DynamicHttpsOriginBps     float64                                                 `json:"DynamicHttpsOriginBps" xml:"DynamicHttpsOriginBps"`
-	StaticHttpsOriginTraffic  float64                                                 `json:"StaticHttpsOriginTraffic" xml:"StaticHttpsOriginTraffic"`
-	StaticHttpAcc             float64                                                 `json:"StaticHttpAcc" xml:"StaticHttpAcc"`
-	DynamicHttpsBps           float64                                                 `json:"DynamicHttpsBps" xml:"DynamicHttpsBps"`
 	StaticHttpsBps            float64                                                 `json:"StaticHttpsBps" xml:"StaticHttpsBps"`
-	OriginTraffic             float64                                                 `json:"OriginTraffic" xml:"OriginTraffic"`
-	DynamicHttpAcc            float64                                                 `json:"DynamicHttpAcc" xml:"DynamicHttpAcc"`
-	IpaTraffic                float64                                                 `json:"IpaTraffic" xml:"IpaTraffic"`
-	StaticHttpsTraffic        float64                                                 `json:"StaticHttpsTraffic" xml:"StaticHttpsTraffic"`
+	DynamicHttpsBps           float64                                                 `json:"DynamicHttpsBps" xml:"DynamicHttpsBps"`
 	TimeStamp                 string                                                  `json:"TimeStamp" xml:"TimeStamp"`
 	Acc                       float64                                                 `json:"Acc" xml:"Acc"`
 	StaticHttpsAcc            float64                                                 `json:"StaticHttpsAcc" xml:"StaticHttpsAcc"`
 	DynamicHttpOriginTraffic  float64                                                 `json:"DynamicHttpOriginTraffic" xml:"DynamicHttpOriginTraffic"`
-	ReqHitRate                float64                                                 `json:"ReqHitRate" xml:"ReqHitRate"`
+	OverseasValue             string                                                  `json:"OverseasValue" xml:"OverseasValue"`
 	StaticHttpQps             float64                                                 `json:"StaticHttpQps" xml:"StaticHttpQps"`
-	SpecialValue              string                                                  `json:"SpecialValue" xml:"SpecialValue"`
-	WebsocketBps              float64                                                 `json:"WebsocketBps" xml:"WebsocketBps"`
-	WebsocketTraffic          float64                                                 `json:"WebsocketTraffic" xml:"WebsocketTraffic"`
 	DynamicHttpTraffic        float64                                                 `json:"DynamicHttpTraffic" xml:"DynamicHttpTraffic"`
 	OriginBps                 float64                                                 `json:"OriginBps" xml:"OriginBps"`
 	Bps                       float64                                                 `json:"Bps" xml:"Bps"`
 	DynamicHttpBps            float64                                                 `json:"DynamicHttpBps" xml:"DynamicHttpBps"`
-	StaticHttpOriginBps       float64                                                 `json:"StaticHttpOriginBps" xml:"StaticHttpOriginBps"`
-	StaticHttpOriginTraffic   float64                                                 `json:"StaticHttpOriginTraffic" xml:"StaticHttpOriginTraffic"`
+	AccValue                  string                                                  `json:"AccValue" xml:"AccValue"`
 	Value                     string                                                  `json:"Value" xml:"Value"`
 	Qps                       float64                                                 `json:"Qps" xml:"Qps"`
-	DynamicHttpsOriginTraffic float64                                                 `json:"DynamicHttpsOriginTraffic" xml:"DynamicHttpsOriginTraffic"`
 	StaticHttpsQps            float64                                                 `json:"StaticHttpsQps" xml:"StaticHttpsQps"`
-	DynamicHttpsTraffic       float64                                                 `json:"DynamicHttpsTraffic" xml:"DynamicHttpsTraffic"`
 	StaticHttpsOriginBps      float64                                                 `json:"StaticHttpsOriginBps" xml:"StaticHttpsOriginBps"`
-	ByteHitRate               float64                                                 `json:"ByteHitRate" xml:"ByteHitRate"`
 	DynamicHttpsQps           float64                                                 `json:"DynamicHttpsQps" xml:"DynamicHttpsQps"`
 	DynamicHttpQps            float64                                                 `json:"DynamicHttpQps" xml:"DynamicHttpQps"`
+	AccOverseasValue          string                                                  `json:"AccOverseasValue" xml:"AccOverseasValue"`
+	StaticHttpBps             float64                                                 `json:"StaticHttpBps" xml:"StaticHttpBps"`
+	DynamicHttpOriginBps      float64                                                 `json:"DynamicHttpOriginBps" xml:"DynamicHttpOriginBps"`
+	StaticHttpsOriginTraffic  float64                                                 `json:"StaticHttpsOriginTraffic" xml:"StaticHttpsOriginTraffic"`
+	StaticHttpAcc             float64                                                 `json:"StaticHttpAcc" xml:"StaticHttpAcc"`
+	OriginTraffic             float64                                                 `json:"OriginTraffic" xml:"OriginTraffic"`
+	DynamicHttpAcc            float64                                                 `json:"DynamicHttpAcc" xml:"DynamicHttpAcc"`
+	IpaTraffic                float64                                                 `json:"IpaTraffic" xml:"IpaTraffic"`
+	StaticHttpsTraffic        float64                                                 `json:"StaticHttpsTraffic" xml:"StaticHttpsTraffic"`
+	ReqHitRate                float64                                                 `json:"ReqHitRate" xml:"ReqHitRate"`
+	Connections               int64                                                   `json:"Connections" xml:"Connections"`
+	SpecialValue              string                                                  `json:"SpecialValue" xml:"SpecialValue"`
+	WebsocketBps              float64                                                 `json:"WebsocketBps" xml:"WebsocketBps"`
+	WebsocketTraffic          float64                                                 `json:"WebsocketTraffic" xml:"WebsocketTraffic"`
+	StaticHttpOriginBps       float64                                                 `json:"StaticHttpOriginBps" xml:"StaticHttpOriginBps"`
+	StaticHttpOriginTraffic   float64                                                 `json:"StaticHttpOriginTraffic" xml:"StaticHttpOriginTraffic"`
+	DomesticValue             string                                                  `json:"DomesticValue" xml:"DomesticValue"`
+	DynamicHttpsOriginTraffic float64                                                 `json:"DynamicHttpsOriginTraffic" xml:"DynamicHttpsOriginTraffic"`
+	DynamicHttpsTraffic       float64                                                 `json:"DynamicHttpsTraffic" xml:"DynamicHttpsTraffic"`
+	AccDomesticValue          string                                                  `json:"AccDomesticValue" xml:"AccDomesticValue"`
+	TrafficValue              string                                                  `json:"TrafficValue" xml:"TrafficValue"`
+	ByteHitRate               float64                                                 `json:"ByteHitRate" xml:"ByteHitRate"`
 	IpaBps                    float64                                                 `json:"IpaBps" xml:"IpaBps"`
 	Traffic                   float64                                                 `json:"Traffic" xml:"Traffic"`
 	HttpCodeDataPerInterval   HttpCodeDataPerIntervalInDescribeDcdnDomainHttpCodeData `json:"HttpCodeDataPerInterval" xml:"HttpCodeDataPerInterval"`

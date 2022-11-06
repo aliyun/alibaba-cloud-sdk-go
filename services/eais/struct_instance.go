@@ -17,16 +17,20 @@ package eais
 
 // Instance is a nested struct in eais response
 type Instance struct {
-	RegionId                     string `json:"RegionId" xml:"RegionId"`
-	ZoneId                       string `json:"ZoneId" xml:"ZoneId"`
-	CreationTime                 string `json:"CreationTime" xml:"CreationTime"`
-	InstanceName                 string `json:"InstanceName" xml:"InstanceName"`
-	Description                  string `json:"Description" xml:"Description"`
 	Status                       string `json:"Status" xml:"Status"`
-	ElasticAcceleratedInstanceId string `json:"ElasticAcceleratedInstanceId" xml:"ElasticAcceleratedInstanceId"`
-	ClientInstanceId             string `json:"ClientInstanceId" xml:"ClientInstanceId"`
-	InstanceType                 string `json:"InstanceType" xml:"InstanceType"`
-	ClientInstanceType           string `json:"ClientInstanceType" xml:"ClientInstanceType"`
+	CreationTime                 string `json:"CreationTime" xml:"CreationTime"`
 	ClientInstanceName           string `json:"ClientInstanceName" xml:"ClientInstanceName"`
+	Description                  string `json:"Description" xml:"Description"`
+	ElasticAcceleratedInstanceId string `json:"ElasticAcceleratedInstanceId" xml:"ElasticAcceleratedInstanceId"`
+	InstanceName                 string `json:"InstanceName" xml:"InstanceName"`
+	ClientInstanceType           string `json:"ClientInstanceType" xml:"ClientInstanceType"`
+	ClientInstanceId             string `json:"ClientInstanceId" xml:"ClientInstanceId"`
+	ZoneId                       string `json:"ZoneId" xml:"ZoneId"`
+	InstanceType                 string `json:"InstanceType" xml:"InstanceType"`
+	RegionId                     string `json:"RegionId" xml:"RegionId"`
+	Category                     string `json:"Category" xml:"Category"`
+	JupyterUrl                   string `json:"JupyterUrl" xml:"JupyterUrl"`
+	VSwitchId                    string `json:"VSwitchId" xml:"VSwitchId"`
+	SecurityGroupId              string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	Tags                         Tags   `json:"Tags" xml:"Tags"`
 }

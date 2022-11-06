@@ -93,8 +93,8 @@ type CreateGWSInstanceRequest struct {
 // CreateGWSInstanceResponse is the response struct for api CreateGWSInstance
 type CreateGWSInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateGWSInstanceRequest creates a request to invoke CreateGWSInstance API

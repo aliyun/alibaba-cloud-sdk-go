@@ -19,8 +19,10 @@ package cdn
 type UsageData struct {
 	Path      string                                      `json:"Path" xml:"Path"`
 	Time      string                                      `json:"Time" xml:"Time"`
+	Ip        string                                      `json:"ip" xml:"ip"`
 	Traffic   int                                         `json:"Traffic" xml:"Traffic"`
 	TimeStamp string                                      `json:"TimeStamp" xml:"TimeStamp"`
+	Status    string                                      `json:"status" xml:"status"`
 	Acc       int                                         `json:"Acc" xml:"Acc"`
 	Value     ValueInDescribeDomainFileSizeProportionData `json:"Value" xml:"Value"`
 }

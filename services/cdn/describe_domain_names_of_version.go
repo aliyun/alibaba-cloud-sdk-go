@@ -80,8 +80,8 @@ type DescribeDomainNamesOfVersionRequest struct {
 // DescribeDomainNamesOfVersionResponse is the response struct for api DescribeDomainNamesOfVersion
 type DescribeDomainNamesOfVersionResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
 	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
 	Contents   []Content `json:"Contents" xml:"Contents"`
 }
 

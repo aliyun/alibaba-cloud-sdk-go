@@ -18,17 +18,18 @@ package ehpc
 // NodeInfo is a nested struct in ehpc response
 type NodeInfo struct {
 	LockReason      string           `json:"LockReason" xml:"LockReason"`
-	Expired         bool             `json:"Expired" xml:"Expired"`
 	HtEnabled       bool             `json:"HtEnabled" xml:"HtEnabled"`
+	Expired         bool             `json:"Expired" xml:"Expired"`
+	StateInSched    string           `json:"StateInSched" xml:"StateInSched"`
 	IpAddress       string           `json:"IpAddress" xml:"IpAddress"`
 	ImageId         string           `json:"ImageId" xml:"ImageId"`
 	ImageOwnerAlias string           `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-	PublicIpAddress string           `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	InstanceType    string           `json:"InstanceType" xml:"InstanceType"`
+	PublicIpAddress string           `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	RegionId        string           `json:"RegionId" xml:"RegionId"`
 	Id              string           `json:"Id" xml:"Id"`
-	AddTime         string           `json:"AddTime" xml:"AddTime"`
 	VpcId           string           `json:"VpcId" xml:"VpcId"`
+	AddTime         string           `json:"AddTime" xml:"AddTime"`
 	ExpiredTime     string           `json:"ExpiredTime" xml:"ExpiredTime"`
 	VSwitchId       string           `json:"VSwitchId" xml:"VSwitchId"`
 	Version         string           `json:"Version" xml:"Version"`
@@ -40,6 +41,6 @@ type NodeInfo struct {
 	Status          string           `json:"Status" xml:"Status"`
 	SpotStrategy    string           `json:"SpotStrategy" xml:"SpotStrategy"`
 	Roles           RolesInListNodes `json:"Roles" xml:"Roles"`
-	TotalResources  TotalResources   `json:"TotalResources" xml:"TotalResources"`
 	UsedResources   UsedResources    `json:"UsedResources" xml:"UsedResources"`
+	TotalResources  TotalResources   `json:"TotalResources" xml:"TotalResources"`
 }

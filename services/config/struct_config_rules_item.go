@@ -19,9 +19,12 @@ package config
 type ConfigRulesItem struct {
 	RiskLevel             int                        `json:"RiskLevel" xml:"RiskLevel"`
 	ConfigRuleName        string                     `json:"ConfigRuleName" xml:"ConfigRuleName"`
+	DeveloperType         string                     `json:"DeveloperType" xml:"DeveloperType"`
 	ManagedRuleIdentifier string                     `json:"ManagedRuleIdentifier" xml:"ManagedRuleIdentifier"`
 	Description           string                     `json:"Description" xml:"Description"`
 	ManagedRuleName       string                     `json:"ManagedRuleName" xml:"ManagedRuleName"`
 	ConfigRuleId          string                     `json:"ConfigRuleId" xml:"ConfigRuleId"`
+	ControlId             string                     `json:"ControlId" xml:"ControlId"`
+	ControlDescription    string                     `json:"ControlDescription" xml:"ControlDescription"`
 	ConfigRuleParameters  []ConfigRuleParametersItem `json:"ConfigRuleParameters" xml:"ConfigRuleParameters"`
 }

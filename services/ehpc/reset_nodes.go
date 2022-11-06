@@ -83,8 +83,8 @@ type ResetNodesInstance struct {
 // ResetNodesResponse is the response struct for api ResetNodes
 type ResetNodesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateResetNodesRequest creates a request to invoke ResetNodes API

@@ -71,11 +71,18 @@ func (client *Client) DescribeUserConnectionRecordsWithCallback(request *Describ
 // DescribeUserConnectionRecordsRequest is the request struct for api DescribeUserConnectionRecords
 type DescribeUserConnectionRecordsRequest struct {
 	*requests.RpcRequest
-	EndUserType    string           `position:"Query" name:"EndUserType"`
-	DesktopGroupId string           `position:"Query" name:"DesktopGroupId"`
-	NextToken      string           `position:"Query" name:"NextToken"`
-	MaxResults     requests.Integer `position:"Query" name:"MaxResults"`
-	EndUserId      string           `position:"Query" name:"EndUserId"`
+	ConnectEndTimeFrom   requests.Integer `position:"Query" name:"ConnectEndTimeFrom"`
+	ConnectDurationFrom  requests.Integer `position:"Query" name:"ConnectDurationFrom"`
+	ConnectDurationTo    requests.Integer `position:"Query" name:"ConnectDurationTo"`
+	EndUserType          string           `position:"Query" name:"EndUserType"`
+	DesktopGroupId       string           `position:"Query" name:"DesktopGroupId"`
+	NextToken            string           `position:"Query" name:"NextToken"`
+	ConnectStartTimeFrom requests.Integer `position:"Query" name:"ConnectStartTimeFrom"`
+	EndUserId            string           `position:"Query" name:"EndUserId"`
+	DesktopId            string           `position:"Query" name:"DesktopId"`
+	ConnectEndTimeTo     requests.Integer `position:"Query" name:"ConnectEndTimeTo"`
+	ConnectStartTimeTo   requests.Integer `position:"Query" name:"ConnectStartTimeTo"`
+	MaxResults           requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // DescribeUserConnectionRecordsResponse is the response struct for api DescribeUserConnectionRecords

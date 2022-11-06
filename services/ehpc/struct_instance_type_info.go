@@ -17,10 +17,10 @@ package ehpc
 
 // InstanceTypeInfo is a nested struct in ehpc response
 type InstanceTypeInfo struct {
+	HostNamePrefix string  `json:"HostNamePrefix" xml:"HostNamePrefix"`
+	VSwitchId      string  `json:"VSwitchId" xml:"VSwitchId"`
+	ZoneId         string  `json:"ZoneId" xml:"ZoneId"`
+	SpotPriceLimit float64 `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	InstanceType   string  `json:"InstanceType" xml:"InstanceType"`
 	SpotStrategy   string  `json:"SpotStrategy" xml:"SpotStrategy"`
-	SpotPriceLimit float64 `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
-	ZoneId         string  `json:"ZoneId" xml:"ZoneId"`
-	VSwitchId      string  `json:"VSwitchId" xml:"VSwitchId"`
-	HostNamePrefix string  `json:"HostNamePrefix" xml:"HostNamePrefix"`
 }

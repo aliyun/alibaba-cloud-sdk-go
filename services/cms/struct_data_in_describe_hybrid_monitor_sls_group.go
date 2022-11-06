@@ -17,7 +17,7 @@ package cms
 
 // DataInDescribeHybridMonitorSLSGroup is a nested struct in cms response
 type DataInDescribeHybridMonitorSLSGroup struct {
-	SLSGroupName        int64  `json:"SLSGroupName" xml:"SLSGroupName"`
+	SLSGroupName        string `json:"SLSGroupName" xml:"SLSGroupName"`
 	SLSGroupDescription string `json:"SLSGroupDescription" xml:"SLSGroupDescription"`
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime          string `json:"UpdateTime" xml:"UpdateTime"`

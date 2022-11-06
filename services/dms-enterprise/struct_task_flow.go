@@ -17,12 +17,14 @@ package dms_enterprise
 
 // TaskFlow is a nested struct in dms_enterprise response
 type TaskFlow struct {
-	Id                   int64  `json:"Id" xml:"Id"`
-	CreatorId            string `json:"CreatorId" xml:"CreatorId"`
-	CreatorNickName      string `json:"CreatorNickName" xml:"CreatorNickName"`
-	DagOwnerNickName     string `json:"DagOwnerNickName" xml:"DagOwnerNickName"`
 	DeployId             int64  `json:"DeployId" xml:"DeployId"`
 	Status               int    `json:"Status" xml:"Status"`
 	LatestInstanceStatus int    `json:"LatestInstanceStatus" xml:"LatestInstanceStatus"`
+	CreatorId            string `json:"CreatorId" xml:"CreatorId"`
+	Id                   int64  `json:"Id" xml:"Id"`
+	CreatorNickName      string `json:"CreatorNickName" xml:"CreatorNickName"`
 	LatestInstanceTime   string `json:"LatestInstanceTime" xml:"LatestInstanceTime"`
+	DagOwnerNickName     string `json:"DagOwnerNickName" xml:"DagOwnerNickName"`
+	DagName              string `json:"DagName" xml:"DagName"`
+	Description          string `json:"Description" xml:"Description"`
 }

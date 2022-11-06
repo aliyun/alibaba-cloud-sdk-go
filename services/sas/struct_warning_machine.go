@@ -17,15 +17,18 @@ package sas
 
 // WarningMachine is a nested struct in sas response
 type WarningMachine struct {
-	Uuid               string `json:"Uuid" xml:"Uuid"`
-	InstanceName       string `json:"InstanceName" xml:"InstanceName"`
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	InternetIp         string `json:"InternetIp" xml:"InternetIp"`
-	IntranetIp         string `json:"IntranetIp" xml:"IntranetIp"`
-	PassCount          int    `json:"PassCount" xml:"PassCount"`
-	HighWarningCount   int    `json:"HighWarningCount" xml:"HighWarningCount"`
-	MediumWarningCount int    `json:"MediumWarningCount" xml:"MediumWarningCount"`
-	LowWarningCount    int    `json:"LowWarningCount" xml:"LowWarningCount"`
 	Status             int    `json:"Status" xml:"Status"`
+	InternetIp         string `json:"InternetIp" xml:"InternetIp"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	HighWarningCount   int    `json:"HighWarningCount" xml:"HighWarningCount"`
+	IntranetIp         string `json:"IntranetIp" xml:"IntranetIp"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
+	LowWarningCount    int    `json:"LowWarningCount" xml:"LowWarningCount"`
+	PortOpen           bool   `json:"PortOpen" xml:"PortOpen"`
+	Uuid               string `json:"Uuid" xml:"Uuid"`
+	MediumWarningCount int    `json:"MediumWarningCount" xml:"MediumWarningCount"`
+	PassCount          int    `json:"PassCount" xml:"PassCount"`
+	InstanceName       string `json:"InstanceName" xml:"InstanceName"`
+	Bind               bool   `json:"Bind" xml:"Bind"`
+	AuthVersion        int    `json:"AuthVersion" xml:"AuthVersion"`
 }

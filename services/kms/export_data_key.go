@@ -81,10 +81,10 @@ type ExportDataKeyRequest struct {
 // ExportDataKeyResponse is the response struct for api ExportDataKey
 type ExportDataKeyResponse struct {
 	*responses.BaseResponse
-	ExportedDataKey string `json:"ExportedDataKey" xml:"ExportedDataKey"`
+	KeyVersionId    string `json:"KeyVersionId" xml:"KeyVersionId"`
 	KeyId           string `json:"KeyId" xml:"KeyId"`
 	RequestId       string `json:"RequestId" xml:"RequestId"`
-	KeyVersionId    string `json:"KeyVersionId" xml:"KeyVersionId"`
+	ExportedDataKey string `json:"ExportedDataKey" xml:"ExportedDataKey"`
 }
 
 // CreateExportDataKeyRequest creates a request to invoke ExportDataKey API

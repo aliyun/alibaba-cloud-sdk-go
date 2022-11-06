@@ -75,8 +75,8 @@ type DescribeUserBandWidthDataRequest struct {
 	StartTime   string `position:"Query" name:"StartTime"`
 	EnsRegionId string `position:"Query" name:"EnsRegionId"`
 	Period      string `position:"Query" name:"Period"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
 	EndTime     string `position:"Query" name:"EndTime"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
 // DescribeUserBandWidthDataResponse is the response struct for api DescribeUserBandWidthData

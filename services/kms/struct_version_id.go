@@ -17,7 +17,7 @@ package kms
 
 // VersionId is a nested struct in kms response
 type VersionId struct {
-	CreateTime    string                              `json:"CreateTime" xml:"CreateTime"`
 	VersionId     string                              `json:"VersionId" xml:"VersionId"`
+	CreateTime    string                              `json:"CreateTime" xml:"CreateTime"`
 	VersionStages VersionStagesInListSecretVersionIds `json:"VersionStages" xml:"VersionStages"`
 }

@@ -17,11 +17,14 @@ package edas
 
 // Credential is a nested struct in edas response
 type Credential struct {
-	KeyPrefix       string `json:"KeyPrefix" xml:"KeyPrefix"`
-	SecurityToken   string `json:"SecurityToken" xml:"SecurityToken"`
-	AccessKeySecret string `json:"AccessKeySecret" xml:"AccessKeySecret"`
-	Expiration      string `json:"Expiration" xml:"Expiration"`
-	AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
-	Bucket          string `json:"Bucket" xml:"Bucket"`
-	RegionId        string `json:"RegionId" xml:"RegionId"`
+	KeyPrefix           string `json:"KeyPrefix" xml:"KeyPrefix"`
+	SecurityToken       string `json:"SecurityToken" xml:"SecurityToken"`
+	AccessKeySecret     string `json:"AccessKeySecret" xml:"AccessKeySecret"`
+	Expiration          string `json:"Expiration" xml:"Expiration"`
+	AccessKeyId         string `json:"AccessKeyId" xml:"AccessKeyId"`
+	Bucket              string `json:"Bucket" xml:"Bucket"`
+	RegionId            string `json:"RegionId" xml:"RegionId"`
+	OssPublicEndpoint   string `json:"OssPublicEndpoint" xml:"OssPublicEndpoint"`
+	OssInternalEndpoint string `json:"OssInternalEndpoint" xml:"OssInternalEndpoint"`
+	OssVpcEndpoint      string `json:"OssVpcEndpoint" xml:"OssVpcEndpoint"`
 }

@@ -17,9 +17,9 @@ package cdn
 
 // OutPutDomain is a nested struct in cdn response
 type OutPutDomain struct {
+	AclStatus string `json:"AclStatus" xml:"AclStatus"`
 	Status    string `json:"Status" xml:"Status"`
 	Domain    string `json:"Domain" xml:"Domain"`
-	WafStatus string `json:"WafStatus" xml:"WafStatus"`
 	CcStatus  string `json:"CcStatus" xml:"CcStatus"`
-	AclStatus string `json:"AclStatus" xml:"AclStatus"`
+	WafStatus string `json:"WafStatus" xml:"WafStatus"`
 }

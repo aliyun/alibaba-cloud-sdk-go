@@ -79,15 +79,15 @@ type DescribeCdnSMCertificateDetailRequest struct {
 // DescribeCdnSMCertificateDetailResponse is the response struct for api DescribeCdnSMCertificateDetail
 type DescribeCdnSMCertificateDetailResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	SignCertificate    string `json:"SignCertificate" xml:"SignCertificate"`
-	EncryptCertificate string `json:"EncryptCertificate" xml:"EncryptCertificate"`
-	CertIdentifier     string `json:"CertIdentifier" xml:"CertIdentifier"`
-	CertName           string `json:"CertName" xml:"CertName"`
-	CommonName         string `json:"CommonName" xml:"CommonName"`
-	Sans               string `json:"Sans" xml:"Sans"`
-	CertOrg            string `json:"CertOrg" xml:"CertOrg"`
 	CertExpireTime     string `json:"CertExpireTime" xml:"CertExpireTime"`
+	CertIdentifier     string `json:"CertIdentifier" xml:"CertIdentifier"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	CommonName         string `json:"CommonName" xml:"CommonName"`
+	CertName           string `json:"CertName" xml:"CertName"`
+	Sans               string `json:"Sans" xml:"Sans"`
+	SignCertificate    string `json:"SignCertificate" xml:"SignCertificate"`
+	CertOrg            string `json:"CertOrg" xml:"CertOrg"`
+	EncryptCertificate string `json:"EncryptCertificate" xml:"EncryptCertificate"`
 }
 
 // CreateDescribeCdnSMCertificateDetailRequest creates a request to invoke DescribeCdnSMCertificateDetail API

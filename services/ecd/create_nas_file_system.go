@@ -74,6 +74,7 @@ type CreateNASFileSystemRequest struct {
 	OfficeSiteId string `position:"Query" name:"OfficeSiteId"`
 	Description  string `position:"Query" name:"Description"`
 	StorageType  string `position:"Query" name:"StorageType"`
+	EncryptType  string `position:"Query" name:"EncryptType"`
 	Name         string `position:"Query" name:"Name"`
 }
 

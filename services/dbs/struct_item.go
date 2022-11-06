@@ -27,12 +27,13 @@ type Item struct {
 	TotalFreeBytes       int64  `json:"TotalFreeBytes" xml:"TotalFreeBytes"`
 	UsedFullBytes        int64  `json:"UsedFullBytes" xml:"UsedFullBytes"`
 	BuySpec              string `json:"BuySpec" xml:"BuySpec"`
-	BuyChargeType        string `json:"BuyChargeType" xml:"BuyChargeType"`
 	IsFreeBytesUnlimited bool   `json:"IsFreeBytesUnlimited" xml:"IsFreeBytesUnlimited"`
+	BuyChargeType        string `json:"BuyChargeType" xml:"BuyChargeType"`
 	UsedIncrementBytes   int64  `json:"UsedIncrementBytes" xml:"UsedIncrementBytes"`
+	ResourceGroupId      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	JobState             string `json:"JobState" xml:"JobState"`
-	PaiedBytes           int64  `json:"PaiedBytes" xml:"PaiedBytes"`
 	FullStorageSize      int64  `json:"FullStorageSize" xml:"FullStorageSize"`
+	PaiedBytes           int64  `json:"PaiedBytes" xml:"PaiedBytes"`
 	ContStorageSize      int64  `json:"ContStorageSize" xml:"ContStorageSize"`
 	BuyExpiredTimestamp  int64  `json:"BuyExpiredTimestamp" xml:"BuyExpiredTimestamp"`
 	JobType              string `json:"JobType" xml:"JobType"`

@@ -68,6 +68,7 @@ type Data struct {
 	LifeCycle            int                                                             `json:"LifeCycle" xml:"LifeCycle"`
 	OnDutyAccountName    string                                                          `json:"OnDutyAccountName" xml:"OnDutyAccountName"`
 	Checker              int                                                             `json:"Checker" xml:"Checker"`
+	Schema               string                                                          `json:"Schema" xml:"Schema"`
 	Version              int64                                                           `json:"Version" xml:"Version"`
 	IsCurrentProd        bool                                                            `json:"IsCurrentProd" xml:"IsCurrentProd"`
 	GmtCreate            int64                                                           `json:"GmtCreate" xml:"GmtCreate"`
@@ -190,9 +191,9 @@ type Data struct {
 	AlertMethods         []string                                                        `json:"AlertMethods" xml:"AlertMethods"`
 	AlertTargets         []string                                                        `json:"AlertTargets" xml:"AlertTargets"`
 	Deployment           Deployment                                                      `json:"Deployment" xml:"Deployment"`
+	SolutionInfo         SolutionInfo                                                    `json:"SolutionInfo" xml:"SolutionInfo"`
 	LastInstance         LastInstance                                                    `json:"LastInstance" xml:"LastInstance"`
 	BlockInstance        BlockInstance                                                   `json:"BlockInstance" xml:"BlockInstance"`
-	SolutionInfo         SolutionInfo                                                    `json:"SolutionInfo" xml:"SolutionInfo"`
 	SolutionDetail       SolutionDetail                                                  `json:"SolutionDetail" xml:"SolutionDetail"`
 	NodeConfiguration    NodeConfiguration                                               `json:"NodeConfiguration" xml:"NodeConfiguration"`
 	File                 File                                                            `json:"File" xml:"File"`
@@ -221,6 +222,7 @@ type Data struct {
 	Influences           []InfluencesItem                                                `json:"Influences" xml:"Influences"`
 	CalcEngines          []CalcEnginesItem                                               `json:"CalcEngines" xml:"CalcEngines"`
 	Reminds              []RemindsItem                                                   `json:"Reminds" xml:"Reminds"`
+	DeployedItems        []DeployedItem                                                  `json:"DeployedItems" xml:"DeployedItems"`
 	Migrations           []Migration                                                     `json:"Migrations" xml:"Migrations"`
 	Topics               []TopicsItemInListTopics                                        `json:"Topics" xml:"Topics"`
 	Business             []BusinessItem                                                  `json:"Business" xml:"Business"`

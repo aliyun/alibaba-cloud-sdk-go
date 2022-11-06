@@ -80,9 +80,9 @@ type SetDcdnFullDomainsBlockIPRequest struct {
 // SetDcdnFullDomainsBlockIPResponse is the response struct for api SetDcdnFullDomainsBlockIP
 type SetDcdnFullDomainsBlockIPResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetDcdnFullDomainsBlockIPRequest creates a request to invoke SetDcdnFullDomainsBlockIP API

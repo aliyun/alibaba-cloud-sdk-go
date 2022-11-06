@@ -71,21 +71,17 @@ func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsReques
 // DescribeDomainsRequest is the request struct for api DescribeDomains
 type DescribeDomainsRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId    string           `position:"Query" name:"ResourceGroupId"`
-	SourceIp           string           `position:"Query" name:"SourceIp"`
-	PageSize           string           `position:"Query" name:"PageSize"`
-	Offset             requests.Integer `position:"Query" name:"Offset"`
-	InstanceIds        *[]string        `position:"Query" name:"InstanceIds"  type:"Repeated"`
-	QueryDomainPattern string           `position:"Query" name:"QueryDomainPattern"`
-	Domain             string           `position:"Query" name:"Domain"`
+	ResourceGroupId string    `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string    `position:"Query" name:"SourceIp"`
+	InstanceIds     *[]string `position:"Query" name:"InstanceIds"  type:"Repeated"`
+	Lang            string    `position:"Query" name:"Lang"`
 }
 
 // DescribeDomainsResponse is the response struct for api DescribeDomains
 type DescribeDomainsResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Total     int64    `json:"Total" xml:"Total"`
-	Domains   []Domain `json:"Domains" xml:"Domains"`
+	Domains   []string `json:"Domains" xml:"Domains"`
 }
 
 // CreateDescribeDomainsRequest creates a request to invoke DescribeDomains API
@@ -93,7 +89,7 @@ func CreateDescribeDomainsRequest() (request *DescribeDomainsRequest) {
 	request = &DescribeDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeDomains", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomains", "", "")
 	request.Method = requests.POST
 	return
 }

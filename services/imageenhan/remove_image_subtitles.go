@@ -74,8 +74,8 @@ type RemoveImageSubtitlesRequest struct {
 	BH       requests.Float `position:"Body" name:"BH"`
 	BW       requests.Float `position:"Body" name:"BW"`
 	BX       requests.Float `position:"Body" name:"BX"`
-	ImageURL string         `position:"Body" name:"ImageURL"`
 	BY       requests.Float `position:"Body" name:"BY"`
+	ImageURL string         `position:"Body" name:"ImageURL"`
 }
 
 // RemoveImageSubtitlesResponse is the response struct for api RemoveImageSubtitles

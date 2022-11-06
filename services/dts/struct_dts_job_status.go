@@ -28,6 +28,7 @@ type DtsJobStatus struct {
 	ConsumptionClient             string                          `json:"ConsumptionClient" xml:"ConsumptionClient"`
 	Reserved                      string                          `json:"Reserved" xml:"Reserved"`
 	DbObject                      string                          `json:"DbObject" xml:"DbObject"`
+	ResourceGroupId               string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DtsJobId                      string                          `json:"DtsJobId" xml:"DtsJobId"`
 	Delay                         int64                           `json:"Delay" xml:"Delay"`
 	ExpireTime                    string                          `json:"ExpireTime" xml:"ExpireTime"`
@@ -38,6 +39,7 @@ type DtsJobStatus struct {
 	PayType                       string                          `json:"PayType" xml:"PayType"`
 	DtsJobClass                   string                          `json:"DtsJobClass" xml:"DtsJobClass"`
 	CpuUsage                      string                          `json:"CpuUsage" xml:"CpuUsage"`
+	ResourceGroupDisplayName      string                          `json:"ResourceGroupDisplayName" xml:"ResourceGroupDisplayName"`
 	Status                        string                          `json:"Status" xml:"Status"`
 	ConsumptionCheckpoint         string                          `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
 	AppName                       string                          `json:"AppName" xml:"AppName"`
@@ -54,4 +56,5 @@ type DtsJobStatus struct {
 	StructureInitializationStatus StructureInitializationStatus   `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
 	RetryState                    RetryState                      `json:"RetryState" xml:"RetryState"`
 	TagList                       []DtsTag                        `json:"TagList" xml:"TagList"`
+	ErrorDetails                  []ErrorDetail                   `json:"ErrorDetails" xml:"ErrorDetails"`
 }

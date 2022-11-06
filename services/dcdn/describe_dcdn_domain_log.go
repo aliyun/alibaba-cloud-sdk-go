@@ -82,8 +82,8 @@ type DescribeDcdnDomainLogRequest struct {
 // DescribeDcdnDomainLogResponse is the response struct for api DescribeDcdnDomainLog
 type DescribeDcdnDomainLogResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	DomainName       string           `json:"DomainName" xml:"DomainName"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	DomainLogDetails DomainLogDetails `json:"DomainLogDetails" xml:"DomainLogDetails"`
 }
 

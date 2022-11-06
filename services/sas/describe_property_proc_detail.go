@@ -71,14 +71,17 @@ func (client *Client) DescribePropertyProcDetailWithCallback(request *DescribePr
 // DescribePropertyProcDetailRequest is the request struct for api DescribePropertyProcDetail
 type DescribePropertyProcDetailRequest struct {
 	*requests.RpcRequest
-	Remark      string           `position:"Query" name:"Remark"`
-	Uuid        string           `position:"Query" name:"Uuid"`
-	Cmdline     string           `position:"Query" name:"Cmdline"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	Name        string           `position:"Query" name:"Name"`
-	User        string           `position:"Query" name:"User"`
+	Remark        string           `position:"Query" name:"Remark"`
+	Uuid          string           `position:"Query" name:"Uuid"`
+	Cmdline       string           `position:"Query" name:"Cmdline"`
+	SourceIp      string           `position:"Query" name:"SourceIp"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	ProcTimeStart requests.Integer `position:"Query" name:"ProcTimeStart"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	ProcTimeEnd   requests.Integer `position:"Query" name:"ProcTimeEnd"`
+	Extend        string           `position:"Query" name:"Extend"`
+	Name          string           `position:"Query" name:"Name"`
+	User          string           `position:"Query" name:"User"`
 }
 
 // DescribePropertyProcDetailResponse is the response struct for api DescribePropertyProcDetail

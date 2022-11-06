@@ -71,7 +71,10 @@ func (client *Client) DeleteFaceDbWithCallback(request *DeleteFaceDbRequest, cal
 // DeleteFaceDbRequest is the request struct for api DeleteFaceDb
 type DeleteFaceDbRequest struct {
 	*requests.RpcRequest
-	Name string `position:"Body" name:"Name"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Name               string           `position:"Body" name:"Name"`
 }
 
 // DeleteFaceDbResponse is the response struct for api DeleteFaceDb

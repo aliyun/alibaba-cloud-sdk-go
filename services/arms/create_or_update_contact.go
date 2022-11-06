@@ -71,12 +71,13 @@ func (client *Client) CreateOrUpdateContactWithCallback(request *CreateOrUpdateC
 // CreateOrUpdateContactRequest is the request struct for api CreateOrUpdateContact
 type CreateOrUpdateContactRequest struct {
 	*requests.RpcRequest
-	ContactName string           `position:"Body" name:"ContactName"`
-	ContactId   requests.Integer `position:"Body" name:"ContactId"`
-	Phone       string           `position:"Body" name:"Phone"`
-	IsVerify    requests.Boolean `position:"Body" name:"IsVerify"`
-	ProxyUserId string           `position:"Body" name:"ProxyUserId"`
-	Email       string           `position:"Body" name:"Email"`
+	ContactId         requests.Integer `position:"Body" name:"ContactId"`
+	ReissueSendNotice requests.Integer `position:"Body" name:"ReissueSendNotice"`
+	IsVerify          requests.Boolean `position:"Body" name:"IsVerify"`
+	ProxyUserId       string           `position:"Body" name:"ProxyUserId"`
+	ContactName       string           `position:"Body" name:"ContactName"`
+	Phone             string           `position:"Body" name:"Phone"`
+	Email             string           `position:"Body" name:"Email"`
 }
 
 // CreateOrUpdateContactResponse is the response struct for api CreateOrUpdateContact

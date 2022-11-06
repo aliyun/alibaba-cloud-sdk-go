@@ -71,10 +71,10 @@ func (client *Client) UpdateDataSourceWithCallback(request *UpdateDataSourceRequ
 // UpdateDataSourceRequest is the request struct for api UpdateDataSource
 type UpdateDataSourceRequest struct {
 	*requests.RpcRequest
-	EnvType      requests.Integer `position:"Query" name:"EnvType"`
-	DataSourceId requests.Integer `position:"Query" name:"DataSourceId"`
 	Description  string           `position:"Query" name:"Description"`
 	Content      string           `position:"Query" name:"Content"`
+	EnvType      requests.Integer `position:"Query" name:"EnvType"`
+	DataSourceId requests.Integer `position:"Query" name:"DataSourceId"`
 	Status       string           `position:"Query" name:"Status"`
 }
 

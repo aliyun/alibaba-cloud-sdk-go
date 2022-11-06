@@ -73,9 +73,9 @@ type BatchDeleteScdnDomainConfigsRequest struct {
 	*requests.RpcRequest
 	FunctionNames string           `position:"Query" name:"FunctionNames"`
 	DomainNames   string           `position:"Query" name:"DomainNames"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // BatchDeleteScdnDomainConfigsResponse is the response struct for api BatchDeleteScdnDomainConfigs

@@ -17,15 +17,15 @@ package dcdn
 
 // RegionProportionData is a nested struct in dcdn response
 type RegionProportionData struct {
-	Region          string `json:"Region" xml:"Region"`
-	Proportion      string `json:"Proportion" xml:"Proportion"`
-	RegionEname     string `json:"RegionEname" xml:"RegionEname"`
-	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
-	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
-	Bps             string `json:"Bps" xml:"Bps"`
 	Qps             string `json:"Qps" xml:"Qps"`
-	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
-	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
-	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
 	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
+	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
+	RegionEname     string `json:"RegionEname" xml:"RegionEname"`
+	Region          string `json:"Region" xml:"Region"`
+	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
+	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
+	Proportion      string `json:"Proportion" xml:"Proportion"`
+	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
+	Bps             string `json:"Bps" xml:"Bps"`
+	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
 }

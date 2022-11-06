@@ -71,7 +71,9 @@ func (client *Client) SegmentSkyWithCallback(request *SegmentSkyRequest, callbac
 // SegmentSkyRequest is the request struct for api SegmentSky
 type SegmentSkyRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentSkyResponse is the response struct for api SegmentSky
@@ -86,7 +88,7 @@ func CreateSegmentSkyRequest() (request *SegmentSkyRequest) {
 	request = &SegmentSkyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentSky", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentSky", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -72,6 +72,7 @@ func (client *Client) GetConnectionTicketWithCallback(request *GetConnectionTick
 type GetConnectionTicketRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Uuid                 string           `position:"Query" name:"Uuid"`
 	Password             string           `position:"Query" name:"Password"`
 	EndUserId            string           `position:"Query" name:"EndUserId"`
 	DesktopId            string           `position:"Query" name:"DesktopId"`

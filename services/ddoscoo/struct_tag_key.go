@@ -17,6 +17,6 @@ package ddoscoo
 
 // TagKey is a nested struct in ddoscoo response
 type TagKey struct {
-	TagKey   string `json:"TagKey" xml:"TagKey"`
 	TagCount int    `json:"TagCount" xml:"TagCount"`
+	TagKey   string `json:"TagKey" xml:"TagKey"`
 }

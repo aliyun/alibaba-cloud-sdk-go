@@ -71,6 +71,7 @@ func (client *Client) DescribeAlarmEventListWithCallback(request *DescribeAlarmE
 // DescribeAlarmEventListRequest is the request struct for api DescribeAlarmEventList
 type DescribeAlarmEventListRequest struct {
 	*requests.RpcRequest
+	TimeEnd              string           `position:"Query" name:"TimeEnd"`
 	TargetType           string           `position:"Query" name:"TargetType"`
 	AlarmEventType       string           `position:"Query" name:"AlarmEventType"`
 	Remark               string           `position:"Query" name:"Remark"`
@@ -80,13 +81,20 @@ type DescribeAlarmEventListRequest struct {
 	ContainerFieldValue  string           `position:"Query" name:"ContainerFieldValue"`
 	PageSize             string           `position:"Query" name:"PageSize"`
 	From                 string           `position:"Query" name:"From"`
+	Id                   requests.Integer `position:"Query" name:"Id"`
+	TacticId             string           `position:"Query" name:"TacticId"`
 	Lang                 string           `position:"Query" name:"Lang"`
+	UniqueInfo           string           `position:"Query" name:"UniqueInfo"`
 	GroupId              string           `position:"Query" name:"GroupId"`
 	Dealed               string           `position:"Query" name:"Dealed"`
 	CurrentPage          requests.Integer `position:"Query" name:"CurrentPage"`
 	ClusterId            string           `position:"Query" name:"ClusterId"`
+	OperateTimeEnd       string           `position:"Query" name:"OperateTimeEnd"`
 	OperateErrorCodeList *[]string        `position:"Query" name:"OperateErrorCodeList"  type:"Repeated"`
+	OperateTimeStart     string           `position:"Query" name:"OperateTimeStart"`
+	TimeStart            string           `position:"Query" name:"TimeStart"`
 	Levels               string           `position:"Query" name:"Levels"`
+	Uuids                string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeAlarmEventListResponse is the response struct for api DescribeAlarmEventList

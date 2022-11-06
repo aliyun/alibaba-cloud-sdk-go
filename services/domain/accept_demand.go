@@ -78,8 +78,8 @@ type AcceptDemandRequest struct {
 // AcceptDemandResponse is the response struct for api AcceptDemand
 type AcceptDemandResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	BindUrl   string `json:"BindUrl" xml:"BindUrl"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAcceptDemandRequest creates a request to invoke AcceptDemand API

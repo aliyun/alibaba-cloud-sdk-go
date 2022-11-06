@@ -73,10 +73,13 @@ type CompareFaceRequest struct {
 	*requests.RpcRequest
 	ImageDataA            string           `position:"Body" name:"ImageDataA"`
 	ImageDataB            string           `position:"Body" name:"ImageDataB"`
+	FormatResultToJson    requests.Boolean `position:"Query" name:"FormatResultToJson"`
 	QualityScoreThreshold requests.Float   `position:"Body" name:"QualityScoreThreshold"`
 	ImageURLB             string           `position:"Body" name:"ImageURLB"`
 	ImageURLA             string           `position:"Body" name:"ImageURLA"`
+	OssFile               string           `position:"Query" name:"OssFile"`
 	ImageType             requests.Integer `position:"Body" name:"ImageType"`
+	RequestProxyBy        string           `position:"Query" name:"RequestProxyBy"`
 }
 
 // CompareFaceResponse is the response struct for api CompareFace

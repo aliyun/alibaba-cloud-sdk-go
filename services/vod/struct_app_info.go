@@ -24,4 +24,5 @@ type AppInfo struct {
 	AppName          string `json:"AppName" xml:"AppName"`
 	Description      string `json:"Description" xml:"Description"`
 	Type             string `json:"Type" xml:"Type"`
+	Tags             []Tags `json:"Tags" xml:"Tags"`
 }

@@ -17,5 +17,6 @@ package live
 
 // UserList is a nested struct in live response
 type UserList struct {
-	User []User `json:"User" xml:"User"`
+	UserId   string `json:"UserId" xml:"UserId"`
+	JoinTime int64  `json:"JoinTime" xml:"JoinTime"`
 }

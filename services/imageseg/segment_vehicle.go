@@ -71,7 +71,9 @@ func (client *Client) SegmentVehicleWithCallback(request *SegmentVehicleRequest,
 // SegmentVehicleRequest is the request struct for api SegmentVehicle
 type SegmentVehicleRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Body" name:"ImageURL"`
 }
 
 // SegmentVehicleResponse is the response struct for api SegmentVehicle
@@ -86,7 +88,7 @@ func CreateSegmentVehicleRequest() (request *SegmentVehicleRequest) {
 	request = &SegmentVehicleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentVehicle", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentVehicle", "", "")
 	request.Method = requests.POST
 	return
 }

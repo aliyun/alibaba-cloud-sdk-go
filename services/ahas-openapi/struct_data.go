@@ -17,7 +17,43 @@ package ahas_openapi
 
 // Data is a nested struct in ahas_openapi response
 type Data struct {
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
-	LocalName      string `json:"LocalName" xml:"LocalName"`
+	TotalPage                 int                     `json:"TotalPage" xml:"TotalPage"`
+	RelationStrategy          int                     `json:"RelationStrategy" xml:"RelationStrategy"`
+	LimitOrigin               string                  `json:"LimitOrigin" xml:"LimitOrigin"`
+	Strategy                  int                     `json:"Strategy" xml:"Strategy"`
+	LocalName                 string                  `json:"LocalName" xml:"LocalName"`
+	ParamIdx                  int                     `json:"ParamIdx" xml:"ParamIdx"`
+	PageSize                  int                     `json:"PageSize" xml:"PageSize"`
+	ClusterEstimatedMaxQps    float64                 `json:"ClusterEstimatedMaxQps" xml:"ClusterEstimatedMaxQps"`
+	Threshold                 float64                 `json:"Threshold" xml:"Threshold"`
+	StatDurationSec           int64                   `json:"StatDurationSec" xml:"StatDurationSec"`
+	HalfOpenBaseAmountPerStep int                     `json:"HalfOpenBaseAmountPerStep" xml:"HalfOpenBaseAmountPerStep"`
+	ControlBehavior           int                     `json:"ControlBehavior" xml:"ControlBehavior"`
+	RegionId                  string                  `json:"RegionId" xml:"RegionId"`
+	HalfOpenRecoveryStepNum   int                     `json:"HalfOpenRecoveryStepNum" xml:"HalfOpenRecoveryStepNum"`
+	TotalCount                int                     `json:"TotalCount" xml:"TotalCount"`
+	RuleId                    int64                   `json:"RuleId" xml:"RuleId"`
+	BurstCount                int                     `json:"BurstCount" xml:"BurstCount"`
+	MetricType                int                     `json:"MetricType" xml:"MetricType"`
+	ClusterFallbackStrategy   int                     `json:"ClusterFallbackStrategy" xml:"ClusterFallbackStrategy"`
+	Resource                  string                  `json:"Resource" xml:"Resource"`
+	RegionEndpoint            string                  `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	ClusterThresholdType      int                     `json:"ClusterThresholdType" xml:"ClusterThresholdType"`
+	RefResource               string                  `json:"RefResource" xml:"RefResource"`
+	WarmUpPeriodSec           int                     `json:"WarmUpPeriodSec" xml:"WarmUpPeriodSec"`
+	PageIndex                 int                     `json:"PageIndex" xml:"PageIndex"`
+	SlowRtMs                  int                     `json:"SlowRtMs" xml:"SlowRtMs"`
+	MinRequestAmount          int                     `json:"MinRequestAmount" xml:"MinRequestAmount"`
+	StatDurationMs            int                     `json:"StatDurationMs" xml:"StatDurationMs"`
+	MaxQueueingTimeMs         int                     `json:"MaxQueueingTimeMs" xml:"MaxQueueingTimeMs"`
+	RecoveryTimeoutMs         int                     `json:"RecoveryTimeoutMs" xml:"RecoveryTimeoutMs"`
+	Namespace                 string                  `json:"Namespace" xml:"Namespace"`
+	Enable                    bool                    `json:"Enable" xml:"Enable"`
+	ClusterFallbackThreshold  int                     `json:"ClusterFallbackThreshold" xml:"ClusterFallbackThreshold"`
+	ClusterMode               bool                    `json:"ClusterMode" xml:"ClusterMode"`
+	ThresholdMode             int                     `json:"ThresholdMode" xml:"ThresholdMode"`
+	AppName                   string                  `json:"AppName" xml:"AppName"`
+	ParamFlowItemList         []ParamFlowItemListItem `json:"ParamFlowItemList" xml:"ParamFlowItemList"`
+	Datas                     []DatasItem             `json:"Datas" xml:"Datas"`
+	InnerMetrics              []InnerMetricsItem      `json:"InnerMetrics" xml:"InnerMetrics"`
 }

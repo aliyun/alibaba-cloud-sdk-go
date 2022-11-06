@@ -17,10 +17,10 @@ package oos
 
 // Patch is a nested struct in oos response
 type Patch struct {
-	Classification string `json:"Classification" xml:"Classification"`
-	InstalledTime  string `json:"InstalledTime" xml:"InstalledTime"`
-	KBId           string `json:"KBId" xml:"KBId"`
 	Severity       string `json:"Severity" xml:"Severity"`
 	Status         string `json:"Status" xml:"Status"`
+	InstalledTime  string `json:"InstalledTime" xml:"InstalledTime"`
+	KBId           string `json:"KBId" xml:"KBId"`
 	Title          string `json:"Title" xml:"Title"`
+	Classification string `json:"Classification" xml:"Classification"`
 }

@@ -71,14 +71,18 @@ func (client *Client) SegmentHDCommonImageWithCallback(request *SegmentHDCommonI
 // SegmentHDCommonImageRequest is the request struct for api SegmentHDCommonImage
 type SegmentHDCommonImageRequest struct {
 	*requests.RpcRequest
-	Async    requests.Boolean `position:"Body" name:"Async"`
-	ImageUrl string           `position:"Body" name:"ImageUrl"`
+	OssFile        string           `position:"Query" name:"OssFile"`
+	RequestProxyBy string           `position:"Query" name:"RequestProxyBy"`
+	Async          requests.Boolean `position:"Body" name:"Async"`
+	ImageUrl       string           `position:"Body" name:"ImageUrl"`
 }
 
 // SegmentHDCommonImageResponse is the response struct for api SegmentHDCommonImage
 type SegmentHDCommonImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -87,7 +91,7 @@ func CreateSegmentHDCommonImageRequest() (request *SegmentHDCommonImageRequest) 
 	request = &SegmentHDCommonImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHDCommonImage", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHDCommonImage", "", "")
 	request.Method = requests.POST
 	return
 }

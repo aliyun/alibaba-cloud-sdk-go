@@ -71,16 +71,17 @@ func (client *Client) DescribeModuleConfigWithCallback(request *DescribeModuleCo
 // DescribeModuleConfigRequest is the request struct for api DescribeModuleConfig
 type DescribeModuleConfigRequest struct {
 	*requests.RpcRequest
-	SourceIp string `position:"Query" name:"SourceIp"`
+	SourceIp                   string `position:"Query" name:"SourceIp"`
+	ResourceDirectoryAccountId string `position:"Query" name:"ResourceDirectoryAccountId"`
 }
 
 // DescribeModuleConfigResponse is the response struct for api DescribeModuleConfig
 type DescribeModuleConfigResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode   int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId        string         `json:"RequestId" xml:"RequestId"`
 	Success          bool           `json:"Success" xml:"Success"`
 	Count            int            `json:"Count" xml:"Count"`
-	HttpStatusCode   int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	ModuleConfigList []ModuleConfig `json:"ModuleConfigList" xml:"ModuleConfigList"`
 }
 

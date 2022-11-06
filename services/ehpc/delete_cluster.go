@@ -78,8 +78,8 @@ type DeleteClusterRequest struct {
 // DeleteClusterResponse is the response struct for api DeleteCluster
 type DeleteClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteClusterRequest creates a request to invoke DeleteCluster API

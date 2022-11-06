@@ -17,13 +17,13 @@ package sas
 
 // AntiBruteForceRule is a nested struct in sas response
 type AntiBruteForceRule struct {
-	Id              int64    `json:"Id" xml:"Id"`
-	DefaultRule     bool     `json:"DefaultRule" xml:"DefaultRule"`
-	Name            string   `json:"Name" xml:"Name"`
-	Span            int      `json:"Span" xml:"Span"`
+	MachineCount    int      `json:"MachineCount" xml:"MachineCount"`
+	EnableSmartRule bool     `json:"EnableSmartRule" xml:"EnableSmartRule"`
 	FailCount       int      `json:"FailCount" xml:"FailCount"`
 	ForbiddenTime   int      `json:"ForbiddenTime" xml:"ForbiddenTime"`
-	EnableSmartRule bool     `json:"EnableSmartRule" xml:"EnableSmartRule"`
-	MachineCount    int      `json:"MachineCount" xml:"MachineCount"`
+	Span            int      `json:"Span" xml:"Span"`
+	DefaultRule     bool     `json:"DefaultRule" xml:"DefaultRule"`
+	Name            string   `json:"Name" xml:"Name"`
+	Id              int64    `json:"Id" xml:"Id"`
 	UuidList        []string `json:"UuidList" xml:"UuidList"`
 }

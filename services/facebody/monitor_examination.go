@@ -71,8 +71,11 @@ func (client *Client) MonitorExaminationWithCallback(request *MonitorExamination
 // MonitorExaminationRequest is the request struct for api MonitorExamination
 type MonitorExaminationRequest struct {
 	*requests.RpcRequest
-	Type     requests.Integer `position:"Body" name:"Type"`
-	ImageURL string           `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Type               requests.Integer `position:"Body" name:"Type"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // MonitorExaminationResponse is the response struct for api MonitorExamination

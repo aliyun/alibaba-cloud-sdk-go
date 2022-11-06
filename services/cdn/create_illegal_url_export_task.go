@@ -79,8 +79,8 @@ type CreateIllegalUrlExportTaskRequest struct {
 // CreateIllegalUrlExportTaskResponse is the response struct for api CreateIllegalUrlExportTask
 type CreateIllegalUrlExportTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateIllegalUrlExportTaskRequest creates a request to invoke CreateIllegalUrlExportTask API

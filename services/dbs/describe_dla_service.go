@@ -79,12 +79,12 @@ type DescribeDLAServiceRequest struct {
 // DescribeDLAServiceResponse is the response struct for api DescribeDLAService
 type DescribeDLAServiceResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 	State          string `json:"State" xml:"State"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	AutoAdd        bool   `json:"AutoAdd" xml:"AutoAdd"`
 	HaveJobFailed  bool   `json:"HaveJobFailed" xml:"HaveJobFailed"`
 }
@@ -94,7 +94,7 @@ func CreateDescribeDLAServiceRequest() (request *DescribeDLAServiceRequest) {
 	request = &DescribeDLAServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeDLAService", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeDLAService", "", "")
 	request.Method = requests.POST
 	return
 }

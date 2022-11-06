@@ -75,6 +75,7 @@ type DescribeDetachedBackupsRequest struct {
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	BackupRegion         string           `position:"Query" name:"BackupRegion"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -100,7 +101,7 @@ func CreateDescribeDetachedBackupsRequest() (request *DescribeDetachedBackupsReq
 	request = &DescribeDetachedBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDetachedBackups", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDetachedBackups", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

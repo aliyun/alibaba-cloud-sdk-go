@@ -18,10 +18,10 @@ package ehpc
 // ProfilingInfo is a nested struct in ehpc response
 type ProfilingInfo struct {
 	ProfilingId string `json:"ProfilingId" xml:"ProfilingId"`
-	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
-	HostName    string `json:"HostName" xml:"HostName"`
-	Pid         int    `json:"Pid" xml:"Pid"`
-	Duration    int    `json:"Duration" xml:"Duration"`
-	Freq        int    `json:"Freq" xml:"Freq"`
 	TriggerTime string `json:"TriggerTime" xml:"TriggerTime"`
+	Pid         int    `json:"Pid" xml:"Pid"`
+	HostName    string `json:"HostName" xml:"HostName"`
+	Duration    int    `json:"Duration" xml:"Duration"`
+	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
+	Freq        int    `json:"Freq" xml:"Freq"`
 }

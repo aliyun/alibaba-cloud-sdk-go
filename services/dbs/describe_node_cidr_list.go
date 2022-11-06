@@ -79,13 +79,13 @@ type DescribeNodeCidrListRequest struct {
 // DescribeNodeCidrListResponse is the response struct for api DescribeNodeCidrList
 type DescribeNodeCidrListResponse struct {
 	*responses.BaseResponse
-	Success        bool        `json:"Success" xml:"Success"`
-	ErrCode        string      `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string      `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string      `json:"RequestId" xml:"RequestId"`
-	InternetIPs    InternetIPs `json:"InternetIPs" xml:"InternetIPs"`
+	ErrCode        string      `json:"ErrCode" xml:"ErrCode"`
+	Success        bool        `json:"Success" xml:"Success"`
+	ErrMessage     string      `json:"ErrMessage" xml:"ErrMessage"`
 	IntranetIPs    IntranetIPs `json:"IntranetIPs" xml:"IntranetIPs"`
+	InternetIPs    InternetIPs `json:"InternetIPs" xml:"InternetIPs"`
 }
 
 // CreateDescribeNodeCidrListRequest creates a request to invoke DescribeNodeCidrList API
@@ -93,7 +93,7 @@ func CreateDescribeNodeCidrListRequest() (request *DescribeNodeCidrListRequest) 
 	request = &DescribeNodeCidrListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeNodeCidrList", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeNodeCidrList", "", "")
 	request.Method = requests.POST
 	return
 }

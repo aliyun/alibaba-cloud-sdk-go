@@ -78,9 +78,9 @@ type GetIfEcsTypeSupportHtConfigRequest struct {
 type GetIfEcsTypeSupportHtConfigResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DefaultHtEnabled bool   `json:"DefaultHtEnabled" xml:"DefaultHtEnabled"`
 	InstanceType     string `json:"InstanceType" xml:"InstanceType"`
 	SupportHtConfig  bool   `json:"SupportHtConfig" xml:"SupportHtConfig"`
-	DefaultHtEnabled bool   `json:"DefaultHtEnabled" xml:"DefaultHtEnabled"`
 }
 
 // CreateGetIfEcsTypeSupportHtConfigRequest creates a request to invoke GetIfEcsTypeSupportHtConfig API

@@ -80,17 +80,17 @@ type GetSecretValueRequest struct {
 // GetSecretValueResponse is the response struct for api GetSecretValue
 type GetSecretValueResponse struct {
 	*responses.BaseResponse
-	RequestId         string                        `json:"RequestId" xml:"RequestId"`
-	SecretName        string                        `json:"SecretName" xml:"SecretName"`
-	VersionId         string                        `json:"VersionId" xml:"VersionId"`
-	CreateTime        string                        `json:"CreateTime" xml:"CreateTime"`
-	SecretData        string                        `json:"SecretData" xml:"SecretData"`
 	SecretDataType    string                        `json:"SecretDataType" xml:"SecretDataType"`
-	AutomaticRotation string                        `json:"AutomaticRotation" xml:"AutomaticRotation"`
-	RotationInterval  string                        `json:"RotationInterval" xml:"RotationInterval"`
+	CreateTime        string                        `json:"CreateTime" xml:"CreateTime"`
+	VersionId         string                        `json:"VersionId" xml:"VersionId"`
 	NextRotationDate  string                        `json:"NextRotationDate" xml:"NextRotationDate"`
+	SecretData        string                        `json:"SecretData" xml:"SecretData"`
+	RotationInterval  string                        `json:"RotationInterval" xml:"RotationInterval"`
 	ExtendedConfig    string                        `json:"ExtendedConfig" xml:"ExtendedConfig"`
 	LastRotationDate  string                        `json:"LastRotationDate" xml:"LastRotationDate"`
+	RequestId         string                        `json:"RequestId" xml:"RequestId"`
+	SecretName        string                        `json:"SecretName" xml:"SecretName"`
+	AutomaticRotation string                        `json:"AutomaticRotation" xml:"AutomaticRotation"`
 	SecretType        string                        `json:"SecretType" xml:"SecretType"`
 	VersionStages     VersionStagesInGetSecretValue `json:"VersionStages" xml:"VersionStages"`
 }

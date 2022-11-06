@@ -82,10 +82,10 @@ type DescribeDomainRealTimeTrafficDataRequest struct {
 // DescribeDomainRealTimeTrafficDataResponse is the response struct for api DescribeDomainRealTimeTrafficData
 type DescribeDomainRealTimeTrafficDataResponse struct {
 	*responses.BaseResponse
+	EndTime                        string                         `json:"EndTime" xml:"EndTime"`
+	StartTime                      string                         `json:"StartTime" xml:"StartTime"`
 	RequestId                      string                         `json:"RequestId" xml:"RequestId"`
 	DomainName                     string                         `json:"DomainName" xml:"DomainName"`
-	StartTime                      string                         `json:"StartTime" xml:"StartTime"`
-	EndTime                        string                         `json:"EndTime" xml:"EndTime"`
 	DataInterval                   string                         `json:"DataInterval" xml:"DataInterval"`
 	RealTimeTrafficDataPerInterval RealTimeTrafficDataPerInterval `json:"RealTimeTrafficDataPerInterval" xml:"RealTimeTrafficDataPerInterval"`
 }

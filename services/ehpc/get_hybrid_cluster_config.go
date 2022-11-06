@@ -78,8 +78,8 @@ type GetHybridClusterConfigRequest struct {
 // GetHybridClusterConfigResponse is the response struct for api GetHybridClusterConfig
 type GetHybridClusterConfigResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ClusterConfig string `json:"ClusterConfig" xml:"ClusterConfig"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetHybridClusterConfigRequest creates a request to invoke GetHybridClusterConfig API

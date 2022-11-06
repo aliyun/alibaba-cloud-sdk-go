@@ -77,6 +77,7 @@ type DescribePropertyCronDetailRequest struct {
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Extend      string           `position:"Query" name:"Extend"`
 	User        string           `position:"Query" name:"User"`
 }
 

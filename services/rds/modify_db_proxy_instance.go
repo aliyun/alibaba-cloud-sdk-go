@@ -76,6 +76,7 @@ type ModifyDBProxyInstanceRequest struct {
 	EffectiveSpecificTime string           `position:"Query" name:"EffectiveSpecificTime"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBProxyEngineType     string           `position:"Query" name:"DBProxyEngineType"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	DBProxyInstanceNum    string           `position:"Query" name:"DBProxyInstanceNum"`
 	DBProxyInstanceType   string           `position:"Query" name:"DBProxyInstanceType"`

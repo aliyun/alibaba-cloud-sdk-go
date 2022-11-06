@@ -77,8 +77,8 @@ type GetVisualServiceStatusRequest struct {
 // GetVisualServiceStatusResponse is the response struct for api GetVisualServiceStatus
 type GetVisualServiceStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetVisualServiceStatusRequest creates a request to invoke GetVisualServiceStatus API

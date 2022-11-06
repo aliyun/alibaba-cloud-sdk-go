@@ -77,8 +77,8 @@ type ListSecurityGroupsRequest struct {
 // ListSecurityGroupsResponse is the response struct for api ListSecurityGroups
 type ListSecurityGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	SecurityGroups SecurityGroups `json:"SecurityGroups" xml:"SecurityGroups"`
 }
 

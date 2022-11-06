@@ -71,6 +71,7 @@ func (client *Client) UpdateTableWithCallback(request *UpdateTableRequest, callb
 // UpdateTableRequest is the request struct for api UpdateTable
 type UpdateTableRequest struct {
 	*requests.RpcRequest
+	Schema            string                `position:"Query" name:"Schema"`
 	Columns           *[]UpdateTableColumns `position:"Body" name:"Columns"  type:"Repeated"`
 	LifeCycle         requests.Integer      `position:"Query" name:"LifeCycle"`
 	Themes            *[]UpdateTableThemes  `position:"Body" name:"Themes"  type:"Repeated"`

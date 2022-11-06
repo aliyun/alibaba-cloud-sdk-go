@@ -17,6 +17,6 @@ package facebody
 
 // MetaObject is a nested struct in facebody response
 type MetaObject struct {
-	Height int `json:"Height" xml:"Height"`
 	Width  int `json:"Width" xml:"Width"`
+	Height int `json:"Height" xml:"Height"`
 }

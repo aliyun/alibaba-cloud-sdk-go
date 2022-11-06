@@ -72,16 +72,18 @@ func (client *Client) AbstractEcommerceVideoWithCallback(request *AbstractEcomme
 type AbstractEcommerceVideoRequest struct {
 	*requests.RpcRequest
 	Duration requests.Float   `position:"Body" name:"Duration"`
+	Height   requests.Integer `position:"Body" name:"Height"`
 	Async    requests.Boolean `position:"Body" name:"Async"`
 	VideoUrl string           `position:"Body" name:"VideoUrl"`
 	Width    requests.Integer `position:"Body" name:"Width"`
-	Height   requests.Integer `position:"Body" name:"Height"`
 }
 
 // AbstractEcommerceVideoResponse is the response struct for api AbstractEcommerceVideo
 type AbstractEcommerceVideoResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

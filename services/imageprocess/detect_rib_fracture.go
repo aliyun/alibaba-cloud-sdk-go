@@ -88,6 +88,8 @@ type DetectRibFractureURLList struct {
 type DetectRibFractureResponse struct {
 	*responses.BaseResponse
 	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Code      string                  `json:"Code" xml:"Code"`
+	Message   string                  `json:"Message" xml:"Message"`
 	Data      DataInDetectRibFracture `json:"Data" xml:"Data"`
 }
 

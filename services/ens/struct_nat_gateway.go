@@ -23,4 +23,5 @@ type NatGateway struct {
 	VSwitchId    string `json:"VSwitchId" xml:"VSwitchId"`
 	Name         string `json:"Name" xml:"Name"`
 	CreationTime string `json:"CreationTime" xml:"CreationTime"`
+	Spec         string `json:"Spec" xml:"Spec"`
 }

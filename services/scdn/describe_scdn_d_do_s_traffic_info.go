@@ -71,20 +71,19 @@ func (client *Client) DescribeScdnDDoSTrafficInfoWithCallback(request *DescribeS
 // DescribeScdnDDoSTrafficInfoRequest is the request struct for api DescribeScdnDDoSTrafficInfo
 type DescribeScdnDDoSTrafficInfoRequest struct {
 	*requests.RpcRequest
-	Line      string           `position:"Query" name:"Line"`
-	StartTime string           `position:"Query" name:"StartTime"`
-	EndTime   string           `position:"Query" name:"EndTime"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
+	Line      string `position:"Query" name:"Line"`
+	EndTime   string `position:"Query" name:"EndTime"`
+	StartTime string `position:"Query" name:"StartTime"`
 }
 
 // DescribeScdnDDoSTrafficInfoResponse is the response struct for api DescribeScdnDDoSTrafficInfo
 type DescribeScdnDDoSTrafficInfoResponse struct {
 	*responses.BaseResponse
 	RequestId  string                                  `json:"RequestId" xml:"RequestId"`
-	BpsDrops   BpsDrops                                `json:"BpsDrops" xml:"BpsDrops"`
-	BpsTotals  BpsTotals                               `json:"BpsTotals" xml:"BpsTotals"`
 	PpsTotals  PpsTotals                               `json:"PpsTotals" xml:"PpsTotals"`
 	PpsDrops   PpsDrops                                `json:"PpsDrops" xml:"PpsDrops"`
+	BpsDrops   BpsDrops                                `json:"BpsDrops" xml:"BpsDrops"`
+	BpsTotals  BpsTotals                               `json:"BpsTotals" xml:"BpsTotals"`
 	TimeScopes TimeScopesInDescribeScdnDDoSTrafficInfo `json:"TimeScopes" xml:"TimeScopes"`
 }
 

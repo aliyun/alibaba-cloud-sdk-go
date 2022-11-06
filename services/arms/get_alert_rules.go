@@ -71,7 +71,9 @@ func (client *Client) GetAlertRulesWithCallback(request *GetAlertRulesRequest, c
 // GetAlertRulesRequest is the request struct for api GetAlertRules
 type GetAlertRulesRequest struct {
 	*requests.RpcRequest
+	ProductCode string           `position:"Query" name:"ProductCode"`
 	AlertStatus string           `position:"Query" name:"AlertStatus"`
+	ClusterId   string           `position:"Query" name:"ClusterId"`
 	AlertNames  string           `position:"Query" name:"AlertNames"`
 	AlertType   string           `position:"Query" name:"AlertType"`
 	Size        requests.Integer `position:"Query" name:"Size"`

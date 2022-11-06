@@ -84,12 +84,12 @@ type DescribeDomainQpsDataByLayerRequest struct {
 // DescribeDomainQpsDataByLayerResponse is the response struct for api DescribeDomainQpsDataByLayer
 type DescribeDomainQpsDataByLayerResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                        `json:"RequestId" xml:"RequestId"`
-	DomainName      string                                        `json:"DomainName" xml:"DomainName"`
-	StartTime       string                                        `json:"StartTime" xml:"StartTime"`
 	EndTime         string                                        `json:"EndTime" xml:"EndTime"`
-	DataInterval    string                                        `json:"DataInterval" xml:"DataInterval"`
+	StartTime       string                                        `json:"StartTime" xml:"StartTime"`
+	RequestId       string                                        `json:"RequestId" xml:"RequestId"`
 	Layer           string                                        `json:"Layer" xml:"Layer"`
+	DomainName      string                                        `json:"DomainName" xml:"DomainName"`
+	DataInterval    string                                        `json:"DataInterval" xml:"DataInterval"`
 	QpsDataInterval QpsDataIntervalInDescribeDomainQpsDataByLayer `json:"QpsDataInterval" xml:"QpsDataInterval"`
 }
 

@@ -71,6 +71,7 @@ func (client *Client) CreateTableWithCallback(request *CreateTableRequest, callb
 // CreateTableRequest is the request struct for api CreateTable
 type CreateTableRequest struct {
 	*requests.RpcRequest
+	Schema            string                `position:"Query" name:"Schema"`
 	ClientToken       string                `position:"Query" name:"ClientToken"`
 	Columns           *[]CreateTableColumns `position:"Body" name:"Columns"  type:"Repeated"`
 	LifeCycle         requests.Integer      `position:"Query" name:"LifeCycle"`

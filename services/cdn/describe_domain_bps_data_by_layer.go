@@ -84,8 +84,8 @@ type DescribeDomainBpsDataByLayerRequest struct {
 // DescribeDomainBpsDataByLayerResponse is the response struct for api DescribeDomainBpsDataByLayer
 type DescribeDomainBpsDataByLayerResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	DataInterval    string          `json:"DataInterval" xml:"DataInterval"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	BpsDataInterval BpsDataInterval `json:"BpsDataInterval" xml:"BpsDataInterval"`
 }
 

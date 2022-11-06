@@ -73,6 +73,7 @@ type CreateSecretRequest struct {
 	*requests.RpcRequest
 	SecretType              string           `position:"Query" name:"SecretType"`
 	VersionId               string           `position:"Query" name:"VersionId"`
+	DKMSInstanceId          string           `position:"Query" name:"DKMSInstanceId"`
 	SecretData              string           `position:"Query" name:"SecretData"`
 	Description             string           `position:"Query" name:"Description"`
 	RotationInterval        string           `position:"Query" name:"RotationInterval"`
@@ -88,14 +89,15 @@ type CreateSecretRequest struct {
 type CreateSecretResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
-	Arn               string `json:"Arn" xml:"Arn"`
-	VersionId         string `json:"VersionId" xml:"VersionId"`
-	SecretName        string `json:"SecretName" xml:"SecretName"`
-	SecretType        string `json:"SecretType" xml:"SecretType"`
 	AutomaticRotation string `json:"AutomaticRotation" xml:"AutomaticRotation"`
-	RotationInterval  string `json:"RotationInterval" xml:"RotationInterval"`
+	SecretName        string `json:"SecretName" xml:"SecretName"`
+	VersionId         string `json:"VersionId" xml:"VersionId"`
 	NextRotationDate  string `json:"NextRotationDate" xml:"NextRotationDate"`
+	SecretType        string `json:"SecretType" xml:"SecretType"`
+	RotationInterval  string `json:"RotationInterval" xml:"RotationInterval"`
+	Arn               string `json:"Arn" xml:"Arn"`
 	ExtendedConfig    string `json:"ExtendedConfig" xml:"ExtendedConfig"`
+	DKMSInstanceId    string `json:"DKMSInstanceId" xml:"DKMSInstanceId"`
 }
 
 // CreateCreateSecretRequest creates a request to invoke CreateSecret API

@@ -17,12 +17,12 @@ package ahas_openapi
 
 // MetricData is a nested struct in ahas_openapi response
 type MetricData struct {
-	UserId       string  `json:"UserId" xml:"UserId"`
-	Namespace    string  `json:"Namespace" xml:"Namespace"`
 	AppName      string  `json:"AppName" xml:"AppName"`
 	PassCount    float64 `json:"PassCount" xml:"PassCount"`
-	BlockCount   float64 `json:"BlockCount" xml:"BlockCount"`
-	TotalCount   float64 `json:"TotalCount" xml:"TotalCount"`
-	AvgRt        float64 `json:"AvgRt" xml:"AvgRt"`
 	MachineCount int64   `json:"MachineCount" xml:"MachineCount"`
+	AvgRt        float64 `json:"AvgRt" xml:"AvgRt"`
+	UserId       string  `json:"UserId" xml:"UserId"`
+	Namespace    string  `json:"Namespace" xml:"Namespace"`
+	TotalCount   float64 `json:"TotalCount" xml:"TotalCount"`
+	BlockCount   float64 `json:"BlockCount" xml:"BlockCount"`
 }

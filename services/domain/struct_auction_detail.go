@@ -41,4 +41,5 @@ type AuctionDetail struct {
 	DomainType      string  `json:"DomainType" xml:"DomainType"`
 	ReserveMin      int64   `json:"ReserveMin" xml:"ReserveMin"`
 	ReserveMax      int64   `json:"ReserveMax" xml:"ReserveMax"`
+	ReservePrice    int64   `json:"ReservePrice" xml:"ReservePrice"`
 }

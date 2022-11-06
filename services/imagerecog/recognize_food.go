@@ -71,7 +71,10 @@ func (client *Client) RecognizeFoodWithCallback(request *RecognizeFoodRequest, c
 // RecognizeFoodRequest is the request struct for api RecognizeFood
 type RecognizeFoodRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // RecognizeFoodResponse is the response struct for api RecognizeFood
@@ -88,7 +91,7 @@ func CreateRecognizeFoodRequest() (request *RecognizeFoodRequest) {
 	request = &RecognizeFoodRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeFood", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeFood", "", "")
 	request.Method = requests.POST
 	return
 }

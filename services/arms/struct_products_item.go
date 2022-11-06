@@ -26,4 +26,5 @@ type ProductsItem struct {
 	Time     string `json:"Time" xml:"Time"`
 	Type     string `json:"Type" xml:"Type"`
 	Url      string `json:"Url" xml:"Url"`
+	Source   string `json:"Source" xml:"Source"`
 }

@@ -17,8 +17,8 @@ package ddoscoo
 
 // Sla is a nested struct in ddoscoo response
 type Sla struct {
+	MaxconnEnable int `json:"MaxconnEnable" xml:"MaxconnEnable"`
+	CpsEnable     int `json:"CpsEnable" xml:"CpsEnable"`
 	Cps           int `json:"Cps" xml:"Cps"`
 	Maxconn       int `json:"Maxconn" xml:"Maxconn"`
-	CpsEnable     int `json:"CpsEnable" xml:"CpsEnable"`
-	MaxconnEnable int `json:"MaxconnEnable" xml:"MaxconnEnable"`
 }

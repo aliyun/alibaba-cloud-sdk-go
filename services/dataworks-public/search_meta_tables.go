@@ -71,6 +71,7 @@ func (client *Client) SearchMetaTablesWithCallback(request *SearchMetaTablesRequ
 // SearchMetaTablesRequest is the request struct for api SearchMetaTables
 type SearchMetaTablesRequest struct {
 	*requests.RpcRequest
+	Schema         string           `position:"Query" name:"Schema"`
 	DataSourceType string           `position:"Query" name:"DataSourceType"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`

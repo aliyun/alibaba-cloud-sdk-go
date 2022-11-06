@@ -79,8 +79,8 @@ type UpdateSecretRotationPolicyRequest struct {
 // UpdateSecretRotationPolicyResponse is the response struct for api UpdateSecretRotationPolicy
 type UpdateSecretRotationPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	SecretName string `json:"SecretName" xml:"SecretName"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateSecretRotationPolicyRequest creates a request to invoke UpdateSecretRotationPolicy API

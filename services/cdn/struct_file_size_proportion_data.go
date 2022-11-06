@@ -17,6 +17,6 @@ package cdn
 
 // FileSizeProportionData is a nested struct in cdn response
 type FileSizeProportionData struct {
-	FileSize   string `json:"FileSize" xml:"FileSize"`
 	Proportion string `json:"Proportion" xml:"Proportion"`
+	FileSize   string `json:"FileSize" xml:"FileSize"`
 }

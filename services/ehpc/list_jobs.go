@@ -82,11 +82,11 @@ type ListJobsRequest struct {
 // ListJobsResponse is the response struct for api ListJobs
 type ListJobsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Jobs       Jobs   `json:"Jobs" xml:"Jobs"`
+	PageSize   int            `json:"PageSize" xml:"PageSize"`
+	RequestId  string         `json:"RequestId" xml:"RequestId"`
+	PageNumber int            `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int            `json:"TotalCount" xml:"TotalCount"`
+	Jobs       JobsInListJobs `json:"Jobs" xml:"Jobs"`
 }
 
 // CreateListJobsRequest creates a request to invoke ListJobs API

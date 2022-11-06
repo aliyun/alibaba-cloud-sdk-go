@@ -82,15 +82,15 @@ type DescribeBackupSetDownloadTaskListRequest struct {
 // DescribeBackupSetDownloadTaskListResponse is the response struct for api DescribeBackupSetDownloadTaskList
 type DescribeBackupSetDownloadTaskListResponse struct {
 	*responses.BaseResponse
-	Success        bool                                     `json:"Success" xml:"Success"`
-	ErrCode        string                                   `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string                                   `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int                                      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string                                   `json:"RequestId" xml:"RequestId"`
-	TotalPages     int                                      `json:"TotalPages" xml:"TotalPages"`
-	PageSize       int                                      `json:"PageSize" xml:"PageSize"`
 	PageNum        int                                      `json:"PageNum" xml:"PageNum"`
+	RequestId      string                                   `json:"RequestId" xml:"RequestId"`
+	ErrCode        string                                   `json:"ErrCode" xml:"ErrCode"`
+	Success        bool                                     `json:"Success" xml:"Success"`
+	ErrMessage     string                                   `json:"ErrMessage" xml:"ErrMessage"`
+	TotalPages     int                                      `json:"TotalPages" xml:"TotalPages"`
 	TotalElements  int                                      `json:"TotalElements" xml:"TotalElements"`
+	PageSize       int                                      `json:"PageSize" xml:"PageSize"`
 	Items          ItemsInDescribeBackupSetDownloadTaskList `json:"Items" xml:"Items"`
 }
 
@@ -99,7 +99,7 @@ func CreateDescribeBackupSetDownloadTaskListRequest() (request *DescribeBackupSe
 	request = &DescribeBackupSetDownloadTaskListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList", "", "")
 	request.Method = requests.POST
 	return
 }

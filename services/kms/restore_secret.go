@@ -77,8 +77,8 @@ type RestoreSecretRequest struct {
 // RestoreSecretResponse is the response struct for api RestoreSecret
 type RestoreSecretResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	SecretName string `json:"SecretName" xml:"SecretName"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRestoreSecretRequest creates a request to invoke RestoreSecret API

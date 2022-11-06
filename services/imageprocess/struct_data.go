@@ -27,7 +27,9 @@ type Data struct {
 	DUrl              string                 `json:"DUrl" xml:"DUrl"`
 	ImageUrl          string                 `json:"ImageUrl" xml:"ImageUrl"`
 	Mask              string                 `json:"Mask" xml:"Mask"`
+	ResultsEnglish    map[string]interface{} `json:"ResultsEnglish" xml:"ResultsEnglish"`
 	ErrorCode         string                 `json:"ErrorCode" xml:"ErrorCode"`
+	BodyPart          string                 `json:"BodyPart" xml:"BodyPart"`
 	VolumeScore       string                 `json:"VolumeScore" xml:"VolumeScore"`
 	JobId             string                 `json:"JobId" xml:"JobId"`
 	OrgId             string                 `json:"OrgId" xml:"OrgId"`
@@ -40,15 +42,15 @@ type Data struct {
 	QuestionType      string                 `json:"QuestionType" xml:"QuestionType"`
 	AnswerType        string                 `json:"AnswerType" xml:"AnswerType"`
 	NUrl              string                 `json:"NUrl" xml:"NUrl"`
+	ImageType         string                 `json:"ImageType" xml:"ImageType"`
+	ImageQuality      float64                `json:"ImageQuality" xml:"ImageQuality"`
 	Status            string                 `json:"Status" xml:"Status"`
 	Results           map[string]interface{} `json:"Results" xml:"Results"`
-	ResultURL         string                 `json:"ResultURL" xml:"ResultURL"`
 	OrgName           string                 `json:"OrgName" xml:"OrgName"`
+	ResultURL         string                 `json:"ResultURL" xml:"ResultURL"`
 	ResultUrl         string                 `json:"ResultUrl" xml:"ResultUrl"`
 	Options           []string               `json:"Options" xml:"Options"`
 	Lesion            Lesion                 `json:"Lesion" xml:"Lesion"`
-	PulmonaryInfo     PulmonaryInfo          `json:"PulmonaryInfo" xml:"PulmonaryInfo"`
-	AortaInfo         AortaInfo              `json:"AortaInfo" xml:"AortaInfo"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
 	Detections        []Detections           `json:"Detections" xml:"Detections"`

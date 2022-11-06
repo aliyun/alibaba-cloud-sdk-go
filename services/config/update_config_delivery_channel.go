@@ -79,6 +79,7 @@ type UpdateConfigDeliveryChannelRequest struct {
 	DeliveryChannelCondition            string           `position:"Query" name:"DeliveryChannelCondition"`
 	ConfigurationItemChangeNotification requests.Boolean `position:"Query" name:"ConfigurationItemChangeNotification"`
 	DeliveryChannelName                 string           `position:"Query" name:"DeliveryChannelName"`
+	DeliverySnapshotTime                string           `position:"Query" name:"DeliverySnapshotTime"`
 	DeliveryChannelId                   string           `position:"Query" name:"DeliveryChannelId"`
 	OversizedDataOSSTargetArn           string           `position:"Query" name:"OversizedDataOSSTargetArn"`
 	Status                              requests.Integer `position:"Query" name:"Status"`

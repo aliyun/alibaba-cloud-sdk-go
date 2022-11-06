@@ -83,13 +83,13 @@ type DescribeDomainPathDataRequest struct {
 // DescribeDomainPathDataResponse is the response struct for api DescribeDomainPathData
 type DescribeDomainPathDataResponse struct {
 	*responses.BaseResponse
-	DomainName          string              `json:"DomainName" xml:"DomainName"`
-	StartTime           string              `json:"StartTime" xml:"StartTime"`
 	EndTime             string              `json:"EndTime" xml:"EndTime"`
+	StartTime           string              `json:"StartTime" xml:"StartTime"`
 	PageSize            int                 `json:"PageSize" xml:"PageSize"`
 	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
-	DataInterval        string              `json:"DataInterval" xml:"DataInterval"`
 	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
+	DomainName          string              `json:"DomainName" xml:"DomainName"`
+	DataInterval        string              `json:"DataInterval" xml:"DataInterval"`
 	PathDataPerInterval PathDataPerInterval `json:"PathDataPerInterval" xml:"PathDataPerInterval"`
 }
 

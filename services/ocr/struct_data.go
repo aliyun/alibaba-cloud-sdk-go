@@ -30,8 +30,8 @@ type Data struct {
 	LegalPerson         string               `json:"LegalPerson" xml:"LegalPerson"`
 	RegisterNumber      string               `json:"RegisterNumber" xml:"RegisterNumber"`
 	IssuePlaceRaw       string               `json:"IssuePlaceRaw" xml:"IssuePlaceRaw"`
-	Price               float64              `json:"Price" xml:"Price"`
 	Destination         string               `json:"Destination" xml:"Destination"`
+	Price               float64              `json:"Price" xml:"Price"`
 	Relation            string               `json:"Relation" xml:"Relation"`
 	Height              int64                `json:"Height" xml:"Height"`
 	BirthPlaceRaw       string               `json:"BirthPlaceRaw" xml:"BirthPlaceRaw"`
@@ -86,11 +86,11 @@ type Data struct {
 	FaceResult          FaceResult           `json:"FaceResult" xml:"FaceResult"`
 	Summary             Summary              `json:"Summary" xml:"Summary"`
 	Box                 Box                  `json:"Box" xml:"Box"`
+	Content             Content              `json:"Content" xml:"Content"`
 	TitleArea           TitleArea            `json:"TitleArea" xml:"TitleArea"`
 	Stamp               Stamp                `json:"Stamp" xml:"Stamp"`
 	Emblem              Emblem               `json:"Emblem" xml:"Emblem"`
 	FrontResult         FrontResult          `json:"FrontResult" xml:"FrontResult"`
-	Content             Content              `json:"Content" xml:"Content"`
 	Title               Title                `json:"Title" xml:"Title"`
 	QRCode              QRCode               `json:"QRCode" xml:"QRCode"`
 	Elements            []Element            `json:"Elements" xml:"Elements"`

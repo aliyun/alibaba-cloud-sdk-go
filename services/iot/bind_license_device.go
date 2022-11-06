@@ -71,12 +71,13 @@ func (client *Client) BindLicenseDeviceWithCallback(request *BindLicenseDeviceRe
 // BindLicenseDeviceRequest is the request struct for api BindLicenseDevice
 type BindLicenseDeviceRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
-	IotIdList     *[]string `position:"Query" name:"IotIdList"  type:"Repeated"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
-	ApiProduct    string    `position:"Body" name:"ApiProduct"`
-	ApiRevision   string    `position:"Body" name:"ApiRevision"`
-	LicenseCode   string    `position:"Query" name:"LicenseCode"`
+	DeviceNameList *[]string `position:"Body" name:"DeviceNameList"  type:"Repeated"`
+	IotInstanceId  string    `position:"Query" name:"IotInstanceId"`
+	IotIdList      *[]string `position:"Body" name:"IotIdList"  type:"Repeated"`
+	ProductKey     string    `position:"Query" name:"ProductKey"`
+	ApiProduct     string    `position:"Body" name:"ApiProduct"`
+	ApiRevision    string    `position:"Body" name:"ApiRevision"`
+	LicenseCode    string    `position:"Query" name:"LicenseCode"`
 }
 
 // BindLicenseDeviceResponse is the response struct for api BindLicenseDevice

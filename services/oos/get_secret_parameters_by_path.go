@@ -81,10 +81,10 @@ type GetSecretParametersByPathRequest struct {
 // GetSecretParametersByPathResponse is the response struct for api GetSecretParametersByPath
 type GetSecretParametersByPathResponse struct {
 	*responses.BaseResponse
-	RequestId  string      `json:"RequestId" xml:"RequestId"`
 	NextToken  string      `json:"NextToken" xml:"NextToken"`
-	MaxResults int         `json:"MaxResults" xml:"MaxResults"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
 	TotalCount int         `json:"TotalCount" xml:"TotalCount"`
+	MaxResults int         `json:"MaxResults" xml:"MaxResults"`
 	Parameters []Parameter `json:"Parameters" xml:"Parameters"`
 }
 
@@ -93,7 +93,7 @@ func CreateGetSecretParametersByPathRequest() (request *GetSecretParametersByPat
 	request = &GetSecretParametersByPathRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetSecretParametersByPath", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetSecretParametersByPath", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

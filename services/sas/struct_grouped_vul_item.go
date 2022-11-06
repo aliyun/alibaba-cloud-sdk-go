@@ -17,13 +17,23 @@ package sas
 
 // GroupedVulItem is a nested struct in sas response
 type GroupedVulItem struct {
-	Name         string `json:"Name" xml:"Name"`
-	AliasName    string `json:"AliasName" xml:"AliasName"`
-	Type         string `json:"Type" xml:"Type"`
-	GmtLast      int64  `json:"GmtLast" xml:"GmtLast"`
-	AsapCount    int    `json:"AsapCount" xml:"AsapCount"`
-	LaterCount   int    `json:"LaterCount" xml:"LaterCount"`
-	NntfCount    int    `json:"NntfCount" xml:"NntfCount"`
-	HandledCount int    `json:"HandledCount" xml:"HandledCount"`
-	Tags         string `json:"Tags" xml:"Tags"`
+	Name           string `json:"Name" xml:"Name"`
+	Status         int    `json:"Status" xml:"Status"`
+	Tags           string `json:"Tags" xml:"Tags"`
+	AsapCount      int    `json:"AsapCount" xml:"AsapCount"`
+	PendingCount   int    `json:"PendingCount" xml:"PendingCount"`
+	LaterCount     int    `json:"LaterCount" xml:"LaterCount"`
+	CheckType      int    `json:"CheckType" xml:"CheckType"`
+	LastScanTime   int64  `json:"LastScanTime" xml:"LastScanTime"`
+	GmtLast        int64  `json:"GmtLast" xml:"GmtLast"`
+	TotalFixCount  int64  `json:"TotalFixCount" xml:"TotalFixCount"`
+	RuleModifyTime int64  `json:"RuleModifyTime" xml:"RuleModifyTime"`
+	GmtLastCheck   int64  `json:"GmtLastCheck" xml:"GmtLastCheck"`
+	Progress       int    `json:"Progress" xml:"Progress"`
+	GmtPublish     int64  `json:"GmtPublish" xml:"GmtPublish"`
+	AliasName      string `json:"AliasName" xml:"AliasName"`
+	HandledCount   int    `json:"HandledCount" xml:"HandledCount"`
+	Description    string `json:"Description" xml:"Description"`
+	NntfCount      int    `json:"NntfCount" xml:"NntfCount"`
+	Type           string `json:"Type" xml:"Type"`
 }

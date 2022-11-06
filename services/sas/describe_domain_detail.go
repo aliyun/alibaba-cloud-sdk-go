@@ -78,11 +78,11 @@ type DescribeDomainDetailRequest struct {
 // DescribeDomainDetailResponse is the response struct for api DescribeDomainDetail
 type DescribeDomainDetailResponse struct {
 	*responses.BaseResponse
-	RequestId         string             `json:"RequestId" xml:"RequestId"`
 	Domain            string             `json:"Domain" xml:"Domain"`
-	RootDomain        string             `json:"RootDomain" xml:"RootDomain"`
+	RequestId         string             `json:"RequestId" xml:"RequestId"`
 	VulCount          int                `json:"VulCount" xml:"VulCount"`
 	AlarmCount        int                `json:"AlarmCount" xml:"AlarmCount"`
+	RootDomain        string             `json:"RootDomain" xml:"RootDomain"`
 	DomainDetailItems []DomainDetailItem `json:"DomainDetailItems" xml:"DomainDetailItems"`
 }
 

@@ -81,9 +81,9 @@ type CreateUserUsageDataExportTaskRequest struct {
 // CreateUserUsageDataExportTaskResponse is the response struct for api CreateUserUsageDataExportTask
 type CreateUserUsageDataExportTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	StartTime string `json:"StartTime" xml:"StartTime"`
 	EndTime   string `json:"EndTime" xml:"EndTime"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 

@@ -81,7 +81,9 @@ type AddCompanyTemplateRequest struct {
 	Vendor           string           `position:"Body" name:"Vendor"`
 	IfDefault        requests.Boolean `position:"Body" name:"IfDefault"`
 	TemplateName     string           `position:"Body" name:"TemplateName"`
+	TemplateSceneId  string           `position:"Body" name:"TemplateSceneId"`
 	IfSourceCode     requests.Boolean `position:"Body" name:"IfSourceCode"`
+	GroupId          string           `position:"Body" name:"GroupId"`
 	IfMember         requests.Boolean `position:"Body" name:"IfMember"`
 	Layout           requests.Integer `position:"Body" name:"Layout"`
 	IfOutOfInventory requests.Boolean `position:"Body" name:"IfOutOfInventory"`

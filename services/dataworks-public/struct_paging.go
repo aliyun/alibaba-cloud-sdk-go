@@ -17,9 +17,10 @@ package dataworks_public
 
 // Paging is a nested struct in dataworks_public response
 type Paging struct {
-	TotalCount  int               `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int               `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int               `json:"PageSize" xml:"PageSize"`
-	DutyRoster  []DutyRosterItem  `json:"DutyRoster" xml:"DutyRoster"`
-	DutyRosters []DutyRostersItem `json:"DutyRosters" xml:"DutyRosters"`
+	TotalCount     int                  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int                  `json:"PageSize" xml:"PageSize"`
+	ShiftSchedules []ShiftSchedulesItem `json:"ShiftSchedules" xml:"ShiftSchedules"`
+	ShiftPersons   []ShiftPersonsItem   `json:"ShiftPersons" xml:"ShiftPersons"`
+	Nodes          []NodesItem          `json:"Nodes" xml:"Nodes"`
 }

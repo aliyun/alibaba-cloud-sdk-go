@@ -71,9 +71,12 @@ func (client *Client) UpdateFaceEntityWithCallback(request *UpdateFaceEntityRequ
 // UpdateFaceEntityRequest is the request struct for api UpdateFaceEntity
 type UpdateFaceEntityRequest struct {
 	*requests.RpcRequest
-	EntityId string `position:"Body" name:"EntityId"`
-	Labels   string `position:"Body" name:"Labels"`
-	DbName   string `position:"Body" name:"DbName"`
+	EntityId           string           `position:"Body" name:"EntityId"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Labels             string           `position:"Body" name:"Labels"`
+	DbName             string           `position:"Body" name:"DbName"`
 }
 
 // UpdateFaceEntityResponse is the response struct for api UpdateFaceEntity

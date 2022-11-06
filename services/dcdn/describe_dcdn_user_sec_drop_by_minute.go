@@ -88,10 +88,10 @@ type DescribeDcdnUserSecDropByMinuteResponse struct {
 	*responses.BaseResponse
 	RequestId   string     `json:"RequestId" xml:"RequestId"`
 	Description string     `json:"Description" xml:"Description"`
-	TotalCount  int        `json:"TotalCount" xml:"TotalCount"`
 	Len         int        `json:"Len" xml:"Len"`
 	PageNumber  int        `json:"PageNumber" xml:"PageNumber"`
 	PageSize    int        `json:"PageSize" xml:"PageSize"`
+	TotalCount  int        `json:"TotalCount" xml:"TotalCount"`
 	Rows        []RowsItem `json:"Rows" xml:"Rows"`
 }
 

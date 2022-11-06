@@ -75,9 +75,9 @@ type CreateDataSourceRequest struct {
 	Description    string           `position:"Query" name:"Description"`
 	Content        string           `position:"Query" name:"Content"`
 	SubType        string           `position:"Query" name:"SubType"`
-	Name           string           `position:"Query" name:"Name"`
 	EnvType        requests.Integer `position:"Query" name:"EnvType"`
 	ProjectId      requests.Integer `position:"Query" name:"ProjectId"`
+	Name           string           `position:"Query" name:"Name"`
 }
 
 // CreateDataSourceResponse is the response struct for api CreateDataSource

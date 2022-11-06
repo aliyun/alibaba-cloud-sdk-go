@@ -92,7 +92,7 @@ func CreateQuerySlsLogStoreListRequest() (request *QuerySlsLogStoreListRequest) 
 	request = &QuerySlsLogStoreListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QuerySlsLogStoreList", "/pop/v5/k8s/sls/query_sls_log_store_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QuerySlsLogStoreList", "/pop/v5/k8s/sls/query_sls_log_store_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

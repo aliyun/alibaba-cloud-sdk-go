@@ -78,10 +78,10 @@ type RotateSecretRequest struct {
 // RotateSecretResponse is the response struct for api RotateSecret
 type RotateSecretResponse struct {
 	*responses.BaseResponse
-	Arn        string `json:"Arn" xml:"Arn"`
 	VersionId  string `json:"VersionId" xml:"VersionId"`
 	SecretName string `json:"SecretName" xml:"SecretName"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Arn        string `json:"Arn" xml:"Arn"`
 }
 
 // CreateRotateSecretRequest creates a request to invoke RotateSecret API

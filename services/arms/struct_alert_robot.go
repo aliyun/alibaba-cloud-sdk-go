@@ -17,10 +17,13 @@ package arms
 
 // AlertRobot is a nested struct in arms response
 type AlertRobot struct {
-	RobotId      float64 `json:"RobotId" xml:"RobotId"`
-	RobotName    string  `json:"RobotName" xml:"RobotName"`
-	Type         string  `json:"Type" xml:"Type"`
-	RobotAddress string  `json:"RobotAddress" xml:"RobotAddress"`
-	DailyNoc     bool    `json:"DailyNoc" xml:"DailyNoc"`
-	DailyNocTime string  `json:"DailyNocTime" xml:"DailyNocTime"`
+	RobotId        float64 `json:"RobotId" xml:"RobotId"`
+	RobotName      string  `json:"RobotName" xml:"RobotName"`
+	Type           string  `json:"Type" xml:"Type"`
+	RobotAddress   string  `json:"RobotAddress" xml:"RobotAddress"`
+	DailyNoc       bool    `json:"DailyNoc" xml:"DailyNoc"`
+	DailyNocTime   string  `json:"DailyNocTime" xml:"DailyNocTime"`
+	Token          string  `json:"Token" xml:"Token"`
+	EnableOutgoing bool    `json:"EnableOutgoing" xml:"EnableOutgoing"`
+	CardTemplate   string  `json:"CardTemplate" xml:"CardTemplate"`
 }

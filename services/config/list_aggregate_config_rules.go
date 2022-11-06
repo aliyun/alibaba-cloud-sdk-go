@@ -71,17 +71,25 @@ func (client *Client) ListAggregateConfigRulesWithCallback(request *ListAggregat
 // ListAggregateConfigRulesRequest is the request struct for api ListAggregateConfigRules
 type ListAggregateConfigRulesRequest struct {
 	*requests.RpcRequest
-	FilterInCompliancePack           requests.Boolean `position:"Query" name:"FilterInCompliancePack"`
-	MessageType                      string           `position:"Query" name:"MessageType"`
-	ConfigRuleState                  string           `position:"Query" name:"ConfigRuleState"`
-	AggregatorId                     string           `position:"Query" name:"AggregatorId"`
-	FilterInCompliancePackExcludeIds string           `position:"Query" name:"FilterInCompliancePackExcludeIds"`
-	PageNumber                       requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize                         requests.Integer `position:"Query" name:"PageSize"`
-	CompliancePackId                 string           `position:"Query" name:"CompliancePackId"`
-	ComplianceType                   string           `position:"Query" name:"ComplianceType"`
-	RiskLevel                        requests.Integer `position:"Query" name:"RiskLevel"`
-	ConfigRuleName                   string           `position:"Query" name:"ConfigRuleName"`
+	FilterInCompliancePack           requests.Boolean            `position:"Query" name:"FilterInCompliancePack"`
+	MessageType                      string                      `position:"Query" name:"MessageType"`
+	ConfigRuleState                  string                      `position:"Query" name:"ConfigRuleState"`
+	AggregatorId                     string                      `position:"Query" name:"AggregatorId"`
+	FilterInCompliancePackExcludeIds string                      `position:"Query" name:"FilterInCompliancePackExcludeIds"`
+	PageNumber                       requests.Integer            `position:"Query" name:"PageNumber"`
+	PageSize                         requests.Integer            `position:"Query" name:"PageSize"`
+	CompliancePackId                 string                      `position:"Query" name:"CompliancePackId"`
+	Tag                              ListAggregateConfigRulesTag `position:"Query" name:"Tag"  type:"Struct"`
+	Keyword                          string                      `position:"Query" name:"Keyword"`
+	ComplianceType                   string                      `position:"Query" name:"ComplianceType"`
+	RiskLevel                        requests.Integer            `position:"Query" name:"RiskLevel"`
+	ConfigRuleName                   string                      `position:"Query" name:"ConfigRuleName"`
+}
+
+// ListAggregateConfigRulesTag is a repeated param struct in ListAggregateConfigRulesRequest
+type ListAggregateConfigRulesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListAggregateConfigRulesResponse is the response struct for api ListAggregateConfigRules
@@ -97,7 +105,7 @@ func CreateListAggregateConfigRulesRequest() (request *ListAggregateConfigRulesR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Config", "2020-09-07", "ListAggregateConfigRules", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

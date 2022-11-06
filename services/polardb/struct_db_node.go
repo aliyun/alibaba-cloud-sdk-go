@@ -30,5 +30,6 @@ type DBNode struct {
 	RegionId         string `json:"RegionId" xml:"RegionId"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
 	DBNodeId         string `json:"DBNodeId" xml:"DBNodeId"`
+	SccMode          string `json:"SccMode" xml:"SccMode"`
 	ImciSwitch       string `json:"ImciSwitch" xml:"ImciSwitch"`
 }

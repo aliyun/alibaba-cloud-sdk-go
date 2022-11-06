@@ -71,17 +71,18 @@ func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest,
 // CreateTemplateRequest is the request struct for api CreateTemplate
 type CreateTemplateRequest struct {
 	*requests.RpcRequest
-	Content      string                 `position:"Query" name:"Content"`
-	Tags         map[string]interface{} `position:"Query" name:"Tags"`
-	TemplateName string                 `position:"Query" name:"TemplateName"`
-	VersionName  string                 `position:"Query" name:"VersionName"`
+	Content         string                 `position:"Query" name:"Content"`
+	Tags            map[string]interface{} `position:"Query" name:"Tags"`
+	ResourceGroupId string                 `position:"Query" name:"ResourceGroupId"`
+	TemplateName    string                 `position:"Query" name:"TemplateName"`
+	VersionName     string                 `position:"Query" name:"VersionName"`
 }
 
 // CreateTemplateResponse is the response struct for api CreateTemplate
 type CreateTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
 	TemplateType string   `json:"TemplateType" xml:"TemplateType"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
 	Template     Template `json:"Template" xml:"Template"`
 }
 
@@ -90,7 +91,7 @@ func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
 	request = &CreateTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "CreateTemplate", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "CreateTemplate", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

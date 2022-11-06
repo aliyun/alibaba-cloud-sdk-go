@@ -17,7 +17,7 @@ package ehpc
 
 // SeriesInfo is a nested struct in ehpc response
 type SeriesInfo struct {
-	SeriesId   string `json:"SeriesId" xml:"SeriesId"`
 	SeriesName string `json:"SeriesName" xml:"SeriesName"`
+	SeriesId   string `json:"SeriesId" xml:"SeriesId"`
 	Roles      Roles  `json:"Roles" xml:"Roles"`
 }

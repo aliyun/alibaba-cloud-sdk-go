@@ -71,14 +71,17 @@ func (client *Client) CreateOrUpdateIMRobotWithCallback(request *CreateOrUpdateI
 // CreateOrUpdateIMRobotRequest is the request struct for api CreateOrUpdateIMRobot
 type CreateOrUpdateIMRobotRequest struct {
 	*requests.RpcRequest
-	DailyNoc     requests.Boolean `position:"Body" name:"DailyNoc"`
-	RobotAddress string           `position:"Body" name:"RobotAddress"`
-	DingSignKey  string           `position:"Body" name:"DingSignKey"`
-	RobotName    string           `position:"Body" name:"RobotName"`
-	RobotId      requests.Integer `position:"Body" name:"RobotId"`
-	Type         string           `position:"Body" name:"Type"`
-	ProxyUserId  string           `position:"Body" name:"ProxyUserId"`
-	DailyNocTime string           `position:"Body" name:"DailyNocTime"`
+	DailyNoc       requests.Boolean `position:"Body" name:"DailyNoc"`
+	RobotAddress   string           `position:"Body" name:"RobotAddress"`
+	DingSignKey    string           `position:"Body" name:"DingSignKey"`
+	RobotName      string           `position:"Body" name:"RobotName"`
+	RobotId        requests.Integer `position:"Body" name:"RobotId"`
+	Type           string           `position:"Body" name:"Type"`
+	ProxyUserId    string           `position:"Body" name:"ProxyUserId"`
+	DailyNocTime   string           `position:"Body" name:"DailyNocTime"`
+	Token          string           `position:"Body" name:"Token"`
+	CardTemplate   string           `position:"Body" name:"CardTemplate"`
+	EnableOutgoing requests.Boolean `position:"Body" name:"EnableOutgoing"`
 }
 
 // CreateOrUpdateIMRobotResponse is the response struct for api CreateOrUpdateIMRobot

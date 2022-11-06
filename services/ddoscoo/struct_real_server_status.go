@@ -17,6 +17,6 @@ package ddoscoo
 
 // RealServerStatus is a nested struct in ddoscoo response
 type RealServerStatus struct {
-	Address string `json:"Address" xml:"Address"`
 	Status  string `json:"Status" xml:"Status"`
+	Address string `json:"Address" xml:"Address"`
 }

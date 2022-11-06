@@ -71,18 +71,27 @@ func (client *Client) CreateTransitRouterWithCallback(request *CreateTransitRout
 // CreateTransitRouterRequest is the request struct for api CreateTransitRouter
 type CreateTransitRouterRequest struct {
 	*requests.RpcRequest
-	TransitRouterName        string           `position:"Query" name:"TransitRouterName"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ServiceMode              string           `position:"Query" name:"ServiceMode"`
-	ClientToken              string           `position:"Query" name:"ClientToken"`
-	CenId                    string           `position:"Query" name:"CenId"`
-	Type                     string           `position:"Query" name:"Type"`
-	DryRun                   requests.Boolean `position:"Query" name:"DryRun"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	TransitRouterDescription string           `position:"Query" name:"TransitRouterDescription"`
-	SupportMulticast         requests.Boolean `position:"Query" name:"SupportMulticast"`
+	TransitRouterName        string                                      `position:"Query" name:"TransitRouterName"`
+	ResourceOwnerId          requests.Integer                            `position:"Query" name:"ResourceOwnerId"`
+	ServiceMode              string                                      `position:"Query" name:"ServiceMode"`
+	ClientToken              string                                      `position:"Query" name:"ClientToken"`
+	CenId                    string                                      `position:"Query" name:"CenId"`
+	TransitRouterCidrList    *[]CreateTransitRouterTransitRouterCidrList `position:"Query" name:"TransitRouterCidrList"  type:"Json"`
+	Type                     string                                      `position:"Query" name:"Type"`
+	DryRun                   requests.Boolean                            `position:"Query" name:"DryRun"`
+	ResourceOwnerAccount     string                                      `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount             string                                      `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer                            `position:"Query" name:"OwnerId"`
+	TransitRouterDescription string                                      `position:"Query" name:"TransitRouterDescription"`
+	SupportMulticast         requests.Boolean                            `position:"Query" name:"SupportMulticast"`
+}
+
+// CreateTransitRouterTransitRouterCidrList is a repeated param struct in CreateTransitRouterRequest
+type CreateTransitRouterTransitRouterCidrList struct {
+	Name             string `name:"Name"`
+	Description      string `name:"Description"`
+	Cidr             string `name:"Cidr"`
+	PublishCidrRoute string `name:"PublishCidrRoute"`
 }
 
 // CreateTransitRouterResponse is the response struct for api CreateTransitRouter
@@ -97,7 +106,7 @@ func CreateCreateTransitRouterRequest() (request *CreateTransitRouterRequest) {
 	request = &CreateTransitRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouter", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouter", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

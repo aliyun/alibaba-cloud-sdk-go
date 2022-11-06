@@ -85,7 +85,7 @@ func CreateDeleteDeliveryHistoryJobRequest() (request *DeleteDeliveryHistoryJobR
 	request = &DeleteDeliveryHistoryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2020-07-06", "DeleteDeliveryHistoryJob", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "DeleteDeliveryHistoryJob", "", "")
 	request.Method = requests.POST
 	return
 }

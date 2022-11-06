@@ -17,10 +17,11 @@ package cbn
 
 // GrantRule is a nested struct in cbn response
 type GrantRule struct {
-	ChildInstanceType     string `json:"ChildInstanceType" xml:"ChildInstanceType"`
-	ChildInstanceRegionId string `json:"ChildInstanceRegionId" xml:"ChildInstanceRegionId"`
-	ChildInstanceOwnerId  int64  `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
 	ChildInstanceId       string `json:"ChildInstanceId" xml:"ChildInstanceId"`
+	ChildInstanceOwnerId  int64  `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
+	ChildInstanceRegionId string `json:"ChildInstanceRegionId" xml:"ChildInstanceRegionId"`
+	ChildInstanceType     string `json:"ChildInstanceType" xml:"ChildInstanceType"`
+	CenOwnerId            int64  `json:"CenOwnerId" xml:"CenOwnerId"`
 	CenId                 string `json:"CenId" xml:"CenId"`
 	OrderType             string `json:"OrderType" xml:"OrderType"`
 }

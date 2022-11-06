@@ -75,6 +75,7 @@ type CreateJobTemplateRequest struct {
 	ClockTime          string           `position:"Query" name:"ClockTime"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
 	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	UnzipCmd           string           `position:"Query" name:"UnzipCmd"`
 	PackagePath        string           `position:"Query" name:"PackagePath"`
 	Mem                string           `position:"Query" name:"Mem"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
@@ -84,8 +85,10 @@ type CreateJobTemplateRequest struct {
 	Thread             requests.Integer `position:"Query" name:"Thread"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
 	Gpu                requests.Integer `position:"Query" name:"Gpu"`
+	WithUnzipCmd       requests.Boolean `position:"Query" name:"WithUnzipCmd"`
 	Node               requests.Integer `position:"Query" name:"Node"`
 	Task               requests.Integer `position:"Query" name:"Task"`
+	InputFileUrl       string           `position:"Query" name:"InputFileUrl"`
 	Name               string           `position:"Query" name:"Name"`
 	Queue              string           `position:"Query" name:"Queue"`
 }
@@ -93,8 +96,8 @@ type CreateJobTemplateRequest struct {
 // CreateJobTemplateResponse is the response struct for api CreateJobTemplate
 type CreateJobTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateJobTemplateRequest creates a request to invoke CreateJobTemplate API

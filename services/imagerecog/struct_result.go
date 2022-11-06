@@ -17,8 +17,8 @@ package imagerecog
 
 // Result is a nested struct in imagerecog response
 type Result struct {
-	Label      string     `json:"Label" xml:"Label"`
 	Suggestion string     `json:"Suggestion" xml:"Suggestion"`
+	Label      string     `json:"Label" xml:"Label"`
 	Rate       float64    `json:"Rate" xml:"Rate"`
 	LogosData  []LogoData `json:"LogosData" xml:"LogosData"`
 }

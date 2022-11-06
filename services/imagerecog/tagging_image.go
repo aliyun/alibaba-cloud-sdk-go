@@ -89,7 +89,7 @@ func CreateTaggingImageRequest() (request *TaggingImageRequest) {
 	request = &TaggingImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "TaggingImage", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "TaggingImage", "", "")
 	request.Method = requests.POST
 	return
 }

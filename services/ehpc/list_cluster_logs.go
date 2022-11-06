@@ -79,12 +79,12 @@ type ListClusterLogsRequest struct {
 // ListClusterLogsResponse is the response struct for api ListClusterLogs
 type ListClusterLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                `json:"RequestId" xml:"RequestId"`
-	TotalCount int                   `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                   `json:"PageSize" xml:"PageSize"`
-	ClusterId  string                `json:"ClusterId" xml:"ClusterId"`
-	Logs       LogsInListClusterLogs `json:"Logs" xml:"Logs"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	ClusterId  string `json:"ClusterId" xml:"ClusterId"`
+	Logs       Logs   `json:"Logs" xml:"Logs"`
 }
 
 // CreateListClusterLogsRequest creates a request to invoke ListClusterLogs API

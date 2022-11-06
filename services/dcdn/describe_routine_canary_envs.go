@@ -77,8 +77,8 @@ type DescribeRoutineCanaryEnvsRequest struct {
 // DescribeRoutineCanaryEnvsResponse is the response struct for api DescribeRoutineCanaryEnvs
 type DescribeRoutineCanaryEnvsResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeRoutineCanaryEnvsRequest creates a request to invoke DescribeRoutineCanaryEnvs API

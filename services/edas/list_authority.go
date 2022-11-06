@@ -87,7 +87,7 @@ func CreateListAuthorityRequest() (request *ListAuthorityRequest) {
 	request = &ListAuthorityRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListAuthority", "/pop/v5/account/authority_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListAuthority", "/pop/v5/account/authority_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

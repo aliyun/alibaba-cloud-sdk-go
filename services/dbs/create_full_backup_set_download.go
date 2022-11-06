@@ -80,11 +80,11 @@ type CreateFullBackupSetDownloadRequest struct {
 // CreateFullBackupSetDownloadResponse is the response struct for api CreateFullBackupSetDownload
 type CreateFullBackupSetDownloadResponse struct {
 	*responses.BaseResponse
-	Success                 bool   `json:"Success" xml:"Success"`
-	ErrCode                 string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage              string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode          int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId               string `json:"RequestId" xml:"RequestId"`
+	ErrCode                 string `json:"ErrCode" xml:"ErrCode"`
+	Success                 bool   `json:"Success" xml:"Success"`
+	ErrMessage              string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupSetDownloadTaskId string `json:"BackupSetDownloadTaskId" xml:"BackupSetDownloadTaskId"`
 }
 
@@ -93,7 +93,7 @@ func CreateCreateFullBackupSetDownloadRequest() (request *CreateFullBackupSetDow
 	request = &CreateFullBackupSetDownloadRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateFullBackupSetDownload", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateFullBackupSetDownload", "", "")
 	request.Method = requests.POST
 	return
 }

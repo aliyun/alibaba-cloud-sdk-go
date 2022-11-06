@@ -17,26 +17,27 @@ package cloudesl
 
 // EslItemBindInfo is a nested struct in cloudesl response
 type EslItemBindInfo struct {
-	PromotionText   string `json:"PromotionText" xml:"PromotionText"`
-	BindId          string `json:"BindId" xml:"BindId"`
-	StoreId         string `json:"StoreId" xml:"StoreId"`
-	TemplateId      string `json:"TemplateId" xml:"TemplateId"`
-	EslPic          string `json:"EslPic" xml:"EslPic"`
-	EslStatus       string `json:"EslStatus" xml:"EslStatus"`
-	ItemTitle       string `json:"ItemTitle" xml:"ItemTitle"`
-	OriginalPrice   string `json:"OriginalPrice" xml:"OriginalPrice"`
-	TemplateSceneId string `json:"TemplateSceneId" xml:"TemplateSceneId"`
-	GmtModified     string `json:"GmtModified" xml:"GmtModified"`
-	ActionPrice     string `json:"ActionPrice" xml:"ActionPrice"`
-	PriceUnit       string `json:"PriceUnit" xml:"PriceUnit"`
-	EslConnectAp    string `json:"EslConnectAp" xml:"EslConnectAp"`
-	SkuId           string `json:"SkuId" xml:"SkuId"`
 	EslBarCode      string `json:"EslBarCode" xml:"EslBarCode"`
-	ItemShortTitle  string `json:"ItemShortTitle" xml:"ItemShortTitle"`
-	BePromotion     bool   `json:"BePromotion" xml:"BePromotion"`
-	EslModel        string `json:"EslModel" xml:"EslModel"`
-	ItemBarCode     string `json:"ItemBarCode" xml:"ItemBarCode"`
-	ItemId          string `json:"ItemId" xml:"ItemId"`
+	TemplateSceneId string `json:"TemplateSceneId" xml:"TemplateSceneId"`
+	ActionPrice     string `json:"ActionPrice" xml:"ActionPrice"`
+	ItemTitle       string `json:"ItemTitle" xml:"ItemTitle"`
 	PromotionStart  string `json:"PromotionStart" xml:"PromotionStart"`
+	PriceUnit       string `json:"PriceUnit" xml:"PriceUnit"`
+	OriginalPrice   string `json:"OriginalPrice" xml:"OriginalPrice"`
+	ItemId          string `json:"ItemId" xml:"ItemId"`
+	GmtModified     string `json:"GmtModified" xml:"GmtModified"`
+	EslPic          string `json:"EslPic" xml:"EslPic"`
+	StoreId         string `json:"StoreId" xml:"StoreId"`
+	ItemShortTitle  string `json:"ItemShortTitle" xml:"ItemShortTitle"`
+	BindId          string `json:"BindId" xml:"BindId"`
+	PromotionText   string `json:"PromotionText" xml:"PromotionText"`
+	EslModel        string `json:"EslModel" xml:"EslModel"`
+	BePromotion     bool   `json:"BePromotion" xml:"BePromotion"`
+	SkuId           string `json:"SkuId" xml:"SkuId"`
+	EslConnectAp    string `json:"EslConnectAp" xml:"EslConnectAp"`
+	EslStatus       string `json:"EslStatus" xml:"EslStatus"`
+	TemplateId      string `json:"TemplateId" xml:"TemplateId"`
 	PromotionEnd    string `json:"PromotionEnd" xml:"PromotionEnd"`
+	ItemBarCode     string `json:"ItemBarCode" xml:"ItemBarCode"`
+	ContainerName   string `json:"ContainerName" xml:"ContainerName"`
 }

@@ -22,6 +22,7 @@ type DeliveryChannel struct {
 	NonCompliantNotification            bool   `json:"NonCompliantNotification" xml:"NonCompliantNotification"`
 	DeliveryChannelName                 string `json:"DeliveryChannelName" xml:"DeliveryChannelName"`
 	AggregatorId                        string `json:"AggregatorId" xml:"AggregatorId"`
+	DeliverySnapshotTime                string `json:"DeliverySnapshotTime" xml:"DeliverySnapshotTime"`
 	DeliveryChannelId                   string `json:"DeliveryChannelId" xml:"DeliveryChannelId"`
 	DeliveryChannelAssumeRoleArn        string `json:"DeliveryChannelAssumeRoleArn" xml:"DeliveryChannelAssumeRoleArn"`
 	AccountId                           string `json:"AccountId" xml:"AccountId"`

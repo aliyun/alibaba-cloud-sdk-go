@@ -78,19 +78,19 @@ type DescribeRefreshQuotaRequest struct {
 // DescribeRefreshQuotaResponse is the response struct for api DescribeRefreshQuota
 type DescribeRefreshQuotaResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	UrlQuota          string `json:"UrlQuota" xml:"UrlQuota"`
-	DirQuota          string `json:"DirQuota" xml:"DirQuota"`
-	UrlRemain         string `json:"UrlRemain" xml:"UrlRemain"`
-	DirRemain         string `json:"DirRemain" xml:"DirRemain"`
-	PreloadQuota      string `json:"PreloadQuota" xml:"PreloadQuota"`
-	BlockQuota        string `json:"BlockQuota" xml:"BlockQuota"`
 	PreloadRemain     string `json:"PreloadRemain" xml:"PreloadRemain"`
 	BlockRemain       string `json:"BlockRemain" xml:"BlockRemain"`
-	RegexQuota        string `json:"RegexQuota" xml:"RegexQuota"`
 	RegexRemain       string `json:"RegexRemain" xml:"RegexRemain"`
+	UrlRemain         string `json:"UrlRemain" xml:"UrlRemain"`
+	DirRemain         string `json:"DirRemain" xml:"DirRemain"`
+	UrlQuota          string `json:"UrlQuota" xml:"UrlQuota"`
+	BlockQuota        string `json:"BlockQuota" xml:"BlockQuota"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	DirQuota          string `json:"DirQuota" xml:"DirQuota"`
 	PreloadEdgeQuota  string `json:"PreloadEdgeQuota" xml:"PreloadEdgeQuota"`
 	PreloadEdgeRemain string `json:"PreloadEdgeRemain" xml:"PreloadEdgeRemain"`
+	PreloadQuota      string `json:"PreloadQuota" xml:"PreloadQuota"`
+	RegexQuota        string `json:"RegexQuota" xml:"RegexQuota"`
 }
 
 // CreateDescribeRefreshQuotaRequest creates a request to invoke DescribeRefreshQuota API

@@ -71,15 +71,16 @@ func (client *Client) DescribeAllGroupsWithCallback(request *DescribeAllGroupsRe
 // DescribeAllGroupsRequest is the request struct for api DescribeAllGroups
 type DescribeAllGroupsRequest struct {
 	*requests.RpcRequest
-	SourceIp string `position:"Query" name:"SourceIp"`
-	Lang     string `position:"Query" name:"Lang"`
+	SourceIp                   string `position:"Query" name:"SourceIp"`
+	Lang                       string `position:"Query" name:"Lang"`
+	ResourceDirectoryAccountId string `position:"Query" name:"ResourceDirectoryAccountId"`
 }
 
 // DescribeAllGroupsResponse is the response struct for api DescribeAllGroups
 type DescribeAllGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
 	Count     int     `json:"Count" xml:"Count"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
 	Groups    []Group `json:"Groups" xml:"Groups"`
 }
 

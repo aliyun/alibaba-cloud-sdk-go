@@ -71,9 +71,9 @@ func (client *Client) DeleteDcdnIpaSpecificConfigWithCallback(request *DeleteDcd
 // DeleteDcdnIpaSpecificConfigRequest is the request struct for api DeleteDcdnIpaSpecificConfig
 type DeleteDcdnIpaSpecificConfigRequest struct {
 	*requests.RpcRequest
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ConfigId      string           `position:"Query" name:"ConfigId"`
 }
 

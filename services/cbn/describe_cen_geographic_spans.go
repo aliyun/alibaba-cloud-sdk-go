@@ -95,7 +95,7 @@ func CreateDescribeCenGeographicSpansRequest() (request *DescribeCenGeographicSp
 	request = &DescribeCenGeographicSpansRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

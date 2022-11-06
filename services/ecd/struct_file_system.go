@@ -33,4 +33,5 @@ type FileSystem struct {
 	Description       string `json:"Description" xml:"Description"`
 	ZoneId            string `json:"ZoneId" xml:"ZoneId"`
 	FileSystemStatus  string `json:"FileSystemStatus" xml:"FileSystemStatus"`
+	EncryptionEnabled bool   `json:"EncryptionEnabled" xml:"EncryptionEnabled"`
 }

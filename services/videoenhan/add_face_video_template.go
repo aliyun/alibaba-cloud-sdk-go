@@ -79,9 +79,9 @@ type AddFaceVideoTemplateRequest struct {
 // AddFaceVideoTemplateResponse is the response struct for api AddFaceVideoTemplate
 type AddFaceVideoTemplateResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Date      Date   `json:"Date" xml:"Date"`
 }
 

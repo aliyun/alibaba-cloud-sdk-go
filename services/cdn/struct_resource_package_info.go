@@ -17,13 +17,13 @@ package cdn
 
 // ResourcePackageInfo is a nested struct in cdn response
 type ResourcePackageInfo struct {
+	EndTime       string `json:"EndTime" xml:"EndTime"`
+	Status        string `json:"Status" xml:"Status"`
+	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
+	StartTime     string `json:"StartTime" xml:"StartTime"`
+	CommodityCode string `json:"CommodityCode" xml:"CommodityCode"`
 	CurrCapacity  string `json:"CurrCapacity" xml:"CurrCapacity"`
 	InitCapacity  string `json:"InitCapacity" xml:"InitCapacity"`
-	CommodityCode string `json:"CommodityCode" xml:"CommodityCode"`
-	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
-	TemplateName  string `json:"TemplateName" xml:"TemplateName"`
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-	Status        string `json:"Status" xml:"Status"`
-	StartTime     string `json:"StartTime" xml:"StartTime"`
-	EndTime       string `json:"EndTime" xml:"EndTime"`
+	TemplateName  string `json:"TemplateName" xml:"TemplateName"`
 }

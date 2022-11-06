@@ -92,7 +92,7 @@ func CreateRevokeInstanceFromTransitRouterRequest() (request *RevokeInstanceFrom
 	request = &RevokeInstanceFromTransitRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RevokeInstanceFromTransitRouter", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RevokeInstanceFromTransitRouter", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

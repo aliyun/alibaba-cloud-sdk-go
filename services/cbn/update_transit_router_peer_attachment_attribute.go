@@ -98,7 +98,7 @@ func CreateUpdateTransitRouterPeerAttachmentAttributeRequest() (request *UpdateT
 	request = &UpdateTransitRouterPeerAttachmentAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterPeerAttachmentAttribute", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterPeerAttachmentAttribute", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

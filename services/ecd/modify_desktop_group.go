@@ -71,6 +71,7 @@ func (client *Client) ModifyDesktopGroupWithCallback(request *ModifyDesktopGroup
 // ModifyDesktopGroupRequest is the request struct for api ModifyDesktopGroup
 type ModifyDesktopGroupRequest struct {
 	*requests.RpcRequest
+	Classify         string           `position:"Query" name:"Classify"`
 	ImageId          string           `position:"Query" name:"ImageId"`
 	ScaleStrategyId  string           `position:"Query" name:"ScaleStrategyId"`
 	BindAmount       requests.Integer `position:"Query" name:"BindAmount"`

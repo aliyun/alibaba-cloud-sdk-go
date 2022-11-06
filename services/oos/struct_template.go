@@ -27,6 +27,7 @@ type Template struct {
 	TemplateVersion     string                 `json:"TemplateVersion" xml:"TemplateVersion"`
 	TemplateFormat      string                 `json:"TemplateFormat" xml:"TemplateFormat"`
 	UpdatedBy           string                 `json:"UpdatedBy" xml:"UpdatedBy"`
+	ResourceGroupId     string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	CreatedDate         string                 `json:"CreatedDate" xml:"CreatedDate"`
 	HasTrigger          bool                   `json:"HasTrigger" xml:"HasTrigger"`
 	TemplateType        string                 `json:"TemplateType" xml:"TemplateType"`

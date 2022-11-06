@@ -17,8 +17,8 @@ package ehpc
 
 // PriceInfo is a nested struct in ehpc response
 type PriceInfo struct {
-	NodeType      string  `json:"NodeType" xml:"NodeType"`
 	OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-	TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
+	NodeType      string  `json:"NodeType" xml:"NodeType"`
 	Currency      string  `json:"Currency" xml:"Currency"`
+	TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
 }

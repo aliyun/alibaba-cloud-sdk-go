@@ -17,7 +17,7 @@ package domain
 
 // BrokerDemandRecord is a nested struct in domain response
 type BrokerDemandRecord struct {
-	BizId       string `json:"BizId" xml:"BizId"`
 	Description string `json:"Description" xml:"Description"`
 	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
+	BizId       string `json:"BizId" xml:"BizId"`
 }

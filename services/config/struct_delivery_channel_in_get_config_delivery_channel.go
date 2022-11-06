@@ -30,4 +30,5 @@ type DeliveryChannelInGetConfigDeliveryChannel struct {
 	ConfigurationItemChangeNotification bool   `json:"ConfigurationItemChangeNotification" xml:"ConfigurationItemChangeNotification"`
 	NonCompliantNotification            bool   `json:"NonCompliantNotification" xml:"NonCompliantNotification"`
 	AccountId                           int64  `json:"AccountId" xml:"AccountId"`
+	DeliverySnapshotTime                string `json:"DeliverySnapshotTime" xml:"DeliverySnapshotTime"`
 }

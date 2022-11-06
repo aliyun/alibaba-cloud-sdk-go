@@ -77,8 +77,8 @@ type DescribeUserCertificateExpireCountRequest struct {
 // DescribeUserCertificateExpireCountResponse is the response struct for api DescribeUserCertificateExpireCount
 type DescribeUserCertificateExpireCountResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
 	ExpireWithin30DaysCount int    `json:"ExpireWithin30DaysCount" xml:"ExpireWithin30DaysCount"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
 	ExpiredCount            int    `json:"ExpiredCount" xml:"ExpiredCount"`
 }
 

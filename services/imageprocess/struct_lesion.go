@@ -17,9 +17,12 @@ package imageprocess
 
 // Lesion is a nested struct in imageprocess response
 type Lesion struct {
-	PancVol       string   `json:"PancVol" xml:"PancVol"`
-	PdacVol       string   `json:"PdacVol" xml:"PdacVol"`
-	NonPdacVol    string   `json:"NonPdacVol" xml:"NonPdacVol"`
+	EcVolume      string   `json:"EcVolume" xml:"EcVolume"`
 	Mask          string   `json:"Mask" xml:"Mask"`
+	BenignVolume  string   `json:"BenignVolume" xml:"BenignVolume"`
+	PdacVol       string   `json:"PdacVol" xml:"PdacVol"`
+	EsoVolume     string   `json:"EsoVolume" xml:"EsoVolume"`
+	PancVol       string   `json:"PancVol" xml:"PancVol"`
+	NonPdacVol    string   `json:"NonPdacVol" xml:"NonPdacVol"`
 	Possibilities []string `json:"Possibilities" xml:"Possibilities"`
 }

@@ -75,12 +75,14 @@ type RegisterTransitRouterMulticastGroupMembersRequest struct {
 	ClientToken                       string           `position:"Query" name:"ClientToken"`
 	NetworkInterfaceIds               *[]string        `position:"Query" name:"NetworkInterfaceIds"  type:"Repeated"`
 	TransitRouterMulticastDomainId    string           `position:"Query" name:"TransitRouterMulticastDomainId"`
+	ConnectPeerIds                    *[]string        `position:"Query" name:"ConnectPeerIds"  type:"Repeated"`
 	GroupIpAddress                    string           `position:"Query" name:"GroupIpAddress"`
 	DryRun                            requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
 	PeerTransitRouterMulticastDomains *[]string        `position:"Query" name:"PeerTransitRouterMulticastDomains"  type:"Repeated"`
 	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
+	VpcId                             string           `position:"Query" name:"VpcId"`
 }
 
 // RegisterTransitRouterMulticastGroupMembersResponse is the response struct for api RegisterTransitRouterMulticastGroupMembers
@@ -94,7 +96,7 @@ func CreateRegisterTransitRouterMulticastGroupMembersRequest() (request *Registe
 	request = &RegisterTransitRouterMulticastGroupMembersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupMembers", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupMembers", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

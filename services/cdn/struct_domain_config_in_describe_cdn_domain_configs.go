@@ -17,8 +17,9 @@ package cdn
 
 // DomainConfigInDescribeCdnDomainConfigs is a nested struct in cdn response
 type DomainConfigInDescribeCdnDomainConfigs struct {
-	FunctionName string                                 `json:"FunctionName" xml:"FunctionName"`
-	ConfigId     string                                 `json:"ConfigId" xml:"ConfigId"`
 	Status       string                                 `json:"Status" xml:"Status"`
+	ParentId     string                                 `json:"ParentId" xml:"ParentId"`
+	ConfigId     string                                 `json:"ConfigId" xml:"ConfigId"`
+	FunctionName string                                 `json:"FunctionName" xml:"FunctionName"`
 	FunctionArgs FunctionArgsInDescribeCdnDomainConfigs `json:"FunctionArgs" xml:"FunctionArgs"`
 }

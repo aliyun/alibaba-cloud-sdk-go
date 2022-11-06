@@ -71,9 +71,12 @@ func (client *Client) FaceTidyupWithCallback(request *FaceTidyupRequest, callbac
 // FaceTidyupRequest is the request struct for api FaceTidyup
 type FaceTidyupRequest struct {
 	*requests.RpcRequest
-	ShapeType requests.Integer `position:"Body" name:"ShapeType"`
-	Strength  requests.Float   `position:"Body" name:"Strength"`
-	ImageURL  string           `position:"Body" name:"ImageURL"`
+	ShapeType          requests.Integer `position:"Body" name:"ShapeType"`
+	Strength           requests.Float   `position:"Body" name:"Strength"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // FaceTidyupResponse is the response struct for api FaceTidyup

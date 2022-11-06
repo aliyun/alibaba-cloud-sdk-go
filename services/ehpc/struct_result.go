@@ -17,7 +17,7 @@ package ehpc
 
 // Result is a nested struct in ehpc response
 type Result struct {
+	Output             string `json:"Output" xml:"Output"`
 	InvokeRecordStatus string `json:"InvokeRecordStatus" xml:"InvokeRecordStatus"`
 	ExitCode           int    `json:"ExitCode" xml:"ExitCode"`
-	Output             string `json:"Output" xml:"Output"`
 }

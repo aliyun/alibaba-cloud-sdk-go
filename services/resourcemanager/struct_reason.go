@@ -17,6 +17,9 @@ package resourcemanager
 
 // Reason is a nested struct in resourcemanager response
 type Reason struct {
-	Message    string     `json:"Message" xml:"Message"`
-	RoleUsages RoleUsages `json:"RoleUsages" xml:"RoleUsages"`
+	Message     string     `json:"Message" xml:"Message"`
+	CheckId     string     `json:"CheckId" xml:"CheckId"`
+	Description string     `json:"Description" xml:"Description"`
+	CheckName   string     `json:"CheckName" xml:"CheckName"`
+	RoleUsages  RoleUsages `json:"RoleUsages" xml:"RoleUsages"`
 }

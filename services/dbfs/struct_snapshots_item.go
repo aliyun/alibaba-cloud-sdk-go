@@ -17,17 +17,18 @@ package dbfs
 
 // SnapshotsItem is a nested struct in dbfs response
 type SnapshotsItem struct {
-	Category         string `json:"Category" xml:"Category"`
-	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-	Description      string `json:"Description" xml:"Description"`
-	LastModifiedTime string `json:"LastModifiedTime" xml:"LastModifiedTime"`
-	Progress         string `json:"Progress" xml:"Progress"`
-	RemainTime       int    `json:"RemainTime" xml:"RemainTime"`
-	RetentionDays    int    `json:"RetentionDays" xml:"RetentionDays"`
-	SnapshotId       string `json:"SnapshotId" xml:"SnapshotId"`
-	SnapshotName     string `json:"SnapshotName" xml:"SnapshotName"`
-	SnapshotType     string `json:"SnapshotType" xml:"SnapshotType"`
-	Status           string `json:"Status" xml:"Status"`
-	SourceFsId       string `json:"SourceFsId" xml:"SourceFsId"`
-	SourceFsSize     int    `json:"SourceFsSize" xml:"SourceFsSize"`
+	Status              string `json:"Status" xml:"Status"`
+	CreationTime        string `json:"CreationTime" xml:"CreationTime"`
+	Progress            string `json:"Progress" xml:"Progress"`
+	SourceFsSize        int    `json:"SourceFsSize" xml:"SourceFsSize"`
+	RetentionDays       int    `json:"RetentionDays" xml:"RetentionDays"`
+	RemainTime          int    `json:"RemainTime" xml:"RemainTime"`
+	LastModifiedTime    string `json:"LastModifiedTime" xml:"LastModifiedTime"`
+	SnapshotType        string `json:"SnapshotType" xml:"SnapshotType"`
+	SnapshotName        string `json:"SnapshotName" xml:"SnapshotName"`
+	Description         string `json:"Description" xml:"Description"`
+	SourceFsId          string `json:"SourceFsId" xml:"SourceFsId"`
+	SnapshotId          string `json:"SnapshotId" xml:"SnapshotId"`
+	Category            string `json:"Category" xml:"Category"`
+	SourceFsStripeWidth int    `json:"SourceFsStripeWidth" xml:"SourceFsStripeWidth"`
 }

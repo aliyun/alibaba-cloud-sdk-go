@@ -19,6 +19,7 @@ package live
 type DomainTranscodeInfo struct {
 	TranscodeApp              string                    `json:"TranscodeApp" xml:"TranscodeApp"`
 	TranscodeTemplate         string                    `json:"TranscodeTemplate" xml:"TranscodeTemplate"`
+	IsLazy                    bool                      `json:"IsLazy" xml:"IsLazy"`
 	TranscodeName             string                    `json:"TranscodeName" xml:"TranscodeName"`
 	CustomTranscodeParameters CustomTranscodeParameters `json:"CustomTranscodeParameters" xml:"CustomTranscodeParameters"`
 	EncryptParameters         EncryptParameters         `json:"EncryptParameters" xml:"EncryptParameters"`

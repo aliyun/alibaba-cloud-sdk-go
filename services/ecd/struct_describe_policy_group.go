@@ -36,6 +36,12 @@ type DescribePolicyGroup struct {
 	Name                         string                        `json:"Name" xml:"Name"`
 	LocalDrive                   string                        `json:"LocalDrive" xml:"LocalDrive"`
 	GpuAcceleration              string                        `json:"GpuAcceleration" xml:"GpuAcceleration"`
+	Recording                    string                        `json:"Recording" xml:"Recording"`
+	RecordingStartTime           string                        `json:"RecordingStartTime" xml:"RecordingStartTime"`
+	RecordingEndTime             string                        `json:"RecordingEndTime" xml:"RecordingEndTime"`
+	RecordingFps                 int64                         `json:"RecordingFps" xml:"RecordingFps"`
+	CameraRedirect               string                        `json:"CameraRedirect" xml:"CameraRedirect"`
+	NetRedirect                  string                        `json:"NetRedirect" xml:"NetRedirect"`
 	PreemptLoginUsers            []string                      `json:"PreemptLoginUsers" xml:"PreemptLoginUsers"`
 	AuthorizeSecurityPolicyRules []AuthorizeSecurityPolicyRule `json:"AuthorizeSecurityPolicyRules" xml:"AuthorizeSecurityPolicyRules"`
 	AuthorizeAccessPolicyRules   []AuthorizeAccessPolicyRule   `json:"AuthorizeAccessPolicyRules" xml:"AuthorizeAccessPolicyRules"`

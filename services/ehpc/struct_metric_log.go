@@ -18,9 +18,9 @@ package ehpc
 // MetricLog is a nested struct in ehpc response
 type MetricLog struct {
 	Time             int    `json:"Time" xml:"Time"`
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	Hostname         string `json:"Hostname" xml:"Hostname"`
-	NetworkInterface string `json:"NetworkInterface" xml:"NetworkInterface"`
 	DiskDevice       string `json:"DiskDevice" xml:"DiskDevice"`
+	NetworkInterface string `json:"NetworkInterface" xml:"NetworkInterface"`
 	MetricData       string `json:"MetricData" xml:"MetricData"`
+	Hostname         string `json:"Hostname" xml:"Hostname"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
 }

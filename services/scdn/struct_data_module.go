@@ -31,8 +31,8 @@ type DataModule struct {
 	HttpBpsValue            string                  `json:"HttpBpsValue" xml:"HttpBpsValue"`
 	HttpsBpsValue           string                  `json:"HttpsBpsValue" xml:"HttpsBpsValue"`
 	HttpsQpsValue           string                  `json:"HttpsQpsValue" xml:"HttpsQpsValue"`
-	OriginBpsValue          string                  `json:"OriginBpsValue" xml:"OriginBpsValue"`
 	HttpsOriginBpsValue     string                  `json:"HttpsOriginBpsValue" xml:"HttpsOriginBpsValue"`
+	OriginBpsValue          string                  `json:"OriginBpsValue" xml:"OriginBpsValue"`
 	HttpTrafficValue        string                  `json:"HttpTrafficValue" xml:"HttpTrafficValue"`
 	HttpsAccValue           string                  `json:"HttpsAccValue" xml:"HttpsAccValue"`
 	HttpOriginBpsValue      string                  `json:"HttpOriginBpsValue" xml:"HttpOriginBpsValue"`

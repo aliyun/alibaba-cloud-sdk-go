@@ -71,31 +71,43 @@ func (client *Client) CreateLindormInstanceWithCallback(request *CreateLindormIn
 // CreateLindormInstanceRequest is the request struct for api CreateLindormInstance
 type CreateLindormInstanceRequest struct {
 	*requests.RpcRequest
+	ArchVersion          string           `position:"Query" name:"ArchVersion"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	LogSpec              string           `position:"Query" name:"LogSpec"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	TsdbNum              requests.Integer `position:"Query" name:"TsdbNum"`
+	SolrNum              requests.Integer `position:"Query" name:"SolrNum"`
+	InstanceStorage      string           `position:"Query" name:"InstanceStorage"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LindormNum           requests.Integer `position:"Query" name:"LindormNum"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	LogSingleStorage     requests.Integer `position:"Query" name:"LogSingleStorage"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ArbiterZoneId        string           `position:"Query" name:"ArbiterZoneId"`
+	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	MultiZoneCombination string           `position:"Query" name:"MultiZoneCombination"`
 	TsdbSpec             string           `position:"Query" name:"TsdbSpec"`
 	FilestoreSpec        string           `position:"Query" name:"FilestoreSpec"`
 	Duration             string           `position:"Query" name:"Duration"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	TsdbNum              requests.Integer `position:"Query" name:"TsdbNum"`
 	DiskCategory         string           `position:"Query" name:"DiskCategory"`
 	LindormSpec          string           `position:"Query" name:"LindormSpec"`
-	SolrNum              requests.Integer `position:"Query" name:"SolrNum"`
 	ColdStorage          requests.Integer `position:"Query" name:"ColdStorage"`
-	InstanceStorage      string           `position:"Query" name:"InstanceStorage"`
+	LogNum               requests.Integer `position:"Query" name:"LogNum"`
+	StandbyVSwitchId     string           `position:"Query" name:"StandbyVSwitchId"`
 	SolrSpec             string           `position:"Query" name:"SolrSpec"`
+	LogDiskCategory      string           `position:"Query" name:"LogDiskCategory"`
+	CoreSingleStorage    requests.Integer `position:"Query" name:"CoreSingleStorage"`
+	StandbyZoneId        string           `position:"Query" name:"StandbyZoneId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceAlias        string           `position:"Query" name:"InstanceAlias"`
 	FilestoreNum         requests.Integer `position:"Query" name:"FilestoreNum"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	LindormNum           requests.Integer `position:"Query" name:"LindormNum"`
 	CoreSpec             string           `position:"Query" name:"CoreSpec"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	VPCId                string           `position:"Query" name:"VPCId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	PayType              string           `position:"Query" name:"PayType"`
-	PricingCycle         string           `position:"Query" name:"PricingCycle"`
+	ArbiterVSwitchId     string           `position:"Query" name:"ArbiterVSwitchId"`
 }
 
 // CreateLindormInstanceResponse is the response struct for api CreateLindormInstance

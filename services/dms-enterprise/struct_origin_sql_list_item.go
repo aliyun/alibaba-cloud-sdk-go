@@ -27,4 +27,5 @@ type OriginSQLListItem struct {
 	SqlHash           string `json:"SqlHash" xml:"SqlHash"`
 	ReviewSummary     string `json:"ReviewSummary" xml:"ReviewSummary"`
 	SQLReviewQueryKey string `json:"SQLReviewQueryKey" xml:"SQLReviewQueryKey"`
+	SQLName           string `json:"SQLName" xml:"SQLName"`
 }

@@ -31,4 +31,5 @@ type DeliveryChannelInListAggregateConfigDeliveryChannels struct {
 	NonCompliantNotification            bool   `json:"NonCompliantNotification" xml:"NonCompliantNotification"`
 	AggregatorId                        string `json:"AggregatorId" xml:"AggregatorId"`
 	AccountId                           int64  `json:"AccountId" xml:"AccountId"`
+	DeliverySnapshotTime                string `json:"DeliverySnapshotTime" xml:"DeliverySnapshotTime"`
 }

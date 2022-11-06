@@ -78,11 +78,11 @@ type DescribeUserLogserviceStatusRequest struct {
 // DescribeUserLogserviceStatusResponse is the response struct for api DescribeUserLogserviceStatus
 type DescribeUserLogserviceStatusResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	Enabled       bool   `json:"Enabled" xml:"Enabled"`
-	OnService     bool   `json:"OnService" xml:"OnService"`
 	InDebt        bool   `json:"InDebt" xml:"InDebt"`
+	OnService     bool   `json:"OnService" xml:"OnService"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	InDebtOverdue bool   `json:"InDebtOverdue" xml:"InDebtOverdue"`
+	Enabled       bool   `json:"Enabled" xml:"Enabled"`
 }
 
 // CreateDescribeUserLogserviceStatusRequest creates a request to invoke DescribeUserLogserviceStatus API

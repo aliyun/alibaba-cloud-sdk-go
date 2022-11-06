@@ -26,4 +26,6 @@ type TransitRouterRouteEntry struct {
 	TransitRouterRouteEntryNextHopType          string `json:"TransitRouterRouteEntryNextHopType" xml:"TransitRouterRouteEntryNextHopType"`
 	TransitRouterRouteEntryNextHopId            string `json:"TransitRouterRouteEntryNextHopId" xml:"TransitRouterRouteEntryNextHopId"`
 	TransitRouterRouteEntryDescription          string `json:"TransitRouterRouteEntryDescription" xml:"TransitRouterRouteEntryDescription"`
+	OperationalMode                             bool   `json:"OperationalMode" xml:"OperationalMode"`
+	Tag                                         string `json:"Tag" xml:"Tag"`
 }

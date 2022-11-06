@@ -77,24 +77,24 @@ type DescribeCertificateRequest struct {
 // DescribeCertificateResponse is the response struct for api DescribeCertificate
 type DescribeCertificateResponse struct {
 	*responses.BaseResponse
-	RequestId               string                 `json:"RequestId" xml:"RequestId"`
-	CertificateId           string                 `json:"CertificateId" xml:"CertificateId"`
-	Arn                     string                 `json:"Arn" xml:"Arn"`
-	KeySpec                 string                 `json:"KeySpec" xml:"KeySpec"`
 	Status                  string                 `json:"Status" xml:"Status"`
-	CreatedAt               string                 `json:"CreatedAt" xml:"CreatedAt"`
-	UpdatedAt               string                 `json:"UpdatedAt" xml:"UpdatedAt"`
 	Serial                  string                 `json:"Serial" xml:"Serial"`
-	Subject                 string                 `json:"Subject" xml:"Subject"`
-	Issuer                  string                 `json:"Issuer" xml:"Issuer"`
-	NotBefore               string                 `json:"NotBefore" xml:"NotBefore"`
-	NotAfter                string                 `json:"NotAfter" xml:"NotAfter"`
-	SignatureAlgorithm      string                 `json:"SignatureAlgorithm" xml:"SignatureAlgorithm"`
-	SubjectPublicKey        string                 `json:"SubjectPublicKey" xml:"SubjectPublicKey"`
-	SubjectKeyIdentifier    string                 `json:"SubjectKeyIdentifier" xml:"SubjectKeyIdentifier"`
+	CreatedAt               string                 `json:"CreatedAt" xml:"CreatedAt"`
 	Tags                    map[string]interface{} `json:"Tags" xml:"Tags"`
+	SubjectKeyIdentifier    string                 `json:"SubjectKeyIdentifier" xml:"SubjectKeyIdentifier"`
 	ExportablePrivateKey    bool                   `json:"ExportablePrivateKey" xml:"ExportablePrivateKey"`
+	Issuer                  string                 `json:"Issuer" xml:"Issuer"`
+	SignatureAlgorithm      string                 `json:"SignatureAlgorithm" xml:"SignatureAlgorithm"`
+	NotAfter                string                 `json:"NotAfter" xml:"NotAfter"`
+	Arn                     string                 `json:"Arn" xml:"Arn"`
+	CertificateId           string                 `json:"CertificateId" xml:"CertificateId"`
+	RequestId               string                 `json:"RequestId" xml:"RequestId"`
+	KeySpec                 string                 `json:"KeySpec" xml:"KeySpec"`
 	ProtectionLevel         string                 `json:"ProtectionLevel" xml:"ProtectionLevel"`
+	SubjectPublicKey        string                 `json:"SubjectPublicKey" xml:"SubjectPublicKey"`
+	Subject                 string                 `json:"Subject" xml:"Subject"`
+	NotBefore               string                 `json:"NotBefore" xml:"NotBefore"`
+	UpdatedAt               string                 `json:"UpdatedAt" xml:"UpdatedAt"`
 	SubjectAlternativeNames []string               `json:"SubjectAlternativeNames" xml:"SubjectAlternativeNames"`
 }
 

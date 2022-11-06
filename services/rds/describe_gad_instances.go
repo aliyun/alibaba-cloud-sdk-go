@@ -71,6 +71,7 @@ func (client *Client) DescribeGadInstancesWithCallback(request *DescribeGadInsta
 // DescribeGadInstancesRequest is the request struct for api DescribeGadInstances
 type DescribeGadInstancesRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	GadInstanceName string `position:"Query" name:"GadInstanceName"`
 }
 

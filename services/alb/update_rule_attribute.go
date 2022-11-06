@@ -143,7 +143,8 @@ type UpdateRuleAttributeRuleActionsInsertHeaderConfig struct {
 
 // UpdateRuleAttributeRuleActionsTrafficLimitConfig is a repeated param struct in UpdateRuleAttributeRequest
 type UpdateRuleAttributeRuleActionsTrafficLimitConfig struct {
-	QPS string `name:"QPS"`
+	QPS      string `name:"QPS"`
+	PerIpQps string `name:"PerIpQps"`
 }
 
 // UpdateRuleAttributeRuleActionsCorsConfig is a repeated param struct in UpdateRuleAttributeRequest

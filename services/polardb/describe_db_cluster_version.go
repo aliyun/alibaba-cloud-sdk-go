@@ -82,6 +82,7 @@ type DescribeDBClusterVersionRequest struct {
 type DescribeDBClusterVersionResponse struct {
 	*responses.BaseResponse
 	IsLatestVersion      string `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	IsProxyLatestVersion string `json:"IsProxyLatestVersion" xml:"IsProxyLatestVersion"`
 	DBVersion            string `json:"DBVersion" xml:"DBVersion"`
 	DBRevisionVersion    string `json:"DBRevisionVersion" xml:"DBRevisionVersion"`
 	RequestId            string `json:"RequestId" xml:"RequestId"`
@@ -99,7 +100,7 @@ func CreateDescribeDBClusterVersionRequest() (request *DescribeDBClusterVersionR
 	request = &DescribeDBClusterVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterVersion", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterVersion", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

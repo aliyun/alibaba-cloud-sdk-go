@@ -17,5 +17,5 @@ package das
 
 // ResultInGetAsyncErrorRequestListByCode is a nested struct in das response
 type ResultInGetAsyncErrorRequestListByCode struct {
-	ResultItem []ResultItem `json:"result" xml:"result"`
+	List []List `json:"list" xml:"list"`
 }

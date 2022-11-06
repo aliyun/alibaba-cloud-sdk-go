@@ -94,7 +94,7 @@ func CreateDescribeCenGeographicSpanRemainingBandwidthRequest() (request *Descri
 	request = &DescribeCenGeographicSpanRemainingBandwidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

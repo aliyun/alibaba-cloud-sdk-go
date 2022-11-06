@@ -71,10 +71,13 @@ func (client *Client) VerifyFaceMaskWithCallback(request *VerifyFaceMaskRequest,
 // VerifyFaceMaskRequest is the request struct for api VerifyFaceMask
 type VerifyFaceMaskRequest struct {
 	*requests.RpcRequest
-	RefData   string `position:"Body" name:"RefData"`
-	ImageData string `position:"Body" name:"ImageData"`
-	ImageURL  string `position:"Body" name:"ImageURL"`
-	RefUrl    string `position:"Body" name:"RefUrl"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	RefData            string           `position:"Body" name:"RefData"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	ImageData          string           `position:"Body" name:"ImageData"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
+	RefUrl             string           `position:"Body" name:"RefUrl"`
 }
 
 // VerifyFaceMaskResponse is the response struct for api VerifyFaceMask

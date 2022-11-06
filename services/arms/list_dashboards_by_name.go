@@ -71,13 +71,14 @@ func (client *Client) ListDashboardsByNameWithCallback(request *ListDashboardsBy
 // ListDashboardsByNameRequest is the request struct for api ListDashboardsByName
 type ListDashboardsByNameRequest struct {
 	*requests.RpcRequest
-	DataSourceType   string `position:"Query" name:"DataSourceType"`
-	DashBoardName    string `position:"Query" name:"DashBoardName"`
-	ProductCode      string `position:"Query" name:"ProductCode"`
-	ClusterId        string `position:"Query" name:"ClusterId"`
-	GroupName        string `position:"Query" name:"GroupName"`
-	ClusterType      string `position:"Query" name:"ClusterType"`
-	DashBoardVersion string `position:"Query" name:"DashBoardVersion"`
+	DataSourceType   string           `position:"Query" name:"DataSourceType"`
+	DashBoardName    string           `position:"Query" name:"DashBoardName"`
+	ProductCode      string           `position:"Query" name:"ProductCode"`
+	ClusterId        string           `position:"Query" name:"ClusterId"`
+	OnlyQuery        requests.Boolean `position:"Query" name:"OnlyQuery"`
+	GroupName        string           `position:"Query" name:"GroupName"`
+	ClusterType      string           `position:"Query" name:"ClusterType"`
+	DashBoardVersion string           `position:"Query" name:"DashBoardVersion"`
 }
 
 // ListDashboardsByNameResponse is the response struct for api ListDashboardsByName

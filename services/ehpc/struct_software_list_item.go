@@ -18,7 +18,7 @@ package ehpc
 // SoftwareListItem is a nested struct in ehpc response
 type SoftwareListItem struct {
 	SoftwareId      string `json:"SoftwareId" xml:"SoftwareId"`
-	SoftwareName    string `json:"SoftwareName" xml:"SoftwareName"`
-	SoftwareVersion string `json:"SoftwareVersion" xml:"SoftwareVersion"`
 	SoftwareStatus  string `json:"SoftwareStatus" xml:"SoftwareStatus"`
+	SoftwareVersion string `json:"SoftwareVersion" xml:"SoftwareVersion"`
+	SoftwareName    string `json:"SoftwareName" xml:"SoftwareName"`
 }

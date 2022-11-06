@@ -86,7 +86,7 @@ func CreateDeleteTagsBatchRequest() (request *DeleteTagsBatchRequest) {
 	request = &DeleteTagsBatchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "DeleteTagsBatch", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "DeleteTagsBatch", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }

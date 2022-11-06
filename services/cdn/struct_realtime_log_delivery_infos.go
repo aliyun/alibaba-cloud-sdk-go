@@ -17,7 +17,7 @@ package cdn
 
 // RealtimeLogDeliveryInfos is a nested struct in cdn response
 type RealtimeLogDeliveryInfos struct {
-	Project  string `json:"Project" xml:"Project"`
 	Logstore string `json:"Logstore" xml:"Logstore"`
+	Project  string `json:"Project" xml:"Project"`
 	Region   string `json:"Region" xml:"Region"`
 }

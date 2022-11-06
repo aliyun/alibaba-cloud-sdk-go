@@ -81,8 +81,8 @@ type CreateEaiRequest struct {
 // CreateEaiResponse is the response struct for api CreateEai
 type CreateEaiResponse struct {
 	*responses.BaseResponse
-	RequestId                    string `json:"RequestId" xml:"RequestId"`
 	ElasticAcceleratedInstanceId string `json:"ElasticAcceleratedInstanceId" xml:"ElasticAcceleratedInstanceId"`
+	RequestId                    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateEaiRequest creates a request to invoke CreateEai API

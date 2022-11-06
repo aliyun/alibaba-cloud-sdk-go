@@ -71,17 +71,18 @@ func (client *Client) RunCycleDagNodesWithCallback(request *RunCycleDagNodesRequ
 // RunCycleDagNodesRequest is the request struct for api RunCycleDagNodes
 type RunCycleDagNodesRequest struct {
 	*requests.RpcRequest
-	ProjectEnv     string           `position:"Body" name:"ProjectEnv"`
-	StartBizDate   string           `position:"Body" name:"StartBizDate"`
-	Parallelism    requests.Boolean `position:"Body" name:"Parallelism"`
-	RootNodeId     requests.Integer `position:"Body" name:"RootNodeId"`
-	BizBeginTime   string           `position:"Body" name:"BizBeginTime"`
-	EndBizDate     string           `position:"Body" name:"EndBizDate"`
-	IncludeNodeIds string           `position:"Body" name:"IncludeNodeIds"`
-	BizEndTime     string           `position:"Body" name:"BizEndTime"`
-	Name           string           `position:"Body" name:"Name"`
-	ExcludeNodeIds string           `position:"Body" name:"ExcludeNodeIds"`
-	NodeParams     string           `position:"Body" name:"NodeParams"`
+	ProjectEnv                     string           `position:"Body" name:"ProjectEnv"`
+	StartBizDate                   string           `position:"Body" name:"StartBizDate"`
+	Parallelism                    requests.Boolean `position:"Body" name:"Parallelism"`
+	RootNodeId                     requests.Integer `position:"Body" name:"RootNodeId"`
+	BizBeginTime                   string           `position:"Body" name:"BizBeginTime"`
+	EndBizDate                     string           `position:"Body" name:"EndBizDate"`
+	StartFutureInstanceImmediately requests.Boolean `position:"Body" name:"StartFutureInstanceImmediately"`
+	IncludeNodeIds                 string           `position:"Body" name:"IncludeNodeIds"`
+	BizEndTime                     string           `position:"Body" name:"BizEndTime"`
+	Name                           string           `position:"Body" name:"Name"`
+	ExcludeNodeIds                 string           `position:"Body" name:"ExcludeNodeIds"`
+	NodeParams                     string           `position:"Body" name:"NodeParams"`
 }
 
 // RunCycleDagNodesResponse is the response struct for api RunCycleDagNodes

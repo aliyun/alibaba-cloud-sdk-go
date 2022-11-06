@@ -17,8 +17,28 @@ package rds
 
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
+	Uid                   string                `json:"Uid" xml:"Uid"`
+	CallerSource          string                `json:"CallerSource" xml:"CallerSource"`
+	Status                int                   `json:"Status" xml:"Status"`
+	Product               string                `json:"Product" xml:"Product"`
+	CallerUid             string                `json:"CallerUid" xml:"CallerUid"`
+	InstanceName          string                `json:"InstanceName" xml:"InstanceName"`
+	ActionInfo            string                `json:"ActionInfo" xml:"ActionInfo"`
+	InstanceType          string                `json:"InstanceType" xml:"InstanceType"`
+	ReasonCode            string                `json:"ReasonCode" xml:"ReasonCode"`
+	DbType                string                `json:"DbType" xml:"DbType"`
+	TaskId                string                `json:"TaskId" xml:"TaskId"`
+	StartTime             string                `json:"StartTime" xml:"StartTime"`
+	RegionId              string                `json:"RegionId" xml:"RegionId"`
+	EndTime               string                `json:"EndTime" xml:"EndTime"`
+	RemainTime            int                   `json:"RemainTime" xml:"RemainTime"`
+	InstanceId            string                `json:"InstanceId" xml:"InstanceId"`
+	CurrentStepName       string                `json:"CurrentStepName" xml:"CurrentStepName"`
+	Progress              float64               `json:"Progress" xml:"Progress"`
 	DBInstanceId          string                `json:"DBInstanceId" xml:"DBInstanceId"`
-	ReadDelayTimes        ReadDelayTimes        `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
-	ReadDBInstanceNames   ReadDBInstanceNames   `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
+	TaskType              string                `json:"TaskType" xml:"TaskType"`
+	TaskDetail            string                `json:"TaskDetail" xml:"TaskDetail"`
+	ReadDBInstanceNames   []string              `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
+	ReadDelayTimes        []string              `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
 	ReadonlyInstanceDelay ReadonlyInstanceDelay `json:"ReadonlyInstanceDelay" xml:"ReadonlyInstanceDelay"`
 }

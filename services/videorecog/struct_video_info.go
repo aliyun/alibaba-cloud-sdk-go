@@ -17,8 +17,8 @@ package videorecog
 
 // VideoInfo is a nested struct in videorecog response
 type VideoInfo struct {
-	Fps      float64 `json:"Fps" xml:"Fps"`
-	Duration int64   `json:"Duration" xml:"Duration"`
-	Height   int64   `json:"Height" xml:"Height"`
 	Width    int64   `json:"Width" xml:"Width"`
+	Height   int64   `json:"Height" xml:"Height"`
+	Duration int64   `json:"Duration" xml:"Duration"`
+	Fps      float64 `json:"Fps" xml:"Fps"`
 }

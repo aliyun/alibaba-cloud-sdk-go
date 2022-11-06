@@ -71,8 +71,11 @@ func (client *Client) CountCrowdWithCallback(request *CountCrowdRequest, callbac
 // CountCrowdRequest is the request struct for api CountCrowd
 type CountCrowdRequest struct {
 	*requests.RpcRequest
-	IsShow   requests.Boolean `position:"Body" name:"IsShow"`
-	ImageURL string           `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	IsShow             requests.Boolean `position:"Body" name:"IsShow"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // CountCrowdResponse is the response struct for api CountCrowd

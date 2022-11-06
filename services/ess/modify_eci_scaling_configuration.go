@@ -91,9 +91,11 @@ type ModifyEciScalingConfigurationRequest struct {
 	ScalingConfigurationId        string                                                  `position:"Query" name:"ScalingConfigurationId"`
 	SpotStrategy                  string                                                  `position:"Query" name:"SpotStrategy"`
 	Volume                        *[]ModifyEciScalingConfigurationVolume                  `position:"Query" name:"Volume"  type:"Repeated"`
+	InstanceFamilyLevel           string                                                  `position:"Query" name:"InstanceFamilyLevel"`
 	DnsConfigOption               *[]ModifyEciScalingConfigurationDnsConfigOption         `position:"Query" name:"DnsConfigOption"  type:"Repeated"`
 	EphemeralStorage              requests.Integer                                        `position:"Query" name:"EphemeralStorage"`
 	EipBandwidth                  requests.Integer                                        `position:"Query" name:"EipBandwidth"`
+	CostOptimization              requests.Boolean                                        `position:"Query" name:"CostOptimization"`
 	Memory                        requests.Float                                          `position:"Query" name:"Memory"`
 	SecurityGroupId               string                                                  `position:"Query" name:"SecurityGroupId"`
 	Description                   string                                                  `position:"Query" name:"Description"`

@@ -71,6 +71,7 @@ func (client *Client) DescribeDesktopTypesWithCallback(request *DescribeDesktopT
 // DescribeDesktopTypesRequest is the request struct for api DescribeDesktopTypes
 type DescribeDesktopTypesRequest struct {
 	*requests.RpcRequest
+	AppliedScope       string           `position:"Query" name:"AppliedScope"`
 	MemorySize         requests.Integer `position:"Query" name:"MemorySize"`
 	GpuCount           requests.Float   `position:"Query" name:"GpuCount"`
 	InstanceTypeFamily string           `position:"Query" name:"InstanceTypeFamily"`

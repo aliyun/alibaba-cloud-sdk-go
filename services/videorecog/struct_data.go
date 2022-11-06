@@ -25,5 +25,6 @@ type Data struct {
 	ErrorCode    string                 `json:"ErrorCode" xml:"ErrorCode"`
 	ShotFrameIds []int                  `json:"ShotFrameIds" xml:"ShotFrameIds"`
 	VideoInfo    VideoInfo              `json:"VideoInfo" xml:"VideoInfo"`
+	Elements     []Elements             `json:"Elements" xml:"Elements"`
 	Outputs      []Output               `json:"Outputs" xml:"Outputs"`
 }

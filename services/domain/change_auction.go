@@ -76,20 +76,20 @@ type ChangeAuctionRequest struct {
 
 // ChangeAuctionAuctionList is a repeated param struct in ChangeAuctionRequest
 type ChangeAuctionAuctionList struct {
-	Winner       string                     `name:"Winner"`
-	ReserveRange string                     `name:"ReserveRange"`
-	DomainName   string                     `name:"DomainName"`
-	EndTime      string                     `name:"EndTime"`
-	TimeLeft     string                     `name:"TimeLeft"`
-	IsReserve    string                     `name:"IsReserve"`
-	BidRecords   *[]ChangeAuctionBidRecords `name:"BidRecords" type:"Repeated"`
-	WinnerPrice  string                     `name:"WinnerPrice"`
-	Status       string                     `name:"Status"`
-	ReservePrice string                     `name:"ReservePrice"`
+	Winner       string                                `name:"Winner"`
+	ReserveRange string                                `name:"ReserveRange"`
+	DomainName   string                                `name:"DomainName"`
+	EndTime      string                                `name:"EndTime"`
+	TimeLeft     string                                `name:"TimeLeft"`
+	BidRecords   *[]ChangeAuctionAuctionListBidRecords `name:"BidRecords" type:"Repeated"`
+	IsReserve    string                                `name:"IsReserve"`
+	Status       string                                `name:"Status"`
+	WinnerPrice  string                                `name:"WinnerPrice"`
+	ReservePrice string                                `name:"ReservePrice"`
 }
 
-// ChangeAuctionBidRecords is a repeated param struct in ChangeAuctionRequest
-type ChangeAuctionBidRecords struct {
+// ChangeAuctionAuctionListBidRecords is a repeated param struct in ChangeAuctionRequest
+type ChangeAuctionAuctionListBidRecords struct {
 	CreateTime string `name:"CreateTime"`
 	Price      string `name:"Price"`
 	UserId     string `name:"UserId"`

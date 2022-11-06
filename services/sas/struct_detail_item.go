@@ -17,7 +17,7 @@ package sas
 
 // DetailItem is a nested struct in sas response
 type DetailItem struct {
+	Title       string `json:"Title" xml:"Title"`
 	Description string `json:"Description" xml:"Description"`
 	SubType     string `json:"SubType" xml:"SubType"`
-	Title       string `json:"Title" xml:"Title"`
 }

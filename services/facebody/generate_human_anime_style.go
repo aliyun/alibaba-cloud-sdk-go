@@ -71,8 +71,11 @@ func (client *Client) GenerateHumanAnimeStyleWithCallback(request *GenerateHuman
 // GenerateHumanAnimeStyleRequest is the request struct for api GenerateHumanAnimeStyle
 type GenerateHumanAnimeStyleRequest struct {
 	*requests.RpcRequest
-	AlgoType string `position:"Query" name:"AlgoType"`
-	ImageURL string `position:"Query" name:"ImageURL"`
+	AlgoType           string           `position:"Query" name:"AlgoType"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Query" name:"ImageURL"`
 }
 
 // GenerateHumanAnimeStyleResponse is the response struct for api GenerateHumanAnimeStyle

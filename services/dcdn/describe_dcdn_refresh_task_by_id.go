@@ -78,8 +78,8 @@ type DescribeDcdnRefreshTaskByIdRequest struct {
 // DescribeDcdnRefreshTaskByIdResponse is the response struct for api DescribeDcdnRefreshTaskById
 type DescribeDcdnRefreshTaskByIdResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
 	TotalCount int64     `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
 	Tasks      []CDNTask `json:"Tasks" xml:"Tasks"`
 }
 

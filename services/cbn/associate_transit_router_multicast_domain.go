@@ -93,7 +93,7 @@ func CreateAssociateTransitRouterMulticastDomainRequest() (request *AssociateTra
 	request = &AssociateTransitRouterMulticastDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateTransitRouterMulticastDomain", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateTransitRouterMulticastDomain", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

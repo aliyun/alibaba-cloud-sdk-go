@@ -71,23 +71,24 @@ func (client *Client) CreatePrePayOrderWithCallback(request *CreatePrePayOrderRe
 // CreatePrePayOrderRequest is the request struct for api CreatePrePayOrder
 type CreatePrePayOrderRequest struct {
 	*requests.RpcRequest
-	DiskSize   requests.Integer `position:"Query" name:"DiskSize"`
-	IoMax      requests.Integer `position:"Query" name:"IoMax"`
-	IoMaxSpec  string           `position:"Query" name:"IoMaxSpec"`
-	DiskType   string           `position:"Query" name:"DiskType"`
-	TopicQuota requests.Integer `position:"Query" name:"TopicQuota"`
-	EipMax     requests.Integer `position:"Query" name:"EipMax"`
-	SpecType   string           `position:"Query" name:"SpecType"`
-	DeployType requests.Integer `position:"Query" name:"DeployType"`
+	DiskSize        requests.Integer `position:"Query" name:"DiskSize"`
+	IoMax           requests.Integer `position:"Query" name:"IoMax"`
+	IoMaxSpec       string           `position:"Query" name:"IoMaxSpec"`
+	DiskType        string           `position:"Query" name:"DiskType"`
+	TopicQuota      requests.Integer `position:"Query" name:"TopicQuota"`
+	EipMax          requests.Integer `position:"Query" name:"EipMax"`
+	SpecType        string           `position:"Query" name:"SpecType"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	DeployType      requests.Integer `position:"Query" name:"DeployType"`
 }
 
 // CreatePrePayOrderResponse is the response struct for api CreatePrePayOrder
 type CreatePrePayOrderResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 

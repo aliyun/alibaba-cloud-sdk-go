@@ -80,8 +80,8 @@ type RefreshObjectCachesRequest struct {
 // RefreshObjectCachesResponse is the response struct for api RefreshObjectCaches
 type RefreshObjectCachesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	RefreshTaskId string `json:"RefreshTaskId" xml:"RefreshTaskId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRefreshObjectCachesRequest creates a request to invoke RefreshObjectCaches API

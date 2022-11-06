@@ -17,8 +17,8 @@ package config
 
 // TagResource is a nested struct in config response
 type TagResource struct {
-	ResourceType string `json:"ResourceType" xml:"ResourceType"`
+	TagKey       string `json:"TagKey" xml:"TagKey"`
 	TagValue     string `json:"TagValue" xml:"TagValue"`
 	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
-	TagKey       string `json:"TagKey" xml:"TagKey"`
+	ResourceType string `json:"ResourceType" xml:"ResourceType"`
 }

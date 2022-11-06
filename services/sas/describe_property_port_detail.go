@@ -73,9 +73,11 @@ type DescribePropertyPortDetailRequest struct {
 	*requests.RpcRequest
 	Remark      string           `position:"Query" name:"Remark"`
 	Uuid        string           `position:"Query" name:"Uuid"`
+	BindIp      string           `position:"Query" name:"BindIp"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Extend      string           `position:"Query" name:"Extend"`
 	Port        string           `position:"Query" name:"Port"`
 	ProcName    string           `position:"Query" name:"ProcName"`
 }

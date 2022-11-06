@@ -84,6 +84,7 @@ type CreateClusterRequest struct {
 	WithoutElasticIp            requests.Boolean                  `position:"Query" name:"WithoutElasticIp"`
 	RemoteVisEnable             string                            `position:"Query" name:"RemoteVisEnable"`
 	SystemDiskSize              requests.Integer                  `position:"Query" name:"SystemDiskSize"`
+	Tag                         *[]CreateClusterTag               `position:"Query" name:"Tag"  type:"Repeated"`
 	ComputeSpotPriceLimit       string                            `position:"Query" name:"ComputeSpotPriceLimit"`
 	AutoRenewPeriod             requests.Integer                  `position:"Query" name:"AutoRenewPeriod"`
 	Period                      requests.Integer                  `position:"Query" name:"Period"`
@@ -91,14 +92,17 @@ type CreateClusterRequest struct {
 	EcsOrderComputeCount        requests.Integer                  `position:"Query" name:"EcsOrder.Compute.Count"`
 	ComputeSpotStrategy         string                            `position:"Query" name:"ComputeSpotStrategy"`
 	PostInstallScript           *[]CreateClusterPostInstallScript `position:"Query" name:"PostInstallScript"  type:"Repeated"`
+	RamNodeTypes                *[]string                         `position:"Query" name:"RamNodeTypes"  type:"Repeated"`
 	VSwitchId                   string                            `position:"Query" name:"VSwitchId"`
 	PeriodUnit                  string                            `position:"Query" name:"PeriodUnit"`
 	ComputeEnableHt             requests.Boolean                  `position:"Query" name:"ComputeEnableHt"`
 	AutoRenew                   string                            `position:"Query" name:"AutoRenew"`
+	Domain                      string                            `position:"Query" name:"Domain"`
 	Name                        string                            `position:"Query" name:"Name"`
 	VolumeId                    string                            `position:"Query" name:"VolumeId"`
 	ZoneId                      string                            `position:"Query" name:"ZoneId"`
 	SccClusterId                string                            `position:"Query" name:"SccClusterId"`
+	VolumeMountOption           string                            `position:"Query" name:"VolumeMountOption"`
 	ImageId                     string                            `position:"Query" name:"ImageId"`
 	SystemDiskLevel             string                            `position:"Query" name:"SystemDiskLevel"`
 	ClientToken                 string                            `position:"Query" name:"ClientToken"`
@@ -115,11 +119,14 @@ type CreateClusterRequest struct {
 	OsTag                       string                            `position:"Query" name:"OsTag"`
 	ClusterVersion              string                            `position:"Query" name:"ClusterVersion"`
 	IsComputeEss                requests.Boolean                  `position:"Query" name:"IsComputeEss"`
+	RamRoleName                 string                            `position:"Query" name:"RamRoleName"`
+	Plugin                      string                            `position:"Query" name:"Plugin"`
 	Application                 *[]CreateClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
 	EcsChargeType               string                            `position:"Query" name:"EcsChargeType"`
 	InputFileUrl                string                            `position:"Query" name:"InputFileUrl"`
 	VpcId                       string                            `position:"Query" name:"VpcId"`
 	HaEnable                    requests.Boolean                  `position:"Query" name:"HaEnable"`
+	WithoutAgent                requests.Boolean                  `position:"Query" name:"WithoutAgent"`
 	SchedulerType               string                            `position:"Query" name:"SchedulerType"`
 	VolumeMountpoint            string                            `position:"Query" name:"VolumeMountpoint"`
 	EcsOrderLoginInstanceType   string                            `position:"Query" name:"EcsOrder.Login.InstanceType"`
@@ -127,15 +134,22 @@ type CreateClusterRequest struct {
 
 // CreateClusterAdditionalVolumes is a repeated param struct in CreateClusterRequest
 type CreateClusterAdditionalVolumes struct {
-	VolumeType       string                `name:"VolumeType"`
-	VolumeProtocol   string                `name:"VolumeProtocol"`
-	LocalDirectory   string                `name:"LocalDirectory"`
-	RemoteDirectory  string                `name:"RemoteDirectory"`
-	Roles            *[]CreateClusterRoles `name:"Roles" type:"Repeated"`
-	VolumeId         string                `name:"VolumeId"`
-	VolumeMountpoint string                `name:"VolumeMountpoint"`
-	Location         string                `name:"Location"`
-	JobQueue         string                `name:"JobQueue"`
+	VolumeType        string                                 `name:"VolumeType"`
+	VolumeMountOption string                                 `name:"VolumeMountOption"`
+	VolumeProtocol    string                                 `name:"VolumeProtocol"`
+	LocalDirectory    string                                 `name:"LocalDirectory"`
+	RemoteDirectory   string                                 `name:"RemoteDirectory"`
+	Roles             *[]CreateClusterAdditionalVolumesRoles `name:"Roles" type:"Repeated"`
+	VolumeId          string                                 `name:"VolumeId"`
+	VolumeMountpoint  string                                 `name:"VolumeMountpoint"`
+	Location          string                                 `name:"Location"`
+	JobQueue          string                                 `name:"JobQueue"`
+}
+
+// CreateClusterTag is a repeated param struct in CreateClusterRequest
+type CreateClusterTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateClusterPostInstallScript is a repeated param struct in CreateClusterRequest
@@ -149,8 +163,8 @@ type CreateClusterApplication struct {
 	Tag string `name:"Tag"`
 }
 
-// CreateClusterRoles is a repeated param struct in CreateClusterRequest
-type CreateClusterRoles struct {
+// CreateClusterAdditionalVolumesRoles is a repeated param struct in CreateClusterRequest
+type CreateClusterAdditionalVolumesRoles struct {
 	Name string `name:"Name"`
 }
 
@@ -158,8 +172,8 @@ type CreateClusterRoles struct {
 type CreateClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	ClusterId string `json:"ClusterId" xml:"ClusterId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	ClusterId string `json:"ClusterId" xml:"ClusterId"`
 }
 
 // CreateCreateClusterRequest creates a request to invoke CreateCluster API

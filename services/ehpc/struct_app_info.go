@@ -18,6 +18,6 @@ package ehpc
 // AppInfo is a nested struct in ehpc response
 type AppInfo struct {
 	AppName string `json:"AppName" xml:"AppName"`
-	AppPath string `json:"AppPath" xml:"AppPath"`
 	AppArgs string `json:"AppArgs" xml:"AppArgs"`
+	AppPath string `json:"AppPath" xml:"AppPath"`
 }

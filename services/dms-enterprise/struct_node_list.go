@@ -17,5 +17,5 @@ package dms_enterprise
 
 // NodeList is a nested struct in dms_enterprise response
 type NodeList struct {
-	Node []Node `json:"Node" xml:"Node"`
+	Node []NodeInGetTaskInstanceRelation `json:"Node" xml:"Node"`
 }

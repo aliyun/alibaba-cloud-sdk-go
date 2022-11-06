@@ -19,6 +19,7 @@ package resourcemanager
 type ResourceDirectory struct {
 	MasterAccountName    string `json:"MasterAccountName" xml:"MasterAccountName"`
 	MasterAccountId      string `json:"MasterAccountId" xml:"MasterAccountId"`
+	IdentityInformation  string `json:"IdentityInformation" xml:"IdentityInformation"`
 	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
 	ControlPolicyStatus  string `json:"ControlPolicyStatus" xml:"ControlPolicyStatus"`
 	MemberDeletionStatus string `json:"MemberDeletionStatus" xml:"MemberDeletionStatus"`

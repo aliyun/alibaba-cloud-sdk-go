@@ -71,8 +71,16 @@ func (client *Client) ListAccountsWithCallback(request *ListAccountsRequest, cal
 // ListAccountsRequest is the request struct for api ListAccounts
 type ListAccountsRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber  requests.Integer   `position:"Query" name:"PageNumber"`
+	IncludeTags requests.Boolean   `position:"Query" name:"IncludeTags"`
+	PageSize    requests.Integer   `position:"Query" name:"PageSize"`
+	Tag         *[]ListAccountsTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// ListAccountsTag is a repeated param struct in ListAccountsRequest
+type ListAccountsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListAccountsResponse is the response struct for api ListAccounts

@@ -80,10 +80,10 @@ type CreateSaslUserRequest struct {
 // CreateSaslUserResponse is the response struct for api CreateSaslUser
 type CreateSaslUserResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateSaslUserRequest creates a request to invoke CreateSaslUser API

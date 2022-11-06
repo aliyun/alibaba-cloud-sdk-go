@@ -86,6 +86,7 @@ type CreateTransitRouterVbrAttachmentRequest struct {
 	TransitRouterId                    string           `position:"Query" name:"TransitRouterId"`
 	ResourceType                       string           `position:"Query" name:"ResourceType"`
 	TransitRouterAttachmentDescription string           `position:"Query" name:"TransitRouterAttachmentDescription"`
+	AssociateRouteTableId              string           `position:"Query" name:"AssociateRouteTableId"`
 	VbrOwnerId                         requests.Integer `position:"Query" name:"VbrOwnerId"`
 }
 
@@ -101,7 +102,7 @@ func CreateCreateTransitRouterVbrAttachmentRequest() (request *CreateTransitRout
 	request = &CreateTransitRouterVbrAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterVbrAttachment", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterVbrAttachment", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

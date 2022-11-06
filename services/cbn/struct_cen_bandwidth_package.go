@@ -38,6 +38,7 @@ type CenBandwidthPackage struct {
 	BusinessStatus                  string                             `json:"BusinessStatus" xml:"BusinessStatus"`
 	Name                            string                             `json:"Name" xml:"Name"`
 	HasReservationData              string                             `json:"HasReservationData" xml:"HasReservationData"`
+	ServiceType                     string                             `json:"ServiceType" xml:"ServiceType"`
 	CenIds                          CenIds                             `json:"CenIds" xml:"CenIds"`
 	OrginInterRegionBandwidthLimits OrginInterRegionBandwidthLimits    `json:"OrginInterRegionBandwidthLimits" xml:"OrginInterRegionBandwidthLimits"`
 	Tags                            TagsInDescribeCenBandwidthPackages `json:"Tags" xml:"Tags"`

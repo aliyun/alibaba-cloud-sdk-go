@@ -79,8 +79,8 @@ type DescribeDomainsBySourceRequest struct {
 // DescribeDomainsBySourceResponse is the response struct for api DescribeDomainsBySource
 type DescribeDomainsBySourceResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	Sources     string      `json:"Sources" xml:"Sources"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	DomainsList DomainsList `json:"DomainsList" xml:"DomainsList"`
 }
 

@@ -71,11 +71,11 @@ func (client *Client) SkipPreCheckWithCallback(request *SkipPreCheckRequest, cal
 // SkipPreCheckRequest is the request struct for api SkipPreCheck
 type SkipPreCheckRequest struct {
 	*requests.RpcRequest
-	SkipPreCheckItems string           `position:"Query" name:"SkipPreCheckItems"`
 	Skip              requests.Boolean `position:"Query" name:"Skip"`
 	JobId             string           `position:"Query" name:"JobId"`
 	SkipPreCheckNames string           `position:"Query" name:"SkipPreCheckNames"`
 	DtsJobId          string           `position:"Query" name:"DtsJobId"`
+	SkipPreCheckItems string           `position:"Query" name:"SkipPreCheckItems"`
 }
 
 // SkipPreCheckResponse is the response struct for api SkipPreCheck

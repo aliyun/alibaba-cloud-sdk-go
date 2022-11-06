@@ -77,8 +77,8 @@ type DescribeCdnSubListRequest struct {
 // DescribeCdnSubListResponse is the response struct for api DescribeCdnSubList
 type DescribeCdnSubListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Content   string `json:"Content" xml:"Content"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeCdnSubListRequest creates a request to invoke DescribeCdnSubList API

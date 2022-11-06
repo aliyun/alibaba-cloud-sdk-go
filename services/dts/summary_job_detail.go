@@ -71,8 +71,9 @@ func (client *Client) SummaryJobDetailWithCallback(request *SummaryJobDetailRequ
 // SummaryJobDetailRequest is the request struct for api SummaryJobDetail
 type SummaryJobDetailRequest struct {
 	*requests.RpcRequest
-	JobCode                  string `position:"Query" name:"JobCode"`
+	StructType               string `position:"Query" name:"StructType"`
 	DtsJobId                 string `position:"Query" name:"DtsJobId"`
+	JobCode                  string `position:"Query" name:"JobCode"`
 	DtsInstanceId            string `position:"Query" name:"DtsInstanceId"`
 	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
 }

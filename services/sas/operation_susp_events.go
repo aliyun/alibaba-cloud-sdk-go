@@ -83,8 +83,8 @@ type OperationSuspEventsRequest struct {
 type OperationSuspEventsResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Success    bool   `json:"Success" xml:"Success"`
 	AccessCode string `json:"AccessCode" xml:"AccessCode"`
+	Success    bool   `json:"Success" xml:"Success"`
 }
 
 // CreateOperationSuspEventsRequest creates a request to invoke OperationSuspEvents API

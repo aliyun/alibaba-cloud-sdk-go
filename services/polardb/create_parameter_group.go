@@ -72,6 +72,7 @@ func (client *Client) CreateParameterGroupWithCallback(request *CreateParameterG
 type CreateParameterGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -94,7 +95,7 @@ func CreateCreateParameterGroupRequest() (request *CreateParameterGroupRequest) 
 	request = &CreateParameterGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CreateParameterGroup", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CreateParameterGroup", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

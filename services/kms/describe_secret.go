@@ -78,20 +78,21 @@ type DescribeSecretRequest struct {
 // DescribeSecretResponse is the response struct for api DescribeSecret
 type DescribeSecretResponse struct {
 	*responses.BaseResponse
-	RequestId         string               `json:"RequestId" xml:"RequestId"`
-	Arn               string               `json:"Arn" xml:"Arn"`
-	SecretName        string               `json:"SecretName" xml:"SecretName"`
-	EncryptionKeyId   string               `json:"EncryptionKeyId" xml:"EncryptionKeyId"`
-	Description       string               `json:"Description" xml:"Description"`
-	CreateTime        string               `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime        string               `json:"UpdateTime" xml:"UpdateTime"`
-	PlannedDeleteTime string               `json:"PlannedDeleteTime" xml:"PlannedDeleteTime"`
-	AutomaticRotation string               `json:"AutomaticRotation" xml:"AutomaticRotation"`
-	LastRotationDate  string               `json:"LastRotationDate" xml:"LastRotationDate"`
-	RotationInterval  string               `json:"RotationInterval" xml:"RotationInterval"`
+	CreateTime        string               `json:"CreateTime" xml:"CreateTime"`
 	NextRotationDate  string               `json:"NextRotationDate" xml:"NextRotationDate"`
+	EncryptionKeyId   string               `json:"EncryptionKeyId" xml:"EncryptionKeyId"`
+	RotationInterval  string               `json:"RotationInterval" xml:"RotationInterval"`
+	Arn               string               `json:"Arn" xml:"Arn"`
 	ExtendedConfig    string               `json:"ExtendedConfig" xml:"ExtendedConfig"`
+	LastRotationDate  string               `json:"LastRotationDate" xml:"LastRotationDate"`
+	RequestId         string               `json:"RequestId" xml:"RequestId"`
+	Description       string               `json:"Description" xml:"Description"`
+	SecretName        string               `json:"SecretName" xml:"SecretName"`
+	AutomaticRotation string               `json:"AutomaticRotation" xml:"AutomaticRotation"`
 	SecretType        string               `json:"SecretType" xml:"SecretType"`
+	PlannedDeleteTime string               `json:"PlannedDeleteTime" xml:"PlannedDeleteTime"`
+	DKMSInstanceId    string               `json:"DKMSInstanceId" xml:"DKMSInstanceId"`
 	Tags              TagsInDescribeSecret `json:"Tags" xml:"Tags"`
 }
 

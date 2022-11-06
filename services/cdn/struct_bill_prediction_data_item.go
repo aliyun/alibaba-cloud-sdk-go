@@ -18,6 +18,6 @@ package cdn
 // BillPredictionDataItem is a nested struct in cdn response
 type BillPredictionDataItem struct {
 	Value   float64 `json:"Value" xml:"Value"`
-	Area    string  `json:"Area" xml:"Area"`
 	TimeStp string  `json:"TimeStp" xml:"TimeStp"`
+	Area    string  `json:"Area" xml:"Area"`
 }

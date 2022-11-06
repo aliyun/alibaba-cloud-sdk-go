@@ -77,11 +77,11 @@ type GetCertificateRequest struct {
 // GetCertificateResponse is the response struct for api GetCertificate
 type GetCertificateResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Certificate      string `json:"Certificate" xml:"Certificate"`
 	CertificateChain string `json:"CertificateChain" xml:"CertificateChain"`
-	Csr              string `json:"Csr" xml:"Csr"`
+	Certificate      string `json:"Certificate" xml:"Certificate"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	CertificateId    string `json:"CertificateId" xml:"CertificateId"`
+	Csr              string `json:"Csr" xml:"Csr"`
 }
 
 // CreateGetCertificateRequest creates a request to invoke GetCertificate API

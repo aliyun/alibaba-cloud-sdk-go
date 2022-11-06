@@ -17,6 +17,7 @@ package dcdn
 
 // DomainConfig is a nested struct in dcdn response
 type DomainConfig struct {
+	ParentId     string                                  `json:"ParentId" xml:"ParentId"`
 	ConfigId     string                                  `json:"ConfigId" xml:"ConfigId"`
 	Status       string                                  `json:"Status" xml:"Status"`
 	FunctionName string                                  `json:"FunctionName" xml:"FunctionName"`

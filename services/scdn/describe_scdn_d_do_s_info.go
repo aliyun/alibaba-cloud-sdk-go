@@ -71,14 +71,13 @@ func (client *Client) DescribeScdnDDoSInfoWithCallback(request *DescribeScdnDDoS
 // DescribeScdnDDoSInfoRequest is the request struct for api DescribeScdnDDoSInfo
 type DescribeScdnDDoSInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeScdnDDoSInfoResponse is the response struct for api DescribeScdnDDoSInfo
 type DescribeScdnDDoSInfoResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	SecBandwidth     int    `json:"SecBandwidth" xml:"SecBandwidth"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	ElasticBandwidth int    `json:"ElasticBandwidth" xml:"ElasticBandwidth"`
 }
 

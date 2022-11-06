@@ -71,16 +71,18 @@ func (client *Client) DescribeDesktopGroupsWithCallback(request *DescribeDesktop
 // DescribeDesktopGroupsRequest is the request struct for api DescribeDesktopGroups
 type DescribeDesktopGroupsRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId     string           `position:"Query" name:"OfficeSiteId"`
-	DesktopGroupName string           `position:"Query" name:"DesktopGroupName"`
-	DesktopGroupId   string           `position:"Query" name:"DesktopGroupId"`
-	NextToken        string           `position:"Query" name:"NextToken"`
-	Period           requests.Integer `position:"Query" name:"Period"`
-	OwnType          requests.Integer `position:"Query" name:"OwnType"`
-	PeriodUnit       string           `position:"Query" name:"PeriodUnit"`
-	MaxResults       requests.Integer `position:"Query" name:"MaxResults"`
-	PolicyGroupId    string           `position:"Query" name:"PolicyGroupId"`
-	Status           requests.Integer `position:"Query" name:"Status"`
+	OfficeSiteId       string           `position:"Query" name:"OfficeSiteId"`
+	EndUserIds         *[]string        `position:"Query" name:"EndUserIds"  type:"Repeated"`
+	DesktopGroupName   string           `position:"Query" name:"DesktopGroupName"`
+	DesktopGroupId     string           `position:"Query" name:"DesktopGroupId"`
+	NextToken          string           `position:"Query" name:"NextToken"`
+	Period             requests.Integer `position:"Query" name:"Period"`
+	OwnType            requests.Integer `position:"Query" name:"OwnType"`
+	ExcludedEndUserIds *[]string        `position:"Query" name:"ExcludedEndUserIds"  type:"Repeated"`
+	PeriodUnit         string           `position:"Query" name:"PeriodUnit"`
+	MaxResults         requests.Integer `position:"Query" name:"MaxResults"`
+	PolicyGroupId      string           `position:"Query" name:"PolicyGroupId"`
+	Status             requests.Integer `position:"Query" name:"Status"`
 }
 
 // DescribeDesktopGroupsResponse is the response struct for api DescribeDesktopGroups

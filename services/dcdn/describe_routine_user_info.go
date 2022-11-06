@@ -77,8 +77,8 @@ type DescribeRoutineUserInfoRequest struct {
 // DescribeRoutineUserInfoResponse is the response struct for api DescribeRoutineUserInfo
 type DescribeRoutineUserInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeRoutineUserInfoRequest creates a request to invoke DescribeRoutineUserInfo API

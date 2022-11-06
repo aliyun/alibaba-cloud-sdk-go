@@ -71,9 +71,12 @@ func (client *Client) AddFaceEntityWithCallback(request *AddFaceEntityRequest, c
 // AddFaceEntityRequest is the request struct for api AddFaceEntity
 type AddFaceEntityRequest struct {
 	*requests.RpcRequest
-	EntityId string `position:"Body" name:"EntityId"`
-	Labels   string `position:"Body" name:"Labels"`
-	DbName   string `position:"Body" name:"DbName"`
+	EntityId           string           `position:"Body" name:"EntityId"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Labels             string           `position:"Body" name:"Labels"`
+	DbName             string           `position:"Body" name:"DbName"`
 }
 
 // AddFaceEntityResponse is the response struct for api AddFaceEntity

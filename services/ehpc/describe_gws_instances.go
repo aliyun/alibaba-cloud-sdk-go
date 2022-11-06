@@ -82,10 +82,10 @@ type DescribeGWSInstancesRequest struct {
 // DescribeGWSInstancesResponse is the response struct for api DescribeGWSInstances
 type DescribeGWSInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
 	Instances  Instances `json:"Instances" xml:"Instances"`
 }
 

@@ -90,8 +90,8 @@ type ListTagResourcesTag struct {
 // ListTagResourcesResponse is the response struct for api ListTagResources
 type ListTagResourcesResponse struct {
 	*responses.BaseResponse
-	NextToken    string       `json:"NextToken" xml:"NextToken"`
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	NextToken    string       `json:"NextToken" xml:"NextToken"`
 	TagResources TagResources `json:"TagResources" xml:"TagResources"`
 }
 
@@ -100,7 +100,7 @@ func CreateListTagResourcesRequest() (request *ListTagResourcesRequest) {
 	request = &ListTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ListTagResources", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ListTagResources", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

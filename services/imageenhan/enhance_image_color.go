@@ -72,8 +72,8 @@ func (client *Client) EnhanceImageColorWithCallback(request *EnhanceImageColorRe
 type EnhanceImageColorRequest struct {
 	*requests.RpcRequest
 	Mode         string `position:"Body" name:"Mode"`
-	ImageURL     string `position:"Body" name:"ImageURL"`
 	OutputFormat string `position:"Body" name:"OutputFormat"`
+	ImageURL     string `position:"Body" name:"ImageURL"`
 }
 
 // EnhanceImageColorResponse is the response struct for api EnhanceImageColor

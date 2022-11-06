@@ -71,9 +71,10 @@ func (client *Client) GetInstanceListWithCallback(request *GetInstanceListReques
 // GetInstanceListRequest is the request struct for api GetInstanceList
 type GetInstanceListRequest struct {
 	*requests.RpcRequest
-	OrderId    string                `position:"Query" name:"OrderId"`
-	InstanceId *[]string             `position:"Query" name:"InstanceId"  type:"Repeated"`
-	Tag        *[]GetInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`
+	OrderId         string                `position:"Query" name:"OrderId"`
+	ResourceGroupId string                `position:"Query" name:"ResourceGroupId"`
+	InstanceId      *[]string             `position:"Query" name:"InstanceId"  type:"Repeated"`
+	Tag             *[]GetInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // GetInstanceListTag is a repeated param struct in GetInstanceListRequest
@@ -85,10 +86,10 @@ type GetInstanceListTag struct {
 // GetInstanceListResponse is the response struct for api GetInstanceList
 type GetInstanceListResponse struct {
 	*responses.BaseResponse
-	Success      bool         `json:"Success" xml:"Success"`
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Code         int          `json:"Code" xml:"Code"`
 	Message      string       `json:"Message" xml:"Message"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	Success      bool         `json:"Success" xml:"Success"`
 	InstanceList InstanceList `json:"InstanceList" xml:"InstanceList"`
 }
 

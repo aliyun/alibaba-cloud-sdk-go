@@ -17,10 +17,10 @@ package ehpc
 
 // Imagegw is a nested struct in ehpc response
 type Imagegw struct {
+	UpdateDateTime         string    `json:"UpdateDateTime" xml:"UpdateDateTime"`
+	ImageExpirationTimeout string    `json:"ImageExpirationTimeout" xml:"ImageExpirationTimeout"`
+	MongoDBURI             string    `json:"MongoDBURI" xml:"MongoDBURI"`
 	DefaultImageLocation   string    `json:"DefaultImageLocation" xml:"DefaultImageLocation"`
 	PullUpdateTimeout      int64     `json:"PullUpdateTimeout" xml:"PullUpdateTimeout"`
-	MongoDBURI             string    `json:"MongoDBURI" xml:"MongoDBURI"`
-	ImageExpirationTimeout string    `json:"ImageExpirationTimeout" xml:"ImageExpirationTimeout"`
-	UpdateDateTime         string    `json:"UpdateDateTime" xml:"UpdateDateTime"`
 	Locations              Locations `json:"Locations" xml:"Locations"`
 }

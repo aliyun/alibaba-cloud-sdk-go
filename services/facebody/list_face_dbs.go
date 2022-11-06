@@ -71,6 +71,11 @@ func (client *Client) ListFaceDbsWithCallback(request *ListFaceDbsRequest, callb
 // ListFaceDbsRequest is the request struct for api ListFaceDbs
 type ListFaceDbsRequest struct {
 	*requests.RpcRequest
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Limit              requests.Integer `position:"Body" name:"Limit"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	Offset             requests.Integer `position:"Body" name:"Offset"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
 }
 
 // ListFaceDbsResponse is the response struct for api ListFaceDbs

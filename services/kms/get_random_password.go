@@ -83,8 +83,8 @@ type GetRandomPasswordRequest struct {
 // GetRandomPasswordResponse is the response struct for api GetRandomPassword
 type GetRandomPasswordResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	RandomPassword string `json:"RandomPassword" xml:"RandomPassword"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetRandomPasswordRequest creates a request to invoke GetRandomPassword API

@@ -81,10 +81,10 @@ type ListExecutionLogsRequest struct {
 // ListExecutionLogsResponse is the response struct for api ListExecutionLogs
 type ListExecutionLogsResponse struct {
 	*responses.BaseResponse
-	RequestId     string         `json:"RequestId" xml:"RequestId"`
-	MaxResults    int            `json:"MaxResults" xml:"MaxResults"`
 	NextToken     string         `json:"NextToken" xml:"NextToken"`
+	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	IsTruncated   bool           `json:"IsTruncated" xml:"IsTruncated"`
+	MaxResults    int            `json:"MaxResults" xml:"MaxResults"`
 	ExecutionLogs []ExecutionLog `json:"ExecutionLogs" xml:"ExecutionLogs"`
 }
 
@@ -93,7 +93,7 @@ func CreateListExecutionLogsRequest() (request *ListExecutionLogsRequest) {
 	request = &ListExecutionLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListExecutionLogs", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListExecutionLogs", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

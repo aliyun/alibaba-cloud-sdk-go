@@ -84,8 +84,8 @@ type StartNodesInstance struct {
 // StartNodesResponse is the response struct for api StartNodes
 type StartNodesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStartNodesRequest creates a request to invoke StartNodes API

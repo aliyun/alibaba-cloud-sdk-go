@@ -17,7 +17,8 @@ package dcdn
 
 // ConfigItem is a nested struct in dcdn response
 type ConfigItem struct {
-	Code  string `json:"Code" xml:"Code"`
-	Expr  string `json:"Expr" xml:"Expr"`
-	Value string `json:"Value" xml:"Value"`
+	Value  string `json:"Value" xml:"Value"`
+	Code   string `json:"Code" xml:"Code"`
+	Expr   string `json:"Expr" xml:"Expr"`
+	Config string `json:"Config" xml:"Config"`
 }

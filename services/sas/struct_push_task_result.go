@@ -17,14 +17,14 @@ package sas
 
 // PushTaskResult is a nested struct in sas response
 type PushTaskResult struct {
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	OsVersion    string `json:"OsVersion" xml:"OsVersion"`
-	InstanceName string `json:"InstanceName" xml:"InstanceName"`
-	Success      bool   `json:"Success" xml:"Success"`
+	Uuid         string `json:"Uuid" xml:"Uuid"`
 	GroupId      int64  `json:"GroupId" xml:"GroupId"`
-	Ip           string `json:"Ip" xml:"Ip"`
+	Success      bool   `json:"Success" xml:"Success"`
+	Region       string `json:"Region" xml:"Region"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
 	Online       bool   `json:"Online" xml:"Online"`
 	Message      string `json:"Message" xml:"Message"`
-	Region       string `json:"Region" xml:"Region"`
-	Uuid         string `json:"Uuid" xml:"Uuid"`
+	Ip           string `json:"Ip" xml:"Ip"`
+	OsVersion    string `json:"OsVersion" xml:"OsVersion"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
 }

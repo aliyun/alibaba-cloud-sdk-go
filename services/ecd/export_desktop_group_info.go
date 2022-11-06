@@ -79,6 +79,7 @@ type ExportDesktopGroupInfoRequest struct {
 	EndUserId        *[]string        `position:"Query" name:"EndUserId"  type:"Repeated"`
 	ExpiredTime      string           `position:"Query" name:"ExpiredTime"`
 	MaxResults       requests.Integer `position:"Query" name:"MaxResults"`
+	LangType         string           `position:"Query" name:"LangType"`
 	ChargeType       string           `position:"Query" name:"ChargeType"`
 	PolicyGroupId    string           `position:"Query" name:"PolicyGroupId"`
 }

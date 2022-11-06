@@ -71,8 +71,8 @@ func (client *Client) DescribeCdnUserResourcePackageWithCallback(request *Descri
 // DescribeCdnUserResourcePackageRequest is the request struct for api DescribeCdnUserResourcePackage
 type DescribeCdnUserResourcePackageRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	Status        string           `position:"Query" name:"Status"`
 }
 

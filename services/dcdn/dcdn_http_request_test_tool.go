@@ -86,8 +86,8 @@ type DcdnHttpRequestTestToolRequest struct {
 type DcdnHttpRequestTestToolResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Header     string `json:"Header" xml:"Header"`
 	Body       string `json:"Body" xml:"Body"`
+	Header     string `json:"Header" xml:"Header"`
 	StatusCode int    `json:"StatusCode" xml:"StatusCode"`
 }
 

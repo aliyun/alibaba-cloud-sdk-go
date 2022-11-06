@@ -19,4 +19,7 @@ package iot
 type DataSourceItem struct {
 	DataSourceItemId int64  `json:"DataSourceItemId" xml:"DataSourceItemId"`
 	Topic            string `json:"Topic" xml:"Topic"`
+	ScopeType        string `json:"ScopeType" xml:"ScopeType"`
+	ProductKey       string `json:"ProductKey" xml:"ProductKey"`
+	DeviceName       string `json:"DeviceName" xml:"DeviceName"`
 }

@@ -71,30 +71,31 @@ func (client *Client) CreateBackupPlanWithCallback(request *CreateBackupPlanRequ
 // CreateBackupPlanRequest is the request struct for api CreateBackupPlan
 type CreateBackupPlanRequest struct {
 	*requests.RpcRequest
-	DatabaseType   string           `position:"Query" name:"DatabaseType"`
-	ClientToken    string           `position:"Query" name:"ClientToken"`
-	InstanceClass  string           `position:"Query" name:"InstanceClass"`
-	StorageType    string           `position:"Query" name:"StorageType"`
-	DatabaseRegion string           `position:"Query" name:"DatabaseRegion"`
-	InstanceType   string           `position:"Query" name:"InstanceType"`
-	Period         string           `position:"Query" name:"Period"`
-	FromApp        string           `position:"Query" name:"FromApp"`
-	OwnerId        string           `position:"Query" name:"OwnerId"`
-	UsedTime       requests.Integer `position:"Query" name:"UsedTime"`
-	BackupMethod   string           `position:"Query" name:"BackupMethod"`
-	StorageRegion  string           `position:"Query" name:"StorageRegion"`
-	Region         string           `position:"Query" name:"Region"`
-	PayType        string           `position:"Query" name:"PayType"`
+	DatabaseType    string           `position:"Query" name:"DatabaseType"`
+	ClientToken     string           `position:"Query" name:"ClientToken"`
+	InstanceClass   string           `position:"Query" name:"InstanceClass"`
+	StorageType     string           `position:"Query" name:"StorageType"`
+	DatabaseRegion  string           `position:"Query" name:"DatabaseRegion"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	InstanceType    string           `position:"Query" name:"InstanceType"`
+	Period          string           `position:"Query" name:"Period"`
+	FromApp         string           `position:"Query" name:"FromApp"`
+	OwnerId         string           `position:"Query" name:"OwnerId"`
+	UsedTime        requests.Integer `position:"Query" name:"UsedTime"`
+	BackupMethod    string           `position:"Query" name:"BackupMethod"`
+	StorageRegion   string           `position:"Query" name:"StorageRegion"`
+	Region          string           `position:"Query" name:"Region"`
+	PayType         string           `position:"Query" name:"PayType"`
 }
 
 // CreateBackupPlanResponse is the response struct for api CreateBackupPlan
 type CreateBackupPlanResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 	OrderId        string `json:"OrderId" xml:"OrderId"`
 }
@@ -104,7 +105,7 @@ func CreateCreateBackupPlanRequest() (request *CreateBackupPlanRequest) {
 	request = &CreateBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateBackupPlan", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateBackupPlan", "", "")
 	request.Method = requests.POST
 	return
 }

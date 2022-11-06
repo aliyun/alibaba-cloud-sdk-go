@@ -74,6 +74,7 @@ type CreateSnatEntryRequest struct {
 	SourceCIDR      string `position:"Query" name:"SourceCIDR"`
 	SnatIp          string `position:"Query" name:"SnatIp"`
 	SourceVSwitchId string `position:"Query" name:"SourceVSwitchId"`
+	SourceNetworkId string `position:"Query" name:"SourceNetworkId"`
 	NatGatewayId    string `position:"Query" name:"NatGatewayId"`
 	SnatEntryName   string `position:"Query" name:"SnatEntryName"`
 }

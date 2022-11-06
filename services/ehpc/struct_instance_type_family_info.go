@@ -17,7 +17,7 @@ package ehpc
 
 // InstanceTypeFamilyInfo is a nested struct in ehpc response
 type InstanceTypeFamilyInfo struct {
-	InstanceTypeFamilyId string `json:"InstanceTypeFamilyId" xml:"InstanceTypeFamilyId"`
 	Generation           string `json:"Generation" xml:"Generation"`
+	InstanceTypeFamilyId string `json:"InstanceTypeFamilyId" xml:"InstanceTypeFamilyId"`
 	Types                Types  `json:"Types" xml:"Types"`
 }

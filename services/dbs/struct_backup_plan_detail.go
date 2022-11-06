@@ -17,39 +17,40 @@ package dbs
 
 // BackupPlanDetail is a nested struct in dbs response
 type BackupPlanDetail struct {
-	BackupPlanId                         string `json:"BackupPlanId" xml:"BackupPlanId"`
-	SourceEndpointInstanceType           string `json:"SourceEndpointInstanceType" xml:"SourceEndpointInstanceType"`
-	SourceEndpointRegion                 string `json:"SourceEndpointRegion" xml:"SourceEndpointRegion"`
-	SourceEndpointInstanceID             string `json:"SourceEndpointInstanceID" xml:"SourceEndpointInstanceID"`
-	SourceEndpointIpPort                 string `json:"SourceEndpointIpPort" xml:"SourceEndpointIpPort"`
-	SourceEndpointDatabaseName           string `json:"SourceEndpointDatabaseName" xml:"SourceEndpointDatabaseName"`
-	SourceEndpointUserName               string `json:"SourceEndpointUserName" xml:"SourceEndpointUserName"`
-	BackupObjects                        string `json:"BackupObjects" xml:"BackupObjects"`
-	BackupGatewayId                      int64  `json:"BackupGatewayId" xml:"BackupGatewayId"`
-	OSSBucketRegion                      string `json:"OSSBucketRegion" xml:"OSSBucketRegion"`
-	OSSBucketName                        string `json:"OSSBucketName" xml:"OSSBucketName"`
-	BackupPeriod                         string `json:"BackupPeriod" xml:"BackupPeriod"`
-	BackupStartTime                      string `json:"BackupStartTime" xml:"BackupStartTime"`
-	EnableBackupLog                      bool   `json:"EnableBackupLog" xml:"EnableBackupLog"`
-	BackupRetentionPeriod                int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	DuplicationInfrequentAccessPeriod    int    `json:"DuplicationInfrequentAccessPeriod" xml:"DuplicationInfrequentAccessPeriod"`
-	DuplicationArchivePeriod             int    `json:"DuplicationArchivePeriod" xml:"DuplicationArchivePeriod"`
-	BackupPlanName                       string `json:"BackupPlanName" xml:"BackupPlanName"`
-	SourceEndpointOracleSID              string `json:"SourceEndpointOracleSID" xml:"SourceEndpointOracleSID"`
-	InstanceClass                        string `json:"InstanceClass" xml:"InstanceClass"`
-	BackupMethod                         string `json:"BackupMethod" xml:"BackupMethod"`
-	BackupPlanCreateTime                 int64  `json:"BackupPlanCreateTime" xml:"BackupPlanCreateTime"`
-	BackupPlanStatus                     string `json:"BackupPlanStatus" xml:"BackupPlanStatus"`
-	BeginTimestampForRestore             int64  `json:"BeginTimestampForRestore" xml:"BeginTimestampForRestore"`
-	EndTimestampForRestore               int64  `json:"EndTimestampForRestore" xml:"EndTimestampForRestore"`
-	OpenBackupSetAutoDownload            bool   `json:"OpenBackupSetAutoDownload" xml:"OpenBackupSetAutoDownload"`
-	BackupSetDownloadTargetType          string `json:"BackupSetDownloadTargetType" xml:"BackupSetDownloadTargetType"`
-	BackupSetDownloadDir                 string `json:"BackupSetDownloadDir" xml:"BackupSetDownloadDir"`
-	BackupSetDownloadGatewayId           int64  `json:"BackupSetDownloadGatewayId" xml:"BackupSetDownloadGatewayId"`
-	BackupSetDownloadFullDataFormat      string `json:"BackupSetDownloadFullDataFormat" xml:"BackupSetDownloadFullDataFormat"`
-	BackupSetDownloadIncrementDataFormat string `json:"BackupSetDownloadIncrementDataFormat" xml:"BackupSetDownloadIncrementDataFormat"`
-	CrossAliyunId                        string `json:"CrossAliyunId" xml:"CrossAliyunId"`
 	CrossRoleName                        string `json:"CrossRoleName" xml:"CrossRoleName"`
+	SourceEndpointInstanceType           string `json:"SourceEndpointInstanceType" xml:"SourceEndpointInstanceType"`
+	BackupSetDownloadDir                 string `json:"BackupSetDownloadDir" xml:"BackupSetDownloadDir"`
+	SourceEndpointIpPort                 string `json:"SourceEndpointIpPort" xml:"SourceEndpointIpPort"`
+	CrossAliyunId                        string `json:"CrossAliyunId" xml:"CrossAliyunId"`
+	DuplicationArchivePeriod             int    `json:"DuplicationArchivePeriod" xml:"DuplicationArchivePeriod"`
+	BackupPlanId                         string `json:"BackupPlanId" xml:"BackupPlanId"`
+	EndTimestampForRestore               int64  `json:"EndTimestampForRestore" xml:"EndTimestampForRestore"`
+	BackupPlanStatus                     string `json:"BackupPlanStatus" xml:"BackupPlanStatus"`
+	BackupSetDownloadFullDataFormat      string `json:"BackupSetDownloadFullDataFormat" xml:"BackupSetDownloadFullDataFormat"`
+	BackupRetentionPeriod                int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	OSSBucketRegion                      string `json:"OSSBucketRegion" xml:"OSSBucketRegion"`
+	SourceEndpointOracleSID              string `json:"SourceEndpointOracleSID" xml:"SourceEndpointOracleSID"`
 	BackupStorageType                    string `json:"BackupStorageType" xml:"BackupStorageType"`
+	BackupMethod                         string `json:"BackupMethod" xml:"BackupMethod"`
+	SourceEndpointRegion                 string `json:"SourceEndpointRegion" xml:"SourceEndpointRegion"`
+	BackupPeriod                         string `json:"BackupPeriod" xml:"BackupPeriod"`
+	SourceEndpointDatabaseName           string `json:"SourceEndpointDatabaseName" xml:"SourceEndpointDatabaseName"`
+	BackupSetDownloadGatewayId           int64  `json:"BackupSetDownloadGatewayId" xml:"BackupSetDownloadGatewayId"`
+	BackupPlanCreateTime                 int64  `json:"BackupPlanCreateTime" xml:"BackupPlanCreateTime"`
+	InstanceClass                        string `json:"InstanceClass" xml:"InstanceClass"`
+	BackupSetDownloadTargetType          string `json:"BackupSetDownloadTargetType" xml:"BackupSetDownloadTargetType"`
+	DuplicationInfrequentAccessPeriod    int    `json:"DuplicationInfrequentAccessPeriod" xml:"DuplicationInfrequentAccessPeriod"`
+	BackupStartTime                      string `json:"BackupStartTime" xml:"BackupStartTime"`
 	ErrMessage                           string `json:"ErrMessage" xml:"ErrMessage"`
+	BackupObjects                        string `json:"BackupObjects" xml:"BackupObjects"`
+	BeginTimestampForRestore             int64  `json:"BeginTimestampForRestore" xml:"BeginTimestampForRestore"`
+	SourceEndpointInstanceID             string `json:"SourceEndpointInstanceID" xml:"SourceEndpointInstanceID"`
+	OpenBackupSetAutoDownload            bool   `json:"OpenBackupSetAutoDownload" xml:"OpenBackupSetAutoDownload"`
+	BackupPlanName                       string `json:"BackupPlanName" xml:"BackupPlanName"`
+	OSSBucketName                        string `json:"OSSBucketName" xml:"OSSBucketName"`
+	BackupGatewayId                      int64  `json:"BackupGatewayId" xml:"BackupGatewayId"`
+	SourceEndpointUserName               string `json:"SourceEndpointUserName" xml:"SourceEndpointUserName"`
+	BackupSetDownloadIncrementDataFormat string `json:"BackupSetDownloadIncrementDataFormat" xml:"BackupSetDownloadIncrementDataFormat"`
+	EnableBackupLog                      bool   `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	ResourceGroupId                      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

@@ -43,6 +43,7 @@ type Items struct {
 	Label                 string                                         `json:"Label" xml:"Label"`
 	ProductKey            string                                         `json:"ProductKey" xml:"ProductKey"`
 	SoundCode             string                                         `json:"SoundCode" xml:"SoundCode"`
+	Sharable              int64                                          `json:"Sharable" xml:"Sharable"`
 	TargetInstanceId      string                                         `json:"TargetInstanceId" xml:"TargetInstanceId"`
 	GmtCreate             int64                                          `json:"GmtCreate" xml:"GmtCreate"`
 	SourceUid             string                                         `json:"SourceUid" xml:"SourceUid"`
@@ -50,9 +51,10 @@ type Items struct {
 	DeviceName            string                                         `json:"DeviceName" xml:"DeviceName"`
 	TargetInstanceName    string                                         `json:"TargetInstanceName" xml:"TargetInstanceName"`
 	StartTime             string                                         `json:"StartTime" xml:"StartTime"`
+	GmtAdded              int64                                          `json:"GmtAdded" xml:"GmtAdded"`
 	Total                 int                                            `json:"Total" xml:"Total"`
-	EndTime               string                                         `json:"EndTime" xml:"EndTime"`
 	IotId                 string                                         `json:"IotId" xml:"IotId"`
+	EndTime               string                                         `json:"EndTime" xml:"EndTime"`
 	SourceInstanceId      string                                         `json:"SourceInstanceId" xml:"SourceInstanceId"`
 	GmtModified           int64                                          `json:"GmtModified" xml:"GmtModified"`
 	AvailableSpace        float64                                        `json:"AvailableSpace" xml:"AvailableSpace"`

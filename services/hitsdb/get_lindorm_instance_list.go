@@ -74,6 +74,7 @@ type GetLindormInstanceListRequest struct {
 	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
 	SupportEngine        requests.Integer             `position:"Query" name:"SupportEngine"`
 	PageNumber           requests.Integer             `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string                       `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer             `position:"Query" name:"PageSize"`
 	Tag                  *[]GetLindormInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`

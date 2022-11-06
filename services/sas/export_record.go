@@ -81,8 +81,8 @@ type ExportRecordRequest struct {
 type ExportRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Id        int64  `json:"Id" xml:"Id"`
 	FileName  string `json:"FileName" xml:"FileName"`
+	Id        int64  `json:"Id" xml:"Id"`
 }
 
 // CreateExportRecordRequest creates a request to invoke ExportRecord API

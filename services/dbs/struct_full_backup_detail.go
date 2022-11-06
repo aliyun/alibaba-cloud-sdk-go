@@ -17,7 +17,7 @@ package dbs
 
 // FullBackupDetail is a nested struct in dbs response
 type FullBackupDetail struct {
-	BackupSetId string `json:"BackupSetId" xml:"BackupSetId"`
-	StartTime   int64  `json:"StartTime" xml:"StartTime"`
 	EndTime     int64  `json:"EndTime" xml:"EndTime"`
+	StartTime   int64  `json:"StartTime" xml:"StartTime"`
+	BackupSetId string `json:"BackupSetId" xml:"BackupSetId"`
 }

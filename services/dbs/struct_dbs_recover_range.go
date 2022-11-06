@@ -17,10 +17,10 @@ package dbs
 
 // DBSRecoverRange is a nested struct in dbs response
 type DBSRecoverRange struct {
-	SourceEndpointInstanceType string         `json:"SourceEndpointInstanceType" xml:"SourceEndpointInstanceType"`
-	SourceEndpointInstanceID   string         `json:"SourceEndpointInstanceID" xml:"SourceEndpointInstanceID"`
-	BeginTimestampForRestore   int64          `json:"BeginTimestampForRestore" xml:"BeginTimestampForRestore"`
 	EndTimestampForRestore     int64          `json:"EndTimestampForRestore" xml:"EndTimestampForRestore"`
+	SourceEndpointInstanceType string         `json:"SourceEndpointInstanceType" xml:"SourceEndpointInstanceType"`
 	RangeType                  string         `json:"RangeType" xml:"RangeType"`
+	BeginTimestampForRestore   int64          `json:"BeginTimestampForRestore" xml:"BeginTimestampForRestore"`
+	SourceEndpointInstanceID   string         `json:"SourceEndpointInstanceID" xml:"SourceEndpointInstanceID"`
 	FullBackupList             FullBackupList `json:"FullBackupList" xml:"FullBackupList"`
 }

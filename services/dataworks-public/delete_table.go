@@ -71,6 +71,7 @@ func (client *Client) DeleteTableWithCallback(request *DeleteTableRequest, callb
 // DeleteTableRequest is the request struct for api DeleteTable
 type DeleteTableRequest struct {
 	*requests.RpcRequest
+	Schema    string           `position:"Query" name:"Schema"`
 	EnvType   requests.Integer `position:"Query" name:"EnvType"`
 	TableName string           `position:"Query" name:"TableName"`
 	AppGuid   string           `position:"Query" name:"AppGuid"`

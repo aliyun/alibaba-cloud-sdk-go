@@ -71,6 +71,9 @@ func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, cal
 // TagResourcesRequest is the request struct for api TagResources
 type TagResourcesRequest struct {
 	*requests.RpcRequest
+	ResourceId   *[]string `position:"Body" name:"ResourceId"  type:"Repeated"`
+	ResourceType string    `position:"Body" name:"ResourceType"`
+	Tag          string    `position:"Body" name:"Tag"`
 }
 
 // TagResourcesResponse is the response struct for api TagResources

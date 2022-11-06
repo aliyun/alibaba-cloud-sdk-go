@@ -17,7 +17,7 @@ package alikafka
 
 // SaslUserVO is a nested struct in alikafka response
 type SaslUserVO struct {
-	Username string `json:"Username" xml:"Username"`
-	Password string `json:"Password" xml:"Password"`
 	Type     string `json:"Type" xml:"Type"`
+	Password string `json:"Password" xml:"Password"`
+	Username string `json:"Username" xml:"Username"`
 }

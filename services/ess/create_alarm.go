@@ -71,28 +71,39 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 // CreateAlarmRequest is the request struct for api CreateAlarm
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
-	MetricType           string                  `position:"Query" name:"MetricType"`
-	ScalingGroupId       string                  `position:"Query" name:"ScalingGroupId"`
-	Description          string                  `position:"Query" name:"Description"`
-	AlarmAction          *[]string               `position:"Query" name:"AlarmAction"  type:"Repeated"`
-	Threshold            requests.Float          `position:"Query" name:"Threshold"`
-	Effective            string                  `position:"Query" name:"Effective"`
-	EvaluationCount      requests.Integer        `position:"Query" name:"EvaluationCount"`
-	MetricName           string                  `position:"Query" name:"MetricName"`
-	Dimension            *[]CreateAlarmDimension `position:"Query" name:"Dimension"  type:"Repeated"`
-	Period               requests.Integer        `position:"Query" name:"Period"`
-	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
-	GroupId              requests.Integer        `position:"Query" name:"GroupId"`
-	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
-	Name                 string                  `position:"Query" name:"Name"`
-	ComparisonOperator   string                  `position:"Query" name:"ComparisonOperator"`
-	Statistics           string                  `position:"Query" name:"Statistics"`
+	MetricType               string                   `position:"Query" name:"MetricType"`
+	ScalingGroupId           string                   `position:"Query" name:"ScalingGroupId"`
+	Description              string                   `position:"Query" name:"Description"`
+	ExpressionsLogicOperator string                   `position:"Query" name:"ExpressionsLogicOperator"`
+	AlarmAction              *[]string                `position:"Query" name:"AlarmAction"  type:"Repeated"`
+	Threshold                requests.Float           `position:"Query" name:"Threshold"`
+	Effective                string                   `position:"Query" name:"Effective"`
+	EvaluationCount          requests.Integer         `position:"Query" name:"EvaluationCount"`
+	MetricName               string                   `position:"Query" name:"MetricName"`
+	Dimension                *[]CreateAlarmDimension  `position:"Query" name:"Dimension"  type:"Repeated"`
+	Period                   requests.Integer         `position:"Query" name:"Period"`
+	Expression               *[]CreateAlarmExpression `position:"Query" name:"Expression"  type:"Repeated"`
+	ResourceOwnerAccount     string                   `position:"Query" name:"ResourceOwnerAccount"`
+	GroupId                  requests.Integer         `position:"Query" name:"GroupId"`
+	OwnerId                  requests.Integer         `position:"Query" name:"OwnerId"`
+	Name                     string                   `position:"Query" name:"Name"`
+	ComparisonOperator       string                   `position:"Query" name:"ComparisonOperator"`
+	Statistics               string                   `position:"Query" name:"Statistics"`
 }
 
 // CreateAlarmDimension is a repeated param struct in CreateAlarmRequest
 type CreateAlarmDimension struct {
 	DimensionValue string `name:"DimensionValue"`
 	DimensionKey   string `name:"DimensionKey"`
+}
+
+// CreateAlarmExpression is a repeated param struct in CreateAlarmRequest
+type CreateAlarmExpression struct {
+	Period             string `name:"Period"`
+	Threshold          string `name:"Threshold"`
+	MetricName         string `name:"MetricName"`
+	ComparisonOperator string `name:"ComparisonOperator"`
+	Statistics         string `name:"Statistics"`
 }
 
 // CreateAlarmResponse is the response struct for api CreateAlarm

@@ -72,9 +72,11 @@ func (client *Client) DescribeDBProxyWithCallback(request *DescribeDBProxyReques
 type DescribeDBProxyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBProxyEngineType    string           `position:"Query" name:"DBProxyEngineType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDBProxyResponse is the response struct for api DescribeDBProxy
@@ -89,6 +91,9 @@ type DescribeDBProxyResponse struct {
 	DBProxyServiceStatus               string                    `json:"DBProxyServiceStatus" xml:"DBProxyServiceStatus"`
 	DBProxyInstanceName                string                    `json:"DBProxyInstanceName" xml:"DBProxyInstanceName"`
 	DBProxyInstanceSize                string                    `json:"DBProxyInstanceSize" xml:"DBProxyInstanceSize"`
+	DBProxyEngineType                  string                    `json:"DBProxyEngineType" xml:"DBProxyEngineType"`
+	AccountName                        string                    `json:"AccountName" xml:"AccountName"`
+	ResourceGroupId                    string                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DBProxyConnectStringItems          DBProxyConnectStringItems `json:"DBProxyConnectStringItems" xml:"DBProxyConnectStringItems"`
 	DbProxyEndpointItems               DbProxyEndpointItems      `json:"DbProxyEndpointItems" xml:"DbProxyEndpointItems"`
 }

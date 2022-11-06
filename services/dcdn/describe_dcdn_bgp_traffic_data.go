@@ -81,9 +81,9 @@ type DescribeDcdnBgpTrafficDataRequest struct {
 // DescribeDcdnBgpTrafficDataResponse is the response struct for api DescribeDcdnBgpTrafficData
 type DescribeDcdnBgpTrafficDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                `json:"RequestId" xml:"RequestId"`
-	StartTime       string                                `json:"StartTime" xml:"StartTime"`
 	EndTime         string                                `json:"EndTime" xml:"EndTime"`
+	StartTime       string                                `json:"StartTime" xml:"StartTime"`
+	RequestId       string                                `json:"RequestId" xml:"RequestId"`
 	BgpDataInterval []BgpDataInDescribeDcdnBgpTrafficData `json:"BgpDataInterval" xml:"BgpDataInterval"`
 }
 

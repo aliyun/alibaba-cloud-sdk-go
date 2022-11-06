@@ -77,7 +77,6 @@ type ListTransitRouterMulticastDomainAssociationsRequest struct {
 	TransitRouterMulticastDomainId string           `position:"Query" name:"TransitRouterMulticastDomainId"`
 	NextToken                      string           `position:"Query" name:"NextToken"`
 	ResourceId                     string           `position:"Query" name:"ResourceId"`
-	DryRun                         requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
@@ -101,7 +100,7 @@ func CreateListTransitRouterMulticastDomainAssociationsRequest() (request *ListT
 	request = &ListTransitRouterMulticastDomainAssociationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainAssociations", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainAssociations", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

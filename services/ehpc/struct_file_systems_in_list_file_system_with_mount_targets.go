@@ -17,18 +17,19 @@ package ehpc
 
 // FileSystemsInListFileSystemWithMountTargets is a nested struct in ehpc response
 type FileSystemsInListFileSystemWithMountTargets struct {
+	Status          string                                          `json:"Status" xml:"Status"`
+	Capacity        int                                             `json:"Capacity" xml:"Capacity"`
+	CreateTime      string                                          `json:"CreateTime" xml:"CreateTime"`
+	StorageType     string                                          `json:"StorageType" xml:"StorageType"`
+	BandWidth       int                                             `json:"BandWidth" xml:"BandWidth"`
 	RegionId        string                                          `json:"RegionId" xml:"RegionId"`
 	FileSystemId    string                                          `json:"FileSystemId" xml:"FileSystemId"`
 	FileSystemType  string                                          `json:"FileSystemType" xml:"FileSystemType"`
-	ProtocolType    string                                          `json:"ProtocolType" xml:"ProtocolType"`
-	CreateTime      string                                          `json:"CreateTime" xml:"CreateTime"`
-	Destription     string                                          `json:"Destription" xml:"Destription"`
-	StorageType     string                                          `json:"StorageType" xml:"StorageType"`
 	MeteredSize     int                                             `json:"MeteredSize" xml:"MeteredSize"`
-	Capacity        int                                             `json:"Capacity" xml:"Capacity"`
 	EncryptType     int                                             `json:"EncryptType" xml:"EncryptType"`
-	BandWidth       int                                             `json:"BandWidth" xml:"BandWidth"`
-	Status          string                                          `json:"Status" xml:"Status"`
+	ProtocolType    string                                          `json:"ProtocolType" xml:"ProtocolType"`
+	Destription     string                                          `json:"Destription" xml:"Destription"`
+	VpcId           string                                          `json:"VpcId" xml:"VpcId"`
 	PackageList     PackageList                                     `json:"PackageList" xml:"PackageList"`
 	MountTargetList MountTargetListInListFileSystemWithMountTargets `json:"MountTargetList" xml:"MountTargetList"`
 }

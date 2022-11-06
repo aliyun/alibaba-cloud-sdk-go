@@ -76,9 +76,11 @@ type UpgradeDBClusterVersionRequest struct {
 	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
+	UpgradeLabel         string           `position:"Query" name:"UpgradeLabel"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
+	UpgradePolicy        string           `position:"Query" name:"UpgradePolicy"`
 	FromTimeService      requests.Boolean `position:"Query" name:"FromTimeService"`
 }
 
@@ -93,7 +95,7 @@ func CreateUpgradeDBClusterVersionRequest() (request *UpgradeDBClusterVersionReq
 	request = &UpgradeDBClusterVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "UpgradeDBClusterVersion", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "UpgradeDBClusterVersion", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

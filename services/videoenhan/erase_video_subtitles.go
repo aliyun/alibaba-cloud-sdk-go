@@ -72,17 +72,19 @@ func (client *Client) EraseVideoSubtitlesWithCallback(request *EraseVideoSubtitl
 type EraseVideoSubtitlesRequest struct {
 	*requests.RpcRequest
 	BH       requests.Float   `position:"Body" name:"BH"`
-	Async    requests.Boolean `position:"Body" name:"Async"`
-	VideoUrl string           `position:"Body" name:"VideoUrl"`
 	BW       requests.Float   `position:"Body" name:"BW"`
 	BX       requests.Float   `position:"Body" name:"BX"`
 	BY       requests.Float   `position:"Body" name:"BY"`
+	Async    requests.Boolean `position:"Body" name:"Async"`
+	VideoUrl string           `position:"Body" name:"VideoUrl"`
 }
 
 // EraseVideoSubtitlesResponse is the response struct for api EraseVideoSubtitles
 type EraseVideoSubtitlesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

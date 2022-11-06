@@ -17,14 +17,14 @@ package ehpc
 
 // InstanceInfo is a nested struct in ehpc response
 type InstanceInfo struct {
-	ClusterId    string  `json:"ClusterId" xml:"ClusterId"`
-	InstanceId   string  `json:"InstanceId" xml:"InstanceId"`
-	InstanceType string  `json:"InstanceType" xml:"InstanceType"`
 	Status       string  `json:"Status" xml:"Status"`
-	CreateTime   string  `json:"CreateTime" xml:"CreateTime"`
-	ExpireTime   string  `json:"ExpireTime" xml:"ExpireTime"`
 	WorkMode     string  `json:"WorkMode" xml:"WorkMode"`
+	ExpireTime   string  `json:"ExpireTime" xml:"ExpireTime"`
+	CreateTime   string  `json:"CreateTime" xml:"CreateTime"`
+	InstanceId   string  `json:"InstanceId" xml:"InstanceId"`
 	Name         string  `json:"Name" xml:"Name"`
+	InstanceType string  `json:"InstanceType" xml:"InstanceType"`
 	UserName     string  `json:"UserName" xml:"UserName"`
+	ClusterId    string  `json:"ClusterId" xml:"ClusterId"`
 	AppList      AppList `json:"AppList" xml:"AppList"`
 }

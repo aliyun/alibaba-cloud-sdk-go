@@ -88,6 +88,7 @@ type DescribePrePaidInstanceStockResponse struct {
 	Memory         int    `json:"Memory" xml:"Memory"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	SystemDiskSize int    `json:"SystemDiskSize" xml:"SystemDiskSize"`
+	ResourceGap    string `json:"ResourceGap" xml:"ResourceGap"`
 }
 
 // CreateDescribePrePaidInstanceStockRequest creates a request to invoke DescribePrePaidInstanceStock API

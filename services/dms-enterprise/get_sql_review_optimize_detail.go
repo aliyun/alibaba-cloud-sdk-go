@@ -71,8 +71,8 @@ func (client *Client) GetSQLReviewOptimizeDetailWithCallback(request *GetSQLRevi
 // GetSQLReviewOptimizeDetailRequest is the request struct for api GetSQLReviewOptimizeDetail
 type GetSQLReviewOptimizeDetailRequest struct {
 	*requests.RpcRequest
-	SQLReviewQueryKey string           `position:"Query" name:"SQLReviewQueryKey"`
 	Tid               requests.Integer `position:"Query" name:"Tid"`
+	SQLReviewQueryKey string           `position:"Query" name:"SQLReviewQueryKey"`
 }
 
 // GetSQLReviewOptimizeDetailResponse is the response struct for api GetSQLReviewOptimizeDetail

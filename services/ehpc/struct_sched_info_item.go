@@ -17,6 +17,6 @@ package ehpc
 
 // SchedInfoItem is a nested struct in ehpc response
 type SchedInfoItem struct {
-	SchedName     string `json:"SchedName" xml:"SchedName"`
 	Configuration string `json:"Configuration" xml:"Configuration"`
+	SchedName     string `json:"SchedName" xml:"SchedName"`
 }

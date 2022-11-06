@@ -72,8 +72,11 @@ func (client *Client) SearchFaceWithCallback(request *SearchFaceRequest, callbac
 type SearchFaceRequest struct {
 	*requests.RpcRequest
 	MaxFaceNum            requests.Integer `position:"Body" name:"MaxFaceNum"`
+	FormatResultToJson    requests.Boolean `position:"Query" name:"FormatResultToJson"`
 	QualityScoreThreshold requests.Float   `position:"Body" name:"QualityScoreThreshold"`
 	Limit                 requests.Integer `position:"Body" name:"Limit"`
+	OssFile               string           `position:"Query" name:"OssFile"`
+	RequestProxyBy        string           `position:"Query" name:"RequestProxyBy"`
 	DbNames               string           `position:"Body" name:"DbNames"`
 	DbName                string           `position:"Body" name:"DbName"`
 	ImageUrl              string           `position:"Body" name:"ImageUrl"`

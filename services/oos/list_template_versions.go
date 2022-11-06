@@ -80,9 +80,9 @@ type ListTemplateVersionsRequest struct {
 // ListTemplateVersionsResponse is the response struct for api ListTemplateVersions
 type ListTemplateVersionsResponse struct {
 	*responses.BaseResponse
+	NextToken        string            `json:"NextToken" xml:"NextToken"`
 	RequestId        string            `json:"RequestId" xml:"RequestId"`
 	MaxResults       int               `json:"MaxResults" xml:"MaxResults"`
-	NextToken        string            `json:"NextToken" xml:"NextToken"`
 	TemplateVersions []TemplateVersion `json:"TemplateVersions" xml:"TemplateVersions"`
 }
 
@@ -91,7 +91,7 @@ func CreateListTemplateVersionsRequest() (request *ListTemplateVersionsRequest) 
 	request = &ListTemplateVersionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListTemplateVersions", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTemplateVersions", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

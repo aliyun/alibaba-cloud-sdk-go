@@ -17,7 +17,7 @@ package sas
 
 // InstanceAntiBruteForceRule is a nested struct in sas response
 type InstanceAntiBruteForceRule struct {
-	Id   int64  `json:"Id" xml:"Id"`
-	Name string `json:"Name" xml:"Name"`
 	Uuid string `json:"Uuid" xml:"Uuid"`
+	Name string `json:"Name" xml:"Name"`
+	Id   int64  `json:"Id" xml:"Id"`
 }

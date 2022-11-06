@@ -72,6 +72,7 @@ func (client *Client) CreateDatabaseWithCallback(request *CreateDatabaseRequest,
 type CreateDatabaseRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	DBDescription        string           `position:"Query" name:"DBDescription"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

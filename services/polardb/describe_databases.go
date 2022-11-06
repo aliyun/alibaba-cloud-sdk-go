@@ -84,10 +84,10 @@ type DescribeDatabasesRequest struct {
 // DescribeDatabasesResponse is the response struct for api DescribeDatabases
 type DescribeDatabasesResponse struct {
 	*responses.BaseResponse
-	PageRecordCount int       `json:"PageRecordCount" xml:"PageRecordCount"`
-	RequestId       string    `json:"RequestId" xml:"RequestId"`
-	PageNumber      int       `json:"PageNumber" xml:"PageNumber"`
-	Databases       Databases `json:"Databases" xml:"Databases"`
+	PageRecordCount int                          `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId       string                       `json:"RequestId" xml:"RequestId"`
+	PageNumber      int                          `json:"PageNumber" xml:"PageNumber"`
+	Databases       DatabasesInDescribeDatabases `json:"Databases" xml:"Databases"`
 }
 
 // CreateDescribeDatabasesRequest creates a request to invoke DescribeDatabases API
@@ -95,7 +95,7 @@ func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	request = &DescribeDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDatabases", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDatabases", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

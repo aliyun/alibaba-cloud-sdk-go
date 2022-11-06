@@ -17,9 +17,9 @@ package dcdn
 
 // OutPutDomain is a nested struct in dcdn response
 type OutPutDomain struct {
+	AclStatus int    `json:"AclStatus" xml:"AclStatus"`
 	Status    int    `json:"Status" xml:"Status"`
 	Domain    string `json:"Domain" xml:"Domain"`
-	WafStatus int    `json:"WafStatus" xml:"WafStatus"`
 	CcStatus  int    `json:"CcStatus" xml:"CcStatus"`
-	AclStatus int    `json:"AclStatus" xml:"AclStatus"`
+	WafStatus int    `json:"WafStatus" xml:"WafStatus"`
 }

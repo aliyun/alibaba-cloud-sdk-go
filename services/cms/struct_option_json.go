@@ -46,4 +46,7 @@ type OptionJson struct {
 	Attempts               int64   `json:"attempts" xml:"attempts"`
 	Protocol               string  `json:"protocol" xml:"protocol"`
 	IsBase64Encode         string  `json:"isBase64Encode" xml:"isBase64Encode"`
+	DiagnosisMtr           bool    `json:"diagnosis_mtr" xml:"diagnosis_mtr"`
+	DiagnosisPing          bool    `json:"diagnosis_ping" xml:"diagnosis_ping"`
+	RetryDelay             int     `json:"retry_delay" xml:"retry_delay"`
 }

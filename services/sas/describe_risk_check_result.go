@@ -89,12 +89,12 @@ type DescribeRiskCheckResultRequest struct {
 // DescribeRiskCheckResultResponse is the response struct for api DescribeRiskCheckResult
 type DescribeRiskCheckResultResponse struct {
 	*responses.BaseResponse
+	CurrentPage int                         `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId   string                      `json:"RequestId" xml:"RequestId"`
-	PageCount   int                         `json:"PageCount" xml:"PageCount"`
-	Count       int                         `json:"Count" xml:"Count"`
 	PageSize    int                         `json:"PageSize" xml:"PageSize"`
 	TotalCount  int                         `json:"TotalCount" xml:"TotalCount"`
-	CurrentPage int                         `json:"CurrentPage" xml:"CurrentPage"`
+	PageCount   int                         `json:"PageCount" xml:"PageCount"`
+	Count       int                         `json:"Count" xml:"Count"`
 	List        []RiskCheckResultForDisplay `json:"List" xml:"List"`
 }
 

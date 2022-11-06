@@ -78,8 +78,8 @@ type DescribeSecureSuggestionRequest struct {
 // DescribeSecureSuggestionResponse is the response struct for api DescribeSecureSuggestion
 type DescribeSecureSuggestionResponse struct {
 	*responses.BaseResponse
-	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	TotalCount  int          `json:"TotalCount" xml:"TotalCount"`
+	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	Suggestions []Suggestion `json:"Suggestions" xml:"Suggestions"`
 }
 

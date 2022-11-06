@@ -71,13 +71,13 @@ func (client *Client) ConfigureMigrationJobAlertWithCallback(request *ConfigureM
 // ConfigureMigrationJobAlertRequest is the request struct for api ConfigureMigrationJobAlert
 type ConfigureMigrationJobAlertRequest struct {
 	*requests.RpcRequest
+	MigrationJobId   string `position:"Query" name:"MigrationJobId"`
+	AccountId        string `position:"Query" name:"AccountId"`
+	DelayAlertPhone  string `position:"Query" name:"DelayAlertPhone"`
 	DelayOverSeconds string `position:"Query" name:"DelayOverSeconds"`
 	DelayAlertStatus string `position:"Query" name:"DelayAlertStatus"`
-	MigrationJobId   string `position:"Query" name:"MigrationJobId"`
 	OwnerId          string `position:"Query" name:"OwnerId"`
-	AccountId        string `position:"Query" name:"AccountId"`
 	ErrorAlertPhone  string `position:"Query" name:"ErrorAlertPhone"`
-	DelayAlertPhone  string `position:"Query" name:"DelayAlertPhone"`
 	ErrorAlertStatus string `position:"Query" name:"ErrorAlertStatus"`
 }
 

@@ -72,6 +72,7 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BackupInterval           string           `position:"Query" name:"BackupInterval"`
 	SecurityToken            string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
 	EnableBackupLog          requests.Integer `position:"Query" name:"EnableBackupLog"`
@@ -79,6 +80,7 @@ type ModifyBackupPolicyRequest struct {
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	SnapshotBackupType       string           `position:"Query" name:"SnapshotBackupType"`
 	PreferredBackupTime      string           `position:"Query" name:"PreferredBackupTime"`
 	BackupRetentionPeriod    requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
 	LogBackupRetentionPeriod requests.Integer `position:"Query" name:"LogBackupRetentionPeriod"`

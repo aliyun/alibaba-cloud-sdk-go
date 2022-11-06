@@ -90,7 +90,7 @@ func CreateDeleteDBLinkRequest() (request *DeleteDBLinkRequest) {
 	request = &DeleteDBLinkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteDBLink", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteDBLink", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

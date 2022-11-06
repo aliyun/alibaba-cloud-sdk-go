@@ -51,6 +51,7 @@ type DBInstanceAttribute struct {
 	PayType                           string                                             `json:"PayType" xml:"PayType"`
 	Tips                              string                                             `json:"Tips" xml:"Tips"`
 	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
+	KindCode                          string                                             `json:"kindCode" xml:"kindCode"`
 	SupportCreateSuperAccount         string                                             `json:"SupportCreateSuperAccount" xml:"SupportCreateSuperAccount"`
 	TempDBInstanceId                  string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
 	CurrentKernelVersion              string                                             `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`

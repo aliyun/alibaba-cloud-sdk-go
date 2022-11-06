@@ -73,6 +73,7 @@ type AddLocalNodesRequest struct {
 	*requests.RpcRequest
 	ClusterId string `position:"Query" name:"ClusterId"`
 	Nodes     string `position:"Query" name:"Nodes"`
+	Queue     string `position:"Query" name:"Queue"`
 }
 
 // AddLocalNodesResponse is the response struct for api AddLocalNodes

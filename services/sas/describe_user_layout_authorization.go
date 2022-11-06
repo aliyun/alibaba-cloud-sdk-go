@@ -79,8 +79,8 @@ type DescribeUserLayoutAuthorizationRequest struct {
 // DescribeUserLayoutAuthorizationResponse is the response struct for api DescribeUserLayoutAuthorization
 type DescribeUserLayoutAuthorizationResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Authorized bool   `json:"Authorized" xml:"Authorized"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeUserLayoutAuthorizationRequest creates a request to invoke DescribeUserLayoutAuthorization API

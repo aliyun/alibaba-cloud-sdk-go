@@ -122,7 +122,9 @@ type UpdateListenerAttributeQuicConfig struct {
 
 // UpdateListenerAttributeXForwardedForConfig is a repeated param struct in UpdateListenerAttributeRequest
 type UpdateListenerAttributeXForwardedForConfig struct {
+	XForwardedForClientSourceIpsTrusted        string `name:"XForwardedForClientSourceIpsTrusted"`
 	XForwardedForClientCertSubjectDNAlias      string `name:"XForwardedForClientCertSubjectDNAlias"`
+	XForwardedForClientSourceIpsEnabled        string `name:"XForwardedForClientSourceIpsEnabled"`
 	XForwardedForClientCertIssuerDNEnabled     string `name:"XForwardedForClientCertIssuerDNEnabled"`
 	XForwardedForClientCertFingerprintEnabled  string `name:"XForwardedForClientCertFingerprintEnabled"`
 	XForwardedForClientCertIssuerDNAlias       string `name:"XForwardedForClientCertIssuerDNAlias"`

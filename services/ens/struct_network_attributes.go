@@ -17,7 +17,8 @@ package ens
 
 // NetworkAttributes is a nested struct in ens response
 type NetworkAttributes struct {
-	NetworkId        string                              `json:"NetworkId" xml:"NetworkId"`
-	VSwitchId        string                              `json:"VSwitchId" xml:"VSwitchId"`
-	PrivateIpAddress PrivateIpAddressInDescribeInstances `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	IpAddress        string   `json:"IpAddress" xml:"IpAddress"`
+	VSwitchId        string   `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkId        string   `json:"NetworkId" xml:"NetworkId"`
+	PrivateIpAddress []string `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
 }

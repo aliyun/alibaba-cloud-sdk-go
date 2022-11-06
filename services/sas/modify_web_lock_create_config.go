@@ -82,6 +82,7 @@ type ModifyWebLockCreateConfigRequest struct {
 	InclusiveFile     string `position:"Query" name:"InclusiveFile"`
 	ExclusiveDir      string `position:"Query" name:"ExclusiveDir"`
 	InclusiveFileType string `position:"Query" name:"InclusiveFileType"`
+	DefenceMode       string `position:"Query" name:"DefenceMode"`
 }
 
 // ModifyWebLockCreateConfigResponse is the response struct for api ModifyWebLockCreateConfig

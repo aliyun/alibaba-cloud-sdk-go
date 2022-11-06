@@ -22,14 +22,14 @@ type ClusterInfoSimple struct {
 	ImageId               string         `json:"ImageId" xml:"ImageId"`
 	ImageOwnerAlias       string         `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	CreateTime            string         `json:"CreateTime" xml:"CreateTime"`
-	InstanceType          string         `json:"InstanceType" xml:"InstanceType"`
 	NodePrefix            string         `json:"NodePrefix" xml:"NodePrefix"`
+	InstanceType          string         `json:"InstanceType" xml:"InstanceType"`
 	LoginNodes            string         `json:"LoginNodes" xml:"LoginNodes"`
 	NodeSuffix            string         `json:"NodeSuffix" xml:"NodeSuffix"`
-	RegionId              string         `json:"RegionId" xml:"RegionId"`
 	IsComputeEss          bool           `json:"IsComputeEss" xml:"IsComputeEss"`
-	SchedulerType         string         `json:"SchedulerType" xml:"SchedulerType"`
+	RegionId              string         `json:"RegionId" xml:"RegionId"`
 	EhpcVersion           string         `json:"EhpcVersion" xml:"EhpcVersion"`
+	SchedulerType         string         `json:"SchedulerType" xml:"SchedulerType"`
 	BaseOsTag             string         `json:"BaseOsTag" xml:"BaseOsTag"`
 	Id                    string         `json:"Id" xml:"Id"`
 	VpcId                 string         `json:"VpcId" xml:"VpcId"`
@@ -45,8 +45,9 @@ type ClusterInfoSimple struct {
 	ZoneId                string         `json:"ZoneId" xml:"ZoneId"`
 	OsTag                 string         `json:"OsTag" xml:"OsTag"`
 	Status                string         `json:"Status" xml:"Status"`
-	TotalResources        TotalResources `json:"TotalResources" xml:"TotalResources"`
+	HasPlugin             bool           `json:"HasPlugin" xml:"HasPlugin"`
 	UsedResources         UsedResources  `json:"UsedResources" xml:"UsedResources"`
 	Managers              Managers       `json:"Managers" xml:"Managers"`
 	Computes              Computes       `json:"Computes" xml:"Computes"`
+	TotalResources        TotalResources `json:"TotalResources" xml:"TotalResources"`
 }

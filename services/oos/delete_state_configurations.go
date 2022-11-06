@@ -86,7 +86,7 @@ func CreateDeleteStateConfigurationsRequest() (request *DeleteStateConfiguration
 	request = &DeleteStateConfigurationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "DeleteStateConfigurations", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "DeleteStateConfigurations", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

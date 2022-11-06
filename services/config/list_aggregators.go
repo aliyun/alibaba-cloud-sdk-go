@@ -88,7 +88,7 @@ func CreateListAggregatorsRequest() (request *ListAggregatorsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Config", "2020-09-07", "ListAggregators", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

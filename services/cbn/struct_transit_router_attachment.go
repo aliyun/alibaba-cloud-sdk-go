@@ -40,7 +40,11 @@ type TransitRouterAttachment struct {
 	TransitRouterAttachmentId          string        `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
 	BandwidthType                      string        `json:"BandwidthType" xml:"BandwidthType"`
 	BandwidthPackageId                 string        `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+	VpnOwnerId                         int64         `json:"VpnOwnerId" xml:"VpnOwnerId"`
+	VpnRegionId                        string        `json:"VpnRegionId" xml:"VpnRegionId"`
 	Status                             string        `json:"Status" xml:"Status"`
 	PeerTransitRouterId                string        `json:"PeerTransitRouterId" xml:"PeerTransitRouterId"`
+	VpnId                              string        `json:"VpnId" xml:"VpnId"`
 	ZoneMappings                       []ZoneMapping `json:"ZoneMappings" xml:"ZoneMappings"`
+	Zones                              []ZoneMapping `json:"Zones" xml:"Zones"`
 }

@@ -78,10 +78,10 @@ type UpgradeInstanceVersionRequest struct {
 // UpgradeInstanceVersionResponse is the response struct for api UpgradeInstanceVersion
 type UpgradeInstanceVersionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpgradeInstanceVersionRequest creates a request to invoke UpgradeInstanceVersion API

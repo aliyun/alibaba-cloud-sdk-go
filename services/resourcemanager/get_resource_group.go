@@ -71,7 +71,8 @@ func (client *Client) GetResourceGroupWithCallback(request *GetResourceGroupRequ
 // GetResourceGroupRequest is the request struct for api GetResourceGroup
 type GetResourceGroupRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	IncludeTags     requests.Boolean `position:"Query" name:"IncludeTags"`
 }
 
 // GetResourceGroupResponse is the response struct for api GetResourceGroup

@@ -78,15 +78,15 @@ type DescribeExportInfoRequest struct {
 // DescribeExportInfoResponse is the response struct for api DescribeExportInfo
 type DescribeExportInfoResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Id           int64  `json:"Id" xml:"Id"`
-	FileName     string `json:"FileName" xml:"FileName"`
-	CurrentCount int    `json:"CurrentCount" xml:"CurrentCount"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	Progress     int    `json:"Progress" xml:"Progress"`
-	ExportStatus string `json:"ExportStatus" xml:"ExportStatus"`
-	Message      string `json:"Message" xml:"Message"`
 	Link         string `json:"Link" xml:"Link"`
+	Progress     int    `json:"Progress" xml:"Progress"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	CurrentCount int    `json:"CurrentCount" xml:"CurrentCount"`
+	Message      string `json:"Message" xml:"Message"`
+	FileName     string `json:"FileName" xml:"FileName"`
+	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
+	ExportStatus string `json:"ExportStatus" xml:"ExportStatus"`
+	Id           int64  `json:"Id" xml:"Id"`
 }
 
 // CreateDescribeExportInfoRequest creates a request to invoke DescribeExportInfo API

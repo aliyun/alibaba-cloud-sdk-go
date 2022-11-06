@@ -20,4 +20,5 @@ type Detections struct {
 	CalciumScore  float64 `json:"CalciumScore" xml:"CalciumScore"`
 	CalciumId     int64   `json:"CalciumId" xml:"CalciumId"`
 	CalciumVolume float64 `json:"CalciumVolume" xml:"CalciumVolume"`
+	CalciumCenter []int64 `json:"CalciumCenter" xml:"CalciumCenter"`
 }

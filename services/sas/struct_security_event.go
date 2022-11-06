@@ -17,14 +17,15 @@ package sas
 
 // SecurityEvent is a nested struct in sas response
 type SecurityEvent struct {
-	SeriousCount    int      `json:"SeriousCount" xml:"SeriousCount"`
 	SuspiciousCount int      `json:"SuspiciousCount" xml:"SuspiciousCount"`
+	SeriousCount    int      `json:"SeriousCount" xml:"SeriousCount"`
 	RemindCount     int      `json:"RemindCount" xml:"RemindCount"`
 	TotalCount      int      `json:"TotalCount" xml:"TotalCount"`
-	DateArray       []string `json:"DateArray" xml:"DateArray"`
 	ValueArray      []string `json:"ValueArray" xml:"ValueArray"`
-	LevelsOn        []string `json:"LevelsOn" xml:"LevelsOn"`
-	SeriousList     []string `json:"SeriousList" xml:"SeriousList"`
-	SuspiciousList  []string `json:"SuspiciousList" xml:"SuspiciousList"`
+	TimeArray       []string `json:"TimeArray" xml:"TimeArray"`
 	RemindList      []string `json:"RemindList" xml:"RemindList"`
+	LevelsOn        []string `json:"LevelsOn" xml:"LevelsOn"`
+	DateArray       []string `json:"DateArray" xml:"DateArray"`
+	SuspiciousList  []string `json:"SuspiciousList" xml:"SuspiciousList"`
+	SeriousList     []string `json:"SeriousList" xml:"SeriousList"`
 }

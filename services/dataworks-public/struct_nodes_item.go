@@ -26,14 +26,13 @@ type NodesItem struct {
 	Repeatability  bool   `json:"Repeatability" xml:"Repeatability"`
 	Owner          string `json:"Owner" xml:"Owner"`
 	BaselineId     int64  `json:"BaselineId" xml:"BaselineId"`
-	RelatedFlowId  int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
 	NodeName       string `json:"NodeName" xml:"NodeName"`
+	DqcType        string `json:"DqcType" xml:"DqcType"`
 	NodeId         int64  `json:"NodeId" xml:"NodeId"`
 	RepeatInterval int64  `json:"RepeatInterval" xml:"RepeatInterval"`
 	SchedulerType  string `json:"SchedulerType" xml:"SchedulerType"`
 	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
 	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
-	DqcType        int    `json:"DqcType" xml:"DqcType"`
 	BusinessId     int64  `json:"BusinessId" xml:"BusinessId"`
 	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
 	Description    string `json:"Description" xml:"Description"`

@@ -18,11 +18,11 @@ package actiontrail
 // DeliveryHistoryJob is a nested struct in actiontrail response
 type DeliveryHistoryJob struct {
 	TrailName   string `json:"TrailName" xml:"TrailName"`
-	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
-	UpdatedTime string `json:"UpdatedTime" xml:"UpdatedTime"`
-	HomeRegion  string `json:"HomeRegion" xml:"HomeRegion"`
-	StartTime   string `json:"StartTime" xml:"StartTime"`
 	EndTime     string `json:"EndTime" xml:"EndTime"`
-	JobId       int64  `json:"JobId" xml:"JobId"`
+	StartTime   string `json:"StartTime" xml:"StartTime"`
 	JobStatus   int    `json:"JobStatus" xml:"JobStatus"`
+	HomeRegion  string `json:"HomeRegion" xml:"HomeRegion"`
+	UpdatedTime string `json:"UpdatedTime" xml:"UpdatedTime"`
+	JobId       int64  `json:"JobId" xml:"JobId"`
+	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
 }

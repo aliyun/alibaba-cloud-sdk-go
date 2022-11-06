@@ -92,7 +92,7 @@ func CreateDescribeDBInitializeVariableRequest() (request *DescribeDBInitializeV
 	request = &DescribeDBInitializeVariableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBInitializeVariable", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBInitializeVariable", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

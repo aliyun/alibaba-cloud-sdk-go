@@ -17,11 +17,11 @@ package ehpc
 
 // SoftwareInfo is a nested struct in ehpc response
 type SoftwareInfo struct {
-	EhpcVersion      string                      `json:"EhpcVersion" xml:"EhpcVersion"`
-	OsTag            string                      `json:"OsTag" xml:"OsTag"`
 	SchedulerType    string                      `json:"SchedulerType" xml:"SchedulerType"`
+	OsTag            string                      `json:"OsTag" xml:"OsTag"`
 	SchedulerVersion string                      `json:"SchedulerVersion" xml:"SchedulerVersion"`
-	AccountType      string                      `json:"AccountType" xml:"AccountType"`
 	AccountVersion   string                      `json:"AccountVersion" xml:"AccountVersion"`
+	AccountType      string                      `json:"AccountType" xml:"AccountType"`
+	EhpcVersion      string                      `json:"EhpcVersion" xml:"EhpcVersion"`
 	Applications     ApplicationsInListSoftwares `json:"Applications" xml:"Applications"`
 }

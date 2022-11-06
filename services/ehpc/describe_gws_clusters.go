@@ -79,11 +79,11 @@ type DescribeGWSClustersRequest struct {
 // DescribeGWSClustersResponse is the response struct for api DescribeGWSClusters
 type DescribeGWSClustersResponse struct {
 	*responses.BaseResponse
-	RequestId  string                        `json:"RequestId" xml:"RequestId"`
-	TotalCount int                           `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                           `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                           `json:"PageSize" xml:"PageSize"`
+	PageNumber int                           `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                        `json:"RequestId" xml:"RequestId"`
 	CallerType string                        `json:"CallerType" xml:"CallerType"`
+	TotalCount int                           `json:"TotalCount" xml:"TotalCount"`
 	Clusters   ClustersInDescribeGWSClusters `json:"Clusters" xml:"Clusters"`
 }
 

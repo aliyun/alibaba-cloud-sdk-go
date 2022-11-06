@@ -71,8 +71,12 @@ func (client *Client) StartAggregateRemediationWithCallback(request *StartAggreg
 // StartAggregateRemediationRequest is the request struct for api StartAggregateRemediation
 type StartAggregateRemediationRequest struct {
 	*requests.RpcRequest
-	ConfigRuleId string `position:"Query" name:"ConfigRuleId"`
-	AggregatorId string `position:"Query" name:"AggregatorId"`
+	ConfigRuleId     string `position:"Query" name:"ConfigRuleId"`
+	ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+	AggregatorId     string `position:"Query" name:"AggregatorId"`
+	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
+	ResourceId       string `position:"Query" name:"ResourceId"`
+	ResourceType     string `position:"Query" name:"ResourceType"`
 }
 
 // StartAggregateRemediationResponse is the response struct for api StartAggregateRemediation

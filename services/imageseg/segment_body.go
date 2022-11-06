@@ -71,9 +71,11 @@ func (client *Client) SegmentBodyWithCallback(request *SegmentBodyRequest, callb
 // SegmentBodyRequest is the request struct for api SegmentBody
 type SegmentBodyRequest struct {
 	*requests.RpcRequest
-	ReturnForm string           `position:"Query" name:"ReturnForm"`
-	Async      requests.Boolean `position:"Body" name:"Async"`
-	ImageURL   string           `position:"Query" name:"ImageURL"`
+	ReturnForm     string           `position:"Query" name:"ReturnForm"`
+	OssFile        string           `position:"Query" name:"OssFile"`
+	RequestProxyBy string           `position:"Query" name:"RequestProxyBy"`
+	Async          requests.Boolean `position:"Body" name:"Async"`
+	ImageURL       string           `position:"Query" name:"ImageURL"`
 }
 
 // SegmentBodyResponse is the response struct for api SegmentBody
@@ -88,7 +90,7 @@ func CreateSegmentBodyRequest() (request *SegmentBodyRequest) {
 	request = &SegmentBodyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentBody", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentBody", "", "")
 	request.Method = requests.POST
 	return
 }

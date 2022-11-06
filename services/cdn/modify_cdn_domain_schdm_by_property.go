@@ -71,9 +71,9 @@ func (client *Client) ModifyCdnDomainSchdmByPropertyWithCallback(request *Modify
 // ModifyCdnDomainSchdmByPropertyRequest is the request struct for api ModifyCdnDomainSchdmByProperty
 type ModifyCdnDomainSchdmByPropertyRequest struct {
 	*requests.RpcRequest
+	Property   string           `position:"Query" name:"Property"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Property   string           `position:"Query" name:"Property"`
 }
 
 // ModifyCdnDomainSchdmByPropertyResponse is the response struct for api ModifyCdnDomainSchdmByProperty

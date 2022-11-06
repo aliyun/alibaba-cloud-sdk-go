@@ -19,23 +19,25 @@ package dbfs
 type DBFSInfo struct {
 	Category         string        `json:"Category" xml:"Category"`
 	SizeG            int           `json:"SizeG" xml:"SizeG"`
+	InstanceType     string        `json:"InstanceType" xml:"InstanceType"`
+	LastFailed       string        `json:"LastFailed" xml:"LastFailed"`
+	RegionId         string        `json:"RegionId" xml:"RegionId"`
+	CreatedTime      string        `json:"CreatedTime" xml:"CreatedTime"`
+	LastUmountTime   string        `json:"LastUmountTime" xml:"LastUmountTime"`
+	EnableRaid       bool          `json:"EnableRaid" xml:"EnableRaid"`
+	Description      string        `json:"Description" xml:"Description"`
 	FsName           string        `json:"FsName" xml:"FsName"`
 	PayType          string        `json:"PayType" xml:"PayType"`
 	UsedScene        string        `json:"UsedScene" xml:"UsedScene"`
 	KMSKeyId         string        `json:"KMSKeyId" xml:"KMSKeyId"`
 	FsId             string        `json:"FsId" xml:"FsId"`
 	DBFSClusterId    string        `json:"DBFSClusterId" xml:"DBFSClusterId"`
-	RegionId         string        `json:"RegionId" xml:"RegionId"`
-	CreatedTime      string        `json:"CreatedTime" xml:"CreatedTime"`
 	ZoneId           string        `json:"ZoneId" xml:"ZoneId"`
-	LastUmountTime   string        `json:"LastUmountTime" xml:"LastUmountTime"`
 	LastMountTime    string        `json:"LastMountTime" xml:"LastMountTime"`
 	RaidStrip        int           `json:"RaidStrip" xml:"RaidStrip"`
 	PerformanceLevel string        `json:"PerformanceLevel" xml:"PerformanceLevel"`
-	EnableRaid       bool          `json:"EnableRaid" xml:"EnableRaid"`
 	Status           string        `json:"Status" xml:"Status"`
 	AttachNodeNumber int           `json:"AttachNodeNumber" xml:"AttachNodeNumber"`
-	Description      string        `json:"Description" xml:"Description"`
 	Encryption       bool          `json:"Encryption" xml:"Encryption"`
 	EcsList          []EcsListItem `json:"EcsList" xml:"EcsList"`
 	EbsList          []EbsListItem `json:"EbsList" xml:"EbsList"`

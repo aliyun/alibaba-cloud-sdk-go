@@ -31,6 +31,7 @@ type Applcation struct {
 	ExtSlbIp             string        `json:"ExtSlbIp" xml:"ExtSlbIp"`
 	BuildPackageId       int64         `json:"BuildPackageId" xml:"BuildPackageId"`
 	Email                string        `json:"Email" xml:"Email"`
+	EnablePortCheck      bool          `json:"EnablePortCheck" xml:"EnablePortCheck"`
 	Memory               int           `json:"Memory" xml:"Memory"`
 	NameSpace            string        `json:"NameSpace" xml:"NameSpace"`
 	ExtSlbId             string        `json:"ExtSlbId" xml:"ExtSlbId"`
@@ -38,6 +39,7 @@ type Applcation struct {
 	ExtSlbName           string        `json:"ExtSlbName" xml:"ExtSlbName"`
 	SlbName              string        `json:"SlbName" xml:"SlbName"`
 	AppId                string        `json:"AppId" xml:"AppId"`
+	EnableUrlCheck       bool          `json:"EnableUrlCheck" xml:"EnableUrlCheck"`
 	InstanceCount        int           `json:"InstanceCount" xml:"InstanceCount"`
 	HealthCheckUrl       string        `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
 	SlbId                string        `json:"SlbId" xml:"SlbId"`
@@ -45,9 +47,9 @@ type Applcation struct {
 	ClusterType          int           `json:"ClusterType" xml:"ClusterType"`
 	RunningInstanceCount int           `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
 	SlbIp                string        `json:"SlbIp" xml:"SlbIp"`
-	App                  App           `json:"App" xml:"App"`
 	Conf                 Conf          `json:"Conf" xml:"Conf"`
 	ImageInfo            ImageInfo     `json:"ImageInfo" xml:"ImageInfo"`
+	App                  App           `json:"App" xml:"App"`
 	LatestVersion        LatestVersion `json:"LatestVersion" xml:"LatestVersion"`
 	DeployGroups         DeployGroups  `json:"DeployGroups" xml:"DeployGroups"`
 }

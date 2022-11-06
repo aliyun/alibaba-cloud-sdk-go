@@ -71,10 +71,13 @@ func (client *Client) FaceMakeupWithCallback(request *FaceMakeupRequest, callbac
 // FaceMakeupRequest is the request struct for api FaceMakeup
 type FaceMakeupRequest struct {
 	*requests.RpcRequest
-	Strength     requests.Float `position:"Body" name:"Strength"`
-	MakeupType   string         `position:"Body" name:"MakeupType"`
-	ResourceType string         `position:"Body" name:"ResourceType"`
-	ImageURL     string         `position:"Body" name:"ImageURL"`
+	Strength           requests.Float   `position:"Body" name:"Strength"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	MakeupType         string           `position:"Body" name:"MakeupType"`
+	ResourceType       string           `position:"Body" name:"ResourceType"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // FaceMakeupResponse is the response struct for api FaceMakeup

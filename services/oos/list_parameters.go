@@ -71,24 +71,25 @@ func (client *Client) ListParametersWithCallback(request *ListParametersRequest,
 // ListParametersRequest is the request struct for api ListParameters
 type ListParametersRequest struct {
 	*requests.RpcRequest
-	Type       string           `position:"Query" name:"Type"`
-	Recursive  requests.Boolean `position:"Query" name:"Recursive"`
-	Path       string           `position:"Query" name:"Path"`
-	NextToken  string           `position:"Query" name:"NextToken"`
-	SortOrder  string           `position:"Query" name:"SortOrder"`
-	Tags       string           `position:"Query" name:"Tags"`
-	Name       string           `position:"Query" name:"Name"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
-	SortField  string           `position:"Query" name:"SortField"`
+	Type            string           `position:"Query" name:"Type"`
+	Recursive       requests.Boolean `position:"Query" name:"Recursive"`
+	Path            string           `position:"Query" name:"Path"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	NextToken       string           `position:"Query" name:"NextToken"`
+	SortOrder       string           `position:"Query" name:"SortOrder"`
+	Tags            string           `position:"Query" name:"Tags"`
+	Name            string           `position:"Query" name:"Name"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
+	SortField       string           `position:"Query" name:"SortField"`
 }
 
 // ListParametersResponse is the response struct for api ListParameters
 type ListParametersResponse struct {
 	*responses.BaseResponse
-	RequestId  string                      `json:"RequestId" xml:"RequestId"`
-	MaxResults int                         `json:"MaxResults" xml:"MaxResults"`
 	NextToken  string                      `json:"NextToken" xml:"NextToken"`
+	RequestId  string                      `json:"RequestId" xml:"RequestId"`
 	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
+	MaxResults int                         `json:"MaxResults" xml:"MaxResults"`
 	Parameters []ParameterInListParameters `json:"Parameters" xml:"Parameters"`
 }
 
@@ -97,7 +98,7 @@ func CreateListParametersRequest() (request *ListParametersRequest) {
 	request = &ListParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListParameters", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListParameters", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

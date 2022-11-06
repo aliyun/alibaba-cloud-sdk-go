@@ -71,13 +71,20 @@ func (client *Client) GetMetaTablePartitionWithCallback(request *GetMetaTablePar
 // GetMetaTablePartitionRequest is the request struct for api GetMetaTablePartition
 type GetMetaTablePartitionRequest struct {
 	*requests.RpcRequest
-	DataSourceType string           `position:"Query" name:"DataSourceType"`
-	ClusterId      string           `position:"Query" name:"ClusterId"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	TableGuid      string           `position:"Query" name:"TableGuid"`
-	DatabaseName   string           `position:"Query" name:"DatabaseName"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	TableName      string           `position:"Query" name:"TableName"`
+	SortCriterion  GetMetaTablePartitionSortCriterion `position:"Query" name:"SortCriterion"  type:"Struct"`
+	DataSourceType string                             `position:"Query" name:"DataSourceType"`
+	ClusterId      string                             `position:"Query" name:"ClusterId"`
+	PageNumber     requests.Integer                   `position:"Query" name:"PageNumber"`
+	TableGuid      string                             `position:"Query" name:"TableGuid"`
+	DatabaseName   string                             `position:"Query" name:"DatabaseName"`
+	PageSize       requests.Integer                   `position:"Query" name:"PageSize"`
+	TableName      string                             `position:"Query" name:"TableName"`
+}
+
+// GetMetaTablePartitionSortCriterion is a repeated param struct in GetMetaTablePartitionRequest
+type GetMetaTablePartitionSortCriterion struct {
+	SortField string `name:"SortField"`
+	Order     string `name:"Order"`
 }
 
 // GetMetaTablePartitionResponse is the response struct for api GetMetaTablePartition

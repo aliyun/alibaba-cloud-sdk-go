@@ -71,8 +71,9 @@ func (client *Client) GetInstanceLogWithCallback(request *GetInstanceLogRequest,
 // GetInstanceLogRequest is the request struct for api GetInstanceLog
 type GetInstanceLogRequest struct {
 	*requests.RpcRequest
-	ProjectEnv string           `position:"Body" name:"ProjectEnv"`
-	InstanceId requests.Integer `position:"Body" name:"InstanceId"`
+	ProjectEnv        string           `position:"Body" name:"ProjectEnv"`
+	InstanceId        requests.Integer `position:"Body" name:"InstanceId"`
+	InstanceHistoryId requests.Integer `position:"Body" name:"InstanceHistoryId"`
 }
 
 // GetInstanceLogResponse is the response struct for api GetInstanceLog

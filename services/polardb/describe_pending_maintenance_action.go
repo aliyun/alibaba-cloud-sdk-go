@@ -73,6 +73,7 @@ type DescribePendingMaintenanceActionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	IsHistory            requests.Integer `position:"Query" name:"IsHistory"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
@@ -98,7 +99,7 @@ func CreateDescribePendingMaintenanceActionRequest() (request *DescribePendingMa
 	request = &DescribePendingMaintenanceActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePendingMaintenanceAction", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePendingMaintenanceAction", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

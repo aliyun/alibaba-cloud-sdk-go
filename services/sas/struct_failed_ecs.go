@@ -17,8 +17,9 @@ package sas
 
 // FailedEcs is a nested struct in sas response
 type FailedEcs struct {
+	IP           string `json:"IP" xml:"IP"`
+	InternetIp   string `json:"InternetIp" xml:"InternetIp"`
+	IntranetIp   string `json:"IntranetIp" xml:"IntranetIp"`
 	Reason       string `json:"Reason" xml:"Reason"`
 	InstanceName string `json:"InstanceName" xml:"InstanceName"`
-	IP           string `json:"IP" xml:"IP"`
-	IntranetIp   string `json:"IntranetIp" xml:"IntranetIp"`
 }

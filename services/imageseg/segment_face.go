@@ -71,7 +71,9 @@ func (client *Client) SegmentFaceWithCallback(request *SegmentFaceRequest, callb
 // SegmentFaceRequest is the request struct for api SegmentFace
 type SegmentFaceRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentFaceResponse is the response struct for api SegmentFace
@@ -86,7 +88,7 @@ func CreateSegmentFaceRequest() (request *SegmentFaceRequest) {
 	request = &SegmentFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentFace", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentFace", "", "")
 	request.Method = requests.POST
 	return
 }

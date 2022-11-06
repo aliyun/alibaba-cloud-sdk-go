@@ -79,8 +79,8 @@ type CommitStagingRoutineCodeRequest struct {
 // CommitStagingRoutineCodeResponse is the response struct for api CommitStagingRoutineCode
 type CommitStagingRoutineCodeResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCommitStagingRoutineCodeRequest creates a request to invoke CommitStagingRoutineCode API

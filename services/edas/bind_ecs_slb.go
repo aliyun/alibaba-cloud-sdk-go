@@ -96,7 +96,7 @@ func CreateBindEcsSlbRequest() (request *BindEcsSlbRequest) {
 	request = &BindEcsSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "BindEcsSlb", "/pop/v5/app/slb/bind_slb", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "BindEcsSlb", "/pop/v5/app/slb/bind_slb", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

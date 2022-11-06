@@ -77,13 +77,13 @@ type QueryBookingDomainInfoRequest struct {
 // QueryBookingDomainInfoResponse is the response struct for api QueryBookingDomainInfo
 type QueryBookingDomainInfoResponse struct {
 	*responses.BaseResponse
+	BookEndTime     int64   `json:"BookEndTime" xml:"BookEndTime"`
 	RequestId       string  `json:"RequestId" xml:"RequestId"`
-	AuctionId       int     `json:"AuctionId" xml:"AuctionId"`
-	PartnerType     string  `json:"PartnerType" xml:"PartnerType"`
 	MaxBid          float64 `json:"MaxBid" xml:"MaxBid"`
 	TransferInPrice float64 `json:"TransferInPrice" xml:"TransferInPrice"`
+	AuctionId       int     `json:"AuctionId" xml:"AuctionId"`
 	Currency        string  `json:"Currency" xml:"Currency"`
-	BookEndTime     int64   `json:"BookEndTime" xml:"BookEndTime"`
+	PartnerType     string  `json:"PartnerType" xml:"PartnerType"`
 }
 
 // CreateQueryBookingDomainInfoRequest creates a request to invoke QueryBookingDomainInfo API

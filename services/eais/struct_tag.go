@@ -17,6 +17,6 @@ package eais
 
 // Tag is a nested struct in eais response
 type Tag struct {
-	TagValue string `json:"TagValue" xml:"TagValue"`
 	TagKey   string `json:"TagKey" xml:"TagKey"`
+	TagValue string `json:"TagValue" xml:"TagValue"`
 }

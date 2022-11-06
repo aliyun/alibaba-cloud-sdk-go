@@ -76,6 +76,7 @@ type CreateAndStartBackupPlanRequest struct {
 	SourceEndpointUserName            string           `position:"Query" name:"SourceEndpointUserName"`
 	StorageType                       string           `position:"Query" name:"StorageType"`
 	DatabaseRegion                    string           `position:"Query" name:"DatabaseRegion"`
+	ResourceGroupId                   string           `position:"Query" name:"ResourceGroupId"`
 	BackupStartTime                   string           `position:"Query" name:"BackupStartTime"`
 	SourceEndpointIP                  string           `position:"Query" name:"SourceEndpointIP"`
 	CrossRoleName                     string           `position:"Query" name:"CrossRoleName"`
@@ -117,13 +118,14 @@ type CreateAndStartBackupPlanRequest struct {
 // CreateAndStartBackupPlanResponse is the response struct for api CreateAndStartBackupPlan
 type CreateAndStartBackupPlanResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
-	OrderId        string `json:"OrderId" xml:"OrderId"`
+	HttpStatusCode  int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	CreateBackupSet bool   `json:"CreateBackupSet" xml:"CreateBackupSet"`
+	ErrCode         string `json:"ErrCode" xml:"ErrCode"`
+	Success         bool   `json:"Success" xml:"Success"`
+	ErrMessage      string `json:"ErrMessage" xml:"ErrMessage"`
+	BackupPlanId    string `json:"BackupPlanId" xml:"BackupPlanId"`
+	OrderId         string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateAndStartBackupPlanRequest creates a request to invoke CreateAndStartBackupPlan API
@@ -131,7 +133,7 @@ func CreateCreateAndStartBackupPlanRequest() (request *CreateAndStartBackupPlanR
 	request = &CreateAndStartBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateAndStartBackupPlan", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateAndStartBackupPlan", "", "")
 	request.Method = requests.POST
 	return
 }

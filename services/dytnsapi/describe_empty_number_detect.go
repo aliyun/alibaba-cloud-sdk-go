@@ -73,6 +73,7 @@ type DescribeEmptyNumberDetectRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EncryptType          string           `position:"Query" name:"EncryptType"`
+	OfferType            string           `position:"Query" name:"OfferType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Phone                string           `position:"Query" name:"Phone"`

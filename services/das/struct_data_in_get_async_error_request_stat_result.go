@@ -17,11 +17,11 @@ package das
 
 // DataInGetAsyncErrorRequestStatResult is a nested struct in das response
 type DataInGetAsyncErrorRequestStatResult struct {
-	Fail      bool                   `json:"fail" xml:"fail"`
-	IsFinish  bool                   `json:"isFinish" xml:"isFinish"`
-	ResultId  string                 `json:"resultId" xml:"resultId"`
-	State     string                 `json:"state" xml:"state"`
-	Timestamp int64                  `json:"timestamp" xml:"timestamp"`
-	Complete  bool                   `json:"complete" xml:"complete"`
-	Result    map[string]interface{} `json:"result" xml:"result"`
+	Fail      bool                     `json:"fail" xml:"fail"`
+	IsFinish  bool                     `json:"isFinish" xml:"isFinish"`
+	ResultId  string                   `json:"resultId" xml:"resultId"`
+	State     string                   `json:"state" xml:"state"`
+	Timestamp int64                    `json:"timestamp" xml:"timestamp"`
+	Complete  bool                     `json:"complete" xml:"complete"`
+	Result    []map[string]interface{} `json:"result" xml:"result"`
 }

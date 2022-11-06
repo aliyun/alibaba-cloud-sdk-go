@@ -71,8 +71,9 @@ func (client *Client) RemoveUserFromDesktopGroupWithCallback(request *RemoveUser
 // RemoveUserFromDesktopGroupRequest is the request struct for api RemoveUserFromDesktopGroup
 type RemoveUserFromDesktopGroupRequest struct {
 	*requests.RpcRequest
-	EndUserIds     *[]string `position:"Query" name:"EndUserIds"  type:"Repeated"`
-	DesktopGroupId string    `position:"Query" name:"DesktopGroupId"`
+	EndUserIds      *[]string `position:"Query" name:"EndUserIds"  type:"Repeated"`
+	DesktopGroupId  string    `position:"Query" name:"DesktopGroupId"`
+	DesktopGroupIds *[]string `position:"Query" name:"DesktopGroupIds"  type:"Repeated"`
 }
 
 // RemoveUserFromDesktopGroupResponse is the response struct for api RemoveUserFromDesktopGroup

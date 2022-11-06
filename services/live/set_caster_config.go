@@ -71,21 +71,22 @@ func (client *Client) SetCasterConfigWithCallback(request *SetCasterConfigReques
 // SetCasterConfigRequest is the request struct for api SetCasterConfig
 type SetCasterConfigRequest struct {
 	*requests.RpcRequest
-	ChannelEnable     requests.Integer `position:"Query" name:"ChannelEnable"`
-	ProgramEffect     requests.Integer `position:"Query" name:"ProgramEffect"`
-	ProgramName       string           `position:"Query" name:"ProgramName"`
-	RecordConfig      string           `position:"Query" name:"RecordConfig"`
-	UrgentMaterialId  string           `position:"Query" name:"UrgentMaterialId"`
-	TranscodeConfig   string           `position:"Query" name:"TranscodeConfig"`
-	CasterName        string           `position:"Query" name:"CasterName"`
-	SideOutputUrl     string           `position:"Query" name:"SideOutputUrl"`
-	SyncGroupsConfig  string           `position:"Query" name:"SyncGroupsConfig"`
-	SideOutputUrlList string           `position:"Query" name:"SideOutputUrlList"`
-	CasterId          string           `position:"Query" name:"CasterId"`
-	DomainName        string           `position:"Query" name:"DomainName"`
-	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
-	Delay             requests.Float   `position:"Query" name:"Delay"`
-	CallbackUrl       string           `position:"Query" name:"CallbackUrl"`
+	ChannelEnable       requests.Integer `position:"Query" name:"ChannelEnable"`
+	ProgramEffect       requests.Integer `position:"Query" name:"ProgramEffect"`
+	ProgramName         string           `position:"Query" name:"ProgramName"`
+	RecordConfig        string           `position:"Query" name:"RecordConfig"`
+	UrgentMaterialId    string           `position:"Query" name:"UrgentMaterialId"`
+	TranscodeConfig     string           `position:"Query" name:"TranscodeConfig"`
+	CasterName          string           `position:"Query" name:"CasterName"`
+	UrgentLiveStreamUrl string           `position:"Query" name:"UrgentLiveStreamUrl"`
+	SideOutputUrl       string           `position:"Query" name:"SideOutputUrl"`
+	SyncGroupsConfig    string           `position:"Query" name:"SyncGroupsConfig"`
+	SideOutputUrlList   string           `position:"Query" name:"SideOutputUrlList"`
+	CasterId            string           `position:"Query" name:"CasterId"`
+	DomainName          string           `position:"Query" name:"DomainName"`
+	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
+	Delay               requests.Float   `position:"Query" name:"Delay"`
+	CallbackUrl         string           `position:"Query" name:"CallbackUrl"`
 }
 
 // SetCasterConfigResponse is the response struct for api SetCasterConfig

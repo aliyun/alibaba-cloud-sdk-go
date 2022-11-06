@@ -78,8 +78,8 @@ type DescribeIllegalUrlExportTaskRequest struct {
 // DescribeIllegalUrlExportTaskResponse is the response struct for api DescribeIllegalUrlExportTask
 type DescribeIllegalUrlExportTaskResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Status      string `json:"Status" xml:"Status"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DownloadUrl string `json:"DownloadUrl" xml:"DownloadUrl"`
 }
 

@@ -17,9 +17,9 @@ package facebody
 
 // Person is a nested struct in facebody response
 type Person struct {
-	TraceCount int64  `json:"TraceCount" xml:"TraceCount"`
 	InstanceId int64  `json:"InstanceId" xml:"InstanceId"`
 	DbId       int64  `json:"DbId" xml:"DbId"`
-	Id         int64  `json:"Id" xml:"Id"`
 	Name       string `json:"Name" xml:"Name"`
+	TraceCount int64  `json:"TraceCount" xml:"TraceCount"`
+	Id         int64  `json:"Id" xml:"Id"`
 }

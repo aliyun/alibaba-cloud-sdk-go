@@ -17,11 +17,11 @@ package dcdn
 
 // Task is a nested struct in dcdn response
 type Task struct {
-	TaskId       string `json:"TaskId" xml:"TaskId"`
-	ObjectPath   string `json:"ObjectPath" xml:"ObjectPath"`
-	Process      string `json:"Process" xml:"Process"`
 	Status       string `json:"Status" xml:"Status"`
 	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	Description  string `json:"Description" xml:"Description"`
 	ObjectType   string `json:"ObjectType" xml:"ObjectType"`
+	Process      string `json:"Process" xml:"Process"`
+	Description  string `json:"Description" xml:"Description"`
+	ObjectPath   string `json:"ObjectPath" xml:"ObjectPath"`
+	TaskId       string `json:"TaskId" xml:"TaskId"`
 }

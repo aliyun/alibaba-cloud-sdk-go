@@ -71,7 +71,10 @@ func (client *Client) DetectImageElementsWithCallback(request *DetectImageElemen
 // DetectImageElementsRequest is the request struct for api DetectImageElements
 type DetectImageElementsRequest struct {
 	*requests.RpcRequest
-	Url string `position:"Body" name:"Url"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Url                string           `position:"Body" name:"Url"`
 }
 
 // DetectImageElementsResponse is the response struct for api DetectImageElements
@@ -86,7 +89,7 @@ func CreateDetectImageElementsRequest() (request *DetectImageElementsRequest) {
 	request = &DetectImageElementsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "DetectImageElements", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "DetectImageElements", "", "")
 	request.Method = requests.POST
 	return
 }

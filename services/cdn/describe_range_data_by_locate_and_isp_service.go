@@ -82,8 +82,8 @@ type DescribeRangeDataByLocateAndIspServiceRequest struct {
 // DescribeRangeDataByLocateAndIspServiceResponse is the response struct for api DescribeRangeDataByLocateAndIspService
 type DescribeRangeDataByLocateAndIspServiceResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	JsonResult string `json:"JsonResult" xml:"JsonResult"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeRangeDataByLocateAndIspServiceRequest creates a request to invoke DescribeRangeDataByLocateAndIspService API

@@ -80,11 +80,11 @@ type DescribeDcdnIpInfoRequest struct {
 type DescribeDcdnIpInfoResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
+	RegionEname string `json:"RegionEname" xml:"RegionEname"`
+	Region      string `json:"Region" xml:"Region"`
+	IspEname    string `json:"IspEname" xml:"IspEname"`
 	DcdnIp      string `json:"DcdnIp" xml:"DcdnIp"`
 	ISP         string `json:"ISP" xml:"ISP"`
-	IspEname    string `json:"IspEname" xml:"IspEname"`
-	Region      string `json:"Region" xml:"Region"`
-	RegionEname string `json:"RegionEname" xml:"RegionEname"`
 }
 
 // CreateDescribeDcdnIpInfoRequest creates a request to invoke DescribeDcdnIpInfo API

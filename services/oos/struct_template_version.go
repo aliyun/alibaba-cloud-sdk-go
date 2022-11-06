@@ -18,9 +18,9 @@ package oos
 // TemplateVersion is a nested struct in oos response
 type TemplateVersion struct {
 	Description     string `json:"Description" xml:"Description"`
-	TemplateFormat  string `json:"TemplateFormat" xml:"TemplateFormat"`
-	TemplateVersion string `json:"TemplateVersion" xml:"TemplateVersion"`
 	UpdatedDate     string `json:"UpdatedDate" xml:"UpdatedDate"`
 	UpdatedBy       string `json:"UpdatedBy" xml:"UpdatedBy"`
 	VersionName     string `json:"VersionName" xml:"VersionName"`
+	TemplateVersion string `json:"TemplateVersion" xml:"TemplateVersion"`
+	TemplateFormat  string `json:"TemplateFormat" xml:"TemplateFormat"`
 }

@@ -86,7 +86,7 @@ func CreateListComponentsRequest() (request *ListComponentsRequest) {
 	request = &ListComponentsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListComponents", "/pop/v5/resource/components", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListComponents", "/pop/v5/resource/components", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

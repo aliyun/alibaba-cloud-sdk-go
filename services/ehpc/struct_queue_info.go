@@ -19,22 +19,25 @@ package ehpc
 type QueueInfo struct {
 	QueueName           string              `json:"QueueName" xml:"QueueName"`
 	HostNameSuffix      string              `json:"HostNameSuffix" xml:"HostNameSuffix"`
-	SpotPriceLimit      float64             `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	EnableAutoGrow      bool                `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
+	SpotPriceLimit      float64             `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	HostNamePrefix      string              `json:"HostNamePrefix" xml:"HostNamePrefix"`
 	ImageId             string              `json:"ImageId" xml:"ImageId"`
+	MaxNodesPerCycle    int64               `json:"MaxNodesPerCycle" xml:"MaxNodesPerCycle"`
 	MinNodesInQueue     int                 `json:"MinNodesInQueue" xml:"MinNodesInQueue"`
 	SystemDiskSize      int                 `json:"SystemDiskSize" xml:"SystemDiskSize"`
 	InstanceType        string              `json:"InstanceType" xml:"InstanceType"`
+	MinNodesPerCycle    int64               `json:"MinNodesPerCycle" xml:"MinNodesPerCycle"`
 	MaxNodesInQueue     int                 `json:"MaxNodesInQueue" xml:"MaxNodesInQueue"`
 	ResourceGroupId     string              `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	EnableAutoShrink    bool                `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
 	QueueImageId        string              `json:"QueueImageId" xml:"QueueImageId"`
 	SystemDiskLevel     string              `json:"SystemDiskLevel" xml:"SystemDiskLevel"`
-	SpotStrategy        string              `json:"SpotStrategy" xml:"SpotStrategy"`
 	SystemDiskCategory  string              `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
+	SpotStrategy        string              `json:"SpotStrategy" xml:"SpotStrategy"`
 	Type                string              `json:"Type" xml:"Type"`
 	ComputeInstanceType ComputeInstanceType `json:"ComputeInstanceType" xml:"ComputeInstanceType"`
 	SpotInstanceTypes   SpotInstanceTypes   `json:"SpotInstanceTypes" xml:"SpotInstanceTypes"`
+	DataDisks           DataDisks           `json:"DataDisks" xml:"DataDisks"`
 	InstanceTypes       InstanceTypes       `json:"InstanceTypes" xml:"InstanceTypes"`
 }

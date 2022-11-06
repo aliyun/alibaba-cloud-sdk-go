@@ -17,11 +17,11 @@ package ehpc
 
 // ContainerAppInfo is a nested struct in ehpc response
 type ContainerAppInfo struct {
-	Id          string `json:"Id" xml:"Id"`
-	Name        string `json:"Name" xml:"Name"`
+	Type        string `json:"Type" xml:"Type"`
 	Description string `json:"Description" xml:"Description"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	Repository  string `json:"Repository" xml:"Repository"`
 	ImageTag    string `json:"ImageTag" xml:"ImageTag"`
-	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-	Type        string `json:"Type" xml:"Type"`
+	Name        string `json:"Name" xml:"Name"`
+	Id          string `json:"Id" xml:"Id"`
 }

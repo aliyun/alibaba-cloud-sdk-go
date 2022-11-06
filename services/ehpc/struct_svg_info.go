@@ -17,8 +17,8 @@ package ehpc
 
 // SvgInfo is a nested struct in ehpc response
 type SvgInfo struct {
-	Name string `json:"Name" xml:"Name"`
 	Type string `json:"Type" xml:"Type"`
 	Url  string `json:"Url" xml:"Url"`
+	Name string `json:"Name" xml:"Name"`
 	Size int    `json:"Size" xml:"Size"`
 }

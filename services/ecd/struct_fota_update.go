@@ -17,7 +17,6 @@ package ecd
 
 // FotaUpdate is a nested struct in ecd response
 type FotaUpdate struct {
-	NewTaskUid        string `json:"NewTaskUid" xml:"NewTaskUid"`
 	CurrentAppVersion string `json:"CurrentAppVersion" xml:"CurrentAppVersion"`
 	NewAppVersion     string `json:"NewAppVersion" xml:"NewAppVersion"`
 	ReleaseNote       string `json:"ReleaseNote" xml:"ReleaseNote"`

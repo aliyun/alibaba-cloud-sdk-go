@@ -72,6 +72,7 @@ func (client *Client) DeleteParameterGroupWithCallback(request *DeleteParameterG
 type DeleteParameterGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -89,7 +90,7 @@ func CreateDeleteParameterGroupRequest() (request *DeleteParameterGroupRequest) 
 	request = &DeleteParameterGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteParameterGroup", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteParameterGroup", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

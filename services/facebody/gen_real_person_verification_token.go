@@ -71,9 +71,12 @@ func (client *Client) GenRealPersonVerificationTokenWithCallback(request *GenRea
 // GenRealPersonVerificationTokenRequest is the request struct for api GenRealPersonVerificationToken
 type GenRealPersonVerificationTokenRequest struct {
 	*requests.RpcRequest
-	MetaInfo          string `position:"Body" name:"MetaInfo"`
-	CertificateNumber string `position:"Body" name:"CertificateNumber"`
-	CertificateName   string `position:"Body" name:"CertificateName"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	MetaInfo           string           `position:"Body" name:"MetaInfo"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	CertificateNumber  string           `position:"Body" name:"CertificateNumber"`
+	CertificateName    string           `position:"Body" name:"CertificateName"`
 }
 
 // GenRealPersonVerificationTokenResponse is the response struct for api GenRealPersonVerificationToken

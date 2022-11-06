@@ -85,12 +85,12 @@ type GetAccountingReportRequest struct {
 // GetAccountingReportResponse is the response struct for api GetAccountingReport
 type GetAccountingReportResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	Metrics       string `json:"Metrics" xml:"Metrics"`
 	TotalCoreTime int    `json:"TotalCoreTime" xml:"TotalCoreTime"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
+	Metrics       string `json:"Metrics" xml:"Metrics"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	PageSize      int    `json:"PageSize" xml:"PageSize"`
 	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
+	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
 	Data          Data   `json:"Data" xml:"Data"`
 }
 

@@ -17,9 +17,10 @@ package sas
 
 // MarkFieldItem is a nested struct in sas response
 type MarkFieldItem struct {
+	MarkMisType      string   `json:"MarkMisType" xml:"MarkMisType"`
 	FiledName        string   `json:"FiledName" xml:"FiledName"`
 	FiledAliasName   string   `json:"FiledAliasName" xml:"FiledAliasName"`
-	MarkMisType      string   `json:"MarkMisType" xml:"MarkMisType"`
 	MarkMisValue     string   `json:"MarkMisValue" xml:"MarkMisValue"`
+	Uuid             string   `json:"Uuid" xml:"Uuid"`
 	SupportedMisType []string `json:"SupportedMisType" xml:"SupportedMisType"`
 }

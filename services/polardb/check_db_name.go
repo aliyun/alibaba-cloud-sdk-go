@@ -83,6 +83,7 @@ type CheckDBNameRequest struct {
 type CheckDBNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	DBName    string `json:"DBName" xml:"DBName"`
 }
 
 // CreateCheckDBNameRequest creates a request to invoke CheckDBName API
@@ -90,7 +91,7 @@ func CreateCheckDBNameRequest() (request *CheckDBNameRequest) {
 	request = &CheckDBNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CheckDBName", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CheckDBName", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

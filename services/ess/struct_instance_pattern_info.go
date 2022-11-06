@@ -17,8 +17,11 @@ package ess
 
 // InstancePatternInfo is a nested struct in ess response
 type InstancePatternInfo struct {
-	MaxPrice            float64 `json:"MaxPrice" xml:"MaxPrice"`
-	Cores               int     `json:"Cores" xml:"Cores"`
-	Memory              float64 `json:"Memory" xml:"Memory"`
-	InstanceFamilyLevel string  `json:"InstanceFamilyLevel" xml:"InstanceFamilyLevel"`
+	MaxPrice              float64               `json:"MaxPrice" xml:"MaxPrice"`
+	Cores                 int                   `json:"Cores" xml:"Cores"`
+	Memory                float64               `json:"Memory" xml:"Memory"`
+	InstanceFamilyLevel   string                `json:"InstanceFamilyLevel" xml:"InstanceFamilyLevel"`
+	BurstablePerformance  string                `json:"BurstablePerformance" xml:"BurstablePerformance"`
+	Architectures         Architectures         `json:"Architectures" xml:"Architectures"`
+	ExcludedInstanceTypes ExcludedInstanceTypes `json:"ExcludedInstanceTypes" xml:"ExcludedInstanceTypes"`
 }

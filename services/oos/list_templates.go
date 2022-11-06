@@ -71,6 +71,7 @@ func (client *Client) ListTemplatesWithCallback(request *ListTemplatesRequest, c
 // ListTemplatesRequest is the request struct for api ListTemplates
 type ListTemplatesRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId   string                 `position:"Query" name:"ResourceGroupId"`
 	CreatedDateBefore string                 `position:"Query" name:"CreatedDateBefore"`
 	CreatedBy         string                 `position:"Query" name:"CreatedBy"`
 	NextToken         string                 `position:"Query" name:"NextToken"`
@@ -90,9 +91,9 @@ type ListTemplatesRequest struct {
 // ListTemplatesResponse is the response struct for api ListTemplates
 type ListTemplatesResponse struct {
 	*responses.BaseResponse
+	NextToken  string     `json:"NextToken" xml:"NextToken"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	MaxResults int        `json:"MaxResults" xml:"MaxResults"`
-	NextToken  string     `json:"NextToken" xml:"NextToken"`
 	Templates  []Template `json:"Templates" xml:"Templates"`
 }
 
@@ -101,7 +102,7 @@ func CreateListTemplatesRequest() (request *ListTemplatesRequest) {
 	request = &ListTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListTemplates", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTemplates", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

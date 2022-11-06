@@ -17,13 +17,13 @@ package ehpc
 
 // TaskInfo is a nested struct in ehpc response
 type TaskInfo struct {
-	TaskId      string `json:"TaskId" xml:"TaskId"`
-	TaskType    string `json:"TaskType" xml:"TaskType"`
-	ClusterId   string `json:"ClusterId" xml:"ClusterId"`
-	Request     string `json:"Request" xml:"Request"`
 	Status      string `json:"Status" xml:"Status"`
-	CurrentStep int    `json:"CurrentStep" xml:"CurrentStep"`
+	TaskType    string `json:"TaskType" xml:"TaskType"`
 	TotalSteps  int    `json:"TotalSteps" xml:"TotalSteps"`
+	CurrentStep int    `json:"CurrentStep" xml:"CurrentStep"`
 	Result      string `json:"Result" xml:"Result"`
 	Errors      string `json:"Errors" xml:"Errors"`
+	TaskId      string `json:"TaskId" xml:"TaskId"`
+	Request     string `json:"Request" xml:"Request"`
+	ClusterId   string `json:"ClusterId" xml:"ClusterId"`
 }

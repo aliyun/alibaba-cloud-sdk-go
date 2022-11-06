@@ -72,13 +72,16 @@ func (client *Client) ModifyDBNodesParametersWithCallback(request *ModifyDBNodes
 type ModifyDBNodesParametersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
 	DBNodeIds            string           `position:"Query" name:"DBNodeIds"`
 	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
 	Parameters           string           `position:"Query" name:"Parameters"`
+	FromTimeService      requests.Boolean `position:"Query" name:"FromTimeService"`
 }
 
 // ModifyDBNodesParametersResponse is the response struct for api ModifyDBNodesParameters
@@ -92,7 +95,7 @@ func CreateModifyDBNodesParametersRequest() (request *ModifyDBNodesParametersReq
 	request = &ModifyDBNodesParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodesParameters", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodesParameters", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

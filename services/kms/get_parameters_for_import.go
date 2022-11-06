@@ -80,10 +80,10 @@ type GetParametersForImportRequest struct {
 type GetParametersForImportResponse struct {
 	*responses.BaseResponse
 	KeyId           string `json:"KeyId" xml:"KeyId"`
-	RequestId       string `json:"RequestId" xml:"RequestId"`
 	ImportToken     string `json:"ImportToken" xml:"ImportToken"`
-	PublicKey       string `json:"PublicKey" xml:"PublicKey"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
 	TokenExpireTime string `json:"TokenExpireTime" xml:"TokenExpireTime"`
+	PublicKey       string `json:"PublicKey" xml:"PublicKey"`
 }
 
 // CreateGetParametersForImportRequest creates a request to invoke GetParametersForImport API

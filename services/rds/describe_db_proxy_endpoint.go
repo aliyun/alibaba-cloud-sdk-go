@@ -75,6 +75,7 @@ type DescribeDBProxyEndpointRequest struct {
 	DBProxyConnectString string           `position:"Query" name:"DBProxyConnectString"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBProxyEngineType    string           `position:"Query" name:"DBProxyEngineType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBProxyEndpointId    string           `position:"Query" name:"DBProxyEndpointId"`
 }
@@ -93,6 +94,7 @@ type DescribeDBProxyEndpointResponse struct {
 	DBProxyEndpointId                string               `json:"DBProxyEndpointId" xml:"DBProxyEndpointId"`
 	DBProxyConnectStringPort         string               `json:"DBProxyConnectStringPort" xml:"DBProxyConnectStringPort"`
 	DBProxyConnectString             string               `json:"DBProxyConnectString" xml:"DBProxyConnectString"`
+	DBProxyEngineType                string               `json:"DBProxyEngineType" xml:"DBProxyEngineType"`
 	EndpointConnectItems             EndpointConnectItems `json:"EndpointConnectItems" xml:"EndpointConnectItems"`
 }
 

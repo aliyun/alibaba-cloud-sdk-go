@@ -71,12 +71,12 @@ func (client *Client) CreateSubscriptionInstanceWithCallback(request *CreateSubs
 // CreateSubscriptionInstanceRequest is the request struct for api CreateSubscriptionInstance
 type CreateSubscriptionInstanceRequest struct {
 	*requests.RpcRequest
-	Period                     string           `position:"Query" name:"Period"`
 	ClientToken                string           `position:"Query" name:"ClientToken"`
-	OwnerId                    string           `position:"Query" name:"OwnerId"`
-	UsedTime                   requests.Integer `position:"Query" name:"UsedTime"`
 	SourceEndpointInstanceType string           `position:"Query" name:"SourceEndpoint.InstanceType"`
 	AccountId                  string           `position:"Query" name:"AccountId"`
+	Period                     string           `position:"Query" name:"Period"`
+	OwnerId                    string           `position:"Query" name:"OwnerId"`
+	UsedTime                   requests.Integer `position:"Query" name:"UsedTime"`
 	Region                     string           `position:"Query" name:"Region"`
 	PayType                    string           `position:"Query" name:"PayType"`
 }

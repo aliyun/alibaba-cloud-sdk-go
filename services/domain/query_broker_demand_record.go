@@ -79,11 +79,11 @@ type QueryBrokerDemandRecordRequest struct {
 // QueryBrokerDemandRecordResponse is the response struct for api QueryBrokerDemandRecord
 type QueryBrokerDemandRecordResponse struct {
 	*responses.BaseResponse
-	RequestId      string                        `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int                           `json:"TotalItemNum" xml:"TotalItemNum"`
 	CurrentPageNum int                           `json:"CurrentPageNum" xml:"CurrentPageNum"`
 	PageSize       int                           `json:"PageSize" xml:"PageSize"`
+	RequestId      string                        `json:"RequestId" xml:"RequestId"`
 	TotalPageNum   int                           `json:"TotalPageNum" xml:"TotalPageNum"`
+	TotalItemNum   int                           `json:"TotalItemNum" xml:"TotalItemNum"`
 	Data           DataInQueryBrokerDemandRecord `json:"Data" xml:"Data"`
 }
 

@@ -78,8 +78,8 @@ type CreateGWSImageRequest struct {
 // CreateGWSImageResponse is the response struct for api CreateGWSImage
 type CreateGWSImageResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ImageId   string `json:"ImageId" xml:"ImageId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateGWSImageRequest creates a request to invoke CreateGWSImage API
