@@ -27,4 +27,5 @@ type OpsItemInListOpsItems struct {
 	Source     string                 `json:"Source" xml:"Source"`
 	Priority   int                    `json:"Priority" xml:"Priority"`
 	Tags       map[string]interface{} `json:"Tags" xml:"Tags"`
+	Resources  []string               `json:"Resources" xml:"Resources"`
 }

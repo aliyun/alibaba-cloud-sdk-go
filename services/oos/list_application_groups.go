@@ -71,8 +71,12 @@ func (client *Client) ListApplicationGroupsWithCallback(request *ListApplication
 // ListApplicationGroupsRequest is the request struct for api ListApplicationGroups
 type ListApplicationGroupsRequest struct {
 	*requests.RpcRequest
+	ResourceProduct string           `position:"Query" name:"ResourceProduct"`
 	NextToken       string           `position:"Query" name:"NextToken"`
+	ResourceId      string           `position:"Query" name:"ResourceId"`
+	Product         string           `position:"Query" name:"Product"`
 	DeployRegionId  string           `position:"Query" name:"DeployRegionId"`
+	ResourceType    string           `position:"Query" name:"ResourceType"`
 	ApplicationName string           `position:"Query" name:"ApplicationName"`
 	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
 }

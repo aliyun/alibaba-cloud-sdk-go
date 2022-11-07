@@ -71,21 +71,20 @@ func (client *Client) UpdateOpsItemWithCallback(request *UpdateOpsItemRequest, c
 // UpdateOpsItemRequest is the request struct for api UpdateOpsItem
 type UpdateOpsItemRequest struct {
 	*requests.RpcRequest
-	ClientToken     string `position:"Query" name:"ClientToken"`
-	Description     string `position:"Query" name:"Description"`
-	Source          string `position:"Query" name:"Source"`
-	Title           string `position:"Query" name:"Title"`
-	Type            string `position:"Query" name:"Type"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	Severity        string `position:"Query" name:"Severity"`
-	Solutions       string `position:"Query" name:"Solutions"`
-	Resources       string `position:"Query" name:"Resources"`
-	Priority        string `position:"Query" name:"Priority"`
-	DedupString     string `position:"Query" name:"DedupString"`
-	Tags            string `position:"Query" name:"Tags"`
-	OpsItemId       string `position:"Query" name:"OpsItemId"`
-	Category        string `position:"Query" name:"Category"`
-	Status          string `position:"Query" name:"Status"`
+	ClientToken     string           `position:"Query" name:"ClientToken"`
+	Description     string           `position:"Query" name:"Description"`
+	Source          string           `position:"Query" name:"Source"`
+	Title           string           `position:"Query" name:"Title"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	Severity        string           `position:"Query" name:"Severity"`
+	Solutions       string           `position:"Query" name:"Solutions"`
+	Resources       string           `position:"Query" name:"Resources"`
+	Priority        requests.Integer `position:"Query" name:"Priority"`
+	DedupString     string           `position:"Query" name:"DedupString"`
+	Tags            string           `position:"Query" name:"Tags"`
+	OpsItemId       string           `position:"Query" name:"OpsItemId"`
+	Category        string           `position:"Query" name:"Category"`
+	Status          string           `position:"Query" name:"Status"`
 }
 
 // UpdateOpsItemResponse is the response struct for api UpdateOpsItem

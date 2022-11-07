@@ -18,10 +18,10 @@ package oos
 // OpsItem is a nested struct in oos response
 type OpsItem struct {
 	Category        string                 `json:"Category" xml:"Category"`
+	Priority        int                    `json:"Priority" xml:"Priority"`
 	Resources       string                 `json:"Resources" xml:"Resources"`
 	Title           string                 `json:"Title" xml:"Title"`
 	Attributes      string                 `json:"Attributes" xml:"Attributes"`
-	Priority        string                 `json:"Priority" xml:"Priority"`
 	Source          string                 `json:"Source" xml:"Source"`
 	CreatedBy       string                 `json:"CreatedBy" xml:"CreatedBy"`
 	Solutions       string                 `json:"Solutions" xml:"Solutions"`

@@ -71,19 +71,18 @@ func (client *Client) CreateOpsItemWithCallback(request *CreateOpsItemRequest, c
 // CreateOpsItemRequest is the request struct for api CreateOpsItem
 type CreateOpsItemRequest struct {
 	*requests.RpcRequest
-	ClientToken     string `position:"Query" name:"ClientToken"`
-	Description     string `position:"Query" name:"Description"`
-	Source          string `position:"Query" name:"Source"`
-	Title           string `position:"Query" name:"Title"`
-	Type            string `position:"Query" name:"Type"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	Severity        string `position:"Query" name:"Severity"`
-	Solutions       string `position:"Query" name:"Solutions"`
-	Resources       string `position:"Query" name:"Resources"`
-	Priority        string `position:"Query" name:"Priority"`
-	DedupString     string `position:"Query" name:"DedupString"`
-	Tags            string `position:"Query" name:"Tags"`
-	Category        string `position:"Query" name:"Category"`
+	ClientToken     string           `position:"Query" name:"ClientToken"`
+	Description     string           `position:"Query" name:"Description"`
+	Source          string           `position:"Query" name:"Source"`
+	Title           string           `position:"Query" name:"Title"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	Severity        string           `position:"Query" name:"Severity"`
+	Solutions       string           `position:"Query" name:"Solutions"`
+	Resources       string           `position:"Query" name:"Resources"`
+	Priority        requests.Integer `position:"Query" name:"Priority"`
+	DedupString     string           `position:"Query" name:"DedupString"`
+	Tags            string           `position:"Query" name:"Tags"`
+	Category        string           `position:"Query" name:"Category"`
 }
 
 // CreateOpsItemResponse is the response struct for api CreateOpsItem

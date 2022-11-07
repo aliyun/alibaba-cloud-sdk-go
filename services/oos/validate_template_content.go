@@ -71,7 +71,8 @@ func (client *Client) ValidateTemplateContentWithCallback(request *ValidateTempl
 // ValidateTemplateContentRequest is the request struct for api ValidateTemplateContent
 type ValidateTemplateContentRequest struct {
 	*requests.RpcRequest
-	Content string `position:"Query" name:"Content"`
+	Content     string `position:"Query" name:"Content"`
+	TemplateURL string `position:"Query" name:"TemplateURL"`
 }
 
 // ValidateTemplateContentResponse is the response struct for api ValidateTemplateContent

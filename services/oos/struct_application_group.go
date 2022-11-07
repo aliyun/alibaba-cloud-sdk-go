@@ -22,6 +22,7 @@ type ApplicationGroup struct {
 	ApplicationName  string `json:"ApplicationName" xml:"ApplicationName"`
 	DeployOutputs    string `json:"DeployOutputs" xml:"DeployOutputs"`
 	DeployRegionId   string `json:"DeployRegionId" xml:"DeployRegionId"`
+	Progress         string `json:"Progress" xml:"Progress"`
 	StatusReason     string `json:"StatusReason" xml:"StatusReason"`
 	CreateDate       string `json:"CreateDate" xml:"CreateDate"`
 	ImportTagValue   string `json:"ImportTagValue" xml:"ImportTagValue"`

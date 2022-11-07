@@ -27,7 +27,7 @@ type OpsItemInUpdateOpsItem struct {
 	Severity        string                 `json:"Severity" xml:"Severity"`
 	Category        string                 `json:"Category" xml:"Category"`
 	Source          string                 `json:"Source" xml:"Source"`
-	Priority        string                 `json:"Priority" xml:"Priority"`
+	Priority        int                    `json:"Priority" xml:"Priority"`
 	Attributes      string                 `json:"Attributes" xml:"Attributes"`
 	CreatedBy       string                 `json:"CreatedBy" xml:"CreatedBy"`
 	LastModifiedBy  string                 `json:"LastModifiedBy" xml:"LastModifiedBy"`

@@ -84,6 +84,7 @@ type ListStateConfigurationsRequest struct {
 type ListStateConfigurationsResponse struct {
 	*responses.BaseResponse
 	RequestId           string                                        `json:"RequestId" xml:"RequestId"`
+	NextToken           string                                        `json:"NextToken" xml:"NextToken"`
 	StateConfigurations []StateConfigurationInListStateConfigurations `json:"StateConfigurations" xml:"StateConfigurations"`
 }
 
