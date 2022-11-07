@@ -71,16 +71,24 @@ func (client *Client) CreateWHClientCertificateWithCallback(request *CreateWHCli
 // CreateWHClientCertificateRequest is the request struct for api CreateWHClientCertificate
 type CreateWHClientCertificateRequest struct {
 	*requests.RpcRequest
+	Country          string           `position:"Query" name:"Country"`
 	Csr              string           `position:"Query" name:"Csr"`
+	Immediately      requests.Integer `position:"Query" name:"Immediately"`
+	Years            requests.Integer `position:"Query" name:"Years"`
 	CommonName       string           `position:"Query" name:"CommonName"`
 	SourceIp         string           `position:"Query" name:"SourceIp"`
 	SanValue         string           `position:"Query" name:"SanValue"`
+	State            string           `position:"Query" name:"State"`
 	Algorithm        string           `position:"Query" name:"Algorithm"`
+	Months           requests.Integer `position:"Query" name:"Months"`
 	AfterTime        requests.Integer `position:"Query" name:"AfterTime"`
+	Locality         string           `position:"Query" name:"Locality"`
 	SanType          requests.Integer `position:"Query" name:"SanType"`
+	Organization     string           `position:"Query" name:"Organization"`
 	Days             requests.Integer `position:"Query" name:"Days"`
 	BeforeTime       requests.Integer `position:"Query" name:"BeforeTime"`
 	ParentIdentifier string           `position:"Query" name:"ParentIdentifier"`
+	OrganizationUnit string           `position:"Query" name:"OrganizationUnit"`
 }
 
 // CreateWHClientCertificateResponse is the response struct for api CreateWHClientCertificate

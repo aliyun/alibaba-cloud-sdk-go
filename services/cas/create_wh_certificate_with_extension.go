@@ -73,6 +73,7 @@ type CreateWHCertificateWithExtensionRequest struct {
 	*requests.RpcRequest
 	AppendCrl                requests.Boolean `position:"Query" name:"AppendCrl"`
 	CountryCode              string           `position:"Query" name:"CountryCode"`
+	Immediately              requests.Integer `position:"Query" name:"Immediately"`
 	CommonName               string           `position:"Query" name:"CommonName"`
 	SourceIp                 string           `position:"Query" name:"SourceIp"`
 	CertType                 string           `position:"Query" name:"CertType"`
